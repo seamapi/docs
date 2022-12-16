@@ -1,16 +1,16 @@
 # Table of contents
 
-* [README](README.md)
+- [README](README.md)
 
 ## Getting Started
 
-* [Get API Key](quickstart/get-api-key.md)
-* [Installation](quickstart/installation.md)
-* [Authentication](quickstart/authentication.md)
+- [Get API Key](quickstart/get-api-key.md)
+- [Installation](quickstart/installation.md)
+- [Authentication](quickstart/authentication.md)
 
 ## Core Concepts
 
-***
+## API References
 
-* [API](api.md)
-* [Access Code API Ref](access-code-api-ref.md)
+- [API](api.md)
+- [Access Code API Ref](access-code-api-ref.md)
