@@ -21,3 +21,5 @@ pip install seamapi
 ```ruby
 bundle add seamapi
 ```
+
+test
