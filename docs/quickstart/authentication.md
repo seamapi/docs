@@ -11,7 +11,7 @@ Next, run the code below to check you are correctly authenticated:
 {% tabs %}
 {% tab title="Javascript" %}
 
-```js
+```javascript
 // Replace with
 // const Seam = require("seamapi")
 // if not using ES6 modules and/or TypeScript.
