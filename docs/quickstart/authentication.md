@@ -8,6 +8,9 @@ $ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
 
 Next, run the code below to check you are correctly authenticated:
 
+{% tabs %}
+{% tab title="Javascript" %}
+
 ```js
 // Replace with
 // const Seam = require("seamapi")
@@ -35,6 +38,10 @@ checkAuth()
 */
 ```
 
+{% endtab %}
+
+{% tab title="Python" %}
+
 ```python
 from seamapi import Seam
 
@@ -48,6 +55,10 @@ print(workspace)
 #   name='Sanbox', is_sandbox=True)
 ```
 
+{% endtab %}
+
+{% tab title="Ruby" %}
+
 ```ruby
 require 'seamapi'
 
@@ -59,3 +70,6 @@ puts workspace
 
 # <Seam::Workspace:0x0070328                                workspace_id="123e4567-e89b-12d3-a456-426614174000" name="MySandbox" connect_partner_name="Partner Sandbox" is_sandbox=true>
 ```
+
+{% endtab %}
+{% endtabs %}
