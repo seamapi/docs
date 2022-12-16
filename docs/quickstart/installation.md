@@ -10,7 +10,9 @@ We recommend that you use Seam's client libraries in the language of your choice
 
 You can use your favorite package manager to install Seam's client libraries.
 
-```js
+{% code title="index.js" overflow="wrap" lineNumbers="true" %}
+
+```javascript
 npm i seamapi
 ```
 
@@ -22,4 +24,4 @@ pip install seamapi
 bundle add seamapi
 ```
 
-test
+{% endcode %}
