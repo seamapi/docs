@@ -7,6 +7,7 @@
 - [Get API Key](quickstart/get-api-key.md)
 - [Installation](quickstart/installation.md)
 - [Authentication](quickstart/authentication.md)
+- [Test](quickstart/test.md)
 
 ## Core Concepts
 
