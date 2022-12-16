@@ -1,8 +1,8 @@
 # Authentication
 
-Export your API key as an env var. Seam client libs will automatically pick it up. For example:
+Export your [API key](get-api-key.md) as an env var. Seam client libs will automatically pick it up. For example:
 
-```sh
+```
 $ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
 ```
 
@@ -10,7 +10,6 @@ Next, run the code below to check you are correctly authenticated:
 
 {% tabs %}
 {% tab title="Javascript" %}
-
 ```javascript
 // Replace with
 // const Seam = require("seamapi")
@@ -37,11 +36,9 @@ checkAuth()
 }
 */
 ```
-
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 from seamapi import Seam
 
@@ -54,11 +51,9 @@ print(workspace)
 # Workspace(workspace_id='ab804f5a-7dd2-42c8-8d09-0beff4f795eb',
 #   name='Sanbox', is_sandbox=True)
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 require 'seamapi'
 
@@ -70,6 +65,5 @@ puts workspace
 
 # <Seam::Workspace:0x0070328                                workspace_id="123e4567-e89b-12d3-a456-426614174000" name="MySandbox" connect_partner_name="Partner Sandbox" is_sandbox=true>
 ```
-
 {% endtab %}
 {% endtabs %}
