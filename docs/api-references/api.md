@@ -14,6 +14,8 @@ coverY: 0
 
 <figure><img src="../.gitbook/assets/august-getting-seo-cover.jpg" alt=""><figcaption></figcaption></figure>
 
+<figure><img src="../.gitbook/assets/connect-flow-screens-1.png" alt=""><figcaption></figcaption></figure>
+
 {% hint style="info" %}
 This is a hint!
 {% endhint %}
