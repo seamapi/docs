@@ -1,0 +1,92 @@
+# Events
+
+Events are our way of letting you know when something interesting happens in your workspace. When an interesting event occurs, we create a new `Event` object. For example, when a lock is unlocked, we create a `lock.unlocked` event; and when a device's battery level is low, we create a `device.battery_low` event.
+
+As with other API resources, you can use endpoints to retrieve an [individual event](get-an-event.md) or a [list of events](list-events.md) from the API. We also have a separate [webhooks](../../core-concepts/webhooks.md) system for sending the `Event` objects directly to an endpoint on your sever. Webhooks are managed in your workspace settings, and our [Webhooks](../../core-concepts/webhooks.md) guide will help you get set up.
+
+## The Event Object
+
+### Common Event Properties
+
+| `event_id`             | String                                     | Unique identifier for the `event`.                                           |
+| ---------------------- | ------------------------------------------ | ---------------------------------------------------------------------------- |
+| `event_type`           | As seen in '[Event Types](./#event-types)' | Type of event                                                                |
+| `created_at`           | String                                     | Time at which the `event` was created. Displayed in an ISO8601 string.       |
+| `workspace_id`         | String                                     | Unique identifier for the `workspace` that the `event` belongs to.           |
+| `connected_account_id` | String                                     | The unique identifier of the connected account to which this event pertains. |
+
+### Common Device Event Properties
+
+In addition to the common event properties, the following properties are available for all events that pertain to devices - this includes all events outside of the `connected_account.*` events:
+
+|             |        |                                                                |
+| ----------- | ------ | -------------------------------------------------------------- |
+| `device_id` | String | Unique identifier for the `device` that triggered the `event`. |
+
+### Access Code Event Properties
+
+In addition to the common event properties, and common device event properties, the following properties are available for events that pertain to access codes:
+
+|                  |        |                                                                                                                               |
+| ---------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| `access_code_id` | String | Present on all of the `access_code.*` events. Specifies the unique identifier of the access code to which the event pertains. |
+| `code`           | String | Only present on an `access_code.set_on_device` event. Specifies the code digits for an access code.                           |
+
+### Lock Events
+
+In addition to the common event properties, and common device event properties, the following properties are available for events that pertain to lock actions:
+
+|          |                                    |                                                                                              |
+| -------- | ---------------------------------- | -------------------------------------------------------------------------------------------- |
+| `method` | `keycode` or `manual` or `unknown` | Present on all of the `lock.*` events. Specifies the method used to perform the lock action. |
+
+### Device Low Battery Events
+
+In addition to the common event properties, and common device event properties, the following properties are available on `device.low_battery` events:
+
+|                 |              |                                                                                           |
+| --------------- | ------------ | ----------------------------------------------------------------------------------------- |
+| `battery_level` | Number (0-1) | Determines the battery level of the device. Only present on a `device.low_battery` event. |
+
+### Device Disconnected Events
+
+In addition to the common event properties, and common device event properties, the following properties are available on `device.disconnected` events:
+
+|              |                                                                       |                                                                                                 |
+| ------------ | --------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `error_code` | `account_disconnected` or `hub_disconnected` or `device_disconnected` | Only present on a `device.disconnected` event. A code to indicate the reason for disconnection. |
+
+## Event Types
+
+| Event Name                                  | Description                                                                                                                                                                                                                                                                      |
+| ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `access_code.created`                       | An `access_code` has been created                                                                                                                                                                                                                                                |
+| `access_code.changed`                       | An `access_code` status or property has changed.                                                                                                                                                                                                                                 |
+| `access_code.set_on_device`                 | An `access_code` has been programmed onto a device.                                                                                                                                                                                                                              |
+| `access_code.removed_from_device`           | An `access_code` has been removed from a device.                                                                                                                                                                                                                                 |
+| `access_code.delay_in_setting_on_device`    | There was a longer than expected delay in programming an access code onto a device.  For time bound codes, this is sent when the code is not set by the `starts_at` time. This is not necessarily a failure as the code might successfully be set even after this event is sent. |
+| `access_code.failed_to_set_on_device`       | An error occurred in trying to program the code onto a device. This indicates a failure occurred but the failure might be temporary and may recover (in which case an `access_code.set_on_device` event will be sent).                                                           |
+| `access_code.delay_in_removing_from_device` | There was a longer than expected delay in removing an access code from a device.  This is not necessarily a failure as the code might successfully be removed even after this event is sent.                                                                                     |
+| `access_code.failed_to_remove_from_device`  | An error occurred in trying to remove an access code from a device. This indicates a failure occurred but the failure might be temporary and may recover (in which case an `access_code.removed_from_device` event will be sent).                                                |
+| `connected_account.added`                   | A connected account has been imported into your Seam workspace.                                                                                                                                                                                                                  |
+| `connected_account.connected`               | Seam has established connection to or is reconnected to a connected account.                                                                                                                                                                                                     |
+| `connected_account.disconnected`            | Seam has lost connection to a connected account. Please ask the account owner to sign in to their account through a new connect webview again.                                                                                                                                   |
+| `device.added`                              | A device has been added to your Seam workspace.                                                                                                                                                                                                                                  |
+| `device.connected`                          | A device has come online.                                                                                                                                                                                                                                                        |
+| `device.disconnected`                       | A device has gone offline.                                                                                                                                                                                                                                                       |
+| `device.low_battery`                        | The battery level of the device drops below the low battery level threshold.                                                                                                                                                                                                     |
+| `device.tampered`                           | A device detects that someone has opened up its case, or has moved the device.                                                                                                                                                                                                   |
+| `lock.locked`                               | A door lock has been locked.                                                                                                                                                                                                                                                     |
+| `lock.unlocked`                             | A door lock has been unlocked.                                                                                                                                                                                                                                                   |
+
+## List of Methods
+
+| [List Events ](list-events.md) | List and Filter Events           |
+| ------------------------------ | -------------------------------- |
+| Get Event                      | Get data for an individual event |
+
+## Testing out Events
+
+Try using our Webhooks Sandbox in the Seam Dashboard to see the different payloads for each event and test them against your own endpoints!
+
+<figure><img src="../../.gitbook/assets/Screen Shot 2022-09-01 at 9.38.05 AM.png" alt=""><figcaption></figcaption></figure>

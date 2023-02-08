@@ -1,0 +1,912 @@
+{
+  "openapi": "3.0.0",
+  "info": { "title": "Seam Connect", "version": "1.0.0" },
+  "servers": [{ "url": "https://connect.getseam.com" }],
+  "paths": {
+    "/index": {
+      "get": {
+        "summary": "/index",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": []
+      }
+    },
+    "/access_codes/create": {
+      "post": {
+        "summary": "/access_codes/create",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "device_id": { "type": "string", "format": "uuid" },
+                  "name": { "type": "string" },
+                  "starts_at": { "type": "string" },
+                  "ends_at": { "type": "string" },
+                  "code": {
+                    "type": "string",
+                    "minLength": 4,
+                    "maxLength": 8,
+                    "pattern": "^\\d+$"
+                  },
+                  "sync": { "default": false, "type": "boolean" },
+                  "attempt_for_offline_device": {
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "common_code_key": { "type": "string" }
+                },
+                "required": ["device_id"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/access_codes/create_multiple": {
+      "put": {
+        "summary": "/access_codes/create_multiple",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "device_ids": {
+                    "type": "array",
+                    "items": { "type": "string", "format": "uuid" }
+                  },
+                  "behavior_when_code_cannot_be_shared": {
+                    "default": "throw",
+                    "type": "string",
+                    "enum": ["throw", "create_random_code"]
+                  },
+                  "name": { "type": "string" },
+                  "starts_at": { "type": "string" },
+                  "ends_at": { "type": "string" },
+                  "attempt_for_offline_device": {
+                    "default": true,
+                    "type": "boolean"
+                  }
+                },
+                "required": ["device_ids"]
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "/access_codes/create_multiple",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "device_ids": {
+                    "type": "array",
+                    "items": { "type": "string", "format": "uuid" }
+                  },
+                  "behavior_when_code_cannot_be_shared": {
+                    "default": "throw",
+                    "type": "string",
+                    "enum": ["throw", "create_random_code"]
+                  },
+                  "name": { "type": "string" },
+                  "starts_at": { "type": "string" },
+                  "ends_at": { "type": "string" },
+                  "attempt_for_offline_device": {
+                    "default": true,
+                    "type": "boolean"
+                  }
+                },
+                "required": ["device_ids"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/access_codes/delete": {
+      "post": {
+        "summary": "/access_codes/delete",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      },
+      "delete": {
+        "summary": "/access_codes/delete",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      }
+    },
+    "/access_codes/get": {
+      "get": {
+        "summary": "/access_codes/get",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }],
+        "parameters": [
+          {
+            "name": "device_id",
+            "in": "query",
+            "schema": { "type": "string", "format": "uuid" },
+            "required": false
+          },
+          {
+            "name": "access_code_id",
+            "in": "query",
+            "schema": { "type": "string", "format": "uuid" },
+            "required": false
+          },
+          {
+            "name": "code",
+            "in": "query",
+            "schema": { "type": "string" },
+            "required": false
+          }
+        ]
+      }
+    },
+    "/access_codes/list": {
+      "get": {
+        "summary": "/access_codes/list",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }],
+        "parameters": [
+          {
+            "name": "device_id",
+            "in": "query",
+            "schema": { "type": "string", "format": "uuid" },
+            "required": true
+          }
+        ]
+      }
+    },
+    "/access_codes/update": {
+      "put": {
+        "summary": "/access_codes/update",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "starts_at": { "type": "string" },
+                  "ends_at": { "type": "string" },
+                  "code": {
+                    "type": "string",
+                    "minLength": 4,
+                    "maxLength": 8,
+                    "pattern": "^\\d+$"
+                  },
+                  "sync": { "default": false, "type": "boolean" },
+                  "attempt_for_offline_device": {
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "access_code_id": { "type": "string", "format": "uuid" },
+                  "device_id": { "type": "string", "format": "uuid" }
+                },
+                "required": ["access_code_id"]
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "/access_codes/update",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "starts_at": { "type": "string" },
+                  "ends_at": { "type": "string" },
+                  "code": {
+                    "type": "string",
+                    "minLength": 4,
+                    "maxLength": 8,
+                    "pattern": "^\\d+$"
+                  },
+                  "sync": { "default": false, "type": "boolean" },
+                  "attempt_for_offline_device": {
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "access_code_id": { "type": "string", "format": "uuid" },
+                  "device_id": { "type": "string", "format": "uuid" }
+                },
+                "required": ["access_code_id"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/action_attempts/get": {
+      "get": {
+        "summary": "/action_attempts/get",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }],
+        "parameters": [
+          {
+            "name": "action_attempt_id",
+            "in": "query",
+            "schema": { "type": "string", "format": "uuid" },
+            "required": true
+          }
+        ]
+      }
+    },
+    "/action_attempts/list": {
+      "get": {
+        "summary": "/action_attempts/list",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      }
+    },
+    "/connect_webviews/create": {
+      "post": {
+        "summary": "/connect_webviews/create",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "device_selection_mode": {
+                    "type": "string",
+                    "enum": ["none", "single", "multiple"]
+                  },
+                  "custom_redirect_url": { "type": "string" },
+                  "custom_redirect_failure_url": { "type": "string" },
+                  "accepted_providers": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "akuvox",
+                        "august",
+                        "brivo",
+                        "butterflymx",
+                        "schlage",
+                        "smartthings",
+                        "yale_access",
+                        "salto",
+                        "doorking",
+                        "salto",
+                        "genie",
+                        "linear",
+                        "seam_relay_admin"
+                      ]
+                    }
+                  }
+                },
+                "required": ["accepted_providers"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/connect_webviews/delete": {
+      "post": {
+        "summary": "/connect_webviews/delete",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "connect_webview_id": { "type": "string", "format": "uuid" }
+                },
+                "required": ["connect_webview_id"]
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "/connect_webviews/delete",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "connect_webview_id": { "type": "string", "format": "uuid" }
+                },
+                "required": ["connect_webview_id"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/connect_webviews/get": {
+      "get": {
+        "summary": "/connect_webviews/get",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }],
+        "parameters": [
+          {
+            "name": "connect_webview_id",
+            "in": "query",
+            "schema": { "type": "string", "format": "uuid" },
+            "required": true
+          }
+        ]
+      }
+    },
+    "/connect_webviews/list": {
+      "get": {
+        "summary": "/connect_webviews/list",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      }
+    },
+    "/connect_webviews/view": {
+      "get": {
+        "summary": "/connect_webviews/view",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [],
+        "parameters": [
+          {
+            "name": "connect_webview_id",
+            "in": "query",
+            "schema": { "type": "string", "format": "uuid" },
+            "required": true
+          },
+          {
+            "name": "auth_token",
+            "in": "query",
+            "schema": { "type": "string" },
+            "required": true
+          }
+        ]
+      }
+    },
+    "/connected_accounts/delete": {
+      "post": {
+        "summary": "/connected_accounts/delete",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "connected_account_id": { "type": "string", "format": "uuid" }
+                },
+                "required": ["connected_account_id"]
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "/connected_accounts/delete",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "connected_account_id": { "type": "string", "format": "uuid" }
+                },
+                "required": ["connected_account_id"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/connected_accounts/get": {
+      "get": {
+        "summary": "/connected_accounts/get",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      }
+    },
+    "/connected_accounts/list": {
+      "get": {
+        "summary": "/connected_accounts/list",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      }
+    },
+    "/devices/delete": {
+      "post": {
+        "summary": "/devices/delete",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      },
+      "delete": {
+        "summary": "/devices/delete",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      }
+    },
+    "/devices/get": {
+      "get": {
+        "summary": "/devices/get",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }],
+        "parameters": [
+          {
+            "name": "device_id",
+            "in": "query",
+            "schema": { "type": "string", "format": "uuid" },
+            "required": false
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "schema": { "type": "string" },
+            "required": false
+          }
+        ]
+      }
+    },
+    "/devices/list": {
+      "post": {
+        "summary": "/devices/list",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      },
+      "get": {
+        "summary": "/devices/list",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      }
+    },
+    "/devices/update": {
+      "patch": {
+        "summary": "/devices/update",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      },
+      "post": {
+        "summary": "/devices/update",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      }
+    },
+    "/events/get": {
+      "get": {
+        "summary": "/events/get",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      }
+    },
+    "/events/list": {
+      "post": {
+        "summary": "/events/list",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      },
+      "get": {
+        "summary": "/events/list",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      }
+    },
+    "/health/get_health": {
+      "get": {
+        "summary": "/health/get_health",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": []
+      }
+    },
+    "/health/get_service_health": {
+      "get": {
+        "summary": "/health/get_service_health",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": []
+      }
+    },
+    "/health/index": {
+      "get": {
+        "summary": "/health/index",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": []
+      }
+    },
+    "/locks/get": {
+      "post": {
+        "summary": "/locks/get",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      },
+      "get": {
+        "summary": "/locks/get",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      }
+    },
+    "/locks/list": {
+      "post": {
+        "summary": "/locks/list",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      },
+      "get": {
+        "summary": "/locks/list",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      }
+    },
+    "/locks/lock_door": {
+      "post": {
+        "summary": "/locks/lock_door",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "device_id": { "type": "string", "format": "uuid" },
+                  "sync": { "default": false, "type": "boolean" }
+                },
+                "required": ["device_id"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/locks/unlock_door": {
+      "post": {
+        "summary": "/locks/unlock_door",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "device_id": { "type": "string", "format": "uuid" },
+                  "sync": { "default": false, "type": "boolean" }
+                },
+                "required": ["device_id"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/webhooks/create": {
+      "post": {
+        "summary": "/webhooks/create",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": { "type": "string", "format": "uri" },
+                  "event_types": {
+                    "default": ["*"],
+                    "type": "array",
+                    "items": { "type": "string" }
+                  }
+                },
+                "required": ["url"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/webhooks/delete": {
+      "post": {
+        "summary": "/webhooks/delete",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      },
+      "delete": {
+        "summary": "/webhooks/delete",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      }
+    },
+    "/webhooks/get": {
+      "get": {
+        "summary": "/webhooks/get",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }],
+        "parameters": [
+          {
+            "name": "webhook_id",
+            "in": "query",
+            "schema": { "type": "string" },
+            "required": true
+          }
+        ]
+      }
+    },
+    "/webhooks/list": {
+      "get": {
+        "summary": "/webhooks/list",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      }
+    },
+    "/workspaces/get": {
+      "get": {
+        "summary": "/workspaces/get",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      }
+    },
+    "/workspaces/list": {
+      "get": {
+        "summary": "/workspaces/list",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      }
+    },
+    "/workspaces/reset_sandbox": {
+      "post": {
+        "summary": "/workspaces/reset_sandbox",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [{ "apiKeyAuth": [] }, { "sessionAuth": [] }]
+      }
+    },
+    "/health/service/[service_name]": {
+      "get": {
+        "summary": "/health/service/[service_name]",
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Bad Request" },
+          "401": { "description": "Unauthorized" }
+        },
+        "security": [],
+        "parameters": [
+          {
+            "name": "service_name",
+            "in": "query",
+            "schema": { "type": "string" },
+            "required": true
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "sessionAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      },
+      "apiKeyAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "API token"
+      }
+    }
+  }
+}
