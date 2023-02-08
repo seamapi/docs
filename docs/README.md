@@ -13,3 +13,4 @@ We organized our documentation as follows:
 3. **Device Capabilities:**  Explore the set of APIs we expose to each device.
 4. **Device Guides:** Step-by-step instructions on how to link and control devices.
 
+See an issue in the docs? [Create an issue on Github!](https://github.com/seamapi/api-docs)
