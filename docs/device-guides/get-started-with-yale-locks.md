@@ -451,7 +451,7 @@ In addition, if you'd like to explore other aspects of Seam, here is a list of h
 - [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
 - [August Getting Started Guide](get-started-with-august-locks.md)
 - [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
-- [Salto Getting Started Guide](get-started-with-salto.md)
+- [Salto Getting Started Guide](get-started-with-salto-locks.md)
 - [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list-events.md)
 - [Core Concepts](../core-concepts)
 
