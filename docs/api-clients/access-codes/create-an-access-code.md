@@ -6,6 +6,95 @@ description: Create an Access Code for a Device by its ID
 
 ### Code Examples
 
+{% swagger method="post" path="/access_codes/create" baseUrl="https://connect.getseam.com" summary="Create an Access Code" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="body" name="device_id" required="true" %}
+Device ID
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="name" required="false" %}
+Name of the Access Code
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="starts_at" required="false" type="ISO8601 string" %}
+Start Time of the Access Code
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="ends_at" required="false" type="ISO8601 string" %}
+End Time of the Access Code
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="code" required="false" type="string" %}
+Pin code to be programmed.
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Authorization" required="true" %}
+Bearer <API_KEY>
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="sync" type="boolean" %}
+Set this to true to receive the 
+
+`access_code`
+
+ object in the 
+
+`result`
+{% endswagger-parameter %}
+
+{% swagger-response status="201: Created" description="" %}
+```javascript
+{
+  "action_attempt": {
+    "status": "pending",
+    "action_type": "CREATE_ACCESS_CODE",
+    "action_attempt_id": "c10e3db5-a5a2-47f2-a76f-48379ed9cd22",
+    "result": null,
+    "error": null
+  },
+  "ok": true
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="" %}
+```javascript
+{
+  "error": {
+    "type": "invalid_input",
+    "message": "Required for provided \"device_id\"",
+    "validation_errors": {
+      "_errors": [],
+      "device_id": {
+        "_errors": [
+          "Required"
+        ]
+      }
+    },
+    "request_id": "9f3e59f1-cfb5-4e48-93df-0a988554eb0b"
+  },
+  "ok": false
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="404: Not Found" description="" %}
+```javascript
+{
+  "error": {
+    "type": "device_not_found",
+    "message": "Device not found",
+    "request_id": "552c8cf1-3dbc-4920-adc6-047328e39369"
+  },
+  "ok": false
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
 #### Creating an Ongoing Access Code
 
 {% tabs %}
