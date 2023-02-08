@@ -10,7 +10,7 @@ We organized our documentation as follows:
 
 1. **Quick Start:** [The fastest way](quickstart/get-api-key.md) to your first API call! **<- Go here if you're in a hurry!**
 2. **Core Concept:** Learn the core concepts that underpin our APIs.
-3. **Device Capabilities:**  Explore the set of APIs we expose to each device.
+3. **Device Capabilities:** Explore the set of APIs we expose to each device.
 4. **Device Guides:** Step-by-step instructions on how to link and control devices.
 
-See an issue in the docs? [Create an issue on Github!](https://github.com/seamapi/api-docs)
+See an issue in the docs? [Create an issue on Github!](https://github.com/seamapi/api-docs/issues)
