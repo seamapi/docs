@@ -8,16 +8,18 @@ description: Learn how to connect and control your August lock with the Seam API
 
 ## Overview
 
-Seam provides a universal API to connect and control many brands of smart locks. This guide provides a rapid introduction to connecting and controlling your [August](https://www.seam.co/manufacturers/august) lock using the Seam API. To learn more about other device brands supported by the Seam API, such as Yale, Schlage, and Salto, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).&#x20;
+Seam provides a universal API to connect and control many brands of smart locks. This guide provides a rapid introduction to connecting and controlling your [August](https://www.seam.co/manufacturers/august) lock using the Seam API. To learn more about other smart lock brands supported by Seam such as Yale, Schlage, and Salto, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).&#x20;
+
+
 
 ## 1 — Install Seam SDK
 
 Seam provides client libraries for many languages such as Javascript, Python, Ruby, and PHP, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.&#x20;
 
-- **Javascript:** `npm i seamapi` ([npm](https://www.npmjs.com/package/seamapi), [github](https://github.com/seamapi/javascript))
-- **Python:** `pip install seamapi` ([pip](https://pypi.org/project/seamapi/), [github](https://github.com/seamapi/python))
-- **Ruby:** `bundle add seamapi` ([rubygem](https://rubygems.org/gems/seamapi), [github](https://github.com/seamapi/ruby))
-- **PHP:** `composer require seamapi/seam` ([packagist](https://packagist.org/packages/seamapi/seam), [github](https://github.com/seamapi/php))&#x20;
+* **Javascript:** `npm i seamapi` ([npm](https://www.npmjs.com/package/seamapi), [github](https://github.com/seamapi/javascript))
+* **Python:** `pip install seamapi` ([pip](https://pypi.org/project/seamapi/), [github](https://github.com/seamapi/python))
+* **Ruby:** `bundle add seamapi` ([rubygem](https://rubygems.org/gems/seamapi), [github](https://github.com/seamapi/ruby))
+* **PHP:** `composer require seamapi/seam` ([packagist](https://packagist.org/packages/seamapi/seam), [github](https://github.com/seamapi/php))&#x20;
 
 Once installed, [sign-up for Seam](https://dashboard.getseam.com/) to get your API key, and export it as an environment variable:
 
@@ -37,7 +39,6 @@ To control your August lock via the Seam API, you must first authorize your Seam
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 from seamapi import Seam
 
@@ -50,30 +51,26 @@ assert webview.login_successful is False
 # Send the webview URL to your user
 print(webview.url)
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
-import Seam from 'seamapi'
+import Seam from "seamapi";
 
-const seam = new Seam()
+const seam = new Seam();
 
 const { connect_webview: connectWebview } = await seam.connectWebviews.create({
-  accepted_providers: ['august'],
-})
+  accepted_providers: ["august"],
+});
 
-console.log(connectWebview.login_successful) // false
+console.log(connectWebview.login_successful); // false
 
-// Send the webview URL to your user
-console.log(connectWebview.url)
+// Send the webview URL to your user 
+console.log(connectWebview.url);
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 <pre class="language-ruby"><code class="lang-ruby">require "seamapi"
 
 <strong>seam = Seam::Client.new(api_key: "MY_API_KEY")
@@ -87,7 +84,6 @@ puts webview.login_successful # false
 # Send the webview URL to your user 
 puts webview.url
 </code></pre>
-
 {% endtab %}
 {% endtabs %}
 
@@ -95,9 +91,9 @@ puts webview.url
 
 Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the August [sandbox test accounts ](https://docs.seam.co/latest/device-guides/sandbox-and-sample-data)credentials below:
 
-- **email:** jane@example.com
-- **password:** 1234
-- **2-factor-auth:** 123456
+* **email:** jane@example.com
+* **password:** 1234
+* **2-factor-auth:** 123456
 
 <figure><img src="../.gitbook/assets/connect-flow-screens.png" alt=""><figcaption><p>Seam Connect Webview flow to connect August account with Seam</p></figcaption></figure>
 
@@ -105,35 +101,27 @@ Confirm the Connect Webview was successful by querying its status:
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
 
 assert updated_webview.login_successful # true
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
-const updatedWebview = await seam.connectWebviews.get(
-  connectWebview.connect_webview_id,
-)
+const updatedWebview = await seam.connectWebviews.get(connectWebview.connect_webview_id)
 
 console.log(updatedWebview.login_successful) // true
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
 
 puts updated_webview.login_successful # true
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -143,7 +131,6 @@ After an August account is linked with Seam, you can retrieve devices for this A
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 all_locks = seam.locks.list()
 
@@ -153,23 +140,21 @@ assert some_lock.properties["online"] is True
 assert some_lock.properties["locked"] is True
 
 print(some_lock)
-# Device(device_id='9f237252-e182-49d6-9f32-464efb0a3519',
-#    device_type='august_lock',
-#    location=None,
+# Device(device_id='9f237252-e182-49d6-9f32-464efb0a3519', 
+#    device_type='august_lock', 
+#    location=None, 
 #    properties={
-#   'locked': False,
-#    'online': True,
-#    'door_open': False,
-#    'manufacturer': 'august',
-#    'battery_level': 0.9999532347993827,
-#    'august_metadata': {'lock_id': 'lock-3', 'lock_name': 'GARAGE', 'has_keypad': True, 'house_name': 'My House'}, 'name': 'GARAGE'},
+#   'locked': False, 
+#    'online': True, 
+#    'door_open': False, 
+#    'manufacturer': 'august', 
+#    'battery_level': 0.9999532347993827, 
+#    'august_metadata': {'lock_id': 'lock-3', 'lock_name': 'GARAGE', 'has_keypad': True, 'house_name': 'My House'}, 'name': 'GARAGE'}, 
 #    capabilities_supported=['access_code', 'lock'])
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -206,21 +191,31 @@ console.log(someLock)
   warnings: []
 }
 */
-```
 
+```
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
-some_lock = seam.locks.list.first
+some_lock = seam.locks.list().first
 
-puts some_lock.properties['online'] # true
-puts some_lock.properties['locked'] # true
+puts some_lock.properties["online"] # true
+puts some_lock.properties["locked"] # true
 
-puts some_lock #  warnings=[]> #  errors=[] #  created_at=2022-12-07 21:21:44.055 UTC #     "august_metadata"=>{...}} #     "battery_level"=>0.9999532347993827,  #     "door_open"=>false, "manufacturer"=>"august",  #     "online"=>true,  #     "locked"=>false,  #  properties={ #  device_type="august_lock" #  device_id="9f237252-e182-49d6-9f32-464efb0a3519" # <Seam::Device:0x005f0
+puts some_lock
+# <Seam::Device:0x005f0
+#  device_id="9f237252-e182-49d6-9f32-464efb0a3519"
+#  device_type="august_lock"
+#  properties={
+#     "locked"=>false, 
+#     "online"=>true, 
+#     "door_open"=>false, "manufacturer"=>"august", 
+#     "battery_level"=>0.9999532347993827, 
+#     "august_metadata"=>{...}}
+#  created_at=2022-12-07 21:21:44.055 UTC
+#  errors=[]
+#  warnings=[]>
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -244,7 +239,6 @@ Next, you can perform the basic action of locking and unlocking the door.
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 # lock the door
 seam.locks.lock_door(some_lock)
@@ -256,11 +250,9 @@ seam.locks.unlock_door(some_lock)
 updated_lock = seam.locks.get(some_lock.device_id)
 assert updated_lock.properties["locked"] is False
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 // lock the door
 await seam.locks.lockDoor(someLock.device_id)
@@ -272,23 +264,20 @@ await seam.locks.unlockDoor(someLock.device_id)
 updatedLock = await seam.locks.get(someLock.device_id)
 console.log(updatedLock.properties.locked) // false
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 # lock the door
 seam.locks.lock_door(some_lock)
 updated_lock = seam.locks.get(some_lock.device_id)
-puts updated_lock.properties['locked'] # true
+puts updated_lock.properties["locked"] # true
 
 # unlock the door
 seam.locks.unlock_door(some_lock)
 updated_lock = seam.locks.get(some_lock.device_id)
-puts updated_lock.properties['locked'] # false
+puts updated_lock.properties["locked"] # false
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -300,9 +289,10 @@ The Seam API makes it easy to program both `ongoing` codes and `timebound` codes
 
 ![An August Smart Lock with Keypad](<../.gitbook/assets/image (8).png>)
 
+
+
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 # create an ongoing code
 seam.access_codes.create(
@@ -311,10 +301,10 @@ seam.access_codes.create(
 
 # create a timebound code
 seam.access_codes.create(
-    device=some_lock,
-    code="888888",
+    device=some_lock, 
+    code="888888", 
     name="My Temp Access Code",
-    starts_at="2028-08-12T19:23:42+0000",
+    starts_at="2028-08-12T19:23:42+0000", 
     ends_at="2028-08-13T19:23:42+0000"
 )
 
@@ -330,37 +320,36 @@ seam.access_codes.list(device=some_lock)
 #     access_code_id='8c2db4da-b137-4c08-a2c3-d611e6ff91b3',
 #     type='timebound',
 #     code='888888',
-#     starts_at='2028-08-12T19:24:00.000Z',
+#     starts_at='2028-08-12T19:24:00.000Z', 
 #     ends_at='2028-08-13T19:24:00.000Z',
 #   )
 # ]
 
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 // create an ongoing code
 await seam.accessCodes.create({
-  device_id: someLock.device_id,
-  code: '123456',
-  name: 'Personal Access Code',
-})
+    device_id: someLock.device_id,
+    code: "123456",
+    name: "Personal Access Code",
+  });
 
 // create a timebound code
 await seam.accessCodes.create({
-  device_id: someLock.device_id,
-  code: '888888',
-  name: 'My Temp Access Code',
-  starts_at: '2028-11-12T19:23:42+0000',
-  ends_at: '2028-11-13T19:23:42+0000',
-})
-
+    device_id: someLock.device_id,
+    code: "888888",
+    name: "My Temp Access Code",
+    starts_at: "2028-11-12T19:23:42+0000",
+    ends_at: "2028-11-13T19:23:42+0000",
+});
+  
+  
 // use a device_id as the "device_id" parameter
 await seam.accessCodes.list({
-  device_id: someLock.device_id,
+    device_id: someLock.device_id,
 })
 
 /*
@@ -382,20 +371,20 @@ await seam.accessCodes.list({
 ]
 */
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 # create an ongoing code
 seam.access_codes.create(
-  device_id: some_lock.device_id, code: '123456', name: 'Personal Access Code'
+  device_id: some_lock.device_id,
+  code: '123456',
+  name: 'Personal Access Code'
 )
 
 # create a timebound code
 seam.access_codes.create(
-  device_id: some_lock.device_id,
+  device_id: some_lock.device_id, 
   code: '888888',
   name: 'My Temp Access Code',
   starts_at: '2028-08-12T19:23:42+0000',
@@ -432,8 +421,8 @@ seam.access_codes.list(some_lock)
 #   errors=[]
 #   warnings=[]
 #   access_code_id="91a08a3d-a0bb-4ff0-bfb4-ced164353988">]
-```
 
+```
 {% endtab %}
 {% endtabs %}
 
@@ -445,11 +434,12 @@ Now that you've completed this guide, you can try to connect a real August devic
 
 In addition, if you'd like to explore other aspects of Seam, here is a list of helpful resources:
 
-- [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
-- [Yale Getting Started Guide](get-started-with-yale-locks.md)
-- [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
-- [Salto Getting Started Guide](get-started-with-salto-locks.md)
-- [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list-events.md)
-- [Core Concepts](../core-concepts)
+* [Schlage Getting Started Guide](broken-reference)
+* [Yale Getting Started Guide](get-started-with-yale-locks.md)
+* [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
+* [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list-events.md)
+* [Core Concepts](broken-reference)
+
+
 
 If you have any question or want to report an issue, email us at support@seam.co.&#x20;
