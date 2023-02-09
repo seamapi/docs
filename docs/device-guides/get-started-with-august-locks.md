@@ -60,7 +60,7 @@ import Seam from 'seamapi'
 
 const seam = new Seam()
 
-const { connect_webview: connectWebview } = await seam.connectWebviews.create({
+const connectWebview = await seam.connectWebviews.create({
   accepted_providers: ['august'],
 })
 
