@@ -10,7 +10,7 @@ description: Learn how to connect and control your Salto lock with the Seam API.
 
 Seam provides a universal API to connect and control many brands of locks. This guide provides a rapid introduction to connecting and controlling your [Salto](https://www.seam.co/manufacturers/salto) locks using the Seam API. To learn more about other device brands supported by the Seam API, such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
-Note that Salto offers multiple lines of products: Salto Spaces, Salto KS, and Salto Nebula. This guide is specifically for Salto KS. Salto Spaces is an on-prem system that is offline. Salto Nebula has not yet been released as of this writing.
+Note that Salto offers multiple lines of products: Salto Spaces, Salto KS, and Salto Nebula. This guide is specifically for Salto KS. Salto Spaces is an on-prem system that is offline. Salto Nebula is not yet fully available as of this writing.
 
 &#x20;
 
@@ -92,6 +92,26 @@ puts webview.url
 ```
 
 {% endtab %}
+
+{% tab title="PHP" %}
+
+```php
+use Seam\SeamClient;
+
+$seam = new SeamClient("YOUR_API_KEY");
+
+$webview = $seam->connect_webviews->create(
+  accepted_providers: ["salto"]
+);
+
+echo json_encode($webview)
+/*
+{"connect_webview_id":"70c4df9e-1070-441f-92f8-fd6524062cec","workspace_id":"d7418ff3-a476-4f48-9a4b-211d1d21a03d","url":"https:\/\/connect.getseam.com\/connect_webviews\/view?connect_webview_id=70c4df9e-1070-441f-92f8-fd6524062cec&auth_token=9HJbwWKbD5aJLifZcozU9WWZXxropn9Bg","connected_account_id":null,"status":"pending","custom_redirect_url":null,"custom_redirect_failure_url":null,"created_at":"2023-02-09T02:14:06.147745+00:00","error":null}
+*/
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 #### Authorize Your Workspace
@@ -134,6 +154,15 @@ console.log(updatedWebview.login_successful) // true
 updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
 
 puts updated_webview.login_successful # true
+```
+
+{% endtab %}
+
+{% tab title="PHP" %}
+
+```php
+$webview = $seam->connect_webviews->get('729847ff-98e0-418d-aeba-1e3cb38157c6');
+assert($webview->status == 'pending');
 ```
 
 {% endtab %}
@@ -229,6 +258,24 @@ puts some_lock
 ```
 
 {% endtab %}
+
+{% tab title="PHP" %}
+
+```php
+use Seam\SeamClient;
+
+$seam = new SeamClient('YOUR_API_KEY');
+
+$locks = $seam->locks->list();
+
+echo json_encode($locks);
+/*
+[{"device_id":"681bf7bc-e7c6-48e6-acfe-6dbabd0615c5","workspace_id":"d7418ff3-a476-4f48-9a4b-211d1d21a03d","connected_account_id":"690dead6-e176-4f25-930b-9aef7c7137ad","device_type":"salto_lock","properties":{"online":true,"locked":true,"door_open":null,"battery_level":1,"name":"BACK DOOR","manufacturer":null,"august_metadata":null,"schlage_metadata":null,"smartthings_metadata":null},"location":null,"created_at":"2023-02-08T22:14:09.921Z","capabilities_supported":["access_code","lock"],"errors":[]},{"device_id":"c9fc699a-3f87-4d23-b5c2-1f8ac85aeca1","workspace_id":"d7418ff3-a476-4f48-9a4b-211d1d21a03d","connected_account_id":"690dead6-e176-4f25-930b-9aef7c7137ad","device_type":"salto_lock","properties":{"online":true,"locked":true,"door_open":null,"battery_level":1,"name":"EXTRA DOOR","manufacturer":null,"august_metadata":null,"schlage_metadata":null,"smartthings_metadata":null},"location":null,"created_at":"2023-02-08T22:14:09.952Z","capabilities_supported":[],"errors":[]},{"device_id":"da9dcedb-20ee-46df-8c08-e5268f624377","workspace_id":"d7418ff3-a476-4f48-9a4b-211d1d21a03d","connected_account_id":"690dead6-e176-4f25-930b-9aef7c7137ad","device_type":"salto_lock","properties":{"online":true,"locked":true,"door_open":null,"battery_level":1,"name":"FRONT_DOOR","manufacturer":null,"august_metadata":null,"schlage_metadata":null,"smartthings_metadata":null},"location":null,"created_at":"2023-02-08T22:14:09.890Z","capabilities_supported":["access_code","lock"],"errors":[]}]
+*/
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ### 4 — Locking & Unlocking a Door
@@ -297,6 +344,24 @@ puts updated_lock.properties['locked'] # false
 ```
 
 {% endtab %}
+
+{% tab title="PHP" %}
+
+```php
+use Seam\SeamClient;
+
+$seam = new SeamClient('YOUR_API_KEY');
+
+$some_lock = $seam->locks->list()[0];
+
+# unlock the door
+$seam->locks->unlock_door($lock->device_id);
+# lock the door
+$seam->locks->lock_door($lock->device_id);
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ### 5 — Setting Access Code on Salto Lock
@@ -306,7 +371,7 @@ Some Salto locks and access points will have a keypad available to program acces
 The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on an Salto lock. You can find out more about Salto lock access code in our [core concept section on access codes.](../core-concepts/access-codes.md)
 
 {% hint style="info" %}
-Salto does not let you specify a code
+Salto does not let you specify a code for an access code. Instead Salto generates a 6-digit code, which the Seam API returns.
 {% endhint %}
 
 {% tabs %}
@@ -314,10 +379,16 @@ Salto does not let you specify a code
 
 ```python
 # create an ongoing code
-seam.access_codes.create(device=some_lock, name="Personal Access Code")
+seam.access_codes.create(
+  device=some_lock,
+  name="Personal Access Code")
 
 # create a timebound code
-seam.access_codes.create(device=some_lock, name="My Temp Access Code", starts_at="2028-08-12T19:23:42+0000", ends_at="2028-08-13T19:23:42+0000")
+seam.access_codes.create(
+  device=some_lock,
+  name="My Temp Access Code",
+  starts_at="2028-08-12T19:23:42+0000",
+  ends_at="2028-08-13T19:23:42+0000")
 
 # you can use a device or a device_id as the "device" parameter
 seam.access_codes.list(device=some_lock)
@@ -337,14 +408,12 @@ seam.access_codes.list(device=some_lock)
 // create an ongoing code
 await seam.accessCodes.create({
   device_id: someLock.device_id,
-  code: '123456',
   name: 'Personal Access Code',
 })
 
 // create a timebound code
 await seam.accessCodes.create({
   device_id: someLock.device_id,
-  code: '888888',
   name: 'My Temp Access Code',
   starts_at: '2028-11-12T19:23:42+0000',
   ends_at: '2028-11-13T19:23:42+0000',
@@ -395,13 +464,12 @@ await seam.accessCodes.list({
 ```ruby
 # create an ongoing code
 seam.access_codes.create(
-  device_id: some_lock.device_id, code: '123456', name: 'Personal Access Code'
+  device_id: some_lock.device_id, name: 'Personal Access Code'
 )
 
 # create a timebound code
 seam.access_codes.create(
   device_id: some_lock.device_id,
-  code: '888888',
   name: 'My Temp Access Code',
   starts_at: '2028-08-12T19:23:42+0000',
   ends_at: '2028-08-13T19:23:42+0000'
@@ -428,6 +496,34 @@ seam.access_codes.list(some_lock)
 ```
 
 {% endtab %}
+
+{% tab title="PHP" %}
+
+```php
+use Seam\SeamClient;
+
+$seam = new SeamClient("YOUR_API_KEY");
+
+$some_lock = $seam->locks->list()[0];
+$seam->access_codes->create(
+  device_id: $some_lock->device_id, name: 'Personal Access Code'
+);
+
+$seam->access_codes->create(
+  device_id: $some_lock->device_id,
+  name: 'My Temp Access Code',
+  starts_at: '2028-08-12T19:23:42+0000',
+  ends_at: '2028-08-13T19:23:42+0000'
+);
+
+echo json_encode($access_code)
+/*
+[{"access_code_id":"19cea367-fd8c-40b7-9ce3-6dec76fe1763","name":"My Temp Access Code","type":"time_bound","status":"unset","starts_at":"2028-08-12T19:24:00.000Z","ends_at":"2028-08-13T19:24:00.000Z","code":null,"created_at":"2023-02-09T05:53:46.293Z","errors":[],"warnings":[]},{"access_code_id":"f797a8f0-b8f7-4734-9bea-962de5cad413","name":"Personal Access Code","type":"ongoing","status":"set","starts_at":null,"ends_at":null,"code":"37840","created_at":"2023-02-09T05:53:46.172Z","errors":[],"warnings":[]}]
+*/
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ###
