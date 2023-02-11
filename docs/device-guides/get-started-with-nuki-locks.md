@@ -8,7 +8,7 @@ description: Learn how to connect and control your Nuki locks with the Seam API.
 
 ## Overview
 
-Seam provides a universal API to connect and control many brands of locks. This guide provides a rapid introduction to connecting and controlling your [Nuki](https://www.seam.co/manufacturers/nuki) locks using the Seam API. To learn more about other device brands supported by the Seam API, such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
+Seam provides a universal API to connect and control many brands of locks, including Nuki. This guide provides a rapid introduction to connecting and controlling your [Nuki](https://www.seam.co/manufacturers/nuki) locks using the Seam API. To learn more about other device brands supported by the Seam API, such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
 &#x20;
 
@@ -28,7 +28,7 @@ $ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
 ```
 
 {% hint style="info" %}
-This guide uses a Sandbox Workspace. Only virtual devices can be connected. If you need to connect a real Nuki site, use a non-sandbox workspace and API key.
+This guide uses a Sandbox Workspace. Only virtual devices can be connected. If you need to connect a real Nuki device, use a non-sandbox workspace and API key.
 {% endhint %}
 
 ## 2 — Link Your Nuki Account with Seam
