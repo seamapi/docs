@@ -8,9 +8,7 @@ description: Learn how to connect and control your Nuki locks with the Seam API.
 
 ## Overview
 
-Seam provides a universal API to connect and control many brands of locks. This guide provides a rapid introduction to connecting and controlling your [Nuki](https://www.seam.co/manufacturers/Nuki) locks using the Seam API. To learn more about other device brands supported by the Seam API, such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
-
-Note that Nuki offers multiple lines of products: Nuki Spaces, Nuki KS, and Nuki Nebula. This guide is specifically for Nuki KS. Nuki Spaces is an on-prem system that is offline. Nuki Nebula is not yet fully available as of this writing.
+Seam provides a universal API to connect and control many brands of locks. This guide provides a rapid introduction to connecting and controlling your [Nuki](https://www.seam.co/manufacturers/nuki) locks using the Seam API. To learn more about other device brands supported by the Seam API, such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
 &#x20;
 
@@ -47,7 +45,7 @@ from seamapi import Seam
 
 seam = Seam()
 
-webview = seam.connect_webviews.create(accepted_providers=["Nuki"])
+webview = seam.connect_webviews.create(accepted_providers=["nuki"])
 
 assert webview.login_successful is False
 
@@ -65,7 +63,7 @@ import Seam from 'seamapi'
 const seam = new Seam()
 
 const { connect_webview: connectWebview } = await seam.connectWebviews.create({
-  accepted_providers: ['Nuki'],
+  accepted_providers: ['nuki'],
 })
 
 console.log(connectWebview.login_successful) // false
@@ -83,7 +81,7 @@ require 'seamapi'
 
 seam = Seam::Client.new(api_key: 'MY_API_KEY')
 
-webview = seam.connect_webviews.create(accepted_providers: %w[Nuki])
+webview = seam.connect_webviews.create(accepted_providers: %w[nuki])
 
 puts webview.login_successful # false
 
@@ -101,7 +99,7 @@ use Seam\SeamClient;
 $seam = new SeamClient("YOUR_API_KEY");
 
 $webview = $seam->connect_webviews->create(
-  accepted_providers: ["Nuki"]
+  accepted_providers: ["nuki"]
 );
 
 echo json_encode($webview)
@@ -118,10 +116,10 @@ echo json_encode($webview)
 
 Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the Nuki [sandbox test accounts ](https://docs.seam.co/latest/device-guides/sandbox-and-sample-data)credentials below:
 
-- **email:** jane@example.com
+- **email:** john@example.com
 - **password:** 1234
 
-<figure><img src="../.gitbook/assets/Nuki-connect-flow-screens.png" alt=""><figcaption><p>Seam Connect Webview flow to connect Nuki account with Seam</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/guides/nuki-connect-flow-screens.jpg" alt=""><figcaption><p>Seam Connect Webview flow to connect Nuki account with Seam</p></figcaption></figure>
 
 Confirm the Connect Webview was successful by querying its status:
 
@@ -184,7 +182,7 @@ assert some_lock.properties["online"] is True
 assert some_lock.properties["battery_level"] is True
 
 print(some_lock)
-# Device(device_id='681bf7bc-e7c6-48e6-acfe-6dbabd0615c5', device_type='Nuki_lock', location=None, properties={'locked': True, 'online': True, 'battery_level': 1, 'Nuki_metadata': {'model': 'wall_reader_pin', 'lock_id': 'lock_2', 'lock_type': 'wall_reader_pin', 'locked_state': 'locked', 'battery_level': 'fresh', 'customer_reference': 'BACK DOOR'}, 'has_direct_power': True, 'supported_code_lengths': [6], 'name': 'BACK DOOR'}, capabilities_supported=['access_code', 'lock'])
+# Device(device_id='60d0f1b6-26ae-4366-8d1b-d20ad0d6a62e', device_type='nuki_lock', location=None, properties={'locked': False, 'online': True, 'manufacturer': 'nuki', 'battery_level': 0.86, 'nuki_metadata': {'device_id': '545636388', 'device_name': 'Office Lock'}, 'supported_code_lengths': [6], 'name': 'Office Lock'}, capabilities_supported=['access_code', 'lock'], errors=[])
 ```
 
 {% endtab %}
@@ -201,38 +199,26 @@ console.log(someLock.properties.locked) // true
 
 console.log(someLock)
 /*
-    {
-        "device_id": "681bf7bc-e7c6-48e6-acfe-6dbabd0615c5",
-        "device_type": "Nuki_lock",
-        "capabilities_supported": [
-            "access_code",
-            "lock"
-        ],
-        "properties": {
-            "locked": true,
-            "online": true,
-            "battery_level": 1,
-            "Nuki_metadata": {
-                "model": "wall_reader_pin",
-                "lock_id": "lock_2",
-                "lock_type": "wall_reader_pin",
-                "locked_state": "locked",
-                "battery_level": "fresh",
-                "customer_reference": "BACK DOOR"
-            },
-            "has_direct_power": true,
-            "supported_code_lengths": [
-                6
-            ],
-            "name": "BACK DOOR"
-        },
-        "location": null,
-        "connected_account_id": "690dead6-e176-4f25-930b-9aef7c7137ad",
-        "workspace_id": "d7418ff3-a476-4f48-9a4b-211d1d21a03d",
-        "created_at": "2023-02-08T22:14:09.921Z",
-        "errors": [],
-        "warnings": []
-    }
+   {
+  device_id: '60d0f1b6-26ae-4366-8d1b-d20ad0d6a62e',
+  device_type: 'nuki_lock',
+  capabilities_supported: [ 'access_code', 'lock' ],
+  properties: {
+    locked: false,
+    online: true,
+    manufacturer: 'nuki',
+    battery_level: 0.86,
+    nuki_metadata: { device_id: '545636388', device_name: 'Office Lock' },
+    supported_code_lengths: [ 6 ],
+    name: 'Office Lock'
+  },
+  location: null,
+  connected_account_id: '32e92b46-7978-4d48-a3e7-9b04662151b3',
+  workspace_id: 'd7418ff3-a476-4f48-9a4b-211d1d21a03d',
+  created_at: '2023-02-11T00:46:12.940Z',
+  errors: [],
+  warnings: []
+}
 */
 ```
 
@@ -248,11 +234,11 @@ puts some_lock.properties['locked'] # true
 
 puts some_lock
 
-# <Seam::Device:0x005c8
-#   device_id="681bf7bc-e7c6-48e6-acfe-6dbabd0615c5"
-#   device_type="Nuki_lock"
-#   properties={"locked"=>true, "online"=>true, "battery_level"=>1, "Nuki_metadata"=>{"model"=>"wall_reader_pin", "lock_id"=>"lock_2", "lock_type"=>"wall_reader_pin", "locked_state"=>"locked", "battery_level"=>"fresh", "customer_reference"=>"BACK DOOR"}, "has_direct_power"=>true, "supported_code_lengths"=>[6], "name"=>"BACK DOOR"}
-#   created_at=2023-02-08 22:14:09.921 UTC
+# <Seam::Device:0x00730
+#   device_id="60d0f1b6-26ae-4366-8d1b-d20ad0d6a62e"
+#   device_type="nuki_lock"
+#   properties={"locked"=>false, "online"=>true, "manufacturer"=>"nuki", "battery_level"=>0.86, "nuki_metadata"=>{"device_id"=>"545636388", "device_name"=>"Office Lock"}, "supported_code_lengths"=>[6], "name"=>"Office Lock"}
+#   created_at=2023-02-11 00:46:12.94 UTC
 #   errors=[]
 #   warnings=[]>
 ```
@@ -270,7 +256,7 @@ $locks = $seam->locks->list();
 
 echo json_encode($locks);
 /*
-[{"device_id":"681bf7bc-e7c6-48e6-acfe-6dbabd0615c5","workspace_id":"d7418ff3-a476-4f48-9a4b-211d1d21a03d","connected_account_id":"690dead6-e176-4f25-930b-9aef7c7137ad","device_type":"Nuki_lock","properties":{"online":true,"locked":true,"door_open":null,"battery_level":1,"name":"BACK DOOR","manufacturer":null,"august_metadata":null,"schlage_metadata":null,"smartthings_metadata":null},"location":null,"created_at":"2023-02-08T22:14:09.921Z","capabilities_supported":["access_code","lock"],"errors":[]},{"device_id":"c9fc699a-3f87-4d23-b5c2-1f8ac85aeca1","workspace_id":"d7418ff3-a476-4f48-9a4b-211d1d21a03d","connected_account_id":"690dead6-e176-4f25-930b-9aef7c7137ad","device_type":"Nuki_lock","properties":{"online":true,"locked":true,"door_open":null,"battery_level":1,"name":"EXTRA DOOR","manufacturer":null,"august_metadata":null,"schlage_metadata":null,"smartthings_metadata":null},"location":null,"created_at":"2023-02-08T22:14:09.952Z","capabilities_supported":[],"errors":[]},{"device_id":"da9dcedb-20ee-46df-8c08-e5268f624377","workspace_id":"d7418ff3-a476-4f48-9a4b-211d1d21a03d","connected_account_id":"690dead6-e176-4f25-930b-9aef7c7137ad","device_type":"Nuki_lock","properties":{"online":true,"locked":true,"door_open":null,"battery_level":1,"name":"FRONT_DOOR","manufacturer":null,"august_metadata":null,"schlage_metadata":null,"smartthings_metadata":null},"location":null,"created_at":"2023-02-08T22:14:09.890Z","capabilities_supported":["access_code","lock"],"errors":[]}]
+[{"device_id":"60d0f1b6-26ae-4366-8d1b-d20ad0d6a62e","workspace_id":"d7418ff3-a476-4f48-9a4b-211d1d21a03d","connected_account_id":"32e92b46-7978-4d48-a3e7-9b04662151b3","device_type":"nuki_lock","properties":{"online":true,"locked":false,"door_open":null,"battery_level":0.86,"name":"Office Lock","manufacturer":"nuki","august_metadata":null,"schlage_metadata":null,"smartthings_metadata":null},"location":null,"created_at":"2023-02-11T00:46:12.940Z","capabilities_supported":["access_code","lock"],"errors":[]}]
 */
 ```
 
@@ -280,7 +266,7 @@ echo json_encode($locks);
 
 ### 4 — Locking & Unlocking a Door
 
-Next, you can perform the basic action of locking and unlocking a door. Note that Nuki disables this functionality by default and requires a special pass-through waiver via Seam. Seam automatically configures your IQ hubs to enable this functionality. Please contact us if you need to disable it.
+Next, you can perform the basic action of locking and unlocking a door.
 
 {% swagger src="../.gitbook/assets/openapi (1).json" path="/locks/lock_door" method="post" %}
 [openapi (1).json](<../.gitbook/assets/openapi (1).json>)
@@ -366,12 +352,12 @@ $seam->locks->lock_door($lock->device_id);
 
 ### 5 — Setting Access Code on Nuki Lock
 
-Some Nuki locks and access points will have a keypad available to program access codes. These codes can then be entered to unlock the door.&#x20;
+Some Nuki locks also have a keypad paired to them to program access codes. These codes can then be entered to unlock a Nuki lock.&#x20;
 
 The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on an Nuki lock. You can find out more about Nuki lock access code in our [core concept section on access codes.](../core-concepts/access-codes.md)
 
 {% hint style="info" %}
-Nuki does not let you specify a code for an access code. Instead Nuki generates a 6-digit code, which the Seam API returns.
+Nuki does not let you create a code starting with the digits "12". Codes cannot contain the digit 0.
 {% endhint %}
 
 {% tabs %}
@@ -381,11 +367,13 @@ Nuki does not let you specify a code for an access code. Instead Nuki generates 
 # create an ongoing code
 seam.access_codes.create(
   device=some_lock,
+  code="492332",
   name="Personal Access Code")
 
 # create a timebound code
 seam.access_codes.create(
   device=some_lock,
+  code="498882",
   name="My Temp Access Code",
   starts_at="2028-08-12T19:23:42+0000",
   ends_at="2028-08-13T19:23:42+0000")
@@ -393,10 +381,6 @@ seam.access_codes.create(
 # you can use a device or a device_id as the "device" parameter
 seam.access_codes.list(device=some_lock)
 
-# [
-#   AccessCode(access_code_id='631a3a30-3fa7-462a-b3bc-65528ccf8765', type='time_bound', code=None, starts_at='2028-08-12T19:24:00.000Z', ends_at='2028-08-13T19:24:00.000Z', name='My Temp Access Code', status='unset', common_code_key=None),
-#  AccessCode(access_code_id='4d2f4952-5446-4051-ba7e-a6fc01a376d7', type='ongoing', code='59026', starts_at=None, ends_at=None, name='Personal Access Code', status='set', common_code_key=None)
-#  ]
 
 ```
 
@@ -408,12 +392,14 @@ seam.access_codes.list(device=some_lock)
 // create an ongoing code
 await seam.accessCodes.create({
   device_id: someLock.device_id,
+  code: '123456',
   name: 'Personal Access Code',
 })
 
 // create a timebound code
 await seam.accessCodes.create({
   device_id: someLock.device_id,
+  code: '888888',
   name: 'My Temp Access Code',
   starts_at: '2028-11-12T19:23:42+0000',
   ends_at: '2028-11-13T19:23:42+0000',
@@ -423,38 +409,6 @@ await seam.accessCodes.create({
 await seam.accessCodes.list({
   device_id: someLock.device_id,
 })
-
-/*
-[
-  {
-    access_code_id: '631a3a30-3fa7-462a-b3bc-65528ccf8765',
-    device_id: '681bf7bc-e7c6-48e6-acfe-6dbabd0615c5',
-    name: 'My Temp Access Code',
-    code: null,
-    is_waiting_for_code_assignment: true,
-    common_code_key: null,
-    type: 'time_bound',
-    status: 'unset',
-    starts_at: '2028-08-12T19:24:00.000Z',
-    ends_at: '2028-08-13T19:24:00.000Z',
-    created_at: '2023-02-08T23:28:57.061Z',
-    errors: [],
-    warnings: []
-  },
-  {
-    access_code_id: '774986f8-5fad-4911-a4fb-e5a2ef9f15bd',
-    device_id: '681bf7bc-e7c6-48e6-acfe-6dbabd0615c5',
-    name: 'Personal Access Code',
-    code: '10542',
-    common_code_key: null,
-    type: 'ongoing',
-    status: 'set',
-    created_at: '2023-02-08T23:10:54.096Z',
-    errors: [],
-    warnings: []
-  },
-]
-*/
 ```
 
 {% endtab %}
@@ -464,12 +418,13 @@ await seam.accessCodes.list({
 ```ruby
 # create an ongoing code
 seam.access_codes.create(
-  device_id: some_lock.device_id, name: 'Personal Access Code'
+  device_id: some_lock.device_id, code: '123456', name: 'Personal Access Code'
 )
 
 # create a timebound code
 seam.access_codes.create(
   device_id: some_lock.device_id,
+  code: '888888',
   name: 'My Temp Access Code',
   starts_at: '2028-08-12T19:23:42+0000',
   ends_at: '2028-08-13T19:23:42+0000'
@@ -477,22 +432,6 @@ seam.access_codes.create(
 
 # you can use a device or a device_id as the "device" parameter
 seam.access_codes.list(some_lock)
-
-# [<Seam::AccessCode:0x00690
-#   access_code_id="631a3a30-3fa7-462a-b3bc-65528ccf8765"
-#   name="My Temp Access Code"
-#   code=nil
-#   type="time_bound"
-#   starts_at=2028-08-12 19:24:00 UTC
-#   ends_at=2028-08-13 19:24:00 UTC
-#   errors=[]
-#   warnings=[]>, <Seam::AccessCode:0x006b8
-#   access_code_id="774986f8-5fad-4911-a4fb-e5a2ef9f15bd"
-#   name="Personal Access Code"
-#   code="10542"
-#   type="ongoing"
-#   errors=[]
-#   warnings=[]>]
 ```
 
 {% endtab %}
@@ -506,20 +445,17 @@ $seam = new SeamClient("YOUR_API_KEY");
 
 $some_lock = $seam->locks->list()[0];
 $seam->access_codes->create(
-  device_id: $some_lock->device_id, name: 'Personal Access Code'
+  device_id: $some_lock->device_id, code: '123456', name: 'Personal Access Code'
 );
 
 $seam->access_codes->create(
   device_id: $some_lock->device_id,
   name: 'My Temp Access Code',
+  code: '888888',
   starts_at: '2028-08-12T19:23:42+0000',
   ends_at: '2028-08-13T19:23:42+0000'
 );
 
-echo json_encode($access_code)
-/*
-[{"access_code_id":"19cea367-fd8c-40b7-9ce3-6dec76fe1763","name":"My Temp Access Code","type":"time_bound","status":"unset","starts_at":"2028-08-12T19:24:00.000Z","ends_at":"2028-08-13T19:24:00.000Z","code":null,"created_at":"2023-02-09T05:53:46.293Z","errors":[],"warnings":[]},{"access_code_id":"f797a8f0-b8f7-4734-9bea-962de5cad413","name":"Personal Access Code","type":"ongoing","status":"set","starts_at":null,"ends_at":null,"code":"37840","created_at":"2023-02-09T05:53:46.172Z","errors":[],"warnings":[]}]
-*/
 ```
 
 {% endtab %}
