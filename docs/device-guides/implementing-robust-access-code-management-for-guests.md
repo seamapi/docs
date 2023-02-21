@@ -1,24 +1,42 @@
 ---
-description: >-
-  There are many pitfalls to implementing access codes due to real world
-  constraints of devices.
+description: Learn our best practices for programming access codes for a hotel guest
 ---
 
-# Implementing Robust Access Code Management for Guests
+# Access Code Management for Hospitality
 
-### Overview
+<figure><img src="../.gitbook/assets/yale-smart-door-lock-system-500x500 (1).webp" alt=""><figcaption><p>A guest entering an access code on a smart lock</p></figcaption></figure>
 
-Devices in homes frequently have issues receiving commands,
+## Overview
+
+Access codes are a convenient way of giving out access for hotel guests. Guests can enter their room without the need for a physical key or card, bypassing the need for a manual check-in and check-out process. Access codes can also be easily changed after a guest leaves, reducing the risk of unauthorized access to the room.
+
+In this guide, we will be providing some guidelines on how best to program access codes for a hotel stay.
+
+## Programming a Code for the Guest Stay
+
+#### What you'll need
+
+* [A Door Lock that supports the `access_code` capability](#user-content-fn-1)[^1]
+
+#### Recommendations
+
+When programming a code for a guest stay, you can set the `starts_at` time to the check-in time, and the `ends_at` time to the check-out time. Our system will attempt programming the code 30 minutes prior to the guest stay.
+
+When a future `access_code`  is first created, its status will be `unset`. Its status will transition to `set` once the `starts_at` date has begun, and the code has been programmed on the door lock.
+
+## Setting up Back Up Codes on each Door Lock
+
+In case a guest is having issues unlocking the door, or if Seam encounters issues programming codes on the door lock, we recommend having some back up methods for letting in the guest.
 
 ### Terminology
 
-* Guest Access Code: The code sent to a guest in a message prior to their arrival
-* Backup Access Code: A code given to a guest at the time of reservation
+* Guest Access Code: The code that is programmed for a guest stay and will only be active during the duration of the scheduled time. This will be shared with a guest prior to their arrival.
+* Backup Access Codes: Back up codes that are already programmed on the door lock. These can be given out to a guest if there are issues with their Guest Access Code.
 * Device Owner: The person or company that owns a lot and their operators or staff
 
 ### Common Problems
 
-* A Guest Access Code isn't available at the time of reservation due to the lock being unable to connect to the network or it's hub
+* A Guest Access Code isn't available at the time of reservation due to the lock being unable to connect to the network or its hub
 * A device can not be remotely unlocked due to a network error
 
 ### RECOMMENDED: On-Demand Backup Code Workflow
@@ -38,10 +56,6 @@ We recommend the following system for issuing backup codes to guests.
 
 {% hint style="info" %}
 Having a pool of 5 access codes can allow you to continue issuing backup codes if the Device Owner is having trouble repairing the network for the lock.
-{% endhint %}
-
-{% hint style="info" %}
-If you have several locks that should share the same code, use `common_code_key` for both the guest code _and_ the backup codes, this will give the guest a simpler experience.
 {% endhint %}
 
 
@@ -64,7 +78,10 @@ Re-using codes and leaving codes active on a device can cause guests to re-enter
 * **What if a Device Owner factory resets a lock?**
   * A factory reset can often cause Seam to register the lock as an entirely new device. From an your perspective, the old device will appear offline and a new device will appear. You should always prompt a Device Owner to clarify the location of a device when a new device appears, and allow them to replace an existing device.
 * **How many codes can I set on a device?**
-  * Seam does not currently provide the code limit for&#x20;
+  * Seam does not currently provide the code slot limits for the door locks.
 * **If I set my Guest Access Code in advance of a reservation, shouldn't they be already on the device even if the device goes offline?**
   * Where supported, Seam will attempt to pre-program codes to locks to provide more reliablity that a code is available even where a lock is disconnected. Even so, we recommend using the backup code system described above to further increase reliability.
 
+
+
+[^1]: Add link to such a list.
