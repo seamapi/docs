@@ -158,6 +158,7 @@ seam.devices.list
 
 | `connected_account_id` | <p>type: string<br>Optional</p>   | <p><br>ID of the Connected Account</p> |
 | ---------------------- | --------------------------------- | -------------------------------------- |
+| `connected_account_ids` | <p>type: string[]<br>Optional</p>   | <p><br>IDs of the Connected Accounts</p> |
 | `connect_webview_id`   | <p>type: string<br>Optional</p>   | ID of Connect Webview                  |
 | `workspace_id`         | <p>type: String<br>Optional</p>   | ID of Workspace                        |
 | `manufacturer`         | <p>type: String<br>Optional</p>   | Device manufacturer                    |
