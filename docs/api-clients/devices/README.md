@@ -13,10 +13,24 @@ description: A device that has been connected to the Seam platform.
 | **`errors`**                 | As seen in '[Device Error Types](./#device-error-types)'                       | List of errors for this Device                 |
 | **`location`**               | object                                                                         | Location information for the Device            |
 | **`manufacturer`**           | As seen in '[Device Manufacturers](./#device-manufacturers)'                   | Manufacturer of the Device                     |
-| **`properties`**             | object                                                                         | Properties for the Device                      |
+| **`properties`**             | object, as seen in '[Device Properties](./#device-properties)'                 | Properties for the Device                      |
 | **`warnings`**               | As seen in '[Device Warning Types](./#device-warning-types)'                   | List of warnings for this Device               |
 | **`workspace_id`**           | uuid                                                                           | ID of the workspace that the device belongs to |
 | **`created_at`**             | datetime                                                                       | Timestamp of creation time                     |
+
+### Device Properties
+
+| property name | type | Description |
+| ------------------- | ----- | ---------------------------- |
+| **`locked`**        | bool  | Whether the device is locked |
+| **`online`**        | bool  | Whether the device is online |
+| **`door_open`**    | bool  | Whether the door is open     |
+| **`manufacturer`**  | string   | Manufacturer of the device   |
+| **`battery_level`** | float | Battery level of the device. |
+| **`XXX_metadata`** | object  | Metadata for the device, where XXX is the manufacturer and specific to that manufacturer     |
+| **`supported_code_lengths`** | array  | Supported code lengths for the device, e.g., [4,5] means "1234" and "12345" would be valid, but neither "123" nor "123456" wouldn't be valid      |
+| **`name`**          | string   | Name of the device           |
+| **`battery`** | object  | Battery information for the device, has `level` and `status`      |
 
 ## List of Methods
 
