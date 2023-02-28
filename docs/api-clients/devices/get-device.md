@@ -153,6 +153,9 @@ seam.devices.get("123e4567-e89b-12d3-a456-426614174000")
 #     "smartthings_metadata"=>{
 #       "device_id"=>"83b32603-e36a-416b-a06e-78215223df98",
 #       "device_name"=>"Yale Door Lock"}, 
+#     "supported_code_lengths": [
+#       6
+#     ],
 #     "name"=>"Yale Door Lock"}>
 ```
 {% endtab %}
@@ -186,6 +189,9 @@ This section shows the JSON response returned by the API. Since each language en
         "device_id": "device-3",
         "device_name": "GARAGE"
       },
+      "supported_code_lengths": [
+        6
+      ],      
       "name": "GARAGE"
     },
     "location": null,
