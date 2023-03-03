@@ -38,7 +38,7 @@ description: A device that has been connected to the Seam platform.
 | Property name       | Type   | Description                                                                             |
 | ------------------- | ------ | --------------------------------------------------------------------------------------- |
 | **`location_name`** | string | Name of the location the device belongs to, if available.                               |
-| **`time_zone`**     | string | Name of timezone (name from the IANA timezone database) the device is in, if available. |
+| **`timezone`**      | string | Name of timezone (name from the IANA timezone database) the device is in, if available. |
 
 ## List of Methods
 
