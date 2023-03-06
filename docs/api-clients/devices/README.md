@@ -20,17 +20,25 @@ description: A device that has been connected to the Seam platform.
 
 ### Device Properties
 
-| property name | type | Description |
-| ------------------- | ----- | ---------------------------- |
-| **`locked`**        | bool  | Whether the device is locked |
-| **`online`**        | bool  | Whether the device is online |
-| **`door_open`**    | bool  | Whether the door is open     |
-| **`manufacturer`**  | string   | Manufacturer of the device   |
-| **`battery_level`** | float | Battery level of the device. |
-| **`XXX_metadata`** | object  | Metadata for the device, where XXX is the manufacturer and specific to that manufacturer     |
-| **`supported_code_lengths`** | array  | Supported code lengths for the device, e.g., [4,5] means "1234" and "12345" would be valid, but neither "123" nor "123456" wouldn't be valid      |
-| **`name`**          | string   | Name of the device           |
-| **`battery`** | object  | Battery information for the device, has `level` and `status`      |
+| property name                | type   | Description                                                                                                                                  |
+| ---------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`locked`**                 | bool   | Whether the device is locked                                                                                                                 |
+| **`online`**                 | bool   | Whether the device is online                                                                                                                 |
+| **`door_open`**              | bool   | Whether the door is open                                                                                                                     |
+| **`manufacturer`**           | string | Manufacturer of the device                                                                                                                   |
+| **`battery_level`**          | float  | Battery level of the device.                                                                                                                 |
+| **`XXX_metadata`**           | object | Metadata for the device, where XXX is the manufacturer and specific to that manufacturer                                                     |
+| **`supported_code_lengths`** | array  | Supported code lengths for the device, e.g., [4,5] means "1234" and "12345" would be valid, but neither "123" nor "123456" wouldn't be valid |
+| **`name`**                   | string | Name of the device                                                                                                                           |
+| **`battery`**                | object | Battery information for the device, has `level` and `status`                                                                                 |
+| **`serial_number`**          | string | Serial number for the device, if available.                                                                                                  |
+
+### Device Location
+
+| Property name       | Type   | Description                                                                             |
+| ------------------- | ------ | --------------------------------------------------------------------------------------- |
+| **`location_name`** | string | Name of the location the device belongs to, if available.                               |
+| **`timezone`**      | string | Name of timezone (name from the IANA timezone database) the device is in, if available. |
 
 ## List of Methods
 
@@ -58,10 +66,10 @@ Errors are displayed in the format:
 }
 ```
 
-| **`account_disconnected`** | Seam has lost connection to a connected account. This may happen if the third-party provider triggered an access token to be revoked (e.g. after a password change). The account owner needs to reconnect the connected account with a new connect webview.  |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **`device_removed`**       | A device has been removed from the Connected Account. Seam can no longer sync with this device.                                                                                                                                                              |
-| **`hub_disconnected`**     | The hub that the device is connected to is offline. Seam is unable to sync updates to this device.                                                                                                                                                           |
+| **`account_disconnected`** | Seam has lost connection to a connected account. This may happen if the third-party provider triggered an access token to be revoked (e.g. after a password change). The account owner needs to reconnect the connected account with a new connect webview. |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`device_removed`**       | A device has been removed from the Connected Account. Seam can no longer sync with this device.                                                                                                                                                             |
+| **`hub_disconnected`**     | The hub that the device is connected to is offline. Seam is unable to sync updates to this device.                                                                                                                                                          |
 
 ## Device Warning Types
 
@@ -94,6 +102,3 @@ Here are a list of manufacturers that might get returned:
 | **`schlage`** |
 | **`yale`**    |
 | **`unknown`** |
-
-
-
