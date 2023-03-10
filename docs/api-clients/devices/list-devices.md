@@ -35,6 +35,7 @@ ID of Workspace you'd like to filter with
           "device_id": "device-3",
           "device_name": "GARAGE"
         },
+        "max_active_codes_supported": 100,
         "supported_code_lengths": [
           6
         ],        
@@ -58,6 +59,7 @@ ID of Workspace you'd like to filter with
           "device_id": "device-1",
           "device_name": "FRONT DOOR"
         },
+        "max_active_codes_supported": 100,
         "supported_code_lengths": [
           6
         ],         
@@ -81,6 +83,7 @@ ID of Workspace you'd like to filter with
           "device_id": "device-2",
           "device_name": "BACK DOOR"
         },
+        "max_active_codes_supported": 100,
         "supported_code_lengths": [
           6
         ],        
@@ -197,6 +200,7 @@ This section shows the JSON response returned by the API. Since each language en
           "device_id": "device-3",
           "device_name": "GARAGE"
         },
+        "max_active_codes_supported": 100,
         "supported_code_lengths": [
           6
         ],
@@ -221,6 +225,7 @@ This section shows the JSON response returned by the API. Since each language en
           "device_id": "device-1",
           "device_name": "FRONT DOOR"
         },
+        "max_active_codes_supported": 100,
         "supported_code_lengths": [
           6
         ],
@@ -245,6 +250,7 @@ This section shows the JSON response returned by the API. Since each language en
           "device_id": "device-2",
           "device_name": "BACK DOOR"
         },
+        "max_active_codes_supported": 100,
         "supported_code_lengths": [
           6
         ],

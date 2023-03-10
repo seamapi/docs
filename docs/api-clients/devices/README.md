@@ -29,6 +29,7 @@ description: A device that has been connected to the Seam platform.
 | **`battery_level`**          | float  | Battery level of the device.                                                                                                                 |
 | **`XXX_metadata`**           | object | Metadata for the device, where XXX is the manufacturer and specific to that manufacturer                                                     |
 | **`supported_code_lengths`** | array  | Supported code lengths for the device, e.g., [4,5] means "1234" and "12345" would be valid, but neither "123" nor "123456" wouldn't be valid |
+| **`max_active_codes_supported`** | int  | Maximum number of codes that may exist on the device at one time.                                                                          |
 | **`name`**                   | string | Name of the device                                                                                                                           |
 | **`battery`**                | object | Battery information for the device, has `level` and `status`                                                                                 |
 | **`serial_number`**          | string | Serial number for the device, if available.                                                                                                  |
