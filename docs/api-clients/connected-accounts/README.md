@@ -14,6 +14,7 @@ description: >-
 | `created_at`           | <p>ISO8601<br>timestamp</p> | Timestamp of the date when the Connected Account was created.                                                                                                                                |
 | `user_identifier`      | JSON object                 | The unique identifier for the Connected Account. Could be an email or phone number.                                                                                                          |
 | `account_type`         | string                      | <p>Type of manufacturer the Connected Account belongs to.<br>Options include: <code>august</code>, <code>schlage</code>, <code>yale</code>, <code>salto</code>, <code>smartthings</code></p> |
+| `custom_metadata`      | JSON object                 | The `custom_metadata` set by the webview that connected the account.                                                                                                                       |
 
 ## List of Methods
 
