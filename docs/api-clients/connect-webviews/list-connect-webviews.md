@@ -19,6 +19,7 @@ Bearer <API_KEY>
   "connect_webviews": [
     {
       "connect_webview_id": "4f98efc0-df9c-4be0-b5ac-1c7a60e44ad1",
+      "custom_metadata": {},
       "url": "https://connect.getseam.com/connect_webviews/view?connect_webview_id=4f98efc0-df9c-4be0-b5ac-1c7a60e44ad1&auth_token=Q7RPKrBwpdS9pLaHRbme7SF491SHv6dUv",
       "workspace_id": "f97073eb-c003-467a-965b-e6dba3a0131d",
       "device_selection_mode": "none",

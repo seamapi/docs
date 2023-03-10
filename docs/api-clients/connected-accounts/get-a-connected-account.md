@@ -25,6 +25,7 @@ Bearer <API_KEY>
   "connected_account": {
     "connected_account_id": "9dcedcb3-5ede-4b66-9e07-f9ef97b3c29b",
     "created_at": "2022-08-24T10:38:05.128Z",
+    "custom_metadata": {},
     "user_identifier": {
       "email": "jane@example.com"
     },
