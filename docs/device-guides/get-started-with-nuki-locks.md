@@ -182,7 +182,7 @@ assert some_lock.properties["online"] is True
 assert some_lock.properties["battery_level"] is True
 
 print(some_lock)
-# Device(device_id='60d0f1b6-26ae-4366-8d1b-d20ad0d6a62e', device_type='nuki_lock', location=None, properties={'locked': False, 'online': True, 'manufacturer': 'nuki', 'battery_level': 0.86, 'nuki_metadata': {'device_id': '545636388', 'device_name': 'Office Lock'}, 'supported_code_lengths': [6], 'name': 'Office Lock'}, capabilities_supported=['access_code', 'lock'], errors=[])
+# Device(device_id='60d0f1b6-26ae-4366-8d1b-d20ad0d6a62e', device_type='nuki_lock', location=None, properties={'locked': False, 'online': True, 'manufacturer': 'nuki', 'battery_level': 0.86, 'nuki_metadata': {'device_id': '545636388', 'device_name': 'Office Lock'}, 'max_active_codes_supported': 100, 'supported_code_lengths': [6], 'name': 'Office Lock'}, capabilities_supported=['access_code', 'lock'], errors=[])
 ```
 
 {% endtab %}
@@ -209,6 +209,7 @@ console.log(someLock)
     manufacturer: 'nuki',
     battery_level: 0.86,
     nuki_metadata: { device_id: '545636388', device_name: 'Office Lock' },
+    max_active_codes_supported: 100,
     supported_code_lengths: [ 6 ],
     name: 'Office Lock'
   },
@@ -237,7 +238,7 @@ puts some_lock
 # <Seam::Device:0x00730
 #   device_id="60d0f1b6-26ae-4366-8d1b-d20ad0d6a62e"
 #   device_type="nuki_lock"
-#   properties={"locked"=>false, "online"=>true, "manufacturer"=>"nuki", "battery_level"=>0.86, "nuki_metadata"=>{"device_id"=>"545636388", "device_name"=>"Office Lock"}, "supported_code_lengths"=>[6], "name"=>"Office Lock"}
+#   properties={"locked"=>false, "online"=>true, "manufacturer"=>"nuki", "battery_level"=>0.86, "nuki_metadata"=>{"device_id"=>"545636388", "device_name"=>"Office Lock"}, "max_active_codes_supported": 100, "supported_code_lengths"=>[6], "name"=>"Office Lock"}
 #   created_at=2023-02-11 00:46:12.94 UTC
 #   errors=[]
 #   warnings=[]>

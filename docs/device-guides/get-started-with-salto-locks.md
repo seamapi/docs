@@ -164,7 +164,7 @@ assert some_lock.properties["online"] is True
 assert some_lock.properties["battery_level"] is True
 
 print(some_lock)
-# Device(device_id='681bf7bc-e7c6-48e6-acfe-6dbabd0615c5', device_type='salto_lock', location=None, properties={'locked': True, 'online': True, 'battery_level': 1, 'salto_metadata': {'model': 'wall_reader_pin', 'lock_id': 'lock_2', 'lock_type': 'wall_reader_pin', 'locked_state': 'locked', 'battery_level': 'fresh', 'customer_reference': 'BACK DOOR'}, 'has_direct_power': True, 'supported_code_lengths': [6], 'name': 'BACK DOOR'}, capabilities_supported=['access_code', 'lock'])
+# Device(device_id='681bf7bc-e7c6-48e6-acfe-6dbabd0615c5', device_type='salto_lock', location=None, properties={'locked': True, 'online': True, 'battery_level': 1, 'salto_metadata': {'model': 'wall_reader_pin', 'lock_id': 'lock_2', 'lock_type': 'wall_reader_pin', 'locked_state': 'locked', 'battery_level': 'fresh', 'customer_reference': 'BACK DOOR'}, 'has_direct_power': True, 'max_active_codes_supported': 100, 'supported_code_lengths': [6], 'name': 'BACK DOOR'}, capabilities_supported=['access_code', 'lock'])
 ```
 {% endtab %}
 
@@ -199,6 +199,7 @@ console.log(someLock)
                 "customer_reference": "BACK DOOR"
             },
             "has_direct_power": true,
+            "max_active_codes_supported": 100,
             "supported_code_lengths": [
                 6
             ],
@@ -227,7 +228,7 @@ puts some_lock
 # <Seam::Device:0x005c8
 #   device_id="681bf7bc-e7c6-48e6-acfe-6dbabd0615c5"
 #   device_type="salto_lock"
-#   properties={"locked"=>true, "online"=>true, "battery_level"=>1, "salto_metadata"=>{"model"=>"wall_reader_pin", "lock_id"=>"lock_2", "lock_type"=>"wall_reader_pin", "locked_state"=>"locked", "battery_level"=>"fresh", "customer_reference"=>"BACK DOOR"}, "has_direct_power"=>true, "supported_code_lengths"=>[6], "name"=>"BACK DOOR"}
+#   properties={"locked"=>true, "online"=>true, "battery_level"=>1, "salto_metadata"=>{"model"=>"wall_reader_pin", "lock_id"=>"lock_2", "lock_type"=>"wall_reader_pin", "locked_state"=>"locked", "battery_level"=>"fresh", "customer_reference"=>"BACK DOOR"}, "has_direct_power"=>true, "max_active_codes_supported": 100, "supported_code_lengths"=>[6], "name"=>"BACK DOOR"}
 #   created_at=2023-02-08 22:14:09.921 UTC
 #   errors=[]
 #   warnings=[]>
