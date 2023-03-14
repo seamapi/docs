@@ -442,4 +442,4 @@ In addition, if you'd like to explore other aspects of Seam, here is a list of h
 
 
 
-If you have any question or want to report an issue, email us at support@seam.co. If you would like help&#x20;
+If you have any questions or want to report an issue, email us at support@seam.co. If you would like help&#x20;

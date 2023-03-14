@@ -255,8 +255,8 @@ echo json_encode($locks);
 
 Next, you can perform the basic action of locking and unlocking a door. Note that Salto disables this functionality by default and requires a special pass-through waiver via Seam. Seam automatically configures your IQ hubs to enable this functionality. Please contact us if you need to disable it.
 
-{% swagger src="../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
-[openapi.json](../.gitbook/assets/openapi.json)
+{% swagger src="../.gitbook/assets/openapi (1).json" path="/locks/lock_door" method="post" %}
+[openapi (1).json](<../.gitbook/assets/openapi (1).json>)
 {% endswagger %}
 
 {% swagger method="post" path="/locks/unlock_door" baseUrl="https://connect.getseam.com" summary="Unlock a door" %}
@@ -495,4 +495,4 @@ In addition, if you'd like to explore other aspects of Seam, here is a list of h
 * [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list-events.md)
 * [Core Concepts](broken-reference/)
 
-If you have any question or want to report an issue, email us at support@seam.co.
+If you have any questions or want to report an issue, email us at support@seam.co.
