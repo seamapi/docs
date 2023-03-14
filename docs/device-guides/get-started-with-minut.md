@@ -121,7 +121,7 @@ def endpoint():
     event = request.json["event"]
     # {
     #    noise_threshold_id: "...",
-    #    noise_threshold_name: "disturbance"
+    #    noise_threshold_name: "builtin_disturbance"
     #    minut_metadata: {
     #       "event_name": "disturbance_first_notice",
     #    },
