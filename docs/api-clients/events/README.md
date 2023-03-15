@@ -40,13 +40,21 @@ In addition to the common event properties, and common device event properties, 
 | -------- | ---------------------------------- | -------------------------------------------------------------------------------------------- |
 | `method` | `keycode` or `manual` or `unknown` | Present on all of the `lock.*` events. Specifies the method used to perform the lock action. |
 
-### Device Low Battery Events
+### Device Battery Events
 
-In addition to the common event properties, and common device event properties, the following properties are available on `device.low_battery` events:
+In addition to the common event properties, and common device event properties, the following properties are available on `device.low_battery` and `device.battery_status_changed` events:
 
 |                 |              |                                                                                           |
 | --------------- | ------------ | ----------------------------------------------------------------------------------------- |
 | `battery_level` | Number (0-1) | Determines the battery level of the device. Only present on a `device.low_battery` event. |
+
+### Device Battery Status Events
+
+In addition to the device battery event properties, the following properties are available on `device.battery_status_changed` events:
+
+|                  |                                         |                                                  |
+| ---------------- | --------------------------------------- | ------------------------------------------------ |
+| `battery_status` | `critical` or `low` or `good` or `full` | Specifies the new battery status for the device. |
 
 ### Device Disconnected Events
 
@@ -75,6 +83,7 @@ In addition to the common event properties, and common device event properties, 
 | `device.connected`                          | A device has come online.                                                                                                                                                                                                                                                       |
 | `device.disconnected`                       | A device has gone offline.                                                                                                                                                                                                                                                      |
 | `device.low_battery`                        | The battery level of the device drops below the low battery level threshold.                                                                                                                                                                                                    |
+| `device.battery_status_changed`             | The battery status for the device has changed (for example, it changed from `good` to `low`).                                                                                                                                                                                   |
 | `device.tampered`                           | A device detects that someone has opened up its case, or has moved the device.                                                                                                                                                                                                  |
 | `lock.locked`                               | A door lock has been locked.                                                                                                                                                                                                                                                    |
 | `lock.unlocked`                             | A door lock has been unlocked.                                                                                                                                                                                                                                                  |

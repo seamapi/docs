@@ -11,7 +11,7 @@ description: A device that has been connected to the Seam platform.
 | **`device_type`**            | string                                                                         | Type of Device                                 |
 | **`capabilities_supported`** | As seen in '[Device Capabilities Supported](./#device-capabilities-supported)' | Capabilities supported by this Device          |
 | **`errors`**                 | As seen in '[Device Error Types](./#device-error-types)'                       | List of errors for this Device                 |
-| **`location`**               | object                                                                         | Location information for the Device            |
+| **`location`**               | As seen in '[Device Location](./#device-location)'                             | Location information for the Device            |
 | **`manufacturer`**           | As seen in '[Device Manufacturers](./#device-manufacturers)'                   | Manufacturer of the Device                     |
 | **`properties`**             | object, as seen in '[Device Properties](./#device-properties)'                 | Properties for the Device                      |
 | **`warnings`**               | As seen in '[Device Warning Types](./#device-warning-types)'                   | List of warnings for this Device               |
@@ -20,19 +20,19 @@ description: A device that has been connected to the Seam platform.
 
 ### Device Properties
 
-| property name                | type   | Description                                                                                                                                  |
-| ---------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`locked`**                 | bool   | Whether the device is locked                                                                                                                 |
-| **`online`**                 | bool   | Whether the device is online                                                                                                                 |
-| **`door_open`**              | bool   | Whether the door is open                                                                                                                     |
-| **`manufacturer`**           | string | Manufacturer of the device                                                                                                                   |
-| **`battery_level`**          | float  | Battery level of the device.                                                                                                                 |
-| **`XXX_metadata`**           | object | Metadata for the device, where XXX is the manufacturer and specific to that manufacturer                                                     |
-| **`supported_code_lengths`** | array  | Supported code lengths for the device, e.g., [4,5] means "1234" and "12345" would be valid, but neither "123" nor "123456" wouldn't be valid |
-| **`max_active_codes_supported`** | int  | Maximum number of codes that may exist on the device at one time.                                                                          |
-| **`name`**                   | string | Name of the device                                                                                                                           |
-| **`battery`**                | object | Battery information for the device, has `level` and `status`                                                                                 |
-| **`serial_number`**          | string | Serial number for the device, if available.                                                                                                  |
+| property name                    | type   | Description                                                                                                                                  |
+| -------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`locked`**                     | bool   | Whether the device is locked                                                                                                                 |
+| **`online`**                     | bool   | Whether the device is online                                                                                                                 |
+| **`door_open`**                  | bool   | Whether the door is open                                                                                                                     |
+| **`manufacturer`**               | string | Manufacturer of the device                                                                                                                   |
+| **`battery_level`**              | float  | Battery level of the device.                                                                                                                 |
+| **`XXX_metadata`**               | object | Metadata for the device, where XXX is the manufacturer and specific to that manufacturer                                                     |
+| **`supported_code_lengths`**     | array  | Supported code lengths for the device, e.g., [4,5] means "1234" and "12345" would be valid, but neither "123" nor "123456" wouldn't be valid |
+| **`max_active_codes_supported`** | int    | Maximum number of codes that may exist on the device at one time.                                                                            |
+| **`name`**                       | string | Name of the device                                                                                                                           |
+| **`battery`**                    | object | Battery information for the device, has `level` and `status`. The `status` can be one of `critical`, `low`, `good`, or `full`.               |
+| **`serial_number`**              | string | Serial number for the device, if available.                                                                                                  |
 
 ### Device Location
 
