@@ -10,7 +10,7 @@ description: Learn how to connect and control your Salto lock with the Seam API.
 
 Seam provides a universal API to connect and control many brands of locks. This guide provides a rapid introduction to connecting and controlling your [Salto](https://www.seam.co/manufacturers/salto) locks using the Seam API. To learn more about other device brands supported by the Seam API, such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
-Note that Salto offers multiple lines of products: Salto Spaces, Salto KS, and Salto Nebula. This guide is specifically for Salto KS. Salto Spaces is an on-prem system that is offline. Salto Nebula is not yet fully available as of this writing.
+Note that Salto offers multiple lines of products: Salto Space, Salto KS, and Salto Nebula. This guide is specifically for Salto KS. Salto Space is an on-prem system that is offline. Salto Nebula is not yet fully available as of this writing.
 
 ## 1 — Install Seam SDK
 
