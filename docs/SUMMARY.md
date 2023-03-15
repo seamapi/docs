@@ -30,7 +30,6 @@
 * [Get started with Minut](device-guides/get-started-with-minut.md)
 * [Get started with SmartThings Hubs + Smart Locks](device-guides/get-started-with-smartthings-hubs-+-smart-locks.md)
 * [Get started with NoiseAware Sensors](device-guides/get-started-with-noiseaware-sensors.md)
-* [Generating a SmartThings personal access token](device-guides/generating-a-smartthings-personal-access-token.md)
 * [Sandbox & Sample Data](device-guides/sandbox-and-sample-data/README.md)
   * [August Locks Sample Data](device-guides/sandbox-and-sample-data/august-locks-sample-data.md)
   * [DoorKing Callbox Sample Data](device-guides/sandbox-and-sample-data/doorking-sample-data.md)
