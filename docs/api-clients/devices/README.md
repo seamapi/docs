@@ -46,6 +46,7 @@ description: A device that has been connected to the Seam platform.
 | [Get Device](get-device.md)     | Get device  |
 | ------------------------------- | ----------- |
 | [List Devices](list-devices.md) | List device |
+| [List Device Providers](list-device-providers.md) | List device providers |
 
 ## Device Capabilities Supported
 
@@ -103,3 +104,27 @@ Here are a list of manufacturers that might get returned:
 | **`schlage`** |
 | **`yale`**    |
 | **`unknown`** |
+
+## Device Providers
+
+Seam maintains a list of Device Providers that can be accessed from the [List Device Providers](list-device-providers.md) endpoint.
+
+Available information included in the [Device Provider](./#device-provider) object are as follows:
+
+| property name                | type   | Description                                                                                                                                  |
+| ---------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`device_provider_name`**                 | string   | Name of the device provider (e.g. `august`)                                                                                                                 |
+| **`display_name`**                 | string   | Formatted version of the `device_provider_name` (e.g. `August`)                                                                                                                 |
+| **`image_url`**              | string   | Image url for the provider logo                                                                                                                     |
+| **`provider_categories`**           | array | Array of associated categories for the provider (possible categories: `stable`)
+
+Example Device Provider Object:
+
+```javascript
+{
+    "device_provider_name": "august",
+    "display_name": "August",
+    "image_url": "https://connect.getseam.com/assets/images/logos/august_logo_square.png",
+    "provider_categories": ["stable"]
+}
+```
