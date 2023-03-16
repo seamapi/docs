@@ -21,6 +21,7 @@ To allow a user to sign in, you need to create a `connect_webview` . After creat
 | **`connect_webview_id`**          | uuid             | ID of the Connect Webview                                                                                                          |
 | --------------------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | **`accepted_providers`**          | string\[]        | List of accepted [device providers keys](./#device-provider-keys)                                                                  |
+| **`selected_provider`**          | string        | Selected provider of the webview, one of [device providers keys](./#device-provider-keys) |
 | **`custom_metadata`**             | object, optional | Specify up to 50 keys, with key names up to 40 characters long. Use any non-object value. Strings are limited to 500 characters.   |
 | **`custom_redirect_url`**         | string, optional | If set, the Connect Webview will redirect to this url when the user successfully pairs a device, or runs into an unexpected error. |
 | **`custom_redirect_failure_url`** | string, optional | If set, the Connect Webview will redirect to this url when an unexpected error occurs.                                             |
