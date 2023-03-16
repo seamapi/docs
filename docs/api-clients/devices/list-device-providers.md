@@ -156,7 +156,7 @@ seam.devices.list_device_providers
 # List all stable device providers
 seam.devices.list_device_providers({ provider_category: "stable" })
 
-# Logged DeviceProvider (puts(device_provier.inspect)):
+# Logged DeviceProvider (puts(device_provider.inspect)):
 # 
 # <Seam::DeviceProvider:0x001d38
 #   device_provider_name="august"
