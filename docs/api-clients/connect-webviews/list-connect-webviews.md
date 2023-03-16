@@ -26,6 +26,7 @@ Bearer <API_KEY>
       "accepted_providers": [
         "schlage"
       ],
+      "selected_provider": "schlage",
       "accepted_devices": [],
       "any_provider_allowed": false,
       "any_device_allowed": null,
@@ -56,7 +57,8 @@ seam.connect_webviews.list
 #   workspace_id="182ad8b2-4212-4640-873b-343c10b11c91"                                      
 #   accepted_devices=[]                                                                      
 #   login_successful=false                                                                   
-#   accepted_providers=["august"]                                                            
+#   accepted_providers=["august"]               
+#   selected_provider="august"                                             
 #   any_device_allowed=nil                                                                   
 #   connect_webview_id="48880840-278b-4f55-bdc4-42ba8611952b"                                
 #   any_provider_allowed=false                                                               
@@ -75,6 +77,7 @@ await seam.connectWebviews.list();
 //     workspace_id: 'f97073eb-c003-467a-965b-e6dba3a0131d',
 //     device_selection_mode: 'none',
 //     accepted_providers: [ 'schlage' ],
+//     selected_provider: 'schlage'
 //     accepted_devices: [],
 //     any_provider_allowed: false,
 //     any_device_allowed: null,
@@ -129,6 +132,7 @@ This section shows the JSON response returned by the API. Since each language en
       "accepted_providers": [
         "schlage"
       ],
+      "selected_provider": "schlage",
       "accepted_devices": [],
       "any_provider_allowed": false,
       "any_device_allowed": null,
