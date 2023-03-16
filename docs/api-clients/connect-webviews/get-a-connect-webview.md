@@ -169,7 +169,7 @@ This section shows the JSON response returned by the API. Since each language en
 	"accepted_providers": [
 		"smartthings"
 	],
-  "selected_provider": "smartthings",
+	"selected_provider": "smartthings",
 	"accepted_devices": [],
 	"any_provider_allowed": false,
 	"any_device_allowed": null,
