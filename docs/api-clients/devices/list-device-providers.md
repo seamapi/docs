@@ -11,7 +11,7 @@ Retrieve a list of device providers, optionally filtered by provider category
 Category of the device provider you'd like to filter by
 {% endswagger-parameter %}
 
-{% swagger-response status="200: OK" description="" %}
+{% swagger-response status="200: OK" description="Successful response" %}
 ```javascript
 {
 	"device_providers": [
@@ -119,6 +119,27 @@ Category of the device provider you'd like to filter by
 		}
 	],
 	"ok": true
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="Invalid provider_category" %}
+```javascript
+{
+	"error": {
+		"type": "invalid_input",
+		"message": "Invalid enum value. Expected 'stable', received 'bad' for \"provider_category\"",
+		"validation_errors": {
+			"_errors": [],
+			"provider_category": {
+				"_errors": [
+					"Invalid enum value. Expected 'stable', received 'bad'"
+				]
+			}
+		},
+		"request_id": "c97a717c-91fb-4cd1-a0db-94729052138b"
+	},
+	"ok": false
 }
 ```
 {% endswagger-response %}
