@@ -33,7 +33,7 @@ Bearer <API_KEY>
 	"accepted_providers": [
 		"smartthings"
 	],
-  "selected_provider": "smartthings",
+	"selected_provider": "smartthings",
 	"accepted_devices": [],
 	"any_provider_allowed": false,
 	"any_device_allowed": null,
