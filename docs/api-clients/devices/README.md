@@ -33,6 +33,7 @@ description: A device that has been connected to the Seam platform.
 | **`name`**                       | string | Name of the device                                                                                                                           |
 | **`battery`**                    | object | Battery information for the device, has `level` and `status`. The `status` can be one of `critical`, `low`, `good`, or `full`.               |
 | **`serial_number`**              | string | Serial number for the device, if available.                                                                                                  |
+| **`image_url`**                  | string | Image URL for the device, placeholder image URL if a device-specific image is unavailable   |
 
 ### Device Location
 
