@@ -206,7 +206,7 @@ await seam.devices.listDeviceProviders({ provider_category: "stable" });
 	]
 }
 ```
-
+{% endtab %}
 {% endtabs %}
 
 ### Parameters
