@@ -164,6 +164,49 @@ seam.devices.list_device_providers({ provider_category: "stable" })
 #   provider_categories=["stable"]>
 ```
 {% endtab %}
+
+{% tab title="Javascript" %}
+```javascript
+await seam.devices.listDeviceProviders();
+/*
+{
+	device_providers: [
+		{
+			"device_provider_name": "akuvox",
+			"display_name": "Akuvox",
+			"image_url": "https://connect.getseam.com/assets/images/logos/akuvox_logo_square.png",
+			"provider_categories": []
+		},
+		{
+			"device_provider_name": "august",
+			"display_name": "August",
+			"image_url": "https://connect.getseam.com/assets/images/logos/august_logo_square.png",
+			"provider_categories": [
+				"stable"
+			]
+		},
+		...
+	]
+}
+*/
+
+await seam.devices.listDeviceProviders({ provider_category: "stable" });
+/*
+{
+	device_providers: [		
+		{
+			"device_provider_name": "august",
+			"display_name": "August",
+			"image_url": "https://connect.getseam.com/assets/images/logos/august_logo_square.png",
+			"provider_categories": [
+				"stable"
+			]
+		},
+		...
+	]
+}
+```
+{% endtab %}
 {% endtabs %}
 
 ### Parameters
