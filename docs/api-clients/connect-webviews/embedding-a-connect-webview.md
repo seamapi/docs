@@ -9,7 +9,7 @@ description: >-
 
 When a webview is hosted in an iframe, it sends messages to the parent window hosting the iframe
 using `window.parent.postMessage`, a cross-origin communication mechanism available in browsers.
-You can listen for these messages by registering a listsener for `message` events on the `window`.
+You can listen for these messages by registering a listener for `message` events on the `window`.
 
 ```ts
 window.addEventListener(
