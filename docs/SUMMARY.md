@@ -43,6 +43,7 @@
   - [Yale Locks Sample Data](device-guides/sandbox-and-sample-data/yale-sample-data.md)
 - [Reconnecting an Account](device-guides/reconnecting-an-account.md)
 - [Access Code Management for Hospitality](device-guides/implementing-robust-access-code-management-for-guests.md)
+- [Migrating Existing Access Codes](device-guides/migrating-existing-codes.md)
 
 ## 📋 API Clients
 
@@ -72,6 +73,7 @@
   - [Delete an Access Code](api-clients/access-codes/delete-an-access-code.md)
   - [List Access Codes](api-clients/access-codes/list-access-codes.md)
   - [Get an Access Code](api-clients/access-codes/get-an-access-code.md)
+  - [List Unmanaged Access Codes](api-clients/access-codes/list-unmanaged-access-codes.md)
 - [Locks](api-clients/locks/README.md)
   - [Get Lock](api-clients/locks/get-lock.md)
   - [Lock a Lock](api-clients/locks/lock-a-lock.md)
