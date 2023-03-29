@@ -3,7 +3,7 @@ description: Get all Unmanaged Access Codes of a Device by its ID
 ---
 
 The [guide to migrating existing access codes](../device-guides/migrating-existing-codes.md) provides an overview of the difference between
-unmanaged and managed access codes.
+managed and unmanaged access codes.
 
 # List Unmanaged Access Codes
 
