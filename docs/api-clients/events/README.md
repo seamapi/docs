@@ -64,6 +64,18 @@ In addition to the common event properties, and common device event properties, 
 | ------------ | --------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | `error_code` | `account_disconnected` or `hub_disconnected` or `device_disconnected` | Only present on a `device.disconnected` event. A code to indicate the reason for disconnection. |
 
+### Noise Sensor Events
+
+Noise sensors emit an event whenever a predefined noise threshold has been exceeded. Seam tracks any noise thresholds that have been set in the user's app or builtin thresholds to the noise sensor, so see what thresholds are available, query `/noise_sensors/noise_thresholds/list`
+
+|                        |                                           |                                                                                                                  |
+| ---------------------- | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `noise_threshold_id`   | String                                    | Identifier for the noise threshold, pass to `/noise_sensors/noise_thresholds/get`                                |
+| `noise_threshold_name` | String e.g. `"builtin_first_disturbance"` | Name of the threshold, this can be set via `/noise_sensors/noise_thresholds/create` or by the user in their app. |
+|                        |                                           |                                                                                                                  |
+
+
+
 ## Event Types
 
 | Event Name                                  | Description                                                                                                                                                                                                                                                                     |
@@ -87,12 +99,13 @@ In addition to the common event properties, and common device event properties, 
 | `device.tampered`                           | A device detects that someone has opened up its case, or has moved the device.                                                                                                                                                                                                  |
 | `lock.locked`                               | A door lock has been locked.                                                                                                                                                                                                                                                    |
 | `lock.unlocked`                             | A door lock has been unlocked.                                                                                                                                                                                                                                                  |
+| `noise_sensors.noise_threshold_triggered`   | The noise detected from a noise sensor exceeded a predefined threshold and/or duration.                                                                                                                                                                                         |
 
 ## List of Methods
 
-| [List Events ](list-events.md) | List and Filter Events           |
-| ------------------------------ | -------------------------------- |
-| Get Event                      | Get data for an individual event |
+| [List Events](list-events.md) | List and Filter Events           |
+| ----------------------------- | -------------------------------- |
+| Get Event                     | Get data for an individual event |
 
 ## Testing out Events
 
