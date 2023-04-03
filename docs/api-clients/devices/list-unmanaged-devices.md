@@ -20,8 +20,8 @@ ID of Connected Account you'd like to filter by
 ID of Connect Webview you'd like to filter by
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="workspace_id" %}
-ID of Workspace you'd like to filter with
+{% swagger-parameter in="body" name="device_type" %}
+Type of Device you'd like to filter with
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
@@ -106,7 +106,7 @@ await seam.devices.unmanaged.list()
 | ---------------------- | --------------------------------- | -------------------------------------- |
 | `connected_account_ids` | <p>type: string[]<br>Optional</p>   | <p><br>IDs of the Connected Accounts</p> |
 | `connect_webview_id`   | <p>type: string<br>Optional</p>   | ID of Connect Webview                  |
-| `workspace_id`         | <p>type: String<br>Optional</p>   | ID of Workspace                        |
+| `device_type`         | <p>type: String<br>Optional</p>   | Device type                        |
 | `manufacturer`         | <p>type: String<br>Optional</p>   | Device manufacturer                    |
 | `device_ids`           | <p>type: string[]<br>Optional</p> | IDs of the Devices to include          |
 
