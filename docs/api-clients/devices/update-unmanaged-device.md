@@ -43,3 +43,19 @@ Set to true to manage the device with Seam.
 ```
 {% endswagger-response %}
 {% endswagger %}
+
+### Code Example
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+seam.devices.unmanaged.update(is_managed=True)
+```
+{% endtab %}
+
+{% tab title="Javascript" %}
+```typescript
+await seam.devices.unmanaged.update({ is_managed: true })
+```
+{% endtab %}
+{% endtabs %}
