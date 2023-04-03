@@ -66,6 +66,7 @@
   - [List Devices](api-clients/devices/list-devices.md)
   - [List Device Providers](api-clients/devices/list-device-providers.md)
   - [Update Device](api-clients/devices/update-device.md)
+  - [List Unmanaged Devices](api-clients/devices/list-unmanaged-devices.md)
 - [Access Codes](api-clients/access-codes/README.md)
   - [Create an Access Code](api-clients/access-codes/create-an-access-code.md)
   - [Create many Access Codes](api-clients/access-codes/create-many-access-codes.md)
