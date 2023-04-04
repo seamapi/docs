@@ -2,7 +2,7 @@
 description: Get all Unmanaged Devices
 ---
 
-An unmanaged device has a limited set of visible properties and supported events. 
+An unmanaged device has a limited set of visible properties, a subset of supported events, and may not be controlled. 
 Convert it to a managed device to control it with Seam.
 
 # List Unmanaged Devices
