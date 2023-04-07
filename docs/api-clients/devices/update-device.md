@@ -50,3 +50,19 @@ Name of Property
 ```
 {% endswagger-response %}
 {% endswagger %}
+
+### Code Example
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+seam.devices.update(properties={"name": "My Lock"})
+```
+{% endtab %}
+
+{% tab title="Javascript" %}
+```typescript
+await seam.devices.unmanaged.update({ properties: { name: "My Lock" } })
+```
+{% endtab %}
+{% endtabs %}
