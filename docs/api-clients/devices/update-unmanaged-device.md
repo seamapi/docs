@@ -3,7 +3,8 @@ description: Update an Unmanaged Device by its ID
 ---
 
 An unmanaged device has a limited set of visible properties, a subset of supported events, and may not be controlled. 
-Convert an unmanaged device to a managed device to control it with Seam.
+Any access codes on an unmanaged device will be unmanaged.
+Convert it to a managed device to control it with Seam.
 
 # Update Unmanaged Device
 
