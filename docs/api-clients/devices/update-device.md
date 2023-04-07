@@ -13,6 +13,11 @@ description: Update a Device by its ID
 ID of Device
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="is_managed" %}
+Set to false to unmanage the device with Seam.
+Unmanaging a device will unmanage all of its access codes.
+{% endswagger-parameter %}
+
 {% swagger-parameter in="body" name="properties" type="{name: String}" %}
 Name of Property
 {% endswagger-parameter %}
