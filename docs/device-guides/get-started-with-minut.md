@@ -26,12 +26,12 @@ $ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
 ```
 
 {% hint style="info" %}
-This guide uses a Sandbox Workspace. Only virtual devices can be connected. If you need to connect a real August Lock, use a non-sandbox workspace and API key.
+This guide uses a Sandbox Workspace. Only virtual sensors can be connected. If you need to connect a real Minut sensor, use a non-sandbox workspace and API key.
 {% endhint %}
 
 ## 2. Link Minut Account with Seam
 
-To control your August lock via the Seam API, you must first authorize your Seam workspace against your August account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews.md): pre-built UX flows that walk you through authorizing your application to control your August lock.
+To control your Minut sensor via the Seam API, you must first authorize your Seam workspace against your Minut account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews.md): pre-built UX flows that walk you through authorizing your application to control your Minut sensor.
 
 ### Create a Connect Webview
 
@@ -74,18 +74,18 @@ assert updated_webview.login_successful # true
 {% endtab %}
 {% endtabs %}
 
-## 3. Retrieve Minut Noise Monitors
+## 3. Retrieve Minut Noise Sensors
 
-Minut noise monitors appear with the `device_type` `"minut_noise_monitor"`. The Minut noise sensors report properties in addition to noise levels, namely `temperature` and `humidity`.
+Minut noise sensors appear with the `device_type` `"minut_sensor"`. The Minut noise sensors report properties in addition to noise levels, namely `temperature` and `humidity`.
 
 {% tabs %}
 {% tab title="Python" %}
 ```python
-sensors = seam.devices.list(device_type="minut_noise_monitor")
+sensors = seam.devices.list(device_type="minut_sensor")
 
 sensors[0]
 # Device(
-#   device_type="minut_noise_monitor",
+#   device_type="minut_sensor",
 #   location=None,
 #   properties={
 #     "online": True,
@@ -101,7 +101,7 @@ sensors[0]
 
 ## 4. Receive Noise Events
 
-Minut users can define noise thresholds at which&#x20;
+Minut users can define noise thresholds at which noise alerts are sent.
 
 You'll get an event for `noise_threshold.noise_threshold_triggered` when you set up a [webhook handler](../core-concepts/webhooks.md). You can also [poll for events](../api-clients/events/list-events.md).
 
