@@ -19,6 +19,7 @@ codes. We strictly limit the operations that can be performed on unmanaged codes
 
 - Viewing a list of the unmanaged codes on a device
 - Converting an unmanaged code into a managed code
+- Deleting an unmanaged code
 
 {% hint style="info" %}
 Strictly speaking, unmanaged codes are any codes on a device that were not created by the current workspace. For example,
@@ -89,3 +90,18 @@ list of providers which do not support conversion are:
 
 For SmartThings devices, you can still see a list of all unmanaged codes on the devices using the `GET /access_codes/unmanaged/list`
 endpoint, but you will not be able to see the actual pin code for the access codes (the `code` property won't be present).
+
+# Deleting unmanaged codes
+
+After you have converted unmanaged codes to managed codes, or replaced them with new ones, you can also allow users to delete
+any remaining unmanaged codes on their device. You can do this by using the `DELETE /access_codes` endpoint,
+and passing in a JSON body similar to:
+
+```js
+{
+    "access_code_id": "xxxx-xxxx-xxxx-xxxx",
+    "device_id": "yyyy-yyyy-yyyy-yyyy"
+}
+```
+
+The request will return an action attempt, similar to the managed code deletion endpoint. Take a look at the [Delete an access code](../api-clients/access-codes/delete-an-access-code.md) for more details.
