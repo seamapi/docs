@@ -93,7 +93,7 @@ endpoint, but you will not be able to see the actual pin code for the access cod
 
 # Deleting unmanaged codes
 
-After you have converted unmanaged codes to managed codes, or replaced them with new ones, you can also allow users to delete
+After you have converted unmanaged codes to managed codes, or replaced them with new ones, you can allow users to delete
 any remaining unmanaged codes on their device. You can do this by using the `DELETE /access_codes/unmanaged/delete` endpoint,
 and passing in a JSON body similar to:
 
