@@ -44,6 +44,7 @@
 - [Reconnecting an Account](device-guides/reconnecting-an-account.md)
 - [Access Code Management for Hospitality](device-guides/implementing-robust-access-code-management-for-guests.md)
 - [Migrating Existing Access Codes](device-guides/migrating-existing-codes.md)
+- [Rate Limits and Guardrails](device-guides/rate-limits-and-guardrails.md)
 
 ## 📋 API Clients
 
