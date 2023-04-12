@@ -1,6 +1,6 @@
 # Rate Limits and Guardrails
 
-In order to provide a great experience for all of our customers, we have a number of rate limits and guardrails in place.
+In order to provide a reliable service for all of our customers and API load predictability for our device partners, we have a number of rate limits and guardrails in place.
 
 ## Rate Limits
 
