@@ -3,8 +3,8 @@ description: Convert an Unmanaged Access Code to Managed
 ---
 
 An unmanaged access code has a limited set of operations that can be performed on it: view, delete, or convert to managed.
-Converting an unmanaged access code to a managed one allows it to be controlled with Seam. Note that not all device providers
-support this operation.
+Converting an unmanaged access code to a managed one allows it to be controlled with Seam, and have the full set of operations
+and lifecycle events available for it. Note that not all device providers support this operation.
 
 # Convert Unmanaged Access Code
 

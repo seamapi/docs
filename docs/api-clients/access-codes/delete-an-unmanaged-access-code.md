@@ -90,7 +90,8 @@ await seam.accessCodes.unmanaged.delete({
 ### Parameters
 
 | `access_code_id` | type: string | <p><br>ID of the Access Code</p> |
-| `device_id` | type: string | <p><br>ID of the Device</p> |
+| ---------------- | ------------ | -------------------------------- |
+| `device_id`      | type: string | <p><br>ID of the Device</p>      |
 
 ### Response
 
