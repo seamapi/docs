@@ -6,7 +6,7 @@
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="access_code_id" required="true" %}
-{% swagger-parameter in="query" name="device_id" required="true" %}
+{% swagger-parameter in="query" name="device_id" %}
 
 {% endswagger-parameter %}
 
@@ -77,11 +77,9 @@
 
 ```javascript
 await seam.accessCodes.unmanaged.delete({
-  delete_id: "1e9c85c3-77dc-481c-8fc1-3a10121ebe67",
+  device_id: "1e9c85c3-77dc-481c-8fc1-3a10121ebe67",
   access_code_id: "a9f662a7-44fb-4b91-b7a8-22c0f996bfc1",
 });
-
-//{}
 ```
 
 {% endtab %}
