@@ -11,7 +11,7 @@ description: Learn how to connect and control your Kwikset Halo lock with the Se
 Seam provides a universal API to connect and control many brands of smart locks. This guide provides a rapid introduction to connecting and controlling your [Kwikset Halo](https://www.seam.co/manufacturers/kwikset) lock using the Seam API. To learn more about other smart lock brands supported by Seam such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
 {% hint style="warning" %}
-Access Code management and MFA when logging into the Kwikset connect webview are not supported yet.  
+Access Code management and login for Kwikset accounts that require MFA are not supported yet.  
 {% endhint %}
 
 ## 1 — Install Seam SDK
