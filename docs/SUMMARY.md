@@ -42,6 +42,7 @@
   - [Schlage Encode Sample Data](device-guides/sandbox-and-sample-data/schlage-encode-sample-data.md)
   - [SmartThings Sample Data](device-guides/sandbox-and-sample-data/smartthings-sample-data.md)
   - [Yale Locks Sample Data](device-guides/sandbox-and-sample-data/yale-sample-data.md)
+  - [Kwikset Locks Sample Data](device-guides/sandbox-and-sample-data/kwikset-locks-sample-data.md)
 - [Reconnecting an Account](device-guides/reconnecting-an-account.md)
 - [Access Code Management for Hospitality](device-guides/implementing-robust-access-code-management-for-guests.md)
 - [Migrating Existing Access Codes](device-guides/migrating-existing-codes.md)
