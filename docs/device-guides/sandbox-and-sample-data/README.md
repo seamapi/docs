@@ -49,3 +49,7 @@ To use a sandbox, you will first need to create a Sandbox Workspace and create a
 {% content-ref url="yale-sample-data.md" %}
 [yale-sample-data.md](yale-sample-data.md)
 {% endcontent-ref %}
+
+{% content-ref url="kwikset-locks-sample-data.md" %}
+[kwikset-locks-sample-data.md](kwikset-locks-sample-data.md)
+{% endcontent-ref %}

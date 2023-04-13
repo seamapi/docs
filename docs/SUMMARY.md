@@ -24,6 +24,7 @@
 
 - [Get started with August Locks](device-guides/get-started-with-august-locks.md)
 - [Get started with Nuki Locks](device-guides/get-started-with-nuki-locks.md)
+- [Get started with Kwikset Wifi Locks](device-guides/get-started-with-kwikset-wifi-locks.md)
 - [Get started with Schlage Locks](device-guides/get-started-with-schlage-locks.md)
 - [Get started with Yale Locks](device-guides/get-started-with-yale-locks.md)
 - [Get started with Salto Locks](device-guides/get-started-with-salto-locks.md)
