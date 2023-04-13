@@ -178,7 +178,6 @@ print(some_lock)
 #     capabilities_supported=['lock']
 # )
 ```
-````
 {% endtab %}
 
 {% tab title="Javascript" %}
