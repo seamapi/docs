@@ -11,7 +11,13 @@ description: Learn how to connect and control your Kwikset Halo lock with the Se
 Seam provides a universal API to connect and control many brands of smart locks. This guide provides a rapid introduction to connecting and controlling your [Kwikset Halo](https://www.seam.co/manufacturers/kwikset) lock using the Seam API. To learn more about other smart lock brands supported by Seam such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
 {% hint style="warning" %}
-Access Code management and login for Kwikset accounts that require MFA are not supported yet.  
+Access Code management and login for Kwikset accounts that require MFA are not supported yet. Please ensure your Kwikset MFA settings are disabled before attempting to connect your Kwikset account with Seam.
+
+These settings can be found in your Kwikset app under **Account Settings**:
+<figure><div align="center"><img height="200" src="../.gitbook/assets/kwikset-MFA-settings.png" alt=""></div><figcaption><p align="center">Kwikset MFA Settings</p></figcaption></figure>
+{% endhint %}
+
+
 {% endhint %}
 
 ## 1 — Install Seam SDK
@@ -103,8 +109,12 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 - **password:** 1234
 
 {% hint style="warning" %}
-Login for Kwikset accounts that require MFA (Multi-Factor Authentication) is not supported yet.
+Login for Kwikset accounts that require MFA (Multi-Factor Authentication) is not supported yet. Please ensure your Kwikset MFA settings are disabled before attempting to connect your Kwikset account with Seam.
+
+These settings can be found in your Kwikset app under **Account Settings**:
+<figure><div align="center"><img height="200" src="../.gitbook/assets/kwikset-MFA-settings.png" alt=""></div><figcaption><p align="center">Kwikset MFA Settings</p></figcaption></figure>
 {% endhint %}
+
 
 <figure><img src="../.gitbook/assets/guides/kwikset-connect-flow-screens.jpg" alt=""><figcaption><p>Seam Connect Webview flow to connect Kwikset account with Seam</p></figcaption></figure>
 
@@ -238,7 +248,7 @@ some_lock = seam.locks.list.first
 puts some_lock.properties['online'] # true
 puts some_lock.properties['locked'] # true
 
-puts some_lock
+puts some_lock.inspect
 # <Seam::Device:0x00438
 #   device_id="10891c43-29e0-4b93-b071-34749025a123"
 #   device_type="kwikset_lock"
