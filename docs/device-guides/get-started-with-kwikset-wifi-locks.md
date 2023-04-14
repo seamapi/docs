@@ -11,9 +11,9 @@ description: Learn how to connect and control your Kwikset Halo lock with the Se
 Seam provides a universal API to connect and control many brands of smart locks. This guide provides a rapid introduction to connecting and controlling your [Kwikset Halo](https://www.seam.co/manufacturers/kwikset) lock using the Seam API. To learn more about other smart lock brands supported by Seam such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
 {% hint style="warning" %}
-Access Code management and login for Kwikset accounts that require MFA are not supported yet.  
+Access Code management and login for Kwikset accounts that require MFA are not supported yet. Please ensure your Kwikset MFA settings are disabled before attempting to connect your Kwikset account with Seam.
 
-Please ensure your Kwikset MFA settings are disabled before attempting to connect your Kwikset account with Seam. These settings can be found in your Kwikset app under **Account Settings**:
+These settings can be found in your Kwikset app under **Account Settings**:
 <figure><div align="center"><img height="200" src="../.gitbook/assets/kwikset-MFA-settings.png" alt=""></div><figcaption><p align="center">Kwikset MFA Settings</p></figcaption></figure>
 {% endhint %}
 
@@ -109,9 +109,9 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 - **password:** 1234
 
 {% hint style="warning" %}
-Login for Kwikset accounts that require MFA (Multi-Factor Authentication) is not supported yet. 
+Login for Kwikset accounts that require MFA (Multi-Factor Authentication) is not supported yet. Please ensure your Kwikset MFA settings are disabled before attempting to connect your Kwikset account with Seam.
 
-Please ensure your Kwikset MFA settings are disabled before attempting to connect your Kwikset account with Seam. These settings can be found in your Kwikset app under **Account Settings**:
+These settings can be found in your Kwikset app under **Account Settings**:
 <figure><div align="center"><img height="200" src="../.gitbook/assets/kwikset-MFA-settings.png" alt=""></div><figcaption><p align="center">Kwikset MFA Settings</p></figcaption></figure>
 {% endhint %}
 
