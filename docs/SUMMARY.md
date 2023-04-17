@@ -93,6 +93,9 @@
   - [Get Action Attempt](api-clients/action-attempt/get-action-attempt.md)
 - [Noise Thresholds](api-clients/noise-thresholds/README.md)
   - [List Noise Thresholds](api-clients/noise-thresholds/list-noise-thresholds.md)
+  - [Create Noise Thresholds](api-clients/noise-thresholds/create-noise-threshold.md)
+  - [Update Noise Threshold](api-clients/noise-thresholds/update-noise-threshold.md)
+  - [Delete Noise Threshold](api-clients/noise-thresholds/delete-noise-threshold.md)
 
 ## Reference
 

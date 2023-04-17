@@ -19,5 +19,8 @@ description: >-
 
 ### List of Methods
 
-| [List Noise Thresholds](list-noise-thresholds.md) | List noise thresholds |
-| ------------------------------------------------- | --------------------- |
+| [List Noise Thresholds](list-noise-thresholds.md)   | List noise thresholds    |
+| --------------------------------------------------- | ------------------------ |
+| [Create Noise Threshold](create-noise-threshold.md) | Create a noise threshold |
+| [Update Noise Threshold](update-noise-threshold.md) | Update a noise threshold |
+| [Delete Noise Threshold](delete-noise-threshold.md) | Delete a noise threshold |

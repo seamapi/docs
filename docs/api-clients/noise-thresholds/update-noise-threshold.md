@@ -1,5 +1,5 @@
 ---
-description: Update a Noise Threshold on your Noise Sensor by its ID
+description: Update a Noise Threshold on your Noise Sensor
 ---
 
 # Update Noise Threshold
