@@ -1,16 +1,20 @@
 ---
-description: Create a Noise Threshold on your Noise Sensor
+description: Update a Noise Threshold on your Noise Sensor by its ID
 ---
 
-# Create Noise Threshold
+# Update Noise Threshold
 
-{% swagger method="post" path="/noise_sensors/noise_thresholds/create" baseUrl="https://connect.getseam.com" summary="Create Noise Threshold on Device" %}
+{% swagger method="put" path="/noise_sensors/noise_thresholds/update" baseUrl="https://connect.getseam.com" summary="Update Noise Threshold" %}
 {% swagger-description %}
 
 {% endswagger-description %}
 
+{% swagger-parameter in="body" required="true" name="noise_threshold_id" %}
+Noise threshold id
+{% endswagger-parameter %}
+
 {% swagger-parameter in="body" required="true" name="device_id" %}
-Device id of a device to create a noise threshold on
+Device id of a device the noise threshold is on
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="name" %}
@@ -34,7 +38,7 @@ Noise level in Noiseaware Noise Risk Score (NRS) (only relevant for Noiseaware s
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="sync" type="boolean" %}
-Set this to true to receive the
+Set this to true to receive updated
 
 `noise_threshold`
 
@@ -53,7 +57,7 @@ Bearer <API_KEY>
 {
   "action_attempt": {
     "status": "pending",
-    "action_type": "CREATE_NOISE_THRESHOLD",
+    "action_type": "UPDATE_NOISE_THRESHOLD",
     "action_attempt_id": "c10e3db5-a5a2-47f2-a76f-48379ed9cd22",
     "result": null,
     "error": null
@@ -70,7 +74,7 @@ Bearer <API_KEY>
 {
   "error": {
     "type": "invalid_input",
-    "message": "Required for provided \"device_id\"",
+    "message": "Required for provided \"noise_threshold_id\"",
     "validation_errors": {
       "_errors": [],
       "device_id": {
@@ -109,7 +113,10 @@ Bearer <API_KEY>
 {% tab title="Python" %}
 
 ```python
-seam.noise_sensors.noise_thresholds.create("123e4567-e89b-12d3-a456-426614174000")
+seam.noise_sensors.noise_thresholds.update(
+  noise_threshold_id="123e4567-e89b-12d3-a456-426614174000",
+  device_id="123e4567-e89b-12d3-a456-426614174001"
+)
 
 # {
 #   "noise_threshold_id": "792263f8-1660-4cf9-a6c6-054d23b78d86",
@@ -128,6 +135,7 @@ seam.noise_sensors.noise_thresholds.create("123e4567-e89b-12d3-a456-426614174000
 
 | `device_id`                | type: string                                          | Device id of a device to create a noise threshold on                                    |
 | -------------------------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `noise_threshold_id`       | string                                                | Noise Threshold Id                                                                      |
 | `name`                     | string                                                | Name of the Noise Threshold                                                             |
 | `starts_daily_at`          | Seam Time of Day(https://github.com/seamapi/seam-tod) | Timestamp of when the Noise Threshold becomes active daily                              |
 | `ends_daily_at`            | Seam Time of Day(https://github.com/seamapi/seam-tod) | Timestamp of when the Noise Threshold becomes inactive daily                            |
@@ -147,7 +155,7 @@ This section shows the JSON response returned by the API. Since each language en
 {
   "action_attempt": {
     "status": "pending",
-    "action_type": "CREATE_NOISE_THRESHOLD",
+    "action_type": "UPDATE_NOISE_THRESHOLD",
     "action_attempt_id": "c10e3db5-a5a2-47f2-a76f-48379ed9cd22",
     "result": null,
     "error": null
