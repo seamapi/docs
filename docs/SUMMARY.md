@@ -91,8 +91,8 @@
   - [Get an Event](api-clients/events/get-an-event.md)
 - [Action Attempt](api-clients/action-attempt/README.md)
   - [Get Action Attempt](api-clients/action-attempt/get-action-attempt.md)
-- [Noise Thresholds](api-clients/locks-1/README.md)
-  - [List Noise Thresholds](api-clients/locks-1/list-locks.md)
+- [Noise Thresholds](api-clients/noise-thresholds/README.md)
+  - [List Noise Thresholds](api-clients/noise-thresholds/list-noise-thresholds.md)
 
 ## Reference
 
