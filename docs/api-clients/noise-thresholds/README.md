@@ -12,8 +12,8 @@ description: >-
 | ------------------------------ | ----------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | **`device_id`**                | uuid                                                  | ID of the Device the Noise Threshold is set on                                          |
 | **`name`**                     | string                                                | Name of the Noise Threshold                                                             |
-| **`starts_daily_at`**          | Seam Time of Day(https://github.com/seamapi/seam-tod) | Timestamp of when the Noise Threshold becomes active daily                              |
-| **`ends_daily_at`**            | Seam Time of Day(https://github.com/seamapi/seam-tod) | Timestamp of when the Noise Threshold becomes inactive daily                            |
+| **`starts_daily_at`**          | [Seam Time of Day](https://github.com/seamapi/seam-tod) | Timestamp of when the Noise Threshold becomes active daily                              |
+| **`ends_daily_at`**            | [Seam Time of Day](https://github.com/seamapi/seam-tod) | Timestamp of when the Noise Threshold becomes inactive daily                            |
 | **`noise_threshold_decibels`** | number                                                | The noise level in decibels                                                             |
 | **`noise_threshold_nrs`**      | number, optional                                      | Noise Level in Noiseaware Noise Risk Score (NRS) (only relevant for Noiseaware sensors) |
 
