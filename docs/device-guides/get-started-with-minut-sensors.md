@@ -1,5 +1,5 @@
 ---
-description: Learn how to connect and control your Minut monitors sensors with the Seam API
+description: Learn how to connect and control your Minut sensors with the Seam API
 ---
 
 # Get started with Minut Sensors
