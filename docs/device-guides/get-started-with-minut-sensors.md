@@ -8,10 +8,6 @@ description: Learn how to connect and control your Minut sensors with the Seam A
 
 ## Overview
 
-{% hint style="warning" %}
-The Minut integration is still in beta, some details of this guide may change as the integration reaches stability.
-{% endhint %}
-
 ## 1. Install Seam SDK
 
 Seam provides client libraries for many languages such as Javascript, Python, Ruby, and PHP, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.
