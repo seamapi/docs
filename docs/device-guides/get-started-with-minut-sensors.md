@@ -8,6 +8,8 @@ description: Learn how to connect and control your Minut sensors with the Seam A
 
 ## Overview
 
+Seam provides a universal API to connect and control many brands of devices such as smart locks, thermostats, and sensors. This guide provides a rapid introduction to connecting and controlling your [Minut](https://www.seam.co/manufacturers/minut) sensors using the Seam API. To learn more about other brands of devices supported by Seam, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
+
 ## 1. Install Seam SDK
 
 Seam provides client libraries for many languages such as Javascript, Python, Ruby, and PHP, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.
