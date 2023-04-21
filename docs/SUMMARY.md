@@ -28,7 +28,7 @@
 - [Get started with Schlage Locks](device-guides/get-started-with-schlage-locks.md)
 - [Get started with Yale Locks](device-guides/get-started-with-yale-locks.md)
 - [Get started with Salto Locks](device-guides/get-started-with-salto-locks.md)
-- [Get started with Minut](device-guides/get-started-with-minut.md)
+- [Get started with Minut Sensors](device-guides/get-started-with-minut-sensors.md)
 - [Get started with SmartThings Hubs + Smart Locks](device-guides/get-started-with-smartthings-hubs-+-smart-locks.md)
 - [Get started with NoiseAware Sensors](device-guides/get-started-with-noiseaware-sensors.md)
 - [Sandbox & Sample Data](device-guides/sandbox-and-sample-data/README.md)
