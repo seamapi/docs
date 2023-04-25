@@ -19,7 +19,7 @@ Seam provides client libraries for many languages such as Javascript, Python, Ru
 - **Ruby:** `bundle add seamapi` ([rubygem](https://rubygems.org/gems/seamapi), [github](https://github.com/seamapi/ruby))
 - **PHP:** `composer require seamapi/seam` ([packagist](https://packagist.org/packages/seamapi/seam), [github](https://github.com/seamapi/php))
 
-Once installed, [sign-up for Seam](https://console.seam.com/) to get your API key, and export it as an environment variable:
+Once installed, [sign-up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:
 
 ```
 $ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
