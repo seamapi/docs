@@ -2,7 +2,7 @@
 description: Learn how to connect and control your ControlByWeb device with the Seam API.
 ---
 
-# Get started with ControlByWeb devices
+# Get Started with ControlByWeb Devices
 
 <figure><img src="../.gitbook/assets/guides/controlbyweb-getting-started-guide-cover.jpg" alt=""><figcaption><p>ControlByWeb Devices</p></figcaption></figure>
 
