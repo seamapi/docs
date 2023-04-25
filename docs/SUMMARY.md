@@ -23,6 +23,7 @@
 ## 🎛 Device Guides
 
 - [Get started with August Locks](device-guides/get-started-with-august-locks.md)
+- [Get started with ControlByWeb Devices](device-guides/get-started-with-controlbyweb-devices.md)
 - [Get started with Nuki Locks](device-guides/get-started-with-nuki-locks.md)
 - [Get started with Kwikset Wifi Locks](device-guides/get-started-with-kwikset-wifi-locks.md)
 - [Get started with Schlage Locks](device-guides/get-started-with-schlage-locks.md)
