@@ -14,9 +14,9 @@ Seam provides a universal API to connect and control many brands of smart locks.
 Access Code management and login for Kwikset accounts that require MFA are not supported yet. Please ensure your Kwikset MFA settings are disabled before attempting to connect your Kwikset account with Seam.
 
 These settings can be found in your Kwikset app under **Account Settings**:
+
 <figure><div align="center"><img height="200" src="../.gitbook/assets/kwikset-MFA-settings.png" alt=""></div><figcaption><p align="center">Kwikset MFA Settings</p></figcaption></figure>
 {% endhint %}
-
 
 {% endhint %}
 
@@ -29,7 +29,7 @@ Seam provides client libraries for many languages such as Javascript, Python, Ru
 - **Ruby:** `bundle add seamapi` ([rubygem](https://rubygems.org/gems/seamapi), [github](https://github.com/seamapi/ruby))
 - **PHP:** `composer require seamapi/seam` ([packagist](https://packagist.org/packages/seamapi/seam), [github](https://github.com/seamapi/php))
 
-Once installed, [sign-up for Seam](https://dashboard.getseam.com/) to get your API key, and export it as an environment variable:
+Once installed, [sign-up for Seam](https://console.seam.com/) to get your API key, and export it as an environment variable:
 
 ```
 $ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
@@ -112,9 +112,9 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 Login for Kwikset accounts that require MFA (Multi-Factor Authentication) is not supported yet. Please ensure your Kwikset MFA settings are disabled before attempting to connect your Kwikset account with Seam.
 
 These settings can be found in your Kwikset app under **Account Settings**:
+
 <figure><div align="center"><img height="200" src="../.gitbook/assets/kwikset-MFA-settings.png" alt=""></div><figcaption><p align="center">Kwikset MFA Settings</p></figcaption></figure>
 {% endhint %}
-
 
 <figure><img src="../.gitbook/assets/guides/kwikset-connect-flow-screens.jpg" alt=""><figcaption><p>Seam Connect Webview flow to connect Kwikset account with Seam</p></figcaption></figure>
 
@@ -161,7 +161,7 @@ After a Kwikset account is linked with Seam, you can retrieve devices for this K
 {% tabs %}
 {% tab title="Python" %}
 
-```python
+````python
 all_locks = seam.locks.list()
 
 some_lock = all_locks[0]
@@ -172,33 +172,35 @@ assert some_lock.properties["locked"] is True
 print(some_lock)
 ```python
 # Device(
-#     device_id='10891c43-29e0-4b93-b071-34749025a123', 
-#     device_type='kwikset_lock', 
-#     location=None, 
+#     device_id='10891c43-29e0-4b93-b071-34749025a123',
+#     device_type='kwikset_lock',
+#     location=None,
 #     properties={
-#         'locked': True, 
-#         'online': True, 
-#         'manufacturer': 'kwikset', 
-#         'battery_level': 0.65, 
+#         'locked': True,
+#         'online': True,
+#         'manufacturer': 'kwikset',
+#         'battery_level': 0.65,
 #         'kwikset_metadata': {
-#             'device_id': '10d221f8e8445dbe07', 
-#             'device_name': 'Kwikset Halo Touch', 
+#             'device_id': '10d221f8e8445dbe07',
+#             'device_name': 'Kwikset Halo Touch',
 #             'model_number': 'HALO-01'
-#         }, 
-#         'name': 'Kwikset Halo Touch', 
+#         },
+#         'name': 'Kwikset Halo Touch',
 #         'battery': {
-#             'level': 0.65, 
+#             'level': 0.65,
 #             'status': 'good'
-#         }, 
-#         'image_url': 'https://connect.getseam.com/assets/images/devices/kwikset_halo_touchscreen-wi-fi-enabled-smart-lock_polished-chrome_front.png', 
+#         },
+#         'image_url': 'https://connect.getseam.com/assets/images/devices/kwikset_halo_touchscreen-wi-fi-enabled-smart-lock_polished-chrome_front.png',
 #         'image_alt_text': 'Kwikset Halo Touchscreen Wifi Enabled Smart Lock, Polished Chrome, Front'
-#     }, 
+#     },
 #     capabilities_supported=['lock']
 # )
-```
+````
+
 {% endtab %}
 
 {% tab title="Javascript" %}
+
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -253,19 +255,20 @@ puts some_lock.inspect
 #   device_id="10891c43-29e0-4b93-b071-34749025a123"
 #   device_type="kwikset_lock"
 #   properties={
-#     "locked"=>true, 
-#     "online"=>true, 
-#     "manufacturer"=>"kwikset", 
-#     "battery_level"=>0.65, 
-#     "kwikset_metadata"=>{"device_id"=>"10d221f8e8445dbe07", "device_name"=>"Kwikset Halo Touch", "model_number"=>"HALO-01"}, 
-#     "name"=>"Kwikset Halo Touch", 
-#     "battery"=>{"level"=>0.65, "status"=>"good"}, 
-#     "image_url"=>"https://connect.getseam.com/assets/images/devices/kwikset_halo_touchscreen-wi-fi-enabled-smart-lock_polished-chrome_front.png", 
+#     "locked"=>true,
+#     "online"=>true,
+#     "manufacturer"=>"kwikset",
+#     "battery_level"=>0.65,
+#     "kwikset_metadata"=>{"device_id"=>"10d221f8e8445dbe07", "device_name"=>"Kwikset Halo Touch", "model_number"=>"HALO-01"},
+#     "name"=>"Kwikset Halo Touch",
+#     "battery"=>{"level"=>0.65, "status"=>"good"},
+#     "image_url"=>"https://connect.getseam.com/assets/images/devices/kwikset_halo_touchscreen-wi-fi-enabled-smart-lock_polished-chrome_front.png",
 #     "image_alt_text"=>"Kwikset Halo Touchscreen Wifi Enabled Smart Lock, Polished Chrome, Front"
 #   }
 >
 
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -289,6 +292,7 @@ Next, you can perform the basic action of locking and unlocking the door.
 
 {% tabs %}
 {% tab title="Python" %}
+
 ```python
 # lock the door
 seam.locks.lock_door(some_lock)
@@ -300,9 +304,11 @@ seam.locks.unlock_door(some_lock)
 updated_lock = seam.locks.get(some_lock.device_id)
 assert updated_lock.properties["locked"] is False
 ```
+
 {% endtab %}
 
 {% tab title="Javascript" %}
+
 ```javascript
 // lock the door
 await seam.locks.lockDoor(someLock.device_id)
@@ -314,9 +320,11 @@ await seam.locks.unlockDoor(someLock.device_id)
 updatedLock = await seam.locks.get(someLock.device_id)
 console.log(updatedLock.properties.locked) // false
 ```
+
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 ```ruby
 # lock the door
 seam.locks.lock_door(some_lock)
@@ -340,11 +348,11 @@ Now that you've completed this guide, you can try to connect a real Kwikset Halo
 
 In addition, if you'd like to explore other aspects of Seam, here is a list of helpful resources:
 
-* [Yale Getting Started Guide](get-started-with-yale-locks.md)
-* [August Getting Started Guide](get-started-with-august-locks.md)
-* [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
-* [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list-events.md)
-* [Core Concepts](../core-concepts/overview.md)
+- [Yale Getting Started Guide](get-started-with-yale-locks.md)
+- [August Getting Started Guide](get-started-with-august-locks.md)
+- [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
+- [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
+- [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list-events.md)
+- [Core Concepts](../core-concepts/overview.md)
 
 If you have any questions or want to report an issue, email us at support@seam.co.

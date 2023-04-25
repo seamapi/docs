@@ -8,7 +8,7 @@ description: Learn how to connect and control your ControlByWeb device with the 
 
 ## Overview
 
-Seam provides a universal API to connect and control many brands of smart devices. This guide provides a rapid introduction to connecting and controlling your ControlByWeb device using the Seam API. To learn more about other smart device brands supported by Seam such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
+Seam provides a universal API to connect and control many brands of smart devices. This guide provides a rapid introduction to connecting and controlling your [ControlByWeb](https://www.seam.co/manufacturers/control-by-web) relay device using the Seam API. To learn more about other smart device brands supported by Seam such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
 ## 1 — Install Seam SDK
 
@@ -19,7 +19,7 @@ Seam provides client libraries for many languages such as Javascript, Python, Ru
 - **Ruby:** `bundle add seamapi` ([rubygem](https://rubygems.org/gems/seamapi), [github](https://github.com/seamapi/ruby))
 - **PHP:** `composer require seamapi/seam` ([packagist](https://packagist.org/packages/seamapi/seam), [github](https://github.com/seamapi/php))
 
-Once installed, [sign-up for Seam](https://dashboard.getseam.com/) to get your API key, and export it as an environment variable:
+Once installed, [sign-up for Seam](https://console.seam.com/) to get your API key, and export it as an environment variable:
 
 ```
 $ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
@@ -31,7 +31,7 @@ This guide uses a Sandbox Workspace. Only virtual devices can be connected. If y
 
 ## 2 — Link ControlByWeb Account with Seam
 
-To control your ControlByWeb device via the Seam API, you must first authorize your Seam workspace against your ControlByWeb account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews.md): pre-built UX flows that walk you through authorizing your application to control your ControlByWeb device.
+To control your ControlByWeb relay device via the Seam API, you must first authorize your Seam workspace against your ControlByWeb Cloud account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews.md): pre-built UX flows that walk you through authorizing your application to control your ControlByWeb device.
 
 #### Request a Connect Webview
 
@@ -143,7 +143,7 @@ After a ControlByWeb account is linked with Seam, you can retrieve devices for t
 {% tabs %}
 {% tab title="Python" %}
 
-```python
+````python
 all_locks = seam.locks.list()
 
 some_lock = all_locks[0]
@@ -173,10 +173,12 @@ print(some_lock)
 #   capabilities_supported=['lock'],
 #   errors=[]
 # )
-```
+````
+
 {% endtab %}
 
 {% tab title="Javascript" %}
+
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -224,28 +226,9 @@ some_lock = seam.locks.list.first
 puts some_lock.properties['online'] # true
 puts some_lock.properties['locked'] # true
 
-puts some_lock.inspect
-# <Seam::Device:0x00146639380
-#   device_id="4a570d13-9704-46e0-b69c-9fea80d6a7aa"
-#   device_type="controlbyweb_device"
-#   properties={
-#     "locked"=>true,
-#     "online"=>true,
-#     "manufacturer"=>"controlbyweb",
-#     "controlbyweb_metadata"=>{
-#       "device_id"=>"9997",
-#       "relay_name"=>"firstRelay",
-#       "device_name"=>"Device 2"
-#     },
-#     "name"=>"Device 2",
-#     "image_url"=>"https://connect.getseam.com/assets/images/devices/unknown-lock.png",
-#     "image_alt_text"=>"Placeholder Lock Image"
-#   }
-#   created_at=2023-04-25 14:34:50 UTC
-#   errors=[]
-#   warnings=[]
-# >
+puts some_lock.inspect # > #   warnings=[] #   errors=[] #   created_at=2023-04-25 14:34:50 UTC #   } #     "image_alt_text"=>"Placeholder Lock Image" #     "image_url"=>"https://connect.getseam.com/assets/images/devices/unknown-lock.png", #     "name"=>"Device 2", #     }, #       "device_name"=>"Device 2" #       "relay_name"=>"firstRelay", #       "device_id"=>"9997", #     "controlbyweb_metadata"=>{ #     "manufacturer"=>"controlbyweb", #     "online"=>true, #     "locked"=>true, #   properties={ #   device_type="controlbyweb_device" #   device_id="4a570d13-9704-46e0-b69c-9fea80d6a7aa" # <Seam::Device:0x00146639380
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -265,20 +248,25 @@ Next, you can perform the basic action of triggering a relay on the device. This
 
 {% tabs %}
 {% tab title="Python" %}
+
 ```python
 # trigger the relay
 seam.locks.unlock_door(some_lock)
 ```
+
 {% endtab %}
 
 {% tab title="Javascript" %}
+
 ```javascript
 // trigger the relay
 await seam.locks.unlockDoor(someLock.device_id)
 ```
+
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 ```ruby
 # trigger the relay
 seam.locks.unlock_door(some_lock)
@@ -295,11 +283,12 @@ Now that you've completed this guide, you can try to connect a real ControlByWeb
 
 In addition, if you'd like to explore other aspects of Seam, here is a list of helpful resources:
 
-* [Yale Getting Started Guide](get-started-with-yale-locks.md)
-* [August Getting Started Guide](get-started-with-august-locks.md)
-* [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
-* [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list-events.md)
-* [Core Concepts](../core-concepts/overview.md)
+- [Yale Getting Started Guide](get-started-with-yale-locks.md)
+- [August Getting Started Guide](get-started-with-august-locks.md)
+- [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
+- [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
+- [Minut Getting Started Guide](get-started-with-minut-sensors.md)
+- [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list-events.md)
+- [Core Concepts](../core-concepts/overview.md)
 
 If you have any questions or want to report an issue, email us at support@seam.co.
