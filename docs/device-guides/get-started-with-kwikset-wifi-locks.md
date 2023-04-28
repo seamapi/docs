@@ -486,6 +486,30 @@ seam.access_codes.list(some_lock)
 #   access_code_id="91a08a3d-a0bb-4ff0-bfb4-ced164353988">]
 ```
 {% endtab %}
+
+{% tab title="PHP" %}
+
+```php
+use Seam\SeamClient;
+
+$seam = new SeamClient("YOUR_API_KEY");
+
+$some_lock = $seam->locks->list()[0];
+$seam->access_codes->create(
+  device_id: $some_lock->device_id, code: '123456', name: 'My Access Code'
+);
+
+$seam->access_codes->create(
+  device_id: $some_lock->device_id,
+  name: 'Scheduled Code',
+  code: '888888',
+  starts_at: '2028-08-12T19:23:42+0000',
+  ends_at: '2028-08-13T19:23:42+0000'
+);
+
+```
+
+{% endtab %}
 {% endtabs %}
 
 
