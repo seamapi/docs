@@ -11,10 +11,11 @@ description: Learn how to connect and control your Kwikset Halo lock with the Se
 Seam provides a universal API to connect and control many brands of smart locks. This guide provides a rapid introduction to connecting and controlling your [Kwikset Halo](https://www.seam.co/manufacturers/kwikset) lock using the Seam API. To learn more about other smart lock brands supported by Seam such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
 {% hint style="warning" %}
-Access Code management and login for Kwikset accounts that require MFA are not supported yet. Please ensure your Kwikset MFA settings are disabled before attempting to connect your Kwikset account with Seam.
+Enabling MFA (Multi-Factor Authentication) on your Kwikset app can block our login flow from successfully authorizing with your account. 
 
-These settings can be found in your Kwikset app under **Account Settings**:
+Please ensure your Kwikset MFA settings are disabled before attempting to connect your account with Seam. After connecting your account, you can re-enable your MFA settings.
 
+To disable MFA, head to **Account Settings** in your Kwikset app:
 <figure><div align="center"><img height="200" src="../.gitbook/assets/kwikset-MFA-settings.png" alt=""></div><figcaption><p align="center">Kwikset MFA Settings</p></figcaption></figure>
 {% endhint %}
 
@@ -109,10 +110,11 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 - **password:** 1234
 
 {% hint style="warning" %}
-Login for Kwikset accounts that require MFA (Multi-Factor Authentication) is not supported yet. Please ensure your Kwikset MFA settings are disabled before attempting to connect your Kwikset account with Seam.
+Enabling MFA (Multi-Factor Authentication) on your Kwikset app can block our login flow from successfully authorizing with your account. 
 
-These settings can be found in your Kwikset app under **Account Settings**:
+Please ensure your Kwikset MFA settings are disabled before attempting to connect your account with Seam. After connecting your account, you can re-enable your MFA settings.
 
+To disable MFA, head to **Account Settings** in your Kwikset app:
 <figure><div align="center"><img height="200" src="../.gitbook/assets/kwikset-MFA-settings.png" alt=""></div><figcaption><p align="center">Kwikset MFA Settings</p></figcaption></figure>
 {% endhint %}
 
@@ -341,6 +343,175 @@ puts updated_lock.properties['locked'] # false
 {% endtabs %}
 
 ###
+
+### 5 — Setting Access Code on Kwikset Lock
+
+Some Kwikset locks have a keypad paired to them to program access codes. These codes can then be entered to unlock a Kwikset lock.
+
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Kwikset lock. You can find out more about Kwikset lock access code in our [core concept section on access codes.](../core-concepts/access-codes.md)
+
+**Access Code Constraints**
+Kwikset locks place the following constraints on access code attributes:
+- Access code name has to be between 2-14 characters
+- Pin code length has to be between 4-8 digits
+- A `timebound` code requires both a `starts_at` and `ends_at` time
+- A `timebound` code's `starts_at` time has to be greater than the current time (for best results, set `starts_at` at least 15 minutes ahead of current time)
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+# create an ongoing code
+seam.access_codes.create(
+    device=some_lock, code="123456", name="My Access Code"
+)
+
+# create a timebound code
+seam.access_codes.create(
+    device=some_lock,
+    code="888888",
+    name="Scheduled Code",
+    starts_at="2028-08-12T19:23:42+0000",
+    ends_at="2028-08-13T19:23:42+0000"
+)
+
+# you can use a device or a device_id as the "device" parameter
+seam.access_codes.list(device=some_lock)
+# [
+#   AccessCode(
+#     access_code_id='af5272b1-2a49-4eb5-9388-2447fc7b5bd1',
+#     type='ongoing',
+#     code='123459'
+#   ),
+#   AccessCode(
+#     access_code_id='8c2db4da-b137-4c08-a2c3-d611e6ff91b3',
+#     type='timebound',
+#     code='888888',
+#     starts_at='2028-08-12T19:24:00.000Z',
+#     ends_at='2028-08-13T19:24:00.000Z',
+#   )
+# ]
+
+```
+{% endtab %}
+
+{% tab title="Javascript" %}
+```javascript
+// create an ongoing code
+await seam.accessCodes.create({
+  device_id: someLock.device_id,
+  code: '123456',
+  name: 'My Access Code',
+})
+
+// create a timebound code
+await seam.accessCodes.create({
+  device_id: someLock.device_id,
+  code: '888888',
+  name: 'Scheduled Code',
+  starts_at: '2028-11-12T19:23:42+0000',
+  ends_at: '2028-11-13T19:23:42+0000',
+})
+
+// use a device_id as the "device_id" parameter
+await seam.accessCodes.list({
+  device_id: someLock.device_id,
+})
+
+/*
+[
+  {
+    code: '1988',
+    type: 'ongoing',
+    status: 'setting',
+    created_at: '2022-08-26T12:50:17.858Z',
+    access_code_id: '26d6138c-6524-4f3c-ac96-43cc3bea0a8d'
+  },
+  {
+    type: 'timebound',
+    code: '888888',
+    starts_at: '2028-08-12T19:24:00.000Z', 
+    ends_at: '2028-08-13T19:24:00.000Z',
+    access_code_id: '8c2db4da-b137-4c08-a2c3-d611e6ff91b3',
+  }
+]
+*/
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```ruby
+# create an ongoing code
+seam.access_codes.create(
+  device_id: some_lock.device_id, code: '123456', name: 'My Access Code'
+)
+
+# create a timebound code
+seam.access_codes.create(
+  device_id: some_lock.device_id,
+  code: '888888',
+  name: 'Scheduled Code',
+  starts_at: '2028-08-12T19:23:42+0000',
+  ends_at: '2028-08-13T19:23:42+0000'
+)
+
+# you can use a device or a device_id as the "device" parameter
+seam.access_codes.list(some_lock)
+
+# [<Seam::AccessCode:0x00730
+#   code="888888"
+#   name="Scheduled Code"
+#   type="time_bound"
+#   errors=[]
+#   warnings=[]
+#   access_code_id="ce2c298c-364f-4b13-aa12-712f3976288e"
+#   ends_at=2028-08-13 19:24:00 UTC
+#   starts_at=2028-08-12 19:24:00 UTC>, <Seam::AccessCode:0x00758
+#   code="123456"
+#   name="My Access Code"
+#   type="ongoing"
+#   errors=[]
+#   warnings=[]
+#   access_code_id="75f49550-fc9b-481a-a158-5bc53ac9bb34">, <Seam::AccessCode:0x00780
+#   code="086355"
+#   name="some-code2"
+#   type="ongoing"
+#   errors=[]
+#   warnings=[]
+#   access_code_id="5243e5f3-528a-4378-ba3c-21447bf844a8">, <Seam::AccessCode:0x007a8
+#   code="376525"
+#   name="some-code"
+#   type="ongoing"
+#   errors=[]
+#   warnings=[]
+#   access_code_id="91a08a3d-a0bb-4ff0-bfb4-ced164353988">]
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+```php
+use Seam\SeamClient;
+
+$seam = new SeamClient("YOUR_API_KEY");
+
+$some_lock = $seam->locks->list()[0];
+$seam->access_codes->create(
+  device_id: $some_lock->device_id, code: '123456', name: 'My Access Code'
+);
+
+$seam->access_codes->create(
+  device_id: $some_lock->device_id,
+  name: 'Scheduled Code',
+  code: '888888',
+  starts_at: '2028-08-12T19:23:42+0000',
+  ends_at: '2028-08-13T19:23:42+0000'
+);
+
+```
+
+{% endtab %}
+{% endtabs %}
+
 
 ## Next Steps
 
