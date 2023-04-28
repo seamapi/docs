@@ -11,9 +11,11 @@ description: Learn how to connect and control your Kwikset Halo lock with the Se
 Seam provides a universal API to connect and control many brands of smart locks. This guide provides a rapid introduction to connecting and controlling your [Kwikset Halo](https://www.seam.co/manufacturers/kwikset) lock using the Seam API. To learn more about other smart lock brands supported by Seam such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
 {% hint style="warning" %}
-Login flow for Kwikset accounts that require MFA (Multi-Factor Authentication) is not supported. Please ensure your Kwikset MFA settings are disabled before attempting to connect your Kwikset account with Seam. After connecting your account, you can re-enable your MFA settings.
+Enabling MFA (Multi-Factor Authentication) on your Kwikset app can block our login flow from successfully authorizing with your account. 
 
-You can disable MFA settings in your Kwikset app under **Account Settings**:
+Please ensure your Kwikset MFA settings are disabled before attempting to connect your account with Seam. After connecting your account, you can re-enable your MFA settings.
+
+To disable MFA, head to **Account Settings** in your Kwikset app:
 <figure><div align="center"><img height="200" src="../.gitbook/assets/kwikset-MFA-settings.png" alt=""></div><figcaption><p align="center">Kwikset MFA Settings</p></figcaption></figure>
 {% endhint %}
 
@@ -108,9 +110,11 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 - **password:** 1234
 
 {% hint style="warning" %}
-Login flow for Kwikset accounts that require MFA (Multi-Factor Authentication) is not supported. Please ensure your Kwikset MFA settings are disabled before attempting to connect your Kwikset account with Seam. After connecting your account, you can re-enable your MFA settings.
+Enabling MFA (Multi-Factor Authentication) on your Kwikset app can block our login flow from successfully authorizing with your account. 
 
-You can disable MFA settings in your Kwikset app under **Account Settings**:
+Please ensure your Kwikset MFA settings are disabled before attempting to connect your account with Seam. After connecting your account, you can re-enable your MFA settings.
+
+To disable MFA, head to **Account Settings** in your Kwikset app:
 <figure><div align="center"><img height="200" src="../.gitbook/assets/kwikset-MFA-settings.png" alt=""></div><figcaption><p align="center">Kwikset MFA Settings</p></figcaption></figure>
 {% endhint %}
 
