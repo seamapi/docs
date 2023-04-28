@@ -353,6 +353,7 @@ The Seam API makes it easy to program both `ongoing` codes and `timebound` codes
 **Access Code Constraints**
 Kwikset locks place the following constraints on access code attributes:
 - Access code name has to be between 2-14 characters
+  - You can create a Seam access code for Kwikset with a name longer than 14 characters. The full name will be stored in Seam but on the Kwikset device, the name will be truncated to 14 characters
 - Pin code length has to be between 4-8 digits
 - A `timebound` code requires both a `starts_at` and `ends_at` time
 - A `timebound` code's `starts_at` time has to be greater than the current time (for best results, set `starts_at` at least 15 minutes ahead of current time)
