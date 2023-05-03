@@ -10,7 +10,9 @@ description: Learn how to connect and control your 2N intercom with the Seam API
 
 Seam provides a universal API to connect and control many brands of smart devices. This guide provides a rapid introduction to connecting and controlling your [2N](https://www.seam.co/manufacturers/2n) intercom using the Seam API. To learn more about other smart device brands supported by Seam such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
-Note that 2N devices are currently required to be connected to the My2N cloud service to be controlled via Seam. If you are unable or do not wish to connect your 2N device to My2N, please [contact us](https://www.seam.co/contact-us) to discuss alternative options.
+{% hint style="warning" %}
+2N devices are currently required to be connected to the My2N cloud service to be controlled via Seam. If you are unable or do not wish to connect your 2N device to My2N, please [contact us](https://www.seam.co/contact-us) to discuss alternative options.
+{% endhint %}
 
 ## 1 — Install Seam SDK
 
