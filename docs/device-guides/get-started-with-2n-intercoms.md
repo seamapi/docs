@@ -261,7 +261,7 @@ puts some_lock.inspect
 {% endtab %}
 {% endtabs %}
 
-### 4 — Locking & Unlocking a Door
+## 4 — Locking & Unlocking a Door
 
 Next, you can perform the basic action of locking and unlocking the door.
 
@@ -329,7 +329,7 @@ puts updated_lock.properties['locked'] # false
 {% endtab %}
 {% endtabs %}
 
-### 5 — Creating Access Codes on 2N Intercoms
+## 5 — Creating Access Codes on 2N Intercoms
 
 2N devices have a directory with residents. These residents can be assigned PIN codes to unlock the door.
 
