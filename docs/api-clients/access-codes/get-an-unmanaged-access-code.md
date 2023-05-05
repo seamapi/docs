@@ -30,21 +30,6 @@ description: Get an Unmanaged Access Code of a Device by its Access Code ID
 
 {% endswagger-response %}
 
-{% swagger-response status="400: Bad Request" description="" %}
-
-```javascript
-{
-  "error": {
-    "type": "internal_server_error",
-    "message": "Undefined binding(s) detected when compiling FIRST. Undefined column(s): [device_id] query: select \"device_id\" from \"seam\".\"device\" where \"workspace_id\" = ? and \"device_id\" = ? limit ?",
-    "request_id": "cd32ef1e-6e14-4bcb-ab34-b88bfb5c1a1b"
-  },
-  "ok": false
-}
-```
-
-{% endswagger-response %}
-
 {% swagger-response status="404: Not Found" description="" %}
 
 ```javascript
