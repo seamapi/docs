@@ -34,6 +34,7 @@
 - [Get started with SmartThings Hubs + Smart Locks](device-guides/get-started-with-smartthings-hubs-+-smart-locks.md)
 - [Get started with NoiseAware Sensors](device-guides/get-started-with-noiseaware-sensors.md)
 - [Sandbox & Sample Data](device-guides/sandbox-and-sample-data/README.md)
+  - [2N Intercoms Sample Data](device-guides/sandbox-and-sample-data/2n-intercoms-sample-data.md)
   - [August Locks Sample Data](device-guides/sandbox-and-sample-data/august-locks-sample-data.md)
   - [DoorKing Callbox Sample Data](device-guides/sandbox-and-sample-data/doorking-sample-data.md)
   - [Genie Garage Opener Sample Data](device-guides/sandbox-and-sample-data/genie-sample-data.md)

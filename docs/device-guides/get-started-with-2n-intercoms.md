@@ -4,7 +4,7 @@ description: Learn how to connect and control your 2N intercom with the Seam API
 
 # Get Started with 2N Intercoms
 
-<figure><img src="../.gitbook/assets/guides/controlbyweb-getting-started-guide-cover.jpg" alt=""><figcaption><p>2N Intercoms</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/guides/2n-getting-started-seo-cover" alt=""><figcaption><p>2N Intercoms</p></figcaption></figure>
 
 ## Overview
 
@@ -30,7 +30,7 @@ $ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
 ```
 
 {% hint style="info" %}
-This guide uses a Sandbox Workspace. Only virtual devices can be connected. If you need to connect a real  device, use a non-sandbox workspace and API key.
+This guide uses a Sandbox Workspace. Only virtual devices can be connected. If you need to connect a real device, use a non-sandbox workspace and API key.
 {% endhint %}
 
 ## 2 — Link My2N Account with Seam
@@ -107,7 +107,7 @@ After entering the credentials for My2N, you'll have to enter the credentials of
 - **username:** jane
 - **password:** 1234
 
-<figure><img src="../.gitbook/assets/guides/controlbyweb-connect-flow-screens.jpg" alt=""><figcaption><p>Seam Connect Webview flow to connect My2N account with Seam</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/guides/2n-connect-flow-screens.jpg" alt=""><figcaption><p>Seam Connect Webview flow to connect My2N account with Seam</p></figcaption></figure>
 
 Confirm the Connect Webview was successful by querying its status:
 
@@ -147,7 +147,7 @@ puts updated_webview.login_successful # true
 
 ## 3 — Retrieve My2N Devices
 
-After a My2N account is linked with Seam, you can retrieve devices for this My2N account.  2N devices are represented as locks.
+After a My2N account is linked with Seam, you can retrieve devices for this My2N account. 2N devices are represented as locks.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -234,28 +234,7 @@ some_lock = seam.locks.list.first
 puts some_lock.properties['online'] # true
 puts some_lock.properties['locked'] # true
 
-puts some_lock.inspect
-# <Seam::Device:0x00c8bb8
-#   device_id="580365be-4f0f-42d9-9336-07f0bba09e28"
-#   device_type="two_n_intercom"
-#   properties={
-#     "online"=>true,
-#     "locked"=>true,
-#     "manufacturer"=>"two_n",
-#     "serial_number"=>"ef730e77-8cc0-4290-a818-14388e9fe84f",
-#     "two_n_metadata"=>{
-#       "device_id"=>1,
-#       "device_name"=>"Device 0"
-#     },
-#     "supported_code_lengths"=>[4, 5, 6, 7, 8],
-#     "name"=>"Device 0",
-#     "image_url"=>"https://connect.getseam.com/assets/images/devices/unknown-lock.png",
-#     "image_alt_text"=>"Placeholder Lock Image"
-#   }
-#   created_at=2023-05-03 18:01:16.965 UTC
-#   errors=[]
-#   warnings=[]
-# >
+puts some_lock.inspect # > #   warnings=[] #   errors=[] #   created_at=2023-05-03 18:01:16.965 UTC #   } #     "image_alt_text"=>"Placeholder Lock Image" #     "image_url"=>"https://connect.getseam.com/assets/images/devices/unknown-lock.png", #     "name"=>"Device 0", #     "supported_code_lengths"=>[4, 5, 6, 7, 8], #     }, #       "device_name"=>"Device 0" #       "device_id"=>1, #     "two_n_metadata"=>{ #     "serial_number"=>"ef730e77-8cc0-4290-a818-14388e9fe84f", #     "manufacturer"=>"two_n", #     "locked"=>true, #     "online"=>true, #   properties={ #   device_type="two_n_intercom" #   device_id="580365be-4f0f-42d9-9336-07f0bba09e28" # <Seam::Device:0x00c8bb8
 ```
 
 {% endtab %}
