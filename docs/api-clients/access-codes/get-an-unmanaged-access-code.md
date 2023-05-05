@@ -35,8 +35,8 @@ description: Get an Unmanaged Access Code of a Device by its Access Code ID
 ```javascript
 {
   "error": {
-    "type": "device_not_found",
-    "message": "Device not found",
+    "type": "access_code_not_found",
+    "message": "Could not find an access_code with device_id or access_code_id",
     "request_id": "bf6643a3-a102-4f3b-b4c3-bd8cd1119ba2"
   },
   "ok": false
