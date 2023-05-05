@@ -10,6 +10,10 @@ You can develop and test your Seam integration against our sandbox test environm
 
 To use a sandbox, you will first need to create a Sandbox Workspace and create an API key within this Sandbox. After you create your Sandbox workspace, you can connect one or more virtual devices and brands using the sample account data available below.
 
+{% content-ref url="2n-intercoms-sample-data.md" %}
+[2n-intercoms-sample-data.md](2n-intercoms-sample-data.md)
+{% endcontent-ref %}
+
 {% content-ref url="august-locks-sample-data.md" %}
 [august-locks-sample-data.md](august-locks-sample-data.md)
 {% endcontent-ref %}
