@@ -4,7 +4,7 @@ description: Learn how to connect and control your 2N intercom with the Seam API
 
 # Get Started with 2N Intercoms
 
-<figure><img src="../.gitbook/assets/guides/2n-getting-started-seo-cover" alt=""><figcaption><p>2N Intercoms</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/guides/2n-getting-started-seo-cover.png" alt=""><figcaption><p>2N Intercoms</p></figcaption></figure>
 
 ## Overview
 
@@ -123,7 +123,7 @@ After entering the credentials for My2N, you'll have to enter the credentials of
 - **username:** jane
 - **password:** 1234
 
-<figure><img src="../.gitbook/assets/guides/2n-connect-flow-screens.jpg" alt=""><figcaption><p>Seam Connect Webview flow to connect My2N account with Seam</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/guides/2n-connect-flow-screens.png" alt=""><figcaption><p>Seam Connect Webview flow to connect My2N account with Seam</p></figcaption></figure>
 
 Confirm the Connect Webview was successful by querying its status:
 
@@ -163,7 +163,8 @@ puts updated_webview.login_successful # true
 {% tab title="PHP" %}
 
 ```php
-$webview = $seam->connect_webviews->get('729847ff-98e0-418d-aeba-1e3cb38157c6');
+$webview = $seam->connect_webviews->get($webview->id);
+echo json_encode($webview);
 ```
 
 {% endtab %}
@@ -262,6 +263,7 @@ puts some_lock.inspect # > #   warnings=[] #   errors=[] #   created_at=2023-05-
 ```
 
 {% endtab %}
+{% tab title="PHP" %}
 
 ```php
 use Seam\SeamClient;

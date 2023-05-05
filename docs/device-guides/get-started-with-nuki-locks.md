@@ -156,7 +156,8 @@ puts updated_webview.login_successful # true
 {% tab title="PHP" %}
 
 ```php
-$webview = $seam->connect_webviews->get('729847ff-98e0-418d-aeba-1e3cb38157c6');
+$webview = $seam->connect_webviews->get($webview->id);
+echo json_encode($webview);
 ```
 
 {% endtab %}
