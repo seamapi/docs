@@ -1,5 +1,5 @@
 ---
-description: Learn how to connect and control your 2N intercom with the Seam API.
+description: Learn how to connect and control your 2N intercom with the Seam API. Connect devices such as 2N Verso, 2N Solo, or 2N IP Style, and use Seam to unlock the door, add/remove residents, retrieve events, and more.
 ---
 
 # Get Started with 2N Intercoms
