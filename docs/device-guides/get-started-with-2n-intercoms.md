@@ -93,6 +93,22 @@ puts webview.url
 </code></pre>
 
 {% endtab %}
+
+{% tab title="PHP" %}
+
+```php
+use Seam\SeamClient;
+
+$seam = new SeamClient("YOUR_API_KEY");
+
+$webview = $seam->connect_webviews->create(
+  accepted_providers: ["my_2n"]
+);
+
+echo json_encode($webview)
+```
+
+{% endtab %}
 {% endtabs %}
 
 #### Authorize Your Workspace
@@ -140,6 +156,14 @@ console.log(updatedWebview.login_successful) // true
 updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
 
 puts updated_webview.login_successful # true
+```
+
+{% endtab %}
+
+{% tab title="PHP" %}
+
+```php
+$webview = $seam->connect_webviews->get('729847ff-98e0-418d-aeba-1e3cb38157c6');
 ```
 
 {% endtab %}
@@ -238,6 +262,18 @@ puts some_lock.inspect # > #   warnings=[] #   errors=[] #   created_at=2023-05-
 ```
 
 {% endtab %}
+
+```php
+use Seam\SeamClient;
+
+$seam = new SeamClient('YOUR_API_KEY');
+
+$locks = $seam->locks->list();
+
+echo json_encode($locks);
+```
+
+{% endtab %}
 {% endtabs %}
 
 ## 4 — Locking & Unlocking a Door
@@ -306,6 +342,24 @@ puts updated_lock.properties['locked'] # false
 ```
 
 {% endtab %}
+
+{% tab title="PHP" %}
+
+```php
+use Seam\SeamClient;
+
+$seam = new SeamClient('YOUR_API_KEY');
+
+$some_lock = $seam->locks->list()[0];
+
+# unlock the door
+$seam->locks->unlock_door($lock->device_id);
+# lock the door
+$seam->locks->lock_door($lock->device_id);
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## 5 — Creating Access Codes on 2N Intercoms
@@ -449,6 +503,31 @@ seam.access_codes.list(some_lock)
 ```
 
 {% endtab %}
+
+{% tab title="PHP" %}
+
+```php
+use Seam\SeamClient;
+
+$seam = new SeamClient("YOUR_API_KEY");
+
+$some_lock = $seam->locks->list()[0];
+$seam->access_codes->create(
+  device_id: $some_lock->device_id, code: '123456', name: 'Personal Access Code'
+);
+
+$seam->access_codes->create(
+  device_id: $some_lock->device_id,
+  name: 'My Temp Access Code',
+  code: '888888',
+  starts_at: '2028-08-12T19:23:42+0000',
+  ends_at: '2028-08-13T19:23:42+0000'
+);
+
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ###

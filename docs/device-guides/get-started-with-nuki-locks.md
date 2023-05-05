@@ -157,7 +157,6 @@ puts updated_webview.login_successful # true
 
 ```php
 $webview = $seam->connect_webviews->get('729847ff-98e0-418d-aeba-1e3cb38157c6');
-assert($webview->status == 'pending');
 ```
 
 {% endtab %}
