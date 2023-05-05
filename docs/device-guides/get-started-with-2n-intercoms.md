@@ -113,7 +113,7 @@ echo json_encode($webview)
 
 #### Authorize Your Workspace
 
-Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the My2N [sandbox test account](https://docs.seam.co/latest/device-guides/sandbox-and-sample-data) credentials below:
+Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the My2N [sandbox test account](./sandbox-and-sample-data/2n-intercoms-sample-data.md) credentials below:
 
 - **email:** jane@example.com
 - **password:** 1234

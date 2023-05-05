@@ -12,7 +12,7 @@ Use this account to log into the sandbox My2N account
 
 ### Intercom Devices
 
-Once logged into My2N, select the devices you want to connect & control, and use the credential below to authenticate across each.
+After entering the credentials for My2N, you'll have to enter the credentials of an existing HTTP user on each device you want to connect. All sandbox devices have a single HTTP user with the following credentials:
 
 | Username | Password |
 | -------- | -------- |
