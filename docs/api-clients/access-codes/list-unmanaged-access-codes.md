@@ -103,6 +103,16 @@ seam.access_codes.unmanaged.list("123e4567-e89b-12d3-a456-426614174000")
 </code></pre>
 
 {% endtab %}
+
+{% tab title="PHP" %}
+
+```php
+$seam->access_codes->unmanaged->list(
+  device_id: 'a83690b2-2b70-409a-9a94-426699b84c97',
+);
+```
+
+{% endtab %}
 {% endtabs %}
 
 ### Parameters

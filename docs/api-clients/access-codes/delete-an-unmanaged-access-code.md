@@ -6,7 +6,6 @@
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="access_code_id" required="true" %}
-{% swagger-parameter in="query" name="device_id" %}
 
 {% endswagger-parameter %}
 
@@ -77,9 +76,18 @@
 
 ```javascript
 await seam.accessCodes.unmanaged.delete({
-  device_id: "1e9c85c3-77dc-481c-8fc1-3a10121ebe67",
   access_code_id: "a9f662a7-44fb-4b91-b7a8-22c0f996bfc1",
 });
+```
+
+{% endtab %}
+
+{% tab title="PHP" %}
+
+```php
+$seam->access_codes->unmanaged->delete(
+  access_code_id: '26d6138c-6524-4f3c-ac96-43cc3bea0a8d',
+);
 ```
 
 {% endtab %}
@@ -89,7 +97,6 @@ await seam.accessCodes.unmanaged.delete({
 
 | `access_code_id` | type: string | <p><br>ID of the Access Code</p> |
 | ---------------- | ------------ | -------------------------------- |
-| `device_id`      | type: string | <p><br>ID of the Device</p>      |
 
 ### Response
 
