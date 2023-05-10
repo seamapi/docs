@@ -38,7 +38,7 @@ passing in `device_id` as a query parameter, for example:
 
 {% endswagger-description %}
 
-{% swagger-parameter in="body" name="device_id" %}
+{% swagger-parameter in="body" name="device_id" required="true" %}
 
 {% endswagger-parameter %}
 
@@ -52,6 +52,7 @@ passing in `device_id` as a query parameter, for example:
     "status": "set",
     "created_at": "2022-08-26T12:50:17.858Z",
     "access_code_id": "26d6138c-6524-4f3c-ac96-43cc3bea0a8d",
+    "is_managed": false
   }]
 }
 ```
@@ -99,8 +100,7 @@ and passing in a JSON body similar to:
 
 ```js
 {
-    "access_code_id": "xxxx-xxxx-xxxx-xxxx",
-    "device_id": "yyyy-yyyy-yyyy-yyyy"
+    "access_code_id": "xxxx-xxxx-xxxx-xxxx"
 }
 ```
 
