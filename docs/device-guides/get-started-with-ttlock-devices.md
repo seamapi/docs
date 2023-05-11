@@ -4,7 +4,7 @@ description: Learn how to connect and control your TTLock locks with the Seam AP
 
 # Get started with TTLock Locks
 
-<figure><img src="../.gitbook/assets/guides/ttlock-getting-seo-cover.png" alt=""><figcaption><p>TTLock Locks</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/guides/ttlock-getting-started-seo-cover.png" alt=""><figcaption><p>TTLock Locks</p></figcaption></figure>
 
 ## Overview
 
