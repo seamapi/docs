@@ -57,3 +57,7 @@ To use a sandbox, you will first need to create a Sandbox Workspace and create a
 {% content-ref url="kwikset-locks-sample-data.md" %}
 [kwikset-locks-sample-data.md](kwikset-locks-sample-data.md)
 {% endcontent-ref %}
+
+{% content-ref url="ttlock-sample-data.md" %}
+[ttlock-sample-data.md](ttlock-sample-data.md)
+{% endcontent-ref %}
