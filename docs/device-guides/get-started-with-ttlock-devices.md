@@ -4,11 +4,11 @@ description: Learn how to connect and control your TTLock locks with the Seam AP
 
 # Get started with TTLock Locks
 
-<figure><img src="../.gitbook/assets/guides/nuki-getting-seo-cover.jpg" alt=""><figcaption><p>TTLock Locks</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/guides/ttlock-getting-seo-cover.png" alt=""><figcaption><p>TTLock Locks</p></figcaption></figure>
 
 ## Overview
 
-Seam provides a universal API to connect and control many brands of locks, including TTLock. This guide provides a rapid introduction to connecting and controlling your [TTlock](https://www.seam.co/manufacturers/ttlock) locks using the Seam API. To learn more about other device brands supported by the Seam API, such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
+Seam provides a universal API to connect and control many brands of locks, including TTLock. This guide provides a rapid introduction to connecting and controlling your [TTlock](https://www.seam.co/manufacturers/ttlock) locks using the Seam API. To learn more about other device brands supported by the Seam API, such as August, Igloohome, Schlage, and Kwikset, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
 ## 1 — Install Seam SDK
 
@@ -79,7 +79,7 @@ require 'seamapi'
 
 seam = Seam::Client.new(api_key: 'MY_API_KEY')
 
-webview = seam.connect_webviews.create(accepted_providers: ["ttlock"])
+webview = seam.connect_webviews.create(accepted_providers: %w[ttlock])
 
 puts webview.login_successful # false
 
@@ -116,7 +116,7 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 - **email:** jane@example.com
 - **password:** 1234
 
-<figure><img src="../.gitbook/assets/guides/nuki-connect-flow-screens.jpg" alt=""><figcaption><p>Seam Connect Webview flow to connect TTLock account with Seam</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/guides/ttlock-connect-flow-screens.png" alt=""><figcaption><p>Seam Connect Webview flow to connect TTLock account with Seam</p></figcaption></figure>
 
 Confirm the Connect Webview was successful by querying its status:
 
