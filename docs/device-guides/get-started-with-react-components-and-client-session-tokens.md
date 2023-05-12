@@ -1,5 +1,5 @@
 ---
-description: Learn how to connect and control your August lock with the Seam API.
+description: Learn how to use Seam's prebuilt React components with your React application
 ---
 
 # Get started with React Components and Client Session Tokens
@@ -128,7 +128,7 @@ recommend using client session tokens!
 
 ```javascript
 import { SeamProvider, DevicesView } from "@seamapi/react"
-import { useSeamCST } from
+import { useSeamCST } from "lib/hooks/use-seam-cst"
 
 export const App = () => {
   const cst = useSeamCST()
