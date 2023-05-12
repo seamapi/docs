@@ -127,18 +127,22 @@ recommend using client session tokens!
 ## 4 - Use Your Client Session Token to Display a User's Devices
 
 ```javascript
-import { SeamProvider, DevicesView } from "@seamapi/react"
+import { SeamProvider, DeviceTable } from "@seamapi/react"
 import { useSeamCST } from "lib/hooks/use-seam-cst"
 
 export const App = () => {
   const cst = useSeamCST()
   return (
     <SeamProvider clientSessionToken={cst}>
-      <DevicesView />
+      <DeviceTable />
     </SeamProvider>
   )
 }
 ```
+
+You should see a list of devices like what's shown below:
+
+<figure><img src="../.gitbook/assets/device-table.png" alt=""><figcaption><p>Device Table React Component</p></figcaption></figure>
 
 ## Next Steps
 
@@ -146,7 +150,3 @@ export const App = () => {
 - Check out some [Full Example Apps](https://github.com/seamapi/react/tree/main/examples)
 
 If you have any questions or want to report an issue, email us at support@seam.co.
-
-```
-
-```
