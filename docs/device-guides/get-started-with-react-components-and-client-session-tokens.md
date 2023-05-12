@@ -62,7 +62,7 @@ For this guide, we'll assume you're creating an endpoint that will return
 a client session token. This is often appropriate for Single Page Applications.
 
 {% tabs %}
-{% tab title="Javascript/NextJS API Endpoint" %}
+{% tab title="Javascript/NextJS API" %}
 
 ```javascript
 import { Seam } from "seamapi"
@@ -88,6 +88,42 @@ export default (req, res) => {
     seamClientSessionToken: clientSession.token,
   })
 }
+```
+
+{% endtab %}
+{% tab title="Laravel/PHP API" %}
+
+```php
+<?php
+
+namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+class SeamController extends Controller
+{
+    public function getSeamCst()
+    {
+        // Assuming you have some data to return
+        $data = [
+            'seamClientSessionToken' => $seam->client_sessions->create(
+              // pull any connected accounts the current user has access to
+              connected_account_ids: ["..."]
+            )
+        ];
+
+        return response()->json($data);
+    }
+}
+```
+
+```php
+// routes/api.php
+// ...
+Route::get('/seam/get_seam_cst', 'Api\SeamController@getSeamCst');
+// ...
+
 ```
 
 {% endtab %}
