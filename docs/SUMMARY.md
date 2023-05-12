@@ -34,6 +34,7 @@
 - [Get started with SmartThings Hubs + Smart Locks](device-guides/get-started-with-smartthings-hubs-+-smart-locks.md)
 - [Get started with TTLock Devices](device-guides/get-started-with-ttlock-devices.md)
 - [Get started with NoiseAware Sensors](device-guides/get-started-with-noiseaware-sensors.md)
+- [Get started with React and Client Session Tokens](device-guides/get-started-with-react-components-and-client-session-tokens.md)
 - [Sandbox & Sample Data](device-guides/sandbox-and-sample-data/README.md)
   - [2N Intercoms Sample Data](device-guides/sandbox-and-sample-data/2n-intercoms-sample-data.md)
   - [August Locks Sample Data](device-guides/sandbox-and-sample-data/august-locks-sample-data.md)
