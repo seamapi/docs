@@ -142,14 +142,11 @@ export const App = () => {
 
 ## Next Steps
 
-Now that you've completed this guide, you can try to connect a real August device. To do so, make sure to switch to a non-sandbox workspace and API key as real devices cannot be connected to sandbox workspaces.
-
-In addition, if you'd like to explore other aspects of Seam, here is a list of helpful resources:
-
-- [Schlage Getting Started Guide](broken-reference/)
-- [Yale Getting Started Guide](get-started-with-yale-locks.md)
-- [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
-- [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list-events.md)
-- [Core Concepts](broken-reference/)
+- View and play with components in the [interactive storybook component library](https://seam-react.vercel.app/)
+- Check out some [Full Example Apps](https://github.com/seamapi/react/tree/main/examples)
 
 If you have any questions or want to report an issue, email us at support@seam.co.
+
+```
+
+```
