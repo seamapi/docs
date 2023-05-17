@@ -1,27 +1,25 @@
 ---
-description: Learn how to use Seam's prebuilt React components with your React application
+description: Learn to use Seam's prebuilt React components with your React application
 ---
 
-# Get started with React Components and Client Session Tokens
-
-<!-- <figure><img src="../.gitbook/assets/august-getting-started-guide-cover.jpg" alt=""><figcaption><p>August Smart Locks</p></figcaption></figure> -->
+# Get started with React Components and Client Sessions
 
 ## Overview
 
-Seam provides React Components and hooks to connect and control many types of smart devices. This guide provides a rapid introduction to using React
-Components with Client Session Tokens.
+Seam provides React components and hooks to connect and control many types of smart devices.
+This guide provides a rapid introduction to using React components with Client Sessions.
 
-For this guide, we expect you to have a **backend server** and a **client frontend react application**. If you want to integrate Seam using only a client without
-a backend, you'll need to use a `publishable_key` (guide coming soon!)
+For this guide, we expect you to have a **backend server** and a **client frontend react application**.
+If you want to integrate Seam using only a client without a backend, you'll need to use a Publishable Key (guide coming soon!)
 
-### What are Client Session Tokens?
+### What is a Client Session Token?
 
-Client Session Tokens are tokens that allow a device owner to make API requests
-to Seam, but only interact with their own devices. You'll need to create a
-client session token and give it to the `<SeamProvider />` in order for your
-user to interact with their devices.
+A Client Session Token allows a device owner to make API requests
+to Seam where interactions are restricted only to devices they own.
+To enable your users to interact with their devices,
+you'll need to create a client session and pass it's token to the `<SeamProvider />` .
 
-## 1 — Install Seam SDK on your Server
+## 1 — Install the Seam SDK on your Server
 
 Seam provides client libraries for many languages such as Javascript, Python, Ruby, and PHP, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.
 
@@ -40,7 +38,7 @@ $ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
 This guide uses a Sandbox Workspace. Only virtual devices can be connected. If you need to connect a real August Lock, use a non-sandbox workspace and API key.
 {% endhint %}
 
-## 2 - Install `@seamapi/react`
+## 2 - Install `@seamapi/react` in your React application
 
 ```bash
 npm install --save @seamapi/react
@@ -48,12 +46,12 @@ npm install --save @seamapi/react
 yarn add @seamapi/react
 ```
 
-## 3 — Create a Client Session on your Server, and pass it to the Client
+## 3 — Create a Seam Client Session on your Server, and pass it to the Client
 
 We'll start by writing some server code that returns a client session. There
 are a lot of ways to do this depending on your server framework:
 
-- Create an endpoint such as `/api/seam/get_client_session_token` and call it
+- Create an endpoint such as `/api/seam/get_client_session` and call it
   from your frontend app
 - Inject the client session token in your html if you're using an HTML
   templating engine.
@@ -69,7 +67,7 @@ import { Seam } from "seamapi"
 
 export default (req, res) => {
   // Do authentication logic
-  const userId = "<from your internal authentication>"
+  const userId = req.auth.userId
 
   // Pull any accounts associated with this user
   // You can also use connect webview ids, or just pass an empty array if you'd
@@ -85,7 +83,7 @@ export default (req, res) => {
   })
 
   res.status(200).json({
-    seamClientSessionToken: clientSession.token,
+    token: clientSession.token,
   })
 }
 ```
@@ -103,11 +101,11 @@ use Illuminate\Http\Request;
 
 class SeamController extends Controller
 {
-    public function getSeamCst()
+    public function getSeamClientSession()
     {
         // Assuming you have some data to return
         $data = [
-            'seamClientSessionToken' => $seam->client_sessions->create(
+            'seamClientSession' => $seam->client_sessions->create(
               // pull any connected accounts the current user has access to
               connected_account_ids: ["..."]
             )
@@ -121,7 +119,7 @@ class SeamController extends Controller
 ```php
 // routes/api.php
 // ...
-Route::get('/seam/get_seam_cst', 'Api\SeamController@getSeamCst');
+Route::get('/seam/get_seam_client_session', 'Api\SeamController@getSeamClientSession');
 // ...
 
 ```
@@ -129,27 +127,31 @@ Route::get('/seam/get_seam_cst', 'Api\SeamController@getSeamCst');
 {% endtab %}
 {% endtabs %}
 
-Awesome! We can now request this from the frontent client application using
+Awesome! We can now request this from the frontend client application using
 something a hook like this:
 
 ```javascript
-// lib/hooks/use-seam-cst.js
+// lib/hooks/use-seam-client-session-token.js
 import { useState, useEffect } from "react"
 
-export const useSeamCST = () => {
-  const [cst, setCST] = useState()
+export const useSeamClientSessionToken = () => {
+  const { myAppAuthToken } = useAuth() // or however you manage client side auth
+  const [token, setToken] = useState()
 
-  useEffect(() => {
-    const res = fetch("/api/seam/get_client_session_token", {
+  useEffect(async () => {
+    const res = await fetch("/api/seam/get_client_session", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${myAppAuthToken}`,
       },
-    }).json()
-    setCST(res.seamClientSessionToken)
-  }, [])
+    })
+    if (res.ok) {
+      const data = await res.json()
+      setToken(res.token)
+    }
+  }, [myAppAuthToken])
 
-  return cst
+  return token
 }
 ```
 
@@ -164,12 +166,13 @@ recommend using client session tokens!
 
 ```javascript
 import { SeamProvider, DeviceTable } from "@seamapi/react"
-import { useSeamCST } from "lib/hooks/use-seam-cst"
+import { useSeamClientSessionToken } from "lib/hooks/use-seam-client-session-token"
 
 export const App = () => {
-  const cst = useSeamCST()
+  const clientSessionToken = useSeamClientSessionToken()
+  if (clientSessionToken == null) return <p>Loading...</p>
   return (
-    <SeamProvider clientSessionToken={cst}>
+    <SeamProvider clientSessionToken={clientSessionToken}>
       <DeviceTable />
     </SeamProvider>
   )
