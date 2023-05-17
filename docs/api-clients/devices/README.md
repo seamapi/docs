@@ -20,20 +20,22 @@ description: A device that has been connected to the Seam platform.
 
 ### Device Properties
 
-| property name                    | type   | Description                                                                                                                                  |
-| -------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`locked`**                     | bool   | Whether the device is locked                                                                                                                 |
-| **`online`**                     | bool   | Whether the device is online                                                                                                                 |
-| **`door_open`**                  | bool   | Whether the door is open                                                                                                                     |
-| **`manufacturer`**               | string | Manufacturer of the device                                                                                                                   |
-| **`battery_level`**              | float  | Battery level of the device.                                                                                                                 |
-| **`XXX_metadata`**               | object | Metadata for the device, where XXX is the manufacturer and specific to that manufacturer                                                     |
-| **`supported_code_lengths`**     | array  | Supported code lengths for the device, e.g., [4,5] means "1234" and "12345" would be valid, but neither "123" nor "123456" wouldn't be valid |
-| **`max_active_codes_supported`** | int    | Maximum number of codes that may exist on the device at one time.                                                                            |
-| **`name`**                       | string | Name of the device                                                                                                                           |
-| **`battery`**                    | object | Battery information for the device, has `level` and `status`. The `status` can be one of `critical`, `low`, `good`, or `full`.               |
-| **`serial_number`**              | string | Serial number for the device, if available.                                                                                                  |
-| **`image_url`**                  | string | Image URL for the device, placeholder image URL if a device-specific image is unavailable   |
+| property name                    | type   | Description                                                                                                                                                                      |
+| -------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`locked`**                     | bool   | Whether the device is locked                                                                                                                                                     |
+| **`online`**                     | bool   | Whether the device is online                                                                                                                                                     |
+| **`door_open`**                  | bool   | Whether the door is open                                                                                                                                                         |
+| **`manufacturer`**               | string | Manufacturer of the device                                                                                                                                                       |
+| **`battery_level`**              | float  | Battery level of the device.                                                                                                                                                     |
+| **`XXX_metadata`**               | object | Metadata for the device, where XXX is the manufacturer and specific to that manufacturer                                                                                         |
+| **`supported_code_lengths`**     | array  | Supported code lengths for the device, e.g., [4,5] means "1234" and "12345" would be valid, but neither "123" nor "123456" wouldn't be valid                                     |
+| **`max_active_codes_supported`** | int    | Maximum number of codes that may exist on the device at one time.                                                                                                                |
+| **`code_constraints`**           | array  | Constraints on access codes that can be set on the device for devices that support access codes. Details can be found in '[Access Code Constraints](./#access-code-constraints)' |
+| **`name`**                       | string | Name of the device                                                                                                                                                               |
+| **`battery`**                    | object | Battery information for the device, has `level` and `status`. The `status` can be one of `critical`, `low`, `good`, or `full`.                                                   |
+| **`keypad_battery`**             | object | Information on the device's keypad battery, if availabile. Has a `level` property.                                                                                               |
+| **`serial_number`**              | string | Serial number for the device, if available.                                                                                                                                      |
+| **`image_url`**                  | string | Image URL for the device, placeholder image URL if a device-specific image is unavailable                                                                                        |
 
 ### Device Location
 
@@ -44,9 +46,9 @@ description: A device that has been connected to the Seam platform.
 
 ## List of Methods
 
-| [Get Device](get-device.md)     | Get device  |
-| ------------------------------- | ----------- |
-| [List Devices](list-devices.md) | List device |
+| [Get Device](get-device.md)                       | Get device            |
+| ------------------------------------------------- | --------------------- |
+| [List Devices](list-devices.md)                   | List device           |
 | [List Device Providers](list-device-providers.md) | List device providers |
 
 ## Device Capabilities Supported
@@ -112,12 +114,12 @@ Seam maintains a list of Device Providers that can be accessed from the [List De
 
 Available information included in the [Device Provider](./#device-provider) object are as follows:
 
-| property name                | type   | Description                                                                                                                                  |
-| ---------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`device_provider_name`**                 | string   | Name of the device provider (e.g. `august`)                                                                                                                 |
-| **`display_name`**                 | string   | Formatted version of the `device_provider_name` (e.g. `August`)                                                                                                                 |
-| **`image_url`**              | string   | Image url for the provider logo                                                                                                                     |
-| **`provider_categories`**           | array | Array of associated categories for the provider (possible categories: `stable`)
+| property name              | type   | Description                                                                     |
+| -------------------------- | ------ | ------------------------------------------------------------------------------- |
+| **`device_provider_name`** | string | Name of the device provider (e.g. `august`)                                     |
+| **`display_name`**         | string | Formatted version of the `device_provider_name` (e.g. `August`)                 |
+| **`image_url`**            | string | Image url for the provider logo                                                 |
+| **`provider_categories`**  | array  | Array of associated categories for the provider (possible categories: `stable`) |
 
 Example Device Provider Object:
 
@@ -129,3 +131,17 @@ Example Device Provider Object:
     "provider_categories": ["stable"]
 }
 ```
+
+## Access Code Constraints
+
+Each constraint in the `code_constraints` array is an object with at least the `constraint_type` property. The `constraint_type` property can be one of the following:
+
+| **`constraint_type`**               | Description                                                                                                                                                                                                                           |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`no_zeros`**                      | `0`s cannot be used as digits in the pin code.                                                                                                                                                                                        |
+| **`cannot_start_with_12`**          | The pin code cannot start with the sequence of digits `12`.                                                                                                                                                                           |
+| **`no_triple_consecutive_ints`**    | No more than 3 digits in a row can be consecutive or the same in the pin code.                                                                                                                                                        |
+| **`cannot_specify_pin_code`**       | A pin code cannot be specified - it has to be left empty and one will be generated by the lock provider.                                                                                                                              |
+| **`pin_code_matches_existing_set`** | If a pin code is specified, it must match an existing set of pin codes used in the account (for example, pin code matches the code assigned to a user in the system).                                                                 |
+| **`start_date_in_future`**          | For time-bound codes, the start date has to be in the future.                                                                                                                                                                         |
+| **`name_length`**                   | The name of the code has some restrictions on length. When the `constraint_type` is `name_length`, the constraint object has one or two additional properties called `min_length` and `max_length` to specify the length constraints. |
