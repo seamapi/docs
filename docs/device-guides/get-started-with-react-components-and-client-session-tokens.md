@@ -166,7 +166,7 @@ recommend using client session tokens!
 
 ```javascript
 import { SeamProvider, DeviceTable } from "@seamapi/react"
-import { useSeamClientSessionToken } from "lib/hooks/use-seam-client-session"
+import { useSeamClientSessionToken } from "lib/hooks/use-seam-client-session-token"
 
 export const App = () => {
   const clientSessionToken = useSeamClientSessionToken()
