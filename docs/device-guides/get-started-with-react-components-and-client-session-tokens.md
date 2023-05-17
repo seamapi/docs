@@ -67,12 +67,12 @@ import { Seam } from "seamapi"
 
 export default (req, res) => {
   // Do authentication logic
-  const userId = req.auth.userId // from your internal authentication middleware
+  const userId = req.auth.userId
 
   // Pull any accounts associated with this user
   // You can also use connect webview ids, or just pass an empty array if you'd
   // like the user to make the connect webviews themselves in the frontend!
-  const accountsAssociatedWithUser = await getSeamConnectedAccounts(userId) // [{ seamConnectedAccountId: "..." }]
+  const accountsAssociatedWithUser = [{ seamConnectedAccountId: "..." }]
 
   const seam = new Seam()
 
