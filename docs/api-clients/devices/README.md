@@ -20,22 +20,22 @@ description: A device that has been connected to the Seam platform.
 
 ### Device Properties
 
-| property name                    | type   | Description                                                                                                                                                               |
-| -------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`locked`**                     | bool   | Whether the device is locked                                                                                                                                              |
-| **`online`**                     | bool   | Whether the device is online                                                                                                                                              |
-| **`door_open`**                  | bool   | Whether the door is open                                                                                                                                                  |
-| **`manufacturer`**               | string | Manufacturer of the device                                                                                                                                                |
-| **`battery_level`**              | float  | Battery level of the device.                                                                                                                                              |
-| **`XXX_metadata`**               | object | Metadata for the device, where XXX is the manufacturer and specific to that manufacturer                                                                                  |
-| **`supported_code_lengths`**     | array  | Supported code lengths for the device, e.g., [4,5] means "1234" and "12345" would be valid, but neither "123" nor "123456" wouldn't be valid                              |
-| **`max_active_codes_supported`** | int    | Maximum number of codes that may exist on the device at one time.                                                                                                         |
-| **`code_constraints`**           | array  | Constraints on access codes that can be set on the device for devices that support access codes. Details can be found in '[Access Code Constraints](./#code-constraints)' |
-| **`name`**                       | string | Name of the device                                                                                                                                                        |
-| **`battery`**                    | object | Battery information for the device, has `level` and `status`. The `status` can be one of `critical`, `low`, `good`, or `full`.                                            |
-| **`keypad_battery`**             | object | Information on the device's keypad battery, if availabile. Has a `level` property.                                                                                        |
-| **`serial_number`**              | string | Serial number for the device, if available.                                                                                                                               |
-| **`image_url`**                  | string | Image URL for the device, placeholder image URL if a device-specific image is unavailable                                                                                 |
+| property name                    | type   | Description                                                                                                                                                                      |
+| -------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`locked`**                     | bool   | Whether the device is locked                                                                                                                                                     |
+| **`online`**                     | bool   | Whether the device is online                                                                                                                                                     |
+| **`door_open`**                  | bool   | Whether the door is open                                                                                                                                                         |
+| **`manufacturer`**               | string | Manufacturer of the device                                                                                                                                                       |
+| **`battery_level`**              | float  | Battery level of the device.                                                                                                                                                     |
+| **`XXX_metadata`**               | object | Metadata for the device, where XXX is the manufacturer and specific to that manufacturer                                                                                         |
+| **`supported_code_lengths`**     | array  | Supported code lengths for the device, e.g., [4,5] means "1234" and "12345" would be valid, but neither "123" nor "123456" wouldn't be valid                                     |
+| **`max_active_codes_supported`** | int    | Maximum number of codes that may exist on the device at one time.                                                                                                                |
+| **`code_constraints`**           | array  | Constraints on access codes that can be set on the device for devices that support access codes. Details can be found in '[Access Code Constraints](./#access-code-constraints)' |
+| **`name`**                       | string | Name of the device                                                                                                                                                               |
+| **`battery`**                    | object | Battery information for the device, has `level` and `status`. The `status` can be one of `critical`, `low`, `good`, or `full`.                                                   |
+| **`keypad_battery`**             | object | Information on the device's keypad battery, if availabile. Has a `level` property.                                                                                               |
+| **`serial_number`**              | string | Serial number for the device, if available.                                                                                                                                      |
+| **`image_url`**                  | string | Image URL for the device, placeholder image URL if a device-specific image is unavailable                                                                                        |
 
 ### Device Location
 
