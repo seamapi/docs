@@ -54,6 +54,10 @@
 - [Migrating Existing Access Codes](device-guides/migrating-existing-codes.md)
 - [Rate Limits and Guardrails](device-guides/rate-limits-and-guardrails.md)
 
+## 🌉 Seam Bridge
+
+- [Connecting the Seam Bridge to DoorKing](seam-bridge/connecting-with-doorking.md)
+
 ## 📋 API Clients
 
 - [Overview](api-clients/overview.md)
