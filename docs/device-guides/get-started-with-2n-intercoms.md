@@ -1,8 +1,11 @@
 ---
-description: Learn how to connect and control your 2N intercom with the Seam API. Connect devices like 2N Verso, Solo, or IP Style, and use Seam to unlock the door, edit residents, list events & more.
+description: >-
+  Learn how to connect and control your 2N intercom with the Seam API. Connect
+  devices like 2N Verso, Solo, or IP Style, and use Seam to unlock the door,
+  edit residents, list events & more.
 ---
 
-# Get Started with 2N Intercoms
+# Get started with 2N Intercoms
 
 <figure><img src="../.gitbook/assets/guides/2n-getting-started-seo-cover.png" alt=""><figcaption><p>2N Intercoms</p></figcaption></figure>
 
@@ -18,10 +21,10 @@ Seam provides a universal API to connect and control many brands of smart device
 
 Seam provides client libraries for many languages such as Javascript, Python, Ruby, and PHP, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.
 
-- **Javascript:** `npm i seamapi` ([npm](https://www.npmjs.com/package/seamapi), [github](https://github.com/seamapi/javascript))
-- **Python:** `pip install seamapi` ([pip](https://pypi.org/project/seamapi/), [github](https://github.com/seamapi/python))
-- **Ruby:** `bundle add seamapi` ([rubygem](https://rubygems.org/gems/seamapi), [github](https://github.com/seamapi/ruby))
-- **PHP:** `composer require seamapi/seam` ([packagist](https://packagist.org/packages/seamapi/seam), [github](https://github.com/seamapi/php))
+* **Javascript:** `npm i seamapi` ([npm](https://www.npmjs.com/package/seamapi), [github](https://github.com/seamapi/javascript))
+* **Python:** `pip install seamapi` ([pip](https://pypi.org/project/seamapi/), [github](https://github.com/seamapi/python))
+* **Ruby:** `bundle add seamapi` ([rubygem](https://rubygems.org/gems/seamapi), [github](https://github.com/seamapi/ruby))
+* **PHP:** `composer require seamapi/seam` ([packagist](https://packagist.org/packages/seamapi/seam), [github](https://github.com/seamapi/php))
 
 Once installed, [sign-up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:
 
@@ -41,7 +44,6 @@ To control your 2N intercom via the Seam API, you must first authorize your Seam
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 from seamapi import Seam
 
@@ -54,11 +56,9 @@ assert webview.login_successful is False
 # Send the webview URL to your user
 print(webview.url)
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 import Seam from 'seamapi'
 
@@ -73,11 +73,9 @@ console.log(connectWebview.login_successful) // false
 // Send the webview URL to your user
 console.log(connectWebview.url)
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 <pre class="language-ruby"><code class="lang-ruby">require "seamapi"
 
 <strong>seam = Seam::Client.new(api_key: "MY_API_KEY")
@@ -91,11 +89,9 @@ puts webview.login_successful # false
 # Send the webview URL to your user
 puts webview.url
 </code></pre>
-
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 
@@ -107,21 +103,20 @@ $webview = $seam->connect_webviews->create(
 
 echo json_encode($webview)
 ```
-
 {% endtab %}
 {% endtabs %}
 
 #### Authorize Your Workspace
 
-Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the My2N [sandbox test account](./sandbox-and-sample-data/2n-intercoms-sample-data.md) credentials below:
+Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the My2N [sandbox test account](sandbox-and-sample-data/2n-intercoms-sample-data.md) credentials below:
 
-- **email:** jane@example.com
-- **password:** 1234
+* **email:** jane@example.com
+* **password:** 1234
 
 After entering the credentials for My2N, you'll have to enter the credentials of an existing HTTP user on each device you want to connect. All sandbox devices have a single HTTP user with the credentials:
 
-- **username:** jane
-- **password:** 1234
+* **username:** jane
+* **password:** 1234
 
 <figure><img src="../.gitbook/assets/guides/2n-connect-flow-screens.png" alt=""><figcaption><p>Seam Connect Webview flow to connect My2N account with Seam</p></figcaption></figure>
 
@@ -129,17 +124,14 @@ Confirm the Connect Webview was successful by querying its status:
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
 
 assert updated_webview.login_successful # true
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
@@ -147,26 +139,21 @@ const updatedWebview = await seam.connectWebviews.get(
 
 console.log(updatedWebview.login_successful) // true
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
 
 puts updated_webview.login_successful # true
 ```
-
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 $webview = $seam->connect_webviews->get($webview->id);
 echo json_encode($webview);
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -176,7 +163,6 @@ After a My2N account is linked with Seam, you can retrieve devices for this My2N
 
 {% tabs %}
 {% tab title="Python" %}
-
 ````python
 all_locks = seam.locks.list()
 
@@ -209,11 +195,9 @@ print(some_lock)
 #   errors=[]
 # )
 ````
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -248,11 +232,9 @@ console.log(someLock)
 }
 */
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 some_lock = seam.locks.list.first
 
@@ -261,10 +243,9 @@ puts some_lock.properties['locked'] # true
 
 puts some_lock.inspect # > #   warnings=[] #   errors=[] #   created_at=2023-05-03 18:01:16.965 UTC #   } #     "image_alt_text"=>"Placeholder Lock Image" #     "image_url"=>"https://connect.getseam.com/assets/images/devices/unknown-lock.png", #     "name"=>"Device 0", #     "supported_code_lengths"=>[4, 5, 6, 7, 8], #     }, #       "device_name"=>"Device 0" #       "device_id"=>1, #     "two_n_metadata"=>{ #     "serial_number"=>"ef730e77-8cc0-4290-a818-14388e9fe84f", #     "manufacturer"=>"two_n", #     "locked"=>true, #     "online"=>true, #   properties={ #   device_type="two_n_intercom" #   device_id="580365be-4f0f-42d9-9336-07f0bba09e28" # <Seam::Device:0x00c8bb8
 ```
-
 {% endtab %}
-{% tab title="PHP" %}
 
+{% tab title="PHP" %}
 ```php
 use Seam\SeamClient;
 
@@ -274,7 +255,6 @@ $locks = $seam->locks->list();
 
 echo json_encode($locks);
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -282,8 +262,8 @@ echo json_encode($locks);
 
 Next, you can perform the basic action of locking and unlocking the door.
 
-{% swagger src="../.gitbook/assets/openapi (1).json" path="/locks/lock_door" method="post" %}
-[openapi (1).json](<../.gitbook/assets/openapi (1).json>)
+{% swagger src="../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
+[openapi.json](../.gitbook/assets/openapi.json)
 {% endswagger %}
 
 {% swagger method="post" path="/locks/unlock_door" baseUrl="https://connect.getseam.com" summary="Unlock a door" %}
@@ -298,7 +278,6 @@ Next, you can perform the basic action of locking and unlocking the door.
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 # lock the door
 seam.locks.lock_door(some_lock)
@@ -310,11 +289,9 @@ seam.locks.unlock_door(some_lock)
 updated_lock = seam.locks.get(some_lock.device_id)
 assert updated_lock.properties["locked"] is False
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 // lock the door
 await seam.locks.lockDoor(someLock.device_id)
@@ -326,11 +303,9 @@ await seam.locks.unlockDoor(someLock.device_id)
 updatedLock = await seam.locks.get(someLock.device_id)
 console.log(updatedLock.properties.locked) // false
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 # lock the door
 seam.locks.lock_door(some_lock)
@@ -342,11 +317,9 @@ seam.locks.unlock_door(some_lock)
 updated_lock = seam.locks.get(some_lock.device_id)
 puts updated_lock.properties['locked'] # false
 ```
-
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 
@@ -359,9 +332,7 @@ $seam->locks->unlock_door($lock->device_id);
 # lock the door
 $seam->locks->lock_door($lock->device_id);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## 5 — Creating Access Codes on 2N Intercoms
@@ -372,7 +343,6 @@ Seam maps these residents to [access codes](../core-concepts/access-codes.md) an
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 # create an ongoing code
 seam.access_codes.create(
@@ -406,11 +376,9 @@ seam.access_codes.list(device=some_lock)
 # ]
 
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 // create an ongoing code
 await seam.accessCodes.create({
@@ -452,11 +420,9 @@ await seam.accessCodes.list({
 ]
 */
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 # create an ongoing code
 seam.access_codes.create(
@@ -503,11 +469,9 @@ seam.access_codes.list(some_lock)
 #   warnings=[]
 #   access_code_id="91a08a3d-a0bb-4ff0-bfb4-ced164353988">]
 ```
-
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 
@@ -527,9 +491,7 @@ $seam->access_codes->create(
 );
 
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ###
@@ -540,12 +502,12 @@ Now that you've completed this guide, you can try to connect a real 2N device. T
 
 In addition, if you'd like to explore other aspects of Seam, here is a list of helpful resources:
 
-- [Yale Getting Started Guide](get-started-with-yale-locks.md)
-- [August Getting Started Guide](get-started-with-august-locks.md)
-- [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
-- [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
-- [Minut Getting Started Guide](get-started-with-minut-sensors.md)
-- [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list-events.md)
-- [Core Concepts](../core-concepts/overview.md)
+* [Yale Getting Started Guide](get-started-with-yale-locks.md)
+* [August Getting Started Guide](get-started-with-august-locks.md)
+* [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
+* [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
+* [Minut Getting Started Guide](get-started-with-minut-sensors.md)
+* [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list-events.md)
+* [Core Concepts](../core-concepts/overview.md)
 
 If you have any questions or want to report an issue, email us at support@seam.co.

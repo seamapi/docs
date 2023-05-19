@@ -150,6 +150,65 @@ To programmatically access events, you can use `events.list` . This will return 
 */
 </code></pre>
 {% endtab %}
+
+{% tab title="Python" %}
+```python
+seam.events.list()
+
+# [
+#     Event(
+#         event_id="87b2dcda-90ff-4602-8ccc-efb2f4a3d7c2",
+#         event_type="device.low_battery",
+#         created_at="2022-08-24T11:23:49.459Z",
+#         device_id="a83690b2-2b70-409a-9a94-426699b84c97",
+#         workspace_id="f97073eb-c003-467a-965b-e6dba3a0131d",
+#         battery_level=0.48,
+#     )
+# ]
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```ruby
+seam.events.list
+
+# [<Seam::Event:0x007cd58
+#   event_id="87b2dcda-90ff-4602-8ccc-efb2f4a3d7c2",
+#   event_type="device.low_battery",
+#   created_at="2022-08-24T11:23:49.459Z",
+#   device_id="a83690b2-2b70-409a-9a94-426699b84c97",
+#   workspace_id="f97073eb-c003-467a-965b-e6dba3a0131d",
+#   battery_level=>0.48>]
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+```php
+$events = $seam->events->list();
+
+echo json_encode($events)
+/*
+[
+  {
+    event_id: '87b2dcda-90ff-4602-8ccc-efb2f4a3d7c2',
+    event_type: 'device.low_battery',
+    created_at: '2022-08-24T11:23:49.459Z',
+    device_id: 'a83690b2-2b70-409a-9a94-426699b84c97',
+    workspace_id: 'f97073eb-c003-467a-965b-e6dba3a0131d',
+    battery_level: 0.48
+  },
+  {
+    event_id: '2fc8d1bc-7b4d-4960-9aa4-7e6bf5dc5848',
+    event_type: 'device.low_battery',
+    created_at: '2022-08-24T11:23:49.335Z',
+    device_id: 'a3f30bd2-f6d7-4bad-ba89-1bad3bf1bce4',
+    workspace_id: 'f97073eb-c003-467a-965b-e6dba3a0131d',
+    battery_level: 0.48
+  }
+]
+*/
+```
+{% endtab %}
 {% endtabs %}
 
 ### Parameters
