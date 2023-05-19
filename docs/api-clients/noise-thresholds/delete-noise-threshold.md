@@ -18,13 +18,7 @@ Device id of a device the noise threshold is on
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="sync" type="boolean" %}
-Set this to true to receive updated
 
-`noise_threshold`
-
-object in the
-
-`result`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" required="true" %}
@@ -99,11 +93,11 @@ seam.noise_sensors.noise_thresholds.delete(
 )
 
 # {
-#   "status": "pending",
-#   "action_type": "DELETE_NOISE_THRESHOLD",
-#   "action_attempt_id": "c10e3db5-a5a2-47f2-a76f-48379ed9cd22",
-#   "result": null,
-#   "error": null
+#   action_attempt_id: "c10e3db5-a5a2-47f2-a76f-48379ed9cd22",
+#   action_type: "DELETE_NOISE_THRESHOLD",
+#   status: "success",
+#   result: {},
+#   error: null,
 # }
 ```
 

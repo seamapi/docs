@@ -13,16 +13,16 @@ description: Create a Noise Threshold on your Noise Sensor
 Device id of a device to create a noise threshold on
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="name" %}
-Name of the Noise Threshold
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="starts_daily_at" %}
+{% swagger-parameter in="body" required="true" name="starts_daily_at" %}
 Time when noise threshold becomes active daily
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="ends_daily_at" %}
+{% swagger-parameter in="body" required="true" name="ends_daily_at" %}
 Time when noise threshold becomes inactive daily
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="name" %}
+Name of the Noise Threshold
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="noise_threshold_decibels" %}
@@ -110,27 +110,19 @@ Bearer <API_KEY>
 
 ```python
 seam.noise_sensors.noise_thresholds.create(
-  device_id="123e4567-e89b-12d3-a456-426614174000"
-  sync=True
+    device_id="123e4567-e89b-12d3-a456-426614174000",
+    starts_daily_at="20:00:00[America/Los_Angeles]",
+    ends_daily_at="06:00:00[America/Los_Angeles]",
+    noise_threshold_decibels=70,
 )
 
 # {
-#   "action_attempt": {
-#     "status": "success",
-#     "action_type": "CREATE_NOISE_THRESHOLD",
-#     "action_attempt_id": "c10e3db5-a5a2-47f2-a76f-48379ed9cd22",
-#     "result": {
-#       "noise_threshold": {
-#         "noise_threshold_id": "792263f8-1660-4cf9-a6c6-054d23b78d86",
-#         "device_id": "123e4567-e89b-12d3-a456-426614174000",
-#         "name": "builtin_quiet_hours",
-#         "noise_threshold_decibels": 60,
-#         "starts_daily_at": "22:00:00[America/Los_Angeles]",
-#         "ends_daily_at": "06:00:00[America/Los_Angeles]",
-#       }
-#     },
-#     "error": null
-#   }
+#   "noise_threshold_id": "792263f8-1660-4cf9-a6c6-054d23b78d86",
+#   "device_id": "123e4567-e89b-12d3-a456-426614174000",
+#   "name": "builtin_quiet_hours",
+#   "noise_threshold_decibels": 70,
+#   "starts_daily_at": "20:00:00[America/Los_Angeles]",
+#   "ends_daily_at": "06:00:00[America/Los_Angeles]",
 # }
 ```
 
@@ -139,7 +131,7 @@ seam.noise_sensors.noise_thresholds.create(
 
 ### Parameters
 
-| `device_id`                | type: string                                          | Device id of a device to create a noise threshold on                                    |
+| `device_id`                | string                                                | Device id of a device to create a noise threshold on                                    |
 | -------------------------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | `name`                     | string                                                | Name of the Noise Threshold                                                             |
 | `starts_daily_at`          | [Seam Time of Day](https://github.com/seamapi/seam-tod) | Timestamp of when the Noise Threshold becomes active daily                              |
