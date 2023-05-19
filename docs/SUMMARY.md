@@ -102,7 +102,7 @@
 ## 🧱 Seam Components
 
 * [Get started with React and Client Session Tokens](seam-components/get-started-with-react-components-and-client-session-tokens.md)
-* [React Components](seam-components/get-api-key.md)
+* [React Components](seam-components/react-components.md)
 
 ## Reference
 
