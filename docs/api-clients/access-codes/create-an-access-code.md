@@ -48,14 +48,27 @@ Set this to true to receive the
 {% swagger-response status="201: Created" description="" %}
 ```javascript
 {
-  "action_attempt": {
-    "status": "pending",
-    "action_type": "CREATE_ACCESS_CODE",
-    "action_attempt_id": "c10e3db5-a5a2-47f2-a76f-48379ed9cd22",
-    "result": null,
-    "error": null
-  },
-  "ok": true
+	"action_attempt": {
+		"status": "pending",
+		"action_type": "CREATE_ACCESS_CODE",
+		"action_attempt_id": "c10e3db5-a5a2-47f2-a76f-48379ed9cd22",
+		"result": null,
+		"error": null
+	},
+	"access_code": {
+		"access_code_id": "12525e70-9474-4bb6-a7f6-12bbe4166f36",
+		"device_id": "1c459b4c-0008-4752-befc-bc18521247d4",
+		"name": "My code",
+		"code": "1988",
+		"common_code_key": null,
+		"type": "ongoing",
+		"status": "setting",
+		"created_at": "2023-05-11T11:16:10.359Z",
+		"errors": [],
+		"warnings": [],
+		"is_managed": true
+	},
+	"ok": true
 }
 ```
 {% endswagger-response %}
@@ -239,14 +252,27 @@ This section shows the JSON response returned by the API. Since each language en
 {% tab title="JSON" %}
 ```json
 {
-  "action_attempt": {
-    "status": "pending",
-    "action_type": "CREATE_ACCESS_CODE",
-    "action_attempt_id": "c10e3db5-a5a2-47f2-a76f-48379ed9cd22",
-    "result": null,
-    "error": null
-  },
-  "ok": true
+	"action_attempt": {
+		"status": "pending",
+		"action_type": "CREATE_ACCESS_CODE",
+		"action_attempt_id": "c10e3db5-a5a2-47f2-a76f-48379ed9cd22",
+		"result": null,
+		"error": null
+	},
+	"access_code": {
+		"access_code_id": "12525e70-9474-4bb6-a7f6-12bbe4166f36",
+		"device_id": "1c459b4c-0008-4752-befc-bc18521247d4",
+		"name": "My code",
+		"code": "1988",
+		"common_code_key": null,
+		"type": "ongoing",
+		"status": "setting",
+		"created_at": "2023-05-11T11:16:10.359Z",
+		"errors": [],
+		"warnings": [],
+		"is_managed": true
+	},
+	"ok": true
 }
 ```
 {% endtab %}

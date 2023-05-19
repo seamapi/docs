@@ -19,7 +19,7 @@ Seam provides client libraries for many languages such as Javascript, Python, Ru
 * **Ruby:** `bundle add seamapi` ([rubygem](https://rubygems.org/gems/seamapi), [github](https://github.com/seamapi/ruby))
 * **PHP:** `composer require seamapi/seam` ([packagist](https://packagist.org/packages/seamapi/seam), [github](https://github.com/seamapi/php))
 
-Once installed, [sign-up for Seam](https://dashboard.getseam.com/) to get your API key, and export it as an environment variable:
+Once installed, [sign-up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:
 
 ```
 $ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
@@ -141,8 +141,8 @@ puts updated_webview.login_successful # true
 
 {% tab title="PHP" %}
 ```php
-$webview = $seam->connect_webviews->get('729847ff-98e0-418d-aeba-1e3cb38157c6');
-assert($webview->status == 'pending');
+$webview = $seam->connect_webviews->get($webview->id);
+echo json_encode($webview);
 ```
 {% endtab %}
 {% endtabs %}
@@ -241,8 +241,8 @@ echo json_encode($locks);
 
 Next, you can perform the basic action of locking and unlocking a door.
 
-{% swagger src="../.gitbook/assets/openapi (1).json" path="/locks/lock_door" method="post" %}
-[openapi (1).json](<../.gitbook/assets/openapi (1).json>)
+{% swagger src="../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
+[openapi.json](../.gitbook/assets/openapi.json)
 {% endswagger %}
 
 {% swagger method="post" path="/locks/unlock_door" baseUrl="https://connect.getseam.com" summary="Unlock a door" %}

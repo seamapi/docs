@@ -11,6 +11,6 @@ Let's start by creating an API key to your Sandbox workspace. Our Sandbox lets y
 3. Click the "Add API Key" button in the top right.&#x20;
 4. Give your key a name, then save it somewhere safe.&#x20;
 
-![](<../.gitbook/assets/image (9).png>)
+<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
 
-![API keys that include "test" in the short token are for Sandboxes only.](<../.gitbook/assets/add (1).png>)
+![API keys that include "test" in the short token are for Sandboxes only.](../.gitbook/assets/add.png)

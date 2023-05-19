@@ -13,11 +13,11 @@ and lifecycle events available for it. Note that not all device providers suppor
 
 {% endswagger-description %}
 
-{% swagger-parameter in="body" name="access_code" required="true" %}
+{% swagger-parameter in="body" name="access_code_id" required="true" %}
 ID of Unmanaged Access Code
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="is_managed" %}
+{% swagger-parameter in="body" name="is_managed" required="true" %}
 Set to true to manage the access code with Seam.
 {% endswagger-parameter %}
 
@@ -54,7 +54,21 @@ Set to true to manage the access code with Seam.
 {% tab title="Javascript" %}
 
 ```typescript
-await seam.accessCodes.unmanaged.update({ is_managed: true });
+await seam.accessCodes.unmanaged.update({
+  access_code_id: "26d6138c-6524-4f3c-ac96-43cc3bea0a8d",
+  is_managed: true,
+});
+```
+
+{% endtab %}
+
+{% tab title="PHP" %}
+
+```php
+$seam->access_codes->unmanaged->update(
+  access_code_id: '26d6138c-6524-4f3c-ac96-43cc3bea0a8d',
+  is_managed: true
+);
 ```
 
 {% endtab %}
