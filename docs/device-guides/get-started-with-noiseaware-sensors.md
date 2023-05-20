@@ -4,7 +4,7 @@ description: Learn how to connect and control your NoiseAware devices with the S
 
 # Get started with NoiseAware Devices
 
-<figure><img src="../.gitbook/assets/guides/minut-getting-seo-cover.jpg" alt=""><figcaption><p>NoiseAware Noise Devices</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/guides/noiseaware-getting-seo-cover.jpg" alt=""><figcaption><p>NoiseAware Noise Devices</p></figcaption></figure>
 
 ## Overview
 
@@ -62,7 +62,7 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 - **email**: jane@example.com
 - **password**: 1234
 
-<figure><img src="../.gitbook/assets/guides/minut-connect-flow-screens.jpg" alt=""><figcaption><p>Seam Connect Webview flow to connect NoiseAware account with Seam</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/guides/noiseaware-connect-flow-screens.jpg" alt=""><figcaption><p>Seam Connect Webview flow to connect NoiseAware account with Seam</p></figcaption></figure>
 
 ### Get the New Webview
 
@@ -127,7 +127,7 @@ You'll get an event for `noise_threshold.noise_threshold_triggered` when you set
 
 {% hint style="info" %}
 NoiseAware has three distinct noise alerts: `newNoise`, `continuedNoise`, and `resolvedNoise`. It is essential to keep in mind that Seam will solely trigger the `noise_threshold.noise_threshold_triggered` event for `newNoise`.
-  {% endhint %}
+{% endhint %}
 
 {% tabs %}
 {% tab title="Python" %}
@@ -160,4 +160,3 @@ def endpoint():
 Now that you've completed this guide, you can try to connect a real NoiseAware device. To do so, make sure to switch to a non-sandbox workspace and API key as real devices cannot be connected to sandbox workspaces.
 
 If you have any questions or want to report an issue, email us at support@seam.co
-
