@@ -1,14 +1,14 @@
 ---
-description: Learn how to connect and control your Minut sensors with the Seam API
+description: Learn how to connect and control your NoiseAware devices with the Seam API
 ---
 
 # Get started with NoiseAware Devices
 
-<figure><img src="../.gitbook/assets/guides/minut-getting-seo-cover.jpg" alt=""><figcaption><p>Minut Noise Sensors</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/guides/minut-getting-seo-cover.jpg" alt=""><figcaption><p>NoiseAware Noise Devices</p></figcaption></figure>
 
 ## Overview
 
-Seam provides a universal API to connect and control many brands of devices such as smart locks, thermostats, and sensors. This guide provides a rapid introduction to connecting and controlling your [NoiseAware](https://www.seam.co/manufacturers/minut) devices (called "activity zones" by NoiseAware) using the Seam API. To learn more about other brands of devices supported by Seam, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
+Seam provides a universal API to connect and control many brands of devices such as smart locks, thermostats, and sensors. This guide provides a rapid introduction to connecting and controlling your [NoiseAware](https://www.seam.co/manufacturers/noiseaware) devices (called "activity zones" by NoiseAware) using the Seam API. To learn more about other brands of devices supported by Seam, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
 To simplify the examples below, we'll use the following modules and utility variables:
 
