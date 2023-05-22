@@ -245,7 +245,6 @@ seam.devices.list(
 # warnings=[]>
 ```
 
-{% endtab %}
 
 {% endtab %}
 
