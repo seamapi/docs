@@ -151,7 +151,7 @@ devices[0]
 
 {% tab title="Javascript" %}
 ```javascript
-const devices = await await seam.devices.list({
+const devices = await seam.devices.list({
   device_type: 'noiseaware_activity_zone',
 })
 
