@@ -215,6 +215,7 @@ console.log(devices[0])
 */
 ```
 
+{% endtab %}
 
 {% tab title="Ruby" %}
 
