@@ -51,6 +51,25 @@ print(webview.url)
 ```
 
 {% endtab %}
+
+{% tab title="Ruby" %}
+
+<pre class="language-ruby"><code class="lang-ruby">require "seamapi"
+
+<strong>seam = Seam::Client.new(api_key: "MY_API_KEY")
+</strong>
+webview = seam.connect_webviews.create(
+  accepted_providers: ["minut"]
+)
+
+puts webview.login_successful # false
+
+# Send the webview URL to your user 
+puts webview.url
+</code></pre>
+
+{% endtab %}
+
 {% endtabs %}
 
 ### Authorize Your Workspace
@@ -78,6 +97,16 @@ assert updated_webview.login_successful # true
 ```
 
 {% endtab %}
+
+{% tab title="Ruby" %}
+
+```ruby
+updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
+puts updated_webview.login_successful # true
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## 3. Retrieve Minut Noise Sensors
@@ -92,19 +121,149 @@ sensors = seam.devices.list(device_type="minut_sensor")
 
 sensors[0]
 # Device(
-#   device_type="minut_sensor",
-#   location=None,
+#   device_id='fd200f4b-3815-497a-8520-10725c597e0c',
+#   device_type='minut_sensor',
+#   location={
+#     'timezone': 'America/Los_Angeles',
+#     'location_name': "Jane's Test Home"
+#   },
 #   properties={
-#     "online": True,
-#     "last_reported_noise_level_decibels": 40,
-#     "temperature_celsius": 20,
-#     "temperature_fahrenheit": 68,
-#     "humidity": 0.78,
-#   }
+#     'online': True,
+#     'manufacturer': 'minut',
+#     'battery_level': 0.5,
+#     'minut_metadata': {
+#       'home_id': 'f53026ff7c5e314521f285f9',
+#       'device_id': '5bb32b83525d243950a92ab8',
+#       'home_name': "Jane's Test Home",
+#       'device_name': 'Living Room',
+#       'home_address': {
+#         'city': 'San Francisco',
+#         'notes': 'string',
+#         'region': 'San Francisco County',
+#         'country': 'US',
+#         'post_code': '44210',
+#         'street_name1': '2258 24th Street',
+#         'street_name2': ''
+#       },
+#       'home_location': {
+#         'latitude': 0,
+#         'longitude': 0
+#       },
+#       'device_location': {
+#         'latitude': 0,
+#         'longitude': 0
+#       },
+#       'latest_sensor_values': {
+#         'sound': {
+#           'time': '1970-01-01T00:00:00.000Z',
+#           'value': 47.7117919921875
+#         },
+#         'humidity': {
+#           'time': '1970-01-01T00:00:00.000Z',
+#           'value': 31.110000610351562
+#         },
+#         'pressure': {
+#           'time': '1970-01-01T00:00:00.000Z',
+#           'value': 101923
+#         },
+#         'temperature': {
+#           'time': '1970-01-01T00:00:00.000Z',
+#           'value': 21.270000457763672
+#         },
+#         'accelerometer_z': {
+#           'time': '1970-01-01T00:00:00.000Z',
+#           'value': -1.00390625
+#         }
+#       }
+#     },
+#     'name': 'Living Room',
+#     'battery': {
+#       'level': 0.5,
+#       'status': 'good'
+#     },
+#     'image_url': 'https://connect.getseam.com/assets/images/devices/minut_gen-3_front.png',
+#     'image_alt_text': 'Minut Sensor'
+#   },
+#   capabilities_supported=['noise_detection'],
+#   errors=[]
 # )
 ```
 
 {% endtab %}
+
+{% tab title="Ruby" %}
+
+```ruby
+seam.devices.list(
+  device_type: "minut_sensor"
+).first
+# <Seam::Device:0x00c08
+#   device_id="01e6c107-9855-48ec-ae66-d0e839302492"
+#   device_type="minut_sensor"
+#   properties={
+#     "online"=>true,
+#     "manufacturer"=>"minut",
+#     "battery_level"=>1,
+#     "minut_metadata"=>{
+#       "home_id"=>"2978b6d5dba395ec08300e45",
+#       "device_id"=>"770bd3153deca3dee0fe0614",
+#       "home_name"=>"Jane's Test Home",
+#       "device_name"=>"Living Room",
+#       "home_address"=>{
+#         "city"=>"San Francisco",
+#         "notes"=>"string",
+#         "region"=>"San Francisco County",
+#         "country"=>"US",
+#         "post_code"=>"44210",
+#         "street_name1"=>"2258 24th Street",
+#         "street_name2"=>""
+#       },
+#       "home_location"=>{
+#         "latitude"=>0,
+#         "longitude"=>0
+#       },
+#       "device_location"=>{
+#         "latitude"=>0,
+#         "longitude"=>0
+#       },
+#       "latest_sensor_values"=>{
+#         "sound"=>{
+#           "time"=>"1970-01-01T00:00:00.000Z",
+#           "value"=>47.7117919921875
+#         },
+#         "humidity"=>{
+#           "time"=>"1970-01-01T00:00:00.000Z",
+#           "value"=>31.110000610351562
+#         },
+#         "pressure"=>{
+#           "time"=>"1970-01-01T00:00:00.000Z",
+#           "value"=>101923
+#         },
+#         "temperature"=>{
+#           "time"=>"1970-01-01T00:00:00.000Z",
+#           "value"=>21.270000457763672
+#         },
+#         "accelerometer_z"=>{
+#           "time"=>"1970-01-01T00:00:00.000Z",
+#           "value"=>-1.00390625
+#         }
+#       }
+#     },
+#     "name"=>"Living Room",
+#     "battery"=>{
+#       "level"=>1,
+#       "status"=>"full"
+#     },
+#     "image_url"=>"https://connect.getseam.com/assets/images/devices/minut_gen-3_front.png",
+#     "image_alt_text"=>"Minut Sensor"
+#   }
+#   created_at=2023-05-08 17:01:45.79 UTC
+#   errors=[]
+#   warnings=[]>
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## 4. Receive Noise Events
@@ -142,6 +301,31 @@ def endpoint():
 </code></pre>
 
 {% endtab %}
+
+{% tab title="Ruby" %}
+```ruby
+post '/my_webhook_endpoint' do
+  request.body.rewind
+  payload = JSON.parse(request.body.read)
+  event = payload['event']
+  # {
+  #   "event_id": "d8ffcf85-73f7-4383-b832-ed65db93c802",
+  #   "device_id": "617415c6-2aa4-43ac-b436-879951f891b0",
+  #   "event_type": "noise_sensor.noise_threshold_triggered",
+  #   "workspace_id": "2c5f5397-37b9-4236-beac-f47f050d42cd",
+  #   "created_at": "2023-03-14T05:00:35.451Z"
+  #   "occurred_at": "2023-05-20T00:01:31.273Z",
+  #   "noiseaware_metadata": {
+  #     "minut_event_id": "2690d0909b90a06e1ceac185"
+  #     "minut_event_type": "disturbance_first_notice"
+  #     "minut_home_id": "f53026ff7c5e314521f285f9",
+  #     "minut_user_id": "d3bd127911d71d7d7da85bd3"
+  #   }
+  # }
+end
+```
+{% endtab %}
+
 {% endtabs %}
 
 ## Next Steps
