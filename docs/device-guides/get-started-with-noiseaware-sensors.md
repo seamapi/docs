@@ -73,6 +73,26 @@ console.log(connectWebview.url)
 
 {% endtab %}
 
+{% tab title="Ruby" %}
+
+<pre class="language-ruby"><code class="lang-ruby">require "seamapi"
+
+<strong>seam = Seam::Client.new(api_key: "MY_API_KEY")
+</strong>
+webview = seam.connect_webviews.create(
+  accepted_providers: ["noiseaware"]
+)
+
+puts webview.login_successful # false
+
+# Send the webview URL to your user 
+puts webview.url
+</code></pre>
+
+{% endtab %}
+
+{% endtabs %}
+
 ### Authorize Your Workspace
 
 Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the NoiseAware [sandbox test accounts ](https://docs.seam.co/latest/device-guides/sandbox-and-sample-data)credentials below:
@@ -107,6 +127,16 @@ const updatedWebview = await seam.connectWebviews.get(
 )
 
 console.log(updatedWebview.login_successful) // true
+```
+
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+```ruby
+updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
+
+puts updated_webview.login_successful # true
 ```
 
 {% endtab %}
@@ -187,6 +217,38 @@ console.log(devices[0])
 
 {% endtab %}
 
+{% tab title="Ruby" %}
+
+```ruby
+seam.devices.list(
+  device_type: "noiseaware_activity_zone"
+).first
+
+# <Seam::Device:0x00be0
+#  device_id="617415c6-2aa4-43ac-b436-879951f891b0"
+# device_type="noiseaware_activity_zone"
+# properties={
+#   "online"=>true,
+#   "manufacturer"=>"noiseaware",
+#   "has_direct_power"=>true,
+#   "noiseaware_metadata"=>{
+#     "device_id"=>"98765",
+#     "device_name"=>"Conference Room",
+#     "noise_level_nrs"=>0,
+#     "noise_level_decibel"=>2
+#   },
+#   "name"=>"Conference Room",
+#   "image_url"=>"https://connect.getseam.com/assets/images/devices/noiseaware_logo_square.png",
+#   "image_alt_text"=>"NoiseAware Noise Sensor"
+# }
+# created_at=2023-05-19 20:06:10.789 UTC
+# errors=[]
+# warnings=[]>
+```
+
+
+{% endtab %}
+
 {% endtabs %}
 
 ## 4. Receive Noise Events
@@ -246,6 +308,32 @@ app.post('/my_webhook_endpoint', (req, res) => {
 ```
 
 {% endtab %}
+
+{% tab title="Ruby" %}
+```ruby
+post '/my_webhook_endpoint' do
+  request.body.rewind
+  payload = JSON.parse(request.body.read)
+  event = payload['event']
+  # {
+  #   "event_id": "d8ffcf85-73f7-4383-b832-ed65db93c802",
+  #   "device_id": "617415c6-2aa4-43ac-b436-879951f891b0",
+  #   "event_type": "noise_sensor.noise_threshold_triggered",
+  #   "workspace_id": "2c5f5397-37b9-4236-beac-f47f050d42cd",
+  #   "created_at": "2023-03-14T05:00:35.451Z"
+  #   "occurred_at": "2023-05-20T00:01:31.273Z",
+  #   "noiseaware_metadata": {
+  #     "noiseaware_alert_info": "ALERT: Noise Sensors at [PropertyName] has sustained noise above the NRS threshold. dashboard.noiseaware.io/properties/[APIKey]",
+  #     "noiseaware_alert_time": "2023-05-20T00:01:31.180Z",
+  #     "noiseaware_alert_type": "newNoise",
+  #     "noiseaware_property_id": 12345,
+  #     "noiseaware_property_name": "Acme Corporation"
+  #   }
+  # }
+end
+```
+{% endtab %}
+
 {% endtabs %}
 
 ## Next Steps
