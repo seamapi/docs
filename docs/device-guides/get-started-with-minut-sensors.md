@@ -51,6 +51,22 @@ print(webview.url)
 ```
 
 {% endtab %}
+
+{% tab title="Javascript" %}
+
+```javascript
+import Seam from 'seamapi'
+const seam = new Seam()
+const connectWebview = await seam.connectWebviews.create({
+  accepted_providers: ["minut"],
+})
+console.log(connectWebview.login_successful) // false
+// Send the webview URL to your user
+console.log(connectWebview.url)
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ### Authorize Your Workspace
@@ -78,6 +94,18 @@ assert updated_webview.login_successful # true
 ```
 
 {% endtab %}
+
+{% tab title="Javascript" %}
+
+```javascript
+const updatedWebview = await seam.connectWebviews.get(
+  connectWebview.connect_webview_id,
+)
+console.log(updatedWebview.login_successful) // true
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## 3. Retrieve Minut Noise Sensors
@@ -105,6 +133,92 @@ sensors[0]
 ```
 
 {% endtab %}
+
+{% tab title="Javascript" %}
+```javascript
+const devices = await seam.devices.list({
+  device_type: 'minut_sensor',
+})
+console.log(devices[0])
+/*
+{
+  "device_id": "1efc294e-3a85-403a-8a2a-21b8f8b27cfa",
+  "device_type": "minut_sensor",
+  "capabilities_supported": [
+    "noise_detection"
+  ],
+  "properties": {
+    "online": true,
+    "manufacturer": "minut",
+    "battery_level": 1,
+    "minut_metadata": {
+      "home_id": "f53026ff7c5e314521f285f9",
+      "device_id": "e0d8283f314c5ad10b82571e",
+      "home_name": "Jane's Test Home",
+      "device_name": "Living Room",
+      "home_address": {
+        "city": "San Francisco",
+        "notes": "string",
+        "region": "San Francisco County",
+        "country": "US",
+        "post_code": "44210",
+        "street_name1": "2258 24th Street",
+        "street_name2": ""
+      },
+      "home_location": {
+        "latitude": 0,
+        "longitude": 0
+      },
+      "device_location": {
+        "latitude": 0,
+        "longitude": 0
+      },
+      "latest_sensor_values": {
+        "sound": {
+          "time": "1970-01-01T00:00:00.000Z",
+          "value": 47.7117919921875
+        },
+        "humidity": {
+          "time": "1970-01-01T00:00:00.000Z",
+          "value": 31.110000610351562
+        },
+        "pressure": {
+          "time": "1970-01-01T00:00:00.000Z",
+          "value": 101923
+        },
+        "temperature": {
+          "time": "1970-01-01T00:00:00.000Z",
+          "value": 21.270000457763672
+        },
+        "accelerometer_z": {
+          "time": "1970-01-01T00:00:00.000Z",
+          "value": -1.00390625
+        }
+      }
+    },
+    "name": "Living Room",
+    "battery": {
+      "level": 1,
+      "status": "full"
+    },
+    "image_url": "https://connect.getseam.com/assets/images/devices/minut_gen-3_front.png",
+    "image_alt_text": "Minut Sensor"
+  },
+  "location": {
+    "timezone": "America/Los_Angeles",
+    "location_name": "Jane's Test Home"
+  },
+  "connected_account_id": "257160cb-c2f0-4ee0-9c76-be80b3751f28",
+  "workspace_id": "2c5f5397-37b9-4236-beac-f47f050d42cd",
+  "created_at": "2023-05-08T17:01:43.650Z",
+  "errors": [],
+  "warnings": []
+}
+*/
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## 4. Receive Noise Events
@@ -136,12 +250,35 @@ def endpoint():
     #    },
     #    device_id: "...";
     #    noise_level_decibels: 40,
-<strong>    #    created_at: "2023-03-14T05:00:35.451Z"
-</strong>    # }
+    #    created_at: "2023-03-14T05:00:35.451Z"
+    # }
         
 </code></pre>
 
 {% endtab %}
+
+{% tab title="Javascript" %}
+```javascript
+app.post('/my_webhook_endpoint', (req, res) => {
+  const event = req.body.event;
+  // {
+  // "event_id": "d8ffcf85-73f7-4383-b832-ed65db93c802",
+  // "device_id": "617415c6-2aa4-43ac-b436-879951f891b0",
+  // "event_type": "noise_sensor.noise_threshold_triggered",
+  // "workspace_id": "2c5f5397-37b9-4236-beac-f47f050d42cd",
+  // "created_at": "2023-03-14T05:00:35.451Z"
+  // "occurred_at": "2023-05-20T00:01:31.273Z",
+  // "minut_metadata": {
+  //   "minut_event_id": "2690d0909b90a06e1ceac185"
+  //   "minut_event_type": "disturbance_first_notice"
+  //   "minut_home_id": "f53026ff7c5e314521f285f9",
+  //   "minut_user_id": "d3bd127911d71d7d7da85bd3"
+  // }
+});
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Next Steps
