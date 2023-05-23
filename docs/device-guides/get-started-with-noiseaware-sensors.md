@@ -148,11 +148,14 @@ puts updated_webview.login_successful # true
 
 
 {% tab title="PHP" %}
+
 ```php
 $webview = $seam->connect_webviews->get($webview->id);
 echo json_encode($webview);
 ```
-=======
+
+{% endtab %}
+
 {% tab title="Javascript" %}
 
 ```javascript
@@ -204,6 +207,7 @@ devices[0]
 {% endtab %}
 
 {% tab title="Javascript" %}
+
 ```javascript
 const devices = await seam.devices.list({
   device_type: 'noiseaware_activity_zone',
@@ -250,16 +254,16 @@ seam.devices.list(
 
 # <Seam::Device:0x00be0
 #  device_id="617415c6-2aa4-43ac-b436-879951f891b0"
-# device_type="noiseaware_activity_zone"
-# properties={
-#   "online"=>true,
-#   "manufacturer"=>"noiseaware",
-#   "has_direct_power"=>true,
-#   "noiseaware_metadata"=>{
-#     "device_id"=>"98765",
-#     "device_name"=>"Conference Room",
-#     "noise_level_nrs"=>0,
-#     "noise_level_decibel"=>2
+#  device_type="noiseaware_activity_zone"
+#  properties={
+#    "online"=>true,
+#    "manufacturer"=>"noiseaware",
+#    "has_direct_power"=>true,
+#    "noiseaware_metadata"=>{
+#      "device_id"=>"98765",
+#      "device_name"=>"Conference Room",
+#      "noise_level_nrs"=>0,
+#      "noise_level_decibel"=>2
 #   },
 #   "name"=>"Conference Room",
 #   "image_url"=>"https://connect.getseam.com/assets/images/devices/noiseaware_logo_square.png",
@@ -274,6 +278,7 @@ seam.devices.list(
 
 
 {% tab title="PHP" %}
+
 ```php
 $devices = $seam->devices->list(device_type: 'noiseaware_activity_zone');
 
@@ -401,18 +406,19 @@ $app->post('/my_webhook_endpoint', function (Request $request, Response $respons
     $data = $request->getParsedBody();
     $event = $data['event'];
     // {
-    // "event_id": "d8ffcf85-73f7-4383-b832-ed65db93c802",
-    // "device_id": "617415c6-2aa4-43ac-b436-879951f891b0",
-    // "event_type": "noise_sensor.noise_threshold_triggered",
-    // "workspace_id": "2c5f5397-37b9-4236-beac-f47f050d42cd",
-    // "created_at": "2023-03-14T05:00:35.451Z",
-    // "occurred_at": "2023-05-20T00:01:31.273Z",
-    // "noiseaware_metadata": {
-    //   "noiseaware_alert_info": "ALERT: Noise Sensors at [PropertyName] has sustained noise above the NRS threshold. dashboard.noiseaware.io/properties/[APIKey]",
-    //   "noiseaware_alert_time": "2023-05-20T00:01:31.180Z",
-    //   "noiseaware_alert_type": "newNoise",
-    //   "noiseaware_property_id": 12345,
-    //   "noiseaware_property_name": "Acme Corporation"
+    //   "event_id": "d8ffcf85-73f7-4383-b832-ed65db93c802",
+    //   "device_id": "617415c6-2aa4-43ac-b436-879951f891b0",
+    //   "event_type": "noise_sensor.noise_threshold_triggered",
+    //   "workspace_id": "2c5f5397-37b9-4236-beac-f47f050d42cd",
+    //   "created_at": "2023-03-14T05:00:35.451Z",
+    //   "occurred_at": "2023-05-20T00:01:31.273Z",
+    //   "noiseaware_metadata": {
+    //     "noiseaware_alert_info": "ALERT: Noise Sensors at [PropertyName] has sustained noise above the NRS threshold. dashboard.noiseaware.io/properties/[APIKey]",
+    //     "noiseaware_alert_time": "2023-05-20T00:01:31.180Z",
+    //     "noiseaware_alert_type": "newNoise",
+    //     "noiseaware_property_id": 12345,
+    //     "noiseaware_property_name": "Acme Corporation"
+    //   }
     // }
 });
 ```
