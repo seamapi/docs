@@ -16,7 +16,7 @@ Webhook endpoints can receive many different types of events such as `device.con
 
  ![Go to the "Event Catalog" tab to view all available events.](<../.gitbook/assets/image (27).png>)
 
- We use webhooks from svix! If you want more information about consuming events such as testing or verifying webhooks, you can get more info from their [docs.](https://docs.svix.com/receiving/introduction)
+ We use webhooks from svix! If you want more information about consuming events such as testing or verifying webhooks, you can get more info from [the svix docs.](https://docs.svix.com/receiving/introduction)
 
 ## Retry Schedule for Webhooks
 
