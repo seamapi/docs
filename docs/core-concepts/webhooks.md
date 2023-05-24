@@ -14,9 +14,9 @@ Webhook endpoints can receive many different types of events such as `device.con
 
  You can view all the event types and their fields in the "Event Catalog" tab. The listed fields are marked "Optional" to make testing easier. You can expect all fields when receiving the events from production. 
 
- ![The sandbox environment allows you to test sending requests to an endpoint.](<../.gitbook/assets/image (27).png>)
+ ![Go to the "Event Catalog" tab to view all available events.](<../.gitbook/assets/image (27).png>)
 
- We use webhooks from svix! If you want more information about consuming events such as testing or verifying webhooks, you can get more info from their [docs](https://docs.svix.com/receiving/introduction).
+ We use webhooks from svix! If you want more information about consuming events such as testing or verifying webhooks, you can get more info from their [docs.](https://docs.svix.com/receiving/introduction)
 
 ## Retry Schedule for Webhooks
 
