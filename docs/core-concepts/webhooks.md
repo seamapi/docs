@@ -12,6 +12,12 @@ Webhook endpoints can receive many different types of events such as `device.con
 
 ![The sandbox environment allows you to test sending requests to an endpoint.](<../.gitbook/assets/image (15).png>)
 
+ You can view all the event types and their fields in the "Event Catalog" tab. The listed fields are marked "Optional" to make testing easier. You can expect all fields when receiving the events from production. 
+
+ ![The sandbox environment allows you to test sending requests to an endpoint.](<../.gitbook/assets/image (27).png>)
+
+ We use webhooks from svix! If you want more information about consuming events such as testing or verifying webhooks, you can get more info from their [docs](https://docs.svix.com/receiving/introduction).
+
 ## Retry Schedule for Webhooks
 
 Seam delivers each webhook event based on a retry schedule with exponential backoff. Each message is attempted based on the following schedule, where each period is started following the failure of the preceding attempt.
