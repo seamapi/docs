@@ -122,3 +122,5 @@ devices are supported by your platform.
 ```ts
 <SupportedDevices />
 ```
+
+<figure><img src="../.gitbook/assets/2023-05-24_02-07.png" alt="" width="375"><figcaption></figcaption></figure>
