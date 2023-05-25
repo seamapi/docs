@@ -22,7 +22,15 @@ ID of the Device
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="device_ids" %}
-IDs of the Device
+IDs of the Devices
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="access_code_id" %}
+ID of the Access Code
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="access_code_ids" %}
+IDs of the Access Codes
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="event_type" type="" %}
@@ -213,13 +221,15 @@ echo json_encode($events)
 
 ### Parameters
 
-| `since`       | <p>type: string<br>Optional</p>           | Datetime since when events were generated                                                      |
-| ------------- | ----------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `between`     | <p>type: [string, string]<br>Optional</p> | Lower and upper datetimes to filter by (exclusive interval)                                    |
-| `device_id`   | <p>type: string<br>Optional</p>           | ID of the Device                                                                               |
-| `device_ids`  | <p>type: string[]<br>Optional</p>         | IDs of the Devices to include                                                                  |
-| `event_type`  | <p>type: string<br>Optional</p>           | Get all events by type. See the [Events page](./#event-types) for a full list of Event types.  |
-| `event_types` | <p>type: string[]<br>Optional</p>         | Get all events by types. See the [Events page](./#event-types) for a full list of Event types. |
+| `since`           | <p>type: string<br>Optional</p>           | Datetime since when events were generated                                                      |
+| ----------------- | ----------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `between`         | <p>type: [string, string]<br>Optional</p> | Lower and upper datetimes to filter by (exclusive interval)                                    |
+| `device_id`       | <p>type: string<br>Optional</p>           | ID of the Device                                                                               |
+| `device_ids`      | <p>type: string[]<br>Optional</p>         | IDs of the Devices to include                                                                  |
+| `access_code_id`  | <p>type: string<br>Optional</p>           | ID of the Access Code                                                                          |
+| `access_code_ids` | <p>type: string[]<br>Optional</p>         | IDs of the Access Codes to include                                                             |
+| `event_type`      | <p>type: string<br>Optional</p>           | Get all events by type. See the [Events page](./#event-types) for a full list of Event types.  |
+| `event_types`     | <p>type: string[]<br>Optional</p>         | Get all events by types. See the [Events page](./#event-types) for a full list of Event types. |
 
 _Exactly one of `since`, `between` must be provided._
 
