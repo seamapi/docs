@@ -12,7 +12,7 @@ Webhook endpoints can receive many different types of events such as `device.con
 
 ![The sandbox environment allows you to test sending requests to an endpoint.](<../.gitbook/assets/image (15).png>)
 
- You can view all the event types and their fields in the "Event Catalog" tab. The listed fields are marked "Optional" to make testing easier. You can expect all fields when receiving the events from production. 
+ You can view all the event types and their fields in the "Event Catalog" tab.
 
  ![Go to the "Event Catalog" tab to view all available events.](<../.gitbook/assets/image (27).png>)
 
