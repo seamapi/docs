@@ -59,7 +59,6 @@
 
 ## 📋 API Clients
 
-<<<<<<< HEAD
 - [Overview](api-clients/overview.md)
 - [Installation](api-clients/installation.md)
 - [Authentication](api-clients/authentication.md)
