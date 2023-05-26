@@ -29,9 +29,7 @@ See [this guide](get-started-with-react-components-and-client-session-tokens.md)
 The devices table shows a list of devices and their statuses.
 
 ```
-<SeamProvider clientSessionToken={clientSessionToken}>
-  <DeviceTable />
-</SeamProvider>
+<DeviceTable />
 ```
 
 ### Size: Desktop
@@ -53,9 +51,7 @@ The devices table shows a list of devices and their statuses.
 The device details component shows the properties, settings, and issues for a device.
 
 ```
-<SeamProvider clientSessionToken={clientSessionToken}>
-  <DeviceDetails deviceId={deviceId} />
-</SeamProvider>
+<DeviceDetails deviceId={deviceId} />
 ```
 
 ### Size: Modal
@@ -74,9 +70,7 @@ The device details component shows the properties, settings, and issues for a de
 The access codes table shows a list of current and future access codes and their statuses.
 
 ```
-<SeamProvider clientSessionToken={clientSessionToken}>
-  <AccessCodeTable deviceId={deviceId} />
-</SeamProvider>
+<AccessCodeTable deviceId={deviceId} />
 ```
 
 ### Size: Mobile
@@ -99,9 +93,7 @@ The access codes table shows a list of current and future access codes and their
 The access code details component shows the properties, settings, and issues for an access code.
 
 ```
-<SeamProvider clientSessionToken={clientSessionToken}>
-  <AccessCodeDetails accessCodeId={accessCodeId} />
-</SeamProvider>
+<AccessCodeDetails accessCodeId={accessCodeId} />
 ```
 
 ### Size: Mobile
@@ -122,9 +114,7 @@ devices compatible with Seam. You can use this table to indicate what
 devices are supported by your platform.
 
 ```ts
-<SeamProvider publishableKey="YOUR_PUBLISHABLE_KEY">
-  <SupportedDeviceTable />
-</SeamProvider>
+<SupportedDeviceTable />
 ```
 
 ### Props
