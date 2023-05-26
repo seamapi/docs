@@ -20,19 +20,33 @@ npm install --save @seamapi/react
 yarn add @seamapi/react
 ```
 
-## 2 — Import and Drop In the [\<SupportedDevices /> Component](https://seam-react.vercel.app/?path=/docs/example-supporteddevices--docs)
+## 2 - Get a Publishable Key from the Seam Console
+
+To access the Seam API, you'll need a publishable key. This key
+identifies your application when making requests to Seam and is
+okay to embed in your frontend code.
+
+Go to [console.seam.co](https://console.seam.co) and select
+"Client Sessions" from the sidebar. You should then see a
+"Publishable Key" that you can copy.
+
+<figure><img src="../.gitbook/assets/publishable-key-copy.png" alt="" width="375"><figcaption></figcaption></figure>
+
+## 3 — Import and Drop In the [\<SupportedDevices /> Component](https://seam-react.vercel.app/?path=/docs/example-supporteddevices--docs)
 
 ```javascript
 import { SeamProvider, DeviceTable } from "@seamapi/react"
 
-export const App = () => {
-  return <SupportedDevices />
-}
+export const App = () => (
+  <SeamProvider publishableKey="YOUR_PUBLISHABLE_KEY">
+    <SupportedDevices />
+  </SeamProvider>
+)
 ```
 
 You should see a list of device models like what's shown below:
 
-<figure><img src="../.gitbook/assets/2023-05-24_02-07.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/supported-device-table.png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## Next Steps
 
