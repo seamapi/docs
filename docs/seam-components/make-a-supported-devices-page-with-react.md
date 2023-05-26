@@ -7,7 +7,7 @@ description: Use Seam's prebuilt components to make a Supported Devices page
 ## Overview
 
 Seam adds supports for smart devices every week and by integrating with
-Seam, you also get access to all the new devices we add support for!
+Seam, you get access to these new devices too!
 
 This guide will show you how to drop [`<SupportedDeviceTable />`](https://react.seam.co/?path=/docs/example-supporteddevicetable--docs) into your
 React application.
@@ -24,7 +24,7 @@ yarn add @seamapi/react
 
 To access the Seam API, you'll need a publishable key. This key
 identifies your application when making requests to Seam and is
-okay to embed in your frontend code.
+safe to embed in your frontend code.
 
 Go to [console.seam.co](https://console.seam.co) and select
 "Client Sessions" from the sidebar. You should then see a
