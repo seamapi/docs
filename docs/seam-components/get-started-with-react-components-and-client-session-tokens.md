@@ -115,7 +115,7 @@ Route::get('/seam/get_seam_client_session', 'Api\SeamController@getSeamClientSes
 {% endtab %}
 {% endtabs %}
 
-Awesome! We can now request this from the frontend client application using something a hook like this:
+Awesome! We can now request this from the frontend client application using a hook like this:
 
 ```javascript
 // lib/hooks/use-seam-client-session-token.js
@@ -169,7 +169,7 @@ You should see a list of devices like what's shown below:
 
 ## Next Steps
 
-* View and play with components in the [interactive storybook component library](https://seam-react.vercel.app/)
+* View and play with components in the [interactive storybook component library](https://react.seam.co/)
 * Check out some [Full Example Apps](https://github.com/seamapi/react/tree/main/examples)
 
 If you have any questions or want to report an issue, email us at support@seam.co.

@@ -7,9 +7,9 @@ description: Use Seam's prebuilt components to make a Supported Devices page
 ## Overview
 
 Seam adds supports for smart devices every week and by integrating with
-Seam, you also get access to all the new devices we add support for!
+Seam, you get access to these new devices too!
 
-This guide will show you how to drop in [`<SupportedDeviceTable />`](https://seam-react.vercel.app/?path=/docs/example-supporteddevices--docs) to your
+This guide will show you how to drop [`<SupportedDeviceTable />`](https://react.seam.co/?path=/docs/example-supporteddevicetable--docs) into your
 React application.
 
 ## 1 - Install `@seamapi/react` in your React application
@@ -24,7 +24,7 @@ yarn add @seamapi/react
 
 To access the Seam API, you'll need a publishable key. This key
 identifies your application when making requests to Seam and is
-okay to embed in your frontend code.
+safe to embed in your frontend code.
 
 Go to [console.seam.co](https://console.seam.co) and select
 "Client Sessions" from the sidebar. You should then see a
@@ -32,7 +32,7 @@ Go to [console.seam.co](https://console.seam.co) and select
 
 <figure><img src="../.gitbook/assets/publishable-key-copy.png" alt="" width="375"><figcaption></figcaption></figure>
 
-## 3 — Import and Drop In the [\<SupportedDeviceTable /> Component](https://seam-react.vercel.app/?path=/docs/example-supporteddevices--docs)
+## 3 — Import and Drop In the [\<SupportedDeviceTable /> Component](https://react.seam.co/?path=/docs/example-supporteddevicetable--docs)
 
 ```javascript
 import { SeamProvider, SupportedDeviceTable } from "@seamapi/react"
@@ -50,7 +50,7 @@ You should see a list of device models like what's shown below:
 
 ## Next Steps
 
-- View and play with other components in the [interactive storybook component library](https://seam-react.vercel.app/)
+- View and play with other components in the [interactive storybook component library](https://react.seam.co/)
 - Check out some [Full Example Apps](https://github.com/seamapi/react/tree/main/examples)
 
 If you have any questions or want to report an issue, email us at support@seam.co.

@@ -6,13 +6,15 @@ description: 2 mins
 
 ## \<SeamProvider/>
 
-The Provider component accepts a `clientSessionToken` prop to be passed to consuming components that are descendants of this Provider. A Client Session Token allows a device owner to make API requests to Seam where interactions are restricted only to devices they own. To enable your users to interact with their devices, you'll need to create a client session and pass its token to the `<SeamProvider />` .
+The SeamProvider component accepts a `clientSessionToken` that enables descendants of the SeamProvider to use the Seam API.
+A Client Session Token allows a device owner to make API requests to Seam where interactions are restricted only to devices they own. 
+To enable your users to interact with their devices, you'll need to create a client session and pass its token to the `<SeamProvider />` .
 
 See [this guide](get-started-with-react-components-and-client-session-tokens.md) for instructions on how to create a client session token.
 
 ```
 <SeamProvider clientSessionToken={clientSessionToken}>
-    <DeviceTable />
+  <DeviceTable />
 </SeamProvider>
 ```
 
@@ -22,14 +24,12 @@ See [this guide](get-started-with-react-components-and-client-session-tokens.md)
 | ---------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------- |
 | clientSessionToken<mark style="color:red;">\*</mark> | string | A Client Session Token allows a device owner to make API requests to Seam where interactions are restricted only to devices they own. |
 
-## \<DeviceTable /> [(preview)](https://seam-react.vercel.app/?path=/docs/example-devicetable--docs)
+## \<DeviceTable /> [(preview)](https://react.seam.co/?path=/docs/example-devicetable--docs)
 
 The devices table shows a list of devices and their statuses.
 
 ```
-<SeamProvider clientSessionToken={clientSessionToken}>
-    <DeviceTable />
-</SeamProvider>
+<DeviceTable />
 ```
 
 ### Size: Desktop
@@ -42,18 +42,16 @@ The devices table shows a list of devices and their statuses.
 
 ### Props
 
-| Name   | Type     | Optional | Description                                                                                                        |
-| ------ | -------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
-| onBack | function | true     | <p>Callback fired when the "Back" chevron button is clicked.<br><br>Signature: <code>function() => void</code></p> |
+| Name   | Type     | Description                                                                                                        |
+| ------ | -------- | ------------------------------------------------------------------------------------------------------------------ |
+| onBack | function | <p>Optional callback fired when the Back chevron button is clicked.<br><br>Signature: <code>() => void</code></p>  |
 
-## \<DeviceDetails /> [(preview)](https://seam-react.vercel.app/?path=/docs/example-devicedetails--docs)
+## \<DeviceDetails /> [(preview)](https://react.seam.co/?path=/docs/example-devicedetails--docs)
 
 The device details component shows the properties, settings, and issues for a device.
 
 ```
-<SeamProvider clientSessionToken={clientSessionToken}>
-    <DeviceDetails deviceId={deviceId} />
-</SeamProvider>
+<DeviceDetails deviceId={deviceId} />
 ```
 
 ### Size: Modal
@@ -62,19 +60,17 @@ The device details component shows the properties, settings, and issues for a de
 
 ### Props
 
-| Name                                       | Type     | Optional | Description                                                                                                        |
-| ------------------------------------------ | -------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
-| deviceId<mark style="color:red;">\*</mark> | string   |          | The id for the device that will be shown in the table                                                              |
-| onBack                                     | function | true     | <p>Callback fired when the "Back" chevron button is clicked.<br><br>Signature: <code>function() => void</code></p> |
+| Name                                       | Type     | Description                                                                                                        |
+| ------------------------------------------ | -------- | ------------------------------------------------------------------------------------------------------------------ |
+| deviceId<mark style="color:red;">\*</mark> | string   | The id for the device that will be shown in the table.                                                             |
+| onBack                                     | function | <p>Optional callback fired when the Back chevron button is clicked.<br><br>Signature: <code>() => void</code></p>  |
 
-## \<AccessCodeTable /> [(preview)](https://seam-react.vercel.app/?path=/docs/example-accesscodetable--docs)
+## \<AccessCodeTable /> [(preview)](https://react.seam.co/?path=/docs/example-accesscodetable--docs)
 
 The access codes table shows a list of current and future access codes and their statuses.
 
 ```
-<SeamProvider clientSessionToken={clientSessionToken}>
-    <AccessCodeTable deviceId={deviceId} />
-</SeamProvider>
+<AccessCodeTable deviceId={deviceId} />
 ```
 
 ### Size: Mobile
@@ -87,19 +83,17 @@ The access codes table shows a list of current and future access codes and their
 
 ### Props
 
-| Name                                       | Type     | Optional | Description                                                                                                        |
-| ------------------------------------------ | -------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
-| deviceId<mark style="color:red;">\*</mark> | string   |          | The id for the device whose access codes will be shown in the table                                                |
-| onBack                                     | function | true     | <p>Callback fired when the "Back" chevron button is clicked.<br><br>Signature: <code>function() => void</code></p> |
+| Name                                       | Type     | Description                                                                                                        |
+| ------------------------------------------ | -------- | ------------------------------------------------------------------------------------------------------------------ |
+| deviceId<mark style="color:red;">\*</mark> | string   | The id for the device whose access codes will be shown in the table.                                               |
+| onBack                                     | function | <p>Optional callback fired when the Back chevron button is clicked.<br><br>Signature: <code>() => void</code></p>  |
 
-## \<AccessCodeDetails /> [(preview)](https://seam-react.vercel.app/?path=/docs/example-accesscodedetails--docs)
+## \<AccessCodeDetails /> [(preview)](https://react.seam.co/?path=/docs/example-accesscodedetails--docs)
 
 The access code details component shows the properties, settings, and issues for an access code.
 
 ```
-<SeamProvider clientSessionToken={clientSessionToken}>
-    <AccessCodeDetails accessCodeId={accessCodeId} />
-</SeamProvider>
+<AccessCodeDetails accessCodeId={accessCodeId} />
 ```
 
 ### Size: Mobile
@@ -108,19 +102,25 @@ The access code details component shows the properties, settings, and issues for
 
 ### Props
 
-| Name           | Type   | Description                                             |
-| -------------- | ------ | ------------------------------------------------------- |
-| accessCodeId\* | string | The id for the access code to be displayed.             |
-| onBack         |        | Callback fired when the Back chevron button is clicked. |
+| Name           | Type     | Description                                             |
+| -------------- | ------   | ------------------------------------------------------- |
+| accessCodeId\* | string   | The id for the access code to be displayed.             |
+| onBack         | function | true | <p>Optional callback fired when the Back chevron button is clicked.<br><br>Signature: <code>() => void</code></p> |
 
-## \<SupportedDeviceTable /> [(preview)](https://seam-react.vercel.app/?path=/docs/example-supporteddevices--docs)
+## \<SupportedDeviceTable /> [(preview)](https://react.seam.co/?path=/docs/example-supporteddevices--docs)
 
-The Supported Devices table allows you to filter, sort and view all the
+The supported device table allows you to filter, sort, and view all the
 devices compatible with Seam. You can use this table to indicate what
 devices are supported by your platform.
 
 ```ts
 <SupportedDeviceTable />
 ```
+
+### Props
+
+| Name           | Type    | Description                                             |
+| -------------- | ------  | ------------------------------------------------------- |
+| cannotFilter   | boolean | Hide the controls to filter the table. Default: `false` |
 
 <figure><img src="../.gitbook/assets/supported-device-table.png" alt="" width="375"><figcaption></figcaption></figure>
