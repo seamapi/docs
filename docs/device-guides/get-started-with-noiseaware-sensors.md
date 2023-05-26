@@ -1,241 +1,435 @@
-# Get started with NoiseAware Sensors
+---
+description: Learn how to connect and control your NoiseAware devices with the Seam API
+---
 
-This guide is for Seam Connect customers who are interested in enabling their users (airbnb hosts, homeowners etc.) to grant access to their NoiseAware devices. By using Seam Connect, customers can see all of a host's devices, see noise events, and add, change or remove noise thresholds.
+# Get started with NoiseAware Devices
 
-### Getting Started
+<figure><img src="../.gitbook/assets/guides/noiseaware-getting-seo-cover.jpg" alt=""><figcaption><p>NoiseAware Noise Devices</p></figcaption></figure>
 
-All requests to the Seam API should have the following header:
+## Overview
 
-```url
-Authorization: Bearer seam_2kBBb3xo_rCUWph7G1BswPsRU3LKaBY3Y
-```
-
-Where `seam_2kBBb3xo_rCUWph7G1BswPsRU3LKaBY3Y` is your API key. If you don't have an API contact Seam staff.
-
-
+Seam provides a universal API to connect and control many brands of devices such as smart locks, thermostats, and sensors. This guide provides a rapid introduction to connecting and controlling your [NoiseAware](https://www.seam.co/manufacturers/noiseaware) devices (called "activity zones" by NoiseAware) using the Seam API. To learn more about other brands of devices supported by Seam, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
 To simplify the examples below, we'll use the following modules and utility variables:
 
+## 1. Install Seam SDK
+
+Seam provides client libraries for many languages such as Javascript, Python, Ruby, and PHP, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.
+
+- **Javascript:** `npm i seamapi` ([npm](https://www.npmjs.com/package/seamapi), [github](https://github.com/seamapi/javascript))
+- **Python:** `pip install seamapi` ([pip](https://pypi.org/project/seamapi/), [github](https://github.com/seamapi/python))
+- **Ruby:** `bundle add seamapi` ([rubygem](https://rubygems.org/gems/seamapi), [github](https://github.com/seamapi/ruby))
+- **PHP:** `composer require seamapi/seam` ([packagist](https://packagist.org/packages/seamapi/seam), [github](https://github.com/seamapi/php))
+
+Once installed, [sign-up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:
+
+```
+$ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
+```
+
+{% hint style="info" %}
+This guide uses a Sandbox Workspace. Only virtual activity zones can be connected. If you need to connect a real Noiseaware device, use a non-sandbox workspace and API key.
+{% endhint %}
+
+## 2. Link NoiseAware Account with Seam
+
+To control your NoiseAware device via the Seam API, you must first authorize your Seam workspace against your NoiseAware account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews.md): pre-built UX flows that walk you through authorizing your application to control your NoiseAware device.
+
+### Create a Connect Webview
+
 {% tabs %}
 {% tab title="Python" %}
-```python
-import requests
 
-api_key = "YOUR_API_KEY"
-auth_headers = { "Authorization": f"Bearer {api_key}" }
+```python
+from seamapi import Seam
+seam = Seam()
+
+webview = seam.connect_webviews.create(accepted_providers=["noiseaware"])
+
+assert webview.login_successful is False
+
+# Send this webview url to your user!
+print(webview.url)
 ```
+
 {% endtab %}
 
 {% tab title="Javascript" %}
 
+```javascript
+import Seam from 'seamapi'
+
+const seam = new Seam()
+
+const connectWebview = await seam.connectWebviews.create({
+  accepted_providers: ["noiseaware"],
+})
+
+console.log(connectWebview.login_successful) // false
+
+// Send the webview URL to your user
+console.log(connectWebview.url)
+```
+
 {% endtab %}
+
+{% tab title="Ruby" %}
+
+<pre class="language-ruby"><code class="lang-ruby">require "seamapi"
+
+<strong>seam = Seam::Client.new(api_key: "MY_API_KEY")
+</strong>
+webview = seam.connect_webviews.create(
+  accepted_providers: ["noiseaware"]
+)
+
+puts webview.login_successful # false
+
+# Send the webview URL to your user 
+puts webview.url
+</code></pre>
+
+{% endtab %}
+
+{% tab title="PHP" %}
+```php
+use Seam\SeamClient;
+
+$seam = new SeamClient("YOUR_API_KEY");
+
+$webview = $seam->connect_webviews->create(
+  accepted_providers: ["noiseaware"]
+);
+
+echo json_encode($webview)
+/*
+{"connect_webview_id":"70c4df9e-1070-441f-92f8-fd6524062cec","workspace_id":"d7418ff3-a476-4f48-9a4b-211d1d21a03d","url":"https:\/\/connect.getseam.com\/connect_webviews\/view?connect_webview_id=70c4df9e-1070-441f-92f8-fd6524062cec&auth_token=9HJbwWKbD5aJLifZcozU9WWZXxropn9Bg","connected_account_id":null,"status":"pending","custom_redirect_url":null,"custom_redirect_failure_url":null,"created_at":"2023-02-09T02:14:06.147745+00:00","error":null}
+*/
+```
+{% endtab %}
+
 {% endtabs %}
 
-### Overview
+### Authorize Your Workspace
 
-To get access to a host's devices (called "sensors" or "activity zones" by NoiseAware), the Host must be prompted to authorize Seam Connect to connect with their NoiseAware account. You can do this by showing them a URL to a custom webview created for your organization. After the user has authorized the access, which usually involves logging into NoiseAware, the Seam API will pass data to your application and the webview can be closed. You can now query the Seam API for events and devices.
+Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the NoiseAware [sandbox test accounts ](https://docs.seam.co/latest/device-guides/sandbox-and-sample-data)credentials below:
 
-### Step by Step
+- **email**: jane@example.com
+- **password**: 1234
 
-#### 1. Ask Seam Connect for a webview URL
+<figure><img src="../.gitbook/assets/guides/noiseaware-connect-flow-screens.jpg" alt=""><figcaption><p>Seam Connect Webview flow to connect NoiseAware account with Seam</p></figcaption></figure>
 
-```python
-webview = requests.post(
-  "https://connect.getseam.com/v1/connect_webviews/create",
-  json={ "accepted_providers": ["noiseaware"] },
-  headers=auth_headers
-).json()["connect_webview"]
+### Get the New Webview
 
-webview_id = webview["connect_webview_id"]
-webview_url = webview["url"]
-```
+After you complete the login above, you'll get an event for [`connected_account.created`](../api-clients/events/)if you set up a [webhook handler](../core-concepts/webhooks.md). Otherwise you can just poll for the webview until it's status changes, as shown below:
 
-> You can also provide `custom_redirect_url` to have the login portal redirect to a url of your choosing
-
-#### 2. Display webview URL to user
+{% tabs %}
+{% tab title="Python" %}
 
 ```python
-# In a web application, you could show this in an iframe
-# For Android and IOS, use a webview dialog that you can close automatically
-print(f"Navigate to this URL: {webview_url}")
-```
-
-#### 3. Wait for user to authorize access
-
-Poll `/connect_webviews/get` until the `status` is `authorized`.
-
-> Note: We are introducing a webhook for this soon! The polling API will always remain available.
-
-```python
-noiseaware_account_id = None
-while True:
-  latest_webview = requests.get(
-      f"https://connect.getseam.com/v1/connect_webviews/get",
-      params={"connect_webview_id": webview_id},
-      headers=auth_headers,
-  ).json()["connect_webview"]
-
-  if latest_webview["status"] == "authorized":
-    noiseaware_account_id = latest_webview["third_party_account_id"]
-    break
-
-  time.sleep(0.25)
-```
-
-#### 4. View Devices Associated with Connected Account
-
-```python
-devices = requests.get(
-  f"https://connect.getseam.com/v1/devices/list",
-  params={ "third_party_account_id": noiseaware_account_id },
-  headers=auth_headers
-).json()["devices"]
-
-print(devices)
-# [
-#   {
-#     device_id: 'fb74aee8-a745-485e-8b55-1ba87a119bcd',
-#     device_type: 'noiseaware_activity_zone',
-#     workspace_id: 'a553c010-e2ed-44b0-ab26-7b0f7081089c',
-#     third_party_account_id: "6e793b0f-eab1-4c18-a43a-8001ea084319",
-#     location: {'area': 1100, 'city': 'San Francisco', 'state': 'CA', 'country': 'USA', 'street1': '123 Amy Lane', 'street2': ''},
-#     properties: {
-#       "online": True,
-#       user_image: "https://s3.amazonaws.com/123456789/customer_image.png",
-#       noise_thresholds: [{
-#         noise_threshold_id: "1407b5bf-3c35-4ddd-9c14-cd7f193cbd4a",
-#         time_in_effect: { readable: "3pm to 6pm daily" },
-#         level: { value: 70, unit: "NoiseAware Noise Risk Score" }
-#       }],
-#       "noiseaware_metadata": {
-#         "device_name": "Backyard Sensor",
-#         "property_id": "42840",
-#         "property_name": "My House"
-#       }
-#     },
-#     created_at: '2021-09-22T00:33:38.703Z'
-#   }
-# ]
-device_id = devices[0]["device_id"]
-```
-
-#### 5. Poll for Device Events
-
-```python
-device_events = requests.post(
-    f"https://connect.getseam.com/v1/devices/events/list",
-    json={"device_id": device_id, "since": "2021-09-22T18:23:07.018Z"},
-    headers=auth_headers,
-).json()["device_events"]
-pyth
-# [
-#   {
-#     "device_event_id": "b9366ab9-8ee4-4d63-9214-d424b5d53342",
-#     "type": "NOISE_DETECTED",
-#     "device_id": "b9366ab9-8ee4-4d63-9214-d424b5d53342",
-#     "threshold_name": "Party Noise Limit",
-#     "created_at": "2021-09-22T18:23:07.018Z",
-#   },
-#   {
-#     "device_event_id": "b9366ab9-8ee4-4d63-9214-d424b5d53342",
-#     "type": "NOISE_QUIETED",
-#     "threshold_name": "Party Noise Limit",
-#     "device_id": "b9366ab9-8ee4-4d63-9214-d424b5d53342",
-#     "created_at": "2021-09-22T18:23:07.018Z",
-#   },
-#   {
-#     "device_event_id": "b9366ab9-8ee4-4d63-9214-d424b5d53342",
-#     "type": "DEVICE_ONLINE",
-#     "device_id": "b9366ab9-8ee4-4d63-9214-d424b5d53342",
-#     "created_at": "2021-09-22T18:23:07.018Z",
-#   },
-#   {
-#     "device_event_id": "b9366ab9-8ee4-4d63-9214-d424b5d53342",
-#     "type": "DEVICE_ONLINE",
-#     "device_id": "b9366ab9-8ee4-4d63-9214-d424b5d53342",
-#     "created_at": "2021-09-22T18:23:07.018Z",
-#   },
-#   {
-#     "device_event_id": "b9366ab9-8ee4-4d63-9214-d424b5d53342",
-#     "type": "DEVICE_CREATED",
-#     "device_id": "b9366ab9-8ee4-4d63-9214-d424b5d53342",
-#     "device_type": "noiseaware_activity_zone",
-#     "created_at": "2021-09-22T18:23:07.018Z",
-#   },
-#   {
-#     "device_event_id": "b9366ab9-8ee4-4d63-9214-d424b5d53342",
-#     "type": "DEVICE_REMOVED",
-#     "device_id": "b9366ab9-8ee4-4d63-9214-d424b5d53342",
-#     "created_at": "2021-09-22T18:23:07.018Z",
-#   }
-# ]
-```
-
-The following `device_events` are available:
-
-| Event Type      | Description                                       | Payload                         |
-| --------------- | ------------------------------------------------- | ------------------------------- |
-| NOISE\_DETECTED | Noise has exceeded a noise threshold              | `{ threshold_name, device_id }` |
-| NOISE\_QUIETED  | Noise has dropped below the noise threshold       | `{ threshold_name, device_id }` |
-| DEVICE\_ONLINE  | Device has come online                            | `{ device_id }`                 |
-| DEVICE\_OFFLINE | Device has gone offline (may have been unplugged) | `{ device_id }`                 |
-
-These `events` can also be listened to using the webhook below.
-
-| Event Type      | Description    |                 |
-| --------------- | -------------- | --------------- |
-| DEVICE\_CREATED | Device created | `{ device_id }` |
-| DEVICE\_REMOVED | Device removed | `{ device_id }` |
-
-#### 6. Add or Remove Noise Threshold
-
-> NOT YET SUPPORTED
-
-```python
-res = requests.post(
-  f"https://connect.getseam.com/devices/noise_detection/noise_thresholds/create",
-  json={
-    "name": "Party Limit",
-    "time_in_effect": { "start_time": "21:00", "end_time": "23:00", "daily": True, "timezone": "local" },
-    "level": { "value": 70, "unit": "Noiseaware Noise Risk Score" }
-  },
-  headers=auth_headers
-).json()
-
-assert(res["ok"] == True)
-
-res = requests.post(
-  f"https://connect.getseam.com/devices/noise_detection/noise_threshold/remove",
-  json={
-    "device_id": device_id,
-    "noise_threshold_id": "1407b5bf-3c35-4ddd-9c14-cd7f193cbd4a"
-  },
-  headers=auth_headers
-).json()
-
-assert(res["ok"] == True)
-```
-
-#### 7. Register an events webhook
-
-> NOT YET SUPPORTED
-
-```python
-res = requests.post(
-  f"https://connect.getseam.com/event_webhooks/create",
-  json={
-    "request_url": "https://mywebsite.com/my-webhook-handler",
-    "type": "device_events",
-    "device_type": "noiseaware_activity_zone",
-    # "events": ["NOISE_DETECTED", "NOISE_QUIETED"] Optional, defaults to all events
-    # device_id: Optional, if not specified, all devices will receive webhook
-  }
+updated_webview = seam.connect_webviews.get(
+    webview.connect_webview_id
 )
+
+assert updated_webview.login_successful # true
 ```
 
-#### Caveats
+{% endtab %}
 
-Seam is actively working with Noiseaware to address the following issues:
+{% tab title="Ruby" %}
 
-* Noiseaware product owner/end user is unable to remove Seam integration from their Noiseaware dashboard. Integration appears under wrong partner name (always FutureStay).
-* A user who has already paired their Noiseaware account with Seam cannot re-pair through another authorization webview (authorization webview will fail). This can make testing difficult.
+```ruby
+updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
+
+puts updated_webview.login_successful # true
+```
+
+{% endtab %}
+
+
+{% tab title="PHP" %}
+
+```php
+$webview = $seam->connect_webviews->get($webview->id);
+echo json_encode($webview);
+```
+
+{% endtab %}
+
+{% tab title="Javascript" %}
+
+```javascript
+const updatedWebview = await seam.connectWebviews.get(
+  connectWebview.connect_webview_id,
+)
+
+console.log(updatedWebview.login_successful) // true
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+## 3. Retrieve NoiseAware
+
+NoiseAware noise devices appear with the `device_type` `"noiseaware_activity_zone"`.
+
+{% tabs %}
+{% tab title="Python" %}
+
+```python
+devices = seam.devices.list(device_type="noiseaware_activity_zone")
+
+devices[0]
+# Device(
+# Device(
+#   device_id="617415c6-2aa4-43ac-b436-879951f891b0",
+#   device_type="noiseaware_activity_zone",
+#   location=None,
+#   properties={
+#     "online": True,
+#     "manufacturer": "noiseaware",
+#     "has_direct_power": True,
+#     "noiseaware_metadata": {
+#       "device_id": "98765",
+#       "device_name": "Conference Room",
+#       "noise_level_nrs": 0,
+#       "noise_level_decibel": 2},
+#       "name": "Conference Room",
+#       "image_url": "https://connect.getseam.com/assets/images/devices/noiseaware_logo_square.png",
+#       "image_alt_text": "NoiseAware Noise Sensor"
+#     },
+#     capabilities_supported=["noise_detection"],
+#   errors=[]
+# )
+```
+
+{% endtab %}
+
+{% tab title="Javascript" %}
+
+```javascript
+const devices = await seam.devices.list({
+  device_type: 'noiseaware_activity_zone',
+})
+
+console.log(devices[0])
+/*
+{
+  device_id: '617415c6-2aa4-43ac-b436-879951f891b0',
+  device_type: 'noiseaware_activity_zone',
+  capabilities_supported: [ 'noise_detection' ],
+  properties: {
+    online: true,
+    manufacturer: 'noiseaware',
+    has_direct_power: true,
+    noiseaware_metadata: {
+      device_id: '98765',
+      device_name: 'Conference Room',
+      noise_level_nrs: 0,
+      noise_level_decibel: 2
+    },
+    name: 'Conference Room',
+    image_url: 'https://connect.getseam.com/assets/images/devices/noiseaware_logo_square.png',
+    image_alt_text: 'NoiseAware Noise Sensor'
+  },
+  location: null,
+  connected_account_id: 'cf7d41f9-cdbb-444a-b3f0-5a8143727dbd',
+  workspace_id: '2c5f5397-37b9-4236-beac-f47f050d42cd',
+  created_at: '2023-05-19T20:06:10.789Z',
+  errors: [],
+  warnings: []
+}
+*/
+```
+
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+```ruby
+seam.devices.list(
+  device_type: "noiseaware_activity_zone"
+).first
+
+# <Seam::Device:0x00be0
+#  device_id="617415c6-2aa4-43ac-b436-879951f891b0"
+#  device_type="noiseaware_activity_zone"
+#  properties={
+#    "online"=>true,
+#    "manufacturer"=>"noiseaware",
+#    "has_direct_power"=>true,
+#    "noiseaware_metadata"=>{
+#      "device_id"=>"98765",
+#      "device_name"=>"Conference Room",
+#      "noise_level_nrs"=>0,
+#      "noise_level_decibel"=>2
+#   },
+#   "name"=>"Conference Room",
+#   "image_url"=>"https://connect.getseam.com/assets/images/devices/noiseaware_logo_square.png",
+#   "image_alt_text"=>"NoiseAware Noise Sensor"
+# }
+# created_at=2023-05-19 20:06:10.789 UTC
+# errors=[]
+# warnings=[]>
+```
+
+{% endtab %}
+
+
+{% tab title="PHP" %}
+
+```php
+$devices = $seam->devices->list(device_type: 'noiseaware_activity_zone');
+
+echo json_encode($device[0]);
+/*
+{
+  device_id: '617415c6-2aa4-43ac-b436-879951f891b0',
+  device_type: 'noiseaware_activity_zone',
+  capabilities_supported: [ 'noise_detection' ],
+  properties: {
+    online: true,
+    manufacturer: 'noiseaware',
+    has_direct_power: true,
+    noiseaware_metadata: {
+      device_id: '98765',
+      device_name: 'Conference Room',
+      noise_level_nrs: 0,
+      noise_level_decibel: 2
+    },
+    name: 'Conference Room',
+    image_url: 'https://connect.getseam.com/assets/images/devices/noiseaware_logo_square.png',
+    image_alt_text: 'NoiseAware Noise Sensor'
+  },
+  location: null,
+  connected_account_id: 'cf7d41f9-cdbb-444a-b3f0-5a8143727dbd',
+  workspace_id: '2c5f5397-37b9-4236-beac-f47f050d42cd',
+  created_at: '2023-05-19T20:06:10.789Z',
+  errors: [],
+  warnings: []
+}
+*/
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+## 4. Receive Noise Events
+
+NoiseAware users can define noise thresholds at which noise alerts are sent.
+
+You'll get an event for `noise_threshold.noise_threshold_triggered` when you set up a [webhook handler](../core-concepts/webhooks.md). You can also [poll for events](../api-clients/events/list-events.md).
+
+{% hint style="info" %}
+NoiseAware has three distinct noise alerts: `newNoise`, `continuedNoise`, and `resolvedNoise`. It is essential to keep in mind that Seam will solely trigger the `noise_threshold.noise_threshold_triggered` event for `newNoise`.
+{% endhint %}
+
+{% tabs %}
+{% tab title="Python" %}
+
+<pre class="language-python"><code class="lang-python">@app.route("/my_webhook_endpoint", methods=["POST"])
+def endpoint():
+    event = request.json["event"]
+    # {
+    # "event_id": "d8ffcf85-73f7-4383-b832-ed65db93c802",
+    # "device_id": "617415c6-2aa4-43ac-b436-879951f891b0",
+    # "event_type": "noise_sensor.noise_threshold_triggered",
+    # "workspace_id": "2c5f5397-37b9-4236-beac-f47f050d42cd",
+    # "created_at": "2023-03-14T05:00:35.451Z"
+    # "occurred_at": "2023-05-20T00:01:31.273Z",
+    # "noiseaware_metadata": {
+    #   "noiseaware_alert_info": "ALERT: Noise Sensors at [PropertyName] has sustained noise above the NRS threshold. dashboard.noiseaware.io/properties/[APIKey]",
+    #   "noiseaware_alert_time": "2023-05-20T00:01:31.180Z",
+    #   "noiseaware_alert_type": "newNoise",
+    #   "noiseaware_property_id": 12345,
+    #   "noiseaware_property_name": "Acme Corporation"
+    # }
+        
+</code></pre>
+
+{% endtab %}
+
+{% tab title="Javascript" %}
+```javascript
+app.post('/my_webhook_endpoint', (req, res) => {
+  const event = req.body.event;
+  // {
+  // "event_id": "d8ffcf85-73f7-4383-b832-ed65db93c802",
+  // "device_id": "617415c6-2aa4-43ac-b436-879951f891b0",
+  // "event_type": "noise_sensor.noise_threshold_triggered",
+  // "workspace_id": "2c5f5397-37b9-4236-beac-f47f050d42cd",
+  // "created_at": "2023-03-14T05:00:35.451Z"
+  // "occurred_at": "2023-05-20T00:01:31.273Z",
+  // "noiseaware_metadata": {
+  //   "noiseaware_alert_info": "ALERT: Noise Sensors at [PropertyName] has sustained noise above the NRS threshold. dashboard.noiseaware.io/properties/[APIKey]",
+  //   "noiseaware_alert_time": "2023-05-20T00:01:31.180Z",
+  //   "noiseaware_alert_type": "newNoise",
+  //   "noiseaware_property_id": 12345,
+  //   "noiseaware_property_name": "Acme Corporation"
+  // }
+});
+```
+
+{% endtab %}
+
+{% tab title="Ruby" %}
+```ruby
+post '/my_webhook_endpoint' do
+  request.body.rewind
+  payload = JSON.parse(request.body.read)
+  event = payload['event']
+  # {
+  #   "event_id": "d8ffcf85-73f7-4383-b832-ed65db93c802",
+  #   "device_id": "617415c6-2aa4-43ac-b436-879951f891b0",
+  #   "event_type": "noise_sensor.noise_threshold_triggered",
+  #   "workspace_id": "2c5f5397-37b9-4236-beac-f47f050d42cd",
+  #   "created_at": "2023-03-14T05:00:35.451Z"
+  #   "occurred_at": "2023-05-20T00:01:31.273Z",
+  #   "noiseaware_metadata": {
+  #     "noiseaware_alert_info": "ALERT: Noise Sensors at [PropertyName] has sustained noise above the NRS threshold. dashboard.noiseaware.io/properties/[APIKey]",
+  #     "noiseaware_alert_time": "2023-05-20T00:01:31.180Z",
+  #     "noiseaware_alert_type": "newNoise",
+  #     "noiseaware_property_id": 12345,
+  #     "noiseaware_property_name": "Acme Corporation"
+  #   }
+  # }
+end
+```
+
+{% endtab %}
+
+{% tab title="PHP" %}
+```php
+$app->post('/my_webhook_endpoint', function (Request $request, Response $response) {
+    $data = $request->getParsedBody();
+    $event = $data['event'];
+    // {
+    //   "event_id": "d8ffcf85-73f7-4383-b832-ed65db93c802",
+    //   "device_id": "617415c6-2aa4-43ac-b436-879951f891b0",
+    //   "event_type": "noise_sensor.noise_threshold_triggered",
+    //   "workspace_id": "2c5f5397-37b9-4236-beac-f47f050d42cd",
+    //   "created_at": "2023-03-14T05:00:35.451Z",
+    //   "occurred_at": "2023-05-20T00:01:31.273Z",
+    //   "noiseaware_metadata": {
+    //     "noiseaware_alert_info": "ALERT: Noise Sensors at [PropertyName] has sustained noise above the NRS threshold. dashboard.noiseaware.io/properties/[APIKey]",
+    //     "noiseaware_alert_time": "2023-05-20T00:01:31.180Z",
+    //     "noiseaware_alert_type": "newNoise",
+    //     "noiseaware_property_id": 12345,
+    //     "noiseaware_property_name": "Acme Corporation"
+    //   }
+    // }
+});
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+
+## Next Steps
+
+Now that you've completed this guide, you can try to connect a real NoiseAware device. To do so, make sure to switch to a non-sandbox workspace and API key as real devices cannot be connected to sandbox workspaces.
+
+If you have any questions or want to report an issue, email us at support@seam.co

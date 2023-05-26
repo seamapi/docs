@@ -51,6 +51,54 @@ print(webview.url)
 ```
 
 {% endtab %}
+
+{% tab title="Javascript" %}
+
+```javascript
+import Seam from 'seamapi'
+const seam = new Seam()
+const connectWebview = await seam.connectWebviews.create({
+  accepted_providers: ["minut"],
+})
+console.log(connectWebview.login_successful) // false
+// Send the webview URL to your user
+console.log(connectWebview.url)
+```
+
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+<pre class="language-ruby"><code class="lang-ruby">require "seamapi"
+
+<strong>seam = Seam::Client.new(api_key: "MY_API_KEY")
+</strong>
+webview = seam.connect_webviews.create(
+  accepted_providers: ["minut"]
+)
+
+puts webview.login_successful # false
+
+# Send the webview URL to your user 
+puts webview.url
+</code></pre>
+
+{% endtab %}
+
+{% tab title="PHP" %}
+```php
+use Seam\SeamClient;
+$seam = new SeamClient("YOUR_API_KEY");
+$webview = $seam->connect_webviews->create(
+  accepted_providers: ["minut"]
+);
+echo json_encode($webview)
+/*
+{"connect_webview_id":"70c4df9e-1070-441f-92f8-fd6524062cec","workspace_id":"d7418ff3-a476-4f48-9a4b-211d1d21a03d","url":"https:\/\/connect.getseam.com\/connect_webviews\/view?connect_webview_id=70c4df9e-1070-441f-92f8-fd6524062cec&auth_token=9HJbwWKbD5aJLifZcozU9WWZXxropn9Bg","connected_account_id":null,"status":"pending","custom_redirect_url":null,"custom_redirect_failure_url":null,"created_at":"2023-02-09T02:14:06.147745+00:00","error":null}
+*/
+```
+{% endtab %}
+
 {% endtabs %}
 
 ### Authorize Your Workspace
@@ -78,6 +126,34 @@ assert updated_webview.login_successful # true
 ```
 
 {% endtab %}
+
+{% tab title="Javascript" %}
+
+```javascript
+const updatedWebview = await seam.connectWebviews.get(
+  connectWebview.connect_webview_id,
+)
+console.log(updatedWebview.login_successful) // true
+```
+
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+```ruby
+updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
+puts updated_webview.login_successful # true
+```
+
+{% endtab %}
+
+{% tab title="PHP" %}
+```php
+$webview = $seam->connect_webviews->get($webview->id);
+echo json_encode($webview);
+```
+{% endtab %}
+
 {% endtabs %}
 
 ## 3. Retrieve Minut Noise Sensors
@@ -92,19 +168,319 @@ sensors = seam.devices.list(device_type="minut_sensor")
 
 sensors[0]
 # Device(
-#   device_type="minut_sensor",
-#   location=None,
+#   device_id='fd200f4b-3815-497a-8520-10725c597e0c',
+#   device_type='minut_sensor',
+#   location={
+#     'timezone': 'America/Los_Angeles',
+#     'location_name': "Jane's Test Home"
+#   },
 #   properties={
-#     "online": True,
-#     "last_reported_noise_level_decibels": 40,
-#     "temperature_celsius": 20,
-#     "temperature_fahrenheit": 68,
-#     "humidity": 0.78,
-#   }
+#     'online': True,
+#     'manufacturer': 'minut',
+#     'battery_level': 0.5,
+#     'minut_metadata': {
+#       'home_id': 'f53026ff7c5e314521f285f9',
+#       'device_id': '5bb32b83525d243950a92ab8',
+#       'home_name': "Jane's Test Home",
+#       'device_name': 'Living Room',
+#       'home_address': {
+#         'city': 'San Francisco',
+#         'notes': 'string',
+#         'region': 'San Francisco County',
+#         'country': 'US',
+#         'post_code': '44210',
+#         'street_name1': '2258 24th Street',
+#         'street_name2': ''
+#       },
+#       'home_location': {
+#         'latitude': 0,
+#         'longitude': 0
+#       },
+#       'device_location': {
+#         'latitude': 0,
+#         'longitude': 0
+#       },
+#       'latest_sensor_values': {
+#         'sound': {
+#           'time': '1970-01-01T00:00:00.000Z',
+#           'value': 47.7117919921875
+#         },
+#         'humidity': {
+#           'time': '1970-01-01T00:00:00.000Z',
+#           'value': 31.110000610351562
+#         },
+#         'pressure': {
+#           'time': '1970-01-01T00:00:00.000Z',
+#           'value': 101923
+#         },
+#         'temperature': {
+#           'time': '1970-01-01T00:00:00.000Z',
+#           'value': 21.270000457763672
+#         },
+#         'accelerometer_z': {
+#           'time': '1970-01-01T00:00:00.000Z',
+#           'value': -1.00390625
+#         }
+#       }
+#     },
+#     'name': 'Living Room',
+#     'battery': {
+#       'level': 0.5,
+#       'status': 'good'
+#     },
+#     'image_url': 'https://connect.getseam.com/assets/images/devices/minut_gen-3_front.png',
+#     'image_alt_text': 'Minut Sensor'
+#   },
+#   capabilities_supported=['noise_detection'],
+#   errors=[]
 # )
 ```
 
 {% endtab %}
+
+{% tab title="Javascript" %}
+```javascript
+const devices = await seam.devices.list({
+  device_type: 'minut_sensor',
+})
+console.log(devices[0])
+/*
+{
+  "device_id": "1efc294e-3a85-403a-8a2a-21b8f8b27cfa",
+  "device_type": "minut_sensor",
+  "capabilities_supported": [
+    "noise_detection"
+  ],
+  "properties": {
+    "online": true,
+    "manufacturer": "minut",
+    "battery_level": 1,
+    "minut_metadata": {
+      "home_id": "f53026ff7c5e314521f285f9",
+      "device_id": "e0d8283f314c5ad10b82571e",
+      "home_name": "Jane's Test Home",
+      "device_name": "Living Room",
+      "home_address": {
+        "city": "San Francisco",
+        "notes": "string",
+        "region": "San Francisco County",
+        "country": "US",
+        "post_code": "44210",
+        "street_name1": "2258 24th Street",
+        "street_name2": ""
+      },
+      "home_location": {
+        "latitude": 0,
+        "longitude": 0
+      },
+      "device_location": {
+        "latitude": 0,
+        "longitude": 0
+      },
+      "latest_sensor_values": {
+        "sound": {
+          "time": "1970-01-01T00:00:00.000Z",
+          "value": 47.7117919921875
+        },
+        "humidity": {
+          "time": "1970-01-01T00:00:00.000Z",
+          "value": 31.110000610351562
+        },
+        "pressure": {
+          "time": "1970-01-01T00:00:00.000Z",
+          "value": 101923
+        },
+        "temperature": {
+          "time": "1970-01-01T00:00:00.000Z",
+          "value": 21.270000457763672
+        },
+        "accelerometer_z": {
+          "time": "1970-01-01T00:00:00.000Z",
+          "value": -1.00390625
+        }
+      }
+    },
+    "name": "Living Room",
+    "battery": {
+      "level": 1,
+      "status": "full"
+    },
+    "image_url": "https://connect.getseam.com/assets/images/devices/minut_gen-3_front.png",
+    "image_alt_text": "Minut Sensor"
+  },
+  "location": {
+    "timezone": "America/Los_Angeles",
+    "location_name": "Jane's Test Home"
+  },
+  "connected_account_id": "257160cb-c2f0-4ee0-9c76-be80b3751f28",
+  "workspace_id": "2c5f5397-37b9-4236-beac-f47f050d42cd",
+  "created_at": "2023-05-08T17:01:43.650Z",
+  "errors": [],
+  "warnings": []
+}
+*/
+```
+
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+```ruby
+seam.devices.list(
+  device_type: "minut_sensor"
+).first
+# <Seam::Device:0x00c08
+#   device_id="01e6c107-9855-48ec-ae66-d0e839302492"
+#   device_type="minut_sensor"
+#   properties={
+#     "online"=>true,
+#     "manufacturer"=>"minut",
+#     "battery_level"=>1,
+#     "minut_metadata"=>{
+#       "home_id"=>"2978b6d5dba395ec08300e45",
+#       "device_id"=>"770bd3153deca3dee0fe0614",
+#       "home_name"=>"Jane's Test Home",
+#       "device_name"=>"Living Room",
+#       "home_address"=>{
+#         "city"=>"San Francisco",
+#         "notes"=>"string",
+#         "region"=>"San Francisco County",
+#         "country"=>"US",
+#         "post_code"=>"44210",
+#         "street_name1"=>"2258 24th Street",
+#         "street_name2"=>""
+#       },
+#       "home_location"=>{
+#         "latitude"=>0,
+#         "longitude"=>0
+#       },
+#       "device_location"=>{
+#         "latitude"=>0,
+#         "longitude"=>0
+#       },
+#       "latest_sensor_values"=>{
+#         "sound"=>{
+#           "time"=>"1970-01-01T00:00:00.000Z",
+#           "value"=>47.7117919921875
+#         },
+#         "humidity"=>{
+#           "time"=>"1970-01-01T00:00:00.000Z",
+#           "value"=>31.110000610351562
+#         },
+#         "pressure"=>{
+#           "time"=>"1970-01-01T00:00:00.000Z",
+#           "value"=>101923
+#         },
+#         "temperature"=>{
+#           "time"=>"1970-01-01T00:00:00.000Z",
+#           "value"=>21.270000457763672
+#         },
+#         "accelerometer_z"=>{
+#           "time"=>"1970-01-01T00:00:00.000Z",
+#           "value"=>-1.00390625
+#         }
+#       }
+#     },
+#     "name"=>"Living Room",
+#     "battery"=>{
+#       "level"=>1,
+#       "status"=>"full"
+#     },
+#     "image_url"=>"https://connect.getseam.com/assets/images/devices/minut_gen-3_front.png",
+#     "image_alt_text"=>"Minut Sensor"
+#   }
+#   created_at=2023-05-08 17:01:45.79 UTC
+#   errors=[]
+#   warnings=[]>
+```
+
+{% endtab %}
+
+
+
+{% tab title="PHP" %}
+
+```php
+$devices = $seam->devices->list(device_type: 'minut_sensor');
+echo json_encode($device[0]);
+/*
+{
+  "device_id": "1efc294e-3a85-403a-8a2a-21b8f8b27cfa",
+  "device_type": "minut_sensor",
+  "capabilities_supported": [
+    "noise_detection"
+  ],
+  "properties": {
+    "online": true,
+    "manufacturer": "minut",
+    "battery_level": 1,
+    "minut_metadata": {
+      "home_id": "f53026ff7c5e314521f285f9",
+      "device_id": "e0d8283f314c5ad10b82571e",
+      "home_name": "Jane's Test Home",
+      "device_name": "Living Room",
+      "home_address": {
+        "city": "San Francisco",
+        "notes": "string",
+        "region": "San Francisco County",
+        "country": "US",
+        "post_code": "44210",
+        "street_name1": "2258 24th Street",
+        "street_name2": ""
+      },
+      "home_location": {
+        "latitude": 0,
+        "longitude": 0
+      },
+      "device_location": {
+        "latitude": 0,
+        "longitude": 0
+      },
+      "latest_sensor_values": {
+        "sound": {
+          "time": "1970-01-01T00:00:00.000Z",
+          "value": 47.7117919921875
+        },
+        "humidity": {
+          "time": "1970-01-01T00:00:00.000Z",
+          "value": 31.110000610351562
+        },
+        "pressure": {
+          "time": "1970-01-01T00:00:00.000Z",
+          "value": 101923
+        },
+        "temperature": {
+          "time": "1970-01-01T00:00:00.000Z",
+          "value": 21.270000457763672
+        },
+        "accelerometer_z": {
+          "time": "1970-01-01T00:00:00.000Z",
+          "value": -1.00390625
+        }
+      }
+    },
+    "name": "Living Room",
+    "battery": {
+      "level": 1,
+      "status": "full"
+    },
+    "image_url": "https://connect.getseam.com/assets/images/devices/minut_gen-3_front.png",
+    "image_alt_text": "Minut Sensor"
+  },
+  "location": {
+    "timezone": "America/Los_Angeles",
+    "location_name": "Jane's Test Home"
+  },
+  "connected_account_id": "257160cb-c2f0-4ee0-9c76-be80b3751f28",
+  "workspace_id": "2c5f5397-37b9-4236-beac-f47f050d42cd",
+  "created_at": "2023-05-08T17:01:43.650Z",
+  "errors": [],
+  "warnings": []
+}
+*/
+```
+{% endtab %}
+
 {% endtabs %}
 
 ## 4. Receive Noise Events
@@ -136,12 +512,82 @@ def endpoint():
     #    },
     #    device_id: "...";
     #    noise_level_decibels: 40,
-<strong>    #    created_at: "2023-03-14T05:00:35.451Z"
-</strong>    # }
+    #    created_at: "2023-03-14T05:00:35.451Z"
+    # }
         
 </code></pre>
 
 {% endtab %}
+
+{% tab title="Javascript" %}
+```javascript
+app.post('/my_webhook_endpoint', (req, res) => {
+  const event = req.body.event;
+  // {
+  // "event_id": "d8ffcf85-73f7-4383-b832-ed65db93c802",
+  // "device_id": "617415c6-2aa4-43ac-b436-879951f891b0",
+  // "event_type": "noise_sensor.noise_threshold_triggered",
+  // "workspace_id": "2c5f5397-37b9-4236-beac-f47f050d42cd",
+  // "created_at": "2023-03-14T05:00:35.451Z"
+  // "occurred_at": "2023-05-20T00:01:31.273Z",
+  // "minut_metadata": {
+  //   "minut_event_id": "2690d0909b90a06e1ceac185"
+  //   "minut_event_type": "disturbance_first_notice"
+  //   "minut_home_id": "f53026ff7c5e314521f285f9",
+  //   "minut_user_id": "d3bd127911d71d7d7da85bd3"
+  // }
+});
+```
+
+{% endtab %}
+
+{% tab title="Ruby" %}
+```ruby
+post '/my_webhook_endpoint' do
+  request.body.rewind
+  payload = JSON.parse(request.body.read)
+  event = payload['event']
+  # {
+  #   "event_id": "d8ffcf85-73f7-4383-b832-ed65db93c802",
+  #   "device_id": "617415c6-2aa4-43ac-b436-879951f891b0",
+  #   "event_type": "noise_sensor.noise_threshold_triggered",
+  #   "workspace_id": "2c5f5397-37b9-4236-beac-f47f050d42cd",
+  #   "created_at": "2023-03-14T05:00:35.451Z"
+  #   "occurred_at": "2023-05-20T00:01:31.273Z",
+  #   "noiseaware_metadata": {
+  #     "minut_event_id": "2690d0909b90a06e1ceac185"
+  #     "minut_event_type": "disturbance_first_notice"
+  #     "minut_home_id": "f53026ff7c5e314521f285f9",
+  #     "minut_user_id": "d3bd127911d71d7d7da85bd3"
+  #   }
+  # }
+end
+```
+{% endtab %}
+
+
+{% tab title="PHP" %}
+```php
+$app->post('/my_webhook_endpoint', function (Request $request, Response $response) {
+    $data = $request->getParsedBody();
+    $event = $data['event'];
+    // {
+    // "event_id": "d8ffcf85-73f7-4383-b832-ed65db93c802",
+    // "device_id": "617415c6-2aa4-43ac-b436-879951f891b0",
+    // "event_type": "noise_sensor.noise_threshold_triggered",
+    // "workspace_id": "2c5f5397-37b9-4236-beac-f47f050d42cd",
+    // "created_at": "2023-03-14T05:00:35.451Z",
+    // "occurred_at": "2023-05-20T00:01:31.273Z",
+    // "minut_metadata": {
+    //   "minut_event_id": "2690d0909b90a06e1ceac185"
+    //   "minut_event_type": "disturbance_first_notice"
+    //   "minut_home_id": "f53026ff7c5e314521f285f9",
+    //   "minut_user_id": "d3bd127911d71d7d7da85bd3"
+    // }
+});
+```
+{% endtab %}
+
 {% endtabs %}
 
 ## Next Steps
