@@ -113,14 +113,14 @@ The access code details component shows the properties, settings, and issues for
 | accessCodeId\* | string | The id for the access code to be displayed.             |
 | onBack         |        | Callback fired when the Back chevron button is clicked. |
 
-## \<SupportedDevices /> [(preview)](https://seam-react.vercel.app/?path=/docs/example-supporteddevices--docs)
+## \<SupportedDeviceTable /> [(preview)](https://seam-react.vercel.app/?path=/docs/example-supporteddevices--docs)
 
 The Supported Devices table allows you to filter, sort and view all the
 devices compatible with Seam. You can use this table to indicate what
 devices are supported by your platform.
 
 ```ts
-<SupportedDevices />
+<SupportedDeviceTable />
 ```
 
-<figure><img src="../.gitbook/assets/2023-05-24_02-07.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/supported-device-table.png" alt="" width="375"><figcaption></figcaption></figure>
