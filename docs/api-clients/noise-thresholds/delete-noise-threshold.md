@@ -102,6 +102,25 @@ seam.noise_sensors.noise_thresholds.delete(
 ```
 
 {% endtab %}
+
+{% tab title="PHP" %}
+
+```php
+$seam->noise_sensors->noise_thresholds->delete(
+  noise_threshold_id: "123e4567-e89b-12d3-a456-426614174000",
+  device_id: "123e4567-e89b-12d3-a456-426614174001"
+);
+
+# {
+#   action_attempt_id: "c10e3db5-a5a2-47f2-a76f-48379ed9cd22",
+#   action_type: "DELETE_NOISE_THRESHOLD",
+#   status: "success",
+#   result: {},
+#   error: null,
+# }
+```
+
+{% endtab %}
 {% endtabs %}
 
 ### Parameters

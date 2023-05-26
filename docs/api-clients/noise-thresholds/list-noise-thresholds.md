@@ -75,6 +75,32 @@ seam.noise_sensors.noise_thresholds.list("123e4567-e89b-12d3-a456-426614174000")
 ```
 
 {% endtab %}
+{% tab title="PHP" %}
+
+```php
+$seam->noise_sensors->noise_thresholds->list("123e4567-e89b-12d3-a456-426614174000")
+
+# [
+    # {
+    #     "noise_threshold_id": "792263f8-1660-4cf9-a6c6-054d23b78d86",
+    #     "device_id": "123e4567-e89b-12d3-a456-426614174000",
+    #     "name": "builtin_quiet_hours",
+    #     "noise_threshold_decibels": 70,
+    #     "starts_daily_at": "22:00:00[America/Los_Angeles]",
+    #     "ends_daily_at": "06:00:00[America/Los_Angeles]",
+    # },
+    # {
+    #     "noise_threshold_id": "678ccd98-7036-402f-a42c-e66f55575566",
+    #     "device_id": "123e4567-e89b-12d3-a456-426614174000",
+    #     "name": "builtin_normal_hours",
+    #     "noise_threshold_decibels": 75,
+    #     "starts_daily_at": "06:00:00[America/Los _Angeles]",
+    #     "ends_daily_at": "22:00:00[America/Los_Angeles]",
+    # },
+# ]
+```
+
+{% endtab %}
 {% endtabs %}
 
 ### Parameters
