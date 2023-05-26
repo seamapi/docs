@@ -115,7 +115,7 @@ Route::get('/seam/get_seam_client_session', 'Api\SeamController@getSeamClientSes
 {% endtab %}
 {% endtabs %}
 
-Awesome! We can now request this from the frontend client application using something a hook like this:
+Awesome! We can now request this from the frontend client application using a hook like this:
 
 ```javascript
 // lib/hooks/use-seam-client-session-token.js
