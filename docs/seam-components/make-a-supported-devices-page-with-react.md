@@ -9,7 +9,7 @@ description: Use Seam's prebuilt components to make a Supported Devices page
 Seam adds supports for smart devices every week and by integrating with
 Seam, you also get access to all the new devices we add support for!
 
-This guide will show you how to drop in [`<SupportedDevices />`](https://seam-react.vercel.app/?path=/docs/example-supporteddevices--docs) to your
+This guide will show you how to drop in [`<SupportedDeviceTable />`](https://seam-react.vercel.app/?path=/docs/example-supporteddevices--docs) to your
 React application.
 
 ## 1 - Install `@seamapi/react` in your React application
@@ -32,14 +32,14 @@ Go to [console.seam.co](https://console.seam.co) and select
 
 <figure><img src="../.gitbook/assets/publishable-key-copy.png" alt="" width="375"><figcaption></figcaption></figure>
 
-## 3 — Import and Drop In the [\<SupportedDevices /> Component](https://seam-react.vercel.app/?path=/docs/example-supporteddevices--docs)
+## 3 — Import and Drop In the [\<SupportedDeviceTable /> Component](https://seam-react.vercel.app/?path=/docs/example-supporteddevices--docs)
 
 ```javascript
-import { SeamProvider, DeviceTable } from "@seamapi/react"
+import { SeamProvider, SupportedDeviceTable } from "@seamapi/react"
 
 export const App = () => (
   <SeamProvider publishableKey="YOUR_PUBLISHABLE_KEY">
-    <SupportedDevices />
+    <SupportedDeviceTable />
   </SeamProvider>
 )
 ```
