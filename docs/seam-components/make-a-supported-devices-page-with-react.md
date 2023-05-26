@@ -50,7 +50,7 @@ You should see a list of device models like what's shown below:
 
 ## Next Steps
 
-- View and play with other components in the [interactive storybook component library](https://seam-react.vercel.app/)
+- View and play with other components in the [interactive storybook component library](https://react.seam.co/)
 - Check out some [Full Example Apps](https://github.com/seamapi/react/tree/main/examples)
 
 If you have any questions or want to report an issue, email us at support@seam.co.
