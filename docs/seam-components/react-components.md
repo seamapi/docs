@@ -14,7 +14,7 @@ See [this guide](get-started-with-react-components-and-client-session-tokens.md)
 
 ```
 <SeamProvider clientSessionToken={clientSessionToken}>
-    <DeviceTable />
+  <DeviceTable />
 </SeamProvider>
 ```
 
@@ -30,7 +30,7 @@ The devices table shows a list of devices and their statuses.
 
 ```
 <SeamProvider clientSessionToken={clientSessionToken}>
-    <DeviceTable />
+  <DeviceTable />
 </SeamProvider>
 ```
 
@@ -46,7 +46,7 @@ The devices table shows a list of devices and their statuses.
 
 | Name   | Type     | Optional | Description                                                                                                        |
 | ------ | -------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
-| onBack | function | true     | <p>Callback fired when the "Back" chevron button is clicked.<br><br>Signature: <code>function() => void</code></p> |
+| onBack | function | true     | <p>Callback fired when the "Back" chevron button is clicked.<br><br>Signature: <code>() => void</code></p> |
 
 ## \<DeviceDetails /> [(preview)](https://react.seam.co/?path=/docs/example-devicedetails--docs)
 
@@ -54,7 +54,7 @@ The device details component shows the properties, settings, and issues for a de
 
 ```
 <SeamProvider clientSessionToken={clientSessionToken}>
-    <DeviceDetails deviceId={deviceId} />
+  <DeviceDetails deviceId={deviceId} />
 </SeamProvider>
 ```
 
@@ -66,8 +66,8 @@ The device details component shows the properties, settings, and issues for a de
 
 | Name                                       | Type     | Optional | Description                                                                                                        |
 | ------------------------------------------ | -------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
-| deviceId<mark style="color:red;">\*</mark> | string   |          | The id for the device that will be shown in the table                                                              |
-| onBack                                     | function | true     | <p>Callback fired when the "Back" chevron button is clicked.<br><br>Signature: <code>function() => void</code></p> |
+| deviceId<mark style="color:red;">\*</mark> | string   |          | The id for the device that will be shown in the table.                                                             |
+| onBack                                     | function | true     | <p>Callback fired when the "Back" chevron button is clicked.<br><br>Signature: <code>() => void</code></p> |
 
 ## \<AccessCodeTable /> [(preview)](https://react.seam.co/?path=/docs/example-accesscodetable--docs)
 
@@ -75,7 +75,7 @@ The access codes table shows a list of current and future access codes and their
 
 ```
 <SeamProvider clientSessionToken={clientSessionToken}>
-    <AccessCodeTable deviceId={deviceId} />
+  <AccessCodeTable deviceId={deviceId} />
 </SeamProvider>
 ```
 
@@ -91,8 +91,8 @@ The access codes table shows a list of current and future access codes and their
 
 | Name                                       | Type     | Optional | Description                                                                                                        |
 | ------------------------------------------ | -------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
-| deviceId<mark style="color:red;">\*</mark> | string   |          | The id for the device whose access codes will be shown in the table                                                |
-| onBack                                     | function | true     | <p>Callback fired when the "Back" chevron button is clicked.<br><br>Signature: <code>function() => void</code></p> |
+| deviceId<mark style="color:red;">\*</mark> | string   |          | The id for the device whose access codes will be shown in the table.                                               |
+| onBack                                     | function | true     | <p>Callback fired when the "Back" chevron button is clicked.<br><br>Signature: <code>() => void</code></p> |
 
 ## \<AccessCodeDetails /> [(preview)](https://react.seam.co/?path=/docs/example-accesscodedetails--docs)
 
@@ -100,7 +100,7 @@ The access code details component shows the properties, settings, and issues for
 
 ```
 <SeamProvider clientSessionToken={clientSessionToken}>
-    <AccessCodeDetails accessCodeId={accessCodeId} />
+  <AccessCodeDetails accessCodeId={accessCodeId} />
 </SeamProvider>
 ```
 
@@ -113,16 +113,18 @@ The access code details component shows the properties, settings, and issues for
 | Name           | Type   | Description                                             |
 | -------------- | ------ | ------------------------------------------------------- |
 | accessCodeId\* | string | The id for the access code to be displayed.             |
-| onBack         |        | Callback fired when the Back chevron button is clicked. |
+| onBack         | function | true     | <p>Callback fired when the "Back" chevron button is clicked.<br><br>Signature: <code>() => void</code></p> |
 
 ## \<SupportedDeviceTable /> [(preview)](https://react.seam.co/?path=/docs/example-supporteddevices--docs)
 
-The Supported Devices table allows you to filter, sort and view all the
+The supported device table allows you to filter, sort, and view all the
 devices compatible with Seam. You can use this table to indicate what
 devices are supported by your platform.
 
 ```ts
-<SupportedDeviceTable />
+<SeamProvider publishableKey="YOUR_PUBLISHABLE_KEY">
+  <SupportedDeviceTable />
+</SeamProvider>
 ```
 
 <figure><img src="../.gitbook/assets/supported-device-table.png" alt="" width="375"><figcaption></figcaption></figure>
