@@ -127,4 +127,10 @@ devices are supported by your platform.
 </SeamProvider>
 ```
 
+### Props
+
+| Name           | Type    | Description                                             |
+| -------------- | ------  | ------------------------------------------------------- |
+| cannotFilter   | boolean | Hide the controls to filter the table. Default: `false` |
+
 <figure><img src="../.gitbook/assets/supported-device-table.png" alt="" width="375"><figcaption></figcaption></figure>
