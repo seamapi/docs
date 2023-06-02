@@ -74,8 +74,6 @@ Noise sensors emit an event whenever a predefined noise threshold has been excee
 | `noise_threshold_name` | String e.g. `"builtin_first_disturbance"` | Name of the threshold, this can be set via `/noise_sensors/noise_thresholds/create` or by the user in their app. |
 |                        |                                           |                                                                                                                  |
 
-
-
 ## Event Types
 
 | Event Name                                  | Description                                                                                                                                                                                                                                                                     |
@@ -94,6 +92,7 @@ Noise sensors emit an event whenever a predefined noise threshold has been excee
 | `connected_account.completed_first_sync`    | Seam has finished the first sync of a connected account and devices are now available.                                                                                                                                                                                          |
 | `device.connected`                          | A device has come online.                                                                                                                                                                                                                                                       |
 | `device.disconnected`                       | A device has gone offline.                                                                                                                                                                                                                                                      |
+| `device.removed`                            | A device was removed from its connected account.                                                                                                                                                                                                                                |
 | `device.low_battery`                        | The battery level of the device drops below the low battery level threshold.                                                                                                                                                                                                    |
 | `device.battery_status_changed`             | The battery status for the device has changed (for example, it changed from `good` to `low`).                                                                                                                                                                                   |
 | `device.tampered`                           | A device detects that someone has opened up its case, or has moved the device.                                                                                                                                                                                                  |
