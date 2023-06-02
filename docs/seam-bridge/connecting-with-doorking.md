@@ -4,7 +4,7 @@ description: Learn how to connect your DoorKing unit to Seam.
 
 # Overview
 
-The [Seam Bridge](https://www.seam.co/seam-bridge) can be used to connect traditionally offline devices to Seam. This guide will walk you through connecting your [DoorKing](https://www.seam.co/manufacturers/doorking) unit to Seam via the Bridge.
+The [Seam Bridge](https://www.seam.co/seam-bridge) can be used to connect traditionally-offline devices to Seam. This guide will walk you through connecting your [DoorKing](https://www.seam.co/manufacturers/doorking) unit to Seam via the Bridge.
 
 ## Connecting the Seam Bridge to your DoorKing unit
 
