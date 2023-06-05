@@ -105,6 +105,8 @@ echo json_encode($webview)
 {% endtab %}
 {% endtabs %}
 
+<figure><img src="../.gitbook/assets/guides/yale-auth-example.png" alt=""></figure>
+
 #### Authorize Your Workspace
 
 Using a browser, navigate to the URL returned by the Connect Webview object. If you are in a sandbox workspace, you can select Yale as the provider and use the test login below to complete the process. If you have a non-sandbox workspace and a real device, simply use your account credentials. 
@@ -115,6 +117,7 @@ Yale Test credentials:
 * **password:** 1234
 
 <figure><img src="../.gitbook/assets/guides/smart-lock-connect-flow-screens.png" alt=""><figcaption><p>Seam Connect Webview flow to connect an account with Seam</p></figcaption></figure>
+
 
 Confirm the Connect Webview was successful by querying its status:
 
