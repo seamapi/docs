@@ -13,7 +13,7 @@ We've integrated many door locks, thermostats, and other devices brands, and cre
 ## Install Client Libraries
 
 {% tabs %}
-{% tab title="NPM" %}
+{% tab title="Javascript" %}
 ```bash
 npm i seamapi
 ```
@@ -45,6 +45,12 @@ cargo add seamapi-rs
 Hello Crustacean! This is a community library and is not officially being maintained by Seam.
 {% endtab %}
 {% endtabs %}
+
+Make sure to export your [Seam API Key](quickstart/get-api-key.md) in order for the client library to pick it up:
+
+```
+$ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
+```
 
 ## Device APIs&#x20;
 
