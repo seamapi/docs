@@ -37,9 +37,7 @@ Errors are displayed in the format:
 }
 ```
 
-| **`failed_to_set_on_device`**      | A failure occurred while attempting to program the code onto the device. Note that the failure might be temporary and this error might be removed after retries. |
-| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`failed_to_remove_from_device`** | A failure occurred while attempting to remove the code frin the device. Note that the failure might be temporary and this error might be removed after retries.  |
+<table data-header-hidden><thead><tr><th width="349.3333333333333">Error Type</th><th>Description</th></tr></thead><tbody><tr><td><strong><code>failed_to_set_on_device</code></strong></td><td>A failure occurred while attempting to program the code onto the device. Note that the failure might be temporary and this error might be removed after retries.</td></tr><tr><td><strong><code>failed_to_remove_from_device</code></strong></td><td>A failure occurred while attempting to remove the code frin the device. Note that the failure might be temporary and this error might be removed after retries.</td></tr></tbody></table>
 
 ## Access Code Warning Types
 
@@ -52,16 +50,8 @@ Warnings are displayed in the format:
 }
 ```
 
-| **`delay_in_setting_on_device`**    | There was an unusually long delay in programming the code onto the device. For time bound codes, this is sent when the code enters its active time. Note that this is a temporary warning and might be removed if the code is successfully set. |
-| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`delay_in_removing_from_device`** | There was an unusually long delay in remove the code from the device. Note that this is a temporary warning and might be removed if the code is successfully removed.                                                                           |
+<table data-header-hidden><thead><tr><th width="341">Warning Type</th><th>Description</th></tr></thead><tbody><tr><td><strong><code>delay_in_setting_on_device</code></strong></td><td>There was an unusually long delay in programming the code onto the device. For time bound codes, this is sent when the code enters its active time. Note that this is a temporary warning and might be removed if the code is successfully set.</td></tr><tr><td><strong><code>delay_in_removing_from_device</code></strong></td><td>There was an unusually long delay in remove the code from the device. Note that this is a temporary warning and might be removed if the code is successfully removed.</td></tr></tbody></table>
 
 ### List of Methods
 
-| [Create an Access Code](create-an-access-code.md)       | Create an Access Code           |
-| ------------------------------------------------------- | ------------------------------- |
-| [Create many Access Codes](create-many-access-codes.md) | Create many Access Codes        |
-| [Update an Access Code](update-an-access-code.md)       | Update an Access Code           |
-| [Delete an Access Code](delete-an-access-code.md)       | Delete an Access Code           |
-| [Retrieve an Access Code](get-an-access-code.md)        | Retrieve an Access Code         |
-| [Retrieve a list of Access Codes](list-access-codes.md) | Retrieve a list of Access Codes |
+<table data-header-hidden><thead><tr><th width="312"></th><th></th></tr></thead><tbody><tr><td><a href="create-an-access-code.md">Create an Access Code</a></td><td>Create an Access Code</td></tr><tr><td><a href="create-many-access-codes.md">Create many Access Codes</a></td><td>Create many Access Codes</td></tr><tr><td><a href="update-an-access-code.md">Update an Access Code</a></td><td>Update an Access Code</td></tr><tr><td><a href="delete-an-access-code.md">Delete an Access Code</a></td><td>Delete an Access Code</td></tr><tr><td><a href="get-an-access-code.md">Retrieve an Access Code</a></td><td>Retrieve an Access Code</td></tr><tr><td><a href="list-access-codes.md">Retrieve a list of Access Codes</a></td><td>Retrieve a list of Access Codes</td></tr></tbody></table>

@@ -13,4 +13,4 @@ Let's start by creating an API key to your Sandbox workspace. Our Sandbox lets y
 
 <figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
 
-![API keys that include "test" in the short token are for Sandboxes only.](../.gitbook/assets/add.png)
+![API keys that include "test" in the short token are for Sandboxes only.](<../.gitbook/assets/add (1).png>)

@@ -70,12 +70,7 @@ Do not use `PROVIDER_metadata.model`, `model` is being deprecated for a standard
 
 August metadata is stored in `device.properties.august_metadata`
 
-| Property    | Description                                                                                      | Typical Value                      |
-| ----------- | ------------------------------------------------------------------------------------------------ | ---------------------------------- |
-| lock\_id    | Identifier for lock as stored by August                                                          | "348350520F06446Q940E2F67E21D351A" |
-| lock\_name  | Name for lock, typically named by host                                                           | "Front Door"                       |
-| house\_name | House name that the host placed the lock in from the August App or Yale Access App               | "123 Amy Lane"                     |
-| has\_keypad | Boolean indicating whether or not a keypad is paired to the lock, or the lock has a keypad on it | true                               |
+<table><thead><tr><th>Property</th><th width="330.3333333333333">Description</th><th>Typical Value</th></tr></thead><tbody><tr><td>lock_id</td><td>Identifier for lock as stored by August</td><td>"348350520F06446Q940E2F67E21D351A"</td></tr><tr><td>lock_name</td><td>Name for lock, typically named by host</td><td>"Front Door"</td></tr><tr><td>house_name</td><td>House name that the host placed the lock in from the August App or Yale Access App</td><td>"123 Amy Lane"</td></tr><tr><td>has_keypad</td><td>Boolean indicating whether or not a keypad is paired to the lock, or the lock has a keypad on it</td><td>true</td></tr></tbody></table>
 
 ### Schlage Metadata
 

@@ -8,18 +8,18 @@ description: Learn how to connect and control your Schlage lock with the Seam AP
 
 ## Overview
 
-Seam provides a universal API to connect and control many brands of smart locks. This guide provides a rapid introduction to connecting and controlling your [Schlage](https://www.seam.co/manufacturers/schlage) lock using the Seam API. Note that this guide is intended for Schlage Sense locks and Schlage Encode locks that connect to wifi. For Z-Wave Schlage locks such as Schlage Connect, head over to [our guide for SmartThings](get-started-with-smartthings-hubs-+-smart-locks.md). &#x20;
+Seam provides a universal API to connect and control many brands of smart locks. This guide provides a rapid introduction to connecting and controlling your [Schlage](https://www.seam.co/manufacturers/schlage) lock using the Seam API. Note that this guide is intended for Schlage Sense locks and Schlage Encode locks that connect to wifi. For Z-Wave Schlage locks such as Schlage Connect, head over to [our guide for SmartThings](get-started-with-smartthings-hubs-+-smart-locks.md).
 
-To learn more about other smart lock brands supported by Seam such as August, Yale, and Salto, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).&#x20;
+To learn more about other smart lock brands supported by Seam such as August, Yale, and Salto, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
 ## 1 — Install Seam SDK
 
-Seam provides client libraries for many languages such as Javascript, Python, Ruby, and PHP, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.&#x20;
+Seam provides client libraries for many languages such as Javascript, Python, Ruby, and PHP, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.
 
-- **Javascript:** `npm i seamapi` ([npm](https://www.npmjs.com/package/seamapi), [github](https://github.com/seamapi/javascript))
-- **Python:** `pip install seamapi` ([pip](https://pypi.org/project/seamapi/), [github](https://github.com/seamapi/python))
-- **Ruby:** `bundle add seamapi` ([rubygem](https://rubygems.org/gems/seamapi), [github](https://github.com/seamapi/ruby))
-- **PHP:** `composer require seamapi/seam` ([packagist](https://packagist.org/packages/seamapi/seam), [github](https://github.com/seamapi/php))&#x20;
+* **Javascript:** `npm i seamapi` ([npm](https://www.npmjs.com/package/seamapi), [github](https://github.com/seamapi/javascript))
+* **Python:** `pip install seamapi` ([pip](https://pypi.org/project/seamapi/), [github](https://github.com/seamapi/python))
+* **Ruby:** `bundle add seamapi` ([rubygem](https://rubygems.org/gems/seamapi), [github](https://github.com/seamapi/ruby))
+* **PHP:** `composer require seamapi/seam` ([packagist](https://packagist.org/packages/seamapi/seam), [github](https://github.com/seamapi/php))
 
 Once installed, [sign-up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:
 
@@ -33,13 +33,12 @@ This guide uses a Sandbox Workspace. Only virtual devices can be connected. If y
 
 ## 2 — Link Schlage Account with Seam
 
-To control your Schlage lock via the Seam API, you must first authorize your Seam workspace against your Schlage account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews.md): pre-built UX flows that walk you through authorizing your application to control your Schlage lock.&#x20;
+To control your Schlage lock via the Seam API, you must first authorize your Seam workspace against your Schlage account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews.md): pre-built UX flows that walk you through authorizing your application to control your Schlage lock.
 
 #### Request a Connect Webview
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 from seamapi import Seam
 
@@ -52,11 +51,9 @@ assert webview.login_successful is False
 # Send the webview URL to your user
 print(webview.url)
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 import Seam from 'seamapi'
 
@@ -71,11 +68,9 @@ console.log(connectWebview.login_successful) // false
 // Send the webview URL to your user
 console.log(connectWebview.url)
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 <pre class="language-ruby"><code class="lang-ruby">require "seamapi"
 
 <strong>seam = Seam::Client.new(api_key: "MY_API_KEY")
@@ -89,7 +84,6 @@ puts webview.login_successful # false
 # Send the webview URL to your user 
 puts webview.url
 </code></pre>
-
 {% endtab %}
 {% endtabs %}
 
@@ -97,9 +91,9 @@ puts webview.url
 
 Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the Schlage [sandbox test accounts ](https://docs.seam.co/latest/device-guides/sandbox-and-sample-data)credentials below:
 
-- **email:** jane@example.com
-- **password:** 1234
-- **2-factor-auth:** 123456
+* **email:** jane@example.com
+* **password:** 1234
+* **2-factor-auth:** 123456
 
 <figure><img src="../.gitbook/assets/connect-flow-screens (1).png" alt=""><figcaption><p>Seam Connect Webview flow to connect Schlage account with Seam</p></figcaption></figure>
 
@@ -107,17 +101,14 @@ Confirm the Connect Webview was successful by querying its status:
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
 
 assert updated_webview.login_successful # true
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
@@ -125,17 +116,14 @@ const updatedWebview = await seam.connectWebviews.get(
 
 console.log(updatedWebview.login_successful) // true
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
 
 puts updated_webview.login_successful # true
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -145,7 +133,6 @@ After a Schlage account is linked with Seam, you can retrieve devices for this S
 
 {% tabs %}
 {% tab title="Python" %}
-
 ````python
 all_locks = seam.locks.list()
 
@@ -169,11 +156,9 @@ print(some_lock)
 #   capabilities_supported=['access_code', 'lock'])
 ```
 ````
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -209,11 +194,9 @@ console.log(someLock)
 }
 */
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 some_lock = seam.locks.list.first
 
@@ -222,7 +205,6 @@ puts some_lock.properties['locked'] # true
 
 puts some_lock #   warnings=[]> #   errors=[] #   created_at=2022-12-16 01:15:17.478 UTC #     "name"=>"FRONT DOOR"} #     "schlage_metadata"=>{"device_id"=>"device-1", "device_name"=>"FRONT DOOR", "access_code_length"=>4},  #     "battery_level"=>0.48,  #     "manufacturer"=>"schlage",  #     "online"=>true,  #     "locked"=>false,  #   properties={ #   device_type="schlage_lock" #   device_id="e2d95c42-b2bf-4d07-9211-7407d9c90c73" # <Seam::Device:0x009b0
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -230,8 +212,8 @@ puts some_lock #   warnings=[]> #   errors=[] #   created_at=2022-12-16 01:15:17
 
 Next, you can perform the basic action of locking and unlocking the door.
 
-{% swagger src="../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
-[openapi.json](../.gitbook/assets/openapi.json)
+{% swagger src="../.gitbook/assets/openapi (1).json" path="/locks/lock_door" method="post" %}
+[openapi (1).json](<../.gitbook/assets/openapi (1).json>)
 {% endswagger %}
 
 {% swagger method="post" path="/locks/unlock_door" baseUrl="https://connect.getseam.com" summary="Unlock a door" %}
@@ -239,14 +221,13 @@ Next, you can perform the basic action of locking and unlocking the door.
 
 {% endswagger-description %}
 
-{% swagger-parameter in="body" name="device_id" %}
+{% swagger-parameter in="body" name="device_id" required="false" %}
 
 {% endswagger-parameter %}
 {% endswagger %}
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 # lock the door
 seam.locks.lock_door(some_lock)
@@ -258,11 +239,9 @@ seam.locks.unlock_door(some_lock)
 updated_lock = seam.locks.get(some_lock.device_id)
 assert updated_lock.properties["locked"] is False
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 // lock the door
 await seam.locks.lockDoor(someLock.device_id)
@@ -274,11 +253,9 @@ await seam.locks.unlockDoor(someLock.device_id)
 updatedLock = await seam.locks.get(someLock.device_id)
 console.log(updatedLock.properties.locked) // false
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 # lock the door
 seam.locks.lock_door(some_lock)
@@ -290,19 +267,17 @@ seam.locks.unlock_door(some_lock)
 updated_lock = seam.locks.get(some_lock.device_id)
 puts updated_lock.properties['locked'] # false
 ```
-
 {% endtab %}
 {% endtabs %}
 
 ### 5 — Setting Access Code on Schlage Lock
 
-All Schlage wifi locks come with a keypad built-in to program access codes. These codes can then be entered to unlock a Schlage lock.&#x20;
+All Schlage wifi locks come with a keypad built-in to program access codes. These codes can then be entered to unlock a Schlage lock.
 
 The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Schlage lock. You can find out more about Schlage lock access code in our [core concept section on access codes.](../core-concepts/access-codes.md)
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 # create an ongoing code
 seam.access_codes.create(
@@ -336,11 +311,9 @@ seam.access_codes.list(device=some_lock)
 # ]
 
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 // create an ongoing code
 await seam.accessCodes.create({
@@ -382,11 +355,9 @@ await seam.accessCodes.list({
 ]
 */
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 # create an ongoing code
 seam.access_codes.create(
@@ -433,7 +404,6 @@ seam.access_codes.list(some_lock)
 #   warnings=[]
 #   access_code_id="91a08a3d-a0bb-4ff0-bfb4-ced164353988">]
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -445,10 +415,10 @@ Now that you've completed this guide, you can try to connect a real Schlage devi
 
 In addition, if you'd like to explore other aspects of Seam, here is a list of helpful resources:
 
-- [Yale Getting Started Guide](get-started-with-yale-locks.md)
-- [August Getting Started Guide](get-started-with-august-locks.md)
-- [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
-- [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list-events.md)
-- [Core Concepts](broken-reference)
+* [Yale Getting Started Guide](get-started-with-yale-locks.md)
+* [August Getting Started Guide](get-started-with-august-locks.md)
+* [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
+* [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list-events.md)
+* [Core Concepts](broken-reference/)
 
-If you have any questions or want to report an issue, email us at support@seam.co. If you would like help&#x20;
+If you have any questions or want to report an issue, email us at support@seam.co. If you would like help

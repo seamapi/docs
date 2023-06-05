@@ -2,7 +2,7 @@
 description: Learn how to connect and control your Kwikset Halo lock with the Seam API.
 ---
 
-# Get started with Kwikset Halo Locks
+# Get started with Kwikset Wifi Locks
 
 <figure><img src="../.gitbook/assets/guides/kwikset-getting-started-guide-cover.jpg" alt=""><figcaption><p>Kwikset Halo Smart Locks</p></figcaption></figure>
 
@@ -11,24 +11,23 @@ description: Learn how to connect and control your Kwikset Halo lock with the Se
 Seam provides a universal API to connect and control many brands of smart locks. This guide provides a rapid introduction to connecting and controlling your [Kwikset Halo](https://www.seam.co/manufacturers/kwikset) lock using the Seam API. To learn more about other smart lock brands supported by Seam such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
 {% hint style="warning" %}
-Enabling MFA (Multi-Factor Authentication) on your Kwikset app can block our login flow from successfully authorizing with your account. 
+Enabling MFA (Multi-Factor Authentication) on your Kwikset app can block our login flow from successfully authorizing with your account.
 
 Please ensure your Kwikset MFA settings are disabled before attempting to connect your account with Seam. After connecting your account, you can re-enable your MFA settings.
 
 To disable MFA, head to **Account Settings** in your Kwikset app:
-<figure><div align="center"><img height="200" src="../.gitbook/assets/kwikset-MFA-settings.png" alt=""></div><figcaption><p align="center">Kwikset MFA Settings</p></figcaption></figure>
-{% endhint %}
 
+<img src="../.gitbook/assets/kwikset-MFA-settings.png" alt="Kwikset MFA Settings" data-size="original">
 {% endhint %}
 
 ## 1 — Install Seam SDK
 
 Seam provides client libraries for many languages such as Javascript, Python, Ruby, and PHP, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.
 
-- **Javascript:** `npm i seamapi` ([npm](https://www.npmjs.com/package/seamapi), [github](https://github.com/seamapi/javascript))
-- **Python:** `pip install seamapi` ([pip](https://pypi.org/project/seamapi/), [github](https://github.com/seamapi/python))
-- **Ruby:** `bundle add seamapi` ([rubygem](https://rubygems.org/gems/seamapi), [github](https://github.com/seamapi/ruby))
-- **PHP:** `composer require seamapi/seam` ([packagist](https://packagist.org/packages/seamapi/seam), [github](https://github.com/seamapi/php))
+* **Javascript:** `npm i seamapi` ([npm](https://www.npmjs.com/package/seamapi), [github](https://github.com/seamapi/javascript))
+* **Python:** `pip install seamapi` ([pip](https://pypi.org/project/seamapi/), [github](https://github.com/seamapi/python))
+* **Ruby:** `bundle add seamapi` ([rubygem](https://rubygems.org/gems/seamapi), [github](https://github.com/seamapi/ruby))
+* **PHP:** `composer require seamapi/seam` ([packagist](https://packagist.org/packages/seamapi/seam), [github](https://github.com/seamapi/php))
 
 Once installed, [sign-up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:
 
@@ -48,7 +47,6 @@ To control your Kwikset Halo lock via the Seam API, you must first authorize you
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 from seamapi import Seam
 
@@ -61,11 +59,9 @@ assert webview.login_successful is False
 # Send the webview URL to your user
 print(webview.url)
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 import Seam from 'seamapi'
 
@@ -80,11 +76,9 @@ console.log(connectWebview.login_successful) // false
 // Send the webview URL to your user
 console.log(connectWebview.url)
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 <pre class="language-ruby"><code class="lang-ruby">require "seamapi"
 
 <strong>seam = Seam::Client.new(api_key: "MY_API_KEY")
@@ -98,7 +92,6 @@ puts webview.login_successful # false
 # Send the webview URL to your user 
 puts webview.url
 </code></pre>
-
 {% endtab %}
 {% endtabs %}
 
@@ -106,16 +99,17 @@ puts webview.url
 
 Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the Kwikset [sandbox test accounts ](https://docs.seam.co/latest/device-guides/sandbox-and-sample-data)credentials below:
 
-- **email:** jane@example.com
-- **password:** 1234
+* **email:** jane@example.com
+* **password:** 1234
 
 {% hint style="warning" %}
-Enabling MFA (Multi-Factor Authentication) on your Kwikset app can block our login flow from successfully authorizing with your account. 
+Enabling MFA (Multi-Factor Authentication) on your Kwikset app can block our login flow from successfully authorizing with your account.
 
 Please ensure your Kwikset MFA settings are disabled before attempting to connect your account with Seam. After connecting your account, you can re-enable your MFA settings.
 
 To disable MFA, head to **Account Settings** in your Kwikset app:
-<figure><div align="center"><img height="200" src="../.gitbook/assets/kwikset-MFA-settings.png" alt=""></div><figcaption><p align="center">Kwikset MFA Settings</p></figcaption></figure>
+
+<img src="../.gitbook/assets/kwikset-MFA-settings.png" alt="Kwikset MFA Settings" data-size="original">
 {% endhint %}
 
 <figure><img src="../.gitbook/assets/guides/kwikset-connect-flow-screens.jpg" alt=""><figcaption><p>Seam Connect Webview flow to connect Kwikset account with Seam</p></figcaption></figure>
@@ -124,17 +118,14 @@ Confirm the Connect Webview was successful by querying its status:
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
 
 assert updated_webview.login_successful # true
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
@@ -142,17 +133,14 @@ const updatedWebview = await seam.connectWebviews.get(
 
 console.log(updatedWebview.login_successful) // true
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
 
 puts updated_webview.login_successful # true
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -162,7 +150,6 @@ After a Kwikset account is linked with Seam, you can retrieve devices for this K
 
 {% tabs %}
 {% tab title="Python" %}
-
 ````python
 all_locks = seam.locks.list()
 
@@ -198,11 +185,9 @@ print(some_lock)
 #     capabilities_supported=['lock']
 # )
 ````
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -241,11 +226,9 @@ console.log(someLock)
 }
 */
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 some_lock = seam.locks.list.first
 
@@ -270,7 +253,6 @@ puts some_lock.inspect
 >
 
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -278,8 +260,8 @@ puts some_lock.inspect
 
 Next, you can perform the basic action of locking and unlocking the door.
 
-{% swagger src="../.gitbook/assets/openapi (1).json" path="/locks/lock_door" method="post" %}
-[openapi (1).json](<../.gitbook/assets/openapi (1).json>)
+{% swagger src="../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
+[openapi.json](../.gitbook/assets/openapi.json)
 {% endswagger %}
 
 {% swagger method="post" path="/locks/unlock_door" baseUrl="https://connect.getseam.com" summary="Unlock a door" %}
@@ -287,14 +269,13 @@ Next, you can perform the basic action of locking and unlocking the door.
 
 {% endswagger-description %}
 
-{% swagger-parameter in="body" name="device_id" %}
+{% swagger-parameter in="body" name="device_id" required="false" %}
 
 {% endswagger-parameter %}
 {% endswagger %}
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 # lock the door
 seam.locks.lock_door(some_lock)
@@ -306,11 +287,9 @@ seam.locks.unlock_door(some_lock)
 updated_lock = seam.locks.get(some_lock.device_id)
 assert updated_lock.properties["locked"] is False
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 // lock the door
 await seam.locks.lockDoor(someLock.device_id)
@@ -322,11 +301,9 @@ await seam.locks.unlockDoor(someLock.device_id)
 updatedLock = await seam.locks.get(someLock.device_id)
 console.log(updatedLock.properties.locked) // false
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 # lock the door
 seam.locks.lock_door(some_lock)
@@ -338,7 +315,6 @@ seam.locks.unlock_door(some_lock)
 updated_lock = seam.locks.get(some_lock.device_id)
 puts updated_lock.properties['locked'] # false
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -350,13 +326,13 @@ Some Kwikset locks have a keypad paired to them to program access codes. These c
 
 The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Kwikset lock. You can find out more about Kwikset lock access code in our [core concept section on access codes.](../core-concepts/access-codes.md)
 
-**Access Code Constraints**
-Kwikset locks place the following constraints on access code attributes:
-- Access code name has to be between 2-14 characters
-  - You can create a Seam access code for Kwikset with a name longer than 14 characters. The full name will be stored in Seam but on the Kwikset device, the name will be truncated to 14 characters
-- Pin code length has to be between 4-8 digits
-- A `timebound` code requires both a `starts_at` and `ends_at` time
-- A `timebound` code's `starts_at` time has to be greater than the current time (for best results, set `starts_at` at least 15 minutes ahead of current time)
+**Access Code Constraints** Kwikset locks place the following constraints on access code attributes:
+
+* Access code name has to be between 2-14 characters
+  * You can create a Seam access code for Kwikset with a name longer than 14 characters. The full name will be stored in Seam but on the Kwikset device, the name will be truncated to 14 characters
+* Pin code length has to be between 4-8 digits
+* A `timebound` code requires both a `starts_at` and `ends_at` time
+* A `timebound` code's `starts_at` time has to be greater than the current time (for best results, set `starts_at` at least 15 minutes ahead of current time)
 
 {% tabs %}
 {% tab title="Python" %}
@@ -489,7 +465,6 @@ seam.access_codes.list(some_lock)
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 
@@ -509,10 +484,8 @@ $seam->access_codes->create(
 );
 
 ```
-
 {% endtab %}
 {% endtabs %}
-
 
 ## Next Steps
 
@@ -520,11 +493,11 @@ Now that you've completed this guide, you can try to connect a real Kwikset Halo
 
 In addition, if you'd like to explore other aspects of Seam, here is a list of helpful resources:
 
-- [Yale Getting Started Guide](get-started-with-yale-locks.md)
-- [August Getting Started Guide](get-started-with-august-locks.md)
-- [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
-- [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
-- [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list-events.md)
-- [Core Concepts](../core-concepts/overview.md)
+* [Yale Getting Started Guide](get-started-with-yale-locks.md)
+* [August Getting Started Guide](get-started-with-august-locks.md)
+* [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
+* [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
+* [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list-events.md)
+* [Core Concepts](../core-concepts/overview.md)
 
 If you have any questions or want to report an issue, email us at support@seam.co.

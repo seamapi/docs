@@ -43,11 +43,7 @@
 
 ### Users
 
-| user\_id | email             | password | # Locks |
-| -------- | ----------------- | -------- | ------- |
-| user\_1  | jane@example.com  | 1234     | 2       |
-| user\_2  | john@example.com  | 1234     | 1       |
-| user\_3  | kanye@example.com | 1234     | 0       |
+<table><thead><tr><th width="150">user_id</th><th width="213.45238095238096">email</th><th>password</th><th># Locks</th></tr></thead><tbody><tr><td>user_1</td><td>jane@example.com</td><td>1234</td><td>2</td></tr><tr><td>user_2</td><td>john@example.com</td><td>1234</td><td>1</td></tr><tr><td>user_3</td><td>kanye@example.com</td><td>1234</td><td>0</td></tr></tbody></table>
 
 ### Locks
 

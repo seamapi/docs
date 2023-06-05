@@ -23,9 +23,7 @@
 
 ### Users
 
-| user\_id | email            | password | # Locks |
-| -------- | ---------------- | -------- | ------- |
-| user\_1  | jane@example.com | 1234     | 1       |
+<table><thead><tr><th width="150">user_id</th><th width="213.45238095238096">email</th><th>password</th><th># Locks</th></tr></thead><tbody><tr><td>user_1</td><td>jane@example.com</td><td>1234</td><td>1</td></tr></tbody></table>
 
 ### Locks
 

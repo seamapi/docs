@@ -4,10 +4,7 @@ The sample data for august includes the following data...
 
 ### Users
 
-| Email            | Phone        | Password | Two Factor Code |
-| ---------------- | ------------ | -------- | --------------- |
-| jane@example.com | +11111111111 | 1234     | 123456          |
-| john@example.com | +12222222222 | 1234     | 123456          |
+<table><thead><tr><th width="224">Email</th><th width="150">Phone</th><th width="150">Password</th><th>Two Factor Code</th></tr></thead><tbody><tr><td>jane@example.com</td><td>+11111111111</td><td>1234</td><td>123456</td></tr><tr><td>john@example.com</td><td>+12222222222</td><td>1234</td><td>123456</td></tr></tbody></table>
 
 ### Locks
 
