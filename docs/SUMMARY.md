@@ -22,6 +22,7 @@
 
 ## 🎛 Device Guides
 
+* [Get started with Smart Locks](device-guides/get-started-with-smartlocks-api.md)
 * [Get started with August Locks](device-guides/get-started-with-august-locks.md)
 * [Get started with ControlByWeb Devices](device-guides/get-started-with-controlbyweb-devices.md)
 * [Get started with Nuki Locks](device-guides/get-started-with-nuki-locks.md)
