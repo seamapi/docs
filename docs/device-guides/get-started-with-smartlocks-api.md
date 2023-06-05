@@ -8,7 +8,11 @@ description: Learn how to connect and control smartlocks with the Seam API.
 
 ## Overview
 
-Seam is a simple API to connect and control almost any smartlocks. Seam already integrates popular smartlock brands such as [August](https://seam.co/manufacturers/august), [Yale](https://seam.co/manufacturers/yale), [Schlage](https://seam.co/manufacturers/schlage), [Igloo](https://www.seam.co/manufacturers/igloohome), and [Kwikset](https://www.seam.co/manufacturers/kwikset), as well as smaller ones such as [Nuki](https://www.seam.co/manufacturers/nuki), [Wyze](https://www.seam.co/manufacturers/wyze), or [TTLock](https://www.seam.co/manufacturers/ttlock). You can connect devices from these brands and control them with an easy to use API. This guide is intended to show you how. To learn more about other smart lock brands supported by Seam such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
+Seam is a simple API to connect and control almost any smartlocks. Seam already integrates popular smartlock brands such as [August](https://seam.co/manufacturers/august), [Yale](https://seam.co/manufacturers/yale), [Schlage](https://seam.co/manufacturers/schlage), [Igloo](https://www.seam.co/manufacturers/igloohome), and [Kwikset](https://www.seam.co/manufacturers/kwikset), as well as lesser known ones like [Nuki](https://www.seam.co/manufacturers/nuki), [Wyze](https://www.seam.co/manufacturers/wyze), or [TTLock](https://www.seam.co/manufacturers/ttlock). 
+
+The main benefit of Seam is that you can connect devices from these brands and control them with an easy to use API without having to worry about the underlying specific of each devices. Seam abstracts functions in [capabilities](../core-concepts/device-capabilities.md) such as `access_codes` or `locks` which you can use to integrate devices from multiple brands while expecting them to all behave more or less in the same way.
+
+This guide is intended to show you how to connect and control smartlocks. To learn more about all devices supported by Seam such as thermostats and sensors, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
 Let's get started.
 
@@ -33,7 +37,7 @@ This guide uses a Sandbox Workspace. Only virtual devices can be connected. If y
 
 ## 2 — Link Your Smartlock Account with Seam
 
-To control a smartlock via the Seam API, we need to first connect to your smartlock account and authorize your Seam workspace to control its device(s). Since this can be complicated to achieve, Seam provides fully-built[ Connect Webviews](../core-concepts/connect-webviews.md) authorization flows that walk you (or your users) through authorizing Seam to control your device.
+To control a smartlock via the Seam API, we need to first connect to your smartlock account and authorize your Seam workspace to control its device(s). To make this easy, Seam provides [Connect Webviews](../core-concepts/connect-webviews.md) authorization flows that walk you (or a device owner) through authorizing your workspace to control your device.
 
 #### Request a Connect Webview
 To start, we will create a Connect Webview and pass "stable" as the `provider_category`. This will ensure that only stable integrations are being presented.
@@ -86,11 +90,26 @@ puts webview.login_successful # false
 puts webview.url
 </code></pre>
 {% endtab %}
+{% tab title="PHP" %}
+```php
+use Seam\SeamClient;
+
+$seam = new SeamClient("YOUR_API_KEY");
+
+$webview = $seam->connect_webviews->create(
+  provider_category: "stable"
+);
+
+echo json_encode($webview)
+```
+{% endtab %}
 {% endtabs %}
 
 #### Authorize Your Workspace
 
-Using a browser, navigate to the URL returned by the Connect Webview object. If you are in a sandbox workspace, you can select Yale as the provider and use the test login below to complete the process:
+Using a browser, navigate to the URL returned by the Connect Webview object. If you are in a sandbox workspace, you can select Yale as the provider and use the test login below to complete the process. If you have a non-sandbox workspace and a real device, simply use your account credentials. 
+
+Yale Test credentials:
 
 * **email:** jane@example.com
 * **password:** 1234
@@ -123,6 +142,13 @@ console.log(updatedWebview.login_successful) // true
 updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
 
 puts updated_webview.login_successful # true
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+```php
+$webview = $seam->connect_webviews->get($webview->id);
+echo json_encode($webview);
 ```
 {% endtab %}
 {% endtabs %}
@@ -161,6 +187,18 @@ some_lock = seam.locks.list.first
 puts some_lock.properties['online'] # true
 puts some_lock.properties['locked'] # true
 
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+```php
+use Seam\SeamClient;
+
+$seam = new SeamClient('YOUR_API_KEY');
+
+$locks = $seam->locks->list();
+
+echo json_encode($locks);
 ```
 {% endtab %}
 {% endtabs %}
@@ -223,6 +261,21 @@ puts updated_lock.properties['locked'] # true
 seam.locks.unlock_door(some_lock)
 updated_lock = seam.locks.get(some_lock.device_id)
 puts updated_lock.properties['locked'] # false
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+```php
+use Seam\SeamClient;
+
+$seam = new SeamClient('YOUR_API_KEY');
+
+$some_lock = $seam->locks->list()[0];
+
+# unlock the door
+$seam->locks->unlock_door($lock->device_id);
+# lock the door
+$seam->locks->lock_door($lock->device_id);
 ```
 {% endtab %}
 {% endtabs %}
