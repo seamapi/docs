@@ -246,8 +246,8 @@ If we detect that this feature is disabled, a warning is added to the device.
 
 Next, you can perform the basic action of locking and unlocking a door.
 
-{% swagger src="../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
-[openapi.json](../.gitbook/assets/openapi.json)
+{% swagger src="../.gitbook/assets/openapi (1).json" path="/locks/lock_door" method="post" %}
+[openapi (1).json](<../.gitbook/assets/openapi (1).json>)
 {% endswagger %}
 
 {% swagger method="post" path="/locks/unlock_door" baseUrl="https://connect.getseam.com" summary="Unlock a door" %}
