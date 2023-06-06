@@ -106,9 +106,6 @@
   * [Create Noise Thresholds](api-clients/noise-sensors/create-noise-threshold.md)
   * [Update Noise Threshold](api-clients/noise-sensors/update-noise-threshold.md)
   * [Delete Noise Threshold](api-clients/noise-sensors/delete-noise-threshold.md)
-
-***
-
 * [Thermostats](thermostats/README.md)
   * [Get Thermostat](thermostats/get-thermostat.md)
   * [List Thermostats](thermostats/list-thermostats.md)
