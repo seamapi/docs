@@ -2,13 +2,13 @@
 description: Learn how to connect and control smartlocks with the Seam API.
 ---
 
-# Get started with the Seam API for Smartlock
+# Get started with Smart Locks
 
 <figure><img src="../.gitbook/assets/guides/smart-locks-16-9-seam.png" alt=""><figcaption><p>Seam Smart Locks API</p></figcaption></figure>
 
 ## Overview
 
-Seam is a simple API to connect and control almost any smartlocks. Seam already integrates popular smartlock brands such as [August](https://seam.co/manufacturers/august), [Yale](https://seam.co/manufacturers/yale), [Schlage](https://seam.co/manufacturers/schlage), [Igloo](https://www.seam.co/manufacturers/igloohome), and [Kwikset](https://www.seam.co/manufacturers/kwikset), as well as lesser known ones like [Nuki](https://www.seam.co/manufacturers/nuki), [Wyze](https://www.seam.co/manufacturers/wyze), or [TTLock](https://www.seam.co/manufacturers/ttlock). 
+Seam is a simple API to connect and control almost any smartlocks. Seam already integrates popular smartlock brands such as [August](https://seam.co/manufacturers/august), [Yale](https://seam.co/manufacturers/yale), [Schlage](https://seam.co/manufacturers/schlage), [Igloo](https://www.seam.co/manufacturers/igloohome), and [Kwikset](https://www.seam.co/manufacturers/kwikset), as well as lesser known ones like [Nuki](https://www.seam.co/manufacturers/nuki), [Wyze](https://www.seam.co/manufacturers/wyze), or [TTLock](https://www.seam.co/manufacturers/ttlock).
 
 The main benefit of Seam is that you can connect devices from these brands and control them with an easy to use API without having to worry about the underlying specific of each devices. Seam abstracts functions in [capabilities](../core-concepts/device-capabilities.md) such as `access_codes` or `locks` which you can use to integrate devices from multiple brands while expecting them to all behave more or less in the same way.
 
@@ -40,6 +40,7 @@ This guide uses a Sandbox Workspace. Only virtual devices can be connected. If y
 To control a smartlock via the Seam API, we need to first connect to your smartlock account and authorize your Seam workspace to control its device(s). To make this easy, Seam provides [Connect Webviews](../core-concepts/connect-webviews.md) authorization flows that walk you (or a device owner) through authorizing your workspace to control your device.
 
 #### Request a Connect Webview
+
 To start, we will create a Connect Webview and pass "stable" as the `provider_category`. This will ensure that only stable integrations are being presented.
 
 {% tabs %}
@@ -90,6 +91,7 @@ puts webview.login_successful # false
 puts webview.url
 </code></pre>
 {% endtab %}
+
 {% tab title="PHP" %}
 ```php
 use Seam\SeamClient;
@@ -105,11 +107,11 @@ echo json_encode($webview)
 {% endtab %}
 {% endtabs %}
 
-<figure><img src="../.gitbook/assets/guides/yale-auth-example.png" alt=""></figure>
+<figure><img src="../.gitbook/assets/guides/yale-auth-example.png" alt=""><figcaption></figcaption></figure>
 
 #### Authorize Your Workspace
 
-Using a browser, navigate to the URL returned by the Connect Webview object. If you are in a sandbox workspace, you can select Yale as the provider and use the test login below to complete the process. If you have a non-sandbox workspace and a real device, simply use your account credentials. 
+Using a browser, navigate to the URL returned by the Connect Webview object. If you are in a sandbox workspace, you can select Yale as the provider and use the test login below to complete the process. If you have a non-sandbox workspace and a real device, simply use your account credentials.
 
 Yale Test credentials:
 
@@ -117,7 +119,6 @@ Yale Test credentials:
 * **password:** 1234
 
 <figure><img src="../.gitbook/assets/guides/smart-lock-connect-flow-screens.png" alt=""><figcaption><p>Seam Connect Webview flow to connect an account with Seam</p></figcaption></figure>
-
 
 Confirm the Connect Webview was successful by querying its status:
 
@@ -162,14 +163,14 @@ After an account is linked with Seam, you can retrieve devices for this linked a
 
 {% tabs %}
 {% tab title="Python" %}
-````python
+```python
 all_locks = seam.locks.list()
 
 some_lock = all_locks[0]
 
 assert some_lock.properties["online"] is True
 assert some_lock.properties["locked"] is True
-````
+```
 {% endtab %}
 
 {% tab title="Javascript" %}
@@ -210,10 +211,8 @@ echo json_encode($locks);
 
 Next, you can perform the basic action of locking and unlocking the door as most devices will support the `locks` capability.
 
-
-
-{% swagger src="../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
-[openapi.json](../.gitbook/assets/openapi.json)
+{% swagger src="../.gitbook/assets/openapi (1).json" path="/locks/lock_door" method="post" %}
+[openapi (1).json](<../.gitbook/assets/openapi (1).json>)
 {% endswagger %}
 
 {% swagger method="post" path="/locks/unlock_door" baseUrl="https://connect.getseam.com" summary="Unlock a door" %}
@@ -289,13 +288,11 @@ $seam->locks->lock_door($lock->device_id);
 
 ### 5 — Setting Access Code
 
-Many smartlocks have a built-in keypad or an external one that can be paired over bluetooth. This lets you program access codes that a user can then enter at a later time to unlock a door. 
+Many smartlocks have a built-in keypad or an external one that can be paired over bluetooth. This lets you program access codes that a user can then enter at a later time to unlock a door.
 
-![](../.gitbook/assets/guides/code_unlock.gif)
+![](../.gitbook/assets/guides/code\_unlock.gif)
 
 The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a smartlock. An `ongoing` code is a code that will be permanently programmed onto the device until you tell the Seam API you wish to remove it. A `timebound` code is, as the time implies, time bound by a set of ISO8601 timestamp that you provide the Seam API. You can find out more about access code in our [core concept section on access codes.](../core-concepts/access-codes.md)
-
-
 
 {% tabs %}
 {% tab title="Python" %}
@@ -460,4 +457,3 @@ Now that you've completed this guide, you can try to build a real application to
 * [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
 * [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list-events.md)
 * [Core Concepts](../core-concepts/overview.md)
-

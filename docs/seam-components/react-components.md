@@ -77,7 +77,7 @@ The access codes table shows a list of current and future access codes and their
 
 ### Size: Desktop
 
-<figure><img src="../.gitbook/assets/Screen Shot 2023-05-18 at 9.52.28 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-05-18 at 9.52.28 PM.png" alt=""><figcaption></figcaption></figure>
 
 ### Props
 

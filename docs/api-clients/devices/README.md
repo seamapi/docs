@@ -28,7 +28,7 @@ description: A device that has been connected to the Seam platform.
 | **`manufacturer`**               | string | Manufacturer of the device                                                                                                                                                       |
 | **`battery_level`**              | float  | Battery level of the device.                                                                                                                                                     |
 | **`XXX_metadata`**               | object | Metadata for the device, where XXX is the manufacturer and specific to that manufacturer                                                                                         |
-| **`supported_code_lengths`**     | array  | Supported code lengths for the device, e.g., [4,5] means "1234" and "12345" would be valid, but neither "123" nor "123456" wouldn't be valid                                     |
+| **`supported_code_lengths`**     | array  | Supported code lengths for the device, e.g., \[4,5] means "1234" and "12345" would be valid, but neither "123" nor "123456" wouldn't be valid                                    |
 | **`max_active_codes_supported`** | int    | Maximum number of codes that may exist on the device at one time.                                                                                                                |
 | **`code_constraints`**           | array  | Constraints on access codes that can be set on the device for devices that support access codes. Details can be found in '[Access Code Constraints](./#access-code-constraints)' |
 | **`name`**                       | string | Name of the device                                                                                                                                                               |
@@ -53,12 +53,14 @@ description: A device that has been connected to the Seam platform.
 
 ## Device Capabilities Supported
 
-| Capability Types  | Description                                                                         |
-| ----------------- | ----------------------------------------------------------------------------------- |
-| **`access_code`** | If present, one can set access codes on the device.                                 |
-| **`battery`**     | If present, you can look at the `battery_level` of the device                       |
-| **`health`**      | If present, one can introspect some parameters related to the health of the device. |
-| **`lock`**        | If present, the device is able to be locked and unlocked.                           |
+| Capability Types   | Description                                                                                                                                                  |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **`access_code`**  | If present, one can set access codes on the device.                                                                                                          |
+| **`battery`**      | If present, you can look at the `battery_level` of the device                                                                                                |
+| **`health`**       | If present, one can introspect some parameters related to the health of the device.                                                                          |
+| **`lock`**         | If present, the device is able to be locked and unlocked.                                                                                                    |
+| **`noise_sensor`** | If present, the device can issue noise alerts when noise thresholds are exceeded.                                                                            |
+| **`thermostat`**   | If present, the device be used to regulate the temperature of a system, so that the system's temperature is maintained near a desired set point temperature. |
 
 ## Device Error Types
 

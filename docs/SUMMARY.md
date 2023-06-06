@@ -101,11 +101,24 @@
   * [Get an Event](api-clients/events/get-an-event.md)
 * [Action Attempt](api-clients/action-attempt/README.md)
   * [Get Action Attempt](api-clients/action-attempt/get-action-attempt.md)
-* [Noise Thresholds](api-clients/noise-thresholds/README.md)
-  * [List Noise Thresholds](api-clients/noise-thresholds/list-noise-thresholds.md)
-  * [Create Noise Thresholds](api-clients/noise-thresholds/create-noise-threshold.md)
-  * [Update Noise Threshold](api-clients/noise-thresholds/update-noise-threshold.md)
-  * [Delete Noise Threshold](api-clients/noise-thresholds/delete-noise-threshold.md)
+* [Noise Sensors](api-clients/noise-sensors/README.md)
+  * [List Noise Thresholds](api-clients/noise-sensors/list-noise-thresholds.md)
+  * [Create Noise Thresholds](api-clients/noise-sensors/create-noise-threshold.md)
+  * [Update Noise Threshold](api-clients/noise-sensors/update-noise-threshold.md)
+  * [Delete Noise Threshold](api-clients/noise-sensors/delete-noise-threshold.md)
+
+***
+
+* [Thermostats](thermostats/README.md)
+  * [Get Thermostat](thermostats/get-thermostat.md)
+  * [List Thermostats](thermostats/list-thermostats.md)
+  * [Climate Setting Schedules](thermostats/climate-setting-schedules/README.md)
+    * [Configuring a Default Climate Setting](thermostats/climate-setting-schedules/lock-a-lock.md)
+    * [Get Climate Setting Schedule](thermostats/climate-setting-schedules/get-climate-setting-schedule.md)
+    * [List Climate Setting Schedules](thermostats/climate-setting-schedules/list-climate-setting-schedules.md)
+    * [Create Climate Setting Schedule](thermostats/climate-setting-schedules/create-climate-setting-schedule.md)
+    * [Update Climate Setting Schedule](thermostats/climate-setting-schedules/update-climate-setting-schedule.md)
+    * [Delete Climate Setting Schedule](thermostats/climate-setting-schedules/delete-climate-setting-schedule.md)
 
 ## 🧱 Seam Components
 
