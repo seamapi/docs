@@ -134,7 +134,7 @@ echo json_encode($webview)
 
 ### Go to the View's URL
 
-In a browser, enter the URL returned by the Connect View.
+In a browser, enter the URL returned by the Connect View. You should see a simple welcome screen.
 
 ![](<../.gitbook/assets/image (19).png>)
 

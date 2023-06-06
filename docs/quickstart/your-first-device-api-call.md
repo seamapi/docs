@@ -189,7 +189,7 @@ if ($some_lock->properties->locked) {
 
 ### Setting an Access Code
 
-The `access_code` capability lets you program pin code on a lock. This code can be used to unlock the door without keys.&#x20;
+The `access_code` capability lets you program pin code on a lock. This code can be used to unlock the door without keys. You can optionally pass `starts_at` and `ends_at` parameters for Seam to automatically program and remove your access code at the specified time.
 
 Let's program an access code.&#x20;
 
@@ -214,6 +214,14 @@ const createAccessCode = async () => {
     device_id: someLock.device_id,
     name: "some-code",
   });
+  
+  await seam.accessCodes.create({
+    device_id: someLock.device_id,
+    code: '888888',
+    name: 'some timebound code',
+    starts_at: '2028-11-12T19:23:42+0000',
+    ends_at: '2028-11-13T19:23:42+0000',
+  })
 };
 
 createAccessCode();
@@ -227,6 +235,15 @@ createAccessCode();
   ends_at: null,
   name: "some-code",
 }
+
+{
+  access_code_id: "774986f8-5fad-4911-a4fb-e5a2ef9f15bd",
+  type: "time_bound",
+  code: "888888",
+  starts_at: "2028-11-12T19:23:42+0000",
+  ends_at: "2028-11-13T19:23:42+0000",
+  name: "some timebound code",
+}
 */
 ```
 {% endtab %}
@@ -238,7 +255,7 @@ from seamapi import Seam, Device
 seam = Seam()
 some_lock = seam.locks.list()[0]
 
-# Program an access code
+# Program an ongoing access code
 access_code = seam.access_codes.create(some_lock, name="some-code")
 print(access_code)
 # AccessCode(access_code_id='6f9da26d-f5a3-4df9-9dc9-816251346bc5', 
@@ -247,13 +264,27 @@ print(access_code)
 #            starts_at=None, 
 #            ends_at=None, 
 #            name='some-code')
-    
+
+# Program a timebound access code
+access_code2 = seam.access_codes.create(
+  device=some_lock,
+  code="498882",
+  name="some timebound code",
+  starts_at="2028-08-12T19:23:42+0000",
+  ends_at="2028-08-13T19:23:42+0000")
+
+print(access_code2)
+# AccessCode(access_code_id='774986f8-5fad-4911-a4fb-e5a2ef9f15bd', 
+#            type='time_bound', 
+#            code='498882',  <======== this is the code!
+#            starts_at='2028-08-12T19:23:42+0000', 
+#            ends_at='2028-08-13T19:23:42+0000', 
+#            name='some timebound code')
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
-```ruby
-require "seamapi"
+<pre class="language-ruby"><code class="lang-ruby">require "seamapi"
 
 seam = Seam::Client.new(api_key: "MY_API_KEY")
 
@@ -262,15 +293,34 @@ access_code = seam.access_codes.create(
   device_id: some_lock.device_id, 
   name: 'some-code'
 )
-
-puts access_code
-# <Seam::AccessCode:0x007cd58                                       
-#   code="669781"  <============ this is the code!                                                   
+<strong>
+</strong>puts access_code
+# &#x3C;Seam::AccessCode:0x007cd58                                       
+#   code="669781"  &#x3C;============ this is the code!                                                   
 #   name="some-code"                                            
 #   type="ongoing"                                                  
 #   created_at="2022-07-06T23:26:42.223Z"                           
 #   access_code_id="6f9da26d-f5a3-4df9-9dc9-816251346bc5">
-```
+
+
+
+access_code2 = seam.access_codes.create(
+  device_id: some_lock.device_id,
+  code: '888888',
+  name: 'Some timebound code',
+  starts_at: '2028-08-12T19:23:42+0000',
+  ends_at: '2028-08-13T19:23:42+0000'
+)
+
+puts access_code2
+# &#x3C;Seam::AccessCode:0x007c438                                       
+#   code="888888"
+#   name="Some timebound code"                                            
+#   type="time_bound"                                                  
+#   starts_at="2028-08-12T19:23:42+0000"
+#   ends_at="2028-08-13T19:23:42+0000"
+#   access_code_id="774986f8-5fad-4911-a4fb-e5a2ef9f15bd">
+</code></pre>
 {% endtab %}
 
 {% tab title="PHP" %}
@@ -293,6 +343,27 @@ echo json_encode($access_code)
   starts_at: null,
   ends_at: null,
   name: "some-code",
+}
+*/
+
+
+$access_code2 = $seam->access_codes->create(
+  device_id: $some_lock->device_id,
+  name: 'Some time bound code',
+  code: '888888',
+  starts_at: '2028-08-12T19:23:42+0000',
+  ends_at: '2028-08-13T19:23:42+0000'
+);
+
+echo json_encode($access_code2)
+/*
+{
+  access_code_id: "774986f8-5fad-4911-a4fb-e5a2ef9f15bd",
+  type: "time_bound",
+  code: "888888",
+  starts_at: "2028-11-12T19:23:42+0000",
+  ends_at: "2028-11-13T19:23:42+0000",
+  name: "some timebound code",
 }
 */
 ```
