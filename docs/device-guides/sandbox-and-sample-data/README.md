@@ -22,6 +22,10 @@ To use a sandbox, you will first need to create a Sandbox Workspace and create a
 [doorking-sample-data.md](doorking-sample-data.md)
 {% endcontent-ref %}
 
+{% content-ref url="ecobee-sample-data.md" %}
+[ecobee-sample-data.md](ecobee-sample-data.md)
+{% endcontent-ref %}
+
 {% content-ref url="genie-sample-data.md" %}
 [genie-sample-data.md](genie-sample-data.md)
 {% endcontent-ref %}
