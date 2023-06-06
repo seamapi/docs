@@ -107,9 +107,8 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 
 * **email**: jane@example.com
 * **password**: 1234
-*
 
-    <figure><img src="../.gitbook/assets/ecobee-connect-flow-screens.jpg" alt=""><figcaption><p>Seam Connect Webview flow to connect NoiseAware account with Seam</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/ecobee-connect-flow-screens.jpg" alt=""><figcaption><p>Seam Connect Webview flow to connect NoiseAware account with Seam</p></figcaption></figure>
 
 ### Get the New Webview
 
