@@ -99,7 +99,7 @@ Then use it in `app.component.html`:
 ```html
 <main>
   <supported-device-table
-    publishable-key="your_publishable_key"
+    [publishableKey]="'seam_pk10VR/Xj_13x0DWtDyKJhMe1gSPZU6wAa'"
   ></supported-device-table>
 </main>
 ```
