@@ -1,5 +1,5 @@
 ---
-description: Use Seam's prebuilt components to make a Supported Devices page
+description: Use Seam Components to make a Supported Devices page
 ---
 
 # Make a Supported Devices Page with React
