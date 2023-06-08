@@ -123,6 +123,7 @@
 
 * [Get started with React and Client Session Tokens](seam-components/get-started-with-react-components-and-client-session-tokens.md)
 * [Make a Supported Devices Page with React](seam-components/make-a-supported-devices-page-with-react.md)
+* [Use with Angular](seam-components/angular.md)
 * [React Components](seam-components/react-components.md)
 
 ## Reference
