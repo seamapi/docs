@@ -60,7 +60,7 @@ import {
 @Component({
   selector: "supported-device-table",
   template:
-    '<seam-supported-device-table [publishableKey]="publishableKey" ></seam-supported-device-table>',
+    '<seam-supported-device-table [publishableKey]="publishableKey"></seam-supported-device-table>',
 })
 export class SupportedDeviceTable {
   @Input() publishableKey?: string;
