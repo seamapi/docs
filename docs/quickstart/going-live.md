@@ -22,9 +22,9 @@ Once you've switched to your non-sandbox workspace (e.g. "My Production Workspac
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-06-09 at 4.22.46 PM.png" alt=""><figcaption><p>Click the top right button to create an API key.</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Give your API Key an easy to recognize name.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (30).png" alt=""><figcaption><p>Give your API Key an easy to recognize name.</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Save and store your API key somewhere safe. Seam is unable to show you this key again.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption><p>Save and store your API key somewhere safe. Seam is unable to show you this key again.</p></figcaption></figure>
 
 
 

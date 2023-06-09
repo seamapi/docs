@@ -377,9 +377,9 @@ This Quickstart Guide walked you through the main idea behind Seam.&#x20;
 * Use [Connect Views](../core-concepts/connect-webviews.md) to authorize your application against your users' devices.&#x20;
 * Leverage [Device Capabilities](../core-concepts/device-capabilities.md) to control those devices.
 
-This guide is only the beginning of your journey into the world of connected devices. Next, you can check out the Core Concepts behind Seam, or pick up one of the device guides.&#x20;
+This guide is only the beginning of your journey. **To go live, checkout the next section** [**Going Live!**](going-live.md)
 
-If you have questions or comments, please reach out. We love to hear from developers and see what you are building!
+Alternatively, you can also check out the [Core Concepts](broken-reference) behind Seam, or pick up one of the device guides. If you have questions or comments, please reach out. We love to hear from developers and see what you are building!
 
 &#x20;:heartbeat::relaxed:
 
