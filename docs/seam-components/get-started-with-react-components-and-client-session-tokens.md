@@ -1,5 +1,5 @@
 ---
-description: Learn to use Seam's prebuilt React components with your React application
+description: Learn to use Seam Components with your React application
 ---
 
 # Get started with React and Client Session Tokens
