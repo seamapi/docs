@@ -209,7 +209,7 @@ await seam.climateSettingSchedules.create({
 | `automatic_cooling_enabled`    | <p>type: string<br>Default: <code>false</code></p>  | When enabled, your system will only cooling your home. Your thermostat will start cooling to maintain the cooling set point temperature selected.        |
 | `heating_set_point_fahrenheit` | <p>type: number<br>Optional</p>                     | When `automatic_heating_enabled` is set, a heating set point must be provided. The thermostat will start heating to maintain this temperature set point. |
 | `cooling_set_point_fahrenheit` | <p>type: number<br>Optional</p>                     | When `automatic_cooling_enabled` is set, a cooling set point must be provided. The thermostat will start cooling to maintain this temperature set point. |
-| `manual_override_allowed`      | <p>type: boolean<br>Default: false</p>              | Whether another user can use the thermostat or API to override this climate setting                                                                      |
+| `manual_override_allowed`      | <p>type: boolean<br>Default: <code>true</code></p>  | Whether another user can use the thermostat or API to override this climate setting                                                                      |
 
 
 

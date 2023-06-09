@@ -5,16 +5,16 @@ description: >-
   intercom by typing a 4-8 digit code.
 ---
 
-# Access Codes
+# Locks - Access Codes
 
 ## What is an Access Code?
 
-An Access Code is a code used for a keypad or pinpad device. You can tell Seam to create an Access Code on a device, when it should be set, and optionally the code you would like to bet. Seam will then make sure that the code is present on the device at the specified time (or, for ongoing codes, make sure it is set until you remove it)
+An Access Code is a code used for a keypad or pinpad device. You can tell Seam to create an Access Code on a device, when it should be set, and optionally the code you would like to set. Seam will then make sure that the code is present on the device at the specified time (or, for ongoing codes, make sure it is set until you remove it)
 
 There are two types of codes:
 
-- **ongoing**: This is the default access code that is created if you don't specify any options other than the `device_id`. This code will be set on the device and Seam will ensure it is set until you explicitly remove it (with `/access_codes/delete`).
-- **time_bound**: Time Bound codes are codes where you provide a `starts_at` or `ends_at` time. The code will be added to the device at the `starts_at` time and removed at the `ends_at` time.
+* **ongoing**: This is the default access code that is created if you don't specify any options other than the `device_id`. This code will be set on the device and Seam will ensure it is set until you explicitly remove it (with `/access_codes/delete`).
+* **time\_bound**: Time Bound codes are codes where you provide a `starts_at` or `ends_at` time. The code will be added to the device at the `starts_at` time and removed at the `ends_at` time.
 
 ## Native Scheduling
 
@@ -28,12 +28,12 @@ Seam is altering the behavior of access codes to never 404 unless the API user e
 
 Access codes go through the following statuses. You can inspect the status by looking at `access_code.status`
 
-- **unset**: Code is not in active time range, for ongoing codes it's never in this state
-- **setting**: Code in active time range, Seam is contacting third party API
-- **set**: Seam has confirmed the code is set on the device
-- **removing:** Seam is contacting the third party API to remove the access code
-- **unknown**: An account is disconnected and Seam cannot access the third party API to check the access code
-- **404**: Seam has confirmed the code is not on the device, the access code is deleted in both Seam and the third party API
+* **unset**: Code is not in active time range, for ongoing codes it's never in this state
+* **setting**: Code in active time range, Seam is contacting third party API
+* **set**: Seam has confirmed the code is set on the device
+* **removing:** Seam is contacting the third party API to remove the access code
+* **unknown**: An account is disconnected and Seam cannot access the third party API to check the access code
+* **404**: Seam has confirmed the code is not on the device, the access code is deleted in both Seam and the third party API
 
 <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Lifecycle of Access Codes with Transition Arrows</p></figcaption></figure>
 

@@ -18,7 +18,8 @@
 * [Device Capabilities](core-concepts/device-capabilities.md)
 * [Action Attempts](core-concepts/action-attempts.md)
 * [Webhooks](core-concepts/webhooks.md)
-* [Access Codes](core-concepts/access-codes.md)
+* [Locks - Access Codes](core-concepts/access-codes.md)
+* [Thermostats - Climate Setting Schedules](core-concepts/thermostats-climate-setting-schedules.md)
 
 ## 🎛 Device Guides
 
@@ -122,6 +123,7 @@
 ## 🧱 Seam Components
 
 * [Get started with React and Client Session Tokens](seam-components/get-started-with-react-components-and-client-session-tokens.md)
+* [Components Guide](seam-components/react-components.md)
 * [Make a Supported Devices Page with React](seam-components/make-a-supported-devices-page-with-react.md)
 * [Use with Angular](seam-components/angular.md)
 * [React Components](seam-components/react-components.md)
