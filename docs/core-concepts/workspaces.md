@@ -25,7 +25,7 @@ Sandbox workspaces are for you to test your code. We seed each Sandbox with simu
 
 These simulated devices behave like their real counterparts. This lets you test your application against multiple device brands, **without needing to actually own each device!**
 
-![We own a lot of locks so that you don't have to!](<../.gitbook/assets/mess-2 (1) (1) (1) (1) (1) (1).jpg>)
+![We own a lot of locks so that you don't have to!](<../.gitbook/assets/mess-2 (1) (1) (1) (1) (1) (1) (1).jpg>)
 
 ### Resetting Sandboxes
 

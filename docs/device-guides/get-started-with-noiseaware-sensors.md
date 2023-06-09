@@ -4,7 +4,7 @@ description: Learn how to connect and control your Ecobee devices with the Seam 
 
 # Get started with Ecobee Thermostats
 
-<figure><img src="../.gitbook/assets/ecobee-getting-seo-cover (1).png" alt=""><figcaption><p>Ecobee Thermostats</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/ecobee-getting-seo-cover.png" alt=""><figcaption><p>Ecobee Thermostats</p></figcaption></figure>
 
 ## Overview
 
