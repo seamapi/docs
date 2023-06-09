@@ -241,7 +241,7 @@ A Climate Setting Schedule allows you to set up a thermostat HVAC mode setting (
 
 For instance, if you are a short-term-rental host who has a guest staying from Jan 1st - Jan 7th, you can create a Climate Setting Schedule that sets the thermostat to a climate setting (i.e. Heat to 70°C) throughout that guest's stay.
 
-The Seam API makes it easy to program `timebound` climate setting schedules onto an Ecobee thermostat. You can find out more about Ecobee thermostat climate setting in our [core concept section on climate settings.](../core-concepts/access-codes.md)
+The Seam API makes it easy to program `timebound` climate setting schedules onto an Ecobee thermostat. You can find out more about Ecobee thermostat climate setting in our [core concept section on climate settings.](../core-concepts/thermostats-climate-setting-schedules.md)
 
 {% tabs %}
 {% tab title="Python" %}
