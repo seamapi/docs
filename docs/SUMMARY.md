@@ -9,6 +9,7 @@
 * [Authentication](quickstart/authentication.md)
 * [Connect a Device](quickstart/connect-a-device.md)
 * [Your First Device API Call](quickstart/your-first-device-api-call.md)
+* [Going Live! 🛫](quickstart/going-live.md)
 
 ## 📖 Core Concepts
 

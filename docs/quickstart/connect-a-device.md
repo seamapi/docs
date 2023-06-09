@@ -134,14 +134,17 @@ echo json_encode($webview)
 
 ### Go to the View's URL
 
-In a browser, enter the URL returned by the Connect View. You should see a simple welcome screen.
+In a browser, enter the URL returned by the Connect View. You should see a simple welcome screen which will then be followed by a set of login screens.
 
-![](<../.gitbook/assets/image (19).png>)
+Assuming you are in a sandbox workspace, you can use Jane's test account to connect to her August account and retrieve her device. Enter the following when prompted:
 
+* email: `jane@example.com`
+* password: `1234`
+* 2FA code: `123456`
 
+<figure><img src="../.gitbook/assets/connect-flow-screens.png" alt=""><figcaption><p>Connect Webview Flow for linking an August Lock Account</p></figcaption></figure>
 
-### Link an August Account
-
+{% hint style="info" %}
 #### Simulated Devices
 
 Seam's Sandbox workspace comes with simulated devices that behave like real ones. Simulated devices are handy for testing integrations without needing to own the actual device!&#x20;
@@ -151,30 +154,7 @@ Seam's Sandbox workspace comes with simulated devices that behave like real ones
 In the real world, devices belong to an owner. This owner can be you, or one of your users. To connect to their device, they must first authorize your application using their device credentials.&#x20;
 
 In the Seam Sandbox, we pre-seed fake device owners for you to use. Each simulated device belongs to a fake owner. To link a simulated device, you need its fake owner's account credentials. You can find those credentials in the [Sandbox guide](../device-guides/sandbox-and-sample-data/).&#x20;
-
-Here we will use Jane's sample data.&#x20;
-
-#### Connecting Jane's Devices
-
-Per our Sandbox guide, Jane has three August locks ("Front Door," "Back Door," and "Garage").&#x20;
-
-Her credentials are as followed:
-
-* email: `jane@example.com`
-* password: `1234`
-* 2FA code: `123456`
-
-Enter those in the Connect View when prompted.
-
-
-
-![](<../.gitbook/assets/image (3).png>)
-
-Next, August requires 2-factor-auth. Use the pre-seeded 2FA code: `123456`
-
-![](<../.gitbook/assets/image (13).png>)
-
-![](<../.gitbook/assets/image (7).png>)
+{% endhint %}
 
 ### Confirming Devices are Connected
 
