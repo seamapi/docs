@@ -8,9 +8,9 @@ description: >-
 
 ## Create Production Workspace
 
-When you first sign-up for Seam, you will be dropped by default in a sandbox workspace. In order to connect real-device, you will first need to create a production workspace.&#x20;
+When you first sign-up for Seam, a sandbox workspace is automatically created for you. Sandbox workspaces are great for testing with virtual devices, but once you're ready to connect a real device, you will first need to create a production workspace.&#x20;
 
-Click the chevron in the top right, and click the "**+ Add Workspace**" button. A modal will come up. Enter your workspace name and your company name. **Leave the "Sandbox mode" switched off.**&#x20;
+To do so, click the chevron in the top right and the workspace selector will appear. Now click the "**+ Add Workspace**" button. A modal will come up for you to create a new workspace. Enter your new workspace name, your company name, and make to **leave the "Sandbox mode" switch off.**&#x20;
 
 <figure><img src="../.gitbook/assets/create-workspace.png" alt=""><figcaption><p>Click in the top right to show the Workspace switcher. Click "+ Add Workspace" to start.</p></figcaption></figure>
 
@@ -18,7 +18,7 @@ Click the chevron in the top right, and click the "**+ Add Workspace**" button. 
 
 ## Generate a Production API Key
 
-Once you've switched to your non-sandbox workspace (e.g. "My Production Workspace"), you will need to create an API key. Switch to the API Key menu on the left, and click the "**+ Add API Key**" to bring up the creation modal.  Note that unlike Sandbox workspace API keys, the token "test" will not be visible.
+Once you've switched to your non-sandbox production workspace (e.g. "My Production Workspace"), you will need to create an API key. Switch to the API Key menu on the left, and click the "**+ Add API Key**" to bring up the API key creation modal. Give it a name, and click create. Note that the resulting API key will not include the token "test" as is the case with sandbox workspaces.
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-06-09 at 4.22.46 PM.png" alt=""><figcaption><p>Click the top right button to create an API key.</p></figcaption></figure>
 
