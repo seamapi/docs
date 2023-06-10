@@ -125,6 +125,17 @@ assert updated_webview.login_successful # true
 ```
 {% endtab %}
 
+{% tab title="Javascript" %}
+```javascript
+const updatedWebview = await seam.connectWebviews.get(
+  connectWebview.connect_webview_id,
+)
+
+console.log(updatedWebview.login_successful) // true
+```
+{% endtab %}
+
+
 {% tab title="Ruby" %}
 ```ruby
 updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
@@ -137,16 +148,6 @@ puts updated_webview.login_successful # true
 ```php
 $webview = $seam->connect_webviews->get($webview->id);
 echo json_encode($webview);
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
-```javascript
-const updatedWebview = await seam.connectWebviews.get(
-  connectWebview.connect_webview_id,
-)
-
-console.log(updatedWebview.login_successful) // true
 ```
 {% endtab %}
 {% endtabs %}
