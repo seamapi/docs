@@ -229,58 +229,58 @@ const devices = await seam.devices.list({
 console.log(devices[0])
 /*
 {
-    "device_id": "6019bfc1-c665-4eb7-85e5-0f4c06d9423f",
-    "device_type": "ecobee_thermostat",
-    "capabilities_supported": [
-      "thermostat"
-    ],
-    "properties": {
-      "online": true,
-      "is_cooling": false,
-      "is_heating": false,
-      "manufacturer": "ecobee",
-      "is_fan_running": false,
-      "ecobee_metadata": {
-        "device_name": "Office",
-        "ecobee_device_id": "b489215e-2e2d-4179-b4d9-bbaa9f531514"
-      },
-      "has_direct_power": true,
-      "relative_humidity": 0.54,
-      "temperature_celsius": 21.2,
-      "temperature_fahrenheit": 70.2,
-      "current_climate_setting": {
-        "hvac_mode_setting": "off",
-        "manual_override_allowed": false,
-        "automatic_cooling_enabled": false,
-        "automatic_heating_enabled": false
-      },
-      "default_climate_setting": {
-        "hvac_mode_setting": "off",
-        "manual_override_allowed": false,
-        "automatic_cooling_enabled": false,
-        "automatic_heating_enabled": false
-      },
-      "available_hvac_mode_settings": [
-        "off",
-        "cool",
-        "heat",
-        "heatcool"
-      ],
-      "can_enable_automatic_cooling": true,
-      "can_enable_automatic_heating": true,
-      "is_temporary_manual_override_active": false,
-      "name": "Office",
-      "image_url": "https://connect.getseam.com/assets/images/devices/ecobee_logo_square.png",
-      "image_alt_text": "Ecobee Thermostat Image",
-      "is_climate_setting_schedule_active": false
+  "device_id": "6019bfc1-c665-4eb7-85e5-0f4c06d9423f",
+  "device_type": "ecobee_thermostat",
+  "capabilities_supported": [
+    "thermostat"
+  ],
+  "properties": {
+    "online": true,
+    "is_cooling": false,
+    "is_heating": false,
+    "manufacturer": "ecobee",
+    "is_fan_running": false,
+    "ecobee_metadata": {
+      "device_name": "Office",
+      "ecobee_device_id": "b489215e-2e2d-4179-b4d9-bbaa9f531514"
     },
-    "location": null,
-    "connected_account_id": "83d9062d-8f8e-4ec8-8f84-427595f94e10",
-    "workspace_id": "cd9f2ac9-b201-4591-80ec-0edf08645014",
-    "created_at": "2023-06-08T17:49:50.196Z",
-    "errors": [],
-    "warnings": []
-  }
+    "has_direct_power": true,
+    "relative_humidity": 0.54,
+    "temperature_celsius": 21.2,
+    "temperature_fahrenheit": 70.2,
+    "current_climate_setting": {
+      "hvac_mode_setting": "off",
+      "manual_override_allowed": false,
+      "automatic_cooling_enabled": false,
+      "automatic_heating_enabled": false
+    },
+    "default_climate_setting": {
+      "hvac_mode_setting": "off",
+      "manual_override_allowed": false,
+      "automatic_cooling_enabled": false,
+      "automatic_heating_enabled": false
+    },
+    "available_hvac_mode_settings": [
+      "off",
+      "cool",
+      "heat",
+      "heatcool"
+    ],
+    "can_enable_automatic_cooling": true,
+    "can_enable_automatic_heating": true,
+    "is_temporary_manual_override_active": false,
+    "name": "Office",
+    "image_url": "https://connect.getseam.com/assets/images/devices/ecobee_logo_square.png",
+    "image_alt_text": "Ecobee Thermostat Image",
+    "is_climate_setting_schedule_active": false
+  },
+  "location": null,
+  "connected_account_id": "83d9062d-8f8e-4ec8-8f84-427595f94e10",
+  "workspace_id": "cd9f2ac9-b201-4591-80ec-0edf08645014",
+  "created_at": "2023-06-08T17:49:50.196Z",
+  "errors": [],
+  "warnings": []
+}
 */
 ```
 {% endtab %}
