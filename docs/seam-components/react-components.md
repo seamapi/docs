@@ -43,6 +43,7 @@ The devices table shows a list of devices and their statuses.
 | Name   | Type     | Description                                                                                                       |
 | ------ | -------- | ----------------------------------------------------------------------------------------------------------------- |
 | onBack | function | <p>Optional callback fired when the Back chevron button is clicked.<br><br>Signature: <code>() => void</code></p> |
+| className | string | <p>Optional class name to add to the rendered component's containing element. |
 
 ## \<DeviceDetails /> [(preview)](https://react.seam.co/?path=/docs/example-devicedetails--docs)
 
@@ -62,6 +63,7 @@ The device details component shows the properties, settings, and issues for a de
 | ------------------------------------------ | -------- | ----------------------------------------------------------------------------------------------------------------- |
 | deviceId<mark style="color:red;">\*</mark> | string   | The id for the device that will be shown in the table.                                                            |
 | onBack                                     | function | <p>Optional callback fired when the Back chevron button is clicked.<br><br>Signature: <code>() => void</code></p> |
+| className | string | <p>Optional class name to add to the rendered component's containing element. |
 
 ## \<AccessCodeTable /> [(preview)](https://react.seam.co/?path=/docs/example-accesscodetable--docs)
 
@@ -85,6 +87,7 @@ The access codes table shows a list of current and future access codes and their
 | ------------------------------------------ | -------- | ----------------------------------------------------------------------------------------------------------------- |
 | deviceId<mark style="color:red;">\*</mark> | string   | The id for the device whose access codes will be shown in the table.                                              |
 | onBack                                     | function | <p>Optional callback fired when the Back chevron button is clicked.<br><br>Signature: <code>() => void</code></p> |
+| className | string | <p>Optional class name to add to the rendered component's containing element. |
 
 ## \<AccessCodeDetails /> [(preview)](https://react.seam.co/?path=/docs/example-accesscodedetails--docs)
 
@@ -104,6 +107,7 @@ The access code details component shows the properties, settings, and issues for
 | -------------- | -------- | ------------------------------------------- |
 | accessCodeId\* | string   | The id for the access code to be displayed. |
 | onBack         | function | true                                        |
+| className | string | <p>Optional class name to add to the rendered component's containing element. |
 
 ## \<SupportedDeviceTable /> [(preview)](https://react.seam.co/?path=/docs/example-supporteddevices--docs)
 
@@ -118,5 +122,6 @@ The supported device table allows you to filter, sort, and view all the devices 
 | Name         | Type    | Description                                             |
 | ------------ | ------- | ------------------------------------------------------- |
 | cannotFilter | boolean | Hide the controls to filter the table. Default: `false` |
+| className | string | <p>Optional class name to add to the rendered component's containing element. |
 
 <figure><img src="../.gitbook/assets/supported-device-table.png" alt="" width="375"><figcaption></figcaption></figure>
