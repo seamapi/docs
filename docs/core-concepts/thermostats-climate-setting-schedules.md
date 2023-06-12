@@ -20,11 +20,20 @@ Note: the time ranges of Climate Setting Schedules cannot overlap, as only one C
 
 ## What Climate Settings can you create?
 
+The main Climate Settings on a thermostat control the HVAC system mode:
+
+* **Heat:** Only activates the heating system to heat the space. The system will heat the system to the heating set point temperature.
+* **Cool:** Only activates the cooling system to cool the space. The system will cool the system to the cooling set point temperature.
+* **Heat/Cool or Auto:** Automatically chooses between heating or cooling to maintain a temperature between the heating and cooling set points for maximum comfort.
+* **Off:** Turns off both the heating and cooling systems for the space.
 
 
-<table><thead><tr><th width="162.33333333333331">HVAC Mode</th><th width="293">automatic_heating_enabled</th><th>automatic_cooling_enabled</th></tr></thead><tbody><tr><td><strong><code>heat</code></strong></td><td><code>true</code></td><td><code>false</code></td></tr><tr><td><strong><code>cool</code></strong></td><td><code>false</code></td><td><code>true</code></td></tr><tr><td><strong><code>heatcool</code></strong></td><td><code>true</code></td><td><code>true</code></td></tr><tr><td><strong><code>off</code></strong></td><td><code>false</code></td><td><code>false</code></td></tr></tbody></table>
 
+On our climate setting schedule, this is how the `hvac_mode` attribute maps to the `automatic_heating_enabled` and `automatic_cooling_enabled` setting attributes.
 
+You can set either the `hvac_mode` property or the `automatic_*` properties.
+
+<table><thead><tr><th width="162.33333333333331">hvac_mode</th><th width="293">automatic_heating_enabled</th><th>automatic_cooling_enabled</th></tr></thead><tbody><tr><td><strong><code>heat</code></strong></td><td><code>true</code></td><td><code>false</code></td></tr><tr><td><strong><code>cool</code></strong></td><td><code>false</code></td><td><code>true</code></td></tr><tr><td><strong><code>heatcool</code></strong></td><td><code>true</code></td><td><code>true</code></td></tr><tr><td><strong><code>off</code></strong></td><td><code>false</code></td><td><code>false</code></td></tr></tbody></table>
 
 ### Configuring temperature set points
 
