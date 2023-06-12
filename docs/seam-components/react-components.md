@@ -22,6 +22,25 @@ See [this guide](get-started-with-react-components-and-client-session-tokens.md)
 | ---------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------- |
 | clientSessionToken<mark style="color:red;">\*</mark> | string | A Client Session Token allows a device owner to make API requests to Seam where interactions are restricted only to devices they own. |
 
+## \<ConnectAccountButton/> [(preview)](https://react.seam.co/?path=/docs/example-connectaccountbutton--docs)
+
+The connect account button opens a new Connect Webview.
+Accounts connected from this webview will be associated with the active client session.
+
+```
+<ConnectAccountButton />
+```
+
+### Size: Desktop
+
+<figure><img src="../.gitbook/assets/react-connect-account-button.png" alt="Connect Account Button"><figcaption></figcaption></figure>
+
+### Props
+
+| Name   | Type     | Description                                                                                                       |
+| ------ | -------- | ----------------------------------------------------------------------------------------------------------------- |
+| className | string | <p>Optional class name to add to the rendered component's containing element. |
+
 ## \<DeviceTable /> [(preview)](https://react.seam.co/?path=/docs/example-devicetable--docs)
 
 The devices table shows a list of devices and their statuses.
