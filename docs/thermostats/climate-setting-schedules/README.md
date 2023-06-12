@@ -1,7 +1,7 @@
 ---
 description: >-
-  The Climate Setting Schedules feature allows users to program customized
-  temperature control schedules for their thermostat.
+  Climate Setting Schedules allow users to program customized temperature
+  control schedules for their thermostat.
 ---
 
 # Climate Setting Schedules

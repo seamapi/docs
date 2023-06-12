@@ -1,3 +1,7 @@
+---
+description: List all the thermostats
+---
+
 # List Thermostats
 
 {% swagger method="get" path="/thermostats/list" baseUrl="https://connect.getseam.com" summary="List all Thermostats" %}

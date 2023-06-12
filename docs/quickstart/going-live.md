@@ -14,7 +14,7 @@ To do so, click the chevron in the top right and the workspace selector will app
 
 <figure><img src="../.gitbook/assets/create-workspace.png" alt=""><figcaption><p>Click in the top right to show the Workspace switcher. Click "+ Add Workspace" to start.</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/nonsandbox-mode.png" alt=""><figcaption><p>Enter your workspace info and make sure to leave the sandbox mode switch off.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/sandbox-mode.png" alt=""><figcaption><p>Enter your workspace info and make sure to leave the sandbox mode switch off.</p></figcaption></figure>
 
 ## Generate a Production API Key
 
@@ -24,7 +24,7 @@ Once you've switched to your non-sandbox production workspace (e.g. "My Producti
 
 <figure><img src="../.gitbook/assets/image (30).png" alt=""><figcaption><p>Give your API Key an easy to recognize name.</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption><p>Save and store your API key somewhere safe. Seam is unable to show you this key again.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (28).png" alt=""><figcaption><p>Save and store your API key somewhere safe. Seam is unable to show you this key again.</p></figcaption></figure>
 
 
 

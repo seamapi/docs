@@ -135,7 +135,6 @@ console.log(updatedWebview.login_successful) // true
 ```
 {% endtab %}
 
-
 {% tab title="Ruby" %}
 ```ruby
 updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
@@ -389,6 +388,13 @@ Coming soon!
 
 When there are no active Climate Setting Schedules, the thermostat will fallback to its [Default Climate Setting](../thermostats/climate-setting-schedules/lock-a-lock.md).
 
+{% hint style="info" %}
+The Default Climate Setting for a thermostat will be set to the following settings by default:
+
+* `automatic_cooling_enabled: off`
+* `automatic_heating_enabled: off`
+{% endhint %}
+
 For example, if you are a short-term-rental host, you have configure a more energy-saving temperature setting here (i.e. Heat to 45°C).
 
 {% tabs %}
@@ -443,4 +449,4 @@ await seam.thermostats.update({
 
 Now that you've completed this guide, you can try to connect a real Ecobee device. To do so, make sure to switch to a non-sandbox workspace and API key as real devices cannot be connected to sandbox workspaces.
 
-If you have any questions or want to report an issue, email us at support@seam.co
+If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.com)

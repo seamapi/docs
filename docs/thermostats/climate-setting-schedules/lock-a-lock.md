@@ -1,10 +1,21 @@
 ---
 description: >-
-  Configure the Climate Setting to be configured when are no Climate Setting
-  Schedules running.
+  Configure the Default Climate Setting to be configured when are no Climate
+  Setting Schedules running.
 ---
 
 # Configuring a Default Climate Setting
+
+After a Climate Setting Schedule has completed, Seam will set the Climate Setting of a thermostat back to its Default Climate Setting.
+
+This is different from the thermostat's current settings on a thermostat, which reflect what is currently programmed on the thermostst.
+
+{% hint style="info" %}
+The Default Climate Setting for a thermostat will be set to the following settings by default:
+
+* `automatic_cooling_enabled: off`
+* `automatic_heating_enabled: off`
+{% endhint %}
 
 {% swagger method="post" path="/thermostats/update" baseUrl="https://connect.getseam.com" summary="Updating the Thermostat" %}
 {% swagger-description %}

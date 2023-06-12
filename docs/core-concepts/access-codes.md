@@ -35,7 +35,7 @@ Access codes go through the following statuses. You can inspect the status by lo
 * **unknown**: An account is disconnected and Seam cannot access the third party API to check the access code
 * **404**: Seam has confirmed the code is not on the device, the access code is deleted in both Seam and the third party API
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Lifecycle of Access Codes with Transition Arrows</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Lifecycle of Access Codes with Transition Arrows</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/Untitled-2022-09-07-1822.png" alt=""><figcaption><p>Logic that determines status of access code</p></figcaption></figure>
 
