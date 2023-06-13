@@ -19,7 +19,7 @@ Go to [console.seam.co](https://console.seam.co) and select
 "Client Sessions" from the sidebar. You should then see a
 "Publishable Key" that you can copy.
 
-<figure><img src="../.gitbook/assets/publishable-key-copy.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/publishable-key-copy.png" alt="Publishable key" width="375"><figcaption></figcaption></figure>
 
 
 ## 2 - Install `@seamapi/react` in your Angular application
@@ -106,7 +106,7 @@ Then use it in `app.component.html`:
 
 You should see a list of device models like what's shown below:
 
-<figure><img src="../.gitbook/assets/supported-device-table.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/supported-device-table.png" alt="Connect account" width="375"><figcaption></figcaption></figure>
 
 ## Next Steps
 
