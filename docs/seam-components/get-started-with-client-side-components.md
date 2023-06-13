@@ -33,8 +33,7 @@ Seam Components are implemented in React, but may be used as native web componen
 
 Create a plain HTML page with the content below.
 You can serve this anyway you like, or even open it directly in your browser.
-The version in the script tag can be any released version:
-find the latest at https://github.com/seamapi/react/releases.
+The version in the script tag can be [released version](https://github.com/seamapi/react/releases).
 
 ```html
 <!DOCTYPE html>
@@ -120,9 +119,9 @@ Some frameworks may require additional configuration to enable web component sup
 
 You should see a page with an empty list of devices and a button to connect an account.
 
-<figure><img src="../.gitbook/assets/seam-components-empty-device-list.png" alt="" width="375"><figcaption></figcaption></figure>
-
 You could press the button now, but before you add some devices, there is one more step to complete to enable persisting and resuming the client session.
+
+<figure><img src="../.gitbook/assets/seam-components-empty-device-list.png" alt="Empty device list" width="375"><figcaption></figcaption></figure>
 
 ## 3 — Select a User Identifier Key
 
