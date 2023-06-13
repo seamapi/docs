@@ -129,14 +129,14 @@ A User Identifier Key allows a device owner to make API requests to Seam where i
 
 Here are some suggestions for selecting a key:
 
-- The key should be a secret only be known by the user.
+- The key should be a secret only known by the user.
 - The key should not be displayed anywhere visible in the app or URL bar.
 - The key should be opaque and contain sufficient entropy like a version 4 UUID.
 - You should have a way to invalidate and generate a new key.
 - Do NOT use an email, name, phone number, or anything that might be known by a third party.
 
 We recommend either using a version 4 UUID that you generate and store with you user metadata,
-or salted hash of your internal user identifier.
+or a salted hash of your internal user identifier.
 
 One you have selected a user identifier key, update your code as follows:
 
@@ -213,8 +213,8 @@ export const App = () => {
 {% endtab %}
 {% endtabs %}
 
-Now, connecting an account: this will open a Seam Connect Webview where you can login with you device provider,
-then you will return to this page and see your devices.
+Now, press the Connect Account button to open a Seam Connect Webview where you can login with you device provider.
+After logging in, you will be redirected back to this page where you should see your devices.
 
 <figure><img src="../.gitbook/assets/seam-components-full-device-list.png" alt="Device list" width="375"><figcaption></figcaption></figure>
 
