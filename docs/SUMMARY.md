@@ -123,6 +123,7 @@
 
 ## 🧱 Seam Components
 
+* [Get started with Client Side Components](seam-components/get-started-with-client-side-components.md)
 * [Get started with React and Client Session Tokens](seam-components/get-started-with-react-components-and-client-session-tokens.md)
 * [Components Guide](seam-components/react-components.md)
 * [Use with Angular](seam-components/angular.md)
