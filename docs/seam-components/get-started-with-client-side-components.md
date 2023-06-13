@@ -33,7 +33,7 @@ Seam Components are implemented in React, but may be used as native web componen
 
 Create a plain HTML page with the content below.
 You can serve this anyway you like, or even open it directly in your browser.
-The version in the script tag can be [released version](https://github.com/seamapi/react/releases).
+The version in the script tag can be any [released version](https://github.com/seamapi/react/releases).
 
 ```html
 <!DOCTYPE html>
