@@ -8,7 +8,7 @@ description: Create access codes across multiple devices that share a common cod
 [openapi (2).json](<../../.gitbook/assets/openapi (2).json>)
 {% endswagger %}
 
-### Code Example
+  ### Code Example
 
 {% tabs %}
 {% tab title="Javascript" %}
