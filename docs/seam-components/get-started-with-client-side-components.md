@@ -213,7 +213,7 @@ export const App = () => {
 {% endtab %}
 {% endtabs %}
 
-Now, press the Connect Account button to open a Seam Connect Webview where you can login with you device provider.
+Now, press the Connect Account button to open a Seam Connect Webview where you can login with your device provider.
 After logging in, you will be redirected back to this page where you should see your devices.
 
 <figure><img src="../.gitbook/assets/seam-components-full-device-list.png" alt="Device list" width="375"><figcaption></figcaption></figure>
