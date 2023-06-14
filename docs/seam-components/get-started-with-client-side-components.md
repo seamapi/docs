@@ -100,7 +100,7 @@ npm install --save @seamapi/react
 yarn add @seamapi/react
 ```
 
-Then import the custom elements bundle in you application entrypoint:
+Then import the custom elements bundle in your application entrypoint:
 
 ```javascript
 import "@seamapi/react/elements.js"
