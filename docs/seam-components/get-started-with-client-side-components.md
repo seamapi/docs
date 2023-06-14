@@ -135,7 +135,7 @@ Here are some suggestions for selecting a key:
 - You should have a way to invalidate and generate a new key.
 - Do NOT use an email, name, phone number, or anything that might be known by a third party.
 
-We recommend either using a version 4 UUID that you generate and store with you user metadata,
+We recommend either using a version 4 UUID that you generate and store with your user metadata,
 or a salted hash of your internal user identifier.
 
 One you have selected a user identifier key, update your code as follows:
