@@ -54,7 +54,7 @@ The version in the script tag can be any [released version](https://github.com/s
     </main>
     <script
       type="module"
-      src="https://react.seam.co/v/1.17.0/dist/elements.js"
+      src="https://react.seam.co/v/1.18.0/dist/elements.js"
     ></script>
   </body>
 </html>
@@ -164,7 +164,7 @@ One you have selected a user identifier key, update your code as follows:
     </main>
     <script
       type="module"
-      src="https://react.seam.co/v/1.17.0/dist/elements.js"
+      src="https://react.seam.co/v/1.18.0/dist/elements.js"
     ></script>
   </body>
 </html>
