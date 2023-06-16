@@ -138,7 +138,7 @@ Here are some suggestions for selecting a key:
 We recommend either using a version 4 UUID that you generate and store with your user metadata,
 or a salted hash of your internal user identifier.
 
-One you have selected a user identifier key, update your code as follows:
+Once you have selected a user identifier key, update your code as follows:
 
 {% tabs %}
 {% tab title="Plain HTML" %}
