@@ -69,3 +69,7 @@ To use a sandbox, you will first need to create a Sandbox Workspace and create a
 {% content-ref url="ttlock-sample-data.md" %}
 [ttlock-sample-data.md](ttlock-sample-data.md)
 {% endcontent-ref %}
+
+{% content-ref url="igloohome-sample-data.md" %}
+[igloohome-sample-data.md](igloohome-sample-data.md)
+{% endcontent-ref %}
