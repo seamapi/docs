@@ -4,7 +4,7 @@ description: Learn how to connect and control your Igloohome locks with the Seam
 
 # Get started with Igloohome Locks
 
-<figure><img src="../.gitbook/assets/guides/nuki-getting-seo-cover.jpg" alt=""><figcaption><p>Igloohome Locks</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/guides/igloo-getting-seo-cover.png" alt=""><figcaption><p>Igloohome Locks</p></figcaption></figure>
 
 ## Overview
 
@@ -108,7 +108,7 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 * **email:** jane@example.com
 * **password:** 1234
 
-<figure><img src="../.gitbook/assets/guides/nuki-connect-flow-screens.jpg" alt=""><figcaption><p>Seam Connect Webview flow to connect Igloohome account with Seam</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/guides/igloo-connect-flow-screens.png" alt=""><figcaption><p>Seam Connect Webview flow to connect Igloohome account with Seam</p></figcaption></figure>
 
 Confirm the Connect Webview was successful by querying its status:
 
