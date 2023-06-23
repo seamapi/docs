@@ -21,7 +21,7 @@ import Seam from "seamapi";
 const seam = new Seam();
 
 const checkAuth = async () => {
-  const { workspace } = await seam.workspaces.get();
+  const workspace = await seam.workspaces.get();
   console.log(workspace);
 }
 
