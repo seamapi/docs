@@ -2,7 +2,7 @@
 description: Update an Unmanaged Device by its ID
 ---
 
-An unmanaged device has a limited set of visible properties, a subset of supported events, and may not be controlled. 
+An unmanaged device has a limited set of visible properties, a subset of supported events, and may not be controlled.
 Any access codes on an unmanaged device will be unmanaged.
 Convert it to a managed device to control it with Seam.
 
@@ -22,14 +22,17 @@ Set to true to manage the device with Seam.
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
+
 ```javascript
 {
   "ok": true
 }
 ```
+
 {% endswagger-response %}
 
 {% swagger-response status="404: Not Found" description="" %}
+
 ```javascript
 {
   "error": {
@@ -43,6 +46,7 @@ Set to true to manage the device with Seam.
   "ok": false
 }
 ```
+
 {% endswagger-response %}
 {% endswagger %}
 
@@ -50,14 +54,18 @@ Set to true to manage the device with Seam.
 
 {% tabs %}
 {% tab title="Python" %}
+
 ```python
 seam.devices.unmanaged.update(is_managed=True)
 ```
+
 {% endtab %}
 
 {% tab title="Javascript" %}
+
 ```typescript
-await seam.devices.unmanaged.update({ is_managed: true })
+await seam.devices.unmanaged.update({ is_managed: true });
 ```
+
 {% endtab %}
 {% endtabs %}

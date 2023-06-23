@@ -27,14 +27,17 @@ Name of Property
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
+
 ```javascript
 {
   "ok": true
 }
 ```
+
 {% endswagger-response %}
 
 {% swagger-response status="404: Not Found" description="" %}
+
 ```javascript
 {
   "error": {
@@ -48,6 +51,7 @@ Name of Property
   "ok": false
 }
 ```
+
 {% endswagger-response %}
 {% endswagger %}
 
@@ -55,14 +59,18 @@ Name of Property
 
 {% tabs %}
 {% tab title="Python" %}
+
 ```python
 seam.devices.update(properties={"name": "My Lock"})
 ```
+
 {% endtab %}
 
 {% tab title="Javascript" %}
+
 ```typescript
-await seam.devices.unmanaged.update({ properties: { name: "My Lock" } })
+await seam.devices.unmanaged.update({ properties: { name: "My Lock" } });
 ```
+
 {% endtab %}
 {% endtabs %}

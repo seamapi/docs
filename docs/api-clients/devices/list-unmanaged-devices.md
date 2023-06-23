@@ -2,7 +2,7 @@
 description: Get all Unmanaged Devices
 ---
 
-An unmanaged device has a limited set of visible properties, a subset of supported events, and may not be controlled. 
+An unmanaged device has a limited set of visible properties, a subset of supported events, and may not be controlled.
 Any access codes on an unmanaged device will be unmanaged.
 Convert it to a managed device to control it with Seam.
 
@@ -13,19 +13,36 @@ Convert it to a managed device to control it with Seam.
 Retrieve a list of unmanaged devices, optionally filtered
 {% endswagger-description %}
 
-{% swagger-parameter in="body" name="connected_account_id" %}
+{% swagger-parameter in="query" name="connected_account_id" %}
 ID of Connected Account you'd like to filter by
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="connect_webview_id" %}
+{% swagger-parameter in="query" name="connected_account_ids" %}
+IDs of Connected Accounts you'd like to filter by
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="connect_webview_id" %}
 ID of Connect Webview you'd like to filter by
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="device_type" %}
-Type of Device you'd like to filter with
+{% swagger-parameter in="query" name="device_ids" %}
+IDs of Devices you'd like to filter by
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="device_type" %}
+Type of Device you'd like to filter by eg. schlage_lock
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="device_types" %}
+Types of Devices you'd like to filter by
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="manufacturer" %}
+Manufacturer name you'd like to filter by eg. schlage
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
+
 ```json
 {
   "devices": [
@@ -60,6 +77,7 @@ Type of Device you'd like to filter with
   "ok": true
 }
 ```
+
 {% endswagger-response %}
 {% endswagger %}
 
@@ -67,6 +85,7 @@ Type of Device you'd like to filter with
 
 {% tabs %}
 {% tab title="Python" %}
+
 ```python
 seam.devices.unmanaged.list()
 
@@ -78,11 +97,13 @@ seam.devices.unmanaged.list()
 #     }
 # ]
 ```
+
 {% endtab %}
 
 {% tab title="Javascript" %}
+
 ```typescript
-await seam.devices.unmanaged.list()
+await seam.devices.unmanaged.list();
 
 /*
 [
@@ -98,18 +119,20 @@ await seam.devices.unmanaged.list()
 ]
 */
 ```
+
 {% endtab %}
 {% endtabs %}
 
 ### Parameters
 
-| `connected_account_id` | <p>type: string<br>Optional</p>   | <p><br>ID of the Connected Account</p> |
-| ---------------------- | --------------------------------- | -------------------------------------- |
-| `connected_account_ids` | <p>type: string[]<br>Optional</p>   | <p><br>IDs of the Connected Accounts</p> |
-| `connect_webview_id`   | <p>type: string<br>Optional</p>   | ID of Connect Webview                  |
-| `device_type`         | <p>type: String<br>Optional</p>   | Device type                        |
-| `manufacturer`         | <p>type: String<br>Optional</p>   | Device manufacturer                    |
-| `device_ids`           | <p>type: string[]<br>Optional</p> | IDs of the Devices to include          |
+| `connected_account_id`  | <p>type: string<br>Optional</p>   | <p><br>ID of the Connected Account</p>   |
+| ----------------------- | --------------------------------- | ---------------------------------------- |
+| `connected_account_ids` | <p>type: string[]<br>Optional</p> | <p><br>IDs of the Connected Accounts</p> |
+| `connect_webview_id`    | <p>type: string<br>Optional</p>   | ID of Connect Webview                    |
+| `device_type`           | <p>type: String<br>Optional</p>   | Type of Device                           |
+| `device_types`          | <p>type: string[]<br>Optional</p> | Types of Devices                         |
+| `manufacturer`          | <p>type: String<br>Optional</p>   | Device manufacturer                      |
+| `device_ids`            | <p>type: string[]<br>Optional</p> | IDs of the Devices to include            |
 
 ### Response
 
@@ -119,6 +142,7 @@ This section shows the JSON response returned by the API. Since each language en
 
 {% tabs %}
 {% tab title="JSON" %}
+
 ```json
 {
   "devices": [
@@ -153,5 +177,6 @@ This section shows the JSON response returned by the API. Since each language en
   "ok": true
 }
 ```
+
 {% endtab %}
 {% endtabs %}
