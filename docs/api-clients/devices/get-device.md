@@ -15,7 +15,12 @@ Retrieve a single device from your workspace using a device_id or a filter
 Device id
 {% endswagger-parameter %}
 
+{% swagger-parameter in="query" name="name" required="true" %}
+Device name
+{% endswagger-parameter %}
+
 {% swagger-response status="200: OK" description="" %}
+
 ```javascript
 {
   "device": {
@@ -41,9 +46,11 @@ Device id
   "ok": true
 }
 ```
+
 {% endswagger-response %}
 
 {% swagger-response status="400: Bad Request" description="" %}
+
 ```javascript
 {
   "error": {
@@ -62,9 +69,11 @@ Device id
   "ok": false
 }
 ```
+
 {% endswagger-response %}
 
 {% swagger-response status="404: Not Found" description="" %}
+
 ```javascript
 {
   "error": {
@@ -78,6 +87,7 @@ Device id
   "ok": false
 }
 ```
+
 {% endswagger-response %}
 {% endswagger %}
 
@@ -85,35 +95,38 @@ Device id
 
 {% tabs %}
 {% tab title="Python" %}
+
 ```python
 seam.devices.get("123e4567-e89b-12d3-a456-426614174000")
 
 # Device(
-#   device_id='a83690b2-2b70-409a-9a94-426699b84c97', 
-#   device_type='schlage_lock', 
-#   location=None, 
+#   device_id='a83690b2-2b70-409a-9a94-426699b84c97',
+#   device_type='schlage_lock',
+#   location=None,
 #   properties={
-#     'locked': False, 
-#     'online': True, 
-#     'battery_level': 0.48, 
+#     'locked': False,
+#     'online': True,
+#     'battery_level': 0.48,
 #     'manufacturer': 'schlage',
 #     'schlage_metadata': {
-#       'device_id': 'device-3', 
+#       'device_id': 'device-3',
 #       'device_name': 'GARAGE'
-#       }, 
+#       },
 #     'name': 'GARAGE'
-#     }, 
-#   capabilities_supported=[], 
+#     },
+#   capabilities_supported=[],
 #   errors=[]
 #   )
 
 
 ```
+
 {% endtab %}
 
 {% tab title="Javascript" %}
+
 ```typescript
-await seam.devices.get({device_id:"123e4567-e89b-12d3-a456-426614174000"})
+await seam.devices.get({ device_id: "123e4567-e89b-12d3-a456-426614174000" });
 
 /*
 {
@@ -136,15 +149,17 @@ await seam.devices.get({device_id:"123e4567-e89b-12d3-a456-426614174000"})
 }
 */
 ```
+
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 ```ruby
 seam.devices.get("123e4567-e89b-12d3-a456-426614174000")
 
-# <Seam::Device:0x00764f8                                             
-#   device_id="e002825a-27ee-4d74-9be3-45564b14c931"                  
-#   device_type="smartthings_lock"                                    
+# <Seam::Device:0x00764f8
+#   device_id="e002825a-27ee-4d74-9be3-45564b14c931"
+#   device_type="smartthings_lock"
 #   properties={
 #     "locked"=>true,
 #     "online"=>true,
@@ -152,20 +167,22 @@ seam.devices.get("123e4567-e89b-12d3-a456-426614174000")
 #     "manufacturer"=>"yale",
 #     "smartthings_metadata"=>{
 #       "device_id"=>"83b32603-e36a-416b-a06e-78215223df98",
-#       "device_name"=>"Yale Door Lock"}, 
+#       "device_name"=>"Yale Door Lock"},
 #     "max_active_codes_supported": 100,
 #     "supported_code_lengths": [
 #       6
 #     ],
 #     "name"=>"Yale Door Lock"}>
 ```
+
 {% endtab %}
 {% endtabs %}
 
 ### Parameters
 
-| `device_id` | type: string | <p>Device ID</p> |
-| ----------- | ------------ | -------------------- |
+| `device_id` | type: string | <p>Device ID</p>   |
+| ----------- | ------------ | ------------------ |
+| `name`      | type: string | <p>Device Name</p> |
 
 ### Response
 
@@ -175,6 +192,7 @@ This section shows the JSON response returned by the API. Since each language en
 
 {% tabs %}
 {% tab title="JSON" %}
+
 ```json
 {
   "device": {
@@ -191,9 +209,7 @@ This section shows the JSON response returned by the API. Since each language en
         "device_name": "GARAGE"
       },
       "max_active_codes_supported": 100,
-      "supported_code_lengths": [
-        6
-      ],      
+      "supported_code_lengths": [6],
       "name": "GARAGE"
     },
     "location": null,
@@ -205,5 +221,6 @@ This section shows the JSON response returned by the API. Since each language en
   "ok": true
 }
 ```
+
 {% endtab %}
 {% endtabs %}

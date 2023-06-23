@@ -7,19 +7,36 @@
 Retrieve a list of devices, optionally filtered
 {% endswagger-description %}
 
-{% swagger-parameter in="body" name="connected_account_id" %}
+{% swagger-parameter in="query" name="connected_account_id" %}
 ID of Connected Account you'd like to filter by
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="connect_webview_id" %}
+{% swagger-parameter in="query" name="connected_account_ids" %}
+IDs of Connected Accounts you'd like to filter by
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="connect_webview_id" %}
 ID of Connect Webview you'd like to filter by
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="workspace_id" %}
-ID of Workspace you'd like to filter with
+{% swagger-parameter in="query" name="device_ids" %}
+IDs of Devices you'd like to filter by
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="device_type" %}
+Type of Device you'd like to filter by eg. schlage_lock
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="device_types" %}
+Types of Devices you'd like to filter by
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="manufacturer" %}
+Manufacturer name you'd like to filter by eg. schlage
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
+
 ```javascript
 {
   "devices": [
@@ -38,7 +55,7 @@ ID of Workspace you'd like to filter with
         "max_active_codes_supported": 100,
         "supported_code_lengths": [
           6
-        ],        
+        ],
         "name": "GARAGE"
       },
       "location": null,
@@ -62,7 +79,7 @@ ID of Workspace you'd like to filter with
         "max_active_codes_supported": 100,
         "supported_code_lengths": [
           6
-        ],         
+        ],
         "name": "FRONT DOOR"
       },
       "location": null,
@@ -86,7 +103,7 @@ ID of Workspace you'd like to filter with
         "max_active_codes_supported": 100,
         "supported_code_lengths": [
           6
-        ],        
+        ],
         "name": "BACK DOOR"
       },
       "location": null,
@@ -99,6 +116,7 @@ ID of Workspace you'd like to filter with
   "ok": true
 }
 ```
+
 {% endswagger-response %}
 {% endswagger %}
 
@@ -106,6 +124,7 @@ ID of Workspace you'd like to filter with
 
 {% tabs %}
 {% tab title="Python" %}
+
 ```python
 seam.devices.list()
 
@@ -123,11 +142,13 @@ seam.devices.list()
 #     }
 # ]
 ```
+
 {% endtab %}
 
 {% tab title="Javascript" %}
+
 ```typescript
-await seam.devices.list()
+await seam.devices.list();
 
 /*
 [
@@ -144,15 +165,17 @@ await seam.devices.list()
 ]
 */
 ```
+
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 ```ruby
 seam.devices.list
 
-# [<Seam::Device:0x00764f8                                             
-#   device_id="e002825a-27ee-4d74-9be3-45564b14c931"                  
-#   device_type="smartthings_lock"                                    
+# [<Seam::Device:0x00764f8
+#   device_id="e002825a-27ee-4d74-9be3-45564b14c931"
+#   device_type="smartthings_lock"
 #   properties={
 #     "locked"=>true,
 #     "online"=>true,
@@ -160,21 +183,23 @@ seam.devices.list
 #     "manufacturer"=>"yale",
 #     "smartthings_metadata"=>{
 #       "device_id"=>"83b32603-e36a-416b-a06e-78215223df98",
-#       "device_name"=>"Yale Door Lock"}, 
+#       "device_name"=>"Yale Door Lock"},
 #     "name"=>"Yale Door Lock"}>]
 ```
+
 {% endtab %}
 {% endtabs %}
 
 ### Parameters
 
-| `connected_account_id` | <p>type: string<br>Optional</p>   | <p><br>ID of the Connected Account</p> |
-| ---------------------- | --------------------------------- | -------------------------------------- |
-| `connected_account_ids` | <p>type: string[]<br>Optional</p>   | <p><br>IDs of the Connected Accounts</p> |
-| `connect_webview_id`   | <p>type: string<br>Optional</p>   | ID of Connect Webview                  |
-| `workspace_id`         | <p>type: String<br>Optional</p>   | ID of Workspace                        |
-| `manufacturer`         | <p>type: String<br>Optional</p>   | Device manufacturer                    |
-| `device_ids`           | <p>type: string[]<br>Optional</p> | IDs of the Devices to include          |
+| `connected_account_id`  | <p>type: string<br>Optional</p>   | <p><br>ID of the Connected Account</p>   |
+| ----------------------- | --------------------------------- | ---------------------------------------- |
+| `connected_account_ids` | <p>type: string[]<br>Optional</p> | <p><br>IDs of the Connected Accounts</p> |
+| `connect_webview_id`    | <p>type: string<br>Optional</p>   | ID of Connect Webview                    |
+| `device_type`           | <p>type: String<br>Optional</p>   | Type of Device                           |
+| `device_types`          | <p>type: string[]<br>Optional</p> | Types of Devices                         |
+| `manufacturer`          | <p>type: String<br>Optional</p>   | Device manufacturer                      |
+| `device_ids`            | <p>type: string[]<br>Optional</p> | IDs of the Devices to include            |
 
 ### Response
 
@@ -184,6 +209,7 @@ This section shows the JSON response returned by the API. Since each language en
 
 {% tabs %}
 {% tab title="JSON" %}
+
 ```json
 {
   "devices": [
@@ -201,9 +227,7 @@ This section shows the JSON response returned by the API. Since each language en
           "device_name": "GARAGE"
         },
         "max_active_codes_supported": 100,
-        "supported_code_lengths": [
-          6
-        ],
+        "supported_code_lengths": [6],
         "name": "GARAGE"
       },
       "location": null,
@@ -226,9 +250,7 @@ This section shows the JSON response returned by the API. Since each language en
           "device_name": "FRONT DOOR"
         },
         "max_active_codes_supported": 100,
-        "supported_code_lengths": [
-          6
-        ],
+        "supported_code_lengths": [6],
         "name": "FRONT DOOR"
       },
       "location": null,
@@ -251,9 +273,7 @@ This section shows the JSON response returned by the API. Since each language en
           "device_name": "BACK DOOR"
         },
         "max_active_codes_supported": 100,
-        "supported_code_lengths": [
-          6
-        ],
+        "supported_code_lengths": [6],
         "name": "BACK DOOR"
       },
       "location": null,
@@ -266,5 +286,6 @@ This section shows the JSON response returned by the API. Since each language en
   "ok": true
 }
 ```
+
 {% endtab %}
 {% endtabs %}
