@@ -6,7 +6,7 @@ Access Codes CRUD endpoints Seam to list access codes created on a door lock.
 
 ### Listing Access Codes
 
-After a Door Lock Owner logs in and Seam lists all the access codes that have been programmed  and shows them what's been programmed on the door lock. Your Door Locks system should return a JSON list of the access codes on a door lock.
+After a Door Lock Owner logs in, Seam lists all the access codes programmed and shows them what's been programmed on the door lock. Your Door Locks system should return a JSON list of the access codes on a door lock.
 
 {% swagger method="get" path="/access_codes?lock_id=<LOCK_ID>" baseUrl="https://devicecloud.example.com" summary="List all access codes for a lock" %}
 {% swagger-description %}

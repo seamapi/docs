@@ -1,11 +1,11 @@
 # Creating a Seam-Compatible Door Locks API
 
-Seam integrates with Intercom systems to enable them to receive deliveries from major delivery providers. After making your intercom API seam-compatible, you don’t need to do any additional effort to be compatible with major US delivery providers, a major selling point for US intercom systems.
+Seam integrates with Intercom systems, enabling them to receive deliveries from major providers. After making your intercom API seam-compatible, you don’t need to do any additional effort to be compatible with major US delivery providers, a major selling point for US intercom systems.
 
-To make your system compatible, you should create a HTTP REST API with OAuth for authentication and CRUD-style endpoints for listing intercoms, unlocking doors, and managing access codes. This guide will walk you through creating that API, and have examples for requests/responses. If you need any support, contact `integrations@getseam.com`
+To make your system compatible, you should create an HTTP REST API with OAuth for authentication and CRUD-style endpoints for listing intercoms, unlocking doors, and managing access codes. This guide will walk you through creating that API, and have examples for requests/responses. If you need any support, contact `integrations@getseam.com`
 
 {% hint style="info" %}
-Seam can integrate with systems that use Authentication systems other than OAuth, to inquire about alternateAuthentication mechanism, briefly describe your system in an email to `integrations@getseam.com`
+Seam can integrate with systems that use Authentication systems other than OAuth, to inquire about alternate Authentication mechanism, briefly describe your system in an email to `integrations@getseam.com`
 {% endhint %}
 
 {% hint style="info" %}
