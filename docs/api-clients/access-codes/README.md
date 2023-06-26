@@ -37,7 +37,10 @@ Errors are displayed in the format:
 }
 ```
 
-<table data-header-hidden><thead><tr><th width="349.3333333333333">Error Type</th><th>Description</th></tr></thead><tbody><tr><td><strong><code>failed_to_set_on_device</code></strong></td><td>A failure occurred while attempting to program the code onto the device. Note that the failure might be temporary and this error might be removed after retries.</td></tr><tr><td><strong><code>failed_to_remove_from_device</code></strong></td><td>A failure occurred while attempting to remove the code frin the device. Note that the failure might be temporary and this error might be removed after retries.</td></tr></tbody></table>
+| Error Type                   | Description                                                                                                                                                      |
+|------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| failed_to_set_on_device      | A failure occurred while attempting to program the code onto the device. Note that the failure might be temporary and this error might be removed after retries. |
+| failed_to_remove_from_device | A failure occurred while attempting to remove the code frin the device. Note that the failure might be temporary and this error might be removed after retries.  |
 
 ## Access Code Warning Types
 
@@ -50,7 +53,11 @@ Warnings are displayed in the format:
 }
 ```
 
-<table data-header-hidden><thead><tr><th width="341">Warning Type</th><th>Description</th></tr></thead><tbody><tr><td><strong><code>delay_in_setting_on_device</code></strong></td><td>There was an unusually long delay in programming the code onto the device. For time bound codes, this is sent when the code enters its active time. Note that this is a temporary warning and might be removed if the code is successfully set.</td></tr><tr><td><strong><code>delay_in_removing_from_device</code></strong></td><td>There was an unusually long delay in remove the code from the device. Note that this is a temporary warning and might be removed if the code is successfully removed.</td></tr></tbody></table>
+
+| Warning Type                  | Description                                                                                                                                                                                                                                     |
+|-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| delay_in_setting_on_device    | There was an unusually long delay in programming the code onto the device. For time bound codes, this is sent when the code enters its active time. Note that this is a temporary warning and might be removed if the code is successfully set. |
+| delay_in_removing_from_device | There was an unusually long delay in remove the code from the device. Note that this is a temporary warning and might be removed if the code is successfully removed.                                                                           |
 
 ### List of Methods
 
