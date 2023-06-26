@@ -48,6 +48,7 @@ Seam is introducing support for automatic backup codes in the future. For now, w
 We recommend the following system for issuing backup codes to guests.
 
 * For every lock your Device Owner is using for guests, create a pool of 5 backup codes. Create the backup codes as `ongoing` codes so that they are programmed to the device immediately.
+* Do not keep access codes with errors inside your backup access code pool, maintain a "healthy" pool of access codes
 * Do not share the backup codes with the Device Owner or the guest (until there is an entry issue)
 * When a guest is unable to open a lock, send them one of the backup codes from the backup access code pool.
 * Set `ends_at` on the backup access code you sent to the guest to the time when the reservation ends
