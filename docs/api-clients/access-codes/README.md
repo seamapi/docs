@@ -59,7 +59,7 @@ if it encounters an unknown generic error code.
 
 When Seam is able to provide more specific information beyond one of the generic errors above,
 one or more errors from the list of specific errors will be included alongside the generic errors.
-This gives your application to option to display additional context or suggest provider specific resolutions.
+This gives your application the option to display additional context or suggest provider specific resolutions.
 
 {% hint style="info" %}
 If the device or connected account associated with an access code has an error, it will be attached to the access code
