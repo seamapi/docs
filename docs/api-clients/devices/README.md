@@ -77,6 +77,14 @@ Errors are displayed in the format:
 }
 ```
 
+### Generic Errors
+
+If a device has one or more errors, one of those errors will always be from this list of generic errors.
+
+Seam recommends adding error handling logic to you application for each generic error below,
+however Seam may add more generic errors in the future, so your application should include a fallback case
+if it encounters a new error code.
+
 | Error Type                        | Description                                                                                                                                                                                                                                                  |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | account_disconnected              | Seam has lost connection to a connected account. This may happen if the third-party provider triggered an access token to be revoked (e.g., after a password change). The account owner needs to reconnect the connected account with a new connect webview. |
@@ -84,9 +92,18 @@ Errors are displayed in the format:
 | device_removed                    | Device has been removed from the Connected Account. Seam can no longer sync with this device.                                                                                                                                                                |
 | hub_disconnected                  | The hub that the device is connected to is offline. Seam is unable to sync updates to this device.                                                                                                                                                           |
 | missing_device_credentials        | Missing device credentials, please create a new Connect Webview to provide them.                                                                                                                                                                             |
+
+### Specific Errors
+
+When Seam is able to provide more specific information beyond one of the generic errors above,
+one or more errors from the list of specific errors will be included alongside the generic error.
+This give your application to option to display additional context or provider specific resolutions.
+
+| Error Type                        | Description                                                                                                                                                                                                                                                  |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | ttlock_lock_not_paired_to_gateway | The lock is not paired with a Gateway, Seam will not be able to unlock or program access codes on the lock. Please add a Gateway to enable support.                                                                                                          |
 
-## Device W
+## Device Warning Types
 
 {% hint style="info" %}
 A device can have more than one error or warning.
