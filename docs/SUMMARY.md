@@ -1,6 +1,6 @@
 # Table of contents
 
-- [🎉 Seam API Docs](README.md)
+- [👋 Welcome!](README.md)
 
 ## 🚲 Quickstart
 
@@ -9,7 +9,6 @@
 - [Authentication](quickstart/authentication.md)
 - [Connect a Device](quickstart/connect-a-device.md)
 - [Your First Device API Call](quickstart/your-first-device-api-call.md)
-- [Going Live! 🛫](quickstart/going-live.md)
 
 ## 📖 Core Concepts
 
@@ -19,15 +18,12 @@
 - [Device Capabilities](core-concepts/device-capabilities.md)
 - [Action Attempts](core-concepts/action-attempts.md)
 - [Webhooks](core-concepts/webhooks.md)
-- [Locks - Access Codes](core-concepts/access-codes.md)
-- [Thermostats - Climate Setting Schedules](core-concepts/thermostats-climate-setting-schedules.md)
+- [Access Codes](core-concepts/access-codes.md)
 
 ## 🎛 Device Guides
 
-- [Get started with Smart Locks](device-guides/get-started-with-smartlocks-api.md)
 - [Get started with August Locks](device-guides/get-started-with-august-locks.md)
 - [Get started with ControlByWeb Devices](device-guides/get-started-with-controlbyweb-devices.md)
-- [Get started with Ecobee Thermostats](device-guides/get-started-with-ecobee-thermostats.md)
 - [Get started with Nuki Locks](device-guides/get-started-with-nuki-locks.md)
 - [Get started with Kwikset Wifi Locks](device-guides/get-started-with-kwikset-wifi-locks.md)
 - [Get started with Schlage Locks](device-guides/get-started-with-schlage-locks.md)
@@ -38,12 +34,11 @@
 - [Get started with SmartThings Hubs + Smart Locks](device-guides/get-started-with-smartthings-hubs-+-smart-locks.md)
 - [Get started with TTLock Devices](device-guides/get-started-with-ttlock-devices.md)
 - [Get started with NoiseAware Sensors](device-guides/get-started-with-noiseaware-sensors.md)
-- [Get started with Igloohome Locks](device-guides/get-started-with-igloo-locks.md)
+- [Get started with React and Client Session Tokens](device-guides/get-started-with-react-components-and-client-session-tokens.md)
 - [Sandbox & Sample Data](device-guides/sandbox-and-sample-data/README.md)
   - [2N Intercoms Sample Data](device-guides/sandbox-and-sample-data/2n-intercoms-sample-data.md)
   - [August Locks Sample Data](device-guides/sandbox-and-sample-data/august-locks-sample-data.md)
   - [DoorKing Callbox Sample Data](device-guides/sandbox-and-sample-data/doorking-sample-data.md)
-  - [Ecobee Sample Data](device-guides/sandbox-and-sample-data/ecobee-sample-data.md)
   - [Genie Garage Opener Sample Data](device-guides/sandbox-and-sample-data/genie-sample-data.md)
   - [Linear Callbox Sample Data](device-guides/sandbox-and-sample-data/linear-sample-data.md)
   - [Nuki Locks Sample Data](device-guides/sandbox-and-sample-data/nuki-sample-data.md)
@@ -54,15 +49,10 @@
   - [TTLock Sample Data](device-guides/sandbox-and-sample-data/ttlock-sample-data.md)
   - [Yale Locks Sample Data](device-guides/sandbox-and-sample-data/yale-sample-data.md)
   - [Kwikset Locks Sample Data](device-guides/sandbox-and-sample-data/kwikset-locks-sample-data.md)
-  - [Igloohome Locks Sample Data](device-guides/sandbox-and-sample-data/igloohome-sample-data.md)
 - [Reconnecting an Account](device-guides/reconnecting-an-account.md)
 - [Access Code Management for Hospitality](device-guides/implementing-robust-access-code-management-for-guests.md)
 - [Migrating Existing Access Codes](device-guides/migrating-existing-codes.md)
 - [Rate Limits and Guardrails](device-guides/rate-limits-and-guardrails.md)
-
-## 🌉 Seam Bridge
-
-- [Connecting the Seam Bridge to DoorKing](seam-bridge/connecting-with-doorking.md)
 
 ## 📋 API Clients
 
@@ -97,7 +87,6 @@
   - [List Unmanaged Access Codes](api-clients/access-codes/list-unmanaged-access-codes.md)
   - [Delete an Unmanaged Access Code](api-clients/access-codes/delete-an-unmanaged-access-code.md)
   - [Convert an Unmanaged Access Code](api-clients/access-codes/convert-an-unmanaged-access-code.md)
-  - [Pull Backup Access Code](api-clients/access-codes/pull-backup-access-code.md)
 - [Locks](api-clients/locks/README.md)
   - [Get Lock](api-clients/locks/get-lock.md)
   - [Lock a Lock](api-clients/locks/lock-a-lock.md)
@@ -108,29 +97,8 @@
   - [Get an Event](api-clients/events/get-an-event.md)
 - [Action Attempt](api-clients/action-attempt/README.md)
   - [Get Action Attempt](api-clients/action-attempt/get-action-attempt.md)
-- [Noise Sensors](api-clients/noise-sensors/README.md)
-  - [List Noise Thresholds](api-clients/noise-sensors/list-noise-thresholds.md)
-  - [Create Noise Thresholds](api-clients/noise-sensors/create-noise-threshold.md)
-  - [Update Noise Threshold](api-clients/noise-sensors/update-noise-threshold.md)
-  - [Delete Noise Threshold](api-clients/noise-sensors/delete-noise-threshold.md)
-- [Thermostats](thermostats/README.md)
-  - [Get Thermostat](thermostats/get-thermostat.md)
-  - [List Thermostats](thermostats/list-thermostats.md)
-  - [Climate Setting Schedules](thermostats/climate-setting-schedules/README.md)
-    - [Configuring a Default Climate Setting](thermostats/climate-setting-schedules/lock-a-lock.md)
-    - [Get Climate Setting Schedule](thermostats/climate-setting-schedules/get-climate-setting-schedule.md)
-    - [List Climate Setting Schedules](thermostats/climate-setting-schedules/list-climate-setting-schedules.md)
-    - [Create Climate Setting Schedule](thermostats/climate-setting-schedules/create-climate-setting-schedule.md)
-    - [Update Climate Setting Schedule](thermostats/climate-setting-schedules/update-climate-setting-schedule.md)
-    - [Delete Climate Setting Schedule](thermostats/climate-setting-schedules/delete-climate-setting-schedule.md)
-
-## 🧱 Seam Components
-
-- [Get started with Client Side Components](seam-components/get-started-with-client-side-components.md)
-- [Get started with React and Client Session Tokens](seam-components/get-started-with-react-components-and-client-session-tokens.md)
-- [Components Guide](seam-components/react-components.md)
-- [Use with Angular](seam-components/angular.md)
-- [Make a Supported Devices Page with React](seam-components/make-a-supported-devices-page-with-react.md)
+- [Noise Thresholds](api-clients/locks-1/README.md)
+  - [List Noise Thresholds](api-clients/locks-1/list-locks.md)
 
 ## Reference
 
