@@ -87,8 +87,6 @@ Seam may add more generic errors in the future, so your application should inclu
 if it encounters an unknown generic error code.
 
 | Error Type                        | Description                                                                                                                                                                                                                                                  |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| account_disconnected              | Seam has lost connection to a connected account. This may happen if the third-party provider triggered an access token to be revoked (e.g., after a password change). The account owner needs to reconnect the connected account with a new connect webview. |
 | device_disconnected               | Device is disconnected                                                                                                                                                                                                                                       |
 | device_removed                    | Device has been removed from the Connected Account. Seam can no longer sync with this device.                                                                                                                                                                |
 | hub_disconnected                  | The hub that the device is connected to is offline. Seam is unable to sync updates to this device.                                                                                                                                                           |
@@ -98,6 +96,13 @@ if it encounters an unknown generic error code.
 When Seam is able to provide more specific information beyond one of the generic errors above,
 one or more errors from the list of specific errors will be included alongside the generic errors.
 This gives your application to option to display additional context or suggest provider specific resolutions.
+
+{% hint style="info" %}
+If the connected account associated with a device has an error, it will be attached to the device
+alongside any other device errors.
+Treat these errors as Specific Errors.
+See [Connected Account Error Types](../connected-accounts/#connected-account-error-types).
+{% endhint %}
 
 | Error Type                        | Description                                                                                                                                                                                                                                                  |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

@@ -62,10 +62,10 @@ one or more errors from the list of specific errors will be included alongside t
 This gives your application to option to display additional context or suggest provider specific resolutions.
 
 {% hint style="info" %}
-If the device associated with an access code has an error, it will be attached to the access code
+If the device or connected account associated with an access code has an error, it will be attached to the access code
 alongside any other access code errors.
 Treat these errors as Specific Errors.
-See [Device Error Types](../devices/#device-error-types) and [Device Warning Types](../devices/#device-warning-types)
+See [Device Error Types](../devices/#device-error-types) and [Connected Account Error Types](../connected-accounts/#connected-account-error-types).
 {% endhint %}
 
 | Error Type                                       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
