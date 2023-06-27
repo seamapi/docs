@@ -13,12 +13,16 @@ An Access Code is a code used for a keypad or pinpad device. You can tell Seam t
 
 There are two types of codes:
 
-* **ongoing**: This is the default access code that is created if you don't specify any options other than the `device_id`. This code will be set on the device and Seam will ensure it is set until you explicitly remove it (with `/access_codes/delete`).
-* **time\_bound**: Time Bound codes are codes where you provide a `starts_at` or `ends_at` time. The code will be added to the device at the `starts_at` time and removed at the `ends_at` time.
+- **ongoing**: This is the default access code that is created if you don't specify any options other than the `device_id`. This code will be set on the device and Seam will ensure it is set until you explicitly remove it (with `/access_codes/delete`).
+- **time_bound**: Time Bound codes are codes where you provide a `starts_at` or `ends_at` time. The code will be added to the device at the `starts_at` time and removed at the `ends_at` time.
 
 ## Native Scheduling
 
 Some device providers have native scheduling capabilities. For example, August allows setting a schedule in which a code is actually active. When you create `time_bound` codes on a device whose provider supports native scheduling, Seam will use the native scheduling capabilities of the provider to set the code. Where the provider does not support native scheduling, Seam will use its own scheduling to explicitly set and remove the code at the `starts_at` and `ends_at` times. You can choose to override this default behavior, and always have Seam perform the scheduling by setting `prefer_native_scheduling` to `false` when creating the code.
+
+## Backup Access Codes
+
+A backup access code is preprogrammed onto a device prior to the time of reservation. It is guaranteed to work. Backup access codes are essential for any robust integration with Seam. We recommend maintaining a healthy pool of backup access codes for each device that can be pulled whenever there is an issue with a device. Common issues include: intermittent connectivity issues, access codes being removed through manual interaction with a device, or device provider outages. Seam provides a hardened backup access code pool implementation you can [opt into when creating access codes](https://docs.seam.co/latest/api-clients/access-codes/create-an-access-code).
 
 ## Lifecycle of an Access Code
 
@@ -28,12 +32,12 @@ Seam is altering the behavior of access codes to never 404 unless the API user e
 
 Access codes go through the following statuses. You can inspect the status by looking at `access_code.status`
 
-* **unset**: Code is not in active time range, for ongoing codes it's never in this state
-* **setting**: Code in active time range, Seam is contacting third party API
-* **set**: Seam has confirmed the code is set on the device
-* **removing:** Seam is contacting the third party API to remove the access code
-* **unknown**: An account is disconnected and Seam cannot access the third party API to check the access code
-* **404**: Seam has confirmed the code is not on the device, the access code is deleted in both Seam and the third party API
+- **unset**: Code is not in active time range, for ongoing codes it's never in this state
+- **setting**: Code in active time range, Seam is contacting third party API
+- **set**: Seam has confirmed the code is set on the device
+- **removing:** Seam is contacting the third party API to remove the access code
+- **unknown**: An account is disconnected and Seam cannot access the third party API to check the access code
+- **404**: Seam has confirmed the code is not on the device, the access code is deleted in both Seam and the third party API
 
 <figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Lifecycle of Access Codes with Transition Arrows</p></figcaption></figure>
 
