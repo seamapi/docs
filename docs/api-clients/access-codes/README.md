@@ -32,11 +32,11 @@ Errors are returned in a list:
 
 ```
 "errors": [
-    {
-      "error_code": "device_disconnected",
-      "message": "Device Disconnected, you may need to reconnect the device.",
-      "created_at": "2023-06-27T22:50:19.440Z
-    }
+  {
+    "error_code": "device_disconnected",
+    "message": "Device Disconnected, you may need to reconnect the device.",
+    "created_at": "2023-06-27T22:50:19.440Z
+  }
 ]
 ```
 
@@ -90,11 +90,11 @@ Warnings are returned in a list:
 
 ```
 "warnings": [
-    {
-      "warning_code": "delay_in_removing_from_device ",
-      "message": "We expected the device to report that the access code has been removed but it still has not.",
-      "created_at": "2023-06-27T22:50:19.440Z
-    }
+  {
+    "warning_code": "delay_in_removing_from_device ",
+    "message": "We expected the device to report that the access code has been removed but it still has not.",
+    "created_at": "2023-06-27T22:50:19.440Z
+  }
 ]
 ```
 
