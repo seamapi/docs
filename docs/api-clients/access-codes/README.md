@@ -41,9 +41,31 @@ Errors are displayed in the format:
 }
 ```
 
+### Generic Errors
+
 {% hint style="info" %}
-If the device associated with an access code has an error or warning, it will be attached to the access code
-in addition to any access code errors and warnings.
+If an access code has one or more errors, at least one of those errors will always be from the list of Generic Errors.
+{% endhint %}
+
+Seam recommends adding error handling logic to you application for each generic error below.
+Seam may add more generic errors in the future, so your application should include a fallback case
+if it encounters an unknown generic error code.
+
+| Error Type                                       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| failed_to_set_on_device                          | An error occurred when we tried to set the access code on the device. We will continue to try and set the code on the device in case the error was temporary.                                                                                                                                                                                                                                                                                                                          |
+| failed_to_remove_from_device                     | An error occurred when we tried to remove the access code from the device. We will continue to try and remove the code from the device in case the error was temporary.                                                                                                                                                                                                                                                                                                                |
+
+### Specific Errors
+
+When Seam is able to provide more specific information beyond one of the generic errors above,
+one or more errors from the list of specific errors will be included alongside the generic error.
+This give your application to option to display additional context or suggest provider specific resolutions.
+
+{% hint style="info" %}
+If the device associated with an access code has an error, it will be attached to the access code
+alongside any other access code errors.
+Treat these errors as Specific Errors.
 See [Device Error Types](../devices/#device-error-types) and [Device Warning Types](../devices/#device-warning-types)
 {% endhint %}
 
@@ -55,8 +77,6 @@ See [Device Error Types](../devices/#device-error-types) and [Device Warning Typ
 | august_lock_missing_keypad                       | August lock is missing a keypad                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | august_lock_temporarily_offline                  | August lock was temporarily offline while setting/removing a code, the code should be set/remove when it comes back online                                                                                                                                                                                                                                                                                                                                                             |
 | duplicate_code_on_device                         | An access code with the same pin already exists on the device.                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| failed_to_remove_from_device                     | An error occurred when we tried to remove the access code from the device. We will continue to try and remove the code from the device in case the error was temporary.                                                                                                                                                                                                                                                                                                                |
-| failed_to_set_on_device                          | An error occurred when we tried to set the access code on the device. We will continue to try and set the code on the device in case the error was temporary.                                                                                                                                                                                                                                                                                                                          |
 | salto_site_user_not_subscribed                   | Salto site user is not subscribed. This usually means your Salto site has reached its subscription limit.                                                                                                                                                                                                                                                                                                                                                                              |
 | smartthings_failed_to_set_after_multiple_retries | Failed to set code on device after multiple retries. This may be due to a conflict with an existing code on the device, or other software that may be used to manage the device.The following codes on the device not managed by Seam may be conflicting: Foo Code, Bar Pin.  We detected the use of RBoy Apps to manage this device, which may conflict with Seam's ability to set codes on the device. We recommend disabling RBoy Apps for devices that will be managed using Seam. |
 | smartthings_no_free_slots_available              | There are no free slots available on the device. You will need to delete existing codes before more codes can be added to the device. Note that in addition to the codes managed by Seam, there are 3 other codes on the device.                                                                                                                                                                                                                                                       |
@@ -77,9 +97,8 @@ Warnings are displayed in the format:
 ```
 
 {% hint style="info" %}
-If the device associated with an access code has an error or warning, it will be attached to the access code
-in addition to any access code errors and warnings. 
-See [Device Error Types](../devices/#device-error-types) and [Device Warning Types](../devices/#device-warning-types)
+If the device associated with an access code has a warning, it will be attached to the access code
+alongside the any other access code warnings. 
 {% endhint %}
 
 | Warning Type                  | Description                                                                                                                                                                                                                                     |

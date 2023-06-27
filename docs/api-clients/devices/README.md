@@ -79,11 +79,13 @@ Errors are displayed in the format:
 
 ### Generic Errors
 
-If a device has one or more errors, one of those errors will always be from this list of generic errors.
+{% hint style="info" %}
+If a device has one or more errors, at least one of those errors will always be from the list of Generic Errors.
+{% endhint %}
 
-Seam recommends adding error handling logic to you application for each generic error below,
-however Seam may add more generic errors in the future, so your application should include a fallback case
-if it encounters an unknown error code.
+Seam recommends adding error handling logic to you application for each generic error below.
+Seam may add more generic errors in the future, so your application should include a fallback case
+if it encounters an unknown generic error code.
 
 | Error Type                        | Description                                                                                                                                                                                                                                                  |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -91,7 +93,6 @@ if it encounters an unknown error code.
 | device_disconnected               | Device is disconnected                                                                                                                                                                                                                                       |
 | device_removed                    | Device has been removed from the Connected Account. Seam can no longer sync with this device.                                                                                                                                                                |
 | hub_disconnected                  | The hub that the device is connected to is offline. Seam is unable to sync updates to this device.                                                                                                                                                           |
-| missing_device_credentials        | Missing device credentials, please create a new Connect Webview to provide them.                                                                                                                                                                             |
 
 ### Specific Errors
 
@@ -101,6 +102,7 @@ This give your application to option to display additional context or suggest pr
 
 | Error Type                        | Description                                                                                                                                                                                                                                                  |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| missing_device_credentials        | Missing device credentials, please create a new Connect Webview to provide them.                                                                                                                                                                             |
 | ttlock_lock_not_paired_to_gateway | The lock is not paired with a Gateway, Seam will not be able to unlock or program access codes on the lock. Please add a Gateway to enable support.                                                                                                          |
 
 ## Device Warning Types
