@@ -22,7 +22,7 @@ Some device providers have native scheduling capabilities. For example, August a
 
 ## Backup Access Codes
 
-A backup access code is a code setup on a device prior to the time of reservation that is ensured to work. Backup access codes are essential for any robust integration with Seam. We recommend maintaining a health pool of backup access codes for each device that can be pulled whenever there is an issue with a device. Common issues include: intermittent connectivity issues, access codes being removed through manual interaction with a device, or device provider outages. Seam provides a hardened backup access code pool implementation you can [opt into when creating access codes](https://docs.seam.co/latest/api-clients/access-codes/create-an-access-code).
+A backup access code is preprogrammed onto a device prior to the time of reservation. It is guaranteed to work. Backup access codes are essential for any robust integration with Seam. We recommend maintaining a healthy pool of backup access codes for each device that can be pulled whenever there is an issue with a device. Common issues include: intermittent connectivity issues, access codes being removed through manual interaction with a device, or device provider outages. Seam provides a hardened backup access code pool implementation you can [opt into when creating access codes](https://docs.seam.co/latest/api-clients/access-codes/create-an-access-code).
 
 ## Lifecycle of an Access Code
 
