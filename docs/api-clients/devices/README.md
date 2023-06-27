@@ -73,10 +73,14 @@ Errors are displayed in the format:
 }
 ```
 
-| **`account_disconnected`** | Seam has lost connection to a connected account. This may happen if the third-party provider triggered an access token to be revoked (e.g. after a password change). The account owner needs to reconnect the connected account with a new connect webview. |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`device_removed`**       | A device has been removed from the Connected Account. Seam can no longer sync with this device.                                                                                                                                                             |
-| **`hub_disconnected`**     | The hub that the device is connected to is offline. Seam is unable to sync updates to this device.                                                                                                                                                          |
+| Error Type                        | Description                                                                                                                                                                                                                                                  |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| account_disconnected              | Seam has lost connection to a connected account. This may happen if the third-party provider triggered an access token to be revoked (e.g., after a password change). The account owner needs to reconnect the connected account with a new connect webview. |
+| device_disconnected               | Device is disconnected                                                                                                                                                                                                                                       |
+| device_removed                    | Device has been removed from the Connected Account. Seam can no longer sync with this device.                                                                                                                                                                |
+| hub_disconnected                  | The hub that the device is connected to is offline. Seam is unable to sync updates to this device.                                                                                                                                                           |
+| missing_device_credentials        | Missing device credentials, please create a new Connect Webview to provide them.                                                                                                                                                                             |
+| ttlock_lock_not_paired_to_gateway | The lock is not paired with a Gateway, Seam will not be able to unlock or program access codes on the lock. Please add a Gateway to enable support.                                                                                                          |
 
 ## Device Warning Types
 
@@ -89,9 +93,12 @@ Warnings are displayed in the format:
 }
 ```
 
-| **`salto_office_mode`**  | A Salto Lock is in Office Mode. Access Codes will not unlock doors. You can disable office mode in the Salto dashboard.             |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
-| **`salto_privacy_mode`** | A Salto Lock is in Privacy Mode. Access Codes will not unlock doors. You can disable privacy mode by pressing the back of the lock. |
+| Warning Type                              | Description                                                                                                                                           |
+| ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| device_has_flaky_connection               | Device has a flaky connection to the internet.                                                                                                        |
+| salto_office_mode                         | Lock is in Office Mode. Access Codes will not unlock doors. You can disable office mode in the Salto dashboard.                                       |
+| salto_privacy_mode                        | Lock is in Privacy Mode. Access Codes will not unlock doors. You can disable privacy mode by pressing the back of the lock.                           |
+| ttlock_lock_gateway_unlocking_not_enabled | Please turn on the Remote Unlock feature in the lock settings to enable unlocks. This must be turned on from the mobile app while near the door lock. |
 
 ## Device Manufacturers
 
