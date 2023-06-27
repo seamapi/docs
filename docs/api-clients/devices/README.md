@@ -64,17 +64,16 @@ description: A device that has been connected to the Seam platform.
 
 ## Device Error Types
 
-{% hint style="info" %}
-A device can have more than one error or warning.
-{% endhint %}
-
-Errors are displayed in the format:
+Errors are returned in a list:
 
 ```
-{
-    "message": "...",
-    "created_at": "ISO8601 string"
-}
+"errors": [
+    {
+      "error_code": "device_disconnected",
+      "message": "Device Disconnected, you may need to reconnect the device.",
+      "created_at": "2023-06-27T22:50:19.440Z
+    }
+]
 ```
 
 ### Generic Errors
@@ -107,17 +106,16 @@ This gives your application to option to display additional context or suggest p
 
 ## Device Warning Types
 
-{% hint style="info" %}
-A device can have more than one error or warning.
-{% endhiarning Types
-
-Warnings are displayed in the format:
+Warnings are returned in a list:
 
 ```
-{
-    "message": "...",
-    "created_at": "ISO8601 string"
-}
+"warnings": [
+    {
+      "warning_code": "device_has_flaky_connection",
+      "message": "Device has a flaky connection to the internet.",
+      "created_at": "2023-06-27T22:50:19.440Z
+    }
+]
 ```
 
 | Warning Type                              | Description                                                                                                                                           |

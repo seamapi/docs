@@ -28,17 +28,16 @@ A **Time Bound** Access Code will be programmed at the **`starts_at`**time, and 
 
 ## Access Code Error Types
 
-{% hint style="info" %}
-An access code can have more than one error or warning.
-{% endhint %}
-
-Errors are displayed in the format:
+Errors are returned in a list:
 
 ```
-{
-    "message": "...",
-    "created_at": "ISO8601 string"
-}
+"errors": [
+    {
+      "error_code": "device_disconnected",
+      "message": "Device Disconnected, you may need to reconnect the device.",
+      "created_at": "2023-06-27T22:50:19.440Z
+    }
+]
 ```
 
 ### Generic Errors
@@ -87,19 +86,17 @@ See [Device Error Types](../devices/#device-error-types) and [Device Warning Typ
 An access code can have more than one error or warning.
 {% endhint %}
 
-Warnings are displayed in the format:
+Warnings are returned in a list:
 
 ```
-{
-    "message": "...",
-    "created_at": "ISO8601 string"
-}
+"warnings": [
+    {
+      "warning_code": "delay_in_removing_from_device ",
+      "message": "We expected the device to report that the access code has been removed but it still has not.",
+      "created_at": "2023-06-27T22:50:19.440Z
+    }
+]
 ```
-
-{% hint style="info" %}
-If the device associated with an access code has a warning, it will be attached to the access code
-alongside the any other access code warnings. 
-{% endhint %}
 
 | Warning Type                  | Description                                                                                                                                                                                                                                     |
 | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
