@@ -64,33 +64,64 @@ description: A device that has been connected to the Seam platform.
 
 ## Device Error Types
 
-Errors are displayed in the format:
+Errors are returned in a list:
 
 ```
-{
-    "message": "...",
-    "created_at": "ISO8601 string"
-}
+"errors": [
+  {
+    "error_code": "device_disconnected",
+    "message": "Device Disconnected, you may need to reconnect the device.",
+    "created_at": "2023-06-27T22:50:19.440Z
+  }
+]
 ```
+
+### Generic Errors
+
+{% hint style="info" %}
+If a device has one or more errors, at least one of those errors will always be from the list of Generic Errors.
+{% endhint %}
+
+Seam recommends adding error handling logic to you application for each generic error below.
+Seam may add more generic errors in the future, so your application should include a fallback case
+if it encounters an unknown generic error code.
 
 | Error Type                        | Description                                                                                                                                                                                                                                                  |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| account_disconnected              | Seam has lost connection to a connected account. This may happen if the third-party provider triggered an access token to be revoked (e.g., after a password change). The account owner needs to reconnect the connected account with a new connect webview. |
 | device_disconnected               | Device is disconnected                                                                                                                                                                                                                                       |
 | device_removed                    | Device has been removed from the Connected Account. Seam can no longer sync with this device.                                                                                                                                                                |
 | hub_disconnected                  | The hub that the device is connected to is offline. Seam is unable to sync updates to this device.                                                                                                                                                           |
+
+### Specific Errors
+
+When Seam is able to provide more specific information beyond one of the generic errors above,
+one or more errors from the list of specific errors will be included alongside the generic errors.
+This gives your application the option to display additional context or suggest provider specific resolutions.
+
+{% hint style="info" %}
+If the connected account associated with a device has an error, it will be attached to the device
+alongside any other device errors.
+Treat these errors as Specific Errors.
+See [Connected Account Error Types](../connected-accounts/#connected-account-error-types).
+{% endhint %}
+
+| Error Type                        | Description                                                                                                                                                                                                                                                  |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | missing_device_credentials        | Missing device credentials, please create a new Connect Webview to provide them.                                                                                                                                                                             |
 | ttlock_lock_not_paired_to_gateway | The lock is not paired with a Gateway, Seam will not be able to unlock or program access codes on the lock. Please add a Gateway to enable support.                                                                                                          |
 
 ## Device Warning Types
 
-Warnings are displayed in the format:
+Warnings are returned in a list:
 
 ```
-{
-    "message": "...",
-    "created_at": "ISO8601 string"
-}
+"warnings": [
+  {
+    "warning_code": "device_has_flaky_connection",
+    "message": "Device has a flaky connection to the internet.",
+    "created_at": "2023-06-27T22:50:19.440Z
+  }
+]
 ```
 
 | Warning Type                              | Description                                                                                                                                           |
