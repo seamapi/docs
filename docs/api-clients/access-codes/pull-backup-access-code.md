@@ -2,7 +2,10 @@
 description: Pull a backup access code from Seam's backup access code pool
 ---
 
-# Pull Access Code
+# Pull Backup Access Code
+
+If you've opted-in to Seam's backup access code pool when [creating an access code](https://docs.seam.co/latest/api-clients/access-codes/create-an-access-code), you can pull a backup access code from the pool at any time. These backup codes are guaranteed to work immediately
+and automatically programmed to be removed from the device after the the access code ends.
 
 ### Code Examples
 
