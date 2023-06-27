@@ -83,7 +83,7 @@ If a device has one or more errors, one of those errors will always be from this
 
 Seam recommends adding error handling logic to you application for each generic error below,
 however Seam may add more generic errors in the future, so your application should include a fallback case
-if it encounters a new error code.
+if it encounters an unknown error code.
 
 | Error Type                        | Description                                                                                                                                                                                                                                                  |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -97,7 +97,7 @@ if it encounters a new error code.
 
 When Seam is able to provide more specific information beyond one of the generic errors above,
 one or more errors from the list of specific errors will be included alongside the generic error.
-This give your application to option to display additional context or provider specific resolutions.
+This give your application to option to display additional context or suggest provider specific resolutions.
 
 | Error Type                        | Description                                                                                                                                                                                                                                                  |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
