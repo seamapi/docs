@@ -26,6 +26,10 @@ description: >-
 
 ## Connected Accounts Errors
 
+{% hint style="info" %}
+A connected account can have more than one error or warning.
+{% endhi
+
 Errors are displayed in the format:
 
 ```

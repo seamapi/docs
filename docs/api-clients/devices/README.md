@@ -64,6 +64,10 @@ description: A device that has been connected to the Seam platform.
 
 ## Device Error Types
 
+{% hint style="info" %}
+A device can have more than one error or warning.
+{% endhint %}
+
 Errors are displayed in the format:
 
 ```
@@ -82,7 +86,11 @@ Errors are displayed in the format:
 | missing_device_credentials        | Missing device credentials, please create a new Connect Webview to provide them.                                                                                                                                                                             |
 | ttlock_lock_not_paired_to_gateway | The lock is not paired with a Gateway, Seam will not be able to unlock or program access codes on the lock. Please add a Gateway to enable support.                                                                                                          |
 
-## Device Warning Types
+## Device W
+
+{% hint style="info" %}
+A device can have more than one error or warning.
+{% endhiarning Types
 
 Warnings are displayed in the format:
 
