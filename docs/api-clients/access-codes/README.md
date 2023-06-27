@@ -66,7 +66,7 @@ Warnings are displayed in the format:
 
 | Warning Type                  | Description                                                                                                                                                                                                                                     |
 | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| delay_in_removing_from_device |                                                                                                                                                                                                                                                 |
+| delay_in_removing_from_device | We expected the device to report that the access code has been removed but it still has not. We will continue to try and remove the code from the device.                                                                                       |
 | delay_in_setting_on_device    | There was an unusually long delay in programming the code onto the device. For time bound codes, this is sent when the code enters its active time. Note that this is a temporary warning and might be removed if the code is successfully set. |
 
 ### List of Methods
