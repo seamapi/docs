@@ -28,6 +28,10 @@ A **Time Bound** Access Code will be programmed at the **`starts_at`**time, and 
 
 ## Access Code Error Types
 
+{% hint style="info" %}
+An access code can have more than one error or warning.
+{% endhint %}
+
 Errors are displayed in the format:
 
 ```
@@ -36,6 +40,12 @@ Errors are displayed in the format:
     "created_at": "ISO8601 string"
 }
 ```
+
+{% hint style="info" %}
+If the device associated with an access code has an error or warning, it will be attached to the access code
+in addition to any access code errors and warnings.
+See [Device Error Types](../devices/#device-error-types) and [Device Warning Types](../devices/#device-warning-types)
+{% endhint %}
 
 | Error Type                                       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -53,6 +63,10 @@ Errors are displayed in the format:
 
 ## Access Code Warning Types
 
+{% hint style="info" %}
+An access code can have more than one error or warning.
+{% endhint %}
+
 Warnings are displayed in the format:
 
 ```
@@ -61,6 +75,12 @@ Warnings are displayed in the format:
     "created_at": "ISO8601 string"
 }
 ```
+
+{% hint style="info" %}
+If the device associated with an access code has an error or warning, it will be attached to the access code
+in addition to any access code errors and warnings. 
+See [Device Error Types](../devices/#device-error-types) and [Device Warning Types](../devices/#device-warning-types)
+{% endhint %}
 
 | Warning Type                  | Description                                                                                                                                                                                                                                     |
 | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
