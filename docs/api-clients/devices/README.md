@@ -88,7 +88,7 @@ if it encounters an unknown generic error code.
 
 | Error Type          | Description                                                                                        |
 | ------------------- | -------------------------------------------------------------------------------------------------- |
-| device_disconnected | Device is disconnected                                                                             |
+| device_disconnected | Device is disconnected.                                                                             |
 | device_removed      | Device has been removed from the Connected Account. Seam can no longer sync with this device.      |
 | hub_disconnected    | The hub that the device is connected to is offline. Seam is unable to sync updates to this device. |
 
