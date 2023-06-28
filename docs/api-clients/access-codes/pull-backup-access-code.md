@@ -9,9 +9,11 @@ and automatically programmed to be removed from the device after the the access 
 
 ### Code Examples
 
-{% swagger method="post" path="/access_codes/create" baseUrl="https://connect.getseam.com" summary="Pull a Backup Access Code" %}
+{% swagger method="post" path="/access_codes/pull_backup_access_code" baseUrl="https://connect.getseam.com" summary="Pull a Backup Access Code" %}
 {% swagger-description %}
-
+Pull a backup access code from Seam's backup access code pool for this access
+code. You can only pull backup access codes for `time_bound` codes. The pulled
+backup access code will be removed at the same time as the original access code.
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="access_code_id" required="true" %}
@@ -20,13 +22,6 @@ Access Code ID
 
 {% swagger-parameter in="header" name="Authorization" required="true" %}
 Bearer <API_KEY>
-{% endswagger-parameter %}
-
-`backup_access_code`
-
-object in the
-
-`result`
 {% endswagger-parameter %}
 
 {% swagger-response status="201: Created" description="" %}
@@ -39,7 +34,9 @@ object in the
 		"name": "Backup 12525e70 (Seam)",
 		"code": "1970",
 		"common_code_key": null,
-		"type": "ongoing",
+		"type": "time_bound",
+		"starts_at": "2023-05-11T11:16:10.359Z",
+    "ends_at": "2022-08-13T19:23:42+0000"
 		"status": "set",
 		"created_at": "2023-05-11T11:16:10.359Z",
 		"errors": [],
