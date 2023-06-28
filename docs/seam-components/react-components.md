@@ -62,6 +62,8 @@ The devices table shows a list of devices and their statuses.
 | Name   | Type     | Description                                                                                                       |
 | ------ | -------- | ----------------------------------------------------------------------------------------------------------------- |
 | deviceIds | array | <p>Optional list of specific device ids to return when requesting devices from the Seam API.</p> |
+| connectedAccountIds | array | <p>Optional list of connected account ids to filter devices by when requesting devices from the Seam API.</p> |
+| disableLockUnlock | boolean | <p>Hide the lock/unlock button for devices. Default: `false`.</p> |
 | deviceFilter | function | <p>Optional filter function to filter the listed devices.<br><br>Signature: <code>(device: Device, searchInputValue: string) => boolean</code></p> |
 | deviceComparator | function | <p>Optional comparator function to order the listed devices.<br><br>Signature: <code>(deviceA: Device, deviceB: Device) => number</code></p> |
 | onDeviceClick | function | <p>Optional callback fired when a device is clicked.<br><br>Signature: <code>(deviceId: string) => void</code></p> |
@@ -86,6 +88,7 @@ The device details component shows the properties, settings, and issues for a de
 | Name                                       | Type     | Description                                                                                                       |
 | ------------------------------------------ | -------- | ----------------------------------------------------------------------------------------------------------------- |
 | deviceId<mark style="color:red;">\*</mark> | string   | The id for the device that will be shown in the table.                                                            |
+| disableLockUnlock | boolean | <p>Hide the lock/unlock button for devices. Default: `false`.</p> |
 | onBack                                     | function | <p>Optional callback fired when the Back chevron button is clicked.<br><br>Signature: <code>() => void</code></p> |
 | className | string | <p>Optional class name to add to the rendered component's containing element. |
 
@@ -110,6 +113,7 @@ The access codes table shows a list of current and future access codes and their
 | Name                                       | Type     | Description                                                                                                       |
 | ------------------------------------------ | -------- | ----------------------------------------------------------------------------------------------------------------- |
 | deviceId<mark style="color:red;">\*</mark> | string   | The id for the device whose access codes will be shown in the table.                                              |
+| disableLockUnlock | boolean | <p>Hide the lock/unlock button for devices. Default: `false`.</p> |
 | accessCodeFilter | function | <p>Optional filter function to filter the listed access codes.<br><br>Signature: <code>(accessCode: AccessCode, searchInputValue: string) => boolean</code></p> |
 | accessCodeComparator | function | <p>Optional comparator function to order the listed access codes.<br><br>Signature: <code>(accessCodeA: AccessCode, accessCodeB: AccessCode) => number</code></p> |
 | onAccessCodeClick | function | <p>Optional callback fired when an access code is clicked.<br><br>Signature: <code>(accessCodeId: string) => void</code></p> |
@@ -134,6 +138,7 @@ The access code details component shows the properties, settings, and issues for
 | Name           | Type     | Description                                 |
 | -------------- | -------- | ------------------------------------------- |
 | accessCodeId\* | string   | The id for the access code to be displayed. |
+| disableLockUnlock | boolean | <p>Hide the lock/unlock button for devices. Default: `false`.</p> |
 | onBack         | function | true                                        |
 | className | string | <p>Optional class name to add to the rendered component's containing element. |
 
@@ -147,9 +152,9 @@ The supported device table allows you to filter, sort, and view all the devices 
 
 ### Props
 
-| Name         | Type    | Description                                             |
-| ------------ | ------- | ------------------------------------------------------- |
-| cannotFilter | boolean | Hide the controls to filter the table. Default: `false` |
+| Name          | Type    | Description                                             |
+| ------------- | ------- | ------------------------------------------------------- |
+| disableLockUnlock | boolean | <p>Hide the lock/unlock button for devices. Default: `false`.</p> |
 | className | string | <p>Optional class name to add to the rendered component's containing element. |
 
 <figure><img src="../.gitbook/assets/supported-device-table.png" alt="" width="375"><figcaption></figcaption></figure>
