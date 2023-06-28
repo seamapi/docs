@@ -62,6 +62,7 @@ The devices table shows a list of devices and their statuses.
 | Name   | Type     | Description                                                                                                       |
 | ------ | -------- | ----------------------------------------------------------------------------------------------------------------- |
 | deviceIds | array | <p>Optional list of specific device ids to return when requesting devices from the Seam API.</p> |
+| connectedAccountIds | array | <p>Optional list of connected account ids to filter devices by when requesting devices from the Seam API.</p> |
 | deviceFilter | function | <p>Optional filter function to filter the listed devices.<br><br>Signature: <code>(device: Device, searchInputValue: string) => boolean</code></p> |
 | deviceComparator | function | <p>Optional comparator function to order the listed devices.<br><br>Signature: <code>(deviceA: Device, deviceB: Device) => number</code></p> |
 | onDeviceClick | function | <p>Optional callback fired when a device is clicked.<br><br>Signature: <code>(deviceId: string) => void</code></p> |
