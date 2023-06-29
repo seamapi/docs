@@ -102,10 +102,11 @@ Treat these errors as Specific Errors.
 See [Connected Account Error Types](../connected-accounts/#connected-account-error-types).
 {% endhint %}
 
-| Error Type                          | Description                                                                                                                                         |
-| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `missing_device_credentials`        | Missing device credentials, please create a new Connect Webview to provide them.                                                                    |
-| `ttlock_lock_not_paired_to_gateway` | The lock is not paired with a Gateway, Seam will not be able to unlock or program access codes on the lock. Please add a Gateway to enable support. |
+| Error Type                             | Description                                                                                                                                         |
+| -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `missing_device_credentials`           | Missing device credentials, please create a new Connect Webview to provide them.                                                                    |
+| `conflicting_unmanaged_access_code_id` | An access code called "Foo bar" with the same pin already exists on the device.                                                                     |
+| `ttlock_lock_not_paired_to_gateway`    | The lock is not paired with a Gateway, Seam will not be able to unlock or program access codes on the lock. Please add a Gateway to enable support. |
 
 ## Device Warning Types
 
