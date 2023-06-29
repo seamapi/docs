@@ -66,7 +66,7 @@ export default (req, res) => {
 
   const seam = new Seam()
 
-  const clientSession = seam.client_sessions.create({
+  const clientSession = await seam.client_sessions.create({
     connected_account_ids: accountsAssociatedWithUser.map(
       (acc) => acc.seamConnectedAccountId
     ),
