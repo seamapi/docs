@@ -91,6 +91,7 @@ seam.access_codes.pull_backup_access_code(
 #   type="time_bound"
 #   starts_at="2022-08-12T19:23:42+0000"
 #   ends_at="2022-08-13T19:23:42+0000"
+#   is_backup=true
 #   status="set"
 #   created_at="2022-07-06T23:26:42.223Z"
 #   access_code_id="f19bc8cb-15be-43af-bb52-f1a417e0ff09">
@@ -109,6 +110,7 @@ seam.access_codes.pull_backup_access_code("a83690b2-2b70-409a-9a94-426699b84c97"
 #   starts_at="2022-08-12T19:23:42+0000"
 #   ends_at="2022-08-13T19:23:42+0000"
 #   name='Backup 123e4567 (Seam)',
+#   is_backup=True
 #   status='set'
 # )
 ```
