@@ -69,8 +69,8 @@ Errors are returned in a list:
 ```
 "errors": [
   {
-    "error_code": "device_disconnected",
     "is_device_error": true,
+    "error_code": "device_disconnected",
     "message": "Device Disconnected, you may need to reconnect the device.",
     "created_at": "2023-06-27T22:50:19.440Z
   }
