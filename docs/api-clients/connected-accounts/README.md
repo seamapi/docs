@@ -32,6 +32,7 @@ Errors are returned in a list:
 "errors": [
   {
     "error_code": "account_disconnected",
+    "is_connected_account_error": true,
     "message": "Account Disconnected, you may need to reconnect the account with a new webview.",
     "created_at": "2023-06-27T22:50:19.440Z
   }
