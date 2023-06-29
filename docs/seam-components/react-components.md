@@ -154,7 +154,8 @@ The supported device table allows you to filter, sort, and view all the devices 
 
 | Name          | Type    | Description                                             |
 | ------------- | ------- | ------------------------------------------------------- |
-| disableLockUnlock | boolean | <p>Hide the lock/unlock button for devices. Default: `false`.</p> |
+| disableFilter | boolean | Hide the controls to filter the table. Default: `false` |
+| brands | array | Only show devices from specified brands. Default: `[]` (show devices for all brands). |
 | className | string | <p>Optional class name to add to the rendered component's containing element. |
 
 <figure><img src="../.gitbook/assets/supported-device-table.png" alt="" width="375"><figcaption></figcaption></figure>
