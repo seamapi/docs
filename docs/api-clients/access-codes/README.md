@@ -40,10 +40,6 @@ Errors are returned in a list:
 
 ### Generic Errors
 
-{% hint style="info" %}
-If an access code has one or more errors, at least one of those errors will always be from the list of Generic Errors.
-{% endhint %}
-
 Seam recommends adding error handling logic to you application for each generic error below.
 Seam may add more generic errors in the future, so your application should include a fallback case
 if it encounters an unknown generic error code.
@@ -57,7 +53,7 @@ if it encounters an unknown generic error code.
 ### Specific Errors
 
 When Seam is able to provide more specific information beyond one of the generic errors above,
-one or more errors from the list of specific errors will be included alongside the generic errors.
+one or more errors from the list of specific errors may appear.
 This gives your application the option to display additional context or suggest provider specific resolutions.
 
 {% hint style="info" %}

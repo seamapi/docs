@@ -40,10 +40,6 @@ Errors are returned in a list:
 
 ### Generic Errors
 
-{% hint style="info" %}
-If a connected account has one or more errors, at least one of those errors will always be from the list of Generic Errors.
-{% endhint %}
-
 Seam recommends adding error handling logic to you application for each generic error below.
 Seam may add more generic errors in the future, so your application should include a fallback case
 if it encounters an unknown generic error code.
