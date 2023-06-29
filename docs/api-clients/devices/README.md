@@ -82,11 +82,11 @@ Seam recommends adding error handling logic to you application for each generic 
 Seam may add more generic errors in the future, so your application should include a fallback case
 if it encounters an unknown generic error code.
 
-| Error Type          | Description                                                                                        |
-| ------------------- | -------------------------------------------------------------------------------------------------- |
-| device_disconnected | Device is disconnected.                                                                             |
-| device_removed      | Device has been removed from the Connected Account. Seam can no longer sync with this device.      |
-| hub_disconnected    | The hub that the device is connected to is offline. Seam is unable to sync updates to this device. |
+| Error Type            | Description                                                                                        |
+| --------------------- | -------------------------------------------------------------------------------------------------- |
+| `device_disconnected` | Device is disconnected.                                                                            |
+| `device_removed`      | Device has been removed from the Connected Account. Seam can no longer sync with this device.      |
+| `hub_disconnected`    | The hub that the device is connected to is offline. Seam is unable to sync updates to this device. |
 
 ### Specific Errors
 
@@ -101,10 +101,10 @@ Treat these errors as Specific Errors.
 See [Connected Account Error Types](../connected-accounts/#connected-account-error-types).
 {% endhint %}
 
-| Error Type                        | Description                                                                                                                                         |
-| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| missing_device_credentials        | Missing device credentials, please create a new Connect Webview to provide them.                                                                    |
-| ttlock_lock_not_paired_to_gateway | The lock is not paired with a Gateway, Seam will not be able to unlock or program access codes on the lock. Please add a Gateway to enable support. |
+| Error Type                          | Description                                                                                                                                         |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `missing_device_credentials`        | Missing device credentials, please create a new Connect Webview to provide them.                                                                    |
+| `ttlock_lock_not_paired_to_gateway` | The lock is not paired with a Gateway, Seam will not be able to unlock or program access codes on the lock. Please add a Gateway to enable support. |
 
 ## Device Warning Types
 
@@ -120,13 +120,13 @@ Warnings are returned in a list:
 ]
 ```
 
-| Warning Type                              | Description                                                                                                                                                                                                                   |
-| ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| device_has_flaky_connection               | Device has a flaky connection to the internet.                                                                                                                                                                                |
-| third_party_integration_detected          | We detected that another third-party service (for ex., Operto) is being used to manage this device. This may cause access codes that Seam sets to fail because the third-party service is making modifications to Seam codes. |
-| salto_office_mode                         | Lock is in Office Mode. Access Codes will not unlock doors. You can disable office mode in the Salto dashboard.                                                                                                               |
-| salto_privacy_mode                        | Lock is in Privacy Mode. Access Codes will not unlock doors. You can disable privacy mode by pressing the back of the lock.                                                                                                   |
-| ttlock_lock_gateway_unlocking_not_enabled | Please turn on the Remote Unlock feature in the lock settings to enable unlocks. This must be turned on from the mobile app while near the door lock.                                                                         |
+| Warning Type                                | Description                                                                                                                                                                                                                   |
+| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `device_has_flaky_connection`               | Device has a flaky connection to the internet.                                                                                                                                                                                |
+| `third_party_integration_detected`          | We detected that another third-party service (for ex., Operto) is being used to manage this device. This may cause access codes that Seam sets to fail because the third-party service is making modifications to Seam codes. |
+| `salto_office_mode`                         | Lock is in Office Mode. Access Codes will not unlock doors. You can disable office mode in the Salto dashboard.                                                                                                               |
+| `salto_privacy_mode`                        | Lock is in Privacy Mode. Access Codes will not unlock doors. You can disable privacy mode by pressing the back of the lock.                                                                                                   |
+| `ttlock_lock_gateway_unlocking_not_enabled` | Please turn on the Remote Unlock feature in the lock settings to enable unlocks. This must be turned on from the mobile app while near the door lock.                                                                         |
 
 ## Device Manufacturers
 

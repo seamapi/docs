@@ -44,6 +44,6 @@ Seam recommends adding error handling logic to you application for each generic 
 Seam may add more generic errors in the future, so your application should include a fallback case
 if it encounters an unknown generic error code.
 
-| Error Type             | Description                                                                                                                                                                                        |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `account_disconnected` | Account Disconnected, you may need to reconnect the account with a new webview. This may happen if the third-party provider triggered an access token to be revoked (e.g. after a password change) |
+| Error Type             | Description                                                                                                                                                                                                                                                  |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `account_disconnected` | Seam has lost connection to a connected account. This may happen if the third-party provider triggered an access token to be revoked (e.g., after a password change). The account owner needs to reconnect the connected account with a new connect webview. |
