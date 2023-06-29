@@ -35,6 +35,12 @@ This guide uses a Sandbox Workspace. Only virtual devices can be connected. If y
 
 To control your Yale lock via the Seam API, you must first authorize your Seam workspace against your Yale account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews.md): pre-built UX flows that walk you through authorizing your application to control your Yale lock.
 
+
+
+{% hint style="info" %}
+Note that `yale_access` or `yale_home` are now deprecated in favor of just`yale` which will work with whichever version of the Yale backend.&#x20;
+{% endhint %}
+
 #### Request a Connect Webview
 
 {% tabs %}
@@ -44,7 +50,7 @@ from seamapi import Seam
 
 seam = Seam()
 
-webview = seam.connect_webviews.create(accepted_providers=["yale_access"])
+webview = seam.connect_webviews.create(accepted_providers=["yale"])
 
 assert webview.login_successful is False
 
@@ -60,7 +66,7 @@ import Seam from 'seamapi'
 const seam = new Seam()
 
 const { connect_webview: connectWebview } = await seam.connectWebviews.create({
-  accepted_providers: ['yale_access'],
+  accepted_providers: ['yale'],
 })
 
 console.log(connectWebview.login_successful) // false
@@ -76,7 +82,7 @@ console.log(connectWebview.url)
 <strong>seam = Seam::Client.new(api_key: "MY_API_KEY")
 </strong>
 webview = seam.connect_webviews.create(
-  accepted_providers: ["yale_access"]
+  accepted_providers: ["yale"]
 )
 
 puts webview.login_successful # false
