@@ -5,6 +5,17 @@ description: >-
   window for this purpose.
 ---
 
+# Embedding a Webview in an Iframe
+
+You can use the HTML Iframe to display a connect webview url.
+
+```html
+<iframe
+  style="border: none;min-height: 600px;height: 100%;width: 100%"
+  src="<your connect_webview.url>"
+/>
+```
+
 # Messages
 
 When a webview is hosted in an iframe, it sends messages to the parent window hosting the iframe
