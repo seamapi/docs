@@ -1,3 +1,13 @@
+---
+description: Delete an Unmanaged Access Code of a Device using its Access Code ID
+---
+
+{% hint style="info" %}
+Not all providers support unmanaged access codes. The following providers do not support unmanaged access codes:
+
+**Kwikset**
+{% endhint %}
+
 # Delete an Unmanaged Access Code
 
 {% swagger method="delete" path="/access_codes/unmanaged/delete" baseUrl="https://connect.getseam.com" summary="Delete an Unmanaged Access Code" %}

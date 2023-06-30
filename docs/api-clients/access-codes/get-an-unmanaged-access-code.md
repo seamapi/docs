@@ -2,6 +2,12 @@
 description: Get an Unmanaged Access Code of a Device by its Access Code ID
 ---
 
+{% hint style="info" %}
+Not all providers support unmanaged access codes. The following providers do not support unmanaged access codes:
+
+**Kwikset**
+{% endhint %}
+
 # Get an Access Code
 
 {% swagger method="get" path="/access_codes/unmanaged/get" baseUrl="https://connect.getseam.com" summary="Get an Unmanaged Access Code" %}
