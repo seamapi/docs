@@ -2,6 +2,13 @@
 description: Convert an Unmanaged Access Code to Managed
 ---
 
+{% hint style="info" %}
+Not all providers support unmanaged access codes. The following providers do not support unmanaged access codes:
+
+**Kwikset**
+{% endhint %}
+
+
 An unmanaged access code has a limited set of operations that can be performed on it: view, delete, or convert to managed.
 Converting an unmanaged access code to a managed one allows it to be controlled with Seam, and have the full set of operations
 and lifecycle events available for it. Note that not all device providers support this operation.
