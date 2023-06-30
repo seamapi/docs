@@ -5,6 +5,12 @@ description: Get all Unmanaged Access Codes of a Device by its ID
 The [guide to migrating existing access codes](/docs/device-guides/migrating-existing-codes.md) provides an overview of the difference between
 managed and unmanaged access codes.
 
+{% hint style="info" %}
+Not all providers support unmanaged access codes. The following providers do not support unmanaged access codes:
+
+**Kwikset**
+{% endhint %}
+
 # List Unmanaged Access Codes
 
 {% swagger method="get" path="/access_codes/unmanaged/list" baseUrl="https://connect.getseam.com" summary="Get list of Unmanaged Access Codes" %}

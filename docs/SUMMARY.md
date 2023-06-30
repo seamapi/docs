@@ -58,6 +58,7 @@
 - [Reconnecting an Account](device-guides/reconnecting-an-account.md)
 - [Access Code Management for Hospitality](device-guides/implementing-robust-access-code-management-for-guests.md)
 - [Migrating Existing Access Codes](device-guides/migrating-existing-codes.md)
+- [Recommended Mitigations for Access Codes](device-guides/recommended-mitigations-for-access-codes.md)
 - [Rate Limits and Guardrails](device-guides/rate-limits-and-guardrails.md)
 
 ## 🌉 Seam Bridge
