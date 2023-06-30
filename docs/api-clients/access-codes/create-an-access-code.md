@@ -36,14 +36,18 @@ Whether native scheduling should be used for time-bound codes if supported by th
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="use_backup_access_code_pool" required="false" type="boolean" %}
-Whether to opt-in to Seam's [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes). Defaults to false. Can only be used with time_bound codes.
+Whether to opt-in to Seam's 
+
+[backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes)
+
+. Defaults to false. Can only be used with time_bound codes.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" required="true" %}
 Bearer <API_KEY>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="sync" type="boolean" %}
+{% swagger-parameter in="body" name="sync" type="boolean" required="false" %}
 Set this to true to receive the
 
 `access_code`
@@ -54,7 +58,6 @@ object in the
 {% endswagger-parameter %}
 
 {% swagger-response status="201: Created" description="" %}
-
 ```javascript
 {
 	"action_attempt": {
@@ -80,11 +83,9 @@ object in the
 	"ok": true
 }
 ```
-
 {% endswagger-response %}
 
 {% swagger-response status="400: Bad Request" description="" %}
-
 ```javascript
 {
   "error": {
@@ -103,11 +104,9 @@ object in the
   "ok": false
 }
 ```
-
 {% endswagger-response %}
 
 {% swagger-response status="404: Not Found" description="" %}
-
 ```javascript
 {
   "error": {
@@ -118,7 +117,6 @@ object in the
   "ok": false
 }
 ```
-
 {% endswagger-response %}
 {% endswagger %}
 
@@ -126,7 +124,6 @@ object in the
 
 {% tabs %}
 {% tab title="Ruby" %}
-
 ```ruby
 seam.access_codes.create(
   device_id: "123e4567-e89b-12d3-a456-426614174000",
@@ -140,11 +137,9 @@ seam.access_codes.create(
 #   created_at="2022-07-06T23:26:42.223Z"
 #   access_code_id="f19bc8cb-15be-43af-bb52-f1a417e0ff09">
 ```
-
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 seam.access_codes.create("a83690b2-2b70-409a-9a94-426699b84c97")
 
@@ -157,11 +152,9 @@ seam.access_codes.create("a83690b2-2b70-409a-9a94-426699b84c97")
 #   status='setting'
 # )
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 await seam.accessCodes.create({
   device_id: "a83690b2-2b70-409a-9a94-426699b84c97",
@@ -177,7 +170,6 @@ await seam.accessCodes.create({
 }
 */
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -185,7 +177,6 @@ await seam.accessCodes.create({
 
 {% tabs %}
 {% tab title="Ruby" %}
-
 ```ruby
 access_code = seam.access_codes.create(
   device_id: "123e4567-e89b-12d3-a456-426614174000",
@@ -204,11 +195,9 @@ puts access_code
 #   created_at="2022-07-06T23:26:42.223Z"
 #   access_code_id="f19bc8cb-15be-43af-bb52-f1a417e0ff09">
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 await seam.accessCodes.create({
   device_id: "898f45c1-2fa1-4515-93a6-860d71d3c33c",
@@ -230,11 +219,9 @@ await seam.accessCodes.create({
 }
 */
 ```
-
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 seam.access_codes.create(
 "898f45c1-2fa1-4515-93a6-860d71d3c33c",
@@ -254,21 +241,20 @@ seam.access_codes.create(
 #     status='unset'
 # )
 ```
-
 {% endtab %}
 {% endtabs %}
 
 ### Parameters
 
-| `device_id`                   | type: string                     | <p><br>ID of the Device</p>                                                                                                                                                                                                                                                |
-| ----------------------------- | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`                        | <p>type: string<br>Optional</p>  | Name of Access Code                                                                                                                                                                                                                                                        |
-| `starts_at`                   | <p>type: string<br>Optional</p>  | From when is the code valid                                                                                                                                                                                                                                                |
-| `ends_at`                     | <p>type: string<br>Optional</p>  | Code expiry                                                                                                                                                                                                                                                                |
-| `code`                        | <p>type: string<br>Optional</p>  | Access code of Device                                                                                                                                                                                                                                                      |
-| `use_backup_access_code_pool` | <p>type: boolean<br>Optional</p> | Use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. This allows you to use [/access_codes/pull_backup_access_code](https://docs.seam.co/latest/api-clients/access-codes/pull-backup-access-code) |
-| `common_code_key`             | <p>type: string<br>Optional</p>  | any two access codes with the same `common_code_key` are guaranteed to have the same code                                                                                                                                                                                  |
-| `prefer_native_scheduling`    | <p>type: string<br>Optional</p>  | Whether [native scheduling](../../core-concepts/access-codes.md/#native-scheduling) should be used for time-bound codes when supported by the provider (defaults to true)                                                                                                  |
+| `device_id`                   | type: string                     | <p><br>ID of the Device</p>                                                                                                                                                                                                                                                    |
+| ----------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `name`                        | <p>type: string<br>Optional</p>  | Name of Access Code                                                                                                                                                                                                                                                            |
+| `starts_at`                   | <p>type: string<br>Optional</p>  | From when is the code valid                                                                                                                                                                                                                                                    |
+| `ends_at`                     | <p>type: string<br>Optional</p>  | Code expiry                                                                                                                                                                                                                                                                    |
+| `code`                        | <p>type: string<br>Optional</p>  | Access code of Device                                                                                                                                                                                                                                                          |
+| `use_backup_access_code_pool` | <p>type: boolean<br>Optional</p> | Use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. This allows you to use [/access\_codes/pull\_backup\_access\_code](https://docs.seam.co/latest/api-clients/access-codes/pull-backup-access-code) |
+| `common_code_key`             | <p>type: string<br>Optional</p>  | any two access codes with the same `common_code_key` are guaranteed to have the same code                                                                                                                                                                                      |
+| `prefer_native_scheduling`    | <p>type: string<br>Optional</p>  | Whether [native scheduling](../../core-concepts/access-codes.md#native-scheduling) should be used for time-bound codes when supported by the provider (defaults to true)                                                                                                       |
 
 ### Response
 
@@ -278,7 +264,6 @@ This section shows the JSON response returned by the API. Since each language en
 
 {% tabs %}
 {% tab title="JSON" %}
-
 ```json
 {
   "action_attempt": {
@@ -304,6 +289,5 @@ This section shows the JSON response returned by the API. Since each language en
   "ok": true
 }
 ```
-
 {% endtab %}
 {% endtabs %}

@@ -4,16 +4,17 @@ description: Pull a backup access code from Seam's backup access code pool
 
 # Pull Backup Access Code
 
-If you've opted-in to Seam's backup access code pool when [creating an access code](https://docs.seam.co/latest/api-clients/access-codes/create-an-access-code), you can pull a backup access code from the pool at any time. These backup codes are guaranteed to work immediately
-and automatically programmed to be removed from the device after the the access code ends.
+If you've opted-in to Seam's backup access code pool when [creating an access code](https://docs.seam.co/latest/api-clients/access-codes/create-an-access-code), you can pull a backup access code from the pool at any time. These backup codes are guaranteed to work immediately and automatically programmed to be removed from the device after the the access code ends.
 
 ### Code Examples
 
 {% swagger method="post" path="/access_codes/pull_backup_access_code" baseUrl="https://connect.getseam.com" summary="Pull a Backup Access Code" %}
 {% swagger-description %}
-Pull a backup access code from Seam's backup access code pool for this access
-code. You can only pull backup access codes for `time_bound` codes. The pulled
-backup access code will be removed at the same time as the original access code.
+Pull a backup access code from Seam's backup access code pool for this access code. You can only pull backup access codes for 
+
+`time_bound`
+
+ codes. The pulled backup access code will be removed at the same time as the original access code.
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="access_code_id" required="true" %}
@@ -25,7 +26,6 @@ Bearer <API_KEY>
 {% endswagger-parameter %}
 
 {% swagger-response status="201: Created" description="" %}
-
 ```javascript
 {
 	"backup_access_code": {
@@ -47,11 +47,9 @@ Bearer <API_KEY>
 	"ok": true
 }
 ```
-
 {% endswagger-response %}
 
 {% swagger-response status="400: Bad Request" description="" %}
-
 ```javascript
 {
   "error": {
@@ -70,16 +68,13 @@ Bearer <API_KEY>
   "ok": false
 }
 ```
-
 {% endswagger-response %}
-
 {% endswagger %}
 
 #### Pulling a Backup Access Code
 
 {% tabs %}
 {% tab title="Ruby" %}
-
 ```ruby
 seam.access_codes.pull_backup_access_code(
   access_code_id: "123e4567-e89b-12d3-a456-426614174000",
@@ -96,11 +91,9 @@ seam.access_codes.pull_backup_access_code(
 #   created_at="2022-07-06T23:26:42.223Z"
 #   access_code_id="f19bc8cb-15be-43af-bb52-f1a417e0ff09">
 ```
-
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 seam.access_codes.pull_backup_access_code("a83690b2-2b70-409a-9a94-426699b84c97")
 
@@ -114,11 +107,9 @@ seam.access_codes.pull_backup_access_code("a83690b2-2b70-409a-9a94-426699b84c97"
 #   status='set'
 # )
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 await seam.accessCodes.pullBackupAccessCode({
   access_code_id: "a83690b2-2b70-409a-9a94-426699b84c97",
@@ -137,7 +128,6 @@ await seam.accessCodes.pullBackupAccessCode({
 }
 */
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -154,7 +144,6 @@ This section shows the JSON response returned by the API. Since each language en
 
 {% tabs %}
 {% tab title="JSON" %}
-
 ```json
 {
   "backup_access_code": {
@@ -176,6 +165,5 @@ This section shows the JSON response returned by the API. Since each language en
   "ok": true
 }
 ```
-
 {% endtab %}
 {% endtabs %}
