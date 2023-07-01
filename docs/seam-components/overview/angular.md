@@ -2,29 +2,23 @@
 description: Use Seam Components with Angular
 ---
 
-# Use Seam Components with Angular
+# Get started with Angular
 
 ## Overview
 
-This guide will show you how to use Seam Components inside an Angular application.
-Seam Components are implemented in React, but may be used anywhere as native web components.
+This guide will show you how to use Seam Components inside an Angular application. Seam Components are implemented in React, but may be used anywhere as native web components.
 
 ## 1 - Get a Publishable Key from the Seam Console
 
-To access the Seam API, you'll need a publishable key. This key
-identifies your application when making requests to Seam and is
-safe to embed in your frontend code.
+To access the Seam API, you'll need a publishable key. This key identifies your application when making requests to Seam and is safe to embed in your frontend code.
 
-Go to [console.seam.co](https://console.seam.co) and select
-"Client Sessions" from the sidebar. You should then see a
-"Publishable Key" that you can copy.
+Go to [console.seam.co](https://console.seam.co) and select "Client Sessions" from the sidebar. You should then see a "Publishable Key" that you can copy.
 
-<figure><img src="../.gitbook/assets/publishable-key-copy.png" alt="Publishable key" width="375"><figcaption></figcaption></figure>
-
+<figure><img src="../../.gitbook/assets/publishable-key-copy.png" alt="Publishable key" width="375"><figcaption></figcaption></figure>
 
 ## 2 - Install `@seamapi/react` in your Angular application
 
-Install the npm package 
+Install the npm package
 
 ```bash
 npm install --save @seamapi/react
@@ -106,12 +100,12 @@ Then use it in `app.component.html`:
 
 You should see a list of device models like what's shown below:
 
-<figure><img src="../.gitbook/assets/supported-device-table.png" alt="Supported devices" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/supported-device-table.png" alt="Supported devices" width="375"><figcaption></figcaption></figure>
 
 ## Next Steps
 
-- Start connecting devices using [Client Side Components](./get-started-with-client-side-components.md) or with [Client Session Tokens](./get-started-with-react-components-and-client-session-tokens.md).
-- View and play with other components in the [interactive storybook component library](https://react.seam.co/)
-- Check out some [Full Example Apps](https://github.com/seamapi/react/tree/main/examples)
+* Start connecting devices using [Client Side Components](get-started-with-client-side-components.md) or with [Client Session Tokens](get-started-with-react-components-and-client-session-tokens.md).
+* View and play with other components in the [interactive storybook component library](https://react.seam.co/)
+* Check out some [Full Example Apps](https://github.com/seamapi/react/tree/main/examples)
 
 If you have any questions or want to report an issue, email us at support@seam.co.

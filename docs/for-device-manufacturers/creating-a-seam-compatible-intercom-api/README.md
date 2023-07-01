@@ -21,5 +21,5 @@ You'll need to host these endpoints on a publicly accessible server. We recommen
 1. [Creating OAuth Endpoints](creating-oauth-endpoints.md)
 2. [Creating Intercom Endpoints](creating-intercom-crud-endpoints.md)
 3. [Creating Access Code Endpoints](creating-access-code-crud-endpoints.md)
-4. [Health Endpoint](creating-the-health-endpoint.md)
+4. [Health Endpoint](../creating-a-seam-compatible-door-locks-api/creating-the-health-endpoint.md)
 5. Example Project in Python (coming soon)

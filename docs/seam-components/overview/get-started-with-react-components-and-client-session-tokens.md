@@ -2,13 +2,13 @@
 description: Learn to use Seam Components with your React application
 ---
 
-# Get started with React and Client Session Tokens
+# Get started with React
 
 ## Overview
 
 Seam provides React components and hooks to connect and control many types of smart devices. This guide provides a rapid introduction to using React components with Client Sessions.
 
-For this guide, we expect you to have a **backend server** and a **client frontend react application**. If you want to integrate Seam using only a client without a backend, you'll need to [use a Publishable Key](./get-started-with-client-side-components.md).
+For this guide, we expect you to have a **backend server** and a **client frontend react application**. If you want to integrate Seam using only a client without a backend, you'll need to [use a Publishable Key](get-started-with-client-side-components.md).
 
 ### What is a Client Session Token?
 
@@ -165,7 +165,7 @@ export const App = () => {
 
 You should see a list of devices like what's shown below:
 
-<figure><img src="../.gitbook/assets/device-table.png" alt=""><figcaption><p>Device Table React Component</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/device-table.png" alt=""><figcaption><p>Device Table React Component</p></figcaption></figure>
 
 ## Next Steps
 
