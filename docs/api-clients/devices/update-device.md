@@ -61,7 +61,9 @@ Name of Property
 {% tab title="Python" %}
 
 ```python
-seam.devices.update(device=some_device, name="My Lock")
+seam.devices.update(
+  device=some_device, 
+  name="My Lock")
 ```
 
 {% endtab %}
@@ -69,7 +71,10 @@ seam.devices.update(device=some_device, name="My Lock")
 {% tab title="Javascript" %}
 
 ```typescript
-await seam.devices.update({ device_id: "64640ab4-fa90-4818-b455-1336b78c951a", name: "My Lock" });
+await seam.devices.update({ 
+  device_id: "64640ab4-fa90-4818-b455-1336b78c951a", 
+  name: "My Lock" 
+})
 ```
 
 {% endtab %}
@@ -89,9 +94,9 @@ seam.devices.update(
 
 ```php
 $seam->devices->update(
-      device_id: "64640ab4-fa90-4818-b455-1336b78c951a",
-      name: "My Lock"
-    )
+  device_id: "64640ab4-fa90-4818-b455-1336b78c951a",
+  name: "My Lock"
+)
 ```
 
 {% endtab %}
