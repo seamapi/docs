@@ -36,6 +36,7 @@
 * [Get started with Minut Sensors](device-guides/get-started-with-minut-sensors.md)
 * [Get started with 2N Intercoms](device-guides/get-started-with-2n-intercoms.md)
 * [Get started with SmartThings Hubs + Smart Locks](device-guides/get-started-with-smartthings-hubs-+-smart-locks.md)
+* [Hubitat Elevation Hub + Smart Locks](device-guides/hubitat-elevation-hub-+-smart-locks.md)
 * [Get started with TTLock Devices](device-guides/get-started-with-ttlock-devices.md)
 * [Get started with NoiseAware Sensors](device-guides/get-started-with-noiseaware-sensors.md)
 * [Get started with Igloohome Locks](device-guides/get-started-with-igloo-locks.md)
