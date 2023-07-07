@@ -4,7 +4,7 @@ description: Guide for using Hubitat Elevation Hubs with Seam
 
 # Hubitat Elevation Hub
 
-This integration uses [Hubitat’s](https://github.com/jason0x43/hacs-hubitat/blob/master/hubitat.com) [Maker API](https://docs.hubitat.com/index.php?title=Hubitat%E2%84%A2\_Maker\_API) to make devices connected to a Hubitat Hub available for use with Seam.
+This integration uses [Hubitat’s Maker API](https://docs2.hubitat.com/en/apps/maker-api) to make devices connected to a Hubitat Hub available for use with Seam.
 
 ## Supported Devices
 
