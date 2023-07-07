@@ -30,7 +30,7 @@ This prevents other people on the same network as that of the hub from being abl
 * From the Hubitat Hub dashboard, click on "Settings" in the left navigation
 * In the "Admin Settings" section, click on "Hub Login Security".
 * Click on "Add User"
-* Fill in the form with a username, email, and password, and make sure to save this information somewhere. You'll be using these credentials to log in to your dashboard.
+* Fill in the form with a username, email, and password, and make sure to save this information somewhere. You'll be using these credentials to log in to your dashboard in the future.
 
 ### 4.  Adding the Maker API App for Seam access
 
