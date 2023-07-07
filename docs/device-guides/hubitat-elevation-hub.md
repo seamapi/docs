@@ -16,7 +16,7 @@ The following device types are currently supported:
 
 ### 1. Access the Hubitat Hub Dashboard
 
-* For instructions on how to get access to the Hubitat Hub's Dashboard, [visit this link](https://docs2.hubitat.com/getting-started/registration-and-setup).
+* [Follow these instructions to get access to the Hubitat Hub's Dashboard.](https://docs2.hubitat.com/getting-started/registration-and-setup)
 
 ### 2. Configure the "Type" of the Device
 
@@ -51,6 +51,19 @@ Use the Cloud URL you collected in the previous step to connect your account.
 
 ## Where to Order
 
-You can purchase Hubitat Hubs from their website. They offer Zigbee and Z-Wave hubs that work across most of the world.
+You can purchase Hubitat Hubs from [their website](https://hubitat.com/products). They offer Zigbee and Z-Wave hubs that work in the following regions (with the associated Z-Wave frequencies):
+
+* North America and United States (908.4 MHz)
+* Europe (868.4 MHz)
+* United Kingdom / Ireland (868.4 MHz)
+* Australia, New Zealand (921.4/919.8 MHz)
+* Korea/Thailand (920.9, 921.7, 923.1)
+* Malaysia (919.8, 921.4)
+* India (865.2)
+* Israel (916)
+* Japan (922.5, 923.9, 926.3)
+* Russia (869.0)
+* Hong Kong (919.8)
+* China (868.4)
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Hubitat Hub Store</strong></td><td></td><td><a href="https://hubitat.com/products">https://hubitat.com/products</a></td><td><a href="../.gitbook/assets/61-5mM-Np1L._AC_SL1500_.jpg">61-5mM-Np1L._AC_SL1500_.jpg</a></td></tr></tbody></table>
