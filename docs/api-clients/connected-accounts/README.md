@@ -58,7 +58,7 @@ Warnings are returned in a list:
   {
     "warning_code": "devices_connected_to_other_account",
     "message": "Some devices on this account are already connected to another account.",
-    "existing_device_ids": [
+    "device_ids": [
       '8e9f2768-18d9-4ac2-845a-2£6fb507ea1f',
       '554acc7a-3cc8-4690-9a5e-b5c863295ee1',
       '06bfa00f-50c5-46ba-853-6£855c11632'
@@ -70,4 +70,4 @@ Warnings are returned in a list:
 
 | Warning Type                                | Description                                                                                                                                                                                                                   |
 | ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `devices_connected_to_other_account`        | This warning indicates that there are devices linked to the current account that are already associated with a different account. It is important to note that these devices cannot be concurrently connected to multiple accounts. To resolve this issue, you may need to disassociate the devices from the other account before connecting them to the current account. Please ensure that the device IDs mentioned on `existing_device_ids` are properly managed and linked to the intended account to avoid any connectivity conflicts.  |
+| `devices_connected_to_other_account`        | This warning indicates that there are devices linked to the current account that are already associated with a different account. It is important to note that these devices cannot be concurrently connected to multiple accounts. To resolve this issue, you may need to disassociate the devices from the other account before connecting them to the current account. Please ensure that the device IDs mentioned on `device_ids` are properly managed and linked to the intended account to avoid any connectivity conflicts.  |
