@@ -9,7 +9,7 @@ description: List all Connect Webviews on the Account
 
 {% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" %}
+{% swagger-parameter in="header" name="Authorization" required="false" %}
 Bearer <API_KEY>
 {% endswagger-parameter %}
 
@@ -105,9 +105,14 @@ seam.connect_webviews.list()
 # ]
 ```
 {% endtab %}
+
+{% tab title="PHP" %}
+```php
+$webviews = $seam->connect_webviews->list();
+echo json_encode($webviews);
+```
+{% endtab %}
 {% endtabs %}
-
-
 
 ### Parameters
 

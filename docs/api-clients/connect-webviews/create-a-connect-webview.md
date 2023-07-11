@@ -7,7 +7,7 @@ description: >-
 
 # Create a Connect Webview
 
-![ An example of what the webview will look like to your user:](<../../.gitbook/assets/image (12).png>)
+![An example of what the webview will look like to your user:](<../../.gitbook/assets/image (12).png>)
 
 {% swagger baseUrl="https://connect.getseam.com" method="post" path="/connect_webviews/create" summary="Create a connect_webview" %}
 {% swagger-description %}
@@ -15,27 +15,23 @@ description: >-
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="accepted_providers" required="true" type="string[]" %}
-Array of accepted 
+Array of accepted
 
 **device provider keys**
 
-. See 
+. See
 
 [Device Provider Keys](create-a-connect-webview.md#device-providers)
-
-
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="custom_redirect_url" %}
+{% swagger-parameter in="body" name="custom_redirect_url" required="false" %}
 URL to redirect user to after provider login is complete
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="custom_redirect_failure_url" type="type: string Optional" %}
-Alternative URL to redirect the user on error. If this is not set, falls back to 
+{% swagger-parameter in="body" name="custom_redirect_failure_url" type="type: string Optional" required="false" %}
+Alternative URL to redirect the user on error. If this is not set, falls back to
 
 `custom_redirect_url`
-
- 
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="device_selection_mode" required="false" %}
@@ -95,45 +91,6 @@ Alternative URL to redirect the user on error. If this is not set, falls back to
 ### Code Example
 
 {% tabs %}
-{% tab title="Ruby" %}
-```ruby
-seam.connect_webviews.create(
-  accepted_providers: ["smartthings"]
-)
-
-# <Seam::ConnectWebview:0x006a950
-#   url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=123e4567-e89b-12d3-a456-426614174000&auth_token=q123DASDASKd23DADdad29"
-#   status="pending"         
-#   created_at="2022-07-06T23:20:09.785729+00:00"
-#   workspace_id="123e4567-e89b-12d3-a456-426614174000"
-#   accepted_devices=[]
-#   login_successful=false
-#   accepted_providers=["smartthings"]
-#   any_device_allowed=nil
-#   connect_webview_id="123e4567-e89b-12d3-a456-426614174000"
-#   custom_redirect_url=nil
-#   custom_redirect_failure_url=nil
-#   any_provider_allowed=false
-#   device_selection_mode="none">
-```
-{% endtab %}
-
-{% tab title="Python" %}
-```python
-seam.connect_webviews.create(['schlage'])
-
-# ConnectWebview(
-#   connect_webview_id='61c2877a-81e0-4474-ba8d-f96950dc095f',
-#   status='pending',
-#   url='https://connect.getseam.com/connect_webviews/viewconnect_webview_id=61c277a-81e0-4474-ba8d-f96950dc095f&auth_token=Codur8hWGnxJBv7rgoEg2mBDbYY4xnMXh',
-#   login_successful=False,
-#   custom_redirect_url=NOne,
-#   custom_redirect_failure_url=None,
-#   connected_account_id=None
-# )
-```
-{% endtab %}
-
 {% tab title="Javascript" %}
 ```javascript
 await seam.connectWebviews.create({
@@ -157,6 +114,75 @@ await seam.connectWebviews.create({
 }*/
 ```
 {% endtab %}
+
+{% tab title="Python" %}
+```python
+seam.connect_webviews.create(['schlage'])
+
+# ConnectWebview(
+#   connect_webview_id='61c2877a-81e0-4474-ba8d-f96950dc095f',
+#   status='pending',
+#   url='https://connect.getseam.com/connect_webviews/viewconnect_webview_id=61c277a-81e0-4474-ba8d-f96950dc095f&auth_token=Codur8hWGnxJBv7rgoEg2mBDbYY4xnMXh',
+#   login_successful=False,
+#   custom_redirect_url=NOne,
+#   custom_redirect_failure_url=None,
+#   connected_account_id=None
+# )
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```ruby
+seam.connect_webviews.create(
+  accepted_providers: ["smartthings"]
+)
+
+# <Seam::ConnectWebview:0x006a950
+#   url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=123e4567-e89b-12d3-a456-426614174000&auth_token=q123DASDASKd23DADdad29"
+#   status="pending"         
+#   created_at="2022-07-06T23:20:09.785729+00:00"
+#   workspace_id="123e4567-e89b-12d3-a456-426614174000"
+#   accepted_devices=[]
+#   login_successful=false
+#   accepted_providers=["smartthings"]
+#   any_device_allowed=nil
+#   connect_webview_id="123e4567-e89b-12d3-a456-426614174000"
+#   custom_redirect_url=nil
+#   custom_redirect_failure_url=nil
+#   any_provider_allowed=false
+#   device_selection_mode="none">
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+```php
+use Seam\SeamClient;
+
+$seam = new SeamClient("YOUR_API_KEY");
+
+$webview = $seam->connect_webviews->create(
+  accepted_providers: ["august"]
+);
+
+echo json_encode($webview)
+/*
+{
+  connect_webview_id: "14db0efd-50ae-45ef-9042-7f95c09082c2",
+  custom_redirect_url: null,
+  url: "https://connect.getseam.com/v1/connect_webviews/view?connect_webview_id=14db0efd-50ae-45ef-9042-7f95c09082c2&auth_token=N4ZJau88guo5adHyBAPLsYdiCdoQvxpDb",
+  workspace_id: "ab804f5a-7dd2-42c8-8d09-0beff4f795eb",
+  device_selection_mode: "none",
+  accepted_providers: ["august"],
+  accepted_devices: [],
+  any_provider_allowed: false,
+  any_device_allowed: null,
+  created_at: "2022-02-16T17:45:10.523Z",
+  login_successful: false,
+  status: "pending"
+}
+*/
+```
+{% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
@@ -165,11 +191,11 @@ await seam.connectWebviews.create({
 
 ### Parameters
 
-| `accepted_providers`          | type: string\[]                                         | <p><br>Array of accepted <strong>device provider keys</strong>. See <a href="./#device-provider-keys">Device Provider Keys</a></p>    |
-| ----------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| `custom_redirect_url`         | <p>type: string<br>Optional</p>                         | URL to redirect user to after provider login is complete                                                                              |
-| `custom_redirect_failure_url` | <p>type: string</p><p>Optional</p>                      | Alternative URL to redirect the user on error. If this is not set, falls back to `custom_redirect_url`                                |
-| `device_selection_mode`       | <p>type: 'none' | 'multiple' | 'single'<br>Optional</p> | <p>Can the user select all, multiple or just a single device in the connect webview. </p><p><em>This feature is coming soon!</em></p> |
+| `accepted_providers`          | type: string\[]                    | <p><br>Array of accepted <strong>device provider keys</strong>. See <a href="./#device-provider-keys">Device Provider Keys</a></p> |
+| ----------------------------- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `custom_redirect_url`         | <p>type: string<br>Optional</p>    | URL to redirect user to after provider login is complete                                                                           |
+| `custom_redirect_failure_url` | <p>type: string</p><p>Optional</p> | Alternative URL to redirect the user on error. If this is not set, falls back to `custom_redirect_url`                             |
+| `device_selection_mode`       | type: 'none'                       | 'multiple'                                                                                                                         |
 
 ### Response
 

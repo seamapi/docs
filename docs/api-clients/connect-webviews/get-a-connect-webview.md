@@ -140,9 +140,14 @@ seam.connect_webviews.get("123e4567-e89b-12d3-a456-426614174000")
 #   device_selection_mode="none">
 ```
 {% endtab %}
+
+{% tab title="PHP" %}
+```php
+$webview = $seam->connect_webviews->get($webview->id);
+echo json_encode($webview);
+```
+{% endtab %}
 {% endtabs %}
-
-
 
 ### Parameters
 
