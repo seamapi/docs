@@ -28,7 +28,7 @@ To allow a user to sign in, you need to create a `connect_webview` . After creat
 | **`login_successful`**            | boolean          | Whether the user logged in successfully using the webview                                                                          |
 | **`connected_account_id`**        | uuid             | ID of the Connected Account that was created after the user successfully logged in                                                 |
 
-### Accepted Provider Keys
+### Accepted Provider Category Keys
 
 | key      | Description                                         |
 | -------- | --------------------------------------------------- |
