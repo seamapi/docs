@@ -109,14 +109,14 @@ class SeamController extends Controller
     public function getSeamClientSession()
     {
       // Handle authentication logic.
-      $userId = request()->userId
+      $userId = request()->userId;
 
       // Pull any connected accounts associated with this user.
       // If the user will create connect webviews from the client using the client session token,
       // e.g., via the <ConnectAccountButton /> component,
       // ensure your application associates those connected account ids here,
       // otherwise the client will not see devices connected from those accounts.
-      $accountsAssociatedWithUser = array(["seamConnectedAccountId" => "..."])
+      $accountsAssociatedWithUser = array(["seamConnectedAccountId" => "..."]);
 
         $data = [
             // Get or create the client session for the user.
