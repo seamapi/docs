@@ -191,11 +191,12 @@ echo json_encode($webview)
 
 ### Parameters
 
-| `accepted_providers`          | type: string\[]                    | <p><br>Array of accepted <strong>device provider keys</strong>. See <a href="./#device-provider-keys">Device Provider Keys</a></p> |
-| ----------------------------- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `custom_redirect_url`         | <p>type: string<br>Optional</p>    | URL to redirect user to after provider login is complete                                                                           |
-| `custom_redirect_failure_url` | <p>type: string</p><p>Optional</p> | Alternative URL to redirect the user on error. If this is not set, falls back to `custom_redirect_url`                             |
-| `device_selection_mode`       | type: 'none'                       | 'multiple'                                                                                                                         |
+| `provider_category`           | type: string                       | Specifies the category of providers to allow (e.g. "stable"). See [Provider Category Keys](./#accepted-provider-keys).                                                                                           |
+| ----------------------------- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `accepted_providers`          | type: string\[]                    | Array of accepted **device provider keys** and an alternative to `provider_category`. This lets you explicitly specified accepted providers (e.g. "august"). See [Device Provider Keys](./#device-provider-keys) |
+| `custom_redirect_url`         | <p>type: string<br>Optional</p>    | URL to redirect user to after provider login is complete                                                                                                                                                         |
+| `custom_redirect_failure_url` | <p>type: string</p><p>Optional</p> | Alternative URL to redirect the user on error. If this is not set, falls back to `custom_redirect_url`                                                                                                           |
+| `device_selection_mode`       | type: 'none'                       | 'multiple'                                                                                                                                                                                                       |
 
 ### Response
 
