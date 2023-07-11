@@ -48,3 +48,26 @@ if it encounters an unknown generic error code.
 | Error Type             | Description                                                                                                                                                                                                                                                  |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `account_disconnected` | Seam has lost connection to a connected account. This may happen if the third-party provider triggered an access token to be revoked (e.g., after a password change). The account owner needs to reconnect the connected account with a new connect webview. |
+
+## Connected Account Warning Types
+
+Warnings are returned in a list:
+
+```
+"warnings": [
+  {
+    "warning_code": "devices_connected_to_other_account",
+    "message": "Some devices on this account are already connected to another account.",
+    "device_ids": [
+      '8e9f2768-18d9-4ac2-845a-2£6fb507ea1f',
+      '554acc7a-3cc8-4690-9a5e-b5c863295ee1',
+      '06bfa00f-50c5-46ba-853-6£855c11632'
+    ],
+    "created_at": "2023-06-27T22:50:19.440Z
+  }
+]
+```
+
+| Warning Type                                | Description                                                                                                                                                                                                                   |
+| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `devices_connected_to_other_account`        | This warning indicates that there are devices linked to the current account that are already associated with a different account. It is important to note that these devices cannot be concurrently connected to multiple accounts. To resolve this issue, you may need to disassociate the devices from the other account before connecting them to the current account. Please ensure that the device IDs mentioned on `device_ids` are properly managed and linked to the intended account to avoid any connectivity conflicts.  |
