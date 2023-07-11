@@ -77,8 +77,6 @@ export default (req, res) => {
 
   const seam = new Seam()
 
-  const clientSession = await seam.clientSessions.list({ user_identifier_key: userId })
-
   // Get or create the client session for the user.
   // Pass an array of connected_account_ids, connect_webview_ids or both.
   // If the client session already exists, Seam will update the allowed connected_account_ids
