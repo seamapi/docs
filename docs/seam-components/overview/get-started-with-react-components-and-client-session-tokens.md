@@ -6,9 +6,13 @@ description: Learn to use Seam Components with your React application
 
 ## Overview
 
+Seam Components may be used on any website, in any web app, and with any framework.
+
+For this guide, we expect you to have a **backend server** and a **client frontend react application**. 
+If you want to integrate Seam using only a client without a backend, you'll need to [use a Publishable Key](get-started-with-client-side-components.md).
+
 Seam provides React components and hooks to connect and control many types of smart devices. This guide provides a rapid introduction to using React components with Client Sessions.
 
-For this guide, we expect you to have a **backend server** and a **client frontend react application**. If you want to integrate Seam using only a client without a backend, you'll need to [use a Publishable Key](get-started-with-client-side-components.md).
 
 ### What is a Client Session Token?
 
@@ -45,10 +49,15 @@ yarn add @seamapi/react
 
 We'll start by writing some server code that returns a client session. There are a lot of ways to do this depending on your server framework:
 
-* Create an endpoint such as `/api/seam/get_client_session` and call it from your frontend app
+* Create an endpoint such as `/api/seam/get_client_session` and call it from your frontend app.
 * Inject the client session token in your html if you're using an HTML templating engine.
 
 For this guide, we'll assume you're creating an endpoint that will return a client session token. This is often appropriate for Single Page Applications.
+
+{% hint style="info" %}
+For most applications, the `user_identifier_key` below should be be your internal user id.
+For a detailed explanation, see [selecting a user Identifier key](./get-started-with-client-side-components.md#3-select-a-user-identifier-key).
+{% endhint %}
 
 {% tabs %}
 {% tab title="Javascript/NextJS API" %}
@@ -56,17 +65,24 @@ For this guide, we'll assume you're creating an endpoint that will return a clie
 import { Seam } from "seamapi"
 
 export default (req, res) => {
-  // Do authentication logic
+  // Handle authentication logic.
   const userId = req.auth.userId
 
-  // Pull any accounts associated with this user
-  // You can also use connect webview ids, or just pass an empty array if you'd
-  // like the user to make the connect webviews themselves in the frontend!
+  // Pull any connected accounts associated with this user.
+  // If the user will create connect webviews from the client using the client session token,
+  // e.g., via the <ConnectAccountButton /> component,
+  // ensure your application associates those connected account ids here,
+  // otherwise the client will not see devices connected from those accounts.
   const accountsAssociatedWithUser = [{ seamConnectedAccountId: "..." }]
 
   const seam = new Seam()
 
-  const clientSession = await seam.clientSessions.create({
+  // Get or create the client session for the user.
+  // Pass an array of connected_account_ids, connect_webview_ids or both.
+  // If the client session already exists, Seam will update the allowed connected_account_ids
+  // and connect_webview_ids to the latest value provided here.
+  const clientSession = await seam.clientSessions.getOrCreate({
+    user_identifier_key: userId,
     connected_account_ids: accountsAssociatedWithUser.map(
       (acc) => acc.seamConnectedAccountId
     ),
@@ -92,11 +108,23 @@ class SeamController extends Controller
 {
     public function getSeamClientSession()
     {
-        // Assuming you have some data to return
+      // Handle authentication logic.
+      $userId = request()->userId;
+
+      // Pull any connected accounts associated with this user.
+      // If the user will create connect webviews from the client using the client session token,
+      // e.g., via the <ConnectAccountButton /> component,
+      // ensure your application associates those connected account ids here,
+      // otherwise the client will not see devices connected from those accounts.
+      $accountsAssociatedWithUser = array(["seamConnectedAccountId" => "..."]);
+
         $data = [
-            'seamClientSession' => $seam->client_sessions->create(
-              // pull any connected accounts the current user has access to
-              connected_account_ids: ["..."]
+            // Get or create the client session for the user.
+            // Pass an array of connected_account_ids, connect_webview_ids or both.
+            // If the client session already exists, Seam will update the allowed connected_account_ids
+            // and connect_webview_ids to the latest value provided here.
+            'seamClientSession' => $seam->client_sessions->get_or_create(
+              connected_account_ids: array_column($accountsAssociatedWithUser, 'seamConnectedAccountId');
             )
         ];
 
