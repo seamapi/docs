@@ -22,7 +22,7 @@ Provide guidance on identifying, understanding, and resolving errors. ]
 
 ## How would a user incorporate this feature onto their Dashboard?
 
-[ If applicable, let's add some guidelines on addinig this to the
+[ If applicable, let's add some guidelines on adding this to the
 dashboard. We will likely include information about the relevant Seam
 Components here. ]
 
