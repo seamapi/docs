@@ -16,7 +16,7 @@ Seam Connect Webviews will handle credential validation, multi-factor authentica
 
 The **Connect Webview flow** begins when your user wants to connect their smart device account to your app.
 
-1. &#x20;Call [/connect\_webviews/create](../api-clients/connect-webviews/create-a-connect-webview.md) to create a connect\_webview.
+1. Call [/connect\_webviews/create](../api-clients/connect-webviews/create-a-connect-webview.md) to create a connect\_webview.
 
 <pre class="language-json"><code class="lang-json"><strong>{
 </strong>  "connect_webview_id": "14db0efd-50ae-45ef-9042-7f95c09082c2",
@@ -35,16 +35,16 @@ The **Connect Webview flow** begins when your user wants to connect their smart 
 }
 </code></pre>
 
-2\.  Open the Connect Webview for your user using the  `url` provided by the previous response.
+2\. Open the Connect Webview for your user using the `url` provided by the previous response.
 
-3\.  The user will be guided through the following steps:
+3\. The user will be guided through the following steps:
 
 * Select their device brand.
 * Enter their credentials.
 * Complete 2-factor authorization (if enabled).
 * Review request device permissions by your app.
 
-4\.  Once the user completes the Webview, the application will redirect to the `custom_redirect_url` (if provided). The status of the Connect Webview will also be updated to "Authorized". The devices in the smart device account that was connected will now show up on your Workspace.
+4\. Once the user completes the Webview, the application will redirect to the `custom_redirect_url` (if provided). The status of the Connect Webview will also be updated to "Authorized". The devices in the smart device account that was connected will now show up on your Workspace.
 
 {% hint style="info" %}
 Note that if your user wishes to link additional devices from different brands, you will need to create a new Connect Webview for each device account you want to connect.
@@ -52,11 +52,6 @@ Note that if your user wishes to link additional devices from different brands, 
 
 ## Customizing Connect Webviews
 
-You can customize your application name and logo that is displayed in the Connect Webview you share with your users. To do that, access the **Webviews** tab on the left side of the [Seam developer Dashboard](https://dashboard.seam.co).&#x20;
+You can customize your application name and logo that is displayed in the Connect Webview you share with your users. To do that, access the **Webviews** tab on the left side of the [Seam developer Dashboard](https://console.seam.co/).
 
 <figure><img src="../.gitbook/assets/Screen Shot 2022-11-02 at 12.27.29 AM.png" alt=""><figcaption><p>Webview Customization section on the left side (see purple outline)</p></figcaption></figure>
-
-
-
-
-
