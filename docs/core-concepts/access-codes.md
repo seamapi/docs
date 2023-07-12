@@ -7,6 +7,8 @@ description: >-
 
 # Locks - Access Codes
 
+<figure><img src="../.gitbook/assets/code_unlock.gif" alt=""><figcaption></figcaption></figure>
+
 ## What is an Access Code?
 
 An Access Code is a code used for a keypad or pinpad device. You can tell Seam to create an Access Code on a device, when it should be set, and optionally the code you would like to set. Seam will then make sure that the code is present on the device at the specified time (or, for ongoing codes, make sure it is set until you remove it)
