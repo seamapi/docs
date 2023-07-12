@@ -34,19 +34,19 @@ The backup access code will be removed from the device whenever the original acc
 
 ## Troubleshooting Steps
 
-When a backup access code pool is enabled on a device, there are a few new possible warnings and errors.
+When a backup access code pool is enabled on a device, you should monitor for these warnings and errors.
 
 ### Warning: `many_active_backup_codes`
 
-This warning indicates that there are multiple active backup access codes, which likely indicates an issue with device. You should inspect any other warnings or errors on the device to determine why your system has been relying on backup access codes. One common cause could be that the device is offline (will appear as a `device_disconnected` error).
+There are multiple active backup access codes, which likely indicates an issue with the device. You should inspect any other warnings or errors on the device to determine why your system is relying on backup access codes. One common cause is that the device is offline, which will appear as a `device_disconnected` error.
 
 ### Warning: `partial_backup_access_code_pool`
 
-This warning indicates that we were unable to fully populate the backup access code pool. This could indicate a device connection issue or an issue on the device itself (e.g. there are no remaining code slots).
+Seam was unable to fully populate the backup access code pool. This could indicate a device connection issue or an issue on the device itself, e.g., there are no remaining code slots.
 
 ### Error: `empty_backup_access_code_pool`
 
-This error indicates that the backup access code pool is empty. It can occur on a device when:
+The backup access code pool is empty. It can occur on a device when:
 
 - first enabling the backup access code pool
 - after the backup access code pool has been used and exhausted
