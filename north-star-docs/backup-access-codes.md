@@ -4,7 +4,7 @@
 
 Scheduled `time_bound` access codes can fail to program for a variety of reasons outside of Seam's control. When creating scheduled codes on your users' behalf, **it's critical** to have a backup access code available to ensure a good user experience.
 
-You could manually handle backup codes yourself, but Seam provides a battle-tested backup access code system that's easy to use. When this feature is enabled on a device, Seam maintains a pool of backup access codes on the device and automatically creates new backup access codes when necessary.
+You could manually handle backup access codes yourself, but Seam provides a battle-tested backup access code system that's easy to use. When this feature is enabled on a device, Seam maintains a pool of backup access codes on the device and automatically creates new backup access codes when necessary.
 
 ## Basic Implementation
 
@@ -19,16 +19,14 @@ When you receive the `failed_to_set_on_device` access code error for a scheduled
 
 1. Fetch the access code from `/access_codes/get` and inspect the `is_backup_access_code_available` property to determine if you can use a backup access code.
 2. If `is_backup_access_code_available` is `true`, call `POST /access_codes/pull_backup_access_code` with the access code ID to retrieve a backup access code. This will:
-- mark the backup code as pulled (remove it from the pool)
-- associate the backup code with the original access code (future calls to `/access_codes/pull_backup_access_code` will return the same backup access code)
-- update the backup code to have the same `ends_at` as the original access code
-
-Seam will automatically attempt to refill the backup pool after a backup access code is pulled.
-
-The backup access code will be removed from the device whenever the original access code was set to end.
+- mark the backup access code as pulled (remove it from the pool)
+- associate the backup access code with the original access code (future calls to `/access_codes/pull_backup_access_code` will return the same backup access code)
+- update the backup access code to have the same `ends_at` as the original access code
 
 ## Notes
 
+- Seam will automatically attempt to refill the backup pool after a backup access code is pulled.
+- The backup access code will be removed from the device whenever the original access code was set to end.
 - When a device is unmanaged, any backup access codes are removed.
 - Once the backup access code pool is enabled, it cannot be disabled.
 
@@ -51,7 +49,7 @@ The backup access code pool is empty. It can occur on a device when:
 - first enabling the backup access code pool
 - after the backup access code pool has been used and exhausted
 
-In both cases, a device issue is preventing us from filling the pool. You should inspect any other warnings or errors on the device to determine the root cause.
+In both cases, a device issue is preventing Seam from filling the pool. You should inspect any other warnings or errors on the device to determine the root cause.
 
 ## Configuring features via the Console
 
