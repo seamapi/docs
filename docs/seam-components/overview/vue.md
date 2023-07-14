@@ -92,6 +92,9 @@ module.exports = {
 }
 ```
 
+{% endtab %}
+{% endtabs %}
+
 ## 4 - Use the component
 
 Use the components in `App.vue`:
