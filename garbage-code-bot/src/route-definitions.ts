@@ -7,7 +7,7 @@ export const useless_lines = [
 ]
 
 // TODO import this from live connect
-export const routeDefinitions = `
+export const route_definitions = `
 export interface Routes {
   '/access_codes/create': {
     route: '/access_codes/create'
