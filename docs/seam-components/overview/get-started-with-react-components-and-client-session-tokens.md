@@ -197,6 +197,7 @@ You should see a list of devices like what's shown below:
 
 ## Next Steps
 
+* [Minimal sample apps](https://github.com/seamapi/seam-components-sample-apps) running Seam Components in various frameworks.
 * View and play with components in the [interactive storybook component library](https://react.seam.co/)
 * Check out some [Full Example Apps](https://github.com/seamapi/react/tree/main/examples)
 

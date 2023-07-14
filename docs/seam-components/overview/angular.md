@@ -104,6 +104,7 @@ You should see a list of device models like what's shown below:
 
 ## Next Steps
 
+* [Minimal sample app](https://github.com/seamapi/seam-components-sample-apps/tree/main/angular-web-components) running Seam Web Components in Angular.
 * Start connecting devices using [Client Side Components](get-started-with-client-side-components.md) or with [Client Session Tokens](get-started-with-react-components-and-client-session-tokens.md).
 * View and play with other components in the [interactive storybook component library](https://react.seam.co/)
 * Check out some [Full Example Apps](https://github.com/seamapi/react/tree/main/examples)
