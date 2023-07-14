@@ -1,2 +1,5 @@
 export * from "./javascript"
 export * from "./general"
+export * from "./python"
+export * from "./ruby"
+export * from "./php"

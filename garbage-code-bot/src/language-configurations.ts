@@ -1,4 +1,9 @@
-import { javascriptTaskGuidelines } from "./task-guidelines"
+import {
+  javascriptTaskGuidelines,
+  phpTaskGuidelines,
+  pythonTaskGuidelines,
+  rubyTaskGuidelines,
+} from "./task-guidelines"
 
 export type LanguageConfiguration = {
   language: string
@@ -7,25 +12,25 @@ export type LanguageConfiguration = {
 }
 
 export const languageConfigurations = [
-  {
-    language: "javascript",
-    title: "Javascript",
-    languageGuidelines: javascriptTaskGuidelines,
-  },
-  {
-    language: "python",
-    title: "Python",
-    languageGuidelines: "",
-  },
-  {
-    language: "ruby",
-    title: "Ruby",
-    languageGuidelines: "",
-  },
+  // {
+  //   language: "javascript",
+  //   title: "Javascript",
+  //   languageGuidelines: javascriptTaskGuidelines,
+  // },
+  // {
+  //   language: "python",
+  //   title: "Python",
+  //   languageGuidelines: pythonTaskGuidelines,
+  // },
+  // {
+  //   language: "ruby",
+  //   title: "Ruby",
+  //   languageGuidelines: rubyTaskGuidelines,
+  // },
   {
     language: "php",
     title: "PHP",
-    languageGuidelines: "",
+    languageGuidelines: phpTaskGuidelines,
   },
 ] satisfies Array<LanguageConfiguration>
 

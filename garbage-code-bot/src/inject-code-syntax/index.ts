@@ -54,11 +54,15 @@ export async function getCodeInjects(filePath: string): Promise<CodeInject[]> {
 }
 
 // Inject code
-export async function injectCode(
-  filePath: string,
-  injectIndex: number,
-  code: { [key: string]: string }
-): Promise<void> {
+export async function injectCode({
+  filePath,
+  injectIndex,
+  codeSnippets,
+}: {
+  filePath: string
+  injectIndex: number
+  codeSnippets: { [key: string]: string }
+}): Promise<void> {
   const codeInjects = await getCodeInjects(filePath)
 
   if (injectIndex >= codeInjects.length) {
@@ -71,9 +75,9 @@ export async function injectCode(
 
   let injectContent = "{% tabs %}\n"
 
-  for (let [lang, snippet] of Object.entries(code)) {
+  for (let [lang, snippet] of Object.entries(codeSnippets)) {
     injectContent += `{% tab title="${
-      getLanguageConfigurationOrNull(lang) ?? lang
+      getLanguageConfigurationOrNull(lang)?.title ?? lang
     }" %}\n\`\`\`${lang}\n${snippet}\n\`\`\`\n{% endtab %}\n`
   }
 

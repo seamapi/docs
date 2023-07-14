@@ -25,7 +25,12 @@ ${taskDescription}
 
 ## Task Guidelines
 
+### General Guidelines
+
 ${generalGuidelines}
+
+### ${nameOfLibrary} Guidelines
+
 ${languageGuidelines}
 
 # API Documentation

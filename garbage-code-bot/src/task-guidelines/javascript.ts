@@ -1,18 +1,18 @@
 export const javascriptTaskGuidelines = `
 
 * Assume top-level await, don't create functions or sub-routines
-* Keep code samples as minimal as possible
 * console.log the result and leave a comment with some example values
 * The HTTP API has a sort of RPC-like structure where \`/access_codes/create\` translates directly to an SDK method like \`seam.accessCodes.create({ /* ... */ })\`
 * The \`seam\` object is already imported and ready to use
 * Construct objects inline rather than creating a bunch of variables
 * \`.toISOString()\` produces valid timestamps for the Seam API
 * When doing date math, import the "ms" library and use e.g. \`ms("2 hours")\`
-* Don't handle errors unless the task specifically asks you to
 * If a route contains an object in it's response, the SDK automatically extracts
   the object and returns it. For example, the \`/devices.list()\` returns an
   array of devices
 * DO NOT include example output for console.log statements
+* Use camel case for variable names and function names
+* All the routes are converted to camelcase in the javascript SDK
 
 For example, this is a pretty good code snippet:
 
@@ -23,6 +23,18 @@ const devices = await seam.devices.list({
 })
 
 console.log(devices)
+
+// GOOD
+const accessCode = await seam.accessCodes.get({
+  access_code_id: "access_code2"
+})
+
+console.log(accessCode)
+
+// BAD - the javascript SDK doesn't use snake case for routes
+const accessCode = await seam.access_codes.get({
+  access_code_id: "access_code2"
+})
 
 // BAD - don't create functions!
 const listDevices = async () => {

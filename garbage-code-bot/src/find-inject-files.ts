@@ -12,7 +12,7 @@ export async function findInjectFiles(dir: string): Promise<string[]> {
     if (file.isDirectory()) {
       // If this is a directory, recurse into it
       injectFiles = injectFiles.concat(await findInjectFiles(fullPath))
-    } else {
+    } else if (file.name.endsWith(".md")) {
       // If this is a file, check if it contains "<!-- CODE INJECT START"
       const content = fs.readFileSync(fullPath, "utf8")
       if (content.includes("<!-- CODE INJECT START")) {

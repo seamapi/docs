@@ -20,7 +20,7 @@ export const getCodeSnippet = async ({
     `
 
 Trim the route definitions below to only include the routes relevant to the task.
-Wrap your response route definitions in the \`\`\`ts templating tag.
+Wrap your response route definitions in the \`\`\` templating tag.
 
 # Task Description
 
@@ -37,7 +37,7 @@ ${routeDefinitions}
 
   const completion = await getChatCompletion(
     getCodeSnippetPrompt({
-      nameOfLibrary: "Seam Typescript SDK",
+      nameOfLibrary: `Seam ${languageConfig.title} SDK`,
       taskDescription,
       generalGuidelines: generalGuidelines,
       languageGuidelines: languageConfig.languageGuidelines,

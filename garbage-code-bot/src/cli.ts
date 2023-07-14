@@ -1,12 +1,8 @@
 #!/usr/bin/env node
 import yargs from "yargs"
 import chalk from "chalk"
-import fs from "fs"
-import path from "path"
 import { hideBin } from "yargs/helpers"
-import { getCodeInjects, injectCode } from "./inject-code-syntax"
-import { findInjectFiles } from "./find-inject-files"
-import { languageConfigurations } from "./language-configurations"
+import { processFilesInDirectory } from "./process-files-in-directory"
 
 async function runCli() {
   // Use yargs to parse command line arguments
@@ -32,27 +28,7 @@ async function runCli() {
     process.exit(1)
   }
 
-  // Get files with inject markers
-  const injectFiles = await findInjectFiles(dirPath)
-
-  for (const filePath of injectFiles) {
-    console.log(chalk.yellow(`Processing ${filePath}`))
-
-    const codeInjects = await getCodeInjects(filePath)
-
-    for (let i = 0; i < codeInjects.length; i++) {
-      console.log(
-        chalk.blue(`Injecting code at location ${codeInjects[i].location}`)
-      )
-
-      for (const languageConfiguration of languageConfigurations) {
-      }
-
-      await injectCode(filePath, i)
-    }
-
-    console.log(chalk.green(`Done processing ${filePath}`))
-  }
+  await processFilesInDirectory(dirPath)
 }
 
 runCli().catch((err) => {
