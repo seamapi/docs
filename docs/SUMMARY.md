@@ -131,6 +131,7 @@
 * [Overview](seam-components/overview/README.md)
   * [Get started with React](seam-components/overview/get-started-with-react-components-and-client-session-tokens.md)
   * [Get started with Angular](seam-components/overview/angular.md)
+  * [Get started with Vue](seam-components/overview/vue.md)
   * [Get started with Client Side Components](seam-components/overview/get-started-with-client-side-components.md)
 * [Components](seam-components/react-components/README.md)
   * [Device Details](seam-components/react-components/device-details.md)
