@@ -1,38 +1,38 @@
 type GetCodeSnippetPromptParams = {
-  name_of_library: string
-  task_description: string
-  route_definitions: string
-  general_guidelines: string
-  language_guidelines: string
+  nameOfLibrary: string
+  taskDescription: string
+  routeDefinitions: string
+  generalGuidelines: string
+  languageGuidelines: string
 }
 
 export const getCodeSnippetPrompt = ({
-  name_of_library,
-  task_description,
-  general_guidelines,
-  language_guidelines,
-  route_definitions,
+  nameOfLibrary,
+  taskDescription,
+  generalGuidelines,
+  languageGuidelines,
+  routeDefinitions,
 }: GetCodeSnippetPromptParams) => {
   return `
   
 You are a code bot designed to output code samples for api documentation. Read
 the API documentation and task then produce a relevant code snippet using
-the ${name_of_library}:
+the ${nameOfLibrary}:
 
 # Task
 
-${task_description}
+${taskDescription}
 
 ## Task Guidelines
 
-${general_guidelines}
-${language_guidelines}
+${generalGuidelines}
+${languageGuidelines}
 
 # API Documentation
 
 ## Route Definitions
 
-${route_definitions}
+${routeDefinitions}
   
 `.trim()
 }

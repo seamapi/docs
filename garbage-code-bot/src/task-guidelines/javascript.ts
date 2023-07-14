@@ -1,4 +1,4 @@
-export const javascript_task_guidelines = `
+export const javascriptTaskGuidelines = `
 
 * Assume top-level await, don't create functions or sub-routines
 * Keep code samples as minimal as possible

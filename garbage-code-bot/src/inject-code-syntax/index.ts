@@ -1,7 +1,8 @@
 // Using fs to read and write to files
 import fs from "fs"
+import { getLanguageConfigurationOrNull } from "../language-configurations"
 
-type CodeInject = {
+export type CodeInject = {
   index: number
   location: number
   prompt: string
@@ -52,28 +53,6 @@ export async function getCodeInjects(filePath: string): Promise<CodeInject[]> {
   return codeInjects
 }
 
-const languageToTitle = {
-  python: "Python",
-  javascript: "JavaScript",
-  typescript: "TypeScript",
-  ruby: "Ruby",
-  php: "PHP",
-  go: "Go",
-  java: "Java",
-  csharp: "C#",
-  cpp: "C++",
-  c: "C",
-  swift: "Swift",
-  rust: "Rust",
-  kotlin: "Kotlin",
-  scala: "Scala",
-  julia: "Julia",
-  dart: "Dart",
-  r: "R",
-  lua: "Lua",
-  elixir: "Elixir",
-}
-
 // Inject code
 export async function injectCode(
   filePath: string,
@@ -94,7 +73,7 @@ export async function injectCode(
 
   for (let [lang, snippet] of Object.entries(code)) {
     injectContent += `{% tab title="${
-      languageToTitle[lang] ?? lang
+      getLanguageConfigurationOrNull(lang) ?? lang
     }" %}\n\`\`\`${lang}\n${snippet}\n\`\`\`\n{% endtab %}\n`
   }
 
