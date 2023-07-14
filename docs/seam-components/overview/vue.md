@@ -93,26 +93,16 @@ module.exports = {
 ```
 
 {% endtab %}
+
 {% tab title="Vue 2 Config" %}
 
 ```javascript
-// vue.config.js
-module.exports = {
-  chainWebpack: config => {
-    config.module
-      .rule('vue')
-      .use('vue-loader')
-      .tap(options => ({
-        ...options,
-        compilerOptions: {
-          isCustomElement: tag => tag.startsWith('seam-')
-        }
-      }))
-  }
-}
+// Before calling new Vue(...)
+Vue.config.ignoredElements = [/^seam-/]
 ```
 
 {% endtab %}
+
 {% endtabs %}
 
 ## 4 - Use the component
