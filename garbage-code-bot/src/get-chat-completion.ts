@@ -4,7 +4,7 @@ import crypto from "crypto"
 import chalk from "chalk"
 
 type Options = {
-  model: "gpt-3.5-turbo-16k"
+  model: "gpt-3.5-turbo-16k" | "gpt-4"
 }
 
 export const getChatCompletion = async (
@@ -24,17 +24,21 @@ export const getChatCompletion = async (
   }
   const openai = await getOpenAI()
   console.log(chalk.gray(`Calling to OpenAI "${prompt_hash}"`))
-  result = (
-    await openai.createChatCompletion({
-      messages: [
-        {
-          role: "user",
-          content: prompt,
-        },
-      ],
-      model: opts.model,
-    })
-  ).data.choices[0].message?.content
+  const completion = await openai.createChatCompletion({
+    messages: [
+      {
+        role: "user",
+        content: prompt,
+      },
+    ],
+    model: opts.model,
+  })
+
+  console.log(
+    chalk.gray(`prompt tokens used: ${completion.data.usage?.prompt_tokens}`)
+  )
+
+  result = completion.data.choices[0].message?.content
 
   await cache.setItem(cache_key, result)
   return result

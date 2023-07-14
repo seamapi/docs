@@ -20,9 +20,6 @@ NEVER CREATE VARIABLES WITH THESE NAMES: getConnectedAccount, createWebview
 
 GOOD VARIABLE NAMES: account, webview, accessCode, device, actionAttempt
 
-
-For example, this is a pretty good code snippet:
-
 \`\`\`ts
 // GOOD
 const devices = await seam.devices.list({

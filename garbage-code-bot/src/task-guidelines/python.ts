@@ -7,6 +7,7 @@ export const pythonTaskGuidelines = `
   Device, ActionAttempt, ConnectedAccount etc.
 * \`seam.access_codes.create\` returns an AccessCode dataclass object
 * \`seam.access_codes.delete\` returns an ActionAttempt dataclass object
+* NEVER use the word result, response or data in a variable name
 
 \`\`\`python
 # GOOD
@@ -22,12 +23,6 @@ action_attempt = seam.access_codes.delete(
 )
 
 print(action_attempt)
-
-# BAD - "result" is an unspecific variable name
-result = seam.access_codes.delete(access_code_id="access_code2")
-
-# BAD - there are no nested resources returned from the SDK
-print(result.action_attempt.status) # success
 \`\`\`
 
 `.trim()

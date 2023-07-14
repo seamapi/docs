@@ -10,7 +10,15 @@ const filesystem = {
   ## Easy
 
   <!-- CODE INJECT START
-  Delete an access code
+  Delete an access code using an access code id
+
+  e.g. in python you could do:
+  \`\`\`python
+  action_attempt = seam.access_codes.delete(
+    access_code_id="access_code2"
+  )
+  print(action_attempt)
+  \`\`\`
   -->
   {% tabs %}
   {% tab title="Python" %}
@@ -23,23 +31,21 @@ const filesystem = {
 
   `,
   "medium.md": `
-## Medium
+  ## Medium
 
-<!-- CODE INJECT START
-Create a webview, then get the connected account associated with the webview
--->
-{% tabs %}
-{% tab title="Python" %}
-\`\`\`python
-print("Hello, World!")
-\`\`\`
-{% endtab %}
-{% endtabs %}
-<!-- CODE INJECT END -->
+  <!-- CODE INJECT START
+  Create a webview, then get the connected account associated with the webview
+  -->
+  {% tabs %}
+  {% tab title="Python" %}
+  \`\`\`python
+  print("Hello, World!")
+  \`\`\`
+  {% endtab %}
+  {% endtabs %}
+  <!-- CODE INJECT END -->
 
-
-
-`,
+  `,
   "some_other_file.md": "No injection here! move along",
 }
 
@@ -64,9 +70,10 @@ test.afterEach(() => {
 
 test("processFilesInDirectory", async (t) => {
   await processFilesInDirectory(testDir)
-  t.snapshot(fs.readFileSync(path.join(testDir, "easy.md"), "utf8"), "easy.md")
-  t.snapshot(
-    fs.readFileSync(path.join(testDir, "medium.md"), "utf8"),
-    "medium.md"
-  )
+  const easy_md = fs.readFileSync(path.join(testDir, "easy.md"), "utf8")
+  const medium_md = fs.readFileSync(path.join(testDir, "medium.md"), "utf8")
+  // console.log(easy_md)
+  // console.log(medium_md)
+  t.snapshot(easy_md)
+  t.snapshot(medium_md)
 })

@@ -4,7 +4,8 @@ import { getLanguageConfigurationOrNull } from "../language-configurations"
 
 export type CodeInject = {
   index: number
-  location: number
+  start_line: number
+  end_line: number
   prompt: string
   content: string
 }
@@ -19,7 +20,8 @@ export async function getCodeInjects(filePath: string): Promise<CodeInject[]> {
   let codeInjects: CodeInject[] = []
   let currentCodeInject: CodeInject = {
     index: -1,
-    location: -1,
+    start_line: -1,
+    end_line: -1,
     prompt: "",
     content: "",
   }
@@ -31,12 +33,14 @@ export async function getCodeInjects(filePath: string): Promise<CodeInject[]> {
 
       currentCodeInject = {
         index: codeInjects.length,
-        location: index,
+        start_line: index,
+        end_line: -1,
         prompt: "",
         content: "",
       }
     } else if (line.trim() === "<!-- CODE INJECT END -->") {
       inCodeInject = false
+      currentCodeInject.end_line = index
       codeInjects.push(currentCodeInject)
     } else if (inCodeInject) {
       if (line.includes("-->")) {
@@ -80,15 +84,14 @@ export async function injectCode({
       getLanguageConfigurationOrNull(lang)?.title ?? lang
     }" %}\n\`\`\`${lang}\n${snippet}\n\`\`\`\n{% endtab %}\n`
   }
+  injectContent += "{% endtabs %}\n"
 
   const newContent = [
-    ...lines.slice(0, codeInject.location + 1),
+    ...lines.slice(0, codeInject.start_line + 1),
     codeInject.prompt,
     "-->",
     injectContent.trim(),
-    ...lines.slice(
-      codeInject.location + 1 + codeInject.content.split("\n").length
-    ),
+    ...lines.slice(codeInject.end_line),
   ]
 
   fs.writeFileSync(filePath, newContent.join("\n"))

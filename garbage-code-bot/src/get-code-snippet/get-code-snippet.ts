@@ -43,7 +43,10 @@ ${routeDefinitions}
       generalGuidelines: generalGuidelines,
       languageGuidelines: languageConfig.languageGuidelines,
       routeDefinitions: relevantRouteDefs,
-    })
+    }),
+    {
+      model: "gpt-4",
+    }
   )
 
   return extractCodeFromResponse(completion)!

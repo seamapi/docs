@@ -22,6 +22,12 @@ export const generalGuidelines = `
 * NEVER create a webview with a full list of providers, always use at most one
   provider in the list of accepted providers OR use provider_category: "stable",
   provider_category is better to use
+* An action attempt status is ALWAYS "pending" in code snippets
+* NEVER check the status of an action attempt in any code snippet
+* NEVER use the "sync" parameter
+* /access_codes/delete returns an action attempt, NOT an access code
+* NEVER EVER used the word "deleted_" in a variable name, use "action_attempt"
+* NEVER use device_selection_mode
 
 
 Here is some pseudo-code to illustrate good code snippets:

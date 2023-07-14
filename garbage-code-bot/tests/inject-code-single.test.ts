@@ -50,7 +50,11 @@ test.after((t) => {
 })
 
 test("injectCode modifies code injects correctly", async (t) => {
-  await injectCode(filePath, 0, { python: 'print("Hello, Garbage Code Bot!")' })
+  await injectCode({
+    filePath,
+    injectIndex: 0,
+    codeSnippets: { python: 'print("Hello, Garbage Code Bot!")' },
+  })
 
   const newContent = fs.readFileSync(filePath, "utf-8")
 
