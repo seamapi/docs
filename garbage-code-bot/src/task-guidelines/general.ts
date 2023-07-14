@@ -27,7 +27,8 @@ export const generalGuidelines = `
 * NEVER use the "sync" parameter
 * /access_codes/delete returns an action attempt, NOT an access code
 * NEVER EVER used the word "deleted_" in a variable name, use "action_attempt"
-* NEVER use device_selection_mode
+* NEVER use device_selection_mode in code samples
+* NEVER include polling loops in code samples, prefer to leave a comment like "Wait for webview authorization"
 
 
 Here is some pseudo-code to illustrate good code snippets:
