@@ -43,7 +43,7 @@ From the [Vue Docs](https://vuejs.org/guide/extras/web-components.html#skipping-
 > By default, Vue will attempt to resolve a non-native HTML tag as a registered Vue component before falling back to rendering it as a custom element. This will cause Vue to emit a "failed to resolve component" warning during development. To let Vue know that certain elements should be treated as custom elements and skip component resolution, we can specify the `compilerOptions.isCustomElement` option.
 
 {% tabs %}
-{% tab title="Example In-Browser Config" %}
+{% tab title="Vue 3 In-Browser Config" %}
 
 ```javascript
 // Only works if using in-browser compilation.
@@ -52,7 +52,7 @@ app.config.compilerOptions.isCustomElement = (tag) => tag.startsWith('seam-')
 ```
 {% endtab %}
 
-{% tab title="Example Vue CLI Config" %}
+{% tab title="Vue 3 Vite Config" %}
 
 ```javascript
 // vite.config.js
@@ -73,7 +73,7 @@ export default {
 
 {% endtab %}
 
-{% tab title="Example Vue CLI Config" %}
+{% tab title="Vue 3 CLI Config" %}
 
 ```javascript
 // vue.config.js
@@ -93,6 +93,16 @@ module.exports = {
 ```
 
 {% endtab %}
+
+{% tab title="Vue 2 Config" %}
+
+```javascript
+// Before calling new Vue(...)
+Vue.config.ignoredElements = [/^seam-/]
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## 4 - Use the component
