@@ -7,6 +7,7 @@ import { getCodeSnippet } from "./get-code-snippet"
 export const processFilesInDirectory = async (dirPath: string) => {
   // Get files with inject markers
   const injectFiles = await findInjectFiles(dirPath)
+  console.log(chalk.yellow(`Found ${injectFiles.length} files to process`))
 
   for (const filePath of injectFiles) {
     console.log(chalk.yellow(`Processing ${filePath}`))
