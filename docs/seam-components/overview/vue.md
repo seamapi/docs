@@ -52,7 +52,7 @@ app.config.compilerOptions.isCustomElement = (tag) => tag.startsWith('seam-')
 ```
 {% endtab %}
 
-{% tab title="Vue 3 CLI" %}
+{% tab title="Vue 3 Vite Config" %}
 
 ```javascript
 // vite.config.js
@@ -73,7 +73,7 @@ export default {
 
 {% endtab %}
 
-{% tab title="Vue 3 Config" %}
+{% tab title="Vue 3 CLI Config %}
 
 ```javascript
 // vue.config.js
@@ -92,6 +92,7 @@ module.exports = {
 }
 ```
 
+{% endtab %}
 {% tab title="Vue 2 Config" %}
 
 ```javascript
