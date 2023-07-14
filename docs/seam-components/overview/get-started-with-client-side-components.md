@@ -201,6 +201,7 @@ Now, press the Connect Account button to open a Seam Connect Webview where you c
 
 ## Next Steps
 
+* [Minimal sample apps](https://github.com/seamapi/seam-components-sample-apps) running Seam Components in various frameworks.
 * View and play with other components in the [interactive storybook component library](https://react.seam.co/)
 * Check out some [Full Example Apps](https://github.com/seamapi/react/tree/main/examples)
 

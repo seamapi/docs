@@ -19,6 +19,7 @@ Its features include:
 
 ## Next Steps
 
+* [Minimal sample apps](https://github.com/seamapi/seam-components-sample-apps) running Seam Components in various frameworks.
 * View our [**Getting Started Guide**](get-started-with-client-side-components.md)
 * View and play with other components in the [**interactive storybook component library**](https://react.seam.co/)
 * Check out some [**Full Example Apps**](https://github.com/seamapi/react/tree/main/examples)
