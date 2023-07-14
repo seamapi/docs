@@ -73,7 +73,7 @@ export default {
 
 {% endtab %}
 
-{% tab title="Vue 3 CLI Config %}
+{% tab title="Vue 3 CLI Config" %}
 
 ```javascript
 // vue.config.js
