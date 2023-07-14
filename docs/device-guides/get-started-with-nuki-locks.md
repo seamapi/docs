@@ -36,7 +36,6 @@ To control your Nuki locks via the Seam API, you must first authorize your Seam 
 #### Request a Connect Webview
 
 <!-- CODE INJECT START
-
 Create a connect webview with the provider nuki, then print the webview url,
 e.g.
 
@@ -48,83 +47,66 @@ assert webview.login_successful is False
 # Send the webview URL to your user
 print(webview.url)
 ```
-
 -->
-
 {% tabs %}
-{% tab title="Python" %}
-
-```python
-from seamapi import Seam
-
-seam = Seam()
-
-webview = seam.connect_webviews.create(accepted_providers=["nuki"])
-
-assert webview.login_successful is False
-
-# Send the webview URL to your user
-print(webview.url)
-```
-
-{% endtab %}
-
 {% tab title="Javascript" %}
-
 ```javascript
-import Seam from "seamapi"
+// Create a connect webview with Nuki as the provider
+const createdWebview = await seam.connectWebviews.create({
+  accepted_providers: ["nuki"]
+});
 
-const seam = new Seam()
+// Validate the webview creation was not yet successful
+console.assert(createdWebview.login_successful === false);
 
-const { connect_webview: connectWebview } = await seam.connectWebviews.create({
-  accepted_providers: ["nuki"],
+// Print the created webview URL
+console.log(createdWebview.url);
+```
+```
+{% endtab %}
+{% tab title="Python" %}
+```python
+# Create a connect webview with the provider 'nuki'
+connect_webview = seam.connect_webviews.create(accepted_providers=["nuki"])
+
+# Assert that the login has not yet been successful
+assert connect_webview.login_successful is False
+
+# Print the webview url from the newly created connect_webview
+print(connect_webview.url)
+
+# A future step here would be to wait for the webview to be authorized before further processing
+```
+```
+{% endtab %}
+{% tab title="Ruby" %}
+```ruby
+# Create a webview with the provider nuki
+connect_webview = seam.connect_webviews.create({
+  accepted_providers: ["nuki"]
 })
 
-console.log(connectWebview.login_successful) // false
+# Check that the login was not successful yet
+puts connect_webview.login_successful == false
 
-// Send the webview URL to your user
-console.log(connectWebview.url)
+# Output webview URL to be sent to the user
+puts connect_webview.url
 ```
-
-{% endtab %}
-
-{% tab title="Ruby" %}
-
-```ruby
-require 'seamapi'
-
-seam = Seam::Client.new(api_key: 'MY_API_KEY')
-
-webview = seam.connect_webviews.create(accepted_providers: %w[nuki])
-
-puts webview.login_successful # false
-
-# Send the webview URL to your user
-puts webview.url
 ```
-
 {% endtab %}
-
 {% tab title="PHP" %}
-
 ```php
-use Seam\SeamClient;
-
-$seam = new SeamClient("YOUR_API_KEY");
-
-$webview = $seam->connect_webviews->create(
+$created_webview = $seam->connect_webviews->create(
   accepted_providers: ["nuki"]
 );
 
-echo json_encode($webview)
-/*
-{"connect_webview_id":"70c4df9e-1070-441f-92f8-fd6524062cec","workspace_id":"d7418ff3-a476-4f48-9a4b-211d1d21a03d","url":"https:\/\/connect.getseam.com\/connect_webviews\/view?connect_webview_id=70c4df9e-1070-441f-92f8-fd6524062cec&auth_token=9HJbwWKbD5aJLifZcozU9WWZXxropn9Bg","connected_account_id":null,"status":"pending","custom_redirect_url":null,"custom_redirect_failure_url":null,"created_at":"2023-02-09T02:14:06.147745+00:00","error":null}
-*/
-```
+assert($created_webview->login_successful == false);
 
+echo "Please Login at this url: " . $created_webview->url;
+```
+```
 {% endtab %}
 {% endtabs %}
-
 <!-- CODE INJECT END -->
 
 #### Authorize Your Workspace
