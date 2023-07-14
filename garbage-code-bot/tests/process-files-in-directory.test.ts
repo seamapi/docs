@@ -6,22 +6,22 @@ import { processFilesInDirectory } from "../src/process-files-in-directory"
 // MockFS breaks OpenAI, so we use the real filesystem
 
 const filesystem = {
-  //   "easy.md": `
-  // ## Easy
+  "easy.md": `
+  ## Easy
 
-  // <!-- CODE INJECT START
-  // Delete an access code
-  // -->
-  // {% tabs %}
-  // {% tab title="Python" %}
-  // \`\`\`python
-  // print("Hello, World!")
-  // \`\`\`
-  // {% endtab %}
-  // {% endtabs %}
-  // <!-- CODE INJECT END -->
+  <!-- CODE INJECT START
+  Delete an access code
+  -->
+  {% tabs %}
+  {% tab title="Python" %}
+  \`\`\`python
+  print("Hello, World!")
+  \`\`\`
+  {% endtab %}
+  {% endtabs %}
+  <!-- CODE INJECT END -->
 
-  // `,
+  `,
   "medium.md": `
 ## Medium
 
@@ -64,6 +64,9 @@ test.afterEach(() => {
 
 test("processFilesInDirectory", async (t) => {
   await processFilesInDirectory(testDir)
-  const result = fs.readFileSync(path.join(testDir, "medium.md"), "utf8")
-  console.log(result)
+  t.snapshot(fs.readFileSync(path.join(testDir, "easy.md"), "utf8"), "easy.md")
+  t.snapshot(
+    fs.readFileSync(path.join(testDir, "medium.md"), "utf8"),
+    "medium.md"
+  )
 })

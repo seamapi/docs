@@ -5,17 +5,23 @@ export const generalGuidelines = `
 * Use the device_id "device3" for examples that involve a single device
 * Use the access_code_id "access_code2" for examples that involve a single access code
 * Assume the Seam SDK Client has already been initialized for each code snippet
-* Don't create extraneous functions, just write the code as if a simple script
+* DO NOT create extraneous functions, just write the code as if a simple script.
+* YOU REALLY SHOULD NOT CREATE FUNCTIONS JUST KEEP IT SIMPLE
 * Use the correct tense for variables, for example, after creating a variable, call it a "createdResource" or "created_resource", after deleting a variable you have a "deletedResource" or "deleted_resource"
-* Use specific variables names, for example don't use "resource" or "data" or "result"
-* Don't handle errors unless the task specifically asks you to
+* Use specific variables names, for example NEVER use "resource" or "data" or "result"
+* NEVER handle errors unless the task specifically asks you to
 * Generally, SDKs extract the resource inside the response, so something like
   \`seam.access_codes.get({ access_code_id: "access_code2" })\` will return an
   access code object, something like \`seam.access_codes.delete({/* ... */})\`
   will return an action_attempt object
-* Always use specific variables names, for example don't say "deleted_resource",
-  say "deleted_access_code", don't say "response" or "result", say "access_code"
+  say "deleted_access_code", NEVER say "response" or "result", say "access_code"
 * \`connected_account.user_identifier\` usually is of the shape \`{ email }\`
+* After you create a webview, you need to wait for it to be authorized, in code
+  snippets you can leave a comment like \`Wait for webview authorization\`
+* Keep comments short, NEVER put example objects anywhere in the code snippet
+* NEVER create a webview with a full list of providers, always use at most one
+  provider in the list of accepted providers OR use provider_category: "stable",
+  provider_category is better to use
 
 
 Here is some pseudo-code to illustrate good code snippets:
@@ -47,6 +53,18 @@ connect_webview = seam.connect_webviews.get(
 )
 
 print(connect_webview.status) # authorized
+\`\`\`
+
+\`\`\`
+# BAD - don't make variable names confusing, this looks like a function
+const getConnectedAccount = await seam.connectedAccounts.get({
+  /* ... */
+});
+
+# BAD - NEVER use result, response or data NEVER NAME A VARIABLE WITH _response
+create_webview_response = seam.connect_webviews.create(
+  accepted_providers: ["august"]
+)
 
 # BAD - don't use functions or subroutines
 function doCreation() {
@@ -62,7 +80,7 @@ function doCreation() {
     print(e)
   }
 }
-
 \`\`\`
+
 
 `.trim()

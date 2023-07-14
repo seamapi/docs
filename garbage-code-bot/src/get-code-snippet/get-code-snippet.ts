@@ -20,7 +20,8 @@ export const getCodeSnippet = async ({
     `
 
 Trim the route definitions below to only include the routes relevant to the task.
-Wrap your response route definitions in the \`\`\` templating tag.
+Wrap your response route definitions in the \`\`\` templating tag. Break down
+the task into parts leaving a comment for each part if there are multiple parts.
 
 # Task Description
 

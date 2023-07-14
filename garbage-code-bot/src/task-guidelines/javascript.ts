@@ -10,9 +10,16 @@ export const javascriptTaskGuidelines = `
 * If a route contains an object in it's response, the SDK automatically extracts
   the object and returns it. For example, the \`/devices.list()\` returns an
   array of devices
-* DO NOT include example output for console.log statements
-* Use camel case for variable names and function names
+* NEVER INCLUDE EXAMPLE OUTPUT
+* Use camelCase for variable names and function names
 * All the routes are converted to camelcase in the javascript SDK
+* ALWAYS use snake_case for parameters passed to an SDK method
+
+
+NEVER CREATE VARIABLES WITH THESE NAMES: getConnectedAccount, createWebview
+
+GOOD VARIABLE NAMES: account, webview, accessCode, device, actionAttempt
+
 
 For example, this is a pretty good code snippet:
 
@@ -30,56 +37,49 @@ const accessCode = await seam.accessCodes.get({
 })
 
 console.log(accessCode)
-
-// BAD - the javascript SDK doesn't use snake case for routes
-const accessCode = await seam.access_codes.get({
-  access_code_id: "access_code2"
-})
-
-// BAD - don't create functions!
-const listDevices = async () => {
-  try {
-    const devices = await seam.devices.list({
-      manufacturer: "schlage"
-    })
-    console.log(devices)
-  // BAD - don't handle errors!
-  } catch (error) {
-    console.error(error)
-  }
-}
-
-listDevices()
 \`\`\`
 
 `.trim()
 
-// We're not going to have it generate comments for now
-// but if it did it would look like this
-/*
-[
-  {
-    device_id: "1234",
-    device_type: "august_lock",
-    capabilities_supported: ["lock", "unlock"],
-    properties: {
-      online: true,
-      name: "Front Door",
-      model: {
-        display_name: "August Smart Lock Pro",
-      },
-    },
-    location: {
-      latitude: 37.7749,
-      longitude: 122.4194,
-    },
-    connected_account_id: "5678",
-    workspace_id: "9012",
-    errors: [],
-    warnings: [],
-    created_at: "2021-01-01T00:00:00.000Z",
-    is_managed: true,
-  },
-  // ...
-]
-*/
+// Turns out giving counter-examples is a really bad idea, these were super
+// counter productive
+// \`\`\`ts
+// // BAD - the javascript SDK doesn't use snake case for routes
+// const accessCode = await seam.access_codes.get({
+//   access_code_id: "access_code2"
+// })
+
+// // BAD - don't create functions!
+// const listDevices = async () => {
+//   try {
+//     const devices = await seam.devices.list({
+//       manufacturer: "schlage"
+//     })
+//     console.log(devices)
+//   // BAD - don't handle errors!
+//   } catch (error) {
+//     console.error(error)
+//   }
+// }
+
+// listDevices()
+
+// // BAD - The javascript SDK doesn't use camelCase for parameters
+// const accessCode = await seam.accessCodes.get({
+//   accessCodeId: "access_code2"
+// })
+
+// // BAD - NEVER give example output
+// console.log(createWebview); // Example output: { connect_webview_id: "webview123", url: "https://example.com/webview", status: "pending" }
+
+// // BAD - NEVER GIVE EXAMPLE OUTPUT
+// console.log(connectedAccount);
+// // Example output:
+// // {
+// //   "connect_webview_id": "webview123",
+// //   "connected_account_id": "account123",
+// //   "url": "https://example.com/webview",
+// //   "created_at": "2021-10-01T00:00:00.000Z",
+// //   "status": "authorized"
+// // }
+// \`\`\`

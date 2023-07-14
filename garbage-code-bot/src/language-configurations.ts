@@ -12,21 +12,21 @@ export type LanguageConfiguration = {
 }
 
 export const languageConfigurations = [
-  // {
-  //   language: "javascript",
-  //   title: "Javascript",
-  //   languageGuidelines: javascriptTaskGuidelines,
-  // },
-  // {
-  //   language: "python",
-  //   title: "Python",
-  //   languageGuidelines: pythonTaskGuidelines,
-  // },
-  // {
-  //   language: "ruby",
-  //   title: "Ruby",
-  //   languageGuidelines: rubyTaskGuidelines,
-  // },
+  {
+    language: "javascript",
+    title: "Javascript",
+    languageGuidelines: javascriptTaskGuidelines,
+  },
+  {
+    language: "python",
+    title: "Python",
+    languageGuidelines: pythonTaskGuidelines,
+  },
+  {
+    language: "ruby",
+    title: "Ruby",
+    languageGuidelines: rubyTaskGuidelines,
+  },
   {
     language: "php",
     title: "PHP",

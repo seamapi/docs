@@ -91,11 +91,16 @@ $seam->access_codes->delete($access_code->access_code_id);
 
 \`\`\`
 
-
 \`\`\`php
-# BAD - don't use associative arrays as parameters to the SDK
+# BAD - NEVER EVER EVER use associative arrays as parameters to the SDK
 $action_attempt = $seam->access_codes->delete([
   "access_code_id" => $access_code_id
 ]);
+
+$action_attempt = $seam->access_codes->delete(
+  # VERY BAD OH GOD NO - PLEASE DON'T USE THE => JUST USE A COLON PLEASE
+  "access_code_id" => $access_code_id
+);
 \`\`\`
+
 `
