@@ -1,0 +1,22 @@
+{
+  "name": "garbage-code-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.4.2",
+    "ava": "^5.3.1",
+    "esbuild": "^0.18.12",
+    "esbuild-register": "^3.4.2",
+    "esbuild-runner": "^2.2.2",
+    "openai": "^3.3.0",
+    "redaxios": "^0.5.1",
+    "typescript": "^5.1.6"
+  }
+}
