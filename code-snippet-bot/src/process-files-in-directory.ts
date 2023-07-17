@@ -3,6 +3,7 @@ import { getCodeInjects, injectCode } from "./inject-code-syntax"
 import { findInjectFiles } from "./find-inject-files"
 import { languageConfigurations } from "./language-configurations"
 import { getCodeSnippet } from "./get-code-snippet"
+import { parseGitbookCodeSnippets } from "./parse-gitbook-code-snippets"
 
 export const processFilesInDirectory = async (dirPath: string) => {
   // Get files with inject markers
@@ -22,12 +23,16 @@ export const processFilesInDirectory = async (dirPath: string) => {
           }..."`
         )
       )
+      const existingCodeSnippets = parseGitbookCodeSnippets(
+        codeInjects[i].content
+      )
       const codeSnippets: { [language: string]: string } = {}
       for (const { language } of languageConfigurations) {
         console.log(chalk.gray(`Generating code snippet for ${language}`))
         codeSnippets[language] = await getCodeSnippet({
           language,
           taskDescription: codeInjects[i].prompt,
+          existingCodeSnippets,
         })
       }
 
