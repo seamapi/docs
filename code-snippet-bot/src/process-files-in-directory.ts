@@ -27,6 +27,7 @@ export const processFilesInDirectory = async (dirPath: string) => {
         codeInjects[i].content
       )
       const codeSnippets: { [language: string]: string } = {}
+
       for (const { language } of languageConfigurations) {
         console.log(chalk.gray(`Generating code snippet for ${language}`))
         codeSnippets[language] = await getCodeSnippet({
@@ -37,7 +38,7 @@ export const processFilesInDirectory = async (dirPath: string) => {
       }
 
       console.log(
-        chalk.blue(`Injecting code at location ${codeInjects[i].location}`)
+        chalk.blue(`Injecting code at line ${codeInjects[i].start_line}`)
       )
       await injectCode({ filePath, injectIndex: i, codeSnippets })
     }

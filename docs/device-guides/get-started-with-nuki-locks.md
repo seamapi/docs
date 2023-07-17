@@ -51,59 +51,62 @@ print(webview.url)
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
-// Create a connect webview with Nuki as the provider
-const createdWebview = await seam.connectWebviews.create({
+// Use Seam SDK to create a connect webview with the provider nuki
+const createdConnectWebview = await seam.connectWebviews.create({
   accepted_providers: ["nuki"]
 });
 
-// Validate the webview creation was not yet successful
-console.assert(createdWebview.login_successful === false);
+// The webview automatically opens a browser, thus, you can't check its login status 
 
-// Print the created webview URL
-console.log(createdWebview.url);
-```
+// Print the webview url
+console.log(createdConnectWebview.url);
+
 ```
 {% endtab %}
 {% tab title="Python" %}
 ```python
-# Create a connect webview with the provider 'nuki'
-connect_webview = seam.connect_webviews.create(accepted_providers=["nuki"])
+# Create a webview with Nuki as the provider
+created_webview = seam.connect_webviews.create(accepted_providers=["nuki"])
 
-# Assert that the login has not yet been successful
-assert connect_webview.login_successful is False
+# Assert that login is not yet successful
+assert created_webview.login_successful is False
 
-# Print the webview url from the newly created connect_webview
-print(connect_webview.url)
+# Print the URL of the webview
+print(created_webview.url)
 
-# A future step here would be to wait for the webview to be authorized before further processing
-```
 ```
 {% endtab %}
 {% tab title="Ruby" %}
 ```ruby
-# Create a webview with the provider nuki
-connect_webview = seam.connect_webviews.create({
-  accepted_providers: ["nuki"]
-})
+# Create a connect webview with the provider "nuki"
+created_webview = seam.connect_webviews.create(accepted_providers: ["nuki"])
 
-# Check that the login was not successful yet
-puts connect_webview.login_successful == false
+# The webview will not be logged in, which can be confirmed
+raise 'Login should not be succesful' unless !created_webview.login_successful
 
-# Output webview URL to be sent to the user
-puts connect_webview.url
-```
+# Retrieve and print out the url of the webview
+puts created_webview.url
+
 ```
 {% endtab %}
 {% tab title="PHP" %}
 ```php
-$created_webview = $seam->connect_webviews->create(
-  accepted_providers: ["nuki"]
-);
+<?php
+// initiate the SDK client, you should replace this with your SDK client init portion
+$seam = new SeamSeamClient("YOUR_API_KEY");
 
-assert($created_webview->login_successful == false);
+// create a connect webview with provider nuki
+$connect_webview = $seam->connect_webviews->create([
+  'accepted_providers' => ['nuki']
+]);
 
-echo "Please Login at this url: " . $created_webview->url;
-```
+// check if the login was successful
+assert($connect_webview->login_successful === false);
+
+// print the connect webview URL
+print($connect_webview->url);
+?>
+
 ```
 {% endtab %}
 {% endtabs %}

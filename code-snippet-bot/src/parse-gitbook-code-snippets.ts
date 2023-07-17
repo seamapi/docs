@@ -7,12 +7,16 @@ export function parseGitbookCodeSnippets(
   let currentSnippet = ""
 
   const lines = gitbookMarkdown.split("\n")
+
+  const addSnippetToMap = (language: string, snippet: string) => {
+    languageSnippets[language] = extractCodeFromResponse(snippet) ?? snippet
+  }
+
   lines.forEach((line: string) => {
     const tabMatch = line.match(/{% tab title="([^"]+)" %}/)
     if (tabMatch) {
       if (currentLanguage && currentSnippet) {
-        languageSnippets[currentLanguage] =
-          extractCodeFromResponse(currentSnippet)!
+        addSnippetToMap(currentLanguage, currentSnippet)
       }
       currentLanguage = tabMatch[1].toLowerCase()
       currentSnippet = ""
@@ -22,8 +26,7 @@ export function parseGitbookCodeSnippets(
     const endTabMatch = line.match(/{% endtab %}/)
     if (endTabMatch) {
       if (currentLanguage && currentSnippet) {
-        languageSnippets[currentLanguage] =
-          extractCodeFromResponse(currentSnippet)!
+        addSnippetToMap(currentLanguage, currentSnippet)
       }
       currentLanguage = ""
       currentSnippet = ""
@@ -40,7 +43,7 @@ export function parseGitbookCodeSnippets(
 
   // Save last language snippet
   if (currentLanguage && currentSnippet) {
-    languageSnippets[currentLanguage] = extractCodeFromResponse(currentSnippet)!
+    addSnippetToMap(currentLanguage, currentSnippet)
   }
 
   return languageSnippets
