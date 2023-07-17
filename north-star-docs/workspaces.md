@@ -33,6 +33,17 @@ In order to request access to a device within a workspace, an API key specific t
 
 To manage API keys for a workspace, navigate to the Seam dashboard and select the appropriate workspace. From there, go to the API key tab, where you can create or edit keys according to your needs.
 
+### Webhooks
+
+Each workspace gets its own Svix app that you can access a dashboard for. If you want more information about consuming events such as testing or verifying webhooks, you can get more info from [the Svix docs.](https://docs.svix.com/receiving/introduction)
+
+To manage your webhooks, navigate to the Seam dashboard and select the appropriate workspace. From there, click on the Webhooks tab. Once you are on the Webhooks tab, you will be able to view all existing webhooks, create new ones, and delete any unnecessary ones. To create a new webhook, follow these steps:
+1. Click on the "Add Webhook" button
+2. fill in your URL (For testing purposes we recommend using https://typedwebhook.tools.)
+3. select the event types you want to receive events for, and finally, click "Create"
+
+You can see all the Seam Events at https://docs.seam.co/latest/api-clients/events.
+
 ### Workspace Team
 
 Through the Seam Dashboard, your team can easily collaborate to manage a workspace and its resources.
