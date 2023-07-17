@@ -1,5 +1,10 @@
 export const phpTaskGuidelines = `
 
+- NEVER comment about assuming the SDK is initialized
+- NEVER initialize the seam client
+- ALWAYS assume the seam client is already initialized
+- Always use snake_case for variable names and function names
+- NEVER assign a hard-coded-id to a variable, always keep the hard-coded-id inline
 
 
 \`\`\`php

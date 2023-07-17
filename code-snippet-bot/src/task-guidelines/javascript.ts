@@ -14,9 +14,9 @@ export const javascriptTaskGuidelines = `
 * Use camelCase for variable names and function names
 * All the routes are converted to camelcase in the javascript SDK
 * ALWAYS use snake_case for parameters passed to an SDK method
-
-
-NEVER CREATE VARIABLES WITH THESE NAMES: getConnectedAccount, createWebview
+* NEVER CREATE VARIABLES WITH THESE NAMES: getConnectedAccount, createWebview
+* NEVER assign a hard-coded-id to a variable name.
+* ALWAYS just put the id inline, even if you use it multiple times
 
 GOOD VARIABLE NAMES: account, webview, accessCode, device, actionAttempt
 
