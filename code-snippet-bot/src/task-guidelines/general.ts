@@ -29,6 +29,8 @@ export const generalGuidelines = `
 * NEVER EVER used the word "deleted_" in a variable name, use "action_attempt"
 * NEVER use device_selection_mode in code samples
 * NEVER include polling loops in code samples, prefer to leave a comment like "Wait for webview authorization"
+* Sometimes you will be given an existing code sample, if there is an existing
+  code sample you should not change it unless it is incorrect
 
 
 Here is some pseudo-code to illustrate good code snippets:

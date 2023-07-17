@@ -8,11 +8,15 @@ import { getCodeSnippetPrompt } from "./get-code-snippet-prompt"
 type GetCodeSnippetParams = {
   language: string
   taskDescription: string
+  existingCodeSnippets?: Record<string, string>
+  useExistingCodeSnippetIfFunctionallyIdentical?: boolean
 }
 
 export const getCodeSnippet = async ({
   taskDescription,
   language,
+  existingCodeSnippets,
+  useExistingCodeSnippetIfFunctionallyIdentical = true,
 }: GetCodeSnippetParams): Promise<string> => {
   const languageConfig = getLanguageConfiguration(language)
 
@@ -43,11 +47,41 @@ ${routeDefinitions}
       generalGuidelines: generalGuidelines,
       languageGuidelines: languageConfig.languageGuidelines,
       routeDefinitions: relevantRouteDefs,
+      existingCodeSnippets,
     }),
     {
       model: "gpt-4",
     }
   )
 
-  return extractCodeFromResponse(completion)!
+  const newSnippet = extractCodeFromResponse(completion)!
+
+  // Check if the code snippets are functionally identical
+  if (
+    useExistingCodeSnippetIfFunctionallyIdentical &&
+    existingCodeSnippets?.[language]
+  ) {
+    const identicalRes = await getChatCompletion(
+      `
+Are the following code snippets functionally identical? Output YES or NO (and
+nothing else)
+
+\`\`\`${language}
+${newSnippet}
+\`\`\`
+
+\`\`\`${language}
+${existingCodeSnippets[language]}
+\`\`\`
+    `.trim(),
+      {
+        model: "gpt-3.5-turbo",
+      }
+    )
+
+    const identical = identicalRes.includes("YES") ? true : false
+    if (identical) return existingCodeSnippets[language]
+  }
+
+  return newSnippet
 }

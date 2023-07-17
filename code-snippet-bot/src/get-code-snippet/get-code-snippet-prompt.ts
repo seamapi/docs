@@ -4,6 +4,7 @@ type GetCodeSnippetPromptParams = {
   routeDefinitions: string
   generalGuidelines: string
   languageGuidelines: string
+  existingCodeSnippets?: Record<string, string>
 }
 
 export const getCodeSnippetPrompt = ({
@@ -12,6 +13,7 @@ export const getCodeSnippetPrompt = ({
   generalGuidelines,
   languageGuidelines,
   routeDefinitions,
+  existingCodeSnippets,
 }: GetCodeSnippetPromptParams) => {
   return `
   
@@ -22,6 +24,25 @@ the ${nameOfLibrary}:
 # Task
 
 ${taskDescription}
+
+${
+  existingCodeSnippets
+    ? `
+## Existing Code Snippets
+
+${Object.entries(existingCodeSnippets)
+  .map(
+    ([language, snippet]) =>
+      `\`\`\`${language}
+${snippet}
+\`\`\`
+`
+  )
+  .join("\n\n")}
+
+`.trim()
+    : ""
+}
 
 ## Task Guidelines
 

@@ -4,7 +4,7 @@ import crypto from "crypto"
 import chalk from "chalk"
 
 type Options = {
-  model: "gpt-3.5-turbo-16k" | "gpt-4"
+  model: "gpt-3.5-turbo-16k" | "gpt-4" | "gpt-3.5-turbo"
 }
 
 export const getChatCompletion = async (
