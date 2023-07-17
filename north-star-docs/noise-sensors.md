@@ -68,3 +68,4 @@ It'll show the noise level, a way to configure noise thresholds, and see the act
 ## Suggested Improvements
 
 - [ ] Add support for logging noise sensor data, so that we can show a graph of the noise data over time.
+- [ ] Add noise threshold validation properties, so that customers can know how to validate noise thresholds for different providers.
