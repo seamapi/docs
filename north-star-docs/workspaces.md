@@ -31,7 +31,13 @@ Check the credentials to each account on https://docs.seam.co/latest/device-guid
 
 In order to request access to a device within a workspace, an API key specific to that workspace is required. Each workspace can have multiple API keys, but a key cannot be used across different workspaces.
 
-To manage API keys for a workspace, navigate to the Seam dashboard and select the appropriate workspace. From there, go to the API key tab, where you can create or edit keys according to your needs.
+To manage API keys for a workspace, navigate to the Seam dashboard and select the appropriate workspace. From there, go to the API key tab, where you can create or edit keys according to your needs. To create a new API key, follow these steps:
+1. Click on the "Add API Key" button.
+2. fill in the name you want for your API Key.
+3. Click on the "Create API Key" button.
+4. Make sure to save your API Key somewhere safe as we only display the value during creation, particularly at this step.
+5. You can close the modal, and you are good to go.
+
 
 ### Webhooks
 
