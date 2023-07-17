@@ -17,7 +17,7 @@ Of course, you are not limited to these two. You can create as many workspaces a
 
 ### Create a new Sandbox
 
-If you find that the existing sandbox and production workspaces do not meet your needs, you can create a new workspace. Go to the Seam Dashboard and click on the workspace switch, which will bring up a dropdown menu with the option to create a new workspace. Enter the desired name for the workspace and your company information, and specify whether it is a sandbox workspace or not.
+Go to the Seam Dashboard and click on the workspace switch, which will bring up a dropdown menu with the option to create a new workspace. Enter the desired name for the workspace and your company information, and specify whether it is a sandbox workspace or not.
 
 ### Sandbox Workspaces
 
