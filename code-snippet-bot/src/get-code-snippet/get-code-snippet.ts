@@ -67,11 +67,11 @@ Are the following code snippets functionally identical? Output YES or NO (and
 nothing else)
 
 \`\`\`${language}
-${newSnippet}
+${newSnippet.trim()}
 \`\`\`
 
 \`\`\`${language}
-${existingCodeSnippets[language]}
+${existingCodeSnippets[language].trim()}
 \`\`\`
     `.trim(),
       {
@@ -80,7 +80,7 @@ ${existingCodeSnippets[language]}
     )
 
     const identical = identicalRes.includes("YES") ? true : false
-    if (identical) return existingCodeSnippets[language]
+    if (identical) return existingCodeSnippets[language].trim()
   }
 
   return newSnippet

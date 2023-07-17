@@ -60,7 +60,6 @@ const createdConnectWebview = await seam.connectWebviews.create({
 
 // Print the webview url
 console.log(createdConnectWebview.url);
-
 ```
 {% endtab %}
 {% tab title="Python" %}
@@ -73,7 +72,6 @@ assert created_webview.login_successful is False
 
 # Print the URL of the webview
 print(created_webview.url)
-
 ```
 {% endtab %}
 {% tab title="Ruby" %}
@@ -86,7 +84,6 @@ raise 'Login should not be succesful' unless !created_webview.login_successful
 
 # Retrieve and print out the url of the webview
 puts created_webview.url
-
 ```
 {% endtab %}
 {% tab title="PHP" %}
@@ -106,7 +103,6 @@ assert($connect_webview->login_successful === false);
 // print the connect webview URL
 print($connect_webview->url);
 ?>
-
 ```
 {% endtab %}
 {% endtabs %}
