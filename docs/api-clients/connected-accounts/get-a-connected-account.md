@@ -54,7 +54,9 @@ Bearer <API_KEY>
 ### Code Examples
 
 #### Retrieving using "connected\_account\_id"
-
+<!-- CODE INJECT START
+Get a connected account by id
+-->
 {% tabs %}
 {% tab title="Ruby" %}
 ```ruby
@@ -104,6 +106,7 @@ await seam.connectedAccounts.get(
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+<!-- CODE INJECT END -->
 
 #### Retrieving using "email"
 
