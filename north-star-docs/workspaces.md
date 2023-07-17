@@ -3,7 +3,9 @@
 
 ## Overview
 
-The top-level resource in Seam is a workspace. All other resources, such as Devices, Connected Accounts, and Settings, are organized under workspaces. When you sign up for Seam, we create two workspaces for you:
+The top-level resource in Seam is a Workspace. All other resources, such as Devices, Connected Accounts, and API Keys, are organized under workspaces.
+
+There are two different types of workspaces you can create:
 
 * Sandbox: This is a special type of workspace. It contains simulated devices, handy for testing your code without needing real devices.
 
