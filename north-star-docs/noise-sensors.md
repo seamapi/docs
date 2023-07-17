@@ -12,14 +12,14 @@ Noise sensors are devices that measure that sound level in a given area. Propert
   - For Noiseaware, you can configure many thresholds, as long as they don't overlap during the day.
 
 
-1. Set up a Webhook URL from the Console
+2. Set up a Webhook URL from the Console
   - You can set up Webhooks on this page:
     https://console.seam.co/workspaces/[:workspace_id]/webhooks
   - Click the "Add Webhook" button
   - Fill in your URL, and select the event types you want to receive events for
   - Click "Create"
 
-1. Receive events on that webhook
+3. Receive events on that webhook
   - `noise_sensors.noise_threshold_triggered`, with the params:
     ```
     {
