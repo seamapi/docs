@@ -63,4 +63,5 @@ N/A
 
 ## Suggested Improvements
 
-- [ ] https://docs.seam.co/latest/device-guides/sandbox-and-sample-data, is missing some providers, and the sample data is in an even worst state, we should generate it from code somehow 
+- [ ] https://docs.seam.co/latest/device-guides/sandbox-and-sample-data, is missing some providers, and the sample data is in an even worst state, we should generate it from code somehow
+- [ ] Enable editing the workspace name from the Console
