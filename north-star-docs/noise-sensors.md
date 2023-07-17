@@ -11,7 +11,6 @@ Noise sensors are devices that measure that sound level in a given area. Propert
   - For Minut, you can configure two thresholds, one for quiet hours, and one for the rest of the day. The Quiet hours threshold is active during certain hours of the day, and the other schedule will be active for the rest of the time.
   - For Noiseaware, you can configure many thresholds, as long as they don't overlap during the day.
 
-
 2. Set up a Webhook URL from the Console
   - You can set up Webhooks on this page:
     https://console.seam.co/workspaces/[:workspace_id]/webhooks
