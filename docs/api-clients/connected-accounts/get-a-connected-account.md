@@ -69,17 +69,11 @@ console.log(connectedAccount)
 {% endtab %}
 {% tab title="Python" %}
 ```python
-{% code overflow="wrap" %}
-seam.connected_accounts.get("c6610ba7-88d7-4abf-9852-31eb0257aa56")
+# Get a connected account by its ID
+connected_account = seam.connected_accounts.get("123e4567-e89b-12d3-a456-426614174000")
 
-# ConnectedAccount(
-#   connected_account_id='c6610ba7-88d7-4abf-9852-31eb0257aa56', 
-#   created_at='2022-08-23T12:43:49.542Z', 
-#   user_identifier={'email': 'jane@example.com'}, 
-#   account_type='schlage', 
-#   errors=[]
-# )
-{% endcode %}
+# Print the details of the connected account
+print(connected_account)
 ```
 {% endtab %}
 {% tab title="Ruby" %}

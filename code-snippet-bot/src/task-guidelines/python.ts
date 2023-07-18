@@ -8,6 +8,8 @@ export const pythonTaskGuidelines = `
 * \`seam.access_codes.create\` returns an AccessCode dataclass object
 * \`seam.access_codes.delete\` returns an ActionAttempt dataclass object
 * NEVER use the word result, response or data in a variable name
+* NEVER use named parameters if you are requesting a single resource by id using a \`.get\`
+* ALWAYS pass the id as the first positional parameter to a \`.get\` method e.g. \`seam.access_codes.get("access_code2")\`
 
 \`\`\`python
 # GOOD
