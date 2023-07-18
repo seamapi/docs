@@ -58,23 +58,18 @@ Bearer <API_KEY>
 Get a connected account by id
 -->
 {% tabs %}
-{% tab title="Ruby" %}
-```ruby
-seam.connected_accounts.get(
-    connected_account_id: "123e4567-e89b-12d3-a456-426614174000"
-)
+{% tab title="Javascript" %}
+```javascript
+const connectedAccount = await seam.connectedAccounts.get({
+  connected_account_id: "123e4567-e89b-12d3-a456-426614174000"
+})
 
-# <Seam::ConnectedAccount:0x00ed1e8                                                            
-#   connected_account_id="282f9d15-d979-4de7-b4eb-7097c401e910"                                
-#   created_at="2022-07-06T09:43:07.125Z"                                                      
-#   user_identifier=nil                                                                        
-#   account_type="smartthings"> 
+console.log(connectedAccount)
 ```
 {% endtab %}
-
 {% tab title="Python" %}
-{% code overflow="wrap" %}
 ```python
+{% code overflow="wrap" %}
 seam.connected_accounts.get("c6610ba7-88d7-4abf-9852-31eb0257aa56")
 
 # ConnectedAccount(
@@ -84,26 +79,29 @@ seam.connected_accounts.get("c6610ba7-88d7-4abf-9852-31eb0257aa56")
 #   account_type='schlage', 
 #   errors=[]
 # )
-```
 {% endcode %}
+```
 {% endtab %}
+{% tab title="Ruby" %}
+```ruby
+# Use the Seam SDK to get a connected account by its id
+connected_account = seam.connected_accounts.get(
+    connected_account_id: "123e4567-e89b-12d3-a456-426614174000"
+)
 
-{% tab title="Javascript" %}
-{% code overflow="wrap" %}
-```javascript
-await seam.connectedAccounts.get(
-    "c6610ba7-88d7-4abf-9852-31eb0257aa56"
-);
-  
-// {
-//   connected_account_id: 'c6610ba7-88d7-4abf-9852-31eb0257aa56',
-//   created_at: '2022-08-23T12:43:49.542Z',
-//   user_identifier: { email: 'jane@example.com' },
-//   account_type: 'schlage',
-//   errors: []
-// }
+# Print the details of the connected account
+puts connected_account
 ```
-{% endcode %}
+{% endtab %}
+{% tab title="PHP" %}
+```php
+// Get a connected account by its ID
+$connected_account = $seam->connected_accounts->get(
+  "123e4567-e89b-12d3-a456-426614174000"
+);
+
+echo json_encode($connected_account);
+```
 {% endtab %}
 {% endtabs %}
 <!-- CODE INJECT END -->
