@@ -102,6 +102,9 @@ echo json_encode($connected_account);
 
 #### Retrieving using "email"
 
+<!-- CODE INJECT START
+Get a connected account by email
+-->
 {% tabs %}
 {% tab title="Ruby" %}
 ```ruby
@@ -118,6 +121,7 @@ puts connect_account
 ```
 {% endtab %}
 {% endtabs %}
+<!-- CODE INJECT END -->
 
 ### Parameters
 

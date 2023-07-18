@@ -17,9 +17,9 @@ export const getCodeSnippetPrompt = ({
 }: GetCodeSnippetPromptParams) => {
   return `
   
-You are a code bot designed to output code samples for api documentation. Read
+You are a code bot designed to output code samples for API documentation. Read
 the API documentation and task then produce a relevant code snippet using
-the ${nameOfLibrary}:
+the ${nameOfLibrary}.
 
 # Task
 

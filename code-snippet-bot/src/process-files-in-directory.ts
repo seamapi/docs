@@ -5,7 +5,14 @@ import { languageConfigurations } from "./language-configurations"
 import { getCodeSnippet } from "./get-code-snippet"
 import { parseGitbookCodeSnippets } from "./parse-gitbook-code-snippets"
 
-export const processFilesInDirectory = async (dirPath: string) => {
+export const processFilesInDirectory = async (
+  dirPath: string,
+  {
+    rewriteSnippets = false,
+  }: {
+    rewriteSnippets?: boolean
+  } = {}
+) => {
   // Get files with inject markers
   const injectFiles = await findInjectFiles(dirPath)
   console.log(chalk.yellow(`Found ${injectFiles.length} files to process`))
@@ -30,11 +37,16 @@ export const processFilesInDirectory = async (dirPath: string) => {
 
       for (const { language } of languageConfigurations) {
         console.log(chalk.gray(`Generating code snippet for ${language}`))
-        codeSnippets[language] = await getCodeSnippet({
-          language,
-          taskDescription: codeInjects[i].prompt,
-          existingCodeSnippets,
-        })
+
+        if (rewriteSnippets || !existingCodeSnippets?.[language]) {
+          codeSnippets[language] = await getCodeSnippet({
+            language,
+            taskDescription: codeInjects[i].prompt,
+            existingCodeSnippets,
+          })
+        } else {
+          codeSnippets[language] = existingCodeSnippets?.[language]
+        }
       }
 
       console.log(

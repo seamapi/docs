@@ -24,6 +24,14 @@ action_attempt = seam.access_codes.delete(
   access_code_id="access_code2"
 )
 
+# GOOD
+access_code = seam.access_codes.get("access_code2")
+
+# GOOD
+connected_account = seam.connected_accounts.get(
+  email="john@example.com"
+)
+
 print(action_attempt)
 \`\`\`
 

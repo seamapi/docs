@@ -34,6 +34,11 @@ const accessCode = await seam.accessCodes.get({
 })
 
 console.log(accessCode)
+
+// GOOD
+const connectedAccount = await seam.connectedAccounts.get({
+  email: "john@example.com"
+})
 \`\`\`
 
 `.trim()

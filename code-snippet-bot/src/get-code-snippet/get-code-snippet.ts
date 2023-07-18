@@ -4,6 +4,7 @@ import { getLanguageConfiguration } from "../language-configurations"
 import { routeDefinitions } from "../route-definitions"
 import { generalGuidelines } from "../task-guidelines"
 import { getCodeSnippetPrompt } from "./get-code-snippet-prompt"
+import stripComments from "strip-comments"
 
 type GetCodeSnippetParams = {
   language: string
@@ -54,7 +55,7 @@ ${routeDefinitions}
     }
   )
 
-  const newSnippet = extractCodeFromResponse(completion)!
+  const newSnippet = stripComments(extractCodeFromResponse(completion)!)
 
   // Check if the code snippets are functionally identical
   if (
