@@ -55,7 +55,9 @@ ${routeDefinitions}
     }
   )
 
-  const newSnippet = stripComments(extractCodeFromResponse(completion)!)
+  const newSnippet = stripComments(extractCodeFromResponse(completion)!, {
+    language: languageConfig.language,
+  })
 
   // Check if the code snippets are functionally identical
   if (

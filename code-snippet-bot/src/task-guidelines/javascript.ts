@@ -39,6 +39,11 @@ console.log(accessCode)
 const connectedAccount = await seam.connectedAccounts.get({
   email: "john@example.com"
 })
+
+// GOOD
+const webview = await seam.connectWebviews.create({
+  accepted_providers: ["nuki"]
+})
 \`\`\`
 
 `.trim()

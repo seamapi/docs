@@ -27,10 +27,13 @@ action_attempt = seam.access_codes.delete(
 # GOOD
 access_code = seam.access_codes.get("access_code2")
 
-# GOOD
+# GOOD - email is not an id so it can't be passed as a positional parameter
 connected_account = seam.connected_accounts.get(
   email="john@example.com"
 )
+
+# GOOD - for .get methods you can directly pass the id as a positional parameter
+connected_account = seam.connected_accounts.get("someaccount1")
 
 print(action_attempt)
 \`\`\`
