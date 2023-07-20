@@ -30,16 +30,16 @@ To use a sandbox, you will first need to create a Sandbox Workspace and create a
 [genie-sample-data.md](genie-sample-data.md)
 {% endcontent-ref %}
 
+{% content-ref url="hubitat-hub-sample-data.md" %}
+[hubitat-hub-sample-data.md](hubitat-hub-sample-data.md)
+{% endcontent-ref %}
+
 {% content-ref url="linear-sample-data.md" %}
 [linear-sample-data.md](linear-sample-data.md)
 {% endcontent-ref %}
 
 {% content-ref url="minut-noise-sensor-sample-data.md" %}
 [minut-noise-sensor-sample-data.md](minut-noise-sensor-sample-data.md)
-{% endcontent-ref %}
-
-{% content-ref url="minut-sample-data.md" %}
-[minut-sample-data.md](minut-sample-data.md)
 {% endcontent-ref %}
 
 {% content-ref url="nuki-sample-data.md" %}
