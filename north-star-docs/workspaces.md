@@ -15,7 +15,7 @@ Of course, you are not limited to these two. You can create as many workspaces a
 
 ## Basic Implementation
 
-### Create a new Sandbox
+### Create a new Workspace
 
 Go to the Seam Dashboard and click on the workspace switch, which will bring up a dropdown menu with the option to create a new workspace. Enter the desired name for the workspace and your company information, and specify whether it is a sandbox workspace or not.
 
@@ -27,6 +27,28 @@ These simulated devices behave like their real counterparts. This lets you test 
 
 Check the credentials to each account on https://docs.seam.co/latest/device-guides/sandbox-and-sample-data
 
+### Production Workspaces
+
+Production workspaces allow you to connect with actual accounts and devices. The great news is that we have made the sandbox authentication process as similar as possible to the real one. If you have already connected in the sandbox workspace, you should have no trouble here!
+
+### Resetting a Workspace
+
+You can always reset a sandbox workspace to return it to its starting state. This is handy if you need to run continuous integration! We are also working on letting you edit the initial seed state.
+
+To reset your workspace you should send a POST to https://connect.getseam.com/workspaces/reset_sandbox with the authentication on the header
+
+## Advanced Implementation(s)
+
+N/A
+
+## Troubleshooting Steps
+
+### Should a PMS (Property Management Software) be creating a new workspace for each customer?
+
+NO, Instead, you should create one workspace for your application, and keep track of which host has linked which connected accounts
+
+## Configuring features via the Console
+
 ### Api Keys
 
 In order to request access to a device within a workspace, an API key specific to that workspace is required. Each workspace can have multiple API keys, but a key cannot be used across different workspaces.
@@ -37,7 +59,6 @@ To manage API keys for a workspace, navigate to the Seam dashboard and select th
 3. Click on the "Create API Key" button.
 4. Make sure to save your API Key somewhere safe as we only display the value during creation, particularly at this step.
 5. You can close the modal, and you are good to go.
-
 
 ### Webhooks
 
@@ -56,23 +77,13 @@ Through the Seam Dashboard, your team can easily collaborate to manage a workspa
 
 To manage your team, navigate to the Seam dashboard and select the appropriate workspace. From there, go to the Team tab to invite new members or remove existing ones. It's important to note that a member will only appear on the list once they have accepted your invitation.
 
-### Resetting Sandboxes
+### Reset Workspace
 
-You can always reset a sandbox workspace to return it to its starting state. This is handy if you need to run continuous integration! We are also working on letting you edit the initial seed state.
+Here are the steps to reset your workspace via console:
 
-## Advanced Implementation(s)
-
-N/A
-
-## Troubleshooting Steps
-
-### Should a PMS (Property Management Software) be creating a new workspace for each customer?
-
-NO, Instead, you should create one workspace for your application, and keep track of which host has linked which connected accounts
-
-## Configuring features via the Console
-
-Workspaces are managed via the console only.
+1. Click on the workspace switch and wait for the dropdown to appear.
+2. Click the "reset" button. Please note that you need the appropriate privileges to access this button.
+3. Wait for your workspace to reset. This process may take some time.
 
 ## How would a user incorporate this feature into their Dashboard?
 
