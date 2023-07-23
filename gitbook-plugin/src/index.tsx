@@ -26,7 +26,7 @@ const handleFetchEvent: FetchEventCallback<IntegrationContext> = async (
       <body>
         <script
           type="module"
-          src="https://react.seam.co/v/1.33.2/dist/elements.js"
+          src="https://react.seam.co/v/1.33.3/dist/elements.js"
         ></script>
         <script type="module">
           function sendAction(action) {
@@ -57,7 +57,7 @@ const handleFetchEvent: FetchEventCallback<IntegrationContext> = async (
     {
       headers: {
         "Content-Type": "text/html",
-        "Cache-Control": "public, max-age=86400",
+        "Cache-Control": "public, max-age=60",
       },
     }
   )
