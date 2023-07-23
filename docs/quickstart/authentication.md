@@ -1,5 +1,9 @@
 # Authentication
 
+<div style="background-color: red; width: 200px; height: 200px">
+content in middle
+</div>
+
 Export your API key as an env var. Seam client libs will automatically pick it up. For example:
 
 ```
@@ -10,6 +14,7 @@ Next, run the code below to check you are correctly authenticated:
 
 {% tabs %}
 {% tab title="Javascript" %}
+
 ```java
 // Replace with
 // const Seam = require("seamapi")
@@ -36,10 +41,10 @@ checkAuth();
 }
 */
 ```
+
 {% endtab %}
 
 {% tab title="Python" %}
-
 
 ```python
 from seamapi import Seam
@@ -50,12 +55,14 @@ seam = Seam()
 
 workspace = seam.workspaces.get()
 print(workspace)
-# Workspace(workspace_id='ab804f5a-7dd2-42c8-8d09-0beff4f795eb', 
+# Workspace(workspace_id='ab804f5a-7dd2-42c8-8d09-0beff4f795eb',
 #   name='Sanbox', is_sandbox=True)
 ```
+
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 ```ruby
 require "seamapi"
 
@@ -64,15 +71,17 @@ seam = Seam::Client.new(api_key: "MY_API_KEY")
 workspace = seam.workspaces.get
 
 puts workspace
-# <Seam::Workspace:0x0070328                                          
-#   workspace_id="123e4567-e89b-12d3-a456-426614174000"               
-#   name="MySandbox"                                           
-#   connect_partner_name="Partner Sandbox"                           
-#   is_sandbox=true> 
+# <Seam::Workspace:0x0070328
+#   workspace_id="123e4567-e89b-12d3-a456-426614174000"
+#   name="MySandbox"
+#   connect_partner_name="Partner Sandbox"
+#   is_sandbox=true>
 ```
+
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 use Seam\SeamClient;
 
@@ -90,6 +99,6 @@ echo json_encode($workspace);
 }
 */
 ```
+
 {% endtab %}
 {% endtabs %}
-
