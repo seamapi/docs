@@ -1,0 +1,17 @@
+name: seam-gitbook-plugin
+title: seam-gitbook-plugin
+organization: jhFodLh6YFJJYK6Lv9wE
+visibility: private
+description: ''
+script: src/index.tsx
+scopes:
+  - space:content:read
+  - space:content:write
+  - space:metadata:read
+  - space:metadata:write
+  - space:views:read
+blocks:
+  - id: seam-component
+    title: Seam Component
+    description: Insert a Seam HTML Component
+secrets: {}
