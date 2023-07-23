@@ -26,7 +26,7 @@ const handleFetchEvent: FetchEventCallback<IntegrationContext> = async (
       <body>
         <script
           type="module"
-          src="https://react.seam.co/v/1.18.0/dist/elements.js"
+          src="https://react.seam.co/v/1.33.2/dist/elements.js"
         ></script>
         <script type="module">
           function sendAction(action) {
@@ -63,7 +63,7 @@ const handleFetchEvent: FetchEventCallback<IntegrationContext> = async (
   )
 }
 
-const exampleBlock = createComponent<
+const seamComponentBlock = createComponent<
   IntegrationBlockProps,
   IntegrationBlockState,
   IntegrationAction,
@@ -126,6 +126,6 @@ const exampleBlock = createComponent<
 
 export default createIntegration({
   fetch: handleFetchEvent,
-  components: [exampleBlock],
+  components: [seamComponentBlock],
   events: {},
 })
