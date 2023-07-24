@@ -93,10 +93,7 @@ const seamComponentBlock = createComponent<
     const output = (
       <webframe
         source={{
-          url:
-            environment.integration.urls.publicEndpoint +
-            `?cache=` +
-            Math.random(),
+          url: environment.integration.urls.publicEndpoint,
         }}
         aspectRatio={16 / 9}
         data={{
