@@ -36,7 +36,7 @@ Salto Locks does not allow a user to configure custom pin codes. When creating a
 When you encounter this error, it means that the Salto KS site has exceeded the allowed number of users, as defined by its subscription plan. There are a few ways to resolve this:
 
 1. You can reduce the number of access codes you've created. Each access code will take up one user slot.
-2. You can ask the device owner to contact their Salto installer to increase their subscription limit on their site.
+2. You can ask the device owner to contact their Salto installer to increase the subscription limit on their site.
 
 ## Where to Order
 
