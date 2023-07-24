@@ -65,10 +65,6 @@
 * [Recommended Mitigations for Access Codes](device-guides/recommended-mitigations-for-access-codes.md)
 * [Rate Limits and Guardrails](device-guides/rate-limits-and-guardrails.md)
 
-## 🌉 Seam Bridge
-
-* [Connecting the Seam Bridge to DoorKing](seam-bridge/connecting-with-doorking.md)
-
 ## 📋 API Clients
 
 * [Overview](api-clients/overview.md)
@@ -150,6 +146,10 @@
 
 * [Device Provider Metadata](reference/device-provider-metadata.md)
 * [Glossary](reference/glossary.md)
+
+## 🌉 Seam Bridge
+
+* [Connecting the Seam Bridge to DoorKing](seam-bridge/connecting-with-doorking.md)
 
 ## For Device Manufacturers
 

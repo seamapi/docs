@@ -23,9 +23,20 @@ We support the following features:
 * Triggering web unlock actions
 * Programming access codes on door locks and card readers that have a pin pad.
 
-## Special restrictions
+## Brand-Specific Integration Considerations
 
-Salto Locks do now allow a user to configure custom pin codes. When creating an access code on a Salto door lock, their system will automatically generate a 6-10 digit pin code. You will be able to retrieve the pin code from the `code property` on the access code object.
+### Access Code Limitations
+
+Salto Locks do now allow a user to configure custom pin codes. When creating an access code on a Salto door lock, their system will automatically generate a 6-10 digit pin code. You will be able to retrieve the pin code from the `code` property on the access code object.
+
+### Salto-specific Access Code Errors
+
+`salto_site_user_not_subscribed`
+
+When you encounter this error, it means that the Salto KS site has exceeded the allowed number of users, as defined by its subscription plan. There are a few ways to resolve this:
+
+1. You can reduce the number of access codes you've created. Each access code will take up one user slot.
+2. You can ask the device owner to contact their Salto installer to increase their subscription limit on their site.
 
 ## Where to Order
 
