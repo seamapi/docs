@@ -27,7 +27,7 @@ We support the following features:
 
 ### Access Code Limitations
 
-Salto Locks do now allow a user to configure custom pin codes. When creating an access code on a Salto door lock, their system will automatically generate a 6-10 digit pin code. You will be able to retrieve the pin code from the `code` property on the access code object.
+Salto Locks does not allow a user to configure custom pin codes. When creating an access code on a Salto door lock, their system will automatically generate a 6-10 digit pin code. You will be able to retrieve the pin code from the `code` property on the access code object.
 
 ### Salto-specific Access Code Errors
 
