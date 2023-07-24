@@ -57,7 +57,8 @@ const handleFetchEvent: FetchEventCallback<IntegrationContext> = async (
     {
       headers: {
         "Content-Type": "text/html",
-        "Cache-Control": "public, max-age=60",
+        // Don't cache until we're stable
+        // "Cache-Control": "public, max-age=60",
       },
     }
   )
@@ -76,7 +77,7 @@ const seamComponentBlock = createComponent<
         props.content ??
         `
 <seam-device-table
-  publishable-key="seam_pk_1"
+  client-session-token="seam_cst1_0000"
   endpoint="https://react.seam.co/api"
 />`.trim(),
     }
@@ -92,7 +93,10 @@ const seamComponentBlock = createComponent<
     const output = (
       <webframe
         source={{
-          url: environment.integration.urls.publicEndpoint,
+          url:
+            environment.integration.urls.publicEndpoint +
+            `?cache=` +
+            Math.random(),
         }}
         aspectRatio={16 / 9}
         data={{
