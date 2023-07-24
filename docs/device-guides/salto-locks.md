@@ -20,8 +20,8 @@ This integration works any devices connected via their [SaltoKS platform](https:
 
 We support the following features:
 
-* Triggering web unlock actions
-* Programming access codes on door locks and card readers that have a pin pad.
+* [Triggering web unlock actions](../api-clients/locks/unlock-a-lock.md)
+* [Programming access codes](../core-concepts/access-codes.md) on door locks and card readers that have a pin pad.
 
 ## Brand-Specific Integration Considerations
 
