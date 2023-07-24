@@ -1,7 +1,7 @@
 name: seam-gitbook-plugin-v2
 title: seam-gitbook-plugin-v2
 organization: jhFodLh6YFJJYK6Lv9wE
-visibility: private
+visibility: unlisted
 description: ''
 script: src/index.tsx
 scopes:
