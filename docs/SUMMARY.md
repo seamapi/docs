@@ -37,7 +37,7 @@
 * [Get started with SmartThings Hubs + Smart Locks](device-guides/get-started-with-smartthings-hubs-+-smart-locks.md)
 * [Hubitat Elevation Hub](device-guides/hubitat-elevation-hub.md)
 * [Get started with Salto Locks](device-guides/get-started-with-salto-locks.md)
-* [Salto Locks](device-guides/hubitat-elevation-hub-1.md)
+* [Salto Locks](device-guides/salto-locks.md)
 * [Get started with TTLock Devices](device-guides/get-started-with-ttlock-devices.md)
 * [Get started with NoiseAware Sensors](device-guides/get-started-with-noiseaware-sensors.md)
 * [Get started with Igloohome Locks](device-guides/get-started-with-igloo-locks.md)
