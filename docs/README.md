@@ -38,8 +38,8 @@ dependencies {
 For Maven, add the dependency in your `pom.xml`:
 ```xml
 <dependency>
-    <groupId>io.github.seamapi:java</groupId>
-    <artifactId>seam</artifactId>
+    <groupId>io.github.seamapi</groupId>
+    <artifactId>java</artifactId>
     <version>0.x.x</version>
 </dependency>
 ```
