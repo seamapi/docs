@@ -147,6 +147,7 @@
 * [Device Provider Metadata](reference/device-provider-metadata.md)
 * [Glossary](reference/glossary.md)
 * [Help Center](reference/help-center/README.md)
+  * [How often am I billed with Seam?](reference/help-center/how-often-am-i-billed-with-seam.md)
   * [Handling Recurring Access Codes](reference/help-center/handling-recurring-access-codes.md)
 
 ## 🌉 Seam Bridge
