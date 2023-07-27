@@ -41,6 +41,7 @@
 * [Get started with TTLock Devices](device-guides/get-started-with-ttlock-devices.md)
 * [Get started with NoiseAware Sensors](device-guides/get-started-with-noiseaware-sensors.md)
 * [Get started with Igloohome Locks](device-guides/get-started-with-igloo-locks.md)
+* [Yale Locks](device-guides/yale-locks.md)
 * [Sandbox & Sample Data](device-guides/sandbox-and-sample-data/README.md)
   * [2N Intercoms Sample Data](device-guides/sandbox-and-sample-data/2n-intercoms-sample-data.md)
   * [August Locks Sample Data](device-guides/sandbox-and-sample-data/august-locks-sample-data.md)
