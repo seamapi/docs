@@ -12,8 +12,13 @@ Yale manufacturers some of the most advanced smart locks on the market such as t
 
 The Seam integration is tailored for Yale Locks that are connected via the following platforms:
 
-* [**Yale Home**](https://www.yalehome.com/au/en/products/smart-products/yale-home-app) **or** [**Yale Access**](https://www.yalehome.com/us/en/products/smart-technology/yale-access) **apps**: Some Yale locks come with built-in WiFi support, allowing them to connect directly to the Yale Home or Yale Access apps. However, for locks without integrated WiFi, you'll need to install the [Yale Access Upgrade Kit](https://amzn.to/3OyUVOT) for compatibility with these apps.
-* **Z-Wave with** [**Aeotec SmartThings**](https://amzn.to/44OulH1) **or**[ **Hubitat Elevation hubs**](https://amzn.to/3Ki4krc): To use Yale Locks with these Z-Wave based hubs, the lock must have the [Yale Z-Wave network module](https://amzn.to/3DC9nis) installed. This module ensures seamless communication between the lock and the hub, allowing for integration into broader smart home setups.
+* [**Yale Home**](https://www.yalehome.com/au/en/products/smart-products/yale-home-app) **or** [**Yale Access**](https://www.yalehome.com/us/en/products/smart-technology/yale-access) **apps**: Some Yale locks come with built-in WiFi support, allowing them to connect directly to the Yale Home or Yale Access apps. However, for locks without integrated WiFi, you'll need to install the [Yale Access Upgrade Kit](https://amzn.to/3OyUVOT) for compatibility with these apps.\
+  ![](../.gitbook/assets/d2d0a-yd-accesskit\_ya\_enc1.jpg)\
+  [**Yale Access Upgrade Kit**](https://www.amazon.com/Yale-Bluetooth-Upgrade-Assure-Levers/dp/B07GPXN936?hvadid=309748512713\&hvpos=\&hvnetw=g\&hvrand=898690352114198212\&hvpone=\&hvptwo=\&hvqmt=\&hvdev=c\&hvdvcmdl=\&hvlocint=\&hvlocphy=9031939\&hvtargid=pla-628163958927\&psc=1\&linkCode=sl1\&tag=seam0f-20\&linkId=2a3f40625fb6f9267c822adfd793a950\&language=en\_US\&ref\_=as\_li\_ss\_tl)\
+
+* **Z-Wave with** [**Aeotec SmartThings**](https://amzn.to/44OulH1) **or**[ **Hubitat Elevation hubs**](https://amzn.to/3Ki4krc): To use Yale Locks with these Z-Wave based hubs, the lock must have the [Yale Z-Wave network module](https://amzn.to/3DC9nis) installed. This module ensures seamless communication between the lock and the hub, allowing for integration into broader smart home setups.\
+  ![](../.gitbook/assets/yale-ayr202-zwv-usa-assure-lock-z-wave-plus-network-module-ayr202-zwv-usa.jpeg)\
+  [**Yale Z-Wave Network Module**](https://www.amazon.com/Yale-Z-wave-Module-Electronic-AYR202-ZWV-USA/dp/B07B1G5LR9?crid=1M97DIL3OHT0E\&keywords=yale+z-wave+plus+module\&qid=1690480444\&sprefix=yale+z-wave+plus+module,aps,318\&sr=8-1\&ufe=app\_do:amzn1.fos.f5122f16-c3e8-4386-bf32-63e904010ad0\&linkCode=sl1\&tag=seam0f-20\&linkId=62ce481be465b16a59d4e8e1f69e4965\&language=en\_US\&ref\_=as\_li\_ss\_tl)
 
 When purchasing a Yale Lock or a network module separately, always verify the specific compatibility needs for your desired setup.
 
