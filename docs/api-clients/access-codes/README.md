@@ -76,7 +76,7 @@ See our [recommended mitigations for access codes](https://docs.seam.co/latest/d
 | `kwikset_unable_to_confirm_code`                   | Unable to confirm that the access code is set on the Kwikset device. This is likely due to a duplicate pin code on the device that was set outside of Seam. Please update this access code's 'code' value through Seam Console or by using our [access\_codes/update endpoint](https://docs.seam.co/latest/api-clients/access-codes/update-an-access-code) |
 | `kwikset_unable_to_confirm_deletion`               | Unable to confirm deletion of the access code from the Kwikset device. It's possible that this access code was deleted from a source other than Seam. Please check the list of access codes on your Kwikset app from a device that is connected to the lock via Bluetooth or contact us for further assistance                                             |
 
-## Access Code Warning TypesTest Change
+## Access Code Warnings
 
 {% hint style="info" %}
 An access code can have more than one error or warning.
