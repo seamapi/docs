@@ -27,10 +27,10 @@ In addition to the common event properties, the following properties are availab
 
 In addition to the common event properties, and common device event properties, the following properties are available for events that pertain to access codes:
 
-|                  |        |                                                                                                                                            |
-| ---------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `access_code_id` | String | Present on all of the `access_code.*` events. Specifies the unique identifier of the access code to which the event pertains.              |
-| `code`           | String | Only present on an `access_code.set_on_device` and `access_code.scheduled_on_device` events. Specifies the code digits for an access code. |
+|                  |        |                                                                                                                                         |
+| ---------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `access_code_id` | String | Present on all of the `access_code.*` events. Specifies the unique identifier of the access code to which the event pertains.           |
+| `code`           | String | Only present on `access_code.set_on_device` and `access_code.scheduled_on_device` events. Specifies the code digits for an access code. |
 
 ### Lock Events
 
