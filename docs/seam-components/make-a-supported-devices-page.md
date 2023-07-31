@@ -16,7 +16,7 @@ To access the Seam API, you'll need a publishable key. This key identifies your 
 
 Go to [console.seam.co](https://console.seam.co) and select "Client Sessions" from the sidebar. You should then see a "Publishable Key" that you can copy.
 
-<figure><img src="../../../.gitbook/assets/publishable-key-copy.png" alt="Publishable key" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/publishable-key-copy.png" alt="Publishable key" width="375"><figcaption></figcaption></figure>
 
 ## 2 — Add Seam Components
 
