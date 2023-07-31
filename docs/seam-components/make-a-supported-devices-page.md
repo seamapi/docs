@@ -38,7 +38,6 @@ Create a plain HTML page with the content below. You can serve this anyway you l
     <main>
       <seam-supported-device-table
         publishable-key="your_publishable_key"
-        user-identifier-key="anonymous"
       ></seam-supported-device-table>
     </main>
     <script
@@ -66,7 +65,7 @@ import { SupportedDeviceTable, SeamProvider } from "@seamapi/react"
 
 export const App = () => {
   return (
-    <SeamProvider publishableKey="your_publishable_key" userIdentifierKey="anonymous">
+    <SeamProvider publishableKey="your_publishable_key">
       <main>
         <SupportedDeviceTable />
       </main>
@@ -94,21 +93,14 @@ import "@seamapi/react/elements.js"
 Add the components where your framework renders HTML. Some frameworks may require additional configuration to enable web component support, e.g., [Angular](angular.md) or [Vue][vue.md].
 
 ```html
-<seam-supported-device-table publishable-key="your_publishable_key" user-identifier-key="anonymous"></seam-supported-device-table>
+<seam-supported-device-table publishable-key="your_publishable_key"></seam-supported-device-table>
 ```
 {% endtab %}
 {% endtabs %}
 
-{% hint style="info" %}
-The `user_identifier_key` above assumes this component will appear .
-For a detailed explanation, see [selecting a user Identifier key](./get-started-with-client-side-components.md#3-select-a-user-identifier-key).
-{% endhint %}
-
 You should see a list of device models like what's shown below:
 
 <figure><img src="https://3624860916-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FxnN2A67918om1UthYWsF%2Fuploads%2FyvmI7GxNyxhebqR99ZwF%2FScreen%20Shot%202023-06-30%20at%209.46.33%20AM.png?alt=media&#x26;token=18a6ad74-0f9f-4e18-8c15-57371c461044" alt=""><figcaption></figcaption></figure>
-
-
 
 ## Next Steps
 
