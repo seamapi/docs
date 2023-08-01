@@ -141,7 +141,7 @@
   * [Supported Devices Table](seam-components/react-components/supported-devices-table.md)
   * [Seam Provider](seam-components/react-components/seam-provider.md)
   * [Connect Account Button](seam-components/react-components/connect-account-button.md)
-* [Make a Supported Devices Page with React](seam-components/make-a-supported-devices-page-with-react.md)
+* [Make a Supported Devices Page](seam-components/make-a-supported-devices-page.md)
 
 ## Reference
 
