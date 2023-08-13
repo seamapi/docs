@@ -18,6 +18,8 @@
 * [Connect Webviews](core-concepts/connect-webviews.md)
 * [Device Capabilities](core-concepts/device-capabilities.md)
 * [Action Attempts](core-concepts/action-attempts.md)
+* [Noise Thresholds](core-concepts/noise-thresholds/README.md)
+  * [Configure Noise Threshold Settings](core-concepts/noise-thresholds/configure-noise-threshold-settings.md)
 * [Webhooks](core-concepts/webhooks.md)
 * [Locks - Access Codes](core-concepts/access-codes.md)
 * [Thermostats - Climate Setting Schedules](core-concepts/thermostats-climate-setting-schedules.md)
