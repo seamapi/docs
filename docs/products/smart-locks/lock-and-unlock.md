@@ -103,7 +103,7 @@ console.log(someLock)
 
 You can set up webhooks in the [console](https://console.seam.co/workspaces/\[:workspace\_id]/webhooks) with the `Add Webhook` button. All you need to do is fill in your URL, then select the event types you want to receive events for, then click `Create`.
 
-\[insert screenshot here],
+<figure><img src="../../.gitbook/assets/Screen Shot 2023-08-13 at 4.39.14 PM.png" alt=""><figcaption></figcaption></figure>
 
 ### Monitor Events
 
