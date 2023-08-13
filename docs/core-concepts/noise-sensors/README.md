@@ -1,4 +1,4 @@
-# Noise Thresholds
+# Noise Sensors
 
 ### What is a Noise Sensor?
 
