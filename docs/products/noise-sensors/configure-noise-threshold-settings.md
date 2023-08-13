@@ -1,10 +1,10 @@
 # Configure Noise Threshold Settings
 
-Seam allows you to configure the [noise thresholds](https://www.notion.so/Noise-Sensor-Concept-Guide-16ff6ca472cf47e1ae950a52f2123d5e?pvs=21) of your noise sensor, and receive events when a disturbance is detected. This guide will walk you through how to configure noise thresholds with the API.
+Seam allows you to configure the [noise thresholds](./#what-is-a-threshold) of your noise sensor, and receive events when a disturbance is detected. This guide will walk you through how to configure noise thresholds with the API.
 
 ### Set Up Noise Thresholds
 
-First, you’ll need to create a threshold using the [Create Noise Thresholds](https://docs.seam.co/latest/api-clients/noise-sensors/create-noise-threshold) endpoint. For example:
+First, you’ll need to create a threshold using the [Create Noise Thresholds](../../api-clients/noise-sensors/create-noise-threshold.md) endpoint. For example:
 
 ```python
 seam.noise_sensors.noise_thresholds.create(
@@ -52,7 +52,7 @@ Once you’ve created a threshold, you’ll need to connect it to a webhook to l
 
 ### Set Up Webhooks
 
-You can set up webhooks in the [console](https://console.seam.co/workspaces/\[:workspace\_id]/webhooks) with the `Add Webhook` button. All you need to do is fill in your URL, then select the event types you want to receive events for, then click `Create`.
+You can set up webhooks in the [console](https://console.seam.co) with the `Add Webhook` button. All you need to do is fill in your URL, then select the event types you want to receive events for, then click `Create`.
 
 \[insert screenshot here],
 
@@ -76,4 +76,4 @@ Once your thresholds and webhooks are configured, you’ll be able to monitor ev
 
 ```
 
-You can see more parameters for events [here](https://docs.seam.co/latest/api-clients/noise-sensors).
+You can see more parameters for events [here](../../api-clients/events/).
