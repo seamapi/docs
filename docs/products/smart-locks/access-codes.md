@@ -5,9 +5,9 @@ description: >-
   intercom by typing a 4-8 digit code.
 ---
 
-# Locks - Access Codes
+# Access Codes
 
-<figure><img src="../.gitbook/assets/code_unlock.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/code_unlock.gif" alt=""><figcaption></figcaption></figure>
 
 ## What is an Access Code?
 
@@ -24,7 +24,7 @@ Native Scheduling is a Seam access code feature that preloads an access code int
 
 With Native Scheduling, Seam preload access codes into the device **72 hours ahead** of the `starts_at` time of a `time_bound` code. When the `starts_at` time arrives, the code automatically becomes active until the `ends_at` timestamp.&#x20;
 
-<figure><img src="../.gitbook/assets/device-native-scheduling-illustration (3).png" alt=""><figcaption><p>72 hours before the <code>starts_at</code> timestamp, Seam inserts the code into the device's internal memory. When the <code>starts_at</code> time arrives, the device automatically activates the code. It is then automatically deactivated at the <code>ends_at</code> timestamp.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/device-native-scheduling-illustration (3).png" alt=""><figcaption><p>72 hours before the <code>starts_at</code> timestamp, Seam inserts the code into the device's internal memory. When the <code>starts_at</code> time arrives, the device automatically activates the code. It is then automatically deactivated at the <code>ends_at</code> timestamp.</p></figcaption></figure>
 
 When a provider does not support Native Scheduling, Seam will use its own scheduling infrastructure to explicitly set and remove the code at the `starts_at` and `ends_at` times. You can choose to override this default behavior, and always have Seam perform the scheduling by setting `prefer_native_scheduling` to `false` when creating the code.
 
@@ -60,9 +60,9 @@ Access codes go through the following statuses. You can inspect the status by lo
 * **unknown**: An account is disconnected and Seam cannot access the third party API to check the access code
 * **404**: Seam has confirmed the code is not on the device, the access code is deleted in both Seam and the third party API
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Lifecycle of Access Codes with Transition Arrows</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Lifecycle of Access Codes with Transition Arrows</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Untitled-2022-09-07-1822.png" alt=""><figcaption><p>Logic that determines status of access code</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Untitled-2022-09-07-1822.png" alt=""><figcaption><p>Logic that determines status of access code</p></figcaption></figure>
 
 ## Relationship between Action Attempts and Access Codes
 

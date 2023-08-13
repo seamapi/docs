@@ -292,7 +292,7 @@ Many smartlocks have a built-in keypad or an external one that can be paired ove
 
 ![](../.gitbook/assets/guides/code\_unlock.gif)
 
-The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a smartlock. An `ongoing` code is a code that will be permanently programmed onto the device until you tell the Seam API you wish to remove it. A `timebound` code is, as the time implies, time bound by a set of ISO8601 timestamp that you provide the Seam API. You can find out more about access code in our [core concept section on access codes.](../core-concepts/access-codes.md)
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a smartlock. An `ongoing` code is a code that will be permanently programmed onto the device until you tell the Seam API you wish to remove it. A `timebound` code is, as the time implies, time bound by a set of ISO8601 timestamp that you provide the Seam API. You can find out more about access code in our [core concept section on access codes.](../products/smart-locks/access-codes.md)
 
 {% tabs %}
 {% tab title="Python" %}

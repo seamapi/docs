@@ -4,7 +4,7 @@ description: >-
   cooling, or off) and desired temperature profile for a period of time.
 ---
 
-# Thermostats - Climate Setting Schedules
+# Climate Setting Schedules
 
 ## What is a Climate Setting Schedule?
 
@@ -16,7 +16,7 @@ For example, a short-term-rental host may create a climate setting schedule that
 Note: the time ranges of Climate Setting Schedules cannot overlap, as only one Climate Setting Schedule can be active at a time.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/Thermo rule.png" alt=""><figcaption><p>Our Seam Component for configuring a Climate Setting Schedule</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Thermo rule.png" alt=""><figcaption><p>Our Seam Component for configuring a Climate Setting Schedule</p></figcaption></figure>
 
 ## What Climate Settings can you create?
 
@@ -26,8 +26,6 @@ The main Climate Settings on a thermostat control the HVAC system mode:
 * **Cool:** Only activates the cooling system to cool the space. The system will cool the system to the cooling set point temperature.
 * **Heat/Cool or Auto:** Automatically chooses between heating or cooling to maintain a temperature between the heating and cooling set points for maximum comfort.
 * **Off:** Turns off both the heating and cooling systems for the space.
-
-
 
 On our climate setting schedule, this is how the `hvac_mode_setting` attribute maps to the `automatic_heating_enabled` and `automatic_cooling_enabled` attributes.
 
@@ -41,15 +39,15 @@ Temperature set points for a thermostat control the target temperatures that the
 
 For heating, the heating set point is the target temperature the thermostat will turn on the furnace or heating system to reach. Once the space reaches that temperature, the thermostat will turn off the heating system until the space temperature drops below the set point again.
 
-<figure><img src="../.gitbook/assets/Screen Shot 2023-06-12 at 4.04.38 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screen Shot 2023-06-12 at 4.04.38 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
 For cooling, the cooling set point is the target temperature the thermostat will turn on the air conditioner or cooling system to reach. Once that space reaches that temperature, the thermostat will turn off cooling until the space temperature rises above the set point again.
 
-<figure><img src="../.gitbook/assets/Screen Shot 2023-06-12 at 4.04.54 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screen Shot 2023-06-12 at 4.04.54 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
 In heat/cool mode, the thermostat will use the heating set point as the target temperature for turning on the heating system, and the cooling set point as the target temperature for turning on the cooling system. It will activate heating or cooling as needed to keep the space temperature between those two set points for maximum comfort.
 
-<figure><img src="../.gitbook/assets/Screen Shot 2023-06-12 at 4.04.21 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screen Shot 2023-06-12 at 4.04.21 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
 So in summary, the temperature set points define the precise temperatures that the thermostat will strive to maintain in the space for heating, cooling, or automatic heat/cool operation. Choosing appropriate set points for a space is important for energy efficiency and comfort.
 
@@ -61,7 +59,7 @@ If disabled, Seam will make sure the Climate Setting is set on the thermostat ev
 
 ## What happens when a Climate Setting Schedule ends?
 
-When there are no active Climate Setting Schedules, the thermostat will fallback to its [Default Climate Setting](../thermostats/climate-setting-schedules/lock-a-lock.md). For example, if you are a short-term-rental host, you have configure a more energy-saving temperature setting here (i.e. Heat to 45°C).
+When there are no active Climate Setting Schedules, the thermostat will fallback to its [Default Climate Setting](../../thermostats/climate-setting-schedules/lock-a-lock.md). For example, if you are a short-term-rental host, you have configure a more energy-saving temperature setting here (i.e. Heat to 45°C).
 
 {% hint style="info" %}
 A Default Climate Setting must be set, before Climate Setting Schedules can be created.

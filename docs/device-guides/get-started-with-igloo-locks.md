@@ -318,7 +318,7 @@ $seam->locks->lock_door($lock->device_id);
 
 Most Igloohome locks come with a keypad built-in to program access codes. These codes can then be entered to unlock a Igloohome lock.
 
-The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on an Igloohome lock. You can find out more about Igloohome lock access code in our [core concept section on access codes.](../core-concepts/access-codes.md)
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on an Igloohome lock. You can find out more about Igloohome lock access code in our [core concept section on access codes.](../products/smart-locks/access-codes.md)
 
 {% hint style="info" %}
 Igloohome pins have to be 4-6 digits long, and for time bound access codes, start date can't be on the past.

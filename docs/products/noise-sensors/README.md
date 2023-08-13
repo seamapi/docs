@@ -1,4 +1,4 @@
-# Noise Sensors
+# 👂 Noise Sensors
 
 ### What is a Noise Sensor?
 
@@ -26,4 +26,4 @@ While you can theoretically set noise thresholds to any decibel value, we have f
 
 ### **Next Steps**
 
-For more information on setting up Noise Thresholds for your device, check out our guide [here](https://www.notion.so/Noise-Sensor-Guide-26c3c3a95ed4428aaf702ff616948696?pvs=21). Or, you can check out our API Reference Guide [here](https://www.notion.so/Noise-Sensor-API-Reference-fb3e1a28ff6240b990d7230edb1dada3?pvs=21).
+For more information on setting up Noise Thresholds for your device, check out our guide [here](configure-noise-threshold-settings.md). Or, you can check out our API Reference Guide [here](https://www.notion.so/Noise-Sensor-API-Reference-fb3e1a28ff6240b990d7230edb1dada3?pvs=21).
