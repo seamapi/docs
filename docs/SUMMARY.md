@@ -133,6 +133,7 @@
 * [Get started with Salto Locks](device-guides/get-started-with-salto-locks.md)
 * [Salto Locks](device-guides/salto-locks.md)
 * [Get started with TTLock Devices](device-guides/get-started-with-ttlock-devices.md)
+* [TTLock Locks](device-guides/ttlock-locks.md)
 * [Get started with NoiseAware Sensors](device-guides/get-started-with-noiseaware-sensors.md)
 * [Get started with Igloohome Locks](device-guides/get-started-with-igloo-locks.md)
 * [Yale Locks](device-guides/yale-locks.md)
