@@ -45,13 +45,13 @@ The TTLock gateway allows the smart lock to connect directly to the internet. By
 
 Please follow [the instructions in this video](https://www.youtube.com/watch?v=IbgZNc1dAx4) to set up your door lock on the TTLock app.
 
-### 2. Pair the lock with a supported TTLock gateway
+### 2. Pair the lock with [a supported TTLock gateway](ttlock-locks.md#compatible-ttlock-gateways)
 
 Please follow [the instructions in this video](https://www.youtube.com/watch?v=-lhKbjVP1as) to pair your lock with a Gateway.
 
 ### 3. On the [TTLock app](https://www.ttlock.com/#/lock/app), turn on the "Remote Unlock" feature.
 
-Please follow [the instructions in this video](https://www.youtube.com/watch?v=ni-38QpoNA4) to turn on the "Remote Unlock" setting for each door lock.
+Please follow [the instructions in this video](https://www.youtube.com/watch?v=ni-38QpoNA4) to turn on the **"Remote Unlock"** setting for each door lock.
 
 ## Brand-Specific Integration Considerations
 
