@@ -20,9 +20,9 @@ An access code is a numeric or alphanumeric code that a user enters to gain acce
 
 Leverage Seam's API for the following applications:
 
-1. **Shareable Web Pass:** Create a web pass to distribute to guests or visitors. When this pass is used, it can lock or unlock the smart lock.
-2. **Scheduled Access:** Grant time-bound access by providing temporary codes to guests, babysitters, or service personnel. For example, a cleaner with a schedule from 10 am to 12 pm on Tuesdays could be given a code valid only within that time frame.
-3. **Security Monitoring:** Get real-time status updates on when the door is locked or unlocked.
+* **Shareable Web Pass:** Create a web pass to distribute to guests or visitors. When this pass is used, it can lock or unlock the smart lock.
+* **Scheduled Access:** Grant time-bound access by providing temporary codes to guests, babysitters, or service personnel. For example, a cleaner with a schedule from 10 am to 12 pm on Tuesdays could be given a code valid only within that time frame.
+* **Security Monitoring:** Get real-time status updates on when the door is locked or unlocked.
 
 ### **Next Steps**
 

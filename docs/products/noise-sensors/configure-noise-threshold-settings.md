@@ -52,7 +52,7 @@ Once you’ve created a threshold, you’ll need to connect it to a webhook to l
 
 ### Set Up Webhooks
 
-You can set up webhooks in the [console](https://console.seam.co) with the `Add Webhook` button. All you need to do is fill in your URL, then select the event types you want to receive events for, then click `Create`.
+You can set up webhooks in the [Seam Console](https://console.seam.co) with the **"+ Add Webhook"** button. All you need to do is fill in your URL, then select the event types you want to receive events for, then click **"Create"**.
 
 <figure><img src="../../.gitbook/assets/Screen Shot 2023-08-13 at 4.39.14 PM (1).png" alt=""><figcaption></figcaption></figure>
 
