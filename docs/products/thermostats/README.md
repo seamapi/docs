@@ -31,7 +31,7 @@ This controls the fan's operation within an HVAC system. Common settings include
 Leverage Seam's API for the following applications:
 
 * **Adjusting Current Settings:** Modify the current climate and fan modes based on your immediate needs, whether you're on location or away.
-* **Scheduling Climate for the Future:** Plan ahead by setting temperature preferences for future dates and times. For instance, if you have a guest at a rental home, you can schedule the house to warm up just before their arrival.
+* **Scheduling Climate Settings for the Future:** Plan ahead by setting temperature preferences for future dates and times. For instance, if you have a guest at a rental home, you can schedule the house to warm up just before their arrival.
 
 ### **Next Steps**
 
