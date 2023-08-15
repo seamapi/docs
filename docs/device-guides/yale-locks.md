@@ -8,6 +8,8 @@ description: Guide for using Yale door locks with Seam
 
 Yale manufacturers some of the most advanced smart locks on the market such as the Yale [Assure](https://amzn.to/452zo6n) and [Nextouch](https://amzn.to/3DAeRdP) locks. With a unique interchangeable network module, Yale Locks are designed to be incredibly versatile, allowing for compatibility with a range of communication standards such as Z-wave, Wi-Fi, Bluetooth, and Zigbee. This adaptability ensures that they seamlessly fit into various smart home ecosystems.
 
+***
+
 ## Supported Devices
 
 The Seam integration is tailored for Yale Locks that are connected via the following platforms:
@@ -34,6 +36,8 @@ We support the following features:
 
 * [Triggering web unlock actions](../api-clients/locks/unlock-a-lock.md)
 * [Programming access codes](../products/smart-locks/access-codes.md) on door locks that have a keypad.
+
+***
 
 ## Brand-Specific Integration Considerations
 
@@ -70,6 +74,8 @@ When you encounter this error, it means that Seam has failed to set code on devi
 `smartthings_no_free_slots_available`
 
 When you encounter this error, it means that here are no more free slots available on the device. You will need to delete existing codes before more codes can be added to the device.
+
+***
 
 ## Where to Order
 

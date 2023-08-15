@@ -8,6 +8,8 @@ description: Guide for using Salto door locks with Seam
 
 Salto Systems produces world-class electronic access control solutions. Their locks work with a vast array of entrance types, from traditional doors and elevators, to key cylinders and parking stiles. They also support a versatile range of key credentials -- their locks work with RFID tags, mobile keys, and pin codes. Using their mobile app and app dashboard, businesses can easily assign, monitor, and revoke access rights.
 
+***
+
 ## Supported Devices
 
 This integration works any devices connected via their [SaltoKS platform](https://saltoks.com/).
@@ -23,6 +25,8 @@ We support the following features:
 * [Triggering web unlock actions](../api-clients/locks/unlock-a-lock.md)
 * [Programming access codes](../products/smart-locks/access-codes.md) on door locks and card readers that have a pin pad.
 
+***
+
 ## Brand-Specific Integration Considerations
 
 ### Access Code Limitations
@@ -37,6 +41,8 @@ When you encounter this error, it means that the Salto KS site has exceeded the 
 
 1. You can reduce the number of access codes you've created. Each access code will take up one user slot.
 2. You can ask the device owner to contact their Salto installer to increase the subscription limit on their site.
+
+***
 
 ## Where to Order
 
