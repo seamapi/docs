@@ -18,6 +18,8 @@ layout:
 
 TTLock produces both hardware and software for smart locks. Many other manufacturers utilize TTLock's platform to create their own smart lock products. Locks built on this platform are compatible with a wide range of entrance types, including traditional doors, glass doors, locker doors, and key cylinders. With the TTLock mobile app, businesses can effortlessly lock and unlock doors and program key codes into the locks.
 
+***
+
 ## Supported Devices
 
 This integration works any TTLock locks that are paired with a TTLock Gateway.
@@ -33,11 +35,15 @@ We support the following features:
 * [Triggering web unlock actions](../api-clients/locks/unlock-a-lock.md)
 * [Programming access codes](../products/smart-locks/access-codes.md) on door locks and card readers that have a pin pad.
 
+***
+
 ## Compatible TTLock Gateways
 
 The TTLock gateway allows the smart lock to connect directly to the internet. By pairing a door lock with the gateway, it becomes compatible with Seam. This enables the immediate retrieval of unlocking records, whether from fingerprints, passwords, or cards.
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h2>Smart Gateway G2</h2></td><td>This gateway uses a Wifi connection to connect the door locks to the internet.</td><td></td><td><a href="../.gitbook/assets/G2-TT-Lock-App-Gateway-Bluetooth-Smart-Electronic-Door-Lock-Wifi-Adapter-2 copy (1).png">G2-TT-Lock-App-Gateway-Bluetooth-Smart-Electronic-Door-Lock-Wifi-Adapter-2 copy (1).png</a></td><td><a href="https://amzn.to/3qBcG6H">https://amzn.to/3qBcG6H</a></td></tr><tr><td><h3>Wired gateway G3/G3P (PoE power supply)</h3></td><td>This gateway uses a wired  Power-over-ethernet connection to bridge the locks to the internet.</td><td><h2></h2></td><td><a href="../.gitbook/assets/TTLock-APP-Device-G3-Gateway-Bluetooth-compatible-To-RJ45-Ethernet-Bridge-For-Remote-Control-Lock.jpg_ copy (1).png">TTLock-APP-Device-G3-Gateway-Bluetooth-compatible-To-RJ45-Ethernet-Bridge-For-Remote-Control-Lock.jpg_ copy (1).png</a></td><td><a href="https://www.aliexpress.us/item/2255800336116314.html?spm=a2g0o.productlist.main.1.9cbd43b3ctHfxZ&#x26;algo_pvid=32dab18b-38f8-4119-8e58-24e42b4bc733&#x26;aem_p4p_detail=2023081416370273984849672280003173903&#x26;algo_exp_id=32dab18b-38f8-4119-8e58-24e42b4bc733-0&#x26;pdp_npi=4%40dis%21USD%2125.88%2122.0%21%21%2125.88%21%21%40210321c616920562226965846e9d3e%2112000031234243953%21sea%21US%210%21A&#x26;curPageLogUid=gVdrDzS7hmgF&#x26;search_p4p_id=2023081416370273984849672280003173903_1">https://www.aliexpress.us/item/2255800336116314.html?spm=a2g0o.productlist.main.1.9cbd43b3ctHfxZ&#x26;algo_pvid=32dab18b-38f8-4119-8e58-24e42b4bc733&#x26;aem_p4p_detail=2023081416370273984849672280003173903&#x26;algo_exp_id=32dab18b-38f8-4119-8e58-24e42b4bc733-0&#x26;pdp_npi=4%40dis%21USD%2125.88%2122.0%21%21%2125.88%21%21%40210321c616920562226965846e9d3e%2112000031234243953%21sea%21US%210%21A&#x26;curPageLogUid=gVdrDzS7hmgF&#x26;search_p4p_id=2023081416370273984849672280003173903_1</a></td></tr></tbody></table>
+
+***
 
 ## Set Up Instructions
 
@@ -53,11 +59,7 @@ Please follow [the instructions in this video](https://www.youtube.com/watch?v=-
 
 Please follow [the instructions in this video](https://www.youtube.com/watch?v=ni-38QpoNA4) to turn on the **"Remote Unlock"** setting for each door lock.
 
-## Brand-Specific Integration Considerations
-
-### Access Code Limitations
-
-Where the lock has a keypad, TTLock allows you to configure a maximum of 150 access codes on the door lock.
+***
 
 ## Troubleshooting
 
@@ -68,6 +70,8 @@ On the device, if you notice a `ttlock_lock_not_paired_to_gateway` error, you wi
 ### "Gateway unlocking not enabled" warning
 
 On the device, if you notice a `ttlock_lock_gateway_unlocking_not_enabled` warning, you will need to follow the [set up instructions](ttlock-locks.md#set-up-instructions) to turn on the "Remote Unlock" feature.
+
+***
 
 ## Where to Order
 
