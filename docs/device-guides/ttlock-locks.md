@@ -77,4 +77,4 @@ On the device, if you notice a `ttlock_lock_gateway_unlocking_not_enabled` warni
 
 Many manufacturers produce Smart Locks using the TTLock platform. Find a lock by searching for a TTLock lock that fits your entrance type.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>TTLock Amazon Order Page</strong></td><td></td><td><a href="https://amzn.to/4554ISo">https://amzn.to/4554ISo</a></td><td><a href="../.gitbook/assets/download.png">download.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Amazon - TTLock Locks</strong></td><td></td><td><a href="https://amzn.to/4554ISo">https://amzn.to/4554ISo</a></td><td><a href="../.gitbook/assets/download.png">download.png</a></td></tr></tbody></table>
