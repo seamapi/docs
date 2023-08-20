@@ -54,7 +54,7 @@ my_user.recurring_access_code_id = access_code.access_code_id
 
 From the [Seam Console](https://console.seam.co/), set up a webhook to handle the `access_code.removed_from_device` event. This event is triggered whenever an access code is fully removed from a device, or at it's ends\_at time. By setting up a webhook, you'll receive an event every time the access code is removed.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Creating a webhook for access_code.removed_from_device from console.seam.co</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Creating a webhook for access_code.removed_from_device from console.seam.co</p></figcaption></figure>
 
 ## 3. Whenever an access\_code is deleted, create a new access code with the starts\_at and ends\_at to the next active period
 

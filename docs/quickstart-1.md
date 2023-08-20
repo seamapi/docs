@@ -17,15 +17,15 @@ Select [**August**](https://august.com/) as the manufacturer and use the Sandbox
 * **Password:** 1234
 * **2-Factor-Code:** 123456
 
-{% embed url="https://app.supademo.com/demo/h1y5QMki-7vzlghMzobuf" %}
+{% @supademo/embed demoId="h1y5QMki-7vzlghMzobuf" url="https://app.supademo.com/demo/h1y5QMki-7vzlghMzobuf" %}
 
 ## Step 2 — Get API Key & SDK
 
 #### Create an API Key
 
-To control the devices you connected in [Step 1](quickstart.md#step-1-connect-devices), you will need an API key and the Seam SDK. Start by navigating to the API Keys section of the console and create an API key.&#x20;
+To control the devices you connected in [Step 1](quickstart-1.md#step-1-connect-devices), you will need an API key and the Seam SDK. Start by navigating to the API Keys section of the console and create an API key.&#x20;
 
-{% embed url="https://app.supademo.com/demo/vLRzYM2Nwoi4j_cH9WCNQ" %}
+{% @supademo/embed demoId="vLRzYM2Nwoi4j_cH9WCNQ" url="https://app.supademo.com/demo/vLRzYM2Nwoi4j_cH9WCNQ" %}
 
 #### Install the Seam SDK
 
@@ -67,7 +67,7 @@ It's time to unlock your first door! Open up a terminal and export your API key 
 $ export SEAM_API_KEY=seam_test2bMS_94SrGUXuNR2JmJkjtvBQDg5c
 ```
 
-Next, use the code below to retrieve one of the devices you connected in [Step 1](quickstart.md#step-1-connect-devices). You can inspect the device's supported capabilities and use the Seam API to unlock the door.&#x20;
+Next, use the code below to retrieve one of the devices you connected in [Step 1](quickstart-1.md#step-1-connect-devices). You can inspect the device's supported capabilities and use the Seam API to unlock the door.&#x20;
 
 {% tabs %}
 {% tab title="Javascript" %}

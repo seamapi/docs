@@ -12,7 +12,7 @@ When you first sign-up for Seam, a sandbox workspace is automatically created fo
 
 To do so, click the chevron in the top right and the workspace selector will appear. Now click the "**+ Add Workspace**" button. A modal will come up for you to create a new workspace. Enter your new workspace name, your company name, and make to **leave the "Sandbox mode" switch off.**
 
-{% embed url="https://app.supademo.com/demo/nXyjx_lwg6VxyiIU4DJkE" %}
+{% @supademo/embed demoId="nXyjx_lwg6VxyiIU4DJkE" url="https://app.supademo.com/demo/nXyjx_lwg6VxyiIU4DJkE" %}
 
 
 
@@ -30,7 +30,7 @@ Note that the resulting API key will NOT include the token "test" as is the case
 
 
 
-{% embed url="https://app.supademo.com/demo/DChwTLKoiqFNyJ3PezXaW" %}
+{% @supademo/embed demoId="DChwTLKoiqFNyJ3PezXaW" url="https://app.supademo.com/demo/DChwTLKoiqFNyJ3PezXaW" %}
 
 
 
@@ -38,5 +38,5 @@ Note that the resulting API key will NOT include the token "test" as is the case
 
 If you would like to customize the Seam login portal (learn about [Connect Webviews here](core-concepts/connect-webviews.md)), go to the Webviews menu to add a logo, update the base color, or change the name displayed to your users.
 
-{% embed url="https://app.supademo.com/demo/1yFG_z1w2nhjXw074goGF" %}
+{% @supademo/embed demoId="1yFG_z1w2nhjXw074goGF" url="https://app.supademo.com/demo/1yFG_z1w2nhjXw074goGF" %}
 
