@@ -1,15 +1,8 @@
 # Table of contents
 
 * [🎉 Seam API Docs](README.md)
-
-## 🚲 Quickstart
-
-* [Get API Key](quickstart/get-api-key.md)
-* [Installation](quickstart/installation.md)
-* [Authentication](quickstart/authentication.md)
-* [Connect a Device](quickstart/connect-a-device.md)
-* [Your First Device API Call](quickstart/your-first-device-api-call.md)
-* [Going Live! 🛫](quickstart/going-live.md)
+* [🚲 Quickstart](quickstart.md)
+* [🚀 Going Live!](going-live.md)
 
 ## 📖 Core Concepts
 

@@ -8,7 +8,7 @@ We've integrated many door locks, thermostats, and other devices brands, and cre
 
 ## Getting Started
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Quick Start</strong> (5 mins)</td><td>Learn how to connect a device and issue your first API call →</td><td></td><td><a href=".gitbook/assets/seam-quick-start-light.png">seam-quick-start-light.png</a></td><td><a href="quickstart/get-api-key.md">get-api-key.md</a></td></tr><tr><td><strong>Get</strong> <strong>API Key</strong> (free)</td><td>Sign-up for the Seam developer console and get your API keys →</td><td></td><td><a href=".gitbook/assets/seam-api-key.png">seam-api-key.png</a></td><td><a href="https://console.seam.co/">https://console.seam.co/</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Quick Start</strong> (5 mins)</td><td>Learn how to connect a device and issue your first API call →</td><td></td><td><a href=".gitbook/assets/seam-quick-start-light.png">seam-quick-start-light.png</a></td><td><a href="broken-reference">Broken link</a></td></tr><tr><td><strong>Get</strong> <strong>API Key</strong> (free)</td><td>Sign-up for the Seam developer console and get your API keys →</td><td></td><td><a href=".gitbook/assets/seam-api-key.png">seam-api-key.png</a></td><td><a href="https://console.seam.co/">https://console.seam.co/</a></td></tr></tbody></table>
 
 {% embed url="https://youtu.be/XzzJ7gMPOGE" %}
 
@@ -48,7 +48,7 @@ Hello Crustacean! This is a community library and is not officially being mainta
 {% endtab %}
 {% endtabs %}
 
-Make sure to export your [Seam API Key](quickstart/get-api-key.md) in order for the client library to pick it up:
+Make sure to export your [Seam API Key](broken-reference) in order for the client library to pick it up:
 
 ```
 $ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
@@ -58,7 +58,7 @@ $ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
 
 Explore our Device API guides to start connecting and controlling specific device categories.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-type="select"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Door Lock API</strong></td><td>Get started →</td><td><a href=".gitbook/assets/smart-locks-16-9.png">smart-locks-16-9.png</a></td><td></td><td><a href="device-guides/get-started-with-smartlocks-api.md">get-started-with-smartlocks-api.md</a></td></tr><tr><td><strong>Thermostats API</strong></td><td>Get started →</td><td><a href=".gitbook/assets/thermostats-16-9.png">thermostats-16-9.png</a></td><td></td><td><a href="broken-reference">Broken link</a></td></tr><tr><td><strong>Noise</strong> <strong>Sensors API</strong></td><td>Get started →</td><td><a href=".gitbook/assets/sensors-16-9.png">sensors-16-9.png</a></td><td></td><td><a href="device-guides/get-started-with-minut-sensors.md">get-started-with-minut-sensors.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-type="select"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Door Lock API</strong></td><td>Get started →</td><td><a href=".gitbook/assets/smart-locks-16-9.png">smart-locks-16-9.png</a></td><td></td><td><a href="device-guides/get-started-with-smartlocks-api.md">get-started-with-smartlocks-api.md</a></td></tr><tr><td><strong>Thermostats API</strong></td><td>Get started →</td><td><a href=".gitbook/assets/thermostats-16-9.png">thermostats-16-9.png</a></td><td></td><td><a href="broken-reference/">broken-reference</a></td></tr><tr><td><strong>Noise</strong> <strong>Sensors API</strong></td><td>Get started →</td><td><a href=".gitbook/assets/sensors-16-9.png">sensors-16-9.png</a></td><td></td><td><a href="device-guides/get-started-with-minut-sensors.md">get-started-with-minut-sensors.md</a></td></tr></tbody></table>
 
 ## Brand Guides
 
