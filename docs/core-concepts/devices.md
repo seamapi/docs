@@ -16,9 +16,11 @@ layout:
 
 # Supported Capabilities
 
-Seam decomposes the ensemble of features offered by a device into one or more capabilities such as `access_codes` or `thermostat`.
+Seam decomposes the ensemble of features offered by a device into one or more capabilities such as `access_codes` or `thermostat`. Seam exposes each capability as a set of APIs that are standardized across brands for ease of integration.
 
-A single device capability can further be decomposed into 3 sets of affordances:
+![](<../.gitbook/assets/image (10).png>)
+
+Furthermore, a single device capability can further be decomposed into 3 sets of affordances:
 
 * **Actions** — commands you can issue the device, such as unlocking
 * **Properties** — the current state of the device, such as its locked status
