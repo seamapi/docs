@@ -14,6 +14,11 @@ async function runCli() {
       description: "Path to the directory",
       type: "string",
     })
+    .option("no-rewrites", {
+      description: "Never rewrite existing code snippets",
+      type: "boolean",
+      default: false,
+    })
     .help()
     .epilogue(
       "This script processes any file in the given directory with a code inject marker and uses OpenAI to generate a code snippet and injects it into the file using Gitbook's markdown syntax."
@@ -28,7 +33,9 @@ async function runCli() {
     process.exit(1)
   }
 
-  await processFilesInDirectory(dirPath)
+  await processFilesInDirectory(dirPath, {
+    rewriteSnippets: !argv.noRewrites,
+  })
 }
 
 runCli().catch((err) => {

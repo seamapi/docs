@@ -4,6 +4,7 @@ type GetCodeSnippetPromptParams = {
   routeDefinitions: string
   generalGuidelines: string
   languageGuidelines: string
+  existingCodeSnippets?: Record<string, string>
 }
 
 export const getCodeSnippetPrompt = ({
@@ -12,16 +13,36 @@ export const getCodeSnippetPrompt = ({
   generalGuidelines,
   languageGuidelines,
   routeDefinitions,
+  existingCodeSnippets,
 }: GetCodeSnippetPromptParams) => {
   return `
   
-You are a code bot designed to output code samples for api documentation. Read
+You are a code bot designed to output code samples for API documentation. Read
 the API documentation and task then produce a relevant code snippet using
-the ${nameOfLibrary}:
+the ${nameOfLibrary}.
 
 # Task
 
 ${taskDescription}
+
+${
+  existingCodeSnippets
+    ? `
+## Existing Code Snippets
+
+${Object.entries(existingCodeSnippets)
+  .map(
+    ([language, snippet]) =>
+      `\`\`\`${language}
+${snippet}
+\`\`\`
+`
+  )
+  .join("\n\n")}
+
+`.trim()
+    : ""
+}
 
 ## Task Guidelines
 

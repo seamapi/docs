@@ -8,6 +8,8 @@ export const pythonTaskGuidelines = `
 * \`seam.access_codes.create\` returns an AccessCode dataclass object
 * \`seam.access_codes.delete\` returns an ActionAttempt dataclass object
 * NEVER use the word result, response or data in a variable name
+* NEVER use named parameters if you are requesting a single resource by id using a \`.get\`
+* ALWAYS pass the id as the first positional parameter to a \`.get\` method e.g. \`seam.access_codes.get("access_code2")\`
 
 \`\`\`python
 # GOOD
@@ -21,6 +23,17 @@ print(access_code)
 action_attempt = seam.access_codes.delete(
   access_code_id="access_code2"
 )
+
+# GOOD
+access_code = seam.access_codes.get("access_code2")
+
+# GOOD - email is not an id so it can't be passed as a positional parameter
+connected_account = seam.connected_accounts.get(
+  email="john@example.com"
+)
+
+# GOOD - for .get methods you can directly pass the id as a positional parameter
+connected_account = seam.connected_accounts.get("someaccount1")
 
 print(action_attempt)
 \`\`\`

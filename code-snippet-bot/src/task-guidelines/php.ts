@@ -1,5 +1,10 @@
 export const phpTaskGuidelines = `
 
+- NEVER comment about assuming the SDK is initialized
+- NEVER initialize the seam client
+- ALWAYS assume the seam client is already initialized
+- Always use snake_case for variable names and function names
+- NEVER assign a hard-coded-id to a variable, always keep the hard-coded-id inline
 
 
 \`\`\`php
@@ -100,6 +105,16 @@ $action_attempt = $seam->access_codes->delete([
 $action_attempt = $seam->access_codes->delete(
   # VERY BAD OH GOD NO - PLEASE DON'T USE THE => JUST USE A COLON PLEASE
   "access_code_id" => $access_code_id
+);
+
+# BAD BAD BAD - TOO VERBOSE - NEVER DO THIS
+# Use the connected_account_id "123e4567-e89b-12d3-a456-426614174000"
+# BAD BAD
+$connected_account_id = "123e4567-e89b-12d3-a456-426614174000";
+
+# GOOD - DO THIS INSTEAD
+$connected_account = $seam->connected_accounts->get(
+  "123e4567-e89b-12d3-a456-426614174000"
 );
 \`\`\`
 
