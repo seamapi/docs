@@ -1,7 +1,6 @@
 ---
 description: >-
-  Devices  are the top-level resource in Seam and encapsulate all other
-  resources, such as devices, events, or connected third-party accounts.
+  Devices are objects like locks, thermostats, sensors, cameras...etc. They have capabilities that inform on what functions they can perform, as well as online status, and managed vs unmanaged state.
 layout:
   title:
     visible: true
@@ -14,11 +13,6 @@ layout:
   pagination:
     visible: true
 ---
-
-# Devices
-
-Devices are objects like locks, thermostats, sensors, cameras...etc. They have capabilities that inform on what functions they can perform, as well as online status, and managed vs unmanaged state. 
-
 
 # Supported Capabilities
 
