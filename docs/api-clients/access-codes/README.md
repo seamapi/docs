@@ -32,10 +32,10 @@ Note that the `name` provided on Seam is used to identify the code on Seam, and 
 This is because lock providers may have constraints on names such as length, uniqueness or characters that can be used. In addition, some lock providers may break down names into
 components such as `first_name` and `last_name`.
 
-In order to provide a consistent experience, Seam will identify the code on Seam by it's `name` but may modify the name that appears on the lock provider's app, or on the device.
-For example, it may add additional characters or truncate the name in order to meet provider constraints.
+In order to provide a consistent experience, Seam will identify the code on Seam by its `name` but may modify the name that appears on the lock provider's app, or on the device.
+For example, Seam may add additional characters or truncate the name in order to meet provider constraints.
 
-In order to help your users identify codes set by Seam, we do provide the name exactly as it appears on the lock provider's app, or on the device as a separate property called
+In order to help end users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app, or on the device as a separate property called
 `appearance`. This is an object with a `name` property, and optionally, `first_name` and `last_name` properties (for providers that break down a name into components).
 
 ## Access Code Error Types
