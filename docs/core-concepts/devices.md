@@ -16,7 +16,8 @@ layout:
 
 # Supported Capabilities
 
-Seam decomposes the ensemble of features offered by a device into one or more capabilities such as `access_codes` or `thermostat`. Seam exposes each capability as a set of APIs that are standardized across brands for ease of integration.
+Seam decomposes the ensemble of features offered by a device into one or more capabilities such as `access_codes` or `thermostat`. Seam exposes each capability as a set of APIs that are standardized across brands for ease of integration. For example, an unlock action on a door lock always requires the same API call irrespective of the device brand.
+
 
 ![](<../.gitbook/assets/image (10).png>)
 
@@ -187,7 +188,7 @@ $managed_device = $seam->access_codes->unmanaged->update(
 <!-- CODE INJECT END -->
 
 ## Automatically Set New Devices to Unmanaged
-New devices added to a workspace via a Connect Webview can automatically be set to be `unmanaged` by default. To do so, set the `automatically_manage_new_devices` to false when creating a Connect Webview. Any device added once the Connect Webview is authorized will be set to `unmanaged`.
+New devices added to a workspace via a Connect Webview can automatically be set to `unmanaged` by default. To do so, set the `automatically_manage_new_devices` to false when creating a Connect Webview. Any device added once the Connect Webview is authorized will be set to `unmanaged`.
 
 
 <!-- CODE INJECT START
