@@ -24,7 +24,7 @@ A single device capability can further be decomposed into 3 sets of affordances:
 * **Properties** — the current state of the device, such as its locked status
 * **Events** — notifications related to changes in the state of the device, such as an unlocking operation performed with an access code.
 
-To retrieve the list of supported capabilities for a given device, use the `capability_supported` attribute:
+To retrieve the list of supported capabilities for a given device, use the `capability_supported` attribute on the Device object:
 
 <!-- CODE INJECT START
 Get a device and print out the capability_supported property of this device
@@ -70,17 +70,17 @@ echo json_encode($device->capabilities_supported);
 
 
 
-# Managed vs Unmanaged
+# Managed Devices vs Unmanaged Devices
 
-To increase billing flexibility, Seam provides the ability to mark devices as managed or unmanaged:
+To increase billing flexibility, Seam provides the ability to mark devices as `managed` or `unmanaged`:
 
 - ***Managed devices***: these devices can be fully controlled through the Seam API and are billed to your Seam account as a regular device.
 - ***Unmanaged device*** these devices are not billed and consequently cannot be controlled through the Seam API.
 
-Seam makes it possible to toggle a device back and forth between `managed` and `unmanaged` state.
+Seam makes it possible to toggle a device back and forth between `managed` and `unmanaged` states.
 
-### Convert Managed Device to Unmanaged
-Converting a device to an `unmanaged` state pauses billing for the device and converts all the device resources managed by Seam (e.g. Access Codes) to unmanaged resources. As a result, Seam will no longer monitor the lifecycle of these resources. 
+## Convert Managed Device to Unmanaged
+Converting a device to an `unmanaged` state pauses billing for the device and converts all the managed device resources (e.g. Access Codes) to unmanaged resources. As a result, Seam will no longer monitor the lifecycle of these resources. 
 
 <!-- CODE INJECT START
 Get a device and convert it to an unmanaged device, then use the unmanaged device get call to retrieve it
@@ -134,8 +134,8 @@ $seam->devices->unmanaged->get("device3");
 <!-- CODE INJECT END -->
 
 
-### Convert Managed Device to Unmanaged
-To convert an unmanaged device back to managed, retrieve it using the unmanaged device API and use the update function to change its managed state back to true.
+## Convert Unmanaged Device to Managed
+To convert an unmanaged device back to managed, retrieve it using the unmanaged device API and use the update function to change its managed state back to true. Note that unmanaged device resources (e.g. Access Codes) will need to be converted back to managed as well.
 
 
 <!-- CODE INJECT START
@@ -182,8 +182,8 @@ $managed_device = $seam->access_codes->unmanaged->update(
 {% endtabs %}
 <!-- CODE INJECT END -->
 
-### Automatically Set New Devices to Unmanaged
-To automatically set all new devices linked to a workspace to unamanged, set the `automatically_manage_new_devices` to false when creating a Connect Webview. 
+## Automatically Set New Devices to Unmanaged
+When adding new devices to a workspace via a Connect Webview, new devices can automatically be set to `unmanaged`. To do so, set the `automatically_manage_new_devices` to false when creating a Connect Webview. Any device added once the Connect Webview is authorized will be set to `unmanaged`.
 
 
 <!-- CODE INJECT START
