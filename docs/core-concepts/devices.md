@@ -187,7 +187,7 @@ $managed_device = $seam->access_codes->unmanaged->update(
 <!-- CODE INJECT END -->
 
 ## Automatically Set New Devices to Unmanaged
-When adding new devices to a workspace via a Connect Webview, new devices can automatically be set to `unmanaged`. To do so, set the `automatically_manage_new_devices` to false when creating a Connect Webview. Any device added once the Connect Webview is authorized will be set to `unmanaged`.
+New devices added to a workspace via a Connect Webview can automatically be set to be `unmanaged` by default. To do so, set the `automatically_manage_new_devices` to false when creating a Connect Webview. Any device added once the Connect Webview is authorized will be set to `unmanaged`.
 
 
 <!-- CODE INJECT START
@@ -209,7 +209,9 @@ const connectWebview = await seam.connectWebviews.create({
 {% endtab %}
 {% tab title="Python" %}
 ```python
-seam.connect_webviews.create(accepted_providers=["schlage", "august"], automatically_manage_new_devices=False)
+seam.connect_webviews.create(
+    accepted_providers=["schlage", "august"], 
+    automatically_manage_new_devices=False)
 ```
 {% endtab %}
 {% tab title="Ruby" %}
