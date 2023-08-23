@@ -16,16 +16,15 @@ layout:
 
 # Supported Capabilities
 
-Seam decomposes the ensemble of features offered by a device into one or more capabilities such as `access codes` or `thermostat`.
+Seam decomposes the ensemble of features offered by a device into one or more capabilities such as `access_codes` or `thermostat`.
 
 A single device capability can further be decomposed into 3 sets of affordances:
 
 * **Actions** — commands you can issue the device, such as unlocking
 * **Properties** — the current state of the device, such as its locked status
-* **Events** — notifications related to changes in the state of the device, such as unlocking operation performed with an access code.
+* **Events** — notifications related to changes in the state of the device, such as an unlocking operation performed with an access code.
 
-### Checking for Supported Capabilities
-To check whether a device supports a specific capability, inspect the `capability_supported` property of the device.
+To retrieve the list of supported capabilities for a given device, use the `capability_supported` attribute:
 
 <!-- CODE INJECT START
 Get a device and print out the capability_supported property of this device
@@ -75,10 +74,10 @@ echo json_encode($device->capabilities_supported);
 
 To increase billing flexibility, Seam provides the ability to mark devices as managed or unmanaged:
 
-- ***Managed devices*** can be fully controlled through the Seam API and are billed to your Seam account as a regular device.
-- ***Unmanaged device*** on the other hand cannot be controlled through the Seam API and are thus not billed.
+- ***Managed devices***: these devices can be fully controlled through the Seam API and are billed to your Seam account as a regular device.
+- ***Unmanaged device*** these devices are not billed and consequently cannot be controlled through the Seam API.
 
-Seam makes it possible to toggle a device back and forth between `managed` and `unmanaged` state. 
+Seam makes it possible to toggle a device back and forth between `managed` and `unmanaged` state.
 
 ### Convert Managed Device to Unmanaged
 Converting a device to an `unmanaged` state pauses billing for the device and converts all the device resources managed by Seam (e.g. Access Codes) to unmanaged resources. As a result, Seam will no longer monitor the lifecycle of these resources. 
@@ -177,6 +176,51 @@ $unmanaged_device = $seam->devices->unmanaged->get("device3");
 $managed_device = $seam->access_codes->unmanaged->update(
   access_code_id: $unmanaged_device->access_code_id,
   is_managed: True
+);
+```
+{% endtab %}
+{% endtabs %}
+<!-- CODE INJECT END -->
+
+### Automatically Set New Devices to Unmanaged
+To automatically set all new devices linked to a workspace to unamanged, set the `automatically_manage_new_devices` to false when creating a Connect Webview. 
+
+
+<!-- CODE INJECT START
+Create a Connect Webview and set automatically_manage_new_devices to false
+
+e.g. in python you could do:
+```python
+seam.connect_webviews.create(accepted_providers=["schlage", "august"], automatically_manage_new_devices=False)
+```
+-->
+{% tabs %}
+{% tab title="Javascript" %}
+```javascript
+const connectWebview = await seam.connectWebviews.create({
+  accepted_providers: ["schlage", "august"], 
+  automatically_manage_new_devices: false
+})
+```
+{% endtab %}
+{% tab title="Python" %}
+```python
+seam.connect_webviews.create(accepted_providers=["schlage", "august"], automatically_manage_new_devices=False)
+```
+{% endtab %}
+{% tab title="Ruby" %}
+```ruby
+connect_webview = seam.connect_webviews.create(
+  accepted_providers: ["schlage", "august"], 
+  automatically_manage_new_devices: false
+)
+```
+{% endtab %}
+{% tab title="PHP" %}
+```php
+$connect_webview = $seam->connect_webviews->create(
+  accepted_providers: ["schlage", "august"], 
+  automatically_manage_new_devices: false
 );
 ```
 {% endtab %}
