@@ -39,12 +39,45 @@ For example, the `lock` capability decomposes in the following manner:
 ### Checking for Supported Capabilities
 To check whether a device supports a specific capability, inspect the `capability_supported` property of the device.
 
-<!-- CODE INJECT START Print out the capability_supported property of a device to inspect its supported capability 
-    e.g. in python you could do:
-  ```python
-    capabilities = device.capabilities_supported
-    print(capabilities)
-  ```
--->
+<!-- CODE INJECT START
+Get a device and print out the capability_supported property of this device
 
+e.g. in python you could do:
+```python
+device = seam.devices.get("some_device_uuid")
+print(device.capability_supported)
+```
+-->
+{% tabs %}
+{% tab title="Javascript" %}
+```javascript
+const device = await seam.devices.get({
+  device_id: "device3"
+});
+
+console.log(device.capabilities_supported);
+```
+{% endtab %}
+{% tab title="Python" %}
+```python
+
+device = seam.devices.get("device3")
+
+
+print(device.capabilities_supported)
+```
+{% endtab %}
+{% tab title="Ruby" %}
+```ruby
+device = seam.devices.get("device3")
+puts(device.capabilities_supported)
+```
+{% endtab %}
+{% tab title="PHP" %}
+```php
+$device = $seam->devices->get("device3");
+echo $device->capabilities_supported;
+```
+{% endtab %}
+{% endtabs %}
 <!-- CODE INJECT END -->
