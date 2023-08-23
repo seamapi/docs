@@ -176,18 +176,17 @@ seam.devices.unmanaged.update(device=unmanaged_device, is_managed=True)
 {% tab title="Javascript" %}
 ```javascript
 let unmanaged_device = await seam.devices.unmanaged.get("device3")
-let converted_device = await seam.devices.unmanaged.convertToManaged({
+await seam.devices.unmanaged.update({
   device_id: unmanaged_device.deviceId, 
   is_managed: true
 })
 
-console.log(converted_device)
 ```
 {% endtab %}
 {% tab title="Python" %}
 ```python
 unmanaged_device = seam.devices.unmanaged.get("device3")
-converted_managed_device = seam.devices.unmanaged.update(device=unmanaged_device, is_managed=True)
+seam.devices.unmanaged.update(device=unmanaged_device, is_managed=True)
 
 print(converted_managed_device)
 ```
@@ -201,8 +200,9 @@ seam.devices.unmanaged.update(device: unmanaged_device, is_managed: true)
 {% tab title="PHP" %}
 ```php
 $unmanaged_device = $seam->devices->unmanaged->get("device3");
-$managed_device = $seam->access_codes->unmanaged->convert_to_managed(
-  access_code_id: $unmanaged_device->access_code_id
+$managed_device = $seam->access_codes->unmanaged->update(
+  access_code_id: $unmanaged_device->access_code_id,
+  is_managed: True
 );
 ```
 {% endtab %}
