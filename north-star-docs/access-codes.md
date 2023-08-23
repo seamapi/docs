@@ -75,3 +75,4 @@ Seam provides some pre-built UI components that allow you to build access code m
 - [ ] Remove `pin_code_matches_existing_set` from code constraints
 - [ ] Transition to using booleans instead of enums in `status`
 - [ ] Rename `set` to `programmed`
+- [ ] Make sure `failed_to_set_on_device` is set on access codes.
