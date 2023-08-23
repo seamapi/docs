@@ -70,3 +70,8 @@ Access codes can be managed via the Seam Console. You can create, update, and de
 ## How would a user incorporate this feature into their Dashboard?
 
 Seam provides some pre-built UI components that allow you to build access code management features into your UI. You can get an overview of these components in the [Seam Components](/seam-components/README.md) section of the docs. For access code management, we provide an `AccessCodesTable` component, and a `AccessCodeDetails` component.
+
+## Future Work
+- [ ] Remove `pin_code_matches_existing_set` from code constraints
+- [ ] Transition to using booleans instead of enums in `status`
+- [ ] Rename `set` to `programmed`
