@@ -39,13 +39,12 @@ For example, the `lock` capability decomposes in the following manner:
 ### Checking for Supported Capabilities
 To check whether a device supports a specific capability, inspect the `capability_supported` property of the device.
 
-<!-- CODE INJECT START Print out the capability_supported property of a device to inspect its supported capability -->
-{% tabs %}
-{% tab title="Python" %}
-```python
-capabilities = device.capabilities_supported
-print(capabilities)
-```
-{% endtab %}
-{% endtabs %}
+<!-- CODE INJECT START Print out the capability_supported property of a device to inspect its supported capability 
+    e.g. in python you could do:
+  ```python
+    capabilities = device.capabilities_supported
+    print(capabilities)
+  ```
+-->
+
 <!-- CODE INJECT END -->
