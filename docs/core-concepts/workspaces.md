@@ -34,11 +34,47 @@ There is no limit to how many workspaces a Seam customer can create, though most
 
 ## Production Workspaces
 
-Production workspaces are for connecting real devices such as August smart locks or Nest thermostats. Use the device credentials to connect these devices (e.g. the Schlage app login).&#x20;
+Production workspaces let you connect and control real devices from brands such as August, Schlage, Brivo, Nest, and more.&#x20;
 
-If your applications needs to control its users' devices, use [**Connect Webviews**](connect-webviews.md) for device owners to authorized your app against their device. Once authorized, their devices will be linked with your Production workspace.
+### Create a Production Workspace
 
-Once real devices are connected to a Production workspace, create an API key to control them via the Seam API. Furthermore, when an individual interact with those devices in the real world (e.g. unlocking a smart lock), the Seam API will reflect the current state of those devices and emit events that can be received by webhooks.&#x20;
+To create a Production workspace, follow the steps below:
+
+1. Click on the workspace dropdown on the top right corner of the page.
+2. Click on the **"+ Add Workspace"** button.
+3. Enter a name for the workspace and leave the **"Sandbox mode"** toggle off.
+4. Click **"Create Workspace"**.
+
+{% @supademo/embed demoId="nXyjx_lwg6VxyiIU4DJkE" url="https://app.supademo.com/demo/nXyjx_lwg6VxyiIU4DJkE" %}
+
+### Connecting Devices
+
+There are two ways to connect devices with a Production Workspace. First, you can use the [**"+ Add Devices"** button in the Developer Console](#user-content-fn-1)[^1] and follow the instructions on screen:
+
+1. Navigate to the **"Devices"** link in the left navigation bar.
+2. From the Devices table, click on the **"Add Device"** button.
+3. Select the brand of the device(s) to connect and follow the login instructions.
+4. All devices associated with the account just linked will then appear in the Devices table.
+
+Alternatively, if an application needs to control [its users'](#user-content-fn-2)[^2] devices, use [**Connect Webviews**](connect-webviews.md). Connect Webviews are programmatically created and presented to app users to select their device brands, enter their credentials, and authorize your application to control their devices. Once authorized, their devices will be linked with your Production workspace.
+
+{% @supademo/embed demoId="h1y5QMki-7vzlghMzobuf" url="https://app.supademo.com/demo/h1y5QMki-7vzlghMzobuf" %}
+
+### Common Workspace Setup
+
+Most Seam customers use a single Production workspace to connect all their devices. This is irrespective of whether they own these devices or are controlling thousands of end customers' devices. For example, a property management application with thousands of customers will still use a single Production workspace to connect all of its customers' devices.&#x20;
+
+<figure><img src="../.gitbook/assets/common-workspace-setup (2).png" alt=""><figcaption></figcaption></figure>
+
+### Per-Customer Workspace Setup (Less Common)
+
+Some Seam customers may be developing multiple applications that each need to interact with devices. In such scenarios, it is common to setup a different Production workspace for each application.&#x20;
+
+For example, an IT firm who builds custom applications for its customers will most likely want to create a separate workspace for each customers. This can simplify security, support, and billing.
+
+Occasionally, an application may also be using multiple Seam Workspaces. For example, a restaurant chain providing a management dashboard for its franchisee may want to use a different Seam workspace for each franchisee to simplify billing and support (example App 3 in the diagram below).&#x20;
+
+<figure><img src="../.gitbook/assets/less-common-workspace-setup.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -62,7 +98,14 @@ To connect a virtual device, please refer to the [**Sandbox Test Account**](../d
 
 ### Interacting with a Virtual Device
 
-Certain virtual devices allow for test events to be triggers. This is useful to test code that depends on receiving event notifications from the Seam API. For example, virtual noise sensor devices such as Minut offer the ability to trigger a "high noise" event, which immediately emits an event and webhook. To do so, navigate to the device inside the console and click on the **"Action"** tab (see steps below).&#x20;
+Certain virtual devices allow for test events to be triggered. This is useful to test code that depends on receiving event notifications from the Seam API. For example, virtual noise sensor devices such as Minut offer the ability to trigger a "noise event", which will emit [an event ](#user-content-fn-3)[^3]to your webhook endpoint.&#x20;
+
+To interact with a device:
+
+1. Navigate to the **"Devices"** link in the left navigation bar.
+2. From the Devices table, click on the device you wish to interact with.
+3. Click on the **"Actions"** tab.
+4. Click on the desired action.
 
 {% @supademo/embed demoId="NuhwAWiC1CaeGPRZzDENn" url="https://app.supademo.com/demo/NuhwAWiC1CaeGPRZzDENn" %}
 
@@ -74,11 +117,13 @@ You can reset a Sandbox workspace either manually via the Developer Console or p
 
 {% tabs %}
 {% tab title="Manual Reset" %}
-Sandbox workspaces can be reset by clicking on the Workspace toggle in the Developer Console's top right corner, and then clicking on the **"Reset"** button.
+To reset a Sandbox workspaces from the Seam Console: \
+\
+1\. Click the Workspace dropdown in the top right corner.\
+2\. Select the name of the Sandbox workspace that needs to be reset.\
+3\. Click on the **"Reset"** button.
 
 <img src="../.gitbook/assets/Screenshot 2023-08-20 at 8.56.02 AM.png" alt="" data-size="original"> &#x20;
-
-
 {% endtab %}
 
 {% tab title="Javascript" %}
@@ -110,11 +155,16 @@ $seam->workspaces->reset_sandbox();
 
 ***
 
-## Create an API Keys
+## Create an API Key
 
-API keys are used to control devices and other resources within a workspace. Create an API key in the Developer Console and test it using the Seam SDKs. Note that API keys are scoped to a single workspace. If you need to access multiple workspaces, please refer to the [**Personal Access Token**](workspaces.md#advanced-topic-personal-access-token-pat) section further down.&#x20;
+API keys are used to control devices and other resources within a workspace. Note that API keys are scoped to a single workspace. If you need to access multiple workspaces, please refer to the [**Personal Access Token**](workspaces.md#advanced-topic-personal-access-token-pat) section below.&#x20;
 
-To create an API key, navigate to the API Key section of the dashboard and click the "+ Add API Key" button in the top right. Name the API key and save it somewhere safe. Seam treats API keys as passwords and is not able to decrypt it once stored. If you lose your API key, you can delete it and recreate a new one.
+To create an API key:
+
+1. Navigate to the **"API Keys"** link in the left navigation bar.
+2. Click the "**+ Add API Key"** button in the top right.
+3. Name the API key, and click **"Create API Key"**.
+4. Copy the API Key by clicking on the copy icon. Make sure to store this API Key somewhere safe! You'll be using this to authenticate your API calls.
 
 {% @supademo/embed demoId="vLRzYM2Nwoi4j_cH9WCNQ" url="https://app.supademo.com/demo/vLRzYM2Nwoi4j_cH9WCNQ" %}
 
@@ -208,7 +258,15 @@ echo json_encode($workspace);
 
 ## Configuring Webhooks
 
-Navigate to the webhook menu to configure webhook to receive events related to devices and other resources inside the workspace. Seam's webhook configuration lets you define as many endpoint as needed. Webhooks can also be configured to only send specific events, providing you maximum flexibility on where to send events.&#x20;
+Endpoints can be configured in each workspace in order for an application to receive webhook notifications for resources such as Devices and Connected Accounts.
+
+To configure webhook endpoints:
+
+1. Navigate to the webhook menu.
+2. Click the **"+ Add Webhook"** button.
+3. Enter your Webhook URL, and select the event types you want to receive events for.
+4. Click **"Create"**.
+5. Copy your Webhook Secret and store it somewhere secure. You'll be using this to validate the payloads you receive on your Webhook.
 
 {% @supademo/embed demoId="o9OPTdLxdQi_jt2d5htNw" url="https://app.supademo.com/demo/o9OPTdLxdQi_jt2d5htNw" %}
 
@@ -216,7 +274,14 @@ Navigate to the webhook menu to configure webhook to receive events related to d
 
 ## Sharing Workspaces
 
-Collaborators can easily be added to a workspace by navigating to the Team menu.&#x20;
+Collaborators can be added to a workspace by navigating to the Team menu:
+
+1. Go to the Team menu.
+2. Click the **"+ Add Member"** button
+3. Enter the email address of the new team member.
+4. Click "**Add to Team**".
+
+Your teammate will receive an email invitation to be added to your Workspace.
 
 {% @supademo/embed demoId="YLZEbSgX5shkgOyFb4LE9" url="https://app.supademo.com/demo/YLZEbSgX5shkgOyFb4LE9" %}
 
@@ -230,7 +295,19 @@ In some instances, it may become necessary to access multiple workspaces with a 
 
 ### Creating a Personal Access Token
 
-Go to the user settings drop-down menu, click on "Settings", and navigate to the "Personal Access Tokens" menu. You can then create a PAT there.&#x20;
+To create a Personal Access Token:
+
+1. Click on the user settings drop-down in the top right of the Console.
+2. Click on "**Settings**" which redirects to the user settings.
+3. Navigate to the "Personal Access Tokens" menu.
+4. Click the "**+Add Personal Access Token**" button and give the PAT token a name.
 
 {% @supademo/embed demoId="ZY2oBrHFSx2Tmuwq8vzd_" url="https://app.supademo.com/demo/ZY2oBrHFSx2Tmuwq8vzd_" %}
 
+
+
+[^1]: 
+
+[^2]: your end users' devices?
+
+[^3]: 
