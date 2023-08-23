@@ -1,6 +1,6 @@
 ---
 description: >-
-  Devices are objects like locks, thermostats, sensors, cameras...etc. They have capabilities that inform on what functions they can perform, as well as online status, and managed vs unmanaged state.
+  Devices are objects like locks, thermostats, sensors, or cameras. In the Seam API, Devices have capabilities that describe the functions they can perform, as well as online and managed status.
 layout:
   title:
     visible: true
@@ -16,19 +16,13 @@ layout:
 
 # Supported Capabilities
 
-Seam decomposes the ensemble of features offered by a device into one or more capabilities. For example, most smart locks in Seam support two capabilities, `locks` & `access codes`. 
+Seam decomposes the ensemble of features offered by a device into one or more capabilities such as `access codes` or `thermostat`.
 
 A single device capability can further be decomposed into 3 sets of affordances:
 
-* **Actions** — commands you can issue the device.
-* **Properties** — the current state of the device.
-* **Events** — notifications related to changes in the state of the device.
-
-For example, the `lock` capability decomposes in the following manner:
-
-* **Actions:** `UNLOCK` and `LOCK`
-* **Properties:**  a `locked` status to determine the lock's current status
-* **Events:** a list of lock/unlock events logging all of the lock's transitions.
+* **Actions** — commands you can issue the device, such as unlocking
+* **Properties** — the current state of the device, such as its locked status
+* **Events** — notifications related to changes in the state of the device, such as unlocking operation performed with an access code.
 
 ### Checking for Supported Capabilities
 To check whether a device supports a specific capability, inspect the `capability_supported` property of the device.
@@ -79,16 +73,15 @@ echo json_encode($device->capabilities_supported);
 
 # Managed vs Unmanaged
 
-To increase billing flexibility, Seam provides the ability to mark devices as managed or unmanaged.
+To increase billing flexibility, Seam provides the ability to mark devices as managed or unmanaged:
 
-Managed devices can be fully controlled through the Seam API and are billed to your Seam account as a regular device.
+- ***Managed devices*** can be fully controlled through the Seam API and are billed to your Seam account as a regular device.
+- ***Unmanaged device*** on the other hand cannot be controlled through the Seam API and are thus not billed.
 
-On the other hand, unmanaged device may not be controlled through the Seam API and are thus not billed.
-
-Seam makes it possible to toggle a device back and forth between managed and unmanaged state. This will pause billing for the device. However, when a managed device is converted to unmanaged, the device resources managed by Seam (e.g. Access Codes) will also be unmanaged, and their lifecycle will no longer be monitored by Seam.
+Seam makes it possible to toggle a device back and forth between `managed` and `unmanaged` state. 
 
 ### Convert Managed Device to Unmanaged
-Converting a managed device to unamanged can be via the update device function. Note that converting a device to unmanaged removes it from the list of devices that can get queried through get or list functions. Use the unmanaged device APIs instead.
+Converting a device to an `unmanaged` state pauses billing for the device and converts all the device resources managed by Seam (e.g. Access Codes) to unmanaged resources. As a result, Seam will no longer monitor the lifecycle of these resources. 
 
 <!-- CODE INJECT START
 Get a device and convert it to an unmanaged device, then use the unmanaged device get call to retrieve it
@@ -143,7 +136,7 @@ $seam->devices->unmanaged->get("device3");
 
 
 ### Convert Managed Device to Unmanaged
-To convert a device from unmanaged to managed, retrieve it and use the update function to change its managed state back to true
+To convert an unmanaged device back to managed, retrieve it using the unmanaged device API and use the update function to change its managed state back to true.
 
 
 <!-- CODE INJECT START
