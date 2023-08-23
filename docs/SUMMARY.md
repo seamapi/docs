@@ -8,8 +8,8 @@
 
 * [Overview](core-concepts/overview.md)
 * [Workspaces](core-concepts/workspaces.md)
+* [Devices](core-concepts/devices.md)
 * [Connect Webviews](core-concepts/connect-webviews.md)
-* [Device Capabilities](core-concepts/device-capabilities.md)
 * [Action Attempts](core-concepts/action-attempts.md)
 * [Webhooks](core-concepts/webhooks.md)
 
