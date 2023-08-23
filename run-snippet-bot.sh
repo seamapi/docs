@@ -6,4 +6,4 @@ if [ ! -d "node_modules" ]; then
   npm install
 fi
 
-npx esr ./src/cli.ts -p ../docs
+npx esr ./src/cli.ts -p ../docs "$@"
