@@ -48,15 +48,12 @@ print(device.capability_supported)
 const device = await seam.devices.get({
   device_id: "device3"
 });
-
 console.log(device.capabilities_supported);
 ```
 {% endtab %}
 {% tab title="Python" %}
 ```python
 device = seam.devices.get("device3")
-
-
 print(device.capabilities_supported)
 ```
 {% endtab %}
@@ -82,16 +79,16 @@ echo json_encode($device->capabilities_supported);
 
 # Managed vs Unmanaged
 
-To provide more flexibility around device management and billing, Seam provides the ability to mark devices as managed or unmanaged.
+To increase billing flexibility, Seam provides the ability to mark devices as managed or unmanaged.
 
-Managed devices can be fully controlled through the Seam API and are billed to your Seam account.
+Managed devices can be fully controlled through the Seam API and are billed to your Seam account as a regular device.
 
-On the other hand, unmanaged device have a limited set of visible properties, a subset of supported events, and may not be controlled through the Seam API. 
+On the other hand, unmanaged device may not be controlled through the Seam API and are thus not billed.
 
-Seam makes it possible to toggle a device back and forth between managed and unmanaged state. However, when a managed device is converted to unmanaged, device resources managed by Seam (e.g. Access Codes) are converted to unmanaged or deleted, and their lifecycle is no longer managed by Seam.
+Seam makes it possible to toggle a device back and forth between managed and unmanaged state. This will pause billing for the device. However, when a managed device is converted to unmanaged, the device resources managed by Seam (e.g. Access Codes) will also be unmanaged, and their lifecycle will no longer be monitored by Seam.
 
 ### Convert Managed Device to Unmanaged
-Converting a managed device to unamanged can be via the update device function. Note that converting a device to unmanaged removes it from the list of devices that can get queried through get or list functions. 
+Converting a managed device to unamanged can be via the update device function. Note that converting a device to unmanaged removes it from the list of devices that can get queried through get or list functions. Use the unmanaged device APIs instead.
 
 <!-- CODE INJECT START
 Get a device and convert it to an unmanaged device, then use the unmanaged device get call to retrieve it
@@ -103,20 +100,18 @@ seam.devices.update(
   device=some_device, 
   is_managed=False
   )
-unamanged_device = seam.devices.unmanaged.get("some_device_uuid")
+seam.devices.unmanaged.get("some_device_uuid")
 ```
 -->
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
 const device = await seam.devices.get({ device_id: "device3" })
-
 const updatedDevice = await seam.devices.update({
   device_id: device.device_id,
   is_managed: false
 })
-
-const unmanagedDevice = await seam.devices.unmanaged.get({ device_id: "device3" })
+await seam.devices.unmanaged.get({ device_id: "device3" })
 ```
 {% endtab %}
 {% tab title="Python" %}
@@ -126,27 +121,21 @@ seam.devices.update(
   device=device, 
   is_managed=False
 )
-unmanaged_device = seam.devices.unmanaged.get("device3")
+seam.devices.unmanaged.get("device3")
 ```
 {% endtab %}
 {% tab title="Ruby" %}
 ```ruby
 device = seam.devices.get("device3")
-
-
 seam.devices.update(device: device, is_managed: false)
-
-
-unmanaged_device = seam.devices.unmanaged.get("device3")
+seam.devices.unmanaged.get("device3")
 ```
 {% endtab %}
 {% tab title="PHP" %}
 ```php
 $device = $seam->devices->get("device3");
-
 $seam->devices->update("device3", ["is_managed" => false]);
-
-$unmanaged_device = $seam->devices->unmanaged->get("device3");
+$seam->devices->unmanaged->get("device3");
 ```
 {% endtab %}
 {% endtabs %}
@@ -154,7 +143,7 @@ $unmanaged_device = $seam->devices->unmanaged->get("device3");
 
 
 ### Convert Managed Device to Unmanaged
-To convert a device from unmanaged to managed, retrieve it and use the update function to flip its managed state back to true
+To convert a device from unmanaged to managed, retrieve it and use the update function to change its managed state back to true
 
 
 <!-- CODE INJECT START
@@ -181,8 +170,6 @@ await seam.devices.unmanaged.update({
 ```python
 unmanaged_device = seam.devices.unmanaged.get("device3")
 seam.devices.unmanaged.update(device=unmanaged_device, is_managed=True)
-
-print(converted_managed_device)
 ```
 {% endtab %}
 {% tab title="Ruby" %}
