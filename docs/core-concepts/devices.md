@@ -44,26 +44,28 @@ const device = await seam.devices.get({
   device_id: "device3"
 });
 console.log(device.capabilities_supported);
+// ['access_code', 'lock']
 ```
 {% endtab %}
 {% tab title="Python" %}
 ```python
 device = seam.devices.get("device3")
 print(device.capabilities_supported)
+# ['access_code', 'lock']
 ```
 {% endtab %}
 {% tab title="Ruby" %}
 ```ruby
 device = seam.devices.get("device3")
 puts(device.capabilities_supported)
+# ['access_code', 'lock']
 ```
 {% endtab %}
 {% tab title="PHP" %}
 ```php
 $device = $seam->devices->get("device3");
-
-
 echo json_encode($device->capabilities_supported);
+// ['access_code', 'lock']
 ```
 {% endtab %}
 {% endtabs %}
