@@ -76,3 +76,4 @@ Seam provides some pre-built UI components that allow you to build access code m
 - [ ] Transition to using booleans instead of enums in `status`
 - [ ] Rename `set` to `programmed`
 - [ ] Make sure `failed_to_set_on_device` is set on access codes.
+- [ ] `set` status should mean programmed, not that the code has become active.
