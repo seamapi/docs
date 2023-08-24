@@ -124,6 +124,7 @@
 * [Get started with SmartThings Hubs + Smart Locks](device-guides/get-started-with-smartthings-hubs-+-smart-locks.md)
 * [Hubitat Elevation Hub](device-guides/hubitat-elevation-hub.md)
 * [Get started with Salto Locks](device-guides/get-started-with-salto-locks.md)
+* [PTI Storlogix Cloud](device-guides/pti-storlogix-cloud.md)
 * [Salto Locks](device-guides/salto-locks.md)
 * [Get started with TTLock Devices](device-guides/get-started-with-ttlock-devices.md)
 * [TTLock Locks](device-guides/ttlock-locks.md)

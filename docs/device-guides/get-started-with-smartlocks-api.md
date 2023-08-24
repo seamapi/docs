@@ -10,7 +10,7 @@ description: Learn how to connect and control smartlocks with the Seam API.
 
 Seam is a simple API to connect and control almost any smartlocks. Seam already integrates popular smartlock brands such as [August](https://seam.co/manufacturers/august), [Yale](https://seam.co/manufacturers/yale), [Schlage](https://seam.co/manufacturers/schlage), [Igloo](https://www.seam.co/manufacturers/igloohome), and [Kwikset](https://www.seam.co/manufacturers/kwikset), as well as lesser known ones like [Nuki](https://www.seam.co/manufacturers/nuki), [Wyze](https://www.seam.co/manufacturers/wyze), or [TTLock](https://www.seam.co/manufacturers/ttlock).
 
-The main benefit of Seam is that you can connect devices from these brands and control them with an easy to use API without having to worry about the underlying specific of each devices. Seam abstracts functions in [capabilities](../core-concepts/device-capabilities.md) such as `access_codes` or `locks` which you can use to integrate devices from multiple brands while expecting them to all behave more or less in the same way.
+The main benefit of Seam is that you can connect devices from these brands and control them with an easy to use API without having to worry about the underlying specific of each devices. Seam abstracts functions in [capabilities](broken-reference) such as `access_codes` or `locks` which you can use to integrate devices from multiple brands while expecting them to all behave more or less in the same way.
 
 This guide is intended to show you how to connect and control smartlocks. To learn more about all devices supported by Seam such as thermostats and sensors, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
