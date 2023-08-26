@@ -1,0 +1,36 @@
+import { startServer } from "@seamapi/fake-seam-connect"
+import { NodeVM } from "vm2"
+import * as seamapi from "seamapi"
+
+export const runJavascriptCodeSample = async (javascript_sample: string) => {
+  // const server = await startServer()
+  // server.serverUrl
+
+  const vm = new NodeVM({
+    console: "redirect",
+    sandbox: {},
+    allowAsync: true,
+    require: {
+      mock: {
+        seamapi,
+      },
+    },
+  })
+
+  const logged_content: string[] = []
+  vm.on("console.log", (content) => {
+    logged_content.push(content)
+  })
+
+  const $execution_result = vm.run(
+    `async function run() {
+      const seam = new (require("seamapi").Seam)({
+      });
+      ${javascript_sample}
+    };
+    module.exports = run()`
+  )
+  const execution_result = await $execution_result
+
+  return { execution_result, logged_content }
+}
