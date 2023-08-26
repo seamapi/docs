@@ -132,12 +132,6 @@ $created_access_code = $seam->access_codes->create(
 print($created_access_code);
 ```
 {% endtab %}
-{% endtabs %}
-<!-- CODE INJECT END -->
-
-
-
-{% tabs %}
 {% tab title="Curl" %}
 #### Request:
 
@@ -180,6 +174,8 @@ print($created_access_code);
 ```
 {% endtab %}
 {% endtabs %}
+<!-- CODE INJECT END -->
+
 
 ## 2. Verify Successful Ongoing Code Programming
 
@@ -324,12 +320,6 @@ $created_access_code = $seam->access_codes->create(
 print(json_encode($created_access_code));
 ```
 {% endtab %}
-{% endtabs %}
-<!-- CODE INJECT END -->
-
-
-
-{% tabs %}
 {% tab title="Curl" %}
 #### Request
 
@@ -375,6 +365,10 @@ print(json_encode($created_access_code));
 ```
 {% endtab %}
 {% endtabs %}
+<!-- CODE INJECT END -->
+
+
+
 
 ## 2. Verify Successful Time-Bound Code Programming
 
