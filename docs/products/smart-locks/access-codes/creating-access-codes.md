@@ -14,7 +14,6 @@ layout:
   pagination:
     visible: true
 ---
-
 # Creating Access Codes
 
 ## Overview
@@ -192,7 +191,7 @@ print($created_access_code);
 
 ## 2. Verify Successful Ongoing Code Programming
 
-Seam might encounter some problems when setting an access code onto the lock. This could be due to weak internet connectivity, a low battery in the door lock, or someone unplugging the bridge that links the lock to the internet. **Give these potential challenges, it's essential to verify that a code has been successfully programmed on to the lock** to prevent unexpected complications later.
+Seam might encounter some problems when setting an access code onto the lock. This could be due to weak internet connectivity, a low battery in the door lock, or someone unplugging the bridge that links the lock to the internet. **Given these potential challenges, it's essential to verify that a code has been successfully programmed on to the lock** to prevent unexpected complications later.
 
 There are two methods to verify that an ongoing access code has been set on the device:
 
