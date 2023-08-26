@@ -2,11 +2,24 @@
 description: >-
   Learn how to program an access code onto a smart lock with a keypad, and
   ensure the code is successfully set.
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-# Creating access codes
+# Creating Access Codes
 
-This guide explains how to create access codes on a smart lock. With the [Access Codes](../../../api-clients/access-codes/) API, you can generate a PIN code for your door lock and share it with visitors, allowing them keyless access.&#x20;
+## Overview
+
+This guide explains how to create access codes on a smart lock. With the [Access Codes](../../../api-clients/access-codes/) API, generate PIN codes on a door lock and share it with visitors, allowing them keyless access.
 
 Seam supports programming two types of access codes:
 
@@ -15,7 +28,7 @@ Seam supports programming two types of access codes:
 
 ***
 
-# Before you begin
+# Before You Begin
 
 
 To confirm that Seam supports access code programming for your device, use [Get Device](../../../api-clients/devices/get-device.md) to query the device and check its `capabilities_supported` property. Ensure that `capabilities_supported` list includes `access_code`. After you've done that, come back here and keep reading.
@@ -65,9 +78,9 @@ echo json_encode($device->capabilities_supported);
 
 ***
 
-# Programming an ongoing code
+# Programming an Ongoing Code
 
-## 1. Create a ongoing access code
+## 1. Create an Ongoing Access Code
 
 Set an ongoing code by providing the device for which to [create an access code](../../../api-clients/access-codes/create-an-access-code.md). Assign an optional `name` to the access code for easier identification within the [Seam Console](https://console.seam.co) and smart lock app. Include an optional `starts_at` value to specify when this code should become active.
 
@@ -203,7 +216,7 @@ In the event of delay or failure, refer to [the "Troubleshooting access code iss
 
 # Scheduling Time-Bound Access Codes
 
-## 1. Create a time-bound access code
+## 1. Create a Time-Bound Access Code
 
 To set a time-bound code, provide the `device` reference of the smart lock on which to program the code, along with `starts_at` and `ends_at` iso8601 timestamps to define the code's active time window. For more details, refer to the [Create Access Code endpoint](../../../api-clients/access-codes/create-an-access-code.md).
 
@@ -218,19 +231,14 @@ Create a timebound access code with a name, a starts_at and ends_at iso8601 time
 
 e.g. in python you could do:
 ```python
-from datetime import datetime, timedelta
+created_access_code = seam.access_codes.create(
+    device_id="device-uuid", 
+    name="My Time-bound Code",
+    starts_at="2028-08-26T06:20:21Z",
+    ends_at="2028-08-29T02:20:21Z"
+)
 
-# Starts 1 day from now
-starts_at = datetime.utcnow() + timedelta(days=1)
-
-# Ends 2 days from now
-ends_at = datetime.utcnow() + timedelta(days=2)
-
-# Convert to ISO8601 format
-starts_at_iso8601 = starts_at.isoformat() + "Z"
-ends_at_iso8601 = ends_at.isoformat() + "Z"
-
-access_code = seam.access_codes.create(device=device, name="my timebound code", code="8888", starts_at=starts_at_iso8601, ends_at=ends_at_iso8601)
+print(created_access_code)
 
 print(access_code)
 # AccessCode(access_code_id='7a83ddc8-b9d9-4944-9457-46b31e654bdc', type='time_bound', code='8888', starts_at='2023-08-27T05:22:00.000Z', ends_at='2023-08-28T05:22:00.000Z', name='my timebound code', status='unset', common_code_key=None)
@@ -241,20 +249,12 @@ print(access_code)
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
-const ms = require('ms')
-const { DateTime } = require('luxon')
-
-const now = DateTime.utc();
-const startsAt = now.plus({ days: 1 }).toISO();
-const endsAt = now.plus({ days: 2 }).toISO();
-
-
 const createdAccessCode = await seam.accessCodes.create({
   device_id: 'device-uuid',
   name: 'my timebound code',
   code: '8888',
-  starts_at: startsAt,
-  ends_at: endsAt
+  starts_at: "2028-08-26T06:20:21Z",
+  ends_at: "2028-08-29T02:20:21Z"
 });
 
 console.log(createdAccessCode);
@@ -262,60 +262,38 @@ console.log(createdAccessCode);
 {% endtab %}
 {% tab title="Python" %}
 ```python
-from datetime import datetime, timedelta
-
-starts_at = datetime.utcnow() + timedelta(days=1)
-ends_at = datetime.utcnow() + timedelta(days=2)
-
-
-starts_at_iso8601 = starts_at.isoformat() + "Z"
-ends_at_iso8601 = ends_at.isoformat() + "Z"
-
-
 created_access_code = seam.access_codes.create(
-    device_id="device-uuid", 
+    device=my_device, 
     name="My Time-bound Code",
-    starts_at=starts_at_iso8601, ends_at=ends_at_iso8601
+    starts_at="2028-08-26T06:20:21Z",
+    ends_at="2028-08-29T02:20:21Z"
 )
-
 
 print(created_access_code)
 ```
 {% endtab %}
 {% tab title="Ruby" %}
 ```ruby
-require 'date'
 
-starts_at = DateTime.now.next_day(1)
-ends_at = DateTime.now.next_day(2)
-starts_at_iso8601 = starts_at.to_time.utc.iso8601
-ends_at_iso8601 = ends_at.to_time.utc.iso8601
-
-created_access_code = seam.access_codes.create(device_id:"device-uuid", name:"my timebound code", code:"8888", starts_at:starts_at_iso8601, ends_at:ends_at_iso8601)
+created_access_code = seam.access_codes.create(
+  device_id:"device-uuid", 
+  name:"my timebound code", 
+  code:"8888", 
+  starts_at:"2028-08-26T06:20:21Z", 
+  ends_at:"2028-08-29T02:20:21Z")
 
 puts(created_access_code)
 ```
 {% endtab %}
 {% tab title="PHP" %}
 ```php
-
-$starts_at = new DateTime();
-$starts_at->add(new DateInterval('P1D'));
-$ends_at = new DateTime();
-$ends_at->add(new DateInterval('P2D'));
-
-
-$starts_at_iso8601 = $starts_at->format(DateTime::ATOM);
-$ends_at_iso8601 = $ends_at->format(DateTime::ATOM);
-
 $created_access_code = $seam->access_codes->create(
   "device-uuid",
   "my timebound code",
   "8888",
-  $starts_at_iso8601,
-  $ends_at_iso8601
+  "2028-08-26T06:20:21Z",
+  "2028-08-29T02:20:21Z"
 );
-
 
 print(json_encode($created_access_code));
 ```
