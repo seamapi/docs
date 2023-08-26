@@ -15,7 +15,7 @@ Seam supports programming two types of access codes:
 
 ***
 
-## Before you begin
+# Before you begin
 
 
 To confirm that Seam supports access code programming for your device, use [Get Device](../../../api-clients/devices/get-device.md) to query the device and check its `capabilities_supported` property. Ensure that `capabilities_supported` list includes `access_code`. After you've done that, come back here and keep reading.
@@ -63,25 +63,11 @@ echo json_encode($device->capabilities_supported);
 
 
 
-
-**Example Payload:**
-
-```
-{
-    "device_id": "00000000-0000-0000-0000-000000000000",
-    "capabilities_supported": [
-        "access_code",
-        ...
-    ],
-    ...
-}
-```
-
 ***
 
-## Programming an ongoing code
+# Programming an ongoing code
 
-### 1. Create a ongoing access code
+## 1. Create a ongoing access code
 
 Set an ongoing code by providing the device for which to [create an access code](../../../api-clients/access-codes/create-an-access-code.md). Assign an optional `name` to the access code for easier identification within the [Seam Console](https://console.seam.co) and smart lock app. Include an optional `starts_at` value to specify when this code should become active.
 
@@ -116,16 +102,19 @@ console.log(createdAccessCode);
 {% tab title="Python" %}
 ```python
 device = seam.devices.get("device-uuid")
-created_access_code = seam.access_codes.create(device=device, name="My Ongoing Access Code")
+created_access_code = seam.access_codes.create(
+  device=device, 
+  name="My Ongoing Access Code")
 
 print(created_access_code)
 ```
 {% endtab %}
 {% tab title="Ruby" %}
 ```ruby
-
 device = seam.devices.get("device-uuid")
-created_access_code = seam.access_codes.create(device_id: device.device_id, name: "my ongoing code")
+created_access_code = seam.access_codes.create(
+  device_id: device.device_id, 
+  name: "my ongoing code")
 
 puts created_access_code
 ```
@@ -192,7 +181,7 @@ print($created_access_code);
 {% endtab %}
 {% endtabs %}
 
-### 2. Verify that the ongoing code has been programmed onto the door lock
+## 2. Verify Successful Ongoing Code Programming
 
 Seam might encounter some problems when setting an access code onto the lock. This could be due to weak internet connectivity, a low battery in the door lock, or someone unplugging the bridge that links the lock to the internet. **Give these potential challenges, it's essential to verify that a code has been successfully programmed on to the lock** to prevent unexpected complications later.
 
@@ -216,9 +205,9 @@ In the event of delay or failure, refer to [the "Troubleshooting access code iss
 
 ***
 
-## Scheduling Time-Bound Access Codes
+# Scheduling Time-Bound Access Codes
 
-### 1. Create a time-bound access code
+## 1. Create a time-bound access code
 
 To set a time-bound code, provide the `device` reference of the smart lock on which to program the code, along with `starts_at` and `ends_at` iso8601 timestamps to define the code's active time window. For more details, refer to the [Create Access Code endpoint](../../../api-clients/access-codes/create-an-access-code.md).
 
@@ -387,7 +376,7 @@ print(json_encode($created_access_code));
 {% endtab %}
 {% endtabs %}
 
-### 2. Verify that a time-bound code has been programmed onto the door lock
+## 2. Verify Successful Time-Bound Code Programming
 
 The [lifecycle of a time-bound access code](lifecycle-of-access-codes.md) is marked by distinct phases:
 
