@@ -283,7 +283,7 @@ puts updated_lock.properties['locked'] # false
 
 Most Yale locks come with a keypad built-in to program access codes. These codes can then be entered to unlock a Yale lock.
 
-The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Yale lock. You can find out more about Yale lock access code in our [core concept section on access codes.](../products/smart-locks/access-codes.md)
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Yale lock. You can find out more about Yale lock access code in our [core concept section on access codes.](../products/smart-locks/access-codes/)
 
 {% tabs %}
 {% tab title="Python" %}

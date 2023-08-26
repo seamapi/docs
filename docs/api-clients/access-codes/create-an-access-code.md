@@ -254,7 +254,7 @@ seam.access_codes.create(
 | `code`                        | <p>type: string<br>Optional</p>  | Access code of Device                                                                                                                                                                                                                                                          |
 | `use_backup_access_code_pool` | <p>type: boolean<br>Optional</p> | Use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. This allows you to use [/access\_codes/pull\_backup\_access\_code](https://docs.seam.co/latest/api-clients/access-codes/pull-backup-access-code) |
 | `common_code_key`             | <p>type: string<br>Optional</p>  | any two access codes with the same `common_code_key` are guaranteed to have the same code                                                                                                                                                                                      |
-| `prefer_native_scheduling`    | <p>type: string<br>Optional</p>  | Whether [native scheduling](../../products/smart-locks/access-codes.md#native-scheduling) should be used for time-bound codes when supported by the provider (defaults to true)                                                                                                |
+| `prefer_native_scheduling`    | <p>type: string<br>Optional</p>  | Whether [native scheduling](../../products/smart-locks/access-codes/#native-scheduling) should be used for time-bound codes when supported by the provider (defaults to true)                                                                                                  |
 
 ### Response
 

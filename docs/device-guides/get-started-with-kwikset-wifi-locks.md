@@ -324,7 +324,7 @@ puts updated_lock.properties['locked'] # false
 
 Some Kwikset locks have a keypad paired to them to program access codes. These codes can then be entered to unlock a Kwikset lock.
 
-The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Kwikset lock. You can find out more about Kwikset lock access code in our [core concept section on access codes.](../products/smart-locks/access-codes.md)
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Kwikset lock. You can find out more about Kwikset lock access code in our [core concept section on access codes.](../products/smart-locks/access-codes/)
 
 **Access Code Constraints** Kwikset locks place the following constraints on access code attributes:
 

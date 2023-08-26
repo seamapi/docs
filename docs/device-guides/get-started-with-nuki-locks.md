@@ -47,6 +47,7 @@ const createdConnectWebview = await seam.connectWebviews.create({
 console.log(createdConnectWebview.url);
 ```
 {% endtab %}
+
 {% tab title="Python" %}
 ```python
 # Create a webview with Nuki as the provider
@@ -59,8 +60,8 @@ assert created_webview.login_successful is False
 print(created_webview.url)
 ```
 {% endtab %}
-{% tab title="Ruby" %}
 
+{% tab title="Ruby" %}
 ```ruby
 # Create a connect webview with the provider "nuki"
 created_webview = seam.connect_webviews.create(accepted_providers: ["nuki"])
@@ -72,6 +73,7 @@ raise 'Login should not be succesful' unless !created_webview.login_successful
 puts created_webview.url
 ```
 {% endtab %}
+
 {% tab title="PHP" %}
 ```php
 <?php
@@ -92,28 +94,25 @@ print($connect_webview->url);
 ```
 {% endtab %}
 {% endtabs %}
-<!-- CODE INJECT END -->
 
 #### Authorize Your Workspace
 
 Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the Nuki [sandbox test accounts ](https://docs.seam.co/latest/device-guides/sandbox-and-sample-data)credentials below:
 
-- **email:** john@example.com
-- **password:** 1234
+* **email:** john@example.com
+* **password:** 1234
 
 <figure><img src="../.gitbook/assets/guides/nuki-connect-flow-screens.jpg" alt=""><figcaption><p>Seam Connect Webview flow to connect Nuki account with Seam</p></figcaption></figure>
 
 Confirm the Connect Webview was successful by querying its status:
 
-<div data-gb-custom-block data-tag="tabs">
-
-<div data-gb-custom-block data-tag="tab" data-title='Python'>
-
+{% tabs %}
+{% tab title="Python" %}
 ```python
 updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
 
 assert updated_webview.login_successful # true
-````
+```
 {% endtab %}
 
 {% tab title="Javascript" %}
@@ -313,7 +312,7 @@ $seam->locks->lock_door($lock->device_id);
 
 Some Nuki locks also have a keypad paired to them to program access codes. These codes can then be entered to unlock a Nuki lock.
 
-The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on an Nuki lock. You can find out more about Nuki lock access code in our [core concept section on access codes.](../products/smart-locks/access-codes.md)
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on an Nuki lock. You can find out more about Nuki lock access code in our [core concept section on access codes.](../products/smart-locks/access-codes/)
 
 {% hint style="info" %}
 Nuki does not let you create a code starting with the digits "12". Codes cannot contain the digit 0.

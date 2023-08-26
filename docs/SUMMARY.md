@@ -17,7 +17,16 @@
 
 * [🔒 Smart Locks](products/smart-locks/README.md)
   * [Lock and Unlock](products/smart-locks/lock-and-unlock.md)
-  * [Access Codes](products/smart-locks/access-codes.md)
+  * [Access Codes](products/smart-locks/access-codes/README.md)
+    * [Creating access codes](products/smart-locks/access-codes/creating-access-codes.md)
+    * [Retrieving access codes](products/smart-locks/access-codes/retrieving-access-codes.md)
+    * [Modifying access codes](products/smart-locks/access-codes/modifying-access-codes.md)
+    * [Deleting access codes](products/smart-locks/access-codes/deleting-access-codes.md)
+    * [Lifecycle of access codes](products/smart-locks/access-codes/lifecycle-of-access-codes.md)
+    * [Access code requirements for door locks](products/smart-locks/access-codes/access-code-requirements-for-door-locks.md)
+    * [Troubleshooting access code issues](products/smart-locks/access-codes/troubleshooting-access-code-issues.md)
+    * [Backup access codes](products/smart-locks/access-codes/backup-access-codes.md)
+    * [Migrating existing access codes](products/smart-locks/access-codes/migrating-existing-access-codes.md)
 * [🌡 Thermostats](products/thermostats/README.md)
   * [Configure Current Climate Settings](products/thermostats/configure-current-climate-settings.md)
   * [Climate Setting Schedules](products/thermostats/thermostats-climate-setting-schedules.md)
@@ -151,8 +160,6 @@
   * [Igloohome Locks Sample Data](device-guides/sandbox-and-sample-data/igloohome-sample-data.md)
 * [Reconnecting an Account](device-guides/reconnecting-an-account.md)
 * [Access Code Management for Hospitality](device-guides/implementing-robust-access-code-management-for-guests.md)
-* [Migrating Existing Access Codes](device-guides/migrating-existing-codes.md)
-* [Recommended Mitigations for Access Codes](device-guides/recommended-mitigations-for-access-codes.md)
 * [Rate Limits and Guardrails](device-guides/rate-limits-and-guardrails.md)
 
 ## 🌉 Seam Bridge
