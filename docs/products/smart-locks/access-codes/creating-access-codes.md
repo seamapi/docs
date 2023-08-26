@@ -33,31 +33,29 @@ print(device.capability_supported)
 {% tab title="Javascript" %}
 ```javascript
 const device = await seam.devices.get({
-  device_id: "device3"
+  device_id: "device-uuid"
 });
+
 console.log(device.capabilities_supported);
-// ['access_code', 'lock']
+
 ```
 {% endtab %}
 {% tab title="Python" %}
 ```python
-device = seam.devices.get("device3")
+device = seam.devices.get("device-uuid")
 print(device.capabilities_supported)
-# ['access_code', 'lock']
 ```
 {% endtab %}
 {% tab title="Ruby" %}
 ```ruby
-device = seam.devices.get("device3")
+device = seam.devices.get("device-uuid")
 puts(device.capabilities_supported)
-# ['access_code', 'lock']
 ```
 {% endtab %}
 {% tab title="PHP" %}
 ```php
-$device = $seam->devices->get("device3");
+$device = $seam->devices->get("device-uuid");
 echo json_encode($device->capabilities_supported);
-// ['access_code', 'lock']
 ```
 {% endtab %}
 {% endtabs %}
@@ -105,13 +103,44 @@ print(access_code)
 ```
 -->
 {% tabs %}
+{% tab title="Javascript" %}
+```javascript
+const device = await seam.devices.get("device-uuid");
+const createdAccessCode = await seam.accessCodes.create({
+  device_id: device.device_id,
+  name: "my ongoing code"
+});
+console.log(createdAccessCode);
+```
+{% endtab %}
 {% tab title="Python" %}
 ```python
-device = seam.devices.get("some_device_uuid")
-access_code = seam.access_codes.create(device=device, name="my ongoing code")
-print(access_code)
+device = seam.devices.get("device-uuid")
+created_access_code = seam.access_codes.create(device=device, name="My Ongoing Access Code")
 
-# AccessCode(access_code_id='5cc206aa-c75f-4d68-b20a-983974ab3932', type='ongoing' code='2604', starts_at=None, ends_at=None, name="my ongoing code", status='setting' common_code_key=None)
+print(created_access_code)
+```
+{% endtab %}
+{% tab title="Ruby" %}
+```ruby
+
+device = seam.devices.get("device-uuid")
+created_access_code = seam.access_codes.create(device_id: device.device_id, name: "my ongoing code")
+
+puts created_access_code
+```
+{% endtab %}
+{% tab title="PHP" %}
+```php
+
+$device = $seam->devices->get("device-uuid");
+$created_access_code = $seam->access_codes->create(
+  "device_id" => $device->device_id,
+  "name" => "my ongoing code"
+);
+
+
+print($created_access_code);
 ```
 {% endtab %}
 {% endtabs %}
@@ -225,25 +254,85 @@ print(access_code)
 ```
 -->
 {% tabs %}
+{% tab title="Javascript" %}
+```javascript
+const ms = require('ms')
+const { DateTime } = require('luxon')
+
+const now = DateTime.utc();
+const startsAt = now.plus({ days: 1 }).toISO();
+const endsAt = now.plus({ days: 2 }).toISO();
+
+
+const createdAccessCode = await seam.accessCodes.create({
+  device_id: 'device-uuid',
+  name: 'my timebound code',
+  code: '8888',
+  starts_at: startsAt,
+  ends_at: endsAt
+});
+
+console.log(createdAccessCode);
+```
+{% endtab %}
 {% tab title="Python" %}
 ```python
 from datetime import datetime, timedelta
 
-# Starts 1 day from now
 starts_at = datetime.utcnow() + timedelta(days=1)
-
-# Ends 2 days from now
 ends_at = datetime.utcnow() + timedelta(days=2)
 
-# Convert to ISO8601 format
+
 starts_at_iso8601 = starts_at.isoformat() + "Z"
 ends_at_iso8601 = ends_at.isoformat() + "Z"
 
-access_code = seam.access_codes.create(device=device, name="my timebound code", code="8888", starts_at=starts_at_iso8601, ends_at=ends_at_iso8601)
 
-print(access_code)
-# AccessCode(access_code_id='7a83ddc8-b9d9-4944-9457-46b31e654bdc', type='time_bound', code='8888', starts_at='2023-08-27T05:22:00.000Z', ends_at='2023-08-28T05:22:00.000Z', name='my timebound code', status='unset', common_code_key=None)
+created_access_code = seam.access_codes.create(
+    device_id="device-uuid", 
+    name="My Time-bound Code",
+    starts_at=starts_at_iso8601, ends_at=ends_at_iso8601
+)
 
+
+print(created_access_code)
+```
+{% endtab %}
+{% tab title="Ruby" %}
+```ruby
+require 'date'
+
+starts_at = DateTime.now.next_day(1)
+ends_at = DateTime.now.next_day(2)
+starts_at_iso8601 = starts_at.to_time.utc.iso8601
+ends_at_iso8601 = ends_at.to_time.utc.iso8601
+
+created_access_code = seam.access_codes.create(device_id:"device-uuid", name:"my timebound code", code:"8888", starts_at:starts_at_iso8601, ends_at:ends_at_iso8601)
+
+puts(created_access_code)
+```
+{% endtab %}
+{% tab title="PHP" %}
+```php
+
+$starts_at = new DateTime();
+$starts_at->add(new DateInterval('P1D'));
+$ends_at = new DateTime();
+$ends_at->add(new DateInterval('P2D'));
+
+
+$starts_at_iso8601 = $starts_at->format(DateTime::ATOM);
+$ends_at_iso8601 = $ends_at->format(DateTime::ATOM);
+
+$created_access_code = $seam->access_codes->create(
+  "device-uuid",
+  "my timebound code",
+  "8888",
+  $starts_at_iso8601,
+  $ends_at_iso8601
+);
+
+
+print(json_encode($created_access_code));
 ```
 {% endtab %}
 {% endtabs %}
