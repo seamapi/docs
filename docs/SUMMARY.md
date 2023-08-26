@@ -18,7 +18,7 @@
 * [🔒 Smart Locks](products/smart-locks/README.md)
   * [Lock and Unlock](products/smart-locks/lock-and-unlock.md)
   * [Access Codes](products/smart-locks/access-codes/README.md)
-    * [Creating access codes](products/smart-locks/access-codes/creating-access-codes.md)
+    * [Creating Access Codes](products/smart-locks/access-codes/creating-access-codes.md)
     * [Retrieving access codes](products/smart-locks/access-codes/retrieving-access-codes.md)
     * [Modifying access codes](products/smart-locks/access-codes/modifying-access-codes.md)
     * [Deleting access codes](products/smart-locks/access-codes/deleting-access-codes.md)
