@@ -3,8 +3,8 @@ import { runJavascriptCodeSample } from "../../src/run-code-snippet/run-javascri
 
 test("run javascript code snippet 02", async (t) => {
   const { logged_content } = await runJavascriptCodeSample(`
-    await seam.devices.list()
+    console.log(await seam.devices.list())
   `)
 
-  console.log(logged_content)
+  t.is(logged_content[0].length, 3)
 })
