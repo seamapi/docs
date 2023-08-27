@@ -1,3 +1,4 @@
+import { addCodeOutputComments } from "../add-code-output-comments"
 import { extractCodeFromResponse } from "../extract-code-from-response"
 import { getChatCompletion } from "../get-chat-completion"
 import { getLanguageConfiguration } from "../language-configurations"
@@ -55,8 +56,15 @@ ${routeDefinitions}
     }
   )
 
-  const newSnippet = stripComments(extractCodeFromResponse(completion)!, {
+  const stripCommentFn = languageConfig.commentStripFn ?? stripComments
+
+  const newSnippetCode = stripCommentFn(extractCodeFromResponse(completion)!, {
     language: languageConfig.language,
+  })
+
+  const newSnippet = await addCodeOutputComments(newSnippetCode, {
+    languageConfig,
+    high_level_objective: taskDescription,
   })
 
   // Check if the code snippets are functionally identical

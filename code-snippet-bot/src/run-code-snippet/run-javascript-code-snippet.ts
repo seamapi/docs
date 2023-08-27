@@ -1,5 +1,6 @@
 import * as Fake from "@seamapi/fake-seam-connect"
 import { NodeVM } from "vm2"
+import ms from "ms"
 import * as seamapi from "seamapi"
 
 export const runJavascriptCodeSample = async (javascript_sample: string) => {
@@ -18,6 +19,7 @@ export const runJavascriptCodeSample = async (javascript_sample: string) => {
     require: {
       mock: {
         seamapi,
+        ms,
       },
     },
   })

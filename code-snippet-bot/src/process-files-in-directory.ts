@@ -31,7 +31,7 @@ export const processFilesInDirectory = async (
         )
       )
       const existingCodeSnippets = parseGitbookCodeSnippets(
-        codeInjects[i].content
+        codeInjects[i].code_snippet_content
       )
       const codeSnippets: { [language: string]: string } = {}
 

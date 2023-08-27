@@ -11,6 +11,7 @@ export const javascriptTaskGuidelines = `
   the object and returns it. For example, the \`/devices.list()\` returns an
   array of devices
 * NEVER INCLUDE EXAMPLE OUTPUT
+* GOOD: \`seam.accessCodes.create\` BAD: \`seam.access_codes.create\`
 * Use camelCase for variable names and function names
 * All the routes are converted to camelcase in the javascript SDK
 * ALWAYS use snake_case for parameters passed to an SDK method
