@@ -2,6 +2,7 @@ import { extractCodeFromResponse } from "../extract-code-from-response"
 import { getChatCompletion } from "../get-chat-completion"
 import { runJavascriptCodeSample } from "../run-code-snippet"
 import { getOutputReductionPrompt } from "./output-reduction-prompt"
+import { reduceOutput } from "./reduce-output"
 import { replaceSeedIds } from "./replace-seed-ids"
 
 export const getJavascriptOutputInjectPoints = (code_snippet: string) => {
@@ -40,10 +41,12 @@ export const addJavascriptCodeOutputComments = async (
   for (let i = 0; i < code_snippet_lines.length; i++) {
     const line = code_snippet_lines[i]
     newSnippetLines.push(line)
-    if (
+
+    const line_has_associated_output =
       output_inject_point_index < output_inject_points.length &&
       i + 1 === output_inject_points[output_inject_point_index].line_number
-    ) {
+
+    if (line_has_associated_output) {
       const output = logged_content[output_inject_point_index]
       if (output) {
         let formatted_output = JSON.stringify(output, null, 2)
@@ -51,20 +54,10 @@ export const addJavascriptCodeOutputComments = async (
         formatted_output = replaceSeedIds(formatted_output)
 
         if (output_reduction_enabled) {
-          const output_reduction_prompt = await getOutputReductionPrompt({
+          formatted_output = await reduceOutput({
             output: formatted_output,
             high_level_objective,
           })
-
-          const reduced_output = await getChatCompletion(
-            output_reduction_prompt,
-            {
-              model: "gpt-4",
-            }
-          )
-
-          formatted_output =
-            extractCodeFromResponse(reduced_output) ?? reduced_output
         }
 
         const output_lines = formatted_output.split("\n")
