@@ -4,5 +4,9 @@ import ms from "ms"
 import * as seamapi from "seamapi"
 
 export const runCurlCodeSnippet = async (curl_sample: string) => {
-  // asd
+  const fake = await Fake.createFake()
+  const seed = await fake.seed()
+  const server = await fake.startServer()
+
+  // TODO
 }
