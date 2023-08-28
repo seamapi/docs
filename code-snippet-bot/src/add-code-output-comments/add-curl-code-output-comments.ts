@@ -15,7 +15,7 @@ export const getCurlOutputInjectPoints = (code_snippet: string) => {
   lines.forEach((line, index) => {
     if (line.match(/curl/)) {
       let curl_line = line
-      while (!curl_line.match(/;/)) {
+      while (curl_line && !curl_line.match(/;/)) {
         index++
         curl_line = lines[index]
       }

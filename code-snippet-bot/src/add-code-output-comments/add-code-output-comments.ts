@@ -14,17 +14,25 @@ export const addCodeOutputComments = async (
     output_reduction_enabled?: boolean
   }
 ): Promise<string> => {
-  if (languageConfig.language === "javascript") {
-    return addJavascriptCodeOutputComments(code_snippet, {
-      high_level_objective,
-      output_reduction_enabled,
-    })
-  }
-  if (languageConfig.language === "bash") {
-    return addCurlCodeOutputComments(code_snippet, {
-      high_level_objective,
-      output_reduction_enabled,
-    })
+  try {
+    if (languageConfig.language === "javascript") {
+      return addJavascriptCodeOutputComments(code_snippet, {
+        high_level_objective,
+        output_reduction_enabled,
+      })
+    }
+    if (languageConfig.language === "bash") {
+      return addCurlCodeOutputComments(code_snippet, {
+        high_level_objective,
+        output_reduction_enabled,
+      })
+    }
+  } catch (e: any) {
+    console.log(
+      `Couldn't add code output comments in ${
+        languageConfig.language
+      }: ${e.toString()}`
+    )
   }
 
   return code_snippet
