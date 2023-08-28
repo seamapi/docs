@@ -23,6 +23,7 @@ level objective and reduce the Response Output to be more concise and readable.
   with an ellipsis (\`\`\`...\`\`\`)
 * If removing properties from an object, insert an ellipsis (\`\`\`...\`\`\`) to
   indicate that properties were removed
+* Format any JSON into readable multi-line JSON
 
 ## High Level Objective
 

@@ -12,7 +12,7 @@ export const getChatCompletion = async (
   opts: Options = {
     model: "gpt-3.5-turbo-16k",
   }
-) => {
+): Promise<string> => {
   await cache.init()
   const prompt_hash = crypto.createHash("md5").update(prompt).digest("hex")
   const cache_key = `${opts.model}_${prompt_hash}`

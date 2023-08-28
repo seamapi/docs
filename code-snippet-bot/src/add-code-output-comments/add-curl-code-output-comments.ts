@@ -1,22 +1,32 @@
 import { extractCodeFromResponse } from "../extract-code-from-response"
 import { getChatCompletion } from "../get-chat-completion"
 import { runJavascriptCodeSample } from "../run-code-snippet"
+import { runCurlCodeSnippet } from "../run-code-snippet/run-curl-code-snippet"
 import { getOutputReductionPrompt } from "./output-reduction-prompt"
 import { reduceOutput } from "./reduce-output"
 import { replaceSeedIds } from "./replace-seed-ids"
 
-export const getJavascriptOutputInjectPoints = (code_snippet: string) => {
-  const inject_points: Array<{ line_number: number }> = []
+// Find and return each line number that is the last line of a multi-line curl
+// command. Do this by finding "curl" in a line then scanning until the next
+// semi-colon
+export const getCurlOutputInjectPoints = (code_snippet: string) => {
   const lines = code_snippet.split("\n")
+  const inject_points: Array<{ line_number: number }> = []
   lines.forEach((line, index) => {
-    if (line.match(/console.log/)) {
+    if (line.match(/curl/)) {
+      let curl_line = line
+      while (!curl_line.match(/;/)) {
+        index++
+        curl_line = lines[index]
+      }
       inject_points.push({ line_number: index + 1 })
     }
   })
+  inject_points.push({ line_number: lines.length + 1 })
   return inject_points
 }
 
-export const addJavascriptCodeOutputComments = async (
+export const addCurlCodeOutputComments = async (
   code_snippet: string,
   {
     high_level_objective,
@@ -25,16 +35,16 @@ export const addJavascriptCodeOutputComments = async (
 ) => {
   let logged_content: Array<any>
   try {
-    ;({ logged_content } = await runJavascriptCodeSample(code_snippet))
+    ;({ logged_content } = await runCurlCodeSnippet(code_snippet))
   } catch (e) {
     console.log(
-      `Couldn't run javascript code sample, returning original code snippet: ${e}`
+      `Couldn't run curl code sample, returning original code snippet: ${e}`
     )
     return code_snippet
   }
 
   const code_snippet_lines = code_snippet.split("\n")
-  const output_inject_points = getJavascriptOutputInjectPoints(code_snippet)
+  const output_inject_points = getCurlOutputInjectPoints(code_snippet)
 
   const newSnippetLines = []
   let output_inject_point_index = 0
@@ -49,9 +59,7 @@ export const addJavascriptCodeOutputComments = async (
     if (line_has_associated_output) {
       const output = logged_content[output_inject_point_index]
       if (output) {
-        let formatted_output = JSON.stringify(output, null, 2)
-
-        formatted_output = replaceSeedIds(formatted_output)
+        let formatted_output = replaceSeedIds(output)
 
         if (output_reduction_enabled) {
           formatted_output = await reduceOutput({
@@ -64,7 +72,7 @@ export const addJavascriptCodeOutputComments = async (
         output_lines[0] = `Output: ${output_lines[0]}`
         newSnippetLines.push("\n")
         output_lines.forEach((output_line) => {
-          newSnippetLines.push(`// ${output_line}`)
+          newSnippetLines.push(`# ${output_line}`)
         })
       }
       output_inject_point_index++

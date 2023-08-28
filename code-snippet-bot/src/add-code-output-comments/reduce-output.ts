@@ -12,5 +12,8 @@ export const reduceOutput = async (opts: {
     model: "gpt-4",
   })
 
-  return extractCodeFromResponse(reduced_output) ?? reduced_output
+  return (
+    extractCodeFromResponse(reduced_output) ??
+    reduced_output.replace(/```/g, "").trim()
+  )
 }
