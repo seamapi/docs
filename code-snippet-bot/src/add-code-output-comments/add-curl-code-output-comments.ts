@@ -22,7 +22,6 @@ export const getCurlOutputInjectPoints = (code_snippet: string) => {
       inject_points.push({ line_number: index + 1 })
     }
   })
-  inject_points.push({ line_number: lines.length + 1 })
   return inject_points
 }
 
@@ -48,9 +47,10 @@ export const addCurlCodeOutputComments = async (
 
   const newSnippetLines = []
   let output_inject_point_index = 0
-  for (let i = 0; i < code_snippet_lines.length; i++) {
+
+  for (let i = 0; i <= code_snippet_lines.length; i++) {
     const line = code_snippet_lines[i]
-    newSnippetLines.push(line)
+    if (i !== code_snippet_lines.length) newSnippetLines.push(line)
 
     const line_has_associated_output =
       output_inject_point_index < output_inject_points.length &&
