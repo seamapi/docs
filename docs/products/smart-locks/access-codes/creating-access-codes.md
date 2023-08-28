@@ -33,40 +33,35 @@ Seam supports programming two types of access codes:
 To confirm that Seam supports access code programming for your device, use [Get Device](../../../api-clients/devices/get-device.md) to query the device and check its `capabilities_supported` property. Ensure that `capabilities_supported` list includes `access_code`. After you've done that, come back here and keep reading.
 
 <!-- CODE INJECT START
-Get a device and print out the capability_supported property of this device
-
-e.g. in python you could do:
-```python
-device = seam.devices.get("some_device_uuid")
-print(device.capability_supported)
-```
+Get a device and print out the capability_supported property of this device. Please use "7a83ddc8-b9d9-4944-9457-46b31e654bdc" for the device_id.
 -->
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
 const device = await seam.devices.get({
-  device_id: "device-uuid"
-});
+  device_id: "7a83ddc8-b9d9-4944-9457-46b31e654bdc"
+})
 
-console.log(device.capabilities_supported);
-
+console.log(device.properties.capabilities_supported)
 ```
 {% endtab %}
 {% tab title="Python" %}
 ```python
-device = seam.devices.get("device-uuid")
-print(device.capabilities_supported)
+device = seam.devices.get("7a83ddc8-b9d9-4944-9457-46b31e654bdc")
+print(device.properties.capabilities_supported)
 ```
 {% endtab %}
 {% tab title="Ruby" %}
 ```ruby
-device = seam.devices.get("device-uuid")
-puts(device.capabilities_supported)
+
+device = seam.devices.get('7a83ddc8-b9d9-4944-9457-46b31e654bdc')
+
+print(device.properties.capabilities_supported)
 ```
 {% endtab %}
 {% tab title="PHP" %}
 ```php
-$device = $seam->devices->get("device-uuid");
+$device = $seam->devices->get('7a83ddc8-b9d9-4944-9457-46b31e654bdc');
 echo json_encode($device->capabilities_supported);
 ```
 {% endtab %}
@@ -79,87 +74,79 @@ echo json_encode($device->capabilities_supported);
 
 # Programming an Ongoing Code
 
+<!-- TODO: create illutation of what an ongoing code is -->
+
 ## 1. Create an Ongoing Access Code
 
-Set an ongoing code by providing the device for which to [create an access code](../../../api-clients/access-codes/create-an-access-code.md). Assign an optional `name` to the access code for easier identification within the [Seam Console](https://console.seam.co) and smart lock app. Include an optional `starts_at` value to specify when this code should become active.
+Set an ongoing code by providing the `device_id` of the smart lock on which you want to [create an access code](../../../api-clients/access-codes/create-an-access-code.md). Assign an optional `name` to the access code for easier identification within the [Seam Console](https://console.seam.co) and smart lock app. Include an optional `starts_at` value to specify when this code should become active.
 
 To customize the PIN code, specify a desired PIN for the `code` property. Refer to [the guide on access code requirements](access-code-requirements-for-door-locks.md) to understand any requirements specific to the door lock.
 
 
 
 <!-- CODE INJECT START
-Create an ongoing access code with a name and by providing the device reference and print out the result
-
-e.g. in python you could do:
-```python
-device = seam.devices.get("some_device_uuid")
-access_code = seam.access_codes.create(device=device, name="my ongoing code")
-print(access_code)
-
-# AccessCode(access_code_id='5cc206aa-c75f-4d68-b20a-983974ab3932', type='ongoing' code='2604', starts_at=None, ends_at=None, name="my ongoing code", status='setting' common_code_key=None)
-
-```
+Create an ongoing access code on a device using its device id, and give the code a name. Please use "7a83ddc8-b9d9-4944-9457-46b31e654bdc" for the device_id. Please use  "my ongoing code" for the code name.
 -->
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
-const device = await seam.devices.get("device-uuid");
 const createdAccessCode = await seam.accessCodes.create({
-  device_id: device.device_id,
+  device_id: "7a83ddc8-b9d9-4944-9457-46b31e654bdc",
   name: "my ongoing code"
-});
-console.log(createdAccessCode);
+})
+
+console.log(createdAccessCode)
 ```
 {% endtab %}
 {% tab title="Python" %}
 ```python
-device = seam.devices.get("device-uuid")
 created_access_code = seam.access_codes.create(
-  device=device, 
-  name="My Ongoing Access Code")
+  device_id="7a83ddc8-b9d9-4944-9457-46b31e654bdc",
+  name="my ongoing code"
+)
 
 print(created_access_code)
 ```
 {% endtab %}
 {% tab title="Ruby" %}
 ```ruby
-device = seam.devices.get("device-uuid")
-created_access_code = seam.access_codes.create(
-  device_id: device.device_id, 
-  name: "my ongoing code")
+
+client = Seam::Client.new(api_key: "your_api_key")
+
+
+created_access_code = client.access_codes.create(
+  device_id: "7a83ddc8-b9d9-4944-9457-46b31e654bdc",
+  name: "my ongoing code",
+)
+
 
 puts created_access_code
 ```
 {% endtab %}
 {% tab title="PHP" %}
 ```php
+$created_access_code = $seam->access_codes->create([
+  'device_id' => '7a83ddc8-b9d9-4944-9457-46b31e654bdc',
+  'name' => 'my ongoing code',
+]);
 
-$device = $seam->devices->get("device-uuid");
-$created_access_code = $seam->access_codes->create(
-  "device_id" => $device->device_id,
-  "name" => "my ongoing code"
-);
-
-
-print($created_access_code);
+echo json_encode($created_access_code);
 ```
 {% endtab %}
 {% tab title="Curl" %}
-#### Request:
-
-<pre class="language-bash"><code class="lang-bash"><strong>$ curl --request POST 'https://connect.getseam.com/access_codes/create' \
-</strong>--header 'Authorization: Bearer ${API_KEY}' \
+## Request: 
+```sh
+$ curl --request POST 'https://connect.getseam.com/access_codes/create' \
+--header 'Authorization: Bearer ${API_KEY}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "device_id": "00000000-0000-0000-0000-000000000000",
   "name": "Ongoing Access Code",
   "code": "1234"
  }'
-</code></pre>
-
-#### Response:
-
 ```
+## Response:
+```sh
 {
   "action_attempt": {
     "status": "pending",
@@ -184,6 +171,7 @@ print($created_access_code);
   "ok": true
 }
 ```
+
 {% endtab %}
 {% endtabs %}
 <!-- CODE INJECT END -->
@@ -217,7 +205,7 @@ In the event of delay or failure, refer to [the "Troubleshooting access code iss
 
 ## 1. Create a Time-Bound Access Code
 
-To set a time-bound code, provide the `device` reference of the smart lock on which to program the code, along with `starts_at` and `ends_at` iso8601 timestamps to define the code's active time window. For more details, refer to the [Create Access Code endpoint](../../../api-clients/access-codes/create-an-access-code.md).
+To set a time-bound code, provide the `device_id` of the smart lock you wish to program a code on, along with `starts_at` and `ends_at` iso8601 timestamps to define the code's active time window. For more details, refer to the [Create Access Code endpoint](../../../api-clients/access-codes/create-an-access-code.md).
 
 As with ongoing codes, an optional `name` can be assigned to the access code. A clear name helps users identify the access code quickly within their smart lock app.
 
@@ -226,46 +214,29 @@ Similarly, to customize the PIN code, specify a desired PIN in the `code` proper
 
 
 <!-- CODE INJECT START
-Create a timebound access code with a name, a starts_at and ends_at iso8601 timestamp, and by providing the device reference and print out the result. The starts_at should be 1 day in the future from now. The ends at should 2 days in the future from now.
-
-e.g. in python you could do:
-```python
-created_access_code = seam.access_codes.create(
-    device_id="device-uuid", 
-    name="My Time-bound Code",
-    starts_at="2028-08-26T06:20:21Z",
-    ends_at="2028-08-29T02:20:21Z"
-)
-
-print(created_access_code)
-
-print(access_code)
-# AccessCode(access_code_id='7a83ddc8-b9d9-4944-9457-46b31e654bdc', type='time_bound', code='8888', starts_at='2023-08-27T05:22:00.000Z', ends_at='2023-08-28T05:22:00.000Z', name='my timebound code', status='unset', common_code_key=None)
-
-
+Create a timebound access code on a device using its device_id and pass the create code funtion a name, a starts_at and ends_at iso8601 timestamp. Please use "7a83ddc8-b9d9-4944-9457-46b31e654bdc" for the device_id. Please use  "my time-bound code" for the code name. Please make the starts_at date January 1st, 2025 at 4pm utc. Please make the ends_at date January 22nd, 2025 at 12pm utc.
 ```
 -->
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
-const createdAccessCode = await seam.accessCodes.create({
-  device_id: 'device-uuid',
-  name: 'my timebound code',
-  code: '8888',
-  starts_at: "2028-08-26T06:20:21Z",
-  ends_at: "2028-08-29T02:20:21Z"
-});
+const accessCode = await seam.accessCodes.create({
+  device_id: "7a83ddc8-b9d9-4944-9457-46b31e654bdc",
+  name: "my time-bound code",
+  starts_at: new Date("2025-01-01T16:00:00Z").toISOString(),
+  ends_at: new Date("2025-01-22T12:00:00Z").toISOString()
+})
 
-console.log(createdAccessCode);
+console.log(accessCode);
 ```
 {% endtab %}
 {% tab title="Python" %}
 ```python
 created_access_code = seam.access_codes.create(
-    device=my_device, 
-    name="My Time-bound Code",
-    starts_at="2028-08-26T06:20:21Z",
-    ends_at="2028-08-29T02:20:21Z"
+  device_id="7a83ddc8-b9d9-4944-9457-46b31e654bdc",
+  name="my time-bound code",
+  starts_at="2025-01-01T16:00:00Z",
+  ends_at="2025-01-22T12:00:00Z"
 )
 
 print(created_access_code)
@@ -273,35 +244,33 @@ print(created_access_code)
 {% endtab %}
 {% tab title="Ruby" %}
 ```ruby
-
 created_access_code = seam.access_codes.create(
-  device_id:"device-uuid", 
-  name:"my timebound code", 
-  code:"8888", 
-  starts_at:"2028-08-26T06:20:21Z", 
-  ends_at:"2028-08-29T02:20:21Z")
+  device_id: "7a83ddc8-b9d9-4944-9457-46b31e654bdc",
+  name: "my time-bound code",
+  starts_at: "2025-01-01T16:00:00Z",
+  ends_at: "2025-01-22T12:00:00Z"
+)
 
-puts(created_access_code)
+print(created_access_code)
 ```
 {% endtab %}
 {% tab title="PHP" %}
 ```php
-$created_access_code = $seam->access_codes->create(
-  "device-uuid",
-  "my timebound code",
-  "8888",
-  "2028-08-26T06:20:21Z",
-  "2028-08-29T02:20:21Z"
-);
+$timebound_access_code = $seam->access_codes->create([
+    "device_id" => "7a83ddc8-b9d9-4944-9457-46b31e654bdc",
+    "name" => "My Timebound Access Code",
+    "starts_at" => "2025-01-01T16:00:00Z",
+    "ends_at" => "2025-01-22T12:00:00Z"
+]);
 
-print(json_encode($created_access_code));
+print(json_encode($timebound_access_code));
 ```
 {% endtab %}
 {% tab title="Curl" %}
-#### Request
-
-<pre class="language-bash"><code class="lang-bash"><strong>$ curl --request POST 'https://connect.getseam.com/access_codes/create' \
-</strong>--header 'Authorization: Bearer ${API_KEY}' \
+## Request: 
+```sh
+$ curl --request POST 'https://connect.getseam.com/access_codes/create' \
+--header 'Authorization: Bearer ${API_KEY}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "device_id": "00000000-0000-0000-0000-000000000000",
@@ -310,11 +279,9 @@ print(json_encode($created_access_code));
   "starts_at": "2023-01-02T00:00:00Z",
   "ends_at": "2023-01-05T00:00:00Z"
  }'
-</code></pre>
-
-#### Response
-
 ```
+## Response:
+```sh
 {
   "action_attempt": {
     "status": "pending",
@@ -340,6 +307,7 @@ print(json_encode($created_access_code));
   "ok": true
 }
 ```
+
 {% endtab %}
 {% endtabs %}
 <!-- CODE INJECT END -->
