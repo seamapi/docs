@@ -1,7 +1,4 @@
-import { extractCodeFromResponse } from "../extract-code-from-response"
-import { getChatCompletion } from "../get-chat-completion"
 import { runJavascriptCodeSample } from "../run-code-snippet"
-import { getOutputReductionPrompt } from "./output-reduction-prompt"
 import { reduceOutput } from "./reduce-output"
 import { replaceSeedIds } from "./replace-seed-ids"
 
