@@ -1,6 +1,9 @@
 import Docker from "dockerode"
 import Stream from "stream"
 import fs from "fs-extra"
+import os from "os"
+import path from "path"
+import tar from "tar-fs"
 
 export interface RunInContainerConfig {
   imageName: string
@@ -36,61 +39,65 @@ export const runInsideContainer = async (
   })
 
   // Create the container
-  // Create the container
   const container = await docker.createContainer({
     Image: imageName,
-    // Cmd: ["/bin/sh", "-c", command],
-    Cmd: ["/bin/ls", "/root"],
+    Cmd: ["/bin/sh", "-c", command],
     AttachStdout: true,
     AttachStderr: true,
     Tty: true,
   })
 
-  // Copy files to the container
-  console.log("Copying files to container...")
-  for (const path in filesystem) {
-    const file_content = filesystem[path]
-    await new Promise<void>((resolve, reject) => {
-      const archive = new Stream.Readable({
-        objectMode: true,
-        read() {
-          this.push(file_content)
-          this.push(null)
-        },
-      })
-      container.putArchive(archive, { path: "/root" }, (err: any) => {
-        if (err) reject(err)
-        else resolve()
-      })
-    })
+  // Write filesystem to temporary directory
+  const testDir = fs.mkdtempSync(
+    path.join(os.tmpdir(), "code-snippet-bot-tmp-")
+  )
+
+  // Create the files from the filesystem config
+  for (const [filepath, contents] of Object.entries(filesystem)) {
+    const fullPath = path.join(testDir, filepath)
+    fs.mkdirSync(path.dirname(fullPath), { recursive: true })
+    fs.writeFileSync(fullPath, contents)
+    if (fullPath.endsWith(".sh")) {
+      fs.chmodSync(fullPath, "755")
+    }
   }
 
+  // Pack temporary directory into tar
+  const tarStream = tar.pack(testDir)
+
+  // Copy files to the container
+  await new Promise<void>((resolve, reject) => {
+    container.putArchive(tarStream, { path: "/" }, (err: any) => {
+      if (err) reject(err)
+      resolve()
+    })
+  })
+
+  await fs.rmSync(testDir, { recursive: true })
+
   // Start the container
-  console.log("Starting container...")
+  // console.log(`Starting container [id: ${container.id}]...`)
   await container.start()
 
-  // Get logs
   const logStream = await container.logs({
     follow: true,
     stdout: true,
     stderr: true,
   })
 
-  let stdout = ""
-  let stderr = ""
+  const output = {
+    stdout: "",
+    stderr: "", // TODO find some way to get stderr
+  }
 
   logStream.on("data", (chunk: Buffer) => {
     const chunkStr = chunk.toString("utf8")
-    if (chunkStr.startsWith("stdout")) {
-      stdout += chunkStr.slice("stdout".length)
-    } else if (chunkStr.startsWith("stderr")) {
-      stderr += chunkStr.slice("stderr".length)
-    }
+    output.stdout += chunkStr
   })
 
   return new Promise((resolve, reject) => {
     logStream.on("end", () => {
-      resolve({ stdout, stderr })
+      resolve(output)
     })
     logStream.on("error", (err: any) => {
       reject(err)

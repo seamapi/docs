@@ -6,12 +6,12 @@ test("runInsideContainer", async (t) => {
   const output = await runInsideContainer({
     command: "/root/run.sh",
     filesystem: {
-      "run.sh": `
+      "/root/run.sh": `
 echo 'hello world!';
 echo 'how ya doin';
       `.trim(),
     },
     imageName: "alpine",
   })
-  console.log(output)
+  t.is(output.stdout, "hello world!\r\nhow ya doin\r\n")
 })
