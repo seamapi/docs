@@ -6,6 +6,8 @@ const seed_ids = [
   "august_device_3",
   "john_connected_account_id",
   "seed_workspace_1",
+  "connect_webview1",
+  "connect_webview2",
 ]
 
 const NAMESPACE_UUID = "f6b23a6b-3065-41ed-8cd6-15cd47531577"
