@@ -188,32 +188,22 @@ Get a single access code using its id. Please use the following access code id: 
 const accessCode = await seam.accessCodes.get({
   access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74"
 })
-
-console.log(accessCode)
 ```
 {% endtab %}
 {% tab title="Python" %}
 ```python
 
 access_code = seam.access_codes.get("ed4a1f62-9070-4379-8c46-ea30a99e4d74")
-
-
-print(access_code)
 ```
 {% endtab %}
 {% tab title="Ruby" %}
 ```ruby
-access_code_id = "ed4a1f62-9070-4379-8c46-ea30a99e4d74"
-access_code = seam.access_codes.get(access_code_id)
-
-print(access_code)
+access_code = seam.access_codes.get("ed4a1f62-9070-4379-8c46-ea30a99e4d74")
 ```
 {% endtab %}
 {% tab title="PHP" %}
 ```php
 $access_code = $seam->access_codes->get("ed4a1f62-9070-4379-8c46-ea30a99e4d74");
-
-echo json_encode($access_code);
 ```
 {% endtab %}
 {% tab title="Curl" %}
