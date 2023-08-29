@@ -8,6 +8,43 @@ description: >-
 
 Some models of door locks have specific requirements and constraints when it comes to setting PIN codes. It's essential to be aware of these to ensure seamless functionality and security. The requirements can be fetched by making a [Get Device](../../../api-clients/devices/get-device.md) or [List Devices](../../../api-clients/devices/list-devices.md) request.
 
+Sample set of access code requirements:
+```json
+{
+  "device": {
+    "device_id": "00000000-0000-0000-0000-000000000000",
+    "capabilities_supported": [
+      "access_code",
+      "lock"
+    ],
+    "properties": {
+      "supported_code_lengths": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "max_active_codes_supported": 250,
+      "code_constraints": [
+        {
+          "constraint_type": "no_zeros"
+        },
+        {
+          "constraint_type": "name_length",
+          "min_length": 1,
+          "max_length": 12
+        }
+      ],
+      "supports_backup_access_code_pool": true
+      ...
+    },
+    ...
+  },
+  ...
+}
+```
+
 
 <!-- CODE INJECT START
 Get a device with id "ed4a1f62-9070-4379-8c46-ea30a99e4d74" and print out its properties.supported_code_lengths properties.max_active_codes_supported and properties.code_constraints
