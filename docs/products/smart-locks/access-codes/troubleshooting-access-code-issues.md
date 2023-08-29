@@ -4,15 +4,58 @@ description: Learn about how to diagnose and fix access code issues.
 
 # Troubleshooting access code issues
 
-Seam might encounter issues when programming an access code onto a lock. If access codes aren't being programmed as expected, this article will help you determine the cause of the issue and fix the problem.
+Seam might encounter issues when programming an access code onto a lock. If access codes are not being programmed as expected, this article will help you determine the cause of the issue and fix the problem.
 
-When scheduling an access code, Seam will try to set the code on the device up to 9 days before its start time. Any errors or warnings will be recorded on the access code at least 3 days before its scheduled activation. This approach ensures you have ample time to address any issues, using the mitigation steps provided below.
+When scheduling an access code, Seam will try to set the code on the device up to 9 days before its start time. Any errors or warnings will be recorded on the access code at least 3 days before its scheduled activation. This approach ensures you have ample time to address any issues, using the mitigation steps provided below. Note that not all device brands support the ability to program codes in advance. Refer to our [Native Scheduling — Supported Providers](../README.md/#native-scheduling--supported-providers) section for details.
 
 ## Determine the issue
 
 The first step is to figure out what the issue is from Seam's point of view. Make a [Get Access Code](../../../api-clients/access-codes/get-an-access-code.md) or [List Access Codes](../../../api-clients/access-codes/list-access-codes.md) request, and look at the `errors` and `warnings` payloads on the access code object. Look at the error and warning codes, and go to the matching remedy below for next steps.
 
+<!-- CODE INJECT START
+Get an access code with id "ed4a1f62-9070-4379-8c46-ea30a99e4d74" and print out its errors and warnings attributes for inspection
+-->
 {% tabs %}
+{% tab title="Javascript" %}
+```javascript
+const accessCode = await seam.accessCodes.get({
+  access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74"
+})
+
+console.log(accessCode.errors)
+console.log(accessCode.warnings)
+```
+{% endtab %}
+{% tab title="Python" %}
+```python
+access_code = seam.access_codes.get("ed4a1f62-9070-4379-8c46-ea30a99e4d74")
+
+print(access_code.errors)
+print(access_code.warnings)
+```
+{% endtab %}
+{% tab title="Ruby" %}
+```ruby
+access_code_id = "ed4a1f62-9070-4379-8c46-ea30a99e4d74"
+access_code = seam.access_codes.get(access_code_id)
+
+puts access_code.errors
+puts access_code.warnings
+```
+{% endtab %}
+{% tab title="PHP" %}
+```php
+$access_code = $seam->access_codes->get('ed4a1f62-9070-4379-8c46-ea30a99e4d74');
+
+if (property_exists($access_code, 'errors')) {
+    echo json_encode($access_code->errors);
+}
+
+if (property_exists($access_code, 'warnings')) {
+    echo json_encode($access_code->warnings);
+}
+```
+{% endtab %}
 {% tab title="Curl" %}
 #### Request:
 
@@ -51,6 +94,7 @@ The first step is to figure out what the issue is from Seam's point of view. Mak
 ```
 {% endtab %}
 {% endtabs %}
+<!-- CODE INJECT END -->
 
 ***
 

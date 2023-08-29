@@ -8,7 +8,54 @@ description: >-
 
 Some models of door locks have specific requirements and constraints when it comes to setting PIN codes. It's essential to be aware of these to ensure seamless functionality and security. The requirements can be fetched by making a [Get Device](../../../api-clients/devices/get-device.md) or [List Devices](../../../api-clients/devices/list-devices.md) request.
 
+
+<!-- CODE INJECT START
+Get a device with id "ed4a1f62-9070-4379-8c46-ea30a99e4d74" and print out its properties.supported_code_lengths properties.max_active_codes_supported and properties.code_constraints
+-->
 {% tabs %}
+{% tab title="Javascript" %}
+```javascript
+const device = await seam.devices.get({
+  device_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74"
+})
+
+console.log(device.properties.supported_code_lengths);
+console.log(device.properties.max_active_codes_supported);
+console.log(device.properties.code_constraints);
+```
+{% endtab %}
+{% tab title="Python" %}
+```python
+
+device = seam.devices.get("ed4a1f62-9070-4379-8c46-ea30a99e4d74")
+
+
+print(device.properties.supported_code_lengths)
+print(device.properties.max_active_codes_supported)
+print(device.properties.code_constraints)
+```
+{% endtab %}
+{% tab title="Ruby" %}
+```ruby
+
+retrieved_device = seam.devices.get("ed4a1f62-9070-4379-8c46-ea30a99e4d74")
+
+
+puts retrieved_device.properties.supported_code_lengths
+puts retrieved_device.properties.max_active_codes_supported
+puts retrieved_device.properties.code_constraints
+```
+{% endtab %}
+{% tab title="PHP" %}
+```php
+$device = $seam->devices->get("ed4a1f62-9070-4379-8c46-ea30a99e4d74");
+
+echo "Supported code lengths: " . json_encode($device->properties->supported_code_lengths);
+echo "Max active codes supported: " . $device->properties->max_active_codes_supported;
+echo "Code constraints: " . json_encode($device->properties->code_constraints);
+```
+{% endtab %}
+
 {% tab title="Curl" %}
 #### Request:
 
@@ -59,6 +106,8 @@ Some models of door locks have specific requirements and constraints when it com
 ```
 {% endtab %}
 {% endtabs %}
+<!-- CODE INJECT END -->
+
 
 ***
 
