@@ -1,4 +1,5 @@
 import {
+  curlGuidelines,
   javascriptTaskGuidelines,
   phpTaskGuidelines,
   pythonTaskGuidelines,
@@ -9,6 +10,7 @@ export type LanguageConfiguration = {
   language: string
   title: string
   languageGuidelines: string
+  commentStripFn?: (code: string) => string
 }
 
 export const languageConfigurations = [
@@ -21,6 +23,14 @@ export const languageConfigurations = [
     language: "python",
     title: "Python",
     languageGuidelines: pythonTaskGuidelines,
+  },
+  {
+    language: "bash",
+    commentStripFn: (bashCode: string) => {
+      return bashCode.replace(/#.*\n/g, "")
+    },
+    title: "CURL",
+    languageGuidelines: curlGuidelines,
   },
   {
     language: "ruby",
