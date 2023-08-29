@@ -4,7 +4,7 @@ description: >-
   successfully removed from the device.
 ---
 
-# Deleting access codes
+# Deleting Access Codes
 
 ## 1. Delete the access code using the API
 

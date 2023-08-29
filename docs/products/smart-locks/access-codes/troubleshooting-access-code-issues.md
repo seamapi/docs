@@ -2,7 +2,7 @@
 description: Learn about how to diagnose and fix access code issues.
 ---
 
-# Troubleshooting access code issues
+# Troubleshooting Access Code Issues
 
 Seam might encounter issues when programming an access code onto a lock. If access codes are not being programmed as expected, this article will help you determine the cause of the issue and fix the problem.
 

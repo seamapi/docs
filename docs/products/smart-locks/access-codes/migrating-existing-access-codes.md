@@ -2,7 +2,7 @@
 description: Learn how to migrate existing lock access codes into Seam
 ---
 
-# Migrating existing access codes
+# Migrating Existing Access Codes
 
 ## Overview
 

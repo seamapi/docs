@@ -4,7 +4,7 @@ description: >-
   codes.
 ---
 
-# Backup access codes
+# Backup Access Codes
 
 A backup access code pool is a collection of pre-programmed access codes stored on a device, ready for use. These codes are programmed in addition to the regular access codes on Seam, serving as a safety net for any issues with the primary codes.
 

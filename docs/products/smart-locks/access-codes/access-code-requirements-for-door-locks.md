@@ -4,7 +4,7 @@ description: >-
   on door locks.
 ---
 
-# Access code requirements for door locks
+# Access Code Requirements for Door Locks
 
 Some models of door locks have specific requirements and constraints when it comes to setting PIN codes. It's essential to be aware of these to ensure seamless functionality and security. The requirements can be fetched by making a [Get Device](../../../api-clients/devices/get-device.md) or [List Devices](../../../api-clients/devices/list-devices.md) request.
 
