@@ -33,6 +33,63 @@ After you've done that, come back here and keep reading.
 }
 ```
 
+<!-- CODE INJECT START
+Get a device with id "ed4a1f62-9070-4379-8c46-ea30a99e4d74" and print out its properties.supports_backup_access_code_pool
+-->
+{% tabs %}
+{% tab title="Javascript" %}
+```javascript
+const device = await seam.devices.get({
+  device_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74"
+})
+console.log(device.properties.supports_backup_access_code_pool)
+```
+{% endtab %}
+{% tab title="Python" %}
+```python
+device = seam.devices.get("ed4a1f62-9070-4379-8c46-ea30a99e4d74")
+print(device.properties.supports_backup_access_code_pool)
+```
+{% endtab %}
+{% tab title="Ruby" %}
+```ruby
+device = seam.devices.get("ed4a1f62-9070-4379-8c46-ea30a99e4d74")
+puts device.properties.supports_backup_access_code_pool
+```
+{% endtab %}
+{% tab title="PHP" %}
+```php
+$device = $seam->devices->get("ed4a1f62-9070-4379-8c46-ea30a99e4d74");
+echo json_encode($device->properties->supports_backup_access_code_pool);
+```
+{% endtab %}
+{% tab title="Curl" %}
+#### Request:
+
+<pre class="language-bash"><code class="lang-bash"><strong>$ curl --request POST 'https://connect.getseam.com/devices/get' \
+</strong>--header 'Authorization: Bearer ${API_KEY}' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "device_id": "00000000-0000-0000-0000-000000000000"
+ }'
+</code></pre>
+
+#### Response:
+
+```json
+{
+    "device_id": "00000000-0000-0000-0000-000000000000",
+    "properties": {
+        "supports_backup_access_code_pool": true,
+        ...
+    },
+    ...
+}
+```
+{% endtab %}
+{% endtabs %}
+<!-- CODE INJECT END -->
+
 ***
 
 ## Enabling and retrieving back up codes
@@ -47,7 +104,63 @@ This activation is a one-time process for each device. Once initiated, Seam will
 In the smart lock app, backup access codes will appear as "Backup {CODE\_ID} (Seam)".
 {% endhint %}
 
+<!-- CODE INJECT START
+Create a timebound access code on a device using its device_id and pass the create code funtion a name, a starts_at and ends_at iso8601 timestamp, and use_backup_access_code_pool=true. Please use "7a83ddc8-b9d9-4944-9457-46b31e654bdc" for the device_id. Please use  "my time-bound code" for the code name. Please make the starts_at date January 1st, 2025 at 4pm utc. Please make the ends_at date January 22nd, 2025 at 12pm utc.
+-->
 {% tabs %}
+{% tab title="Javascript" %}
+```javascript
+const createdAccessCode = await seam.accessCodes.create({
+  device_id: "7a83ddc8-b9d9-4944-9457-46b31e654bdc",
+  name: "my time-bound code",
+  starts_at: new Date("2025-01-01T16:00:00Z").toISOString(),
+  ends_at: new Date("2025-01-22T12:00:00Z").toISOString(),
+  use_backup_access_code_pool: true
+})
+
+console.log(createdAccessCode)
+```
+{% endtab %}
+{% tab title="Python" %}
+```python
+
+created_access_code = seam.access_codes.create(
+  device_id="7a83ddc8-b9d9-4944-9457-46b31e654bdc",
+  name="my time-bound code",
+  starts_at="2025-01-01T16:00:00Z",
+  ends_at="2025-01-22T12:00:00Z",
+  use_backup_access_code_pool=True
+)
+
+print(created_access_code)
+```
+{% endtab %}
+{% tab title="Ruby" %}
+```ruby
+access_code = seam.access_codes.create(
+  device_id: "7a83ddc8-b9d9-4944-9457-46b31e654bdc",
+  name: "my time-bound code",
+  starts_at: "2025-01-01T16:00:00Z",
+  ends_at: "2025-01-22T12:00:00Z",
+  use_backup_access_code_pool: true
+)
+
+print(access_code)
+```
+{% endtab %}
+{% tab title="PHP" %}
+```php
+$created_access_code = $seam->access_codes->create([
+    "device_id" => "7a83ddc8-b9d9-4944-9457-46b31e654bdc",
+    "name" => "my time-bound code",
+    "starts_at" => "2025-01-01T16:00:00Z",
+    "ends_at" => "2025-01-22T12:00:00Z",
+    "use_backup_access_code_pool" => true
+]);
+
+echo $created_access_code;
+```
+{% endtab %}
 {% tab title="Curl" %}
 <pre class="language-bash"><code class="lang-bash"><strong>$ curl --request POST 'https://connect.getseam.com/access_codes/create' \
 </strong>--header 'Authorization: Bearer ${API_KEY}' \
@@ -62,6 +175,8 @@ In the smart lock app, backup access codes will appear as "Backup {CODE\_ID} (Se
 </code></pre>
 {% endtab %}
 {% endtabs %}
+<!-- CODE INJECT END -->
+
 
 ### 2. Detect when an access code has failed to program
 
@@ -77,7 +192,38 @@ To confirm that a backup access code is available for retrieval, check the `is_b
 Note that, we only support pull back up codes for `time_bound` codes at this time.
 {% endhint %}
 
+
+<!-- CODE INJECT START
+Retrieve an access code with access_code_id "7a83ddc8-b9d9-4944-9457-46b31e654bdc" and print its is_backup_access_code_available attribute
+-->
 {% tabs %}
+{% tab title="Javascript" %}
+```javascript
+
+const accessCode = await seam.accessCodes.get({
+  access_code_id: "7a83ddc8-b9d9-4944-9457-46b31e654bdc"
+})
+console.log(accessCode.is_backup_access_code_available)
+```
+{% endtab %}
+{% tab title="Python" %}
+```python
+access_code = seam.access_codes.get("7a83ddc8-b9d9-4944-9457-46b31e654bdc")
+print(access_code.is_backup_access_code_available)
+```
+{% endtab %}
+{% tab title="Ruby" %}
+```ruby
+access_code = client.access_codes.get("7a83ddc8-b9d9-4944-9457-46b31e654bdc")
+puts access_code.is_backup_access_code_available
+```
+{% endtab %}
+{% tab title="PHP" %}
+```php
+$access_code = $seam->access_codes->get('7a83ddc8-b9d9-4944-9457-46b31e654bdc');
+print($access_code->is_backup_access_code_available);
+```
+{% endtab %}
 {% tab title="Curl" %}
 **Request:**
 
@@ -102,6 +248,7 @@ Note that, we only support pull back up codes for `time_bound` codes at this tim
 ```
 {% endtab %}
 {% endtabs %}
+<!-- CODE INJECT END -->
 
 ### 4. Retrieve a back up access code
 
@@ -114,7 +261,44 @@ Upon executing this action, Seam will:
 * Update the backup access code's `ends_at` date to match that of the original access code.
 * Attempt to refill the backup access code pool with a new back up code.
 
+
+<!-- CODE INJECT START
+Pull a bkacup access code for an access code with access_code_id "7a83ddc8-b9d9-4944-9457-46b31e654bdc" and print the backup code
+-->
 {% tabs %}
+{% tab title="Javascript" %}
+```javascript
+const backupAccessCode = await seam.accessCodes.pullBackupAccessCode({
+  access_code_id: "7a83ddc8-b9d9-4944-9457-46b31e654bdc"
+});
+
+console.log(backupAccessCode.code);
+```
+{% endtab %}
+{% tab title="Python" %}
+```python
+backup_access_code = seam.access_codes.pull_backup_access_code(
+  access_code_id="7a83ddc8-b9d9-4944-9457-46b31e654bdc"
+)
+
+print(backup_access_code.code)
+```
+{% endtab %}
+{% tab title="Ruby" %}
+```ruby
+backup_access_code = seam.access_codes.pull_backup_access_code("7a83ddc8-b9d9-4944-9457-46b31e654bdc")
+
+puts backup_access_code.code
+```
+{% endtab %}
+{% tab title="PHP" %}
+```php
+$access_code_id = "7a83ddc8-b9d9-4944-9457-46b31e654bdc";
+$backup_access_code = $seam->access_codes->pull_backup_access_code($access_code_id);
+
+echo "Backup Access Code: ", $backup_access_code->code;
+```
+{% endtab %}
 {% tab title="Curl" %}
 **Request:**
 
@@ -140,6 +324,8 @@ Upon executing this action, Seam will:
 ```
 {% endtab %}
 {% endtabs %}
+<!-- CODE INJECT END -->
+
 
 ***
 
