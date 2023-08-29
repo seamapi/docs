@@ -32,12 +32,9 @@ Seam supports programming two types of access codes:
 
 To confirm that Seam supports access code programming for your device, use [Get Device](../../../api-clients/devices/get-device.md) to query the device and check its `capabilities_supported` property. Ensure that `capabilities_supported` list includes `access_code`. After you've done that, come back here and keep reading.
 
-<<<<<<< HEAD
 <!-- CODE INJECT START
 Get a device and print out the capability_supported property of this device. Please use "7a83ddc8-b9d9-4944-9457-46b31e654bdc" for the device_id.
 -->
-=======
->>>>>>> main
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
@@ -77,26 +74,17 @@ echo json_encode($device->capabilities_supported);
 
 ## Programming an Ongoing Code
 
-<<<<<<< HEAD
 <!-- TODO: create illutation of what an ongoing code is -->
 
 ## 1. Create an Ongoing Access Code
-=======
-### 1. Create an Ongoing Access Code
->>>>>>> main
 
 Set an ongoing code by providing the `device_id` of the smart lock on which you want to [create an access code](../../../api-clients/access-codes/create-an-access-code.md). Assign an optional `name` to the access code for easier identification within the [Seam Console](https://console.seam.co) and smart lock app. Include an optional `starts_at` value to specify when this code should become active.
 
 To customize the PIN code, specify a desired PIN for the `code` property. Refer to [the guide on access code requirements](access-code-requirements-for-door-locks.md) to understand any requirements specific to the door lock.
 
-<<<<<<< HEAD
-
-
 <!-- CODE INJECT START
 Create an ongoing access code on a device using its device id, and give the code a name. Please use "7a83ddc8-b9d9-4944-9457-46b31e654bdc" for the device_id. Please use  "my ongoing code" for the code name.
 -->
-=======
->>>>>>> main
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
@@ -148,31 +136,18 @@ echo json_encode($created_access_code);
 {% endtab %}
 
 {% tab title="Curl" %}
-<<<<<<< HEAD
 ## Request: 
 ```sh
 $ curl --request POST 'https://connect.getseam.com/access_codes/create' \
 --header 'Authorization: Bearer ${API_KEY}' \
-=======
-**Request:**
-
-<pre class="language-bash"><code class="lang-bash"><strong>$ curl --request POST 'https://connect.getseam.com/access_codes/create' \
-</strong>--header 'Authorization: Bearer ${API_KEY}' \
->>>>>>> main
 --header 'Content-Type: application/json' \
 --data-raw '{
   "device_id": "00000000-0000-0000-0000-000000000000",
   "name": "Ongoing Access Code",
   "code": "1234"
  }'
-<<<<<<< HEAD
-=======
-</code></pre>
-
-**Response:**
-
->>>>>>> main
 ```
+
 ## Response:
 ```sh
 {
@@ -239,15 +214,9 @@ As with ongoing codes, an optional `name` can be assigned to the access code. A 
 
 Similarly, to customize the PIN code, specify a desired PIN in the `code` property. Refer to [our guide on access code requirements](access-code-requirements-for-door-locks.md) to understand any requirements specific to the door lock brand.
 
-<<<<<<< HEAD
-
-
 <!-- CODE INJECT START
 Create a timebound access code on a device using its device_id and pass the create code funtion a name, a starts_at and ends_at iso8601 timestamp. Please use "7a83ddc8-b9d9-4944-9457-46b31e654bdc" for the device_id. Please use  "my time-bound code" for the code name. Please make the starts_at date January 1st, 2025 at 4pm utc. Please make the ends_at date January 22nd, 2025 at 12pm utc.
-```
 -->
-=======
->>>>>>> main
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
@@ -302,17 +271,10 @@ print(json_encode($timebound_access_code));
 {% endtab %}
 
 {% tab title="Curl" %}
-<<<<<<< HEAD
 ## Request: 
 ```sh
 $ curl --request POST 'https://connect.getseam.com/access_codes/create' \
 --header 'Authorization: Bearer ${API_KEY}' \
-=======
-**Request**
-
-<pre class="language-bash"><code class="lang-bash"><strong>$ curl --request POST 'https://connect.getseam.com/access_codes/create' \
-</strong>--header 'Authorization: Bearer ${API_KEY}' \
->>>>>>> main
 --header 'Content-Type: application/json' \
 --data-raw '{
   "device_id": "00000000-0000-0000-0000-000000000000",
@@ -321,14 +283,8 @@ $ curl --request POST 'https://connect.getseam.com/access_codes/create' \
   "starts_at": "2023-01-02T00:00:00Z",
   "ends_at": "2023-01-05T00:00:00Z"
  }'
-<<<<<<< HEAD
-=======
-</code></pre>
-
-**Response**
-
->>>>>>> main
 ```
+
 ## Response:
 ```sh
 {
