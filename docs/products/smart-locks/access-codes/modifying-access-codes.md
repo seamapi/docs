@@ -4,7 +4,7 @@ description: >-
   successfully set on the device.
 ---
 
-# Modifying Access Codes
+# Modifying access codes
 
 ## 1. Update the access code using the API
 
@@ -12,22 +12,47 @@ Any active or upcoming access codes may be updated using the [Update Access Code
 
 When making this change, adjust the access code's properties such as the `code`, `name`, `starts_at`, and `ends_at` to the new desired values.
 
-<!-- CODE INJECT START
-Update an access code with id "ed4a1f62-9070-4379-8c46-ea30a99e4d74" to set its new name to "my updated code name". Please also sets its updated starts_at date January 1st, 2025 at 4pm utc. Please make the updated ends_at date January 22nd, 2025 at 12pm utc.
--->
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
-const updatedAccessCode = await seam.accessCodes.update({
-  name: "my updated code name",
-  starts_at: new Date("2025-01-01T16:00:00Z").toISOString(),
-  ends_at: new Date("2025-01-22T12:00:00Z").toISOString(),
-  access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74",
-});
+const accessCodeId = "ddf217cb-3fee-48be-ad4d-e8af16ea6bb0"
 
-console.log(updatedAccessCode);
+const updatedAccessCode = await seam.accessCodes.update({
+    name: "my updated code name",
+    starts_at: new Date("2025-02-01T16:00:00Z").toISOString(),
+    ends_at: new Date("2025-02-22T12:00:00Z").toISOString(),
+    access_code_id: accessCodeId,
+})
+
+/*
+{
+  access_code_id: 'ddf217cb-3fee-48be-ad4d-e8af16ea6bb0',
+  device_id: '77208078-6dd7-44e5-a3e4-a2ed3a34efc9',
+  name: 'my updated code name',
+  appearance: {
+    name: 'seam-my updated code name seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
+    last_name: 'seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
+    first_name: 'seam-my updated code name'
+  },
+  code: '4456',
+  common_code_key: null,
+  type: 'time_bound',
+  status: 'removing',
+  starts_at: '2025-02-01T16:00:00.000Z',
+  ends_at: '2025-02-22T12:00:00.000Z',
+  is_backup_access_code_available: false,
+  created_at: '2023-08-29T05:01:07.435Z',
+  errors: [],
+  warnings: [],
+  is_managed: true
+}
+*/
+
+
+
 ```
 {% endtab %}
+
 {% tab title="Python" %}
 ```python
 updated_access_code = seam.access_codes.update(
@@ -40,6 +65,7 @@ updated_access_code = seam.access_codes.update(
 print(updated_access_code)
 ```
 {% endtab %}
+
 {% tab title="Ruby" %}
 ```ruby
 action_attempt = seam.access_codes.update(
@@ -52,6 +78,7 @@ action_attempt = seam.access_codes.update(
 print(action_attempt.status)
 ```
 {% endtab %}
+
 {% tab title="PHP" %}
 ```php
 $action_attempt = $seam->access_codes->update(
@@ -64,8 +91,9 @@ $action_attempt = $seam->access_codes->update(
 print($action_attempt->status); // expected "pending" or "success"
 ```
 {% endtab %}
+
 {% tab title="Curl" %}
-#### Request:
+**Request:**
 
 <pre class="language-bash"><code class="lang-bash"><strong>$ curl --request PUT 'https://connect.getseam.com/access_codes/update' \
 </strong>--header 'Authorization: Bearer ${API_KEY}' \
@@ -77,7 +105,7 @@ print($action_attempt->status); // expected "pending" or "success"
  }'
 </code></pre>
 
-#### Response:
+**Response:**
 
 ```
 {
@@ -106,7 +134,6 @@ print($action_attempt->status); // expected "pending" or "success"
 ```
 {% endtab %}
 {% endtabs %}
-<!-- CODE INJECT END -->
 
 ***
 
@@ -120,7 +147,7 @@ There are two methods to verify that a permanent access code has been set on the
 
 Utilize the `access_code_id` returned in the response from the create endpoint to invoke the [Get Access Code](../../../api-clients/access-codes/get-an-access-code.md) endpoint. A basic implementation would involve polling this endpoint until the `status` of the access code updates to `set`.
 
-If the `status` remains `setting` for a very long time,  or if the `access_code` object contains any `warnings` or `errors` properties, consult [our guide on "Troubleshooting Access Code Issues"](troubleshooting-access-code-issues.md) for further guidance.
+If the `status` remains `setting` for a very long time, or if the `access_code` object contains any `warnings` or `errors` properties, consult [our guide on "Troubleshooting Access Code Issues"](troubleshooting-access-code-issues.md) for further guidance.
 
 **Webhook Events Method**
 
@@ -146,23 +173,79 @@ However, if you receive `access_code.failed_to_set_on_device` or `access_code.de
 
 ***
 
-## Special Case #1: Changing a permanent access code to time-bound access
+## Special Case #1: Changing an ongoing access code to time-bound access
 
 When converting a permanent access code to time-bound access, you'll also need to set the `starts_at` and `ends_at` properties to the time frame you want.
 
-<!-- CODE INJECT START
-Update an ongoing access code to a time bound access code. Use the access code id "ed4a1f62-9070-4379-8c46-ea30a99e4d74", sets its updated starts_at date January 1st, 2025 at 4pm utc, and its ends_at date January 22nd, 2025 at 12pm utc.
--->
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
+const accessCodeId = 'aa5a89e6-fe68-4082-ae16-d192b0759670'
+
+// get the ongoing code
+let accessCode = await seam.accessCodes.get({access_code_id: accessCodeId})
+console.log(accessCode)
+
+/*
+{
+  access_code_id: 'aa5a89e6-fe68-4082-ae16-d192b0759670',
+  device_id: '77208078-6dd7-44e5-a3e4-a2ed3a34efc9',
+  name: 'my updated code name',
+  appearance: {
+    name: 'seam-my updated code name seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
+    last_name: 'seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
+    first_name: 'seam-my updated code name'
+  },
+  code: '4456',
+  common_code_key: null,
+  type: 'ongoing',
+  status: 'set',
+  is_backup_access_code_available: false,
+  created_at: '2023-08-29T05:01:07.435Z',
+  errors: [],
+  warnings: [],
+  is_managed: true
+}
+*/
+
+// update the code to give it a starts_at/ends_at
 await seam.accessCodes.update({
   starts_at: new Date("2025-01-01T16:00:00Z").toISOString(),
   ends_at: new Date("2025-01-22T12:00:00Z").toISOString(),
   access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74",
+  sync: true, // a flag you can pass to wait until the update has taken place
 })
+
+// retrieve the updated access code and confirm the starts_at/ends_at are there
+accessCode = await seam.accessCodes.get({access_code_id: accessCodeId})
+console.log(accessCode)
+
+/*
+{
+  access_code_id: 'aa5a89e6-fe68-4082-ae16-d192b0759670',
+  device_id: '77208078-6dd7-44e5-a3e4-a2ed3a34efc9',
+  name: 'my updated code name',
+  appearance: {
+    name: 'seam-my updated code name seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
+    last_name: 'seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
+    first_name: 'seam-my updated code name'
+  },
+  code: '4456',
+  common_code_key: null,
+  type: 'time_bound',
+  status: 'removing',
+  starts_at: '2025-01-01T16:00:00.000Z',
+  ends_at: '2025-01-22T12:00:00.000Z',
+  is_backup_access_code_available: false,
+  created_at: '2023-08-29T05:01:07.435Z',
+  errors: [],
+  warnings: [],
+  is_managed: true
+}
+*/
 ```
 {% endtab %}
+
 {% tab title="Python" %}
 ```python
 
@@ -173,6 +256,7 @@ seam.access_codes.update(
 )
 ```
 {% endtab %}
+
 {% tab title="Ruby" %}
 ```ruby
 
@@ -183,6 +267,7 @@ update_access_code_attempt = seam.access_codes.update(
 )
 ```
 {% endtab %}
+
 {% tab title="PHP" %}
 ```php
 
@@ -208,8 +293,6 @@ $action_attempt = $seam->access_codes->update(
 </code></pre>
 {% endtab %}
 {% endtabs %}
-<!-- CODE INJECT END -->
-
 
 ***
 
@@ -217,18 +300,73 @@ $action_attempt = $seam->access_codes->update(
 
 When converting a time-bound code to a permanent one, you'll also need to set the `type` property of the access code to `ongoing`.
 
-<!-- CODE INJECT START
-Update a time-bound access code to an ongoing access code by setting its type to "ongoing". Use the access code id "ed4a1f62-9070-4379-8c46-ea30a99e4d74".
--->
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
+const accessCodeId = 'aa5a89e6-fe68-4082-ae16-d192b0759670'
+
+// retrieve a timebound code
+accessCode = await seam.accessCodes.get({access_code_id: accessCodeId})
+console.log(accessCode)
+
+/*
+{
+  access_code_id: 'aa5a89e6-fe68-4082-ae16-d192b0759670',
+  device_id: '77208078-6dd7-44e5-a3e4-a2ed3a34efc9',
+  name: 'my updated code name',
+  appearance: {
+    name: 'seam-my updated code name seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
+    last_name: 'seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
+    first_name: 'seam-my updated code name'
+  },
+  code: '4456',
+  common_code_key: null,
+  type: 'time_bound',
+  status: 'removing',
+  starts_at: '2025-01-01T16:00:00.000Z',
+  ends_at: '2025-01-22T12:00:00.000Z',
+  is_backup_access_code_available: false,
+  created_at: '2023-08-29T05:01:07.435Z',
+  errors: [],
+  warnings: [],
+  is_managed: true
+}
+*/
+
+// update it to ongoing
 await seam.accessCodes.update({
-  type: "ongoing",
-  access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74"
+    type: "ongoing",
+    access_code_id: accessCodeId,
+    sync: true
 })
+
+// refresh the access code and confirm that starts_at and ends_at are gone
+accessCode = await seam.accessCodes.get({access_code_id: accessCodeId})
+console.log(accessCode)
+/*
+{
+  access_code_id: 'aa5a89e6-fe68-4082-ae16-d192b0759670',
+  device_id: '77208078-6dd7-44e5-a3e4-a2ed3a34efc9',
+  name: 'my updated code name',
+  appearance: {
+    name: 'seam-my updated code name seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
+    last_name: 'seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
+    first_name: 'seam-my updated code name'
+  },
+  code: '4456',
+  common_code_key: null,
+  type: 'ongoing',
+  status: 'set',
+  is_backup_access_code_available: false,
+  created_at: '2023-08-29T05:01:07.435Z',
+  errors: [],
+  warnings: [],
+  is_managed: true
+}
+*/
 ```
 {% endtab %}
+
 {% tab title="Python" %}
 ```python
 action_attempt = seam.access_codes.update(
@@ -237,11 +375,13 @@ action_attempt = seam.access_codes.update(
 )
 ```
 {% endtab %}
+
 {% tab title="Ruby" %}
 ```ruby
 update_access_code_attempt = seam.access_codes.update({type: "ongoing", access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74"})
 ```
 {% endtab %}
+
 {% tab title="PHP" %}
 ```php
 $action_attempt = $seam->access_codes->update(
@@ -250,6 +390,7 @@ $action_attempt = $seam->access_codes->update(
 );
 ```
 {% endtab %}
+
 {% tab title="Curl" %}
 <pre class="language-bash"><code class="lang-bash"><strong>$ curl --request PUT 'https://connect.getseam.com/access_codes/update' \
 </strong>--header 'Authorization: Bearer ${API_KEY}' \
@@ -261,5 +402,3 @@ $action_attempt = $seam->access_codes->update(
 </code></pre>
 {% endtab %}
 {% endtabs %}
-<!-- CODE INJECT END -->
-

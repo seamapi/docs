@@ -4,11 +4,12 @@ description: >-
   on door locks.
 ---
 
-# Access Code Requirements for Door Locks
+# Access code requirements for door locks
 
 Some models of door locks have specific requirements and constraints when it comes to setting PIN codes. It's essential to be aware of these to ensure seamless functionality and security. The requirements can be fetched by making a [Get Device](../../../api-clients/devices/get-device.md) or [List Devices](../../../api-clients/devices/list-devices.md) request.
 
 Sample set of access code requirements:
+
 ```json
 {
   "device": {
@@ -45,22 +46,50 @@ Sample set of access code requirements:
 }
 ```
 
-
-<!-- CODE INJECT START
-Get a device with id "ed4a1f62-9070-4379-8c46-ea30a99e4d74" and print out its properties.supported_code_lengths properties.max_active_codes_supported and properties.code_constraints
--->
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
+const deviceId = "55072d5d-9a4f-4cba-8de2-1782df307899"
+
+// get the device
 const device = await seam.devices.get({
-  device_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74"
+    device_id: deviceId,
 })
 
-console.log(device.properties.supported_code_lengths);
-console.log(device.properties.max_active_codes_supported);
-console.log(device.properties.code_constraints);
+// print out its properties and notice 
+// the supported_code_lengths and code_constraints properties
+console.log(device.properties)
+
+/*
+{
+  locked: false,
+  online: true,
+  manufacturer: 'nuki',
+  battery_level: 0.86,
+  nuki_metadata: {
+    device_id: '545636389',
+    device_name: 'Office Lock',
+    keypad_battery_critical: false
+  },
+  keypad_battery: { level: 1 },
+  supported_code_lengths: [ 6 ],
+  has_native_entry_events: true,
+  name: 'Office Lock',
+  model: { display_name: 'Lock', manufacturer_display_name: 'Nuki' },
+  battery: { level: 0.86, status: 'full' },
+  image_url: 'https://connect.getseam.com/assets/images/devices/nuki_smart_lock_3_pro_black.png',
+  image_alt_text: 'Nuki Smart Lock 3.0 Pro Black, Front',
+  code_constraints: [
+    { constraint_type: 'cannot_start_with_12' },
+    { constraint_type: 'no_zeros' },
+    { constraint_type: 'name_length', max_length: 20 }
+  ],
+  supports_backup_access_code_pool: true
+}
+*/
 ```
 {% endtab %}
+
 {% tab title="Python" %}
 ```python
 
@@ -72,6 +101,7 @@ print(device.properties.max_active_codes_supported)
 print(device.properties.code_constraints)
 ```
 {% endtab %}
+
 {% tab title="Ruby" %}
 ```ruby
 
@@ -83,6 +113,7 @@ puts retrieved_device.properties.max_active_codes_supported
 puts retrieved_device.properties.code_constraints
 ```
 {% endtab %}
+
 {% tab title="PHP" %}
 ```php
 $device = $seam->devices->get("ed4a1f62-9070-4379-8c46-ea30a99e4d74");
@@ -94,7 +125,7 @@ echo "Code constraints: " . json_encode($device->properties->code_constraints);
 {% endtab %}
 
 {% tab title="Curl" %}
-#### Request:
+**Request:**
 
 <pre class="language-bash"><code class="lang-bash"><strong>$ curl --request POST 'https://connect.getseam.com/devices/get' \
 </strong>--header 'Authorization: Bearer ${API_KEY}' \
@@ -104,7 +135,7 @@ echo "Code constraints: " . json_encode($device->properties->code_constraints);
  }'
 </code></pre>
 
-#### Response:
+**Response:**
 
 ```json
 {
@@ -143,8 +174,6 @@ echo "Code constraints: " . json_encode($device->properties->code_constraints);
 ```
 {% endtab %}
 {% endtabs %}
-<!-- CODE INJECT END -->
-
 
 ***
 

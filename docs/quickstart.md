@@ -75,7 +75,8 @@ Next, use the code below to retrieve one of the devices you connected in [Step 1
 import Seam from "seamapi";
 const seam = new Seam(); // SEAM_API_KEY env var picked up here
 
-const { devices: [someLock] } = await seam.locks.list();
+// retrieve locks and grab the first one
+const [someLock] = await seam.locks.list();
 
 // Inspect this device to see which capabilities it supports
 console.log(someLock.capabilities_supported);

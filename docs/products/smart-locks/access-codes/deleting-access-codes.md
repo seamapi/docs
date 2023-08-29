@@ -4,28 +4,48 @@ description: >-
   successfully removed from the device.
 ---
 
-# Deleting Access Codes
+# Deleting access codes
 
 ## 1. Delete the access code using the API
 
 To delete an access code, use its `access_code_id` in the [Delete Access Code](../../../api-clients/access-codes/delete-an-access-code.md) request.
 
-<!-- CODE INJECT START
-Delete an access code with "ed4a1f62-9070-4379-8c46-ea30a99e4d74".
--->
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
-await seam.accessCodes.delete({
-  access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74"
-})
+const accessCodeId = 'aa5a89e6-fe68-4082-ae16-d192b0759670'
+await seam.accessCodes.delete({access_code_id: accessCodeId})
+
+// confirm that you get a 404
+try {
+    await seam.accessCodes.get({access_code_id: accessCodeId})
+} catch(error) {
+    console.log(error)
+}
+
+
+/*
+{
+  status: 404,
+  requestId: '6c4a403c-29a5-474e-9140-131bd58c3a07',
+  metadata: {
+    type: 'access_code_not_found',
+    message: 'Could not find an access_code with device_id or access_code_id',
+    data: { access_code_id: 'aa5a89e6-fe68-4082-ae16-d192b0759670' },
+    request_id: '6c4a403c-29a5-474e-9140-131bd58c3a07'
+  }
+}
+*/
+
 ```
 {% endtab %}
+
 {% tab title="Python" %}
 ```python
 seam.access_codes.delete("ed4a1f62-9070-4379-8c46-ea30a99e4d74")
 ```
 {% endtab %}
+
 {% tab title="Ruby" %}
 ```ruby
 seam.access_codes.delete(
@@ -33,13 +53,15 @@ seam.access_codes.delete(
 )
 ```
 {% endtab %}
+
 {% tab title="PHP" %}
 ```php
 $seam->access_codes->delete("ed4a1f62-9070-4379-8c46-ea30a99e4d74");
 ```
 {% endtab %}
+
 {% tab title="Curl" %}
-#### Request:
+**Request:**
 
 <pre class="language-bash"><code class="lang-bash"><strong>$ curl --request DELETE 'https://connect.getseam.com/access_codes/delete' \
 </strong>--header 'Authorization: Bearer ${API_KEY}' \
@@ -49,7 +71,7 @@ $seam->access_codes->delete("ed4a1f62-9070-4379-8c46-ea30a99e4d74");
  }'
 </code></pre>
 
-#### Response:
+**Response:**
 
 ```
 {
@@ -65,8 +87,6 @@ $seam->access_codes->delete("ed4a1f62-9070-4379-8c46-ea30a99e4d74");
 ```
 {% endtab %}
 {% endtabs %}
-<!-- CODE INJECT END -->
-
 
 ***
 

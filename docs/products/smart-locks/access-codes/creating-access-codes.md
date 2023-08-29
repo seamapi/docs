@@ -32,17 +32,14 @@ Seam supports programming two types of access codes:
 
 To confirm that Seam supports access code programming for your device, use [Get Device](../../../api-clients/devices/get-device.md) to query the device and check its `capabilities_supported` property. Ensure that `capabilities_supported` list includes `access_code`. After you've done that, come back here and keep reading.
 
-<!-- CODE INJECT START
-Get a device and print out the capability_supported property of this device. Please use "7a83ddc8-b9d9-4944-9457-46b31e654bdc" for the device_id.
--->
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
 const device = await seam.devices.get({
-  device_id: "7a83ddc8-b9d9-4944-9457-46b31e654bdc"
+  device_id: "77208078-6dd7-44e5-a3e4-a2ed3a34efc9"
 })
-
-console.log(device.properties.capabilities_supported)
+console.log(device.capabilities_supported)
+// ['access_code', 'lock']
 ```
 {% endtab %}
 
@@ -74,26 +71,41 @@ echo json_encode($device->capabilities_supported);
 
 ## Programming an Ongoing Code
 
-<!-- TODO: create illutation of what an ongoing code is -->
-
 ## 1. Create an Ongoing Access Code
 
 Set an ongoing code by providing the `device_id` of the smart lock on which you want to [create an access code](../../../api-clients/access-codes/create-an-access-code.md). Assign an optional `name` to the access code for easier identification within the [Seam Console](https://console.seam.co) and smart lock app. Include an optional `starts_at` value to specify when this code should become active.
 
 To customize the PIN code, specify a desired PIN for the `code` property. Refer to [the guide on access code requirements](access-code-requirements-for-door-locks.md) to understand any requirements specific to the door lock.
 
-<!-- CODE INJECT START
-Create an ongoing access code on a device using its device id, and give the code a name. Please use "7a83ddc8-b9d9-4944-9457-46b31e654bdc" for the device_id. Please use  "my ongoing code" for the code name.
--->
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
-const createdAccessCode = await seam.accessCodes.create({
-  device_id: "7a83ddc8-b9d9-4944-9457-46b31e654bdc",
-  name: "my ongoing code"
-})
+const deviceId = "77208078-6dd7-44e5-a3e4-a2ed3a34efc9"
 
+const createdAccessCode = await seam.accessCodes.create({
+    device_id: deviceId,
+    name: "my ongoing code"
+})
+  
 console.log(createdAccessCode)
+
+/*
+{
+  access_code_id: 'aa5a89e6-fe68-4082-ae16-d192b0759670',
+  device_id: '77208078-6dd7-44e5-a3e4-a2ed3a34efc9',
+  name: 'my ongoing code',
+  appearance: null,
+  code: '4456',
+  common_code_key: null,
+  type: 'ongoing',
+  status: 'setting',
+  is_backup_access_code_available: false,
+  created_at: '2023-08-29T05:01:07.435Z',
+  errors: [],
+  warnings: [],
+  is_managed: true
+}
+*/
 ```
 {% endtab %}
 
@@ -136,7 +148,8 @@ echo json_encode($created_access_code);
 {% endtab %}
 
 {% tab title="Curl" %}
-## Request: 
+### Request:
+
 ```sh
 $ curl --request POST 'https://connect.getseam.com/access_codes/create' \
 --header 'Authorization: Bearer ${API_KEY}' \
@@ -148,7 +161,8 @@ $ curl --request POST 'https://connect.getseam.com/access_codes/create' \
  }'
 ```
 
-## Response:
+### Response:
+
 ```sh
 {
   "action_attempt": {
@@ -174,7 +188,6 @@ $ curl --request POST 'https://connect.getseam.com/access_codes/create' \
   "ok": true
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -214,20 +227,41 @@ As with ongoing codes, an optional `name` can be assigned to the access code. A 
 
 Similarly, to customize the PIN code, specify a desired PIN in the `code` property. Refer to [our guide on access code requirements](access-code-requirements-for-door-locks.md) to understand any requirements specific to the door lock brand.
 
-<!-- CODE INJECT START
-Create a timebound access code on a device using its device_id and pass the create code funtion a name, a starts_at and ends_at iso8601 timestamp. Please use "7a83ddc8-b9d9-4944-9457-46b31e654bdc" for the device_id. Please use  "my time-bound code" for the code name. Please make the starts_at date January 1st, 2025 at 4pm utc. Please make the ends_at date January 22nd, 2025 at 12pm utc.
--->
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
-const accessCode = await seam.accessCodes.create({
-  device_id: "7a83ddc8-b9d9-4944-9457-46b31e654bdc",
-  name: "my time-bound code",
-  starts_at: new Date("2025-01-01T16:00:00Z").toISOString(),
-  ends_at: new Date("2025-01-22T12:00:00Z").toISOString()
-})
+const deviceId = "77208078-6dd7-44e5-a3e4-a2ed3a34efc9"
 
-console.log(accessCode);
+const accessCode = await seam.accessCodes.create({
+    device_id: deviceId,
+    name: "my time-bound code",
+    starts_at: new Date("2025-01-01T16:00:00Z").toISOString(),
+    ends_at: new Date("2025-01-22T12:00:00Z").toISOString()
+  })
+  
+console.log(accessCode)
+
+/*
+{
+  access_code_id: 'ddf217cb-3fee-48be-ad4d-e8af16ea6bb0',
+  device_id: '77208078-6dd7-44e5-a3e4-a2ed3a34efc9',
+  name: 'my time-bound code',
+  appearance: null,
+  code: '3857',
+  common_code_key: null,
+  type: 'time_bound',
+  status: 'unset',
+  is_scheduled_on_device: false,
+  starts_at: '2025-01-01T16:00:00.000Z',
+  ends_at: '2025-01-22T12:00:00.000Z',
+  is_backup_access_code_available: false,
+  created_at: '2023-08-29T05:02:21.812Z',
+  errors: [],
+  warnings: [],
+  is_managed: true
+}
+*/
+
 ```
 {% endtab %}
 
@@ -271,7 +305,8 @@ print(json_encode($timebound_access_code));
 {% endtab %}
 
 {% tab title="Curl" %}
-## Request: 
+### Request:
+
 ```sh
 $ curl --request POST 'https://connect.getseam.com/access_codes/create' \
 --header 'Authorization: Bearer ${API_KEY}' \
@@ -285,7 +320,8 @@ $ curl --request POST 'https://connect.getseam.com/access_codes/create' \
  }'
 ```
 
-## Response:
+### Response:
+
 ```sh
 {
   "action_attempt": {
@@ -312,7 +348,6 @@ $ curl --request POST 'https://connect.getseam.com/access_codes/create' \
   "ok": true
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -330,8 +365,6 @@ There are two methods to verify that an time-bound access code has been set on t
 
 * **Polling**: continuously query the access code until its `status` is updated
 * **Webhook**: wait for updates to arrive via webhook requests from the Seam API
-
-
 
 ### **Polling Method**
 

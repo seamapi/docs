@@ -4,7 +4,7 @@ description: >-
   codes.
 ---
 
-# Backup Access Codes
+# Backup access codes
 
 A backup access code pool is a collection of pre-programmed access codes stored on a device, ready for use. These codes are programmed in addition to the regular access codes on Seam, serving as a safety net for any issues with the primary codes.
 
@@ -33,38 +33,70 @@ After you've done that, come back here and keep reading.
 }
 ```
 
-<!-- CODE INJECT START
-Get a device with id "ed4a1f62-9070-4379-8c46-ea30a99e4d74" and print out its properties.supports_backup_access_code_pool
--->
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
 const device = await seam.devices.get({
   device_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74"
 })
-console.log(device.properties.supports_backup_access_code_pool)
+
+// log the device and look for supports_backup_access_code_pool
+console.log(device.properties)
+
+/*
+{
+  locked: false,
+  online: true,
+  manufacturer: 'nuki',
+  battery_level: 0.86,
+  nuki_metadata: {
+    device_id: '545636389',
+    device_name: 'Office Lock',
+    keypad_battery_critical: false
+  },
+  keypad_battery: { level: 1 },
+  supported_code_lengths: [ 6 ],
+  has_native_entry_events: true,
+  name: 'Office Lock',
+  model: { display_name: 'Lock', manufacturer_display_name: 'Nuki' },
+  battery: { level: 0.86, status: 'full' },
+  image_url: 'https://connect.getseam.com/assets/images/devices/nuki_smart_lock_3_pro_black.png',
+  image_alt_text: 'Nuki Smart Lock 3.0 Pro Black, Front',
+  code_constraints: [
+    { constraint_type: 'cannot_start_with_12' },
+    { constraint_type: 'no_zeros' },
+    { constraint_type: 'name_length', max_length: 20 }
+  ],
+  supports_backup_access_code_pool: true <====== HERE
+}
+
+*/
 ```
 {% endtab %}
+
 {% tab title="Python" %}
 ```python
 device = seam.devices.get("ed4a1f62-9070-4379-8c46-ea30a99e4d74")
 print(device.properties.supports_backup_access_code_pool)
 ```
 {% endtab %}
+
 {% tab title="Ruby" %}
 ```ruby
 device = seam.devices.get("ed4a1f62-9070-4379-8c46-ea30a99e4d74")
 puts device.properties.supports_backup_access_code_pool
 ```
 {% endtab %}
+
 {% tab title="PHP" %}
 ```php
 $device = $seam->devices->get("ed4a1f62-9070-4379-8c46-ea30a99e4d74");
 echo json_encode($device->properties->supports_backup_access_code_pool);
 ```
 {% endtab %}
+
 {% tab title="Curl" %}
-#### Request:
+**Request:**
 
 <pre class="language-bash"><code class="lang-bash"><strong>$ curl --request POST 'https://connect.getseam.com/devices/get' \
 </strong>--header 'Authorization: Bearer ${API_KEY}' \
@@ -74,7 +106,7 @@ echo json_encode($device->properties->supports_backup_access_code_pool);
  }'
 </code></pre>
 
-#### Response:
+**Response:**
 
 ```json
 {
@@ -88,7 +120,6 @@ echo json_encode($device->properties->supports_backup_access_code_pool);
 ```
 {% endtab %}
 {% endtabs %}
-<!-- CODE INJECT END -->
 
 ***
 
@@ -104,9 +135,6 @@ This activation is a one-time process for each device. Once initiated, Seam will
 In the smart lock app, backup access codes will appear as "Backup {CODE\_ID} (Seam)".
 {% endhint %}
 
-<!-- CODE INJECT START
-Create a timebound access code on a device using its device_id and pass the create code funtion a name, a starts_at and ends_at iso8601 timestamp, and use_backup_access_code_pool=true. Please use "7a83ddc8-b9d9-4944-9457-46b31e654bdc" for the device_id. Please use  "my time-bound code" for the code name. Please make the starts_at date January 1st, 2025 at 4pm utc. Please make the ends_at date January 22nd, 2025 at 12pm utc.
--->
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
@@ -115,12 +143,35 @@ const createdAccessCode = await seam.accessCodes.create({
   name: "my time-bound code",
   starts_at: new Date("2025-01-01T16:00:00Z").toISOString(),
   ends_at: new Date("2025-01-22T12:00:00Z").toISOString(),
-  use_backup_access_code_pool: true
+  use_backup_access_code_pool: true,
+  sync: true // use the sync flag to block until action completes
 })
 
 console.log(createdAccessCode)
+
+/*
+{
+  access_code_id: '6fb09b64-11a6-4dcb-afa5-9f95d257f753',
+  device_id: '55072d5d-9a4f-4cba-8de2-1782df307899',
+  name: 'my time-bound code',
+  appearance: null,
+  code: '545364',
+  common_code_key: null,
+  type: 'time_bound',
+  status: 'unset',
+  starts_at: '2025-01-01T16:00:00.000Z',
+  ends_at: '2025-01-22T12:00:00.000Z',
+  pulled_backup_access_code_id: null,
+  is_backup_access_code_available: true,
+  created_at: '2023-08-29T05:38:15.699Z',
+  errors: [],
+  warnings: [],
+  is_managed: true
+}
+*/
 ```
 {% endtab %}
+
 {% tab title="Python" %}
 ```python
 
@@ -135,6 +186,7 @@ created_access_code = seam.access_codes.create(
 print(created_access_code)
 ```
 {% endtab %}
+
 {% tab title="Ruby" %}
 ```ruby
 access_code = seam.access_codes.create(
@@ -148,6 +200,7 @@ access_code = seam.access_codes.create(
 print(access_code)
 ```
 {% endtab %}
+
 {% tab title="PHP" %}
 ```php
 $created_access_code = $seam->access_codes->create([
@@ -161,6 +214,7 @@ $created_access_code = $seam->access_codes->create([
 echo $created_access_code;
 ```
 {% endtab %}
+
 {% tab title="Curl" %}
 <pre class="language-bash"><code class="lang-bash"><strong>$ curl --request POST 'https://connect.getseam.com/access_codes/create' \
 </strong>--header 'Authorization: Bearer ${API_KEY}' \
@@ -175,8 +229,6 @@ echo $created_access_code;
 </code></pre>
 {% endtab %}
 {% endtabs %}
-<!-- CODE INJECT END -->
-
 
 ### 2. Detect when an access code has failed to program
 
@@ -192,38 +244,63 @@ To confirm that a backup access code is available for retrieval, check the `is_b
 Note that, we only support pull back up codes for `time_bound` codes at this time.
 {% endhint %}
 
-
-<!-- CODE INJECT START
-Retrieve an access code with access_code_id "7a83ddc8-b9d9-4944-9457-46b31e654bdc" and print its is_backup_access_code_available attribute
--->
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
 
 const accessCode = await seam.accessCodes.get({
-  access_code_id: "7a83ddc8-b9d9-4944-9457-46b31e654bdc"
+  access_code_id: "6fb09b64-11a6-4dcb-afa5-9f95d257f753"
 })
+
 console.log(accessCode.is_backup_access_code_available)
+// true
+
+// or console log the code and look for the is_backup_access_code_available key
+console.log(accessCode)
+/*
+{
+  access_code_id: '6fb09b64-11a6-4dcb-afa5-9f95d257f753',
+  device_id: '55072d5d-9a4f-4cba-8de2-1782df307899',
+  name: 'my time-bound code',
+  appearance: null,
+  code: '545364',
+  common_code_key: null,
+  type: 'time_bound',
+  status: 'unset',
+  starts_at: '2025-01-01T16:00:00.000Z',
+  ends_at: '2025-01-22T12:00:00.000Z',
+  pulled_backup_access_code_id: null,
+  is_backup_access_code_available: true,
+  created_at: '2023-08-29T05:38:15.699Z',
+  errors: [],
+  warnings: [],
+  is_managed: true
+}
+*/
 ```
 {% endtab %}
+
 {% tab title="Python" %}
 ```python
 access_code = seam.access_codes.get("7a83ddc8-b9d9-4944-9457-46b31e654bdc")
 print(access_code.is_backup_access_code_available)
 ```
 {% endtab %}
+
 {% tab title="Ruby" %}
 ```ruby
 access_code = client.access_codes.get("7a83ddc8-b9d9-4944-9457-46b31e654bdc")
 puts access_code.is_backup_access_code_available
 ```
 {% endtab %}
+
 {% tab title="PHP" %}
 ```php
 $access_code = $seam->access_codes->get('7a83ddc8-b9d9-4944-9457-46b31e654bdc');
 print($access_code->is_backup_access_code_available);
 ```
 {% endtab %}
+
 {% tab title="Curl" %}
 **Request:**
 
@@ -248,7 +325,6 @@ print($access_code->is_backup_access_code_available);
 ```
 {% endtab %}
 {% endtabs %}
-<!-- CODE INJECT END -->
 
 ### 4. Retrieve a back up access code
 
@@ -256,25 +332,45 @@ To retrieve a backup access code for an access code, include the `access_code_id
 
 Upon executing this action, Seam will:
 
-* Mark the backup access code as pulled (`"pulled": true`), meaning that it's been removed from the pool.&#x20;
+* Mark the backup access code as pulled (`"pulled": true`), meaning that it's been removed from the pool.
 * Associate the backup access code with the original access code, ensuring that any future requests to the [Pull Backup Access Code](../../../api-clients/access-codes/pull-backup-access-code.md) request will return the same backup access code.
 * Update the backup access code's `ends_at` date to match that of the original access code.
 * Attempt to refill the backup access code pool with a new back up code.
 
-
-<!-- CODE INJECT START
-Pull a bkacup access code for an access code with access_code_id "7a83ddc8-b9d9-4944-9457-46b31e654bdc" and print the backup code
--->
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
-const backupAccessCode = await seam.accessCodes.pullBackupAccessCode({
-  access_code_id: "7a83ddc8-b9d9-4944-9457-46b31e654bdc"
-});
+const accessCodeId = "6fb09b64-11a6-4dcb-afa5-9f95d257f753"
 
-console.log(backupAccessCode.code);
+// pull the backup code for this access code
+const backupAccessCode = await seam.accessCodes.pullBackupAccessCode({
+    access_code_id: accessCodeId
+})
+
+console.log(backupAccessCode)
+/*
+{
+  access_code_id: 'f38a32ae-dc36-461c-8c2e-48787ffd3f19',
+  device_id: '55072d5d-9a4f-4cba-8de2-1782df307899',
+  name: 'Backup f38a32ae-dc36-461c-8c2e-48787ffd3f19 (Seam)',
+  appearance: { name: 'Backup f38a32ae-dc36' },
+  code: '178645',
+  common_code_key: null,
+  type: 'time_bound',
+  status: 'set',
+  starts_at: '2023-08-29T05:41:30.672Z',
+  ends_at: '2025-01-22T12:00:00.000Z',
+  is_backup: true,
+  is_backup_access_code_available: false,
+  created_at: '2023-08-29T05:38:19.937Z',
+  errors: [],
+  warnings: [],
+  is_managed: true
+}
+*/
 ```
 {% endtab %}
+
 {% tab title="Python" %}
 ```python
 backup_access_code = seam.access_codes.pull_backup_access_code(
@@ -284,6 +380,7 @@ backup_access_code = seam.access_codes.pull_backup_access_code(
 print(backup_access_code.code)
 ```
 {% endtab %}
+
 {% tab title="Ruby" %}
 ```ruby
 backup_access_code = seam.access_codes.pull_backup_access_code("7a83ddc8-b9d9-4944-9457-46b31e654bdc")
@@ -291,6 +388,7 @@ backup_access_code = seam.access_codes.pull_backup_access_code("7a83ddc8-b9d9-49
 puts backup_access_code.code
 ```
 {% endtab %}
+
 {% tab title="PHP" %}
 ```php
 $access_code_id = "7a83ddc8-b9d9-4944-9457-46b31e654bdc";
@@ -299,6 +397,7 @@ $backup_access_code = $seam->access_codes->pull_backup_access_code($access_code_
 echo "Backup Access Code: ", $backup_access_code->code;
 ```
 {% endtab %}
+
 {% tab title="Curl" %}
 **Request:**
 
@@ -324,8 +423,6 @@ echo "Backup Access Code: ", $backup_access_code->code;
 ```
 {% endtab %}
 {% endtabs %}
-<!-- CODE INJECT END -->
-
 
 ***
 

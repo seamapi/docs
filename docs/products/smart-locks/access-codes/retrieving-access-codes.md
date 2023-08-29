@@ -4,38 +4,80 @@ description: >-
   their specific IDs
 ---
 
-# Retrieving Access Codes
+# Retrieving access codes
 
 ## Retrieving all access codes for a device
 
 To retrieve all access codes for a device, include the `device_id` in the [List Access Codes](../../../api-clients/access-codes/list-access-codes.md) request.
 
-
-
-<!-- CODE INJECT START
-List the access codes for a device. Please use device_id "7a83ddc8-b9d9-4944-9457-46b31e654bdc"
--->
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
+const deviceId = "77208078-6dd7-44e5-a3e4-a2ed3a34efc9"
 
 const accessCodes = await seam.accessCodes.list({
-  device_id: "7a83ddc8-b9d9-4944-9457-46b31e654bdc"
-});
+    device_id: deviceId
+  })
+  
+console.log(accessCodes)
 
-console.log(accessCodes);
+/*
+[
+  {
+    access_code_id: 'ddf217cb-3fee-48be-ad4d-e8af16ea6bb0',
+    device_id: '77208078-6dd7-44e5-a3e4-a2ed3a34efc9',
+    name: 'my time-bound code',
+    appearance: null,
+    code: '3857',
+    common_code_key: null,
+    type: 'time_bound',
+    status: 'unset',
+    is_scheduled_on_device: false,
+    starts_at: '2025-01-01T16:00:00.000Z',
+    ends_at: '2025-01-22T12:00:00.000Z',
+    is_backup_access_code_available: false,
+    created_at: '2023-08-29T05:02:21.812Z',
+    errors: [],
+    warnings: [],
+    is_managed: true
+  },
+  {
+    access_code_id: 'aa5a89e6-fe68-4082-ae16-d192b0759670',
+    device_id: '77208078-6dd7-44e5-a3e4-a2ed3a34efc9',
+    name: 'my ongoing code',
+    appearance: {
+      name: 'seam-my ongoing code seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
+      last_name: 'seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
+      first_name: 'seam-my ongoing code'
+    },
+    code: '4456',
+    common_code_key: null,
+    type: 'ongoing',
+    status: 'set',
+    is_backup_access_code_available: false,
+    created_at: '2023-08-29T05:01:07.435Z',
+    errors: [],
+    warnings: [],
+    is_managed: true
+  }
+]
+*/
+
 ```
 {% endtab %}
+
 {% tab title="Python" %}
 ```python
 access_codes = seam.access_codes.list(device="7a83ddc8-b9d9-4944-9457-46b31e654bdc")
 ```
 {% endtab %}
+
 {% tab title="Ruby" %}
 ```ruby
 access_code_list = seam.access_codes.list(device_id: "7a83ddc8-b9d9-4944-9457-46b31e654bdc")
 ```
 {% endtab %}
+
 {% tab title="PHP" %}
 ```php
 $device_access_codes = $seam->access_codes->list([
@@ -45,8 +87,9 @@ $device_access_codes = $seam->access_codes->list([
 echo json_encode($device_access_codes);
 ```
 {% endtab %}
+
 {% tab title="Curl" %}
-#### Request:
+**Request:**
 
 <pre class="language-bash"><code class="lang-bash"><strong>$ curl --request POST 'https://connect.getseam.com/access_codes/list' \
 </strong>--header 'Authorization: Bearer ${API_KEY}' \
@@ -56,7 +99,7 @@ echo json_encode($device_access_codes);
  }'
 </code></pre>
 
-#### Response:
+**Response:**
 
 ```
 {
@@ -80,8 +123,6 @@ echo json_encode($device_access_codes);
 ```
 {% endtab %}
 {% endtabs %}
-<!-- CODE INJECT END -->
-
 
 ***
 
@@ -89,19 +130,61 @@ echo json_encode($device_access_codes);
 
 To retrieve access codes by their IDs, include their `access_code_ids` in the [List Access Codes](../../../api-clients/access-codes/list-access-codes.md) request.
 
-<!-- CODE INJECT START
-List access codes using their ids. Please use the following access code ids: "ed4a1f62-9070-4379-8c46-ea30a99e4d74" and "170f9da1-ad0e-46c2-a37b-a9959843ecf5"
--->
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
-const accessCodeIds = ["ed4a1f62-9070-4379-8c46-ea30a99e4d74", "170f9da1-ad0e-46c2-a37b-a9959843ecf5"];
-
+const accessCodeIds = ['ddf217cb-3fee-48be-ad4d-e8af16ea6bb0', 'aa5a89e6-fe68-4082-ae16-d192b0759670']
 const accessCodes = await seam.accessCodes.list({
-  access_code_ids: accessCodeIds
+    device_id: deviceId,
+    access_code_ids: accessCodeIds
 })
+
+console.log(accessCodes)
+
+/*
+[
+  {
+    access_code_id: 'ddf217cb-3fee-48be-ad4d-e8af16ea6bb0',
+    device_id: '77208078-6dd7-44e5-a3e4-a2ed3a34efc9',
+    name: 'my time-bound code',
+    appearance: null,
+    code: '3857',
+    common_code_key: null,
+    type: 'time_bound',
+    status: 'unset',
+    is_scheduled_on_device: false,
+    starts_at: '2025-01-01T16:00:00.000Z',
+    ends_at: '2025-01-22T12:00:00.000Z',
+    is_backup_access_code_available: false,
+    created_at: '2023-08-29T05:02:21.812Z',
+    errors: [],
+    warnings: [],
+    is_managed: true
+  },
+  {
+    access_code_id: 'aa5a89e6-fe68-4082-ae16-d192b0759670',
+    device_id: '77208078-6dd7-44e5-a3e4-a2ed3a34efc9',
+    name: 'my ongoing code',
+    appearance: {
+      name: 'seam-my ongoing code seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
+      last_name: 'seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
+      first_name: 'seam-my ongoing code'
+    },
+    code: '4456',
+    common_code_key: null,
+    type: 'ongoing',
+    status: 'set',
+    is_backup_access_code_available: false,
+    created_at: '2023-08-29T05:01:07.435Z',
+    errors: [],
+    warnings: [],
+    is_managed: true
+  }
+]
+*/
 ```
 {% endtab %}
+
 {% tab title="Python" %}
 ```python
 
@@ -109,18 +192,21 @@ access_code_ids = ["ed4a1f62-9070-4379-8c46-ea30a99e4d74", "170f9da1-ad0e-46c2-a
 seam.access_codes.list(access_code_ids=access_code_ids)
 ```
 {% endtab %}
+
 {% tab title="Ruby" %}
 ```ruby
 # not implemented; contact us if you need immediate support
 ```
 {% endtab %}
+
 {% tab title="PHP" %}
 ```php
 /** not implemented; contact us if you need immediate support **/
 ```
 {% endtab %}
+
 {% tab title="Curl" %}
-#### Request:
+**Request:**
 
 <pre class="language-bash"><code class="lang-bash"><strong>$ curl --request POST 'https://connect.getseam.com/access_codes/list' \
 </strong>--header 'Authorization: Bearer ${API_KEY}' \
@@ -133,7 +219,7 @@ seam.access_codes.list(access_code_ids=access_code_ids)
  }'
 </code></pre>
 
-#### Response:
+**Response:**
 
 ```
 {
@@ -169,8 +255,6 @@ seam.access_codes.list(access_code_ids=access_code_ids)
 ```
 {% endtab %}
 {% endtabs %}
-<!-- CODE INJECT END -->
-
 
 ***
 
@@ -178,36 +262,39 @@ seam.access_codes.list(access_code_ids=access_code_ids)
 
 To retrieve a specific access code, include its `access_code_id` in the [Get Access Code](../../../api-clients/access-codes/get-an-access-code.md) request.
 
-<!-- CODE INJECT START
-Get a single access code using its id. Please use the following access code id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74"
--->
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
-
+const accessCodeId = 'ddf217cb-3fee-48be-ad4d-e8af16ea6bb0'
 const accessCode = await seam.accessCodes.get({
-  access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74"
+    access_code_id: accessCodeId
 })
+
+console.log(accessCode)
 ```
 {% endtab %}
+
 {% tab title="Python" %}
 ```python
 
 access_code = seam.access_codes.get("ed4a1f62-9070-4379-8c46-ea30a99e4d74")
 ```
 {% endtab %}
+
 {% tab title="Ruby" %}
 ```ruby
 access_code = seam.access_codes.get("ed4a1f62-9070-4379-8c46-ea30a99e4d74")
 ```
 {% endtab %}
+
 {% tab title="PHP" %}
 ```php
 $access_code = $seam->access_codes->get("ed4a1f62-9070-4379-8c46-ea30a99e4d74");
 ```
 {% endtab %}
+
 {% tab title="Curl" %}
-#### Request:
+**Request:**
 
 <pre class="language-bash"><code class="lang-bash"><strong>$ curl --request POST 'https://connect.getseam.com/access_codes/get' \
 </strong>--header 'Authorization: Bearer ${API_KEY}' \
@@ -217,7 +304,7 @@ $access_code = $seam->access_codes->get("ed4a1f62-9070-4379-8c46-ea30a99e4d74");
  }'
 </code></pre>
 
-#### Response:
+**Response:**
 
 ```
 {
@@ -238,5 +325,3 @@ $access_code = $seam->access_codes->get("ed4a1f62-9070-4379-8c46-ea30a99e4d74");
 ```
 {% endtab %}
 {% endtabs %}
-<!-- CODE INJECT END -->
-
