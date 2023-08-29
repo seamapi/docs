@@ -4,7 +4,7 @@ description: >-
   that are emitted.
 ---
 
-# Lifecycle of access codes
+# Lifecycle of Access Codes
 
 Programming access codes involves [asynchronous](https://en.wikipedia.org/wiki/Asynchronous\_system) processes, which can be complex to manage. Such asynchronous flows depend on interactions with smart devices and third-party applications outside your main application. Our access code API streamlines this process by tracking the status of the access code using a state machine.
 

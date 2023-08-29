@@ -4,13 +4,40 @@ description: >-
   successfully removed from the device.
 ---
 
-# Deleting access codes
+# Deleting Access Codes
 
 ## 1. Delete the access code using the API
 
 To delete an access code, use its `access_code_id` in the [Delete Access Code](../../../api-clients/access-codes/delete-an-access-code.md) request.
 
+<!-- CODE INJECT START
+Delete an access code with "ed4a1f62-9070-4379-8c46-ea30a99e4d74".
+-->
 {% tabs %}
+{% tab title="Javascript" %}
+```javascript
+await seam.accessCodes.delete({
+  access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74"
+})
+```
+{% endtab %}
+{% tab title="Python" %}
+```python
+seam.access_codes.delete("ed4a1f62-9070-4379-8c46-ea30a99e4d74")
+```
+{% endtab %}
+{% tab title="Ruby" %}
+```ruby
+seam.access_codes.delete(
+  access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74"
+)
+```
+{% endtab %}
+{% tab title="PHP" %}
+```php
+$seam->access_codes->delete("ed4a1f62-9070-4379-8c46-ea30a99e4d74");
+```
+{% endtab %}
 {% tab title="Curl" %}
 #### Request:
 
@@ -38,6 +65,8 @@ To delete an access code, use its `access_code_id` in the [Delete Access Code](.
 ```
 {% endtab %}
 {% endtabs %}
+<!-- CODE INJECT END -->
+
 
 ***
 

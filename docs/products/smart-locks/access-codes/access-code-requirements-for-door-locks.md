@@ -4,11 +4,95 @@ description: >-
   on door locks.
 ---
 
-# Access code requirements for door locks
+# Access Code Requirements for Door Locks
 
 Some models of door locks have specific requirements and constraints when it comes to setting PIN codes. It's essential to be aware of these to ensure seamless functionality and security. The requirements can be fetched by making a [Get Device](../../../api-clients/devices/get-device.md) or [List Devices](../../../api-clients/devices/list-devices.md) request.
 
+Sample set of access code requirements:
+```json
+{
+  "device": {
+    "device_id": "00000000-0000-0000-0000-000000000000",
+    "capabilities_supported": [
+      "access_code",
+      "lock"
+    ],
+    "properties": {
+      "supported_code_lengths": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "max_active_codes_supported": 250,
+      "code_constraints": [
+        {
+          "constraint_type": "no_zeros"
+        },
+        {
+          "constraint_type": "name_length",
+          "min_length": 1,
+          "max_length": 12
+        }
+      ],
+      "supports_backup_access_code_pool": true
+      ...
+    },
+    ...
+  },
+  ...
+}
+```
+
+
+<!-- CODE INJECT START
+Get a device with id "ed4a1f62-9070-4379-8c46-ea30a99e4d74" and print out its properties.supported_code_lengths properties.max_active_codes_supported and properties.code_constraints
+-->
 {% tabs %}
+{% tab title="Javascript" %}
+```javascript
+const device = await seam.devices.get({
+  device_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74"
+})
+
+console.log(device.properties.supported_code_lengths);
+console.log(device.properties.max_active_codes_supported);
+console.log(device.properties.code_constraints);
+```
+{% endtab %}
+{% tab title="Python" %}
+```python
+
+device = seam.devices.get("ed4a1f62-9070-4379-8c46-ea30a99e4d74")
+
+
+print(device.properties.supported_code_lengths)
+print(device.properties.max_active_codes_supported)
+print(device.properties.code_constraints)
+```
+{% endtab %}
+{% tab title="Ruby" %}
+```ruby
+
+retrieved_device = seam.devices.get("ed4a1f62-9070-4379-8c46-ea30a99e4d74")
+
+
+puts retrieved_device.properties.supported_code_lengths
+puts retrieved_device.properties.max_active_codes_supported
+puts retrieved_device.properties.code_constraints
+```
+{% endtab %}
+{% tab title="PHP" %}
+```php
+$device = $seam->devices->get("ed4a1f62-9070-4379-8c46-ea30a99e4d74");
+
+echo "Supported code lengths: " . json_encode($device->properties->supported_code_lengths);
+echo "Max active codes supported: " . $device->properties->max_active_codes_supported;
+echo "Code constraints: " . json_encode($device->properties->code_constraints);
+```
+{% endtab %}
+
 {% tab title="Curl" %}
 #### Request:
 
@@ -59,6 +143,8 @@ Some models of door locks have specific requirements and constraints when it com
 ```
 {% endtab %}
 {% endtabs %}
+<!-- CODE INJECT END -->
+
 
 ***
 
