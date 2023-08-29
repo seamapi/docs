@@ -4,15 +4,66 @@ description: >-
   successfully set on the device.
 ---
 
-# Modifying access codes
+# Modifying Access Codes
 
 ## 1. Update the access code using the API
 
 Any active or upcoming access codes may be updated using the [Update Access Code](../../../api-clients/access-codes/update-an-access-code.md) request.
 
-When making this change, adjust the access code's properties such as the `code`, `name`, `starts_at`, and `ends_at` to your new desired values.
+When making this change, adjust the access code's properties such as the `code`, `name`, `starts_at`, and `ends_at` to the new desired values.
 
+<!-- CODE INJECT START
+Update an access code with id "ed4a1f62-9070-4379-8c46-ea30a99e4d74" to set its new name to "my updated code name". Please also sets its updated starts_at date January 1st, 2025 at 4pm utc. Please make the updated ends_at date January 22nd, 2025 at 12pm utc.
+-->
 {% tabs %}
+{% tab title="Javascript" %}
+```javascript
+const updatedAccessCode = await seam.accessCodes.update({
+  name: "my updated code name",
+  starts_at: new Date("2025-01-01T16:00:00Z").toISOString(),
+  ends_at: new Date("2025-01-22T12:00:00Z").toISOString(),
+  access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74",
+});
+
+console.log(updatedAccessCode);
+```
+{% endtab %}
+{% tab title="Python" %}
+```python
+updated_access_code = seam.access_codes.update(
+  access_code_id="ed4a1f62-9070-4379-8c46-ea30a99e4d74",
+  name="my updated code name",
+  starts_at="2025-01-01T16:00:00Z",
+  ends_at="2025-01-22T12:00:00Z"
+)
+
+print(updated_access_code)
+```
+{% endtab %}
+{% tab title="Ruby" %}
+```ruby
+action_attempt = seam.access_codes.update(
+    access_code_id: 'ed4a1f62-9070-4379-8c46-ea30a99e4d74',
+    name: 'my updated code name',
+    starts_at: '2025-01-01T16:00:00Z',
+    ends_at: '2025-01-22T12:00:00Z'
+)
+
+print(action_attempt.status)
+```
+{% endtab %}
+{% tab title="PHP" %}
+```php
+$action_attempt = $seam->access_codes->update(
+  access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74",
+  name: "my updated code name",
+  starts_at: "2025-01-01T16:00:00Z",
+  ends_at: "2025-01-22T12:00:00Z"
+);
+
+print($action_attempt->status); // expected "pending" or "success"
+```
+{% endtab %}
 {% tab title="Curl" %}
 #### Request:
 
@@ -55,6 +106,7 @@ When making this change, adjust the access code's properties such as the `code`,
 ```
 {% endtab %}
 {% endtabs %}
+<!-- CODE INJECT END -->
 
 ***
 
@@ -98,7 +150,52 @@ However, if you receive `access_code.failed_to_set_on_device` or `access_code.de
 
 When converting a permanent access code to time-bound access, you'll also need to set the `starts_at` and `ends_at` properties to the time frame you want.
 
+<!-- CODE INJECT START
+Update an ongoing access code to a time bound access code. Use the access code id "ed4a1f62-9070-4379-8c46-ea30a99e4d74", sets its updated starts_at date January 1st, 2025 at 4pm utc, and its ends_at date January 22nd, 2025 at 12pm utc.
+-->
 {% tabs %}
+{% tab title="Javascript" %}
+```javascript
+await seam.accessCodes.update({
+  starts_at: new Date("2025-01-01T16:00:00Z").toISOString(),
+  ends_at: new Date("2025-01-22T12:00:00Z").toISOString(),
+  access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74",
+})
+```
+{% endtab %}
+{% tab title="Python" %}
+```python
+
+seam.access_codes.update(
+  access_code_id="ed4a1f62-9070-4379-8c46-ea30a99e4d74",
+  starts_at="2025-01-01T16:00:00Z",
+  ends_at="2025-01-22T12:00:00Z"
+)
+```
+{% endtab %}
+{% tab title="Ruby" %}
+```ruby
+
+update_access_code_attempt = seam.access_codes.update(
+  access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74", 
+  starts_at: "2025-01-01T16:00:00Z", 
+  ends_at: "2025-01-22T12:00:00Z"
+)
+```
+{% endtab %}
+{% tab title="PHP" %}
+```php
+
+$action_attempt = $seam->access_codes->update(
+  access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74",
+  starts_at: "2025-01-01T16:00:00Z",
+  ends_at: "2025-01-22T12:00:00Z"
+);
+
+
+```
+{% endtab %}
+
 {% tab title="Curl" %}
 <pre class="language-bash"><code class="lang-bash"><strong>$ curl --request PUT 'https://connect.getseam.com/access_codes/update' \
 </strong>--header 'Authorization: Bearer ${API_KEY}' \
@@ -111,6 +208,8 @@ When converting a permanent access code to time-bound access, you'll also need t
 </code></pre>
 {% endtab %}
 {% endtabs %}
+<!-- CODE INJECT END -->
+
 
 ***
 
@@ -118,7 +217,39 @@ When converting a permanent access code to time-bound access, you'll also need t
 
 When converting a time-bound code to a permanent one, you'll also need to set the `type` property of the access code to `ongoing`.
 
+<!-- CODE INJECT START
+Update a time-bound access code to an ongoing access code by setting its type to "ongoing". Use the access code id "ed4a1f62-9070-4379-8c46-ea30a99e4d74".
+-->
 {% tabs %}
+{% tab title="Javascript" %}
+```javascript
+await seam.accessCodes.update({
+  type: "ongoing",
+  access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74"
+})
+```
+{% endtab %}
+{% tab title="Python" %}
+```python
+action_attempt = seam.access_codes.update(
+  type="ongoing",
+  access_code_id="ed4a1f62-9070-4379-8c46-ea30a99e4d74"
+)
+```
+{% endtab %}
+{% tab title="Ruby" %}
+```ruby
+update_access_code_attempt = seam.access_codes.update({type: "ongoing", access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74"})
+```
+{% endtab %}
+{% tab title="PHP" %}
+```php
+$action_attempt = $seam->access_codes->update(
+  'ed4a1f62-9070-4379-8c46-ea30a99e4d74',
+  'ongoing'
+);
+```
+{% endtab %}
 {% tab title="Curl" %}
 <pre class="language-bash"><code class="lang-bash"><strong>$ curl --request PUT 'https://connect.getseam.com/access_codes/update' \
 </strong>--header 'Authorization: Bearer ${API_KEY}' \
@@ -130,4 +261,5 @@ When converting a time-bound code to a permanent one, you'll also need to set th
 </code></pre>
 {% endtab %}
 {% endtabs %}
+<!-- CODE INJECT END -->
 
