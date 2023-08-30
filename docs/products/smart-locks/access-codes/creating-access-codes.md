@@ -45,8 +45,14 @@ console.log(device.capabilities_supported)
 
 {% tab title="Python" %}
 ```python
-device = seam.devices.get("7a83ddc8-b9d9-4944-9457-46b31e654bdc")
-print(device.properties.capabilities_supported)
+from seamapi import Seam
+
+seam = Seam()
+device = seam.devices.get("aa3958c3-4236-4f71-bd77-3b60f85b3456")
+
+# Inspect this device to see which capabilities it supports
+print(device.capabilities_supported)
+# ['access_code', 'lock']
 ```
 {% endtab %}
 
@@ -111,12 +117,23 @@ console.log(createdAccessCode)
 
 {% tab title="Python" %}
 ```python
+device_id = "aa3958c3-4236-4f71-bd77-3b60f85b3456"
+
 created_access_code = seam.access_codes.create(
-  device_id="7a83ddc8-b9d9-4944-9457-46b31e654bdc",
+  device=device_id,
   name="my ongoing code"
 )
 
 print(created_access_code)
+
+# AccessCode(access_code_id='0cf60b3a-2364-4d21-924e-64c7cb20bb62',
+#            type='ongoing',
+#            code='9846',
+#            starts_at=None,
+#            ends_at=None,
+#            name='my ongoing code',
+#            status='setting',
+#            common_code_key=None)
 ```
 {% endtab %}
 
@@ -267,14 +284,24 @@ console.log(accessCode)
 
 {% tab title="Python" %}
 ```python
+device_id = "aa3958c3-4236-4f71-bd77-3b60f85b3456"
+
 created_access_code = seam.access_codes.create(
-  device_id="7a83ddc8-b9d9-4944-9457-46b31e654bdc",
+  device=device_id,
   name="my time-bound code",
   starts_at="2025-01-01T16:00:00Z",
   ends_at="2025-01-22T12:00:00Z"
 )
-
 print(created_access_code)
+
+# AccessCode(access_code_id='fb61e71c-d165-40a4-a65f-1a9ee44f8774',
+#            type='time_bound',
+#            code='4747',
+#            starts_at='2025-01-01T16:00:00.000Z',
+#            ends_at='2025-01-22T12:00:00.000Z',
+#            name='my time-bound code',
+#            status='unset',
+#            common_code_key=None)
 ```
 {% endtab %}
 

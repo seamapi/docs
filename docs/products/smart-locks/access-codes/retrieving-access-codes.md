@@ -68,7 +68,36 @@ console.log(accessCodes)
 
 {% tab title="Python" %}
 ```python
-access_codes = seam.access_codes.list(device="7a83ddc8-b9d9-4944-9457-46b31e654bdc")
+device_id = "aa3958c3-4236-4f71-bd77-3b60f85b3456"
+access_codes = seam.access_codes.list(device=device_id)
+
+print(access_codes)
+
+# [AccessCode(access_code_id='fb61e71c-d165-40a4-a65f-1a9ee44f8774',
+#             type='time_bound',
+#             code='4747',
+#             starts_at='2025-01-01T16:00:00.000Z',
+#             ends_at='2025-01-22T12:00:00.000Z',
+#             name='my time-bound code',
+#             status='unset',
+#             common_code_key=None),
+#  AccessCode(access_code_id='0cf60b3a-2364-4d21-924e-64c7cb20bb62',
+#             type='ongoing',
+#             code='9846',
+#             starts_at=None,
+#             ends_at=None,
+#             name='my ongoing code',
+#             status='set',
+#             common_code_key=None),
+#  AccessCode(access_code_id='48ff2fd3-4adf-41fd-9e4d-c14f22f2afd2',
+#             type='ongoing',
+#             code='7032',
+#             starts_at=None,
+#             ends_at=None,
+#             name='my ongoing code',
+#             status='set',
+#             common_code_key=None)]
+
 ```
 {% endtab %}
 
@@ -187,9 +216,7 @@ console.log(accessCodes)
 
 {% tab title="Python" %}
 ```python
-
-access_code_ids = ["ed4a1f62-9070-4379-8c46-ea30a99e4d74", "170f9da1-ad0e-46c2-a37b-a9959843ecf5"]
-seam.access_codes.list(access_code_ids=access_code_ids)
+# not yet implemented
 ```
 {% endtab %}
 
@@ -276,8 +303,19 @@ console.log(accessCode)
 
 {% tab title="Python" %}
 ```python
+access_code_id = "0cf60b3a-2364-4d21-924e-64c7cb20bb62"
+access_code = seam.access_codes.get(access_code_id)
 
-access_code = seam.access_codes.get("ed4a1f62-9070-4379-8c46-ea30a99e4d74")
+# AccessCode(access_code_id='0cf60b3a-2364-4d21-924e-64c7cb20bb62',
+#            type='ongoing',
+#            code='9846',
+#            starts_at=None,
+#            ends_at=None,
+#            name='my ongoing code',
+#            status='set',
+#            common_code_key=None)
+
+print(access_code)
 ```
 {% endtab %}
 

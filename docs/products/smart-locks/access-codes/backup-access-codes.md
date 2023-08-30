@@ -174,16 +174,7 @@ console.log(createdAccessCode)
 
 {% tab title="Python" %}
 ```python
-
-created_access_code = seam.access_codes.create(
-  device_id="7a83ddc8-b9d9-4944-9457-46b31e654bdc",
-  name="my time-bound code",
-  starts_at="2025-01-01T16:00:00Z",
-  ends_at="2025-01-22T12:00:00Z",
-  use_backup_access_code_pool=True
-)
-
-print(created_access_code)
+# not implemented
 ```
 {% endtab %}
 
@@ -282,8 +273,7 @@ console.log(accessCode)
 
 {% tab title="Python" %}
 ```python
-access_code = seam.access_codes.get("7a83ddc8-b9d9-4944-9457-46b31e654bdc")
-print(access_code.is_backup_access_code_available)
+# not implemented
 ```
 {% endtab %}
 
@@ -373,11 +363,7 @@ console.log(backupAccessCode)
 
 {% tab title="Python" %}
 ```python
-backup_access_code = seam.access_codes.pull_backup_access_code(
-  access_code_id="7a83ddc8-b9d9-4944-9457-46b31e654bdc"
-)
-
-print(backup_access_code.code)
+# not implemented
 ```
 {% endtab %}
 

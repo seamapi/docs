@@ -134,7 +134,11 @@ await seam.workspaces.resetSandbox()
 
 {% tab title="Python" %}
 ```python
-seam.workspaces.reset_sandbox()
+from seamapi import Seam
+
+seam = Seam()
+seam.workspaces.reset_sandbox() # resets the sandbox tied to your API key
+
 ```
 {% endtab %}
 
@@ -209,8 +213,7 @@ seam = Seam()
 
 workspace = seam.workspaces.get()
 print(workspace)
-# Workspace(workspace_id='ab804f5a-7dd2-42c8-8d09-0beff4f795eb', 
-#   name='Sanbox', is_sandbox=True)
+# Workspace(workspace_id='1d2826eb-4a26-4f46-bddb-ef5898baa859', name="Anna's Sandbox", is_sandbox=True)
 ```
 {% endtab %}
 

@@ -55,14 +55,23 @@ const updatedAccessCode = await seam.accessCodes.update({
 
 {% tab title="Python" %}
 ```python
+access_code_id = "0cf60b3a-2364-4d21-924e-64c7cb20bb62"
+
 updated_access_code = seam.access_codes.update(
-  access_code_id="ed4a1f62-9070-4379-8c46-ea30a99e4d74",
+  access_code=access_code_id,
   name="my updated code name",
-  starts_at="2025-01-01T16:00:00Z",
-  ends_at="2025-01-22T12:00:00Z"
+  starts_at="2025-02-01T16:00:00Z",
+  ends_at="2025-02-22T12:00:00Z"
 )
 
-print(updated_access_code)
+# AccessCode(access_code_id='0cf60b3a-2364-4d21-924e-64c7cb20bb62',
+#            type='time_bound',
+#            code='9846',
+#            starts_at='2025-02-01T16:00:00.000Z',
+#            ends_at='2025-02-22T12:00:00.000Z',
+#            name='my updated code name',
+#            status='unset',
+#            common_code_key=None)
 ```
 {% endtab %}
 
@@ -248,12 +257,24 @@ console.log(accessCode)
 
 {% tab title="Python" %}
 ```python
+access_code_id="fb61e71c-d165-40a4-a65f-1a9ee44f8774"
 
+# confirm that the code starts as an ongoing code
+access_code = seam.access_codes.get(access_code_id)
+print(access_code.type)
+# ongoing
+
+# update the code to set starts_at and ends_at timestamps
 seam.access_codes.update(
-  access_code_id="ed4a1f62-9070-4379-8c46-ea30a99e4d74",
+  access_code=access_code_id,
   starts_at="2025-01-01T16:00:00Z",
   ends_at="2025-01-22T12:00:00Z"
 )
+
+# Confirm that the type has changed to time-bound
+access_code = seam.access_codes.get(access_code_id)
+print(access_code.type)
+# time_bound
 ```
 {% endtab %}
 
@@ -369,10 +390,7 @@ console.log(accessCode)
 
 {% tab title="Python" %}
 ```python
-action_attempt = seam.access_codes.update(
-  type="ongoing",
-  access_code_id="ed4a1f62-9070-4379-8c46-ea30a99e4d74"
-)
+# not implemented
 ```
 {% endtab %}
 

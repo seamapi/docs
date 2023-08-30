@@ -45,7 +45,7 @@ console.log(device.capabilities_supported)
 
 {% tab title="Python" %}
 ```python
-device = seam.devices.get("device3")
+device = seam.devices.get("0e2e6262-7f91-4970-a58d-47ef30b41e2e")
 print(device.capabilities_supported)
 # ['access_code', 'lock']
 ```
@@ -133,12 +133,33 @@ console.log(unmanagedDevice)
 
 {% tab title="Python" %}
 ```python
-device = seam.devices.get("device3")
+device_id = "0e2e6262-7f91-4970-a58d-47ef30b41e2e"
+
+# update device to unmanaged
 seam.devices.update(
-  device=device, 
+  device=device_id, 
   is_managed=False
 )
-seam.devices.unmanaged.get("device3")
+
+# retrieve unmanaged device and print it out
+unmanaged_device = seam.devices.unmanaged.list(device_ids=[device_id])
+print(unmanaged_device)
+# [UnmanagedDevice(device_id='0e2e6262-7f91-4970-a58d-47ef30b41e2e',
+#                  device_type='nuki_lock',
+#                  properties={'image_alt_text': 'Nuki Smart Lock 3.0 Pro Black, '
+#                                                'Front',
+#                              'image_url': 'https://connect.getseam.com/assets/images/devices/nuki_smart_lock_3_pro_black.png',
+#                              'manufacturer': 'nuki',
+#                              'model': {'display_name': 'Lock',
+#                                        'manufacturer_display_name': 'Nuki'},
+#                              'name': 'Office Lock',
+#                              'online': True},
+#                  connected_account_id='5fe50f46-274f-4a03-ba95-3a517464fdc7',
+#                  workspace_id='1d2826eb-4a26-4f46-bddb-ef5898baa859',
+#                  created_at='2023-08-30T06:45:59.213Z',
+#                  errors=[],
+#                  warnings=[])]
+
 ```
 {% endtab %}
 
@@ -230,8 +251,48 @@ console.log(device)
 
 {% tab title="Python" %}
 ```python
-unmanaged_device = seam.devices.unmanaged.get("device3")
-seam.devices.unmanaged.update(device=unmanaged_device, is_managed=True)
+device_id = "0e2e6262-7f91-4970-a58d-47ef30b41e2e"
+
+# Use the unmanaged update call to update the status
+seam.devices.unmanaged.update(
+  device=device_id, 
+  is_managed=True
+)
+
+# Confirm that the device is now managed by retrieving it
+device = seam.devices.get(device=device_id)
+print(device)
+
+# Device(device_id='0e2e6262-7f91-4970-a58d-47ef30b41e2e',
+#        device_type='nuki_lock',
+#        location=None,
+#        properties={'battery': {'level': 0.86, 'status': 'full'},
+#                    'battery_level': 0.86,
+#                    'code_constraints': [{'constraint_type': 'cannot_start_with_12'},
+#                                         {'constraint_type': 'no_zeros'},
+#                                         {'constraint_type': 'name_length',
+#                                          'max_length': 20}],
+#                    'has_native_entry_events': True,
+#                    'image_alt_text': 'Nuki Smart Lock 3.0 Pro Black, Front',
+#                    'image_url': 'https://connect.getseam.com/assets/images/devices/nuki_smart_lock_3_pro_black.png',
+#                    'keypad_battery': {'level': 1},
+#                    'locked': False,
+#                    'manufacturer': 'nuki',
+#                    'model': {'display_name': 'Lock',
+#                              'manufacturer_display_name': 'Nuki'},
+#                    'name': 'Office Lock',
+#                    'nuki_metadata': {'device_id': '545636389',
+#                                      'device_name': 'Office Lock',
+#                                      'keypad_battery_critical': False},
+#                    'online': True,
+#                    'supported_code_lengths': [6],
+#                    'supports_backup_access_code_pool': True},
+#        capabilities_supported=['access_code', 'lock'],
+#        errors=[],
+#        warnings=[],
+#        connected_account_id='5fe50f46-274f-4a03-ba95-3a517464fdc7',
+#        workspace_id='1d2826eb-4a26-4f46-bddb-ef5898baa859',
+#        created_at='2023-08-30T06:45:59.213Z')
 ```
 {% endtab %}
 
@@ -301,9 +362,7 @@ console.log(connectWebview)
 
 {% tab title="Python" %}
 ```python
-seam.connect_webviews.create(
-    accepted_providers=["schlage", "august"], 
-    automatically_manage_new_devices=False)
+# not yet implemented
 ```
 {% endtab %}
 

@@ -98,7 +98,7 @@ if (someLock.properties.locked) {
 ```python
 from seamapi import Seam
 
-seam = Seam() // SEAM_API_KEY env var picked up here
+seam = Seam()
 some_lock = seam.locks.list()[0]
 
 # Inspect this device to see which capabilities it supports

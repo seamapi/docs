@@ -42,7 +42,18 @@ try {
 
 {% tab title="Python" %}
 ```python
-seam.access_codes.delete("ed4a1f62-9070-4379-8c46-ea30a99e4d74")
+access_code_id="fb61e71c-d165-40a4-a65f-1a9ee44f8774"
+
+# delete the access code
+seam.access_codes.delete(access_code_id)
+
+# confirm you're getting a 404
+try:
+    seam.access_codes.get(access_code_id)
+except Exception as e:
+    print(e)
+# SeamAPIException("SeamAPIException: status=404, request_id=f4723c0d-f03c-48dd-967d-4e3cdab517e7, metadata={'type': 'access_code_not_found', 'message': 'Could not find an access_code with device_id or access_code_id', 'data': {'access_code_id': 'fb61e71c-d165-40a4-a65f-1a9ee44f8774'}, 'request_id': 'f4723c0d-f03c-48dd-967d-4e3cdab517e7'}")
+
 ```
 {% endtab %}
 

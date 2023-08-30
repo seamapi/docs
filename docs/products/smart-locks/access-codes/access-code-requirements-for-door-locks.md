@@ -92,13 +92,41 @@ console.log(device.properties)
 
 {% tab title="Python" %}
 ```python
+device_id = "0e2e6262-7f91-4970-a58d-47ef30b41e2e"
 
-device = seam.devices.get("ed4a1f62-9070-4379-8c46-ea30a99e4d74")
+device = seam.devices.get(device_id)
+print(device)
 
-
-print(device.properties.supported_code_lengths)
-print(device.properties.max_active_codes_supported)
-print(device.properties.code_constraints)
+# Device(device_id='0e2e6262-7f91-4970-a58d-47ef30b41e2e',
+#        device_type='nuki_lock',
+#        location=None,
+#        properties={'battery': {'level': 0.86, 'status': 'full'},
+#                    'battery_level': 0.86,
+#                    'code_constraints': [{'constraint_type': 'cannot_start_with_12'},
+#                                         {'constraint_type': 'no_zeros'},
+#                                         {'constraint_type': 'name_length',
+#                                          'max_length': 20}],
+#                    'has_native_entry_events': True,
+#                    'image_alt_text': 'Nuki Smart Lock 3.0 Pro Black, Front',
+#                    'image_url': 'https://connect.getseam.com/assets/images/devices/nuki_smart_lock_3_pro_black.png',
+#                    'keypad_battery': {'level': 1},
+#                    'locked': False,
+#                    'manufacturer': 'nuki',
+#                    'model': {'display_name': 'Lock',
+#                              'manufacturer_display_name': 'Nuki'},
+#                    'name': 'Office Lock',
+#                    'nuki_metadata': {'device_id': '545636389',
+#                                      'device_name': 'Office Lock',
+#                                      'keypad_battery_critical': False},
+#                    'online': True,
+#                    'supported_code_lengths': [6],
+#                    'supports_backup_access_code_pool': True},
+#        capabilities_supported=['access_code', 'lock'],
+#        errors=[],
+#        warnings=[],
+#        connected_account_id='5fe50f46-274f-4a03-ba95-3a517464fdc7',
+#        workspace_id='1d2826eb-4a26-4f46-bddb-ef5898baa859',
+#        created_at='2023-08-30T06:45:59.213Z')
 ```
 {% endtab %}
 
