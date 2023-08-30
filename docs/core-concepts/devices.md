@@ -96,12 +96,13 @@ const device = await seam.devices.get({
 const updatedDevice = await seam.devices.update({
   device_id: deviceId,
   is_managed: false
-});
+})
 
 // retrieve the unmanaged device
-const [unmanagedDevice] = await seam.devices.unmanaged.list({ 
+const unmanagedDevice = await seam.devices.unmanaged.get({
   device_id: deviceId
 })
+
 
 
 console.log(unmanagedDevice)
@@ -189,8 +190,8 @@ To convert an unmanaged device back to managed, retrieve it using the unmanaged 
 ```javascript
 const deviceId = "77208078-6dd7-44e5-a3e4-a2ed3a34efc9"
 
-// retrieve the unmanaged device
-const [unmanagedDevice] = await seam.devices.unmanaged.list({ 
+// retrieve the unmanaged device if needed
+const unmanagedDevice = await seam.devices.unmanaged.get({
   device_id: deviceId
 })
 
@@ -322,13 +323,14 @@ New devices added to a workspace via a Connect Webview can automatically be set 
 {% tab title="Javascript" %}
 ```javascript
 const connectWebview = await seam.connectWebviews.create({
-    // accepted_providers: ["schlage", "august"...etc], 
+    // accepted_providers: ["schlage", "august"...etc], <== use these for precise control of accepted providers
     provider_category: "stable",
     automatically_manage_new_devices: false
 })
 
 console.log(connectWebview)
 
+/*
 {
   url: 'https://connect.getseam.com/connect_webviews/view?connect_webview_id=323b4ffa-ce24-4cff-a965-ff532563ec7a&auth_token=JrunXm29x7GCWFrVJsZHLFsD5YAioyaAu',
   status: 'pending',
@@ -357,6 +359,7 @@ console.log(connectWebview)
   automatically_manage_new_devices: false,
   created_at: '2023-08-29T04:59:13.890Z'
 }
+*/
 ```
 {% endtab %}
 
