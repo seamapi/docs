@@ -1,6 +1,6 @@
 # What is an Action Attempt, when is it used?
 
-An `action_attempt` is used any time Seam is requested to take an action that could asynchronously fail and there's not a resource lifecycle to represent the failure. Generally, you can think of action attempts being used for _imperative actions_ against devices.
+An `action_attempt` describes the failure or success of an action. Action Attempts are used any time Seam is requested to take an action that could asynchronously fail and there's not a resource lifecycle to represent the failure. Generally, you can think of action attempts being used for _imperative actions_ against devices.
 
 For example, if you request that a lock be unlocked Seam will return an Action Attempt:
 
