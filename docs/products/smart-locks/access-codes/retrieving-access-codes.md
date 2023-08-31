@@ -103,7 +103,26 @@ print(access_codes)
 
 {% tab title="Ruby" %}
 ```ruby
-access_code_list = seam.access_codes.list(device_id: "7a83ddc8-b9d9-4944-9457-46b31e654bdc")
+device_id = "aa3958c3-4236-4f71-bd77-3b60f85b3456"
+access_code_list = seam.access_codes.list(device_id)
+
+puts access_code_list.inspect
+# [<Seam::AccessCode:0x00438
+#   access_code_id="043a9ac6-105e-4d15-b4b7-072f9b54b448"
+#   name="my time-bound code"
+#   code="2262"
+#   type="time_bound"
+#   starts_at=2025-01-01 16:00:00 UTC
+#   ends_at=2025-01-22 12:00:00 UTC
+#   errors=[]
+#   warnings=[]>, <Seam::AccessCode:0x00460
+#   access_code_id="0e2e1d48-c694-4430-8a4f-2dc98b6ec570"
+#   name="my ongoing code"
+#   code="1275"
+#   type="ongoing"
+#   errors=[]
+#   warnings=[]>]
+
 ```
 {% endtab %}
 
@@ -222,7 +241,7 @@ console.log(accessCodes)
 
 {% tab title="Ruby" %}
 ```ruby
-# not implemented; contact us if you need immediate support
+# not yet implemented; contact us if you need immediate support
 ```
 {% endtab %}
 
@@ -321,7 +340,18 @@ print(access_code)
 
 {% tab title="Ruby" %}
 ```ruby
-access_code = seam.access_codes.get("ed4a1f62-9070-4379-8c46-ea30a99e4d74")
+access_code = seam.access_codes.get("043a9ac6-105e-4d15-b4b7-072f9b54b448")
+puts access_code.inspect
+# <Seam::AccessCode:0x00488
+#   access_code_id="043a9ac6-105e-4d15-b4b7-072f9b54b448"
+#   name="my time-bound code"
+#   code="2262"
+#   type="time_bound"
+#   starts_at=2025-01-01 16:00:00 UTC
+#   ends_at=2025-01-22 12:00:00 UTC
+#   errors=[]
+#   warnings=[]>
+
 ```
 {% endtab %}
 

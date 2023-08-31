@@ -58,10 +58,7 @@ print(device.capabilities_supported)
 
 {% tab title="Ruby" %}
 ```ruby
-
-device = seam.devices.get('7a83ddc8-b9d9-4944-9457-46b31e654bdc')
-
-print(device.properties.capabilities_supported)
+# NOT YET IMPLEMENTED
 ```
 {% endtab %}
 
@@ -139,17 +136,22 @@ print(created_access_code)
 
 {% tab title="Ruby" %}
 ```ruby
+device_id = "aa3958c3-4236-4f71-bd77-3b60f85b3456"
 
-client = Seam::Client.new(api_key: "your_api_key")
-
-
-created_access_code = client.access_codes.create(
-  device_id: "7a83ddc8-b9d9-4944-9457-46b31e654bdc",
+created_access_code = seam.access_codes.create(
+  device_id: device_id,
   name: "my ongoing code",
 )
 
+puts created_access_code.inspect
 
-puts created_access_code
+# <Seam::AccessCode:0x00438
+#   code="1275"
+#   name="my ongoing code"
+#   type="ongoing"
+#   errors=[]
+#   warnings=[]
+#   access_code_id="0e2e1d48-c694-4430-8a4f-2dc98b6ec570">
 ```
 {% endtab %}
 
@@ -307,14 +309,27 @@ print(created_access_code)
 
 {% tab title="Ruby" %}
 ```ruby
+device_id = "aa3958c3-4236-4f71-bd77-3b60f85b3456"
+
 created_access_code = seam.access_codes.create(
-  device_id: "7a83ddc8-b9d9-4944-9457-46b31e654bdc",
+  device_id: device_id,
   name: "my time-bound code",
   starts_at: "2025-01-01T16:00:00Z",
   ends_at: "2025-01-22T12:00:00Z"
 )
 
-print(created_access_code)
+puts created_access_code.inspect
+
+# <Seam::AccessCode:0x00438
+#   code="2262"
+#   name="my time-bound code"
+#   type="time_bound"
+#   errors=[]
+#   ends_at=2025-01-22 12:00:00 UTC
+#   warnings=[]
+#   starts_at=2025-01-01 16:00:00 UTC
+#   access_code_id="043a9ac6-105e-4d15-b4b7-072f9b54b448">
+
 ```
 {% endtab %}
 

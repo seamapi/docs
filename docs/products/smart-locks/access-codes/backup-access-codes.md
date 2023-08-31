@@ -83,8 +83,10 @@ print(device.properties.supports_backup_access_code_pool)
 
 {% tab title="Ruby" %}
 ```ruby
-device = seam.devices.get("ed4a1f62-9070-4379-8c46-ea30a99e4d74")
-puts device.properties.supports_backup_access_code_pool
+device_id = "0e2e6262-7f91-4970-a58d-47ef30b41e2e"
+device = seam.devices.get(device_id)
+
+puts device.properties["supports_backup_access_code_pool"]
 ```
 {% endtab %}
 
@@ -174,21 +176,13 @@ console.log(createdAccessCode)
 
 {% tab title="Python" %}
 ```python
-# not implemented
+# not yet implemented
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 ```ruby
-access_code = seam.access_codes.create(
-  device_id: "7a83ddc8-b9d9-4944-9457-46b31e654bdc",
-  name: "my time-bound code",
-  starts_at: "2025-01-01T16:00:00Z",
-  ends_at: "2025-01-22T12:00:00Z",
-  use_backup_access_code_pool: true
-)
-
-print(access_code)
+# not yet implemented
 ```
 {% endtab %}
 
@@ -279,8 +273,7 @@ console.log(accessCode)
 
 {% tab title="Ruby" %}
 ```ruby
-access_code = client.access_codes.get("7a83ddc8-b9d9-4944-9457-46b31e654bdc")
-puts access_code.is_backup_access_code_available
+# not yet implemented
 ```
 {% endtab %}
 
@@ -369,9 +362,7 @@ console.log(backupAccessCode)
 
 {% tab title="Ruby" %}
 ```ruby
-backup_access_code = seam.access_codes.pull_backup_access_code("7a83ddc8-b9d9-4944-9457-46b31e654bdc")
-
-puts backup_access_code.code
+# not yet implemented
 ```
 {% endtab %}
 

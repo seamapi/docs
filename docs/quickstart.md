@@ -118,13 +118,10 @@ else:
 ```ruby
 require "seamapi"
 
-seam = Seam::Client.new(api_key: "YOUR_API_KEY")
+seam = Seam::Client.new()
 
+# retrieve a device
 some_lock = seam.locks.list().first
-
-# Inspect this device to see which capabilities it supports
-puts some_lock.capabilities_supported
-# ['access_code', 'lock']
 
 # As the device supports the 'lock' capability, we can use it to
 # unlock the door if it's closed or lock it if it's open
@@ -133,6 +130,7 @@ if some_lock.properties["locked"]
 else
     seam.locks.lock_door(some_lock.device_id)
 end
+
 ```
 {% endtab %}
 

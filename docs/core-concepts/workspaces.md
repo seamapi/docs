@@ -144,6 +144,9 @@ seam.workspaces.reset_sandbox() # resets the sandbox tied to your API key
 
 {% tab title="Ruby" %}
 ```ruby
+require "seamapi"
+
+seam = Seam::Client.new()
 seam.workspaces.reset_sandbox
 ```
 {% endtab %}
@@ -221,16 +224,17 @@ print(workspace)
 ```ruby
 require "seamapi"
 
-seam = Seam::Client.new(api_key: "MY_API_KEY")
+seam = Seam::Client.new()
 
 workspace = seam.workspaces.get
 
 puts workspace
-# <Seam::Workspace:0x0070328                                          
-#   workspace_id="123e4567-e89b-12d3-a456-426614174000"               
-#   name="MySandbox"                                           
-#   connect_partner_name="Partner Sandbox"                           
-#   is_sandbox=true> 
+# <Seam::Workspace:0x00438
+#   workspace_id="1d2826eb-4a26-4f46-bddb-ef5898baa859"
+#   name="Anna's Sandbox"
+#   connect_partner_name="Anna Smith"
+#   is_sandbox=true>
+
 ```
 {% endtab %}
 

@@ -59,9 +59,24 @@ except Exception as e:
 
 {% tab title="Ruby" %}
 ```ruby
-seam.access_codes.delete(
-  access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74"
-)
+require "seamapi"
+
+seam = Seam::Client.new()
+access_code_id = "043a9ac6-105e-4d15-b4b7-072f9b54b448"
+
+# delete the code
+seam.access_codes.delete(access_code_id)
+
+# confirm you're getting an access code not found error
+begin
+    seam.access_codes.get(access_code_id)
+rescue => e
+    puts e
+end
+
+# => Api Error access_code_not_found
+# request_id: b343e2e0-49c0-4cd9-bf47-030f1fa14966
+# Could not find an access_code with device_id or access_code_id
 ```
 {% endtab %}
 

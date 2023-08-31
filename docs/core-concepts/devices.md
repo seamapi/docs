@@ -53,9 +53,7 @@ print(device.capabilities_supported)
 
 {% tab title="Ruby" %}
 ```ruby
-device = seam.devices.get("device3")
-puts(device.capabilities_supported)
-# ['access_code', 'lock']
+# NOT YET IMPLEMENTED capabilities_supported attribute 
 ```
 {% endtab %}
 
@@ -166,9 +164,29 @@ print(unmanaged_device)
 
 {% tab title="Ruby" %}
 ```ruby
-device = seam.devices.get("device3")
-seam.devices.update(device: device, is_managed: false)
-seam.devices.unmanaged.get("device3")
+device_id = "aa3958c3-4236-4f71-bd77-3b60f85b3456"
+
+# seam.devices.update(device_id: device_id, is_managed: false)
+unmanaged_device = seam.unmanaged_devices.list([device_id])
+puts unmanaged_device.inspect
+
+# [<Seam::UnmanagedDevice:0x00438
+#   device_id="aa3958c3-4236-4f71-bd77-3b60f85b3456"
+#   device_type="yale_lock"
+#   connected_account_id="d2ab9339-d0ad-4594-b9a2-6ce71e4d4521"
+#   workspace_id="1d2826eb-4a26-4f46-bddb-ef5898baa859"
+#   created_at=2023-08-30 05:33:58.45 UTC
+#   errors=[]
+#   warnings=[]
+#   properties={"name"=>"FRONT DOOR", "online"=>true, "manufacturer"=>"august", "image_url"=>"https://connect.getseam.com/assets/images/devices/yale_assure-lock-touchscreen-wifi-smart-lock_satin-nickel_front.png", "image_alt_text"=>"Yale Assure Touchscreen Wifi Smart Lock, Satin Nickel, Front", "model"=>{"display_name"=>"Lock", "manufacturer_display_name"=>"August"}}>, <Seam::UnmanagedDevice:0x00460
+#   device_id="0e2e6262-7f91-4970-a58d-47ef30b41e2e"
+#   device_type="nuki_lock"
+#   connected_account_id="5fe50f46-274f-4a03-ba95-3a517464fdc7"
+#   workspace_id="1d2826eb-4a26-4f46-bddb-ef5898baa859"
+#   created_at=2023-08-30 06:45:59.213 UTC
+#   errors=[]
+#   warnings=[]
+#   properties={"name"=>"Office Lock", "online"=>true, "manufacturer"=>"nuki", "image_url"=>"https://connect.getseam.com/assets/images/devices/nuki_smart_lock_3_pro_black.png", "image_alt_text"=>"Nuki Smart Lock 3.0 Pro Black, Front", "model"=>{"display_name"=>"Lock", "manufacturer_display_name"=>"Nuki"}}>]
 ```
 {% endtab %}
 
@@ -299,8 +317,21 @@ print(device)
 
 {% tab title="Ruby" %}
 ```ruby
-unmanaged_device = seam.devices.unmanaged.get("device3")
-seam.devices.unmanaged.update(device: unmanaged_device, is_managed: true)
+device_id = "aa3958c3-4236-4f71-bd77-3b60f85b3456"
+seam.unmanaged_devices.update(device_id: device_id, is_managed: true)
+
+device = seam.devices.get(device_id)
+
+puts device.inspect
+# <Seam::Device:0x00438
+#   device_id="aa3958c3-4236-4f71-bd77-3b60f85b3456"
+#   device_type="yale_lock"
+#   properties={"locked"=>true, "online"=>true, "door_open"=>false, "manufacturer"=>"august", "battery_level"=>0.9999532347993827, "serial_number"=>"00000004-992d-45a0-bea1-9128fdcd8d12", "august_metadata"=>{"lock_id"=>"lock-1", "house_id"=>"house-1", "lock_name"=>"FRONT DOOR", "has_keypad"=>true, "house_name"=>"My House", "keypad_battery_level"=>"Not Available"}, "supported_code_lengths"=>[4, 5, 6, 7, 8], "has_native_entry_events"=>true, "name"=>"FRONT DOOR", "model"=>{"display_name"=>"Lock", "manufacturer_display_name"=>"August"}, "battery"=>{"level"=>0.9999532347993827, "status"=>"full"}, "image_url"=>"https://connect.getseam.com/assets/images/devices/yale_assure-lock-touchscreen-wifi-smart-lock_satin-nickel_front.png", "image_alt_text"=>"Yale Assure Touchscreen Wifi Smart Lock, Satin Nickel, Front", "code_constraints"=>[], "supports_backup_access_code_pool"=>true}
+#   connected_account_id="d2ab9339-d0ad-4594-b9a2-6ce71e4d4521"
+#   workspace_id="1d2826eb-4a26-4f46-bddb-ef5898baa859"
+#   created_at=2023-08-30 05:33:58.45 UTC
+#   errors=[]
+#   warnings=[]>
 ```
 {% endtab %}
 
@@ -371,10 +402,7 @@ console.log(connectWebview)
 
 {% tab title="Ruby" %}
 ```ruby
-connect_webview = seam.connect_webviews.create(
-  accepted_providers: ["schlage", "august"], 
-  automatically_manage_new_devices: false
-)
+# NOT YET IMPLEMENTED
 ```
 {% endtab %}
 

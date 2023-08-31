@@ -77,14 +77,26 @@ updated_access_code = seam.access_codes.update(
 
 {% tab title="Ruby" %}
 ```ruby
-action_attempt = seam.access_codes.update(
-    access_code_id: 'ed4a1f62-9070-4379-8c46-ea30a99e4d74',
+access_code_id = "043a9ac6-105e-4d15-b4b7-072f9b54b448"
+seam.access_codes.update(
+    access_code_id: access_code_id,
     name: 'my updated code name',
-    starts_at: '2025-01-01T16:00:00Z',
-    ends_at: '2025-01-22T12:00:00Z'
+    starts_at: '2025-02-01T16:00:00Z',
+    ends_at: '2025-02-22T12:00:00Z'
 )
 
-print(action_attempt.status)
+access_code = seam.access_codes.get(access_code_id)
+print(access_code.inspect)
+# <Seam::AccessCode:0x004b0
+#   access_code_id="043a9ac6-105e-4d15-b4b7-072f9b54b448"
+#   name="my updated code name"
+#   code="2262"
+#   type="time_bound"
+#   starts_at=2025-02-01 16:00:00 UTC
+#   ends_at=2025-02-22 12:00:00 UTC
+#   errors=[]
+#   warnings=[]>%
+
 ```
 {% endtab %}
 
@@ -280,12 +292,34 @@ print(access_code.type)
 
 {% tab title="Ruby" %}
 ```ruby
+access_code_id = "0e2e1d48-c694-4430-8a4f-2dc98b6ec570"
 
-update_access_code_attempt = seam.access_codes.update(
-  access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74", 
-  starts_at: "2025-01-01T16:00:00Z", 
-  ends_at: "2025-01-22T12:00:00Z"
+# confirm that the code is currently an ongoing code
+access_code = seam.access_codes.get(access_code_id)
+puts access_code.type # => ongoing
+
+# update it to a timebound code
+seam.access_codes.update(
+    access_code_id: access_code_id,
+    name: 'my updated code name',
+    starts_at: '2025-02-01T16:00:00Z',
+    ends_at: '2025-02-22T12:00:00Z'
 )
+
+# confirm the update
+access_code = seam.access_codes.get(access_code_id)
+print(access_code.inspect)
+
+
+# <Seam::AccessCode:0x004b0
+#   access_code_id="0e2e1d48-c694-4430-8a4f-2dc98b6ec570"
+#   name="my updated code name"
+#   code="1275"
+#   type="time_bound"
+#   starts_at=2025-02-01 16:00:00 UTC
+#   ends_at=2025-02-22 12:00:00 UTC
+#   errors=[]
+#   warnings=[]>
 ```
 {% endtab %}
 
@@ -390,13 +424,13 @@ console.log(accessCode)
 
 {% tab title="Python" %}
 ```python
-# not implemented
+# not yet implemented
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 ```ruby
-update_access_code_attempt = seam.access_codes.update({type: "ongoing", access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74"})
+# not yet implemented
 ```
 {% endtab %}
 
