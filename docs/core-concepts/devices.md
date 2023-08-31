@@ -402,7 +402,29 @@ console.log(connectWebview)
 
 {% tab title="Ruby" %}
 ```ruby
-# NOT YET IMPLEMENTED
+connect_webview = seam.connect_webviews.create(
+    provider_category: "stable",
+    automatically_manage_new_devices: false,
+)
+
+puts connect_webview.inspect
+
+# Connect Webview below; note that the automatically_manage_new_devices is not yet exposed
+# <Seam::ConnectWebview:0x00438
+#   url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=16c2ef1d-9ea9-43a1-9e24-ee59f5638d1e&auth_token=LToh3cCRhxBhhtdSnFM4qKw3Si6waNGc8"
+#   status="pending"
+#   workspace_id="1d2826eb-4a26-4f46-bddb-ef5898baa859"
+#   accepted_devices=[]
+#   login_successful=false
+#   accepted_providers=["august", "avigilon_alta", "schlage", "smartthings", "yale", "nuki", "salto", "controlbyweb", "minut", "my_2n", "kwikset", "ttlock", "noiseaware", "igloohome", "ecobee", "hubitat", "four_suites"]
+#   any_device_allowed=false
+#   connect_webview_id="16c2ef1d-9ea9-43a1-9e24-ee59f5638d1e"
+#   custom_redirect_url=nil
+#   any_provider_allowed=false
+#   device_selection_mode="none"
+#   custom_redirect_failure_url=nil
+#   created_at=2023-08-31 21:03:17.631 UTC>
+
 ```
 {% endtab %}
 
