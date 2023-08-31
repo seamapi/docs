@@ -32,6 +32,21 @@ Seam supports programming two types of access codes:
 
 To confirm that Seam supports access code programming for your device, use [Get Device](../../../api-clients/devices/get-device.md) to query the device and check its `capabilities_supported` property. Ensure that `capabilities_supported` list includes `access_code`. After you've done that, come back here and keep reading.
 
+**Example Payload:**
+
+```
+{
+    "device_id": "00000000-0000-0000-0000-000000000000",
+    "capabilities_supported": [
+        "access_code",
+        ...
+    ],
+    ...
+}
+```
+
+
+
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
@@ -67,6 +82,10 @@ print(device.capabilities_supported)
 $device = $seam->devices->get('7a83ddc8-b9d9-4944-9457-46b31e654bdc');
 echo json_encode($device->capabilities_supported);
 ```
+{% endtab %}
+
+{% tab title="Untitled" %}
+
 {% endtab %}
 {% endtabs %}
 
