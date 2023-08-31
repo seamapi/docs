@@ -47,16 +47,6 @@ Whether to opt-in to Seam's
 Bearer <API_KEY>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="sync" type="boolean" required="false" %}
-Set this to true to receive the
-
-`access_code`
-
-object in the
-
-`result`
-{% endswagger-parameter %}
-
 {% swagger-response status="201: Created" description="" %}
 ```javascript
 {

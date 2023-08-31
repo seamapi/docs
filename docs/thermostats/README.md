@@ -41,7 +41,7 @@ When you have `heatcool` turned on, where both heating and cooling systems are e
 | [Get Thermostat](get-thermostat.md)                                                             |
 | ----------------------------------------------------------------------------------------------- |
 | [List Thermostats](list-thermostats.md)                                                         |
-| [Set Default Climate Setting](climate-setting-schedules/lock-a-lock.md)                         |
+| [Set Default Climate Setting](../api-clients/thermostats/lock-a-lock.md)                        |
 | [Get Climate Setting Schedule](climate-setting-schedules/get-climate-setting-schedule.md)       |
 | [List Climate Setting Schedules](climate-setting-schedules/list-climate-setting-schedules.md)   |
 | [Create Climate Setting Schedule](climate-setting-schedules/create-climate-setting-schedule.md) |

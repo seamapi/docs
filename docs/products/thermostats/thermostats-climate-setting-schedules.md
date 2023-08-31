@@ -4,7 +4,7 @@ description: >-
   cooling, or off) and desired temperature profile for a period of time.
 ---
 
-# Climate Setting Schedules
+# Schedule future Climate Setting Schedules
 
 ## What is a Climate Setting Schedule?
 
@@ -59,7 +59,7 @@ If disabled, Seam will make sure the Climate Setting is set on the thermostat ev
 
 ## What happens when a Climate Setting Schedule ends?
 
-When there are no active Climate Setting Schedules, the thermostat will fallback to its [Default Climate Setting](../../thermostats/climate-setting-schedules/lock-a-lock.md). For example, if you are a short-term-rental host, you have configure a more energy-saving temperature setting here (i.e. Heat to 45°C).
+When there are no active Climate Setting Schedules, the thermostat will fallback to its [Default Climate Setting](../../api-clients/thermostats/lock-a-lock.md). For example, if you are a short-term-rental host, you have configure a more energy-saving temperature setting here (i.e. Heat to 45°C).
 
 {% hint style="info" %}
 A Default Climate Setting must be set, before Climate Setting Schedules can be created.

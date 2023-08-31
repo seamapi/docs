@@ -1,3 +1,9 @@
+---
+description: >-
+  A smart thermostat automatically adjusts your heating and cooling systems to
+  keep you comfortable.
+---
+
 # 🌡 Thermostats
 
 ### What is a Smart Thermostat?
@@ -14,17 +20,17 @@ When using a smart thermostat, you have a range of climate settings at your disp
 
 This setting governs the operation of your Heating, Ventilation, and Air Conditioning (HVAC) system to achieve and maintain your preferred temperature. Notable settings include:
 
-* **Heat:** When set to this mode, the system activates heating to ensure the environment reaches or maintains the specified temperature.
-* **Cool:** Opposite of the heat mode, the system will cool the environment until it aligns with the desired set point.
-* **Heat-Cool** or **Auto:** A versatile mode where the system autonomously decides whether to activate heating or cooling based on the current temperature in relation to the set point.
-* **Off:** This deactivates the HVAC system, ensuring neither heating nor cooling occurs.
+* **Heat (`heat`):** In this mode, the thermostat activates the heating system when the room temperature drops below the set point.
+* **Cool (`cool`):** Here, the thermostat triggers the cooling system when the room temperature rises above the set point.
+* **Heat-Cool** or **Auto (`heat_cool`):** This dual-mode allows the thermostat to automatically switch between heating and cooling based on the room's temperature and the set points.
+* **Off (`off`):** This mode turns off the thermostat, halting any active heating or cooling.
 
 #### **Fan Mode**
 
 This controls the fan's operation within an HVAC system. Common settings include:
 
 * **On:** The fan continuously operates, ensuring air circulation regardless of the heating or cooling demand.
-* **Auto:** In this mode, the fan activates only when there's a demand for heating or cooling, making it an energy-efficient choice.
+* **Auto:** The fan activates only when heating or cooling is on, making it a more energy-efficient choice.
 
 ### **Use Cases**
 

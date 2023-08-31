@@ -13,12 +13,8 @@ description: Issue a lock command on the Device by its Device ID
 Bearer <API_KEY>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="device_id" %}
+{% swagger-parameter in="body" name="device_id" required="false" %}
 ID of Device to be Locked
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="sync" type="Boolean" %}
-
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}

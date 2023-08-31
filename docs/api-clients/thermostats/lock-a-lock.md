@@ -1,23 +1,24 @@
 ---
-description: >-
-  Configure the Default Climate Setting to be configured when are no Climate
-  Setting Schedules running.
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-# Configuring a Default Climate Setting
+# Update a thermostat
 
-After a Climate Setting Schedule has completed, Seam will set the Climate Setting of a thermostat back to its Default Climate Setting.
+Updates a [thermostat](../../thermostats/) by setting the values of the parameters passed. Any parameters not provides are left unchanged.
 
-This is different from the thermostat's current settings on a thermostat, which reflect what is currently programmed on the thermostst.
+The primary attribute you can modify is the "Default Climate Setting." The Default Climate Setting determines the thermostat's configuration after a Climate Setting Schedule concludes. This differs from the thermostat's current settings, which represent the active programming on the device.
 
-{% hint style="info" %}
-The Default Climate Setting for a thermostat will be set to the following settings by default:
-
-* `automatic_cooling_enabled: off`
-* `automatic_heating_enabled: off`
-{% endhint %}
-
-{% swagger method="post" path="/thermostats/update" baseUrl="https://connect.getseam.com" summary="Updating the Thermostat" %}
+{% swagger method="post" path="/thermostats/update" baseUrl="https://connect.getseam.com" summary="Update a thermostat" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -26,19 +27,19 @@ The Default Climate Setting for a thermostat will be set to the following settin
 Bearer <API_KEY>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="device_id" %}
+{% swagger-parameter in="body" name="device_id" required="false" %}
 ID of Device to be Locked
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="default_climate_setting" type="Object" %}
-The default 
+{% swagger-parameter in="body" name="default_climate_setting" type="Object" required="false" %}
+The default
 
-[Climate Setting](../#climate-setting-properties)
+[Climate Setting](../../thermostats/#climate-setting-properties)
 
- when no scheduled Climate Settings are in place.
+when no scheduled Climate Settings are in place.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="sync" type="Boolean" %}
+{% swagger-parameter in="body" name="sync" type="Boolean" required="false" %}
 
 {% endswagger-parameter %}
 
@@ -131,10 +132,10 @@ seam.thermostats.update(
 
 ### Parameters
 
-| `device_id`               | type: string                                                   | <p><br>Device ID</p>                                                                                                |
-| ------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `default_climate_setting` | type: [Climate Setting object](../#climate-setting-properties) | The default [Climate Setting](../#climate-setting-properties) when no [Climate Setting Schedules](./) are in place. |
-| `sync`                    | <p>type: boolean<br>Optional</p>                               |                                                                                                                     |
+| `device_id`               | type: string                                                                  | <p><br>Device ID</p>                                                                                                                                                         |
+| ------------------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `default_climate_setting` | type: [Climate Setting object](../../thermostats/#climate-setting-properties) | The default [Climate Setting](../../thermostats/#climate-setting-properties) when no [Climate Setting Schedules](../../thermostats/climate-setting-schedules/) are in place. |
+| `sync`                    | <p>type: boolean<br>Optional</p>                                              |                                                                                                                                                                              |
 
 ### Response
 

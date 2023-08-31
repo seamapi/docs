@@ -10,9 +10,7 @@ A Climate Setting Schedule allows you to set up a thermostat HVAC mode setting (
 
 For instance, if you are a short-term-rental host who has a guest staying from Jan 1st - Jan 7th, you can create a Climate Setting Schedule that sets the thermostat to a climate setting (i.e. Heat to 70°C) throughout that guest's stay.
 
-When there are no active Climate Setting Schedules, the thermostat will fallback to its [Default Climate Setting](lock-a-lock.md). For example, if you are a short-term-rental host, you have configure a more energy-saving temperature setting here (i.e. Heat to 45°C).
-
-
+When there are no active Climate Setting Schedules, the thermostat will fallback to its [Default Climate Setting](../../api-clients/thermostats/lock-a-lock.md). For example, if you are a short-term-rental host, you have configure a more energy-saving temperature setting here (i.e. Heat to 45°C).
 
 ## Climate Setting Schedule Properties
 
@@ -31,6 +29,3 @@ When there are no active Climate Setting Schedules, the thermostat will fallback
 | **`cooling_set_point_fahrenheit`** | number \| null                                | When `automatic_cooling_enabled` is `true`, the thermostat will start cooling to maintain this temperature set point. |
 | **`heating_set_point_fahrenheit`** | number \| null                                | When `automatic_heating_enabled` is `true`, the thermostat will start heating to maintain this temperature set point. |
 | **`manual_override_enabled`**      | <p>boolean<br>Default: <code>true</code></p>  | Whether another user can use the thermostat or API to override this climate setting                                   |
-
-
-

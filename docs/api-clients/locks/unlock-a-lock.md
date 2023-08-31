@@ -17,10 +17,6 @@ Bearer <API_KEY>
 ID of device to be unlocked
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="sync" type="Boolean" %}
-
-{% endswagger-parameter %}
-
 {% swagger-response status="200: OK" description="" %}
 ```json
 {
