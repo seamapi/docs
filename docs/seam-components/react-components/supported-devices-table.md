@@ -1,6 +1,6 @@
 # Supported Devices Table
 
-## \<SupportedDeviceTable /> [(preview)](https://react.seam.co/?path=/docs/example-supporteddevicetable--docs)
+## \<SupportedDeviceTable /> [(preview)](https://react.seam.co/?path=/docs/components-supporteddevicetable--docs)
 
 The supported device table allows you to filter, sort, and view all the devices compatible with Seam. You can use this table to indicate what devices are supported by your platform.
 

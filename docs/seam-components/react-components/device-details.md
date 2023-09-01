@@ -1,6 +1,6 @@
 # Device Details
 
-## \<DeviceDetails /> [(preview)](https://react.seam.co/?path=/docs/example-devicedetails--docs)
+## \<DeviceDetails /> [(preview)](https://react.seam.co/?path=/docs/components-devicedetails--docs)
 
 The device details component shows the properties, settings, and issues for a device.
 

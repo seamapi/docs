@@ -1,6 +1,6 @@
 # Create Access Code Form
 
-## \<CreateAccessCodeForm /> [(preview)](https://react.seam.co/?path=/docs/example-createaccesscodeform--docs)
+## \<CreateAccessCodeForm /> [(preview)](https://react.seam.co/?path=/docs/components-createaccesscodeform--docs)
 
 The create access code form component allows you to create an access code.
 

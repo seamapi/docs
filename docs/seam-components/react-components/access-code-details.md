@@ -1,6 +1,6 @@
 # Access Code Details
 
-## \<AccessCodeDetails /> [(preview)](https://react.seam.co/?path=/docs/example-accesscodedetails--docs)
+## \<AccessCodeDetails /> [(preview)](https://react.seam.co/?path=/docs/components-accesscodedetails--docs)
 
 The access code details component shows the properties, settings, and issues for an access code.
 
