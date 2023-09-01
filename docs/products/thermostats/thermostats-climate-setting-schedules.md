@@ -31,7 +31,7 @@ On our climate setting schedule, this is how the `hvac_mode_setting` attribute m
 
 You can set either the `hvac_mode_setting` property or the `automatic_*` properties.
 
-<table><thead><tr><th width="260.3333333333333">hvac_mode_setting</th><th width="244">automatic_heating_enabled</th><th>automatic_cooling_enabled</th></tr></thead><tbody><tr><td><strong><code>heat</code></strong></td><td><code>true</code></td><td><code>false</code></td></tr><tr><td><strong><code>cool</code></strong></td><td><code>false</code></td><td><code>true</code></td></tr><tr><td><strong><code>heatcool</code></strong></td><td><code>true</code></td><td><code>true</code></td></tr><tr><td><strong><code>off</code></strong></td><td><code>false</code></td><td><code>false</code></td></tr></tbody></table>
+<table><thead><tr><th width="260.3333333333333">hvac_mode_setting</th><th width="244">automatic_heating_enabled</th><th>automatic_cooling_enabled</th></tr></thead><tbody><tr><td><strong><code>heat</code></strong></td><td><code>true</code></td><td><code>false</code></td></tr><tr><td><strong><code>cool</code></strong></td><td><code>false</code></td><td><code>true</code></td></tr><tr><td><strong><code>heat_cool</code></strong></td><td><code>true</code></td><td><code>true</code></td></tr><tr><td><strong><code>off</code></strong></td><td><code>false</code></td><td><code>false</code></td></tr></tbody></table>
 
 ### Configuring temperature set points
 

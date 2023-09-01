@@ -51,13 +51,13 @@ Name of the Device
       "available_hvac_mode_settings": [
         "cool",
         "heat",
-        "heatcool",
+        "heat_cool",
         "off"
       ],
       "current_climate_setting": {
         "automatic_heating_enabled": true,
         "automatic_cooling_enabled": true,
-        "hvac_mode_setting": "heatcool",
+        "hvac_mode_setting": "heat_cool",
         "cooling_set_point_fahrenheit": 75,
         "heating_set_point_fahrenheit": 65,
         "manual_override_allowed": false 
@@ -134,13 +134,13 @@ print(thermostat)
 #         "available_hvac_mode_settings": [
 #             "cool",
 #             "heat",
-<strong>#             "heatcool",
+<strong>#             "heat_cool",
 </strong>#             "off"
 #         ],
 #         "current_climate_setting": {
 #             "automatic_heating_enabled": True,
 <strong>#             "automatic_cooling_enabled": True,
-</strong>#             "hvac_mode_setting": "heatcool",
+</strong>#             "hvac_mode_setting": "heat_cool",
 #             "cooling_set_point_fahrenheit": 75,
 #             "heating_set_point_fahrenheit": 65,
 <strong>#             "manual_override_allowed": False  
@@ -181,13 +181,13 @@ console.log(device)
       "available_hvac_mode_settings": [
         "cool",
         "heat",
-        "heatcool",
+        "heat_cool",
         "off"
       ],
       "current_climate_setting": {
         "automatic_heating_enabled": true,
         "automatic_cooling_enabled": true,
-        "hvac_mode_setting": "heatcool",
+        "hvac_mode_setting": "heat_cool",
         "cooling_set_point_fahrenheit": 75,
         "heating_set_point_fahrenheit": 65,
         "manual_override_allowed": false 
@@ -253,7 +253,7 @@ This section shows the JSON response returned by the API. Since each language en
                 "off",
                 "cool",
                 "heat",
-                "heatcool"
+                "heat_cool"
             ],
             "can_enable_automatic_cooling": true,
             "can_enable_automatic_heating": true,
@@ -304,13 +304,13 @@ This section shows the JSON response returned by the API. Since each language en
       "available_hvac_mode_settings": [
         "cool",
         "heat",
-        "heatcool",
+        "heat_cool",
         "off"
       ],
       "current_climate_setting": {
         "automatic_heating_enabled": true,
         "automatic_cooling_enabled": true,
-        "hvac_mode_setting": "heatcool",
+        "hvac_mode_setting": "heat_cool",
         "cooling_set_point_fahrenheit": 75,
         "heating_set_point_fahrenheit": 65,
         "manual_override_allowed": false 

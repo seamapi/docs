@@ -198,7 +198,7 @@ devices[0]
 #         "off",
 #         "cool",
 #         "heat",
-#         "heatcool"
+#         "heat_cool"
 #       ],
 #       "can_enable_automatic_cooling": true,
 #       "can_enable_automatic_heating": true,
@@ -263,7 +263,7 @@ console.log(devices[0])
       "off",
       "cool",
       "heat",
-      "heatcool"
+      "heat_cool"
     ],
     "can_enable_automatic_cooling": true,
     "can_enable_automatic_heating": true,
@@ -330,7 +330,7 @@ seam.climate_setting_schedules.create(
 #    is_set_on_device: False
 #    automatic_heating_enabled: True
 #    automatic_cooling_enabled: True  
-#    hvac_mode_setting: heatcool
+#    hvac_mode_setting: heat_cool
 #    cooling_set_point_fahrenheit: 75 
 #    heating_set_point_fahrenheit: 65
 #    manual_override_allowed: False
@@ -362,7 +362,7 @@ await seam.climateSettingSchedules.create({
     "is_set_on_device": false,
     "automatic_heating_enabled": true,
     "automatic_cooling_enabled": true,
-    "hvac_mode_setting": "heatcool",
+    "hvac_mode_setting": "heat_cool",
     "cooling_set_point_fahrenheit": 75,
     "heating_set_point_fahrenheit": 65,
     "manual_override_allowed": false

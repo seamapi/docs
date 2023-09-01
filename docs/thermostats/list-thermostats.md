@@ -68,13 +68,13 @@ The Device IDs of the thermostats
         "available_hvac_mode_settings": [
           "cool",
           "heat",
-          "heatcool",
+          "heat_cool",
           "off"
         ],
         "current_climate_setting": {
           "automatic_heating_enabled": true,
           "automatic_cooling_enabled": true,
-          "hvac_mode_setting": "heatcool",
+          "hvac_mode_setting": "heat_cool",
           "cooling_set_point_fahrenheit": 75,
           "heating_set_point_fahrenheit": 65,
           "manual_override_allowed": false 
@@ -100,13 +100,13 @@ The Device IDs of the thermostats
         "available_hvac_mode_settings": [
           "cool",
           "heat",
-          "heatcool",
+          "heat_cool",
           "off"
         ],
         "current_climate_setting": {
           "automatic_heating_enabled": true,
           "automatic_cooling_enabled": true,
-          "hvac_mode_setting": "heatcool",
+          "hvac_mode_setting": "heat_cool",
           "cooling_set_point_fahrenheit": 75,
           "heating_set_point_fahrenheit": 65,
           "manual_override_allowed": false 
@@ -146,13 +146,13 @@ seam.thermostats.list()
 #         "available_hvac_mode_settings": [
 #           "cool",
 #           "heat",
-#           "heatcool",
+#           "heat_cool",
 #           "off"
 #         ],
 #         "current_climate_setting": {
 #           "automatic_heating_enabled": true,
 #           "automatic_cooling_enabled": true,
-#           "hvac_mode_setting": "heatcool",
+#           "hvac_mode_setting": "heat_cool",
 #           "cooling_set_point_fahrenheit": 75,
 #           "heating_set_point_fahrenheit": 65,
 #           "manual_override_allowed": false 
@@ -178,13 +178,13 @@ seam.thermostats.list()
 #         "available_hvac_mode_settings": [
 #           "cool",
 #           "heat",
-#           "heatcool",
+#           "heat_cool",
 #           "off"
 #         ],
 #         "current_climate_setting": {
 #           "automatic_heating_enabled": true,
 #           "automatic_cooling_enabled": true,
-#           "hvac_mode_setting": "heatcool",
+#           "hvac_mode_setting": "heat_cool",
 #           "cooling_set_point_fahrenheit": 75,
 #           "heating_set_point_fahrenheit": 65,
 #           "manual_override_allowed": false 
@@ -220,13 +220,13 @@ seam.thermostats.list()
       "available_hvac_mode_settings": [
         "cool",
         "heat",
-        "heatcool",
+        "heat_cool",
         "off"
       ],
       "current_climate_setting": {
         "automatic_heating_enabled": true,
         "automatic_cooling_enabled": true,
-        "hvac_mode_setting": "heatcool",
+        "hvac_mode_setting": "heat_cool",
         "cooling_set_point_fahrenheit": 75,
         "heating_set_point_fahrenheit": 65,
         "manual_override_allowed": false 
@@ -252,13 +252,13 @@ seam.thermostats.list()
       "available_hvac_mode_settings": [
         "cool",
         "heat",
-        "heatcool",
+        "heat_cool",
         "off"
       ],
       "current_climate_setting": {
         "automatic_heating_enabled": true,
         "automatic_cooling_enabled": true,
-        "hvac_mode_setting": "heatcool",
+        "hvac_mode_setting": "heat_cool",
         "cooling_set_point_fahrenheit": 75,
         "heating_set_point_fahrenheit": 65,
         "manual_override_allowed": false 
@@ -311,13 +311,13 @@ This section shows the JSON response returned by the API. Since each language en
         "available_hvac_mode_settings": [
           "cool",
           "heat",
-          "heatcool",
+          "heat_cool",
           "off"
         ],
         "current_climate_setting": {
           "automatic_heating_enabled": true,
           "automatic_cooling_enabled": true,
-          "hvac_mode_setting": "heatcool",
+          "hvac_mode_setting": "heat_cool",
           "cooling_set_point_fahrenheit": 75,
           "heating_set_point_fahrenheit": 65,
           "manual_override_allowed": false 
@@ -343,13 +343,13 @@ This section shows the JSON response returned by the API. Since each language en
         "available_hvac_mode_settings": [
           "cool",
           "heat",
-          "heatcool",
+          "heat_cool",
           "off"
         ],
         "current_climate_setting": {
           "automatic_heating_enabled": true,
           "automatic_cooling_enabled": true,
-          "hvac_mode_setting": "heatcool",
+          "hvac_mode_setting": "heat_cool",
           "cooling_set_point_fahrenheit": 75,
           "heating_set_point_fahrenheit": 65,
           "manual_override_allowed": false 
