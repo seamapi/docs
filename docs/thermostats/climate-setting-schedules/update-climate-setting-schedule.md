@@ -85,7 +85,7 @@ Whether another user can use the thermostat or API to override this climate sett
     "is_set_on_device": false,
     "automatic_heating_enabled": true,
     "automatic_cooling_enabled": true,
-    "hvac_mode_setting": "heatcool",
+    "hvac_mode_setting": "heat_cool",
     "cooling_set_point_fahrenheit": 75,
     "heating_set_point_fahrenheit": 65,
     "manual_override_allowed": false
