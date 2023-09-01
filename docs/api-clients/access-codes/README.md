@@ -42,7 +42,9 @@ In order to help end users identify codes set by Seam, Seam provides the name ex
 
 Seam will attempt to keep the access code on the device in sync with the declared state of the access code on Seam. For example, the start time and end time of the access code will be set to match the declared state of the access code on Seam. Any updates to the access code timings on Seam will be reflected on the device. In general, if the access code is modified external to Seam (through the lock provider's app for example), Seam will attempt to re-set the access code on the device to match the declared state of the access code on Seam. This also applies if the access code is removed from the device. Seam will attempt to re-set the access code on the device until the declared ending time of the access code has passed.
 
-This behavior can sometimes be surprising to end users, so we recommend that you inform your users that Seam will attempt to re-set access codes on the device if they are modified or removed externally. If you would like to disable this behavior, you can set the `allow_external_modification` flag to true when an access code.
+When external modifications are detected, Seam will send an `access_code.modified_external_to_seam` event and add a `code_modified_external_to_seam` error on the access code.
+
+This behavior can sometimes be surprising to end users, so we recommend that you inform your users that Seam will attempt to re-set access codes on the device if they are modified or removed externally. If you would like to disable this behavior, you can set the `allow_external_modification` flag to true when an access code. When this flag is set to true, Seam will set `code_modified_external_to_seam` as a warning on the code instead of an error.
 
 ## Access Code Error Types
 
@@ -113,10 +115,11 @@ Warnings are returned in a list:
 ]
 ```
 
-| Warning Type                    | Description                                                                                                                                                                                                                                     |
-| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `delay_in_removing_from_device` | We expected the device to report that the access code has been removed but it still has not. We will continue to try and remove the code from the device.                                                                                       |
-| `delay_in_setting_on_device`    | There was an unusually long delay in programming the code onto the device. For time bound codes, this is sent when the code enters its active time. Note that this is a temporary warning and might be removed if the code is successfully set. |
+| Warning Type                     | Description                                                                                                                                                                                                                                     |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `delay_in_removing_from_device`  | We expected the device to report that the access code has been removed but it still has not. We will continue to try and remove the code from the device.                                                                                       |
+| `delay_in_setting_on_device`     | There was an unusually long delay in programming the code onto the device. For time bound codes, this is sent when the code enters its active time. Note that this is a temporary warning and might be removed if the code is successfully set. |
+| `code_modified_external_to_seam` | When we detect that a code was modified or removed externally after Seam successfully set it on the device, and the `allow_external_modification` flag is set for the code, we will set this warning instead of an error.                       |
 
 ### List of Methods
 
