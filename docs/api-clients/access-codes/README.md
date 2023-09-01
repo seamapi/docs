@@ -38,6 +38,12 @@ For example, Seam may add additional characters or truncate the name in order to
 In order to help end users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app, or on the device as a separate property called
 `appearance`. This is an object with a `name` property, and optionally, `first_name` and `last_name` properties (for providers that break down a name into components).
 
+# External Modification
+
+Seam will attempt to keep the access code on the device in sync with the declared state of the access code on Seam. For example, the start time and end time of the access code will be set to match the declared state of the access code on Seam. Any updates to the access code timings on Seam will be reflected on the device. In general, if the access code is modified external to Seam (through the lock provider's app for example), Seam will attempt to re-set the access code on the device to match the declared state of the access code on Seam. This also applies if the access code is removed from the device. Seam will attempt to re-set the access code on the device until the declared ending time of the access code has passed.
+
+This behavior can sometimes be surprising to end users, so we recommend that you inform your users that Seam will attempt to re-set access codes on the device if they are modified or removed externally. If you would like to disable this behavior, you can set the `allow_external_modification` flag to true when an access code.
+
 ## Access Code Error Types
 
 Errors are returned in a list:
