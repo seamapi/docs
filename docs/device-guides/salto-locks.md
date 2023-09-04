@@ -44,6 +44,14 @@ When you encounter this error, it means that the Salto KS site has exceeded the 
 
 ***
 
+## Troubleshooting
+
+### What to do with a Salto lock with an `unknown` device type?
+
+A Salto lock displaying an `unknown` device type indicates a weak connection with the Salto IQ hub. Please contact a Salto installer for assistance.
+
+***
+
 ## Where to Order
 
 Get in touch with a Salto representative in your region. They can refer you to a local installer that will service your area.
