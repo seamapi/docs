@@ -128,11 +128,54 @@ puts access_code_list.inspect
 
 {% tab title="PHP" %}
 ```php
-$device_access_codes = $seam->access_codes->list([
-  'device_id' => "7a83ddc8-b9d9-4944-9457-46b31e654bdc"
-]);
+use Seam\SeamClient;
 
-echo json_encode($device_access_codes);
+$seam = new SeamClient("YOUR_API_KEY");
+
+$device_id = "0e2e6262-7f91-4970-a58d-47ef30b41e2e";
+
+$access_codes = $seam->access_codes->list(
+  device_id: $device_id
+);
+
+# Inspect the access codes
+echo json_encode($access_codes, JSON_PRETTY_PRINT);
+
+// [
+//     {
+//         "access_code_id": "e3d6cf81-6dd4-490c-b81f-8478054c2003",
+//         "device_id": "0e2e6262-7f91-4970-a58d-47ef30b41e2e",
+//         "name": "my timebound code",
+//         "type": "time_bound",
+//         "status": "unset",
+//         "starts_at": "2025-01-01T16:00:00.000Z",
+//         "ends_at": "2025-01-22T12:00:00.000Z",
+//         "code": "834435",
+//         "created_at": "2023-09-04T05:32:32.085Z",
+//         "errors": [],
+//         "warnings": [],
+//         "is_managed": true,
+//         "common_code_key": null,
+//         "is_waiting_for_code_assignment": null
+//     },
+//     {
+//         "access_code_id": "bd7e8681-4df6-437c-a12a-e965ecca9caf",
+//         "device_id": "0e2e6262-7f91-4970-a58d-47ef30b41e2e",
+//         "name": "my ongoing code",
+//         "type": "ongoing",
+//         "status": "set",
+//         "starts_at": null,
+//         "ends_at": null,
+//         "code": "453419",
+//         "created_at": "2023-09-04T05:29:08.084Z",
+//         "errors": [],
+//         "warnings": [],
+//         "is_managed": true,
+//         "common_code_key": null,
+//         "is_waiting_for_code_assignment": null
+//     }
+// ]
+
 ```
 {% endtab %}
 
@@ -357,7 +400,35 @@ puts access_code.inspect
 
 {% tab title="PHP" %}
 ```php
-$access_code = $seam->access_codes->get("ed4a1f62-9070-4379-8c46-ea30a99e4d74");
+use Seam\SeamClient;
+
+$seam = new SeamClient("YOUR_API_KEY");
+
+$access_code_id = "e3d6cf81-6dd4-490c-b81f-8478054c2003";
+
+$access_code = $seam->access_codes->get(
+  access_code_id: $access_code_id
+);
+
+# Inspect access codes
+echo json_encode($access_code, JSON_PRETTY_PRINT);
+
+// {
+//     "access_code_id": "e3d6cf81-6dd4-490c-b81f-8478054c2003",
+//     "device_id": "0e2e6262-7f91-4970-a58d-47ef30b41e2e",
+//     "name": "my timebound code",
+//     "type": "time_bound",
+//     "status": "unset",
+//     "starts_at": "2025-01-01T16:00:00.000Z",
+//     "ends_at": "2025-01-22T12:00:00.000Z",
+//     "code": "834435",
+//     "created_at": "2023-09-04T05:32:32.085Z",
+//     "errors": [],
+//     "warnings": [],
+//     "is_managed": true,
+//     "common_code_key": null,
+//     "is_waiting_for_code_assignment": null
+// }
 ```
 {% endtab %}
 

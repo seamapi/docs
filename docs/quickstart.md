@@ -136,6 +136,9 @@ end
 
 {% tab title="PHP" %}
 ```php
+<?php
+require 'vendor/autoload.php';
+
 use Seam\SeamClient;
 
 $seam = new SeamClient("YOUR_API_KEY");
@@ -143,15 +146,18 @@ $seam = new SeamClient("YOUR_API_KEY");
 $some_lock = $seam->locks->list()[0];
 
 # Inspect this device to see which capabilities it supports
-echo json_encode($some_lock->capabilities_supported)
-# ["access_code", "lock"]
+echo json_encode($some_lock->capabilities_supported, JSON_PRETTY_PRINT);
+# [
+#     "access_code",
+#     "lock"
+# ]
 
 # As the device supports the 'lock' capability, we can use it to
 # unlock the door if it's closed or lock it if it's open
 if ($some_lock->properties->locked) {
-  $seam->locks->unlock_door($lock->device_id);
+  $seam->locks->unlock_door($some_lock->device_id);
 } else {
-  $seam->locks->lock_door($lock->device_id);
+  $seam->locks->lock_door($some_lock->device_id);
 }
 ```
 {% endtab %}

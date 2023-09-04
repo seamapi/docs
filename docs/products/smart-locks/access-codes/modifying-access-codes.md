@@ -102,14 +102,38 @@ print(access_code.inspect)
 
 {% tab title="PHP" %}
 ```php
-$action_attempt = $seam->access_codes->update(
-  access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74",
-  name: "my updated code name",
-  starts_at: "2025-01-01T16:00:00Z",
-  ends_at: "2025-01-22T12:00:00Z"
+use Seam\SeamClient;
+
+$seam = new SeamClient("YOUR_API_KEY");
+
+$access_code_id = "e3d6cf81-6dd4-490c-b81f-8478054c2003";
+
+$updated_code = $seam->access_codes->update(
+  access_code_id: $access_code_id,
+  name: 'my updated code name',
+  starts_at:  "2025-02-01T16:00:00Z",
+  ends_at: "2025-02-22T12:00:00Z"
 );
 
-print($action_attempt->status); // expected "pending" or "success"
+# Inspect this updated code
+echo json_encode($updated_code, JSON_PRETTY_PRINT);
+
+// {
+//     "access_code_id": "e3d6cf81-6dd4-490c-b81f-8478054c2003",
+//     "device_id": "0e2e6262-7f91-4970-a58d-47ef30b41e2e",
+//     "name": "my updated code name",
+//     "type": "time_bound",
+//     "status": "unset",
+//     "starts_at": "2025-02-01T16:00:00.000Z",
+//     "ends_at": "2025-02-22T12:00:00.000Z",
+//     "code": "834435",
+//     "created_at": "2023-09-04T05:32:32.085Z",
+//     "errors": [],
+//     "warnings": [],
+//     "is_managed": true,
+//     "common_code_key": null,
+//     "is_waiting_for_code_assignment": null
+// }
 ```
 {% endtab %}
 
@@ -205,29 +229,10 @@ const accessCodeId = 'aa5a89e6-fe68-4082-ae16-d192b0759670'
 
 // get the ongoing code
 let accessCode = await seam.accessCodes.get({access_code_id: accessCodeId})
-console.log(accessCode)
+console.log(accessCode.typy)
 
-/*
-{
-  access_code_id: 'aa5a89e6-fe68-4082-ae16-d192b0759670',
-  device_id: '77208078-6dd7-44e5-a3e4-a2ed3a34efc9',
-  name: 'my updated code name',
-  appearance: {
-    name: 'seam-my updated code name seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
-    last_name: 'seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
-    first_name: 'seam-my updated code name'
-  },
-  code: '4456',
-  common_code_key: null,
-  type: 'ongoing',
-  status: 'set',
-  is_backup_access_code_available: false,
-  created_at: '2023-08-29T05:01:07.435Z',
-  errors: [],
-  warnings: [],
-  is_managed: true
-}
-*/
+// => ongoing
+
 
 // update the code to give it a starts_at/ends_at
 await seam.accessCodes.update({
@@ -325,14 +330,40 @@ print(access_code.inspect)
 
 {% tab title="PHP" %}
 ```php
+use Seam\SeamClient;
 
-$action_attempt = $seam->access_codes->update(
-  access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74",
-  starts_at: "2025-01-01T16:00:00Z",
+$seam = new SeamClient("YOUR_API_KEY");
+
+$access_code_id = "bd7e8681-4df6-437c-a12a-e965ecca9caf";
+$ongoing_code = $seam->access_codes->get($access_code_id);
+echo json_encode($ongoing_code->type);
+// "ongoing"
+
+$updated_code = $seam->access_codes->update(
+  access_code_id: $access_code_id,
+  name: 'my ongoing code converted to timebound code',
+  starts_at:  "2025-01-01T16:00:00Z",
   ends_at: "2025-01-22T12:00:00Z"
 );
 
-
+# Inspect this updated code
+echo json_encode($updated_code, JSON_PRETTY_PRINT);
+// {
+//     "access_code_id": "bd7e8681-4df6-437c-a12a-e965ecca9caf",
+//     "device_id": "0e2e6262-7f91-4970-a58d-47ef30b41e2e",
+//     "name": "my ongoing code converted to timebound code",
+//     "type": "time_bound",
+//     "status": "removing",
+//     "starts_at": "2025-01-01T16:00:00.000Z",
+//     "ends_at": "2025-01-22T12:00:00.000Z",
+//     "code": "453419",
+//     "created_at": "2023-09-04T05:29:08.084Z",
+//     "errors": [],
+//     "warnings": [],
+//     "is_managed": true,
+//     "common_code_key": null,
+//     "is_waiting_for_code_assignment": null
+// }
 ```
 {% endtab %}
 
@@ -436,10 +467,7 @@ console.log(accessCode)
 
 {% tab title="PHP" %}
 ```php
-$action_attempt = $seam->access_codes->update(
-  'ed4a1f62-9070-4379-8c46-ea30a99e4d74',
-  'ongoing'
-);
+# not yet implemented; contact us if urgently needed
 ```
 {% endtab %}
 

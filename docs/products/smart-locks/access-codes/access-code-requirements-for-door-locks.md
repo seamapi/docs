@@ -151,11 +151,52 @@ puts device.inspect
 
 {% tab title="PHP" %}
 ```php
-$device = $seam->devices->get("ed4a1f62-9070-4379-8c46-ea30a99e4d74");
+use Seam\SeamClient;
 
-echo "Supported code lengths: " . json_encode($device->properties->supported_code_lengths);
-echo "Max active codes supported: " . $device->properties->max_active_codes_supported;
-echo "Code constraints: " . json_encode($device->properties->code_constraints);
+$seam = new SeamClient("YOUR_API_KEY");
+
+$device = $seam->devices->get("0e2e6262-7f91-4970-a58d-47ef30b41e2e");
+
+# Inspect this device to see which capabilities it supports
+echo json_encode($device->properties, JSON_PRETTY_PRINT);
+
+// {
+//     "online": true,
+//     "locked": false,
+//     "name": "Office Lock",
+//     "battery_level": 0.86,
+//     "battery": {
+//         "level": 0.86,
+//         "status": "full"
+//     },
+//     "manufacturer": "nuki",
+//     "supported_code_lengths": [
+//         6
+//     ],
+//     "code_constraints": [
+//         {
+//             "constraint_type": "cannot_start_with_12"
+//         },
+//         {
+//             "constraint_type": "no_zeros"
+//         },
+//         {
+//             "constraint_type": "name_length",
+//             "max_length": 20
+//         }
+//     ],
+//     "model": {
+//         "display_name": "Lock",
+//         "manufacturer_display_name": "Nuki"
+//     },
+//     "image_url": "https:\/\/connect.getseam.com\/assets\/images\/devices\/nuki_smart_lock_3_pro_black.png",
+//     "image_alt_text": "Nuki Smart Lock 3.0 Pro Black, Front",
+//     "nuki_metadata": {
+//         "device_id": "545636389",
+//         "device_name": "Office Lock",
+//         "keypad_battery_critical": false
+//     }
+// }
 ```
 {% endtab %}
 

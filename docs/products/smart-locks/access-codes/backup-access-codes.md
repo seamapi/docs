@@ -92,8 +92,7 @@ puts device.properties["supports_backup_access_code_pool"]
 
 {% tab title="PHP" %}
 ```php
-$device = $seam->devices->get("ed4a1f62-9070-4379-8c46-ea30a99e4d74");
-echo json_encode($device->properties->supports_backup_access_code_pool);
+# not yet implemented
 ```
 {% endtab %}
 
@@ -188,15 +187,7 @@ console.log(createdAccessCode)
 
 {% tab title="PHP" %}
 ```php
-$created_access_code = $seam->access_codes->create([
-    "device_id" => "7a83ddc8-b9d9-4944-9457-46b31e654bdc",
-    "name" => "my time-bound code",
-    "starts_at" => "2025-01-01T16:00:00Z",
-    "ends_at" => "2025-01-22T12:00:00Z",
-    "use_backup_access_code_pool" => true
-]);
-
-echo $created_access_code;
+# not yet implemented
 ```
 {% endtab %}
 
@@ -279,8 +270,7 @@ console.log(accessCode)
 
 {% tab title="PHP" %}
 ```php
-$access_code = $seam->access_codes->get('7a83ddc8-b9d9-4944-9457-46b31e654bdc');
-print($access_code->is_backup_access_code_available);
+# not yet implemented
 ```
 {% endtab %}
 
@@ -368,10 +358,7 @@ console.log(backupAccessCode)
 
 {% tab title="PHP" %}
 ```php
-$access_code_id = "7a83ddc8-b9d9-4944-9457-46b31e654bdc";
-$backup_access_code = $seam->access_codes->pull_backup_access_code($access_code_id);
-
-echo "Backup Access Code: ", $backup_access_code->code;
+# not yet implemented
 ```
 {% endtab %}
 

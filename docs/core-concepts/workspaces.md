@@ -245,16 +245,14 @@ use Seam\SeamClient;
 $seam = new SeamClient("YOUR_API_KEY");
 
 $workspace = $seam->workspaces->get();
+echo json_encode($workspace, JSON_PRETTY_PRINT);
 
-echo json_encode($workspace);
-/*
-{
-  workspace_id: 'ab804f5a-7dd2-42c8-8d09-0beff4f795eb',
-  name: 'Sanbox',
-  connect_partner_name: 'Acme',
-  is_sandbox: true
-}
-*/
+# {
+#     "workspace_id": "1d2826eb-4a26-4f46-bddb-ef5898baa859",
+#     "name": "Anna's Sandbox",
+#     "is_sandbox": true,
+#     "connect_partner_name": null
+# }
 ```
 {% endtab %}
 {% endtabs %}

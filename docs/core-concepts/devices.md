@@ -59,9 +59,20 @@ print(device.capabilities_supported)
 
 {% tab title="PHP" %}
 ```php
-$device = $seam->devices->get("device3");
-echo json_encode($device->capabilities_supported);
-// ['access_code', 'lock']
+use Seam\SeamClient;
+
+$seam = new SeamClient("YOUR_API_KEY");
+
+$device = $seam->devices->get("0e2e6262-7f91-4970-a58d-47ef30b41e2e");
+
+# Inspect this device to see which capabilities it supports
+echo json_encode($device->capabilities_supported, JSON_PRETTY_PRINT);
+
+# [
+#     "access_code",
+#     "lock"
+# ]
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -192,9 +203,41 @@ puts unmanaged_device.inspect
 
 {% tab title="PHP" %}
 ```php
-$device = $seam->devices->get("device3");
-$seam->devices->update("device3", ["is_managed" => false]);
-$seam->devices->unmanaged->get("device3");
+use Seam\SeamClient;
+
+$seam = new SeamClient("YOUR_API_KEY");
+
+$device_id = "0e2e6262-7f91-4970-a58d-47ef30b41e2e";
+$device = $seam->devices->get($device_id);
+
+$seam->devices->update(
+    device_id: $device_id,
+    is_managed: false);
+
+$unmanaged_device = $seam->devices->unmanaged->list()[0];
+
+# Inspect this device to confirm it's unmanaged
+echo json_encode($unmanaged_device, JSON_PRETTY_PRINT);
+
+// {
+//     "device_id": "0e2e6262-7f91-4970-a58d-47ef30b41e2e",
+//     "device_type": "nuki_lock",
+//     "connected_account_id": "5fe50f46-274f-4a03-ba95-3a517464fdc7",
+//     "workspace_id": "1d2826eb-4a26-4f46-bddb-ef5898baa859",
+//     "created_at": "2023-08-30T06:45:59.213Z",
+//     "properties": {
+//         "name": "Office Lock",
+//         "manufacturer": "nuki",
+//         "image_url": "https:\/\/connect.getseam.com\/assets\/images\/devices\/nuki_smart_lock_3_pro_black.png",
+//         "image_alt_text": "Nuki Smart Lock 3.0 Pro Black, Front",
+//         "model": {
+//             "display_name": "Lock",
+//             "manufacturer_display_name": "Nuki"
+//         }
+//     },
+//     "errors": [],
+//     "warnings": []
+// }
 ```
 {% endtab %}
 {% endtabs %}
@@ -337,11 +380,73 @@ puts device.inspect
 
 {% tab title="PHP" %}
 ```php
-$unmanaged_device = $seam->devices->unmanaged->get("device3");
-$managed_device = $seam->access_codes->unmanaged->update(
-  access_code_id: $unmanaged_device->access_code_id,
-  is_managed: True
+use Seam\SeamClient;
+
+$seam = new SeamClient("YOUR_API_KEY");
+
+$device_id = "0e2e6262-7f91-4970-a58d-47ef30b41e2e";
+
+$seam->devices->unmanaged->update(
+  device_id: $device_id,
+  is_managed: true
 );
+
+$device = $seam->devices->get($device_id);
+
+# Inspect this device to make sure it was correct converted
+echo json_encode($device, JSON_PRETTY_PRINT);
+
+// {
+//     "device_id": "0e2e6262-7f91-4970-a58d-47ef30b41e2e",
+//     "workspace_id": "1d2826eb-4a26-4f46-bddb-ef5898baa859",
+//     "connected_account_id": "5fe50f46-274f-4a03-ba95-3a517464fdc7",
+//     "device_type": "nuki_lock",
+//     "properties": {
+//         "online": true,
+//         "locked": false,
+//         "name": "Office Lock",
+//         "battery_level": 0.86,
+//         "battery": {
+//             "level": 0.86,
+//             "status": "full"
+//         },
+//         "manufacturer": "nuki",
+//         "supported_code_lengths": [
+//             6
+//         ],
+//         "code_constraints": [
+//             {
+//                 "constraint_type": "cannot_start_with_12"
+//             },
+//             {
+//                 "constraint_type": "no_zeros"
+//             },
+//             {
+//                 "constraint_type": "name_length",
+//                 "max_length": 20
+//             }
+//         ],
+//         "model": {
+//             "display_name": "Lock",
+//             "manufacturer_display_name": "Nuki"
+//         },
+//         "image_url": "https:\/\/connect.getseam.com\/assets\/images\/devices\/nuki_smart_lock_3_pro_black.png",
+//         "image_alt_text": "Nuki Smart Lock 3.0 Pro Black, Front",
+//         "nuki_metadata": {
+//             "device_id": "545636389",
+//             "device_name": "Office Lock",
+//             "keypad_battery_critical": false
+//         }
+//     },
+//     "location": null,
+//     "created_at": "2023-08-30T06:45:59.213Z",
+//     "capabilities_supported": [
+//         "access_code",
+//         "lock"
+//     ],
+//     "errors": [],
+//     "warnings": []
+// }
 ```
 {% endtab %}
 {% endtabs %}

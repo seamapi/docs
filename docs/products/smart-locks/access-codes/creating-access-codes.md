@@ -79,13 +79,20 @@ print(device.capabilities_supported)
 
 {% tab title="PHP" %}
 ```php
-$device = $seam->devices->get('7a83ddc8-b9d9-4944-9457-46b31e654bdc');
-echo json_encode($device->capabilities_supported);
+use Seam\SeamClient;
+
+$seam = new SeamClient("seam_test2ek7_2sq2ExLasPDwa9foJ8PyQ2zH");
+
+$device = $seam->devices->get("0e2e6262-7f91-4970-a58d-47ef30b41e2e");
+
+# Inspect this device to see which capabilities it supports
+echo json_encode($device->capabilities_supported, JSON_PRETTY_PRINT);
+
+# [
+#     "access_code",
+#     "lock"
+# ]
 ```
-{% endtab %}
-
-{% tab title="Untitled" %}
-
 {% endtab %}
 {% endtabs %}
 
@@ -176,12 +183,34 @@ puts created_access_code.inspect
 
 {% tab title="PHP" %}
 ```php
-$created_access_code = $seam->access_codes->create([
-  'device_id' => '7a83ddc8-b9d9-4944-9457-46b31e654bdc',
-  'name' => 'my ongoing code',
-]);
+$seam = new SeamClient("YOUR_API_KEY");
 
-echo json_encode($created_access_code);
+$device_id = "0e2e6262-7f91-4970-a58d-47ef30b41e2e";
+
+$access_code = $seam->access_codes->create(
+  device_id: $device_id,
+  name: 'my ongoing code',
+);
+
+# Inspect this created code
+echo json_encode($access_code, JSON_PRETTY_PRINT);
+
+// {
+//     "access_code_id": "bd7e8681-4df6-437c-a12a-e965ecca9caf",
+//     "device_id": "0e2e6262-7f91-4970-a58d-47ef30b41e2e",
+//     "name": "my ongoing code",
+//     "type": "ongoing",
+//     "status": "setting",
+//     "starts_at": null,
+//     "ends_at": null,
+//     "code": "453419",
+//     "created_at": "2023-09-04T05:29:08.084Z",
+//     "errors": [],
+//     "warnings": [],
+//     "is_managed": true,
+//     "common_code_key": null,
+//     "is_waiting_for_code_assignment": null
+// }
 ```
 {% endtab %}
 
@@ -354,14 +383,36 @@ puts created_access_code.inspect
 
 {% tab title="PHP" %}
 ```php
-$timebound_access_code = $seam->access_codes->create([
-    "device_id" => "7a83ddc8-b9d9-4944-9457-46b31e654bdc",
-    "name" => "My Timebound Access Code",
-    "starts_at" => "2025-01-01T16:00:00Z",
-    "ends_at" => "2025-01-22T12:00:00Z"
-]);
+$seam = new SeamClient("seam_test2ek7_2sq2ExLasPDwa9foJ8PyQ2zH");
 
-print(json_encode($timebound_access_code));
+$device_id = "0e2e6262-7f91-4970-a58d-47ef30b41e2e";
+
+$access_code = $seam->access_codes->create(
+  device_id: $device_id,
+  name: 'my timebound code',
+  starts_at:  "2025-01-01T16:00:00Z",
+  ends_at: "2025-01-22T12:00:00Z"
+);
+
+# Inspect this timebound code
+echo json_encode($access_code, JSON_PRETTY_PRINT);
+
+// {
+//   "access_code_id": "e3d6cf81-6dd4-490c-b81f-8478054c2003",
+//   "device_id": "0e2e6262-7f91-4970-a58d-47ef30b41e2e",
+//   "name": "my timebound code",
+//   "type": "time_bound",
+//   "status": "unset",
+//   "starts_at": "2025-01-01T16:00:00.000Z",
+//   "ends_at": "2025-01-22T12:00:00.000Z",
+//   "code": "834435",
+//   "created_at": "2023-09-04T05:32:32.085Z",
+//   "errors": [],
+//   "warnings": [],
+//   "is_managed": true,
+//   "common_code_key": null,
+//   "is_waiting_for_code_assignment": null
+// }
 ```
 {% endtab %}
 

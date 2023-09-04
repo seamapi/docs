@@ -82,7 +82,23 @@ end
 
 {% tab title="PHP" %}
 ```php
-$seam->access_codes->delete("ed4a1f62-9070-4379-8c46-ea30a99e4d74");
+use Seam\SeamClient;
+
+$seam = new SeamClient("seam_test2ek7_2sq2ExLasPDwa9foJ8PyQ2zH");
+
+$access_code_id = "e3d6cf81-6dd4-490c-b81f-8478054c2003";
+$seam->access_codes->delete($access_code_id);
+
+// confirm you're getting a 404
+try {
+    $deleted_access_code = $seam->access_codes->get(
+        access_code_id: $access_code_id
+    );
+    echo json_encode($deleted_access_code, JSON_PRETTY_PRINT);
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+// Error Calling "GET access_codes/get" : access_code_not_found: Could not find an access_code with device_id or access_code_id
 ```
 {% endtab %}
 

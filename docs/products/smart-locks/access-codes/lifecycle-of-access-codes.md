@@ -4,13 +4,13 @@ description: >-
   that are emitted.
 ---
 
-# Lifecycle of Access Codes
+# Lifecycle of access codes
 
 Programming access codes involves [asynchronous](https://en.wikipedia.org/wiki/Asynchronous\_system) processes, which can be complex to manage. Such asynchronous flows depend on interactions with smart devices and third-party applications outside your main application. Our access code API streamlines this process by tracking the status of the access code using a state machine.
 
 **The Access Code flow** begins you makes a request to create an access code on Seam.
 
-<figure><img src="../../../.gitbook/assets/spaces_xnN2A67918om1UthYWsF_uploads_git-blob-0a23dd8b4d7375f0cb188ba99d4ec45193ecf92e_image (1).webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Option 2. State Sequence for Access Codes.png" alt=""><figcaption></figcaption></figure>
 
 ## 1. `unset` - Awaiting programming
 
@@ -42,7 +42,6 @@ Seam is modifying the behavior of access codes so they won't return a 404 error 
 
 ***
 
-## `unknown` -  Seam lost connection to account
+## `unknown` - Seam lost connection to account
 
 Beyond the states previously detailed, an "unknown" state exists. This state suggests that the account has been disconnected, preventing Seam from interfacing with the third-party API to verify the access code.
-
