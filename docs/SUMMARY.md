@@ -16,7 +16,7 @@
 ## 🧰 Products
 
 * [🔒 Smart Locks](products/smart-locks/README.md)
-  * [Locking and Unlocking](products/smart-locks/lock-and-unlock.md)
+  * [Lock and Unlock](products/smart-locks/lock-and-unlock.md)
   * [Access Codes](products/smart-locks/access-codes/README.md)
     * [Creating Access Codes](products/smart-locks/access-codes/creating-access-codes.md)
     * [Retrieving access codes](products/smart-locks/access-codes/retrieving-access-codes.md)
