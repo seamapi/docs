@@ -1,6 +1,6 @@
 # Climate Setting Schedule Details
 
-## \<ClimateSettingScheduleDetails /> [(preview)](https://react.seam.co/?path=/docs/example-climatesettingscheduledetails--docs)
+## \<ClimateSettingScheduleDetails /> [(preview)](https://react.seam.co/?path=/docs/components-climatesettingscheduledetails--docs)
 
 The climate setting schedule details component shows the properties, settings, and issues for a climate setting schedule.
 

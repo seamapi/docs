@@ -8,7 +8,7 @@ description: Use Seam Components to make a Supported Devices page
 
 Seam adds supports for smart devices every week and by integrating with Seam, you get access to these new devices too!
 
-This guide will show you how to add a [supported device table](https://react.seam.co/?path=/docs/example-supporteddevicetable--docs) to your website or application. You can use plain HTML, React, or any framework that supports web components.
+This guide will show you how to add a [supported device table](https://react.seam.co/?path=/docs/components-supporteddevicetable--docs) to your website or application. You can use plain HTML, React, or any framework that supports web components.
 
 ## 1 - Get a Publishable Key from the Seam Console
 

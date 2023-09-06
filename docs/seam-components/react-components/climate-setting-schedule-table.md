@@ -1,6 +1,6 @@
 # Climate Setting Schedule Table
 
-## \<ClimateSettingScheduleTable /> [(preview)](https://react.seam.co/?path=/docs/example-climatesettingscheduletable--docs)
+## \<ClimateSettingScheduleTable /> [(preview)](https://react.seam.co/?path=/docs/components-climatesettingscheduletable--docs)
 
 The climate setting schedule table shows a list of current and future scheduled climates and their statuses.
 

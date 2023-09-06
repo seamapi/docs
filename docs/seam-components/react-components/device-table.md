@@ -1,6 +1,6 @@
 # Device Table
 
-## \<DeviceTable /> [(preview)](https://react.seam.co/?path=/docs/example-devicetable--docs)
+## \<DeviceTable /> [(preview)](https://react.seam.co/?path=/docs/components-devicetable--docs)
 
 The devices table shows a list of devices and their statuses.
 

@@ -1,6 +1,6 @@
 # Access Code Table
 
-## \<AccessCodeTable /> [(preview)](https://react.seam.co/?path=/docs/example-accesscodetable--docs)
+## \<AccessCodeTable /> [(preview)](https://react.seam.co/?path=/docs/components-accesscodetable--docs)
 
 The access codes table shows a list of current and future access codes and their statuses.
 
