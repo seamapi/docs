@@ -471,6 +471,8 @@ The [lifecycle of a time-bound access code](lifecycle-of-access-codes.md) is mar
 2. `Setting`: As the scheduled `starts_at` time approaches, Seam initiates the process of programming the code onto the lock, transitioning the code's `status` to `setting`.
 3. `Set`: Upon successful programming, the status updates to `set`, signaling that the code is loaded onto the lock, and may grant the designated user the ability to unlock the door.
 
+<figure><img src="../../../.gitbook/assets/State Sequence for Access Codes.png" alt=""><figcaption><p>Status Transitions of an Access Code</p></figcaption></figure>
+
 On door locks that support [natively scheduled](./#native-scheduling) access codes, Seam will preload the access code into the device's internal memory bank **72 hours ahead** of the `starts_at` time. Even if preloaded in memory, the access code will remain in an `unset` state ahead of the `starts_at` time and await the precise activation moment to toggle its status. When the `starts_at` time arrives, the access code becomes active and transition to a `set` status, granting the designated user the ability to utilize it for entry. If there's an issue programming the natively-scheduled code by its `starts_at` time, the code's status will display as `setting`. For more information on the lifecycle of access codes, [please refer to this guide](lifecycle-of-access-codes.md).
 
 There are two methods to verify that an time-bound access code has been set on the device:
