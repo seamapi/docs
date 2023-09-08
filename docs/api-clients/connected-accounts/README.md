@@ -8,21 +8,20 @@ description: >-
 
 ## The Connected Account object
 
-| Attributes             | Type                        | Description                                                                                                                                                                                  |
-| ---------------------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `connected_account_id` | string                      | ID of the Connected Account.                                                                                                                                                                 |
-| `created_at`           | <p>ISO8601<br>timestamp</p> | Timestamp of the date when the Connected Account was created.                                                                                                                                |
-| `user_identifier`      | JSON object                 | The unique identifier for the Connected Account. Could be an email or phone number.                                                                                                          |
-| `account_type`         | string                      | <p>Type of manufacturer the Connected Account belongs to.<br>Options include: <code>august</code>, <code>schlage</code>, <code>yale</code>, <code>salto</code>, <code>smartthings</code></p> |
-| `custom_metadata`      | JSON object                 | The `custom_metadata` set on the webview that connected the account.                                                                                                                       |
+| Attributes                  | Type                        | Description                                                                                                                                                                                  |
+| --------------------------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `connected_account_id`      | string                      | ID of the Connected Account.                                                                                                                                                                 |
+| `created_at`                | <p>ISO8601<br>timestamp</p> | Timestamp of the date when the Connected Account was created.                                                                                                                                |
+| `user_identifier`           | JSON object                 | The unique identifier for the Connected Account. Could be an email or phone number.                                                                                                          |
+| `account_type`              | string                      | <p>Type of manufacturer the Connected Account belongs to.<br>Options include: <code>august</code>, <code>schlage</code>, <code>yale</code>, <code>salto</code>, <code>smartthings</code></p> |
+| `account_type_display_name` | string                      | A version of `account_type` that can go into a user interface                                                                                                                                |
+| `custom_metadata`           | JSON object                 | The `custom_metadata` set on the webview that connected the account.                                                                                                                         |
 
 ## List of Methods
 
 | [Get Connected Account](get-a-connected-account.md)   | Get a Connected Account.          |
 | ----------------------------------------------------- | --------------------------------- |
 | [List Connected Accounts](list-connected-accounts.md) | Get a list of Connected Accounts. |
-
-
 
 ## Connected Account Error Types
 
@@ -41,9 +40,7 @@ Errors are returned in a list:
 
 ### Generic Errors
 
-Seam recommends adding error handling logic to you application for each generic error below.
-Seam may add more generic errors in the future, so your application should include a fallback case
-if it encounters an unknown generic error code.
+Seam recommends adding error handling logic to you application for each generic error below. Seam may add more generic errors in the future, so your application should include a fallback case if it encounters an unknown generic error code.
 
 | Error Type             | Description                                                                                                                                                                                                                                                  |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -68,6 +65,6 @@ Warnings are returned in a list:
 ]
 ```
 
-| Warning Type                                | Description                                                                                                                                                                                                                   |
-| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `devices_connected_to_other_account`        | This warning indicates that there are devices linked to the current account that are already associated with a different account. It is important to note that these devices cannot be concurrently connected to multiple accounts. To resolve this issue, you may need to disassociate the devices from the other account before connecting them to the current account. Please ensure that the device IDs mentioned on `device_ids` are properly managed and linked to the intended account to avoid any connectivity conflicts.  |
+| Warning Type                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `devices_connected_to_other_account` | This warning indicates that there are devices linked to the current account that are already associated with a different account. It is important to note that these devices cannot be concurrently connected to multiple accounts. To resolve this issue, you may need to disassociate the devices from the other account before connecting them to the current account. Please ensure that the device IDs mentioned on `device_ids` are properly managed and linked to the intended account to avoid any connectivity conflicts. |
