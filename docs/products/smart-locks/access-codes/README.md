@@ -33,16 +33,16 @@ For locks that support setting codes with a schedule, Seam will preload access c
 
 #### Native Scheduling — Supported Providers
 
-| ✅ Supported | ✖️ Not Supported |
-| ----------- | ---------------- |
-| 2N          | Hubitat          |
-| August      | Lockly           |
-| Igloohome   | Nuki             |
-| Kwikset     | SmartThings      |
-| Salto       |                  |
-| Schlage     |                  |
-| TTLock      |                  |
-| Yale        |                  |
+| ✅ Supported | ✖️ Not Supported  |
+| ----------- | ----------------- |
+| 2N          | Hubitat           |
+| August      | Lockly            |
+| Igloohome   | Nuki              |
+| Kwikset     | SmartThings       |
+| Salto       | Dormakaba Oracode |
+| Schlage     |                   |
+| TTLock      |                   |
+| Yale        |                   |
 
 ### **Just-in-time Scheduling**
 
