@@ -172,6 +172,7 @@
   * [Yale Locks Sample Data](device-guides/sandbox-and-sample-data/yale-sample-data.md)
   * [Kwikset Locks Sample Data](device-guides/sandbox-and-sample-data/kwikset-locks-sample-data.md)
   * [Igloohome Locks Sample Data](device-guides/sandbox-and-sample-data/igloohome-sample-data.md)
+  * [PTI Sample Data](device-guides/sandbox-and-sample-data/pti-sample-data.md)
 * [Reconnecting an Account](device-guides/reconnecting-an-account.md)
 * [Access Code Management for Hospitality](device-guides/implementing-robust-access-code-management-for-guests.md)
 * [Rate Limits and Guardrails](device-guides/rate-limits-and-guardrails.md)
