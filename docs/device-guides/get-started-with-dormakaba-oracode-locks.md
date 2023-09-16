@@ -164,7 +164,6 @@ all_locks = seam.locks.list()
 
 some_lock = all_locks[0]
 
-assert some_lock.properties["online"] is True
 assert some_lock.properties["battery_level"] is True
 
 print(some_lock)
@@ -177,8 +176,7 @@ const allLocks = await seam.locks.list()
 
 const someLock = allLocks[0]
 
-console.log(someLock.properties.online) // true
-console.log(someLock.properties.locked) // true
+console.log(someLock.properties.battery_level)
 
 console.log(someLock)
 
@@ -189,8 +187,7 @@ console.log(someLock)
 ```ruby
 some_lock = seam.locks.list.first
 
-puts some_lock.properties['online'] # true
-puts some_lock.properties['locked'] # true
+puts some_lock.properties['battery_level']
 
 puts some_lock
 
@@ -213,7 +210,7 @@ echo json_encode($locks);
 {% endtabs %}
 
 
-### 4 — Setting Access Code on a Dormakaba Oracode Lock
+### 4 — Programming Access Code on a Dormakaba Oracode Lock
 
 The Seam API lets you create access codes on Dormakaba Oracode devices such as the 480i and 660i locks. These codes can then be entered to unlock the door. You can find out more info about how Seam access codes in our [core concept section on access codes.](../products/smart-locks/access-codes/)
 
