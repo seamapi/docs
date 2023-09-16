@@ -40,4 +40,10 @@ $ poetry add seamapi
 $ bundle add seamapi
 ```
 {% endtab %}
+
+{% tab title="PHP" %}
+```bash
+composer require seamapi/seam
+```
+{% endtab %}
 {% endtabs %}

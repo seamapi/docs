@@ -10,7 +10,7 @@ Programming access codes involves [asynchronous](https://en.wikipedia.org/wiki/A
 
 **The Access Code flow** begins you makes a request to create an access code on Seam.
 
-<figure><img src="../../../.gitbook/assets/Option 2. State Sequence for Access Codes.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Option 2. State Sequence for Access Codes.jpg" alt=""><figcaption></figcaption></figure>
 
 ## 1. `unset` - Awaiting programming
 

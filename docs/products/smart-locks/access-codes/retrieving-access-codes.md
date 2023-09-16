@@ -277,14 +277,91 @@ console.log(accessCodes)
 {% endtab %}
 
 {% tab title="Python" %}
-```python
-# not yet implemented
+````python
+from seamapi import Seam
+
+seam = Seam()
+
+access_code_ids = [
+    "7510d6fe-1741-430c-945a-768e4d398bfe", 
+    "81bb1568-f55e-4d91-98b7-dad1259ee7df"
+]
+access_codes = seam.access_codes.list(access_codes=access_code_ids)
+
+print(access_codes)
+
+# [AccessCode(access_code_id='81bb1568-f55e-4d91-98b7-dad1259ee7df',
+#             device_id='aaa5664a-a959-499d-82a7-c25516565788',
+#             type='time_bound',
+#             code='9233',
+#             created_at='2023-09-16T20:05:08.470Z',
+#             starts_at='2025-01-01T16:00:00.000Z',
+#             ends_at='2025-01-22T12:00:00.000Z',
+#             name='my time-bound code',
+#             status='unset',
+#             common_code_key=None,
+#             is_managed=True,
+#             is_waiting_for_code_assignment=None,
+#             is_scheduled_on_device=False,
+#             pulled_backup_access_code_id=None,
+#             is_backup_access_code_available=False,
+#             is_backup=None),
+#  AccessCode(access_code_id='7510d6fe-1741-430c-945a-768e4d398bfe',
+#             device_id='aaa5664a-a959-499d-82a7-c25516565788',
+#             type='ongoing',
+#             code='1282',
+#             created_at='2023-09-16T20:05:03.273Z',
+#             starts_at=None,
+#             ends_at=None,
+#             name='my ongoing code',
+#             status='set',
+#             common_code_key=None,
+#             is_managed=True,
+#             is_waiting_for_code_assignment=None,
+#             is_scheduled_on_device=None,
+#             pulled_backup_access_code_id=None,
+#             is_backup_access_code_available=False,
+#             is_backup=None)]
 ```
+````
 {% endtab %}
 
 {% tab title="Ruby" %}
 ```ruby
-# not yet implemented; contact us if you need immediate support
+require "seamapi"
+
+seam = Seam::Client.new()
+access_code_ids = ["1ec3d38d-09bc-48f2-8e05-d0ce0900571f", "d76286e6-3498-4cde-9486-e12f1c1a0408"]
+access_codes = seam.access_codes.list(access_code_ids:access_code_ids)
+puts access_codes.inspect
+
+# [<Seam::AccessCode:0x00438
+#   access_code_id="1ec3d38d-09bc-48f2-8e05-d0ce0900571f"
+#   device_id="aa3958c3-4236-4f71-bd77-3b60f85b3456"
+#   name="my time-bound code"
+#   code="9333"
+#   type="time_bound"
+#   status="unset"
+#   is_scheduled_on_device=false
+#   starts_at=2025-01-01 16:00:00 UTC
+#   ends_at=2025-01-22 12:00:00 UTC
+#   is_backup_access_code_available=false
+#   created_at=2023-09-07 05:56:05.357 UTC
+#   errors=[]
+#   warnings=[]
+#   is_managed=true>, <Seam::AccessCode:0x00460
+#   access_code_id="d76286e6-3498-4cde-9486-e12f1c1a0408"
+#   device_id="aa3958c3-4236-4f71-bd77-3b60f85b3456"
+#   name="my ongoing code"
+#   code="2043"
+#   type="ongoing"
+#   status="set"
+#   is_backup_access_code_available=false
+#   created_at=2023-09-07 05:56:00.534 UTC
+#   errors=[]
+#   warnings=[]
+#   is_managed=true>]
+
 ```
 {% endtab %}
 
@@ -383,6 +460,9 @@ print(access_code)
 
 {% tab title="Ruby" %}
 ```ruby
+require "seamapi"
+
+seam = Seam::Client.new()
 access_code = seam.access_codes.get("043a9ac6-105e-4d15-b4b7-072f9b54b448")
 puts access_code.inspect
 # <Seam::AccessCode:0x00488

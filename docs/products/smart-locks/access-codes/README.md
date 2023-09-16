@@ -48,8 +48,6 @@ For locks that support setting codes with a schedule, Seam will preload access c
 
 For those locks that lack native scheduling functionality, Seam will use its own scheduling infrastructure to program the code 30 minutes before the `starts_at` time, and remove it at the `ends_at` time.
 
-
-
 ***
 
 ## Advanced Feature: Backup Access Codes
@@ -58,4 +56,4 @@ Occasionally, Seam may encounter issues when programming codes onto locks. Such 
 
 Seam offers a Backup Access Code service. When activated, this service automatically maintain a pool of pre-programmed access codes on a device. These codes are programmed in addition to the regular access codes on Seam, acting as a safety net in case of any issues with the primary codes. Please read about [how to enable and request a back up code here](backup-access-codes.md).
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h3><a href="backup-access-codes.md">Backup Access Code Pool</a></h3><p>Use our backup code pool service to automatically maintain a set of back up codes on your device.</p></td><td></td><td></td><td><a href="../../../.gitbook/assets/spaces_xnN2A67918om1UthYWsF_uploads_6mrS1LVdcoGmXAagf0SI_recycle key.webp">spaces_xnN2A67918om1UthYWsF_uploads_6mrS1LVdcoGmXAagf0SI_recycle key.webp</a></td><td><a href="broken-reference">Broken link</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4><a href="backup-access-codes.md">Backup Access Code Pool</a></h4><p>Use our backup code pool service to automatically maintain a set of back up codes on your device.</p></td><td></td><td></td><td><a href="../../../.gitbook/assets/spaces_xnN2A67918om1UthYWsF_uploads_6mrS1LVdcoGmXAagf0SI_recycle key.webp">spaces_xnN2A67918om1UthYWsF_uploads_6mrS1LVdcoGmXAagf0SI_recycle key.webp</a></td><td><a href="broken-reference/">broken-reference</a></td></tr></tbody></table>

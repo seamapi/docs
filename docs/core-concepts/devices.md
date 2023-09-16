@@ -53,7 +53,11 @@ print(device.capabilities_supported)
 
 {% tab title="Ruby" %}
 ```ruby
-# NOT YET IMPLEMENTED capabilities_supported attribute 
+seam = Seam::Client.new()
+device_id = "aa3958c3-4236-4f71-bd77-3b60f85b3456"
+some_lock = seam.locks.get(device_id)
+puts some_lock.capabilities_supported
+# [access_code, lock]
 ```
 {% endtab %}
 
@@ -143,61 +147,61 @@ console.log(unmanagedDevice)
 
 {% tab title="Python" %}
 ```python
-device_id = "0e2e6262-7f91-4970-a58d-47ef30b41e2e"
+from seamapi import Seam
+seam = Seam()
 
-# update device to unmanaged
+device_id = "aaa5664a-a959-499d-82a7-c25516565788"
+
 seam.devices.update(
   device=device_id, 
   is_managed=False
 )
 
-# retrieve unmanaged device and print it out
-unmanaged_device = seam.devices.unmanaged.list(device_ids=[device_id])
+unmanaged_device = seam.devices.unmanaged.get(device=device_id)
 print(unmanaged_device)
-# [UnmanagedDevice(device_id='0e2e6262-7f91-4970-a58d-47ef30b41e2e',
-#                  device_type='nuki_lock',
-#                  properties={'image_alt_text': 'Nuki Smart Lock 3.0 Pro Black, '
-#                                                'Front',
-#                              'image_url': 'https://connect.getseam.com/assets/images/devices/nuki_smart_lock_3_pro_black.png',
-#                              'manufacturer': 'nuki',
-#                              'model': {'display_name': 'Lock',
-#                                        'manufacturer_display_name': 'Nuki'},
-#                              'name': 'Office Lock',
-#                              'online': True},
-#                  connected_account_id='5fe50f46-274f-4a03-ba95-3a517464fdc7',
-#                  workspace_id='1d2826eb-4a26-4f46-bddb-ef5898baa859',
-#                  created_at='2023-08-30T06:45:59.213Z',
-#                  errors=[],
-#                  warnings=[])]
 
+# UnmanagedDevice(device_id='aaa5664a-a959-499d-82a7-c25516565788',
+#                 device_type='august_lock',
+#                 properties={'image_alt_text': 'August Wifi Smart Lock 3rd Gen, '
+#                                               'Silver, Front',
+#                             'image_url': 'https://connect.getseam.com/assets/images/devices/august_wifi-smart-lock-3rd-gen_silver_front.png',
+#                             'manufacturer': 'august',
+#                             'model': {'display_name': 'Lock',
+#                                       'manufacturer_display_name': 'August'},
+#                             'name': 'GARAGE',
+#                             'online': True},
+#                 connected_account_id='4fd987a7-21e1-4b01-aa6a-eedfe35c05e3',
+#                 workspace_id='1d2826eb-4a26-4f46-bddb-ef5898baa859',
+#                 created_at='2023-09-16T20:01:58.984Z',
+#                 errors=[],
+#                 warnings=[],
+#                 capabilities_supported=['access_code', 'lock'],
+#                 is_managed=False)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 ```ruby
+require "seamapi"
+
+seam = Seam::Client.new()
 device_id = "aa3958c3-4236-4f71-bd77-3b60f85b3456"
 
-# seam.devices.update(device_id: device_id, is_managed: false)
-unmanaged_device = seam.unmanaged_devices.list([device_id])
+seam.devices.update(device_id: device_id, is_managed: false)
+unmanaged_device = seam.unmanaged_devices.get(device_id)
 puts unmanaged_device.inspect
 
-# [<Seam::UnmanagedDevice:0x00438
+# <Seam::UnmanagedDevice:0x00438
+#   is_managed=false
 #   device_id="aa3958c3-4236-4f71-bd77-3b60f85b3456"
 #   device_type="yale_lock"
 #   connected_account_id="d2ab9339-d0ad-4594-b9a2-6ce71e4d4521"
+#   capabilities_supported=["access_code", "lock"]
 #   workspace_id="1d2826eb-4a26-4f46-bddb-ef5898baa859"
 #   created_at=2023-08-30 05:33:58.45 UTC
 #   errors=[]
 #   warnings=[]
-#   properties={"name"=>"FRONT DOOR", "online"=>true, "manufacturer"=>"august", "image_url"=>"https://connect.getseam.com/assets/images/devices/yale_assure-lock-touchscreen-wifi-smart-lock_satin-nickel_front.png", "image_alt_text"=>"Yale Assure Touchscreen Wifi Smart Lock, Satin Nickel, Front", "model"=>{"display_name"=>"Lock", "manufacturer_display_name"=>"August"}}>, <Seam::UnmanagedDevice:0x00460
-#   device_id="0e2e6262-7f91-4970-a58d-47ef30b41e2e"
-#   device_type="nuki_lock"
-#   connected_account_id="5fe50f46-274f-4a03-ba95-3a517464fdc7"
-#   workspace_id="1d2826eb-4a26-4f46-bddb-ef5898baa859"
-#   created_at=2023-08-30 06:45:59.213 UTC
-#   errors=[]
-#   warnings=[]
-#   properties={"name"=>"Office Lock", "online"=>true, "manufacturer"=>"nuki", "image_url"=>"https://connect.getseam.com/assets/images/devices/nuki_smart_lock_3_pro_black.png", "image_alt_text"=>"Nuki Smart Lock 3.0 Pro Black, Front", "model"=>{"display_name"=>"Lock", "manufacturer_display_name"=>"Nuki"}}>]
+#   properties={"name"=>"FRONT DOOR", "online"=>true, "manufacturer"=>"august", "image_url"=>"https://connect.getseam.com/assets/images/devices/yale_assure-lock-touchscreen-wifi-smart-lock_satin-nickel_front.png", "image_alt_text"=>"Yale Assure Touchscreen Wifi Smart Lock, Satin Nickel, Front", "model"=>{"display_name"=>"Lock", "manufacturer_display_name"=>"August"}}>
 ```
 {% endtab %}
 
@@ -214,7 +218,9 @@ $seam->devices->update(
     device_id: $device_id,
     is_managed: false);
 
-$unmanaged_device = $seam->devices->unmanaged->list()[0];
+$unmanaged_device = $seam->devices->unmanaged->get(
+    device_id: $device_id
+);
 
 # Inspect this device to confirm it's unmanaged
 echo json_encode($unmanaged_device, JSON_PRETTY_PRINT);
@@ -313,6 +319,9 @@ console.log(device)
 
 {% tab title="Python" %}
 ```python
+from seamapi import Seam
+seam = Seam()
+
 device_id = "0e2e6262-7f91-4970-a58d-47ef30b41e2e"
 
 # Use the unmanaged update call to update the status
@@ -360,6 +369,9 @@ print(device)
 
 {% tab title="Ruby" %}
 ```ruby
+require "seamapi"
+
+seam = Seam::Client.new()
 device_id = "aa3958c3-4236-4f71-bd77-3b60f85b3456"
 seam.unmanaged_devices.update(device_id: device_id, is_managed: true)
 
@@ -369,12 +381,14 @@ puts device.inspect
 # <Seam::Device:0x00438
 #   device_id="aa3958c3-4236-4f71-bd77-3b60f85b3456"
 #   device_type="yale_lock"
+#   capabilities_supported=["access_code", "lock"]
 #   properties={"locked"=>true, "online"=>true, "door_open"=>false, "manufacturer"=>"august", "battery_level"=>0.9999532347993827, "serial_number"=>"00000004-992d-45a0-bea1-9128fdcd8d12", "august_metadata"=>{"lock_id"=>"lock-1", "house_id"=>"house-1", "lock_name"=>"FRONT DOOR", "has_keypad"=>true, "house_name"=>"My House", "keypad_battery_level"=>"Not Available"}, "supported_code_lengths"=>[4, 5, 6, 7, 8], "has_native_entry_events"=>true, "name"=>"FRONT DOOR", "model"=>{"display_name"=>"Lock", "manufacturer_display_name"=>"August"}, "battery"=>{"level"=>0.9999532347993827, "status"=>"full"}, "image_url"=>"https://connect.getseam.com/assets/images/devices/yale_assure-lock-touchscreen-wifi-smart-lock_satin-nickel_front.png", "image_alt_text"=>"Yale Assure Touchscreen Wifi Smart Lock, Satin Nickel, Front", "code_constraints"=>[], "supports_backup_access_code_pool"=>true}
 #   connected_account_id="d2ab9339-d0ad-4594-b9a2-6ce71e4d4521"
 #   workspace_id="1d2826eb-4a26-4f46-bddb-ef5898baa859"
 #   created_at=2023-08-30 05:33:58.45 UTC
 #   errors=[]
-#   warnings=[]>
+#   warnings=[]
+#   is_managed=true>
 ```
 {% endtab %}
 
@@ -501,34 +515,86 @@ console.log(connectWebview)
 
 {% tab title="Python" %}
 ```python
-# not yet implemented
+from seamapi import Seam
+
+seam = Seam()
+
+connect_webview = seam.connect_webviews.create(
+    provider_category="stable",
+    automatically_manage_new_devices=False
+)
+
+print(connect_webview)
+
+# ConnectWebview(workspace_id='1d2826eb-4a26-4f46-bddb-ef5898baa859',
+#                connect_webview_id='fc251dba-f7e6-4789-b638-e4135ba069d5',
+#                status='pending',
+#                url='https://connect.getseam.com/connect_webviews/view?connect_webview_id=fc251dba-f7e6-4789-b638-e4135ba069d5&auth_token=FLGyaQMhhDRtcT4XjFvDnjj3ydreMY2KP',
+#                login_successful=False,
+#                device_selection_mode='none',
+#                any_provider_allowed=False,
+#                any_device_allowed=False,
+#                created_at='2023-09-16T20:14:13.417Z',
+#                custom_metadata={},
+#                connected_account_id=None,
+#                authorized_at=None,
+#                custom_redirect_url=None,
+#                custom_redirect_failure_url=None,
+#                accepted_providers=['august',
+#                                    'avigilon_alta',
+#                                    'brivo',
+#                                    'schlage',
+#                                    'smartthings',
+#                                    'yale',
+#                                    'nuki',
+#                                    'salto',
+#                                    'controlbyweb',
+#                                    'minut',
+#                                    'my_2n',
+#                                    'kwikset',
+#                                    'ttlock',
+#                                    'noiseaware',
+#                                    'igloohome',
+#                                    'ecobee',
+#                                    'hubitat',
+#                                    'four_suites',
+#                                    'dormakaba_oracode'],
+#                accepted_devices=[],
+#                selected_provider=None,
+#                wait_for_device_creation=False,
+#                automatically_manage_new_devices=False)
+
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 ```ruby
+require "seamapi"
+
+seam = Seam::Client.new()
 connect_webview = seam.connect_webviews.create(
     provider_category: "stable",
     automatically_manage_new_devices: false,
 )
 
 puts connect_webview.inspect
-
-# Connect Webview below; note that the automatically_manage_new_devices is not yet exposed
 # <Seam::ConnectWebview:0x00438
-#   url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=16c2ef1d-9ea9-43a1-9e24-ee59f5638d1e&auth_token=LToh3cCRhxBhhtdSnFM4qKw3Si6waNGc8"
+#   url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=96e673d8-2df2-49b2-b538-6cc88cbaf78e&auth_token=7AHzFs1iJ3EHvAk1AyKwxRaeVUm2qBsG9"
 #   status="pending"
 #   workspace_id="1d2826eb-4a26-4f46-bddb-ef5898baa859"
+#   custom_metadata={}
 #   accepted_devices=[]
 #   login_successful=false
-#   accepted_providers=["august", "avigilon_alta", "schlage", "smartthings", "yale", "nuki", "salto", "controlbyweb", "minut", "my_2n", "kwikset", "ttlock", "noiseaware", "igloohome", "ecobee", "hubitat", "four_suites"]
+#   accepted_providers=["august", "avigilon_alta", "brivo", "schlage", "smartthings", "yale", "nuki", "salto", "controlbyweb", "minut", "my_2n", "kwikset", "ttlock", "noiseaware", "igloohome", "ecobee", "hubitat", "four_suites"]
 #   any_device_allowed=false
-#   connect_webview_id="16c2ef1d-9ea9-43a1-9e24-ee59f5638d1e"
+#   connect_webview_id="96e673d8-2df2-49b2-b538-6cc88cbaf78e"
 #   custom_redirect_url=nil
 #   any_provider_allowed=false
 #   device_selection_mode="none"
+#   wait_for_device_creation=false
 #   custom_redirect_failure_url=nil
-#   created_at=2023-08-31 21:03:17.631 UTC>
+#   automatically_manage_new_devices=false <====== see flag
+#   created_at=2023-09-07 05:52:41.329 UTC>
 
 ```
 {% endtab %}
@@ -536,7 +602,7 @@ puts connect_webview.inspect
 {% tab title="PHP" %}
 ```php
 $connect_webview = $seam->connect_webviews->create(
-  accepted_providers: ["schlage", "august"], 
+  provider_category: "stable",
   automatically_manage_new_devices: false
 );
 ```

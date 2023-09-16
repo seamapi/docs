@@ -455,19 +455,93 @@ console.log(accessCode)
 
 {% tab title="Python" %}
 ```python
-# not yet implemented
+from seamapi import Seam
+
+seam = Seam()
+
+access_code_id = "81bb1568-f55e-4d91-98b7-dad1259ee7df"
+
+# Update its type to ongoing
+seam.access_codes.update(
+  type="ongoing",
+  access_code=access_code_id
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 ```ruby
-# not yet implemented
+require "seamapi"
+
+seam = Seam::Client.new()
+
+access_code_id = "1ec3d38d-09bc-48f2-8e05-d0ce0900571f"
+
+# confirm that the code is currently a timebound code
+access_code = seam.access_codes.get(access_code_id)
+puts access_code.type # => timebound
+
+# update it to a timebound code
+seam.access_codes.update(
+    access_code_id: access_code_id,
+    type: "ongoing"
+)
+
+# confirm the update
+access_code = seam.access_codes.get(access_code_id)
+print(access_code.inspect)
+
+# <Seam::AccessCode:0x004b0
+#   access_code_id="1ec3d38d-09bc-48f2-8e05-d0ce0900571f"
+#   device_id="aa3958c3-4236-4f71-bd77-3b60f85b3456"
+#   name="my time-bound code"
+#   code="9333"
+#   type="ongoing"   <============ NEW TYPE
+#   status="setting"
+#   is_scheduled_on_device=false
+#   is_backup_access_code_available=false
+#   created_at=2023-09-07 05:56:05.357 UTC
+#   errors=[]
+#   warnings=[]
+#   is_managed=true>
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
 ```php
-# not yet implemented; contact us if urgently needed
+$access_code_id = "f7972a4c-83ca-40dc-8c25-f56f7668597e";
+$ongoing_code = $seam->access_codes->get($access_code_id);
+echo json_encode($ongoing_code->type);
+// "time_bound"
+
+$updated_code = $seam->access_codes->update(
+  access_code_id: $access_code_id,
+  type: "ongoing"
+);
+
+# Inspect this updated code
+echo json_encode($updated_code, JSON_PRETTY_PRINT);
+
+// {
+//     "access_code_id": "f7972a4c-83ca-40dc-8c25-f56f7668597e",
+//     "device_id": "5a9dee23-e50f-4da7-88f3-fef38bf07857",
+//     "name": "my time-bound code",
+//     "type": "ongoing",
+//     "status": "setting",
+//     "starts_at": null,
+//     "ends_at": null,
+//     "code": "1611",
+//     "created_at": "2023-09-16T20:18:25.837Z",
+//     "errors": [],
+//     "warnings": [],
+//     "is_managed": true,
+//     "common_code_key": null,
+//     "is_waiting_for_code_assignment": null,
+//     "is_scheduled_on_device": false,
+//     "pulled_backup_access_code_id": "8e5a9970-3804-4dfc-af61-fb81b0a4483d",
+//     "is_backup_access_code_available": true,
+//     "is_backup": null
+// }
 ```
 {% endtab %}
 

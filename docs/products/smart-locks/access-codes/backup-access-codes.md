@@ -83,10 +83,57 @@ print(device.properties.supports_backup_access_code_pool)
 
 {% tab title="Ruby" %}
 ```ruby
+require 'json'
+require "seamapi"
+
+seam = Seam::Client.new()
+
 device_id = "0e2e6262-7f91-4970-a58d-47ef30b41e2e"
 device = seam.devices.get(device_id)
 
-puts device.properties["supports_backup_access_code_pool"]
+puts JSON.pretty_generate(device.properties)
+# {
+#   "supports_backup_access_code_pool": true <===== SUPPORTS BACKUP CODES
+#   "locked": false,
+#   "online": true,
+#   "manufacturer": "nuki",
+#   "battery_level": 0.86,
+#   "nuki_metadata": {
+#     "device_id": "545636389",
+#     "device_name": "Office Lock",
+#     "keypad_battery_critical": false
+#   },
+#   "keypad_battery": {
+#     "level": 1
+#   },
+#   "supported_code_lengths": [
+#     6
+#   ],
+#   "has_native_entry_events": true,
+#   "name": "Office Lock",
+#   "model": {
+#     "display_name": "Lock",
+#     "manufacturer_display_name": "Nuki"
+#   },
+#   "battery": {
+#     "level": 0.86,
+#     "status": "full"
+#   },
+#   "image_url": "https://connect.getseam.com/assets/images/devices/nuki_smart_lock_3_pro_black.png",
+#   "image_alt_text": "Nuki Smart Lock 3.0 Pro Black, Front",
+#   "code_constraints": [
+#     {
+#       "constraint_type": "cannot_start_with_12"
+#     },
+#     {
+#       "constraint_type": "no_zeros"
+#     },
+#     {
+#       "constraint_type": "name_length",
+#       "max_length": 20
+#     }
+#   ],
+# }
 ```
 {% endtab %}
 
@@ -175,19 +222,112 @@ console.log(createdAccessCode)
 
 {% tab title="Python" %}
 ```python
-# not yet implemented
+from seamapi import Seam
+
+seam = Seam()
+device_id = "5a9dee23-e50f-4da7-88f3-fef38bf07857"
+
+created_access_code = seam.access_codes.create(
+  device=device_id,
+  name="my time-bound code",
+  starts_at="2025-01-01T16:00:00Z",
+  ends_at="2025-01-22T12:00:00Z",
+  use_backup_access_code_pool=True
+)
+
+print(created_access_code)
+
+# AccessCode(access_code_id='f7972a4c-83ca-40dc-8c25-f56f7668597e',
+#            device_id='5a9dee23-e50f-4da7-88f3-fef38bf07857',
+#            type='time_bound',
+#            code='1611',
+#            created_at='2023-09-16T20:18:25.837Z',
+#            starts_at='2025-01-01T16:00:00.000Z',
+#            ends_at='2025-01-22T12:00:00.000Z',
+#            name='my time-bound code',
+#            status='unset',
+#            common_code_key=None,
+#            is_managed=True,
+#            is_waiting_for_code_assignment=None,
+#            is_scheduled_on_device=False,
+#            pulled_backup_access_code_id=None,
+#            is_backup_access_code_available=True,
+#            is_backup=None)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 ```ruby
-# not yet implemented
+require "seamapi"
+
+seam = Seam::Client.new()
+device_id = "aa3958c3-4236-4f71-bd77-3b60f85b3456"
+
+created_access_code = seam.access_codes.create(
+  device_id: device_id,
+  name: "my time-bound code",
+  starts_at: "2025-01-01T16:00:00Z",
+  ends_at: "2025-01-22T12:00:00Z",
+  use_backup_access_code_pool: true # PASS THIS FLAG
+)
+
+puts created_access_code.inspect
+
+# <Seam::AccessCode:0x00438
+#   code="0693"
+#   name="my time-bound code"
+#   type="time_bound"
+#   errors=[]
+#   status="unset"
+#   ends_at=2025-01-22 12:00:00 UTC
+#   warnings=[]
+#   device_id="aa3958c3-4236-4f71-bd77-3b60f85b3456"
+#   starts_at=2025-01-01 16:00:00 UTC
+#   created_at=2023-09-07 06:05:18.294 UTC
+#   is_managed=true
+#   access_code_id="f8fa79fe-86fe-4044-866a-dfc0f259095c"
+#   is_scheduled_on_device=false
+#   pulled_backup_access_code_id=nil
+#   is_backup_access_code_available=false>
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
 ```php
-# not yet implemented
+$device_id = "5a9dee23-e50f-4da7-88f3-fef38bf07857";
+
+$access_code = $seam->access_codes->create(
+  device_id: $device_id,
+  name: 'my timebound code',
+  starts_at:  "2025-01-01T16:00:00Z",
+  ends_at: "2025-01-22T12:00:00Z",
+  use_backup_access_code_pool: true
+);
+
+# Inspect this timebound code
+echo json_encode($access_code, JSON_PRETTY_PRINT);
+
+
+// {
+//   "access_code_id": "a91604eb-ebae-420c-a51e-07a30422fd94",
+//   "device_id": "5a9dee23-e50f-4da7-88f3-fef38bf07857",
+//   "name": "my timebound code",
+//   "type": "time_bound",
+//   "status": "unset",
+//   "starts_at": "2025-01-01T16:00:00.000Z",
+//   "ends_at": "2025-01-22T12:00:00.000Z",
+//   "code": "6837",
+//   "created_at": "2023-09-16T20:54:20.872Z",
+//   "errors": [],
+//   "warnings": [],
+//   "is_managed": true,
+//   "common_code_key": null,
+//   "is_waiting_for_code_assignment": null,
+//   "is_scheduled_on_device": false,
+//   "pulled_backup_access_code_id": null,
+//   "is_backup_access_code_available": true,
+//   "is_backup": null
+// }
 ```
 {% endtab %}
 
@@ -258,19 +398,64 @@ console.log(accessCode)
 
 {% tab title="Python" %}
 ```python
-# not implemented
+from seamapi import Seam
+
+seam = Seam()
+
+access_code_id = "f7972a4c-83ca-40dc-8c25-f56f7668597e"
+access_code = seam.access_codes.get(access_code_id)
+
+# Confirm the backup code is available
+print(access_code.is_backup_access_code_available)
+# true
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 ```ruby
-# not yet implemented
+require "seamapi"
+
+seam = Seam::Client.new()
+access_code_id="f8fa79fe-86fe-4044-866a-dfc0f259095c"
+
+access_code = seam.access_codes.get(access_code_id)
+
+# check that it supports backup access code
+puts access_code.is_backup_access_code_available
+# => true
+
+# or inspect full access code object
+puts access_code.inspect
+# <Seam::AccessCode:0x00438
+#   access_code_id="f8fa79fe-86fe-4044-866a-dfc0f259095c"
+#   device_id="aa3958c3-4236-4f71-bd77-3b60f85b3456"
+#   name="my time-bound code"
+#   code="0693"
+#   type="time_bound"
+#   status="unset"
+#   is_scheduled_on_device=false
+#   starts_at=2025-01-01 16:00:00 UTC
+#   ends_at=2025-01-22 12:00:00 UTC
+#   pulled_backup_access_code_id=nil
+#   is_backup_access_code_available=true
+#   created_at=2023-09-07 06:05:18.294 UTC
+#   errors=[]
+#   warnings=[]
+#   is_managed=true>
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
 ```php
-# not yet implemented
+$access_code_id = "a91604eb-ebae-420c-a51e-07a30422fd94";
+
+$access_code = $seam->access_codes->get(
+  access_code_id: $access_code_id
+);
+
+# Inspect access code is_backup_access_code_available
+echo json_encode($access_code->is_backup_access_code_available);
+# => true
 ```
 {% endtab %}
 
@@ -346,19 +531,99 @@ console.log(backupAccessCode)
 
 {% tab title="Python" %}
 ```python
-# not implemented
+from seamapi import Seam
+
+seam = Seam()
+
+access_code_id = "f7972a4c-83ca-40dc-8c25-f56f7668597e"
+backup_code = seam.access_codes.pull_backup_access_code(
+    access_code=access_code_id
+)
+
+print(backup_code)
+
+# AccessCode(access_code_id='8e5a9970-3804-4dfc-af61-fb81b0a4483d',
+#            device_id='5a9dee23-e50f-4da7-88f3-fef38bf07857',
+#            type='time_bound',
+#            code='1299',
+#            created_at='2023-09-16T20:18:26.051Z',
+#            starts_at='2023-09-16T20:22:45.074Z',
+#            ends_at='2025-01-22T12:00:00.000Z',
+#            name='Backup 8e5a9970-3804-4dfc-af61-fb81b0a4483d (Seam)',
+#            status='set',
+#            common_code_key=None,
+#            is_managed=True,
+#            is_waiting_for_code_assignment=None,
+#            is_scheduled_on_device=None,
+#            pulled_backup_access_code_id=None,
+#            is_backup_access_code_available=False,
+#            is_backup=True)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 ```ruby
-# not yet implemented
+require "seamapi"
+
+seam = Seam::Client.new()
+access_code_id="f8fa79fe-86fe-4044-866a-dfc0f259095c"
+
+# pass the origin access code ID to the pull back up code function
+backup_code = seam.access_codes.pull_backup_access_code(access_code_id)
+
+# Inspect the backup code
+puts backup_code.inspect
+
+# <Seam::AccessCode:0x00460
+#   access_code_id="0c15b476-bdcc-4194-8abf-b0dd944e18fa"
+#   device_id="aa3958c3-4236-4f71-bd77-3b60f85b3456"
+#   name="Backup 0c15b476-bdcc-4194-8abf-b0dd944e18fa (Seam)"
+#   code="1811"
+#   type="time_bound"
+#   status="set"
+#   starts_at=2023-09-07 06:10:04.432 UTC
+#   ends_at=2025-01-22 12:00:00 UTC
+#   is_backup=true
+#   is_backup_access_code_available=false
+#   created_at=2023-09-07 06:05:19.363 UTC
+#   errors=[]
+#   warnings=[]
+#   is_managed=true>
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
 ```php
-# not yet implemented
+$access_code_id = "a91604eb-ebae-420c-a51e-07a30422fd94";
+
+$backup_code = $seam->access_codes->pull_backup_access_code(
+  access_code_id: $access_code_id
+);
+
+# Inspect access codes
+echo json_encode($backup_code, JSON_PRETTY_PRINT);
+
+// {
+//     "access_code_id": "e9e353c9-acb1-454f-970b-2c011ba504d0",
+//     "device_id": "5a9dee23-e50f-4da7-88f3-fef38bf07857",
+//     "name": "Backup e9e353c9-acb1-454f-970b-2c011ba504d0 (Seam)",
+//     "type": "time_bound",
+//     "status": "set",
+//     "starts_at": "2023-09-16T20:59:37.069Z",
+//     "ends_at": "2025-01-22T12:00:00.000Z",
+//     "code": "3835",
+//     "created_at": "2023-09-16T20:18:26.070Z",
+//     "errors": [],
+//     "warnings": [],
+//     "is_managed": true,
+//     "common_code_key": null,
+//     "is_waiting_for_code_assignment": null,
+//     "is_scheduled_on_device": null,
+//     "pulled_backup_access_code_id": null,
+//     "is_backup_access_code_available": false,
+//     "is_backup": true
+// }
 ```
 {% endtab %}
 

@@ -73,7 +73,13 @@ print(device.capabilities_supported)
 
 {% tab title="Ruby" %}
 ```ruby
-# NOT YET IMPLEMENTED
+seam = Seam::Client.new()
+device_id = "aa3958c3-4236-4f71-bd77-3b60f85b3456"
+some_lock = seam.locks.get(device_id)
+
+# confirm that the device supports the "access code" capability
+puts some_lock.capabilities_supported
+# [access_code, lock]
 ```
 {% endtab %}
 
