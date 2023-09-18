@@ -151,6 +151,11 @@
 
 ## 🎛 Device Guides
 
+* [Hubitat Elevation Hub](device-guides/hubitat-elevation-hub.md)
+* [PTI Storlogix Cloud](device-guides/pti-storlogix-cloud.md)
+* [Salto Locks](device-guides/salto-locks.md)
+* [TTLock Locks](device-guides/ttlock-locks.md)
+* [Yale Locks](device-guides/yale-locks.md)
 * [Get started with Smart Locks](device-guides/get-started-with-smartlocks-api.md)
 * [Get started with August Locks](device-guides/get-started-with-august-locks.md)
 * [Get started with ControlByWeb Devices](device-guides/get-started-with-controlbyweb-devices.md)
@@ -163,15 +168,10 @@
 * [Get started with Minut Sensors](device-guides/get-started-with-minut-sensors.md)
 * [Get started with 2N Intercoms](device-guides/get-started-with-2n-intercoms.md)
 * [Get started with SmartThings Hubs + Smart Locks](device-guides/get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Hubitat Elevation Hub](device-guides/hubitat-elevation-hub.md)
 * [Get started with Salto Locks](device-guides/get-started-with-salto-locks.md)
-* [PTI Storlogix Cloud](device-guides/pti-storlogix-cloud.md)
-* [Salto Locks](device-guides/salto-locks.md)
 * [Get started with TTLock Devices](device-guides/get-started-with-ttlock-devices.md)
-* [TTLock Locks](device-guides/ttlock-locks.md)
 * [Get started with NoiseAware Sensors](device-guides/get-started-with-noiseaware-sensors.md)
 * [Get started with Igloohome Locks](device-guides/get-started-with-igloo-locks.md)
-* [Yale Locks](device-guides/yale-locks.md)
 * [Sandbox & Sample Data](device-guides/sandbox-and-sample-data/README.md)
   * [2N Intercoms Sample Data](device-guides/sandbox-and-sample-data/2n-intercoms-sample-data.md)
   * [August Locks Sample Data](device-guides/sandbox-and-sample-data/august-locks-sample-data.md)
