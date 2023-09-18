@@ -112,7 +112,7 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 
 * **username:** jane
 * **password:** 1234
-* **api-token:** 1234
+* **api-token:** 123456
 
 <figure><img src="../.gitbook/assets/guides/dormakaba-oracode-connect-flow-screens.png" alt=""><figcaption><p>Seam Connect Webview flow to connect Dormakaba Oracode account with Seam</p></figcaption></figure>
 
