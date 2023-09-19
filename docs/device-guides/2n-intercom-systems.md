@@ -1,5 +1,5 @@
 ---
-description: Guide for using 2N<sup>&reg;</sup> Intercom systems with Seam
+description: Guide for using 2N<sup>&reg;</sup> intercom systems with Seam
 ---
 
 # 2N Intercom Systems
