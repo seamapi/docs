@@ -145,7 +145,6 @@
 * [Device Provider Metadata](reference/device-provider-metadata.md)
 * [Glossary](reference/glossary.md)
 * [Help Center](reference/help-center/README.md)
-  * [Lockly Integration Configuration](reference/help-center/lockly-integration-configuration.md)
   * [What is an Action Attempt, when is it used?](reference/help-center/what-is-an-action-attempt-when-is-it-used.md)
   * [How often am I billed with Seam?](reference/help-center/how-often-am-i-billed-with-seam.md)
   * [Handling Recurring Access Codes](reference/help-center/handling-recurring-access-codes.md)
