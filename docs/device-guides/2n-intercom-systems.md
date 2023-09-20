@@ -1,5 +1,5 @@
 ---
-description: Guide for using 2N<sup>&reg;</sup> intercom systems with Seam
+description: Guide for using 2N® intercom systems with Seam
 ---
 
 # 2N Intercom Systems
@@ -30,12 +30,9 @@ We support the following features:
 ## Set Up Instructions
 
 1. [Create a My2N account](https://my2n.com/2n-remote-configuration) if you have not done so already.
-
 2. In My2N, add your 2N IP devices to the sites in which the devices are located.
-
 3. Make sure that Remote API Access (RAA) is enabled for your My2N company. Contact [integrations@2n.com](mailto:integrations@2n.com) to activate RAA.
-
-4. Note your login credentials for My2N, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews) to add your devices to Seam.
+4. Note your login credentials for My2N, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
 
 ***
 
@@ -43,4 +40,4 @@ We support the following features:
 
 Find your local distributor using the following page:
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Locate Your 2N distributor</strong></td><td></td><td><a href="https://www.2n.com/en_GB/how-to-buy/where-to-buy">https://www.2n.com/en_GB/how-to-buy/where-to-buy</a></td><td><a href="../.gitbook/assets/2n-logo.png">2n-logo.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Locate Your 2N Distributor</strong></td><td></td><td><a href="https://www.2n.com/en_GB/how-to-buy/where-to-buy">https://www.2n.com/en_GB/how-to-buy/where-to-buy</a></td><td><a href="../.gitbook/assets/2n-logo.png">2n-logo.png</a></td></tr></tbody></table>
