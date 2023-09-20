@@ -12,7 +12,7 @@ description: Guide for using 2N® intercom systems with Seam
 
 ## Supported Devices
 
-This integration supports all [2n IP intercoms](https://wiki.2n.com/is/en).
+This integration supports all [2N IP intercoms](https://wiki.2n.com/is/en).
 
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
@@ -32,7 +32,7 @@ We support the following features:
 1. [Create a My2N account](https://my2n.com/2n-remote-configuration) if you have not done so already.
 2. In My2N, add your 2N IP devices to the sites in which the devices are located.
 3. Make sure that Remote API Access (RAA) is enabled for your My2N company. Contact [integrations@2n.com](mailto:integrations@2n.com) to activate RAA.
-4. Note your login credentials for My2N, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
+4. Note your login credentials for My2N, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews.md) to add your devices to Seam.
 
 ***
 

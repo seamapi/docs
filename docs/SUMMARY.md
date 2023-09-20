@@ -154,6 +154,7 @@
 
 * [2N Intercom Systems](device-guides/2n-intercom-systems.md)
 * [Hubitat Elevation Hub](device-guides/hubitat-elevation-hub.md)
+* [Lockly Locks](device-guides/lockly-locks.md)
 * [PTI Storlogix Cloud](device-guides/pti-storlogix-cloud.md)
 * [Salto Locks](device-guides/salto-locks.md)
 * [TTLock Locks](device-guides/ttlock-locks.md)
