@@ -22,6 +22,10 @@ To use a sandbox, you will first need to create a Sandbox Workspace and create a
 [doorking-sample-data.md](doorking-sample-data.md)
 {% endcontent-ref %}
 
+{% content-ref url="dormakaba-oracode-sample-data.md" %}
+[dormakaba-oracode-sample-data.md](dormakaba-oracode-sample-data.md)
+{% endcontent-ref %}
+
 {% content-ref url="ecobee-sample-data.md" %}
 [ecobee-sample-data.md](ecobee-sample-data.md)
 {% endcontent-ref %}
@@ -38,8 +42,16 @@ To use a sandbox, you will first need to create a Sandbox Workspace and create a
 [linear-sample-data.md](linear-sample-data.md)
 {% endcontent-ref %}
 
-{% content-ref url="lockly-sample-data.md" %}
-[lockly-sample-data.md](lockly-sample-data.md)
+{% content-ref url="lockly-lock-sample-data.md" %}
+[lockly-lock-sample-data.md](lockly-lock-sample-data.md)
+{% endcontent-ref %}
+
+{% content-ref url="kwikset-locks-sample-data.md" %}
+[kwikset-locks-sample-data.md](kwikset-locks-sample-data.md)
+{% endcontent-ref %}
+
+{% content-ref url="igloohome-sample-data.md" %}
+[igloohome-sample-data.md](igloohome-sample-data.md)
 {% endcontent-ref %}
 
 {% content-ref url="minut-noise-sensor-sample-data.md" %}
@@ -54,8 +66,8 @@ To use a sandbox, you will first need to create a Sandbox Workspace and create a
 [noiseaware-sample-data.md](noiseaware-sample-data.md)
 {% endcontent-ref %}
 
-{% content-ref url="dormakaba-oracode-sample-data.md" %}
-[dormakaba-oracode-sample-data.md](dormakaba-oracode-sample-data.md)
+{% content-ref url="pti-storlogix-cloud-sample-data.md" %}
+[pti-storlogix-cloud-sample-data.md](pti-storlogix-cloud-sample-data.md)
 {% endcontent-ref %}
 
 {% content-ref url="salto-sample-data.md" %}
@@ -70,18 +82,10 @@ To use a sandbox, you will first need to create a Sandbox Workspace and create a
 [smartthings-sample-data.md](smartthings-sample-data.md)
 {% endcontent-ref %}
 
-{% content-ref url="yale-sample-data.md" %}
-[yale-sample-data.md](yale-sample-data.md)
-{% endcontent-ref %}
-
-{% content-ref url="kwikset-locks-sample-data.md" %}
-[kwikset-locks-sample-data.md](kwikset-locks-sample-data.md)
-{% endcontent-ref %}
-
 {% content-ref url="ttlock-sample-data.md" %}
 [ttlock-sample-data.md](ttlock-sample-data.md)
 {% endcontent-ref %}
 
-{% content-ref url="igloohome-sample-data.md" %}
-[igloohome-sample-data.md](igloohome-sample-data.md)
+{% content-ref url="yale-sample-data.md" %}
+[yale-sample-data.md](yale-sample-data.md)
 {% endcontent-ref %}
