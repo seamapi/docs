@@ -10,7 +10,7 @@ Credentials determine the means by which a user gains access at an entrance. Cur
 
 To add a credential, provide the user ID and the desired PIN code.
 
-For PTI Systems, the PIN code value must be in the range of 1 - 4294967296. Duplicate PIN codes are not allowed within a system.
+For PTI Systems, the PIN code value must be an integer in the range of 1 - 4294967296. Duplicate PIN codes are not allowed within a system.
 
 {% tabs %}
 {% tab title="Curl" %}
