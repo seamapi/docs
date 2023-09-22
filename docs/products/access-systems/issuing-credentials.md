@@ -21,7 +21,7 @@ curl -X 'POST' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
   -d '{
-  "acs_user_id": "f3ce220c-294f-458e-8311-31a282147cab",
+  "acs_user_id": "00000000-0000-0000-0000-000000000000",
   "code": "1234"
 }'
 ```
@@ -31,12 +31,12 @@ curl -X 'POST' \
 ```
 {
   "acs_credential": {
-    "acs_credential_id": "d5dc9756-b061-4255-8801-1b13ac80eb16",
-    "acs_user_id": "f3ce220c-294f-458e-8311-31a282147cab",
-    "code": "23432343",
-    "acs_system_id": "bd8a0f31-18f0-4d98-836a-951913d26c89",
-    "workspace_id": "9946a591-2da2-4558-9556-0cadf93f4040",
-    "created_at": "2023-09-22T18:54:42.352Z"
+    "acs_credential_id": "11111111-1111-1111-1111-111111111111",
+    "acs_user_id": "00000000-0000-0000-0000-000000000000",
+    "code": "1234",
+    "acs_system_id": "22222222-2222-2222-2222-222222222222",
+    "workspace_id": "33333333-3333-3333-3333-333333333333",
+    "created_at": "2023-01-01T00:00:00Z"
   },
   "ok": true
 }
@@ -58,10 +58,10 @@ To remove a credential for a user, provide both the credential ID.
 curl -X 'POST' \
   'https://connect.getseam.com/acs/credentials/delete' \
   -H 'accept: application/json' \
-  -H 'Authorization: Bearer seam_test2jjY_9YgUrnuR7y29jWkUFQ9i3qMh' \
+  -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
   -d '{
-  "acs_credential_id": "d5dc9756-b061-4255-8801-1b13ac80eb16"
+  "acs_credential_id": "11111111-1111-1111-1111-111111111111"
 }'
 ```
 

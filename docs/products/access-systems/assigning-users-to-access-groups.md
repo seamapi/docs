@@ -26,8 +26,8 @@ curl -X 'POST' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
   -d '{
-  "acs_user_id": "f3ce220c-294f-458e-8311-31a282147cab",
-  "acs_access_group_id": "39bf0dad-da02-4321-b352-25f2cf97e83a"
+  "acs_user_id": "00000000-0000-0000-0000-000000000000",
+  "acs_access_group_id": "11111111-1111-1111-1111-111111111111"
 }'
 ```
 
@@ -55,11 +55,11 @@ To [remove a user from an access group](../../api-clients/access-control-systems
 curl -X 'POST' \
   'https://connect.getseam.com/acs/users/remove_from_access_group' \
   -H 'accept: */*' \
-  -H 'Authorization: Bearer seam_test2jjY_9YgUrnuR7y29jWkUFQ9i3qMh' \
+  -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
   -d '{
-  "acs_user_id": "f3ce220c-294f-458e-8311-31a282147cab",
-  "acs_access_group_id": "39bf0dad-da02-4321-b352-25f2cf97e83a"
+  "acs_user_id": "00000000-0000-0000-0000-000000000000",
+  "acs_access_group_id": "11111111-1111-1111-1111-111111111111"
 }'
 ```
 
