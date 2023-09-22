@@ -8,7 +8,9 @@ Credentials determine the means by which a user gains access at an entrance. Cur
 
 ### Adding a Credential for a User
 
-To add a credential for a user, provide both the user ID and the pin code you want to program.
+To add a credential, provide the user ID and the desired PIN code.
+
+For PTI Systems, the PIN code value must be in the range of 1 - 4294967296. Duplicate PIN codes are not allowed within a system.
 
 {% tabs %}
 {% tab title="Curl" %}
