@@ -21,12 +21,12 @@ We support the following features:
 
 ***
 
-## Set Up Instructions
+## Setup Instructions
 
 1. [Create a My2N account](https://my2n.com/2n-remote-configuration) if you have not done so already.
 2. In My2N, add your 2N IP devices to the sites in which the devices are located.
 3. Make sure that Remote API Access (RAA) is enabled for your My2N company. Contact [integrations@2n.com](mailto:integrations@2n.com) to activate RAA.
-4. Note your login credentials for My2N, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews.md) to add your devices to Seam.
+4. Note your login credentials for My2N, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews.md) to add your 2N devices to Seam.
 
 ***
 

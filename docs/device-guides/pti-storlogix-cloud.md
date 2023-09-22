@@ -10,7 +10,7 @@ This integration uses [Storlogix Cloud](https://ptisecurity.com/products/storlog
 
 ***
 
-## Set Up Instructions&#x20;
+## Setup Instructions&#x20;
 
 To connect your Storlogix site, Seam'll need the following information about your facility:
 

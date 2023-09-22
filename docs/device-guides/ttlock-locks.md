@@ -45,7 +45,7 @@ The TTLock gateway allows the smart lock to connect directly to the internet. By
 
 ***
 
-## Set Up Instructions
+## Setup Instructions
 
 ### 1. Install your TTLock lock and set it up on the [TTLock app](https://www.ttlock.com/#/lock/app)
 

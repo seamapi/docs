@@ -16,7 +16,7 @@ The following device types are currently supported:
 
 ***
 
-## Set Up Instructions&#x20;
+## Setup Instructions&#x20;
 
 ### 1. Access the Hubitat Hub Dashboard
 

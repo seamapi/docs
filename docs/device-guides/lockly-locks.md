@@ -27,7 +27,7 @@ We support the following features:
 
 ***
 
-## Set Up Instructions
+## Setup Instructions
 
 1. Download and create an account for the [Lockly mobile app](https://lockly.com/pages/download-lockly-app) if you have not done so already.
 2. In the Lockly mobile app, set up each of your Lockly locks as follows:
