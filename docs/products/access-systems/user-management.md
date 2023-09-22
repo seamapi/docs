@@ -10,8 +10,6 @@ description: >-
 
 This guide explains how to create and manage users on an access system. With the Access System API, you can automate issuing access to long-term tenants or visitors.
 
-Seam allows you to adjust the current heating and cooling settings, and the fan mode of a thermostat. This guide will walk you through how to do this with the API.
-
 ***
 
 ## Before You Begin
