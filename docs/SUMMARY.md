@@ -32,7 +32,7 @@
   * [User Management](products/access-systems/user-management.md)
   * [Assigning Users to Access Groups](products/access-systems/assigning-users-to-access-groups.md)
   * [Issuing Credentials](products/access-systems/issuing-credentials.md)
-  * [Suspending & Unsuspending a User](products/access-systems/suspending-and-unsuspending-a-user.md)
+  * [Suspending and Unsuspending Users](products/access-systems/suspending-and-unsuspending-users.md)
 * [🌡 Thermostats](products/thermostats/README.md)
   * [Set HVAC and fan mode settings](products/thermostats/configure-current-climate-settings.md)
   * [Schedule future Climate Setting Schedules](products/thermostats/thermostats-climate-setting-schedules.md)

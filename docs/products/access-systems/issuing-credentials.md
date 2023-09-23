@@ -1,16 +1,29 @@
+---
+description: Learn how to issue credentials to and remove credentials from users.
+---
+
 # Issuing Credentials
 
 ## Overview
 
-Credentials determine the means by which a user gains access at an entrance. Currently, we only support the issuance of PIN codes for access.
+Credentials determine the means by which a user gains access at an entrance.
+
+{% hint style="info" %}
+Currently, Seam only supports the issuance of PIN codes for access.
+{% endhint %}
 
 ***
 
-### Adding a Credential for a User
+### Add a Credential for a User
 
-To add a credential, provide the user ID and the desired PIN code.
+To add a credential for a user (that is, to create a new credential), provide the user ID (`acs_user_id`) and the desired PIN code (`code`).
 
-For PTI Systems, the PIN code value must be an integer in the range of 1 - 4294967296. Duplicate PIN codes are not allowed within a system.
+Note the following restrictions for PIN codes:
+
+* For [PTI Security Systems™](../../device-guides/pti-storlogix-cloud.md), the PIN code value must be an integer in the range 1-4294967296.
+* Duplicate PIN codes are not allowed within a system.
+
+The response includes the ID (`acs_credential_id`) of the newly-created credential, the assigned code (`code`), and the user (`acs_user_id`) associated with the credential. &#x20;
 
 {% tabs %}
 {% tab title="Curl" %}
@@ -48,9 +61,9 @@ curl -X 'POST' \
 
 ***
 
-### Removing a Credential for a User
+### Remove a Credential from a User
 
-To remove a credential for a user, provide both the credential ID.
+To remove a credential from a user, provide the credential ID (`acs_credential_id`).
 
 {% tabs %}
 {% tab title="Curl" %}

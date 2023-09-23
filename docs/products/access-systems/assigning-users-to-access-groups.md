@@ -8,13 +8,15 @@ description: >-
 
 ## Overview
 
-Access groups define specific permissions for various doors or areas. By utilizing these groups, property managers can easily assign or revoke access rights for numerous users, based on their rights and needs. Follow this guide to learn how to grant users access permissions by adding them into the appropriate access groups.
+Access groups define sets of users, combined with sets of permissions. These permissions include both the sets of doors, areas, or other assets that the users can access and the schedules during which the users can access these assets. By using access groups, property managers can assign or revoke access rights easily for numerous users, based on their rights and needs.
+
+This guide explains how to grant access permissions to users by adding them to the appropriate access groups.
 
 ***
 
-### Adding a User to an Access Group
+### Add a User to an Access Group
 
-To [add a user to an access group](../../api-clients/access-control-systems/users/add-user-to-access-group.md), provide both the user ID and the access group ID.
+To [add a user to an access group](../../api-clients/access-control-systems/users/add-user-to-access-group.md), provide both the user ID (`acs_user_id`) and the access group ID (`acs_access_group_id`).
 
 {% tabs %}
 {% tab title="Curl" %}
@@ -43,9 +45,9 @@ curl -X 'POST' \
 
 ***
 
-### Removing a User from an Access Group
+### Remove a User from an Access Group
 
-To [remove a user from an access group](../../api-clients/access-control-systems/users/remove-user-from-access-group.md), provide both the user ID and the access group ID.
+To [remove a user from an access group](../../api-clients/access-control-systems/users/remove-user-from-access-group.md), provide both the user ID (`acs_user_id`) and the access group ID (`acs_access_group_id`).
 
 {% tabs %}
 {% tab title="Curl" %}

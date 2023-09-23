@@ -1,6 +1,6 @@
 ---
 description: >-
-  Learn how to manage your users, and sync tenants and visitors from your
+  Learn how to manage your users and sync tenants and visitors from your
   property management platform.
 ---
 
@@ -8,13 +8,13 @@ description: >-
 
 ## Overview
 
-This guide explains how to create and manage users on an access system. With the Access System API, you can automate issuing access to long-term tenants or visitors.
+This guide explains how to create and manage users in an access control system (ACS). Using the [Access Control Systems API](../../api-clients/access-control-systems/), you can automate issuing access to long-term tenants or visitors.
 
 ***
 
 ## Before You Begin
 
-To add users to your access system, we'll first need to retrieve the ID of the access system you want to configure. Use the [Get System](../../api-clients/access-control-systems/systems/get-a-system.md) or [List Systems](../../api-clients/access-control-systems/systems/list-systems.md) to retrieve the access system details. After you've done that, come back here and keep reading.
+To add users to your access system, first retrieve the ID of the access system that you want to configure. To retrieve the access system details, use [Get System](../../api-clients/access-control-systems/systems/get-a-system.md) or [List Systems](../../api-clients/access-control-systems/systems/list-systems.md). Then, return to this topic to learn how to manage users.
 
 {% tabs %}
 {% tab title="Curl" %}
@@ -50,11 +50,11 @@ curl -X 'POST' \
 
 ***
 
-### Creating a User
+### Create a User
 
-[Create a user](../../api-clients/access-control-systems/users/create-user.md) by providing the `acs_system_id` of the system, and the attributes of the user.
+To [create a user](../../api-clients/access-control-systems/users/create-user.md), provide the ACS system ID (`acs_system_id`) of the system and the attributes of the user, such as the full name (`full_name`), email address (`email`), phone number (`phone_number`), and so on.
 
-You can also assign a user to an access group by including their access group IDs in the `acs_access_group_ids` parameter.
+You can also assign a user to one or more access groups by including the access group IDs for the user as an array of strings in the `acs_access_group_ids` parameter.
 
 {% tabs %}
 {% tab title="Curl" %}
@@ -96,9 +96,9 @@ curl -X 'POST' \
 
 ***
 
-### Updating a User
+### Update a User
 
-To [update a user](../../api-clients/access-control-systems/users/update-user.md), provide the `user_id` of the desired user along with the attributes you wish to modify.
+To [update a user](../../api-clients/access-control-systems/users/update-user.md), provide the id (`user_id`) of the desired user, along with the attributes that you want to modify.
 
 {% tabs %}
 {% tab title="Curl" %}
@@ -137,9 +137,9 @@ curl -X 'POST' \
 
 ***
 
-### Deleting a User
+### Delete a User
 
-Provide the `user_id` of the user you wish to delete.
+To delete a user, provide the id (`user_id`) of the user that you want to delete.
 
 {% tabs %}
 {% tab title="Curl" %}
@@ -168,9 +168,9 @@ curl -X 'POST' \
 
 ***
 
-### Listing Users
+### List Users
 
-To list users, provide the `acs_system_id` of the system.
+To list all users within an ACS, provide the id (`acs_system_id)` of the ACS.
 
 {% tabs %}
 {% tab title="Curl" %}
