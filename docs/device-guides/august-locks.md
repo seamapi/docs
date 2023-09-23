@@ -37,7 +37,7 @@ We support the following features:
 
 ***
 
-## Set Up Instructions
+## Setup Instructions
 
 1. Create an account in the [August Home App](https://august.com/pages/app) if you have not done so already.
 2. In the August Home App, add your August devices.

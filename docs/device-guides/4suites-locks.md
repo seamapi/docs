@@ -30,7 +30,7 @@ We support the following features:
 
 ## Where to Order
 
-Obtain a quite for 4SUITES devices by requesting a quote using the 4SUITES **Contact Us Form**.
+To purchase 4SUITES devices, request a quote using the 4SUITES **Contact Us Form**.
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>4SUITES Contact Us Form</strong></td><td></td><td><a href="https://www.4suiteshq.com/contact-us/">https://www.4suiteshq.com/contact-us/</a></td><td><a href="../.gitbook/assets/4suites-logo.png">4suites-logo.png</a></td></tr></tbody></table>
 

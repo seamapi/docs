@@ -33,7 +33,7 @@ We support the following features:
 
 Salto Locks does not allow a user to configure custom PIN codes. When creating an access code on a Salto door lock, their system will automatically generate a 6-10 digit PIN code. You will be able to retrieve the PIN code from the `code` property on the access code object.
 
-### Salto-specific Access Code Errors
+### Salto-Specific Access Code Errors
 
 `salto_site_user_not_subscribed`
 
