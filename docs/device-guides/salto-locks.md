@@ -6,7 +6,7 @@ description: Guide for using Salto door locks with Seam
 
 ## Overview
 
-Salto Systems produces world-class electronic access control solutions. Their locks work with a vast array of entrance types, from traditional doors and elevators, to key cylinders and parking stiles. They also support a versatile range of key credentials -- their locks work with RFID tags, mobile keys, and pin codes. Using their mobile app and app dashboard, businesses can easily assign, monitor, and revoke access rights.
+Salto Systems produces world-class electronic access control solutions. Their locks work with a vast array of entrance types, from traditional doors and elevators, to key cylinders and parking stiles. They also support a versatile range of key credentials -- their locks work with RFID tags, mobile keys, and PIN codes. Using their mobile app and app dashboard, businesses can easily assign, monitor, and revoke access rights.
 
 ***
 
@@ -23,7 +23,7 @@ This integration works any devices connected via their [SaltoKS platform](https:
 We support the following features:
 
 * [Triggering web unlock actions](../api-clients/locks/unlock-a-lock.md)
-* [Programming access codes](../products/smart-locks/access-codes/) on door locks and card readers that have a pin pad.
+* [Programming access codes](../products/smart-locks/access-codes/) on door locks and card readers that have a PIN pad.
 
 ***
 
@@ -31,7 +31,7 @@ We support the following features:
 
 ### Access Code Limitations
 
-Salto Locks does not allow a user to configure custom pin codes. When creating an access code on a Salto door lock, their system will automatically generate a 6-10 digit pin code. You will be able to retrieve the pin code from the `code` property on the access code object.
+Salto Locks does not allow a user to configure custom PIN codes. When creating an access code on a Salto door lock, their system will automatically generate a 6-10 digit PIN code. You will be able to retrieve the PIN code from the `code` property on the access code object.
 
 ### Salto-specific Access Code Errors
 

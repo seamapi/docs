@@ -160,6 +160,7 @@
 * [2N Intercom Systems](device-guides/2n-intercom-systems.md)
 * [August Locks](device-guides/august-locks.md)
 * [4SUITES Locks](device-guides/4suites-locks.md)
+* [Brivo Access](device-guides/brivo-access.md)
 * [Hubitat Elevation Hub](device-guides/hubitat-elevation-hub.md)
 * [Lockly Locks](device-guides/lockly-locks.md)
 * [PTI Storlogix Cloud](device-guides/pti-storlogix-cloud.md)

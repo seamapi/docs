@@ -17,7 +17,7 @@ This integration supports all [2N IP intercoms](https://wiki.2n.com/is/en).
 We support the following features:
 
 * [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)
-* [Programming access codes](../products/smart-locks/access-codes/) on intercoms that have a pin pad
+* [Programming access codes](../products/smart-locks/access-codes/) on intercoms that have a PIN pad
 
 ***
 
