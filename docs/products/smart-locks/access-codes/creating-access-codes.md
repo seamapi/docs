@@ -106,6 +106,10 @@ echo json_encode($device->capabilities_supported, JSON_PRETTY_PRINT);
 
 ## Programming an Ongoing Code
 
+Ongoing Access codes are ideal for long-term users that wish to keep the same code. Ongoing codes remain active on a device until removed. They can start right away or at a later date if you provide a `starts_at`timestamp.
+
+<figure><img src="../../../.gitbook/assets/ongoing-access-code-light.png" alt=""><figcaption><p>Timeline of an ongoing access code. The code will remain active until you ask Seam to remove it.</p></figcaption></figure>
+
 ## 1. Create an Ongoing Access Code
 
 Set an ongoing code by providing the `device_id` of the smart lock on which you want to [create an access code](../../../api-clients/access-codes/create-an-access-code.md). Assign an optional `name` to the access code for easier identification within the [Seam Console](https://console.seam.co) and smart lock app. Include an optional `starts_at` value to specify when this code should become active.
@@ -279,6 +283,8 @@ Use the `access_code` reference returned by the create function to call the [Get
 
 If the `status` remains `setting` for a very long time, or if the `access_code` object contains any `warnings` or `errors` properties, consult [the guide on "Troubleshooting Access Code Issues"](troubleshooting-access-code-issues.md) for further guidance.
 
+<figure><img src="../../../.gitbook/assets/ongoing-access-code-polling-verification-dark.png" alt=""><figcaption><p>Illustration of the polling verification step for an ongoing access code</p></figcaption></figure>
+
 ### **Webhook Events Method**
 
 To avoid polling, monitor for incoming Seam webhook events related to the code status:
@@ -288,9 +294,15 @@ To avoid polling, monitor for incoming Seam webhook events related to the code s
 
 In the event of delay or failure, refer to [the "Troubleshooting access code issues" guide](troubleshooting-access-code-issues.md) for assistance and mitigation strategies.
 
+<figure><img src="../../../.gitbook/assets/ongoing-access-code-webhook-verification-dark.png" alt=""><figcaption><p>Illustration of the webhook verification method for an ongoing access code</p></figcaption></figure>
+
 ***
 
 ## Scheduling Time-Bound Access Codes
+
+Time-bound access codes are **s**uitable for temporary access like guest visits or service appointments. These codes operate between designated `starts_at` and `ends_at` timestamps, granting access only during that period. Seam automatically ensures that code is programmed on the device at the `starts_at` time, and unprogrammed at the `ends_at` time.
+
+<figure><img src="../../../.gitbook/assets/time-bound-access-code-light.png" alt=""><figcaption><p>Timeline of an time-bound access code. The code will remain active until the ends_at timestamp you provide Seam.</p></figcaption></figure>
 
 ### 1. Create a Time-Bound Access Code
 
@@ -477,7 +489,7 @@ The [lifecycle of a time-bound access code](lifecycle-of-access-codes.md) is mar
 2. `Setting`: As the scheduled `starts_at` time approaches, Seam initiates the process of programming the code onto the lock, transitioning the code's `status` to `setting`.
 3. `Set`: Upon successful programming, the status updates to `set`, signaling that the code is loaded onto the lock, and may grant the designated user the ability to unlock the door.
 
-<figure><img src="../../../.gitbook/assets/State Sequence for Access Codes.png" alt=""><figcaption><p>Status Transitions of an Access Code</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/state-sequence-for-access-codes-lifecycle-dark.png" alt=""><figcaption><p>Life-cycle of a time-bound access code</p></figcaption></figure>
 
 On door locks that support [natively scheduled](./#native-scheduling) access codes, Seam will preload the access code into the device's internal memory bank **72 hours ahead** of the `starts_at` time. Even if preloaded in memory, the access code will remain in an `unset` state ahead of the `starts_at` time and await the precise activation moment to toggle its status. When the `starts_at` time arrives, the access code becomes active and transition to a `set` status, granting the designated user the ability to utilize it for entry. If there's an issue programming the natively-scheduled code by its `starts_at` time, the code's status will display as `setting`. For more information on the lifecycle of access codes, [please refer to this guide](lifecycle-of-access-codes.md).
 
@@ -492,6 +504,8 @@ Use the `access_code` reference returned by the create function to call the [Get
 
 If the `status` remains `setting`, or if the `access_code` object displays any `warnings` or `errors`, refer to [the "Troubleshooting Access Code Issues" guide](troubleshooting-access-code-issues.md) for assistance.
 
+<figure><img src="../../../.gitbook/assets/timebound-access-code-polling-verification-dark.png" alt=""><figcaption></figcaption></figure>
+
 ### **Webhook Events Method**
 
 To avoid polling, monitor for incoming Seam webhook events related to the code status:
@@ -500,3 +514,5 @@ To avoid polling, monitor for incoming Seam webhook events related to the code s
 * The `access_code.failed_to_set_on_device` or `access_code.delay_in_setting_on_device` events indicate a delay or failure.
 
 In the event of delay or failure, refer to [the "Troubleshooting access code issues" guide](troubleshooting-access-code-issues.md) for assistance and mitigation strategies.
+
+<figure><img src="../../../.gitbook/assets/timebound-access-code-webhook-verification-dark.png" alt=""><figcaption></figcaption></figure>

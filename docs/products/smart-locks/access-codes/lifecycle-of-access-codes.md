@@ -4,13 +4,13 @@ description: >-
   that are emitted.
 ---
 
-# Lifecycle of access codes
+# Lifecycle of Access Codes
 
 Programming access codes involves [asynchronous](https://en.wikipedia.org/wiki/Asynchronous\_system) processes, which can be complex to manage. Such asynchronous flows depend on interactions with smart devices and third-party applications outside your main application. Our access code API streamlines this process by tracking the status of the access code using a state machine.
 
 **The Access Code flow** begins you makes a request to create an access code on Seam.
 
-<figure><img src="../../../.gitbook/assets/Option 2. State Sequence for Access Codes.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/state-sequence-for-access-codes-lifecycle-dark.png" alt=""><figcaption><p>Lifecycle of an access code</p></figcaption></figure>
 
 ## 1. `unset` - Awaiting programming
 
