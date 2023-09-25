@@ -2,6 +2,8 @@
 description: >-
   Access codes are codes for keypad devices. These are used when you want to
   provide access to a lock using a PIN code.
+cover: ../../../.gitbook/assets/access-code-section-seo-cover.png
+coverY: 470
 ---
 
 # Access Codes
