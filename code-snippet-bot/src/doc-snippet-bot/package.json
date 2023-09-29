@@ -1,0 +1,19 @@
+{
+  "name": "doc-snippet-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "esbuild": "^0.19.4",
+    "esbuild-runner": "^2.2.2"
+  },
+  "devDependencies": {
+    "ava": "^5.3.1"
+  }
+}
