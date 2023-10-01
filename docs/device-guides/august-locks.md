@@ -30,6 +30,39 @@ The following table details the requirements for compatibility with this Seam in
   brands='["august"]'
 />" %}
 
+***
+
+# TEST
+
+Seam supported device table copied from 2N PR and pasted into Markdown
+
+{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
+  endpoint="https://connect.getseam.com"
+  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
+  brands='["my_2n"]'
+/>" %}
+
+Seam supported device table copied from directly above, pasted into Markdown, and changed "my_2n" to "august"
+
+{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
+  endpoint="https://connect.getseam.com"
+  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
+  brands='["august"]'
+/>" %}
+
+Working Seam supported device table copied from above in Markdown file and pasted into Markdown
+
+{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
+  endpoint="https://connect.getseam.com"
+  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
+  brands='["august"]'
+/>" %}
+
+
+# END TEST
+
+***
+
 We support the following features:
 
 * [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)
