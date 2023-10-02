@@ -32,10 +32,10 @@ To connect your Storlogix site, Seam'll need the following information about you
 
 ### If you don't have access to your Storlogix Cloud dashboard
 
-If you're unsure of your Storlogix Cloud login credentials, please reach out to the [PTI Security Systems Customer Support team](https://ptisecurity.my.salesforce-sites.com/apex/Support). They can assist in retrieving your login details. Have your PTI Support PIN or facility information ready when contacting a support agent.
+If you're unsure of your Storlogix Cloud login credentials and the Dashboard URL, please reach out to the [PTI Security Systems Customer Support team](https://ptisecurity.my.salesforce-sites.com/apex/Support). They can assist in retrieving your login details. Have your PTI Support PIN or facility information ready when contacting a support agent.
 
 {% hint style="warning" %}
-Make sure that the user account credentials you acquire belongs to an Operator account, and not to an account used by the Storlogix Cloud Controller.
+Make sure that you acquire the appropriate credentials specifically for Storlogix Cloud dashboard access. You'll be able use those credentials to log in to your Storlogix Cloud dashboard.
 {% endhint %}
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td><a href="https://ptisecurity.my.salesforce-sites.com/apex/Support"><strong>PTI Security Systems Customer Support</strong></a></td><td></td><td><a href="../.gitbook/assets/Screen Shot 2023-08-24 at 2.49.11 PM.png">Screen Shot 2023-08-24 at 2.49.11 PM.png</a></td><td><a href="https://ptisecurity.my.salesforce-sites.com/apex/Support">https://ptisecurity.my.salesforce-sites.com/apex/Support</a></td></tr></tbody></table>
