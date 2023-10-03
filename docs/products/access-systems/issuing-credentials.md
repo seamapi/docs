@@ -14,7 +14,7 @@ Currently, Seam only supports the issuance of PIN codes for access.
 
 ***
 
-### Add a Credential for a User
+## Add a Credential for a User
 
 To add a credential for a user (that is, to create a new credential), provide the user ID (`acs_user_id`) and the desired PIN code (`code`).
 
@@ -61,7 +61,7 @@ curl -X 'POST' \
 
 ***
 
-### Remove a Credential from a User
+## Remove a Credential from a User
 
 To remove a credential from a user, provide the credential ID (`acs_credential_id`).
 

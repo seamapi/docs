@@ -14,7 +14,7 @@ This guide explains how to grant access permissions to users by adding them to t
 
 ***
 
-### Add a User to an Access Group
+## Add a User to an Access Group
 
 To [add a user to an access group](../../api-clients/access-control-systems/users/add-user-to-access-group.md), provide both the user ID (`acs_user_id`) and the access group ID (`acs_access_group_id`).
 
@@ -45,7 +45,7 @@ curl -X 'POST' \
 
 ***
 
-### Remove a User from an Access Group
+## Remove a User from an Access Group
 
 To [remove a user from an access group](../../api-clients/access-control-systems/users/remove-user-from-access-group.md), provide both the user ID (`acs_user_id`) and the access group ID (`acs_access_group_id`).
 

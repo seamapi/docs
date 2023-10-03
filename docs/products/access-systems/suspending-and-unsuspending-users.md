@@ -16,7 +16,7 @@ You can suspend a user to revoke their access temporarily. Suspending a user is 
 
 ***
 
-### Suspend a User
+## Suspend a User
 
 To suspend a user, provide the user ID (`acs_user_id`).
 
@@ -47,7 +47,7 @@ curl -X 'POST' \
 
 ***
 
-### Unsuspend a User
+## Unsuspend a User
 
 To unsuspend a user, provide the user ID (`acs_user_id`).
 

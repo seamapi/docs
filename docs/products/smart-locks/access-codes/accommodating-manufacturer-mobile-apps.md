@@ -12,11 +12,11 @@ Most smart lock manufacturers provide a mobile (or web) app that device owners c
 
 When creating an access code, the Seam API lets you set a `name` attribute for the code. This `name` can be used to identify the code on Seam. In addition, smart lock device owners can also use this name to identify the code you created inside their smart lock manufacturer app.&#x20;
 
-#### Naming Codes & Best Practices
+### Naming Codes & Best Practices
 
 When creating an access code, it's important to use a simple & recognizable name to help device owners identify code(s) you've created. For example, if the access code is for an Airbnb reservation, it may be helpful to name the code "Anna Smith, Reservation-12345". Long `uuid` or random strings are generally not recommended.
 
-#### Code Name vs Appearance in App
+### Code Name vs. Appearance in App
 
 The `name` you set for an access code may not necessarily match exactly the name that appears inside the smart lock manufacturer app. This is because Seam has to account for manufacturer naming constraints.&#x20;
 
@@ -24,21 +24,19 @@ For example, some lock providers may restrict name length, uniqueness, or the us
 
 Since the exact name displayed inside the app may differ as a result, Seam provides an `appearance` property on the access code object. This property shows the exact name used inside the smart lock manufacturer app, which can be helpful for your customer support when guiding a device owner.
 
-
-
 ## Access Code Editing by User
 
 At times, a smart lock device owner may wish to edit the access code that you've created using the Seam API. For example, they may wish to edit the `starts_at` time of the code to allow for early access to their home. Alternatively, they want want to delete the code altogether to restrict access to their home.
 
-#### Default Overwriting Behavior
+### Default Overwriting Behavior
 
 The default behavior of the Seam API is to immediately override those changes made by the device owner. This is because Seam's default behavior is to keep the access code on the device in sync with the declared state of the access code on Seam.&#x20;
 
-#### Get Notified of Changes
+### Get Notified of Changes
 
 When external modifications are detected, Seam will send an `access_code.modified_external_to_seam` event to your application. Seam will also add a `code_modified_external_to_seam` error on the access code. You can use these to inform your user that changes made inside their smart lock device manufacturer app are automatically overwritten.
 
-#### Allow for Access Code Modification
+### Allow for Access Code Modification
 
 If you wish to allow device owners to be able to edit access codes you've created via the Seam API, set the `allow_external_modification` flag to true when creating an access code. This will prevent Seam from overwriting any changes made by the device owner to the access code. Seam will also set `code_modified_external_to_seam` as a warning on the code instead of an error when a change is detected. Note that the `allow_external_modification` flag can  also be passed when updating an access code or when converting an access code from unmanaged to managed.
 

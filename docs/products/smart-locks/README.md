@@ -1,6 +1,6 @@
 # 🔒 Smart Locks
 
-### What is a Smart Lock?
+## What is a Smart Lock?
 
 Smart locks utilize technology to provide a new way to unlock or lock your door. With smart locks, you can access your premises without a physical key.
 
@@ -8,7 +8,7 @@ These locks can be integrated into various entry points, such as standard doors,
 
 Seam's API provides the capability to lock and unlock doors remotely. For locks equipped with keypads, our API also permits the creation and programming of access codes.
 
-### What is an Access Code?
+## What is an Access Code?
 
 An access code is a numeric or alphanumeric code that a user enters to gain access through the lock. Here's how it works:
 
@@ -16,7 +16,7 @@ An access code is a numeric or alphanumeric code that a user enters to gain acce
 * When the correct code is entered on the keypad, the lock releases and allows access.
 * Access codes can be permanent (for homeowners or primary users) or temporary (for guests or service providers).
 
-### **Use Cases**
+## **Use Cases**
 
 Leverage Seam's API for the following applications:
 
@@ -24,6 +24,6 @@ Leverage Seam's API for the following applications:
 * **Scheduled Access:** Grant time-bound access by providing temporary codes to guests, babysitters, or service personnel. For example, a cleaner with a schedule from 10 am to 12 pm on Tuesdays could be given a code valid only within that time frame.
 * **Security Monitoring:** Get real-time status updates on when the door is locked or unlocked.
 
-### **Next Steps**
+## **Next Steps**
 
 To learn how to trigger locks and unlocks on your locks, check out our guide [here](lock-and-unlock.md). For guidance on setting up Access Codes for your device, refer to our guide [here](access-codes/). Additionally, you can check out our API Reference Guides for [Locking and Unlocking](../../api-clients/locks/), and for [Access Codes](../../api-clients/access-codes/).

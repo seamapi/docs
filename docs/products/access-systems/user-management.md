@@ -50,7 +50,7 @@ curl -X 'POST' \
 
 ***
 
-### Create a User
+## Create a User
 
 To [create a user](../../api-clients/access-control-systems/users/create-user.md), provide the ACS system ID (`acs_system_id`) of the system and the attributes of the user, such as the full name (`full_name`), email address (`email`), phone number (`phone_number`), and so on.
 
@@ -96,7 +96,7 @@ curl -X 'POST' \
 
 ***
 
-### Update a User
+## Update a User
 
 To [update a user](../../api-clients/access-control-systems/users/update-user.md), provide the id (`user_id`) of the desired user, along with the attributes that you want to modify.
 
@@ -137,7 +137,7 @@ curl -X 'POST' \
 
 ***
 
-### Delete a User
+## Delete a User
 
 To delete a user, provide the id (`user_id`) of the user that you want to delete.
 
@@ -168,7 +168,7 @@ curl -X 'POST' \
 
 ***
 
-### List Users
+## List Users
 
 To list all users within an ACS, provide the id (`acs_system_id)` of the ACS.
 

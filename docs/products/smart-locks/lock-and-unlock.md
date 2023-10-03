@@ -2,7 +2,7 @@
 description: Learn how to lock and unlock a smart lock, and confirm the action's success.
 ---
 
-# Locking and Unlocking
+# Lock and Unlock
 
 ## Overview
 
@@ -32,8 +32,6 @@ Be sure to confirm that your device has the capability to lock and unlock. You c
     ...
 }
 ```
-
-***
 
 ***
 
@@ -111,9 +109,9 @@ curl --request POST "https://connect.getseam.com/locks/unlock_door" \
 
 ***
 
-## Verifying a lock or unlock action's success
+## Verifying the success of a lock or unlock action
 
-#### 1. Execute a "Lock" request (or other action)
+### 1. Execute a "Lock" request (or other action)
 
 When initiating a lock or unlock action, the Seam API returns an action attempt, which monitors the success or failure of the action.
 
@@ -148,7 +146,7 @@ curl --request POST "https://connect.getseam.com/locks/lock_door" \
 {% endtab %}
 {% endtabs %}
 
-#### 2. Poll the "Get Action Attempt" request to verify the action's success
+### 2. Poll the "Get Action Attempt" request to verify the action's success
 
 Use the `action_attempt_id` from the prior response to make a [Get Action Attempt request](../../api-clients/action-attempt/get-action-attempt.md). When the action attempt's `status` changes to `success`, it indicates the action has been successful.
 

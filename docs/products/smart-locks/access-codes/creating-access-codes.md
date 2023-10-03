@@ -110,7 +110,7 @@ Ongoing Access codes are ideal for long-term users that wish to keep the same co
 
 <figure><img src="../../../.gitbook/assets/ongoing-access-code-light.png" alt=""><figcaption><p>Timeline of an ongoing access code. The code will remain active until you ask Seam to remove it.</p></figcaption></figure>
 
-## 1. Create an Ongoing Access Code
+### 1. Create an Ongoing Access Code
 
 Set an ongoing code by providing the `device_id` of the smart lock on which you want to [create an access code](../../../api-clients/access-codes/create-an-access-code.md). Assign an optional `name` to the access code for easier identification within the [Seam Console](https://console.seam.co) and smart lock app. Include an optional `starts_at` value to specify when this code should become active.
 
