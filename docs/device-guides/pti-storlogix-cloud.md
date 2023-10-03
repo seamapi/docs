@@ -12,9 +12,9 @@ This integration uses [Storlogix Cloud](https://ptisecurity.com/products/storlog
 
 ## Supported Devices and Capabilities
 
-Seam integrates with any site that has Storlogix Cloud installed. This integration allows you to manage users and grant them access permissions using Seam's [Access Control System API](../products/access-systems/). You'll also be able to create access codes and key cards for the users.
+Seam integrates with any site that has Storlogix Cloud installed. Through this integration, you can manage users and assign them access permissions via Seam's [Access Control System API](../products/access-systems/). This also enables you to generate access codes and key cards for the users.
 
-To grant a user access, you'll need to [add them to a `pti_access_level` access group](../products/access-systems/assigning-users-to-access-groups.md). Additionally, if you want to record that the user has rented out a particular unit, you can add them to a `pti_unit` access group using the same endpoint.
+To authorize a user, [add them to a `pti_access_level` access group](../products/access-systems/assigning-users-to-access-groups.md). If you wish to document that a user has rented a specific unit, include them in a `pti_unit` access group using the same endpoint. Note that certain access levels mandate a user be part of a `pti_unit` linked to that access area before they can enter those zones.
 
 ***
 
@@ -50,11 +50,9 @@ Make sure that you acquire the appropriate credentials specifically for Storlogi
 
 ***
 
-## Supported Features
+## Brand-Specific Warnings
 
-
-
-
+`user.pti_access_level_not_assigned` - A PTI user needs to be assigned to an Access Level before their access credentials can be used to enter the site.
 
 ***
 
