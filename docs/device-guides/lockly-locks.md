@@ -1,8 +1,10 @@
 ---
-description: Guide for using Lockly locks with Seam
+description: Guide for using Lockly smart locks with Seam
 ---
 
 # Lockly Locks
+
+<figure><img src="../.gitbook/assets/lockly-manufacturer-page-cover-16-9-light.png" alt=""><figcaption></figcaption></figure>
 
 ## Overview
 
