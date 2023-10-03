@@ -10,6 +10,14 @@ This integration uses [Storlogix Cloud](https://ptisecurity.com/products/storlog
 
 ***
 
+## Supported Devices and Capabilities
+
+Seam integrates with any site that has Storlogix Cloud installed. This integration allows you to manage users and grant them access permissions using Seam's [Access Control System API](../products/access-systems/). You'll also be able to create access codes and key cards for the users.
+
+To grant a user access, you'll need to [add them to a `pti_access_level` access group](../products/access-systems/assigning-users-to-access-groups.md). Additionally, if you want to record that the user has rented out a particular unit, you can add them to a `pti_unit` access group using the same endpoint.
+
+***
+
 ## Setup Instructions&#x20;
 
 To connect your Storlogix site, Seam'll need the following information about your facility:
@@ -39,6 +47,14 @@ Make sure that you acquire the appropriate credentials specifically for Storlogi
 {% endhint %}
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td><a href="https://ptisecurity.my.salesforce-sites.com/apex/Support"><strong>PTI Security Systems Customer Support</strong></a></td><td></td><td><a href="../.gitbook/assets/Screen Shot 2023-08-24 at 2.49.11 PM.png">Screen Shot 2023-08-24 at 2.49.11 PM.png</a></td><td><a href="https://ptisecurity.my.salesforce-sites.com/apex/Support">https://ptisecurity.my.salesforce-sites.com/apex/Support</a></td></tr></tbody></table>
+
+***
+
+## Supported Features
+
+
+
+
 
 ***
 
