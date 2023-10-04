@@ -10,7 +10,7 @@ August produces smart locks for the residential market. Seam integrates directly
 
 Each August lock attaches to an existing deadbolt, replacing only the lock component on the inside of a door. Consequently, August locks do not change the exterior of locks, and the existing physical keys still work with installed August locks.&#x20;
 
-***
+---
 
 ## Supported Devices
 
@@ -27,11 +27,10 @@ The following table details the requirements for compatibility with this Seam in
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["august"]'
+  brands='["lockly"]'
 />" %}
 
-
-***
+---
 
 # TEST
 
@@ -66,18 +65,16 @@ Working Seam supported device table copied from above in Markdown file, pasted i
   brands='["august"]'
 />" %}
 
-
 # END TEST
 
-***
-
+---
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)
-* [Programming access codes](../products/smart-locks/access-codes/) on locks that have an installed August Smart Keypad
+- [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)
+- [Programming access codes](../products/smart-locks/access-codes/) on locks that have an installed August Smart Keypad
 
-***
+---
 
 ## Setup Instructions
 
@@ -85,7 +82,7 @@ We support the following features:
 2. In the August Home App, add your August devices.
 3. Note your login credentials for the August Home App, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews.md) to add your devices to Seam.
 
-***
+---
 
 ## Brand-Specific Errors
 
@@ -93,7 +90,7 @@ The following access code errors might appear for an August lock:
 
 <table data-full-width="true"><thead><tr><th width="384">Error</th><th>Description</th></tr></thead><tbody><tr><td><code>august_device_programming_delay</code></td><td>August has acknowledged a request to program the code, but the access code has not yet been moved fully to the device. The device likely has an unstable internet connection. Seam continues to try to set the code on the device.</td></tr><tr><td><code>august_device_slots_full</code></td><td>All access code slots on the device are full.</td></tr><tr><td><code>august_lock_bad_access_code_format</code></td><td>The access code format is incorrect.</td></tr><tr><td><code>august_lock_missing_keypad</code></td><td>The August lock is missing a keypad.</td></tr><tr><td><code>august_lock_temporarily_offline</code></td><td>The August lock was temporarily offline while setting or removing a code. The code should be set removed when the lock comes back online.</td></tr></tbody></table>
 
-***
+---
 
 ## Where to Order
 
@@ -101,5 +98,4 @@ Order August locks and accessories directly from the August website or from Amaz
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>August</strong></td><td></td><td><a href="https://august.com/">https://august.com/</a></td><td><a href="../.gitbook/assets/august-logo.png">august-logo.png</a></td></tr><tr><td></td><td><strong>August Products on Amazon</strong></td><td></td><td><a href="https://amzn.to/3sVFNTl">https://amzn.to/3sVFNTl</a></td><td><a href="../.gitbook/assets/august-on-amazon.png">august-on-amazon.png</a></td></tr></tbody></table>
 
-***
-
+---
