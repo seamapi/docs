@@ -208,7 +208,6 @@
 * [Reconnecting an Account](device-guides/reconnecting-an-account.md)
 * [Access Code Management for Hospitality](device-guides/implementing-robust-access-code-management-for-guests.md)
 * [Rate Limits and Guardrails](device-guides/rate-limits-and-guardrails.md)
-* [Temp. Test Topic](device-guides/test.md)
 
 ## 🌉 Seam Bridge
 
