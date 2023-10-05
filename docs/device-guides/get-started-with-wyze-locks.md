@@ -10,11 +10,13 @@ description: Learn how to connect and control your Wyze locks with the Seam API.
 
 Seam provides a universal API to connect and control many brands of locks. This guide provides a rapid introduction to connecting and controlling your [Wyze](https://www.seam.co/manufacturers/wyze) locks using the Seam API. To learn more about other device brands supported by the Seam API, such as Yale, Schlage, Kwikset and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
+{% hint style="info" %}
 There are two types of Wyze Locks, a [Gateway Wyze Lock](https://www.wyze.com/products/wyze-lock) that supports Wi-Fi connections and a [Wyze Lock Bolt](https://www.wyze.com/products/wyze-lock-bolt) that supports bluetooth connections only.
 
 For **Gateway Wyze Locks** we support all normal functionality including locking or unlocking the device and setting access codes remotely through Seam as long as the lock is proplery connected to the provided gateway.
 
 For **Bluetooth-only Wyze Lock Bolts** we're not able to control the lock remotely (meaning no locking or unlocking the device and no setting access codes) but we are able to return some information on the lock such as the battery level and the locked / unlocked state.
+{% endhint %}
 
 ## 1 — Install Seam SDK
 
@@ -44,7 +46,7 @@ To control your Wyze locks via the Seam API, you must first authorize your Seam 
 You will need create a Wyze API Key for your Wyze account. To see how to create a Wyze API Key for your Wyze account, [click here](https://support.wyze.com/hc/en-us/articles/16129834216731-Creating-an-API-Key).
 
 {% hint style="info" %}
-Note that both the API key and Key ID returned from Wyze are required to connect your Wyze account to Seam, so make sure to copy both values to somewhere secure!
+Note that both the API key and Key ID returned from Wyze are required to connect your Wyze account to Seam. Make sure to copy both values to somewhere secure!
 
 <img src="../.gitbook/assets/wyze-api-key-example.png" alt="Wyze API Key example" data-size="original">
 {% endhint %}
@@ -176,7 +178,7 @@ assert($webview->status == 'pending');
 {% endtab %}
 {% endtabs %}
 
-## 3 — Retrieve WyzeZ Devices
+## 3 — Retrieve Wyze Devices
 
 After a Wyze account is linked with Seam, you can retrieve its devices.
 
