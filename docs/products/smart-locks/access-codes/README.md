@@ -63,6 +63,7 @@ For locks that support setting codes with a schedule, Seam will preload access c
 | Schlage     |                   |
 | TTLock      |                   |
 | Yale        |                   |
+| Wyze        |                   |
 
 ### **Just-in-time Scheduling**
 
