@@ -241,7 +241,92 @@ echo json_encode($locks);
 {% endtab %}
 {% endtabs %}
 
-### 4 — Programming Access Code on a Wyze Lock
+## 4 — Locking & Unlocking a Door
+
+Next, you can perform the basic action of locking and unlocking the door.
+
+{% swagger src="../.gitbook/assets/openapi (1).json" path="/locks/lock_door" method="post" %}
+[openapi (1).json](<../.gitbook/assets/openapi (1).json>)
+{% endswagger %}
+
+{% swagger method="post" path="/locks/unlock_door" baseUrl="https://connect.getseam.com" summary="Unlock a door" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="body" name="device_id" required="false" %}
+
+{% endswagger-parameter %}
+{% endswagger %}
+
+{% tabs %}
+{% tab title="Python" %}
+
+```python
+# lock the door
+seam.locks.lock_door(some_lock)
+updated_lock = seam.locks.get(some_lock.device_id)
+assert updated_lock.properties["locked"] is True
+
+# Now unlock the door
+seam.locks.unlock_door(some_lock)
+updated_lock = seam.locks.get(some_lock.device_id)
+assert updated_lock.properties["locked"] is False
+```
+
+{% endtab %}
+
+{% tab title="Javascript" %}
+
+```javascript
+// lock the door
+await seam.locks.lockDoor(someLock.device_id);
+const updatedLock = await seam.locks.get(someLock.device_id);
+console.log(updatedLock.properties.locked); // true
+
+// unlock the door
+await seam.locks.unlockDoor(someLock.device_id);
+updatedLock = await seam.locks.get(someLock.device_id);
+console.log(updatedLock.properties.locked); // false
+```
+
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+```ruby
+# lock the door
+seam.locks.lock_door(some_lock)
+updated_lock = seam.locks.get(some_lock.device_id)
+puts updated_lock.properties['locked'] # true
+
+# unlock the door
+seam.locks.unlock_door(some_lock)
+updated_lock = seam.locks.get(some_lock.device_id)
+puts updated_lock.properties['locked'] # false
+```
+
+{% endtab %}
+
+{% tab title="PHP" %}
+
+```php
+use Seam\SeamClient;
+
+$seam = new SeamClient('YOUR_API_KEY');
+
+$some_lock = $seam->locks->list()[0];
+
+# unlock the door
+$seam->locks->unlock_door($lock->device_id);
+# lock the door
+$seam->locks->lock_door($lock->device_id);
+```
+
+{% endtab %}
+{% endtabs %}
+
+## 5 — Programming Access Code on a Wyze Lock
 
 The Seam API lets you create access codes on Wyze locks with a gateway. These codes can then be entered to unlock the door. You can find out more info about how Seam access codes in our [core concept section on access codes.](../products/smart-locks/access-codes/)
 
