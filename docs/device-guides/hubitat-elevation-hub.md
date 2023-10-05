@@ -14,6 +14,12 @@ The following device types are currently supported:
 
 * Door Locks - Where the device has the capability, we support triggering lock / unlock actions, and programming access codes.
 
+{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
+  endpoint="https://connect.getseam.com"
+  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
+  brands='["hubitat"]'
+/>" %}
+
 ***
 
 ## Setup Instructions&#x20;

@@ -12,7 +12,15 @@ This integration uses [Storlogix Cloud](https://ptisecurity.com/products/storlog
 
 ## Supported Devices and Capabilities
 
-Seam integrates with any site that has Storlogix Cloud installed. Through this integration, you can manage users and assign them access permissions via Seam's [Access Control System API](../products/access-systems/). This also enables you to generate access codes and key cards for the users.
+Seam integrates with any site that has Storlogix Cloud installed.
+
+{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
+  endpoint="https://connect.getseam.com"
+  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
+  brands='["pti"]'
+/>" %}
+
+Through this integration, you can manage users and assign them access permissions via Seam's [Access Control System API](../products/access-systems/). This also enables you to generate access codes and key cards for the users.
 
 To authorize a user, [add them to a `pti_access_level` access group](../products/access-systems/assigning-users-to-access-groups.md). If you wish to document that a user has rented a specific unit, include them in a `pti_unit` access group using the same endpoint. Note that certain access levels mandate a user be part of a `pti_unit` linked to that access area before they can enter those zones.
 
