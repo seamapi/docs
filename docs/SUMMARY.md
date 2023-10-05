@@ -162,6 +162,7 @@
 * [Brivo Access](device-guides/brivo-access.md)
 * [August Locks](device-guides/august-locks.md)
 * [Avigilon Alta Access System](device-guides/avigilon-alta-access-system.md)
+* [dormakaba Oracode Locks](device-guides/dormakaba-oracode-locks.md)
 * [Hubitat Elevation Hub](device-guides/hubitat-elevation-hub.md)
 * [Lockly Locks](device-guides/lockly-locks.md)
 * [PTI Storlogix Cloud](device-guides/pti-storlogix-cloud.md)
