@@ -174,6 +174,7 @@
 * [PTI Storlogix Cloud](device-guides/pti-storlogix-cloud.md)
 * [Salto Locks](device-guides/salto-locks.md)
 * [TTLock Locks](device-guides/ttlock-locks.md)
+* [Wyze Locks](device-guides/wyze-locks.md)
 * [Yale Locks](device-guides/yale-locks.md)
 * [Get started with Smart Locks](device-guides/get-started-with-smartlocks-api.md)
 * [Get started with August Locks](device-guides/get-started-with-august-locks.md)
