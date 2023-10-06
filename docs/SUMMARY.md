@@ -169,6 +169,7 @@
 * [Avigilon Alta Access System](device-guides/avigilon-alta-access-system.md)
 * [dormakaba Oracode Locks](device-guides/dormakaba-oracode-locks.md)
 * [Hubitat Elevation Hub](device-guides/hubitat-elevation-hub.md)
+* [Kwikset Locks](device-guides/kwikset-locks.md)
 * [Lockly Locks](device-guides/lockly-locks.md)
 * [Minut Sensors](device-guides/minut-sensors.md)
 * [PTI Storlogix Cloud](device-guides/pti-storlogix-cloud.md)
