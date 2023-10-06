@@ -2,7 +2,7 @@
 description: Learn how to connect and control your Wyze locks with the Seam API.
 ---
 
-# Get started with Wyze Oracode Locks
+# Get started with Wyze Locks
 
 [Image Here]
 
@@ -34,21 +34,23 @@ $ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
 ```
 
 {% hint style="info" %}
-This guide uses a Sandbox Workspace. Only virtual devices can be connected. If you need to connect a real Oracode device, use a non-sandbox workspace and API key.
+This guide uses a Sandbox Workspace. Only virtual devices can be connected. If you need to connect a real Wyze device, use a non-sandbox workspace and API key.
 {% endhint %}
 
 ## 2 — Link Your Wyze with Seam
 
-To control your Wyze locks via the Seam API, you must first authorize your Seam workspace against your Wyze account. To do so, Seam provides[Connect Webviews](../core-concepts/connect-webviews.md): pre-built UX flows that walk you through authorizing your application to control Oracode locks.
+To control your Wyze locks via the Seam API, you must first authorize your Seam workspace against your Wyze account. To do so, Seam provides[Connect Webviews](../core-concepts/connect-webviews.md): pre-built UX flows that walk you through authorizing your application to control Wyze locks.
 
 #### Obtain a Wyze API Key and Wyze API Key ID
 
 You will need create a Wyze API Key for your Wyze account. To see how to create a Wyze API Key for your Wyze account, [click here](https://support.wyze.com/hc/en-us/articles/16129834216731-Creating-an-API-Key).
 
 {% hint style="info" %}
-Note that both the API key and Key ID returned from Wyze are required to connect your Wyze account to Seam. Make sure to copy both values to somewhere secure!
+Note that both the API Key and Key ID returned from Wyze are required to connect your Wyze account to Seam. Make sure to copy both values to somewhere secure!
 
 <img src="../.gitbook/assets/wyze-api-key-example.png" alt="Wyze API Key example" data-size="original">
+
+For Sandbox integrations, you can simply use `ABC123ABC` for both the API Key and API Key ID.
 {% endhint %}
 
 #### Request a Connect Webview
