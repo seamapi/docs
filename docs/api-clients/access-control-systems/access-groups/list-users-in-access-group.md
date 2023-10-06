@@ -1,35 +1,35 @@
 ---
-description: Get all users for a specified access control system
+description: Get all users for a specified access group
 ---
 
-# List Users
+# List Users in an Access Group
 
-Returns a list of all [users](../../../products/access-systems/#what-is-a-user) (`acs_user` objects).
+Returns a list of all [users](../../../products/access-systems/#what-is-a-user) (`acs_user` objects) in an [access group](../../../products/access-systems/#what-is-an-access-group) (`acs_access_group` object).
 
-{% swagger src="https://connect.getseam.com/openapi.json" path="/acs/users/list" method="post" %}
+{% swagger src="https://connect.getseam.com/openapi.json" path="/acs/access_groups/list_users" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
 {% endswagger %}
 
 ## Request
 
-Specify the [access control system](../../../products/access-systems/) for which you want to retrieve all users by including the corresponding `acs_system_id` in the request body.
+Specify the access group for which you want to retrieve all users by including the corresponding `acs_access_group_id` in the request body.
 
 ### Request Body Parameters
 
-<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>acs_system_id</code></td><td>String<br><em>Required</em></td><td>ID of the access control system for which you want to retrieve all users</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>acs_access_group_id</code></td><td>String<br><em>Required</em></td><td>ID of the access group for which you want to retrieve all users</td></tr></tbody></table>
 
 ### Sample Request
 
 {% tabs %}
 {% tab title="cURL (bash)" %}
 ```bash
-curl -X 'GET' \
-  'https://connect.getseam.com/acs/users/list' \
+curl -X 'POST' \
+  'https://connect.getseam.com/acs/access_groups/list_users' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
   -d '{
-  "acs_system_id": "fc793d86-dcfd-4cfe-859f-0b9c1a5c1360"
+  "acs_access_group_id": "cfcc0254-b577-41bd-a51e-4a1fe0023754"
 }'
 ```
 {% endtab %}
@@ -51,32 +51,6 @@ This response also includes a Boolean `ok` status indicator.
 {
   "acs_users": [
     {
-      "acs_user_id": "efaeae64-e471-4e1f-a621-f518c624d99c",
-      "display_name": "Jenny Gergenson",
-      "full_name": "Jenny Gergenson",
-      "email": "jenny@example.com",
-      "phone_number": "+15555550101",
-      "external_type": "pti_user",
-      "external_type_display_name": "PTI user",
-      "acs_system_id": "fc793d86-dcfd-4cfe-859f-0b9c1a5c1360",
-      "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-      "created_at": "2023-09-28T01:40:51.475Z",
-      "is_suspended": false
-    },
-    {
-      "acs_user_id": "5c54cab2-784f-400e-b318-7a1bedf2066d",
-      "display_name": "John Doe",
-      "full_name": "John Doe",
-      "email": "john@example.com",
-      "phone_number": "+15555550102",
-      "external_type": "pti_user",
-      "external_type_display_name": "PTI user",
-      "acs_system_id": "fc793d86-dcfd-4cfe-859f-0b9c1a5c1360",
-      "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-      "created_at": "2023-09-28T01:40:51.135Z",
-      "is_suspended": false
-    },
-    {
       "acs_user_id": "12a28234-56c8-4721-951f-b507707522b4",
       "display_name": "Gary Smith",
       "full_name": "Gary Smith",
@@ -87,6 +61,45 @@ This response also includes a Boolean `ok` status indicator.
       "acs_system_id": "fc793d86-dcfd-4cfe-859f-0b9c1a5c1360",
       "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
       "created_at": "2023-09-28T01:40:51.331Z",
+      "is_suspended": false
+    },
+    {
+      "acs_user_id": "4763daf5-e831-4076-82e5-3e59d36da8e3",
+      "display_name": "Jim Doe",
+      "full_name": "Jim Doe",
+      "email": "jim@example.com",
+      "phone_number": "+15555550104",
+      "external_type": "pti_user",
+      "external_type_display_name": "PTI user",
+      "acs_system_id": "fc793d86-dcfd-4cfe-859f-0b9c1a5c1360",
+      "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+      "created_at": "2023-09-29T04:55:53.297Z",
+      "is_suspended": false
+    },
+    {
+      "acs_user_id": "7a933f5b-f505-46b4-8828-b56ee8309ae6",
+      "display_name": "Jane Zoe",
+      "full_name": "Jane Zoe",
+      "email": "jane@example.com",
+      "phone_number": "+15555550105",
+      "external_type": "pti_user",
+      "external_type_display_name": "PTI user",
+      "acs_system_id": "fc793d86-dcfd-4cfe-859f-0b9c1a5c1360",
+      "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+      "created_at": "2023-09-29T04:18:11.297Z",
+      "is_suspended": false
+    },
+    {
+      "acs_user_id": "efaeae64-e471-4e1f-a621-f518c624d99c",
+      "display_name": "Jenny Gergenson",
+      "full_name": "Jenny Gergenson",
+      "email": "jenny@example.com",
+      "phone_number": "+15555550101",
+      "external_type": "pti_user",
+      "external_type_display_name": "PTI user",
+      "acs_system_id": "fc793d86-dcfd-4cfe-859f-0b9c1a5c1360",
+      "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+      "created_at": "2023-09-28T01:40:51.475Z",
       "is_suspended": false
     }
   ],

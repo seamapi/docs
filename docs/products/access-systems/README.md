@@ -25,7 +25,7 @@ The Seam access system schema consists of a series of objects that interact to e
 
 [Access groups](./#what-is-an-access-group) provide an efficient way to grant sets of scheduled access to one or more users. That is, you create access group objects that specify the doors, entrances, or zones to which a set of users has access, as well as the days and times at which these users have access to these doors, entrances, or zones.
 
-Finally, you issue sets of [credentials](issuing-credentials.md)—in the form of access codes—to individual users.
+Finally, you issue sets of [credentials](issuing-credentials.md)—such as access codes, key cards, and mobile passes—to individual users.
 
 The following diagram illustrates the relationship between Seam access system components:
 
@@ -48,4 +48,4 @@ Leverage the Seam API for the following tasks:
 
 ## **Next Steps**
 
-To learn how to manage users, check out our [User Management guide](user-management.md). For guidance on assigning users to access groups, see [Assigning Users to Access Groups](assigning-users-to-access-groups.md).&#x20;
+To learn how to manage users, check out our [User Management guide](user-management.md). For guidance on assigning users to access groups, see [Assigning Users to Access Groups](assigning-users-to-access-groups.md). To work with access control systems in the Seam API, see [Access Control Systems](../../api-clients/access-control-systems/).
