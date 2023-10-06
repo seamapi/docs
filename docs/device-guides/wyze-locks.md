@@ -4,6 +4,8 @@ description: Guide for using Wyze locks with Seam
 
 # Wyze Locks
 
+<figure><img src="../.gitbook/assets/wyze-api-docs-cover.png" alt=""><figcaption></figcaption></figure>
+
 ## Overview
 
 Wyze produces a smart lock with an accompanying gateway and an optional keypad. Intended for the residential and short-term rental industries, Wyze Locks provide fast installation, virtual keys, and automatic unlocking and locking functionality. Wyze Locks replace only the interior side of existing deadbolts, so existing physical keys still work. Further, Wyze Locks are compatible with most single-cylinder deadbolts.
