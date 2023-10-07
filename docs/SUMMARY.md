@@ -216,6 +216,7 @@
   - [Schlage Encode Sample Data](device-guides/sandbox-and-sample-data/schlage-encode-sample-data.md)
   - [SmartThings Sample Data](device-guides/sandbox-and-sample-data/smartthings-sample-data.md)
   - [TTLock Sample Data](device-guides/sandbox-and-sample-data/ttlock-sample-data.md)
+  - [Wyze Locks Sample Data](device-guides/sandbox-and-sample-data/wyze-sample-data.md)
   - [Yale Locks Sample Data](device-guides/sandbox-and-sample-data/yale-sample-data.md)
 - [Reconnecting an Account](device-guides/reconnecting-an-account.md)
 - [Access Code Management for Hospitality](device-guides/implementing-robust-access-code-management-for-guests.md)
