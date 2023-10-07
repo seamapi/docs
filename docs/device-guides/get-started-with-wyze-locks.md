@@ -4,7 +4,7 @@ description: Learn how to connect and control your Wyze locks with the Seam API.
 
 # Get started with Wyze Locks
 
-[Image Here]
+<figure><img src="../.gitbook/assets/guides/wyze-getting-started-seo-cover.jpg" alt=""><figcaption></figcaption></figure>
 
 ## Overview
 
@@ -133,7 +133,7 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 - **email:** jane@example.com
 - **password:** 1234
 
-<figure><img src="[Wyze Connect Flow needed here]" alt=""><figcaption><p>Seam Connect Webview flow to connect Wyze account with Seam</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/guides/wyze-connect-flow-screens.jpg" alt=""><figcaption><p>Seam Connect Webview flow to connect Wyze account with Seam</p></figcaption></figure>
 
 Confirm the Connect Webview was successful by querying its status:
 
