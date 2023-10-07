@@ -2,9 +2,9 @@
 
 ### Users
 
-| username | Password | Wyze API Key | Wyze API Key ID |
-| -------- | -------- | ------------ | --------------- |
-| jane     | 1234     | ABC123ABC    | ABC123ABC       |
+| username             | Password | Wyze API Key | Wyze API Key ID |
+| -------------------- | -------- | ------------ | --------------- |
+| jane@example.com     | 1234     | ABC123ABC    | ABC123ABC       |
 
 ### Locks
 
