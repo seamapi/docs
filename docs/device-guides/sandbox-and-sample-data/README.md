@@ -86,10 +86,10 @@ To use a sandbox, you will first need to create a Sandbox Workspace and create a
 [ttlock-sample-data.md](ttlock-sample-data.md)
 {% endcontent-ref %}
 
-{% content-ref url="yale-sample-data.md" %}
-[yale-sample-data.md](yale-sample-data.md)
-{% endcontent-ref %}
-
 {% content-ref url="wyze-sample-data.md" %}
 [wyze-sample-data.md](wyze-sample-data.md)
+{% endcontent-ref %}
+
+{% content-ref url="yale-sample-data.md" %}
+[yale-sample-data.md](yale-sample-data.md)
 {% endcontent-ref %}
