@@ -4,7 +4,7 @@ description: Learn how to connect and control your Wyze locks with the Seam API.
 
 # Get started with Wyze Locks
 
-<figure><img src="../.gitbook/assets/guides/wyze-getting-started-seo-cover.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/guides/wyze-getting-seo-cover.jpg" alt=""><figcaption></figcaption></figure>
 
 ## Overview
 
