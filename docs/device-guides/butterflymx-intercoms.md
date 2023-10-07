@@ -16,7 +16,7 @@ Seam's integration with ButterflyMX supports the following devices. If you are u
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["butterflymx"]'
+  brands='["lockly"]'
 />" %}
 
 ## Requesting API Access from ButterflyMX
