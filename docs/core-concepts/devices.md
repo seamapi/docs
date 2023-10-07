@@ -497,7 +497,7 @@ console.log(connectWebview)
     'kwikset',     'ttlock',
     'noiseaware',  'igloohome',
     'ecobee',      'hubitat',
-    'four_suites'
+    'four_suites'  'wyze'
   ],
   any_device_allowed: false,
   connect_webview_id: '323b4ffa-ce24-4cff-a965-ff532563ec7a',
@@ -558,7 +558,8 @@ print(connect_webview)
 #                                    'ecobee',
 #                                    'hubitat',
 #                                    'four_suites',
-#                                    'dormakaba_oracode'],
+#                                    'dormakaba_oracode',
+#                                    'wyze'],
 #                accepted_devices=[],
 #                selected_provider=None,
 #                wait_for_device_creation=False,
@@ -585,7 +586,7 @@ puts connect_webview.inspect
 #   custom_metadata={}
 #   accepted_devices=[]
 #   login_successful=false
-#   accepted_providers=["august", "avigilon_alta", "brivo", "schlage", "smartthings", "yale", "nuki", "salto", "controlbyweb", "minut", "my_2n", "kwikset", "ttlock", "noiseaware", "igloohome", "ecobee", "hubitat", "four_suites"]
+#   accepted_providers=["august", "avigilon_alta", "brivo", "schlage", "smartthings", "yale", "wyze", "nuki", "salto", "controlbyweb", "minut", "my_2n", "kwikset", "ttlock", "noiseaware", "igloohome", "ecobee", "hubitat", "four_suites"]
 #   any_device_allowed=false
 #   connect_webview_id="96e673d8-2df2-49b2-b538-6cc88cbaf78e"
 #   custom_redirect_url=nil

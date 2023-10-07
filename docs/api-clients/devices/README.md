@@ -144,6 +144,7 @@ Here are a list of manufacturers that might get returned:
 | **`philia`**  |
 | **`samsung`** |
 | **`schlage`** |
+| **`wyze`** |
 | **`yale`**    |
 | **`unknown`** |
 
