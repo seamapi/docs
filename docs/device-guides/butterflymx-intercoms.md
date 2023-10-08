@@ -11,6 +11,13 @@ description: Guide for using ButterflyMX intercoms with Seam
 ButterflyMX offers internet-connected video intercoms for multi-family apartment buildings, as well as additional access-related products to streamline access to apartment buildings for staff, service providers, and residents. While the Seam API can be used to control ButterflyMX intercoms, you must first obtain an API key from ButterflyMX. For details on this, please see the [Requesting API Access from ButterflyMX](butterflymx-intercoms.md#requesting-api-access-from-butterflymx) section below.&#x20;
 
 ## Supported Devices
+Seam's integration with ButterflyMX supports [the following devices](https://www.seam.co/manufacturers/butterflymx). If you are unsure if a device or system is supported, please contact Seam support for clarifications.
+
+{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
+  endpoint="https://connect.getseam.com"
+  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
+  brands='["butterflymx"]'
+/>" %}
 
 ## Requesting API Access from ButterflyMX
 
