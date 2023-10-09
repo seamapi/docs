@@ -79,9 +79,7 @@ Errors are returned in a list:
 
 ### Generic Errors
 
-Seam recommends adding error handling logic to you application for each generic error below.
-Seam may add more generic errors in the future, so your application should include a fallback case
-if it encounters an unknown generic error code.
+Seam recommends adding error handling logic to you application for each generic error below. Seam may add more generic errors in the future, so your application should include a fallback case if it encounters an unknown generic error code.
 
 | Error Type            | Description                                                                                        |
 | --------------------- | -------------------------------------------------------------------------------------------------- |
@@ -91,22 +89,16 @@ if it encounters an unknown generic error code.
 
 ### Specific Errors
 
-When Seam is able to provide more specific information beyond one of the generic errors above,
-one or more errors from the list of specific errors may appear.
-This gives your application the option to display additional context or suggest provider specific resolutions.
+When Seam is able to provide more specific information beyond one of the generic errors above, one or more errors from the list of specific errors may appear. This gives your application the option to display additional context or suggest provider specific resolutions.
 
 {% hint style="info" %}
-If the connected account associated with a device has an error, it will be attached to the device
-alongside any other device errors.
-Treat these errors as Specific Errors.
-See [Connected Account Error Types](../connected-accounts/#connected-account-error-types).
+If the connected account associated with a device has an error, it will be attached to the device alongside any other device errors. Treat these errors as Specific Errors. See [Connected Account Error Types](../connected-accounts/#connected-account-error-types).
 {% endhint %}
 
-| Error Type                             | Description                                                                                                                                         |
-| -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `missing_device_credentials`           | Missing device credentials, please create a new Connect Webview to provide them.                                                                    |
-| `conflicting_unmanaged_access_code_id` | An access code called "Foo bar" with the same pin already exists on the device.                                                                     |
-| `ttlock_lock_not_paired_to_gateway`    | The lock is not paired with a Gateway, Seam will not be able to unlock or program access codes on the lock. Please add a Gateway to enable support. |
+| Error Type                          | Description                                                                                                                                         |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `missing_device_credentials`        | Missing device credentials, please create a new Connect Webview to provide them.                                                                    |
+| `ttlock_lock_not_paired_to_gateway` | The lock is not paired with a Gateway, Seam will not be able to unlock or program access codes on the lock. Please add a Gateway to enable support. |
 
 ## Device Warning Types
 
@@ -144,7 +136,6 @@ Here are a list of manufacturers that might get returned:
 | **`philia`**  |
 | **`samsung`** |
 | **`schlage`** |
-| **`wyze`** |
 | **`yale`**    |
 | **`unknown`** |
 
