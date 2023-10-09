@@ -105,6 +105,18 @@ curl --request POST "https://connect.getseam.com/locks/unlock_door" \
 }
 ```
 {% endtab %}
+
+{% tab title="Python" %}
+```python
+seam.locks.unlock_door("august_device_1")
+```
+{% endtab %}
+
+{% tab title="Javascript" %}
+```javascript
+await seam.locks.unlockDoor("august_device_1")
+```
+{% endtab %}
 {% endtabs %}
 
 ***
