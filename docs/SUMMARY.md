@@ -63,6 +63,7 @@
   * [Update Device](api-clients/devices/update-device.md)
   * [List Unmanaged Devices](api-clients/devices/list-unmanaged-devices.md)
   * [Update Unmanaged Device](api-clients/devices/update-unmanaged-device.md)
+  * [Get Unmanaged Device](api-clients/devices/get-device-1.md)
 * [Access Codes](api-clients/access-codes/README.md)
   * [Create an Access Code](api-clients/access-codes/create-an-access-code.md)
   * [Create many Access Codes](api-clients/access-codes/create-many-access-codes.md)
