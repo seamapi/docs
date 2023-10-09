@@ -175,6 +175,7 @@
 * [igloohome Locks](device-guides/igloohome-locks.md)
 * [Lockly Locks](device-guides/lockly-locks.md)
 * [Minut Sensors](device-guides/minut-sensors.md)
+* [Nuki Locks](device-guides/nuki-locks.md)
 * [PTI Storlogix Cloud](device-guides/pti-storlogix-cloud.md)
 * [Salto Locks](device-guides/salto-locks.md)
 * [TTLock Locks](device-guides/ttlock-locks.md)
