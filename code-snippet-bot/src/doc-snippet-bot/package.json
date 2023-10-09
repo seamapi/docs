@@ -4,16 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "esbuild inject-properties-bot.ts --bundle --platform=node --outfile=out.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/axios": "^0.14.0",
     "esbuild": "^0.19.4",
-    "esbuild-runner": "^2.2.2"
+    "esbuild-runner": "^2.2.2",
+    "path": "^0.12.7"
   },
   "devDependencies": {
-    "ava": "^5.3.1"
+    "@types/node": "^20.8.2",
+    "ava": "^5.3.1",
+    "fs": "^0.0.1-security"
   }
 }
