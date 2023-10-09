@@ -1,30 +1,38 @@
 import * as Fake from "@seamapi/fake-seam-connect"
-import ms from "ms"
-import * as seamapi from "seamapi"
 import { runInsideContainer } from "./run-inside-container"
 
 export const runCsharpCodeSample = async (csharp_sample: string) => {
-  // const fake = await Fake.createFake()
-  // const seed = await fake.seed()
-  // const server = await fake.startServer()
-
-  // const containerServerUrl = server.serverUrl.replace(
-  //   /(127.0.0.1)|(localhost)/,
-  //   os.platform() === "darwin" ? "host.docker.internal" : "172.17.0.1"
-  // )
-
+  const fake = await Fake.createFake()
+  const seed = await fake.seed()
+  const server = await fake.startServer()
+  
+  // Code to replace the server URL and API key in the C# sample code
+  const modified_csharp_sample = csharp_sample
+    .replace(/YourServerUrl/g, server.serverUrl)
+    .replace(/YourApiKey/g, seed.seam_apikey1_token)
+  
   const run_sh = `
-  dotnet new console
-  dotnet add package seam
+    echo "${modified_csharp_sample}" > Program.cs
+    dotnet run
   `.trim()
 
-  const { stdout } = await runInsideContainer({
-    command: "/root/run.sh",
+  // Running C# code inside a Docker container
+  const { stdout, stderr } = await runInsideContainer({
+    command: "/bin/sh",
     imageName: "mcr.microsoft.com/dotnet/sdk:6.0",
     filesystem: {
-      "/root/Program.cs": script,
+      "/root/run.sh": run_sh,
     },
   })
 
-  return { execution_result, logged_content }
+  // Handle and log any errors
+  if (stderr) {
+    console.error("Error during C# code execution:", stderr)
+    return { execution_result: null, logged_content: [`Error: ${stderr}`] }
+  }
+  
+  return {
+    execution_result: stdout,
+    logged_content: [stdout]
+  }
 }
