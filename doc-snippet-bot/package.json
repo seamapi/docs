@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild inject-properties-bot.ts --bundle --platform=node --outfile=out.js"
+    "cli": "esr src/cli.ts"
   },
   "keywords": [],
   "author": "",
@@ -16,8 +16,11 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "@types/node": "^20.8.2",
+    "@types/node": "^20.8.4",
     "ava": "^5.3.1",
-    "fs": "^0.0.1-security"
+    "axios": "^1.5.1",
+    "esbuild-register": "^3.5.0",
+    "fs": "^0.0.1-security",
+    "mock-fs": "^5.2.0"
   }
 }
