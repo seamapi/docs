@@ -1,0 +1,25 @@
+{
+  "name": "doc-snippet-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cli": "esr src/cli.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "esbuild": "^0.19.4",
+    "esbuild-runner": "^2.2.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.4",
+    "ava": "^5.3.1",
+    "axios": "^1.5.1",
+    "esbuild-register": "^3.5.0",
+    "mock-fs": "^5.2.0"
+  }
+}
