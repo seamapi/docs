@@ -29,7 +29,7 @@ WORKDIR /home/node/snippet-playgroun/javascript
 RUN npm install seamapi
 
 WORKDIR /home/node/snippet-playgroun/python
-RUN pip install seamapi
+RUN pip install seamapi --break-system-packages
 
 RUN mkdir -p .config/git \
  && echo ".vscode/*" >> .config/git/ignore \
