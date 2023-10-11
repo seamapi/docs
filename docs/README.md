@@ -6,13 +6,6 @@ description: Seam makes it easy to integrate IoT devices with your applications!
 
 We've integrated many door locks, thermostats, and other devices brands, and created simple APIs for interacting with them. Use the [Seam API console](https://console.seam.co/) to get your API keys. Follow the [get started guide](broken-reference/) to connect and control your first device.
 
-
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-device-table
-  client-session-token="seam_cst1_0000"
-  endpoint="https://react.seam.co/api"
-/>" %}
-
 ## Getting Started
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Quick Start</strong> (5 mins)</td><td>Learn how to connect a device and issue your first API call →</td><td></td><td><a href=".gitbook/assets/seam-quick-start-light.png">seam-quick-start-light.png</a></td><td><a href="quickstart.md">quickstart.md</a></td></tr><tr><td><strong>Get</strong> <strong>API Key</strong> (free)</td><td>Sign-up for the Seam developer console and get your API keys →</td><td></td><td><a href=".gitbook/assets/seam-api-key.png">seam-api-key.png</a></td><td><a href="https://console.seam.co/">https://console.seam.co/</a></td></tr></tbody></table>
