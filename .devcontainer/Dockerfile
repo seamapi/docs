@@ -10,23 +10,20 @@ RUN apt-get install -y python3 python3-pip python-is-python3
 # Install Ruby
 RUN apt-get install -y ruby ruby-dev
 
-# Install dotnet
-RUN wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh \
- && chmod +x dotnet-install.sh \
- && ./dotnet-install.sh --channel 7.0 \
- && ln -s /root/.dotnet/dotnet /bin/dotnet
-
 WORKDIR /home/node/snippet-playgroun/ruby
 RUN gem install seamapi
-
-WORKDIR /home/node/snippet-playgroun/csharp
-RUN dotnet new console && dotnet add package seam
 
 USER node
 WORKDIR /home/node
 
-WORKDIR /home/node/snippet-playgroun/javascript
-RUN npm install seamapi
+# Install dotnet
+RUN wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh \
+ && chmod +x dotnet-install.sh \
+ && ./dotnet-install.sh --channel 7.0
+ENV PATH="$PATH:/home/node/.dotnet"
+
+WORKDIR /home/node/snippet-playgroun/csharp
+RUN dotnet new console && dotnet add package seam
 
 WORKDIR /home/node/snippet-playgroun/python
 RUN pip install seamapi --break-system-packages
