@@ -19,6 +19,5 @@
       ]
     }
   },
-  "postCreateCommand": "cd /home/node/snippet-playground/javascript && npm install seamapi",
   "remoteUser": "node"
 }

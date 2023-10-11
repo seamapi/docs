@@ -16,6 +16,9 @@ RUN gem install seamapi
 WORKDIR /home/node/snippet-playgroun/python
 RUN pip install seamapi --break-system-packages
 
+WORKDIR /home/node/snippet-playgroun/javascript
+RUN npm install -g seamapi
+
 USER node
 WORKDIR /home/node
 
