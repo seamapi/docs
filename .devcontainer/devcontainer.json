@@ -6,14 +6,18 @@
       "VARIANT": "18"
     }
   },
-  "extensions": [
-    "ms-python.python",
-    "rebornix.Ruby",
-    "ms-vsliveshare.vsliveshare",
-    "dbaeumer.vscode-eslint",
-    "EditorConfig.EditorConfig",
-    "esbenp.prettier-vscode"
-  ],
-  "postCreateCommand": "npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "rebornix.Ruby",
+        "ms-dotnettools.csharp",
+        "ms-vsliveshare.vsliveshare",
+        "dbaeumer.vscode-eslint",
+        "EditorConfig.EditorConfig",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
   "remoteUser": "node"
 }

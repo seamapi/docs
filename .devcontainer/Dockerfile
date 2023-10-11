@@ -2,6 +2,20 @@ ARG VARIANT="18"
 
 FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:${VARIANT}
 
+RUN apt-get update
+
+# Install Python
+RUN apt-get install -y python3 python3-pip python-is-python3
+
+# Install Ruby
+RUN apt-get install -y ruby ruby-dev
+
+# Install dotnet
+RUN wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
+RUN chmod +x dotnet-install.sh
+RUN ./dotnet-install.sh --channel 7.0
+RUN ln -s /config/.dotnet/dotnet /bin/dotnet
+
 USER node
 WORKDIR /home/node
 
