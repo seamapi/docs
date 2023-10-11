@@ -10,14 +10,8 @@ RUN apt-get install -y python3 python3-pip python-is-python3
 # Install Ruby
 RUN apt-get install -y ruby ruby-dev
 
-WORKDIR /home/node/snippet-playground/ruby
 RUN gem install seamapi
-
-WORKDIR /home/node/snippet-playground/python
 RUN pip install seamapi --break-system-packages
-
-WORKDIR /home/node/snippet-playground/javascript
-RUN npm install -g seamapi
 
 USER node
 WORKDIR /home/node
