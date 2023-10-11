@@ -1,0 +1,19 @@
+{
+  "name": "API Docs",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "VARIANT": "18"
+    }
+  },
+  "extensions": [
+    "ms-python.python",
+    "rebornix.Ruby",
+    "ms-vsliveshare.vsliveshare",
+    "dbaeumer.vscode-eslint",
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode"
+  ],
+  "postCreateCommand": "npm install",
+  "remoteUser": "node"
+}
