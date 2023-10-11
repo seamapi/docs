@@ -13,6 +13,9 @@ RUN apt-get install -y ruby ruby-dev
 WORKDIR /home/node/snippet-playgroun/ruby
 RUN gem install seamapi
 
+WORKDIR /home/node/snippet-playgroun/python
+RUN pip install seamapi --break-system-packages
+
 USER node
 WORKDIR /home/node
 
@@ -24,9 +27,6 @@ ENV PATH="$PATH:/home/node/.dotnet"
 
 WORKDIR /home/node/snippet-playgroun/csharp
 RUN dotnet new console && dotnet add package seam
-
-WORKDIR /home/node/snippet-playgroun/python
-RUN pip install seamapi --break-system-packages
 
 RUN mkdir -p .config/git \
  && echo ".vscode/*" >> .config/git/ignore \
