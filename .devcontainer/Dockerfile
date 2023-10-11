@@ -10,13 +10,13 @@ RUN apt-get install -y python3 python3-pip python-is-python3
 # Install Ruby
 RUN apt-get install -y ruby ruby-dev
 
-WORKDIR /home/node/snippet-playgroun/ruby
+WORKDIR /home/node/snippet-playground/ruby
 RUN gem install seamapi
 
-WORKDIR /home/node/snippet-playgroun/python
+WORKDIR /home/node/snippet-playground/python
 RUN pip install seamapi --break-system-packages
 
-WORKDIR /home/node/snippet-playgroun/javascript
+WORKDIR /home/node/snippet-playground/javascript
 RUN npm install -g seamapi
 
 USER node
@@ -27,9 +27,6 @@ RUN wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh \
  && chmod +x dotnet-install.sh \
  && ./dotnet-install.sh --channel 7.0
 ENV PATH="$PATH:/home/node/.dotnet"
-
-WORKDIR /home/node/snippet-playgroun/csharp
-RUN dotnet new console && dotnet add package seam
 
 RUN mkdir -p .config/git \
  && echo ".vscode/*" >> .config/git/ignore \

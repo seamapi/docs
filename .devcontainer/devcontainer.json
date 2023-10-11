@@ -19,5 +19,6 @@
       ]
     }
   },
+  "postCreateCommand": "cd /home/node/snippet-playground/csharp && ./init.sh",
   "remoteUser": "node"
 }
