@@ -1,11 +1,12 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import axios from "axios"
 
 async function injectPropertiesBot() {
   try {
     const openapiUrl = 'https://connect.getseam.com/openapi.json';
-    const response = await fetch(openapiUrl);
-    const injectedProperties = await response.json();
+    const response = await axios.get(openapiUrl);
+    const injectedProperties = response.data;
     const stringifiedProperties = JSON.stringify(injectedProperties);
     const rootDirectory = process.cwd();
     const mdFiles = await findInjectFiles(rootDirectory);
