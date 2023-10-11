@@ -27,7 +27,7 @@ We support the following features:
     You can administer individual [users](../products/access-systems/#what-is-a-user) and add them to [access groups](../products/access-systems/#what-is-an-access-group) as needed.
 
     To authorize a user, [add the user to a `pti_access_level` access group](../products/access-systems/assigning-users-to-access-groups.md). If you wish to document that a user has rented a specific unit, include them in a `pti_unit` access group using the same endpoint. Note that certain access levels mandate a user be part of a `pti_unit` linked to that access area before they can enter those zones.
-*   [Programming access (PIN) codes](../products/smart-locks/access-codes/)
+*   [Programming access (PIN) codes](../products/access-systems/issuing-credentials.md)
 
     You can generate access codes and key cards for users. Note that you can assign a unique PIN code to each user, thereby facilitating secure site access.
 
