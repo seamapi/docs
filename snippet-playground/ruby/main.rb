@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require 'seam'
 
 random_number = rand(1e6).to_i

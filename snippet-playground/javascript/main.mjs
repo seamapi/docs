@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import Seam from "seamapi"
 
 const seam = new Seam({
