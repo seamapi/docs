@@ -114,6 +114,8 @@
     * [List Users](api-clients/access-control-systems/users/list-users.md)
     * [Get a User](api-clients/access-control-systems/users/get-user.md)
     * [Update a User](api-clients/access-control-systems/users/update-user.md)
+    * [Suspend a User](api-clients/access-control-systems/users/suspend-a-user.md)
+    * [Unsuspend a User](api-clients/access-control-systems/users/unsuspend-a-user.md)
     * [Delete a User](api-clients/access-control-systems/users/delete-user.md)
     * [Add a User to an Access Group](api-clients/access-control-systems/users/add-user-to-access-group.md)
     * [Remove a User from an Access Group](api-clients/access-control-systems/users/remove-user-from-access-group.md)
