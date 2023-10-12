@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cli": "esr src/cli.ts"
+    "cli": "esr src/cli.ts",
+    "test": "ava -T 2m"
   },
   "keywords": [],
   "author": "",
@@ -16,10 +17,12 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
+    "@types/mock-fs": "^4.13.2",
     "@types/node": "^20.8.4",
     "ava": "^5.3.1",
     "axios": "^1.5.1",
     "esbuild-register": "^3.5.0",
-    "mock-fs": "^5.2.0"
+    "mock-fs": "^5.2.0",
+    "nock": "^13.3.4"
   }
 }

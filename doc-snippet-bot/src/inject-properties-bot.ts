@@ -1,17 +1,15 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import axios from "axios"
+import fetchPropertiesFromOpenapispec from './fetch-properties-from-openapispec';
 
 async function injectPropertiesBot() {
   try {
-    const openapiUrl = 'https://connect.getseam.com/openapi.json';
-    const response = await axios.get(openapiUrl);
-    const injectedProperties = response.data;
-    const stringifiedProperties = JSON.stringify(injectedProperties);
+    const fetchedProperties = await fetchPropertiesFromOpenapispec();
+
     const rootDirectory = process.cwd();
     const mdFiles = await findInjectFiles(rootDirectory);
     for (const filePath of mdFiles) {
-      injectProperties(filePath, stringifiedProperties);
+      injectProperties(filePath, fetchedProperties);
       console.log(`Found the following *.md files: ${filePath}`);
     }
   } catch (error) {
