@@ -1,13 +1,13 @@
-root: ./docs
+root: ./docs/
 
 ​structure:  
     readme: README.md  
     summary: SUMMARY.md​
 
 redirects:  
-    docs/quickstart/get-api-key: docs/quickstart.md
-    quickstart/installation: docs/quickstart.md
-    quickstart/authentication.md: quickstart.md
-    quickstart/connect-a-device.md: docs/quickstart.md
+    quickstart/get-api-key: quickstart.md
+    quickstart/installation: quickstart.md
+    quickstart/authentication: quickstart.md
+    quickstart/connect-a-device: quickstart.md
     quickstart/your-first-device-api-call: quickstart.md
     quickstart/going-live: quickstart.md
