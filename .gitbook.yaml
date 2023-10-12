@@ -5,7 +5,7 @@ root: ./docs/
     summary: SUMMARY.md​
 
 redirects:  
-    quickstart/get-api-key: quickstart.md
+    quickstart: quickstart.md
     quickstart/installation: quickstart.md
     quickstart/authentication: quickstart.md
     quickstart/connect-a-device: quickstart.md
