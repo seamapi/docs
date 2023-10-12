@@ -2,7 +2,7 @@
 
 Seam allows you to configure the [noise thresholds](./#what-is-a-threshold) of your noise sensor, and receive events when a disturbance is detected. This guide will walk you through how to configure noise thresholds with the API.
 
-### Set Up Noise Thresholds
+## Set Up Noise Thresholds
 
 First, you’ll need to create a threshold using the [Create Noise Thresholds](../../api-clients/noise-sensors/create-noise-threshold.md) endpoint. For example:
 
@@ -45,18 +45,18 @@ Since each language encapsulates this response inside objects specific to that l
 
 Once you’ve created a threshold, you’ll need to connect it to a webhook to log events.
 
-#### Best Practices
+### Best Practices
 
 * For Minut devices, you can configure two thresholds- one for quiet hours and one for the rest of the day.
 * For NoiseAware devices, you can configure as many thresholds as you want, provided they don't overlap during daytime hours.
 
-### Set Up Webhooks
+## Set Up Webhooks
 
 You can set up webhooks in the [Seam Console](https://console.seam.co) with the **"+ Add Webhook"** button. All you need to do is fill in your URL, then select the event types you want to receive events for, then click **"Create"**.
 
 <figure><img src="../../.gitbook/assets/Screen Shot 2023-08-13 at 4.39.14 PM (1).png" alt=""><figcaption></figcaption></figure>
 
-### Monitor Events
+## Monitor Events
 
 Once your thresholds and webhooks are configured, you’ll be able to monitor events with the API. An event will look something like the code snippet below:
 

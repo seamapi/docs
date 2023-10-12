@@ -51,7 +51,7 @@ For locks that support setting codes with a schedule, Seam will preload access c
 
 <figure><img src="../../../.gitbook/assets/native-code-programming-dark.png" alt=""><figcaption><p>72 hours before the <code>starts_at</code> timestamp, Seam inserts the code into the device's internal memory. When the <code>starts_at</code> time arrives, the device automatically activates the code. It is then automatically deactivated at the <code>ends_at</code> timestamp.</p></figcaption></figure>
 
-#### Native Scheduling — Supported Providers
+#### Native Scheduling—Supported Providers
 
 | ✅ Supported | ✖️ Not Supported  |
 | ----------- | ----------------- |
@@ -63,6 +63,7 @@ For locks that support setting codes with a schedule, Seam will preload access c
 | Schlage     |                   |
 | TTLock      |                   |
 | Yale        |                   |
+| Wyze        |                   |
 
 ### **Just-in-time Scheduling**
 

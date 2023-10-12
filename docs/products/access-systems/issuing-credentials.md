@@ -4,19 +4,15 @@ description: Learn how to issue credentials to and remove credentials from users
 
 # Issuing Credentials
 
-## Overview
-
-Credentials determine the means by which a user gains access at an entrance.
+Credentials determine the means by which a user gains access at an entrance. Types of credentials include access codes, key cards, and mobile passes.
 
 {% hint style="info" %}
 Currently, Seam only supports the issuance of PIN codes for access.
 {% endhint %}
 
-***
+## Create a Credential for a User
 
-### Add a Credential for a User
-
-To add a credential for a user (that is, to create a new credential), provide the user ID (`acs_user_id`) and the desired PIN code (`code`).
+To [create a credential for a user](../../api-clients/access-control-systems/credentials/create-credential-for-user.md), provide the user ID (`acs_user_id`) and the desired [access (PIN) code](../smart-locks/access-codes/) (`code`).
 
 Note the following restrictions for PIN codes:
 
@@ -26,7 +22,7 @@ Note the following restrictions for PIN codes:
 The response includes the ID (`acs_credential_id`) of the newly-created credential, the assigned code (`code`), and the user (`acs_user_id`) associated with the credential. &#x20;
 
 {% tabs %}
-{% tab title="Curl" %}
+{% tab title="cURL (Bash)" %}
 **Request:**
 
 ```bash
@@ -36,21 +32,21 @@ curl -X 'POST' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
   -d '{
-  "acs_user_id": "00000000-0000-0000-0000-000000000000",
+  "acs_user_id": "22222222-2222-2222-2222-222222222222",
   "code": "1234"
 }'
 ```
 
 **Response:**
 
-```
+```json
 {
   "acs_credential": {
-    "acs_credential_id": "11111111-1111-1111-1111-111111111111",
-    "acs_user_id": "00000000-0000-0000-0000-000000000000",
+    "acs_credential_id": "44444444-4444-4444-4444-444444444444",
+    "acs_user_id": "22222222-2222-2222-2222-222222222222",
     "code": "1234",
-    "acs_system_id": "22222222-2222-2222-2222-222222222222",
-    "workspace_id": "33333333-3333-3333-3333-333333333333",
+    "acs_system_id": "11111111-1111-1111-1111-111111111111",
+    "workspace_id": "00000000-0000-0000-0000-000000000000",
     "created_at": "2023-01-01T00:00:00Z"
   },
   "ok": true
@@ -59,14 +55,12 @@ curl -X 'POST' \
 {% endtab %}
 {% endtabs %}
 
-***
+## Remove a Credential from a User
 
-### Remove a Credential from a User
-
-To remove a credential from a user, provide the credential ID (`acs_credential_id`).
+To remove a credential from a user, (that is, to [delete a credential](../../api-clients/access-control-systems/credentials/delete-credential.md)) provide the credential ID (`acs_credential_id`).
 
 {% tabs %}
-{% tab title="Curl" %}
+{% tab title="cURL (Bash)" %}
 **Request:**
 
 ```bash
@@ -76,13 +70,13 @@ curl -X 'POST' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
   -d '{
-  "acs_credential_id": "11111111-1111-1111-1111-111111111111"
+  "acs_credential_id": "44444444-4444-4444-4444-444444444444"
 }'
 ```
 
 **Response:**
 
-```
+```json
 {
   "ok": true
 }

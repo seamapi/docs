@@ -194,6 +194,7 @@ echo json_encode($webview);
 //       "hubitat",
 //       "four_suites",
 //       "dormakaba_oracode"
+//       "wyze
 //     ],
 //     "accepted_devices": [],
 //     "any_provider_allowed": false,

@@ -14,9 +14,9 @@ To ensure that the action has been successfully executed, we advise checking the
 
 For those who prefer using webhooks to verify the success of an action, we'll soon introduce events that indicate changes to the thermostat's climate settings.
 
-### Verifying that an thermostat setting action has succeeded
+## Verifying that an thermostat setting action has succeeded
 
-#### 1. Execute a "Heat" request (or other mode setting action)
+### 1. Execute a "Heat" request (or other mode setting action)
 
 When initiating a change in the thermostat settings, the Seam API returns an action attempt, which monitors the success or failure of the action.
 
@@ -56,7 +56,7 @@ curl --request POST "https://connect.getseam.com/thermostats/heat" \
 {% endtab %}
 {% endtabs %}
 
-#### 2. Poll the "Get Action Attempt" request to verify the setting change
+### 2. Poll the "Get Action Attempt" request to verify the setting change
 
 Use the `action_attempt_id` from the prior response to make a [Get Action Attempt request](../../api-clients/action-attempt/get-action-attempt.md). When the action attempt's `status` changes to `success`, it indicates the setting modification has been successful.
 
@@ -91,7 +91,7 @@ curl --silent --request GET "https://connect.getseam.com/action_attempts/get" \
 
 ***
 
-### Set to Heat Mode
+## Set to Heat Mode
 
 You can [set a thermostat to operate in heating mode](../../api-clients/thermostats/set-to-heat-mode.md) and specify a desired temperature. By establishing the set point, the thermostat will activate its heating system to maintain the specified  temperature.
 
@@ -131,7 +131,7 @@ curl --request POST 'https://connect.getseam.com/thermostats/heat' \
 
 ***
 
-### Set to Cool Mode
+## Set to Cool Mode
 
 You can [set a thermostat to operate in cooling mode](../../api-clients/thermostats/set-to-cool-mode.md) and specify a desired temperature. By establishing the set point, the thermostat will activate its cooling system to maintain the specified  temperature.
 
@@ -171,7 +171,7 @@ curl --request POST 'https://connect.getseam.com/thermostats/cool' \
 
 ***
 
-### Set to Heat-Cool Mode
+## Set to Heat-Cool Mode
 
 You can [set a thermostat to operate in heat-cool (or "auto") mode](../../api-clients/thermostats/set-to-heat-cool-auto-mode.md) and specify desired temperatures for both heating and cooling. By establishing the set points, the thermostat will activate its systems as needed to maintain the specified temperature range.
 
@@ -212,7 +212,7 @@ curl --request POST 'https://connect.getseam.com/thermostats/heat_cool' \
 
 ***
 
-### Turn off heating and cooling
+## Turn off heating and cooling
 
 You can [set a thermostat to operate in "off" mode](../../api-clients/thermostats/set-to-off-mode.md), which deactivates its heating and cooling systems. In this state, the thermostat will not regulate indoor temperatures.
 
@@ -251,7 +251,7 @@ curl --request POST 'https://connect.getseam.com/thermostats/off' \
 
 ***
 
-### Set the Fan Mode
+## Set the Fan Mode
 
 You can [configure a thermostat's fan](../../api-clients/thermostats/set-fan-mode.md) to operate in either `on` or `auto` mode. In the "on" setting, the fan runs continuously, while in "auto" mode, the fan operates based on temperature needs and system demands.
 

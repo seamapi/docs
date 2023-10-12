@@ -14,6 +14,12 @@ description: Guide for using 4SUITES locks with Seam
 
 This integration supports all [4SUITES locks, lock upgrades, and readers](https://www.4suiteshq.com/products/).
 
+{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
+  endpoint="https://connect.getseam.com"
+  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
+  brands='["four_suites"]'
+/>" %}
+
 We support the following features:
 
 * [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)
