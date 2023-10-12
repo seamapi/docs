@@ -1,13 +1,13 @@
-root: ./docs/
-
+root: 
+    ./docs/
 ​structure:  
     readme: README.md  
     summary: SUMMARY.md​
-
 redirects:  
-    quickstart: quickstart.md
+    quickstart/get-api-key: quickstart
     quickstart/installation: quickstart.md
     quickstart/authentication: quickstart.md
     quickstart/connect-a-device: quickstart.md
     quickstart/your-first-device-api-call: quickstart.md
     quickstart/going-live: quickstart.md
+    device-guides/get-started-with-wyze-locks: device-guides/wyze-locks.md

@@ -29,7 +29,7 @@ To control the devices you connected in [Step 1](quickstart.md#step-1-connect-de
 
 #### Install the Seam SDK
 
-Next up, install one of the Seam client libraries in the language of your choice. Seam supports many programming languages such as Javascript, Python, Ruby, PHP, C#, and more.
+Next up, install one of the Seam client libraries in the language of your choice. Seam supports many programming languages such as Javascript, Python, Ruby, Java, PHP, C#, and more.
 
 {% tabs %}
 {% tab title="Javascript" %}
