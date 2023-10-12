@@ -4,10 +4,9 @@ root:
     readme: README.md  
     summary: SUMMARY.md​
 redirects:  
-    quickstart/get-api-key: quickstart
+    quickstart/get-api-key: quickstart.md
     quickstart/installation: quickstart.md
     quickstart/authentication: quickstart.md
     quickstart/connect-a-device: quickstart.md
     quickstart/your-first-device-api-call: quickstart.md
     quickstart/going-live: quickstart.md
-    device-guides/get-started-with-wyze-locks: device-guides/wyze-locks.md
