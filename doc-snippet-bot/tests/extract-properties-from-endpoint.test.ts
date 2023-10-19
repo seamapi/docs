@@ -186,7 +186,7 @@ test("extractPropertiesFromEndpoint from /accces_codes/create should return expe
   t.deepEqual(properties, expectedProperties);
 })
 
-//* QUESTION make sure we want to extract the data from all the methods - if so then how should the table look like?
+//* return only POST
 
 test("extractPropertiesFromEndpoint from /access_codes/create_multiple should return expected properties", (t) => {
   const sampleJsonData = {
