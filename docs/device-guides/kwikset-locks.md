@@ -42,29 +42,12 @@ Perform the setup procedure that corresponds to your type of Kwikset lock.
 3. In the Kwikset App, click on the top left menu button, navigate to **Account Settings** and disable **2-Step Verification**.
 
 {% hint style="warning" %}
-You must disable **2-Step Verification**—that is, multifactor authentication (MFA)—before connecting your Kwikset account to Seam using the [Seam Connect Webview](../core-concepts/connect-webviews.md). Enabling MFA in the Kwikset App can block the Seam login process from performing successful authorization using your Kwikset account. After you connect your Kwikset account to Seam, you can reenable **2-Step Verification** in the Kwikset App **Account Settings**.
+You must disable **2-Step Verification**—that is, multifactor authentication (MFA)—before connecting your Kwikset account to Seam using the [Seam Connect Webview](../core-concepts/connect-webviews.md). 
+
+Enabling MFA in the Kwikset App can block the Seam login process from performing successful authorization using your Kwikset account. After you connect your Kwikset account to Seam, you can reenable **2-Step Verification** in the Kwikset App **Account Settings**.
 {% endhint %}
 
 4. Note your login credentials for the Kwikset App, and use these credentials to log in to the Seam Connect Webview to add your devices to Seam.
-
-### &#x20;Setup Instructions for SmartCode Locks
-
-1.  Purchase a compatible Z-Wave hub.
-
-    Currently, Seam integrates with the following two Z-Wave hubs:
-
-    * [SmartThings hub](https://aeotec.com/products/aeotec-smartthings-hub/)
-    * [Hubitat Elevation® hub](https://hubitat.com/products)
-
-    Ensure that you have one of these hubs before proceeding.
-2.  Follow the setup process for your Z-Wave hub to link your SmartCode locks to it.
-
-    You must link your SmartCode locks to the Z-Wave hub before connecting these locks to the internet.
-3. Navigate to the [Seam Connect Webview](../core-concepts/connect-webviews.md).
-4. In the Seam Connect Webview, select the brand of your hub, either **SmartThings** or **Hubitat**.
-5. Use your SmartThings or Hubitat login credentials to log in to the Seam Connect Webview to add your devices to Seam.
-
-***
 
 ## Where to Order
 
