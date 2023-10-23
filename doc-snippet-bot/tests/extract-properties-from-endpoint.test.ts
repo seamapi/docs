@@ -437,7 +437,7 @@ test("extractPropertiesFromEndpoint from /access_codes/create_multiple should re
     }
   }
 
-  const endpoint = '/access_codes/create';
+  const endpoint = '/access_codes/create_multiple';
 
   const properties = extractPropertiesFromEndpoint(sampleJsonData, endpoint);
 
