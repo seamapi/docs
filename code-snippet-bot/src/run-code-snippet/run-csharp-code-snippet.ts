@@ -7,9 +7,22 @@ export const runCsharpCodeSample = async (csharp_sample: string) => {
   const seed = await fake.seed()
   const server = await fake.startServer()
 
-  const modified_csharp_sample = csharp_sample
-    .replace(/YourServerUrl/g, server.serverUrl)
-    .replace(/YourApiKey/g, seed.seam_apikey1_token)
+  const modified_csharp_sample =
+    `
+  using Seam.Client;
+
+  var r = new string(Enumerable.Range(0, 10).Select(_ => "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"[new Random().Next(36)]).ToArray());
+  
+  
+  // Get a Seam Client
+  var seam = new SeamClient(
+      basePath: string.Format("https://{0}.fakeseamconnect.seam.vc", r),
+      apiToken: "seam_apikey1_token"
+  );
+  ` +
+    csharp_sample
+      .replace(/YourServerUrl/g, server.serverUrl)
+      .replace(/YourApiKey/g, seed.seam_apikey1_token)
 
   const run_sh = `
     cd /root
@@ -25,7 +38,9 @@ export const runCsharpCodeSample = async (csharp_sample: string) => {
     },
   })
 
-  const logged_content: string[] = [stripAnsi(stdout).trim()]
+  const logged_content: string[] = [
+    ...stripAnsi(stdout).replace(/\r\n/g, "\n").trim().split("\n"),
+  ]
 
   if (stderr) {
     console.error("Error during C# code execution:", stderr)
@@ -33,7 +48,9 @@ export const runCsharpCodeSample = async (csharp_sample: string) => {
   }
 
   return {
-    execution_result: stderr ? null : stripAnsi(stdout).trim(),
+    execution_result: stderr
+      ? null
+      : stripAnsi(stdout).trim().replace(/\r\n/g, "\n"),
     logged_content,
   }
 }
