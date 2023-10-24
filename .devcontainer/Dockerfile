@@ -21,11 +21,11 @@ WORKDIR /home/node
 
 # Install dotnet
 RUN wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh \
-  && chmod +x dotnet-install.sh \
-  && ./dotnet-install.sh --channel 7.0
+ && chmod +x dotnet-install.sh \
+ && ./dotnet-install.sh --channel 7.0
 ENV PATH="$PATH:/home/node/.dotnet"
 
 RUN mkdir -p .config/git \
-  && echo ".vscode/*" >> .config/git/ignore \
-  && echo "*.code-workspace" >> .config/git/ignore \
-  && echo ".history/" >> .config/git/ignore
+ && echo ".vscode/*" >> .config/git/ignore \
+ && echo "*.code-workspace" >> .config/git/ignore \
+ && echo ".history/" >> .config/git/ignore
