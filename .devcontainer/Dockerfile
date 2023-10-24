@@ -10,6 +10,9 @@ RUN apt-get install -y python3 python3-pip python-is-python3
 # Install Ruby
 RUN apt-get install -y ruby ruby-dev
 
+# Install Java
+RUN apt-get install -y default-jdk
+
 RUN gem install seamapi
 RUN pip install seamapi --break-system-packages
 
