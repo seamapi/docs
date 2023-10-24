@@ -1,5 +1,5 @@
 import * as Fake from "@seamapi/fake-seam-connect";
-import { runInsideContainer } from "./run-inside-container";
+import { runInsideContainer } from "./run-inside-container"
 import stripAnsi from "strip-ansi"
 
 export const runCsharpCodeSample = async (csharp_sample: string) => {
@@ -13,34 +13,19 @@ export const runCsharpCodeSample = async (csharp_sample: string) => {
 
   const run_sh = `
     cd /root
-    dotnet new console
-    dotnet add package seam
-
-    rm Program.cs
-    mv sample.cs Program.cs
-
-    echo '--- REAL OUTPUT START ---'
-
     dotnet run
   `.trim()
 
   const { stdout, stderr } = await runInsideContainer({
     command: "/root/run.sh",
-    imageName: "mcr.microsoft.com/dotnet/sdk:6.0",
+    imageName: "seamapi/csharp-sample-runner",
     filesystem: {
-      "/root/sample.cs": modified_csharp_sample,
+      "/root/Program.cs": modified_csharp_sample,
       "/root/run.sh": run_sh,
     },
   })
 
-  const output_after_installation = stripAnsi(stdout)
-    .split("--- REAL OUTPUT START ---")[1]
-    .split("\n")
-    .map((l) => l.trim())
-    .join("\n")
-    .trim()
-
-  const logged_content: string[] = [output_after_installation]
+  const logged_content: string[] = [stripAnsi(stdout).trim()]
 
   if (stderr) {
     console.error("Error during C# code execution:", stderr)
@@ -48,7 +33,7 @@ export const runCsharpCodeSample = async (csharp_sample: string) => {
   }
 
   return {
-    execution_result: stderr ? null : output_after_installation,
+    execution_result: stderr ? null : stripAnsi(stdout).trim(),
     logged_content,
   }
 }
