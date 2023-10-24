@@ -5,7 +5,7 @@ export function generatePropertiesTable(extractedProperties: { [x: string]: any;
 
   for (const propertyName in extractedProperties) {
     const property = extractedProperties[propertyName];
-    let formattedProperty = `| \`${propertyName}\` | type: ${property.type}`;
+    let formattedProperty = `  | ${propertyName} | type: ${property.type}`;
 
     if (property.type === 'string' && property.maxLength && property.minLength) {
       formattedProperty += ` | ${property.maxLength} to ${property.minLength} characters`;
@@ -17,7 +17,7 @@ export function generatePropertiesTable(extractedProperties: { [x: string]: any;
 
     if (property.type === 'boolean') {
       if (property.default !== undefined) {
-        formattedProperty += ` | Default: \`${property.default}\``;
+        formattedProperty += ` | Default: ${property.default}`;
       }
 
       if (property.enum) {
@@ -29,7 +29,7 @@ export function generatePropertiesTable(extractedProperties: { [x: string]: any;
       formattedProperty += ` | Array of ${property.items.type}`;
 
       if (property.items.format) {
-        formattedProperty += ` | Format: \`${property.items.format}\``;
+        formattedProperty += ` | Format: ${property.items.format}`;
       }
     }
 
