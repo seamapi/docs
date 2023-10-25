@@ -1,10 +1,23 @@
 ---
 description: Get a Thermostat on your account by its Device ID
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-# Get Thermostat
+# Retrieve thermostat
 
-{% swagger method="get" path="/thermostats/get" baseUrl="https://connect.getseam.com" summary="Get a Thermostat" %}
+Retrieves the details of a thermostat.
+
+{% swagger method="get" path="/thermostats/get" baseUrl="https://connect.getseam.com" summary="Retrieves details of a thermostat" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -17,7 +30,7 @@ ID of Device
 Bearer <API_KEY>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="name" %}
+{% swagger-parameter in="query" name="name" required="false" %}
 Name of the Device
 {% endswagger-parameter %}
 
@@ -38,13 +51,13 @@ Name of the Device
       "available_hvac_mode_settings": [
         "cool",
         "heat",
-        "heatcool",
+        "heat_cool",
         "off"
       ],
       "current_climate_setting": {
         "automatic_heating_enabled": true,
         "automatic_cooling_enabled": true,
-        "hvac_mode_setting": "heatcool",
+        "hvac_mode_setting": "heat_cool",
         "cooling_set_point_fahrenheit": 75,
         "heating_set_point_fahrenheit": 65,
         "manual_override_allowed": false 
@@ -121,13 +134,13 @@ print(thermostat)
 #         "available_hvac_mode_settings": [
 #             "cool",
 #             "heat",
-<strong>#             "heatcool",
+<strong>#             "heat_cool",
 </strong>#             "off"
 #         ],
 #         "current_climate_setting": {
 #             "automatic_heating_enabled": True,
 <strong>#             "automatic_cooling_enabled": True,
-</strong>#             "hvac_mode_setting": "heatcool",
+</strong>#             "hvac_mode_setting": "heat_cool",
 #             "cooling_set_point_fahrenheit": 75,
 #             "heating_set_point_fahrenheit": 65,
 <strong>#             "manual_override_allowed": False  
@@ -168,13 +181,13 @@ console.log(device)
       "available_hvac_mode_settings": [
         "cool",
         "heat",
-        "heatcool",
+        "heat_cool",
         "off"
       ],
       "current_climate_setting": {
         "automatic_heating_enabled": true,
         "automatic_cooling_enabled": true,
-        "hvac_mode_setting": "heatcool",
+        "hvac_mode_setting": "heat_cool",
         "cooling_set_point_fahrenheit": 75,
         "heating_set_point_fahrenheit": 65,
         "manual_override_allowed": false 
@@ -208,6 +221,75 @@ This section shows the JSON response returned by the API. Since each language en
 {% tab title="JSON" %}
 ```json
 {
+    "thermostat": {
+        "device_id": "62bc78df-a2ad-4fc4-801f-1c22042149ab",
+        "device_type": "ecobee_thermostat",
+        "capabilities_supported": [
+            "thermostat"
+        ],
+        "properties": {
+            "online": true,
+            "is_cooling": false,
+            "is_heating": false,
+            "manufacturer": "ecobee",
+            "is_fan_running": true,
+            "ecobee_metadata": {
+                "device_name": "Living Room",
+                "ecobee_device_id": "5aef77f2-0c23-4ab7-b837-dc14e6c7f6a3"
+            },
+            "has_direct_power": true,
+            "relative_humidity": 0.36,
+            "temperature_celsius": 21.11111111111111,
+            "is_cooling_available": true,
+            "is_heating_available": true,
+            "temperature_fahrenheit": 70,
+            "current_climate_setting": {
+                "hvac_mode_setting": "off",
+                "manual_override_allowed": false,
+                "automatic_cooling_enabled": false,
+                "automatic_heating_enabled": false
+            },
+            "available_hvac_mode_settings": [
+                "off",
+                "cool",
+                "heat",
+                "heat_cool"
+            ],
+            "can_enable_automatic_cooling": true,
+            "can_enable_automatic_heating": true,
+            "max_cooling_set_point_celsius": 33.333333333333336,
+            "max_heating_set_point_celsius": 26.11111111111111,
+            "min_cooling_set_point_celsius": 18.333333333333336,
+            "min_heating_set_point_celsius": 7.222222222222222,
+            "min_heating_cooling_delta_celsius": 2.7777777777777777,
+            "is_temporary_manual_override_active": false,
+            "name": "mild faucet",
+            "model": {
+                "display_name": "Thermostat",
+                "manufacturer_display_name": "Ecobee"
+            },
+            "image_url": "https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png",
+            "image_alt_text": "Ecobee 3 Lite Thermostat",
+            "is_climate_setting_schedule_active": false,
+            "min_heating_set_point_fahrenheit": 45,
+            "max_heating_set_point_fahrenheit": 79,
+            "min_cooling_set_point_fahrenheit": 65,
+            "max_cooling_set_point_fahrenheit": 92,
+            "min_heating_cooling_delta_fahrenheit": 5
+        },
+        "location": null,
+        "connected_account_id": "bd6a8926-206d-4030-bf14-ccb3ecd1cd3e",
+        "workspace_id": "9946a591-2da2-4558-9556-0cadf93f4040",
+        "created_at": "2023-08-29T06:00:00.042Z",
+        "errors": [],
+        "warnings": [],
+        "is_managed": true
+    },
+    "ok": true
+}
+
+
+{
   "thermostat": {
     "device_id": "a83690b2-2b70-409a-9a94-426699b84c97",
     "device_type": "ecobee_thermostat",
@@ -222,13 +304,13 @@ This section shows the JSON response returned by the API. Since each language en
       "available_hvac_mode_settings": [
         "cool",
         "heat",
-        "heatcool",
+        "heat_cool",
         "off"
       ],
       "current_climate_setting": {
         "automatic_heating_enabled": true,
         "automatic_cooling_enabled": true,
-        "hvac_mode_setting": "heatcool",
+        "hvac_mode_setting": "heat_cool",
         "cooling_set_point_fahrenheit": 75,
         "heating_set_point_fahrenheit": 65,
         "manual_override_allowed": false 

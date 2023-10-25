@@ -85,7 +85,7 @@ Whether another user can use the thermostat or API to override this climate sett
     "is_set_on_device": false,
     "automatic_heating_enabled": true,
     "automatic_cooling_enabled": true,
-    "hvac_mode_setting": "heatcool",
+    "hvac_mode_setting": "heat_cool",
     "cooling_set_point_fahrenheit": 75,
     "heating_set_point_fahrenheit": 65,
     "manual_override_allowed": false
@@ -156,7 +156,7 @@ Whether another user can use the thermostat or API to override this climate sett
 #    is_set_on_device: False
 #    automatic_heating_enabled: True
 #    automatic_cooling_enabled: True  
-#    hvac_mode_setting: heatcool
+#    hvac_mode_setting: heat_cool
 #    cooling_set_point_fahrenheit: 75 
 #    heating_set_point_fahrenheit: 65
 #    manual_override_allowed: False
@@ -188,7 +188,7 @@ await seam.climateSettingSchedules.create({
     "is_set_on_device": false,
     "automatic_heating_enabled": true,
     "automatic_cooling_enabled": true,
-    "hvac_mode_setting": "heatcool",
+    "hvac_mode_setting": "heat_cool",
     "cooling_set_point_fahrenheit": 75,
     "heating_set_point_fahrenheit": 65,
     "manual_override_allowed": false
@@ -240,7 +240,7 @@ This section shows the JSON response returned by the API. Since each language en
     "is_set_on_device": false,
     "automatic_heating_enabled": true,
     "automatic_cooling_enabled": true,
-    "hvac_mode_setting": "heatcool",
+    "hvac_mode_setting": "heat_cool",
     "cooling_set_point_fahrenheit": 75,
     "heating_set_point_fahrenheit": 65,
     "manual_override_allowed": false

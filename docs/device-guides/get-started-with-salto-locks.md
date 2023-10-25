@@ -332,7 +332,7 @@ $seam->locks->lock_door($lock->device_id);
 
 Some Salto locks and access points will have a keypad available to program access codes. These codes can then be entered to unlock the door.
 
-The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on an Salto lock. You can find out more about Salto lock access code in our [core concept section on access codes.](../core-concepts/access-codes.md)
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on an Salto lock. You can find out more about Salto lock access code in our [core concept section on access codes.](../products/smart-locks/access-codes/)
 
 {% hint style="info" %}
 Salto does not let you specify a code for an access code. Instead Salto generates a 6-digit code, which the Seam API returns.

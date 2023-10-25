@@ -10,7 +10,7 @@ The connect account button opens a new Connect Webview. Accounts connected from 
 <ConnectAccountButton />
 ```
 
-### [See Live Preview](https://react.seam.co/?path=/docs/example-connectaccountbutton--docs)
+### [See Live Preview](https://react.seam.co/?path=/docs/components-connectaccountbutton--docs)
 
 <figure><img src="../../.gitbook/assets/react-connect-account-button.png" alt="Connect Account Button"><figcaption></figcaption></figure>
 

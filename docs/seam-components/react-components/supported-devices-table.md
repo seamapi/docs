@@ -1,14 +1,21 @@
 # Supported Devices Table
 
-## \<SupportedDeviceTable /> [(preview)](https://react.seam.co/?path=/docs/example-supporteddevicetable--docs)
+## \<SupportedDeviceTable /> [(preview)](https://react.seam.co/?path=/docs/components-supporteddevicetable--docs)
 
 The supported device table allows you to filter, sort, and view all the devices compatible with Seam. You can use this table to indicate what devices are supported by your platform.
 
-```ts
+```tsx
+{/* Show all brands */}
+<SupportedDeviceTable />
+
+{/* Show a single brand */}
 <SupportedDeviceTable brands={["august"]}/>
 ```
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2023-06-30 at 9.46.33 AM.png" alt=""><figcaption></figcaption></figure>
+{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
+  endpoint="https://connect.getseam.com"
+  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
+/>" %}
 
 ### Props
 

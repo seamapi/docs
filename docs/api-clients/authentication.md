@@ -39,8 +39,6 @@ checkAuth();
 {% endtab %}
 
 {% tab title="Python" %}
-
-
 ```python
 from seamapi import Seam
 
@@ -69,6 +67,26 @@ puts workspace
 #   name="MySandbox"                                           
 #   connect_partner_name="Partner Sandbox"                           
 #   is_sandbox=true> 
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+```php
+use Seam\SeamClient;
+
+$seam = new SeamClient("YOUR_API_KEY");
+
+$workspace = $seam->workspaces->get();
+
+echo json_encode($workspace);
+/*
+{
+  workspace_id: 'ab804f5a-7dd2-42c8-8d09-0beff4f795eb',
+  name: 'Sanbox',
+  connect_partner_name: 'Acme',
+  is_sandbox: true
+}
+*/
 ```
 {% endtab %}
 {% endtabs %}

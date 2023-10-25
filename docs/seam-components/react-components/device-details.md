@@ -1,6 +1,6 @@
 # Device Details
 
-## \<DeviceDetails /> [(preview)](https://react.seam.co/?path=/docs/example-devicedetails--docs)
+## \<DeviceDetails /> [(preview)](https://react.seam.co/?path=/docs/components-devicedetails--docs)
 
 The device details component shows the properties, settings, and issues for a device.
 
@@ -8,11 +8,25 @@ The device details component shows the properties, settings, and issues for a de
 <DeviceDetails deviceId={deviceId} />
 ```
 
-### Size: Modal
+### Different Device Views
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2023-05-18 at 9.47.17 PM.png" alt="" width="375"><figcaption></figcaption></figure>
+The `DeviceDetails` will display varying views based on the device type.
+
+#### Door Lock details
+
+The "Lock" detail view displays a button leading to the list of access codes, along with various lock properties.
+
+<figure><img src="../../.gitbook/assets/Lock Detail.png" alt="" width="420"><figcaption></figcaption></figure>
+
+#### Thermostat details
+
+The "Thermostat" detail view provides a button to view the list of scheduled climates and buttons to adjust the thermostat settings.
+
+<figure><img src="../../.gitbook/assets/ThermostatDetail.png" alt="" width="420"><figcaption></figcaption></figure>
 
 ### Props
+
+The `DeviceDetails` component displays the device as identified by the `deviceId` property. You can customize the component by turning off features like `disableLockUnlock` for door locks.
 
 | Name                                       | Type     | Description                                                                                                       |
 | ------------------------------------------ | -------- | ----------------------------------------------------------------------------------------------------------------- |

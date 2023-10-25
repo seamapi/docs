@@ -52,20 +52,41 @@ Set to true to manage the device with Seam.
 
 ### Code Example
 
-{% tabs %}
-{% tab title="Python" %}
+<!-- CODE INJECT START
+Get an unmanaged device and convert it to a managed device
 
+e.g. in python you could do:
 ```python
-seam.devices.unmanaged.update(is_managed=True)
+unmanaged_device = seam.devices.unmanaged.get("some_device_uuid")
+seam.devices.unmanaged.update(device=unmanaged_device, is_managed=True)
 ```
-
-{% endtab %}
-
+-->
+{% tabs %}
 {% tab title="Javascript" %}
+```javascript
+await seam.devices.unmanaged.update({
+  device_id: unmanaged_device.deviceId, 
+  is_managed: true
+})
 
-```typescript
-await seam.devices.unmanaged.update({ is_managed: true });
 ```
-
+{% endtab %}
+{% tab title="Python" %}
+```python
+seam.devices.unmanaged.update(device=unmanaged_device, is_managed=True)
+```
+{% endtab %}
+{% tab title="Ruby" %}
+```ruby
+seam.devices.unmanaged.update(device: unmanaged_device, is_managed: true)
+```
+{% endtab %}
+{% tab title="PHP" %}
+```php
+$managed_device = $seam->access_codes->unmanaged->update(
+  access_code_id: $unmanaged_device->access_code_id,
+  is_managed: True
+);
+```
 {% endtab %}
 {% endtabs %}

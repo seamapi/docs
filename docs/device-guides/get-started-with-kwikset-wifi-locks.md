@@ -322,9 +322,15 @@ puts updated_lock.properties['locked'] # false
 
 ### 5 — Setting Access Code on Kwikset Lock
 
+{% hint style="info" %}
+In the Kwikset app, you cannot see access codes that were set from an external source (such as Seam) unless you are connected via bluetooth to the lock. 
+
+If you're connected through Wi-Fi and not bluetooth, the Kwikset app will *only* show the access codes you have set from the app itself and not the codes set from Seam.
+{% endhint %}
+
 Some Kwikset locks have a keypad paired to them to program access codes. These codes can then be entered to unlock a Kwikset lock.
 
-The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Kwikset lock. You can find out more about Kwikset lock access code in our [core concept section on access codes.](../core-concepts/access-codes.md)
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Kwikset lock. You can find out more about Kwikset lock access code in our [core concept section on access codes.](../products/smart-locks/access-codes/)
 
 **Access Code Constraints** Kwikset locks place the following constraints on access code attributes:
 

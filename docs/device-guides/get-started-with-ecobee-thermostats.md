@@ -198,7 +198,7 @@ devices[0]
 #         "off",
 #         "cool",
 #         "heat",
-#         "heatcool"
+#         "heat_cool"
 #       ],
 #       "can_enable_automatic_cooling": true,
 #       "can_enable_automatic_heating": true,
@@ -263,7 +263,7 @@ console.log(devices[0])
       "off",
       "cool",
       "heat",
-      "heatcool"
+      "heat_cool"
     ],
     "can_enable_automatic_cooling": true,
     "can_enable_automatic_heating": true,
@@ -303,7 +303,7 @@ A Climate Setting Schedule allows you to set up a thermostat HVAC mode setting (
 
 For instance, if you are a short-term-rental host who has a guest staying from Jan 1st - Jan 7th, you can create a Climate Setting Schedule that sets the thermostat to a climate setting (i.e. Heat to 70°C) throughout that guest's stay.
 
-The Seam API makes it easy to program `timebound` climate setting schedules onto an Ecobee thermostat. You can find out more about Ecobee thermostat climate setting in our [core concept section on climate settings.](../core-concepts/thermostats-climate-setting-schedules.md)
+The Seam API makes it easy to program `timebound` climate setting schedules onto an Ecobee thermostat. You can find out more about Ecobee thermostat climate setting in our [core concept section on climate settings.](../products/thermostats/thermostats-climate-setting-schedules.md)
 
 {% tabs %}
 {% tab title="Python" %}
@@ -330,7 +330,7 @@ seam.climate_setting_schedules.create(
 #    is_set_on_device: False
 #    automatic_heating_enabled: True
 #    automatic_cooling_enabled: True  
-#    hvac_mode_setting: heatcool
+#    hvac_mode_setting: heat_cool
 #    cooling_set_point_fahrenheit: 75 
 #    heating_set_point_fahrenheit: 65
 #    manual_override_allowed: False
@@ -362,7 +362,7 @@ await seam.climateSettingSchedules.create({
     "is_set_on_device": false,
     "automatic_heating_enabled": true,
     "automatic_cooling_enabled": true,
-    "hvac_mode_setting": "heatcool",
+    "hvac_mode_setting": "heat_cool",
     "cooling_set_point_fahrenheit": 75,
     "heating_set_point_fahrenheit": 65,
     "manual_override_allowed": false
@@ -386,7 +386,7 @@ Coming soon!
 
 ## 5. Set your Default Climate Setting
 
-When there are no active Climate Setting Schedules, the thermostat will fallback to its [Default Climate Setting](../thermostats/climate-setting-schedules/lock-a-lock.md).
+When there are no active Climate Setting Schedules, the thermostat will fallback to its [Default Climate Setting](../api-clients/thermostats/lock-a-lock.md).
 
 {% hint style="info" %}
 The Default Climate Setting for a thermostat will be set to the following settings by default:

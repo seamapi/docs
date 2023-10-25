@@ -10,11 +10,7 @@ If you've opted-in to Seam's backup access code pool when [creating an access co
 
 {% swagger method="post" path="/access_codes/pull_backup_access_code" baseUrl="https://connect.getseam.com" summary="Pull a Backup Access Code" %}
 {% swagger-description %}
-Pull a backup access code from Seam's backup access code pool for this access code. You can only pull backup access codes for 
-
-`time_bound`
-
- codes. The pulled backup access code will be removed at the same time as the original access code.
+Pull a backup access code from Seam's backup access code pool for this access code. You can only pull backup access codes for `time_bound` codes. The pulled backup access code will be removed at the same time as the original access code.
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="access_code_id" required="true" %}
@@ -22,7 +18,7 @@ Access Code ID
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" required="true" %}
-Bearer <API_KEY>
+Bearer \<API\_KEY>
 {% endswagger-parameter %}
 
 {% swagger-response status="201: Created" description="" %}

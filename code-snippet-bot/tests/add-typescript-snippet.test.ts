@@ -8,5 +8,8 @@ test("add typescript snippet", async (t) => {
       "Create an access code that starts today and ends in 30 days.",
   })
 
-  t.truthy(completion.includes("await seam.accessCodes.create({"))
+  t.truthy(
+    completion.includes("await seam.accessCodes.create({"),
+    `Should have gotten accessCodes.create method used but instead got this: \n${completion}`
+  )
 })

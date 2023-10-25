@@ -94,7 +94,7 @@ Alternative URL to redirect the user on error. If this is not set, falls back to
 {% tab title="Javascript" %}
 ```javascript
 await seam.connectWebviews.create({
-    accepted_providers: ["schlage"],
+    provider_category: "stable",
 });
 
 /*{
@@ -104,7 +104,7 @@ await seam.connectWebviews.create({
   workspace_id: 'f97073eb-c003-467a-965b-e6dba3a0131d',
   accepted_devices: [],
   login_successful: false,
-  accepted_providers: [ 'schlage' ],
+  provider_category: "stable",
   any_device_allowed: null,
   connect_webview_id: '7a85bb60-3d0c-4bf1-b75d-c802df011509',
   custom_redirect_url: null,
@@ -117,7 +117,7 @@ await seam.connectWebviews.create({
 
 {% tab title="Python" %}
 ```python
-seam.connect_webviews.create(['schlage'])
+seam.connect_webviews.create(provider_category="stable")
 
 # ConnectWebview(
 #   connect_webview_id='61c2877a-81e0-4474-ba8d-f96950dc095f',
@@ -134,7 +134,7 @@ seam.connect_webviews.create(['schlage'])
 {% tab title="Ruby" %}
 ```ruby
 seam.connect_webviews.create(
-  accepted_providers: ["smartthings"]
+  provider_category: "stable"
 )
 
 # <Seam::ConnectWebview:0x006a950
@@ -161,26 +161,53 @@ use Seam\SeamClient;
 $seam = new SeamClient("YOUR_API_KEY");
 
 $webview = $seam->connect_webviews->create(
-  accepted_providers: ["august"]
-);
+    provider_category: "stable"
+  );
+  
+echo json_encode($webview);
 
-echo json_encode($webview)
-/*
-{
-  connect_webview_id: "14db0efd-50ae-45ef-9042-7f95c09082c2",
-  custom_redirect_url: null,
-  url: "https://connect.getseam.com/v1/connect_webviews/view?connect_webview_id=14db0efd-50ae-45ef-9042-7f95c09082c2&auth_token=N4ZJau88guo5adHyBAPLsYdiCdoQvxpDb",
-  workspace_id: "ab804f5a-7dd2-42c8-8d09-0beff4f795eb",
-  device_selection_mode: "none",
-  accepted_providers: ["august"],
-  accepted_devices: [],
-  any_provider_allowed: false,
-  any_device_allowed: null,
-  created_at: "2022-02-16T17:45:10.523Z",
-  login_successful: false,
-  status: "pending"
-}
-*/
+
+// {
+//     "connect_webview_id": "68940a5e-c1d9-4ea6-b138-df273f687308",
+//     "workspace_id": "1d2826eb-4a26-4f46-bddb-ef5898baa859",
+//     "url": "https://connect.getseam.com/connect_webviews/view?connect_webview_id=68940a5e-c1d9-4ea6-b138-df273f687308&auth_token=QEUQ5yEheEjaK5EqJN32egPL7YpSYySHu",
+//     "connected_account_id": null,
+//     "created_at": "2023-09-16T20:40:29.272Z",
+//     "device_selection_mode": "none",
+//     "accepted_providers": [
+//       "august",
+//       "avigilon_alta",
+//       "brivo",
+//       "schlage",
+//       "smartthings",
+//       "yale",
+//       "nuki",
+//       "salto",
+//       "controlbyweb",
+//       "minut",
+//       "my_2n",
+//       "kwikset",
+//       "ttlock",
+//       "noiseaware",
+//       "igloohome",
+//       "ecobee",
+//       "hubitat",
+//       "four_suites",
+//       "dormakaba_oracode"
+//       "wyze
+//     ],
+//     "accepted_devices": [],
+//     "any_provider_allowed": false,
+//     "any_device_allowed": false,
+//     "login_successful": false,
+//     "wait_for_device_creation": false,
+//     "automatically_manage_new_devices": true,
+//     "custom_metadata": {},
+//     "status": "pending",
+//     "custom_redirect_url": null,
+//     "custom_redirect_failure_url": null,
+//     "error": null
+//   }
 ```
 {% endtab %}
 {% endtabs %}
@@ -191,12 +218,13 @@ echo json_encode($webview)
 
 ### Parameters
 
-| `provider_category`           | type: string                       | Specifies the category of providers to allow (e.g. "stable"). See [Provider Category Keys](./#accepted-provider-keys).                                                                                           |
-| ----------------------------- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `accepted_providers`          | type: string\[]                    | Array of accepted **device provider keys** and an alternative to `provider_category`. This lets you explicitly specified accepted providers (e.g. "august"). See [Device Provider Keys](./#device-provider-keys) |
-| `custom_redirect_url`         | <p>type: string<br>Optional</p>    | URL to redirect user to after provider login is complete                                                                                                                                                         |
-| `custom_redirect_failure_url` | <p>type: string</p><p>Optional</p> | Alternative URL to redirect the user on error. If this is not set, falls back to `custom_redirect_url`                                                                                                           |
-| `device_selection_mode`       | type: 'none'                       | 'multiple'                                                                                                                                                                                                       |
+| `provider_category`                | type: string                       | Specifies the category of providers to allow (e.g. "stable"). See [Provider Category Keys](./#accepted-provider-keys).                                                                                           |
+| ---------------------------------- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `accepted_providers`               | type: string\[]                    | Array of accepted **device provider keys** and an alternative to `provider_category`. This lets you explicitly specified accepted providers (e.g. "august"). See [Device Provider Keys](./#device-provider-keys) |
+| `custom_redirect_url`              | <p>type: string<br>Optional</p>    | URL to redirect user to after provider login is complete                                                                                                                                                         |
+| `custom_redirect_failure_url`      | <p>type: string</p><p>Optional</p> | Alternative URL to redirect the user on error. If this is not set, falls back to `custom_redirect_url`                                                                                                           |
+| `device_selection_mode`            | type: 'none'                       | 'multiple'                                                                                                                                                                                                       |
+| `automatically_manage_new_devices` | type: 'boolean'                    | Defaults to `true`, whether newly added devices should appear as a Managed Device                                                                                                                                |
 
 ### Response
 

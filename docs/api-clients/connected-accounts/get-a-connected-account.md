@@ -54,59 +54,57 @@ Bearer <API_KEY>
 ### Code Examples
 
 #### Retrieving using "connected\_account\_id"
-
+<!-- CODE INJECT START
+Get a connected account by id
+-->
 {% tabs %}
+{% tab title="Javascript" %}
+```javascript
+const connectedAccount = await seam.connectedAccounts.get({
+  connected_account_id: "123e4567-e89b-12d3-a456-426614174000"
+})
+
+console.log(connectedAccount)
+```
+{% endtab %}
+{% tab title="Python" %}
+```python
+# Get a connected account by its ID
+connected_account = seam.connected_accounts.get("123e4567-e89b-12d3-a456-426614174000")
+
+# Print the details of the connected account
+print(connected_account)
+```
+{% endtab %}
 {% tab title="Ruby" %}
 ```ruby
-seam.connected_accounts.get(
+# Use the Seam SDK to get a connected account by its id
+connected_account = seam.connected_accounts.get(
     connected_account_id: "123e4567-e89b-12d3-a456-426614174000"
 )
 
-# <Seam::ConnectedAccount:0x00ed1e8                                                            
-#   connected_account_id="282f9d15-d979-4de7-b4eb-7097c401e910"                                
-#   created_at="2022-07-06T09:43:07.125Z"                                                      
-#   user_identifier=nil                                                                        
-#   account_type="smartthings"> 
+# Print the details of the connected account
+puts connected_account
 ```
 {% endtab %}
-
-{% tab title="Python" %}
-{% code overflow="wrap" %}
-```python
-seam.connected_accounts.get("c6610ba7-88d7-4abf-9852-31eb0257aa56")
-
-# ConnectedAccount(
-#   connected_account_id='c6610ba7-88d7-4abf-9852-31eb0257aa56', 
-#   created_at='2022-08-23T12:43:49.542Z', 
-#   user_identifier={'email': 'jane@example.com'}, 
-#   account_type='schlage', 
-#   errors=[]
-# )
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="Javascript" %}
-{% code overflow="wrap" %}
-```javascript
-await seam.connectedAccounts.get(
-    "c6610ba7-88d7-4abf-9852-31eb0257aa56"
+{% tab title="PHP" %}
+```php
+// Get a connected account by its ID
+$connected_account = $seam->connected_accounts->get(
+  "123e4567-e89b-12d3-a456-426614174000"
 );
-  
-// {
-//   connected_account_id: 'c6610ba7-88d7-4abf-9852-31eb0257aa56',
-//   created_at: '2022-08-23T12:43:49.542Z',
-//   user_identifier: { email: 'jane@example.com' },
-//   account_type: 'schlage',
-//   errors: []
-// }
+
+echo json_encode($connected_account);
 ```
-{% endcode %}
 {% endtab %}
 {% endtabs %}
+<!-- CODE INJECT END -->
 
 #### Retrieving using "email"
 
+<!-- CODE INJECT START
+Get a connected account by email
+-->
 {% tabs %}
 {% tab title="Ruby" %}
 ```ruby
@@ -123,6 +121,7 @@ puts connect_account
 ```
 {% endtab %}
 {% endtabs %}
+<!-- CODE INJECT END -->
 
 ### Parameters
 

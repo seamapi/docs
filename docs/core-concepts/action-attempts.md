@@ -1,10 +1,10 @@
 # Action Attempts
 
-As seen in the [Device Capabilities](device-capabilities.md) section, you can perform actions against a device. However, devices exist in the physical world. The physical world is intrinsically asynchronous.
+As seen in the [Device Capabilities](broken-reference) section, you can perform actions against a device. However, devices exist in the physical world. The physical world is intrinsically asynchronous.
 
 This means that certain actions can take seconds, minutes, or even days to complete. Furthermore, an action can fail and you may also not find out until later.
 
-This is challenging because the world of APIs is generally synchronous (request-response). APIs must answer instantly. But an instant response would imply instant completion of a long-lived physical process. This is not possible.&#x20;
+This is challenging because the world of APIs is generally synchronous (request-response). APIs must answer instantly. But an instant response would imply instant completion of a long-lived physical process. This is not possible.
 
 To solve this, we created Action Attempts.
 

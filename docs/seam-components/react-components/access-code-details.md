@@ -1,6 +1,6 @@
 # Access Code Details
 
-## \<AccessCodeDetails /> [(preview)](https://react.seam.co/?path=/docs/example-accesscodedetails--docs)
+## \<AccessCodeDetails /> [(preview)](https://react.seam.co/?path=/docs/components-accesscodedetails--docs)
 
 The access code details component shows the properties, settings, and issues for an access code.
 
@@ -14,9 +14,10 @@ The access code details component shows the properties, settings, and issues for
 
 ### Props
 
-| Name              | Type     | Description                                                                |
-| ----------------- | -------- | -------------------------------------------------------------------------- |
-| accessCodeId\*    | string   | The id for the access code to be displayed.                                |
-| disableLockUnlock | boolean  | Hide the lock/unlock button for devices. Default: `false`.                 |
-| onBack            | function | true                                                                       |
-| className         | string   | Optional class name to add to the rendered component's containing element. |
+| Name                    | Type     | Description                                                                                                       |
+| ----------------------- | -------- | ----------------------------------------------------------------------------------------------------------------- |
+| accessCodeId\*          | string   | The id for the access code to be displayed.                                                                       |
+| disableLockUnlock       | boolean  | Hide the lock/unlock button for devices. Default: `false`.                                                        |
+| disableDeleteAccessCode | boolean  | Hide the delete button. Default: `false`.                                                                         |
+| onBack                  | function | <p>Optional callback fired when the Back chevron button is clicked.<br><br>Signature: <code>() => void</code></p> |
+| className               | string   | Optional class name to add to the rendered component's containing element.                                        |

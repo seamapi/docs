@@ -7,7 +7,8 @@ export type CodeInject = {
   start_line: number
   end_line: number
   prompt: string
-  content: string
+  code_snippet_content: string
+  output_content?: string
 }
 
 // Get code injects
@@ -23,7 +24,7 @@ export async function getCodeInjects(filePath: string): Promise<CodeInject[]> {
     start_line: -1,
     end_line: -1,
     prompt: "",
-    content: "",
+    code_snippet_content: "",
   }
 
   lines.forEach((line, index) => {
@@ -36,7 +37,7 @@ export async function getCodeInjects(filePath: string): Promise<CodeInject[]> {
         start_line: index,
         end_line: -1,
         prompt: "",
-        content: "",
+        code_snippet_content: "",
       }
     } else if (line.trim() === "<!-- CODE INJECT END -->") {
       inCodeInject = false
@@ -49,7 +50,7 @@ export async function getCodeInjects(filePath: string): Promise<CodeInject[]> {
       } else if (inPrompt) {
         currentCodeInject.prompt += `${line}\n`
       } else {
-        currentCodeInject.content += `${line}\n`
+        currentCodeInject.code_snippet_content += `${line}\n`
       }
     }
   })

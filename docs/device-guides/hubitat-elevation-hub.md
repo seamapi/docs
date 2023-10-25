@@ -6,13 +6,23 @@ description: Guide for using Hubitat Elevation Hubs with Seam
 
 This integration uses [Hubitat’s Maker API](https://docs2.hubitat.com/en/apps/maker-api) to make devices connected to a Hubitat Hub available for use with Seam.
 
+***
+
 ## Supported Devices
 
 The following device types are currently supported:
 
 * Door Locks - Where the device has the capability, we support triggering lock / unlock actions, and programming access codes.
 
-## Set Up Instructions&#x20;
+{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
+  endpoint="https://connect.getseam.com"
+  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
+  brands='["hubitat"]'
+/>" %}
+
+***
+
+## Setup Instructions&#x20;
 
 ### 1. Access the Hubitat Hub Dashboard
 
@@ -48,6 +58,8 @@ This prevents other people on the same network as that of the hub from being abl
 Use the Cloud URL you collected in the previous step to connect your account.
 
 <figure><img src="../.gitbook/assets/Screen Shot 2023-07-06 at 5.19.49 PM (2).png" alt="" width="338"><figcaption></figcaption></figure>
+
+***
 
 ## Where to Order
 

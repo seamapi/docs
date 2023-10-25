@@ -35,6 +35,14 @@ Types of Devices you'd like to filter by
 Manufacturer name you'd like to filter by eg. schlage
 {% endswagger-parameter %}
 
+{% swagger-parameter in="query" name="limit" %}
+Limit the number of devices returned
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="created_before" %}
+If specified, only devices created before this date will be returned
+{% endswagger-parameter %}
+
 {% swagger-response status="200: OK" description="" %}
 
 ```javascript
@@ -192,14 +200,16 @@ seam.devices.list
 
 ### Parameters
 
-| `connected_account_id`  | <p>type: string<br>Optional</p>   | <p><br>ID of the Connected Account</p>   |
-| ----------------------- | --------------------------------- | ---------------------------------------- |
-| `connected_account_ids` | <p>type: string[]<br>Optional</p> | <p><br>IDs of the Connected Accounts</p> |
-| `connect_webview_id`    | <p>type: string<br>Optional</p>   | ID of Connect Webview                    |
-| `device_type`           | <p>type: String<br>Optional</p>   | Type of Device                           |
-| `device_types`          | <p>type: string[]<br>Optional</p> | Types of Devices                         |
-| `manufacturer`          | <p>type: String<br>Optional</p>   | Device manufacturer                      |
-| `device_ids`            | <p>type: string[]<br>Optional</p> | IDs of the Devices to include            |
+| `connected_account_id`  | <p>type: string<br>Optional</p>   | <p><br>ID of the Connected Account</p>                               |
+| ----------------------- | --------------------------------- | -------------------------------------------------------------------- |
+| `connected_account_ids` | <p>type: string[]<br>Optional</p> | <p><br>IDs of the Connected Accounts</p>                             |
+| `connect_webview_id`    | <p>type: string<br>Optional</p>   | ID of Connect Webview                                                |
+| `device_type`           | <p>type: String<br>Optional</p>   | Type of Device                                                       |
+| `device_types`          | <p>type: string[]<br>Optional</p> | Types of Devices                                                     |
+| `manufacturer`          | <p>type: String<br>Optional</p>   | Device manufacturer                                                  |
+| `device_ids`            | <p>type: string[]<br>Optional</p> | IDs of the Devices to include                                        |
+| `limit`                 | <p>type: number<br>Optional</p>   | Limit the number of devices returned                                 |
+| `created_before`        | <p>type: string<br>Optional</p>   | If specified, only devices created before this date will be returned |
 
 ### Response
 

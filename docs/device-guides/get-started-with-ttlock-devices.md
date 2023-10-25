@@ -321,7 +321,7 @@ $seam->locks->lock_door($lock->device_id);
 
 ### 5 — Setting Access Codes on TTLock Devices
 
-The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a TTLock device. You can find out more about access codes in our [core concept section on access codes.](../core-concepts/access-codes.md)
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a TTLock device. You can find out more about access codes in our [core concept section on access codes.](../products/smart-locks/access-codes/)
 
 {% tabs %}
 {% tab title="Python" %}

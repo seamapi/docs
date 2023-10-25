@@ -21,7 +21,7 @@ ID of the Climate Setting Schedule
     "is_set_on_device": false,
     "automatic_heating_enabled": true,
     "automatic_cooling_enabled": true,
-    "hvac_mode_setting": "heatcool",
+    "hvac_mode_setting": "heat_cool",
     "cooling_set_point_fahrenheit": 75,
     "heating_set_point_fahrenheit": 65,
     "manual_override_allowed": false
@@ -80,7 +80,7 @@ seam.climate_setting_schedules.get("123e4567-e89b-12d3-a456-426614174000")
 #    is_set_on_device: False
 #    automatic_heating_enabled: True
 #    automatic_cooling_enabled: True  
-#    hvac_mode_setting: heatcool
+#    hvac_mode_setting: heat_cool
 #    cooling_set_point_fahrenheit: 75 
 #    heating_set_point_fahrenheit: 65
 #    manual_override_allowed: True
@@ -103,7 +103,7 @@ seam.climateSettingSchedules.get({
 //   "is_set_on_device": false,
 //   "automatic_heating_enabled": true,
 //   "automatic_cooling_enabled": true,
-//   "hvac_mode_setting": "heatcool",
+//   "hvac_mode_setting": "heat_cool",
 //   "cooling_set_point_fahrenheit": 75,
 //   "heating_set_point_fahrenheit": 65,
 //   "manual_override_allowed": false
@@ -137,7 +137,7 @@ This section shows the JSON response returned by the API. Since each language en
     "is_set_on_device": false,
     "automatic_heating_enabled": true,
     "automatic_cooling_enabled": true,
-    "hvac_mode_setting": "heatcool",
+    "hvac_mode_setting": "heat_cool",
     "cooling_set_point_fahrenheit": 75,
     "heating_set_point_fahrenheit": 65,
     "manual_override_allowed": true

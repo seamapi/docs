@@ -1,18 +1,24 @@
+import { addCodeOutputComments } from "../add-code-output-comments"
 import { extractCodeFromResponse } from "../extract-code-from-response"
 import { getChatCompletion } from "../get-chat-completion"
 import { getLanguageConfiguration } from "../language-configurations"
 import { routeDefinitions } from "../route-definitions"
 import { generalGuidelines } from "../task-guidelines"
 import { getCodeSnippetPrompt } from "./get-code-snippet-prompt"
+import stripComments from "strip-comments"
 
 type GetCodeSnippetParams = {
   language: string
   taskDescription: string
+  existingCodeSnippets?: Record<string, string>
+  useExistingCodeSnippetIfFunctionallyIdentical?: boolean
 }
 
 export const getCodeSnippet = async ({
   taskDescription,
   language,
+  existingCodeSnippets,
+  useExistingCodeSnippetIfFunctionallyIdentical = true,
 }: GetCodeSnippetParams): Promise<string> => {
   const languageConfig = getLanguageConfiguration(language)
 
@@ -43,11 +49,50 @@ ${routeDefinitions}
       generalGuidelines: generalGuidelines,
       languageGuidelines: languageConfig.languageGuidelines,
       routeDefinitions: relevantRouteDefs,
+      existingCodeSnippets,
     }),
     {
       model: "gpt-4",
     }
   )
 
-  return extractCodeFromResponse(completion)!
+  const stripCommentFn = languageConfig.commentStripFn ?? stripComments
+
+  const newSnippetCode = stripCommentFn(extractCodeFromResponse(completion)!, {
+    language: languageConfig.language,
+  })
+
+  const newSnippet = await addCodeOutputComments(newSnippetCode, {
+    languageConfig,
+    high_level_objective: taskDescription,
+  })
+
+  // Check if the code snippets are functionally identical
+  if (
+    useExistingCodeSnippetIfFunctionallyIdentical &&
+    existingCodeSnippets?.[language]
+  ) {
+    const identicalRes = await getChatCompletion(
+      `
+Are the following code snippets functionally identical? Output YES or NO (and
+nothing else)
+
+\`\`\`${language}
+${newSnippet.trim()}
+\`\`\`
+
+\`\`\`${language}
+${existingCodeSnippets[language].trim()}
+\`\`\`
+    `.trim(),
+      {
+        model: "gpt-3.5-turbo",
+      }
+    )
+
+    const identical = identicalRes.includes("YES") ? true : false
+    if (identical) return existingCodeSnippets[language].trim()
+  }
+
+  return newSnippet
 }

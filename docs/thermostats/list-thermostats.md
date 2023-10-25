@@ -1,8 +1,21 @@
 ---
 description: List all the thermostats
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-# List Thermostats
+# List all thermostats
+
+Returns a list of thermostats connected to your workspace. If no thermostats are connected, the list will be empty.
 
 {% swagger method="get" path="/thermostats/list" baseUrl="https://connect.getseam.com" summary="List all Thermostats" %}
 {% swagger-description %}
@@ -13,27 +26,27 @@ description: List all the thermostats
 Bearer <API_KEY>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="connected_account_id" %}
+{% swagger-parameter in="query" name="connected_account_id" required="false" %}
 ID of the Connected Account the thermostats belongs to
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="connected_account_ids" type="Array<String>" %}
+{% swagger-parameter in="query" name="connected_account_ids" type="Array<String>" required="false" %}
 IDs of the Connected Accounts the thermostats belongs to
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="connect_webview_id" %}
+{% swagger-parameter in="query" name="connect_webview_id" required="false" %}
 ID of the Connect Webview that was used to connect the thermostats
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="device_type" %}
+{% swagger-parameter in="query" name="device_type" required="false" %}
 Filter the thermostats by their device account type
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="manufacturer" %}
+{% swagger-parameter in="query" name="manufacturer" required="false" %}
 Filter the thermostats by their manufacturer
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="device_ids" %}
+{% swagger-parameter in="query" name="device_ids" required="false" %}
 The Device IDs of the thermostats
 {% endswagger-parameter %}
 
@@ -55,13 +68,13 @@ The Device IDs of the thermostats
         "available_hvac_mode_settings": [
           "cool",
           "heat",
-          "heatcool",
+          "heat_cool",
           "off"
         ],
         "current_climate_setting": {
           "automatic_heating_enabled": true,
           "automatic_cooling_enabled": true,
-          "hvac_mode_setting": "heatcool",
+          "hvac_mode_setting": "heat_cool",
           "cooling_set_point_fahrenheit": 75,
           "heating_set_point_fahrenheit": 65,
           "manual_override_allowed": false 
@@ -87,13 +100,13 @@ The Device IDs of the thermostats
         "available_hvac_mode_settings": [
           "cool",
           "heat",
-          "heatcool",
+          "heat_cool",
           "off"
         ],
         "current_climate_setting": {
           "automatic_heating_enabled": true,
           "automatic_cooling_enabled": true,
-          "hvac_mode_setting": "heatcool",
+          "hvac_mode_setting": "heat_cool",
           "cooling_set_point_fahrenheit": 75,
           "heating_set_point_fahrenheit": 65,
           "manual_override_allowed": false 
@@ -133,13 +146,13 @@ seam.thermostats.list()
 #         "available_hvac_mode_settings": [
 #           "cool",
 #           "heat",
-#           "heatcool",
+#           "heat_cool",
 #           "off"
 #         ],
 #         "current_climate_setting": {
 #           "automatic_heating_enabled": true,
 #           "automatic_cooling_enabled": true,
-#           "hvac_mode_setting": "heatcool",
+#           "hvac_mode_setting": "heat_cool",
 #           "cooling_set_point_fahrenheit": 75,
 #           "heating_set_point_fahrenheit": 65,
 #           "manual_override_allowed": false 
@@ -165,13 +178,13 @@ seam.thermostats.list()
 #         "available_hvac_mode_settings": [
 #           "cool",
 #           "heat",
-#           "heatcool",
+#           "heat_cool",
 #           "off"
 #         ],
 #         "current_climate_setting": {
 #           "automatic_heating_enabled": true,
 #           "automatic_cooling_enabled": true,
-#           "hvac_mode_setting": "heatcool",
+#           "hvac_mode_setting": "heat_cool",
 #           "cooling_set_point_fahrenheit": 75,
 #           "heating_set_point_fahrenheit": 65,
 #           "manual_override_allowed": false 
@@ -207,13 +220,13 @@ seam.thermostats.list()
       "available_hvac_mode_settings": [
         "cool",
         "heat",
-        "heatcool",
+        "heat_cool",
         "off"
       ],
       "current_climate_setting": {
         "automatic_heating_enabled": true,
         "automatic_cooling_enabled": true,
-        "hvac_mode_setting": "heatcool",
+        "hvac_mode_setting": "heat_cool",
         "cooling_set_point_fahrenheit": 75,
         "heating_set_point_fahrenheit": 65,
         "manual_override_allowed": false 
@@ -239,13 +252,13 @@ seam.thermostats.list()
       "available_hvac_mode_settings": [
         "cool",
         "heat",
-        "heatcool",
+        "heat_cool",
         "off"
       ],
       "current_climate_setting": {
         "automatic_heating_enabled": true,
         "automatic_cooling_enabled": true,
-        "hvac_mode_setting": "heatcool",
+        "hvac_mode_setting": "heat_cool",
         "cooling_set_point_fahrenheit": 75,
         "heating_set_point_fahrenheit": 65,
         "manual_override_allowed": false 
@@ -262,8 +275,6 @@ seam.thermostats.list()
 </code></pre>
 {% endtab %}
 {% endtabs %}
-
-
 
 ### Parameters
 
@@ -300,13 +311,13 @@ This section shows the JSON response returned by the API. Since each language en
         "available_hvac_mode_settings": [
           "cool",
           "heat",
-          "heatcool",
+          "heat_cool",
           "off"
         ],
         "current_climate_setting": {
           "automatic_heating_enabled": true,
           "automatic_cooling_enabled": true,
-          "hvac_mode_setting": "heatcool",
+          "hvac_mode_setting": "heat_cool",
           "cooling_set_point_fahrenheit": 75,
           "heating_set_point_fahrenheit": 65,
           "manual_override_allowed": false 
@@ -332,13 +343,13 @@ This section shows the JSON response returned by the API. Since each language en
         "available_hvac_mode_settings": [
           "cool",
           "heat",
-          "heatcool",
+          "heat_cool",
           "off"
         ],
         "current_climate_setting": {
           "automatic_heating_enabled": true,
           "automatic_cooling_enabled": true,
-          "hvac_mode_setting": "heatcool",
+          "hvac_mode_setting": "heat_cool",
           "cooling_set_point_fahrenheit": 75,
           "heating_set_point_fahrenheit": 65,
           "manual_override_allowed": false 

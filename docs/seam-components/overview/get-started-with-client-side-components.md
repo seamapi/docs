@@ -45,7 +45,7 @@ Create a plain HTML page with the content below. You can serve this anyway you l
     </main>
     <script
       type="module"
-      src="https://react.seam.co/v/1.18.0/dist/elements.js"
+      src="https://react.seam.co/v/1.42.1/dist/elements.js"
     ></script>
   </body>
 </html>
@@ -95,7 +95,7 @@ Then import the custom elements bundle in your application entrypoint:
 import "@seamapi/react/elements.js"
 ```
 
-Add the components where your framework renders HTML. Some frameworks may require additional configuration to enable web component support, e.g., [Angular](angular.md).
+Add the components where your framework renders HTML. Some frameworks may require additional configuration to enable web component support, e.g., [Angular](angular.md) or [Vue](vue.md).
 
 ```html
 <seam-connect-account-button publishable-key="your_publishable_key"></seam-connect-account-button>

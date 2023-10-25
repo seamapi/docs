@@ -4,8 +4,6 @@ description: Create an Access Code for a Device by its ID
 
 # Create an Access Code
 
-### Code Examples
-
 {% swagger method="post" path="/access_codes/create" baseUrl="https://connect.getseam.com" summary="Create an Access Code" %}
 {% swagger-description %}
 
@@ -35,26 +33,20 @@ Pin code to be programmed.
 Whether native scheduling should be used for time-bound codes if supported by the provider. Defaults to true.
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="allow_external_modification" required="false" type="boolean" %}
+Whether external modification of the code is allowed. Defaults to false.
+{% endswagger-parameter %}
+
 {% swagger-parameter in="body" name="use_backup_access_code_pool" required="false" type="boolean" %}
-Whether to opt-in to Seam's 
+Whether to opt-in to Seam's
 
 [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes)
 
-. Defaults to false. Can only be used with time_bound codes.
+. Defaults to false. Can only be used with time\_bound codes.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" required="true" %}
 Bearer <API_KEY>
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="sync" type="boolean" required="false" %}
-Set this to true to receive the
-
-`access_code`
-
-object in the
-
-`result`
 {% endswagger-parameter %}
 
 {% swagger-response status="201: Created" description="" %}
@@ -120,6 +112,10 @@ object in the
 {% endswagger-response %}
 {% endswagger %}
 
+***
+
+### Code Examples
+
 #### Creating an Ongoing Access Code
 
 {% tabs %}
@@ -158,7 +154,7 @@ seam.access_codes.create("a83690b2-2b70-409a-9a94-426699b84c97")
 ```javascript
 await seam.accessCodes.create({
   device_id: "a83690b2-2b70-409a-9a94-426699b84c97",
-})
+});
 
 /*
 {
@@ -204,7 +200,7 @@ await seam.accessCodes.create({
   name: "My first code",
   starts_at: "2022-11-12T19:23:42+0000",
   ends_at: "2022-11-13T19:23:42+0000",
-})
+});
 
 /*
 {
@@ -244,6 +240,8 @@ seam.access_codes.create(
 {% endtab %}
 {% endtabs %}
 
+***
+
 ### Parameters
 
 | `device_id`                   | type: string                     | <p><br>ID of the Device</p>                                                                                                                                                                                                                                                    |
@@ -254,7 +252,10 @@ seam.access_codes.create(
 | `code`                        | <p>type: string<br>Optional</p>  | Access code of Device                                                                                                                                                                                                                                                          |
 | `use_backup_access_code_pool` | <p>type: boolean<br>Optional</p> | Use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. This allows you to use [/access\_codes/pull\_backup\_access\_code](https://docs.seam.co/latest/api-clients/access-codes/pull-backup-access-code) |
 | `common_code_key`             | <p>type: string<br>Optional</p>  | any two access codes with the same `common_code_key` are guaranteed to have the same code                                                                                                                                                                                      |
-| `prefer_native_scheduling`    | <p>type: string<br>Optional</p>  | Whether [native scheduling](../../core-concepts/access-codes.md#native-scheduling) should be used for time-bound codes when supported by the provider (defaults to true)                                                                                                       |
+| `prefer_native_scheduling`    | <p>type: boolean<br>Optional</p> | Whether [native scheduling](../../products/smart-locks/access-codes/#native-scheduling) should be used for time-bound codes when supported by the provider (defaults to true)                                                                                                  |
+| `allow_external_modification` | <p>type: boolean<br>Optional</p> | Whether [external modification](https://docs.seam.co/latest/api-lcients/access-codes#external-modification) of the codes should be allowed (defaults to false)                                                                                                                 |
+
+***
 
 ### Response
 

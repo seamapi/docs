@@ -10,7 +10,7 @@ description: Learn how to connect and control smartlocks with the Seam API.
 
 Seam is a simple API to connect and control almost any smartlocks. Seam already integrates popular smartlock brands such as [August](https://seam.co/manufacturers/august), [Yale](https://seam.co/manufacturers/yale), [Schlage](https://seam.co/manufacturers/schlage), [Igloo](https://www.seam.co/manufacturers/igloohome), and [Kwikset](https://www.seam.co/manufacturers/kwikset), as well as lesser known ones like [Nuki](https://www.seam.co/manufacturers/nuki), [Wyze](https://www.seam.co/manufacturers/wyze), or [TTLock](https://www.seam.co/manufacturers/ttlock).
 
-The main benefit of Seam is that you can connect devices from these brands and control them with an easy to use API without having to worry about the underlying specific of each devices. Seam abstracts functions in [capabilities](../core-concepts/device-capabilities.md) such as `access_codes` or `locks` which you can use to integrate devices from multiple brands while expecting them to all behave more or less in the same way.
+The main benefit of Seam is that you can connect devices from these brands and control them with an easy to use API without having to worry about the underlying specific of each devices. Seam abstracts functions in [capabilities](broken-reference) such as `access_codes` or `locks` which you can use to integrate devices from multiple brands while expecting them to all behave more or less in the same way.
 
 This guide is intended to show you how to connect and control smartlocks. To learn more about all devices supported by Seam such as thermostats and sensors, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
@@ -292,7 +292,7 @@ Many smartlocks have a built-in keypad or an external one that can be paired ove
 
 ![](../.gitbook/assets/guides/code\_unlock.gif)
 
-The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a smartlock. An `ongoing` code is a code that will be permanently programmed onto the device until you tell the Seam API you wish to remove it. A `timebound` code is, as the time implies, time bound by a set of ISO8601 timestamp that you provide the Seam API. You can find out more about access code in our [core concept section on access codes.](../core-concepts/access-codes.md)
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a smartlock. An `ongoing` code is a code that will be permanently programmed onto the device until you tell the Seam API you wish to remove it. A `timebound` code is, as the time implies, time bound by a set of ISO8601 timestamp that you provide the Seam API. You can find out more about access code in our [core concept section on access codes.](../products/smart-locks/access-codes/)
 
 {% tabs %}
 {% tab title="Python" %}
