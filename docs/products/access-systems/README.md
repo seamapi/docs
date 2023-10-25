@@ -17,7 +17,7 @@ ACSs generally manage the following parameters:
 * At what times each person can gain access
 * Under what conditions each person is allowed access (for example, COVID test completed, ID verification, and so on)
 
-The Seam API provides the capability to manage users and their access permissions. You can also issue credentials (such as PIN codes and key cards) to users.
+The Seam API provides the capability to manage users and their access permissions. You can also issue credentials (such as PIN codes, key cards, and mobile phone passes) to users, as well as retrieve access log events and overall site analytics to determine attendance or building occupancy.
 
 ## Access System Components
 
