@@ -4,6 +4,7 @@ root:
   readme: README.md
   summary: SUMMARY.md​
 redirects:
+  latest/quickstart/get-api-key: latest/quickstart.md
   quickstart/get-api-key: quickstart.md
   quickstart/installation: quickstart.md
   quickstart/authentication: quickstart.md
