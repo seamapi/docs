@@ -27,7 +27,7 @@ The following table details the requirements for compatibility with this Seam in
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["lockly"]'
+  manufacturers="Lockly=ec677c19-0cda-45bf-b50d-ee39e0e940a2"
 />" %}
 
 ---
@@ -39,7 +39,7 @@ Seam supported device table copied from 2N PR and pasted into Markdown
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["my_2n"]'
+  manufacturers="2N=3713359d-3d8e-43b4-bc2b-03fbe80e727d"
 />" %}
 
 Seam supported device table copied from directly above, pasted into Markdown, and changed "my_2n" to "august"
@@ -47,7 +47,7 @@ Seam supported device table copied from directly above, pasted into Markdown, an
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["august"]'
+  manufacturers="August=cfe546ca-7a99-48e0-a665-4304dca85b4e"
 />" %}
 
 Working Seam supported device table copied from above in Markdown file and pasted into Markdown
@@ -55,14 +55,14 @@ Working Seam supported device table copied from above in Markdown file and paste
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["august"]'
+  manufacturers="August=cfe546ca-7a99-48e0-a665-4304dca85b4e"
 />" %}
 
 Working Seam supported device table copied from above in Markdown file, pasted into Markdown, and removed first line break
 
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["august"]'
+  manufacturers="August=cfe546ca-7a99-48e0-a665-4304dca85b4e"
 />" %}
 
 # END TEST

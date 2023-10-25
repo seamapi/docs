@@ -17,7 +17,7 @@ This integration supports all [ecobee thermostats](https://www.ecobee.com/en-us/
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["ecobee"]'
+  manufacturers="ecobee=983d1ec8-8e4f-4930-a3df-2fa45370f7f9"
 />" %}
 
 We support the following features:

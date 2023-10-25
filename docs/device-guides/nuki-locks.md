@@ -29,7 +29,7 @@ The following table details the requirements for compatibility with this Seam in
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["nuki"]'
+  manufacturers="Nuki=ed3ef2c0-5e2b-452a-ab9d-eb3aa9a9eada"
 />" %}
 
 We support the following features:

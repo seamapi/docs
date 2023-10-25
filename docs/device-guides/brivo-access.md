@@ -21,7 +21,7 @@ The Brivo Access platform supports the following wireless locks:
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["brivo"]'
+  manufacturers="Brivo=edcd4e38-a066-4502-be95-364fc54787ae"
 />" %}
 
 We support the following features:

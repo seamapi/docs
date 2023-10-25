@@ -27,7 +27,7 @@ This integration works any TTLock locks that are paired with [a TTLock Gateway](
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["ttlock"]'
+  manufacturers="TTLock=5d273929-b5a2-49f4-af6c-146920dc90c9"
 />" %}
 
 We support the following features:

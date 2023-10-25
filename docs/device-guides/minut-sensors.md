@@ -17,7 +17,7 @@ This integration supports the [Minut sensor](https://www.minut.com/product/featu
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["minut"]'
+  manufacturers="Minut=eff445ba-064c-4894-b4d5-0751e98da5d5"
 />" %}
 
 We support the following features:

@@ -17,7 +17,7 @@ This integration supports the Kwikset [Halo](https://www.kwikset.com/halo), [Hal
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["kwikset"]'
+  manufacturers="Kwikset=a8abff62-5354-4939-8838-db54417d2e55"
 />" %}
 
 We support the following features:

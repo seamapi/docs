@@ -27,7 +27,7 @@ The following table details the requirements for compatibility with this Seam in
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["august"]'
+  manufacturers="August=cfe546ca-7a99-48e0-a665-4304dca85b4e"
 />" %}
 
 We support the following features:

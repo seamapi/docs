@@ -17,7 +17,7 @@ This integration supports all [NoiseAware sensors](https://noiseaware.com/featur
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["noiseaware"]'
+  manufacturers="NoiseAware=34a8fd85-9ea4-4175-b6db-491e7457bcab"
 />" %}
 
 We support the following features:

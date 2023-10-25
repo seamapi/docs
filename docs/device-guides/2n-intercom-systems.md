@@ -17,7 +17,7 @@ This integration supports all [2N IP intercoms](https://wiki.2n.com/is/en).
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["my_2n"]'
+  manufacturers="2N=3713359d-3d8e-43b4-bc2b-03fbe80e727d"
 />" %}
 
 We support the following features:

@@ -25,7 +25,7 @@ Seam does not integrate with the [Wyze Lock Bolt](https://www.wyze.com/products/
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["wyze"]'
+  manufacturers="Wyze=16dae1f4-8b2a-485a-bb80-cc9262a5a053"
 />" %}
 
 We support the following features:

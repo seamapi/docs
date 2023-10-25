@@ -17,7 +17,7 @@ This integration supports all [4SUITES locks, lock upgrades, and readers](https:
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["four_suites"]'
+  manufacturers="4SUITES=1f47b69f-1c4c-469b-b9e2-2fd1fb287de8"
 />" %}
 
 We support the following features:

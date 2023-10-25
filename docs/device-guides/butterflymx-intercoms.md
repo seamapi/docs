@@ -16,7 +16,7 @@ Seam's integration with ButterflyMX supports [the following devices](https://www
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["butterflymx"]'
+  manufacturers="ButterflyMX=08171d9e-1a46-4b66-8e5d-c89c6022dbf5"
 />" %}
 
 ## Requesting API Access from ButterflyMX

@@ -17,7 +17,7 @@ This integration works any devices connected via their [SaltoKS platform](https:
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["salto"]'
+  manufacturers="Salto=5b4d97f6-5734-4537-9730-3392a0b0542e"
 />" %}
 
 We support the following features:

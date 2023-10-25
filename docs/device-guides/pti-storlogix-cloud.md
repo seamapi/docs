@@ -17,7 +17,7 @@ Seam integrates with any site that has Storlogix Cloud installed.
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["pti"]'
+  manufacturers="PTI=acc3d693-a037-4ef7-9490-7c7b72c7f5ef"
 />" %}
 
 We support the following features:

@@ -29,7 +29,7 @@ When purchasing a Yale Lock or a network module separately, always verify the sp
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["yale"]'
+  manufacturers="Yale=efb72479-e592-4993-b848-1d7d18cc1f65"
 />" %}
 
 We support the following features:

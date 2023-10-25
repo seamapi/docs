@@ -17,7 +17,7 @@ The following device types are currently supported:
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["hubitat"]'
+  manufacturers="Hubitat=246ef719-d7b2-4214-8dd8-d74e2e7fff36"
 />" %}
 
 ***

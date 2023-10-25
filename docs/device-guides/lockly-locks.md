@@ -19,7 +19,7 @@ This integration supports [all Lockly smart locks](https://lockly.com/collection
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["lockly"]'
+  manufacturers="Lockly=ec677c19-0cda-45bf-b50d-ee39e0e940a2"
 />" %}
 
 We support the following features:

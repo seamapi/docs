@@ -19,7 +19,7 @@ This integration supports [all readers, controllers, and wireless locks connecte
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["avigilon_alta"]'
+  manufacturers="Avigilon Alta=1d4b7455-0116-4f05-be61-d1e024ecb942"
 />" %}
 
 We support the following features:
