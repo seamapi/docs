@@ -92,6 +92,8 @@ export const runInsideContainer = async (
 
   logStream.on("data", (chunk: Buffer) => {
     const chunkStr = chunk.toString("utf8")
+    // If you want to log everything inside container
+    // console.log("cont>", chunkStr)
     output.stdout += chunkStr
   })
 
