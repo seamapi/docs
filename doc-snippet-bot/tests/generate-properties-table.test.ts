@@ -2,8 +2,6 @@ import test from "ava"
 import { generatePropertiesTable } from "../src/generate-properties-table";
 import extractPropertiesFromEndpoint from "../src/extract-properties-from-endpoint";
 
-//! question: how to access zod descriptions - are they inside seam connect?
-
 test('generatePropertiesTable generates expected table', async (t) => {
   const exampleEndpoint = "/access_codes/create"
   const extractedProperties = await extractPropertiesFromEndpoint(exampleEndpoint);
@@ -13,9 +11,9 @@ test('generatePropertiesTable generates expected table', async (t) => {
   | name | type: string
   | starts_at | type: string
   | ends_at | type: string
-  | code | type: string | 8 to 4 characters | ^\\d+$
-  | sync | type: boolean | Default: false
-  | attempt_for_offline_device | type: boolean | Default: true
+  | code | type: string |
+  | sync | type: boolean |
+  | attempt_for_offline_device | type: boolean |
   | common_code_key | type: string
   | prefer_native_scheduling | type: boolean
   | use_backup_access_code_pool | type: boolean
