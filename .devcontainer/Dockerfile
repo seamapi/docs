@@ -13,6 +13,9 @@ RUN apt-get install -y ruby ruby-dev
 # Install Java
 RUN apt-get install -y default-jdk
 
+# Install Go
+RUN apt-get install -y golang
+
 RUN gem install seamapi
 RUN pip install seamapi --break-system-packages
 
