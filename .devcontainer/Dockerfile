@@ -14,7 +14,18 @@ RUN apt-get install -y ruby ruby-dev
 RUN apt-get install -y default-jdk
 
 # Install Go
-RUN apt-get install -y golang
+ARG GO_VERSION="1.20.10"
+RUN apk add --no-cache ca-certificates
+RUN wget https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz
+RUN tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz
+
+## Set Go environment variables
+ENV PATH="/usr/local/go/bin:${PATH}"
+ENV GOPATH="/go"
+ENV GOBIN="/go/bin"
+
+## Clean up Go installation
+RUN rm go${GO_VERSION}.linux-amd64.tar.gz
 
 RUN gem install seamapi
 RUN pip install seamapi --break-system-packages
