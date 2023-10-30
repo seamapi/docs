@@ -1,5 +1,13 @@
 ARG VARIANT="18"
 
+# Build stage for Go installation.
+#
+# The latest versions of Go are not available to
+# install with apt-get. Instead, it's simplest to
+# install Go with a multi-stage docker build.
+FROM golang:1.20 AS golang
+
+# Use the "builder" stage to set the PATH variable
 FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:${VARIANT}
 
 RUN apt-get update
@@ -13,19 +21,9 @@ RUN apt-get install -y ruby ruby-dev
 # Install Java
 RUN apt-get install -y default-jdk
 
-# Install Go
-ARG GO_VERSION="1.20.10"
-RUN apk add --no-cache ca-certificates
-RUN wget https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz
-RUN tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz
-
-## Set Go environment variables
+# Copy Go from the golang stage.
+COPY --from=golang /usr/local/go /usr/local/go
 ENV PATH="/usr/local/go/bin:${PATH}"
-ENV GOPATH="/go"
-ENV GOBIN="/go/bin"
-
-## Clean up Go installation
-RUN rm go${GO_VERSION}.linux-amd64.tar.gz
 
 RUN gem install seamapi
 RUN pip install seamapi --break-system-packages
