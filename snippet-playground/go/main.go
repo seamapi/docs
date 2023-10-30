@@ -6,7 +6,7 @@ import (
 	"math/rand"
 	"os"
 
-	goclient "github.com/seamapi/go/client"
+	seam "github.com/seamapi/go/client"
 )
 
 func main() {
@@ -17,9 +17,9 @@ func main() {
 }
 
 func run() error {
-	client := goclient.NewClient(
-		goclient.WithBaseURL(fmt.Sprintf("https://%d.fakeseamconnect.seam.vc", rand.Intn(1000000))),
-		goclient.WithApiKey("seam_apikey1_token"),
+	client := seam.NewClient(
+		seam.WithBaseURL(fmt.Sprintf("https://%d.fakeseamconnect.seam.vc", rand.Intn(1000000))),
+		seam.WithApiKey("seam_apikey1_token"),
 	)
 	devices, err := client.Devices.List(context.Background(), nil)
 	if err != nil {
