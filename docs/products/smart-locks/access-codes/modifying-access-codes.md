@@ -4,100 +4,146 @@ description: >-
   successfully set on the device.
 ---
 
-# Modifying access codes
+# Modifying Access Codes
 
 ## 1. Update the access code using the API
 
-Any active or upcoming access codes may be updated using the [Update Access Code](../../../api-clients/access-codes/update-an-access-code.md) request.
+You can update any active or upcoming access codes using the [Update Access Code](../../../api-clients/access-codes/update-an-access-code.md) request.
 
-When making this change, adjust the access code's properties such as the `code`, `name`, `starts_at`, and `ends_at` to the new desired values.
+When making this change, adjust the properties of the access code, such as the `code`, `name`, `starts_at`, and `ends_at` to the new desired values.
 
 {% tabs %}
-{% tab title="Javascript" %}
-```javascript
-const accessCodeId = "ddf217cb-3fee-48be-ad4d-e8af16ea6bb0"
+{% tab title="Python" %}
+**Request:**
 
-const updatedAccessCode = await seam.accessCodes.update({
-    name: "my updated code name",
-    starts_at: new Date("2025-02-01T16:00:00Z").toISOString(),
-    ends_at: new Date("2025-02-22T12:00:00Z").toISOString(),
-    access_code_id: accessCodeId,
-})
+```python
+access_code_id = "1bbd1eba-e4a2-4f96-b1b9-8498a5405b2b"
 
-/*
-{
-  access_code_id: 'ddf217cb-3fee-48be-ad4d-e8af16ea6bb0',
-  device_id: '77208078-6dd7-44e5-a3e4-a2ed3a34efc9',
-  name: 'my updated code name',
-  appearance: {
-    name: 'seam-my updated code name seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
-    last_name: 'seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
-    first_name: 'seam-my updated code name'
-  },
-  code: '4456',
-  common_code_key: null,
-  type: 'time_bound',
-  status: 'removing',
-  starts_at: '2025-02-01T16:00:00.000Z',
-  ends_at: '2025-02-22T12:00:00.000Z',
-  is_backup_access_code_available: false,
-  created_at: '2023-08-29T05:01:07.435Z',
-  errors: [],
-  warnings: [],
-  is_managed: true
-}
-*/
+updated_access_code = seam.access_codes.update(
+  access_code = access_code_id,
+  name = "my updated code name",
+  code = "5432",
+  starts_at = "2025-02-01T16:00:00Z",
+  ends_at = "2025-02-22T12:00:00Z"
+)
 
+pprint(updated_access_code)
+```
 
+**Response:**
 
+```
+AccessCode(access_code_id='1bbd1eba-e4a2-4f96-b1b9-8498a5405b2b',
+           device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+           type='time_bound',
+           code='5432',
+           created_at='2023-10-19T02:21:58.738Z',
+           errors=[],
+           warnings=[],
+           starts_at='2025-02-01T16:00:00.000Z',
+           ends_at='2025-02-22T12:00:00.000Z',
+           name='my updated code name',
+           status='unset',
+           common_code_key=None,
+           is_managed=True,
+           is_waiting_for_code_assignment=None,
+           is_scheduled_on_device=False,
+           pulled_backup_access_code_id=None,
+           is_backup_access_code_available=False,
+           is_backup=None,
+           appearance=None,
+           is_external_modification_allowed=False)
 ```
 {% endtab %}
 
-{% tab title="Python" %}
-```python
-access_code_id = "0cf60b3a-2364-4d21-924e-64c7cb20bb62"
+{% tab title="cURL (bash)" %}
+**Request:**
 
-updated_access_code = seam.access_codes.update(
-  access_code=access_code_id,
-  name="my updated code name",
-  starts_at="2025-02-01T16:00:00Z",
-  ends_at="2025-02-22T12:00:00Z"
-)
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/access_codes/update' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "access_code_id": "27afb24f-c0ae-4ea9-81af-f06fd08de09f",
+  "name": "my updated code name",
+  "code": "5432",
+  "starts_at": "2025-02-01T16:00:00Z",
+  "ends_at": "2025-02-22T12:00:00Z"
+}'
+```
 
-# AccessCode(access_code_id='0cf60b3a-2364-4d21-924e-64c7cb20bb62',
-#            type='time_bound',
-#            code='9846',
-#            starts_at='2025-02-01T16:00:00.000Z',
-#            ends_at='2025-02-22T12:00:00.000Z',
-#            name='my updated code name',
-#            status='unset',
-#            common_code_key=None)
+**Response:**
+
+```json
+{
+  "action_attempt": {
+    "status": "pending",
+    "action_type": "UPDATE_ACCESS_CODE",
+    "action_attempt_id": "15c2ab78-df8a-40a3-a353-bb53003b8740",
+    "result": null,
+    "error": null
+  },
+  "ok": true
+}
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+**Request:**
+
+```javascript
+const updatedAccessCode = await seam.accessCodes.update({
+  access_code_id: "80aa1afa-f0e5-43c2-96ea-6ab141112f9c",
+  name: "my updated code name",
+  starts_at: "2025-02-01T16:00:00Z",
+  ends_at: "2025-02-22T12:00:00Z",
+  code: "5432"
+})
+
+console.log(updatedAccessCode)
+```
+
+**Response:**
+
+```json
+{
+  status: 'pending',
+  action_type: 'UPDATE_ACCESS_CODE',
+  action_attempt_id: 'bacd2fa5-2178-458d-a73a-de19eb7670ba',
+  result: null,
+  error: null
+}
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+**Request:**
+
 ```ruby
-access_code_id = "043a9ac6-105e-4d15-b4b7-072f9b54b448"
-seam.access_codes.update(
-    access_code_id: access_code_id,
-    name: 'my updated code name',
-    starts_at: '2025-02-01T16:00:00Z',
-    ends_at: '2025-02-22T12:00:00Z'
+updated_access_code = client.access_codes.update(
+  access_code_id: "0d2c8b21-c71f-4301-82ea-22830f749d9b",
+  name: "my updated code name",
+  starts_at: "2025-02-01T16:00:00Z",
+  ends_at: "2025-02-22T12:00:00Z",
+  code: "5432"
 )
 
-access_code = seam.access_codes.get(access_code_id)
-print(access_code.inspect)
-# <Seam::AccessCode:0x004b0
-#   access_code_id="043a9ac6-105e-4d15-b4b7-072f9b54b448"
-#   name="my updated code name"
-#   code="2262"
-#   type="time_bound"
-#   starts_at=2025-02-01 16:00:00 UTC
-#   ends_at=2025-02-22 12:00:00 UTC
-#   errors=[]
-#   warnings=[]>%
-
+puts updated_access_code.inspect
 ```
+
+**Response:**
+
+{% code overflow="wrap" %}
+```
+<Seam::ActionAttempt:0x00438
+  status="success"
+  action_type="UPDATE_ACCESS_CODE"
+  action_attempt_id="8fca2a08-cfbc-4b61-ab4d-7ef35cecb8d6"
+  result={"access_code"=>{"code"=>"5432", "name"=>"my updated code name", "type"=>"time_bound", "errors"=>[], "status"=>"unset", "ends_at"=>"2025-02-22T12:00:00.000Z", "warnings"=>[], "device_id"=>"6aae9d08-fed6-4ca5-8328-e36849ab48fe", "starts_at"=>"2025-02-01T16:00:00.000Z", "appearance"=>nil, "created_at"=>"2023-10-23T20:56:49.213Z", "is_managed"=>true, "access_code_id"=>"0d2c8b21-c71f-4301-82ea-22830f749d9b", "common_code_key"=>nil, "is_scheduled_on_device"=>false, "pulled_backup_access_code_id"=>nil, "is_backup_access_code_available"=>true, "is_external_modification_allowed"=>false}}>
+```
+{% endcode %}
 {% endtab %}
 
 {% tab title="PHP" %}
@@ -137,50 +183,66 @@ echo json_encode($updated_code, JSON_PRETTY_PRINT);
 ```
 {% endtab %}
 
-{% tab title="Curl" %}
+{% tab title="C#" %}
 **Request:**
 
-<pre class="language-bash"><code class="lang-bash"><strong>$ curl --request PUT 'https://connect.getseam.com/access_codes/update' \
-</strong>--header 'Authorization: Bearer ${API_KEY}' \
---header 'Content-Type: application/json' \
---data-raw '{
-  "access_code_id": "00000000-0000-0000-0000-000000000000",
-  "name": "New Name",
-  "code": "1111"
- }'
-</code></pre>
+```csharp
+var accessCodeId = "2928083e-4377-4467-ab33-c600ec48cdec";
+var updatedAccessCode = seam.AccessCodes.Update(
+  accessCodeId: accessCodeId,
+  name: "my updated code name",
+  startsAt: "2025-02-01T16:00:00Z",
+  endsAt: "2025-02-22T12:00:00Z",
+  code: "5432"
+);
+
+var accessCode = seam.AccessCodes.Get(accessCodeId: accessCodeId);
+
+  Console.WriteLine("Access code ID: " + accessCode.AccessCodeId);
+  Console.WriteLine("Name: " + accessCode.Name);
+  Console.WriteLine("Type: " + accessCode.Type);
+  Console.WriteLine("Starts at: " + accessCode.StartsAt);
+  Console.WriteLine("Ends at: " + accessCode.EndsAt);
+  Console.WriteLine("Code: " + accessCode.Code);
+```
 
 **Response:**
 
 ```
-{
-  "action_attempt": {
-    "status": "pending",
-    "action_type": "UPDATE_ACCESS_CODE",
-    "action_attempt_id": "UUID-1",
-    "result": null,
-    "error": null
-  },
-  "access_code": {
-    "access_code_id": "00000000-0000-0000-0000-000000000000",
-    "device_id": "11111111-1111-1111-1111-111111111111",
-    "name": "New Name",
-    "code": "1111",
-    "common_code_key": null,
-    "type": "ongoing",
-    "status": "setting",
-    "created_at": "2023-01-01T00:00:00Z",
-    "errors": [],
-    "warnings": [],
-    "is_managed": true
-  },
-  "ok": true
-}
+Access code ID: 2928083e-4377-4467-ab33-c600ec48cdec
+Name: my time-bound code
+Type: TimeBound
+Starts at: 2025-01-01T16:00:00.000Z
+Ends at: 2025-01-22T12:00:00.000Z
+Code: 2345
+```
+{% endtab %}
+
+{% tab title="Java" %}
+**Request:**
+
+```java
+ActionAttempt attempt = seam.accessCodes()
+        .update(AccessCodesUpdateRequest.builder()
+                .accessCodeId("48e8f0e3-11a4-49a4-b589-27a1baf7aee4")
+                .name("my updated code name")
+                .startsAt("2025-02-01T16:00:00Z")
+                .endsAt("2025-02-22T12:00:00Z")
+                .code("5432")
+                .build());
+System.out.println(attempt.getPending());
+```
+
+**Response:**
+
+```json
+Optional[{
+  "action_type" : "UPDATE_ACCESS_CODE",
+  "action_attempt_id" : "7f9b6416-f755-4128-9d7c-1c0cd5e3b890"
+}]
 ```
 {% endtab %}
 {% endtabs %}
-
-***
 
 ## 2. Verify that the access code has been updated
 
@@ -220,111 +282,366 @@ However, if you receive `access_code.failed_to_set_on_device` or `access_code.de
 
 ## Special Case #1: Changing an ongoing access code to time-bound access
 
-When converting a permanent access code to time-bound access, you'll also need to set the `starts_at` and `ends_at` properties to the time frame you want.
+To convert a permanent access code to time-bound access, you must set the `starts_at` and `ends_at` properties to the timeframe that you want for the access code.
 
 {% tabs %}
-{% tab title="Javascript" %}
-```javascript
-const accessCodeId = 'aa5a89e6-fe68-4082-ae16-d192b0759670'
+{% tab title="Python" %}
+### 1. Confirm that the access code starts as an ongoing code.
 
-// get the ongoing code
-let accessCode = await seam.accessCodes.get({access_code_id: accessCodeId})
-console.log(accessCode.typy)
+**Request:**
 
-// => ongoing
+```python
+access_code_id="daf89de3-ad3a-49aa-93bd-25f27d58f699"
+access_code = seam.access_codes.get(access_code_id)
 
+pprint("Access code ID: " + access_code.access_code_id)
+pprint("Type: " + access_code.type)
+pprint("Starts at: " + str(access_code.starts_at))
+pprint("Ends at: " + str(access_code.ends_at))
+```
 
-// update the code to give it a starts_at/ends_at
-await seam.accessCodes.update({
-  starts_at: new Date("2025-01-01T16:00:00Z").toISOString(),
-  ends_at: new Date("2025-01-22T12:00:00Z").toISOString(),
-  access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74",
-  sync: true, // a flag you can pass to wait until the update has taken place
-})
+**Response:**
 
-// retrieve the updated access code and confirm the starts_at/ends_at are there
-accessCode = await seam.accessCodes.get({access_code_id: accessCodeId})
-console.log(accessCode)
+```
+'Access code ID: daf89de3-ad3a-49aa-93bd-25f27d58f699'
+'Type: ongoing'
+'Starts at: None'
+'Ends at: None'
+```
 
-/*
-{
-  access_code_id: 'aa5a89e6-fe68-4082-ae16-d192b0759670',
-  device_id: '77208078-6dd7-44e5-a3e4-a2ed3a34efc9',
-  name: 'my updated code name',
-  appearance: {
-    name: 'seam-my updated code name seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
-    last_name: 'seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
-    first_name: 'seam-my updated code name'
-  },
-  code: '4456',
-  common_code_key: null,
-  type: 'time_bound',
-  status: 'removing',
-  starts_at: '2025-01-01T16:00:00.000Z',
-  ends_at: '2025-01-22T12:00:00.000Z',
-  is_backup_access_code_available: false,
-  created_at: '2023-08-29T05:01:07.435Z',
-  errors: [],
-  warnings: [],
-  is_managed: true
-}
-*/
+### 2. Update the code to set `starts_at` and `ends_at` timestamps.
+
+**Request:**
+
+```python
+access_code_id="daf89de3-ad3a-49aa-93bd-25f27d58f699"
+access_code = seam.access_codes.get(access_code_id)
+
+pprint(seam.access_codes.update(
+  access_code = access_code_id,
+  starts_at = "2025-01-01T16:00:00Z",
+  ends_at = "2025-01-22T12:00:00Z"
+))
+```
+
+**Response:**
+
+```
+AccessCode(access_code_id='daf89de3-ad3a-49aa-93bd-25f27d58f699',
+           device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+           type='time_bound',
+           .
+           .
+           .
+           starts_at='2025-01-01T16:00:00.000Z',
+           ends_at='2025-01-22T12:00:00.000Z',
+           name='my ongoing code',
+           .
+           .
+           .
+           )
+```
+
+### 3. Confirm that the `type` has changed to `time_bound`.
+
+**Request:**
+
+```python
+access_code_id="daf89de3-ad3a-49aa-93bd-25f27d58f699"
+access_code = seam.access_codes.get(access_code_id)
+
+pprint("Access code ID: " + access_code.access_code_id)
+pprint("Type: " + access_code.type)
+pprint("Starts at: " + str(access_code.starts_at))
+pprint("Ends at: " + str(access_code.ends_at))
+```
+
+**Response:**
+
+```
+'Access code ID: daf89de3-ad3a-49aa-93bd-25f27d58f699'
+'Type: time_bound'
+'Starts at: 2025-01-01T16:00:00.000Z'
+'Ends at: 2025-01-22T12:00:00.000Z'
 ```
 {% endtab %}
 
-{% tab title="Python" %}
-```python
-access_code_id="fb61e71c-d165-40a4-a65f-1a9ee44f8774"
+{% tab title="cURL (bash)" %}
+### 1. Confirm that the access code starts as an ongoing code.
 
-# confirm that the code starts as an ongoing code
-access_code = seam.access_codes.get(access_code_id)
-print(access_code.type)
-# ongoing
+**Request:**
 
-# update the code to set starts_at and ends_at timestamps
-seam.access_codes.update(
-  access_code=access_code_id,
-  starts_at="2025-01-01T16:00:00Z",
-  ends_at="2025-01-22T12:00:00Z"
-)
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/access_codes/get' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "access_code_id": "d2047ba8-8849-467f-a07a-efab6c3673bc"
+}'
+```
 
-# Confirm that the type has changed to time-bound
-access_code = seam.access_codes.get(access_code_id)
-print(access_code.type)
-# time_bound
+**Response:**
+
+```json
+{
+  "access_code": {
+    "access_code_id": "d2047ba8-8849-467f-a07a-efab6c3673bc",
+    "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+    "name": "my ongoing code",
+    .
+    .
+    .
+    "type": "ongoing",
+    .
+    .
+    .
+  },
+  "ok": true
+}
+```
+
+### 2. Update the code to set `starts_at` and `ends_at` timestamps.
+
+**Request:**
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/access_codes/update' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "access_code_id": "d2047ba8-8849-467f-a07a-efab6c3673bc",
+  "starts_at": "2025-01-01T16:00:00Z",
+  "ends_at": "2025-01-22T12:00:00Z"
+}'
+```
+
+**Response:**
+
+```json
+{
+  "action_attempt": {
+    "status": "pending",
+    "action_type": "UPDATE_ACCESS_CODE",
+    "action_attempt_id": "8a298777-c689-4552-b622-c5c4bad5d65e",
+    "result": null,
+    "error": null
+  },
+  "ok": true
+}
+```
+
+### 3. Confirm that the `type` has changed to `time_bound`.
+
+**Request:**
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/access_codes/get' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "access_code_id": "d2047ba8-8849-467f-a07a-efab6c3673bc"
+}'
+```
+
+**Response:**
+
+```json
+{
+  "access_code": {
+    "access_code_id": "d2047ba8-8849-467f-a07a-efab6c3673bc",
+    "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+    "name": "my ongoing code",
+    .
+    .
+    .
+    "type": "time_bound",
+    .
+    .
+    .
+    "starts_at": "2025-01-01T16:00:00.000Z",
+    "ends_at": "2025-01-22T12:00:00.000Z",
+    .
+    .
+    .
+  },
+  "ok": true
+}
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+### 1. Confirm that the access code starts as an ongoing code.
+
+**Request:**
+
+```javascript
+console.log(await seam.accessCodes.get({
+  access_code_id: "f4780806-076e-4cec-8081-df0ea2139d5a"
+}))
+```
+
+**Response:**
+
+```json
+{
+  access_code_id: 'f4780806-076e-4cec-8081-df0ea2139d5a',
+  device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+  name: 'my ongoing code',
+  .
+  .
+  .
+  type: 'ongoing',
+  .
+  .
+  .
+}
+```
+
+### 2. Update the code to set `starts_at` and `ends_at` timestamps.
+
+**Request:**
+
+```javascript
+const updatedAccessCode = await seam.accessCodes.update({
+  access_code_id: "f4780806-076e-4cec-8081-df0ea2139d5a",
+  starts_at: "2025-02-01T16:00:00Z",
+  ends_at: "2025-02-22T12:00:00Z"
+})
+
+console.log(updatedAccessCode)
+```
+
+**Response:**
+
+```json
+{
+  status: 'pending',
+  action_type: 'UPDATE_ACCESS_CODE',
+  action_attempt_id: '3ae02205-4cad-4462-a382-b5b8dacbed10',
+  result: null,
+  error: null
+}
+```
+
+### 3. Confirm that the `type` has changed to `time_bound`.
+
+**Request:**
+
+```javascript
+console.log(await seam.accessCodes.get({
+  access_code_id: "f4780806-076e-4cec-8081-df0ea2139d5a"
+}))
+```
+
+**Response:**
+
+```json
+{
+  access_code_id: 'f4780806-076e-4cec-8081-df0ea2139d5a',
+  device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+  name: 'my ongoing code',
+  .
+  .
+  .
+  type: 'time_bound',
+  .
+  .
+  .
+  starts_at: '2025-02-01T16:00:00.000Z',
+  ends_at: '2025-02-22T12:00:00.000Z',
+  .
+  .
+  .
+}
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+### 1. Confirm that the access code starts as an ongoing code.
+
+**Request:**
+
 ```ruby
-access_code_id = "0e2e1d48-c694-4430-8a4f-2dc98b6ec570"
+puts client.access_codes.get("6fe348a8-5938-4b73-8a36-86f7ffdfc431").inspect
+```
 
-# confirm that the code is currently an ongoing code
-access_code = seam.access_codes.get(access_code_id)
-puts access_code.type # => ongoing
+**Response:**
 
-# update it to a timebound code
-seam.access_codes.update(
-    access_code_id: access_code_id,
-    name: 'my updated code name',
-    starts_at: '2025-02-01T16:00:00Z',
-    ends_at: '2025-02-22T12:00:00Z'
+```
+<Seam::AccessCode:0x00438
+  access_code_id="6fe348a8-5938-4b73-8a36-86f7ffdfc431"
+  device_id="6aae9d08-fed6-4ca5-8328-e36849ab48fe"
+  name="my ongoing code"
+  .
+  .
+  .
+  type="ongoing"
+  .
+  .
+  .
+  >
+```
+
+### 2. Update the code to set `starts_at` and `ends_at` timestamps.
+
+**Request:**
+
+```ruby
+updated_access_code = client.access_codes.update(
+  access_code_id: "6fe348a8-5938-4b73-8a36-86f7ffdfc431",
+  starts_at: "2025-02-01T16:00:00Z",
+  ends_at: "2025-02-22T12:00:00Z"
 )
 
-# confirm the update
-access_code = seam.access_codes.get(access_code_id)
-print(access_code.inspect)
+puts updated_access_code.inspect
+```
 
+**Response:**
 
-# <Seam::AccessCode:0x004b0
-#   access_code_id="0e2e1d48-c694-4430-8a4f-2dc98b6ec570"
-#   name="my updated code name"
-#   code="1275"
-#   type="time_bound"
-#   starts_at=2025-02-01 16:00:00 UTC
-#   ends_at=2025-02-22 12:00:00 UTC
-#   errors=[]
-#   warnings=[]>
+{% code overflow="wrap" %}
+```
+<Seam::ActionAttempt:0x00438
+  status="success"
+  action_type="UPDATE_ACCESS_CODE"
+  action_attempt_id="9ad58cbf-42e0-4b88-adfd-7a25bc60f330"
+  result={"access_code"=>{"code"=>"1234", "name"=>"my ongoing code", "type"=>"time_bound", "errors"=>[], "status"=>"removing", "ends_at"=>"2025-02-22T12:00:00.000Z", "warnings"=>[], "device_id"=>"6aae9d08-fed6-4ca5-8328-e36849ab48fe", "starts_at"=>"2025-02-01T16:00:00.000Z", "appearance"=>{"name"=>"my ongoing code", "last_name"=>"ongoing code", "first_name"=>"my"}, "created_at"=>"2023-10-23T20:49:42.932Z", "is_managed"=>true, "access_code_id"=>"6fe348a8-5938-4b73-8a36-86f7ffdfc431", "common_code_key"=>nil, "pulled_backup_access_code_id"=>nil, "is_backup_access_code_available"=>true, "is_external_modification_allowed"=>false}}>
+```
+{% endcode %}
+
+### 3. Confirm that the `type` has changed to `time_bound`.
+
+**Request:**
+
+```ruby
+puts client.access_codes.get("6fe348a8-5938-4b73-8a36-86f7ffdfc431").inspect
+```
+
+**Response:**
+
+```
+<Seam::AccessCode:0x00438
+  access_code_id="6fe348a8-5938-4b73-8a36-86f7ffdfc431"
+  device_id="6aae9d08-fed6-4ca5-8328-e36849ab48fe"
+  name="my ongoing code"
+  .
+  .
+  .
+  type="time_bound"
+  .
+  .
+  .
+  starts_at=2025-02-01 16:00:00 UTC
+  ends_at=2025-02-22 12:00:00 UTC
+  .
+  .
+  .
+  >
 ```
 {% endtab %}
 
@@ -367,16 +684,168 @@ echo json_encode($updated_code, JSON_PRETTY_PRINT);
 ```
 {% endtab %}
 
-{% tab title="Curl" %}
-<pre class="language-bash"><code class="lang-bash"><strong>$ curl --request PUT 'https://connect.getseam.com/access_codes/update' \
-</strong>--header 'Authorization: Bearer ${API_KEY}' \
---header 'Content-Type: application/json' \
---data-raw '{
-  "access_code_id": "00000000-0000-0000-0000-000000000000",
-  "starts_at": "2023-01-02T00:00:00Z",
-  "ends_at": "2023-01-03T00:00:00Z"
- }'
-</code></pre>
+{% tab title="C#" %}
+### 1. Confirm that the access code starts as an ongoing code.
+
+**Request:**
+
+```csharp
+var accessCode = seam.AccessCodes.Get(accessCodeId: "fe372cb9-1fa5-492f-9494-ea01c5558333");
+
+Console.WriteLine("Access code ID: " + accessCode.AccessCodeId);
+Console.WriteLine("Device ID: " + accessCode.DeviceId);
+Console.WriteLine("Name: " + accessCode.Name);
+Console.WriteLine("Type: " + accessCode.Type);
+```
+
+**Response:**
+
+```
+Access code ID: fe372cb9-1fa5-492f-9494-ea01c5558333
+Device ID: 6aae9d08-fed6-4ca5-8328-e36849ab48fe
+Name: my ongoing code
+Type: Ongoing
+```
+
+### 2. Update the code to set `starts_at` and `ends_at` timestamps.
+
+**Request:**
+
+```csharp
+var accessCodeId = "fe372cb9-1fa5-492f-9494-ea01c5558333";
+var updatedAccessCode = seam.AccessCodes.Update(
+  accessCodeId: accessCodeId,
+  startsAt: "2025-02-01T16:00:00Z",
+  endsAt: "2025-02-22T12:00:00Z"
+);
+
+Type t = updatedAccessCode.GetType();
+PropertyInfo[] props = t.GetProperties();
+foreach (var prop in props)
+{
+  Console.WriteLine(prop.Name + ": " + prop.GetValue(updatedAccessCode));
+}
+```
+
+**Response:**
+
+{% code overflow="wrap" %}
+```
+Status: pending
+ActionType: UPDATE_ACCESS_CODE
+ActionAttemptId: ec2dd748-00da-4408-9978-b4cb6c7f94a5
+Result: 
+Error: 
+```
+{% endcode %}
+
+### 3. Confirm that the `type` has changed to `time_bound`.
+
+**Request:**
+
+```csharp
+var accessCode = seam.AccessCodes.Get(accessCodeId: "fe372cb9-1fa5-492f-9494-ea01c5558333");
+
+Console.WriteLine("Access code ID: " + accessCode.AccessCodeId);
+Console.WriteLine("Device ID: " + accessCode.DeviceId);
+Console.WriteLine("Name: " + accessCode.Name);
+Console.WriteLine("Type: " + accessCode.Type);
+```
+
+**Response:**
+
+```
+Access code ID: fe372cb9-1fa5-492f-9494-ea01c5558333
+Device ID: 6aae9d08-fed6-4ca5-8328-e36849ab48fe
+Name: my ongoing code
+Type: TimeBound
+```
+{% endtab %}
+
+{% tab title="Java" %}
+### 1. Confirm that the access code starts as an ongoing code.
+
+**Request:**
+
+```java
+AccessCode accessCode = seam.accessCodes()
+        .get(AccessCodesGetRequest.builder()
+                .accessCodeId("aff0c858-22f6-4587-9aac-1f5d550be560")
+                .build());
+System.out.println(accessCode);
+```
+
+**Response:**
+
+```json
+{
+  "type" : "ongoing",
+  "access_code_id" : "aff0c858-22f6-4587-9aac-1f5d550be560",
+  "device_id" : "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+  "name" : "my ongoing code",
+  "code" : "1234",
+  "created_at" : "2023-10-30T03:43:13.403Z",
+  "errors" : [ ],
+  "warnings" : [ ],
+  "is_managed" : "true",
+  "status" : "set",
+  "is_backup_access_code_available" : false
+}
+```
+
+### 2. Update the code to set `starts_at` and `ends_at` timestamps.
+
+**Request:**
+
+```java
+ActionAttempt attempt = seam.accessCodes()
+        .update(AccessCodesUpdateRequest.builder()
+                .accessCodeId("aff0c858-22f6-4587-9aac-1f5d550be560")
+                .startsAt("2025-02-01T16:00:00Z")
+                .endsAt("2025-02-22T12:00:00Z")
+                .build());
+System.out.println(attempt.getPending());
+```
+
+**Response:**
+
+```json
+Optional[{
+  "action_type" : "UPDATE_ACCESS_CODE",
+  "action_attempt_id" : "76f8610c-833d-4ea5-8974-f41fb78b871a"
+}]
+```
+
+### 3. Confirm that the `type` has changed to `time_bound`.
+
+**Request:**
+
+```java
+AccessCode accessCode = seam.accessCodes()
+        .get(AccessCodesGetRequest.builder()
+                .accessCodeId("aff0c858-22f6-4587-9aac-1f5d550be560")
+                .build());
+System.out.println(accessCode);
+```
+
+**Response:**
+
+```json
+{
+  "type" : "time_bound",
+  "access_code_id" : "aff0c858-22f6-4587-9aac-1f5d550be560",
+  "device_id" : "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+  "name" : "my ongoing code",
+  .
+  .
+  .
+  "starts_at" : "2025-02-01T16:00:00Z",
+  "ends_at" : "2025-02-22T12:00:00Z",
+  .
+  .
+  .
+}
+```
 {% endtab %}
 {% endtabs %}
 
@@ -387,123 +856,359 @@ echo json_encode($updated_code, JSON_PRETTY_PRINT);
 When converting a time-bound code to a permanent one, you'll also need to set the `type` property of the access code to `ongoing`.
 
 {% tabs %}
-{% tab title="Javascript" %}
-```javascript
-const accessCodeId = 'aa5a89e6-fe68-4082-ae16-d192b0759670'
+{% tab title="Python" %}
+### 1. Confirm that the access code starts as a time-bound code.
 
-// retrieve a timebound code
-accessCode = await seam.accessCodes.get({access_code_id: accessCodeId})
-console.log(accessCode)
+**Request:**
 
-/*
-{
-  access_code_id: 'aa5a89e6-fe68-4082-ae16-d192b0759670',
-  device_id: '77208078-6dd7-44e5-a3e4-a2ed3a34efc9',
-  name: 'my updated code name',
-  appearance: {
-    name: 'seam-my updated code name seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
-    last_name: 'seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
-    first_name: 'seam-my updated code name'
-  },
-  code: '4456',
-  common_code_key: null,
-  type: 'time_bound',
-  status: 'removing',
-  starts_at: '2025-01-01T16:00:00.000Z',
-  ends_at: '2025-01-22T12:00:00.000Z',
-  is_backup_access_code_available: false,
-  created_at: '2023-08-29T05:01:07.435Z',
-  errors: [],
-  warnings: [],
-  is_managed: true
-}
-*/
+```python
+access_code_id="daf89de3-ad3a-49aa-93bd-25f27d58f699"
+access_code = seam.access_codes.get(access_code_id)
 
-// update it to ongoing
-await seam.accessCodes.update({
-    type: "ongoing",
-    access_code_id: accessCodeId,
-    sync: true
-})
+pprint("Access code ID: " + access_code.access_code_id)
+pprint("Type: " + access_code.type)
+pprint("Starts at: " + str(access_code.starts_at))
+pprint("Ends at: " + str(access_code.ends_at))
+```
 
-// refresh the access code and confirm that starts_at and ends_at are gone
-accessCode = await seam.accessCodes.get({access_code_id: accessCodeId})
-console.log(accessCode)
-/*
-{
-  access_code_id: 'aa5a89e6-fe68-4082-ae16-d192b0759670',
-  device_id: '77208078-6dd7-44e5-a3e4-a2ed3a34efc9',
-  name: 'my updated code name',
-  appearance: {
-    name: 'seam-my updated code name seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
-    last_name: 'seam_aa5a89e6-fe68-4082-ae16-d192b0759670',
-    first_name: 'seam-my updated code name'
-  },
-  code: '4456',
-  common_code_key: null,
-  type: 'ongoing',
-  status: 'set',
-  is_backup_access_code_available: false,
-  created_at: '2023-08-29T05:01:07.435Z',
-  errors: [],
-  warnings: [],
-  is_managed: true
-}
-*/
+**Response:**
+
+```
+'Access code ID: daf89de3-ad3a-49aa-93bd-25f27d58f699'
+'Type: time_bound'
+'Starts at: 2025-01-01T16:00:00.000Z'
+'Ends at: 2025-01-22T12:00:00.000Z'
+```
+
+### 2. Update the code to set the `type` to `ongoing`.
+
+**Request:**
+
+```python
+access_code_id="daf89de3-ad3a-49aa-93bd-25f27d58f699"
+access_code = seam.access_codes.get(access_code_id)
+
+pprint(seam.access_codes.update(
+  access_code = access_code_id,
+  type = "ongoing"
+))
+```
+
+**Response:**
+
+```
+AccessCode(access_code_id='daf89de3-ad3a-49aa-93bd-25f27d58f699',
+           device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+           type='ongoing',
+           .
+           .
+           .
+           starts_at=None,
+           ends_at=None,
+           name='my ongoing code',
+           .
+           .
+           .
+           )
+```
+
+### 3. Confirm that the `type` has changed to `ongoing` and the `starts_at` and `ends_at` are `None`.
+
+**Request:**
+
+```python
+access_code_id="daf89de3-ad3a-49aa-93bd-25f27d58f699"
+access_code = seam.access_codes.get(access_code_id)
+
+pprint("Access code ID: " + access_code.access_code_id)
+pprint("Type: " + access_code.type)
+pprint("Starts at: " + str(access_code.starts_at))
+pprint("Ends at: " + str(access_code.ends_at))
+```
+
+**Response:**
+
+```
+'Access code ID: daf89de3-ad3a-49aa-93bd-25f27d58f699'
+'Type: ongoing'
+'Starts at: None'
+'Ends at: None'
 ```
 {% endtab %}
 
-{% tab title="Python" %}
-```python
-from seamapi import Seam
+{% tab title="cURL (bash)" %}
+### 1. Confirm that the access code starts as a time-bound code.
 
-seam = Seam()
+**Request:**
 
-access_code_id = "81bb1568-f55e-4d91-98b7-dad1259ee7df"
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/access_codes/get' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "access_code_id": "d2047ba8-8849-467f-a07a-efab6c3673bc"
+}'
+```
 
-# Update its type to ongoing
-seam.access_codes.update(
-  type="ongoing",
-  access_code=access_code_id
-)
+**Response:**
+
+```json
+{
+  "access_code": {
+    "access_code_id": "d2047ba8-8849-467f-a07a-efab6c3673bc",
+    "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+    "name": "my ongoing code",
+    .
+    .
+    .
+    "type": "time_bound",
+    .
+    .
+    .
+    "starts_at": "2025-01-01T16:00:00.000Z",
+    "ends_at": "2025-01-22T12:00:00.000Z",
+    .
+    .
+    .
+  },
+  "ok": true
+}
+```
+
+### 2. Update the code to set the `type` to `ongoing`.
+
+**Request:**
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/access_codes/update' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "access_code_id": "d2047ba8-8849-467f-a07a-efab6c3673bc",
+  "type": "ongoing"
+}'
+```
+
+**Response:**
+
+```json
+{
+  "action_attempt": {
+    "status": "pending",
+    "action_type": "UPDATE_ACCESS_CODE",
+    "action_attempt_id": "dbee51a5-6576-47e2-b700-b160f67be84c",
+    "result": null,
+    "error": null
+  },
+  "ok": true
+}
+```
+
+### 3. Confirm that the `type` has changed to `ongoing` and the `starts_at` and `ends_at` are `None`.
+
+**Request:**
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/access_codes/get' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "access_code_id": "d2047ba8-8849-467f-a07a-efab6c3673bc"
+}'
+```
+
+**Response:**
+
+```json
+{
+  "access_code": {
+    "access_code_id": "d2047ba8-8849-467f-a07a-efab6c3673bc",
+    "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+    "name": "my ongoing code",
+    .
+    .
+    .
+    "type": "ongoing",
+    .
+    .
+    .
+  },
+  "ok": true
+}
+```
+{% endtab %}
+
+{% tab title="Javascript" %}
+### 1. Confirm that the access code starts as a time-bound code.
+
+**Request:**
+
+```javascript
+console.log(await seam.accessCodes.get({
+  access_code_id: "f4780806-076e-4cec-8081-df0ea2139d5a"
+}))
+```
+
+**Response:**
+
+```json
+{
+  access_code_id: 'f4780806-076e-4cec-8081-df0ea2139d5a',
+  device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+  name: 'my ongoing code',
+  .
+  .
+  .
+  type: 'time_bound',
+  .
+  .
+  .
+  starts_at: '2025-02-01T16:00:00.000Z',
+  ends_at: '2025-02-22T12:00:00.000Z',
+  .
+  .
+  .
+}
+```
+
+### 2. Update the code to set the `type` to `ongoing`.
+
+**Request:**
+
+```javascript
+const updatedAccessCode = await seam.accessCodes.update({
+  access_code_id: "f4780806-076e-4cec-8081-df0ea2139d5a",
+  type: "ongoing"
+})
+
+console.log(updatedAccessCode)
+```
+
+**Response:**
+
+```json
+{
+  status: 'pending',
+  action_type: 'UPDATE_ACCESS_CODE',
+  action_attempt_id: '2752d567-bcae-4630-9715-0fdd1869c616',
+  result: null,
+  error: null
+}
+```
+
+### 3. Confirm that the `type` has changed to `ongoing` and the `starts_at` and `ends_at` are `None`.
+
+**Request:**
+
+```javascript
+console.log(await seam.accessCodes.get({
+  access_code_id: "f4780806-076e-4cec-8081-df0ea2139d5a"
+}))
+```
+
+**Response:**
+
+```json
+{
+  access_code_id: 'f4780806-076e-4cec-8081-df0ea2139d5a',
+  device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+  name: 'my ongoing code',
+  .
+  .
+  .
+  type: 'ongoing',
+  .
+  .
+  .
+}
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+### 1. Confirm that the access code starts as a time-bound code.
+
+**Request:**
+
 ```ruby
-require "seamapi"
+puts client.access_codes.get("6fe348a8-5938-4b73-8a36-86f7ffdfc431").inspect
+```
 
-seam = Seam::Client.new()
+**Response:**
 
-access_code_id = "1ec3d38d-09bc-48f2-8e05-d0ce0900571f"
+```
+<Seam::AccessCode:0x00438
+  access_code_id="6fe348a8-5938-4b73-8a36-86f7ffdfc431"
+  device_id="6aae9d08-fed6-4ca5-8328-e36849ab48fe"
+  name="my ongoing code"
+  .
+  .
+  .
+  type="time_bound"
+  .
+  .
+  .
+  starts_at=2025-02-01 16:00:00 UTC
+  ends_at=2025-02-22 12:00:00 UTC
+  .
+  .
+  .
+  >
+```
 
-# confirm that the code is currently a timebound code
-access_code = seam.access_codes.get(access_code_id)
-puts access_code.type # => timebound
+### 2. Update the code to set the `type` to `ongoing`.
 
-# update it to a timebound code
-seam.access_codes.update(
-    access_code_id: access_code_id,
-    type: "ongoing"
+**Request:**
+
+```ruby
+updated_access_code = client.access_codes.update(
+  access_code_id: "6fe348a8-5938-4b73-8a36-86f7ffdfc431",
+  type: "ongoing"
 )
 
-# confirm the update
-access_code = seam.access_codes.get(access_code_id)
-print(access_code.inspect)
+puts updated_access_code.inspect
+```
 
-# <Seam::AccessCode:0x004b0
-#   access_code_id="1ec3d38d-09bc-48f2-8e05-d0ce0900571f"
-#   device_id="aa3958c3-4236-4f71-bd77-3b60f85b3456"
-#   name="my time-bound code"
-#   code="9333"
-#   type="ongoing"   <============ NEW TYPE
-#   status="setting"
-#   is_scheduled_on_device=false
-#   is_backup_access_code_available=false
-#   created_at=2023-09-07 05:56:05.357 UTC
-#   errors=[]
-#   warnings=[]
-#   is_managed=true>
+**Response:**
+
+{% code overflow="wrap" %}
+```
+<Seam::ActionAttempt:0x00438
+  status="success"
+  action_type="UPDATE_ACCESS_CODE"
+  action_attempt_id="240e8c82-eee5-4fb1-8976-6317db11963f"
+  result={"access_code"=>{"code"=>"1234", "name"=>"my ongoing code", "type"=>"ongoing", "errors"=>[], "status"=>"setting", "warnings"=>[], "device_id"=>"6aae9d08-fed6-4ca5-8328-e36849ab48fe", "appearance"=>{"name"=>"my ongoing code", "last_name"=>"ongoing code", "first_name"=>"my"}, "created_at"=>"2023-10-23T20:49:42.932Z", "is_managed"=>true, "access_code_id"=>"6fe348a8-5938-4b73-8a36-86f7ffdfc431", "common_code_key"=>nil, "pulled_backup_access_code_id"=>nil, "is_backup_access_code_available"=>true, "is_external_modification_allowed"=>false}}>
+```
+{% endcode %}
+
+### 3. Confirm that the `type` has changed to `ongoing` and the `starts_at` and `ends_at` are `None`.
+
+**Request:**
+
+```ruby
+puts client.access_codes.get("6fe348a8-5938-4b73-8a36-86f7ffdfc431").inspect
+```
+
+**Response:**
+
+```
+<Seam::AccessCode:0x00438
+  access_code_id="6fe348a8-5938-4b73-8a36-86f7ffdfc431"
+  device_id="6aae9d08-fed6-4ca5-8328-e36849ab48fe"
+  name="my ongoing code"
+  .
+  .
+  .
+  type="ongoing"
+  .
+  .
+  .
+  >
 ```
 {% endtab %}
 
@@ -545,14 +1250,165 @@ echo json_encode($updated_code, JSON_PRETTY_PRINT);
 ```
 {% endtab %}
 
-{% tab title="Curl" %}
-<pre class="language-bash"><code class="lang-bash"><strong>$ curl --request PUT 'https://connect.getseam.com/access_codes/update' \
-</strong>--header 'Authorization: Bearer ${API_KEY}' \
---header 'Content-Type: application/json' \
---data-raw '{
-  "access_code_id": "00000000-0000-0000-0000-000000000000",
-  "type": "ongoing"
- }'
-</code></pre>
+{% tab title="C#" %}
+### 1. Confirm that the access code starts as a time-bound code.
+
+**Request:**
+
+```csharp
+var accessCode = seam.AccessCodes.Get(accessCodeId: "fe372cb9-1fa5-492f-9494-ea01c5558333");
+
+Console.WriteLine("Access code ID: " + accessCode.AccessCodeId);
+Console.WriteLine("Device ID: " + accessCode.DeviceId);
+Console.WriteLine("Name: " + accessCode.Name);
+Console.WriteLine("Type: " + accessCode.Type);
+```
+
+**Response:**
+
+```
+Access code ID: fe372cb9-1fa5-492f-9494-ea01c5558333
+Device ID: 6aae9d08-fed6-4ca5-8328-e36849ab48fe
+Name: my ongoing code
+Type: TimeBound
+```
+
+### 2. Update the code to set the `type` to `ongoing`.
+
+**Request:**
+
+```csharp
+var accessCodeId = "fe372cb9-1fa5-492f-9494-ea01c5558333";
+var updatedAccessCode = seam.AccessCodes.Update(
+  accessCodeId: accessCodeId,
+  type: Seam.Api.AccessCodes.UpdateRequest.TypeEnum.Ongoing
+);
+
+Type t = updatedAccessCode.GetType();
+PropertyInfo[] props = t.GetProperties();
+foreach (var prop in props)
+{
+  Console.WriteLine(prop.Name + ": " + prop.GetValue(updatedAccessCode));
+}
+```
+
+**Response:**
+
+{% code overflow="wrap" %}
+```
+Status: pending
+ActionType: UPDATE_ACCESS_CODE
+ActionAttemptId: 24e04da1-9d75-40fa-8bc3-4447ca76725a
+Result: 
+Error: 
+```
+{% endcode %}
+
+### 3. Confirm that the `type` has changed to `ongoing` and the `starts_at` and `ends_at` are `None`.
+
+**Request:**
+
+```csharp
+var accessCode = seam.AccessCodes.Get(accessCodeId: "fe372cb9-1fa5-492f-9494-ea01c5558333");
+
+Console.WriteLine("Access code ID: " + accessCode.AccessCodeId);
+Console.WriteLine("Device ID: " + accessCode.DeviceId);
+Console.WriteLine("Name: " + accessCode.Name);
+Console.WriteLine("Type: " + accessCode.Type);
+Console.WriteLine("Starts at: " + accessCode.StartsAt);
+Console.WriteLine("Ends at: " + accessCode.EndsAt);
+```
+
+**Response:**
+
+```
+Access code ID: fe372cb9-1fa5-492f-9494-ea01c5558333
+Device ID: 6aae9d08-fed6-4ca5-8328-e36849ab48fe
+Name: my ongoing code
+Type: Ongoing
+Starts at: 
+Ends at: 
+```
+{% endtab %}
+
+{% tab title="Java" %}
+### 1. Confirm that the access code starts as a time-bound code.
+
+**Request:**
+
+```java
+AccessCode accessCode = seam.accessCodes()
+        .get(AccessCodesGetRequest.builder()
+                .accessCodeId("aff0c858-22f6-4587-9aac-1f5d550be560")
+                .build());
+System.out.println(accessCode);
+```
+
+**Response:**
+
+```json
+{
+  "type" : "time_bound",
+  "access_code_id" : "aff0c858-22f6-4587-9aac-1f5d550be560",
+  "device_id" : "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+  "name" : "my ongoing code",
+  .
+  .
+  .
+  "starts_at" : "2025-02-01T16:00:00Z",
+  "ends_at" : "2025-02-22T12:00:00Z",
+  .
+  .
+  .
+}
+```
+
+### 2. Update the code to set the `type` to `ongoing`.
+
+**Request:**
+
+```java
+ActionAttempt attempt = seam.accessCodes()
+        .update(AccessCodesUpdateRequest.builder()
+                .accessCodeId("aff0c858-22f6-4587-9aac-1f5d550be560")
+                .type(AccessCodesUpdateRequestType.ONGOING)
+                .build());
+System.out.println(attempt.getPending());
+```
+
+**Response:**
+
+```json
+Optional[{
+  "action_type" : "UPDATE_ACCESS_CODE",
+  "action_attempt_id" : "b94e8912-cef5-4642-8e83-ed3729cd188f"
+}]
+```
+
+### 3. Confirm that the `type` has changed to `ongoing` and the `starts_at` and `ends_at` are `None`.
+
+**Request:**
+
+```java
+AccessCode accessCode = seam.accessCodes()
+        .get(AccessCodesGetRequest.builder()
+                .accessCodeId("aff0c858-22f6-4587-9aac-1f5d550be560")
+                .build());
+System.out.println(accessCode);
+```
+
+**Response:**
+
+```json
+{
+  "type" : "ongoing",
+  "access_code_id" : "aff0c858-22f6-4587-9aac-1f5d550be560",
+  "device_id" : "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+  "name" : "my ongoing code",
+  .
+  .
+  .
+}
+```
 {% endtab %}
 {% endtabs %}

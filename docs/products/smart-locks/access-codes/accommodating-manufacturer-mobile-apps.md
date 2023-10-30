@@ -38,83 +38,170 @@ When external modifications are detected, Seam will send an `access_code.modifie
 
 ### Allow for Access Code Modification
 
-If you wish to allow device owners to be able to edit access codes you've created via the Seam API, set the `allow_external_modification` flag to true when creating an access code. This will prevent Seam from overwriting any changes made by the device owner to the access code. Seam will also set `code_modified_external_to_seam` as a warning on the code instead of an error when a change is detected. Note that the `allow_external_modification` flag can  also be passed when updating an access code or when converting an access code from unmanaged to managed.
+If you want to allow device owners to be able to edit access codes that you have created through the Seam API, set the `allow_external_modification` flag to `true` when creating an access code. This prevents Seam from overwriting any changes made by the device owner to the access code. Seam also sets `code_modified_external_to_seam` as a warning on the code, instead of an error, when a change is detected. Note that the `allow_external_modification` flag can  also be passed when updating an access code or when converting an access code from unmanaged to managed.
 
 {% tabs %}
-{% tab title="Javascript" %}
+{% tab title="Python" %}
+**Request:**
+
+```python
+device_id = "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
+
+created_access_code = seam.access_codes.create(
+  device = device_id,
+  name = "my ongoing code",
+  allow_external_modification = True
+)
+
+pprint(created_access_code)
+```
+
+**Response:**
+
+```
+AccessCode(access_code_id='1d9fe873-3393-4b29-b93e-87fe7f923462',
+           device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+           type='ongoing',
+           code='5629',
+           created_at='2023-10-19T04:50:50.275Z',
+           errors=[],
+           warnings=[],
+           starts_at=None,
+           ends_at=None,
+           name='my ongoing code',
+           status='setting',
+           common_code_key=None,
+           is_managed=True,
+           is_waiting_for_code_assignment=None,
+           is_scheduled_on_device=None,
+           pulled_backup_access_code_id=None,
+           is_backup_access_code_available=False,
+           is_backup=None,
+           appearance=None,
+           is_external_modification_allowed=True)
+```
+{% endtab %}
+
+{% tab title="cURL (bash)" %}
+**Request:**
+
+```sh
+curl -X 'POST' \
+  'https://connect.getseam.com/access_codes/create' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+  "name": "my ongoing code",
+  "allow_external_modification": true
+}'
+```
+
+**Response:**
+
+```json
+{
+  "action_attempt": {
+    "status": "pending",
+    "action_type": "CREATE_ACCESS_CODE",
+    "action_attempt_id": "8e2dace7-7304-43f1-b5f2-bd44b2a072a8",
+    "result": null,
+    "error": null
+  },
+  "access_code": {
+    "access_code_id": "a7b85c1f-9963-4fa8-b106-7ce580a41256",
+    "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+    "name": "my ongoing code",
+    "appearance": null,
+    "code": "5048",
+    "common_code_key": null,
+    "type": "ongoing",
+    "status": "setting",
+    "pulled_backup_access_code_id": null,
+    "is_backup_access_code_available": true,
+    "created_at": "2023-10-19T08:10:24.248Z",
+    "errors": [],
+    "warnings": [],
+    "is_managed": true,
+    "is_external_modification_allowed": true
+  },
+  "ok": true
+}
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+**Request:**
+
 ```javascript
-const deviceId = "77208078-6dd7-44e5-a3e4-a2ed3a34efc9"
+const deviceId = "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
 
 const createdAccessCode = await seam.accessCodes.create({
     device_id: deviceId,
     name: "my ongoing code",
     allow_external_modification: true
 })
-  
-console.log(createdAccessCode)
 
-/*
+console.log(createdAccessCode)
+```
+
+**Response:**
+
+```json
 {
-  access_code_id: 'aa5a89e6-fe68-4082-ae16-d192b0759670',
-  device_id: '77208078-6dd7-44e5-a3e4-a2ed3a34efc9',
+  access_code_id: '38a569bb-40b9-4e42-97bd-bb78f8d96777',
+  device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
   name: 'my ongoing code',
   appearance: null,
-  code: '4456',
+  code: '1525',
   common_code_key: null,
   type: 'ongoing',
   status: 'setting',
-  is_backup_access_code_available: false,
-  created_at: '2023-08-29T05:01:07.435Z',
+  pulled_backup_access_code_id: null,
+  is_backup_access_code_available: true,
+  created_at: '2023-10-19T11:22:45.732Z',
   errors: [],
   warnings: [],
-  is_managed: true
+  is_managed: true,
+  is_external_modification_allowed: true
 }
-*/
-```
-{% endtab %}
-
-{% tab title="Python" %}
-```python
-device_id = "aa3958c3-4236-4f71-bd77-3b60f85b3456"
-
-created_access_code = seam.access_codes.create(
-  device=device_id,
-  name="my ongoing code",
-  allow_external_modification=True
-)
-
-print(created_access_code)
-
-# AccessCode(access_code_id='0cf60b3a-2364-4d21-924e-64c7cb20bb62',
-#            type='ongoing',
-#            code='9846',
-#            starts_at=None,
-#            ends_at=None,
-#            name='my ongoing code',
-#            status='setting',
-#            common_code_key=None)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
-```ruby
-device_id = "aa3958c3-4236-4f71-bd77-3b60f85b3456"
+**Request:**
 
-created_access_code = seam.access_codes.create(
+```ruby
+device_id = "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
+
+created_access_code = client.access_codes.create(
   device_id: device_id,
   name: "my ongoing code",
   allow_external_modification: true
 )
 
 puts created_access_code.inspect
+```
 
-# <Seam::AccessCode:0x00438
-#   code="1275"
-#   name="my ongoing code"
-#   type="ongoing"
-#   errors=[]
-#   warnings=[]
-#   access_code_id="0e2e1d48-c694-4430-8a4f-2dc98b6ec570">
+**Response:**
+
+```
+<Seam::AccessCode:0x00438
+  code="8667"
+  name="my ongoing code"
+  type="ongoing"
+  errors=[]
+  status="setting"
+  warnings=[]
+  device_id="6aae9d08-fed6-4ca5-8328-e36849ab48fe"
+  appearance=nil
+  created_at=2023-10-25 03:54:05.532 UTC
+  is_managed=true
+  access_code_id="8f1f576f-ee52-4f12-97f6-7a1593965dec"
+  pulled_backup_access_code_id=nil
+  is_backup_access_code_available=true
+  is_external_modification_allowed=true>
 ```
 {% endtab %}
 
@@ -152,47 +239,60 @@ echo json_encode($access_code, JSON_PRETTY_PRINT);
 ```
 {% endtab %}
 
-{% tab title="Curl" %}
-### Request:
+{% tab title="C#" %}
+**Request:**
 
-```sh
-$ curl --request POST 'https://connect.getseam.com/access_codes/create' \
---header 'Authorization: Bearer ${API_KEY}' \
---header 'Content-Type: application/json' \
---data-raw '{
-  "device_id": "00000000-0000-0000-0000-000000000000",
-  "name": "Ongoing Access Code",
-  "code": "1234",
-  "allow_external_modification": true
- }'
+```csharp
+var deviceId = "6aae9d08-fed6-4ca5-8328-e36849ab48fe";
+var createdAccessCode = seam.AccessCodes.Create(
+  deviceId: deviceId,
+  name: "my ongoing code",
+  allowExternalModification: true
+);
+
+Console.WriteLine("Created access code ID: " + createdAccessCode.AccessCodeId);
+Console.WriteLine("Allow external modification: " + createdAccessCode.IsExternalModificationAllowed);
 ```
 
-### Response:
+**Response:**
 
-```sh
+```
+Created access code ID: 65f4a1d3-5f3a-45a4-a6b7-372c7f16c007
+Allow external modification: True
+```
+{% endtab %}
+
+{% tab title="Java" %}
+**Request:**
+
+```java
+var deviceId = "6aae9d08-fed6-4ca5-8328-e36849ab48fe";
+
+AccessCode CreatedAccessCode = seam.accessCodes().create(AccessCodesCreateRequest.builder()
+        .deviceId(deviceId)
+        .name("my ongoing code")
+        .allowExternalModification(true)
+        .build());
+System.out.println(CreatedAccessCode);
+```
+
+**Response:**
+
+```json
 {
-  "action_attempt": {
-    "status": "pending",
-    "action_type": "CREATE_ACCESS_CODE",
-    "action_attempt_id": "11111111-1111-1111-1111-111111111111",
-    "result": null,
-    "error": null
-  },
-  "access_code": {
-    "access_code_id": "22222222-2222-2222-2222-222222222222",
-    "device_id": "00000000-0000-0000-0000-000000000000",
-    "name": "Ongoing Access Code",
-    "code": "1234",
-    "common_code_key": null,
-    "type": "ongoing",
-    "status": "setting",
-    "created_at": "2023-01-01T00:00:00Z",
-    "errors": [],
-    "warnings": [],
-    "is_managed": true,
-    "allow_external_modification": true
-  },
-  "ok": true
+  "is_scheduled_on_device" : false,
+  "type" : "ongoing",
+  "access_code_id" : "cd7f5b14-56e3-48b1-a351-9cab819eea6a",
+  "device_id" : "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+  "name" : "my ongoing code",
+  "code" : "1234",
+  "created_at" : "2023-10-30T03:50:17.802Z",
+  "errors" : [ ],
+  "warnings" : [ ],
+  "is_managed" : "true",
+  "status" : "unset",
+  "is_backup_access_code_available" : false,
+  "is_external_modification_allowed" : true
 }
 ```
 {% endtab %}

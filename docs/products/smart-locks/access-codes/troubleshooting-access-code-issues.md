@@ -6,43 +6,122 @@ description: Learn about how to diagnose and fix access code issues.
 
 Seam might encounter issues when programming an access code onto a lock. If access codes are not being programmed as expected, this article will help you determine the cause of the issue and fix the problem.
 
-When scheduling an access code, Seam will try to set the code on the device up to 9 days before its start time. Any errors or warnings will be recorded on the access code at least 3 days before its scheduled activation. This approach ensures you have ample time to address any issues, using the mitigation steps provided below. Note that not all device brands support the ability to program codes in advance. Refer to our [Native Scheduling — Supported Providers](../README.md/#native-scheduling--supported-providers) section for details.
+When scheduling an access code, Seam will try to set the code on the device up to 9 days before its start time. Any errors or warnings will be recorded on the access code at least 3 days before its scheduled activation. This approach ensures you have ample time to address any issues, using the mitigation steps provided below. Note that not all device brands support the ability to program codes in advance. Refer to our [Native Scheduling — Supported Providers](../#native-scheduling--supported-providers) section for details.
 
 ## Determine the issue
 
 The first step is to figure out what the issue is from Seam's point of view. Make a [Get Access Code](../../../api-clients/access-codes/get-an-access-code.md) or [List Access Codes](../../../api-clients/access-codes/list-access-codes.md) request, and look at the `errors` and `warnings` payloads on the access code object. Look at the error and warning codes, and go to the matching remedy below for next steps.
 
-<!-- CODE INJECT START
-Get an access code with id "ed4a1f62-9070-4379-8c46-ea30a99e4d74" and print out its errors and warnings attributes for inspection
--->
 {% tabs %}
-{% tab title="Javascript" %}
+{% tab title="Python" %}
+**Request:**
+
+```python
+access_code = seam.access_codes.get("1d9fe873-3393-4b29-b93e-87fe7f923462")
+
+pprint("Errors:")
+pprint(access_code.errors)
+pprint("Warnings:")
+pprint(access_code.warnings)
+```
+
+**Response:**
+
+```
+'Errors:'
+[...]
+'Warnings:'
+[...]
+```
+{% endtab %}
+
+{% tab title="cURL (bash)" %}
+**Request:**
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/access_codes/get' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "access_code_id": "a7b85c1f-9963-4fa8-b106-7ce580a41256"
+}'
+```
+
+**Response:**
+
+```json
+{
+  "access_code": {
+    "access_code_id": "a7b85c1f-9963-4fa8-b106-7ce580a41256",
+    "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+    "name": "my ongoing code",
+    "appearance": {
+      "name": "my ongoing code",
+      "last_name": "ongoing code",
+      "first_name": "my"
+    },
+    "code": "5048",
+    "common_code_key": null,
+    "type": "ongoing",
+    "status": "set",
+    "pulled_backup_access_code_id": null,
+    "is_backup_access_code_available": true,
+    "created_at": "2023-10-19T08:10:24.248Z",
+    "errors": [...],
+    "warnings": [...],
+    "is_managed": true,
+    "is_external_modification_allowed": true
+  },
+  "ok": true
+}
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+**Request:**
+
 ```javascript
 const accessCode = await seam.accessCodes.get({
-  access_code_id: "ed4a1f62-9070-4379-8c46-ea30a99e4d74"
+  access_code_id: "38a569bb-40b9-4e42-97bd-bb78f8d96777"
 })
 
+console.log("Errors:")
 console.log(accessCode.errors)
+console.log("Warnings:")
 console.log(accessCode.warnings)
 ```
-{% endtab %}
-{% tab title="Python" %}
-```python
-access_code = seam.access_codes.get("ed4a1f62-9070-4379-8c46-ea30a99e4d74")
 
-print(access_code.errors)
-print(access_code.warnings)
+**Response:**
+
+```json
+Errors:
+[...]
+Warnings:
+[...]
 ```
 {% endtab %}
-{% tab title="Ruby" %}
-```ruby
-access_code_id = "ed4a1f62-9070-4379-8c46-ea30a99e4d74"
-access_code = seam.access_codes.get(access_code_id)
 
+{% tab title="Ruby" %}
+**Request:**
+
+```ruby
+access_code = client.access_codes.get("8f1f576f-ee52-4f12-97f6-7a1593965dec")
+puts "Errors:"
 puts access_code.errors
+puts "Warnings:"
 puts access_code.warnings
 ```
+
+**Response:**
+
+```
+Errors:
+Warnings:
+```
 {% endtab %}
+
 {% tab title="PHP" %}
 ```php
 $access_code = $seam->access_codes->get('ed4a1f62-9070-4379-8c46-ea30a99e4d74');
@@ -56,53 +135,60 @@ if (property_exists($access_code, 'warnings')) {
 }
 ```
 {% endtab %}
-{% tab title="Curl" %}
-#### Request:
 
-<pre class="language-bash"><code class="lang-bash"><strong>$ curl --request POST 'https://connect.getseam.com/access_codes/get' \
-</strong>--header 'Authorization: Bearer ${API_KEY}' \
---header 'Content-Type: application/json' \
---data-raw '{
-  "access_code_id": "00000000-0000-0000-0000-000000000000"
- }'
-</code></pre>
+{% tab title="C#" %}
+**Request:**
 
-#### Response:
+```csharp
+var accessCode = seam.AccessCodes.Get(accessCodeId: "65f4a1d3-5f3a-45a4-a6b7-372c7f16c007");
+
+Console.WriteLine("Access code ID: " + accessCode.AccessCodeId);
+Console.WriteLine("Errors:");
+Console.WriteLine(accessCode.Errors);
+Console.WriteLine("Warnings:");
+Console.WriteLine(accessCode.Warnings);
+```
+
+**Response:**
+
+```
+Errors:
+[]
+Warnings:
+[]
+```
+{% endtab %}
+
+{% tab title="Java" %}
+**Request:**
+
+```java
+AccessCode accessCode = seam.accessCodes()
+        .get(AccessCodesGetRequest.builder()
+                .accessCodeId("cd7f5b14-56e3-48b1-a351-9cab819eea6a")
+                .build());
+System.out.println("Errors:");
+System.out.println(accessCode.getErrors());
+System.out.println("Warnings:");
+System.out.println(accessCode.getWarnings());
+```
+
+**Response:**
 
 ```json
-{
-  "access_code": {
-    "access_code_id": "00000000-0000-0000-0000-000000000000",
-    "errors": [
-      {
-        "error_code": "device_disconnected",
-        "message": "Device Disconnected, you may need to reconnect the device.",
-        "created_at": "2023-01-05T00:00:00Z",
-        "is_device_error": true
-      },
-      {
-        "error_code": "failed_to_set_on_device",
-        "message": "Device Disconnected, you may need to reconnect the device.",
-        "created_at": "2023-01-05T00:00:00Z",
-        "is_access_code_error": true
-      }
-    ],
-    "warnings": [],
-    ...
-  }
-}
+Errors:
+Optional[[]]
+Warnings:
+Optional[[]]
 ```
 {% endtab %}
 {% endtabs %}
-<!-- CODE INJECT END -->
 
 ***
 
 ## How to investigate and fix access code errors
 
 See our list of recommended mitigations for different error codes:
-
-
 
 | Error Code                                         | Recommended remedies                                                                                                                                                                                                                                                                                                                                                                                                 |
 | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

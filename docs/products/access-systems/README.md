@@ -4,7 +4,7 @@ description: Learn about access systems and related concepts.
 
 # 🏢 Access Systems
 
-## What is an Access System?
+## What Is an Access System?
 
 Access Control Systems (ACSs) enable you to manage and monitor access to physical spaces, such as offices, residential complexes, and special-purpose facilities.
 

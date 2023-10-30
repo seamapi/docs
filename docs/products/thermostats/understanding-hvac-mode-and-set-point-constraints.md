@@ -4,13 +4,14 @@ description: >-
   set points on thermostats.
 ---
 
-# Understanding HVAC mode and set point constraints
+# Understanding HVAC Mode and Set Point Constraints
 
-Some models of thermostats have specific requirements and constraints when it comes to setting HVAC modes and set point temperatures. The requirements can be fetched by making a [Get Device](../../api-clients/devices/get-device.md) or [List Devices](../../api-clients/devices/list-devices.md) request.&#x20;
+Some models of thermostats have specific requirements and constraints related to setting HVAC modes and set point temperatures. You can fetch the requirements by making a [Get Device](../../api-clients/devices/get-device.md) or [List Devices](../../api-clients/devices/list-devices.md) request.&#x20;
 
 Sample set of thermostat HVAC mode and set point requirements:
 
-<pre class="language-json"><code class="lang-json">{
+```json
+{
   "thermostat": {
     "device_id": "00000000-0000-0000-0000-000000000000",
     "properties": {
@@ -38,16 +39,15 @@ Sample set of thermostat HVAC mode and set point requirements:
   },
   ...
 }
-<strong>
-</strong></code></pre>
+```
 
 ***
 
 ## Available HVAC Mode Settings
 
-This property is denoted as `available_hvac_mode_settings` and includes an array of available HVAC modes. For example, if the array contains `["heat", "off"]`, it means the thermostat can only be set to either `heat` or `off`  modes. The availability of heating or cooling options depends on the connected systems; if the thermostat isn't connected to a specific system, those options may be absent. For an explanation of each mode, read the ["What are HVAC modes?" guide](broken-reference).
+The `available_hvac_mode_settings` property includes an array of available HVAC modes. For example, if the array contains `["heat", "off"]`, it means that the thermostat can only be set to either `heat` or `off`  modes. The availability of heating or cooling options depends on the connected systems. If the thermostat is not connected to a specific system, these options may be absent. For an explanation of each mode, see [HVAC Mode](./#hvac-mode).
 
-**Example Payload:**
+Example payload:
 
 ```json
 "available_hvac_mode_settings": [
@@ -62,9 +62,9 @@ This property is denoted as `available_hvac_mode_settings` and includes an array
 
 ## Can enable heating / cooling
 
-The settings `can_enable_automatic_cooling` and `can_enable_automatic_heating` indicate whether the thermostat supports cooling or heating modes respectively. If `can_enable_automatic_cooling` is `true`, it means the thermostat supports cooling. Similarly, if `can_enable_automatic_heating` is `true`, the thermostat supports heating. When both are true, the thermostat supports heat-cool mode (also known as "auto"). The availability of heating or cooling options depends on the connected systems; if the thermostat isn't connected to a specific system, those options may be absent. For an explanation of each mode, read the ["What are HVAC modes?" guide](broken-reference).
+The `can_enable_automatic_cooling` and `can_enable_automatic_heating` settings indicate whether the thermostat supports cooling and heating modes, respectively. If `can_enable_automatic_cooling` is `true`, it means that the thermostat supports cooling. Similarly, if `can_enable_automatic_heating` is `true`, the thermostat supports heating. When both are `true`, the thermostat supports heat-cool mode (also known as "auto"). The availability of heating or cooling options depends on the connected systems. If the thermostat is not connected to a specific system, these options may be absent. For an explanation of each mode, see [HVAC Mode](./#hvac-mode).
 
-**Example Payload:**
+Example payload:
 
 ```json
 "can_enable_automatic_cooling": true,
@@ -75,9 +75,9 @@ The settings `can_enable_automatic_cooling` and `can_enable_automatic_heating` i
 
 ## Set point temperature range
 
-The thermostat settings have restrictions on the range of set points temperatures users can choose for both cooling and heating. For cooling, the permissible temperature range is indicated in the `min_cooling_set_point_*` and `max_cooling_set_point_*` properties. For heating, the permissible temperature range is indicated in the `min_heating_set_point_*` and `max_heating_set_point_*` properties. These properties are available in both Celsius and Fahrenheit, as indicated by the suffix. Users should refer to these parameters to ensure their selected set points fall within the thermostat's defined operational limits.
+The thermostat settings have restrictions on the range of set points temperatures that users can choose for both cooling and heating. For cooling, the `min_cooling_set_point_*` and `max_cooling_set_point_*` properties indicate the permissible temperature range. For heating, the `min_heating_set_point_*` and `max_heating_set_point_*` properties indicate the permissible temperature range. These properties are available in both Celsius and Fahrenheit, as the suffix indicates. Refer to these parameters to ensure that your selected set points fall within the defined operational limits of the thermostat.
 
-**Example Payload:**
+Example payload:
 
 ```json
 "max_cooling_set_point_celsius": 33.333333333333336,
@@ -94,9 +94,9 @@ The thermostat settings have restrictions on the range of set points temperature
 
 ## Minimum heating cooling delta temperature
 
-The properties `min_heating_cooling_delta_celsius` and `min_heating_cooling_delta_fahrenheit` denote the minimum temperature difference, or delta, between the cooling and heating set points when in Auto mode. The cooling set point must always be set higher than the heating one by at least the specified delta. This setting helps prevent the thermostat from rapidly switching between heating and cooling modes, thereby avoiding [short cycling](https://www.thespruce.com/what-it-means-when-furnace-is-short-cycling-5208093).
+The `min_heating_cooling_delta_celsius` and `min_heating_cooling_delta_fahrenheit` properties denote the minimum temperature difference—or delta—between the cooling and heating set points when in auto mode. You must always set the cooling set point higher than the heating set point by at least the specified delta. This setting helps to prevent the thermostat from rapidly switching between heating and cooling modes, thereby avoiding [short cycling](https://www.thespruce.com/what-it-means-when-furnace-is-short-cycling-5208093).
 
-**Example Payload:**
+Example payload:
 
 ```json
 "min_heating_cooling_delta_celsius": 2.7777777777777777,
