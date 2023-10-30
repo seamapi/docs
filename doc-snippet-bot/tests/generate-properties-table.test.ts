@@ -6,7 +6,7 @@ test('generatePropertiesTable generates expected table', async (t) => {
   const exampleEndpoint = "/access_codes/create"
   const extractedProperties = await extractPropertiesFromEndpoint(exampleEndpoint);
 
-  const expectedMarkdown = `<!-- INJECT PROPERTIES START --!>
+  const expectedMarkdown = `<!-- INJECT PROPERTIES START ${exampleEndpoint} --!>
   | device_id | type: string
   | name | type: string
   | starts_at | type: string
@@ -21,7 +21,7 @@ test('generatePropertiesTable generates expected table', async (t) => {
   | is_external_modification_allowed | type: boolean
 <!-- INJECT PROPERTIES END --!>`;
 
-  const generatedMarkdown = generatePropertiesTable(extractedProperties);
+  const generatedMarkdown = generatePropertiesTable(extractedProperties, exampleEndpoint);
 
   t.deepEqual(generatedMarkdown, expectedMarkdown);
 });
@@ -30,7 +30,7 @@ test('generatePropertiesTable generates expected table including zod description
   const exampleEndpoint = "/locks/list"
   const extractedProperties = await extractPropertiesFromEndpoint(exampleEndpoint);
 
-  const expectedMarkdown = `<!-- INJECT PROPERTIES START --!>
+  const expectedMarkdown = `<!-- INJECT PROPERTIES START ${exampleEndpoint} --!>
     connected_account_id: |
       type: 'string',
       format: 'uuid',
@@ -71,7 +71,7 @@ test('generatePropertiesTable generates expected table including zod description
     user_identifier_key: | type: 'string' |
 <!-- INJECT PROPERTIES END --!>`;
 
-  const generatedMarkdown = generatePropertiesTable(extractedProperties);
+  const generatedMarkdown = generatePropertiesTable(extractedProperties, exampleEndpoint);
 
   t.deepEqual(generatedMarkdown, expectedMarkdown);
 });

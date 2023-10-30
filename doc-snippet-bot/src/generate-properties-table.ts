@@ -1,14 +1,22 @@
-export function generatePropertiesTable(extractedProperties: { [x: string]: any; }) {
-  const markdownParts: Array<Array<string>> = [];
-  markdownParts.push([`<!-- INJECT PROPERTIES START --!>`]);
+export function generatePropertiesTable(extractedProperties: { [x: string]: any; }, extractedEndpoint: string) {
+  const markdownTable: Array<Array<string>> = [];
+
+  markdownTable.push([`<!-- INJECT PROPERTIES START ${extractedEndpoint} --!>`]);
 
   for (const propertyName in extractedProperties) {
     const property = extractedProperties[propertyName];
-    let formattedProperty = [`  | ${propertyName} | type: ${property.type}`];
-    markdownParts.push(formattedProperty);
+    const formattedPropertyName = [propertyName];
+    const formattedPropertyType = [`type: ${property.type}`];
+    const formattedPropertyDescription = property.description ? [`description: ${property.description}`] : [];
+
+    markdownTable.push(formattedPropertyName, formattedPropertyType,  formattedPropertyDescription);
   }
 
-  markdownParts.push([`<!-- INJECT PROPERTIES END --!>`]);
+  markdownTable.push([`<!-- INJECT PROPERTIES END --!>`]);
 
-  return markdownParts.map(row => row.join("|")).join('\n');
+  const formattedMarkdown = markdownTable
+    .map(row => row.join(' | '))
+    .join('\n');
+
+  return formattedMarkdown;
 }
