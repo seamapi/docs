@@ -7,5 +7,6 @@ test("run javascript code snippet 01", async (t) => {
     console.log('Hello, World!');
   `)
 
+  console.log(logged_content);
   t.deepEqual(logged_content, ["Hello, World!"])
 })
