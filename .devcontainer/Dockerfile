@@ -7,7 +7,6 @@ ARG VARIANT="18"
 # install Go with a multi-stage docker build.
 FROM golang:1.20 AS golang
 
-# Use the "builder" stage to set the PATH variable
 FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:${VARIANT}
 
 RUN apt-get update
