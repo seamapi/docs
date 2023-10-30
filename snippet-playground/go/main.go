@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"encoding/json"
 	"fmt"
 	"math/rand"
 	"os"
@@ -20,20 +19,12 @@ func main() {
 func run() error {
 	client := goclient.NewClient(
 		goclient.WithBaseURL(fmt.Sprintf("https://%d.fakeseamconnect.seam.vc", rand.Intn(1000000))),
-		goclient.WithAuthApiKey("seam_apikey1_token"),
+		goclient.WithApiKey("seam_apikey1_token"),
 	)
 	devices, err := client.Devices.List(context.Background(), nil)
 	if err != nil {
 		return err
 	}
-	return prettyPrint(devices)
-}
-
-func prettyPrint(value interface{}) error {
-	jsonBytes, err := json.MarshalIndent(value, "", "  ")
-	if err != nil {
-		return err
-	}
-	fmt.Println(string(jsonBytes))
+	fmt.Println(devices)
 	return nil
 }
