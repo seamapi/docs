@@ -1,5 +1,5 @@
 export function generatePropertiesTable(extractedProperties: { [x: string]: any; }, extractedEndpoint: string) {
-  const markdownTable: Array<Array<string>> = [];
+  const markdownTable: Array<Array<string | string[]>> = [];
 
   markdownTable.push([`<!-- INJECT PROPERTIES START ${extractedEndpoint} --!>`]);
 
@@ -9,7 +9,7 @@ export function generatePropertiesTable(extractedProperties: { [x: string]: any;
     const formattedPropertyType = [`type: ${property.type}`];
     const formattedPropertyDescription = property.description ? [`description: ${property.description}`] : [];
 
-    markdownTable.push(formattedPropertyName, formattedPropertyType,  formattedPropertyDescription);
+    markdownTable.push([formattedPropertyName, formattedPropertyType,  formattedPropertyDescription]);
   }
 
   markdownTable.push([`<!-- INJECT PROPERTIES END --!>`]);

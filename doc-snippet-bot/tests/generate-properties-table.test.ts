@@ -7,18 +7,18 @@ test('generatePropertiesTable generates expected table', async (t) => {
   const extractedProperties = await extractPropertiesFromEndpoint(exampleEndpoint);
 
   const expectedMarkdown = `<!-- INJECT PROPERTIES START ${exampleEndpoint} --!>
-  | device_id | type: string
-  | name | type: string
-  | starts_at | type: string
-  | ends_at | type: string
-  | code | type: string
-  | sync | type: boolean
-  | attempt_for_offline_device | type: boolean
-  | common_code_key | type: string
-  | prefer_native_scheduling | type: boolean
-  | use_backup_access_code_pool | type: boolean
-  | allow_external_modification | type: boolean
-  | is_external_modification_allowed | type: boolean
+device_id | type: string | 
+name | type: string | 
+starts_at | type: string | 
+ends_at | type: string | 
+code | type: string | 
+sync | type: boolean | 
+attempt_for_offline_device | type: boolean | 
+common_code_key | type: string | 
+prefer_native_scheduling | type: boolean | 
+use_backup_access_code_pool | type: boolean | 
+allow_external_modification | type: boolean | 
+is_external_modification_allowed | type: boolean | 
 <!-- INJECT PROPERTIES END --!>`;
 
   const generatedMarkdown = generatePropertiesTable(extractedProperties, exampleEndpoint);
@@ -31,44 +31,16 @@ test('generatePropertiesTable generates expected table including zod description
   const extractedProperties = await extractPropertiesFromEndpoint(exampleEndpoint);
 
   const expectedMarkdown = `<!-- INJECT PROPERTIES START ${exampleEndpoint} --!>
-    connected_account_id: |
-      type: 'string',
-      format: 'uuid',
-      description: 'List all devices owned by this connected account'
-    |,
-    connected_account_ids: |
-      type: 'array',
-      items: | type: 'string', format: 'uuid' |,
-      minItems: 1
-    |,
-    connect_webview_id: | type: 'string', format: 'uuid' |,
-    device_type: | oneOf: [ [Object], [Object], [Object] ] |,
-    device_types: | type: 'array', items: | oneOf: [Array] | |,
-    manufacturer: |
-      type: 'string',
-      enum: [
-        'akuvox',        'august',
-        'avigilon_alta', 'brivo',
-        'butterflymx',   'doorking',
-        'four_suites',   'genie',
-        'igloo',         'keywe',
-        'kwikset',       'linear',
-        'lockly',        'nuki',
-        'philia',        'salto',
-        'samsung',       'schlage',
-        'seam',          'unknown',
-        'wyze',          'yale',
-        'minut',         'two_n',
-        'ttlock',        'nest',
-        'igloohome',     'ecobee',
-        'hubitat',       'controlbyweb',
-        'smartthings',   'dormakaba_oracode'
-      ]
-    |,
-    device_ids: | type: 'array', items: | type: 'string', format: 'uuid' | |,
-    limit: | default: 500, type: 'number', nullable: true |,
-    created_before: | type: 'string', format: 'date-time' |,
-    user_identifier_key: | type: 'string' |
+connected_account_id | type: string | description: List all devices owned by this connected account
+connected_account_ids | type: array | 
+connect_webview_id | type: string | 
+device_type | type: undefined | 
+device_types | type: array | 
+manufacturer | type: string | 
+device_ids | type: array | 
+limit | type: number | 
+created_before | type: string | 
+user_identifier_key | type: string | 
 <!-- INJECT PROPERTIES END --!>`;
 
   const generatedMarkdown = generatePropertiesTable(extractedProperties, exampleEndpoint);
