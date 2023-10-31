@@ -1,6 +1,6 @@
 import * as fs from "fs"
 import * as path from "path"
-import fetchSeamConnectOpenApiSpec from "./fetch-properties-from-openapispec"
+import fetchSeamConnectOpenApiSpec from "./fetch-seam-connect-openapi-spec"
 import { findFilesToInjectPropertiesInto } from "./find-files-to-inject-properties-into"
 
 export default async function injectPropertiesBot() {

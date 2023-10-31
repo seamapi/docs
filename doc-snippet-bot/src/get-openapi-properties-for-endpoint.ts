@@ -1,6 +1,6 @@
-import fetchSeamConnectOpenApiSpec from "./fetch-properties-from-openapispec"
+import fetchSeamConnectOpenApiSpec from "./fetch-seam-connect-openapi-spec"
 
-export async function extractPropertiesFromEndpoint(endpoint: string) {
+export async function getOpenapiPropertiesForEndpoint(endpoint: string) {
   try {
     const openAPIData = await fetchSeamConnectOpenApiSpec()
     const openAPIObject = JSON.parse(openAPIData)
@@ -18,4 +18,4 @@ export async function extractPropertiesFromEndpoint(endpoint: string) {
   return
 }
 
-export default extractPropertiesFromEndpoint
+export default getOpenapiPropertiesForEndpoint

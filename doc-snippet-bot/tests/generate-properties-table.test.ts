@@ -1,10 +1,12 @@
 import test from "ava"
-import { generatePropertiesTable } from "../src/generate-properties-table";
-import extractPropertiesFromEndpoint from "../src/extract-properties-from-endpoint";
+import { generatePropertiesTable } from "../src/generate-properties-table"
+import getOpenapiPropertiesForEndpoint from "../src/get-openapi-properties-for-endpoint"
 
-test('generatePropertiesTable generates expected table', async (t) => {
+test("generatePropertiesTable generates expected table", async (t) => {
   const exampleEndpoint = "/access_codes/create"
-  const extractedProperties = await extractPropertiesFromEndpoint(exampleEndpoint);
+  const extractedProperties = await getOpenapiPropertiesForEndpoint(
+    exampleEndpoint
+  )
 
   const expectedMarkdown = `<!-- INJECT PROPERTIES START ${exampleEndpoint} --!>
 device_id | type: string | 
@@ -19,16 +21,21 @@ prefer_native_scheduling | type: boolean |
 use_backup_access_code_pool | type: boolean | 
 allow_external_modification | type: boolean | 
 is_external_modification_allowed | type: boolean | 
-<!-- INJECT PROPERTIES END --!>`;
+<!-- INJECT PROPERTIES END --!>`
 
-  const generatedMarkdown = generatePropertiesTable(extractedProperties, exampleEndpoint);
+  const generatedMarkdown = generatePropertiesTable(
+    extractedProperties,
+    exampleEndpoint
+  )
 
-  t.deepEqual(generatedMarkdown, expectedMarkdown);
-});
+  t.deepEqual(generatedMarkdown, expectedMarkdown)
+})
 
-test('generatePropertiesTable generates expected table including zod descriptions', async (t) => {
+test("generatePropertiesTable generates expected table including zod descriptions", async (t) => {
   const exampleEndpoint = "/locks/list"
-  const extractedProperties = await extractPropertiesFromEndpoint(exampleEndpoint);
+  const extractedProperties = await getOpenapiPropertiesForEndpoint(
+    exampleEndpoint
+  )
 
   const expectedMarkdown = `<!-- INJECT PROPERTIES START ${exampleEndpoint} --!>
 connected_account_id | type: string | description: List all devices owned by this connected account
@@ -41,9 +48,12 @@ device_ids | type: array |
 limit | type: number | 
 created_before | type: string | 
 user_identifier_key | type: string | 
-<!-- INJECT PROPERTIES END --!>`;
+<!-- INJECT PROPERTIES END --!>`
 
-  const generatedMarkdown = generatePropertiesTable(extractedProperties, exampleEndpoint);
+  const generatedMarkdown = generatePropertiesTable(
+    extractedProperties,
+    exampleEndpoint
+  )
 
-  t.deepEqual(generatedMarkdown, expectedMarkdown);
-});
+  t.deepEqual(generatedMarkdown, expectedMarkdown)
+})

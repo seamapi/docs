@@ -1,6 +1,6 @@
 import test from "ava"
 
-import fetchSeamConnectOpenApiSpec from "../src/fetch-properties-from-openapispec"
+import fetchSeamConnectOpenApiSpec from "../src/fetch-seam-connect-openapi-spec"
 import nock from "nock"
 
 test("fetchPropertiesFromOpenapispec should return the expected data", async (t) => {
