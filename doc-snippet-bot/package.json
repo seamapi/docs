@@ -2,9 +2,9 @@
   "name": "doc-snippet-bot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "cli.ts",
+  "type": "module",
   "scripts": {
-    "cli": "esr src/cli.ts",
     "test": "ava -T 2m"
   },
   "keywords": [],
