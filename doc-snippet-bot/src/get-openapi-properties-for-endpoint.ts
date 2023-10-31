@@ -1,6 +1,13 @@
 import fetchSeamConnectOpenApiSpec from "./fetch-seam-connect-openapi-spec"
 
-export async function getOpenapiPropertiesForEndpoint(endpoint: string) {
+export type OpenApiProperties = {
+  type: string
+  description?: string
+}
+
+export async function getOpenapiPropertiesForEndpoint(
+  endpoint: string
+): Promise<OpenApiProperties> {
   try {
     const openAPIData = await fetchSeamConnectOpenApiSpec()
     const openAPIObject = JSON.parse(openAPIData)
@@ -15,7 +22,7 @@ export async function getOpenapiPropertiesForEndpoint(endpoint: string) {
   } catch (error) {
     console.error("Error fetching openAPI data", error)
   }
-  return
+  throw new Error("Error fetching Seam Connect OpenApi spec")
 }
 
 export default getOpenapiPropertiesForEndpoint
