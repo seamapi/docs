@@ -22,7 +22,7 @@ function injectProperties(filePath: string, propertiesToInject: string) {
   let fileContent = fs.readFileSync(filePath, "utf-8")
   fileContent = fileContent.replace(
     "<!-- INJECT PROPERTIES",
-    propertiesToInject
+    propertiesToInject,
   )
   fs.writeFileSync(filePath, fileContent, "utf-8")
 }

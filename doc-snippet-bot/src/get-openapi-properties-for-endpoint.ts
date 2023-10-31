@@ -6,7 +6,7 @@ export type OpenApiProperties = {
 }
 
 export async function getOpenapiPropertiesForEndpoint(
-  endpoint: string
+  endpoint: string,
 ): Promise<OpenApiProperties> {
   try {
     const openAPIData = await fetchSeamConnectOpenApiSpec()

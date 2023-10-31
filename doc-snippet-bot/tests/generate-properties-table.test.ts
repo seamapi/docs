@@ -4,9 +4,8 @@ import getOpenapiPropertiesForEndpoint from "../src/get-openapi-properties-for-e
 
 test("generatePropertiesTable generates expected table", async (t) => {
   const exampleEndpoint = "/access_codes/create"
-  const extractedProperties = await getOpenapiPropertiesForEndpoint(
-    exampleEndpoint
-  )
+  const extractedProperties =
+    await getOpenapiPropertiesForEndpoint(exampleEndpoint)
 
   const expectedMarkdown = `<!-- INJECT PROPERTIES START ${exampleEndpoint} --!>
 device_id | type: string | 
@@ -25,7 +24,7 @@ is_external_modification_allowed | type: boolean |
 
   const generatedMarkdown = generatePropertiesTable(
     extractedProperties,
-    exampleEndpoint
+    exampleEndpoint,
   )
 
   t.deepEqual(generatedMarkdown, expectedMarkdown)
@@ -33,9 +32,8 @@ is_external_modification_allowed | type: boolean |
 
 test("generatePropertiesTable generates expected table including zod descriptions", async (t) => {
   const exampleEndpoint = "/locks/list"
-  const extractedProperties = await getOpenapiPropertiesForEndpoint(
-    exampleEndpoint
-  )
+  const extractedProperties =
+    await getOpenapiPropertiesForEndpoint(exampleEndpoint)
 
   const expectedMarkdown = `<!-- INJECT PROPERTIES START ${exampleEndpoint} --!>
 connected_account_id | type: string | description: List all devices owned by this connected account
@@ -52,7 +50,7 @@ user_identifier_key | type: string |
 
   const generatedMarkdown = generatePropertiesTable(
     extractedProperties,
-    exampleEndpoint
+    exampleEndpoint,
   )
 
   t.deepEqual(generatedMarkdown, expectedMarkdown)

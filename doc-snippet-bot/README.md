@@ -14,8 +14,7 @@ Properties table fetched for the specified endpoint
 
 - `npm install`
 
-
 ## Running the Tests
 
 You can test individual files
-using e.g. `npx ava ./tests/find-files-to-inject-properties-into.test.ts` or all of them at once using `npm run test`. 
+using e.g. `npx ava ./tests/find-files-to-inject-properties-into.test.ts` or all of them at once using `npm run test`.

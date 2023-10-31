@@ -1,7 +1,7 @@
 import type { OpenApiProperties } from "./get-openapi-properties-for-endpoint"
 export function generatePropertiesTable(
   extractedProperties: { [x: string]: OpenApiProperties },
-  extractedEndpoint: string
+  extractedEndpoint: string,
 ) {
   const markdownTable: Array<string | string[]> = []
 
