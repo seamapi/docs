@@ -5,7 +5,8 @@
   "main": "cli.ts",
   "type": "commonjs",
   "scripts": {
-    "test": "ava -T 2m"
+    "test": "ava -T 2m",
+    "cli": "esr ./src/cli.ts"
   },
   "keywords": [],
   "author": "",
