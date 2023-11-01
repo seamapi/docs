@@ -2,7 +2,7 @@ import fs from "fs"
 import path from "path"
 
 export async function findFilesToInjectPropertiesInto(
-  directoryPath: string
+  directoryPath: string,
 ): Promise<string[]> {
   let markdownFilePaths: string[] = []
 
@@ -12,7 +12,7 @@ export async function findFilesToInjectPropertiesInto(
     const filePath = path.join(directoryPath, file.name)
     if (file.isDirectory()) {
       markdownFilePaths = markdownFilePaths.concat(
-        await findFilesToInjectPropertiesInto(filePath)
+        await findFilesToInjectPropertiesInto(filePath),
       )
     } else if (file.name.endsWith(".md")) {
       const content = fs.readFileSync(filePath, "utf-8")

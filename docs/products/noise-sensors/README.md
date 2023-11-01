@@ -1,22 +1,22 @@
 # 👂 Noise Sensors
 
-## What is a Noise Sensor?
+## What Is a Noise Sensor?
 
-Noise sensors are devices that measure that sound level in a given area. You can use noise sensors to monitor noise levels remotely and receive notifications when the noise volume is too loud. Seam’s API allows you to configure the noise thresholds of a noise sensor and receive events when a disturbance is detected.
+Noise sensors are devices that measure that sound level in a given area. You can use noise sensors to monitor noise levels remotely and receive notifications when the noise volume is too loud. The Seam API enables you to configure the noise thresholds of a noise sensor and receive events when a disturbance is detected.
 
 ## What Is a Threshold?
 
-Thresholds represent the limit of noise tolerated at a property, which can be customized for each hour of the day. Each device has its own default thresholds, but you can use the API to modify them.
+Thresholds represent the limits of noise tolerated at a property, which can be customized for each hour of the day. Each device has its own default thresholds, but you can use the API to modify them.
 
 ## Use Cases
 
-* You can configure noise threshold default settings for a customer's portfolio or on a property-by-property basis, and when a new noise sensor is added, you can use Seam's API to automatically configure its noise thresholds according to these defaults.
-* You can react to noise disturbances by sending notifications to your users when a `noise_sensor.disturbance_detected` event gets fired. Seam will also notify you when the noise event has been resolved.
-* Additionally, Seam provides prebuilt UI components for displaying a noise sensor's information. You can show the noise level, ways to configure noise thresholds, and the activity log of any noise events.
+* You can configure noise threshold default settings for a customer's portfolio or on a property-by-property basis. When a new noise sensor is added, you can use the Seam API to configure its noise thresholds automatically according to these defaults.
+* You can react to noise disturbances by sending notifications to your users when a `noise_sensor.disturbance_detected` event occurs. Seam notifies you when the noise event has been resolved.
+* Seam provides prebuilt UI components for displaying information for a noise sensor. You can show the noise level, ways to configure noise thresholds, and the activity log of any noise events.
 
 ## **Best Practices**
 
-While you can theoretically set noise thresholds to any decibel value, we have found that setting them within a specific range leads to fewer false positives:
+While you can theoretically set noise thresholds to any decibel value, we have found that setting them within the following specific ranges lead to fewer false positives:
 
 | Property Type | Decibels |
 | ------------- | -------- |
@@ -26,4 +26,4 @@ While you can theoretically set noise thresholds to any decibel value, we have f
 
 ## **Next Steps**
 
-For more information on setting up Noise Thresholds for your device, check out our guide [here](configure-noise-threshold-settings.md). Or, you can check out our API Reference Guide [here](../../api-clients/noise-sensors/).
+For more information about setting up noise thresholds for your device, check out our [Configure Noise Threshold Settings guide](configure-noise-threshold-settings.md). To work with noise sensors in the Seam API, see [Noise Sensors](../../api-clients/noise-sensors/).

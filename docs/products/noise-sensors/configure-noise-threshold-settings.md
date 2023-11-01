@@ -1,64 +1,188 @@
 # Configure Noise Threshold Settings
 
-Seam allows you to configure the [noise thresholds](./#what-is-a-threshold) of your noise sensor, and receive events when a disturbance is detected. This guide will walk you through how to configure noise thresholds with the API.
+Seam enables you to configure the [noise thresholds](./#what-is-a-threshold) of your noise sensor, as well as to receive events when a disturbance is detected. This guide walks you through how to configure noise thresholds with the Seam API.
 
 ## Set Up Noise Thresholds
 
-First, you’ll need to create a threshold using the [Create Noise Thresholds](../../api-clients/noise-sensors/create-noise-threshold.md) endpoint. For example:
+First, create a threshold using the [Create Noise Thresholds](../../api-clients/noise-sensors/create-noise-threshold.md) endpoint. For example:
+
+{% tabs %}
+{% tab title="Python" %}
+**Request:**
 
 ```python
-seam.noise_sensors.noise_thresholds.create(
-    device_id="123e4567-e89b-12d3-a456-426614174000",
-    starts_daily_at="20:00:00[America/Los_Angeles]",
-    ends_daily_at="06:00:00[America/Los_Angeles]",
-    noise_threshold_decibels=70,
+device_id = "98dc7c66-045d-49cb-a62b-4bb431b0a9fa"
+
+noise_threshold = seam.noise_sensors.noise_thresholds.create(
+    device_id = device_id,
+    starts_daily_at = "20:00:00[America/Los_Angeles]",
+    ends_daily_at = "06:00:00[America/Los_Angeles]",
+    noise_threshold_decibels = 70
 )
 
- {
-   "noise_threshold_id": "792263f8-1660-4cf9-a6c6-054d23b78d86",
-   "device_id": "123e4567-e89b-12d3-a456-426614174000",
-   "name": "builtin_quiet_hours",
-   "noise_threshold_decibels": 70,
-   "starts_daily_at": "20:00:00[America/Los_Angeles]",
-   "ends_daily_at": "06:00:00[America/Los_Angeles]",
- }
+pprint(noise_threshold)
 ```
 
-This threshold creates a noise threshold of 70 decibels from 20:00-06:00 PST called `builtin_quiet_hours`.
+**Response:**
 
-That call will return this JSON response:
+```
+NoiseThreshold(noise_threshold_id='1b64e4b6-4d5d-4416-acca-dc3b1cbc00cd',
+               device_id='98dc7c66-045d-49cb-a62b-4bb431b0a9fa',
+               name='builtin_quiet_hours',
+               noise_threshold_decibels=70,
+               starts_daily_at='20:00:00[America/Los_Angeles]',
+               ends_daily_at='06:00:00[America/Los_Angeles]',
+               noise_threshold_nrs=None)
+```
+{% endtab %}
+
+{% tab title="cURL (bash)" %}
+**Request:**
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/noise_sensors/noise_thresholds/create' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "device_id": "98dc7c66-045d-49cb-a62b-4bb431b0a9fa",
+  "starts_daily_at": "20:00:00[America/Los_Angeles]",
+  "ends_daily_at": "06:00:00[America/Los_Angeles]",
+  "noise_threshold_decibels": 70
+}'
+```
+
+**Response:**
 
 ```json
 {
   "action_attempt": {
     "status": "pending",
     "action_type": "CREATE_NOISE_THRESHOLD",
-    "action_attempt_id": "c10e3db5-a5a2-47f2-a76f-48379ed9cd22",
+    "action_attempt_id": "64130fb6-94ed-4268-a7e5-ccba4165fab8",
     "result": null,
     "error": null
   },
   "ok": true
 }
 ```
+{% endtab %}
 
-Since each language encapsulates this response inside objects specific to that language and/or implementation, the actual type in your language might differ from what’s written here.
+{% tab title="JavaScript" %}
+**Request:**
 
-Once you’ve created a threshold, you’ll need to connect it to a webhook to log events.
+```javascript
+const deviceId = "98dc7c66-045d-49cb-a62b-4bb431b0a9fa"
+
+const noiseThresholdAttempt = await seam.noiseThresholds.create({
+  device_id: deviceId,
+  starts_daily_at: "20:00:00[America/Los_Angeles]",
+  ends_daily_at: "06:00:00[America/Los_Angeles]",
+  noise_threshold_decibels: 70
+})
+
+console.log(noiseThresholdAttempt)
+```
+
+**Response:**
+
+```json
+{
+  action_attempt: {
+    status: 'pending',
+    action_type: 'CREATE_NOISE_THRESHOLD',
+    action_attempt_id: '5e24ef90-8043-44d8-89f9-9f7ae60ec390',
+    result: null,
+    error: null
+  },
+  ok: true
+}
+```
+{% endtab %}
+
+{% tab title="C#" %}
+**Request:**
+
+```csharp
+var deviceId = "98dc7c66-045d-49cb-a62b-4bb431b0a9fa";
+var noiseThresholdAttempt = seam.NoiseThresholdsNoiseSensors.Create(
+  deviceId: deviceId,
+  startsDailyAt: "20:00:00[America/Los_Angeles]",
+  endsDailyAt: "06:00:00[America/Los_Angeles]",
+  noiseThresholdDecibels: 70
+);
+Type t = noiseThresholdAttempt.GetType();
+PropertyInfo[] props = t.GetProperties();
+foreach (var prop in props)
+{
+  Console.WriteLine(prop.Name + ": " + prop.GetValue(noiseThresholdAttempt));
+}
+```
+
+**Response:**
+
+```
+Status: pending
+ActionType: CREATE_NOISE_THRESHOLD
+ActionAttemptId: eb611597-64d2-4b1a-995b-fb00361922c6
+Result: 
+Error: 
+```
+{% endtab %}
+
+{% tab title="Java" %}
+**Request:**
+
+```java
+var deviceId = "98dc7c66-045d-49cb-a62b-4bb431b0a9fa";
+ActionAttempt noiseThresholdAttempt = seam.noiseSensors().noiseThresholds().create(NoiseThresholdsCreateRequest.builder()
+                .deviceId(deviceId)
+                .startsDailyAt("20:00:00[America/Los_Angeles]")
+                .endsDailyAt("06:00:00[America/Los_Angeles]")
+                .noiseThresholdDecibels(70.0)
+                .build());
+System.out.println(noiseThresholdAttempt.getPending());
+```
+
+**Response:**
+
+```json
+Optional[{
+  "action_type" : "CREATE_NOISE_THRESHOLD",
+  "action_attempt_id" : "c954a8ec-3c9a-4f26-8966-85de45966d1b"
+}]
+```
+{% endtab %}
+{% endtabs %}
+
+This threshold creates a noise threshold of 70 decibels from 20:00-06:00 PST called `builtin_quiet_hours`.
+
+Once you have created a threshold, connect it to a webhook to log events.
 
 ### Best Practices
 
-* For Minut devices, you can configure two thresholds- one for quiet hours and one for the rest of the day.
-* For NoiseAware devices, you can configure as many thresholds as you want, provided they don't overlap during daytime hours.
+* For Minut devices, you can configure two thresholds—one for quiet hours and one for the rest of the day.
+* For NoiseAware devices, you can configure as many thresholds as you want, provided that they do not overlap during daytime hours.
 
 ## Set Up Webhooks
 
-You can set up webhooks in the [Seam Console](https://console.seam.co) with the **"+ Add Webhook"** button. All you need to do is fill in your URL, then select the event types you want to receive events for, then click **"Create"**.
+You can set up webhooks in the [Seam Console](https://console.seam.co).
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2023-08-13 at 4.39.14 PM (1).png" alt=""><figcaption></figcaption></figure>
+1. In the left-hand navigation pane of Seam Console, click **Webhooks**.
+2.  On the **Webhooks** page, click **+ Add Webhook**.
+
+    <figure><img src="../../.gitbook/assets/Screen Shot 2023-08-13 at 4.39.14 PM (1).png" alt="On the Webhooks page in the Seam Console, click + Add Webhook."><figcaption></figcaption></figure>
+3. In the **Create Webhook** dialog:
+   1. Type your URL.
+   2. Select the event types for which you want to receive events.
+   3. Click **Create**.
+
+The Seam Console displays the URL and secret for the newly-created webhook. To test your webhook, click **Test your webhook**.&#x20;
 
 ## Monitor Events
 
-Once your thresholds and webhooks are configured, you’ll be able to monitor events with the API. An event will look something like the code snippet below:
+Once you have configured your thresholds and webhooks, you can monitor events with the Seam API. The following sample shows how events look:
 
 ```json
 {
@@ -76,4 +200,4 @@ Once your thresholds and webhooks are configured, you’ll be able to monitor ev
 
 ```
 
-You can see more parameters for events [here](../../api-clients/events/).
+For a detailed reference of event parameters, see [Events](../../api-clients/events/).

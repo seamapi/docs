@@ -4,9 +4,9 @@ description: >-
   on door locks.
 ---
 
-# Access code requirements for door locks
+# Access Code Requirements for Door Locks
 
-Some models of door locks have specific requirements and constraints when it comes to setting PIN codes. It's essential to be aware of these to ensure seamless functionality and security. The requirements can be fetched by making a [Get Device](../../../api-clients/devices/get-device.md) or [List Devices](../../../api-clients/devices/list-devices.md) request.
+Some models of door locks have specific requirements and constraints when it comes to setting PIN codes. It's essential to be aware of these to ensure seamless functionality and security. The requirements can be fetched by making a [Get Device](../../../api-clients/devices/get-device.md) or [List Devices](../../../api-clients/devices/list-devices.md) (or [Get Lock](../../../api-clients/locks/get-lock.md) or [List Locks](../../../api-clients/locks/list-locks.md)) request.
 
 Sample set of access code requirements:
 
@@ -47,106 +47,210 @@ Sample set of access code requirements:
 ```
 
 {% tabs %}
-{% tab title="Javascript" %}
-```javascript
-const deviceId = "55072d5d-9a4f-4cba-8de2-1782df307899"
+{% tab title="Python" %}
+**Request:**
 
-// get the device
-const device = await seam.devices.get({
-    device_id: deviceId,
-})
+```python
+pprint(seam.locks.get(device="ed4bb795-f29f-43e5-bc0f-35f69f9141b5"))
+```
 
-// print out its properties and notice 
-// the supported_code_lengths and code_constraints properties
-console.log(device.properties)
+**Response:**
 
-/*
-{
-  locked: false,
-  online: true,
-  manufacturer: 'nuki',
-  battery_level: 0.86,
-  nuki_metadata: {
-    device_id: '545636389',
-    device_name: 'Office Lock',
-    keypad_battery_critical: false
-  },
-  keypad_battery: { level: 1 },
-  supported_code_lengths: [ 6 ],
-  has_native_entry_events: true,
-  name: 'Office Lock',
-  model: { display_name: 'Lock', manufacturer_display_name: 'Nuki' },
-  battery: { level: 0.86, status: 'full' },
-  image_url: 'https://connect.getseam.com/assets/images/devices/nuki_smart_lock_3_pro_black.png',
-  image_alt_text: 'Nuki Smart Lock 3.0 Pro Black, Front',
-  code_constraints: [
-    { constraint_type: 'cannot_start_with_12' },
-    { constraint_type: 'no_zeros' },
-    { constraint_type: 'name_length', max_length: 20 }
-  ],
-  supports_backup_access_code_pool: true
-}
-*/
+```
+Device(device_id='ed4bb795-f29f-43e5-bc0f-35f69f9141b5',
+       device_type='nuki_lock',
+       location=None,
+       properties={'battery': {'level': 0.86, 'status': 'full'},
+                   'battery_level': 0.86,
+                   'code_constraints': [{'constraint_type': 'cannot_start_with_12'},
+                                        {'constraint_type': 'no_zeros'},
+                                        {'constraint_type': 'name_length',
+                                         'max_length': 20}],
+                   'has_native_entry_events': True,
+                   'image_alt_text': 'Nuki Smart Lock 3.0 Pro Black, Front',
+                   'image_url': 'https://connect.getseam.com/assets/images/devices/nuki_smart_lock_3_pro_black.png',
+                   'keypad_battery': {'level': 1},
+                   'locked': False,
+                   'manufacturer': 'nuki',
+                   'model': {'display_name': 'Lock',
+                             'manufacturer_display_name': 'Nuki'},
+                   'name': 'Office Lock',
+                   'nuki_metadata': {'device_id': '3',
+                                     'device_name': 'Office Lock',
+                                     'keypad_battery_critical': False},
+                   'online': True,
+                   'supported_code_lengths': [6],
+                   'supports_backup_access_code_pool': True},
+       capabilities_supported=['access_code', 'lock'],
+       errors=[],
+       warnings=[],
+       connected_account_id='cac74c00-443b-440f-820e-e2907277fd9f',
+       workspace_id='398d80b7-3f96-47c2-b85a-6f8ba21d07be',
+       created_at='2023-10-19T04:43:40.852Z',
+       is_managed=True)
 ```
 {% endtab %}
 
-{% tab title="Python" %}
-```python
-device_id = "0e2e6262-7f91-4970-a58d-47ef30b41e2e"
+{% tab title="cURL (bash)" %}
+**Request:**
 
-device = seam.devices.get(device_id)
-print(device)
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/devices/get' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "device_id": "ed4bb795-f29f-43e5-bc0f-35f69f9141b5"
+}'
+```
 
-# Device(device_id='0e2e6262-7f91-4970-a58d-47ef30b41e2e',
-#        device_type='nuki_lock',
-#        location=None,
-#        properties={'battery': {'level': 0.86, 'status': 'full'},
-#                    'battery_level': 0.86,
-#                    'code_constraints': [{'constraint_type': 'cannot_start_with_12'},
-#                                         {'constraint_type': 'no_zeros'},
-#                                         {'constraint_type': 'name_length',
-#                                          'max_length': 20}],
-#                    'has_native_entry_events': True,
-#                    'image_alt_text': 'Nuki Smart Lock 3.0 Pro Black, Front',
-#                    'image_url': 'https://connect.getseam.com/assets/images/devices/nuki_smart_lock_3_pro_black.png',
-#                    'keypad_battery': {'level': 1},
-#                    'locked': False,
-#                    'manufacturer': 'nuki',
-#                    'model': {'display_name': 'Lock',
-#                              'manufacturer_display_name': 'Nuki'},
-#                    'name': 'Office Lock',
-#                    'nuki_metadata': {'device_id': '545636389',
-#                                      'device_name': 'Office Lock',
-#                                      'keypad_battery_critical': False},
-#                    'online': True,
-#                    'supported_code_lengths': [6],
-#                    'supports_backup_access_code_pool': True},
-#        capabilities_supported=['access_code', 'lock'],
-#        errors=[],
-#        warnings=[],
-#        connected_account_id='5fe50f46-274f-4a03-ba95-3a517464fdc7',
-#        workspace_id='1d2826eb-4a26-4f46-bddb-ef5898baa859',
-#        created_at='2023-08-30T06:45:59.213Z')
+**Response:**
+
+```json
+{
+  "device": {
+    "device_id": "ed4bb795-f29f-43e5-bc0f-35f69f9141b5",
+    "device_type": "nuki_lock",
+    "capabilities_supported": [
+      "access_code",
+      "lock"
+    ],
+    "properties": {
+      "locked": false,
+      "online": true,
+      "manufacturer": "nuki",
+      "battery_level": 0.86,
+      "nuki_metadata": {
+        "device_id": "3",
+        "device_name": "Office Lock",
+        "keypad_battery_critical": false
+      },
+      "keypad_battery": {
+        "level": 1
+      },
+      "supported_code_lengths": [
+        6
+      ],
+      "has_native_entry_events": true,
+      "name": "Office Lock",
+      "model": {
+        "display_name": "Lock",
+        "manufacturer_display_name": "Nuki"
+      },
+      "battery": {
+        "level": 0.86,
+        "status": "full"
+      },
+      "image_url": "https://connect.getseam.com/assets/images/devices/nuki_smart_lock_3_pro_black.png",
+      "image_alt_text": "Nuki Smart Lock 3.0 Pro Black, Front",
+      "code_constraints": [
+        {
+          "constraint_type": "cannot_start_with_12"
+        },
+        {
+          "constraint_type": "no_zeros"
+        },
+        {
+          "constraint_type": "name_length",
+          "max_length": 20
+        }
+      ],
+      "supports_backup_access_code_pool": true
+    },
+    "location": null,
+    "connected_account_id": "cac74c00-443b-440f-820e-e2907277fd9f",
+    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+    "created_at": "2023-10-19T04:43:40.852Z",
+    "errors": [],
+    "warnings": [],
+    "is_managed": true
+  },
+  "ok": true
+}
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+**Request:**
+
+```javascript
+const device = await seam.devices.get({
+    device_id: "ed4bb795-f29f-43e5-bc0f-35f69f9141b5"
+  })
+
+console.log(device)
+console.log(device.properties.code_constraints)
+```
+
+**Response:**
+
+```json
+{
+  device_id: 'ed4bb795-f29f-43e5-bc0f-35f69f9141b5',
+  device_type: 'nuki_lock',
+  capabilities_supported: [ 'access_code', 'lock' ],
+  properties: {
+    locked: false,
+    online: true,
+    manufacturer: 'nuki',
+    battery_level: 0.86,
+    nuki_metadata: {
+      device_id: '3',
+      device_name: 'Office Lock',
+      keypad_battery_critical: false
+    },
+    keypad_battery: { level: 1 },
+    supported_code_lengths: [ 6 ],
+    has_native_entry_events: true,
+    name: 'Office Lock',
+    model: { display_name: 'Lock', manufacturer_display_name: 'Nuki' },
+    battery: { level: 0.86, status: 'full' },
+    image_url: 'https://connect.getseam.com/assets/images/devices/nuki_smart_lock_3_pro_black.png',
+    image_alt_text: 'Nuki Smart Lock 3.0 Pro Black, Front',
+    code_constraints: [ [Object], [Object], [Object] ],
+    supports_backup_access_code_pool: true
+  },
+  location: null,
+  connected_account_id: 'cac74c00-443b-440f-820e-e2907277fd9f',
+  workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be',
+  created_at: '2023-10-19T04:43:40.852Z',
+  errors: [],
+  warnings: [],
+  is_managed: true
+}
+[
+  { constraint_type: 'cannot_start_with_12' },
+  { constraint_type: 'no_zeros' },
+  { constraint_type: 'name_length', max_length: 20 }
+]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+**Request:**
+
 ```ruby
-device_id = "0e2e6262-7f91-4970-a58d-47ef30b41e2e"
-device = seam.devices.get(device_id)
-
-puts device.inspect
-
-# <Seam::Device:0x00438
-#   device_id="0e2e6262-7f91-4970-a58d-47ef30b41e2e"
-#   device_type="nuki_lock"
-#   properties={"locked"=>false, "online"=>true, "manufacturer"=>"nuki", "battery_level"=>0.86, "nuki_metadata"=>{"device_id"=>"545636389", "device_name"=>"Office Lock", "keypad_battery_critical"=>false}, "keypad_battery"=>{"level"=>1}, "supported_code_lengths"=>[6], "has_native_entry_events"=>true, "name"=>"Office Lock", "model"=>{"display_name"=>"Lock", "manufacturer_display_name"=>"Nuki"}, "battery"=>{"level"=>0.86, "status"=>"full"}, "image_url"=>"https://connect.getseam.com/assets/images/devices/nuki_smart_lock_3_pro_black.png", "image_alt_text"=>"Nuki Smart Lock 3.0 Pro Black, Front", "code_constraints"=>[{"constraint_type"=>"cannot_start_with_12"}, {"constraint_type"=>"no_zeros"}, {"constraint_type"=>"name_length", "max_length"=>20}], "supports_backup_access_code_pool"=>true}
-#   connected_account_id="5fe50f46-274f-4a03-ba95-3a517464fdc7"
-#   workspace_id="1d2826eb-4a26-4f46-bddb-ef5898baa859"
-#   created_at=2023-08-30 06:45:59.213 UTC
-#   errors=[]
-#   warnings=[]>
+puts client.devices.get("ed4bb795-f29f-43e5-bc0f-35f69f9141b5").inspect
 ```
+
+**Response:**
+
+{% code overflow="wrap" %}
+```
+<Seam::Device:0x00438
+  device_id="ed4bb795-f29f-43e5-bc0f-35f69f9141b5"
+  device_type="nuki_lock"
+  capabilities_supported=["access_code", "lock"]
+  properties={"locked"=>false, "online"=>true, "manufacturer"=>"nuki", "battery_level"=>0.86, "nuki_metadata"=>{"device_id"=>"3", "device_name"=>"Office Lock", "keypad_battery_critical"=>false}, "keypad_battery"=>{"level"=>1}, "supported_code_lengths"=>[6], "has_native_entry_events"=>true, "name"=>"Office Lock", "model"=>{"display_name"=>"Lock", "manufacturer_display_name"=>"Nuki"}, "battery"=>{"level"=>0.86, "status"=>"full"}, "image_url"=>"https://connect.getseam.com/assets/images/devices/nuki_smart_lock_3_pro_black.png", "image_alt_text"=>"Nuki Smart Lock 3.0 Pro Black, Front", "code_constraints"=>[{"constraint_type"=>"cannot_start_with_12"}, {"constraint_type"=>"no_zeros"}, {"constraint_type"=>"name_length", "max_length"=>20}], "supports_backup_access_code_pool"=>true}
+  connected_account_id="cac74c00-443b-440f-820e-e2907277fd9f"
+  workspace_id="398d80b7-3f96-47c2-b85a-6f8ba21d07be"
+  created_at=2023-10-19 04:43:40.852 UTC
+  errors=[]
+  warnings=[]
+  is_managed=true>
+```
+{% endcode %}
 {% endtab %}
 
 {% tab title="PHP" %}
@@ -200,52 +304,94 @@ echo json_encode($device->properties, JSON_PRETTY_PRINT);
 ```
 {% endtab %}
 
-{% tab title="Curl" %}
+{% tab title="C#" %}
 **Request:**
 
-<pre class="language-bash"><code class="lang-bash"><strong>$ curl --request POST 'https://connect.getseam.com/devices/get' \
-</strong>--header 'Authorization: Bearer ${API_KEY}' \
---header 'Content-Type: application/json' \
---data-raw '{
-  "device_id": "00000000-0000-0000-0000-000000000000"
- }'
-</code></pre>
+```csharp
+var device = seam.Devices.Get(deviceId: "ed4bb795-f29f-43e5-bc0f-35f69f9141b5");
+Console.WriteLine("Device ID: " + device.DeviceId);
+Console.WriteLine("Type: " + device.DeviceType);
+Console.WriteLine("Capabilities supported:");
+foreach (var capability in device.CapabilitiesSupported)
+{
+  Console.WriteLine(capability);
+}
+Console.WriteLine("Supported code lengths:");
+if (device.Properties.SupportedCodeLengths is not null)
+{
+  foreach (var supportedCodeLength in device.Properties.SupportedCodeLengths)
+  {
+    Console.WriteLine(supportedCodeLength);
+
+  }
+}
+Console.WriteLine("Code constraints:");
+if (device.Properties.CodeConstraints is not null)
+{
+  foreach (var codeConstraint in device.Properties.CodeConstraints)
+  {
+    Console.WriteLine(codeConstraint);
+  }
+}
+Console.WriteLine("Supports backup access code pool: " + device.Properties.SupportsBackupAccessCodePool);
+```
+
+**Response:**
+
+{% code overflow="wrap" %}
+```
+Device ID: ed4bb795-f29f-43e5-bc0f-35f69f9141b5
+Type: NukiLock
+Capabilities supported:
+AccessCode
+Lock
+Supported code lengths:
+6
+Code constraints:
+{
+  "constraint_type": "cannot_start_with_12"
+}
+{
+  "constraint_type": "no_zeros"
+}
+{
+  "constraint_type": "name_length",
+  "max_length": 20
+}
+Supports backup access code pool: True
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Java" %}
+**Request:**
+
+```java
+Device lock = seam.locks()
+        .get(LocksGetRequest.builder()
+                .deviceId("ed4bb795-f29f-43e5-bc0f-35f69f9141b5")
+                .build());
+System.out.println(lock);
+```
 
 **Response:**
 
 ```json
 {
-  "device": {
-    "device_id": "00000000-0000-0000-0000-000000000000",
-    "capabilities_supported": [
-      "access_code",
-      "lock"
-    ],
-    "properties": {
-      "supported_code_lengths": [
-        4,
-        5,
-        6,
-        7,
-        8
-      ],
-      "max_active_codes_supported": 250,
-      "code_constraints": [
-        {
-          "constraint_type": "no_zeros"
-        },
-        {
-          "constraint_type": "name_length",
-          "min_length": 1,
-          "max_length": 12
-        }
-      ],
-      "supports_backup_access_code_pool": true
-      ...
-    },
-    ...
+  "device_id" : "ed4bb795-f29f-43e5-bc0f-35f69f9141b5",
+  "device_type" : "nuki_lock",
+  "capabilities_supported" : [ "access_code", "lock" ],
+  "properties" : {
+    "online" : true,
+    "name" : "Office Lock",
+    "model" : {
+      "display_name" : "Lock"
+    }
   },
-  ...
+  "connected_account_id" : "cac74c00-443b-440f-820e-e2907277fd9f",
+  "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+  "created_at" : "2023-10-19T04:43:40.852Z",
+  "is_managed" : "true"
 }
 ```
 {% endtab %}

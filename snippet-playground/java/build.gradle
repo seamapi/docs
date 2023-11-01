@@ -7,7 +7,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'io.github.seamapi:java:0.1.15'
+    implementation 'io.github.seamapi:java:0.1.22'
 }
 
 java {
