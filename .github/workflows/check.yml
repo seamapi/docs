@@ -4,7 +4,7 @@ name: Check
 on:
   push:
     branches:
-      - "**"
+      - "doc-snippet-bot-2"
 
 jobs:
   typecheck:
