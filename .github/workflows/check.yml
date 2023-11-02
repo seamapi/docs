@@ -19,6 +19,12 @@ jobs:
         with:
           node-version: "18.x"
           registry-url: "https://npm.pkg.github.com"
+      - name: Debug
+        run: |
+          node --version
+          echo $NODE_AUTH_TOKEN
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.SEAMAPI_NPM_TOKEN }}
       - run: npm install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.SEAMAPI_NPM_TOKEN }}
