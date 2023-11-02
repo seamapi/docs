@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit -p ./doc-snippet-bot/tsconfig.json"
   },
   "keywords": [],
   "author": "",
