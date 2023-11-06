@@ -28,7 +28,7 @@ export const runRubyCodeSample = async (rubySample: string) => {
     `.trim()
 
   const { stdout, stderr } = await runInsideContainer({
-    command: "/root/app.rb",
+    command: "/root/run.sh",
     imageName: "seamapi/ruby-sample-runner",
     filesystem: {
       "/root/app.rb": rubyCodeSample,
