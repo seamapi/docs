@@ -18,7 +18,7 @@ For those who prefer using webhooks to verify the success of an action, we'll so
 
 ## Before You Begin
 
-Be sure to confirm that your device has the capability to lock and unlock. You can inspect this by checking device's capabilities by looking for `lock` in the `capabilities_supported` list in [Get Device](../../api-clients/devices/get-device.md) or [List Devices](../../api-clients/devices/list-devices.md) (or [Get Lock](../../api-clients/locks/get-lock.md) or [List Locks](../../api-clients/locks/list-locks.md)).&#x20;
+Be sure to confirm that your device has the capability to lock and unlock. You can inspect this by checking the device's capabilities by looking for `lock` in the `capabilities_supported` list in [Get Device](../../api-clients/devices/get-device.md) or [List Devices](../../api-clients/devices/list-devices.md) (or [Get Lock](../../api-clients/locks/get-lock.md) or [List Locks](../../api-clients/locks/list-locks.md)).&#x20;
 
 {% tabs %}
 {% tab title="Python" %}

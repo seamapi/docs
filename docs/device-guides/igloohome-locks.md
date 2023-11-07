@@ -24,14 +24,33 @@ This integration supports lock, unlock, and customizable access code provisionin
 
 Each igloohome Bridge supports up to five compatible igloohome locks.
 
-#### Offline Access Code Support (Upcoming!)
+#### Offline Access Code Support
 
-This integration will support the generation of offline access codes (that is, [algoPIN](https://www.igloohome.co/en-US/how-it-works) codes) for all igloohome lock models, without the need for a bridge. Using offline access codes, you generate PIN codes remotely, and these PIN codes are valid for 24 hours. Note that once you generate an offline access code, you can only delete this code from the corresponding lock if you are within Bluetooth® range of the lock.
+This integration supports the generation of offline access codes (that is, [algoPIN](https://www.igloohome.co/en-US/how-it-works) codes) for all igloohome lock models, without the need for a bridge. You generate offline access (PIN) codes remotely, and the manufacturer maintains a server-based registry of synchronized encryption keys (tokens) to enable these offline codes. Then, owners or managers can share these codes with users through messaging or other similar applications, and the users do not need to install a special application to unlock the device. For more information, see [Offline Access Codes](../products/smart-locks/access-codes/#offline-access-codes).
+
+Note the following igloohome-specific offline access code constraints:
+
+| Constraint                                               | Description                                                                                                                                    |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Offline code types                                       | <ul><li>Hourly-bound</li><li>Daily-bound</li><li>One-time-use</li></ul>                                                                        |
+| Range of hourly-bound codes                              | 1 to 672 hours (28 days)                                                                                                                       |
+| Maximum number of hourly-bound codes per hour            | 3                                                                                                                                              |
+| Range of daily-bound codes                               | 29 to 367 days                                                                                                                                 |
+| Daily-bound code schedule restrictions                   | Start time and end time must match.                                                                                                            |
+| Maximum number of daily-bound codes per day              | 3                                                                                                                                              |
+| Timeframe for one-time-use codes                         | <ul><li>Must have a start date and time.</li><li>Lasts for 24 hours.</li></ul>                                                                 |
+| Maximum number of one-time-use codes per start date slot | 5                                                                                                                                              |
+| One-time-use code expiration                             | Expire after a single use.                                                                                                                     |
+| Total maximum number of offline codes                    | 199 PINs, including online and offline PINs.                                                                                                   |
+| Activation requirements                                  | For codes that last longer than 24 hours, algoPINs have a 24-hour activation window. Use the code within the first 24 hours of the start time. |
+| Revocation                                               | To delete algoPINs, you must be within Bluetooth® range of the lock.                                                                           |
+
+
 
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["igloohome"]'
+  manufacturers='["igloohome"]'
 />" %}
 
 We support the following features:

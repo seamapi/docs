@@ -30,7 +30,7 @@ Seam supports programming two types of access codes:
 
 ## Before You Begin
 
-To confirm that Seam supports access code programming for your device, use [Get Device](../../../api-clients/devices/get-device.md) or [Get Lock](../../../api-clients/locks/get-lock.md) to query the device and check its `capabilities_supported` property. Ensure that `capabilities_supported` list includes `access_code`. After you've done that, come back here and keep reading.
+To confirm that Seam supports access code programming for your device, use [Get Device](../../../api-clients/devices/get-device.md) or [Get Lock](../../../api-clients/locks/get-lock.md) to query the device and check its `capabilities_supported` property. Ensure that the `capabilities_supported` list includes `access_code`.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -286,7 +286,9 @@ AccessCode(access_code_id='daf89de3-ad3a-49aa-93bd-25f27d58f699',
            is_backup_access_code_available=False,
            is_backup=None,
            appearance=None,
-           is_external_modification_allowed=False)
+           is_external_modification_allowed=False,
+           is_offline_access_code=False,
+           is_one_time_use=False)
 ```
 {% endtab %}
 
@@ -332,7 +334,9 @@ curl -X 'POST' \
     "errors": [],
     "warnings": [],
     "is_managed": true,
-    "is_external_modification_allowed": false
+    "is_external_modification_allowed": false,
+    "is_offline_access_code": false,
+    "is_one_time_use": false
   },
   "ok": true
 }
@@ -372,7 +376,9 @@ console.log(createdAccessCode)
   errors: [],
   warnings: [],
   is_managed: true,
-  is_external_modification_allowed: false
+  is_external_modification_allowed: false,
+  is_offline_access_code: false,
+  is_one_time_use: false
 }
 ```
 {% endtab %}
@@ -409,7 +415,9 @@ puts created_access_code.inspect
   access_code_id="6fe348a8-5938-4b73-8a36-86f7ffdfc431"
   pulled_backup_access_code_id=nil
   is_backup_access_code_available=true
-  is_external_modification_allowed=false>
+  is_external_modification_allowed=false
+  is_offline_access_code=false
+  is_one_time_use=false>
 ```
 {% endtab %}
 
@@ -495,7 +503,9 @@ System.out.println(CreatedAccessCode);
   "warnings" : [ ],
   "is_managed" : "true",
   "status" : "setting",
-  "is_backup_access_code_available" : false
+  "is_backup_access_code_available" : false,
+  "is_offline_access_code" : false,
+  "is_one_time_use" : false
 }
 ```
 {% endtab %}
@@ -554,9 +564,9 @@ device_id = "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
 
 created_access_code = seam.access_codes.create(
   device = device_id,
-  name="my time-bound code",
-  starts_at="2025-01-01T16:00:00Z",
-  ends_at="2025-01-22T12:00:00Z",
+  name = "my time-bound code",
+  starts_at = "2025-01-01T16:00:00Z",
+  ends_at = "2025-01-22T12:00:00Z",
   code = "2345"
 )
 
@@ -609,7 +619,7 @@ curl -X 'POST' \
 
 ### Response:
 
-```sh
+```json
 {
   "action_attempt": {
     "status": "pending",

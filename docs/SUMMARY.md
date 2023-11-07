@@ -27,6 +27,7 @@
     * [Accommodating Manufacturer Mobile Apps](products/smart-locks/access-codes/accommodating-manufacturer-mobile-apps.md)
     * [Troubleshooting Access Code Issues](products/smart-locks/access-codes/troubleshooting-access-code-issues.md)
     * [Backup Access Codes](products/smart-locks/access-codes/backup-access-codes.md)
+    * [Offline Access Codes](products/smart-locks/access-codes/offline-access-codes.md)
     * [Migrating Existing Access Codes](products/smart-locks/access-codes/migrating-existing-access-codes.md)
 * [🏢 Access Systems](products/access-systems/README.md)
   * [User Management](products/access-systems/user-management.md)

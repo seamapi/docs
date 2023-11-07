@@ -19,29 +19,49 @@ layout:
 
 <figure><img src="../../../.gitbook/assets/code_unlock.gif" alt=""><figcaption></figcaption></figure>
 
-## What is an Access Code?
+## What Is an Access Code?
 
-An Access Code is a code used for a keypad or pinpad device. Unlike physical keys, which can be easily lost or duplicated, PIN codes can be customized, tracked, and altered on-the-fly. Using Seam's [Access Code API](../../../api-clients/access-codes/), you can easily generate access codes on the hundreds of door lock models that we integrate with.
+An Access code is a code used for a keypad or pinpad device. Unlike physical keys, which can be easily lost or duplicated, PIN codes can be customized, tracked, and altered on-the-fly. Using the Seam [Access Code API](../../../api-clients/access-codes/), you can easily generate access codes on the hundreds of door lock models with which we integrate.
 
-Seam supports programming two types of access codes, **ongoing** and **time-bound**. To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`.
+Seam supports programming two types of access codes: [ongoing](./#ongoing-access-codes) and [time-bound](./#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`.
 
+In addition, for certain devices (currently, [igloohome locks](../../../device-guides/igloohome-locks.md)), Seam also supports [offline access codes](./#offline-access-codes).
 
+### **Ongoing Access Codes**
 
-**Ongoing Access Codes:** Ideal for residents or long-term users. Ongoing codes remain active on a device until removed. They can start right away or at a later date if you provide a `starts_at`timestamp.
+Ongoing access code are ideal for residents or long-term users. Ongoing codes remain active on a device until removed. They can start right away or at a later date if you provide a `starts_at`timestamp.
 
 <figure><img src="../../../.gitbook/assets/ongoing-access-code-light.png" alt=""><figcaption><p>Timeline of an ongoing access code. The code will remain active until you ask Seam to remove it.</p></figcaption></figure>
 
+### **Time-Bound Access Codes**
 
+Time-bound access codes are suitable for temporary access like guest visits or service appointments. These codes operate between a designated `starts_at` and `ends_at` time window, granting access only during that period.
 
-**Time Bound**: Suitable for temporary access like guest visits or service appointments. These codes operate between a designated `starts_at` and `ends_at` time window, granting access only during that period.
+<figure><img src="../../../.gitbook/assets/time-bound-access-code-light.png" alt=""><figcaption><p>Timeline of an time-bound access code. The code will remain active until the <code>ends_at</code> timestamp you provide Seam.</p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/time-bound-access-code-light.png" alt=""><figcaption><p>Timeline of an time-bound access code. The code will remain active until the ends_at timestamp you provide Seam.</p></figcaption></figure>
+### Offline Access Codes
 
+Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. Currently, Seam supports offline access codes for [igloohome locks](../../../device-guides/igloohome-locks.md). For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code.
 
+{% hint style="info" %}
+You cannot modify a created offline access code. In addition, you cannot revoke a created offline access code before the configured expiration date for the code. To invalidate an offline access code before the expiration date, you must either perform a factory reset on the device or re-pair your smartphone with the device.
+{% endhint %}
+
+Seam supports two types of offline access codes: [time-bound](./#time-bound-offline-access-codes) and [one-time-use](./#one-time-use-offline-access-codes). Before creating an offline access code, it is imperative to understand any manufacturer- or device-specific constraints, such as the maximum number of access codes, any activation requirements, and so on. For details, see the corresponding [device guide](../../../device-guides/igloohome-locks.md).
+
+#### Time-Bound Offline Access Codes
+
+You can create time-bound offline access codes with validity durations at either the hour level or the day level. Hourly-bound offline access codes are intended for shorter durations, while daily-bound offline codes are intended for longer durations. Device manufacturers set the bounds for these short- and long-term access codes, and some device manufacturers enforce a maximum duration for hourly-bound offline access codes. See the corresponding [device guide](../../../device-guides/igloohome-locks.md) for more information.
+
+To [create an hourly-bound offline access code](offline-access-codes.md#program-an-hourly-bound-offline-access-code), specify the desired `starts_at` and `ends_at` date and time. To [create a daily-bound offline access code](offline-access-codes.md#program-a-daily-bound-offline-access-code), you must specify the same time in the `starts_at` and `ends_at` properties.
+
+#### One-Time-Use Offline Access Codes
+
+[One-time-use offline access codes](offline-access-codes.md#creating-one-time-use-offline-access-codes) are valid for 24 hours from the `starts_at` date and time that you configure. These codes expire after a single use.
 
 ***
 
-## How Seam programs codes onto the lock
+## How Seam Programs Codes onto the Lock
 
 Seam ensures access reliability by initiating the programming of access codes onto the lock ahead of its `starts_at` time. This approach minimizes the risks of delays or disruptions during the programming process.
 
@@ -79,4 +99,4 @@ Occasionally, Seam may encounter issues when programming codes onto locks. Such 
 
 Seam offers a Backup Access Code service. When activated, this service automatically maintain a pool of pre-programmed access codes on a device. These codes are programmed in addition to the regular access codes on Seam, acting as a safety net in case of any issues with the primary codes. Please read about [how to enable and request a back up code here](backup-access-codes.md).
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4><a href="backup-access-codes.md">Backup Access Code Pool</a></h4><p>Use our backup code pool service to automatically maintain a set of back up codes on your device.</p></td><td></td><td></td><td><a href="../../../.gitbook/assets/spaces_xnN2A67918om1UthYWsF_uploads_6mrS1LVdcoGmXAagf0SI_recycle key.webp">spaces_xnN2A67918om1UthYWsF_uploads_6mrS1LVdcoGmXAagf0SI_recycle key.webp</a></td><td><a href="broken-reference/">broken-reference</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><p><a href="backup-access-codes.md"><strong>Backup Access Code Pool</strong></a></p><p>Use our backup code pool service to automatically maintain a set of back up codes on your device.</p></td><td></td><td></td><td><a href="../../../.gitbook/assets/spaces_xnN2A67918om1UthYWsF_uploads_6mrS1LVdcoGmXAagf0SI_recycle key.webp">spaces_xnN2A67918om1UthYWsF_uploads_6mrS1LVdcoGmXAagf0SI_recycle key.webp</a></td><td><a href="broken-reference/">broken-reference</a></td></tr></tbody></table>
