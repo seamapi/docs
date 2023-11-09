@@ -11,6 +11,7 @@ export interface RunInContainerConfig {
     [path: string]: string
   }
   command: string
+  pullImage?: boolean
 }
 
 export interface RunInContainerOutput {
@@ -25,18 +26,21 @@ export const runInsideContainer = async (
   const imageName = config.imageName
   const filesystem = config.filesystem
   const command = config.command
+  const pullImage = config.pullImage !== undefined ? config.pullImage : true
 
-  // Pull the image
-  await new Promise<void>((resolve, reject) => {
-    docker.pull(imageName, (err: any, stream: any) => {
-      if (err) return reject(err)
-      docker.modem.followProgress(stream, onFinished)
-      function onFinished(err: any, output: any) {
+  // Pull the image if not specified otherwise by user
+  if (pullImage) {
+    await new Promise<void>((resolve, reject) => {
+      docker.pull(imageName, (err: any, stream: any) => {
         if (err) return reject(err)
-        resolve()
-      }
+        docker.modem.followProgress(stream, onFinished)
+        function onFinished(err: any, output: any) {
+          if (err) return reject(err)
+          resolve()
+        }
+      })
     })
-  })
+  }
 
   // Create the container
   const container = await docker.createContainer({
