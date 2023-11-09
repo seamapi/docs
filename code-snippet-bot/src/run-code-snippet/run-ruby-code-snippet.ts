@@ -8,23 +8,21 @@ export const runRubyCodeSample = async (rubySample: string) => {
   const server = await fake.startServer()
 
   const rubyCodeSample = `
-  require 'seam'
+  require 'seamapi'
 
-  random_number = rand(1e6).to_i
-  api_url = "https://pws#{random_number}#{random_number}.fakeseamconnect.seam.vc"
+random_number = rand(1e6).to_i
+api_url = "https://pws#{random_number}#{random_number}.fakeseamconnect.seam.vc"
 
-  client = Seam::Client.new(api_url: api_url, api_key: 'seam_apikey1_token')
-
-  print client.devices.list
-  )
-  ` +
+client = Seam::Client.new(base_uri: api_url, api_key: 'seam_apikey1_token')
+  `
+    +
     rubySample
-      .replace(/YourServerUrl/g, server.serverUrl)
-      .replace(/YourApiKey/g, seed.seam_apikey1_token)
+  //     .replace(/YourServerUrl/g, server.serverUrl)
+  //     .replace(/YourApiKey/g, seed.seam_apikey1_token)
 
   const run_sh = `
       cd /root
-      ruby run
+      ruby app.rb
     `.trim()
 
   const { stdout, stderr } = await runInsideContainer({
@@ -34,6 +32,7 @@ export const runRubyCodeSample = async (rubySample: string) => {
       "/root/app.rb": rubyCodeSample,
       "/root/run.sh": run_sh,
     },
+    pullImage: false,
   })
 
   const logged_content: string[] = [
