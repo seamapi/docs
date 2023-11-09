@@ -4,3 +4,4 @@ node_modules
 .deeper
 .yalc
 yalc.lock
+.DS_Store
