@@ -19,9 +19,9 @@ layout:
 
 ## Overview
 
-This guide explains how to create access codes on a smart lock. With the [Access Codes](../../../api-clients/access-codes/) API, generate PIN codes on a door lock and share it with visitors, allowing them keyless access.
+This guide explains how to create access codes on an online smart lock. With the [Access Codes](../../../api-clients/access-codes/) API, generate PIN codes on a door lock and share it with visitors, allowing them keyless access.
 
-Seam supports programming two types of access codes:
+Seam supports programming two types of access codes for online door locks:
 
 1. **Ongoing**: Ideal for residents or long-term users. Ongoing codes remain active on a device until removed. Create one by leaving the `end_at` field empty. To remove the code, use the [Delete Access Code](../../../api-clients/access-codes/delete-an-access-code.md) endpoint.
 2. **Time Bound**: Suitable for temporary access like guest visits or service appointments. These codes operate between a designated `starts_at` and `ends_at` time window, granting access only during that period.
@@ -30,7 +30,7 @@ Seam supports programming two types of access codes:
 
 ## Before You Begin
 
-To confirm that Seam supports access code programming for your device, use [Get Device](../../../api-clients/devices/get-device.md) or [Get Lock](../../../api-clients/locks/get-lock.md) to query the device and check its `capabilities_supported` property. Ensure that the `capabilities_supported` list includes `access_code`.
+To confirm that Seam supports access code programming for your device, use [Get Device](../../../api-clients/devices/get-device.md) or [Get Lock](../../../api-clients/locks/get-lock.md) to query the device and check its `capabilities_supported` property. Ensure that the `capabilities_supported` list includes `access_code`. Additionally, for door locks compatible with [offline access codes](offline-access-codes.md), check that the `properties.online_access_codes_enabled` flag is set to `true` for your device.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -44,18 +44,17 @@ pprint(seam.locks.get(device="6aae9d08-fed6-4ca5-8328-e36849ab48fe"))
 
 ```
 Device(device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-       .
-       .
-       .
+       ...
+       properties={
+              ...
+              'online_access_codes_enabled': True, // Device supports online access codes.
+              ...
+       },
        capabilities_supported=[
               'access_code', // Device supports access code actions.
-              .
-              .
-              .
+              ...
               ],
-       .
-       .
-       .
+       ...
        )
 ```
 {% endtab %}
@@ -80,22 +79,19 @@ curl -X 'POST' \
 {
   "device": {
     "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
-    .
-    .
-    .
+    ...
+    "properties": {
+              ...
+              "online_access_codes_enabled": true, // Device supports online access codes.
+              ...
+    },
     "capabilities_supported": [
       "access_code", // Device supports access code actions.
-      .
-      .
-      .
+      ...
     ],
-    .
-    .
-    .
+    ...
   },
-  .
-  .
-  .
+  ...
 }
 ```
 {% endtab %}
@@ -112,18 +108,17 @@ console.log(await seam.locks.get("6aae9d08-fed6-4ca5-8328-e36849ab48fe"))
 ```json
 {
   device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-  .
-  .
-  .
+  ...
   capabilities_supported: [
     'access_code', // Device supports access code actions.
-    .
-    .
-    .
+    ...
     ],
-  .
-  .
-  .
+  properties: {
+            ...
+            online_access_codes_enabled: true, // Device supports online access codes.
+            ...
+  },
+  ...
 }
 ```
 {% endtab %}
@@ -140,18 +135,17 @@ puts client.locks.get("6aae9d08-fed6-4ca5-8328-e36849ab48fe").inspect
 ```
 <Seam::Device:0x00438
   device_id="6aae9d08-fed6-4ca5-8328-e36849ab48fe"
-  .
-  .
-  .
+  ...
   capabilities_supported=[
     "access_code", // Device supports access code actions.
-    .
-    .
-    .
+    ...
     ]
-  .
-  .
-  .
+  properties={
+    ...
+    "online_access_codes_enabled"=>true, // Device supports online access codes.
+    ...
+    }
+  ...
   >
 ```
 {% endtab %}
@@ -162,6 +156,7 @@ puts client.locks.get("6aae9d08-fed6-4ca5-8328-e36849ab48fe").inspect
 ```php
 $device = $seam->devices->get("6aae9d08-fed6-4ca5-8328-e36849ab48fe");
 echo json_encode($device->capabilities_supported, JSON_PRETTY_PRINT);
+echo json_encode($device->online_access_codes_enabled, JSON_PRETTY_PRINT);
 ```
 
 **Response:**
@@ -169,10 +164,9 @@ echo json_encode($device->capabilities_supported, JSON_PRETTY_PRINT);
 ```
 [
     "access_code", // Device supports access code actions.
-    .
-    .
-    .
+    ...
 ]
+true // Device supports online access codes.
 ```
 {% endtab %}
 
@@ -187,6 +181,7 @@ var device = seam.Devices.Get("6aae9d08-fed6-4ca5-8328-e36849ab48fe");
   {
     Console.WriteLine(capability);
   }
+  Console.WriteLine("Supports online access codes: " + device.Properties.OnlineAccessCodesEnabled);
 ```
 
 **Response:**
@@ -195,9 +190,8 @@ var device = seam.Devices.Get("6aae9d08-fed6-4ca5-8328-e36849ab48fe");
 Device ID: 6aae9d08-fed6-4ca5-8328-e36849ab48fe
 Capabilities:
 AccessCode // Device supports access code actions.
-.
-.
-.
+...
+Supports online access codes: True // Device supports online access codes.
 ```
 {% endtab %}
 
@@ -217,18 +211,17 @@ System.out.println(lock);
 ```json
 {
   "device_id" : "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
-  .
-  .
-  .
+  ...
   "capabilities_supported" : [ 
     "access_code", // Device supports access code actions.
-    .
-    .
-    .
+    ...
   ],
-  .
-  .
-  .
+  "properties" : {
+    ...
+    "online_access_codes_enabled" : true, // Device supports online access codes.
+    ...
+  },
+  ...
 }
 ```
 {% endtab %}
