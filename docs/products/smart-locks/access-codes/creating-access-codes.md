@@ -30,7 +30,7 @@ Seam supports programming two types of access codes for online door locks:
 
 ## Before You Begin
 
-To confirm that Seam supports access code programming for your device, use [Get Device](../../../api-clients/devices/get-device.md) or [Get Lock](../../../api-clients/locks/get-lock.md) to query the device and check its `capabilities_supported` property. Ensure that the `capabilities_supported` list includes `access_code`. Additionally, for door locks compatible with [offline access codes](offline-access-codes.md), check that the `properties.online_access_codes_enabled` flag is set to `true` for your device.
+To confirm that Seam supports access code programming for your device, use [Get Device](../../../api-clients/devices/get-device.md) or [Get Lock](../../../api-clients/locks/get-lock.md) to query the device and check its `capabilities_supported` property. Ensure that the `capabilities_supported` list includes `access_code`. Additionally, for door locks compatible with [offline access codes](offline-access-codes.md), check that the `properties.online_access_codes_enabled` property is set to `true` for your device.
 
 {% tabs %}
 {% tab title="Python" %}
