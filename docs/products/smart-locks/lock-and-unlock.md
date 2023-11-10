@@ -356,7 +356,8 @@ System.out.println(attempt.getPending());
 ```json
 Optional[{
   "action_type" : "LOCK_DOOR",
-  "action_attempt_id" : "47c1f198-66a6-4e5e-80a2-7846d218eca6"
+  "action_attempt_id" : "47c1f198-66a6-4e5e-80a2-7846d218eca6",
+  "status" : "pending"
 }]
 ```
 {% endtab %}
@@ -497,7 +498,8 @@ System.out.println(attempt.getPending());
 ```json
 Optional[{
   "action_type" : "UNLOCK_DOOR",
-  "action_attempt_id" : "0319bced-1216-4d44-b3f3-5ffb96bc118e"
+  "action_attempt_id" : "0319bced-1216-4d44-b3f3-5ffb96bc118e",
+  "status" : "pending"
 }]
 ```
 {% endtab %}
@@ -639,7 +641,8 @@ System.out.println(attempt.getPending());
 ```json
 Optional[{
   "action_type" : "LOCK_DOOR",
-  "action_attempt_id" : "47c1f198-66a6-4e5e-80a2-7846d218eca6"
+  "action_attempt_id" : "47c1f198-66a6-4e5e-80a2-7846d218eca6",
+  "status" : "pending"
 }]
 ```
 {% endtab %}
@@ -948,9 +951,10 @@ System.out.println(lock);
   "device_type" : "august_lock",
   "capabilities_supported" : [ "access_code", "lock" ],
   "properties" : {
+    .
+    .
+    .
     "locked" : true,
-    "online" : true,
-    "name" : "FRONT DOOR",
     .
     .
     .

@@ -550,7 +550,7 @@ var deviceId = "518f692b-f865-4590-8c3e-3849e9984c75";
 seam.thermostats().update(ThermostatsUpdateRequest.builder()
                 .deviceId(deviceId)
                 .defaultClimateSetting(ThermostatsUpdateRequestDefaultClimateSetting.builder()
-                        .hvacModeSetting(HvacModeSetting.HEATCOOL)
+                        .hvacModeSetting(HvacModeSetting.HEAT_COOL)
                         .heatingSetPointCelsius(20.0)
                         .coolingSetPointCelsius(25.0)
                         .manualOverrideAllowed(true)

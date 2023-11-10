@@ -12,7 +12,7 @@ Returns a specified [credential](../../../products/access-systems/issuing-creden
 
 ## Request
 
-Specify the desired credential by including the corresponding `acs_credentials_id` in the request body.
+Specify the desired credential by including the corresponding `acs_credential_id` in the request body.
 
 ### Sample Request
 
@@ -25,7 +25,7 @@ curl -X 'POST' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
   -d '{
-  "acs_credentials_id": "d3bb3509-b3a6-4101-b697-27626327aa59"
+  "acs_credential_id": "d3bb3509-b3a6-4101-b697-27626327aa59"
 }'
 ```
 {% endtab %}
@@ -33,7 +33,7 @@ curl -X 'POST' \
 
 ### Request Body Parameters
 
-<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>acs_credentials_id</code></td><td>String<br><em>Required</em></td><td>ID of the desired credential</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>acs_credential_id</code></td><td>String<br><em>Required</em></td><td>ID of the desired credential</td></tr></tbody></table>
 
 ## Response
 
