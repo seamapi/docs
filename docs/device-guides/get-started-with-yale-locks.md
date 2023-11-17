@@ -33,7 +33,7 @@ This guide uses a Sandbox Workspace. Only virtual devices can be connected. If y
 
 ## 2 — Link Yale Account with Seam
 
-To control your Yale lock via the Seam API, you must first authorize your Seam workspace against your Yale account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews.md): pre-built UX flows that walk you through authorizing your application to control your Yale lock.
+To control your Yale lock via the Seam API, you must first authorize your Seam workspace against your Yale account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Yale lock.
 
 
 

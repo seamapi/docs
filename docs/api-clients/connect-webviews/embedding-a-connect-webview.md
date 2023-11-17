@@ -1,11 +1,13 @@
 ---
 description: >-
-  When you embed a webview inside an iframe, you might want to know when it completes. 
-  You can listen to messages dispatched from the iframe to the hosting
-  window for this purpose.
+  When you embed a webview inside an iframe, you might want to know when it
+  completes. You can listen to messages dispatched from the iframe to the
+  hosting window for this purpose.
 ---
 
-# Embedding a Webview in an Iframe
+# Embedding a Connect Webview
+
+## Embedding a Webview in an Iframe
 
 You can use the HTML Iframe to display a connect webview url.
 
@@ -16,11 +18,9 @@ You can use the HTML Iframe to display a connect webview url.
 />
 ```
 
-# Messages
+## Messages
 
-When a webview is hosted in an iframe, it sends messages to the parent window hosting the iframe
-using `window.parent.postMessage`, a cross-origin communication mechanism available in browsers.
-You can listen for these messages by registering a listener for `message` events on the `window`.
+When a webview is hosted in an iframe, it sends messages to the parent window hosting the iframe using `window.parent.postMessage`, a cross-origin communication mechanism available in browsers. You can listen for these messages by registering a listener for `message` events on the `window`.
 
 ```ts
 window.addEventListener(
@@ -34,11 +34,11 @@ window.addEventListener(
 );
 ```
 
-# Message Body
+## Message Body
 
 Here is a sample message sent by the iframe:
 
-```javascript
+```json
 {
     "event": {
 		"event_type": "webview.login_successful",
@@ -47,10 +47,9 @@ Here is a sample message sent by the iframe:
 }
 ```
 
-Note that at the top level of the message is a single property: the `event` object. The properties
-on this object are described in the Event Properties section.
+Note that at the top level of the message is a single property: the `event` object. The properties on this object are described in the Event Properties section.
 
-### Event Properties
+#### Event Properties
 
 | Property             | Type                                                 | Description                                                                                  |
 | -------------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------- |

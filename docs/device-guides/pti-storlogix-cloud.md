@@ -17,7 +17,7 @@ Seam integrates with any site that has Storlogix Cloud installed.
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["pti"]'
+  manufacturers='["PTI"]'
 />" %}
 
 We support the following features:
@@ -51,7 +51,7 @@ To obtain this necessary information:
 4. Click **Operations > Company Info**.
 5. Click the **Device Settings** tab.
 6. Note the **SiteKey** and **SiteCode** values.
-7. Log in to the [Seam Connect Webview](../core-concepts/connect-webviews.md) and specify these noted values to connect your PTI system to Seam.
+7. Log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) and specify these noted values to connect your PTI system to Seam.
 
 {% hint style="info" %}
 If you do not have access to your Storlogix Cloud dashboard—that is, if you are unsure of your Storlogix Cloud login credentials or the dashboard URL—contact the [PTI Security Systems Customer Support team](https://ptisecurity.my.salesforce-sites.com/apex/Support). They can assist you in retrieving your login details.

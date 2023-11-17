@@ -1,15 +1,21 @@
 # Table of contents
 
 * [🎉 Seam API Docs](README.md)
-* [🚲 Quickstart](quickstart.md)
+* [🚲 Quick Start](quickstart.md)
 * [🚀 Going Live!](going-live.md)
 
 ## 📖 Core Concepts
 
 * [Overview](core-concepts/overview.md)
-* [Workspaces](core-concepts/workspaces.md)
+* [Seam Console](core-concepts/seam-console.md)
+* [Workspaces](core-concepts/workspaces/README.md)
+  * [API Keys](core-concepts/workspaces/api-keys.md)
+  * [Personal Access Tokens](core-concepts/workspaces/personal-access-tokens.md)
 * [Devices](core-concepts/devices.md)
-* [Connect Webviews](core-concepts/connect-webviews.md)
+* [Connect Webviews](core-concepts/connect-webviews/README.md)
+  * [Embedding a Connect Webview in Your App](core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app.md)
+  * [Attaching Custom Data to the Connect Webview](core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview.md)
+  * [Customizing Connect Webviews](core-concepts/connect-webviews/customizing-connect-webviews.md)
 * [Action Attempts](core-concepts/action-attempts.md)
 * [Webhooks](core-concepts/webhooks.md)
 
@@ -51,8 +57,9 @@
   * [Reset Workspace](api-clients/workspaces/reset-workspace.md)
 * [Connect Webviews](api-clients/connect-webviews/README.md)
   * [Create a Connect Webview](api-clients/connect-webviews/create-a-connect-webview.md)
-  * [Get a Connect Webview](api-clients/connect-webviews/get-a-connect-webview.md)
   * [List Connect Webviews](api-clients/connect-webviews/list-connect-webviews.md)
+  * [Get a Connect Webview](api-clients/connect-webviews/get-a-connect-webview.md)
+  * [Delete a Connect Webview](api-clients/connect-webviews/delete-a-connect-webview.md)
   * [Embedding a Connect Webview](api-clients/connect-webviews/embedding-a-connect-webview.md)
 * [Connected Accounts](api-clients/connected-accounts/README.md)
   * [Get a Connected Account](api-clients/connected-accounts/get-a-connected-account.md)

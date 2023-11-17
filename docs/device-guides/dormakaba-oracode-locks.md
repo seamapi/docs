@@ -19,7 +19,7 @@ This integration supports all locks connected using the [Oracode Live](https://w
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["dormakaba_oracode"]'
+  manufacturers="Dormakaba=bb56ed21-a593-4116-a969-959396819638"
 />" %}
 
 We support the following features:
@@ -36,7 +36,7 @@ When programming permanent codes on Oracode locks, these PIN codes are rotated e
 ## Setup Instructions
 
 1. Obtain the credentials that you use to log in to your [Oracode Live account](https://www.kabaecodewireless.com).
-2. Use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews.md) to add your dormakaba Oracode devices to Seam.
+2. Use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your dormakaba Oracode devices to Seam.
 
 ***
 

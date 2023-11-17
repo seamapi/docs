@@ -1,20 +1,18 @@
 ---
-description: Use Connect Webview to connect to your users' smart devices with the Seam API
+description: Use Connect Webviews to connect to your users' smart devices to the Seam API
 ---
 
 # Connect Webviews
 
-## Introduction to Connect Webview
+The `connect_webview` object represents a [Connect Webview](../../core-concepts/connect-webviews/). Connect Webviews are fully-embedded client-side components that you add to your app. Your users interact with your embedded Connect Webviews to link their IoT device accounts to Seam. That is, Connect Webviews walk your users through the process of logging in to their device accounts. Seam handles all the authentication steps, and—once your user has completed the authorization through your app—you can access and control their devices using the Seam API.
 
-Connect Webview is a component that your users will interact with in order to link their smart devices to Seam and allow you to access their devices via the Seam API.
+Connect Webviews perform credential validation, multifactor authentication (when applicable), and error handling for each device brand that Seam supports. Further, Connect Webviews work across all modern browsers and platforms, including Chrome, Safari, and Firefox.
 
-Seam Connect Webview will handle credential validation, multi-factor authentication, and error handling for each device type that we support.
-
-To allow a user to sign in, you need to create a `connect_webview` . After creating the webview, you'll receive a URL that you can use to open an iframe or new window containing a login page for your user.
+To enable a user to connect their device account to Seam through your app, you must first create a `connect_webview`. Once created, this `connect_webview` includes a URL that you can use to open an [iframe](https://www.w3schools.com/html/html\_iframe.asp) or new window containing the Connect Webview for your user.
 
 ![](<../../.gitbook/assets/image (12).png>)
 
-## The Connect Webview Object
+## `connect_webview` Properties
 
 | **`connect_webview_id`**          | uuid             | ID of the Connect Webview                                                                                                          |
 | --------------------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
@@ -52,11 +50,13 @@ To allow a user to sign in, you need to create a `connect_webview` . After creat
 | [Linear](https://linear-solutions.com/)                                        | `linear`            | [Access Codes](../access-codes/), [Remote Unlock](../locks/unlock-a-lock.md) |
 | [Minut](https://www.minut.com/)                                                | `minut`             | Noise Detection                                                              |
 
-### List of Methods
+## `connect_webview` Methods
 
-| [Create a Connect Webview](create-a-connect-webview.md) | Create a Connect Webview   |
-| ------------------------------------------------------- | -------------------------- |
-| [List Connect Webviews](list-connect-webviews.md)       | List Connect Webviews      |
-| [Checking a Connect Webview](get-a-connect-webview.md)  | Checking a Connect Webview |
-| [Delete Webview](broken-reference/)                     | Delete Webview             |
-| [View Connect Webview](broken-reference/)               | View Connect Webview       |
+You can perform the following actions on `connect_webview` objects:
+
+* [Create a Connect Webview](create-a-connect-webview.md)
+* [List Connect Webviews](list-connect-webviews.md)
+* [Get a Connect Webview](get-a-connect-webview.md)
+* [Check a Connect Webview](get-a-connect-webview.md)
+* [Delete Webview](broken-reference/)
+* [View Connect Webview](broken-reference/)

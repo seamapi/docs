@@ -25,7 +25,7 @@ Seam does not integrate with the [Wyze Lock Bolt](https://www.wyze.com/products/
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["wyze"]'
+  manufacturers='["Wyze"]'
 />" %}
 
 We support the following features:
@@ -46,7 +46,7 @@ The Seam platform cannot determine the PIN codes for access codes that were crea
 3. Log in to the [Wyze online portal](https://developer-api-console.wyze.com/#/apikey/view).
 4. In the Wyze online portal, click **Create an API key**.
 5. Click **view** and note the API key.
-6. Use your credentials for the Wyze app and the noted API key to log in to the [Seam Connect Webview](../core-concepts/connect-webviews.md) to add your Wyze devices to Seam.
+6. Use your credentials for the Wyze app and the noted API key to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your Wyze devices to Seam.
 
 ***
 

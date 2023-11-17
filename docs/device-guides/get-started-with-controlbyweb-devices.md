@@ -2,7 +2,7 @@
 description: Learn how to connect and control your ControlByWeb device with the Seam API.
 ---
 
-# Get Started with ControlByWeb Devices
+# Get started with ControlByWeb Devices
 
 <figure><img src="../.gitbook/assets/guides/controlbyweb-getting-started-guide-cover.jpg" alt=""><figcaption><p>ControlByWeb Devices</p></figcaption></figure>
 
@@ -14,10 +14,10 @@ Seam provides a universal API to connect and control many brands of smart device
 
 Seam provides client libraries for many languages such as Javascript, Python, Ruby, and PHP, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.
 
-- **Javascript:** `npm i seamapi` ([npm](https://www.npmjs.com/package/seamapi), [github](https://github.com/seamapi/javascript))
-- **Python:** `pip install seamapi` ([pip](https://pypi.org/project/seamapi/), [github](https://github.com/seamapi/python))
-- **Ruby:** `bundle add seamapi` ([rubygem](https://rubygems.org/gems/seamapi), [github](https://github.com/seamapi/ruby))
-- **PHP:** `composer require seamapi/seam` ([packagist](https://packagist.org/packages/seamapi/seam), [github](https://github.com/seamapi/php))
+* **Javascript:** `npm i seamapi` ([npm](https://www.npmjs.com/package/seamapi), [github](https://github.com/seamapi/javascript))
+* **Python:** `pip install seamapi` ([pip](https://pypi.org/project/seamapi/), [github](https://github.com/seamapi/python))
+* **Ruby:** `bundle add seamapi` ([rubygem](https://rubygems.org/gems/seamapi), [github](https://github.com/seamapi/ruby))
+* **PHP:** `composer require seamapi/seam` ([packagist](https://packagist.org/packages/seamapi/seam), [github](https://github.com/seamapi/php))
 
 Once installed, [sign-up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:
 
@@ -31,13 +31,12 @@ This guide uses a Sandbox Workspace. Only virtual devices can be connected. If y
 
 ## 2 — Link ControlByWeb Account with Seam
 
-To control your ControlByWeb relay device via the Seam API, you must first authorize your Seam workspace against your ControlByWeb Cloud account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews.md): pre-built UX flows that walk you through authorizing your application to control your ControlByWeb device.
+To control your ControlByWeb relay device via the Seam API, you must first authorize your Seam workspace against your ControlByWeb Cloud account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your ControlByWeb device.
 
 #### Request a Connect Webview
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 from seamapi import Seam
 
@@ -50,11 +49,9 @@ assert webview.login_successful is False
 # Send the webview URL to your user
 print(webview.url)
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 import Seam from 'seamapi'
 
@@ -69,11 +66,9 @@ console.log(connectWebview.login_successful) // false
 // Send the webview URL to your user
 console.log(connectWebview.url)
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 <pre class="language-ruby"><code class="lang-ruby">require "seamapi"
 
 <strong>seam = Seam::Client.new(api_key: "MY_API_KEY")
@@ -87,7 +82,6 @@ puts webview.login_successful # false
 # Send the webview URL to your user
 puts webview.url
 </code></pre>
-
 {% endtab %}
 {% endtabs %}
 
@@ -95,8 +89,8 @@ puts webview.url
 
 Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the ControlByWeb [sandbox test account](https://docs.seam.co/latest/device-guides/sandbox-and-sample-data) credentials below:
 
-- **username:** jane
-- **password:** 1234
+* **username:** jane
+* **password:** 1234
 
 <figure><img src="../.gitbook/assets/guides/controlbyweb-connect-flow-screens.jpg" alt=""><figcaption><p>Seam Connect Webview flow to connect ControlByWeb account with Seam</p></figcaption></figure>
 
@@ -104,17 +98,14 @@ Confirm the Connect Webview was successful by querying its status:
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
 
 assert updated_webview.login_successful # true
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
@@ -122,17 +113,14 @@ const updatedWebview = await seam.connectWebviews.get(
 
 console.log(updatedWebview.login_successful) // true
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
 
 puts updated_webview.login_successful # true
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -142,7 +130,6 @@ After a ControlByWeb account is linked with Seam, you can retrieve devices for t
 
 {% tabs %}
 {% tab title="Python" %}
-
 ````python
 all_locks = seam.locks.list()
 
@@ -174,11 +161,9 @@ print(some_lock)
 #   errors=[]
 # )
 ````
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -215,11 +200,9 @@ console.log(someLock)
 }
 */
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 some_lock = seam.locks.list.first
 
@@ -228,7 +211,6 @@ puts some_lock.properties['locked'] # true
 
 puts some_lock.inspect # > #   warnings=[] #   errors=[] #   created_at=2023-04-25 14:34:50 UTC #   } #     "image_alt_text"=>"Placeholder Lock Image" #     "image_url"=>"https://connect.getseam.com/assets/images/devices/unknown-lock.png", #     "name"=>"Device 2", #     }, #       "device_name"=>"Device 2" #       "relay_name"=>"firstRelay", #       "device_id"=>"9997", #     "controlbyweb_metadata"=>{ #     "manufacturer"=>"controlbyweb", #     "online"=>true, #     "locked"=>true, #   properties={ #   device_type="controlbyweb_device" #   device_id="4a570d13-9704-46e0-b69c-9fea80d6a7aa" # <Seam::Device:0x00146639380
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -241,37 +223,31 @@ Next, you can perform the basic action of triggering a relay on the device. This
 
 {% endswagger-description %}
 
-{% swagger-parameter in="body" name="device_id" %}
+{% swagger-parameter in="body" name="device_id" required="false" %}
 
 {% endswagger-parameter %}
 {% endswagger %}
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 # trigger the relay
 seam.locks.unlock_door(some_lock)
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 // trigger the relay
 await seam.locks.unlockDoor(someLock.device_id)
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 # trigger the relay
 seam.locks.unlock_door(some_lock)
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -283,12 +259,12 @@ Now that you've completed this guide, you can try to connect a real ControlByWeb
 
 In addition, if you'd like to explore other aspects of Seam, here is a list of helpful resources:
 
-- [Yale Getting Started Guide](get-started-with-yale-locks.md)
-- [August Getting Started Guide](get-started-with-august-locks.md)
-- [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
-- [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
-- [Minut Getting Started Guide](get-started-with-minut-sensors.md)
-- [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list-events.md)
-- [Core Concepts](../core-concepts/overview.md)
+* [Yale Getting Started Guide](get-started-with-yale-locks.md)
+* [August Getting Started Guide](get-started-with-august-locks.md)
+* [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
+* [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
+* [Minut Getting Started Guide](get-started-with-minut-sensors.md)
+* [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list-events.md)
+* [Core Concepts](../core-concepts/overview.md)
 
 If you have any questions or want to report an issue, email us at support@seam.co.

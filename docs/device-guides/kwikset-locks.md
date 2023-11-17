@@ -17,7 +17,7 @@ This integration supports the Kwikset [Halo](https://www.kwikset.com/halo), [Hal
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["kwikset"]'
+  manufacturers='["Kwikset"]'
 />" %}
 
 We support the following features:
@@ -35,14 +35,14 @@ The Seam platform cannot determine the PIN codes for access codes that were crea
 
 Perform the setup procedure that corresponds to your type of Kwikset lock.
 
-### &#x20;Setup Instructions for Halo and Halo Touch Locks
+### Setup Instructions for Halo and Halo Touch Locks
 
 1. Create an account in the [Kwikset App](https://www.kwikset.com/smart-locks/app) if you have not done so already.
 2. In the Kwikset App, add your Kwikset devices.
 3. In the Kwikset App, click on the top left menu button, navigate to **Account Settings** and disable **2-Step Verification**.
 
 {% hint style="warning" %}
-You must disable **2-Step Verification**—that is, multifactor authentication (MFA)—before connecting your Kwikset account to Seam using the [Seam Connect Webview](../core-concepts/connect-webviews.md). 
+You must disable **2-Step Verification**—that is, multifactor authentication (MFA)—before connecting your Kwikset account to Seam using the [Seam Connect Webview](../core-concepts/connect-webviews/).
 
 Enabling MFA in the Kwikset App can block the Seam login process from performing successful authorization using your Kwikset account. After you connect your Kwikset account to Seam, you can reenable **2-Step Verification** in the Kwikset App **Account Settings**.
 {% endhint %}
@@ -56,4 +56,3 @@ Order Kwikset locks from Amazon.
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Kwikset Halo, Halo Touch, and SmartCode Locks on Amazon</strong></td><td></td><td><a href="https://www.amazon.com/s?k=kwikset+halo+or+smartcode+lock">https://www.amazon.com/s?k=kwikset+halo+or+smartcode+lock</a></td><td><a href="../.gitbook/assets/kwikset-halo-halo-touch-on-amazon.jpg">kwikset-halo-halo-touch-on-amazon.jpg</a></td></tr></tbody></table>
 
 ***
-

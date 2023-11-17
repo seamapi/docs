@@ -17,7 +17,7 @@ This integration supports the [Minut sensor](https://www.minut.com/product/featu
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["minut"]'
+  manufacturers='["Minut"]'
 />" %}
 
 We support the following features:
@@ -33,7 +33,7 @@ We support the following features:
 
 1. Create an account in the [Minut app](https://www.minut.com/setup) if you have not done so already.
 2. In the Minut app, add your Minut sensors.
-3. Note your login credentials for the Minut app, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews.md) to add your devices to Seam.
+3. Note your login credentials for the Minut app, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
 
 ***
 

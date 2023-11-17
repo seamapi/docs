@@ -1,0 +1,124 @@
+---
+description: >-
+  Create an API key for authorization that enables you to control devices
+  connected to a specific Seam workspace.
+---
+
+# API Keys
+
+You create an API key in your [sandbox workspace](./#sandbox-workspaces) or [production workspace](./#production-workspaces) to authorize your use of the Seam API. When using any of the Seam APIs or SDKs, you must provide this API key to issue commands that enable you to control the devices in your workspace. It is useful to export your API key as an environment variable. You can also test your API key.
+
+## Create an API Key
+
+Each API key is associated with a specific workspace. For example, if you have a sandbox workspace and a production workspace, you must create and use a different API key for each of these two workspaces.
+
+{% hint style="info" %}
+If you need to access multiple workspaces, create a [Personal Access Token](personal-access-tokens.md)**.**
+{% endhint %}
+
+1. In the upper-right corner of the [Seam Console](https://console.seam.co/), click the down arrow to display the workspace list.
+2. Click the workspace for which you want to create an API key.
+3. In the left navigation pane, click **API Keys**.
+4. In the upper-right corner of the **API Keys** page, click **+ Add API Key**.
+5. In the **Add API Key** dialog, type a name for your new API key and then click **Create API Key**.
+6. Copy the newly-created API key and store it for future use.
+
+{% hint style="info" %}
+Production API keys do not include the `test` token, while API keys for sandbox workspaces do include this `test` token. In addition, if you accidentally commit your API key to a GitHub repo, the `seam_` prefix is detected, and you are notified.
+{% endhint %}
+
+{% @supademo/embed demoId="vLRzYM2Nwoi4j_cH9WCNQ" url="https://app.supademo.com/demo/vLRzYM2Nwoi4j_cH9WCNQ" %}
+
+## Export an API Key
+
+Once you have created an API key, it is useful to export this key as an environment variable. All installed Seam SDKs automatically uses this API key once you have exported it.
+
+1. Open a terminal window and enter the following command to export your API key:
+
+```sh
+$ export SEAM_API_KEY=seam_test2bMS_94SrGUXuNR2JmJkjtvBQDg5c
+```
+
+## Test an API Key
+
+Test an API key by [exporting the key](api-keys.md#export-an-api-key) as an environment variable and then running the code in this section. If the API key is valid, the response displays the corresponding workspace information.
+
+First, export the API key, as follows:
+
+```sh
+$ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
+```
+
+Then, run the following code to test the API key:
+
+{% tabs %}
+{% tab title="JavaScript" %}
+<pre class="language-java"><code class="lang-java"><strong>import Seam from "seamapi";
+</strong>
+// Seam automatically uses the SEAM_API_KEY environment variable if you
+// do not provide an apiKey to `new Seam()`.
+const seam = new Seam();
+
+const { workspace } = await seam.workspaces.get();
+console.log(workspace);
+
+/*
+{
+  workspace_id: 'ab804f5a-7dd2-42c8-8d09-0beff4f795eb',
+  name: 'Sandbox',
+  connect_partner_name: 'Acme',
+  is_sandbox: true
+}
+*/
+</code></pre>
+{% endtab %}
+
+{% tab title="Python" %}
+```python
+from seamapi import Seam
+
+# Seam automatically uses the SEAM_API_KEY environment variable if you
+# do not provide an api_key to `Seam()`.
+seam = Seam()
+
+workspace = seam.workspaces.get()
+print(workspace)
+# Workspace(workspace_id='1d2826eb-4a26-4f46-bddb-ef5898baa859', name="Anna's Sandbox", is_sandbox=True)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```ruby
+require "seamapi"
+
+seam = Seam::Client.new()
+
+workspace = seam.workspaces.get
+
+puts workspace
+# <Seam::Workspace:0x00438
+#   workspace_id="1d2826eb-4a26-4f46-bddb-ef5898baa859"
+#   name="Anna's Sandbox"
+#   connect_partner_name="Anna Smith"
+#   is_sandbox=true>
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+```php
+use Seam\SeamClient;
+
+$seam = new SeamClient("YOUR_API_KEY");
+
+$workspace = $seam->workspaces->get();
+echo json_encode($workspace, JSON_PRETTY_PRINT);
+
+# {
+#     "workspace_id": "1d2826eb-4a26-4f46-bddb-ef5898baa859",
+#     "name": "Anna's Sandbox",
+#     "is_sandbox": true,
+#     "connect_partner_name": null
+# }
+```
+{% endtab %}
+{% endtabs %}

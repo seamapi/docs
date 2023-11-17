@@ -1,8 +1,8 @@
 ---
 description: >-
   Devices are objects like locks, thermostats, sensors, or cameras. In the Seam
-  API, Devices have capabilities that describe the functions they can perform,
-  as well as online and managed status.
+  API, devices have capabilities that describe the functions that they can
+  perform, as well as online and managed status.
 layout:
   title:
     visible: true
@@ -20,20 +20,20 @@ layout:
 
 ## Supported Capabilities
 
-Seam decomposes the ensemble of features offered by a device into one or more capabilities such as `access_codes` or `thermostat`. Seam exposes each capability as a set of APIs that are standardized across brands for ease of integration. For example, an unlock action on a door lock always requires the same API call irrespective of the device brand.
+Seam decomposes the ensemble of features that a device provides into one or more capabilities, such as `access_codes` or `thermostat`. Seam exposes each capability as a set of APIs that are standardized across brands for ease of integration. For example, an unlock action on a door lock always requires the same API call irrespective of the device brand.
 
 ![](<../.gitbook/assets/image (10).png>)
 
-Furthermore, a single device capability can further be decomposed into 3 sets of affordances:
+In addition, Seam decomposes a single device capability further into the following three sets of affordances:
 
-* **Actions** — commands you can issue the device, such as unlocking
-* **Properties** — the current state of the device, such as its locked status
-* **Events** — notifications related to changes in the state of the device, such as an unlocking operation performed with an access code.
+* **Actions:** Commands that you can issue to the device, such as unlock
+* **Properties:** The current state of the device, such as the locked status
+* **Events:** Notifications related to changes in the state of the device, such as an unlocking operation performed with an access code
 
-To retrieve the list of supported capabilities for a given device, use the `capability_supported` attribute on the Device object:
+To retrieve the list of supported capabilities for a specific device, use the `capability_supported` attribute on the `Device` object, as follows:
 
 {% tabs %}
-{% tab title="Javascript" %}
+{% tab title="JavaScript" %}
 ```javascript
 const device = await seam.devices.get({
   device_id: "77208078-6dd7-44e5-a3e4-a2ed3a34efc9"
@@ -69,7 +69,7 @@ $seam = new SeamClient("YOUR_API_KEY");
 
 $device = $seam->devices->get("0e2e6262-7f91-4970-a58d-47ef30b41e2e");
 
-# Inspect this device to see which capabilities it supports
+# Inspect this device to see which capabilities it supports.
 echo json_encode($device->capabilities_supported, JSON_PRETTY_PRINT);
 
 # [
@@ -81,18 +81,18 @@ echo json_encode($device->capabilities_supported, JSON_PRETTY_PRINT);
 {% endtab %}
 {% endtabs %}
 
-## Managed Devices vs Unmanaged Devices
+## Managed Devices and Unmanaged Devices
 
-To increase billing flexibility, Seam provides the ability to mark devices as `managed` or `unmanaged`:
+To increase billing flexibility, Seam provides the ability to mark devices as `managed` or `unmanaged`.
 
-* _**Managed devices**_: these devices can be fully controlled through the Seam API and are billed to your Seam account as a regular device.
-* _**Unmanaged device**_ these devices are not billed and consequently cannot be controlled through the Seam API.
+* **Managed devices:** These devices can be controlled fully through the Seam API and are billed to your Seam account as a regular device.
+* **Unmanaged devices:** These devices are not billed and, consequently, cannot be controlled through the Seam API.
 
-Seam makes it possible to toggle a device back and forth between `managed` and `unmanaged` states.
+Seam makes it possible to switch a device back and forth between the `managed` and `unmanaged` states.
 
-### Convert Managed Device to Unmanaged
+### Convert a Managed Device to Unmanaged
 
-Converting a device to an `unmanaged` state pauses billing for the device and converts all the managed device resources (e.g. Access Codes) to unmanaged resources. As a result, Seam will no longer monitor the lifecycle of these resources.
+Converting a device to an `unmanaged` state pauses billing for the device and converts all the managed device resources (for example, access codes) to unmanaged resources. As a result, Seam no longer monitors the lifecycle of these unmanaged resources.
 
 {% tabs %}
 {% tab title="Javascript" %}
@@ -100,23 +100,21 @@ Converting a device to an `unmanaged` state pauses billing for the device and co
 
 const deviceId = "77208078-6dd7-44e5-a3e4-a2ed3a34efc9"
 
-// take a managed device
+// Take a managed device.
 const device = await seam.devices.get({
   device_id: deviceId
 })
 
-// set its managed status to false
+// Set the managed status to false.
 const updatedDevice = await seam.devices.update({
   device_id: deviceId,
   is_managed: false
 })
 
-// retrieve the unmanaged device
+// Retrieve the unmanaged device.
 const unmanagedDevice = await seam.devices.unmanaged.get({
   device_id: deviceId
 })
-
-
 
 console.log(unmanagedDevice)
 
@@ -140,7 +138,6 @@ console.log(unmanagedDevice)
     model: { display_name: 'Lock', manufacturer_display_name: 'August' }
   }
 }
-
 */
 ```
 {% endtab %}
@@ -248,27 +245,27 @@ echo json_encode($unmanaged_device, JSON_PRETTY_PRINT);
 {% endtab %}
 {% endtabs %}
 
-### Convert Unmanaged Device to Managed
+### Convert an Unmanaged Device to Managed
 
-To convert an unmanaged device back to managed, retrieve it using the unmanaged device API and use the update function to change its managed state back to true. Note that unmanaged device resources (e.g. Access Codes) will need to be converted back to managed as well.
+To convert an unmanaged device back to managed, retrieve the device using the unmanaged device API and use the `update` function to change the managed state of the device back to `true`. Note that you must also convert unmanaged device resources (for example, access codes) back to managed.
 
 {% tabs %}
-{% tab title="Javascript" %}
+{% tab title="JavaScript" %}
 ```javascript
 const deviceId = "77208078-6dd7-44e5-a3e4-a2ed3a34efc9"
 
-// retrieve the unmanaged device if needed
+// Retrieve the unmanaged device if needed.
 const unmanagedDevice = await seam.devices.unmanaged.get({
   device_id: deviceId
 })
 
-// update it
+// Update the device.
 await seam.devices.unmanaged.update({
   device_id: deviceId, 
   is_managed: true
 })
 
-// retrieve it
+// Retrieve the device again.
 const device = await seam.devices.get({
     device_id: deviceId
 })
@@ -313,7 +310,6 @@ console.log(device)
   is_managed: true
 }
 */
-
 ```
 {% endtab %}
 
@@ -324,13 +320,13 @@ seam = Seam()
 
 device_id = "0e2e6262-7f91-4970-a58d-47ef30b41e2e"
 
-# Use the unmanaged update call to update the status
+# Use the unmanaged update call to update the status of the device.
 seam.devices.unmanaged.update(
   device=device_id, 
   is_managed=True
 )
 
-# Confirm that the device is now managed by retrieving it
+# Confirm that the device is now managed by retrieving it.
 device = seam.devices.get(device=device_id)
 print(device)
 
@@ -407,7 +403,7 @@ $seam->devices->unmanaged->update(
 
 $device = $seam->devices->get($device_id);
 
-# Inspect this device to make sure it was correct converted
+# Inspect this device to make sure that it was converted correctly to managed.
 echo json_encode($device, JSON_PRETTY_PRINT);
 
 // {
@@ -467,13 +463,13 @@ echo json_encode($device, JSON_PRETTY_PRINT);
 
 ### Automatically Set New Devices to Unmanaged
 
-New devices added to a workspace via a Connect Webview can automatically be set to `unmanaged` by default. To do so, set the `automatically_manage_new_devices` to false when creating a Connect Webview. Any device added once the Connect Webview is authorized will be set to `unmanaged`.
+You can configure a [Connect Webview](connect-webviews/) so that it automatically sets all new devices added to the workspace through this Connect Webview to `unmanaged` by default. To do so, when creating a Connect Webview, set `automatically_manage_new_devices` to `false`. Once the Connect Webview is authorized, Seam sets any device added to the workspace to `unmanaged`.
 
 {% tabs %}
-{% tab title="Javascript" %}
+{% tab title="JavaScript" %}
 ```javascript
 const connectWebview = await seam.connectWebviews.create({
-    // accepted_providers: ["schlage", "august"...etc], <== use these for precise control of accepted providers
+    // accepted_providers: ["schlage", "august"...etc], <== Use this property for precise control of accepted providers.
     provider_category: "stable",
     automatically_manage_new_devices: false
 })
@@ -564,7 +560,6 @@ print(connect_webview)
 #                selected_provider=None,
 #                wait_for_device_creation=False,
 #                automatically_manage_new_devices=False)
-
 ```
 {% endtab %}
 
@@ -594,9 +589,8 @@ puts connect_webview.inspect
 #   device_selection_mode="none"
 #   wait_for_device_creation=false
 #   custom_redirect_failure_url=nil
-#   automatically_manage_new_devices=false <====== see flag
+#   automatically_manage_new_devices=false <====== Note that this property is set to false.
 #   created_at=2023-09-07 05:52:41.329 UTC>
-
 ```
 {% endtab %}
 

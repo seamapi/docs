@@ -14,10 +14,10 @@ Seam provides a universal API to connect and control many brands of devices such
 
 Seam provides client libraries for many languages such as Javascript, Python, Ruby, and PHP, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.
 
-- **Javascript:** `npm i seamapi` ([npm](https://www.npmjs.com/package/seamapi), [github](https://github.com/seamapi/javascript))
-- **Python:** `pip install seamapi` ([pip](https://pypi.org/project/seamapi/), [github](https://github.com/seamapi/python))
-- **Ruby:** `bundle add seamapi` ([rubygem](https://rubygems.org/gems/seamapi), [github](https://github.com/seamapi/ruby))
-- **PHP:** `composer require seamapi/seam` ([packagist](https://packagist.org/packages/seamapi/seam), [github](https://github.com/seamapi/php))
+* **Javascript:** `npm i seamapi` ([npm](https://www.npmjs.com/package/seamapi), [github](https://github.com/seamapi/javascript))
+* **Python:** `pip install seamapi` ([pip](https://pypi.org/project/seamapi/), [github](https://github.com/seamapi/python))
+* **Ruby:** `bundle add seamapi` ([rubygem](https://rubygems.org/gems/seamapi), [github](https://github.com/seamapi/ruby))
+* **PHP:** `composer require seamapi/seam` ([packagist](https://packagist.org/packages/seamapi/seam), [github](https://github.com/seamapi/php))
 
 Once installed, [sign-up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:
 
@@ -31,13 +31,12 @@ This guide uses a Sandbox Workspace. Only virtual sensors can be connected. If y
 
 ## 2. Link Minut Account with Seam
 
-To control your Minut sensor via the Seam API, you must first authorize your Seam workspace against your Minut account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews.md): pre-built UX flows that walk you through authorizing your application to control your Minut sensor.
+To control your Minut sensor via the Seam API, you must first authorize your Seam workspace against your Minut account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Minut sensor.
 
 ### Create a Connect Webview
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 from seamapi import Seam
 seam = Seam()
@@ -49,11 +48,9 @@ assert webview.login_successful is False
 # Send this webview url to your user!
 print(webview.url)
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 import Seam from 'seamapi'
 const seam = new Seam()
@@ -64,11 +61,9 @@ console.log(connectWebview.login_successful) // false
 // Send the webview URL to your user
 console.log(connectWebview.url)
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 <pre class="language-ruby"><code class="lang-ruby">require "seamapi"
 
 <strong>seam = Seam::Client.new(api_key: "MY_API_KEY")
@@ -82,7 +77,6 @@ puts webview.login_successful # false
 # Send the webview URL to your user 
 puts webview.url
 </code></pre>
-
 {% endtab %}
 
 {% tab title="PHP" %}
@@ -98,15 +92,14 @@ echo json_encode($webview)
 */
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ### Authorize Your Workspace
 
 Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the Minut [sandbox test accounts ](https://docs.seam.co/latest/device-guides/sandbox-and-sample-data)credentials below:
 
-- **email**: jane@example.com
-- **password**: 1234
+* **email**: jane@example.com
+* **password**: 1234
 
 <figure><img src="../.gitbook/assets/guides/minut-connect-flow-screens.jpg" alt=""><figcaption><p>Seam Connect Webview flow to connect Minut account with Seam</p></figcaption></figure>
 
@@ -116,7 +109,6 @@ After you complete the login above, you'll get an event for [`connected_account.
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 updated_webview = seam.connect_webviews.get(
     webview.connect_webview_id
@@ -124,27 +116,22 @@ updated_webview = seam.connect_webviews.get(
 
 assert updated_webview.login_successful # true
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
 )
 console.log(updatedWebview.login_successful) // true
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
 puts updated_webview.login_successful # true
 ```
-
 {% endtab %}
 
 {% tab title="PHP" %}
@@ -153,7 +140,6 @@ $webview = $seam->connect_webviews->get($webview->id);
 echo json_encode($webview);
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## 3. Retrieve Minut Noise Sensors
@@ -162,7 +148,6 @@ Minut noise sensors appear with the `device_type` `"minut_sensor"`. The Minut no
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 sensors = seam.devices.list(device_type="minut_sensor")
 
@@ -235,7 +220,6 @@ sensors[0]
 #   errors=[]
 # )
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
@@ -320,11 +304,9 @@ console.log(devices[0])
 }
 */
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 seam.devices.list(
   device_type: "minut_sensor"
@@ -393,13 +375,9 @@ seam.devices.list(
 #   errors=[]
 #   warnings=[]>
 ```
-
 {% endtab %}
 
-
-
 {% tab title="PHP" %}
-
 ```php
 $devices = $seam->devices->list(device_type: 'minut_sensor');
 echo json_encode($device[0]);
@@ -480,7 +458,6 @@ echo json_encode($device[0]);
 */
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## 4. Receive Noise Events
@@ -492,16 +469,16 @@ You'll get an event for `noise_threshold.noise_threshold_triggered` when you set
 {% hint style="info" %}
 Minut has a builtin threshold that can be triggered multiple times. Each Minut notice will trigger a `noise_threshold_triggered` event with the `minut_metadata.event_name` containing the Minut event name, which can be any of the following:
 
-- `disturbance_first_notice`
-- `disturbance_second_notice`
-- `disturbance_third_notice`
-- `disturbance_ended`
-  {% endhint %}
+* `disturbance_first_notice`
+* `disturbance_second_notice`
+* `disturbance_third_notice`
+* `disturbance_ended`
+{% endhint %}
 
 {% tabs %}
 {% tab title="Python" %}
-
-<pre class="language-python"><code class="lang-python">@app.route("/my_webhook_endpoint", methods=["POST"])
+```python
+@app.route("/my_webhook_endpoint", methods=["POST"])
 def endpoint():
     event = request.json["event"]
     # {
@@ -515,8 +492,7 @@ def endpoint():
     #    created_at: "2023-03-14T05:00:35.451Z"
     # }
         
-</code></pre>
-
+```
 {% endtab %}
 
 {% tab title="Javascript" %}
@@ -538,7 +514,6 @@ app.post('/my_webhook_endpoint', (req, res) => {
   // }
 });
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
@@ -565,7 +540,6 @@ end
 ```
 {% endtab %}
 
-
 {% tab title="PHP" %}
 ```php
 $app->post('/my_webhook_endpoint', function (Request $request, Response $response) {
@@ -587,7 +561,6 @@ $app->post('/my_webhook_endpoint', function (Request $request, Response $respons
 });
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Next Steps

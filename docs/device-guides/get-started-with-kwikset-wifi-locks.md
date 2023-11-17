@@ -41,7 +41,7 @@ This guide uses a Sandbox Workspace. Only virtual devices can be connected. If y
 
 ## 2 — Link Kwikset Account with Seam
 
-To control your Kwikset Halo lock via the Seam API, you must first authorize your Seam workspace against your Kwikset account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews.md): pre-built UX flows that walk you through authorizing your application to control your Kwikset Halo lock.
+To control your Kwikset Halo lock via the Seam API, you must first authorize your Seam workspace against your Kwikset account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Kwikset Halo lock.
 
 #### Request a Connect Webview
 
@@ -323,9 +323,9 @@ puts updated_lock.properties['locked'] # false
 ### 5 — Setting Access Code on Kwikset Lock
 
 {% hint style="info" %}
-In the Kwikset app, you cannot see access codes that were set from an external source (such as Seam) unless you are connected via bluetooth to the lock. 
+In the Kwikset app, you cannot see access codes that were set from an external source (such as Seam) unless you are connected via bluetooth to the lock.
 
-If you're connected through Wi-Fi and not bluetooth, the Kwikset app will *only* show the access codes you have set from the app itself and not the codes set from Seam.
+If you're connected through Wi-Fi and not bluetooth, the Kwikset app will _only_ show the access codes you have set from the app itself and not the codes set from Seam.
 {% endhint %}
 
 Some Kwikset locks have a keypad paired to them to program access codes. These codes can then be entered to unlock a Kwikset lock.

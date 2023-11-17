@@ -1,5 +1,7 @@
 ---
-description: Learn how to connect and control your Dormakaba Oracode 480 and 660 locks with the Seam API.
+description: >-
+  Learn how to connect and control your Dormakaba Oracode 480 and 660 locks with
+  the Seam API.
 ---
 
 # Get started with Dormakaba Oracode Locks
@@ -33,11 +35,11 @@ This guide uses a Sandbox Workspace. Only virtual devices can be connected. If y
 
 ## 2 — Link Your Dormakaba Oracode Account with Seam
 
-To control your Dormakaba Oracode locks via the Seam API, you must first authorize your Seam workspace against your Dormakaba Oracode account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews.md): pre-built UX flows that walk you through authorizing your application to control Oracode locks.
+To control your Dormakaba Oracode locks via the Seam API, you must first authorize your Seam workspace against your Dormakaba Oracode account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control Oracode locks.
 
 #### Obtain an Oracode Live Service API Token
 
-To start, contact Dormakaba Oracode support to request a Live Services API token. This token will then be provided to Seam to connect your account. 
+To start, contact Dormakaba Oracode support to request a Live Services API token. This token will then be provided to Seam to connect your account.
 
 {% hint style="info" %}
 Note that of this writing, obtaining a Dormakaba Oracode Live Services API token is a manual process. We are working with Dormakaba to automate this and simplify onboarding of devices.
@@ -155,7 +157,7 @@ assert($webview->status == 'pending');
 
 ## 3 — Retrieve Dormakaba Oracode Devices
 
-After a Dormakaba Oracode account is linked with Seam, you can retrieve its devices. 
+After a Dormakaba Oracode account is linked with Seam, you can retrieve its devices.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -208,7 +210,6 @@ echo json_encode($locks);
 ```
 {% endtab %}
 {% endtabs %}
-
 
 ### 4 — Programming Access Code on a Dormakaba Oracode Lock
 

@@ -2,7 +2,7 @@
 description: Guide for using ecobee thermostats with Seam
 ---
 
-# ecobee Thermostats
+# Ecobee Thermostats
 
 ## Overview
 
@@ -17,7 +17,7 @@ This integration supports all [ecobee thermostats](https://www.ecobee.com/en-us/
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["ecobee"]'
+  manufacturers='["ecobee"]'
 />" %}
 
 We support the following features:
@@ -31,7 +31,7 @@ We support the following features:
 
 1. Create an account in the [ecobee app](https://www.ecobee.com/en-us/installation/) if you have not done so already.
 2. In the ecobee app, add your ecobee thermostats.
-3. Note your login credentials for the ecobee app, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews.md) to add your devices to Seam.
+3. Note your login credentials for the ecobee app, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
 
 ***
 

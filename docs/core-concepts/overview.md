@@ -1,14 +1,8 @@
 # Overview
 
-Seam lets you connect to, operate, and manage different brands of devices. The broad strokes of how this is done are easy to grasp:&#x20;
+Seam enables you to connect to, operate, and manage different brands of devices using the following basic concepts:
 
-1. Your account has one or more **Workspaces** that encapsulate all resources.
-2. You connect devices to a workspace using **Connect Views**;
-3. You control those devices according to their **Device capabilities;**
-
-In this guide, we will discuss each item, as well as the topics surrounding it.&#x20;
-
-Let's dive in!&#x20;
-
-
-
+1. Your Seam account has one or more [workspaces](workspaces/) that encapsulate all resources.
+2. You use [Connect Webviews](connect-webviews/) to connect devices to your workspace.
+3. You control those devices according to their [device capabilities](devices.md#supported-capabilities).
+4. You use the [Seam Console](seam-console.md) to manage your Seam workspaces, Connect Webviews, and devices; [create API keys](workspaces/api-keys.md#create-an-api-key); and perform other tasks.

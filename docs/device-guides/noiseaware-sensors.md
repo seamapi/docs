@@ -17,7 +17,7 @@ This integration supports all [NoiseAware sensors](https://noiseaware.com/featur
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["noiseaware"]'
+  manufacturers='["NoiseAware"]'
 />" %}
 
 We support the following features:
@@ -34,7 +34,7 @@ We support the following features:
 1. Install the NoiseAware [iOS](https://apps.apple.com/us/app/noiseaware/id1436213179) or [Android](https://play.google.com/store/apps/details?id=io.noiseaware.mobile\&hl=en\_US\&gl=US) mobile app.
 2. Create an account in the NoiseAware mobile app if you have not done so already.
 3. In the NoiseAware mobile app, add your NoiseAware sensors.
-4. Note your login credentials for the NoiseAware mobile app, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews.md) to add your devices to Seam.
+4. Note your login credentials for the NoiseAware mobile app, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
 
 ***
 

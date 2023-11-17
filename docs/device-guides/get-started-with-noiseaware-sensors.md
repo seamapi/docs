@@ -2,7 +2,7 @@
 description: Learn how to connect and control your NoiseAware devices with the Seam API
 ---
 
-# Get started with NoiseAware Devices
+# Get started with NoiseAware Sensors
 
 <figure><img src="../.gitbook/assets/guides/noiseaware-getting-seo-cover.jpg" alt=""><figcaption><p>NoiseAware Noise Devices</p></figcaption></figure>
 
@@ -16,10 +16,10 @@ To simplify the examples below, we'll use the following modules and utility vari
 
 Seam provides client libraries for many languages such as Javascript, Python, Ruby, and PHP, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.
 
-- **Javascript:** `npm i seamapi` ([npm](https://www.npmjs.com/package/seamapi), [github](https://github.com/seamapi/javascript))
-- **Python:** `pip install seamapi` ([pip](https://pypi.org/project/seamapi/), [github](https://github.com/seamapi/python))
-- **Ruby:** `bundle add seamapi` ([rubygem](https://rubygems.org/gems/seamapi), [github](https://github.com/seamapi/ruby))
-- **PHP:** `composer require seamapi/seam` ([packagist](https://packagist.org/packages/seamapi/seam), [github](https://github.com/seamapi/php))
+* **Javascript:** `npm i seamapi` ([npm](https://www.npmjs.com/package/seamapi), [github](https://github.com/seamapi/javascript))
+* **Python:** `pip install seamapi` ([pip](https://pypi.org/project/seamapi/), [github](https://github.com/seamapi/python))
+* **Ruby:** `bundle add seamapi` ([rubygem](https://rubygems.org/gems/seamapi), [github](https://github.com/seamapi/ruby))
+* **PHP:** `composer require seamapi/seam` ([packagist](https://packagist.org/packages/seamapi/seam), [github](https://github.com/seamapi/php))
 
 Once installed, [sign-up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:
 
@@ -33,13 +33,12 @@ This guide uses a Sandbox Workspace. Only virtual activity zones can be connecte
 
 ## 2. Link NoiseAware Account with Seam
 
-To control your NoiseAware device via the Seam API, you must first authorize your Seam workspace against your NoiseAware account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews.md): pre-built UX flows that walk you through authorizing your application to control your NoiseAware device.
+To control your NoiseAware device via the Seam API, you must first authorize your Seam workspace against your NoiseAware account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your NoiseAware device.
 
 ### Create a Connect Webview
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 from seamapi import Seam
 seam = Seam()
@@ -51,11 +50,9 @@ assert webview.login_successful is False
 # Send this webview url to your user!
 print(webview.url)
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 import Seam from 'seamapi'
 
@@ -70,11 +67,9 @@ console.log(connectWebview.login_successful) // false
 // Send the webview URL to your user
 console.log(connectWebview.url)
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 <pre class="language-ruby"><code class="lang-ruby">require "seamapi"
 
 <strong>seam = Seam::Client.new(api_key: "MY_API_KEY")
@@ -88,7 +83,6 @@ puts webview.login_successful # false
 # Send the webview URL to your user 
 puts webview.url
 </code></pre>
-
 {% endtab %}
 
 {% tab title="PHP" %}
@@ -107,15 +101,14 @@ echo json_encode($webview)
 */
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ### Authorize Your Workspace
 
 Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the NoiseAware [sandbox test accounts ](https://docs.seam.co/latest/device-guides/sandbox-and-sample-data)credentials below:
 
-- **email**: jane@example.com
-- **password**: 1234
+* **email**: jane@example.com
+* **password**: 1234
 
 <figure><img src="../.gitbook/assets/guides/noiseaware-connect-flow-screens.jpg" alt=""><figcaption><p>Seam Connect Webview flow to connect NoiseAware account with Seam</p></figcaption></figure>
 
@@ -125,7 +118,6 @@ After you complete the login above, you'll get an event for [`connected_account.
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 updated_webview = seam.connect_webviews.get(
     webview.connect_webview_id
@@ -133,31 +125,24 @@ updated_webview = seam.connect_webviews.get(
 
 assert updated_webview.login_successful # true
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
 
 puts updated_webview.login_successful # true
 ```
-
 {% endtab %}
 
-
 {% tab title="PHP" %}
-
 ```php
 $webview = $seam->connect_webviews->get($webview->id);
 echo json_encode($webview);
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
@@ -165,9 +150,7 @@ const updatedWebview = await seam.connectWebviews.get(
 
 console.log(updatedWebview.login_successful) // true
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## 3. Retrieve NoiseAware
@@ -176,7 +159,6 @@ NoiseAware noise devices appear with the `device_type` `"noiseaware_activity_zon
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 devices = seam.devices.list(device_type="noiseaware_activity_zone")
 
@@ -203,11 +185,9 @@ devices[0]
 #   errors=[]
 # )
 ```
-
 {% endtab %}
 
 {% tab title="Javascript" %}
-
 ```javascript
 const devices = await seam.devices.list({
   device_type: 'noiseaware_activity_zone',
@@ -242,11 +222,9 @@ console.log(devices[0])
 }
 */
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 seam.devices.list(
   device_type: "noiseaware_activity_zone"
@@ -273,12 +251,9 @@ seam.devices.list(
 # errors=[]
 # warnings=[]>
 ```
-
 {% endtab %}
 
-
 {% tab title="PHP" %}
-
 ```php
 $devices = $seam->devices->list(device_type: 'noiseaware_activity_zone');
 
@@ -311,9 +286,7 @@ echo json_encode($device[0]);
 }
 */
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## 4. Receive Noise Events
@@ -328,8 +301,8 @@ NoiseAware has three distinct noise alerts: `newNoise`, `continuedNoise`, and `r
 
 {% tabs %}
 {% tab title="Python" %}
-
-<pre class="language-python"><code class="lang-python">@app.route("/my_webhook_endpoint", methods=["POST"])
+```python
+@app.route("/my_webhook_endpoint", methods=["POST"])
 def endpoint():
     event = request.json["event"]
     # {
@@ -347,8 +320,7 @@ def endpoint():
     #   "noiseaware_property_name": "Acme Corporation"
     # }
         
-</code></pre>
-
+```
 {% endtab %}
 
 {% tab title="Javascript" %}
@@ -371,7 +343,6 @@ app.post('/my_webhook_endpoint', (req, res) => {
   // }
 });
 ```
-
 {% endtab %}
 
 {% tab title="Ruby" %}
@@ -397,7 +368,6 @@ post '/my_webhook_endpoint' do
   # }
 end
 ```
-
 {% endtab %}
 
 {% tab title="PHP" %}
@@ -422,11 +392,8 @@ $app->post('/my_webhook_endpoint', function (Request $request, Response $respons
     // }
 });
 ```
-
 {% endtab %}
-
 {% endtabs %}
-
 
 ## Next Steps
 

@@ -33,7 +33,7 @@ This guide uses a Sandbox Workspace. Only virtual thermostats can be connected. 
 
 ## 2. Link Ecobee Account with Seam
 
-To control your Ecobee device via the Seam API, you must first authorize your Seam workspace against your Ecobee account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews.md): pre-built UX flows that walk you through authorizing your application to control your Ecobee device.
+To control your Ecobee device via the Seam API, you must first authorize your Seam workspace against your Ecobee account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Ecobee device.
 
 ### Create a Connect Webview
 

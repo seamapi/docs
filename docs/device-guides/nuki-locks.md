@@ -29,7 +29,7 @@ The following table details the requirements for compatibility with this Seam in
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["nuki"]'
+  manufacturers='["Nuki"]'
 />" %}
 
 We support the following features:
@@ -63,7 +63,7 @@ Nuki does not allow the use of zeros in PIN codes.
 
        <figure><img src="../.gitbook/assets/nuki-web-select-devices-smart-hosting-dialog.png" alt="Select the devices for which you want to be able to program access codes and then click Buy Smart Hosting."><figcaption></figcaption></figure>
    8. In the Nuki online store, complete your Nuki Smart Hosting purchase.
-5. Use your credentials for the Nuki app to log in to the [Seam Connect Webview](../core-concepts/connect-webviews.md) to add your devices to Seam.
+5. Use your credentials for the Nuki app to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
 
 ***
 

@@ -12,7 +12,7 @@ Returns a list of all [access control systems](../../../products/access-systems/
 
 ## Request
 
-To filter the list of returned access control systems by a specific [connected account](../../connected-accounts/) ID, include the `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the response includes all access control systems connected to your [workspace](../../../core-concepts/workspaces.md).
+To filter the list of returned access control systems by a specific [connected account](../../connected-accounts/) ID, include the `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the response includes all access control systems connected to your [workspace](../../../core-concepts/workspaces/).
 
 ### Request Body Parameters
 

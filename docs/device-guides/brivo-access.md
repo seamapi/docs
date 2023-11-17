@@ -21,7 +21,7 @@ The Brivo Access platform supports the following wireless locks:
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["brivo"]'
+  manufacturers='["Brivo"]'
 />" %}
 
 We support the following features:
@@ -44,7 +44,7 @@ We support the following features:
     <figure><img src="../.gitbook/assets/brivo-api-service-access-auth-agreement-form.png" alt="Brivo API Service Access Authorization Agreement Form" width="563"><figcaption></figcaption></figure>
 2. This form must be signed by an active administrator on your account and a representative from the Brivo vendor.\
    Brivo then provides the API key to you securely.
-3. Specify this API key in the [Seam Connect Webview](../core-concepts/connect-webviews.md) to add your Brivo devices to Seam.
+3. Specify this API key in the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your Brivo devices to Seam.
 
 ***
 

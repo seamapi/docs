@@ -17,7 +17,7 @@ This integration supports all [4SUITES locks, lock upgrades, and readers](https:
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["four_suites"]'
+  manufacturers='["4SUITES"]'
 />" %}
 
 We support the following features:
@@ -30,7 +30,7 @@ We support the following features:
 ## Setup Instructions
 
 1. Obtain the credentials that you use to log in to your [4SUITES account](https://app.4suites.nl/auth/login).
-2. Use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews.md) to add your 4SUITES devices to Seam.
+2. Use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your 4SUITES devices to Seam.
 
 ***
 

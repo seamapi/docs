@@ -19,7 +19,7 @@ This integration supports [all readers, controllers, and wireless locks connecte
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["avigilon_alta"]'
+  manufacturers='["Avigilon Alta"]'
 />" %}
 
 We support the following features:
@@ -40,7 +40,7 @@ We support the following features:
     2. Make sure that the **Roles** for the user include **Super Admin**.
 
     <figure><img src="../.gitbook/assets/avigilon-alta-user-permissions.png" alt="Verify user permissions in the Avigilon Alta dashboard."><figcaption></figcaption></figure>
-4. Use the credentials for the user to log in to the [Seam Connect Webview](../core-concepts/connect-webviews.md) to add your Avigilon Alta access system and devices to Seam.
+4. Use the credentials for the user to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your Avigilon Alta access system and devices to Seam.
 
 ***
 
