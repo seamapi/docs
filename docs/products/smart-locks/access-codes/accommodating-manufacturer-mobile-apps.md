@@ -1,12 +1,12 @@
 ---
 description: >-
   This guide covers how to ensure that codes created via the Seam API are easily
-  identified and can be edited inside the smart lock manufacturer app.
+  identified and can be editable within the smart lock manufacturer app.
 ---
 
-# Accommodating Manufacturer Mobile Apps
+# Streamlining Access Code Management from the Manufacturer App
 
-Most smart lock manufacturers provide a mobile (or web) app that device owners can use to manage their devices. This includes seeing and editing access codes that are programmed on their smart locks. When creating access codes using the Seam API, it's important to keep in mind that smart lock device owners may also be using their device manufacturer mobile app to look up codes you've created and perhaps edit them. To ensure that these can easily be done, Seam provides a couple of API features for enabling this.
+Most smart lock manufacturers provide a mobile (or web) app that device owners can use to manage their devices. This includes seeing and editing access codes that are programmed on their smart locks. When creating access codes using the Seam API, it's important to keep in mind that smart lock device owners may also be using their device manufacturer app to look up codes you've created and perhaps edit them. To ensure that these can easily be done, Seam provides a couple of API features for enabling this.
 
 ## Access Code Name
 

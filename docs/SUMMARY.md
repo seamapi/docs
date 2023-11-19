@@ -30,7 +30,7 @@
     * [Deleting Access Codes](products/smart-locks/access-codes/deleting-access-codes.md)
     * [Lifecycle of Access Codes](products/smart-locks/access-codes/lifecycle-of-access-codes.md)
     * [Access Code Requirements for Door Locks](products/smart-locks/access-codes/access-code-requirements-for-door-locks.md)
-    * [Accommodating Manufacturer Mobile Apps](products/smart-locks/access-codes/accommodating-manufacturer-mobile-apps.md)
+    * [Streamlining Access Code Management from the Manufacturer App](products/smart-locks/access-codes/accommodating-manufacturer-mobile-apps.md)
     * [Troubleshooting Access Code Issues](products/smart-locks/access-codes/troubleshooting-access-code-issues.md)
     * [Backup Access Codes](products/smart-locks/access-codes/backup-access-codes.md)
     * [Offline Access Codes](products/smart-locks/access-codes/offline-access-codes.md)
