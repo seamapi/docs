@@ -1,0 +1,5 @@
+{
+  "require": {
+    "seamapi/seam": "dev-main"
+  }
+}
