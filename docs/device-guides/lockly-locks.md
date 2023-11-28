@@ -24,7 +24,6 @@ This integration supports [all Lockly smart locks](https://lockly.com/collection
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)
 * [Programming access codes](../products/smart-locks/access-codes/) on locks that have a keypad
 
 ***

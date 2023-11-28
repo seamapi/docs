@@ -24,7 +24,6 @@ This integration supports all locks connected using the [Oracode Live](https://w
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)
 * [Programming access codes](../products/smart-locks/access-codes/)
 
 {% hint style="info" %}
