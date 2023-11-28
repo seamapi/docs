@@ -19,6 +19,6 @@
       ]
     }
   },
-  "postCreateCommand": "cd /workspaces/api-docs/snippet-playground/javascript && npm i seamapi && cd /workspaces/api-docs/snippet-playground/csharp && ./init.sh",
+  "postCreateCommand": "cd /workspaces/api-docs/snippet-playground/javascript && npm i seamapi && cd /workspaces/api-docs/snippet-playground/csharp && ./init.sh && cd /workspaces/api-docs/snippet-playground/php && composer update",
   "remoteUser": "node"
 }
