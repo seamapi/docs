@@ -13,99 +13,12 @@ layout:
     visible: true
 ---
 
-# Retrieve thermostat
+# Get a Thermostat
 
 Retrieves the details of a thermostat.
 
-{% swagger method="get" path="/thermostats/get" baseUrl="https://connect.getseam.com" summary="Retrieves details of a thermostat" %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="query" name="device_id" required="false" %}
-ID of Device
-{% endswagger-parameter %}
-
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-Bearer <API_KEY>
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="name" required="false" %}
-Name of the Device
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="" %}
-```json
-{
-  "thermostat": {
-    "device_id": "a83690b2-2b70-409a-9a94-426699b84c97",
-    "device_type": "ecobee_thermostat",
-    "capabilities_supported": ["thermostat"],
-    "properties": {
-      "name": "Entryway",
-      "online": true,
-      "relative_humidity": 0.36,
-      "temperature_fahrenheit": 70,
-      "can_enable_automatic_cooling": true,
-      "can_enable_automatic_heating": true,
-      "available_hvac_mode_settings": [
-        "cool",
-        "heat",
-        "heat_cool",
-        "off"
-      ],
-      "current_climate_setting": {
-        "automatic_heating_enabled": true,
-        "automatic_cooling_enabled": true,
-        "hvac_mode_setting": "heat_cool",
-        "cooling_set_point_fahrenheit": 75,
-        "heating_set_point_fahrenheit": 65,
-        "manual_override_allowed": false 
-      }
-    },
-    "location": null,
-    "connected_account_id": "b0be0837-29c2-4cb1-8560-42dfd07fb877",
-    "workspace_id": "f97073eb-c003-467a-965b-e6dba3a0131d",
-    "created_at": "2023-06-01T11:14:37.116Z",
-    "errors": []
-  }
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="400: Bad Request" description="" %}
-```javascript
-{
-  "error": {
-    "type": "invalid_input",
-    "message": "Either 'device_id' or 'name' is required",
-    "validation_errors": {
-      "_errors": [
-        "Either 'device_id' or 'name' is required"
-      ]
-    },
-    "request_id": "802ee381-b068-4b9d-a722-bae968de9174"
-  },
-  "ok": false
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="404: Not Found" description="" %}
-```javascript
-{
-  "error": {
-    "type": "device_not_found",
-    "message": "Device not found",
-    "data": {
-      "device_id": "a83690b2-2b70-409a-9a94-426699b84c97"
-    },
-    "request_id": "8e730f9a-5b56-41aa-ad78-86a1a7b82e0a"
-  },
-  "ok": false
-}
-```
-{% endswagger-response %}
+{% swagger src="https://connect.getseam.com/openapi.json" path="/thermostats/get" method="post" %}
+[https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
 {% endswagger %}
 
 ### Code Example

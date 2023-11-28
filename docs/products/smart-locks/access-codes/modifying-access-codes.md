@@ -10,7 +10,7 @@ description: >-
 
 You can update any active or upcoming access codes using the [Update Access Code](../../../api-clients/access-codes/update-an-access-code.md) request.
 
-When making this change, adjust the properties of the access code, such as the `code`, `name`, `starts_at`, and `ends_at` to the new desired values.
+When modifying an access code, adjust the properties of the access code, such as the `code`, `name`, `starts_at`, and `ends_at` to the new desired values.
 
 {% tabs %}
 {% tab title="Python" %}

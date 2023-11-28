@@ -1,5 +1,7 @@
 ---
-description: Learn about access systems and related concepts.
+description: >-
+  Learn about managing access control systems, users, and credentials that
+  enable you to control access to physical spaces.
 ---
 
 # 🏢 Access Systems

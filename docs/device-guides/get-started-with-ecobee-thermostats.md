@@ -386,7 +386,7 @@ Coming soon!
 
 ## 5. Set your Default Climate Setting
 
-When there are no active Climate Setting Schedules, the thermostat will fallback to its [Default Climate Setting](../api-clients/thermostats/lock-a-lock.md).
+When there are no active Climate Setting Schedules, the thermostat will fallback to its [Default Climate Setting](../api-clients/thermostats/update-a-thermostat.md).
 
 {% hint style="info" %}
 The Default Climate Setting for a thermostat will be set to the following settings by default:

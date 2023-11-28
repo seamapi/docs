@@ -1,66 +1,236 @@
 ---
 description: >-
-  Climate setting schedules are used to set an HVAC mode setting (heating,
-  cooling, or off) and desired temperature profile for a period of time.
+  Learn how to configure climate setting schedules to set an HVAC mode setting
+  and the desired temperature profile for a period of time in the future.
 ---
 
-# Schedule future Climate Setting Schedules
+# Creating Climate Setting Schedules
 
-## What is a Climate Setting Schedule?
+Seam enables you to create [climate setting schedules](./#climate-setting-schedules) on a smart thermostat. This functionality enables you to set future schedules for controlling the climate in users' homes or businesses automatically based on their needs. For example, a short-term-rental host can create—for each guest stay—a climate setting schedule that programs their thermostat with comfortable heating and cooling set points for the duration of the guest's stay.
 
-A Climate Setting Schedule programs a thermostat with a desired temperature profile for a period of time. It allows users to set schedules for controlling the climate in their homes or businesses automatically based on their needs.
+Before you can create any climate setting schedules, you must first set the [default climate setting](./#default-climate-setting) for a thermostat.
 
-For example, a short-term-rental host may create a climate setting schedule that programs their thermostat with comfortable heating and cooling set points for the duration of a guest's stay.
+You can create as many climate setting schedules as desired, as long and none of the schedules overlap. That is, only one climate setting schedule can be active at a time.
 
-{% hint style="info" %}
-Note: the time ranges of Climate Setting Schedules cannot overlap, as only one Climate Setting Schedule can be active at a time.
-{% endhint %}
+To create a climate setting schedule, issue a [Create Climate Setting Schedule](../../api-clients/thermostats/update-a-thermostat.md) request. In the body of the request, specify the following parameters:
 
-<figure><img src="../../.gitbook/assets/Thermo rule.png" alt=""><figcaption><p>Our Seam Component for configuring a Climate Setting Schedule</p></figcaption></figure>
+<table><thead><tr><th width="301">Parameter</th><th width="103">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>schedule_type</code></td><td>Enum<br><em>Optional</em></td><td>Schedule type<br>Default: <code>time_bound</code></td></tr><tr><td><code>device_id</code></td><td>String<br><em>Required</em></td><td>ID of the thermostat for which to create the new climate setting schedule</td></tr><tr><td><code>name</code></td><td>String<br><em>Optional</em></td><td>Name of the climate setting schedule</td></tr><tr><td><code>schedule_starts_at</code></td><td>String<br><em>Required</em></td><td>Date and time at which the climate setting schedule becomes active, as an <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> timestamp</td></tr><tr><td><code>schedule_ends_at</code></td><td>String<br><em>Required</em></td><td>Date and time after which the climate setting schedule becomes inactive, as an <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> timestamp</td></tr><tr><td><code>automatic_heating_enabled</code></td><td>Boolean</td><td>Indicates whether the automatic heating system is enabled during the scheduled period<br>If you specify <code>automatic_heating_enabled</code>, you must also specify <code>heating_set_point_celsius</code> or <code>heating_set_point_fahrenheit</code>.<br>Also, if you specify <code>automatic_heating_enabled</code>, Seam automatically sets <code>hvac_mode_setting</code> accordingly.</td></tr><tr><td><code>automatic_cooling_enabled</code></td><td>Boolean</td><td>Indicates whether the automatic cooling system is enabled during the scheduled period<br>If you specify <code>automatic_cooling_enabled</code>, you must also specify <code>cooling_set_point_celsius</code> or <code>cooling_set_point_fahrenheit</code>.<br>Also, if you specify <code>automatic_cooling_enabled</code>, Seam automatically sets <code>hvac_mode_setting</code> accordingly.</td></tr><tr><td><code>hvac_mode_setting</code></td><td>Enum</td><td><p><a href="hvac-mode.md">HVAC mode</a> for the scheduled period</p><p>Values are <code>heat</code>, <code>cool</code>, <code>heat_cool</code>, and <code>off</code>.<br>If you specify <code>hvac_mode_setting</code>, you must also specify one or more of <code>cooling_set_point_celsius</code>, <code>heating_set_point_celsius</code>, <code>cooling_set_point_fahrenheit</code>, and <code>heating_set_point_fahrenheit</code>, depending on the HVAC mode.<br>Also, if you specify <code>hvac_mode_setting</code>, Seam automatically sets <code>automatic_heating_enabled</code> and <code>automatic_cooling_enabled</code> accordingly.</p></td></tr><tr><td><code>cooling_set_point_celsius</code></td><td>Number</td><td>Cooling <a href="set-points.md">set point</a> in Celsius for the scheduled period</td></tr><tr><td><code>heating_set_point_celsius</code></td><td>Number</td><td>Heating <a href="set-points.md">set point</a> in Celsius for the scheduled period</td></tr><tr><td><code>cooling_set_point_fahrenheit</code></td><td>Number</td><td>Cooling <a href="set-points.md">set point</a> in Fahrenheit for the scheduled period</td></tr><tr><td><code>heating_set_point_fahrenheit</code></td><td>Number</td><td>Heating <a href="set-points.md">set point</a> in Fahrenheit for the scheduled period</td></tr><tr><td><code>manual_override_allowed</code></td><td>Boolean<br><em>Optional</em></td><td>Indicates whether to allow manual overrides of these settings during the scheduled period<br>If <code>true</code>, a person can override the climate setting by making adjustments from the thermostat itself or from their app.<br>If <code>false</code>, Seam makes sure that the climate setting is set on the thermostat every ten minutes.</td></tr></tbody></table>
 
-## What Climate Settings can you create?
+{% tabs %}
+{% tab title="Python" %}
+**Request:**
 
-The main Climate Settings on a thermostat control the HVAC system mode:
+```python
+climate_setting_schedule = seam.thermostats.climate_setting_schedules.create(
+    device = "518f692b-f865-4590-8c3e-3849e9984c75",
+    name = "Guest 1 Stay",
+    schedule_starts_at = "2023-12-10T15:00:00.000Z",
+    schedule_ends_at = "2023-12-17T11:00:00.000Z",
+    hvac_mode_setting = "heat_cool",
+    cooling_set_point_celsius = 25,
+    heating_set_point_celsius = 20,
+    manual_override_allowed = True
+)
 
-* **Heat:** Only activates the heating system to heat the space. The system will heat the system to the heating set point temperature.
-* **Cool:** Only activates the cooling system to cool the space. The system will cool the system to the cooling set point temperature.
-* **Heat/Cool or Auto:** Automatically chooses between heating or cooling to maintain a temperature between the heating and cooling set points for maximum comfort.
-* **Off:** Turns off both the heating and cooling systems for the space.
+pprint(climate_setting_schedule)
+```
 
-On our climate setting schedule, this is how the `hvac_mode_setting` attribute maps to the `automatic_heating_enabled` and `automatic_cooling_enabled` attributes.
+**Response:**
 
-You can set either the `hvac_mode_setting` property or the `automatic_*` properties.
+```
+ClimateSettingSchedule(automatic_heating_enabled=True,
+                       automatic_cooling_enabled=True,
+                       hvac_mode_setting='heat_cool',
+                       cooling_set_point_celsius=25.0,
+                       heating_set_point_celsius=20.0,
+                       cooling_set_point_fahrenheit=77.0,
+                       heating_set_point_fahrenheit=68.0,
+                       manual_override_allowed=True,
+                       schedule_type='time_bound',
+                       name='Guest 1 Stay',
+                       schedule_starts_at='2023-12-10T15:00:00.000Z',
+                       schedule_ends_at='2023-12-17T11:00:00.000Z',
+                       climate_setting_schedule_id='b0a7fb2b-ef0a-43f5-908a-0564d2e86a67',
+                       is_set_on_device=False,
+                       device_id='518f692b-f865-4590-8c3e-3849e9984c75',
+                       created_at='2023-11-19T09:15:25.107Z')
+```
+{% endtab %}
 
-<table><thead><tr><th width="260.3333333333333">hvac_mode_setting</th><th width="244">automatic_heating_enabled</th><th>automatic_cooling_enabled</th></tr></thead><tbody><tr><td><strong><code>heat</code></strong></td><td><code>true</code></td><td><code>false</code></td></tr><tr><td><strong><code>cool</code></strong></td><td><code>false</code></td><td><code>true</code></td></tr><tr><td><strong><code>heat_cool</code></strong></td><td><code>true</code></td><td><code>true</code></td></tr><tr><td><strong><code>off</code></strong></td><td><code>false</code></td><td><code>false</code></td></tr></tbody></table>
+{% tab title="cURL (bash)" %}
+**Request:**
 
-### Configuring temperature set points
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/thermostats/climate_setting_schedules/create' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "device_id": "518f692b-f865-4590-8c3e-3849e9984c75",
+  "name": "Guest 1 Stay",
+  "schedule_starts_at": "2023-12-10T15:00:00.000Z",
+  "schedule_ends_at": "2023-12-17T11:00:00.000Z",
+  "hvac_mode_setting": "heat_cool",
+  "cooling_set_point_celsius": 25,
+  "heating_set_point_celsius": 20,
+  "manual_override_allowed": true
+}'
+```
 
-Temperature set points for a thermostat control the target temperatures that the thermostat will activate the heating or cooling system to reach.
+**Response:**
 
-For heating, the heating set point is the target temperature the thermostat will turn on the furnace or heating system to reach. Once the space reaches that temperature, the thermostat will turn off the heating system until the space temperature drops below the set point again.
+```json
+{
+  "climate_setting_schedule": {
+    "climate_setting_schedule_id": "c17d606a-fe7c-4345-a6d7-1bb4ab9b77f0",
+    "schedule_type": "time_bound",
+    "device_id": "518f692b-f865-4590-8c3e-3849e9984c75",
+    "name": "Guest 1 Stay",
+    "schedule_starts_at": "2023-12-10T15:00:00.000Z",
+    "schedule_ends_at": "2023-12-17T11:00:00.000Z",
+    "automatic_heating_enabled": true,
+    "automatic_cooling_enabled": true,
+    "hvac_mode_setting": "heat_cool",
+    "cooling_set_point_celsius": 25,
+    "heating_set_point_celsius": 20,
+    "cooling_set_point_fahrenheit": 77,
+    "heating_set_point_fahrenheit": 68,
+    "manual_override_allowed": true,
+    "is_set_on_device": false,
+    "created_at": "2023-11-19T09:10:17.395Z"
+  },
+  "ok": true
+}
+```
+{% endtab %}
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2023-06-12 at 4.04.38 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+{% tab title="JavaScript" %}
+**Request:**
 
-For cooling, the cooling set point is the target temperature the thermostat will turn on the air conditioner or cooling system to reach. Once that space reaches that temperature, the thermostat will turn off cooling until the space temperature rises above the set point again.
+```javascript
+const climate_setting_schedule = await seam.thermostats.climateSettingSchedules.create({
+  device_id: "518f692b-f865-4590-8c3e-3849e9984c75",
+  name: "Guest 1 Stay",
+  schedule_starts_at: "2023-12-10T15:00:00.000Z",
+  schedule_ends_at: "2023-12-17T11:00:00.000Z",
+  hvac_mode_setting: "heat_cool",
+  cooling_set_point_celsius: 25,
+  heating_set_point_celsius: 20,
+  manual_override_allowed: true
+})
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2023-06-12 at 4.04.54 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+console.log(climate_setting_schedule)
+```
 
-In heat/cool mode, the thermostat will use the heating set point as the target temperature for turning on the heating system, and the cooling set point as the target temperature for turning on the cooling system. It will activate heating or cooling as needed to keep the space temperature between those two set points for maximum comfort.
+**Response:**
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2023-06-12 at 4.04.21 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+```json
+{
+  climate_setting_schedule_id: '0232b54d-368b-483c-9b4e-36f139455e15',
+  schedule_type: 'time_bound',
+  device_id: '518f692b-f865-4590-8c3e-3849e9984c75',
+  name: 'Guest 1 Stay',
+  schedule_starts_at: '2023-12-10T15:00:00.000Z',
+  schedule_ends_at: '2023-12-17T11:00:00.000Z',
+  automatic_heating_enabled: true,
+  automatic_cooling_enabled: true,
+  hvac_mode_setting: 'heat_cool',
+  cooling_set_point_celsius: 25,
+  heating_set_point_celsius: 20,
+  cooling_set_point_fahrenheit: 77,
+  heating_set_point_fahrenheit: 68,
+  manual_override_allowed: true,
+  is_set_on_device: false,
+  created_at: '2023-11-19T09:23:12.979Z'
+}
+```
+{% endtab %}
 
-So in summary, the temperature set points define the precise temperatures that the thermostat will strive to maintain in the space for heating, cooling, or automatic heat/cool operation. Choosing appropriate set points for a space is important for energy efficiency and comfort.
+{% tab title="C#" %}
+**Request:**
 
-### Manual Override Allowed
+```csharp
+var deviceId = "518f692b-f865-4590-8c3e-3849e9984c75";
+ClimateSettingSchedule climateSettingSchedule = seam.ClimateSettingSchedulesThermostats.Create(
+      deviceId: deviceId,
+      name: "Guest 1 Stay",
+      scheduleStartsAt: "2023-12-10T15:00:00.000Z",
+      scheduleEndsAt: "2023-12-17T11:00:00.000Z",
+      hvacModeSetting: Seam.Api.ClimateSettingSchedulesThermostats.CreateRequest.HvacModeSettingEnum.HeatCool,
+      coolingSetPointCelsius: 25,
+      heatingSetPointCelsius: 20,
+      manualOverrideAllowed: true
+);
+Console.WriteLine(climateSettingSchedule);
+```
 
-If enabled, a person can override the Climate Setting by making adjustments from the thermostat or from their app.
+**Response:**
 
-If disabled, Seam will make sure the Climate Setting is set on the thermostat every ten minutes.
+```json
+{
+  "climate_setting_schedule_id": "c5da2ce6-7c72-45ee-9823-8f7ffd5f141a",
+  "device_id": "518f692b-f865-4590-8c3e-3849e9984c75",
+  "name": "Guest 1 Stay",
+  "schedule_starts_at": "2023-12-10T15:00:00.000Z",
+  "schedule_ends_at": "2023-12-17T11:00:00.000Z",
+  "created_at": "2023-11-20T07:19:06.862Z",
+  "automatic_heating_enabled": true,
+  "automatic_cooling_enabled": true,
+  "hvac_mode_setting": "heat_cool",
+  "cooling_set_point_celsius": 25,
+  "heating_set_point_celsius": 20,
+  "cooling_set_point_fahrenheit": 77,
+  "heating_set_point_fahrenheit": 68,
+  "manual_override_allowed": true
+}
+```
+{% endtab %}
 
-## What happens when a Climate Setting Schedule ends?
+{% tab title="Java" %}
+**Request:**
 
-When there are no active Climate Setting Schedules, the thermostat will fallback to its [Default Climate Setting](../../api-clients/thermostats/lock-a-lock.md). For example, if you are a short-term-rental host, you have configure a more energy-saving temperature setting here (i.e. Heat to 45°C).
+```java
+var deviceId = "518f692b-f865-4590-8c3e-3849e9984c75";
+var climateSettingSchedule = seam.thermostats().climateSettingSchedules()
+            .create(ClimateSettingSchedulesCreateRequest.builder()
+                    .deviceId(deviceId)
+                    .scheduleStartsAt("2023-12-10T15:00:00.000Z")
+                    .scheduleEndsAt("2023-12-17T11:00:00.000Z")
+                    .hvacModeSetting(HvacModeSetting.HEAT_COOL)
+                    .coolingSetPointCelsius(25.0)
+                    .heatingSetPointCelsius(20.0)
+                    .manualOverrideAllowed(true)
+                    .name("Guest 1 Stay")
+                    .build());
+System.out.println(climateSettingSchedule);
+```
 
-{% hint style="info" %}
-A Default Climate Setting must be set, before Climate Setting Schedules can be created.
-{% endhint %}
+**Response:**
+
+```json
+{
+  "climate_setting_schedule" : {
+    "climate_setting_schedule_id" : "b7d5cc0c-defc-4af1-9448-85b96aff5fd6",
+    "device_id" : "518f692b-f865-4590-8c3e-3849e9984c75",
+    "name" : "Guest 1 Stay",
+    "schedule_starts_at" : "2023-12-10T15:00:00.000Z",
+    "schedule_ends_at" : "2023-12-17T11:00:00.000Z",
+    "created_at" : "2023-11-19T09:52:36.855Z",
+    "automatic_heating_enabled" : true,
+    "automatic_cooling_enabled" : true,
+    "hvac_mode_setting" : "heat_cool",
+    "cooling_set_point_celsius" : 25.0,
+    "heating_set_point_celsius" : 20.0,
+    "cooling_set_point_fahrenheit" : 77.0,
+    "heating_set_point_fahrenheit" : 68.0,
+    "manual_override_allowed" : true,
+    "schedule_type" : "time_bound",
+    "schedule_type" : "time_bound",
+    "is_set_on_device" : false
+  },
+  "ok" : true
+}
+```
+{% endtab %}
+{% endtabs %}

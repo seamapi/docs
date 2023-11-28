@@ -14,51 +14,10 @@ layout:
 
 # Set to Heat-Cool (Auto) Mode
 
-Set a thermostat to heat-cool mode, also known as "auto" mode. To do so, you must include both cooling and heating set points in the payload, either in Celsius or Fahrenheit. For information on verifying the thermostat's heating availability and validating the correct set points, please refer to [our guide on HVAC mode and set point constraints](../../products/thermostats/understanding-hvac-mode-and-set-point-constraints.md).
+Set a thermostat to heat-cool mode, also known as "auto" mode. To do so, you must include both cooling and heating set points in the payload, either in Celsius or Fahrenheit. For information about verifying the heating and cooling availability of the thermostat and validating the correct set points, see [HVAC Mode Constraints](../../products/thermostats/hvac-mode.md#hvac-mode-constraints) and [Set Point Constraints](../../products/thermostats/set-points.md#set-point-constraints).
 
-{% swagger method="post" path="/thermostats/heat_cool" baseUrl="https://connect.getseam.com" summary="Set HVAC to Heat-Cool Mode" %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-Bearer <API_KEY>
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="device_id" required="true" type="String" %}
-ID of the Thermostat Device
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="cooling_set_point_celsius" type="Number" %}
-Temperature to cool to in celsius
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="cooling_set_point_fahrenheit" type="Number" %}
-Temperature to cool to in fahrenheit
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="heating_set_point_celsius" type="Number" %}
-Temperature to heat to in celsius
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="heating_set_point_fahrenheit" type="Number" %}
-Temperature to heat to in fahrenheit
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="" %}
-```json
-{
-	"action_attempt": {
-		"status": "pending",
-		"action_type": "SET_HEAT_COOL",
-		"action_attempt_id": "00000000-0000-0000-0000-000000000000",
-		"result": null,
-		"error": null
-	},
-	"ok": true
-}
-```
-{% endswagger-response %}
+{% swagger src="https://connect.getseam.com/openapi.json" path="/thermostats/heat_cool" method="post" %}
+[https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
 {% endswagger %}
 
 ### Code Example

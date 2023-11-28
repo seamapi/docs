@@ -16,33 +16,8 @@ layout:
 
 Set a thermostat to "off" mode.
 
-{% swagger method="post" path="/thermostats/off" baseUrl="https://connect.getseam.com" summary="Set HVAC to Off Mode" %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-Bearer <API_KEY>
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="device_id" required="true" type="String" %}
-ID of the Thermostat Device
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="" %}
-```json
-{
-	"action_attempt": {
-		"status": "pending",
-		"action_type": "SET_OFF",
-		"action_attempt_id": "00000000-0000-0000-0000-000000000000",
-		"result": null,
-		"error": null
-	},
-	"ok": true
-}
-```
-{% endswagger-response %}
+{% swagger src="https://connect.getseam.com/openapi.json" path="/thermostats/off" method="post" %}
+[https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
 {% endswagger %}
 
 ### Code Example

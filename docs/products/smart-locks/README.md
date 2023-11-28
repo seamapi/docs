@@ -1,6 +1,12 @@
+---
+description: >-
+  Learn about managing smart locks and access codes that enable you to lock and
+  unlock doors and other entry points.
+---
+
 # 🔒 Smart Locks
 
-## What is a Smart Lock?
+## What Is a Smart Lock?
 
 Smart locks utilize technology to provide a new way to unlock or lock your door. With smart locks, you can access your premises without a physical key.
 
@@ -8,7 +14,7 @@ These locks can be integrated into various entry points, such as standard doors,
 
 Seam's API provides the capability to lock and unlock doors remotely. For locks equipped with keypads, our API also permits the creation and programming of access codes.
 
-## What is an Access Code?
+## What Is an Access Code?
 
 An access code is a numeric or alphanumeric code that a user enters to gain access through the lock. Here's how it works:
 

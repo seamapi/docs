@@ -1,24 +1,30 @@
 ---
-description: Learn about how to configure the current climate settings on a thermostat.
+description: Learn how to configure the current climate settings on a thermostat.
 ---
 
-# Set HVAC and Fan Mode Settings
+# Setting Current HVAC and Fan Mode Settings
 
-## Overview
+Seam enables you to adjust the [current heating and cooling settings](./#current-climate-settings) on a smart thermostat, including the [HVAC mode](hvac-mode.md) and its corresponding [set points](set-points.md). It also enables you to configure the [fan mode](./#fan-mode). This guide explains how to use the Seam API to perform these actions.
 
-Seam enables you to adjust the current heating and cooling settings, as well as the fan mode, of a thermostat. This guide walks you through how to use the Seam API to perform these actions.
+When you send a command to change a setting on a thermostat, it might take a while for Seam to confirm the success of the action. To handle this potential delay, Seam provides an[ action attempt ](../../core-concepts/action-attempts.md)object that tracks the status of the action, indicating whether the action was successful.
 
-When you send a command to change a setting, it might take a while for Seam to confirm the success of the action. To handle this potential delay, Seam provides [an "action attempt" object](../../core-concepts/action-attempts.md) that indicates whether the action was successful.
+To ensure that the action has executed successfully, poll the status of the action attempt object using the [Get Action Attempt](../../api-clients/action-attempt/get-action-attempt.md) request. Once Seam has successfully adjusted the thermostat setting, the `status` of the action attempt indicates `success`.
 
-To ensure that the action has been executed successfully, check the status of the action attempt object by polling the ["Get Action Attempt" request](../../api-clients/action-attempt/get-action-attempt.md). Once Seam has successfully adjusted the thermostat setting, the `status` of the action attempt indicates `success`.
+***
 
-If you prefer to use webhooks to verify the success of an action, we'll soon introduce events that indicate changes to the thermostat's climate settings.
+## Process Overview
 
-## Verifying that a thermostat setting action has succeeded
+To configure and then verify a climate setting on a thermostat, perform the following steps:
 
-### 1. Execute a "Heat" request (or other mode setting action)
+### 1. Execute the Climate Setting Request
 
-When initiating a change in the thermostat settings, the Seam API returns an action attempt that monitors the success or failure of the action.
+Issue one of the following requests:
+
+<table><thead><tr><th width="250">Climate Setting Request</th><th>Description</th></tr></thead><tbody><tr><td><a href="configure-current-climate-settings.md#set-to-heat-mode">Heat</a></td><td>Set the thermostat to heat mode.</td></tr><tr><td><a href="configure-current-climate-settings.md#set-to-cool-mode">Cool</a></td><td>Set the thermostat to cool mode.</td></tr><tr><td><a href="configure-current-climate-settings.md#set-to-heat-cool-mode">Heat-Cool</a></td><td>Set the thermostat to dual heat-cool (auto) mode.</td></tr><tr><td><a href="configure-current-climate-settings.md#turn-off-heating-and-cooling">Off</a></td><td>Turn off the thermostat.</td></tr><tr><td><a href="configure-current-climate-settings.md#set-the-fan-mode">Fan Mode</a></td><td>Set the fan mode to <code>on</code> or <code>off</code>.</td></tr></tbody></table>
+
+The Seam API returns an action attempt ([`action_attempt`](../../api-clients/action-attempt/) object) that monitors the status of the action.
+
+The following example issues a request to set a specific thermostat to heat mode with a heating set point of 20° C:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -79,13 +85,9 @@ curl -X 'POST' \
 **Request:**
 
 ```javascript
-const heat_request = await seam.thermostats.update({
-  device_id: "518f692b-f865-4590-8c3e-3849e9984c75",
-  default_climate_setting: {
-    hvac_mode_setting: "heat",
-    heating_set_point_celsius: 20,
-    manual_override_allowed: true
-  }
+const heat_request = await seam.thermostats.heat({
+      device_id: "518f692b-f865-4590-8c3e-3849e9984c75",
+      heating_set_point_celsius: 20
 })
 
 console.log(heat_request)
@@ -94,7 +96,15 @@ console.log(heat_request)
 **Response:**
 
 ```json
-{ ok: true }
+{
+  actionAttempt: {
+    status: 'success',
+    action_attempt_id: '38c06dba-99b1-4c10-b542-f98e2963cb52',
+    action_type: 'SET_HEAT',
+    result: {},
+    error: null
+  }
+}
 ```
 {% endtab %}
 
@@ -119,7 +129,7 @@ System.out.println("Heating set point (Celsius): " +
 
 **Response:**
 
-```json
+```
 Thermostat ID: 518f692b-f865-4590-8c3e-3849e9984c75
 Mode: Optional[heat]
 Heating set point (Celsius): Optional[20.0]
@@ -127,9 +137,9 @@ Heating set point (Celsius): Optional[20.0]
 {% endtab %}
 {% endtabs %}
 
-### 2. Poll the "Get Action Attempt" request to verify the setting change
+### 2. Poll the Action Attempt to Verify the Setting Change
 
-Use the `action_attempt_id` from the prior response to make a [Get Action Attempt request](../../api-clients/action-attempt/get-action-attempt.md). When the `status` of the action attempt changes to `success`, it indicates the setting modification has been successful.
+Use the `action_attempt_id` from the previous response to poll the associated action attempt using the [Get Action Attempt](../../api-clients/action-attempt/get-action-attempt.md) request. When the setting modification completes successfully, the `status` of the action attempt changes to `success`.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -221,11 +231,11 @@ true
 
 ***
 
-## Set to Heat Mode
+## Set a Thermostat to Heat Mode
 
-You can [set a thermostat to operate in heating mode](../../api-clients/thermostats/set-to-heat-mode.md) and specify a desired temperature. By establishing the set point, the thermostat activates the associated heating system to maintain the specified temperature.
+You can [set a thermostat to operate in heating mode](../../api-clients/thermostats/set-to-heat-mode.md) and specify a desired heating set point temperature. By establishing the set point, the thermostat activates the associated heating system to maintain the specified temperature.
 
-Set the HVAC Mode to `heat` by providing the `device_id` of the thermostat and the "heating set point" in Celsius or Fahrenheit.
+Set the HVAC mode to `heat` by providing the `device_id` of the thermostat and the heating set point in Celsius or Fahrenheit.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -286,13 +296,9 @@ curl -X 'POST' \
 **Request:**
 
 ```javascript
-const heat_request = await seam.thermostats.update({
-  device_id: "518f692b-f865-4590-8c3e-3849e9984c75",
-  default_climate_setting: {
-    hvac_mode_setting: "heat",
-    heating_set_point_celsius: 20,
-    manual_override_allowed: true
-  }
+const heat_request = await seam.thermostats.heat({
+      device_id: "518f692b-f865-4590-8c3e-3849e9984c75",
+      heating_set_point_celsius: 20
 })
 
 console.log(heat_request)
@@ -301,7 +307,15 @@ console.log(heat_request)
 **Response:**
 
 ```json
-{ ok: true }
+{
+  actionAttempt: {
+    status: 'success',
+    action_attempt_id: '38c06dba-99b1-4c10-b542-f98e2963cb52',
+    action_type: 'SET_HEAT',
+    result: {},
+    error: null
+  }
+}
 ```
 {% endtab %}
 
@@ -336,11 +350,11 @@ Heating set point (Celsius): Optional[20.0]
 
 ***
 
-## Set to Cool Mode
+## Set a Thermostat to Cool Mode
 
-You can [set a thermostat to operate in cooling mode](../../api-clients/thermostats/set-to-cool-mode.md) and specify a desired temperature. By establishing the set point, the thermostat activates the associated cooling system to maintain the specified temperature.
+You can [set a thermostat to operate in cooling mode](../../api-clients/thermostats/set-to-cool-mode.md) and specify a desired cooling set point temperature. By establishing the set point, the thermostat activates the associated cooling system to maintain the specified temperature.
 
-Set the HVAC Mode to `cool` by providing the `device_id` of the thermostat and the "cooling set point" in Celsius or Fahrenheit.
+Set the HVAC mode to `cool` by providing the `device_id` of the thermostat and the cooling set point in Celsius or Fahrenheit.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -401,13 +415,9 @@ curl -X 'POST' \
 **Request:**
 
 ```javascript
-const cool_request = await seam.thermostats.update({
-  device_id: "518f692b-f865-4590-8c3e-3849e9984c75",
-  default_climate_setting: {
-    hvac_mode_setting: "cool",
-    cooling_set_point_celsius: 25,
-    manual_override_allowed: true
-  }
+const cool_request = await seam.thermostats.cool({
+      device_id: "518f692b-f865-4590-8c3e-3849e9984c75",
+      cooling_set_point_celsius: 25
 })
 
 console.log(cool_request)
@@ -416,7 +426,15 @@ console.log(cool_request)
 **Response:**
 
 ```json
-{ ok: true }
+{
+  actionAttempt: {
+    status: 'success',
+    action_attempt_id: '3ef9ff5a-0d50-40a4-9ef4-94f44e923e6e',
+    action_type: 'SET_COOL',
+    result: {},
+    error: null
+  }
+}
 ```
 {% endtab %}
 
@@ -455,11 +473,11 @@ Cooling set point (Celsius): Optional[25.0]
 
 ***
 
-## Set to Heat-Cool Mode
+## Set a Thermostat to Heat-Cool Mode
 
-You can [set a thermostat to operate in heat-cool (or "auto") mode](../../api-clients/thermostats/set-to-heat-cool-auto-mode.md) and specify desired temperatures for both heating and cooling. By establishing the set points, the thermostat activates the associated heating and cooling systems as needed to maintain the specified temperature range.
+You can [set a thermostat to operate in heat-cool (also known as "auto") mode](../../api-clients/thermostats/set-to-heat-cool-auto-mode.md) and specify desired set point temperatures for both heating and cooling. By establishing the set points, the thermostat activates the associated heating and cooling systems as needed to maintain the specified temperature range.
 
-Set the HVAC Mode to `heat_cool` by providing the `device_id` of the thermostat and both the "heating set point" and "cooling set point" in Celsius or Fahrenheit.
+Set the HVAC mode to `heat_cool` by providing the `device_id` of the thermostat and both the heating set point and the cooling set point in Celsius or Fahrenheit.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -522,23 +540,25 @@ curl -X 'POST' \
 **Request:**
 
 ```javascript
-const heat_cool_request = await seam.thermostats.update({
-  device_id: "518f692b-f865-4590-8c3e-3849e9984c75",
-  default_climate_setting: {
-    hvac_mode_setting: "heat_cool",
-    heating_set_point_celsius: 20,
-    cooling_set_point_celsius: 25,
-    manual_override_allowed: true
-  }
+const heat_cool_request = await seam.thermostats.heatCool({
+      device_id: "518f692b-f865-4590-8c3e-3849e9984c75",
+      heating_set_point_celsius: 20,
+      cooling_set_point_celsius: 25,
 })
-
-console.log(heat_cool_request)
 ```
 
 **Response:**
 
 ```json
-{ ok: true }
+{
+  actionAttempt: {
+    status: 'success',
+    action_attempt_id: '13229a60-38ce-4fec-bd93-85674e2257ff',
+    action_type: 'SET_HEAT_COOL',
+    result: {},
+    error: null
+  }
+}
 ```
 {% endtab %}
 
@@ -581,11 +601,11 @@ Cooling set point (Celsius): Optional[25.0]
 
 ***
 
-## Turn off heating and cooling
+## Turn off Heating and Cooling
 
 You can [set a thermostat to operate in "off" mode](../../api-clients/thermostats/set-to-off-mode.md), which deactivates the associated heating and cooling systems. In this state, the thermostat does not regulate indoor temperatures.
 
-Set the HVAC Mode to `off` by providing the `device_id` of the thermostat.
+Set the HVAC mode to `off` by providing the `device_id` of the thermostat.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -644,12 +664,8 @@ curl -X 'POST' \
 **Request:**
 
 ```javascript
-const off_request = await seam.thermostats.update({
-  device_id: "518f692b-f865-4590-8c3e-3849e9984c75",
-  default_climate_setting: {
-    hvac_mode_setting: "off",
-    manual_override_allowed: true
-  }
+const off_request = await seam.thermostats.off({
+      device_id: "518f692b-f865-4590-8c3e-3849e9984c75"
 })
 
 console.log(off_request)
@@ -658,7 +674,15 @@ console.log(off_request)
 **Response:**
 
 ```json
-{ ok: true }
+{
+  actionAttempt: {
+    status: 'success',
+    action_attempt_id: 'fffbe81e-f098-4c5f-b4a2-410dd036ae5b',
+    action_type: 'SET_THERMOSTAT_OFF',
+    result: {},
+    error: null
+  }
+}
 ```
 {% endtab %}
 
@@ -694,9 +718,9 @@ Mode: Optional[off]
 
 ## Set the Fan Mode
 
-You can [configure the fan associated with a thermostat](../../api-clients/thermostats/set-fan-mode.md) to operate in either `on` or `auto` mode. In the "on" setting, the fan runs continuously, while in "auto" mode, the fan operates based on temperature needs and system demands.
+You can [configure the fan associated with a thermostat](../../api-clients/thermostats/set-fan-mode.md) to operate in either `on` or `auto` mode. In the `on` setting, the fan runs continuously, while in the `auto` setting, the fan operates based on temperature needs and system demands.
 
-Set the Fan Mode by providing the `device_id` of the thermostat and specifying the desired fan setting.
+Set the fan mode by providing the `device_id` of the thermostat and specifying the desired fan mode setting.
 
 {% tabs %}
 {% tab title="Python" %}

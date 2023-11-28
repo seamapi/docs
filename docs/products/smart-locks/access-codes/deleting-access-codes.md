@@ -47,9 +47,11 @@ except Exception as e:
 
 **Response:**
 
+{% code overflow="wrap" %}
 ```
 SeamAPIException: status=404, request_id=4b1d2f1b-3988-4949-9279-fddef25dc9ae, metadata={'type': 'access_code_not_found', 'message': 'Could not find an access_code with device_id or access_code_id', 'data': {'access_code_id': 'daf89de3-ad3a-49aa-93bd-25f27d58f699'}, 'request_id': '4b1d2f1b-3988-4949-9279-fddef25dc9ae'}
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="cURL (bash)" %}

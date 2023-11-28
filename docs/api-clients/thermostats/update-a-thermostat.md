@@ -12,85 +12,14 @@ layout:
     visible: true
 ---
 
-# Update a thermostat
+# Update a Thermostat
 
 Updates a [thermostat](../../thermostats/) by setting the values of the parameters passed. Any parameters not provides are left unchanged.
 
 The primary attribute you can modify is the "Default Climate Setting." The Default Climate Setting determines the thermostat's configuration after a Climate Setting Schedule concludes. This differs from the thermostat's current settings, which represent the active programming on the device.
 
-{% swagger method="post" path="/thermostats/update" baseUrl="https://connect.getseam.com" summary="Update a thermostat" %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-Bearer <API_KEY>
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="device_id" required="false" %}
-ID of Device to be Locked
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="default_climate_setting" type="Object" required="false" %}
-The default
-
-[Climate Setting](../../thermostats/#climate-setting-properties)
-
-when no scheduled Climate Settings are in place.
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="sync" type="Boolean" required="false" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="" %}
-```json
-{
-  "action_attempt": {
-    "status": "pending",
-    "action_type": "UPDATE_THERMOSTAT",
-    "action_attempt_id": "7e700856-a7d5-4aba-bffe-eb7dd6e9f265",
-    "result": null,
-    "error": null
-  },
-  "ok": true
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="400: Bad Request" description="" %}
-```javascript
-{
-  "error": {
-    "type": "invalid_input",
-    "message": "Required for provided \"device_id\"",
-    "validation_errors": {
-      "_errors": [],
-      "device_id": {
-        "_errors": [
-          "Required"
-        ]
-      }
-    },
-    "request_id": "87ff554d-e27f-474d-b0f9-200c38ac3ab4"
-  },
-  "ok": false
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="404: Not Found" description="" %}
-```javascript
-{
-  "error": {
-    "type": "device_not_found",
-    "message": "Device not found",
-    "request_id": "cda51712-7c52-482b-910d-04bc93fb4782"
-  },
-  "ok": false
-}
-```
-{% endswagger-response %}
+{% swagger src="https://connect.getseam.com/openapi.json" path="/thermostats/update" method="post" %}
+[https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
 {% endswagger %}
 
 ### Code Example
@@ -132,10 +61,10 @@ seam.thermostats.update(
 
 ### Parameters
 
-| `device_id`               | type: string                                                                  | <p><br>Device ID</p>                                                                                                                                                         |
-| ------------------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `default_climate_setting` | type: [Climate Setting object](../../thermostats/#climate-setting-properties) | The default [Climate Setting](../../thermostats/#climate-setting-properties) when no [Climate Setting Schedules](../../thermostats/climate-setting-schedules/) are in place. |
-| `sync`                    | <p>type: boolean<br>Optional</p>                                              |                                                                                                                                                                              |
+| `device_id`               | String                                                                  | <p><br>Device ID</p>                                                                                                                                                     |
+| ------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `default_climate_setting` | [Climate Setting object](../../thermostats/#climate-setting-properties) | Default [climate setting](../../thermostats/#climate-setting-properties) when no [climate setting schedules](../../thermostats/climate-setting-schedules/) are in place. |
+| `sync`                    | <p>Boolean<br><em>Optional</em></p>                                     |                                                                                                                                                                          |
 
 ### Response
 

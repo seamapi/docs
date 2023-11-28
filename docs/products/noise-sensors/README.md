@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn about managing noise sensors that detect noise levels that exceed
+  configured thresholds in specific areas.
+---
+
 # 👂 Noise Sensors
 
 ## What Is a Noise Sensor?
@@ -26,4 +32,4 @@ While you can theoretically set noise thresholds to any decibel value, we have f
 
 ## **Next Steps**
 
-For more information about setting up noise thresholds for your device, check out our [Configure Noise Threshold Settings guide](configure-noise-threshold-settings.md). To work with noise sensors in the Seam API, see [Noise Sensors](../../api-clients/noise-sensors/).
+For more information about setting up noise thresholds for your device, check out our [Configuring Noise Threshold Settings guide](configure-noise-threshold-settings.md). To work with noise sensors in the Seam API, see [Noise Sensors](../../api-clients/noise-sensors/).

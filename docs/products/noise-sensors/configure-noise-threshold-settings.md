@@ -1,4 +1,8 @@
-# Configure Noise Threshold Settings
+---
+description: Learn how to configure noise thresholds for noise sensors.
+---
+
+# Configuring Noise Threshold Settings
 
 Seam enables you to configure the [noise thresholds](./#what-is-a-threshold) of your noise sensor, as well as to receive events when a disturbance is detected. This guide walks you through how to configure noise thresholds with the Seam API.
 

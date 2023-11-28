@@ -6,7 +6,7 @@ description: Learn how to lock and unlock a smart lock, and confirm the action's
 
 ## Overview
 
-Seam allows you to remotely lock or unlock your door lock. This guide will walk you through how to do this with the API.
+Seam enables you to lock or unlock your door lock remotely. This guide walks you through how to perform these actions using the Seam API.
 
 When you send a command to a smart lock, it might take a while for Seam to confirm the action's success. To handle this, Seam provides [an "action attempt" object](../../core-concepts/action-attempts.md), which indicates whether the action was successful.
 
@@ -509,7 +509,7 @@ Optional[{
 
 ## Verifying the Success of a Lock or Unlock Action
 
-### 1. Execute a "Lock" request (or other action)
+### 1. Execute a Lock request (or other action)
 
 When initiating a lock or unlock action, the Seam API returns an action attempt, which monitors the success or failure of the action.
 
@@ -648,7 +648,7 @@ Optional[{
 {% endtab %}
 {% endtabs %}
 
-### 2. Poll the "Get Action Attempt" request to verify the action's success
+### 2. Poll the Action Attempt to Verify the Success of the Action
 
 Use the `action_attempt_id` from the prior response to make a [Get Action Attempt request](../../api-clients/action-attempt/get-action-attempt.md). When the action attempt's `status` changes to `success`, it indicates the action has been successful.
 

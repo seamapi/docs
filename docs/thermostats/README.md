@@ -8,25 +8,25 @@ description: >-
 
 ## Thermostat Properties
 
-| **`temperature_fahrenheit`**       | number                                                                   | Temperature, measured in fahrenheit                                                                                                                                                |
-| ---------------------------------- | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`temperature_celsius`**          | number                                                                   | Temperature, measured in celsius                                                                                                                                                   |
-| **`relative_humidity`**            | number                                                                   | Relative Humidity, amount of moisture in the air compared to the maximum amount of moisture the air can hold at a given temperature. It is expressed as a percentage.              |
-| **`can_enable_automatic_cooling`** | boolean                                                                  | If true, the thermostat is connected to a cooling system                                                                                                                           |
-| **`can_enable_automatic_heating`** | boolean                                                                  | If true, the thermostat is connected to a heating system                                                                                                                           |
+| **`temperature_fahrenheit`**       | number                                                                   | Temperature, measured in fahrenheit                                                                                                                                                 |
+| ---------------------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`temperature_celsius`**          | number                                                                   | Temperature, measured in celsius                                                                                                                                                    |
+| **`relative_humidity`**            | number                                                                   | Relative Humidity, amount of moisture in the air compared to the maximum amount of moisture the air can hold at a given temperature. It is expressed as a percentage.               |
+| **`can_enable_automatic_cooling`** | boolean                                                                  | If true, the thermostat is connected to a cooling system                                                                                                                            |
+| **`can_enable_automatic_heating`** | boolean                                                                  | If true, the thermostat is connected to a heating system                                                                                                                            |
 | **`available_hvac_mode_settings`** | Array\<string>                                                           | <p>A list of the available HVAC Modes for the Thermostat.<br>These can include:<br>- <code>cool</code><br>- <code>heat</code><br>- <code>heat_cool</code><br>- <code>off</code></p> |
-| **`current_climate_setting`**      | As seen in '[Climate Setting Properties](./#climate-setting-properties)' |                                                                                                                                                                                    |
+| **`current_climate_setting`**      | As seen in '[Climate Setting Properties](./#climate-setting-properties)' |                                                                                                                                                                                     |
 
 ## Climate Setting Properties
 
-| property name                      | type                                    | Description                                                                                                                                            |
-| ---------------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **`automatic_heating_enabled`**    | boolean                                 | Whether the thermostat has heating turned on                                                                                                           |
-| **`automatic_cooling_enabled`**    | boolean                                 | Whether the thermostat has cooling turned on                                                                                                           |
+| property name                      | type                                     | Description                                                                                                                                            |
+| ---------------------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **`automatic_heating_enabled`**    | boolean                                  | Whether the thermostat has heating turned on                                                                                                           |
+| **`automatic_cooling_enabled`**    | boolean                                  | Whether the thermostat has cooling turned on                                                                                                           |
 | **`hvac_mode_setting`**            | `heat_cool` \| `heat` \| `cool` \| `off` | The HVAC mode the thermostat is set to.                                                                                                                |
-| **`cooling_set_point_fahrenheit`** | number \| null                          | The [cooling set point](./#climate-set-points) if cooling is turned on. When the ambient temperature rises above this set point, cooling will turn on. |
-| **`heating_set_point_fahrenheit`** | number \| null                          | The [heating set point](./#climate-set-points) if heating is turned on. When the ambient temperature drops below this set point, heating will turn on. |
-| **`manual_override_enabled`**      | boolean                                 | Whether another user can use the thermostat or API to override this climate setting                                                                    |
+| **`cooling_set_point_fahrenheit`** | number \| null                           | The [cooling set point](./#climate-set-points) if cooling is turned on. When the ambient temperature rises above this set point, cooling will turn on. |
+| **`heating_set_point_fahrenheit`** | number \| null                           | The [heating set point](./#climate-set-points) if heating is turned on. When the ambient temperature drops below this set point, heating will turn on. |
+| **`manual_override_enabled`**      | boolean                                  | Whether another user can use the thermostat or API to override this climate setting                                                                    |
 
 ## Climate Set Points
 
@@ -41,7 +41,7 @@ When you have `heat_cool` turned on, where both heating and cooling systems are 
 | [Get Thermostat](get-thermostat.md)                                                             |
 | ----------------------------------------------------------------------------------------------- |
 | [List Thermostats](list-thermostats.md)                                                         |
-| [Set Default Climate Setting](../api-clients/thermostats/lock-a-lock.md)                        |
+| [Set Default Climate Setting](../api-clients/thermostats/update-a-thermostat.md)                |
 | [Get Climate Setting Schedule](climate-setting-schedules/get-climate-setting-schedule.md)       |
 | [List Climate Setting Schedules](climate-setting-schedules/list-climate-setting-schedules.md)   |
 | [Create Climate Setting Schedule](climate-setting-schedules/create-climate-setting-schedule.md) |

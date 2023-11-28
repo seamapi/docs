@@ -14,41 +14,8 @@ layout:
 
 # Set Fan Mode
 
-{% swagger method="post" path="/thermostats/set_fan_mode" baseUrl="https://connect.getseam.com" summary="Set Fan Mode" %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-Bearer <API_KEY>
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="device_id" required="true" type="String" %}
-ID of the Thermostat Device
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="heating_set_point_celsius" type="Number" %}
-Temperature to heat to in celsius
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="heating_set_point_fahrenheit" type="Number" %}
-Temperature to heat to in fahrenheit
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="" %}
-```json
-{
-	"action_attempt": {
-		"status": "pending",
-		"action_type": "SET_FAN_MODE",
-		"action_attempt_id": "00000000-0000-0000-0000-000000000000",
-		"result": null,
-		"error": null
-	},
-	"ok": true
-}
-```
-{% endswagger-response %}
+{% swagger src="https://connect.getseam.com/openapi.json" path="/thermostats/set_fan_mode" method="post" %}
+[https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
 {% endswagger %}
 
 ### Code Example
@@ -56,13 +23,13 @@ Temperature to heat to in fahrenheit
 {% tabs %}
 {% tab title="Curl" %}
 ```bash
-curl --request POST 'https://connect.getseam.com/thermostats/heat' \
+curl --request POST 'https://connect.getseam.com/thermostats/set_fan_mode' \
 --header 'Authorization: Bearer ${API_KEY}' \
 --header 'Content-Type: application/json' \
 --header 'Seam-Workspace: 00000000-0000-0000-0000-000000000000' \
 --data-raw '{
   "device_id": "11111111-1111-1111-1111-111111111111",
-  "heating_set_point_celsius": 25
+  "fan_mode_setting": "auto"
  }'
 ```
 {% endtab %}
