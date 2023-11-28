@@ -1,92 +1,118 @@
 ---
-description: Update an Unmanaged Device by its ID
+description: Update the properties of a specified unmanaged device
 ---
 
-An unmanaged device has a limited set of visible properties, a subset of supported events, and may not be controlled.
-Any access codes on an unmanaged device will be unmanaged.
-Convert it to a managed device to control it with Seam.
+# Update an Unmanaged Device
 
-# Update Unmanaged Device
+Updates the `is_managed` property of a specified [unmanaged device](../../core-concepts/devices.md#managed-devices-and-unmanaged-devices) (`device` object) to indicate whether Seam manages the device. An unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](../../products/smart-locks/access-codes/) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](../../core-concepts/devices.md#convert-an-unmanaged-device-to-managed).
 
-{% swagger method="post" path="/devices/unmanaged/update" baseUrl="https://connect.getseam.com" summary="Update unmanaged device" %}
-{% swagger-description %}
+{% swagger src="https://connect.getseam.com/openapi.json" path="/devices/unmanaged/update" method="post" %}
+[https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
+{% endswagger %}
 
-{% endswagger-description %}
+## Request
 
-{% swagger-parameter in="body" name="device_id" required="true" %}
-ID of Device
-{% endswagger-parameter %}
+Specify the desired unmanaged device by including the corresponding `device_id` in the request body. In addition, in the request body, include the `is_managed` property, along with `true` as the replacement value. Note that setting `is_managed` to `true` [converts the unmanaged device to a managed device](../../core-concepts/devices.md#convert-an-unmanaged-device-to-managed).
 
-{% swagger-parameter in="body" name="is_managed" %}
-Set to true to manage the device with Seam.
-{% endswagger-parameter %}
+### Request Body Parameters
 
-{% swagger-response status="200: OK" description="" %}
+<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>String<br><em>Required</em></td><td>ID of the desired device.</td></tr><tr><td><code>is_managed</code></td><td>Boolean<br><em>Optional</em></td><td>Replacement value to indicate whether Seam manages the device.</td></tr></tbody></table>
 
+### Sample Request
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+device_id = "882dd63f-db9b-4210-bac2-68372aa0aff7"
+unmanaged_device_update = seam.devices.unmanaged.update(
+    device = device_id,
+    is_managed= True
+)
+
+pprint(unmanaged_device_update)
+```
+{% endtab %}
+
+{% tab title="cURL (bash)" %}
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/devices/unmanaged/update' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "device_id": "882dd63f-db9b-4210-bac2-68372aa0aff7",
+  "is_managed": true
+}'
+```
+{% endtab %}
+
+{% tab title="Javascript" %}
 ```javascript
+const deviceId = "882dd63f-db9b-4210-bac2-68372aa0aff7"
+const unmanagedDeviceUpdate = await seam.devices.unmanaged.update({
+  device_id: deviceId,
+  is_managed: true
+})
+
+console.log(unmanagedDeviceUpdate)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```ruby
+device_id = "882dd63f-db9b-4210-bac2-68372aa0aff7"
+unmanaged_device_update = client.unmanaged_devices.update(
+  device_id: device_id,
+  is_managed: true
+)
+
+puts unmanaged_device_update.inspect
+```
+{% endtab %}
+
+{% tab title="Java" %}
+```java
+var deviceId = "882dd63f-db9b-4210-bac2-68372aa0aff7";
+
+seam.devices().unmanaged().update(UnmanagedUpdateRequest.builder()
+        .deviceId(deviceId)
+        .isManaged(true)
+        .build());
+```
+{% endtab %}
+{% endtabs %}
+
+## Response
+
+Returns a Boolean `ok` status indicator (with the exception of the Java SDK).
+
+### Sample Response
+
+{% tabs %}
+{% tab title="Python" %}
+```
+True
+```
+{% endtab %}
+
+{% tab title="cURL (bash)" %}
+```json
 {
   "ok": true
 }
 ```
+{% endtab %}
 
-{% endswagger-response %}
-
-{% swagger-response status="404: Not Found" description="" %}
-
-```javascript
-{
-  "error": {
-    "type": "device_not_found",
-    "message": "device not found",
-    "data": {
-      "device_id": "a83690b2-2b70-409a-9a94-426699b84c97"
-    },
-    "request_id": "32239a33-c0d5-435c-816b-4a9274a5e66d"
-  },
-  "ok": false
-}
-```
-
-{% endswagger-response %}
-{% endswagger %}
-
-### Code Example
-
-<!-- CODE INJECT START
-Get an unmanaged device and convert it to a managed device
-
-e.g. in python you could do:
-```python
-unmanaged_device = seam.devices.unmanaged.get("some_device_uuid")
-seam.devices.unmanaged.update(device=unmanaged_device, is_managed=True)
-```
--->
-{% tabs %}
-{% tab title="Javascript" %}
-```javascript
-await seam.devices.unmanaged.update({
-  device_id: unmanaged_device.deviceId, 
-  is_managed: true
-})
-
+{% tab title="JavaScript" %}
+```json
+{ ok: true }
 ```
 {% endtab %}
-{% tab title="Python" %}
-```python
-seam.devices.unmanaged.update(device=unmanaged_device, is_managed=True)
-```
-{% endtab %}
+
 {% tab title="Ruby" %}
-```ruby
-seam.devices.unmanaged.update(device: unmanaged_device, is_managed: true)
 ```
-{% endtab %}
-{% tab title="PHP" %}
-```php
-$managed_device = $seam->access_codes->unmanaged->update(
-  access_code_id: $unmanaged_device->access_code_id,
-  is_managed: True
-);
+{"ok"=>true}
 ```
 {% endtab %}
 {% endtabs %}

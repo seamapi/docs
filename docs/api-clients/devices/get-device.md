@@ -1,226 +1,387 @@
 ---
-description: Get a Device by its ID
+description: Get a specified device
 ---
 
-# Get Device
+# Get a Device
 
-## Get a Device
+Returns a specified [device](../../core-concepts/devices.md) (`device` object).
 
-{% swagger method="get" path="/devices/get" baseUrl="https://connect.getseam.com" summary="Get a device" %}
-{% swagger-description %}
-Retrieve a single device from your workspace using a device_id or a filter
-{% endswagger-description %}
-
-{% swagger-parameter in="query" name="device_id" required="true" %}
-Device id
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="name" required="true" %}
-Device name
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="" %}
-
-```javascript
-{
-  "device": {
-    "device_id": "6b0afc38-7883-4efd-a31d-fccf6c04d809",
-    "device_type": "schlage_lock",
-    "capabilities_supported": [],
-    "properties": {
-      "locked": false,
-      "online": true,
-      "battery_level": 0.48,
-      "schlage_metadata": {
-        "device_id": "device-3",
-        "device_name": "GARAGE"
-      },
-      "name": "GARAGE"
-    },
-    "location": null,
-    "connected_account_id": "9dcedcb3-5ede-4b66-9e07-f9ef97b3c29b",
-    "workspace_id": "f97073eb-c003-467a-965b-e6dba3a0131d",
-    "created_at": "2022-08-24T10:38:05.759Z",
-    "errors": []
-  },
-  "ok": true
-}
-```
-
-{% endswagger-response %}
-
-{% swagger-response status="400: Bad Request" description="" %}
-
-```javascript
-{
-  "error": {
-    "type": "invalid_input",
-    "message": "Invalid uuid for provided \"device_id\"",
-    "validation_errors": {
-      "_errors": [],
-      "device_id": {
-        "_errors": [
-          "Invalid uuid"
-        ]
-      }
-    },
-    "request_id": "73b3bd10-365c-4bb9-927f-0202d6b06023"
-  },
-  "ok": false
-}
-```
-
-{% endswagger-response %}
-
-{% swagger-response status="404: Not Found" description="" %}
-
-```javascript
-{
-  "error": {
-    "type": "device_not_found",
-    "message": "device not found",
-    "data": {
-      "device_id": "a53690b2-2b70-409a-9a94-426699b84c97"
-    },
-    "request_id": "e57b4b09-90f0-487a-8d50-3bec8af8792e"
-  },
-  "ok": false
-}
-```
-
-{% endswagger-response %}
+{% swagger src="https://connect.getseam.com/openapi.json" path="/devices/get" method="post" %}
+[https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
 {% endswagger %}
 
-### Code Example
+## Request
+
+Specify the desired device by including the corresponding `device_id` in the request body.
+
+### Request Body Parameters
+
+<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>String<br><em>Required</em></td><td>ID of the desired device</td></tr></tbody></table>
+
+### Sample Request
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
-seam.devices.get("123e4567-e89b-12d3-a456-426614174000")
-
-# Device(
-#   device_id='a83690b2-2b70-409a-9a94-426699b84c97',
-#   device_type='schlage_lock',
-#   location=None,
-#   properties={
-#     'locked': False,
-#     'online': True,
-#     'battery_level': 0.48,
-#     'manufacturer': 'schlage',
-#     'schlage_metadata': {
-#       'device_id': 'device-3',
-#       'device_name': 'GARAGE'
-#       },
-#     'name': 'GARAGE'
-#     },
-#   capabilities_supported=[],
-#   errors=[]
-#   )
-
-
+pprint(seam.devices.get("30fd243b-3054-4384-a713-5487076a3826"))
 ```
-
 {% endtab %}
 
-{% tab title="Javascript" %}
-
-```typescript
-await seam.devices.get({ device_id: "123e4567-e89b-12d3-a456-426614174000" });
-
-/*
-{
-  device_id: 'a83690b2-2b70-409a-9a94-426699b84c97',
-  device_type: 'schlage_lock',
-  capabilities_supported: [],
-  properties: {
-    locked: false,
-    online: true,
-    battery_level: 0.48,
-    manufacturer: 'schlage',
-    schlage_metadata: { device_id: 'device-3', device_name: 'GARAGE' },
-    name: 'GARAGE'
-  },
-  location: null,
-  connected_account_id: 'b0be0837-29c2-4cb1-8560-42dfd07fb877',
-  workspace_id: 'f97073eb-c003-467a-965b-e6dba3a0131d',
-  created_at: '2022-08-24T11:14:37.116Z',
-  errors: []
-}
-*/
+{% tab title="cURL (bash)" %}
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/devices/get' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "device_id": "30fd243b-3054-4384-a713-5487076a3826"
+}'
 ```
+{% endtab %}
 
+{% tab title="JavaScript" %}
+```javascript
+console.log(await seam.devices.get({device_id: "30fd243b-3054-4384-a713-5487076a3826"}))
+```
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
-seam.devices.get("123e4567-e89b-12d3-a456-426614174000")
-
-# <Seam::Device:0x00764f8
-#   device_id="e002825a-27ee-4d74-9be3-45564b14c931"
-#   device_type="smartthings_lock"
-#   properties={
-#     "locked"=>true,
-#     "online"=>true,
-#     "battery_level"=>1,
-#     "manufacturer"=>"yale",
-#     "smartthings_metadata"=>{
-#       "device_id"=>"83b32603-e36a-416b-a06e-78215223df98",
-#       "device_name"=>"Yale Door Lock"},
-#     "max_active_codes_supported": 100,
-#     "supported_code_lengths": [
-#       6
-#     ],
-#     "name"=>"Yale Door Lock"}>
+puts client.devices.get("30fd243b-3054-4384-a713-5487076a3826").inspect
 ```
+{% endtab %}
 
+{% tab title="C#" %}
+```csharp
+Device device = seam.Devices.Get("30fd243b-3054-4384-a713-5487076a3826");
+Console.WriteLine(device);
+```
+{% endtab %}
+
+{% tab title="Java" %}
+```java
+Device device = seam.devices()
+      .get(DevicesGetRequest.builder()
+              .deviceId("30fd243b-3054-4384-a713-5487076a3826")
+              .build());
+System.out.println(device);
+```
 {% endtab %}
 {% endtabs %}
 
-### Parameters
+## Response
 
-| `device_id` | type: string | <p>Device ID</p>   |
-| ----------- | ------------ | ------------------ |
-| `name`      | type: string | <p>Device Name</p> |
+Returns a `device` that contains the set of applicable device properties. For details, see [Devices](./).
 
-### Response
+This response also includes a Boolean `ok` status indicator.
 
-This section shows the JSON response returned by the API. Since each language encapsulates this response inside objects specific to that language and/or implementation, the actual type in your language might differ from what’s written here.
-
-#### JSON format
+### Sample Response
 
 {% tabs %}
-{% tab title="JSON" %}
+{% tab title="Python" %}
+```
+Device(device_id='30fd243b-3054-4384-a713-5487076a3826',
+       device_type='august_lock',
+       location={'location_name': 'My House',
+                 'timezone': 'America/Los_Angeles'},
+       properties={'august_metadata': {'has_keypad': True,
+                                       'house_id': 'house-1',
+                                       'house_name': 'My House',
+                                       'keypad_battery_level': 'Not Available',
+                                       'lock_id': 'lock-2',
+                                       'lock_name': 'BACK DOOR'},
+                   'battery': {'level': 0.9999532347993827, 'status': 'full'},
+                   'battery_level': 0.9999532347993827,
+                   'code_constraints': [],
+                   'door_open': False,
+                   'has_native_entry_events': True,
+                   'image_alt_text': 'August Wifi Smart Lock 3rd Gen, Silver, '
+                                     'Front',
+                   'image_url': 'https://connect.getseam.com/assets/images/devices/august_wifi-smart-lock-3rd-gen_silver_front.png',
+                   'locked': True,
+                   'manufacturer': 'august',
+                   'model': {'accessory_keypad_supported': True,
+                             'display_name': 'Lock',
+                             'manufacturer_display_name': 'August',
+                             'offline_access_codes_supported': False,
+                             'online_access_codes_supported': True},
+                   'name': 'BACK DOOR',
+                   'offline_access_codes_enabled': False,
+                   'online': True,
+                   'online_access_codes_enabled': True,
+                   'serial_number': '00000004-992d-45a0-bea1-9128fdcd8d12',
+                   'supported_code_lengths': [4, 5, 6, 7, 8],
+                   'supports_accessory_keypad': True,
+                   'supports_backup_access_code_pool': True,
+                   'supports_offline_access_codes': False},
+       capabilities_supported=['access_code', 'lock'],
+       errors=[],
+       warnings=[],
+       connected_account_id='f72442d2-2c16-4e3f-9882-6bff21828b1b',
+       workspace_id='398d80b7-3f96-47c2-b85a-6f8ba21d07be',
+       created_at='2023-10-28T09:13:08.465Z',
+       is_managed=True)
+```
+{% endtab %}
 
+{% tab title="cURL (bash)" %}
 ```json
 {
   "device": {
-    "device_id": "6b0afc38-7883-4efd-a31d-fccf6c04d809",
-    "device_type": "schlage_lock",
-    "capabilities_supported": [],
+    "device_id": "30fd243b-3054-4384-a713-5487076a3826",
+    "device_type": "august_lock",
+    "capabilities_supported": [
+      "access_code",
+      "lock"
+    ],
     "properties": {
-      "locked": false,
+      "locked": true,
       "online": true,
-      "battery_level": 0.48,
-      "manufacturer": "schlage",
-      "schlage_metadata": {
-        "device_id": "device-3",
-        "device_name": "GARAGE"
+      "door_open": false,
+      "manufacturer": "august",
+      "battery_level": 0.9999532347993827,
+      "serial_number": "00000004-992d-45a0-bea1-9128fdcd8d12",
+      "august_metadata": {
+        "lock_id": "lock-2",
+        "house_id": "house-1",
+        "lock_name": "BACK DOOR",
+        "has_keypad": true,
+        "house_name": "My House",
+        "keypad_battery_level": "Not Available"
       },
-      "max_active_codes_supported": 100,
-      "supported_code_lengths": [6],
-      "name": "GARAGE"
+      "supported_code_lengths": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "has_native_entry_events": true,
+      "supports_accessory_keypad": true,
+      "online_access_codes_enabled": true,
+      "offline_access_codes_enabled": false,
+      "supports_offline_access_codes": false,
+      "name": "BACK DOOR",
+      "model": {
+        "display_name": "Lock",
+        "manufacturer_display_name": "August",
+        "accessory_keypad_supported": true,
+        "offline_access_codes_supported": false,
+        "online_access_codes_supported": true
+      },
+      "battery": {
+        "level": 0.9999532347993827,
+        "status": "full"
+      },
+      "image_url": "https://connect.getseam.com/assets/images/devices/august_wifi-smart-lock-3rd-gen_silver_front.png",
+      "image_alt_text": "August Wifi Smart Lock 3rd Gen, Silver, Front",
+      "code_constraints": [],
+      "supports_backup_access_code_pool": true
     },
-    "location": null,
-    "connected_account_id": "9dcedcb3-5ede-4b66-9e07-f9ef97b3c29b",
-    "workspace_id": "f97073eb-c003-467a-965b-e6dba3a0131d",
-    "created_at": "2022-08-24T10:38:05.759Z",
-    "errors": []
+    "location": {
+      "timezone": "America/Los_Angeles",
+      "location_name": "My House"
+    },
+    "connected_account_id": "f72442d2-2c16-4e3f-9882-6bff21828b1b",
+    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+    "created_at": "2023-10-28T09:13:08.465Z",
+    "errors": [],
+    "warnings": [],
+    "is_managed": true
   },
   "ok": true
 }
 ```
+{% endtab %}
 
+{% tab title="JavaScript" %}
+```json
+{
+  device_id: '30fd243b-3054-4384-a713-5487076a3826',
+  device_type: 'august_lock',
+  capabilities_supported: [ 'access_code', 'lock' ],
+  properties: {
+    locked: true,
+    online: true,
+    door_open: false,
+    manufacturer: 'august',
+    battery_level: 0.9999532347993827,
+    serial_number: '00000004-992d-45a0-bea1-9128fdcd8d12',
+    august_metadata: {
+      lock_id: 'lock-2',
+      house_id: 'house-1',
+      lock_name: 'BACK DOOR',
+      has_keypad: true,
+      house_name: 'My House',
+      keypad_battery_level: 'Not Available'
+    },
+    supported_code_lengths: [ 4, 5, 6, 7, 8 ],
+    has_native_entry_events: true,
+    supports_accessory_keypad: true,
+    online_access_codes_enabled: true,
+    offline_access_codes_enabled: false,
+    supports_offline_access_codes: false,
+    name: 'BACK DOOR',
+    model: {
+      display_name: 'Lock',
+      manufacturer_display_name: 'August',
+      accessory_keypad_supported: true,
+      offline_access_codes_supported: false,
+      online_access_codes_supported: true
+    },
+    battery: { level: 0.9999532347993827, status: 'full' },
+    image_url: 'https://connect.getseam.com/assets/images/devices/august_wifi-smart-lock-3rd-gen_silver_front.png',
+    image_alt_text: 'August Wifi Smart Lock 3rd Gen, Silver, Front',
+    code_constraints: [],
+    supports_backup_access_code_pool: true
+  },
+  location: { timezone: 'America/Los_Angeles', location_name: 'My House' },
+  connected_account_id: 'f72442d2-2c16-4e3f-9882-6bff21828b1b',
+  workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be',
+  created_at: '2023-10-28T09:13:08.465Z',
+  errors: [],
+  warnings: [],
+  is_managed: true
+}
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```
+<Seam::Device:0x00438
+  device_id="30fd243b-3054-4384-a713-5487076a3826"
+  device_type="august_lock"
+  capabilities_supported=["access_code", "lock"]
+  properties={"locked"=>true, "online"=>true, "door_open"=>false, "manufacturer"=>"august", "battery_level"=>0.9999532347993827, "serial_number"=>"00000004-992d-45a0-bea1-9128fdcd8d12", "august_metadata"=>{"lock_id"=>"lock-2", "house_id"=>"house-1", "lock_name"=>"BACK DOOR", "has_keypad"=>true, "house_name"=>"My House", "keypad_battery_level"=>"Not Available"}, "supported_code_lengths"=>[4, 5, 6, 7, 8], "has_native_entry_events"=>true, "supports_accessory_keypad"=>true, "online_access_codes_enabled"=>true, "offline_access_codes_enabled"=>false, "supports_offline_access_codes"=>false, "name"=>"BACK DOOR", "model"=>{"display_name"=>"Lock", "manufacturer_display_name"=>"August", "accessory_keypad_supported"=>true, "offline_access_codes_supported"=>false, "online_access_codes_supported"=>true}, "battery"=>{"level"=>0.9999532347993827, "status"=>"full"}, "image_url"=>"https://connect.getseam.com/assets/images/devices/august_wifi-smart-lock-3rd-gen_silver_front.png", "image_alt_text"=>"August Wifi Smart Lock 3rd Gen, Silver, Front", "code_constraints"=>[], "supports_backup_access_code_pool"=>true}
+  connected_account_id="f72442d2-2c16-4e3f-9882-6bff21828b1b"
+  workspace_id="398d80b7-3f96-47c2-b85a-6f8ba21d07be"
+  created_at=2023-10-28 09:13:08.465 UTC
+  errors=[]
+  warnings=[]
+  is_managed=true>
+```
+{% endtab %}
+
+{% tab title="C#" %}
+```json
+{
+  "device_id": "30fd243b-3054-4384-a713-5487076a3826",
+  "device_type": "august_lock",
+  "capabilities_supported": [
+    "access_code",
+    "lock"
+  ],
+  "properties": {
+    "online": true,
+    "name": "BACK DOOR",
+    "model": {
+      "display_name": "Lock",
+      "manufacturer_display_name": "August",
+      "offline_access_codes_supported": false,
+      "accessory_keypad_supported": true
+    },
+    "battery_level": 0.9999532,
+    "battery": {
+      "level": 0.9999532,
+      "status": "full"
+    },
+    "manufacturer": "august",
+    "image_url": "https://connect.getseam.com/assets/images/devices/august_wifi-smart-lock-3rd-gen_silver_front.png",
+    "image_alt_text": "August Wifi Smart Lock 3rd Gen, Silver, Front",
+    "serial_number": "00000004-992d-45a0-bea1-9128fdcd8d12",
+    "online_access_codes_enabled": true,
+    "offline_access_codes_enabled": false,
+    "supports_accessory_keypad": true,
+    "supports_offline_access_codes": false,
+    "august_metadata": {
+      "lock_id": "lock-2",
+      "lock_name": "BACK DOOR",
+      "house_name": "My House",
+      "has_keypad": true,
+      "keypad_battery_level": "Not Available",
+      "house_id": "house-1"
+    },
+    "code_constraints": [],
+    "supported_code_lengths": [
+      4.0,
+      5.0,
+      6.0,
+      7.0,
+      8.0
+    ],
+    "supports_backup_access_code_pool": true,
+    "has_native_entry_events": true,
+    "locked": true,
+    "door_open": false
+  },
+  "location": {
+    "location_name": "My House",
+    "timezone": "America/Los_Angeles"
+  },
+  "connected_account_id": "f72442d2-2c16-4e3f-9882-6bff21828b1b",
+  "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+  "errors": [],
+  "warnings": [],
+  "created_at": "2023-10-28T09:13:08.465Z",
+  "is_managed": true
+}
+```
+{% endtab %}
+
+{% tab title="Java" %}
+```json
+{
+  "device_id" : "30fd243b-3054-4384-a713-5487076a3826",
+  "device_type" : "august_lock",
+  "capabilities_supported" : [ "access_code", "lock" ],
+  "properties" : {
+    "online" : true,
+    "name" : "BACK DOOR",
+    "model" : {
+      "display_name" : "Lock",
+      "online_access_codes_supported" : true,
+      "accessory_keypad_supported" : true,
+      "offline_access_codes_supported" : false,
+      "manufacturer_display_name" : "August"
+    },
+    "august_metadata" : {
+      "lock_id" : "lock-2",
+      "lock_name" : "BACK DOOR",
+      "house_name" : "My House",
+      "house_id" : "house-1",
+      "has_keypad" : true,
+      "keypad_battery_level" : "Not Available"
+    },
+    "offline_access_codes_enabled" : false,
+    "battery_level" : 0.9999532347993827,
+    "image_url" : "https://connect.getseam.com/assets/images/devices/august_wifi-smart-lock-3rd-gen_silver_front.png",
+    "supports_accessory_keypad" : true,
+    "serial_number" : "00000004-992d-45a0-bea1-9128fdcd8d12",
+    "battery" : {
+      "level" : 0.9999532347993827,
+      "status" : "full"
+    },
+    "code_constraints" : [ ],
+    "has_native_entry_events" : true,
+    "image_alt_text" : "August Wifi Smart Lock 3rd Gen, Silver, Front",
+    "manufacturer" : "august",
+    "door_open" : false,
+    "online_access_codes_enabled" : true,
+    "supported_code_lengths" : [ 4, 5, 6, 7, 8 ],
+    "locked" : true,
+    "supports_offline_access_codes" : false,
+    "supports_backup_access_code_pool" : true
+  },
+  "location" : {
+    "timezone" : "America/Los_Angeles",
+    "location_name" : "My House"
+  },
+  "connected_account_id" : "f72442d2-2c16-4e3f-9882-6bff21828b1b",
+  "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+  "created_at" : "2023-10-28T09:13:08.465Z",
+  "is_managed" : true
+}
+```
 {% endtab %}
 {% endtabs %}

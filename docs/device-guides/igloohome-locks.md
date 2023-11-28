@@ -26,26 +26,7 @@ Each igloohome Bridge supports up to five compatible igloohome locks.
 
 #### Offline Access Code Support
 
-This integration supports the generation of offline access codes (that is, [algoPIN](https://www.igloohome.co/en-US/how-it-works) codes) for all igloohome lock models, without the need for a bridge. You generate offline access (PIN) codes remotely, and the manufacturer maintains a server-based registry of synchronized encryption keys (tokens) to enable these offline codes. Then, owners or managers can share these codes with users through messaging or other similar applications, and the users do not need to install a special application to unlock the device. For more information, see [Offline Access Codes](../products/smart-locks/access-codes/#offline-access-codes).
-
-Note the following igloohome-specific offline access code constraints:
-
-| Constraint                                               | Description                                                                                                                                    |
-| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Offline code types                                       | <ul><li>Hourly-bound</li><li>Daily-bound</li><li>One-time-use</li></ul>                                                                        |
-| Range of hourly-bound codes                              | 1 to 672 hours (28 days)                                                                                                                       |
-| Maximum number of hourly-bound codes per hour            | 3                                                                                                                                              |
-| Range of daily-bound codes                               | 29 to 367 days                                                                                                                                 |
-| Daily-bound code schedule restrictions                   | Start time and end time must match.                                                                                                            |
-| Maximum number of daily-bound codes per day              | 3                                                                                                                                              |
-| Timeframe for one-time-use codes                         | <ul><li>Must have a start date and time.</li><li>Lasts for 24 hours.</li></ul>                                                                 |
-| Maximum number of one-time-use codes per start date slot | 5                                                                                                                                              |
-| One-time-use code expiration                             | Expire after a single use.                                                                                                                     |
-| Total maximum number of offline codes                    | 199 PINs, including online and offline PINs.                                                                                                   |
-| Activation requirements                                  | For codes that last longer than 24 hours, algoPINs have a 24-hour activation window. Use the code within the first 24 hours of the start time. |
-| Revocation                                               | To delete algoPINs, you must be within Bluetooth® range of the lock.                                                                           |
-
-
+This integration supports the generation of offline access codes (that is, [algoPIN](https://www.igloohome.co/en-US/how-it-works) codes) for all igloohome lock models, without the need for a bridge. You generate offline access (PIN) codes remotely, and the manufacturer maintains a server-based registry of synchronized encryption keys (tokens) to enable these offline codes. Then, owners or managers can share these codes with users through messaging or other similar applications, and the users do not need to install a special application to unlock the device. For more information, see [Offline Access Codes](../products/smart-locks/access-codes/#offline-access-codes). [See below](igloohome-locks.md#a) to read about the special requirements around offline access codes for igloohome locks.
 
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
@@ -72,6 +53,49 @@ We support customizable access codes for igloohome locks connected through the i
    For more information, see "Pair your lock" in the [igloohome app quick start guide](https://support.igloohome.co/support/solutions/articles/35000183120-igloohome-app-quick-start-guide).
 3. To be able to configure your igloohome smart locks remotely, trigger lock and unlock actions, and use custom codes, install the [igloohome Wi-Fi Bridge](https://www.igloohome.co/en-US/products/bridge), and then pair your locks to the bridge.
 4. Note your login credentials for the igloohome mobile app, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
+
+***
+
+## Offline access code requirements
+
+Seam supports the following types of offline access codes for igloohome locks:
+
+* Hourly-bound
+* Daily-bound
+* One-time-use
+
+Note the following igloohome-specific offline access code constraints:
+
+**General igloohome Offline Access Code Constraints**
+
+| Constraint                            | Description                                                                                                                                    |
+| ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Total maximum number of offline codes | 199 PINs, including online and offline PINs.                                                                                                   |
+| Activation requirements               | For codes that last longer than 24 hours, algoPINs have a 24-hour activation window. Use the code within the first 24 hours of the start time. |
+| Revocation                            | To delete algoPINs, you must be within Bluetooth® range of the lock.                                                                           |
+
+**Hourly-Bound Offline Access Code Constraints**
+
+| Constraint                                    | Description              |
+| --------------------------------------------- | ------------------------ |
+| Range of hourly-bound codes                   | 1 to 672 hours (28 days) |
+| Maximum number of hourly-bound codes per hour | 3                        |
+
+**Daily-Bound Offline Access Code Constraints**
+
+| Constraint                                  | Description                         |
+| ------------------------------------------- | ----------------------------------- |
+| Range of daily-bound codes                  | 29 to 367 days                      |
+| Daily-bound code schedule restrictions      | Start time and end time must match. |
+| Maximum number of daily-bound codes per day | 3                                   |
+
+**One-Time-User Offline Access Code Constraints**
+
+| Constraint                                               | Description                                                                    |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Timeframe for one-time-use codes                         | <ul><li>Must have a start date and time.</li><li>Lasts for 24 hours.</li></ul> |
+| Maximum number of one-time-use codes per start date slot | 5                                                                              |
+| One-time-use code expiration                             | Expire after a single use.                                                     |
 
 ***
 

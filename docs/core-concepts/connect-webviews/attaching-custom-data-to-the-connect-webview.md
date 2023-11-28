@@ -170,9 +170,9 @@ Console.WriteLine(createdConnectWebview);
   "connect_webview_id": "3874d8b4-4bb5-470a-9fc7-a54931a4b933",
   "url": "https://connect.getseam.com/connect_webviews/view?connect_webview_id=3874d8b4-4bb5-470a-9fc7-a54931a4b933&auth_token=F9t4SkQ6R8mZjJEBV5K4dwoVdkR6VtjdJ",
   "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  "custom_metadata": [
-    "id": "internalId1"
-  ],
+  "custom_metadata": {
+    "id": "user1"
+  },
   ...
 }
 ```

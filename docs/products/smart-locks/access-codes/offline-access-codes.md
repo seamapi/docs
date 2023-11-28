@@ -14,7 +14,7 @@ This guide explains how to create [offline access (PIN) codes](./#offline-access
 
 ## Before You Begin
 
-To confirm that Seam supports access code programming for your device, use [Get Device](../../../api-clients/devices/get-device.md) or [Get Lock](../../../api-clients/locks/get-lock.md) to query the device and check the `capabilities_supported` and `supports_offline_access_codes` properties for the device. Ensure that the `capabilities_supported` list includes `access_code` and that `supports_offline_access_codes` is `true`.
+To confirm that Seam supports access code programming for your device, use [Get Device](../../../api-clients/devices/get-device.md) or [Get Lock](../../../api-clients/locks/get-lock.md) to query the device and check the `capabilities_supported` and `offline_access_codes_enabled` properties for the device. Ensure that the `capabilities_supported` list includes `access_code` and that `offline_access_codes_enabled` is `true`.
 
 Further, before creating an offline access code, it is imperative to understand any manufacturer- or device-specific constraints, such as the maximum number of access codes, any activation requirements, and so on. For details, see the corresponding [device guide](../../../device-guides/igloohome-locks.md).
 
@@ -33,7 +33,7 @@ Device(device_id='9689dc30-77d8-4728-9968-b3abd0835f47',
        device_type='igloohome_lock',
        ...
        properties={...
-                   'supports_offline_access_codes': True}, // Device supports offline access codes.
+                   'offline_access_codes_enabled': True}, // Device supports offline access codes.
        capabilities_supported=['access_code', ...], // Device supports access code actions.
        ...)
 ```
@@ -65,7 +65,7 @@ curl -X 'POST' \
       ...
     ],
     "properties": {
-      "supports_offline_access_codes": true, // Device supports offline access codes.
+      "offline_access_codes_enabled": true, // Device supports offline access codes.
       ...
     },
     ...
@@ -80,9 +80,18 @@ curl -X 'POST' \
 
 ## Creating Time-Bound Offline Access Codes
 
-You can create time-bound offline access codes with validity durations at either the hour level or the day level. To create an hourly-bound offline access code, set `is_offline_access_code` to `true`, and specify the desired `starts_at` and `ends_at` date and time. Note that some device manufacturers enforce a maximum duration for hourly-bound offline access codes. See the corresponding [device guide](../../../device-guides/igloohome-locks.md) for more information.
+You can create time-bound offline access codes with validity durations at either the hour level or the day level.
 
-Alternately, to create a daily-bound offline access code, you must specify the same time (but not the same date) in the `starts_at` and `ends_at` properties. Because daily-bound offline access codes must be valid for a number of days, that is, day-level granularity, you can set `max_time_rounding` to `1day` (or `1d`), instead of the default `1hour` (or `1h`). In this case, Seam rounds the time period that you specify to the nearest day. &#x20;
+Some device manufacturers enforce a maximum duration for hourly-bound offline access codes. For example, [igloohome](../../../device-guides/igloohome-locks.md) enforces the following duration rules for hourly- and daily-bound offline access codes:
+
+| Code Type          | Duration Rule            |
+| ------------------ | ------------------------ |
+| Hourly-bound codes | 1 to 672 hours (28 days) |
+| Daily-bound codes  | 29 to 367 days           |
+
+To [create an hourly-bound offline access code](offline-access-codes.md#program-an-hourly-bound-offline-access-code), set `is_offline_access_code` to `true`, and specify the desired `starts_at` and `ends_at` date and time.&#x20;
+
+To [create a daily-bound offline access code](offline-access-codes.md#1.-create-a-daily-bound-access-code), set `is_offline_access_code` to `true`, and specify the same time (but not the same date) in the `starts_at` and `ends_at` properties. Because daily-bound offline access codes must be valid for a number of days, that is, day-level granularity, you can set `max_time_rounding` to `1day` (or `1d`), instead of the default `1hour` (or `1h`). In this case, Seam rounds the time period that you specify to the nearest day.
 
 ### Program an Hourly-Bound Offline Access Code
 
@@ -338,6 +347,8 @@ There are two methods to verify that an time-bound offline access code has been 
 
 * **Polling**: Continuously query the access code until the `status` is updated. For instructions, see [Polling Method](creating-access-codes.md#polling-method-1).
 * **Webhook**: Wait for updates to arrive using webhook requests from the Seam API. For instructions, see [Webhook Events Method](creating-access-codes.md#webhook-events-method-1).
+
+***
 
 ## Creating One-Time-Use Offline Access Codes
 
