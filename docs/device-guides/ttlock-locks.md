@@ -27,13 +27,19 @@ This integration works any TTLock locks that are paired with [a TTLock Gateway](
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  brands='["ttlock"]'
+  manufacturers='["TTLock"]'
 />" %}
 
 We support the following features:
 
 * [Triggering web unlock actions](../api-clients/locks/unlock-a-lock.md)
-* [Programming access codes](../products/smart-locks/access-codes/) on door locks and card readers that have a PIN pad.
+* [Programming access codes](../products/smart-locks/access-codes/) on door locks and card readers that have a PIN pad
+
+***
+
+### Device Provider Key
+
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their TTLock devices to Seam, include the `ttlock` [device provider key](../api-clients/connect-webviews/#device-provider-keys) as the `selected_provider` or in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 

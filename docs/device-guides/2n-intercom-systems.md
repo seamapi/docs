@@ -17,13 +17,19 @@ This integration supports all [2N IP intercoms](https://wiki.2n.com/is/en).
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  manufacturers='["2N"]'
+  manufacturers='["my_2n"]'
 />" %}
 
 We support the following features:
 
 * [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)
 * [Programming access codes](../products/smart-locks/access-codes/) on intercoms that have a PIN pad
+
+***
+
+### Device Provider Key
+
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their 2N devices to Seam, include the `my_2n` [device provider key](../api-clients/connect-webviews/#device-provider-keys) as the `selected_provider` or in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 

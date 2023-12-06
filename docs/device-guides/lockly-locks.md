@@ -28,6 +28,12 @@ We support the following features:
 
 ***
 
+### Device Provider Key
+
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their Lockly devices to Seam, include the `lockly` [device provider key](../api-clients/connect-webviews/#device-provider-keys) as the `selected_provider` or in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+
+***
+
 ## Setup Instructions
 
 1. Download and create an account for the [Lockly mobile app](https://lockly.com/pages/download-lockly-app) if you have not done so already.

@@ -29,6 +29,12 @@ We support the following features:
 
 ***
 
+### Device Provider Key
+
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their Minut devices to Seam, include the `minut` [device provider key](../api-clients/connect-webviews/#device-provider-keys) as the `selected_provider` or in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+
+***
+
 ## Setup Instructions
 
 1. Create an account in the [Minut app](https://www.minut.com/setup) if you have not done so already.
