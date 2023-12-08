@@ -2,13 +2,41 @@
 description: Learn how to configure the current climate settings on a thermostat.
 ---
 
-# Setting Current HVAC and Fan Mode Settings
+# Setting the Current HVAC and Fan Mode Settings
 
-Seam enables you to adjust the [current heating and cooling settings](./#current-climate-settings) on a smart thermostat, including the [HVAC mode](hvac-mode.md) and its corresponding [set points](set-points.md). It also enables you to configure the [fan mode](./#fan-mode). This guide explains how to use the Seam API to perform these actions.
+Seam enables you to adjust the [current heating and cooling settings](configure-current-climate-settings.md#current-climate-setting) on a smart thermostat, including the [HVAC mode](hvac-mode.md) and its corresponding [set points](set-points.md). It also enables you to configure the [fan mode](configure-current-climate-settings.md#fan-mode). This guide explains how to use the Seam API to perform these actions.
 
 When you send a command to change a setting on a thermostat, it might take a while for Seam to confirm the success of the action. To handle this potential delay, Seam provides an[ action attempt ](../../core-concepts/action-attempts.md)object that tracks the status of the action, indicating whether the action was successful.
 
 To ensure that the action has executed successfully, poll the status of the action attempt object using the [Get Action Attempt](../../api-clients/action-attempt/get-action-attempt.md) request. Once Seam has successfully adjusted the thermostat setting, the `status` of the action attempt indicates `success`.
+
+***
+
+## Current Climate Setting
+
+The set of current heating, ventilation, and air conditioning (HVAC) settings on a thermostat includes the following:
+
+* The [HVAC mode](hvac-mode.md)
+* The corresponding [set points](set-points.md) in Fahrenheit or Celsius
+
+To set the HVAC mode and set points, issue a thermostat [`heat`](configure-current-climate-settings.md#set-a-thermostat-to-heat-mode), [`cool`](configure-current-climate-settings.md#set-a-thermostat-to-cool-mode), [`heat_cool`](configure-current-climate-settings.md#set-a-thermostat-to-heat-cool-mode), or [`off`](configure-current-climate-settings.md#turn-off-heating-and-cooling) request and include the desired set points in the body of the request. When you issue one of these commands, Seam sets the `hvac_mode_setting` accordingly.
+
+***
+
+## Fan Mode
+
+The fan mode includes the following options:
+
+* **`on`:** The fan continuously operates, ensuring air circulation, regardless of the heating or cooling demand.
+* **`auto`:** The fan activates only when heating or cooling is on, making this setting a more energy-efficient choice.
+
+Seam supports a single ongoing fan mode setting.
+
+***
+
+## Before You Begin
+
+To confirm that Seam supports thermostat programming for your device, use [Get Device](../../api-clients/devices/get-device.md) or [Get Thermostat](../../thermostats/get-thermostat.md) to query the device and check its `capabilities_supported` property. Ensure that the `capabilities_supported` list includes `thermostat`. For more information, see [Retrieving Individual Thermostats](retrieving-thermostats.md#retrieving-individual-thermostats).
 
 ***
 
@@ -20,7 +48,7 @@ To configure and then verify a climate setting on a thermostat, perform the foll
 
 Issue one of the following requests:
 
-<table><thead><tr><th width="250">Climate Setting Request</th><th>Description</th></tr></thead><tbody><tr><td><a href="configure-current-climate-settings.md#set-to-heat-mode">Heat</a></td><td>Set the thermostat to heat mode.</td></tr><tr><td><a href="configure-current-climate-settings.md#set-to-cool-mode">Cool</a></td><td>Set the thermostat to cool mode.</td></tr><tr><td><a href="configure-current-climate-settings.md#set-to-heat-cool-mode">Heat-Cool</a></td><td>Set the thermostat to dual heat-cool (auto) mode.</td></tr><tr><td><a href="configure-current-climate-settings.md#turn-off-heating-and-cooling">Off</a></td><td>Turn off the thermostat.</td></tr><tr><td><a href="configure-current-climate-settings.md#set-the-fan-mode">Fan Mode</a></td><td>Set the fan mode to <code>on</code> or <code>off</code>.</td></tr></tbody></table>
+<table><thead><tr><th width="250">Climate Setting Request</th><th>Description</th></tr></thead><tbody><tr><td><a href="configure-current-climate-settings.md#set-a-thermostat-to-heat-mode">Heat</a></td><td>Set the thermostat to heat mode.</td></tr><tr><td><a href="configure-current-climate-settings.md#set-a-thermostat-to-cool-mode">Cool</a></td><td>Set the thermostat to cool mode.</td></tr><tr><td><a href="configure-current-climate-settings.md#set-a-thermostat-to-heat-cool-mode">Heat-Cool</a></td><td>Set the thermostat to dual heat-cool (auto) mode.</td></tr><tr><td><a href="configure-current-climate-settings.md#turn-off-heating-and-cooling">Off</a></td><td>Turn off the thermostat.</td></tr><tr><td><a href="configure-current-climate-settings.md#set-the-fan-mode">Fan Mode</a></td><td>Set the fan mode to <code>on</code> or <code>off</code>.</td></tr></tbody></table>
 
 The Seam API returns an action attempt ([`action_attempt`](../../api-clients/action-attempt/) object) that monitors the status of the action.
 
@@ -231,7 +259,11 @@ true
 
 ***
 
-## Set a Thermostat to Heat Mode
+## Set the Current HVAC and Fan Mode Settings
+
+The following sections describe how to se the current climate settings on a thermostat:
+
+### Set a Thermostat to Heat Mode
 
 You can [set a thermostat to operate in heating mode](../../api-clients/thermostats/set-to-heat-mode.md) and specify a desired heating set point temperature. By establishing the set point, the thermostat activates the associated heating system to maintain the specified temperature.
 
@@ -350,7 +382,7 @@ Heating set point (Celsius): Optional[20.0]
 
 ***
 
-## Set a Thermostat to Cool Mode
+### Set a Thermostat to Cool Mode
 
 You can [set a thermostat to operate in cooling mode](../../api-clients/thermostats/set-to-cool-mode.md) and specify a desired cooling set point temperature. By establishing the set point, the thermostat activates the associated cooling system to maintain the specified temperature.
 
@@ -473,7 +505,7 @@ Cooling set point (Celsius): Optional[25.0]
 
 ***
 
-## Set a Thermostat to Heat-Cool Mode
+### Set a Thermostat to Heat-Cool Mode
 
 You can [set a thermostat to operate in heat-cool (also known as "auto") mode](../../api-clients/thermostats/set-to-heat-cool-auto-mode.md) and specify desired set point temperatures for both heating and cooling. By establishing the set points, the thermostat activates the associated heating and cooling systems as needed to maintain the specified temperature range.
 
@@ -601,7 +633,7 @@ Cooling set point (Celsius): Optional[25.0]
 
 ***
 
-## Turn off Heating and Cooling
+### Turn off Heating and Cooling
 
 You can [set a thermostat to operate in "off" mode](../../api-clients/thermostats/set-to-off-mode.md), which deactivates the associated heating and cooling systems. In this state, the thermostat does not regulate indoor temperatures.
 
@@ -716,7 +748,7 @@ Mode: Optional[off]
 
 ***
 
-## Set the Fan Mode
+### Set the Fan Mode
 
 You can [configure the fan associated with a thermostat](../../api-clients/thermostats/set-fan-mode.md) to operate in either `on` or `auto` mode. In the `on` setting, the fan runs continuously, while in the `auto` setting, the fan operates based on temperature needs and system demands.
 

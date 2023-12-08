@@ -352,7 +352,7 @@ System.out.println(thermostats);
 
 ## Retrieving Individual Thermostats
 
-To retrieve a specific [thermostat](./), include the desired `device_id` in the [Get Thermostat](../../thermostats/get-thermostat.md) request.
+To retrieve a specific [thermostat](./), include the desired `device_id` in the [Get Thermostat](../../thermostats/get-thermostat.md) or [Get Device](../../api-clients/devices/get-device.md) request.
 
 {% tabs %}
 {% tab title="Python" %}

@@ -4,7 +4,7 @@ description: Learn how to update your climate setting schedules.
 
 # Modifying Climate Setting Schedules
 
-You can update any upcoming [climate setting schedule](./#climate-setting-schedules) using the [Update Climate Setting Schedule](../../thermostats/climate-setting-schedules/update-climate-setting-schedule.md) request.
+You can update any upcoming or active [climate setting schedule](thermostats-climate-setting-schedules.md#climate-setting-schedules) using the [Update Climate Setting Schedule](../../thermostats/climate-setting-schedules/update-climate-setting-schedule.md) request.
 
 When modifying a climate setting schedule, adjust any of the following properties of the climate setting schedule to the new desired values:
 
@@ -20,7 +20,7 @@ When modifying a climate setting schedule, adjust any of the following propertie
 * `heating_set_point_fahrenheit`
 * `manual_override_allowed`
 
-For more information about how these properties interact, see [Settings in a Climate Setting Schedule](./#settings-in-a-climate-setting-schedule).
+For more information about how these properties interact, see [Settings in a Climate Setting Schedule](thermostats-climate-setting-schedules.md#settings-in-a-climate-setting-schedule).
 
 {% tabs %}
 {% tab title="Python" %}

@@ -16,7 +16,7 @@ layout:
 
 Updates a [thermostat](../../thermostats/) by setting the values of the parameters passed. Any parameters not provides are left unchanged.
 
-The primary attribute you can modify is the "Default Climate Setting." The Default Climate Setting determines the thermostat's configuration after a Climate Setting Schedule concludes. This differs from the thermostat's current settings, which represent the active programming on the device.
+The primary attribute you can modify is the [default climate setting](../../products/thermostats/#default-climate-setting). The default climate setting determines the configuration of the thermostat when a [climate setting schedule](../../products/thermostats/#climate-setting-schedules) ends. This differs from the [current climate setting](../../products/thermostats/#current-climate-setting) of the thermostat, which represent the active programming on the device.
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/thermostats/update" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)

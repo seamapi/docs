@@ -347,7 +347,7 @@ You can [redirect to the Connect Webview URL](embedding-a-connect-webview-in-you
 
 The Connect Webview guides your app user through the following steps:
 
-1. In introduction page of the Connect Webview, the user clicks Continue.
+1. In the introduction page of the Connect Webview, the user clicks Continue.
 
 <figure><img src="../../.gitbook/assets/connect-webview-user-intro-page.png" alt="Connect Webview introduction page" width="239"><figcaption></figcaption></figure>
 
