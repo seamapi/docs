@@ -660,6 +660,50 @@ curl -X 'POST' \
 }
 ```
 {% endtab %}
+
+{% tab title="JavaScript" %}
+**Request:**
+
+```javascript
+const deviceId = "ea12f6c6-e63e-447d-856b-ec9e92981000"
+
+const createdAccessCode = await seam.accessCodes.create({
+  device_id: deviceId,
+  name: "my hourly-bound offline code",
+  starts_at: "2023-12-22T06:00:00-00:00",
+  ends_at: "2023-12-22T18:00:00-00:00",
+  is_offline_access_code: true
+})
+
+console.log(createdAccessCode)
+```
+
+**Response:**
+
+```json
+{
+  access_code_id: 'b4977781-7108-478a-a5ec-764b51ba2647',
+  device_id: 'ea12f6c6-e63e-447d-856b-ec9e92981000',
+  name: 'my hourly-bound offline code',
+  appearance: null,
+  code: null,
+  is_waiting_for_code_assignment: true,
+  common_code_key: null,
+  type: 'time_bound',
+  status: 'unset',
+  starts_at: '2023-12-22T06:00:00.000Z',
+  ends_at: '2023-12-22T18:00:00.000Z',
+  is_backup_access_code_available: false,
+  created_at: '2023-12-11T21:46:32.914Z',
+  errors: [],
+  warnings: [],
+  is_managed: true,
+  is_external_modification_allowed: false,
+  is_offline_access_code: true,
+  is_one_time_use: false
+}
+```
+{% endtab %}
 {% endtabs %}
 
 ### Creating a Daily-Bound Offline Access Code&#x20;
@@ -765,6 +809,51 @@ curl -X 'POST' \
     "is_one_time_use": false
   },
   "ok": true
+}
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+**Request:**
+
+```javascript
+const deviceId = "ea12f6c6-e63e-447d-856b-ec9e92981000"
+
+const createdAccessCode = await seam.accessCodes.create({
+  device_id: deviceId,
+  name: "my daily-bound offline code",
+  starts_at: "2023-12-22T23:00:00-00:00",
+  ends_at: "2023-12-27T22:59:00-00:00",
+  max_time_rounding: "1d",
+  is_offline_access_code: true
+})
+
+console.log(createdAccessCode)
+```
+
+**Response:**
+
+```json
+{
+  access_code_id: 'fb044bde-df9b-4130-bc1a-c0254ab919aa',
+  device_id: 'ea12f6c6-e63e-447d-856b-ec9e92981000',
+  name: 'my daily-bound offline code',
+  appearance: null,
+  code: null,
+  is_waiting_for_code_assignment: true,
+  common_code_key: null,
+  type: 'time_bound',
+  status: 'unset',
+  starts_at: '2023-12-22T23:00:00.000Z',
+  ends_at: '2023-12-27T22:59:00.000Z',
+  is_backup_access_code_available: false,
+  created_at: '2023-12-11T22:06:27.366Z',
+  errors: [],
+  warnings: [],
+  is_managed: true,
+  is_external_modification_allowed: false,
+  is_offline_access_code: true,
+  is_one_time_use: false
 }
 ```
 {% endtab %}

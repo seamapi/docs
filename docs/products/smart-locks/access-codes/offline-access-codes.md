@@ -8,7 +8,10 @@ description: >-
 
 ## Overview
 
-This guide explains how to create [offline access (PIN) codes](./#offline-access-codes) for smart locks that support these types of codes. Use the [Access Codes](../../../api-clients/access-codes/) API to generate a [time-bound](./#time-bound-offline-access-codes) or [one-time-use](./#one-time-use-offline-access-codes) offline access code.
+This guide explains how to create [offline access (PIN) codes](./#offline-access-codes) for smart locks that support these types of codes. Use the [Access Codes](../../../api-clients/access-codes/) API to generate a [time-bound](./#time-bound-offline-access-codes) or [one-time-use](./#one-time-use-offline-access-codes) offline access code. Note that Seam support for offline access code functions varies depending on the device manufacturer. For details, see the corresponding device guide.
+
+* [igloohome Locks device guide](../../../device-guides/igloohome-locks.md)
+* [dormakaba Oracode Locks device guide](../../../device-guides/dormakaba-oracode-locks.md)
 
 ***
 
@@ -16,7 +19,10 @@ This guide explains how to create [offline access (PIN) codes](./#offline-access
 
 To confirm that Seam supports access code programming for your device, use [Get Device](../../../api-clients/devices/get-device.md) or [Get Lock](../../../api-clients/locks/get-lock.md) to query the device and check the `capabilities_supported` and `offline_access_codes_enabled` properties for the device. Ensure that the `capabilities_supported` list includes `access_code` and that `offline_access_codes_enabled` is `true`.
 
-Further, before creating an offline access code, it is imperative to understand any manufacturer- or device-specific constraints, such as the maximum number of access codes, any activation requirements, and so on. For details, see the corresponding [device guide](../../../device-guides/igloohome-locks.md).
+Further, before creating an offline access code, it is imperative to understand any manufacturer- or device-specific constraints, such as the maximum number of access codes, any time slot or activation requirements, and so on. For details, see the corresponding device guide and any manufacturer-specific properties within the retrieved lock.
+
+* [igloohome Locks device guide](../../../device-guides/igloohome-locks.md)
+* [dormakaba Oracode Locks device guide](../../../device-guides/dormakaba-oracode-locks.md)
 
 {% tabs %}
 {% tab title="Python" %}
@@ -74,20 +80,90 @@ curl -X 'POST' \
 }
 ```
 {% endtab %}
+
+{% tab title="JavaScript" %}
+**Request:**
+
+```javascript
+const lock = await seam.locks.get("ea12f6c6-e63e-447d-856b-ec9e92981000")
+console.log(lock)
+console.log("\nPredefined time slots:")
+console.log(lock.properties.dormakaba_oracode_metadata.predefined_time_slots)
+```
+
+**Response:**
+
+```json
+{
+  device_id: 'ea12f6c6-e63e-447d-856b-ec9e92981000',
+  device_type: 'dormakaba_oracode_door',
+  capabilities_supported: [ 'access_code' ], // Device supports access code actions.
+  properties: {
+    ...
+    dormakaba_oracode_metadata: {
+      ...
+      iana_timezone: 'Europe/Tirane',
+      predefined_time_slots: [Array]
+    },
+    ...
+    offline_access_codes_enabled: true, // Device supports offline access codes.
+    ...
+  },
+  ...
+}
+
+Predefined time slots:
+// Each dormakaba Oracode offline access code must adhere to one of these 
+// predefined user levels (time slots).
+[
+  {
+    name: 'User 123 D 24H',
+    prefix: 123,
+    is_master: false,
+    is_24_hour: true,
+    is_one_shot: false,
+    check_in_time: '00:00:00[Europe/Tirane]',
+    check_out_time: '23:59:00[Europe/Tirane]',
+    is_biweekly_mode: false,
+    dormakaba_oracode_user_level_id: '12e0e160-23e6-4f9b-a82a-ea93d543d1fa',
+    ext_dormakaba_oracode_user_level_prefix: 123
+  },
+  ...
+  {
+    name: 'User 126 D 7am-7pm',
+    prefix: 126,
+    is_master: false,
+    is_24_hour: false,
+    is_one_shot: false,
+    check_in_time: '07:00:00[Europe/Tirane]',
+    check_out_time: '19:00:00[Europe/Tirane]',
+    is_biweekly_mode: false,
+    dormakaba_oracode_user_level_id: '3f0b3c81-fcb6-4c60-8fca-ab020e84990e',
+    ext_dormakaba_oracode_user_level_prefix: 126
+  }
+  ...
+]
+```
+{% endtab %}
 {% endtabs %}
 
 ***
 
 ## Creating Time-Bound Offline Access Codes
 
-You can create time-bound offline access codes with validity durations at either the hour level or the day level.
+For [igloohome locks](../../../device-guides/igloohome-locks.md) and [dormakaba Oracode locks](../../../device-guides/dormakaba-oracode-locks.md), you can create time-bound offline access codes with validity durations at either the hour level or the day level.
 
-Some device manufacturers enforce a maximum duration for hourly-bound offline access codes. For example, [igloohome](../../../device-guides/igloohome-locks.md) enforces the following duration rules for hourly- and daily-bound offline access codes:
+Some device manufacturers enforce a maximum duration for hourly-bound offline access codes. For example, [igloohome](../../../device-guides/igloohome-locks.md) and [dormakaba Oracode](../../../device-guides/dormakaba-oracode-locks.md) enforce the following duration rules for hourly- and daily-bound offline access codes:
 
-| Code Type          | Duration Rule            |
-| ------------------ | ------------------------ |
-| Hourly-bound codes | 1 to 672 hours (28 days) |
-| Daily-bound codes  | 29 to 367 days           |
+| Manufacturer      | Code Type                    | Duration Rule            |
+| ----------------- | ---------------------------- | ------------------------ |
+| igloohome         | Hourly-bound codes           | 1 to 672 hours (28 days) |
+| igloohome         | Daily-bound codes            | 29 to 367 days           |
+| dormakaba Oracode | Hourly- or daily-bound codes | 1 to 31 days             |
+
+{% hint style="info" %}
+dormakaba Oracode locks also use specific access code time slots (called "user levels" or "user prefixes"). You must adhere to these time slots when you create offline access codes. For more information, see [User Levels](../../../device-guides/dormakaba-oracode-locks.md#user-levels).
+{% endhint %}
 
 To [create an hourly-bound offline access code](offline-access-codes.md#program-an-hourly-bound-offline-access-code), set `is_offline_access_code` to `true`, and specify the desired `starts_at` and `ends_at` date and time.&#x20;
 
@@ -199,6 +275,50 @@ curl -X 'POST' \
     "is_one_time_use": false
   },
   "ok": true
+}
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+**Request:**
+
+```javascript
+const deviceId = "ea12f6c6-e63e-447d-856b-ec9e92981000"
+
+const createdAccessCode = await seam.accessCodes.create({
+  device_id: deviceId,
+  name: "my hourly-bound offline code",
+  starts_at: "2023-12-22T06:00:00-00:00",
+  ends_at: "2023-12-22T18:00:00-00:00",
+  is_offline_access_code: true
+})
+
+console.log(createdAccessCode)
+```
+
+**Response:**
+
+```json
+{
+  access_code_id: 'b4977781-7108-478a-a5ec-764b51ba2647',
+  device_id: 'ea12f6c6-e63e-447d-856b-ec9e92981000',
+  name: 'my hourly-bound offline code',
+  appearance: null,
+  code: null,
+  is_waiting_for_code_assignment: true,
+  common_code_key: null,
+  type: 'time_bound',
+  status: 'unset',
+  starts_at: '2023-12-22T06:00:00.000Z',
+  ends_at: '2023-12-22T18:00:00.000Z',
+  is_backup_access_code_available: false,
+  created_at: '2023-12-11T21:46:32.914Z',
+  errors: [],
+  warnings: [],
+  is_managed: true,
+  is_external_modification_allowed: false,
+  is_offline_access_code: true,
+  is_one_time_use: false
 }
 ```
 {% endtab %}
@@ -333,6 +453,51 @@ curl -X 'POST' \
 }
 ```
 {% endtab %}
+
+{% tab title="JavaScript" %}
+**Request:**
+
+```javascript
+const deviceId = "ea12f6c6-e63e-447d-856b-ec9e92981000"
+
+const createdAccessCode = await seam.accessCodes.create({
+  device_id: deviceId,
+  name: "my daily-bound offline code",
+  starts_at: "2023-12-22T23:00:00-00:00",
+  ends_at: "2023-12-27T22:59:00-00:00",
+  max_time_rounding: "1d",
+  is_offline_access_code: true
+})
+
+console.log(createdAccessCode)
+```
+
+**Response:**
+
+```json
+{
+  access_code_id: 'fb044bde-df9b-4130-bc1a-c0254ab919aa',
+  device_id: 'ea12f6c6-e63e-447d-856b-ec9e92981000',
+  name: 'my daily-bound offline code',
+  appearance: null,
+  code: null,
+  is_waiting_for_code_assignment: true,
+  common_code_key: null,
+  type: 'time_bound',
+  status: 'unset',
+  starts_at: '2023-12-22T23:00:00.000Z',
+  ends_at: '2023-12-27T22:59:00.000Z',
+  is_backup_access_code_available: false,
+  created_at: '2023-12-11T22:06:27.366Z',
+  errors: [],
+  warnings: [],
+  is_managed: true,
+  is_external_modification_allowed: false,
+  is_offline_access_code: true,
+  is_one_time_use: false
+}
+```
+{% endtab %}
 {% endtabs %}
 
 #### 2. Verify Successful Time-Bound Code Registration
@@ -352,7 +517,7 @@ There are two methods to verify that an time-bound offline access code has been 
 
 ## Creating One-Time-Use Offline Access Codes
 
-You can create one-time-use offline access codes that are valid for 24 hours from the `starts_at` date and time that you configure. These codes expire after a single use. To confirm that your device supports one-time-use offline access codes, see the corresponding [device guide](../../../device-guides/igloohome-locks.md).
+For [igloohome locks](../../../device-guides/igloohome-locks.md), you can create one-time-use offline access codes that are valid for 24 hours from the `starts_at` date and time that you configure. These codes expire after a single use. To confirm that your device supports one-time-use offline access codes, see the corresponding [device guide](../../../device-guides/igloohome-locks.md).
 
 To create a one-time-use offline access code, first issue a creation request. In this request, set `is_offline_access_code` and `is_one_time_use` to `true`, and specify the desired `starts_at` date and time. Then, poll or use a webhook to confirm the successful code registration in the offline access code server that the device manufacturer maintains.
 

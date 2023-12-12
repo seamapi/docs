@@ -10,7 +10,7 @@ igloohome produces various types of smart locks for the residential, rental prop
 
 Seam integrates with igloohome locks through the [igloohome Wi-Fi Bridge](https://www.igloohome.co/en-US/products/bridge) to provide lock, unlock, and customizable access code provisioning actions. You can link up to five igloohome locks with a single igloohome Bridge.
 
-In addition, the Seam integration supports the generation of offline access codes (that is, algoPIN codes) for igloohome locks without the need for the igloohome Bridge.
+In addition, the Seam integration supports the generation of [offline access codes](igloohome-locks.md#offline-access-code-support) (that is, algoPIN codes) for igloohome locks without the need for the igloohome Bridge.
 
 ***
 
@@ -18,15 +18,17 @@ In addition, the Seam integration supports the generation of offline access code
 
 This integration supports a series of igloohome devices for lock, unlock, and customizable access code provisioning actions. In addition, this integration supports a wider set of igloohome devices for offline access code (algoPIN) provisioning.
 
-#### igloohome Bridge Support
+### igloohome Bridge Support
 
 This integration supports lock, unlock, and customizable access code provisioning actions for a subset of igloohome smart locks, when combined with the [igloohome Bridge](https://www.igloohome.co/en-US/products/bridge). For a list of compatible igloohome smart locks, see the **Bridge Compatibility** area on the [igloohome Bridge ](https://www.igloohome.co/en-US/products/bridge)page.
 
 Each igloohome Bridge supports up to five compatible igloohome locks.
 
-#### Offline Access Code Support
+### Offline Access Code Support
 
-This integration supports the generation of offline access codes (that is, [algoPIN](https://www.igloohome.co/en-US/how-it-works) codes) for all igloohome lock models, without the need for a bridge. You generate offline access (PIN) codes remotely, and the manufacturer maintains a server-based registry of synchronized encryption keys (tokens) to enable these offline codes. Then, owners or managers can share these codes with users through messaging or other similar applications, and the users do not need to install a special application to unlock the device. For more information, see [Offline Access Codes](../products/smart-locks/access-codes/#offline-access-codes). [See below](igloohome-locks.md#a) to read about the special requirements around offline access codes for igloohome locks.
+This integration supports the generation of offline access codes (that is, [algoPIN](https://www.igloohome.co/en-US/how-it-works) codes) for all igloohome lock models, without the need for a bridge. You generate offline access (PIN) codes remotely, and the manufacturer maintains a server-based registry of synchronized encryption keys (tokens) to enable these offline codes. Then, owners or managers can share these codes with users through messaging or other similar applications, and the users do not need to install a special application to unlock the device.
+
+To learn about the special requirements regarding offline access codes for igloohome locks, see [Offline Access Code Requirements](igloohome-locks.md#offline-access-code-requirements). For more information about using offline access codes, see [Offline Access Codes](../products/smart-locks/access-codes/#offline-access-codes).
 
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
@@ -62,9 +64,9 @@ To create a [Connect Webview](../core-concepts/connect-webviews/) that enables y
 
 ***
 
-## Offline access code requirements
+## Offline Access Code Requirements
 
-Seam supports the following types of offline access codes for igloohome locks:
+Seam supports the following types of [offline access codes](../products/smart-locks/access-codes/offline-access-codes.md) for igloohome locks:
 
 * Hourly-bound
 * Daily-bound
