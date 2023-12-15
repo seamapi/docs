@@ -6,7 +6,7 @@ description: Guide for using the Brivo Access platform with Seam
 
 ## Overview
 
-Seam integrates with Brivo Access, which is an access control platform for applications ranging from small, single-site facilities to multi-site commercial enterprises and multifamily residential properties. Brivo produces readers and control panels. In addition, through these Brivo control panels, the Brivo Access platform integrates with a variety of wireless smart locks, including Allegion, ASSA ABLOY Aperio, Z-Wave, and Salto.
+Seam integrates with Brivo, which produces an access control platform for applications ranging from small, single-site facilities to multi-site commercial enterprises and multifamily residential properties. Brivo produces readers and control panels. In addition, through these Brivo control panels, the Brivo Access platform integrates with a variety of wireless smart locks, including Allegion, ASSA ABLOY Aperio, Z-Wave, and Salto.
 
 ***
 
