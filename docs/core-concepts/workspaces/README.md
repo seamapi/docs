@@ -87,6 +87,10 @@ Occasionally, an app may also be using multiple Seam workspaces. For example, a 
 
 <figure><img src="../../.gitbook/assets/less-common-workspace-setup.png" alt="Some development scenarios may warrant using multiple production workspaces."><figcaption></figcaption></figure>
 
+{% hint style="info" %}
+Note that when you use multiple workspaces, you either need to create an [API key](api-keys.md) for each workspace or create a single [Personal Access Token](personal-access-tokens.md) (PAT) for use with all workspaces and then specify the ID of the workspace that you want to access.
+{% endhint %}
+
 ***
 
 ## Sandbox Workspaces
@@ -99,9 +103,17 @@ Importantly, virtual devices behave identically to the corresponding real device
 You can only connect virtual devices in a sandbox workspace. To connect a real device, switch to a production workspace.
 {% endhint %}
 
+### Create a Sandbox Workspace
+
+1. In the upper-right corner of the [Seam Console](https://console.seam.co/), click the down arrow to display the workspace list.
+2. Click **+ Add Workspace**.
+3. In the **Add a Workspace** dialog, type a name for your new workspace and your company name.
+4. Enable **Sandbox mode**.
+5. Click **Create Workspace**.
+
 ### Connecting Virtual Devices
 
-To connect virtual devices, specify the login credentials for test device accounts in the [Seam Console](./#connect-devices-using-the-seam-console) or in [Connect Webviews](./#connect-devices-using-connect-webviews) within you apps. All manufacturers and devices that Seam supports have one or more sandbox test accounts with pre-seeded devices. For login credentials for all test device accounts, see the [**Sandbox & Sample Data**](../../device-guides/sandbox-and-sample-data/) section.
+To connect virtual devices, specify the login credentials for test device accounts in the [Seam Console](./#connect-devices-using-the-seam-console) or in [Connect Webviews](./#connect-devices-using-connect-webviews) within you apps. All manufacturers and devices that Seam supports have one or more sandbox test accounts with pre-seeded devices. For login credentials for all test device accounts, see [Sandbox & Sample Data](../../device-guides/sandbox-and-sample-data/).
 
 ### Interacting with a Virtual Device
 

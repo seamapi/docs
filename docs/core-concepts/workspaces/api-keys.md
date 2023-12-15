@@ -6,15 +6,15 @@ description: >-
 
 # API Keys
 
-You create an API key in your [sandbox workspace](./#sandbox-workspaces) or [production workspace](./#production-workspaces) to authorize your use of the Seam API. When using any of the Seam APIs or SDKs, you must provide this API key to issue commands that enable you to control the devices in your workspace. It is useful to export your API key as an environment variable. You can also test your API key.
+You [create an API key](api-keys.md#create-an-api-key) in your [sandbox workspace](./#sandbox-workspaces) or [production workspace](./#production-workspaces) to authorize your use of the Seam API. When using the Seam HTTP API or any of the Seam SDKs, you must provide this API key to issue commands that enable you to control the devices in the associated workspace. It is useful to [export your API key](api-keys.md#export-an-api-key) as an environment variable. You can also [test your API key](api-keys.md#test-an-api-key).
+
+{% hint style="info" %}
+If you need to access multiple workspaces, create a [Personal Access Token](personal-access-tokens.md) to use instead of a workspace-specific API key.
+{% endhint %}
 
 ## Create an API Key
 
 Each API key is associated with a specific workspace. For example, if you have a sandbox workspace and a production workspace, you must create and use a different API key for each of these two workspaces.
-
-{% hint style="info" %}
-If you need to access multiple workspaces, create a [Personal Access Token](personal-access-tokens.md)**.**
-{% endhint %}
 
 1. In the upper-right corner of the [Seam Console](https://console.seam.co/), click the down arrow to display the workspace list.
 2. Click the workspace for which you want to create an API key.
@@ -31,9 +31,9 @@ Production API keys do not include the `test` token, while API keys for sandbox 
 
 ## Export an API Key
 
-Once you have created an API key, it is useful to export this key as an environment variable. All installed Seam SDKs automatically uses this API key once you have exported it.
+Once you have created an API key, it is useful to export this key as an environment variable. Then, all installed Seam SDKs automatically use this exported API key.
 
-1. Open a terminal window and enter the following command to export your API key:
+Open a terminal window and enter the following command to export your API key:
 
 ```sh
 $ export SEAM_API_KEY=seam_test2bMS_94SrGUXuNR2JmJkjtvBQDg5c
