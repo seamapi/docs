@@ -37,7 +37,7 @@ To create a [Connect Webview](../core-concepts/connect-webviews/) that enables y
 
 ### Access Code Limitations
 
-Salto Locks does not allow a user to configure custom PIN codes. When creating an access code on a Salto door lock, their system will automatically generate a 6-10 digit PIN code. You will be able to retrieve the PIN code from the `code` property on the access code object.
+Salto Locks does not allow users to configure custom PIN codes. When creating an access code on a Salto door lock, the Salto system automatically generates a six- to ten-digit PIN code. Consequently, when you use the Seam API to [create an access code](../products/smart-locks/access-codes/creating-access-codes.md) for a Salto lock, do not include the `code` parameter. Then, you can [retrieve the created access code object](../products/smart-locks/access-codes/retrieving-access-codes.md#retrieving-individual-access-codes) and view the generated PIN code in the `code` property.
 
 ### Salto-Specific Access Code Errors
 
