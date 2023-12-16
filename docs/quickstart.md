@@ -44,7 +44,17 @@ To control the devices that you connected in [Step 1](quickstart.md#step-1-conne
 
 ### Install the Seam SDK
 
-Install one of the Seam SDKs in the programming language of your choice. Seam supports many programming languages, such as Javascript, Python, Ruby, Java, PHP, C#, and more.
+Install one of the Seam SDKs in the programming language of your choice.&#x20;
+
+Seam supports many programming languages, such as the following:
+
+* [JavaScript / TypeScript](https://github.com/seamapi/javascript)
+* [Python](https://github.com/hello-seam/seamapi-python)
+* [Ruby Gem](https://rubygems.org/gems/seamapi)
+* [PHP](https://github.com/seamapi/php)
+* [Java](https://github.com/seamapi/java)
+* [C#](https://github.com/seamapi/csharp)
+* [Go](https://github.com/seamapi/go)
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -56,6 +66,7 @@ npm i seamapi
 {% tab title="Python" %}
 ```bash
 pip install seamapi
+# For some development environments, use pip3 in this command instead of pip.
 ```
 {% endtab %}
 
