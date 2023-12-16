@@ -1,7 +1,7 @@
-# Ecobee Sample Data
+# ecobee Thermostats Sample Data
 
-### Users
+Use the following set of credentials to add virtual [ecobee thermostats](../ecobee-thermostats.md) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
-| Email            | Password |
+| Email Address    | Password |
 | ---------------- | -------- |
 | jane@example.com | 1234     |

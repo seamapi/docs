@@ -1,10 +1,7 @@
-# Yale Sample Data
+# Yale Locks Sample Data
 
-The sample data for august includes the following data...
+Use the following set of credentials to add virtual [Yale locks](../yale-locks.md) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
-### Users
-
-| Email             | Password | Two Factor Code |
+| Email Address    | Password | Two Factor Code |
 | ---------------- | -------- | --------------- |
-| jane@example.com  | 1234     | 123456          |
-
+| jane@example.com | 1234     | 123456          |

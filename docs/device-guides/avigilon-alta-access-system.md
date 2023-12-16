@@ -6,7 +6,7 @@ description: Guide for using the Avigilon Alta access system with Seam
 
 ## Overview
 
-Seam integrates with the Avigilon Alta access control system that provides cloud-based access control for a variety of industries, including corporate, commercial, hospitality, multifamily residential, and others. With support for doors, elevators, turnstiles, and gates, the Avigilon Alta access control system enables you to secure a single building or multiple buildings using the same system. Further, users need only a single credential for all doors and access points.&#x20;
+Seam integrates with the Avigilon Alta access system that provides cloud-based access control for a variety of industries, including corporate, commercial, hospitality, multifamily residential, and others. With support for doors, elevators, turnstiles, and gates, the Avigilon Alta access control system enables you to secure a single building or multiple buildings using the same system. Further, users need only a single credential for all doors and access points.&#x20;
 
 ***
 

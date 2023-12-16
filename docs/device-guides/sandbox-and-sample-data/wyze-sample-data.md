@@ -1,14 +1,19 @@
-# Wyze Sample Data
+# Wyze Locks Sample Data
 
-### Users
+Use the following set of credentials to add virtual [Wyze locks](../wyze-locks.md) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
-| username             | Password | Wyze API Key | Wyze API Key ID |
-| -------------------- | -------- | ------------ | --------------- |
-| jane@example.com     | 1234     | ABC123ABC    | ABC123ABC       |
+| Field           | Value            |
+| --------------- | ---------------- |
+| Wyze API Key ID | ABC123ABC        |
+| Wyze API Key    | ABC123ABC        |
+| Email           | jane@example.com |
+| Password        | 1234             |
 
-### Locks
+## Virtual Devices
 
-| Owner            | Lock Name | Lock Type                      |
-| ---------------- | --------- | ------------------------------ |
-| jane@example.com | Wyze Lock | Wyze Lock with Gateway         |
-| jane@example.com | Wyze Lock | Wyze Lock Bolt, Bluetooth Only |
+This test account provides the following virtual connected devices:
+
+| Lock Name | Lock Type                      |
+| --------- | ------------------------------ |
+| Wyze Lock | Wyze Lock with Gateway         |
+| Wyze Lock | Wyze Lock Bolt, Bluetooth Only |

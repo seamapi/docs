@@ -1,8 +1,7 @@
-# Igloohome Sample Data
+# igloohome Locks Sample Data
 
-### Users
+Use the following set of credentials to add virtual [igloohome locks](../igloohome-locks.md) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
-| Email             | Password |
-| ----------------- | -------- |
-| jane@example.com  | 1234     |
-
+| Email Address    | Password |
+| ---------------- | -------- |
+| jane@example.com | 1234     |

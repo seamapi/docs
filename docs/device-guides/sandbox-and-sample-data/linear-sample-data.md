@@ -1,6 +1,6 @@
-# Linear Callbox Sample Data
+# Linear Callboxes Sample Data
 
-### Users
+Use the following set of credentials to add virtual Linear callboxes to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
 | Phone Number | Master Code | Unit number |
 | ------------ | ----------- | ----------- |

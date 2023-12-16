@@ -1,11 +1,7 @@
-# TTLock Sample Data
+# TTLock Locks Sample Data
 
-The sample data for TTLock includes the following data.
+Use the following set of credentials to add virtual [TTLock locks](../ttlock-locks.md) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
-### Users
-
-Use this account to log into the sandbox TTLock account:
-
-| Email            | Password |
+| Email Address    | Password |
 | ---------------- | -------- |
 | jane@example.com | 1234     |

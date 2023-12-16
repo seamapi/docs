@@ -1,9 +1,7 @@
-# DoorKing Callbox Sample Data
+# Doorking Callboxes Sample Data
 
-The sample data for doorking includes the following data...
+Use the following set of credentials to add virtual Doorking callboxes to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
-### Users
-
-| Serial number | Phone Number | Master Code | Tone open number |
+| Serial Number | Phone Number | Master Code | Tone Open Number |
 | ------------- | ------------ | ----------- | ---------------- |
 | fake-serial   | +18888888888 | 123456      | 1                |

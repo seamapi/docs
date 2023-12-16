@@ -1,4 +1,6 @@
-# Lockly Lock Sample Data
+# Lockly Locks Sample Data
+
+Use the following set of credentials to add virtual [Lockly locks](../lockly-locks.md) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
 | Field                  | Value            |
 | ---------------------- | ---------------- |

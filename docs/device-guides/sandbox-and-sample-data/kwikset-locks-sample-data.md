@@ -1,16 +1,15 @@
 # Kwikset Locks Sample Data
 
-The sample data for kwikset includes the following data...
+Use the following set of credentials to add virtual [Kwikset locks](../kwikset-locks.md) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
-### Users
-
-| Email            | Password |
+| Email Address    | Password |
 | ---------------- | -------- |
 | jane@example.com | 1234     |
 
-### Locks
+## Virtual Devices
 
-| Owner            | Lock Name  |
-| ---------------- | ---------- |
+This test account provides the following virtual connected device:
+
+| Owner            | Lock Name          |
+| ---------------- | ------------------ |
 | jane@example.com | Kwikset Halo Touch |
-

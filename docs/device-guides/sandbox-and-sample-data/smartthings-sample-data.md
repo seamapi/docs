@@ -1,32 +1,14 @@
-# SmartThings Sample Data
+# SmartThings Hub Sample Data
 
-### JSON Representation
+Use the following set of credentials to add virtual SmartThings Hub-connected devices to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
-```json
-{
-    "users": [
-        {
-            "user_id": "user_1",
-            "email": "jane@example.com",
-            "password": "1234"
-        }
-    ],
-    "locks": [
-        {
-            "user_id": "user_1",
-            "lock_id": "790ba079-bd09-4087-9225-e2c722972b0e",
-            "status": "unlocked"
-        }
-    ]
-}
-```
+<table><thead><tr><th width="213.45238095238096">Email Address</th><th>Password</th></tr></thead><tbody><tr><td>jane@example.com</td><td>1234</td></tr></tbody></table>
 
-### Users
+## Virtual Devices
 
-<table><thead><tr><th width="150">user_id</th><th width="213.45238095238096">email</th><th>password</th><th># Locks</th></tr></thead><tbody><tr><td>user_1</td><td>jane@example.com</td><td>1234</td><td>1</td></tr></tbody></table>
+This test account provides the following virtual connected devices:
 
-### Locks
-
-| lock\_id                               | Owned By | Initial Status |
-| -------------------------------------- | -------- | -------------- |
-| `790ba079-bd09-4087-9225-e2c722972b0e` | Jane     | unlocked       |
+| Lock Name      | Initial Status |
+| -------------- | -------------- |
+| Yale Door Lock | Unlocked       |
+| Yale Door Lock | Locked         |

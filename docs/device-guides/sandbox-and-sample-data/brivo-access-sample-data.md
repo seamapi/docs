@@ -1,8 +1,6 @@
 # Brivo Access Sample Data
 
-The sample data for [Brivo Access](../brivo-access.md) includes the following data:
-
-### Demo Account
+Use the following set of credentials to add virtual [Brivo Access](../brivo-access.md)-connected devices to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
 | Brivo Access API Key | Username         | Password |
 | -------------------- | ---------------- | -------- |

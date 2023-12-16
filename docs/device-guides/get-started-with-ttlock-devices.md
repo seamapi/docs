@@ -8,7 +8,7 @@ description: Learn how to connect and control your TTLock locks with the Seam AP
 
 ## Overview
 
-Seam provides a universal API to connect and control many brands of locks, including TTLock. This guide provides a rapid introduction to connecting and controlling your [TTlock](https://www.seam.co/manufacturers/ttlock) locks using the Seam API. To learn more about other device brands supported by the Seam API, such as August, Igloohome, Schlage, and Kwikset, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
+Seam provides a universal API to connect and control many brands of locks, including TTLock. This guide provides a rapid introduction to connecting and controlling your [TTLock](https://www.seam.co/manufacturers/ttlock) locks using the Seam API. To learn more about other device brands supported by the Seam API, such as August, Igloohome, Schlage, and Kwikset, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
 ## 1 — Install Seam SDK
 

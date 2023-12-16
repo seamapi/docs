@@ -1,18 +1,16 @@
-# 2N Intercom Sample Data
+# 2N Intercoms Sample Data
 
-The sample data for 2N includes the following data.
+Use the following sets of account and then device credentials to add virtual [2N intercoms](../2n-intercom-systems.md) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
-### Users
+## Account Credentials
 
-Use this account to log into the sandbox My2N account
-
-| Email            | Password |
+| Email Address    | Password |
 | ---------------- | -------- |
 | jane@example.com | 1234     |
 
-### Intercom Devices
+## Device Credentials
 
-After entering the credentials for My2N, you'll have to enter the credentials of an existing HTTP user on each device you want to connect. All sandbox devices have a single HTTP user with the following credentials:
+All 2N virtual devices use the following credentials:
 
 | Username | Password |
 | -------- | -------- |

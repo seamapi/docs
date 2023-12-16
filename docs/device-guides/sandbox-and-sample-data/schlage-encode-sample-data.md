@@ -1,54 +1,15 @@
-# Schlage Encode Sample Data
+# Schlage Encode Locks Sample Data
 
-### JSON Representation
+Use any of the following sets of credentials to add virtual Schlage Encode locks to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
-```json
-{
-    "users": [
-        {
-            "user_id": "user_1",
-            "email": "jane@example.com",
-            "password": "1234"
-        },
-        {
-            "user_id": "user_2",
-            "email": "john@example.com",
-            "password": "1234"
-        },
-        {
-            "user_id": "user_3",
-            "email": "andrew@example.com",
-            "password": "1234"
-        }
-    ],
-    "locks": [
-        {
-            "user_id": "user_1",
-            "lock_id": "lock_1",
-            "status": "locked"
-        },
-        {
-            "user_id": "user_1",
-            "lock_id": "lock_2",
-            "status": "unlocked"
-        },
-        {
-            "user_id": "user_2",
-            "lock_id": "lock_3",
-            "status": "locked"
-        }
-    ]
-}
-```
+<table><thead><tr><th width="213.45238095238096">Email Address</th><th>Password</th></tr></thead><tbody><tr><td>jane@example.com</td><td>1234</td></tr><tr><td>john@example.com</td><td>1234</td></tr><tr><td>andrew@example.com</td><td>1234</td></tr></tbody></table>
 
-### Users
+## Virtual Devices
 
-<table><thead><tr><th width="150">user_id</th><th width="213.45238095238096">email</th><th>password</th><th># Locks</th></tr></thead><tbody><tr><td>user_1</td><td>jane@example.com</td><td>1234</td><td>2</td></tr><tr><td>user_2</td><td>john@example.com</td><td>1234</td><td>1</td></tr><tr><td>user_3</td><td>andrew@example.com</td><td>1234</td><td>0</td></tr></tbody></table>
+These test accounts provide the following virtual connected devices:
 
-### Locks
-
-| lock\_id | Owned By | Initial Status |
-| -------- | -------- | -------------- |
-| lock\_1  | Jane     | locked         |
-| lock\_2  | Jane     | unlocked       |
-| lock\_3  | John     | locked         |
+| Lock Name  | Initial Status |
+| ---------- | -------------- |
+| FRONT DOOR | Locked         |
+| BACK DOOR  | Locked         |
+| GARAGE     | Locked         |

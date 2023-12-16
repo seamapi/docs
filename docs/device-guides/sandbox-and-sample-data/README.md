@@ -1,14 +1,10 @@
 ---
 description: >-
-  Use a sandbox environment to test your device integration without needing any
-  physical devices.
+  Test your device integration without needing any physical devices using a
+  Sandbox environment.
 ---
 
 # Sandbox & Sample Data
-
-You can develop and test your Seam integration against our [sandbox test environment](../../core-concepts/workspaces/#sandbox-workspaces). Each environment comes with test accounts and devices for you to connect.
-
-To use a sandbox, you will first need to create a sandbox workspace and create an API key within this Sandbox. After you create your Sandbox workspace, you can connect one or more virtual devices and brands using the sample account data available below.
 
 {% content-ref url="2n-intercoms-sample-data.md" %}
 [2n-intercoms-sample-data.md](2n-intercoms-sample-data.md)

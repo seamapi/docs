@@ -1,9 +1,7 @@
-# Genie Aladdin Sample Data
+# Genie Garage Openers Sample Data
 
-### Users
+Use the following set of credentials to add virtual Genie garage openers to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
-| Email            | Password |
+| Email Address    | Password |
 | ---------------- | -------- |
 | john@example.com | 1234     |
-
-

@@ -1,9 +1,7 @@
-# Nuki Sample Data
+# Nuki Locks Sample Data
 
-### Users
+Use the following set of credentials to add virtual [Nuki locks](../nuki-locks.md) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
-| Email            | Password |
+| Email Address    | Password |
 | ---------------- | -------- |
 | jane@example.com | 1234     |
-
-
