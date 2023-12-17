@@ -290,6 +290,7 @@ const createdAccessCode = await seam.accessCodes.create({
   name: "my hourly-bound offline code",
   starts_at: "2023-12-22T06:00:00-00:00",
   ends_at: "2023-12-22T18:00:00-00:00",
+  max_time_rounding: "1h",
   is_offline_access_code: true
 })
 
