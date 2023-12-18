@@ -162,7 +162,7 @@ assert some_lock.properties["online"] is True
 assert some_lock.properties["battery_level"] is True
 
 print(some_lock)
-# Device(device_id='60d0f1b6-26ae-4366-8d1b-d20ad0d6a62e', device_type='igloohome_lock', location=None, properties={'locked': False, 'online': True, 'manufacturer': 'igloohome', 'battery_level': 0.86, 'igloohome_metadata': {'device_id': '545636388', 'device_name': 'Office Lock'}, 'max_active_codes_supported': 100, 'supported_code_lengths': [6], 'name': 'Office Lock'}, capabilities_supported=['access_code', 'lock'], errors=[])
+# Device(device_id='60d0f1b6-26ae-4366-8d1b-d20ad0d6a62e', device_type='igloohome_lock', location=None, properties={'locked': False, 'online': True, 'manufacturer': 'igloohome', 'battery_level': 0.86, 'igloohome_metadata': {'device_id': '545636388', 'device_name': 'Office Lock'}, 'max_active_codes_supported': 100, 'supported_code_lengths': [6], 'name': 'Office Lock'}, enabled_capabilities=['access_code', 'lock'], errors=[])
 ```
 {% endtab %}
 
@@ -180,7 +180,7 @@ console.log(someLock)
    {
   device_id: '60d0f1b6-26ae-4366-8d1b-d20ad0d6a62e',
   device_type: 'igloohome_lock',
-  capabilities_supported: [ 'access_code', 'lock' ],
+  enabled_capabilities: [ 'access_code', 'lock' ],
   properties: {
     locked: false,
     online: true,
@@ -231,7 +231,7 @@ $locks = $seam->locks->list();
 
 echo json_encode($locks);
 /*
-[{"device_id":"60d0f1b6-26ae-4366-8d1b-d20ad0d6a62e","workspace_id":"d7418ff3-a476-4f48-9a4b-211d1d21a03d","connected_account_id":"32e92b46-7978-4d48-a3e7-9b04662151b3","device_type":"igloohome_lock","properties":{"online":true,"locked":false,"door_open":null,"battery_level":0.86,"name":"Office Lock","manufacturer":"igloohome","august_metadata":null,"schlage_metadata":null,"smartthings_metadata":null},"location":null,"created_at":"2023-02-11T00:46:12.940Z","capabilities_supported":["access_code","lock"],"errors":[]}]
+[{"device_id":"60d0f1b6-26ae-4366-8d1b-d20ad0d6a62e","workspace_id":"d7418ff3-a476-4f48-9a4b-211d1d21a03d","connected_account_id":"32e92b46-7978-4d48-a3e7-9b04662151b3","device_type":"igloohome_lock","properties":{"online":true,"locked":false,"door_open":null,"battery_level":0.86,"name":"Office Lock","manufacturer":"igloohome","august_metadata":null,"schlage_metadata":null,"smartthings_metadata":null},"location":null,"created_at":"2023-02-11T00:46:12.940Z","enabled_capabilities":["access_code","lock"],"errors":[]}]
 */
 ```
 {% endtab %}

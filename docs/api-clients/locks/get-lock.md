@@ -27,7 +27,7 @@ Name of Device
   "lock": {
     "device_id": "a83690b2-2b70-409a-9a94-426699b84c97",
     "device_type": "schlage_lock",
-    "capabilities_supported": [],
+    "enabled_capabilities": [],
     "properties": {
       "locked": false,
       "online": true,
@@ -47,7 +47,7 @@ Name of Device
   "device": {
     "device_id": "a83690b2-2b70-409a-9a94-426699b84c97",
     "device_type": "schlage_lock",
-    "capabilities_supported": [],
+    "enabled_capabilities": [],
     "properties": {
       "locked": false,
       "online": true,
@@ -131,7 +131,7 @@ print(device)
 #       }, 
 #     'name': 'GARAGE'
 #     }, 
-#   capabilities_supported=[], 
+#   enabled_capabilities=[], 
 #   errors=[]
 #   )
 
@@ -154,7 +154,7 @@ console.log(device)
 {
   device_id: 'a83690b2-2b70-409a-9a94-426699b84c97',
   device_type: 'schlage_lock',
-  capabilities_supported: [],
+  enabled_capabilities: [],
   properties: {
     locked: false,
     online: true,
@@ -215,7 +215,7 @@ This section shows the JSON response returned by the API. Since each language en
   "lock": {
     "device_id": "a83690b2-2b70-409a-9a94-426699b84c97",
     "device_type": "schlage_lock",
-    "capabilities_supported": [],
+    "enabled_capabilities": [],
     "properties": {
       "locked": false,
       "online": true,
@@ -235,7 +235,7 @@ This section shows the JSON response returned by the API. Since each language en
   "device": {
     "device_id": "a83690b2-2b70-409a-9a94-426699b84c97",
     "device_type": "schlage_lock",
-    "capabilities_supported": [],
+    "enabled_capabilities": [],
     "properties": {
       "locked": false,
       "online": true,

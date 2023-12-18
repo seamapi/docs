@@ -36,7 +36,7 @@ print(thermostat)
 # Thermostat(
 #     device_id="123e4567-e89b-12d3-a456-426614174000",
 <strong>#     device_type="ecobee_thermostat",
-</strong>#     capabilities_supported=["thermostat"], 
+</strong>#     enabled_capabilities=["thermostat"], 
 #     properties={
 #         "name": "Entryway",
 #         "online": True,
@@ -83,7 +83,7 @@ console.log(device)
   "thermostat": {
     "device_id": "123e4567-e89b-12d3-a456-426614174000",
     "device_type": "ecobee_thermostat",
-    "capabilities_supported": ["thermostat"],
+    "enabled_capabilities": ["thermostat"],
     "properties": {
       "name": "Entryway",
       "online": true,
@@ -137,7 +137,7 @@ This section shows the JSON response returned by the API. Since each language en
     "thermostat": {
         "device_id": "62bc78df-a2ad-4fc4-801f-1c22042149ab",
         "device_type": "ecobee_thermostat",
-        "capabilities_supported": [
+        "enabled_capabilities": [
             "thermostat"
         ],
         "properties": {
@@ -206,7 +206,7 @@ This section shows the JSON response returned by the API. Since each language en
   "thermostat": {
     "device_id": "a83690b2-2b70-409a-9a94-426699b84c97",
     "device_type": "ecobee_thermostat",
-    "capabilities_supported": ["thermostat"],
+    "enabled_capabilities": ["thermostat"],
     "properties": {
       "name": "Entryway",
       "online": true,

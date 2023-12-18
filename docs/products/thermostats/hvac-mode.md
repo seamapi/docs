@@ -24,7 +24,7 @@ The following example shows a set of thermostat HVAC mode requirements:
   "thermostat": {
     "device_id": "518f692b-f865-4590-8c3e-3849e9984c75",
     "device_type": "ecobee_thermostat",
-    "capabilities_supported": [
+    "enabled_capabilities": [
       "thermostat"
     ],
     "properties": {

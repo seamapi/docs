@@ -182,7 +182,7 @@ print(some_lock)
 #         'image_url': 'https://connect.getseam.com/assets/images/devices/kwikset_halo_touchscreen-wi-fi-enabled-smart-lock_polished-chrome_front.png',
 #         'image_alt_text': 'Kwikset Halo Touchscreen Wifi Enabled Smart Lock, Polished Chrome, Front'
 #     },
-#     capabilities_supported=['lock']
+#     enabled_capabilities=['lock']
 # )
 ````
 {% endtab %}
@@ -201,7 +201,7 @@ console.log(someLock)
 {
   device_id: '10891c43-29e0-4b93-b071-34749025a123',
   device_type: 'kwikset_lock',
-  capabilities_supported: [
+  enabled_capabilities: [
     'lock'
   ],
   properties: {

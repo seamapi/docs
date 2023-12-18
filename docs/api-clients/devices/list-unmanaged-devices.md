@@ -106,7 +106,7 @@ This response also includes a Boolean `ok` status indicator.
                                      'token to be revoked (e.g. after a '
                                      'password change)'}],
                  warnings=[],
-                 capabilities_supported=['access_code', 'lock'],
+                 enabled_capabilities=['access_code', 'lock'],
                  is_managed=False),
  UnmanagedDevice(device_id='882dd63f-db9b-4210-bac2-68372aa0aff7',
                  device_type='august_lock',
@@ -123,7 +123,7 @@ This response also includes a Boolean `ok` status indicator.
       "device_id": "2339da8d-ce38-4d86-9bb7-573f95af691c",
       "device_type": "ttlock_lock",
       "connected_account_id": "1769a182-ec97-4266-ba53-27fdb25d2d96",
-      "capabilities_supported": [
+      "enabled_capabilities": [
         "access_code",
         "lock"
       ],
@@ -174,7 +174,7 @@ This response also includes a Boolean `ok` status indicator.
     device_id: '2339da8d-ce38-4d86-9bb7-573f95af691c',
     device_type: 'ttlock_lock',
     connected_account_id: '1769a182-ec97-4266-ba53-27fdb25d2d96',
-    capabilities_supported: [ 'access_code', 'lock' ],
+    enabled_capabilities: [ 'access_code', 'lock' ],
     workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be',
     created_at: '2023-10-30T08:37:28.852Z',
     errors: [ [Object] ],
@@ -206,7 +206,7 @@ This response also includes a Boolean `ok` status indicator.
   device_id="882dd63f-db9b-4210-bac2-68372aa0aff7"
   device_type="august_lock"
   connected_account_id="f72442d2-2c16-4e3f-9882-6bff21828b1b"
-  capabilities_supported=["access_code", "lock"]
+  enabled_capabilities=["access_code", "lock"]
   workspace_id="398d80b7-3f96-47c2-b85a-6f8ba21d07be"
   created_at=2023-10-28 09:13:08.836 UTC
   errors=[]
@@ -226,7 +226,7 @@ This response also includes a Boolean `ok` status indicator.
   "device_id": "2339da8d-ce38-4d86-9bb7-573f95af691c",
   "device_type": "ttlock_lock",
   "connected_account_id": "1769a182-ec97-4266-ba53-27fdb25d2d96",
-  "capabilities_supported": [
+  "enabled_capabilities": [
     "access_code",
     "lock"
   ],
@@ -265,7 +265,7 @@ This response also includes a Boolean `ok` status indicator.
     "device_id" : "2339da8d-ce38-4d86-9bb7-573f95af691c",
     "device_type" : "ttlock_lock",
     "connected_account_id" : "1769a182-ec97-4266-ba53-27fdb25d2d96",
-    "capabilities_supported" : [ "access_code", "lock" ],
+    "enabled_capabilities" : [ "access_code", "lock" ],
     "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
     "errors" : [ {
       "error_code" : "account_disconnected",

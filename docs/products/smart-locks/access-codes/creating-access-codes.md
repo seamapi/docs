@@ -30,7 +30,7 @@ Seam supports programming two types of access codes for online door locks:
 
 ## Before You Begin
 
-To confirm that Seam supports access code programming for your device, use [Get Device](../../../api-clients/devices/get-device.md) or [Get Lock](../../../api-clients/locks/get-lock.md) to query the device and check its `capabilities_supported` property. Ensure that the `capabilities_supported` list includes `access_code`. Additionally, for door locks compatible with [offline access codes](offline-access-codes.md), check that the `properties.online_access_codes_enabled` property is set to `true` for your device.
+To confirm that Seam supports access code programming for your device, use [Get Device](../../../api-clients/devices/get-device.md) or [Get Lock](../../../api-clients/locks/get-lock.md) to query the device and check its `enabled_capabilities` property. Ensure that the `enabled_capabilities` list includes `access_code`. Additionally, for door locks compatible with [offline access codes](offline-access-codes.md), check that the `properties.online_access_codes_enabled` property is set to `true` for your device.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -50,7 +50,7 @@ Device(device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
               'online_access_codes_enabled': True, // Device supports online access codes.
               ...
        },
-       capabilities_supported=[
+       enabled_capabilities=[
               'access_code', // Device supports access code actions.
               ...
               ],
@@ -85,7 +85,7 @@ curl -X 'POST' \
               "online_access_codes_enabled": true, // Device supports online access codes.
               ...
     },
-    "capabilities_supported": [
+    "enabled_capabilities": [
       "access_code", // Device supports access code actions.
       ...
     ],
@@ -109,7 +109,7 @@ console.log(await seam.locks.get("6aae9d08-fed6-4ca5-8328-e36849ab48fe"))
 {
   device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
   ...
-  capabilities_supported: [
+  enabled_capabilities: [
     'access_code', // Device supports access code actions.
     ...
     ],
@@ -136,7 +136,7 @@ puts client.locks.get("6aae9d08-fed6-4ca5-8328-e36849ab48fe").inspect
 <Seam::Device:0x00438
   device_id="6aae9d08-fed6-4ca5-8328-e36849ab48fe"
   ...
-  capabilities_supported=[
+  enabled_capabilities=[
     "access_code", // Device supports access code actions.
     ...
     ]
@@ -155,7 +155,7 @@ puts client.locks.get("6aae9d08-fed6-4ca5-8328-e36849ab48fe").inspect
 
 ```php
 $device = $seam->devices->get("6aae9d08-fed6-4ca5-8328-e36849ab48fe");
-echo json_encode($device->capabilities_supported, JSON_PRETTY_PRINT);
+echo json_encode($device->enabled_capabilities, JSON_PRETTY_PRINT);
 echo json_encode($device->online_access_codes_enabled, JSON_PRETTY_PRINT);
 ```
 
@@ -212,7 +212,7 @@ System.out.println(lock);
 {
   "device_id" : "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
   ...
-  "capabilities_supported" : [ 
+  "enabled_capabilities" : [ 
     "access_code", // Device supports access code actions.
     ...
   ],

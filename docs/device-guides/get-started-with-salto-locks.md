@@ -164,7 +164,7 @@ assert some_lock.properties["online"] is True
 assert some_lock.properties["battery_level"] is True
 
 print(some_lock)
-# Device(device_id='681bf7bc-e7c6-48e6-acfe-6dbabd0615c5', device_type='salto_lock', location=None, properties={'locked': True, 'online': True, 'battery_level': 1, 'salto_metadata': {'model': 'wall_reader_pin', 'lock_id': 'lock_2', 'lock_type': 'wall_reader_pin', 'locked_state': 'locked', 'battery_level': 'fresh', 'customer_reference': 'BACK DOOR'}, 'has_direct_power': True, 'max_active_codes_supported': 100, 'supported_code_lengths': [6], 'name': 'BACK DOOR'}, capabilities_supported=['access_code', 'lock'])
+# Device(device_id='681bf7bc-e7c6-48e6-acfe-6dbabd0615c5', device_type='salto_lock', location=None, properties={'locked': True, 'online': True, 'battery_level': 1, 'salto_metadata': {'model': 'wall_reader_pin', 'lock_id': 'lock_2', 'lock_type': 'wall_reader_pin', 'locked_state': 'locked', 'battery_level': 'fresh', 'customer_reference': 'BACK DOOR'}, 'has_direct_power': True, 'max_active_codes_supported': 100, 'supported_code_lengths': [6], 'name': 'BACK DOOR'}, enabled_capabilities=['access_code', 'lock'])
 ```
 {% endtab %}
 
@@ -182,7 +182,7 @@ console.log(someLock)
     {
         "device_id": "681bf7bc-e7c6-48e6-acfe-6dbabd0615c5",
         "device_type": "salto_lock",
-        "capabilities_supported": [
+        "enabled_capabilities": [
             "access_code",
             "lock"
         ],
@@ -245,7 +245,7 @@ $locks = $seam->locks->list();
 
 echo json_encode($locks);
 /*
-[{"device_id":"681bf7bc-e7c6-48e6-acfe-6dbabd0615c5","workspace_id":"d7418ff3-a476-4f48-9a4b-211d1d21a03d","connected_account_id":"690dead6-e176-4f25-930b-9aef7c7137ad","device_type":"salto_lock","properties":{"online":true,"locked":true,"door_open":null,"battery_level":1,"name":"BACK DOOR","manufacturer":null,"august_metadata":null,"schlage_metadata":null,"smartthings_metadata":null},"location":null,"created_at":"2023-02-08T22:14:09.921Z","capabilities_supported":["access_code","lock"],"errors":[]},{"device_id":"c9fc699a-3f87-4d23-b5c2-1f8ac85aeca1","workspace_id":"d7418ff3-a476-4f48-9a4b-211d1d21a03d","connected_account_id":"690dead6-e176-4f25-930b-9aef7c7137ad","device_type":"salto_lock","properties":{"online":true,"locked":true,"door_open":null,"battery_level":1,"name":"EXTRA DOOR","manufacturer":null,"august_metadata":null,"schlage_metadata":null,"smartthings_metadata":null},"location":null,"created_at":"2023-02-08T22:14:09.952Z","capabilities_supported":[],"errors":[]},{"device_id":"da9dcedb-20ee-46df-8c08-e5268f624377","workspace_id":"d7418ff3-a476-4f48-9a4b-211d1d21a03d","connected_account_id":"690dead6-e176-4f25-930b-9aef7c7137ad","device_type":"salto_lock","properties":{"online":true,"locked":true,"door_open":null,"battery_level":1,"name":"FRONT_DOOR","manufacturer":null,"august_metadata":null,"schlage_metadata":null,"smartthings_metadata":null},"location":null,"created_at":"2023-02-08T22:14:09.890Z","capabilities_supported":["access_code","lock"],"errors":[]}]
+[{"device_id":"681bf7bc-e7c6-48e6-acfe-6dbabd0615c5","workspace_id":"d7418ff3-a476-4f48-9a4b-211d1d21a03d","connected_account_id":"690dead6-e176-4f25-930b-9aef7c7137ad","device_type":"salto_lock","properties":{"online":true,"locked":true,"door_open":null,"battery_level":1,"name":"BACK DOOR","manufacturer":null,"august_metadata":null,"schlage_metadata":null,"smartthings_metadata":null},"location":null,"created_at":"2023-02-08T22:14:09.921Z","enabled_capabilities":["access_code","lock"],"errors":[]},{"device_id":"c9fc699a-3f87-4d23-b5c2-1f8ac85aeca1","workspace_id":"d7418ff3-a476-4f48-9a4b-211d1d21a03d","connected_account_id":"690dead6-e176-4f25-930b-9aef7c7137ad","device_type":"salto_lock","properties":{"online":true,"locked":true,"door_open":null,"battery_level":1,"name":"EXTRA DOOR","manufacturer":null,"august_metadata":null,"schlage_metadata":null,"smartthings_metadata":null},"location":null,"created_at":"2023-02-08T22:14:09.952Z","enabled_capabilities":[],"errors":[]},{"device_id":"da9dcedb-20ee-46df-8c08-e5268f624377","workspace_id":"d7418ff3-a476-4f48-9a4b-211d1d21a03d","connected_account_id":"690dead6-e176-4f25-930b-9aef7c7137ad","device_type":"salto_lock","properties":{"online":true,"locked":true,"door_open":null,"battery_level":1,"name":"FRONT_DOOR","manufacturer":null,"august_metadata":null,"schlage_metadata":null,"smartthings_metadata":null},"location":null,"created_at":"2023-02-08T22:14:09.890Z","enabled_capabilities":["access_code","lock"],"errors":[]}]
 */
 ```
 {% endtab %}

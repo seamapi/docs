@@ -18,7 +18,7 @@ For those who prefer using webhooks to verify the success of an action, we'll so
 
 ## Before You Begin
 
-Be sure to confirm that your device has the capability to lock and unlock. You can inspect this by checking the device's capabilities by looking for `lock` in the `capabilities_supported` list in [Get Device](../../api-clients/devices/get-device.md) or [List Devices](../../api-clients/devices/list-devices.md) (or [Get Lock](../../api-clients/locks/get-lock.md) or [List Locks](../../api-clients/locks/list-locks.md)).&#x20;
+Be sure to confirm that your device has the capability to lock and unlock. You can inspect this by checking the device's capabilities by looking for `lock` in the `enabled_capabilities` list in [Get Device](../../api-clients/devices/get-device.md) or [List Devices](../../api-clients/devices/list-devices.md) (or [Get Lock](../../api-clients/locks/get-lock.md) or [List Locks](../../api-clients/locks/list-locks.md)).&#x20;
 
 {% tabs %}
 {% tab title="Python" %}
@@ -35,7 +35,7 @@ Device(device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
        .
        .
        .
-       capabilities_supported=[
+       enabled_capabilities=[
               'lock', // Device supports lock and unlock actions.
               .
               .
@@ -71,7 +71,7 @@ curl -X 'POST' \
     .
     .
     .
-    "capabilities_supported": [
+    "enabled_capabilities": [
       "lock", // Device supports lock and unlock actions.
       .
       .
@@ -103,7 +103,7 @@ console.log(await seam.locks.get("6aae9d08-fed6-4ca5-8328-e36849ab48fe"))
   .
   .
   .
-  capabilities_supported: [
+  enabled_capabilities: [
     'lock', // Device supports lock and unlock actions.
     .
     .
@@ -131,7 +131,7 @@ puts client.locks.get("6aae9d08-fed6-4ca5-8328-e36849ab48fe").inspect
   .
   .
   .
-  capabilities_supported=[
+  enabled_capabilities=[
     "lock", // Device supports lock and unlock actions.
     .
     .
@@ -149,7 +149,7 @@ puts client.locks.get("6aae9d08-fed6-4ca5-8328-e36849ab48fe").inspect
 
 ```php
 $device = $seam->devices->get("6aae9d08-fed6-4ca5-8328-e36849ab48fe");
-echo json_encode($device->capabilities_supported, JSON_PRETTY_PRINT);
+echo json_encode($device->enabled_capabilities, JSON_PRETTY_PRINT);
 ```
 
 **Response:**
@@ -208,7 +208,7 @@ System.out.println(lock);
   .
   .
   .
-  "capabilities_supported" : [ 
+  "enabled_capabilities" : [ 
     "lock", // Device supports lock and unlock actions.
     .
     .
@@ -840,7 +840,7 @@ curl -X 'POST' \
   "lock": {
     "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
     "device_type": "august_lock",
-    "capabilities_supported": [
+    "enabled_capabilities": [
       "access_code",
       "lock"
     ],
@@ -874,7 +874,7 @@ console.log(await seam.locks.get("6aae9d08-fed6-4ca5-8328-e36849ab48fe"))
 {
   device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
   device_type: 'august_lock',
-  capabilities_supported: [ 'access_code', 'lock' ],
+  enabled_capabilities: [ 'access_code', 'lock' ],
   properties: {
     locked: true,
     online: true,
@@ -904,7 +904,7 @@ puts client.locks.get("6aae9d08-fed6-4ca5-8328-e36849ab48fe").inspect
 <Seam::Device:0x00438
   device_id="6aae9d08-fed6-4ca5-8328-e36849ab48fe"
   device_type="august_lock"
-  capabilities_supported=["access_code", "lock"]
+  enabled_capabilities=["access_code", "lock"]
   properties={"locked"=>true, "online"=>true, "door_open"=>false, ...}
   .
   .
@@ -949,7 +949,7 @@ System.out.println(lock);
 {
   "device_id" : "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
   "device_type" : "august_lock",
-  "capabilities_supported" : [ "access_code", "lock" ],
+  "enabled_capabilities" : [ "access_code", "lock" ],
   "properties" : {
     .
     .

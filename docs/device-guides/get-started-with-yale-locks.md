@@ -160,7 +160,7 @@ print(some_lock)
 #     'battery_level': 0.9999532347993827,
 #     'august_metadata': {...},
 #     'name': 'BACK DOOR'},
-#     capabilities_supported=['access_code', 'lock']
+#     enabled_capabilities=['access_code', 'lock']
 #     )
 ```
 {% endtab %}
@@ -179,7 +179,7 @@ console.log(someLock)
 {
   device_id: 'b013d947-cef1-4dfe-8aa2-1e452eca5262',
   device_type: 'yale_lock',
-  capabilities_supported: [ 'access_code', 'lock' ],
+  enabled_capabilities: [ 'access_code', 'lock' ],
   properties: {
     locked: true,
     online: true,

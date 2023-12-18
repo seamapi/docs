@@ -32,7 +32,7 @@ The default HVAC settings include the following:
 
 ## Before You Begin
 
-To confirm that Seam supports thermostat programming for your device, use [Get Device](../../api-clients/devices/get-device.md) or [Get Thermostat](../../thermostats/get-thermostat.md) to query the device and check its `capabilities_supported` property. Ensure that the `capabilities_supported` list includes `thermostat`. For more information, see [Retrieving Individual Thermostats](retrieving-thermostats.md#retrieving-individual-thermostats).
+To confirm that Seam supports thermostat programming for your device, use [Get Device](../../api-clients/devices/get-device.md) or [Get Thermostat](../../thermostats/get-thermostat.md) to query the device and check its `enabled_capabilities` property. Ensure that the `enabled_capabilities` list includes `thermostat`. For more information, see [Retrieving Individual Thermostats](retrieving-thermostats.md#retrieving-individual-thermostats).
 
 ***
 
@@ -151,7 +151,7 @@ System.out.println(thermostat);
 {
   "device_id" : "518f692b-f865-4590-8c3e-3849e9984c75",
   "device_type" : "ecobee_thermostat",
-  "capabilities_supported" : [ "thermostat" ],
+  "enabled_capabilities" : [ "thermostat" ],
   "properties" : {
     ...
     "default_climate_setting" : {

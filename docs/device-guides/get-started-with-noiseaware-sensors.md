@@ -181,7 +181,7 @@ devices[0]
 #       "image_url": "https://connect.getseam.com/assets/images/devices/noiseaware_logo_square.png",
 #       "image_alt_text": "NoiseAware Noise Sensor"
 #     },
-#     capabilities_supported=["noise_detection"],
+#     enabled_capabilities=["noise_detection"],
 #   errors=[]
 # )
 ```
@@ -198,7 +198,7 @@ console.log(devices[0])
 {
   device_id: '617415c6-2aa4-43ac-b436-879951f891b0',
   device_type: 'noiseaware_activity_zone',
-  capabilities_supported: [ 'noise_detection' ],
+  enabled_capabilities: [ 'noise_detection' ],
   properties: {
     online: true,
     manufacturer: 'noiseaware',
@@ -262,7 +262,7 @@ echo json_encode($device[0]);
 {
   device_id: '617415c6-2aa4-43ac-b436-879951f891b0',
   device_type: 'noiseaware_activity_zone',
-  capabilities_supported: [ 'noise_detection' ],
+  enabled_capabilities: [ 'noise_detection' ],
   properties: {
     online: true,
     manufacturer: 'noiseaware',

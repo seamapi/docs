@@ -17,7 +17,7 @@ This guide explains how to create [offline access (PIN) codes](./#offline-access
 
 ## Before You Begin
 
-To confirm that Seam supports access code programming for your device, use [Get Device](../../../api-clients/devices/get-device.md) or [Get Lock](../../../api-clients/locks/get-lock.md) to query the device and check the `capabilities_supported` and `offline_access_codes_enabled` properties for the device. Ensure that the `capabilities_supported` list includes `access_code` and that `offline_access_codes_enabled` is `true`.
+To confirm that Seam supports access code programming for your device, use [Get Device](../../../api-clients/devices/get-device.md) or [Get Lock](../../../api-clients/locks/get-lock.md) to query the device and check the `enabled_capabilities` and `offline_access_codes_enabled` properties for the device. Ensure that the `enabled_capabilities` list includes `access_code` and that `offline_access_codes_enabled` is `true`.
 
 Further, before creating an offline access code, it is imperative to understand any manufacturer- or device-specific constraints, such as the maximum number of access codes, any time slot or activation requirements, and so on. For details, see the corresponding device guide and any manufacturer-specific properties within the retrieved lock.
 
@@ -40,7 +40,7 @@ Device(device_id='9689dc30-77d8-4728-9968-b3abd0835f47',
        ...
        properties={...
                    'offline_access_codes_enabled': True}, // Device supports offline access codes.
-       capabilities_supported=['access_code', ...], // Device supports access code actions.
+       enabled_capabilities=['access_code', ...], // Device supports access code actions.
        ...)
 ```
 {% endtab %}
@@ -66,7 +66,7 @@ curl -X 'POST' \
   "device": {
     "device_id": "9689dc30-77d8-4728-9968-b3abd0835f47",
     "device_type": "igloohome_lock",
-    "capabilities_supported": [
+    "enabled_capabilities": [
       "access_code", // Device supports access code actions.
       ...
     ],
@@ -97,7 +97,7 @@ console.log(lock.properties.dormakaba_oracode_metadata.predefined_time_slots)
 {
   device_id: 'ea12f6c6-e63e-447d-856b-ec9e92981000',
   device_type: 'dormakaba_oracode_door',
-  capabilities_supported: [ 'access_code' ], // Device supports access code actions.
+  enabled_capabilities: [ 'access_code' ], // Device supports access code actions.
   properties: {
     ...
     dormakaba_oracode_metadata: {

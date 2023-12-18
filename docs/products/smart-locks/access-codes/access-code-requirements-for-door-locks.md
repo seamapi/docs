@@ -14,7 +14,7 @@ Sample set of access code requirements:
 {
   "device": {
     "device_id": "00000000-0000-0000-0000-000000000000",
-    "capabilities_supported": [
+    "enabled_capabilities": [
       "access_code",
       "lock"
     ],
@@ -81,7 +81,7 @@ Device(device_id='ed4bb795-f29f-43e5-bc0f-35f69f9141b5',
                    'online': True,
                    'supported_code_lengths': [6],
                    'supports_backup_access_code_pool': True},
-       capabilities_supported=['access_code', 'lock'],
+       enabled_capabilities=['access_code', 'lock'],
        errors=[],
        warnings=[],
        connected_account_id='cac74c00-443b-440f-820e-e2907277fd9f',
@@ -112,7 +112,7 @@ curl -X 'POST' \
   "device": {
     "device_id": "ed4bb795-f29f-43e5-bc0f-35f69f9141b5",
     "device_type": "nuki_lock",
-    "capabilities_supported": [
+    "enabled_capabilities": [
       "access_code",
       "lock"
     ],
@@ -189,7 +189,7 @@ console.log(device.properties.code_constraints)
 {
   device_id: 'ed4bb795-f29f-43e5-bc0f-35f69f9141b5',
   device_type: 'nuki_lock',
-  capabilities_supported: [ 'access_code', 'lock' ],
+  enabled_capabilities: [ 'access_code', 'lock' ],
   properties: {
     locked: false,
     online: true,
@@ -241,7 +241,7 @@ puts client.devices.get("ed4bb795-f29f-43e5-bc0f-35f69f9141b5").inspect
 <Seam::Device:0x00438
   device_id="ed4bb795-f29f-43e5-bc0f-35f69f9141b5"
   device_type="nuki_lock"
-  capabilities_supported=["access_code", "lock"]
+  enabled_capabilities=["access_code", "lock"]
   properties={"locked"=>false, "online"=>true, "manufacturer"=>"nuki", "battery_level"=>0.86, "nuki_metadata"=>{"device_id"=>"3", "device_name"=>"Office Lock", "keypad_battery_critical"=>false}, "keypad_battery"=>{"level"=>1}, "supported_code_lengths"=>[6], "has_native_entry_events"=>true, "name"=>"Office Lock", "model"=>{"display_name"=>"Lock", "manufacturer_display_name"=>"Nuki"}, "battery"=>{"level"=>0.86, "status"=>"full"}, "image_url"=>"https://connect.getseam.com/assets/images/devices/nuki_smart_lock_3_pro_black.png", "image_alt_text"=>"Nuki Smart Lock 3.0 Pro Black, Front", "code_constraints"=>[{"constraint_type"=>"cannot_start_with_12"}, {"constraint_type"=>"no_zeros"}, {"constraint_type"=>"name_length", "max_length"=>20}], "supports_backup_access_code_pool"=>true}
   connected_account_id="cac74c00-443b-440f-820e-e2907277fd9f"
   workspace_id="398d80b7-3f96-47c2-b85a-6f8ba21d07be"
@@ -380,7 +380,7 @@ System.out.println(lock);
 {
   "device_id" : "ed4bb795-f29f-43e5-bc0f-35f69f9141b5",
   "device_type" : "nuki_lock",
-  "capabilities_supported" : [ "access_code", "lock" ],
+  "enabled_capabilities" : [ "access_code", "lock" ],
   "properties" : {
     "online" : true,
     "name" : "Office Lock",

@@ -32,7 +32,7 @@ seam.thermostats.list()
 #     {
 #       "device_id": "a83690b2-2b70-409a-9a94-426699b84c97",
 #       "device_type": "ecobee_thermostat",
-#       "capabilities_supported": ["thermostat"],
+#       "enabled_capabilities": ["thermostat"],
 #       "properties": {
 #         "name": "Entryway",
 #         "online": true,
@@ -64,7 +64,7 @@ seam.thermostats.list()
 #     {
 #       "device_id": "a3f30bd2-f6d7-4bad-ba89-1bad3bf1bce4",
 #       "device_type": "ecobee_thermostat",
-#       "capabilities_supported": ["thermostat"],
+#       "enabled_capabilities": ["thermostat"],
 #       "properties": {
 #         "name": "Entryway",
 #         "online": true,
@@ -106,7 +106,7 @@ seam.thermostats.list()
 <strong>  {
 </strong>    "device_id": "a83690b2-2b70-409a-9a94-426699b84c97",
     "device_type": "ecobee_thermostat",
-    "capabilities_supported": ["thermostat"],
+    "enabled_capabilities": ["thermostat"],
     "properties": {
       "name": "Entryway",
       "online": true,
@@ -138,7 +138,7 @@ seam.thermostats.list()
   {
     "device_id": "a3f30bd2-f6d7-4bad-ba89-1bad3bf1bce4",
     "device_type": "ecobee_thermostat",
-    "capabilities_supported": ["thermostat"],
+    "enabled_capabilities": ["thermostat"],
     "properties": {
       "name": "Entryway",
       "online": true,
@@ -191,7 +191,7 @@ This section shows the JSON response returned by the API. Since each language en
     {
       "device_id": "a83690b2-2b70-409a-9a94-426699b84c97",
       "device_type": "ecobee_thermostat",
-      "capabilities_supported": ["thermostat"],
+      "enabled_capabilities": ["thermostat"],
       "properties": {
         "name": "Entryway",
         "online": true,
@@ -223,7 +223,7 @@ This section shows the JSON response returned by the API. Since each language en
     {
       "device_id": "a3f30bd2-f6d7-4bad-ba89-1bad3bf1bce4",
       "device_type": "ecobee_thermostat",
-      "capabilities_supported": ["thermostat"],
+      "enabled_capabilities": ["thermostat"],
       "properties": {
         "name": "Entryway",
         "online": true,

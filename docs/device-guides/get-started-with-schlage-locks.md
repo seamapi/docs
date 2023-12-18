@@ -153,7 +153,7 @@ print(some_lock)
 #     'battery_level': 0.48,
 #     'schlage_metadata': {'device_id': 'device-1', 'device_name': 'FRONT DOOR', 'access_code_length': 4}, 'name': 'FRONT DOOR'
 #   },
-#   capabilities_supported=['access_code', 'lock'])
+#   enabled_capabilities=['access_code', 'lock'])
 ```
 ````
 {% endtab %}
@@ -172,7 +172,7 @@ console.log(someLock)
 {
   device_id: 'e2d95c42-b2bf-4d07-9211-7407d9c90c73',
   device_type: 'schlage_lock',
-  capabilities_supported: [ 'access_code', 'lock' ],
+  enabled_capabilities: [ 'access_code', 'lock' ],
   properties: {
     locked: false,
     online: true,

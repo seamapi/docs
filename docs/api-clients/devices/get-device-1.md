@@ -89,7 +89,7 @@ UnmanagedDevice(device_id='882dd63f-db9b-4210-bac2-68372aa0aff7',
                 created_at='2023-10-28T09:13:08.836Z',
                 errors=[],
                 warnings=[],
-                capabilities_supported=['access_code', 'lock'],
+                enabled_capabilities=['access_code', 'lock'],
                 is_managed=False)
 ```
 {% endtab %}
@@ -102,7 +102,7 @@ UnmanagedDevice(device_id='882dd63f-db9b-4210-bac2-68372aa0aff7',
     "device_id": "882dd63f-db9b-4210-bac2-68372aa0aff7",
     "device_type": "august_lock",
     "connected_account_id": "f72442d2-2c16-4e3f-9882-6bff21828b1b",
-    "capabilities_supported": [
+    "enabled_capabilities": [
       "access_code",
       "lock"
     ],
@@ -137,7 +137,7 @@ UnmanagedDevice(device_id='882dd63f-db9b-4210-bac2-68372aa0aff7',
   device_id: '882dd63f-db9b-4210-bac2-68372aa0aff7',
   device_type: 'august_lock',
   connected_account_id: 'f72442d2-2c16-4e3f-9882-6bff21828b1b',
-  capabilities_supported: [ 'access_code', 'lock' ],
+  enabled_capabilities: [ 'access_code', 'lock' ],
   workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be',
   created_at: '2023-10-28T09:13:08.836Z',
   errors: [],
@@ -168,7 +168,7 @@ UnmanagedDevice(device_id='882dd63f-db9b-4210-bac2-68372aa0aff7',
   device_id="882dd63f-db9b-4210-bac2-68372aa0aff7"
   device_type="august_lock"
   connected_account_id="f72442d2-2c16-4e3f-9882-6bff21828b1b"
-  capabilities_supported=["access_code", "lock"]
+  enabled_capabilities=["access_code", "lock"]
   workspace_id="398d80b7-3f96-47c2-b85a-6f8ba21d07be"
   created_at=2023-10-28 09:13:08.836 UTC
   errors=[]
@@ -184,7 +184,7 @@ UnmanagedDevice(device_id='882dd63f-db9b-4210-bac2-68372aa0aff7',
   "device_id": "882dd63f-db9b-4210-bac2-68372aa0aff7",
   "device_type": "august_lock",
   "connected_account_id": "f72442d2-2c16-4e3f-9882-6bff21828b1b",
-  "capabilities_supported": [
+  "enabled_capabilities": [
     "access_code",
     "lock"
   ],

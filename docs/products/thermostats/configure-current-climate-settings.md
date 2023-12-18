@@ -36,7 +36,7 @@ Seam supports a single ongoing fan mode setting.
 
 ## Before You Begin
 
-To confirm that Seam supports thermostat programming for your device, use [Get Device](../../api-clients/devices/get-device.md) or [Get Thermostat](../../thermostats/get-thermostat.md) to query the device and check its `capabilities_supported` property. Ensure that the `capabilities_supported` list includes `thermostat`. For more information, see [Retrieving Individual Thermostats](retrieving-thermostats.md#retrieving-individual-thermostats).
+To confirm that Seam supports thermostat programming for your device, use [Get Device](../../api-clients/devices/get-device.md) or [Get Thermostat](../../thermostats/get-thermostat.md) to query the device and check its `enabled_capabilities` property. Ensure that the `enabled_capabilities` list includes `thermostat`. For more information, see [Retrieving Individual Thermostats](retrieving-thermostats.md#retrieving-individual-thermostats).
 
 ***
 

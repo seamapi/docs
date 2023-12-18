@@ -150,7 +150,7 @@ print(some_lock)
 #    'manufacturer': 'august',
 #    'battery_level': 0.9999532347993827,
 #    'august_metadata': {'lock_id': 'lock-3', 'lock_name': 'GARAGE', 'has_keypad': True, 'house_name': 'My House'}, 'name': 'GARAGE'},
-#    capabilities_supported=['access_code', 'lock'])
+#    enabled_capabilities=['access_code', 'lock'])
 ```
 {% endtab %}
 
@@ -168,7 +168,7 @@ console.log(someLock)
 {
   device_id: '9f237252-e182-49d6-9f32-464efb0a3519',
   device_type: 'august_lock',
-  capabilities_supported: [ 'access_code', 'lock' ],
+  enabled_capabilities: [ 'access_code', 'lock' ],
   properties: {
     locked: false,
     online: true,

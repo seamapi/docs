@@ -140,7 +140,7 @@ const seam = new Seam(); // SEAM_API_KEY environment variable picked up here.
 const [someLock] = await seam.locks.list();
 
 <strong>// Inspect this device to see which capabilities it supports.
-</strong>console.log(someLock.capabilities_supported);
+</strong>console.log(someLock.enabled_capabilities);
 /*
   [ 'access_code', 'lock' ] 
 */
@@ -166,7 +166,7 @@ seam = Seam()
 some_lock = seam.locks.list()[0]
 
 # Inspect this device to see which capabilities it supports.
-print(some_lock.capabilities_supported)
+print(some_lock.enabled_capabilities)
 # ['access_code', 'lock']
 
 # This device supports the 'lock' capability, so you can use the Seam API to
@@ -188,7 +188,7 @@ seam = Seam::Client.new()
 # Retrieve all authorized locks and select the first lock.
 some_lock = seam.locks.list().first
 # Note the capabilities that this device supports.
-# capabilities_supported=["access_code", "lock"]
+# enabled_capabilities=["access_code", "lock"]
 
 # This device supports the "lock" capability, so you can use the Seam API to
 # unlock the lock if it is locked or to lock it if it is unlocked.
@@ -214,7 +214,7 @@ $seam = new SeamClient("YOUR_API_KEY");
 $some_lock = $seam->locks->list()[0];
 
 # Inspect this device to see which capabilities it supports.
-echo json_encode($some_lock->capabilities_supported, JSON_PRETTY_PRINT);
+echo json_encode($some_lock->enabled_capabilities, JSON_PRETTY_PRINT);
 # [
 #     "access_code",
 #     "lock"

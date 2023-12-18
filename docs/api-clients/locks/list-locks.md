@@ -20,7 +20,7 @@ Bearer <API_KEY>
     {
       "device_id": "a83690b2-2b70-409a-9a94-426699b84c97",
       "device_type": "schlage_lock",
-      "capabilities_supported": [],
+      "enabled_capabilities": [],
       "properties": {
         "locked": false,
         "online": true,
@@ -40,7 +40,7 @@ Bearer <API_KEY>
     {
       "device_id": "a3f30bd2-f6d7-4bad-ba89-1bad3bf1bce4",
       "device_type": "schlage_lock",
-      "capabilities_supported": [],
+      "enabled_capabilities": [],
       "properties": {
         "locked": false,
         "online": true,
@@ -60,7 +60,7 @@ Bearer <API_KEY>
     {
       "device_id": "65803a1c-866b-45ed-94d5-496b40e4cc4d",
       "device_type": "schlage_lock",
-      "capabilities_supported": [],
+      "enabled_capabilities": [],
       "properties": {
         "locked": false,
         "online": true,
@@ -82,7 +82,7 @@ Bearer <API_KEY>
     {
       "device_id": "a83690b2-2b70-409a-9a94-426699b84c97",
       "device_type": "schlage_lock",
-      "capabilities_supported": [],
+      "enabled_capabilities": [],
       "properties": {
         "locked": false,
         "online": true,
@@ -102,7 +102,7 @@ Bearer <API_KEY>
     {
       "device_id": "a3f30bd2-f6d7-4bad-ba89-1bad3bf1bce4",
       "device_type": "schlage_lock",
-      "capabilities_supported": [],
+      "enabled_capabilities": [],
       "properties": {
         "locked": false,
         "online": true,
@@ -122,7 +122,7 @@ Bearer <API_KEY>
     {
       "device_id": "65803a1c-866b-45ed-94d5-496b40e4cc4d",
       "device_type": "schlage_lock",
-      "capabilities_supported": [],
+      "enabled_capabilities": [],
       "properties": {
         "locked": false,
         "online": true,
@@ -231,7 +231,7 @@ This section shows the JSON response returned by the API. Since each language en
     {
       "device_id": "a83690b2-2b70-409a-9a94-426699b84c97",
       "device_type": "schlage_lock",
-      "capabilities_supported": [],
+      "enabled_capabilities": [],
       "properties": {
         "locked": false,
         "online": true,
@@ -251,7 +251,7 @@ This section shows the JSON response returned by the API. Since each language en
     {
       "device_id": "a3f30bd2-f6d7-4bad-ba89-1bad3bf1bce4",
       "device_type": "schlage_lock",
-      "capabilities_supported": [],
+      "enabled_capabilities": [],
       "properties": {
         "locked": false,
         "online": true,
@@ -271,7 +271,7 @@ This section shows the JSON response returned by the API. Since each language en
     {
       "device_id": "65803a1c-866b-45ed-94d5-496b40e4cc4d",
       "device_type": "schlage_lock",
-      "capabilities_supported": [],
+      "enabled_capabilities": [],
       "properties": {
         "locked": false,
         "online": true,
@@ -293,7 +293,7 @@ This section shows the JSON response returned by the API. Since each language en
     {
       "device_id": "a83690b2-2b70-409a-9a94-426699b84c97",
       "device_type": "schlage_lock",
-      "capabilities_supported": [],
+      "enabled_capabilities": [],
       "properties": {
         "locked": false,
         "online": true,
@@ -313,7 +313,7 @@ This section shows the JSON response returned by the API. Since each language en
     {
       "device_id": "a3f30bd2-f6d7-4bad-ba89-1bad3bf1bce4",
       "device_type": "schlage_lock",
-      "capabilities_supported": [],
+      "enabled_capabilities": [],
       "properties": {
         "locked": false,
         "online": true,
@@ -333,7 +333,7 @@ This section shows the JSON response returned by the API. Since each language en
     {
       "device_id": "65803a1c-866b-45ed-94d5-496b40e4cc4d",
       "device_type": "schlage_lock",
-      "capabilities_supported": [],
+      "enabled_capabilities": [],
       "properties": {
         "locked": false,
         "online": true,

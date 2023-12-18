@@ -115,7 +115,7 @@ Device(device_id='30fd243b-3054-4384-a713-5487076a3826',
                    'supports_accessory_keypad': True,
                    'supports_backup_access_code_pool': True,
                    'supports_offline_access_codes': False},
-       capabilities_supported=['access_code', 'lock'],
+       enabled_capabilities=['access_code', 'lock'],
        errors=[],
        warnings=[],
        connected_account_id='f72442d2-2c16-4e3f-9882-6bff21828b1b',
@@ -131,7 +131,7 @@ Device(device_id='30fd243b-3054-4384-a713-5487076a3826',
   "device": {
     "device_id": "30fd243b-3054-4384-a713-5487076a3826",
     "device_type": "august_lock",
-    "capabilities_supported": [
+    "enabled_capabilities": [
       "access_code",
       "lock"
     ],
@@ -200,7 +200,7 @@ Device(device_id='30fd243b-3054-4384-a713-5487076a3826',
 {
   device_id: '30fd243b-3054-4384-a713-5487076a3826',
   device_type: 'august_lock',
-  capabilities_supported: [ 'access_code', 'lock' ],
+  enabled_capabilities: [ 'access_code', 'lock' ],
   properties: {
     locked: true,
     online: true,
@@ -252,7 +252,7 @@ Device(device_id='30fd243b-3054-4384-a713-5487076a3826',
 <Seam::Device:0x00438
   device_id="30fd243b-3054-4384-a713-5487076a3826"
   device_type="august_lock"
-  capabilities_supported=["access_code", "lock"]
+  enabled_capabilities=["access_code", "lock"]
   properties={"locked"=>true, "online"=>true, "door_open"=>false, "manufacturer"=>"august", "battery_level"=>0.9999532347993827, "serial_number"=>"00000004-992d-45a0-bea1-9128fdcd8d12", "august_metadata"=>{"lock_id"=>"lock-2", "house_id"=>"house-1", "lock_name"=>"BACK DOOR", "has_keypad"=>true, "house_name"=>"My House", "keypad_battery_level"=>"Not Available"}, "supported_code_lengths"=>[4, 5, 6, 7, 8], "has_native_entry_events"=>true, "supports_accessory_keypad"=>true, "online_access_codes_enabled"=>true, "offline_access_codes_enabled"=>false, "supports_offline_access_codes"=>false, "name"=>"BACK DOOR", "model"=>{"display_name"=>"Lock", "manufacturer_display_name"=>"August", "accessory_keypad_supported"=>true, "offline_access_codes_supported"=>false, "online_access_codes_supported"=>true}, "battery"=>{"level"=>0.9999532347993827, "status"=>"full"}, "image_url"=>"https://connect.getseam.com/assets/images/devices/august_wifi-smart-lock-3rd-gen_silver_front.png", "image_alt_text"=>"August Wifi Smart Lock 3rd Gen, Silver, Front", "code_constraints"=>[], "supports_backup_access_code_pool"=>true}
   connected_account_id="f72442d2-2c16-4e3f-9882-6bff21828b1b"
   workspace_id="398d80b7-3f96-47c2-b85a-6f8ba21d07be"
@@ -268,7 +268,7 @@ Device(device_id='30fd243b-3054-4384-a713-5487076a3826',
 {
   "device_id": "30fd243b-3054-4384-a713-5487076a3826",
   "device_type": "august_lock",
-  "capabilities_supported": [
+  "enabled_capabilities": [
     "access_code",
     "lock"
   ],
@@ -334,7 +334,7 @@ Device(device_id='30fd243b-3054-4384-a713-5487076a3826',
 {
   "device_id" : "30fd243b-3054-4384-a713-5487076a3826",
   "device_type" : "august_lock",
-  "capabilities_supported" : [ "access_code", "lock" ],
+  "enabled_capabilities" : [ "access_code", "lock" ],
   "properties" : {
     "online" : true,
     "name" : "BACK DOOR",

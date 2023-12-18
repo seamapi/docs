@@ -38,7 +38,7 @@ To retrieve the list of supported capabilities for a specific device, use the `c
 const device = await seam.devices.get({
   device_id: "77208078-6dd7-44e5-a3e4-a2ed3a34efc9"
 })
-console.log(device.capabilities_supported)
+console.log(device.enabled_capabilities)
 // ['access_code', 'lock']
 ```
 {% endtab %}
@@ -46,7 +46,7 @@ console.log(device.capabilities_supported)
 {% tab title="Python" %}
 ```python
 device = seam.devices.get("0e2e6262-7f91-4970-a58d-47ef30b41e2e")
-print(device.capabilities_supported)
+print(device.enabled_capabilities)
 # ['access_code', 'lock']
 ```
 {% endtab %}
@@ -56,7 +56,7 @@ print(device.capabilities_supported)
 seam = Seam::Client.new()
 device_id = "aa3958c3-4236-4f71-bd77-3b60f85b3456"
 some_lock = seam.locks.get(device_id)
-puts some_lock.capabilities_supported
+puts some_lock.enabled_capabilities
 # [access_code, lock]
 ```
 {% endtab %}
@@ -70,7 +70,7 @@ $seam = new SeamClient("YOUR_API_KEY");
 $device = $seam->devices->get("0e2e6262-7f91-4970-a58d-47ef30b41e2e");
 
 # Inspect this device to see which capabilities it supports.
-echo json_encode($device->capabilities_supported, JSON_PRETTY_PRINT);
+echo json_encode($device->enabled_capabilities, JSON_PRETTY_PRINT);
 
 # [
 #     "access_code",
@@ -124,7 +124,7 @@ console.log(unmanagedDevice)
   device_id: '77208078-6dd7-44e5-a3e4-a2ed3a34efc9',
   device_type: 'yale_lock',
   connected_account_id: '4e5acceb-2bda-4dc1-814e-39c998431683',
-  capabilities_supported: [ 'access_code', 'lock' ],
+  enabled_capabilities: [ 'access_code', 'lock' ],
   workspace_id: '1d2826eb-4a26-4f46-bddb-ef5898baa859',
   created_at: '2023-08-29T04:30:14.914Z',
   errors: [],
@@ -172,7 +172,7 @@ print(unmanaged_device)
 #                 created_at='2023-09-16T20:01:58.984Z',
 #                 errors=[],
 #                 warnings=[],
-#                 capabilities_supported=['access_code', 'lock'],
+#                 enabled_capabilities=['access_code', 'lock'],
 #                 is_managed=False)
 ```
 {% endtab %}
@@ -193,7 +193,7 @@ puts unmanaged_device.inspect
 #   device_id="aa3958c3-4236-4f71-bd77-3b60f85b3456"
 #   device_type="yale_lock"
 #   connected_account_id="d2ab9339-d0ad-4594-b9a2-6ce71e4d4521"
-#   capabilities_supported=["access_code", "lock"]
+#   enabled_capabilities=["access_code", "lock"]
 #   workspace_id="1d2826eb-4a26-4f46-bddb-ef5898baa859"
 #   created_at=2023-08-30 05:33:58.45 UTC
 #   errors=[]
@@ -275,7 +275,7 @@ console.log(device)
 {
   device_id: '77208078-6dd7-44e5-a3e4-a2ed3a34efc9',
   device_type: 'yale_lock',
-  capabilities_supported: [ 'access_code', 'lock' ],
+  enabled_capabilities: [ 'access_code', 'lock' ],
   properties: {
     locked: true,
     online: true,
@@ -354,7 +354,7 @@ print(device)
 #                    'online': True,
 #                    'supported_code_lengths': [6],
 #                    'supports_backup_access_code_pool': True},
-#        capabilities_supported=['access_code', 'lock'],
+#        enabled_capabilities=['access_code', 'lock'],
 #        errors=[],
 #        warnings=[],
 #        connected_account_id='5fe50f46-274f-4a03-ba95-3a517464fdc7',
@@ -377,7 +377,7 @@ puts device.inspect
 # <Seam::Device:0x00438
 #   device_id="aa3958c3-4236-4f71-bd77-3b60f85b3456"
 #   device_type="yale_lock"
-#   capabilities_supported=["access_code", "lock"]
+#   enabled_capabilities=["access_code", "lock"]
 #   properties={"locked"=>true, "online"=>true, "door_open"=>false, "manufacturer"=>"august", "battery_level"=>0.9999532347993827, "serial_number"=>"00000004-992d-45a0-bea1-9128fdcd8d12", "august_metadata"=>{"lock_id"=>"lock-1", "house_id"=>"house-1", "lock_name"=>"FRONT DOOR", "has_keypad"=>true, "house_name"=>"My House", "keypad_battery_level"=>"Not Available"}, "supported_code_lengths"=>[4, 5, 6, 7, 8], "has_native_entry_events"=>true, "name"=>"FRONT DOOR", "model"=>{"display_name"=>"Lock", "manufacturer_display_name"=>"August"}, "battery"=>{"level"=>0.9999532347993827, "status"=>"full"}, "image_url"=>"https://connect.getseam.com/assets/images/devices/yale_assure-lock-touchscreen-wifi-smart-lock_satin-nickel_front.png", "image_alt_text"=>"Yale Assure Touchscreen Wifi Smart Lock, Satin Nickel, Front", "code_constraints"=>[], "supports_backup_access_code_pool"=>true}
 #   connected_account_id="d2ab9339-d0ad-4594-b9a2-6ce71e4d4521"
 #   workspace_id="1d2826eb-4a26-4f46-bddb-ef5898baa859"
@@ -450,7 +450,7 @@ echo json_encode($device, JSON_PRETTY_PRINT);
 //     },
 //     "location": null,
 //     "created_at": "2023-08-30T06:45:59.213Z",
-//     "capabilities_supported": [
+//     "enabled_capabilities": [
 //         "access_code",
 //         "lock"
 //     ],

@@ -191,7 +191,7 @@ print(some_lock)
 #     'image_url': 'http://localhost:3020/assets/images/devices/unknown-lock.png',
 #     'image_alt_text': 'Placeholder Lock Image'
 #   },
-#   capabilities_supported=['access_code', 'lock'],
+#   enabled_capabilities=['access_code', 'lock'],
 #   errors=[]
 # )
 ````
@@ -211,7 +211,7 @@ console.log(someLock)
 {
   device_id: 'f0c074d6-34d0-4910-a16a-dfe078d5d178',
   device_type: 'two_n_intercom',
-  capabilities_supported: [ 'access_code', 'lock' ],
+  enabled_capabilities: [ 'access_code', 'lock' ],
   properties: {
     locked: true,
     online: true,

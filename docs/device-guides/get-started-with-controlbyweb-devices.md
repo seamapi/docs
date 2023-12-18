@@ -157,7 +157,7 @@ print(some_lock)
 #     'image_url': 'https://connect.getseam.com/assets/images/devices/unknown-lock.png',
 #     'image_alt_text': 'Placeholder Lock Image'
 #   },
-#   capabilities_supported=['lock'],
+#   enabled_capabilities=['lock'],
 #   errors=[]
 # )
 ````
@@ -177,7 +177,7 @@ console.log(someLock)
 {
   device_id: '4a570d13-9704-46e0-b69c-9fea80d6a7aa',
   device_type: 'controlbyweb_device',
-  capabilities_supported: [ 'lock' ],
+  enabled_capabilities: [ 'lock' ],
   properties: {
     locked: true,
     online: true,

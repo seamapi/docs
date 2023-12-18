@@ -216,7 +216,7 @@ sensors[0]
 #     'image_url': 'https://connect.getseam.com/assets/images/devices/minut_gen-3_front.png',
 #     'image_alt_text': 'Minut Sensor'
 #   },
-#   capabilities_supported=['noise_detection'],
+#   enabled_capabilities=['noise_detection'],
 #   errors=[]
 # )
 ```
@@ -232,7 +232,7 @@ console.log(devices[0])
 {
   "device_id": "1efc294e-3a85-403a-8a2a-21b8f8b27cfa",
   "device_type": "minut_sensor",
-  "capabilities_supported": [
+  "enabled_capabilities": [
     "noise_detection"
   ],
   "properties": {
@@ -385,7 +385,7 @@ echo json_encode($device[0]);
 {
   "device_id": "1efc294e-3a85-403a-8a2a-21b8f8b27cfa",
   "device_type": "minut_sensor",
-  "capabilities_supported": [
+  "enabled_capabilities": [
     "noise_detection"
   ],
   "properties": {

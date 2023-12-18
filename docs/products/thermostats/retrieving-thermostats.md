@@ -79,7 +79,7 @@ pprint(seam.thermostats.list())
                     'relative_humidity': 0.36,
                     'temperature_celsius': 21.11111111111111,
                     'temperature_fahrenheit': 70},
-        capabilities_supported=['thermostat'],
+        enabled_capabilities=['thermostat'],
         errors=[],
         warnings=[],
         connected_account_id='2c00bc71-bca5-42c2-a1c5-74fd93ffcba1',
@@ -109,7 +109,7 @@ curl -X 'POST' \
     {
       "device_id": "518f692b-f865-4590-8c3e-3849e9984c75",
       "device_type": "ecobee_thermostat",
-      "capabilities_supported": [
+      "enabled_capabilities": [
         "thermostat"
       ],
       "properties": {
@@ -207,7 +207,7 @@ console.log(await seam.thermostats.list())
   {
     device_id: '518f692b-f865-4590-8c3e-3849e9984c75',
     device_type: 'ecobee_thermostat',
-    capabilities_supported: [ 'thermostat' ],
+    enabled_capabilities: [ 'thermostat' ],
     properties: {
       online: true,
       is_cooling: false,
@@ -273,7 +273,7 @@ foreach (var thermostat in thermostats)
 {
   "device_id": "518f692b-f865-4590-8c3e-3849e9984c75",
   "device_type": "ecobee_thermostat",
-  "capabilities_supported": [
+  "enabled_capabilities": [
     "thermostat"
   ],
   "properties": {
@@ -317,7 +317,7 @@ System.out.println(thermostats);
 {
   "device_id": "518f692b-f865-4590-8c3e-3849e9984c75",
   "device_type": "ecobee_thermostat",
-  "capabilities_supported": [
+  "enabled_capabilities": [
     "thermostat"
   ],
   "properties": {
@@ -425,7 +425,7 @@ Device(device_id='518f692b-f865-4590-8c3e-3849e9984c75',
                    'relative_humidity': 0.36,
                    'temperature_celsius': 21.11111111111111,
                    'temperature_fahrenheit': 70},
-       capabilities_supported=['thermostat'],
+       enabled_capabilities=['thermostat'],
        errors=[],
        warnings=[],
        connected_account_id='2c00bc71-bca5-42c2-a1c5-74fd93ffcba1',
@@ -456,7 +456,7 @@ curl -X 'POST' \
   "thermostat": {
     "device_id": "518f692b-f865-4590-8c3e-3849e9984c75",
     "device_type": "ecobee_thermostat",
-    "capabilities_supported": [
+    "enabled_capabilities": [
       "thermostat"
     ],
     "properties": {
@@ -553,7 +553,7 @@ console.log(await seam.thermostats.get({
 {
   device_id: '518f692b-f865-4590-8c3e-3849e9984c75',
   device_type: 'ecobee_thermostat',
-  capabilities_supported: [ 'thermostat' ],
+  enabled_capabilities: [ 'thermostat' ],
   properties: {
     online: true,
     is_cooling: false,
@@ -640,7 +640,7 @@ Console.WriteLine(thermostat);
 {
   "device_id": "518f692b-f865-4590-8c3e-3849e9984c75",
   "device_type": "ecobee_thermostat",
-  "capabilities_supported": [
+  "enabled_capabilities": [
     "thermostat"
   ],
   "properties": {
@@ -686,7 +686,7 @@ System.out.println(thermostat);
 {
   "device_id" : "518f692b-f865-4590-8c3e-3849e9984c75",
   "device_type" : "ecobee_thermostat",
-  "capabilities_supported" : [ "thermostat" ],
+  "enabled_capabilities" : [ "thermostat" ],
   "properties" : {
     "online" : true,
     "name" : "Thermostat 1",

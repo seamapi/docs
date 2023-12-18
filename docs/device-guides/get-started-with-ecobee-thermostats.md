@@ -165,7 +165,7 @@ devices[0]
 #   {
 #     "device_id": "6019bfc1-c665-4eb7-85e5-0f4c06d9423f",
 #     "device_type": "ecobee_thermostat",
-#     "capabilities_supported": [
+#     "enabled_capabilities": [
 #       "thermostat"
 #     ],
 #     "properties": {
@@ -230,7 +230,7 @@ console.log(devices[0])
 {
   "device_id": "6019bfc1-c665-4eb7-85e5-0f4c06d9423f",
   "device_type": "ecobee_thermostat",
-  "capabilities_supported": [
+  "enabled_capabilities": [
     "thermostat"
   ],
   "properties": {
