@@ -1,8 +1,7 @@
 ---
 description: >-
-  Learn how the Seam API can help you manage your smart thermostats, enabling
-  you to configure climate schedules remotely and maximize savings with a
-  default energy saving mode for unoccupied periods.
+  Learn about managing smart thermostats that automatically adjust your heating
+  and cooling systems to keep you comfortable.
 ---
 
 # 🌡 Thermostats
@@ -36,4 +35,4 @@ Using the Seam API, you can configure the following groups of climate settings o
 
 Seam supports integration with the following smart thermostat manufacturers:
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>ecobee Thermostats</strong></td><td></td><td></td><td><a href="../../device-guides/ecobee-thermostats.md">ecobee-thermostats.md</a></td><td><a href="../../.gitbook/assets/ecobee-logo.png">ecobee-logo.png</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>ecobee Thermostats</strong></td><td></td><td></td><td><a href="../../device-guides/ecobee-thermostats.md">ecobee-thermostats.md</a></td><td><a href="../../.gitbook/assets/ecobee-logo.png">ecobee-logo.png</a></td></tr><tr><td></td><td><strong>Google Nest Thermostats</strong></td><td></td><td></td><td><a href="../../device-guides/google-nest-thermostats/">google-nest-thermostats</a></td><td><a href="../../.gitbook/assets/nest-logo.png">nest-logo.png</a></td></tr></tbody></table>

@@ -38,6 +38,8 @@ To create a [Connect Webview](../core-concepts/connect-webviews/) that enables y
 
 ## Setup Instructions
 
+To control Avigilon Alta-connected devices using Seam, you must prompt owners of these devices to perform the following steps:
+
 1. Obtain and note the credentials for a user within the Avigilon Alta organization to which you want to connect.
 2. In a web browser, navigate to and log in to your [Avigilon Alta dashboard](https://control.openpath.com/login).
 3.  In the settings for the user, verify the user's permissions as follows:

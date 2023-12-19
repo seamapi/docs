@@ -35,6 +35,8 @@ To create a [Connect Webview](../core-concepts/connect-webviews/) that enables y
 
 ## Setup Instructions
 
+To control 4SUITES devices using Seam, you must prompt owners of these devices to perform the following steps:
+
 1. Obtain the credentials that you use to log in to your [4SUITES account](https://app.4suites.nl/auth/login).
 2. Use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your 4SUITES devices to Seam.
 

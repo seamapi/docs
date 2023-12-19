@@ -45,6 +45,8 @@ To create a [Connect Webview](../core-concepts/connect-webviews/) that enables y
 
 ## Setup Instructions
 
+To control August devices using Seam, you must prompt owners of these devices to perform the following steps:
+
 1. Create an account in the [August Home App](https://august.com/pages/app) if you have not done so already.
 2. In the August Home App, add your August devices.
 3. Note your login credentials for the August Home App, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.

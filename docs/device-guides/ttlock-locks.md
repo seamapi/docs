@@ -53,6 +53,8 @@ The TTLock gateway allows the smart lock to connect directly to the internet. By
 
 ## Setup Instructions
 
+To control TTLock devices using Seam, you must prompt owners of these devices to perform the following steps:
+
 ### 1. Install your TTLock lock and set it up on the [TTLock app](https://www.ttlock.com/#/lock/app)
 
 Please follow [the instructions in this video](https://www.youtube.com/watch?v=IbgZNc1dAx4) to set up your door lock on the TTLock app.

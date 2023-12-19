@@ -31,7 +31,9 @@ To create a [Connect Webview](../core-concepts/connect-webviews/) that enables y
 
 ***
 
-## Setup Instructions&#x20;
+## Setup Instructions
+
+To control Hubitat Hub-connected devices using Seam, you must prompt owners of these devices to perform the following steps:
 
 ### 1. Access the Hubitat Hub Dashboard
 

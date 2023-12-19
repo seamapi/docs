@@ -47,6 +47,8 @@ To create a [Connect Webview](../core-concepts/connect-webviews/) that enables y
 
 ## Setup Instructions
 
+To control Wyze devices using Seam, you must prompt owners of these devices to perform the following steps:
+
 1. Create an account in the [Wyze app](https://support.wyze.com/hc/en-us/articles/360032748451-Wyze-App-Setup-Guide) if you have not done so already.
 2. In the Wyze app, add your Wyze devices.
 3. Log in to the [Wyze online portal](https://developer-api-console.wyze.com/#/apikey/view).

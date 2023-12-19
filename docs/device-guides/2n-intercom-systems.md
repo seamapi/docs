@@ -17,7 +17,7 @@ This integration supports all [2N IP intercoms](https://wiki.2n.com/is/en).
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  manufacturers='["my_2n"]'
+  manufacturers='["2N"]'
 />" %}
 
 We support the following features:
@@ -34,6 +34,8 @@ To create a [Connect Webview](../core-concepts/connect-webviews/) that enables y
 ***
 
 ## Setup Instructions
+
+To control 2N devices using Seam, you must prompt owners of these devices to perform the following steps:
 
 1. [Create a My2N account](https://my2n.com/2n-remote-configuration) if you have not done so already.
 2. In My2N, add your 2N IP devices to the sites in which the devices are located.

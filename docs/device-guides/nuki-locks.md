@@ -51,6 +51,8 @@ To create a [Connect Webview](../core-concepts/connect-webviews/) that enables y
 
 ## Setup Instructions
 
+To control Nuki devices using Seam, you must prompt owners of these devices to perform the following steps:
+
 1. Create an account in the [Nuki App](https://nuki.io/en/app/) if you have not done so already.
 2. In the Nuki App, add your Nuki devices.
 3. Note your login credentials for the Nuki App.

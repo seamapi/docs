@@ -55,6 +55,8 @@ To create a [Connect Webview](../core-concepts/connect-webviews/) that enables y
 
 ## Setup Instructions
 
+To control igloohome devices using Seam, you must prompt owners of these devices to perform the following steps:
+
 1. Create an account in the igloohome mobile app if you have not done so already.\
    For more information, see "Download App & Sign in" in the [igloohome app quick start guide](https://support.igloohome.co/support/solutions/articles/35000183120-igloohome-app-quick-start-guide).
 2. In the igloohome mobile app, add your igloohome devices.\

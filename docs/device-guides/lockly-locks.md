@@ -36,6 +36,8 @@ To create a [Connect Webview](../core-concepts/connect-webviews/) that enables y
 
 ## Setup Instructions
 
+To control Lockly devices using Seam, you must prompt owners of these devices to perform the following steps:
+
 1. Download and create an account for the [Lockly mobile app](https://lockly.com/pages/download-lockly-app) if you have not done so already.
 2. In the Lockly mobile app, set up each of your Lockly locks as follows:
    1. Click the card for the lock.

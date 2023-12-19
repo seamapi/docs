@@ -37,6 +37,8 @@ To create a [Connect Webview](../core-concepts/connect-webviews/) that enables y
 
 ## Setup Instructions
 
+To control NoiseAware devices using Seam, you must prompt owners of these devices to perform the following steps:
+
 1. Install the NoiseAware [iOS](https://apps.apple.com/us/app/noiseaware/id1436213179) or [Android](https://play.google.com/store/apps/details?id=io.noiseaware.mobile\&hl=en\_US\&gl=US) mobile app.
 2. Create an account in the NoiseAware mobile app if you have not done so already.
 3. In the NoiseAware mobile app, add your NoiseAware sensors.

@@ -39,7 +39,7 @@ To create a [Connect Webview](../core-concepts/connect-webviews/) that enables y
 
 ## Setup Instructions
 
-Perform the setup procedure that corresponds to your type of Kwikset lock.
+To control Kwikset devices using Seam, you must prompt owners of these devices to perform the following steps:
 
 ### Setup Instructions for Halo and Halo Touch Locks
 

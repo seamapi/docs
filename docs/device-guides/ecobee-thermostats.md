@@ -2,7 +2,7 @@
 description: Guide for using ecobee thermostats with Seam
 ---
 
-# Ecobee Thermostats
+# ecobee Thermostats
 
 ## Overview
 
@@ -34,6 +34,8 @@ To create a [Connect Webview](../core-concepts/connect-webviews/) that enables y
 ***
 
 ## Setup Instructions
+
+To control ecobee devices using Seam, you must prompt owners of these devices to perform the following steps:
 
 1. Create an account in the [ecobee app](https://www.ecobee.com/en-us/installation/) if you have not done so already.
 2. In the ecobee app, add your ecobee thermostats.

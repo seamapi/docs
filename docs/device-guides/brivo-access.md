@@ -40,6 +40,8 @@ To create a [Connect Webview](../core-concepts/connect-webviews/) that enables y
 
 ## Setup Instructions
 
+To control Brivo-connected devices using Seam, you must prompt owners of these devices to perform the following steps:
+
 1.  Use the **Brivo API Service Access Authorization Agreement Form** to ask your Brivo vendor to enable API access.
 
     When completing this form, supply the following information:
