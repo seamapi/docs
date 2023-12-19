@@ -8,7 +8,7 @@ description: >-
 
 Seam enables you to create [climate setting schedules](thermostats-climate-setting-schedules.md#climate-setting-schedules) on a smart thermostat. This functionality enables you to set future schedules for controlling the climate in users' homes or businesses automatically based on their needs. For example, a short-term-rental host can create—for each guest stay—a climate setting schedule that programs their thermostat with comfortable heating and cooling set points for the duration of the guest's stay.
 
-You can create as many climate setting schedules as desired, as long and none of the schedules overlap. That is, only one climate setting schedule can be active at a time.
+You can create as many climate setting schedules as desired, as long as none of the schedules overlap. That is, only one climate setting schedule can be active at a time.
 
 ***
 
@@ -35,7 +35,7 @@ Climate setting schedules include a starting and ending date and time, as well a
 Note the following constraints regarding climate setting schedules:
 
 * Before you can create any climate setting schedules, you must first configure a [default climate setting](setting-the-default-climate-setting.md).
-* You can create as many climate setting schedules as desired, as long and none of the schedules overlap. That is, only one climate setting schedule can be active at a time.
+* You can create as many climate setting schedules as desired, as long as none of the schedules overlap. That is, only one climate setting schedule can be active at a time.
 * When there are no active climate setting schedules, the thermostat falls back to the configured default climate setting.
 
 ***
