@@ -21,8 +21,6 @@ Note that the card details included in the request will be configured across all
 {% endhint %}
 
 ```python
-acs_user = seam.acs.user.get(name="Jane Lo")
-
 seam.acs.credentials.create(
   is_multi_phone_sync_credential=True,
   acs_user_id=acs_user.acs_user_id,
