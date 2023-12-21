@@ -22,7 +22,7 @@ layout:
 
 Seam decomposes the ensemble of features that a device provides into one or more capabilities, such as `access_codes` or `thermostat`. Seam exposes each capability as a set of APIs that are standardized across brands for ease of integration. For example, an unlock action on a door lock always requires the same API call irrespective of the device brand.
 
-![](<../.gitbook/assets/image (10).png>)
+![](<../.gitbook/assets/image (10) (1).png>)
 
 In addition, Seam decomposes a single device capability further into the following three sets of affordances:
 

@@ -6,13 +6,17 @@ description: Learn how to issue credentials to and remove credentials from users
 
 Credentials determine the means by which a user gains access at an entrance. Types of credentials include access codes, key cards, and mobile passes.
 
-{% hint style="info" %}
-Currently, Seam only supports the issuance of PIN codes for access.
-{% endhint %}
-
 ## Create a Credential for a User
 
-To [create a credential for a user](../../api-clients/access-control-systems/credentials/create-credential-for-user.md), provide the user ID (`acs_user_id`) and the desired [access (PIN) code](../smart-locks/access-codes/) (`code`).
+To [create a credential for a user](../../api-clients/access-control-systems/credentials/create-credential-for-user.md), provide the user ID (`acs_user_id`) and the relevant credential details
+
+
+
+#### PIN Code&#x20;
+
+To
+
+desired [access (PIN) code](../smart-locks/access-codes/) (`code`).
 
 Note the following restrictions for PIN codes:
 

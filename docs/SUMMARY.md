@@ -52,6 +52,13 @@
   * [Deleting Climate Setting Schedules](products/thermostats/deleting-climate-setting-schedules.md)
 * [👂 Noise Sensors](products/noise-sensors/README.md)
   * [Configuring Noise Threshold Settings](products/noise-sensors/configure-noise-threshold-settings.md)
+* [📱 Mobile Access (In Development)](products/mobile-access-in-development/README.md)
+  * [Set up instructions](products/mobile-access-in-development/set-up-instructions.md)
+  * [Managing mobile app user accounts with User Identities](products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md)
+  * [Managing phones on a user identity](products/mobile-access-in-development/managing-phones-on-a-user-identity.md)
+  * [Issuing mobile credentials from an access control system](products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md)
+  * [Mobile SDK (Coming soon!)](products/mobile-access-in-development/mobile-sdk-coming-soon.md)
+* [🌩 Seam Bridge (In Development)](products/seam-bridge-in-development.md)
 
 ## 📋 API Clients
 
@@ -181,6 +188,8 @@
 
 * [2N Intercom Systems](device-guides/2n-intercom-systems.md)
 * [4SUITES Locks](device-guides/4suites-locks.md)
+* [Assa Abloy Visionline Access System (In Development)](device-guides/assa-abloy-visionline-access-system-in-development/README.md)
+  * [Credential Types](device-guides/assa-abloy-visionline-access-system-in-development/credential-types.md)
 * [August Locks](device-guides/august-locks.md)
 * [Avigilon Alta Access System](device-guides/avigilon-alta-access-system.md)
 * [Brivo Access](device-guides/brivo-access.md)
