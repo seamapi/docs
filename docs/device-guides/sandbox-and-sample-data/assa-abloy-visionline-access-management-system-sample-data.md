@@ -10,4 +10,4 @@ To use the virtual Visionline Access Management System with the virtual [Seam Br
 3. Connect the virtual Visionline Access Management System using a Connect Webview and the Visionline sample credentials.&#x20;
 {% endhint %}
 
-<table><thead><tr><th width="192">Username</th><th width="197">Password</th><th>Local IP Address of the Visionline Server</th></tr></thead><tbody><tr><td>jane</td><td>1234</td><td>192.168.1.100</td></tr></tbody></table>
+<table><thead><tr><th width="133">Username</th><th width="115">Password</th><th width="330">Local IP Address of the Visionline Server</th><th width="122">Lock Service Code</th><th>System Number</th></tr></thead><tbody><tr><td>jane</td><td>1234</td><td>192.168.1.100</td><td>1234</td><td>1234</td></tr></tbody></table>

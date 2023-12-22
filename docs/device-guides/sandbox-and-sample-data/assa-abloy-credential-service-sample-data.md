@@ -10,6 +10,6 @@ To use the virtual [Visionline Access Management System](../assa-abloy-visionlin
 3. Connect the virtual Visionline Access Management System using a Connect Webview and the [Visionline sample credentials](assa-abloy-visionline-access-management-system-sample-data.md).&#x20;
 {% endhint %}
 
-| Username | Password |
-| -------- | -------- |
-| jane     | 1234     |
+| Username | Password | Application ID |
+| -------- | -------- | -------------- |
+| jane     | 1234     | 1234           |
