@@ -229,6 +229,8 @@
 * [Sandbox & Sample Data](device-guides/sandbox-and-sample-data/README.md)
   * [2N Intercoms Sample Data](device-guides/sandbox-and-sample-data/2n-intercoms-sample-data.md)
   * [4SUITES Locks Sample Data](device-guides/sandbox-and-sample-data/4suites-locks-sample-data.md)
+  * [ASSA ABLOY Credential Service Sample Data](device-guides/sandbox-and-sample-data/assa-abloy-credential-service-sample-data.md)
+  * [ASSA ABLOY Visionline Access Management System Sample Data](device-guides/sandbox-and-sample-data/assa-abloy-visionline-access-management-system-sample-data.md)
   * [August Locks Sample Data](device-guides/sandbox-and-sample-data/august-locks-sample-data.md)
   * [Avigilon Alta Access System Sample Data](device-guides/sandbox-and-sample-data/avigilon-alta-access-system-sample-data.md)
   * [Brivo Access Sample Data](device-guides/sandbox-and-sample-data/brivo-access-sample-data.md)
@@ -249,6 +251,7 @@
   * [PTI Storlogix Cloud Sample Data](device-guides/sandbox-and-sample-data/pti-storlogix-cloud-sample-data.md)
   * [Salto Locks Sample Data](device-guides/sandbox-and-sample-data/salto-sample-data.md)
   * [Schlage Encode Locks Sample Data](device-guides/sandbox-and-sample-data/schlage-encode-sample-data.md)
+  * [Seam Bridge Sample Data](device-guides/sandbox-and-sample-data/seam-bridge-sample-data.md)
   * [SmartThings Hub Sample Data](device-guides/sandbox-and-sample-data/smartthings-sample-data.md)
   * [TTLock Locks Sample Data](device-guides/sandbox-and-sample-data/ttlock-sample-data.md)
   * [Wyze Locks Sample Data](device-guides/sandbox-and-sample-data/wyze-sample-data.md)
@@ -257,9 +260,9 @@
 * [Access Code Management for Hospitality](device-guides/implementing-robust-access-code-management-for-guests.md)
 * [Rate Limits and Guardrails](device-guides/rate-limits-and-guardrails.md)
 
-## 🌉 Seam Bridge
+## 🌉 Seam Hardware Bridge <a href="#seam-bridge" id="seam-bridge"></a>
 
-* [Connecting the Seam Bridge to DoorKing](seam-bridge/connecting-with-doorking.md)
+* [Connecting the Seam Hardware Bridge to DoorKing](seam-bridge/connecting-with-doorking.md)
 
 ## For Device Manufacturers
 
