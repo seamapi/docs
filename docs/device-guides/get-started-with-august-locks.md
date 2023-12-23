@@ -274,7 +274,7 @@ Some August locks also have a keypad paired to them to program access codes. The
 
 The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on an August lock. You can find out more about August lock access code in our [core concept section on access codes.](../products/smart-locks/access-codes/)
 
-![An August Smart Lock with Keypad](<../.gitbook/assets/image (8) (1).png>)
+![An August Smart Lock with Keypad](<../.gitbook/assets/image (8) (1) (1).png>)
 
 {% tabs %}
 {% tab title="Python" %}

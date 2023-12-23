@@ -4,6 +4,35 @@ description: Learn how to create a mobile credential's across a user's multiple 
 
 # Issuing mobile credentials from an access control system
 
+## Overview
+
+A credential manager, such as HID Origo Mobile Identities, is a cloud-based service responsible for issuing mobile credentials and keeping track of which mobile credentials have been issued to which phones. Enrolling the phone with the credential manager is a prerequisite for issuing mobile credentials. Seam streamlines this registration through an Enrollment Automation, which automatically detects when new phones come online for a user identity and facilitates the enrollment process with the credential manager.
+
+After setting up the enrollment automation, you're ready to begin issuing mobile credentials to phones. Typically without Seam, you'd have to wait for a phone to complete enrollment before you can start sending credentials. Seam, however, simplifies this process by letting you pre-configure the mobile credential details. As soon as a new phone is successfully enrolled, Seam automatically issues the designated mobile credential to it.
+
+***
+
+## Prepare a User Identity's Phones to start receiving Mobile Credentials using an Enrollment Automation
+
+An enrollment automation initializes a user identity's phones with a credential manager. Once enabled for a user identity, the automation oversees the registration of each new phone with a credential manager.
+
+### Initialize the User Identity with a Credential Manager
+
+To set up an enrollment automation, call the Launch Enrollment Automation function with the user identity's ID (`user_identity_id`), and the credential manager's system ID (`credential_manager_acs_system_id`):
+
+```
+seam.enrollment_automations.launch(
+  user_identity_id=user_identity.user_identity_id,
+  credential_manager_acs_system_id=credential_manager.acs_system_id
+)
+```
+
+{% hint style="info" %}
+Note, we may automate this step in the next iteration of our API. You may not need to perform this step in the future.
+{% endhint %}
+
+***
+
 ## What are Multi-phone Sync Credentials?
 
 When issuing mobile credentials for a mobile app user, it's necessary to issue a Multi-Phone Sync Credential. As covered in [the previous section](managing-phones-on-a-user-identity.md), a user identity (a.k.a. a mobile app user) may possess multiple phones. To guarantee access across all of the user identity's phones, the Multi-Phone Sync Credential will manage the distribution of credentials to each phone linked to the user identity. It will also import the credentials into the ACS and allocate them to the corresponding ACS user.

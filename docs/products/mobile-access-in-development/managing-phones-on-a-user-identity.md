@@ -20,9 +20,50 @@ Should an app user lose their phone or want to deactivate it, you can deactivate
 
 To revoke a phone, provide the phone's ID. When a phone is revoked, all the credentials issued to it will also be revoked. The associated ACS credentials will also be removed from the ACS.
 
-```python
-# Deactivating the lost phone
-seam.phones.deactivate(
+<pre class="language-python"><code class="lang-python"><strong># Endpoint in Development, Coming Soon!
+</strong><strong>
+</strong><strong># Deactivating the lost phone
+</strong>seam.phones.deactivate(
   phone_id=lost_phone_id
 )
+</code></pre>
+
+***
+
+## Retrieving phones for a user identity
+
+To retrieve the list of phones that the mobile app user has signed onto their account with, simply use the List Phones endpoint, and include the ID of the user identity ("user\_identity\_id"):
+
+```
+# Endpoint in Development, Coming Soon!
+
+seam.phones.list(
+  user_identity_id=user_identity.id
+)
+
+# [{
+#   "phone_id": "xxxx",
+#   "user_identity_id": "xxxx",
+#   "created_at": "2024-01-01T10:40:00+00:00"
+# }]
+```
+
+***
+
+## Retrieving a phone by its ID
+
+To retrieve a specific phone, simply use the Get Phone endpoint, and include the ID of the phone ("phone\_id"):
+
+```
+# Endpoint in Development, Coming Soon!
+
+seam.phones.get(
+  phone_id=phone_id
+)
+
+# {
+#   "phone_id": "xxxx",
+#   "user_identity_id": "xxxx",
+#   "created_at": "2024-01-01T10:40:00+00:00"
+# }
 ```

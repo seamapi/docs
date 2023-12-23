@@ -2,7 +2,7 @@
 description: Use Seam Network to connect on-premise systems to Seam.
 ---
 
-# 🌩 Seam Bridge (In Development)
+# 🌩 Seam Bridge - In Development
 
 ## Overview
 
@@ -39,15 +39,18 @@ You have two options for connecting the Seam Bridge to your workspace. If you're
 2. Navigate to the **"Devices"** page.
 3. Click on "+ Add Devices" in the top right corner.
 4. Select "Seam Bridge".
-5. Enter a unique name, and the invitation code you collected from the previous section.
+5. Enter a unique name in the "Bridge Name" field, and the invitation code you collected from the previous section in the "PIN Code" field.
+6. Make sure to remember the name of the Seam Network for future reference for connecting the on-premise access control system in the Connect Webview.
 
 **Pair using a Connect Webview:**
 
 1. Create a Connect Webview using the `accepted_providers` key `seam_bridge`.
 2. Share the `url` of the created Connect Webview with the end user.
 3. When the end user accesses the Connect Webview, they can choose "Seam Bridge" from the list of brands, if available.
-4. They must enter a unique name and the invitation code they collected from the Seam Bridge webpage.
+4. They must enter a unique name in the "Bridge Name" field sand the invitation code they collected from the Seam Bridge webpage in the "PIN Code" field.
 5. Remind them to remember the name for future reference when connecting their on-premise system in the Connect Webview.
+
+<figure><img src="../.gitbook/assets/Screen Shot 2023-12-22 at 3.33.56 PM.png" alt="" width="221"><figcaption><p>Connect Webview for connecting your Seam Bridge instance.</p></figcaption></figure>
 
 ***
 

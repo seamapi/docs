@@ -1,4 +1,4 @@
-# Assa Abloy Visionline Access System (In Development)
+# Assa Abloy Visionline (Access Control System) - In Development
 
 ## Overview
 
@@ -27,21 +27,35 @@ To create a [Connect Webview](../../core-concepts/connect-webviews/) that enable
 
 1. Login to the Visionline application, take a note of the user name and password.
    * Optionally, you may add a new user and use their username and password instead.
-2. On the Visionline application, click on "Devices", and then "Add".
-3. Enter a name "Seam Bridge", select the type "Service device host", and enter an unused port number (i.e. "27015"), click "Save".
-4. Create a Connect Webview with "visionline" set as an accepted provider.
-5. Within the Connect Webview, if presented with multiple brand options, select "Visionline".
-6.  Select your Seam Bridge in the following screen:
+2. Make sure you set up a Mobile Access Account so that you can issue mobile credentials. If you've set up your mobile access account, skip to step 4.
+3. To set up your Mobile Access account in Visionline:
+   * In the left navigation, click on "Lists" in the bottom left corner.
+   * Under "System setup", click on "Mobile Access", "Mobile Access", and then "New".
+   * On account details, Server screen, enter the connection details received from Assa Abloy. Note that in a real hotel, these parameters are wrapped and applied via an ‘Option Code’ (i.e. a license string) and are not directly entered.
+4. To retrieve your "System ID":
+   * In the left navigation, click on "Lists" in the bottom left corner.
+   * Under "System setup", click on "Mobile Access".
+   *   Select the configured mobile access account, Server screen, and write down the "System ID".\
 
 
+       <figure><img src="../../.gitbook/assets/Screen Shot 2023-12-22 at 5.05.19 PM.png" alt=""><figcaption><p>Copy down the "System ID" from the Mobile Access account.</p></figcaption></figure>
+5. Create a Connect Webview with "`visionline`" set as the accepted provider.
+6. Within the Connect Webview, if presented with multiple brand options, select "Visionline".
+7.  Select your Seam Bridge that is connected to the Visionline system you're trying to connect to in the following screen:
 
-    <figure><img src="../../.gitbook/assets/image (8).png" alt="" width="359"><figcaption></figcaption></figure>
-7. Use the following values to complete the the [Seam Connect Webview](../../core-concepts/connect-webviews/) to add your Visionline access system to Seam:
+    <figure><img src="../../.gitbook/assets/image (8).png" alt="" width="240"><figcaption></figcaption></figure>
+8. Use the following values to complete the the [Seam Connect Webview](../../core-concepts/connect-webviews/) to add your Assa Abloy Credential Services account to Seam:
    * Username and Password from log in.
-   * Local IP address of the on-prem computer, plus the port number `443`, i.e. "https://192.168.0.10:443".
-8. Click "Submit".
+   * Local IP address of the on-premise computer, i.e. "`192.168.0.10`".
+   * (Coming soon!) System ID of your Visionline instance.
+9. Click "Submit".
 
 <figure><img src="../../.gitbook/assets/image (7).png" alt="" width="330"><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+When connecting a Visionline Access System in your sandbox test envrionment, you can use the following test credentials:\
+[https://docs.seam.co/latest/device-guides/sandbox-and-sample-data/assa-abloy-visionline-access-management-system-sample-data](https://docs.seam.co/latest/device-guides/sandbox-and-sample-data/assa-abloy-visionline-access-management-system-sample-data)
+{% endhint %}
 
 ***
 
