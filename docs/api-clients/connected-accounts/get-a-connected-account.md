@@ -4,59 +4,14 @@ description: Get a Connected Account by its ID
 
 # Get a Connected Account
 
-
-
-{% swagger method="get" path="/connected_accounts/get" baseUrl="https://connect.getseam.com" summary="Get Connected Account" %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="query" name="connected_account_id" required="true" %}
-ID of the Connected Account
-{% endswagger-parameter %}
-
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-Bearer <API_KEY>
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="" %}
-```javascript
-{
-  "connected_account": {
-    "connected_account_id": "9dcedcb3-5ede-4b66-9e07-f9ef97b3c29b",
-    "created_at": "2022-08-24T10:38:05.128Z",
-    "custom_metadata": {},
-    "user_identifier": {
-      "email": "jane@example.com"
-    },
-    "account_type": "schlage",
-    "errors": []
-  },
-  "ok": true
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="404: Not Found" description="" %}
-```javascript
-{
-  "error": {
-    "type": "connected_account_not_found",
-    "message": "Connected account not found",
-    "request_id": "100da4e3-2a68-4a77-a4ac-50b6cc0ac987"
-  },
-  "ok": false
-}
-```
-{% endswagger-response %}
+{% swagger src="https://connect.getseam.com/openapi.json" path="/connected_accounts/get" method="post" %}
+[https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
 {% endswagger %}
 
 ### Code Examples
 
 #### Retrieving using "connected\_account\_id"
-<!-- CODE INJECT START
-Get a connected account by id
--->
+
 {% tabs %}
 {% tab title="Javascript" %}
 ```javascript
@@ -67,6 +22,7 @@ const connectedAccount = await seam.connectedAccounts.get({
 console.log(connectedAccount)
 ```
 {% endtab %}
+
 {% tab title="Python" %}
 ```python
 # Get a connected account by its ID
@@ -76,6 +32,7 @@ connected_account = seam.connected_accounts.get("123e4567-e89b-12d3-a456-4266141
 print(connected_account)
 ```
 {% endtab %}
+
 {% tab title="Ruby" %}
 ```ruby
 # Use the Seam SDK to get a connected account by its id
@@ -87,6 +44,7 @@ connected_account = seam.connected_accounts.get(
 puts connected_account
 ```
 {% endtab %}
+
 {% tab title="PHP" %}
 ```php
 // Get a connected account by its ID
@@ -98,13 +56,9 @@ echo json_encode($connected_account);
 ```
 {% endtab %}
 {% endtabs %}
-<!-- CODE INJECT END -->
 
 #### Retrieving using "email"
 
-<!-- CODE INJECT START
-Get a connected account by email
--->
 {% tabs %}
 {% tab title="Ruby" %}
 ```ruby
@@ -121,7 +75,6 @@ puts connect_account
 ```
 {% endtab %}
 {% endtabs %}
-<!-- CODE INJECT END -->
 
 ### Parameters
 

@@ -77,6 +77,7 @@
 * [Connected Accounts](api-clients/connected-accounts/README.md)
   * [Get a Connected Account](api-clients/connected-accounts/get-a-connected-account.md)
   * [List Connected Accounts](api-clients/connected-accounts/list-connected-accounts.md)
+  * [Delete a Connected Account](api-clients/connected-accounts/delete-a-connected-account.md)
 * [Devices](api-clients/devices/README.md)
   * [List Devices](api-clients/devices/list-devices.md)
   * [List Device Providers](api-clients/devices/list-device-providers.md)

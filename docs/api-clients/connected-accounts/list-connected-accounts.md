@@ -4,34 +4,8 @@ description: Get all Connected Accounts associated with your Account
 
 # List Connected Accounts
 
-{% swagger method="get" path="/connected_accounts/list" baseUrl="https://connect.getseam.com" summary="Retrieve list of Connected Accounts" %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-Bearer <API_KEY>
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="" %}
-```javascript
-{
-  "connected_accounts": [
-    {
-      "connected_account_id": "9dcedcb3-5ede-4b66-9e07-f9ef97b3c29b",
-      "created_at": "2022-08-24T10:38:05.128Z",
-      "custom_metadata": {},
-      "user_identifier": {
-        "email": "jane@example.com"
-      },
-      "account_type": "schlage",
-      "errors": []
-    }
-  ],
-  "ok": true
-}
-```
-{% endswagger-response %}
+{% swagger src="https://connect.getseam.com/openapi.json" path="/connected_accounts/list" method="post" %}
+[https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
 {% endswagger %}
 
 ### Code Example

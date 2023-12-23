@@ -104,8 +104,8 @@ await seam.accessCodes.delete({
 
 ### Parameters
 
-| `access_code_id` | type: string | <p><br>ID of the Access Code</p> |
-| ---------------- | ------------ | -------------------------------- |
+| `access_code_id` | type: string | ID of the Access Code |
+| ---------------- | ------------ | --------------------- |
 
 ### Response
 
