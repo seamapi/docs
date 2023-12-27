@@ -20,7 +20,7 @@ layout:
 
 ## What is a Workspace?
 
-A workspace is conceptually like a project or environment. It encapsulate all other Seam resources, such as devices and connected third-party accounts. You access resources within a workspace using an [API key](api-keys.md), and you can receive events from a workspace using [webhooks](../webhooks.md).
+A workspace is conceptually like a project or environment. It encapsulate all other Seam resources, such as devices and connected third-party accounts. You access resources within a workspace using an [API key](api-keys.md), a [Personal Access Token](personal-access-tokens.md) (PAT), or [client session tokens](client-session-tokens.md), and you can receive events from a workspace using [webhooks](../webhooks.md).
 
 There is no limit to the number of workspaces that you can create, but most Seam customers only have the following two workspaces:&#x20;
 

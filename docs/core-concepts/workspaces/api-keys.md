@@ -10,6 +10,8 @@ You [create an API key](api-keys.md#create-an-api-key) in your [sandbox workspac
 
 {% hint style="info" %}
 If you need to access multiple workspaces, create a [Personal Access Token](personal-access-tokens.md) to use instead of a workspace-specific API key.
+
+Alternately, if you want to restrict your users' access to only the devices that they own, use [client session tokens](client-session-tokens.md) instead of an API key.
 {% endhint %}
 
 ## Create an API Key

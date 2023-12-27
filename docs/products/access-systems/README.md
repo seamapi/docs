@@ -31,7 +31,7 @@ Finally, you issue sets of [credentials](issuing-credentials.md)—such as acces
 
 The following diagram illustrates the relationship between Seam access system components:
 
-<figure><img src="../../.gitbook/assets/access_system_components.png" alt="Seam access system components"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/access-system-components.png" alt="Seam access system components"><figcaption></figcaption></figure>
 
 ## What Is a User?
 

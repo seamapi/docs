@@ -11,6 +11,7 @@
 * [Workspaces](core-concepts/workspaces/README.md)
   * [API Keys](core-concepts/workspaces/api-keys.md)
   * [Personal Access Tokens](core-concepts/workspaces/personal-access-tokens.md)
+  * [Client Session Tokens](core-concepts/workspaces/client-session-tokens.md)
 * [Devices](core-concepts/devices.md)
 * [Connect Webviews](core-concepts/connect-webviews/README.md)
   * [Embedding a Connect Webview in Your App](core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app.md)
@@ -68,6 +69,11 @@
 * [Workspaces](api-clients/workspaces/README.md)
   * [Get Workspace](api-clients/workspaces/get-workspace.md)
   * [Reset Workspace](api-clients/workspaces/reset-workspace.md)
+* [Client Sessions](api-clients/client-sessions/README.md)
+  * [Create a Client Session](api-clients/client-sessions/create-a-client-session.md)
+  * [List Client Sessions](api-clients/client-sessions/list-client-sessions.md)
+  * [Get a Client Session](api-clients/client-sessions/get-a-client-session.md)
+  * [Delete a Client Session](api-clients/client-sessions/delete-a-client-session.md)
 * [Connect Webviews](api-clients/connect-webviews/README.md)
   * [Create a Connect Webview](api-clients/connect-webviews/create-a-connect-webview.md)
   * [List Connect Webviews](api-clients/connect-webviews/list-connect-webviews.md)
@@ -156,7 +162,7 @@
 ## 🧱 Seam Components
 
 * [Overview](seam-components/overview/README.md)
-  * [Get started with React](seam-components/overview/get-started-with-react-components-and-client-session-tokens.md)
+  * [Get Started with React](seam-components/overview/get-started-with-react-components-and-client-session-tokens.md)
   * [Get started with Angular](seam-components/overview/angular.md)
   * [Get started with Vue](seam-components/overview/vue.md)
   * [Get started with Client Side Components](seam-components/overview/get-started-with-client-side-components.md)
