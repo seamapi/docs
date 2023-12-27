@@ -23,15 +23,13 @@ Specify the user ID and, optionally, [connected accounts](../connected-accounts/
 {% tabs %}
 {% tab title="JavaScript" %}
 ```javascript
-const user_identifier_key = "internal user ID 1"
-const connected_account_ids = ["3ea0b67f-649f-4131-bfe3-f2035e77a3f9", "6e1cad57-b244-40ca-b4f3-30a46c8000d4"]
-
-const client_session = await seam.clientSessions.create({
-  user_identifier_key: user_identifier_key,
-  connected_account_ids: connected_account_ids
+await seam.clientSessions.create({
+  user_identifier_key: "internal-user-id-1",
+  connected_account_ids: [
+    "3ea0b67f-649f-4131-bfe3-f2035e77a3f9",
+    "6e1cad57-b244-40ca-b4f3-30a46c8000d4",
+  ]
 })
-
-console.log(client_session)
 ```
 {% endtab %}
 {% endtabs %}

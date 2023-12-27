@@ -23,7 +23,7 @@ List all client sessions or filter the list of client sessions by including the 
 {% tabs %}
 {% tab title="JavaScript" %}
 ```javascript
-console.log(await seam.clientSessions.list())
+await seam.clientSessions.list()
 ```
 {% endtab %}
 {% endtabs %}
