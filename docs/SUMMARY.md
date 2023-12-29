@@ -7,7 +7,8 @@
 ## 📖 Core Concepts
 
 * [Overview](core-concepts/overview.md)
-* [Seam Console](core-concepts/seam-console.md)
+* [Seam Console](core-concepts/seam-console/README.md)
+  * [Seam Online CLI](core-concepts/seam-console/seam-online-cli.md)
 * [Workspaces](core-concepts/workspaces/README.md)
   * [API Keys](core-concepts/workspaces/api-keys.md)
   * [Personal Access Tokens](core-concepts/workspaces/personal-access-tokens.md)

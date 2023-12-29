@@ -6,7 +6,7 @@ description: >-
 
 # Customizing Connect Webviews
 
-You can use the [Seam Console](../seam-console.md) to customize the [Connect Webviews](./) that you present to your users through your app.
+You can use the [Seam Console](../seam-console/) to customize the [Connect Webviews](./) that you present to your users through your app.
 
 You can customize the following characteristics of your Connect Webviews:
 

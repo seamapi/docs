@@ -8,7 +8,7 @@ description: >-
 
 ## Create a Production Workspace
 
-When you first sign up for Seam, the [Seam Console](core-concepts/seam-console.md) automatically creates a [sandbox workspace](core-concepts/workspaces/#sandbox-workspaces) for you. Sandbox workspaces are great for testing with virtual devices, but once you are ready to connect a real device, you must first create a [production workspace](core-concepts/workspaces/#production-workspaces).
+When you first sign up for Seam, the [Seam Console](core-concepts/seam-console/) automatically creates a [sandbox workspace](core-concepts/workspaces/#sandbox-workspaces) for you. Sandbox workspaces are great for testing with virtual devices, but once you are ready to connect a real device, you must first create a [production workspace](core-concepts/workspaces/#production-workspaces).
 
 1. In the upper-right corner of the [Seam Console](https://console.seam.co/), click the down arrow to display the workspace list.
 2. Click **+ Add Workspace**.

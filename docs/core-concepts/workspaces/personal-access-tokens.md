@@ -8,7 +8,7 @@ description: >-
 
 In some instances, it may be necessary to access multiple workspaces with a single Seam credential. For example, you may want to set up separate workspaces for each of your users to control different sets of devices. For more information about scenarios in which multiple workspaces are useful, see [Per-Customer Workspace Setup](./#per-customer-workspace-setup-less-common).
 
-Because [API keys](api-keys.md) are scoped to a single workspace, Seam provides Personal Access Tokens (PAT) to enable multi-workspace authorization. First, [create a PAT](personal-access-tokens.md#create-a-personal-access-token). Then, [use this PAT with a workspace ID](personal-access-tokens.md#use-a-pat-and-workspace-id-in-the-seam-api) to access the desired workspace.&#x20;
+Because [API keys](api-keys.md) are scoped to a single workspace, Seam provides Personal Access Tokens (PATs) to enable multi-workspace authorization. First, [create a PAT](personal-access-tokens.md#create-a-personal-access-token). Then, [use this PAT with a workspace ID](personal-access-tokens.md#use-a-pat-and-workspace-id-in-the-seam-api) to access the desired workspace.&#x20;
 
 <figure><img src="../../.gitbook/assets/personal-access-token.png" alt="Unlike API keys, PATs enable multi-workspace authorization."><figcaption></figcaption></figure>
 

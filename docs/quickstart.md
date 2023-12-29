@@ -11,7 +11,7 @@ description: >-
 
 To get started with Seam, first connect a set of devices.
 
-1. In a web browser, navigate to the [Seam Console](core-concepts/seam-console.md) at [**console.seam.co**](https://console.seam.co/) and create an account.\
+1. In a web browser, navigate to the [Seam Console](core-concepts/seam-console/) at [**console.seam.co**](https://console.seam.co/) and create an account.\
    Once you have logged in to the Seam Console, you are working in the default [sandbox workspace](core-concepts/workspaces/#sandbox-workspaces).
 2.  In the upper-right corner of the **Devices** page, click **+ Add Devices**.
 
