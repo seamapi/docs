@@ -6,7 +6,7 @@ description: >-
 
 # Client Sessions
 
-If you want to restrict your users' access to their own devices, use Client Sessions.
+If you want to restrict your users' access to their own devices, use client sessions.
 
 The `client_session` object represents a client session.
 
