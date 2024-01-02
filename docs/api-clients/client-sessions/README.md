@@ -10,15 +10,14 @@ If you want to restrict your users' access to their own devices, use Client Sess
 
 The `client_session` object represents a client session.
 
-Each client session is created with a custom `user_identifier_key`.
-Normally, this would be a user id provided by your application.
+You create each client session with a custom `user_identifier_key`.
+Normally, the `user_identifier_key` is a user ID that your application provides.
 
-When calling the Seam API from your backend using an API key,
-the `user_identifier_key` may be passed as a parameter to limit results to the associated client session.
-For example, `/devices/list?user_identifier_key=123` would only return devices owned by
-the client session created with the `user_identifier_key` 123.
+When calling the Seam API from your back end using an API key,
+you can pass the `user_identifier_key` as a parameter to limit results to the associated client session.
+For example, `/devices/list?user_identifier_key=123` only returns devices associated with the client session created with the `user_identifier_key` `123`.
 
-A client session has a token that may be used with the Seam JavaScript SDK to make requests
+A client session has a token that you can use with the Seam JavaScript SDK to make requests
 from the client (browser) directly to the Seam API.
 The token restricts the user's access to only the devices that they own.
 
@@ -43,13 +42,15 @@ You can perform the following actions on `client_session` objects:
 * [Delete a client session](delete-a-client-session.md)
 
 
-## Example: Use Client Sessions on the backend to limit your users to their own devices
+## Example: Use Client Sessions on the Back End to Limit Your Users to Their Own Devices
 
-1. Create a client session for a new user using your internal user id (`user_identifier_key`).
-2. [Create a Connect Webview](../../api-clients/connect-webviews/create-a-connect-webview.md).
+The code in this example performs the following steps:
+
+1. Create a client session for a new user using your internal user ID (`user_identifier_key`).
+2. Create a [Connect Webview](../../core-concepts/connect-webviews).
 3. Link the connect webview to the client session.
 4. Redirect the user to the connect webview url so they may login and connect their account.
-5. Use the `user_identifier_key` parameter to manage the users own devices.
+5. Use the `user_identifier_key` parameter to manage the user's own devices.
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -57,7 +58,7 @@ You can perform the following actions on `client_session` objects:
 ```javascript
 const seam = new Seam("YOUR_API_KEY")
 
-// Create a client session using your own user id as the user_identifier_key.
+// Create a client session using your internal user ID as the user_identifier_key.
 const user_identifier_key = "user-123"
 
 // Create the client session.
@@ -77,7 +78,7 @@ await seam.clientSessions.grant_access({
 // Redirect the user to the connect webview.
 res.redirect(connect_webview.url)
 
-// In one of your application views, return a list of devices to your user
+// In one of your application views, return a list of devices to your user.
 const devices = await seam.devices.list({
   user_identifier_key,
   name: "Front Door",
@@ -85,7 +86,7 @@ const devices = await seam.devices.list({
 
 res.send(renderDevicePageHtml(res, { devices }))
 
-// Handle application request to unlock a door
+// Handle the application request to unlock a door.
 const device_id = req.body.device_id
 
 const devices = await seam.devices.list({
