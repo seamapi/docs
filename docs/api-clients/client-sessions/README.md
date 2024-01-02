@@ -8,6 +8,8 @@ description: >-
 
 If you want to restrict your users' access to their own devices, use client sessions.
 
+<figure><img src="../../.gitbook/assets/client-session-diagram.png" alt="Use client session tokens to restrict users&#x27; access to only the devices that they own."><figcaption></figcaption></figure>
+
 The `client_session` object represents a client session.
 
 You create each client session with a custom `user_identifier_key`.

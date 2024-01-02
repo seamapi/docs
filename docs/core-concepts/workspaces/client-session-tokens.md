@@ -16,8 +16,6 @@ If you are just getting started with Seam, see [Seam Components](../../seam-comp
 In only a few minutes and with just a few lines of code, you can start controlling devices from your web application without interacting with your back end.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/client-session-diagram.png" alt="Use client session tokens to restrict users&#x27; access to only the devices that they own."><figcaption></figcaption></figure>
-
 <figure><img src="../../.gitbook/assets/client-session-flow.png" alt="Client session tokens increase efficiency by enabling your user&#x27;s browser to communicate directly with the Seam back-end server."><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
