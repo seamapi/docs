@@ -69,6 +69,10 @@ const client_session = await seam.clientSessions.create({
 const connect_webview = await seam.connectWebviews.create()
 
 // Link the connect webview to the client session
+await seam.clientSessions.grant_access({
+  user_identifier_key,
+  connect_webview_ids: [connect_webview.connect_webview_id],
+})
 
 // Redirect the user to the connect webview.
 res.redirect(connect_webview.url)
