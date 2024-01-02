@@ -47,9 +47,9 @@ You can perform the following actions on `client_session` objects:
 The code in this example performs the following steps:
 
 1. Create a client session for a new user using your internal user ID (`user_identifier_key`).
-2. Create a [Connect Webview](../../core-concepts/connect-webviews).
+2. Create a [connect webview](../../core-concepts/connect-webviews).
 3. Link the connect webview to the client session.
-4. Redirect the user to the connect webview url so they may login and connect their account.
+4. Redirect the user to the connect webview URL so they may login and connect their account.
 5. Use the `user_identifier_key` parameter to manage the user's own devices.
 
 {% tabs %}
@@ -58,47 +58,55 @@ The code in this example performs the following steps:
 ```javascript
 const seam = new Seam("YOUR_API_KEY")
 
-// Create a client session using your internal user ID as the user_identifier_key.
-const user_identifier_key = "user-123"
+const handleUserAccountLink = async (req, res) => {
+  const user_identifier_key = req.auth.userId
+  
+  // Get or create a client session using your internal user ID as the user_identifier_key.
+  const client_session = await seam.clientSessions.get_or_create({
+    user_identifier_key
+  })
+  
+  // Create a connect webview.
+  const connect_webview = await seam.connectWebviews.create()
+  
+  // Link the connect webview to the client session
+  await seam.clientSessions.grant_access({
+    user_identifier_key,
+    connect_webview_ids: [connect_webview.connect_webview_id],
+  })
+  
+  // Redirect the user to the connect webview.
+  res.redirect(connect_webview.url)
+}
 
-// Create the client session.
-const client_session = await seam.clientSessions.create({
-  user_identifier_key
-})
 
-// Create a Connect Webview.
-const connect_webview = await seam.connectWebviews.create()
+const handleUserDeviceList = async (req, res) => {
+  const user_identifier_key = req.auth.userId
 
-// Link the connect webview to the client session
-await seam.clientSessions.grant_access({
-  user_identifier_key,
-  connect_webview_ids: [connect_webview.connect_webview_id],
-})
-
-// Redirect the user to the connect webview.
-res.redirect(connect_webview.url)
-
-// In one of your application views, return a list of devices to your user.
-const devices = await seam.devices.list({
-  user_identifier_key,
-  name: "Front Door",
-})
-
-res.send(renderDevicePageHtml(res, { devices }))
+  const devices = await seam.devices.list({
+    user_identifier_key,
+    name: "Front Door",
+  })
+  
+  res.status(200).json({ devices })
+}
 
 // Handle the application request to unlock a door.
-const device_id = req.body.device_id
-
-const devices = await seam.devices.list({
-  user_identifier_key,
-  device_ids: [device_id]
-})
-
-if (devices.length === 0) return res.send(401).end()
-
-await seam.devices.unlock_door({ device_id })
-
-res.send(200)
+const handleUnlock = async (req, res) => {
+  const user_identifier_key = req.auth.userId
+  const device_id = req.body.device_id
+  
+  const devices = await seam.devices.list({
+    user_identifier_key,
+    device_ids: [device_id],
+  })
+  
+  if (devices.length === 0) return res.send(401).end()
+  
+  await seam.devices.unlock_door({ device_id })
+  
+  res.send(204)
+}
 ```
 {% endtab %}
 {% endtabs %}
