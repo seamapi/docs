@@ -25,7 +25,10 @@ An API key has unlimited permission to manage all devices and other Seam API res
 Never use an API key in the browser or expose it to your users.
 {% endhint %}
 
-A Client Session Token can either be issued from your backend to the client, or managed entirely from the client using [Seam Components with a Publishable Key](../../seam-components/overview/get-started-with-client-side-components.md).
+You can issue a client session token in either of the following two ways:
+
+- Create or retrieve a client session token from your back end and pass it to your front end to use with the Seam JavaScript SDK or Seam Components.
+- Manage client sessions entirely on the front end by using a [publishable key with the JavaScript SDK or Seam Components](../../seam-components/overview/get-started-with-client-side-components.md).
 
 To generate a client session token, from your back end, use the Seam API to create a client session that includes [your own internal user ID for the user](../../seam-components/overview/get-started-with-client-side-components.md#3-select-a-user-identifier-key), along with the [connected accounts](../../api-clients/connected-accounts/) associated with this user. The new client session contains a token that you can pass to the Seam JavaScript SDK running in the browser.
 
