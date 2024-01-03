@@ -269,10 +269,6 @@
 * [Access Code Management for Hospitality](device-guides/implementing-robust-access-code-management-for-guests.md)
 * [Rate Limits and Guardrails](device-guides/rate-limits-and-guardrails.md)
 
-## 🌉 Seam Hardware Bridge <a href="#seam-bridge" id="seam-bridge"></a>
-
-* [Connecting the Seam Hardware Bridge to DoorKing](seam-bridge/connecting-with-doorking.md)
-
 ## For Device Manufacturers
 
 * [Creating a Seam-Compatible Intercom API](for-device-manufacturers/creating-a-seam-compatible-intercom-api/README.md)
