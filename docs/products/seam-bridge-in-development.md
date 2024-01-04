@@ -22,7 +22,7 @@ The "Seam Bridge" product allows you to connect on-premise software systems with
 
 ### **Installing the Seam Bridge app on the on-premise computer**
 
-1. Download the File: Visit [the Seam Bridge releases page](https://github.com/seamapi/seam-bridge-client/releases/tag/latest) and download the latest version of "SeamBridge.exe" file.
+1. Download the File: Visit [the Seam Bridge releases page](https://github.com/seamapi/seam-bridge-client/releases/latest) and download the latest version of "SeamBridge.exe" file.
 2. Run the **"SeamBridge.exe"** executable. It will launch a webpage with the Seam Bridge settings.
 3.  Copy down the invitation code that is displayed on the webpage. The installer use it to pair this Seam Bridge to the workspace.\
 
