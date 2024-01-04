@@ -19,8 +19,9 @@ Specify the desired client session by including the corresponding `client_sessio
 {% tabs %}
 {% tab title="JavaScript" %}
 ```javascript
-const client_session_id = "c75d4330-ae01-4dfd-b6c5-f3e94e0d8168"
-console.log(await seam.clientSessions.get(client_session_id))
+const clientSession = await seam.clientSessions.get({
+  client_session_id: "c75d4330-ae01-4dfd-b6c5-f3e94e0d8168",
+})
 ```
 {% endtab %}
 {% endtabs %}

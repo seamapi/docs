@@ -6,7 +6,22 @@ description: >-
 
 # Client Sessions
 
-The `client_session` object represents a client session. You create a client session and then use the returned token in place of an [API key](../../core-concepts/workspaces/api-keys.md) in an authentication header for the Seam HTTP API or in the `seam` constructor if you are using a Seam SDK. The token restricts the user's access to only the devices that they own.
+If you want to restrict your users' access to their own devices, use client sessions.
+
+<figure><img src="../../.gitbook/assets/client-session-diagram.png" alt="Use client session tokens to restrict users&#x27; access to only the devices that they own."><figcaption></figcaption></figure>
+
+The `client_session` object represents a client session.
+
+You create each client session with a custom `user_identifier_key`.
+Normally, the `user_identifier_key` is a user ID that your application provides.
+
+When calling the Seam API from your back end using an API key,
+you can pass the `user_identifier_key` as a parameter to limit results to the associated client session.
+For example, `/devices/list?user_identifier_key=123` only returns devices associated with the client session created with the `user_identifier_key` `123`.
+
+A client session has a token that you can use with the Seam JavaScript SDK to make requests
+from the client (browser) directly to the Seam API.
+The token restricts the user's access to only the devices that they own.
 
 For more information about client sessions and client session tokens, see the following topics:
 

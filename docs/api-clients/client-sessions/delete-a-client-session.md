@@ -23,10 +23,9 @@ Specify the desired client session by including the corresponding `client_sessio
 {% tabs %}
 {% tab title="JavaScript" %}
 ```javascript
-const client_session_id = "639eb8af-19a9-4ae5-817c-6ad08fd078e7"
-console.log(await seam.clientSessions.delete({
-  client_session_id: client_session_id
-}))
+await seam.clientSessions.delete({
+  client_session_id: "639eb8af-19a9-4ae5-817c-6ad08fd078e7",
+})
 ```
 {% endtab %}
 {% endtabs %}
