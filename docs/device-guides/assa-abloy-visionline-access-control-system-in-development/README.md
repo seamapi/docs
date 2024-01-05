@@ -1,14 +1,18 @@
-# Assa Abloy Visionline (Access Control System) - In Development
+---
+description: Guide for using the ASSA ABLOY Visionline Access Control System with Seam
+---
+
+# ASSA ABLOY Visionline Access Control System - In Development
 
 ## Overview
 
-Seam integrates seamlessly with the Assa Abloy Visionline access system, a widely-used on-premise control platform for hotels. This system supports doors, elevators, turnstiles, and gates, allowing you to secure either a single building or multiple buildings using the same setup. Visionline employs a data-on-card platform, significantly reducing installation costs as the locks can function offline. Additionally, the system's capability to operate independently of network connectivity enhances its reliability and flexibility.
+Seam integrates seamlessly with the [Assa Abloy Visionline Access Control System](https://www.assaabloyglobalsolutions.com/en/hospitality-solutions/access-management-systems-for-hotels#gw-group-text-and-media-14987d7731) (ACS), a widely-used on-premise control platform for hotels. This system supports doors, elevators, turnstiles, and gates, enabling you to secure either a single building or multiple buildings using the same setup. Visionline uses a data-on-card platform, significantly reducing installation costs because the locks can function offline. Additionally, the capability of the system to operate independently of network connectivity enhances the reliability and flexibility.
 
 ***
 
 ## Supported Devices
 
-This integration supports all readers, and wireless locks connected to the Visionline platform.
+This integration supports all readers and wireless locks connected to the Visionline ACS.
 
 We support the following features:
 
@@ -19,51 +23,65 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables you to connect your Visionline access system to Seam, include the `visionline` [device provider key](../../api-clients/connect-webviews/#device-provider-keys) as the `selected_provider` or in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables you to connect your Visionline ACS to Seam, include the `visionline` [device provider key](../../api-clients/connect-webviews/#device-provider-keys) as the `selected_provider` or in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
 ## Setup Instructions
 
-1. Login to the Visionline application, take a note of the user name and password.
-   * Optionally, you may add a new user and use their username and password instead.
-2. Make sure you set up a Mobile Access Account so that you can issue mobile credentials. If you've set up your mobile access account, skip to step 4.
-3. To set up your Mobile Access account in Visionline:
-   * In the left navigation, click on "Lists" in the bottom left corner.
-   * Under "System setup", click on "Mobile Access", "Mobile Access", and then "New".
-   * On account details, Server screen, enter the connection details received from Assa Abloy. Note that in a real hotel, these parameters are wrapped and applied via an ‘Option Code’ (i.e. a license string) and are not directly entered.
-4. To retrieve your "System ID":
-   * In the left navigation, click on "Lists" in the bottom left corner.
-   * Under "System setup", click on "Mobile Access".
-   *   Select the configured mobile access account, Server screen, and write down the "System ID".\
+{% hint style="info" %}
+Before connecting your Visionline ACS to Seam, you must first install and connect your Seam Bridge. For detailed instructions, see [Seam Bridge](../../products/seam-bridge-in-development.md).
+{% endhint %}
+
+1. Log in to the Visionline application and note your username and password.\
+   Optionally, you can add a new user and use their username and password instead of using the username and password of an existing Visionline application user.
+2.  Make sure that you set up a Mobile Access account in the Visionline application so that you can issue mobile credentials.
+
+    If you have not yet set up your Visionline Mobile Access account, perform the following steps:
+
+    * At the bottom of the left navigation pane of the Visionline application, click **Lists**.
+    * In the **System setup** area of the left navigation pane, click **Mobile Access > Mobile Access > New**.
+    * In the **Mobile Access account details** window click **Server**.
+    *   In the **Server** pane, specify the connection details that you received from ASSA ABLOY.
+
+        For hotels, ASSA ABLOY wraps these parameters and applies them through Option Codes (that is, license strings). In that situation, you do not enter these parameters directly.
+    * Save the new Visionline Mobile Access account.
+3. Retrieve your Visionline system ID, as follows:
+   * At the bottom of the left navigation pane of the Visionline application, click **Lists**.
+   * In the **System setup** area of the left navigation pane, click **Mobile Access**.
+   * Select the configured mobile access account.
+   * Click **Server**.
+   * In the **Server** pane, note the value in the **System ID** field.
+4. Create a [Connect Webview](../../core-concepts/connect-webviews/), including `visionline` in the set of [`accepted_providers`](../../api-clients/connect-webviews/#connect\_webview-properties).
+5. Display the Connect Webview and perform the following steps:
+   * If presented with multiple brand options within the Connect Webview, select **Visionline**.
+   *   Select your [Seam Bridge](../../products/seam-bridge-in-development.md) that is connected to the Visionline system to which you want to connect.
+
+       <figure><img src="../../.gitbook/assets/connect-webview-sel-on-prem-proxy.png" alt="In the Connect Webview, select your Seam Bridge." width="233"><figcaption></figcaption></figure>
+   *   Specify the following values to add your ASSA ABLOY Visionline account to Seam:
+
+       * Your Visionline application username and password.
+       * The local IP address of the on-premises computer, for example, `192.168.0.10`.
+       * (Coming soon!) The  system ID of your Visionline instance.
 
 
-       <figure><img src="../../.gitbook/assets/Screen Shot 2023-12-22 at 5.05.19 PM.png" alt=""><figcaption><p>Copy down the "System ID" from the Mobile Access account.</p></figcaption></figure>
-5. Create a Connect Webview with "`visionline`" set as the accepted provider.
-6. Within the Connect Webview, if presented with multiple brand options, select "Visionline".
-7.  Select your Seam Bridge that is connected to the Visionline system you're trying to connect to in the following screen:
 
-    <figure><img src="../../.gitbook/assets/image (8).png" alt="" width="240"><figcaption></figcaption></figure>
-8. Use the following values to complete the the [Seam Connect Webview](../../core-concepts/connect-webviews/) to add your Assa Abloy Credential Services account to Seam:
-   * Username and Password from log in.
-   * Local IP address of the on-premise computer, i.e. "`192.168.0.10`".
-   * (Coming soon!) System ID of your Visionline instance.
-9. Click "Submit".
-
-<figure><img src="../../.gitbook/assets/image (7).png" alt="" width="330"><figcaption></figcaption></figure>
+       <figure><img src="../../.gitbook/assets/connect-webview-visionline-credentials.png" alt="In the Connect Webview, specify your Visionline credentials." width="233"><figcaption></figcaption></figure>
+   * Click **Submit**.
 
 {% hint style="info" %}
-When connecting a Visionline Access System in your sandbox test envrionment, you can use the following test credentials:\
-[https://docs.seam.co/latest/device-guides/sandbox-and-sample-data/assa-abloy-visionline-access-management-system-sample-data](https://docs.seam.co/latest/device-guides/sandbox-and-sample-data/assa-abloy-visionline-access-management-system-sample-data)
+When connecting a Visionline ACS in your sandbox test environment, you can use the following test credentials:
+
+[ASSA ABLOY Visionline Access Control System Sample Data](../sandbox-and-sample-data/assa-abloy-visionline-access-management-system-sample-data.md)
 {% endhint %}
 
 ***
 
 ## Where to Order
 
-To purchase the Assa Abloy Visionline access system and devices, request a quote from Assa Abloy.
+To purchase the Assa Abloy Visionline ACS and devices, request a quote from ASSA ABLOY.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Assa Abloy Contact Page</strong></td><td></td><td><a href="https://www.assaabloyglobalsolutions.com/en/about/local-contacts">https://www.assaabloyglobalsolutions.com/en/about/local-contacts</a></td><td><a href="../../.gitbook/assets/image (1).png">image (1).png</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>ASSA ABLOY Contact Page</strong></td><td></td><td><a href="https://www.assaabloyglobalsolutions.com/en/about/local-contacts">https://www.assaabloyglobalsolutions.com/en/about/local-contacts</a></td><td><a href="../../.gitbook/assets/image (1).png">image (1).png</a></td></tr></tbody></table>
 
 ***
 

@@ -50,7 +50,7 @@ You have two options for connecting the Seam Bridge to your workspace. If you're
 4. They must enter a unique name in the "Bridge Name" field sand the invitation code they collected from the Seam Bridge webpage in the "PIN Code" field.
 5. Remind them to remember the name for future reference when connecting their on-premise system in the Connect Webview.
 
-<figure><img src="../.gitbook/assets/Screen Shot 2023-12-22 at 3.33.56 PM.png" alt="" width="221"><figcaption><p>Connect Webview for connecting your Seam Bridge instance.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/connect-webview-visionline-credentials.png" alt="" width="221"><figcaption><p>Connect Webview for connecting your Seam Bridge instance.</p></figcaption></figure>
 
 ***
 
