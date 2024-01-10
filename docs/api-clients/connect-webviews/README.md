@@ -14,17 +14,17 @@ To enable a user to connect their device account to Seam through your app, you m
 
 ## `connect_webview` Properties
 
-| **`connect_webview_id`**          | uuid             | ID of the Connect Webview                                                                                                          |
-| --------------------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| **`accepted_providers`**          | string\[]        | List of accepted [device provider keys](./#device-provider-keys)                                                                   |
-| **`selected_provider`**           | string           | Selected provider of the webview, one of [device provider keys](./#device-provider-keys)                                           |
-| **`custom_metadata`**             | object, optional | Specify up to 50 keys, with key names up to 40 characters long. Use any non-object value. Strings are limited to 500 characters.   |
-| **`custom_redirect_url`**         | string, optional | If set, the Connect Webview will redirect to this url when the user successfully pairs a device, or runs into an unexpected error. |
-| **`custom_redirect_failure_url`** | string, optional | If set, the Connect Webview will redirect to this url when an unexpected error occurs.                                             |
-| **`status`**                      | string           | `pending` or `authorized`                                                                                                          |
-| **`url`**                         | string           | URL to the webview                                                                                                                 |
-| **`login_successful`**            | boolean          | Whether the user logged in successfully using the webview                                                                          |
-| **`connected_account_id`**        | uuid             | ID of the Connected Account that was created after the user successfully logged in                                                 |
+| **`connect_webview_id`**          | uuid             | ID of the Connect Webview                                                                                                                |
+| --------------------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **`accepted_providers`**          | string\[]        | List of accepted [device provider keys](./#device-provider-keys)                                                                         |
+| **`selected_provider`**           | string           | Selected provider of the webview, one of [device provider keys](./#device-provider-keys)                                                 |
+| **`custom_metadata`**             | object, optional | Specify up to 50 keys, with key names up to 40 characters long. Accepts string or boolean values. Strings are limited to 500 characters. |
+| **`custom_redirect_url`**         | string, optional | If set, the Connect Webview will redirect to this url when the user successfully pairs a device, or runs into an unexpected error.       |
+| **`custom_redirect_failure_url`** | string, optional | If set, the Connect Webview will redirect to this url when an unexpected error occurs.                                                   |
+| **`status`**                      | string           | `pending` or `authorized`                                                                                                                |
+| **`url`**                         | string           | URL to the webview                                                                                                                       |
+| **`login_successful`**            | boolean          | Whether the user logged in successfully using the webview                                                                                |
+| **`connected_account_id`**        | uuid             | ID of the Connected Account that was created after the user successfully logged in                                                       |
 
 ### Accepted Provider Category Keys
 
