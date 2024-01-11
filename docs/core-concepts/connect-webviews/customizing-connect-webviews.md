@@ -49,7 +49,7 @@ To display a subset of providers in your Connect Webview, specify one of the fol
 For a complete list of available providers, see [Device Provider Keys](../../api-clients/connect-webviews/#device-provider-keys).
 
 {% hint style="info" %}
-If you supply neither of these two properties, the Connect Webview displays [all of the stable providers](https://github.com/seamapi/seam-connect/blob/261d4a1a426396160a1768ac9d9464261ed580ac/lib/device/providers.ts#L46-L69) that Seam supports.
+If you supply neither of these two properties, the Connect Webview displays all of the stable providers that Seam supports, by default. For more information, see [Accepted Provider Category Keys](../../api-clients/connect-webviews/#accepted-provider-category-keys).
 {% endhint %}
 
 For example, the following Connect Webview creation request specifies that the Connect Webview should only display August and Schlage:

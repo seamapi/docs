@@ -28,9 +28,14 @@ To enable a user to connect their device account to Seam through your app, you m
 
 ### Accepted Provider Category Keys
 
-| key      | Description                                         |
-| -------- | --------------------------------------------------- |
-| `stable` | Only returns provider integration marked as stable. |
+| key                   | Description                                                        |
+| --------------------- | ------------------------------------------------------------------ |
+| `stable`              | Only returns provider integrations marked as stable.               |
+| `consumer_smartlocks` | Only returns provider integrations marked as consumer smart locks. |
+
+{% hint style="info" %}
+To list all providers within a category, use the [List Device Providers](../devices/list-device-providers.md) method with the desired `provider_category` filter.
+{% endhint %}
 
 ### Device Provider Keys
 

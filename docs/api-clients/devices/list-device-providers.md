@@ -16,7 +16,7 @@ To filter the list of returned device providers by a specific device provider ca
 
 ### Request Body Parameters
 
-<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>provider_category</code></td><td>String<br><em>Optional</em></td><td>Provider category by which to filter device providers. The supported category is <code>stable</code>.</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>provider_category</code></td><td>String<br><em>Optional</em></td><td>Provider category by which to filter device providers. Supported categories are <code>stable</code> and <code>consumer_smartlocks</code>.</td></tr></tbody></table>
 
 ### Sample Request
 

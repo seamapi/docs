@@ -102,7 +102,7 @@ Seam maintains a list of device providers that you can access using the [List De
 
 The [Device Provider](./#device-provider) object includes the following information:
 
-<table><thead><tr><th width="273">Property</th><th width="92.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>device_provider_name</code></td><td>String</td><td><p>Name of the device provider.</p><p>For example: <code>august</code></p></td></tr><tr><td><code>display_name</code></td><td>String</td><td><p>Formatted version of the <code>device_provider_name</code>.</p><p>For example: <code>August</code></p></td></tr><tr><td><code>image_url</code></td><td>String</td><td>Image URL for the provider logo.</td></tr><tr><td><code>provider_categories</code></td><td>Array</td><td><p>Array of associated categories for the provider.</p><p>Possible categories: <code>stable</code></p></td></tr></tbody></table>
+<table><thead><tr><th width="273">Property</th><th width="92.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>device_provider_name</code></td><td>String</td><td><p>Name of the device provider.</p><p>For example: <code>august</code></p></td></tr><tr><td><code>display_name</code></td><td>String</td><td><p>Formatted version of the <code>device_provider_name</code>.</p><p>For example: <code>August</code></p></td></tr><tr><td><code>image_url</code></td><td>String</td><td>Image URL for the provider logo.</td></tr><tr><td><code>provider_categories</code></td><td>Array</td><td><p>Array of associated categories for the provider.</p><p>Supported categories are <code>stable</code> and <code>consumer_smartlocks</code>.</p></td></tr></tbody></table>
 
 The following example shows a device provider object:
 
