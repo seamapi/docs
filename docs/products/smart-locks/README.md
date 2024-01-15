@@ -32,4 +32,9 @@ Leverage Seam's API for the following applications:
 
 ## **Next Steps**
 
-To learn how to trigger locks and unlocks on your locks, check out our guide [here](lock-and-unlock.md). For guidance on setting up Access Codes for your device, refer to our guide [here](access-codes/). Additionally, you can check out our API Reference Guides for [Locking and Unlocking](../../api-clients/locks/), and for [Access Codes](../../api-clients/access-codes/).
+To learn how to manage locks and access codes, see the following guides:
+
+* [Lock ad Unlock](lock-and-unlock.md)
+* [Access Codes](access-codes/)
+
+For the corresponding Seam API references, see [Locks](../../api-clients/locks/) and [Access Codes](../../api-clients/access-codes/).

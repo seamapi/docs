@@ -48,9 +48,9 @@ curl -X 'POST' \
 
 ## Create a User
 
-To [create a user](../../api-clients/access-control-systems/users/create-user.md), provide the ACS system ID (`acs_system_id`) of the system and the attributes of the user, such as the full name (`full_name`), email address (`email`), phone number (`phone_number`), and so on.
+To [create a user](../../api-clients/access-control-systems/users/create-user.md), provide the ACS system ID (`acs_system_id`) of the system and the attributes of the user, such as the full name (`full_name`), email address (`email_address`), phone number (`phone_number`), and so on.
 
-You can also assign a user to one or more access groups by including the access group IDs for the user as an array of strings in the `acs_access_group_ids` parameter.
+You can also assign a user to one or more access groups by including the access group IDs for the user as an array of strings in the `acs_access_group_ids` parameter. Further, you can use the `user_identity_id` parameter to associate a new user with a [mobile access user identity](../mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity), if desired.
 
 {% tabs %}
 {% tab title="cURL (Bash)" %}
@@ -65,8 +65,9 @@ curl -X 'POST' \
   -d '{
   "acs_system_id": "11111111-1111-1111-1111-111111111111",
   "acs_access_group_ids": [],
+  "user_identity_id": "44d48b20-0dbe-419d-91ca-ab8bceecd135",
   "full_name": "Jane Doe",
-  "email": "jane@example.com",
+  "email_address": "jane@example.com",
   "phone_number": "+15555550101"
 }'
 ```
@@ -79,7 +80,7 @@ curl -X 'POST' \
     "acs_user_id": "22222222-2222-2222-2222-222222222222",
     "display_name": "Jane Doe",
     "full_name": "Jane Doe",
-    "email": "jane@example.com",
+    "email_address": "jane@example.com",
     "phone_number": "+15555550101",
     "acs_system_id": "11111111-1111-1111-1111-111111111111",
     "workspace_id": "00000000-0000-0000-0000-000000000000",
@@ -178,7 +179,7 @@ curl -X 'POST' \
       "acs_user_id": "22222222-2222-2222-2222-222222222222",
       "display_name": "Jane Doe",
       "full_name": "Jack Doe",
-      "email": "jane@example.com",
+      "email_address": "jane@example.com",
       "acs_system_id": "11111111-1111-1111-1111-111111111111",
       "workspace_id": "00000000-0000-0000-0000-000000000000",
       "created_at": "2023-01-01T00:00:00Z"

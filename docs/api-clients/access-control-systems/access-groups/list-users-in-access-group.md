@@ -39,7 +39,7 @@ curl -X 'POST' \
 
 Returns an `acs_users` array, in which each returned user (`acs_user`) contains the following properties:
 
-<table><thead><tr><th width="310">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>acs_user_id</code></td><td>ID of the user</td></tr><tr><td><code>display_name</code></td><td>Display name for the user</td></tr><tr><td><code>full_name</code></td><td>Full name of the user</td></tr><tr><td><code>email</code></td><td>Email address of the user</td></tr><tr><td><code>phone_number</code></td><td>Phone number of the user in <a href="https://www.itu.int/rec/T-REC-E.164/en">E.164 format</a> (for example, <code>+15555550100</code>)</td></tr><tr><td><code>external_type</code></td><td>Brand-specific terminology for the user type</td></tr><tr><td><code>external_type_display_name</code></td><td>Display name that corresponds to the brand-specific terminology for the user type</td></tr><tr><td><code>acs_system_id</code></td><td>ID of the access control system that contains the user</td></tr><tr><td><code>workspace_id</code></td><td>ID of the <a href="../../../core-concepts/workspaces/">workspace</a> that contains the user</td></tr><tr><td><code>created_at</code></td><td>Date and time at which the user was created</td></tr><tr><td><code>is_suspended</code></td><td>Boolean value to indicate whether the user is currently <a href="../../../products/access-systems/suspending-and-unsuspending-users.md">suspended</a></td></tr></tbody></table>
+<table><thead><tr><th width="310">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>acs_user_id</code></td><td>ID of the user</td></tr><tr><td><code>display_name</code></td><td>Display name for the user</td></tr><tr><td><code>full_name</code></td><td>Full name of the user</td></tr><tr><td><code>email_address</code></td><td>Email address of the user</td></tr><tr><td><code>phone_number</code></td><td>Phone number of the user in <a href="https://www.itu.int/rec/T-REC-E.164/en">E.164 format</a> (for example, <code>+15555550100</code>)</td></tr><tr><td><code>external_type</code></td><td>Brand-specific terminology for the user type</td></tr><tr><td><code>external_type_display_name</code></td><td>Display name that corresponds to the brand-specific terminology for the user type</td></tr><tr><td><code>acs_system_id</code></td><td>ID of the access control system that contains the user</td></tr><tr><td><code>workspace_id</code></td><td>ID of the <a href="../../../core-concepts/workspaces/">workspace</a> that contains the user</td></tr><tr><td><code>created_at</code></td><td>Date and time at which the user was created</td></tr><tr><td><code>is_suspended</code></td><td>Boolean value to indicate whether the user is currently <a href="../../../products/access-systems/suspending-and-unsuspending-users.md">suspended</a></td></tr></tbody></table>
 
 This response also includes a Boolean `ok` status indicator.
 
@@ -54,7 +54,7 @@ This response also includes a Boolean `ok` status indicator.
       "acs_user_id": "12a28234-56c8-4721-951f-b507707522b4",
       "display_name": "Gary Smith",
       "full_name": "Gary Smith",
-      "email": "gary@example.com",
+      "email_address": "gary@example.com",
       "phone_number": "+15555550103",
       "external_type": "pti_user",
       "external_type_display_name": "PTI user",
@@ -67,7 +67,7 @@ This response also includes a Boolean `ok` status indicator.
       "acs_user_id": "4763daf5-e831-4076-82e5-3e59d36da8e3",
       "display_name": "Jim Doe",
       "full_name": "Jim Doe",
-      "email": "jim@example.com",
+      "email_address": "jim@example.com",
       "phone_number": "+15555550104",
       "external_type": "pti_user",
       "external_type_display_name": "PTI user",
@@ -80,7 +80,7 @@ This response also includes a Boolean `ok` status indicator.
       "acs_user_id": "7a933f5b-f505-46b4-8828-b56ee8309ae6",
       "display_name": "Jane Zoe",
       "full_name": "Jane Zoe",
-      "email": "jane@example.com",
+      "email_address": "jane@example.com",
       "phone_number": "+15555550105",
       "external_type": "pti_user",
       "external_type_display_name": "PTI user",
@@ -93,7 +93,7 @@ This response also includes a Boolean `ok` status indicator.
       "acs_user_id": "efaeae64-e471-4e1f-a621-f518c624d99c",
       "display_name": "Jenny Gergenson",
       "full_name": "Jenny Gergenson",
-      "email": "jenny@example.com",
+      "email_address": "jenny@example.com",
       "phone_number": "+15555550101",
       "external_type": "pti_user",
       "external_type_display_name": "PTI user",

@@ -1,22 +1,22 @@
 ---
-description: Get all access control systems
+description: Get all access control systems associated with a specified user identity
 ---
 
-# List Systems
+# List ACS Systems Associated with a User Identity
 
-Returns a list of all [access control systems](../../../products/access-systems/) (`acs_system` objects).
+Returns a list of all [access control systems](../../../products/access-systems/) (`acs_system` objects) associated with a [user identity](../../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) (`user_identity` object).
 
-{% swagger src="https://connect.getseam.com/openapi.json" path="/acs/systems/list" method="post" %}
+{% swagger src="https://connect.getseam.com/openapi.json" path="/user_identities/list_acs_systems" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
 {% endswagger %}
 
 ## Request
 
-To filter the list of returned access control systems by a specific [connected account](../../connected-accounts/) ID, include the `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the response includes all access control systems connected to your [workspace](../../../core-concepts/workspaces/).
+Specify the user identity for which you want to retrieve all associated access control systems by including the corresponding `user_identity_id` in the request body.
 
 ### Request Body Parameters
 
-<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>connected_account_id</code></td><td>String<br><em>Optional</em></td><td>ID of the connected account</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>user_identity_id</code></td><td>String<br><em>Required</em></td><td>ID of the user identity for which you want to retrieve all access control systems</td></tr></tbody></table>
 
 ### Sample Request
 
@@ -24,13 +24,28 @@ To filter the list of returned access control systems by a specific [connected a
 {% tab title="cURL (bash)" %}
 ```bash
 curl -X 'POST' \
-  'https://connect.getseam.com/acs/systems/list' \
+  'https://connect.getseam.com/user_identities/list_acs_systems' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
   -d '{
-  "connected_account_id": "84797878-d25d-44dc-882a-890d6cfd6baa"
+  "user_identity_id": "5c945ab5-c75e-4bcb-8e5f-9410061c401f"
 }'
+```
+{% endtab %}
+
+{% tab title="Go" %}
+```go
+acsSystems, uErr := client.UserIdentities.ListAcsSystems(context.Background(), &useridentities.UserIdentitiesListAcsSystemsRequest{
+    UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+})
+
+if uErr != nil {
+    return uErr
+}
+
+fmt.Println(acsSystems)
+return nil
 ```
 {% endtab %}
 {% endtabs %}
@@ -62,8 +77,7 @@ This response also includes a Boolean `ok` status indicator.
       "connected_account_ids": [
         "dc08066f-d9b8-42f0-9c4b-c781cd900153"
       ]
-    },
-    ...
+    }
   ],
   "ok": true
 }

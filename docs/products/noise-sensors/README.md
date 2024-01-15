@@ -32,4 +32,8 @@ While you can theoretically set noise thresholds to any decibel value, we have f
 
 ## **Next Steps**
 
-For more information about setting up noise thresholds for your device, check out our [Configuring Noise Threshold Settings guide](configure-noise-threshold-settings.md). To work with noise sensors in the Seam API, see [Noise Sensors](../../api-clients/noise-sensors/).
+To learn how to set up noise thresholds for your devices, see the following guide:
+
+* [Configuring Noise Threshold Settings](configure-noise-threshold-settings.md)
+
+For the corresponding Seam API reference, see [Noise Sensors](../../api-clients/noise-sensors/).

@@ -8,14 +8,14 @@ description: >-
 
 ## What Is an Access System?
 
-Access Control Systems (ACSs) enable you to manage and monitor access to physical spaces, such as offices, residential complexes, and special-purpose facilities.
+Access control systems (ACSs) enable you to manage and monitor access to physical spaces, such as offices, residential complexes, and special-purpose facilities.
 
 Instead of using mechanical keys, an ACS generally uses electronic means of access, like RFID cards, mobile keys, biometric identifiers, or PIN codes as credentials. This use of electronic means of access enables Seam to grant or rescind access easily, as well as to compile an audit log of when a key was used.
 
 ACSs generally manage the following parameters:
 
 * Who has access
-* To which doors, entrances, or zones each person has access
+* To which entrances, doors, or zones each person has access
 * At what times each person can gain access
 * Under what conditions each person is allowed access (for example, COVID test completed, ID verification, and so on)
 
@@ -23,9 +23,9 @@ The Seam API provides the capability to manage users and their access permission
 
 ## Access System Components
 
-The Seam access system schema consists of a series of objects that interact to enable you manage your ACS in a logical, efficient manner. The top-level object is the [system](../../api-clients/access-control-systems/systems/) that represents one or more buildings, residential locations, or other sites that you manage using this ACS. Within the system, you identify the set of doors, entrances, or zones that you want to manage, identifying each by the corresponding lock object. You also identify the set of [users](./#what-is-a-user) who access these doors, entrances, or zones.
+The Seam access system schema consists of a series of objects that interact to enable you manage your ACS in a logical, efficient manner. The top-level object is the [system](../../api-clients/access-control-systems/systems/) that represents one or more buildings, residential locations, or other sites that you manage using this ACS. Within the system, you identify the set of [entrances](../../api-clients/access-control-systems/entrances/), doors, or zones that you want to manage, identifying each by the corresponding lock object. You also identify the set of [users](./#what-is-a-user) who access these entrances, doors, or zones.
 
-[Access groups](./#what-is-an-access-group) provide an efficient way to grant sets of scheduled access to one or more users. That is, you create access group objects that specify the doors, entrances, or zones to which a set of users has access, as well as the days and times at which these users have access to these doors, entrances, or zones.
+[Access groups](./#what-is-an-access-group) provide an efficient way to grant sets of scheduled access to one or more users. That is, you create access group objects that specify the entrances, doors, or zones to which a set of users has access, as well as the days and times at which these users have access to these entrances, doors, or zones.
 
 Finally, you issue sets of [credentials](issuing-credentials.md)—such as access codes, key cards, and mobile passes—to individual users.
 
@@ -50,4 +50,12 @@ Leverage the Seam API for the following tasks:
 
 ## **Next Steps**
 
-To learn how to manage users, check out our [User Management guide](user-management.md). For guidance on assigning users to access groups, see [Assigning Users to Access Groups](assigning-users-to-access-groups.md). To work with access control systems in the Seam API, see [Access Control Systems](../../api-clients/access-control-systems/).
+To learn how to manage access control system components, see the following guides:
+
+* [User Management](user-management.md)
+* [Assigning Users to Access Groups](assigning-users-to-access-groups.md)
+* [Granting Users Access to Entrances](granting-users-access-to-entrances.md)
+* [Issuing Credentials](issuing-credentials.md)
+* [Suspending and Unsuspending Users](suspending-and-unsuspending-users.md)
+
+For the corresponding Seam API reference, see [Access Control Systems](../../api-clients/access-control-systems/).

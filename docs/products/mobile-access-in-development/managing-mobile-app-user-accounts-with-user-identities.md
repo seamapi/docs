@@ -1,44 +1,205 @@
-# Managing mobile app user accounts with User Identities
+---
+description: Learn how to use Seam user identities to manage mobile app user accounts.
+---
+
+# Managing Mobile App User Accounts with User Identities
 
 ## What is a User Identity?
 
-Seam’s “User Identities” is a feature for tracking and managing user accounts in your application. It assigns unique identifiers to each of your users, enabling you to issue and manage their mobile credentials and access permissions.
+Seam user identities are a feature for tracking and managing user accounts in your app. This feature assigns unique identifiers to each of your users, enabling you to issue and manage their [mobile credentials](./#managing-mobile-credentials) and access permissions. Each user identity is mapped to a user account in your app.
 
-<figure><img src="../../.gitbook/assets/identities accounts.png" alt="" width="563"><figcaption><p>Each “User Identity” is mapped to a user account in your application.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/identities accounts.png" alt="Each user identity is mapped to a user account in your app." width="563"><figcaption></figcaption></figure>
 
 
 
-#### User identities can be connected to users in multiple access control systems
+### User Identities Can Be Connected to Users in Multiple Access Control Systems
 
-User Identities can be linked to one ACS user in each Access Control System. Any mobile credentials issued to these ACS users will be consolidated under the user identity. Consequently, a user's mobile app account will have access to these credentials via the user identity.
+User identities can be linked to one [ACS user](../access-systems/#what-is-a-user) in each access control system. Any mobile credentials issued to these ACS users are consolidated under the user identity. Consequently, a user's mobile app account has access to these credentials through the user identity.
 
-<figure><img src="../../.gitbook/assets/acs identites.png" alt="" width="563"><figcaption><p>A User Identity can be connected to an ACS User in each ACS.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/acs identites.png" alt="A user identity can be connected to an ACS user in each ACS." width="563"><figcaption></figcaption></figure>
 
 ***
 
-## Creating a User Identity and associating it with an ACS user
+## Create a User Identity and Associate it with an ACS User
 
 ### 1. Create a User Identity
 
-To create a user identity, provide either a unique email (`email`) or user identity key (`user_identity_key`). Optionally, provide their first name (`first_name`) and last name (`last_name`).
+To [create a user identity](../../api-clients/mobile-access/user-identities/create-a-user-identity.md), you can specify any of the following characteristics:
+
+* Unique user identity key (`user_identity_key`)
+* Unique email address (`email_address`)
+* Unique phone number (`phone_number`)
+* Full name (`full_name`)
+
+Note that if you specify one or more of the `user_identity_key`, `email_address`, or `phone_number`, each of these values must be unique within your [workspace](../../core-concepts/workspaces/).
+
+{% tabs %}
+{% tab title="Python" %}
+**Request:**
 
 ```python
 seam.user_identities.create(
-  email="jane@example.com"
-  first_name="Jane"
-  last_name="Lee"
+  user_identity_key = "jean_doe",
+  email_address = "jean@example.com",
+  phone_number = "+15555550110",
+  full_name = "Jean Doe"
 )
 ```
+
+**Response:**
+
+```
+UserIdentity"(user_identity_id='48500a8e-5e7e-4bde-b7e5-0be97cae5d7a',
+              user_identity_key='jean_doe',
+              email_address='jean@example.com',
+              phone_number='+15555550110',
+              display_name='Jean Doe',
+              full_name='Jean Doe',
+              created_at='2024-01-11T05:37:50.264Z',
+              workspace_id='398d80b7-3f96-47c2-b85a-6f8ba21d07be')
+```
+{% endtab %}
+
+{% tab title="cURL (bash)" %}
+**Request:**
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/user_identities/create' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "user_identity_key": "jean_doe",
+  "email_address": "jean@example.com",
+  "phone_number": "+15555550110",
+  "full_name": "Jean Doe"
+}'
+```
+
+**Response:**
+
+```json
+{
+  "user_identity": {
+    "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+    "user_identity_key": "jean_doe",
+    "email_address": "jean@example.com",
+    "phone_number": "+15555550110",
+    "display_name": "Jean Doe",
+    "full_name": "Jean Doe",
+    "created_at": "2024-01-11T05:37:50.264Z",
+    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be"
+  },
+  "ok": true
+}
+```
+{% endtab %}
+
+{% tab title="Go" %}
+**Request:**
+
+```go
+userIdentity, uErr := client.UserIdentities.Create(context.Background(), &useridentities.UserIdentitiesCreateRequest{
+    UserIdentityKey: api.String("jenny_lee"),
+    EmailAddress: api.String("jenny@example.com"),
+    PhoneNumber: api.String("+15555550111"),
+    FullName: api.String("Jenny Lee"),
+})
+
+if uErr != nil {
+    return uErr
+}
+
+fmt.Println(userIdentity)
+return nil
+```
+
+**Response:**
+
+```json
+{
+    "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+    "user_identity_key": "jean_doe",
+    "email_address": "jean@example.com",
+    "phone_number": "+15555550110",
+    "display_name": "Jean Doe",
+    "full_name": "Jean Doe",
+    "created_at": "2024-01-11T05:37:50.264Z",
+    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be"
+}
+```
+{% endtab %}
+{% endtabs %}
 
 ### 2. Assign an ACS User to the User Identity
 
-To link an ACS User with a User Identity, provide the user identity's ID, and the ACS user's ID.
+To [link an ACS user with a user identity](../../api-clients/mobile-access/user-identities/add-an-acs-user-to-a-user-identity.md), provide the ID of the user identity and the ID of the ACS user.
 
-```python
-acs_user = acs.user.get(email="jane@example.com")
+{% tabs %}
+{% tab title="Python" %}
+**Request:**
+
+<pre class="language-python"><code class="lang-python"><strong>user_identity = seam.user_identities.get(email_address="jean@example.com")
+</strong>acs_user = seam.acs.users.get(email_address="jean@example.com")
 
 seam.user_identities.add_acs_user(
-  user_identity=user_identity_id,
+  user_identity=user_identity.user_identity_id,
   acs_user_id=acs_user.acs_user_id
 )
+</code></pre>
+
+**Response:**
+
 ```
+None
+```
+{% endtab %}
+
+{% tab title="cURL (bash)" %}
+**Request:**
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/user_identities/add_acs_user' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+  "acs_user_id": "4d223973-0874-4831-8630-bfcb29e6bce0"
+}'
+```
+
+**Response:**
+
+```json
+{
+  "ok": true
+}
+```
+{% endtab %}
+
+{% tab title="Go" %}
+**Request:**
+
+```go
+_, uErr := client.UserIdentities.AddAcsUser(context.Background(), &useridentities.UserIdentitiesAddAcsUserRequest{
+    UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+    AcsUserId: "4d223973-0874-4831-8630-bfcb29e6bce0",
+})
+
+if uErr != nil {
+    return uErr
+}
+
+return nil
+```
+
+**Response:**
+
+```
+None
+```
+{% endtab %}
+{% endtabs %}

@@ -1,61 +1,78 @@
 ---
-description: Use Seam Network to connect on-premise systems to Seam.
+description: Use the Seam Bridge to connect on-premises systems to Seam.
 ---
 
 # 🌩 Seam Bridge - In Development
 
 ## Overview
 
-The "Seam Bridge" product allows you to connect on-premise software systems with the Seam platform. It is deployed as an executable file that can be installed easily on an on-premise computer. Once installed, it functions as a secure intermediary, facilitating network requests between Seam and the on-premise network. This setup aims to enable smooth communication between cloud-based services and existing local systems while prioritizing data security and network integrity.
+The Seam Bridge enables you to connect on-premises software systems to the Seam platform. Consisting of an executable file (that is, an application), the Seam Bridge is easy to install on an on-premises computer. Once installed, the Seam Bridge creates a Seam Network and functions as a secure intermediary, facilitating network requests between Seam and the on-premises network. This setup aims to enable smooth communication between cloud-based services and existing local systems, while prioritizing data security and network integrity.
 
 ***
 
 ## System Requirements
 
-1. **Operating System:** Window 7 or later versions.
-2. **Memory:** At least 1 GB of RAM.
-3. **Network:** LAN connection required.
+* **Operating System:** Window 7 or later versions
+* **Memory:** At least 1 GB of RAM
+* **Network:** LAN connection required
 
 ***
 
-## Installation instructions
+## Installation Instructions
 
-### **Installing the Seam Bridge app on the on-premise computer**
+To install the Seam Bridge, first install the Seam Bridge application on an on-premises computer. Then, pair the Seam Bridge with your Seam [workspace](../core-concepts/workspaces/).
 
-1. Download the File: Visit [the Seam Bridge releases page](https://github.com/seamapi/seam-bridge-client/releases/latest) and download the latest version of "SeamBridge.exe" file.
-2. Run the **"SeamBridge.exe"** executable. It will launch a webpage with the Seam Bridge settings.
-3.  Copy down the invitation code that is displayed on the webpage. The installer use it to pair this Seam Bridge to the workspace.\
+### **Install the Seam Bridge Application on the On-Premises Computer**
+
+1. In a web browser, go to [the Seam Bridge releases page](https://github.com/seamapi/seam-bridge-client/releases/latest) and download the latest version of `SeamBridge.exe`.
+2.  Run the downloaded `SeamBridge.exe`.
+
+    This application opens a webpage containing the Seam Bridge settings.
+3.  Copy the invitation code that the webpage displays.
+
+    The installer uses this code to pair the Seam Bridge to the workspace.\
 
 
-    <figure><img src="../.gitbook/assets/image (10).png" alt="" width="563"><figcaption><p>Copy down the invitation code shown on the Seam Bridge app screen.</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (10).png" alt="Copy the invitation code that the Seam Bridge application screen shows." width="563"><figcaption></figcaption></figure>
 
-### Pairing the Seam Bridge with your Workspace
+### Pairing the Seam Bridge with Your Workspace
 
-You have two options for connecting the Seam Bridge to your workspace. If you're a developer looking to connect your own device, refer to the "Pair using the Seam Console" section. If you're coordinating with an external party to set up a Seam Bridge device, consult the "Pair using a Connect Webview" section.
+Seam provides two options for connecting the Seam Bridge to your workspace. If you are a developer who wants to connect your own device, see [Pair using the Seam Console](seam-bridge-in-development.md#pair-using-the-seam-console). Alternately, if you are coordinating with an external party to set up a Seam Bridge, see [Pair Using a Connect Webview](seam-bridge-in-development.md#pair-using-a-connect-webview).
 
-**Pair using the Seam Console:**
+#### **Pair Using the Seam Console**
 
 1. Log in to your account on the [Seam Console](https://console.getseam.com).
-2. Navigate to the **"Devices"** page.
-3. Click on "+ Add Devices" in the top right corner.
-4. Select "Seam Bridge".
-5. Enter a unique name in the "Bridge Name" field, and the invitation code you collected from the previous section in the "PIN Code" field.
-6. Make sure to remember the name of the Seam Network for future reference for connecting the on-premise access control system in the Connect Webview.
+2. Click **Devices** to view the **Devices** page.
+3. In the upper-right corner of the **Devices** page, click **+ Add Devices**.
+4. Select **Seam Bridge**.
+5. In the **Bridge Name** field, type a unique name.
+6. In the **PIN Code** field, type the invitation code that you copied during the [Seam Bridge application installation](seam-bridge-in-development.md#install-the-seam-bridge-application-on-the-on-premises-computer).
+7. Make sure to remember the name of the Seam Network for future reference.\
+   You must use this Seam Network name when connecting the on-premises access control system in a Connect Webview.
 
-**Pair using a Connect Webview:**
+#### **Pair Using a Connect Webview**
 
-1. Create a Connect Webview using the `accepted_providers` key `seam_bridge`.
-2. Share the `url` of the created Connect Webview with the end user.
-3. When the end user accesses the Connect Webview, they can choose "Seam Bridge" from the list of brands, if available.
-4. They must enter a unique name in the "Bridge Name" field sand the invitation code they collected from the Seam Bridge webpage in the "PIN Code" field.
-5. Remind them to remember the name for future reference when connecting their on-premise system in the Connect Webview.
+First, perform the following steps:
 
-<figure><img src="../.gitbook/assets/connect-webview-visionline-credentials.png" alt="" width="221"><figcaption><p>Connect Webview for connecting your Seam Bridge instance.</p></figcaption></figure>
+1. Create a Connect Webview using `seam_bridge` as the `accepted_providers` key.
+2. Share the following two pieces of information with your end user:
+   * The `url` of the created Connect Webview
+   * The invitation code that you copied during the [Seam Bridge application installation](seam-bridge-in-development.md#install-the-seam-bridge-application-on-the-on-premises-computer)
+
+Next, your end user performs the following steps:
+
+1. The end user accesses the Connect Webview and chooses **Seam Bridge** from the list of brands, if available.
+2. In the **Bridge Name** field, the end user types a unique name.
+3. In the **PIN Code** field, the end user types the invitation code that you copied during the [Seam Bridge application installation](seam-bridge-in-development.md#install-the-seam-bridge-application-on-the-on-premises-computer).
+4. The end user must remember the name of the Seam Network for future reference.\
+   They must use this Seam Network name when connecting their on-premises access control system in a Connect Webview.
+
+<figure><img src="../.gitbook/assets/connect-webview-visionline-credentials.png" alt="Type a unique Seam Bridge name and the PIN code from the Seam application installation." width="221"><figcaption></figcaption></figure>
 
 ***
 
-## Connecting the On-Premise Software System
+## Connecting the On-Premises Software System
 
-After installing the Seam Bridge app and connecting it to your workspace, you'll need to connect your on-prem software system to Seam using a Connect Webview. For detailed instructions on how to connect your system, please consult the "Set Up Instructions" found in the brand-specific guide within the **"Device Guides"** section.
+After installing the Seam Bridge application and connecting the Seam Bridge to your workspace, connect your on-premises software system to Seam using a Connect Webview. For detailed instructions on how to connect your system, see the setup instructions in the appropriate brand-specific guide within the [Device Guides](broken-reference) section.
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Device Guides</strong></td><td>Get started →</td><td></td><td><a href="broken-reference">Broken link</a></td><td><a href="../.gitbook/assets/image.png">image.png</a></td></tr></tbody></table>

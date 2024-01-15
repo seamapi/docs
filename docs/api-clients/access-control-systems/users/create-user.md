@@ -12,11 +12,11 @@ Creates a new [user](../../../products/access-systems/#what-is-a-user) (`acs_use
 
 ## Request
 
-Specify the characteristics of the new user by including the corresponding parameters in the request body. In addition, in the request body, include the `acs_system_id` of the [access control system](../../../products/access-systems/) to which you want to add the new user. You can also specify the `acs_access_group_ids` of the [access groups](../../../products/access-systems/#what-is-an-access-group) to which you want to add the new user.
+Specify the characteristics of the new user by including the corresponding parameters in the request body. In addition, in the request body, include the `acs_system_id` of the [access control system](../../../products/access-systems/) to which you want to add the new user. You can also specify the `acs_access_group_ids` of the [access groups](../../../products/access-systems/#what-is-an-access-group) to which you want to add the new user, as well as a `user_identity_id` if you want to associate the new user with a [user identity](../../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity).
 
 ### Request Body Parameters
 
-<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>acs_system_id</code></td><td>String<br><em>Required</em></td><td>ID of the access control system to which to add the new user</td></tr><tr><td><code>acs_access_group_ids</code></td><td>Array of strings<br><em>Optional</em></td><td>Array of access group IDs to indicate the access groups to which to add the new user</td></tr><tr><td><code>full_name</code></td><td>String<br><em>Optional</em></td><td>Full name of the new user</td></tr><tr><td><code>email</code></td><td>String<br><em>Optional</em></td><td>Email address of the new user</td></tr><tr><td><code>phone_number</code></td><td>String<br><em>Optional</em></td><td>Phone number of the new user in <a href="https://www.itu.int/rec/T-REC-E.164/en">E.164 format</a> (for example, <code>+15555550100</code>)</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>acs_system_id</code></td><td>String<br><em>Required</em></td><td>ID of the access control system to which to add the new user</td></tr><tr><td><code>acs_access_group_ids</code></td><td>Array of strings<br><em>Optional</em></td><td>Array of access group IDs to indicate the access groups to which to add the new user</td></tr><tr><td><code>user_identity_id</code></td><td>String<br><em>Optional</em></td><td>ID of the user identity with which to associate the new user</td></tr><tr><td><code>full_name</code></td><td>String<br><em>Optional</em></td><td>Full name of the new user</td></tr><tr><td><code>email_address</code></td><td>String<br><em>Optional</em></td><td>Email address of the new user</td></tr><tr><td><code>phone_number</code></td><td>String<br><em>Optional</em></td><td>Phone number of the new user in <a href="https://www.itu.int/rec/T-REC-E.164/en">E.164 format</a> (for example, <code>+15555550100</code>)</td></tr></tbody></table>
 
 ### Sample Request
 
@@ -32,7 +32,7 @@ curl -X 'POST' \
   "acs_system_id": "fc793d86-dcfd-4cfe-859f-0b9c1a5c1360",
   "acs_access_group_ids": ["3adfb716-ba84-431e-ab30-ab521f2aa8e8"],
   "full_name": "Jim Doe",
-  "email": "jim@example.com",
+  "email_address": "jim@example.com",
   "phone_number": "+15555550107"
 }'
 ```
@@ -43,7 +43,7 @@ curl -X 'POST' \
 
 Returns an `acs_user` containing the following properties:
 
-<table><thead><tr><th width="310">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>acs_user_id</code></td><td>ID of the user</td></tr><tr><td><code>display_name</code></td><td>Display name for the user</td></tr><tr><td><code>full_name</code></td><td>Full name of the user</td></tr><tr><td><code>email</code></td><td>Email address of the user</td></tr><tr><td><code>phone_number</code></td><td>Phone number of the user in <a href="https://www.itu.int/rec/T-REC-E.164/en">E.164 format</a> (for example, <code>+15555550100</code>)</td></tr><tr><td><code>external_type</code></td><td>Brand-specific terminology for the user type</td></tr><tr><td><code>external_type_display_name</code></td><td>Display name that corresponds to the brand-specific terminology for the user type</td></tr><tr><td><code>acs_system_id</code></td><td>ID of the access control system that contains the user</td></tr><tr><td><code>workspace_id</code></td><td>ID of the <a href="../../../core-concepts/workspaces/">workspace</a> that contains the user</td></tr><tr><td><code>created_at</code></td><td>Date and time at which the user was created</td></tr><tr><td><code>is_suspended</code></td><td>Boolean value to indicate whether the user is currently <a href="../../../products/access-systems/suspending-and-unsuspending-users.md">suspended</a></td></tr></tbody></table>
+<table><thead><tr><th width="310">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>acs_user_id</code></td><td>ID of the user</td></tr><tr><td><code>display_name</code></td><td>Display name for the user</td></tr><tr><td><code>full_name</code></td><td>Full name of the user</td></tr><tr><td><code>email_address</code></td><td>Email address of the user</td></tr><tr><td><code>phone_number</code></td><td>Phone number of the user in <a href="https://www.itu.int/rec/T-REC-E.164/en">E.164 format</a> (for example, <code>+15555550100</code>)</td></tr><tr><td><code>external_type</code></td><td>Brand-specific terminology for the user type</td></tr><tr><td><code>external_type_display_name</code></td><td>Display name that corresponds to the brand-specific terminology for the user type</td></tr><tr><td><code>acs_system_id</code></td><td>ID of the access control system that contains the user</td></tr><tr><td><code>workspace_id</code></td><td>ID of the <a href="../../../core-concepts/workspaces/">workspace</a> that contains the user</td></tr><tr><td><code>created_at</code></td><td>Date and time at which the user was created</td></tr><tr><td><code>is_suspended</code></td><td>Boolean value to indicate whether the user is currently <a href="../../../products/access-systems/suspending-and-unsuspending-users.md">suspended</a></td></tr></tbody></table>
 
 This response also includes a Boolean `ok` status indicator.
 
@@ -57,7 +57,7 @@ This response also includes a Boolean `ok` status indicator.
     "acs_user_id": "4763daf5-e831-4076-82e5-3e59d36da8e3",
     "display_name": "Jim Doe",
     "full_name": "Jim Doe",
-    "email": "jim@example.com",
+    "email_address": "jim@example.com",
     "external_type": "pti_user",
     "external_type_display_name": "PTI user",
     "acs_system_id": "fc793d86-dcfd-4cfe-859f-0b9c1a5c1360",
