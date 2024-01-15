@@ -361,6 +361,10 @@ Use one of the following methods to verify that your user successfully connected
 
 Once the connection has occurred successfully, the Connect Webview and the `connected_account.connected` event payload include a `connected_account_id`.
 
+{% hint style="info" %}
+You do not need to delete a Connect Webview once a user completes it. Instead, you can simply ignore completed Connect Webviews.
+{% endhint %}
+
 ### 4. Use the Seam API to Control Your Users' Connected Devices
 
 Use the `connected_account_id` to make requests for your user's account and devices. Note that if you set `wait_for_device_creation` to `false` for the Connect Webview, you should wait for the `connected_account.completed_first_sync` event before retrieving the user's devices. This event indicates that Seam has finished the first sync of the connected account and the devices are now available.
@@ -738,6 +742,10 @@ Use one of the following methods to verify that your user successfully connected
     ```
 
 Once the connection has occurred successfully, the Connect Webview and the `connected_account.connected` event payload include a `connected_account_id`.
+
+{% hint style="info" %}
+You do not need to delete a Connect Webview once a user completes it. Instead, you can simply ignore completed Connect Webviews.
+{% endhint %}
 
 ### 4. Use the Seam API to Control Your Users' Connected Devices
 
