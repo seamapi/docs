@@ -4,7 +4,7 @@ description: Create a new user identity
 
 # Create a User Identity
 
-Creates a new [user identity](../../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) (`user_identity` object).
+Creates a new [user identity](../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) (`user_identity` object).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/user_identities/create" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
@@ -12,7 +12,7 @@ Creates a new [user identity](../../../products/mobile-access-in-development/man
 
 ## Request
 
-Specify the characteristics of the new user identity by including the corresponding parameters in the request body. Note that if you specify one or more of the `user_identity_key`, `email_address`, or `phone_number`, each of these values must be unique within your [workspace](../../../core-concepts/workspaces/).
+Specify the characteristics of the new user identity by including the corresponding parameters in the request body. Note that if you specify one or more of the `user_identity_key`, `email_address`, or `phone_number`, each of these values must be unique within your [workspace](../../core-concepts/workspaces/).
 
 ### Request Body Parameters
 
@@ -60,7 +60,7 @@ return nil
 
 Returns a `user_identity` containing the following properties:
 
-<table><thead><tr><th width="310">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>user_identity_id</code></td><td>ID of the user identity</td></tr><tr><td><code>user_identity_key</code></td><td>Unique key for the user identity</td></tr><tr><td><code>email_address</code></td><td>Unique email address for the user identity</td></tr><tr><td><code>display_name</code></td><td>Display name for the user identity</td></tr><tr><td><code>full_name</code></td><td>Full name of the user associated with the user identity</td></tr><tr><td><code>created_at</code></td><td>Date and time at which the user identity was created</td></tr><tr><td><code>workspace_id</code></td><td>ID of the <a href="../../../core-concepts/workspaces/">workspace</a> that contains the user identity</td></tr></tbody></table>
+<table><thead><tr><th width="310">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>user_identity_id</code></td><td>ID of the user identity</td></tr><tr><td><code>user_identity_key</code></td><td>Unique key for the user identity</td></tr><tr><td><code>email_address</code></td><td>Unique email address for the user identity</td></tr><tr><td><code>display_name</code></td><td>Display name for the user identity</td></tr><tr><td><code>full_name</code></td><td>Full name of the user associated with the user identity</td></tr><tr><td><code>created_at</code></td><td>Date and time at which the user identity was created</td></tr><tr><td><code>workspace_id</code></td><td>ID of the <a href="../../core-concepts/workspaces/">workspace</a> that contains the user identity</td></tr></tbody></table>
 
 This response also includes a Boolean `ok` status indicator.
 

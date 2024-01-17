@@ -18,7 +18,7 @@ An enrollment automation initializes the phones for a user identity with a crede
 
 ### Initialize the User Identity with a Credential Manager
 
-To set up an enrollment automation, call the [Launch Enrollment Automation](../../api-clients/mobile-access/enrollment-automations/launch-an-enrollment-automation.md) function with the ID of the user identity (`user_identity_id`) and the system ID of the credential manager (`credential_manager_acs_system_id`).
+To set up an enrollment automation, call the [Launch Enrollment Automation](../../api-clients/user-identities/enrollment-automations/launch-an-enrollment-automation.md) function with the ID of the user identity (`user_identity_id`) and the system ID of the credential manager (`credential_manager_acs_system_id`).
 
 {% tabs %}
 {% tab title="Python" %}

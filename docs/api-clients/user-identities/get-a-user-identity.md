@@ -4,7 +4,7 @@ description: Get a specified user identity
 
 # Get a User Identity
 
-Returns a specified [user identity](../../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) (`user_identity` object).
+Returns a specified [user identity](../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) (`user_identity` object).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/user_identities/get" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
@@ -59,7 +59,7 @@ return nil
 
 Returns a `user_identity` containing the following properties:
 
-<table><thead><tr><th width="310">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>user_identity_id</code></td><td>ID of the user identity</td></tr><tr><td><code>user_identity_key</code></td><td>Unique key for the user identity</td></tr><tr><td><code>email_address</code></td><td>Unique email address for the user identity</td></tr><tr><td><code>phone_number</code></td><td>Unique phone number for the user identity in <a href="https://www.itu.int/rec/T-REC-E.164/en">E.164 format</a> (for example, <code>+15555550100</code>)</td></tr><tr><td><code>display_name</code></td><td>Display name for the user identity</td></tr><tr><td><code>full_name</code></td><td>Full name of the user associated with the user identity</td></tr><tr><td><code>created_at</code></td><td>Date and time at which the user identity was created</td></tr><tr><td><code>workspace_id</code></td><td>ID of the <a href="../../../core-concepts/workspaces/">workspace</a> that contains the user identity</td></tr></tbody></table>
+<table><thead><tr><th width="310">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>user_identity_id</code></td><td>ID of the user identity</td></tr><tr><td><code>user_identity_key</code></td><td>Unique key for the user identity</td></tr><tr><td><code>email_address</code></td><td>Unique email address for the user identity</td></tr><tr><td><code>phone_number</code></td><td>Unique phone number for the user identity in <a href="https://www.itu.int/rec/T-REC-E.164/en">E.164 format</a> (for example, <code>+15555550100</code>)</td></tr><tr><td><code>display_name</code></td><td>Display name for the user identity</td></tr><tr><td><code>full_name</code></td><td>Full name of the user associated with the user identity</td></tr><tr><td><code>created_at</code></td><td>Date and time at which the user identity was created</td></tr><tr><td><code>workspace_id</code></td><td>ID of the <a href="../../core-concepts/workspaces/">workspace</a> that contains the user identity</td></tr></tbody></table>
 
 This response also includes a Boolean `ok` status indicator.
 

@@ -4,7 +4,7 @@ description: Get all access control systems associated with a specified user ide
 
 # List ACS Systems Associated with a User Identity
 
-Returns a list of all [access control systems](../../../products/access-systems/) (`acs_system` objects) associated with a [user identity](../../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) (`user_identity` object).
+Returns a list of all [access control systems](../../products/access-systems/) (`acs_system` objects) associated with a [user identity](../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) (`user_identity` object).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/user_identities/list_acs_systems" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
@@ -54,7 +54,7 @@ return nil
 
 Returns an `acs_systems` array, in which each returned access control system (`acs_system`) contains the following properties:
 
-<table><thead><tr><th width="310">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>acs_system_id</code></td><td>ID of the access control system</td></tr><tr><td><code>external_type</code></td><td>Brand-specific terminology for the access control system type</td></tr><tr><td><code>external_type_display_name</code></td><td>Display name that corresponds to the brand-specific terminology for the access control system type</td></tr><tr><td><code>name</code></td><td>Name of the access control system</td></tr><tr><td><code>created_at</code></td><td>Date and time at which the access control system was created</td></tr><tr><td><code>workspace_id</code></td><td>ID of the <a href="../../../core-concepts/workspaces/">workspace</a> that contains the access control system</td></tr><tr><td><code>connected_account_ids</code></td><td>Array of <a href="../../connected-accounts/">connected account</a> IDs associated with the access control system</td></tr></tbody></table>
+<table><thead><tr><th width="310">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>acs_system_id</code></td><td>ID of the access control system</td></tr><tr><td><code>external_type</code></td><td>Brand-specific terminology for the access control system type</td></tr><tr><td><code>external_type_display_name</code></td><td>Display name that corresponds to the brand-specific terminology for the access control system type</td></tr><tr><td><code>name</code></td><td>Name of the access control system</td></tr><tr><td><code>created_at</code></td><td>Date and time at which the access control system was created</td></tr><tr><td><code>workspace_id</code></td><td>ID of the <a href="../../core-concepts/workspaces/">workspace</a> that contains the access control system</td></tr><tr><td><code>connected_account_ids</code></td><td>Array of <a href="../connected-accounts/">connected account</a> IDs associated with the access control system</td></tr></tbody></table>
 
 This response also includes a Boolean `ok` status indicator.
 

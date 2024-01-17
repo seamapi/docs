@@ -6,7 +6,7 @@ description: Learn how to use Seam user identities to manage mobile app user acc
 
 ## What is a User Identity?
 
-Seam user identities are a feature for tracking and managing user accounts in your app. This feature assigns unique identifiers to each of your users, enabling you to issue and manage their [mobile credentials](./#managing-mobile-credentials) and access permissions. Each user identity is mapped to a user account in your app.
+Seam user identities are a feature for tracking and managing user accounts in your application. This feature assigns unique identifiers to each of your users, enabling you to issue and manage their [mobile credentials](./#managing-mobile-credentials) and access permissions. Each user identity is mapped to a user account in your app.
 
 <figure><img src="../../.gitbook/assets/identities accounts.png" alt="Each user identity is mapped to a user account in your app." width="563"><figcaption></figcaption></figure>
 
@@ -24,7 +24,7 @@ User identities can be linked to one [ACS user](../access-systems/#what-is-a-use
 
 ### 1. Create a User Identity
 
-To [create a user identity](../../api-clients/mobile-access/user-identities/create-a-user-identity.md), you can specify any of the following characteristics:
+To [create a user identity](../../api-clients/user-identities/create-a-user-identity.md), you can specify any of the following characteristics:
 
 * Unique user identity key (`user_identity_key`)
 * Unique email address (`email_address`)
@@ -134,7 +134,7 @@ return nil
 
 ### 2. Assign an ACS User to the User Identity
 
-To [link an ACS user with a user identity](../../api-clients/mobile-access/user-identities/add-an-acs-user-to-a-user-identity.md), provide the ID of the user identity and the ID of the ACS user.
+To [link an ACS user with a user identity](../../api-clients/user-identities/add-an-acs-user-to-a-user-identity.md), provide the ID of the user identity and the ID of the ACS user.
 
 {% tabs %}
 {% tab title="Python" %}
