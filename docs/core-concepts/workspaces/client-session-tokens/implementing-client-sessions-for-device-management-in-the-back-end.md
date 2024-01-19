@@ -4,7 +4,7 @@ description: Learn how to use client sessions to control your users' access to d
 
 # Implementing Client Sessions for Device Management in the Back End
 
-If you are developing an application with multiple customers connecting their devices, [client sessions](./) are a practical way to manage device access for each user. This topic provides an example of implementing client sessions in the back end, ensuring that users can access only the devices that they own.
+If you are developing an application with multiple customers connecting their devices, [client sessions](../client-session-tokens.md) are a practical way to manage device access for each user. This topic provides an example of implementing client sessions in the back end, ensuring that users can access only the devices that they own.
 
 ***
 

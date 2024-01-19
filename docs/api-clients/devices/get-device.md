@@ -118,6 +118,7 @@ Device(device_id='30fd243b-3054-4384-a713-5487076a3826',
        capabilities_supported=['access_code', 'lock'],
        errors=[],
        warnings=[],
+       custom_metadata={'internal_account_id': 'user-1'},
        connected_account_id='f72442d2-2c16-4e3f-9882-6bff21828b1b',
        workspace_id='398d80b7-3f96-47c2-b85a-6f8ba21d07be',
        created_at='2023-10-28T09:13:08.465Z',
@@ -188,6 +189,9 @@ Device(device_id='30fd243b-3054-4384-a713-5487076a3826',
     "created_at": "2023-10-28T09:13:08.465Z",
     "errors": [],
     "warnings": [],
+    "custom_metadata": {
+        "internal_account_id": "user-1"
+    },
     "is_managed": true
   },
   "ok": true
@@ -242,6 +246,7 @@ Device(device_id='30fd243b-3054-4384-a713-5487076a3826',
   created_at: '2023-10-28T09:13:08.465Z',
   errors: [],
   warnings: [],
+  custom_metadata: {'internal_account_id': 'user-1'},
   is_managed: true
 }
 ```
@@ -259,6 +264,7 @@ Device(device_id='30fd243b-3054-4384-a713-5487076a3826',
   created_at=2023-10-28 09:13:08.465 UTC
   errors=[]
   warnings=[]
+  custom_metadata={"internal_account_id"=>"user-1"}
   is_managed=true>
 ```
 {% endtab %}
@@ -323,6 +329,9 @@ Device(device_id='30fd243b-3054-4384-a713-5487076a3826',
   "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
   "errors": [],
   "warnings": [],
+  "custom_metadata": {
+    "internal_account_id": "user-1"
+  },
   "created_at": "2023-10-28T09:13:08.465Z",
   "is_managed": true
 }
@@ -379,6 +388,9 @@ Device(device_id='30fd243b-3054-4384-a713-5487076a3826',
   },
   "connected_account_id" : "f72442d2-2c16-4e3f-9882-6bff21828b1b",
   "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+  "custom_metadata": {
+    "internal_account_id": "user-1"
+  },
   "created_at" : "2023-10-28T09:13:08.465Z",
   "is_managed" : true
 }

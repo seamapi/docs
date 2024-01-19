@@ -4,7 +4,7 @@ description: Get all client sessions
 
 # List Client Sessions
 
-Returns a list of all [client sessions](../../core-concepts/workspaces/client-session-tokens/) (`client_session` objects).
+Returns a list of all [client sessions](../../core-concepts/workspaces/client-session-tokens.md) (`client_session` objects).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/client_sessions/list" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
