@@ -19,6 +19,7 @@
   * [Embedding a Connect Webview in Your App](core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app.md)
   * [Attaching Custom Data to the Connect Webview](core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview.md)
   * [Customizing Connect Webviews](core-concepts/connect-webviews/customizing-connect-webviews.md)
+  * [Filtering Connect Webviews by Custom Metadata](core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata.md)
 * [Action Attempts](core-concepts/action-attempts.md)
 * [Webhooks](core-concepts/webhooks.md)
 
@@ -88,6 +89,7 @@
 * [Connected Accounts](api-clients/connected-accounts/README.md)
   * [Get a Connected Account](api-clients/connected-accounts/get-a-connected-account.md)
   * [List Connected Accounts](api-clients/connected-accounts/list-connected-accounts.md)
+  * [Update a Connected Account](api-clients/connected-accounts/update-a-connected-account.md)
   * [Delete a Connected Account](api-clients/connected-accounts/delete-a-connected-account.md)
 * [Devices](api-clients/devices/README.md)
   * [List Devices](api-clients/devices/list-devices.md)

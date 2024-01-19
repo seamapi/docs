@@ -224,7 +224,7 @@ echo json_encode($webview);
 | `custom_redirect_url`              | <p>type: string<br>Optional</p>    | URL to redirect user to after provider login is complete                                                                                                                                                          |
 | `custom_redirect_failure_url`      | <p>type: string</p><p>Optional</p> | Alternative URL to redirect the user on error. If this is not set, falls back to `custom_redirect_url`                                                                                                            |
 | `device_selection_mode`            | type: 'none'                       | 'multiple'                                                                                                                                                                                                        |
-| `automatically_manage_new_devices` | type: 'boolean'                    | Defaults to `true`, whether newly added devices should appear as a Managed Device                                                                                                                                 |
+| `automatically_manage_new_devices` | type: 'boolean'                    | <p>Indicates whether newly added devices should appear as managed devices<br>Default: <code>true</code></p>                                                                                                       |
 
 ### Response
 
