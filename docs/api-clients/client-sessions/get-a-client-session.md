@@ -4,7 +4,7 @@ description: Get a specified client session
 
 # Get a Client Session
 
-Returns a specified [client session](../../core-concepts/workspaces/client-session-tokens/) (`client_session` object).
+Returns a specified [client session](../../core-concepts/workspaces/client-session-tokens.md) (`client_session` object).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/client_sessions/get" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)

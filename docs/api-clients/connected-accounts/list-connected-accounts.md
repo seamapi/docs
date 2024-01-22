@@ -1,65 +1,97 @@
 ---
-description: Get all Connected Accounts associated with your Account
+description: Get all Connected accounts
 ---
 
 # List Connected Accounts
+
+Returns a list of all [connected accounts](./) (`connected_account` objects).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/connected_accounts/list" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
 {% endswagger %}
 
-### Code Example
+## Request
+
+To filter the list of returned connected accounts by a specific set of [custom metadata](../../core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview.md), include `custom_metadata_has` in the request body. If you include `custom_metadata_has`, specify the desired metadata filters as a JSON object containing key:value pairs.
+
+### Request Body Parameters
+
+<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>custom_metadata_has</code></td><td>JSON object<br><em>Optional</em></td><td>Set of key:value <a href="../connect-webviews/#connect_webview-properties">custom metadata</a> pairs by which you want to filter connected accounts</td></tr></tbody></table>
+
+### Sample Request
 
 {% tabs %}
-{% tab title="Ruby" %}
-<pre class="language-ruby"><code class="lang-ruby"><strong>seam.connected_accounts.list
-</strong>
-# [&#x3C;Seam::ConnectedAccount:0x00ed1e8                                                            
-#   connected_account_id="282f9d15-d979-4de7-b4eb-7097c401e910"                                
-#   created_at="2022-07-06T09:43:07.125Z"                                                      
-#   user_identifier=nil                                                                        
-<strong>#   account_type="smartthings">]
-</strong></code></pre>
-{% endtab %}
-
 {% tab title="Python" %}
 ```python
-seam.connected_accounts.list()
+connected_accounts = seam.connected_accounts.list(
+  custom_metadata_has = {
+    "internal_account_id": "user-1"
+  }
+)
+```
+{% endtab %}
 
-# [ConnectedAccount(
-#   connected_account_id='c6610ba7-88d7-4abf-9852-31eb0257aa56', 
-#   created_at='2022-08-23T12:43:49.542Z', 
-#   user_identifier={'email': 'jane@example.com'}, 
-#   account_type='schlage', 
-#   errors=[]
-# )]
+{% tab title="cURL (bash)" %}
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/connected_accounts/list' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "custom_metadata_has": {
+    "internal_account_id": "user-1"
+  }
+}'
 ```
 {% endtab %}
 
 {% tab title="Javascript" %}
 ```javascript
-await seam.connectedAccounts.list();
-  
-// {
-//   connected_account_id: 'c6610ba7-88d7-4abf-9852-31eb0257aa56',
-//   created_at: '2022-08-23T12:43:49.542Z',
-//   user_identifier: { email: 'jane@example.com' },
-//   account_type: 'schlage',
-//   errors: []
-// }
+await seam.connectedAccounts.list({
+  custom_metadata_has: {
+    "internal_account_id": "user-1"
+  }
+});
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+<pre class="language-ruby"><code class="lang-ruby"><strong>seam.connected_accounts.list(
+</strong>  custom_metadata_has: {
+    "internal_account_id": "user-1"
+  }
+)
+</code></pre>
+{% endtab %}
+
+{% tab title="PHP" %}
+```php
+$connected_accounts = $seam->connected_accounts->list(
+  custom_metadata_has: array('internal_account_id' => 'user-1')
+);
+echo json_encode($connected_accounts);
 ```
 {% endtab %}
 {% endtabs %}
 
-### Parameters
+## Response
 
-This method doesn't take any parameters.
+Returns a `connected_accounts` array, in which each returned connected account (`connected_account`) contains the following properties:
 
-### Response
+| Property                           | Description                                                                                                                                                                                                                                                                                                                                                                             |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `connected_account_id`             | ID of the connected account                                                                                                                                                                                                                                                                                                                                                             |
+| `created_at`                       | Date and time at which the connected account was created                                                                                                                                                                                                                                                                                                                                |
+| `user_identifier`                  | Unique identifier for the connected account, such as an email address or phone number                                                                                                                                                                                                                                                                                                   |
+| `account_type`                     | Type of manufacturer to which the connected account belongs, such as `august`, `schlage`, `yale`, `salto`, `smartthings`, and so on                                                                                                                                                                                                                                                     |
+| `account_type_display_name`        | Version of `account_type` that can be displayed in a user interface                                                                                                                                                                                                                                                                                                                     |
+| `custom_metadata`                  | Set of `custom_metadata` set on the [Connect Webview](../../core-concepts/connect-webviews/) that connected the account. You can also modify or add to this `custom_metadata`.                                                                                                                                                                                                          |
+| `automatically_manage_new_devices` | <p>Indicates whether Seam should import all new devices for the connected account to make these devices available for use and management by the Seam API.<br>You <a href="../../core-concepts/connect-webviews/customizing-connect-webviews.md#automatically_manage_new_devices">initially specify the value for this property</a> when creating the corresponding Connect Webview.</p> |
 
-This section shows the JSON response returned by the API. Since each language encapsulates this response inside objects specific to that language and/or implementation, the actual type in your language might differ from what’s written here.
+This response also includes a Boolean `ok` status indicator.
 
-#### JSON format
+### Sample Response
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -67,14 +99,21 @@ This section shows the JSON response returned by the API. Since each language en
 {
   "connected_accounts": [
     {
-      "connected_account_id": "9dcedcb3-5ede-4b66-9e07-f9ef97b3c29b",
-      "created_at": "2022-08-24T10:38:05.128Z",
+      "connected_account_id": "c993818b-bf3c-4836-bef4-9a76d89bf1d3",
+      "created_at": "2024-01-05T07:20:07.692Z",
       "user_identifier": {
-        "email": "jane@example.com"
+        "username": "jane"
       },
-      "account_type": "schlage",
-      "errors": []
-    }
+      "account_type": "visionline",
+      "account_type_display_name": "Visionline",
+      "errors": [],
+      "warnings": [],
+      "custom_metadata": {
+          "internal_account_id": "user-1"
+      },
+      "automatically_manage_new_devices": true
+    },
+	...
   ],
   "ok": true
 }

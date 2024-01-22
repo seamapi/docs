@@ -10,20 +10,24 @@ Returns a list of all [devices](../../core-concepts/devices.md) (`device` object
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
 {% endswagger %}
 
+***
+
 ## Request
 
 List all devices or filter the list of devices by including the corresponding filter parameter in the request body.
 
 ### Request Body Parameters
 
-<table><thead><tr><th width="264">Parameter</th><th width="133.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>connected_account_id</code></td><td>String<br><em>Optional</em></td><td>ID of the connected account.</td></tr><tr><td><code>connected_account_ids</code></td><td>String[]<br><em>Optional</em></td><td>IDs of the connected accounts.</td></tr><tr><td><code>connect_webview_id</code></td><td>String<br><em>Optional</em></td><td>ID of <a href="../../core-concepts/connect-webviews/">Connect Webview</a>.</td></tr><tr><td><code>device_type</code></td><td>String<br><em>Optional</em></td><td>Type of device.</td></tr><tr><td><code>device_types</code></td><td>String[]<br><em>Optional</em></td><td>Types of devices.</td></tr><tr><td><code>manufacturer</code></td><td>String<br><em>Optional</em></td><td>Device manufacturer.</td></tr><tr><td><code>device_ids</code></td><td>type: string[]<br><em>Optional</em></td><td>IDs of the devices to include.</td></tr><tr><td><code>limit</code></td><td>Number<br><em>Optional</em></td><td>Numerical limit on the number of devices to return.</td></tr><tr><td><code>created_before</code></td><td>String<br><em>Optional</em></td><td>Date threshold for devices to return. If specified, returns only devices created before the specified date.</td></tr></tbody></table>
+<table><thead><tr><th width="264">Parameter</th><th width="133.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>connected_account_id</code></td><td>String<br><em>Optional</em></td><td>ID of the connected account.</td></tr><tr><td><code>connected_account_ids</code></td><td>String[]<br><em>Optional</em></td><td>IDs of the connected accounts.</td></tr><tr><td><code>connect_webview_id</code></td><td>String<br><em>Optional</em></td><td>ID of <a href="../../core-concepts/connect-webviews/">Connect Webview</a>.</td></tr><tr><td><code>device_type</code></td><td>String<br><em>Optional</em></td><td>Type of device.</td></tr><tr><td><code>device_types</code></td><td>String[]<br><em>Optional</em></td><td>Types of devices.</td></tr><tr><td><code>manufacturer</code></td><td>String<br><em>Optional</em></td><td>Device manufacturer.</td></tr><tr><td><code>device_ids</code></td><td>type: string[]<br><em>Optional</em></td><td>IDs of the devices to include.</td></tr><tr><td><code>limit</code></td><td>Number<br><em>Optional</em></td><td>Numerical limit on the number of devices to return.</td></tr><tr><td><code>created_before</code></td><td>String<br><em>Optional</em></td><td>Date threshold for devices to return. If specified, returns only devices created before the specified date.</td></tr><tr><td><code>custom_metadata_has</code></td><td>JSON object<br><em>Optional</em></td><td>Set of key:value <a href="./#device-properties">custom metadata</a> pairs by which you want to filter devices</td></tr></tbody></table>
 
-### Sample Request
+***
+
+## Sample Request
 
 {% tabs %}
 {% tab title="Python" %}
 ```python
-pprint(seam.devices.list())
+devices = seam.devices.list()
 ```
 {% endtab %}
 
@@ -35,18 +39,44 @@ curl -X 'POST' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
   -d '{}'
+
+// To filter by custom metadata:
+curl -X 'POST' \
+  'https://connect.getseam.com/devices/list' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "custom_metadata_has": {
+    "internal_account_id": "user-1"
+  }
+}'
 ```
 {% endtab %}
 
 {% tab title="Javascript" %}
 ```typescript
-console.log(await seam.devices.list())
+await seam.devices.list()
+
+// To filter by custom metadata:
+await seam.devices.list({
+  custom_metadata_has: {
+    "internal_account_id": "user-1"
+  }
+})
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 ```ruby
-puts client.devices.list().inspect
+devices = client.devices.list()
+
+# To filter by custom metadata:
+devices = client.devices.list(
+  custom_metadata_has: {
+    "internal_account_id": "user-1"
+  }
+)
 ```
 {% endtab %}
 
@@ -58,12 +88,33 @@ foreach (var device in devices)
 {
   Console.WriteLine(device);
 }
+
+// To filter by custom metadata:
+var customMetadata = new Dictionary<string, string>()
+{
+  {"internal_account_id", "user-1"}
+};
+
+var devices = seam.Devices.List(customMetadataHas: customMetadata);
+
+foreach (var device in devices)
+{
+  Console.WriteLine(device);
+}
 ```
 {% endtab %}
 
 {% tab title="Java" %}
 ```java
 var devices = seam.devices().list();
+System.out.println(devices);
+
+// To filter by custom metadata:
+Map<String, CustomMetadataValue> customMetadata =
+    Map.of("internal_account_id", CustomMetadataValue.of(Optional.of("user-1")));
+var devices = seam.devices().list(DevicesListRequest.builder()
+                .customMetadataHas(customMetadata)
+                .build());
 System.out.println(devices);
 ```
 {% endtab %}
@@ -117,6 +168,7 @@ This response also includes a Boolean `ok` status indicator.
         capabilities_supported=['access_code', 'lock'],
         errors=[],
         warnings=[],
+        custom_metadata={'internal_account_id': 'user-1'},
         connected_account_id='f72442d2-2c16-4e3f-9882-6bff21828b1b',
         workspace_id='398d80b7-3f96-47c2-b85a-6f8ba21d07be',
         created_at='2023-10-28T09:13:08.465Z',
@@ -192,6 +244,9 @@ This response also includes a Boolean `ok` status indicator.
       "created_at": "2023-10-28T09:13:08.465Z",
       "errors": [],
       "warnings": [],
+      "custom_metadata": {
+          "internal_account_id": "user-1"
+      },
       "is_managed": true
     },
     {
@@ -241,6 +296,7 @@ This response also includes a Boolean `ok` status indicator.
     created_at: '2023-10-28T09:13:08.465Z',
     errors: [],
     warnings: [],
+    custom_metadata: {'internal_account_id': 'user-1'},
     is_managed: true
   },
   {
@@ -266,6 +322,7 @@ This response also includes a Boolean `ok` status indicator.
   created_at=2023-10-28 09:13:08.465 UTC
   errors=[]
   warnings=[]
+  custom_metadata={"internal_account_id"=>"user-1"}
   is_managed=true>, <Seam::Device:0x00618
   device_id="9689dc30-77d8-4728-9968-b3abd0835f47"
   device_type="igloohome_lock"
@@ -334,6 +391,9 @@ This response also includes a Boolean `ok` status indicator.
   "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
   "errors": [],
   "warnings": [],
+  "custom_metadata": {
+    "internal_account_id": "user-1"
+  },
   "created_at": "2023-10-28T09:13:08.465Z",
   "is_managed": true
 }
@@ -396,6 +456,9 @@ This response also includes a Boolean `ok` status indicator.
   },
   "connected_account_id" : "f72442d2-2c16-4e3f-9882-6bff21828b1b",
   "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+  "custom_metadata": {
+    "internal_account_id": "user-1"
+  },
   "created_at" : "2023-10-28T09:13:08.465Z",
   "is_managed" : true
 }, {
@@ -405,5 +468,27 @@ This response also includes a Boolean `ok` status indicator.
 }, ...
 ]
 ```
+{% endtab %}
+{% endtabs %}
+
+***
+
+## Filtering Devices by Custom Metadata fields
+
+
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+devices = seam.devices.list(
+  custom_metadata_has = {
+    "internal_property_id": "property-1"
+  }
+)
+```
+{% endtab %}
+
+{% tab title="Second Tab" %}
+
 {% endtab %}
 {% endtabs %}

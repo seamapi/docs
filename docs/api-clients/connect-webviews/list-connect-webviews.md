@@ -1,108 +1,52 @@
 ---
-description: List all Connect Webviews on the Account
+description: List all Connect Webviews
 ---
 
 # List Connect Webviews
 
-{% swagger method="get" path="/connect_webviews/list" baseUrl="https://connect.getseam.com" summary="Fetch list of Connect Webviews" %}
-{% swagger-description %}
+Returns a list of all [Connect Webviews](../../core-concepts/connect-webviews/) (`connect_webview`objects).
 
-{% endswagger-description %}
-
-{% swagger-parameter in="header" name="Authorization" required="false" %}
-Bearer <API_KEY>
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="Payload with Connect Webviews" %}
-```javascript
-{
-  "connect_webviews": [
-    {
-      "connect_webview_id": "4f98efc0-df9c-4be0-b5ac-1c7a60e44ad1",
-      "custom_metadata": {},
-      "url": "https://connect.getseam.com/connect_webviews/view?connect_webview_id=4f98efc0-df9c-4be0-b5ac-1c7a60e44ad1&auth_token=Q7RPKrBwpdS9pLaHRbme7SF491SHv6dUv",
-      "workspace_id": "f97073eb-c003-467a-965b-e6dba3a0131d",
-      "device_selection_mode": "none",
-      "accepted_providers": [
-        "schlage"
-      ],
-      "selected_provider": "schlage",
-      "accepted_devices": [],
-      "any_provider_allowed": false,
-      "any_device_allowed": null,
-      "created_at": "2022-08-24T08:58:00.444Z",
-      "login_successful": false,
-      "authorized_at": null,
-      "status": "pending",
-      "connected_account_id": null
-    }
-  ],
-  "ok": true
-}
-```
-{% endswagger-response %}
+{% swagger src="https://connect.getseam.com/openapi.json" path="/connect_webviews/list" method="post" %}
+[https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
 {% endswagger %}
 
-### Code Example
+## Request
+
+To filter the list of returned Connect Webviews by a specific set of [custom metadata](../../core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview.md) or a user identifier key, include `custom_metadata_has` or [`user_identifier_key`](../client-sessions/#client\_session-properties) in the request body. If you include `custom_metadata_has`, specify the desired metadata filters as a JSON object containing key:value pairs.
+
+### Request Body Parameters
+
+<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>user_identifier_key</code></td><td>String<br><em>Optional</em></td><td>The internal user ID (your own internal ID for a user) by which you want to filter Connect Webviews</td></tr><tr><td><code>custom_metadata_has</code></td><td>JSON object<br><em>Optional</em></td><td>Set of key:value <a href="./#connect_webview-properties">custom metadata</a> pairs by which you want to filter Connect Webviews</td></tr></tbody></table>
+
+### Sample Request
 
 {% tabs %}
-{% tab title="Ruby" %}
-```ruby
-seam.connect_webviews.list
-
-# [<Seam::ConnectWebview:0x00bd4e8                                                            
-#   url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=48880840-278b-4f55-bdc4-42ba8611952b&auth_token=asjDHKADH8392hf923FH"
-#   status="pending"                                                                         
-#   created_at="2022-07-06T14:18:41.556Z"                                                    
-#   workspace_id="182ad8b2-4212-4640-873b-343c10b11c91"                                      
-#   accepted_devices=[]                                                                      
-#   login_successful=false                                                                   
-#   accepted_providers=["august"]               
-#   selected_provider="august"                                             
-#   any_device_allowed=nil                                                                   
-#   connect_webview_id="48880840-278b-4f55-bdc4-42ba8611952b"                                
-#   any_provider_allowed=false                                                               
-#   device_selection_mode="none">]
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
-```javascript
-await seam.connectWebviews.list();
-
-// [
-//   {
-//     connect_webview_id: 'd8e981cb-5f67-461f-9ab8-f7716e8aef4a',
-//     url: 'https://connect.getseam.com/connect_webviews/view?connect_webview_id=d8e981cb-5f67-461f-9ab8-f7716e8aef4a&auth_token=L9ASMhP19fTbuWbsTLjWdGLUsT1UAVqLX',
-//     workspace_id: 'f97073eb-c003-467a-965b-e6dba3a0131d',
-//     device_selection_mode: 'none',
-//     accepted_providers: [ 'schlage' ],
-//     selected_provider: 'schlage'
-//     accepted_devices: [],
-//     any_provider_allowed: false,
-//     any_device_allowed: null,
-//     created_at: '2022-08-23T15:01:55.636Z',
-//     login_successful: true,
-//     authorized_at: '2022-08-23T15:02:12.295Z',
-//     status: 'authorized',
-//     connected_account_id: '137db755-0b63-47d6-a2de-3ff673a77e5a'
-//   }
-// ]
-```
-{% endtab %}
-
 {% tab title="Python" %}
 ```python
-seam.connect_webviews.list()
+connect_webviews = seam.connect_webviews.list()
+```
+{% endtab %}
 
-# [
-#   ConnectWebview(
-#     connect_webview_id='d8e981cb-5f67-461f-9ab8-f7716e8aef4a', 
-#     status='authorized', 
-#     url='https://connect.getseam.com/connect_webviews/view?connect_webview_id=d8e981cb-5f67-461f-9ab8-f7716e8aef4a&auth_token=L9ASMhP19fTbuWbsTLjWdGLUsT1UAVqLX', 
-#     login_successful=True, connected_account_id='137db755-0b63-47d6-a2de-3ff673a77e5a'
-#   )
-# ]
+{% tab title="cURL (bash)" %}
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/connect_webviews/list' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{}'
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+await seam.connectWebviews.list();
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```ruby
+seam.connect_webviews.list()
 ```
 {% endtab %}
 
@@ -114,15 +58,15 @@ echo json_encode($webviews);
 {% endtab %}
 {% endtabs %}
 
-### Parameters
+## Response
 
-This method doesn't take any parameters.
+Returns a `connect_webviews` array, in which each returned Connect Webview (`connect_webview`) contains the following properties:
 
-### Response
+<table><thead><tr><th width="310">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>connect_webview_id</code></td><td>ID of the Connect Webview</td></tr><tr><td><code>connected_account_id</code></td><td>ID of the <a href="../connected-accounts/">connected account</a> that was created after the user successfully logged in</td></tr><tr><td><code>url</code></td><td>URL for the Connect Webview</td></tr><tr><td><code>workspace_id</code></td><td>ID of the <a href="../../core-concepts/workspaces/">workspace</a> that contains the Connect Webview</td></tr><tr><td><code>device_selection_mode</code></td><td>Device selection mode, including <code>none</code>, <code>single</code>, or <code>multiple</code></td></tr><tr><td><code>accepted_providers</code></td><td>List of accepted <a href="list-connect-webviews.md#device-provider-keys">device provider keys</a></td></tr><tr><td><code>accepted_devices</code></td><td>List of accepted <a href="../../core-concepts/devices.md">devices</a></td></tr><tr><td><code>any_provider_allowed</code></td><td>Indicates whether any provider is allowed</td></tr><tr><td><code>any_device_allowed</code></td><td>Indicates whether any device is allowed</td></tr><tr><td><code>created_at</code></td><td>Date and time at which the Connect Webview was created</td></tr><tr><td><code>login_successful</code></td><td>Indicates whether the user logged in successfully using the Connect Webview</td></tr><tr><td><code>status</code></td><td>Status of the Connect Webview, including <code>pending</code> or <code>authorized</code></td></tr><tr><td><code>custom_redirect_url</code></td><td>If set, the Connect Webview redirects to this URL when the user successfully pairs a device or, if the <code>custom_redirect_failure_url</code> is not set, when an unexpected error occurs</td></tr><tr><td><code>custom_redirect_failure_url</code></td><td>If set, the Connect Webview redirects to this URL when an unexpected error occurs</td></tr><tr><td><code>custom_metadata</code></td><td>Set of up to 50 keys, with key names up to 40 characters long. Accepts string or Boolean values. Strings are limited to 500 characters<br>For more information, see <a href="../../core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview.md">Attaching Custom Data to the Connect Webview</a>.</td></tr><tr><td><code>automatically_manage_new_devices</code></td><td>Indicates whether Seam should <a href="../../core-concepts/connect-webviews/customizing-connect-webviews.md#automatically_manage_new_devices">import all new devices</a> for the connected account to make these devices available for use and management by the Seam API</td></tr><tr><td><code>wait_for_device_creation</code></td><td>Indicates whether Seam should <a href="../../core-concepts/connect-webviews/customizing-connect-webviews.md#wait_for_device_creation">finish syncing all devices</a> in a newly-connected account before completing the associated Connect Webview</td></tr><tr><td><code>authorized_at</code></td><td>Date and time at which the user authorized (through the Connect Webview) the management of their devices</td></tr><tr><td><code>selected_provider</code></td><td>Selected provider of the Connec Webview, one of <a href="list-connect-webviews.md#device-provider-keys">device provider keys</a></td></tr></tbody></table>
 
-This section shows the JSON response returned by the API. Since each language encapsulates this response inside objects specific to that language and/or implementation, the actual type in your language might differ from what’s written here.
+This response also includes a Boolean `ok` status indicator.
 
-#### JSON format
+### Sample Response
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -130,23 +74,34 @@ This section shows the JSON response returned by the API. Since each language en
 {
   "connect_webviews": [
     {
-      "connect_webview_id": "4f98efc0-df9c-4be0-b5ac-1c7a60e44ad1",
-      "url": "https://connect.getseam.com/connect_webviews/view?connect_webview_id=4f98efc0-df9c-4be0-b5ac-1c7a60e44ad1&auth_token=Q7RPKrBwpdS9pLaHRbme7SF491SHv6dUv",
-      "workspace_id": "f97073eb-c003-467a-965b-e6dba3a0131d",
+      "connect_webview_id": "2a4a0a19-4936-4379-8770-7cf74f87e7b1",
+      "url": "https://connect.getseam.com/connect_webviews/view?connect_webview_id=2a4a0a19-4936-4379-8770-7cf74f87e7b1&auth_token=NhbgghSPXPeXd7wZYVPxQKksR1eoxam8N",
+      "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
       "device_selection_mode": "none",
       "accepted_providers": [
-        "schlage"
+        "august",
+        "brivo",
+        "schlage",
+        "yale",
       ],
-      "selected_provider": "schlage",
+      "selected_provider": "august",
       "accepted_devices": [],
       "any_provider_allowed": false,
-      "any_device_allowed": null,
-      "created_at": "2022-08-24T08:58:00.444Z",
-      "login_successful": false,
-      "authorized_at": null,
-      "status": "pending",
-      "connected_account_id": null
-    }
+      "any_device_allowed": false,
+      "created_at": "2023-12-15T06:23:32.780Z",
+      "login_successful": true,
+      "authorized_at": "2023-12-15T06:23:55.024Z",
+      "status": "authorized",
+      "custom_metadata": {
+          "internal_account_id": "user-1"
+      },
+      "custom_redirect_url": null,
+      "wait_for_device_creation": false,
+      "custom_redirect_failure_url": null,
+      "automatically_manage_new_devices": true,
+      "connected_account_id": "f891acfd-d228-4bb2-8399-c0f7e24e6b16"
+    },
+    ...
   ],
   "ok": true
 }
