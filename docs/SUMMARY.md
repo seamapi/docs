@@ -13,7 +13,7 @@
   * [API Keys](core-concepts/workspaces/api-keys.md)
   * [Personal Access Tokens](core-concepts/workspaces/personal-access-tokens.md)
   * [Client Sessions and Client Session Tokens](core-concepts/workspaces/client-session-tokens.md)
-    * [Implementing Client Sessions for Device Management in the Back End](core-concepts/workspaces/client-session-tokens/implementing-client-sessions-for-device-management-in-the-back-end.md)
+    * [Implementing Client Sessions for Device Management in the Backend](core-concepts/workspaces/client-session-tokens/implementing-client-sessions-for-device-management-in-the-backend.md)
 * [Devices](core-concepts/devices.md)
 * [Connect Webviews](core-concepts/connect-webviews/README.md)
   * [Embedding a Connect Webview in Your App](core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app.md)
