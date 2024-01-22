@@ -536,11 +536,11 @@ var seam = new SeamClient(
 
 // Console.WriteLine("Created access code ID: " + createdAccessCode.AccessCodeId);
 
-var userId = "user1";
-var customMetadata = new Dictionary<string, string>()
-{
-  {"id", userId}
-};
+// var userId = "user1";
+// var customMetadata = new Dictionary<string, string>()
+// {
+//   {"id", userId}
+// };
 
 // var createdConnectWebview = seam.ConnectWebviews.Create(
 //   providerCategory: Seam.Api.ConnectWebviews.CreateRequest.ProviderCategoryEnum.Stable,
@@ -570,3 +570,7 @@ var customMetadata = new Dictionary<string, string>()
 
 // Console.WriteLine(createdConnectWebview);
 
+foreach (var connectedAccount in seam.ConnectedAccounts.List())
+{
+  Console.WriteLine(connectedAccount);
+}

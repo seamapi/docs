@@ -6,10 +6,12 @@ import (
 	// "math/rand"
 	"os"
 
-  api "github.com/seamapi/go"
+  // api "github.com/seamapi/go"
 	seam "github.com/seamapi/go/client"
   // "github.com/seamapi/go/useridentities"
-  "github.com/seamapi/go/acs"
+  // "github.com/seamapi/go/acs"
+  // connectWebviews "github.com/seamapi/go/connectwebviews"
+
 
 
 )
@@ -177,20 +179,20 @@ func run() error {
 // fmt.Println(enrollmentAutomation)
 // return nil
 
-acsCredential, uErr := client.Acs.Credentials.Create(context.Background(), &acs.CredentialsCreateRequest{
-    AcsUserId: "4d223973-0874-4831-8630-bfcb29e6bce0",
-    IsMultiPhoneSyncCredential: api.Bool(true),
-    CardFormat: acs.CredentialsCreateRequestCardFormatRfid48.Ptr(),
-    // FacilityCode: "9",
-    AccessMethod: "mobile_key",
-})
+// acsCredential, uErr := client.Acs.Credentials.Create(context.Background(), &acs.CredentialsCreateRequest{
+//     AcsUserId: "4d223973-0874-4831-8630-bfcb29e6bce0",
+//     IsMultiPhoneSyncCredential: api.Bool(true),
+//     CardFormat: acs.CredentialsCreateRequestCardFormatRfid48.Ptr(),
+//     // FacilityCode: "9",
+//     AccessMethod: "mobile_key",
+// })
 
-if uErr != nil {
-    return uErr
-}
+// if uErr != nil {
+//     return uErr
+// }
 
-fmt.Println(acsCredential)
-return nil
+// fmt.Println(acsCredential)
+// return nil
 
 // users, err := client.Acs.Users.List(context.Background(), &acs.UsersListRequest{})
 // if err != nil {
@@ -199,7 +201,40 @@ return nil
 // fmt.Println(users)
 // return nil
 
+	devices, err := client.Devices.List(context.Background(), nil)
+	if err != nil {
+		return err
+	}
+	fmt.Println(devices)
+	return nil
 
+// DOES NOT WORK (YET?)
+// connectWebviews, err := client.ConnectWebviews.List(
+//   context.Background(),
+//   &api.ConnectWebviewsListRequest{
+//     CustomMetadataHas: {"internal_account_id":"user-1"},
+//   },
+// )
+// if err != nil {
+//   return err
+// }
+// fmt.Println(connectWebviews)
+// return nil
+
+// customMetadata := map[string]ConnectWebviewsCreateRequestCustomMetadataValue
+
+// INCORRECT
+// connectWebview, err := client.ConnectWebviews.Create(
+//   context.Background(),
+//   &api.ConnectWebviewsCreateRequest{
+//     CustomMetadata: map[string]string{"internal_account_id":"user-1"},
+//   },
+// )
+// if err != nil {
+//   return err
+// }
+// fmt.Println(connectWebview)
+// return nil
 
 
 }

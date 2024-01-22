@@ -232,4 +232,6 @@ client = Seam::Client.new(base_uri: api_url, api_key: 'seam_test2scj_2c636ceHmdU
 
 # puts created_connect_webview.inspect
 
-puts client.connected_accounts.delete("25aa45e4-ee1d-44a6-91a0-b53e8c06a6d5").inspect
+# puts client.connected_accounts.delete("25aa45e4-ee1d-44a6-91a0-b53e8c06a6d5").inspect
+
+puts client.connected_accounts.list().inspect

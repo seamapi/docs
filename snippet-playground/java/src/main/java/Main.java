@@ -556,6 +556,7 @@ public class Main {
 //                 .build());
 
 
+System.out.println(seam.connectedAccounts().list());
 
 
 

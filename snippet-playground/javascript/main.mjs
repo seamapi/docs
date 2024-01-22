@@ -502,7 +502,7 @@ const seam = new Seam({
 // // Create a Connect Webview restricted by the client session token.
 // const connect_webview_creation_action_attempt = await seam.connectWebviews.create({
 //   provider_category: "stable"
-// })
+// }
 
 // console.log(connect_webview_creation_action_attempt)
 
@@ -523,3 +523,17 @@ const seam = new Seam({
 // console.log(await seam.clientSessions.list())
 
 // console.log(await seam.clientSessions.get())
+
+// console.log(await seam.connectWebviews.list({
+//   custom_metadata_has: {
+//     "internal_account_id": "user-1"
+//   }
+// }));
+
+// console.log(await seam.connectedAccounts.list());
+
+console.log(await seam.connectedAccounts.list({
+  // custom_metadata_has: {
+  //   "internal_account_id": "user-1"
+  // }
+}));

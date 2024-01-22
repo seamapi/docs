@@ -451,10 +451,18 @@ seam = Seam(
 # )
 
 # connect_webviews = seam.connect_webviews.list(
-#   custom_metadata_has = {
-#     "internal_account_id": "user-1"
-#   }
+#   # custom_metadata_has = {
+#   #   "internal_account_id": "user-1"
+#   # }
 # )
-
+# pprint(connect_webviews)
 
 # pprint(seam.acs.entrances.list("8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4"))
+
+connected_accounts = seam.connected_accounts.list(
+  # custom_metadata_has = {
+  #   "internal_account_id": "user-1"
+  # }
+)
+pprint(connected_accounts)
+

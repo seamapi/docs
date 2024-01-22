@@ -44,7 +44,9 @@ $seam = new Seam\SeamClient(
 // echo json_encode($webview);
 
 
-$webviews = $seam->connect_webviews->list(
-  custom_metadata_has: array('internal_account_id' => 'user-1')
-);
-echo json_encode($webviews);
+// $webviews = $seam->connect_webviews->list(
+//   custom_metadata_has: array('internal_account_id' => 'user-1')
+// );
+// echo json_encode($webviews);
+
+echo json_encode($seam->connected_accounts->list());
