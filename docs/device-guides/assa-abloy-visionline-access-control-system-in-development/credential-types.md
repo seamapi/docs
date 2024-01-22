@@ -1,37 +1,119 @@
-# Credential Types
+# Configuring Visionline Mobile Credentials
 
-In the ASSA ABLOY Visionline Access Management System, the locks are standalone and battery-powered. All access permissions and scheduling details are contained within the key card and mobile credentials, characterizing these systems as "data-on-card" systems. This guide describes the various credential types available in Visionline and provides instructions for how to create them.
+In the ASSA ABLOY Visionline Access Management System, the locks are standalone and battery-powered. All access permissions and scheduling details are contained within the key cards and mobile credentials, characterizing these systems as "data-on-card" systems. This guide describes how to issue credential on the Visionline system.
 
-## Credential Properties
+{% hint style="info" %}
+Note: Seam currently only supports issuing guest mobile credentials. We will extend support to plastic card  and staff credentials in the future.
+{% endhint %}
 
-Visionline supports the following credential properties:
+***
 
-### Allowed Entrance IDs
+## Guest Mobile Credential Properties
 
-Use the List Entrance endpoint to retrieve the available entrances at the site. Include the IDs of the entrances to which you want to grant access.
+Here are some of the properties involved in issuing a guest mobile credential:
 
-### Card Formats
+<table><thead><tr><th width="260">Property</th><th width="176">Type</th><th width="290">Description</th></tr></thead><tbody><tr><td><code>allowed_entrance_ids</code></td><td><code>String[]</code><br><em>Required</em></td><td>This property specifies a list of entrance IDs that this credential is authorized to access.</td></tr><tr><td><code>label</code></td><td><code>String</code><br><em>Optional</em></td><td>This field provides “Label” field data for mobile credentials. This field may contain plain text as well as predefined placeholders. The placeholders are surrounded by percentage % sign.</td></tr><tr><td><code>override_existing_entrance_credentials</code></td><td><code>Boolean</code><br><em>Optional</em></td><td>Indicates whether this credential invalidates any previously-issued credentials for overlapping entrances</td></tr><tr><td><code>jointEntranceAccessCredentialIDs</code></td><td><code>String[]</code><br><em>Optional</em></td><td>This property is a list of credential IDs that the current credential will share entrance access with. When <code>override_previous_credentials</code> is set to <code>false</code>, <code>jointCredentialIDs</code> becomes a mandatory field.</td></tr><tr><td><code>starts_at</code></td><td><a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format<br><em>Optional</em></td><td>Start date and time stamp for credential activation</td></tr><tr><td><code>ends_at</code></td><td><a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format<br>Required</td><td>End date and time stamp for credential expiration</td></tr></tbody></table>
 
-Visionline supports the following card formats:
+#### Label Placeholders
 
-**`rfid48`:** Low-capacity Radio Frequency Identification (RFID) card (48 bytes). This card format is used for all guest card types except for guest advanced cards.
+This field provides “Label” field data for mobile credentials. This field may contain plain text as well as predefined placeholders. The placeholders are surrounded by percentage `%` sign. Visionline replaces these placeholders with their actual values before issuing mobile key. The final text will be truncated to 32 characters. The valid placeholders are:
 
-**`TLCode`:** High-capacity RFID card. This card format is used for card types needing more than 48 bytes, for example, guest advanced cards and most card types for staff.
+* `%ROOMNUM%` - Replaced with main guest room number or name
+* `%ROOMLIST%` - Replaced with comma separated list of guest rooms
+* `%ROOMRANGE%` - Replaced with hyphen separated room range or if some rooms do not fit intoany range then they are added as comma separated list.
+* `%SITENAME%` - Name of the property
+* `%CARDNUM%` - Credential ID
+* `%UUID%` - BLE UUID
+* `%USERID%` - the value passed in the UI field
 
-### Override
+***
 
-This property is only available when issuing guest or mobile credentials. If you set this property to `true`, issuing this credential renders invalid all previously-issued credentials on the same entrances.
+### Issuing the first credential for a reservation
 
-### Auto-join
+When issuing guest credentials, hotels need to guarantee that all previous access to guest room entrances is revoked. This is accomplished by issuing an override credential, which overrides any existing credentials that previously granted access to the same guest room entrances.
 
-This property is only available when issuing guest or mobile credentials. If you set this property to `true`, the issued credential and any other valid guest credentials for the same entrances all grant access.
+{% tabs %}
+{% tab title="Python" %}
+<pre class="language-python"><code class="lang-python"><strong># Setting up the Mobile user account
+</strong><strong>user_identity = seam.user_identities.create(
+</strong><strong>    user_identity_key="xxx"
+</strong><strong>)
+</strong><strong>
+</strong><strong># Associating the user idenitty with the ACS user
+</strong><strong>acs_user = seam.acs.users.get(
+</strong><strong>    email="jane@example.com"
+</strong><strong>)
+</strong>seam.user_identities.add_acs_user(
+    user_identity=user_identity.user_identity_id,
+    acs_user_id=acs_user.acs_user_id
+)
 
-### Starts At/Ends At
+# Creating the mobile credential
+cred = seam.acs.credentials.create(
+    acs_user_id="xxx",
+    credential_manager_acs_system_id="xx"
+    is_multi_phone_sync_credential=True,
+    access_method="mobile_key",
+    starts_at="2023-01-01 10:40:00.000",
+    ends_at="2023-01-04 10:40:00.000",
+    visionline_metadata={
+        "allowed_entrance_ids": ["xxx", "yyy"],
+        "label": "%ROOMNUM% - %SITENAME%",
+        "override_existing_entrance_credentials": True
+    }
+)
+</code></pre>
+{% endtab %}
+{% endtabs %}
 
-Use these properties to set the start and end times for the credential.
+***
 
-### Credential Property Reference
+### Issuing subsequent credentials for a reservation
 
-The following table summarizes the Visionline credential properties:
+For reservations involving multiple parties, hotels often need to provide credentials to additional guests. This is facilitated through the issuance of a 'joiner credential'. This type of credential allows shared access with any existing credentials that already grant entry to the same guest room entrances. To issue a joiner credential, it is necessary to specify the credential(s) that the new joiner credential will be associated with.
 
-<table><thead><tr><th width="260">Property</th><th width="176">Type</th><th width="290">Description</th></tr></thead><tbody><tr><td><code>allowed_entrance_ids</code></td><td><code>String[]</code><br><em>Required</em></td><td>List of IDs of the entrances that this credential can access</td></tr><tr><td><code>card_format</code></td><td><code>Enum</code><br><em>Required</em></td><td>Card format of the credential<br>Values: <code>rfid48</code> | <code>TLCode</code></td></tr><tr><td><code>override</code></td><td><code>Boolean</code><br><em>Optional</em></td><td>Indicates whether this credential invalidates any previously-issued credentials for overlapping entrances</td></tr><tr><td><code>auto_join</code></td><td><code>Boolean</code><br><em>Optional</em></td><td>Indicates whether this credential can grant access to entrances, along with any other valid guest credentials to the same entrances</td></tr><tr><td><code>starts_at</code></td><td><a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format<br><em>Optional</em></td><td>Start date and time stamp for credential activation</td></tr><tr><td><code>ends_at</code></td><td><a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format<br>Required</td><td>End date and time stamp for credential activation</td></tr></tbody></table>
+{% tabs %}
+{% tab title="Python" %}
+<pre class="language-python"><code class="lang-python"># Setting up the Mobile user account
+user_identity = seam.user_identities.create(
+    user_identity_key="xxx"
+)
+
+# Associating the user idenitty with the ACS user
+acs_user = seam.acs.users.get(
+    email="jane@example.com"
+)
+seam.user_identities.add_acs_user(
+    user_identity=user_identity.user_identity_id,
+    acs_user_id=acs_user.acs_user_id
+)
+
+# Retrieve valid credentials 
+guest_entrance_ids = ["xxx", "yyy"]
+joiners = seam.acs.credentials.list({
+    visionline_metadata: {
+        "allowed_entrance_ids": guest_entrance_ids,
+        "status": "valid"
+    }
+})
+
+# Creating the mobile credential
+common_entrance_ids = ["zzz"]
+<strong>cred = seam.acs.credentials.create({
+</strong>    acs_user_id: "xxx",
+    credential_manager_acs_system_id="xxs"
+    is_multi_phone_sync_credential: True,
+    access_method = "mobile_key",
+    starts_at: "2023-01-01 10:40:00.000",
+    ends_at: "2023-01-04 10:40:00.000",
+    visionline_metadata: {
+        "allowed_entrance_ids": guest_entrance_ids + common_entrance_ids,
+        "label": "%ROOMNUM% - %SITENAME%",
+        "jointEntranceAccessCredentialIDs": [
+            joiner['credential_id'] for joiner in joiners
+        ]
+    }
+})
+</code></pre>
+{% endtab %}
+{% endtabs %}
