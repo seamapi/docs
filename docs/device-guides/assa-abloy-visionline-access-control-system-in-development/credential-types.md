@@ -39,6 +39,11 @@ When issuing guest credentials, hotels need to guarantee that all previous acces
 </strong><strong>    user_identity_key="xxx"
 </strong><strong>)
 </strong><strong>
+</strong><strong>seam.enrollment_automation.launch(
+</strong><strong>    credential_manager_acs_system_id=assa_credential_services.acs_system_id,
+</strong><strong>    user_identity_id=guest_user_identity.user_identity_id
+</strong><strong>)
+</strong><strong>
 </strong><strong># Associating the user idenitty with the ACS user
 </strong><strong>acs_user = seam.acs.users.get(
 </strong><strong>    email="jane@example.com"
@@ -85,6 +90,11 @@ For reservations involving multiple parties, hotels often need to provide creden
 <pre class="language-python"><code class="lang-python"># Setting up the Mobile user account
 user_identity = seam.user_identities.create(
     user_identity_key="xxx"
+)
+
+seam.enrollment_automation.launch(
+    credential_manager_acs_system_id=assa_credential_services.acs_system_id,
+    user_identity_id=guest_user_identity.user_identity_id
 )
 
 # Associating the user idenitty with the ACS user
