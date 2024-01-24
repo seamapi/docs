@@ -29,7 +29,8 @@ connect_webviews = seam.connect_webviews.list()
 
 {% tab title="cURL (bash)" %}
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/connect_webviews/list' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

@@ -29,7 +29,8 @@ pprint(seam.devices.unmanaged.list())
 
 {% tab title="cURL (bash)" %}
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/devices/unmanaged/list' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

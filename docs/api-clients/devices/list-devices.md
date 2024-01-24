@@ -18,7 +18,7 @@ List all devices or filter the list of devices by including the corresponding fi
 
 ### Request Body Parameters
 
-<table><thead><tr><th width="264">Parameter</th><th width="133.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>connected_account_id</code></td><td>String<br><em>Optional</em></td><td>ID of the connected account.</td></tr><tr><td><code>connected_account_ids</code></td><td>String[]<br><em>Optional</em></td><td>IDs of the connected accounts.</td></tr><tr><td><code>connect_webview_id</code></td><td>String<br><em>Optional</em></td><td>ID of <a href="../../core-concepts/connect-webviews/">Connect Webview</a>.</td></tr><tr><td><code>device_type</code></td><td>String<br><em>Optional</em></td><td>Type of device.</td></tr><tr><td><code>device_types</code></td><td>String[]<br><em>Optional</em></td><td>Types of devices.</td></tr><tr><td><code>manufacturer</code></td><td>String<br><em>Optional</em></td><td>Device manufacturer.</td></tr><tr><td><code>device_ids</code></td><td>type: string[]<br><em>Optional</em></td><td>IDs of the devices to include.</td></tr><tr><td><code>limit</code></td><td>Number<br><em>Optional</em></td><td>Numerical limit on the number of devices to return.</td></tr><tr><td><code>created_before</code></td><td>String<br><em>Optional</em></td><td>Date threshold for devices to return. If specified, returns only devices created before the specified date.</td></tr><tr><td><code>custom_metadata_has</code></td><td>JSON object<br><em>Optional</em></td><td>Set of key:value <a href="./#device-properties">custom metadata</a> pairs by which you want to filter devices<br>For more information, see <a href="../../core-concepts/devices/adding-custom-metadata-to-a-device.md">Adding Custom Metadata to Devices</a>.</td></tr></tbody></table>
+<table><thead><tr><th width="264">Parameter</th><th width="133.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>connected_account_id</code></td><td>String<br><em>Optional</em></td><td>ID of the connected account.</td></tr><tr><td><code>connected_account_ids</code></td><td>String[]<br><em>Optional</em></td><td>IDs of the connected accounts.</td></tr><tr><td><code>connect_webview_id</code></td><td>String<br><em>Optional</em></td><td>ID of <a href="../../core-concepts/connect-webviews/">Connect Webview</a>.</td></tr><tr><td><code>device_type</code></td><td>String<br><em>Optional</em></td><td>Type of device.</td></tr><tr><td><code>device_types</code></td><td>String[]<br><em>Optional</em></td><td>Types of devices.</td></tr><tr><td><code>manufacturer</code></td><td>String<br><em>Optional</em></td><td>Device manufacturer.</td></tr><tr><td><code>device_ids</code></td><td>type: string[]<br><em>Optional</em></td><td>IDs of the devices to include.</td></tr><tr><td><code>limit</code></td><td>Number<br><em>Optional</em></td><td>Numerical limit on the number of devices to return.</td></tr><tr><td><code>created_before</code></td><td>String<br><em>Optional</em></td><td>Date threshold for devices to return. If specified, returns only devices created before the specified date.</td></tr><tr><td><code>custom_metadata_has</code></td><td>JSON object<br><em>Optional</em></td><td>Set of key:value <a href="./#device-properties">custom metadata</a> pairs by which you want to filter devices</td></tr></tbody></table>
 
 ***
 
@@ -33,7 +33,8 @@ devices = seam.devices.list()
 
 {% tab title="cURL (bash)" %}
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/devices/list' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

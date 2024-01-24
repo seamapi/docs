@@ -23,6 +23,7 @@ Specify the [access control system](../../../products/access-systems/) for which
 {% tabs %}
 {% tab title="cURL (bash)" %}
 ```bash
+# Use GET or POST.
 curl -X 'GET' \
   'https://connect.getseam.com/acs/users/list' \
   -H 'accept: application/json' \

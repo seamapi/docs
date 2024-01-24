@@ -17,7 +17,8 @@ To [list all entrances](../../api-clients/access-control-systems/entrances/list-
 **Request:**
 
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/acs/entrances/list' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
@@ -75,7 +76,8 @@ To [get a specific entrance](../../api-clients/access-control-systems/entrances/
 **Request:**
 
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/acs/entrances/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

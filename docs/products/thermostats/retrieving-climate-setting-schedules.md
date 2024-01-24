@@ -61,7 +61,8 @@ pprint(climate_setting_schedules)
 **Request:**
 
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/thermostats/climate_setting_schedules/list' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
@@ -322,7 +323,8 @@ ClimateSettingSchedule(automatic_heating_enabled=True,
 **Request:**
 
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/thermostats/climate_setting_schedules/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

@@ -29,7 +29,8 @@ connected_accounts = seam.connected_accounts.list()
 
 {% tab title="cURL (bash)" %}
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/connected_accounts/list' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

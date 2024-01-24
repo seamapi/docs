@@ -371,16 +371,16 @@ pprint("Ends at: " + str(access_code.ends_at))
 
 **Request:**
 
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/access_codes/get' \
+<pre class="language-bash"><code class="lang-bash"># Use GET or POST.
+<strong>curl -X 'GET' \
+</strong>  'https://connect.getseam.com/access_codes/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
   -d '{
   "access_code_id": "d2047ba8-8849-467f-a07a-efab6c3673bc"
 }'
-```
+</code></pre>
 
 **Response:**
 
@@ -439,7 +439,8 @@ curl -X 'POST' \
 **Request:**
 
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/access_codes/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
@@ -942,7 +943,8 @@ pprint("Ends at: " + str(access_code.ends_at))
 **Request:**
 
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/access_codes/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
@@ -1013,7 +1015,8 @@ curl -X 'POST' \
 **Request:**
 
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/access_codes/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

@@ -29,7 +29,8 @@ pprint(seam.devices.unmanaged.get("882dd63f-db9b-4210-bac2-68372aa0aff7"))
 
 {% tab title="cURL (bash)" %}
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/devices/unmanaged/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

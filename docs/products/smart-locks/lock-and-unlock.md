@@ -51,16 +51,16 @@ Device(device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
 {% tab title="cURL (bash)" %}
 **Request:**
 
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/locks/get' \
+<pre class="language-bash"><code class="lang-bash"><strong># Use GET or POST.
+</strong><strong>curl -X 'GET' \
+</strong>  'https://connect.getseam.com/locks/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
   -d '{
   "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
 }'
-```
+</code></pre>
 
 **Response:**
 
@@ -675,7 +675,8 @@ ActionAttempt(action_attempt_id='47f2ba20-a2e5-4f3d-9add-e5ac33a415a3',
 **Request:**
 
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/action_attempts/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
@@ -822,16 +823,16 @@ Device(device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
 {% tab title="cURL (bash)" %}
 **Request:**
 
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/locks/get' \
+<pre class="language-bash"><code class="lang-bash"># Use GET or POST.
+<strong>curl -X 'GET' \
+</strong>  'https://connect.getseam.com/locks/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
   -d '{
   "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
 }'
-```
+</code></pre>
 
 **Response:**
 

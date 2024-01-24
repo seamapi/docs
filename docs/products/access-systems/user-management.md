@@ -17,7 +17,8 @@ To add users to your access system, first retrieve the ID (`acs_system_id`) of t
 **Request:**
 
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/acs/systems/list' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
@@ -160,7 +161,8 @@ To list all users within an ACS, provide the ID (`acs_system_id)` of the ACS.
 **Request:**
 
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/acs/users/list' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer seam_test2jjY_9YgUrnuR7y29jWkUFQ9i3qMh' \

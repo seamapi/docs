@@ -29,7 +29,8 @@ pprint(seam.devices.list_device_providers(provider_category="stable"))
 
 {% tab title="cURL (bash)" %}
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/devices/list_device_providers' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
