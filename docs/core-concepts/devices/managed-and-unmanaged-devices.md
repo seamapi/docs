@@ -1,87 +1,10 @@
 ---
 description: >-
-  Devices are objects like locks, thermostats, sensors, or cameras. In the Seam
-  API, devices have capabilities that describe the functions that they can
-  perform, as well as online and managed status.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
+  You can indicate the devices in your workspace that you intend to control
+  using the Seam API.
 ---
 
-# Devices
-
-## Supported Capabilities
-
-Seam decomposes the ensemble of features that a device provides into one or more capabilities, such as `access_codes` or `thermostat`. Seam exposes each capability as a set of APIs that are standardized across brands for ease of integration. For example, an unlock action on a door lock always requires the same API call irrespective of the device brand.
-
-![](<../.gitbook/assets/image (10) (1).png>)
-
-In addition, Seam decomposes a single device capability further into the following three sets of affordances:
-
-* **Actions:** Commands that you can issue to the device, such as unlock
-* **Properties:** The current state of the device, such as the locked status
-* **Events:** Notifications related to changes in the state of the device, such as an unlocking operation performed with an access code
-
-To retrieve the list of supported capabilities for a specific device, use the `capability_supported` attribute on the `Device` object, as follows:
-
-{% tabs %}
-{% tab title="JavaScript" %}
-```javascript
-const device = await seam.devices.get({
-  device_id: "77208078-6dd7-44e5-a3e4-a2ed3a34efc9"
-})
-console.log(device.capabilities_supported)
-// ['access_code', 'lock']
-```
-{% endtab %}
-
-{% tab title="Python" %}
-```python
-device = seam.devices.get("0e2e6262-7f91-4970-a58d-47ef30b41e2e")
-print(device.capabilities_supported)
-# ['access_code', 'lock']
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-```ruby
-seam = Seam::Client.new()
-device_id = "aa3958c3-4236-4f71-bd77-3b60f85b3456"
-some_lock = seam.locks.get(device_id)
-puts some_lock.capabilities_supported
-# [access_code, lock]
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-```php
-use Seam\SeamClient;
-
-$seam = new SeamClient("YOUR_API_KEY");
-
-$device = $seam->devices->get("0e2e6262-7f91-4970-a58d-47ef30b41e2e");
-
-# Inspect this device to see which capabilities it supports.
-echo json_encode($device->capabilities_supported, JSON_PRETTY_PRINT);
-
-# [
-#     "access_code",
-#     "lock"
-# ]
-
-```
-{% endtab %}
-{% endtabs %}
-
-## Managed Devices and Unmanaged Devices
+# Managed and Unmanaged Devices
 
 To increase billing flexibility, Seam provides the ability to mark devices as `managed` or `unmanaged`.
 
@@ -90,9 +13,9 @@ To increase billing flexibility, Seam provides the ability to mark devices as `m
 
 Seam makes it possible to switch a device back and forth between the `managed` and `unmanaged` states.
 
-### Convert a Managed Device to Unmanaged
+## Convert a Managed Device to Unmanaged
 
-Converting a device to an `unmanaged` state pauses billing for the device and converts all the managed device resources (for example, access codes) to unmanaged resources. As a result, Seam no longer monitors the lifecycle of these unmanaged resources.
+When you convert a device to an `unmanaged` state (that is, "unamange a device"), Seam pauses billing for the device and converts all the managed device resources (for example, access codes) to unmanaged resources. As a result, Seam no longer monitors the lifecycle of these unmanaged resources.
 
 {% tabs %}
 {% tab title="Javascript" %}
@@ -245,9 +168,9 @@ echo json_encode($unmanaged_device, JSON_PRETTY_PRINT);
 {% endtab %}
 {% endtabs %}
 
-### Convert an Unmanaged Device to Managed
+## Convert an Unmanaged Device to Managed
 
-To convert an unmanaged device back to managed, retrieve the device using the unmanaged device API and use the `update` function to change the managed state of the device back to `true`. Note that you must also convert unmanaged device resources (for example, access codes) back to managed.
+To convert an unmanaged device back to managed (that is, to "manage a device"), retrieve the device using the unmanaged device API and use the `update` function to change the managed state of the device back to `true`. Note that you must also convert unmanaged device resources (for example, access codes) back to managed.
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -461,9 +384,9 @@ echo json_encode($device, JSON_PRETTY_PRINT);
 {% endtab %}
 {% endtabs %}
 
-### Automatically Set New Devices to Unmanaged
+## Automatically Set New Devices to Unmanaged
 
-You can configure a [Connect Webview](connect-webviews/) so that it automatically sets all new devices added to the workspace through this Connect Webview to `unmanaged` by default. To do so, when creating a Connect Webview, set `automatically_manage_new_devices` to `false`. Once the Connect Webview is authorized, Seam sets any device added to the workspace to `unmanaged`.
+You can configure a [Connect Webview](../connect-webviews/) so that it automatically sets all new devices added to the workspace through this Connect Webview to `unmanaged` by default. To do so, when creating a Connect Webview, set `automatically_manage_new_devices` to `false`. Once the Connect Webview is authorized, Seam sets any device added to the workspace to `unmanaged`.
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -506,100 +429,6 @@ console.log(connectWebview)
   created_at: '2023-08-29T04:59:13.890Z'
 }
 */
-```
-{% endtab %}
-
-{% tab title="Python" %}
-```python
-from seamapi import Seam
-
-seam = Seam()
-
-connect_webview = seam.connect_webviews.create(
-    provider_category="stable",
-    automatically_manage_new_devices=False
-)
-
-print(connect_webview)
-
-# ConnectWebview(workspace_id='1d2826eb-4a26-4f46-bddb-ef5898baa859',
-#                connect_webview_id='fc251dba-f7e6-4789-b638-e4135ba069d5',
-#                status='pending',
-#                url='https://connect.getseam.com/connect_webviews/view?connect_webview_id=fc251dba-f7e6-4789-b638-e4135ba069d5&auth_token=FLGyaQMhhDRtcT4XjFvDnjj3ydreMY2KP',
-#                login_successful=False,
-#                device_selection_mode='none',
-#                any_provider_allowed=False,
-#                any_device_allowed=False,
-#                created_at='2023-09-16T20:14:13.417Z',
-#                custom_metadata={},
-#                connected_account_id=None,
-#                authorized_at=None,
-#                custom_redirect_url=None,
-#                custom_redirect_failure_url=None,
-#                accepted_providers=['august',
-#                                    'avigilon_alta',
-#                                    'brivo',
-#                                    'schlage',
-#                                    'smartthings',
-#                                    'yale',
-#                                    'nuki',
-#                                    'salto',
-#                                    'controlbyweb',
-#                                    'minut',
-#                                    'my_2n',
-#                                    'kwikset',
-#                                    'ttlock',
-#                                    'noiseaware',
-#                                    'igloohome',
-#                                    'ecobee',
-#                                    'hubitat',
-#                                    'four_suites',
-#                                    'dormakaba_oracode',
-#                                    'wyze'],
-#                accepted_devices=[],
-#                selected_provider=None,
-#                wait_for_device_creation=False,
-#                automatically_manage_new_devices=False)
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-```ruby
-require "seamapi"
-
-seam = Seam::Client.new()
-connect_webview = seam.connect_webviews.create(
-    provider_category: "stable",
-    automatically_manage_new_devices: false,
-)
-
-puts connect_webview.inspect
-# <Seam::ConnectWebview:0x00438
-#   url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=96e673d8-2df2-49b2-b538-6cc88cbaf78e&auth_token=7AHzFs1iJ3EHvAk1AyKwxRaeVUm2qBsG9"
-#   status="pending"
-#   workspace_id="1d2826eb-4a26-4f46-bddb-ef5898baa859"
-#   custom_metadata={}
-#   accepted_devices=[]
-#   login_successful=false
-#   accepted_providers=["august", "avigilon_alta", "brivo", "schlage", "smartthings", "yale", "wyze", "nuki", "salto", "controlbyweb", "minut", "my_2n", "kwikset", "ttlock", "noiseaware", "igloohome", "ecobee", "hubitat", "four_suites"]
-#   any_device_allowed=false
-#   connect_webview_id="96e673d8-2df2-49b2-b538-6cc88cbaf78e"
-#   custom_redirect_url=nil
-#   any_provider_allowed=false
-#   device_selection_mode="none"
-#   wait_for_device_creation=false
-#   custom_redirect_failure_url=nil
-#   automatically_manage_new_devices=false <====== Note that this property is set to false.
-#   created_at=2023-09-07 05:52:41.329 UTC>
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-```php
-$connect_webview = $seam->connect_webviews->create(
-  provider_category: "stable",
-  automatically_manage_new_devices: false
-);
 ```
 {% endtab %}
 {% endtabs %}

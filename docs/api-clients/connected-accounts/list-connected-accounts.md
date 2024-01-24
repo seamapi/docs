@@ -16,18 +16,14 @@ To filter the list of returned connected accounts by a specific set of [custom m
 
 ### Request Body Parameters
 
-<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>custom_metadata_has</code></td><td>JSON object<br><em>Optional</em></td><td>Set of key:value <a href="../connect-webviews/#connect_webview-properties">custom metadata</a> pairs by which you want to filter connected accounts</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>custom_metadata_has</code></td><td>JSON object<br><em>Optional</em></td><td>Set of key:value <a href="../connect-webviews/#connect_webview-properties">custom metadata</a> pairs by which you want to filter connected accounts<br>For more information, see <a href="../../core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account.md">Adding Custom Metadata to Connected Accounts</a>.</td></tr></tbody></table>
 
 ### Sample Request
 
 {% tabs %}
 {% tab title="Python" %}
 ```python
-connected_accounts = seam.connected_accounts.list(
-  custom_metadata_has = {
-    "internal_account_id": "user-1"
-  }
-)
+connected_accounts = seam.connected_accounts.list()
 ```
 {% endtab %}
 
@@ -38,38 +34,24 @@ curl -X 'POST' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
-  -d '{
-  "custom_metadata_has": {
-    "internal_account_id": "user-1"
-  }
-}'
+  -d '{}'
 ```
 {% endtab %}
 
 {% tab title="Javascript" %}
 ```javascript
-await seam.connectedAccounts.list({
-  custom_metadata_has: {
-    "internal_account_id": "user-1"
-  }
-});
+await seam.connectedAccounts.list();
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
-<pre class="language-ruby"><code class="lang-ruby"><strong>seam.connected_accounts.list(
-</strong>  custom_metadata_has: {
-    "internal_account_id": "user-1"
-  }
-)
-</code></pre>
+<pre class="language-ruby"><code class="lang-ruby"><strong>seam.connected_accounts.list()
+</strong></code></pre>
 {% endtab %}
 
 {% tab title="PHP" %}
 ```php
-$connected_accounts = $seam->connected_accounts->list(
-  custom_metadata_has: array('internal_account_id' => 'user-1')
-);
+$connected_accounts = $seam->connected_accounts->list();
 echo json_encode($connected_accounts);
 ```
 {% endtab %}

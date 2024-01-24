@@ -4,7 +4,7 @@ description: Get all devices
 
 # List Devices
 
-Returns a list of all [devices](../../core-concepts/devices.md) (`device` objects).
+Returns a list of all [devices](../../core-concepts/devices/) (`device` objects).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/devices/list" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
@@ -18,7 +18,7 @@ List all devices or filter the list of devices by including the corresponding fi
 
 ### Request Body Parameters
 
-<table><thead><tr><th width="264">Parameter</th><th width="133.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>connected_account_id</code></td><td>String<br><em>Optional</em></td><td>ID of the connected account.</td></tr><tr><td><code>connected_account_ids</code></td><td>String[]<br><em>Optional</em></td><td>IDs of the connected accounts.</td></tr><tr><td><code>connect_webview_id</code></td><td>String<br><em>Optional</em></td><td>ID of <a href="../../core-concepts/connect-webviews/">Connect Webview</a>.</td></tr><tr><td><code>device_type</code></td><td>String<br><em>Optional</em></td><td>Type of device.</td></tr><tr><td><code>device_types</code></td><td>String[]<br><em>Optional</em></td><td>Types of devices.</td></tr><tr><td><code>manufacturer</code></td><td>String<br><em>Optional</em></td><td>Device manufacturer.</td></tr><tr><td><code>device_ids</code></td><td>type: string[]<br><em>Optional</em></td><td>IDs of the devices to include.</td></tr><tr><td><code>limit</code></td><td>Number<br><em>Optional</em></td><td>Numerical limit on the number of devices to return.</td></tr><tr><td><code>created_before</code></td><td>String<br><em>Optional</em></td><td>Date threshold for devices to return. If specified, returns only devices created before the specified date.</td></tr><tr><td><code>custom_metadata_has</code></td><td>JSON object<br><em>Optional</em></td><td>Set of key:value <a href="./#device-properties">custom metadata</a> pairs by which you want to filter devices</td></tr></tbody></table>
+<table><thead><tr><th width="264">Parameter</th><th width="133.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>connected_account_id</code></td><td>String<br><em>Optional</em></td><td>ID of the connected account.</td></tr><tr><td><code>connected_account_ids</code></td><td>String[]<br><em>Optional</em></td><td>IDs of the connected accounts.</td></tr><tr><td><code>connect_webview_id</code></td><td>String<br><em>Optional</em></td><td>ID of <a href="../../core-concepts/connect-webviews/">Connect Webview</a>.</td></tr><tr><td><code>device_type</code></td><td>String<br><em>Optional</em></td><td>Type of device.</td></tr><tr><td><code>device_types</code></td><td>String[]<br><em>Optional</em></td><td>Types of devices.</td></tr><tr><td><code>manufacturer</code></td><td>String<br><em>Optional</em></td><td>Device manufacturer.</td></tr><tr><td><code>device_ids</code></td><td>type: string[]<br><em>Optional</em></td><td>IDs of the devices to include.</td></tr><tr><td><code>limit</code></td><td>Number<br><em>Optional</em></td><td>Numerical limit on the number of devices to return.</td></tr><tr><td><code>created_before</code></td><td>String<br><em>Optional</em></td><td>Date threshold for devices to return. If specified, returns only devices created before the specified date.</td></tr><tr><td><code>custom_metadata_has</code></td><td>JSON object<br><em>Optional</em></td><td>Set of key:value <a href="./#device-properties">custom metadata</a> pairs by which you want to filter devices<br>For more information, see <a href="../../core-concepts/devices/adding-custom-metadata-to-a-device.md">Adding Custom Metadata to Devices</a>.</td></tr></tbody></table>
 
 ***
 
@@ -39,44 +39,18 @@ curl -X 'POST' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
   -d '{}'
-
-// To filter by custom metadata:
-curl -X 'POST' \
-  'https://connect.getseam.com/devices/list' \
-  -H 'accept: application/json' \
-  -H 'Authorization: Bearer ${API_KEY}' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "custom_metadata_has": {
-    "internal_account_id": "user-1"
-  }
-}'
 ```
 {% endtab %}
 
 {% tab title="Javascript" %}
 ```typescript
 await seam.devices.list()
-
-// To filter by custom metadata:
-await seam.devices.list({
-  custom_metadata_has: {
-    "internal_account_id": "user-1"
-  }
-})
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 ```ruby
 devices = client.devices.list()
-
-# To filter by custom metadata:
-devices = client.devices.list(
-  custom_metadata_has: {
-    "internal_account_id": "user-1"
-  }
-)
 ```
 {% endtab %}
 
@@ -88,33 +62,12 @@ foreach (var device in devices)
 {
   Console.WriteLine(device);
 }
-
-// To filter by custom metadata:
-var customMetadata = new Dictionary<string, string>()
-{
-  {"internal_account_id", "user-1"}
-};
-
-var devices = seam.Devices.List(customMetadataHas: customMetadata);
-
-foreach (var device in devices)
-{
-  Console.WriteLine(device);
-}
 ```
 {% endtab %}
 
 {% tab title="Java" %}
 ```java
 var devices = seam.devices().list();
-System.out.println(devices);
-
-// To filter by custom metadata:
-Map<String, CustomMetadataValue> customMetadata =
-    Map.of("internal_account_id", CustomMetadataValue.of(Optional.of("user-1")));
-var devices = seam.devices().list(DevicesListRequest.builder()
-                .customMetadataHas(customMetadata)
-                .build());
 System.out.println(devices);
 ```
 {% endtab %}
@@ -468,27 +421,5 @@ This response also includes a Boolean `ok` status indicator.
 }, ...
 ]
 ```
-{% endtab %}
-{% endtabs %}
-
-***
-
-## Filtering Devices by Custom Metadata fields
-
-
-
-{% tabs %}
-{% tab title="Python" %}
-```python
-devices = seam.devices.list(
-  custom_metadata_has = {
-    "internal_property_id": "property-1"
-  }
-)
-```
-{% endtab %}
-
-{% tab title="Second Tab" %}
-
 {% endtab %}
 {% endtabs %}

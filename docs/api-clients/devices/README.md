@@ -4,7 +4,7 @@ description: A device that has been connected to Seam
 
 # Devices
 
-The `device` object represents a [device](../../core-concepts/devices.md) that has been connected to Seam.
+The `device` object represents a [device](../../core-concepts/devices/) that has been connected to Seam.
 
 ## `device` Properties
 
