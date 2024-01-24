@@ -39,12 +39,14 @@ When issuing guest credentials, hotels need to guarantee that all previous acces
 </strong><strong>    user_identity_key="xxx"
 </strong><strong>)
 </strong><strong>
+</strong># Turn on the enrollment automation for that user identity and credential
+<strong># manager.
 </strong><strong>seam.enrollment_automation.launch(
 </strong><strong>    credential_manager_acs_system_id=assa_credential_services.acs_system_id,
 </strong><strong>    user_identity_id=guest_user_identity.user_identity_id
 </strong><strong>)
 </strong><strong>
-</strong><strong># Associating the user idenitty with the ACS user
+</strong><strong># Associating the user identity with the ACS user
 </strong><strong>acs_user = seam.acs.users.get(
 </strong><strong>    email="jane@example.com"
 </strong><strong>)
@@ -92,12 +94,14 @@ user_identity = seam.user_identities.create(
     user_identity_key="xxx"
 )
 
+# Turn on the enrollment automation for that user identity and credential
+# manager.
 seam.enrollment_automation.launch(
     credential_manager_acs_system_id=assa_credential_services.acs_system_id,
     user_identity_id=guest_user_identity.user_identity_id
 )
 
-# Associating the user idenitty with the ACS user
+# Associating the user identity with the ACS user
 acs_user = seam.acs.users.get(
     email="jane@example.com"
 )
@@ -117,9 +121,13 @@ for entrance in [room_entrance, common_door]:
 
 # Retrieve existing valid credentials for guest doors
 joiners = seam.acs.credentials.list({
+    "allowed_entrance_ids": [room_entrance.entrance_id],
+    "is_multi_sync_phone_credential": false,
     visionline_metadata: {
-        "allowed_entrance_ids": [room_entrance.entrance_id],
-        "status": "valid"
+        "overwritten": false,
+        "overridden": false,
+        "cancelled": false,
+        "discarded": false
     }
 })
 
