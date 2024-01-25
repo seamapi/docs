@@ -7,7 +7,6 @@
 ## 📖 Core Concepts
 
 * [Overview](core-concepts/overview.md)
-  * [Pricing and Billing](reference/help-center/how-often-am-i-billed-with-seam.md)
 * [Seam Console](core-concepts/seam-console.md)
 * [Workspaces](core-concepts/workspaces/README.md)
   * [API Keys](core-concepts/workspaces/api-keys.md)
