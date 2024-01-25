@@ -81,7 +81,7 @@
     * [Connect Account Button](seam-components/react-components/connect-account-button.md)
   * [Make a Supported Devices Page](seam-components/make-a-supported-devices-page.md)
 * [Sandbox Devices and Systems](device-guides/sandbox-and-sample-data/README.md) <-- Are any brands missing?
-  * [Virtual 2N Intercoms](device-guides/sandbox-and-sample-data/2n-intercoms-sample-data.md)
+  * [Sandbox 2N Intercoms](device-guides/sandbox-and-sample-data/2n-intercoms-sample-data.md)
   * [Virtual August Locks](device-guides/sandbox-and-sample-data/august-locks-sample-data.md)
   * [Virtual DoorKing Callbox](device-guides/sandbox-and-sample-data/doorking-sample-data.md)
   * [Virtual dormakaba Oracode Devices](device-guides/sandbox-and-sample-data/dormakaba-oracode-sample-data.md)
