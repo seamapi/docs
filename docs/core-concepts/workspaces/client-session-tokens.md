@@ -8,24 +8,24 @@ description: >-
 
 A client session enables a client, such as a web browser or mobile phone, to access the Seam API directly. You can use client sessions to simplify your architecture. That is, when you use client sessions and client session tokens with the Seam JavaScript SDK, you can authenticate and authorize users of your web application directly with Seam.
 
-Once you create a client session on the back end, you can pass the resulting generated client session token from the back end to the front end (that is, to the client). Using client session tokens on the front end eliminates the need for your user's browser to communicate with your back-end server. Instead, the client makes requests directly to the Seam API.
+Once you create a client session on the backend, you can pass the resulting generated client session token from the backend to the frontend (that is, to the client). Using client session tokens on the frontend eliminates the need for your user's browser to communicate with your backend server. Instead, the client makes requests directly to the Seam API.
 
-Client sessions make it easy to control your users' access to devices. When you create a client session, you can specify [your own internal user ID for a desired user](../../seam-components/overview/get-started-with-client-side-components.md#3-select-a-user-identifier-key), along with the [connected accounts](../../api-clients/connected-accounts/) associated with this user. Then, you can [use client sessions on the back end to limit your users to only the devices that they own](client-session-tokens/implementing-client-sessions-for-device-management-in-the-back-end.md).
+Client sessions make it easy to control your users' access to devices. When you create a client session, you can specify [your own internal user ID for a desired user](../../seam-components/overview/get-started-with-client-side-components.md#3-select-a-user-identifier-key), along with the [connected accounts](../../api-clients/connected-accounts/) associated with this user. Then, you can [use client sessions on the backend to limit your users to only the devices that they own](client-session-tokens/implementing-client-sessions-for-device-management-in-the-backend.md).
 
 {% hint style="info" %}
-If you are just getting started with Seam, see [Seam Components](../../seam-components/overview/). In only a few minutes and with just a few lines of code, you can start controlling devices from your web application without interacting with the back end.
+If you are just getting started with Seam, see [Seam Components](../../seam-components/overview/). In only a few minutes and with just a few lines of code, you can start controlling devices from your web application without interacting with the backend.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/client-session-flow.png" alt="Client sessions and client session tokens increase efficiency by enabling your user&#x27;s browser to communicate directly with the Seam back-end server."><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/client-session-flow.png" alt="Client sessions and client session tokens increase efficiency by enabling your user&#x27;s browser to communicate directly with the Seam backend server."><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
-You can only use a client session token in a browser context through the Seam JavaScript SDK. Do not use a client session token to make requests from the back end. Instead, use an [API key](api-keys.md). An API key has unlimited permission to manage all devices and other Seam API resources within a [workspace](./). Never use an API key in the browser or expose it to your users.
+You can only use a client session token in a browser context through the Seam JavaScript SDK. Do not use a client session token to make requests from the backend. Instead, use an [API key](api-keys.md). An API key has unlimited permission to manage all devices and other Seam API resources within a [workspace](./). Never use an API key in the browser or expose it to your users.
 {% endhint %}
 
 You can use client sessions in the following two ways:
 
-* Create a client session on the back end and pass the resulting generated client session token to your front end. You use this client session token in the front end with the Seam JavaScript SDK or Seam Components.
-* Manage client sessions entirely on the front end by using a [publishable key with the JavaScript SDK or Seam Components](../../seam-components/overview/get-started-with-client-side-components.md).
+* Create a client session on the backend and pass the resulting generated client session token to your frontend. You use this client session token in the frontend with the Seam JavaScript SDK or Seam Components.
+* Manage client sessions entirely on the frontend by using a [publishable key with the JavaScript SDK or Seam Components](../../seam-components/overview/get-started-with-client-side-components.md).
 
 ***
 

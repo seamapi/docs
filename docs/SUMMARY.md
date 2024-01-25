@@ -13,7 +13,7 @@
   * [API Keys](core-concepts/workspaces/api-keys.md)
   * [Personal Access Tokens](core-concepts/workspaces/personal-access-tokens.md)
   * [Client Sessions and Client Session Tokens](core-concepts/workspaces/client-session-tokens.md)
-    * [Implementing Client Sessions for Device Management in the Back End](core-concepts/workspaces/client-session-tokens/implementing-client-sessions-for-device-management-in-the-back-end.md)
+    * [Implementing Client Sessions for Device Management in the Backend](core-concepts/workspaces/client-session-tokens/implementing-client-sessions-for-device-management-in-the-backend.md)
 * [Devices](core-concepts/devices/README.md)
   * [Managed and Unmanaged Devices](core-concepts/devices/managed-and-unmanaged-devices.md)
   * [Adding Custom Metadata to a Device](core-concepts/devices/adding-custom-metadata-to-a-device.md)
