@@ -39,7 +39,14 @@ When issuing guest credentials, hotels need to guarantee that all previous acces
 </strong><strong>    user_identity_key="xxx"
 </strong><strong>)
 </strong><strong>
-</strong><strong># Associating the user idenitty with the ACS user
+</strong># Turn on the enrollment automation for that user identity and credential
+<strong># manager.
+</strong><strong>seam.enrollment_automation.launch(
+</strong><strong>    credential_manager_acs_system_id=assa_credential_services.acs_system_id,
+</strong><strong>    user_identity_id=guest_user_identity.user_identity_id
+</strong><strong>)
+</strong><strong>
+</strong><strong># Associating the user identity with the ACS user
 </strong><strong>acs_user = seam.acs.users.get(
 </strong><strong>    email="jane@example.com"
 </strong><strong>)
@@ -47,6 +54,15 @@ When issuing guest credentials, hotels need to guarantee that all previous acces
     user_identity=user_identity.user_identity_id,
     acs_user_id=acs_user.acs_user_id
 )
+
+# Grant ACS User access to entrances
+room_entrance = seam.acs.entrances.get(name=f"Room {room_number}")
+common_door = seam.acs.entrances.get(name=f"Main Entrance")
+for entrance in [room_entrance, common_door]:
+    seam.acs.entrances.grant_access(
+      entrance_id=entrance.entrance_id,
+      acs_user_id=acs_user.acs_user_id,
+    )
 
 # Creating the mobile credential
 cred = seam.acs.credentials.create(
@@ -57,7 +73,6 @@ cred = seam.acs.credentials.create(
     starts_at="2023-01-01 10:40:00.000",
     ends_at="2023-01-04 10:40:00.000",
     visionline_metadata={
-        "allowed_entrance_ids": ["xxx", "yyy"],
         "label": "%ROOMNUM% - %SITENAME%",
         "override_existing_entrance_credentials": True
     }
@@ -79,7 +94,14 @@ user_identity = seam.user_identities.create(
     user_identity_key="xxx"
 )
 
-# Associating the user idenitty with the ACS user
+# Turn on the enrollment automation for that user identity and credential
+# manager.
+seam.enrollment_automation.launch(
+    credential_manager_acs_system_id=assa_credential_services.acs_system_id,
+    user_identity_id=guest_user_identity.user_identity_id
+)
+
+# Associating the user identity with the ACS user
 acs_user = seam.acs.users.get(
     email="jane@example.com"
 )
@@ -88,12 +110,24 @@ seam.user_identities.add_acs_user(
     acs_user_id=acs_user.acs_user_id
 )
 
-# Retrieve valid credentials 
-guest_entrance_ids = ["xxx", "yyy"]
+# Grant ACS User access to entrances
+room_entrance = seam.acs.entrances.get(name=f"Room {room_number}")
+common_door = seam.acs.entrances.get(name=f"Main Entrance")
+for entrance in [room_entrance, common_door]:
+    seam.acs.entrances.grant_access(
+        entrance_id=entrance.entrance_id,
+        acs_user_id=acs_user.acs_user_id,
+    )
+
+# Retrieve existing valid credentials for guest doors
 joiners = seam.acs.credentials.list({
+    "allowed_entrance_ids": [room_entrance.entrance_id],
+    "is_multi_sync_phone_credential": false,
     visionline_metadata: {
-        "allowed_entrance_ids": guest_entrance_ids,
-        "status": "valid"
+        "overwritten": false,
+        "overridden": false,
+        "cancelled": false,
+        "discarded": false
     }
 })
 
@@ -107,7 +141,6 @@ common_entrance_ids = ["zzz"]
     starts_at: "2023-01-01 10:40:00.000",
     ends_at: "2023-01-04 10:40:00.000",
     visionline_metadata: {
-        "allowed_entrance_ids": guest_entrance_ids + common_entrance_ids,
         "label": "%ROOMNUM% - %SITENAME%",
         "jointEntranceAccessCredentialIDs": [
             joiner['credential_id'] for joiner in joiners
