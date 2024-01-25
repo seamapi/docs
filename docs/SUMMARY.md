@@ -51,7 +51,7 @@
 * [👂 Noise Sensors](products/noise-sensors/README.md)
   * [Configuring Noise Threshold Settings](products/noise-sensors/configure-noise-threshold-settings.md)
 
-## 📖 Developer Components and Tools
+## 📖 Developer Tools
 
 * [Overview](NEW TOPIC)
 * [Connect Webviews](core-concepts/connect-webviews/README.md)
