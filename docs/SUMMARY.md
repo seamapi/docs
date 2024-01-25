@@ -29,7 +29,6 @@
     * [Lifecycle of Access Codes](products/smart-locks/access-codes/lifecycle-of-access-codes.md)
     * [Access Code Requirements for Door Locks](products/smart-locks/access-codes/access-code-requirements-for-door-locks.md)
     * [Streamlining Access Code Management from the Manufacturer App](products/smart-locks/access-codes/accommodating-manufacturer-mobile-apps.md)
-    * [Managing Access Codes for Hospitality](device-guides/implementing-robust-access-code-management-for-guests.md)
     * [Troubleshooting Access Codes](products/smart-locks/access-codes/troubleshooting-access-code-issues.md)
     * [Managing Backup Access Codes](products/smart-locks/access-codes/backup-access-codes.md)
     * [Managing Offline Access Codes](products/smart-locks/access-codes/offline-access-codes.md)
