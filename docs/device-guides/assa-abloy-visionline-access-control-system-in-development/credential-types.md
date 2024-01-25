@@ -12,7 +12,7 @@ Note: Seam currently only supports issuing guest mobile credentials. We will ext
 
 Here are some of the properties involved in issuing a guest mobile credential:
 
-<table><thead><tr><th width="260">Property</th><th width="176">Type</th><th width="290">Description</th></tr></thead><tbody><tr><td><code>allowed_entrance_ids</code></td><td><code>String[]</code><br><em>Required</em></td><td>This property specifies a list of entrance IDs that this credential is authorized to access.</td></tr><tr><td><code>label</code></td><td><code>String</code><br><em>Optional</em></td><td>This field provides “Label” field data for mobile credentials. This field may contain plain text as well as predefined placeholders. The placeholders are surrounded by percentage % sign.</td></tr><tr><td><code>override_existing_entrance_credentials</code></td><td><code>Boolean</code><br><em>Optional</em></td><td>Indicates whether this credential invalidates any previously-issued credentials for overlapping entrances</td></tr><tr><td><code>jointEntranceAccessCredentialIDs</code></td><td><code>String[]</code><br><em>Optional</em></td><td>This property is a list of credential IDs that the current credential will share entrance access with. When <code>override_previous_credentials</code> is set to <code>false</code>, <code>jointCredentialIDs</code> becomes a mandatory field.</td></tr><tr><td><code>starts_at</code></td><td><a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format<br><em>Optional</em></td><td>Start date and time stamp for credential activation</td></tr><tr><td><code>ends_at</code></td><td><a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format<br>Required</td><td>End date and time stamp for credential expiration</td></tr></tbody></table>
+<table><thead><tr><th width="260">Property</th><th width="176">Type</th><th width="290">Description</th></tr></thead><tbody><tr><td><code>label</code></td><td><code>String</code><br><em>Optional</em></td><td>This field provides “Label” field data for mobile credentials. This field may contain plain text as well as predefined placeholders. The placeholders are surrounded by percentage % sign.</td></tr><tr><td><code>override</code> in <code>visionline_metadata</code></td><td><code>Boolean</code><br><em>Optional</em></td><td>Indicates whether this credential invalidates any previously-issued credentials for overlapping entrances</td></tr><tr><td><code>joiners</code> in <code>visionline_metadata</code></td><td><code>String[]</code><br><em>Optional</em></td><td>This property is a list of credential IDs that the current credential will share entrance access with. When <code>override_previous_credentials</code> is set to <code>false</code>, <code>jointCredentialIDs</code> becomes a mandatory field.</td></tr><tr><td><code>starts_at</code></td><td><a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format<br><em>Optional</em></td><td>Start date and time stamp for credential activation</td></tr><tr><td><code>ends_at</code></td><td><a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format<br>Required</td><td>End date and time stamp for credential expiration</td></tr></tbody></table>
 
 #### Label Placeholders
 
@@ -71,10 +71,10 @@ cred = seam.acs.credentials.create(
     is_multi_phone_sync_credential=True,
     access_method="mobile_key",
     starts_at="2023-01-01 10:40:00.000",
-    ends_at="2023-01-04 10:40:00.000",
+    ends_at="2023-01-04 10:40:00.000"
     visionline_metadata={
         "label": "%ROOMNUM% - %SITENAME%",
-        "override_existing_entrance_credentials": True
+        "override": True
     }
 )
 </code></pre>
@@ -112,24 +112,17 @@ seam.user_identities.add_acs_user(
 
 # Grant ACS User access to entrances
 room_entrance = seam.acs.entrances.get(name=f"Room {room_number}")
-common_door = seam.acs.entrances.get(name=f"Main Entrance")
-for entrance in [room_entrance, common_door]:
+common_doors = seam.acs.entrances.get(name=f"Main Entrance")
+for entrance in [room_entrance, common_doors]:
     seam.acs.entrances.grant_access(
         entrance_id=entrance.entrance_id,
         acs_user_id=acs_user.acs_user_id,
     )
 
-# Retrieve existing valid credentials for guest doors
-joiners = seam.acs.credentials.list({
-    "allowed_entrance_ids": [room_entrance.entrance_id],
-    "is_multi_sync_phone_credential": false,
-    visionline_metadata: {
-        "overwritten": false,
-        "overridden": false,
-        "cancelled": false,
-        "discarded": false
-    }
-})
+# Retrieve existing valid credentials for guest doors to add as joiners
+joiner1 = seam.acs.credentials.get(id="xxx")
+joiner2 = seam.acs.credentials.get(id="yyy")
+joiners = [joiner1, joiner2]
 
 # Creating the mobile credential
 common_entrance_ids = ["zzz"]
@@ -142,11 +135,151 @@ common_entrance_ids = ["zzz"]
     ends_at: "2023-01-04 10:40:00.000",
     visionline_metadata: {
         "label": "%ROOMNUM% - %SITENAME%",
-        "jointEntranceAccessCredentialIDs": [
-            joiner['credential_id'] for joiner in joiners
+        "joiners": [
+            joiner['visionline_metadata']['id'] for joiner in joiners
         ]
     }
 })
 </code></pre>
+{% endtab %}
+{% endtabs %}
+
+***
+
+## Retrieving guest and common entrances
+
+To differentiate between guest or common entrances, you can look at the `profiles` attribute within an entrance's `visionline_metadata` property.
+
+### Fetching Guest Entrances
+
+Filter entrances based on the profile type `BLE`:
+
+{% tabs %}
+{% tab title="Python" %}
+<pre class="language-python"><code class="lang-python"># Retrieve all entrances from the ACS system
+all_entrances = seam.acs.entrances.list(
+<strong>  acs_system_id=acs_system.acs_system_id
+</strong>)
+
+# Filter for entrances with the guest entrance profile type
+guest_entrance_profile_type = "BLE"
+
+def filter_entrances_with_profile_type(door_list, profile_type):
+    guest_entrances = []
+    for entrance in entrance_list:
+        if "profiles" in entrance["visionline_metadata"]:
+            for profile in entrance["visionline_metadata"]["profiles"]:
+                # check for Visionline common entrance profile
+                if profile.get("type") == profile_type:
+                    guest_entrances.append(entrance)
+                    break
+    return guest_entrances
+
+guest_entrances = filter_entrances_by_profile_type(
+    entrances,
+    guest_entrance_profile_type
+)
+</code></pre>
+{% endtab %}
+{% endtabs %}
+
+### Fetching Common Entrances
+
+Filter entrances based on the profile type `commonDoor`:
+
+{% tabs %}
+{% tab title="Python" %}
+<pre class="language-python"><code class="lang-python">all_entrances = seam.acs.entrances.list(
+  acs_system_id=acs_system.acs_system_id
+)
+
+# Filter for entrances with the common entrance profile type
+<strong>common_entrance_profile_type = "commonDoor"
+</strong>
+def filter_entrances_by_profile_type(entrance_list, profile_type):
+    common_entrances = []
+    for entrance in entrance_list:
+        if "profiles" in entrance["visionline_metadata"]:
+            for profile in entrance["visionline_metadata"]["profiles"]:
+                # check for Visionline common entrance profile
+                if profile.get("type") == profile_type:
+                    common_entrances.append(entrance)
+                    break
+    return common_entrances
+
+common_entrances = filter_entrances_by_profile_type(
+    all_entrances,
+    common_entrance_profile_type
+)
+</code></pre>
+{% endtab %}
+{% endtabs %}
+
+***
+
+## List all valid credentials for a set of doors to add as joiners
+
+Seam is working on surfacing entrance information on a credential level. This is a temporary workaround for retrieving valid credentials for a set of doors.
+
+{% tabs %}
+{% tab title="Python" %}
+<pre class="language-python"><code class="lang-python"><strong># Retrieve all credentials within the ACS System
+</strong>all_credentials = seam.acs.credentials.list(
+    acs_system_id=acs_system.acs_system_id
+)
+
+# Define the list of entrances to check
+room_101 = seam.acs.entrances.get(name="Room 101")
+room_102 = seam.acs.entrances.get(name="Room 102")
+desired_entrance_names = [
+    room_101.visionline_metadata["doorName"],
+    room_102.visionline_metadata["doorName"],
+]
+
+# Filter credentials for the ones with overlapping entrance accesss
+def filter_credentials(credential_list, entrance_list):
+    filtered_credentials = []
+    for credential in credential_list:
+        metadata = credential["visionline_metadata"]
+        # Ignore if overridden, overwritten, canceled, or discarded
+        if any(metadata.get(flag) for flag in ["overridden", "overwritten",
+                                               "cancelled", "discarded"]):
+            continue
+        # Check each doorOperation for desired doors and operation 'guest'
+        for operation in metadata.get("doorOperations", []):
+            if operation.get("operation") == "guest" and \
+               any(entrance in operation.get("doors", [])
+                   for entrance in entrance_list):
+                filtered_credentials.append(credential)
+                break
+    return filtered_credentials
+
+<strong>joiners = filter_credentials(all_credentials, desired_entrance_names)
+</strong>
+</code></pre>
+{% endtab %}
+{% endtabs %}
+
+***
+
+## Check if a user identity has a phone that is set up for a credential manager
+
+{% tabs %}
+{% tab title="Python" %}
+```
+def has_active_endpoint(user_identity_id):
+    phones = seam.phones.list({
+        owner_user_identity_id=user_identity_id
+    })
+    for phone in phones:
+        metadata = phone.get('assa_abloy_credential_service_metadata', {})
+        if metadata.get('has_active_endpoint'):
+            return True
+    return False
+
+# Check if any phone has an active endpoint
+user_identity = seam.user_identities.get(phone_number="1234567890")
+active_endpoint_exists = has_active_endpoint(user_identity.user_identity_id)
+```
 {% endtab %}
 {% endtabs %}
