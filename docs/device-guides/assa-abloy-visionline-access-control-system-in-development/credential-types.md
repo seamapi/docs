@@ -12,7 +12,7 @@ Note: Seam currently only supports issuing guest mobile credentials. We will ext
 
 Here are some of the properties involved in issuing a guest mobile credential:
 
-<table><thead><tr><th width="260">Property</th><th width="176">Type</th><th width="290">Description</th></tr></thead><tbody><tr><td><code>label</code></td><td><code>String</code><br><em>Optional</em></td><td>This field provides “Label” field data for mobile credentials. This field may contain plain text as well as predefined placeholders. The placeholders are surrounded by percentage % sign.</td></tr><tr><td><code>override</code> in <code>visionline_metadata</code></td><td><code>Boolean</code><br><em>Optional</em></td><td>Indicates whether this credential invalidates any previously-issued credentials for overlapping entrances</td></tr><tr><td><code>joiners</code> in <code>visionline_metadata</code></td><td><code>String[]</code><br><em>Optional</em></td><td>This property is a list of credential IDs that the current credential will share entrance access with. When <code>override_previous_credentials</code> is set to <code>false</code>, <code>jointCredentialIDs</code> becomes a mandatory field.</td></tr><tr><td><code>starts_at</code></td><td><a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format<br><em>Optional</em></td><td>Start date and time stamp for credential activation</td></tr><tr><td><code>ends_at</code></td><td><a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format<br>Required</td><td>End date and time stamp for credential expiration</td></tr></tbody></table>
+<table><thead><tr><th width="260">Property</th><th width="176">Type</th><th width="290">Description</th></tr></thead><tbody><tr><td><code>cardFormat</code> in <code>visionline_metadata</code></td><td><code>enum</code><br><em>Required</em></td><td><p><code>rfid48</code> | <code>TLCode</code></p><p>For guest cards, generally it’ll be <code>rfid48</code>, a low-capacity card. It can store up to 33 consecutive guest rooms, 28 common rooms, and 7 additional rooms. The exception is a guest advanced card, which needs a higher capacity format.</p><p><code>TLCode</code> is a high capacity RFID card (for card types needing more than 48 bytes). These are used for staff cards and guest advanced cards.</p></td></tr><tr><td><code>is_override_key</code> in <code>visionline_metadata</code></td><td><code>Boolean</code><br><em>Optional</em></td><td>Indicates whether this credential invalidates any previously-issued credentials for overlapping entrances</td></tr><tr><td><code>joiners</code> in <code>visionline_metadata</code></td><td><code>String[]</code><br><em>Optional</em></td><td>This property is a list of credential IDs that the current credential will share entrance access with. When <code>override_previous_credentials</code> is set to <code>false</code>, <code>jointCredentialIDs</code> becomes a mandatory field.</td></tr><tr><td><code>label</code> in <code>visionline_metadata</code></td><td><code>String</code><br><em>Optional</em></td><td>This field provides “Label” field data for mobile credentials. This field may contain plain text as well as predefined placeholders. The placeholders are surrounded by percentage % sign.</td></tr><tr><td><code>starts_at</code></td><td><a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format<br><em>Optional</em></td><td>Start date and time stamp for credential activation</td></tr><tr><td><code>ends_at</code></td><td><a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format<br>Required</td><td>End date and time stamp for credential expiration</td></tr></tbody></table>
 
 #### Label Placeholders
 
@@ -73,8 +73,9 @@ cred = seam.acs.credentials.create(
     starts_at="2023-01-01 10:40:00.000",
     ends_at="2023-01-04 10:40:00.000"
     visionline_metadata={
+        "cardFormat": "rfid48",
         "label": "%ROOMNUM% - %SITENAME%",
-        "override": True
+        "is_override_key": True
     }
 )
 </code></pre>
@@ -85,7 +86,7 @@ cred = seam.acs.credentials.create(
 
 ### Issuing subsequent credentials for a reservation
 
-For reservations involving multiple parties, hotels often need to provide credentials to additional guests. This is facilitated through the issuance of a 'joiner credential'. This type of credential allows shared access with any existing credentials that already grant entry to the same guest room entrances. To issue a joiner credential, it is necessary to specify the credential(s) that the new joiner credential will be associated with.
+For reservations involving multiple parties, hotels often need to provide credentials to additional guests. This is facilitated through the issuance of a 'joiner credential'. This type of credential allows shared access with any existing credentials that already grant entry to the same guest room entrances. To issue a joiner credential, it is necessary to specify the credential(s) that the new joiner credential will be associated with. For instructions on how to retrieve credentials that have overlapping access, [refer to the below section](credential-types.md#list-all-valid-credentials-for-a-set-of-doors-to-add-as-joiners).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -120,12 +121,13 @@ for entrance in [room_entrance, common_doors]:
     )
 
 # Retrieve existing valid credentials for guest doors to add as joiners
+# Be sure to check that these credentials correspond with the correct
+# reservation.
 joiner1 = seam.acs.credentials.get(id="xxx")
 joiner2 = seam.acs.credentials.get(id="yyy")
 joiners = [joiner1, joiner2]
 
 # Creating the mobile credential
-common_entrance_ids = ["zzz"]
 <strong>cred = seam.acs.credentials.create({
 </strong>    acs_user_id: "xxx",
     credential_manager_acs_system_id="xxs"
@@ -134,6 +136,7 @@ common_entrance_ids = ["zzz"]
     starts_at: "2023-01-01 10:40:00.000",
     ends_at: "2023-01-04 10:40:00.000",
     visionline_metadata: {
+        "cardFormat": "rfid48",
         "label": "%ROOMNUM% - %SITENAME%",
         "joiners": [
             joiner['visionline_metadata']['id'] for joiner in joiners
@@ -219,44 +222,32 @@ common_entrances = filter_entrances_by_profile_type(
 
 ## List all valid credentials for a set of doors to add as joiners
 
+Use the `seam.acs.entrances.list_credentials_with_access` endpoint to fetch a list of credentials. Provide the list of `entrance_id`'s, and set  `include_only_valid` to `true` to
+
 Seam is working on surfacing entrance information on a credential level. This is a temporary workaround for retrieving valid credentials for a set of doors.
 
 {% tabs %}
 {% tab title="Python" %}
-<pre class="language-python"><code class="lang-python"><strong># Retrieve all credentials within the ACS System
-</strong>all_credentials = seam.acs.credentials.list(
-    acs_system_id=acs_system.acs_system_id
+<pre class="language-python"><code class="lang-python"># Define the list of entrances to check
+room_101 = seam.acs.entrances.get(
+    acs_system_id=acs_system.acs_system_id,
+    name="Room 101"
 )
-
-# Define the list of entrances to check
-room_101 = seam.acs.entrances.get(name="Room 101")
-room_102 = seam.acs.entrances.get(name="Room 102")
-desired_entrance_names = [
-    room_101.visionline_metadata["doorName"],
-    room_102.visionline_metadata["doorName"],
+room_102 = seam.acs.entrances.get(
+    acs_system_id=acs_system.acs_system_id,
+    name="Room 102"
+)
+desired_entrance_ids = [
+    room_101.entrance_id,
+    room_102.entrance_id,
 ]
 
-# Filter credentials for the ones with overlapping entrance accesss
-def filter_credentials(credential_list, entrance_list):
-    filtered_credentials = []
-    for credential in credential_list:
-        metadata = credential["visionline_metadata"]
-        # Ignore if overridden, overwritten, canceled, or discarded
-        if any(metadata.get(flag) for flag in ["overridden", "overwritten",
-                                               "cancelled", "discarded"]):
-            continue
-        # Check each doorOperation for desired doors and operation 'guest'
-        for operation in metadata.get("doorOperations", []):
-            if operation.get("operation") == "guest" and \
-               any(entrance in operation.get("doors", [])
-                   for entrance in entrance_list):
-                filtered_credentials.append(credential)
-                break
-    return filtered_credentials
-
-<strong>joiners = filter_credentials(all_credentials, desired_entrance_names)
-</strong>
-</code></pre>
+# Retrive all valid credentials for the set of entrances
+<strong>seam.acs.entrances.list_credentials_with_access(
+</strong><strong>    entrance_ids=desired_entrance_ids
+</strong><strong>    is_valid=true
+</strong><strong>)
+</strong></code></pre>
 {% endtab %}
 {% endtabs %}
 
