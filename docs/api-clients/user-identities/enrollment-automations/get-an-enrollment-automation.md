@@ -23,7 +23,8 @@ Specify the desired enrollment automation by including the corresponding `enroll
 {% tabs %}
 {% tab title="cURL (bash)" %}
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/user_identities/enrollment_automations/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

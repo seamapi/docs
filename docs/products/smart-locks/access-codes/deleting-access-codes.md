@@ -90,7 +90,8 @@ Once the access code has been deleted, a request to get the access code returns 
 **Request:**
 
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/access_codes/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

@@ -23,7 +23,8 @@ Specify the user identity for which you want to retrieve all enrollment automati
 {% tabs %}
 {% tab title="cURL (bash)" %}
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/user_identities/enrollment_automations/list' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

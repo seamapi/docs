@@ -19,7 +19,8 @@ Specify the desired credential by including the corresponding `acs_credential_id
 {% tabs %}
 {% tab title="cURL (bash)" %}
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/acs/credentials/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

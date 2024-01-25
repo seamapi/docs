@@ -54,7 +54,8 @@ pprint("Supports backup access code pool: "
 **Request:**
 
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/devices/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
@@ -539,7 +540,8 @@ pprint("Is backup access code available: "
 **Request:**
 
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/access_codes/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

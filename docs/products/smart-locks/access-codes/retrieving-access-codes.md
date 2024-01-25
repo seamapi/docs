@@ -72,7 +72,8 @@ pprint(access_codes)
 {% tab title="cURL (bash)" %}
 **Request:**
 
-<pre class="language-bash"><code class="lang-bash"><strong>curl -X 'POST' \
+<pre class="language-bash"><code class="lang-bash"># Use GET or POST.
+<strong>curl -X 'GET' \
 </strong>  'https://connect.getseam.com/access_codes/list' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
@@ -439,7 +440,8 @@ pprint(access_codes)
 {% tab title="cURL (bash)" %}
 **Request:**
 
-<pre class="language-bash"><code class="lang-bash"><strong>curl -X 'POST' \
+<pre class="language-bash"><code class="lang-bash"># Use GET or POST.
+<strong>curl -X 'GET' \
 </strong>  'https://connect.getseam.com/access_codes/list' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
@@ -750,7 +752,8 @@ AccessCode(access_code_id='daf89de3-ad3a-49aa-93bd-25f27d58f699',
 **Request:**
 
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/access_codes/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

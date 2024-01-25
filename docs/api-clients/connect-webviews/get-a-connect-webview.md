@@ -7,77 +7,8 @@ description: >-
 
 # Get a Connect Webview
 
-{% swagger method="get" path="/connect_webviews/get" baseUrl="https://connect.getseam.com" summary="Get details of a webview" %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="query" name="connect_webview_id" required="true" %}
-Id of Connect Webview to be retrieved
-{% endswagger-parameter %}
-
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-Bearer <API_KEY>
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="Payload with Connect Webview details" %}
-```javascript
-{
-    "connect_webview": {
-    	"connect_webview_id": "123e4567-e89b-12d3-a456-426614174000",
-    "custom_metadata": {},
-	"custom_redirect_url": null,
-	"url": "https://connect.getseam.com/v1/connect_webviews/view?connect_webview_id=02454094-1cab-4693-babc-afa9e1c55f09&auth_token=P7XLD4hYXva24WqwSKTC4pKQMP7v3zWUz",
-	"workspace_id": "84dda4b8-f327-4d97-a720-e0504a13a441",
-	"device_selection_mode": "none",
-	"accepted_providers": [
-		"smartthings"
-	],
-	"selected_provider": "smartthings",
-	"accepted_devices": [],
-	"any_provider_allowed": false,
-	"any_device_allowed": null,
-	"created_at": "2022-02-07T18:33:50.271Z",
-	"login_successful": false,
-	"status": "pending"
-    }
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="400: Bad Request" description="" %}
-```javascript
-{
-  "error": {
-    "type": "invalid_input",
-    "message": "Required for provided \"connect_webview_id\"",
-    "validation_errors": {
-      "_errors": [],
-      "connect_webview_id": {
-        "_errors": [
-          "Required"
-        ]
-      }
-    },
-    "request_id": "b43db156-5c69-472e-9f80-8b78d6d99693"
-  },
-  "ok": false
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="404: Not Found" description="" %}
-```javascript
-{
-  "error": {
-    "type": "connect_webview_not_found",
-    "message": "Connect webview not found",
-    "request_id": "2511710e-ae1a-4b1e-9232-cde529cb3d40"
-  },
-  "ok": false
-}
-```
-{% endswagger-response %}
+{% swagger src="https://connect.getseam.com/openapi.json" path="/connect_webviews/get" method="post" %}
+[https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
 {% endswagger %}
 
 ### Code Example

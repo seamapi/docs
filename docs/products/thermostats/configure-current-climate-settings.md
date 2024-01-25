@@ -192,7 +192,8 @@ ActionAttempt(action_attempt_id='4df7eb09-e17d-4d3a-a9c9-cfe718d3ce90',
 **Request:**
 
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/action_attempts/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

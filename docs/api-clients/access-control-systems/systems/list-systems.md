@@ -23,7 +23,8 @@ To filter the list of returned access control systems by a specific [connected a
 {% tabs %}
 {% tab title="cURL (bash)" %}
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/acs/systems/list' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

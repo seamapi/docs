@@ -75,7 +75,8 @@ Once the climate setting schedule has been deleted, a request to get the climate
 **Request:**
 
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/thermostats/climate_setting_schedules/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

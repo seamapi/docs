@@ -4,7 +4,7 @@ description: Get all devices
 
 # List Devices
 
-Returns a list of all [devices](../../core-concepts/devices.md) (`device` objects).
+Returns a list of all [devices](../../core-concepts/devices/) (`device` objects).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/devices/list" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
@@ -33,50 +33,25 @@ devices = seam.devices.list()
 
 {% tab title="cURL (bash)" %}
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/devices/list' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
   -d '{}'
-
-// To filter by custom metadata:
-curl -X 'POST' \
-  'https://connect.getseam.com/devices/list' \
-  -H 'accept: application/json' \
-  -H 'Authorization: Bearer ${API_KEY}' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "custom_metadata_has": {
-    "internal_account_id": "user-1"
-  }
-}'
 ```
 {% endtab %}
 
 {% tab title="Javascript" %}
 ```typescript
 await seam.devices.list()
-
-// To filter by custom metadata:
-await seam.devices.list({
-  custom_metadata_has: {
-    "internal_account_id": "user-1"
-  }
-})
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 ```ruby
 devices = client.devices.list()
-
-# To filter by custom metadata:
-devices = client.devices.list(
-  custom_metadata_has: {
-    "internal_account_id": "user-1"
-  }
-)
 ```
 {% endtab %}
 
@@ -88,33 +63,12 @@ foreach (var device in devices)
 {
   Console.WriteLine(device);
 }
-
-// To filter by custom metadata:
-var customMetadata = new Dictionary<string, string>()
-{
-  {"internal_account_id", "user-1"}
-};
-
-var devices = seam.Devices.List(customMetadataHas: customMetadata);
-
-foreach (var device in devices)
-{
-  Console.WriteLine(device);
-}
 ```
 {% endtab %}
 
 {% tab title="Java" %}
 ```java
 var devices = seam.devices().list();
-System.out.println(devices);
-
-// To filter by custom metadata:
-Map<String, CustomMetadataValue> customMetadata =
-    Map.of("internal_account_id", CustomMetadataValue.of(Optional.of("user-1")));
-var devices = seam.devices().list(DevicesListRequest.builder()
-                .customMetadataHas(customMetadata)
-                .build());
 System.out.println(devices);
 ```
 {% endtab %}
@@ -468,27 +422,5 @@ This response also includes a Boolean `ok` status indicator.
 }, ...
 ]
 ```
-{% endtab %}
-{% endtabs %}
-
-***
-
-## Filtering Devices by Custom Metadata fields
-
-
-
-{% tabs %}
-{% tab title="Python" %}
-```python
-devices = seam.devices.list(
-  custom_metadata_has = {
-    "internal_property_id": "property-1"
-  }
-)
-```
-{% endtab %}
-
-{% tab title="Second Tab" %}
-
 {% endtab %}
 {% endtabs %}

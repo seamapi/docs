@@ -95,7 +95,8 @@ Device(device_id='ed4bb795-f29f-43e5-bc0f-35f69f9141b5',
 **Request:**
 
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/devices/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

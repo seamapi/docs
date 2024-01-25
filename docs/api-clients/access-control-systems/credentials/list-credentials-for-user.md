@@ -23,7 +23,8 @@ Specify the desired user by including the corresponding `acs_user_id` in the req
 {% tabs %}
 {% tab title="cURL (bash)" %}
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/acs/credentials/list' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
