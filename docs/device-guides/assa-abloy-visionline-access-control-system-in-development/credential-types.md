@@ -245,7 +245,7 @@ desired_entrance_ids = [
 # Retrive all valid credentials for the set of entrances
 <strong>seam.acs.entrances.list_credentials_with_access(
 </strong><strong>    entrance_ids=desired_entrance_ids
-</strong><strong>    is_valid=true
+</strong><strong>    include_if=["visionline_metadata.is_valid"]
 </strong><strong>)
 </strong></code></pre>
 {% endtab %}
