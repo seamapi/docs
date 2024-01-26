@@ -67,7 +67,7 @@
   * [Mobile SDK (Coming Soon!)](products/mobile-access-in-development/mobile-sdk-coming-soon.md)
 * [🌩 Seam Bridge - In Development](products/seam-bridge-in-development.md)
 
-## 🧰 UI Components
+## 💻 UI Components
 
 * [Connect Webviews](core-concepts/connect-webviews/README.md)
   * [Embedding a Connect Webview in Your App](core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app.md)
@@ -214,7 +214,7 @@
     * [List Enrollment Automations](api-clients/user-identities/enrollment-automations/list-enrollment-automations.md)
     * [Get an Enrollment Automation](api-clients/user-identities/enrollment-automations/get-an-enrollment-automation.md)
 
-## 🧰 Developer Tools
+## 🛠 Developer Tools
 
 * [Webhooks](core-concepts/webhooks.md)
 * [Sandbox Devices and Systems](device-guides/sandbox-and-sample-data/README.md)
