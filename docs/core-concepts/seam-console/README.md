@@ -9,7 +9,7 @@ description: >-
 The Seam Console enables you to manage all resources associated with your Seam account. First, create a Seam account or, if you have already created an account, log in to the Seam Console. Then, use the Seam Console to perform a variety of tasks, including the the following:
 
 * Create and manage [workspaces](../workspaces/).
-* Create and manage [API keys](../workspaces/api-keys.md).
+* Create and manage [API keys](../authentication/api-keys.md).
 * Add and manage [devices](../devices/).
 * Add and manage [access control systems](../../products/access-systems/).
 * Create, customize, and manage [Connect Webviews](../connect-webviews/).

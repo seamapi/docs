@@ -10,11 +10,11 @@
 * [Seam Console](core-concepts/seam-console/README.md)
   * [Seam Online CLI](core-concepts/seam-console/seam-online-cli.md)
 * [Workspaces](core-concepts/workspaces/README.md)
-* [Authentication] (core-concepts/authentication/README.md)
-  * [API Keys](core-concepts/workspaces/api-keys.md)
-  * [Personal Access Tokens](core-concepts/workspaces/personal-access-tokens.md)
-  * [Client Sessions and Client Session Tokens](core-concepts/workspaces/client-session-tokens.md)
-    * [Implementing Client Sessions for Device Management in the Backend](core-concepts/workspaces/client-session-tokens/implementing-client-sessions-for-device-management-in-the-backend.md)
+* [Authentication](core-concepts/authentication/README.md)
+  * [API Keys](core-concepts/authentication/api-keys.md)
+  * [Personal Access Tokens](core-concepts/authentication/personal-access-tokens.md)
+  * [Client Sessions and Client Session Tokens](core-concepts/authentication/client-session-tokens/README.md)
+    * [Implementing Client Sessions for Device Management in the Backend](core-concepts/authentication/client-session-tokens/implementing-client-sessions-for-device-management-in-the-backend.md)
 * [Devices](core-concepts/devices/README.md)
   * [Managed and Unmanaged Devices](core-concepts/devices/managed-and-unmanaged-devices.md)
   * [Adding Custom Metadata to a Device](core-concepts/devices/adding-custom-metadata-to-a-device.md)
@@ -68,6 +68,7 @@
 * [🌩 Seam Bridge - In Development](products/seam-bridge-in-development.md)
 
 ## 🧰 UI Components
+
 * [Connect Webviews](core-concepts/connect-webviews/README.md)
   * [Embedding a Connect Webview in Your App](core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app.md)
   * [Attaching Custom Metadata to the Connect Webview](core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview.md)
@@ -214,6 +215,7 @@
     * [Get an Enrollment Automation](api-clients/user-identities/enrollment-automations/get-an-enrollment-automation.md)
 
 ## 🧰 Developer Tools
+
 * [Webhooks](core-concepts/webhooks.md)
 * [Sandbox Devices and Systems](device-guides/sandbox-and-sample-data/README.md)
   * [Sandbox 2N Intercoms](device-guides/sandbox-and-sample-data/2n-intercoms-sample-data.md)

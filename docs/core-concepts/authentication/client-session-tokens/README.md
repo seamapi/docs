@@ -10,28 +10,28 @@ A client session enables a client, such as a web browser or mobile phone, to acc
 
 Once you create a client session on the backend, you can pass the resulting generated client session token from the backend to the frontend (that is, to the client). Using client session tokens on the frontend eliminates the need for your user's browser to communicate with your backend server. Instead, the client makes requests directly to the Seam API.
 
-Client sessions make it easy to control your users' access to devices. When you create a client session, you can specify [your own internal user ID for a desired user](../../seam-components/overview/get-started-with-client-side-components.md#3-select-a-user-identifier-key), along with the [connected accounts](../../api-clients/connected-accounts/) associated with this user. Then, you can [use client sessions on the backend to limit your users to only the devices that they own](client-session-tokens/implementing-client-sessions-for-device-management-in-the-backend.md).
+Client sessions make it easy to control your users' access to devices. When you create a client session, you can specify [your own internal user ID for a desired user](../../../seam-components/overview/get-started-with-client-side-components.md#3-select-a-user-identifier-key), along with the [connected accounts](../../../api-clients/connected-accounts/) associated with this user. Then, you can [use client sessions on the backend to limit your users to only the devices that they own](implementing-client-sessions-for-device-management-in-the-backend.md).
 
 {% hint style="info" %}
-If you are just getting started with Seam, see [Seam Components](../../seam-components/overview/). In only a few minutes and with just a few lines of code, you can start controlling devices from your web application without interacting with the backend.
+If you are just getting started with Seam, see [Seam Components](../../../seam-components/overview/). In only a few minutes and with just a few lines of code, you can start controlling devices from your web application without interacting with the backend.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/client-session-flow.png" alt="Client sessions and client session tokens increase efficiency by enabling your user&#x27;s browser to communicate directly with the Seam backend server."><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/client-session-flow.png" alt="Client sessions and client session tokens increase efficiency by enabling your user&#x27;s browser to communicate directly with the Seam backend server."><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
-You can only use a client session token in a browser context through the Seam JavaScript SDK. Do not use a client session token to make requests from the backend. Instead, use an [API key](api-keys.md). An API key has unlimited permission to manage all devices and other Seam API resources within a [workspace](./). Never use an API key in the browser or expose it to your users.
+You can only use a client session token in a browser context through the Seam JavaScript SDK. Do not use a client session token to make requests from the backend. Instead, use an [API key](../api-keys.md). An API key has unlimited permission to manage all devices and other Seam API resources within a [workspace](../../workspaces/). Never use an API key in the browser or expose it to your users.
 {% endhint %}
 
 You can use client sessions in the following two ways:
 
 * Create a client session on the backend and pass the resulting generated client session token to your frontend. You use this client session token in the frontend with the Seam JavaScript SDK or Seam Components.
-* Manage client sessions entirely on the frontend by using a [publishable key with the JavaScript SDK or Seam Components](../../seam-components/overview/get-started-with-client-side-components.md).
+* Manage client sessions entirely on the frontend by using a [publishable key with the JavaScript SDK or Seam Components](../../../seam-components/overview/get-started-with-client-side-components.md).
 
 ***
 
 ## Create a Client Session for an Existing User and Retrieve the Session Token
 
-To [create a client session](../../api-clients/client-sessions/create-a-client-session.md) for an existing user with connected accounts in your workspace, include the IDs of the user's connected accounts (`connected_account_ids`) and [provide your own unique internal user ID (`user_identifier_key`)](../../seam-components/overview/get-started-with-client-side-components.md#3-select-a-user-identifier-key). Then, use the generated client session token to retrieve and manage the resources authorized through the connected accounts associated with this client session.
+To [create a client session](../../../api-clients/client-sessions/create-a-client-session.md) for an existing user with connected accounts in your workspace, include the IDs of the user's connected accounts (`connected_account_ids`) and [provide your own unique internal user ID (`user_identifier_key`)](../../../seam-components/overview/get-started-with-client-side-components.md#3-select-a-user-identifier-key). Then, use the generated client session token to retrieve and manage the resources authorized through the connected accounts associated with this client session.
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -61,7 +61,7 @@ Client session token: seam_cst1891oqCmE_6dBwV8PJ2Ffoe9dWYVyMfVHq
 
 ## List Client Sessions
 
-You can [list all client sessions](../../api-clients/client-sessions/list-client-sessions.md) within your workspace.
+You can [list all client sessions](../../../api-clients/client-sessions/list-client-sessions.md) within your workspace.
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -121,7 +121,7 @@ await seam.clientSessions.list()
 
 ## Get a Client Session
 
-To [get a specific client session](../../api-clients/client-sessions/get-a-client-session.md), provide the client session ID (`client_session_id`).
+To [get a specific client session](../../../api-clients/client-sessions/get-a-client-session.md), provide the client session ID (`client_session_id`).
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -158,7 +158,7 @@ const clientSession = await seam.clientSessions.get({
 
 ## Delete a Client Session
 
-To [delete a client session](../../api-clients/client-sessions/delete-a-client-session.md), provide the client session ID (`client_session_id`).
+To [delete a client session](../../../api-clients/client-sessions/delete-a-client-session.md), provide the client session ID (`client_session_id`).
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -176,5 +176,5 @@ await seam.clientSessions.delete({
 
 ## Next Steps
 
-* Learn about using [client session tokens with Seam Components](../../seam-components/overview/).
-* Learn more about [Connect Webviews](../connect-webviews/).
+* Learn about using [client session tokens with Seam Components](../../../seam-components/overview/).
+* Learn more about [Connect Webviews](../../connect-webviews/).

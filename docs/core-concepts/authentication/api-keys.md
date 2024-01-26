@@ -6,7 +6,7 @@ description: >-
 
 # API Keys
 
-You [create an API key](api-keys.md#create-an-api-key) in your [sandbox workspace](./#sandbox-workspaces) or [production workspace](./#production-workspaces) to authorize your use of the Seam API. When using the Seam HTTP API or any of the Seam SDKs, you must provide this API key to issue commands that enable you to control the devices in the associated workspace. It is useful to [export your API key](api-keys.md#export-an-api-key) as an environment variable. You can also [test your API key](api-keys.md#test-an-api-key).&#x20;
+You [create an API key](api-keys.md#create-an-api-key) in your [sandbox workspace](../workspaces/#sandbox-workspaces) or [production workspace](../workspaces/#production-workspaces) to authorize your use of the Seam API. When using the Seam HTTP API or any of the Seam SDKs, you must provide this API key to issue commands that enable you to control the devices in the associated workspace. It is useful to [export your API key](api-keys.md#export-an-api-key) as an environment variable. You can also [test your API key](api-keys.md#test-an-api-key).&#x20;
 
 {% hint style="warning" %}
 Never use an API key in a web browser or expose it to your users.

@@ -20,7 +20,7 @@ A client session has a token that you can use with the Seam JavaScript SDK to ma
 
 For more information about client sessions and client session tokens, see the following topics:
 
-* [Client Session Tokens](../../core-concepts/workspaces/client-session-tokens.md)
+* [Client Session Tokens](../../core-concepts/authentication/client-session-tokens/)
 * [Get Started with React](../../seam-components/overview/get-started-with-react-components-and-client-session-tokens.md)
 
 ## `client_session` Properties

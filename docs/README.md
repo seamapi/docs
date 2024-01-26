@@ -2,7 +2,7 @@
 description: Seam makes it easy to integrate IoT devices with your applications!
 ---
 
-# 🎉 Seam API Docs
+# 🎉 Seam API Documentation
 
 We have integrated many door locks, thermostats, and other device brands, and we have created simple application programming interfaces (APIs) for interacting with these devices.
 
@@ -82,7 +82,7 @@ Hello Crustacean! This is a community library and is not officially being mainta
 
 ## Create and Export Your Seam API Key
 
-[Create your Seam API key](core-concepts/workspaces/api-keys.md#create-an-api-key) using the [Seam Console](https://console.seam.co/). Then, make sure to export this key so that the installed SDK can use it.
+[Create your Seam API key](core-concepts/authentication/api-keys.md#create-an-api-key) using the [Seam Console](https://console.seam.co/). Then, make sure to export this key so that the installed SDK can use it.
 
 ```bash
 $ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
