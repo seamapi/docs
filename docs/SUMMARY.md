@@ -96,7 +96,7 @@
     * [Connect Account Button](seam-components/react-components/connect-account-button.md)
   * [Make a Supported Devices Page](seam-components/make-a-supported-devices-page.md)
 
-## 📋 API Clients
+## 📋 API Reference <a href="#api-clients" id="api-clients"></a>
 
 * [Overview](api-clients/overview.md)
 * [Installation](api-clients/installation.md)
