@@ -1,6 +1,6 @@
 # Table of contents
 
-* [🎉 Seam API Documentation](README.md)
+* [🎉 Seam Documentation](README.md)
 * [🚲 Quick Start](quickstart.md)
 * [🚀 Go Live!](going-live.md)
 
