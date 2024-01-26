@@ -16,7 +16,7 @@ Sometimes provider metadata contains fields where Seam is still coming up with a
 
 ## Getting Provider Metadata
 
-To access provider metadata, make any call that returns device properties, here are some examples of how you can get August metadata for a variety of SDKs.
+To access provider metadata, make any call that returns device properties. Here are some examples of how you can get August metadata for a variety of SDKs.
 
 {% hint style="info" %}
 Provider metadata is available in sandboxes, so if you want to see typical examples of provider metadata, you can just create a webview and connect devices in a sandbox workspace to read the properties.
