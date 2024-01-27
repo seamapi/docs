@@ -59,7 +59,7 @@ Seam supports many programming languages, such as the following:
 {% tabs %}
 {% tab title="JavaScript" %}
 ```bash
-npm i seamapi
+npm i seam
 ```
 {% endtab %}
 

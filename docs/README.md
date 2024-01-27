@@ -23,7 +23,7 @@ Use one of the following methods to install the Seam software development kit (S
 {% tabs %}
 {% tab title="JavaScript" %}
 ```bash
-npm i seamapi
+npm i seam
 ```
 {% endtab %}
 

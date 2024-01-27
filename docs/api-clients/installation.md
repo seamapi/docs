@@ -13,7 +13,7 @@ Install one of the Seam SDKs in the programming language of your choice. Seam su
 {% tabs %}
 {% tab title="JavaScript" %}
 ```bash
-npm i seamapi
+npm i seam
 ```
 
 or
