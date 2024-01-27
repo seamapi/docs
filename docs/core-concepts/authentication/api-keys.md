@@ -6,7 +6,7 @@ description: >-
 
 # API Keys
 
-You [create an API key](api-keys.md#create-an-api-key) in your [sandbox workspace](../workspaces/#sandbox-workspaces) or [production workspace](../workspaces/#production-workspaces) to authorize your use of the Seam API. When using the Seam HTTP API or any of the Seam SDKs, you must provide this API key to issue commands that enable you to control the devices in the associated workspace. It is useful to [export your API key](api-keys.md#export-an-api-key) as an environment variable. You can also [test your API key](api-keys.md#test-an-api-key).&#x20;
+You [create an API key](api-keys.md#create-an-api-key) in your [sandbox workspace](../workspaces/#sandbox-workspaces) or [production workspace](../workspaces/#production-workspaces) to authorize your use of the Seam API. When using the Seam HTTP API or any of the Seam SDKs, you must provide this API key to issue commands that enable you to control the devices in the associated workspace. It is useful to [export your API key](api-keys.md#export-an-api-key) as an environment variable. You can also [test your API key](api-keys.md#test-an-api-key).
 
 {% hint style="warning" %}
 Never use an API key in a web browser or expose it to your users.
@@ -31,7 +31,7 @@ If you need to access multiple workspaces, create a [Personal Access Token](pers
 Production API keys do not include the `test` token, while API keys for sandbox workspaces do include this `test` token. In addition, if you accidentally commit your API key to a GitHub repo, the `seam_` prefix is detected, and you are notified.
 {% endhint %}
 
-{% @supademo/embed demoId="vLRzYM2Nwoi4j_cH9WCNQ" url="https://app.supademo.com/demo/vLRzYM2Nwoi4j_cH9WCNQ" %}
+{% @supademo/embed demoid="vLRzYM2Nwoi4j_cH9WCNQ" url="https://app.supademo.com/demo/vLRzYM2Nwoi4j_cH9WCNQ" %}
 
 ## Export an API Key
 
@@ -75,7 +75,7 @@ console.log(workspace);
   is_sandbox: true
 }
 */
-
+```
 {% endtab %}
 
 {% tab title="Python" %}
