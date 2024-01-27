@@ -31,7 +31,7 @@ export const runJavascriptCodeSample = async (javascript_sample: string) => {
 
   const $execution_result = vm.run(
     `async function run() {
-      const seam = new (require("seamapi").Seam)({
+      const seam = new (require("seam").Seam)({
         apiKey: "${seed.seam_apikey1_token}",
         endpoint: "${server.serverUrl}"
       });

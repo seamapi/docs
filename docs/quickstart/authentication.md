@@ -17,7 +17,7 @@ Next, run the code below to check you are correctly authenticated:
 
 ```javascript
 // Replace with
-// const Seam = require("seamapi")
+// const Seam = require("seam")
 // if not using ES6 modules and/or TypeScript.
 import Seam from "seam";
 
