@@ -57,8 +57,9 @@ Then, run the following code to test the API key:
 
 {% tabs %}
 {% tab title="JavaScript" %}
-<pre class="language-java"><code class="lang-java"><strong>import Seam from "seamapi";
-</strong>
+```javascript
+import Seam from "seam";
+
 // Seam automatically uses the SEAM_API_KEY environment variable if you
 // do not provide an apiKey to `new Seam()`.
 const seam = new Seam();
@@ -74,7 +75,7 @@ console.log(workspace);
   is_sandbox: true
 }
 */
-</code></pre>
+
 {% endtab %}
 
 {% tab title="Python" %}
