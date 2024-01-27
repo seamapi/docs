@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import Seam from "seam"
+import Seam from "seamapi"
 
 const seam = new Seam({
   endpoint: `https://r${Math.random()
