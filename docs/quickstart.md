@@ -133,7 +133,8 @@ Next, use the following code to retrieve one of the devices that you connected i
 
 {% tabs %}
 {% tab title="JavaScript" %}
-<pre class="language-javascript"><code class="lang-javascript">import Seam from "seamapi";
+```javascript
+import Seam from "seam";
 const seam = new Seam(); // SEAM_API_KEY environment variable picked up here.
 
 // Retrieve all authorized locks and select the first lock.
@@ -152,7 +153,7 @@ if (someLock.properties.locked) {
 } else {
   await seam.locks.lockDoor(someLock.device_id);
 }
-</code></pre>
+```
 {% endtab %}
 
 {% tab title="Python" %}

@@ -15,11 +15,11 @@ Next, run the code below to check you are correctly authenticated:
 {% tabs %}
 {% tab title="Javascript" %}
 
-```java
+```javascript
 // Replace with
-// const Seam = require("seamapi")
+// const Seam = require("seam")
 // if not using ES6 modules and/or TypeScript.
-import Seam from "seamapi";
+import Seam from "seam";
 
 // Seam will automatically use the SEAM_API_KEY environment variable if you
 // don't provide an apiKey to `new Seam()`
