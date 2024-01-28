@@ -25,7 +25,7 @@ Retrieves the details of a thermostat.
 
 {% tabs %}
 {% tab title="Python" %}
-```javascript
+```python
 from seam import Seam
 
 seam = Seam()
