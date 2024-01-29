@@ -2,7 +2,7 @@
 
 * [🎉 Seam Documentation](README.md)
 * [🚲 Quick Start](quickstart.md)
-* [🚀 Go Live!](going-live.md)
+* [🚀 Go Live!](go-live.md)
 
 ## 📖 Core Concepts
 
