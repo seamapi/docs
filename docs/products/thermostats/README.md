@@ -6,6 +6,8 @@ description: >-
 
 # 🌡 Thermostats
 
+<figure><picture><source srcset="../../.gitbook/assets/thermostats-api-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/thermostats-api-cover-light (1).png" alt=""></picture><figcaption></figcaption></figure>
+
 ## What Is a Smart Thermostat?
 
 A smart thermostat is a device designed for home automation that enables you to control your home heating and air conditioning system remotely. An evolution of the traditional thermostat, smart thermostats provide enhanced functions that leverage technology for convenience, efficiency, and energy savings. Smart thermostats often come equipped with features like learning capabilities, energy-saving modes, and integration with other smart home systems.
