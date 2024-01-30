@@ -11,4 +11,4 @@ redirects:
   quickstart/connect-a-device: quickstart.md
   quickstart/your-first-device-api-call: quickstart.md
   quickstart/going-live: quickstart.md
-  latest/going-live: go-live.md
+  latest/going-live: latest/go-live.md
