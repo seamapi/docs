@@ -240,7 +240,7 @@ Here are some ideas of what you can do next.
 
 ### Connect a Real Device
 
-If you have a real device, you can try to control it using the steps in this Quick Start. Note that you must first [create a production workspace](going-live.md#create-a-production-workspace) because sandbox workspaces only enable you to connect test accounts and devices. For more information, see [Workspaces](core-concepts/workspaces/).
+If you have a real device, you can try to control it using the steps in this Quick Start. Note that you must first [create a production workspace](go-live.md#create-a-production-workspace) because sandbox workspaces only enable you to connect test accounts and devices. For more information, see [Workspaces](core-concepts/workspaces/).
 
 ### Connect Users' Devices
 
