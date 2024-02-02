@@ -60,7 +60,7 @@ room_entrance = seam.acs.entrances.get(name=f"Room {room_number}")
 common_door = seam.acs.entrances.get(name=f"Main Entrance")
 for entrance in [room_entrance, common_door]:
     seam.acs.entrances.grant_access(
-      entrance_id=entrance.entrance_id,
+      acs_entrance_id=entrance.entrance_id,
       acs_user_id=acs_user.acs_user_id,
     )
 
@@ -112,20 +112,21 @@ seam.user_identities.add_acs_user(
 )
 
 # Grant ACS User access to entrances
-room_entrance = seam.acs.entrances.get(name=f"Room {room_number}")
-common_doors = seam.acs.entrances.get(name=f"Main Entrance")
+<strong>guest_room_entrance = seam.acs.entrances.get(name=f"Room {room_number}")
+</strong>common_doors = seam.acs.entrances.get(name=f"Main Entrance")
 for entrance in [room_entrance, common_doors]:
     seam.acs.entrances.grant_access(
-        entrance_id=entrance.entrance_id,
+        acs_entrance_id=entrance.entrance_id,
         acs_user_id=acs_user.acs_user_id,
     )
 
 # Retrieve existing valid credentials for guest doors to add as joiners
 # Be sure to check that these credentials correspond with the correct
 # reservation.
-joiner1 = seam.acs.credentials.get(id="xxx")
-joiner2 = seam.acs.credentials.get(id="yyy")
-joiners = [joiner1, joiner2]
+joiners = seam.acs.entrances.list_credentials_with_access(
+    acs_entrance_id=guest_room_entrance.acs_entrance_id,
+    include_if=["visionline_metadata.is_valid"]
+)
 
 # Creating the mobile credential
 <strong>cred = seam.acs.credentials.create({
@@ -220,11 +221,9 @@ common_entrances = filter_entrances_by_profile_type(
 
 ***
 
-## List all valid credentials for a set of doors to add as joiners
+## List all valid credentials for a set of guest entrances to add as joiners
 
-Use the `seam.acs.entrances.list_credentials_with_access` endpoint to fetch a list of credentials. Provide the list of `entrance_id`'s, and set  `include_only_valid` to `true` to
-
-Seam is working on surfacing entrance information on a credential level. This is a temporary workaround for retrieving valid credentials for a set of doors.
+Use the `seam.acs.entrances.list_credentials_with_access` endpoint to fetch a list of credentials. Provide the list of guest entrances' `acs_entrance_id`'s, and set `include_if` to `["visionline_metadata.is_valid"]` to filter for valid credentials.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -243,8 +242,8 @@ desired_entrance_ids = [
 ]
 
 # Retrive all valid credentials for the set of entrances
-<strong>seam.acs.entrances.list_credentials_with_access(
-</strong><strong>    entrance_ids=desired_entrance_ids
+seam.acs.entrances.list_credentials_with_access(
+<strong>    acs_entrance_ids=desired_entrance_ids
 </strong><strong>    include_if=["visionline_metadata.is_valid"]
 </strong><strong>)
 </strong></code></pre>
