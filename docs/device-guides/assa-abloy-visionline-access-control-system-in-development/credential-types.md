@@ -227,7 +227,7 @@ Use the `seam.acs.entrances.list_credentials_with_access` endpoint to fetch a li
 
 {% tabs %}
 {% tab title="Python" %}
-<pre class="language-python"><code class="lang-python"># Define the list of entrances to check
+<pre class="language-python"><code class="lang-python"># Define the list of guest entrances to check
 room_101 = seam.acs.entrances.get(
     acs_system_id=acs_system.acs_system_id,
     name="Room 101"
@@ -236,14 +236,14 @@ room_102 = seam.acs.entrances.get(
     acs_system_id=acs_system.acs_system_id,
     name="Room 102"
 )
-desired_entrance_ids = [
+guest_entrance_ids = [
     room_101.entrance_id,
     room_102.entrance_id,
 ]
 
 # Retrive all valid credentials for the set of entrances
 seam.acs.entrances.list_credentials_with_access(
-<strong>    acs_entrance_ids=desired_entrance_ids
+<strong>    acs_entrance_ids=guest_entrance_ids
 </strong><strong>    include_if=["visionline_metadata.is_valid"]
 </strong><strong>)
 </strong></code></pre>
@@ -253,6 +253,8 @@ seam.acs.entrances.list_credentials_with_access(
 ***
 
 ## Check if a user identity has a phone that is set up for a credential manager
+
+In order to issue an override credential to an App user, they have to first set up their phone. If you want to disable the "override" option where it's not available, you can do the following check before allow a user to configure an override credential.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -273,3 +275,7 @@ active_endpoint_exists = has_active_endpoint(user_identity.user_identity_id)
 ```
 {% endtab %}
 {% endtabs %}
+
+#### Example of disabling the "override" option when it is not available.
+
+<figure><img src="../../.gitbook/assets/Join only.png" alt="" width="421"><figcaption><p>In Seam Console, we disable the "Override" option when a user identity has not set up their phone to receive Visionline credentials. </p></figcaption></figure>
