@@ -60,24 +60,27 @@ room_entrance = seam.acs.entrances.get(name=f"Room {room_number}")
 common_door = seam.acs.entrances.get(name=f"Main Entrance")
 for entrance in [room_entrance, common_door]:
     seam.acs.entrances.grant_access(
-      acs_entrance_id=entrance.entrance_id,
+      entrance_id=entrance.entrance_id,
       acs_user_id=acs_user.acs_user_id,
     )
 
-# Creating the mobile credential
-cred = seam.acs.credentials.create(
-    acs_user_id="xxx",
-    credential_manager_acs_system_id="xx"
-    is_multi_phone_sync_credential=True,
-    access_method="mobile_key",
-    starts_at="2023-01-01 10:40:00.000",
-    ends_at="2023-01-04 10:40:00.000"
-    visionline_metadata={
-        "cardFormat": "rfid48",
-        "label": "%ROOMNUM% - %SITENAME%",
-        "is_override_key": True
-    }
-)
+# Check if the user identity has an active endpoint on their phone(s)
+# See below section to see how to verify this.
+if has_active_endpoint(user_identity.user_identity_id):
+    # Creating the override mobile credential
+    cred = seam.acs.credentials.create(
+        acs_user_id="xxx",
+        credential_manager_acs_system_id="xx"
+        is_multi_phone_sync_credential=True,
+        access_method="mobile_key",
+        starts_at="2023-01-01 10:40:00.000",
+        ends_at="2023-01-04 10:40:00.000"
+        visionline_metadata={
+            "cardFormat": "rfid48",
+            "label": "%ROOMNUM% - %SITENAME%",
+            "is_override_key": True
+        }
+    )
 </code></pre>
 {% endtab %}
 {% endtabs %}
@@ -112,21 +115,20 @@ seam.user_identities.add_acs_user(
 )
 
 # Grant ACS User access to entrances
-<strong>guest_room_entrance = seam.acs.entrances.get(name=f"Room {room_number}")
-</strong>common_doors = seam.acs.entrances.get(name=f"Main Entrance")
+room_entrance = seam.acs.entrances.get(name=f"Room {room_number}")
+common_doors = seam.acs.entrances.get(name=f"Main Entrance")
 for entrance in [room_entrance, common_doors]:
     seam.acs.entrances.grant_access(
-        acs_entrance_id=entrance.entrance_id,
+        entrance_id=entrance.entrance_id,
         acs_user_id=acs_user.acs_user_id,
     )
 
 # Retrieve existing valid credentials for guest doors to add as joiners
 # Be sure to check that these credentials correspond with the correct
 # reservation.
-joiners = seam.acs.entrances.list_credentials_with_access(
-    acs_entrance_id=guest_room_entrance.acs_entrance_id,
-    include_if=["visionline_metadata.is_valid"]
-)
+joiner1 = seam.acs.credentials.get(id="xxx")
+joiner2 = seam.acs.credentials.get(id="yyy")
+joiners = [joiner1, joiner2]
 
 # Creating the mobile credential
 <strong>cred = seam.acs.credentials.create({
@@ -139,8 +141,8 @@ joiners = seam.acs.entrances.list_credentials_with_access(
     visionline_metadata: {
         "cardFormat": "rfid48",
         "label": "%ROOMNUM% - %SITENAME%",
-        "joiners": [
-            joiner['visionline_metadata']['id'] for joiner in joiners
+        "joiner_acs_credential_ids": [
+            joiner['acs_credential_id'] for joiner in joiners
         ]
     }
 })

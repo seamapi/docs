@@ -64,7 +64,9 @@
   * [Managing Mobile App User Accounts with User Identities](products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md)
   * [Managing Phones for a User Identity](products/mobile-access-in-development/managing-phones-for-a-user-identity.md)
   * [Issuing Mobile Credentials from an Access Control System](products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md)
-  * [Mobile SDK (Coming Soon!)](products/mobile-access-in-development/mobile-sdk-coming-soon.md)
+  * [Mobile device SDKs](capability-guides/mobile-access-in-development/mobile-sdk-coming-soon/README.md)
+    * [iOS Mobile Key Support \[WIP\]](capability-guides/mobile-access-in-development/mobile-sdk-coming-soon/ios-mobile-key-support-wip.md)
+    * [Android SDK \[WIP\]](capability-guides/mobile-access-in-development/mobile-sdk-coming-soon/android-sdk-wip.md)
 * [🌩 Seam Bridge - In Development](products/seam-bridge-in-development.md)
 
 ## 💻 UI Components
