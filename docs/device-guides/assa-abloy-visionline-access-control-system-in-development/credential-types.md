@@ -156,40 +156,36 @@ To differentiate between guest or common entrances, you can look at the `profile
 
 ### Fetching Guest Entrances
 
-Filter entrances based on the profile type `BLE`:
+Filter entrances based on their categories, `guest`:
 
 {% tabs %}
 {% tab title="Python" %}
-<pre class="language-python"><code class="lang-python"># Retrieve all entrances from the ACS system
+```python
 all_entrances = seam.acs.entrances.list(
-<strong>  acs_system_id=acs_system.acs_system_id
-</strong>)
+  acs_system_id=acs_system.acs_system_id
+)
 
-# Filter for entrances with the guest entrance profile type
-guest_entrance_profile_type = "BLE"
+# Filter for entrances with the guest entrance category type
+guest_entrance_category_types = ["guest"]
 
-def filter_entrances_with_profile_type(door_list, profile_type):
+def filter_entrances_by_profile_type(entrance_list, category_types):
     guest_entrances = []
     for entrance in entrance_list:
-        if "profiles" in entrance["visionline_metadata"]:
-            for profile in entrance["visionline_metadata"]["profiles"]:
-                # check for Visionline common entrance profile
-                if profile.get("type") == profile_type:
-                    guest_entrances.append(entrance)
-                    break
+        if entrance["visionline_metadata"]["doorCategory"] in category_types:
+            guest_entrances.append(entrance)
     return guest_entrances
 
 guest_entrances = filter_entrances_by_profile_type(
-    entrances,
-    guest_entrance_profile_type
+    all_entrances,
+    guest_entrance_category_types
 )
-</code></pre>
+```
 {% endtab %}
 {% endtabs %}
 
 ### Fetching Common Entrances
 
-Filter entrances based on the profile type `commonDoor`:
+Filter entrances based on their categories, `common` and `common (PMS)`:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -197,23 +193,19 @@ Filter entrances based on the profile type `commonDoor`:
   acs_system_id=acs_system.acs_system_id
 )
 
-# Filter for entrances with the common entrance profile type
-<strong>common_entrance_profile_type = "commonDoor"
+# Filter for entrances with the common entrance category type
+<strong>common_entrance_category_types = ["common", "common (PMS)"]
 </strong>
-def filter_entrances_by_profile_type(entrance_list, profile_type):
+def filter_entrances_by_profile_type(entrance_list, category_types):
     common_entrances = []
     for entrance in entrance_list:
-        if "profiles" in entrance["visionline_metadata"]:
-            for profile in entrance["visionline_metadata"]["profiles"]:
-                # check for Visionline common entrance profile
-                if profile.get("type") == profile_type:
-                    common_entrances.append(entrance)
-                    break
+        if entrance["visionline_metadata"]["doorCategory"] in category_types:
+            common_entrances.append(entrance)
     return common_entrances
 
 common_entrances = filter_entrances_by_profile_type(
     all_entrances,
-    common_entrance_profile_type
+    common_entrance_category_types
 )
 </code></pre>
 {% endtab %}
@@ -226,27 +218,34 @@ common_entrances = filter_entrances_by_profile_type(
 Use the `seam.acs.entrances.list_credentials_with_access` endpoint to fetch a list of credentials. Provide the list of guest entrances' `acs_entrance_id`'s, and set `include_if` to `["visionline_metadata.is_valid"]` to filter for valid credentials.
 
 {% tabs %}
+{% tab title="Go" %}
+```
+// Some code
+```
+{% endtab %}
+
 {% tab title="Python" %}
-<pre class="language-python"><code class="lang-python"># Define the list of guest entrances to check
-room_101 = seam.acs.entrances.get(
-    acs_system_id=acs_system.acs_system_id,
-    name="Room 101"
-)
-room_102 = seam.acs.entrances.get(
-    acs_system_id=acs_system.acs_system_id,
-    name="Room 102"
-)
+```python
+# Define the list of guest entrances to check
 guest_entrance_ids = [
-    room_101.entrance_id,
-    room_102.entrance_id,
+    room_101.acs_entrance_id,
+    room_102.acs_entrance_id,
 ]
 
-# Retrive all valid credentials for the set of entrances
-seam.acs.entrances.list_credentials_with_access(
-<strong>    acs_entrance_ids=guest_entrance_ids
-</strong><strong>    include_if=["visionline_metadata.is_valid"]
-</strong><strong>)
-</strong></code></pre>
+# Initialize a list to hold credentials for each entrance
+all_credentials = []
+
+# Retrieve all valid credentials for each entrance individually
+for entrance_id in guest_entrance_ids:
+    credentials = seam.acs.entrances.list_credentials_with_access(
+        acs_entrance_id=entrance_id,
+        include_if=["visionline_metadata.is_valid"]
+    )
+    all_credentials.append({
+        "entrance_id": entrance_id,
+        "credentials": credentials
+    })
+```
 {% endtab %}
 {% endtabs %}
 
