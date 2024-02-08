@@ -135,7 +135,7 @@
   * [Update an Unmanaged Device](api-clients/devices/update-unmanaged-device.md)
 * [Access Codes](api-clients/access-codes/README.md)
   * [Create an Access Code](api-clients/access-codes/create-an-access-code.md)
-  * [Create many Access Codes](api-clients/access-codes/create-many-access-codes.md)
+  * [Create Many Access Codes](api-clients/access-codes/create-many-access-codes.md)
   * [List Access Codes](api-clients/access-codes/list-access-codes.md)
   * [Get an Access Code](api-clients/access-codes/get-an-access-code.md)
   * [Update an Access Code](api-clients/access-codes/update-an-access-code.md)
