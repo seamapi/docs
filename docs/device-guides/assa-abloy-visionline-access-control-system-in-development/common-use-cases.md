@@ -137,3 +137,51 @@ seam.acs.credentials.delete({
 })
 ```
 
+***
+
+## Removing a User Identity
+
+To delete a user identity, you must first delete any [ACS credentials](../../api-clients/access-control-systems/credentials/delete-credential.md) and [enrollment automations](../../api-clients/user-identities/enrollment-automations/) associated with the user identity. You must also deactivate any associated phones. Then, delete the user identity.
+
+```
+user = user_identity.get(id="xxx")
+
+# 1. Remove all ACS Users and Credentials associated with user identity
+acs_users = seam.user_identities.list_acs_users(
+    user_identity_id=user.user_identity_id
+)
+
+for acs_user in acs_users:
+    acs_credentials = seam.acs.credentials.list(
+        acs_user_id=acs_user.acs_user_id
+    )
+    for credential in acs_credentials:
+        seam.acs.credentials.delete(
+            acs_credential_id=credential.acs_credential_id
+        )
+    seam.acs_user.delete(
+        acs_user_id=acs_user.acs_user_id
+    )
+
+# 2. Stop all Enrollment Automations
+automations = seam.user_identities.enrollment_automations.list(
+    user_identity_id=user.user_identity_id
+)
+for automation in automations:
+    seam.user_identities.enrollment_automations.stop(
+        enrollment_automation_id=automation.enrollment_automation_id
+    )
+
+# 3. Deactivate all the User Identity's phones
+phones = seam.phones.list(
+    user_identity_id=user.user_identity_id
+)
+
+for phone in phones:
+    phone.deactivate()
+
+# 4. Delete the User Identity
+seam.user_identites.delete(
+    user_identity_id=user.user_identity_id
+)
+```

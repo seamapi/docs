@@ -43,7 +43,8 @@ When issuing guest credentials, hotels need to guarantee that all previous acces
 <strong># manager.
 </strong><strong>seam.enrollment_automation.launch(
 </strong><strong>    credential_manager_acs_system_id=assa_credential_services.acs_system_id,
-</strong><strong>    user_identity_id=guest_user_identity.user_identity_id
+</strong><strong>    user_identity_id=guest_user_identity.user_identity_id,
+</strong><strong>    create_credential_manager_user: true
 </strong><strong>)
 </strong><strong>
 </strong><strong># Associating the user identity with the ACS user
@@ -102,7 +103,8 @@ user_identity = seam.user_identities.create(
 # manager.
 seam.enrollment_automation.launch(
     credential_manager_acs_system_id=assa_credential_services.acs_system_id,
-    user_identity_id=guest_user_identity.user_identity_id
+    user_identity_id=guest_user_identity.user_identity_id,
+    create_credential_manager_user: true
 )
 
 # Associating the user identity with the ACS user
@@ -173,7 +175,7 @@ guest_entrance_category_types = ["guest"]
 def filter_entrances_by_profile_type(entrance_list, category_types):
     guest_entrances = []
     for entrance in entrance_list:
-        if entrance["visionline_metadata"]["doorCategory"] in category_types:
+        if entrance["visionline_metadata"]["door_category"] in category_types:
             guest_entrances.append(entrance)
     return guest_entrances
 
@@ -201,7 +203,7 @@ Filter entrances based on their categories, `common` and `common (PMS)`:
 def filter_entrances_by_profile_type(entrance_list, category_types):
     common_entrances = []
     for entrance in entrance_list:
-        if entrance["visionline_metadata"]["doorCategory"] in category_types:
+        if entrance["visionline_metadata"]["door_category"] in category_types:
             common_entrances.append(entrance)
     return common_entrances
 
@@ -220,12 +222,6 @@ common_entrances = filter_entrances_by_profile_type(
 Use the `seam.acs.entrances.list_credentials_with_access` endpoint to fetch a list of credentials. Provide the list of guest entrances' `acs_entrance_id`'s, and set `include_if` to `["visionline_metadata.is_valid"]` to filter for valid credentials.
 
 {% tabs %}
-{% tab title="Go" %}
-```
-// Some code
-```
-{% endtab %}
-
 {% tab title="Python" %}
 ```python
 # Define the list of guest entrances to check

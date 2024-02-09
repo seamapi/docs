@@ -65,6 +65,7 @@
   * [Managing Mobile App User Accounts with User Identities](products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md)
   * [Managing Phones for a User Identity](products/mobile-access-in-development/managing-phones-for-a-user-identity.md)
   * [Issuing Mobile Credentials from an Access Control System](products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md)
+  * [Developing in a Sandbox Workspace](capability-guides/mobile-access-in-development/developing-in-a-sandbox-workspace.md)
   * [Mobile device SDKs](capability-guides/mobile-access-in-development/mobile-sdk-coming-soon/README.md)
     * [iOS Mobile Key Support \[WIP\]](capability-guides/mobile-access-in-development/mobile-sdk-coming-soon/ios-mobile-key-support-wip.md)
     * [Android SDK \[WIP\]](capability-guides/mobile-access-in-development/mobile-sdk-coming-soon/android-sdk-wip.md)
