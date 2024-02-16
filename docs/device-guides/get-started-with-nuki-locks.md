@@ -2,7 +2,7 @@
 description: Learn how to connect and control your Nuki locks with the Seam API.
 ---
 
-# Get started with Nuki Locks
+# Get Started with Nuki Locks
 
 <figure><img src="../.gitbook/assets/guides/nuki-getting-seo-cover.jpg" alt=""><figcaption><p>Nuki Locks</p></figcaption></figure>
 
@@ -312,7 +312,7 @@ $seam->locks->lock_door($lock->device_id);
 
 Some Nuki locks also have a keypad paired to them to program access codes. These codes can then be entered to unlock a Nuki lock.
 
-The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on an Nuki lock. You can find out more about Nuki lock access code in our [core concept section on access codes.](../products/smart-locks/access-codes/)
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Nuki lock. You can find out more about Nuki lock access code in our [core concept section on access codes.](../products/smart-locks/access-codes/)
 
 {% hint style="info" %}
 Nuki does not let you create a code starting with the digits "12". Codes cannot contain the digit 0.

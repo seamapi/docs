@@ -46,8 +46,6 @@ To create a [Connect Webview](../core-concepts/connect-webviews/) that enables y
 
 ***
 
-To control dormakaba Oracode devices using Seam, you must prompt owners of these devices to perform the following steps:
-
 ## Offline Access Code Requirements
 
 Seam supports daily-bound and hourly-bound [offline access codes](../products/smart-locks/access-codes/offline-access-codes.md) for dormakaba Oracode locks. Note the following dormakaba Oracode-specific restrictions and requirements for offline access codes:
@@ -107,6 +105,8 @@ Seam does not currently support dormakaba Oracode one-time-use offline access co
 ***
 
 ## Setup Instructions
+
+To control dormakaba Oracode devices using Seam, you must prompt owners of these devices to perform the following steps:
 
 1. Obtain the credentials that you use to log in to your [Oracode Live account](https://www.kabaecodewireless.com).
 2. Use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your dormakaba Oracode devices to Seam.
