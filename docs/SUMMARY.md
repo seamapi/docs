@@ -48,7 +48,7 @@
   * [Granting Users Access to Entrances](products/access-systems/granting-users-access-to-entrances.md)
   * [Issuing Credentials](products/access-systems/issuing-credentials.md)
   * [Suspending and Unsuspending Users](products/access-systems/suspending-and-unsuspending-users.md)
-* [🌡 Thermostats](products/thermostats/README.md)
+* [🌡️ Thermostats](products/thermostats/README.md)
   * [HVAC Mode](products/thermostats/hvac-mode.md)
   * [Set Points](products/thermostats/set-points.md)
   * [Retrieving Thermostats](products/thermostats/retrieving-thermostats.md)
@@ -69,7 +69,7 @@
   * [Mobile device SDKs](capability-guides/mobile-access-in-development/mobile-sdk-coming-soon/README.md)
     * [iOS Mobile Key Support \[WIP\]](capability-guides/mobile-access-in-development/mobile-sdk-coming-soon/ios-mobile-key-support-wip.md)
     * [Android SDK \[WIP\]](capability-guides/mobile-access-in-development/mobile-sdk-coming-soon/android-sdk-wip.md)
-* [🌩 Seam Bridge - In Development](products/seam-bridge-in-development.md)
+* [🌩️ Seam Bridge - In Development](products/seam-bridge-in-development.md)
 
 ## 💻 UI Components
 
@@ -218,7 +218,7 @@
     * [List Enrollment Automations](api-clients/user-identities/enrollment-automations/list-enrollment-automations.md)
     * [Get an Enrollment Automation](api-clients/user-identities/enrollment-automations/get-an-enrollment-automation.md)
 
-## 🛠 Developer Tools
+## 🛠️ Developer Tools
 
 * [Webhooks](core-concepts/webhooks.md)
 * [Sandbox Devices and Systems](device-guides/sandbox-and-sample-data/README.md)
@@ -254,7 +254,7 @@
   * [Sandbox Yale Locks](device-guides/sandbox-and-sample-data/yale-sample-data.md)
 * [Rate Limits and Guardrails](device-guides/rate-limits-and-guardrails.md)
 
-## 🎛 Device and System Integration Guides
+## 🎛️ Device and System Integration Guides
 
 * [2N Intercom Systems](device-guides/2n-intercom-systems.md)
   * [Get started with 2N Intercoms](device-guides/get-started-with-2n-intercoms.md)
