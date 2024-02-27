@@ -73,7 +73,7 @@ print(webview.url)
 
 {% tab title="Javascript" %}
 ```javascript
-import Seam from "seam";
+import { Seam } from "seam";
 
 const seam = new Seam();
 

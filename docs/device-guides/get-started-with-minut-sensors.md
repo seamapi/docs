@@ -52,7 +52,7 @@ print(webview.url)
 
 {% tab title="Javascript" %}
 ```javascript
-import Seam from 'seamapi'
+import { Seam } from 'seam'
 const seam = new Seam()
 const connectWebview = await seam.connectWebviews.create({
   accepted_providers: ["minut"],

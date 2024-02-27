@@ -134,7 +134,7 @@ Next, use the following code to retrieve one of the devices that you connected i
 {% tabs %}
 {% tab title="JavaScript" %}
 ```javascript
-import Seam from "seam";
+import { Seam } from "seam";
 const seam = new Seam(); // SEAM_API_KEY environment variable picked up here.
 
 // Retrieve all authorized locks and select the first lock.

@@ -58,7 +58,7 @@ Then, run the following code to test the API key:
 {% tabs %}
 {% tab title="JavaScript" %}
 ```javascript
-import Seam from "seam";
+import { Seam } from "seam";
 
 // Seam automatically uses the SEAM_API_KEY environment variable if you
 // do not provide an apiKey to `new Seam()`.
