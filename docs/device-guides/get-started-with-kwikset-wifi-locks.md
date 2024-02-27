@@ -63,7 +63,7 @@ print(webview.url)
 
 {% tab title="Javascript" %}
 ```javascript
-import Seam from 'seamapi'
+import { Seam } from 'seam'
 
 const seam = new Seam()
 

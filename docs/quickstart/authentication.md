@@ -19,7 +19,7 @@ Next, run the code below to check you are correctly authenticated:
 // Replace with
 // const Seam = require("seam")
 // if not using ES6 modules and/or TypeScript.
-import Seam from "seam";
+import { Seam } from "seam";
 
 // Seam will automatically use the SEAM_API_KEY environment variable if you
 // don't provide an apiKey to `new Seam()`
