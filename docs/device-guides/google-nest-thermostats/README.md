@@ -1,5 +1,5 @@
 ---
-description: Guide for using Google Nest thermostats with Seam
+description: Guide for using Nest thermostats with Seam
 ---
 
 # Google Nest Thermostats
@@ -19,13 +19,12 @@ This integration supports all [Nest thermostats](https://store.google.com/us/cat
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  manufacturers='["google_nest"]'
+  manufacturers='["Nest"]'
 />" %}
 
 We support the following features:
 
 * [Configuring current thermostat settings](../../products/thermostats/configure-current-climate-settings.md)
-* [Scheduling future climate settings](../../products/thermostats/thermostats-climate-setting-schedules.md)
 
 ***
 

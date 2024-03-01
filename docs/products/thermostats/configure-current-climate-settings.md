@@ -136,6 +136,23 @@ console.log(heat_request)
 ```
 {% endtab %}
 
+{% tab title="PHP" %}
+**Request:**
+
+```php
+$heat_request = $seam->thermostats->heat(
+  device_id: "5ce2cd35-09b1-458c-bb08-51ee83c35be7",
+  heating_set_point_celsius: 20
+);
+```
+
+**Response:**
+
+```json
+None
+```
+{% endtab %}
+
 {% tab title="Java" %}
 **Request:**
 
@@ -161,6 +178,39 @@ System.out.println("Heating set point (Celsius): " +
 Thermostat ID: 518f692b-f865-4590-8c3e-3849e9984c75
 Mode: Optional[heat]
 Heating set point (Celsius): Optional[20.0]
+```
+{% endtab %}
+
+{% tab title="Go" %}
+**Request:**
+
+```go
+heat_request, uErr := client.Thermostats.Heat(context.Background(), &api.ThermostatsHeatRequest{
+  DeviceId: "5ce2cd35-09b1-458c-bb08-51ee83c35be7",
+  HeatingSetPointCelsius: api.Float64(20),
+})
+
+if uErr != nil {
+return uErr
+}
+
+fmt.Println(heat_request)
+return nil
+```
+
+**Response:**
+
+```json
+{
+  "action_attempt": {
+    "status": "pending",
+    "action_type": "SET_HEAT",
+    "action_attempt_id": "241e79cd-4bda-499f-8e2e-d7ae01d273cf",
+    "result": null,
+    "error": null
+  },
+  "ok": true
+}
 ```
 {% endtab %}
 {% endtabs %}
@@ -254,6 +304,35 @@ System.out.println(attempt.isSuccess());
 
 ```json
 true
+```
+{% endtab %}
+
+{% tab title="Go" %}
+**Request:**
+
+```go
+action_attempt, uErr := client.ActionAttempts.Get(context.Background(), &api.ActionAttemptsGetRequest{
+  ActionAttemptId: "40dc817d-9ae0-4037-9d4a-736700ee467b",
+})
+
+if uErr != nil {
+return uErr
+}
+
+fmt.Println(action_attempt)
+return nil
+```
+
+**Response:**
+
+```json
+&{success {
+  "status": "success",
+  "action_attempt_id": "40dc817d-9ae0-4037-9d4a-736700ee467b",
+  "action_type": "SET_HEAT",
+  "result": {},
+  "error": null
+} <nil> <nil>}
 ```
 {% endtab %}
 {% endtabs %}
@@ -352,6 +431,23 @@ console.log(heat_request)
 ```
 {% endtab %}
 
+{% tab title="PHP" %}
+**Request:**
+
+```php
+$heat_request = $seam->thermostats->heat(
+  device_id: "518f692b-f865-4590-8c3e-3849e9984c75",
+  heating_set_point_celsius: 20
+);
+```
+
+**Response:**
+
+```json
+None
+```
+{% endtab %}
+
 {% tab title="Java" %}
 **Request:**
 
@@ -377,6 +473,39 @@ System.out.println("Heating set point (Celsius): " +
 Thermostat ID: 518f692b-f865-4590-8c3e-3849e9984c75
 Mode: Optional[heat]
 Heating set point (Celsius): Optional[20.0]
+```
+{% endtab %}
+
+{% tab title="Go" %}
+**Request:**
+
+```go
+heat_request, uErr := client.Thermostats.Heat(context.Background(), &api.ThermostatsHeatRequest{
+  DeviceId: "518f692b-f865-4590-8c3e-3849e9984c75",
+  HeatingSetPointCelsius: api.Float64(20),
+})
+
+if uErr != nil {
+return uErr
+}
+
+fmt.Println(heat_request)
+return nil
+```
+
+**Response:**
+
+```json
+{
+  "action_attempt": {
+    "status": "pending",
+    "action_type": "SET_HEAT",
+    "action_attempt_id": "241e79cd-4bda-499f-8e2e-d7ae01d273cf",
+    "result": null,
+    "error": null
+  },
+  "ok": true
+}
 ```
 {% endtab %}
 {% endtabs %}
@@ -471,6 +600,23 @@ console.log(cool_request)
 ```
 {% endtab %}
 
+{% tab title="PHP" %}
+**Request:**
+
+```php
+$cool_request = $seam->thermostats->cool(
+  device_id: "518f692b-f865-4590-8c3e-3849e9984c75",
+  cooling_set_point_celsius: 25
+);
+```
+
+**Response:**
+
+```json
+None
+```
+{% endtab %}
+
 {% tab title="Java" %}
 **Request:**
 
@@ -500,6 +646,39 @@ System.out.println("Cooling set point (Celsius): " +
 Thermostat ID: 518f692b-f865-4590-8c3e-3849e9984c75
 Mode: Optional[cool]
 Cooling set point (Celsius): Optional[25.0]
+```
+{% endtab %}
+
+{% tab title="Go" %}
+**Request:**
+
+```go
+cool_request, uErr := client.Thermostats.Cool(context.Background(), &api.ThermostatsCoolRequest{
+  DeviceId: "518f692b-f865-4590-8c3e-3849e9984c75",
+  CoolingSetPointCelsius: api.Float64(25),
+})
+
+if uErr != nil {
+return uErr
+}
+
+fmt.Println(cool_request)
+return nil
+```
+
+**Response:**
+
+```json
+{
+  "action_attempt": {
+    "status": "pending",
+    "action_type": "SET_COOL",
+    "action_attempt_id": "3ef9ff5a-0d50-40a4-9ef4-94f44e923e6e",
+    "result": null,
+    "error": null
+  },
+  "ok": true
+}
 ```
 {% endtab %}
 {% endtabs %}
@@ -595,6 +774,24 @@ const heat_cool_request = await seam.thermostats.heatCool({
 ```
 {% endtab %}
 
+{% tab title="PHP" %}
+**Request:**
+
+```php
+$heat_cool_request = $seam->thermostats->heat_cool(
+  device_id: "518f692b-f865-4590-8c3e-3849e9984c75",
+  heating_set_point_celsius: 20,
+  cooling_set_point_celsius: 25
+);
+```
+
+**Response:**
+
+```json
+None
+```
+{% endtab %}
+
 {% tab title="Java" %}
 **Request:**
 
@@ -628,6 +825,40 @@ Thermostat ID: 518f692b-f865-4590-8c3e-3849e9984c75
 Mode: Optional[heat_cool]
 Heating set point (Celsius): Optional[20.0]
 Cooling set point (Celsius): Optional[25.0]
+```
+{% endtab %}
+
+{% tab title="Go" %}
+**Request:**
+
+```go
+heat_cool_request, uErr := client.Thermostats.HeatCool(context.Background(), &api.ThermostatsHeatCoolRequest{
+  DeviceId: "518f692b-f865-4590-8c3e-3849e9984c75",
+  HeatingSetPointCelsius: api.Float64(20),
+  CoolingSetPointCelsius: api.Float64(25),
+})
+
+if uErr != nil {
+return uErr
+}
+
+fmt.Println(heat_cool_request)
+return nil
+```
+
+**Response:**
+
+```json
+{
+  "action_attempt": {
+    "status": "pending",
+    "action_type": "SET_HEAT_COOL",
+    "action_attempt_id": "922a3c60-98bb-4020-b6d9-cf556deacf0f",
+    "result": null,
+    "error": null
+  },
+  "ok": true
+}
 ```
 {% endtab %}
 {% endtabs %}
@@ -719,6 +950,22 @@ console.log(off_request)
 ```
 {% endtab %}
 
+{% tab title="PHP" %}
+**Request:**
+
+```php
+$off_request = $seam->thermostats->off(
+  device_id: "518f692b-f865-4590-8c3e-3849e9984c75"
+);
+```
+
+**Response:**
+
+```json
+None
+```
+{% endtab %}
+
 {% tab title="Java" %}
 **Request:**
 
@@ -743,6 +990,38 @@ System.out.println("Mode: " + thermostat.getProperties().getCurrentClimateSettin
 ```json
 Thermostat ID: 518f692b-f865-4590-8c3e-3849e9984c75
 Mode: Optional[off]
+```
+{% endtab %}
+
+{% tab title="Go" %}
+**Request:**
+
+```go
+off_request, uErr := client.Thermostats.Off(context.Background(), &api.ThermostatsOffRequest{
+  DeviceId: "518f692b-f865-4590-8c3e-3849e9984c75",
+})
+
+if uErr != nil {
+return uErr
+}
+
+fmt.Println(off_request)
+return nil
+```
+
+**Response:**
+
+```json
+{
+  "action_attempt": {
+    "status": "pending",
+    "action_type": "SET_THERMOSTAT_OFF",
+    "action_attempt_id": "7bfa2738-e0fd-4915-b3e0-8d6bcc14a5ed",
+    "result": null,
+    "error": null
+  },
+  "ok": true
+}
 ```
 {% endtab %}
 {% endtabs %}
@@ -833,6 +1112,56 @@ console.log(fan_on_request)
     result: {},
     error: null
   }
+}
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+**Request:**
+
+```php
+$fan_on_request = $seam->thermostats->set_fan_mode(
+  device_id: "06a561b6-09d2-401c-a25f-ddb1e1efd59e",
+  fan_mode_setting: "on"
+);
+```
+
+**Response:**
+
+```json
+None
+```
+{% endtab %}
+
+{% tab title="Go" %}
+**Request:**
+
+```go
+fan_on_request, uErr := client.Thermostats.SetFanMode(context.Background(), &api.ThermostatsSetFanModeRequest{
+  DeviceId: "5ce2cd35-09b1-458c-bb08-51ee83c35be7",
+  FanMode: api.FanModeOn.Ptr(),
+})
+
+if uErr != nil {
+return uErr
+}
+
+fmt.Println(fan_on_request)
+return nil
+```
+
+**Response:**
+
+```json
+{
+  "action_attempt": {
+    "status": "pending",
+    "action_type": "SET_FAN_MODE",
+    "action_attempt_id": "1a6993af-4b00-4ca5-bacf-074164959878",
+    "result": null,
+    "error": null
+  },
+  "ok": true
 }
 ```
 {% endtab %}

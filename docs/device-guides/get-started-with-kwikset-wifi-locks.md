@@ -2,7 +2,7 @@
 description: Learn how to connect and control your Kwikset Halo lock with the Seam API.
 ---
 
-# Get started with Kwikset Wifi Locks
+# Get started with Kwikset Wi-Fi Locks
 
 <figure><img src="../.gitbook/assets/guides/kwikset-getting-started-guide-cover.jpg" alt=""><figcaption><p>Kwikset Halo Smart Locks</p></figcaption></figure>
 
@@ -22,12 +22,74 @@ To disable MFA, head to **Account Settings** in your Kwikset app:
 
 ## 1 — Install Seam SDK
 
-Seam provides client libraries for many languages such as Javascript, Python, Ruby, and PHP, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.
+Seam provides client libraries for many languages, such as JavaScript, Python, Ruby, PHP, and others, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.
 
-* **Javascript:** `npm i seam` ([npm](https://www.npmjs.com/package/seam), [github](https://github.com/seamapi/javascript))
-* **Python:** `pip install seamapi` ([pip](https://pypi.org/project/seamapi/), [github](https://github.com/seamapi/python))
-* **Ruby:** `bundle add seamapi` ([rubygem](https://rubygems.org/gems/seamapi), [github](https://github.com/seamapi/ruby))
-* **PHP:** `composer require seamapi/seam` ([packagist](https://packagist.org/packages/seamapi/seam), [github](https://github.com/seamapi/php))
+* JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
+* Python ([pip](https://pypi.org/project/seamapi/), [GitHub](https://github.com/seamapi/python))
+* Ruby Gem ([rubygem](https://rubygems.org/gems/seamapi), [GitHub](https://github.com/seamapi/ruby))
+* PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
+* Java ([GitHub](https://github.com/seamapi/java))
+* C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
+* Go ([GitHub](https://github.com/seamapi/go))
+
+{% tabs %}
+{% tab title="JavaScript" %}
+```bash
+npm i seam
+```
+{% endtab %}
+
+{% tab title="Python" %}
+```bash
+pip install seamapi
+# For some development environments, use pip3 in this command instead of pip.
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```bash
+bundle add seamapi
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+```bash
+composer require seamapi/seam
+```
+{% endtab %}
+
+{% tab title="Java" %}
+**Gradle:**
+
+```gradle
+// build.gradle
+dependencies {
+    implementation 'io.github.seamapi:java:0.x.x'
+}
+```
+
+**Maven:**
+
+```xml
+<!-- pom.xml -->
+<dependency>
+    <groupId>io.github.seamapi</groupId>
+    <artifactId>java</artifactId>
+    <version>0.x.x</version>
+</dependency>
+```
+{% endtab %}
+
+{% tab title="C#" %}
+Install using [nuget](https://www.nuget.org/packages/Seam).
+{% endtab %}
+
+{% tab title="Go" %}
+```bash
+go get github.com/seamapi/go
+```
+{% endtab %}
+{% endtabs %}
 
 Once installed, [sign-up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:
 

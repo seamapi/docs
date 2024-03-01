@@ -4,7 +4,7 @@ description: Learn how to update your climate setting schedules.
 
 # Modifying Climate Setting Schedules
 
-You can update any upcoming or active [climate setting schedule](thermostats-climate-setting-schedules.md#climate-setting-schedules) using the [Update Climate Setting Schedule](../../thermostats/climate-setting-schedules/update-climate-setting-schedule.md) request.
+You can update any upcoming or active [climate setting schedule](thermostats-climate-setting-schedules.md#climate-setting-schedules) using the [Update Climate Setting Schedule](../../../thermostats/climate-setting-schedules/update-climate-setting-schedule.md) request.
 
 When modifying a climate setting schedule, adjust any of the following properties of the climate setting schedule to the new desired values:
 

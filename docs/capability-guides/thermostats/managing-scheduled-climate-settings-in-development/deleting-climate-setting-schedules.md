@@ -4,7 +4,7 @@ description: Learn how to delete your climate setting schedules.
 
 # Deleting Climate Setting Schedules
 
-To delete a [climate setting schedule](thermostats-climate-setting-schedules.md#climate-setting-schedules), specify the desired `climate_setting_schedule_id` in the [Delete Climate Setting Schedule](../../thermostats/climate-setting-schedules/delete-climate-setting-schedule.md) request. Note that if you delete an active climate setting schedule, the thermostat reverts back to the [default climate setting](setting-the-default-climate-setting.md#default-climate-setting).
+To delete a [climate setting schedule](thermostats-climate-setting-schedules.md#climate-setting-schedules), specify the desired `climate_setting_schedule_id` in the [Delete Climate Setting Schedule](../../../thermostats/climate-setting-schedules/delete-climate-setting-schedule.md) request. Note that if you delete an active climate setting schedule, the thermostat reverts back to the [default climate setting](setting-the-default-climate-setting.md#default-climate-setting).
 
 {% tabs %}
 {% tab title="Python" %}

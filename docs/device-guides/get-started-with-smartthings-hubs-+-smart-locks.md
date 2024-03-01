@@ -1,20 +1,95 @@
 # Get started with SmartThings Hubs + Smart Locks
 
-## SmartThings Hub + Smart Lock
-
-SmartThings Hub is connected to your local network using either Wifi or ethernet. The Smart Lock is paired to SmartThings via Zigbee or Z-Wave. These locks can then be remotely locked, unlocked, and have access codes programmed to allow keyless entry.
-
 ## Overview
 
-To pair a SmartThings Hub and smart lock with our API, we'll need to sign into a SmartThings account. We can do this by creating a Seam Webview.
+Seam provides a universal API to connect and control many brands of smart locks. This guide provides a rapid introduction to connecting and controlling your [SmartThings Hub](https://www.seam.co/manufacturers/smartthings) and smart lock using the Seam API. SmartThings Hub is connected to your local network using either Wi-Fi or Ethernet. The smart lock is paired to SmartThings via Zigbee or Z-Wave. These locks can then be remotely locked, unlocked, and have access codes programmed to allow keyless entry.
 
+To learn more about other smart lock brands supported by Seam such as August, Yale, and Salto, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
+## 1 — Install Seam SDK
 
-Make sure to install the relevant Seam package for your language...
+Seam provides client libraries for many languages, such as JavaScript, Python, Ruby, PHP, and others, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.
 
-* [Python seamapi pip module](https://github.com/hello-seam/seamapi-python) &#x20;
-* [Javascript/Typescript NPM Module](https://github.com/hello-seam/seamapi-javascript)
-* [Ruby seamapi gem](https://rubygems.org/gems/seamapi)
+* JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
+* Python ([pip](https://pypi.org/project/seamapi/), [GitHub](https://github.com/seamapi/python))
+* Ruby Gem ([rubygem](https://rubygems.org/gems/seamapi), [GitHub](https://github.com/seamapi/ruby))
+* PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
+* Java ([GitHub](https://github.com/seamapi/java))
+* C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
+* Go ([GitHub](https://github.com/seamapi/go))
+
+{% tabs %}
+{% tab title="JavaScript" %}
+```bash
+npm i seam
+```
+{% endtab %}
+
+{% tab title="Python" %}
+```bash
+pip install seamapi
+# For some development environments, use pip3 in this command instead of pip.
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```bash
+bundle add seamapi
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+```bash
+composer require seamapi/seam
+```
+{% endtab %}
+
+{% tab title="Java" %}
+**Gradle:**
+
+```gradle
+// build.gradle
+dependencies {
+    implementation 'io.github.seamapi:java:0.x.x'
+}
+```
+
+**Maven:**
+
+```xml
+<!-- pom.xml -->
+<dependency>
+    <groupId>io.github.seamapi</groupId>
+    <artifactId>java</artifactId>
+    <version>0.x.x</version>
+</dependency>
+```
+{% endtab %}
+
+{% tab title="C#" %}
+Install using [nuget](https://www.nuget.org/packages/Seam).
+{% endtab %}
+
+{% tab title="Go" %}
+```bash
+go get github.com/seamapi/go
+```
+{% endtab %}
+{% endtabs %}
+
+Once installed, [sign-up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:
+
+```
+$ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
+```
+
+{% hint style="info" %}
+This guide uses a sandbox workspace. You can only connect virtual devices in a sandbox workspace. If you need to connect a real device, use a non-sandbox workspace and API key.
+{% endhint %}
+
+## 2 — Link Your SmartThings Account with Seam
+
+To pair a SmartThings Hub and smart lock with our API, you must sign in to a SmartThings account. To do so, create a Seam Connect Webview.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -87,7 +162,7 @@ puts webview
 {% endtab %}
 {% endtabs %}
 
-We should now send the **Connect Webview URL** to the user, when the user signs in, we'll see a "completed" status on the webview or `login_successful` set to `true.`
+Now, send the Connect Webview URL to the user. When the user signs in, you see a "completed" status on the Connect Webview or `login_successful` set to `true.`
 
 {% tabs %}
 {% tab title="Python" %}
@@ -121,9 +196,7 @@ puts updated_webview.login_successful
 {% endtab %}
 {% endtabs %}
 
-We can now find all the devices that are associated with the connected account that was signed into. From the returned payload, see whether the door lock is locked or unlocked.
-
-
+You can now find all the devices that are associated with the connected account. From the returned payload, see whether the door lock is locked or unlocked.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -189,8 +262,6 @@ puts some_lock
 {% endtab %}
 {% endtabs %}
 
-
-
 ## Locking a Door
 
 {% swagger method="post" path="/locks/lock_door" baseUrl="https://connect.getseam.com" summary="Lock a door" %}
@@ -203,7 +274,7 @@ ID of the Device to be locked
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" required="true" %}
-Bearer <API_KEY>
+Bearer \<API\_KEY>
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Returns a pending action attempt" %}
@@ -255,8 +326,6 @@ puts updated_lock.properties["locked"]
 {% endtab %}
 {% endtabs %}
 
-
-
 ## Unlocking a Door
 
 {% swagger method="post" path="/locks/unlock_door" baseUrl="https://connect.getseam.com" summary="Unlock a door" %}
@@ -269,7 +338,7 @@ ID of the Device to be unlocked
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" required="true" %}
-Bearer <API_KEY>
+Bearer \<API\_KEY>
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Returns a pending action attempt" %}
@@ -321,8 +390,6 @@ puts updated_lock.properties["locked"]
 {% endtab %}
 {% endtabs %}
 
-
-
 ## Create an Access Code
 
 {% swagger method="post" path="/access_codes/create" baseUrl="https://connect.getseam.com" summary="Create an Access Code" %}
@@ -334,7 +401,7 @@ puts updated_lock.properties["locked"]
 ID of the Device to be programmed
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="code" %}
+{% swagger-parameter in="body" name="code" required="false" %}
 digits to set on the device
 {% endswagger-parameter %}
 
@@ -342,16 +409,16 @@ digits to set on the device
 Name of Access Code
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="starts_at" %}
+{% swagger-parameter in="body" name="starts_at" required="false" %}
 iso8601 timestamp for desired start time of code. null implies that the code will be immediately active.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="ends_at" %}
+{% swagger-parameter in="body" name="ends_at" required="false" %}
 iso8601 timestamp for desired end time of code. null implies that the code will be permanent.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" required="true" %}
-Bearer <API_KEY>
+Bearer \<API\_KEY>
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Returns an Action Attempt" %}
@@ -441,8 +508,6 @@ puts access_code
 {% endtab %}
 {% endtabs %}
 
-
-
 ## Delete an Access Code
 
 {% swagger method="delete" path="/access_codes/remove" baseUrl="https://connect.getseam.com" summary="Remove an Access Code" %}
@@ -455,7 +520,7 @@ puts access_code
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorizaion" required="true" %}
-Bearer <API_KEY>
+Bearer \<API\_KEY>
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Returns an Action Attempt" %}
@@ -511,8 +576,6 @@ puts attempt
 {% endtab %}
 {% endtabs %}
 
-
-
 ## List Access Codes
 
 {% swagger method="get" path="/access_codes" baseUrl="https://connect.getseam.com" summary="List Access Codes" %}
@@ -521,14 +584,14 @@ puts attempt
 {% endswagger-description %}
 
 {% swagger-parameter in="header" name="Authorizaion" required="true" %}
-Bearer <API_KEY>
+Bearer \<API\_KEY>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="device" %}
+{% swagger-parameter in="query" name="device" required="false" %}
 Filter by Device
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="device_id" %}
+{% swagger-parameter in="query" name="device_id" required="false" %}
 Filter by Device
 {% endswagger-parameter %}
 
@@ -626,4 +689,3 @@ puts access_codes
 ```
 {% endtab %}
 {% endtabs %}
-

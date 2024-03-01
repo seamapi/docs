@@ -6,7 +6,7 @@ description: Learn how to retrieve climate setting schedules by device or by spe
 
 ## Retrieving All Climate Setting Schedules for a Device
 
-To retrieve all [climate setting schedules](thermostats-climate-setting-schedules.md#climate-setting-schedules) for a device, include the `device_id` in the [List Climate Setting Schedules](../../thermostats/climate-setting-schedules/list-climate-setting-schedules.md) request.
+To retrieve all [climate setting schedules](thermostats-climate-setting-schedules.md#climate-setting-schedules) for a device, include the `device_id` in the [List Climate Setting Schedules](../../../thermostats/climate-setting-schedules/list-climate-setting-schedules.md) request.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -284,7 +284,7 @@ System.out.println(climateSettingSchedules);
 
 ## Retrieving Individual Climate Setting Schedules
 
-To retrieve a specific [climate setting schedule](thermostats-climate-setting-schedules.md#climate-setting-schedules), include the desired `climate_setting_schedule_id` in the [Get Climate Setting Schedule](../../thermostats/climate-setting-schedules/get-climate-setting-schedule.md) request.
+To retrieve a specific [climate setting schedule](thermostats-climate-setting-schedules.md#climate-setting-schedules), include the desired `climate_setting_schedule_id` in the [Get Climate Setting Schedule](../../../thermostats/climate-setting-schedules/get-climate-setting-schedule.md) request.
 
 {% tabs %}
 {% tab title="Python" %}

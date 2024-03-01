@@ -12,13 +12,19 @@ To get started quickly with Seam, follow the [Quick Start](quickstart.md) to cre
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Get</strong> <strong>API Key</strong> (free)</td><td>Sign up for the Seam Console and get your API keys. →</td><td></td><td><a href=".gitbook/assets/seam-api-key.png">seam-api-key.png</a></td><td><a href="https://console.seam.co/">https://console.seam.co/</a></td></tr><tr><td><strong>Quick Start</strong> (5 mins)</td><td>Learn how to connect a device and issue your first API call. →</td><td></td><td><a href=".gitbook/assets/seam-quick-start-light.png">seam-quick-start-light.png</a></td><td><a href="quickstart.md">quickstart.md</a></td></tr></tbody></table>
 
-
-
 {% embed url="https://youtu.be/XzzJ7gMPOGE" %}
 
 ## Install an SDK
 
 Use one of the following methods to install the Seam software development kit (SDK) in the programming language of your choice:
+
+* JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
+* Python ([pip](https://pypi.org/project/seamapi/), [GitHub](https://github.com/seamapi/python))
+* Ruby Gem ([rubygem](https://rubygems.org/gems/seamapi), [GitHub](https://github.com/seamapi/ruby))
+* PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
+* Java ([GitHub](https://github.com/seamapi/java))
+* C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
+* Go ([GitHub](https://github.com/seamapi/go))
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -30,6 +36,7 @@ npm i seam
 {% tab title="Python" %}
 ```bash
 pip install seamapi
+# For some development environments, use pip3 in this command instead of pip.
 ```
 {% endtab %}
 
@@ -71,12 +78,10 @@ dependencies {
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
 
-{% tab title="Rust" %}
+{% tab title="Go" %}
 ```bash
-cargo add seamapi-rs
+go get github.com/seamapi/go
 ```
-
-Hello Crustacean! This is a community library and is not officially being maintained by Seam.
 {% endtab %}
 {% endtabs %}
 

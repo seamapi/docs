@@ -27,7 +27,7 @@ To get started with Seam, first connect a set of devices.
 
 Once authorized, the devices associated with this test account appear in your workspace.
 
-{% @supademo/embed demoId="h1y5QMki-7vzlghMzobuf" url="https://app.supademo.com/demo/h1y5QMki-7vzlghMzobuf" %}
+{% @supademo/embed demoid="h1y5QMki-7vzlghMzobuf" url="https://app.supademo.com/demo/h1y5QMki-7vzlghMzobuf" %}
 
 ## Step 2 — Get an API Key and SDK
 
@@ -40,21 +40,21 @@ To control the devices that you connected in [Step 1](quickstart.md#step-1-conne
 3. In the **Add API Key** dialog, type a name for your new API key and then click **Create API Key**.
 4. Copy the newly-created API key and store it for future use.
 
-{% @supademo/embed demoId="vLRzYM2Nwoi4j_cH9WCNQ" url="https://app.supademo.com/demo/vLRzYM2Nwoi4j_cH9WCNQ" %}
+{% @supademo/embed demoid="vLRzYM2Nwoi4j_cH9WCNQ" url="https://app.supademo.com/demo/vLRzYM2Nwoi4j_cH9WCNQ" %}
 
 ### Install the Seam SDK
 
-Install one of the Seam SDKs in the programming language of your choice.&#x20;
+Install one of the Seam SDKs in the programming language of your choice.
 
-Seam supports many programming languages, such as the following:
+Seam provides client libraries for many languages, such as JavaScript, Python, Ruby, PHP, and others, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.
 
-* [JavaScript / TypeScript](https://github.com/seamapi/javascript)
-* [Python](https://github.com/hello-seam/seamapi-python)
-* [Ruby Gem](https://rubygems.org/gems/seamapi)
-* [PHP](https://github.com/seamapi/php)
-* [Java](https://github.com/seamapi/java)
-* [C#](https://github.com/seamapi/csharp)
-* [Go](https://github.com/seamapi/go)
+* JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
+* Python ([pip](https://pypi.org/project/seamapi/), [GitHub](https://github.com/seamapi/python))
+* Ruby Gem ([rubygem](https://rubygems.org/gems/seamapi), [GitHub](https://github.com/seamapi/ruby))
+* PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
+* Java ([GitHub](https://github.com/seamapi/java))
+* C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
+* Go ([GitHub](https://github.com/seamapi/go))
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -108,12 +108,10 @@ dependencies {
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
 
-{% tab title="Rust" %}
+{% tab title="Go" %}
 ```bash
-cargo add seamapi-rs
+go get github.com/seamapi/go
 ```
-
-Hello Crustacean! This is a community library and is not officially being maintained by Seam.
 {% endtab %}
 {% endtabs %}
 
@@ -250,6 +248,6 @@ If you are creating an application (app) to control your users' devices, see [Co
 
 ### Learn about Devices and Capabilities
 
-Seam supports many device categories. Each device can be broken down into [device capabilities](broken-reference). A capability indicates what the device can do, what properties it has, and what events it emits. To learn more about specific capabilities, such as access codes or thermostats, see the following guides:
+Seam supports many device categories. Each device can be broken down into [device capabilities](broken-reference/). A capability indicates what the device can do, what properties it has, and what events it emits. To learn more about specific capabilities, such as access codes or thermostats, see the following guides:
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden><select></select></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Door Locks API</strong></td><td>Get started →</td><td><a href=".gitbook/assets/smart-locks-16-9.png">smart-locks-16-9.png</a></td><td></td><td><a href="device-guides/get-started-with-smartlocks-api.md">get-started-with-smartlocks-api.md</a></td></tr><tr><td><strong>Thermostats API</strong></td><td>Get started →</td><td><a href=".gitbook/assets/thermostats-16-9.png">thermostats-16-9.png</a></td><td></td><td><a href="broken-reference/">broken-reference</a></td></tr><tr><td><strong>Noise</strong> <strong>Sensors API</strong></td><td>Get started →</td><td><a href=".gitbook/assets/sensors-16-9.png">sensors-16-9.png</a></td><td></td><td><a href="device-guides/get-started-with-minut-sensors.md">get-started-with-minut-sensors.md</a></td></tr></tbody></table>

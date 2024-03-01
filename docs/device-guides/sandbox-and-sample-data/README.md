@@ -58,6 +58,10 @@ description: >-
 [google-nest-thermostats-sample-data.md](google-nest-thermostats-sample-data.md)
 {% endcontent-ref %}
 
+{% content-ref url="../../developer-tools/sandbox-and-sample-data/sandbox-honeywell-thermostats.md" %}
+[sandbox-honeywell-thermostats.md](../../developer-tools/sandbox-and-sample-data/sandbox-honeywell-thermostats.md)
+{% endcontent-ref %}
+
 {% content-ref url="igloohome-sample-data.md" %}
 [igloohome-sample-data.md](igloohome-sample-data.md)
 {% endcontent-ref %}
