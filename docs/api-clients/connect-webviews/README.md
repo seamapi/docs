@@ -41,6 +41,8 @@ To enable a user to connect their device account to Seam through your app, you m
 | --------------------- | ------------------------------------------------------------------ |
 | `stable`              | Only returns provider integrations marked as stable.               |
 | `consumer_smartlocks` | Only returns provider integrations marked as consumer smart locks. |
+| `thermostats`         | Only returns provider integrations marked as thermostats.          |
+| `noise_sensors`       | Only returns provider instegrations marked as noise sensors.       |
 
 {% hint style="info" %}
 To list all providers within a category, use the [List Device Providers](../devices/list-device-providers.md) method with the desired `provider_category` filter.
