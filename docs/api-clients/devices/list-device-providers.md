@@ -16,7 +16,7 @@ To filter the list of returned device providers by a specific device provider ca
 
 ### Request Body Parameters
 
-<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>provider_category</code></td><td>String<br><em>Optional</em></td><td>Provider category by which to filter device providers. Supported categories are <code>stable</code> and <code>consumer_smartlocks</code>.</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>provider_category</code></td><td>String<br><em>Optional</em></td><td><p>Provider category by which to filter device providers.</p><p>Supported categories:</p><ul><li><code>stable</code></li><li><code>consumer_smartlocks</code></li><li><code>thermostats</code></li><li><code>noise_sensors</code></li></ul></td></tr></tbody></table>
 
 ### Sample Request
 
@@ -110,7 +110,7 @@ This response also includes a Boolean `ok` status indicator.
  {'device_provider_name': 'ecobee',
   'display_name': 'Ecobee',
   'image_url': 'https://connect.getseam.com/assets/images/logos/ecobee_logo_square.png',
-  'provider_categories': ['stable']},
+  'provider_categories': ['stable', 'thermostats']},
  {'device_provider_name': 'four_suites',
   'display_name': '4SUITES',
   'image_url': 'https://connect.getseam.com/assets/images/logos/four_suites_logo_square.png',
@@ -130,15 +130,19 @@ This response also includes a Boolean `ok` status indicator.
  {'device_provider_name': 'minut',
   'display_name': 'Minut',
   'image_url': 'https://connect.getseam.com/assets/images/logos/minut_logo_wordmark.png',
-  'provider_categories': ['stable']},
+  'provider_categories': ['stable', 'noise_sensors']},
  {'device_provider_name': 'my_2n',
   'display_name': 'My2N',
   'image_url': 'https://connect.getseam.com/assets/images/logos/2n_logo_square.png',
   'provider_categories': ['stable']},
+ {'device_provider_name': 'nest',
+  'display_name': 'Google Nest Thermostats',
+  'image_url': 'https://connect.getseam.com/assets/images/logos/nest_logo_square.png',
+  'provider_categories': ['stable', 'thermostats']},
  {'device_provider_name': 'noiseaware',
   'display_name': 'Noiseaware',
   'image_url': 'https://connect.getseam.com/assets/images/logos/noiseaware_logo_square.png',
-  'provider_categories': ['stable']},
+  'provider_categories': ['stable', 'noise_sensors']},
  {'device_provider_name': 'nuki',
   'display_name': 'Nuki',
   'image_url': 'https://connect.getseam.com/assets/images/logos/nuki_logo_square.png',
@@ -155,6 +159,10 @@ This response also includes a Boolean `ok` status indicator.
   'display_name': 'SmartThings',
   'image_url': 'https://connect.getseam.com/assets/images/logos/smartthings_logo_square.png',
   'provider_categories': ['stable', 'consumer_smartlocks']},
+ {'device_provider_name': 'tedee',
+  'display_name': 'Tedee',
+  'image_url': 'https://connect.getseam.com/assets/images/logos/tedee.png',
+  'provider_categories': ['stable', 'consumer_smartlocks']},
  {'device_provider_name': 'ttlock',
   'display_name': 'TTLock',
   'image_url': 'https://connect.getseam.com/assets/images/logos/ttlock_logo_square.png',
@@ -162,7 +170,7 @@ This response also includes a Boolean `ok` status indicator.
  {'device_provider_name': 'wyze',
   'display_name': 'Wyze',
   'image_url': 'https://connect.getseam.com/assets/images/logos/wyze_logo_square.png',
-  'provider_categories': ['stable']},
+  'provider_categories': ['stable', 'consumer_smartlocks']},
  {'device_provider_name': 'yale',
   'display_name': 'Yale',
   'image_url': 'https://connect.getseam.com/assets/images/logos/yale_logo_square.png',
@@ -220,7 +228,8 @@ This response also includes a Boolean `ok` status indicator.
       "display_name": "Ecobee",
       "image_url": "https://connect.getseam.com/assets/images/logos/ecobee_logo_square.png",
       "provider_categories": [
-        "stable"
+        "stable",
+        "thermostats"
       ]
     },
     {
@@ -262,7 +271,8 @@ This response also includes a Boolean `ok` status indicator.
       "display_name": "Minut",
       "image_url": "https://connect.getseam.com/assets/images/logos/minut_logo_wordmark.png",
       "provider_categories": [
-        "stable"
+        "stable",
+        "noise_sensors"
       ]
     },
     {
@@ -274,11 +284,21 @@ This response also includes a Boolean `ok` status indicator.
       ]
     },
     {
+      "device_provider_name": "nest",
+      "display_name": "Google Nest Thermostats",
+      "image_url": "https://connect.getseam.com/assets/images/logos/nest_logo_square.png",
+      "provider_categories": [
+        "stable",
+        "thermostats"
+      ]
+    },
+    {
       "device_provider_name": "noiseaware",
       "display_name": "Noiseaware",
       "image_url": "https://connect.getseam.com/assets/images/logos/noiseaware_logo_square.png",
       "provider_categories": [
-        "stable"
+        "stable",
+        "noise_sensors"
       ]
     },
     {
@@ -317,6 +337,15 @@ This response also includes a Boolean `ok` status indicator.
       ]
     },
     {
+      "device_provider_name": "tedee",
+      "display_name": "Tedee",
+      "image_url": "https://connect.getseam.com/assets/images/logos/tedee.png",
+      "provider_categories": [
+        "stable",
+        "consumer_smartlocks"
+      ]
+    },
+    {
       "device_provider_name": "ttlock",
       "display_name": "TTLock",
       "image_url": "https://connect.getseam.com/assets/images/logos/ttlock_logo_square.png",
@@ -330,7 +359,8 @@ This response also includes a Boolean `ok` status indicator.
       "display_name": "Wyze",
       "image_url": "https://connect.getseam.com/assets/images/logos/wyze_logo_square.png",
       "provider_categories": [
-        "stable"
+        "stable",
+        "consumer_smartlocks"
       ]
     },
     {
@@ -385,7 +415,7 @@ This response also includes a Boolean `ok` status indicator.
     device_provider_name: 'ecobee',
     display_name: 'Ecobee',
     image_url: 'https://connect.getseam.com/assets/images/logos/ecobee_logo_square.png',
-    provider_categories: [ 'stable' ]
+    provider_categories: [ 'stable', 'thermostats' ]
   },
   {
     device_provider_name: 'four_suites',
@@ -415,7 +445,7 @@ This response also includes a Boolean `ok` status indicator.
     device_provider_name: 'minut',
     display_name: 'Minut',
     image_url: 'https://connect.getseam.com/assets/images/logos/minut_logo_wordmark.png',
-    provider_categories: [ 'stable' ]
+    provider_categories: [ 'stable', 'noise_sensors' ]
   },
   {
     device_provider_name: 'my_2n',
@@ -424,10 +454,16 @@ This response also includes a Boolean `ok` status indicator.
     provider_categories: [ 'stable' ]
   },
   {
+    device_provider_name: 'nest',
+    display_name: 'Google Nest Thermostats',
+    image_url: 'https://connect.getseam.com/assets/images/logos/nest_logo_square.png',
+    provider_categories: [ 'stable', 'thermostats' ]
+  },
+  {
     device_provider_name: 'noiseaware',
     display_name: 'Noiseaware',
     image_url: 'https://connect.getseam.com/assets/images/logos/noiseaware_logo_square.png',
-    provider_categories: [ 'stable' ]
+    provider_categories: [ 'stable', 'noise_sensors' ]
   },
   {
     device_provider_name: 'nuki',
@@ -454,6 +490,12 @@ This response also includes a Boolean `ok` status indicator.
     provider_categories: [ 'stable', 'consumer_smartlocks' ]
   },
   {
+    device_provider_name: 'tedee',
+    display_name: 'Tedee',
+    image_url: 'https://connect.getseam.com/assets/images/logos/tedee.png',
+    provider_categories: [ 'stable', 'consumer_smartlocks' ]
+  },
+  {
     device_provider_name: 'ttlock',
     display_name: 'TTLock',
     image_url: 'https://connect.getseam.com/assets/images/logos/ttlock_logo_square.png',
@@ -463,7 +505,7 @@ This response also includes a Boolean `ok` status indicator.
     device_provider_name: 'wyze',
     display_name: 'Wyze',
     image_url: 'https://connect.getseam.com/assets/images/logos/wyze_logo_square.png',
-    provider_categories: [ 'stable' ]
+    provider_categories: [ 'stable', 'consumer_smartlocks' ]
   },
   {
     device_provider_name: 'yale',
@@ -501,7 +543,7 @@ This response also includes a Boolean `ok` status indicator.
   device_provider_name="ecobee"
   display_name="Ecobee"
   image_url="https://connect.getseam.com/assets/images/logos/ecobee_logo_square.png"
-  provider_categories=["stable"]>, <Seam::DeviceProvider:0x00528
+  provider_categories=["stable", "thermostats"]>, <Seam::DeviceProvider:0x00528
   device_provider_name="four_suites"
   display_name="4SUITES"
   image_url="https://connect.getseam.com/assets/images/logos/four_suites_logo_square.png"
@@ -521,39 +563,47 @@ This response also includes a Boolean `ok` status indicator.
   device_provider_name="minut"
   display_name="Minut"
   image_url="https://connect.getseam.com/assets/images/logos/minut_logo_wordmark.png"
-  provider_categories=["stable"]>, <Seam::DeviceProvider:0x00618
+  provider_categories=["stable", "noise_sensors"]>, <Seam::DeviceProvider:0x00618
   device_provider_name="my_2n"
   display_name="My2N"
   image_url="https://connect.getseam.com/assets/images/logos/2n_logo_square.png"
   provider_categories=["stable"]>, <Seam::DeviceProvider:0x00640
+  device_provider_name="nest"
+  display_name="Google Nest Thermostats"
+  image_url="https://connect.getseam.com/assets/images/logos/nest_logo_square.png"
+  provider_categories=["stable", "thermostats"]>, <Seam::DeviceProvider:0x00668
   device_provider_name="noiseaware"
   display_name="Noiseaware"
   image_url="https://connect.getseam.com/assets/images/logos/noiseaware_logo_square.png"
-  provider_categories=["stable"]>, <Seam::DeviceProvider:0x00668
+  provider_categories=["stable", "noise_sensors"]>, <Seam::DeviceProvider:0x00690
   device_provider_name="nuki"
   display_name="Nuki"
   image_url="https://connect.getseam.com/assets/images/logos/nuki_logo_square.png"
-  provider_categories=["stable", "consumer_smartlocks"]>, <Seam::DeviceProvider:0x00690
+  provider_categories=["stable", "consumer_smartlocks"]>, <Seam::DeviceProvider:0x006b8
   device_provider_name="salto"
   display_name="Salto"
   image_url="https://connect.getseam.com/assets/images/logos/salto_logo_square.png"
-  provider_categories=["stable"]>, <Seam::DeviceProvider:0x006b8
+  provider_categories=["stable"]>, <Seam::DeviceProvider:0x006e0
   device_provider_name="schlage"
   display_name="Schlage"
   image_url="https://connect.getseam.com/assets/images/logos/schlage_logo_square.png"
-  provider_categories=["stable", "consumer_smartlocks"]>, <Seam::DeviceProvider:0x006e0
+  provider_categories=["stable", "consumer_smartlocks"]>, <Seam::DeviceProvider:0x00708
   device_provider_name="smartthings"
   display_name="SmartThings"
   image_url="https://connect.getseam.com/assets/images/logos/smartthings_logo_square.png"
-  provider_categories=["stable", "consumer_smartlocks"]>, <Seam::DeviceProvider:0x00708
+  provider_categories=["stable", "consumer_smartlocks"]>, <Seam::DeviceProvider:0x00730
+  device_provider_name="tedee"
+  display_name="Tedee"
+  image_url="https://connect.getseam.com/assets/images/logos/tedee.png"
+  provider_categories=["stable", "consumer_smartlocks"]>, <Seam::DeviceProvider:0x00758
   device_provider_name="ttlock"
   display_name="TTLock"
   image_url="https://connect.getseam.com/assets/images/logos/ttlock_logo_square.png"
-  provider_categories=["stable", "consumer_smartlocks"]>, <Seam::DeviceProvider:0x00730
+  provider_categories=["stable", "consumer_smartlocks"]>, <Seam::DeviceProvider:0x00780
   device_provider_name="wyze"
   display_name="Wyze"
   image_url="https://connect.getseam.com/assets/images/logos/wyze_logo_square.png"
-  provider_categories=["stable"]>, <Seam::DeviceProvider:0x00758
+  provider_categories=["stable", "consumer_smartlocks"]>, <Seam::DeviceProvider:0x007a8
   device_provider_name="yale"
   display_name="Yale"
   image_url="https://connect.getseam.com/assets/images/logos/yale_logo_square.png"
@@ -609,7 +659,8 @@ This response also includes a Boolean `ok` status indicator.
   "display_name": "Ecobee",
   "image_url": "https://connect.getseam.com/assets/images/logos/ecobee_logo_square.png",
   "provider_categories": [
-    "stable"
+    "stable",
+    "thermostats"
   ]
 }
 {
@@ -651,7 +702,8 @@ This response also includes a Boolean `ok` status indicator.
   "display_name": "Minut",
   "image_url": "https://connect.getseam.com/assets/images/logos/minut_logo_wordmark.png",
   "provider_categories": [
-    "stable"
+    "stable",
+    "noise_sensors"
   ]
 }
 {
@@ -663,11 +715,21 @@ This response also includes a Boolean `ok` status indicator.
   ]
 }
 {
+  "device_provider_name": "nest",
+  "display_name": "Google Nest Thermostats",
+  "image_url": "https://connect.getseam.com/assets/images/logos/nest_logo_square.png",
+  "provider_categories": [
+    "stable",
+    "thermostats"
+  ]
+},
+{
   "device_provider_name": "noiseaware",
   "display_name": "Noiseaware",
   "image_url": "https://connect.getseam.com/assets/images/logos/noiseaware_logo_square.png",
   "provider_categories": [
-    "stable"
+    "stable",
+    "noise_sensors"
   ]
 }
 {
@@ -700,6 +762,15 @@ This response also includes a Boolean `ok` status indicator.
   "device_provider_name": "smartthings",
   "display_name": "SmartThings",
   "image_url": "https://connect.getseam.com/assets/images/logos/smartthings_logo_square.png",
+  "provider_categories": [
+    "stable",
+    "consumer_smartlocks"
+  ]
+}
+{
+  "device_provider_name": "tedee",
+  "display_name": "Tedee",
+  "image_url": "https://connect.getseam.com/assets/images/logos/tedee.png",
   "provider_categories": [
     "stable",
     "consumer_smartlocks"
@@ -765,7 +836,7 @@ This response also includes a Boolean `ok` status indicator.
   "device_provider_name" : "ecobee",
   "display_name" : "Ecobee",
   "image_url" : "https://connect.getseam.com/assets/images/logos/ecobee_logo_square.png",
-  "provider_categories" : [ "stable" ]
+  "provider_categories" : [ "stable", "thermostats" ]
 }, {
   "device_provider_name" : "four_suites",
   "display_name" : "4SUITES",
@@ -790,17 +861,22 @@ This response also includes a Boolean `ok` status indicator.
   "device_provider_name" : "minut",
   "display_name" : "Minut",
   "image_url" : "https://connect.getseam.com/assets/images/logos/minut_logo_wordmark.png",
-  "provider_categories" : [ "stable" ]
+  "provider_categories" : [ "stable", "noise_sensors" ]
 }, {
   "device_provider_name" : "my_2n",
   "display_name" : "My2N",
   "image_url" : "https://connect.getseam.com/assets/images/logos/2n_logo_square.png",
   "provider_categories" : [ "stable" ]
 }, {
+  "device_provider_name": "nest",
+  "display_name": "Google Nest Thermostats",
+  "image_url": "https://connect.getseam.com/assets/images/logos/nest_logo_square.png",
+  "provider_categories": [ "stable", "thermostats" ]
+}, {
   "device_provider_name" : "noiseaware",
   "display_name" : "Noiseaware",
   "image_url" : "https://connect.getseam.com/assets/images/logos/noiseaware_logo_square.png",
-  "provider_categories" : [ "stable" ]
+  "provider_categories" : [ "stable", "noise_sensors" ]
 }, {
   "device_provider_name" : "nuki",
   "display_name" : "Nuki",
@@ -820,6 +896,11 @@ This response also includes a Boolean `ok` status indicator.
   "device_provider_name" : "smartthings",
   "display_name" : "SmartThings",
   "image_url" : "https://connect.getseam.com/assets/images/logos/smartthings_logo_square.png",
+  "provider_categories" : [ "stable", "consumer_smartlocks" ]
+}, {
+  "device_provider_name" : "tedee",
+  "display_name" : "Tedee",
+  "image_url" : "https://connect.getseam.com/assets/images/logos/tedee.png",
   "provider_categories" : [ "stable", "consumer_smartlocks" ]
 }, {
   "device_provider_name" : "ttlock",

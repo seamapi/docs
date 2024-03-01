@@ -28,7 +28,7 @@ Specify the desired credential by including the corresponding `acs_credential_id
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
   -d '{
-  "acs_credential_id": "d3bb3509-b3a6-4101-b697-27626327aa59"
+  "acs_credential_id": "66613064-63d9-4279-ad63-dcb192a2fe45"
 }'
 </code></pre>
 {% endtab %}
