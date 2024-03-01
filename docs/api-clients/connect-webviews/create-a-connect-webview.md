@@ -246,7 +246,6 @@ echo json_encode($webview);
 //       "noiseaware",
 //       "igloohome",
 //       "ecobee",
-//       "hubitat",
 //       "four_suites",
 //       "dormakaba_oracode"
 //       "wyze

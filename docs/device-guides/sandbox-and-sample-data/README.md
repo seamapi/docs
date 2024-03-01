@@ -58,10 +58,6 @@ description: >-
 [google-nest-thermostats-sample-data.md](google-nest-thermostats-sample-data.md)
 {% endcontent-ref %}
 
-{% content-ref url="hubitat-hub-sample-data.md" %}
-[hubitat-hub-sample-data.md](hubitat-hub-sample-data.md)
-{% endcontent-ref %}
-
 {% content-ref url="igloohome-sample-data.md" %}
 [igloohome-sample-data.md](igloohome-sample-data.md)
 {% endcontent-ref %}

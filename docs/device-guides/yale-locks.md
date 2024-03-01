@@ -22,7 +22,7 @@ The Seam integration is tailored for Yale Locks that are connected via the follo
 Seam does not currently support integration with the Yale Smart Living app (for implementations in Europe, the Middle East, India, and Africa) or the Yale Connect app (mainly for implementations in Latin America).
 {% endhint %}
 
-* **Z-Wave with** [**Aeotec SmartThings**](https://amzn.to/44OulH1) **or**[ **Hubitat Elevation hubs**](https://amzn.to/3Ki4krc): To use Yale Locks with these Z-Wave based hubs, the lock must have the [Yale Z-Wave network module](https://amzn.to/3DC9nis) installed. This module ensures seamless communication between the lock and the hub, allowing for integration into broader smart home setups.\
+* **Z-Wave with** [**Aeotec SmartThings**](https://amzn.to/44OulH1): To use Yale Locks with these Z-Wave based hubs, the lock must have the [Yale Z-Wave network module](https://amzn.to/3DC9nis) installed. This module ensures seamless communication between the lock and the hub, allowing for integration into broader smart home setups.\
   ![](../.gitbook/assets/yale-ayr202-zwv-usa-assure-lock-z-wave-plus-network-module-ayr202-zwv-usa.jpeg)\
   [**Yale Z-Wave Network Module**](https://www.amazon.com/Yale-Z-wave-Module-Electronic-AYR202-ZWV-USA/dp/B07B1G5LR9?crid=1M97DIL3OHT0E\&keywords=yale+z-wave+plus+module\&qid=1690480444\&sprefix=yale+z-wave+plus+module,aps,318\&sr=8-1\&ufe=app\_do:amzn1.fos.f5122f16-c3e8-4386-bf32-63e904010ad0\&linkCode=sl1\&tag=seam0f-20\&linkId=62ce481be465b16a59d4e8e1f69e4965\&language=en\_US\&ref\_=as\_li\_ss\_tl)
 

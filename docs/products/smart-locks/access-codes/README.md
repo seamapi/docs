@@ -81,9 +81,9 @@ For locks that support setting codes with a schedule, Seam will preload access c
 | ✅ Supported | ✖️ Not Supported  |
 | ----------- | ----------------- |
 | 2N          | Dormakaba Oracode |
-| August      | Hubitat           |
-| Igloohome   | Lockly            |
-| Kwikset     | SmartThings       |
+| August      | Lockly            |
+| Igloohome   | SmartThings       |
+| Kwikset     |                   |
 | Nuki        |                   |
 | Salto       |                   |
 | Schlage     |                   |

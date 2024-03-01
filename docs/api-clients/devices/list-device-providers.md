@@ -115,10 +115,6 @@ This response also includes a Boolean `ok` status indicator.
   'display_name': '4SUITES',
   'image_url': 'https://connect.getseam.com/assets/images/logos/four_suites_logo_square.png',
   'provider_categories': ['stable']},
- {'device_provider_name': 'hubitat',
-  'display_name': 'Hubitat',
-  'image_url': 'https://connect.getseam.com/assets/images/logos/hubitat_logo_square.png',
-  'provider_categories': ['stable']},
  {'device_provider_name': 'igloohome',
   'display_name': 'Igloo Home',
   'image_url': 'https://connect.getseam.com/assets/images/logos/igloohome_logo_square.png',
@@ -240,14 +236,6 @@ This response also includes a Boolean `ok` status indicator.
       "device_provider_name": "four_suites",
       "display_name": "4SUITES",
       "image_url": "https://connect.getseam.com/assets/images/logos/four_suites_logo_square.png",
-      "provider_categories": [
-        "stable"
-      ]
-    },
-    {
-      "device_provider_name": "hubitat",
-      "display_name": "Hubitat",
-      "image_url": "https://connect.getseam.com/assets/images/logos/hubitat_logo_square.png",
       "provider_categories": [
         "stable"
       ]
@@ -436,12 +424,6 @@ This response also includes a Boolean `ok` status indicator.
     provider_categories: [ 'stable' ]
   },
   {
-    device_provider_name: 'hubitat',
-    display_name: 'Hubitat',
-    image_url: 'https://connect.getseam.com/assets/images/logos/hubitat_logo_square.png',
-    provider_categories: [ 'stable' ]
-  },
-  {
     device_provider_name: 'igloohome',
     display_name: 'Igloo Home',
     image_url: 'https://connect.getseam.com/assets/images/logos/igloohome_logo_square.png',
@@ -565,10 +547,6 @@ This response also includes a Boolean `ok` status indicator.
   device_provider_name="four_suites"
   display_name="4SUITES"
   image_url="https://connect.getseam.com/assets/images/logos/four_suites_logo_square.png"
-  provider_categories=["stable"]>, <Seam::DeviceProvider:0x00550
-  device_provider_name="hubitat"
-  display_name="Hubitat"
-  image_url="https://connect.getseam.com/assets/images/logos/hubitat_logo_square.png"
   provider_categories=["stable"]>, <Seam::DeviceProvider:0x00578
   device_provider_name="igloohome"
   display_name="Igloo Home"
@@ -689,14 +667,6 @@ This response also includes a Boolean `ok` status indicator.
   "device_provider_name": "four_suites",
   "display_name": "4SUITES",
   "image_url": "https://connect.getseam.com/assets/images/logos/four_suites_logo_square.png",
-  "provider_categories": [
-    "stable"
-  ]
-}
-{
-  "device_provider_name": "hubitat",
-  "display_name": "Hubitat",
-  "image_url": "https://connect.getseam.com/assets/images/logos/hubitat_logo_square.png",
   "provider_categories": [
     "stable"
   ]
@@ -871,11 +841,6 @@ This response also includes a Boolean `ok` status indicator.
   "device_provider_name" : "four_suites",
   "display_name" : "4SUITES",
   "image_url" : "https://connect.getseam.com/assets/images/logos/four_suites_logo_square.png",
-  "provider_categories" : [ "stable" ]
-}, {
-  "device_provider_name" : "hubitat",
-  "display_name" : "Hubitat",
-  "image_url" : "https://connect.getseam.com/assets/images/logos/hubitat_logo_square.png",
   "provider_categories" : [ "stable" ]
 }, {
   "device_provider_name" : "igloohome",

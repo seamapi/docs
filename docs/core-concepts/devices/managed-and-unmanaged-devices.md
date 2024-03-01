@@ -415,8 +415,8 @@ console.log(connectWebview)
     'minut',       'my_2n',
     'kwikset',     'ttlock',
     'noiseaware',  'igloohome',
-    'ecobee',      'hubitat',
-    'four_suites'  'wyze'
+    'ecobee',      'four_suites',
+    'wyze'
   ],
   any_device_allowed: false,
   connect_webview_id: '323b4ffa-ce24-4cff-a965-ff532563ec7a',
