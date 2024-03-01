@@ -17,6 +17,7 @@
     * [Implementing Client Sessions for Device Management in the Backend](core-concepts/authentication/client-session-tokens/implementing-client-sessions-for-device-management-in-the-backend.md)
 * [Devices](core-concepts/devices/README.md)
   * [Displaying Device Health](core-concepts/devices/displaying-device-health.md)
+  * [Displaying Device Power Status](core-concepts/devices/displaying-device-power-status.md)
   * [Managed and Unmanaged Devices](core-concepts/devices/managed-and-unmanaged-devices.md)
   * [Adding Custom Metadata to a Device](core-concepts/devices/adding-custom-metadata-to-a-device.md)
   * [Filtering Devices by Custom Metadata](core-concepts/devices/filtering-devices-by-custom-metadata.md)
