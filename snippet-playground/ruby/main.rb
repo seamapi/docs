@@ -234,4 +234,37 @@ client = Seam::Client.new(base_uri: api_url, api_key: 'seam_test2scj_2c636ceHmdU
 
 # puts client.connected_accounts.delete("25aa45e4-ee1d-44a6-91a0-b53e8c06a6d5").inspect
 
-puts client.connected_accounts.list().inspect
+# puts client.connected_accounts.list().inspect
+
+# devices = client.devices.list(
+#   # custom_metadata_has: {
+#   #   "internal_account_id": "user-1"
+#   # }
+# )
+
+# puts devices.inspect
+
+# device = client.devices.get("36cf1a96-196d-41b0-9804-88154387f1f9")
+# puts "Online: " + device.properties['online'].to_s
+
+# device_connected_events = client.events.list(
+#   device_id: "36cf1a96-196d-41b0-9804-88154387f1f9",
+#   event_type: "device.connected",
+#   since: "2024-01-01T00:00:00Z"
+# )
+# puts device_connected_events.inspect
+
+# # device = client.devices.get("c2cc3831-f347-444e-b83b-d1f14dbb5893")
+# device = client.devices.get("36cf1a96-196d-41b0-9804-88154387f1f9")
+# if(device.properties['has_direct_power'] == true)
+#   puts "Power Source: Wired"
+# else
+#   puts "Power Source: Battery-powered"
+#   puts "Battery Level: " + device.properties['battery']['level'].to_s
+#   puts "Battery Status: " + device.properties['battery']['status']
+# end
+
+# puts client.devices.get("ffc4d67f-e3a6-4ef8-ac84-f3770750422a").inspect;
+
+# devices = client.devices.list(device_type: "honeywell_thermostat")
+# puts devices[4].inspect

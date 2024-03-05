@@ -46,11 +46,11 @@ var seam = new SeamClient(
 //   Console.WriteLine(device);
 // }
 
-// var deviceProviders = seam.Devices.ListDeviceProviders(providerCategory: Seam.Api.Devices.ListDeviceProvidersRequest.ProviderCategoryEnum.Stable);
-// foreach (var deviceProvider in deviceProviders)
-// {
-//   Console.WriteLine(deviceProvider);
-// }
+var deviceProviders = seam.Devices.ListDeviceProviders(providerCategory: Seam.Api.Devices.ListDeviceProvidersRequest.ProviderCategoryEnum.Stable);
+foreach (var deviceProvider in deviceProviders)
+{
+  Console.WriteLine(deviceProvider);
+}
 
 // Device device = seam.Devices.Get("30fd243b-3054-4384-a713-5487076a3826");
 // Console.WriteLine(device);
@@ -570,7 +570,75 @@ var seam = new SeamClient(
 
 // Console.WriteLine(createdConnectWebview);
 
-foreach (var connectedAccount in seam.ConnectedAccounts.List())
-{
-  Console.WriteLine(connectedAccount);
-}
+// foreach (var connectedAccount in seam.ConnectedAccounts.List())
+// {
+//   Console.WriteLine(connectedAccount);
+// }
+
+// var customMetadata = new Dictionary<string, string>()
+// {
+//   {"internal_account_id", "user-1"}
+// };
+
+// var devices = seam.Devices.List(
+//   // customMetadataHas: customMetadata
+// );
+
+// foreach (var device in devices)
+// {
+//   Console.WriteLine(device);
+// }
+
+// var customMetadata = new Dictionary<string, string>()
+// {
+//   {"internal_account_id", "user-1"}
+// };
+
+// var connectedAccountUpdate = seam.ConnectedAccounts.Update(
+//   connectedAccountId: "6e1cad57-b244-40ca-b4f3-30a46c8000d4",
+//   automaticallyManageNewDevices: true
+//   // customMetadata: customMetadata
+// );
+
+// Console.WriteLine(connectedAccountUpdate);
+
+// var customMetadata = new Dictionary<string, string>()
+// {
+//   {"internal_account_id", "user-1"}
+// };
+
+// var deviceUpdate = seam.Devices.Update(
+//   deviceId: "30fd243b-3054-4384-a713-5487076a3826",
+//   customMetadata: customMetadata
+// );
+
+// Console.WriteLine(deviceUpdate);
+
+// Console.WriteLine(seam.Devices.Get(deviceId: "f7a7fb02-9277-4354-8dd1-28e2d016a7a9"));
+
+// var device = seam.Devices.Get(deviceId: "36cf1a96-196d-41b0-9804-88154387f1f9");
+// Console.WriteLine("Online: " + device.Properties.Online);
+
+// var device_connected_events = seam.Events.List(
+//     deviceId: "36cf1a96-196d-41b0-9804-88154387f1f9",
+//     eventType: Seam.Api.Events.ListRequest.EventTypeEnum.DeviceConnected,
+//     since: "2024-01-01T00:00:00Z"
+// );
+// foreach (var device_connected_event in device_connected_events)
+// {
+//   Console.WriteLine(device_connected_event);
+// }
+
+// var device = seam.Devices.Get(deviceId: "c2cc3831-f347-444e-b83b-d1f14dbb5893");
+// var device = seam.Devices.Get(deviceId: "36cf1a96-196d-41b0-9804-88154387f1f9");
+// if (device.Properties.HasDirectPower == true)
+// {
+//   Console.WriteLine("Power Source: Wired");
+// } else {
+//   Console.WriteLine("Power Source: Battery-powered");
+//   if (device.Properties.Battery != null)
+//   {
+//     Console.WriteLine("Battery Level: " + device.Properties.Battery.Level);
+//     Console.WriteLine("Battery Status: " + device.Properties.Battery.Status);
+//   }
+// }

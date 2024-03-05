@@ -18,10 +18,13 @@ import com.seam.api.types.ConnectWebview;
 import com.seam.api.types.CustomMetadataValue;
 import com.seam.api.types.AcceptedProvider;
 import com.seam.api.types.ProviderCategory;
+import com.seam.api.types.DeviceType;
 import com.seam.api.types.SelectionMode;
 import com.seam.api.types.DevicesListDeviceProvidersRequestProviderCategory;
 import com.seam.api.types.ConnectedAccount;
+import com.seam.api.types.EventsListRequestEventType;
 import com.seam.api.resources.devices.requests.DevicesGetRequest;
+import com.seam.api.resources.devices.requests.DevicesListRequest;
 import com.seam.api.resources.locks.requests.LocksGetRequest;
 import com.seam.api.resources.locks.requests.LocksLockDoorRequest;
 import com.seam.api.resources.locks.requests.LocksUnlockDoorRequest;
@@ -41,6 +44,7 @@ import com.seam.api.resources.thermostats.requests.ThermostatsHeatRequest;
 import com.seam.api.resources.thermostats.requests.ThermostatsListRequest;
 import com.seam.api.resources.thermostats.requests.ThermostatsGetRequest;
 import com.seam.api.resources.thermostats.requests.ThermostatsUpdateRequest;
+import com.seam.api.resources.thermostats.requests.ThermostatsSetFanModeRequest;
 import com.seam.api.resources.thermostats.climatesettingschedules.requests.ClimateSettingSchedulesCreateRequest;
 import com.seam.api.resources.thermostats.climatesettingschedules.requests.ClimateSettingSchedulesListRequest;
 import com.seam.api.resources.thermostats.climatesettingschedules.requests.ClimateSettingSchedulesGetRequest;
@@ -48,10 +52,13 @@ import com.seam.api.resources.thermostats.climatesettingschedules.requests.Clima
 import com.seam.api.resources.thermostats.climatesettingschedules.requests.ClimateSettingSchedulesDeleteRequest;
 import com.seam.api.resources.noisesensors.noisethresholds.requests.NoiseThresholdsCreateRequest;
 import com.seam.api.resources.connectwebviews.requests.ConnectWebviewsCreateRequest;
+import com.seam.api.resources.connectwebviews.requests.ConnectWebviewsGetRequest;
 import com.seam.api.resources.devices.requests.DevicesListDeviceProvidersRequest;
 import com.seam.api.resources.devices.requests.DevicesUpdateRequest;
 import com.seam.api.resources.devices.unmanaged.requests.UnmanagedUpdateRequest;
 import com.seam.api.resources.connectedaccounts.requests.ConnectedAccountsDeleteRequest;
+// import com.seam.api.resources.connectedaccounts.requests.ConnectedAccountsUpdateRequest;
+import com.seam.api.resources.events.requests.EventsListRequest;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -543,6 +550,19 @@ public class Main {
 // System.out.println(createdConnectWebview);
 
 // ConnectWebview createdConnectWebview = seam.connectWebviews().create(ConnectWebviewsCreateRequest.builder()
+//                 .acceptedProviders(List.of(
+//                   AcceptedProvider.ECOBEE))
+//                 .build());
+// System.out.println(createdConnectWebview.getLoginSuccessful()); // false
+// System.out.println(createdConnectWebview.getUrl());
+
+// ConnectWebview updatedConnectWebview = seam.connectWebviews().get(ConnectWebviewsGetRequest.builder()
+//                 .connectWebviewId(createdConnectWebview.getConnectWebviewId())
+//                 .build());
+// System.out.println(updatedConnectWebview.getLoginSuccessful()); // true
+
+
+// ConnectWebview createdConnectWebview = seam.connectWebviews().create(ConnectWebviewsCreateRequest.builder()
 //                 .customRedirectUrl("https://example.com/redirect")
 //                 .customRedirectFailureUrl("https://example.com/failure-redirect")
 //                 .providerCategory(ProviderCategory.STABLE)
@@ -556,8 +576,102 @@ public class Main {
 //                 .build());
 
 
-System.out.println(seam.connectedAccounts().list());
+// System.out.println(seam.connectedAccounts().list());
 
+// Map<String, CustomMetadataValue> customMetadata =
+//     Map.of("internal_account_id", CustomMetadataValue.of(Optional.of("user-1")));
+
+// var devices = seam.devices().list(DevicesListRequest.builder()
+//                 .customMetadataHas(customMetadata)
+//                 .build());
+
+// System.out.println(devices);
+// System.out.println(seam.devices().list());
+
+// Map<String, CustomMetadataValue> customMetadata =
+//     Map.of("internal_account_id", CustomMetadataValue.of(Optional.of("user-1")));
+
+// seam.connectedAccounts().update(ConnectedAccountsUpdateRequest.builder()
+//         .connectedAccountId("6e1cad57-b244-40ca-b4f3-30a46c8000d4")
+//         // .automaticallyManageNewDevices(true)
+//         .custom_metadata(customMetadata)
+//         .build());
+
+// seam.devices().update(DevicesUpdateRequest.builder()
+//         .deviceId(deviceId)
+//         .name("My Lock2")
+//         .build());
+
+// Device device = seam.devices()
+//       .get(DevicesGetRequest.builder()
+//               .deviceId("36cf1a96-196d-41b0-9804-88154387f1f9")
+//               .build());
+// System.out.println("Online: " + device.getProperties().getOnline());
+
+// var deviceConnectedEvents = seam.events()
+//           .list(EventsListRequest.builder()
+//                   .deviceId("36cf1a96-196d-41b0-9804-88154387f1f9")
+//                   .eventType(EventsListRequestEventType.DEVICE_CONNECTED)
+//                   .since("2024-01-01T00:00:00Z")
+//                   .build());
+// System.out.println(deviceConnectedEvents);
+
+
+// Device device = seam.devices()
+//       .get(DevicesGetRequest.builder()
+//               .deviceId("c2cc3831-f347-444e-b83b-d1f14dbb5893")
+//               .build());
+// Device device = seam.devices()
+//       .get(DevicesGetRequest.builder()
+//               .deviceId("36cf1a96-196d-41b0-9804-88154387f1f9")
+//               .build());
+// if (device.getProperties().getHasDirectPower() == true)
+// {
+//   System.out.println("Power Source: Wired");
+// } else {
+//   System.out.println("Power Source: Battery-powered");
+//   System.out.println("Battery Level: " + device.getProperties().getBattery().getLevel());
+//   System.out.println("Battery Status: " + device.getProperties().getBattery().getStatus());
+// }
+
+//Doesn't work?!
+// var deviceId = "5ce2cd35-09b1-458c-bb08-51ee83c35be7";
+// seam.thermostats().setFanMode(ThermostatsUpdateRequest.builder()
+//                 .deviceId(deviceId)
+//                 .defaultClimateSetting(ThermostatsUpdateRequestDefaultClimateSetting.builder()
+//                         .hvacModeSetting(HvacModeSetting.OFF)
+//                         .build())
+//                 .build());
+// Device thermostat = seam.thermostats()
+//         .get(ThermostatsGetRequest.builder()
+//                 .deviceId(deviceId)
+//                 .build());
+// System.out.println("Thermostat ID: " + thermostat.getDeviceId());
+// System.out.println("Mode: " + thermostat.getProperties().getCurrentClimateSetting().get().getHvacModeSetting());
+
+// var devices = seam.devices().list(DevicesListRequest.builder()
+//                 .deviceType(DeviceType.ECOBEE_THERMOSTAT)
+//                 .build());
+
+// System.out.println(devices);
+
+// var devices = seam.devices().list(DevicesListRequest.builder()
+//                 .deviceType(DeviceType.NEST_THERMOSTAT)
+//                 .build());
+
+// System.out.println(devices);
+
+// var devices = seam.devices().list(DevicesListRequest.builder()
+//                 .deviceType(DeviceType.HONEYWELL_THERMOSTAT)
+//                 .build());
+
+// System.out.println(devices);
+
+Device device = seam.devices()
+        .get(DevicesGetRequest.builder()
+                .deviceId("06a561b6-09d2-401c-a25f-ddb1e1efd59e")
+                .build());
+System.out.println(device);
 
 
     }

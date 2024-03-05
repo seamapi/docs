@@ -459,10 +459,64 @@ seam = Seam(
 
 # pprint(seam.acs.entrances.list("8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4"))
 
-connected_accounts = seam.connected_accounts.list(
-  # custom_metadata_has = {
-  #   "internal_account_id": "user-1"
-  # }
-)
-pprint(connected_accounts)
+# connected_accounts = seam.connected_accounts.list(
+#   # custom_metadata_has = {
+#   #   "internal_account_id": "user-1"
+#   # }
+# )
+# pprint(connected_accounts)
 
+# devices = seam.devices.list(
+#   # custom_metadata_has = {
+#   #   "internal_account_id": "user-1"
+#   # }
+# )
+
+# pprint(devices)
+
+# connected_account_update = seam.connected_accounts.update(
+#     connected_account_id = "6e1cad57-b244-40ca-b4f3-30a46c8000d4",
+#     automatically_manage_new_devices = True
+# )
+
+# pprint(connected_account_update)
+
+# device_update = seam.devices.update(
+#     device = "f7a7fb02-9277-4354-8dd1-28e2d016a7a9",
+#     is_managed = True
+# )
+
+# pprint(device_update)
+
+# device = seam.devices.get("36cf1a96-196d-41b0-9804-88154387f1f9")
+# pprint("Online: " + str(device.properties.online))
+
+# device_connected_events = seam.events.list(
+#     device_id = "36cf1a96-196d-41b0-9804-88154387f1f9",
+#     event_type = "device.connected",
+#     since = "2024-01-01T00:00:00Z"
+# )
+# pprint(device_connected_events)
+
+# device = seam.devices.get("c2cc3831-f347-444e-b83b-d1f14dbb5893")
+# device = seam.devices.get("36cf1a96-196d-41b0-9804-88154387f1f9")
+# if device.properties.has_direct_power == True:
+#   pprint("Power Source: Wired")
+# else:
+#   pprint("Power Source: Battery-powered")
+#   pprint("Battery Level: " + str(device.properties.battery.level))
+#   pprint("Battery Status: " + device.properties.battery.status)
+
+# print(seam.devices.get("ffc4d67f-e3a6-4ef8-ac84-f3770750422a"))
+
+# device_battery_status_changed_events = seam.events.list(
+#     device_id = "36cf1a96-196d-41b0-9804-88154387f1f9",
+#     event_type = "device.battery_status_changed",
+#     since = "2024-01-01T00:00:00Z"
+# )
+# pprint(device_battery_status_changed_events)
+
+# devices = seam.devices.list(device_type="honeywell_thermostat")
+# pprint(devices[0])
+devices = seam.devices.list(device_type="nest_thermostat")
+pprint(devices[0])

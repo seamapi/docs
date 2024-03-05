@@ -532,8 +532,31 @@ const seam = new Seam({
 
 // console.log(await seam.connectedAccounts.list());
 
-console.log(await seam.connectedAccounts.list({
-  // custom_metadata_has: {
-  //   "internal_account_id": "user-1"
-  // }
-}));
+// console.log(await seam.connectedAccounts.list({
+//   // custom_metadata_has: {
+//   //   "internal_account_id": "user-1"
+//   // }
+// }));
+
+// const device = await seam.devices.get({device_id: "36cf1a96-196d-41b0-9804-88154387f1f9"});
+// console.log("Online:", device.properties.online);
+
+// const device_connected_events = await seam.events.list({
+//   device_id: "36cf1a96-196d-41b0-9804-88154387f1f9",
+//   event_type: "device.connected",
+//   since: "2024-01-01T00:00:00Z"
+// })
+// console.log(device_connected_events)
+
+// // const device = await seam.devices.get({device_id: "c2cc3831-f347-444e-b83b-d1f14dbb5893"});
+// const device = await seam.devices.get({device_id: "36cf1a96-196d-41b0-9804-88154387f1f9"});
+// if (device.properties.has_direct_power == true) {
+//   console.log("Power Source: Wired");
+// } else {
+//   console.log("Power Source: Battery-powered");
+//   console.log("Battery Level: " + device.properties.battery.level.toString());
+//   console.log("Battery Status: " + device.properties.battery.status);
+// }
+
+console.log(await seam.devices.get({device_id: "ffc4d67f-e3a6-4ef8-ac84-f3770750422a"}));
+
