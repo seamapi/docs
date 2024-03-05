@@ -53,7 +53,7 @@ Errors are returned in a list:
 
 Seam recommends adding error handling logic to you application for each generic error below. Seam may add more generic errors in the future, so your application should include a fallback case if it encounters an unknown generic error code.
 
-See our [recommended mitigations for access codes](https://docs.seam.co/latest/device-guides/recommended-mitigations-for-access-codes) for our recommended responses to these error codes.
+See our [troubleshooting tips for access codes](../../products/smart-locks/access-codes/troubleshooting-access-code-issues.md) for our recommended responses to these error codes.
 
 | Error Type                             | Description                                                                                                                                                                                                                                                                                                               |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -70,7 +70,7 @@ When Seam is able to provide more specific information beyond one of the generic
 If the device or connected account associated with an access code has an error, it will be attached to the access code alongside any other access code errors. Treat these errors as Specific Errors. See [Device Error Types](../devices/#device-error-types) and [Connected Account Error Types](../connected-accounts/#connected-account-error-types).
 {% endhint %}
 
-See our [recommended mitigations for access codes](https://docs.seam.co/latest/device-guides/recommended-mitigations-for-access-codes) for our recommended responses to these error codes.
+See our [troubleshooting tips for access codes](../../products/smart-locks/access-codes/troubleshooting-access-code-issues.md) for our recommended responses to these error codes.
 
 | Error Type                                         | Description                                                                                                                                                                                                                                                                                                                                                |
 | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
