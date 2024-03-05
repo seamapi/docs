@@ -23,7 +23,8 @@ Specify the access group for which you want to retrieve all users by including t
 {% tabs %}
 {% tab title="cURL (bash)" %}
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/acs/access_groups/list_users' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

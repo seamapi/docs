@@ -19,7 +19,8 @@ This request does not accept any request body parameters.
 {% tabs %}
 {% tab title="cURL (bash)" %}
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/user_identities/list' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

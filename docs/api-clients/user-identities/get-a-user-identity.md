@@ -23,7 +23,8 @@ Specify the desired user identity by including the corresponding `user_identity_
 {% tabs %}
 {% tab title="cURL (bash)" %}
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/user_identities/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

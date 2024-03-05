@@ -4,7 +4,7 @@ description: Get a specified unmanaged device
 
 # Get an Unmanaged Device
 
-Returns a specified [unmanaged device](../../core-concepts/devices.md#managed-devices-and-unmanaged-devices) (`device` object). An unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](../../products/smart-locks/access-codes/) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](../../core-concepts/devices.md#convert-an-unmanaged-device-to-managed).
+Returns a specified [unmanaged device](../../core-concepts/devices/#managed-devices-and-unmanaged-devices) (`device` object). An unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](../../products/smart-locks/access-codes/) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](../../core-concepts/devices/#convert-an-unmanaged-device-to-managed).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/devices/unmanaged/get" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
@@ -29,7 +29,8 @@ pprint(seam.devices.unmanaged.get("882dd63f-db9b-4210-bac2-68372aa0aff7"))
 
 {% tab title="cURL (bash)" %}
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/devices/unmanaged/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

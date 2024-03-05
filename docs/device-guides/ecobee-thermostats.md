@@ -23,7 +23,6 @@ This integration supports all [ecobee thermostats](https://www.ecobee.com/en-us/
 We support the following features:
 
 * [Configuring current thermostat settings](../products/thermostats/configure-current-climate-settings.md)
-* [Scheduling future climate settings](../products/thermostats/thermostats-climate-setting-schedules.md)
 
 ***
 

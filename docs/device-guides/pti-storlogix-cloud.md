@@ -71,6 +71,12 @@ Make sure that you obtain the appropriate credentials specifically for Storlogix
 
 ***
 
+## Brand-Specific PIN Code Restrictions
+
+The PIN code value must be an integer in the range 1-4294967296.
+
+***
+
 ## Brand-Specific Warnings
 
 The following warning might appear for PTI-related users:

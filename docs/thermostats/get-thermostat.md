@@ -69,8 +69,8 @@ print(thermostat)
 {% endtab %}
 
 {% tab title="Javascript" %}
-```typescript
-import Seam from "seamapi"
+```javascript
+import { Seam } from "seam"
 
 const seam = Seam()
 const deviceId = "123e4567-e89b-12d3-a456-426614174000"

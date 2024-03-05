@@ -2,7 +2,7 @@
 description: Learn how to connect and control your Nuki locks with the Seam API.
 ---
 
-# Get started with Nuki Locks
+# Get Started with Nuki Locks
 
 <figure><img src="../.gitbook/assets/guides/nuki-getting-seo-cover.jpg" alt=""><figcaption><p>Nuki Locks</p></figcaption></figure>
 
@@ -12,12 +12,74 @@ Seam provides a universal API to connect and control many brands of locks, inclu
 
 ## 1 — Install Seam SDK
 
-Seam provides client libraries for many languages such as Javascript, Python, Ruby, and PHP, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.
+Seam provides client libraries for many languages, such as JavaScript, Python, Ruby, PHP, and others, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.
 
-* **Javascript:** `npm i seamapi` ([npm](https://www.npmjs.com/package/seamapi), [github](https://github.com/seamapi/javascript))
-* **Python:** `pip install seamapi` ([pip](https://pypi.org/project/seamapi/), [github](https://github.com/seamapi/python))
-* **Ruby:** `bundle add seamapi` ([rubygem](https://rubygems.org/gems/seamapi), [github](https://github.com/seamapi/ruby))
-* **PHP:** `composer require seamapi/seam` ([packagist](https://packagist.org/packages/seamapi/seam), [github](https://github.com/seamapi/php))
+* JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
+* Python ([pip](https://pypi.org/project/seamapi/), [GitHub](https://github.com/seamapi/python))
+* Ruby Gem ([rubygem](https://rubygems.org/gems/seamapi), [GitHub](https://github.com/seamapi/ruby))
+* PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
+* Java ([GitHub](https://github.com/seamapi/java))
+* C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
+* Go ([GitHub](https://github.com/seamapi/go))
+
+{% tabs %}
+{% tab title="JavaScript" %}
+```bash
+npm i seam
+```
+{% endtab %}
+
+{% tab title="Python" %}
+```bash
+pip install seamapi
+# For some development environments, use pip3 in this command instead of pip.
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```bash
+bundle add seamapi
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+```bash
+composer require seamapi/seam
+```
+{% endtab %}
+
+{% tab title="Java" %}
+**Gradle:**
+
+```gradle
+// build.gradle
+dependencies {
+    implementation 'io.github.seamapi:java:0.x.x'
+}
+```
+
+**Maven:**
+
+```xml
+<!-- pom.xml -->
+<dependency>
+    <groupId>io.github.seamapi</groupId>
+    <artifactId>java</artifactId>
+    <version>0.x.x</version>
+</dependency>
+```
+{% endtab %}
+
+{% tab title="C#" %}
+Install using [nuget](https://www.nuget.org/packages/Seam).
+{% endtab %}
+
+{% tab title="Go" %}
+```bash
+go get github.com/seamapi/go
+```
+{% endtab %}
+{% endtabs %}
 
 Once installed, [sign-up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:
 
@@ -312,7 +374,7 @@ $seam->locks->lock_door($lock->device_id);
 
 Some Nuki locks also have a keypad paired to them to program access codes. These codes can then be entered to unlock a Nuki lock.
 
-The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on an Nuki lock. You can find out more about Nuki lock access code in our [core concept section on access codes.](../products/smart-locks/access-codes/)
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Nuki lock. You can find out more about Nuki lock access code in our [core concept section on access codes.](../products/smart-locks/access-codes/)
 
 {% hint style="info" %}
 Nuki does not let you create a code starting with the digits "12". Codes cannot contain the digit 0.

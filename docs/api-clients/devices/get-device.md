@@ -4,7 +4,7 @@ description: Get a specified device
 
 # Get a Device
 
-Returns a specified [device](../../core-concepts/devices.md) (`device` object).
+Returns a specified [device](../../core-concepts/devices/) (`device` object).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/devices/get" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
@@ -29,7 +29,8 @@ pprint(seam.devices.get("30fd243b-3054-4384-a713-5487076a3826"))
 
 {% tab title="cURL (bash)" %}
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/devices/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

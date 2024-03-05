@@ -6,7 +6,7 @@ description: Learn how to retrieve climate setting schedules by device or by spe
 
 ## Retrieving All Climate Setting Schedules for a Device
 
-To retrieve all [climate setting schedules](thermostats-climate-setting-schedules.md#climate-setting-schedules) for a device, include the `device_id` in the [List Climate Setting Schedules](../../thermostats/climate-setting-schedules/list-climate-setting-schedules.md) request.
+To retrieve all [climate setting schedules](thermostats-climate-setting-schedules.md#climate-setting-schedules) for a device, include the `device_id` in the [List Climate Setting Schedules](../../../thermostats/climate-setting-schedules/list-climate-setting-schedules.md) request.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -61,7 +61,8 @@ pprint(climate_setting_schedules)
 **Request:**
 
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/thermostats/climate_setting_schedules/list' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
@@ -283,7 +284,7 @@ System.out.println(climateSettingSchedules);
 
 ## Retrieving Individual Climate Setting Schedules
 
-To retrieve a specific [climate setting schedule](thermostats-climate-setting-schedules.md#climate-setting-schedules), include the desired `climate_setting_schedule_id` in the [Get Climate Setting Schedule](../../thermostats/climate-setting-schedules/get-climate-setting-schedule.md) request.
+To retrieve a specific [climate setting schedule](thermostats-climate-setting-schedules.md#climate-setting-schedules), include the desired `climate_setting_schedule_id` in the [Get Climate Setting Schedule](../../../thermostats/climate-setting-schedules/get-climate-setting-schedule.md) request.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -322,7 +323,8 @@ ClimateSettingSchedule(automatic_heating_enabled=True,
 **Request:**
 
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/thermostats/climate_setting_schedules/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

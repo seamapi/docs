@@ -2,22 +2,23 @@
 description: Create access codes across multiple devices that share a common code
 ---
 
-# Create many Access Codes
+# Create Many Access Codes
 
 {% swagger src="../../.gitbook/assets/openapi (2).json" path="/access_codes/create_multiple" method="post" %}
 [openapi (2).json](<../../.gitbook/assets/openapi (2).json>)
 {% endswagger %}
 
-  ### Code Example
+### Code Example
 
 {% tabs %}
-{% tab title="Javascript" %}
+{% tab title="JavaScript" %}
 ```javascript
 await seam.accessCodes.createMultiple({
     device_id: [
       "a83690b2-2b70-409a-9a94-426699b84c97", 
       "7bfe1838-5e64-432c-adb6-34e971bda001"
     ],
+    preferred_code_length: 4
 });
 
 /*
@@ -54,6 +55,7 @@ await seam.accessCodes.createMultiple({
 | `starts_at`                           | <p>type: string<br>Optional</p>                           | From when is the code valid                                                                                                                                                |
 | `ends_at`                             | <p>type: string<br>Optional</p>                           | Code expiry                                                                                                                                                                |
 | `behavior_when_code_cannot_be_shared` | <p>type: enum<br>Optional, default <code>throw</code></p> | If `throw`, no access codes will be created if any device cannot share a code. If `create_random_code`, a random code will be created on devices that cannot share a code. |
+| `preferred_code_length`               | <p>type: number<br>Optional</p>                           | <p>Preferred code length<br>If the affected devices do not support the preferred code length, Seam reverts to using the shortest supported code length.</p>                |
 
 ### Response
 

@@ -44,45 +44,32 @@ pprint(created_connect_webview)
 **Response:**
 
 ```
-ConnectWebview(workspace_id='398d80b7-3f96-47c2-b85a-6f8ba21d07be',
-               connect_webview_id='2c852289-ee42-49d0-bddc-0410b518003d',
-               status='pending',
-               url='https://connect.getseam.com/connect_webviews/view?connect_webview_id=2c852289-ee42-49d0-bddc-0410b518003d&auth_token=z7Wu2Lc85gYUbNUhdvCWaEhmQv61FziA',
-               login_successful=False,
-               device_selection_mode='none',
-               any_provider_allowed=False,
-               any_device_allowed=False,
-               created_at='2023-11-15T23:24:36.947Z',
-               custom_metadata={},
-               connected_account_id=None,
-               authorized_at=None,
-               custom_redirect_url='https://example.com/redirect',
-               custom_redirect_failure_url='https://example.com/failure-redirect',
-               accepted_providers=['august',
-                                   'avigilon_alta',
-                                   'brivo',
-                                   'schlage',
-                                   'smartthings',
-                                   'yale',
-                                   'nuki',
-                                   'salto',
-                                   'controlbyweb',
-                                   'minut',
-                                   'my_2n',
-                                   'kwikset',
-                                   'ttlock',
-                                   'noiseaware',
-                                   'igloohome',
-                                   'ecobee',
-                                   'hubitat',
-                                   'four_suites',
-                                   'dormakaba_oracode',
-                                   'lockly',
-                                   'wyze'],
-               accepted_devices=[],
-               selected_provider=None,
-               wait_for_device_creation=True,
-               automatically_manage_new_devices=True)
+ConnectWebview(
+    workspace_id='398d80b7-3f96-47c2-b85a-6f8ba21d07be',
+    connect_webview_id='2c852289-ee42-49d0-bddc-0410b518003d',
+    status='pending',
+    url='https://connect.getseam.com/connect_webviews/view?connect_webview_id=2c852289-ee42-49d0-bddc-0410b518003d&auth_token=z7Wu2Lc85gYUbNUhdvCWaEhmQv61FziA',
+    login_successful=False,
+    device_selection_mode='none',
+    any_provider_allowed=False,
+    any_device_allowed=False,
+    created_at='2023-11-15T23:24:36.947Z',
+    custom_metadata={},
+    connected_account_id=None,
+    authorized_at=None,
+    custom_redirect_url='https://example.com/redirect',
+    custom_redirect_failure_url='https://example.com/failure-redirect',
+    accepted_providers=[
+        'august', 'avigilon_alta', 'brivo', 'schlage', 'smartthings', 'yale', 'nuki', 
+        'salto', 'controlbyweb', 'minut', 'my_2n', 'kwikset', 'tedee', 'ttlock', 
+        'nest', 'noiseaware', 'igloohome', 'ecobee', 'four_suites', 
+        'dormakaba_oracode', 'lockly', 'wyze'
+    ],
+    accepted_devices=[],
+    selected_provider=None,
+    wait_for_device_creation=True,
+    automatically_manage_new_devices=True
+)
 ```
 {% endtab %}
 
@@ -128,11 +115,12 @@ curl -X 'POST' \
       "minut",
       "my_2n",
       "kwikset",
+      "tedee",
       "ttlock",
+      "nest",
       "noiseaware",
       "igloohome",
       "ecobee",
-      "hubitat",
       "four_suites",
       "dormakaba_oracode",
       "lockly",
@@ -186,11 +174,11 @@ console.log(createdConnectWebview)
     'nuki',              'salto',
     'controlbyweb',      'minut',
     'my_2n',             'kwikset',
-    'ttlock',            'noiseaware',
+    'tedee',             'ttlock',
+    'nest',              'noiseaware',
     'igloohome',         'ecobee',
-    'hubitat',           'four_suites',
-    'dormakaba_oracode', 'lockly',
-    'wyze'
+    'four_suites',       'dormakaba_oracode',
+    'lockly',            'wyze'
   ],
   any_device_allowed: false,
   connect_webview_id: '28fa1da1-d4ab-454c-a622-3ca95f22028a',
@@ -231,7 +219,7 @@ puts created_connect_webview.inspect
   accepted_devices=[]
   login_successful=false
   selected_provider=nil
-  accepted_providers=["august", "avigilon_alta", "brivo", "schlage", "smartthings", "yale", "nuki", "salto", "controlbyweb", "minut", "my_2n", "kwikset", "ttlock", "noiseaware", "igloohome", "ecobee", "hubitat", "four_suites", "dormakaba_oracode", "lockly", "wyze"]
+  accepted_providers=["august", "avigilon_alta", "brivo", "schlage", "smartthings", "yale", "nuki", "salto", "controlbyweb", "minut", "my_2n", "kwikset", "tedee", "ttlock", "nest", "noiseaware", "igloohome", "ecobee", "four_suites", "dormakaba_oracode", "lockly", "wyze"]
   any_device_allowed=false
   connect_webview_id="c1350df4-278f-42cc-9c16-4f9e41103796"
   custom_redirect_url="https://example.com/redirect"
@@ -278,11 +266,12 @@ Console.WriteLine(createdConnectWebview);
     "minut",
     "my_2n",
     "kwikset",
+    "tedee",
     "ttlock",
+    "nest",
     "noiseaware",
     "igloohome",
     "ecobee",
-    "hubitat",
     "four_suites",
     "dormakaba_oracode",
     "lockly",
@@ -316,7 +305,7 @@ System.out.println(createdConnectWebview);
   "url" : "https://connect.getseam.com/connect_webviews/view?connect_webview_id=945554d6-ab1f-4f82-9683-21003f547cd1&auth_token=3ArqVmE7WzA4SWpMLypojEChSsvjPH5s9",
   "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
   "device_selection_mode" : "none",
-  "accepted_providers" : [ "august", "avigilon_alta", "brivo", "schlage", "smartthings", "yale", "nuki", "salto", "controlbyweb", "minut", "my_2n", "kwikset", "ttlock", "noiseaware", "igloohome", "ecobee", "hubitat", "four_suites", "dormakaba_oracode", "lockly", "wyze" ],
+  "accepted_providers" : [ "august", "avigilon_alta", "brivo", "schlage", "smartthings", "yale", "nuki", "salto", "controlbyweb", "minut", "my_2n", "kwikset", "tedee", "ttlock", "nest", "noiseaware", "igloohome", "ecobee", "four_suites", "dormakaba_oracode", "lockly", "wyze" ],
   "any_provider_allowed" : false,
   "any_device_allowed" : false,
   "created_at" : "2023-11-15T23:39:34.136Z",
@@ -425,11 +414,12 @@ ConnectWebview(workspace_id='398d80b7-3f96-47c2-b85a-6f8ba21d07be',
                                    'minut',
                                    'my_2n',
                                    'kwikset',
+                                   'tedee',
                                    'ttlock',
+                                   'nest',
                                    'noiseaware',
                                    'igloohome',
                                    'ecobee',
-                                   'hubitat',
                                    'four_suites',
                                    'dormakaba_oracode',
                                    'lockly',
@@ -483,11 +473,12 @@ curl -X 'POST' \
       "minut",
       "my_2n",
       "kwikset",
+      "tedee",
       "ttlock",
+      "nest",
       "noiseaware",
       "igloohome",
       "ecobee",
-      "hubitat",
       "four_suites",
       "dormakaba_oracode",
       "lockly",
@@ -541,11 +532,11 @@ console.log(createdConnectWebview)
     'nuki',              'salto',
     'controlbyweb',      'minut',
     'my_2n',             'kwikset',
-    'ttlock',            'noiseaware',
+    'tedee',             'ttlock',
+    'nest',              'noiseaware',
     'igloohome',         'ecobee',
-    'hubitat',           'four_suites',
-    'dormakaba_oracode', 'lockly',
-    'wyze'
+    'four_suites',       'dormakaba_oracode',
+    'lockly',            'wyze'
   ],
   any_device_allowed: false,
   connect_webview_id: '28fa1da1-d4ab-454c-a622-3ca95f22028a',
@@ -586,7 +577,7 @@ puts created_connect_webview.inspect
   accepted_devices=[]
   login_successful=false
   selected_provider=nil
-  accepted_providers=["august", "avigilon_alta", "brivo", "schlage", "smartthings", "yale", "nuki", "salto", "controlbyweb", "minut", "my_2n", "kwikset", "ttlock", "noiseaware", "igloohome", "ecobee", "hubitat", "four_suites", "dormakaba_oracode", "lockly", "wyze"]
+  accepted_providers=["august", "avigilon_alta", "brivo", "schlage", "smartthings", "yale", "nuki", "salto", "controlbyweb", "minut", "my_2n", "kwikset", "tedee", "ttlock", "nest", "noiseaware", "igloohome", "ecobee", "four_suites", "dormakaba_oracode", "lockly", "wyze"]
   any_device_allowed=false
   connect_webview_id="c1350df4-278f-42cc-9c16-4f9e41103796"
   custom_redirect_url="https://example.com/redirect"
@@ -633,11 +624,12 @@ Console.WriteLine(createdConnectWebview);
     "minut",
     "my_2n",
     "kwikset",
+    "tedee",
     "ttlock",
+    "nest",
     "noiseaware",
     "igloohome",
     "ecobee",
-    "hubitat",
     "four_suites",
     "dormakaba_oracode",
     "lockly",
@@ -671,7 +663,7 @@ System.out.println(createdConnectWebview);
   "url" : "https://connect.getseam.com/connect_webviews/view?connect_webview_id=945554d6-ab1f-4f82-9683-21003f547cd1&auth_token=3ArqVmE7WzA4SWpMLypojEChSsvjPH5s9",
   "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
   "device_selection_mode" : "none",
-  "accepted_providers" : [ "august", "avigilon_alta", "brivo", "schlage", "smartthings", "yale", "nuki", "salto", "controlbyweb", "minut", "my_2n", "kwikset", "ttlock", "noiseaware", "igloohome", "ecobee", "hubitat", "four_suites", "dormakaba_oracode", "lockly", "wyze" ],
+  "accepted_providers" : [ "august", "avigilon_alta", "brivo", "schlage", "smartthings", "yale", "nuki", "salto", "controlbyweb", "minut", "my_2n", "kwikset", "tedee", "ttlock", "nest", "noiseaware", "igloohome", "ecobee", "four_suites", "dormakaba_oracode", "lockly", "wyze" ],
   "any_provider_allowed" : false,
   "any_device_allowed" : false,
   "created_at" : "2023-11-15T23:39:34.136Z",

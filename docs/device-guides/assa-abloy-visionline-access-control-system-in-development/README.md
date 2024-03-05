@@ -6,7 +6,7 @@ description: Guide for using the ASSA ABLOY Visionline Access Control System wit
 
 ## Overview
 
-Seam integrates seamlessly with the [Assa Abloy Visionline Access Control System](https://www.assaabloyglobalsolutions.com/en/hospitality-solutions/access-management-systems-for-hotels#gw-group-text-and-media-14987d7731) (ACS), a widely-used on-premise control platform for hotels. This system supports doors, elevators, turnstiles, and gates, enabling you to secure either a single building or multiple buildings using the same setup. Visionline uses a data-on-card platform, significantly reducing installation costs because the locks can function offline. Additionally, the capability of the system to operate independently of network connectivity enhances the reliability and flexibility.
+Seam integrates seamlessly with the [ASSA ABLOY Visionline Access Control System](https://www.assaabloyglobalsolutions.com/en/hospitality-solutions/access-management-systems-for-hotels#gw-group-text-and-media-14987d7731) (ACS), a widely-used on-premise control platform for hotels. This system supports doors, elevators, turnstiles, and gates, enabling you to secure either a single building or multiple buildings using the same setup. Visionline uses a data-on-card platform, significantly reducing installation costs because the locks can function offline. Additionally, the capability of the system to operate independently of network connectivity enhances the reliability and flexibility.
 
 ***
 
@@ -74,6 +74,12 @@ When connecting a Visionline ACS in your sandbox test environment, you can use t
 
 [ASSA ABLOY Visionline Access Control System Sample Data](../sandbox-and-sample-data/assa-abloy-visionline-access-management-system-sample-data.md)
 {% endhint %}
+
+***
+
+## Brand-Specific Credential Restrictions
+
+When creating a credential, you must set `is_multi_phone_sync_credential` to `true` or `external_type` to `visionline_card`. For more information, see [Configuring Visionline Mobile Credentials](credential-types.md) and [Issuing Credentials](../../products/access-systems/issuing-credentials.md).
 
 ***
 

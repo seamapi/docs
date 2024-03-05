@@ -4,7 +4,7 @@ description: Guide for using Nuki locks with Seam
 
 # Nuki Locks
 
-<figure><img src="../.gitbook/assets/nuki-manufacturer-page-cover-light.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/nuki-manufacturer-page-cover-light.png" alt="Use Nuki locks with Seam."><figcaption></figcaption></figure>
 
 ## Overview
 

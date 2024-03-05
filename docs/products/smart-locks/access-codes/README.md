@@ -15,7 +15,7 @@ layout:
     visible: true
 ---
 
-# Access Codes
+# Managing Access Codes
 
 <figure><img src="../../../.gitbook/assets/code_unlock.gif" alt=""><figcaption></figcaption></figure>
 
@@ -80,12 +80,14 @@ For locks that support setting codes with a schedule, Seam will preload access c
 
 | ✅ Supported | ✖️ Not Supported  |
 | ----------- | ----------------- |
-| 2N          | Hubitat           |
+| 2N          | Dormakaba Oracode |
 | August      | Lockly            |
-| Igloohome   | Nuki              |
-| Kwikset     | SmartThings       |
-| Salto       | Dormakaba Oracode |
+| Igloohome   | SmartThings       |
+| Kwikset     |                   |
+| Nuki        |                   |
+| Salto       |                   |
 | Schlage     |                   |
+| Tedee       |                   |
 | TTLock      |                   |
 | Yale        |                   |
 | Wyze        |                   |

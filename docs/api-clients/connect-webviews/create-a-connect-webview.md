@@ -91,44 +91,93 @@ Alternative URL to redirect the user on error. If this is not set, falls back to
 ### Code Example
 
 {% tabs %}
-{% tab title="Javascript" %}
+{% tab title="JavaScript" %}
 ```javascript
 await seam.connectWebviews.create({
     provider_category: "stable",
 });
 
 /*{
-  url: 'https://connect.getseam.com/connect_webviews/view?connect_webview_id=7a85bb60-3d0c-4bf1-b75d-c802df011509&auth_token=DTnrAuQU4FCEz2koXGZ7wJ6Yi1owHb3d1',
+  url: 'https://connect.getseam.com/connect_webviews/view?connect_webview_id=28fa1da1-d4ab-454c-a622-3ca95f22028a&auth_token=2r2Rn8V5QUtxE79gNhTmTK58KkuqrwU8d',
   status: 'pending',
-  created_at: '2022-08-23T15:14:49.672196+00:00',
-  workspace_id: 'f97073eb-c003-467a-965b-e6dba3a0131d',
+  workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be',
+  custom_metadata: {},
   accepted_devices: [],
   login_successful: false,
-  provider_category: "stable",
-  any_device_allowed: null,
-  connect_webview_id: '7a85bb60-3d0c-4bf1-b75d-c802df011509',
+  selected_provider: null,
+  accepted_providers: [
+    'august',            'avigilon_alta',
+    'brivo',             'schlage',
+    'smartthings',       'yale',
+    'nuki',              'salto',
+    'controlbyweb',      'minut',
+    'my_2n',             'kwikset',
+    'tedee',             'ttlock',
+    'nest',              'noiseaware',
+    'igloohome',         'ecobee',
+    'hubitat',           'four_suites',
+    'dormakaba_oracode', 'lockly',
+    'wyze'
+  ],
+  any_device_allowed: false,
+  connect_webview_id: '28fa1da1-d4ab-454c-a622-3ca95f22028a',
   custom_redirect_url: null,
-  custom_redirect_failure_url: null,
   any_provider_allowed: false,
-  device_selection_mode: 'none'
+  device_selection_mode: 'none',
+  wait_for_device_creation: true,
+  custom_redirect_failure_url: null,
+  automatically_manage_new_devices: true,
+  created_at: '2023-11-15T23:28:03.845Z',
+  authorized_at: null
 }*/
 ```
 {% endtab %}
 
 {% tab title="Python" %}
-```python
-seam.connect_webviews.create(provider_category="stable")
+<pre class="language-python"><code class="lang-python">seam.connect_webviews.create(provider_category="stable")
 
-# ConnectWebview(
-#   connect_webview_id='61c2877a-81e0-4474-ba8d-f96950dc095f',
-#   status='pending',
-#   url='https://connect.getseam.com/connect_webviews/viewconnect_webview_id=61c277a-81e0-4474-ba8d-f96950dc095f&auth_token=Codur8hWGnxJBv7rgoEg2mBDbYY4xnMXh',
-#   login_successful=False,
-#   custom_redirect_url=NOne,
-#   custom_redirect_failure_url=None,
-#   connected_account_id=None
-# )
-```
+# ConnectWebview(workspace_id='398d80b7-3f96-47c2-b85a-6f8ba21d07be',
+<strong>#              connect_webview_id='2c852289-ee42-49d0-bddc-0410b518003d',
+</strong>#              status='pending',
+#              url='https://connect.getseam.com/connect_webviews/view?connect_webview_id=2c852289-ee42-49d0-bddc-0410b518003d&#x26;auth_token=z7Wu2Lc85gYUbNUhdvCWaEhmQv61FziA',
+#              login_successful=False,
+#              device_selection_mode='none',
+#              any_provider_allowed=False,
+#              any_device_allowed=False,
+#              created_at='2023-11-15T23:24:36.947Z',
+#              custom_metadata={},
+#              connected_account_id=None,
+#              authorized_at=None,
+#              custom_redirect_url=None,
+#              custom_redirect_failure_url=None,
+#              accepted_providers=['august',
+#                                  'avigilon_alta',
+#                                  'brivo',
+#                                  'schlage',
+#                                  'smartthings',
+#                                  'yale',
+#                                  'nuki',
+#                                  'salto',
+#                                  'controlbyweb',
+#                                  'minut',
+#                                  'my_2n',
+#                                  'kwikset',
+#                                  'tedee',
+#                                  'ttlock',
+#                                  'nest',
+#                                  'noiseaware',
+#                                  'igloohome',
+#                                  'ecobee',
+#                                  'hubitat',
+#                                  'four_suites',
+#                                  'dormakaba_oracode',
+#                                  'lockly',
+#                                  'wyze'],
+#              accepted_devices=[],
+#              selected_provider=None,
+#              wait_for_device_creation=True,
+#              automatically_manage_new_devices=True)
+</code></pre>
 {% endtab %}
 
 {% tab title="Ruby" %}
@@ -137,20 +186,24 @@ seam.connect_webviews.create(
   provider_category: "stable"
 )
 
-# <Seam::ConnectWebview:0x006a950
-#   url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=123e4567-e89b-12d3-a456-426614174000&auth_token=q123DASDASKd23DADdad29"
-#   status="pending"         
-#   created_at="2022-07-06T23:20:09.785729+00:00"
-#   workspace_id="123e4567-e89b-12d3-a456-426614174000"
-#   accepted_devices=[]
-#   login_successful=false
-#   accepted_providers=["smartthings"]
-#   any_device_allowed=nil
-#   connect_webview_id="123e4567-e89b-12d3-a456-426614174000"
-#   custom_redirect_url=nil
-#   custom_redirect_failure_url=nil
-#   any_provider_allowed=false
-#   device_selection_mode="none">
+# <Seam::ConnectWebview:0x00438
+# url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=c1350df4-278f-42cc-9c16-4f9e41103796&auth_token=6zrib4wrGZMDxvJxPQQFiB6snmx7UAU6E"
+# status="pending"
+# workspace_id="398d80b7-3f96-47c2-b85a-6f8ba21d07be"
+# custom_metadata={}
+# accepted_devices=[]
+# login_successful=false
+# selected_provider=nil
+# accepted_providers=["august", "avigilon_alta", "brivo", "schlage", "smartthings", "yale", "nuki", "salto", "controlbyweb", "minut", "my_2n", "kwikset", "tedee", "ttlock", "nest", "noiseaware", "igloohome", "ecobee", "hubitat", "four_suites", "dormakaba_oracode", "lockly", "wyze"]
+# any_device_allowed=false
+# connect_webview_id="c1350df4-278f-42cc-9c16-4f9e41103796"
+# custom_redirect_url=nil
+# any_provider_allowed=false
+# device_selection_mode="none"
+# wait_for_device_creation=true
+# custom_redirect_failure_url=nil
+# automatically_manage_new_devices=true
+# created_at=2023-11-15 23:31:12.082 UTC>
 ```
 {% endtab %}
 
@@ -187,11 +240,12 @@ echo json_encode($webview);
 //       "minut",
 //       "my_2n",
 //       "kwikset",
+//       "tedee",
 //       "ttlock",
+//       "nest",
 //       "noiseaware",
 //       "igloohome",
 //       "ecobee",
-//       "hubitat",
 //       "four_suites",
 //       "dormakaba_oracode"
 //       "wyze
@@ -213,18 +267,18 @@ echo json_encode($webview);
 {% endtabs %}
 
 {% hint style="info" %}
-**You should make a new connect\_webview for each unique login request:** Each `connect_webview` tracks the user that signed in with it, you'll get an error if you re-use a webview for the same user twice, or if you use the same webview for multiple users.
+**You should make a new `connect_webview` for each unique login request:** Each `connect_webview` tracks the user that signed in with it. You receive an error if you reuse a Connect Webview for the same user twice or if you use the same Connect Webview for multiple users.
 {% endhint %}
 
 ### Parameters
 
-| `provider_category`                | type: string                       | Specifies the category of providers to include (such as `stable` or `consumer_smartlocks`). See [Accepted Provider Category Keys](./#accepted-provider-category-keys).                                            |
-| ---------------------------------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `accepted_providers`               | type: string\[]                    | Array of accepted **device provider keys** and an alternative to `provider_category`. This lets you explicitly specified accepted providers (e.g. "august"). See [Device Provider Keys](./#device-provider-keys). |
-| `custom_redirect_url`              | <p>type: string<br>Optional</p>    | URL to redirect user to after provider login is complete                                                                                                                                                          |
-| `custom_redirect_failure_url`      | <p>type: string</p><p>Optional</p> | Alternative URL to redirect the user on error. If this is not set, falls back to `custom_redirect_url`                                                                                                            |
-| `device_selection_mode`            | type: 'none'                       | 'multiple'                                                                                                                                                                                                        |
-| `automatically_manage_new_devices` | type: 'boolean'                    | <p>Indicates whether newly added devices should appear as managed devices<br>Default: <code>true</code></p>                                                                                                       |
+| `provider_category`                | type: string                       | <p>Specifies the category of providers to include.<br>Supported categories:</p><ul><li><code>stable</code></li><li><code>consumer_smartlocks</code></li><li><code>thermostats</code></li><li><code>noise_sensors</code></li></ul><p>See <a href="./#accepted-provider-category-keys">Accepted Provider Category Keys</a>.</p> |
+| ---------------------------------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `accepted_providers`               | type: string\[]                    | Array of accepted **device provider keys** and an alternative to `provider_category`. This lets you explicitly specified accepted providers (e.g. "august"). See [Device Provider Keys](./#device-provider-keys).                                                                                                             |
+| `custom_redirect_url`              | <p>type: string<br>Optional</p>    | URL to redirect user to after provider login is complete                                                                                                                                                                                                                                                                      |
+| `custom_redirect_failure_url`      | <p>type: string</p><p>Optional</p> | Alternative URL to redirect the user on error. If this is not set, falls back to `custom_redirect_url`                                                                                                                                                                                                                        |
+| `device_selection_mode`            | type: 'none'                       | 'multiple'                                                                                                                                                                                                                                                                                                                    |
+| `automatically_manage_new_devices` | type: 'boolean'                    | <p>Indicates whether newly added devices should appear as managed devices<br>Default: <code>true</code></p>                                                                                                                                                                                                                   |
 
 ### Response
 
@@ -243,7 +297,8 @@ This section shows the JSON response returned by the API. Since each language en
 	"workspace_id": "84dda4b8-f327-4d97-a720-e0504a13a441",
 	"device_selection_mode": "none",
 	"accepted_providers": [
-		"smartthings"
+		"august",
+		...
 	],
 	"accepted_devices": [],
 	"any_provider_allowed": false,

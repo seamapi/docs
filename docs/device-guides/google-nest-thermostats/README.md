@@ -1,5 +1,5 @@
 ---
-description: Guide for using Google Nest thermostats with Seam
+description: Guide for using Nest thermostats with Seam
 ---
 
 # Google Nest Thermostats
@@ -19,13 +19,12 @@ This integration supports all [Nest thermostats](https://store.google.com/us/cat
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  manufacturers='["nest"]'
+  manufacturers='["Nest"]'
 />" %}
 
 We support the following features:
 
 * [Configuring current thermostat settings](../../products/thermostats/configure-current-climate-settings.md)
-* [Scheduling future climate settings](../../products/thermostats/thermostats-climate-setting-schedules.md)
 
 ***
 
@@ -37,7 +36,7 @@ To create a [Connect Webview](../../core-concepts/connect-webviews/) that enable
 
 ## Setup Instructions
 
-To control Google Nest devices using Seam, you must first create a [Google Device Access](https://developers.google.com/nest/device-access) project—including an associated OAuth client—and provide information about this project to Seam. The initial Google Device Access Sandbox environment includes [account and rate limits](https://developers.google.com/nest/device-access/project/limits). Consequently, we recommend that you apply for [Google Commercial Development](https://developers.google.com/nest/device-access/project/apply) for your Nest devices.
+To control Google Nest devices using Seam, you must first create a [Google Device Access](https://developers.google.com/nest/device-access) project—including an associated OAuth client—and provide information about this project to Seam through the [Seam Console](../../core-concepts/seam-console/). The initial Google Device Access Sandbox environment includes [account and rate limits](https://developers.google.com/nest/device-access/project/limits). Consequently, we recommend that you apply for [Google Commercial Development](https://developers.google.com/nest/device-access/project/apply) for your Nest devices.
 
 For detailed instructions, see [Obtain Google Nest Device Access and Commercial Development](obtain-google-nest-device-access-and-commercial-development.md).
 
@@ -47,11 +46,23 @@ The period of time that Google takes to approve Commercial Development may range
 Further, once Google approves your Commercial Development application, you can gradually scale the number of managed devices as you proceed through the Google stages to reach [Google certification for Commercial Production](https://developers.google.com/nest/device-access/project/apply#certification\_for\_commercial\_production).
 {% endhint %}
 
-Once you have set up Google Device Access, prompt the owners of these Google Nest devices to perform the following steps:
+Once you have set up Google Device Access, prompt the owners of these Google Nest devices (that is, your end users) to perform the following steps:
 
 1. Create an account in the [Google Home app](https://home.google.com/get-app/) if you have not done so already.
 2. In the Google Home app, add your Nest thermostats.
 3. Note your login credentials for the Google Home app, and use these credentials to log in to the [Seam Connect Webview](../../core-concepts/connect-webviews/) to add your devices to Seam.
+
+***
+
+## Brand-Specific Errors
+
+If you have not yet [obtained Google Commercial Development](obtain-google-nest-device-access-and-commercial-development.md), and your end user attempts to connect a Google Nest thermostat to Seam using a [Connect Webview](../../core-concepts/connect-webviews/), the Connect Webview displays the following error:
+
+> No access to partner
+>
+> Information could not be retrieved. Please contact \<Your Company Name> to verify that your account has been properly set up. You may need to add the developer email address as a home member in the Google Home app settings.
+
+Note that, until you obtain Google Commercial Development, you can only connect devices associated directly with your own Google test users' accounts to Seam.
 
 ***
 

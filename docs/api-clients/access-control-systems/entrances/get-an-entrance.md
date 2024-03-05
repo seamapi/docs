@@ -23,7 +23,8 @@ Specify the desired entrance by including the corresponding `acs_entrance_id` in
 {% tabs %}
 {% tab title="cURL (bash)" %}
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/acs/entrances/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

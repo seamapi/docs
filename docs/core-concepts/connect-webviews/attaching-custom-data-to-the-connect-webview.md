@@ -4,11 +4,11 @@ description: >-
   Connect Webview and connected account.
 ---
 
-# Attaching Custom Data to the Connect Webview
+# Attaching Custom Metadata to the Connect Webview
 
-You can use custom metadata to identify the user or other internal resources for whom your app created a [Connect Webview](./). This feature is useful for tracking customer information or internal IDs, enabling you to look up an internal resource when your app receives a completed Connect Webview event. You can use this functionality to store a custom payload or object, tailored to the specific needs of your app, in both the `connect_webview` and `connected_account` objects within your Seam [workspace](../workspaces/).
+You can use custom metadata to store a custom payload or object, tailored to the specific needs of your app. For example, this feature is useful for tracking customer information, internal user IDs, or other internal resources for whom your app created a [Connect Webview](./). Storing custom metadata in a Seam Connect Webview also stores this information in any associated [connected accounts](../connected-accounts/), enabling you to look up an internal resource from directly within your Seam [workspace](../workspaces/). Then, you can [filter Connect Webviews](filtering-connect-webviews-by-custom-metadata.md) (or [connected accounts](../connected-accounts/filtering-connected-accounts-by-custom-metadata.md)) by the desired metadata.
 
-The `connect_webview` object includes an optional `custom_metadata` property that accepts up to 50 key:value pairs. For more information about this property, see [`connect_webview` Properties](../../api-clients/connect-webviews/#connect\_webview-properties). When a Connect Webview completes successfully, Seam creates a connected account ([`connected_account`](../../api-clients/connected-accounts/) object) to represent the device account that your user has authorized Seam to access. As part of this `connected_account` creation, Seam copies any `custom_metadata` from the associated `connect_webview` and stores this information in an analogous `custom_metadata` property for the `connected_account`.
+The `connect_webview` object includes an optional `custom_metadata` property that accepts up to 50 JSON key:value pairs. For more information about this property, see [`connect_webview` Properties](../../api-clients/connect-webviews/#connect\_webview-properties). When a Connect Webview completes successfully, Seam creates a connected account ([`connected_account`](../../api-clients/connected-accounts/) object) to represent the device account that your user has authorized Seam to access. As part of this `connected_account` creation, Seam copies any `custom_metadata` from the associated `connect_webview` and stores this information in an analogous `custom_metadata` property for the `connected_account`.
 
 {% hint style="info" %}
 If you leave the `custom_metadata` property empty for a `connect_webview`, Seam sets the `custom_metadata` for the `connect_webview` and the `custom_metadata` for the `connected_account` to `{}` by default.
@@ -200,7 +200,7 @@ System.out.println(createdConnectWebview);
   "url" : "https://connect.getseam.com/connect_webviews/view?connect_webview_id=72dffd65-71e0-4035-9c85-199dd756a11c&auth_token=FQea1nN2sMGwLVRsjQXajzNzvven6jbGX",
   "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
   "device_selection_mode" : "none",
-  "accepted_providers" : [ "august", "avigilon_alta", "brivo", "schlage", "smartthings", "yale", "nuki", "salto", "controlbyweb", "minut", "my_2n", "kwikset", "ttlock", "noiseaware", "igloohome", "ecobee", "hubitat", "four_suites", "dormakaba_oracode", "lockly", "wyze" ],
+  "accepted_providers" : [ "august", "avigilon_alta", "brivo", "schlage", "smartthings", "yale", "nuki", "salto", "controlbyweb", "minut", "my_2n", "kwikset", "ttlock", "noiseaware", "igloohome", "ecobee", "four_suites", "dormakaba_oracode", "lockly", "wyze" ],
   "any_provider_allowed" : false,
   "any_device_allowed" : false,
   "created_at" : "2023-11-16T22:53:57.515Z",

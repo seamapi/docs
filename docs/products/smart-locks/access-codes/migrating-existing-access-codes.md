@@ -56,7 +56,8 @@ pprint(seam.access_codes.unmanaged.list(device="374d3ee2-5e5d-4141-b828-6c2fa458
 **Request:**
 
 ```bash
-curl -X 'POST' \
+# Use GET or POST.
+curl -X 'GET' \
   'https://connect.getseam.com/access_codes/unmanaged/list' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \

@@ -20,7 +20,7 @@ layout:
 
 ## What is a Workspace?
 
-A workspace is conceptually like a project or environment. It encapsulate all other Seam resources, such as devices and connected third-party accounts. You access resources within a workspace using an [API key](api-keys.md), a [Personal Access Token](personal-access-tokens.md) (PAT), or [client session tokens](client-session-tokens.md), and you can receive events from a workspace using [webhooks](../webhooks.md).
+A workspace is conceptually like a project or environment. It encapsulate all other Seam resources, such as devices and connected third-party accounts. You access resources within a workspace using an [API key](../authentication/api-keys.md), a [Personal Access Token](../authentication/personal-access-tokens.md) (PAT), or [client session tokens](../authentication/client-session-tokens/), and you can receive events from a workspace using [webhooks](../webhooks.md).
 
 There is no limit to the number of workspaces that you can create, but most Seam customers only have the following two workspaces:&#x20;
 
@@ -88,7 +88,7 @@ Occasionally, an app may also be using multiple Seam workspaces. For example, a 
 <figure><img src="../../.gitbook/assets/less-common-workspace-setup.png" alt="Some development scenarios may warrant using multiple production workspaces."><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-Note that when you use multiple workspaces, you either need to create an [API key](api-keys.md) for each workspace or create a single [Personal Access Token](personal-access-tokens.md) (PAT) for use with all workspaces and then specify the ID of the workspace that you want to access.
+Note that when you use multiple workspaces, you either need to create an [API key](../authentication/api-keys.md) for each workspace or create a single [Personal Access Token](../authentication/personal-access-tokens.md) (PAT) for use with all workspaces and then specify the ID of the workspace that you want to access.
 {% endhint %}
 
 ***

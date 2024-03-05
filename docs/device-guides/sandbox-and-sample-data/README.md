@@ -4,7 +4,7 @@ description: >-
   Sandbox environment.
 ---
 
-# Sandbox & Sample Data
+# Sandbox Devices and Systems
 
 {% content-ref url="2n-intercoms-sample-data.md" %}
 [2n-intercoms-sample-data.md](2n-intercoms-sample-data.md)
@@ -58,8 +58,8 @@ description: >-
 [google-nest-thermostats-sample-data.md](google-nest-thermostats-sample-data.md)
 {% endcontent-ref %}
 
-{% content-ref url="hubitat-hub-sample-data.md" %}
-[hubitat-hub-sample-data.md](hubitat-hub-sample-data.md)
+{% content-ref url="../../developer-tools/sandbox-and-sample-data/sandbox-honeywell-thermostats.md" %}
+[sandbox-honeywell-thermostats.md](../../developer-tools/sandbox-and-sample-data/sandbox-honeywell-thermostats.md)
 {% endcontent-ref %}
 
 {% content-ref url="igloohome-sample-data.md" %}
@@ -108,6 +108,10 @@ description: >-
 
 {% content-ref url="smartthings-sample-data.md" %}
 [smartthings-sample-data.md](smartthings-sample-data.md)
+{% endcontent-ref %}
+
+{% content-ref url="../../developer-tools/sandbox-and-sample-data/sandbox-tedee-locks.md" %}
+[sandbox-tedee-locks.md](../../developer-tools/sandbox-and-sample-data/sandbox-tedee-locks.md)
 {% endcontent-ref %}
 
 {% content-ref url="ttlock-sample-data.md" %}

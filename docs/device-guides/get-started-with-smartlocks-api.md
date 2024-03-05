@@ -10,7 +10,7 @@ description: Learn how to connect and control smartlocks with the Seam API.
 
 Seam is a simple API to connect and control almost any smartlocks. Seam already integrates popular smartlock brands such as [August](https://seam.co/manufacturers/august), [Yale](https://seam.co/manufacturers/yale), [Schlage](https://seam.co/manufacturers/schlage), [Igloo](https://www.seam.co/manufacturers/igloohome), and [Kwikset](https://www.seam.co/manufacturers/kwikset), as well as lesser known ones like [Nuki](https://www.seam.co/manufacturers/nuki), [Wyze](https://www.seam.co/manufacturers/wyze), or [TTLock](https://www.seam.co/manufacturers/ttlock).
 
-The main benefit of Seam is that you can connect devices from these brands and control them with an easy to use API without having to worry about the underlying specific of each devices. Seam abstracts functions in [capabilities](broken-reference) such as `access_codes` or `locks` which you can use to integrate devices from multiple brands while expecting them to all behave more or less in the same way.
+The main benefit of Seam is that you can connect devices from these brands and control them with an easy to use API without having to worry about the underlying specific of each devices. Seam abstracts functions in [capabilities](broken-reference/) such as `access_codes` or `locks` which you can use to integrate devices from multiple brands while expecting them to all behave more or less in the same way.
 
 This guide is intended to show you how to connect and control smartlocks. To learn more about all devices supported by Seam such as thermostats and sensors, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
@@ -18,12 +18,74 @@ Let's get started.
 
 ## 1 — Install Seam SDK
 
-Seam provides client libraries for many languages such as Javascript, Python, Ruby, and PHP, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.
+Seam provides client libraries for many languages, such as JavaScript, Python, Ruby, PHP, and others, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.
 
-* **Javascript:** `npm i seamapi` ([npm](https://www.npmjs.com/package/seamapi), [github](https://github.com/seamapi/javascript))
-* **Python:** `pip install seamapi` ([pip](https://pypi.org/project/seamapi/), [github](https://github.com/seamapi/python))
-* **Ruby:** `bundle add seamapi` ([rubygem](https://rubygems.org/gems/seamapi), [github](https://github.com/seamapi/ruby))
-* **PHP:** `composer require seamapi/seam` ([packagist](https://packagist.org/packages/seamapi/seam), [github](https://github.com/seamapi/php))
+* JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
+* Python ([pip](https://pypi.org/project/seamapi/), [GitHub](https://github.com/seamapi/python))
+* Ruby Gem ([rubygem](https://rubygems.org/gems/seamapi), [GitHub](https://github.com/seamapi/ruby))
+* PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
+* Java ([GitHub](https://github.com/seamapi/java))
+* C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
+* Go ([GitHub](https://github.com/seamapi/go))
+
+{% tabs %}
+{% tab title="JavaScript" %}
+```bash
+npm i seam
+```
+{% endtab %}
+
+{% tab title="Python" %}
+```bash
+pip install seamapi
+# For some development environments, use pip3 in this command instead of pip.
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```bash
+bundle add seamapi
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+```bash
+composer require seamapi/seam
+```
+{% endtab %}
+
+{% tab title="Java" %}
+**Gradle:**
+
+```gradle
+// build.gradle
+dependencies {
+    implementation 'io.github.seamapi:java:0.x.x'
+}
+```
+
+**Maven:**
+
+```xml
+<!-- pom.xml -->
+<dependency>
+    <groupId>io.github.seamapi</groupId>
+    <artifactId>java</artifactId>
+    <version>0.x.x</version>
+</dependency>
+```
+{% endtab %}
+
+{% tab title="C#" %}
+Install using [nuget](https://www.nuget.org/packages/Seam).
+{% endtab %}
+
+{% tab title="Go" %}
+```bash
+go get github.com/seamapi/go
+```
+{% endtab %}
+{% endtabs %}
 
 Once installed, [sign-up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:
 
@@ -61,7 +123,7 @@ print(webview.url)
 
 {% tab title="Javascript" %}
 ```javascript
-import Seam from 'seamapi'
+import { Seam } from 'seam'
 
 const seam = new Seam()
 

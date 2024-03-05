@@ -1,5 +1,5 @@
 ---
-description: Use Seam Components without touching the back end.
+description: Use Seam Components without touching the backend.
 ---
 
 # Get started with Client Side Components
