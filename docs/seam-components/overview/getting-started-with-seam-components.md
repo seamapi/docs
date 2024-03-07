@@ -8,5 +8,5 @@ The following topics help you to get started using Seam Components in various ty
 
 * [Get Started with React](get-started-with-react-components-and-client-session-tokens.md)
 * [Get Started with Angular](angular.md)
-* [Get Started with View](vue.md)
+* [Get Started with Vue](vue.md)
 * [Get Started with Client Side Components](get-started-with-client-side-components.md)
