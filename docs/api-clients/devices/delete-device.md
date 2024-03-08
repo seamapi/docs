@@ -14,7 +14,7 @@ but Seam does not remove the access code from the device.
 {% endhint %}
 
 {% hint style="info" %}
-Deleting a device will prevent that device from appearing again in your workspace. The only way to recover a deleted device is to delete the entire connected account.
+Deleting a device prevents that device from appearing again in your workspace. The only way to recover a deleted device is to delete the entire connected account.
 
 Seam recommends unmanaging a device instead of deleting it.
 {% endhint %}
