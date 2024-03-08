@@ -7,7 +7,8 @@ description: Delete a Device by its ID
 ## Delete a Device
 
 {% hint style="warning" %}
-Deleting a device will trigger a `device.deleted` event and remove the device and all data associated with the device from Seam: events, access codes, etc. For every deleted resource, a corresponding deleted event will be sent, but the resource will not be deleted from the provider.
+Deleting a device will trigger a `device.deleted` event and remove the device and all data associated with the device from Seam: events, access codes, etc. For every deleted resource, a corresponding deleted event will be sent, but the resource will not be deleted from the provider. This action is irreversible.
+
 For example, deleting a device with an access code will send both a `device.deleted` event and an `access_code.deleted` event,
 but Seam will not remove the access code from the device.
 {% endhint %}
