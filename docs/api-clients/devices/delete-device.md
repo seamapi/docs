@@ -13,6 +13,12 @@ For example, deleting a device with an access code will send both a `device.dele
 but Seam will not remove the access code from the device.
 {% endhint %}
 
+{% hint style="info" %}
+Deleting a device will prevent that device from appearing again in your workspace. The only way to recover a deleted device is to delete the entire connected account.
+
+Seam recommends unmanaging a device instead of deleting it.
+{% endhint %}
+
 {% swagger method="delete" path="/devices/delete" baseUrl="https://connect.getseam.com" summary="Delete a device" %}
 {% swagger-description %}
 Delete a single device from your workspace using a device_id
