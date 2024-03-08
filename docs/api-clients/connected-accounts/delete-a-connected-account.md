@@ -4,6 +4,12 @@ description: Delete a Connected Account by ID
 
 # Delete a Connected Account
 
+{% hint style="warning" %}
+Deleting a connected account account device will trigger a `connected_account.deleted` event and remove the connected account and all data associated with the connected account from Seam: devices, events, access codes, etc. For every deleted resource, a corresponding deleted event will be sent, but the resource will not be deleted from the provider.
+For example, deleting a connected account with a device that has an access code will send a `connected_account.deleted` event, a `device.deleted` event, and an `access_code.deleted` event,
+but Seam has not and will not remove the access code from the device.
+{% endhint %}
+
 {% swagger src="https://connect.getseam.com/openapi.json" path="/connected_accounts/delete" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
 {% endswagger %}
