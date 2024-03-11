@@ -124,7 +124,7 @@ We may automate this step in the next iteration of our API. Consequently, you ma
 
 When issuing mobile credentials for a mobile app user, it is necessary to issue a multi-phone sync credential. As [Managing Phones for a User Identity](managing-phones-for-a-user-identity.md) describes, a user identity (that is, a mobile app user) may possess multiple phones. To guarantee access across all of the phones for the user identity, the multi-phone sync credential manages the distribution of credentials to each phone linked to the user identity. The multi-phone sync credential also imports the credentials into the ACS and allocates them to the corresponding ACS user.
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt="The multi-phone sync credential creates one credential per phone for the user identity." width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (1).png" alt="The multi-phone sync credential creates one credential per phone for the user identity." width="563"><figcaption></figcaption></figure>
 
 ***
 

@@ -1,0 +1,19 @@
+# iOS SDK
+
+Seam SDK allows you to build your own mobile app that supports mobile access or smart device management.
+
+Get started with our [integration guide ](../../capability-guides/mobile-access-in-development/mobile-device-sdks/)and sample integration (Coming soon!), or browse the SDK reference documentation (Coming soon!).
+
+***
+
+## Requirements
+
+The Seam iOS SDK is compatible with apps supporting iOS 14 or above.
+
+See the [HID list of compatible devices](https://www.hidglobal.com/mobile-access-compatible-devices) to see what phone models are compatible with the Seam SDK.
+
+***
+
+## Download
+
+For access to the latest stable version of the Seam Android SDK, [contact Seam](mailto:support@seam.co).
