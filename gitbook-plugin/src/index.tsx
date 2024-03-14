@@ -26,7 +26,7 @@ const handleFetchEvent: FetchEventCallback<IntegrationContext> = async (
       <body>
         <script
           type="module"
-          src="https://react.seam.co/v/2.0.0/dist/elements.js"
+          src="https://react.seam.co/v/2.10.0/dist/elements.js"
         ></script>
         <script type="module">
           function sendAction(action) {
