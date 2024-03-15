@@ -103,6 +103,7 @@
     * [Seam Provider](seam-components/react-components/seam-provider.md)
     * [Connect Account Button](seam-components/react-components/connect-account-button.md)
   * [Make a Supported Devices Page](seam-components/make-a-supported-devices-page.md)
+  * [Using User Identities to Scope Users' Device Access](ui-components/overview/using-user-identities-to-scope-users-device-access.md)
 
 ## 📋 API Reference <a href="#api-clients" id="api-clients"></a>
 
@@ -218,6 +219,9 @@
   * [List ACS Users Associated with a User Identity](api-clients/user-identities/list-acs-users-associated-with-a-user-identity.md)
   * [List ACS Systems Associated with a User Identity](api-clients/user-identities/list-acs-systems-associated-with-a-user-identity.md)
   * [Remove an ACS User from a User Identity](api-clients/user-identities/remove-an-acs-user-from-a-user-identity.md)
+  * [Grant a User Identity Access to a Device](api-clients/user-identities/grant-a-user-identity-access-to-a-device.md)
+  * [List Accessible Devices for a User Identity](api-clients/user-identities/list-accessible-devices-for-a-user-identity.md)
+  * [Revoke Access to a Device from a User Identity](api-clients/user-identities/revoke-access-to-a-device-from-a-user-identity.md)
   * [Enrollment Automations](api-clients/user-identities/enrollment-automations/README.md)
     * [Launch an Enrollment Automation](api-clients/user-identities/enrollment-automations/launch-an-enrollment-automation.md)
     * [List Enrollment Automations](api-clients/user-identities/enrollment-automations/list-enrollment-automations.md)
