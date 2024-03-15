@@ -4,7 +4,7 @@ description: >-
   enable you to control access to physical spaces.
 ---
 
-# 🏢 Access Systems
+# 🏢 Access Control Systems
 
 ## What Is an Access System?
 
@@ -31,7 +31,7 @@ Finally, you issue sets of [credentials](issuing-credentials.md)—such as acces
 
 The following diagram illustrates the relationship between Seam access system components:
 
-<figure><img src="../../.gitbook/assets/access-system-components.png" alt="Seam access system components"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (26).png" alt="Overview of access control system resources as represented in Seam. This mapping may vary depending on the provider type."><figcaption><p>Overview of access control system resources as represented in Seam. This mapping may vary depending on the provider type.</p></figcaption></figure>
 
 ## What Is a User?
 
