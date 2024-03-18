@@ -1,5 +1,5 @@
 ---
-description: Learn how to issue credentials to users.
+description: Learn how to issue credentials to and remove credentials from users.
 ---
 
 # Issuing Credentials

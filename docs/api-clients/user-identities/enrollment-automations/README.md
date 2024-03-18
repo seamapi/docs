@@ -22,3 +22,4 @@ You can perform the following actions on `enrollment_automation` objects:
 * [Launch an enrollment automation](launch-an-enrollment-automation.md)
 * [List enrollment automations](list-enrollment-automations.md)
 * [Get an enrollment automation](get-an-enrollment-automation.md)
+* [Delete an enrollment automation](delete-an-enrollment-automation.md)

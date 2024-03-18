@@ -27,3 +27,4 @@ You can perform the following actions on `user_identity` objects:
 * [Grant a user identity access to a device](grant-a-user-identity-access-to-a-device.md)
 * [List accessible devices for a user identity](list-accessible-devices-for-a-user-identity.md)
 * [Revoke access to a device from a user identity](revoke-access-to-a-device-from-a-user-identity.md)
+* [Delete a user identity](delete-a-user-identity.md)

@@ -163,8 +163,8 @@
 * [Action Attempt](api-clients/action-attempt/README.md)
   * [Get Action Attempt](api-clients/action-attempt/get-action-attempt.md)
 * [Noise Sensors](api-clients/noise-sensors/README.md)
-  * [List Noise Thresholds](api-clients/noise-sensors/list-noise-thresholds.md)
   * [Create Noise Thresholds](api-clients/noise-sensors/create-noise-threshold.md)
+  * [List Noise Thresholds](api-clients/noise-sensors/list-noise-thresholds.md)
   * [Update Noise Threshold](api-clients/noise-sensors/update-noise-threshold.md)
   * [Delete Noise Threshold](api-clients/noise-sensors/delete-noise-threshold.md)
 * [Thermostats](thermostats/README.md)
@@ -222,10 +222,12 @@
   * [Grant a User Identity Access to a Device](api-clients/user-identities/grant-a-user-identity-access-to-a-device.md)
   * [List Accessible Devices for a User Identity](api-clients/user-identities/list-accessible-devices-for-a-user-identity.md)
   * [Revoke Access to a Device from a User Identity](api-clients/user-identities/revoke-access-to-a-device-from-a-user-identity.md)
+  * [Delete a User Identity](api-clients/user-identities/delete-a-user-identity.md)
   * [Enrollment Automations](api-clients/user-identities/enrollment-automations/README.md)
     * [Launch an Enrollment Automation](api-clients/user-identities/enrollment-automations/launch-an-enrollment-automation.md)
     * [List Enrollment Automations](api-clients/user-identities/enrollment-automations/list-enrollment-automations.md)
     * [Get an Enrollment Automation](api-clients/user-identities/enrollment-automations/get-an-enrollment-automation.md)
+    * [Delete an Enrollment Automation](api-clients/user-identities/enrollment-automations/delete-an-enrollment-automation.md)
 
 ## 🛠️ Developer Tools
 
