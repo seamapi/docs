@@ -61,7 +61,7 @@ To control Lockly devices using Seam, you must prompt owners of these devices to
     The Lockly Access Portal creates the new account and displays the following information:
 
     <figure><img src="../.gitbook/assets/lockly-access-portal-account-created-successfully.png" alt="Note the information for the newly-created user account." width="563"><figcaption></figcaption></figure>
-10. Note the client ID, access key ID, access key secret, token ID, oken secret
+10. Note the client ID, access key ID, access key secret, token ID, and token secret.
 
 ***
 
