@@ -1,27 +1,28 @@
 ---
 description: >-
-  Learn about managing access control systems, users, and credentials that
-  enable you to control access to physical spaces.
+  Learn how to grant access across entire buildings using Seam's API to manage
+  access control systems, users, credentials, and more.
 ---
 
 # 🏢 Access Control Systems
 
-## What Is an Access System?
+<figure><img src="../../.gitbook/assets/acs-cover.png" alt=""><figcaption></figcaption></figure>
 
-Access control systems (ACSs) enable you to manage and monitor access to physical spaces, such as offices, residential complexes, and special-purpose facilities.
+Seam provides **a unified API across multiple brands of access control systems** to grant and manage access to apartment buildings, hotels, commercial offices, warehouses, and much more. The Seam API standardizes key functions across systems and brands, such as creating users, issuing credentials (PIN codes, key cards, mobile keys), managing access permissions, retrieving access logs, and more.&#x20;
 
-Instead of using mechanical keys, an ACS generally uses electronic means of access, like RFID cards, mobile keys, biometric identifiers, or PIN codes as credentials. This use of electronic means of access enables Seam to grant or rescind access easily, as well as to compile an audit log of when a key was used.
+## What Is an Access Control System?
 
-ACSs generally manage the following parameters:
+Access control systems (ACSs) enable you to manage and monitor access to physical spaces, such as offices, residential complexes, and special-purpose facilities. A key aspect of access control systems is that access authorization is centralized, letting you grant access to a user across multiple doors using a single credential. An access control system will generally manage the following: (a) who has access, (b) which entrances they have access to and (c) under what conditions they are permitted to enter.
 
-* Who has access
-* To which entrances, doors, or zones each person has access
-* At what times each person can gain access
-* Under what conditions each person is allowed access (for example, COVID test completed, ID verification, and so on)
+<figure><img src="../../.gitbook/assets/building-acs-example.png" alt=""><figcaption><p>Example of a residential building with multiple doors connected to an ACS system</p></figcaption></figure>
 
-The Seam API provides the capability to manage users and their access permissions. You can also issue credentials (such as PIN codes, key cards, and mobile phone passes) to users, as well as retrieve access log events and overall site analytics to determine attendance or building occupancy.
+## What is an Access Credential?
 
-## Access System Components
+An ACS generally uses electronic means of access to authorize a user trying to get through a specific entrance. Examples of credentials include RFID cards, mobile keys, biometric identifiers, or PIN codes. The electronic nature of those credentials, as well as the fact that access is centralized both the rapid provisioning and rescinding of access, as well as the ability to compile access audit log.
+
+<figure><img src="../../.gitbook/assets/acs-credential-types.png" alt=""><figcaption><p>Example of access control user credentials</p></figcaption></figure>
+
+## Components of Access Control Systems&#x20;
 
 The Seam access system schema consists of a series of objects that interact to enable you manage your ACS in a logical, efficient manner. The top-level object is the [system](../../api-clients/access-control-systems/systems/) that represents one or more buildings, residential locations, or other sites that you manage using this ACS. Within the system, you identify the set of [entrances](../../api-clients/access-control-systems/entrances/), doors, or zones that you want to manage, identifying each by the corresponding lock object. You also identify the set of [users](./#what-is-a-user) who access these entrances, doors, or zones.
 
@@ -40,13 +41,6 @@ A "user" typically refers to an individual who requires access, like an employee
 ## What Is an Access Group?
 
 An "access group" is a set of users, combined with a set of permissions. These permissions include both the set of areas or assets that the users can access and the schedule during which the users can access these areas or assets. Instead of assigning access rights individually to each user, which can be time-consuming and error-prone, administrators can assign users to an access group, thereby ensuring that the users inherit all the permissions associated with the access group. Using access groups streamlines the process of managing large numbers of users, especially in bigger organizations or complexes.
-
-## **Use Cases**
-
-Leverage the Seam API for the following tasks:
-
-* **Creating and managing users:** Streamline the process of adding and removing users, as well as defining users' access permissions.
-* **Issuing and distributing credentials:** Automate issuing PIN codes, key cards, or mobile app passes to users.
 
 ## **Next Steps**
 
