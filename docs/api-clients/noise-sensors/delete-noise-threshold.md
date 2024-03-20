@@ -4,29 +4,25 @@ description: Delete a Noise Threshold on your Noise Sensor
 
 # Delete Noise Threshold
 
-{% swagger method="delete" path="/noise_sensors/noise_thresholds/delete" baseUrl="https://connect.getseam.com" summary="Delete Noise Threshold" %}
-{% swagger-description %}
+## Delete Noise Threshold
 
-{% endswagger-description %}
+<mark style="color:red;">`DELETE`</mark> `https://connect.getseam.com/noise_sensors/noise_thresholds/delete`
 
-{% swagger-parameter in="body" required="true" name="noise_threshold_id" %}
-Noise threshold id
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="body" required="true" name="device_id" %}
-Device id of a device the noise threshold is on
-{% endswagger-parameter %}
+| Name                                            | Type   | Description        |
+| ----------------------------------------------- | ------ | ------------------ |
+| Authorization<mark style="color:red;">\*</mark> | String | Bearer \<API\_KEY> |
 
-{% swagger-parameter in="body" name="sync" type="boolean" %}
+#### Request Body
 
-{% endswagger-parameter %}
+| Name                                                   | Type   | Description                                     |
+| ------------------------------------------------------ | ------ | ----------------------------------------------- |
+| noise\_threshold\_id<mark style="color:red;">\*</mark> | String | Noise threshold id                              |
+| device\_id<mark style="color:red;">\*</mark>           | String | Device id of a device the noise threshold is on |
 
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-Bearer <API_KEY>
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="" %}
-
+{% tabs %}
+{% tab title="200: OK " %}
 ```javascript
 {
   "action_attempt": {
@@ -39,11 +35,9 @@ Bearer <API_KEY>
   "ok": true
 }
 ```
+{% endtab %}
 
-{% endswagger-response %}
-
-{% swagger-response status="400: Bad Request" description="" %}
-
+{% tab title="400: Bad Request " %}
 ```javascript
 {
   "error": {
@@ -62,11 +56,9 @@ Bearer <API_KEY>
   "ok": false
 }
 ```
+{% endtab %}
 
-{% endswagger-response %}
-
-{% swagger-response status="404: Not Found" description="" %}
-
+{% tab title="404: Not Found " %}
 ```javascript
 {
   "error": {
@@ -77,15 +69,13 @@ Bearer <API_KEY>
   "ok": false
 }
 ```
-
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 ### Code Example
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 seam.noise_sensors.noise_thresholds.delete(
   noise_threshold_id="123e4567-e89b-12d3-a456-426614174000",
@@ -100,11 +90,9 @@ seam.noise_sensors.noise_thresholds.delete(
 #   error: null,
 # }
 ```
-
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 $seam->noise_sensors->noise_thresholds->delete(
   noise_threshold_id: "123e4567-e89b-12d3-a456-426614174000",
@@ -119,7 +107,6 @@ $seam->noise_sensors->noise_thresholds->delete(
 #   error: null,
 # }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -137,7 +124,6 @@ This section shows the JSON response returned by the API. Since each language en
 
 {% tabs %}
 {% tab title="JSON" %}
-
 ```json
 {
   "action_attempt": {
@@ -150,6 +136,5 @@ This section shows the JSON response returned by the API. Since each language en
   "ok": true
 }
 ```
-
 {% endtab %}
 {% endtabs %}

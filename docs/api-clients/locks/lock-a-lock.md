@@ -4,20 +4,24 @@ description: Issue a lock command on the Device by its Device ID
 
 # Lock a Lock
 
-{% swagger method="post" path="/locks/lock_door" baseUrl="https://connect.getseam.com" summary="Lock Door for Device" %}
-{% swagger-description %}
+## Lock Door for Device
 
-{% endswagger-description %}
+<mark style="color:green;">`POST`</mark> `https://connect.getseam.com/locks/lock_door`
 
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-Bearer <API_KEY>
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="body" name="device_id" required="false" %}
-ID of Device to be Locked
-{% endswagger-parameter %}
+| Name                                            | Type   | Description        |
+| ----------------------------------------------- | ------ | ------------------ |
+| Authorization<mark style="color:red;">\*</mark> | String | Bearer \<API\_KEY> |
 
-{% swagger-response status="200: OK" description="" %}
+#### Request Body
+
+| Name       | Type   | Description               |
+| ---------- | ------ | ------------------------- |
+| device\_id | String | ID of Device to be Locked |
+
+{% tabs %}
+{% tab title="200: OK " %}
 ```json
 {
   "action_attempt": {
@@ -30,9 +34,9 @@ ID of Device to be Locked
   "ok": true
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="" %}
+{% tab title="400: Bad Request " %}
 ```javascript
 {
   "error": {
@@ -51,9 +55,9 @@ ID of Device to be Locked
   "ok": false
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="404: Not Found" description="" %}
+{% tab title="404: Not Found " %}
 ```javascript
 {
   "error": {
@@ -64,8 +68,8 @@ ID of Device to be Locked
   "ok": false
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 ### Code Example
 
@@ -107,9 +111,8 @@ seam.locks.lock_door("a83690b2-2b70-409a-9a94-426699b84c97")
 
 ### Parameters
 
-| `device_id` | type: string                     | <p><br>Device ID</p> |
-| ----------- | -------------------------------- | -------------------- |
-| `sync`      | <p>type: boolean<br>Optional</p> |                      |
+| `device_id` | type: string | <p><br>Device ID</p> |
+| ----------- | ------------ | -------------------- |
 
 ### Response
 

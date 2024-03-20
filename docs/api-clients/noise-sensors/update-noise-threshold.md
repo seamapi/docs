@@ -4,55 +4,30 @@ description: Update a Noise Threshold on your Noise Sensor
 
 # Update Noise Threshold
 
-{% swagger method="put" path="/noise_sensors/noise_thresholds/update" baseUrl="https://connect.getseam.com" summary="Update Noise Threshold" %}
-{% swagger-description %}
+## Update Noise Threshold
 
-{% endswagger-description %}
+<mark style="color:orange;">`PUT`</mark> `https://connect.getseam.com/noise_sensors/noise_thresholds/update`
 
-{% swagger-parameter in="body" required="true" name="noise_threshold_id" %}
-Noise threshold id
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="body" required="true" name="device_id" %}
-Device id of a device the noise threshold is on
-{% endswagger-parameter %}
+| Name                                            | Type   | Description        |
+| ----------------------------------------------- | ------ | ------------------ |
+| Authorization<mark style="color:red;">\*</mark> | String | Bearer \<API\_KEY> |
 
-{% swagger-parameter in="body" name="name" %}
-Name of the Noise Threshold
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="body" name="starts_daily_at" %}
-Time when noise threshold becomes active daily
-{% endswagger-parameter %}
+| Name                                                   | Type   | Description                                                                             |
+| ------------------------------------------------------ | ------ | --------------------------------------------------------------------------------------- |
+| noise\_threshold\_id<mark style="color:red;">\*</mark> | String | Noise threshold id                                                                      |
+| device\_id<mark style="color:red;">\*</mark>           | String | Device id of a device the noise threshold is on                                         |
+| name                                                   | String | Name of the Noise Threshold                                                             |
+| starts\_daily\_at                                      | String | Time when noise threshold becomes active daily                                          |
+| ends\_daily\_at                                        | String | Time when noise threshold becomes inactive daily                                        |
+| noise\_threshold\_decibels                             | String | Noise level in decibels                                                                 |
+| noise\_threshold\_nrs                                  | String | Noise level in Noiseaware Noise Risk Score (NRS) (only relevant for Noiseaware sensors) |
 
-{% swagger-parameter in="body" name="ends_daily_at" %}
-Time when noise threshold becomes inactive daily
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="noise_threshold_decibels" %}
-Noise level in decibels
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="noise_threshold_nrs" %}
-Noise level in Noiseaware Noise Risk Score (NRS) (only relevant for Noiseaware sensors)
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="sync" type="boolean" %}
-Set this to true to receive updated
-
-`noise_threshold`
-
-object in the
-
-`result`
-{% endswagger-parameter %}
-
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-Bearer <API_KEY>
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="" %}
-
+{% tabs %}
+{% tab title="200: OK " %}
 ```javascript
 {
   "action_attempt": {
@@ -65,11 +40,9 @@ Bearer <API_KEY>
   "ok": true
 }
 ```
+{% endtab %}
 
-{% endswagger-response %}
-
-{% swagger-response status="400: Bad Request" description="" %}
-
+{% tab title="400: Bad Request " %}
 ```javascript
 {
   "error": {
@@ -88,11 +61,9 @@ Bearer <API_KEY>
   "ok": false
 }
 ```
+{% endtab %}
 
-{% endswagger-response %}
-
-{% swagger-response status="404: Not Found" description="" %}
-
+{% tab title="404: Not Found " %}
 ```javascript
 {
   "error": {
@@ -103,15 +74,13 @@ Bearer <API_KEY>
   "ok": false
 }
 ```
-
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 ### Code Example
 
 {% tabs %}
 {% tab title="Python" %}
-
 ```python
 seam.noise_sensors.noise_thresholds.update(
   noise_threshold_id="792263f8-1660-4cf9-a6c6-054d23b78d86",
@@ -128,11 +97,9 @@ seam.noise_sensors.noise_thresholds.update(
 #   "ends_daily_at": "06:00:00[America/Los_Angeles]",
 # }
 ```
-
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 $seam->noise_sensors->noise_thresholds->update(
   noise_threshold_id: "792263f8-1660-4cf9-a6c6-054d23b78d86",
@@ -149,20 +116,19 @@ $seam->noise_sensors->noise_thresholds->update(
 #   "ends_daily_at": "06:00:00[America/Los_Angeles]",
 # }
 ```
-
 {% endtab %}
 {% endtabs %}
 
 ### Parameters
 
-| `device_id`                | type: string                                          | Device id of a device to create a noise threshold on                                    |
-| -------------------------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `noise_threshold_id`       | string                                                | Noise Threshold Id                                                                      |
-| `name`                     | string                                                | Name of the Noise Threshold                                                             |
+| `device_id`                | type: string                                            | Device id of a device to create a noise threshold on                                    |
+| -------------------------- | ------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `noise_threshold_id`       | string                                                  | Noise Threshold Id                                                                      |
+| `name`                     | string                                                  | Name of the Noise Threshold                                                             |
 | `starts_daily_at`          | [Seam Time of Day](https://github.com/seamapi/seam-tod) | Timestamp of when the Noise Threshold becomes active daily                              |
 | `ends_daily_at`            | [Seam Time of Day](https://github.com/seamapi/seam-tod) | Timestamp of when the Noise Threshold becomes inactive daily                            |
-| `noise_threshold_decibels` | number                                                | The noise level in decibels                                                             |
-| `noise_threshold_nrs`      | number, optional                                      | Noise Level in Noiseaware Noise Risk Score (NRS) (only relevant for Noiseaware sensors) |
+| `noise_threshold_decibels` | number                                                  | The noise level in decibels                                                             |
+| `noise_threshold_nrs`      | number, optional                                        | Noise Level in Noiseaware Noise Risk Score (NRS) (only relevant for Noiseaware sensors) |
 
 ### Response
 
@@ -172,7 +138,6 @@ This section shows the JSON response returned by the API. Since each language en
 
 {% tabs %}
 {% tab title="JSON" %}
-
 ```json
 {
   "action_attempt": {
@@ -185,6 +150,5 @@ This section shows the JSON response returned by the API. Since each language en
   "ok": true
 }
 ```
-
 {% endtab %}
 {% endtabs %}
