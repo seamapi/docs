@@ -6,7 +6,7 @@ description: >-
 
 # Connect Webviews
 
-<figure><img src="../../.gitbook/assets/connect-webview-user-flow.png" alt="Seam Connect Webviews are fully-embedded client-side components that you add to your app so that your users can link their IoT device accounts to Seam."><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-webview-cover.png" alt=""><figcaption></figcaption></figure>
 
 ## What are Connect Webviews?
 
@@ -350,23 +350,21 @@ You can [redirect to the Connect Webview URL](embedding-a-connect-webview-in-you
 
 The Connect Webview guides your app user through the following steps:
 
-1. In the introduction page of the Connect Webview, the user clicks Continue.
+1. **In the introduction page of the Connect Webview, the user clicks Continue.**
 
-<figure><img src="../../.gitbook/assets/connect-webview-user-intro-page.png" alt="Connect Webview introduction page" width="239"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-webview-intro-screen.png" alt="Connect Webview introduction page"><figcaption></figcaption></figure>
 
-2. The user selects their device brand.
+2. **The user selects their device brand.**
 
-<figure><img src="../../.gitbook/assets/connect-webview-user-select-brand-page.png" alt="In the Connect Webview, the user selects their device brand." width="244"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-webview-brand-selection.png" alt="In the Connect Webview, the user selects their device brand."><figcaption></figcaption></figure>
 
-3. The user follows the displayed instructions to enter their credentials and perform two-factor authentication, if applicable, for the specified device brand.\
-   Note that the steps for authenticating (and, consequently, the displayed instructions) vary from brand to brand.\
-   For example:
+3. **The user follows the displayed instructions to authorize their accounts**. For most brands, this consists of a simple login and 2FA, all handled by Seam. Certain brands may require additional information. For example, brands like Yale offer multiple backend services depending on the user's global region. Seam prompts the user to identify the right service and proceeds with the authorization request.&#x20;
 
-<figure><img src="../../.gitbook/assets/connect-webview-user-credentials-2fa-pages.png" alt="In the Connect Webview, the user follows the displayed instructions to enter their credentials and perform two-factor authentication, if applicable, for the specified device brand."><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-webview-brand-authorization.png" alt="In the Connect Webview, the user follows the displayed instructions to enter their credentials and perform two-factor authentication, if applicable, for the specified device brand."><figcaption></figcaption></figure>
 
-4. The Connect Webview displays a page to indicate the successful device account connection.
+4. **The Connect Webview displays a page to indicate the successful device account connection**. In the event of an error, the nature of the error will be display (e.g. "incorrect password"). For more complicated errors, Seam presents a simple contact support button that will raise the issue to Seam's support team.&#x20;
 
-<figure><img src="../../.gitbook/assets/connect-webview-user-success-page.png" alt="The Connect Webview displays a page to indicate the successful device account connection." width="252"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-webview-success.png" alt="The Connect Webview displays a page to indicate the successful device account connection."><figcaption></figcaption></figure>
 
 ### 4. Verify Successful Device Account Connection
 
