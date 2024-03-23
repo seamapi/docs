@@ -1,7 +1,7 @@
 ---
 description: >-
-  Learn how to grant access across entire buildings using Seam's API to manage
-  access control systems, users, credentials, and more.
+  Learn about managing access control systems, users, and credentials that
+  enable you to control access to physical spaces.
 ---
 
 # 🏢 Access Control Systems

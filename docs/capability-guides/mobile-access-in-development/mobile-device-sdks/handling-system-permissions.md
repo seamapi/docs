@@ -20,7 +20,15 @@ if (requiredPermissions.isNotEmpty()) {
 {% endtab %}
 
 {% tab title="iOS Swift" %}
-:construction: Documentation coming soon!
+```swift
+let requiredPermissions = seam.phone.native.listRequiredIosPermissions(
+  enableUnlockWithTap: true
+)
+
+if (!requiredPermissions.isEmpty) {
+  // Request required permissions from the user.
+}
+```
 {% endtab %}
 {% endtabs %}
 
@@ -64,7 +72,30 @@ fun handleEvent(
 {% endtab %}
 
 {% tab title="iOS Swift" %}
-
+```swift
+func eventDelegate(
+    event: SeamEvent
+) {
+    // Check whether the phone state has changed.
+    // Note that these events are located under the phone namespace.
+    switch (event) {
+    case .phone: 
+       let phone = seam.phone.get().nativeMetadata
+       
+       // The desired state has not been met.
+       if(!phone.canUnlockWithTap) {
+         if (phone.errors.contains(where: $0 == {.phone(.native(.missingRequiredIosPermissions)))}) {
+           // Need to update the required permissions.
+           let requiredPermissions = seam.phone.native.listRequiredIosPermissions(
+             enableUnlockWithTap: true
+           )
+           // Request the requiredPermissions or prompt the user to do so.
+         }
+       }
+       break
+    }
+}
+```
 {% endtab %}
 {% endtabs %}
 

@@ -28,7 +28,21 @@ android { ... }
 {% endtab %}
 
 {% tab title="iOS Swift" %}
-:construction: Documentation Coming Soon!
+To install the Seam iOS SDK, add the `SeamSdk.podspec` to the `target` block of your [Podfile](https://guides.cocoapods.org/using/using-cocoapods.html).
+
+{% code title="Podfile" %}
+```ruby
+use_frameworks!
+
+platform :ios, '...'
+
+target 'YourApp' do
+  // ...
+  // Local pod install with file path to SeamSdk.podspec
+  pod 'SeamSdk', :path => './SeamSdk.podspec'
+end
+```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 
@@ -280,15 +294,14 @@ The initialization process may fail if the Seam workspace or provider-specific s
 import co.seam.sdk.Seam
 import co.seam.sdk.SeamError
 
-// Retrieve the client session token generated for the user from your server.
-val seamClientSessionToken = requestSeamClientSessionTokenForUser()
 
-// Initialize the Seam client with the client session token. Also include the
-// Android activity context and a handler for events from the background process.
+
+// Initialize the Seam client with the client session token. nclude the
+// Android activity context and a .
 val seam = SeamClient(
     clientSessionToken = seamClientSessionToken,
     androidContext = activityContext,
-    seamEventHandler = eventHandler
+    seamEventHandler = 
 )
 
 try {
@@ -303,7 +316,21 @@ try {
 {% endtab %}
 
 {% tab title="iOS Swift" %}
-:construction: Documentation Coming Soon!
+```swift
+import Seam
+
+//  client session token for th user
+let clientSessionToken = 
+
+let seam = SeamClient(
+    clientSessionToken: clientSessionToken,
+    seamEventDelegate: 
+)
+
+try seam.phone.native.initialize(
+    enableUnlockWithTap: true
+)
+```
 {% endtab %}
 {% endtabs %}
 
@@ -313,9 +340,8 @@ Any failures during the background process will produce errors. These errors can
 
 {% tabs %}
 {% tab title="Android Kotlin" %}
-```kotlin
-fun eventHandler(
-    seam: Seam,
+<pre class="language-kotlin"><code class="lang-kotlin"><strong>fun (
+</strong>    seam: Seam,
     event: SeamEvent
 ) {
     // If the event is under the phone namespace, the phone state may have changed.
@@ -345,10 +371,38 @@ val seam = SeamClient(
   seamEventHandler = eventHandler,
   // ...
 )
-```
+</code></pre>
 {% endtab %}
 
 {% tab title="iOS Swift" %}
-:construction: Documentation Coming Soon!
+<pre class="language-swift"><code class="lang-swift">func (
+    seam: Seam,
+    event: SeamEvent
+) {
+    // If the event is under the phone namespace, the phone state may have changed.
+    switch(event) {
+    case .phone:
+        let phone = seam.phone.get().nativeMetadata
+        
+        // Check for the desired state of the phone for all app features to work.
+        if (!phone.isInitialized || !phone.canUnlockWithTap) {
+            // check errors and display them to the user.
+            phone.errors
+            // For example:
+            // seam.phone.native.missing_required_ios_permissions: Missing required permissions.
+            // seam.phone.native.internet_connection_required: No internet.
+            // seam.authentication_error: Invalid client session token.
+            // seam.internal.phone.native.provider_initialization_failure: Invalid provider configuration.
+        } else {
+            // Set the UI state to indicate that all app features are working.
+        }
+    }
+}
+
+let seam = SeamClient(
+<strong>  seamEventHandler = eventHandler,
+</strong>  // ...
+)
+</code></pre>
 {% endtab %}
 {% endtabs %}

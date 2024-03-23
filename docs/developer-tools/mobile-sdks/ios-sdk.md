@@ -8,7 +8,7 @@ Get started with our [integration guide ](../../capability-guides/mobile-access-
 
 ## Requirements
 
-The Seam iOS SDK is compatible with apps supporting iOS 14 or above.
+The Seam iOS SDK is compatible with apps supporting iOS 15 or above.
 
 See the [HID list of compatible devices](https://www.hidglobal.com/mobile-access-compatible-devices) to see what phone models are compatible with the Seam SDK.
 
