@@ -4,10 +4,22 @@ description: Use redirection or an iframe to embed a Connect Webview in your app
 
 # Embedding a Connect Webview in Your App
 
+<figure><img src="../../.gitbook/assets/connect-webview-embedding-2.png" alt=""><figcaption></figcaption></figure>
+
 You can use either of the following two methods to incorporate a [Connect Webview](./) in your app:
 
 * [Redirect to the Connect Webview URL.](embedding-a-connect-webview-in-your-app.md#redirect-to-the-connect-webview-url)
 * [Embed the Connect Webview in an inline frame (iframe).](embedding-a-connect-webview-in-your-app.md#embed-the-connect-webview-in-an-iframe)
+
+***
+
+## Opening a Connect Webview
+
+To allow users to connect their devices with your app, you will need to present a button to launch a new Connect Webview. If your app has a settings section, we recommend creating a device setting page and adding an "Add Devices" or "Link Devices" button (see example below).&#x20;
+
+Upon clicking this button, you can then either [redirect to the Connect Webview url](embedding-a-connect-webview-in-your-app.md#redirect-to-the-connect-webview-url) or [embed the Connect Webview in an iFrame](embedding-a-connect-webview-in-your-app.md#embed-the-connect-webview-in-an-iframe) and present it in a modal. Please contact us if you would like guidance on best practices.&#x20;
+
+<figure><img src="../../.gitbook/assets/connect-webview-embedding-1 (1).png" alt=""><figcaption></figcaption></figure>
 
 ***
 
