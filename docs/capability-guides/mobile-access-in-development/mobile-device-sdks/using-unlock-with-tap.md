@@ -242,55 +242,15 @@ func handleEvent(event: SeamEvent) {
 {% endtab %}
 {% endtabs %}
 
-Some providers require that the user explicitly initiate the scanning process, usually through a button. For that, your application will want to show an "Unlock" button (or a similar mechanism) that will launch the process.
-
-{% tabs %}
-{% tab title="Android Kotlin" %}
-Display an **Unlock** button (or a similar mechanism) to the user and link this button to an `UNLOCK_NEAREST` command.
-
-In this example, we apply an on-click listener to a button named `unlockNearestButton` to call `UNLOCK_NEAREST` when the user clicks this button:
-
-```kotlin
-unlockNearestButton?.setOnClickListener {
-  runBlocking {
-    val res = seamDeviceController?.issueCommand(SeamDeviceCommand.UNLOCK_NEAREST)
-
-    if (res?.isSuccess == true) {
-      //Display unlock success message to user.
-    } else {
-      // Display unlock failure message to user.
-    }
-  }
-}
-```
-{% endtab %}
-
-{% tab title="iOS Swift" %}
-Display an **Unlock** button (or a similar mechanism) to the user and call `unlockWithTapping.start()`&#x20;
-
-```swift
-// Call this function in your button controller
-func startUnlockByTapping() {
-  Task {
-      let response = await seam.phone.native.unlockWithTapping.start()
-      switch(response) {
-      case .success():
-        //Display unlock success message to user.
-        break
-      case .failure(error):
-        // Display unlock failure message to user
-      }
-  } 
-}
-```
-{% endtab %}
-{% endtabs %}
-
 ***
 
 ## 4. Handle Unlock Status Updates
 
 Use an event handler to handle unlock-related status updates. Use these events to initiate changes to the user interface.
+
+{% hint style="info" %}
+The `ReaderCommunicationSuccess`/`readerCommunicationSuccess` event indicates that the phone has communicated successfully with the door reader. That is, depending on the events that the underlying ACS API returns, the Seam mobile SDK may not be able to determine whether the door reader granted access. For some ACSs, the Seam API can only determine whether the communication with the reader succeeded. Other underlying ACS APIs may return events that indicate whether the door reader unlocked successfully.
+{% endhint %}
 
 {% tabs %}
 {% tab title="Android Kotlin" %}

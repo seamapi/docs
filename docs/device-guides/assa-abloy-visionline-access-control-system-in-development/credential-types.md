@@ -1,12 +1,20 @@
+---
+description: Learn how to configure Visionline mobile credentials.
+---
+
 # Configuring Visionline Mobile Credentials
 
-In the ASSA ABLOY Visionline Access Management System, the locks are standalone and battery-powered. All access permissions and scheduling details are contained within the key cards and mobile credentials, characterizing these systems as "data-on-card" systems. This guide describes how to issue credential on the Visionline system.
+In the ASSA ABLOY Visionline Access Management System, the locks are standalone and battery-powered. All access permissions and scheduling details are contained within the key cards and mobile credentials, characterizing these systems as "data-on-card" systems. This guide describes how to issue credentials on the Visionline system.
 
 {% hint style="info" %}
-Note: Seam currently only supports issuing guest mobile credentials. We will extend support to plastic card  and staff credentials in the future.
+Seam currently only supports issuing guest mobile credentials. We will extend support to plastic card and staff credentials in the future.
 {% endhint %}
 
 ***
+
+## Visionline Mobile Credential Restrictions
+
+When creating a Seam mobile key for a Visionline ACS, you must set `is_multi_phone_sync_credential` to `true`.
 
 ## Guest Mobile Credential Properties
 
