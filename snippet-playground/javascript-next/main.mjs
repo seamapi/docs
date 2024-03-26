@@ -34,5 +34,31 @@ const seam = new Seam({
 // console.log(await seam.devices.get({device_id: "70ea1ecb-902c-48e6-962e-532e59db46d5"}))
 // const devices = await seam.devices.list({device_type: "honeywell_thermostat"})
 // console.log(devices[0])
-const devices = await seam.devices.list({device_type: "nest_thermostat"})
-console.log(devices[0])
+// const devices = await seam.devices.list({device_type: "nest_thermostat"})
+// console.log(devices[0])
+
+// Create the user identity.
+const user_identity = await seam.userIdentities.create({
+    email_address: "jane_js-next@example.com"
+});
+
+// Launch the enrollment automation.
+await seam.userIdentities.enrollmentAutomations.launch({
+    // Use the acs_system_id for the credential manager.
+    credential_manager_acs_system_id: "6737e186-8d54-48ce-a7da-a0be4d252172",
+    user_identity_id: user_identity.user_identity_id,
+    // Automatically create a new credential manager user
+    // or specify the desired existing credential_manager_acs_user_id.
+    create_credential_manager_user: true
+});
+
+// Create the client session.
+const client_session = await seam.clientSessions.create({
+    user_identity_ids: [user_identity.user_identity_id]
+});
+
+// Use this token to launch your mobile controller.
+const token = client_session.token;
+console.log("Token: ",token);
+
+// console.log(await seam.thermostats.climateSettingSchedules.update)

@@ -136,11 +136,35 @@ $seam = new Seam\SeamClient(
 
 // echo json_encode($fan_on_request), "\n";
 
-$webview = $seam->connect_webviews->create(
-  accepted_providers: ["ecobee"]
+// $webview = $seam->connect_webviews->create(
+//   accepted_providers: ["ecobee"]
+// );
+
+// echo json_encode($webview->login_successful), "\n"; # false
+
+// # Send the Connect Webview URL to your user.
+// echo json_encode($webview->url), "\n";
+
+// Create the user identity.
+$user_identity = $seam->user_identities->create(
+  email_address: "jane_php@example.com"
 );
 
-echo json_encode($webview->login_successful), "\n"; # false
+// Launch the enrollment automation.
+$seam->user_identities->enrollment_automations->launch(
+  // Use the acs_system_id for the credential manager.
+  credential_manager_acs_system_id: "6737e186-8d54-48ce-a7da-a0be4d252172",
+  user_identity_id: $user_identity->user_identity_id,
+  // Automatically create a new credential manager user
+  // or specify the desired existing credential_manager_acs_user_id.
+  create_credential_manager_user: true
+);
 
-# Send the Connect Webview URL to your user.
-echo json_encode($webview->url), "\n";
+// Create the client session.
+$client_session = $seam->client_sessions->create(
+  user_identity_ids: [$user_identity->user_identity_id]
+);
+
+// Use this token to launch your mobile controller.
+$token = $client_session->token;
+echo $token;

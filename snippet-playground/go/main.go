@@ -5,6 +5,7 @@ import (
 	"fmt"
 	// "math/rand"
 	"os"
+  // "encoding/json"
 
   api "github.com/seamapi/go"
 	seam "github.com/seamapi/go/client"
@@ -134,6 +135,44 @@ func run() error {
 // }
 
 // return nil
+
+// _, uErr := client.UserIdentities.GrantAccessToDevice(context.Background(), &api.UserIdentitiesGrantAccessToDeviceRequest{
+//     UserIdentityId: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
+//     DeviceId: "054765c8-a2fc-4599-b486-14c19f462c45",
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// // fmt.Println(deviceGrant)
+// return nil
+
+// accessibleDevices, uErr := client.UserIdentities.ListAccessibleDevices(context.Background(), &api.UserIdentitiesListAccessibleDevicesRequest{
+//     UserIdentityId: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// fmt.Println(accessibleDevices)
+// return nil
+
+// _, uErr := client.UserIdentities.RevokeAccessToDevice(context.Background(), &api.UserIdentitiesRevokeAccessToDeviceRequest{
+//     UserIdentityId: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
+//     DeviceId: "054765c8-a2fc-4599-b486-14c19f462c45",
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// // fmt.Println(revokeDevice)
+// return nil
+
+
+
 
 // _, uErr := client.UserIdentities.Delete(context.Background(), &api.UserIdentitiesDeleteRequest{
 //   UserIdentityId: "44d48b20-0dbe-419d-91ca-ab8bceecd135",
@@ -613,16 +652,47 @@ func run() error {
 // fmt.Println(devices)
 // return nil
 
-devices, err := client.Devices.List(
-	context.Background(), &api.DevicesListRequest{
-    DeviceType: api.DeviceTypeHoneywellThermostat.Ptr(),
-  },
-)
-if err != nil {
-	return err
-}
-fmt.Println(devices)
-return nil
+// devices, err := client.Devices.List(
+// 	context.Background(), &api.DevicesListRequest{
+//     DeviceType: api.DeviceTypeHoneywellThermostat.Ptr(),
+//   },
+// )
+// if err != nil {
+// 	return err
+// }
+// fmt.Println(devices)
+// return nil
+
+// // Create the user identity.
+// response, uErr := client.UserIdentities.Create(context.Background(), &api.UserIdentitiesCreateRequest{
+//     EmailAddress: api.String("jane_go3@example.com"),
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// // Launch the enrollment automation.
+// client.UserIdentities.EnrollmentAutomations.Launch(context.Background(), &useridentities.EnrollmentAutomationsLaunchRequest{
+//   // Use the AcsSystemId for the credential manager.
+//   CredentialManagerAcsSystemId: "6737e186-8d54-48ce-a7da-a0be4d252172",
+//   UserIdentityId: response.UserIdentity.UserIdentityId,
+//   // Automatically create a new credential manager user
+//   // or specify the desired existing CredentialManagerAcsUserId.
+//   CreateCredentialManagerUser: api.Bool(true),
+// })
+
+// // Create the client session.
+// clientSession, uErr := client.ClientSessions.Create(context.Background(), &api.ClientSessionsCreateRequest{
+//   UserIdentityIds: []string{response.UserIdentity.UserIdentityId},
+// })
+
+// // Use this token to launch your mobile controller.
+// token := clientSession.Token
+// fmt.Println("Token:", token)
+
+// return nil
+
 
 
 }

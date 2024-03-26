@@ -1,5 +1,8 @@
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/google/uuid v1.4.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
+github.com/google/uuid v1.6.0 h1:NIvaJDMOsjHA8n1jAhLSgzrAzy1Hgr+hNrb57e+94F0=
+github.com/google/uuid v1.6.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/seamapi/go v0.1.2 h1:UbgGeioep6nqUNA0ImvHq3GUdVa98N94ocBy3Ve2nAc=
@@ -10,6 +13,8 @@ github.com/seamapi/go v0.4.5 h1:LQvX6Om7po67opi7hWtl5F92PYklGyj/WtO/IRs+geA=
 github.com/seamapi/go v0.4.5/go.mod h1:o+Uax1hgds7S3DomI1i/uL2P10PGfbQv72gA7oFE3Ic=
 github.com/seamapi/go v0.4.7 h1:En+FLQxjY4LhKcXJj0g1RjQjgu3b3aS4NwCBLYkMvbU=
 github.com/seamapi/go v0.4.7/go.mod h1:o+Uax1hgds7S3DomI1i/uL2P10PGfbQv72gA7oFE3Ic=
+github.com/seamapi/go v0.4.12 h1:qnqzVAlepu/x0ANhG++5B/Emg+gPPXeOyz95dPeOk6o=
+github.com/seamapi/go v0.4.12/go.mod h1:Y94r286kwz2B/DCZ8XcXMdvp9LtgxMRBJwGZrNzpdNk=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.7.0 h1:nwc3DEeHmmLAfoZucVR881uASk0Mfjw8xYJ99tb5CcY=
 github.com/stretchr/testify v1.7.0/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
