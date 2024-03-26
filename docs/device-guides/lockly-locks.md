@@ -62,9 +62,6 @@ To control Lockly devices using Seam, you must prompt owners of these devices to
 
     <figure><img src="../.gitbook/assets/lockly-access-portal-account-created-successfully.png" alt="Note the information for the newly-created user account." width="563"><figcaption></figcaption></figure>
 10. Note the client ID, access key ID, access key secret, token ID, and token secret.
-11. Log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) and specify these noted values to connect your Lockly devices to Seam.
-
-    <figure><img src="../.gitbook/assets/seam-connect-webview-lockly.png" alt="Specify the noted credentials to connect your Lockly devices to Seam." width="375"><figcaption></figcaption></figure>
 
 ***
 

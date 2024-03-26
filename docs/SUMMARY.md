@@ -63,15 +63,16 @@
     * [Deleting Climate Setting Schedules](capability-guides/thermostats/managing-scheduled-climate-settings-in-development/deleting-climate-setting-schedules.md)
 * [👂 Noise Sensors](products/noise-sensors/README.md)
   * [Configuring Noise Threshold Settings](products/noise-sensors/configure-noise-threshold-settings.md)
-* [📱 Mobile Access - In Development](products/mobile-access-in-development/README.md)
-  * [Mobile Access Setup](products/mobile-access-in-development/mobile-access-setup.md)
+* [📱 Mobile Access](products/mobile-access-in-development/README.md)
+  * [Prepare your Workspace](products/mobile-access-in-development/mobile-access-setup.md)
   * [Managing Mobile App User Accounts with User Identities](products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md)
   * [Managing Phones for a User Identity](products/mobile-access-in-development/managing-phones-for-a-user-identity.md)
   * [Issuing Mobile Credentials from an Access Control System](products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md)
   * [Developing in a Sandbox Workspace](capability-guides/mobile-access-in-development/developing-in-a-sandbox-workspace.md)
-  * [Mobile device SDKs](capability-guides/mobile-access-in-development/mobile-sdk-coming-soon/README.md)
-    * [iOS Mobile Key Support \[WIP\]](capability-guides/mobile-access-in-development/mobile-sdk-coming-soon/ios-mobile-key-support-wip.md)
-    * [Android SDK \[WIP\]](capability-guides/mobile-access-in-development/mobile-sdk-coming-soon/android-sdk-wip.md)
+  * [Integrating into your Mobile Application](capability-guides/mobile-access-in-development/mobile-device-sdks/README.md)
+    * [Initializing the Seam Mobile SDK](capability-guides/mobile-access-in-development/mobile-device-sdks/initializing-the-seam-mobile-sdk.md)
+    * [Handling System Permissions](capability-guides/mobile-access-in-development/mobile-device-sdks/handling-system-permissions.md)
+    * [Using Unlock With Tap](capability-guides/mobile-access-in-development/mobile-device-sdks/using-unlock-with-tap.md)
 * [🌩️ Seam Bridge - In Development](products/seam-bridge-in-development.md)
 
 ## 💻 UI Components
@@ -102,6 +103,7 @@
     * [Seam Provider](seam-components/react-components/seam-provider.md)
     * [Connect Account Button](seam-components/react-components/connect-account-button.md)
   * [Make a Supported Devices Page](seam-components/make-a-supported-devices-page.md)
+  * [Using User Identities to Scope Users' Device Access](ui-components/overview/using-user-identities-to-scope-users-device-access.md)
 
 ## 📋 API Reference <a href="#api-clients" id="api-clients"></a>
 
@@ -138,6 +140,7 @@
   * [List Unmanaged Devices](api-clients/devices/list-unmanaged-devices.md)
   * [Get an Unmanaged Device](api-clients/devices/get-device-1.md)
   * [Update an Unmanaged Device](api-clients/devices/update-unmanaged-device.md)
+  * [Delete a Device](api-clients/devices/delete-device.md)
 * [Access Codes](api-clients/access-codes/README.md)
   * [Create an Access Code](api-clients/access-codes/create-an-access-code.md)
   * [Create Many Access Codes](api-clients/access-codes/create-many-access-codes.md)
@@ -160,8 +163,8 @@
 * [Action Attempt](api-clients/action-attempt/README.md)
   * [Get Action Attempt](api-clients/action-attempt/get-action-attempt.md)
 * [Noise Sensors](api-clients/noise-sensors/README.md)
-  * [List Noise Thresholds](api-clients/noise-sensors/list-noise-thresholds.md)
   * [Create Noise Thresholds](api-clients/noise-sensors/create-noise-threshold.md)
+  * [List Noise Thresholds](api-clients/noise-sensors/list-noise-thresholds.md)
   * [Update Noise Threshold](api-clients/noise-sensors/update-noise-threshold.md)
   * [Delete Noise Threshold](api-clients/noise-sensors/delete-noise-threshold.md)
 * [Thermostats](thermostats/README.md)
@@ -216,10 +219,15 @@
   * [List ACS Users Associated with a User Identity](api-clients/user-identities/list-acs-users-associated-with-a-user-identity.md)
   * [List ACS Systems Associated with a User Identity](api-clients/user-identities/list-acs-systems-associated-with-a-user-identity.md)
   * [Remove an ACS User from a User Identity](api-clients/user-identities/remove-an-acs-user-from-a-user-identity.md)
+  * [Grant a User Identity Access to a Device](api-clients/user-identities/grant-a-user-identity-access-to-a-device.md)
+  * [List Accessible Devices for a User Identity](api-clients/user-identities/list-accessible-devices-for-a-user-identity.md)
+  * [Revoke Access to a Device from a User Identity](api-clients/user-identities/revoke-access-to-a-device-from-a-user-identity.md)
+  * [Delete a User Identity](api-clients/user-identities/delete-a-user-identity.md)
   * [Enrollment Automations](api-clients/user-identities/enrollment-automations/README.md)
     * [Launch an Enrollment Automation](api-clients/user-identities/enrollment-automations/launch-an-enrollment-automation.md)
     * [List Enrollment Automations](api-clients/user-identities/enrollment-automations/list-enrollment-automations.md)
     * [Get an Enrollment Automation](api-clients/user-identities/enrollment-automations/get-an-enrollment-automation.md)
+    * [Delete an Enrollment Automation](api-clients/user-identities/enrollment-automations/delete-an-enrollment-automation.md)
 
 ## 🛠️ Developer Tools
 
@@ -238,7 +246,7 @@
   * [Sandbox ecobee Thermostats](device-guides/sandbox-and-sample-data/ecobee-sample-data.md)
   * [Sandbox Genie Garage Openers](device-guides/sandbox-and-sample-data/genie-sample-data.md)
   * [Sandbox Google Nest Thermostats](device-guides/sandbox-and-sample-data/google-nest-thermostats-sample-data.md)
-  * [Sandbox Honeywell Thermostats](developer-tools/sandbox-and-sample-data/sandbox-honeywell-thermostats.md)
+  * [Sandbox Honeywell Resideo Thermostats](developer-tools/sandbox-and-sample-data/sandbox-honeywell-thermostats.md)
   * [Sandbox igloohome Locks](device-guides/sandbox-and-sample-data/igloohome-sample-data.md)
   * [Sandbox Kwikset Locks](device-guides/sandbox-and-sample-data/kwikset-locks-sample-data.md)
   * [Sandbox Linear Callboxes](device-guides/sandbox-and-sample-data/linear-sample-data.md)
@@ -256,6 +264,9 @@
   * [Sandbox Wyze Locks](device-guides/sandbox-and-sample-data/wyze-sample-data.md)
   * [Sandbox Yale Locks](device-guides/sandbox-and-sample-data/yale-sample-data.md)
 * [Rate Limits and Guardrails](device-guides/rate-limits-and-guardrails.md)
+* [Mobile SDKs](developer-tools/mobile-sdks/README.md)
+  * [Android SDK](developer-tools/mobile-sdks/android-sdk.md)
+  * [iOS SDK](developer-tools/mobile-sdks/ios-sdk.md)
 
 ## 🎛️ Device and System Integration Guides
 
@@ -279,8 +290,8 @@
 * [Google Nest Thermostats](device-guides/google-nest-thermostats/README.md)
   * [Get Started with Nest Thermostats](device-and-system-integration-guides/google-nest-thermostats/get-started-with-nest-thermostats.md)
   * [Obtain Google Nest Device Access and Commercial Development](device-guides/google-nest-thermostats/obtain-google-nest-device-access-and-commercial-development.md)
-* [Honeywell Thermostats](device-and-system-integration-guides/honeywell-thermostats/README.md)
-  * [Get Started with Honeywell Thermostats](device-and-system-integration-guides/honeywell-thermostats/get-started-with-honeywell-thermostats.md)
+* [Honeywell Resideo Thermostats](device-and-system-integration-guides/honeywell-thermostats/README.md)
+  * [Get Started with Honeywell Resideo Thermostats](device-and-system-integration-guides/honeywell-thermostats/get-started-with-honeywell-thermostats.md)
 * [igloohome Locks](device-guides/igloohome-locks.md)
   * [Get started with Igloohome Locks](device-guides/get-started-with-igloo-locks.md)
 * [Kwikset Locks](device-guides/kwikset-locks.md)

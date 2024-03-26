@@ -1,14 +1,14 @@
 ---
-description: Learn how to connect and control your Honeywell devices with the Seam API.
+description: Learn how to connect and control your Honeywell Resideo devices with the Seam API.
 ---
 
-# Get Started with Honeywell Thermostats
+# Get Started with Honeywell Resideo Thermostats
 
-<figure><img src="../../.gitbook/assets/honeywell_get-started-cover.png" alt=""><figcaption><p>Honeywell Thermostats</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/honeywell_get-started-cover.png" alt=""><figcaption><p>Honeywell Resideo Thermostats</p></figcaption></figure>
 
 ## Overview
 
-Seam provides a universal API to connect and control many brands of devices such as smart locks, thermostats, and sensors. This guide provides a rapid introduction to connecting and controlling your [Honeywell](https://www.seam.co/manufacturers/honeywell) thermostats using the Seam API. To learn more about other brands of devices supported by Seam, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
+Seam provides a universal API to connect and control many brands of devices such as smart locks, thermostats, and sensors. This guide provides a rapid introduction to connecting and controlling your [Honeywell Resideo](https://www.seam.co/manufacturers/honeywell) thermostats using the Seam API. To learn more about other brands of devices supported by Seam, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
 ## 1. Install Seam SDK
 
@@ -91,9 +91,9 @@ $ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
 This guide uses a sandbox workspace. You can only connect virtual thermostats to a sandbox workspace. If you need to connect a real Honeywell device, use a non-sandbox workspace and API key.
 {% endhint %}
 
-## 2. Link Honeywell Account with Seam
+## 2. Link Honeywell Resideo Account with Seam
 
-To control your Honeywell device using the Seam API, you must first authorize your Seam workspace against your Honeywell account. To do so, Seam provides[ Connect Webviews](../../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Honeywell device.
+To control your Honeywell Resideo device using the Seam API, you must first authorize your Seam workspace against your Honeywell Resideo account. To do so, Seam provides[ Connect Webviews](../../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Honeywell Resideo device.
 
 ### Create a Connect Webview
 
@@ -103,7 +103,7 @@ To control your Honeywell device using the Seam API, you must first authorize yo
 from seamapi import Seam
 seam = Seam()
 
-webview = seam.connect_webviews.create(accepted_providers=["honeywell"])
+webview = seam.connect_webviews.create(accepted_providers=["honeywell_resideo"])
 
 assert webview.login_successful is False
 
@@ -119,7 +119,7 @@ import { Seam } from 'seam'
 const seam = new Seam()
 
 const connectWebview = await seam.connectWebviews.create({
-  accepted_providers: ["honeywell"],
+  accepted_providers: ["honeywell_resideo"],
 })
 
 console.log(connectWebview.login_successful) // false
@@ -136,7 +136,7 @@ use Seam\SeamClient;
 $seam = new SeamClient("YOUR_API_KEY");
 
 $webview = $seam->connect_webviews->create(
-  accepted_providers: ["honeywell"]
+  accepted_providers: ["honeywell_resideo"]
 );
 
 # Send this Connect Webview URL to your user.
@@ -148,7 +148,7 @@ echo json_encode($webview)
 ```java
 ConnectWebview createdConnectWebview = seam.connectWebviews().create(ConnectWebviewsCreateRequest.builder()
                 .acceptedProviders(List.of(
-                  AcceptedProvider.HONEYWELL))
+                  AcceptedProvider.HONEYWELL_RESIDEO))
                 .build());
 System.out.println(createdConnectWebview.getLoginSuccessful()); // false
 
@@ -163,7 +163,7 @@ connectWebview, err := client.ConnectWebviews.Create(
   context.Background(),
   &api.ConnectWebviewsCreateRequest{
         AcceptedProviders: []api.AcceptedProvider{
-  	      api.AcceptedProviderHoneywell,
+  	      api.AcceptedProviderHoneywellResideo,
         },
   },
 )
@@ -182,12 +182,12 @@ return nil
 
 ### Authorize Your Workspace
 
-Navigate to the URL that the Connect Webview object returns. Because you are using a sandbox workspace, complete the login flow by entering the following Honeywell [sandbox test account ](../../developer-tools/sandbox-and-sample-data/sandbox-honeywell-thermostats.md)credentials:
+Navigate to the URL that the Connect Webview object returns. Because you are using a sandbox workspace, complete the login flow by entering the following Honeywell Resideo [sandbox test account ](../../developer-tools/sandbox-and-sample-data/sandbox-honeywell-thermostats.md)credentials:
 
 * **email**: jane@example.com
 * **password**: 1234
 
-<figure><img src="../../.gitbook/assets/honeywell_connect-flow-screens.jpg" alt=""><figcaption><p>Seam Connect Webview flow to connect Honeywell account with Seam</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/honeywell_connect-flow-screens.jpg" alt=""><figcaption><p>Seam Connect Webview flow to connect Honeywell Resideo account with Seam</p></figcaption></figure>
 
 ### Get the New Connect Webview
 
@@ -247,18 +247,18 @@ return nil
 {% endtab %}
 {% endtabs %}
 
-## 3. Retrieve your Honeywell Thermostat
+## 3. Retrieve your Honeywell Resideo Thermostat
 
-Honeywell thermostats appear with the `device_type` `"honeywell_thermostat"`.
+Honeywell Resideo thermostats appear with the `device_type` `"honeywell_resideo_thermostat"`.
 
 {% tabs %}
 {% tab title="Python" %}
 ```python
-devices = seam.devices.list(device_type="honeywell_thermostat")
+devices = seam.devices.list(device_type="honeywell_resideo_thermostat")
 
 pprint(devices[0])
 # Device(device_id='06a561b6-09d2-401c-a25f-ddb1e1efd59e',
-#      device_type='honeywell_thermostat',
+#      device_type='honeywell_resideo_thermostat',
 #      location=None,
 #      properties={'available_hvac_mode_settings': ['off',
 #                                                   'cool',
@@ -274,8 +274,8 @@ pprint(devices[0])
 #                                              'manual_override_allowed': True},
 #                  'fan_mode_setting': 'on',
 #                  'has_direct_power': True,
-#                  'honeywell_metadata': {'device_name': 'T61',
-#                                         'honeywell_device_id': 'c47711ec-4e8e-4785-ad3b-7a7e3f81e2b5'},
+#                  'honeywell_resideo_metadata': {'device_name': 'T61',
+#                                         'honeywell_resideo_device_id': 'c47711ec-4e8e-4785-ad3b-7a7e3f81e2b5'},
 #                  'image_alt_text': 'Placeholder Lock Image',
 #                  'image_url': 'https://connect.getseam.com/assets/images/devices/unknown-lock.png',
 #                  'is_climate_setting_schedule_active': False,
@@ -285,7 +285,7 @@ pprint(devices[0])
 #                  'is_heating': True,
 #                  'is_heating_available': True,
 #                  'is_temporary_manual_override_active': False,
-#                  'manufacturer': 'honeywell',
+#                  'manufacturer': 'honeywell_resideo',
 #                  'max_cooling_set_point_celsius': 32.22222222222222,
 #                  'max_cooling_set_point_fahrenheit': 90,
 #                  'max_heating_set_point_celsius': 32.22222222222222,
@@ -298,7 +298,7 @@ pprint(devices[0])
 #                  'min_heating_set_point_fahrenheit': 50,
 #                  'model': {'accessory_keypad_supported': False,
 #                            'display_name': 'Thermostat',
-#                            'manufacturer_display_name': 'Honeywell'},
+#                            'manufacturer_display_name': 'Honeywell Resideo'},
 #                  'name': 'T61',
 #                  'online': True,
 #                  'temperature_celsius': 24.444444444444446,
@@ -316,26 +316,26 @@ pprint(devices[0])
 {% tab title="JavaScript" %}
 ```javascript
 const devices = await seam.devices.list({
-  device_type: 'honeywell_thermostat',
+  device_type: 'honeywell_resideo_thermostat',
 })
 
 console.log(devices[0])
 /*
 {
   device_id: '06a561b6-09d2-401c-a25f-ddb1e1efd59e',
-  device_type: 'honeywell_thermostat',
+  device_type: 'honeywell_resideo_thermostat',
   capabilities_supported: [ 'thermostat' ],
   properties: {
     online: true,
     is_cooling: false,
     is_heating: true,
-    manufacturer: 'honeywell',
+    manufacturer: 'honeywell_resideo',
     is_fan_running: true,
     fan_mode_setting: 'on',
     has_direct_power: true,
-    honeywell_metadata: {
+    honeywell_resideo_metadata: {
       device_name: 'T61',
-      honeywell_device_id: 'c47711ec-4e8e-4785-ad3b-7a7e3f81e2b5'
+      honeywell_resideo_device_id: 'c47711ec-4e8e-4785-ad3b-7a7e3f81e2b5'
     },
     temperature_celsius: 24.444444444444446,
     is_cooling_available: true,
@@ -361,7 +361,7 @@ console.log(devices[0])
     name: 'T61',
     model: {
       display_name: 'Thermostat',
-      manufacturer_display_name: 'Honeywell',
+      manufacturer_display_name: 'Honeywell Resideo',
       accessory_keypad_supported: false
     },
     image_url: 'https://connect.getseam.com/assets/images/devices/unknown-lock.png',
@@ -389,30 +389,30 @@ console.log(devices[0])
 {% tab title="PHP" %}
 ```php
 $devices = $seam->devices->list(
-  device_type: "honeywell_thermostat"
+  device_type: "honeywell_resideo_thermostat"
 );
 echo json_encode($devices[0]), "\n";
 
-// {"device_id":"06a561b6-09d2-401c-a25f-ddb1e1efd59e","device_type":"honeywell_thermostat","capabilities_supported":["thermostat"],"properties":{"online":true,"name":"T61","model":{"display_name":"Thermostat","manufacturer_display_name":"Honeywell",...}
+// {"device_id":"06a561b6-09d2-401c-a25f-ddb1e1efd59e","device_type":"honeywell_resideo_thermostat","capabilities_supported":["thermostat"],"properties":{"online":true,"name":"T61","model":{"display_name":"Thermostat","manufacturer_display_name":"Honeywell Resideo",...}
 ```
 {% endtab %}
 
 {% tab title="Java" %}
 ```java
 var devices = seam.devices().list(DevicesListRequest.builder()
-                .deviceType(DeviceType.HONEYWELL_THERMOSTAT)
+                .deviceType(DeviceType.HONEYWELL_RESIDEO_THERMOSTAT)
                 .build());
 
 System.out.println(devices);
 // [{
 //   device_id: '06a561b6-09d2-401c-a25f-ddb1e1efd59e',
-//   device_type: 'honeywell_thermostat',
+//   device_type: 'honeywell_resideo_thermostat',
 //   capabilities_supported: [ 'thermostat' ],
 //   properties: {
 //     online: true,
 //     is_cooling: false,
 //     is_heating: true,
-//     manufacturer: 'honeywell',
+//     manufacturer: 'honeywell_resideo',
 //     is_fan_running: true,
 //     fan_mode_setting: 'on',
 //     has_direct_power: true,
@@ -444,7 +444,7 @@ System.out.println(devices);
 //     name: 'T61',
 //     model: {
 //       display_name: 'Thermostat',
-//       manufacturer_display_name: 'Honeywell',
+//       manufacturer_display_name: 'Honeywell Resideo',
 //       accessory_keypad_supported: false
 //     },
 //     image_url: 'https://connect.getseam.com/assets/images/devices/unknown-lock.png',
@@ -472,7 +472,7 @@ System.out.println(devices);
 ```go
 devices, err := client.Devices.List(
 	context.Background(), &api.DevicesListRequest{
-    DeviceType: api.DeviceTypeHoneywellThermostat.Ptr(),
+    DeviceType: api.DeviceTypeHoneywellResideoThermostat.Ptr(),
   },
 )
 if err != nil {
@@ -483,13 +483,13 @@ return nil
 
 // [{
 //   device_id: '06a561b6-09d2-401c-a25f-ddb1e1efd59e',
-//   device_type: 'honeywell_thermostat',
+//   device_type: 'honeywell_resideo_thermostat',
 //   capabilities_supported: [ 'thermostat' ],
 //   properties: {
 //     online: true,
 //     is_cooling: false,
 //     is_heating: true,
-//     manufacturer: 'honeywell',
+//     manufacturer: 'honeywell_resideo',
 //     is_fan_running: true,
 //     fan_mode_setting: 'on',
 //     has_direct_power: true,
@@ -521,7 +521,7 @@ return nil
 //     name: 'T61',
 //     model: {
 //       display_name: 'Thermostat',
-//       manufacturer_display_name: 'Honeywell',
+//       manufacturer_display_name: 'Honeywell Resideo',
 //       accessory_keypad_supported: false
 //     },
 //     image_url: 'https://connect.getseam.com/assets/images/devices/unknown-lock.png',
@@ -706,6 +706,6 @@ return nil
 
 ## Next Steps
 
-Now that you have completed this guide, you can try to connect a real Honeywell device. To do so, make sure to switch to a non-sandbox workspace and API key because you cannot connect real devices to sandbox workspaces.
+Now that you have completed this guide, you can try to connect a real Honeywell Resideo device. To do so, make sure to switch to a non-sandbox workspace and API key because you cannot connect real devices to sandbox workspaces.
 
 If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).

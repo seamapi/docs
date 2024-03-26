@@ -4,6 +4,13 @@ description: Delete a Connected Account by ID
 
 # Delete a Connected Account
 
+{% hint style="warning" %}
+Deleting a connected account triggers a `connected_account.deleted` event and removes the connected account and all data associated with the connected account from Seam, including devices, events, access codes, and so on. For every deleted resource, Seam sends a corresponding deleted event, but the resource is not deleted from the provider.
+
+For example, if you delete a connected account with a device that has an access code, Seam sends a `connected_account.deleted` event, a `device.deleted` event, and an `access_code.deleted` event,
+but Seam does not remove the access code from the device.
+{% endhint %}
+
 {% swagger src="https://connect.getseam.com/openapi.json" path="/connected_accounts/delete" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
 {% endswagger %}
@@ -12,11 +19,14 @@ description: Delete a Connected Account by ID
 
 {% tabs %}
 {% tab title="Python" %}
+
 <pre class="language-python"><code class="lang-python"><strong>seam.connected_accounts.delete("f891acfd-d228-4bb2-8399-c0f7e24e6b16")
 </strong></code></pre>
+
 {% endtab %}
 
 {% tab title="cURL (bash)" %}
+
 ```bash
 curl -X 'POST' \
   'https://connect.getseam.com/connected_accounts/delete' \
@@ -31,27 +41,34 @@ curl -X 'POST' \
 #   "ok": true
 # }
 ```
+
 {% endtab %}
 
 {% tab title="JavaScript" %}
+
 <pre class="language-javascript"><code class="lang-javascript"><strong>await seam.connectedAccounts.delete({
 </strong>  connected_account_id: "f891acfd-d228-4bb2-8399-c0f7e24e6b16"
 })
 </code></pre>
+
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 $seam->connected_accounts->delete("f891acfd-d228-4bb2-8399-c0f7e24e6b16");
 ```
+
 {% endtab %}
 
 {% tab title="Java" %}
+
 ```java
 seam.connectedAccounts().delete(ConnectedAccountsDeleteRequest.builder()
                 .connectedAccountId("f891acfd-d228-4bb2-8399-c0f7e24e6b16")
                 .build());
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -68,10 +85,12 @@ This section shows the JSON response returned by the API. Since each language en
 
 {% tabs %}
 {% tab title="JSON" %}
+
 ```json
 {
   "ok": true
 }
 ```
+
 {% endtab %}
 {% endtabs %}

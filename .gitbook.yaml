@@ -12,3 +12,8 @@ redirects:
   quickstart/your-first-device-api-call: quickstart.md
   quickstart/going-live: quickstart.md
   going-live: go-live.md
+  core-concepts/workspaces/api-keys: core-concepts/authentication/api-keys.md
+  core-concepts/workspaces/personal-access-tokens: core-concepts/authentication/personal-access-tokens.md
+  core-concepts/workspaces/client-session-tokens: core-concepts/authentication/client-session-tokens/README.md
+  core-concepts/workspaces/client-session-tokens/implementing-client-sessions-for-device-management-in-the-backend: core-concepts/authentication/client-session-tokens/implementing-client-sessions-for-device-management-in-the-backend.md
+  

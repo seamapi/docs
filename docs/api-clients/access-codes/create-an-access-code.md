@@ -323,7 +323,7 @@ AccessCode(access_code_id='1bbd1eba-e4a2-4f96-b1b9-8498a5405b2b',
 {% endtab %}
 
 {% tab title="cURL (bash)" %}
-### Request:
+#### Request:
 
 ```sh
 curl -X 'POST' \
@@ -340,7 +340,7 @@ curl -X 'POST' \
 }'
 ```
 
-### Response:
+#### Response:
 
 ```json
 {
@@ -557,7 +557,7 @@ System.out.println(CreatedAccessCode);
 {% endtab %}
 {% endtabs %}
 
-### Creating an Hourly-Bound Offline Access Code&#x20;
+### Creating an Hourly-Bound Offline Access Code
 
 {% tabs %}
 {% tab title="Python" %}
@@ -606,7 +606,7 @@ AccessCode(access_code_id='f078dce8-3c5e-4bc4-bd08-3ad013ee8be6',
 {% endtab %}
 
 {% tab title="cURL (bash)" %}
-### Request:
+#### Request:
 
 ```sh
 curl -X 'POST' \
@@ -623,7 +623,7 @@ curl -X 'POST' \
 }'
 ```
 
-### Response:
+#### Response:
 
 ```json
 {
@@ -707,7 +707,7 @@ console.log(createdAccessCode)
 {% endtab %}
 {% endtabs %}
 
-### Creating a Daily-Bound Offline Access Code&#x20;
+### Creating a Daily-Bound Offline Access Code
 
 {% tabs %}
 {% tab title="Python" %}
@@ -757,7 +757,7 @@ AccessCode(access_code_id='7cac9c2c-4313-4a94-a034-ceee2a4bd9ef',
 {% endtab %}
 
 {% tab title="cURL (bash)" %}
-### Request:
+#### Request:
 
 ```sh
 curl -X 'POST' \
@@ -776,7 +776,7 @@ curl -X 'POST' \
 }'
 ```
 
-### Response:
+#### Response:
 
 ```json
 {
@@ -860,7 +860,7 @@ console.log(createdAccessCode)
 {% endtab %}
 {% endtabs %}
 
-### Creating a One-Time-Use Offline Access Code&#x20;
+### Creating a One-Time-Use Offline Access Code
 
 {% tabs %}
 {% tab title="Python" %}
@@ -909,7 +909,7 @@ AccessCode(access_code_id='995957b0-5db5-43f2-ac64-e8ad076c09cf',
 {% endtab %}
 
 {% tab title="cURL (bash)" %}
-### Request:
+#### Request:
 
 ```sh
 curl -X 'POST' \
@@ -926,7 +926,7 @@ curl -X 'POST' \
 }'
 ```
 
-### Response:
+#### Response:
 
 ```json
 {
@@ -977,7 +977,7 @@ curl -X 'POST' \
 | `use_backup_access_code_pool` | <p>type: boolean<br>Optional</p> | Use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. This allows you to use [/access\_codes/pull\_backup\_access\_code](https://docs.seam.co/latest/api-clients/access-codes/pull-backup-access-code) |
 | `common_code_key`             | <p>type: string<br>Optional</p>  | any two access codes with the same `common_code_key` are guaranteed to have the same code                                                                                                                                                                                      |
 | `prefer_native_scheduling`    | <p>type: boolean<br>Optional</p> | Whether [native scheduling](../../products/smart-locks/access-codes/#native-scheduling) should be used for time-bound codes when supported by the provider (defaults to true)                                                                                                  |
-| `allow_external_modification` | <p>type: boolean<br>Optional</p> | Whether [external modification](../../api-clients/access-codes#external-modification) of the codes should be allowed (defaults to false)                                                                                                                 |
+| `allow_external_modification` | <p>type: boolean<br>Optional</p> | Whether [external modification](./#external-modification) of the codes should be allowed (defaults to false)                                                                                                                                                                   |
 | `is_offline_access_code`      | <p>type: boolean<br>Optional</p> | Whether the access code is an [offline access code](../../products/smart-locks/access-codes/offline-access-codes.md)                                                                                                                                                           |
 | `is_one_time_use`             | <p>type: boolean<br>Optional</p> | Whether the [offline access code](../../products/smart-locks/access-codes/offline-access-codes.md) is a single-use access code.                                                                                                                                                |
 

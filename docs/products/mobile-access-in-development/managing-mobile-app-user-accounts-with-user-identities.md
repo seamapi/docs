@@ -144,7 +144,7 @@ To [link an ACS user with a user identity](../../api-clients/user-identities/add
 </strong>acs_user = seam.acs.users.get(email_address="jean@example.com")
 
 seam.user_identities.add_acs_user(
-  user_identity=user_identity.user_identity_id,
+  user_identity_id=user_identity.user_identity_id,
   acs_user_id=acs_user.acs_user_id
 )
 </code></pre>

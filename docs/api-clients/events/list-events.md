@@ -4,54 +4,30 @@ description: List event emitted within a users workspace
 
 # List Events
 
-{% swagger method="get" path="/events/list" baseUrl="https://connect.getseam.com" summary="List Events" %}
-{% swagger-description %}
+## List Events
 
-{% endswagger-description %}
+<mark style="color:blue;">`GET`</mark> `https://connect.getseam.com/events/list`
 
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-Bearer <API_KEY>
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="body" name="since" required="true" %}
-Date since when events were generated
-{% endswagger-parameter %}
+| Name                                            | Type   | Description        |
+| ----------------------------------------------- | ------ | ------------------ |
+| Authorization<mark style="color:red;">\*</mark> | String | Bearer \<API\_KEY> |
 
-{% swagger-parameter in="body" name="device_id" %}
-ID of the Device
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="body" name="device_ids" %}
-IDs of the Devices
-{% endswagger-parameter %}
+| Name                                    | Type   | Description                                                                                                                                                                                                                       |
+| --------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| since<mark style="color:red;">\*</mark> | String | Date since when events were generated                                                                                                                                                                                             |
+| device\_id                              | String | ID of the Device                                                                                                                                                                                                                  |
+| device\_ids                             | String | IDs of the Devices                                                                                                                                                                                                                |
+| access\_code\_id                        | String | ID of the Access Code                                                                                                                                                                                                             |
+| access\_code\_ids                       | String | IDs of the Access Codes                                                                                                                                                                                                           |
+| event\_type                             |        | <p>Get all events by type:</p><p>\</p><p>"device.connected" | "device.disconnected" | "device.tampered" | "device.low_battery" | "access_code.created" | "noise_detection.detected_noise" | "connected_account.disconnected"</p>  |
+| event\_types                            | String | <p>Get all events by types:</p><p>\</p><p>"device.connected" | "device.disconnected" | "device.tampered" | "device.low_battery" | "access_code.created" | "noise_detection.detected_noise" | "connected_account.disconnected"</p> |
 
-{% swagger-parameter in="body" name="access_code_id" %}
-ID of the Access Code
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="access_code_ids" %}
-IDs of the Access Codes
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="event_type" type="" %}
-Get all events by type:
-
-\
-
-
-"device.connected" | "device.disconnected" | "device.tampered" | "device.low_battery" | "access_code.created" | "noise_detection.detected_noise" | "connected_account.disconnected"
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="event_types" %}
-Get all events by types:
-
-\
-
-
-"device.connected" | "device.disconnected" | "device.tampered" | "device.low_battery" | "access_code.created" | "noise_detection.detected_noise" | "connected_account.disconnected"
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="Events are retrieved" %}
+{% tabs %}
+{% tab title="200: OK Events are retrieved" %}
 ```javascript
 {
   "events": [
@@ -104,9 +80,9 @@ Get all events by types:
   "ok": true
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="" %}
+{% tab title="400: Bad Request " %}
 ```javascript
 {
   "error": {
@@ -125,8 +101,8 @@ Get all events by types:
   "ok": false
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 ### Code Example
 
@@ -135,8 +111,8 @@ To programmatically access events, you can use `events.list` . This will return 
 {% tabs %}
 {% tab title="Javascript" %}
 <pre class="language-javascript"><code class="lang-javascript"><strong>await seam.events.list()
-</strong><strong>
-</strong>/*
+</strong>
+/*
 [
   {
     event_id: '87b2dcda-90ff-4602-8ccc-efb2f4a3d7c2',

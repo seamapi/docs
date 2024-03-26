@@ -148,7 +148,7 @@ import asyncio
 
 async def delete_user_identity(user_identity_id):
     # Delete the Client Sessions
-    client_sessions = await seam.client_sessions.get(
+    client_sessions = await seam.client_sessions.list(
         user_identity_id=user_identity_id
     )
     

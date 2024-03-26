@@ -64,7 +64,6 @@ seam.thermostats.update(
 | `device_id`               | String                                                                  | <p><br>Device ID</p>                                                                                                                                                     |
 | ------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `default_climate_setting` | [Climate Setting object](../../thermostats/#climate-setting-properties) | Default [climate setting](../../thermostats/#climate-setting-properties) when no [climate setting schedules](../../thermostats/climate-setting-schedules/) are in place. |
-| `sync`                    | <p>Boolean<br><em>Optional</em></p>                                     |                                                                                                                                                                          |
 
 ### Response
 

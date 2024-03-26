@@ -1,5 +1,5 @@
 ---
-description: Learn how to connect and control your Ecobee devices with the Seam API.
+description: Learn how to connect and control your Ecobee devices with the Seam API
 ---
 
 # Get Started with ecobee Thermostats
@@ -705,4 +705,4 @@ return nil
 
 Now that you have completed this guide, you can try to connect a real ecobee device. To do so, make sure to switch to a non-sandbox workspace and API key because you cannot connect real devices to sandbox workspaces.
 
-If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).
+If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co)
