@@ -36,9 +36,10 @@ In addition to the common event properties, and common device event properties, 
 
 In addition to the common event properties, and common device event properties, the following properties are available for events that pertain to lock actions:
 
-|          |                                    |                                                                                              |
-| -------- | ---------------------------------- | -------------------------------------------------------------------------------------------- |
-| `method` | `keycode` or `manual` or `unknown` | Present on all of the `lock.*` events. Specifies the method used to perform the lock action. |
+|                  |                                                 |                                                                                                                                                                     |
+| ---------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `method`         | `keycode` or `manual` or `unknown` or `seamapi` | Present on all of the `lock.*` events. Specifies the method used to perform the lock action.                                                                        |
+| `access_code_id` | String                                          | Specifies the unique identifier of the access code used to trigger this event. Seam includes this ID in the event if the affected device returns this information.  |
 
 ### Device Battery Events
 
@@ -122,9 +123,9 @@ Noise sensors emit an event whenever a predefined noise threshold has been excee
 
 ## List of Methods
 
-| [List Events](list-events.md) | List and Filter Events           |
+| [List Events](list-events.md) | List and filter events           |
 | ----------------------------- | -------------------------------- |
-| Get Event                     | Get data for an individual event |
+| [Get Event](get-an-event.md)  | Get data for an individual event |
 
 ## Testing out Events
 
