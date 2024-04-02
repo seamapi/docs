@@ -73,11 +73,11 @@
     * [Initializing the Seam Mobile SDK](capability-guides/mobile-access-in-development/mobile-device-sdks/initializing-the-seam-mobile-sdk.md)
     * [Handling System Permissions](capability-guides/mobile-access-in-development/mobile-device-sdks/handling-system-permissions.md)
     * [Using Unlock With Tap](capability-guides/mobile-access-in-development/mobile-device-sdks/using-unlock-with-tap.md)
-* [🌩️ Seam Bridge - In Development](products/seam-bridge-in-development.md)
+* [🌩️ Seam Bridge](products/seam-bridge-in-development.md)
 
 ## 💻 UI Components
 
-* [Connect Webviews](core-concepts/connect-webviews/README.md)
+* [🔌 Connect Webviews](core-concepts/connect-webviews/README.md)
   * [Embedding a Connect Webview in Your App](core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app.md)
   * [Attaching Custom Metadata to the Connect Webview](core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview.md)
   * [Filtering Connect Webviews by Custom Metadata](core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata.md)
