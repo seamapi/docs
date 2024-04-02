@@ -48,7 +48,13 @@ end
 
 ***
 
-## 2. Configure a User Identity for your App User and Generate a Client Session Token
+## 2. Implement any Manufacturer-Specific Requirements
+
+See the [device or system integration guide](broken-reference) for the access control system or device for which you are planning to develop. Further, you may need to register for developer access with the ACS that you have chosen to use.
+
+***
+
+## 3. Configure a User Identity for your App User and Generate a Client Session Token
 
 A [User Identity](../../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md) allows the application to request a user's mobile access permissions, and use the app to unlock doors.
 
@@ -183,7 +189,7 @@ return nil
 
 ***
 
-## 3. Configure the User Identity for an Access Platform or Lock Brand
+## 4. Configure the User Identity for an Access Platform or Lock Brand
 
 To enable a user identity to utilize mobile credentials from different platforms or unlock various lock brands through our SDK, you may need to launch an enrollment automation for each system or brand you wish to include. Please refer to [system integration guides](broken-reference) for more details on how to launch an enrollment automation for a particular system.
 
@@ -280,7 +286,7 @@ client.UserIdentities.EnrollmentAutomations.Launch(context.Background(), &userid
 
 ***
 
-## 4. Initialize the Mobile SDK with the Client Session Token
+## 5. Initialize the Mobile SDK with the Client Session Token
 
 Use the client session token generated earlier to initialize the Seam Mobile SDK. This initializes the Mobile SDK for the app user, and retrieves the relevant provider-specific settings. This also launches a background process that will continually poll for any updates to the access permissions.
 
@@ -293,7 +299,6 @@ The initialization process may fail if the Seam workspace or provider-specific s
 ```kotlin
 import co.seam.sdk.Seam
 import co.seam.sdk.SeamError
-
 
 
 // Initialize the Seam client with the client session token. nclude the

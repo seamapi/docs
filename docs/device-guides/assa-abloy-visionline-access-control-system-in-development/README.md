@@ -2,7 +2,7 @@
 description: Guide for using the ASSA ABLOY Visionline Access Control System with Seam
 ---
 
-# ASSA ABLOY Visionline Access Control System - In Development
+# ASSA ABLOY Visionline Access Control System
 
 ## Overview
 
@@ -31,6 +31,8 @@ To create a [Connect Webview](../../core-concepts/connect-webviews/) that enable
 
 {% hint style="info" %}
 Before connecting your Visionline ACS to Seam, you must first install and connect your Seam Bridge. For detailed instructions, see [Seam Bridge](../../products/seam-bridge-in-development.md).
+
+To issue mobile keys, you must also connect ASSA ABLOY Credential Services to Seam for credential management. For detailed instructions, see [ASSA ABLOY Credential Services](../assa-abloy-credential-services-credential-manager-in-development.md).
 {% endhint %}
 
 1. Log in to the Visionline application and note your username and password.\
@@ -72,14 +74,12 @@ Before connecting your Visionline ACS to Seam, you must first install and connec
 {% hint style="info" %}
 When connecting a Visionline ACS in your sandbox test environment, you can use the following test credentials:
 
-[ASSA ABLOY Visionline Access Control System Sample Data](../sandbox-and-sample-data/assa-abloy-visionline-access-management-system-sample-data.md)
+[Sandbox ASSA ABLOY Visionline Access Control System](../sandbox-and-sample-data/assa-abloy-visionline-access-management-system-sample-data.md)
+
+To issue mobile keys in your sandbox test environment, you must also use the sandbox ASSA ABLOY Credential Services for credential management. You can use the following test credential manager credentials:
+
+[Sandbox ASSA ABLOY Credential Services](../sandbox-and-sample-data/assa-abloy-credential-service-sample-data.md)
 {% endhint %}
-
-***
-
-## Brand-Specific Credential Restrictions
-
-When creating a credential, you must set `is_multi_phone_sync_credential` to `true` or `external_type` to `visionline_card`. For more information, see [Configuring Visionline Mobile Credentials](credential-types.md) and [Issuing Credentials](../../products/access-systems/issuing-credentials.md).
 
 ***
 
@@ -87,7 +87,7 @@ When creating a credential, you must set `is_multi_phone_sync_credential` to `tr
 
 To purchase the Assa Abloy Visionline ACS and devices, request a quote from ASSA ABLOY.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>ASSA ABLOY Contact Page</strong></td><td></td><td><a href="https://www.assaabloyglobalsolutions.com/en/about/local-contacts">https://www.assaabloyglobalsolutions.com/en/about/local-contacts</a></td><td><a href="../../.gitbook/assets/image (1).png">image (1).png</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>ASSA ABLOY Contact Page</strong></td><td></td><td><a href="https://www.assaabloyglobalsolutions.com/en/about/local-contacts">https://www.assaabloyglobalsolutions.com/en/about/local-contacts</a></td><td><a href="../../.gitbook/assets/image (1) (1).png">image (1) (1).png</a></td></tr></tbody></table>
 
 ***
 

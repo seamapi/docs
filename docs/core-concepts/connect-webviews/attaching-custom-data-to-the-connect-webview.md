@@ -231,3 +231,7 @@ System.out.println(createdConnectWebview);
 {% hint style="info" %}
 If a Connect Webview was used to connect an existing connected account (for example, to reconnect a disconnected account), Seam will replace any existing `custom metadata` in the `connected_account` object with the new payload.
 {% endhint %}
+
+## Next Steps
+
+Once you have attached custom metadata to Connect Webviews, you can [filter your Connect Webviews](filtering-connect-webviews-by-custom-metadata.md) by this custom metadata.
