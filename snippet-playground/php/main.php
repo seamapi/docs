@@ -6,14 +6,14 @@ require __DIR__ . '/vendor/autoload.php';
 //   "https://r" . md5(random_bytes(8)) . ".fakeseamconnect.seam.vc"
 // );
 
-$seam = new Seam\SeamClient(
-  "seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy",
-  "https://connect.getseam.com"
-);
 // $seam = new Seam\SeamClient(
-//   "seam_test8yup_77ut771wVzFPcfhce9ti5Ccq",
-//   // "https://connect.getseam.com"
+//   "seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy",
+//   "https://connect.getseam.com"
 // );
+$seam = new Seam\SeamClient(
+  "seam_test8yup_77ut771wVzFPcfhce9ti5Ccq",
+  // "https://connect.getseam.com"
+);
 // $seam = new Seam\SeamClient(
 //   // Specify PAT.
 //   "seam_at134EHBFs3_2YuxzbTCZ5EJZcHTzy5b2Z8u",
@@ -145,26 +145,54 @@ $seam = new Seam\SeamClient(
 // # Send the Connect Webview URL to your user.
 // echo json_encode($webview->url), "\n";
 
-// Create the user identity.
-$user_identity = $seam->user_identities->create(
-  email_address: "jane_php@example.com"
+// // Create the user identity.
+// $user_identity = $seam->user_identities->create(
+//   email_address: "jane_php@example.com"
+// );
+
+// // Launch the enrollment automation.
+// $seam->user_identities->enrollment_automations->launch(
+//   // Use the acs_system_id for the credential manager.
+//   credential_manager_acs_system_id: "6737e186-8d54-48ce-a7da-a0be4d252172",
+//   user_identity_id: $user_identity->user_identity_id,
+//   // Automatically create a new credential manager user
+//   // or specify the desired existing credential_manager_acs_user_id.
+//   create_credential_manager_user: true
+// );
+
+// // Create the client session.
+// $client_session = $seam->client_sessions->create(
+//   user_identity_ids: [$user_identity->user_identity_id]
+// );
+
+// // Use this token to launch your mobile controller.
+// $token = $client_session->token;
+// echo $token;
+
+// echo json_encode($seam->acs->systems->list());
+// echo json_encode($seam->acs->users->list());
+// echo json_encode($seam->access_codes->list(
+//   device_id: "b0d98fe5-1145-4a50-a91e-c94ecbd77f3c"
+// ), JSON_PRETTY_PRINT);
+
+// echo json_encode($seam->acs->users->create(
+//   acs_system_id: "449c8955-4741-4c44-aa41-943c79a46368",
+//   user_identity_id: "3cb62920-6a5e-4226-8db8-9e9c795f15a6",
+//   full_name: "Jane Doe3",
+//   email_address: "jane@example.com",
+//   phone_number: "+15555550101"
+// ), JSON_PRETTY_PRINT);
+
+// echo json_encode($seam->acs->users->update(
+//   acs_user_id: "11845264-508e-4e3d-af17-db00a8a0a470",
+//   full_name: "Jack Doe"
+// ), JSON_PRETTY_PRINT);
+
+$seam->acs->users->delete(
+  acs_user_id: "11845264-508e-4e3d-af17-db00a8a0a470"
 );
 
-// Launch the enrollment automation.
-$seam->user_identities->enrollment_automations->launch(
-  // Use the acs_system_id for the credential manager.
-  credential_manager_acs_system_id: "6737e186-8d54-48ce-a7da-a0be4d252172",
-  user_identity_id: $user_identity->user_identity_id,
-  // Automatically create a new credential manager user
-  // or specify the desired existing credential_manager_acs_user_id.
-  create_credential_manager_user: true
-);
 
-// Create the client session.
-$client_session = $seam->client_sessions->create(
-  user_identity_ids: [$user_identity->user_identity_id]
-);
-
-// Use this token to launch your mobile controller.
-$token = $client_session->token;
-echo $token;
+// echo json_encode($seam->acs->users->get(
+//   acs_user_id: "ff44664d-e6ae-4cb4-a9a1-73a8abe6a405"
+// ));

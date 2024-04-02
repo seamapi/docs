@@ -9,10 +9,17 @@ from pprint import pprint
 #     api_key="seam_apikey1_token"
 # )
 
+# seam = Seam(
+#     api_url=f"https://connect.getseam.com",
+#     api_key="seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy"
+# )
+
+# Temp sandbox workspace
 seam = Seam(
     api_url=f"https://connect.getseam.com",
-    api_key="seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy"
+    api_key="seam_test8yup_77ut771wVzFPcfhce9ti5Ccq"
 )
+
 
 # seam = Seam(
 #     api_url=f"https://connect.getseam.com",
@@ -521,22 +528,49 @@ seam = Seam(
 # devices = seam.devices.list(device_type="nest_thermostat")
 # pprint(devices[0])
 
-# Create the user identity.
-user_identity = seam.user_identities.create(
-    email="jane_python@example.com"
-)
+# # Create the user identity.
+# user_identity = seam.user_identities.create(
+#     email="jane_python@example.com"
+# )
 
-# Launch the enrollment automation.
-seam.enrollment_automations.launch(
-    # Use the acs_system_id for the credential manager.
-    credential_manager_acs_system_id="6737e186-8d54-48ce-a7da-a0be4d252172",
-    user_identity_id=user_identity.user_identity_id
-)
+# # Launch the enrollment automation.
+# seam.enrollment_automations.launch(
+#     # Use the acs_system_id for the credential manager.
+#     credential_manager_acs_system_id="6737e186-8d54-48ce-a7da-a0be4d252172",
+#     user_identity_id=user_identity.user_identity_id
+# )
 
-# Create the client session.
-client_session = seam.client_sessions.create(
-    user_identity_ids=[user_identity.user_identity_id]
-)
+# # Create the client session.
+# client_session = seam.client_sessions.create(
+#     user_identity_ids=[user_identity.user_identity_id]
+# )
 
-# Use this token to launch your mobile controller.
-token = client_session.token
+# # Use this token to launch your mobile controller.
+# token = client_session.token
+
+
+# seam.acs.systems.list()
+
+# seam.acs.users.create(
+#     acs_system_id="11111111-1111-1111-1111-111111111111",
+#     acs_access_group_ids=[],
+#     user_identity_id="22222222-2222-2222-2222-222222222222",
+#     full_name="Jane Doe",
+#     email_address="jane@example.com",
+#     phone_number="+15555550101"
+# )
+
+# seam.acs.users.update(
+#     acs_user_id="33333333-3333-3333-3333-333333333333",
+#     full_name="Jack Doe"
+# )
+
+# seam.acs.users.delete(
+#     acs_user_id="33333333-3333-3333-3333-333333333333"
+# )
+
+# seam.acs.users.list(
+#     acs_system_id="11111111-1111-1111-1111-111111111111"
+# )
+
+# pprint(seam.access_codes.get("1a68084d-ec97-4ece-8010-d6ede99d3c9c"))

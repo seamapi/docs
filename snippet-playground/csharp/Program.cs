@@ -12,7 +12,9 @@ using Seam.Model;
 // Get a Seam Client
 var seam = new SeamClient(
     basePath: "https://connect.getseam.com",
-    apiToken: "seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy"
+    // apiToken: "seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy"
+    apiToken: "seam_test8yup_77ut771wVzFPcfhce9ti5Ccq"
+
 );
 // var seam = new SeamClient(
 //     // basePath: "https://connect.getseam.com",
@@ -46,11 +48,11 @@ var seam = new SeamClient(
 //   Console.WriteLine(device);
 // }
 
-var deviceProviders = seam.Devices.ListDeviceProviders(providerCategory: Seam.Api.Devices.ListDeviceProvidersRequest.ProviderCategoryEnum.Stable);
-foreach (var deviceProvider in deviceProviders)
-{
-  Console.WriteLine(deviceProvider);
-}
+// var deviceProviders = seam.Devices.ListDeviceProviders(providerCategory: Seam.Api.Devices.ListDeviceProvidersRequest.ProviderCategoryEnum.Stable);
+// foreach (var deviceProvider in deviceProviders)
+// {
+//   Console.WriteLine(deviceProvider);
+// }
 
 // Device device = seam.Devices.Get("30fd243b-3054-4384-a713-5487076a3826");
 // Console.WriteLine(device);
@@ -642,3 +644,14 @@ foreach (var deviceProvider in deviceProviders)
 //     Console.WriteLine("Battery Status: " + device.Properties.Battery.Status);
 //   }
 // }
+
+Console.WriteLine(seam.AcsSystem.(
+  deviceId: deviceId,
+  name: "my time-bound code",
+  startsAt: "2025-01-01T16:00:00Z",
+  endsAt: "2025-01-22T12:00:00Z",
+  code: "2345"
+));
+
+
+

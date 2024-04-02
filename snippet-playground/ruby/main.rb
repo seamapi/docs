@@ -5,7 +5,8 @@ require 'seamapi'
 # random_number = rand(1e6).to_i
 api_url = "https://connect.getseam.com"
 
-client = Seam::Client.new(base_uri: api_url, api_key: 'seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy')
+# client = Seam::Client.new(base_uri: api_url, api_key: 'seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy')
+client = Seam::Client.new(base_uri: api_url, api_key: 'seam_test8yup_77ut771wVzFPcfhce9ti5Ccq')
 # client = Seam::Client.new(base_uri: api_url, api_key: 'seam_test8yup_77ut771wVzFPcfhce9ti5Ccq')
 # client = Seam::Client.new(api_key: 'seam_test8yup_77ut771wVzFPcfhce9ti5Ccq')
 # client = Seam::Client.new(
@@ -269,26 +270,28 @@ client = Seam::Client.new(base_uri: api_url, api_key: 'seam_test2scj_2c636ceHmdU
 # devices = client.devices.list(device_type: "honeywell_thermostat")
 # puts devices[4].inspect
 
-# Create the user identity.
-user_identity = client.user_identities.create(
-    email_address: "jane_ruby@example.com"
-)
+# # Create the user identity.
+# user_identity = client.user_identities.create(
+#     email_address: "jane_ruby@example.com"
+# )
 
-# Launch the enrollment automation.
-client.user_identities.enrollment_automations.launch(
-    # Use the acs_system_id for the credential manager.
-    credential_manager_acs_system_id: "6737e186-8d54-48ce-a7da-a0be4d252172",
-    user_identity_id: user_identity.user_identity_id,
-    # Automatically create a new credential manager user
-    # or specify the desired existing credential_manager_acs_user_id.
-    create_credential_manager_user: true
-)
+# # Launch the enrollment automation.
+# client.user_identities.enrollment_automations.launch(
+#     # Use the acs_system_id for the credential manager.
+#     credential_manager_acs_system_id: "6737e186-8d54-48ce-a7da-a0be4d252172",
+#     user_identity_id: user_identity.user_identity_id,
+#     # Automatically create a new credential manager user
+#     # or specify the desired existing credential_manager_acs_user_id.
+#     create_credential_manager_user: true
+# )
 
-# Create the client session.
-client_session = client.client_sessions.create(
-    user_identity_ids: [user_identity.user_identity_id]
-)
+# # Create the client session.
+# client_session = client.client_sessions.create(
+#     user_identity_ids: [user_identity.user_identity_id]
+# )
 
-# Use this token to launch your mobile controller.
-token = client_session.token
-puts token
+# # Use this token to launch your mobile controller.
+# token = client_session.token
+# puts token
+
+# puts client.acs.systems.list().inspect
