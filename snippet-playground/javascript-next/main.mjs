@@ -83,6 +83,21 @@ const seam = new Seam({
 //   phone_number: "+15555550101"
 // }));
 
+console.log(await seam.devices.list({device_type: "ttlock_lock"}));
+
+// console.log(await seam.acs.users.create({
+//   acs_system_id: "14a43ebe-a1a3-4f95-ba34-ffdc909f86d3",
+//   user_identity_id: "3cb62920-6a5e-4226-8db8-9e9c795f15a6",
+//   acs_access_group_ids: ["b1626096-1a2f-4de6-8bdc-f194e6c141ef"],
+//   full_name: "Jane Doe",
+//   email_address: "jane@example.com",
+//   phone_number: "+15555550101",
+//   access_schedule: {
+//     "starts_at": "2024-03-01T10:40:00Z",
+//     "ends_at": "2024-03-04T10:40:00Z"
+//   }
+// }));
+
 // console.log(await seam.acs.users.update({
 //   acs_user_id: "33333333-3333-3333-3333-333333333333",
 //   full_name: "Jack Doe"
@@ -174,3 +189,11 @@ const seam = new Seam({
 // console.log(await seam.acs.users.get({
 //   acs_user_id: "ac0b10d4-b37c-4104-8179-bb3effae917e"
 // }));
+
+// console.log(await seam.acs.systems.list());
+
+// console.log(await seam.acs.systems.get({
+//   acs_system_id: "14a43ebe-a1a3-4f95-ba34-ffdc909f86d3"
+//   // acs_system_id: "11111111-1111-1111-1111-111111111111"
+// }));
+

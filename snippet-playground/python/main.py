@@ -551,6 +551,8 @@ seam = Seam(
 
 # seam.acs.systems.list()
 
+pprint(seam.devices.list())
+
 # seam.acs.users.create(
 #     acs_system_id="11111111-1111-1111-1111-111111111111",
 #     acs_access_group_ids=[],
@@ -574,3 +576,7 @@ seam = Seam(
 # )
 
 # pprint(seam.access_codes.get("1a68084d-ec97-4ece-8010-d6ede99d3c9c"))
+
+# seam.acs.systems.get(
+#   acs_system_id="11111111-1111-1111-1111-111111111111"
+# )

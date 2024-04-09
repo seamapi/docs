@@ -183,16 +183,100 @@ $seam = new Seam\SeamClient(
 //   phone_number: "+15555550101"
 // ), JSON_PRETTY_PRINT);
 
+echo json_encode($seam->devices->list(device_type: "ttlock_lock"), JSON_PRETTY_PRINT);
+
+// echo json_encode($seam->acs->users->create(
+//   acs_system_id: "449c8955-4741-4c44-aa41-943c79a46368",
+//   user_identity_id: "3cb62920-6a5e-4226-8db8-9e9c795f15a6",
+//   acs_access_group_ids: ["b1626096-1a2f-4de6-8bdc-f194e6c141ef"],
+//   full_name: "Jane Doe",
+//   email_address: "jane@example.com",
+//   phone_number: "+15555550101",
+//   access_schedule: array(
+//     "starts_at" => "2024-03-01T10:40:00Z",
+//     "ends_at" => "2024-03-04T10:40:00Z"
+//   )
+// ), JSON_PRETTY_PRINT);
+
 // echo json_encode($seam->acs->users->update(
 //   acs_user_id: "11845264-508e-4e3d-af17-db00a8a0a470",
 //   full_name: "Jack Doe"
 // ), JSON_PRETTY_PRINT);
 
-$seam->acs->users->delete(
-  acs_user_id: "11845264-508e-4e3d-af17-db00a8a0a470"
-);
+// $seam->acs->users->delete(
+//   acs_user_id: "11845264-508e-4e3d-af17-db00a8a0a470"
+// );
+
+// $seam->acs->users->list(
+//   acs_system_id: "449c8955-4741-4c44-aa41-943c79a46368"
+// );
+
+// $seam->acs->users->add_to_access_group(
+//   // acs_user_id: "33333333-3333-3333-3333-333333333333",
+//   acs_user_id: "b530cda9-bdc1-4c95-b44d-bf9a99711bbf",
+//   // acs_access_group_id: "44444444-4444-4444-4444-444444444444"
+//   acs_access_group_id: "b1626096-1a2f-4de6-8bdc-f194e6c141ef"
+// );
+
+// $seam->acs->entrances->list(
+//   acs_system_id: "11111111-1111-1111-1111-111111111111"
+// );
+
+// $seam->acs->entrances->get(
+//   // acs_entrance_id: "55555555-5555-5555-5555-555555555555"
+//   acs_entrance_id: "e961348a-2ffb-4a17-a7d2-943bf304d782"
+// );
+
+// $seam->acs->entrances->grant_access(
+//   // acs_entrance_id: "55555555-5555-5555-5555-555555555555",
+//   acs_entrance_id: "e961348a-2ffb-4a17-a7d2-943bf304d782",
+//   // acs_user_id: "33333333-3333-3333-3333-333333333333"
+//   acs_user_id: "ff44664d-e6ae-4cb4-a9a1-73a8abe6a405"
+// );
+
+// $seam->acs->credentials->create(
+//   // acs_user_id: "33333333-3333-3333-3333-333333333333",
+//   acs_user_id: "ff44664d-e6ae-4cb4-a9a1-73a8abe6a405",
+//   // allowed_entrance_ids: [
+//   //   // "55555555-5555-5555-5555-555555555555",
+//   //   "e961348a-2ffb-4a17-a7d2-943bf304d782",
+//   //   // "55555555-5555-5555-5555-000000000000"
+//   //   "b87fd32c-6599-45be-be8a-99e1683fa1d2"
+//   // ],
+//   // credential_manager_acs_system_id: "88888888-8888-8888-8888-888888888888",
+//   // credential_manager_acs_system_id: "f43c0c38-ae6e-4a54-911d-8c802302eced",
+//   access_method: "mobile_key",
+//   is_multi_phone_sync_credential: true,
+//   starts_at: "2024-03-01T10:40:00Z",
+//   ends_at: "2024-03-04T10:40:00Z",
+//   visionline_metadata: array('card_format' => "rfid48", 'is_override_key' => true)
+// );
+
+// $seam->acs->credentials->delete(
+//   // acs_credential_id: "66666666-6666-6666-6666-666666666666"
+//   acs_credential_id: "e38a4617-1eff-44dd-b565-3329aa882bd7"
+// );
+
+// $seam->acs->users->suspend(
+//   acs_user_id: "ff44664d-e6ae-4cb4-a9a1-73a8abe6a405"
+//   // acs_user_id: "33333333-3333-3333-3333-333333333333"
+// );
+
+// $seam->acs->users->unsuspend(
+//   acs_user_id: "ff44664d-e6ae-4cb4-a9a1-73a8abe6a405"
+//   // acs_user_id: "33333333-3333-3333-3333-333333333333"
+// );
+
+
+// echo json_encode($seam->devices->list(), JSON_PRETTY_PRINT);
 
 
 // echo json_encode($seam->acs->users->get(
 //   acs_user_id: "ff44664d-e6ae-4cb4-a9a1-73a8abe6a405"
 // ));
+
+// echo json_encode($seam->devices->list(manufacturer: "august"), JSON_PRETTY_PRINT);
+
+// $seam->acs->systems->get(
+//   acs_system_id: "449c8955-4741-4c44-aa41-943c79a46368"
+// );

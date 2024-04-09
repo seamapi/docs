@@ -79,14 +79,14 @@ public class Main {
         int randomNumber = rand.nextInt(1_000_000);
 
         // Get a Seam Client
-        Seam seam = Seam.builder()
-            .apiKey("seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy")
-            .url("https://connect.getseam.com")
-            .build();
         // Seam seam = Seam.builder()
-        //     .apiKey("seam_test8yup_77ut771wVzFPcfhce9ti5Ccq")
+        //     .apiKey("seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy")
         //     .url("https://connect.getseam.com")
         //     .build();
+        Seam seam = Seam.builder()
+            .apiKey("seam_test8yup_77ut771wVzFPcfhce9ti5Ccq")
+            .url("https://connect.getseam.com")
+            .build();
 //         Seam seam = Seam.builder()
 //             // Specify PAT.
 //             .apiKey("seam_at134EHBFs3_2YuxzbTCZ5EJZcHTzy5b2Z8u")
@@ -667,11 +667,26 @@ public class Main {
 
 // System.out.println(devices);
 
-Device device = seam.devices()
-        .get(DevicesGetRequest.builder()
-                .deviceId("06a561b6-09d2-401c-a25f-ddb1e1efd59e")
-                .build());
-System.out.println(device);
+// Device device = seam.devices()
+//         .get(DevicesGetRequest.builder()
+//                 .deviceId("06a561b6-09d2-401c-a25f-ddb1e1efd59e")
+//                 .build());
+// System.out.println(device);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     }

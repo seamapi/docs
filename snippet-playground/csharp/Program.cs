@@ -645,13 +645,118 @@ var seam = new SeamClient(
 //   }
 // }
 
-Console.WriteLine(seam.AcsSystem.(
-  deviceId: deviceId,
-  name: "my time-bound code",
-  startsAt: "2025-01-01T16:00:00Z",
-  endsAt: "2025-01-22T12:00:00Z",
-  code: "2345"
-));
+// seam.SystemsAcs.List();
+
+// seam.UsersAcs.Create(
+//   acsSystemId: "11111111-1111-1111-1111-111111111111",
+//   userIdentityId: "22222222-2222-2222-2222-222222222222",
+//   fullName: "Jane Doe",
+//   emailAddress: "jane@example.com",
+//   phoneNumber: "+15555550101"
+// );
+
+seam.UsersAcs.Create(
+  acsSystemId: "14a43ebe-a1a3-4f95-ba34-ffdc909f86d3",
+  userIdentityId: "3cb62920-6a5e-4226-8db8-9e9c795f15a6",
+  acsAccessGroupIds: new List<string>(new string[] {"b1626096-1a2f-4de6-8bdc-f194e6c141ef"}),
+  fullName: "Jane Doe",
+  emailAddress: "jane@example.com",
+  phoneNumber: "+15555550101",
+  accessSchedule: new Dictionary<string, string>()
+    {
+      {"starts_at", "2024-03-01T10:40:00Z"},
+      {"ends_at", "2024-03-04T10:40:00Z"}
+    }
+);
+
+// seam.UsersAcs.Update(
+//   // acsUserId: "33333333-3333-3333-3333-333333333333",
+//   acsUserId: "ac0b10d4-b37c-4104-8179-bb3effae917e",
+//   fullName: "John Doe"
+// );
+
+// seam.UsersAcs.AddToAccessGroup(
+//   // acsUserId: "33333333-3333-3333-3333-333333333333",
+//   acsUserId: "b530cda9-bdc1-4c95-b44d-bf9a99711bbf",
+//   // acsAccessGroupId: "44444444-4444-4444-4444-444444444444"
+//   acsAccessGroupId: "b1626096-1a2f-4de6-8bdc-f194e6c141ef"
+// );
+
+// seam.UsersAcs.RemoveFromAccessGroup(
+//   // acsUserId: "33333333-3333-3333-3333-333333333333",
+//   acsUserId: "b530cda9-bdc1-4c95-b44d-bf9a99711bbf",
+//   // acsAccessGroupId: "44444444-4444-4444-4444-444444444444"
+//   acsAccessGroupId: "b1626096-1a2f-4de6-8bdc-f194e6c141ef"
+// );
+
+// seam.EntrancesAcs.List(
+//   acsSystemId: "11111111-1111-1111-1111-111111111111"
+// );
+
+// seam.EntrancesAcs.Get(
+//   acsEntranceId: "55555555-5555-5555-5555-555555555555"
+// );
+
+// seam.EntrancesAcs.GrantAccess(
+//   // acsEntranceId: "55555555-5555-5555-5555-555555555555",
+//   acsEntranceId: "e961348a-2ffb-4a17-a7d2-943bf304d782",
+//   // acsUserId: "33333333-3333-3333-3333-333333333333"
+//   acsUserId: "ff44664d-e6ae-4cb4-a9a1-73a8abe6a405"
+// );
+
+// seam.CredentialsAcs.Create(
+//   acsUserId: "33333333-3333-3333-3333-333333333333",
+//   allowedEntranceIds: new List<string>
+//     {
+//       "55555555-5555-5555-5555-555555555555",
+//       "55555555-5555-5555-5555-000000000000"
+//     },
+//   credentialManagerAcsSystemId: "88888888-8888-8888-8888-888888888888",
+//   accessMethod: "mobile_key",
+//   isMultiPhoneSyncCredential: true,
+//   startsAt: "2024-03-01T10:40:00Z",
+//   endsAt: "2024-03-04T10:40:00Z",
+//   ...
+// );
+
+// seam.CredentialsAcs.Delete(
+//   // acsCredentialId: "66666666-6666-6666-6666-666666666666"
+//   acsCredentialId: "caf7adc0-9656-49fc-9da6-4d9b132927ea"
+// );
+
+// seam.UsersAcs.Suspend(
+//   // acsUserId: "33333333-3333-3333-3333-333333333333"
+//   acsUserId: "ff44664d-e6ae-4cb4-a9a1-73a8abe6a405"
+// );
+
+// seam.UsersAcs.Unsuspend(
+//   // acsUserId: "33333333-3333-3333-3333-333333333333"
+//   acsUserId: "ff44664d-e6ae-4cb4-a9a1-73a8abe6a405"
+// );
 
 
+// Console.WriteLine(seam.Devices.List(connectedAccountIds: new List<string> {"ebb67664-c6c0-4a40-9955-5d9b25af8a08", "63f3d878-58b0-46f6-a066-7be9d824b688"}));
 
+// var connectedAccountUpdate = seam.ConnectedAccounts.Update(
+//   connectedAccountId: "35ac4d12-2365-48d9-8d83-979ac3c90a04",
+//   customMetadata: new Dictionary<string, string>()
+//     {
+//       {"internal_account_id", "user-1"}
+//     }
+// );
+
+// var devices = seam.Devices.List(manufacturer: Seam.Api.Devices.ListRequest.ManufacturerEnum.August);
+// foreach (var device in devices)
+// {
+// Console.WriteLine(device);
+// };
+
+// Console.WriteLine(seam.AcsSystems.List());
+
+// Console.WriteLine(seam.AcsSystems.Get(
+//   acsSystemId: "11111111-1111-1111-1111-111111111111"
+// ));
+
+// Console.WriteLine(seam.Devices.List(
+//   connectedAccountIds: new List<string>(new string[] {"63f3d878-58b0-46f6-a066-7be9d824b688"})
+// ));
