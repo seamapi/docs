@@ -10,6 +10,8 @@ Access groups define sets of users, combined with sets of permissions. These per
 
 This guide explains how to grant access permissions to users by adding them to the appropriate access groups.
 
+***
+
 ## Add a User to an Access Group
 
 To [add a user to an access group](../../api-clients/access-control-systems/users/add-user-to-access-group.md), provide both the user ID (`acs_user_id`) and the access group ID (`acs_access_group_id`).
@@ -38,6 +40,8 @@ curl -X 'POST' \
 ```
 {% endtab %}
 {% endtabs %}
+
+***
 
 ## Remove a User from an Access Group
 

@@ -1,10 +1,12 @@
 ---
-description: Learn how to issue credentials to and remove credentials from users.
+description: Learn how to manage credentials and assign them to users.
 ---
 
-# Issuing Credentials
+# Managing Credentials
 
-Credentials determine the means by which a user gains access at an entrance. Types of credentials include access codes, key cards, and mobile passes.
+Credentials determine the means by which a user gains access at an entrance. Types of credentials include key cards, mobile passes, and PIN codes. This guide provide instructions on creating and removing credentials, and reassigning them to users.
+
+***
 
 ## Create a Credential for a User
 
@@ -12,12 +14,12 @@ To [create a credential for a user](../../api-clients/access-control-systems/cre
 
 * `code` for a PIN code-based credential
 * `card` for a key card-based credential
-* `mobile_key` for a [multi-phone sync credential](../mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md#what-are-multi-phone-sync-credentials).
+* `mobile_key` for a [multi-phone sync credential](../../products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md#what-are-multi-phone-sync-credentials).
 
-You can also specify the following properties for the new credential:
+Depending on the access control system and the type of credential being issued, you may also specify the following properties for the new credential:
 
-* Access (PIN) code (`code`)
-* Date and time at which the validity of the credential starts and ends (`starts_at` and `ends_at`)
+* PIN code (`code`)
+* Start and end time frame for the credential's validity (`starts_at` and `ends_at`)
 * When creating a Seam mobile key, make sure to issue a multi-phone sync credential (`is_multi_phone_sync_credential`)
 * Brand-specific data, such as [Visionline-specific metadata](../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-credential-metadata.md) (`visionline_metadata`)
 
@@ -25,7 +27,7 @@ You can also specify the following properties for the new credential:
 Make sure to note any brand-specific restrictions. For details, see the applicable [device or system integration guide](broken-reference).
 {% endhint %}
 
-The response includes the ID (`acs_credential_id`) of the newly-created credential, the assigned code (`code`), if applicable, and the user (`acs_user_id`) associated with the credential, along with additional properties of the credential.
+The response includes the ID (`acs_credential_id`) of the newly-created credential, the user (`acs_user_id`) associated with the credential, and other additional properties of the credential.
 
 ***
 
@@ -117,7 +119,7 @@ curl -X 'POST' \
 
 ***
 
-### Create a Multi-Phone Sync Credential
+### Create a Seam Mobile Key
 
 {% tabs %}
 {% tab title="cURL (Bash)" %}
@@ -135,12 +137,7 @@ curl -X 'POST' \
   "access_method": "mobile_key",
   "is_multi_phone_sync_credential": true,
   "starts_at": "2024-03-01T10:40:00Z",
-  "ends_at": "2024-03-04T10:40:00Z",
-  "visionline_metadata": {
-    "cardFormat": "rfid48",
-    "label": "%ROOMNUM% - %SITENAME%",
-    "is_override_key": true
-  }
+  "ends_at": "2024-03-04T10:40:00Z"
 }'
 ```
 
@@ -161,6 +158,37 @@ curl -X 'POST' \
     "created_at": "2024-02-10T04:48:16.867Z",
     "is_multi_phone_sync_credential": true
   },
+  "ok": true
+}
+```
+{% endtab %}
+{% endtabs %}
+
+***
+
+## Delete a Credential
+
+To [delete a credential](../../api-clients/access-control-systems/credentials/delete-credential.md), provide the credential ID (`acs_credential_id`).
+
+{% tabs %}
+{% tab title="cURL (Bash)" %}
+**Request:**
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/acs/credentials/delete' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "acs_credential_id": "755e6817-985f-4e2f-96b2-6f388456f19b"
+}'
+```
+
+**Response:**
+
+```json
+{
   "ok": true
 }
 ```

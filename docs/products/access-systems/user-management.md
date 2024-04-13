@@ -4,9 +4,11 @@ description: >-
   property management platform.
 ---
 
-# User Management
+# Managing Users
 
 This guide explains how to create and manage users in an access control system (ACS). Using the [Access Control Systems API](../../api-clients/access-control-systems/), you can automate issuing access to long-term tenants or visitors.
+
+***
 
 ## Before You Begin
 
@@ -46,6 +48,8 @@ curl -X 'GET' \
 ```
 {% endtab %}
 {% endtabs %}
+
+***
 
 ## Create a User
 
@@ -93,6 +97,8 @@ curl -X 'POST' \
 {% endtab %}
 {% endtabs %}
 
+***
+
 ## Update a User
 
 To [update a user](../../api-clients/access-control-systems/users/update-user.md), provide the ID (`acs_user_id`) of the desired user, along with the attributes that you want to modify.
@@ -123,6 +129,8 @@ curl -X 'POST' \
 {% endtab %}
 {% endtabs %}
 
+***
+
 ## Delete a User
 
 To [delete a user](../../api-clients/access-control-systems/users/delete-user.md), provide the ID (`acs_user_id`) of the user that you want to delete.
@@ -151,6 +159,8 @@ curl -X 'POST' \
 ```
 {% endtab %}
 {% endtabs %}
+
+***
 
 ## List Users
 

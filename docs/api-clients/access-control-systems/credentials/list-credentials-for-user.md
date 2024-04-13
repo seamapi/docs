@@ -4,7 +4,7 @@ description: Get all credentials for a specified user
 
 # List Credentials for a User
 
-Returns a list of all [credentials](../../../products/access-systems/issuing-credentials.md) (`acs_credential` objects) for a specified [user](../../../products/access-systems/#what-is-a-user) (`acs_user` object).
+Returns a list of all credentials (`acs_credential` objects) for a specified [user](../../../products/access-systems/#what-is-a-user) (`acs_user` object).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/acs/credentials/list" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)

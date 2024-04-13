@@ -1,22 +1,18 @@
----
-description: Create a new credential for a specified user
----
+# Unassign a Credential from a User
 
-# Create a Credential for a User
+Unassign a [credential](broken-reference) (identified by its`acs_credential_id`) to a specified [user](../../../products/access-systems/#what-is-a-user) (identified by their `acs_user_id`).
 
-Creates a new credential (`acs_credential` object) for a specified user (`acs_user` object).
-
-{% swagger src="https://connect.getseam.com/openapi.json" path="/acs/credentials/create" method="post" %}
+{% swagger src="https://connect.getseam.com/openapi.json" path="/acs/credentials/unassign" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
 {% endswagger %}
 
 ## Request
 
-Specify the user to which the new credential belongs and the access method for the new credential by including the corresponding `acs_user_id` and `access_method` in the request body. You can also specify additional parameters, such as a `code` for the credential. Note that the `access_method` determines the additional required and useful parameters.
+Specify the desired credential and user by including the corresponding `acs_credential_id` and `acs_user_id` in the request body.
 
 ### Request Body Parameters
 
-<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>acs_user_id</code></td><td>String<br><em>Required</em></td><td>ID of the user to whom the new credential belongs</td></tr><tr><td><code>access_method</code></td><td>Enum (string)<br><em>Required</em></td><td>Access method for the new credential. Supported values: <code>code</code>, <code>card</code>, <code>mobile_key</code></td></tr><tr><td><code>code</code></td><td>String<br><em>Optional</em></td><td>Access (PIN) code for the new credential</td></tr><tr><td><code>is_multi_phone_sync_credential</code></td><td>Boolean<br><em>Optional</em></td><td>Indicates whether the new credential is a <a href="../../../products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md#what-are-multi-phone-sync-credentials">multi-phone sync credential</a></td></tr><tr><td><code>visionline_metadata</code></td><td>Object<br><em>Optional</em></td><td><a href="create-credential-for-user.md#visionline_metadata-properties">Visionline-specific metadata</a> for the new credential</td></tr><tr><td><code>starts_at</code></td><td>Datetime<br><em>Optional</em></td><td>Date and time at which the validity of the new credential starts, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format</td></tr><tr><td><code>ends_at</code></td><td>Datetime<br><em>Optional</em></td><td>Date and time at which the validity of the new credential ends, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>acs_credential_id</code></td><td>String<br><em>Required</em></td><td>ID of the credential to be unassigned</td></tr><tr><td><code>acs_user_id</code></td><td>String<br><em>Required</em></td><td>ID of the user to whom the new credential is being unassigned from</td></tr></tbody></table>
 
 ### Sample Request
 
@@ -24,14 +20,13 @@ Specify the user to which the new credential belongs and the access method for t
 {% tab title="cURL (bash)" %}
 ```bash
 curl -X 'POST' \
-  'https://connect.getseam.com/acs/credentials/create' \
+  'https://connect.getseam.com/acs/credentials/unassign' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
   -d '{
-  "acs_user_id": "20ab519f-75ae-482e-ae4c-082f29295bf2",
-  "access_method": "card",
-  "code": "824759"
+  "acs_credential_id": "card",
+  "acs_user_id": "20ab519f-75ae-482e-ae4c-082f29295bf2"
 }'
 ```
 {% endtab %}
@@ -53,7 +48,6 @@ This response also includes a Boolean `ok` status indicator.
 {
   "acs_credential": {
     "acs_credential_id": "755e6817-985f-4e2f-96b2-6f388456f19b",
-    "acs_user_id": "20ab519f-75ae-482e-ae4c-082f29295bf2",
     "display_name": "Code 82****",
     "code": "824759",
     "acs_system_id": "b3eb61dc-9b69-42a9-8b73-375832dbeec8",

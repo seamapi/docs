@@ -4,7 +4,7 @@ description: Delete a specified user
 
 # Delete a User
 
-Deletes a specified [user](../../../products/access-systems/#what-is-a-user) (`acs_user` object) and invalidates the user's [credentials](../../../products/access-systems/issuing-credentials.md).
+Deletes a specified user (`acs_user` object) and invalidates the user's credentials.
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/acs/users/delete" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
