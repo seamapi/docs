@@ -55,7 +55,7 @@ To learn how to manage access control system components, see the following guide
 * [User Management](user-management.md)
 * [Assigning Users to Access Groups](assigning-users-to-access-groups.md)
 * [Managing Credentials](../../capability-guides/access-systems/managing-credentials.md)
-* [Assigning and Unassigning Credentials to Users](../../api-clients/access-control-systems/credentials/assign-a-credential-to-a-user.md)
+* [Assigning Credentials to Users](../../capability-guides/access-systems/assigning-credentials-to-users.md)
 * [Suspending and Unsuspending Users](suspending-and-unsuspending-users.md)
 
 For the corresponding Seam API reference, see [Access Control Systems](../../api-clients/access-control-systems/).

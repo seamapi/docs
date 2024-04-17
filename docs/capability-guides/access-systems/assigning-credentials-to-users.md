@@ -9,33 +9,232 @@ This guide explains how to assign and unassign credentials to users. When creden
 To [assign a credential to a user](../../api-clients/access-control-systems/credentials/assign-a-credential-to-a-user.md), provide both the user ID (`acs_user_id`) and the credential ID (`acs_credential_id`).
 
 {% tabs %}
-{% tab title="cURL (Bash)" %}
+{% tab title="Python" %}
+**Request:**
+
+```python
+seam.acs.credentials.assign(
+  acs_user_id="33333333-3333-3333-3333-333333333333",
+  acs_credential_id="66666666-6666-6666-6666-666666666666"
+)
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+{% endhint %}
+
+```
+AcsCredential(
+  acs_credential_id='99999999-9999-9999-9999-999999999999',
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  display_name='Multi Phone Sync Credential',
+  code=null,
+  acs_system_id='11111111-1111-1111-1111-111111111111',
+  access_method='mobile_key',
+  workspace_id='00000000-0000-0000-0000-000000000000',
+  created_at='2024-04-12T03:56:22.396Z',
+  is_multi_phone_sync_credential=True,
+  # manufacturer-specific metadata
+)
+```
+{% endtab %}
+
+{% tab title="cURL (bash)" %}
 **Request:**
 
 ```bash
 curl -X 'POST' \
-  'https://connect.getseam.com/acs/users/assign' \
-  -H 'Authorization: Bearer ${API_KEY}' \
+  'https://connect.getseam.com/acs/credentials/assign' \
+  -H "Authorization: Bearer ${API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
-  "acs_credential_id": "22222222-2222-2222-2222-222222222222",
-  "acs_user_id": "33333333-3333-3333-3333-333333333333"
+  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  "acs_credential_id": "66666666-6666-6666-6666-666666666666"
 }'
 ```
 
 **Response:**
 
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+{% endhint %}
+
 ```json
 {
   "acs_credential": {
-    "acs_credential_id": "22222222-2222-2222-2222-222222222222",
+    "acs_credential_id": "99999999-9999-9999-9999-999999999999",
     "acs_user_id": "33333333-3333-3333-3333-333333333333",
-    "display_name": "Card 82****",
-    "code": "824759",
-    "acs_system_id": "b3eb61dc-9b69-42a9-8b73-375832dbeec8",
-    "access_method": "card",
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "created_at": "2024-02-06T06:50:05.714Z",
+    "display_name": "Multi Phone Sync Credential",
+    "code": null,
+    "acs_system_id": "11111111-1111-1111-1111-111111111111",
+    "access_method": "mobile_key",
+    "workspace_id": "00000000-0000-0000-0000-000000000000",
+    "created_at": "2024-04-12T03:56:22.396Z",
+    "is_multi_phone_sync_credential": true,
+    # manufacturer-specific metadata
+  },
+  "ok": true
+}
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+**Request:**
+
+```javascript
+await seam.acs.credentials.assign({
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  acs_credential_id: "66666666-6666-6666-6666-666666666666"
+});
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+{% endhint %}
+
+```json
+{
+  acs_credential_id: '99999999-9999-9999-9999-999999999999',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  display_name: 'Multi Phone Sync Credential',
+  code: null,
+  acs_system_id: '11111111-1111-1111-1111-111111111111',
+  access_method: 'mobile_key',
+  workspace_id: '00000000-0000-0000-0000-000000000000',
+  created_at: '2024-04-12T03:56:22.396Z',
+  is_multi_phone_sync_credential: true,
+  // manufacturer-specific metadata
+}
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+**Request:**
+
+```ruby
+# Coming soon!
+```
+
+**Response:**
+
+```
+# Coming soon!
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+**Request:**
+
+```php
+$seam->acs->credentials->assign(
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  acs_credential_id: "66666666-6666-6666-6666-66666666"
+);
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+{% endhint %}
+
+```json
+{
+  "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  "display_name": "Multi Phone Sync Credential",
+  "code": null,
+  "acs_system_id": "11111111-1111-1111-1111-111111111111",
+  "access_method": "mobile_key",
+  "workspace_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2024-04-12T03:56:22.396Z",
+  "is_multi_phone_sync_credential": true,
+  // manufacturer-specific metadata
+}
+```
+{% endtab %}
+
+{% tab title="C#" %}
+**Request:**
+
+```csharp
+seam.CredentialsAcs.Assign(
+  acsUserId: "33333333-3333-3333-3333-333333333333",
+  acsCredentialId: "66666666-6666-6666-6666-66666666"
+);
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+{% endhint %}
+
+```json
+{
+  "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  "display_name": "Multi Phone Sync Credential",
+  "code": null,
+  "acs_system_id": "11111111-1111-1111-1111-111111111111",
+  "access_method": "mobile_key",
+  "workspace_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2024-04-12T03:56:22.396Z",
+  "is_multi_phone_sync_credential": true,
+  // manufacturer-specific metadata
+}
+```
+{% endtab %}
+
+{% tab title="Java" %}
+**Request:**
+
+```java
+// Coming soon!
+```
+
+**Response:**
+
+```json
+// Coming soon!
+```
+{% endtab %}
+
+{% tab title="Go" %}
+**Request:**
+
+```go
+acs_credential, uErr := client.Acs.Credentials.Assign(
+  context.Background(), &acs.CredentialsAssignRequest{
+    AcsUserId: "33333333-3333-3333-3333-333333333333",
+    AcsCredentialId: "66666666-6666-6666-6666-66666666",
+  },
+)
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+{% endhint %}
+
+```json
+{
+  "acs_credential": {
+    "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+    "acs_user_id": "33333333-3333-3333-3333-333333333333",
+    "display_name": "Multi Phone Sync Credential",
+    "code": null,
+    "acs_system_id": "11111111-1111-1111-1111-111111111111",
+    "access_method": "mobile_key",
+    "workspace_id": "00000000-0000-0000-0000-000000000000",
+    "created_at": "2024-04-12T03:56:22.396Z",
+    "is_multi_phone_sync_credential": true,
+    # manufacturer-specific metadata
   },
   "ok": true
 }
@@ -50,34 +249,232 @@ curl -X 'POST' \
 To [unassign a credential from a user](../../api-clients/access-control-systems/credentials/unassign-a-credential-from-a-user.md), provide both the user ID (`acs_user_id`) and the credential ID (`acs_credential_id`).
 
 {% tabs %}
-{% tab title="cURL (Bash)" %}
+{% tab title="Python" %}
+**Request:**
+
+```python
+seam.acs.credentials.unassign(
+  acs_user_id="33333333-3333-3333-3333-333333333333",
+  acs_credential_id="66666666-6666-6666-6666-666666666666"
+)
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+{% endhint %}
+
+```
+AcsCredential(
+  acs_credential_id='99999999-9999-9999-9999-999999999999',
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  display_name='Multi Phone Sync Credential',
+  code=null,
+  acs_system_id='11111111-1111-1111-1111-111111111111',
+  access_method='mobile_key',
+  workspace_id='00000000-0000-0000-0000-000000000000',
+  created_at='2024-04-12T03:56:22.396Z',
+  is_multi_phone_sync_credential=True,
+  # manufacturer-specific metadata
+)
+```
+{% endtab %}
+
+{% tab title="cURL (bash)" %}
 **Request:**
 
 ```bash
 curl -X 'POST' \
   'https://connect.getseam.com/acs/credentials/unassign' \
-  -H 'accept: */*' \
-  -H 'Authorization: Bearer ${API_KEY}' \
+  -H "Authorization: Bearer ${API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
-  "acs_credential_id": "22222222-2222-2222-2222-222222222222",
   "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  "acs_credential_id": "66666666-6666-6666-6666-666666666666"
 }'
 ```
 
 **Response:**
 
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+{% endhint %}
+
 ```json
 {
   "acs_credential": {
-    "acs_credential_id": "755e6817-985f-4e2f-96b2-6f388456f19b",
-    "display_name": "Code 82****",
-    "code": "824759",
-    "acs_system_id": "b3eb61dc-9b69-42a9-8b73-375832dbeec8",
-    "access_method": "card",
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "created_at": "2024-02-06T06:50:05.714Z",
-    "visionline_metadata": {}
+    "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+    "acs_user_id": "33333333-3333-3333-3333-333333333333",
+    "display_name": "Multi Phone Sync Credential",
+    "code": null,
+    "acs_system_id": "11111111-1111-1111-1111-111111111111",
+    "access_method": "mobile_key",
+    "workspace_id": "00000000-0000-0000-0000-000000000000",
+    "created_at": "2024-04-12T03:56:22.396Z",
+    "is_multi_phone_sync_credential": true,
+    # manufacturer-specific metadata
+  },
+  "ok": true
+}
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+**Request:**
+
+```javascript
+await seam.acs.credentials.unassign({
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  acs_credential_id: "66666666-6666-6666-6666-666666666666"
+});
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+{% endhint %}
+
+```json
+{
+  acs_credential_id: '99999999-9999-9999-9999-999999999999',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  display_name: 'Multi Phone Sync Credential',
+  code: null,
+  acs_system_id: '11111111-1111-1111-1111-111111111111',
+  access_method: 'mobile_key',
+  workspace_id: '00000000-0000-0000-0000-000000000000',
+  created_at: '2024-04-12T03:56:22.396Z',
+  is_multi_phone_sync_credential: true,
+  // manufacturer-specific metadata
+}
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+**Request:**
+
+```ruby
+# Coming soon!
+```
+
+**Response:**
+
+```
+# Coming soon!
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+**Request:**
+
+```php
+$seam->acs->credentials->unassign(
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  acs_credential_id: "66666666-6666-6666-6666-66666666"
+);
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+{% endhint %}
+
+```json
+{
+  "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  "display_name": "Multi Phone Sync Credential",
+  "code": null,
+  "acs_system_id": "11111111-1111-1111-1111-111111111111",
+  "access_method": "mobile_key",
+  "workspace_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2024-04-12T03:56:22.396Z",
+  "is_multi_phone_sync_credential": true,
+  // manufacturer-specific metadata
+}
+```
+{% endtab %}
+
+{% tab title="C#" %}
+**Request:**
+
+```csharp
+seam.CredentialsAcs.Unassign(
+  acsUserId: "33333333-3333-3333-3333-333333333333",
+  acsCredentialId: "66666666-6666-6666-6666-66666666"
+);
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+{% endhint %}
+
+```json
+{
+  "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  "display_name": "Multi Phone Sync Credential",
+  "code": null,
+  "acs_system_id": "11111111-1111-1111-1111-111111111111",
+  "access_method": "mobile_key",
+  "workspace_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2024-04-12T03:56:22.396Z",
+  "is_multi_phone_sync_credential": true,
+  // manufacturer-specific metadata
+}
+```
+{% endtab %}
+
+{% tab title="Java" %}
+**Request:**
+
+```java
+// Coming soon!
+```
+
+**Response:**
+
+```json
+// Coming soon!
+```
+{% endtab %}
+
+{% tab title="Go" %}
+**Request:**
+
+```go
+acs_credential, uErr := client.Acs.Credentials.Unassign(
+  context.Background(), &acs.CredentialsUnassignRequest{
+    AcsUserId: "33333333-3333-3333-3333-333333333333",
+    AcsCredentialId: "66666666-6666-6666-6666-66666666",
+  },
+)
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+{% endhint %}
+
+```json
+{
+  "acs_credential": {
+    "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+    "acs_user_id": "33333333-3333-3333-3333-333333333333",
+    "display_name": "Multi Phone Sync Credential",
+    "code": null,
+    "acs_system_id": "11111111-1111-1111-1111-111111111111",
+    "access_method": "mobile_key",
+    "workspace_id": "00000000-0000-0000-0000-000000000000",
+    "created_at": "2024-04-12T03:56:22.396Z",
+    "is_multi_phone_sync_credential": true,
+    # manufacturer-specific metadata
   },
   "ok": true
 }

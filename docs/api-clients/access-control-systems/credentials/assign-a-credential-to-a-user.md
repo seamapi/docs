@@ -1,6 +1,10 @@
+---
+description: Assign a specified credential to a specified ACS user
+---
+
 # Assign a Credential to a User
 
-Assign a [credential](broken-reference) (identified by its`acs_credential_id`) to a specified [user](../../../products/access-systems/#what-is-a-user) (identified by their `acs_user_id`).
+Assigns a specified [credential](../../../products/access-systems/#what-is-a-credential) to a specified [user](../../../products/access-systems/#what-is-a-user).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/acs/credentials/assign" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
@@ -8,26 +12,84 @@ Assign a [credential](broken-reference) (identified by its`acs_credential_id`) t
 
 ## Request
 
-Specify the desired credential and user by including the corresponding `acs_credential_id` and `acs_user_id` in the request body.
+Specify the desired user and credential by including the corresponding `acs_user_id` and `acs_credential_id` in the request body.
 
 ### Request Body Parameters
 
-<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>acs_credential_id</code></td><td>String<br><em>Required</em></td><td>ID of the credential to be assigned</td></tr><tr><td><code>acs_user_id</code></td><td>String<br><em>Required</em></td><td>ID of the user to whom the new credential is being assigned to</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>acs_user_id</code></td><td>String (UUID)<br><em>Required</em></td><td>ID of the desired user</td></tr><tr><td><code>acs_credential_id</code></td><td>String (UUID)<br><em>Required</em></td><td>ID of the desired credential</td></tr></tbody></table>
 
 ### Sample Request
 
 {% tabs %}
+{% tab title="Python" %}
+```python
+seam.acs.credentials.assign(
+  acs_user_id="33333333-3333-3333-3333-333333333333",
+  acs_credential_id="66666666-6666-6666-6666-666666666666"
+)
+```
+{% endtab %}
+
 {% tab title="cURL (bash)" %}
 ```bash
 curl -X 'POST' \
   'https://connect.getseam.com/acs/credentials/assign' \
-  -H 'accept: application/json' \
-  -H 'Authorization: Bearer ${API_KEY}' \
+  -H "Authorization: Bearer ${API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
-  "acs_credential_id": "20ab519f-75ae-482e-ae4c-082f29295bf2",
-  "acs_user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  "acs_credential_id": "66666666-6666-6666-6666-666666666666"
 }'
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+await seam.acs.credentials.assign({
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  acs_credential_id: "66666666-6666-6666-6666-666666666666"
+});
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```ruby
+# Coming soon!
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+```php
+$seam->acs->credentials->assign(
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  acs_credential_id: "66666666-6666-6666-6666-66666666"
+);
+```
+{% endtab %}
+
+{% tab title="C#" %}
+```csharp
+seam.CredentialsAcs.Assign(
+  acsUserId: "33333333-3333-3333-3333-333333333333",
+  acsCredentialId: "66666666-6666-6666-6666-66666666"
+);
+```
+{% endtab %}
+
+{% tab title="Java" %}
+```java
+// Coming soon!
+```
+{% endtab %}
+
+{% tab title="Go" %}
+```go
+acs_credential, uErr := client.Acs.Credentials.Assign(
+  context.Background(), &acs.CredentialsAssignRequest{
+    AcsUserId: "33333333-3333-3333-3333-333333333333",
+    AcsCredentialId: "66666666-6666-6666-6666-66666666",
+  },
+)
 ```
 {% endtab %}
 {% endtabs %}
@@ -36,26 +98,129 @@ curl -X 'POST' \
 
 Returns an `acs_credential` containing the following properties:
 
-<table><thead><tr><th width="310">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>acs_credential_id</code></td><td>ID of the credential</td></tr><tr><td><code>acs_user_id</code></td><td>ID of the user to whom the credential belongs</td></tr><tr><td><code>acs_credential_pool_id</code></td><td>ID of the credential pool from which to obtain the credential</td></tr><tr><td><code>acs_system_id</code></td><td>ID of the <a href="../../../products/access-systems/">access control system</a> that contains the credential</td></tr><tr><td><code>display_name</code></td><td>Display name that corresponds to the credential type</td></tr><tr><td><code>code</code></td><td>Access (PIN) code for the credential</td></tr><tr><td><code>access_method</code></td><td>Access method for the credential. Supported values: <code>code</code>, <code>card</code>, <code>mobile_key</code></td></tr><tr><td><code>external_type</code></td><td>Brand-specific terminology for the credential type</td></tr><tr><td><code>external_type_display_name</code></td><td>Display name that corresponds to the brand-specific terminology for the credential type</td></tr><tr><td><code>created_at</code></td><td>Date and time at which the credential was created</td></tr><tr><td><code>workspace_id</code></td><td>ID of the <a href="../../../core-concepts/workspaces/">workspace</a> that contains the credential</td></tr><tr><td><code>starts_at</code></td><td>Date and time at which the credential validity starts, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format</td></tr><tr><td><code>ends_at</code></td><td>Date and time at which the credential validity ends, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format</td></tr><tr><td><code>is_multi_phone_sync_credential</code></td><td>Indicates whether the credential is a <a href="../../../products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md#what-are-multi-phone-sync-credentials">multi-phone sync credential</a></td></tr><tr><td><code>visionline_metadata</code></td><td><a href="./#visionline_metadata-properties">Visionline-specific metadata</a> for the credential</td></tr></tbody></table>
-
-This response also includes a Boolean `ok` status indicator.
+<table><thead><tr><th width="310">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>acs_credential_id</code></td><td>ID of the credential</td></tr><tr><td><code>acs_user_id</code></td><td>ID of the user to whom the credential belongs</td></tr><tr><td><code>display_name</code></td><td>Display name that corresponds to the credential type</td></tr><tr><td><code>code</code></td><td>Access (PIN) code for the credential</td></tr><tr><td><code>acs_system_id</code></td><td>ID of the <a href="../../../products/access-systems/">access control system</a> that contains the credential</td></tr><tr><td><code>access_method</code></td><td>Access method for the credential. Supported values: <code>code</code>, <code>card</code>, <code>mobile_key</code></td></tr><tr><td><code>external_type</code></td><td>Brand-specific terminology for the credential type</td></tr><tr><td><code>external_type_display_name</code></td><td>Display name that corresponds to the brand-specific terminology for the credential type</td></tr><tr><td><code>workspace_id</code></td><td>ID of the <a href="../../../core-concepts/workspaces/">workspace</a> that contains the credential</td></tr><tr><td><code>created_at</code></td><td>Date and time at which the credential was created</td></tr><tr><td><code>is_multi_phone_sync_credential</code></td><td>Indicates whether the credential is a <a href="../../../products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md#what-are-multi-phone-sync-credentials">multi-phone sync credential</a></td></tr><tr><td><code>starts_at</code></td><td>Date and time at which the credential validity starts, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format</td></tr><tr><td><code>ends_at</code></td><td>Date and time at which the credential validity ends, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format</td></tr><tr><td><code>XXX_metadata</code></td><td>ACS <a href="broken-reference">manufacturer</a>-specific metadata for the credential, where <code>XXX</code> is the manufacturer</td></tr></tbody></table>
 
 ### Sample Response
 
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+{% endhint %}
+
 {% tabs %}
-{% tab title="JSON" %}
+{% tab title="Python" %}
+```
+AcsCredential(
+  acs_credential_id='99999999-9999-9999-9999-999999999999',
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  display_name='Multi Phone Sync Credential',
+  code=null,
+  acs_system_id='11111111-1111-1111-1111-111111111111',
+  access_method='mobile_key',
+  workspace_id='00000000-0000-0000-0000-000000000000',
+  created_at='2024-04-12T03:56:22.396Z',
+  is_multi_phone_sync_credential=True,
+  # manufacturer-specific metadata
+  )
+```
+{% endtab %}
+
+{% tab title="cURL (bash)" %}
 ```json
 {
   "acs_credential": {
-    "acs_credential_id": "755e6817-985f-4e2f-96b2-6f388456f19b",
-    "acs_user_id": "20ab519f-75ae-482e-ae4c-082f29295bf2",
-    "display_name": "Code 82****",
-    "code": "824759",
-    "acs_system_id": "b3eb61dc-9b69-42a9-8b73-375832dbeec8",
-    "access_method": "card",
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "created_at": "2024-02-06T06:50:05.714Z",
-    "visionline_metadata": {}
+    "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+    "acs_user_id": "33333333-3333-3333-3333-333333333333",
+    "display_name": "Multi Phone Sync Credential",
+    "code": null,
+    "acs_system_id": "11111111-1111-1111-1111-111111111111",
+    "access_method": "mobile_key",
+    "workspace_id": "00000000-0000-0000-0000-000000000000",
+    "created_at": "2024-04-12T03:56:22.396Z",
+    "is_multi_phone_sync_credential": true,
+    # manufacturer-specific metadata
+  },
+  "ok": true
+}
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```json
+{
+  acs_credential_id: '99999999-9999-9999-9999-999999999999',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  display_name: 'Multi Phone Sync Credential',
+  code: null,
+  acs_system_id: '11111111-1111-1111-1111-111111111111',
+  access_method: 'mobile_key',
+  workspace_id: '00000000-0000-0000-0000-000000000000',
+  created_at: '2024-04-12T03:56:22.396Z',
+  is_multi_phone_sync_credential: true,
+  // manufacturer-specific metadata
+}
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```
+# Coming soon!
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+```json
+{
+  "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  "display_name": "Multi Phone Sync Credential",
+  "code": null,
+  "acs_system_id": "11111111-1111-1111-1111-111111111111",
+  "access_method": "mobile_key",
+  "workspace_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2024-04-12T03:56:22.396Z",
+  "is_multi_phone_sync_credential": true,
+  // manufacturer-specific metadata
+}
+```
+{% endtab %}
+
+{% tab title="C#" %}
+```json
+{
+  "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  "display_name": "Multi Phone Sync Credential",
+  "code": null,
+  "acs_system_id": "11111111-1111-1111-1111-111111111111",
+  "access_method": "mobile_key",
+  "workspace_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2024-04-12T03:56:22.396Z",
+  "is_multi_phone_sync_credential": true,
+  // manufacturer-specific metadata
+}
+```
+{% endtab %}
+
+{% tab title="Java" %}
+```json
+// Coming soon!
+```
+{% endtab %}
+
+{% tab title="Go" %}
+```json
+{
+  "acs_credential": {
+    "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+    "acs_user_id": "33333333-3333-3333-3333-333333333333",
+    "display_name": "Multi Phone Sync Credential",
+    "code": null,
+    "acs_system_id": "11111111-1111-1111-1111-111111111111",
+    "access_method": "mobile_key",
+    "workspace_id": "00000000-0000-0000-0000-000000000000",
+    "created_at": "2024-04-12T03:56:22.396Z",
+    "is_multi_phone_sync_credential": true,
+    # manufacturer-specific metadata
   },
   "ok": true
 }
