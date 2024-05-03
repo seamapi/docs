@@ -29,6 +29,7 @@
 
 ## 🧰 Capability Guides
 
+* [💪 Device and System Capabilities](capability-guides/device-and-system-capabilities.md)
 * [🔒 Smart Locks](products/smart-locks/README.md)
   * [Locking and Unlocking](products/smart-locks/lock-and-unlock.md)
   * [Managing Access Codes](products/smart-locks/access-codes/README.md)

@@ -45,7 +45,8 @@ curl -X 'GET' \
   'https://connect.getseam.com/acs/systems/list' \
   -H 'accept: application/json' \
   -H "Authorization: Bearer ${API_KEY}" \
-  -H 'Content-Type: application/json'
+  -H 'Content-Type: application/json' \
+  -d '{}'
 ```
 
 **Response:**
