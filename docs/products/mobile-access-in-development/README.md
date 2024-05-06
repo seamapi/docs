@@ -4,7 +4,9 @@ description: >-
   platforms.
 ---
 
-# 📱 Mobile Access - In Development
+# 📱 Mobile Access
+
+<figure><img src="../../.gitbook/assets/sdk-cover-4-3.png" alt=""><figcaption><p>Seam SDK lets you unlock doors using BLE and NFC credentials across a wide variety of access platforms</p></figcaption></figure>
 
 ## Managing Mobile Credentials
 
