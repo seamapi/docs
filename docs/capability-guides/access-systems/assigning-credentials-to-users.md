@@ -22,7 +22,7 @@ seam.acs.credentials.assign(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```
@@ -58,7 +58,7 @@ curl -X 'POST' \
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```json
@@ -93,7 +93,7 @@ await seam.acs.credentials.assign({
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```json
@@ -139,7 +139,7 @@ $seam->acs->credentials->assign(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```json
@@ -171,7 +171,7 @@ seam.CredentialsAcs.Assign(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```json
@@ -219,7 +219,7 @@ acs_credential, uErr := client.Acs.Credentials.Assign(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```json
@@ -262,7 +262,7 @@ seam.acs.credentials.unassign(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```
@@ -298,7 +298,7 @@ curl -X 'POST' \
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```json
@@ -333,7 +333,7 @@ await seam.acs.credentials.unassign({
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```json
@@ -379,7 +379,7 @@ $seam->acs->credentials->unassign(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```json
@@ -411,7 +411,7 @@ seam.CredentialsAcs.Unassign(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```json
@@ -459,7 +459,7 @@ acs_credential, uErr := client.Acs.Credentials.Unassign(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```json

@@ -77,6 +77,6 @@ Next, your end user performs the following steps:
 
 ## Connecting the On-Premises Software System
 
-After installing the Seam Bridge application and connecting the Seam Bridge to your workspace, connect your on-premises software system to Seam using a Connect Webview. For detailed instructions on how to connect your system, see the setup instructions in the appropriate brand-specific guide within the [Device Guides](broken-reference) section.
+After installing the Seam Bridge application and connecting the Seam Bridge to your workspace, connect your on-premises software system to Seam using a Connect Webview. For detailed instructions on how to connect your system, see the setup instructions in the appropriate brand-specific guide within the [Device Guides](../device-and-system-integration-guides/overview.md) section.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Device Guides</strong></td><td>Get started →</td><td></td><td><a href="broken-reference">Broken link</a></td><td><a href="../.gitbook/assets/image (9).png">image (9).png</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Device Guides</strong></td><td>Get started →</td><td></td><td><a href="../device-and-system-integration-guides/overview.md">overview.md</a></td><td><a href="../.gitbook/assets/image (9).png">image (9).png</a></td></tr></tbody></table>

@@ -25,7 +25,7 @@ Depending on the access control system and the type of credential you are issuin
 * Brand-specific data.
 
 {% hint style="info" %}
-Make sure to note any brand-specific metadata and restrictions. For details, see the applicable [device or system integration guide](broken-reference).
+Make sure to note any brand-specific metadata and restrictions. For details, see the applicable [device or system integration guide](../../device-and-system-integration-guides/overview.md).
 {% endhint %}
 
 The response includes the ID (`acs_credential_id`) of the newly-created credential, the user (`acs_user_id`) associated with the credential, and other additional properties of the credential.
@@ -410,14 +410,14 @@ credential, uErr := client.Acs.Credentials.Create(
 
 ### Create a Seam Mobile Key
 
-Depending on the ACS for which you want to create a credential, you may also need to include system-specific metadata. See the [system integration guide](broken-reference) for your ACS. For more information about mobile access and issuing mobile credentials, see [Mobile Access](../../products/mobile-access-in-development/) and [Issuing Mobile Credentials from an Access Control System](../../products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md).
+Depending on the ACS for which you want to create a credential, you may also need to include system-specific metadata. See the [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS. For more information about mobile access and issuing mobile credentials, see [Mobile Access](../../products/mobile-access-in-development/) and [Issuing Mobile Credentials from an Access Control System](../../products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md).
 
 {% tabs %}
 {% tab title="Python" %}
 **Request:**
 
 {% hint style="info" %}
-This request contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+This request contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```python
@@ -439,7 +439,7 @@ seam.acs.credentials.create(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](broken-reference).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```
@@ -455,6 +455,10 @@ AcsCredential(
 
 {% tab title="cURL (bash)" %}
 **Request:**
+
+{% hint style="info" %}
+This request contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
 
 ```bash
 curl -X 'POST' \
@@ -479,6 +483,10 @@ curl -X 'POST' \
 
 **Response:**
 
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
 ```json
 {
   "acs_credential": {
@@ -495,6 +503,10 @@ curl -X 'POST' \
 
 {% tab title="JavaScript" %}
 **Request:**
+
+{% hint style="info" %}
+This request contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
 
 ```javascript
 await seam.acs.credentials.create({
@@ -513,6 +525,10 @@ await seam.acs.credentials.create({
 ```
 
 **Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
 
 ```json
 {
@@ -542,6 +558,10 @@ await seam.acs.credentials.create({
 {% tab title="PHP" %}
 **Request:**
 
+{% hint style="info" %}
+This request contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
 ```php
 $seam->acs->credentials->create(
   acs_user_id: "33333333-3333-3333-3333-333333333333",
@@ -560,6 +580,10 @@ $seam->acs->credentials->create(
 
 **Response:**
 
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
 ```json
 {
   "acs_credential_id": "99999999-9999-9999-9999-999999999999",
@@ -573,6 +597,10 @@ $seam->acs->credentials->create(
 
 {% tab title="C#" %}
 **Request:**
+
+{% hint style="info" %}
+This request contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
 
 ```csharp
 seam.CredentialsAcs.Create(
@@ -592,6 +620,10 @@ seam.CredentialsAcs.Create(
 ```
 
 **Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
 
 ```json
 {
@@ -621,6 +653,10 @@ seam.CredentialsAcs.Create(
 {% tab title="Go" %}
 **Request:**
 
+{% hint style="info" %}
+This request contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
 ```go
 startsAt, err := time.Parse(time.RFC3339, "2024-03-01T10:40:00Z")
 endsAt, err := time.Parse(time.RFC3339, "2024-03-04T10:40:00Z")
@@ -646,6 +682,10 @@ credential, uErr := client.Acs.Credentials.Create(
 ```
 
 **Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
 
 ```json
 {
