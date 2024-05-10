@@ -22,7 +22,7 @@ Access control systems (ACSs) enable you to manage and monitor access to physica
 
 ## Components of Access Control Systems&#x20;
 
-The Seam access system schema consists of a series of objects that interact to enable you manage your ACS in a logical, efficient manner. The top-level object is the [system](../../api-clients/access-control-systems/systems/) that represents one or more buildings, residential locations, or other sites that you manage using this ACS. Within the system, you identify the set of [entrances](../../api-clients/access-control-systems/entrances/), doors, or zones that you want to manage, identifying each by the corresponding lock object. You also identify the set of [users](./#what-is-a-user) who access these entrances, doors, or zones.
+The Seam access system schema consists of a series of objects that interact to enable you to manage your ACS in a logical, efficient manner. The top-level object is the [system](../../api-clients/access-control-systems/systems/) that represents one or more buildings, residential locations, or other sites that you manage using this ACS. Within the system, you identify the set of [entrances](../../api-clients/access-control-systems/entrances/), doors, or zones that you want to manage, identifying each by the corresponding lock object. You also identify the set of [users](./#what-is-a-user) who access these entrances, doors, or zones.
 
 [Access groups](./#what-is-an-access-group) provide an efficient way to grant sets of scheduled access to one or more users. That is, you create access group objects that specify the entrances, doors, or zones to which a set of users has access, as well as the days and times at which these users have access to these entrances, doors, or zones.
 
