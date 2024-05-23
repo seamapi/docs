@@ -4,7 +4,7 @@ description: Update the code for a specified credential
 
 # Update a Credential
 
-Updates the code for a specified [credential](../../../products/access-systems/#what-is-a-credential) (`acs_credential` object).
+Updates the code for a specified [credential](../../../capability-guides/access-systems/managing-credentials/).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/acs/credentials/update" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)

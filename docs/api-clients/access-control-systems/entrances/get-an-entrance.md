@@ -4,7 +4,7 @@ description: Get a specified entrance
 
 # Get an Entrance
 
-Returns a specified [entrance](../../../products/access-systems/#access-system-components).
+Returns a specified [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/acs/entrances/get" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)

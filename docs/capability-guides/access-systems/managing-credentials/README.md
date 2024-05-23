@@ -1,38 +1,48 @@
 ---
-description: Learn how to manage credentials and assign them to users.
+description: >-
+  Learn how to create and manage credentials and to assign credentials to ACS
+  users.
 ---
 
 # Managing Credentials
 
-Credentials determine the means by which a user gains access at an entrance. Types of credentials include key cards, mobile passes, and PIN codes. This guide provide instructions on creating and removing credentials, and reassigning them to users.
+An ACS generally uses digital means of access to authorize an [ACS user](../user-management/) trying to get through a specific entrance. Examples of credentials include RFID cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.
+
+<figure><img src="../../../.gitbook/assets/acs-credential-types.png" alt="Examples of ACS user credentials"><figcaption><p>Examples of ACS user credentials</p></figcaption></figure>
+
+This guide provides instructions for creating and deleting various types of credentials.
+
+{% hint style="info" %}
+You can assign a credential to an ACS user when you create the credential. You can also [assign an existing credential to an ACS user](assigning-credentials-to-users.md#assign-a-credential-to-a-user). Further, you can [unassign a credential from an ACS user](assigning-credentials-to-users.md#unassign-a-credential-from-a-user) without deleting the credential.
+{% endhint %}
 
 ***
 
-## Create a Credential for a User
+## Create a Credential for an ACS User
 
-To [create a credential for a user](../../api-clients/access-control-systems/credentials/create-credential-for-user.md), provide the user ID (`acs_user_id`) and the desired access method (`access_method`). Seam supports the following access methods:
+To [create a credential for an ACS user](../../../api-clients/access-control-systems/credentials/create-credential-for-user.md), provide the `acs_user_id` and the desired `access_method`. Seam supports the following access methods:
 
 * `code` for a PIN code-based credential
 * `card` for a key card-based credential
-* `mobile_key` for a [Seam mobile key](../../products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md#what-are-multi-phone-sync-credentials).
+* `mobile_key` for a [Seam mobile key](../../../products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md#what-are-multi-phone-sync-credentials).
 
-Depending on the access control system and the type of credential you are issuing, you can also specify the following properties for the new credential:
+Depending on the ACS and the type of credential you are issuing, you can also specify the following properties for the new credential:
 
-* PIN code (`code`).
-* Start and end time frame for the validity of the credential (`starts_at` and `ends_at`).
+* PIN code.
+* Start and end time frame for the validity of the credential.
 * Whether the credential is a multi-phone sync credential.\
-  When creating a Seam mobile key, make sure to issue a multi-phone sync credential (`is_multi_phone_sync_credential`).
-* Brand-specific data.
+  When creating a Seam mobile key, make sure to issue a multi-phone sync credential by setting `is_multi_phone_sync_credential` to `true`.
+* Manufacturer-specific data.
 
 {% hint style="info" %}
-Make sure to note any brand-specific metadata and restrictions. For details, see the applicable [device or system integration guide](../../device-and-system-integration-guides/overview.md).
+Make sure to note any manufacturer-specific metadata and restrictions. For details, see the applicable [device or system integration guide](../../../device-and-system-integration-guides/overview.md).
 {% endhint %}
 
-The response includes the ID (`acs_credential_id`) of the newly-created credential, the user (`acs_user_id`) associated with the credential, and other additional properties of the credential.
+The response includes the `acs_credential_id` of the newly-created credential, the `acs_user_id` associated with the credential, and additional attributes of the credential.
 
 ***
 
-### Create a PIN Code-Based Credential
+### Create a PIN Code-based Credential
 
 {% tabs %}
 {% tab title="Python" %}
@@ -223,7 +233,7 @@ credential, uErr := client.Acs.Credentials.Create(
 
 ***
 
-### Create a Key Card-Based Credential
+### Create a Key Card-based Credential
 
 {% tabs %}
 {% tab title="Python" %}
@@ -410,14 +420,14 @@ credential, uErr := client.Acs.Credentials.Create(
 
 ### Create a Seam Mobile Key
 
-Depending on the ACS for which you want to create a credential, you may also need to include system-specific metadata. See the [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS. For more information about mobile access and issuing mobile credentials, see [Mobile Access](../../products/mobile-access-in-development/) and [Issuing Mobile Credentials from an Access Control System](../../products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md).
+Depending on the ACS for which you want to create a credential, you may also need to include system-specific metadata. See the [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS. For more information about mobile access and issuing mobile credentials, see [Mobile Access](../../../products/mobile-access-in-development/) and [Issuing Mobile Credentials from an Access Control System](../../../products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md).
 
 {% tabs %}
 {% tab title="Python" %}
 **Request:**
 
 {% hint style="info" %}
-This request contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This request contains manufacturer-specific metadata that may vary by [manufacturer](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```python
@@ -439,7 +449,7 @@ seam.acs.credentials.create(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```
@@ -457,7 +467,7 @@ AcsCredential(
 **Request:**
 
 {% hint style="info" %}
-This request contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This request contains manufacturer-specific metadata that may vary by [manufacturer](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```bash
@@ -484,7 +494,7 @@ curl -X 'POST' \
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```json
@@ -505,7 +515,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 **Request:**
 
 {% hint style="info" %}
-This request contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This request contains manufacturer-specific metadata that may vary by [manufacturer](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```javascript
@@ -527,7 +537,7 @@ await seam.acs.credentials.create({
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```json
@@ -559,7 +569,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 **Request:**
 
 {% hint style="info" %}
-This request contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This request contains manufacturer-specific metadata that may vary by [manufacturer](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```php
@@ -581,7 +591,7 @@ $seam->acs->credentials->create(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```json
@@ -599,7 +609,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 **Request:**
 
 {% hint style="info" %}
-This request contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This request contains manufacturer-specific metadata that may vary by [manufacturer](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```csharp
@@ -622,7 +632,7 @@ seam.CredentialsAcs.Create(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```json
@@ -654,7 +664,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 **Request:**
 
 {% hint style="info" %}
-This request contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This request contains manufacturer-specific metadata that may vary by [manufacturer](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```go
@@ -684,7 +694,7 @@ credential, uErr := client.Acs.Credentials.Create(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 {% endhint %}
 
 ```json
@@ -706,7 +716,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 
 ## Delete a Credential
 
-To [delete a credential](../../api-clients/access-control-systems/credentials/delete-credential.md), provide the credential ID (`acs_credential_id`).
+To [delete a credential](../../../api-clients/access-control-systems/credentials/delete-credential.md), provide the `acs_credential_id`.
 
 {% tabs %}
 {% tab title="Python" %}

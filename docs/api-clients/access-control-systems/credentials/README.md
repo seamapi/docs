@@ -4,7 +4,7 @@ description: Means by which a user gains access at an entrance
 
 # Credentials
 
-The `acs_credential` object represents a [credential](../../../capability-guides/access-systems/managing-credentials.md) that enables a [user](../../../products/access-systems/#what-is-a-user) to access one or more [entrances](../entrances/) within an [Access Control System](../../../products/access-systems/) (ACS). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a code.
+The `acs_credential` object represents a [credential](../../../capability-guides/access-systems/managing-credentials/) that enables an [ACS user](../../../capability-guides/access-systems/user-management/) to access one or more [entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md) within an [access control system](../../../products/access-systems/). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a code.
 
 ## `acs_credential` Properties
 

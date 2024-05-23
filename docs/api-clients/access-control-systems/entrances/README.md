@@ -4,7 +4,7 @@ description: Secured doors, gates, services, and other methods of entry
 
 # Entrances
 
-The `acs_entrance` object represents an [entrance](../../../products/access-systems/#access-system-components) within an [access control system](../../../products/access-systems/) (ACS).
+The `acs_entrance` object represents an [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md) within an [access control system](../../../products/access-systems/).
 
 ## `acs_entrance` Properties
 
