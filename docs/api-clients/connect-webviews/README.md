@@ -69,6 +69,7 @@ To list all provider keys, use the [List Device Providers](../devices/list-devic
 | [Honeywell Resideo](../../device-and-system-integration-guides/honeywell-thermostats/)                                         | `honeywell_resideo`             |
 | [igloohome](../../device-guides/igloohome-locks.md)                                                                            | `igloohome`                     |
 | [Kwikset](../../device-guides/kwikset-locks.md)                                                                                | `kwikset`                       |
+| [Latch](../../device-and-system-integration-guides/latch-access-control-system/)                                               | `latch`                         |
 | [Linear](https://linear-solutions.com/)                                                                                        | `linear`                        |
 | [Lockly](../../device-guides/lockly-locks.md)                                                                                  | `lockly`                        |
 | [Minut](../../device-guides/minut-sensors.md)                                                                                  | `minut`                         |

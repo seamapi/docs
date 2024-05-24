@@ -4,7 +4,7 @@ description: Unsuspend a specified ACS user
 
 # Unsuspend a User
 
-[Unsuspends](../../../capability-guides/access-systems/user-management/suspending-and-unsuspending-users.md#unsuspend-an-acs-user) a specified suspended [ACS user](../../../capability-guides/access-systems/user-management/). While [suspending an ACS user](suspend-a-user.md) revokes their access temporarily, unsuspending the ACS user restores their access.
+[Unsuspends](../../../products/access-systems/suspending-and-unsuspending-users.md#unsuspend-an-acs-user) a specified suspended [ACS user](../../../products/access-systems/user-management.md). While [suspending an ACS user](suspend-a-user.md) revokes their access temporarily, unsuspending the ACS user restores their access.
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/acs/users/unsuspend" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)

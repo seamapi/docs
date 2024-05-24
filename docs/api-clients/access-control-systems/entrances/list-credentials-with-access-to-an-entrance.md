@@ -4,7 +4,7 @@ description: Get all credentials with access to a specified entrance
 
 # List Credentials with Access to an Entrance
 
-Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials/) with access to a specified [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md) with access to a specified [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/acs/entrances/list_credentials_with_access" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)

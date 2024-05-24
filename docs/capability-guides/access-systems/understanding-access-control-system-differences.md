@@ -6,7 +6,7 @@ description: >-
 
 # Understanding Access Control System Differences
 
-Seam's universal API provides the flexibility to manage a variety of [ACSs](../../products/access-systems/). Variations among ACSs include the methods that you use to assign access permissions to users. For example, some ACSs grant scheduled access to [entrances](retrieving-entrance-details.md) through configured [access groups](../../products/access-systems/assigning-users-to-access-groups.md), while others specify entrance permissions and schedules as properties of [credentials](managing-credentials/). Other variations include the following:
+Seam's universal API provides the flexibility to manage a variety of [ACSs](../../products/access-systems/). Variations among ACSs include the methods that you use to assign access permissions to users. For example, some ACSs grant scheduled access to [entrances](retrieving-entrance-details.md) through configured [access groups](../../products/access-systems/assigning-users-to-access-groups.md), while others specify entrance permissions and schedules as properties of [credentials](managing-credentials.md). Other variations include the following:
 
 * Whether an ACS is cloud-based or on-premises
 * The specific licenses, if any, that each ACS manufacturer requires you to purchase
@@ -34,7 +34,7 @@ This section describes various ways in which ACSs handle assigning access permis
 
 ### Access Group-based ACS
 
-Access group-based ACSs use access groups as an efficient way to assign access permissions to [ACS users](user-management/). Each access group contains a list of entrances and the corresponding access schedule. Seam syncs all the access group and entrance information from the ACS.
+Access group-based ACSs use access groups as an efficient way to assign access permissions to [ACS users](../../products/access-systems/user-management.md). Each access group contains a list of entrances and the corresponding access schedule. Seam syncs all the access group and entrance information from the ACS.
 
 To assign access permissions in an access group-based ACS, you add ACS users to the predefined access groups. Then, you create credentials to specify the access mechanisms—such as key cards, PIN codes, or mobile keys—and assign these credentials to the ACS users.
 
@@ -54,7 +54,7 @@ The following process describes the configuration steps for an access group-base
 
     Depending on the access method and specific ACS, you can also configure additional credential properties. For more information about manufacturer-specific variations, see the [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS.
 
-You can also perform other management actions, as needed, such as [adding ACS users to](../../products/access-systems/assigning-users-to-access-groups.md#add-an-acs-user-to-an-access-group) and [removing ACS users from access groups](../../products/access-systems/assigning-users-to-access-groups.md#remove-an-acs-user-from-an-access-group), [assigning](managing-credentials/assigning-credentials-to-users.md#assign-a-credential-to-a-user) and [unassigning](managing-credentials/assigning-credentials-to-users.md#unassign-a-credential-from-a-user) existing credentials, [suspending](user-management/suspending-and-unsuspending-users.md#suspend-an-acs-user) and [unsuspending](user-management/suspending-and-unsuspending-users.md#unsuspend-an-acs-user) ACS users, [updating ACS users](user-management/#update-a-user) and [credentials](../../api-clients/access-control-systems/credentials/update-a-credential.md), and [deleting ACS users](user-management/#delete-a-user) and [credentials](managing-credentials/#delete-a-credential).
+You can also perform other management actions, as needed, such as [adding ACS users to](../../products/access-systems/assigning-users-to-access-groups.md#add-an-acs-user-to-an-access-group) and [removing ACS users from access groups](../../products/access-systems/assigning-users-to-access-groups.md#remove-an-acs-user-from-an-access-group), [assigning](assigning-credentials-to-users.md#assign-a-credential-to-a-user) and [unassigning](assigning-credentials-to-users.md#unassign-a-credential-from-a-user) existing credentials, [suspending](../../products/access-systems/suspending-and-unsuspending-users.md#suspend-an-acs-user) and [unsuspending](../../products/access-systems/suspending-and-unsuspending-users.md#unsuspend-an-acs-user) ACS users, [updating ACS users](../../products/access-systems/user-management.md#update-a-user) and [credentials](../../api-clients/access-control-systems/credentials/update-a-credential.md), and [deleting ACS users](../../products/access-systems/user-management.md#delete-a-user) and [credentials](managing-credentials.md#delete-a-credential).
 
 ### Credential-based ACS
 
@@ -65,9 +65,9 @@ In a credential-based ACS, the [`acs_credential`](../../api-clients/access-contr
 The following process describes the configuration steps for a credential-based ACS:
 
 1. When the ACS connects to Seam, Seam automatically creates the [`acs_system`](../../api-clients/access-control-systems/systems/). Seam also syncs the entrances from the connected ACS as `acs_entrance` resources. Note that because Seam automatically syncs these entrance resources from the ACS, you cannot create, edit, or delete them using the Seam API.
-2. The ACS manager uses your Seam-powered application to [create](user-management/#create-a-user) an [`acs_user`](../../api-clients/access-control-systems/users/) for each user within this ACS. You configure each `acs_user` with a set of attributes, such their name, email address, and phone number, as applicable.\
+2. The ACS manager uses your Seam-powered application to [create](../../products/access-systems/user-management.md#create-a-user) an [`acs_user`](../../api-clients/access-control-systems/users/) for each user within this ACS. You configure each `acs_user` with a set of attributes, such their name, email address, and phone number, as applicable.\
    If you need to grant a single application user access to multiple ACSs—for example, if an application user needs access to multiple buildings, each of which uses a separate ACS—you can use Seam [user identities](../../api-clients/user-identities/) to link `acs_user`s in different `acs_system`s.
-3.  The ACS manager uses your application to [create](managing-credentials/#create-a-credential-for-a-user) `acs_credential`s with the following attributes:
+3.  The ACS manager uses your application to [create](managing-credentials.md#create-a-credential-for-a-user) `acs_credential`s with the following attributes:
 
     * ID of the `acs_user` to associate with this credential
     * Access method for the credential, such as `code`, `card`, or `mobile_key`
@@ -76,7 +76,7 @@ The following process describes the configuration steps for a credential-based A
 
     Depending on the access method and specific ACS, you can also configure additional credential properties. For more information about manufacturer-specific variations, see the [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS.
 
-You can also perform other management actions, as needed, such as [assigning](managing-credentials/assigning-credentials-to-users.md#assign-a-credential-to-a-user) and [unassigning](managing-credentials/assigning-credentials-to-users.md#unassign-a-credential-from-a-user) existing credentials, [suspending](user-management/suspending-and-unsuspending-users.md#suspend-an-acs-user) and [unsuspending](user-management/suspending-and-unsuspending-users.md#unsuspend-an-acs-user) ACS users, [updating ACS users](user-management/#update-a-user) and [credentials](../../api-clients/access-control-systems/credentials/update-a-credential.md), and [deleting ACS users](user-management/#delete-a-user) and [credentials](managing-credentials/#delete-a-credential).
+You can also perform other management actions, as needed, such as [assigning](assigning-credentials-to-users.md#assign-a-credential-to-a-user) and [unassigning](assigning-credentials-to-users.md#unassign-a-credential-from-a-user) existing credentials, [suspending](../../products/access-systems/suspending-and-unsuspending-users.md#suspend-an-acs-user) and [unsuspending](../../products/access-systems/suspending-and-unsuspending-users.md#unsuspend-an-acs-user) ACS users, [updating ACS users](../../products/access-systems/user-management.md#update-a-user) and [credentials](../../api-clients/access-control-systems/credentials/update-a-credential.md), and [deleting ACS users](../../products/access-systems/user-management.md#delete-a-user) and [credentials](managing-credentials.md#delete-a-credential).
 
 ***
 

@@ -4,7 +4,7 @@ description: Learn how to list and get information about your ACS systems.
 
 # Retrieving ACS System Details
 
-You can list details for all the ACSs in your [workspace](../../core-concepts/workspaces/) or get these details for a specific ACS. Note that Seam represents the ACS as an [`acs_system`](../../api-clients/access-control-systems/systems/) resource. When you want to [create ACS users](user-management/#create-a-user) for your ACS, you must first obtain the ID of the `acs_system` for which you want to create these users.
+You can list details for all the ACSs in your [workspace](../../core-concepts/workspaces/) or get these details for a specific ACS. Note that Seam represents the ACS as an [`acs_system`](../../api-clients/access-control-systems/systems/) resource. When you want to [create ACS users](../../products/access-systems/user-management.md#create-a-user) for your ACS, you must first obtain the ID of the `acs_system` for which you want to create these users.
 
 ***
 

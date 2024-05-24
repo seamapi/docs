@@ -20,7 +20,7 @@ When creating a Seam mobile key for a Visionline ACS, you must set `is_multi_pho
 
 ## Granting Users Access to Entrances
 
-Your ACS type determines the method that you use to grant users access to entrances. When managing mobile credentials for a Visionline ACS, grant access by creating credentials. For details, see [Managing Credentials](../../capability-guides/access-systems/managing-credentials/).
+Your ACS type determines the method that you use to grant users access to entrances. When managing mobile credentials for a Visionline ACS, grant access by creating credentials. For details, see [Managing Credentials](../../capability-guides/access-systems/managing-credentials.md).
 
 ***
 

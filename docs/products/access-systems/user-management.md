@@ -6,15 +6,15 @@ description: >-
 
 # Managing ACS Users
 
-An ACS user typically refers to an individual who requires access, like an employee or resident. Each user can possess multiple credentials that serve as their keys or identifiers for access. The type of credential can vary widely. For example, in the [Salto](../../../device-guides/salto-locks.md) system, a user can have a PIN code, a mobile app account, and a fob. In other platforms, it is not uncommon for a user to have more than one of the same credential type, such as multiple key cards. Additionally, these credentials can have a schedule or validity period.
+An ACS user typically refers to an individual who requires access, like an employee or resident. Each user can possess multiple credentials that serve as their keys or identifiers for access. The type of credential can vary widely. For example, in the [Salto](../../device-guides/salto-locks.md) system, a user can have a PIN code, a mobile app account, and a fob. In other platforms, it is not uncommon for a user to have more than one of the same credential type, such as multiple key cards. Additionally, these credentials can have a schedule or validity period.
 
-This guide explains how to create and manage ACS users. Using the [Access Control Systems API](../../../api-clients/access-control-systems/), you can automate issuing access to long-term tenants or visitors.
+This guide explains how to create and manage ACS users. Using the [Access Control Systems API](../../api-clients/access-control-systems/), you can automate issuing access to long-term tenants or visitors.
 
 ***
 
 ## Before You Begin: Identify the ACS System ID
 
-To add ACS users to your access control system, first retrieve the `acs_system_id` of the ACS that you want to configure. To retrieve the ACS details, use [Get a System](../../../api-clients/access-control-systems/systems/get-system.md) or [List Systems](../../../api-clients/access-control-systems/systems/list-systems.md). Then, continue to the remaining sections in this topic to learn how to manage ACS users.
+To add ACS users to your access control system, first retrieve the `acs_system_id` of the ACS that you want to configure. To retrieve the ACS details, use [Get a System](../../api-clients/access-control-systems/systems/get-system.md) or [List Systems](../../api-clients/access-control-systems/systems/list-systems.md). Then, continue to the remaining sections in this topic to learn how to manage ACS users.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -188,13 +188,13 @@ acs_systems, uErr := client.Acs.Systems.List(
 
 ## Create an ACS User
 
-To [create an ACS user](../../../api-clients/access-control-systems/users/create-user.md), provide the `acs_system_id` of the ACS system and the attributes of the user, such as the `full_name`, `email_address`, `phone_number`, and so on.&#x20;
+To [create an ACS user](../../api-clients/access-control-systems/users/create-user.md), provide the `acs_system_id` of the ACS system and the attributes of the user, such as the `full_name`, `email_address`, `phone_number`, and so on.&#x20;
 
-Also, if your [ACS architecture](../understanding-access-control-system-differences.md) supports access groups, you can also assign an ACS user to one or more access groups. To do so, when you create the user, include the IDs of the access group to which you want add the user. The `acs_access_group_ids` parameter accepts an array of strings.
+Also, if your [ACS architecture](../../capability-guides/access-systems/understanding-access-control-system-differences.md) supports access groups, you can also assign an ACS user to one or more access groups. To do so, when you create the user, include the IDs of the access group to which you want add the user. The `acs_access_group_ids` parameter accepts an array of strings.
 
 In addition, if your ACS architecture supports assigning access schedules directly to ACS users, you can specify an `access_schedule` for the user, including a `starts_at` and `ends_at` date and time. &#x20;
 
-Further, you can use the `user_identity_id` parameter to associate a new ACS user with a [user identity](../../../api-clients/user-identities/). You can use a user identity to link an ACS user with an app user in your system, such as a [mobile access app user](../../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) or an app user who needs access to multiple ACSs.
+Further, you can use the `user_identity_id` parameter to associate a new ACS user with a [user identity](../../api-clients/user-identities/). You can use a user identity to link an ACS user with an app user in your system, such as a [mobile access app user](../mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) or an app user who needs access to multiple ACSs.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -405,7 +405,7 @@ acs_user, uErr := client.Acs.Users.Create(
 
 ## List ACS Users
 
-To [list all ACS users](../../../api-clients/access-control-systems/users/list-users.md) within an `acs_system`, provide the `acs_system_id` of the ACS. You can also filter users by `user_identity_id`, `user_identity_email_address`, or `user_identity_phone_number`.
+To [list all ACS users](../../api-clients/access-control-systems/users/list-users.md) within an `acs_system`, provide the `acs_system_id` of the ACS. You can also filter users by `user_identity_id`, `user_identity_email_address`, or `user_identity_phone_number`.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -596,7 +596,7 @@ acs_users, uErr := client.Acs.Users.List(
 
 ## Get an ACS User
 
-To [get an ACS user](../../../api-clients/access-control-systems/users/get-user.md), provide the `acs_user_id` of the user that you want to retrieve. These details include the contact details for the user, the user's access schedule, the associated [user identity](../../../api-clients/user-identities/), if applicable, and so on.
+To [get an ACS user](../../api-clients/access-control-systems/users/get-user.md), provide the `acs_user_id` of the user that you want to retrieve. These details include the contact details for the user, the user's access schedule, the associated [user identity](../../api-clients/user-identities/), if applicable, and so on.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -814,7 +814,7 @@ acs_user, uErr := client.Acs.Users.Get(
 
 ## Update an ACS User
 
-To [update an ACS user](../../../api-clients/access-control-systems/users/update-user.md), provide the `acs_user_id` of the user that you want to update, along with the attributes that you want to modify, such as the contact details for the user or the user's access schedule.
+To [update an ACS user](../../api-clients/access-control-systems/users/update-user.md), provide the `acs_user_id` of the user that you want to update, along with the attributes that you want to modify, such as the contact details for the user or the user's access schedule.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -968,7 +968,7 @@ acs_user, uErr := client.Acs.Users.Update(
 
 ## Delete an ACS User
 
-To [delete an ACS user](../../../api-clients/access-control-systems/users/delete-user.md), provide the `acs_user_id` of the user that you want to delete.
+To [delete an ACS user](../../api-clients/access-control-systems/users/delete-user.md), provide the `acs_user_id` of the user that you want to delete.
 
 {% tabs %}
 {% tab title="Python" %}

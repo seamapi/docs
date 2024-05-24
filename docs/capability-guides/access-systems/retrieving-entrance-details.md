@@ -6,7 +6,7 @@ description: >-
 
 # Retrieving Entrance Details
 
-In an ACS, an entrance is a secured door, gate, zone, or other method of entry. You can list details for all the `acs_entrance` resources in your [workspace](../../core-concepts/workspaces/) or get these details for a specific `acs_entrance`. You can also list all entrances associated with a specific [credential](managing-credentials/), and you can list all credentials associated with a specific entrance.
+In an ACS, an entrance is a secured door, gate, zone, or other method of entry. You can list details for all the `acs_entrance` resources in your [workspace](../../core-concepts/workspaces/) or get these details for a specific `acs_entrance`. You can also list all entrances associated with a specific [credential](managing-credentials.md), and you can list all credentials associated with a specific entrance.
 
 ***
 

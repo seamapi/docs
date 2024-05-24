@@ -4,7 +4,7 @@ description: Remove a specified ACS user from a specified access group
 
 # Remove a User from an Access Group
 
-Removes a specified [ACS user](../../../capability-guides/access-systems/user-management/) from a specified [access group](../../../products/access-systems/assigning-users-to-access-groups.md).
+Removes a specified [ACS user](../../../products/access-systems/user-management.md) from a specified [access group](../../../products/access-systems/assigning-users-to-access-groups.md).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/acs/access_groups/remove_user" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)

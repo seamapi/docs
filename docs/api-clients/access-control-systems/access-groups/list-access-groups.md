@@ -12,7 +12,7 @@ Returns a list of all [access groups](../../../products/access-systems/assigning
 
 ## Request
 
-To filter the list of returned access groups by a specific [access control system](../../../products/access-systems/) or [ACS user](../../../capability-guides/access-systems/user-management/), include one or both of the `acs_system_id` or `acs_user_id` parameters, respectively, in the request body. If you omit these parameters, the response includes all access groups in your [workspace](../../../core-concepts/workspaces/).
+To filter the list of returned access groups by a specific [access control system](../../../products/access-systems/) or [ACS user](../../../products/access-systems/user-management.md), include one or both of the `acs_system_id` or `acs_user_id` parameters, respectively, in the request body. If you omit these parameters, the response includes all access groups in your [workspace](../../../core-concepts/workspaces/).
 
 ### Request Body Parameters
 

@@ -12,7 +12,7 @@ Returns a list of all [entrances](../../../capability-guides/access-systems/retr
 
 ## Request
 
-To filter the list of returned entrances by a specific [access control system](../../../products/access-systems/) or [credential](../../../capability-guides/access-systems/managing-credentials/), include one or both of the `acs_system_id` or `acs_credential_id` parameters, respectively, in the request body. If you omit these parameters, the response includes all entrances in your [workspace](../../../core-concepts/workspaces/).
+To filter the list of returned entrances by a specific [access control system](../../../products/access-systems/) or [credential](../../../capability-guides/access-systems/managing-credentials.md), include one or both of the `acs_system_id` or `acs_credential_id` parameters, respectively, in the request body. If you omit these parameters, the response includes all entrances in your [workspace](../../../core-concepts/workspaces/).
 
 ### Request Body Parameters
 

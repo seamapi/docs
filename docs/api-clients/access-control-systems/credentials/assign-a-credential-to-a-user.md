@@ -4,7 +4,7 @@ description: Assign a specified credential to a specified ACS user
 
 # Assign a Credential to a User
 
-Assigns a specified [credential](../../../capability-guides/access-systems/managing-credentials/) to a specified [ACS user](../../../capability-guides/access-systems/user-management/).
+Assigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) to a specified [ACS user](../../../products/access-systems/user-management.md).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/acs/credentials/assign" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)

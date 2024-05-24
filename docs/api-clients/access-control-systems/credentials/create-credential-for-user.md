@@ -4,7 +4,7 @@ description: Create a new credential for a specified ACS user
 
 # Create a Credential for a User
 
-Creates a new [credential](../../../capability-guides/access-systems/managing-credentials/) for a specified [ACS user](../../../capability-guides/access-systems/user-management/).
+Creates a new [credential](../../../capability-guides/access-systems/managing-credentials.md) for a specified [ACS user](../../../products/access-systems/user-management.md).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/acs/credentials/create" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)

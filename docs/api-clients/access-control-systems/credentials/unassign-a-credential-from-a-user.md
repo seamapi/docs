@@ -4,7 +4,7 @@ description: Unassign a specified credential from a specified ACS user
 
 # Unassign a Credential from a User
 
-Unassigns a specified [credential](../../../capability-guides/access-systems/managing-credentials/) from a specified [ACS user](../../../capability-guides/access-systems/user-management/).
+Unassigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) from a specified [ACS user](../../../products/access-systems/user-management.md).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/acs/credentials/unassign" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)

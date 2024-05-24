@@ -4,7 +4,7 @@ description: Get a specified credential
 
 # Get a Credential
 
-Returns a specified [credential](../../../capability-guides/access-systems/managing-credentials/).
+Returns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/acs/credentials/get" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
