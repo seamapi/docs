@@ -4,6 +4,8 @@ description: Guide for using the Latch Access Control System with Seam
 
 # Latch Access Control System
 
+<figure><picture><source srcset="../../.gitbook/assets/latch-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/latch-manufacturer-page-cover-light.png" alt="Connect and control your Latch ACS using the Seam API."></picture><figcaption><p>Connect and control your Latch ACS using the Seam API.</p></figcaption></figure>
+
 ## Overview
 
 Seam integrates seamlessly with the [Latch](https://www.latch.com/) management platform. Property managers and owners use the Latch [access control system](../../products/access-systems/) (ACS) to control access across their properties. Latch enables them to manage who has access to which spaces and when, view access history, and set up and manage multiple users and guests.
