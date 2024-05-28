@@ -76,7 +76,7 @@
     * [Deleting Climate Setting Schedules](capability-guides/thermostats/managing-scheduled-climate-settings-in-development/deleting-climate-setting-schedules.md)
 * [👂 Noise Sensors](products/noise-sensors/README.md)
   * [Configuring Noise Threshold Settings](products/noise-sensors/configure-noise-threshold-settings.md)
-* [🌩️ Seam Bridge](products/seam-bridge-in-development.md)
+* [🌩️ Seam Bridge](capability-guides/seam-bridge.md)
 
 ## 💻 UI Components
 
