@@ -93,5 +93,6 @@ You can perform the following actions on `connect_webview` objects:
 * [List Connect Webviews](list-connect-webviews.md)
 * [Get a Connect Webview](get-a-connect-webview.md)
 * [Check a Connect Webview](get-a-connect-webview.md)
-* [Delete Webview](broken-reference/)
-* [View Connect Webview](broken-reference/)
+* [Delete a Connect Webview](delete-a-connect-webview.md)
+
+Also, learn about [embedding a Connect Webview](embedding-a-connect-webview.md) in your app.
