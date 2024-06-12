@@ -2,11 +2,11 @@
 description: Learn about how to diagnose and fix access code issues.
 ---
 
-# Troubleshooting Access Code Issues
+# Troubleshooting Access Codes
 
 Seam might encounter issues when programming an access code onto a lock. If access codes are not being programmed as expected, this article will help you determine the cause of the issue and fix the problem.
 
-When scheduling an access code, Seam will try to set the code on the device up to 9 days before its start time. Any errors or warnings will be recorded on the access code at least 3 days before its scheduled activation. This approach ensures you have ample time to address any issues, using the mitigation steps provided below. Note that not all device brands support the ability to program codes in advance. Refer to our [Native Scheduling — Supported Providers](../#native-scheduling--supported-providers) section for details.
+When scheduling an access code, Seam will try to set the code on the device up to 9 days before its start time. Any errors or warnings will be recorded on the access code at least 3 days before its scheduled activation. This approach ensures you have ample time to address any issues, using the mitigation steps provided below. Note that not all device brands support the ability to program codes in advance. See [Native Scheduling—Supported Providers](./#native-scheduling-supported-providers) for details.
 
 ## Determine the issue
 
