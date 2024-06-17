@@ -1,31 +1,31 @@
 ---
-description: Learn how to connect and control August locks with the Seam API.
+description: Learn how to connect and control 4SUITES locks with the Seam API.
 ---
 
-# Get started with August locks
+# Get started with 4SUITES locks
 
-<figure><picture><source srcset="../.gitbook/assets/august_get-started-cover_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/august_get-started-cover_light.png" alt="August smart locks"></picture><figcaption><p>August smart locks</p></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/4suites_get-started-cover_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/4suites_get-started-cover_light.png" alt="4SUITES smart locks"></picture><figcaption><p>4SUITES smart locks</p></figcaption></figure>
 
 ## Overview
 
 Seam provides a universal API to connect and control many brands of IoT devices and systems, including smart locks, access control systems (ACSs), thermostats, and noise sensors.
 
-This guide gives you a rapid introduction to connecting and controlling your [August lock](august-locks.md) using the Seam API. For application developers, you can use the Seam API in your app, and your users can authorize your app to control their devices using Seam.
+This guide gives you a rapid introduction to connecting and controlling your [4SUITES lock](./) using the Seam API. For application developers, you can use the Seam API in your app, and your users can authorize your app to control their devices using Seam.
 
-Seam supports the following August locks:
+Seam supports the following 4SUITES locks:
 
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  manufacturers='["August"]'
+  manufacturers='["4SUITES"]'
 />" %}
 
 To learn more about other IoT device and system brands that Seam supports—such as Yale, Schlage, Google Nest, and many more—visit our [integration page](https://www.seam.co/supported-devices-and-systems).
 
 {% hint style="success" %}
-This guide shows you how to install a Seam SDK and then control your August lock using the Seam API.
+This guide shows you how to install a Seam SDK and then control your 4SUITES lock using the Seam API.
 
-Another easy way to learn about what you can do with the Seam API is to explore the [interactive Seam CLI](../core-concepts/seam-console/seam-online-cli.md), which you can access from directly within the [Seam Console](../core-concepts/seam-console/).
+Another easy way to learn about what you can do with the Seam API is to explore the [interactive Seam CLI](../../core-concepts/seam-console/seam-online-cli.md), which you can access from directly within the [Seam Console](../../core-concepts/seam-console/).
 
 :arrow\_forward: [Go to the Seam Console!](https://console.seam.co/)
 {% endhint %}
@@ -105,7 +105,7 @@ go get github.com/seamapi/go
 {% endtab %}
 {% endtabs %}
 
-Next, go to [https://console.seam.co/](https://console.seam.co/) and [sign up for Seam](../core-concepts/seam-console/#create-a-seam-account) to get your [API key](../core-concepts/authentication/api-keys.md).
+Next, go to [https://console.seam.co/](https://console.seam.co/) and [sign up for Seam](../../core-concepts/seam-console/#create-a-seam-account) to get your [API key](../../core-concepts/authentication/api-keys.md).
 
 {% @supademo/embed demoId="vLRzYM2Nwoi4j_cH9WCNQ" url="https://app.supademo.com/demo/vLRzYM2Nwoi4j_cH9WCNQ" %}
 
@@ -118,25 +118,25 @@ $ export SEAM_API_KEY=my_seam_api_key
 Where `my_seam_api_key` is your API key.
 
 {% hint style="info" %}
-This guide uses a [sandbox workspace](../core-concepts/workspaces/#sandbox-workspaces). You can only connect virtual devices and systems in this type of workspace. If you want to connect a real August lock, use a [non-sandbox workspace](../core-concepts/workspaces/#production-workspaces) and API key.
+This guide uses a [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces). You can only connect virtual devices and systems in this type of workspace. If you want to connect a real 4SUITES lock, use a [non-sandbox workspace](../../core-concepts/workspaces/#production-workspaces) and API key.
 {% endhint %}
 
 ***
 
-## Step 2: Link your August account with Seam
+## Step 2: Link your 4SUITES account with Seam
 
-To control your August lock using the Seam API, you must first authorize your Seam workspace to connect to your August account. If your application needs to connect to your users' August accounts, Seam provides fully-embedded, [customizable](../core-concepts/connect-webviews/customizing-connect-webviews.md) client-side [Connect Webviews](../core-concepts/connect-webviews/) to collect their authorization securely. These user-friendly pre-built authorization flows walk your users through the process of granting your Seam workspace permission to control their August locks. The Connect Webview presents a flow that prompts your users to enter their credentials for their August account.
+To control your 4SUITES lock using the Seam API, you must first authorize your Seam workspace to connect to your 4SUITES account. If your application needs to connect to your users' 4SUITES accounts, Seam provides fully-embedded, [customizable](../../core-concepts/connect-webviews/customizing-connect-webviews.md) client-side [Connect Webviews](../../core-concepts/connect-webviews/) to collect their authorization securely. These user-friendly pre-built authorization flows walk your users through the process of granting your Seam workspace permission to control their 4SUITES locks. The Connect Webview presents a flow that prompts your users to enter their credentials for their 4SUITES account.
 
-In this guide, you create a Connect Webview object. Then, you display the graphical component of the created Connect Webview and enter a set of sample credentials to connect a sandbox August account.
+In this guide, you create a Connect Webview object. Then, you display the graphical component of the created Connect Webview and enter a set of sample credentials to connect a sandbox 4SUITES account.
 
 {% hint style="success" %}
 This guide shows you how to create a Connect Webview programmatically using the Seam API.
 
-The [Seam Console](../core-concepts/seam-console/) provides another easy way to connect devices to your Seam workspace.
+The [Seam Console](../../core-concepts/seam-console/) provides another easy way to connect devices to your Seam workspace.
 
-Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](get-started-with-august-locks.md#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
+Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](get-started-with-4suites-locks.md#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
 
-<img src="../.gitbook/assets/add-devices-button.png" alt="You can also use the Seam Console to add devices." data-size="original">
+<img src="../../.gitbook/assets/add-devices-button.png" alt="You can also use the Seam Console to add devices." data-size="original">
 {% endhint %}
 
 ### Create a Connect Webview
@@ -152,7 +152,7 @@ from seamapi import Seam
 
 seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
 
-connect_webview = seam.connect_webviews.create(accepted_providers=["august"])
+connect_webview = seam.connect_webviews.create(accepted_providers=["four_suites"])
 
 assert connect_webview.login_successful is False
 
@@ -178,7 +178,7 @@ curl -X 'POST' \
   -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
-  "accepted_providers": ["august"]
+  "accepted_providers": ["four_suites"]
 }' | jq -r '"Login Successful (false): " + (.connect_webview.login_successful | tostring), 
   "URL: " + .connect_webview.url'
   # Use the returned Connect Webview URL to display
@@ -202,7 +202,7 @@ import { Seam } from "seam";
 const seam = new Seam(); // Seam automatically uses your exported SEAM_API_KEY.
 
 const connectWebview = await seam.connectWebviews.create({
-  accepted_providers: ['august']
+  accepted_providers: ['four_suites']
 });
 
 console.log(connectWebview.login_successful); // false
@@ -229,7 +229,7 @@ require "seamapi"
 seam = Seam::Client.new() # Seam automatically uses your exported SEAM_API_KEY.
 
 connect_webview = seam.connect_webviews.create(
-  accepted_providers: ["august"]
+  accepted_providers: ["four_suites"]
 )
 
 puts connect_webview.login_successful # false
@@ -257,7 +257,7 @@ require 'vendor/autoload.php';
 $seam = new Seam\SeamClient(); // Seam automatically uses your exported SEAM_API_KEY.
 
 $connect_webview = $seam->connect_webviews->create(
-  accepted_providers: ["august"]
+  accepted_providers: ["four_suites"]
 );
 
 echo $connect_webview->login_successful ? 'true' : 'false', "\n"; // false
@@ -284,7 +284,7 @@ using Seam.Client;
 var seam = new SeamClient(apiToken: SEAM_API_KEY);
 
 var connectWebview = seam.ConnectWebviews.Create(
-  acceptedProviders: new() {Seam.Api.ConnectWebviews.CreateRequest.AcceptedProvidersEnum.August}
+  acceptedProviders: new() {Seam.Api.ConnectWebviews.CreateRequest.AcceptedProvidersEnum.FourSuites}
 );
 
 Console.WriteLine(connectWebview.LoginSuccessful); // False
@@ -334,7 +334,7 @@ public class Main {
       .build();
 
     ConnectWebview connectWebview = seam.connectWebviews().create(ConnectWebviewsCreateRequest.builder()
-      .acceptedProviders(List.of(AcceptedProvider.AUGUST))
+      .acceptedProviders(List.of(AcceptedProvider.FOUR_SUITES))
       .build());
 
     System.out.println(connectWebview.getLoginSuccessful()); // false
@@ -386,7 +386,7 @@ func run() error {
     context.Background(),
     &api.ConnectWebviewsCreateRequest{
       AcceptedProviders: []api.AcceptedProvider{
-        api.AcceptedProviderAugust,
+        api.AcceptedProviderFourSuites,
       },
     },
   )
@@ -420,21 +420,18 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 
 In a web browser, go to the URL that the Connect Webview object returned.
 
-For application developers, you can redirect your user to this Connect Webview URL so that they can authorize your app to control their devices using Seam. We even provide a prebuilt [Connect Account Button](../seam-components/react-components/connect-account-button.md) within our suite of [Seam Components](../seam-components/overview/) that help you build your device management flow.
+For application developers, you can redirect your user to this Connect Webview URL so that they can authorize your app to control their devices using Seam. We even provide a prebuilt [Connect Account Button](../../seam-components/react-components/connect-account-button.md) within our suite of [Seam Components](../../seam-components/overview/) that help you build your device management flow.
 
 {% hint style="success" %}
-Because you're using a sandbox workspace, you can connect Seam's test August account. We provide [virtual devices](sandbox-and-sample-data/) for each of the brands that we support. These sandbox devices and systems enable you to test your app with devices from multiple brands without the need to own all the corresponding physical devices.
+Because you're using a sandbox workspace, you can connect Seam's test 4SUITES account. We provide [virtual devices](../../device-guides/sandbox-and-sample-data/) for each of the brands that we support. These sandbox devices and systems enable you to test your app with devices from multiple brands without the need to own all the corresponding physical devices.
 {% endhint %}
 
-Complete the Connect Webview authorization flow by entering the following [August sandbox account](sandbox-and-sample-data/august-locks-sample-data.md) credentials:
+Complete the Connect Webview authorization flow by entering the following [4SUITES sandbox account](../../device-guides/sandbox-and-sample-data/4suites-locks-sample-data.md) credentials:
 
-* **Device Region:** Others
 * **Email:** jane@example.com
 * **Password:** 1234
-* **2FA Method:** Email (jane@example.com)
-* **Two Factor Code:** 123456
 
-<figure><picture><source srcset="../.gitbook/assets/august_connect-flow-screens_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/august_connect-flow-screens_light.png" alt="Use the Seam Connect Webview authorization flow to connect a August account with Seam. This flow varies slightly based on the device manufacturer and region."></picture><figcaption><p>Use the Seam Connect Webview authorization flow to connect a August account with Seam. This flow varies slightly based on the device manufacturer and region.</p></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/4suites_connect-flow-screens_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/4suites_connect-flow-screens_light.png" alt="Use the Seam Connect Webview authorization flow to connect a 4SUITES account with Seam. This flow varies slightly based on the device manufacturer."></picture><figcaption><p>Use the Seam Connect Webview authorization flow to connect a 4SUITES account with Seam. This flow varies slightly based on the device manufacturer.</p></figcaption></figure>
 
 Confirm that authorization through the Connect Webview was successful by querying its status.
 
@@ -596,9 +593,9 @@ true
 
 ***
 
-## Step 3: Retrieve August lock devices
+## Step 3: Retrieve 4SUITES lock devices
 
-When you link a August account with Seam, we create a `device` object to represent each August lock in your account. You can then retrieve these August devices using the [List Devices](../api-clients/devices/list-devices.md) and [Get Device](../api-clients/devices/get-device.md) endpoints.
+When you link a 4SUITES account with Seam, we create a `device` object to represent each 4SUITES lock in your account. You can then retrieve these 4SUITES devices using the [List Devices](../../api-clients/devices/list-devices.md) and [Get Device](../../api-clients/devices/get-device.md) endpoints.
 
 The Seam API exposes each device's properties, such as the door lock status, power status, capabilities, and so on.
 
@@ -609,10 +606,10 @@ The Seam API exposes each device's properties, such as the door lock status, pow
 ```python
 # Retrieve all devices, filtered by manufacturer,
 # which is one of several filters that list() supports.
-all_august_locks = seam.devices.list(manufacturer="august")
+all_four_suites_locks = seam.devices.list(manufacturer="four_suites")
 
 # Select the first device as an example.
-front_door = all_august_locks[0]
+front_door = all_four_suites_locks[0]
 
 # Inspect specific properties.
 assert front_door.properties["online"] is True # True
@@ -632,13 +629,10 @@ Device(
   connected_account_id='11111111-1111-1111-1111-222222222222',
   created_at='2024-05-29T20:08:48.878Z',
   properties={
-    'manufacturer': 'august',
+    'manufacturer': 'four_suites',
     'online': True,
     'locked': True,
-    'battery': {
-      'level': 0.9999532347993827,
-      'status': 'full'
-    },
+    'has_direct_power': True,
     ...
   }
   can_remotely_unlock=True,
@@ -653,7 +647,7 @@ Device(
 ```bash
 # Retrieve all devices, filtered by manufacturer, which is
 # one of several filters that the list endpoint supports.
-all_august_locks=$(
+all_four_suites_locks=$(
   # Use GET or POST.
   curl -X 'GET' \
     'https://connect.getseam.com/devices/list' \
@@ -661,11 +655,11 @@ all_august_locks=$(
     -H "Authorization: Bearer ${SEAM_API_KEY}" \
     -H 'Content-Type: application/json' \
     -d '{
-    "manufacturer": "august"
+    "manufacturer": "four_suites"
   }')
 
 # Select the first device as an example.
-front_door=$(jq -r '.devices[0]' <<< ${all_august_locks})
+front_door=$(jq -r '.devices[0]' <<< ${all_four_suites_locks})
 
 # Inspect specific properties.
 echo $(jq -r '"Online (true): " + (.properties.online | tostring)' <<< ${front_door})
@@ -687,13 +681,10 @@ Locked (true): true
   "connected_account_id": "11111111-1111-1111-1111-222222222222",
   "created_at": "2024-05-29T20:08:48.878Z",
   "properties": {
-    "manufacturer": "august",
+    "manufacturer": "four_suites",
     "locked": true,
     "online": true,
-    "battery": {
-      "level": 0.9999532347993827,
-      "status": "full"
-    },
+    "has_direct_power": true,
     ...
   },
   "can_remotely_unlock": true,
@@ -708,10 +699,10 @@ Locked (true): true
 ```javascript
 // Retrieve all devices, filtered by manufacturer,
 // which is one of several filters that list() supports.
-const allAugustLocks = await seam.devices.list({manufacturer: "august"});
+const allFourSuitesLocks = await seam.devices.list({manufacturer: "four_suites"});
 
 // Select the first device as an example.
-const frontDoor = allAugustLocks[0];
+const frontDoor = allFourSuitesLocks[0];
 
 // Inspect specific properties.
 console.log(frontDoor.properties.online); // true
@@ -733,13 +724,10 @@ true
   connected_account_id: '11111111-1111-1111-1111-222222222222',
   created_at: '2024-05-29T20:08:48.878Z',
   properties: {
-    manufacturer: 'august',
+    manufacturer: 'four_suites',
     online: true,
     locked: true,
-    battery: {
-      level: 0.9999532347993827,
-      status: 'full'
-    },
+    has_direct_power: true,
     ...
   },
   can_remotely_unlock: true,
@@ -754,10 +742,10 @@ true
 ```ruby
 # Retrieve all devices, filtered by manufacturer,
 # which is one of several filters that list() supports.
-all_august_locks = seam.devices.list(manufacturer: "august")
+all_four_suites_locks = seam.devices.list(manufacturer: "four_suites")
 
 # Select the first device as an example.
-front_door = all_august_locks[0]
+front_door = all_four_suites_locks[0]
 
 # Inspect specific properties.
 puts front_door.properties['online'] # true
@@ -780,13 +768,10 @@ true
     connected_account_id="11111111-1111-1111-1111-222222222222"
     created_at=2024-05-29 20:08:48.878 UTC
     properties={
-      "manufacturer"=>"august",
+      "manufacturer"=>"four_suites",
       "online"=>true,
       "locked"=>true,
-      "battery"=>{
-        "level"=>0.9999532347993827,
-        "status"=>"full"
-      },
+      "has_direct_power"=>true,
       ...
     }
     can_remotely_unlock=true
@@ -801,10 +786,10 @@ true
 ```php
 // Retrieve all devices, filtered by manufacturer,
 // which is one of several filters that list() supports.
-$all_august_locks = $seam->devices->list(manufacturer: "august");
+$all_four_suites_locks = $seam->devices->list(manufacturer: "four_suites");
 
 // Select the first device as an example.
-$front_door = $all_august_locks[0];
+$front_door = $all_four_suites_locks[0];
 
 // Inspect specific properties.
 echo $front_door->properties->online ? 'true' : 'false', "\n"; // true
@@ -826,13 +811,10 @@ true
   "connected_account_id": "11111111-1111-1111-1111-222222222222",
   "created_at": "2024-05-29T20:08:48.878Z",
   "properties": {
-    "manufacturer": "august",
+    "manufacturer": "four_suites",
     "online": true,
     "locked": true,
-    "battery": {
-      "level": 0.9999532347993827,
-      "status": "full"
-    },
+    "has_direct_power": true,
     ...
   },
   "can_remotely_unlock": true,
@@ -847,12 +829,12 @@ true
 ```csharp
 // Retrieve all devices, filtered by manufacturer,
 // which is one of several filters that list() supports.
-var allAugustLocks = seam.Devices.List(
-  manufacturer: Seam.Api.Devices.ListRequest.ManufacturerEnum.August
+var allFourSuitesLocks = seam.Devices.List(
+  manufacturer: Seam.Api.Devices.ListRequest.ManufacturerEnum.FourSuites
 );
 
 // Select the first device as an example.
-Device frontDoor = allAugustLocks[0];
+Device frontDoor = allFourSuitesLocks[0];
 
 // Inspect specific properties.
 Console.WriteLine(frontDoor.Properties.Online); // true
@@ -874,13 +856,10 @@ True
   "connected_account_id": "11111111-1111-1111-1111-222222222222",
   "created_at": "2024-05-29T20:08:48.878Z",
   "properties": {
-    "manufacturer": "august",
+    "manufacturer": "four_suites",
     "online": true,
     "locked": true,
-    "battery": {
-      "level": 0.9999532,
-      "status": "full"
-    },
+    "has_direct_power": true,
     ...
   },
   "can_remotely_unlock": true,
@@ -895,12 +874,12 @@ True
 ```java
 // Retrieve all devices, filtered by manufacturer,
 // which is one of several filters that list() supports.
-var allAugustLocks = seam.devices().list(DevicesListRequest.builder()
-  .manufacturer(Manufacturer.AUGUST)
+var allFourSuitesLocks = seam.devices().list(DevicesListRequest.builder()
+  .manufacturer(Manufacturer.FOURSUITES)
   .build());
 
 // Select the first device as an example.
-Device frontDoor = allAugustLocks.get(0);
+Device frontDoor = allFourSuitesLocks.get(0);
 
 // Inspect specific properties.
 System.out.println(frontDoor.getProperties().getOnline()); // true
@@ -922,13 +901,10 @@ true
   "connected_account_id" : "11111111-1111-1111-1111-222222222222",
   "created_at" : "2024-05-29T20:08:48.878Z",
   "properties" : {
-    "manufacturer" : "august",
+    "manufacturer" : "four_suites",
     "online" : true,
     "locked" : true,
-    "battery" : {
-      "level" : 0.9999532347993827,
-      "status" : "full"
-    },
+    "has_direct_power" : true,
     ...
   },
   "can_remotely_unlock" : true,
@@ -943,14 +919,14 @@ true
 ```go
 // Retrieve all devices, filtered by manufacturer,
 // which is one of several filters that list() supports.
-allAugustLocks, err := client.Devices.List(
+allFourSuitesLocks, err := client.Devices.List(
   context.Background(), &api.DevicesListRequest{
-    Manufacturer: api.ManufacturerAugust.Ptr(),
+    Manufacturer: api.ManufacturerFourSuites.Ptr(),
   },
 )
 
 // Select the first device as an example.
-frontDoor := allAugustLocks[0]
+frontDoor := allFourSuitesLocks[0]
 
 if err != nil {
   return err
@@ -978,13 +954,10 @@ true
   "connected_account_id": "11111111-1111-1111-1111-222222222222",
   "created_at": "2024-05-29T20:08:48.878Z",
   "properties": {
-    "manufacturer": "august",
+    "manufacturer": "four_suites",
     "online": true,
     "locked": true,
-    "battery": {
-      "level": 0.9999532347993827,
-      "status": "full"
-    },
+    "has_direct_power": true,
     ...
   },
   "can_remotely_unlock": true,
@@ -996,20 +969,19 @@ true
 
 ***
 
-## Step 4: Control your August lock
+## Step 4: Control your 4SUITES lock
 
 Next, you can use the Seam API to control your lock.
 
-Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use, such as [remote unlock actions](../products/smart-locks/lock-and-unlock.md), [programming access codes](../products/smart-locks/access-codes/), and so on. Seam's intuitive and granular [capability flags](../capability-guides/device-and-system-capabilities.md#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
+Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use, such as [remote unlock actions](../../products/smart-locks/lock-and-unlock.md), [programming access codes](../../products/smart-locks/access-codes/), and so on. Seam's intuitive and granular [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
 
-Try out the following actions on your August lock:
+Try out the following actions on your 4SUITES lock:
 
-* [ ] [Unlock your lock](get-started-with-august-locks.md#unlock-your-lock)
-* [ ] [Program access codes on your lock](get-started-with-august-locks.md#program-access-codes-on-your-lock)
+* [ ] [Unlock your lock](get-started-with-4suites-locks.md#unlock-your-lock)
 
 ### Unlock your lock
 
-To unlock a door, use the [Unlock Door](../api-clients/locks/unlock-a-lock.md) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](../core-concepts/action-attempts.md) to track the progress of the unlock operation.
+To unlock a door, use the [Unlock Door](../../api-clients/locks/unlock-a-lock.md) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](../../core-concepts/action-attempts.md) to track the progress of the unlock operation.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -1247,7 +1219,7 @@ return nil
 {% endtab %}
 {% endtabs %}
 
-You can track the status of the unlock operation to confirm that the device unlocked successfully. Query the `locked` status of the device, [retrieve the action attempt](../api-clients/action-attempt/get-action-attempt.md) by ID, or look for a [`lock.unlocked` event](../api-clients/events/#event-types).
+You can track the status of the unlock operation to confirm that the device unlocked successfully. Query the `locked` status of the device, [retrieve the action attempt](../../api-clients/action-attempt/get-action-attempt.md) by ID, or look for a [`lock.unlocked` event](../../api-clients/events/#event-types).
 
 To query the `locked` status of the device:
 
@@ -1426,538 +1398,46 @@ false
 {% endtab %}
 {% endtabs %}
 
-{% hint style="success" %}
-Now that you have successfully unlocked your lock, you can use the [Lock Door](../api-clients/locks/lock-a-lock.md) endpoint to lock it again.
-{% endhint %}
-
 ***
 
-### Program access codes on your lock
+## Step 5: Connect a real 4SUITES lock
 
-You can use the Seam API to program [online access codes](../products/smart-locks/access-codes/) on August locks that have an integrated or accessory keypad. Lock users can then enter these access codes using the keypad to unlock the lock.
+Now that you have learned the basics of using the Seam API, you can connect and control a real 4SUITES device. To do so, make sure to switch to a [non-sandbox workspace](../../core-concepts/workspaces/#production-workspaces) and [API key](../../core-concepts/authentication/api-keys.md).
 
-The Seam API makes it easy to program both [ongoing](../products/smart-locks/access-codes/#ongoing-access-codes) and [time-bound](../products/smart-locks/access-codes/#time-bound-access-codes) online access codes.
-
-{% tabs %}
-{% tab title="Python" %}
-**Code:**
-
-```python
-# Confirm that the device supports online access codes.
-# Here's another capability flag!
-if updated_front_door.can_program_online_access_codes:
-  # Create an ongoing online access code.
-  seam.access_codes.create(
-    device_id = updated_front_door.device_id,
-    name = "my ongoing code",
-    code = "1234"
-  )
-  # Create a time-bound online access code.
-  seam.access_codes.create(
-    device_id = updated_front_door.device_id,
-    name = "my time-bound code",
-    starts_at = "2025-01-01T16:00:00Z",
-    ends_at = "2025-01-22T12:00:00Z",
-    code = "2345"
-  )
-  # List all access codes for this device.
-  access_codes = seam.access_codes.list(
-    device_id = updated_front_door.device_id
-  )
-  pprint(access_codes)
-```
-
-**Output:**
-
-```
-[
-  AccessCode(
-    access_code_id='11111111-1111-1111-1111-555555555555',
-    device_id='11111111-1111-1111-1111-444444444444',
-    type='ongoing',
-    code='1234',
-    name='my ongoing code',
-    ...
-  )
-  AccessCode(
-    access_code_id='11111111-1111-1111-1111-666666666666',
-    device_id='11111111-1111-1111-1111-444444444444',
-    type='time_bound',
-    code='2345',
-    starts_at='2025-01-01T16:00:00.000Z',
-    ends_at='2025-01-22T12:00:00.000Z',
-    name='my time-bound code',
-    ...
-  )
-]
-```
-{% endtab %}
-
-{% tab title="cURL (bash)" %}
-**Code:**
-
-```bash
-# Confirm that the device supports online access codes.
-# Here's another capability flag!
-if  $(jq -r '.device.can_program_online_access_codes' <<< ${updated_front_door}); then \
-  # Create an ongoing online access code.
-  curl -X 'POST' \
-    'https://connect.getseam.com/access_codes/create' \
-    -H 'accept: application/json' \
-    -H "Authorization: Bearer ${SEAM_API_KEY}" \
-    -H 'Content-Type: application/json' \
-    -d "{
-      \"device_id\": \"$(jq -r '.device.device_id' <<< ${updated_front_door})\",
-      \"name\": \"my ongoing code\",
-      \"code\": \"1234\"
-  }"
-  # Create a time-bound online access code.
-  curl -X 'POST' \
-    'https://connect.getseam.com/access_codes/create' \
-    -H 'accept: application/json' \
-    -H "Authorization: Bearer ${SEAM_API_KEY}" \
-    -H 'Content-Type: application/json' \
-    -d "{
-      \"device_id\": \"$(jq -r '.device.device_id' <<< ${updated_front_door})\",
-      \"name\": \"my time-bound code\",
-      \"starts_at\": \"2025-01-01T16:00:00Z\",
-      \"ends_at\": \"2025-01-22T12:00:00Z\",
-      \"code\": \"2345\"
-  }"
-  # List all access codes for this device.
-  access_codes=$(
-  # Use GET or POST.
-  curl -X 'GET' \
-    'https://connect.getseam.com/access_codes/list' \
-    -H 'accept: application/json' \
-    -H "Authorization: Bearer ${SEAM_API_KEY}" \
-    -H 'Content-Type: application/json' \
-    -d "{
-      \"device_id\": \"$(jq -r '.device.device_id' <<< ${updated_front_door})\"
-  }")
-  echo ${access_codes};
-fi
-```
-
-**Output:**
-
-```json
-{
-  "access_codes": [
-    {
-      "access_code_id":"11111111-1111-1111-1111-555555555555",
-      "device_id":"11111111-1111-1111-1111-444444444444",
-      "name":"my ongoing code",
-      "code":"1234",
-      "type":"ongoing",
-      ...
-    },
-    {
-      "access_code_id": "11111111-1111-1111-1111-666666666666",
-      "device_id": "11111111-1111-1111-1111-444444444444",
-      "name": "my time-bound code",
-      "code": "2345",
-      "type": "time_bound",
-      "starts_at": "2025-01-01T16:00:00.000Z",
-      "ends_at": "2025-01-22T12:00:00.000Z",
-      ...
-    }
-  ],
-  "ok": true
-}
-```
-{% endtab %}
-
-{% tab title="JavaScript" %}
-**Code:**
-
-```javascript
-// Confirm that the device supports online access codes.
-// Here's another capability flag!
-if (updatedFrontDoor.can_program_online_access_codes) {
-  // Create an ongoing online access code.
-  await seam.accessCodes.create({
-    device_id: updatedFrontDoor.device_id,
-    name: "my ongoing code",
-    code: "1234"
-  });
-  // Create a time-bound online access code.
-  await seam.accessCodes.create({
-    device_id: updatedFrontDoor.device_id,
-    name: "my time-bound code",
-    starts_at: "2025-01-01T16:00:00Z",
-    ends_at: "2025-01-22T12:00:00Z",
-    code: "2345"
-  });
-  // List all access codes for this device.
-  const accessCodes = await seam.accessCodes.list({
-    device_id: updatedFrontDoor.device_id
-  });
-  console.log(accessCodes);
-};
-```
-
-**Output:**
-
-```json
-[
-  {
-    access_code_id: '11111111-1111-1111-1111-555555555555',
-    device_id: '11111111-1111-1111-1111-444444444444',
-    name: 'my ongoing code',
-    code: '1234',
-    type: 'ongoing',
-    ...
-  },
-  {
-    access_code_id: '11111111-1111-1111-1111-666666666666',
-    device_id: '11111111-1111-1111-1111-444444444444',
-    name: 'my time-bound code',
-    code: '2345',
-    type: 'time_bound',
-    starts_at: '2025-01-01T16:00:00.000Z',
-    ends_at: '2025-01-22T12:00:00.000Z',
-    ...
-  }
-]
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-**Code:**
-
-```ruby
-# Confirm that the device supports online access codes.
-# Here's another capability flag!
-if (updated_front_door['can_program_online_access_codes'])
-  # Create an ongoing online access code.
-  seam.access_codes.create(
-    device_id: updated_front_door.device_id,
-    name: "my ongoing code",
-    code: "1234"
-  )
-  # Create a time-bound online access code.
-  seam.access_codes.create(
-    device_id: updated_front_door.device_id,
-    name: "my time-bound code",
-    starts_at: "2025-01-01T16:00:00Z",
-    ends_at: "2025-01-22T12:00:00Z",
-    code: "2345"
-  )
-  # List all access codes for this device.
-  access_codes = seam.access_codes.list(
-    device_id: updated_front_door.device_id
-  )
-  puts access_codes.inspect
-end
-```
-
-**Output:**
-
-```
-[
-  <Seam::AccessCode:0x00460
-    access_code_id="11111111-1111-1111-1111-555555555555"
-    device_id="11111111-1111-1111-1111-444444444444"
-    name="my ongoing code"
-    code="1234"
-    type="ongoing"
-    ...
-  >,
-  <Seam::AccessCode:0x00438
-    access_code_id="11111111-1111-1111-1111-666666666666"
-    device_id="11111111-1111-1111-1111-444444444444"
-    name="my time-bound code"
-    code="2345"
-    type="time_bound"
-    starts_at=2025-01-01 16:00:00 UTC
-    ends_at=2025-01-22 12:00:00 UTC
-    ...
-  >
-]
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-**Code:**
-
-```php
-// Confirm that the device supports online access codes.
-// Here's another capability flag!
-if ($updated_front_door->can_program_online_access_codes) {
-  // Create an ongoing online access code.
-  $seam->access_codes->create(
-    device_id: $updated_front_door->device_id,
-    name: "my ongoing code",
-    code: "1234"
-  );
-  // Create a time-bound online access code.
-  $seam->access_codes->create(
-    device_id: $updated_front_door->device_id,
-    name: "my time-bound code",
-    starts_at:  "2025-01-01T16:00:00Z",
-    ends_at: "2025-01-22T12:00:00Z",
-    code: "2345"
-  );
-  // List all access codes for this device.
-  $access_codes = $seam->access_codes->list(
-    device_id: $updated_front_door->device_id
-  );
-  echo json_encode($access_codes, JSON_PRETTY_PRINT);
-}
-```
-
-**Output:**
-
-```json
-[
-  {
-    "access_code_id": "11111111-1111-1111-1111-555555555555",
-    "device_id": "11111111-1111-1111-1111-444444444444",
-    "name": "my ongoing code",
-    "type": "ongoing",
-    "code": "1234",
-    ...
-  },
-  {
-    "access_code_id": "11111111-1111-1111-1111-666666666666",
-    "device_id": "11111111-1111-1111-1111-444444444444",
-    "name": "my time-bound code",
-    "type": "time_bound",
-    "starts_at": "2025-01-01T16:00:00.000Z",
-    "ends_at": "2025-01-22T12:00:00.000Z",
-    "code": "2345",
-  }
-]
-```
-{% endtab %}
-
-{% tab title="C#" %}
-**Code:**
-
-```csharp
-// Confirm that the device supports online access codes.
-// Here's another capability flag!
-if (updatedFrontDoor.CanProgramOnlineAccessCodes == true) {
-  // Create an ongoing online access code.
-  seam.AccessCodes.Create(
-    deviceId: updatedFrontDoor.DeviceId,
-    name: "my ongoing code",
-    code: "1234"
-  );
-  // Create a time-bound online access code.
-  seam.AccessCodes.Create(
-    deviceId: updatedFrontDoor.DeviceId,
-    name: "my time-bound code",
-    startsAt: "2025-01-01T16:00:00Z",
-    endsAt: "2025-01-22T12:00:00Z",
-    code: "2345"
-  );
-  // List all access codes for this device.
-  var accessCodes = seam.AccessCodes.List(
-    deviceId: updatedFrontDoor.DeviceId
-  );
-  foreach (var accessCode in accessCodes)
-  {
-    Console.WriteLine(accessCode);
-  }
-}
-```
-
-**Output:**
-
-```json
-{
-  "type": "ongoing",
-  "access_code_id": "11111111-1111-1111-1111-555555555555",
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "name": "my ongoing code",
-  "code": "1234",
-  ...
-}
-{
-  "type": "time_bound",
-  "access_code_id": "11111111-1111-1111-1111-666666666666",
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "name": "my time-bound code",
-  "starts_at": "2025-01-01T16:00:00Z",
-  "ends_at": "2025-01-22T12:00:00Z",
-  "code": "2345",
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Confirm that the device supports online access codes.
-// Here's another capability flag!
-if (updatedFrontDoor.getCanProgramOnlineAccessCodes())
-{
-  // Create an ongoing online access code.
-  seam.accessCodes()
-    .create(AccessCodesCreateRequest.builder()
-      .deviceId(updatedFrontDoor.getDeviceId())
-      .name("my ongoing code")
-      .code("1234")
-      .build());
-  // Create a time-bound online access code.
-  seam.accessCodes()
-    .create(AccessCodesCreateRequest.builder()
-      .deviceId(updatedFrontDoor.getDeviceId())
-      .name("my time-bound code")
-      .startsAt("2025-01-01T16:00:00Z")
-      .endsAt("2025-01-22T12:00:00Z")
-      .code("2345")
-      .build());
-  // List all access codes for this device.
-  var accessCodes = seam.accessCodes()
-    .list(AccessCodesListRequest.builder()
-      .deviceId(updatedFrontDoor.getDeviceId())
-      .build());
-  System.out.println(accessCodes);
-}
-```
-
-**Output:**
-
-```json
-[
-  {
-    "access_code_id" : "11111111-1111-1111-1111-555555555555",
-    "device_id" : "11111111-1111-1111-1111-444444444444",
-    "name" : "my ongoing code",
-    "code" : "1234",
-    "type" : "ongoing",
-    ...
-  },
-  {
-    "access_code_id" : "11111111-1111-1111-1111-666666666666",
-    "device_id" : "11111111-1111-1111-1111-444444444444",
-    "name" : "my time-bound code",
-    "code" : "2345",
-    "type" : "time_bound",
-    "starts_at" : "2025-01-01T16:00:00Z",
-    "ends_at" : "2025-01-22T12:00:00Z",
-    ...
-  }
-]
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-// Confirm that the device supports online access codes.
-// Here's another capability flag!
-if *updatedFrontDoor.CanProgramOnlineAccessCodes {
-  // Create an ongoing online access code.
-  client.AccessCodes.Create(
-    context.Background(),
-    &api.AccessCodesCreateRequest{
-      DeviceId: updatedFrontDoor.DeviceId,
-      Name: api.String("my ongoing code"),
-      Code: api.String("1234"),
-    },
-  )
-  // Create a time-bound online access code.
-  client.AccessCodes.Create(
-    context.Background(),
-    &api.AccessCodesCreateRequest{
-      DeviceId: updatedFrontDoor.DeviceId,
-      Name: api.String("my time-bound code"),
-      StartsAt: api.String("2025-01-01T16:00:00Z"),
-      EndsAt: api.String("2025-01-22T12:00:00Z"),
-      Code: api.String("2345"),
-    },
-  )
-  // List all access codes for this device.
-  accessCodes, err := client.AccessCodes.List(
-    context.Background(),
-    &api.AccessCodesListRequest{
-      DeviceId: updatedFrontDoor.DeviceId,
-    },
-  )
-  fmt.Println(accessCodes)
-  
-  if err != nil {
-      return err
-  }
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-[
-  {
-    "access_code_id": "11111111-1111-1111-1111-555555555555",
-    "device_id": "11111111-1111-1111-1111-444444444444",
-    "name": "my ongoing code",
-    "code": "1234",
-    "type": "ongoing",
-    ...
-  }
-  {
-    "access_code_id": "11111111-1111-1111-1111-666666666666",
-    "device_id": "11111111-1111-1111-1111-444444444444",
-    "name": "my time-bound code",
-    "code": "2345",
-    "type": "time_bound",
-    "starts_at": "2025-01-01T16:00:00.000Z",
-    "ends_at": "2025-01-22T12:00:00.000Z",
-    ...
-  }
-]
-```
-{% endtab %}
-{% endtabs %}
-
-***
-
-## Step 5: Connect a real August lock
-
-Now that you have learned the basics of using the Seam API, you can connect and control a real August device. To do so, make sure to switch to a [non-sandbox workspace](../core-concepts/workspaces/#production-workspaces) and [API key](../core-concepts/authentication/api-keys.md).
-
-For more details about setting up your real August lock, see the [August locks integration guide](august-locks.md).
+For more details about setting up your real 4SUITES lock, see the [4SUITES locks integration guide](./).
 
 ***
 
 ## Step 6: Build your application!
 
-Seam makes it easy to develop your application. In addition to the robust Seam API and the wide variety of programming languages that our SDKs support, we also provide a suite of [Seam Components](../seam-components/overview/). These prebuilt UI components help you to build your device management flow.
+Seam makes it easy to develop your application. In addition to the robust Seam API and the wide variety of programming languages that our SDKs support, we also provide a suite of [Seam Components](../../seam-components/overview/). These prebuilt UI components help you to build your device management flow.
 
-<figure><img src="../.gitbook/assets/Lock Detail.png" alt="Seam Components make it easy to develop your application!" width="280"><figcaption><p>Seam Components make it easy to develop your application!</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Lock Detail.png" alt="Seam Components make it easy to develop your application!" width="280"><figcaption><p>Seam Components make it easy to develop your application!</p></figcaption></figure>
 
-For example, you can use the [Device Table Seam Component](../seam-components/react-components/device-table.md) to display a list of devices and to identify all devices with issues. You can use the [Device Details Seam Component](../seam-components/react-components/device-details.md) to display a device's properties, settings, and issues, as well as to enable your users to perform actions based on each device's capabilities. The [Access Code Details Seam Component](../seam-components/react-components/access-code-details.md) provides a similar display and actions for access codes.
+For example, you can use the [Device Table Seam Component](../../seam-components/react-components/device-table.md) to display a list of devices and to identify all devices with issues. You can use the [Device Details Seam Component](../../seam-components/react-components/device-details.md) to display a device's properties, settings, and issues, as well as to enable your users to perform actions based on each device's capabilities. The [Access Code Details Seam Component](../../seam-components/react-components/access-code-details.md) provides a similar display and actions for access codes.
 
 Seam Components use a responsive design to fit seamlessly on any screen size. They also provide device debugging flows to help your users.
 
-To learn about all the Seam Components that we provide, see [Seam Components](../seam-components/overview/).
+To learn about all the Seam Components that we provide, see [Seam Components](../../seam-components/overview/).
 
 ***
 
 ## Next steps
 
-Now that you've completed this getting started guide for August devices, you can learn more about what you can do with the Seam API.
+Now that you've completed this getting started guide for 4SUITES devices, you can learn more about what you can do with the Seam API.
 
 * [ ] **Explore**\
-  See the [other devices and system integrations](../device-and-system-integration-guides/overview.md) that Seam supports.
+  See the [other devices and system integrations](../overview.md) that Seam supports.
 * [ ] **Learn**\
   Read about Seam [concepts](broken-reference) and the [device and system capabilities ](broken-reference)that Seam supports.
 * [ ] **Use Seam Components**\
-  Find out about [Seam Components](../seam-components/overview/), which are prebuilt UI components for building your device management flow.
+  Find out about [Seam Components](../../seam-components/overview/), which are prebuilt UI components for building your device management flow.
 * [ ] **Use webhooks**\
-  Learn how to use [webhooks](../core-concepts/webhooks.md) as an efficient way to receive device events.
+  Learn how to use [webhooks](../../core-concepts/webhooks.md) as an efficient way to receive device events.
 * [ ] **Find out more**\
-  Explore the other types of devices and systems that you can control with Seam, including [access control systems](../products/access-systems/), [thermostats](../products/thermostats/), and [noise sensors](../products/noise-sensors/).
+  Explore the other types of devices and systems that you can control with Seam, including [access control systems](../../products/access-systems/), [thermostats](../../products/thermostats/), and [noise sensors](../../products/noise-sensors/).
 * [ ] **Develop for mobile access**\
-  Learn about Seam's [mobile access solution](../products/mobile-access-in-development/).
+  Learn about Seam's [mobile access solution](../../products/mobile-access-in-development/).
 
 {% hint style="info" %}
 If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).
@@ -1967,4 +1447,4 @@ If you have any questions or want to report an issue, email us at [support@seam.
 
 ## Quick links
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Get an API Key</strong> (free)</td><td>Sign up for the Seam Console and get your API keys. →</td><td></td><td><a href="../.gitbook/assets/seam-api-key.png">seam-api-key.png</a></td><td><a href="https://console.seam.co/">https://console.seam.co/</a></td></tr><tr><td><strong>Contact Sales</strong></td><td>Got a project or a specific question? Contact our team to get answers. →</td><td></td><td><a href="../.gitbook/assets/seam-contact-us-light.png">seam-contact-us-light.png</a></td><td><a href="https://www.seam.co/contact-us">https://www.seam.co/contact-us</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Get an API Key</strong> (free)</td><td>Sign up for the Seam Console and get your API keys. →</td><td></td><td><a href="../../.gitbook/assets/seam-api-key.png">seam-api-key.png</a></td><td><a href="https://console.seam.co/">https://console.seam.co/</a></td></tr><tr><td><strong>Contact Sales</strong></td><td>Got a project or a specific question? Contact our team to get answers. →</td><td></td><td><a href="../../.gitbook/assets/seam-contact-us-light.png">seam-contact-us-light.png</a></td><td><a href="https://www.seam.co/contact-us">https://www.seam.co/contact-us</a></td></tr></tbody></table>

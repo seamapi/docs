@@ -161,7 +161,7 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 * **password:** 1234
 * **2-factor-auth:** 123456
 
-<figure><img src="../.gitbook/assets/connect-flow-screens (2).png" alt=""><figcaption><p>Seam Connect Webview flow to connect Yale account with Seam</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/yale-connect-flow-screens.png" alt=""><figcaption><p>Seam Connect Webview flow to connect Yale account with Seam</p></figcaption></figure>
 
 Confirm the Connect Webview was successful by querying its status:
 
@@ -285,15 +285,15 @@ Next, you can perform the basic action of locking and unlocking the door.
 [openapi.json](../.gitbook/assets/openapi.json)
 {% endswagger %}
 
-{% swagger method="post" path="/locks/unlock_door" baseUrl="https://connect.getseam.com" summary="Unlock a door" %}
-{% swagger-description %}
+## Unlock a door
 
-{% endswagger-description %}
+<mark style="color:green;">`POST`</mark> `https://connect.getseam.com/locks/unlock_door`
 
-{% swagger-parameter in="body" name="device_id" required="false" %}
+#### Request Body
 
-{% endswagger-parameter %}
-{% endswagger %}
+| Name       | Type   | Description |
+| ---------- | ------ | ----------- |
+| device\_id | String |             |
 
 {% tabs %}
 {% tab title="Python" %}

@@ -506,14 +506,14 @@ device, uErr := client.Locks.Get(
 if *device.CanProgramOnlineAccessCodes {
   // Create the ongoing online access code.
   client.AccessCodes.Create(
-      context.Background(),
-      &api.AccessCodesCreateRequest{
-        DeviceId: device.DeviceId,
-        Name: api.String("my ongoing code"),
-        Code: api.String("1234"),
-      },
-    )
-  }
+    context.Background(),
+    &api.AccessCodesCreateRequest{
+      DeviceId: device.DeviceId,
+      Name: api.String("my ongoing code"),
+      Code: api.String("1234"),
+    },
+  )
+}
 
 if uErr != nil {
     return uErr
@@ -810,7 +810,7 @@ if (device.CanProgramOnlineAccessCodes == true) {
 
 **Response:**
 
-```
+```json
 {
   "type": "time_bound",
   "access_code_id": "11111111-1111-1111-1111-666666666666",
@@ -880,16 +880,16 @@ device, uErr := client.Locks.Get(
 if *device.CanProgramOnlineAccessCodes {
   // Create the time-bound online access code.
   client.AccessCodes.Create(
-      context.Background(),
-      &api.AccessCodesCreateRequest{
-        DeviceId: device.DeviceId,
-        Name: api.String("my time-bound code"),
-        StartsAt: api.String("2025-01-01T16:00:00Z"),
-        EndsAt: api.String("2025-01-22T12:00:00Z"),
-        Code: api.String("2345"),
-      },
-    )
-  }
+    context.Background(),
+    &api.AccessCodesCreateRequest{
+      DeviceId: device.DeviceId,
+      Name: api.String("my time-bound code"),
+      StartsAt: api.String("2025-01-01T16:00:00Z"),
+      EndsAt: api.String("2025-01-22T12:00:00Z"),
+      Code: api.String("2345"),
+    },
+  )
+}
 
 if uErr != nil {
     return uErr

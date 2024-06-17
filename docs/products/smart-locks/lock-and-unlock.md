@@ -54,7 +54,7 @@ Device(
 <strong>curl -X 'GET' \
 </strong>  'https://connect.getseam.com/locks/get' \
   -H 'accept: application/json' \
-  -H 'Authorization: Bearer ${API_KEY}' \
+  -H "Authorization: Bearer ${API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
   "device_id": "11111111-1111-1111-1111-444444444444"
@@ -472,7 +472,7 @@ return nil
 
 ## Unlocking a Door
 
-You can lock a door using the [unlock\_door](../../api-clients/locks/unlock-a-lock.md) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](lock-and-unlock.md#verifying-the-success-of-a-lock-or-unlock-action).
+You can unlock a door using the [unlock\_door](../../api-clients/locks/unlock-a-lock.md) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](lock-and-unlock.md#verifying-the-success-of-a-lock-or-unlock-action).
 
 {% tabs %}
 {% tab title="Python" %}

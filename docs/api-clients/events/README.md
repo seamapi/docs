@@ -73,7 +73,6 @@ Noise sensors emit an event whenever a predefined noise threshold has been excee
 | ---------------------- | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | `noise_threshold_id`   | String                                    | Identifier for the noise threshold, pass to `/noise_sensors/noise_thresholds/get`                                |
 | `noise_threshold_name` | String e.g. `"builtin_first_disturbance"` | Name of the threshold, this can be set via `/noise_sensors/noise_thresholds/create` or by the user in their app. |
-|                        |                                           |                                                                                                                  |
 
 ## Event Types
 

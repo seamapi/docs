@@ -11,7 +11,7 @@ description: >-
 
 To get started with Seam, first connect a set of devices.
 
-1. In a web browser, navigate to the [Seam Console](core-concepts/seam-console/) at [**console.seam.co**](https://console.seam.co/) and create an account.\
+1. In a web browser, go to the [Seam Console](core-concepts/seam-console/) at [https://console.seam.co/](https://console.seam.co/) and create an account.\
    Once you have logged in to the Seam Console, you are working in the default [sandbox workspace](core-concepts/workspaces/#sandbox-workspaces).
 2.  In the upper-right corner of the **Devices** page, click **+ Add Devices**.
 
@@ -131,9 +131,8 @@ Next, use the following code to retrieve one of the devices that you connected i
 
 {% tabs %}
 {% tab title="JavaScript" %}
-```javascript
-import { Seam } from "seam";
-const seam = new Seam(); // SEAM_API_KEY environment variable picked up here.
+<pre class="language-javascript"><code class="lang-javascript"><strong>import { Seam } from "seam";
+</strong>const seam = new Seam(); // SEAM_API_KEY environment variable picked up here.
 
 // Retrieve all authorized locks and select the first lock.
 const [someLock] = await seam.locks.list();
@@ -151,7 +150,7 @@ if (someLock.properties.locked) {
 } else {
   await seam.locks.lockDoor(someLock.device_id);
 }
-```
+</code></pre>
 {% endtab %}
 
 {% tab title="Python" %}
