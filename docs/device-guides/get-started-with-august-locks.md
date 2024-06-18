@@ -55,7 +55,7 @@ npm i seam
 
 {% tab title="Python" %}
 ```bash
-pip install seamapi
+pip install seam
 # For some development environments, use pip3 in this command instead of pip.
 ```
 {% endtab %}
@@ -148,7 +148,7 @@ Create a `connect_webview` object and then note the returned URL.
 **Code:**
 
 ```python
-from seamapi import Seam
+from seam import Seam
 
 seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
 
