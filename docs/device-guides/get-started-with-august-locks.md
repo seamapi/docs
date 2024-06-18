@@ -37,7 +37,7 @@ Another easy way to learn about what you can do with the Seam API is to explore 
 Seam provides client libraries for many languages, including JavaScript, Python, Ruby, PHP, and others, as well as a Postman collection and an [OpenAPI](https://connect.getseam.com/openapi.json) spec.
 
 * JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
-* Python ([pip](https://pypi.org/project/seamapi/), [GitHub](https://github.com/seamapi/python))
+* Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
 * Ruby Gem ([rubygem](https://rubygems.org/gems/seamapi), [GitHub](https://github.com/seamapi/ruby))
 * PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
 * Java ([GitHub](https://github.com/seamapi/java))
@@ -1949,7 +1949,7 @@ Now that you've completed this getting started guide for August devices, you can
 * [ ] **Explore**\
   See the [other devices and system integrations](../device-and-system-integration-guides/overview.md) that Seam supports.
 * [ ] **Learn**\
-  Read about Seam [concepts](broken-reference) and the [device and system capabilities ](broken-reference)that Seam supports.
+  Read about Seam [concepts](broken-reference/) and the [device and system capabilities ](broken-reference/)that Seam supports.
 * [ ] **Use Seam Components**\
   Find out about [Seam Components](../seam-components/overview/), which are prebuilt UI components for building your device management flow.
 * [ ] **Use webhooks**\
