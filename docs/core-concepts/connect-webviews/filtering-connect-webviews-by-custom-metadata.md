@@ -69,7 +69,7 @@ curl -X 'POST' \
       ...
     },
     ...
-  },
+  ],
   "ok": true
 }
 ```
@@ -120,10 +120,11 @@ puts connect_webviews.inspect
 
 **Response:**
 
-<pre><code><strong>[
-</strong><strong>  &#x3C;Seam::ConnectWebview:0x00438
-</strong><strong>    connect_webview_id="3c3f4c15-e7db-47c6-bc5a-1bf206ff269c"
-</strong>    url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=3c3f4c15-e7db-47c6-bc5a-1bf206ff269c&#x26;auth_token=LrpMC4MVHAY8YJRcNFeX1nQcb7tGNwpot"
+```
+[
+  &#x3C;Seam::ConnectWebview:0x00438
+    connect_webview_id="3c3f4c15-e7db-47c6-bc5a-1bf206ff269c"
+    url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=3c3f4c15-e7db-47c6-bc5a-1bf206ff269c&#x26;auth_token=LrpMC4MVHAY8YJRcNFeX1nQcb7tGNwpot"
     status="pending"
     workspace_id="398d80b7-3f96-47c2-b85a-6f8ba21d07be"
     custom_metadata={"internal_account_id"=>"user-1"}
@@ -131,7 +132,7 @@ puts connect_webviews.inspect
   >,
   ...
 ]
-</code></pre>
+```
 {% endtab %}
 
 {% tab title="PHP" %}
@@ -147,7 +148,6 @@ echo json_encode($webviews);
 
 **Response:**
 
-{% code overflow="wrap" %}
 ```json
 [
   {
@@ -175,7 +175,6 @@ var customMetadata = new Dictionary<string, string>() {
 seam.ConnectWebviews.List(
   customMetadataHas: customMetadata
 );
-
 ```
 
 **Response:**
@@ -212,17 +211,19 @@ seam.connectWebviews().list(
 **Response:**
 
 ```json
-[{
-  "connect_webview_id" : "72dffd65-71e0-4035-9c85-199dd756a11c",
-  "url" : "https://connect.getseam.com/connect_webviews/view?connect_webview_id=3c3f4c15-e7db-47c6-bc5a-1bf206ff269c&auth_token=LrpMC4MVHAY8YJRcNFeX1nQcb7tGNwpot",
-  "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  ...
-  "custom_metadata" : {
-    "internal_account_id" : "user-1"
+[
+  {
+    "connect_webview_id" : "72dffd65-71e0-4035-9c85-199dd756a11c",
+    "url" : "https://connect.getseam.com/connect_webviews/view?connect_webview_id=3c3f4c15-e7db-47c6-bc5a-1bf206ff269c&auth_token=LrpMC4MVHAY8YJRcNFeX1nQcb7tGNwpot",
+    "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+    ...
+    "custom_metadata" : {
+      "internal_account_id" : "user-1"
+    },
+    ...
   },
   ...
-}, ...
-}]
+]
 ```
 {% endtab %}
 
@@ -246,16 +247,18 @@ return nil
 **Response:**
 
 ```json
-[{
-  "connect_webview_id" : "72dffd65-71e0-4035-9c85-199dd756a11c",
-  "url" : "https://connect.getseam.com/connect_webviews/view?connect_webview_id=3c3f4c15-e7db-47c6-bc5a-1bf206ff269c&auth_token=LrpMC4MVHAY8YJRcNFeX1nQcb7tGNwpot",
-  "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+[
+  {
+    "connect_webview_id" : "72dffd65-71e0-4035-9c85-199dd756a11c",
+    "url" : "https://connect.getseam.com/connect_webviews/view?connect_webview_id=3c3f4c15-e7db-47c6-bc5a-1bf206ff269c&auth_token=LrpMC4MVHAY8YJRcNFeX1nQcb7tGNwpot",
+    "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+    ...
+    "custom_metadata" : {
+      "internal_account_id" : "user-1"
+    },
+    ...
+  }
   ...
-  "custom_metadata" : {
-    "internal_account_id" : "user-1"
-  },
-  ...
-}...
 ]
 ```
 {% endtab %}
