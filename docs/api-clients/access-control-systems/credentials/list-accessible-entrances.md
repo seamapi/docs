@@ -22,10 +22,11 @@ Specify the credential for which you want to retrieve all accessible entrances b
 
 {% tabs %}
 {% tab title="Python" %}
-<pre class="language-python"><code class="lang-python"><strong>seam.acs.credentials.list_accessible_entrances(
-</strong>  acs_credential_id="66666666-6666-6666-6666-666666666666"
+```python
+seam.acs.credentials.list_accessible_entrances(
+  acs_credential_id="66666666-6666-6666-6666-666666666666"
 )
-</code></pre>
+```
 {% endtab %}
 
 {% tab title="cURL (bash)" %}
@@ -190,9 +191,10 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 {% endtab %}
 
 {% tab title="PHP" %}
-<pre class="language-json"><code class="lang-json">[
-<strong>  {
-</strong>    "acs_entrance_id": "55555555-5555-5555-5555-555555555555",
+```json
+[
+  {
+    "acs_entrance_id": "55555555-5555-5555-5555-555555555555",
     "acs_system_id": "11111111-1111-1111-1111-111111111111",
     "workspace_id": "00000000-0000-0000-0000-000000000000",
     "visionline_metadata": {
@@ -211,7 +213,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
   },
   ...
 ]
-</code></pre>
+```
 {% endtab %}
 
 {% tab title="C#" %}

@@ -78,14 +78,15 @@ curl -X 'POST' \
 {% tab title="JavaScript" %}
 **Request:**
 
-<pre class="language-javascript"><code class="lang-javascript"><strong>const connect_webviews = await seam.connectWebviews.list({
-</strong>  custom_metadata_has: {
+```javascript
+const connect_webviews = await seam.connectWebviews.list({
+  custom_metadata_has: {
     "internal_account_id": "user-1"
   }
 });
 
 console.log(connect_webviews);
-</code></pre>
+```
 
 **Response:**
 

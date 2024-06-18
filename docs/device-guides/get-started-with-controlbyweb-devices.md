@@ -131,10 +131,11 @@ console.log(connectWebview.url)
 {% endtab %}
 
 {% tab title="Ruby" %}
-<pre class="language-ruby"><code class="lang-ruby">require "seamapi"
+```ruby
+require "seamapi"
 
-<strong>seam = Seam::Client.new(api_key: "MY_API_KEY")
-</strong>
+seam = Seam::Client.new(api_key: "MY_API_KEY")
+
 webview = seam.connect_webviews.create(
   accepted_providers: ["controlbyweb"]
 )
@@ -143,7 +144,7 @@ puts webview.login_successful # false
 
 # Send the webview URL to your user
 puts webview.url
-</code></pre>
+```
 {% endtab %}
 {% endtabs %}
 

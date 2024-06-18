@@ -73,16 +73,17 @@ Device(
 {% tab title="cURL (bash)" %}
 **Request:**
 
-<pre class="language-bash"><code class="lang-bash"># Use GET or POST.
-<strong>curl -X 'GET' \
-</strong>  'https://connect.getseam.com/locks/get' \
+```bash
+# Use GET or POST.
+curl -X 'GET' \
+  'https://connect.getseam.com/locks/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
   -d '{
   "device_id": "11111111-1111-1111-1111-444444444444"
 }'
-</code></pre>
+```
 
 **Response:**
 
@@ -239,20 +240,21 @@ To customize the PIN code, specify a desired PIN for the `code` property. See [A
 {% tab title="Python" %}
 **Request:**
 
-<pre class="language-python"><code class="lang-python"># Get the device.
-<strong>device = seam.locks.get(
-</strong><strong>  device_id="11111111-1111-1111-1111-444444444444"
-</strong><strong>)
-</strong><strong>
-</strong><strong># Confirm that the device supports online access codes.
-</strong><strong>if device.can_program_online_access_codes:
-</strong>  # Create the ongoing online access code.
+```python
+# Get the device.
+device = seam.locks.get(
+  device_id="11111111-1111-1111-1111-444444444444"
+)
+
+# Confirm that the device supports online access codes.
+if device.can_program_online_access_codes:
+  # Create the ongoing online access code.
   seam.access_codes.create(
     device_id = device.device_id,
     name = "my ongoing code",
     code = "1234"
   )
-</code></pre>
+```
 
 **Response:**
 

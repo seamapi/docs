@@ -521,8 +521,9 @@ For example, use the following code samples to set your thermostat to heat mode 
 
 {% tabs %}
 {% tab title="Python" %}
-<pre class="language-python"><code class="lang-python"><strong>heat_request = seam.thermostats.heat(
-</strong>  device = "054765c8-a2fc-4599-b486-14c19f462c45",
+```python
+heat_request = seam.thermostats.heat(
+  device = "054765c8-a2fc-4599-b486-14c19f462c45",
   heating_set_point_celsius = 20
 )
 pprint(heat_request)
@@ -544,7 +545,7 @@ pprint(fan_on_request)
 #              status='success',
 #              result={},
 #              error=None)
-</code></pre>
+```
 {% endtab %}
 
 {% tab title="JavaScript" %}
