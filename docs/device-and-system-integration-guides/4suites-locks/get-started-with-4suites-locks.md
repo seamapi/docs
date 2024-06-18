@@ -1429,7 +1429,7 @@ Now that you've completed this getting started guide for 4SUITES devices, you ca
 * [ ] **Explore**\
   See the [other devices and system integrations](../overview.md) that Seam supports.
 * [ ] **Learn**\
-  Read about Seam [concepts](broken-reference/) and the [device and system capabilities ](broken-reference/)that Seam supports.
+  Read about Seam [concepts](broken-reference) and the [device and system capabilities ](../../capability-guides/device-and-system-capabilities.md)that Seam supports.
 * [ ] **Use Seam Components**\
   Find out about [Seam Components](../../seam-components/overview/), which are prebuilt UI components for building your device management flow.
 * [ ] **Use webhooks**\
