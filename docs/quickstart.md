@@ -65,7 +65,7 @@ npm i seam
 
 {% tab title="Python" %}
 ```bash
-pip install seamapi
+pip install seam
 # For some development environments, use pip3 in this command instead of pip.
 ```
 {% endtab %}
@@ -131,8 +131,9 @@ Next, use the following code to retrieve one of the devices that you connected i
 
 {% tabs %}
 {% tab title="JavaScript" %}
-<pre class="language-javascript"><code class="lang-javascript"><strong>import { Seam } from "seam";
-</strong>const seam = new Seam(); // SEAM_API_KEY environment variable picked up here.
+```javascript
+import { Seam } from "seam";
+const seam = new Seam(); // SEAM_API_KEY environment variable picked up here.
 
 // Retrieve all authorized locks and select the first lock.
 const [someLock] = await seam.locks.list();
@@ -150,12 +151,12 @@ if (someLock.properties.locked) {
 } else {
   await seam.locks.lockDoor(someLock.device_id);
 }
-</code></pre>
+```
 {% endtab %}
 
 {% tab title="Python" %}
 ```python
-from seamapi import Seam
+from seam import Seam
 
 # SEAM_API_KEY environment variable picked up here.
 seam = Seam()
