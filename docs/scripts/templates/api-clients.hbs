@@ -1,0 +1,44 @@
+## {{objectName}}
+
+**Description**: {{objectDescription}}
+
+### Properties
+
+| Property | Type | Required | Description |
+|----------|------|----------|-------------|
+{{#each properties}}
+| {{name}} | {{type}} | {{#if required}}Yes{{else}}No{{/if}} | {{description}} |
+{{/each}}
+
+### Methods
+
+{{#each methods}}
+#### {{methodName}}
+
+**Description**: {{description}}
+
+**Request Parameters**:
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+{{#each parameters}}
+| {{name}} | {{type}} | {{#if required}}Yes{{else}}No{{/if}} | {{description}} |
+{{/each}}
+
+**Response Properties**:
+| Property | Type | Description |
+|----------|------|-------------|
+{{#each responseProperties}}
+| {{name}} | {{type}} | {{description}} |
+{{/each}}
+
+**Sample Request**:
+\`\`\`javascript
+{{sampleRequest}}
+\`\`\`
+
+**Sample Response**:
+\`\`\`json
+{{sampleResponse}}
+\`\`\`
+
+{{/each}}
