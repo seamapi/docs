@@ -1,49 +1,76 @@
-const fs = require('fs');
-const ejs = require('ejs');
+const fs = require("fs")
+const ejs = require("ejs")
 
 const data = {
-    objectName: 'ClientSession',
-    objectDescription: 'This object represents a client session in the system, including its properties and associated methods.',
-    properties: [
-      { name: 'workspace_id', type: 'string', required: true, description: 'ID of the workspace that contains the client session' },
-      { name: 'client_session_id', type: 'string', required: true, description: 'ID of the client session' },
-      { name: 'token', type: 'string', required: true, description: 'Client session token associated with the client session' },
-      { name: 'user_identifier_key', type: 'string', required: false, description: 'Your own internal user ID for the user' },
-      { name: 'created_at', type: 'string', required: true, description: 'Date and time at which the client session was created' },
-      { name: 'device_count', type: 'number', required: false, description: 'Number of devices to which the client session grants access' },
-      { name: 'connected_account_ids', type: 'array', required: false, description: 'Array of connected account IDs associated with this client session' },
-      { name: 'connect_webview_ids', type: 'array', required: false, description: 'Array of Connect Webview IDs associated with the client session' },
-      { name: 'user_identity_ids', type: 'array', required: false, description: 'Array of user identity IDs on behalf of which the client session may act' },
-    ],
-    methods: [
-      {
-        methodName: 'getClientSession',
-        description: 'Retrieve the details of a specific client session.',
-        parameters: [
-          { name: 'client_session_id', type: 'string', required: true, description: 'ID of the client session to retrieve' },
-          { name: 'user_identifier_key', type: 'string', required: false, description: 'Your own internal user ID for the user associated with the client session to retrieve' },
-        ],
-        responseProperties: [
-          { name: 'workspace_id', type: 'string', description: 'ID of the workspace that contains the client session' },
-          { name: 'token', type: 'string', description: 'Client session token associated with the client session' },
-          { name: 'user_identifier_key', type: 'string', description: 'Your own internal user ID for the user' },
-          { name: 'created_at', type: 'string', description: 'Date and time at which the client session was created' },
-          { name: 'client_session_id', type: 'string', description: 'ID of the client session' },
-          { name: 'device_count', type: 'number', description: 'Number of devices to which the client session grants access' },
-          { name: 'connected_account_ids', type: 'array', description: 'Array of connected account IDs associated with this client session' },
-          { name: 'connect_webview_ids', type: 'array', description: 'Array of Connect Webview IDs associated with the client session' },
-          { name: 'user_identity_ids', type: 'array', description: 'Array of user identity IDs on behalf of which the client session may act' },
-        ],
-        sampleRequest: `fetch('/api/client_sessions/get', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      client_session_id: 'c75d4330-ae01-4dfd-b6c5-f3e94e0d8168',
-    }),
+  objectName: "GetClientSession",
+  objectDescription: "Get a specified client session.",
+  methods: [
+    {
+      methodName: "GetClientSession",
+      description:
+        "Returns a specified [client session](../../core-concepts/authentication/client-session-tokens/).",
+      swaggerSrc: "https://connect.getseam.com/openapi.json",
+      swaggerPath: "/client_sessions/get",
+      swaggerMethod: "post",
+      parameters: [
+        {
+          name: "client_session_id",
+          type: "String",
+          required: false,
+          description: "ID of the desired client session.",
+        },
+        {
+          name: "user_identifier_key",
+          type: "String",
+          required: false,
+          description:
+            "Your own internal user ID for the user associated with the client session to retrieve.",
+        },
+      ],
+      responseProperties: [
+        {
+          name: "workspace_id",
+          description: "ID of the workspace that contains the client session",
+        },
+        {
+          name: "token",
+          description:
+            "Client session token associated with the client session",
+        },
+        {
+          name: "user_identifier_key",
+          description: "Your own internal user ID for the user",
+        },
+        {
+          name: "created_at",
+          description: "Date and time at which the client session was created",
+        },
+        { name: "client_session_id", description: "ID of the client session" },
+        {
+          name: "device_count",
+          description:
+            "Number of devices to which the client session grants access",
+        },
+        {
+          name: "connected_account_ids",
+          description:
+            "Array of connected account IDs associated with this client session",
+        },
+        {
+          name: "connect_webview_ids",
+          description:
+            "Array of Connect Webview IDs associated with the client session",
+        },
+        {
+          name: "user_identity_ids",
+          description:
+            "Array of user identity IDs on behalf of which the client session may act",
+        },
+      ],
+      sampleRequest: `const clientSession = await seam.clientSessions.get({
+    client_session_id: "c75d4330-ae01-4dfd-b6c5-f3e94e0d8168",
   })`,
-        sampleResponse: `{
+      sampleResponse: `{
     "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
     "token": "seam_cst1271Q3JUh_A3ECdSrrqgYp98SmB9qY2NGp",
     "user_identifier_key": "internal user ID 1",
@@ -57,88 +84,67 @@ const data = {
     "connect_webview_ids": [],
     "user_identity_ids": []
   }`,
-      },
-      {
-        methodName: 'createClientSession',
-        description: 'Create a new client session.',
-        parameters: [
-          { name: 'workspace_id', type: 'string', required: true, description: 'ID of the workspace in which to create the client session' },
-          { name: 'user_identifier_key', type: 'string', required: true, description: 'Your own internal user ID for the user associated with the client session' },
-        ],
-        responseProperties: [
-          { name: 'workspace_id', type: 'string', description: 'ID of the workspace that contains the client session' },
-          { name: 'client_session_id', type: 'string', description: 'ID of the newly created client session' },
-          { name: 'token', type: 'string', description: 'Client session token associated with the newly created client session' },
-          { name: 'created_at', type: 'string', description: 'Date and time at which the client session was created' },
-        ],
-        sampleRequest: `fetch('/api/client_sessions/create', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be',
-      user_identifier_key: 'internal user ID 2',
-    }),
-  })`,
-        sampleResponse: `{
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "client_session_id": "d75d4330-ae01-4dfd-b6c5-f3e94e0d8169",
-    "token": "seam_cst1271Q3JUh_A3ECdSrrqgYp98SmB9qY2NGp",
-    "created_at": "2023-12-27T04:23:46.829Z"
-  }`,
-      },
-    ],
-  };
-  
-  // EJS template
-  const templateSource = `
-  ## <%= objectName %>
-  
-  **Description**: <%= objectDescription %>
-  
-  ### Properties
-  
-  | Property | Type | Required | Description |
-  |----------|------|----------|-------------|
-  <% properties.forEach(function(prop) { %>
-  | <%= prop.name %> | <%= prop.type %> | <%= prop.required ? 'Yes' : 'No' %> | <%= prop.description %> |
-  <% }); %>
-  
-  ### Methods
-  
-  <% methods.forEach(function(method) { %>
-  #### <%= method.methodName %>
-  
-  **Description**: <%= method.description %>
-  
-  **Request Parameters**:
-  | Parameter | Type | Required | Description |
-  |-----------|------|----------|-------------|
-  <% method.parameters.forEach(function(param) { %>
-  | <%= param.name %> | <%= param.type %> | <%= param.required ? 'Yes' : 'No' %> | <%= param.description %> |
-  <% }); %>
-  
-  **Response Properties**:
-  | Property | Type | Description |
-  |----------|------|-------------|
-  <% method.responseProperties.forEach(function(resp) { %>
-  | <%= resp.name %> | <%= resp.type %> | <%= resp.description %> |
-  <% }); %>
-  
-  **Sample Request**:
-  \`\`\`javascript
-  <%= method.sampleRequest %>
-  \`\`\`
-  
-  **Sample Response**:
-  \`\`\`json
-  <%= method.sampleResponse %>
-  \`\`\`
-  
-  <% }); %>
-  `;
-  
+  ],
+}
+
+// EJS template
+const templateSource = `
+---
+description: <%= objectDescription %>
+---
+
+# <%= objectName %>
+
+<%= methods[0].description %>
+
+{% swagger src="<%= methods[0].swaggerSrc %>" path="<%= methods[0].swaggerPath %>" method="<%= methods[0].swaggerMethod %>" %}
+[<%= methods[0].swaggerSrc %>](<%= methods[0].swaggerSrc %>)
+{% endswagger %}
+
+## Request
+
+Specify the desired client session by including the corresponding \`client_session_id\` or \`user_identifier_key\` in the request body.
+
+### Request Body Parameters
+
+<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody>
+<% methods[0].parameters.forEach(function(param) { %>
+<tr><td><code><%= param.name %></code></td><td><%= param.type %><br><em><%= param.required ? 'Required' : 'Optional' %></em></td><td><%= param.description %></td></tr>
+<% }); %>
+</tbody></table>
+
+### Sample Request
+
+{% tabs %}
+{% tab title="JavaScript" %}
+\`\`\`javascript
+<%= methods[0].sampleRequest %>
+\`\`\`
+{% endtab %}
+{% endtabs %}
+
+## Response
+
+Returns a \`client_session\` containing the following properties:
+
+<table><thead><tr><th width="310">Property</th><th>Description</th></tr></thead><tbody>
+<% methods[0].responseProperties.forEach(function(resp) { %>
+<tr><td><code><%= resp.name %></code></td><td><%= resp.description %></td></tr>
+<% }); %>
+</tbody></table>
+
+### Sample Response
+
+{% tabs %}
+{% tab title="JSON" %}
+\`\`\`json
+<%= methods[0].sampleResponse %>
+\`\`\`
+{% endtab %}
+{% endtabs %}
+`
+
 // Render the template
 const markdownContent = ejs.render(templateSource, data)
 
