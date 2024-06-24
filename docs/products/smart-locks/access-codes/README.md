@@ -25,7 +25,7 @@ An Access code is a code used for a keypad or pinpad device. Unlike physical key
 
 Seam supports programming two types of access codes: [ongoing](./#ongoing-access-codes) and [time-bound](./#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`.
 
-In addition, for certain devices (currently, [igloohome locks](../../../device-guides/igloohome-locks.md) and [dormakaba Oracode locks](../../../device-guides/dormakaba-oracode-locks.md)), Seam also supports [offline access codes](./#offline-access-codes).
+In addition, for certain devices, Seam also supports [offline access codes](./#offline-access-codes).
 
 ### **Ongoing Access Codes**
 
@@ -97,6 +97,21 @@ For locks that support setting codes with a schedule, Seam will preload access c
 For those locks that lack native scheduling functionality, Seam will use its own scheduling infrastructure to program the code 30 minutes before the `starts_at` time, and remove it at the `ends_at` time.
 
 <figure><img src="../../../.gitbook/assets/just-in-time-programming-dark.png" alt=""><figcaption><p>When the <code>starts_at</code> time arrives, Seam adds the code to the device and activates it. It is then automatically deactivated at the <code>ends_at</code> timestamp.</p></figcaption></figure>
+
+***
+
+## Linking Unlock Events and Access Codes
+
+When a user unlocks a door using an access code, Seam issues a [`lock.unlocked` event](../../../api-clients/events/#event-types). Some device manufacturers include the ID of the access code in [lock-related events](../../../api-clients/events/#lock-events). This information is useful for troubleshooting and logging. Further, if you name access codes in a way that identifies the associated users, you can use these `lock.unlocked` events to identify the users who unlocked the doors.
+
+Currently, the following device manufacturers send the `access_code_id` in the `lock.unlocked` event:
+
+* August
+* Salto KS
+* Schlage
+* Tedee
+* TTLock
+* Yale
 
 ***
 
