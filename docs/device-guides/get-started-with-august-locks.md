@@ -1083,8 +1083,7 @@ if (frontDoor.can_remotely_unlock) {
   // Perform the unlock operation
   // and return an action attempt.
   const actionAttempt = await seam.locks.unlockDoor({
-    device_id: frontDoor.device_id,
-    waitForActionAttempt: true
+    device_id: frontDoor.device_id
   });
 };
 ```

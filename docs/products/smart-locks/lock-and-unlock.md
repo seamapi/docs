@@ -292,8 +292,7 @@ const device = await seam.locks.get({
 if (device.can_remotely_lock) {
   // Perform the lock operation.
   await seam.locks.lockDoor({
-    device_id: device.device_id,
-    waitForActionAttempt: true
+    device_id: device.device_id
   })
 };
 ```
@@ -561,8 +560,7 @@ const device = await seam.locks.get({
 if (device.can_remotely_unlock) {
   // Perform the unlock operation.
   await seam.locks.unlockDoor({
-    device_id: device.device_id,
-    waitForActionAttempt: true
+    device_id: device.device_id
   })
 };
 ```
@@ -800,8 +798,7 @@ curl -X 'POST' \
 
 ```javascript
 await seam.locks.lockDoor({
-  device_id: "11111111-1111-1111-1111-444444444444",
-  waitForActionAttempt: true
+  device_id: "11111111-1111-1111-1111-444444444444"
 });
 ```
 
