@@ -28,11 +28,11 @@ Specify the desired client session by including the corresponding `client_sessio
 
 {% tabs %}
 {% tab title="JavaScript" %}
-\`\`\`javascript
+```javascript
 const clientSession = await seam.clientSessions.get({
-    client_session_id: &#34;c75d4330-ae01-4dfd-b6c5-f3e94e0d8168&#34;,
+    client_session_id: "c75d4330-ae01-4dfd-b6c5-f3e94e0d8168",
   })
-\`\`\`
+```
 {% endtab %}
 {% endtabs %}
 
@@ -66,21 +66,21 @@ Returns a `client_session` containing the following properties:
 
 {% tabs %}
 {% tab title="JSON" %}
-\`\`\`json
+```json
 {
-    &amp;quot;workspace_id&amp;quot;: &amp;quot;398d80b7-3f96-47c2-b85a-6f8ba21d07be&amp;quot;,
-    &amp;quot;token&amp;quot;: &amp;quot;seam_cst1271Q3JUh_A3ECdSrrqgYp98SmB9qY2NGp&amp;quot;,
-    &amp;quot;user_identifier_key&amp;quot;: &amp;quot;internal user ID 1&amp;quot;,
-    &amp;quot;created_at&amp;quot;: &amp;quot;2023-12-26T04:23:46.829Z&amp;quot;,
-    &amp;quot;client_session_id&amp;quot;: &amp;quot;c75d4330-ae01-4dfd-b6c5-f3e94e0d8168&amp;quot;,
-    &amp;quot;device_count&amp;quot;: 4,
-    &amp;quot;connected_account_ids&amp;quot;: [
-      &amp;quot;3ea0b67f-649f-4131-bfe3-f2035e77a3f9&amp;quot;,
-      &amp;quot;6e1cad57-b244-40ca-b4f3-30a46c8000d4&amp;quot;
+    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+    "token": "seam_cst1271Q3JUh_A3ECdSrrqgYp98SmB9qY2NGp",
+    "user_identifier_key": "internal user ID 1",
+    "created_at": "2023-12-26T04:23:46.829Z",
+    "client_session_id": "c75d4330-ae01-4dfd-b6c5-f3e94e0d8168",
+    "device_count": 4,
+    "connected_account_ids": [
+      "3ea0b67f-649f-4131-bfe3-f2035e77a3f9",
+      "6e1cad57-b244-40ca-b4f3-30a46c8000d4"
     ],
-    &amp;quot;connect_webview_ids&amp;quot;: [],
-    &amp;quot;user_identity_ids&amp;quot;: []
+    "connect_webview_ids": [],
+    "user_identity_ids": []
   }
-\`\`\`
+```
 {% endtab %}
 {% endtabs %}
