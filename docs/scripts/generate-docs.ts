@@ -2,7 +2,7 @@ const fs = require("fs")
 const ejs = require("ejs")
 const path = require("path")
 
-// would handle data soon
+// Sample data conforming to the updated types
 const data = {
   objectName: "GetClientSession",
   objectDescription: "Get a specified client session.",
@@ -90,48 +90,21 @@ const data = {
   ],
 }
 
-const templateSource = `
-    ---
-    description: <%= objectDescription %>
-    ---
-    # <%= objectName %>
-    <%= methods[0].description %>
-    {% swagger src="<%= methods[0].swaggerSrc %>" path="<%= methods[0].swaggerPath %>" method="<%= methods[0].swaggerMethod %>" %}
-    [<%= methods[0].swaggerSrc %>](<%= methods[0].swaggerSrc %>)
-    {% endswagger %}
-    ## Request
-    Specify the desired client session by including the corresponding \`client_session_id\` or \`user_identifier_key\` in the request body.
-    ### Request Body Parameters
-    <table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody>
-    <% methods[0].parameters.forEach(function(param) { %>
-    <tr><td><code><%= param.name %></code></td><td><%= param.type %><br><em><%= param.required ? 'Required' : 'Optional' %></em></td><td><%= param.description %></td></tr>
-    <% }); %>
-    </tbody></table>
-    ### Sample Request
-    {% tabs %}
-    {% tab title="JavaScript" %}
-    \`\`\`javascript
-    <%= methods[0].sampleRequest %>
-    \`\`\`
-    {% endtab %}
-    {% endtabs %}
-    ## Response
-    Returns a \`client_session\` containing the following properties:
-    <table><thead><tr><th width="310">Property</th><th>Description</th></tr></thead><tbody>
-    <% methods[0].responseProperties.forEach(function(resp) { %>
-    <tr><td><code><%= resp.name %></code></td><td><%= resp.description %></td></tr>
-    <% }); %>
-    </tbody></table>
-    ### Sample Response
-    {% tabs %}
-    {% tab title="JSON" %}
-    \`\`\`json
-    <%= methods[0].sampleResponse %>
-    \`\`\`
-    {% endtab %}
-    {% endtabs %}
-  `
+// Path to the template file
+const templatePath = path.join(__dirname, "templates", "template.ejs")
 
-const markdownContent = ejs.render(templateSource, data)
+// Read the template file
+fs.readFile(templatePath, "utf8", (err, templateSource) => {
+  if (err) {
+    console.error("Error reading template file:", err)
+    return
+  }
 
-fs.writeFileSync("output.md", markdownContent, "utf8")
+  // Render the template
+  const markdownContent = ejs.render(templateSource, data)
+
+  // Write the content to a .md file
+  fs.writeFileSync("output.md", markdownContent, "utf8")
+
+  console.log("Markdown file generated successfully.")
+})
