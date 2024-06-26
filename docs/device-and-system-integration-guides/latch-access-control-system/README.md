@@ -41,15 +41,20 @@ We support the following features:
 * [Managing access systems](../../products/access-systems/)
 * [Issuing mobile access credentials](../../products/mobile-access-in-development/)
 
-{% hint style="info" %}
-The Latch ACS does not support remote unlock functionality. Unlock operations must occur through a mobile app.
-{% endhint %}
-
 ***
 
 ### Device Provider Key
 
 To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables you to connect your Latch ACS to Seam, include the `latch` [device provider key](../../api-clients/connect-webviews/#device-provider-keys) as the `selected_provider` or in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+
+***
+
+## Brand-Specific Restrictions
+
+Note the following restrictions on using Seam to manage your Latch ACS:
+
+* The Latch ACS does not support remote unlock functionality. Unlock operations must occur through a mobile app.
+* You cannot sync in existing users and access permissions from a Latch ACS. You can only use Seam to manage the ACS users and credentials that you create through Seam.
 
 ***
 
