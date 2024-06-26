@@ -4,7 +4,7 @@ const path = require("path")
 
 // Sample data conforming to the updated types
 const data = {
-  objectName: "GetClientSession",
+  objectName: "Get a Client Session",
   objectDescription: "Get a specified client session.",
   methods: [
     {

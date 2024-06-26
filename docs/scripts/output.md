@@ -2,7 +2,7 @@
 description: Get a specified client session.
 ---
 
-# GetClientSession
+# Get a Client Session
 
 Returns a specified [client session](../../core-concepts/authentication/client-session-tokens/).
 
@@ -68,18 +68,18 @@ Returns a `client_session` containing the following properties:
 {% tab title="JSON" %}
 \`\`\`json
 {
-    &#34;workspace_id&#34;: &#34;398d80b7-3f96-47c2-b85a-6f8ba21d07be&#34;,
-    &#34;token&#34;: &#34;seam_cst1271Q3JUh_A3ECdSrrqgYp98SmB9qY2NGp&#34;,
-    &#34;user_identifier_key&#34;: &#34;internal user ID 1&#34;,
-    &#34;created_at&#34;: &#34;2023-12-26T04:23:46.829Z&#34;,
-    &#34;client_session_id&#34;: &#34;c75d4330-ae01-4dfd-b6c5-f3e94e0d8168&#34;,
-    &#34;device_count&#34;: 4,
-    &#34;connected_account_ids&#34;: [
-      &#34;3ea0b67f-649f-4131-bfe3-f2035e77a3f9&#34;,
-      &#34;6e1cad57-b244-40ca-b4f3-30a46c8000d4&#34;
+    &amp;quot;workspace_id&amp;quot;: &amp;quot;398d80b7-3f96-47c2-b85a-6f8ba21d07be&amp;quot;,
+    &amp;quot;token&amp;quot;: &amp;quot;seam_cst1271Q3JUh_A3ECdSrrqgYp98SmB9qY2NGp&amp;quot;,
+    &amp;quot;user_identifier_key&amp;quot;: &amp;quot;internal user ID 1&amp;quot;,
+    &amp;quot;created_at&amp;quot;: &amp;quot;2023-12-26T04:23:46.829Z&amp;quot;,
+    &amp;quot;client_session_id&amp;quot;: &amp;quot;c75d4330-ae01-4dfd-b6c5-f3e94e0d8168&amp;quot;,
+    &amp;quot;device_count&amp;quot;: 4,
+    &amp;quot;connected_account_ids&amp;quot;: [
+      &amp;quot;3ea0b67f-649f-4131-bfe3-f2035e77a3f9&amp;quot;,
+      &amp;quot;6e1cad57-b244-40ca-b4f3-30a46c8000d4&amp;quot;
     ],
-    &#34;connect_webview_ids&#34;: [],
-    &#34;user_identity_ids&#34;: []
+    &amp;quot;connect_webview_ids&amp;quot;: [],
+    &amp;quot;user_identity_ids&amp;quot;: []
   }
 \`\`\`
 {% endtab %}
