@@ -63,7 +63,7 @@ user_identity = seam.user_identities.create(
 seam.enrollment_automation.launch(
     credential_manager_acs_system_id=assa_credential_services.acs_system_id,
     user_identity_id=guest_user_identity.user_identity_id,
-    create_credential_manager_user: true
+    create_credential_manager_user=True
 )
 
 # Associate the user identity with the ACS user.
