@@ -1,6 +1,6 @@
 ---
 description: >-
-  Access codes are codes for keypad devices. These are used when you want to
+  Access codes are codes for keypad devices. Use access codes when you want to
   provide access to a lock using a PIN code.
 layout:
   title:
@@ -21,7 +21,7 @@ layout:
 
 ## What Is an Access Code?
 
-An Access code is a code used for a keypad or pinpad device. Unlike physical keys, which can be easily lost or duplicated, PIN codes can be customized, tracked, and altered on-the-fly. Using the Seam [Access Code API](../../../api-clients/access-codes/), you can easily generate access codes on the hundreds of door lock models with which we integrate.
+An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam [Access Code API](../../../api-clients/access-codes/), you can easily generate access codes on the hundreds of door lock models with which we integrate.
 
 Seam supports programming two types of access codes: [ongoing](./#ongoing-access-codes) and [time-bound](./#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`.
 
@@ -29,15 +29,15 @@ In addition, for certain devices, Seam also supports [offline access codes](./#o
 
 ### **Ongoing Access Codes**
 
-Ongoing access code are ideal for residents or long-term users. Ongoing codes remain active on a device until removed. They can start right away or at a later date if you provide a `starts_at`timestamp.
+Ongoing access code are ideal for residents or long-term users. Ongoing codes remain active on a device until they are removed. They can start right away or at a later date if you provide a `starts_at` timestamp.
 
-<figure><img src="../../../.gitbook/assets/ongoing-access-code-light.png" alt=""><figcaption><p>Timeline of an ongoing access code. The code will remain active until you ask Seam to remove it.</p></figcaption></figure>
+<figure><picture><source srcset="../../../.gitbook/assets/ongoing-access-code-dark.png" media="(prefers-color-scheme: dark)"><img src="../../../.gitbook/assets/ongoing-access-code-light.png" alt="Timeline of an ongoing access code. The code remains active until you ask Seam to remove it."></picture><figcaption><p>Timeline of an ongoing access code. The code remains active until you ask Seam to remove it.</p></figcaption></figure>
 
 ### **Time-Bound Access Codes**
 
-Time-bound access codes are suitable for temporary access like guest visits or service appointments. These codes operate between a designated `starts_at` and `ends_at` time window, granting access only during that period.
+Time-bound access codes are suitable for temporary access, like guest visits or service appointments. These codes operate between designated `starts_at` and `ends_at` timestamps, granting access only during this period.
 
-<figure><img src="../../../.gitbook/assets/time-bound-access-code-light.png" alt=""><figcaption><p>Timeline of an time-bound access code. The code will remain active until the <code>ends_at</code> timestamp you provide Seam.</p></figcaption></figure>
+<figure><picture><source srcset="../../../.gitbook/assets/time-bound-access-code-dark.png" media="(prefers-color-scheme: dark)"><img src="../../../.gitbook/assets/time-bound-access-code-light.png" alt="Timeline of a time-bound access code. The code remains active until the ends_at timestamp that you provide to Seam."></picture><figcaption><p>Timeline of a time-bound access code. The code remains active until the <code>ends_at</code> timestamp that you provide to Seam.</p></figcaption></figure>
 
 ### Offline Access Codes
 
