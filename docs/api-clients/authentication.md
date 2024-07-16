@@ -7,10 +7,8 @@ description: Learn how to authenticate to the Seam API.
 Export your API key as an environment variable. Seam client libraries automatically pick up this exported key. For example:
 
 ```
-$ export SEAM_API_KEY=my_seam_api_key
+$ export SEAM_API_KEY=seam_test2bMS_94SrGUXuNR2JmJkjtvBQDg5c
 ```
-
-Where `my_seam_api_key` is your API key.
 
 Next, run the following code to confirm that you are correctly authenticated:
 
