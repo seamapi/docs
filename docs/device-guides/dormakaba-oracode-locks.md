@@ -8,7 +8,7 @@ description: Guide for using dormakaba Oracode locks with Seam
 
 Seam integrates with the dormakaba [Oracode Live](https://www.dormakaba.com/us-en/offering/products/vacation-short-term-rental-solutions/access-control-management/oracode-live--ka\_128503) access control management platform. Intended for the vacation and short-term rental industries, the Oracode Live platform supports a "no keys, no cards" concept for efficient and secure access. Further, with the Oracode Live platform, codes expire automatically at the end of the authorized period.
 
-In addition to [online access codes](../device-and-system-integration-guides/dormakaba-oracode-locks/online-access-code-requirements-and-behaviors.md), the Seam integration supports the generation of [offline access codes for dormakaba Oracode locks](../device-and-system-integration-guides/dormakaba-oracode-locks/offline-access-code-support-and-requirements.md) that do not have Wi-Fi capabilities.
+In addition to [online access codes](../device-and-system-integration-guides/dormakaba-oracode-locks/online-access-code-requirements-and-behaviors.md), the Seam integration supports the generation of [offline access codes for dormakaba Oracode locks](../device-and-system-integration-guides/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes.md) that do not have Wi-Fi capabilities.
 
 You can use a variety of dormakaba Oracode smart locks with the Oracode Live platform. These strong and durable locks have commercial-grade finishes to withstand a wide range of climates.&#x20;
 
@@ -16,7 +16,7 @@ You can use a variety of dormakaba Oracode smart locks with the Oracode Live pla
 
 ## Supported Devices
 
-This integration supports all locks connected using the [Oracode Live](https://www.dormakaba.com/us-en/offering/products/vacation-short-term-rental-solutions/access-control-management/oracode-live--ka\_128503) platform. In addition to [online access codes](../device-and-system-integration-guides/dormakaba-oracode-locks/online-access-code-requirements-and-behaviors.md), this integration supports [offline access code](../device-and-system-integration-guides/dormakaba-oracode-locks/offline-access-code-support-and-requirements.md) provisioning for applicable dormakaba Oracode devices.
+This integration supports all locks connected using the [Oracode Live](https://www.dormakaba.com/us-en/offering/products/vacation-short-term-rental-solutions/access-control-management/oracode-live--ka\_128503) platform. In addition to [online access codes](../device-and-system-integration-guides/dormakaba-oracode-locks/online-access-code-requirements-and-behaviors.md), this integration supports [offline access code](../device-and-system-integration-guides/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes.md) provisioning for applicable dormakaba Oracode devices.
 
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
@@ -26,7 +26,8 @@ This integration supports all locks connected using the [Oracode Live](https://w
 
 We support the following features:
 
-* [Programming access codes](../products/smart-locks/access-codes/)
+* [Programming online access codes](../products/smart-locks/access-codes/)
+* [Programming offline access codes](../products/smart-locks/access-codes/offline-access-codes.md)
 
 ***
 

@@ -1,6 +1,6 @@
 ---
 description: >-
-  Access codes are codes for keypad devices. Use access codes when you want to
+  Access codes are codes for keypad devices. These are used when you want to
   provide access to a lock using a PIN code.
 layout:
   title:
@@ -41,7 +41,7 @@ Time-bound access codes are suitable for temporary access, like guest visits or 
 
 ### Offline Access Codes
 
-Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. Currently, Seam supports offline access codes for [igloohome locks](../../../device-guides/igloohome-locks.md) and [dormakaba Oracode locks](../../../device-guides/dormakaba-oracode-locks.md). For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code.
+Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. Currently, Seam supports offline access codes for [igloohome locks](../../../device-guides/igloohome-locks.md), [dormakaba Oracode locks](../../../device-guides/dormakaba-oracode-locks.md), and [Lockly locks](../../../device-and-system-integration-guides/lockly-locks/). For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code.
 
 {% hint style="info" %}
 You cannot modify a created offline access code. In addition, you cannot revoke a created offline access code before the configured expiration date for the code. To invalidate an offline access code before the expiration date, you must either perform a factory reset on the device or re-pair your smartphone with the device.
@@ -51,18 +51,19 @@ Seam supports two types of offline access codes: [time-bound](./#time-bound-offl
 
 * [igloohome Locks device guide](../../../device-guides/igloohome-locks.md)
 * [dormakaba Oracode Locks device guide](../../../device-guides/dormakaba-oracode-locks.md)
+* [Lockly Locks device guide](../../../device-and-system-integration-guides/lockly-locks/)
 
 #### Time-Bound Offline Access Codes
 
-For [igloohome locks](../../../device-guides/igloohome-locks.md) and [dormakaba Oracode locks](../../../device-guides/dormakaba-oracode-locks.md), you can create time-bound offline access codes with validity durations at either the hour level or the day level.
+For [igloohome locks](../../../device-guides/igloohome-locks.md) and [dormakaba Oracode locks](../../../device-guides/dormakaba-oracode-locks.md), you can create time-bound offline access codes with validity durations at either the hour level or the day level. For [Lockly locks](../../../device-and-system-integration-guides/lockly-locks/), you can create generic time-bound offline access codes that do not differentiate between hourly-bound and daily-bound codes.
 
 Hourly-bound offline access codes are intended for shorter durations, while daily-bound offline codes are intended for longer durations. Device manufacturers set the bounds for these short- and long-term access codes, and some device manufacturers enforce a maximum duration for hourly-bound offline access codes. See the corresponding device guide for more information.
 
-To [create an hourly-bound offline access code](offline-access-codes.md#program-an-hourly-bound-offline-access-code), specify the desired `starts_at` and `ends_at` date and time. To [create a daily-bound offline access code](offline-access-codes.md#program-a-daily-bound-offline-access-code), you must specify the same time in the `starts_at` and `ends_at` properties.
+To [create an hourly-bound or generic time-bound offline access code](offline-access-codes.md#program-an-hourly-bound-or-generic-time-bound-offline-access-code), specify the desired `starts_at` and `ends_at` date and time. To [create a daily-bound offline access code](offline-access-codes.md#program-a-daily-bound-offline-access-code), you must specify the same time in the `starts_at` and `ends_at` properties.
 
 #### One-Time-Use Offline Access Codes
 
-For [igloohome locks](../../../device-guides/igloohome-locks.md), you can create [one-time-use offline access codes](offline-access-codes.md#creating-one-time-use-offline-access-codes) that are valid for 24 hours from the `starts_at` date and time that you configure. These codes expire after a single use.
+For [igloohome locks](../../../device-guides/igloohome-locks.md) and [Lockly locks](../../../device-and-system-integration-guides/lockly-locks/), you can create [one-time-use offline access codes](offline-access-codes.md#creating-one-time-use-offline-access-codes). igloohome one-time-use offline access codes are valid for 24 hours from the `starts_at` timestamp that you configure. Lockly offline access codes are valid for the time period that you specify using the `starts_at` and `ends_at` timestamps. These codes expire after a single use.
 
 ***
 

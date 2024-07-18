@@ -71,7 +71,7 @@ To list all provider keys, use the [List Device Providers](../devices/list-devic
 | [Kwikset](../../device-guides/kwikset-locks.md)                                                                                        | `kwikset`                       |
 | [Latch](../../device-and-system-integration-guides/latch-access-control-system/)                                                       | `latch`                         |
 | [Linear](https://linear-solutions.com/)                                                                                                | `linear`                        |
-| [Lockly](../../device-guides/lockly-locks.md)                                                                                          | `lockly`                        |
+| [Lockly](../../device-and-system-integration-guides/lockly-locks/)                                                                     | `lockly`                        |
 | [Minut](../../device-guides/minut-sensors.md)                                                                                          | `minut`                         |
 | [Nest](../../device-guides/google-nest-thermostats/)                                                                                   | `google_nest`                   |
 | [NoiseAware](../../device-guides/noiseaware-sensors.md)                                                                                | `noiseaware`                    |
