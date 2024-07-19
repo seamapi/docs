@@ -1,5 +1,5 @@
-root: 
-  ./docs/
+---
+root: ./docs/
 ​structure:
   readme: README.md
   summary: SUMMARY.md​
@@ -30,5 +30,3 @@ redirects:
   device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/special-requirements-for-android-mobile-access-sdk-development: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/special-requirements-for-android-mobile-access-sdk-development.md
   device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/special-requirements-for-ios-mobile-access-sdk-development: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/special-requirements-for-ios-mobile-access-sdk-development.md
   capability-guides/access-systems/understanding-acs-differences: capability-guides/access-systems/understanding-access-control-system-differences.md
-  
-  
