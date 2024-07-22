@@ -26,6 +26,8 @@
     "npm": ">= 9.0.0"
   },
   "devDependencies": {
+    "@seamapi/blueprint": "^0.2.0",
+    "@seamapi/types": "^1.206.0",
     "@types/debug": "^4.1.12",
     "@types/micromatch": "^4.0.9",
     "@types/node": "^20.8.10",
