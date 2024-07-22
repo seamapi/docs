@@ -1,0 +1,41 @@
+{
+  "name": "@seamapi/docs",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Seam makes it easy to integrate IoT devices with your applications.",
+  "type": "module",
+  "homepage": "https://github.com/seamapi/api-docs",
+  "bugs": "https://github.com/seamapi/api-docs/issues",
+  "repository": "seamapi/api-docs",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "author": {
+    "name": "Seam Labs, Inc.",
+    "email": "devops@getseam.com"
+  },
+  "files": [],
+  "scripts": {
+    "build": "true",
+    "typecheck": "tsc",
+    "lint": "eslint --ignore-path .gitignore .",
+    "prelint": "prettier --check --ignore-path .gitignore .",
+    "format": "eslint --ignore-path .gitignore --fix .",
+    "preformat": "prettier --write --ignore-path .gitignore ."
+  },
+  "engines": {
+    "node": ">=18.12.0",
+    "npm": ">= 9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.10",
+    "del-cli": "^5.0.0",
+    "eslint": "^8.9.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-config-standard-with-typescript": "^43.0.0",
+    "eslint-plugin-simple-import-sort": "^12.0.0",
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "prettier": "^3.0.0",
+    "tsx": "^4.6.2",
+    "typescript": "~5.3.3"
+  }
+}
