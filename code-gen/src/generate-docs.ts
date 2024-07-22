@@ -21,7 +21,7 @@ async function main() {
     const templateSource = await fs.readFile(templatePath, 'utf8')
     const markdownContent = ejs.render(templateSource, data)
     await fs.writeFile(
-      path.join(__dirname, '../../output.md'),
+      path.join(__dirname, '../../docs/api-clients/access-control-systems/systems/list-systems-test.md'),
       markdownContent,
       'utf8',
     )
