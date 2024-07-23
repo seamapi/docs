@@ -1,6 +1,7 @@
 import { dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+import layouts from '@metalsmith/layouts'
 import metadata from '@metalsmith/metadata'
 import Metalsmith from 'metalsmith'
 
@@ -23,6 +24,11 @@ Metalsmith(rootDir)
   )
   .use(blueprint)
   .use(reference)
+  .use(
+    layouts({
+      default: 'default.hbs',
+    }),
+  )
   .build((err) => {
     if (err != null) throw err
   })

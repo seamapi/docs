@@ -11,21 +11,29 @@ export const reference = (
 
   for (const route of (metadata as Blueprint).routes ?? []) {
     for (const endpoint of route.endpoints) {
-      files[`./api/${endpoint.path}.md`] = {
-        contents: Buffer.from(`---
-          layout: api-reference
-          ---\n
-        `),
+      const k = `api${endpoint.path}.md`
+      files[k] = {
+        contents: Buffer.from('\n'),
       }
+      const file = files[k] as Partial<TemplateContext>
+      file.layout = 'api-reference.hbs'
+      file.endpoint = endpoint
 
       for (const sdk of sdks) {
-        files[`./sdk/${sdk}/${endpoint.path}.md`] = {
-          contents: Buffer.from(`---
-          layout: sdk-reference
-          ---\n
-        `),
+        const k = `sdk/${sdk}${endpoint.path}.md`
+        files[k] = {
+          contents: Buffer.from('\n'),
         }
+        const file = files[k] as Partial<TemplateContext>
+        file.layout = 'sdk-reference.hbs'
+        file.endpoint = endpoint
       }
     }
   }
+}
+
+interface TemplateContext {
+  layout: string
+  // TODO: Type as Endpoint
+  endpoint: any
 }

@@ -1,5 +1,3 @@
----
-          layout: sdk-reference
-          ---
+# /acs/systems
 
-        
+

@@ -1,5 +1,3 @@
----
-          layout: api-reference
-          ---
+# /acs/systems
 
-        
+
