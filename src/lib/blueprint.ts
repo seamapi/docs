@@ -9,12 +9,11 @@ export const blueprint = (
   const metadata = metalsmith.metadata()
 
   if ('codeSampleDefinitions' in metadata) {
-  const typesModule = TypesModuleSchema.parse({
-    ...types,
-    codeSampleDefinitions: metadata.codeSampleDefinitions,
-  })
+    const typesModule = TypesModuleSchema.parse({
+      ...types,
+      codeSampleDefinitions: metadata.codeSampleDefinitions,
+    })
 
-  Object.assign(metadata, createBlueprint(typesModule))
-
+    Object.assign(metadata, createBlueprint(typesModule))
   }
 }

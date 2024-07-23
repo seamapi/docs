@@ -20,21 +20,21 @@ The entire documentation site is hosted by [GitBook] under `/docs`.
 
 ### Documentation generation
 
-Some documentation content, such as the API reference pages, 
+Some documentation content, such as the API reference pages,
 are automatically generated and updated in `/docs`.
 
-The root of this project is a TypeScript project 
+The root of this project is a TypeScript project
 and documentation generation is implemented in `/src`.
 When a new pull request is opened, code generation will run automatically
 in a GitHub workflow and update the PR will any changes.
 New PRs are automatically opened by [Dependabot] to ensure regular daily updates.
 
-See the [Development](#development) section below 
+See the [Development](#development) section below
 for how to contribute to the documentation generation tool.
 
 [Dependabot]: https://docs.github.com/en/code-security/dependabot
 
-## Development 
+## Development
 
 ### Quickstart
 
