@@ -15,7 +15,7 @@ Metalsmith(rootDir).source('./docs/api').destination('../docs/sdk').clean(true)
 
 Metalsmith(rootDir)
   .source('./docs')
-  .destination('../generate-docs')
+  .destination('../generated-docs')
   .clean(false)
   .use(
     metadata({
