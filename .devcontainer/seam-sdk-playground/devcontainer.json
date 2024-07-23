@@ -1,9 +1,9 @@
 {
-  "name": "API Docs",
+  "name": "Seam SDK Playground",
   "build": {
     "dockerfile": "Dockerfile",
     "args": {
-      "VARIANT": "18"
+      "VARIANT": "20"
     }
   },
   "customizations": {

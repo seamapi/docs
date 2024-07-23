@@ -1,4 +1,4 @@
-ARG VARIANT="18"
+ARG VARIANT="20"
 
 # Build stage for Go installation.
 #
