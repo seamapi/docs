@@ -16,8 +16,8 @@
   "scripts": {
     "build": "tsx src/metalsmith.ts",
     "typecheck": "tsc",
-    "lint": "eslint --ignore-path .gitignore .",
-    "prelint": "prettier --check --ignore-path .gitignore .",
+    "lint": "eslint --ignore-path .gitignore ./src",
+    "prelint": "prettier --check --ignore-path .gitignore ./src",
     "format": "eslint --ignore-path .gitignore --fix ./src",
     "preformat": "prettier --write --ignore-path .gitignore ./src"
   },
