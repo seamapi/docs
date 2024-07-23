@@ -161,9 +161,9 @@ try {
 
 ```json
 SeamAPIError: Could not find an access_code with device_id or access_code_id
-    at file:///workspaces/api-docs/seam-sdk-playground/javascript/node_modules/seamapi/dist/chunk-2BGOBPMB.mjs:669:13
+    at file:///workspaces/api-docs/snippet-playground/javascript/node_modules/seamapi/dist/chunk-2BGOBPMB.mjs:669:13
     at Generator.throw (<anonymous>)
-    at rejected (file:///workspaces/api-docs/seam-sdk-playground/javascript/node_modules/seamapi/dist/chunk-2BGOBPMB.mjs:54:29)
+    at rejected (file:///workspaces/api-docs/snippet-playground/javascript/node_modules/seamapi/dist/chunk-2BGOBPMB.mjs:54:29)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
   status: 404,
   requestId: '799c903f-0768-4249-8226-cff55d3fbdbb',
