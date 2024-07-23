@@ -25,22 +25,24 @@
     "node": ">=18.12.0",
     "npm": ">= 9.0.0"
   },
-  "devDependencies": {
+  "dependencies": {
     "@metalsmith/layouts": "^2.7.0",
     "@metalsmith/metadata": "^0.3.0",
     "@seamapi/blueprint": "^0.2.0",
+    "jstransformer-handlebars": "^1.2.0",
+    "metalsmith": "^2.6.3"
+  },
+  "devDependencies": {
     "@seamapi/types": "^1.206.0",
     "@types/debug": "^4.1.12",
     "@types/micromatch": "^4.0.9",
     "@types/node": "^20.8.10",
-    "del-cli": "^5.0.0",
     "eslint": "^8.9.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-config-standard-with-typescript": "^43.0.0",
     "eslint-plugin-simple-import-sort": "^12.0.0",
     "eslint-plugin-unused-imports": "^3.0.0",
-    "metalsmith": "^2.6.3",
     "prettier": "^3.0.0",
     "tsx": "^4.6.2",
     "typescript": "~5.3.3"
