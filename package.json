@@ -26,6 +26,7 @@
     "npm": ">= 9.0.0"
   },
   "devDependencies": {
+    "@metalsmith/layouts": "^2.7.0",
     "@metalsmith/metadata": "^0.3.0",
     "@seamapi/blueprint": "^0.2.0",
     "@seamapi/types": "^1.206.0",
