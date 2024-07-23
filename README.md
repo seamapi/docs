@@ -29,9 +29,7 @@ for how to contribute to the documentation generation tool.
   and documentation generation is implemented in `/src`.
 - When a new pull request is opened, code generation will run automatically
   in a GitHub workflow and update the PR will any changes.
-- New PRs are automatically opened by [Dependabot] to ensure regular daily updates.
-
-[Dependabot]: https://docs.github.com/en/code-security/dependabot
+- New PRs are automatically opened by Dependabot to ensure regular daily updates.
 
 ## Development
 
