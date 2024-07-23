@@ -138,9 +138,9 @@ try {
 
 ```json
 SeamAPIError: Could not find an climate_setting_schedule with device_id or climate_setting_schedule_id
-    at file:///workspaces/api-docs/snippet-playground/javascript/node_modules/seamapi/dist/chunk-UQ5PRMFY.mjs:744:13
+    at file:///workspaces/api-docs/seam-sdk-playground/javascript/node_modules/seamapi/dist/chunk-UQ5PRMFY.mjs:744:13
     at Generator.throw (<anonymous>)
-    at rejected (file:///workspaces/api-docs/snippet-playground/javascript/node_modules/seamapi/dist/chunk-UQ5PRMFY.mjs:54:29)
+    at rejected (file:///workspaces/api-docs/seam-sdk-playground/javascript/node_modules/seamapi/dist/chunk-UQ5PRMFY.mjs:54:29)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
   status: 404,
   requestId: '04b9f40e-11d6-4e27-ae82-b0da1c0593dd',
