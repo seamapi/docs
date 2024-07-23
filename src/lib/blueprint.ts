@@ -1,4 +1,4 @@
-import { createBlueprint, type TypesModule } from '@seamapi/blueprint'
+import { createBlueprint, TypesModuleSchema } from '@seamapi/blueprint'
 import * as types from '@seamapi/types/connect'
 import type Metalsmith from 'metalsmith'
 
@@ -8,15 +8,13 @@ export const blueprint = (
 ): void => {
   const metadata = metalsmith.metadata()
 
-  // TODO: Use TypesModuleSchema
-  // const typesModule = TypesModuleSchema.parse({
-  // ...types,
-  // codeSampleDefinitions: (metadata as any).codeSampleDefinitions,
-  // })
-  const typesModule = {
+  if ('codeSampleDefinitions' in metadata) {
+  const typesModule = TypesModuleSchema.parse({
     ...types,
-    codeSampleDefinitions: (metadata as any).codeSampleDefinitions,
-  } as unknown as TypesModule
+    codeSampleDefinitions: metadata.codeSampleDefinitions,
+  })
 
   Object.assign(metadata, createBlueprint(typesModule))
+
+  }
 }

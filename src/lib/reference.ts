@@ -1,4 +1,4 @@
-import type { Blueprint } from '@seamapi/blueprint'
+import type { Blueprint, Endpoint } from '@seamapi/blueprint'
 import type Metalsmith from 'metalsmith'
 
 const sdks = ['javascript']
@@ -34,6 +34,5 @@ export const reference = (
 
 interface TemplateContext {
   layout: string
-  // TODO: Type as Endpoint
-  endpoint: any
+  endpoint: Endpoint
 }
