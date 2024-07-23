@@ -2,7 +2,7 @@
   "name": "@seamapi/docs",
   "private": true,
   "version": "1.0.0",
-  "description": "Seam makes it easy to integrate IoT devices with your applications.",
+  "description": "Seam docs.",
   "type": "module",
   "homepage": "https://github.com/seamapi/api-docs",
   "bugs": "https://github.com/seamapi/api-docs/issues",
