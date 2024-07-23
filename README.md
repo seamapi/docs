@@ -21,7 +21,7 @@ The entire documentation site is hosted by [GitBook] under `/docs`.
 ### Seam SDK Playground
 
 The Seam SDK Playground is a one-click development environment
-for experimenting with the Seam SDK.
+for experimenting with the Seam SDK and Seam CLI.
 
 Each folder in `/seam-sdk-playground` is a minimal
 example for running the Seam SDK in a supported programming language.
@@ -31,13 +31,14 @@ update the code sample to use your sandbox or production workspace.
 
 There are a few ways to use the Seam SDK Playground:
 
-- [Click here] to instantly launch the Seam SDK Playground in a [Codespace].
+- Click the button above to instantly launch the Seam SDK Playground in a [Codespace].
 - Clone this repository and open the Seam SDK Playground locally
   using [Visual Studio Code Dev Containers].
-- Setup your local machine with any programming langaues you want to use,
+- Setup your local machine with any programming languages you want to use,
   then clone this repository and navigate to the `/seam-sdk-playground` directory.
 
-[]: https://code.visualstudio.com/docs/devcontainers/containers
+[Codespace]: https://github.com/features/codespaces
+[Visual Studio Code Dev Containers]: https://code.visualstudio.com/docs/devcontainers/containers
 
 ### Documentation generation
 
