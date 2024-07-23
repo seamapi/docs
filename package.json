@@ -12,7 +12,9 @@
     "name": "Seam Labs, Inc.",
     "email": "devops@getseam.com"
   },
-  "files": [],
+  "files": [
+    "src"
+  ],
   "scripts": {
     "build": "tsx src/metalsmith.ts",
     "typecheck": "tsc",
@@ -22,8 +24,8 @@
     "preformat": "prettier --write --ignore-path .prettierignore ."
   },
   "engines": {
-    "node": ">=18.12.0",
-    "npm": ">= 9.0.0"
+    "node": ">=20.9.0",
+    "npm": ">= 10.1.0"
   },
   "dependencies": {
     "@metalsmith/layouts": "^2.7.0",
