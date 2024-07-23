@@ -1,6 +1,6 @@
 # Seam Docs
 
-[![GitHub Actions](https://github.com/seamapi/makenew-tsmodule/actions/workflows/check.yml/badge.svg)](https://github.com/seamapi/makenew-tsmodule/actions/workflows/check.yml)
+[![GitHub Actions](https://github.com/seamapi/api-docs/actions/workflows/check.yml/badge.svg)](https://github.com/seamapi/api-docs/actions/workflows/check.yml)
 
 Welcome to the [Seam Docs].
 
@@ -36,8 +36,8 @@ for how to contribute to the documentation generation tool.
 ### Quickstart
 
 ```
-$ git clone https://github.com/seamapi/makenew-tsmodule.git
-$ cd makenew-tsmodule
+$ git clone https://github.com/seamapi/api-docs.git
+$ cd api-docs
 $ nvm install
 $ npm install
 $ npm run build
@@ -57,10 +57,10 @@ The [source code] is hosted on GitHub.
 Clone the project with
 
 ```
-$ git clone git@github.com:seamapi/makenew-tsmodule.git
+$ git clone git@github.com:seamapi/api-docs.git
 ```
 
-[source code]: https://github.com/seamapi/makenew-tsmodule
+[source code]: https://github.com/seamapi/api-docs
 
 ### Requirements
 
