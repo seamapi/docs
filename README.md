@@ -23,6 +23,8 @@ The entire documentation site is hosted by [GitBook] under `/docs`.
 The Seam SDK Playground is a one-click development environment
 for experimenting with the Seam SDK and Seam CLI.
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/seamapi/api-docs?devcontainer_path=.devcontainer%2Fseam-sdk-playground%2Fdevcontainer.json)
+
 Each folder in `/seam-sdk-playground` is a minimal
 example for running the Seam SDK in a supported programming language.
 By default, the SDK is configured to make requests to
