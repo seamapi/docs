@@ -6,10 +6,16 @@ import Metalsmith from 'metalsmith'
 
 import { blueprint, reference } from './lib/index.js'
 
-Metalsmith(dirname(fileURLToPath(import.meta.url)))
-  .source('./docs/api')
-  .destination('../docs/api')
-  .clean(true)
+const rootDir = dirname(fileURLToPath(import.meta.url))
+
+Metalsmith(rootDir).source('./docs/api').destination('../docs/api').clean(true)
+
+Metalsmith(rootDir).source('./docs/api').destination('../docs/sdk').clean(true)
+
+Metalsmith(rootDir)
+  .source('./docs')
+  .destination('../docs')
+  .clean(false)
   .use(
     metadata({
       codeSampleDefinitions: './data/code-sample-definitions',
