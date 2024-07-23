@@ -12,6 +12,8 @@ This repository hosts both the documentation source along with supporting tools.
 
 The entire documentation site is hosted by [GitBook] under `/docs`.
 
+[![Edit on GitBook](https://img.shields.io/badge/Edit%20on%20GitBook-blue)](https://app.gitbook.com/o/jhFodLh6YFJJYK6Lv9wE/s/xnN2A67918om1UthYWsF/)
+
 - Changes made though GitBook are synced back here to `/docs`.
 - Changes made here on GitHub to files under `/docs` are synced back to GitBook.
 
@@ -56,6 +58,8 @@ for how to contribute to the documentation generation tool.
 - New PRs are automatically opened by Dependabot to ensure regular daily updates.
 
 ## Development
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/seamapi/api-docs)
 
 ### Quickstart
 
