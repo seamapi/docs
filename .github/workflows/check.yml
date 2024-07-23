@@ -11,40 +11,24 @@ on:
 
 jobs:
   lint:
-    name: Lint (Node.js v${{ matrix.node }})
+    name: Lint
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    strategy:
-      fail-fast: false
-      matrix:
-        node:
-          - '18'
-          - '20'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup
         uses: ./.github/actions/setup
-        with:
-          node_version: ${{ matrix.node }}
       - name: Lint
         run: npm run lint
   typecheck:
-    name: Typecheck (Node.js v${{ matrix.node }})
+    name: Typecheck
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    strategy:
-      fail-fast: false
-      matrix:
-        node:
-          - '18'
-          - '20'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup
         uses: ./.github/actions/setup
-        with:
-          node_version: ${{ matrix.node }}
       - name: Typecheck
         run: npm run typecheck
