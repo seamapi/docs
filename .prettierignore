@@ -5,6 +5,11 @@
 # For more details, visit the project page:
 # https://github.com/github/gitignore
 
+# Prettier
+docs
+snippet-playground
+gitbook-plugin
+
 # TypeScript build output
 *.d.ts
 *.js

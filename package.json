@@ -1,0 +1,53 @@
+{
+  "name": "@seamapi/docs",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Seam docs.",
+  "type": "module",
+  "homepage": "https://github.com/seamapi/api-docs",
+  "bugs": "https://github.com/seamapi/api-docs/issues",
+  "repository": "seamapi/api-docs",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "author": {
+    "name": "Seam Labs, Inc.",
+    "email": "devops@getseam.com"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "build": "tsx src/metalsmith.ts",
+    "postbuild": "npm run format",
+    "typecheck": "tsc",
+    "lint": "eslint --ignore-path .prettierignore .",
+    "prelint": "prettier --check --ignore-path .prettierignore .",
+    "format": "eslint --ignore-path .prettierignore --fix .",
+    "preformat": "prettier --write --ignore-path .prettierignore ."
+  },
+  "engines": {
+    "node": ">=20.9.0",
+    "npm": ">= 10.1.0"
+  },
+  "dependencies": {
+    "@metalsmith/layouts": "^2.7.0",
+    "@metalsmith/metadata": "^0.3.0",
+    "@seamapi/blueprint": "^0.3.0",
+    "jstransformer-handlebars": "^1.2.0",
+    "metalsmith": "^2.6.3"
+  },
+  "devDependencies": {
+    "@seamapi/types": "^1.207.0",
+    "@types/debug": "^4.1.12",
+    "@types/micromatch": "^4.0.9",
+    "@types/node": "^20.8.10",
+    "eslint": "^8.9.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-config-standard-with-typescript": "^43.0.0",
+    "eslint-plugin-simple-import-sort": "^12.0.0",
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "prettier": "^3.0.0",
+    "tsx": "^4.6.2",
+    "typescript": "~5.3.3"
+  }
+}

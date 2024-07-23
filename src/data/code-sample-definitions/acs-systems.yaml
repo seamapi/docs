@@ -1,0 +1,11 @@
+---
+- title: List ACS Systems by Connected Account
+  description: Pass a connected account ID to filter the ACS systems.
+  request:
+    path: /acs/systems/list
+    parameters:
+      connected_account_id: 8d7e0b3a-b889-49a7-9164-4b71a0506a33
+  response:
+    body:
+      acs_systems:
+        - acs_system_id: 8d7e0b3a-b889-49a7-9164-4b71a0506a33
