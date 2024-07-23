@@ -17,6 +17,7 @@
   ],
   "scripts": {
     "build": "tsx src/metalsmith.ts",
+    "postbuild": "npm run format",
     "typecheck": "tsc",
     "lint": "eslint --ignore-path .prettierignore .",
     "prelint": "prettier --check --ignore-path .prettierignore .",
