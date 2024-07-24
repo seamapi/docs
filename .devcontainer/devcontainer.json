@@ -1,24 +1,17 @@
 {
-  "name": "API Docs",
+  "name": "TypeScript",
   "build": {
     "dockerfile": "Dockerfile",
     "args": {
-      "VARIANT": "18"
+      "VARIANT": "20"
     }
   },
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-python.python",
-        "rebornix.Ruby",
-        "ms-dotnettools.csharp",
-        "ms-vsliveshare.vsliveshare",
-        "dbaeumer.vscode-eslint",
-        "EditorConfig.EditorConfig",
-        "esbenp.prettier-vscode"
-      ]
-    }
-  },
-  "postCreateCommand": "npm install -g seam-cli && seam config set fake-server && cd /workspaces/api-docs/snippet-playground/javascript && npm i seam@latest && cd /workspaces/api-docs/snippet-playground/javascript-next && npm i seam@latest && cd /workspaces/api-docs/snippet-playground/csharp && ./init.sh && cd /workspaces/api-docs/snippet-playground/go && ./init.sh && cd /workspaces/api-docs/snippet-playground/php && composer update",
+  "extensions": [
+    "ms-vsliveshare.vsliveshare",
+    "dbaeumer.vscode-eslint",
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode"
+  ],
+  "postCreateCommand": "npm install",
   "remoteUser": "node"
 }

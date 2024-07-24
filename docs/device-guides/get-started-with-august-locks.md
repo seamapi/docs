@@ -112,10 +112,8 @@ Next, go to [https://console.seam.co/](https://console.seam.co/) and [sign up fo
 Then, export your API key as an environment variable.
 
 ```bash
-$ export SEAM_API_KEY=my_seam_api_key
+$ export SEAM_API_KEY=seam_test2bMS_94SrGUXuNR2JmJkjtvBQDg5c
 ```
-
-Where `my_seam_api_key` is your API key.
 
 {% hint style="info" %}
 This guide uses a [sandbox workspace](../core-concepts/workspaces/#sandbox-workspaces). You can only connect virtual devices and systems in this type of workspace. If you want to connect a real August lock, use a [non-sandbox workspace](../core-concepts/workspaces/#production-workspaces) and API key.
@@ -434,7 +432,7 @@ Complete the Connect Webview authorization flow by entering the following [Augus
 * **2FA Method:** Email (jane@example.com)
 * **Two Factor Code:** 123456
 
-<figure><picture><source srcset="../.gitbook/assets/august_connect-flow-screens_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/august_connect-flow-screens_light.png" alt="Use the Seam Connect Webview authorization flow to connect a August account with Seam. This flow varies slightly based on the device manufacturer and region."></picture><figcaption><p>Use the Seam Connect Webview authorization flow to connect a August account with Seam. This flow varies slightly based on the device manufacturer and region.</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/august_connect-flow-screens_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/august_connect-flow-screens_light.png" alt="Use the Seam Connect Webview authorization flow to connect an August account with Seam. This flow varies slightly based on the device manufacturer and region."></picture><figcaption><p>Use the Seam Connect Webview authorization flow to connect an August account with Seam. This flow varies slightly based on the device manufacturer and region.</p></figcaption></figure>
 
 Confirm that authorization through the Connect Webview was successful by querying its status.
 
@@ -598,7 +596,7 @@ true
 
 ## Step 3: Retrieve August lock devices
 
-When you link a August account with Seam, we create a `device` object to represent each August lock in your account. You can then retrieve these August devices using the [List Devices](../api-clients/devices/list-devices.md) and [Get Device](../api-clients/devices/get-device.md) endpoints.
+When you link an August account with Seam, we create a `device` object to represent each August lock in your account. You can then retrieve these August devices using the [List Devices](../api-clients/devices/list-devices.md) and [Get Device](../api-clients/devices/get-device.md) endpoints.
 
 The Seam API exposes each device's properties, such as the door lock status, power status, capabilities, and so on.
 
@@ -1083,8 +1081,7 @@ if (frontDoor.can_remotely_unlock) {
   // Perform the unlock operation
   // and return an action attempt.
   const actionAttempt = await seam.locks.unlockDoor({
-    device_id: frontDoor.device_id,
-    waitForActionAttempt: true
+    device_id: frontDoor.device_id
   });
 };
 ```

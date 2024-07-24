@@ -39,7 +39,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their TTLock devices to Seam, include the `ttlock` [device provider key](../api-clients/connect-webviews/#device-provider-keys) as the `selected_provider` or in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their TTLock devices to Seam, include the `ttlock` [device provider key](../api-clients/connect-webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -55,17 +55,13 @@ The TTLock gateway allows the smart lock to connect directly to the internet. By
 
 To control TTLock devices using Seam, you must prompt owners of these devices to perform the following steps:
 
-### 1. Install your TTLock lock and set it up on the [TTLock app](https://www.ttlock.com/#/lock/app)
-
-Please follow [the instructions in this video](https://www.youtube.com/watch?v=IbgZNc1dAx4) to set up your door lock on the TTLock app.
-
-### 2. Pair the lock with [a supported TTLock gateway](ttlock-locks.md#compatible-ttlock-gateways)
-
-Please follow [the instructions in this video](https://www.youtube.com/watch?v=-lhKbjVP1as) to pair your lock with a Gateway.
-
-### 3. On the [TTLock app](https://www.ttlock.com/#/lock/app), turn on the "Remote Unlock" feature.
-
-Please follow [the instructions in this video](https://www.youtube.com/watch?v=ni-38QpoNA4) to turn on the **"Remote Unlock"** setting for each door lock.
+1. Install your TTLock lock and set it up on the [TTLock app](https://www.ttlock.com/#/lock/app).\
+   Follow [the instructions in this video](https://www.youtube.com/watch?v=IbgZNc1dAx4) to set up your door lock on the TTLock app.
+2. Pair the lock with [a supported TTLock gateway](ttlock-locks.md#compatible-ttlock-gateways).\
+   Follow [the instructions in this video](https://www.youtube.com/watch?v=-lhKbjVP1as) to pair your lock with a Gateway.
+3. In the [TTLock app](https://www.ttlock.com/#/lock/app), go to the lock settings and enable the Remote Unlock feature.\
+   This feature must be enabled to unlock a TTLock device. Note that if Seam detects that this feature is disabled, a warning is added to the device.\
+   Follow [the instructions in this video](https://www.youtube.com/watch?v=ni-38QpoNA4) to turn on the Remote Unlock setting for each TTLock lock.
 
 ***
 
