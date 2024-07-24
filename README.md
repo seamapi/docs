@@ -1,6 +1,7 @@
 # Seam Docs
 
-[![GitHub Actions](https://github.com/seamapi/makenew-tsmodule/actions/workflows/check.yml/badge.svg)](https://github.com/seamapi/makenew-tsmodule/actions/workflows/check.yml)
+[![Edit on GitBook](https://img.shields.io/badge/Edit-on%20GitBook-blue)](https://app.gitbook.com/o/jhFodLh6YFJJYK6Lv9wE/s/xnN2A67918om1UthYWsF/)
+[![GitHub Actions](https://github.com/seamapi/api-docs/actions/workflows/check.yml/badge.svg)](https://github.com/seamapi/api-docs/actions/workflows/check.yml)
 
 Welcome to the [Seam Docs].
 
@@ -18,6 +19,30 @@ The entire documentation site is hosted by [GitBook] under `/docs`.
 [Seam Docs]: https://docs.seam.co/
 [GitBook]: https://www.gitbook.com/
 
+### Seam SDK Playground
+
+The Seam SDK Playground is a one-click development environment
+for experimenting with the Seam SDK and Seam CLI.
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/seamapi/api-docs?devcontainer_path=.devcontainer%2Fseam-sdk-playground%2Fdevcontainer.json)
+
+Each folder in `/seam-sdk-playground` is a minimal
+example for running the Seam SDK in a supported programming language.
+By default, the SDK is configured to make requests to
+a fake version of the Seam API, however you may
+update the code sample to use your sandbox or production workspace.
+
+There are a few ways to use the Seam SDK Playground:
+
+- Click the button above to instantly launch the Seam SDK Playground in a [Codespace].
+- Clone this repository and open the Seam SDK Playground locally
+  using [Visual Studio Code Dev Containers].
+- Setup your local machine with any programming languages you want to use,
+  then clone this repository and navigate to the `/seam-sdk-playground` directory.
+
+[Codespace]: https://github.com/features/codespaces
+[Visual Studio Code Dev Containers]: https://code.visualstudio.com/docs/devcontainers/containers
+
 ### Documentation generation
 
 Some documentation content, such as the API reference pages,
@@ -33,11 +58,13 @@ for how to contribute to the documentation generation tool.
 
 ## Development
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/seamapi/api-docs)
+
 ### Quickstart
 
 ```
-$ git clone https://github.com/seamapi/makenew-tsmodule.git
-$ cd makenew-tsmodule
+$ git clone https://github.com/seamapi/api-docs.git
+$ cd api-docs
 $ nvm install
 $ npm install
 $ npm run build
@@ -57,10 +84,10 @@ The [source code] is hosted on GitHub.
 Clone the project with
 
 ```
-$ git clone git@github.com:seamapi/makenew-tsmodule.git
+$ git clone git@github.com:seamapi/api-docs.git
 ```
 
-[source code]: https://github.com/seamapi/makenew-tsmodule
+[source code]: https://github.com/seamapi/api-docs
 
 ### Requirements
 

@@ -1,4 +1,4 @@
-module github.com/seamapi/api-docs/snippet-playground/go
+module github.com/seamapi/api-docs/seam-sdk-playground/go
 
 go 1.13
 
