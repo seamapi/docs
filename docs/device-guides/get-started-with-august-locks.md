@@ -432,7 +432,7 @@ Complete the Connect Webview authorization flow by entering the following [Augus
 * **2FA Method:** Email (jane@example.com)
 * **Two Factor Code:** 123456
 
-<figure><picture><source srcset="../.gitbook/assets/august_connect-flow-screens_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/august_connect-flow-screens_light.png" alt="Use the Seam Connect Webview authorization flow to connect a August account with Seam. This flow varies slightly based on the device manufacturer and region."></picture><figcaption><p>Use the Seam Connect Webview authorization flow to connect a August account with Seam. This flow varies slightly based on the device manufacturer and region.</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/august_connect-flow-screens_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/august_connect-flow-screens_light.png" alt="Use the Seam Connect Webview authorization flow to connect an August account with Seam. This flow varies slightly based on the device manufacturer and region."></picture><figcaption><p>Use the Seam Connect Webview authorization flow to connect an August account with Seam. This flow varies slightly based on the device manufacturer and region.</p></figcaption></figure>
 
 Confirm that authorization through the Connect Webview was successful by querying its status.
 
@@ -596,7 +596,7 @@ true
 
 ## Step 3: Retrieve August lock devices
 
-When you link a August account with Seam, we create a `device` object to represent each August lock in your account. You can then retrieve these August devices using the [List Devices](../api-clients/devices/list-devices.md) and [Get Device](../api-clients/devices/get-device.md) endpoints.
+When you link an August account with Seam, we create a `device` object to represent each August lock in your account. You can then retrieve these August devices using the [List Devices](../api-clients/devices/list-devices.md) and [Get Device](../api-clients/devices/get-device.md) endpoints.
 
 The Seam API exposes each device's properties, such as the door lock status, power status, capabilities, and so on.
 

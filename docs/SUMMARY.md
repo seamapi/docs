@@ -329,7 +329,7 @@
 * [Tedee Locks](device-and-system-integration-guides/tedee-locks/README.md)
   * [Get Started with Tedee Locks](device-and-system-integration-guides/tedee-locks/get-started-with-tedee-locks.md)
 * [TTLock Locks](device-guides/ttlock-locks.md)
-  * [Get started with TTLock Devices](device-guides/get-started-with-ttlock-devices.md)
+  * [Get started with TTLock Locks](device-guides/get-started-with-ttlock-devices.md)
 * [Wyze Locks](device-guides/wyze-locks.md)
   * [Get started with Wyze Locks](device-guides/get-started-with-wyze-locks.md)
 * [Yale Locks](device-guides/yale-locks.md)
