@@ -20,7 +20,7 @@ You can customize the following characteristics of your Connect Webviews:
 
 You can customize the look and feel of your Connect Webviews in the following ways:
 
-* **Inviter Name:** Define the name displayed in your Connect Webviews as the entity requesting user authorization for Seam to access their device account.
+* **Inviter Name:** Define the name to display in your Connect Webviews as the entity requesting user authorization for Seam to access their device or access control system account.
 * **Logo:** Choose a logo for your Connect Webviews. Ensure that the image file size does not exceed 1 MB.
 * **Logo Shape:** Select the shape of your logo displayed in Connect Webviews. Choices are **Circle** (default) or **Square**.
 * **Primary Button Color:** Customize the color of the Action Button in your Connect Webview flow using a hex color code. The default color is #232426, which is almost black, and the default text color on the button is white.
@@ -39,7 +39,7 @@ It is important to note that any changes you make to the customization features 
 
 ## Customize the Brands to Display in Your Connect Webviews
 
-You can customize the device brands that a Connect Webview should display. You specify the brands to display when you are creating the Connect Webview. Consequently, you can customize this list of brands to display for each of your Connect Webviews.
+You can customize the brands that a Connect Webview should display. You specify the brands to display when you are creating the Connect Webview. Consequently, you can customize this list of brands to display for each of your Connect Webviews.
 
 To display a subset of providers in your Connect Webview, include the desired `accepted_providers` in the [Create Connect Webview](../../api-clients/connect-webviews/create-a-connect-webview.md) command. In this parameter, specify a list of accepted providers (brands) to display.
 

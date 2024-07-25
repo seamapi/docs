@@ -84,6 +84,8 @@
 
 * [🔌 Connect Webviews](core-concepts/connect-webviews/README.md)
   * [Embedding a Connect Webview in Your App](core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app.md)
+  * [Verifying Successful Account Connection](ui-components/connect-webviews/verifying-successful-account-connection.md)
+  * [Retrieving Devices or Access Control Systems Connected Through a Connect Webview](ui-components/connect-webviews/retrieving-devices-or-access-control-systems-connected-through-a-connect-webview.md)
   * [Attaching Custom Metadata to the Connect Webview](core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview.md)
   * [Filtering Connect Webviews by Custom Metadata](core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata.md)
   * [Customizing Connect Webviews](core-concepts/connect-webviews/customizing-connect-webviews.md)
@@ -130,7 +132,6 @@
   * [List Connect Webviews](api-clients/connect-webviews/list-connect-webviews.md)
   * [Get a Connect Webview](api-clients/connect-webviews/get-a-connect-webview.md)
   * [Delete a Connect Webview](api-clients/connect-webviews/delete-a-connect-webview.md)
-  * [Embedding a Connect Webview](api-clients/connect-webviews/embedding-a-connect-webview.md)
 * [Connected Accounts](api-clients/connected-accounts/README.md)
   * [Get a Connected Account](api-clients/connected-accounts/get-a-connected-account.md)
   * [List Connected Accounts](api-clients/connected-accounts/list-connected-accounts.md)
