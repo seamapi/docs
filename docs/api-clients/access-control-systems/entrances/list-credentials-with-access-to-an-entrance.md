@@ -85,7 +85,7 @@ seam.EntrancesAcs.ListCredentialsWithAccess(
 
 {% tab title="Go" %}
 ```go
-acs_users, uErr := client.Acs.Entrances.ListEntrancesWithAccess(
+acs_users, uErr := client.Acs.Entrances.ListCredentialsWithAccess(
   context.Background(), &acs.UsersListRequest{
     AcsEntranceId: api.String("55555555-5555-5555-5555-555555555555")
   },

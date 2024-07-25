@@ -1299,14 +1299,13 @@ Locked (false): false
 {% tab title="JavaScript" %}
 **Code:**
 
-```javascript
-// Get the device by ID.
+<pre class="language-javascript"><code class="lang-javascript">// Get the device by ID.
 const updatedFrontDoor = await seam.devices.get({device_id: frontDoor.device_id});
 
 // Inspect the locked property to confirm
 // that the unlock operation was successful.
-console.log(updatedFrontDoor.properties.locked) // false
-```
+<strong>console.log(updatedFrontDoor.properties.locked) // false
+</strong></code></pre>
 
 **Output:**
 

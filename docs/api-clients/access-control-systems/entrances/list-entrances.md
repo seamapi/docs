@@ -12,11 +12,11 @@ Returns a list of all [entrances](../../../capability-guides/access-systems/retr
 
 ## Request
 
-To filter the list of returned entrances by a specific [access control system](../../../products/access-systems/) or [credential](../../../capability-guides/access-systems/managing-credentials.md), include one or both of the `acs_system_id` or `acs_credential_id` parameters, respectively, in the request body. If you omit these parameters, the response includes all entrances in your [workspace](../../../core-concepts/workspaces/).
+To filter the list of returned entrances by a specific [access control system](../../../products/access-systems/), include the `acs_system_id` parameters in the request body. If you omit this parameter, the response includes all entrances in your [workspace](../../../core-concepts/workspaces/).
 
 ### Request Body Parameters
 
-<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>acs_system_id</code></td><td>String (UUID)<br><em>Optional</em></td><td>ID of the access control system for which you want to retrieve all entrances</td></tr><tr><td><code>acs_credential_id</code></td><td>String (UUID)<br><em>Optional</em></td><td>ID of the credential for which you want to retrieve all entrances</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>acs_system_id</code></td><td>String (UUID)<br><em>Optional</em></td><td>ID of the access control system for which you want to retrieve all entrances</td></tr></tbody></table>
 
 ### Sample Request
 
@@ -24,8 +24,7 @@ To filter the list of returned entrances by a specific [access control system](.
 {% tab title="Python" %}
 ```python
 seam.acs.entrances.list(
-  acs_system_id="11111111-1111-1111-1111-111111111111",
-  acs_credential_id="66666666-6666-6666-6666-666666666666"
+  acs_system_id="11111111-1111-1111-1111-111111111111"
 )
 ```
 {% endtab %}
@@ -39,8 +38,7 @@ curl -X 'GET' \
   -H "Authorization: Bearer ${API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
-  "acs_system_id": "11111111-1111-1111-1111-111111111111",
-  "acs_credential_id": "66666666-6666-6666-6666-666666666666"
+  "acs_system_id": "11111111-1111-1111-1111-111111111111"
 }'
 ```
 {% endtab %}
@@ -48,8 +46,7 @@ curl -X 'GET' \
 {% tab title="JavaScript" %}
 ```javascript
 await seam.acs.entrances.list({
-  acs_system_id: "11111111-1111-1111-1111-111111111111",
-  acs_credential_id: "66666666-6666-6666-6666-666666666666"
+  acs_system_id: "11111111-1111-1111-1111-111111111111"
 });
 ```
 {% endtab %}
@@ -63,8 +60,7 @@ await seam.acs.entrances.list({
 {% tab title="PHP" %}
 ```php
 $seam->acs->entrances->list(
-  acs_system_id: "11111111-1111-1111-1111-111111111111",
-  acs_credential_id: "66666666-6666-6666-6666-666666666666"
+  acs_system_id: "11111111-1111-1111-1111-111111111111"
 );
 ```
 {% endtab %}
@@ -72,8 +68,7 @@ $seam->acs->entrances->list(
 {% tab title="C#" %}
 ```csharp
 seam.EntrancesAcs.List(
-  acsSystemId: "11111111-1111-1111-1111-111111111111",
-  acsCredentialId: "66666666-6666-6666-6666-666666666666"
+  acsSystemId: "11111111-1111-1111-1111-111111111111"
 );
 ```
 {% endtab %}
@@ -89,7 +84,6 @@ seam.EntrancesAcs.List(
 acs_entrances, uErr := client.Acs.Entrances.List(
   context.Background(), &acs.EntrancesListRequest{
     AcsSystemId: api.String("11111111-1111-1111-1111-111111111111"),
-    AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
   },
 )
 ```

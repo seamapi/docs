@@ -398,30 +398,36 @@ acs_entrances, uErr := client.Acs.Entrances.List(
 
 ***
 
-## List Entrances Associated with a Credential
+## List Credentials Associated with an Entrance
 
-To list all `acs_entrance`s associated with a specific ACS, include the `acs_credential_id` filter in the [List Entrances](../../api-clients/access-control-systems/entrances/list-entrances.md) request. Note that entrance details include manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+To [list the credentials that grant access to a specific entrance](../../api-clients/access-control-systems/entrances/list-credentials-with-access-to-an-entrance.md), use `list_credentials_with_access` method for the `acs_entrance` object and provide the `acs_entrance_id`.
 
 {% tabs %}
 {% tab title="Python" %}
 **Request:**
 
 ```python
-seam.acs.entrances.list(
-  acs_credential_id="66666666-6666-6666-6666-666666666666"
+seam.acs.entrances.list_credentials_with_access(
+  acs_entrance_id="55555555-5555-5555-5555-555555555555"
 )
 ```
 
 **Response:**
 
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
 ```
 [
-  AcsEntrance(
-    acs_entrance_id='55555555-5555-5555-5555-555555555555',
+  AcsCredential(
+    acs_credential_id='77777777-7777-7777-7777-777777777777',
+    acs_user_id='33333333-3333-3333-3333-333333333333',
     acs_system_id='11111111-1111-1111-1111-111111111111',
-    workspace_id='00000000-0000-0000-0000-000000000000',
-    display_name='Guest Lock 2',
-    ....
+    access_method='mobile_key',
+    starts_at='2024-04-09T14:30:55.688Z',
+    ends_at='2024-03-04T10:40:00.000Z',
+    ...
   ),
   ...
 ]
@@ -434,25 +440,31 @@ seam.acs.entrances.list(
 ```bash
 # Use GET or POST.
 curl -X 'GET' \
-  'https://connect.getseam.com/acs/entrances/list' \
+  'https://connect.getseam.com/acs/entrances/list_credentials_with_access' \
   -H 'accept: application/json' \
   -H "Authorization: Bearer ${API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
-  "acs_credential_id": "66666666-6666-6666-6666-666666666666"
+  "acs_entrance_id": "55555555-5555-5555-5555-555555555555"
 }'
 ```
 
 **Response:**
 
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
 ```json
 {
-  "acs_entrances": [
+  "acs_credentials": [
     {
-      "acs_entrance_id": "55555555-5555-5555-5555-555555555555",
+      "acs_credential_id": "77777777-7777-7777-7777-777777777777",
+      "acs_user_id": "33333333-3333-3333-3333-333333333333",
       "acs_system_id": "11111111-1111-1111-1111-111111111111",
-      "workspace_id": "00000000-0000-0000-0000-000000000000",
-      "display_name": "Guest Lock 2",
+      "access_method": "mobile_key",
+      "starts_at": "2024-04-09T14:30:55.688Z",
+      "ends_at": "2024-03-04T10:40:00.000Z",
       ...
     },
     ...
@@ -466,20 +478,26 @@ curl -X 'GET' \
 **Request:**
 
 ```javascript
-await seam.acs.entrances.list({
-  acs_credential_id: "66666666-6666-6666-6666-666666666666"
+await seam.acs.entrances.list_credentials_with_access({
+  acs_entrance_id: "55555555-5555-5555-5555-555555555555"
 });
 ```
 
 **Response:**
 
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
 ```json
 [
   {
-    acs_entrance_id: '55555555-5555-5555-5555-555555555555',
+    acs_credential_id: '77777777-7777-7777-7777-777777777777',
+    acs_user_id: '33333333-3333-3333-3333-333333333333',
     acs_system_id: '11111111-1111-1111-1111-111111111111',
-    workspace_id: '00000000-0000-0000-0000-000000000000',
-    display_name: 'Guest Lock 2',
+    access_method: 'mobile_key',
+    starts_at: '2024-04-09T14:30:55.688Z',
+    ends_at: '2024-03-04T10:40:00.000Z',
     ...
   },
   ...
@@ -505,20 +523,26 @@ await seam.acs.entrances.list({
 **Request:**
 
 ```php
-$seam->acs->entrances->list(
-  acs_credential_id: "66666666-6666-6666-6666-666666666666"
+$seam->acs->entrances->list_credentials_with_access(
+  acs_entrance_id: "55555555-5555-5555-5555-555555555555"
 );
 ```
 
 **Response:**
 
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
 ```json
 [
   {
-    "acs_entrance_id": "55555555-5555-5555-5555-555555555555",
+    "acs_credential_id": "77777777-7777-7777-7777-777777777777",
+    "acs_user_id": "33333333-3333-3333-3333-333333333333",
     "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "workspace_id": "00000000-0000-0000-0000-000000000000",
-    "display_name": "Guest Lock 2",
+    "access_method": "mobile_key",
+    "starts_at": "2024-04-09T14:30:55.688Z",
+    "ends_at": "2024-03-04T10:40:00.000Z",
     ...
   },
   ...
@@ -530,19 +554,25 @@ $seam->acs->entrances->list(
 **Request:**
 
 ```csharp
-seam.EntrancesAcs.List(
-  acsCredentialId: "66666666-6666-6666-6666-666666666666"
+seam.EntrancesAcs.ListCredentialsWithAccess(
+  acsEntranceId: "55555555-5555-5555-5555-555555555555"
 );
 ```
 
 **Response:**
 
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
 ```json
 {
-  "acs_entrance_id": "55555555-5555-5555-5555-555555555555",
+  "acs_credential_id": "77777777-7777-7777-7777-777777777777",
+  "acs_user_id": "33333333-3333-3333-3333-333333333333",
   "acs_system_id": "11111111-1111-1111-1111-111111111111",
-  "workspace_id": "00000000-0000-0000-0000-000000000000",
-  "display_name": "Guest Lock 2",
+  "access_method": "mobile_key",
+  "starts_at": "2024-04-09T14:30:55.688Z",
+  "ends_at": "2024-03-04T10:40:00.000Z",
   ...
 }
 ...
@@ -567,23 +597,29 @@ seam.EntrancesAcs.List(
 **Request:**
 
 ```go
-acs_entrances, uErr := client.Acs.Entrances.List(
-  context.Background(), &acs.EntrancesListRequest{
-    AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
+acs_users, uErr := client.Acs.Entrances.ListCredentialsWithAccess(
+  context.Background(), &acs.UsersListRequest{
+    AcsEntranceId: api.String("55555555-5555-5555-5555-555555555555")
   },
 )
 ```
 
 **Response:**
 
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
 ```json
 {
-  "acs_entrances": [
+  "acs_credentials": [
     {
-      "acs_entrance_id": "55555555-5555-5555-5555-555555555555",
+      "acs_credential_id": "77777777-7777-7777-7777-777777777777",
+      "acs_user_id": "33333333-3333-3333-3333-333333333333",
       "acs_system_id": "11111111-1111-1111-1111-111111111111",
-      "workspace_id": "00000000-0000-0000-0000-000000000000",
-      "display_name": "Guest Lock 2",
+      "access_method": "mobile_key",
+      "starts_at": "2024-04-09T14:30:55.688Z",
+      "ends_at": "2024-03-04T10:40:00.000Z",
       ...
     },
     ...
@@ -593,6 +629,12 @@ acs_entrances, uErr := client.Acs.Entrances.List(
 ```
 {% endtab %}
 {% endtabs %}
+
+***
+
+## List Entrances Associated with a Credential
+
+To [list the entrances to which a specific credential grants access](../../api-clients/access-control-systems/credentials/list-accessible-entrances.md), use `list_accessible_entrances` method for the `acs_credential` object and provide the `acs_credential_id`. For details, see [Managing Credentials](managing-credentials.md#list-entrances-associated-with-a-credential).
 
 ***
 
