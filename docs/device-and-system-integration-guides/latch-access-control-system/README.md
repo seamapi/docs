@@ -18,7 +18,7 @@ Latch enables you to install wireless door locks and intercom systems in your bu
 
 ## Latch ACS Resources
 
-The Seam ACS schema consists of a series of resources that interact intuitively, enabling you to use the [Seam API](broken-reference) to manage your Latch ACS in a logical, efficient manner. Latch is a [credential-based ACS](../../capability-guides/access-systems/understanding-access-control-system-differences.md#credential-based-access-control-systems), so you create ACS users and then grant them access permissions using credentials. When you create a credential, you specify the ACS user to which to assign the credential, as well as the allowed entrances and the start and end times for the access schedule.&#x20;
+The Seam ACS schema consists of a series of resources that interact intuitively, enabling you to use the [Seam API](broken-reference) to manage your Latch ACS in a logical, efficient manner. Latch is a [credential-based ACS](../../capability-guides/access-systems/understanding-access-control-system-differences.md#credential-based-access-control-systems), so you [create ACS users](../../products/access-systems/user-management.md#create-an-acs-user) and then grant them access permissions using credentials. When you create a credential, you specify the ACS user to which to assign the credential, as well as the allowed entrances and the start and end times for the access schedule.&#x20;
 
 The following diagram shows the Seam resources for a Latch ACS and the relationships between these resources:
 
@@ -29,6 +29,14 @@ The following table provides a brief description of each of the Seam resources f
 <table><thead><tr><th width="233">Seam Resource</th><th>Description</th></tr></thead><tbody><tr><td><picture><source srcset="../../.gitbook/assets/acs-user_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/acs-user_light.png" alt="" data-size="line"></picture> <a href="../../api-clients/access-control-systems/users/"><code>acs_user</code></a></td><td>Individual who has been granted access to specific entrance within a building. A user could be a resident or temporary guest.</td></tr><tr><td><picture><source srcset="../../.gitbook/assets/acs-entrance_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/acs-entrance_light.png" alt="" data-size="line"></picture> <a href="../../api-clients/access-control-systems/entrances/"><code>acs_entrance</code></a></td><td>Physical points of entry within a property that are secured with Latch's smart access devices.</td></tr><tr><td><picture><source srcset="../../.gitbook/assets/acs-credential_latch_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/acs-credential_latch_light.png" alt="" data-size="line"></picture> <a href="../../api-clients/access-control-systems/credentials/"><code>acs_credential</code></a></td><td>PIN codes or mobile keys. You can only assign one entrance to a key code-based credential. You can assign multiple entrances to mobile keys.</td></tr></tbody></table>
 
 For more information about managing your Latch ACS through Seam, see [Credential-based Access Control Systems](../../capability-guides/access-systems/understanding-access-control-system-differences.md#credential-based-access-control-systems) and [Access Control Systems](../../products/access-systems/).
+
+For more information about managing your Latch ACS through Seam, see the following topics:
+
+* [Programming PIN Codes for Latch ACS Users](programming-code-based-latch-credentials.md)
+* [Programming Latch ACS Mobile Keys for App Users](programming-latch-acs-mobile-credentials.md)
+* [Credential-based ACS](../../capability-guides/access-systems/understanding-access-control-system-differences.md#credential-based-acs)
+* [Access Control Systems](../../products/access-systems/)
+* [Mobile Access](../../products/mobile-access-in-development/)
 
 ***
 
@@ -55,6 +63,12 @@ Note the following restrictions on using Seam to manage your Latch ACS:
 
 * The Latch ACS does not support remote unlock functionality. Unlock operations must occur through a mobile app.
 * You cannot sync in existing users and access permissions from a Latch ACS. You can only use Seam to manage the ACS users and credentials that you create through Seam.
+
+***
+
+## Brand-Specific Errors
+
+For information about Latch ACS-related errors, including issues related to the connection between your ACS and Seam, see [Troubleshooting Your ACS](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md).
 
 ***
 

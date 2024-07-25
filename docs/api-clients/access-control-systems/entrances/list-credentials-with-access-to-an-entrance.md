@@ -15,7 +15,7 @@ Returns a list of all [credentials](../../../capability-guides/access-systems/ma
 Specify the entrance for which you want to retrieve all credentials with access by including the corresponding `acs_entrance_id` in the request body.
 
 {% hint style="info" %}
-You can also use a manufacturer-specific filter for entrances in a [Visionline ACS](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/). For details, see [List All Valid Credentials for a Set of Guest Entrances to Add as Joiners](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/credential-types.md#list-all-valid-credentials-for-a-set-of-guest-entrances-to-add-as-joiners).
+You can also use a manufacturer-specific filter for entrances in a [Visionline ACS](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/). For details, see [List All Valid Credentials for a Set of Guest Entrances to Add as Joiners](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types.md#list-all-valid-credentials-for-a-set-of-guest-entrances-to-add-as-joiners).
 {% endhint %}
 
 ### Request Body Parameters
@@ -85,7 +85,7 @@ seam.EntrancesAcs.ListCredentialsWithAccess(
 
 {% tab title="Go" %}
 ```go
-acs_users, uErr := client.Acs.Entrances.ListEntrancesWithAccess(
+acs_users, uErr := client.Acs.Entrances.ListCredentialsWithAccess(
   context.Background(), &acs.UsersListRequest{
     AcsEntranceId: api.String("55555555-5555-5555-5555-555555555555")
   },
