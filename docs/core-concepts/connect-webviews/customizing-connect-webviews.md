@@ -234,7 +234,7 @@ You configure these properties when you are creating the Connect Webview. Conseq
 
 ### `automatically_manage_new_devices`
 
-Seam charges fees for different parts of the API, like connecting a device, creating an access code or thermostat schedule, and creating an access control system user. To learn more, contact our team. You can exclude specific devices from your bill by marking them as "[unmanaged](../devices/#managed-devices-and-unmanaged-devices)."
+Seam charges fees for different parts of the API, like connecting a device, creating an access code or thermostat schedule, and creating an access control system user. To learn more, contact our team. You can exclude specific devices from your bill by marking them as "[unmanaged](../devices/managed-and-unmanaged-devices.md)."
 
 The default value for `automatically_manage_new_devices` is `true`. Consequently, by default, Seam imports all devices and makes them available for use. However, if you set this property to `false`, Seam sets the `is_managed` property for all new devices to `false` (that is, unmanaged) when a user first connects their account to Seam.
 
