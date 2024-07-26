@@ -2,7 +2,7 @@
 description: Learn how to migrate existing lock access codes into Seam
 ---
 
-# Migrating Existing Access Codes
+# Migrating Existing Unmanaged Access Codes
 
 ## Overview
 
@@ -31,24 +31,23 @@ You can retrieve a list of all unmanaged access codes for a particular device us
 **Request:**
 
 ```python
-pprint(seam.access_codes.unmanaged.list(device="374d3ee2-5e5d-4141-b828-6c2fa458212f"))
+seam.access_codes.unmanaged.list(
+  device_id="11111111-1111-1111-1111-444444444444"
+)
 ```
 
 **Response:**
 
 ```
-[UnmanagedAccessCode(access_code_id='449b03e6-1c6f-4ff3-b055-b9cf8146d2b0',
-                     device_id='374d3ee2-5e5d-4141-b828-6c2fa458212f',
-                     type='ongoing',
-                     created_at='2023-10-28T04:00:04.194Z',
-                     errors=[],
-                     warnings=[],
-                     name='New Passcode',
-                     code='123456',
-                     is_managed=False,
-                     starts_at=None,
-                     ends_at=None,
-                     status='set')]
+[
+  UnmanagedAccessCode(
+    access_code_id='11111111-1111-1111-1111-999999999999',
+    device_id='11111111-1111-1111-1111-444444444444',
+    is_managed=False,
+    ...
+  ),
+  ...
+]
 ```
 {% endtab %}
 
@@ -60,10 +59,10 @@ pprint(seam.access_codes.unmanaged.list(device="374d3ee2-5e5d-4141-b828-6c2fa458
 curl -X 'GET' \
   'https://connect.getseam.com/access_codes/unmanaged/list' \
   -H 'accept: application/json' \
-  -H 'Authorization: Bearer ${API_KEY}' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
-  "device_id": "374d3ee2-5e5d-4141-b828-6c2fa458212f"
+  "device_id": "11111111-1111-1111-1111-444444444444"
 }'
 ```
 
@@ -73,19 +72,12 @@ curl -X 'GET' \
 {
   "access_codes": [
     {
-      "access_code_id": "449b03e6-1c6f-4ff3-b055-b9cf8146d2b0",
-      "device_id": "374d3ee2-5e5d-4141-b828-6c2fa458212f",
-      "name": "New Passcode",
-      "code": "123456",
-      "type": "ongoing",
-      "created_at": "2023-10-28T04:00:04.194Z",
-      "starts_at": null,
-      "ends_at": null,
-      "status": "set",
-      "errors": [],
-      "warnings": [],
-      "is_managed": false
-    }
+      "access_code_id": "11111111-1111-1111-1111-999999999999",
+      "device_id": "11111111-1111-1111-1111-444444444444",
+      "is_managed": false,
+      ...
+    },
+    ...
   ],
   "ok": true
 }
@@ -96,9 +88,9 @@ curl -X 'GET' \
 **Request:**
 
 ```javascript
-console.log(await seam.accessCodes.unmanaged.list({
-  device_id: "374d3ee2-5e5d-4141-b828-6c2fa458212f"
-}))
+await seam.accessCodes.unmanaged.list({
+  device_id: "11111111-1111-1111-1111-444444444444"
+})
 ```
 
 **Response:**
@@ -106,19 +98,12 @@ console.log(await seam.accessCodes.unmanaged.list({
 ```json
 [
   {
-    access_code_id: '449b03e6-1c6f-4ff3-b055-b9cf8146d2b0',
-    device_id: '374d3ee2-5e5d-4141-b828-6c2fa458212f',
-    name: 'New Passcode',
-    code: '123456',
-    type: 'ongoing',
-    created_at: '2023-10-28T04:00:04.194Z',
-    starts_at: null,
-    ends_at: null,
-    status: 'set',
-    errors: [],
-    warnings: [],
-    is_managed: false
-  }
+    access_code_id: '11111111-1111-1111-1111-999999999999',
+    device_id: '11111111-1111-1111-1111-444444444444',
+    is_managed: false,
+    ...
+  },
+  ...
 ]
 ```
 {% endtab %}
@@ -127,31 +112,23 @@ console.log(await seam.accessCodes.unmanaged.list({
 **Request:**
 
 ```ruby
-device_id = "374d3ee2-5e5d-4141-b828-6c2fa458212f"
-client.unmanaged_access_codes.list(device_id).inspect
+client.unmanaged_access_codes.list(
+  device_id: "11111111-1111-1111-1111-444444444444"
+)
 ```
 
 **Response:**
 
 ```
-[<Seam::AccessCode:0x00438
-  access_code_id="449b03e6-1c6f-4ff3-b055-b9cf8146d2b0"
-  device_id="374d3ee2-5e5d-4141-b828-6c2fa458212f"
-  name="New Passcode"
-  .
-  .
-  .
-  code="123456"
-  type="ongoing"
-  status="set"
-  .
-  .
-  .
-  is_managed=false
-  .
-  .
-  .
-  >]
+[
+  <Seam::AccessCode:0x00438
+    access_code_id="11111111-1111-1111-1111-999999999999"
+    device_id="11111111-1111-1111-1111-444444444444"
+    is_managed=false
+    ...
+  >
+  ...
+]
 ```
 {% endtab %}
 
@@ -159,19 +136,21 @@ client.unmanaged_access_codes.list(device_id).inspect
 **Request:**
 
 ```csharp
-var unmanagedCodes = seam.UnmanagedAccessCodes.List(deviceId: "374d3ee2-5e5d-4141-b828-6c2fa458212f");
-foreach (var unmanagedCode in unmanagedCodes)
-{
-  Console.WriteLine("Access code ID: " + unmanagedCode.AccessCodeId);
-  Console.WriteLine("Is managed: " + unmanagedCode.IsManaged);
-}
+seam.UnmanagedAccessCodes.List(
+  deviceId: "11111111-1111-1111-1111-444444444444"
+);
 ```
 
 **Response:**
 
-```
-Access code ID: 449b03e6-1c6f-4ff3-b055-b9cf8146d2b0
-Is managed: False
+```json
+{
+  "access_code_id": "11111111-1111-1111-1111-999999999999",
+  "device_id": "11111111-1111-1111-1111-444444444444",
+  "is_managed": false,
+  ...
+}
+...
 ```
 {% endtab %}
 
@@ -179,32 +158,23 @@ Is managed: False
 **Request:**
 
 ```java
-var deviceId = "374d3ee2-5e5d-4141-b828-6c2fa458212f";
-
-var unmanagedAccessCodes = seam.accessCodes().unmanaged().list(UnmanagedListRequest.builder()
-        .deviceId(deviceId)
+seam.accessCodes().unmanaged().list(UnmanagedListRequest.builder()
+        .deviceId("11111111-1111-1111-1111-444444444444")
         .build());
-System.out.println(unmanagedAccessCodes);
 ```
 
 **Response:**
 
 ```json
-[{
-  "access_code" : {
-    "type" : "ongoing",
-    "access_code_id" : "449b03e6-1c6f-4ff3-b055-b9cf8146d2b0",
-    "device_id" : "374d3ee2-5e5d-4141-b828-6c2fa458212f",
-    "name" : "New Passcode",
-    "code" : "123456",
-    "created_at" : "2023-10-28T04:00:04.194Z",
-    "errors" : [ ],
-    "warnings" : [ ],
+[
+  {
+    "access_code_id" : "11111111-1111-1111-1111-999999999999",
+    "device_id" : "11111111-1111-1111-1111-444444444444",
     "is_managed" : "false",
-    "status" : "set"
+    ...
   },
-  "ok" : true
-}]
+  ...
+]
 ```
 {% endtab %}
 {% endtabs %}
@@ -218,12 +188,9 @@ You can convert unmanaged access codes into managed ones using the [Convert an U
 **Request:**
 
 ```python
-access_code_id = "449b03e6-1c6f-4ff3-b055-b9cf8146d2b0"
-attempt = seam.access_codes.unmanaged.convert_to_managed(
-  access_code = access_code_id
+seam.access_codes.unmanaged.convert_to_managed(
+  access_code_id = "11111111-1111-1111-1111-999999999999"
 )
-
-pprint(attempt)
 ```
 
 **Response:**
@@ -244,10 +211,10 @@ ActionAttempt(action_attempt_id='721b51b7-6ab9-41cf-b09d-a5e97d355208',
 curl -X 'POST' \
   'https://connect.getseam.com/access_codes/unmanaged/convert_to_managed' \
   -H 'accept: application/json' \
-  -H 'Authorization: Bearer ${API_KEY}' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
-  "access_code_id": "449b03e6-1c6f-4ff3-b055-b9cf8146d2b0"
+  "access_code_id": "11111111-1111-1111-1111-999999999999"
 }
 ```
 
@@ -271,9 +238,9 @@ curl -X 'POST' \
 **Request:**
 
 ```javascript
-console.log(await seam.accessCodes.unmanaged.convertToManaged({
-  access_code_id: "449b03e6-1c6f-4ff3-b055-b9cf8146d2b0"
-}))
+await seam.accessCodes.unmanaged.convertToManaged({
+  access_code_id: "11111111-1111-1111-1111-999999999999"
+})
 ```
 
 **Response:**
@@ -295,8 +262,9 @@ console.log(await seam.accessCodes.unmanaged.convertToManaged({
 **Request:**
 
 ```ruby
-access_code_id = "449b03e6-1c6f-4ff3-b055-b9cf8146d2b0"
-client.unmanaged_access_codes.convert_to_managed(access_code_id).inspect
+client.unmanaged_access_codes.convert_to_managed(
+  access_code_id: "11111111-1111-1111-1111-999999999999"
+)
 ```
 
 **Response:**
@@ -314,14 +282,9 @@ client.unmanaged_access_codes.convert_to_managed(access_code_id).inspect
 **Request:**
 
 ```csharp
-var attempt = seam.UnmanagedAccessCodes.ConvertToManaged(accessCodeId: "449b03e6-1c6f-4ff3-b055-b9cf8146d2b0");
-
-Type t = attempt.GetType();
-PropertyInfo[] props = t.GetProperties();
-foreach (var prop in props)
-{
-  Console.WriteLine(prop.Name + ": " + prop.GetValue(attempt));
-}
+seam.UnmanagedAccessCodes.ConvertToManaged(
+  accessCodeId: "11111111-1111-1111-1111-999999999999"
+);
 ```
 
 **Response:**
@@ -339,10 +302,9 @@ Error:
 **Request:**
 
 ```java
-var convert = seam.accessCodes().unmanaged().convertToManaged(UnmanagedConvertToManagedRequest.builder()
-        .accessCodeId("449b03e6-1c6f-4ff3-b055-b9cf8146d2b0")
+seam.accessCodes().unmanaged().convertToManaged(UnmanagedConvertToManagedRequest.builder()
+        .accessCodeId("11111111-1111-1111-1111-999999999999")
         .build());
-System.out.println(convert);
 ```
 
 **Response:**
@@ -377,8 +339,9 @@ After you have converted unmanaged codes to managed codes, or replaced them with
 **Request:**
 
 ```python
-access_code_id = "ddb6e6b7-7156-471e-9199-4106db2f2e57"
-pprint(seam.access_codes.unmanaged.delete(access_code = access_code_id))
+seam.access_codes.unmanaged.delete(
+  access_code_id = "11111111-1111-1111-1111-999999999999"
+)
 ```
 
 **Response:**
@@ -399,10 +362,10 @@ ActionAttempt(action_attempt_id='364e747f-9631-4eb1-bc9e-24cd1f11cf3b',
 curl -X 'POST' \
   'https://connect.getseam.com/access_codes/unmanaged/delete' \
   -H 'accept: application/json' \
-  -H 'Authorization: Bearer ${API_KEY}' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
-  "access_code_id": "ddb6e6b7-7156-471e-9199-4106db2f2e57"
+  "access_code_id": "11111111-1111-1111-1111-999999999999"
 }'
 ```
 
@@ -426,9 +389,9 @@ curl -X 'POST' \
 **Request:**
 
 ```javascript
-console.log(await seam.accessCodes.unmanaged.delete({
-  access_code_id: "ddb6e6b7-7156-471e-9199-4106db2f2e57"
-}))
+await seam.accessCodes.unmanaged.delete({
+  access_code_id: "11111111-1111-1111-1111-999999999999"
+});
 ```
 
 **Response:**
@@ -450,8 +413,9 @@ console.log(await seam.accessCodes.unmanaged.delete({
 **Request:**
 
 ```ruby
-access_code_id = "ddb6e6b7-7156-471e-9199-4106db2f2e57"
-client.unmanaged_access_codes.delete(access_code_id).inspect
+client.unmanaged_access_codes.delete(
+  access_code_id: "11111111-1111-1111-1111-999999999999"
+)
 ```
 
 **Response:**
@@ -469,14 +433,9 @@ client.unmanaged_access_codes.delete(access_code_id).inspect
 **Request:**
 
 ```csharp
-var attempt = seam.UnmanagedAccessCodes.ConvertToManaged(accessCodeId: "ddb6e6b7-7156-471e-9199-4106db2f2e57");
-
-Type t = attempt.GetType();
-PropertyInfo[] props = t.GetProperties();
-foreach (var prop in props)
-{
-  Console.WriteLine(prop.Name + ": " + prop.GetValue(attempt));
-}
+seam.UnmanagedAccessCodes.Delete(
+  accessCodeId: "11111111-1111-1111-1111-999999999999"
+);
 ```
 
 **Response:**
@@ -494,11 +453,10 @@ Error:
 **Request:**
 
 ```java
-var delete = seam.accessCodes().unmanaged()
-        .delete(UnmanagedDeleteRequest.builder()
-                .accessCodeId("ddb6e6b7-7156-471e-9199-4106db2f2e57")
-                .build());
-System.out.println(delete);
+seam.accessCodes().unmanaged()
+  .delete(UnmanagedDeleteRequest.builder()
+    .accessCodeId("11111111-1111-1111-1111-999999999999")
+    .build());
 ```
 
 **Response:**
