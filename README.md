@@ -1,7 +1,7 @@
 # Seam Docs
 
 [![Edit on GitBook](https://img.shields.io/badge/Edit-on%20GitBook-blue)](https://app.gitbook.com/o/jhFodLh6YFJJYK6Lv9wE/s/xnN2A67918om1UthYWsF/)
-[![GitHub Actions](https://github.com/seamapi/api-docs/actions/workflows/check.yml/badge.svg)](https://github.com/seamapi/api-docs/actions/workflows/check.yml)
+[![GitHub Actions](https://github.com/seamapi/docs/actions/workflows/check.yml/badge.svg)](https://github.com/seamapi/docs/actions/workflows/check.yml)
 
 Welcome to the [Seam Docs].
 
@@ -24,7 +24,7 @@ The entire documentation site is hosted by [GitBook] under `/docs`.
 The Seam SDK Playground is a one-click development environment
 for experimenting with the Seam SDK and Seam CLI.
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/seamapi/api-docs?devcontainer_path=.devcontainer%2Fseam-sdk-playground%2Fdevcontainer.json)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/seamapi/docs?devcontainer_path=.devcontainer%2Fseam-sdk-playground%2Fdevcontainer.json)
 
 Each folder in `/seam-sdk-playground` is a minimal
 example for running the Seam SDK in a supported programming language.
@@ -58,12 +58,12 @@ for how to contribute to the documentation generation tool.
 
 ## Development
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/seamapi/api-docs)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/seamapi/docs)
 
 ### Quickstart
 
 ```
-$ git clone https://github.com/seamapi/api-docs.git
+$ git clone https://github.com/seamapi/docs.git
 $ cd api-docs
 $ nvm install
 $ npm install
@@ -84,10 +84,10 @@ The [source code] is hosted on GitHub.
 Clone the project with
 
 ```
-$ git clone git@github.com:seamapi/api-docs.git
+$ git clone git@github.com:seamapi/docs.git
 ```
 
-[source code]: https://github.com/seamapi/api-docs
+[source code]: https://github.com/seamapi/docs
 
 ### Requirements
 
