@@ -1,5 +1,9 @@
---- description: "{{{description}}}" --- #
-{{title}}
+---
+description:
+{{{description}}}
+---
+
+# {{title}}
 
 {{{description}}}
 
@@ -33,14 +37,19 @@ method="{{request.preferredMethod}}" %}
   </tbody>
 </table>
 
-### Sample Request {% tabs %}
+### Sample Request
+
+<!-- prettier-ignore -->
+{% tabs %}
 {{#each codeSamples}}
   {{#each this.code}}
+    <!-- prettier-ignore -->
     {% tab title="{{@key}}" %} ```{{@key}}
     {{this.request}}
     ``` {% endtab %}
   {{/each}}
 {{else}}
+  <!-- prettier-ignore -->
   {% tab title="No samples available" %} ``` No sample requests available. ```
   {% endtab %}
 {{/each}}
@@ -71,14 +80,19 @@ method="{{request.preferredMethod}}" %}
   </tbody>
 </table>
 
-### Sample Response {% tabs %}
+### Sample Response
+
+<!-- prettier-ignore -->
+{% tabs %}
 {{#each codeSamples}}
   {{#each this.code}}
+    <!-- prettier-ignore -->
     {% tab title="{{@key}}" %} ```{{@key}}
     {{this.response}}
     ``` {% endtab %}
   {{/each}}
 {{else}}
+  <!-- prettier-ignore -->
   {% tab title="No samples available" %} ``` No sample responses available. ```
   {% endtab %}
 {{/each}}
