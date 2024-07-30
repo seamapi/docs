@@ -1,13 +1,14 @@
 --- description:
-{{description}}
---- #{{title}}
+{{{description}}}
+--- #
+{{title}}
 
 {{{description}}}
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="{{path}}"
 method="{{request.preferredMethod}}" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
-{% endswagger %} ## Request ### Request Body Parameters
+{% endswagger %} # Request Not enough data # Request Body Parameters
 
 <table>
   <thead>
@@ -21,7 +22,9 @@ method="{{request.preferredMethod}}" %}
     {{#each request.parameters}}
       <tr>
         <td><code>{{this.name}}</code></td>
-        <td>{{#if this.required}}Required{{else}}Optional{{/if}}</td>
+        <td>String (UUID)<br /><em>{{#if
+              this.required
+            }}Required{{else}}Optional{{/if}}</em></td>
         <td>{{this.description}}</td>
       </tr>
     {{else}}
