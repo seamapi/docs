@@ -45,7 +45,10 @@ To control Kwikset devices using Seam, you must prompt owners of these devices t
 
 1. Create an account in the [Kwikset App](https://www.kwikset.com/smart-locks/app) if you have not done so already.
 2. In the Kwikset App, add your Kwikset devices.
-3. In the Kwikset App, click on the top left menu button, navigate to **Account Settings** and disable **2-Step Verification**.
+3.  In the Kwikset App, click on the top left menu button, navigate to **Account Settings** and disable **2-Step Verification**.\
+
+
+    <figure><img src="../.gitbook/assets/kwikset-MFA-settings.png" alt="Disable 2-Step Verification before connecting your Kwikset account to Seam." width="180"><figcaption><p>Disable 2-Step Verification before connecting your Kwikset account to Seam.</p></figcaption></figure>
 
 {% hint style="warning" %}
 You must disable **2-Step Verification**—that is, multifactor authentication (MFA)—before connecting your Kwikset account to Seam using the [Seam Connect Webview](../core-concepts/connect-webviews/).
@@ -54,6 +57,25 @@ Enabling MFA in the Kwikset App can block the Seam login process from performing
 {% endhint %}
 
 4. Note your login credentials for the Kwikset App, and use these credentials to log in to the Seam Connect Webview to add your devices to Seam.
+
+***
+
+## Brand-Specific Restrictions
+
+In the Kwikset app, you cannot see access codes that were set from an external source (such as Seam) unless you are connected through Bluetooth to the lock. If you're connected through Wi-Fi and not Bluetooth, the Kwikset app only shows the access codes that you have set from the app itself and not the codes set from Seam.
+
+***
+
+## Brand-Specific Access Code Constraints
+
+Kwikset locks place the following constraints on access code attributes:
+
+*   Access code name must contain 2-14 characters.
+
+    You can create a Seam access code for Kwikset with a name longer than 14 characters. The full name is stored in Seam, but on the Kwikset device, the name is truncated to 14 characters.
+* PIN code length must be 4-8 digits.
+* A `timebound` code requires both a `starts_at` timestamp and an `ends_at` timestamp.
+* A `timebound` code's `starts_at` timestamp must be greater than the current time. For best results, set `starts_at` at least 15 minutes ahead of the current time.
 
 ***
 

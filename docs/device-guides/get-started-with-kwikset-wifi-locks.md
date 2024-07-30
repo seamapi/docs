@@ -381,27 +381,28 @@ puts updated_lock.properties['locked'] # false
 {% endtab %}
 {% endtabs %}
 
-###
-
 ### 5 — Setting Access Code on Kwikset Lock
 
 {% hint style="info" %}
-In the Kwikset app, you cannot see access codes that were set from an external source (such as Seam) unless you are connected via bluetooth to the lock.
+In the Kwikset app, you cannot see access codes that were set from an external source (such as Seam) unless you are connected through Bluetooth to the lock.
 
-If you're connected through Wi-Fi and not bluetooth, the Kwikset app will _only_ show the access codes you have set from the app itself and not the codes set from Seam.
+If you're connected through Wi-Fi and not Bluetooth, the Kwikset app _only_ shows the access codes that you have set from the app itself and not the codes set from Seam.
 {% endhint %}
 
 Some Kwikset locks have a keypad paired to them to program access codes. These codes can then be entered to unlock a Kwikset lock.
 
 The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Kwikset lock. You can find out more about Kwikset lock access code in our [core concept section on access codes.](../products/smart-locks/access-codes/)
 
-**Access Code Constraints** Kwikset locks place the following constraints on access code attributes:
+**Access Code Constraints**
 
-* Access code name has to be between 2-14 characters
-  * You can create a Seam access code for Kwikset with a name longer than 14 characters. The full name will be stored in Seam but on the Kwikset device, the name will be truncated to 14 characters
-* Pin code length has to be between 4-8 digits
-* A `timebound` code requires both a `starts_at` and `ends_at` time
-* A `timebound` code's `starts_at` time has to be greater than the current time (for best results, set `starts_at` at least 15 minutes ahead of current time)
+Kwikset locks place the following constraints on access code attributes:
+
+*   Access code name must contain 2-14 characters.
+
+    You can create a Seam access code for Kwikset with a name longer than 14 characters. The full name is stored in Seam, but on the Kwikset device, the name is truncated to 14 characters.
+* PIN code length must be 4-8 digits.
+* A `timebound` code requires both a `starts_at` timestamp and an `ends_at` timestamp.
+* A `timebound` code's `starts_at` timestamp must be greater than the current time. For best results, set `starts_at` at least 15 minutes ahead of the current time.
 
 {% tabs %}
 {% tab title="Python" %}
