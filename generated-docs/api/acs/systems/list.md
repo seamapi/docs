@@ -18,11 +18,11 @@ response includes all access control systems connected to your workspace.
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
 {% endswagger %}
 
-# Request
+## Request
 
 Not enough data
 
-# Request Body Parameters
+### Request Body Parameters
 
 <table>
   <thead>
