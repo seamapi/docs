@@ -4,7 +4,7 @@ description: Guide for using Tedee locks with Seam
 
 # Tedee Locks
 
-<figure><picture><source srcset="../../.gitbook/assets/tedee-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/tedee-manufacturer-page-cover-light.png" alt="Use Tedee locks with Seam."></picture><figcaption><p>Connect and control any Tedee device using the Seam API</p></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/tedee-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/tedee-manufacturer-page-cover-light.png" alt="Connect and control any Tedee device using the Seam API."></picture><figcaption><p>Connect and control any Tedee device using the Seam API.</p></figcaption></figure>
 
 ## Overview
 
