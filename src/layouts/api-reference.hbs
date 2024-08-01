@@ -9,7 +9,12 @@ description: "{{{description}}}"
 {% swagger src="https://connect.getseam.com/openapi.json" path="{{path}}"
 method="{{request.preferredMethod}}" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
-{% endswagger %} ## Request Not enough data ### Request Body Parameters
+{% endswagger %} 
+
+## Request 
+Not enough data 
+
+### Request Body Parameters
 
 <table>
   <thead>
@@ -43,13 +48,18 @@ method="{{request.preferredMethod}}" %}
 {{#each codeSamples}}
   {{#each this.code}}
     <!-- prettier-ignore -->
-    {% tab title="{{@key}}" %} ```{{@key}}
+    {% tab title="{{@key}}" %} 
+    ```{{@key}}
     {{this.request}}
-    ``` {% endtab %}
+    ``` 
+    {% endtab %}
   {{/each}}
 {{else}}
   <!-- prettier-ignore -->
-  {% tab title="No samples available" %} ``` No sample requests available. ```
+  {% tab title="No samples available" %} 
+    ``` 
+    No sample requests available. 
+    ```
   {% endtab %}
 {{/each}}
 {% endtabs %} ## Response

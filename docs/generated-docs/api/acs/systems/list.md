@@ -17,7 +17,12 @@ response includes all access control systems connected to your workspace.
 {% swagger src="https://connect.getseam.com/openapi.json" path="/acs/systems/list"
 method="POST" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
-{% endswagger %} ## Request Not enough data ### Request Body Parameters
+{% endswagger %} 
+
+## Request 
+Not enough data 
+
+### Request Body Parameters
 
 <table>
   <thead>
@@ -39,13 +44,17 @@ method="POST" %}
 <!-- prettier-ignore -->
 {% tabs %}
     <!-- prettier-ignore -->
-    {% tab title="javascript" %} ```javascript
+    {% tab title="javascript" %} 
+    ```javascript
     await seam.acs.systems.list({&quot;connected_account_id&quot;:&quot;8d7e0b3a-b889-49a7-9164-4b71a0506a33&quot;})
-    ``` {% endtab %}
+    ``` 
+    {% endtab %}
     <!-- prettier-ignore -->
-    {% tab title="python" %} ```python
+    {% tab title="python" %} 
+    ```python
     seam.acs.systems.list(connected_account_id&#x3D;&quot;8d7e0b3a-b889-49a7-9164-4b71a0506a33&quot;)
-    ``` {% endtab %}
+    ``` 
+    {% endtab %}
 {% endtabs %} ## Response
 
 OK
