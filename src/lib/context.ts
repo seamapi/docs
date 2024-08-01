@@ -17,6 +17,10 @@ interface TemplateContext {
   }
   response?: {
     description?: string
+    properties?: Array<{
+      name: string
+      description: string
+    }>
   }
   codeSamples?: Array<{
     title: string
@@ -48,7 +52,50 @@ export function setFileContext(file: Partial<TemplateContext>): void {
     }
 
     file.response = {
-      description: file.endpoint.response?.description ?? '',
+      description:
+        file.endpoint.response?.description ??
+        'Returns an `acs_systems` array, in which each returned `acs_system` contains the following properties:',
+      properties: [
+        {
+          name: 'acs_system_id',
+          description: 'ID of the access control system',
+        },
+        { name: 'name', description: 'Name of the access control system' },
+        {
+          name: 'workspace_id',
+          description:
+            'ID of the workspace that contains the access control system',
+        },
+        {
+          name: 'created_at',
+          description:
+            'Date and time at which the access control system was created',
+        },
+        {
+          name: 'external_type',
+          description:
+            'Brand-specific terminology for the access control system type',
+        },
+        {
+          name: 'external_type_display_name',
+          description:
+            'Display name that corresponds to the brand-specific terminology for the access control system type',
+        },
+        {
+          name: 'connected_account_ids',
+          description:
+            'Array of connected account IDs associated with the access control system',
+        },
+        {
+          name: 'image_url',
+          description:
+            'URL for the image that represents the access control system',
+        },
+        {
+          name: 'image_alt_text',
+          description: 'Alternative text for the access control system image',
+        },
+      ],
     }
 
     file.codeSamples =

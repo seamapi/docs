@@ -14,10 +14,7 @@ To filter the list of returned access control systems by a specific connected ac
 `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the 
 response includes all access control systems connected to your workspace.
 
-## Request 
-Not enough data 
-
-### Request Body Parameters
+### Request and Response
 
 <table>
   <thead>
@@ -36,62 +33,88 @@ Not enough data
   </tbody>
 </table>
 
-### Sample Request
-
-{% tabs %}
-    {% tab title="JavaScript" %}
-    ```javascript
-    await seam.acs.systems.list({&quot;connected_account_id&quot;:&quot;8d7e0b3a-b889-49a7-9164-4b71a0506a33&quot;})
-    ```
-    {% endtab %}
-    {% tab title="Python" %}
-    ```python
-    seam.acs.systems.list(connected_account_id&#x3D;&quot;8d7e0b3a-b889-49a7-9164-4b71a0506a33&quot;)
-    ```
-    {% endtab %}
-    {% tab title="PHP" %}
-    ```php
-    $seam-&gt;acs-&gt;systems-&gt;list(connected_account_id:&quot;8d7e0b3a-b889-49a7-9164-4b71a0506a33&quot;)
-    ```
-    {% endtab %}
-{% endtabs %} 
-
-## Response
-
-OK
-
-### Response Properties
 
 <table>
   <thead>
     <tr>
-      <th width='310'>Property</th>
+      <th width="310">Property</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
       <tr>
-        <td colspan='2'>No properties available.</td>
+        <td><code>acs_system_id</code></td>
+        <td>ID of the access control system</td>
+      </tr>
+      <tr>
+        <td><code>name</code></td>
+        <td>Name of the access control system</td>
+      </tr>
+      <tr>
+        <td><code>workspace_id</code></td>
+        <td>ID of the workspace that contains the access control system</td>
+      </tr>
+      <tr>
+        <td><code>created_at</code></td>
+        <td>Date and time at which the access control system was created</td>
+      </tr>
+      <tr>
+        <td><code>external_type</code></td>
+        <td>Brand-specific terminology for the access control system type</td>
+      </tr>
+      <tr>
+        <td><code>external_type_display_name</code></td>
+        <td>Display name that corresponds to the brand-specific terminology for the access control system type</td>
+      </tr>
+      <tr>
+        <td><code>connected_account_ids</code></td>
+        <td>Array of connected account IDs associated with the access control system</td>
+      </tr>
+      <tr>
+        <td><code>image_url</code></td>
+        <td>URL for the image that represents the access control system</td>
+      </tr>
+      <tr>
+        <td><code>image_alt_text</code></td>
+        <td>Alternative text for the access control system image</td>
       </tr>
   </tbody>
 </table>
 
-### Sample Response
+## Samples
 
 {% tabs %}
-    {% tab title="JavaScript" %} 
-    ```javascript
-    void
-    ```
+    {% tab title="JavaScript" %}
+  ### Request
+  ```javascript
+  await seam.acs.systems.list({&quot;connected_account_id&quot;:&quot;8d7e0b3a-b889-49a7-9164-4b71a0506a33&quot;})
+  ```
+
+  ### Response
+  ```javascript
+  void
+  ```
     {% endtab %}
-    {% tab title="Python" %} 
-    ```python
-    None
-    ```
+    {% tab title="Python" %}
+  ### Request
+  ```python
+  seam.acs.systems.list(connected_account_id&#x3D;&quot;8d7e0b3a-b889-49a7-9164-4b71a0506a33&quot;)
+  ```
+
+  ### Response
+  ```python
+  None
+  ```
     {% endtab %}
-    {% tab title="PHP" %} 
-    ```php
-    void
-    ```
+    {% tab title="PHP" %}
+  ### Request
+  ```php
+  $seam-&gt;acs-&gt;systems-&gt;list(connected_account_id:&quot;8d7e0b3a-b889-49a7-9164-4b71a0506a33&quot;)
+  ```
+
+  ### Response
+  ```php
+  void
+  ```
     {% endtab %}
 {% endtabs %}

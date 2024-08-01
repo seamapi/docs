@@ -6,10 +6,7 @@ description: "{{{description}}}"
 
 {{{description}}}
 
-## Request 
-Not enough data 
-
-### Request Body Parameters
+### Request and Response
 
 <table>
   <thead>
@@ -36,36 +33,11 @@ Not enough data
   </tbody>
 </table>
 
-### Sample Request
-
-{% tabs %}
-{{#each codeSamples}}
-  {{#each this.code}}
-    {% tab title="{{this.title}}" %}
-    ```{{@key}}
-    {{this.request}}
-    ```
-    {% endtab %}
-  {{/each}}
-{{else}}
-  {% tab title="No samples available" %} 
-    ```
-    No sample requests available.
-    ```
-  {% endtab %}
-{{/each}}
-{% endtabs %} 
-
-## Response
-
-{{{response.description}}}
-
-### Response Properties
 
 <table>
   <thead>
     <tr>
-      <th width='310'>Property</th>
+      <th width="310">Property</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -77,27 +49,33 @@ Not enough data
       </tr>
     {{else}}
       <tr>
-        <td colspan='2'>No properties available.</td>
+        <td colspan="2">No properties available.</td>
       </tr>
     {{/each}}
   </tbody>
 </table>
 
-### Sample Response
+## Samples
 
 {% tabs %}
 {{#each codeSamples}}
   {{#each this.code}}
-    {% tab title="{{this.title}}" %} 
-    ```{{@key}}
-    {{this.response}}
-    ```
+    {% tab title="{{this.title}}" %}
+  ### Request
+  ```{{@key}}
+  {{this.request}}
+  ```
+
+  ### Response
+  ```{{@key}}
+  {{this.response}}
+  ```
     {% endtab %}
   {{/each}}
 {{else}}
   {% tab title="No samples available" %} 
-  ``` 
-  No sample responses available. 
+  ```
+  No sample requests available.
   ```
   {% endtab %}
 {{/each}}
