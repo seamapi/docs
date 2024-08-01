@@ -45,3 +45,15 @@ export const reference = (
     }
   }
 }
+
+export const postprocess = (
+  files: Metalsmith.Files,
+  _metalsmith: Metalsmith,
+): void => {
+  for (const file of Object.values(files)) {
+    const contents = file.contents.toString('utf-8')
+    file.contents = Buffer.from(
+      contents.replaceAll('https://docs.seam.co/latest/', '/'),
+    )
+  }
+}
