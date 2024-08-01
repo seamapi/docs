@@ -103,6 +103,10 @@ response includes all access control systems connected to your workspace.
         <td></td>
       </tr>
       <tr>
+        <td><code>visionline_metadata</code></td>
+        <td></td>
+      </tr>
+      <tr>
         <td><code>warnings</code></td>
         <td></td>
       </tr>
@@ -124,7 +128,7 @@ response includes all access control systems connected to your workspace.
 
   ### Response
   ```javascript
-  void
+  [{"acs_system_id":"8d7e0b3a-b889-49a7-9164-4b71a0506a33"}]
   ```
     {% endtab %}
     {% tab title="Python" %}
@@ -135,7 +139,7 @@ response includes all access control systems connected to your workspace.
 
   ### Response
   ```python
-  None
+  AcsSystems(0={"acs_system_id":"8d7e0b3a-b889-49a7-9164-4b71a0506a33"})
   ```
     {% endtab %}
     {% tab title="PHP" %}
@@ -146,7 +150,7 @@ response includes all access control systems connected to your workspace.
 
   ### Response
   ```php
-  void
+  [{"acs_system_id":"8d7e0b3a-b889-49a7-9164-4b71a0506a33"}]
   ```
     {% endtab %}
 {% endtabs %}
