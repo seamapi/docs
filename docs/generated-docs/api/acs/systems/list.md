@@ -88,3 +88,10 @@ OK
     None
     ``` {% endtab %}
 {% endtabs %}
+
+# Test
+{% tab title="JavaScript" %}
+```javascript
+await seam.acs.systems.list();
+```
+{% endtab %}
