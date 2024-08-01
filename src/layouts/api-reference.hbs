@@ -46,7 +46,7 @@ Not enough data
 {% tabs %}
 {{#each codeSamples}}
   {{#each this.code}}
-    {% tab title="{{@key}}" %}
+    {% tab title="{{this.title}}" %}
     ```{{@key}}
     {{this.request}}
     ```
