@@ -50,10 +50,13 @@ export const postprocess = (
   files: Metalsmith.Files,
   _metalsmith: Metalsmith,
 ): void => {
-  for (const file of Object.values(files)) {
+  for (const [name, file] of Object.entries(files)) {
     const contents = file.contents.toString('utf-8')
     file.contents = Buffer.from(
-      contents.replaceAll('https://docs.seam.co/latest/', '/'),
+      contents.replaceAll(
+        'https://docs.seam.co/latest/',
+        new Array(name.split('/').length).fill('').join('../'),
+      ),
     )
   }
 }

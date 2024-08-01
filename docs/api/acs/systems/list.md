@@ -1,5 +1,5 @@
 ---
-description: "Returns a list of all [access control systems](/capability-guides/access-systems).
+description: "Returns a list of all [access control systems](../../../capability-guides/access-systems).
 
 To filter the list of returned access control systems by a specific connected account ID, include the 
 `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the 
@@ -8,7 +8,7 @@ response includes all access control systems connected to your workspace."
 
 # List ACS Systems
 
-Returns a list of all [access control systems](/capability-guides/access-systems).
+Returns a list of all [access control systems](../../../capability-guides/access-systems).
 
 To filter the list of returned access control systems by a specific connected account ID, include the 
 `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the 
@@ -48,23 +48,23 @@ response includes all access control systems connected to your workspace.
       </tr>
       <tr>
         <td><code>can_add_acs_users_to_acs_access_groups</code></td>
-        <td>Indicates whether the `acs_system` supports [adding users to access groups](/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).</td>
+        <td>Indicates whether the `acs_system` supports [adding users to access groups](../../../capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](../../../capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).</td>
       </tr>
       <tr>
         <td><code>can_automate_enrollment</code></td>
-        <td>Indicates whether it is possible to [launch enrollment automations](/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`.</td>
+        <td>Indicates whether it is possible to [launch enrollment automations](../../../capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`.</td>
       </tr>
       <tr>
         <td><code>can_create_acs_access_groups</code></td>
-        <td>Indicates whether the `acs_system` supports creating [access groups](/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).</td>
+        <td>Indicates whether the `acs_system` supports creating [access groups](../../../capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](../../../capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).</td>
       </tr>
       <tr>
         <td><code>can_remove_acs_users_from_acs_access_groups</code></td>
-        <td>Indicates whether the `acs_system` supports [removing users from access groups](/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).</td>
+        <td>Indicates whether the `acs_system` supports [removing users from access groups](../../../capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](../../../capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).</td>
       </tr>
       <tr>
         <td><code>connected_account_ids</code></td>
-        <td>IDs of the [connected accounts](/core-concepts/connected-accounts) associated with the `acs_system`.</td>
+        <td>IDs of the [connected accounts](../../../core-concepts/connected-accounts) associated with the `acs_system`.</td>
       </tr>
       <tr>
         <td><code>created_at</code></td>
@@ -112,7 +112,7 @@ response includes all access control systems connected to your workspace.
       </tr>
       <tr>
         <td><code>workspace_id</code></td>
-        <td>ID of the [workspace](/core-concepts/workspaces) that contains the `acs_system`.</td>
+        <td>ID of the [workspace](../../../core-concepts/workspaces) that contains the `acs_system`.</td>
       </tr>
   </tbody>
 </table>
