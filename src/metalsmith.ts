@@ -27,6 +27,9 @@ Metalsmith(rootDir)
   .use(
     layouts({
       default: 'default.hbs',
+      engineOptions: {
+        noEscape: true,
+      },
     }),
   )
   .build((err) => {
