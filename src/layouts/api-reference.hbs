@@ -93,12 +93,17 @@ Not enough data
 {% tabs %}
 {{#each codeSamples}}
   {{#each this.code}}
-    {% tab title="{{@key}}" %} ```{{@key}}
+    {% tab title="{{this.title}}" %} 
+    ```{{@key}}
     {{this.response}}
-    ``` {% endtab %}
+    ```
+    {% endtab %}
   {{/each}}
 {{else}}
-  {% tab title="No samples available" %} ``` No sample responses available. ```
+  {% tab title="No samples available" %} 
+  ``` 
+  No sample responses available. 
+  ```
   {% endtab %}
 {{/each}}
 {% endtabs %}

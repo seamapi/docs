@@ -84,13 +84,19 @@ OK
 ### Sample Response
 
 {% tabs %}
-    {% tab title="javascript" %} ```javascript
+    {% tab title="JavaScript" %} 
+    ```javascript
     void
-    ``` {% endtab %}
-    {% tab title="python" %} ```python
+    ```
+    {% endtab %}
+    {% tab title="Python" %} 
+    ```python
     None
-    ``` {% endtab %}
-    {% tab title="php" %} ```php
+    ```
+    {% endtab %}
+    {% tab title="PHP" %} 
+    ```php
     void
-    ``` {% endtab %}
+    ```
+    {% endtab %}
 {% endtabs %}
