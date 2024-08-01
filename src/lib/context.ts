@@ -35,7 +35,10 @@ interface TemplateContext {
   }>
 }
 
-export function setFileContext(file: Partial<TemplateContext>): void {
+export function setFileContext(
+  file: Partial<TemplateContext>,
+  blueprint: any,
+): void {
   if (file.endpoint != null) {
     file.description = file.endpoint.description ?? ''
     file.title = file.endpoint.title ?? ''
@@ -51,51 +54,17 @@ export function setFileContext(file: Partial<TemplateContext>): void {
         })) ?? [],
     }
 
+    const defaultResponseProperties =
+      blueprint.resources?.acs_system?.properties.map((property: any) => ({
+        name: property.name,
+        description: property.description,
+      })) ?? []
+
     file.response = {
       description:
         file.endpoint.response?.description ??
         'Returns an `acs_systems` array, in which each returned `acs_system` contains the following properties:',
-      properties: [
-        {
-          name: 'acs_system_id',
-          description: 'ID of the access control system',
-        },
-        { name: 'name', description: 'Name of the access control system' },
-        {
-          name: 'workspace_id',
-          description:
-            'ID of the workspace that contains the access control system',
-        },
-        {
-          name: 'created_at',
-          description:
-            'Date and time at which the access control system was created',
-        },
-        {
-          name: 'external_type',
-          description:
-            'Brand-specific terminology for the access control system type',
-        },
-        {
-          name: 'external_type_display_name',
-          description:
-            'Display name that corresponds to the brand-specific terminology for the access control system type',
-        },
-        {
-          name: 'connected_account_ids',
-          description:
-            'Array of connected account IDs associated with the access control system',
-        },
-        {
-          name: 'image_url',
-          description:
-            'URL for the image that represents the access control system',
-        },
-        {
-          name: 'image_alt_text',
-          description: 'Alternative text for the access control system image',
-        },
-      ],
+      properties: defaultResponseProperties,
     }
 
     file.codeSamples =

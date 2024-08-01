@@ -20,7 +20,7 @@ export const reference = (
       const file = files[k] as Partial<TemplateContext>
       file.layout = 'api-reference.hbs'
       file.endpoint = endpoint
-      setFileContext(file)
+      setFileContext(file, metadata)
 
       for (const sdk of sdks) {
         const k = `sdk/${sdk}${endpoint.path}.md`
@@ -30,7 +30,7 @@ export const reference = (
         const file = files[k] as Partial<TemplateContext>
         file.layout = 'sdk-reference.hbs'
         file.endpoint = endpoint
-        setFileContext(file)
+        setFileContext(file, metadata)
       }
     }
   }
@@ -40,4 +40,33 @@ interface TemplateContext {
   layout: string
   endpoint: Endpoint
   endpointJson?: string
+  description?: string
+  title?: string
+  path?: string
+  request?: {
+    preferredMethod?: string
+    parameters?: Array<{
+      name: string
+      required?: boolean
+      description?: string
+    }>
+  }
+  response?: {
+    description: string
+    properties: Array<{
+      name: string
+      description: string
+    }>
+  }
+  codeSamples?: Array<{
+    title: string
+    description: string
+    code: Record<
+      string,
+      {
+        request: string
+        response: string
+      }
+    >
+  }>
 }
