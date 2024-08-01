@@ -14,11 +14,6 @@ To filter the list of returned access control systems by a specific connected ac
 `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the 
 response includes all access control systems connected to your workspace.
 
-{% swagger src="https://connect.getseam.com/openapi.json" path="/acs/systems/list"
-method="POST" %}
-[https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
-{% endswagger %} 
-
 ## Request 
 Not enough data 
 
