@@ -26,7 +26,7 @@ We support the following features:
 * [Programming access codes](../products/smart-locks/access-codes/)
 
 {% hint style="info" %}
-The Seam platform cannot determine the PIN codes for access codes that were created outside of the Seam platform.
+Seam does not support [unmanaged access codes](../products/smart-locks/access-codes/migrating-existing-access-codes.md) for Kwikset.
 {% endhint %}
 
 ***

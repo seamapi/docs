@@ -8,7 +8,7 @@ description: >-
 
 ## 1. Delete the access code using the API
 
-To delete an access code, specify the desired `access_code_id`  in the [Delete Access Code](../../../api-clients/access-codes/delete-an-access-code.md) request.
+To delete an access code, specify the desired `access_code_id` in the [Delete Access Code](../../../api-clients/access-codes/delete-an-access-code.md) request.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -23,11 +23,7 @@ seam.access_codes.delete(
 **Response:**
 
 ```
-ActionAttempt(action_attempt_id='11111111-2222-3333-4444-555555555555',
-              action_type='DELETE_ACCESS_CODE',
-              status='success',
-              result={},
-              error=None)
+None
 ```
 
 {% hint style="info" %}
@@ -72,13 +68,6 @@ curl -X 'POST' \
 
 ```json
 {
-  "action_attempt": {
-    "status": "pending",
-    "action_type": "DELETE_ACCESS_CODE",
-    "action_attempt_id": "bf2a1322-a147-454b-b0eb-90ee6f2a3911",
-    "result": null,
-    "error": null
-  },
   "ok": true
 }
 ```
@@ -129,16 +118,8 @@ await seam.accessCodes.delete({
 
 **Response:**
 
-```json
-{
-  actionAttempt: {
-    status: 'success',
-    action_attempt_id: 'b1393e75-f405-4895-91d8-2d0a1ed010f0',
-    action_type: 'DELETE_ACCESS_CODE',
-    result: {},
-    error: null
-  }
-}
+```
+void
 ```
 
 {% hint style="info" %}
@@ -186,11 +167,7 @@ client.access_codes.delete(
 **Response:**
 
 ```
-<Seam::ActionAttempt:0x00438
-  status="success"
-  action_type="DELETE_ACCESS_CODE"
-  action_attempt_id="32ab3a7b-4588-491f-bceb-d099de7b1496"
-  result={}>
+void
 ```
 
 {% hint style="info" %}
@@ -219,12 +196,27 @@ Could not find an access_code with device_id or access_code_id
 {% endtab %}
 
 {% tab title="PHP" %}
+**Request:**
+
 ```php
 $seam->access_codes->delete(
   access_code_id: "11111111-1111-1111-1111-555555555555"
 );
+```
 
-// confirm you're getting a 404
+**Response:**
+
+```
+void
+```
+
+{% hint style="info" %}
+Once the access code has been deleted, a request to get the access code returns a 404 error.
+{% endhint %}
+
+**Request:**
+
+```php
 try {
     $deleted_access_code = $seam->access_codes->get(
         access_code_id: "11111111-1111-1111-1111-555555555555"
@@ -233,7 +225,12 @@ try {
 } catch (Exception $e) {
     echo $e->getMessage();
 }
-// Error Calling "GET access_codes/get" : access_code_not_found: Could not find an access_code with device_id or access_code_id
+```
+
+**Response:**
+
+```
+Error Calling "GET access_codes/get" : access_code_not_found: Could not find an access_code with device_id or access_code_id
 ```
 {% endtab %}
 
@@ -249,11 +246,7 @@ seam.AccessCodes.Delete(
 **Response:**
 
 ```
-Status: pending
-ActionType: DELETE_ACCESS_CODE
-ActionAttemptId: 8e79a65c-97f2-4792-88cb-c11702166e36
-Result: 
-Error: 
+void
 ```
 
 {% hint style="info" %}
@@ -294,11 +287,8 @@ seam.accessCodes()
 
 **Response:**
 
-```json
-Optional[{
-  "action_type" : "DELETE_ACCESS_CODE",
-  "action_attempt_id" : "51a65bfd-9421-44b7-8b9c-1ce16852fff7"
-}]
+```
+void
 ```
 
 {% hint style="info" %}
