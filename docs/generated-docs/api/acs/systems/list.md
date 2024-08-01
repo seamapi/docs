@@ -52,6 +52,11 @@ Not enough data
     seam.acs.systems.list(connected_account_id&#x3D;&quot;8d7e0b3a-b889-49a7-9164-4b71a0506a33&quot;)
     ```
     {% endtab %}
+    {% tab title="php" %}
+    ```php
+    $seam-&gt;acs-&gt;systems-&gt;list(connected_account_id:&quot;8d7e0b3a-b889-49a7-9164-4b71a0506a33&quot;)
+    ```
+    {% endtab %}
 {% endtabs %} 
 
 ## Response
@@ -82,5 +87,8 @@ OK
     ``` {% endtab %}
     {% tab title="python" %} ```python
     None
+    ``` {% endtab %}
+    {% tab title="php" %} ```php
+    void
     ``` {% endtab %}
 {% endtabs %}
