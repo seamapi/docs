@@ -41,21 +41,20 @@ Not enough data
 
 ### Sample Request
 
-<!-- prettier-ignore -->
 {% tabs %}
-    <!-- prettier-ignore -->
-    {% tab title="javascript" %} 
+    {% tab title="javascript" %}
     ```javascript
     await seam.acs.systems.list({&quot;connected_account_id&quot;:&quot;8d7e0b3a-b889-49a7-9164-4b71a0506a33&quot;})
-    ``` 
+    ```
     {% endtab %}
-    <!-- prettier-ignore -->
-    {% tab title="python" %} 
+    {% tab title="python" %}
     ```python
     seam.acs.systems.list(connected_account_id&#x3D;&quot;8d7e0b3a-b889-49a7-9164-4b71a0506a33&quot;)
-    ``` 
+    ```
     {% endtab %}
-{% endtabs %} ## Response
+{% endtabs %} 
+
+## Response
 
 OK
 
@@ -77,21 +76,11 @@ OK
 
 ### Sample Response
 
-<!-- prettier-ignore -->
 {% tabs %}
-    <!-- prettier-ignore -->
     {% tab title="javascript" %} ```javascript
     void
     ``` {% endtab %}
-    <!-- prettier-ignore -->
     {% tab title="python" %} ```python
     None
     ``` {% endtab %}
 {% endtabs %}
-
-# Test
-{% tab title="JavaScript" %}
-```javascript
-await seam.acs.systems.list();
-```
-{% endtab %}

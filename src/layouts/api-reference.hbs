@@ -43,26 +43,25 @@ Not enough data
 
 ### Sample Request
 
-<!-- prettier-ignore -->
 {% tabs %}
 {{#each codeSamples}}
   {{#each this.code}}
-    <!-- prettier-ignore -->
-    {% tab title="{{@key}}" %} 
+    {% tab title="{{@key}}" %}
     ```{{@key}}
     {{this.request}}
-    ``` 
+    ```
     {% endtab %}
   {{/each}}
 {{else}}
-  <!-- prettier-ignore -->
   {% tab title="No samples available" %} 
-    ``` 
-    No sample requests available. 
+    ```
+    No sample requests available.
     ```
   {% endtab %}
 {{/each}}
-{% endtabs %} ## Response
+{% endtabs %} 
+
+## Response
 
 {{{response.description}}}
 
@@ -91,25 +90,15 @@ Not enough data
 
 ### Sample Response
 
-<!-- prettier-ignore -->
 {% tabs %}
 {{#each codeSamples}}
   {{#each this.code}}
-    <!-- prettier-ignore -->
     {% tab title="{{@key}}" %} ```{{@key}}
     {{this.response}}
     ``` {% endtab %}
   {{/each}}
 {{else}}
-  <!-- prettier-ignore -->
   {% tab title="No samples available" %} ``` No sample responses available. ```
   {% endtab %}
 {{/each}}
 {% endtabs %}
-
-# Test
-{% tab title="JavaScript" %}
-```javascript
-await seam.acs.systems.list();
-```
-{% endtab %}
