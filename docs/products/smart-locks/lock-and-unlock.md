@@ -20,8 +20,8 @@ For those who prefer using webhooks to verify the success of an action, we'll so
 
 Before you attempt to lock or unlock a device, be sure to confirm that your device has the capability to perform these operations. You can inspect the capabilities of a device by checking the following [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags) for the device:
 
-* `can_remotely_lock`
-* `can_remotely_unlock`
+* `device.can_remotely_lock`
+* `device.can_remotely_unlock`
 
 Use [Get Device](../../api-clients/devices/get-device.md) (or [Get Lock](../../api-clients/locks/get-lock.md)) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to lock or unlock the device.
 
