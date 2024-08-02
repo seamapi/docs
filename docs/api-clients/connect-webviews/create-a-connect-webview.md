@@ -10,70 +10,21 @@ To enable a user to connect their devices or systems to Seam, they must sign in 
 
 ![This example shows how a Connect Webview looks when you display it to your user.](<../../.gitbook/assets/image (12).png>)
 
-## Create a `connect_webview`
-
 <mark style="color:green;">`POST`</mark> `https://connect.getseam.com/connect_webviews/create`
 
-#### Request Body
+## Request
 
-| Name                                                   | Type                               | Description                                                                                                                     |
-| ------------------------------------------------------ | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `accepted_providers`<mark style="color:red;">\*</mark> | String\[]                          | <p>Array of accepted</p><p>device provider keys. See</p><p><a href="./#device-provider-keys">Device Provider Keys</a>.</p>      |
-| `custom_redirect_url`                                  | String                             | URL to redirect user to after provider login is complete.                                                                       |
-| `custom_redirect_failure_url`                          | <p>String<br><em>Optional</em></p> | <p>Alternative URL to redirect the user on error. If this is not set, falls back to</p><p><code>custom_redirect_url</code>.</p> |
+### Request Parameters
 
-{% tabs %}
-{% tab title="201: Created connect_webview successfully created" %}
-```javascript
-{
-    "connect_webview": {
-    	"connect_webview_id": "123e4567-e89b-12d3-a456-426614174000",
-    "custom_metadata": {},
-	"custom_redirect_url": null,
-	"custom_redirect_failure_url": null,
-	"url": "https://connect.getseam.com/v1/connect_webviews/view?connect_webview_id=02454094-1cab-4693-babc-afa9e1c55f09&auth_token=P7XLD4hYXva24WqwSKTC4pKQMP7v3zWUz",
-	"workspace_id": "84dda4b8-f327-4d97-a720-e0504a13a441",
-	"device_selection_mode": "none",
-	"accepted_providers": [
-		"smartthings"
-	],
-	"accepted_devices": [],
-	"any_provider_allowed": false,
-	"any_device_allowed": null,
-	"created_at": "2022-02-07T18:33:50.271Z",
-	"login_successful": false,
-	"status": "pending"
-    }
-}
-```
-{% endtab %}
+| Parameter                          | Type                               | Description                                                                                                                                                                                                                                                                                                 |
+| ---------------------------------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `provider_category`                | String                             | <p>Specifies the category of providers to include.<br>Supported categories:</p><ul><li><code>stable</code></li><li><code>consumer_smartlocks</code></li><li><code>thermostats</code></li><li><code>noise_sensors</code></li></ul><p>See <a href="./#provider-category-keys">Provider Category Keys</a>.</p> |
+| `accepted_providers`               | String\[]                          | Array of accepted device provider keys as an alternative to `provider_category`. Use this parameter to specify accepted providers explicitly. See [Device Provider Keys](./#device-provider-keys).                                                                                                          |
+| `custom_redirect_url`              | <p>String<br><em>Optional</em></p> | URL to redirect user to after provider login is complete                                                                                                                                                                                                                                                    |
+| `custom_redirect_failure_url`      | <p>String</p><p>Optional</p>       | Alternative URL to redirect the user on error. If this is not set, falls back to `custom_redirect_url`                                                                                                                                                                                                      |
+| `automatically_manage_new_devices` | Boolean                            | <p>Indicates whether newly added devices should appear as managed devices<br>Default: <code>true</code></p>                                                                                                                                                                                                 |
 
-{% tab title="400: Bad Request " %}
-```javascript
-{
-  "error": {
-    "type": "invalid_input",
-    "message": "Invalid enum value. Expected 'akuvox' | 'august' |  'schlage' | 'smartthings' | 'yale' | 'noiseaware' | 'salto' | 'doorking' | 'salto' | 'genie' | 'linear' | 'seam_relay_admin' for provided \"accepted_providers.0\"",
-    "validation_errors": {
-      "_errors": [],
-      "accepted_providers": {
-        "0": {
-          "_errors": [
-            "Invalid enum value. Expected 'akuvox' | 'august' |  'schlage' | 'smartthings' | 'yale' | 'noiseaware' | 'salto' | 'doorking' | 'salto' | 'genie' | 'linear' | 'seam_relay_admin'"
-          ]
-        },
-        "_errors": []
-      }
-    },
-    "request_id": "23bc6c4b-286f-4485-9531-a8f3300370cd"
-  },
-  "ok": false
-}
-```
-{% endtab %}
-{% endtabs %}
-
-### Code Example
+### Sample Request
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -258,21 +209,11 @@ You should make a new`connect_webview`for each unique login request.
 Each `connect_webview` tracks the user that signed in with it. You receive an error if you reuse a Connect Webview for the same user twice or if you use the same Connect Webview for multiple users.
 {% endhint %}
 
-### Parameters
-
-| `provider_category`                | type: string                       | <p>Specifies the category of providers to include.<br>Supported categories:</p><ul><li><code>stable</code></li><li><code>consumer_smartlocks</code></li><li><code>thermostats</code></li><li><code>noise_sensors</code></li></ul><p>See <a href="./#accepted-provider-category-keys">Accepted Provider Category Keys</a>.</p> |
-| ---------------------------------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `accepted_providers`               | type: string\[]                    | Array of accepted **device provider keys** and an alternative to `provider_category`. This lets you explicitly specified accepted providers (e.g. "august"). See [Device Provider Keys](./#device-provider-keys).                                                                                                             |
-| `custom_redirect_url`              | <p>type: string<br>Optional</p>    | URL to redirect user to after provider login is complete                                                                                                                                                                                                                                                                      |
-| `custom_redirect_failure_url`      | <p>type: string</p><p>Optional</p> | Alternative URL to redirect the user on error. If this is not set, falls back to `custom_redirect_url`                                                                                                                                                                                                                        |
-| `device_selection_mode`            | type: 'none'                       | 'multiple'                                                                                                                                                                                                                                                                                                                    |
-| `automatically_manage_new_devices` | type: 'boolean'                    | <p>Indicates whether newly added devices should appear as managed devices<br>Default: <code>true</code></p>                                                                                                                                                                                                                   |
-
-### Response
+## Response
 
 This section shows the JSON response returned by the API. Since each language encapsulates this response inside objects specific to that language and/or implementation, the actual type in your language might differ from what’s written here.
 
-#### JSON format
+### Sample Response
 
 {% tabs %}
 {% tab title="JSON" %}

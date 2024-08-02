@@ -34,14 +34,16 @@ To enable a user to connect their device account to Seam through your app, you m
 | **`authorized_at`**                    | String                                     | Date and time at which the user authorized (through the Connect Webview) the management of their devices                                                                                                                                                                                                                      |
 | **`workspace_id`**                     | String (UUID)                              | ID of the [workspace](../../core-concepts/workspaces/) that contains the Connect Webview                                                                                                                                                                                                                                      |
 
-### Accepted Provider Category Keys
+### Provider Category Keys
+
+When you [create a Connect Webview](create-a-connect-webview.md), specify the desired provider category key in the `provider_category` parameter. Alternately, to specify a list of providers explicitly, use the `accepted_providers` parameter with a list of [device provider keys](./#device-provider-keys).
 
 | key                   | Description                                                        |
 | --------------------- | ------------------------------------------------------------------ |
 | `stable`              | Only returns provider integrations marked as stable.               |
 | `consumer_smartlocks` | Only returns provider integrations marked as consumer smart locks. |
 | `thermostats`         | Only returns provider integrations marked as thermostats.          |
-| `noise_sensors`       | Only returns provider instegrations marked as noise sensors.       |
+| `noise_sensors`       | Only returns provider integrations marked as noise sensors.        |
 
 {% hint style="info" %}
 To list all providers within a category, use the [List Device Providers](../devices/list-device-providers.md) method with the desired `provider_category` filter.
