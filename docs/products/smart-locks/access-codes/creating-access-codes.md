@@ -36,8 +36,8 @@ For more information about creating offline access codes, see [Managing Offline 
 
 Before you attempt to create an [online](./#what-is-an-access-code) or [offline](./#offline-access-codes) access code, be sure to confirm that your device has the capability to perform these operations. You can inspect the capabilities of a device by checking the following [capability flags](../../../capability-guides/device-and-system-capabilities.md#capability-flags) for the device:
 
-* `can_program_online_access_codes`
-* `can_program_offline_access_codes`
+* `device.can_program_online_access_codes`
+* `device.can_program_offline_access_codes`
 
 Use [Get Device](../../../api-clients/devices/get-device.md) (or [Get Lock](../../../api-clients/locks/get-lock.md)) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to create an access code.
 

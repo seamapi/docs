@@ -24,7 +24,7 @@ To troubleshoot this error:
 
 ### `acs_system.errors.visionline_instance_unreachable`
 
-This error indicates that your Seam Bridge is functioning correctly and the Seam API can communicate with your Seam Bridge, but the Seam API cannot connect to your on-premises [Visionline ACS](../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/). For example, the IP address of the on-premises ACS may be set incorrectly within your Seam workspace.
+This error indicates that your Seam Bridge is functioning correctly and the Seam API can communicate with your Seam Bridge, but the Seam API cannot connect to your on-premises [Visionline ACS](../../device-guides/assa-abloy-visionline-access-control-system-in-development/). For example, the IP address of the on-premises ACS may be set incorrectly within your Seam workspace.
 
 To troubleshoot this error:
 

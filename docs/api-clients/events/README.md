@@ -1,23 +1,27 @@
 # Events
 
-Events are our way of letting you know when something interesting happens in your workspace. When an interesting event occurs, we create a new `Event` object. For example, when a lock is unlocked, we create a `lock.unlocked` event; and when a device's battery level is low, we create a `device.battery_low` event.
+Events let you know when something interesting happens in your workspace. When an interesting event occurs, Seam creates a new `Event` object. For example, when a lock is unlocked, Seam creates a `lock.unlocked` event. When a device's battery level is low, Seam creates a `device.battery_low` event.
 
-As with other API resources, you can use endpoints to retrieve an [individual event](get-an-event.md) or a [list of events](list-events.md) from the API. We also have a separate [webhooks](../../core-concepts/webhooks.md) system for sending the `Event` objects directly to an endpoint on your sever. Webhooks are managed in your workspace settings, and our [Webhooks](../../core-concepts/webhooks.md) guide will help you get set up.
+As with other API resources, you can use endpoints to retrieve an [individual event](get-an-event.md) or a [list of events](list-events.md). Seam also provides a separate [webhook](../../core-concepts/webhooks.md) system for sending the `event` objects directly to an endpoint on your sever. Manage webhooks through the [Seam Console](../../core-concepts/seam-console/). For details, see [Webhooks](../../core-concepts/webhooks.md).
 
-## The Event Object
+***
+
+## `event` Properties
+
+The following sections list the properties for events pertaining to various types of resources:
 
 ### Common Event Properties
 
-| `event_id`             | String                                     | Unique identifier for the `event`.                                           |
-| ---------------------- | ------------------------------------------ | ---------------------------------------------------------------------------- |
-| `event_type`           | As seen in '[Event Types](./#event-types)' | Type of event                                                                |
-| `created_at`           | String                                     | Time at which the `event` was created. Displayed in an ISO8601 string.       |
-| `workspace_id`         | String                                     | Unique identifier for the `workspace` that the `event` belongs to.           |
-| `connected_account_id` | String                                     | The unique identifier of the connected account to which this event pertains. |
+| `event_id`             | String                             | Unique identifier for the `event`.                                           |
+| ---------------------- | ---------------------------------- | ---------------------------------------------------------------------------- |
+| `event_type`           | See [Event Types](./#event-types). | Type of event.                                                               |
+| `created_at`           | String                             | Time at which the `event` was created. Displayed in an ISO8601 string.       |
+| `workspace_id`         | String                             | Unique identifier for the `workspace` to which the `event` belongs.          |
+| `connected_account_id` | String                             | The unique identifier of the connected account to which this event pertains. |
 
 ### Common Device Event Properties
 
-In addition to the common event properties, the following properties are available for all events that pertain to devices - this includes all events outside of the `connected_account.*` events:
+In addition to the common event properties, the following properties are available for all events that pertain to devices:
 
 |             |        |                                                                |
 | ----------- | ------ | -------------------------------------------------------------- |
@@ -25,54 +29,56 @@ In addition to the common event properties, the following properties are availab
 
 ### Access Code Event Properties
 
-In addition to the common event properties, and common device event properties, the following properties are available for events that pertain to access codes:
+In addition to the common event properties and common device event properties, the following properties are available for events that pertain to access codes:
 
 |                  |        |                                                                                                                                         |
 | ---------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------- |
 | `access_code_id` | String | Present on all of the `access_code.*` events. Specifies the unique identifier of the access code to which the event pertains.           |
 | `code`           | String | Only present on `access_code.set_on_device` and `access_code.scheduled_on_device` events. Specifies the code digits for an access code. |
 
-### Lock Events
+### Lock Event Properties
 
-In addition to the common event properties, and common device event properties, the following properties are available for events that pertain to lock actions:
+In addition to the common event properties and common device event properties, the following properties are available for events that pertain to lock actions:
 
 |                  |        |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | ---------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `method`         | Enum   | <p>Present on <code>lock.locked</code> and <code>lock.unlocked</code> events. Specifies the method used to perform the lock or unlock action.</p><p>Supported values:</p><ul><li><code>keycode</code></li></ul><ul><li><code>manual</code></li></ul><ul><li><code>unknown</code></li></ul><ul><li><code>seamapi</code></li></ul><ul><li><code>automatic</code> (for <a href="../../device-guides/kwikset-locks.md">Kwikset</a> <code>lock.locked</code> events only)</li></ul> |
 | `access_code_id` | String | <p>Specifies the unique identifier of the access code used to trigger this event. Seam includes this ID in the event if the affected device returns this information.<br>For a list of device manufacturers that send the <code>access_code_id</code> in lock events, see <a href="../../products/smart-locks/access-codes/#linking-unlock-events-and-access-codes">Linking Unlock Events and Access Codes</a>.</p>                                                            |
 
-### Device Battery Events
+### Device Battery Event Properties
 
-In addition to the common event properties, and common device event properties, the following properties are available on `device.low_battery` and `device.battery_status_changed` events:
+In addition to the common event properties and common device event properties, the following properties are available for `device.low_battery` and `device.battery_status_changed` events:
 
 |                 |              |                                                                                           |
 | --------------- | ------------ | ----------------------------------------------------------------------------------------- |
 | `battery_level` | Number (0-1) | Determines the battery level of the device. Only present on a `device.low_battery` event. |
 
-### Device Battery Status Events
+### Device Battery Status Event Properties
 
-In addition to the device battery event properties, the following properties are available on `device.battery_status_changed` events:
+In addition to the device battery event properties, the following properties are available for `device.battery_status_changed` events:
 
 |                  |                                         |                                                  |
 | ---------------- | --------------------------------------- | ------------------------------------------------ |
 | `battery_status` | `critical` or `low` or `good` or `full` | Specifies the new battery status for the device. |
 
-### Device Disconnected Events
+### Device Disconnected Event Properties
 
-In addition to the common event properties, and common device event properties, the following properties are available on `device.disconnected` events:
+In addition to the common event properties and common device event properties, the following properties are available for `device.disconnected` events:
 
 |              |                                                                       |                                                                                                 |
 | ------------ | --------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | `error_code` | `account_disconnected` or `hub_disconnected` or `device_disconnected` | Only present on a `device.disconnected` event. A code to indicate the reason for disconnection. |
 
-### Noise Sensor Events
+### Noise Sensor Event Properties
 
-Noise sensors emit an event whenever a predefined noise threshold has been exceeded. Seam tracks any noise thresholds that have been set in the user's app or builtin thresholds to the noise sensor, so see what thresholds are available, query `/noise_sensors/noise_thresholds/list`
+Noise sensors emit an event whenever a predefined noise threshold has been exceeded. Seam tracks any noise thresholds that have been set in the user's app or built-in thresholds to the noise sensor. To see what thresholds are available, query `/noise_sensors/noise_thresholds/list`.
 
 |                        |                                           |                                                                                                                  |
 | ---------------------- | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | `noise_threshold_id`   | String                                    | Identifier for the noise threshold, pass to `/noise_sensors/noise_thresholds/get`                                |
 | `noise_threshold_name` | String e.g. `"builtin_first_disturbance"` | Name of the threshold, this can be set via `/noise_sensors/noise_thresholds/create` or by the user in their app. |
+
+***
 
 ## Event Types
 
@@ -123,14 +129,18 @@ Noise sensors emit an event whenever a predefined noise threshold has been excee
 | `lock.access_denied`                                 | An incorrect access code was entered multiple times in a row on a device ([Kwikset](../../device-guides/kwikset-locks.md) only).                                                                                                                                                |
 | `noise_sensor.noise_threshold_triggered`             | The noise detected from a noise sensor exceeded a predefined threshold and/or duration.                                                                                                                                                                                         |
 
+***
+
 ## List of Methods
 
-| [List Events](list-events.md) | List and filter events           |
-| ----------------------------- | -------------------------------- |
-| [Get Event](get-an-event.md)  | Get data for an individual event |
+| [List Events](list-events.md)   | List and filter events           |
+| ------------------------------- | -------------------------------- |
+| [Get an Event](get-an-event.md) | Get data for an individual event |
 
-## Testing out Events
+***
 
-Try using our Webhooks Sandbox in the Seam Dashboard to see the different payloads for each event and test them against your own endpoints!
+## Testing Events
+
+Use the Webhooks sandbox in the Seam Console to see the different payloads for each event and test them against your own endpoints!
 
 <figure><img src="../../.gitbook/assets/Screen Shot 2022-09-01 at 9.38.05 AM.png" alt=""><figcaption></figcaption></figure>

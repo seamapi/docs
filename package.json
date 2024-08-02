@@ -4,9 +4,9 @@
   "version": "1.0.0",
   "description": "Seam docs.",
   "type": "module",
-  "homepage": "https://github.com/seamapi/api-docs",
-  "bugs": "https://github.com/seamapi/api-docs/issues",
-  "repository": "seamapi/api-docs",
+  "homepage": "https://github.com/seamapi/docs",
+  "bugs": "https://github.com/seamapi/docs/issues",
+  "repository": "seamapi/docs",
   "license": "SEE LICENSE IN LICENSE.txt",
   "author": {
     "name": "Seam Labs, Inc.",

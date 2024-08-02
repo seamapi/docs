@@ -22,7 +22,7 @@ layout:
 
 A workspace is conceptually like a project or environment. It encapsulate all other Seam resources, such as devices and connected third-party accounts. You access resources within a workspace using an [API key](../authentication/api-keys.md), a [Personal Access Token](../authentication/personal-access-tokens.md) (PAT), or [client session tokens](../authentication/client-session-tokens/), and you can receive events from a workspace using [webhooks](../webhooks.md).
 
-There is no limit to the number of workspaces that you can create, but most Seam customers only have the following two workspaces:&#x20;
+There is no limit to the number of workspaces that you can create, but most Seam customers only have the following two workspaces:
 
 * One [sandbox workspace](./#sandbox-workspaces) in which they connect virtual devices to test their apps
 * One [production workspace](./#production-workspaces) in which they connect real devices
@@ -33,7 +33,7 @@ There is no limit to the number of workspaces that you can create, but most Seam
 
 ## Production Workspaces
 
-Production workspaces enable you to connect and control real devices from brands, such as August, Schlage, Brivo, Nest, and more.&#x20;
+Production workspaces enable you to connect and control real devices from brands, such as August, Schlage, Brivo, Nest, and more.
 
 ### Create a Production Workspace
 
@@ -73,17 +73,17 @@ If you are creating an application (app) to control your users' devices, use [Co
 
 ### Common Workspace Setup
 
-Most Seam customers use a single production workspace to connect all their devices, regardless of whether these devices are ones that they own or they are controlling thousands of end customers' devices. For example, a property management app with thousands of customers could still use a single production workspace to connect all customers' devices.&#x20;
+Most Seam customers use a single production workspace to connect all their devices, regardless of whether these devices are ones that they own or they are controlling thousands of end customers' devices. For example, a property management app with thousands of customers could still use a single production workspace to connect all customers' devices.
 
 <figure><img src="../../.gitbook/assets/common-workspace-setup (2).png" alt="Most Seam customers use a single production workspace to connect all their devices."><figcaption></figcaption></figure>
 
 ### Per-Customer Workspace Setup (Less Common)
 
-Some Seam customers may be developing multiple apps, each of which needs to interact with devices. In this type of scenario, it may be useful to set up a different production workspace for each application.&#x20;
+Some Seam customers may be developing multiple apps, each of which needs to interact with devices. In this type of scenario, it may be useful to set up a different production workspace for each application.
 
 For example, an information technology (IT) firm that builds custom apps for its customers will most likely want to create a separate workspace for each customer. This model can simplify security, support, and billing.
 
-Occasionally, an app may also be using multiple Seam workspaces. For example, a restaurant chain providing a management dashboard for its franchisees may want to use a different Seam workspace for each franchisee to simplify billing and support. See App 3 in the following diagram:&#x20;
+Occasionally, an app may also be using multiple Seam workspaces. For example, a restaurant chain providing a management dashboard for its franchisees may want to use a different Seam workspace for each franchisee to simplify billing and support. See App 3 in the following diagram:
 
 <figure><img src="../../.gitbook/assets/less-common-workspace-setup.png" alt="Some development scenarios may warrant using multiple production workspaces."><figcaption></figcaption></figure>
 
@@ -105,7 +105,7 @@ You can only connect virtual devices in a sandbox workspace. To connect a real d
 
 ### Create a Sandbox Workspace
 
-1. In the upper-right corner of the [Seam Console](https://console.seam.co/), click the down arrow to display the workspace list.
+1. In the upper-right corner of the [Seam Console](https://console.seam.co/), click the down arrow to display the workspaces list.
 2. Click **+ Add Workspace**.
 3. In the **Add a Workspace** dialog, type a name for your new workspace and your company name.
 4. Enable **Sandbox mode**.

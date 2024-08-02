@@ -190,7 +190,7 @@ You must be the owner of your Seam [workspace](../../core-concepts/workspaces/) 
 2. In a web browser, go to [https://console.seam.co](https://console.seam.co).
 3. [Log in to the Seam Console](../../core-concepts/seam-console/#log-in-to-the-seam-console-using-an-email-address).
 4. In upper-right corner of the Seam Console, click your username and then select **Workspace Settings**.
-5. on the **Workspace Settings** page, next to **Nest Developer Settings**, click **Edit**.
+5. On the **Workspace Settings** page, next to **Nest Developer Settings**, click **Edit**.
 6. In the **Nest Developer Settings** dialog, type or paste your project ID, Client ID, and Client secret.&#x20;
 
 <figure><img src="../../.gitbook/assets/nest-developer-settings.png" alt="Specify your Google Nest developer settings." width="375"><figcaption></figcaption></figure>

@@ -8,26 +8,22 @@ description: >-
 
 ## 1. Delete the access code using the API
 
-To delete an access code, specify the desired `access_code_id`  in the [Delete Access Code](../../../api-clients/access-codes/delete-an-access-code.md) request.
+To delete an access code, specify the desired `access_code_id` in the [Delete Access Code](../../../api-clients/access-codes/delete-an-access-code.md) request.
 
 {% tabs %}
 {% tab title="Python" %}
 **Request:**
 
 ```python
-access_code_id="daf89de3-ad3a-49aa-93bd-25f27d58f699"
-
-pprint(seam.access_codes.delete(access_code_id))
+seam.access_codes.delete(
+  access_code_id="11111111-1111-1111-1111-555555555555"
+)
 ```
 
 **Response:**
 
 ```
-ActionAttempt(action_attempt_id='364e747f-9631-4eb1-bc9e-24cd1f11cf5f',
-              action_type='DELETE_ACCESS_CODE',
-              status='success',
-              result={},
-              error=None)
+None
 ```
 
 {% hint style="info" %}
@@ -37,19 +33,19 @@ Once the access code has been deleted, a request to get the access code returns 
 **Request:**
 
 ```python
-access_code_id="daf89de3-ad3a-49aa-93bd-25f27d58f699"
-
 try:
-    seam.access_codes.get(access_code_id)
+  seam.access_codes.get(
+    access_code_id="11111111-1111-1111-1111-555555555555"
+  )
 except Exception as e:
-    print(e)
+  print(e)
 ```
 
 **Response:**
 
 {% code overflow="wrap" %}
 ```
-SeamAPIException: status=404, request_id=4b1d2f1b-3988-4949-9279-fddef25dc9ae, metadata={'type': 'access_code_not_found', 'message': 'Could not find an access_code with device_id or access_code_id', 'data': {'access_code_id': 'daf89de3-ad3a-49aa-93bd-25f27d58f699'}, 'request_id': '4b1d2f1b-3988-4949-9279-fddef25dc9ae'}
+SeamAPIException: status=404, request_id=4b1d2f1b-3988-4949-9279-fddef25dc9ae, metadata={'type': 'access_code_not_found', 'message': 'Could not find an access_code with device_id or access_code_id', 'data': {'access_code_id': '11111111-1111-1111-1111-555555555555'}, 'request_id': '4b1d2f1b-3988-4949-9279-fddef25dc9ae'}
 ```
 {% endcode %}
 {% endtab %}
@@ -61,10 +57,10 @@ SeamAPIException: status=404, request_id=4b1d2f1b-3988-4949-9279-fddef25dc9ae, m
 curl -X 'POST' \
   'https://connect.getseam.com/access_codes/delete' \
   -H 'accept: application/json' \
-  -H 'Authorization: Bearer ${API_KEY}' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
-  "access_code_id": "d2047ba8-8849-467f-a07a-efab6c3673bc"
+  "access_code_id": "11111111-1111-1111-1111-555555555555"
 }'
 ```
 
@@ -72,13 +68,6 @@ curl -X 'POST' \
 
 ```json
 {
-  "action_attempt": {
-    "status": "pending",
-    "action_type": "DELETE_ACCESS_CODE",
-    "action_attempt_id": "bf2a1322-a147-454b-b0eb-90ee6f2a3911",
-    "result": null,
-    "error": null
-  },
   "ok": true
 }
 ```
@@ -94,10 +83,10 @@ Once the access code has been deleted, a request to get the access code returns 
 curl -X 'GET' \
   'https://connect.getseam.com/access_codes/get' \
   -H 'accept: application/json' \
-  -H 'Authorization: Bearer ${API_KEY}' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
-  "access_code_id": "d2047ba8-8849-467f-a07a-efab6c3673bc"
+  "access_code_id": "11111111-1111-1111-1111-555555555555"
 }'
 ```
 
@@ -109,7 +98,7 @@ curl -X 'GET' \
     "type": "access_code_not_found",
     "message": "Could not find an access_code with device_id or access_code_id",
     "data": {
-      "access_code_id": "d2047ba8-8849-467f-a07a-efab6c3673bc"
+      "access_code_id": "11111111-1111-1111-1111-555555555555"
     },
     "request_id": "e034a368-1936-418e-8219-dbc99b49165e"
   },
@@ -122,23 +111,15 @@ curl -X 'GET' \
 **Request:**
 
 ```javascript
-console.log(await seam.accessCodes.delete({
-  access_code_id: "f4780806-076e-4cec-8081-df0ea2139d5a"
-}))
+await seam.accessCodes.delete({
+  access_code_id: "11111111-1111-1111-1111-555555555555"
+})
 ```
 
 **Response:**
 
-```json
-{
-  actionAttempt: {
-    status: 'success',
-    action_attempt_id: 'b1393e75-f405-4895-91d8-2d0a1ed010f0',
-    action_type: 'DELETE_ACCESS_CODE',
-    result: {},
-    error: null
-  }
-}
+```
+void
 ```
 
 {% hint style="info" %}
@@ -150,7 +131,7 @@ Once the access code has been deleted, a request to get the access code returns 
 ```javascript
 try {
   await seam.accessCodes.get({
-    access_code_id: "f4780806-076e-4cec-8081-df0ea2139d5a"
+    access_code_id: "11111111-1111-1111-1111-555555555555"
   })
 } catch(error) {
     console.log(error)
@@ -161,16 +142,13 @@ try {
 
 ```json
 SeamAPIError: Could not find an access_code with device_id or access_code_id
-    at file:///workspaces/api-docs/snippet-playground/javascript/node_modules/seamapi/dist/chunk-2BGOBPMB.mjs:669:13
-    at Generator.throw (<anonymous>)
-    at rejected (file:///workspaces/api-docs/snippet-playground/javascript/node_modules/seamapi/dist/chunk-2BGOBPMB.mjs:54:29)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+    at file:... {
   status: 404,
   requestId: '799c903f-0768-4249-8226-cff55d3fbdbb',
   metadata: {
     type: 'access_code_not_found',
     message: 'Could not find an access_code with device_id or access_code_id',
-    data: { access_code_id: 'f4780806-076e-4cec-8081-df0ea2139d5a' },
+    data: { access_code_id: '11111111-1111-1111-1111-555555555555' },
     request_id: '799c903f-0768-4249-8226-cff55d3fbdbb'
   }
 }
@@ -181,17 +159,15 @@ SeamAPIError: Could not find an access_code with device_id or access_code_id
 **Request:**
 
 ```ruby
-puts client.access_codes.delete("6fe348a8-5938-4b73-8a36-86f7ffdfc431").inspect
+client.access_codes.delete(
+  access_code_id: "11111111-1111-1111-1111-555555555555"
+)
 ```
 
 **Response:**
 
 ```
-<Seam::ActionAttempt:0x00438
-  status="success"
-  action_type="DELETE_ACCESS_CODE"
-  action_attempt_id="32ab3a7b-4588-491f-bceb-d099de7b1496"
-  result={}>
+void
 ```
 
 {% hint style="info" %}
@@ -202,7 +178,9 @@ Once the access code has been deleted, a request to get the access code returns 
 
 ```ruby
 begin
-  client.access_codes.get("6fe348a8-5938-4b73-8a36-86f7ffdfc431")
+  client.access_codes.get(
+    access_code_id: "11111111-1111-1111-1111-555555555555"
+  )
 rescue => e
   puts e
 end
@@ -218,24 +196,41 @@ Could not find an access_code with device_id or access_code_id
 {% endtab %}
 
 {% tab title="PHP" %}
+**Request:**
+
 ```php
-use Seam\SeamClient;
+$seam->access_codes->delete(
+  access_code_id: "11111111-1111-1111-1111-555555555555"
+);
+```
 
-$seam = new SeamClient("seam_test2ek7_2sq2ExLasPDwa9foJ8PyQ2zH");
+**Response:**
 
-$access_code_id = "e3d6cf81-6dd4-490c-b81f-8478054c2003";
-$seam->access_codes->delete($access_code_id);
+```
+void
+```
 
-// confirm you're getting a 404
+{% hint style="info" %}
+Once the access code has been deleted, a request to get the access code returns a 404 error.
+{% endhint %}
+
+**Request:**
+
+```php
 try {
     $deleted_access_code = $seam->access_codes->get(
-        access_code_id: $access_code_id
+        access_code_id: "11111111-1111-1111-1111-555555555555"
     );
     echo json_encode($deleted_access_code, JSON_PRETTY_PRINT);
 } catch (Exception $e) {
     echo $e->getMessage();
 }
-// Error Calling "GET access_codes/get" : access_code_not_found: Could not find an access_code with device_id or access_code_id
+```
+
+**Response:**
+
+```
+Error Calling "GET access_codes/get" : access_code_not_found: Could not find an access_code with device_id or access_code_id
 ```
 {% endtab %}
 
@@ -243,24 +238,15 @@ try {
 **Request:**
 
 ```csharp
-var attempt = seam.AccessCodes.Delete(accessCodeId: "fe372cb9-1fa5-492f-9494-ea01c5558333");
-
-Type t = attempt.GetType();
-PropertyInfo[] props = t.GetProperties();
-foreach (var prop in props)
-{
-  Console.WriteLine(prop.Name + ": " + prop.GetValue(attempt));
-}
+seam.AccessCodes.Delete(
+  accessCodeId: "11111111-1111-1111-1111-555555555555"
+);
 ```
 
 **Response:**
 
 ```
-Status: pending
-ActionType: DELETE_ACCESS_CODE
-ActionAttemptId: 8e79a65c-97f2-4792-88cb-c11702166e36
-Result: 
-Error: 
+void
 ```
 
 {% hint style="info" %}
@@ -272,7 +258,9 @@ Once the access code has been deleted, a request to get the access code returns 
 ```csharp
 try
 {
-  seam.AccessCodes.Get(accessCodeId: "fe372cb9-1fa5-492f-9494-ea01c5558333");
+  seam.AccessCodes.Get(
+    accessCodeId: "11111111-1111-1111-1111-555555555555"
+  );
 }
 catch (Exception e)
 {
@@ -291,20 +279,16 @@ Could not find an AccessCode with DeviceId or AccessCodeId
 **Request:**
 
 ```java
-ActionAttempt attempt = seam.accessCodes()
-        .delete(AccessCodesDeleteRequest.builder()
-                .accessCodeId("aff0c858-22f6-4587-9aac-1f5d550be560")
-                .build());
-System.out.println(attempt.getPending());
+seam.accessCodes()
+  .delete(AccessCodesDeleteRequest.builder()
+    .accessCodeId("11111111-1111-1111-1111-555555555555")
+    .build());
 ```
 
 **Response:**
 
-```json
-Optional[{
-  "action_type" : "DELETE_ACCESS_CODE",
-  "action_attempt_id" : "51a65bfd-9421-44b7-8b9c-1ce16852fff7"
-}]
+```
+void
 ```
 
 {% hint style="info" %}
@@ -316,9 +300,9 @@ Once the access code has been deleted, a request to get the access code returns 
 ```java
 try {
   AccessCode accessCode = seam.accessCodes()
-        .get(AccessCodesGetRequest.builder()
-                .accessCodeId("aff0c858-22f6-4587-9aac-1f5d550be560")
-                .build());
+    .get(AccessCodesGetRequest.builder()
+      .accessCodeId("11111111-1111-1111-1111-555555555555")
+      .build());
 }
 catch(Exception e) {
   System.out.println(e);
@@ -329,7 +313,7 @@ catch(Exception e) {
 
 {% code overflow="wrap" %}
 ```json
-ApiError{statusCode: 404, body: {error={type=access_code_not_found, message=Could not find an access_code with device_id or access_code_id, data={access_code_id=aff0c858-22f6-4587-9aac-1f5d550be560}, request_id=be588519-00c6-4992-9cf0-f77d6b20a120}, ok=false}}
+ApiError{statusCode: 404, body: {error={type=access_code_not_found, message=Could not find an access_code with device_id or access_code_id, data={access_code_id=11111111-1111-1111-1111-555555555555}, request_id=be588519-00c6-4992-9cf0-f77d6b20a120}, ok=false}}
 ```
 {% endcode %}
 {% endtab %}

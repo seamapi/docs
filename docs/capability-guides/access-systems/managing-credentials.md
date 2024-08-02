@@ -1,7 +1,5 @@
 ---
-description: >-
-  Learn how to create and manage credentials and to assign credentials to ACS
-  users.
+description: Learn how to manage credentials and assign them to users.
 ---
 
 # Managing Credentials

@@ -20,7 +20,7 @@ You can customize the following characteristics of your Connect Webviews:
 
 You can customize the look and feel of your Connect Webviews in the following ways:
 
-* **Inviter Name:** Define the name displayed in your Connect Webviews as the entity requesting user authorization for Seam to access their device account.
+* **Inviter Name:** Define the name to display in your Connect Webviews as the entity requesting user authorization for Seam to access their device or access control system account.
 * **Logo:** Choose a logo for your Connect Webviews. Ensure that the image file size does not exceed 1 MB.
 * **Logo Shape:** Select the shape of your logo displayed in Connect Webviews. Choices are **Circle** (default) or **Square**.
 * **Primary Button Color:** Customize the color of the Action Button in your Connect Webview flow using a hex color code. The default color is #232426, which is almost black, and the default text color on the button is white.
@@ -39,14 +39,12 @@ It is important to note that any changes you make to the customization features 
 
 ## Customize the Brands to Display in Your Connect Webviews
 
-You can customize the device brands that a Connect Webview should display. You specify the brands to display when you are creating the Connect Webview. Consequently, you can customize this list of brands to display for each of your Connect Webviews.
+When you create a Connect Webview, you can customize the providers—that is, the brands—that it displays. In the [Create Connect Webview](../../api-clients/connect-webviews/create-a-connect-webview.md) request, include the desired set of [device provider keys](../../api-clients/connect-webviews/#device-provider-keys) in the `accepted_providers` parameter.
 
-To display a subset of providers in your Connect Webview, include the desired `accepted_providers` in the [Create Connect Webview](../../api-clients/connect-webviews/create-a-connect-webview.md) command. In this parameter, specify a list of accepted providers (brands) to display.
-
-For a complete list of available providers, see [Device Provider Keys](../../api-clients/connect-webviews/#device-provider-keys).
+To help you decide which providers to include in a Connect Webview, you can use the [List Device Providers](../../api-clients/devices/list-device-providers.md) method to learn about each provider. The information that this method returns for each [provider](../../api-clients/devices/#device-providers) includes a set of [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags), such as `device_provider.can_remotely_unlock`. If at least one supported device from a provider has a specific capability, the corresponding capability flag is `true`. For more information, see [Device Providers](../../api-clients/devices/#device-providers).
 
 {% hint style="info" %}
-If you omit this parameter, the Connect Webview displays all of the stable providers that Seam supports, by default. For more information, see [Accepted Provider Category Keys](../../api-clients/connect-webviews/#accepted-provider-category-keys).
+If you omit the `accepted_providers` parameter, the Connect Webview displays all of the stable providers that Seam supports, by default. For more information about provider categories, see [Provider Category Keys](../../api-clients/connect-webviews/#provider-category-keys).
 {% endhint %}
 
 For example, the following Connect Webview creation request specifies that the Connect Webview should only display August and Schlage:
@@ -56,24 +54,24 @@ For example, the following Connect Webview creation request specifies that the C
 **Request:**
 
 ```python
-created_connect_webview = seam.connect_webviews.create(
+seam.connect_webviews.create(
   accepted_providers = ["august", "schlage"]
 )
-
-pprint(created_connect_webview)
 ```
 
 **Response:**
 
 ```
-ConnectWebview(workspace_id='398d80b7-3f96-47c2-b85a-6f8ba21d07be',
-               connect_webview_id='1139e5a5-4bfd-4c78-9a89-83a439ad538e',
-               status='pending',
-               url='https://connect.getseam.com/connect_webviews/view?connect_webview_id=1139e5a5-4bfd-4c78-9a89-83a439ad538e&auth_token=5g6Nt1sunJamS1huj7pwztKaMaBpvKhLc',
-               ...
-               accepted_providers=['august', 'schlage'],
-               ...
-               )
+ConnectWebview(
+  connect_webview_id='1139e5a5-4bfd-4c78-9a89-83a439ad538e',
+  status='pending',
+  url='https://connect.getseam.com/connect_webviews/view?connect_webview_id=1139e5a5-4bfd-4c78-9a89-83a439ad538e&auth_token=5g6Nt1sunJamS1huj7pwztKaMaBpvKhLc',
+  accepted_providers=[
+    'august',
+    'schlage'
+  ],
+  ...
+ )
 ```
 {% endtab %}
 
@@ -88,7 +86,8 @@ curl -X 'POST' \
   -H 'Content-Type: application/json' \
   -d '{
   "accepted_providers": [
-    "august", "schlage"
+    "august",
+    "schlage"
   ]
 }'
 ```
@@ -98,9 +97,9 @@ curl -X 'POST' \
 ```json
 {
   "connect_webview": {
-    "url": "https://connect.getseam.com/connect_webviews/view?connect_webview_id=f5fa50b8-b7e3-45ed-b636-354c17df5d8a&auth_token=6w2tZqeYN4xEYcMf8ySsGgpwFAQgET6Lb",
+    "connect_webview_id": "1139e5a5-4bfd-4c78-9a89-83a439ad538e",
     "status": "pending",
-    ...
+    "url": "https://connect.getseam.com/connect_webviews/view?connect_webview_id=f5fa50b8-b7e3-45ed-b636-354c17df5d8a&auth_token=6w2tZqeYN4xEYcMf8ySsGgpwFAQgET6Lb",
     "accepted_providers": [
       "august",
       "schlage"
@@ -116,22 +115,22 @@ curl -X 'POST' \
 **Request:**
 
 ```javascript
-const createdConnectWebview = await seam.connectWebviews.create({
+await seam.connectWebviews.create({
   accepted_providers: ["august", "schlage"]
 })
-
-console.log(createdConnectWebview)
 ```
 
 **Response:**
 
 ```json
 {
-  url: 'https://connect.getseam.com/connect_webviews/view?connect_webview_id=8cf491d8-cf67-4ad0-907d-3a8ae3764019&auth_token=C4vLHdKqpMavg6HYBbejQkE1dZ8KDcetS',
+  connect_webview_id: '1139e5a5-4bfd-4c78-9a89-83a439ad538e',
   status: 'pending',
-  workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be',
-  ...
-  accepted_providers: [ 'august', 'schlage' ],
+  url: 'https://connect.getseam.com/connect_webviews/view?connect_webview_id=8cf491d8-cf67-4ad0-907d-3a8ae3764019&auth_token=C4vLHdKqpMavg6HYBbejQkE1dZ8KDcetS',
+  accepted_providers: [
+    'august',
+    'schlage'
+  ],
   ...
 }
 ```
@@ -141,24 +140,24 @@ console.log(createdConnectWebview)
 **Request:**
 
 ```ruby
-created_connect_webview = client.connect_webviews.create(
+client.connect_webviews.create(
   accepted_providers: ["august", "schlage"]
 )
-
-puts created_connect_webview.inspect
 ```
 
 **Response:**
 
 ```
 <Seam::ConnectWebview:0x00438
-  url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=f3d344bb-e506-4f70-bc9d-8d78c307c324&auth_token=C1e5tgjokyrrQ1mQj9YUdSW8BxHs98D7P"
+  connect_webview_id="1139e5a5-4bfd-4c78-9a89-83a439ad538e"
   status="pending"
-  workspace_id="398d80b7-3f96-47c2-b85a-6f8ba21d07be"
+  url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=f3d344bb-e506-4f70-bc9d-8d78c307c324&auth_token=C1e5tgjokyrrQ1mQj9YUdSW8BxHs98D7P"
+  accepted_providers=[
+    "august",
+    "schlage"
+  ]
   ...
-  accepted_providers=["august", "schlage"]
-  ...
-  >
+>
 ```
 {% endtab %}
 
@@ -171,20 +170,18 @@ List<Seam.Api.ConnectWebviews.CreateRequest.AcceptedProvidersEnum> acceptedProvi
   Seam.Api.ConnectWebviews.CreateRequest.AcceptedProvidersEnum.Schlage
 };
 
-var createdConnectWebview = seam.ConnectWebviews.Create(
+seam.ConnectWebviews.Create(
   acceptedProviders: acceptedProviders
 );
-
-Console.WriteLine(createdConnectWebview);
 ```
 
 **Response:**
 
-```
+```json
 {
   "connect_webview_id": "f69fa3b8-c89d-4fd4-b6fc-feb456d07234",
+  "status": "pending",
   "url": "https://connect.getseam.com/connect_webviews/view?connect_webview_id=f69fa3b8-c89d-4fd4-b6fc-feb456d07234&auth_token=MCh7Vm2fnvyiPhtjB8Lemqr93aeHXhJhM",
-  "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
   "accepted_providers": [
     "august",
     "schlage"
@@ -198,12 +195,11 @@ Console.WriteLine(createdConnectWebview);
 **Request:**
 
 ```java
-ConnectWebview createdConnectWebview = seam.connectWebviews().create(ConnectWebviewsCreateRequest.builder()
-                .acceptedProviders(List.of(
-                  AcceptedProvider.AUGUST,
-                  AcceptedProvider.SCHLAGE))
-                .build());
-System.out.println(createdConnectWebview);
+seam.connectWebviews().create(ConnectWebviewsCreateRequest.builder()
+  .acceptedProviders(List.of(
+    AcceptedProvider.AUGUST,
+    AcceptedProvider.SCHLAGE))
+  .build());
 ```
 
 **Response:**
@@ -211,10 +207,12 @@ System.out.println(createdConnectWebview);
 ```json
 {
   "connect_webview_id" : "172c1d65-8904-4d43-9eee-099780ba6558",
+  "status": "pending",
   "url" : "https://connect.getseam.com/connect_webviews/view?connect_webview_id=172c1d65-8904-4d43-9eee-099780ba6558&auth_token=7hpz4wGsaphJmBcs2TKr4H3ZkGgmqpPma",
-  "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  ...
-  "accepted_providers" : [ "august", "schlage" ],
+  "accepted_providers" : [
+    "august",
+    "schlage"
+  ],
   ...
 }
 ```
@@ -234,7 +232,7 @@ You configure these properties when you are creating the Connect Webview. Conseq
 
 ### `automatically_manage_new_devices`
 
-Generally, Seam charges customers on a per-device basis. Sometimes, extra devices that you do not want to use might exist in your account. You can exclude these devices from your bill by marking them as “[unmanaged](../devices/#managed-devices-and-unmanaged-devices).”
+Seam charges fees for different parts of the API, like connecting a device, creating an access code or thermostat schedule, and creating an access control system user. To learn more, contact our team. You can exclude specific devices from your bill by marking them as "[unmanaged](../devices/managed-and-unmanaged-devices.md)."
 
 The default value for `automatically_manage_new_devices` is `true`. Consequently, by default, Seam imports all devices and makes them available for use. However, if you set this property to `false`, Seam sets the `is_managed` property for all new devices to `false` (that is, unmanaged) when a user first connects their account to Seam.
 

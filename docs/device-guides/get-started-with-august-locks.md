@@ -457,7 +457,7 @@ True
 **Code:**
 
 ```bash
-curl -X 'POST' \
+curl -X 'GET' \
   'https://connect.getseam.com/connect_webviews/get' \
   -H 'accept: application/json' \
   -H "Authorization: Bearer ${SEAM_API_KEY}" \
