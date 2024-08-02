@@ -372,4 +372,7 @@
 
 ## Test Codegen
 
-* [List Systems](api/acs/systems/list.md)
+* [API](api)
+    * [ACS](api/acs)
+      * [Systems](api/acs/systems)
+        * [List](api/acs/systems/list.md)
