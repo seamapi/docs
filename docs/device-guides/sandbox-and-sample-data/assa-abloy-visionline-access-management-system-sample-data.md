@@ -1,6 +1,6 @@
 # Sandbox ASSA ABLOY Visionline Access Control System
 
-Use the following set of credentials to add virtual [ASSA ABLOY Visionline Access Control System](../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/)-connected devices to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
+Use the following set of credentials to add virtual [ASSA ABLOY Visionline Access Control System](../assa-abloy-visionline-access-control-system-in-development/)-connected devices to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
 {% hint style="info" %}
 To use the virtual Visionline Access Control System (ACS) with the virtual [Seam Bridge](../../capability-guides/seam-bridge.md):&#x20;
@@ -10,4 +10,4 @@ To use the virtual Visionline Access Control System (ACS) with the virtual [Seam
 3. Connect the virtual Visionline ACS using a Connect Webview and the Visionline sample credentials.&#x20;
 {% endhint %}
 
-<table><thead><tr><th width="123">Name</th><th width="61">System ID</th><th>Username</th><th width="109">Password</th><th>Mobile Access UUID</th><th>Is Seam Bridge Installed on the Same Computer as Visionline?</th><th width="334">IP Address of Computer Running Visionline</th></tr></thead><tbody><tr><td>Any string to identify this Visionline site</td><td>1</td><td>jane</td><td>1234</td><td>1</td><td>No</td><td>192.168.1.100</td></tr></tbody></table>
+<table><thead><tr><th width="123">Name</th><th width="61">System ID</th><th>Username</th><th width="109">Password</th><th>Mobile Access UUID</th><th>Is Seam Bridge Installed on the Same Computer as Visionline?</th><th width="334">IP Address of Computer Running Visionline</th></tr></thead><tbody><tr><td>Any string to identify this Visionline ACS site</td><td>1</td><td>jane</td><td>1234</td><td>1</td><td>No</td><td>192.168.1.100</td></tr></tbody></table>
