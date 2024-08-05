@@ -1,59 +1,24 @@
----
-description: "{{{description}}}"
----
-
 # {{title}}
 
 {{{description}}}
 
-### Request and Response
 
-<table>
-  <thead>
-    <tr>
-      <th>Parameter</th>
-      <th width='112.33333333333331'>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each request.parameters}}
-      <tr>
-        <td><code>{{this.name}}</code></td>
-        <td>String (UUID)<br /><em>{{#if
-              this.required
-            }}Required{{else}}Optional{{/if}}</em></td>
-        <td>{{this.description}}</td>
-      </tr>
-    {{else}}
-      <tr>
-        <td colspan='3'>No parameters available.</td>
-      </tr>
-    {{/each}}
-  </tbody>
-</table>
+### Request Parameters
 
+{{#each request.parameters}}
+**{{this.name}}**  
+*Type:* `{{this.type}}`  
+*Required:* {{#if this.required}}Yes{{else}}No{{/if}}  
 
-<table>
-  <thead>
-    <tr>
-      <th width="310">Property</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each response.properties}}
-      <tr>
-        <td><code>{{this.name}}</code></td>
-        <td>{{this.description}}</td>
-      </tr>
-    {{else}}
-      <tr>
-        <td colspan="2">No properties available.</td>
-      </tr>
-    {{/each}}
-  </tbody>
-</table>
+{{this.description}}  
+{{/each}}
+
+### Response Properties
+
+{{#each response.properties}}
+**{{this.name}}**  
+{{this.description}}  
+{{/each}}
 
 ## Samples
 
