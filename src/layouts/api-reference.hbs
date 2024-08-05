@@ -1,3 +1,47 @@
-#
-{{endpoint.path}}
-{{{contents}}}
+# {{title}}
+
+{{{description}}}
+
+
+### Request Parameters
+
+{{#each request.parameters}}
+**{{this.name}}**  
+*Type:* `{{this.type}}`  
+*Required:* {{#if this.required}}Yes{{else}}No{{/if}}  
+
+{{this.description}}  
+{{/each}}
+
+### Response Properties
+
+{{#each response.properties}}
+**{{this.name}}**  
+{{this.description}}  
+{{/each}}
+
+## Samples
+
+{% tabs %}
+{{#each codeSamples}}
+  {{#each this.code}}
+    {% tab title="{{this.title}}" %}
+  ### Request
+  ```{{@key}}
+  {{this.request}}
+  ```
+
+  ### Response
+  ```{{@key}}
+  {{this.response}}
+  ```
+    {% endtab %}
+  {{/each}}
+{{else}}
+  {% tab title="No samples available" %}
+  ```
+  No sample requests available.
+  ```
+  {% endtab %}
+{{/each}}
+{% endtabs %}

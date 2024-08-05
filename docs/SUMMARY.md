@@ -165,7 +165,7 @@
   * [List Locks](api-clients/locks/list-locks.md)
 * [Access Control Systems](api-clients/access-control-systems/README.md)
   * [Systems](api-clients/access-control-systems/systems/README.md)
-    * [List Systems](api-clients/access-control-systems/systems/list-systems.md)
+    * [List Systems](api/acs/systems/list.md)
     * [Get a System](api-clients/access-control-systems/systems/get-system.md)
     * [List Compatible Credential Manager ACS Systems](api-clients/access-control-systems/systems/list-compatible-credential-manager-acs-systems.md)
   * [Users](api-clients/access-control-systems/users/README.md)

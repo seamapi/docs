@@ -9,6 +9,7 @@
 docs
 seam-sdk-playground
 gitbook-plugin
+*.hbs
 
 # TypeScript build output
 *.d.ts
