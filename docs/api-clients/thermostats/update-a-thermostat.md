@@ -16,6 +16,8 @@ layout:
 
 Updates a [thermostat](../../thermostats/) by setting the values of the parameters passed. Any parameters not provides are left unchanged.
 
+The primary attribute you can modify is the [default climate setting](../../products/thermostats/#default-climate-setting). The default climate setting determines the configuration of the thermostat. This differs from the [current climate setting](../../products/thermostats/#current-climate-setting) of the thermostat, which represent the active programming on the device.
+
 {% swagger src="https://connect.getseam.com/openapi.json" path="/thermostats/update" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
 {% endswagger %}
@@ -62,6 +64,7 @@ await seam.thermostats.update({
 
 | `device_id`               | String                                                                  | <p><br>Device ID</p>                                                                                                                                                     |
 | ------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `default_climate_setting` | [Climate Setting object](../../thermostats/#climate-setting-properties) | Default [climate setting](../../thermostats/#climate-setting-properties). |
 
 ### Response
 
