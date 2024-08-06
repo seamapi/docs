@@ -26,8 +26,6 @@ Using the Seam API, you can configure the following groups of climate settings o
 
 * [**Current climate setting**](configure-current-climate-settings.md)**:** The current heating and cooling settings on a smart thermostat, including the [HVAC mode](hvac-mode.md) and its corresponding [set points](set-points.md).
 * [**Fan mode**](configure-current-climate-settings.md)**:** Whether the fan operates all the time (on) or only when needed (auto).&#x20;
-* [**Default climate setting**](../../capability-guides/thermostats/managing-scheduled-climate-settings-in-development/setting-the-default-climate-setting.md) **\[in development]:** The set of default HVAC settings on a smart thermostat that applies when a [climate setting schedule](../../capability-guides/thermostats/managing-scheduled-climate-settings-in-development/thermostats-climate-setting-schedules.md) ends—such as when the room, unit, or home becomes vacant.
-* [**Climate setting schedules**](../../capability-guides/thermostats/managing-scheduled-climate-settings-in-development/thermostats-climate-setting-schedules.md) **\[in development]:** Smart thermostat schedules that control the climate for specific periods of time in users' homes or businesses.
 
 ***
 
