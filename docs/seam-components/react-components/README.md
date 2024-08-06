@@ -12,4 +12,4 @@ description: 2 mins
 
 ## Thermostat Components
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><br>Display a list of access codes, and filter for all the access codes with issues.</td><td></td><td></td><td><a href="../../.gitbook/assets/Screen Shot 2023-09-02 at 4.10.40 PM.png">Screen Shot 2023-09-02 at 4.10.40 PM.png</a></td></tr><tr><td></td><br>Display a list of access codes, and filter for all the access codes with issues.</td><td></td><td></td><td><a href="../../.gitbook/assets/Screen Shot 2023-09-02 at 4.08.34 PM.png">Screen Shot 2023-09-02 at 4.08.34 PM.png</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><br>Display a list of access codes, and filter for all the access codes with issues.</td><td></td><td></td></tr></tbody></table>
