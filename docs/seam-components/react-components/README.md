@@ -13,4 +13,5 @@ description: 2 mins
 
 ## Thermostat Components
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><br>Display a list of access codes, and filter for all the access codes with issues.</td><td></td><td></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Thermostat Component</strong></td><td>Display a list of access codes, and filter for all the access codes with issues.</td><td></td><td></td><td></td></tr></tbody></table>
+
