@@ -15,7 +15,6 @@ The Seam API enables you to manage your smart thermostats from a central console
 Leverage the Seam API for the following smart thermostat-related applications:
 
 * **Adjusting current settings:** Modify the current climate and fan modes based on your immediate needs, whether you are on location or away.
-* **Scheduling climate settings for the future \[in development]:** Plan ahead by setting temperature preferences for future dates and times. For example, if you plan to have a guest at a rental home, you can schedule the house to warm up just before their arrival.
 * **Default energy savings:** Program the thermostat to use a climate setting as a "vacation mode" or "energy savings mode" to minimize energy consumption when your property is unoccupied.
 
 ***
