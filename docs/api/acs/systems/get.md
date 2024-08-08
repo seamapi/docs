@@ -5,11 +5,11 @@
 
 ### Request Parameters
 
-**acs_system_id**  
-*Type:* ``  
-*Required:* Yes  
+**acs_system_id**
+*Type:* ``
+*Required:* Yes
 
-  
+
 
 ### Response Properties
 
