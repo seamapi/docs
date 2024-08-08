@@ -76,7 +76,19 @@ ID of the [workspace](../../../core-concepts/workspaces.md) that contains the `a
 
   ### Response
   ```python
-  AcsSystems(0={"acs_system_id":"8d7e0b3a-b889-49a7-9164-4b71a0506a33"})
+  [AcsSystem(acs_system_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")]
+  ```
+    {% endtab %}
+    {% tab title="Ruby" %}
+  ### Request
+  ```ruby
+  seam.acs.systems.list(connected_account_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
+  ```
+
+  ### Response
+  ```ruby
+  [<Seam::AcsSystems:0x00000
+acs_system_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33">]
   ```
     {% endtab %}
     {% tab title="PHP" %}
