@@ -67,7 +67,7 @@ export const postprocess = (
     const contents = file.contents.toString('utf-8')
     file.contents = Buffer.from(
       contents
-        .replaceAll(new RegExp(`(${baseUrl}[^)]+)`, 'g'), '$1.md')
+        // .replaceAll(new RegExp(`(${baseUrl}[^)]+)`, 'g'), '$1.md')
         .replaceAll(
           baseUrl,
           new Array(name.split('/').length).fill('').join('../'),
