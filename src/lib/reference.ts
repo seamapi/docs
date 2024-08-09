@@ -29,7 +29,7 @@ export const reference = (
   }
 
   for (const route of metadata.routes ?? []) {
-    const k = `${route.path.slice(1)}/README.md`
+    const k = `api-clients${route.path.replace('acs', 'access-control-systems')}/README.md`
     files[k] = {
       contents: Buffer.from('\n'),
     }
