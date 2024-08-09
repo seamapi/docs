@@ -20,7 +20,7 @@
   <h3>can_add_acs_users_to_acs_access_groups</h3>
 </header>
 <div>
-  <p>Indicates whether the `acs_system` supports <a href="../../../capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group" data-internal-link>adding users to access groups</a>. See also <a href="../../../capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems" data-internal-link>Access Group-based Access Control Systems</a>.</p>
+  <p>Indicates whether the `acs_system` supports [adding users to access groups](../../../capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group.md). See also [Access Group-based Access Control Systems](../../../capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems.md).</p>
   <div>
     <span>Format:</span>
     <span>boolean</span>
@@ -32,7 +32,7 @@
   <h3>can_automate_enrollment</h3>
 </header>
 <div>
-  <p>Indicates whether it is possible to <a href="../../../capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut" data-internal-link>launch enrollment automations</a> for the `acs_system`.</p>
+  <p>Indicates whether it is possible to [launch enrollment automations](../../../capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut.md) for the `acs_system`.</p>
   <div>
     <span>Format:</span>
     <span>boolean</span>
@@ -44,7 +44,7 @@
   <h3>can_create_acs_access_groups</h3>
 </header>
 <div>
-  <p>Indicates whether the `acs_system` supports creating <a href="../../../capability-guides/access-systems/assigning-users-to-access-groups" data-internal-link>access groups</a>. See also <a href="../../../capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems" data-internal-link>Access Group-based Access Control Systems</a>.</p>
+  <p>Indicates whether the `acs_system` supports creating [access groups](../../../capability-guides/access-systems/assigning-users-to-access-groups.md). See also [Access Group-based Access Control Systems](../../../capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems.md).</p>
   <div>
     <span>Format:</span>
     <span>boolean</span>
@@ -56,7 +56,7 @@
   <h3>can_remove_acs_users_from_acs_access_groups</h3>
 </header>
 <div>
-  <p>Indicates whether the `acs_system` supports <a href="../../../capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group" data-internal-link>removing users from access groups</a>. See also <a href="../../../capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems" data-internal-link>Access Group-based Access Control Systems</a>.</p>
+  <p>Indicates whether the `acs_system` supports [removing users from access groups](../../../capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group.md). See also [Access Group-based Access Control Systems](../../../capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems.md).</p>
   <div>
     <span>Format:</span>
     <span>boolean</span>
@@ -68,7 +68,7 @@
   <h3>connected_account_ids</h3>
 </header>
 <div>
-  <p>IDs of the <a href="../../../core-concepts/connected-accounts" data-internal-link>connected accounts</a> associated with the `acs_system`.</p>
+  <p>IDs of the [connected accounts](../../../core-concepts/connected-accounts.md) associated with the `acs_system`.</p>
   <div>
     <span>Format:</span>
     <span>list</span>
@@ -214,7 +214,7 @@
   <h3>workspace_id</h3>
 </header>
 <div>
-  <p>ID of the <a href="../../../core-concepts/workspaces" data-internal-link>workspace</a> that contains the `acs_system`.</p>
+  <p>ID of the [workspace](../../../core-concepts/workspaces.md) that contains the `acs_system`.</p>
   <div>
     <span>Format:</span>
     <span>string</span>
