@@ -10,7 +10,7 @@ import {
 
 const sdks = ['javascript']
 
-const baseUrl = 'https://docs.seam.co/latest/'
+// const baseUrl = 'https://docs.seam.co/latest/'
 
 type Metadata = Partial<Pick<Blueprint, 'routes' | 'resources'>>
 
@@ -60,18 +60,18 @@ export const reference = (
 }
 
 export const postprocess = (
-  files: Metalsmith.Files,
+  _files: Metalsmith.Files,
   _metalsmith: Metalsmith,
 ): void => {
-  for (const [name, file] of Object.entries(files)) {
-    const contents = file.contents.toString('utf-8')
-    file.contents = Buffer.from(
-      contents
-        // .replaceAll(new RegExp(`(${baseUrl}[^)]+)`, 'g'), '$1.md')
-        .replaceAll(
-          baseUrl,
-          new Array(name.split('/').length).fill('').join('../'),
-        ),
-    )
-  }
+  // for (const [name, file] of Object.entries(files)) {
+  //   const contents = file.contents.toString('utf-8')
+  //   file.contents = Buffer.from(
+  //     contents
+  //       .replaceAll(new RegExp(`(${baseUrl}[^)]+)`, 'g'), '$1.md')
+  //       .replaceAll(
+  //         baseUrl,
+  //         new Array(name.split('/').length).fill('').join('../'),
+  //       ),
+  //   )
+  // }
 }
