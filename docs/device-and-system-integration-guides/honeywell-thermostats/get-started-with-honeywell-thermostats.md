@@ -266,7 +266,6 @@ pprint(devices[0])
 #                                                   'cool',
 #                                                   'heat',
 #                                                   'heat_cool'],
-#                  'can_enable_automatic_cooling': True,
 #                  'current_climate_setting': {'automatic_cooling_enabled': False,
 #                                              'automatic_heating_enabled': True,
 #                                              'heating_set_point_celsius': 16.666666666666668,
@@ -347,7 +346,6 @@ console.log(devices[0])
       heating_set_point_fahrenheit: 62
     },
     available_hvac_mode_settings: [ 'off', 'cool', 'heat', 'heat_cool' ],
-    can_enable_automatic_cooling: true,
     max_cooling_set_point_celsius: 32.22222222222222,
     max_heating_set_point_celsius: 32.22222222222222,
     min_cooling_set_point_celsius: 10,
@@ -427,7 +425,6 @@ System.out.println(devices);
 //       heating_set_point_fahrenheit: 62
 //     },
 //     available_hvac_mode_settings: [ 'off', 'cool', 'heat', 'heat_cool' ],
-//     can_enable_automatic_cooling: true,
 //     max_cooling_set_point_celsius: 32.22222222222222,
 //     max_heating_set_point_celsius: 32.22222222222222,
 //     min_cooling_set_point_celsius: 10,
@@ -501,7 +498,6 @@ return nil
 //       heating_set_point_fahrenheit: 62
 //     },
 //     available_hvac_mode_settings: [ 'off', 'cool', 'heat', 'heat_cool' ],
-//     can_enable_automatic_cooling: true,
 //     max_cooling_set_point_celsius: 32.22222222222222,
 //     max_heating_set_point_celsius: 32.22222222222222,
 //     min_cooling_set_point_celsius: 10,

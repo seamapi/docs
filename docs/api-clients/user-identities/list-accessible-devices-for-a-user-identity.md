@@ -102,7 +102,6 @@ This response also includes a Boolean `ok` status indicator.
           "heat_cool",
           "off"
         ],
-        "can_enable_automatic_cooling": true,
         "is_temporary_manual_override_active": false,
         "name": "",
         "appearance": {

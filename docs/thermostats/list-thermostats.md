@@ -38,7 +38,6 @@ seam.thermostats.list()
 #         "online": true,
 #         "relative_humidity": 0.36,
 #         "temperature_fahrenheit": 70,
-#         "can_enable_automatic_cooling": true,
 #         "available_hvac_mode_settings": [
 #           "cool",
 #           "heat",
@@ -69,7 +68,6 @@ seam.thermostats.list()
 #         "online": true,
 #         "relative_humidity": 0.36,
 #         "temperature_fahrenheit": 70,
-#         "can_enable_automatic_cooling": true,
 #         "available_hvac_mode_settings": [
 #           "cool",
 #           "heat",
@@ -111,7 +109,6 @@ await seam.thermostats.list()
       "online": true,
       "relative_humidity": 0.36,
       "temperature_fahrenheit": 70,
-      "can_enable_automatic_cooling": true,
       "available_hvac_mode_settings": [
         "cool",
         "heat",
@@ -142,7 +139,6 @@ await seam.thermostats.list()
       "online": true,
       "relative_humidity": 0.36,
       "temperature_fahrenheit": 70,
-      "can_enable_automatic_cooling": true,
       "available_hvac_mode_settings": [
         "cool",
         "heat",
@@ -194,7 +190,6 @@ This section shows the JSON response returned by the API. Since each language en
         "online": true,
         "relative_humidity": 0.36,
         "temperature_fahrenheit": 70,
-        "can_enable_automatic_cooling": true,
         "available_hvac_mode_settings": [
           "cool",
           "heat",
@@ -225,7 +220,6 @@ This section shows the JSON response returned by the API. Since each language en
         "online": true,
         "relative_humidity": 0.36,
         "temperature_fahrenheit": 70,
-        "can_enable_automatic_cooling": true,
         "available_hvac_mode_settings": [
           "cool",
           "heat",

@@ -34,8 +34,6 @@ The following example shows a set of thermostat HVAC mode requirements:
         "heat",
         "heat_cool"
       ],
-      "can_enable_automatic_cooling": true,
-      ...
     },
     ...
   },

@@ -24,7 +24,6 @@ seam.thermostats.list()
     location=None,
     properties={
         'available_hvac_mode_settings': ['off', 'cool', 'heat', 'heat_cool'],
-        'can_enable_automatic_cooling': True,
         'current_climate_setting': {
             'automatic_cooling_enabled': True,
             'automatic_heating_enabled': True,
@@ -157,7 +156,6 @@ curl -X 'GET' \
           "heat",
           "heat_cool"
         ],
-        "can_enable_automatic_cooling": true,
         "offline_access_codes_enabled": false,
         "max_cooling_set_point_celsius": 33.333333333333336,
         "max_heating_set_point_celsius": 26.11111111111111,
@@ -223,7 +221,6 @@ console.log(await seam.thermostats.list())
       current_climate_setting: [Object],
       default_climate_setting: [Object],
       available_hvac_mode_settings: [Array],
-      can_enable_automatic_cooling: true,
       max_cooling_set_point_celsius: 33.333333333333336,
       max_heating_set_point_celsius: 26.11111111111111,
       min_cooling_set_point_celsius: 18.333333333333336,
@@ -296,7 +293,6 @@ echo json_encode($thermostats, JSON_PRETTY_PRINT);
             "temperature_fahrenheit": 70,
             "temperature_celsius": 21.11111111111111,
             "relative_humidity": 0.36,
-            "can_enable_automatic_cooling": true,
             "available_hvac_mode_settings": [
                 "off",
                 "cool",
@@ -489,7 +485,6 @@ return nil
       "heat",
       "heat_cool"
     ],
-    "can_enable_automatic_cooling": true,
     "max_cooling_set_point_celsius": 33.333333333333336,
     "max_heating_set_point_celsius": 26.11111111111111,
     "min_cooling_set_point_celsius": 18.333333333333336,
@@ -549,7 +544,6 @@ Device(
     location=None,
     properties={
         'available_hvac_mode_settings': ['off', 'cool', 'heat', 'heat_cool'],
-        'can_enable_automatic_cooling': True,
         'current_climate_setting': {
             'automatic_cooling_enabled': True,
             'automatic_heating_enabled': True,
@@ -684,7 +678,6 @@ curl -X 'GET' \
         "heat",
         "heat_cool"
       ],
-      "can_enable_automatic_cooling": true,
       "max_cooling_set_point_celsius": 33.333333333333336,
       "max_heating_set_point_celsius": 26.11111111111111,
       "min_cooling_set_point_celsius": 18.333333333333336,
@@ -770,7 +763,6 @@ console.log(await seam.thermostats.get({
       heating_set_point_fahrenheit: 68
     },
     available_hvac_mode_settings: [ 'off', 'cool', 'heat', 'heat_cool' ],
-    can_enable_automatic_cooling: true,
     max_cooling_set_point_celsius: 33.333333333333336,
     max_heating_set_point_celsius: 26.11111111111111,
     min_cooling_set_point_celsius: 18.333333333333336,
@@ -847,7 +839,6 @@ echo json_encode($thermostat, JSON_PRETTY_PRINT);
         "temperature_fahrenheit": 70,
         "temperature_celsius": 21.11111111111111,
         "relative_humidity": 0.36,
-        "can_enable_automatic_cooling": true,
         "available_hvac_mode_settings": [
             "off",
             "cool",
@@ -986,7 +977,6 @@ System.out.println(thermostat);
     "min_heating_cooling_delta_fahrenheit" : 5,
     "available_hvac_mode_settings" : [ "off", "cool", "heat", "heat_cool" ],
     "has_direct_power" : true,
-    "can_enable_automatic_cooling" : true,
     "min_cooling_set_point_fahrenheit" : 65,
     "min_heating_cooling_delta_celsius" : 2.7777777777777777,
     "min_cooling_set_point_celsius" : 18.333333333333336,
@@ -1077,7 +1067,6 @@ return nil
       "heat",
       "heat_cool"
     ],
-    "can_enable_automatic_cooling": true,
     "max_cooling_set_point_celsius": 33.333333333333336,
     "max_heating_set_point_celsius": 26.11111111111111,
     "min_cooling_set_point_celsius": 18.333333333333336,
