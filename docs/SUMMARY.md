@@ -112,7 +112,7 @@
   * [Make a Supported Devices Page](seam-components/make-a-supported-devices-page.md)
   * [Using User Identities to Scope Users' Device Access](ui-components/overview/using-user-identities-to-scope-users-device-access.md)
 
-## 📋 API Reference <a href="#api-clients" id="api-clients"></a>
+## 📋 API Reference <a href="#api" id="api"></a>
 
 * [Overview](api-clients/overview.md)
 * [Installation](api-clients/installation.md)
