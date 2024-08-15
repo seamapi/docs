@@ -58,7 +58,6 @@ seam.thermostats.list()
         'is_cooling_available': True,
         'is_fan_running': False,
         'is_heating': False,
-        'is_heating_available': True,
         'is_temporary_manual_override_active': False,
         'manufacturer': 'ecobee',
         'max_cooling_set_point_celsius': 33.333333333333336,
@@ -134,7 +133,6 @@ curl -X 'GET' \
         "relative_humidity": 0.36,
         "temperature_celsius": 21.11111111111111,
         "is_cooling_available": true,
-        "is_heating_available": true,
         "temperature_fahrenheit": 70,
         "current_climate_setting": {
           "hvac_mode_setting": "heat_cool",
@@ -226,8 +224,7 @@ console.log(await seam.thermostats.list())
       relative_humidity: 0.36,
       temperature_celsius: 21.11111111111111,
       is_cooling_available: true,
-      is_heating_available: true,
-      temperature_fahrenheit: 70,
+      : 70,
       current_climate_setting: [Object],
       default_climate_setting: [Object],
       available_hvac_mode_settings: [Array],
@@ -313,7 +310,6 @@ echo json_encode($thermostats, JSON_PRETTY_PRINT);
                 "heat",
                 "heat_cool"
             ],
-            "is_heating_available": true,
             "is_cooling_available": true,
             "is_heating": false,
             "is_cooling": false,
@@ -485,7 +481,6 @@ return nil
     "relative_humidity": 0.36,
     "temperature_celsius": 21.11111111111111,
     "is_cooling_available": true,
-    "is_heating_available": true,
     "temperature_fahrenheit": 70,
     "current_climate_setting": {
       "automatic_heating_enabled": true,
@@ -598,7 +593,6 @@ Device(
         'is_cooling_available': True,
         'is_fan_running': False,
         'is_heating': False,
-        'is_heating_available': True,
         'is_temporary_manual_override_active': False,
         'manufacturer': 'ecobee',
         'max_cooling_set_point_celsius': 33.333333333333336,
@@ -676,7 +670,6 @@ curl -X 'GET' \
       "relative_humidity": 0.36,
       "temperature_celsius": 21.11111111111111,
       "is_cooling_available": true,
-      "is_heating_available": true,
       "temperature_fahrenheit": 70,
       "current_climate_setting": {
         "hvac_mode_setting": "heat_cool",
@@ -770,7 +763,6 @@ console.log(await seam.thermostats.get({
     relative_humidity: 0.36,
     temperature_celsius: 21.11111111111111,
     is_cooling_available: true,
-    is_heating_available: true,
     temperature_fahrenheit: 70,
     current_climate_setting: {
       hvac_mode_setting: 'heat_cool',
@@ -879,7 +871,6 @@ echo json_encode($thermostat, JSON_PRETTY_PRINT);
             "heat",
             "heat_cool"
         ],
-        "is_heating_available": true,
         "is_cooling_available": true,
         "is_heating": false,
         "is_cooling": false,
@@ -1041,7 +1032,6 @@ System.out.println(thermostat);
     "fan_mode_setting" : "auto",
     "relative_humidity" : 0.36,
     "temperature_fahrenheit" : 70,
-    "is_heating_available" : true
   },
   "connected_account_id" : "2c00bc71-bca5-42c2-a1c5-74fd93ffcba1",
   "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
@@ -1091,7 +1081,6 @@ return nil
     "relative_humidity": 0.36,
     "temperature_celsius": 21.11111111111111,
     "is_cooling_available": true,
-    "is_heating_available": true,
     "temperature_fahrenheit": 70,
     "current_climate_setting": {
       "automatic_heating_enabled": true,

@@ -449,7 +449,6 @@ System.out.println(devices);
 //     "is_climate_setting_schedule_active" : false,
 //     "relative_humidity" : 0.36,
 //     "temperature_fahrenheit" : 70,
-//     "is_heating_available" : true
 //   },
 //   "connected_account_id" : "aaf37f42-f5a1-4223-a7db-2b61700bf2a9",
 //   "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
@@ -494,7 +493,6 @@ return nil
 //     "relative_humidity": 0.36,
 //     "temperature_celsius": 21.11111111111111,
 //     "is_cooling_available": true,
-//     "is_heating_available": true,
 //     "temperature_fahrenheit": 70,
 //     "current_climate_setting": {
 //       "automatic_heating_enabled": false,

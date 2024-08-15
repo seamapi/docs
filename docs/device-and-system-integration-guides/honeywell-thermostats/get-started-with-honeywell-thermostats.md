@@ -285,7 +285,6 @@ pprint(devices[0])
 #                  'is_cooling_available': True,
 #                  'is_fan_running': True,
 #                  'is_heating': True,
-#                  'is_heating_available': True,
 #                  'is_temporary_manual_override_active': False,
 #                  'manufacturer': 'honeywell_resideo',
 #                  'max_cooling_set_point_celsius': 32.22222222222222,
@@ -341,7 +340,6 @@ console.log(devices[0])
     },
     temperature_celsius: 24.444444444444446,
     is_cooling_available: true,
-    is_heating_available: true,
     temperature_fahrenheit: 76,
     current_climate_setting: {
       automatic_heating_enabled: true,
@@ -424,7 +422,6 @@ System.out.println(devices);
 //     },
 //     temperature_celsius: 24.444444444444446,
 //     is_cooling_available: true,
-//     is_heating_available: true,
 //     temperature_fahrenheit: 76,
 //     current_climate_setting: {
 //       automatic_heating_enabled: true,
@@ -501,7 +498,6 @@ return nil
 //     },
 //     temperature_celsius: 24.444444444444446,
 //     is_cooling_available: true,
-//     is_heating_available: true,
 //     temperature_fahrenheit: 76,
 //     current_climate_setting: {
 //       automatic_heating_enabled: true,
