@@ -436,7 +436,6 @@ System.out.println(devices);
 //     "min_cooling_set_point_celsius" : 18.333333333333336,
 //     "can_enable_automatic_heating" : true,
 //     "max_heating_set_point_fahrenheit" : 79,
-//     "is_cooling_available" : true,
 //     "image_url" : "https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png",
 //     "is_fan_running" : false,
 //     "image_alt_text" : "Ecobee 3 Lite Thermostat",
@@ -492,7 +491,6 @@ return nil
 //     "has_direct_power": true,
 //     "relative_humidity": 0.36,
 //     "temperature_celsius": 21.11111111111111,
-//     "is_cooling_available": true,
 //     "temperature_fahrenheit": 70,
 //     "current_climate_setting": {
 //       "automatic_heating_enabled": false,

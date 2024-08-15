@@ -154,7 +154,6 @@ This section shows the JSON response returned by the API. Since each language en
             "has_direct_power": true,
             "relative_humidity": 0.36,
             "temperature_celsius": 21.11111111111111,
-            "is_cooling_available": true,
             "temperature_fahrenheit": 70,
             "current_climate_setting": {
                 "hvac_mode_setting": "off",
