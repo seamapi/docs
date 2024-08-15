@@ -217,7 +217,7 @@ console.log(await seam.thermostats.list())
       has_direct_power: true,
       relative_humidity: 0.36,
       temperature_celsius: 21.11111111111111,
-      : 70,
+      temperature_fahrenheit: 70,
       current_climate_setting: [Object],
       default_climate_setting: [Object],
       available_hvac_mode_settings: [Array],
