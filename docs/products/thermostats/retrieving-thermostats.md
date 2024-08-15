@@ -25,7 +25,6 @@ seam.thermostats.list()
     properties={
         'available_hvac_mode_settings': ['off', 'cool', 'heat', 'heat_cool'],
         'can_enable_automatic_cooling': True,
-        'can_enable_automatic_heating': True,
         'current_climate_setting': {
             'automatic_cooling_enabled': True,
             'automatic_heating_enabled': True,
@@ -159,7 +158,6 @@ curl -X 'GET' \
           "heat_cool"
         ],
         "can_enable_automatic_cooling": true,
-        "can_enable_automatic_heating": true,
         "offline_access_codes_enabled": false,
         "max_cooling_set_point_celsius": 33.333333333333336,
         "max_heating_set_point_celsius": 26.11111111111111,
@@ -226,7 +224,6 @@ console.log(await seam.thermostats.list())
       default_climate_setting: [Object],
       available_hvac_mode_settings: [Array],
       can_enable_automatic_cooling: true,
-      can_enable_automatic_heating: true,
       max_cooling_set_point_celsius: 33.333333333333336,
       max_heating_set_point_celsius: 26.11111111111111,
       min_cooling_set_point_celsius: 18.333333333333336,
@@ -299,7 +296,6 @@ echo json_encode($thermostats, JSON_PRETTY_PRINT);
             "temperature_fahrenheit": 70,
             "temperature_celsius": 21.11111111111111,
             "relative_humidity": 0.36,
-            "can_enable_automatic_heating": true,
             "can_enable_automatic_cooling": true,
             "available_hvac_mode_settings": [
                 "off",
@@ -494,7 +490,6 @@ return nil
       "heat_cool"
     ],
     "can_enable_automatic_cooling": true,
-    "can_enable_automatic_heating": true,
     "max_cooling_set_point_celsius": 33.333333333333336,
     "max_heating_set_point_celsius": 26.11111111111111,
     "min_cooling_set_point_celsius": 18.333333333333336,
@@ -555,7 +550,6 @@ Device(
     properties={
         'available_hvac_mode_settings': ['off', 'cool', 'heat', 'heat_cool'],
         'can_enable_automatic_cooling': True,
-        'can_enable_automatic_heating': True,
         'current_climate_setting': {
             'automatic_cooling_enabled': True,
             'automatic_heating_enabled': True,
@@ -691,7 +685,6 @@ curl -X 'GET' \
         "heat_cool"
       ],
       "can_enable_automatic_cooling": true,
-      "can_enable_automatic_heating": true,
       "max_cooling_set_point_celsius": 33.333333333333336,
       "max_heating_set_point_celsius": 26.11111111111111,
       "min_cooling_set_point_celsius": 18.333333333333336,
@@ -778,7 +771,6 @@ console.log(await seam.thermostats.get({
     },
     available_hvac_mode_settings: [ 'off', 'cool', 'heat', 'heat_cool' ],
     can_enable_automatic_cooling: true,
-    can_enable_automatic_heating: true,
     max_cooling_set_point_celsius: 33.333333333333336,
     max_heating_set_point_celsius: 26.11111111111111,
     min_cooling_set_point_celsius: 18.333333333333336,
@@ -855,7 +847,6 @@ echo json_encode($thermostat, JSON_PRETTY_PRINT);
         "temperature_fahrenheit": 70,
         "temperature_celsius": 21.11111111111111,
         "relative_humidity": 0.36,
-        "can_enable_automatic_heating": true,
         "can_enable_automatic_cooling": true,
         "available_hvac_mode_settings": [
             "off",
@@ -999,7 +990,6 @@ System.out.println(thermostat);
     "min_cooling_set_point_fahrenheit" : 65,
     "min_heating_cooling_delta_celsius" : 2.7777777777777777,
     "min_cooling_set_point_celsius" : 18.333333333333336,
-    "can_enable_automatic_heating" : true,
     "max_heating_set_point_fahrenheit" : 79,
     "image_url" : "https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png",
     "is_fan_running" : false,
@@ -1088,7 +1078,6 @@ return nil
       "heat_cool"
     ],
     "can_enable_automatic_cooling": true,
-    "can_enable_automatic_heating": true,
     "max_cooling_set_point_celsius": 33.333333333333336,
     "max_heating_set_point_celsius": 26.11111111111111,
     "min_cooling_set_point_celsius": 18.333333333333336,

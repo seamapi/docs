@@ -265,7 +265,6 @@ pprint(devices[0])
 #                                                    'heat_cool',
 #                                                    'off'],
 #                   'can_enable_automatic_cooling': True,
-#                   'can_enable_automatic_heating': True,
 #                   'current_climate_setting': {'automatic_cooling_enabled': True,
 #                                               'automatic_heating_enabled': True,
 #                                               'cooling_set_point_celsius': 21.5,
@@ -343,7 +342,6 @@ console.log(devices[0])
     },
     available_hvac_mode_settings: [ 'heat', 'cool', 'heat_cool', 'off' ],
     can_enable_automatic_cooling: true,
-    can_enable_automatic_heating: true,
     is_temporary_manual_override_active: false,
     name: '',
     model: {
@@ -408,7 +406,6 @@ System.out.println(devices);
 //       "manual_override_allowed" : true
 //     },
 //     "temperature_celsius" : 24.64,
-//     "can_enable_automatic_heating" : true,
 //     "is_heating" : false,
 //     "image_url" : "https://connect.getseam.com/assets/images/devices/unknown-lock.png",
 //     "is_fan_running" : false,
@@ -488,7 +485,6 @@ return nil
 //       "off"
 //     ],
 //     "can_enable_automatic_cooling": true,
-//     "can_enable_automatic_heating": true,
 //     "is_temporary_manual_override_active": false,
 //     "name": "",
 //     "model": {

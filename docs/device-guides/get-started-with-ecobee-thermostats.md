@@ -299,7 +299,6 @@ pprint(devices[0])
 #         "heat_cool"
 #       ],
 #       "can_enable_automatic_cooling": true,
-#       "can_enable_automatic_heating": true,
 #       "is_temporary_manual_override_active": false,
 #       "name": "Office",
 #       "image_url": "https://connect.getseam.com/assets/images/devices/ecobee_logo_square.png",
@@ -364,7 +363,6 @@ console.log(devices[0])
       "heat_cool"
     ],
     "can_enable_automatic_cooling": true,
-    "can_enable_automatic_heating": true,
     "is_temporary_manual_override_active": false,
     "name": "Office",
     "image_url": "https://connect.getseam.com/assets/images/devices/ecobee_logo_square.png",
@@ -434,7 +432,6 @@ System.out.println(devices);
 //     "min_cooling_set_point_fahrenheit" : 65,
 //     "min_heating_cooling_delta_celsius" : 2.7777777777777777,
 //     "min_cooling_set_point_celsius" : 18.333333333333336,
-//     "can_enable_automatic_heating" : true,
 //     "max_heating_set_point_fahrenheit" : 79,
 //     "image_url" : "https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png",
 //     "is_fan_running" : false,
@@ -505,7 +502,6 @@ return nil
 //       "heat_cool"
 //     ],
 //     "can_enable_automatic_cooling": true,
-//     "can_enable_automatic_heating": true,
 //     "max_cooling_set_point_celsius": 33.333333333333336,
 //     "max_heating_set_point_celsius": 26.11111111111111,
 //     "min_cooling_set_point_celsius": 18.333333333333336,
