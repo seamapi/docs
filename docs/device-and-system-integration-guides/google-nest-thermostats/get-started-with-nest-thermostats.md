@@ -264,8 +264,7 @@ pprint(devices[0])
 #                                                    'cool',
 #                                                    'heat_cool',
 #                                                    'off'],
-#                   'current_climate_setting': {'automatic_cooling_enabled': True,
-#                                               'automatic_heating_enabled': True,
+#                   'current_climate_setting': {
 #                                               'cooling_set_point_celsius': 21.5,
 #                                               'cooling_set_point_fahrenheit': 70.7,
 #                                               'heating_set_point_celsius': 20,
@@ -330,8 +329,6 @@ console.log(devices[0])
     temperature_celsius: 24.64,
     temperature_fahrenheit: 76.352,
     current_climate_setting: {
-      automatic_heating_enabled: true,
-      automatic_cooling_enabled: true,
       hvac_mode_setting: 'heat_cool',
       manual_override_allowed: true,
       cooling_set_point_celsius: 21.5,
@@ -394,8 +391,6 @@ System.out.println(devices);
 //       "manufacturer_display_name" : "Nest"
 //     },
 //     "current_climate_setting" : {
-//       "automatic_heating_enabled" : true,
-//       "automatic_cooling_enabled" : true,
 //       "hvac_mode_setting" : "heat_cool",
 //       "cooling_set_point_celsius" : 21.5,
 //       "heating_set_point_celsius" : 20.0,
@@ -466,8 +461,6 @@ return nil
 //     "temperature_celsius": 24.64,
 //     "temperature_fahrenheit": 76.352,
 //     "current_climate_setting": {
-//       "automatic_heating_enabled": true,
-//       "automatic_cooling_enabled": true,
 //       "hvac_mode_setting": "heat_cool",
 //       "manual_override_allowed": true,
 //       "cooling_set_point_celsius": 21.5,

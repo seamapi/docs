@@ -266,8 +266,7 @@ pprint(devices[0])
 #                                                   'cool',
 #                                                   'heat',
 #                                                   'heat_cool'],
-#                  'current_climate_setting': {'automatic_cooling_enabled': False,
-#                                              'automatic_heating_enabled': True,
+#                  'current_climate_setting': {
 #                                              'heating_set_point_celsius': 16.666666666666668,
 #                                              'heating_set_point_fahrenheit': 62,
 #                                              'hvac_mode_setting': 'heat',
@@ -338,8 +337,6 @@ console.log(devices[0])
     temperature_celsius: 24.444444444444446,
     temperature_fahrenheit: 76,
     current_climate_setting: {
-      automatic_heating_enabled: true,
-      automatic_cooling_enabled: false,
       hvac_mode_setting: 'heat',
       manual_override_allowed: true,
       heating_set_point_celsius: 16.666666666666668,
@@ -417,8 +414,6 @@ System.out.println(devices);
 //     temperature_celsius: 24.444444444444446,
 //     temperature_fahrenheit: 76,
 //     current_climate_setting: {
-//       automatic_heating_enabled: true,
-//       automatic_cooling_enabled: false,
 //       hvac_mode_setting: 'heat',
 //       manual_override_allowed: true,
 //       heating_set_point_celsius: 16.666666666666668,
@@ -490,8 +485,6 @@ return nil
 //     temperature_celsius: 24.444444444444446,
 //     temperature_fahrenheit: 76,
 //     current_climate_setting: {
-//       automatic_heating_enabled: true,
-//       automatic_cooling_enabled: false,
 //       hvac_mode_setting: 'heat',
 //       manual_override_allowed: true,
 //       heating_set_point_celsius: 16.666666666666668,

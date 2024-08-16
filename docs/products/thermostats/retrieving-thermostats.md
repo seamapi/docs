@@ -34,6 +34,16 @@ seam.thermostats.list()
             'hvac_mode_setting': 'heat_cool',
             'manual_override_allowed': True
         },
+        'default_climate_setting': {
+            'automatic_cooling_enabled': True,
+            'automatic_heating_eniabled': True,
+            'cooling_set_point_celsius': 25,
+            'cooling_set_point_fahrenheit': 77,
+            'heating_set_point_celsius': 20,
+            'heating_set_point_fahrenheit': 68,
+            'hvac_mode_setting': 'heat_cool',
+            'manual_override_allowed': True
+        },
         'ecobee_metadata': {
             'device_name': 'Thermostat 1',
             'ecobee_device_id': 'a64074f3-a0aa-4dbb-bbd3-f17f61701602'
@@ -284,8 +294,6 @@ echo json_encode($thermostats, JSON_PRETTY_PRINT);
             "fan_mode_setting": "auto",
             "is_temporary_manual_override_active": false,
             "current_climate_setting": {
-                "automatic_heating_enabled": true,
-                "automatic_cooling_enabled": true,
                 "hvac_mode_setting": "heat_cool",
                 "cooling_set_point_celsius": 23.88888888888889,
                 "heating_set_point_celsius": 18.333333333333336,
@@ -448,8 +456,6 @@ return nil
     "temperature_celsius": 21.11111111111111,
     "temperature_fahrenheit": 70,
     "current_climate_setting": {
-      "automatic_heating_enabled": true,
-      "automatic_cooling_enabled": true,
       "hvac_mode_setting": "heat_cool",
       "manual_override_allowed": true,
       "cooling_set_point_celsius": 23.88888888888889,
@@ -799,8 +805,6 @@ echo json_encode($thermostat, JSON_PRETTY_PRINT);
         "fan_mode_setting": "auto",
         "is_temporary_manual_override_active": false,
         "current_climate_setting": {
-            "automatic_heating_enabled": true,
-            "automatic_cooling_enabled": true,
             "hvac_mode_setting": "heat_cool",
             "cooling_set_point_celsius": 23.88888888888889,
             "heating_set_point_celsius": 18.333333333333336,
@@ -903,8 +907,6 @@ System.out.println(thermostat);
       "manufacturer_display_name" : "Ecobee"
     },
     "current_climate_setting" : {
-      "automatic_heating_enabled" : true,
-      "automatic_cooling_enabled" : true,
       "hvac_mode_setting" : "heat_cool",
       "cooling_set_point_celsius" : 25.0,
       "heating_set_point_celsius" : 20.0,
@@ -989,8 +991,6 @@ return nil
     "temperature_celsius": 21.11111111111111,
     "temperature_fahrenheit": 70,
     "current_climate_setting": {
-      "automatic_heating_enabled": true,
-      "automatic_cooling_enabled": true,
       "hvac_mode_setting": "heat_cool",
       "manual_override_allowed": true,
       "cooling_set_point_celsius": 23.88888888888889,

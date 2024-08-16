@@ -283,8 +283,6 @@ pprint(devices[0])
 #       "current_climate_setting": {
 #         "hvac_mode_setting": "off",
 #         "manual_override_allowed": false,
-#         "automatic_cooling_enabled": false,
-#         "automatic_heating_enabled": false
 #       },
 #       "available_hvac_mode_settings": [
 #         "off",
@@ -340,8 +338,6 @@ console.log(devices[0])
     "current_climate_setting": {
       "hvac_mode_setting": "off",
       "manual_override_allowed": false,
-      "automatic_cooling_enabled": false,
-      "automatic_heating_enabled": false
     },
     "available_hvac_mode_settings": [
       "off",
@@ -397,8 +393,6 @@ System.out.println(devices);
 //       "manufacturer_display_name" : "Ecobee"
 //     },
 //     "current_climate_setting" : {
-//       "automatic_heating_enabled" : false,
-//       "automatic_cooling_enabled" : false,
 //       "hvac_mode_setting" : "off",
 //       "manual_override_allowed" : true
 //     },
@@ -475,8 +469,6 @@ return nil
 //     "temperature_celsius": 21.11111111111111,
 //     "temperature_fahrenheit": 70,
 //     "current_climate_setting": {
-//       "automatic_heating_enabled": false,
-//       "automatic_cooling_enabled": false,
 //       "hvac_mode_setting": "off",
 //       "manual_override_allowed": true
 //     },
