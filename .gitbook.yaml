@@ -64,4 +64,3 @@ redirects:
   api-clients/access-control-systems/credentials/unassign-a-credential-from-a-user: api-clients/acs/credentials/unassign-a-credential-from-a-user.md
   api-clients/access-control-systems/credentials/delete-credential: api-clients/acs/credentials/delete-credential.md
   api-clients/access-control-systems/credentials/list-accessible-entrances: api-clients/acs/credentials/list-accessible-entrances.md
-
