@@ -30,6 +30,7 @@ The primary attribute you can modify is the [default climate setting](../../prod
 seam.thermostats.update(
   device_id: "a83690b2-2b70-409a-9a94-426699b84c97",
   default_climate_setting: {
+    "hvac_mode_setting": "heat_cool",
     "cooling_set_point_fahrenheit": 70
     "heating_set_point_fahrenheit": 65
   }
