@@ -25,18 +25,6 @@ seam.thermostats.list()
     properties={
         'available_hvac_mode_settings': ['off', 'cool', 'heat', 'heat_cool'],
         'current_climate_setting': {
-            'automatic_cooling_enabled': True,
-            'automatic_heating_enabled': True,
-            'cooling_set_point_celsius': 25,
-            'cooling_set_point_fahrenheit': 77,
-            'heating_set_point_celsius': 20,
-            'heating_set_point_fahrenheit': 68,
-            'hvac_mode_setting': 'heat_cool',
-            'manual_override_allowed': True
-        },
-        'default_climate_setting': {
-            'automatic_cooling_enabled': True,
-            'automatic_heating_eniabled': True,
             'cooling_set_point_celsius': 25,
             'cooling_set_point_fahrenheit': 77,
             'heating_set_point_celsius': 20,
@@ -133,8 +121,6 @@ curl -X 'GET' \
         "current_climate_setting": {
           "hvac_mode_setting": "heat_cool",
           "manual_override_allowed": true,
-          "automatic_cooling_enabled": true,
-          "automatic_heating_enabled": true,
           "cooling_set_point_celsius": 25,
           "heating_set_point_celsius": 20,
           "cooling_set_point_fahrenheit": 77,
@@ -529,8 +515,6 @@ Device(
     properties={
         'available_hvac_mode_settings': ['off', 'cool', 'heat', 'heat_cool'],
         'current_climate_setting': {
-            'automatic_cooling_enabled': True,
-            'automatic_heating_enabled': True,
             'cooling_set_point_celsius': 25,
             'cooling_set_point_fahrenheit': 77,
             'heating_set_point_celsius': 20,
@@ -629,8 +613,6 @@ curl -X 'GET' \
       "current_climate_setting": {
         "hvac_mode_setting": "heat_cool",
         "manual_override_allowed": true,
-        "automatic_cooling_enabled": true,
-        "automatic_heating_enabled": true,
         "cooling_set_point_celsius": 25,
         "heating_set_point_celsius": 20,
         "cooling_set_point_fahrenheit": 77,
@@ -709,8 +691,6 @@ console.log(await seam.thermostats.get({
     current_climate_setting: {
       hvac_mode_setting: 'heat_cool',
       manual_override_allowed: true,
-      automatic_cooling_enabled: true,
-      automatic_heating_enabled: true,
       cooling_set_point_celsius: 25,
       heating_set_point_celsius: 20,
       cooling_set_point_fahrenheit: 77,
