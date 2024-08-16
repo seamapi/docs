@@ -25,6 +25,7 @@ seam.thermostats.list()
     properties={
         'available_hvac_mode_settings': ['off', 'cool', 'heat', 'heat_cool'],
         'current_climate_setting': {
+            'hvac_mode_setting': 'heat_cool',
             'cooling_set_point_celsius': 25,
             'cooling_set_point_fahrenheit': 77,
             'heating_set_point_celsius': 20,
