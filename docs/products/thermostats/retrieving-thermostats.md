@@ -25,8 +25,6 @@ seam.thermostats.list()
     properties={
         'available_hvac_mode_settings': ['off', 'cool', 'heat', 'heat_cool'],
         'current_climate_setting': {
-            'automatic_cooling_enabled': True,
-            'automatic_heating_enabled': True,
             'cooling_set_point_celsius': 25,
             'cooling_set_point_fahrenheit': 77,
             'heating_set_point_celsius': 20,
@@ -35,8 +33,6 @@ seam.thermostats.list()
             'manual_override_allowed': True
         },
         'default_climate_setting': {
-            'automatic_cooling_enabled': True,
-            'automatic_heating_enabled': True,
             'cooling_set_point_celsius': 25,
             'cooling_set_point_fahrenheit': 77,
             'heating_set_point_celsius': 20,
@@ -133,8 +129,6 @@ curl -X 'GET' \
         "current_climate_setting": {
           "hvac_mode_setting": "heat_cool",
           "manual_override_allowed": true,
-          "automatic_cooling_enabled": true,
-          "automatic_heating_enabled": true,
           "cooling_set_point_celsius": 25,
           "heating_set_point_celsius": 20,
           "cooling_set_point_fahrenheit": 77,
@@ -143,8 +137,6 @@ curl -X 'GET' \
         "default_climate_setting": {
           "hvac_mode_setting": "heat_cool",
           "manual_override_allowed": true,
-          "automatic_cooling_enabled": true,
-          "automatic_heating_enabled": true,
           "cooling_set_point_celsius": 25,
           "heating_set_point_celsius": 20,
           "cooling_set_point_fahrenheit": 77,
@@ -305,8 +297,6 @@ echo json_encode($thermostats, JSON_PRETTY_PRINT);
             "fan_mode_setting": "auto",
             "is_temporary_manual_override_active": false,
             "current_climate_setting": {
-                "automatic_heating_enabled": true,
-                "automatic_cooling_enabled": true,
                 "hvac_mode_setting": "heat_cool",
                 "cooling_set_point_celsius": 23.88888888888889,
                 "heating_set_point_celsius": 18.333333333333336,
@@ -470,8 +460,6 @@ return nil
     "temperature_celsius": 21.11111111111111,
     "temperature_fahrenheit": 70,
     "current_climate_setting": {
-      "automatic_heating_enabled": true,
-      "automatic_cooling_enabled": true,
       "hvac_mode_setting": "heat_cool",
       "manual_override_allowed": true,
       "cooling_set_point_celsius": 23.88888888888889,
@@ -545,8 +533,6 @@ Device(
     properties={
         'available_hvac_mode_settings': ['off', 'cool', 'heat', 'heat_cool'],
         'current_climate_setting': {
-            'automatic_cooling_enabled': True,
-            'automatic_heating_enabled': True,
             'cooling_set_point_celsius': 25,
             'cooling_set_point_fahrenheit': 77,
             'heating_set_point_celsius': 20,
@@ -555,8 +541,6 @@ Device(
             'manual_override_allowed': True
         },
         'default_climate_setting': {
-            'automatic_cooling_enabled': True,
-            'automatic_heating_enabled': True,
             'cooling_set_point_celsius': 25,
             'cooling_set_point_fahrenheit': 77,
             'heating_set_point_celsius': 20,
@@ -655,8 +639,6 @@ curl -X 'GET' \
       "current_climate_setting": {
         "hvac_mode_setting": "heat_cool",
         "manual_override_allowed": true,
-        "automatic_cooling_enabled": true,
-        "automatic_heating_enabled": true,
         "cooling_set_point_celsius": 25,
         "heating_set_point_celsius": 20,
         "cooling_set_point_fahrenheit": 77,
@@ -665,8 +647,6 @@ curl -X 'GET' \
       "default_climate_setting": {
         "hvac_mode_setting": "heat_cool",
         "manual_override_allowed": true,
-        "automatic_cooling_enabled": true,
-        "automatic_heating_enabled": true,
         "cooling_set_point_celsius": 25,
         "heating_set_point_celsius": 20,
         "cooling_set_point_fahrenheit": 77,
@@ -745,8 +725,6 @@ console.log(await seam.thermostats.get({
     current_climate_setting: {
       hvac_mode_setting: 'heat_cool',
       manual_override_allowed: true,
-      automatic_cooling_enabled: true,
-      automatic_heating_enabled: true,
       cooling_set_point_celsius: 25,
       heating_set_point_celsius: 20,
       cooling_set_point_fahrenheit: 77,
@@ -755,8 +733,6 @@ console.log(await seam.thermostats.get({
     default_climate_setting: {
       hvac_mode_setting: 'heat_cool',
       manual_override_allowed: true,
-      automatic_cooling_enabled: true,
-      automatic_heating_enabled: true,
       cooling_set_point_celsius: 25,
       heating_set_point_celsius: 20,
       cooling_set_point_fahrenheit: 77,
@@ -851,8 +827,6 @@ echo json_encode($thermostat, JSON_PRETTY_PRINT);
         "fan_mode_setting": "auto",
         "is_temporary_manual_override_active": false,
         "current_climate_setting": {
-            "automatic_heating_enabled": true,
-            "automatic_cooling_enabled": true,
             "hvac_mode_setting": "heat_cool",
             "cooling_set_point_celsius": 23.88888888888889,
             "heating_set_point_celsius": 18.333333333333336,
@@ -956,8 +930,6 @@ System.out.println(thermostat);
       "manufacturer_display_name" : "Ecobee"
     },
     "current_climate_setting" : {
-      "automatic_heating_enabled" : true,
-      "automatic_cooling_enabled" : true,
       "hvac_mode_setting" : "heat_cool",
       "cooling_set_point_celsius" : 25.0,
       "heating_set_point_celsius" : 20.0,
@@ -986,8 +958,6 @@ System.out.println(thermostat);
     "default_climate_setting" : {
       "hvac_mode_setting" : "heat_cool",
       "manual_override_allowed" : true,
-      "automatic_cooling_enabled" : true,
-      "automatic_heating_enabled" : true,
       "cooling_set_point_celsius" : 25,
       "heating_set_point_celsius" : 20,
       "cooling_set_point_fahrenheit" : 77,
@@ -1052,8 +1022,6 @@ return nil
     "temperature_celsius": 21.11111111111111,
     "temperature_fahrenheit": 70,
     "current_climate_setting": {
-      "automatic_heating_enabled": true,
-      "automatic_cooling_enabled": true,
       "hvac_mode_setting": "heat_cool",
       "manual_override_allowed": true,
       "cooling_set_point_celsius": 23.88888888888889,

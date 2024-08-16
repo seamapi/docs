@@ -50,8 +50,6 @@ print(thermostat)
 #             "off"
 #         ],
 #         "current_climate_setting": {
-#             "automatic_heating_enabled": True,
-#             "automatic_cooling_enabled": True,
 #             "hvac_mode_setting": "heat_cool",
 #             "cooling_set_point_fahrenheit": 75,
 #             "heating_set_point_fahrenheit": 65,
@@ -95,8 +93,6 @@ console.log(device)
         "off"
       ],
       "current_climate_setting": {
-        "automatic_heating_enabled": true,
-        "automatic_cooling_enabled": true,
         "hvac_mode_setting": "heat_cool",
         "cooling_set_point_fahrenheit": 75,
         "heating_set_point_fahrenheit": 65,
@@ -154,8 +150,6 @@ This section shows the JSON response returned by the API. Since each language en
             "current_climate_setting": {
                 "hvac_mode_setting": "off",
                 "manual_override_allowed": false,
-                "automatic_cooling_enabled": false,
-                "automatic_heating_enabled": false
             },
             "available_hvac_mode_settings": [
                 "off",
@@ -211,8 +205,6 @@ This section shows the JSON response returned by the API. Since each language en
         "off"
       ],
       "current_climate_setting": {
-        "automatic_heating_enabled": true,
-        "automatic_cooling_enabled": true,
         "hvac_mode_setting": "heat_cool",
         "cooling_set_point_fahrenheit": 75,
         "heating_set_point_fahrenheit": 65,
