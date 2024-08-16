@@ -250,7 +250,7 @@ return nil
 
 ## Retrieve a Connected Access Control System
 
-Use this `connected_account_id` in a [List Systems](../../api-clients/access-control-systems/systems/list-systems.md) command to retrieve the ACS that your user has just connected to Seam.
+Use this `connected_account_id` in a [List Systems](../../api-clients/acs/systems/list-systems.md) command to retrieve the ACS that your user has just connected to Seam.
 
 {% hint style="info" %}
 If you set `wait_for_device_creation` to `false` when [creating the Connect Webview](../../core-concepts/connect-webviews/#id-1.-create-a-connect-webview), you should wait for the [`connected_account.completed_first_sync` event](../../api-clients/events/#event-types) before retrieving the user's ACS. This event indicates that Seam has finished the first sync of the connected account and the `acs_system` is now available.
