@@ -264,8 +264,6 @@ pprint(devices[0])
 #                                                    'cool',
 #                                                    'heat_cool',
 #                                                    'off'],
-#                   'can_enable_automatic_cooling': True,
-#                   'can_enable_automatic_heating': True,
 #                   'current_climate_setting': {'automatic_cooling_enabled': True,
 #                                               'automatic_heating_enabled': True,
 #                                               'cooling_set_point_celsius': 21.5,
@@ -342,8 +340,6 @@ console.log(devices[0])
       heating_set_point_fahrenheit: 68
     },
     available_hvac_mode_settings: [ 'heat', 'cool', 'heat_cool', 'off' ],
-    can_enable_automatic_cooling: true,
-    can_enable_automatic_heating: true,
     is_temporary_manual_override_active: false,
     name: '',
     model: {
@@ -408,7 +404,6 @@ System.out.println(devices);
 //       "manual_override_allowed" : true
 //     },
 //     "temperature_celsius" : 24.64,
-//     "can_enable_automatic_heating" : true,
 //     "is_heating" : false,
 //     "image_url" : "https://connect.getseam.com/assets/images/devices/unknown-lock.png",
 //     "is_fan_running" : false,
@@ -426,7 +421,6 @@ System.out.println(devices);
 //     "is_climate_setting_schedule_active" : false,
 //     "relative_humidity" : 0.46,
 //     "temperature_fahrenheit" : 76.352,
-//     "can_enable_automatic_cooling" : true
 //   },
 //   "connected_account_id" : "44284499-a50b-4947-86c1-58264f014be5",
 //   "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
@@ -487,8 +481,6 @@ return nil
 //       "heat_cool",
 //       "off"
 //     ],
-//     "can_enable_automatic_cooling": true,
-//     "can_enable_automatic_heating": true,
 //     "is_temporary_manual_override_active": false,
 //     "name": "",
 //     "model": {

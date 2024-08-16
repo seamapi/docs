@@ -43,8 +43,6 @@ print(thermostat)
 #         "online": True,
 #         "relative_humidity": 0.36,
 #         "temperature_fahrenheit": 70,
-#         "can_enable_automatic_cooling": True,
-#         "can_enable_automatic_heating": True,
 #         "available_hvac_mode_settings": [
 #             "cool",
 #             "heat",
@@ -90,8 +88,6 @@ console.log(device)
       "online": true,
       "relative_humidity": 0.36,
       "temperature_fahrenheit": 70,
-      "can_enable_automatic_cooling": true,
-      "can_enable_automatic_heating": true,
       "available_hvac_mode_settings": [
         "cool",
         "heat",
@@ -154,8 +150,6 @@ This section shows the JSON response returned by the API. Since each language en
             "has_direct_power": true,
             "relative_humidity": 0.36,
             "temperature_celsius": 21.11111111111111,
-            "is_cooling_available": true,
-            "is_heating_available": true,
             "temperature_fahrenheit": 70,
             "current_climate_setting": {
                 "hvac_mode_setting": "off",
@@ -169,8 +163,6 @@ This section shows the JSON response returned by the API. Since each language en
                 "heat",
                 "heat_cool"
             ],
-            "can_enable_automatic_cooling": true,
-            "can_enable_automatic_heating": true,
             "max_cooling_set_point_celsius": 33.333333333333336,
             "max_heating_set_point_celsius": 26.11111111111111,
             "min_cooling_set_point_celsius": 18.333333333333336,
@@ -212,8 +204,6 @@ This section shows the JSON response returned by the API. Since each language en
       "online": true,
       "relative_humidity": 0.36,
       "temperature_fahrenheit": 70,
-      "can_enable_automatic_cooling": true,
-      "can_enable_automatic_heating": true,
       "available_hvac_mode_settings": [
         "cool",
         "heat",

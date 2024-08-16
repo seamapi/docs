@@ -266,8 +266,6 @@ pprint(devices[0])
 #                                                   'cool',
 #                                                   'heat',
 #                                                   'heat_cool'],
-#                  'can_enable_automatic_cooling': True,
-#                  'can_enable_automatic_heating': True,
 #                  'current_climate_setting': {'automatic_cooling_enabled': False,
 #                                              'automatic_heating_enabled': True,
 #                                              'heating_set_point_celsius': 16.666666666666668,
@@ -282,10 +280,8 @@ pprint(devices[0])
 #                  'image_url': 'https://connect.getseam.com/assets/images/devices/unknown-lock.png',
 #                  'is_climate_setting_schedule_active': False,
 #                  'is_cooling': False,
-#                  'is_cooling_available': True,
 #                  'is_fan_running': True,
 #                  'is_heating': True,
-#                  'is_heating_available': True,
 #                  'is_temporary_manual_override_active': False,
 #                  'manufacturer': 'honeywell_resideo',
 #                  'max_cooling_set_point_celsius': 32.22222222222222,
@@ -340,8 +336,6 @@ console.log(devices[0])
       honeywell_resideo_device_id: 'c47711ec-4e8e-4785-ad3b-7a7e3f81e2b5'
     },
     temperature_celsius: 24.444444444444446,
-    is_cooling_available: true,
-    is_heating_available: true,
     temperature_fahrenheit: 76,
     current_climate_setting: {
       automatic_heating_enabled: true,
@@ -352,8 +346,6 @@ console.log(devices[0])
       heating_set_point_fahrenheit: 62
     },
     available_hvac_mode_settings: [ 'off', 'cool', 'heat', 'heat_cool' ],
-    can_enable_automatic_cooling: true,
-    can_enable_automatic_heating: true,
     max_cooling_set_point_celsius: 32.22222222222222,
     max_heating_set_point_celsius: 32.22222222222222,
     min_cooling_set_point_celsius: 10,
@@ -423,8 +415,6 @@ System.out.println(devices);
 //       honeywell_device_id: 'c47711ec-4e8e-4785-ad3b-7a7e3f81e2b5'
 //     },
 //     temperature_celsius: 24.444444444444446,
-//     is_cooling_available: true,
-//     is_heating_available: true,
 //     temperature_fahrenheit: 76,
 //     current_climate_setting: {
 //       automatic_heating_enabled: true,
@@ -435,8 +425,6 @@ System.out.println(devices);
 //       heating_set_point_fahrenheit: 62
 //     },
 //     available_hvac_mode_settings: [ 'off', 'cool', 'heat', 'heat_cool' ],
-//     can_enable_automatic_cooling: true,
-//     can_enable_automatic_heating: true,
 //     max_cooling_set_point_celsius: 32.22222222222222,
 //     max_heating_set_point_celsius: 32.22222222222222,
 //     min_cooling_set_point_celsius: 10,
@@ -500,8 +488,6 @@ return nil
 //       honeywell_device_id: 'c47711ec-4e8e-4785-ad3b-7a7e3f81e2b5'
 //     },
 //     temperature_celsius: 24.444444444444446,
-//     is_cooling_available: true,
-//     is_heating_available: true,
 //     temperature_fahrenheit: 76,
 //     current_climate_setting: {
 //       automatic_heating_enabled: true,
@@ -512,8 +498,6 @@ return nil
 //       heating_set_point_fahrenheit: 62
 //     },
 //     available_hvac_mode_settings: [ 'off', 'cool', 'heat', 'heat_cool' ],
-//     can_enable_automatic_cooling: true,
-//     can_enable_automatic_heating: true,
 //     max_cooling_set_point_celsius: 32.22222222222222,
 //     max_heating_set_point_celsius: 32.22222222222222,
 //     min_cooling_set_point_celsius: 10,

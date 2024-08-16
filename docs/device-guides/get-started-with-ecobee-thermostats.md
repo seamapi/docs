@@ -298,8 +298,6 @@ pprint(devices[0])
 #         "heat",
 #         "heat_cool"
 #       ],
-#       "can_enable_automatic_cooling": true,
-#       "can_enable_automatic_heating": true,
 #       "is_temporary_manual_override_active": false,
 #       "name": "Office",
 #       "image_url": "https://connect.getseam.com/assets/images/devices/ecobee_logo_square.png",
@@ -363,8 +361,6 @@ console.log(devices[0])
       "heat",
       "heat_cool"
     ],
-    "can_enable_automatic_cooling": true,
-    "can_enable_automatic_heating": true,
     "is_temporary_manual_override_active": false,
     "name": "Office",
     "image_url": "https://connect.getseam.com/assets/images/devices/ecobee_logo_square.png",
@@ -430,13 +426,10 @@ System.out.println(devices);
 //     "min_heating_cooling_delta_fahrenheit" : 5,
 //     "available_hvac_mode_settings" : [ "off", "cool", "heat", "heat_cool" ],
 //     "has_direct_power" : true,
-//     "can_enable_automatic_cooling" : true,
 //     "min_cooling_set_point_fahrenheit" : 65,
 //     "min_heating_cooling_delta_celsius" : 2.7777777777777777,
 //     "min_cooling_set_point_celsius" : 18.333333333333336,
-//     "can_enable_automatic_heating" : true,
 //     "max_heating_set_point_fahrenheit" : 79,
-//     "is_cooling_available" : true,
 //     "image_url" : "https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png",
 //     "is_fan_running" : false,
 //     "image_alt_text" : "Ecobee 3 Lite Thermostat",
@@ -449,7 +442,6 @@ System.out.println(devices);
 //     "is_climate_setting_schedule_active" : false,
 //     "relative_humidity" : 0.36,
 //     "temperature_fahrenheit" : 70,
-//     "is_heating_available" : true
 //   },
 //   "connected_account_id" : "aaf37f42-f5a1-4223-a7db-2b61700bf2a9",
 //   "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
@@ -493,8 +485,6 @@ return nil
 //     "has_direct_power": true,
 //     "relative_humidity": 0.36,
 //     "temperature_celsius": 21.11111111111111,
-//     "is_cooling_available": true,
-//     "is_heating_available": true,
 //     "temperature_fahrenheit": 70,
 //     "current_climate_setting": {
 //       "automatic_heating_enabled": false,
@@ -508,8 +498,6 @@ return nil
 //       "heat",
 //       "heat_cool"
 //     ],
-//     "can_enable_automatic_cooling": true,
-//     "can_enable_automatic_heating": true,
 //     "max_cooling_set_point_celsius": 33.333333333333336,
 //     "max_heating_set_point_celsius": 26.11111111111111,
 //     "min_cooling_set_point_celsius": 18.333333333333336,
