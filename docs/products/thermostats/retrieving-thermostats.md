@@ -25,15 +25,6 @@ seam.thermostats.list()
     properties={
         'available_hvac_mode_settings': ['off', 'cool', 'heat', 'heat_cool'],
         'current_climate_setting': {
-            'hvac_mode_setting': 'heat_cool',
-            'cooling_set_point_celsius': 25,
-            'cooling_set_point_fahrenheit': 77,
-            'heating_set_point_celsius': 20,
-            'heating_set_point_fahrenheit': 68,
-            'hvac_mode_setting': 'heat_cool',
-            'manual_override_allowed': True
-        },
-        'default_climate_setting': {
             'cooling_set_point_celsius': 25,
             'cooling_set_point_fahrenheit': 77,
             'heating_set_point_celsius': 20,
@@ -135,14 +126,6 @@ curl -X 'GET' \
           "cooling_set_point_fahrenheit": 77,
           "heating_set_point_fahrenheit": 68
         },
-        "default_climate_setting": {
-          "hvac_mode_setting": "heat_cool",
-          "manual_override_allowed": true,
-          "cooling_set_point_celsius": 25,
-          "heating_set_point_celsius": 20,
-          "cooling_set_point_fahrenheit": 77,
-          "heating_set_point_fahrenheit": 68
-        },
         "available_hvac_mode_settings": [
           "off",
           "cool",
@@ -212,7 +195,6 @@ console.log(await seam.thermostats.list())
       temperature_celsius: 21.11111111111111,
       temperature_fahrenheit: 70,
       current_climate_setting: [Object],
-      default_climate_setting: [Object],
       available_hvac_mode_settings: [Array],
       max_cooling_set_point_celsius: 33.333333333333336,
       max_heating_set_point_celsius: 26.11111111111111,
@@ -305,7 +287,6 @@ echo json_encode($thermostats, JSON_PRETTY_PRINT);
                 "heating_set_point_fahrenheit": 65,
                 "manual_override_allowed": true
             },
-            "default_climate_setting": null,
             "min_cooling_set_point_celsius": 18.333333333333336,
             "min_cooling_set_point_fahrenheit": 65,
             "max_cooling_set_point_celsius": 33.333333333333336,
@@ -541,14 +522,6 @@ Device(
             'hvac_mode_setting': 'heat_cool',
             'manual_override_allowed': True
         },
-        'default_climate_setting': {
-            'cooling_set_point_celsius': 25,
-            'cooling_set_point_fahrenheit': 77,
-            'heating_set_point_celsius': 20,
-            'heating_set_point_fahrenheit': 68,
-            'hvac_mode_setting': 'heat_cool',
-            'manual_override_allowed': True
-        },
         'ecobee_metadata': {
             'device_name': 'Thermostat 1',
             'ecobee_device_id': 'a64074f3-a0aa-4dbb-bbd3-f17f61701602'
@@ -645,14 +618,6 @@ curl -X 'GET' \
         "cooling_set_point_fahrenheit": 77,
         "heating_set_point_fahrenheit": 68
       },
-      "default_climate_setting": {
-        "hvac_mode_setting": "heat_cool",
-        "manual_override_allowed": true,
-        "cooling_set_point_celsius": 25,
-        "heating_set_point_celsius": 20,
-        "cooling_set_point_fahrenheit": 77,
-        "heating_set_point_fahrenheit": 68
-      },
       "available_hvac_mode_settings": [
         "off",
         "cool",
@@ -724,14 +689,6 @@ console.log(await seam.thermostats.get({
     temperature_celsius: 21.11111111111111,
     temperature_fahrenheit: 70,
     current_climate_setting: {
-      hvac_mode_setting: 'heat_cool',
-      manual_override_allowed: true,
-      cooling_set_point_celsius: 25,
-      heating_set_point_celsius: 20,
-      cooling_set_point_fahrenheit: 77,
-      heating_set_point_fahrenheit: 68
-    },
-    default_climate_setting: {
       hvac_mode_setting: 'heat_cool',
       manual_override_allowed: true,
       cooling_set_point_celsius: 25,
@@ -835,7 +792,6 @@ echo json_encode($thermostat, JSON_PRETTY_PRINT);
             "heating_set_point_fahrenheit": 65,
             "manual_override_allowed": true
         },
-        "default_climate_setting": null,
         "min_cooling_set_point_celsius": 18.333333333333336,
         "min_cooling_set_point_fahrenheit": 65,
         "max_cooling_set_point_celsius": 33.333333333333336,
@@ -956,14 +912,6 @@ System.out.println(thermostat);
     "max_heating_set_point_fahrenheit" : 79,
     "image_url" : "https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png",
     "is_fan_running" : false,
-    "default_climate_setting" : {
-      "hvac_mode_setting" : "heat_cool",
-      "manual_override_allowed" : true,
-      "cooling_set_point_celsius" : 25,
-      "heating_set_point_celsius" : 20,
-      "cooling_set_point_fahrenheit" : 77,
-      "heating_set_point_fahrenheit" : 68
-    },
     "image_alt_text" : "Ecobee 3 Lite Thermostat",
     "min_heating_set_point_fahrenheit" : 45,
     "ecobee_metadata" : {
