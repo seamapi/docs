@@ -27,4 +27,3 @@ When you have `heat_cool` turned on, where both heating and cooling systems are 
 | [Get Thermostat](get-thermostat.md)                                                             |
 | ----------------------------------------------------------------------------------------------- |
 | [List Thermostats](list-thermostats.md)                                                         |
-| [Set Default Climate Setting](../api-clients/thermostats/update-a-thermostat.md)                |

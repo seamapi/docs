@@ -286,12 +286,6 @@ pprint(devices[0])
 #         "automatic_cooling_enabled": false,
 #         "automatic_heating_enabled": false
 #       },
-#       "default_climate_setting": {
-#         "hvac_mode_setting": "off",
-#         "manual_override_allowed": false,
-#         "automatic_cooling_enabled": false,
-#         "automatic_heating_enabled": false
-#       },
 #       "available_hvac_mode_settings": [
 #         "off",
 #         "cool",
@@ -344,12 +338,6 @@ console.log(devices[0])
     "temperature_celsius": 21.2,
     "temperature_fahrenheit": 70.2,
     "current_climate_setting": {
-      "hvac_mode_setting": "off",
-      "manual_override_allowed": false,
-      "automatic_cooling_enabled": false,
-      "automatic_heating_enabled": false
-    },
-    "default_climate_setting": {
       "hvac_mode_setting": "off",
       "manual_override_allowed": false,
       "automatic_cooling_enabled": false,
