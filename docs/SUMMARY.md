@@ -70,7 +70,7 @@
   * [Set Points](products/thermostats/set-points.md)
   * [Retrieving Thermostats](products/thermostats/retrieving-thermostats.md)
   * [Setting the Current HVAC and Fan Mode Settings](products/thermostats/configure-current-climate-settings.md)
-    * [Setting the Default Climate Setting](capability-guides/thermostats/managing-scheduled-climate-settings-in-development/setting-the-default-climate-setting.md)
+    * [Setting the Default Climate Setting](capability-guides/thermostats/configure-current-climate-settings/setting-the-default-climate-setting.md)
 * [👂 Noise Sensors](products/noise-sensors/README.md)
   * [Configuring Noise Threshold Settings](products/noise-sensors/configure-noise-threshold-settings.md)
 * [📡 Seam Bridge](capability-guides/seam-bridge.md)
