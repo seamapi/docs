@@ -1,10 +1,10 @@
 # Table of contents
 
-* [🎉 Seam Documentation](README.md)
+* [Seam Documentation](README.md)
 * [🚲 Quick Start](quickstart.md)
 * [🚀 Go Live!](go-live.md)
 
-## 📖 Core Concepts
+## Core Concepts
 
 * [Overview](core-concepts/overview.md)
 * [Seam Console](core-concepts/seam-console/README.md)
@@ -27,9 +27,9 @@
   * [Reconnecting an Account](device-guides/reconnecting-an-account.md)
 * [Action Attempts](core-concepts/action-attempts.md)
 
-## 🧰 Capability Guides
+## Capability Guides
 
-* [💪 Device and System Capabilities](capability-guides/device-and-system-capabilities.md)
+* [Device and System Capabilities](capability-guides/device-and-system-capabilities.md)
 * [🔒 Smart Locks](products/smart-locks/README.md)
   * [Locking and Unlocking](products/smart-locks/lock-and-unlock.md)
   * [Managing Access Codes](products/smart-locks/access-codes/README.md)

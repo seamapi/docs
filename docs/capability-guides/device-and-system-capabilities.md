@@ -2,7 +2,7 @@
 description: Learn about device and system capabilities, as well as capability flags.
 ---
 
-# 💪 Device and System Capabilities
+# Device and System Capabilities
 
 Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use. For example, some devices support [remote unlock actions](../products/smart-locks/lock-and-unlock.md), while others support [programming access codes](../products/smart-locks/access-codes/). Some devices support both of these capabilities. When developing your application, it is imperative to be able to identify the capabilities of each device.
 
