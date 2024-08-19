@@ -22,11 +22,13 @@ export function setEndpointTemplateContext(
     description: endpoint.response.description,
     properties: null,
     resourceType: null,
+    responseKey: null,
   }
 
   if (endpoint.response.responseType !== 'void') {
-    const { resourceType } = endpoint.response
+    const { resourceType, responseKey } = endpoint.response
     file.response.resourceType = resourceType
+    file.response.responseKey = responseKey
     const resource = blueprint.resources[resourceType]
     file.response.properties =
       resource?.properties.map((property) => ({
@@ -57,6 +59,7 @@ export interface EndpointTemplateContext {
   response: {
     description: string
     resourceType: string | null
+    responseKey: string | null
     properties: null | Array<{
       name: string
       description: string
