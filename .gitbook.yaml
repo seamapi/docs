@@ -31,6 +31,17 @@ redirects:
   device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/special-requirements-for-ios-mobile-access-sdk-development: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/special-requirements-for-ios-mobile-access-sdk-development.md
   capability-guides/access-systems/understanding-acs-differences: capability-guides/access-systems/understanding-access-control-system-differences.md
   device-guides/get-started-with-schlage-locks: device-and-system-integration-guides/schlage-locks/get-started-with-schlage-locks.md
+  api-clients/access-codes/convert-an-unmanaged-access-code: api-clients/access-codes/convert-unmanaged.md
+  api-clients/access-codes/create-many-access-codes: api-clients/access-codes/create-many.md
+  api-clients/access-codes/create-an-access-code: api-clients/access-codes/create.md
+  api-clients/access-codes/delete-an-unmanaged-access-code: api-clients/access-codes/delete-unmanaged.md
+  api-clients/access-codes/delete-an-access-code: api-clients/access-codes/delete.md
+  api-clients/access-codes/get-an-unmanaged-access-code: api-clients/access-codes/get-unmanaegd.md
+  api-clients/access-codes/get-an-access-code: api-clients/access-codes/get.md
+  api-clients/access-codes/list-unmanaged-access-codes: api-clients/access-codes/list-unmanaged.md
+  api-clients/access-codes/list-access-codes: api-clients/access-codes/list.md
+  api-clients/access-codes/pull-backup-access-code: api-clients/access-codes/pull-backup.md
+  api-clients/access-codes/update-an-access-code: api-clients/access-codes/update.md
   api-clients/access-control-systems: api-clients/acs/README.md
   api-clients/access-control-systems/systems: api-clients/acs/systems/README.md
   api-clients/access-control-systems/systems/get-system: api-clients/acs/systems/get.md
