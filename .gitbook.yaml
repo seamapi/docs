@@ -33,34 +33,34 @@ redirects:
   device-guides/get-started-with-schlage-locks: device-and-system-integration-guides/schlage-locks/get-started-with-schlage-locks.md
   api-clients/access-control-systems: api-clients/acs/README.md
   api-clients/access-control-systems/systems: api-clients/acs/systems/README.md
-  api-clients/access-control-systems/systems/get-system: api-clients/acs/systems/get-system.md
+  api-clients/access-control-systems/systems/get-system: api-clients/acs/systems/get.md
   api-clients/access-control-systems/systems/list-compatible-credential-manager-acs-systems: api-clients/acs/systems/list-compatible-credential-manager-acs-systems.md
   api-clients/access-control-systems/users: api-clients/acs/users/README.md
-  api-clients/access-control-systems/users/create-user: api-clients/acs/users/create-user.md
-  api-clients/access-control-systems/users/list-users: api-clients/acs/users/list-users.md
-  api-clients/access-control-systems/users/get-user: api-clients/acs/users/get-user.md
-  api-clients/access-control-systems/users/update-user: api-clients/acs/users/update-user.md
-  api-clients/access-control-systems/users/suspend-a-user: api-clients/acs/users/suspend-a-user.md
-  api-clients/access-control-systems/users/unsuspend-a-user: api-clients/acs/users/unsuspend-a-user.md
-  api-clients/access-control-systems/users/delete-user: api-clients/acs/users/delete-user.md
+  api-clients/access-control-systems/users/create-user: api-clients/acs/users/create.md
+  api-clients/access-control-systems/users/list-users: api-clients/acs/users/list.md
+  api-clients/access-control-systems/users/get-user: api-clients/acs/users/get.md
+  api-clients/access-control-systems/users/update-user: api-clients/acs/users/update.md
+  api-clients/access-control-systems/users/suspend-a-user: api-clients/acs/users/suspend.md
+  api-clients/access-control-systems/users/unsuspend-a-user: api-clients/acs/users/unsuspend.md
+  api-clients/access-control-systems/users/delete-user: api-clients/acs/users/delete.md
   api-clients/access-control-systems/users/add-user-to-access-group: api-clients/acs/users/add-user-to-access-group.md
   api-clients/access-control-systems/users/remove-user-from-access-group: api-clients/acs/users/remove-user-from-access-group.md
   api-clients/access-control-systems/entrances: api-clients/acs/entrances/README.md
-  api-clients/access-control-systems/entrances/list-entrances: api-clients/acs/entrances/list-entrances.md
-  api-clients/access-control-systems/entrances/get-an-entrance: api-clients/acs/entrances/get-an-entrance.md
+  api-clients/access-control-systems/entrances/list-entrances: api-clients/acs/entrances/list.md
+  api-clients/access-control-systems/entrances/get-an-entrance: api-clients/acs/entrances/get.md
   api-clients/access-control-systems/entrances/list-credentials-with-access-to-an-entrance: api-clients/acs/entrances/list-credentials-with-access-to-an-entrance.md
   api-clients/access-control-systems/access-groups: api-clients/acs/access-groups/README.md
-  api-clients/access-control-systems/access-groups/list-access-groups: api-clients/acs/access-groups/list-access-groups.md
-  api-clients/access-control-systems/access-groups/get-access-group: api-clients/acs/access-groups/get-access-group.md
-  api-clients/access-control-systems/access-groups/add-user-to-access-group: api-clients/acs/access-groups/add-user-to-access-group.md
-  api-clients/access-control-systems/access-groups/remove-user-from-access-group: api-clients/acs/access-groups/remove-user-from-access-group.md
-  api-clients/access-control-systems/access-groups/list-users-in-access-group: api-clients/acs/access-groups/list-users-in-access-group.md
+  api-clients/access-control-systems/access-groups/list-access-groups: api-clients/acs/access-groups/list.md
+  api-clients/access-control-systems/access-groups/get-access-group: api-clients/acs/access-groups/get.md
+  api-clients/access-control-systems/access-groups/add-user-to-access-group: api-clients/acs/access-groups/add-user.md
+  api-clients/access-control-systems/access-groups/remove-user-from-access-group: api-clients/acs/access-groups/remove-user.md
+  api-clients/access-control-systems/access-groups/list-users-in-access-group: api-clients/acs/access-groups/list-users.md
   api-clients/access-control-systems/credentials: api-clients/acs/credentials/README.md
-  api-clients/access-control-systems/credentials/create-credential-for-user: api-clients/acs/credentials/create-credential-for-user.md
-  api-clients/access-control-systems/credentials/assign-a-credential-to-a-user: api-clients/acs/credentials/assign-a-credential-to-a-user.md
-  api-clients/access-control-systems/credentials/list-credentials: api-clients/acs/credentials/list-credentials.md
-  api-clients/access-control-systems/credentials/get-credential: api-clients/acs/credentials/get-credential.md
-  api-clients/access-control-systems/credentials/update-a-credential: api-clients/acs/credentials/update-a-credential.md
-  api-clients/access-control-systems/credentials/unassign-a-credential-from-a-user: api-clients/acs/credentials/unassign-a-credential-from-a-user.md
-  api-clients/access-control-systems/credentials/delete-credential: api-clients/acs/credentials/delete-credential.md
+  api-clients/access-control-systems/credentials/create-credential-for-user: api-clients/acs/credentials/create.md
+  api-clients/access-control-systems/credentials/assign-a-credential-to-a-user: api-clients/acs/credentials/assign.md
+  api-clients/access-control-systems/credentials/list-credentials: api-clients/acs/credentials/list.md
+  api-clients/access-control-systems/credentials/get-credential: api-clients/acs/credentials/get.md
+  api-clients/access-control-systems/credentials/update-a-credential: api-clients/acs/credentials/update.md
+  api-clients/access-control-systems/credentials/unassign-a-credential-from-a-user: api-clients/acs/credentials/unassign.md
+  api-clients/access-control-systems/credentials/delete-credential: api-clients/acs/credentials/delete.md
   api-clients/access-control-systems/credentials/list-accessible-entrances: api-clients/acs/credentials/list-accessible-entrances.md
