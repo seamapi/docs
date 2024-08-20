@@ -4,24 +4,29 @@ description: Get a Lock on your account by its Device ID
 
 # Get Lock
 
-{% swagger method="get" path="/locks/get" baseUrl="https://connect.getseam.com" summary="Get Locks for Device" %}
-{% swagger-description %}
+{% hint style="info" %}
+Deprecated: Use [Get Device](../devices/get-device.md) instead.
+{% endhint %}
 
-{% endswagger-description %}
+## Get Locks for Device
 
-{% swagger-parameter in="query" name="device_id" required="true" %}
-ID of Device to be Locked
-{% endswagger-parameter %}
+<mark style="color:blue;">`GET`</mark> `https://connect.getseam.com/locks/get`
 
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-Bearer <API_KEY>
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-parameter in="query" name="name" %}
-Name of Device
-{% endswagger-parameter %}
+| Name                                         | Type   | Description               |
+| -------------------------------------------- | ------ | ------------------------- |
+| device\_id<mark style="color:red;">\*</mark> | String | ID of Device to be Locked |
+| name                                         | String | Name of Device            |
 
-{% swagger-response status="200: OK" description="" %}
+#### Headers
+
+| Name                                            | Type   | Description        |
+| ----------------------------------------------- | ------ | ------------------ |
+| Authorization<mark style="color:red;">\*</mark> | String | Bearer \<API\_KEY> |
+
+{% tabs %}
+{% tab title="200: OK " %}
 ```javascript
 {
   "lock": {
@@ -67,9 +72,9 @@ Name of Device
   "ok": true
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="" %}
+{% tab title="400: Bad Request " %}
 ```javascript
 {
   "error": {
@@ -85,9 +90,9 @@ Name of Device
   "ok": false
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="404: Not Found" description="" %}
+{% tab title="404: Not Found " %}
 ```javascript
 {
   "error": {
@@ -101,8 +106,8 @@ Name of Device
   "ok": false
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 ### Code Example
 

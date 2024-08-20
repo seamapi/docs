@@ -15,6 +15,10 @@ layout:
 
 # Get a Thermostat
 
+{% hint style="info" %}
+Deprecated: Use [Get Device](../api-clients/devices/get-device.md) instead.
+{% endhint %}
+
 Retrieves the details of a thermostat.
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/thermostats/get" method="post" %}
