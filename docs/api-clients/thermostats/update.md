@@ -37,8 +37,8 @@ seam.thermostats.update(
   }
 )
 
-# <Seam::ActionAttempt:0x008f6b0
-#   status="success"
+# <Seam::ActionAttempt:0x008f6b0                                                         
+#   status="success"                                                                     
 #   action_type="UPDATE_THERMOSTAT"
 #   action_attempt_id="4c3f9e12-5c9e-474e-92c4-719f72e13496"
 #   result={}>
