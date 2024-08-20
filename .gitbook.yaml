@@ -119,7 +119,7 @@ redirects:
   docs/api-clients/thermostats/set-to-off-mode.md: docs/api-clients/off.md
   docs/api-clients/thermostats/set-fan-mode.md: docs/api-clients/set_fan_mode.md
   docs/api-clients/thermostats/update-a-thermostat.md: docs/api-clients/update.md
-  docs/api-clients/user-identities/README.md : docs/api-clients/user_identities/README.md
+  docs/api-clients/user-identities/README.md: docs/api-clients/user_identities/README.md
   docs/api-clients/user-identities/add-an-acs-user-to-a-user-identity.md: docs/api-clients/user_identities/add_acs_user.md
   docs/api-clients/user-identities/create-a-user-identity.md: docs/api-clients/user_identities/create.md
   docs/api-clients/user-identities/delete-a-user-identity.md: docs/api-clients/user_identities/delete.md
