@@ -93,6 +93,7 @@ export function setApiResourceTemplateContext(
 
   for (const endpoint of endpointsWithResourceType) {
     if (!('resourceType' in endpoint.response)) {
+      // eslint-disable-next-line no-console
       console.warn(`No resourceType in ${endpoint.path} endpoint response`)
       return
     }
@@ -101,6 +102,7 @@ export function setApiResourceTemplateContext(
     const resource = blueprint.resources[resourceName]
 
     if (resource == null) {
+      // eslint-disable-next-line no-console
       console.warn(`No resource ${resourceName} in blueprint`)
       return
     }
