@@ -44,7 +44,7 @@ export const reference = (
       }
       const file = files[k] as unknown as File
       file.layout = 'api-reference.hbs'
-      setEndpointTemplateContext(file, endpoint, metadata)
+      setEndpointTemplateContext(file, endpoint)
 
       for (const sdk of sdks) {
         const k = `sdk/${sdk}${endpoint.path}.md`
@@ -53,7 +53,7 @@ export const reference = (
         }
         const file = files[k] as unknown as File
         file.layout = 'sdk-reference.hbs'
-        setEndpointTemplateContext(file, endpoint, metadata)
+        setEndpointTemplateContext(file, endpoint)
       }
     }
   }

@@ -15,10 +15,6 @@ export interface EndpointTemplateContext {
   response: {
     description: string
     resourceType: string | null
-    properties: null | Array<{
-      name: string
-      description: string
-    }>
   }
   codeSamples: Array<{
     title: string
@@ -37,7 +33,6 @@ export interface EndpointTemplateContext {
 export function setEndpointTemplateContext(
   file: Partial<EndpointTemplateContext>,
   endpoint: Endpoint,
-  blueprint: Blueprint,
 ): void {
   file.description = endpoint.description
   file.title = endpoint.title
@@ -54,19 +49,12 @@ export function setEndpointTemplateContext(
 
   file.response = {
     description: endpoint.response.description,
-    properties: null,
     resourceType: null,
   }
 
   if (endpoint.response.responseType !== 'void') {
     const { resourceType } = endpoint.response
     file.response.resourceType = resourceType
-    const resource = blueprint.resources[resourceType]
-    file.response.properties =
-      resource?.properties.map((property) => ({
-        name: property.name,
-        description: property.description,
-      })) ?? null
   }
 
   file.codeSamples = endpoint.codeSamples.map((sample) => ({
