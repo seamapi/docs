@@ -1,12 +1,14 @@
-# 
+# Get an ACS System
 
 ```
-POST /acs/systems/get ⇒ {}
+POST /acs/systems/get ⇒ { acs_system }
 ```
 
+Returns a specified [access control system](../../../capability-guides/access-systems.md).
 
+Specify the desired access control system by including the corresponding `acs_system_id` in the request body.
 
-*Return Type: void*
+*Return Type: [acs_system](../README.md)*
 
 {% tabs %}
   {% tab title="No samples available" %}
@@ -23,7 +25,7 @@ POST /acs/systems/get ⇒ {}
 *Type:* ``
 *Required:* Yes
 
-
+ID of the desired access control system.
 
 ---
 
