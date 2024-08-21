@@ -64,17 +64,18 @@ export function setEndpointTemplateContext(
   }))
 }
 
-export interface ResourceTemplateContext {
-  resource: {
+interface Resource {
+  name: string
+  properties: Array<{
     name: string
-    properties: Array<{
-      name: string
-      type: string
-      description: string
-      format: string
-      isDeprecated: boolean
-    }>
-  }
+    type: string
+    description: string
+    format: string
+    isDeprecated: boolean
+  }>
+}
+export interface ResourceTemplateContext {
+  resources: Resource[]
 }
 
 export function setApiResourceTemplateContext(
@@ -82,34 +83,39 @@ export function setApiResourceTemplateContext(
   route: Route,
   blueprint: Blueprint,
 ): void {
-  const endpointWithResourceType = route.endpoints.find(
+  file.resources = []
+
+  const endpointsWithResourceType = route.endpoints.filter(
     (e) =>
       e.response.responseType === 'resource' ||
       e.response.responseType === 'resource_list',
   )
 
-  if (
-    endpointWithResourceType == null ||
-    !('resourceType' in endpointWithResourceType.response)
-  ) {
-    return
-  }
+  for (const endpoint of endpointsWithResourceType) {
+    if (!('resourceType' in endpoint.response)) {
+      console.warn(`No resourceType in ${endpoint.path} endpoint response`)
+      return
+    }
 
-  const resourceName = endpointWithResourceType.response.resourceType
-  const resource = blueprint.resources[resourceName]
+    const resourceName = endpoint.response.resourceType
+    const resource = blueprint.resources[resourceName]
 
-  if (resource == null) return
+    if (resource == null) {
+      console.warn(`No resource ${resourceName} in blueprint`)
+      return
+    }
 
-  file.resource = {
-    name: resourceName,
-    properties: resource.properties.map(
-      ({ name, jsonType, description, format, isDeprecated }) => ({
-        name,
-        type: jsonType,
-        description,
-        format,
-        isDeprecated,
-      }),
-    ),
+    file.resources.push({
+      name: resourceName,
+      properties: resource.properties.map(
+        ({ name, jsonType, description, format, isDeprecated }) => ({
+          name,
+          type: jsonType,
+          description,
+          format,
+          isDeprecated,
+        }),
+      ),
+    })
   }
 }

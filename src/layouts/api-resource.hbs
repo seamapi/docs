@@ -1,10 +1,11 @@
+{{#each resources}}
 <header>
-  <h1>{{resource.name}}</h1>
+  <h1>{{name}}</h1>
 </header>
 
 <hr>
 
-{{#each resource.properties}}
+{{#each properties}}
 <header>
   <h3>{{name}}</h3>
 </header>
@@ -22,4 +23,5 @@
 </div>
 
 <hr>
+{{/each}}
 {{/each}}
