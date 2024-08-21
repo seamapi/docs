@@ -1,7 +1,7 @@
 # 
 
 ```
-POST /acs/systems/get ⇒ { ... }
+POST /acs/systems/get ⇒ {}
 ```
 
 

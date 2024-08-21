@@ -1,7 +1,7 @@
 # 
 
 ```
-POST /acs/systems/list_compatible_credential_manager_acs_systems ⇒ { ... }
+POST /acs/systems/list_compatible_credential_manager_acs_systems ⇒ {}
 ```
 
 
