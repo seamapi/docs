@@ -36,7 +36,7 @@
     "metalsmith": "^2.6.3"
   },
   "devDependencies": {
-    "@seamapi/types": "^1.212.1",
+    "@seamapi/types": "^1.229.1",
     "@types/debug": "^4.1.12",
     "@types/micromatch": "^4.0.9",
     "@types/node": "^20.8.10",
