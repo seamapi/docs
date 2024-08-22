@@ -95,30 +95,30 @@ redirects:
   docs/api-clients/connected-accounts/get-a-connected-account.md: docs/api-clients/connected_accounts/get.md
   docs/api-clients/connected-accounts/list-connected-accounts.md: docs/api-clients/connected_accounts/list.md
   docs/api-clients/connected-accounts/update-a-connected-account.md: docs/api-clients/connected_accounts/update.md
-  docs/api-clients/devices/delete-device.md: docs/api-clients/delete.md
-  docs/api-clients/devices/get-device.md: docs/api-clients/get.md
-  docs/api-clients/devices/list-devices.md: docs/api-clients/list.md
-  docs/api-clients/devices/list-device-providers.md: docs/api-clients/list_device_providers.md
-  docs/api-clients/devices/list-unmanaged-devices.md: docs/api-clients/unmanaged/list.md
-  docs/api-clients/devices/update-unmanaged-device.md: docs/api-clients/unmanaged/update.md
-  docs/api-clients/devices/update-device.md: docs/api-clients/update.md
-  docs/api-clients/events/get-an-event.md: docs/api-clients/get.md
-  docs/api-clients/events/list-events.md: docs/api-clients/list.md
-  docs/api-clients/locks/get-lock.md: docs/api-clients/get.md
-  docs/api-clients/locks/list-locks.md: docs/api-clients/list.md
-  docs/api-clients/locks/lock-a-lock.md: docs/api-clients/lock_door.md
-  docs/api-clients/locks/unlock-a-lock.md: docs/api-clients/unlock_door.md
+  docs/api-clients/devices/delete-device.md: docs/api-clients/devices/delete.md
+  docs/api-clients/devices/get-device.md: docs/api-clients/devices/get.md
+  docs/api-clients/devices/list-devices.md: docs/api-clients/devices/list.md
+  docs/api-clients/devices/list-device-providers.md: docs/api-clients/devices/list_device_providers.md
+  docs/api-clients/devices/list-unmanaged-devices.md: docs/api-clients/devices/unmanaged/list.md
+  docs/api-clients/devices/update-unmanaged-device.md: docs/api-clients/devices/unmanaged/update.md
+  docs/api-clients/devices/update-device.md: docs/api-clients/devices/update.md
+  docs/api-clients/events/get-an-event.md: docs/api-clients/events/get.md
+  docs/api-clients/events/list-events.md: docs/api-clients/events/list.md
+  docs/api-clients/locks/get-lock.md: docs/api-clients/locks/get.md
+  docs/api-clients/locks/list-locks.md: docs/api-clients/locks/list.md
+  docs/api-clients/locks/lock-a-lock.md: docs/api-clients/locks/lock_door.md
+  docs/api-clients/locks/unlock-a-lock.md: docs/api-clients/locks/unlock_door.md
   docs/api-clients/noise-sensors/README.md: docs/api-clients/noise_sensors/README.md
   docs/api-clients/noise-sensors/create-noise-threshold.md: docs/api-clients/noise_sensors/noise_thresholds/create.md
   docs/api-clients/noise-sensors/delete-noise-threshold.md: docs/api-clients/noise_sensors/noise_thresholds/delete.md
   docs/api-clients/noise-sensors/list-noise-thresholds.md: docs/api-clients/noise_sensors/noise_thresholds/list.md
   docs/api-clients/noise-sensors/update-noise-threshold.md: docs/api-clients/noise_sensors/noise_thresholds/update.md
-  docs/api-clients/thermostats/set-to-cool-mode.md: docs/api-clients/cool.md
-  docs/api-clients/thermostats/set-to-heat-mode.md: docs/api-clients/heat.md
-  docs/api-clients/thermostats/set-to-heat-cool-auto-mode.md: docs/api-clients/heat_cool.md
-  docs/api-clients/thermostats/set-to-off-mode.md: docs/api-clients/off.md
-  docs/api-clients/thermostats/set-fan-mode.md: docs/api-clients/set_fan_mode.md
-  docs/api-clients/thermostats/update-a-thermostat.md: docs/api-clients/update.md
+  docs/api-clients/thermostats/set-to-cool-mode.md: docs/api-clients/thermostats/cool.md
+  docs/api-clients/thermostats/set-to-heat-mode.md: docs/api-clients/thermostats/heat.md
+  docs/api-clients/thermostats/set-to-heat-cool-auto-mode.md: docs/api-clients/thermostats/heat_cool.md
+  docs/api-clients/thermostats/set-to-off-mode.md: docs/api-clients/thermostats/off.md
+  docs/api-clients/thermostats/set-fan-mode.md: docs/api-clients/thermostats/set_fan_mode.md
+  docs/api-clients/thermostats/update-a-thermostat.md: docs/api-clients/thermostats/update.md
   docs/api-clients/user-identities/README.md: docs/api-clients/user_identities/README.md
   docs/api-clients/user-identities/add-an-acs-user-to-a-user-identity.md: docs/api-clients/user_identities/add_acs_user.md
   docs/api-clients/user-identities/create-a-user-identity.md: docs/api-clients/user_identities/create.md
