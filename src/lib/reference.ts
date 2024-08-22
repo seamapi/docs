@@ -6,7 +6,7 @@ import {
   setEndpointTemplateContext,
 } from './template-context.js'
 
-const sdks = ['javascript']
+const sdks = []
 
 const baseUrl = 'https://docs.seam.co/latest/'
 
@@ -35,15 +35,15 @@ export const reference = (
       file.layout = 'api-reference.hbs'
       setEndpointTemplateContext(file, endpoint, metadata)
 
-      //      for (const sdk of sdks) {
-      //        const k = `sdk/${sdk}${endpoint.path}.md`
-      //        files[k] = {
-      //          contents: Buffer.from('\n'),
-      //        }
-      //        const file = files[k] as unknown as File
-      //        file.layout = 'sdk-reference.hbs'
-      //        setEndpointTemplateContext(file, endpoint, metadata)
-      //      }
+      for (const sdk of sdks) {
+        const k = `sdk/${sdk}${endpoint.path}.md`
+        files[k] = {
+          contents: Buffer.from('\n'),
+        }
+        const file = files[k] as unknown as File
+        file.layout = 'sdk-reference.hbs'
+        setEndpointTemplateContext(file, endpoint, metadata)
+      }
     }
   }
 }
