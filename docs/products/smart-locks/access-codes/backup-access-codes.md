@@ -16,7 +16,7 @@ To bulletproof your implementation of access codes, it's essential to maintain a
 
 ## Before You Begin
 
-To confirm that Seam supports back up code pools for your device, check the device's `properties` by inspecting the response from [Get Device](../../../api-clients/devices/get-device.md) or [List Devices](../../../api-clients/devices/list-devices.md). Ensure that the device's `properties.supports_backup_access_code_pool` is `true`.
+To confirm that Seam supports back up code pools for your device, check the device's `properties` by inspecting the response from [Get Device](../../../api-clients/devices/get.md) or [List Devices](../../../api-clients/devices/list.md). Ensure that the device's `properties.supports_backup_access_code_pool` is `true`.
 
 After you've done that, come back here and keep reading.
 

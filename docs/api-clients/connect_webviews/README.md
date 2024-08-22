@@ -46,12 +46,12 @@ When you [create a Connect Webview](create-a-connect-webview.md), specify the de
 | `noise_sensors`       | Only returns provider integrations marked as noise sensors.        |
 
 {% hint style="info" %}
-To list all providers within a category, use the [List Device Providers](../devices/list-device-providers.md) method with the desired `provider_category` filter.
+To list all providers within a category, use the [List Device Providers](../devices/list_device_providers.md) method with the desired `provider_category` filter.
 {% endhint %}
 
 ### Device Provider Keys
 
-To list all provider keys, use the [List Device Providers](../devices/list-device-providers.md) method with no filters.
+To list all provider keys, use the [List Device Providers](../devices/list_device_providers.md) method with no filters.
 
 | Provider Name                                                                                                                  | Device Provider Key             |
 | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------- |

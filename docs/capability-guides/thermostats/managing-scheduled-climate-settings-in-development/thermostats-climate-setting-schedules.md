@@ -42,7 +42,7 @@ Note the following constraints regarding climate setting schedules:
 
 ## Before You Begin
 
-To confirm that Seam supports thermostat programming for your device, use [Get Device](../../../api-clients/devices/get-device.md) or [Get Thermostat](../../../thermostats/get-thermostat.md) to query the device and check its `capabilities_supported` property. Ensure that the `capabilities_supported` list includes `thermostat`. For more information, see [Retrieving Individual Thermostats](../../../products/thermostats/retrieving-thermostats.md#retrieving-individual-thermostats).
+To confirm that Seam supports thermostat programming for your device, use [Get Device](../../../api-clients/devices/get.md) or [Get Thermostat](../../../thermostats/get-thermostat.md) to query the device and check its `capabilities_supported` property. Ensure that the `capabilities_supported` list includes `thermostat`. For more information, see [Retrieving Individual Thermostats](../../../products/thermostats/retrieving-thermostats.md#retrieving-individual-thermostats).
 
 In addition, before you can create any climate setting schedules, you must first set the [default climate setting](setting-the-default-climate-setting.md) for a thermostat.
 

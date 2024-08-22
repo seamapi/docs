@@ -36,7 +36,7 @@ When purchasing a Yale Lock or a network module separately, always verify the sp
 
 We support the following features:
 
-* [Triggering web unlock actions](../api-clients/locks/unlock-a-lock.md)
+* [Triggering web unlock actions](../api-clients/locks/unlock_door.md)
 * [Programming access codes](../products/smart-locks/access-codes/) on door locks that have a keypad
 
 ***

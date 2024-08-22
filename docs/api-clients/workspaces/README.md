@@ -17,4 +17,4 @@ description: >-
 
 | [Get Workspace](get-workspace.md)     | Get all workspaces connected to account |
 | ------------------------------------- | --------------------------------------- |
-| [Reset Workspace](reset-workspace.md) | Reset the sandbox on this workspace     |
+| [Reset Workspace](workspaces/reset_sandbox.md) | Reset the sandbox on this workspace     |

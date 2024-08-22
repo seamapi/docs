@@ -19,7 +19,7 @@ Seam polls connected devices and accounts every ten minutes and updates the foll
 
 <table><thead><tr><th width="320">Property</th><th width="137">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>properties.has_direct_power</code></td><td>Boolean</td><td>Indicates whether the device has direct power, that is, whether the device is wired</td></tr><tr><td><code>properties.battery</code></td><td>Object</td><td>Battery information, including <code>level</code> and <code>status</code></td></tr><tr><td><code>properties.battery.level</code></td><td>Number (0-1)</td><td>Battery level of the device as a decimal value between 0 and 1, inclusive</td></tr><tr><td><code>properties.battery.status</code></td><td>Enum (string)</td><td><p>Current status of the battery charge level.</p><p>Values are:</p><p><code>critical</code>: Indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging.</p><p></p><p><code>low</code>: Signifies that the battery is under the preferred threshold and should be charged soon.</p><p></p><p><code>good</code>: Denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging.</p><p></p><p><code>full</code>: Represents a battery that is fully charged, providing the maximum duration of usage.</p></td></tr></tbody></table>
 
-Use a [Get Device](../../api-clients/devices/get-device.md) request to retrieve the current power status of a device. First, determine whether the device is wired. If the device is battery-powered (that is, not wired), get the battery level and status. Then, display the retrieved device power status in your app.
+Use a [Get Device](../../api-clients/devices/get.md) request to retrieve the current power status of a device. First, determine whether the device is wired. If the device is battery-powered (that is, not wired), get the battery level and status. Then, display the retrieved device power status in your app.
 
 {% hint style="info" %}
 You can also use the prebuilt [device details Seam Component](../../seam-components/react-components/device-details.md), which includes a device power status display.
@@ -60,9 +60,9 @@ curl -X 'GET' \
   -H 'Content-Type: application/json' \
   -d '{
     "device_id": "36cf1a96-196d-41b0-9804-88154387f1f9"
-}' | jq -r '"Power Source: " + 
-  (if .device.properties.has_direct_power == true then "Wired" else "Battery-powered", 
-  "Battery Level: " + (.device.properties.battery.level | tostring), 
+}' | jq -r '"Power Source: " +
+  (if .device.properties.has_direct_power == true then "Wired" else "Battery-powered",
+  "Battery Level: " + (.device.properties.battery.level | tostring),
   "Battery Status: " + .device.properties.battery.status end)'
 ```
 
@@ -231,11 +231,11 @@ Seam generates the following battery-related events:
 * `device.low_battery`
 * `device.battery_status_changed`
 
-You can retrieve these events using a [List Events](../../api-clients/events/list-events.md) request or through [webhooks](../webhooks.md) and then display the corresponding status in your app.
+You can retrieve these events using a [List Events](../../api-clients/events/list.md) request or through [webhooks](../webhooks.md) and then display the corresponding status in your app.
 
 ### Get Battery-Related Events Using a List Events Request
 
-When issuing a [List Events](../../api-clients/events/list-events.md) request to retrieve [`device.low_battery`](../../api-clients/events/#event-types) or [`device.battery_status_changed`](../../api-clients/events/#event-types) events for a specific device, include the following parameters:
+When issuing a [List Events](../../api-clients/events/list.md) request to retrieve [`device.low_battery`](../../api-clients/events/#event-types) or [`device.battery_status_changed`](../../api-clients/events/#event-types) events for a specific device, include the following parameters:
 
 <table><thead><tr><th width="162">Parameter</th><th width="161">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>String (UUID)</td><td>ID of the device for which you want to retrieve <code>device.connected</code> or <code>device.disconnected</code> events</td></tr><tr><td><code>event_type</code></td><td>String</td><td>Event type that you want to retrieve, that is,  <code>device.connected</code> or <code>device.disconnected</code></td></tr><tr><td><code>since</code></td><td>String</td><td>Desired starting event generation date and time<br>You must include <code>since</code> or <code>between</code>.</td></tr><tr><td><code>between</code></td><td>Set of two strings</td><td>Desired starting and ending event generation dates and times<br>For example:<br><code>["2024-01-01T00:00:00Z", "2024-02-01T00:00:00Z"]</code><br>You must include <code>between</code> or <code>since</code>.</td></tr></tbody></table>
 

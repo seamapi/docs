@@ -596,7 +596,7 @@ true
 
 ## Step 3: Retrieve August lock devices
 
-When you link an August account with Seam, we create a `device` object to represent each August lock in your account. You can then retrieve these August devices using the [List Devices](../api-clients/devices/list-devices.md) and [Get Device](../api-clients/devices/get-device.md) endpoints.
+When you link an August account with Seam, we create a `device` object to represent each August lock in your account. You can then retrieve these August devices using the [List Devices](../api-clients/devices/list.md) and [Get Device](../api-clients/devices/get.md) endpoints.
 
 The Seam API exposes each device's properties, such as the door lock status, power status, capabilities, and so on.
 
@@ -1007,7 +1007,7 @@ Try out the following actions on your August lock:
 
 ### Unlock your lock
 
-To unlock a door, use the [Unlock Door](../api-clients/locks/unlock-a-lock.md) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](../core-concepts/action-attempts.md) to track the progress of the unlock operation.
+To unlock a door, use the [Unlock Door](../api-clients/locks/unlock_door.md) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](../core-concepts/action-attempts.md) to track the progress of the unlock operation.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -1423,7 +1423,7 @@ false
 {% endtabs %}
 
 {% hint style="success" %}
-Now that you have successfully unlocked your lock, you can use the [Lock Door](../api-clients/locks/lock-a-lock.md) endpoint to lock it again.
+Now that you have successfully unlocked your lock, you can use the [Lock Door](../api-clients/locks/lock_door.md) endpoint to lock it again.
 {% endhint %}
 
 ***

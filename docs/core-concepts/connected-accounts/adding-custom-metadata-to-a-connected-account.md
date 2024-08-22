@@ -6,7 +6,7 @@ description: You can add or change custom metadata for a connected account.
 
 You can use custom metadata to store a custom payload or object, tailored to the specific needs of your app. For example, this feature is useful for tracking customer information, internal user IDs, or other internal resources for a [connected account](./). Storing custom metadata in a Seam `connected_account` object enables you to look up an internal resource from directly within your Seam [workspace](../workspaces/). Then, you can [filter connected accounts by the desired metadata](filtering-connected-accounts-by-custom-metadata.md).
 
-If the associated [Connect Webview](../connect-webviews/) contains custom metadata, Seam transfers this custom metadata as the initial value for this property. However, you can use the [Update Connected Account](../../api-clients/connected-accounts/update-a-connected-account.md) method with the optional [`custom_metadata` property](../../api-clients/connected-accounts/#connected\_account-properties) to change or add custom metadata for the connected account. This property accepts up to 50 JSON key:value pairs.
+If the associated [Connect Webview](../connect-webviews/) contains custom metadata, Seam transfers this custom metadata as the initial value for this property. However, you can use the [Update Connected Account](../../api-clients/api-clients/connected_accounts/update.md) method with the optional [`custom_metadata` property](../../api-clients/connected-accounts/#connected\_account-properties) to change or add custom metadata for the connected account. This property accepts up to 50 JSON key:value pairs.
 
 {% tabs %}
 {% tab title="Python" %}
