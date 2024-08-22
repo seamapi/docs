@@ -171,6 +171,7 @@ Format: `string`
 Returns a specified [access control system](../../../capability-guides/access-systems.md).
 
 Specify the desired access control system by including the corresponding `acs_system_id` in the request body.
+
 ---
 
 ### [`/acs/systems/list`]()
@@ -180,6 +181,7 @@ Returns a list of all [access control systems](../../../capability-guides/access
 To filter the list of returned access control systems by a specific connected account ID, include the 
 `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the 
 response includes all access control systems connected to your workspace.
+
 ---
 
 ### [`/acs/systems/list_compatible_credential_manager_acs_systems`]()
@@ -189,6 +191,7 @@ Returns a list of all credential manager ACS systems that are compatible with a 
 
 Specify the ACS system for which you want to retrieve all compatible credential manager ACS 
 systems by including the corresponding `acs_system_id` in the request body.
+
 ---
 
 ## Events
