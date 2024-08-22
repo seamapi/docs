@@ -1,4 +1,3 @@
-
 ## `acs_system`
 
 ### `acs_system_id`
