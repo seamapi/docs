@@ -15,7 +15,7 @@ export function setEndpointTemplateContext(
       name: param.name,
       required: param.isRequired,
       description: param.description,
-      type: param.jsonType,
+      jsonType: param.jsonType,
     })),
   }
 
@@ -55,6 +55,7 @@ export interface EndpointTemplateContext {
       name: string
       required: boolean
       description: string
+      jsonType: string
     }>
   }
   response: {
