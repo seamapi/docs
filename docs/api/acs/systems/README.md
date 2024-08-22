@@ -6,6 +6,7 @@ ID of the `acs_system`.
 
 Type: `string`
 Format: `string`
+
 ---
 
 ### `can_add_acs_users_to_acs_access_groups`
@@ -14,6 +15,7 @@ Indicates whether the `acs_system` supports [adding users to access groups](../.
 
 Type: `boolean`
 Format: `boolean`
+
 ---
 
 ### `can_automate_enrollment`
@@ -22,6 +24,7 @@ Indicates whether it is possible to [launch enrollment automations](../../../cap
 
 Type: `boolean`
 Format: `boolean`
+
 ---
 
 ### `can_create_acs_access_groups`
@@ -30,6 +33,7 @@ Indicates whether the `acs_system` supports creating [access groups](../../../ca
 
 Type: `boolean`
 Format: `boolean`
+
 ---
 
 ### `can_remove_acs_users_from_acs_access_groups`
@@ -38,6 +42,7 @@ Indicates whether the `acs_system` supports [removing users from access groups](
 
 Type: `boolean`
 Format: `boolean`
+
 ---
 
 ### `connected_account_ids`
@@ -46,6 +51,7 @@ IDs of the [connected accounts](../../../core-concepts/connected-accounts.md) as
 
 Type: `array`
 Format: `list`
+
 ---
 
 ### `created_at`
@@ -54,6 +60,7 @@ Date and time at which the `acs_system` was created.
 
 Type: `string`
 Format: `string`
+
 ---
 
 ### `errors`
@@ -62,6 +69,7 @@ Errors associated with the `acs_system`.
 
 Type: `array`
 Format: `list`
+
 ---
 
 ### `external_type`
@@ -70,6 +78,7 @@ Brand-specific terminology for the `acs_system` type.
 
 Type: `string`
 Format: `enum`
+
 ---
 
 ### `external_type_display_name`
@@ -78,6 +87,7 @@ Display name that corresponds to the brand-specific terminology for the `acs_sys
 
 Type: `string`
 Format: `string`
+
 ---
 
 ### `image_alt_text`
@@ -86,6 +96,7 @@ Alternative text for the `acs_system` image.
 
 Type: `string`
 Format: `string`
+
 ---
 
 ### `image_url`
@@ -94,6 +105,7 @@ URL for the image that represents the `acs_system`.
 
 Type: `string`
 Format: `string`
+
 ---
 
 ### `name`
@@ -102,6 +114,7 @@ Name of the `acs_system`.
 
 Type: `string`
 Format: `string`
+
 ---
 
 ### `system_type`
@@ -112,6 +125,7 @@ Format: `string`
 
 Type: `string`
 Format: `enum`
+
 ---
 
 ### `system_type_display_name`
@@ -122,12 +136,14 @@ Format: `enum`
 
 Type: `string`
 Format: `string`
+
 ---
 
 ### `visionline_metadata`
 
 Type: `object`
 Format: `record`
+
 ---
 
 ### `warnings`
@@ -136,6 +152,7 @@ Warnings associated with the `acs_system`.
 
 Type: `array`
 Format: `list`
+
 ---
 
 ### `workspace_id`
@@ -144,6 +161,7 @@ ID of the [workspace](../../../core-concepts/workspaces.md) that contains the `a
 
 Type: `string`
 Format: `string`
+
 ---
 
 ## Endpoints
