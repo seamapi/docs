@@ -75,7 +75,7 @@ acs_system_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33">]
 
 ### `connected_account_id`
 
-*Type:* ``
+*Type:* `string`
 *Required:* No
 
 ID of the connected account by which to filter the list of returned access control systems.

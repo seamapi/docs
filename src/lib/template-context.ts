@@ -10,6 +10,7 @@ export interface EndpointTemplateContext {
       name: string
       required: boolean
       description: string
+      jsonType: string
     }>
   }
   response: {
@@ -45,8 +46,7 @@ export function setEndpointTemplateContext(
       name: param.name,
       required: param.isRequired,
       description: param.description,
-      // TODO: uncomment when blueprint is fixed
-      // type: param.type,
+      jsonType: param.jsonType,
     })),
   }
 
