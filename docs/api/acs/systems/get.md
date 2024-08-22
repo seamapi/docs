@@ -10,14 +10,6 @@ Specify the desired access control system by including the corresponding `acs_sy
 
 *Return Type: [acs_system](../README.md)*
 
-{% tabs %}
-  {% tab title="No samples available" %}
-  ```
-  No sample requests available.
-  ```
-  {% endtab %}
-{% endtabs %}
-
 ## Request Parameters
 
 ### `acs_system_id`

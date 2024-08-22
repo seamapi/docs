@@ -12,14 +12,6 @@ systems by including the corresponding `acs_system_id` in the request body.
 
 *Return Type: [acs_system](../README.md)*
 
-{% tabs %}
-  {% tab title="No samples available" %}
-  ```
-  No sample requests available.
-  ```
-  {% endtab %}
-{% endtabs %}
-
 ## Request Parameters
 
 ### `acs_system_id`
