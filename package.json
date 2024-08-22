@@ -31,7 +31,7 @@
   "dependencies": {
     "@metalsmith/layouts": "^2.7.0",
     "@metalsmith/metadata": "^0.3.0",
-    "@seamapi/blueprint": "^0.13.0",
+    "@seamapi/blueprint": "^0.14.0",
     "jstransformer-handlebars": "^1.2.0",
     "metalsmith": "^2.6.3"
   },

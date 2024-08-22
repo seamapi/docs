@@ -15,7 +15,7 @@ export function setEndpointTemplateContext(
       name: param.name,
       required: param.isRequired,
       description: param.description,
-      type: param.type,
+      type: param.jsonType,
     })),
   }
 
