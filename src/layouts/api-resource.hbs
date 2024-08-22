@@ -1,0 +1,46 @@
+{{#each resources}}
+{{#if description}}
+{{description}}
+{{/if}}
+
+## `{{name}}`
+
+{{#each properties}}
+### `{{name}}`
+{{#if isDeprecated}}
+
+{% hint style="warning" %}
+**Deprecated** use something else.
+{% endhint %}
+{{/if}}
+{{#if description}}
+
+{{description}}
+{{/if}}
+
+Type: `{{jsonType}}`
+{{#if format}}
+Format: `{{format}}`
+{{/if}}
+---
+
+{{/each}}
+{{/each}}
+## Endpoints
+
+{{#each endpoints}}
+### [`{{path}}`]()
+
+{{description}}
+---
+
+{{/each}}
+## Events
+
+{{~#each events}}
+### `{{name}}`
+
+{{description}}
+---
+
+{{~/each}}
