@@ -16,7 +16,7 @@ systems by including the corresponding `acs_system_id` in the request body.
 
 ### `acs_system_id`
 
-*Type:* `string`
+*Type:* ``
 *Required:* Yes
 
 ID of the ACS system for which you want to retrieve all compatible credential manager ACS systems.

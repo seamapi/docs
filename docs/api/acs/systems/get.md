@@ -14,7 +14,7 @@ Specify the desired access control system by including the corresponding `acs_sy
 
 ### `acs_system_id`
 
-*Type:* `string`
+*Type:* ``
 *Required:* Yes
 
 ID of the desired access control system.
