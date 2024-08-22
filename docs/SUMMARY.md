@@ -21,7 +21,7 @@
   * [Managed and Unmanaged Devices](core-concepts/devices/managed-and-unmanaged-devices.md)
   * [Adding Custom Metadata to a Device](core-concepts/devices/adding-custom-metadata-to-a-device.md)
   * [Filtering Devices by Custom Metadata](core-concepts/devices/filtering-devices-by-custom-metadata.md)
-* [Connected Accounts](core-concepts/connected_accounts/README.md)
+* [Connected Accounts](core-concepts/connected-accounts/README.md)
   * [Adding Custom Metadata to a Connected Account](core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account.md)
   * [Filtering Connected Accounts by Custom Metadata](core-concepts/connected-accounts/filtering-connected-accounts-by-custom-metadata.md)
   * [Reconnecting an Account](device-guides/reconnecting-an-account.md)
@@ -76,13 +76,13 @@
     * [Retrieving Climate Setting Schedules](capability-guides/thermostats/managing-scheduled-climate-settings-in-development/retrieving-climate-setting-schedules.md)
     * [Modifying Climate Setting Schedules](capability-guides/thermostats/managing-scheduled-climate-settings-in-development/modifying-climate-setting-schedules.md)
     * [Deleting Climate Setting Schedules](capability-guides/thermostats/managing-scheduled-climate-settings-in-development/deleting-climate-setting-schedules.md)
-* [👂 Noise Sensors](products/noise_sensors/README.md)
+* [👂 Noise Sensors](products/noise-sensors/README.md)
   * [Configuring Noise Threshold Settings](products/noise-sensors/configure-noise-threshold-settings.md)
 * [📡 Seam Bridge](capability-guides/seam-bridge.md)
 
 ## 💻 UI Components
 
-* [🔌 Connect Webviews](core-concepts/connect_webviews/README.md)
+* [🔌 Connect Webviews](core-concepts/connect-webviews/README.md)
   * [Embedding a Connect Webview in Your App](core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app.md)
   * [Verifying Successful Account Connection](ui-components/connect-webviews/verifying-successful-account-connection.md)
   * [Retrieving Devices or Access Control Systems Connected Through a Connect Webview](ui-components/connect-webviews/retrieving-devices-or-access-control-systems-connected-through-a-connect-webview.md)
