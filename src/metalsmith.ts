@@ -13,8 +13,6 @@ const rootDir = dirname(fileURLToPath(import.meta.url))
 
 Metalsmith(rootDir).source('./docs/api').destination('../docs/api').clean(true)
 
-Metalsmith(rootDir).source('./docs/api').destination('../docs/sdk').clean(true)
-
 Metalsmith(rootDir)
   .source('./docs')
   .destination('../docs')
