@@ -177,7 +177,7 @@ curl -X 'POST' \
   -H 'Content-Type: application/json' \
   -d '{
   "accepted_providers": ["four_suites"]
-}' | jq -r '"Login Successful (false): " + (.connect_webview.login_successful | tostring), 
+}' | jq -r '"Login Successful (false): " + (.connect_webview.login_successful | tostring),
   "URL: " + .connect_webview.url'
   # Use the returned Connect Webview URL to display
   # the Connect Webview authorization flow to your user.
@@ -336,7 +336,7 @@ public class Main {
       .build());
 
     System.out.println(connectWebview.getLoginSuccessful()); // false
-    
+
     // Use the returned Connect Webview URL to display
     // the Connect Webview authorization flow to your user.
     System.out.println(connectWebview.getUrl());
@@ -388,18 +388,18 @@ func run() error {
       },
     },
   )
-  
+
   if err != nil {
     return err
   }
-  
+
   fmt.Println(connectWebview.LoginSuccessful) // false
-  
+
   // Use the returned Connect Webview URL to display
   // the Connect Webview authorization flow to your user.
   fmt.Println(connectWebview.Url)
 
-  return nil		
+  return nil
 }
 ```
 
@@ -730,7 +730,7 @@ true
   },
   can_remotely_unlock: true,
   ...
-}   
+}
 ```
 {% endtab %}
 
@@ -1216,7 +1216,7 @@ return nil
 {% endtab %}
 {% endtabs %}
 
-You can track the status of the unlock operation to confirm that the device unlocked successfully. Query the `locked` status of the device, [retrieve the action attempt](../../api-clients/action-attempt/get-action-attempt.md) by ID, or look for a [`lock.unlocked` event](../../api-clients/events/#event-types).
+You can track the status of the unlock operation to confirm that the device unlocked successfully. Query the `locked` status of the device, [retrieve the action attempt](../../api-clients/action_attempts/get.md) by ID, or look for a [`lock.unlocked` event](../../api-clients/events/#event-types).
 
 To query the `locked` status of the device:
 

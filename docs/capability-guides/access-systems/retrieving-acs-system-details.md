@@ -10,7 +10,7 @@ You can list details for all the ACSs in your [workspace](../../core-concepts/wo
 
 ## List ACS Systems
 
-You can [list all `acs_system` resources](../../api-clients/access-control-systems/systems/list-systems.md) in your workspace. Note the `acs_system_id` in the response.
+You can [list all `acs_system` resources](../../api-clients/acs/systems/list.md) in your workspace. Note the `acs_system_id` in the response.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -184,7 +184,7 @@ acs_systems, uErr := client.Acs.Systems.List(
 
 ## Get an ACS System
 
-You can [get the details of a specific `acs_system`](../../api-clients/access-control-systems/systems/get-system.md) in your workspace. These details include the `acs_system_id`, date and time at which the `acs_system` was created in Seam, the name and type of the `acs_system`, and so on.
+You can [get the details of a specific `acs_system`](../../api-clients/acs/systems/get.md) in your workspace. These details include the `acs_system_id`, date and time at which the `acs_system` was created in Seam, the name and type of the `acs_system`, and so on.
 
 {% tabs %}
 {% tab title="Python" %}

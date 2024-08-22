@@ -14,7 +14,7 @@ This guide explains how to create and manage ACS users. Using the [Access Contro
 
 ## Before You Begin: Identify the ACS System ID
 
-To add ACS users to your access control system, first retrieve the `acs_system_id` of the ACS that you want to configure. To retrieve the ACS details, use [Get a System](../../api-clients/access-control-systems/systems/get-system.md) or [List Systems](../../api-clients/access-control-systems/systems/list-systems.md). Then, continue to the remaining sections in this topic to learn how to manage ACS users.
+To add ACS users to your access control system, first retrieve the `acs_system_id` of the ACS that you want to configure. To retrieve the ACS details, use [Get a System](../../api-clients/acs/systems/get.md) or [List Systems](../../api-clients/acs/systems/list.md). Then, continue to the remaining sections in this topic to learn how to manage ACS users.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -188,7 +188,7 @@ acs_systems, uErr := client.Acs.Systems.List(
 
 ## Create an ACS User
 
-To [create an ACS user](../../api-clients/access-control-systems/users/create-user.md), provide the `acs_system_id` of the ACS system and the attributes of the user, such as the `full_name`, `email_address`, `phone_number`, and so on.
+To [create an ACS user](../../api-clients/acs/users/create.md), provide the `acs_system_id` of the ACS system and the attributes of the user, such as the `full_name`, `email_address`, `phone_number`, and so on.
 
 Also, if your [ACS architecture](../../capability-guides/access-systems/understanding-access-control-system-differences.md) supports access groups, you can also assign an ACS user to one or more access groups. To do so, when you create the user, include the IDs of the access group to which you want add the user. The `acs_access_group_ids` parameter accepts an array of strings.
 
@@ -405,7 +405,7 @@ acs_user, uErr := client.Acs.Users.Create(
 
 ## List ACS Users
 
-To [list all ACS users](../../api-clients/access-control-systems/users/list-users.md) within an `acs_system`, provide the `acs_system_id` of the ACS. You can also filter users by `user_identity_id`, `user_identity_email_address`, or `user_identity_phone_number`.
+To [list all ACS users](../../api-clients/acs/users/list.md) within an `acs_system`, provide the `acs_system_id` of the ACS. You can also filter users by `user_identity_id`, `user_identity_email_address`, or `user_identity_phone_number`.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -597,7 +597,7 @@ acs_users, uErr := client.Acs.Users.List(
 
 ## Get an ACS User
 
-To [get an ACS user](../../api-clients/access-control-systems/users/get-user.md), provide the `acs_user_id` of the user that you want to retrieve. These details include the contact details for the user, the user's access schedule, the associated [user identity](../../api-clients/user-identities/), if applicable, and so on.
+To [get an ACS user](../../api-clients/acs/users/get.md), provide the `acs_user_id` of the user that you want to retrieve. These details include the contact details for the user, the user's access schedule, the associated [user identity](../../api-clients/user-identities/), if applicable, and so on.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -815,7 +815,7 @@ acs_user, uErr := client.Acs.Users.Get(
 
 ## Update an ACS User
 
-To [update an ACS user](../../api-clients/access-control-systems/users/update-user.md), provide the `acs_user_id` of the user that you want to update, along with the attributes that you want to modify, such as the contact details for the user or the user's access schedule.
+To [update an ACS user](../../api-clients/acs/users/update.md), provide the `acs_user_id` of the user that you want to update, along with the attributes that you want to modify, such as the contact details for the user or the user's access schedule.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -969,7 +969,7 @@ acs_user, uErr := client.Acs.Users.Update(
 
 ## Delete an ACS User
 
-To [delete an ACS user](../../api-clients/access-control-systems/users/delete-user.md), provide the `acs_user_id` of the user that you want to delete.
+To [delete an ACS user](../../api-clients/acs/users/delete.md), provide the `acs_user_id` of the user that you want to delete.
 
 {% tabs %}
 {% tab title="Python" %}

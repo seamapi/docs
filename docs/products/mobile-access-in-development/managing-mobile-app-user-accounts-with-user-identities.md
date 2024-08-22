@@ -207,7 +207,7 @@ None
 
 ## Removing a User Identity
 
-To delete a user identity, you must first delete any [ACS credentials](../../api-clients/access-control-systems/credentials/delete-credential.md) and [enrollment automations](../../api-clients/user-identities/enrollment-automations/) associated with the user identity. You must also deactivate any associated phones. Then, delete the user identity.
+To delete a user identity, you must first delete any [ACS credentials](../../api-clients/acs/credentials/delete.md) and [enrollment automations](../../api-clients/user-identities/enrollment-automations/) associated with the user identity. You must also deactivate any associated phones. Then, delete the user identity.
 
 ```python
 import asyncio
@@ -217,60 +217,60 @@ async def delete_user_identity(user_identity_id):
     client_sessions = await seam.client_sessions.list(
         user_identity_id=user_identity_id
     )
-    
+
     for session in client_sessions:
         await seam.client_sessions.delete(
             session_id=session['client_session_id']
         )
-    
+
     # Delete the ACS users and credentials.
     acs_users = await seam.acs.users.list(
         user_identity_id=user_identity_id
     )
-    
+
     for acs_user in acs_users:
         credentials = await seam.acs.credentials.list(
             acs_user_id=acs_user['acs_user_id']
         )
-    
+
         for credential in credentials:
             await seam.acs.credentials.delete(
                 acs_credential_id=credential['acs_credential_id']
             )
-        
+
         await asyncio.gather(*[
-            wait_for_acs_credential_deleted(credential) 
+            wait_for_acs_credential_deleted(credential)
             for credential in credentials
         ])
-        
+
         await seam.acs.users.delete(
             acs_user_id=acs_user['acs_user_id']
         )
-    
+
     await asyncio.gather(*[
         wait_for_acs_user_deleted(acs_user) for acs_user in acs_users
     ])
-    
+
     # Delete the enrollment automations.
     enrollment_automations = await seam.user_identities.enrollment_automations.list(
         user_identity_id=user_identity_id
     )
-    
+
     for automation in enrollment_automations:
         await seam.user_identities.enrollment_automations.delete(
             enrollment_automation_id=automation['enrollment_automation_id']
         )
-    
+
     await asyncio.gather(*[
-        wait_for_enrollment_automation_deleted(automation) 
+        wait_for_enrollment_automation_deleted(automation)
         for automation in enrollment_automations
     ])
-    
+
     # Delete the phones.
     phones = await seam.phones.list(
         owner_user_identity_id=user_identity_id
     )
-    
+
     for phone in phones:
         await seam.phones.deactivate(
             device_id=phone['device_id']
@@ -279,7 +279,7 @@ async def delete_user_identity(user_identity_id):
     await asyncio.gather(*[
         wait_for_phone_deactivated(phone) for phone in phones
     ])
-    
+
     # Finally, delete the user identity.
     await seam.user_identities.delete(
         user_identity_id=user_identity_id
@@ -295,21 +295,21 @@ async def wait_for_event(event_type, event_filter):
 async def wait_for_acs_user_deleted(acs_user):
     await wait_for_event(
         'acs_user.deleted',
-        lambda event: 'acs_user_id' in event and 
+        lambda event: 'acs_user_id' in event and
                       event.acs_user_id == acs_user.acs_user_id
     )
 
 async def wait_for_enrollment_automation_deleted(enrollment_automation):
     await wait_for_event(
         'enrollment_automation.deleted',
-        lambda event: 'enrollment_automation_id' in event and 
+        lambda event: 'enrollment_automation_id' in event and
                       event.enrollment_automation_id == enrollment_automation.enrollment_automation_id
     )
 
 async def wait_for_acs_credential_deleted(acs_credential):
     await wait_for_event(
         'acs_credential.deleted',
-        lambda event: 'acs_credential_id' in event and 
+        lambda event: 'acs_credential_id' in event and
                       event.acs_credential_id == acs_credential.acs_credential_id
     )
 

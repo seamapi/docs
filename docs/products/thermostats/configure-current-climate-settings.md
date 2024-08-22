@@ -8,7 +8,7 @@ Seam enables you to adjust the [current heating and cooling settings](configure-
 
 When you send a command to change a setting on a thermostat, it might take a while for Seam to confirm the success of the action. To handle this potential delay, Seam provides an[ action attempt ](../../core-concepts/action-attempts.md)object that tracks the status of the action, indicating whether the action was successful.
 
-To ensure that the action has executed successfully, poll the status of the action attempt object using the [Get Action Attempt](../../api-clients/action-attempt/get-action-attempt.md) request. Once Seam has successfully adjusted the thermostat setting, the `status` of the action attempt indicates `success`.
+To ensure that the action has executed successfully, poll the status of the action attempt object using the [Get Action Attempt](../../api-clients/action_attempts/get.md) request. Once Seam has successfully adjusted the thermostat setting, the `status` of the action attempt indicates `success`.
 
 ***
 
@@ -217,7 +217,7 @@ return nil
 
 ### 2. Poll the Action Attempt to Verify the Setting Change
 
-Use the `action_attempt_id` from the previous response to poll the associated action attempt using the [Get Action Attempt](../../api-clients/action-attempt/get-action-attempt.md) request. When the setting modification completes successfully, the `status` of the action attempt changes to `success`.
+Use the `action_attempt_id` from the previous response to poll the associated action attempt using the [Get Action Attempt](../../api-clients/action_attempts/get.md) request. When the setting modification completes successfully, the `status` of the action attempt changes to `success`.
 
 {% tabs %}
 {% tab title="Python" %}

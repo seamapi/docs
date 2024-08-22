@@ -39,7 +39,7 @@ After you've done that, come back here and keep reading.
 
 ```python
 device = seam.devices.get("6aae9d08-fed6-4ca5-8328-e36849ab48fe")
-pprint("Supports backup access code pool: " 
+pprint("Supports backup access code pool: "
     + str(device.properties.supports_backup_access_code_pool))
 ```
 
@@ -209,7 +209,7 @@ System.out.println(device);
 
 ### 1. Activate the backup access code pool
 
-To activate the backup pool, set `use_backup_access_code_pool` to `true` when [creating an access code](../../../api-clients/access-codes/create-an-access-code.md). After activation, the backup access code pool cannot be turned off for that device. However, if you unmanage the device, any backup access codes are removed.
+To activate the backup pool, set `use_backup_access_code_pool` to `true` when [creating an access code](../../../api-clients/access_codes/create.md). After activation, the backup access code pool cannot be turned off for that device. However, if you unmanage the device, any backup access codes are removed.
 
 This activation is a one-time process for each device. Once initiated, Seam consistently maintains a backup code pool for the device. All access codes associated with the device utilize the same backup code pool.
 
@@ -512,7 +512,7 @@ You can retrieve a backup access code to use instead.
 
 ### 3. Confirm the availability of a backup access code
 
-To confirm that a backup access code is available for retrieval, check the `is_backup_access_code_available` property on the access code by inspecting the response from [Get Access Code](../../../api-clients/access-codes/get-an-access-code.md) or [List Access Codes](../../../api-clients/access-codes/list-access-codes.md). If the backup code pool has been exhausted, this property returns `false`.
+To confirm that a backup access code is available for retrieval, check the `is_backup_access_code_available` property on the access code by inspecting the response from [Get Access Code](../../../api-clients/access_codes/get) or [List Access Codes](../../../api-clients/access_codes/list.md). If the backup code pool has been exhausted, this property returns `false`.
 
 {% hint style="info" %}
 Note that we only support pulling backup codes for `time_bound` codes at this time.
@@ -525,7 +525,7 @@ Note that we only support pulling backup codes for `time_bound` codes at this ti
 ```python
 access_code = seam.access_codes.get("dc83d82d-55d2-4178-8c8c-10382311aed2")
 
-pprint("Is backup access code available: " 
+pprint("Is backup access code available: "
     + str(access_code.is_backup_access_code_available))
 ```
 
@@ -659,12 +659,12 @@ Is backup access code available: true
 
 ### 4. Retrieve a backup access code
 
-To retrieve a backup access code for an access code, include the `access_code_id` in the [Pull Backup Access Codes](../../../api-clients/access-codes/pull-backup-access-code.md) request. In the response, you receive the new backup access code. Be sure to share the new backup PIN code with the user of the original access code.
+To retrieve a backup access code for an access code, include the `access_code_id` in the [Pull Backup Access Codes](../../../api-clients/access_codes/pull_backup_access_code.md) request. In the response, you receive the new backup access code. Be sure to share the new backup PIN code with the user of the original access code.
 
 Upon executing this action, Seam performs the following additional actions:
 
 * Mark the backup access code as pulled (`"pulled": true`), meaning that it has been removed from the pool.
-* Associate the backup access code with the original access code, ensuring that any future requests to the [Pull Backup Access Code](../../../api-clients/access-codes/pull-backup-access-code.md) request return the same backup access code.
+* Associate the backup access code with the original access code, ensuring that any future requests to the [Pull Backup Access Code](../../../api-clients/access_codes/pull_backup_access_code.md) request return the same backup access code.
 * Update the `ends_at` date for the backup access code to match that of the original access code.
 * Attempt to refill the backup access code pool with a new backup code.
 
@@ -879,10 +879,10 @@ foreach (var property in t.GetProperties())
 
 {% code overflow="wrap" %}
 ```
-CommonCodeKey: 
-IsScheduledOnDevice: 
+CommonCodeKey:
+IsScheduledOnDevice:
 Type: TimeBound
-IsWaitingForCodeAssignment: 
+IsWaitingForCodeAssignment:
 AccessCodeId: eb140acf-c857-4a84-871b-52afa8c4f7b7
 DeviceId: 6aae9d08-fed6-4ca5-8328-e36849ab48fe
 Name: Backup eb140acf-c857-4a84-871b-52afa8c4f7b7 (Seam)
@@ -896,7 +896,7 @@ EndsAt: 2025-01-22T12:00:00.000Z
 Status: Set
 IsBackupAccessCodeAvailable: False
 IsBackup: True
-PulledBackupAccessCodeId: 
+PulledBackupAccessCodeId:
 IsExternalModificationAllowed: False
 ```
 {% endcode %}

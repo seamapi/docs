@@ -227,7 +227,7 @@ To create a time-bound offline access code, first issue a creation request. Then
 
 ### 1. Create a Time-Bound Offline Access Code
 
-To create a time-bound offline access code, provide the `device_id` of the lock for which you want to create the code and set `is_offline_access_code` to `true`. Specify the `starts_at` and `ends_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamps to define the active time window for the offline code. You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../../api-clients/access-codes/create-an-access-code.md).
+To create a time-bound offline access code, provide the `device_id` of the lock for which you want to create the code and set `is_offline_access_code` to `true`. Specify the `starts_at` and `ends_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamps to define the active time window for the offline code. You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../../api-clients/access_codes/create.md).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -613,7 +613,7 @@ To create a one-time-use offline access code, first issue a creation request. In
 
 To create a one-time-use offline access code, provide the `device_id` of the lock for which you want to create the code. Set `is_offline_access_code` and `is_one_time_use` to `true`. Specify the `starts_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamp to define the beginning of the active time window for the offline code. If applicable for your device, specify the `ends_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamp to define the end of the active time window for the offline code.
 
-You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../../api-clients/access-codes/create-an-access-code.md).
+You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../../api-clients/access_codes/create.md).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -834,7 +834,7 @@ if ($device->can_program_offline_access_codes) {
   "is_offline_access_code": true,
   "is_one_time_use": true,
   ...
-}    
+}
 ```
 {% endtab %}
 
@@ -873,7 +873,7 @@ if (device.CanProgramOfflineAccessCodes == true) {
   "is_offline_access_code": true,
   "is_one_time_use": true,
   ...
-}  
+}
 ```
 {% endtab %}
 
@@ -917,7 +917,7 @@ if (device.getCanProgramOfflineAccessCodes())
   "is_offline_access_code": true,
   "is_one_time_use": true,
   ...
-}    
+}
 ```
 {% endtab %}
 

@@ -120,7 +120,7 @@ const createdAccessCode = await seam.accessCodes.create({
     name: "my ongoing code",
     code: "1234"
 })
-  
+
 console.log(createdAccessCode)
 ```
 
@@ -975,7 +975,7 @@ curl -X 'POST' \
 | `starts_at`                   | <p>type: string<br>Optional</p>  | From when is the code valid                                                                                                                                                                                                                                                    |
 | `ends_at`                     | <p>type: string<br>Optional</p>  | Code expiry. Must be a timestamp in the future and after `starts_at`.                                                                                                                                                                                                          |
 | `code`                        | <p>type: string<br>Optional</p>  | Access code of device                                                                                                                                                                                                                                                          |
-| `use_backup_access_code_pool` | <p>type: boolean<br>Optional</p> | Use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. This allows you to use [/access\_codes/pull\_backup\_access\_code](https://docs.seam.co/latest/api-clients/access-codes/pull-backup-access-code) |
+| `use_backup_access_code_pool` | <p>type: boolean<br>Optional</p> | Use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. This allows you to use [/access\_codes/pull\_backup\_access\_code](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code) |
 | `common_code_key`             | <p>type: string<br>Optional</p>  | any two access codes with the same `common_code_key` are guaranteed to have the same code                                                                                                                                                                                      |
 | `prefer_native_scheduling`    | <p>type: boolean<br>Optional</p> | Whether [native scheduling](../../products/smart-locks/access-codes/#native-scheduling) should be used for time-bound codes when supported by the provider (defaults to true)                                                                                                  |
 | `allow_external_modification` | <p>type: boolean<br>Optional</p> | Whether [external modification](./#external-modification) of the codes should be allowed (defaults to false)                                                                                                                                                                   |
