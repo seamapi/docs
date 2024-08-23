@@ -4,7 +4,7 @@ import type Metalsmith from 'metalsmith'
 import {
   type EndpointTemplateContext,
   type ResourceTemplateContext,
-  setApiResourceTemplateContext,
+  setApiRouteTemplateContext,
   setEndpointTemplateContext,
 } from './template-context.js'
 
@@ -34,8 +34,8 @@ export const reference = (
       contents: Buffer.from('\n'),
     }
     const file = files[k] as unknown as File
-    file.layout = 'api-resource.hbs'
-    setApiResourceTemplateContext(file, route, metadata)
+    file.layout = 'api-route.hbs'
+    setApiRouteTemplateContext(file, route, metadata)
 
     for (const endpoint of route.endpoints) {
       const k = `api${endpoint.path}.md`

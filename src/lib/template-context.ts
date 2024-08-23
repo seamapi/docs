@@ -84,7 +84,7 @@ export interface ResourceTemplateContext {
   endpoints: ContextEndpoint[]
 }
 
-export function setApiResourceTemplateContext(
+export function setApiRouteTemplateContext(
   file: Partial<ResourceTemplateContext>,
   route: Route,
   blueprint: Blueprint,
