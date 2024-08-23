@@ -1,27 +1,14 @@
 # {{title}}
 
+```
+{{request.preferredMethod}} {{path}} ⇒ {{#if response.responseKey}}{{#if (eq response.responseType "resource_list")}}{ {{response.responseKey}}: [{{response.resourceType}}, …] }{{else}}{ {{response.responseKey}} }{{/if}}{{else}}void{{/if}}
+```
+
 {{{description}}}
 
+*Return Type: {{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array<[{{response.resourceType}}](../README.md)>{{else}}[{{response.resourceType}}](../README.md){{/if}}{{else}}void{{/if}}*
 
-### Request Parameters
-
-{{#each request.parameters}}
-**{{this.name}}**  
-*Type:* `{{this.type}}`  
-*Required:* {{#if this.required}}Yes{{else}}No{{/if}}  
-
-{{this.description}}  
-{{/each}}
-
-### Response Properties
-
-{{#each response.properties}}
-**{{this.name}}**  
-{{this.description}}  
-{{/each}}
-
-## Samples
-
+{{#if codeSamples.length}}
 {% tabs %}
 {{#each codeSamples}}
   {{#each this.code}}
@@ -37,11 +24,20 @@
   ```
     {% endtab %}
   {{/each}}
-{{else}}
-  {% tab title="No samples available" %}
-  ```
-  No sample requests available.
-  ```
-  {% endtab %}
 {{/each}}
 {% endtabs %}
+
+{{/if}}
+## Request Parameters
+
+{{#each request.parameters}}
+### `{{this.name}}`
+
+*Type:* `{{this.jsonType}}`
+*Required:* {{#if this.required}}Yes{{else}}No{{/if}}
+
+{{this.description}}
+
+---
+
+{{/each}}
