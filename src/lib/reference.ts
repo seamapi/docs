@@ -8,7 +8,7 @@ import {
   setEndpointTemplateContext,
 } from './template-context.js'
 
-const sdks = ['javascript']
+const sdks: Array<'javascript'> = []
 
 const baseUrl = 'https://docs.seam.co/latest/'
 
