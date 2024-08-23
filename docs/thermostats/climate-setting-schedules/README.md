@@ -10,7 +10,7 @@ A climate setting schedule enables you to configure a thermostat HVAC mode setti
 
 For example, if you are a short-term-rental host who has a guest staying from Jan 1st - Jan 7th, you can create a climate setting schedule that sets the thermostat to a climate setting (for example, heat to 70° C) throughout the guest's stay.
 
-When there are no active climate setting schedules, the thermostat falls back to the [default climate setting](../../api-clients/thermostats/update-a-thermostat.md). For example, if you are a short-term-rental host, you can configure a more energy-saving temperature setting as the default (for example, heat to 45° C).
+When there are no active climate setting schedules, the thermostat falls back to the [default climate setting](../../api-clients/thermostats/update.md). For example, if you are a short-term-rental host, you can configure a more energy-saving temperature setting as the default (for example, heat to 45° C).
 
 ## `climate_setting_schedule` Properties
 

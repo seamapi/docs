@@ -8,7 +8,7 @@ description: >-
 
 ## 1. Update the access code using the API
 
-You can update any active or upcoming access codes using the [Update Access Code](../../../api-clients/access-codes/update-an-access-code.md) request.
+You can update any active or upcoming access codes using the [Update Access Code](../../../api-clients/access_codes/update.md) request.
 
 When modifying an access code, adjust the properties of the access code, such as the `code`, `name`, `starts_at`, and `ends_at` to the new desired values.
 
@@ -252,7 +252,7 @@ There are two methods to verify that a permanent access code has been set on the
 
 **Polling Method**
 
-Utilize the `access_code_id` returned in the response from the create endpoint to invoke the [Get Access Code](../../../api-clients/access-codes/get-an-access-code.md) endpoint. A basic implementation would involve polling this endpoint until the `status` of the access code updates to `set`.
+Utilize the `access_code_id` returned in the response from the create endpoint to invoke the [Get Access Code](../../../api-clients/access_codes/get) endpoint. A basic implementation would involve polling this endpoint until the `status` of the access code updates to `set`.
 
 If the `status` remains `setting` for a very long time, or if the `access_code` object contains any `warnings` or `errors` properties, consult [our guide on "Troubleshooting Access Code Issues"](troubleshooting-access-code-issues.md) for further guidance.
 
@@ -268,7 +268,7 @@ There are two methods to verify that a time-bound access code has been set on th
 
 **Polling Method**
 
-Use the `access_code_id` provided in the response from the create endpoint to call the [Get Access Code](../../../api-clients/access-codes/get-an-access-code.md) endpoint. In a basic implementation, you would poll this endpoint at the `starts_at` time to check if the access code's status is updated to `set`.
+Use the `access_code_id` provided in the response from the create endpoint to call the [Get Access Code](../../../api-clients/access_codes/get) endpoint. In a basic implementation, you would poll this endpoint at the `starts_at` time to check if the access code's status is updated to `set`.
 
 If the `status` remains `setting`, or if the `access_code` object displays any warnings or errors, refer to [our "Troubleshooting Access Code Issues" guide](troubleshooting-access-code-issues.md) for assistance.
 
@@ -736,8 +736,8 @@ foreach (var prop in props)
 Status: pending
 ActionType: UPDATE_ACCESS_CODE
 ActionAttemptId: ec2dd748-00da-4408-9978-b4cb6c7f94a5
-Result: 
-Error: 
+Result:
+Error:
 ```
 {% endcode %}
 
@@ -1303,8 +1303,8 @@ foreach (var prop in props)
 Status: pending
 ActionType: UPDATE_ACCESS_CODE
 ActionAttemptId: 24e04da1-9d75-40fa-8bc3-4447ca76725a
-Result: 
-Error: 
+Result:
+Error:
 ```
 {% endcode %}
 
@@ -1330,8 +1330,8 @@ Access code ID: fe372cb9-1fa5-492f-9494-ea01c5558333
 Device ID: 6aae9d08-fed6-4ca5-8328-e36849ab48fe
 Name: my ongoing code
 Type: Ongoing
-Starts at: 
-Ends at: 
+Starts at:
+Ends at:
 ```
 {% endtab %}
 

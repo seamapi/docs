@@ -32,7 +32,7 @@ This integration works any TTLock locks that are paired with [a TTLock Gateway](
 
 We support the following features:
 
-* [Triggering web unlock actions](../api-clients/locks/unlock-a-lock.md)
+* [Triggering web unlock actions](../api-clients/locks/unlock_door.md)
 * [Programming access codes](../products/smart-locks/access-codes/) on door locks and card readers that have a PIN pad
 
 ***
