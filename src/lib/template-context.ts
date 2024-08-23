@@ -1,49 +1,4 @@
-import type { Blueprint, Endpoint } from '@seamapi/blueprint'
-
-export function setEndpointTemplateContext(
-  file: Partial<EndpointTemplateContext>,
-  endpoint: Endpoint,
-  blueprint: Blueprint,
-): void {
-  file.description = endpoint.description
-  file.title = endpoint.title
-  file.path = endpoint.path
-
-  file.request = {
-    preferredMethod: endpoint.request?.preferredMethod ?? '',
-    parameters: endpoint.request.parameters.map((param) => ({
-      name: param.name,
-      required: param.isRequired,
-      description: param.description,
-      jsonType: param.jsonType,
-    })),
-  }
-
-  file.response = {
-    description: endpoint.response.description,
-    properties: null,
-    resourceType: null,
-    responseKey: null,
-  }
-
-  if (endpoint.response.responseType !== 'void') {
-    const { resourceType, responseKey } = endpoint.response
-    file.response.resourceType = resourceType
-    file.response.responseKey = responseKey
-    const resource = blueprint.resources[resourceType]
-    file.response.properties =
-      resource?.properties.map((property) => ({
-        name: property.name,
-        description: property.description,
-      })) ?? null
-  }
-
-  file.codeSamples = endpoint.codeSamples.map((sample) => ({
-    title: sample.title,
-    description: sample.description,
-    code: sample.code,
-  }))
-}
+import type { Blueprint, Endpoint, Property, Route } from '@seamapi/blueprint'
 
 export interface EndpointTemplateContext {
   description: string
@@ -62,10 +17,6 @@ export interface EndpointTemplateContext {
     description: string
     resourceType: string | null
     responseKey: string | null
-    properties: null | Array<{
-      name: string
-      description: string
-    }>
   }
   codeSamples: Array<{
     title: string
@@ -79,4 +30,110 @@ export interface EndpointTemplateContext {
       }
     >
   }>
+}
+
+export function setEndpointTemplateContext(
+  file: Partial<EndpointTemplateContext>,
+  endpoint: Endpoint,
+): void {
+  file.description = endpoint.description
+  file.title = endpoint.title
+  file.path = endpoint.path
+
+  file.request = {
+    preferredMethod: endpoint.request?.preferredMethod ?? '',
+    parameters: endpoint.request.parameters.map((param) => ({
+      name: param.name,
+      required: param.isRequired,
+      description: param.description,
+      jsonType: param.jsonType,
+    })),
+  }
+
+  file.response = {
+    description: endpoint.response.description,
+    resourceType: null,
+    responseKey: null,
+  }
+
+  if (endpoint.response.responseType !== 'void') {
+    const { resourceType, responseKey } = endpoint.response
+    file.response.resourceType = resourceType
+    file.response.responseKey = responseKey
+  }
+
+  file.codeSamples = endpoint.codeSamples.map((sample) => ({
+    title: sample.title,
+    description: sample.description,
+    code: sample.code,
+  }))
+}
+
+type ContextResourceProperty = Pick<
+  Property,
+  'name' | 'jsonType' | 'description' | 'format' | 'isDeprecated'
+>
+interface ContextResource {
+  name: string
+  properties: ContextResourceProperty[]
+}
+type ContextEndpoint = Pick<Endpoint, 'path' | 'description'>
+
+export interface ResourceTemplateContext {
+  resources: ContextResource[]
+  endpoints: ContextEndpoint[]
+}
+
+export function setApiRouteTemplateContext(
+  file: Partial<ResourceTemplateContext>,
+  route: Route,
+  blueprint: Blueprint,
+): void {
+  file.endpoints = route.endpoints.map(({ path, description }) => ({
+    path,
+    description,
+  }))
+  file.resources = []
+
+  const endpointsWithResourceType = route.endpoints.filter(
+    (e) =>
+      e.response.responseType === 'resource' ||
+      e.response.responseType === 'resource_list',
+  )
+
+  const uniqueResources = new Set<string>()
+
+  for (const endpoint of endpointsWithResourceType) {
+    if (!('resourceType' in endpoint.response)) {
+      // eslint-disable-next-line no-console
+      console.warn(`No resourceType in ${endpoint.path} endpoint response`)
+      continue
+    }
+
+    const resourceName = endpoint.response.resourceType
+    const resource = blueprint.resources[resourceName]
+
+    if (resource == null) {
+      // eslint-disable-next-line no-console
+      console.warn(`No resource ${resourceName} in blueprint`)
+      continue
+    }
+
+    if (!uniqueResources.has(resourceName)) {
+      uniqueResources.add(resourceName)
+
+      file.resources.push({
+        name: resourceName,
+        properties: resource.properties.map(
+          ({ name, jsonType, description, format, isDeprecated }) => ({
+            name,
+            jsonType,
+            description,
+            format,
+            isDeprecated,
+          }),
+        ),
+      })
+    }
+  }
 }
