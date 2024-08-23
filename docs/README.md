@@ -2,7 +2,7 @@
 description: Seam makes it easy to integrate IoT devices with your applications!
 ---
 
-# 🎉 Seam Documentation
+# Seam Documentation
 
 We have integrated many door locks, thermostats, and other device brands, and we have created simple application programming interfaces (APIs) for interacting with these devices.
 

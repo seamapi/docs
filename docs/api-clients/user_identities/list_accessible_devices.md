@@ -87,8 +87,6 @@ This response also includes a Boolean `ok` status indicator.
         "temperature_celsius": 24.64,
         "temperature_fahrenheit": 76.352,
         "current_climate_setting": {
-          "automatic_heating_enabled": true,
-          "automatic_cooling_enabled": true,
           "hvac_mode_setting": "heat_cool",
           "manual_override_allowed": true,
           "cooling_set_point_celsius": 21.5,
@@ -102,8 +100,6 @@ This response also includes a Boolean `ok` status indicator.
           "heat_cool",
           "off"
         ],
-        "can_enable_automatic_cooling": true,
-        "can_enable_automatic_heating": true,
         "is_temporary_manual_override_active": false,
         "name": "",
         "appearance": {

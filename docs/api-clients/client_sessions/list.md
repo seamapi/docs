@@ -32,7 +32,7 @@ await seam.clientSessions.list()
 
 Returns a `client_sessions` array, in which each returned client session (`client_session`) contains the following properties:
 
-<table><thead><tr><th width="310">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>workspace_id</code></td><td>ID of the <a href="../../core-concepts/workspaces/">workspace</a> that contains the client session</td></tr><tr><td><code>token</code></td><td>Client session token associated with the client session</td></tr><tr><td><code>user_identifier_key</code></td><td>Your own internal user ID for the user</td></tr><tr><td><code>created_at</code></td><td>Date and time at which the client session was created</td></tr><tr><td><code>client_session_id</code></td><td>ID of the client session</td></tr><tr><td><code>user_identity_ids</code></td><td>Array of user identity IDs on behalf of which which the client session may act</td></tr><tr><td><code>third_party_account_ids</code></td><td>Array of <a href="../connected-accounts/">connected account</a> IDs associated with this client session</td></tr><tr><td><code>connect_webview_ids</code></td><td>Array of <a href="../../core-concepts/connect-webviews/">Connect Webview</a> IDs associated with the client session</td></tr><tr><td><code>device_count</code></td><td>Number of devices to which the client session grants access</td></tr><tr><td><code>connected_account_ids</code></td><td>Array of <a href="../connected-accounts/">connected account</a> IDs associated with this client session</td></tr></tbody></table>
+<table><thead><tr><th width="310">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>workspace_id</code></td><td>ID of the <a href="../../core-concepts/workspaces/">workspace</a> that contains the client session</td></tr><tr><td><code>token</code></td><td>Client session token associated with the client session</td></tr><tr><td><code>user_identifier_key</code></td><td>Your own internal user ID for the user</td></tr><tr><td><code>created_at</code></td><td>Date and time at which the client session was created</td></tr><tr><td><code>client_session_id</code></td><td>ID of the client session</td></tr><tr><td><code>user_identity_ids</code></td><td>Array of user identity IDs on behalf of which which the client session may act</td></tr><tr><td><code>connect_webview_ids</code></td><td>Array of <a href="../../core-concepts/connect-webviews/">Connect Webview</a> IDs associated with the client session</td></tr><tr><td><code>device_count</code></td><td>Number of devices to which the client session grants access</td></tr><tr><td><code>connected_account_ids</code></td><td>Array of <a href="../connected-accounts/">connected account</a> IDs associated with this client session</td></tr></tbody></table>
 
 This response also includes a Boolean `ok` status indicator.
 
@@ -49,10 +49,6 @@ This response also includes a Boolean `ok` status indicator.
     created_at: '2023-12-26T04:23:46.829Z',
     client_session_id: 'c75d4330-ae01-4dfd-b6c5-f3e94e0d8168',
     user_identity_ids: [],
-    third_party_account_ids: [
-      '3ea0b67f-649f-4131-bfe3-f2035e77a3f9',
-      '6e1cad57-b244-40ca-b4f3-30a46c8000d4'
-    ],
     connect_webview_ids: [],
     device_count: 4,
     connected_account_ids: [
@@ -67,10 +63,6 @@ This response also includes a Boolean `ok` status indicator.
     created_at: '2023-12-26T04:25:50.041Z',
     client_session_id: 'e1006128-19a8-4e4d-9a91-536d80cf9c21',
     user_identity_ids: [],
-    third_party_account_ids: [
-      '2e884e71-b2c1-41a0-bb2c-ec94a7b4c6a4',
-      'b0ccf472-cb63-400c-bf21-5b809f5e1afd'
-    ],
     connect_webview_ids: [],
     device_count: 4,
     connected_account_ids: [

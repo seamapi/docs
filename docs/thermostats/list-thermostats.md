@@ -38,8 +38,6 @@ seam.thermostats.list()
 #         "online": true,
 #         "relative_humidity": 0.36,
 #         "temperature_fahrenheit": 70,
-#         "can_enable_automatic_cooling": true,
-#         "can_enable_automatic_heating": true,
 #         "available_hvac_mode_settings": [
 #           "cool",
 #           "heat",
@@ -47,8 +45,6 @@ seam.thermostats.list()
 #           "off"
 #         ],
 #         "current_climate_setting": {
-#           "automatic_heating_enabled": true,
-#           "automatic_cooling_enabled": true,
 #           "hvac_mode_setting": "heat_cool",
 #           "cooling_set_point_fahrenheit": 75,
 #           "heating_set_point_fahrenheit": 65,
@@ -70,8 +66,6 @@ seam.thermostats.list()
 #         "online": true,
 #         "relative_humidity": 0.36,
 #         "temperature_fahrenheit": 70,
-#         "can_enable_automatic_cooling": true,
-#         "can_enable_automatic_heating": true,
 #         "available_hvac_mode_settings": [
 #           "cool",
 #           "heat",
@@ -79,8 +73,6 @@ seam.thermostats.list()
 #           "off"
 #         ],
 #         "current_climate_setting": {
-#           "automatic_heating_enabled": true,
-#           "automatic_cooling_enabled": true,
 #           "hvac_mode_setting": "heat_cool",
 #           "cooling_set_point_fahrenheit": 75,
 #           "heating_set_point_fahrenheit": 65,
@@ -113,8 +105,6 @@ await seam.thermostats.list()
       "online": true,
       "relative_humidity": 0.36,
       "temperature_fahrenheit": 70,
-      "can_enable_automatic_cooling": true,
-      "can_enable_automatic_heating": true,
       "available_hvac_mode_settings": [
         "cool",
         "heat",
@@ -122,8 +112,6 @@ await seam.thermostats.list()
         "off"
       ],
       "current_climate_setting": {
-        "automatic_heating_enabled": true,
-        "automatic_cooling_enabled": true,
         "hvac_mode_setting": "heat_cool",
         "cooling_set_point_fahrenheit": 75,
         "heating_set_point_fahrenheit": 65,
@@ -145,8 +133,6 @@ await seam.thermostats.list()
       "online": true,
       "relative_humidity": 0.36,
       "temperature_fahrenheit": 70,
-      "can_enable_automatic_cooling": true,
-      "can_enable_automatic_heating": true,
       "available_hvac_mode_settings": [
         "cool",
         "heat",
@@ -154,8 +140,6 @@ await seam.thermostats.list()
         "off"
       ],
       "current_climate_setting": {
-        "automatic_heating_enabled": true,
-        "automatic_cooling_enabled": true,
         "hvac_mode_setting": "heat_cool",
         "cooling_set_point_fahrenheit": 75,
         "heating_set_point_fahrenheit": 65,
@@ -198,8 +182,6 @@ This section shows the JSON response returned by the API. Since each language en
         "online": true,
         "relative_humidity": 0.36,
         "temperature_fahrenheit": 70,
-        "can_enable_automatic_cooling": true,
-        "can_enable_automatic_heating": true,
         "available_hvac_mode_settings": [
           "cool",
           "heat",
@@ -207,8 +189,6 @@ This section shows the JSON response returned by the API. Since each language en
           "off"
         ],
         "current_climate_setting": {
-          "automatic_heating_enabled": true,
-          "automatic_cooling_enabled": true,
           "hvac_mode_setting": "heat_cool",
           "cooling_set_point_fahrenheit": 75,
           "heating_set_point_fahrenheit": 65,
@@ -230,8 +210,6 @@ This section shows the JSON response returned by the API. Since each language en
         "online": true,
         "relative_humidity": 0.36,
         "temperature_fahrenheit": 70,
-        "can_enable_automatic_cooling": true,
-        "can_enable_automatic_heating": true,
         "available_hvac_mode_settings": [
           "cool",
           "heat",
@@ -239,8 +217,6 @@ This section shows the JSON response returned by the API. Since each language en
           "off"
         ],
         "current_climate_setting": {
-          "automatic_heating_enabled": true,
-          "automatic_cooling_enabled": true,
           "hvac_mode_setting": "heat_cool",
           "cooling_set_point_fahrenheit": 75,
           "heating_set_point_fahrenheit": 65,

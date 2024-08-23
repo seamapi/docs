@@ -55,7 +55,7 @@ In addition, you could look for a `device.accessory_keypad_disconnected` event.
 **Request:**
 
 ```python
-seam.locks.get(device="11111111-1111-1111-1111-444444444444")
+seam.devices.get(device="11111111-1111-1111-1111-444444444444")
 ```
 
 **Response:**
@@ -76,7 +76,7 @@ Device(
 ```bash
 # Use GET or POST.
 curl -X 'GET' \
-  'https://connect.getseam.com/locks/get' \
+  'https://connect.getseam.com/devices/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
@@ -104,7 +104,7 @@ curl -X 'GET' \
 **Request:**
 
 ```javascript
-await seam.locks.get("11111111-1111-1111-1111-444444444444")
+await seam.devices.get("11111111-1111-1111-1111-444444444444")
 ```
 
 **Response:**
@@ -123,7 +123,7 @@ await seam.locks.get("11111111-1111-1111-1111-444444444444")
 **Request:**
 
 ```ruby
-client.locks.get("11111111-1111-1111-1111-444444444444")
+client.devices.get("11111111-1111-1111-1111-444444444444")
 ```
 
 **Response:**
@@ -180,8 +180,8 @@ seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 **Request:**
 
 ```java
-seam.locks()
-  .get(LocksGetRequest.builder()
+seam.devices()
+  .get(DevicesGetRequest.builder()
     .deviceId("11111111-1111-1111-1111-444444444444")
     .build());
 ```
@@ -242,7 +242,7 @@ To customize the PIN code, specify a desired PIN for the `code` property. See [A
 
 ```python
 # Get the device.
-device = seam.locks.get(
+device = seam.devices.get(
   device_id="11111111-1111-1111-1111-444444444444"
 )
 
@@ -331,7 +331,7 @@ fi
 
 ```javascript
 // Get the device.
-const device = await seam.locks.get({
+const device = await seam.devices.get({
   device_id: "11111111-1111-1111-1111-444444444444"
 });
 
@@ -365,7 +365,7 @@ if (device.can_program_online_access_codes) {
 
 ```ruby
 # Get the device.
-device = client.locks.get("11111111-1111-1111-1111-444444444444")
+device = client.devices.get("11111111-1111-1111-1111-444444444444")
 
 # Confirm that the device supports online access codes.
 if (device.can_program_online_access_codes)
@@ -397,7 +397,7 @@ end
 
 ```php
 // Get the device.
-$device = $seam->locks->get(device_id: "11111111-1111-1111-1111-444444444444");
+$device = $seam->devices->get(device_id: "11111111-1111-1111-1111-444444444444");
 
 // Confirm that the device supports online access codes.
 if ($device->can_program_online_access_codes) {
@@ -429,7 +429,7 @@ if ($device->can_program_online_access_codes) {
 
 ```csharp
 // Get the device.
-Device device = seam.Locks.Get(deviceId: "11111111-1111-1111-1111-444444444444");
+Device device = seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 
 // Confirm that the device supports online access codes.
 if (device.CanProgramOnlineAccessCodes == true) {
@@ -498,9 +498,9 @@ if (device.getCanProgramOnlineAccessCodes())
 
 ```go
 // Get the device.
-device, uErr := client.Locks.Get(
+device, uErr := client.Devices.Get(
   context.Background(),
-  &api.LocksGetRequest{
+  &api.DevicesGetRequest{
     DeviceId: api.String("11111111-1111-1111-1111-444444444444"),
   })
 

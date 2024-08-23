@@ -1,10 +1,10 @@
 # Table of contents
 
-* [🎉 Seam Documentation](README.md)
+* [Seam Documentation](README.md)
 * [🚲 Quick Start](quickstart.md)
 * [🚀 Go Live!](go-live.md)
 
-## 📖 Core Concepts
+## Core Concepts
 
 * [Overview](core-concepts/overview.md)
 * [Seam Console](core-concepts/seam-console/README.md)
@@ -27,9 +27,9 @@
   * [Reconnecting an Account](device-guides/reconnecting-an-account.md)
 * [Action Attempts](core-concepts/action-attempts.md)
 
-## 🧰 Capability Guides
+## Capability Guides
 
-* [💪 Device and System Capabilities](capability-guides/device-and-system-capabilities.md)
+* [📋 Device and System Capabilities](capability-guides/device-and-system-capabilities.md)
 * [🔒 Smart Locks](products/smart-locks/README.md)
   * [Locking and Unlocking](products/smart-locks/lock-and-unlock.md)
   * [Managing Access Codes](products/smart-locks/access-codes/README.md)
@@ -70,12 +70,6 @@
   * [Set Points](products/thermostats/set-points.md)
   * [Retrieving Thermostats](products/thermostats/retrieving-thermostats.md)
   * [Setting the Current HVAC and Fan Mode Settings](products/thermostats/configure-current-climate-settings.md)
-  * [Managing Scheduled Climate Settings - In Development](capability-guides/thermostats/managing-scheduled-climate-settings-in-development/README.md)
-    * [Setting the Default Climate Setting](capability-guides/thermostats/managing-scheduled-climate-settings-in-development/setting-the-default-climate-setting.md)
-    * [Creating Climate Setting Schedules](capability-guides/thermostats/managing-scheduled-climate-settings-in-development/thermostats-climate-setting-schedules.md)
-    * [Retrieving Climate Setting Schedules](capability-guides/thermostats/managing-scheduled-climate-settings-in-development/retrieving-climate-setting-schedules.md)
-    * [Modifying Climate Setting Schedules](capability-guides/thermostats/managing-scheduled-climate-settings-in-development/modifying-climate-setting-schedules.md)
-    * [Deleting Climate Setting Schedules](capability-guides/thermostats/managing-scheduled-climate-settings-in-development/deleting-climate-setting-schedules.md)
 * [👂 Noise Sensors](products/noise-sensors/README.md)
   * [Configuring Noise Threshold Settings](products/noise-sensors/configure-noise-threshold-settings.md)
 * [📡 Seam Bridge](capability-guides/seam-bridge.md)
@@ -102,10 +96,6 @@
     * [Access Code Details](seam-components/react-components/access-code-details.md)
     * [Create Access Code Form](seam-components/react-components/create-access-code-form.md)
     * [Update Access Code Form](seam-components/react-components/update-access-code-form.md)
-    * [Climate Setting Schedule Table](seam-components/react-components/climate-setting-schedule-table.md)
-    * [Climate Setting Schedule Details](seam-components/react-components/climate-setting-schedule-details.md)
-    * [Create Climate Setting Schedule Form](seam-components/react-components/create-climate-setting-schedule-form.md)
-    * [Update Climate Setting Schedule Form](seam-components/react-components/update-climate-setting-schedule-form.md)
     * [Supported Devices Table](seam-components/react-components/supported-devices-table.md)
     * [Seam Provider](seam-components/react-components/seam-provider.md)
     * [Connect Account Button](seam-components/react-components/connect-account-button.md)
@@ -211,12 +201,6 @@
   * [Set to Heat-Cool (Auto) Mode](api-clients/thermostats/heat_cool.md)
   * [Set to Off Mode](api-clients/thermostats/off.md)
   * [Set Fan Mode](api-clients/thermostats/set_fan_mode.md)
-  * [Climate Setting Schedules](thermostats/climate-setting-schedules/README.md)
-    * [Create a Climate Setting Schedule](thermostats/climate-setting-schedules/create-climate-setting-schedule.md)
-    * [List Climate Setting Schedules](thermostats/climate-setting-schedules/list-climate-setting-schedules.md)
-    * [Get a Climate Setting Schedule](thermostats/climate-setting-schedules/get-climate-setting-schedule.md)
-    * [Update a Climate Setting Schedule](thermostats/climate-setting-schedules/update-climate-setting-schedule.md)
-    * [Delete a Climate Setting Schedule](thermostats/climate-setting-schedules/delete-climate-setting-schedule.md)
 * [User Identities](api-clients/user_identities/README.md)
   * [Create a User Identity](api-clients/user_identities/create.md)
   * [List User Identities](api-clients/user_identities/list.md)
@@ -292,7 +276,7 @@
     * [Developing Your Visionline Plastic Card Integration](device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-your-visionline-plastic-card-integration.md)
     * [Developing Your Visionline Mobile Key App](device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-your-visionline-mobile-key-app.md)
     * [Connecting a Visionline Site to Seam](device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/connecting-a-visionline-site-to-seam.md)
-    * [Setting up Card Encoder for Visionline](device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/setting-up-card-encoder-for-visionline.md)
+    * [Setting up a Card Encoder for Visionline](device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/setting-up-a-card-encoder-for-visionline.md)
     * [Setting up Door Locks for Visionline](device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/setting-up-door-locks-for-visionline.md)
     * [Creating a Visionline User for Seam](device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/creating-a-visionline-user-for-seam.md)
     * [Obtaining ASSA ABLOY Certification for Your Visionline Mobile App](device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/obtaining-assa-abloy-certification-for-your-visionline-mobile-app.md)

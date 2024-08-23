@@ -82,10 +82,6 @@ await seam.clientSessions.list()
     created_at: '2023-12-26T04:23:46.829Z',
     client_session_id: 'c75d4330-ae01-4dfd-b6c5-f3e94e0d8168',
     user_identity_ids: [],
-    third_party_account_ids: [
-      '3ea0b67f-649f-4131-bfe3-f2035e77a3f9',
-      '6e1cad57-b244-40ca-b4f3-30a46c8000d4'
-    ],
     connect_webview_ids: [],
     device_count: 4,
     connected_account_ids: [
@@ -100,10 +96,6 @@ await seam.clientSessions.list()
     created_at: '2023-12-26T04:25:50.041Z',
     client_session_id: 'e1006128-19a8-4e4d-9a91-536d80cf9c21',
     user_identity_ids: [],
-    third_party_account_ids: [
-      '2e884e71-b2c1-41a0-bb2c-ec94a7b4c6a4',
-      'b0ccf472-cb63-400c-bf21-5b809f5e1afd'
-    ],
     connect_webview_ids: [],
     device_count: 4,
     connected_account_ids: [

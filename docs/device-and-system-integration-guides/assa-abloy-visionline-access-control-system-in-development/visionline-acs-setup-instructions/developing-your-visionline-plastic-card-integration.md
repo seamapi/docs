@@ -22,7 +22,9 @@ To set up a demo Visionline instance:
 
     Contact Seam at [support@seam.co](mailto:support@seam.co) to obtain access.
 2. Make sure that your demo Visionline instance is configured with an appropriate operator user account. You'll use this account to connect the Visionline instance with Seam. You can use the default `sym` user and password. Alternately, you can create a new user. This user must be configured as an operator that uses the System Manager operator template. This user must also have a password. For instructions, see [Creating a Visionline User for Seam](creating-a-visionline-user-for-seam.md).
-3. Buy and install a [Visionline card encoder](https://estore.assaabloyglobalsolutions.com/no/marine/rfid-encoder-updater-complete.html), and connect it to your Visionline server. For instructions, see [Setting up Card Encoder for Visionline](setting-up-card-encoder-for-visionline.md).
+3.  Buy and install a [Visionline card encoder](https://estore.assaabloyglobalsolutions.com/no/marine/rfid-encoder-updater-complete.html) and then connect it to your Visionline server.
+
+    For instructions, see [Setting up a Card Encoder for Visionline](setting-up-a-card-encoder-for-visionline.md).
 4. Install and run the [Seam Bridge](../../../capability-guides/seam-bridge.md) on the computer running the Visionline instance or on a computer on the same LAN.\
    See the [Seam Bridge installation instructions](../../../capability-guides/seam-bridge.md#installation-instructions).
 5. [Add](../../../core-concepts/workspaces/#create-a-sandbox-workspace) a Seam workspace for this development phase.

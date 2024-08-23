@@ -15,6 +15,10 @@ layout:
 
 # Get a Thermostat
 
+{% hint style="info" %}
+Deprecated: Use [Get Device](../api-clients/devices/get-device.md) instead.
+{% endhint %}
+
 Retrieves the details of a thermostat.
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/thermostats/get" method="post" %}
@@ -43,8 +47,6 @@ print(thermostat)
 #         "online": True,
 #         "relative_humidity": 0.36,
 #         "temperature_fahrenheit": 70,
-#         "can_enable_automatic_cooling": True,
-#         "can_enable_automatic_heating": True,
 #         "available_hvac_mode_settings": [
 #             "cool",
 #             "heat",
@@ -52,8 +54,6 @@ print(thermostat)
 #             "off"
 #         ],
 #         "current_climate_setting": {
-#             "automatic_heating_enabled": True,
-#             "automatic_cooling_enabled": True,
 #             "hvac_mode_setting": "heat_cool",
 #             "cooling_set_point_fahrenheit": 75,
 #             "heating_set_point_fahrenheit": 65,
@@ -90,8 +90,6 @@ console.log(device)
       "online": true,
       "relative_humidity": 0.36,
       "temperature_fahrenheit": 70,
-      "can_enable_automatic_cooling": true,
-      "can_enable_automatic_heating": true,
       "available_hvac_mode_settings": [
         "cool",
         "heat",
@@ -99,8 +97,6 @@ console.log(device)
         "off"
       ],
       "current_climate_setting": {
-        "automatic_heating_enabled": true,
-        "automatic_cooling_enabled": true,
         "hvac_mode_setting": "heat_cool",
         "cooling_set_point_fahrenheit": 75,
         "heating_set_point_fahrenheit": 65,
@@ -154,14 +150,10 @@ This section shows the JSON response returned by the API. Since each language en
             "has_direct_power": true,
             "relative_humidity": 0.36,
             "temperature_celsius": 21.11111111111111,
-            "is_cooling_available": true,
-            "is_heating_available": true,
             "temperature_fahrenheit": 70,
             "current_climate_setting": {
                 "hvac_mode_setting": "off",
                 "manual_override_allowed": false,
-                "automatic_cooling_enabled": false,
-                "automatic_heating_enabled": false
             },
             "available_hvac_mode_settings": [
                 "off",
@@ -169,8 +161,6 @@ This section shows the JSON response returned by the API. Since each language en
                 "heat",
                 "heat_cool"
             ],
-            "can_enable_automatic_cooling": true,
-            "can_enable_automatic_heating": true,
             "max_cooling_set_point_celsius": 33.333333333333336,
             "max_heating_set_point_celsius": 26.11111111111111,
             "min_cooling_set_point_celsius": 18.333333333333336,
@@ -184,7 +174,6 @@ This section shows the JSON response returned by the API. Since each language en
             },
             "image_url": "https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png",
             "image_alt_text": "Ecobee 3 Lite Thermostat",
-            "is_climate_setting_schedule_active": false,
             "min_heating_set_point_fahrenheit": 45,
             "max_heating_set_point_fahrenheit": 79,
             "min_cooling_set_point_fahrenheit": 65,
@@ -213,8 +202,6 @@ This section shows the JSON response returned by the API. Since each language en
       "online": true,
       "relative_humidity": 0.36,
       "temperature_fahrenheit": 70,
-      "can_enable_automatic_cooling": true,
-      "can_enable_automatic_heating": true,
       "available_hvac_mode_settings": [
         "cool",
         "heat",
@@ -222,8 +209,6 @@ This section shows the JSON response returned by the API. Since each language en
         "off"
       ],
       "current_climate_setting": {
-        "automatic_heating_enabled": true,
-        "automatic_cooling_enabled": true,
         "hvac_mode_setting": "heat_cool",
         "cooling_set_point_fahrenheit": 75,
         "heating_set_point_fahrenheit": 65,

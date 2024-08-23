@@ -251,7 +251,7 @@ For more information, see [Webhooks](../../core-concepts/webhooks.md).
 
 When you [host a Connect Webview in an HTML iframe](../../core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app.md#embed-the-connect-webview-in-an-iframe), the [iframe](https://www.w3schools.com/html/html\_iframe.asp) uses `window.parent.postMessage` to send messages to the parent window that is hosting the iframe. `window.parent.postMessage` is a cross-origin communication mechanism available in web browsers.
 
-Register an event listener for the parent window containing the iframe to monitor for `message` events. Specifically, listen for a `webview.login_successful` event. This event indicates that Seam has successfully established the connection to the user's device or ACS account. A `webview.login_failed` event indicates that the account connection did not complete successfully. Further, the `webview.login_failed` event contains an `error_code` and `error_message` to help you troubleshoot the issue.
+Register an event listener for the parent window containing the iframe to monitor for `message` events. Specifically, listen for a `connect_webview.login_succeeded` event. This event indicates that Seam has successfully established the connection to the user's device or ACS account. A `connect_webview.login_failed` event indicates that the account connection did not complete successfully.
 
 For example:
 
@@ -259,7 +259,7 @@ For example:
 window.addEventListener(
   "message",
   (event) => {
-    if (event.data?.event?.event_type === "webview.login_successful") {
+    if (event.data?.event?.event_type === "connect_webview.login_succeeded") {
       // Do something.
     }
   },

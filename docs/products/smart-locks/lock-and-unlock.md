@@ -23,7 +23,7 @@ Before you attempt to lock or unlock a device, be sure to confirm that your devi
 * `device.can_remotely_lock`
 * `device.can_remotely_unlock`
 
-Use [Get Device](../../api-clients/devices/get.md) (or [Get Lock](../../api-clients/locks/get.md)) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to lock or unlock the device.
+Use [Get Device](../../api-clients/devices/get.md) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to lock or unlock the device.
 
 If either of these capability flags is `false` or not present, you can view the [properties](../../api-clients/devices/#device-properties) of the device, [errors](../../api-clients/devices/#device-error-types) or [warnings](../../api-clients/devices/#device-warning-types) for the device, and [events](../../api-clients/events/#event-types) related to the device to learn more about the cause of these issues. For example, you could examine `device.properties.online`. In addition, you could look for a `device.disconnected` event.
 
@@ -32,7 +32,7 @@ If either of these capability flags is `false` or not present, you can view the 
 **Request:**
 
 ```python
-seam.locks.get(device="11111111-1111-1111-1111-444444444444")
+seam.devices.get(device_id="11111111-1111-1111-1111-444444444444")
 ```
 
 **Response:**
@@ -53,7 +53,7 @@ Device(
 ```bash
 # Use GET or POST.
 curl -X 'GET' \
-  'https://connect.getseam.com/locks/get' \
+  'https://connect.getseam.com/devices/get' \
   -H 'accept: application/json' \
   -H "Authorization: Bearer ${API_KEY}" \
   -H 'Content-Type: application/json' \
@@ -81,7 +81,7 @@ curl -X 'GET' \
 **Request:**
 
 ```javascript
-await seam.locks.get("11111111-1111-1111-1111-444444444444")
+await seam.devices.get("11111111-1111-1111-1111-444444444444")
 ```
 
 **Response:**
@@ -100,7 +100,7 @@ await seam.locks.get("11111111-1111-1111-1111-444444444444")
 **Request:**
 
 ```ruby
-client.locks.get("11111111-1111-1111-1111-444444444444")
+client.devices.get("11111111-1111-1111-1111-444444444444")
 ```
 
 **Response:**
@@ -158,8 +158,8 @@ seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 **Request:**
 
 ```java
-seam.locks()
-  .get(LocksGetRequest.builder()
+seam.devices()
+  .get(DevicesGetRequest.builder()
     .deviceId("11111111-1111-1111-1111-444444444444")
     .build());
 ```
@@ -212,7 +212,7 @@ You can lock a door using the [`lock_door`](../../api-clients/locks/lock_door.md
 
 ```python
 # Get the device.
-device = seam.locks.get(
+device = seam.devices.get(
   device_id="11111111-1111-1111-1111-444444444444"
 )
 
@@ -284,7 +284,7 @@ fi
 
 ```javascript
 // Get the device.
-const device = await seam.locks.get({
+const device = await seam.devices.get({
   device_id: "11111111-1111-1111-1111-444444444444"
 });
 
@@ -317,7 +317,7 @@ if (device.can_remotely_lock) {
 
 ```ruby
 # Get the device.
-device = client.locks.get("11111111-1111-1111-1111-444444444444")
+device = client.devices.get("11111111-1111-1111-1111-444444444444")
 
 # Confirm that the device can remotely lock.
 if (device.can_remotely_lock)
@@ -342,7 +342,7 @@ end
 
 ```php
 // Get the device.
-$device = $seam->locks->get(device_id: "11111111-1111-1111-1111-444444444444");
+$device = $seam->devices->get(device_id: "11111111-1111-1111-1111-444444444444");
 
 // Confirm that the device can remotely lock.
 if ($device->can_remotely_lock) {
@@ -369,7 +369,7 @@ if ($device->can_remotely_lock) {
 
 ```csharp
 // Get the device.
-Device device = seam.Locks.Get(deviceId: "11111111-1111-1111-1111-444444444444");
+Device device = seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 
 // Confirm that the device can remotely lock.
 if (device.CanRemotelyLock == true) {
@@ -428,9 +428,9 @@ Optional[
 
 ```go
 // Get the device.
-device, uErr := client.Locks.Get(
+device, uErr := client.Devices.Get(
   context.Background(),
-  &api.LocksGetRequest{
+  &api.DevicesGetRequest{
     DeviceId: api.String("11111111-1111-1111-1111-444444444444"),
   })
 
@@ -480,7 +480,7 @@ You can unlock a door using the [unlock\_door](../../api-clients/locks/unlock_do
 
 ```python
 # Get the device.
-device = seam.locks.get(
+device = seam.devices.get(
   device_id="11111111-1111-1111-1111-444444444444"
 )
 
@@ -552,7 +552,7 @@ fi
 
 ```javascript
 // Get the device.
-const device = await seam.locks.get({
+const device = await seam.devices.get({
   device_id: "11111111-1111-1111-1111-444444444444"
 });
 
@@ -585,7 +585,7 @@ if (device.can_remotely_unlock) {
 
 ```ruby
 # Get the device.
-device = client.locks.get("11111111-1111-1111-1111-444444444444")
+device = client.devices.get("11111111-1111-1111-1111-444444444444")
 
 # Confirm that the device can remotely unlock.
 if (device.can_remotely_unlock)
@@ -610,7 +610,7 @@ end
 
 ```php
 // Get the device.
-$device = $seam->locks->get(device_id: "11111111-1111-1111-1111-444444444444");
+$device = $seam->devices->get(device_id: "11111111-1111-1111-1111-444444444444");
 
 // Confirm that the device can remotely unlock.
 if ($device->can_remotely_unlock) {
@@ -637,7 +637,7 @@ if ($device->can_remotely_unlock) {
 
 ```csharp
 // Get the device.
-Device device = seam.Locks.Get(deviceId: "11111111-1111-1111-1111-444444444444");
+Device device = seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 
 // Confirm that the device can remotely unlock.
 if (device.CanRemotelyUnlock == true) {
@@ -696,9 +696,9 @@ Optional[
 
 ```go
 // Get the device.
-device, uErr := client.Locks.Get(
+device, uErr := client.Devices.Get(
   context.Background(),
-  &api.LocksGetRequest{
+  &api.DevicesGetRequest{
     DeviceId: api.String("11111111-1111-1111-1111-444444444444"),
   })
 
@@ -1127,7 +1127,7 @@ To retrieve the locked status of a specific door lock, use the [Get Lock](../../
 **Request:**
 
 ```python
-seam.locks.get(device="11111111-1111-1111-1111-444444444444")
+seam.devices.get(device_id="11111111-1111-1111-1111-444444444444")
 ```
 
 **Response:**
@@ -1150,7 +1150,7 @@ Device(
 ```bash
 # Use GET or POST.
 curl -X 'GET' \
-  'https://connect.getseam.com/locks/get' \
+  'https://connect.getseam.com/devices/get' \
   -H 'accept: application/json' \
   -H "Authorization: Bearer ${API_KEY}" \
   -H 'Content-Type: application/json' \
@@ -1180,7 +1180,7 @@ curl -X 'GET' \
 **Request:**
 
 ```javascript
-await seam.locks.get("11111111-1111-1111-1111-444444444444")
+await seam.devices.get("11111111-1111-1111-1111-444444444444")
 ```
 
 **Response:**
@@ -1201,7 +1201,7 @@ await seam.locks.get("11111111-1111-1111-1111-444444444444")
 **Request:**
 
 ```ruby
-client.locks.get("11111111-1111-1111-1111-444444444444")
+client.devices.get("11111111-1111-1111-1111-444444444444")
 ```
 
 **Response:**
@@ -1264,7 +1264,7 @@ seam.Devices.Get("11111111-1111-1111-1111-444444444444");
 **Request:**
 
 ```java
-seam.locks().get(LocksGetRequest.builder()
+seam.devices().get(DevicesGetRequest.builder()
   .deviceId("11111111-1111-1111-1111-444444444444")
   .build());
 ```
