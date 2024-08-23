@@ -5,9 +5,7 @@ import layouts from '@metalsmith/layouts'
 import metadata from '@metalsmith/metadata'
 import Metalsmith from 'metalsmith'
 
-import { postprocess } from 'lib/reference.js'
-
-import { blueprint, reference } from './lib/index.js'
+import { blueprint, helpers, postprocess, reference } from './lib/index.js'
 
 const rootDir = dirname(fileURLToPath(import.meta.url))
 
@@ -31,11 +29,7 @@ Metalsmith(rootDir)
       default: 'default.hbs',
       engineOptions: {
         noEscape: true,
-        helpers: {
-          eq: function (v1: any, v2: any): boolean {
-            return v1 === v2
-          },
-        },
+        helpers,
       },
     }),
   )

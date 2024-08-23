@@ -1,2 +1,3 @@
 export { blueprint } from './blueprint.js'
-export { reference } from './reference.js'
+export * as helpers from './handlebars-helpers.js'
+export { postprocess, reference } from './reference.js'
