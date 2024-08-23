@@ -31,6 +31,11 @@ Metalsmith(rootDir)
       default: 'default.hbs',
       engineOptions: {
         noEscape: true,
+        helpers: {
+          eq: function (v1: any, v2: any): boolean {
+            return v1 === v2
+          },
+        },
       },
     }),
   )
