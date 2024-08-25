@@ -20,7 +20,7 @@ You can perform the following actions on `user_identity` objects:
 
 * [Create a user identity](create-a-user-identity.md)
 * [List user identities](list.md)
-* [Get a user identity](get-a-user-identity.md)
+* [Get a user identity](get.md)
 * [Add an ACS user to a user identity](add-an-acs-user-to-a-user-identity.md)
 * [List ACS users associated with a user identity](list_acs_users.md)
 * [Remove an ACS user from a user identity](remove_acs_user.md)
