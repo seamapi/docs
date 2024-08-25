@@ -19,7 +19,7 @@ The `user_identity` object has the following properties:
 You can perform the following actions on `user_identity` objects:
 
 * [Create a user identity](create-a-user-identity.md)
-* [List user identities](list-user-identities.md)
+* [List user identities](list.md)
 * [Get a user identity](get-a-user-identity.md)
 * [Add an ACS user to a user identity](add-an-acs-user-to-a-user-identity.md)
 * [List ACS users associated with a user identity](list_acs_users.md)
