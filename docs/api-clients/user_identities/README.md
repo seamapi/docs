@@ -23,7 +23,7 @@ You can perform the following actions on `user_identity` objects:
 * [Get a user identity](get-a-user-identity.md)
 * [Add an ACS user to a user identity](add-an-acs-user-to-a-user-identity.md)
 * [List ACS users associated with a user identity](list-acs-users-associated-with-a-user-identity.md)
-* [Remove an ACS user from a user identity](remove-an-acs-user-from-a-user-identity.md)
+* [Remove an ACS user from a user identity](remove_acs_user.md)
 * [Grant a user identity access to a device](grant-a-user-identity-access-to-a-device.md)
 * [List accessible devices for a user identity](list-accessible-devices-for-a-user-identity.md)
 * [Revoke access to a device from a user identity](revoke_access_to_device.md)
