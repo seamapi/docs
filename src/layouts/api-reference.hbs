@@ -6,7 +6,7 @@
 
 {{{description}}}
 
-*Return Type: {{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array<[{{response.resourceType}}](../README.md)>{{else}}[{{response.resourceType}}](../README.md){{/if}}{{else}}void{{/if}}*
+*Return Type:* {{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array<[{{response.resourceType}}](../README.md)>{{else}}[{{response.resourceType}}](../README.md){{/if}}{{else}}void{{/if}}
 
 {{#if codeSamples.length}}
 {% tabs %}
@@ -33,7 +33,7 @@
 {{#each request.parameters}}
 ### `{{this.name}}`
 
-*Type:* `{{this.jsonType}}`
+*Type:* `{{this.jsonType}}`\
 *Required:* {{#if this.required}}Yes{{else}}No{{/if}}
 
 {{this.description}}
