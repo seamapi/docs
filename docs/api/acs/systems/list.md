@@ -1,7 +1,7 @@
 # List ACS Systems
 
 ```
-POST /acs/systems/list ⇒ { acs_systems }
+POST /acs/systems/list ⇒ { acs_systems: [acs_system, …] }
 ```
 
 Returns a list of all [access control systems](../../../capability-guides/access-systems.md).
@@ -10,7 +10,7 @@ To filter the list of returned access control systems by a specific connected ac
 `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the 
 response includes all access control systems connected to your workspace.
 
-*Return Type:* [acs_system](../README.md)
+Return Type: Array<[acs_system](../README.md)>
 
 {% tabs %}
     {% tab title="JavaScript" %}
@@ -75,8 +75,8 @@ acs_system_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33">]
 
 ### `connected_account_id`
 
-*Type:* `string`\
-*Required:* No
+Type: `string`\
+Required: No
 
 ID of the connected account by which to filter the list of returned access control systems.
 

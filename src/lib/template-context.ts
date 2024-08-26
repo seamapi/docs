@@ -17,6 +17,7 @@ export interface EndpointTemplateContext {
     description: string
     resourceType: string | null
     responseKey: string | null
+    responseType: string | null
   }
   codeSamples: Array<{
     title: string
@@ -54,12 +55,14 @@ export function setEndpointTemplateContext(
     description: endpoint.response.description,
     resourceType: null,
     responseKey: null,
+    responseType: null,
   }
 
   if (endpoint.response.responseType !== 'void') {
-    const { resourceType, responseKey } = endpoint.response
+    const { resourceType, responseKey, responseType } = endpoint.response
     file.response.resourceType = resourceType
     file.response.responseKey = responseKey
+    file.response.responseType = responseType
   }
 
   file.codeSamples = endpoint.codeSamples.map((sample) => ({
