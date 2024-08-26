@@ -10,8 +10,6 @@ To filter the list of returned access control systems by a specific connected ac
 `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the 
 response includes all access control systems connected to your workspace.
 
-Return Type: Array<[acs_system](../README.md)>
-
 {% tabs %}
     {% tab title="JavaScript" %}
   ### Request
@@ -82,3 +80,6 @@ ID of the connected account by which to filter the list of returned access contr
 
 ---
 
+## Return Type
+
+Array<[acs_system](../README.md)>

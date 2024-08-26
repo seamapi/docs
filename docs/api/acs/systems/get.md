@@ -8,8 +8,6 @@ Returns a specified [access control system](../../../capability-guides/access-sy
 
 Specify the desired access control system by including the corresponding `acs_system_id` in the request body.
 
-Return Type: [acs_system](../README.md)
-
 ## Request Parameters
 
 ### `acs_system_id`
@@ -21,3 +19,6 @@ ID of the desired access control system.
 
 ---
 
+## Return Type
+
+[acs_system](../README.md)

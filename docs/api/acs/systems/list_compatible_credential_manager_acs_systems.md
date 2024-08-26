@@ -10,8 +10,6 @@ Returns a list of all credential manager ACS systems that are compatible with a 
 Specify the ACS system for which you want to retrieve all compatible credential manager ACS 
 systems by including the corresponding `acs_system_id` in the request body.
 
-Return Type: Array<[acs_system](../README.md)>
-
 ## Request Parameters
 
 ### `acs_system_id`
@@ -23,3 +21,6 @@ ID of the ACS system for which you want to retrieve all compatible credential ma
 
 ---
 
+## Return Type
+
+Array<[acs_system](../README.md)>
