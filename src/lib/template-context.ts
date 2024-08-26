@@ -71,8 +71,8 @@ export function setEndpointTemplateContext(
 
 type ContextResourceProperty = Pick<
   Property,
-  'name' | 'jsonType' | 'description' | 'format' | 'isDeprecated'
->
+  'name' | 'description' | 'format' | 'isDeprecated'
+> & { jsonType: string }
 interface ContextResource {
   name: string
   properties: ContextResourceProperty[]
@@ -127,7 +127,7 @@ export function setApiRouteTemplateContext(
         properties: resource.properties.map(
           ({ name, jsonType, description, format, isDeprecated }) => ({
             name,
-            jsonType,
+            jsonType: formatPropertyTypeForDocs(jsonType),
             description,
             format,
             isDeprecated,
@@ -136,4 +136,14 @@ export function setApiRouteTemplateContext(
       })
     }
   }
+}
+
+type PropertyType = Property['jsonType']
+
+const formatPropertyTypeForDocs = (type: PropertyType): string => {
+  const typeMap: Partial<Record<PropertyType, string>> = {
+    boolean: 'Boolean',
+  }
+
+  return typeMap[type] ?? type
 }

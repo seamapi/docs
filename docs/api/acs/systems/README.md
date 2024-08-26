@@ -11,7 +11,7 @@ ID of the `acs_system`.
 
 ### `can_add_acs_users_to_acs_access_groups`
 
-Type: `boolean`\
+Type: `Boolean`\
 Format: `boolean`
 
 Indicates whether the `acs_system` supports [adding users to access groups](../../../capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group.md). See also [Access Group-based Access Control Systems](../../../capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems.md).
@@ -20,7 +20,7 @@ Indicates whether the `acs_system` supports [adding users to access groups](../.
 
 ### `can_automate_enrollment`
 
-Type: `boolean`\
+Type: `Boolean`\
 Format: `boolean`
 
 Indicates whether it is possible to [launch enrollment automations](../../../capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut.md) for the `acs_system`.
@@ -29,7 +29,7 @@ Indicates whether it is possible to [launch enrollment automations](../../../cap
 
 ### `can_create_acs_access_groups`
 
-Type: `boolean`\
+Type: `Boolean`\
 Format: `boolean`
 
 Indicates whether the `acs_system` supports creating [access groups](../../../capability-guides/access-systems/assigning-users-to-access-groups.md). See also [Access Group-based Access Control Systems](../../../capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems.md).
@@ -38,7 +38,7 @@ Indicates whether the `acs_system` supports creating [access groups](../../../ca
 
 ### `can_remove_acs_users_from_acs_access_groups`
 
-Type: `boolean`\
+Type: `Boolean`\
 Format: `boolean`
 
 Indicates whether the `acs_system` supports [removing users from access groups](../../../capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group.md). See also [Access Group-based Access Control Systems](../../../capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems.md).
