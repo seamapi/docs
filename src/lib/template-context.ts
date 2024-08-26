@@ -78,6 +78,7 @@ type ContextResourceProperty = Pick<
 > & { jsonType: string }
 interface ContextResource {
   name: string
+  description: string
   properties: ContextResourceProperty[]
 }
 type ContextEndpoint = Pick<Endpoint, 'path' | 'description'>
@@ -127,6 +128,7 @@ export function setApiRouteTemplateContext(
 
       file.resources.push({
         name: resourceName,
+        description: resource.description,
         properties: resource.properties.map(
           ({
             name,

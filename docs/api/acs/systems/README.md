@@ -1,3 +1,5 @@
+Represents an [access control system](../../../capability-guides/access-systems.md).
+
 ## `acs_system`
 
 ### `acs_system_id`
