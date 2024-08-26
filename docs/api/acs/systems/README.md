@@ -3,7 +3,7 @@
 ### `acs_system_id`
 
 Type: `string`\
-Format: `string`
+Format: `id`
 
 ID of the `acs_system`.
 
@@ -57,7 +57,7 @@ IDs of the [connected accounts](../../../core-concepts/connected-accounts.md) as
 ### `created_at`
 
 Type: `string`\
-Format: `string`
+Format: `datetime`
 
 Date and time at which the `acs_system` was created.
 
@@ -158,7 +158,7 @@ Warnings associated with the `acs_system`.
 ### `workspace_id`
 
 Type: `string`\
-Format: `string`
+Format: `id`
 
 ID of the [workspace](../../../core-concepts/workspaces.md) that contains the `acs_system`.
 
