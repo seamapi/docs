@@ -71,7 +71,7 @@ export function setEndpointTemplateContext(
 
 type ContextResourceProperty = Pick<
   Property,
-  'name' | 'description' | 'format' | 'isDeprecated'
+  'name' | 'description' | 'format' | 'isDeprecated' | 'deprecationMessage'
 > & { jsonType: string }
 interface ContextResource {
   name: string
@@ -125,12 +125,20 @@ export function setApiRouteTemplateContext(
       file.resources.push({
         name: resourceName,
         properties: resource.properties.map(
-          ({ name, jsonType, description, format, isDeprecated }) => ({
+          ({
+            name,
+            jsonType,
+            description,
+            format,
+            isDeprecated,
+            deprecationMessage,
+          }) => ({
             name,
             jsonType: formatPropertyTypeForDocs(jsonType),
             description,
             format,
             isDeprecated,
+            deprecationMessage,
           }),
         ),
       })

@@ -120,7 +120,7 @@ Name of the `acs_system`.
 ### `system_type`
 
 {% hint style="warning" %}
-**Deprecated** use something else.
+**Deprecated**. Use `external_type`.
 {% endhint %}
 
 Type: `string`\
@@ -131,7 +131,7 @@ Format: `enum`
 ### `system_type_display_name`
 
 {% hint style="warning" %}
-**Deprecated** use something else.
+**Deprecated**. Use `external_type_display_name`.
 {% endhint %}
 
 Type: `string`\
