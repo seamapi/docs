@@ -24,7 +24,7 @@ description: >-
 | ---------------------------------------------------------- | --------------------------------- |
 | [List Connected Accounts](list.md)      | Get a list of Connected Accounts. |
 | [Update Connected Account](update-a-connected-account.md)  | Update a Connected Account.       |
-| [Delete Connected Accounts](delete-a-connected-account.md) | Delete a Connected Account.       |
+| [Delete Connected Accounts](delete.md) | Delete a Connected Account.       |
 
 ## Connected Account Error Types
 
