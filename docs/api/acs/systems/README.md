@@ -4,8 +4,7 @@ Represents an [access control system](../../../capability-guides/access-systems.
 
 ### `acs_system_id`
 
-Type: `string`\
-Format: `id`
+Format: `Id`
 
 ID of the `acs_system`.
 
@@ -13,8 +12,7 @@ ID of the `acs_system`.
 
 ### `can_add_acs_users_to_acs_access_groups`
 
-Type: `Boolean`\
-Format: `boolean`
+Format: `Boolean`
 
 Indicates whether the `acs_system` supports [adding users to access groups](../../../capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group.md). See also [Access Group-based Access Control Systems](../../../capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems.md).
 
@@ -22,8 +20,7 @@ Indicates whether the `acs_system` supports [adding users to access groups](../.
 
 ### `can_automate_enrollment`
 
-Type: `Boolean`\
-Format: `boolean`
+Format: `Boolean`
 
 Indicates whether it is possible to [launch enrollment automations](../../../capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut.md) for the `acs_system`.
 
@@ -31,8 +28,7 @@ Indicates whether it is possible to [launch enrollment automations](../../../cap
 
 ### `can_create_acs_access_groups`
 
-Type: `Boolean`\
-Format: `boolean`
+Format: `Boolean`
 
 Indicates whether the `acs_system` supports creating [access groups](../../../capability-guides/access-systems/assigning-users-to-access-groups.md). See also [Access Group-based Access Control Systems](../../../capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems.md).
 
@@ -40,8 +36,7 @@ Indicates whether the `acs_system` supports creating [access groups](../../../ca
 
 ### `can_remove_acs_users_from_acs_access_groups`
 
-Type: `Boolean`\
-Format: `boolean`
+Format: `Boolean`
 
 Indicates whether the `acs_system` supports [removing users from access groups](../../../capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group.md). See also [Access Group-based Access Control Systems](../../../capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems.md).
 
@@ -49,8 +44,7 @@ Indicates whether the `acs_system` supports [removing users from access groups](
 
 ### `connected_account_ids`
 
-Type: `array`\
-Format: `list`
+Format: `List`
 
 IDs of the [connected accounts](../../../core-concepts/connected-accounts.md) associated with the `acs_system`.
 
@@ -58,8 +52,7 @@ IDs of the [connected accounts](../../../core-concepts/connected-accounts.md) as
 
 ### `created_at`
 
-Type: `string`\
-Format: `datetime`
+Format: `Datetime`
 
 Date and time at which the `acs_system` was created.
 
@@ -67,8 +60,7 @@ Date and time at which the `acs_system` was created.
 
 ### `errors`
 
-Type: `array`\
-Format: `list`
+Format: `List`
 
 Errors associated with the `acs_system`.
 
@@ -76,8 +68,7 @@ Errors associated with the `acs_system`.
 
 ### `external_type`
 
-Type: `string`\
-Format: `enum`
+Format: `Enum`
 
 Brand-specific terminology for the `acs_system` type.
 
@@ -85,8 +76,7 @@ Brand-specific terminology for the `acs_system` type.
 
 ### `external_type_display_name`
 
-Type: `string`\
-Format: `string`
+Format: `String`
 
 Display name that corresponds to the brand-specific terminology for the `acs_system` type.
 
@@ -94,8 +84,7 @@ Display name that corresponds to the brand-specific terminology for the `acs_sys
 
 ### `image_alt_text`
 
-Type: `string`\
-Format: `string`
+Format: `String`
 
 Alternative text for the `acs_system` image.
 
@@ -103,8 +92,7 @@ Alternative text for the `acs_system` image.
 
 ### `image_url`
 
-Type: `string`\
-Format: `string`
+Format: `String`
 
 URL for the image that represents the `acs_system`.
 
@@ -112,8 +100,7 @@ URL for the image that represents the `acs_system`.
 
 ### `name`
 
-Type: `string`\
-Format: `string`
+Format: `String`
 
 Name of the `acs_system`.
 
@@ -125,8 +112,7 @@ Name of the `acs_system`.
 **Deprecated**. Use `external_type`.
 {% endhint %}
 
-Type: `string`\
-Format: `enum`
+Format: `Enum`
 
 ---
 
@@ -136,22 +122,19 @@ Format: `enum`
 **Deprecated**. Use `external_type_display_name`.
 {% endhint %}
 
-Type: `string`\
-Format: `string`
+Format: `String`
 
 ---
 
 ### `visionline_metadata`
 
-Type: `object`\
-Format: `record`
+Format: `Record`
 
 ---
 
 ### `warnings`
 
-Type: `array`\
-Format: `list`
+Format: `List`
 
 Warnings associated with the `acs_system`.
 
@@ -159,8 +142,7 @@ Warnings associated with the `acs_system`.
 
 ### `workspace_id`
 
-Type: `string`\
-Format: `id`
+Format: `Id`
 
 ID of the [workspace](../../../core-concepts/workspaces.md) that contains the `acs_system`.
 

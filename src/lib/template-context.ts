@@ -1,4 +1,5 @@
 import type { Blueprint, Endpoint, Property, Route } from '@seamapi/blueprint'
+import { pascalCase } from 'change-case'
 
 export interface EndpointTemplateContext {
   description: string
@@ -74,8 +75,8 @@ export function setEndpointTemplateContext(
 
 type ContextResourceProperty = Pick<
   Property,
-  'name' | 'description' | 'format' | 'isDeprecated' | 'deprecationMessage'
-> & { jsonType: string }
+  'name' | 'description' | 'isDeprecated' | 'deprecationMessage'
+> & { format: string }
 interface ContextResource {
   name: string
   description: string
@@ -132,16 +133,14 @@ export function setApiRouteTemplateContext(
         properties: resource.properties.map(
           ({
             name,
-            jsonType,
             description,
             format,
             isDeprecated,
             deprecationMessage,
           }) => ({
             name,
-            jsonType: formatPropertyTypeForDocs(jsonType),
             description,
-            format,
+            format: pascalCase(format),
             isDeprecated,
             deprecationMessage,
           }),
@@ -149,14 +148,4 @@ export function setApiRouteTemplateContext(
       })
     }
   }
-}
-
-type PropertyType = Property['jsonType']
-
-const formatPropertyTypeForDocs = (type: PropertyType): string => {
-  const typeMap: Partial<Record<PropertyType, string>> = {
-    boolean: 'Boolean',
-  }
-
-  return typeMap[type] ?? type
 }
