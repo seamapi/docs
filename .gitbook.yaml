@@ -108,6 +108,7 @@ redirects:
   docs/api-clients/locks/list-locks.md: docs/api-clients/locks/list.md
   docs/api-clients/locks/lock-a-lock.md: docs/api-clients/locks/lock_door.md
   docs/api-clients/locks/unlock-a-lock.md: docs/api-clients/locks/unlock_door.md
+  docs/api-clients/noise_sensors: docs/api-clients/noise_sensors/README.md
   docs/api-clients/noise-sensors/README.md: docs/api-clients/noise_sensors/README.md
   docs/api-clients/noise-sensors/create-noise-threshold.md: docs/api-clients/noise_sensors/noise_thresholds/create.md
   docs/api-clients/noise-sensors/delete-noise-threshold.md: docs/api-clients/noise_sensors/noise_thresholds/delete.md
