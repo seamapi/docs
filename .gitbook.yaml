@@ -58,6 +58,7 @@ redirects:
   docs/api-clients/access-control-systems/credentials/list-accessible-entrances.md: docs/api-clients/acs/credentials/list_accessible_entrances.md
   docs/api-clients/access-control-systems/credentials/unassign-a-credential-from-a-user.md: docs/api-clients/acs/credentials/unassign.md
   docs/api-clients/access-control-systems/credentials/update-a-credential.md: docs/api-clients/acs/credentials/update.md
+  docs/api-clients/acs/entrances: docs/api-clients/acs/entrances/README.md
   docs/api-clients/access-control-systems/entrances/README.md: docs/api-clients/acs/entrances/README.md
   docs/api-clients/access-control-systems/entrances/get-an-entrance.md: docs/api-clients/acs/entrances/get.md
   docs/api-clients/access-control-systems/entrances/list-entrances.md: docs/api-clients/acs/entrances/list.md
