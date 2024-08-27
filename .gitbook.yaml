@@ -68,6 +68,7 @@ redirects:
   api-clients/access-control-systems/systems: api-clients/acs/systems/README.md
   api-clients/access-control-systems/users/add-user-to-access-group: api-clients/acs/users/add_to_access_group.md
   api-clients/access-control-systems/users/create-user: api-clients/acs/users/create.md
+  api-clients/access-control-systems/users/create-user.md: api-clients/acs/users/create.md
   api-clients/access-control-systems/users/delete-user: api-clients/acs/users/delete.md
   api-clients/access-control-systems/users/get-user: api-clients/acs/users/get.md
   api-clients/access-control-systems/users/list-users: api-clients/acs/users/list.md
