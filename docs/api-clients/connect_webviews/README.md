@@ -95,4 +95,4 @@ You can perform the following actions on `connect_webview` objects:
 * [List Connect Webviews](list.md)
 * [Get a Connect Webview](get.md)
 * [Check a Connect Webview](get.md)
-* [Delete a Connect Webview](delete-a-connect-webview.md)
+* [Delete a Connect Webview](delete.md)
