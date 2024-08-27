@@ -124,6 +124,7 @@ redirects:
   docs/api-clients/user-identities/add-an-acs-user-to-a-user-identity.md: docs/api-clients/user_identities/add_acs_user.md
   docs/api-clients/user-identities/create-a-user-identity.md: docs/api-clients/user_identities/create.md
   docs/api-clients/user-identities/delete-a-user-identity.md: docs/api-clients/user_identities/delete.md
+  docs/api-clients/user_identities/enrollment_automations: docs/api-clients/user_identities/enrollment_automations/README.md
   docs/api-clients/user-identities/enrollment-automations/README.md: docs/api-clients/user_identities/enrollment_automations/README.md
   docs/api-clients/user-identities/enrollment-automations/delete-an-enrollment-automation.md: docs/api-clients/user_identities/enrollment_automations/delete.md
   docs/api-clients/user-identities/enrollment-automations/get-an-enrollment-automation.md: docs/api-clients/user_identities/enrollment_automations/get.md
