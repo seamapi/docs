@@ -207,7 +207,7 @@ None
 
 ## Removing a User Identity
 
-To delete a user identity, you must first delete any [ACS credentials](../../api-clients/acs/credentials/delete.md) and [enrollment automations](../../api-clients/user_identities/enrollment-automations/) associated with the user identity. You must also deactivate any associated phones. Then, delete the user identity.
+To delete a user identity, you must first delete any [ACS credentials](../../api-clients/acs/credentials/delete.md) and [enrollment automations](../../api-clients/user_identities/enrollment_automations/) associated with the user identity. You must also deactivate any associated phones. Then, delete the user identity.
 
 ```python
 import asyncio
