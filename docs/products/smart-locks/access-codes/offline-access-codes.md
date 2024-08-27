@@ -8,7 +8,7 @@ description: >-
 
 ## Overview
 
-This guide explains how to create [offline access (PIN) codes](./#offline-access-codes) for smart locks that support these types of codes. Use the [Access Codes](../../../api-clients/access-codes/) API to generate a [time-bound](./#time-bound-offline-access-codes) or [one-time-use](./#one-time-use-offline-access-codes) offline access code. Note that Seam support for offline access code functions varies depending on the device manufacturer. For details, see the corresponding device guide.
+This guide explains how to create [offline access (PIN) codes](./#offline-access-codes) for smart locks that support these types of codes. Use the [Access Codes](../../../api-clients/access_codes/) API to generate a [time-bound](./#time-bound-offline-access-codes) or [one-time-use](./#one-time-use-offline-access-codes) offline access code. Note that Seam support for offline access code functions varies depending on the device manufacturer. For details, see the corresponding device guide.
 
 * [igloohome Locks device guide](../../../device-and-system-integration-guides/igloohome-locks/creating-igloohome-offline-access-codes.md)
 * [dormakaba Oracode Locks device guide](../../../device-and-system-integration-guides/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes.md)

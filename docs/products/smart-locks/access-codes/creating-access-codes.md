@@ -19,7 +19,7 @@ layout:
 
 ## Overview
 
-This guide explains how to create online access codes on an online smart lock. With the [Access Codes](../../../api-clients/access-codes/) API, generate PIN codes on a door lock and share it with visitors, allowing them keyless access.
+This guide explains how to create online access codes on an online smart lock. With the [Access Codes](../../../api-clients/access_codes/) API, generate PIN codes on a door lock and share it with visitors, allowing them keyless access.
 
 Seam supports programming two types of online access codes for online door locks:
 
