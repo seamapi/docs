@@ -197,7 +197,6 @@
 * [Thermostats](api-clients/thermostats/README.md)
   * [List Thermostats](api-clients/thermostats/list.md)
   * [Get a Thermostat](api-clients/thermostats/get.md)
-  * [Update a Thermostat](api-clients/thermostats/update.md)
   * [Set to Heat Mode](api-clients/thermostats/heat.md)
   * [Set to Cool Mode](api-clients/thermostats/cool.md)
   * [Set to Heat-Cool (Auto) Mode](api-clients/thermostats/heat_cool.md)
