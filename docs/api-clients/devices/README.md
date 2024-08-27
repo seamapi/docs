@@ -151,7 +151,7 @@ You can perform the following actions on `device` objects:
 
 * [List devices](list.md)
 * [List device providers](list_device_providers.md)
-* [Get a device](get-device.md)
+* [Get a device](get.md)
 * [Update a device](update.md)
 * [List unmanaged devices](./unmanaged/list.md)
 * [Get an unmanaged devices](get-device-1.md)
