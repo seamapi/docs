@@ -42,6 +42,7 @@ redirects:
   docs/api-clients/access-codes/get-an-unmanaged-access-code.md: docs/api-clients/access_codes/unmanaged/get.md
   docs/api-clients/access-codes/list-unmanaged-access-codes.md: docs/api-clients/access_codes/unmanaged/list.md
   docs/api-clients/access-codes/update-an-access-code.md: docs/api-clients/access_codes/update.md
+  docs/api-clients/acs: docs/api-clients/acs/README.md
   docs/api-clients/access-control-systems/README.md: docs/api-clients/acs/README.md
   docs/api-clients/acs/access_groups/README.md: docs/api-clients/acs/access_groups/README.md
   docs/api-clients/access-control-systems/access-groups/README.md: docs/api-clients/acs/access_groups/README.md
