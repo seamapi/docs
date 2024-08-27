@@ -66,6 +66,7 @@ redirects:
   docs/api-clients/access-control-systems/systems/get-system.md: docs/api-clients/acs/systems/get.md
   docs/api-clients/access-control-systems/systems/list-systems.md: docs/api-clients/acs/systems/list.md
   docs/api-clients/access-control-systems/systems/list-compatible-credential-manager-acs-systems.md: docs/api-clients/acs/systems/list_compatible_credential_manager_acs_systems.md
+  docs/api-clients/access-control-systems/users: docs/api-clients/acs/users/README.md
   docs/api-clients/access-control-systems/users/README.md: docs/api-clients/acs/users/README.md
   docs/api-clients/access-control-systems/users/add-user-to-access-group.md: docs/api-clients/acs/users/add_to_access_group.md
   docs/api-clients/access-control-systems/users/create-user.md: docs/api-clients/acs/users/create.md

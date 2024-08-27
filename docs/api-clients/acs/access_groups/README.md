@@ -20,6 +20,6 @@ You can perform the following actions on `acs_access_group` objects:
 
 * [List access groups](list-access-groups.md)
 * [Get an access group](get-access-group.md)
-* [Add a user to an access group](add-user-to-access-group.md)
-* [Remove a user from an access group](remove-user-from-access-group.md)
+* [Add a user to an access group](add_user.md)
+* [Remove a user from an access group](remove_from_access_group.md)
 * [List users in an access group](list-users-in-access-group.md)
