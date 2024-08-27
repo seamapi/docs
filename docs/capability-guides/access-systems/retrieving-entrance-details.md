@@ -12,7 +12,7 @@ In an ACS, an entrance is a secured door, gate, zone, or other method of entry. 
 
 ## List All Entrances
 
-You can [list all `acs_entrance` resources](../../api-clients/api-clients/acs/entrances/list.md) in your workspace. Note that entrance details include manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+You can [list all `acs_entrance` resources](../../api-clients/acs/entrances/list.md) in your workspace. Note that entrance details include manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -202,7 +202,7 @@ acs_entrances, uErr := client.Acs.Entrances.List(
 
 ## List Entrances in an ACS
 
-To list all `acs_entrance`s in a specific ACS, include the `acs_system_id` filter in the [List Entrances](../../api-clients/api-clients/acs/entrances/list.md) request. Note that entrance details include manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+To list all `acs_entrance`s in a specific ACS, include the `acs_system_id` filter in the [List Entrances](../../api-clients/acs/entrances/list.md) request. Note that entrance details include manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
 
 {% tabs %}
 {% tab title="Python" %}
