@@ -19,7 +19,7 @@ You can perform the following actions on `acs_credential` objects:
 * [Create a credential for a user](create-credential-for-user.md)
 * [Assign a credential to a user](assign-a-credential-to-a-user.md)
 * [List credentials](list.md)
-* [Get a credential](get-credential.md)
+* [Get a credential](get.md)
 * [Update a credential](update.md)
 * [Unassign a credential from a user](unassign.md)
 * [Delete a credential](delete-credential.md)
