@@ -119,6 +119,6 @@ Warnings are returned in a list:
 * [Update an access code](update.md)
 * [Delete an access code](delete-an-access-code.md)
 * [List unmanaged access codes](./unmanaged/list.md)
-* [Convert an unmanaged access code](convert-an-unmanaged-access-code.md)
+* [Convert an unmanaged access code](./unmanaged/convert_to_managed.md)
 * [Delete an unmanaged access code](./unmanaged/delete.md)
 * [Pull a backup access code](pull-backup-access-code.md)
