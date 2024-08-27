@@ -116,7 +116,7 @@ Warnings are returned in a list:
 * [Create many access codes](create-many-access-codes.md)
 * [List access codes](list-access-codes.md)
 * [Get an access code](get-an-access-code.md)
-* [Update an access code](update-an-access-code.md)
+* [Update an access code](update.md)
 * [Delete an access code](delete-an-access-code.md)
 * [List unmanaged access codes](list-unmanaged-access-codes.md)
 * [Convert an unmanaged access code](convert-an-unmanaged-access-code.md)
