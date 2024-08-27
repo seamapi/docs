@@ -1,6 +1,6 @@
-Represents an [access control system](../../../capability-guides/access-systems.md).
-
 # `acs_system`
+
+Represents an [access control system](../../../capability-guides/access-systems.md).
 
 ## Properties
 
