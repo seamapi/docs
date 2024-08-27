@@ -2,7 +2,7 @@
 root: ./docs/
 ​structure:
   readme: README.md
-  summary: SUMMARY.md​
+  summary: SUMMARY.md
 redirects:
   latest/quickstart/get-api-key: latest/quickstart.md
   quickstart/get-api-key: quickstart.md
@@ -126,6 +126,8 @@ redirects:
   docs/api-clients/noise-sensors/delete-noise-threshold.md: docs/api-clients/noise_sensors/noise_thresholds/delete.md
   docs/api-clients/noise-sensors/list-noise-thresholds.md: docs/api-clients/noise_sensors/noise_thresholds/list.md
   docs/api-clients/noise-sensors/update-noise-threshold.md: docs/api-clients/noise_sensors/noise_thresholds/update.md
+  docs/api-clients/thermostats/get-thermostat.md: docs/api-clients/thermostats/get.md
+  docs/api-clients/thermostats/list-thermostats.md: docs/api-clients/thermostats/list.md
   docs/api-clients/thermostats/set-to-cool-mode.md: docs/api-clients/thermostats/cool.md
   docs/api-clients/thermostats/set-to-heat-mode.md: docs/api-clients/thermostats/heat.md
   docs/api-clients/thermostats/set-to-heat-cool-auto-mode.md: docs/api-clients/thermostats/heat_cool.md
