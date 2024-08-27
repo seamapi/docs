@@ -114,7 +114,7 @@ Warnings are returned in a list:
 
 * [Create an access code](create-an-access-code.md)
 * [Create many access codes](create-many-access-codes.md)
-* [List access codes](list-access-codes.md)
+* [List access codes](list.md)
 * [Get an access code](get-an-access-code.md)
 * [Update an access code](update.md)
 * [Delete an access code](delete-an-access-code.md)
