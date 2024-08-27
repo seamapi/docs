@@ -78,6 +78,7 @@ redirects:
   docs/api-clients/access-control-systems/users/update-user.md: docs/api-clients/acs/users/update.md
   docs/api-clients/action-attempt/README.md: docs/api-clients/action_attempts/README.md
   docs/api-clients/action-attempt/get-action-attempt.md: docs/api-clients/action_attempts/get.md
+  docs/api-clients/client_sessions: docs/api-clients/client_sessions/README.md
   docs/api-clients/client-sessions: docs/api-clients/client_sessions/README.md
   docs/api-clients/client-sessions/create-a-client-session.md: docs/api-clients/client_sessions/create.md
   docs/api-clients/client-sessions/delete-a-client-session.md: docs/api-clients/client_sessions/delete.md

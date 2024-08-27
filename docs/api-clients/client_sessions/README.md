@@ -33,7 +33,7 @@ The `client_session` object has the following properties:
 
 You can perform the following actions on `client_session` objects:
 
-* [Create a client session](create-a-client-session.md)
+* [Create a client session](create.md)
 * [Get or create a client session](get_or_create.md)
 * [List client sessions](list.md)
 * [Get a client session](get.md)
