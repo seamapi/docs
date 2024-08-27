@@ -49,6 +49,7 @@ redirects:
   docs/api-clients/access-control-systems/access-groups/list-access-groups.md: docs/api-clients/acs/access_groups/list.md
   docs/api-clients/access-control-systems/access-groups/list-users-in-access-group.md: docs/api-clients/acs/access_groups/list_users.md
   docs/api-clients/access-control-systems/access-groups/remove-user-from-access-group.md: docs/api-clients/acs/access_groups/remove_user.md
+  docs/api-clients/acs/credentials: docs/api-clients/acs/credentials/README.md
   docs/api-clients/access-control-systems/credentials/README.md: docs/api-clients/acs/credentials/README.md
   docs/api-clients/access-control-systems/credentials/assign-a-credential-to-a-user.md: docs/api-clients/acs/credentials/assign.md
   docs/api-clients/access-control-systems/credentials/create-credential-for-user.md: docs/api-clients/acs/credentials/create.md
