@@ -136,7 +136,7 @@
   * [Delete a Device](api-clients/devices/delete.md)
   * [Unmanaged Devices](api-clients/devices/unmanaged/README.md)
     * [Update an Unmanaged Device](api-clients/devices/unmanaged/update.md)
-    * [List Unmanaged Devices](api-clients/unmanaged/list.md)
+    * [List Unmanaged Devices](api-clients/devices/unmanaged/list.md)
     * [Get an Unmanaged Device](api-clients/devices/unmanaged/get.md)
 * [Access Codes](api-clients/access_codes/README.md)
   * [Create an Access Code](api-clients/access_codes/create.md)
