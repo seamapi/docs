@@ -12,11 +12,11 @@ Creates a new [client session](../../core-concepts/authentication/client-session
 
 ## Request
 
-Specify the user ID and, optionally, [connected accounts](../connected-accounts/) associated with the user by including the corresponding parameters in the request body.
+Specify the user ID and, optionally, [connected accounts](../connected_accounts/) associated with the user by including the corresponding parameters in the request body.
 
 ### Request Body Parameters
 
-<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>user_identifier_key</code></td><td>String<br><em>Required</em></td><td>Your own internal user ID for the user</td></tr><tr><td><code>connected_account_ids</code></td><td>Array of strings<br><em>Optional</em></td><td>Array of IDs of the <a href="../connected-accounts/">connected accounts</a> associated with this user</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>user_identifier_key</code></td><td>String<br><em>Required</em></td><td>Your own internal user ID for the user</td></tr><tr><td><code>connected_account_ids</code></td><td>Array of strings<br><em>Optional</em></td><td>Array of IDs of the <a href="../connected_accounts/">connected accounts</a> associated with this user</td></tr></tbody></table>
 
 ### Sample Request
 

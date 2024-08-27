@@ -16,11 +16,11 @@ The `acs_credential` object has the following properties:
 
 You can perform the following actions on `acs_credential` objects:
 
-* [Create a credential for a user](create-credential-for-user.md)
-* [Assign a credential to a user](assign-a-credential-to-a-user.md)
-* [List credentials](list-credentials.md)
-* [Get a credential](get-credential.md)
-* [Update a credential](update-a-credential.md)
-* [Unassign a credential from a user](unassign-a-credential-from-a-user.md)
-* [Delete a credential](delete-credential.md)
-* [List accessible entrances](list-accessible-entrances.md)
+* [Create a credential for a user](create.md)
+* [Assign a credential to a user](assign.md)
+* [List credentials](list.md)
+* [Get a credential](get.md)
+* [Update a credential](update.md)
+* [Unassign a credential from a user](unassign.md)
+* [Delete a credential](delete.md)
+* [List accessible entrances](list_accessible_entrances.md)

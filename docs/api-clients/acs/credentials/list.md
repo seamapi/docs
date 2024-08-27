@@ -12,7 +12,7 @@ Returns a list of all [credentials](../../../capability-guides/access-systems/ma
 
 ## Request
 
-Filter the list of returned credentials by [ACS user](../../../products/access-systems/user-management.md), [access control system](../../../products/access-systems/), or [user identity](../../user-identities/) by including one or more of the `acs_user_id`, `acs_system_id`, or `user_identity_id` parameters, respectively, in the request body. You can also include the `is_multi_phone_sync_credential` parameter.
+Filter the list of returned credentials by [ACS user](../../../products/access-systems/user-management.md), [access control system](../../../products/access-systems/), or [user identity](../../user_identities/) by including one or more of the `acs_user_id`, `acs_system_id`, or `user_identity_id` parameters, respectively, in the request body. You can also include the `is_multi_phone_sync_credential` parameter.
 
 ### Request Body Parameters
 

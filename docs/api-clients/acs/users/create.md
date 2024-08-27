@@ -12,7 +12,7 @@ Creates a new [ACS user](../../../products/access-systems/user-management.md).
 
 ## Request
 
-Specify the characteristics of the new ACS user by including the corresponding parameters in the request body. Also, include the `acs_system_id` of the [access control system](../../../products/access-systems/) to which you want to add the new ACS user. In addition, you can specify the `acs_access_group_ids` of the [access groups](../../../products/access-systems/assigning-users-to-access-groups.md) to which you want to add the new ACS user, as well as a `user_identity_id` if you want to associate the new ACS user with a [user identity](../../user-identities/).
+Specify the characteristics of the new ACS user by including the corresponding parameters in the request body. Also, include the `acs_system_id` of the [access control system](../../../products/access-systems/) to which you want to add the new ACS user. In addition, you can specify the `acs_access_group_ids` of the [access groups](../../../products/access-systems/assigning-users-to-access-groups.md) to which you want to add the new ACS user, as well as a `user_identity_id` if you want to associate the new ACS user with a [user identity](../../user_identities/).
 
 ### Request Body Parameters
 

@@ -67,7 +67,7 @@ See our [troubleshooting tips for access codes](../../products/smart-locks/acces
 When Seam is able to provide more specific information beyond one of the generic errors above, one or more errors from the list of specific errors may appear. This gives your application the option to display additional context or suggest provider specific resolutions.
 
 {% hint style="info" %}
-If the device or connected account associated with an access code has an error, it will be attached to the access code alongside any other access code errors. Treat these errors as Specific Errors. See [Device Error Types](../devices/#device-error-types) and [Connected Account Error Types](../connected-accounts/#connected-account-error-types).
+If the device or connected account associated with an access code has an error, it will be attached to the access code alongside any other access code errors. Treat these errors as Specific Errors. See [Device Error Types](../devices/#device-error-types) and [Connected Account Error Types](../connected_accounts/#connected-account-error-types).
 {% endhint %}
 
 See our [troubleshooting tips for access codes](../../products/smart-locks/access-codes/troubleshooting-access-code-issues.md) for our recommended responses to these error codes.
@@ -112,13 +112,13 @@ Warnings are returned in a list:
 
 ## `access_code` Methods
 
-* [Create an access code](create-an-access-code.md)
-* [Create many access codes](create-many-access-codes.md)
-* [List access codes](list-access-codes.md)
-* [Get an access code](get-an-access-code.md)
-* [Update an access code](update-an-access-code.md)
-* [Delete an access code](delete-an-access-code.md)
-* [List unmanaged access codes](list-unmanaged-access-codes.md)
-* [Convert an unmanaged access code](convert-an-unmanaged-access-code.md)
-* [Delete an unmanaged access code](delete-an-unmanaged-access-code.md)
-* [Pull a backup access code](pull-backup-access-code.md)
+* [Create an access code](create.md)
+* [Create many access codes](create_multiple.md)
+* [List access codes](list.md)
+* [Get an access code](get.md)
+* [Update an access code](update.md)
+* [Delete an access code](delete.md)
+* [List unmanaged access codes](./unmanaged/list.md)
+* [Convert an unmanaged access code](./unmanaged/convert_to_managed.md)
+* [Delete an unmanaged access code](./unmanaged/delete.md)
+* [Pull a backup access code](pull_backup_access_code.md)

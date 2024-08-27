@@ -12,11 +12,11 @@ Returns a list of all [connected accounts](./).
 
 ## Request
 
-To filter the list of returned connected accounts by a specific set of [custom metadata](../../core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview.md) or a user identifier key, include `custom_metadata_has` or [`user_identifier_key`](../client-sessions/#client\_session-properties) in the request body. If you include `custom_metadata_has`, specify the desired metadata filters as a JSON object containing key:value pairs.
+To filter the list of returned connected accounts by a specific set of [custom metadata](../../core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview.md) or a user identifier key, include `custom_metadata_has` or [`user_identifier_key`](../client_sessions/#client\_session-properties) in the request body. If you include `custom_metadata_has`, specify the desired metadata filters as a JSON object containing key:value pairs.
 
 ### Request Body Parameters
 
-<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>user_identifier_key</code></td><td>String<br><em>Optional</em></td><td>The internal user ID (your own internal ID for a user) by which you want to filter connected accounts.</td></tr><tr><td><code>custom_metadata_has</code></td><td>JSON object<br><em>Optional</em></td><td>Set of key:value <a href="../connect-webviews/#connect_webview-properties">custom metadata</a> pairs by which you want to filter connected accounts.<br>For more information, see <a href="../../core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account.md">Adding Custom Metadata to Connected Accounts</a>.</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>user_identifier_key</code></td><td>String<br><em>Optional</em></td><td>The internal user ID (your own internal ID for a user) by which you want to filter connected accounts.</td></tr><tr><td><code>custom_metadata_has</code></td><td>JSON object<br><em>Optional</em></td><td>Set of key:value <a href="../connect-webviews/#connect_webview-properties">custom metadata</a> pairs by which you want to filter connected accounts.<br>For more information, see <a href="../../core-concepts/connected_accounts/adding-custom-metadata-to-a-connected-account.md">Adding Custom Metadata to Connected Accounts</a>.</td></tr></tbody></table>
 
 ### Sample Request
 

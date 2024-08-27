@@ -130,8 +130,8 @@ This permanently deletes the `built_in_normal` threshold from the device. You’
 
 For more details on each endpoint, see our API References:
 
-| [List Noise Thresholds](list-noise-thresholds.md)   |
+| [List Noise Thresholds](./noise_thresholds/list.md)   |
 | --------------------------------------------------- |
-| [Create Noise Threshold](create-noise-threshold.md) |
-| [Update Noise Threshold](update-noise-threshold.md) |
-| [Delete Noise Threshold](delete-noise-threshold.md) |
+| [Create Noise Threshold](./noise_thresholds/create.md) |
+| [Update Noise Threshold](./noise_thresholds/update.md) |
+| [Delete Noise Threshold](./noise_thresholds/delete.md) |

@@ -36,7 +36,7 @@ To enable a user to connect their device account to Seam through your app, you m
 
 ### Provider Category Keys
 
-When you [create a Connect Webview](create-a-connect-webview.md), specify the desired provider category key in the `provider_category` parameter. Alternately, to specify a list of providers explicitly, use the `accepted_providers` parameter with a list of [device provider keys](./#device-provider-keys).
+When you [create a Connect Webview](create.md), specify the desired provider category key in the `provider_category` parameter. Alternately, to specify a list of providers explicitly, use the `accepted_providers` parameter with a list of [device provider keys](./#device-provider-keys).
 
 | key                   | Description                                                        |
 | --------------------- | ------------------------------------------------------------------ |
@@ -91,8 +91,8 @@ To list all provider keys, use the [List Device Providers](../devices/list_devic
 
 You can perform the following actions on `connect_webview` objects:
 
-* [Create a Connect Webview](create-a-connect-webview.md)
-* [List Connect Webviews](list-connect-webviews.md)
-* [Get a Connect Webview](get-a-connect-webview.md)
-* [Check a Connect Webview](get-a-connect-webview.md)
-* [Delete a Connect Webview](delete-a-connect-webview.md)
+* [Create a Connect Webview](create.md)
+* [List Connect Webviews](list.md)
+* [Get a Connect Webview](get.md)
+* [Check a Connect Webview](get.md)
+* [Delete a Connect Webview](delete.md)

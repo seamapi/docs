@@ -172,7 +172,7 @@
     * [List Entrances](api-clients/api-clients/acs/entrances/list.md)
     * [Get an Entrance](api-clients/acs/entrances/get.md)
     * [List Credentials with Access to an Entrance](api-clients/acs/entrances/list_credentials_with_access.md)
-  * [Access Groups](api-clients/acs/access-groups/README.md)
+  * [Access Groups](api-clients/acs/access_groups/README.md)
     * [List Access Groups](api-clients/acs/access_groups/list.md)
     * [Get an Access Group](api-clients/acs/access_groups/get.md)
     * [Add a User to an Access Group](api-clients/acs/access_groups/add_user.md)

@@ -16,12 +16,12 @@ The `acs_user` object has the following properties:
 
 You can perform the following actions on `acs_user` objects:
 
-* [Create a user](create-user.md)
-* [List users](list-users.md)
-* [Get a user](get-user.md)
-* [Update a user](update-user.md)
-* [Suspend a user](suspend-a-user.md)
-* [Unsuspend a user](unsuspend-a-user.md)
-* [Delete a user](delete-user.md)
-* [Add a user to an access group](add-user-to-access-group.md)
-* [Remove a user from an access group](remove-user-from-access-group.md)
+* [Create a user](create.md)
+* [List users](list.md)
+* [Get a user](get.md)
+* [Update a user](update.md)
+* [Suspend a user](suspend.md)
+* [Unsuspend a user](unsuspend.md)
+* [Delete a user](delete.md)
+* [Add a user to an access group](../access_groups/add_user.md)
+* [Remove a user from an access group](../access_groups/remove_user.md)

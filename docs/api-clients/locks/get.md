@@ -5,7 +5,7 @@ description: Get a Lock on your account by its Device ID
 # Get Lock
 
 {% hint style="info" %}
-Deprecated: Use [Get Device](../devices/get-device.md) instead.
+Deprecated: Use [Get Device](../devices/get.md) instead.
 {% endhint %}
 
 ## Get Locks for Device
@@ -123,20 +123,20 @@ device = seam.locks.get(device_id)
 
 print(device)
 # Device(
-#   device_id='a83690b2-2b70-409a-9a94-426699b84c97', 
-#   device_type='schlage_lock', 
-#   location=None, 
+#   device_id='a83690b2-2b70-409a-9a94-426699b84c97',
+#   device_type='schlage_lock',
+#   location=None,
 #   properties={
-#     'locked': False, 
-#     'online': True, 
-#     'battery_level': 0.48, 
+#     'locked': False,
+#     'online': True,
+#     'battery_level': 0.48,
 #     'schlage_metadata': {
-#       'device_id': 'device-3', 
+#       'device_id': 'device-3',
 #       'device_name': 'GARAGE'
-#       }, 
+#       },
 #     'name': 'GARAGE'
-#     }, 
-#   capabilities_supported=[], 
+#     },
+#   capabilities_supported=[],
 #   errors=[]
 #   )
 
@@ -187,16 +187,16 @@ device_id = "123e4567-e89b-12d3-a456-426614174000"
 device = seam.locks.get(device_id)
 
 puts device
-# <Seam::Device:0x00764f8                                             
-#   device_id="e002825a-27ee-4d74-9be3-45564b14c931"                  
-#   device_type="smartthings_lock"                                    
+# <Seam::Device:0x00764f8
+#   device_id="e002825a-27ee-4d74-9be3-45564b14c931"
+#   device_type="smartthings_lock"
 #   properties={
 #     "locked"=>true,
 #     "online"=>true,
 #     "battery_level"=>1,
 #     "smartthings_metadata"=>{
 #       "device_id"=>"83b32603-e36a-416b-a06e-78215223df98",
-#       "device_name"=>"Yale Door Lock"}, 
+#       "device_name"=>"Yale Door Lock"},
 #     "name"=>"Yale Door Lock"}>
 ```
 {% endtab %}

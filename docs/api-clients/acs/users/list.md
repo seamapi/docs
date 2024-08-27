@@ -12,7 +12,7 @@ Returns a list of all [ACS users](../../../products/access-systems/user-manageme
 
 ## Request
 
-To filter the list of returned ACS users by a specific [access control system](../../../products/access-systems/), [user identity](../../user-identities/), user identity phone number, or user identity email address, include one or more of the `acs_system_id`, `user_identity_id`, `user_identity_phone_number`, or `user_identity_email_address` parameters, respectively, in the request body. If you omit these parameters, the response includes all ACS users in your [workspace](../../../core-concepts/workspaces/).
+To filter the list of returned ACS users by a specific [access control system](../../../products/access-systems/), [user identity](../../user_identities/), user identity phone number, or user identity email address, include one or more of the `acs_system_id`, `user_identity_id`, `user_identity_phone_number`, or `user_identity_email_address` parameters, respectively, in the request body. If you omit these parameters, the response includes all ACS users in your [workspace](../../../core-concepts/workspaces/).
 
 ### Request Body Parameters
 
