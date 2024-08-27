@@ -16,7 +16,7 @@ The `acs_credential` object has the following properties:
 
 You can perform the following actions on `acs_credential` objects:
 
-* [Create a credential for a user](create-credential-for-user.md)
+* [Create a credential for a user](create.md)
 * [Assign a credential to a user](assign-a-credential-to-a-user.md)
 * [List credentials](list.md)
 * [Get a credential](get.md)
