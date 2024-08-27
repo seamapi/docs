@@ -156,6 +156,5 @@ const hasMultipleParagraphs = (text: string): boolean => /\n{2,}/.test(text)
 
 const getFirstParagraph = (text: string): string => {
   const match = text.match(/^(.+?)(?:\n{2,}|$)/s)
-  console.log('🚀 ~ match:', match)
   return match?.[1]?.trim() ?? ''
 }
