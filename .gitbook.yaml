@@ -90,6 +90,7 @@ redirects:
   docs/api-clients/connect-webviews/delete-a-connect-webview.md: docs/api-clients/connect_webviews/delete.md
   docs/api-clients/connect-webviews/get-a-connect-webview.md: docs/api-clients/connect_webviews/get.md
   docs/api-clients/connect-webviews/list-connect-webviews.md: docs/api-clients/connect_webviews/list.md
+  docs/api-clients/connected_accounts: docs/api-clients/connected_accounts/README.md
   docs/api-clients/connected-accounts: docs/api-clients/connected_accounts/README.md
   docs/api-clients/connected-accounts/delete-a-connected-account.md: docs/api-clients/connected_accounts/delete.md
   docs/api-clients/connected-accounts/get-a-connected-account.md: docs/api-clients/connected_accounts/get.md
