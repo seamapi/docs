@@ -45,7 +45,7 @@ The following process describes the configuration steps for your application to 
 1. When the ACS connects to Seam, Seam automatically creates the `acs_system`. Seam also syncs the entrances and access groups from the connected ACS as `acs_entrance` and `acs_access_group` resources.\
    Note that because Seam automatically syncs these entrance and access group resources from the ACS, you cannot create, edit, or delete them using the Seam API.
 2. Your application creates an `acs_user` for each user within this ACS. Each `acs_user` is configured with a set of attributes, such their name, email address, and phone number, as applicable.\
-   If you need to grant a single application user access to multiple ACSs—for example, if an application user needs access to multiple buildings, each of which uses a separate ACS, or if a single building has different ACSs for different floors—you can use Seam [user identities](../../api-clients/user-identities/) to link `acs_user`s in different `acs_system`s.
+   If you need to grant a single application user access to multiple ACSs—for example, if an application user needs access to multiple buildings, each of which uses a separate ACS, or if a single building has different ACSs for different floors—you can use Seam [user identities](../../api-clients/user_identities/) to link `acs_user`s in different `acs_system`s.
 3. Your application [adds](../../products/access-systems/assigning-users-to-access-groups.md#add-a-user-to-an-access-group) each `acs_user` to an `acs_access_group`. Note that the access group defines the entrances and access schedules for all the ACS users in this access group.
 4.  Your application creates `acs_credential`s with the following attributes:
 
@@ -66,7 +66,7 @@ The following process describes the configuration steps for your application to 
 
 1. When the ACS connects to Seam, Seam automatically creates the [`acs_system`](../../api-clients/access-control-systems/systems/). Seam also syncs the entrances from the connected ACS as `acs_entrance` resources. Note that because Seam automatically syncs these entrance resources from the ACS, you cannot create, edit, or delete them using the Seam API.
 2. Your application [creates](../../products/access-systems/user-management.md#create-a-user) an [`acs_user`](../../api-clients/access-control-systems/users/) for each user within this ACS. Each `acs_user` is configured with a set of attributes, such their name, email address, and phone number, as applicable.\
-   If you need to grant a single application user access to multiple ACSs—for example, if an application user needs access to multiple buildings, each of which uses a separate ACS—you can use Seam [user identities](../../api-clients/user-identities/) to link `acs_user`s in different `acs_system`s.
+   If you need to grant a single application user access to multiple ACSs—for example, if an application user needs access to multiple buildings, each of which uses a separate ACS—you can use Seam [user identities](../../api-clients/user_identities/) to link `acs_user`s in different `acs_system`s.
 3.  Your application [creates](managing-credentials.md#create-a-credential-for-a-user) `acs_credential`s with the following attributes:
 
     * ID of the `acs_user` to associate with this credential

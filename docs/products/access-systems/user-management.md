@@ -194,7 +194,7 @@ Also, if your [ACS architecture](../../capability-guides/access-systems/understa
 
 In addition, if your ACS architecture supports assigning access schedules directly to ACS users, you can specify an `access_schedule` for the user, including a `starts_at` and `ends_at` date and time.
 
-Further, you can use the `user_identity_id` parameter to associate a new ACS user with a [user identity](../../api-clients/user-identities/). You can use a user identity to link an ACS user with an app user in your system, such as a [mobile access app user](../mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) or an app user who needs access to multiple ACSs.
+Further, you can use the `user_identity_id` parameter to associate a new ACS user with a [user identity](../../api-clients/user_identities/). You can use a user identity to link an ACS user with an app user in your system, such as a [mobile access app user](../mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) or an app user who needs access to multiple ACSs.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -597,7 +597,7 @@ acs_users, uErr := client.Acs.Users.List(
 
 ## Get an ACS User
 
-To [get an ACS user](../../api-clients/acs/users/get.md), provide the `acs_user_id` of the user that you want to retrieve. These details include the contact details for the user, the user's access schedule, the associated [user identity](../../api-clients/user-identities/), if applicable, and so on.
+To [get an ACS user](../../api-clients/acs/users/get.md), provide the `acs_user_id` of the user that you want to retrieve. These details include the contact details for the user, the user's access schedule, the associated [user identity](../../api-clients/user_identities/), if applicable, and so on.
 
 {% tabs %}
 {% tab title="Python" %}
