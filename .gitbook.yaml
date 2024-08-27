@@ -97,6 +97,7 @@ redirects:
   docs/api-clients/connected-accounts/update-a-connected-account.md: docs/api-clients/connected_accounts/update.md
   docs/api-clients/devices/delete-device.md: docs/api-clients/devices/delete.md
   docs/api-clients/devices/get-device.md: docs/api-clients/devices/get.md
+  docs/api-clients/devices/get-device-1.md: docs/api-clients/devices/unmanaged/get.md
   docs/api-clients/devices/list-devices.md: docs/api-clients/devices/list.md
   docs/api-clients/devices/list-device-providers.md: docs/api-clients/devices/list_device_providers.md
   docs/api-clients/devices/list-unmanaged-devices.md: docs/api-clients/devices/unmanaged/list.md
