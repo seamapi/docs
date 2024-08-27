@@ -10,7 +10,7 @@ An internet-connected device that has been connected to the Seam platform.
 
 #### Connect Webview
 
-A drop-in view to allow your users to give you access to their devices. To learn more, visit the [Connect Webviews page](../api-clients/connect-webviews/).
+A drop-in view to allow your users to give you access to their devices. To learn more, visit the [Connect Webviews page](../api-clients/connect_webviews/).
 
 #### Connected Account
 

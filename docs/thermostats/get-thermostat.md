@@ -16,7 +16,7 @@ layout:
 # Get a Thermostat
 
 {% hint style="info" %}
-Deprecated: Use [Get Device](../api-clients/devices/get-device.md) instead.
+Deprecated: Use [Get Device](../api-clients/devices/get.md) instead.
 {% endhint %}
 
 Retrieves the details of a thermostat.
@@ -41,7 +41,7 @@ print(thermostat)
 # Thermostat(
 #     device_id="123e4567-e89b-12d3-a456-426614174000",
 #     device_type="ecobee_thermostat",
-#     capabilities_supported=["thermostat"], 
+#     capabilities_supported=["thermostat"],
 #     properties={
 #         "name": "Entryway",
 #         "online": True,
@@ -57,7 +57,7 @@ print(thermostat)
 #             "hvac_mode_setting": "heat_cool",
 #             "cooling_set_point_fahrenheit": 75,
 #             "heating_set_point_fahrenheit": 65,
-#             "manual_override_allowed": False  
+#             "manual_override_allowed": False
 #         }
 #     },
 #     location=None,
@@ -100,7 +100,7 @@ console.log(device)
         "hvac_mode_setting": "heat_cool",
         "cooling_set_point_fahrenheit": 75,
         "heating_set_point_fahrenheit": 65,
-        "manual_override_allowed": false 
+        "manual_override_allowed": false
       }
     },
     "location": null,
@@ -212,7 +212,7 @@ This section shows the JSON response returned by the API. Since each language en
         "hvac_mode_setting": "heat_cool",
         "cooling_set_point_fahrenheit": 75,
         "heating_set_point_fahrenheit": 65,
-        "manual_override_allowed": false 
+        "manual_override_allowed": false
       }
     },
     "location": null,

@@ -34,7 +34,7 @@ dormakaba Oracode locks use pre-programmed sets of access code time slots called
 * Whether the access code is a biweekly code (that is, a code that is valid for two weeks)
 * Whether the access code is a master code that exists indefinitely, for example, for site owners
 
-When you create a dormakaba Oracode offline access code, you must set the duration of the code to match—exactly—one of the time slots on the device. To view a list of all available time slots for a specific device, [get the lock](../../api-clients/locks/get-lock.md) and view the `device.properties.dormakaba_oracode_metadata.predefined_time_slots` property for the device.
+When you create a dormakaba Oracode offline access code, you must set the duration of the code to match—exactly—one of the time slots on the device. To view a list of all available time slots for a specific device, [get the lock](../../api-clients/locks/get.md) and view the `device.properties.dormakaba_oracode_metadata.predefined_time_slots` property for the device.
 
 ```json
 "predefined_time_slots": [
@@ -58,7 +58,7 @@ When you create a dormakaba Oracode offline access code, you must set the durati
 
 All time zone configuration and display for dormakaba Oracode locks occur in the local time zone of the lock, itself. Consequently, when you configure an access code for a dormakaba Oracode lock, you must set the starting and ending times to match the relative local time zone of the lock. Note that the `starts_at` and `ends_at` properties use a time zone offset, rather than a time zone. Further, we recommend specifying all times as UTC times. In this case, the UTC time that you specify must be equivalent to the desired local time of the device.
 
-To view the local time zone of a dormakaba Oracode lock, [get the lock](../../api-clients/locks/get-lock.md) and see the `check_in_time` and `check_out_time` within each time slot in the `device.properties.dormakaba_oracode_metadata.predefined_time_slots` property for the device. You can also see the local time zone for a dormakaba Oracode lock in the `dormakaba_oracode_device_metadata.iana_timezone` property.
+To view the local time zone of a dormakaba Oracode lock, [get the lock](../../api-clients/locks/get.md) and see the `check_in_time` and `check_out_time` within each time slot in the `device.properties.dormakaba_oracode_metadata.predefined_time_slots` property for the device. You can also see the local time zone for a dormakaba Oracode lock in the `dormakaba_oracode_device_metadata.iana_timezone` property.
 
 ### Master Codes
 
@@ -80,7 +80,7 @@ To [create an hourly-bound offline access code](../../products/smart-locks/acces
 
 #### 1. Create an Hourly-Bound Offline Access Code
 
-To create an hourly-bound offline access code, provide the `device_id` of the lock for which you want to create the code and set `is_offline_access_code` to `true`. Specify the `starts_at` and `ends_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamps to define the active time window for the offline code. Make sure to set the duration of the code to match—exactly—one of the [user levels](creating-dormakaba-oracode-offline-access-codes.md#user-levels) on the device. You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../api-clients/access-codes/create-an-access-code.md).
+To create an hourly-bound offline access code, provide the `device_id` of the lock for which you want to create the code and set `is_offline_access_code` to `true`. Specify the `starts_at` and `ends_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamps to define the active time window for the offline code. Make sure to set the duration of the code to match—exactly—one of the [user levels](creating-dormakaba-oracode-offline-access-codes.md#user-levels) on the device. You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../api-clients/access_codes/create.md).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -458,7 +458,7 @@ To create a daily-bound offline access code, provide the `device_id` of the lock
 
 Because daily-bound offline access codes require day-level duration granularity, you can also set `max_time_rounding` to `1day` (or `1d`), instead of the default `1hour` (or `1h`). Note that the Seam API returns an error if `max_time_rounding` is `1hour` and the necessary rounding amount exceeds one hour.
 
-You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../api-clients/access-codes/create-an-access-code.md).
+You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../api-clients/access_codes/create.md).
 
 {% tabs %}
 {% tab title="Python" %}
