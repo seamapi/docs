@@ -133,5 +133,5 @@ For more details on each endpoint, see our API References:
 | [List Noise Thresholds](list-noise-thresholds.md)   |
 | --------------------------------------------------- |
 | [Create Noise Threshold](create-noise-threshold.md) |
-| [Update Noise Threshold](update-noise-threshold.md) |
+| [Update Noise Threshold](./noise_thresholds/update.md) |
 | [Delete Noise Threshold](delete-noise-threshold.md) |
