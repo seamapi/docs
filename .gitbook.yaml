@@ -43,6 +43,7 @@ redirects:
   api-clients/access-codes/pull-backup-access-code: api-clients/access_codes/pull_backup_access_code.md
   api-clients/access-codes/update-an-access-code: api-clients/access_codes/update.md
   api-clients/access-codes: api-clients/access_codes/README.md
+  api-clients/access-codes/: api-clients/access_codes/README.md
   api-clients/access-control-systems/access-groups/add-user-to-access-group: api-clients/acs/access_groups/add_user.md
   api-clients/access-control-systems/access-groups/get-access-group: api-clients/acs/access_groups/get.md
   api-clients/access-control-systems/access-groups/list-access-groups: api-clients/acs/access_groups/list.md
