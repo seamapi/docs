@@ -113,7 +113,7 @@ Warnings are returned in a list:
 ## `access_code` Methods
 
 * [Create an access code](create-an-access-code.md)
-* [Create many access codes](create-many-access-codes.md)
+* [Create many access codes](create_multiple.md)
 * [List access codes](list.md)
 * [Get an access code](get.md)
 * [Update an access code](update.md)
