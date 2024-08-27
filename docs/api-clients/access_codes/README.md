@@ -117,7 +117,7 @@ Warnings are returned in a list:
 * [List access codes](list.md)
 * [Get an access code](get.md)
 * [Update an access code](update.md)
-* [Delete an access code](delete-an-access-code.md)
+* [Delete an access code](delete.md)
 * [List unmanaged access codes](./unmanaged/list.md)
 * [Convert an unmanaged access code](./unmanaged/convert_to_managed.md)
 * [Delete an unmanaged access code](./unmanaged/delete.md)
