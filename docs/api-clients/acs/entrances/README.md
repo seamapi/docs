@@ -17,5 +17,5 @@ The `acs_entrance` object has the following properties:
 You can perform the following actions on `acs_entrance` objects:
 
 * [List entrances](list.md)
-* [Get an entrance](get-an-entrance.md)
+* [Get an entrance](get.md)
 * [List credentials with access to an entrance](list_credentials_with_access.md)
