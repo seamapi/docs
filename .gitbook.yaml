@@ -45,7 +45,7 @@ redirects:
   docs/api-clients/access-codes/update-an-access-code.md: docs/api-clients/access_codes/update.md
   docs/api-clients/acs: docs/api-clients/acs/README.md
   docs/api-clients/access-control-systems/README.md: docs/api-clients/acs/README.md
-  docs/api-clients/acs/access_groups/README.md: docs/api-clients/acs/access_groups/README.md
+  docs/api-clients/acs/access_groups: docs/api-clients/acs/access_groups/README.md
   docs/api-clients/access-control-systems/access-groups/README.md: docs/api-clients/acs/access_groups/README.md
   docs/api-clients/access-control-systems/access-groups/add-user-to-access-group.md: docs/api-clients/acs/access_groups/add_user.md
   docs/api-clients/access-control-systems/access-groups/get-access-group.md: docs/api-clients/acs/access_groups/get.md
