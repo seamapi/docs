@@ -19,7 +19,7 @@ The `acs_access_group` object has the following properties:
 You can perform the following actions on `acs_access_group` objects:
 
 * [List access groups](list.md)
-* [Get an access group](get-access-group.md)
+* [Get an access group](get.md)
 * [Add a user to an access group](add_user.md)
 * [Remove a user from an access group](remove_from_access_group.md)
 * [List users in an access group](list_users.md)
