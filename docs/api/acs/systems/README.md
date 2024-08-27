@@ -150,25 +150,25 @@ ID of the [workspace](../../../core-concepts/workspaces.md) that contains the `a
 
 ---
 
-## Endpoints
+# Endpoints
 
-### [`/acs/systems/get`](.//acs/systems/get.md)
+## [`/acs/systems/get`](.//acs/systems/get.md)
 
 Returns a specified [access control system](../../../capability-guides/access-systems.md).
 
 ---
 
-### [`/acs/systems/list`](.//acs/systems/list.md)
+## [`/acs/systems/list`](.//acs/systems/list.md)
 
 Returns a list of all [access control systems](../../../capability-guides/access-systems.md).
 
 ---
 
-### [`/acs/systems/list_compatible_credential_manager_acs_systems`](.//acs/systems/list_compatible_credential_manager_acs_systems.md)
+## [`/acs/systems/list_compatible_credential_manager_acs_systems`](.//acs/systems/list_compatible_credential_manager_acs_systems.md)
 
 Returns a list of all credential manager ACS systems that are compatible with a specified 
 [access control system](../../../capability-guides/access-systems.md).
 
 ---
 
-## Events
+# Events
