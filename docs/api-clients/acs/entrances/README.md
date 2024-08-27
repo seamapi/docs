@@ -18,4 +18,4 @@ You can perform the following actions on `acs_entrance` objects:
 
 * [List entrances](list-entrances.md)
 * [Get an entrance](get-an-entrance.md)
-* [List credentials with access to an entrance](list-credentials-with-access-to-an-entrance.md)
+* [List credentials with access to an entrance](list_credentials_with_access.md)
