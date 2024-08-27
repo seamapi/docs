@@ -85,6 +85,7 @@ redirects:
   docs/api-clients/client-sessions/get-or-create-a-client-session.md: docs/api-clients/client_sessions/get_or_create.md
   docs/api-clients/client-sessions/grant-access-to-a-client-session.md: docs/api-clients/client_sessions/grant_access.md
   docs/api-clients/client-sessions/list-client-sessions.md: docs/api-clients/client_sessions/list.md
+  docs/api-clients/connect_webviews: docs/api-clients/connect_webviews/README.md
   docs/api-clients/connect-webviews: docs/api-clients/connect_webviews/README.md
   docs/api-clients/connect-webviews/create-a-connect-webview.md: docs/api-clients/connect_webviews/create.md
   docs/api-clients/connect-webviews/delete-a-connect-webview.md: docs/api-clients/connect_webviews/delete.md
