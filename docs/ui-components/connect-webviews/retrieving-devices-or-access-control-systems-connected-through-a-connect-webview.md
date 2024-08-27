@@ -6,7 +6,7 @@ description: >-
 
 # Retrieving Devices or Access Control Systems Connected Through a Connect Webview
 
-When your app user completes a [Connect Webview](../../core-concepts/connect-webviews/) authorization flow successfully, the resulting [`connected_account.connected` event](../../api-clients/events/#event-types) includes a `connected_account_id`. Also, once the connection is successful, the [`connect_webview` object](../../api-clients/connect-webviews/) includes the `connected_account_id`.
+When your app user completes a [Connect Webview](../../core-concepts/connect-webviews/) authorization flow successfully, the resulting [`connected_account.connected` event](../../api-clients/events/#event-types) includes a `connected_account_id`. Also, once the connection is successful, the [`connect_webview` object](../../api-clients/connect_webviews/) includes the `connected_account_id`.
 
 The first step in controlling connected devices or a connected ACS is to retrieve the newly-connected set of devices or ACS.
 
