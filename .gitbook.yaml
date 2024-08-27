@@ -62,6 +62,7 @@ redirects:
   docs/api-clients/access-control-systems/entrances/get-an-entrance.md: docs/api-clients/acs/entrances/get.md
   docs/api-clients/access-control-systems/entrances/list-entrances.md: docs/api-clients/acs/entrances/list.md
   docs/api-clients/access-control-systems/entrances/list-credentials-with-access-to-an-entrance.md: docs/api-clients/acs/entrances/list_credentials_with_access.md
+  docs/api-clients/acs/systems: docs/api-clients/acs/systems/README.md
   docs/api-clients/access-control-systems/systems/README.md: docs/api-clients/acs/systems/README.md
   docs/api-clients/access-control-systems/systems/get-system.md: docs/api-clients/acs/systems/get.md
   docs/api-clients/access-control-systems/systems/list-systems.md: docs/api-clients/acs/systems/list.md
