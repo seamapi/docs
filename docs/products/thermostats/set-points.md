@@ -40,7 +40,7 @@ Note that there may be a required minimum temperature difference between the coo
 
 ## Set Point Constraints
 
-Some models of thermostats have specific requirements and constraints related to configuring set points. You can fetch the requirements by issuing a [Get Thermostat](../../thermostats/get-thermostat.md) or [List Thermostats](../../thermostats/list-thermostats.md) request.&#x20;
+Some models of thermostats have specific requirements and constraints related to configuring set points. You can fetch the requirements by issuing a [Get Thermostat](../../api-clients/thermostats/get.md) or [List Thermostats](../../api-clients/thermostats/list.md) request.&#x20;
 
 The following example shows a set of thermostat set point requirements:
 
