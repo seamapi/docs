@@ -8,7 +8,7 @@ description: >-
 
 An ACS user typically refers to an individual who requires access, like an employee or resident. Each user can possess multiple credentials that serve as their keys or identifiers for access. The type of credential can vary widely. For example, in the [Salto](../../device-guides/salto-locks.md) system, a user can have a PIN code, a mobile app account, and a fob. In other platforms, it is not uncommon for a user to have more than one of the same credential type, such as multiple key cards. Additionally, these credentials can have a schedule or validity period.
 
-This guide explains how to create and manage ACS users. Using the [Access Control Systems API](../../api-clients/access-control-systems/), you can automate issuing access to long-term tenants or visitors.
+This guide explains how to create and manage ACS users. Using the [Access Control Systems API](../../api-clients/acs/), you can automate issuing access to long-term tenants or visitors.
 
 ***
 
