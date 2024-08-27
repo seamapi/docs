@@ -31,7 +31,7 @@ redirects:
   device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/special-requirements-for-ios-mobile-access-sdk-development: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/special-requirements-for-ios-mobile-access-sdk-development.md
   capability-guides/access-systems/understanding-acs-differences: capability-guides/access-systems/understanding-access-control-system-differences.md
   device-guides/get-started-with-schlage-locks: device-and-system-integration-guides/schlage-locks/get-started-with-schlage-locks.md
-  docs/api-clients/access_codes: docs/api-clients/access_codes/README.md
+  docs/api-clients/access-codes: docs/api-clients/access_codes/README..md
   docs/api-clients/access-codes/create-an-access-code.md: docs/api-clients/access_codes/create.md
   docs/api-clients/access-codes/create-many-access-codes.md: docs/api-clients/access_codes/create_multiple.md
   docs/api-clients/access-codes/delete-an-access-code.md: docs/api-clients/access_codes/delete.md

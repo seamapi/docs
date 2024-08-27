@@ -12,7 +12,7 @@ Returns a list of all [Connect Webviews](../../core-concepts/connect-webviews/).
 
 ## Request
 
-To filter the list of returned Connect Webviews by a specific set of [custom metadata](../../core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview.md) or a user identifier key, include `custom_metadata_has` or [`user_identifier_key`](../client-sessions/#client\_session-properties) in the request body. If you include `custom_metadata_has`, specify the desired metadata filters as a JSON object containing key:value pairs.
+To filter the list of returned Connect Webviews by a specific set of [custom metadata](../../core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview.md) or a user identifier key, include `custom_metadata_has` or [`user_identifier_key`](../client_sessions/#client\_session-properties) in the request body. If you include `custom_metadata_has`, specify the desired metadata filters as a JSON object containing key:value pairs.
 
 ### Request Body Parameters
 
