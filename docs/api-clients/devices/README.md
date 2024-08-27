@@ -153,7 +153,7 @@ You can perform the following actions on `device` objects:
 * [List device providers](list-device-providers.md)
 * [Get a device](get-device.md)
 * [Update a device](update.md)
-* [List unmanaged devices](list-unmanaged-devices.md)
+* [List unmanaged devices](./unmanaged/list.md)
 * [Get an unmanaged devices](get-device-1.md)
 * [Update an unmanaged device](./unmanaged/update.md)
 * [Delete a device](delete-device.md)
