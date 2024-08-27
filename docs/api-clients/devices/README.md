@@ -149,7 +149,7 @@ The `constraint_type` property can be one of the following enum values:
 
 You can perform the following actions on `device` objects:
 
-* [List devices](list-devices.md)
+* [List devices](list.md)
 * [List device providers](list_device_providers.md)
 * [Get a device](get-device.md)
 * [Update a device](update.md)
