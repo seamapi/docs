@@ -22,5 +22,5 @@ You can perform the following actions on `acs_credential` objects:
 * [Get a credential](get.md)
 * [Update a credential](update.md)
 * [Unassign a credential from a user](unassign.md)
-* [Delete a credential](delete-credential.md)
+* [Delete a credential](delete.md)
 * [List accessible entrances](list_accessible_entrances.md)
