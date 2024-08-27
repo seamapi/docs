@@ -114,7 +114,7 @@ On some account types, Seam provides additional information about the manufactur
 
 ## Device Providers
 
-Seam maintains a list of device providers that you can access using the [List Device Providers](list-device-providers.md) endpoint.
+Seam maintains a list of device providers that you can access using the [List Device Providers](list_device_providers.md) endpoint.
 
 The `device_provider` object includes the following information:
 
@@ -150,7 +150,7 @@ The `constraint_type` property can be one of the following enum values:
 You can perform the following actions on `device` objects:
 
 * [List devices](list-devices.md)
-* [List device providers](list-device-providers.md)
+* [List device providers](list_device_providers.md)
 * [Get a device](get-device.md)
 * [Update a device](update.md)
 * [List unmanaged devices](./unmanaged/list.md)
