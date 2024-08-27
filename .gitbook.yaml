@@ -31,43 +31,41 @@ redirects:
   device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/special-requirements-for-ios-mobile-access-sdk-development: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/special-requirements-for-ios-mobile-access-sdk-development.md
   capability-guides/access-systems/understanding-acs-differences: capability-guides/access-systems/understanding-access-control-system-differences.md
   device-guides/get-started-with-schlage-locks: device-and-system-integration-guides/schlage-locks/get-started-with-schlage-locks.md
-  docs/api-clients/access-codes: docs/api-clients/access_codes/README.md
+  docs/api-clients/access-codes/convert-an-unmanaged-access-code.md: docs/api-clients/access_codes/unmanaged/convert_to_managed.md
   docs/api-clients/access-codes/create-an-access-code.md: docs/api-clients/access_codes/create.md
   docs/api-clients/access-codes/create-many-access-codes.md: docs/api-clients/access_codes/create_multiple.md
   docs/api-clients/access-codes/delete-an-access-code.md: docs/api-clients/access_codes/delete.md
-  docs/api-clients/access-codes/get-an-access-code.md: docs/api-clients/access_codes/get.md
-  docs/api-clients/access-codes/list-access-codes.md: docs/api-clients/access_codes/list.md
-  docs/api-clients/access-codes/pull-backup-access-code.md: docs/api-clients/access_codes/pull_backup_access_code.md
-  docs/api-clients/access-codes/convert-an-unmanaged-access-code.md: docs/api-clients/access_codes/unmanaged/convert_to_managed.md
   docs/api-clients/access-codes/delete-an-unmanaged-access-code.md: docs/api-clients/access_codes/unmanaged/delete.md
+  docs/api-clients/access-codes/get-an-access-code.md: docs/api-clients/access_codes/get.md
   docs/api-clients/access-codes/get-an-unmanaged-access-code.md: docs/api-clients/access_codes/unmanaged/get.md
+  docs/api-clients/access-codes/list-access-codes.md: docs/api-clients/access_codes/list.md
   docs/api-clients/access-codes/list-unmanaged-access-codes.md: docs/api-clients/access_codes/unmanaged/list.md
+  docs/api-clients/access-codes/pull-backup-access-code.md: docs/api-clients/access_codes/pull_backup_access_code.md
   docs/api-clients/access-codes/update-an-access-code.md: docs/api-clients/access_codes/update.md
-  docs/api-clients/access-control-systems: docs/api-clients/acs/README.md
-  docs/api-clients/access-control-systems/access-groups: docs/api-clients/acs/access_groups/README.md
+  docs/api-clients/access-codes: docs/api-clients/access_codes/README.md
   docs/api-clients/access-control-systems/access-groups/add-user-to-access-group.md: docs/api-clients/acs/access_groups/add_user.md
   docs/api-clients/access-control-systems/access-groups/get-access-group.md: docs/api-clients/acs/access_groups/get.md
   docs/api-clients/access-control-systems/access-groups/list-access-groups.md: docs/api-clients/acs/access_groups/list.md
   docs/api-clients/access-control-systems/access-groups/list-users-in-access-group.md: docs/api-clients/acs/access_groups/list_users.md
   docs/api-clients/access-control-systems/access-groups/remove-user-from-access-group.md: docs/api-clients/acs/access_groups/remove_user.md
-  docs/api-clients/access-control-systems/credentials: docs/api-clients/acs/credentials/README.md
+  docs/api-clients/access-control-systems/access-groups: docs/api-clients/acs/access_groups/README.md
   docs/api-clients/access-control-systems/credentials/assign-a-credential-to-a-user.md: docs/api-clients/acs/credentials/assign.md
   docs/api-clients/access-control-systems/credentials/create-credential-for-user.md: docs/api-clients/acs/credentials/create.md
   docs/api-clients/access-control-systems/credentials/delete-credential.md: docs/api-clients/acs/credentials/delete.md
   docs/api-clients/access-control-systems/credentials/get-credential.md: docs/api-clients/acs/credentials/get.md
-  docs/api-clients/access-control-systems/credentials/list-credentials.md: docs/api-clients/acs/credentials/list.md
   docs/api-clients/access-control-systems/credentials/list-accessible-entrances.md: docs/api-clients/acs/credentials/list_accessible_entrances.md
+  docs/api-clients/access-control-systems/credentials/list-credentials.md: docs/api-clients/acs/credentials/list.md
   docs/api-clients/access-control-systems/credentials/unassign-a-credential-from-a-user.md: docs/api-clients/acs/credentials/unassign.md
   docs/api-clients/access-control-systems/credentials/update-a-credential.md: docs/api-clients/acs/credentials/update.md
-  docs/api-clients/access-control-systems/entrances: docs/api-clients/acs/entrances/README.md
+  docs/api-clients/access-control-systems/credentials: docs/api-clients/acs/credentials/README.md
   docs/api-clients/access-control-systems/entrances/get-an-entrance.md: docs/api-clients/acs/entrances/get.md
-  docs/api-clients/access-control-systems/entrances/list-entrances.md: docs/api-clients/acs/entrances/list.md
   docs/api-clients/access-control-systems/entrances/list-credentials-with-access-to-an-entrance.md: docs/api-clients/acs/entrances/list_credentials_with_access.md
-  docs/api-clients/access-control-systems/systems: docs/api-clients/acs/systems/README.md
+  docs/api-clients/access-control-systems/entrances/list-entrances.md: docs/api-clients/acs/entrances/list.md
+  docs/api-clients/access-control-systems/entrances: docs/api-clients/acs/entrances/README.md
   docs/api-clients/access-control-systems/systems/get-system.md: docs/api-clients/acs/systems/get.md
-  docs/api-clients/access-control-systems/systems/list-systems.md: docs/api-clients/acs/systems/list.md
   docs/api-clients/access-control-systems/systems/list-compatible-credential-manager-acs-systems.md: docs/api-clients/acs/systems/list_compatible_credential_manager_acs_systems.md
-  docs/api-clients/access-control-systems/users: docs/api-clients/acs/users/README.md
+  docs/api-clients/access-control-systems/systems/list-systems.md: docs/api-clients/acs/systems/list.md
+  docs/api-clients/access-control-systems/systems: docs/api-clients/acs/systems/README.md
   docs/api-clients/access-control-systems/users/add-user-to-access-group.md: docs/api-clients/acs/users/add_to_access_group.md
   docs/api-clients/access-control-systems/users/create-user.md: docs/api-clients/acs/users/create.md
   docs/api-clients/access-control-systems/users/delete-user.md: docs/api-clients/acs/users/delete.md
@@ -77,65 +75,67 @@ redirects:
   docs/api-clients/access-control-systems/users/suspend-a-user.md: docs/api-clients/acs/users/suspend.md
   docs/api-clients/access-control-systems/users/unsuspend-a-user.md: docs/api-clients/acs/users/unsuspend.md
   docs/api-clients/access-control-systems/users/update-user.md: docs/api-clients/acs/users/update.md
-  docs/api-clients/action-attempt: docs/api-clients/action_attempts/README.md
+  docs/api-clients/access-control-systems/users: docs/api-clients/acs/users/README.md
+  docs/api-clients/access-control-systems: docs/api-clients/acs/README.md
   docs/api-clients/action-attempt/get-action-attempt.md: docs/api-clients/action_attempts/get.md
-  docs/api-clients/client-sessions: docs/api-clients/client_sessions/README.md
+  docs/api-clients/action-attempt: docs/api-clients/action_attempts/README.md
   docs/api-clients/client-sessions/create-a-client-session.md: docs/api-clients/client_sessions/create.md
   docs/api-clients/client-sessions/delete-a-client-session.md: docs/api-clients/client_sessions/delete.md
   docs/api-clients/client-sessions/get-a-client-session.md: docs/api-clients/client_sessions/get.md
   docs/api-clients/client-sessions/get-or-create-a-client-session.md: docs/api-clients/client_sessions/get_or_create.md
   docs/api-clients/client-sessions/grant-access-to-a-client-session.md: docs/api-clients/client_sessions/grant_access.md
   docs/api-clients/client-sessions/list-client-sessions.md: docs/api-clients/client_sessions/list.md
-  docs/api-clients/connect-webviews: docs/api-clients/connect_webviews/README.md
+  docs/api-clients/client-sessions: docs/api-clients/client_sessions/README.md
   docs/api-clients/connect-webviews/create-a-connect-webview.md: docs/api-clients/connect_webviews/create.md
   docs/api-clients/connect-webviews/delete-a-connect-webview.md: docs/api-clients/connect_webviews/delete.md
   docs/api-clients/connect-webviews/get-a-connect-webview.md: docs/api-clients/connect_webviews/get.md
   docs/api-clients/connect-webviews/list-connect-webviews.md: docs/api-clients/connect_webviews/list.md
-  docs/api-clients/connected-accounts: docs/api-clients/connected_accounts/README.md
+  docs/api-clients/connect-webviews: docs/api-clients/connect_webviews/README.md
   docs/api-clients/connected-accounts/delete-a-connected-account.md: docs/api-clients/connected_accounts/delete.md
   docs/api-clients/connected-accounts/get-a-connected-account.md: docs/api-clients/connected_accounts/get.md
   docs/api-clients/connected-accounts/list-connected-accounts.md: docs/api-clients/connected_accounts/list.md
   docs/api-clients/connected-accounts/update-a-connected-account.md: docs/api-clients/connected_accounts/update.md
+  docs/api-clients/connected-accounts: docs/api-clients/connected_accounts/README.md
   docs/api-clients/devices/delete-device.md: docs/api-clients/devices/delete.md
-  docs/api-clients/devices/get-device.md: docs/api-clients/devices/get.md
   docs/api-clients/devices/get-device-1.md: docs/api-clients/devices/unmanaged/get.md
-  docs/api-clients/devices/list-devices.md: docs/api-clients/devices/list.md
+  docs/api-clients/devices/get-device.md: docs/api-clients/devices/get.md
   docs/api-clients/devices/list-device-providers.md: docs/api-clients/devices/list_device_providers.md
+  docs/api-clients/devices/list-devices.md: docs/api-clients/devices/list.md
   docs/api-clients/devices/list-unmanaged-devices.md: docs/api-clients/devices/unmanaged/list.md
-  docs/api-clients/devices/update-unmanaged-device.md: docs/api-clients/devices/unmanaged/update.md
   docs/api-clients/devices/update-device.md: docs/api-clients/devices/update.md
+  docs/api-clients/devices/update-unmanaged-device.md: docs/api-clients/devices/unmanaged/update.md
   docs/api-clients/events/get-an-event.md: docs/api-clients/events/get.md
   docs/api-clients/events/list-events.md: docs/api-clients/events/list.md
   docs/api-clients/locks/get-lock.md: docs/api-clients/locks/get.md
   docs/api-clients/locks/list-locks.md: docs/api-clients/locks/list.md
   docs/api-clients/locks/lock-a-lock.md: docs/api-clients/locks/lock_door.md
   docs/api-clients/locks/unlock-a-lock.md: docs/api-clients/locks/unlock_door.md
-  docs/api-clients/noise-sensors: docs/api-clients/noise_sensors/README.md
   docs/api-clients/noise-sensors/create-noise-threshold.md: docs/api-clients/noise_sensors/noise_thresholds/create.md
   docs/api-clients/noise-sensors/delete-noise-threshold.md: docs/api-clients/noise_sensors/noise_thresholds/delete.md
   docs/api-clients/noise-sensors/list-noise-thresholds.md: docs/api-clients/noise_sensors/noise_thresholds/list.md
   docs/api-clients/noise-sensors/update-noise-threshold.md: docs/api-clients/noise_sensors/noise_thresholds/update.md
-  docs/api-clients/thermostats/set-to-cool-mode.md: docs/api-clients/thermostats/cool.md
-  docs/api-clients/thermostats/set-to-heat-mode.md: docs/api-clients/thermostats/heat.md
-  docs/api-clients/thermostats/set-to-heat-cool-auto-mode.md: docs/api-clients/thermostats/heat_cool.md
-  docs/api-clients/thermostats/set-to-off-mode.md: docs/api-clients/thermostats/off.md
+  docs/api-clients/noise-sensors: docs/api-clients/noise_sensors/README.md
   docs/api-clients/thermostats/set-fan-mode.md: docs/api-clients/thermostats/set_fan_mode.md
-  docs/api-clients/user-identities: docs/api-clients/user_identities/README.md
+  docs/api-clients/thermostats/set-to-cool-mode.md: docs/api-clients/thermostats/cool.md
+  docs/api-clients/thermostats/set-to-heat-cool-auto-mode.md: docs/api-clients/thermostats/heat_cool.md
+  docs/api-clients/thermostats/set-to-heat-mode.md: docs/api-clients/thermostats/heat.md
+  docs/api-clients/thermostats/set-to-off-mode.md: docs/api-clients/thermostats/off.md
   docs/api-clients/user-identities/add-an-acs-user-to-a-user-identity.md: docs/api-clients/user_identities/add_acs_user.md
   docs/api-clients/user-identities/create-a-user-identity.md: docs/api-clients/user_identities/create.md
   docs/api-clients/user-identities/delete-a-user-identity.md: docs/api-clients/user_identities/delete.md
-  docs/api-clients/user-identities/enrollment-automations: docs/api-clients/user_identities/enrollment_automations/README.md
   docs/api-clients/user-identities/enrollment-automations/delete-an-enrollment-automation.md: docs/api-clients/user_identities/enrollment_automations/delete.md
   docs/api-clients/user-identities/enrollment-automations/get-an-enrollment-automation.md: docs/api-clients/user_identities/enrollment_automations/get.md
   docs/api-clients/user-identities/enrollment-automations/launch-an-enrollment-automation.md: docs/api-clients/user_identities/enrollment_automations/launch.md
   docs/api-clients/user-identities/enrollment-automations/list-enrollment-automations.md: docs/api-clients/user_identities/enrollment_automations/list.md
+  docs/api-clients/user-identities/enrollment-automations: docs/api-clients/user_identities/enrollment_automations/README.md
   docs/api-clients/user-identities/get-a-user-identity.md: docs/api-clients/user_identities/get.md
   docs/api-clients/user-identities/grant-a-user-identity-access-to-a-device.md: docs/api-clients/user_identities/grant_access_to_device.md
-  docs/api-clients/user-identities/list-user-identities.md: docs/api-clients/user_identities/list.md
   docs/api-clients/user-identities/list-accessible-devices-for-a-user-identity.md: docs/api-clients/user_identities/list_accessible_devices.md
   docs/api-clients/user-identities/list-acs-systems-associated-with-a-user-identity.md: docs/api-clients/user_identities/list_acs_systems.md
   docs/api-clients/user-identities/list-acs-users-associated-with-a-user-identity.md: docs/api-clients/user_identities/list_acs_users.md
+  docs/api-clients/user-identities/list-user-identities.md: docs/api-clients/user_identities/list.md
   docs/api-clients/user-identities/remove-an-acs-user-from-a-user-identity.md: docs/api-clients/user_identities/remove_acs_user.md
   docs/api-clients/user-identities/revoke-access-to-a-device-from-a-user-identity.md: docs/api-clients/user_identities/revoke_access_to_device.md
+  docs/api-clients/user-identities: docs/api-clients/user_identities/README.md
   docs/api-clients/workspaces/get-workspace.md: docs/api-clients/workspaces/get.md
   docs/api-clients/workspaces/reset-workspace.md: docs/api-clients/workspaces/reset_sandbox.md
