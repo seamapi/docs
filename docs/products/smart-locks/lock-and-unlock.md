@@ -1120,7 +1120,7 @@ return nil
 
 ## Checking the Locked Status of a Lock
 
-To retrieve the locked status of a specific door lock, use the [Get Lock](../../api-clients/locks/get.md) or [Get Device](../../api-clients/devices/get.md) endpoint by providing the `device_id` of the desired lock. This operation returns detailed information, including the current locked status.
+To retrieve the locked status of a specific door lock, use the [Get Lock](../../api-clients/locks/get.md) or [Get Device](../../api-clients/devices/get.md) endpoint by providing the `device_id` of the desired lock. This operation returns detailed information, including the current locked status. Note that if the lock is offline, Seam does not return the `device.locked` property.
 
 {% tabs %}
 {% tab title="Python" %}
