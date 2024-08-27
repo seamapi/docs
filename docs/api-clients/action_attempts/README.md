@@ -21,4 +21,4 @@
 
 ### List of Methods
 
-<table data-header-hidden><thead><tr><th width="312"></th><th></th></tr></thead><tbody><tr><td><a href="get-action-attempt.md">Get Action Attempt</a></td><td>Get Action Attempt</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="312"></th><th></th></tr></thead><tbody><tr><td><a href="get.md">Get Action Attempt</a></td><td>Get Action Attempt</td></tr></tbody></table>

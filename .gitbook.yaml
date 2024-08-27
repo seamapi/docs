@@ -76,6 +76,7 @@ redirects:
   docs/api-clients/access-control-systems/users/suspend-a-user.md: docs/api-clients/acs/users/suspend.md
   docs/api-clients/access-control-systems/users/unsuspend-a-user.md: docs/api-clients/acs/users/unsuspend.md
   docs/api-clients/access-control-systems/users/update-user.md: docs/api-clients/acs/users/update.md
+  docs/api-clients/action_attempts: docs/api-clients/action_attempts/README.md
   docs/api-clients/action-attempt/README.md: docs/api-clients/action_attempts/README.md
   docs/api-clients/action-attempt/get-action-attempt.md: docs/api-clients/action_attempts/get.md
   docs/api-clients/client_sessions: docs/api-clients/client_sessions/README.md
