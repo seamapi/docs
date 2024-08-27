@@ -190,7 +190,7 @@
     * [Delete a Credential](api-clients/acs/credentials/delete.md)
     * [List Accessible Entrances](api-clients/acs/credentials/list_accessible_entrances.md)
 * [Noise Sensors](api-clients/noise_sensors/README.md)
-  * [Noise Thresholds](api-clients/noise_sensors/README.md)
+  * [Noise Thresholds](api-clients/noise_sensors/noise_thresholds/README.md)
     * [Create Noise Thresholds](api-clients/noise_sensors/noise_thresholds/create.md)
     * [List Noise Thresholds](api-clients/noise_sensors/noise_thresholds/list.md)
     * [Update Noise Threshold](api-clients/noise_sensors/noise_thresholds/update.md)
