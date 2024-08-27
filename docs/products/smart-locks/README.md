@@ -39,4 +39,4 @@ To learn how to manage locks and access codes, see the following guides:
 * [Locking and Unlocking](lock-and-unlock.md)
 * [Managing Access Codes](access-codes/)
 
-For the corresponding Seam API references, see [Locks](../../api-clients/locks/) and [Access Codes](../../api-clients/access_codes/).
+For the corresponding Seam API references, see [Locks](../../api-clients/locks/) and [Access Codes](../../api-clients/access-codes/).

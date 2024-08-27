@@ -177,7 +177,7 @@ curl -X 'POST' \
   -H 'Content-Type: application/json' \
   -d '{
   "accepted_providers": ["four_suites"]
-}' | jq -r '"Login Successful (false): " + (.connect_webview.login_successful | tostring),
+}' | jq -r '"Login Successful (false): " + (.connect_webview.login_successful | tostring), 
   "URL: " + .connect_webview.url'
   # Use the returned Connect Webview URL to display
   # the Connect Webview authorization flow to your user.
@@ -336,7 +336,7 @@ public class Main {
       .build());
 
     System.out.println(connectWebview.getLoginSuccessful()); // false
-
+    
     // Use the returned Connect Webview URL to display
     // the Connect Webview authorization flow to your user.
     System.out.println(connectWebview.getUrl());
@@ -388,18 +388,18 @@ func run() error {
       },
     },
   )
-
+  
   if err != nil {
     return err
   }
-
+  
   fmt.Println(connectWebview.LoginSuccessful) // false
-
+  
   // Use the returned Connect Webview URL to display
   // the Connect Webview authorization flow to your user.
   fmt.Println(connectWebview.Url)
 
-  return nil
+  return nil		
 }
 ```
 
@@ -593,7 +593,7 @@ true
 
 ## Step 3: Retrieve 4SUITES lock devices
 
-When you link a 4SUITES account with Seam, we create a `device` object to represent each 4SUITES lock in your account. You can then retrieve these 4SUITES devices using the [List Devices](../../api-clients/devices/list.md) and [Get Device](../../api-clients/devices/get.md) endpoints.
+When you link a 4SUITES account with Seam, we create a `device` object to represent each 4SUITES lock in your account. You can then retrieve these 4SUITES devices using the [List Devices](../../api-clients/devices/list-devices.md) and [Get Device](../../api-clients/devices/get-device.md) endpoints.
 
 The Seam API exposes each device's properties, such as the door lock status, power status, capabilities, and so on.
 
@@ -730,7 +730,7 @@ true
   },
   can_remotely_unlock: true,
   ...
-}
+}   
 ```
 {% endtab %}
 
@@ -979,7 +979,7 @@ Try out the following actions on your 4SUITES lock:
 
 ### Unlock your lock
 
-To unlock a door, use the [Unlock Door](../../api-clients/locks/unlock_door.md) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](../../core-concepts/action-attempts.md) to track the progress of the unlock operation.
+To unlock a door, use the [Unlock Door](../../api-clients/locks/unlock-a-lock.md) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](../../core-concepts/action-attempts.md) to track the progress of the unlock operation.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -1216,7 +1216,7 @@ return nil
 {% endtab %}
 {% endtabs %}
 
-You can track the status of the unlock operation to confirm that the device unlocked successfully. Query the `locked` status of the device, [retrieve the action attempt](../../api-clients/action_attempts/get.md) by ID, or look for a [`lock.unlocked` event](../../api-clients/events/#event-types).
+You can track the status of the unlock operation to confirm that the device unlocked successfully. Query the `locked` status of the device, [retrieve the action attempt](../../api-clients/action-attempt/get-action-attempt.md) by ID, or look for a [`lock.unlocked` event](../../api-clients/events/#event-types).
 
 To query the `locked` status of the device:
 

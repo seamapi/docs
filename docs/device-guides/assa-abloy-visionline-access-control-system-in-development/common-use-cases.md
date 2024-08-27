@@ -131,4 +131,4 @@ cred = seam.acs.credentials.create({
 
 * [Update guest mobile credentials.](../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types/updating-guest-mobile-credentials.md)
 * [Revoke a mobile credential.](../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types/revoking-mobile-credentials.md)
-* [Remove a user identity.](../../api-clients/user_identities/delete.md)
+* [Remove a user identity.](../../api-clients/user-identities/delete-a-user-identity.md)

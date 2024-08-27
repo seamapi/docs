@@ -490,7 +490,7 @@ In addition, if you'd like to explore other aspects of Seam, here is a list of h
 * [Schlage Getting Started Guide](https://github.com/seamapi/api-docs/blob/main/docs/device-guides/broken-reference/README.md)
 * [Yale Getting Started Guide](get-started-with-yale-locks.md)
 * [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list.md)
+* [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list-events.md)
 * [Core Concepts](https://github.com/seamapi/api-docs/blob/main/docs/device-guides/broken-reference/README.md)
 
 If you have any questions or want to report an issue, email us at support@seam.co.

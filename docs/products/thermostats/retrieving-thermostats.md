@@ -6,7 +6,7 @@ description: Learn how to retrieve all thermostats or a specific thermostat by I
 
 ## Retrieving All Thermostats
 
-To retrieve all [thermostats](./), issue a [List Thermostats](../../thermostats/list.md) request. For filtering options, see the [request body parameters](../../thermostats/list.md#request-body-parameters) for the List Thermostats request.
+To retrieve all [thermostats](./), issue a [List Thermostats](../../thermostats/list-thermostats.md) request. For filtering options, see the [request body parameters](../../thermostats/list-thermostats.md#request-body-parameters) for the List Thermostats request.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -492,7 +492,7 @@ return nil
 
 ## Retrieving Individual Thermostats
 
-To retrieve a specific [thermostat](./), include the desired `device_id` in the [Get Thermostat](../../thermostats/get.md) or [Get Device](../../api-clients/devices/get.md) request.
+To retrieve a specific [thermostat](./), include the desired `device_id` in the [Get Thermostat](../../thermostats/get-thermostat.md) or [Get Device](../../api-clients/devices/get-device.md) request.
 
 {% tabs %}
 {% tab title="Python" %}

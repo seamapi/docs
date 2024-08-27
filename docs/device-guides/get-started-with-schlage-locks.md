@@ -144,7 +144,7 @@ webview = seam.connect_webviews.create(
 
 puts webview.login_successful # false
 
-# Send the webview URL to your user
+# Send the webview URL to your user 
 puts webview.url
 ```
 {% endtab %}
@@ -411,7 +411,7 @@ await seam.accessCodes.list({
   {
     type: 'timebound',
     code: '888888',
-    starts_at: '2028-08-12T19:24:00.000Z',
+    starts_at: '2028-08-12T19:24:00.000Z', 
     ends_at: '2028-08-13T19:24:00.000Z',
     access_code_id: '8c2db4da-b137-4c08-a2c3-d611e6ff91b3',
   }
@@ -481,7 +481,7 @@ In addition, if you'd like to explore other aspects of Seam, here is a list of h
 * [Yale Getting Started Guide](get-started-with-yale-locks.md)
 * [August Getting Started Guide](get-started-with-august-locks.md)
 * [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list.md)
+* [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list-events.md)
 * [Core Concepts](https://github.com/seamapi/api-docs/blob/main/docs/device-guides/broken-reference/README.md)
 
 If you have any questions or want to report an issue, email us at support@seam.co. If you would like help

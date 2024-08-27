@@ -36,4 +36,4 @@ To learn how to set up noise thresholds for your devices, see the following guid
 
 * [Configuring Noise Threshold Settings](configure-noise-threshold-settings.md)
 
-For the corresponding Seam API reference, see [Noise Sensors](../../api-clients/noise_sensors/).
+For the corresponding Seam API reference, see [Noise Sensors](../../api-clients/noise-sensors/).

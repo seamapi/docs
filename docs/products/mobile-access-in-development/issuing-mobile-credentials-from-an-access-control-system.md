@@ -18,7 +18,7 @@ An enrollment automation initializes the phones for a user identity with a crede
 
 ### Initialize the User Identity with a Credential Manager
 
-To set up an enrollment automation, call the [Launch Enrollment Automation](../../api-clients/user_identities/enrollment_automations/launch.md) function with the ID of the user identity (`user_identity_id`) and the system ID of the credential manager (`credential_manager_acs_system_id`).
+To set up an enrollment automation, call the [Launch Enrollment Automation](../../api-clients/user-identities/enrollment-automations/launch-an-enrollment-automation.md) function with the ID of the user identity (`user_identity_id`) and the system ID of the credential manager (`credential_manager_acs_system_id`).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -144,7 +144,7 @@ Seam configures the card details that you include in the request across all the 
 seam.acs.credentials.create(
   is_multi_phone_sync_credential = True,
   acs_user_id = "4d223973-0874-4831-8630-bfcb29e6bce0",
-  access_method = "mobile_key",
+  access_method = "mobile_key",  
   # System-specific properties
   card_format = "rfid48",
   facility_code = "9",

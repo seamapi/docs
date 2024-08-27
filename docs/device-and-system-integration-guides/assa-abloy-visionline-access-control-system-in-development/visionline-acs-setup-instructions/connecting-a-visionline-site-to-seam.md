@@ -7,7 +7,7 @@ description: Learn how to connect your demo or production Visionline site to Sea
 Perform this process for each Visionline ACS site that you want to connect to Seam.
 
 1. Create and then display a [Connect Webview](../../../core-concepts/connect-webviews/).\
-   When creating the Connect Webview, include `visionline` in the set of [`accepted_providers`](../../../api-clients/connect_webviews/#connect\_webview-properties). For more information, see [Customize the Brands to Display in Your Connect Webview](../../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).\
+   When creating the Connect Webview, include `visionline` in the set of [`accepted_providers`](../../../api-clients/connect-webviews/#connect\_webview-properties). For more information, see [Customize the Brands to Display in Your Connect Webview](../../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).\
    Alternately, in the left navigation pane of the [Seam Console](https://console.seam.co/), click **Access Systems**. Then, in the upper-right corner of the **Access Systems** page, click **+ New Access System**.
 2.  In the Connect Webview, perform the following steps:
 

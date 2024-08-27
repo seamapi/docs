@@ -150,7 +150,7 @@ webview = seam.connect_webviews.create(
 
 puts webview.login_successful # false
 
-# Send the webview URL to your user
+# Send the webview URL to your user 
 puts webview.url
 ```
 {% endtab %}
@@ -429,7 +429,7 @@ await seam.accessCodes.list({
   {
     type: 'timebound',
     code: '888888',
-    starts_at: '2028-08-12T19:24:00.000Z',
+    starts_at: '2028-08-12T19:24:00.000Z', 
     ends_at: '2028-08-13T19:24:00.000Z',
     access_code_id: '8c2db4da-b137-4c08-a2c3-d611e6ff91b3',
   }
@@ -518,5 +518,5 @@ Now that you've completed this guide, you can try to build a real application to
 * [August Getting Started Guide](get-started-with-august-locks.md)
 * [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
 * [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list.md)
+* [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list-events.md)
 * [Core Concepts](../core-concepts/overview.md)

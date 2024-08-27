@@ -12,7 +12,7 @@ This guide explains how to assign existing [credentials](managing-credentials.md
 
 ## Assign a Credential to an ACS User
 
-To [assign a credential to an ACS user](../../api-clients/acs/credentials/assign.md), provide both the `acs_user_id` and the `acs_credential_id`.
+To [assign a credential to an ACS user](../../api-clients/access-control-systems/credentials/assign-a-credential-to-a-user.md), provide both the `acs_user_id` and the `acs_credential_id`.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -252,7 +252,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 
 ## Unassign a Credential from an ACS User
 
-To [unassign a credential from an ACS user](../../api-clients/acs/credentials/unassign.md), provide both the `acs_user_id` and the `acs_credential_id`.
+To [unassign a credential from an ACS user](../../api-clients/access-control-systems/credentials/unassign-a-credential-from-a-user.md), provide both the `acs_user_id` and the `acs_credential_id`.
 
 {% tabs %}
 {% tab title="Python" %}
