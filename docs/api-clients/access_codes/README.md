@@ -67,7 +67,7 @@ See our [troubleshooting tips for access codes](../../products/smart-locks/acces
 When Seam is able to provide more specific information beyond one of the generic errors above, one or more errors from the list of specific errors may appear. This gives your application the option to display additional context or suggest provider specific resolutions.
 
 {% hint style="info" %}
-If the device or connected account associated with an access code has an error, it will be attached to the access code alongside any other access code errors. Treat these errors as Specific Errors. See [Device Error Types](../devices/#device-error-types) and [Connected Account Error Types](../connected-accounts/#connected-account-error-types).
+If the device or connected account associated with an access code has an error, it will be attached to the access code alongside any other access code errors. Treat these errors as Specific Errors. See [Device Error Types](../devices/#device-error-types) and [Connected Account Error Types](../connected_accounts/#connected-account-error-types).
 {% endhint %}
 
 See our [troubleshooting tips for access codes](../../products/smart-locks/access-codes/troubleshooting-access-code-issues.md) for our recommended responses to these error codes.
