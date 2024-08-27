@@ -38,4 +38,4 @@ You can perform the following actions on `client_session` objects:
 * [List client sessions](list.md)
 * [Get a client session](get.md)
 * [Grant Access to a Client Session](grant_access.md)
-* [Delete a client session](delete-a-client-session.md)
+* [Delete a client session](delete.md)
