@@ -188,7 +188,7 @@ acs_systems, uErr := client.Acs.Systems.List(
 
 ## Create an ACS User
 
-To [create an ACS user](../../api-clients/access-control-systems/users/create-user), provide the `acs_system_id` of the ACS system and the attributes of the user, such as the `full_name`, `email_address`, `phone_number`, and so on.
+To [create an ACS user](../../api-clients/access-control-systems/users/create-user.md), provide the `acs_system_id` of the ACS system and the attributes of the user, such as the `full_name`, `email_address`, `phone_number`, and so on.
 
 Also, if your [ACS architecture](../../capability-guides/access-systems/understanding-access-control-system-differences.md) supports access groups, you can also assign an ACS user to one or more access groups. To do so, when you create the user, include the IDs of the access group to which you want add the user. The `acs_access_group_ids` parameter accepts an array of strings.
 
