@@ -70,7 +70,7 @@ Errors associated with the `acs_system`.
 
 ### `external_type`
 
-Format: `Enum`/
+Format: `Enum`\
 Possible enum values:
 - `pti_site`
 - `alta_org`
@@ -123,7 +123,7 @@ Name of the `acs_system`.
 **Deprecated**. Use `external_type`.
 {% endhint %}
 
-Format: `Enum`/
+Format: `Enum`\
 Possible enum values:
 - `pti_site`
 - `alta_org`
