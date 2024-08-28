@@ -492,17 +492,16 @@ return nil
 
 ## Retrieving Individual Thermostats
 
-To retrieve a specific [thermostat](./), include the desired `device_id` in the [Get Thermostat](../../thermostats/get-thermostat.md) or [Get Device](../../api-clients/devices/get-device.md) request.
+To retrieve a specific [thermostat](./), include the desired `device_id` in the [Get Device](../../api-clients/devices/get-device.md) request.
 
 {% tabs %}
 {% tab title="Python" %}
 **Request:**
 
 ```python
-device_id = "518f692b-f865-4590-8c3e-3849e9984c75"
-thermostat = seam.thermostats.get(device_id)
-
-pprint(thermostat)
+seam.devices.get(
+  device_id="518f692b-f865-4590-8c3e-3849e9984c75"
+)
 ```
 
 **Response:**
@@ -576,7 +575,7 @@ Device(
 ```bash
 # Use GET or POST.
 curl -X 'GET' \
-  'https://connect.getseam.com/thermostats/get' \
+  'https://connect.getseam.com/devices/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
@@ -661,9 +660,9 @@ curl -X 'GET' \
 **Request:**
 
 ```javascript
-console.log(await seam.thermostats.get({
+await seam.devices.get({
   device_id: "518f692b-f865-4590-8c3e-3849e9984c75"
-}))
+});
 ```
 
 **Response:**
@@ -732,10 +731,9 @@ console.log(await seam.thermostats.get({
 **Request:**
 
 ```php
-$thermostat = $seam->thermostats->get(
+$seam->devices->get(
   device_id: "5ce2cd35-09b1-458c-bb08-51ee83c35be7"
 );
-echo json_encode($thermostat, JSON_PRETTY_PRINT);
 ```
 
 **Response:**
@@ -820,8 +818,9 @@ echo json_encode($thermostat, JSON_PRETTY_PRINT);
 **Request:**
 
 ```csharp
-Device thermostat = seam.Thermostats.Get(deviceId: "518f692b-f865-4590-8c3e-3849e9984c75");
-Console.WriteLine(thermostat);
+seam.Devices.Get(
+  deviceId: "518f692b-f865-4590-8c3e-3849e9984c75"
+);
 ```
 
 **Response:**
@@ -864,10 +863,9 @@ Console.WriteLine(thermostat);
 **Request:**
 
 ```java
-Device thermostat = seam.thermostats().get(ThermostatsGetRequest.builder()
-              .deviceId("518f692b-f865-4590-8c3e-3849e9984c75")
-              .build());
-System.out.println(thermostat);
+seam.devices().get(DevicesGetRequest.builder()
+  .deviceId("518f692b-f865-4590-8c3e-3849e9984c75")
+  .build());
 ```
 
 **Response:**
@@ -934,7 +932,7 @@ System.out.println(thermostat);
 **Request:**
 
 ```go
-thermostat, uErr := client.Thermostats.Get(context.Background(), &api.ThermostatsGetRequest{
+thermostat, uErr := client.Devices.Get(context.Background(), &api.DevicesGetRequest{
       DeviceId: api.String("5ce2cd35-09b1-458c-bb08-51ee83c35be7"),
   })
 
@@ -942,7 +940,6 @@ if uErr != nil {
     return uErr
 }
 
-fmt.Println(thermostat)
 return nil
 ```
 
