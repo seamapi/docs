@@ -10,7 +10,7 @@ Seam enables you to lock or unlock your door lock remotely. This guide walks you
 
 When you send a command to a smart lock, it might take a while for Seam to confirm the action's success. To handle this, Seam provides [an "action attempt" object](../../core-concepts/action-attempts.md), which indicates whether the action was successful.
 
-To ensure that the action has been successfully executed, we advise checking the status of the action attempt object by polling the ["Get Action Attempt" request](../../api-clients/action-attempt/get-action-attempt.md). Once Seam has successfully confirmed the action, the action attempt's `status` will indicate `success`.
+To ensure that the action has been successfully executed, we advise checking the status of the action attempt object by polling the ["Get Action Attempt" request](../../api-clients/action_attempts/get.md). Once Seam has successfully confirmed the action, the action attempt's `status` will indicate `success`.
 
 For those who prefer using webhooks to verify the success of an action, we'll soon introduce events that confirm an action's success.
 
@@ -23,7 +23,7 @@ Before you attempt to lock or unlock a device, be sure to confirm that your devi
 * `device.can_remotely_lock`
 * `device.can_remotely_unlock`
 
-Use [Get Device](../../api-clients/devices/get-device.md) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to lock or unlock the device.
+Use [Get Device](../../api-clients/devices/get.md) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to lock or unlock the device.
 
 If either of these capability flags is `false` or not present, you can view the [properties](../../api-clients/devices/#device-properties) of the device, [errors](../../api-clients/devices/#device-error-types) or [warnings](../../api-clients/devices/#device-warning-types) for the device, and [events](../../api-clients/events/#event-types) related to the device to learn more about the cause of these issues. For example, you could examine `device.properties.online`. In addition, you could look for a `device.disconnected` event.
 
@@ -204,7 +204,7 @@ device, uErr := client.Devices.Get(
 
 ## Locking a Door
 
-You can lock a door using the [`lock_door`](../../api-clients/locks/lock-a-lock.md) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](lock-and-unlock.md#verifying-the-success-of-a-lock-or-unlock-action).
+You can lock a door using the [`lock_door`](../../api-clients/locks/lock_door.md) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](lock-and-unlock.md#verifying-the-success-of-a-lock-or-unlock-action).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -472,7 +472,7 @@ return nil
 
 ## Unlocking a Door
 
-You can unlock a door using the [unlock\_door](../../api-clients/locks/unlock-a-lock.md) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](lock-and-unlock.md#verifying-the-success-of-a-lock-or-unlock-action).
+You can unlock a door using the [unlock\_door](../../api-clients/locks/unlock_door.md) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](lock-and-unlock.md#verifying-the-success-of-a-lock-or-unlock-action).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -931,7 +931,7 @@ return nil
 
 ### 2. Poll the Action Attempt to Verify the Success of the Action
 
-Use the `action_attempt_id` from the prior response to make a [Get Action Attempt request](../../api-clients/action-attempt/get-action-attempt.md). When the action attempt's `status` changes to `success`, it indicates the action has been successful.
+Use the `action_attempt_id` from the prior response to make a [Get Action Attempt request](../../api-clients/action_attempts/get.md). When the action attempt's `status` changes to `success`, it indicates the action has been successful.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -1120,7 +1120,7 @@ return nil
 
 ## Checking the Locked Status of a Lock
 
-To retrieve the locked status of a specific door lock, use the [Get Lock](../../api-clients/locks/get-lock.md) or [Get Device](../../api-clients/devices/get-device.md) endpoint by providing the `device_id` of the desired lock. This operation returns detailed information, including the current locked status. Note that if the lock is offline, Seam does not return the `device.locked` property.
+To retrieve the locked status of a specific door lock, use the [Get Lock](../../api-clients/locks/get.md) or [Get Device](../../api-clients/devices/get.md) endpoint by providing the `device_id` of the desired lock. This operation returns detailed information, including the current locked status. Note that if the lock is offline, Seam does not return the `device.locked` property.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -1313,7 +1313,7 @@ device, uErr := client.Devices.Get(
 
 ## Lock and Unlock Events
 
-Whenever a lock is locked or unlocked, Seam emits a `lock.locked` or `lock.unlocked` event. You can see these events by making a [List Events request](../../api-clients/events/list-events.md) or by setting up a webhook. For more information on how to set up webhooks, see the [Webhooks guide](../../core-concepts/webhooks.md).
+Whenever a lock is locked or unlocked, Seam emits a `lock.locked` or `lock.unlocked` event. You can see these events by making a [List Events request](../../api-clients/events/list.md) or by setting up a webhook. For more information on how to set up webhooks, see the [Webhooks guide](../../core-concepts/webhooks.md).
 
 A lock or unlock event looks like the following:
 
