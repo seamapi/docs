@@ -142,7 +142,7 @@ export function setApiRouteTemplateContext(
           }) => ({
             name,
             description,
-            format: pascalCase(format),
+            format: normalizePropertyFormatForDocs(format),
             isDeprecated,
             deprecationMessage,
           }),
@@ -157,4 +157,14 @@ const hasMultipleParagraphs = (text: string): boolean => /\n{2,}/.test(text)
 const getFirstParagraph = (text: string): string => {
   const match = text.match(/^(.+?)(?:\n{2,}|$)/s)
   return match?.[1]?.trim() ?? ''
+}
+
+type PropertyFormat = Property['format']
+
+const normalizePropertyFormatForDocs = (format: PropertyFormat): string => {
+  const formatMap: Partial<Record<PropertyFormat, string>> = {
+    id: 'ID',
+  }
+
+  return formatMap[format] ?? pascalCase(format)
 }

@@ -6,7 +6,7 @@ Represents an [access control system](../../../capability-guides/access-systems.
 
 ### `acs_system_id`
 
-Format: `Id`
+Format: `ID`
 
 ID of the `acs_system`.
 
@@ -144,7 +144,7 @@ Warnings associated with the `acs_system`.
 
 ### `workspace_id`
 
-Format: `Id`
+Format: `ID`
 
 ID of the [workspace](../../../core-concepts/workspaces.md) that contains the `acs_system`.
 
