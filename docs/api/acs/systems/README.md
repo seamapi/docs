@@ -70,7 +70,16 @@ Errors associated with the `acs_system`.
 
 ### `external_type`
 
-Format: `Enum`
+Format: `Enum`/
+Possible enum values:
+- `pti_site`
+- `alta_org`
+- `salto_site`
+- `brivo_account`
+- `hid_credential_manager_organization`
+- `visionline_system`
+- `assa_abloy_credential_service`
+- `latch_building`
 
 Brand-specific terminology for the `acs_system` type.
 
@@ -114,7 +123,16 @@ Name of the `acs_system`.
 **Deprecated**. Use `external_type`.
 {% endhint %}
 
-Format: `Enum`
+Format: `Enum`/
+Possible enum values:
+- `pti_site`
+- `alta_org`
+- `salto_site`
+- `brivo_account`
+- `hid_credential_manager_organization`
+- `visionline_system`
+- `assa_abloy_credential_service`
+- `latch_building`
 
 ---
 

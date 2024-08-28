@@ -76,7 +76,7 @@ export function setEndpointTemplateContext(
 type ContextResourceProperty = Pick<
   Property,
   'name' | 'description' | 'isDeprecated' | 'deprecationMessage'
-> & { format: string }
+> & { format: string; enumValues?: string[] }
 interface ContextResource {
   name: string
   description: string
@@ -132,21 +132,28 @@ export function setApiRouteTemplateContext(
       file.resources.push({
         name: resourceName,
         description: resource.description,
-        properties: resource.properties.map(
-          ({
+        properties: resource.properties.map((prop) => {
+          const {
             name,
             description,
             format,
             isDeprecated,
             deprecationMessage,
-          }) => ({
+          } = prop
+          const contextResourceProp: ContextResourceProperty = {
             name,
             description,
             format: normalizePropertyFormatForDocs(format),
             isDeprecated,
             deprecationMessage,
-          }),
-        ),
+          }
+
+          if ('values' in prop) {
+            contextResourceProp.enumValues = prop.values.map(({ name }) => name)
+          }
+
+          return contextResourceProp
+        }),
       })
     }
   }
