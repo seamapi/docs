@@ -1,4 +1,3 @@
-/
 # List ACS Systems
 
 ```

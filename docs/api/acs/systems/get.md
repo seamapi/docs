@@ -1,4 +1,3 @@
-/
 # Get an ACS System
 
 ```

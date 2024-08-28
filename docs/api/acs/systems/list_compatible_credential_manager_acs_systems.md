@@ -1,4 +1,3 @@
-/
 # List Compatible Credential Manager ACS Systems
 
 ```
