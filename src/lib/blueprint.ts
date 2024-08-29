@@ -2,18 +2,20 @@ import { createBlueprint, TypesModuleSchema } from '@seamapi/blueprint'
 import * as types from '@seamapi/types/connect'
 import type Metalsmith from 'metalsmith'
 
-export const blueprint = (
+export const blueprint = async (
   _files: Metalsmith.Files,
   metalsmith: Metalsmith,
-): void => {
+): Promise<void> => {
   const metadata = metalsmith.metadata()
 
-  if ('codeSampleDefinitions' in metadata) {
-    const typesModule = TypesModuleSchema.parse({
-      ...types,
-      codeSampleDefinitions: metadata.codeSampleDefinitions,
-    })
+  const codeSampleDefinitions =
+    'codeSampleDefinitions' in metadata ? metadata.codeSampleDefinitions : []
 
-    Object.assign(metadata, createBlueprint(typesModule))
-  }
+  const typesModule = TypesModuleSchema.parse({
+    ...types,
+    codeSampleDefinitions,
+  })
+
+  const blueprint = await createBlueprint(typesModule)
+  Object.assign(metadata, blueprint)
 }
