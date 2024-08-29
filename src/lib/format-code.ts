@@ -18,7 +18,7 @@ export const formatCode = async (
     case 'php':
       return await formatPhp(content)
     case 'bash':
-      return content
+      return await formatBash(content)
     case 'json':
       return await formatJson(content)
     default:
@@ -50,6 +50,18 @@ const formatRuby = async (content: string): Promise<string> => {
   } catch {
     // eslint-disable-next-line no-console
     console.warn('Skipping ruby formatting: standardrb is not installed')
+    return content
+  }
+}
+
+const formatBash = async (content: string): Promise<string> => {
+  try {
+    await commandExists('shfmt')
+    const result = await execa({ input: content })`shfmt -`
+    return result.stdout
+  } catch {
+    // eslint-disable-next-line no-console
+    console.warn('Skipping bash formatting: shfmt is not installed')
     return content
   }
 }
