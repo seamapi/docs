@@ -23,5 +23,5 @@ You can perform the following actions on `acs_user` objects:
 * [Suspend a user](suspend.md)
 * [Unsuspend a user](unsuspend.md)
 * [Delete a user](delete.md)
-* [Add a user to an access group](../access_groups/add_user.md)
-* [Remove a user from an access group](../access_groups/remove_user.md)
+* [Add a user to an access group](add_to_access_group.md)
+* [Remove a user from an access group](remove_from_access_group.md)

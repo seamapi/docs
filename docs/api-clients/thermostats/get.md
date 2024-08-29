@@ -16,7 +16,7 @@ layout:
 # Get a Thermostat
 
 {% hint style="info" %}
-Deprecated: Use [Get Device](../api-clients/devices/get.md) instead.
+Deprecated: Use [Get Device](../devices/get.md) instead.
 {% endhint %}
 
 Retrieves the details of a thermostat.
