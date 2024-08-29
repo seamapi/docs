@@ -8,7 +8,7 @@ Seam enables you to adjust the [current heating and cooling settings](configure-
 
 When you send a command to change a setting on a thermostat, it might take a while for Seam to confirm the success of the action. To handle this potential delay, Seam provides an[ action attempt ](../../core-concepts/action-attempts.md)object that tracks the status of the action, indicating whether the action was successful.
 
-To ensure that the action has executed successfully, poll the status of the action attempt object using the [Get Action Attempt](../../api-clients/action-attempt/get-action-attempt.md) request. Once Seam has successfully adjusted the thermostat setting, the `status` of the action attempt indicates `success`.
+To ensure that the action has executed successfully, poll the status of the action attempt object using the [Get Action Attempt](../../api-clients/action_attempts/get.md) request. Once Seam has successfully adjusted the thermostat setting, the `status` of the action attempt indicates `success`.
 
 ***
 
@@ -36,7 +36,7 @@ Seam supports a single ongoing fan mode setting.
 
 ## Before You Begin
 
-To confirm that Seam supports thermostat programming for your device, use [Get Device](../../api-clients/devices/get-device.md) or [Get Thermostat](../../thermostats/get-thermostat.md) to query the device and check its `capabilities_supported` property. Ensure that the `capabilities_supported` list includes `thermostat`. For more information, see [Retrieving Individual Thermostats](retrieving-thermostats.md#retrieving-individual-thermostats).
+To confirm that Seam supports thermostat programming for your device, use [Get Device](../../api-clients/devices/get.md) or [Get Thermostat](../../thermostats/get-thermostat.md) to query the device and check its `capabilities_supported` property. Ensure that the `capabilities_supported` list includes `thermostat`. For more information, see [Retrieving Individual Thermostats](retrieving-thermostats.md#retrieving-individual-thermostats).
 
 ***
 
@@ -217,7 +217,7 @@ return nil
 
 ### 2. Poll the Action Attempt to Verify the Setting Change
 
-Use the `action_attempt_id` from the previous response to poll the associated action attempt using the [Get Action Attempt](../../api-clients/action-attempt/get-action-attempt.md) request. When the setting modification completes successfully, the `status` of the action attempt changes to `success`.
+Use the `action_attempt_id` from the previous response to poll the associated action attempt using the [Get Action Attempt](../../api-clients/action_attempts/get.md) request. When the setting modification completes successfully, the `status` of the action attempt changes to `success`.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -345,7 +345,7 @@ The following sections describe how to se the current climate settings on a ther
 
 ### Set a Thermostat to Heat Mode
 
-You can [set a thermostat to operate in heating mode](../../api-clients/thermostats/set-to-heat-mode.md) and specify a desired heating set point temperature. By establishing the set point, the thermostat activates the associated heating system to maintain the specified temperature.
+You can [set a thermostat to operate in heating mode](../../api-clients/thermostats/heat.md) and specify a desired heating set point temperature. By establishing the set point, the thermostat activates the associated heating system to maintain the specified temperature.
 
 Set the HVAC mode to `heat` by providing the `device_id` of the thermostat and the heating set point in Celsius or Fahrenheit.
 
@@ -514,7 +514,7 @@ return nil
 
 ### Set a Thermostat to Cool Mode
 
-You can [set a thermostat to operate in cooling mode](../../api-clients/thermostats/set-to-cool-mode.md) and specify a desired cooling set point temperature. By establishing the set point, the thermostat activates the associated cooling system to maintain the specified temperature.
+You can [set a thermostat to operate in cooling mode](../../api-clients/thermostats/cool.md) and specify a desired cooling set point temperature. By establishing the set point, the thermostat activates the associated cooling system to maintain the specified temperature.
 
 Set the HVAC mode to `cool` by providing the `device_id` of the thermostat and the cooling set point in Celsius or Fahrenheit.
 
@@ -687,7 +687,7 @@ return nil
 
 ### Set a Thermostat to Heat-Cool Mode
 
-You can [set a thermostat to operate in heat-cool (also known as "auto") mode](../../api-clients/thermostats/set-to-heat-cool-auto-mode.md) and specify desired set point temperatures for both heating and cooling. By establishing the set points, the thermostat activates the associated heating and cooling systems as needed to maintain the specified temperature range.
+You can [set a thermostat to operate in heat-cool (also known as "auto") mode](../../api-clients/thermostats/heat_cool.md) and specify desired set point temperatures for both heating and cooling. By establishing the set points, the thermostat activates the associated heating and cooling systems as needed to maintain the specified temperature range.
 
 Set the HVAC mode to `heat_cool` by providing the `device_id` of the thermostat and both the heating set point and the cooling set point in Celsius or Fahrenheit.
 
@@ -867,7 +867,7 @@ return nil
 
 ### Turn off Heating and Cooling
 
-You can [set a thermostat to operate in "off" mode](../../api-clients/thermostats/set-to-off-mode.md), which deactivates the associated heating and cooling systems. In this state, the thermostat does not regulate indoor temperatures.
+You can [set a thermostat to operate in "off" mode](../../api-clients/thermostats/off.md), which deactivates the associated heating and cooling systems. In this state, the thermostat does not regulate indoor temperatures.
 
 Set the HVAC mode to `off` by providing the `device_id` of the thermostat.
 
@@ -1030,7 +1030,7 @@ return nil
 
 ### Set the Fan Mode
 
-You can [configure the fan associated with a thermostat](../../api-clients/thermostats/set-fan-mode.md) to operate in either `on` or `auto` mode. In the `on` setting, the fan runs continuously, while in the `auto` setting, the fan operates based on temperature needs and system demands.
+You can [configure the fan associated with a thermostat](../../api-clients/thermostats/set_fan_mode.md) to operate in either `on` or `auto` mode. In the `on` setting, the fan runs continuously, while in the `auto` setting, the fan operates based on temperature needs and system demands.
 
 Set the fan mode by providing the `device_id` of the thermostat and specifying the desired fan mode setting.
 

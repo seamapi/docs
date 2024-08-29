@@ -33,7 +33,7 @@ The following example walks you through this process:
 # Step 1:
 # Create the new user on the Latch ACS.
 # jane_user is a user_identity that represents
-# a user within your set of app users. 
+# a user within your set of app users.
 building_a_resident = seam.acs.users.create(
   acs_system_id="11111111-1111-1111-1111-111111111111",
   user_identity_id=jane_user.user_identity_id,
@@ -54,7 +54,7 @@ for entrance in entrances:
     starts_at="2024-07-13T16:50:42.072Z",
     ends_at="2024-07-18T16:50:42.072Z"
   )
-  
+
   pprint(credential)
 
   # View the list of entrances to which the credential
@@ -94,7 +94,7 @@ AcsCredential(
 # Step 1:
 # Create the new user on the Latch ACS.
 # jane_user is a user_identity that represents
-# a user within your set of app users. 
+# a user within your set of app users.
 building_a_resident=$(curl -X 'POST' \
   'https://connect.getseam.com/acs/users/create' \
   -H 'accept: application/json' \
@@ -126,10 +126,10 @@ do
     \"starts_at\": \"2024-07-13T16:50:42.072Z\",
     \"ends_at\": \"2024-07-18T16:50:42.072Z\"
   }");
-  
+
   echo $credential;
-  
-  # It is also useful to list the entrances 
+
+  # It is also useful to list the entrances
   # to which the mobile key grants access.
   # Use GET or POST.
   curl -X 'GET' \
@@ -203,8 +203,8 @@ for (const entrance of entrances) {
   });
 
   console.log(credential);
-  
-  // It is also useful to list the entrances 
+
+  // It is also useful to list the entrances
   // to which the mobile key grants access.
   await seam.acs.credentials.listAccessibleEntrances({
     acs_credential_id: credential.acs_credential_id
@@ -222,7 +222,7 @@ for (const entrance of entrances) {
   access_method: 'code',
   starts_at: '2024-07-13T16:50:42.072Z',
   ends_at: '2024-07-18T16:50:42.072Z',
-  ...  
+  ...
 }
 [
   {
@@ -279,8 +279,8 @@ foreach ($entrances as $entrance) {
   );
 
   echo json_encode($credential, JSON_PRETTY_PRINT);
-  
-  // It is also useful to list the entrances 
+
+  // It is also useful to list the entrances
   // to which the mobile key grants access.
   $seam->acs->credentials->list_accessible_entrances(
     acs_credential_id: $credential->acs_credential_id
@@ -341,10 +341,10 @@ foreach (AcsEntrance entrance in entrances)
     startsAt: "2024-07-13T16:50:42Z",
     endsAt: "2024-07-18T16:50:42Z"
   );
-  
+
   Console.WriteLine(credential);
-  
-  // It is also useful to list the entrances 
+
+  // It is also useful to list the entrances
   // to which the mobile key grants access.
   seam.CredentialsAcs.ListAccessibleEntrances(
     acsCredentialId: credential.acsCredentialId
@@ -433,8 +433,8 @@ for _, entrance := range entrances {
   };
 
   fmt.Println(credential);
-  
-  // It is also useful to list the entrances 
+
+  // It is also useful to list the entrances
   // to which the mobile key grants access.
   acs_entrances, uErr := client.Acs.Credentials.ListAccessibleEntrances(
     context.Background(), &acs.CredentialsListAccessibleEntrancesRequest{
@@ -482,6 +482,6 @@ To learn more about using the Seam API with your Latch ACS, see the following to
 * [Managing ACS Users](../../products/access-systems/user-management.md)
 * [Managing Credentials](../../capability-guides/access-systems/managing-credentials.md)
 * [Mobile Access](../../products/mobile-access-in-development/)
-* [Access Control Systems](../../api-clients/access-control-systems/) in the Seam API reference
-* [User Identities](../../api-clients/user-identities/) in the Seam API reference
+* [Access Control Systems](../../api-clients/acs/) in the Seam API reference
+* [User Identities](../../api-clients/user_identities/) in the Seam API reference
 

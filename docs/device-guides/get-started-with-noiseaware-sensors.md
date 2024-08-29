@@ -143,7 +143,7 @@ webview = seam.connect_webviews.create(
 
 puts webview.login_successful # false
 
-# Send the webview URL to your user 
+# Send the webview URL to your user
 puts webview.url
 ```
 {% endtab %}
@@ -356,7 +356,7 @@ echo json_encode($device[0]);
 
 NoiseAware users can define noise thresholds at which noise alerts are sent.
 
-You'll get an event for `noise_threshold.noise_threshold_triggered` when you set up a [webhook handler](../core-concepts/webhooks.md). You can also [poll for events](../api-clients/events/list-events.md).
+You'll get an event for `noise_threshold.noise_threshold_triggered` when you set up a [webhook handler](../core-concepts/webhooks.md). You can also [poll for events](../api-clients/events/list.md).
 
 {% hint style="info" %}
 NoiseAware has three distinct noise alerts: `newNoise`, `continuedNoise`, and `resolvedNoise`. It is essential to keep in mind that Seam will solely trigger the `noise_threshold.noise_threshold_triggered` event for `newNoise`.
@@ -382,7 +382,7 @@ def endpoint():
     #   "noiseaware_property_id": 12345,
     #   "noiseaware_property_name": "Acme Corporation"
     # }
-        
+
 ```
 {% endtab %}
 

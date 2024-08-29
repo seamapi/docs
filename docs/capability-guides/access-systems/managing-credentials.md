@@ -18,7 +18,7 @@ You can assign a credential to an ACS user when you create the credential. You c
 
 ## Create a Credential for an ACS User
 
-To [create a credential for an ACS user](../../api-clients/access-control-systems/credentials/create-credential-for-user.md), provide the `acs_user_id` and the desired `access_method`. Seam supports the following access methods:
+To [create a credential for an ACS user](../../api-clients/acs/credentials/create.md), provide the `acs_user_id` and the desired `access_method`. Seam supports the following access methods:
 
 * `code` for a PIN code-based credential
 * `card` for a key card-based credential
@@ -714,7 +714,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 
 ## Delete a Credential
 
-To [delete a credential](../../api-clients/access-control-systems/credentials/delete-credential.md), provide the `acs_credential_id`.
+To [delete a credential](../../api-clients/acs/credentials/delete.md), provide the `acs_credential_id`.
 
 {% tabs %}
 {% tab title="Python" %}
