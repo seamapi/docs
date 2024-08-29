@@ -125,7 +125,6 @@ if they are not installed, the doc generation will simply skip the formatting st
 GitHub actions will automatically ensure the formatting is applied for all pull requests.
 
 - [shfmt](https://github.com/mvdan/sh)
-- [PHP-CS-Fixer](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/master)
 - [ruff](https://github.com/astral-sh/ruff)
 
 ## GitHub Actions

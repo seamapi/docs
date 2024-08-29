@@ -1,3 +1,4 @@
+import * as prettierPluginPhp from '@prettier/plugin-php/standalone'
 import type { CodeSampleSyntax } from '@seamapi/blueprint'
 import commandExists from 'command-exists'
 import { execa } from 'execa'
@@ -13,9 +14,9 @@ export const formatCode = async (
     case 'python':
       return await formatPython(content)
     case 'ruby':
-      return content
+      return await formatRuby(content)
     case 'php':
-      return content
+      return await formatPhp(content)
     case 'bash':
       return content
     case 'json':
@@ -39,6 +40,25 @@ const formatPython = async (content: string): Promise<string> => {
     console.warn('Skipping python formatting: ruff is not installed')
     return content
   }
+}
+
+const formatRuby = async (content: string): Promise<string> => {
+  try {
+    await commandExists('standardrb')
+    const result = await execa({ input: content })`standardrb -`
+    return result.stdout
+  } catch {
+    // eslint-disable-next-line no-console
+    console.warn('Skipping ruby formatting: standardrb is not installed')
+    return content
+  }
+}
+
+const formatPhp = async (content: string): Promise<string> => {
+  return await prettier(content, {
+    parser: 'php',
+    plugins: [prettierPluginPhp.default],
+  })
 }
 
 const formatJson = async (content: string): Promise<string> => {
