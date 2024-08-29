@@ -2,6 +2,8 @@ import { createBlueprint, TypesModuleSchema } from '@seamapi/blueprint'
 import * as types from '@seamapi/types/connect'
 import type Metalsmith from 'metalsmith'
 
+import { formatCode } from './format-code.js'
+
 export const blueprint = async (
   _files: Metalsmith.Files,
   metalsmith: Metalsmith,
@@ -16,6 +18,6 @@ export const blueprint = async (
     codeSampleDefinitions,
   })
 
-  const blueprint = await createBlueprint(typesModule)
+  const blueprint = await createBlueprint(typesModule, { formatCode })
   Object.assign(metadata, blueprint)
 }
