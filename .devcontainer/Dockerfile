@@ -2,8 +2,10 @@ ARG VARIANT="20"
 
 FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:${VARIANT}
 
-RUN apt-get install -y ruby ruby-dev \
- && gem install standard
+RUN apt-get update
+
+RUN apt-get install -y ruby ruby-dev
+RUN gem install standard
 
 USER node
 WORKDIR /home/node
