@@ -2,6 +2,8 @@ ARG VARIANT="20"
 
 FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:${VARIANT}
 
+RUN curl -LsSf https://astral.sh/ruff/0.5.0/install.sh | sh
+
 USER node
 WORKDIR /home/node
 
