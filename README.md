@@ -117,6 +117,17 @@ $ npm install
 [npm]: https://www.npmjs.com/
 [nvm]: https://github.com/creationix/nvm
 
+### Optional Requirements
+
+These tools are using to format code during documentation generation.
+They are not required for local development:
+if they are not installed, the doc generation will simply skip the formatting step.
+GitHub actions will automatically ensure the formatting is applied for all pull requests.
+
+- [shfmt](https://github.com/mvdan/sh)
+- [PHP-CS-Fixer](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/master)
+- [ruff](https://github.com/astral-sh/ruff)
+
 ## GitHub Actions
 
 _GitHub Actions should already be configured: this section is for reference only._
