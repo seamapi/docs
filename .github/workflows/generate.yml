@@ -40,6 +40,12 @@ jobs:
           wget https://github.com/mvdan/sh/releases/download/v3.9.0/shfmt_v3.9.0_linux_amd64 -O shfmt
           chmod a+x shfmt
           mv shfmt /usr/local/bin/shfmt
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+      - name: Install standardrb
+        run: gem install standard -v 1.31.0
       - name: Normalize package-lock.json
         run: npm install
       - name: Generate docs
