@@ -1,46 +1,52 @@
 {{#each resources}}
+# `{{name}}`
 {{#if description}}
-{{description}}
 
+{{description}}
 {{/if}}
-## `{{name}}`
+
+## Properties
 
 {{#each properties}}
 ### `{{name}}`
 {{#if isDeprecated}}
 
 {% hint style="warning" %}
-**Deprecated** use something else.
+**Deprecated**. {{deprecationMessage}}
 {% endhint %}
 {{/if}}
+
+Format: `{{format}}`
 {{#if description}}
 
 {{description}}
 {{/if}}
+{{#if enumValues}}
 
-Type: `{{jsonType}}`
-{{#if format}}
-Format: `{{format}}`
+Possible enum values:
+{{#each enumValues}}
+- `{{this}}`
+{{/each}}
 {{/if}}
 
 ---
 
 {{/each}}
 {{/each}}
-## Endpoints
+# Endpoints
 
 {{#each endpoints}}
-### [`{{path}}`](./{{path}}.md)
+## [`{{path}}`](./{{path}}.md)
 
 {{description}}
 
 ---
 
 {{/each}}
-## Events
+# Events
 
 {{~#each events}}
-### `{{name}}`
+## `{{name}}`
 
 {{description}}
 

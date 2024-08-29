@@ -1,4 +1,5 @@
 import type { Blueprint, Endpoint, Property, Route } from '@seamapi/blueprint'
+import { pascalCase } from 'change-case'
 
 export interface EndpointTemplateContext {
   description: string
@@ -17,6 +18,7 @@ export interface EndpointTemplateContext {
     description: string
     resourceType: string | null
     responseKey: string | null
+    responseType: string | null
   }
   codeSamples: Array<{
     title: string
@@ -54,12 +56,14 @@ export function setEndpointTemplateContext(
     description: endpoint.response.description,
     resourceType: null,
     responseKey: null,
+    responseType: null,
   }
 
   if (endpoint.response.responseType !== 'void') {
-    const { resourceType, responseKey } = endpoint.response
+    const { resourceType, responseKey, responseType } = endpoint.response
     file.response.resourceType = resourceType
     file.response.responseKey = responseKey
+    file.response.responseType = responseType
   }
 
   file.codeSamples = endpoint.codeSamples.map((sample) => ({
@@ -71,10 +75,11 @@ export function setEndpointTemplateContext(
 
 type ContextResourceProperty = Pick<
   Property,
-  'name' | 'jsonType' | 'description' | 'format' | 'isDeprecated'
->
+  'name' | 'description' | 'isDeprecated' | 'deprecationMessage'
+> & { format: string; enumValues?: string[] }
 interface ContextResource {
   name: string
+  description: string
   properties: ContextResourceProperty[]
 }
 type ContextEndpoint = Pick<Endpoint, 'path' | 'description'>
@@ -91,7 +96,9 @@ export function setApiRouteTemplateContext(
 ): void {
   file.endpoints = route.endpoints.map(({ path, description }) => ({
     path,
-    description,
+    description: hasMultipleParagraphs(description)
+      ? getFirstParagraph(description)
+      : description,
   }))
   file.resources = []
 
@@ -124,16 +131,47 @@ export function setApiRouteTemplateContext(
 
       file.resources.push({
         name: resourceName,
-        properties: resource.properties.map(
-          ({ name, jsonType, description, format, isDeprecated }) => ({
+        description: resource.description,
+        properties: resource.properties.map((prop) => {
+          const {
             name,
-            jsonType,
             description,
             format,
             isDeprecated,
-          }),
-        ),
+            deprecationMessage,
+          } = prop
+          const contextResourceProp: ContextResourceProperty = {
+            name,
+            description,
+            format: normalizePropertyFormatForDocs(format),
+            isDeprecated,
+            deprecationMessage,
+          }
+
+          if ('values' in prop) {
+            contextResourceProp.enumValues = prop.values.map(({ name }) => name)
+          }
+
+          return contextResourceProp
+        }),
       })
     }
   }
+}
+
+const hasMultipleParagraphs = (text: string): boolean => /\n{2,}/.test(text)
+
+const getFirstParagraph = (text: string): string => {
+  const match = text.match(/^(.+?)(?:\n{2,}|$)/s)
+  return match?.[1]?.trim() ?? ''
+}
+
+type PropertyFormat = Property['format']
+
+const normalizePropertyFormatForDocs = (format: PropertyFormat): string => {
+  const formatMap: Partial<Record<PropertyFormat, string>> = {
+    id: 'ID',
+  }
+
+  return formatMap[format] ?? pascalCase(format)
 }
