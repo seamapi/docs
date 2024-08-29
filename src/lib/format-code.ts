@@ -1,4 +1,5 @@
 import type { CodeSampleSyntax } from '@seamapi/blueprint'
+import { format as prettier } from 'prettier'
 
 export const formatCode = async (
   content: string,
@@ -6,7 +7,7 @@ export const formatCode = async (
 ): Promise<string> => {
   switch (syntax) {
     case 'javascript':
-      return content
+      return await prettier(content, { parser: 'typescript' })
     case 'python':
       return content
     case 'ruby':
@@ -16,7 +17,7 @@ export const formatCode = async (
     case 'bash':
       return content
     case 'json':
-      return content
+      return await prettier(content, { parser: 'json' })
     default:
       return content
   }
