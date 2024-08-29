@@ -191,7 +191,7 @@ Navigate to the URL that the Connect Webview object returns. Because you are usi
 
 ### Get the New Connect Webview
 
-After you complete the authorization login, you receive an event for [`connected_account.created`](../../api-clients/events/) if you set up a [webhook handler](../../core-concepts/webhooks.md). Otherwise, you can poll for the Connect Webview until the status of this Connect Webview changes, as follows:
+After you complete the authorization login, you receive an event for [`connected_account.created`](../../api-clients/events/#event-types) if you set up a [webhook handler](../../core-concepts/webhooks.md). Otherwise, you can poll for the Connect Webview until the status of this Connect Webview changes, as follows:
 
 {% tabs %}
 {% tab title="Python" %}
