@@ -126,6 +126,7 @@ GitHub actions will automatically ensure the formatting is applied for all pull 
 
 - [shfmt](https://github.com/mvdan/sh)
 - [ruff](https://github.com/astral-sh/ruff)
+- [standardrb](https://github.com/standardrb/standard)
 
 ## GitHub Actions
 
