@@ -12,6 +12,9 @@
     "EditorConfig.EditorConfig",
     "esbenp.prettier-vscode"
   ],
+  "remoteEnv": {
+    "PATH": "${containerEnv:PATH}:${localEnv:HOME}/.cargo/env"
+  },
   "postCreateCommand": "npm install",
   "remoteUser": "node"
 }
