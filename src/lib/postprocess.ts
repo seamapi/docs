@@ -1,5 +1,5 @@
 import { existsSync } from 'node:fs'
-import { join, relative } from 'node:path'
+import { dirname, join, relative, sep } from 'node:path'
 
 import type Metalsmith from 'metalsmith'
 
@@ -43,6 +43,7 @@ export const postprocess = (
 
 const getRelativeLink = (name: string, target: string, url: URL): string => {
   const src = join(docsRoot, name)
-  const relativePath = relative(src, target)
-  return `${relativePath}${url.hash}`
+  const relativePath = relative(dirname(src), target)
+  const urlPath = relativePath.split(sep).join('/')
+  return `${urlPath}${url.hash}`
 }
