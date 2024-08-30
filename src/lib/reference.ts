@@ -70,7 +70,7 @@ export const postprocess = (
         .replaceAll(new RegExp(`(${baseUrl}[^)]+)`, 'g'), '$1')
         .replaceAll(
           baseUrl,
-          new Array(name.split('/').length + 1).fill('').join('../'),
+          new Array(name.split('/').length).fill('').join('../'),
         ),
     )
   }
