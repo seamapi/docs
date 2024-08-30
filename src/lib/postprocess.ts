@@ -4,6 +4,8 @@ import { join, relative } from 'node:path'
 import type Metalsmith from 'metalsmith'
 
 const baseUrl = 'https://docs.seam.co/latest/'
+const urlPrefix = '/latest'
+const docsRoot = 'docs'
 
 export const postprocess = (
   files: Metalsmith.Files,
@@ -15,19 +17,32 @@ export const postprocess = (
       contents.replaceAll(new RegExp(`(${baseUrl}[^)]+)`, 'g'), ($1, $2) => {
         if (typeof $2 !== 'string') return $1
         const url = new URL($2)
-        url.pathname = url.pathname.replace('/latest', '')
+        url.pathname = url.pathname.replace(urlPrefix, '')
         const targetRoot = join('docs', url.pathname)
+
         const target = `${targetRoot}.md`
+        if (existsSync(target)) {
+          return getRelativeLink(name, target, url)
+        }
+
         const readmeTarget = join(targetRoot, 'README.md')
-        const src = join('docs', name)
-        if (existsSync(target)) return relative(src, target)
-        if (existsSync(readmeTarget)) return relative(src, readmeTarget)
+        if (existsSync(readmeTarget)) {
+          return getRelativeLink(name, readmeTarget, url)
+        }
+
         // eslint-disable-next-line no-console
         console.warn(
           `Could not find a matching file for ${$1} at ${targetRoot}.md or ${targetRoot}/README.md.`,
         )
+
         return $1
       }),
     )
   }
+}
+
+const getRelativeLink = (name: string, target: string, url: URL): string => {
+  const src = join(docsRoot, name)
+  const relativePath = relative(src, target)
+  return `${relativePath}${url.hash}`
 }

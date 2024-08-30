@@ -16,7 +16,7 @@ ID of the `acs_system`.
 
 Format: `Boolean`
 
-Indicates whether the `acs_system` supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](../../../../capability-guides/access-systems/understanding-access-control-system-differences.md).
+Indicates whether the `acs_system` supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](../../../../capability-guides/access-systems/understanding-access-control-system-differences.md#access-group-based-access-control-systems).
 
 ---
 
@@ -32,7 +32,7 @@ Indicates whether it is possible to [launch enrollment automations](https://docs
 
 Format: `Boolean`
 
-Indicates whether the `acs_system` supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](../../../../capability-guides/access-systems/understanding-access-control-system-differences.md).
+Indicates whether the `acs_system` supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](../../../../capability-guides/access-systems/understanding-access-control-system-differences.md#access-group-based-access-control-systems).
 
 ---
 
@@ -40,7 +40,7 @@ Indicates whether the `acs_system` supports creating [access groups](https://doc
 
 Format: `Boolean`
 
-Indicates whether the `acs_system` supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](../../../../capability-guides/access-systems/understanding-access-control-system-differences.md).
+Indicates whether the `acs_system` supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](../../../../capability-guides/access-systems/understanding-access-control-system-differences.md#access-group-based-access-control-systems).
 
 ---
 
