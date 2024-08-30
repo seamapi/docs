@@ -33,37 +33,37 @@ const formatJavascript = async (content: string): Promise<string> => {
 const formatPython = async (content: string): Promise<string> => {
   try {
     await commandExists('ruff')
-    const result = await execa({ input: content })`ruff format -`
-    return result.stdout
-  } catch {
+  } catch (err) {
     // eslint-disable-next-line no-console
     console.warn('Skipping python formatting: ruff is not installed')
     return content
   }
+  const result = await execa({ input: content })`ruff format -`
+  return result.stdout
 }
 
 const formatRuby = async (content: string): Promise<string> => {
   try {
-    await commandExists('standardrb')
-    const result = await execa({ input: content })`standardrb -`
-    return result.stdout
+    await commandExists('ruff')
   } catch {
     // eslint-disable-next-line no-console
     console.warn('Skipping ruby formatting: standardrb is not installed')
     return content
   }
+  const result = await execa({ input: content })`standardrb --stdin --fix -`
+  return result.stdout
 }
 
 const formatBash = async (content: string): Promise<string> => {
   try {
     await commandExists('shfmt')
-    const result = await execa({ input: content })`shfmt -`
-    return result.stdout
   } catch {
     // eslint-disable-next-line no-console
     console.warn('Skipping bash formatting: shfmt is not installed')
     return content
   }
+  const result = await execa({ input: content })`shfmt -`
+  return result.stdout
 }
 
 const formatPhp = async (content: string): Promise<string> => {
