@@ -59,7 +59,7 @@ const formatRuby = async (content: string): Promise<string> => {
     return content
   }
   const result = await execa({ input: content })`standardrb --stdin --fix -`
-  return result.stdout
+  return result.stdout.split('\n').slice(1).join('\n')
 }
 
 const formatBash = async (content: string): Promise<string> => {
