@@ -1,6 +1,6 @@
 # `acs_system`
 
-Represents an [access control system](../../../capability-guides/access-systems.md).
+Represents an [access control system](../../../../capability-guides/access-systems).
 
 ## Properties
 
@@ -16,7 +16,7 @@ ID of the `acs_system`.
 
 Format: `Boolean`
 
-Indicates whether the `acs_system` supports [adding users to access groups](../../../capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group.md). See also [Access Group-based Access Control Systems](../../../capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems.md).
+Indicates whether the `acs_system` supports [adding users to access groups](../../../../capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](../../../../capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).
 
 ---
 
@@ -24,7 +24,7 @@ Indicates whether the `acs_system` supports [adding users to access groups](../.
 
 Format: `Boolean`
 
-Indicates whether it is possible to [launch enrollment automations](../../../capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut.md) for the `acs_system`.
+Indicates whether it is possible to [launch enrollment automations](../../../../capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`.
 
 ---
 
@@ -32,7 +32,7 @@ Indicates whether it is possible to [launch enrollment automations](../../../cap
 
 Format: `Boolean`
 
-Indicates whether the `acs_system` supports creating [access groups](../../../capability-guides/access-systems/assigning-users-to-access-groups.md). See also [Access Group-based Access Control Systems](../../../capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems.md).
+Indicates whether the `acs_system` supports creating [access groups](../../../../capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](../../../../capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).
 
 ---
 
@@ -40,7 +40,7 @@ Indicates whether the `acs_system` supports creating [access groups](../../../ca
 
 Format: `Boolean`
 
-Indicates whether the `acs_system` supports [removing users from access groups](../../../capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group.md). See also [Access Group-based Access Control Systems](../../../capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems.md).
+Indicates whether the `acs_system` supports [removing users from access groups](../../../../capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](../../../../capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).
 
 ---
 
@@ -48,7 +48,7 @@ Indicates whether the `acs_system` supports [removing users from access groups](
 
 Format: `List`
 
-IDs of the [connected accounts](../../../core-concepts/connected-accounts.md) associated with the `acs_system`.
+IDs of the [connected accounts](../../../../core-concepts/connected-accounts) associated with the `acs_system`.
 
 ---
 
@@ -166,7 +166,7 @@ Warnings associated with the `acs_system`.
 
 Format: `ID`
 
-ID of the [workspace](../../../core-concepts/workspaces.md) that contains the `acs_system`.
+ID of the [workspace](../../../../core-concepts/workspaces) that contains the `acs_system`.
 
 ---
 
@@ -174,20 +174,20 @@ ID of the [workspace](../../../core-concepts/workspaces.md) that contains the `a
 
 ## [`/acs/systems/get`](.//acs/systems/get.md)
 
-Returns a specified [access control system](../../../capability-guides/access-systems.md).
+Returns a specified [access control system](../../../../capability-guides/access-systems).
 
 ---
 
 ## [`/acs/systems/list`](.//acs/systems/list.md)
 
-Returns a list of all [access control systems](../../../capability-guides/access-systems.md).
+Returns a list of all [access control systems](../../../../capability-guides/access-systems).
 
 ---
 
 ## [`/acs/systems/list_compatible_credential_manager_acs_systems`](.//acs/systems/list_compatible_credential_manager_acs_systems.md)
 
 Returns a list of all credential manager ACS systems that are compatible with a specified 
-[access control system](../../../capability-guides/access-systems.md).
+[access control system](../../../../capability-guides/access-systems).
 
 ---
 
