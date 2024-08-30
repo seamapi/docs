@@ -40,7 +40,7 @@ export const reference = (
         contents: Buffer.from('\n'),
       }
       const file = files[k] as unknown as File
-      file.layout = 'api-reference.hbs'
+      file.layout = 'api-endpoint.hbs'
       setEndpointLayoutContext(file, endpoint)
 
       for (const sdk of sdks) {
