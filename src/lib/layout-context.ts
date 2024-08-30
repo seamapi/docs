@@ -96,9 +96,7 @@ export function setApiRouteLayoutContext(
 ): void {
   file.endpoints = route.endpoints.map(({ path, description }) => ({
     path,
-    description: hasMultipleParagraphs(description)
-      ? getFirstParagraph(description)
-      : description,
+    description: getFirstParagraph(description),
   }))
   file.resources = []
 
@@ -159,12 +157,8 @@ export function setApiRouteLayoutContext(
   }
 }
 
-const hasMultipleParagraphs = (text: string): boolean => /\n{2,}/.test(text)
-
-const getFirstParagraph = (text: string): string => {
-  const match = text.match(/^(.+?)(?:\n{2,}|$)/s)
-  return match?.[1]?.trim() ?? ''
-}
+const getFirstParagraph = (text: string): string =>
+  text.split('\n\n').at(0) ?? text
 
 type PropertyFormat = Property['format']
 
