@@ -5,7 +5,7 @@ POST /acs/systems/list_compatible_credential_manager_acs_systems ⇒ { acs_syste
 ```
 
 Returns a list of all credential manager ACS systems that are compatible with a specified 
-[access control system](../../../capability-guides/access-systems.md).
+[access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 Specify the ACS system for which you want to retrieve all compatible credential manager ACS 
 systems by including the corresponding `acs_system_id` in the request body.
@@ -23,4 +23,4 @@ ID of the ACS system for which you want to retrieve all compatible credential ma
 
 ## Return Type
 
-Array<[acs_system](../README.md)>
+Array<[acs_system](./README.md)>
