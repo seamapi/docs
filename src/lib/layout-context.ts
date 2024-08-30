@@ -94,8 +94,9 @@ export function setApiRouteLayoutContext(
   route: Route,
   blueprint: Blueprint,
 ): void {
-  file.endpoints = route.endpoints.map(({ path, description }) => ({
+  file.endpoints = route.endpoints.map(({ path, name, description }) => ({
     path,
+    name,
     description: getFirstParagraph(description),
   }))
   file.resources = []
