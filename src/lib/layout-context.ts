@@ -1,7 +1,7 @@
 import type { Blueprint, Endpoint, Property, Route } from '@seamapi/blueprint'
 import { pascalCase } from 'change-case'
 
-export interface EndpointTemplateContext {
+export interface EndpointLayoutContext {
   description: string
   title: string
   path: string
@@ -34,8 +34,8 @@ export interface EndpointTemplateContext {
   }>
 }
 
-export function setEndpointTemplateContext(
-  file: Partial<EndpointTemplateContext>,
+export function setEndpointLayoutContext(
+  file: Partial<EndpointLayoutContext>,
   endpoint: Endpoint,
 ): void {
   file.description = endpoint.description
@@ -84,21 +84,20 @@ interface ContextResource {
 }
 type ContextEndpoint = Pick<Endpoint, 'path' | 'description'>
 
-export interface ResourceTemplateContext {
+export interface RouteLayoutContext {
   resources: ContextResource[]
   endpoints: ContextEndpoint[]
 }
 
-export function setApiRouteTemplateContext(
-  file: Partial<ResourceTemplateContext>,
+export function setApiRouteLayoutContext(
+  file: Partial<RouteLayoutContext>,
   route: Route,
   blueprint: Blueprint,
 ): void {
-  file.endpoints = route.endpoints.map(({ path, description }) => ({
+  file.endpoints = route.endpoints.map(({ path, name, description }) => ({
     path,
-    description: hasMultipleParagraphs(description)
-      ? getFirstParagraph(description)
-      : description,
+    name,
+    description: getFirstParagraph(description),
   }))
   file.resources = []
 
@@ -159,12 +158,8 @@ export function setApiRouteTemplateContext(
   }
 }
 
-const hasMultipleParagraphs = (text: string): boolean => /\n{2,}/.test(text)
-
-const getFirstParagraph = (text: string): string => {
-  const match = text.match(/^(.+?)(?:\n{2,}|$)/s)
-  return match?.[1]?.trim() ?? ''
-}
+const getFirstParagraph = (text: string): string =>
+  text.split('\n\n').at(0) ?? text
 
 type PropertyFormat = Property['format']
 

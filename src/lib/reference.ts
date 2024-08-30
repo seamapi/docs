@@ -2,18 +2,17 @@ import type { Blueprint } from '@seamapi/blueprint'
 import type Metalsmith from 'metalsmith'
 
 import {
-  type EndpointTemplateContext,
-  type ResourceTemplateContext,
-  setApiRouteTemplateContext,
-  setEndpointTemplateContext,
-} from './template-context.js'
+  type EndpointLayoutContext,
+  type RouteLayoutContext,
+  setApiRouteLayoutContext,
+  setEndpointLayoutContext,
+} from './layout-context.js'
 
 const sdks: Array<'javascript'> = []
 
 type Metadata = Partial<Pick<Blueprint, 'routes' | 'resources'>>
 
-type File = EndpointTemplateContext &
-  ResourceTemplateContext & { layout: string }
+type File = EndpointLayoutContext & RouteLayoutContext & { layout: string }
 
 export const reference = (
   files: Metalsmith.Files,
@@ -33,7 +32,7 @@ export const reference = (
     }
     const file = files[k] as unknown as File
     file.layout = 'api-route.hbs'
-    setApiRouteTemplateContext(file, route, metadata)
+    setApiRouteLayoutContext(file, route, metadata)
 
     for (const endpoint of route.endpoints) {
       const k = `api${endpoint.path}.md`
@@ -41,8 +40,8 @@ export const reference = (
         contents: Buffer.from('\n'),
       }
       const file = files[k] as unknown as File
-      file.layout = 'api-reference.hbs'
-      setEndpointTemplateContext(file, endpoint)
+      file.layout = 'api-endpoint.hbs'
+      setEndpointLayoutContext(file, endpoint)
 
       for (const sdk of sdks) {
         const k = `sdk/${sdk}${endpoint.path}.md`
@@ -51,7 +50,7 @@ export const reference = (
         }
         const file = files[k] as unknown as File
         file.layout = 'sdk-reference.hbs'
-        setEndpointTemplateContext(file, endpoint)
+        setEndpointLayoutContext(file, endpoint)
       }
     }
   }
