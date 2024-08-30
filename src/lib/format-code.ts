@@ -8,6 +8,14 @@ export const formatCode = async (
   content: string,
   syntax: CodeSampleSyntax,
 ): Promise<string> => {
+  const output = await formatCodeForSyntax(content, syntax)
+  return output.trim()
+}
+
+export const formatCodeForSyntax = async (
+  content: string,
+  syntax: CodeSampleSyntax,
+): Promise<string> => {
   switch (syntax) {
     case 'javascript':
       return await formatJavascript(content)
