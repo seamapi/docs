@@ -17,13 +17,11 @@ response includes all access control systems connected to your workspace.
   await seam.acs.systems.list({
   connected_account_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
 });
-
   ```
 
   ### Response
   ```javascript
   [{ acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }];
-
   ```
     {% endtab %}
     {% tab title="Python" %}
@@ -57,13 +55,11 @@ seam.acs.systems.list(connected_account_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a3
 $seam->acs->systems->list(
     connected_account_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 );
-
   ```
 
   ### Response
   ```php
   [{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
-
   ```
     {% endtab %}
     {% tab title="Seam CLI" %}
@@ -75,7 +71,6 @@ $seam->acs->systems->list(
   ### Response
   ```seam_cli
   [{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
-
   ```
     {% endtab %}
 {% endtabs %}
