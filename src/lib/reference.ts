@@ -1,38 +1,58 @@
-import type { Blueprint, Endpoint } from '@seamapi/blueprint'
+import type { Blueprint } from '@seamapi/blueprint'
 import type Metalsmith from 'metalsmith'
 
-const sdks = ['javascript']
+import {
+  type EndpointTemplateContext,
+  type ResourceTemplateContext,
+  setApiRouteTemplateContext,
+  setEndpointTemplateContext,
+} from './template-context.js'
+
+const sdks: Array<'javascript'> = []
+
+type Metadata = Partial<Pick<Blueprint, 'routes' | 'resources'>>
+
+type File = EndpointTemplateContext &
+  ResourceTemplateContext & { layout: string }
 
 export const reference = (
   files: Metalsmith.Files,
   metalsmith: Metalsmith,
 ): void => {
-  const metadata = metalsmith.metadata()
+  const metadata = {
+    title: '',
+    routes: [],
+    resources: {},
+    ...(metalsmith.metadata() as Metadata),
+  }
 
-  for (const route of (metadata as Blueprint).routes ?? []) {
+  for (const route of metadata.routes ?? []) {
+    const k = `api${route.path}/README.md`
+    files[k] = {
+      contents: Buffer.from('\n'),
+    }
+    const file = files[k] as unknown as File
+    file.layout = 'api-route.hbs'
+    setApiRouteTemplateContext(file, route, metadata)
+
     for (const endpoint of route.endpoints) {
       const k = `api${endpoint.path}.md`
       files[k] = {
         contents: Buffer.from('\n'),
       }
-      const file = files[k] as Partial<TemplateContext>
+      const file = files[k] as unknown as File
       file.layout = 'api-reference.hbs'
-      file.endpoint = endpoint
+      setEndpointTemplateContext(file, endpoint)
 
       for (const sdk of sdks) {
         const k = `sdk/${sdk}${endpoint.path}.md`
         files[k] = {
           contents: Buffer.from('\n'),
         }
-        const file = files[k] as Partial<TemplateContext>
+        const file = files[k] as unknown as File
         file.layout = 'sdk-reference.hbs'
-        file.endpoint = endpoint
+        setEndpointTemplateContext(file, endpoint)
       }
     }
   }
-}
-
-interface TemplateContext {
-  layout: string
-  endpoint: Endpoint
 }

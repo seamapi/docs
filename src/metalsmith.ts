@@ -5,7 +5,7 @@ import layouts from '@metalsmith/layouts'
 import metadata from '@metalsmith/metadata'
 import Metalsmith from 'metalsmith'
 
-import { blueprint, reference } from './lib/index.js'
+import { blueprint, helpers, postprocess, reference } from './lib/index.js'
 
 const rootDir = dirname(fileURLToPath(import.meta.url))
 
@@ -15,7 +15,7 @@ Metalsmith(rootDir).source('./docs/api').destination('../docs/sdk').clean(true)
 
 Metalsmith(rootDir)
   .source('./docs')
-  .destination('../generated-docs')
+  .destination('../docs')
   .clean(false)
   .use(
     metadata({
@@ -27,8 +27,13 @@ Metalsmith(rootDir)
   .use(
     layouts({
       default: 'default.hbs',
+      engineOptions: {
+        noEscape: true,
+        helpers,
+      },
     }),
   )
+  .use(postprocess)
   .build((err) => {
     if (err != null) throw err
   })

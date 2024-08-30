@@ -14,7 +14,7 @@ This guide explains how to create and manage ACS users. Using the [Access Contro
 
 ## Before You Begin: Identify the ACS System ID
 
-To add ACS users to your access control system, first retrieve the `acs_system_id` of the ACS that you want to configure. To retrieve the ACS details, use [Get a System](../../api-clients/acs/systems/get.md) or [List Systems](../../api-clients/acs/systems/list.md). Then, continue to the remaining sections in this topic to learn how to manage ACS users.
+To add ACS users to your access control system, first retrieve the `acs_system_id` of the ACS that you want to configure. To retrieve the ACS details, use [Get a System](../../api/acs/systems/get.md) or [List Systems](../../api/acs/systems/list.md). Then, continue to the remaining sections in this topic to learn how to manage ACS users.
 
 {% tabs %}
 {% tab title="Python" %}
