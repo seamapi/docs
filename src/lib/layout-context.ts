@@ -1,7 +1,7 @@
 import type { Blueprint, Endpoint, Property, Route } from '@seamapi/blueprint'
 import { pascalCase } from 'change-case'
 
-export interface EndpointTemplateContext {
+export interface EndpointLayoutContext {
   description: string
   title: string
   path: string
@@ -34,8 +34,8 @@ export interface EndpointTemplateContext {
   }>
 }
 
-export function setEndpointTemplateContext(
-  file: Partial<EndpointTemplateContext>,
+export function setEndpointLayoutContext(
+  file: Partial<EndpointLayoutContext>,
   endpoint: Endpoint,
 ): void {
   file.description = endpoint.description
@@ -84,13 +84,13 @@ interface ContextResource {
 }
 type ContextEndpoint = Pick<Endpoint, 'path' | 'description'>
 
-export interface ResourceTemplateContext {
+export interface ResourceLayoutContext {
   resources: ContextResource[]
   endpoints: ContextEndpoint[]
 }
 
-export function setApiRouteTemplateContext(
-  file: Partial<ResourceTemplateContext>,
+export function setApiRouteLayoutContext(
+  file: Partial<ResourceLayoutContext>,
   route: Route,
   blueprint: Blueprint,
 ): void {
