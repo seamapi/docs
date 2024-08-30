@@ -84,13 +84,13 @@ interface ContextResource {
 }
 type ContextEndpoint = Pick<Endpoint, 'path' | 'description'>
 
-export interface ResourceLayoutContext {
+export interface RouteLayoutContext {
   resources: ContextResource[]
   endpoints: ContextEndpoint[]
 }
 
 export function setApiRouteLayoutContext(
-  file: Partial<ResourceLayoutContext>,
+  file: Partial<RouteLayoutContext>,
   route: Route,
   blueprint: Blueprint,
 ): void {

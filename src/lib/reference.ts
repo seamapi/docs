@@ -3,7 +3,7 @@ import type Metalsmith from 'metalsmith'
 
 import {
   type EndpointLayoutContext,
-  type ResourceLayoutContext,
+  type RouteLayoutContext,
   setApiRouteLayoutContext,
   setEndpointLayoutContext,
 } from './layout-context.js'
@@ -12,7 +12,7 @@ const sdks: Array<'javascript'> = []
 
 type Metadata = Partial<Pick<Blueprint, 'routes' | 'resources'>>
 
-type File = EndpointLayoutContext & ResourceLayoutContext & { layout: string }
+type File = EndpointLayoutContext & RouteLayoutContext & { layout: string }
 
 export const reference = (
   files: Metalsmith.Files,
