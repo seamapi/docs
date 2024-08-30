@@ -23,4 +23,4 @@ ID of the ACS system for which you want to retrieve all compatible credential ma
 
 ## Return Type
 
-Array<[acs_system](../README.md)>
+Array<[acs_system](./README.md)>
