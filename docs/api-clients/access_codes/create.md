@@ -558,6 +558,288 @@ System.out.println(CreatedAccessCode);
 {% endtab %}
 {% endtabs %}
 
+### Creating an Access Code with a Preferred Code Length
+
+{% tabs %}
+{% tab title="Python" %}
+**Request:**
+
+```python
+seam.access_codes.create(
+  device = "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+  name = "my access code",
+  starts_at = "2025-01-01T16:00:00Z",
+  ends_at = "2025-01-22T12:00:00Z",
+  preferred_code_length = 4
+)
+```
+
+**Response:**
+
+```
+AccessCode(access_code_id='1bbd1eba-e4a2-4f96-b1b9-8498a5405b2b',
+           device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+           type='time_bound',
+           code='2345',
+           created_at='2023-10-19T02:21:58.738Z',
+           errors=[],
+           warnings=[],
+           starts_at='2025-01-01T16:00:00.000Z',
+           ends_at='2025-01-22T12:00:00.000Z',
+           name='my access code',
+           status='unset',
+           common_code_key=None,
+           is_managed=True,
+           is_waiting_for_code_assignment=None,
+           is_scheduled_on_device=False,
+           pulled_backup_access_code_id=None,
+           is_backup_access_code_available=False,
+           is_backup=None,
+           appearance=None,
+           is_external_modification_allowed=False)
+```
+{% endtab %}
+
+{% tab title="cURL (bash)" %}
+**Request:**
+
+```sh
+curl -X 'POST' \
+  'https://connect.getseam.com/access_codes/create' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+  "name": "my access code",
+  "starts_at": "2025-01-01T16:00:00Z",
+  "ends_at": "2025-01-22T12:00:00Z",
+  "preferred_code_length": 4
+}'
+```
+
+**Response:**
+
+```json
+{
+  "action_attempt": {
+    "status": "pending",
+    "action_type": "CREATE_ACCESS_CODE",
+    "action_attempt_id": "2fa34934-883b-496c-8ec1-ac023de55f5a",
+    "result": null,
+    "error": null
+  },
+  "access_code": {
+    "access_code_id": "27afb24f-c0ae-4ea9-81af-f06fd08de09f",
+    "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+    "name": "my access code",
+    "appearance": null,
+    "code": "2345",
+    "common_code_key": null,
+    "type": "time_bound",
+    "status": "unset",
+    "is_scheduled_on_device": false,
+    "starts_at": "2025-01-01T16:00:00.000Z",
+    "ends_at": "2025-01-22T12:00:00.000Z",
+    "pulled_backup_access_code_id": null,
+    "is_backup_access_code_available": true,
+    "created_at": "2023-10-19T06:58:42.853Z",
+    "errors": [],
+    "warnings": [],
+    "is_managed": true,
+    "is_external_modification_allowed": false
+  },
+  "ok": true
+}
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+**Request:**
+
+```javascript
+await seam.accessCodes.create({
+  device_id: "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+  name: "my access code",
+  starts_at: "2025-01-01T16:00:00Z",
+  ends_at: "2025-01-22T12:00:00Z",
+  preferred_code_length: 4
+});
+```
+
+**Response:**
+
+```json
+{
+  access_code_id: '80aa1afa-f0e5-43c2-96ea-6ab141112f9c',
+  device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+  name: 'my access code',
+  appearance: null,
+  code: '2345',
+  common_code_key: null,
+  type: 'time_bound',
+  status: 'unset',
+  is_scheduled_on_device: false,
+  starts_at: '2025-01-01T16:00:00.000Z',
+  ends_at: '2025-01-22T12:00:00.000Z',
+  pulled_backup_access_code_id: null,
+  is_backup_access_code_available: true,
+  created_at: '2023-10-19T09:36:51.663Z',
+  errors: [],
+  warnings: [],
+  is_managed: true,
+  is_external_modification_allowed: false
+}
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+**Request:**
+
+```ruby
+created_access_code = client.access_codes.create(
+  device_id: "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+  name: "my access code",
+  starts_at: "2025-01-01T16:00:00Z",
+  ends_at: "2025-01-22T12:00:00Z",
+  preferred_code_length: 4
+)
+```
+
+**Response:**
+
+```
+<Seam::AccessCode:0x00438
+  code="2345"
+  name="my access code"
+  type="time_bound"
+  errors=[]
+  status="unset"
+  ends_at=2025-01-22 12:00:00 UTC
+  warnings=[]
+  device_id="6aae9d08-fed6-4ca5-8328-e36849ab48fe"
+  starts_at=2025-01-01 16:00:00 UTC
+  appearance=nil
+  created_at=2023-10-23 20:56:49.213 UTC
+  is_managed=true
+  access_code_id="0d2c8b21-c71f-4301-82ea-22830f749d9b"
+  is_scheduled_on_device=false
+  pulled_backup_access_code_id=nil
+  is_backup_access_code_available=true
+  is_external_modification_allowed=false>
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+**Request:**
+
+```php
+$access_code = $seam->access_codes->create(
+  device_id: "0e2e6262-7f91-4970-a58d-47ef30b41e2e",
+  name: 'my access code',
+  starts_at:  "2025-01-01T16:00:00Z",
+  ends_at: "2025-01-22T12:00:00Z",
+  preferred_code_length: 4
+);
+```
+
+**Response:**
+
+```json
+{
+  "access_code_id": "e3d6cf81-6dd4-490c-b81f-8478054c2003",
+  "device_id": "0e2e6262-7f91-4970-a58d-47ef30b41e2e",
+  "name": "my access code",
+  "type": "time_bound",
+  "status": "unset",
+  "starts_at": "2025-01-01T16:00:00.000Z",
+  "ends_at": "2025-01-22T12:00:00.000Z",
+  "code": "2345",
+  "created_at": "2023-09-04T05:32:32.085Z",
+  "errors": [],
+  "warnings": [],
+  "is_managed": true,
+  "common_code_key": null,
+  "is_waiting_for_code_assignment": null
+}
+```
+{% endtab %}
+
+{% tab title="C#" %}
+**Request:**
+
+```csharp
+var createdAccessCode = seam.AccessCodes.Create(
+  deviceId: "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+  name: "my access code",
+  startsAt: "2025-01-01T16:00:00Z",
+  endsAt: "2025-01-22T12:00:00Z",
+  preferredCodeLength: 4
+);
+```
+
+**Response:**
+
+```
+{
+  "access_code_id": "27afb24f-c0ae-4ea9-81af-f06fd08de09f",
+  "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+  "name": "my access code",
+  "appearance": null,
+  "code": "2345",
+  "common_code_key": null,
+  "type": "time_bound",
+  "status": "unset",
+  "is_scheduled_on_device": false,
+  "starts_at": "2025-01-01T16:00:00.000Z",
+  "ends_at": "2025-01-22T12:00:00.000Z",
+  "pulled_backup_access_code_id": null,
+  "is_backup_access_code_available": true,
+  "created_at": "2023-10-19T06:58:42.853Z",
+  "errors": [],
+  "warnings": [],
+  "is_managed": true,
+  "is_external_modification_allowed": false
+}
+```
+{% endtab %}
+
+{% tab title="Java" %}
+**Request:**
+
+```java
+seam.accessCodes().create(AccessCodesCreateRequest.builder()
+  .deviceId("6aae9d08-fed6-4ca5-8328-e36849ab48fe")
+  .name("my access code")
+  .startsAt("2025-01-01T16:00:00Z")
+  .endsAt("2025-01-22T12:00:00Z")
+  .preferredCodeLength(4)
+  .build());
+```
+
+**Response:**
+
+```json
+{
+  "is_scheduled_on_device" : false,
+  "type" : "time_bound",
+  "access_code_id" : "48e8f0e3-11a4-49a4-b589-27a1baf7aee4",
+  "device_id" : "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+  "name" : "my access code",
+  "code" : "2345",
+  "created_at" : "2023-10-30T03:50:17.802Z",
+  "errors" : [ ],
+  "warnings" : [ ],
+  "is_managed" : "true",
+  "starts_at" : "2025-01-01T16:00:00Z",
+  "ends_at" : "2025-01-22T12:00:00Z",
+  "status" : "unset",
+  "is_backup_access_code_available" : false
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ### Creating an Hourly-Bound Offline Access Code
 
 {% tabs %}
@@ -969,18 +1251,20 @@ curl -X 'POST' \
 
 ### Parameters
 
-| `device_id`                   | type: string                     | <p><br>ID of the Device</p>                                                                                                                                                                                                                                                    |
-| ----------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `name`                        | <p>type: string<br>Optional</p>  | Name of Access Code                                                                                                                                                                                                                                                            |
-| `starts_at`                   | <p>type: string<br>Optional</p>  | From when is the code valid                                                                                                                                                                                                                                                    |
-| `ends_at`                     | <p>type: string<br>Optional</p>  | Code expiry. Must be a timestamp in the future and after `starts_at`.                                                                                                                                                                                                          |
-| `code`                        | <p>type: string<br>Optional</p>  | Access code of device                                                                                                                                                                                                                                                          |
-| `use_backup_access_code_pool` | <p>type: boolean<br>Optional</p> | Use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. This allows you to use [/access\_codes/pull\_backup\_access\_code](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code) |
-| `common_code_key`             | <p>type: string<br>Optional</p>  | any two access codes with the same `common_code_key` are guaranteed to have the same code                                                                                                                                                                                      |
-| `prefer_native_scheduling`    | <p>type: boolean<br>Optional</p> | Whether [native scheduling](../../products/smart-locks/access-codes/#native-scheduling) should be used for time-bound codes when supported by the provider (defaults to true)                                                                                                  |
-| `allow_external_modification` | <p>type: boolean<br>Optional</p> | Whether [external modification](./#external-modification) of the codes should be allowed (defaults to false)                                                                                                                                                                   |
-| `is_offline_access_code`      | <p>type: boolean<br>Optional</p> | Whether the access code is an [offline access code](../../products/smart-locks/access-codes/offline-access-codes.md)                                                                                                                                                           |
-| `is_one_time_use`             | <p>type: boolean<br>Optional</p> | Whether the [offline access code](../../products/smart-locks/access-codes/offline-access-codes.md) is a single-use access code.                                                                                                                                                |
+| Parameter                     | Type                                | Description                                                                                                                                                                                                                                                                                                                         |
+| ----------------------------- | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `device_id`                   | String                              | <p><br>ID of the device.</p>                                                                                                                                                                                                                                                                                                        |
+| `name`                        | <p>String<br><em>Optional</em></p>  | Name of the access code.                                                                                                                                                                                                                                                                                                            |
+| `starts_at`                   | <p>String<br><em>Optional</em></p>  | Timestamp to indicate from when is the access code is valid.                                                                                                                                                                                                                                                                        |
+| `ends_at`                     | <p>String<br><em>Optional</em></p>  | <p>Timestamp to indicate the code expiry time.</p><p>Must be a timestamp in the future and after <code>starts_at</code>.</p>                                                                                                                                                                                                        |
+| `code`                        | <p>String<br><em>Optional</em></p>  | Access code.                                                                                                                                                                                                                                                                                                                        |
+| `use_backup_access_code_pool` | <p>Boolean<br><em>Optional</em></p> | <p>Indicated whether to use a <a href="https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes">backup access code pool</a> provided by Seam.</p><p>This enables you to use <a href="https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code">/access_codes/pull_backup_access_code</a></p> |
+| `common_code_key`             | <p>String<br><em>Optional</em></p>  | <p>Key to identify access codes that should have the same code.<br>Any two access codes with the same <code>common_code_key</code> are guaranteed to have the same code.</p>                                                                                                                                                        |
+| `prefer_native_scheduling`    | <p>Boolean<br><em>Optional</em></p> | <p>Indicates whether <a href="../../products/smart-locks/access-codes/#native-scheduling">native scheduling</a> should be used for time-bound codes when supported by the provider.<br>Default: <code>true</code>.</p>                                                                                                              |
+| `allow_external_modification` | <p>Boolean<br><em>Optional</em></p> | <p>Indicates whether <a href="./#external-modification">external modification</a> of the codes is allowed.<br>Default: <code>false</code>.</p>                                                                                                                                                                                      |
+| `is_offline_access_code`      | <p>Boolean<br><em>Optional</em></p> | Indicates whether the access code is an [offline access code](../../products/smart-locks/access-codes/offline-access-codes.md).                                                                                                                                                                                                     |
+| `is_one_time_use`             | <p>Boolean<br><em>Optional</em></p> | Indicates whether the [offline access code](../../products/smart-locks/access-codes/offline-access-codes.md) is a single-use access code.                                                                                                                                                                                           |
+| `preferred_code_length`       | <p>Number<br><em>Optional</em></p>  | <p>Preferred code length.<br>Only applicable if you do not specify a <code>code</code>.</p><p>If the affected device does not support the preferred code length, Seam reverts to using the shortest supported code length.</p>                                                                                                      |
 
 ***
 
