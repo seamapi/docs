@@ -23,7 +23,7 @@ This guide explains how to create online access codes on an online smart lock. W
 
 Seam supports programming two types of online access codes for online door locks:
 
-1. **Ongoing**: Ideal for residents or long-term users. Ongoing codes remain active on a device until removed. Create one by leaving the `end_at` field empty. To remove the code, use the [Delete Access Code](../../../api-clients/access-codes/delete.md) endpoint.
+1. **Ongoing**: Ideal for residents or long-term users. Ongoing codes remain active on a device until removed. Create one by leaving the `end_at` field empty. To remove the code, use the [Delete Access Code](../../../api-clients/access\_codes/delete.md) endpoint.
 2. **Time Bound**: Suitable for temporary access like guest visits or service appointments. These codes operate between a designated `starts_at` and `ends_at` time window, granting access only during that period.
 
 {% hint style="info" %}
@@ -41,7 +41,7 @@ Before you attempt to create an [online](./#what-is-an-access-code) or [offline]
 
 Use [Get Device](../../../api-clients/devices/get.md) (or [Get Lock](../../../api-clients/locks/get.md)) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to create an access code.
 
-If either of these capability flags is `false` or not present, you can view the [properties](<../../../api-clients/devices/README (1).md#device-properties>) of the device, [errors](<../../../api-clients/devices/README (1).md#device-error-types>) or [warnings](<../../../api-clients/devices/README (1).md#device-warning-types>) for the device, and [events](../../../api-clients/events/#event-types) related to the device to learn more about the cause of these issues. For example, you could examine the following device properties:
+If either of these capability flags is `false` or not present, you can view the [properties](../../../api-clients/devices/#device-properties) of the device, [errors](../../../api-clients/devices/#device-error-types) or [warnings](../../../api-clients/devices/#device-warning-types) for the device, and [events](../../../api-clients/events/#event-types) related to the device to learn more about the cause of these issues. For example, you could examine the following device properties:
 
 * `device.properties.model.has_built_in_keypad`
 * `device.properties.model.can_connect_accessory_keypad`

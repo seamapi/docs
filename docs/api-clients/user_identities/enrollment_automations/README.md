@@ -19,7 +19,7 @@ The `enrollment_automation` object has the following properties:
 
 You can perform the following actions on `enrollment_automation` objects:
 
-* [Launch an enrollment automation](../../user-identities/enrollment-automations/launch.md)
-* [List enrollment automations](../../user-identities/enrollment-automations/list.md)
-* [Get an enrollment automation](../../user-identities/enrollment-automations/get.md)
+* [Launch an enrollment automation](launch.md)
+* [List enrollment automations](list.md)
+* [Get an enrollment automation](get.md)
 * [Delete an enrollment automation](delete.md)

@@ -18,13 +18,13 @@ The `user_identity` object has the following properties:
 
 You can perform the following actions on `user_identity` objects:
 
-* [Create a user identity](../user-identities/create.md)
-* [List user identities](../user-identities/list.md)
-* [Get a user identity](../user-identities/get.md)
-* [Add an ACS user to a user identity](../user-identities/add\_acs\_user.md)
-* [List ACS users associated with a user identity](../user-identities/list\_acs\_users.md)
-* [Remove an ACS user from a user identity](../user-identities/remove\_acs\_user.md)
-* [Grant a user identity access to a device](../user-identities/grant\_access\_to\_device.md)
-* [List accessible devices for a user identity](../user-identities/list\_accessible\_devices.md)
-* [Revoke access to a device from a user identity](../user-identities/revoke\_access\_to\_device.md)
+* [Create a user identity](create.md)
+* [List user identities](list.md)
+* [Get a user identity](get.md)
+* [Add an ACS user to a user identity](add_acs_user.md)
+* [List ACS users associated with a user identity](list_acs_users.md)
+* [Remove an ACS user from a user identity](remove_acs_user.md)
+* [Grant a user identity access to a device](grant_access_to_device.md)
+* [List accessible devices for a user identity](list_accessible_devices.md)
+* [Revoke access to a device from a user identity](revoke_access_to_device.md)
 * [Delete a user identity](delete.md)

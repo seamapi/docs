@@ -98,6 +98,8 @@ This increases the noise threshold from 70 to 75 decibels. The above returns the
  }
 ```
 
+
+
 ### Delete Noise Thresholds
 
 Finally, you can delete a threshold. You’ll need to know the device and threshold id to delete the threshold. For example:
@@ -128,8 +130,8 @@ This permanently deletes the `built_in_normal` threshold from the device. You’
 
 For more details on each endpoint, see our API References:
 
-| [List Noise Thresholds](../noise-sensors/list.md)    |
-| ---------------------------------------------------- |
-| [Create Noise Threshold](../noise-sensors/create.md) |
-| [Update Noise Threshold](../noise-sensors/update.md) |
-| [Delete Noise Threshold](../noise-sensors/delete.md) |
+| [List Noise Thresholds](./noise_thresholds/list.md)   |
+| --------------------------------------------------- |
+| [Create Noise Threshold](./noise_thresholds/create.md) |
+| [Update Noise Threshold](./noise_thresholds/update.md) |
+| [Delete Noise Threshold](./noise_thresholds/delete.md) |

@@ -8,7 +8,7 @@ Seam enables you to configure the [noise thresholds](./#what-is-a-threshold) of 
 
 ## Set Up Noise Thresholds
 
-First, create a threshold using the [Create Noise Thresholds](../../api-clients/noise-sensors/create.md) endpoint. For example:
+First, create a threshold using the [Create Noise Thresholds](../../api-clients/noise_sensors/noise_thresholds/create.md) endpoint. For example:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -182,7 +182,7 @@ You can set up webhooks in the [Seam Console](https://console.seam.co).
    2. Select the event types for which you want to receive events.
    3. Click **Create**.
 
-The Seam Console displays the URL and secret for the newly-created webhook. To test your webhook, click **Test your webhook**.
+The Seam Console displays the URL and secret for the newly-created webhook. To test your webhook, click **Test your webhook**.&#x20;
 
 ## Monitor Events
 

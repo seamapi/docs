@@ -73,7 +73,7 @@ System.out.println(device);
 
 ## Response
 
-Returns a `device` that contains the set of applicable device properties. For details, see [Devices](<README (1).md>).
+Returns a `device` that contains the set of applicable device properties. For details, see [Devices](./).
 
 This response also includes a Boolean `ok` status indicator.
 

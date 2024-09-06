@@ -8,7 +8,7 @@ description: >-
 
 Adding Custom Metadata to a Connect Webview enables you to store custom information, like customer details or internal IDs from your application. The `custom_metadata` is then transferred to any connected accounts connected via the connect webview, making it easy to find and filter these resources in your Seam workspace.
 
-The `custom_metadata` property supports up to 50 JSON key:value pairs. Upon an account is successfully connected via a connect webview, Seam creates a connected account and copies the `custom_metadata` to it.
+The `custom_metadata` property supports up to 50 JSON key:value pairs. Upon an account is  successfully connected via a connect webview, Seam creates a connected account and copies the `custom_metadata` to it.&#x20;
 
 {% hint style="info" %}
 If the `custom_metadata` property is left blank, Seam will store an empty set (`{}`) on both the connect webview and connected account resource.
@@ -16,7 +16,7 @@ If the `custom_metadata` property is left blank, Seam will store an empty set (`
 
 To add `custom_metadata` to a Connect Webview:
 
-1. Execute [`/connect_webviews/create`](../../api-clients/connect-webviews/create.md) and specify the internal ID as a key:value pair in the `custom_metadata`.\
+1. Execute [`/connect_webviews/create`](../../api-clients/connect_webviews/create.md) and specify the internal ID as a key:value pair in the `custom_metadata`.\
    For example:
 
 {% tabs %}
@@ -206,8 +206,8 @@ seam.connectWebviews().create(ConnectWebviewsCreateRequest.builder()
 3. The user completes the Connect Webview.
 4. Seam creates a connected account containing the user's device account information.\
    This connected account includes a `custom_metadata` property that automatically contains the information that you set in the `custom_metadata` property for the Connect Webview.
-5. To retrieve the ID of the connected account associated with the completed Connect Webview, [get the `connect_webview`](../../api-clients/connect-webviews/get.md) and check the `connected_account_id` property.
-6. To retrieve the connected account, [get the `connected_account`](../../api-clients/connected-accounts/get.md) with the ID that you identified in the previous step.
+5. To retrieve the ID of the connected account associated with the completed Connect Webview, [get the `connect_webview`](../../api-clients/connect_webviews/get.md) and check the `connected_account_id` property.
+6. To retrieve the connected account, [get the `connected_account`](../../api-clients/connected_accounts/get.md) with the ID that you identified in the previous step.
 7. Within the returned `connected_account`, view the `custom_metadata`.
 
 {% hint style="info" %}
