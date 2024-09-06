@@ -712,6 +712,632 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 
 ***
 
+## List Credentials
+
+You can [list all ACS credentials](../../api-clients/acs/credentials/list.md) for a specific [ACS user](../../products/access-systems/user-management.md) or [user identity](../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity). You can also [list all credentials for an ACS system](../../api-clients/acs/credentials/list.md).
+
+### List Credentials by ACS User
+
+To [list all ACS credentials](../../api-clients/acs/credentials/list.md) for a specific [ACS user](../../products/access-systems/user-management.md), provide the `acs_user_id`.
+
+{% tabs %}
+{% tab title="Python" %}
+**Request:**
+
+```python
+seam.acs.credentials.list(
+  acs_user_id="33333333-3333-3333-3333-333333333333"
+)
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
+```
+[
+  AcsCredential(
+    acs_credential_id='99999999-9999-9999-9999-999999999999',
+    acs_user_id='33333333-3333-3333-3333-333333333333',
+    ...
+  ),
+  ...
+]
+```
+{% endtab %}
+
+{% tab title="cURL (bash)" %}
+**Request:**
+
+```bash
+# Use GET or POST.
+curl -X 'GET' \
+  'https://connect.getseam.com/acs/credentials/list' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "acs_user_id": "33333333-3333-3333-3333-333333333333"
+}'
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
+```json
+{
+  "acs_credentials": [
+    {
+      "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+      "acs_user_id": "33333333-3333-3333-3333-333333333333",
+      ...
+    }
+    ...
+  ],
+  "ok": true
+}
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+**Request:**
+
+```javascript
+await seam.acs.credentials.list({
+  acs_user_id: "33333333-3333-3333-3333-333333333333"
+});
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
+```json
+[
+  {
+    acs_credential_id: '99999999-9999-9999-9999-999999999999',
+    acs_user_id: '33333333-3333-3333-3333-333333333333',
+    ...
+  },
+  ...
+]
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+**Request:**
+
+```ruby
+# Coming soon!
+```
+
+**Response:**
+
+```
+# Coming soon!
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+**Request:**
+
+```php
+$seam->acs->credentials->list(
+  acs_user_id: "33333333-3333-3333-3333-333333333333"
+);
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
+```json
+[
+  {
+    "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+    "acs_user_id": "33333333-3333-3333-3333-333333333333",
+    ...
+  },
+  ...
+]
+```
+{% endtab %}
+
+{% tab title="C#" %}
+**Request:**
+
+```csharp
+seam.CredentialsAcs.List(
+  acsUserId: "33333333-3333-3333-3333-333333333333"
+);
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
+```json
+{
+  "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  ...
+}
+...
+```
+{% endtab %}
+
+{% tab title="Java" %}
+**Request:**
+
+```java
+// Coming soon!
+```
+
+**Response:**
+
+```json
+// Coming soon!
+```
+{% endtab %}
+
+{% tab title="Go" %}
+**Request:**
+
+```go
+acs_credentials, uErr := client.Acs.Credentials.List(
+  context.Background(), &acs.CredentialsListRequest{
+    AcsUserId: api.String("33333333-3333-3333-3333-333333333333"),
+  },
+)
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
+```json
+{
+  "acs_credentials": [
+    {
+      "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+      "acs_user_id": "33333333-3333-3333-3333-333333333333",
+      ...
+    }
+    ...
+  ],
+  "ok": true
+}
+```
+{% endtab %}
+{% endtabs %}
+
+### List Credentials by User Identity
+
+To [list all ACS credentials](../../api-clients/acs/credentials/list.md) for a specific [user identity](../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity), provide the `user_identity_id`.
+
+{% tabs %}
+{% tab title="Python" %}
+**Request:**
+
+```python
+seam.acs.credentials.list(
+  user_identity_id="22222222-2222-2222-2222-222222222222"
+)
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
+```
+[
+  AcsCredential(
+    acs_credential_id='99999999-9999-9999-9999-999999999999',
+    acs_user_id='33333333-3333-3333-3333-333333333333',
+    ...
+  ),
+  ...
+]
+```
+{% endtab %}
+
+{% tab title="cURL (bash)" %}
+**Request:**
+
+```bash
+# Use GET or POST.
+curl -X 'GET' \
+  'https://connect.getseam.com/acs/credentials/list' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "user_identity_id": "22222222-2222-2222-2222-222222222222"
+}'
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
+```json
+{
+  "acs_credentials": [
+    {
+      "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+      "acs_user_id": "33333333-3333-3333-3333-333333333333",
+      ...
+    }
+    ...
+  ],
+  "ok": true
+}
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+**Request:**
+
+```javascript
+await seam.acs.credentials.list({
+  user_identity_id: "22222222-2222-2222-2222-222222222222"
+});
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
+```json
+[
+  {
+    acs_credential_id: '99999999-9999-9999-9999-999999999999',
+    acs_user_id: '33333333-3333-3333-3333-333333333333',
+    ...
+  },
+  ...
+]
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+**Request:**
+
+```ruby
+# Coming soon!
+```
+
+**Response:**
+
+```
+# Coming soon!
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+**Request:**
+
+```php
+$seam->acs->credentials->list(
+  user_identity_id: "22222222-2222-2222-2222-222222222222"
+);
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
+```json
+[
+  {
+    "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+    "acs_user_id": "33333333-3333-3333-3333-333333333333",
+    ...
+  },
+  ...
+]
+```
+{% endtab %}
+
+{% tab title="C#" %}
+**Request:**
+
+```csharp
+seam.CredentialsAcs.List(
+  userIdentityId: "22222222-2222-2222-2222-222222222222"
+);
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
+```json
+{
+  "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  ...
+}
+...
+```
+{% endtab %}
+
+{% tab title="Java" %}
+**Request:**
+
+```java
+// Coming soon!
+```
+
+**Response:**
+
+```json
+// Coming soon!
+```
+{% endtab %}
+
+{% tab title="Go" %}
+**Request:**
+
+```go
+acs_credentials, uErr := client.Acs.Credentials.List(
+  context.Background(), &acs.CredentialsListRequest{
+    UserIdentityId: api.String("22222222-2222-2222-2222-222222222222"),
+  },
+)
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
+```json
+{
+  "acs_credentials": [
+    {
+      "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+      "acs_user_id": "33333333-3333-3333-3333-333333333333",
+      ...
+    }
+    ...
+  ],
+  "ok": true
+}ACS
+```
+{% endtab %}
+{% endtabs %}
+
+***
+
+## Get a Credential
+
+To [get a credential](../../api-clients/acs/credentials/get.md), provide the `acs_credential_id` of the credential that you want to retrieve. These details include the user associated with the credential, the access method, the schedule for the credential, if applicable, and so on.
+
+{% tabs %}
+{% tab title="Python" %}
+**Request:**
+
+```python
+seam.acs.credentials.get(
+  acs_credential_id="66666666-6666-6666-6666-666666666666"
+)
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
+```
+AcsCredential(
+  acs_credential_id='99999999-9999-9999-9999-999999999999',
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  acs_system_id='11111111-1111-1111-1111-111111111111',
+  access_method='mobile_key',
+  ...
+)
+```
+{% endtab %}
+
+{% tab title="cURL (bash)" %}
+**Request:**
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/acs/credentials/get' \
+  -H "Authorization: Bearer ${API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "acs_credential_id": "66666666-6666-6666-6666-666666666666"
+}'
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
+```json
+{
+  "acs_credential": {
+    "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+    "acs_user_id": "33333333-3333-3333-3333-333333333333",
+    "acs_system_id": "11111111-1111-1111-1111-111111111111",
+    "access_method": "mobile_key",
+    ...
+  },
+  "ok": true
+}
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+**Request:**
+
+```javascript
+await seam.acs.credentials.get({
+  acs_credential_id: "66666666-6666-6666-6666-666666666666"
+});
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
+```json
+{
+  acs_credential_id: '99999999-9999-9999-9999-999999999999',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  acs_system_id: '11111111-1111-1111-1111-111111111111',
+  access_method: 'mobile_key',
+  ...
+}
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+**Request:**
+
+```ruby
+# Coming soon!
+```
+
+**Response:**
+
+```
+# Coming soon!
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+**Request:**
+
+```php
+$seam->acs->credentials->get(
+  acs_credential_id: "66666666-6666-6666-6666-66666666"
+);
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
+```
+{
+  "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  "acs_system_id": "11111111-1111-1111-1111-111111111111",
+  "access_method": "mobile_key",
+  ...
+}
+```
+{% endtab %}
+
+{% tab title="C#" %}
+**Request:**
+
+```csharp
+seam.CredentialsAcs.Get(
+  acsCredentialId: "66666666-6666-6666-6666-66666666"
+);
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
+```
+{
+  "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  "acs_system_id": "11111111-1111-1111-1111-111111111111",
+  "access_method": "mobile_key",
+  ...
+}
+```
+{% endtab %}
+
+{% tab title="Java" %}
+**Request:**
+
+```java
+// Coming soon!
+```
+
+**Response:**
+
+```json
+// Coming soon!
+```
+{% endtab %}
+
+{% tab title="Go" %}
+**Request:**
+
+```go
+acs_credential, uErr := client.Acs.Credentials.Get(
+  context.Background(), &acs.CredentialsGetRequest{
+    AcsCredentialId: "66666666-6666-6666-6666-66666666",
+  },
+)
+```
+
+**Response:**
+
+{% hint style="info" %}
+This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+{% endhint %}
+
+```json
+{
+  "acs_credential": {
+    "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+    "acs_user_id": "33333333-3333-3333-3333-333333333333",
+    "acs_system_id": "11111111-1111-1111-1111-111111111111",
+    "access_method": "mobile_key",
+    ...
+  },
+  "ok": true
+}
+```
+{% endtab %}
+{% endtabs %}
+
+***
+
 ## Delete a Credential
 
 To [delete a credential](../../api-clients/acs/credentials/delete.md), provide the `acs_credential_id`.
