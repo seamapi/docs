@@ -4,7 +4,7 @@ description: Get all unmanaged devices
 
 # List Unmanaged Devices
 
-Returns a list of all [unmanaged devices](../../../core-concepts/devices/#managed-devices-and-unmanaged-devices). An unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](../../../products/smart-locks/access-codes/) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](../../../core-concepts/devices/#convert-an-unmanaged-device-to-managed).
+Returns a list of all [unmanaged devices](../../core-concepts/devices/#managed-devices-and-unmanaged-devices). An unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](../../products/smart-locks/access-codes/) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](../../core-concepts/devices/#convert-an-unmanaged-device-to-managed).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/devices/unmanaged/list" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
@@ -16,7 +16,7 @@ List all unmanaged devices or filter the list of unmanaged devices by including 
 
 ### Request Body Parameters
 
-<table><thead><tr><th width="264">Parameter</th><th width="133.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>connected_account_id</code></td><td>String<br><em>Optional</em></td><td>ID of the connected account.</td></tr><tr><td><code>connected_account_ids</code></td><td>String[]<br><em>Optional</em></td><td>IDs of the connected accounts.</td></tr><tr><td><code>connect_webview_id</code></td><td>String<br><em>Optional</em></td><td>ID of <a href="../../../core-concepts/connect-webviews/">Connect Webview</a>.</td></tr><tr><td><code>device_type</code></td><td>String<br><em>Optional</em></td><td>Type of device.</td></tr><tr><td><code>device_types</code></td><td>String[]<br><em>Optional</em></td><td>Types of devices.</td></tr><tr><td><code>manufacturer</code></td><td>String<br><em>Optional</em></td><td>Device manufacturer.</td></tr><tr><td><code>device_ids</code></td><td>type: string[]<br><em>Optional</em></td><td>IDs of the devices to include.</td></tr><tr><td><code>limit</code></td><td>Number<br><em>Optional</em></td><td>Numerical limit on the number of devices to return.</td></tr><tr><td><code>created_before</code></td><td>String<br><em>Optional</em></td><td>Date threshold for devices to return. If specified, returns only devices created before the specified date.</td></tr><tr><td><code>user_identifier_key</code></td><td>String<br><em>Optional</em></td><td>Your own internal user ID for the user by which to filter devices.</td></tr><tr><td><code>custom_metadata_has</code></td><td>JSON object<br><em>Optional</em></td><td>Set of key:value <a href="../../../core-concepts/devices/adding-custom-metadata-to-a-device.md">custom metadata</a> pairs by which you want to filter devices.</td></tr></tbody></table>
+<table><thead><tr><th width="264">Parameter</th><th width="133.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>connected_account_id</code></td><td>String<br><em>Optional</em></td><td>ID of the connected account.</td></tr><tr><td><code>connected_account_ids</code></td><td>String[]<br><em>Optional</em></td><td>IDs of the connected accounts.</td></tr><tr><td><code>connect_webview_id</code></td><td>String<br><em>Optional</em></td><td>ID of <a href="../../core-concepts/connect-webviews/">Connect Webview</a>.</td></tr><tr><td><code>device_type</code></td><td>String<br><em>Optional</em></td><td>Type of device.</td></tr><tr><td><code>device_types</code></td><td>String[]<br><em>Optional</em></td><td>Types of devices.</td></tr><tr><td><code>manufacturer</code></td><td>String<br><em>Optional</em></td><td>Device manufacturer.</td></tr><tr><td><code>device_ids</code></td><td>type: string[]<br><em>Optional</em></td><td>IDs of the devices to include.</td></tr><tr><td><code>limit</code></td><td>Number<br><em>Optional</em></td><td>Numerical limit on the number of devices to return.</td></tr><tr><td><code>created_before</code></td><td>String<br><em>Optional</em></td><td>Date threshold for devices to return. If specified, returns only devices created before the specified date.</td></tr><tr><td><code>user_identifier_key</code></td><td>String<br><em>Optional</em></td><td>Your own internal user ID for the user by which to filter devices.</td></tr><tr><td><code>custom_metadata_has</code></td><td>JSON object<br><em>Optional</em></td><td>Set of key:value <a href="../../core-concepts/devices/adding-custom-metadata-to-a-device.md">custom metadata</a> pairs by which you want to filter devices.</td></tr></tbody></table>
 
 ### Sample Request
 
@@ -66,7 +66,7 @@ seam.devices().unmanaged().list();
 
 ## Response
 
-Returns an unmanaged `devices` array, in which each returned unmanaged device (`device`) contains the set of applicable device properties. For details, see [Devices](../).
+Returns an unmanaged `devices` array, in which each returned unmanaged device (`device`) contains the set of applicable device properties. For details, see [Devices](<README (1).md>).
 
 ### Sample Response
 

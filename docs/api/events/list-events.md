@@ -24,8 +24,8 @@ To access events programmatically, use `events.list`. This endpoint returns the 
 | `access_code_ids`      | <p>String[]<br><em>Optional</em></p>         | IDs of the access codes to include.                                                                                                        |
 | `connected_account_id` | <p>String<br><em>Optional</em></p>           | ID of the connected account to include.                                                                                                    |
 | `connect_webview_id`   | <p>String<br><em>Optional</em></p>           | ID of the Connect Webview to include.                                                                                                      |
-| `event_type`           | <p>String<br><em>Optional</em></p>           | [Type](./#event-types) of events to include.                                                                                               |
-| `event_types`          | <p>String[]<br><em>Optional</em></p>         | [Types](./#event-types) of events to include.                                                                                              |
+| `event_type`           | <p>String<br><em>Optional</em></p>           | [Type](../../api-clients/events/#event-types) of events to include.                                                                        |
+| `event_types`          | <p>String[]<br><em>Optional</em></p>         | [Types](../../api-clients/events/#event-types) of events to include.                                                                       |
 | `limit`                | <p>Number<br><em>Optional</em></p>           | <p>Limit of events to return.<br>Default: <code>500</code>.</p>                                                                            |
 
 ### Sample Request
@@ -120,7 +120,7 @@ echo json_encode($events)
 
 ### Response
 
-Returns an [events](./) array.
+Returns an [events](../../api-clients/events/) array.
 
 ### Sample Response
 

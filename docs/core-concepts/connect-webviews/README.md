@@ -25,7 +25,7 @@ This section describes the basic Connect Webview process.
 
 The Connect Webview flow begins when your user wants to connect their device or ACS account to Seam through your app.
 
-In your app, [create a Connect Webview](../../api-clients/connect_webviews/create.md). The Seam API represents Connect Webviews as `connect_webview` objects.
+In your app, [create a Connect Webview](../../api-clients/connect-webviews/create.md). The Seam API represents Connect Webviews as `connect_webview` objects.
 
 The created `connect_webview` object includes a `url` property.
 
@@ -318,7 +318,7 @@ The Connect Webview guides your app user through the following authorization ste
 <figure><img src="../../.gitbook/assets/connect-webview-brand-selection.png" alt="In the Connect Webview, the user selects their device or ACS brand." width="563"><figcaption></figcaption></figure>
 
 3.  The user follows the displayed instructions to authorize their account.\
-    Seam handles all the necessary authorization steps.&#x20;
+    Seam handles all the necessary authorization steps.
 
     For most brands, this authorization flow consists of a simple device account login. Some brands also require multifactor authentication or other information.\
     For example, brands like Yale offer multiple backend services, depending on the user's global region. Seam prompts the user to identify the correct service and then proceeds with the appropriate authorization request.
@@ -329,7 +329,7 @@ The Connect Webview guides your app user through the following authorization ste
 
     If an error occurs, the Connect Webview displays the error type, for example, an incorrect password.
 
-    For more complicated errors, the Connect Webview displays a simple **Contact support** link that raises the issue to our support team.&#x20;
+    For more complicated errors, the Connect Webview displays a simple **Contact support** link that raises the issue to our support team.
 
 <figure><img src="../../.gitbook/assets/connect-webview-success.png" alt="The Connect Webview displays a page to indicate the successful device or ACS account connection." width="563"><figcaption></figcaption></figure>
 
@@ -363,7 +363,7 @@ If your user wants to connect additional devices or ACS from different brands to
 
 Continue using the Seam API to control your users' connected devices or ACS. For example, if you app user has connected a lock that support remote unlock operations, your app can now unlock the lock.
 
-To learn about the actions that you can perform using the Seam API, see the Seam [capability guides](broken-reference). These guides provide helpful tutorials and code samples, categorized by capability types.
+To learn about the actions that you can perform using the Seam API, see the Seam [capability guides](broken-reference/). These guides provide helpful tutorials and code samples, categorized by capability types.
 
 * [Smart locks](../../products/smart-locks/), including [locking/unlocking](../../products/smart-locks/lock-and-unlock.md) and [managing access codes](../../products/smart-locks/access-codes/)
 * [Access control systems](../../products/access-systems/)

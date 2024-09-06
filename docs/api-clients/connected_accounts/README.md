@@ -20,11 +20,11 @@ description: >-
 
 ## List of Methods
 
-| [Get Connected Account](get.md)        | Get a Connected Account.          |
-| ---------------------------------------------------------- | --------------------------------- |
-| [List Connected Accounts](list.md)      | Get a list of Connected Accounts. |
-| [Update Connected Account](update-a-connected-account.md)  | Update a Connected Account.       |
-| [Delete Connected Accounts](delete.md) | Delete a Connected Account.       |
+| [Get Connected Account](../connected-accounts/get.md)        | Get a Connected Account.          |
+| ------------------------------------------------------------ | --------------------------------- |
+| [List Connected Accounts](list.md)                           | Get a list of Connected Accounts. |
+| [Update Connected Account](update-a-connected-account.md)    | Update a Connected Account.       |
+| [Delete Connected Accounts](../connected-accounts/delete.md) | Delete a Connected Account.       |
 
 ## Connected Account Error Types
 

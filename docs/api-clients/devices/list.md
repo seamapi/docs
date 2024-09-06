@@ -70,7 +70,7 @@ seam.devices().list();
 
 ## Response
 
-Returns a `devices` array, in which each returned device (`device`) contains the set of applicable device properties. For details, see [Devices](./).
+Returns a `devices` array, in which each returned device (`device`) contains the set of applicable device properties. For details, see [Devices](<README (1).md>).
 
 This response also includes a Boolean `ok` status indicator.
 

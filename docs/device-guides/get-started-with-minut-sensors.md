@@ -527,7 +527,7 @@ echo json_encode($device[0]);
 
 Minut users can define noise thresholds at which noise alerts are sent.
 
-You'll get an event for `noise_threshold.noise_threshold_triggered` when you set up a [webhook handler](../core-concepts/webhooks.md). You can also [poll for events](../api-clients/events/list.md).
+You'll get an event for `noise_threshold.noise_threshold_triggered` when you set up a [webhook handler](../core-concepts/webhooks.md). You can also [poll for events](../api/events/list-events.md).
 
 {% hint style="info" %}
 Minut has a builtin threshold that can be triggered multiple times. Each Minut notice will trigger a `noise_threshold_triggered` event with the `minut_metadata.event_name` containing the Minut event name, which can be any of the following:

@@ -107,7 +107,7 @@ go get github.com/seamapi/go
 
 Next, go to [https://console.seam.co/](https://console.seam.co/) and [sign up for Seam](../../core-concepts/seam-console/#create-a-seam-account) to get your [API key](../../core-concepts/authentication/api-keys.md).
 
-{% @supademo/embed demoId="vLRzYM2Nwoi4j_cH9WCNQ" url="https://app.supademo.com/demo/vLRzYM2Nwoi4j_cH9WCNQ" %}
+{% @supademo/embed demoid="vLRzYM2Nwoi4j_cH9WCNQ" url="https://app.supademo.com/demo/vLRzYM2Nwoi4j_cH9WCNQ" %}
 
 Then, export your API key as an environment variable.
 
@@ -979,7 +979,7 @@ Try out the following actions on your 4SUITES lock:
 
 ### Unlock your lock
 
-To unlock a door, use the [Unlock Door](../../api-clients/locks/unlock_door.md) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](../../core-concepts/action-attempts.md) to track the progress of the unlock operation.
+To unlock a door, use the [Unlock Door](../../api-clients/locks/unlock\_door.md) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](../../core-concepts/action-attempts.md) to track the progress of the unlock operation.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -1216,7 +1216,7 @@ return nil
 {% endtab %}
 {% endtabs %}
 
-You can track the status of the unlock operation to confirm that the device unlocked successfully. Query the `locked` status of the device, [retrieve the action attempt](../../api-clients/action_attempts/get.md) by ID, or look for a [`lock.unlocked` event](../../api-clients/events/#event-types).
+You can track the status of the unlock operation to confirm that the device unlocked successfully. Query the `locked` status of the device, [retrieve the action attempt](../../api-clients/action-attempt/get.md) by ID, or look for a [`lock.unlocked` event](../../api-clients/events/#event-types).
 
 To query the `locked` status of the device:
 
@@ -1426,7 +1426,7 @@ Now that you've completed this getting started guide for 4SUITES devices, you ca
 * [ ] **Explore**\
   See the [other devices and system integrations](../overview.md) that Seam supports.
 * [ ] **Learn**\
-  Read about Seam [concepts](broken-reference) and the [device and system capabilities ](../../capability-guides/device-and-system-capabilities.md)that Seam supports.
+  Read about Seam [concepts](broken-reference/) and the [device and system capabilities ](../../capability-guides/device-and-system-capabilities.md)that Seam supports.
 * [ ] **Use Seam Components**\
   Find out about [Seam Components](../../seam-components/overview/), which are prebuilt UI components for building your device management flow.
 * [ ] **Use webhooks**\

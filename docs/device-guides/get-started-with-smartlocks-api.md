@@ -518,5 +518,5 @@ Now that you've completed this guide, you can try to build a real application to
 * [August Getting Started Guide](get-started-with-august-locks.md)
 * [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
 * [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list.md)
+* [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api/events/list-events.md)
 * [Core Concepts](../core-concepts/overview.md)

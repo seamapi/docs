@@ -8,7 +8,7 @@ Seam enables you to adjust the [current heating and cooling settings](configure-
 
 When you send a command to change a setting on a thermostat, it might take a while for Seam to confirm the success of the action. To handle this potential delay, Seam provides an[ action attempt ](../../core-concepts/action-attempts.md)object that tracks the status of the action, indicating whether the action was successful.
 
-To ensure that the action has executed successfully, poll the status of the action attempt object using the [Get Action Attempt](../../api-clients/action_attempts/get.md) request. Once Seam has successfully adjusted the thermostat setting, the `status` of the action attempt indicates `success`.
+To ensure that the action has executed successfully, poll the status of the action attempt object using the [Get Action Attempt](../../api-clients/action-attempt/get.md) request. Once Seam has successfully adjusted the thermostat setting, the `status` of the action attempt indicates `success`.
 
 ***
 
@@ -217,7 +217,7 @@ return nil
 
 ### 2. Poll the Action Attempt to Verify the Setting Change
 
-Use the `action_attempt_id` from the previous response to poll the associated action attempt using the [Get Action Attempt](../../api-clients/action_attempts/get.md) request. When the setting modification completes successfully, the `status` of the action attempt changes to `success`.
+Use the `action_attempt_id` from the previous response to poll the associated action attempt using the [Get Action Attempt](../../api-clients/action-attempt/get.md) request. When the setting modification completes successfully, the `status` of the action attempt changes to `success`.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -687,7 +687,7 @@ return nil
 
 ### Set a Thermostat to Heat-Cool Mode
 
-You can [set a thermostat to operate in heat-cool (also known as "auto") mode](../../api-clients/thermostats/heat_cool.md) and specify desired set point temperatures for both heating and cooling. By establishing the set points, the thermostat activates the associated heating and cooling systems as needed to maintain the specified temperature range.
+You can [set a thermostat to operate in heat-cool (also known as "auto") mode](../../api-clients/thermostats/heat\_cool.md) and specify desired set point temperatures for both heating and cooling. By establishing the set points, the thermostat activates the associated heating and cooling systems as needed to maintain the specified temperature range.
 
 Set the HVAC mode to `heat_cool` by providing the `device_id` of the thermostat and both the heating set point and the cooling set point in Celsius or Fahrenheit.
 
@@ -1030,7 +1030,7 @@ return nil
 
 ### Set the Fan Mode
 
-You can [configure the fan associated with a thermostat](../../api-clients/thermostats/set_fan_mode.md) to operate in either `on` or `auto` mode. In the `on` setting, the fan runs continuously, while in the `auto` setting, the fan operates based on temperature needs and system demands.
+You can [configure the fan associated with a thermostat](../../api-clients/thermostats/set\_fan\_mode.md) to operate in either `on` or `auto` mode. In the `on` setting, the fan runs continuously, while in the `auto` setting, the fan operates based on temperature needs and system demands.
 
 Set the fan mode by providing the `device_id` of the thermostat and specifying the desired fan mode setting.
 

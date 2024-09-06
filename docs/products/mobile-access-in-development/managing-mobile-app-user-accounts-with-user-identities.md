@@ -22,7 +22,7 @@ User identities can be linked to one [ACS user](../access-systems/#what-is-a-use
 
 ### 1. Create a User Identity
 
-To [create a user identity](../../api-clients/user_identities/create.md), you can specify any of the following characteristics:
+To [create a user identity](../../api-clients/user-identities/create.md), you can specify any of the following characteristics:
 
 * Unique user identity key (`user_identity_key`)
 * Unique email address (`email_address`)
@@ -132,7 +132,7 @@ return nil
 
 ### 2. Assign an ACS User to the User Identity
 
-To [link an ACS user with a user identity](../../api-clients/user_identities/add_acs_user.md), provide the ID of the user identity and the ID of the ACS user.
+To [link an ACS user with a user identity](../../api-clients/user-identities/add\_acs\_user.md), provide the ID of the user identity and the ID of the ACS user.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -207,7 +207,7 @@ None
 
 ## Removing a User Identity
 
-To delete a user identity, you must first delete any [ACS credentials](../../api-clients/acs/credentials/delete.md) and [enrollment automations](../../api-clients/user_identities/enrollment_automations/) associated with the user identity. You must also deactivate any associated phones. Then, delete the user identity.
+To delete a user identity, you must first delete any [ACS credentials](../../api-clients/acs/credentials/delete.md) and [enrollment automations](../../api-clients/user\_identities/enrollment\_automations/) associated with the user identity. You must also deactivate any associated phones. Then, delete the user identity.
 
 ```python
 import asyncio

@@ -8,7 +8,7 @@ description: >-
 
 ## 1. Delete the access code using the API
 
-To delete an access code, specify the desired `access_code_id` in the [Delete Access Code](../../../api-clients/access_codes/delete.md) request.
+To delete an access code, specify the desired `access_code_id` in the [Delete Access Code](../../../api-clients/access-codes/delete.md) request.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -327,7 +327,7 @@ There are two methods to verify that an access code has been removed:
 
 **Polling method**
 
-Utilize the `action_attempt_id` provided in the response from the [deletion endpoint](../../../api-clients/access_codes/delete.md) to call the [Get Action Attempt](../../../api-clients/action_attempts/get.md) endpoint. Typically, you'd poll this endpoint until the `status` reads `success`.
+Utilize the `action_attempt_id` provided in the response from the [deletion endpoint](../../../api-clients/access-codes/delete.md) to call the [Get Action Attempt](../../../api-clients/action-attempt/get.md) endpoint. Typically, you'd poll this endpoint until the `status` reads `success`.
 
 If the action attempt's status lingers as `pending`, or if the access code object reveals any `warnings` or `errors` properties, see [our "Troubleshooting Access Code Issues" guide](troubleshooting-access-code-issues.md) for help.
 

@@ -24,7 +24,7 @@ Strictly speaking, unmanaged codes are any codes on a device that were not creat
 
 ## Viewing Unmanaged Codes on a Device
 
-You can retrieve a list of all unmanaged access codes for a particular device using the [List Unmanaged Access Codes](../../../api-clients/access_codes/unmanaged/list.md) request, passing in `device_id` as a query parameter. For example:
+You can retrieve a list of all unmanaged access codes for a particular device using the [List Unmanaged Access Codes](../../../api-clients/access-codes/list-1.md) request, passing in `device_id` as a query parameter. For example:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -181,7 +181,7 @@ seam.accessCodes().unmanaged().list(UnmanagedListRequest.builder()
 
 ## Converting Unmanaged Codes into Managed Codes
 
-You can convert unmanaged access codes into managed ones using the [Convert an Unmanaged Access Code](../../../api-clients/access_codes/unmanaged/convert_to_managed.md) request, passing in `access_code_id` as a query parameter. For example:
+You can convert unmanaged access codes into managed ones using the [Convert an Unmanaged Access Code](../../../api-clients/access-codes/convert\_to\_managed.md) request, passing in `access_code_id` as a query parameter. For example:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -332,7 +332,7 @@ For SmartThings devices, you can still see a list of all unmanaged codes on the 
 
 ## Deleting Unmanaged Codes
 
-After you have converted unmanaged codes to managed codes, or replaced them with new ones, you can allow users to delete any remaining unmanaged codes on their device. You can do this by using the [Delete an Unmanaged Access Code](../../../api-clients/access_codes/unmanaged/delete.md) request and passing in passing in `access_code_id` as a query parameter. For example:
+After you have converted unmanaged codes to managed codes, or replaced them with new ones, you can allow users to delete any remaining unmanaged codes on their device. You can do this by using the [Delete an Unmanaged Access Code](../../../api-clients/access-codes/delete-1.md) request and passing in passing in `access_code_id` as a query parameter. For example:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -469,4 +469,4 @@ seam.accessCodes().unmanaged()
 {% endtab %}
 {% endtabs %}
 
-The request returns an action attempt, similar to the managed code deletion endpoint. See [Delete an access code](../../../api-clients/access_codes/delete.md) for more details.
+The request returns an action attempt, similar to the managed code deletion endpoint. See [Delete an access code](../../../api-clients/access-codes/delete.md) for more details.
