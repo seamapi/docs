@@ -6,6 +6,10 @@ description: Update the code for a specified credential
 
 Updates the code for a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
+{% hint style="info" %}
+You can only update a credential for [Latch](../../../device-and-system-integration-guides/latch-access-control-system/) or [PTI Storlogix Cloud](../../../device-guides/pti-storlogix-cloud.md).
+{% endhint %}
+
 {% swagger src="https://connect.getseam.com/openapi.json" path="/acs/credentials/update" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
 {% endswagger %}
@@ -16,7 +20,7 @@ Specify the desired credential and updated code by including the corresponding `
 
 ### Request Body Parameters
 
-<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>acs_credential_id</code></td><td>String (UUID)<br><em>Required</em></td><td>ID of the desired credential</td></tr><tr><td><code>code</code></td><td>String<br><em>Required</em></td><td>Replacement access (PIN) code for the credential</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>acs_credential_id</code></td><td>String (UUID)<br><em>Required</em></td><td>ID of the desired credential.</td></tr><tr><td><code>code</code></td><td>String<br><em>Optional</em></td><td>Replacement access (PIN) code for the credential.</td></tr><tr><td><code>ends_at</code></td><td>Datetime<br><em>Optional</em></td><td>Replacement date and time at which the validity of the credential ends, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format.<br>Must be a time in the future and after the <code>starts_at</code> value that you set when creating the credential.</td></tr></tbody></table>
 
 ### Sample Request
 
