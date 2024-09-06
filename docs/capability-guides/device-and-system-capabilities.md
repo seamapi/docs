@@ -6,7 +6,7 @@ description: Learn about device and system capabilities, as well as capability f
 
 <figure><img src="../.gitbook/assets/blog-cover_new-capabilities.png" alt="In the Seam API, capability flags inform your application about what features and behaviors each device supports."><figcaption></figcaption></figure>
 
-eEach device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use. For example, some devices support [remote unlock actions](../products/smart-locks/lock-and-unlock.md), while others support [programming access codes](../products/smart-locks/access-codes/). Some devices support both of these capabilities. When developing your application, it is imperative to be able to identify the capabilities of each device.
+Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use. For example, some devices support [remote unlock actions](../products/smart-locks/lock-and-unlock.md), while others support [programming access codes](../products/smart-locks/access-codes/). Some devices support both of these capabilities. When developing your application, it is imperative to be able to identify the capabilities of each device.
 
 For example, if a device supports programming online access codes, your app can present the [`CreateAccessCodeForm` Seam Component](../seam-components/react-components/create-access-code-form.md) to your user. On the other hand, if a connected device does not support the remote unlock action, you'll likely want to disable or not display the unlock functionality for your app user.
 
