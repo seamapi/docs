@@ -13,7 +13,7 @@ To display the health—that is, the online/offline status—of your end users' 
 
 ## Get Device Status Using Device Properties
 
-Seam polls connected devices and accounts every ten minutes and updates the Boolean [`device.properties.online`](<../../api-clients/devices/README (1).md#device.properties-properties>) property accordingly. Use a [Get Device](../../api-clients/devices/get.md) request to retrieve the current online/offline status of a device. Then, display the device status in your app.
+Seam polls connected devices and accounts every ten minutes and updates the Boolean [`device.properties.online`](../../api-clients/devices/#device.properties-properties) property accordingly. Use a [Get Device](../../api-clients/devices/get.md) request to retrieve the current online/offline status of a device. Then, display the device status in your app.
 
 {% hint style="info" %}
 You can also use the prebuilt [device details Seam Component](../../seam-components/react-components/device-details.md), which includes a device status display.
@@ -166,13 +166,13 @@ Online: true
 
 ## Get Device Status Using Connection-Related Events
 
-When a device connection or disconnection occurs, Seam generates a [`device.connected`](../../api-clients/events/#event-types) or [`device.disconnected`](../../api-clients/events/#event-types) event, respectively. You can retrieve these events using a [List Events](../../api/events/list-events.md) request or through [webhooks](../webhooks.md) and then display the corresponding status in your app.
+When a device connection or disconnection occurs, Seam generates a [`device.connected`](../../api-clients/events/#event-types) or [`device.disconnected`](../../api-clients/events/#event-types) event, respectively. You can retrieve these events using a [List Events](../../api-clients/events/list.md) request or through [webhooks](../webhooks.md) and then display the corresponding status in your app.
 
 ### Get Connection-Related Events Using a List Events Request
 
-When issuing a [List Events](../../api/events/list-events.md) request to retrieve [`device.connected`](../../api-clients/events/#event-types) or [`device.disconnected`](../../api-clients/events/#event-types) events for a specific device, include the following parameters:
+When issuing a [List Events](../../api-clients/events/list.md) request to retrieve [`device.connected`](../../api-clients/events/#event-types) or [`device.disconnected`](../../api-clients/events/#event-types) events for a specific device, include the following parameters:
 
-<table><thead><tr><th width="162">Parameter</th><th width="161">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>String (UUID)</td><td>ID of the device for which you want to retrieve <code>device.connected</code> or <code>device.disconnected</code> events</td></tr><tr><td><code>event_type</code></td><td>String</td><td>Event type that you want to retrieve, that is, <code>device.connected</code> or <code>device.disconnected</code></td></tr><tr><td><code>since</code></td><td>String</td><td>Desired starting event generation date and time<br>You must include <code>since</code> or <code>between</code>.</td></tr><tr><td><code>between</code></td><td>Set of two strings</td><td>Desired starting and ending event generation dates and times<br>For example:<br><code>["2024-01-01T00:00:00Z", "2024-02-01T00:00:00Z"]</code><br>You must include <code>between</code> or <code>since</code>.</td></tr></tbody></table>
+<table><thead><tr><th width="162">Parameter</th><th width="161">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>String (UUID)</td><td>ID of the device for which you want to retrieve <code>device.connected</code> or <code>device.disconnected</code> events</td></tr><tr><td><code>event_type</code></td><td>String</td><td>Event type that you want to retrieve, that is,  <code>device.connected</code> or <code>device.disconnected</code></td></tr><tr><td><code>since</code></td><td>String</td><td>Desired starting event generation date and time<br>You must include <code>since</code> or <code>between</code>.</td></tr><tr><td><code>between</code></td><td>Set of two strings</td><td>Desired starting and ending event generation dates and times<br>For example:<br><code>["2024-01-01T00:00:00Z", "2024-02-01T00:00:00Z"]</code><br>You must include <code>between</code> or <code>since</code>.</td></tr></tbody></table>
 
 The following example uses the List Events request to retrieve all `device.connected` events for a specific device since January 1, 2024:
 

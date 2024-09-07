@@ -80,7 +80,7 @@ seam.accessCodes().list(AccessCodesListRequest.builder()
 
 ## Response
 
-Returns an `access_codes` array, in which each returned `access_code` contains the set of applicable access code properties. For details, see [Access Codes](../access\_codes/).
+Returns an `access_codes` array, in which each returned `access_code` contains the set of applicable access code properties. For details, see [Access Codes](./).
 
 ### Sample Response
 

@@ -36,7 +36,7 @@ To enable a user to connect their device account to Seam through your app, you m
 
 ### Provider Category Keys
 
-When you [create a Connect Webview](../connect-webviews/create.md), specify the desired provider category key in the `provider_category` parameter. Alternately, to specify a list of providers explicitly, use the `accepted_providers` parameter with a list of [device provider keys](./#device-provider-keys).
+When you [create a Connect Webview](create.md), specify the desired provider category key in the `provider_category` parameter. Alternately, to specify a list of providers explicitly, use the `accepted_providers` parameter with a list of [device provider keys](./#device-provider-keys).
 
 | key                   | Description                                                        |
 | --------------------- | ------------------------------------------------------------------ |
@@ -46,12 +46,12 @@ When you [create a Connect Webview](../connect-webviews/create.md), specify the 
 | `noise_sensors`       | Only returns provider integrations marked as noise sensors.        |
 
 {% hint style="info" %}
-To list all providers within a category, use the [List Device Providers](../devices/list\_device\_providers.md) method with the desired `provider_category` filter.
+To list all providers within a category, use the [List Device Providers](../devices/list_device_providers.md) method with the desired `provider_category` filter.
 {% endhint %}
 
 ### Device Provider Keys
 
-To list all provider keys, use the [List Device Providers](../devices/list\_device\_providers.md) method with no filters.
+To list all provider keys, use the [List Device Providers](../devices/list_device_providers.md) method with no filters.
 
 | Provider Name                                                                                                                  | Device Provider Key             |
 | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------- |
@@ -91,8 +91,8 @@ To list all provider keys, use the [List Device Providers](../devices/list\_devi
 
 You can perform the following actions on `connect_webview` objects:
 
-* [Create a Connect Webview](../connect-webviews/create.md)
+* [Create a Connect Webview](create.md)
 * [List Connect Webviews](list.md)
-* [Get a Connect Webview](../connect-webviews/get.md)
-* [Check a Connect Webview](../connect-webviews/get.md)
-* [Delete a Connect Webview](../connect-webviews/delete.md)
+* [Get a Connect Webview](get.md)
+* [Check a Connect Webview](get.md)
+* [Delete a Connect Webview](delete.md)

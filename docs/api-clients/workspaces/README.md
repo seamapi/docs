@@ -15,6 +15,6 @@ description: >-
 
 ### List of Methods
 
-| [Get Workspace](get.md)              | Get all workspaces connected to account |
-| ------------------------------------ | --------------------------------------- |
-| [Reset Workspace](reset\_sandbox.md) | Reset the sandbox on this workspace     |
+| [Get Workspace](get.md)     | Get all workspaces connected to account |
+| ------------------------------------- | --------------------------------------- |
+| [Reset Workspace](workspaces/reset_sandbox.md) | Reset the sandbox on this workspace     |

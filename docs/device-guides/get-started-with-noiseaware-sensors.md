@@ -356,7 +356,7 @@ echo json_encode($device[0]);
 
 NoiseAware users can define noise thresholds at which noise alerts are sent.
 
-You'll get an event for `noise_threshold.noise_threshold_triggered` when you set up a [webhook handler](../core-concepts/webhooks.md). You can also [poll for events](../api/events/list-events.md).
+You'll get an event for `noise_threshold.noise_threshold_triggered` when you set up a [webhook handler](../core-concepts/webhooks.md). You can also [poll for events](../api-clients/events/list.md).
 
 {% hint style="info" %}
 NoiseAware has three distinct noise alerts: `newNoise`, `continuedNoise`, and `resolvedNoise`. It is essential to keep in mind that Seam will solely trigger the `noise_threshold.noise_threshold_triggered` event for `newNoise`.

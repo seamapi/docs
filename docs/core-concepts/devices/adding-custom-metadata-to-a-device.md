@@ -6,7 +6,7 @@ description: You can add or change custom metadata for a device.
 
 You can use custom metadata to store a custom payload or object, tailored to the specific needs of your app. For example, this feature is useful for tracking customer information, internal user IDs, or other internal resources for a [device](./). Storing custom metadata in a Seam `device` object enables you to look up an internal resource from directly within your Seam [workspace](../workspaces/). Then, you can [filter devices by the desired metadata](filtering-devices-by-custom-metadata.md).
 
-Use the [Update Device](../../api-clients/devices/update.md) method with the optional [`custom_metadata` property](<../../api-clients/devices/README (1).md#device-properties>) to change or add custom metadata for the connected account. This property accepts up to 50 JSON key:value pairs.
+Use the [Update Device](../../api-clients/devices/update.md) method with the optional [`custom_metadata` property](../../api-clients/devices/#device-properties) to change or add custom metadata for the connected account. This property accepts up to 50 JSON key:value pairs.
 
 {% tabs %}
 {% tab title="Python" %}

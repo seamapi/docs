@@ -2,7 +2,7 @@
 
 Events let you know when something interesting happens in your workspace. When an interesting event occurs, Seam creates a new `Event` object. For example, when a lock is unlocked, Seam creates a `lock.unlocked` event. When a device's battery level is low, Seam creates a `device.battery_low` event.
 
-As with other API resources, you can use endpoints to retrieve an [individual event](get.md) or a [list of events](../../api/events/list-events.md). Seam also provides a separate [webhook](../../core-concepts/webhooks.md) system for sending the `event` objects directly to an endpoint on your sever. Manage webhooks through the [Seam Console](../../core-concepts/seam-console/). For details, see [Webhooks](../../core-concepts/webhooks.md).
+As with other API resources, you can use endpoints to retrieve an [individual event](get.md) or a [list of events](list.md). Seam also provides a separate [webhook](../../core-concepts/webhooks.md) system for sending the `event` objects directly to an endpoint on your sever. Manage webhooks through the [Seam Console](../../core-concepts/seam-console/). For details, see [Webhooks](../../core-concepts/webhooks.md).
 
 ***
 
@@ -134,9 +134,9 @@ Noise sensors emit an event whenever a predefined noise threshold has been excee
 
 ## List of Methods
 
-| [List Events](../../api/events/list-events.md) | List and filter events           |
-| ---------------------------------------------- | -------------------------------- |
-| [Get an Event](get.md)                         | Get data for an individual event |
+| [List Events](list.md)   | List and filter events           |
+| ------------------------------- | -------------------------------- |
+| [Get an Event](get.md) | Get data for an individual event |
 
 ***
 

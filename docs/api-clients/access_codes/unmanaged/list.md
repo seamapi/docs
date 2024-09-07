@@ -4,14 +4,14 @@ description: Get all unmanaged access codes
 
 # List Unmanaged Access Codes
 
-Returns a list of all [unmanaged access codes](../../products/smart-locks/access-codes/migrating-existing-access-codes.md#unmanaged-access-codes) for a device.
+Returns a list of all [unmanaged access codes](../../../products/smart-locks/access-codes/migrating-existing-access-codes.md#unmanaged-access-codes) for a device.
 
-The [guide to migrating existing access codes](../../products/smart-locks/access-codes/migrating-existing-access-codes.md) provides an overview of the difference between managed and unmanaged access codes.
+The [guide to migrating existing access codes](../../../products/smart-locks/access-codes/migrating-existing-access-codes.md) provides an overview of the difference between managed and unmanaged access codes.
 
 {% hint style="info" %}
 Not all providers support unmanaged access codes. The following providers do not support unmanaged access codes:
 
-[Kwikset](../../device-guides/kwikset-locks.md)
+[Kwikset](../../../device-guides/kwikset-locks.md)
 {% endhint %}
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/access_codes/unmanaged/list" method="post" %}
@@ -109,7 +109,7 @@ seam.access_codes.unmanaged.list(
 
 ## Response
 
-Returns an `access_codes` array, in which each returned `access_code` contains the set of applicable access code properties. For details, see [Access Codes](../access\_codes/).
+Returns an `access_codes` array, in which each returned `access_code` contains the set of applicable access code properties. For details, see [Access Codes](../).
 
 ### Sample Response
 

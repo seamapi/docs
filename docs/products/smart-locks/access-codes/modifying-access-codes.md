@@ -8,7 +8,7 @@ description: >-
 
 ## 1. Update the access code using the API
 
-You can update any active or upcoming access codes using the [Update Access Code](../../../api-clients/access-codes/update.md) request.
+You can update any active or upcoming access codes using the [Update Access Code](../../../api-clients/access_codes/update.md) request.
 
 When modifying an access code, adjust the properties of the access code, such as the `code`, `name`, `starts_at`, and `ends_at` to the new desired values.
 
@@ -252,7 +252,7 @@ There are two methods to verify that a permanent access code has been set on the
 
 **Polling Method**
 
-Utilize the `access_code_id` returned in the response from the create endpoint to invoke the [Get Access Code](../../../api-clients/access\_codes/get/) endpoint. A basic implementation would involve polling this endpoint until the `status` of the access code updates to `set`.
+Utilize the `access_code_id` returned in the response from the create endpoint to invoke the [Get Access Code](../../../api-clients/access_codes/get) endpoint. A basic implementation would involve polling this endpoint until the `status` of the access code updates to `set`.
 
 If the `status` remains `setting` for a very long time, or if the `access_code` object contains any `warnings` or `errors` properties, consult [our guide on "Troubleshooting Access Code Issues"](troubleshooting-access-code-issues.md) for further guidance.
 
@@ -268,7 +268,7 @@ There are two methods to verify that a time-bound access code has been set on th
 
 **Polling Method**
 
-Use the `access_code_id` provided in the response from the create endpoint to call the [Get Access Code](../../../api-clients/access\_codes/get/) endpoint. In a basic implementation, you would poll this endpoint at the `starts_at` time to check if the access code's status is updated to `set`.
+Use the `access_code_id` provided in the response from the create endpoint to call the [Get Access Code](../../../api-clients/access_codes/get) endpoint. In a basic implementation, you would poll this endpoint at the `starts_at` time to check if the access code's status is updated to `set`.
 
 If the `status` remains `setting`, or if the `access_code` object displays any warnings or errors, refer to [our "Troubleshooting Access Code Issues" guide](troubleshooting-access-code-issues.md) for assistance.
 
@@ -286,7 +286,7 @@ To convert a permanent access code to time-bound access, you must set the `start
 
 {% tabs %}
 {% tab title="Python" %}
-**1. Confirm that the access code starts as an ongoing code.**
+#### 1. Confirm that the access code starts as an ongoing code.
 
 **Request:**
 
@@ -309,7 +309,7 @@ pprint("Ends at: " + str(access_code.ends_at))
 'Ends at: None'
 ```
 
-**2. Update the code to set `starts_at` and `ends_at` timestamps.**
+#### 2. Update the code to set `starts_at` and `ends_at` timestamps.
 
 **Request:**
 
@@ -342,7 +342,7 @@ AccessCode(access_code_id='daf89de3-ad3a-49aa-93bd-25f27d58f699',
            )
 ```
 
-**3. Confirm that the `type` has changed to `time_bound`.**
+#### 3. Confirm that the `type` has changed to `time_bound`.
 
 **Request:**
 
@@ -367,7 +367,7 @@ pprint("Ends at: " + str(access_code.ends_at))
 {% endtab %}
 
 {% tab title="cURL (bash)" %}
-**1. Confirm that the access code starts as an ongoing code.**
+#### 1. Confirm that the access code starts as an ongoing code.
 
 **Request:**
 
@@ -403,7 +403,7 @@ curl -X 'GET' \
 }
 ```
 
-**2. Update the code to set `starts_at` and `ends_at` timestamps.**
+#### 2. Update the code to set `starts_at` and `ends_at` timestamps.
 
 **Request:**
 
@@ -435,7 +435,7 @@ curl -X 'POST' \
 }
 ```
 
-**3. Confirm that the `type` has changed to `time_bound`.**
+#### 3. Confirm that the `type` has changed to `time_bound`.
 
 **Request:**
 
@@ -478,7 +478,7 @@ curl -X 'GET' \
 {% endtab %}
 
 {% tab title="JavaScript" %}
-**1. Confirm that the access code starts as an ongoing code.**
+#### 1. Confirm that the access code starts as an ongoing code.
 
 **Request:**
 
@@ -505,7 +505,7 @@ console.log(await seam.accessCodes.get({
 }
 ```
 
-**2. Update the code to set `starts_at` and `ends_at` timestamps.**
+#### 2. Update the code to set `starts_at` and `ends_at` timestamps.
 
 **Request:**
 
@@ -531,7 +531,7 @@ console.log(updatedAccessCode)
 }
 ```
 
-**3. Confirm that the `type` has changed to `time_bound`.**
+#### 3. Confirm that the `type` has changed to `time_bound`.
 
 **Request:**
 
@@ -565,7 +565,7 @@ console.log(await seam.accessCodes.get({
 {% endtab %}
 
 {% tab title="Ruby" %}
-**1. Confirm that the access code starts as an ongoing code.**
+#### 1. Confirm that the access code starts as an ongoing code.
 
 **Request:**
 
@@ -590,7 +590,7 @@ puts client.access_codes.get("6fe348a8-5938-4b73-8a36-86f7ffdfc431").inspect
   >
 ```
 
-**2. Update the code to set `starts_at` and `ends_at` timestamps.**
+#### 2. Update the code to set `starts_at` and `ends_at` timestamps.
 
 **Request:**
 
@@ -616,7 +616,7 @@ puts updated_access_code.inspect
 ```
 {% endcode %}
 
-**3. Confirm that the `type` has changed to `time_bound`.**
+#### 3. Confirm that the `type` has changed to `time_bound`.
 
 **Request:**
 
@@ -687,7 +687,7 @@ echo json_encode($updated_code, JSON_PRETTY_PRINT);
 {% endtab %}
 
 {% tab title="C#" %}
-**1. Confirm that the access code starts as an ongoing code.**
+#### 1. Confirm that the access code starts as an ongoing code.
 
 **Request:**
 
@@ -709,7 +709,7 @@ Name: my ongoing code
 Type: Ongoing
 ```
 
-**2. Update the code to set `starts_at` and `ends_at` timestamps.**
+#### 2. Update the code to set `starts_at` and `ends_at` timestamps.
 
 **Request:**
 
@@ -741,7 +741,7 @@ Error:
 ```
 {% endcode %}
 
-**3. Confirm that the `type` has changed to `time_bound`.**
+#### 3. Confirm that the `type` has changed to `time_bound`.
 
 **Request:**
 
@@ -765,7 +765,7 @@ Type: TimeBound
 {% endtab %}
 
 {% tab title="Java" %}
-**1. Confirm that the access code starts as an ongoing code.**
+#### 1. Confirm that the access code starts as an ongoing code.
 
 **Request:**
 
@@ -795,7 +795,7 @@ System.out.println(accessCode);
 }
 ```
 
-**2. Update the code to set `starts_at` and `ends_at` timestamps.**
+#### 2. Update the code to set `starts_at` and `ends_at` timestamps.
 
 **Request:**
 
@@ -818,7 +818,7 @@ Optional[{
 }]
 ```
 
-**3. Confirm that the `type` has changed to `time_bound`.**
+#### 3. Confirm that the `type` has changed to `time_bound`.
 
 **Request:**
 
@@ -859,7 +859,7 @@ When converting a time-bound code to a permanent one, you'll also need to set th
 
 {% tabs %}
 {% tab title="Python" %}
-**1. Confirm that the access code starts as a time-bound code.**
+#### 1. Confirm that the access code starts as a time-bound code.
 
 **Request:**
 
@@ -882,7 +882,7 @@ pprint("Ends at: " + str(access_code.ends_at))
 'Ends at: 2025-01-22T12:00:00.000Z'
 ```
 
-**2. Update the code to set the `type` to `ongoing`.**
+#### 2. Update the code to set the `type` to `ongoing`.
 
 **Request:**
 
@@ -914,7 +914,7 @@ AccessCode(access_code_id='daf89de3-ad3a-49aa-93bd-25f27d58f699',
            )
 ```
 
-**3. Confirm that the `type` has changed to `ongoing` and the `starts_at` and `ends_at` are `None`.**
+#### 3. Confirm that the `type` has changed to `ongoing` and the `starts_at` and `ends_at` are `None`.
 
 **Request:**
 
@@ -939,7 +939,7 @@ pprint("Ends at: " + str(access_code.ends_at))
 {% endtab %}
 
 {% tab title="cURL (bash)" %}
-**1. Confirm that the access code starts as a time-bound code.**
+#### 1. Confirm that the access code starts as a time-bound code.
 
 **Request:**
 
@@ -980,7 +980,7 @@ curl -X 'GET' \
 }
 ```
 
-**2. Update the code to set the `type` to `ongoing`.**
+#### 2. Update the code to set the `type` to `ongoing`.
 
 **Request:**
 
@@ -1011,7 +1011,7 @@ curl -X 'POST' \
 }
 ```
 
-**3. Confirm that the `type` has changed to `ongoing` and the `starts_at` and `ends_at` are `None`.**
+#### 3. Confirm that the `type` has changed to `ongoing` and the `starts_at` and `ends_at` are `None`.
 
 **Request:**
 
@@ -1049,7 +1049,7 @@ curl -X 'GET' \
 {% endtab %}
 
 {% tab title="Javascript" %}
-**1. Confirm that the access code starts as a time-bound code.**
+#### 1. Confirm that the access code starts as a time-bound code.
 
 **Request:**
 
@@ -1081,7 +1081,7 @@ console.log(await seam.accessCodes.get({
 }
 ```
 
-**2. Update the code to set the `type` to `ongoing`.**
+#### 2. Update the code to set the `type` to `ongoing`.
 
 **Request:**
 
@@ -1106,7 +1106,7 @@ console.log(updatedAccessCode)
 }
 ```
 
-**3. Confirm that the `type` has changed to `ongoing` and the `starts_at` and `ends_at` are `None`.**
+#### 3. Confirm that the `type` has changed to `ongoing` and the `starts_at` and `ends_at` are `None`.
 
 **Request:**
 
@@ -1135,7 +1135,7 @@ console.log(await seam.accessCodes.get({
 {% endtab %}
 
 {% tab title="Ruby" %}
-**1. Confirm that the access code starts as a time-bound code.**
+#### 1. Confirm that the access code starts as a time-bound code.
 
 **Request:**
 
@@ -1165,7 +1165,7 @@ puts client.access_codes.get("6fe348a8-5938-4b73-8a36-86f7ffdfc431").inspect
   >
 ```
 
-**2. Update the code to set the `type` to `ongoing`.**
+#### 2. Update the code to set the `type` to `ongoing`.
 
 **Request:**
 
@@ -1190,7 +1190,7 @@ puts updated_access_code.inspect
 ```
 {% endcode %}
 
-**3. Confirm that the `type` has changed to `ongoing` and the `starts_at` and `ends_at` are `None`.**
+#### 3. Confirm that the `type` has changed to `ongoing` and the `starts_at` and `ends_at` are `None`.
 
 **Request:**
 
@@ -1255,7 +1255,7 @@ echo json_encode($updated_code, JSON_PRETTY_PRINT);
 {% endtab %}
 
 {% tab title="C#" %}
-**1. Confirm that the access code starts as a time-bound code.**
+#### 1. Confirm that the access code starts as a time-bound code.
 
 **Request:**
 
@@ -1277,7 +1277,7 @@ Name: my ongoing code
 Type: TimeBound
 ```
 
-**2. Update the code to set the `type` to `ongoing`.**
+#### 2. Update the code to set the `type` to `ongoing`.
 
 **Request:**
 
@@ -1308,7 +1308,7 @@ Error:
 ```
 {% endcode %}
 
-**3. Confirm that the `type` has changed to `ongoing` and the `starts_at` and `ends_at` are `None`.**
+#### 3. Confirm that the `type` has changed to `ongoing` and the `starts_at` and `ends_at` are `None`.
 
 **Request:**
 
@@ -1336,7 +1336,7 @@ Ends at:
 {% endtab %}
 
 {% tab title="Java" %}
-**1. Confirm that the access code starts as a time-bound code.**
+#### 1. Confirm that the access code starts as a time-bound code.
 
 **Request:**
 
@@ -1367,7 +1367,7 @@ System.out.println(accessCode);
 }
 ```
 
-**2. Update the code to set the `type` to `ongoing`.**
+#### 2. Update the code to set the `type` to `ongoing`.
 
 **Request:**
 
@@ -1389,7 +1389,7 @@ Optional[{
 }]
 ```
 
-**3. Confirm that the `type` has changed to `ongoing` and the `starts_at` and `ends_at` are `None`.**
+#### 3. Confirm that the `type` has changed to `ongoing` and the `starts_at` and `ends_at` are `None`.
 
 **Request:**
 

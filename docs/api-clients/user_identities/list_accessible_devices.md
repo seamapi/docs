@@ -52,7 +52,7 @@ return nil
 
 ## Response
 
-Returns an `accessible_devices` array, in which each returned device (`device`) contains the set of applicable device properties. For details, see [Devices](<../devices/README (1).md>).
+Returns an `accessible_devices` array, in which each returned device (`device`) contains the set of applicable device properties. For details, see [Devices](../devices/).
 
 This response also includes a Boolean `ok` status indicator.
 

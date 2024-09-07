@@ -24,6 +24,6 @@ When you have `heat_cool` turned on, where both heating and cooling systems are 
 
 ## List of Methods
 
-| [Get Thermostat](get-thermostat.md) |
-| ----------------------------------- |
-| [List Thermostats](list.md)         |
+| [Get Thermostat](./get.md)                                                             |
+| ----------------------------------------------------------------------------------------------- |
+| [List Thermostats](./list.md)                                                         |

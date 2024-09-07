@@ -70,7 +70,7 @@ seam.locks().list();
 
 ## Response
 
-Returns a `locks` array, in which each returned `lock` contains the set of applicable lock properties. For details, see [Locks](<README (1).md>).
+Returns a `locks` array, in which each returned `lock` contains the set of applicable lock properties. For details, see [Locks](./).
 
 ### Sample Response
 
