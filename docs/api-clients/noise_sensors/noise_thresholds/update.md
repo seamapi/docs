@@ -121,14 +121,14 @@ $seam->noise_sensors->noise_thresholds->update(
 
 ### Parameters
 
-| `device_id`                | type: string                                            | Device id of a device to create a noise threshold on                                    |
-| -------------------------- | ------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `noise_threshold_id`       | string                                                  | Noise Threshold Id                                                                      |
-| `name`                     | string                                                  | Name of the Noise Threshold                                                             |
-| `starts_daily_at`          | [Seam Time of Day](https://github.com/seamapi/seam-tod) | Timestamp of when the Noise Threshold becomes active daily                              |
-| `ends_daily_at`            | [Seam Time of Day](https://github.com/seamapi/seam-tod) | Timestamp of when the Noise Threshold becomes inactive daily                            |
-| `noise_threshold_decibels` | number                                                  | The noise level in decibels                                                             |
-| `noise_threshold_nrs`      | number, optional                                        | Noise Level in Noiseaware Noise Risk Score (NRS) (only relevant for Noiseaware sensors) |
+| `device_id`                | type: string                                             | Device id of a device to create a noise threshold on                                    |
+| -------------------------- | -------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `noise_threshold_id`       | string                                                   | Noise Threshold Id                                                                      |
+| `name`                     | string                                                   | Name of the Noise Threshold                                                             |
+| `starts_daily_at`          | [Seam zoned time](https://github.com/seamapi/zoned-time) | Timestamp of when the Noise Threshold becomes active daily                              |
+| `ends_daily_at`            | [Seam zoned time](https://github.com/seamapi/zoned-time) | Timestamp of when the Noise Threshold becomes inactive daily                            |
+| `noise_threshold_decibels` | number                                                   | The noise level in decibels                                                             |
+| `noise_threshold_nrs`      | number, optional                                         | Noise Level in Noiseaware Noise Risk Score (NRS) (only relevant for Noiseaware sensors) |
 
 ### Response
 
