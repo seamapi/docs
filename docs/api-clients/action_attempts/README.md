@@ -1,4 +1,4 @@
-# Action Attempt
+# Action Attempts
 
 ## The Action Attempt Object
 
@@ -11,13 +11,13 @@
 
 ### Action Types
 
-| `CREATE_ACCESS_CODE`     | [Creates an Access Code](../access_codes/create) for a keypad lock                                                                       |
-| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `DELETE_ACCESS_CODE`     | [Deletes an Access Code](../access_codes/delete) for a keypad lock                                                                       |
-| `LOCK_DOOR`              | [Locks a Door Lock](../locks/lock_door) for a door lock                                                                                                 |
-| `UNLOCK_DOOR`            | [Unlocks a Door Lock](../locks/unlock_door) for a door lock                                                                                             |
-| `CREATE_NOISE_THRESHOLD` | [Creates a Noise Threshold](https://github.com/seamapi/api-docs/blob/main/docs/api-clients/action-attempt/broken-reference/README.md) for a noise sensor |
-| `REMOVE_NOISE_THRESHOLD` | [Removes a Noise Threshold](https://github.com/seamapi/api-docs/blob/main/docs/api-clients/action-attempt/broken-reference/README.md) for a noise sensor |
+| `CREATE_ACCESS_CODE`     | [Creates an Access Code](../access\_codes/create.md) for a keypad lock                        |
+| ------------------------ | --------------------------------------------------------------------------------------------- |
+| `DELETE_ACCESS_CODE`     | [Deletes an Access Code](../access\_codes/delete.md) for a keypad lock                        |
+| `LOCK_DOOR`              | [Locks a Door Lock](../locks/lock\_door.md) for a door lock                                   |
+| `UNLOCK_DOOR`            | [Unlocks a Door Lock](../locks/unlock\_door.md) for a door lock                               |
+| `CREATE_NOISE_THRESHOLD` | [Creates a Noise Threshold](../noise\_sensors/noise\_thresholds/create.md) for a noise sensor |
+| `REMOVE_NOISE_THRESHOLD` | [Removes a Noise Threshold](../noise\_sensors/noise\_thresholds/delete.md) for a noise sensor |
 
 ### List of Methods
 

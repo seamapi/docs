@@ -271,13 +271,11 @@ echo json_encode($locks);
 
 ### 4 — Programming Access Codes on a dormakaba Oracode Lock
 
-The Seam API enables you to create offline access codes on dormakaba Oracode devices, such as the 480i and 660i locks. Users can then enter these codes to unlock the door. To learn more, see [Managing Offline Access Codes](../products/smart-locks/access-codes/offline-access-codes.md).
+The Seam API enables you to create offline access codes on dormakaba Oracode devices, such as the 480i and 660i locks. Users can then enter these codes to unlock the door. For detailed instructions, see [Creating dormakaba Oracode Offline Access Codes](../device-and-system-integration-guides/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes.md).
 
 {% hint style="info" %}
 dormakaba Oracode does not let you specify a code for an access code. Instead it auto-generates a six-digit code, which the Seam API returns. If you try to pass the `code` argument to the access code `create` function, the Seam API returns an error.
 {% endhint %}
-
-For detailed instructions, see [Creating dormakaba Oracode Offline Access Codes](../device-and-system-integration-guides/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes.md).
 
 ## Next Steps
 
@@ -289,6 +287,6 @@ In addition, if you'd like to explore other aspects of Seam, check out the follo
 * [Yale Getting Started Guide](get-started-with-yale-locks.md)
 * [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
 * [Configuring webhooks](../core-concepts/webhooks.md) for [device events](../api-clients/events/list.md)
-* [Core Concepts](https://github.com/seamapi/api-docs/blob/main/docs/device-guides/broken-reference/README.md)
+* [Core Concepts](broken-reference)
 
 If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).
