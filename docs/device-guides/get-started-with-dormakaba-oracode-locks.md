@@ -171,7 +171,8 @@ $webview = $seam->connect_webviews->create(
 Navigate to the URL that the Connect Webview object returned. Because you are using a sandbox workspace, complete the login flow by entering the following dormakaba Oracode [sandbox test account ](sandbox-and-sample-data/dormakaba-oracode-sample-data.md)credentials:
 
 * **username:** jane
-* **password:** 1234
+* **site:** Ocean Beach Vacations
+* **time zone:** (Any)
 
 <figure><img src="../.gitbook/assets/dormakaba-oracode_connect-flow-screens.png" alt="Seam Connect Webview flow to connect dormakaba Oracode account with Seam"><figcaption><p>Seam Connect Webview flow to connect dormakaba Oracode account with Seam</p></figcaption></figure>
 
@@ -270,153 +271,13 @@ echo json_encode($locks);
 
 ### 4 — Programming Access Codes on a dormakaba Oracode Lock
 
-The Seam API enables you to create access codes on dormakaba Oracode devices, such as the 480i and 660i locks. Users can then enter these codes to unlock the door. To learn more, see [Managing Access Codes](../products/smart-locks/access-codes/).
+The Seam API enables you to create offline access codes on dormakaba Oracode devices, such as the 480i and 660i locks. Users can then enter these codes to unlock the door. To learn more, see [Managing Access Codes](../products/smart-locks/access-codes/).
 
 {% hint style="info" %}
 dormakaba Oracode does not let you specify a code for an access code. Instead it auto-generates a six-digit code, which the Seam API returns. If you try to pass the `code` argument to the access code `create` function, the Seam API returns an error.
 {% endhint %}
 
-{% tabs %}
-{% tab title="Python" %}
-```python
-# Create an ongoing code.
-seam.access_codes.create(
-  device=some_lock,
-  name="Personal Access Code")
-
-# Create a time-bound code.
-seam.access_codes.create(
-  device=some_lock,
-  name="My Temp Access Code",
-  starts_at="2028-08-12T19:23:42+0000",
-  ends_at="2028-08-13T19:23:42+0000")
-
-# You can use a device or a device_id as the `device` parameter.
-seam.access_codes.list(device=some_lock)
-
-# [
-#   AccessCode(access_code_id='631a3a30-3fa7-462a-b3bc-65528ccf8765', type='time_bound', code=None, starts_at='2028-08-12T19:24:00.000Z', ends_at='2028-08-13T19:24:00.000Z', name='My Temp Access Code', status='unset', common_code_key=None),
-#  AccessCode(access_code_id='4d2f4952-5446-4051-ba7e-a6fc01a376d7', type='ongoing', code='123*12346', starts_at=None, ends_at=None, name='Personal Access Code', status='set', common_code_key=None)
-#  ]
-```
-{% endtab %}
-
-{% tab title="JavaScript" %}
-```javascript
-// Create an ongoing code.
-await seam.accessCodes.create({
-  device_id: someLock.device_id,
-  name: 'Personal Access Code',
-})
-
-// Create a time-bound code.
-await seam.accessCodes.create({
-  device_id: someLock.device_id,
-  name: 'My Temp Access Code',
-  starts_at: '2028-11-12T19:23:42+0000',
-  ends_at: '2028-11-13T19:23:42+0000',
-})
-
-// Use a device_id as the `device_id` parameter.
-await seam.accessCodes.list({
-  device_id: someLock.device_id,
-})
-
-/*
-[
-  {
-    access_code_id: '631a3a30-3fa7-462a-b3bc-65528ccf8765',
-    device_id: '681bf7bc-e7c6-48e6-acfe-6dbabd0615c5',
-    name: 'My Temp Access Code',
-    code: null,
-    is_waiting_for_code_assignment: true,
-    common_code_key: null,
-    type: 'time_bound',
-    status: 'unset',
-    starts_at: '2028-08-12T19:24:00.000Z',
-    ends_at: '2028-08-13T19:24:00.000Z',
-    created_at: '2023-02-08T23:28:57.061Z',
-    errors: [],
-    warnings: []
-  },
-  {
-    access_code_id: '774986f8-5fad-4911-a4fb-e5a2ef9f15bd',
-    device_id: '681bf7bc-e7c6-48e6-acfe-6dbabd0615c5',
-    name: 'Personal Access Code',
-    code: '123*12346',
-    common_code_key: null,
-    type: 'ongoing',
-    status: 'set',
-    created_at: '2023-02-08T23:10:54.096Z',
-    errors: [],
-    warnings: []
-  },
-]
-*/
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-```ruby
-# Create an ongoing code.
-seam.access_codes.create(
-  device_id: some_lock.device_id, name: 'Personal Access Code'
-)
-
-# Create a time-bound code.
-seam.access_codes.create(
-  device_id: some_lock.device_id,
-  name: 'My Temp Access Code',
-  starts_at: '2028-08-12T19:23:42+0000',
-  ends_at: '2028-08-13T19:23:42+0000'
-)
-
-# You can use a device or a device_id as the `device` parameter.
-seam.access_codes.list(some_lock)
-
-# [<Seam::AccessCode:0x00690
-#   access_code_id="631a3a30-3fa7-462a-b3bc-65528ccf8765"
-#   name="My Temp Access Code"
-#   code=nil
-#   type="time_bound"
-#   starts_at=2028-08-12 19:24:00 UTC
-#   ends_at=2028-08-13 19:24:00 UTC
-#   errors=[]
-#   warnings=[]>, <Seam::AccessCode:0x006b8
-#   access_code_id="774986f8-5fad-4911-a4fb-e5a2ef9f15bd"
-#   name="Personal Access Code"
-#   code="123*12346"
-#   type="ongoing"
-#   errors=[]
-#   warnings=[]>]
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-```php
-use Seam\SeamClient;
-
-$seam = new SeamClient("YOUR_API_KEY");
-
-$some_lock = $seam->locks->list()[0];
-$seam->access_codes->create(
-  device_id: $some_lock->device_id, name: 'Personal Access Code'
-);
-
-$seam->access_codes->create(
-  device_id: $some_lock->device_id,
-  name: 'My Temp Access Code',
-  starts_at: '2028-08-12T19:23:42+0000',
-  ends_at: '2028-08-13T19:23:42+0000'
-);
-
-echo json_encode($access_code)
-/*
-[{"access_code_id":"19cea367-fd8c-40b7-9ce3-6dec76fe1763","name":"My Temp Access Code","type":"time_bound","status":"unset","starts_at":"2028-08-12T19:24:00.000Z","ends_at":"2028-08-13T19:24:00.000Z","code":null,"created_at":"2023-02-09T05:53:46.293Z","errors":[],"warnings":[]},{"access_code_id":"f797a8f0-b8f7-4734-9bea-962de5cad413","name":"Personal Access Code","type":"ongoing","status":"set","starts_at":null,"ends_at":null,"code":"123*12346","created_at":"2023-02-09T05:53:46.172Z","errors":[],"warnings":[]}]
-*/
-```
-{% endtab %}
-{% endtabs %}
+For detailed instructions, see [Creating dormakaba Oracode Offline Access Codes](../device-and-system-integration-guides/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes.md)
 
 ## Next Steps
 
