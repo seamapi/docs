@@ -9,7 +9,6 @@
     body:
       acs_systems:
         - acs_system_id: 8d7e0b3a-b889-49a7-9164-4b71a0506a33
----
 - title: Get a Specific ACS system
   description: Specify the `acs_system_id` of the ACS system that you want to retrieve.
   request:
@@ -20,7 +19,6 @@
     body:
       acs_system:
         - acs_system_id: 8d7e0b3a-b889-49a7-9164-4b71a0506a33
----
 - title: List compatible credential manager ACS systems
   description: Specify the `acs_system_id` for which you want to retrieve all compatible credential manager ACS systems.
   request:
