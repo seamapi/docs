@@ -26,6 +26,15 @@ export const reference = (
   }
 
   for (const route of metadata.routes ?? []) {
+    if (
+      !(
+        route.path.startsWith('/acs/systems') ||
+        route.path.startsWith('/acs/users')
+      )
+    ) {
+      continue
+    }
+
     const k = `api${route.path}/README.md`
     files[k] = {
       contents: Buffer.from('\n'),
