@@ -56,7 +56,7 @@ When you create a dormakaba Oracode offline access code, you must set the durati
 
 ### Time Zones
 
-All time zone configuration and display for dormakaba Oracode locks occur in the local time zone of the lock, itself. When you [connect your dormakaba Oracode site to Seam](../../device-guides/dormakaba-oracode-locks.md#setup-instructions) initially, you specify the time zone in which the site is located. Consequently, when you configure an access code for a dormakaba Oracode lock, you set the `starts_at` and `ends_at` properties without an offset or time zone. Seam matches the `starts_at` and `ends_at` times that you specify to the local time zone of the lock.
+All time zone configuration and display for dormakaba Oracode locks occur in the local time zone of the lock, itself. When you [connect your dormakaba Oracode site to Seam](../../device-guides/dormakaba-oracode-locks.md#setup-instructions) initially, you specify the time zone in which the site is located. Consequently, when you configure an access code for a dormakaba Oracode lock, you set the `starts_at` and `ends_at` properties using a time and offset that match the local time zone of the lock.
 
 For example, suppose that your lock includes the following user level:
 
@@ -99,7 +99,7 @@ To [create an hourly-bound offline access code](../../products/smart-locks/acces
 To create an hourly-bound offline access code, provide the `device_id` of the lock for which you want to create the code and set `is_offline_access_code` to `true`. Specify the `starts_at` and `ends_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamps to define the active time window for the offline code. Make sure to set the duration of the code to match—exactly—one of the [user levels](creating-dormakaba-oracode-offline-access-codes.md#user-levels) on the device. You can also assign an optional `name` to the offline access code.
 
 {% hint style="info" %}
-Do not include a time zone or offset. Seam automatically uses the time zone of the lock, as configured when the corresponding [dormakaba Oracode site was connected to Seam](../../device-guides/dormakaba-oracode-locks.md#setup-instructions).
+Make sure to set the `starts_at` and `ends_at` times and offsets to match the local time zone of the lock, as configured when the corresponding [dormakaba Oracode site was connected to Seam](../../device-guides/dormakaba-oracode-locks.md#setup-instructions).
 {% endhint %}
 
 For more details, see the [Create Access Code endpoint](../../api-clients/access-codes/create-an-access-code.md).
@@ -479,7 +479,7 @@ To [create a daily-bound offline access code](../../products/smart-locks/access-
 To create a daily-bound offline access code, provide the `device_id` of the lock for which you want to create the code and set `is_offline_access_code` to `true`. Specify the `starts_at` and `ends_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamps to define the active time window for the offline code. Make sure to set the duration of the code to match—exactly—one of the [user levels](creating-dormakaba-oracode-offline-access-codes.md#user-levels) on the device. For a daily-bound offline access code, you must specify the same time (but not the same date) in the `starts_at` and `ends_at` properties.
 
 {% hint style="info" %}
-Do not include a time zone or offset. Seam automatically uses the time zone of the lock, as configured when the corresponding [dormakaba Oracode site was connected to Seam](../../device-guides/dormakaba-oracode-locks.md#setup-instructions).
+Make sure to set the `starts_at` and `ends_at` times and offsets to match the local time zone of the lock, as configured when the corresponding [dormakaba Oracode site was connected to Seam](../../device-guides/dormakaba-oracode-locks.md#setup-instructions).
 {% endhint %}
 
 Because daily-bound offline access codes require day-level duration granularity, you can also set `max_time_rounding` to `1day` (or `1d`), instead of the default `1hour` (or `1h`). Note that the Seam API returns an error if `max_time_rounding` is `1hour` and the necessary rounding amount exceeds one hour.
