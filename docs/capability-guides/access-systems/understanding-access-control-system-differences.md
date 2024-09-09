@@ -65,7 +65,7 @@ In a credential-based ACS, the [`acs_credential`](../../api-clients/acs/credenti
 The following process describes the configuration steps for your application to grant access in a credential-based ACS:
 
 1. When the ACS connects to Seam, Seam automatically creates the [`acs_system`](../../api/acs/systems/). Seam also syncs the entrances from the connected ACS as `acs_entrance` resources. Note that because Seam automatically syncs these entrance resources from the ACS, you cannot create, edit, or delete them using the Seam API.
-2. Your application [creates](../../products/access-systems/user-management.md#create-a-user) an [`acs_user`](../../api-clients/acs/users/) for each user within this ACS. Each `acs_user` is configured with a set of attributes, such their name, email address, and phone number, as applicable.\
+2. Your application [creates](../../products/access-systems/user-management.md#create-a-user) an [`acs_user`](../../api/acs/users/) for each user within this ACS. Each `acs_user` is configured with a set of attributes, such their name, email address, and phone number, as applicable.\
    If you need to grant a single application user access to multiple ACSs—for example, if an application user needs access to multiple buildings, each of which uses a separate ACS—you can use Seam [user identities](../../api-clients/user_identities/) to link `acs_user`s in different `acs_system`s.
 3.  Your application [creates](managing-credentials.md#create-a-credential-for-a-user) `acs_credential`s with the following attributes:
 
