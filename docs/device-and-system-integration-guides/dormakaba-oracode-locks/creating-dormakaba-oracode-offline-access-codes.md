@@ -6,7 +6,7 @@ description: >-
 
 # Creating dormakaba Oracode Offline Access Codes
 
-In addition to supporting [online access codes](../../products/smart-locks/access-codes/), the Seam integration for dormakaba Oracode enables you to manage [offline access codes](../../products/smart-locks/access-codes/offline-access-codes.md) for dormakaba Oracode lock models that do not have Wi-Fi capabilities. You generate offline access (PIN) codes remotely, and the manufacturer maintains a server-based registry of synchronized encryption keys (tokens) to enable these offline codes. Then, owners or managers can share these codes with users through messaging or other similar applications, and the users do not need to install a special application to unlock the device.
+The Seam integration for dormakaba Oracode enables you to manage [offline access codes](../../products/smart-locks/access-codes/offline-access-codes.md) for dormakaba Oracode locks. You generate offline access (PIN) codes remotely, and the manufacturer maintains a server-based registry of synchronized encryption keys (tokens) to enable these offline codes. Then, owners or managers can share these codes with users through messaging or other similar applications, and the users do not need to install a special application to unlock the device.
 
 To learn about the special requirements regarding offline access codes for dormakaba Oracode locks, see [Offline Access Code Requirements](creating-dormakaba-oracode-offline-access-codes.md#offline-access-code-requirements). For more information about using offline access codes, see [Offline Access Codes](../../products/smart-locks/access-codes/#offline-access-codes) and [Managing Offline Access Codes](../../products/smart-locks/access-codes/offline-access-codes.md).
 
@@ -39,13 +39,13 @@ When you create a dormakaba Oracode offline access code, you must set the durati
 ```json
 "predefined_time_slots": [
   {
-      "name": "Guest RCI D 3:30pm-10:30am",
+      "name": "Guest RCI D 7am-7pm",
       "prefix": 0,
       "is_master": false,
       "is_24_hour": false,
       "is_one_shot": false,
-      "check_in_time": "15:30:00[PST8PDT]",
-      "check_out_time": "10:30:00[PST8PDT]",
+      "check_in_time": "07:00:00[America/Los_Angeles]",
+      "check_out_time": "19:00:00[America/Los_Angeles]",
       "is_biweekly_mode": false,
       "dormakaba_oracode_user_level_id": "f23721ec-6dce-4c54-8971-40d58449a366",
       "ext_dormakaba_oracode_user_level_prefix": 0
@@ -56,9 +56,25 @@ When you create a dormakaba Oracode offline access code, you must set the durati
 
 ### Time Zones
 
-All time zone configuration and display for dormakaba Oracode locks occur in the local time zone of the lock, itself. Consequently, when you configure an access code for a dormakaba Oracode lock, you must set the starting and ending times to match the relative local time zone of the lock. Note that the `starts_at` and `ends_at` properties use a time zone offset, rather than a time zone. Further, we recommend specifying all times as UTC times. In this case, the UTC time that you specify must be equivalent to the desired local time of the device.
+All time zone configuration and display for dormakaba Oracode locks occur in the local time zone of the lock, itself. When you [connect your dormakaba Oracode site to Seam](../../device-guides/dormakaba-oracode-locks.md#setup-instructions) initially, you specify the time zone in which the site is located. Consequently, when you configure an access code for a dormakaba Oracode lock, you set the `starts_at` and `ends_at` properties without an offset or time zone. Seam matches the `starts_at` and `ends_at` times that you specify to the local time zone of the lock.
 
-To view the local time zone of a dormakaba Oracode lock, [get the lock](../../api-clients/locks/get.md) and see the `check_in_time` and `check_out_time` within each time slot in the `device.properties.dormakaba_oracode_metadata.predefined_time_slots` property for the device. You can also see the local time zone for a dormakaba Oracode lock in the `dormakaba_oracode_device_metadata.iana_timezone` property.
+For example, suppose that your lock includes the following user level:
+
+```json
+"check_in_time": "07:00:00[America/Los_Angeles]",
+"check_out_time": "19:00:00[America/Los_Angeles]"
+```
+
+To set an access code that uses this user level, set the times for the `starts_at` and `ends_at` properties as follows:
+
+```json
+"starts_at": "2024-09-10T07:00:00-07:00",
+"ends_at": "2024-09-15T19:00:00-07:00"
+```
+
+#### View the Time Zone of a dormakaba Oracode Lock
+
+To view the local time zone of a dormakaba Oracode lock, [get the lock](../../api-clients/locks/get-lock.md) and see the `check_in_time` and `check_out_time` within each time slot in the `device.properties.dormakaba_oracode_metadata.predefined_time_slots` property for the device. You can also see the local time zone for a dormakaba Oracode lock in the `dormakaba_oracode_device_metadata.iana_timezone` property.
 
 ### Master Codes
 
@@ -80,7 +96,13 @@ To [create an hourly-bound offline access code](../../products/smart-locks/acces
 
 #### 1. Create an Hourly-Bound Offline Access Code
 
-To create an hourly-bound offline access code, provide the `device_id` of the lock for which you want to create the code and set `is_offline_access_code` to `true`. Specify the `starts_at` and `ends_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamps to define the active time window for the offline code. Make sure to set the duration of the code to match—exactly—one of the [user levels](creating-dormakaba-oracode-offline-access-codes.md#user-levels) on the device. You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../api-clients/access_codes/create.md).
+To create an hourly-bound offline access code, provide the `device_id` of the lock for which you want to create the code and set `is_offline_access_code` to `true`. Specify the `starts_at` and `ends_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamps to define the active time window for the offline code. Make sure to set the duration of the code to match—exactly—one of the [user levels](creating-dormakaba-oracode-offline-access-codes.md#user-levels) on the device. You can also assign an optional `name` to the offline access code.
+
+{% hint style="info" %}
+Do not include a time zone or offset. Seam automatically uses the time zone of the lock, as configured when the corresponding [dormakaba Oracode site was connected to Seam](../../device-guides/dormakaba-oracode-locks.md#setup-instructions).
+{% endhint %}
+
+For more details, see the [Create Access Code endpoint](../../api-clients/access-codes/create-an-access-code.md).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -100,8 +122,8 @@ if device.can_program_offline_access_codes:
     name = "my hourly-bound offline code",
     # Make sure that the validity period matches
     # a user level for the device.
-    starts_at = "2023-11-10T00:00:00-00:00",
-    ends_at = "2023-11-15T18:00:00-00:00",
+    starts_at = "2024-09-10T07:00:00-07:00",
+    ends_at = "2024-09-15T19:00:00-07:00",
     is_offline_access_code = True
   )
 ```
@@ -113,8 +135,8 @@ AccessCode(
   access_code_id='11111111-1111-1111-1111-777777777777',
   device_id='11111111-1111-1111-1111-444444444444',
   type='time_bound',
-  starts_at='2023-11-10T00:00:00.000Z',
-  ends_at='2023-11-15T18:00:00.000Z',
+  starts_at='2024-09-10T14:00:00.000Z',
+  ends_at='2024-09-16T02:00:00.000Z',
   name='my hourly-bound offline code',
   is_offline_access_code=True,
   ...
@@ -151,8 +173,8 @@ if  $(jq -r '.device.can_program_offline_access_codes' <<< ${device}); then \
     -d "{
       \"device_id\": \"$(jq -r '.device.device_id' <<< ${device})\",
       \"name\": \"my hourly-bound offline code\",
-      \"starts_at\": \"2023-11-10T00:00:00-00:00\",
-      \"ends_at\": \"2023-11-15T18:00:00-00:00\",
+      \"starts_at\": \"2024-09-10T07:00:00-07:00\",
+      \"ends_at\": \"2024-09-15T19:00:00-07:00\",
       \"is_offline_access_code\": true
   }";
 fi
@@ -174,8 +196,8 @@ fi
     "device_id": "11111111-1111-1111-1111-444444444444",
     "name": "my hourly-bound offline code",
     "type": "time_bound",
-    "starts_at": "2023-11-10T00:00:00.000Z",
-    "ends_at": "2023-11-15T18:00:00.000Z",
+    "starts_at": "2024-09-10T14:00:00.000Z",
+    "ends_at": "2024-09-16T02:00:00.000Z",
     "is_offline_access_code": true,
     ...
   },
@@ -201,8 +223,8 @@ if (device.can_program_offline_access_codes) {
     name: "my hourly-bound offline code",
     // Make sure that the validity period matches
     // a user level for the device.
-    starts_at: "2023-11-10T00:00:00-00:00",
-    ends_at: "2023-11-15T18:00:00-00:00",
+    starts_at: "2024-09-10T07:00:00-07:00",
+    ends_at: "2024-09-15T19:00:00-07:00",
     is_offline_access_code: true
   })
 };
@@ -216,8 +238,8 @@ if (device.can_program_offline_access_codes) {
   device_id: '11111111-1111-1111-1111-444444444444',
   name: 'my hourly-bound offline code',
   type: 'time_bound',
-  starts_at: '2023-11-10T00:00:00.000Z',
-  ends_at: '2023-11-15T18:00:00.000Z',
+  starts_at: '2024-09-10T14:00:00.000Z',
+  ends_at: '2024-09-16T02:00:00.000Z',
   is_offline_access_code: true,
   ...
 }
@@ -239,8 +261,8 @@ if (device.can_program_offline_access_codes)
     name: "my hourly-bound offline code",
     # Make sure that the validity period matches
     # a user level for the device.
-    starts_at: "2023-11-10T00:00:00-00:00",
-    ends_at: "2023-11-15T18:00:00-00:00",
+    starts_at: "2024-09-10T07:00:00-07:00",
+    ends_at: "2024-09-15T19:00:00-07:00",
     is_offline_access_code: true
   )
 end
@@ -254,8 +276,8 @@ end
   device_id="11111111-1111-1111-1111-444444444444"
   name="my hourly-bound offline code"
   type="time_bound"
-  starts_at=2023-11-10 00:00:00 UTC
-  ends_at=2023-11-15 18:00:00 UTC
+  starts_at=2024-09-10 14:00:00 UTC
+  ends_at=2024-09-16 02:00:00 UTC
   is_offline_access_code: true
   ...
 >
@@ -277,8 +299,8 @@ if ($device->can_program_offline_access_codes) {
     name: "my hourly-bound offline code",
     // Make sure that the validity period matches
     // a user level for the device.
-    starts_at: "2023-11-10T00:00:00Z",
-    ends_at: "2023-11-15T18:00:00Z",
+    starts_at: "2024-09-10T07:00:00-07:00",
+    ends_at: "2024-09-15T19:00:00-07:00",
     is_offline_access_code: true
   );
 }
@@ -292,8 +314,8 @@ if ($device->can_program_offline_access_codes) {
   "device_id": "11111111-1111-1111-1111-444444444444",
   "name": "my hourly-bound offline code",
   "type": "time_bound",
-  "starts_at": "2023-11-10T00:00:00.000Z",
-  "ends_at": "2023-11-15T18:00:00.000Z",
+  "starts_at": "2024-09-10T14:00:00.000Z",
+  "ends_at": "2024-09-16T02:00:00.000Z",
   "is_offline_access_code": true,
   ...
 }
@@ -315,8 +337,8 @@ if (device.CanProgramOfflineAccessCodes == true) {
     name: "my hourly-bound offline code",
     // Make sure that the validity period matches
     // a user level for the device.
-    startsAt: "2023-11-10T00:00:00Z",
-    endsAt: "2023-11-15T18:00:00Z",
+    startsAt: "2024-09-10T07:00:00-07:00",
+    endsAt: "2024-09-15T19:00:00-07:00",
     isOfflineAccessCode: true
   );
 }
@@ -330,8 +352,8 @@ if (device.CanProgramOfflineAccessCodes == true) {
   "access_code_id": "11111111-1111-1111-1111-777777777777",
   "device_id": "11111111-1111-1111-1111-444444444444",
   "name": "my hourly-bound offline code",
-  "starts_at": "2023-11-10T00:00:00Z",
-  "ends_at": "2023-11-15T18:00:00Z",
+  "starts_at": "2024-09-10T14:00:00.000Z",
+  "ends_at": "2024-09-16T02:00:00.000Z",
   "is_offline_access_code": true,
   ...
 }
@@ -358,8 +380,8 @@ if (device.getCanProgramOfflineAccessCodes())
       .name("my hourly-bound offline code")
       // Make sure that the validity period matches
       // a user level for the device.
-      .startsAt("2023-11-10T00:00:00Z")
-      .endsAt("2023-11-15T18:00:00Z")
+      .startsAt("2024-09-10T07:00:00-07:00")
+      .endsAt("2024-09-15T19:00:00-07:00")
       .isOfflineAccessCode(true)
       .build());
 }
@@ -373,8 +395,8 @@ if (device.getCanProgramOfflineAccessCodes())
   "device_id" : "11111111-1111-1111-1111-444444444444",
   "name" : "my hourly-bound offline code",
   "type" : "time_bound",
-  "starts_at" : "2023-11-10T00:00:00Z",
-  "ends_at" : "2023-11-15T18:00:00Z",
+  "starts_at" : "2024-09-10T14:00:00.000Z",
+  "ends_at" : "2024-09-16T02:00:00.000Z",
   "is_offline_access_code": true,
   ...
 }
@@ -402,8 +424,8 @@ if *device.CanProgramOfflineAccessCodes {
         Name: api.String("my hourly-bound offline code"),
         // Make sure that the validity period matches
         // a user level for the device.
-        StartsAt: api.String("2023-11-10T00:00:00Z"),
-        EndsAt: api.String("2023-11-15T18:00:00Z"),
+        StartsAt: api.String("2024-09-10T07:00:00-07:00"),
+        EndsAt: api.String("2024-09-15T19:00:00-07:00"),
         IsOfflineAccessCode: api.Bool(true),
       },
     )
@@ -424,8 +446,8 @@ return nil
   "device_id": "11111111-1111-1111-1111-444444444444",
   "name": "my hourly-bound offline code",
   "type": "time_bound",
-  "starts_at": "2023-11-10T00:00:00.000Z",
-  "ends_at": "2023-11-15T18:00:00.000Z",
+  "starts_at": "2024-09-10T14:00:00.000Z",
+  "ends_at": "2024-09-16T02:00:00.000Z",
   "is_offline_access_code": true,
   ...
 }
@@ -456,9 +478,13 @@ To [create a daily-bound offline access code](../../products/smart-locks/access-
 
 To create a daily-bound offline access code, provide the `device_id` of the lock for which you want to create the code and set `is_offline_access_code` to `true`. Specify the `starts_at` and `ends_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamps to define the active time window for the offline code. Make sure to set the duration of the code to match—exactly—one of the [user levels](creating-dormakaba-oracode-offline-access-codes.md#user-levels) on the device. For a daily-bound offline access code, you must specify the same time (but not the same date) in the `starts_at` and `ends_at` properties.
 
+{% hint style="info" %}
+Do not include a time zone or offset. Seam automatically uses the time zone of the lock, as configured when the corresponding [dormakaba Oracode site was connected to Seam](../../device-guides/dormakaba-oracode-locks.md#setup-instructions).
+{% endhint %}
+
 Because daily-bound offline access codes require day-level duration granularity, you can also set `max_time_rounding` to `1day` (or `1d`), instead of the default `1hour` (or `1h`). Note that the Seam API returns an error if `max_time_rounding` is `1hour` and the necessary rounding amount exceeds one hour.
 
-You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../api-clients/access_codes/create.md).
+You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../api-clients/access\_codes/create.md).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -478,8 +504,8 @@ if device.can_program_offline_access_codes:
     name = "my daily-bound offline code",
     # Make sure that the validity period matches
     # a user level for the device.
-    starts_at = "2023-11-17T00:00:00-00:00",
-    ends_at = "2023-12-18T00:00:00-00:00",
+    starts_at = "2024-09-16T00:00:00-07:00",
+    ends_at = "2024-09-18T23:59:00-07:00",
     max_time_rounding = "1d",
     is_offline_access_code = True
   )
@@ -492,8 +518,8 @@ AccessCode(
   access_code_id='11111111-1111-1111-1111-888888888888',
   device_id='11111111-1111-1111-1111-444444444444',
   type='time_bound',
-  starts_at='2023-11-17T00:00:00.000Z',
-  ends_at='2023-12-18T00:00:00.000Z',
+  starts_at='2024-09-16T07:00:00.000Z',
+  ends_at='2024-09-19T06:59:00.000Z',
   name='my daily-bound offline code',
   is_offline_access_code=True,
   ...
@@ -530,8 +556,8 @@ if  $(jq -r '.device.can_program_offline_access_codes' <<< ${device}); then \
     -d "{
       \"device_id\": \"$(jq -r '.device.device_id' <<< ${device})\",
       \"name\": \"my daily-bound offline code\",
-      \"starts_at\": \"2023-11-17T00:00:00-00:00\",
-      \"ends_at\": \"2023-12-18T00:00:00-00:00\",
+      \"starts_at\": \"2024-09-16T00:00:00-07:00\",
+      \"ends_at\": \"2024-09-18T23:59:00-07:00\",
       \"max_time_rounding\": \"1d\",
       \"is_offline_access_code\": true
   }";
@@ -554,8 +580,8 @@ fi
     "device_id": "11111111-1111-1111-1111-444444444444",
     "name": "my daily-bound offline code",
     "type": "time_bound",
-    "starts_at": "2023-11-17T00:00:00.000Z",
-    "ends_at": "2023-12-18T00:00:00.000Z",
+    "starts_at": "2024-09-16T07:00:00.000Z",
+    "ends_at": "2024-09-19T06:59:00.000Z",
     "is_offline_access_code": true,
     ...
   },
@@ -581,8 +607,8 @@ if (device.can_program_offline_access_codes) {
     name: "my daily-bound offline code",
     // Make sure that the validity period matches
     // a user level for the device.
-    starts_at: "2023-11-17T00:00:00-00:00",
-    ends_at: "2023-12-18T00:00:00-00:00",
+    starts_at: "2024-09-16T00:00:00-07:00",
+    ends_at: "2024-09-18T23:59:00-07:00",
     max_time_rounding: "1d",
     is_offline_access_code: true
   })
@@ -597,8 +623,8 @@ if (device.can_program_offline_access_codes) {
   device_id: '11111111-1111-1111-1111-444444444444',
   name: 'my daily-bound offline code',
   type: 'time_bound',
-  starts_at: '2023-11-17T00:00:00.000Z',
-  ends_at: '2023-12-18T00:00:00.000Z',
+  starts_at: '2024-09-16T07:00:00.000Z',
+  ends_at: '2024-09-19T06:59:00.000Z',
   is_offline_access_code: true,
   ...
 }
@@ -620,8 +646,8 @@ if (device.can_program_offline_access_codes)
     name: "my daily-bound offline code",
     # Make sure that the validity period matches
     # a user level for the device.
-    starts_at: "2023-11-17T00:00:00-00:00",
-    ends_at: "2023-12-18T00:00:00-00:00",
+    starts_at: "2024-09-16T00:00:00-07:00",
+    ends_at: "2024-09-18T23:59:00-07:00",
     max_time_rounding: "1d",
     is_offline_access_code: true
   )
@@ -636,8 +662,8 @@ end
   device_id="11111111-1111-1111-1111-444444444444"
   name="my daily-bound offline code"
   type="time_bound"
-  starts_at=2023-11-17 00:00:00 UTC
-  ends_at=2023-12-18 00:00:00 UTC
+  starts_at=2024-09-16 07:00:00.00 UTC
+  ends_at=2024-09-19 06:59:00.00 UTC
   is_offline_access_code: true
   ...
 >
@@ -659,8 +685,8 @@ if ($device->can_program_offline_access_codes) {
     name: "my daily-bound offline code",
     // Make sure that the validity period matches
     // a user level for the device.
-    starts_at: "2023-11-17T00:00:00Z",
-    ends_at: "2023-12-18T00:00:00Z",
+    starts_at: "2024-09-16T00:00:00-07:00",
+    ends_at: "2024-09-18T23:59:00-07:00",
     max_time_rounding: "1d",
     is_offline_access_code: true
   );
@@ -675,8 +701,8 @@ if ($device->can_program_offline_access_codes) {
   "device_id": "11111111-1111-1111-1111-444444444444",
   "name": "my daily-bound offline code",
   "type": "time_bound",
-  "starts_at": "2023-11-17T00:00:00.000Z",
-  "ends_at": "2023-12-18T00:00:00.000Z",
+  "starts_at": "2024-09-16T07:00:00.000Z",
+  "ends_at": "2024-09-19T06:59:00.000Z",
   "is_offline_access_code": true,
   ...
 }
@@ -698,8 +724,8 @@ if (device.CanProgramOfflineAccessCodes == true) {
     name: "my daily-bound offline code",
     // Make sure that the validity period matches
     // a user level for the device.
-    startsAt: "2023-11-17T00:00:00Z",
-    endsAt: "2023-12-18T00:00:00Z",
+    startsAt: "2024-09-16T00:00:00-07:00",
+    endsAt: "2024-09-18T23:59:00-07:00",
     maxTimeRounding: "1d",
     isOfflineAccessCode: true
   );
@@ -714,8 +740,8 @@ if (device.CanProgramOfflineAccessCodes == true) {
   "access_code_id": "11111111-1111-1111-1111-888888888888",
   "device_id": "11111111-1111-1111-1111-444444444444",
   "name": "my daily-bound offline code",
-  "starts_at": "2023-11-17T00:00:00Z",
-  "ends_at": "2023-12-18T00:00:00Z",
+  "starts_at": "2024-09-16T07:00:00.000Z",
+  "ends_at": "2024-09-19T06:59:00.000Z",
   "is_offline_access_code": true,
   ...
 }
@@ -742,8 +768,8 @@ if (device.getCanProgramOfflineAccessCodes())
       .name("my daily-bound offline code")
       // Make sure that the validity period matches
       // a user level for the device.
-      .startsAt("2023-11-17T00:00:00Z")
-      .endsAt("2023-12-18T00:00:00Z")
+      .startsAt("2024-09-16T00:00:00-07:00")
+      .endsAt("2024-09-18T23:59:00-07:00")
       .maxTimeRounding("1d")
       .isOfflineAccessCode(true)
       .build());
@@ -758,8 +784,8 @@ if (device.getCanProgramOfflineAccessCodes())
   "device_id" : "11111111-1111-1111-1111-444444444444",
   "name" : "my daily-bound offline code",
   "type" : "time_bound",
-  "starts_at" : "2023-11-17T00:00:00Z",
-  "ends_at" : "2023-12-18T00:00:00Z",
+  "starts_at" : "2024-09-16T07:00:00.000Z",
+  "ends_at" : "2024-09-19T06:59:00.000Z",
   "is_offline_access_code": true,
   ...
 }
@@ -787,8 +813,8 @@ if *device.CanProgramOfflineAccessCodes {
         Name: api.String("my daily-bound offline code"),
         // Make sure that the validity period matches
         // a user level for the device.
-        StartsAt: api.String("2023-11-17T00:00:00Z"),
-        EndsAt: api.String("2023-12-18T00:00:00Z"),
+        StartsAt: api.String("2024-09-16T00:00:00-07:00"),
+        EndsAt: api.String("2024-09-18T23:59:00-07:00"),
         MaxTimeRounding: api.String("1d"),
         IsOfflineAccessCode: api.Bool(true),
       },
@@ -810,8 +836,8 @@ return nil
   "device_id": "11111111-1111-1111-1111-444444444444",
   "name": "my daily-bound offline code",
   "type": "time_bound",
-  "starts_at": "2023-11-17T00:00:00.000Z",
-  "ends_at": "2023-12-18T00:00:00.000Z",
+  "starts_at": "2024-09-16T07:00:00.000Z",
+  "ends_at": "2024-09-19T06:59:00.000Z",
   "is_offline_access_code": true,
   ...
 }
