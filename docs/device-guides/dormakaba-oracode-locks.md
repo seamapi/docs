@@ -43,8 +43,7 @@ To control dormakaba Oracode devices using Seam, you must prompt **the owners or
 1. Identify each dormakaba Oracode site that you want to connect to Seam.\
    For each site:
    * Log in to your [Oracode Live account](https://www.kabaecodewireless.com).
-   *   Note your site name, as shown in the upper-right corner of the Oracode Live portal.\
-
+   *   Note your site name, as shown in the upper-right corner of the Oracode Live portal.
 
        <figure><img src="../.gitbook/assets/oracode-live-site-name.png" alt="Note your site name in the Oracle Live portal."><figcaption><p>Note your site name in the Oracle Live portal.</p></figcaption></figure>
 2.  Contact [dormakaba Oracode Support](mailto:oracode@dormakaba.com) to connect all your dormakaba Live Services sites to Seam.\
@@ -52,7 +51,7 @@ To control dormakaba Oracode devices using Seam, you must prompt **the owners or
 
     > _Please connect the following sites to the Seam Access Token:_
     >
-    > * _{Insert Site Name}_&#x20;
+    > * _{Insert Site Name}_
     > * _{Insert Site Name}_
     > * _..._
 
