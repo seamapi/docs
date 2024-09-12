@@ -26,12 +26,15 @@ Required: Yes
 Metadata to include with the system
 
 <details>
-<summary>`has_keypad` (string)</summary>
+<summary>has_keypad (string)</summary>
 To add an expandable block hit `/` on an empty block, or click the `+` on the left of the editor, and select **Expandable**.
 </details>
 <details>
-<summary>`system_name` (string)</summary>
+<summary>system_name (string)</summary>
 Once you’ve inserted an expandable block, you can add content to it — including lists and code blocks.
+<summary>system_name (string)</summary>
+Once you’ve inserted an expandable block, you can add content to it — including lists and code blocks.
+</details>
 </details>
 
 ### Sample Request
