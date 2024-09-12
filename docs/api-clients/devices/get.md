@@ -18,32 +18,31 @@ Specify the desired device by including the corresponding `device_id` in the req
 
 <table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>String<br><em>Required</em></td><td>ID of the desired device</td></tr></tbody></table>
 
-### `device_metadata`
+### `accessory_keypad`
 
-Type: `object`
-Required: Yes
+Format: `Object`
 
-Metadata to filter the device on
+Info about the device accessory keypad.
 
 <details>
-<summary><code>has_keypad</code> (Boolean)</summary>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor massa diam, non convallis nisl tempor a.
-</details>
-<details>
-<summary><code>has_keypad</code> (Object)</summary>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor massa diam, non convallis nisl tempor a.
-`this is some code`
+<summary><code>is_connected</code> (Boolean)</summary>
+If the accessory keypad is connected to the device and online.
 </details>
 
-### `device_metadata.manufacturer`
+#### `accessory_keypad.battery`
+
+Format: `Object`
+
+Info about the device accessory keypad battery.
 
 <details>
-<summary><code>has_keypad</code> (String)</summary>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor massa diam, non convallis nisl tempor a.
+<summary><code>level</code> (Enum)</summary>
+The accessory keypad battery level.
 </details>
+
 <details>
-<summary><code>has_keypad</code> (Boolean)</summary>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor massa diam, non convallis nisl tempor a.
+<summary><code>display_level</code> (String)</summary>
+The human readable accessory keypad battery level.
 </details>
 
 ### Sample Request
