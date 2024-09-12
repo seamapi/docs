@@ -18,23 +18,31 @@ Specify the desired device by including the corresponding `device_id` in the req
 
 <table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>String<br><em>Required</em></td><td>ID of the desired device</td></tr></tbody></table>
 
-### `system_metadata`
+### `device_metadata`
 
 Type: `object\
 Required: Yes
 
-Metadata to include with the system
+Metadata to filter the device on
 
 <details>
-<summary>has_keypad (string)</summary>
-To add an expandable block hit `/` on an empty block, or click the `+` on the left of the editor, and select **Expandable**.
+<summary>has_keypad (bool)</summary>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor massa diam, non convallis nisl tempor a.
 </details>
 <details>
-<summary>system_name (string)</summary>
-Once you’ve inserted an expandable block, you can add content to it — including lists and code blocks.
-<summary>system_name (string)</summary>
-Once you’ve inserted an expandable block, you can add content to it — including lists and code blocks.
+<summary>manufacturer (object)</summary>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor massa diam, non convallis nisl tempor a.
 </details>
+
+### `device_metadata.manufacturer`
+
+<details>
+<summary>manufacturer_name (string)</summary>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor massa diam, non convallis nisl tempor a.
+</details>
+<details>
+<summary>has_locks (bool)</summary>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor massa diam, non convallis nisl tempor a.
 </details>
 
 ### Sample Request
