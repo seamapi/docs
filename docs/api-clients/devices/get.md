@@ -43,6 +43,7 @@ The accessory keypad battery level.
 <details>
 <summary><code>display_level</code> (String)</summary>
 The human readable accessory keypad battery level.
+<code>this is some code</code>
 </details>
 
 ### Sample Request
