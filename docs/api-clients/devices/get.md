@@ -26,11 +26,11 @@ Required: Yes
 Metadata to filter the device on
 
 <details>
-<summary>has_keypad (bool)</summary>
+<summary><code>has_keypad</code> (Boolean)</summary>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor massa diam, non convallis nisl tempor a.
 </details>
 <details>
-<summary>manufacturer (object)</summary>
+<summary><code>has_keypad</code> (Object)</summary>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor massa diam, non convallis nisl tempor a.
 `this is some code`
 </details>
@@ -38,11 +38,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor massa diam
 ### `device_metadata.manufacturer`
 
 <details>
-<summary>manufacturer_name (string)</summary>
+<summary><code>has_keypad</code> (String)</summary>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor massa diam, non convallis nisl tempor a.
 </details>
 <details>
-<summary>has_locks (bool)</summary>
+<summary><code>has_keypad</code> (Boolean)</summary>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor massa diam, non convallis nisl tempor a.
 </details>
 
