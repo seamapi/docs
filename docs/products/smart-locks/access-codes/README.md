@@ -95,7 +95,7 @@ For locks that support setting codes with a schedule, Seam will preload access c
 
 ### **Just-in-time Scheduling**
 
-For those locks that lack native scheduling functionality, Seam will use its own scheduling infrastructure to program the code 30 minutes before the `starts_at` time, and remove it at the `ends_at` time.
+For those locks that lack native scheduling functionality, Seam will use its own scheduling infrastructure to program the code 60 minutes before the `starts_at` time, and remove it at the `ends_at` time.
 
 <figure><img src="../../../.gitbook/assets/just-in-time-programming-dark.png" alt=""><figcaption><p>When the <code>starts_at</code> time arrives, Seam adds the code to the device and activates it. It is then automatically deactivated at the <code>ends_at</code> timestamp.</p></figcaption></figure>
 
