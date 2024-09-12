@@ -32,6 +32,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor massa diam
 <details>
 <summary>manufacturer (object)</summary>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor massa diam, non convallis nisl tempor a.
+`this is some code`
 </details>
 
 ### `device_metadata.manufacturer`
