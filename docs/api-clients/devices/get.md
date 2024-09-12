@@ -18,6 +18,22 @@ Specify the desired device by including the corresponding `device_id` in the req
 
 <table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>String<br><em>Required</em></td><td>ID of the desired device</td></tr></tbody></table>
 
+### `system_metadata`
+
+Type: `object\
+Required: Yes
+
+Metadata to include with the system
+
+<details>
+<summary>`has_keypad` (string)</summary>
+To add an expandable block hit `/` on an empty block, or click the `+` on the left of the editor, and select **Expandable**.
+</details>
+<details>
+<summary>`system_name` (string)</summary>
+Once you’ve inserted an expandable block, you can add content to it — including lists and code blocks.
+</details>
+
 ### Sample Request
 
 {% tabs %}
