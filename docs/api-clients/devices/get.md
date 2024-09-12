@@ -20,7 +20,7 @@ Specify the desired device by including the corresponding `device_id` in the req
 
 ### `device_metadata`
 
-Type: `object\
+Type: `object`
 Required: Yes
 
 Metadata to filter the device on
