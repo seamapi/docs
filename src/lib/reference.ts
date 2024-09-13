@@ -26,11 +26,7 @@ export const reference = (
   }
 
   for (const route of metadata.routes ?? []) {
-    if (
-      !(
-        route.path.startsWith('/acs/systems')
-      )
-    ) {
+    if (!route.path.startsWith('/acs/systems')) {
       continue
     }
 
