@@ -10,7 +10,6 @@ Format: `ID`
 
 ID of the `acs_system`.
 
-
 ---
 
 ### `can_add_acs_users_to_acs_access_groups`
@@ -18,7 +17,6 @@ ID of the `acs_system`.
 Format: `Boolean`
 
 Indicates whether the `acs_system` supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](../../../capability-guides/access-systems/understanding-access-control-system-differences.md#access-group-based-access-control-systems).
-
 
 ---
 
@@ -28,7 +26,6 @@ Format: `Boolean`
 
 Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`.
 
-
 ---
 
 ### `can_create_acs_access_groups`
@@ -36,7 +33,6 @@ Indicates whether it is possible to [launch enrollment automations](https://docs
 Format: `Boolean`
 
 Indicates whether the `acs_system` supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](../../../capability-guides/access-systems/understanding-access-control-system-differences.md#access-group-based-access-control-systems).
-
 
 ---
 
@@ -46,7 +42,6 @@ Format: `Boolean`
 
 Indicates whether the `acs_system` supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](../../../capability-guides/access-systems/understanding-access-control-system-differences.md#access-group-based-access-control-systems).
 
-
 ---
 
 ### `connected_account_ids`
@@ -54,7 +49,6 @@ Indicates whether the `acs_system` supports [removing users from access groups](
 Format: `List`
 
 IDs of the [connected accounts](../../../core-concepts/connected-accounts/README.md) associated with the `acs_system`.
-
 
 ---
 
@@ -64,7 +58,6 @@ Format: `Datetime`
 
 Date and time at which the `acs_system` was created.
 
-
 ---
 
 ### `errors`
@@ -72,7 +65,6 @@ Date and time at which the `acs_system` was created.
 Format: `List`
 
 Errors associated with the `acs_system`.
-
 
 ---
 
@@ -92,7 +84,6 @@ Possible enum values:
 - `assa_abloy_credential_service`
 - `latch_building`
 
-
 ---
 
 ### `external_type_display_name`
@@ -100,7 +91,6 @@ Possible enum values:
 Format: `String`
 
 Display name that corresponds to the brand-specific terminology for the `acs_system` type.
-
 
 ---
 
@@ -110,7 +100,6 @@ Format: `String`
 
 Alternative text for the `acs_system` image.
 
-
 ---
 
 ### `image_url`
@@ -119,7 +108,6 @@ Format: `String`
 
 URL for the image that represents the `acs_system`.
 
-
 ---
 
 ### `name`
@@ -127,7 +115,6 @@ URL for the image that represents the `acs_system`.
 Format: `String`
 
 Name of the `acs_system`.
-
 
 ---
 
@@ -149,7 +136,6 @@ Possible enum values:
 - `assa_abloy_credential_service`
 - `latch_building`
 
-
 ---
 
 ### `system_type_display_name`
@@ -159,7 +145,6 @@ Possible enum values:
 {% endhint %}
 
 Format: `String`
-
 
 ---
 
@@ -176,7 +161,6 @@ Format: `Object`
 <details>
 <summary>system_id (<code>string</code>)</summary>
 </details>
-
 ---
 
 ### `warnings`
@@ -185,7 +169,6 @@ Format: `List`
 
 Warnings associated with the `acs_system`.
 
-
 ---
 
 ### `workspace_id`
@@ -193,7 +176,6 @@ Warnings associated with the `acs_system`.
 Format: `ID`
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the `acs_system`.
-
 
 ---
 
