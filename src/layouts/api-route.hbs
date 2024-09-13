@@ -29,6 +29,17 @@ Possible enum values:
 {{/each}}
 {{/if}}
 
+{{#if objectProperties}}
+{{#each objectProperties}}
+<details>
+<summary>{{this.name}} (`{{this.format}}`)</summary>
+{{#if this.description}}
+{{this.description}}
+{{/if}}
+</details>
+{{/each}}
+{{/if}}
+
 ---
 
 {{/each}}

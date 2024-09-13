@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import type { Blueprint } from '@seamapi/blueprint'
 import type Metalsmith from 'metalsmith'
 
@@ -32,6 +33,13 @@ export const reference = (
     }
     const file = files[k] as unknown as File
     file.layout = 'api-route.hbs'
+    console.log('FILE')
+
+    console.log(
+      metadata.resources.acs_system?.properties.find(
+        (p) => p.name === 'visionline_metadata',
+      ),
+    )
     setApiRouteLayoutContext(file, route, metadata)
 
     for (const endpoint of route.endpoints) {

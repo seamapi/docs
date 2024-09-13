@@ -76,7 +76,11 @@ export function setEndpointLayoutContext(
 type ContextResourceProperty = Pick<
   Property,
   'name' | 'description' | 'isDeprecated' | 'deprecationMessage'
-> & { format: string; enumValues?: string[] }
+> & {
+  format: string
+  enumValues?: string[]
+  objectProperties?: ContextResourceProperty[]
+}
 interface ContextResource {
   name: string
   description: string
@@ -149,6 +153,10 @@ export function setApiRouteLayoutContext(
 
           if ('values' in prop) {
             contextResourceProp.enumValues = prop.values.map(({ name }) => name)
+          }
+
+          if ('properties' in prop) {
+            contextResourceProp.objectProperties = prop.properties
           }
 
           return contextResourceProp
