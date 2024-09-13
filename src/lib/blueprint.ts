@@ -13,11 +13,13 @@ export const blueprint = async (
   const codeSampleDefinitions =
     'codeSampleDefinitions' in metadata ? metadata.codeSampleDefinitions : []
 
+  const pathMetadata = 'pathMetadata' in metadata ? metadata.pathMetadata : {}
+
   const typesModule = TypesModuleSchema.parse({
     ...types,
     codeSampleDefinitions,
   })
 
   const blueprint = await createBlueprint(typesModule, { formatCode })
-  Object.assign(metadata, blueprint)
+  Object.assign(metadata, { ...blueprint, pathMetadata })
 }

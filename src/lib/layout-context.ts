@@ -1,6 +1,8 @@
 import type { Blueprint, Endpoint, Property, Route } from '@seamapi/blueprint'
 import { pascalCase } from 'change-case'
 
+import type { PathMetadata } from './reference.js'
+
 export interface EndpointLayoutContext {
   description: string
   title: string
@@ -85,6 +87,7 @@ interface ContextResource {
 type ContextEndpoint = Pick<Endpoint, 'path' | 'description'>
 
 export interface RouteLayoutContext {
+  description: string | null
   resources: ContextResource[]
   endpoints: ContextEndpoint[]
 }
@@ -93,30 +96,17 @@ export function setApiRouteLayoutContext(
   file: Partial<RouteLayoutContext>,
   route: Route,
   blueprint: Blueprint,
+  pathMetadata: PathMetadata,
 ): void {
+  file.description = pathMetadata[route.path]?.description ?? null
   file.endpoints = route.endpoints.map(({ path, name, description }) => ({
     path,
     name,
     description: getFirstParagraph(description),
   }))
+
   file.resources = []
-
-  const endpointsWithResourceType = route.endpoints.filter(
-    (e) =>
-      e.response.responseType === 'resource' ||
-      e.response.responseType === 'resource_list',
-  )
-
-  const uniqueResources = new Set<string>()
-
-  for (const endpoint of endpointsWithResourceType) {
-    if (!('resourceType' in endpoint.response)) {
-      // eslint-disable-next-line no-console
-      console.warn(`No resourceType in ${endpoint.path} endpoint response`)
-      continue
-    }
-
-    const resourceName = endpoint.response.resourceType
+  for (const resourceName of getUniqueResourcesForRoute(route, pathMetadata)) {
     const resource = blueprint.resources[resourceName]
 
     if (resource == null) {
@@ -125,36 +115,27 @@ export function setApiRouteLayoutContext(
       continue
     }
 
-    if (!uniqueResources.has(resourceName)) {
-      uniqueResources.add(resourceName)
+    file.resources.push({
+      name: resourceName,
+      description: resource.description,
+      properties: resource.properties.map((prop) => {
+        const { name, description, format, isDeprecated, deprecationMessage } =
+          prop
+        const contextResourceProp: ContextResourceProperty = {
+          name,
+          description,
+          format: normalizePropertyFormatForDocs(format),
+          isDeprecated,
+          deprecationMessage,
+        }
 
-      file.resources.push({
-        name: resourceName,
-        description: resource.description,
-        properties: resource.properties.map((prop) => {
-          const {
-            name,
-            description,
-            format,
-            isDeprecated,
-            deprecationMessage,
-          } = prop
-          const contextResourceProp: ContextResourceProperty = {
-            name,
-            description,
-            format: normalizePropertyFormatForDocs(format),
-            isDeprecated,
-            deprecationMessage,
-          }
+        if ('values' in prop) {
+          contextResourceProp.enumValues = prop.values.map(({ name }) => name)
+        }
 
-          if ('values' in prop) {
-            contextResourceProp.enumValues = prop.values.map(({ name }) => name)
-          }
-
-          return contextResourceProp
-        }),
-      })
-    }
+        return contextResourceProp
+      }),
+    })
   }
 }
 
@@ -169,4 +150,32 @@ const normalizePropertyFormatForDocs = (format: PropertyFormat): string => {
   }
 
   return formatMap[format] ?? pascalCase(format)
+}
+
+const getUniqueResourcesForRoute = (
+  route: Route,
+  pathMetadata: PathMetadata,
+): string[] => {
+  const uniqueResources = new Set<string>(
+    pathMetadata[route.path]?.resources ?? [],
+  )
+
+  const endpointsWithResourceType = route.endpoints.filter(
+    (e) =>
+      e.response.responseType === 'resource' ||
+      e.response.responseType === 'resource_list',
+  )
+
+  for (const endpoint of endpointsWithResourceType) {
+    if (!('resourceType' in endpoint.response)) {
+      // eslint-disable-next-line no-console
+      console.warn(`No resourceType in ${endpoint.path} endpoint response`)
+      continue
+    }
+
+    const resourceName = endpoint.response.resourceType
+    uniqueResources.add(resourceName)
+  }
+
+  return Array.from(uniqueResources)
 }
