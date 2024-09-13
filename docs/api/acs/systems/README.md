@@ -150,7 +150,7 @@ Format: `String`
 
 ### `visionline_metadata`
 
-Format: `Record`
+Format: `Object`
 
 ---
 

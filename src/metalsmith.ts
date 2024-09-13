@@ -3,15 +3,14 @@ import { fileURLToPath } from 'node:url'
 
 import layouts from '@metalsmith/layouts'
 import metadata from '@metalsmith/metadata'
+import { deleteAsync } from 'del'
 import Metalsmith from 'metalsmith'
 
 import { blueprint, helpers, postprocess, reference } from './lib/index.js'
 
 const rootDir = dirname(fileURLToPath(import.meta.url))
 
-Metalsmith(rootDir).source('./docs/api').destination('../docs/api').clean(true)
-
-Metalsmith(rootDir).source('./docs/api').destination('../docs/sdk').clean(true)
+await Promise.all([deleteAsync('./docs/api'), deleteAsync('./docs/sdk')])
 
 Metalsmith(rootDir)
   .source('./docs')
