@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import type { Blueprint } from '@seamapi/blueprint'
 import type Metalsmith from 'metalsmith'
 

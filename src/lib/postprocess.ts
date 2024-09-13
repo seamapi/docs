@@ -12,7 +12,6 @@ export const postprocess = (
   _metalsmith: Metalsmith,
 ): void => {
   for (const [name, file] of Object.entries(files)) {
-    // eslint-disable-next-line no-console
     const contents = file.contents.toString('utf-8')
     file.contents = Buffer.from(
       contents.replaceAll(new RegExp(`(${baseUrl}[^)]+)`, 'g'), ($1, $2) => {
