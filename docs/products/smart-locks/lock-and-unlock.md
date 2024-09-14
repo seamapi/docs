@@ -10,7 +10,7 @@ Seam enables you to lock or unlock your door lock remotely. This guide walks you
 
 When you send a command to a smart lock, it might take a while for Seam to confirm the action's success. To handle this, Seam provides [an "action attempt" object](../../core-concepts/action-attempts.md), which indicates whether the action was successful.
 
-To ensure that the action has been successfully executed, we advise checking the status of the action attempt object by polling the ["Get Action Attempt" request](../../api-clients/action_attempts/get.md). Once Seam has successfully confirmed the action, the action attempt's `status` will indicate `success`.
+To ensure that the action has been successfully executed, we advise checking the status of the action attempt object by polling the ["Get Action Attempt" request](../../api-clients/action\_attempts/get.md). Once Seam has successfully confirmed the action, the action attempt's `status` will indicate `success`.
 
 For those who prefer using webhooks to verify the success of an action, we'll soon introduce events that confirm an action's success.
 
@@ -55,7 +55,7 @@ Device(
 curl -X 'GET' \
   'https://connect.getseam.com/devices/get' \
   -H 'accept: application/json' \
-  -H "Authorization: Bearer ${API_KEY}" \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
   "device_id": "11111111-1111-1111-1111-444444444444"
@@ -204,7 +204,7 @@ device, uErr := client.Devices.Get(
 
 ## Locking a Door
 
-You can lock a door using the [`lock_door`](../../api-clients/locks/lock_door.md) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](lock-and-unlock.md#verifying-the-success-of-a-lock-or-unlock-action).
+You can lock a door using the [`lock_door`](../../api-clients/locks/lock\_door.md) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](lock-and-unlock.md#verifying-the-success-of-a-lock-or-unlock-action).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -243,7 +243,7 @@ device=$(
   curl -X 'GET' \
     'https://connect.getseam.com/devices/get' \
     -H 'accept: application/json' \
-    -H "Authorization: Bearer ${API_KEY}" \
+    -H "Authorization: Bearer ${SEAM_API_KEY}" \
     -H 'Content-Type: application/json' \
     -d '{
       "device_id": "11111111-1111-1111-1111-444444444444"
@@ -255,7 +255,7 @@ if  $(jq -r '.device.can_remotely_lock' <<< ${device}); then \
   curl -X 'POST' \
     'https://connect.getseam.com/locks/lock_door' \
     -H 'accept: application/json' \
-    -H "Authorization: Bearer ${API_KEY}" \
+    -H "Authorization: Bearer ${SEAM_API_KEY}" \
     -H 'Content-Type: application/json' \
     -d "{
       \"device_id\": \"$(jq -r '.device.device_id' <<< ${device})\"
@@ -472,7 +472,7 @@ return nil
 
 ## Unlocking a Door
 
-You can unlock a door using the [unlock\_door](../../api-clients/locks/unlock_door.md) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](lock-and-unlock.md#verifying-the-success-of-a-lock-or-unlock-action).
+You can unlock a door using the [unlock\_door](../../api-clients/locks/unlock\_door.md) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](lock-and-unlock.md#verifying-the-success-of-a-lock-or-unlock-action).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -511,7 +511,7 @@ device=$(
   curl -X 'GET' \
     'https://connect.getseam.com/devices/get' \
     -H 'accept: application/json' \
-    -H "Authorization: Bearer ${API_KEY}" \
+    -H "Authorization: Bearer ${SEAM_API_KEY}" \
     -H 'Content-Type: application/json' \
     -d '{
       "device_id": "11111111-1111-1111-1111-444444444444"
@@ -523,7 +523,7 @@ if  $(jq -r '.device.can_remotely_lock' <<< ${device}); then \
   curl -X 'POST' \
     'https://connect.getseam.com/locks/unlock_door' \
     -H 'accept: application/json' \
-    -H "Authorization: Bearer ${API_KEY}" \
+    -H "Authorization: Bearer ${SEAM_API_KEY}" \
     -H 'Content-Type: application/json' \
     -d "{
       \"device_id\": \"$(jq -r '.device.device_id' <<< ${device})\"
@@ -770,7 +770,7 @@ ActionAttempt(status='pending',
 curl -X 'POST' \
   'https://connect.getseam.com/locks/lock_door' \
   -H 'accept: application/json' \
-  -H "Authorization: Bearer ${API_KEY}" \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
     "device_id": "11111111-1111-1111-1111-444444444444"
@@ -931,7 +931,7 @@ return nil
 
 ### 2. Poll the Action Attempt to Verify the Success of the Action
 
-Use the `action_attempt_id` from the prior response to make a [Get Action Attempt request](../../api-clients/action_attempts/get.md). When the action attempt's `status` changes to `success`, it indicates the action has been successful.
+Use the `action_attempt_id` from the prior response to make a [Get Action Attempt request](../../api-clients/action\_attempts/get.md). When the action attempt's `status` changes to `success`, it indicates the action has been successful.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -960,7 +960,7 @@ ActionAttempt(action_attempt_id='11111111-2222-3333-4444-555555555555',
 curl -X 'GET' \
   'https://connect.getseam.com/action_attempts/get' \
   -H 'accept: application/json' \
-  -H "Authorization: Bearer ${API_KEY}" \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
   "action_attempt_id": "11111111-2222-3333-4444-555555555555"
@@ -1152,7 +1152,7 @@ Device(
 curl -X 'GET' \
   'https://connect.getseam.com/devices/get' \
   -H 'accept: application/json' \
-  -H "Authorization: Bearer ${API_KEY}" \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
   "device_id": "11111111-1111-1111-1111-444444444444"
