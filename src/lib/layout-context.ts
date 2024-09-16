@@ -156,7 +156,9 @@ export function setApiRouteLayoutContext(
           }
 
           if ('properties' in prop) {
-            contextResourceProp.objectProperties = prop.properties
+            contextResourceProp.objectProperties = flattenObjectProperties(
+              prop.properties,
+            )
           }
 
           return contextResourceProp
@@ -177,4 +179,25 @@ const normalizePropertyFormatForDocs = (format: PropertyFormat): string => {
   }
 
   return formatMap[format] ?? pascalCase(format)
+}
+
+const flattenObjectProperties = (
+  properties: Property[],
+  namespace: string = '',
+): Property[] => {
+  const results: Property[] = []
+
+  for (const property of properties) {
+    const name =
+      namespace === '' ? property.name : `${namespace}.${property.name}`
+
+    results.push({ ...property, name })
+
+    if (property.format === 'object') {
+      results.push(...flattenObjectProperties(property.properties, name))
+      continue
+    }
+  }
+
+  return results
 }
