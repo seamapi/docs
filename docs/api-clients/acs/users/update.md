@@ -195,7 +195,7 @@ void
 {% endtab %}
 
 {% tab title="Go" %}
-```json
+```
 void
 ```
 {% endtab %}
