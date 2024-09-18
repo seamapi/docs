@@ -152,6 +152,15 @@ Format: `String`
 
 Format: `Object`
 
+<details>
+<summary>lan_address (<code>string</code>)</summary>
+</details>
+<details>
+<summary>mobile_access_uuid (<code>string</code>)</summary>
+</details>
+<details>
+<summary>system_id (<code>string</code>)</summary>
+</details>
 ---
 
 ### `warnings`
