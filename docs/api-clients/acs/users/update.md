@@ -196,22 +196,7 @@ void
 
 {% tab title="Go" %}
 ```json
-{
-  "acs_user": {
-    "acs_user_id": "33333333-3333-3333-3333-333333333333",
-    "display_name": "Jack Doe",
-    "full_name": "Jack Doe",
-    "email": "jack@example.com",
-    "email_address": "jack@example.com",
-    "phone_number": "+15555550101",
-    "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "workspace_id": "00000000-0000-0000-0000-000000000000",
-    "created_at": "2024-04-02T09:53:26.421Z",
-    "is_suspended": false,
-    "user_identity_id": "22222222-2222-2222-2222-222222222222"
-  },
-  "ok": true
-}
+void
 ```
 {% endtab %}
 {% endtabs %}
