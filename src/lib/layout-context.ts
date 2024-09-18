@@ -183,18 +183,17 @@ const normalizePropertyFormatForDocs = (format: PropertyFormat): string => {
 
 const flattenObjectProperties = (
   properties: Property[],
-  namespace: string = '',
+  paths: string[] = [],
 ): Property[] => {
   const results: Property[] = []
 
   for (const property of properties) {
-    const name =
-      namespace === '' ? property.name : `${namespace}.${property.name}`
+    const name = [...path, property.name].join('.')
 
     results.push({ ...property, name })
 
     if (property.format === 'object') {
-      results.push(...flattenObjectProperties(property.properties, name))
+      results.push(...flattenObjectProperties(property.properties, [name]))
       continue
     }
   }
