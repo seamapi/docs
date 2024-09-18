@@ -188,7 +188,7 @@ const flattenObjectProperties = (
   const results: Property[] = []
 
   for (const property of properties) {
-    const name = [...path, property.name].join('.')
+    const name = [...paths, property.name].join('.')
 
     results.push({ ...property, name })
 
