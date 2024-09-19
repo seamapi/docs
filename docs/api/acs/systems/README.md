@@ -169,12 +169,15 @@ Format: `Object`
 
 <details>
 <summary>lan_address <code>string</code></summary>
+IP address or hostname of the main Visionline server relative to the Seam Bridge on the local network.
 </details>
 <details>
 <summary>mobile_access_uuid <code>string</code></summary>
+Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.
 </details>
 <details>
 <summary>system_id <code>string</code></summary>
+Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager.
 </details>
 
 ---
