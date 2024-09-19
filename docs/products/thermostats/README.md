@@ -19,12 +19,20 @@ Leverage the Seam API for the following smart thermostat-related applications:
 
 ***
 
+## Thermostat Capabilities
+
+Seam decomposes the ensemble of features that a thermostat provides into one or more capabilities, such as the capability to set a thermostat to heat mode or another climate setting.
+
+For detailed information about capabilities, see [Device and System Capabilities](../../capability-guides/device-and-system-capabilities.md).
+
+***
+
 ## **Climate Settings**
 
 Using the Seam API, you can configure the following groups of climate settings on a thermostat:
 
 * [**Current climate setting**](configure-current-climate-settings.md)**:** The current heating and cooling settings on a smart thermostat, including the [HVAC mode](hvac-mode.md) and its corresponding [set points](set-points.md).
-* [**Fan mode**](configure-current-climate-settings.md)**:** Whether the fan operates all the time (on) or only when needed (auto).&#x20;
+* [**Fan mode**](configure-current-climate-settings.md)**:** Whether the fan operates all the time (on) or only when needed (auto).
 
 ***
 
@@ -33,4 +41,3 @@ Using the Seam API, you can configure the following groups of climate settings o
 Seam supports integration with the following smart thermostat manufacturers:
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>ecobee Thermostats</strong></td><td></td><td></td><td><a href="../../device-guides/ecobee-thermostats.md">ecobee-thermostats.md</a></td><td><a href="../../.gitbook/assets/ecobee-logo.png">ecobee-logo.png</a></td></tr><tr><td></td><td><strong>Google Nest Thermostats</strong></td><td></td><td></td><td><a href="../../device-guides/google-nest-thermostats/">google-nest-thermostats</a></td><td><a href="../../.gitbook/assets/nest-logo.png">nest-logo.png</a></td></tr><tr><td></td><td><strong>Honeywell Resideo Thermostats</strong></td><td></td><td></td><td><a href="../../device-and-system-integration-guides/honeywell-thermostats/">honeywell-thermostats</a></td><td><a href="../../.gitbook/assets/honeywell_logo.png">honeywell_logo.png</a></td></tr></tbody></table>
-

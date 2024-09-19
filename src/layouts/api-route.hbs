@@ -29,6 +29,17 @@ Possible enum values:
 {{/each}}
 {{/if}}
 
+{{#if objectProperties}}
+{{#each objectProperties}}
+<details>
+<summary>{{this.name}} <code>{{this.format}}</code></summary>
+{{#if this.description}}
+{{this.description}}
+{{/if}}
+</details>
+{{/each}}
+{{/if}}
+
 ---
 
 {{/each}}
@@ -39,9 +50,6 @@ Possible enum values:
 ## [`{{path}}`](./{{name}}.md)
 
 {{description}}
-
----
-
 {{/each}}
 # Events
 

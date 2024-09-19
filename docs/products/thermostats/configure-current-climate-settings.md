@@ -8,7 +8,7 @@ Seam enables you to adjust the [current heating and cooling settings](configure-
 
 When you send a command to change a setting on a thermostat, it might take a while for Seam to confirm the success of the action. To handle this potential delay, Seam provides an[ action attempt ](../../core-concepts/action-attempts.md)object that tracks the status of the action, indicating whether the action was successful.
 
-To ensure that the action has executed successfully, poll the status of the action attempt object using the [Get Action Attempt](../../api-clients/action_attempts/get.md) request. Once Seam has successfully adjusted the thermostat setting, the `status` of the action attempt indicates `success`.
+To ensure that the action has executed successfully, poll the status of the action attempt object using the [Get Action Attempt](../../api-clients/action\_attempts/get.md) request. Once Seam has successfully adjusted the thermostat setting, the `status` of the action attempt indicates `success`.
 
 ***
 
@@ -34,9 +34,213 @@ Seam supports a single ongoing fan mode setting.
 
 ***
 
-## Before You Begin
+## Before You Begin: Confirm Capabilities
 
 To confirm that Seam supports thermostat programming for your device, use [Get Device](../../api-clients/devices/get.md) or [Get Thermostat](../../thermostats/get-thermostat.md) to query the device and check its `capabilities_supported` property. Ensure that the `capabilities_supported` list includes `thermostat`. For more information, see [Retrieving Individual Thermostats](retrieving-thermostats.md#retrieving-individual-thermostats).
+
+Before you attempt to set the current HVAC or fan mode settings for a thermostat, be sure to confirm that your thermostat has the capability to perform these operations. You can inspect the capabilities of a thermostat by checking the following [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags) for the device:
+
+* `device.can_hvac_heat`
+* `device.can_hvac_cool`
+* `device.can_hvac_heat_cool`
+* `device.can_turn_off_hvac`
+
+Use [Get Device](../../api-clients/devices/get.md) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to set the corresponding HVAC mode or fan setting.
+
+If any of these capability flags is `false` or not present, you can view the [properties](../../api-clients/devices/#device-properties) of the device, [errors](../../api-clients/devices/#device-error-types) or [warnings](../../api-clients/devices/#device-warning-types) for the device, and [events](../../api-clients/events/#event-types) related to the device to learn more about the cause of these issues. For example, you could examine `device.properties.online`. In addition, you could look for a `device.disconnected` event.
+
+{% tabs %}
+{% tab title="Python" %}
+**Request:**
+
+```python
+seam.devices.get(device_id="11111111-1111-1111-1111-444444444444")
+```
+
+**Response:**
+
+```
+Device(
+  device_id='11111111-1111-1111-1111-444444444444',
+  can_hvac_heat=True,      // You can use seam.thermostats.heat() on this device.
+  can_hvac_cool=True,      // You can use seam.thermostats.cool() on this device.
+  can_hvac_heat_cool=True, // You can use seam.thermostats.heat_cool() on this device.
+  can_turn_off_hvac=True,  // You can use seam.thermostats.off() on this device.
+  ...
+)
+```
+{% endtab %}
+
+{% tab title="cURL (bash)" %}
+**Request:**
+
+```bash
+# Use GET or POST.
+curl -X 'GET' \
+  'https://connect.getseam.com/devices/get' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "device_id": "11111111-1111-1111-1111-444444444444"
+}'
+```
+
+**Response:**
+
+```json
+{
+  "lock": {
+    "device_id": "11111111-1111-1111-1111-444444444444",
+    "can_hvac_heat": true,      // You can use /thermostats/heat on this device.
+    "can_hvac_cool": true,      // You can use /thermostats/cool on this device.
+    "can_hvac_heat_cool": true, // You can use /thermostats/heat_cool on this device.
+    "can_turn_off_hvac": true,  // You can use /thermostats/off on this device.
+    ...
+  },
+  "ok": true
+}
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+**Request:**
+
+```javascript
+await seam.devices.get("11111111-1111-1111-1111-444444444444")
+```
+
+**Response:**
+
+```json
+{
+  device_id: '11111111-1111-1111-1111-444444444444',
+  can_hvac_heat: true,      // You can use seam.thermostats.heat() on this device.
+  can_hvac_cool: true,      // You can use seam.thermostats.cool() on this device.
+  can_hvac_heat_cool: true, // You can use seam.thermostats.heatCool() on this device.
+  can_turn_off_hvac: true,  // You can use seam.thermostats.off() on this device.
+  ...
+}
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+**Request:**
+
+```ruby
+client.devices.get("11111111-1111-1111-1111-444444444444")
+```
+
+**Response:**
+
+```
+<
+  Seam::Device:0x00438
+    device_id="11111111-1111-1111-1111-444444444444"
+    can_hvac_heat=true,      // You can use client.thermostats.heat() on this device.
+    can_hvac_cool=true,      // You can use client.thermostats.cool() on this device.
+    can_hvac_heat_cool=true, // You can use client.thermostats.heat_cool() on this device.
+    can_turn_off_hvac=true,  // You can use client.thermostats.off() on this device.
+    ...
+>
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+**Request:**
+
+```php
+$seam->devices->get("11111111-1111-1111-1111-444444444444");
+```
+
+**Response:**
+
+```json
+{
+  "device_id": "11111111-1111-1111-1111-444444444444",
+  "can_hvac_heat": true,      // You can use $seam->thermostats->heat() on this device.
+  "can_hvac_cool": true,      // You can use $seam->thermostats->cool() on this device.
+  "can_hvac_heat_cool": true, // You can use $seam->thermostats->heat_cool() on this device.
+  "can_turn_off_hvac": true,  // You can use $seam->thermostats->off() on this device.
+  ...
+}
+```
+{% endtab %}
+
+{% tab title="C#" %}
+**Request:**
+
+```csharp
+seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
+```
+
+**Response:**
+
+```
+{
+  "device_id": "11111111-1111-1111-1111-444444444444",
+  "can_hvac_heat": true,      // You can use seam.Thermostats.Heat() on this device.
+  "can_hvac_cool": true,      // You can use seam.Thermostats.Cool() on this device.
+  "can_hvac_heat_cool": true, // You can use seam.Thermostats.HeatCool() on this device.
+  "can_turn_off_hvac": true,  // You can use seam.Thermostats.Off() on this device.
+  ...
+}
+```
+{% endtab %}
+
+{% tab title="Java" %}
+**Request:**
+
+```java
+seam.devices()
+  .get(DevicesGetRequest.builder()
+    .deviceId("11111111-1111-1111-1111-444444444444")
+    .build());
+```
+
+**Response:**
+
+```json
+{
+  "device_id": "11111111-1111-1111-1111-444444444444",
+  "can_hvac_heat": true,      // You can use seam.thermostats.heat() on this device.
+  "can_hvac_cool": true,      // You can use seam.thermostats.cool() on this device.
+  "can_hvac_heat_cool": true, // You can use seam.thermostats.heatCool() on this device.
+  "can_turn_off_hvac": true,  // You can use seam.thermostats.off() on this device.
+  ...
+}
+```
+{% endtab %}
+
+{% tab title="Go" %}
+**Request:**
+
+```go
+thermostat, uErr := client.Devices.Get(
+  context.Background(),
+  &api.DevicesGetRequest{
+    DeviceId: "11111111-1111-1111-1111-444444444444",
+  })
+```
+
+**Response:**
+
+```json
+{
+  "device_id": "11111111-1111-1111-1111-444444444444",
+  "can_hvac_heat": true,      // You can use client.Thermostats.Heat() on this device.
+  "can_hvac_cool": true,      // You can use client.Thermostats.Cool() on this device.
+  "can_hvac_heat_cool": true, // You can use client.Thermostats.HeatCool() on this device.
+  "can_turn_off_hvac": true,  // You can use client.Thermostats.Off() on this device.
+  ...
+}
+```
+{% endtab %}
+{% endtabs %}
+
+
+
+
 
 ***
 
@@ -59,22 +263,30 @@ The following example issues a request to set a specific thermostat to heat mode
 **Request:**
 
 ```python
-heat_request = seam.thermostats.heat(
-  device = "518f692b-f865-4590-8c3e-3849e9984c75",
-  heating_set_point_celsius = 20
+# Get the thermostat.
+thermostat = seam.devices.get(
+  device_id="518f692b-f865-4590-8c3e-3849e9984c75"
 )
 
-pprint(heat_request)
+# Confirm that the thermostat supports heat mode.
+if thermostat.can_hvac_heat:
+  # Perform the heat request.
+  seam.thermostats.heat(
+    device_id = "518f692b-f865-4590-8c3e-3849e9984c75",
+    heating_set_point_celsius = 20
+  )
 ```
 
 **Response:**
 
 ```
-ActionAttempt(action_attempt_id='97125745-15d9-4970-b5be-c34ec3ce1c81',
-              action_type='SET_HEAT',
-              status='success',
-              result={},
-              error=None)
+ActionAttempt(
+  action_attempt_id='97125745-15d9-4970-b5be-c34ec3ce1c81',
+  action_type='SET_HEAT',
+  status='success',
+  result={},
+  error=None
+)
 ```
 {% endtab %}
 
@@ -82,15 +294,31 @@ ActionAttempt(action_attempt_id='97125745-15d9-4970-b5be-c34ec3ce1c81',
 **Request:**
 
 ```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/thermostats/heat' \
-  -H 'accept: application/json' \
-  -H 'Authorization: Bearer ${API_KEY}' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "device_id": "518f692b-f865-4590-8c3e-3849e9984c75",
-  "heating_set_point_celsius": 20
-}'
+# Get the thermostat.
+thermostat=$(
+  # Use GET or POST.
+  curl -X 'GET' \
+    'https://connect.getseam.com/devices/get' \
+    -H 'accept: application/json' \
+    -H "Authorization: Bearer ${SEAM_API_KEY}" \
+    -H 'Content-Type: application/json' \
+    -d '{
+      "device_id": "518f692b-f865-4590-8c3e-3849e9984c75"
+  }')
+
+# Confirm that the thermostat supports heat mode.
+if  $(jq -r '.device.can_hvac_heat' <<< ${thermostat}); then \
+  # Perform the heat request.
+  curl -X 'POST' \
+    'https://connect.getseam.com/thermostats/heat' \
+    -H 'accept: application/json' \
+    -H "Authorization: Bearer ${SEAM_API_KEY}" \
+    -H 'Content-Type: application/json' \
+    -d "{
+      \"device_id\": \"$(jq -r '.device.device_id' <<< ${device})\",
+      \"heating_set_point_celsius\": 20
+  }';
+fi
 ```
 
 **Response:**
@@ -113,12 +341,19 @@ curl -X 'POST' \
 **Request:**
 
 ```javascript
-const heat_request = await seam.thermostats.heat({
-      device_id: "518f692b-f865-4590-8c3e-3849e9984c75",
-      heating_set_point_celsius: 20
-})
+# Get the thermostat.
+const thermostat = await seam.devices.get({
+  device_id: "518f692b-f865-4590-8c3e-3849e9984c75"
+});
 
-console.log(heat_request)
+// Confirm that the thermostat supports heat mode.
+if (thermostat.can_hvac_heat) {
+  // Perform the heat request.
+  await seam.thermostats.heat({
+    device_id: thermostat.device_id,
+    heating_set_point_celsius: 20
+  })
+};
 ```
 
 **Response:**
@@ -140,10 +375,19 @@ console.log(heat_request)
 **Request:**
 
 ```php
-$heat_request = $seam->thermostats->heat(
-  device_id: "5ce2cd35-09b1-458c-bb08-51ee83c35be7",
-  heating_set_point_celsius: 20
+// Get the thermostat.
+$thermostat = $seam->devices->get(
+  device_id: "5ce2cd35-09b1-458c-bb08-51ee83c35be7"
 );
+
+// Confirm that the thermostat supports heat mode.
+if ($thermostat->can_hvac_heat) {
+  // Perform the heat request.
+  $seam->thermostats->heat(
+    device_id: $thermostat->device_id,
+    heating_set_point_celsius: 20
+  );
+}
 ```
 
 **Response:**
@@ -157,27 +401,33 @@ None
 **Request:**
 
 ```java
-var deviceId = "518f692b-f865-4590-8c3e-3849e9984c75";
-seam.thermostats().heat(ThermostatsHeatRequest.builder()
-                .deviceId(deviceId)
-                .heatingSetPointCelsius(20.0)
-                .build());
-Device thermostat = seam.thermostats()
-        .get(ThermostatsGetRequest.builder()
-                .deviceId(deviceId)
-                .build());
-System.out.println("Thermostat ID: " + thermostat.getDeviceId());
-System.out.println("Mode: " + thermostat.getProperties().getCurrentClimateSetting().get().getHvacModeSetting());
-System.out.println("Heating set point (Celsius): " +
-  thermostat.getProperties().getCurrentClimateSetting().get().getHeatingSetPointCelsius());
+// Get the thermostat.
+Device thermostat = seam.devices()
+  .get(DevicesGetRequest.builder()
+    .deviceId("518f692b-f865-4590-8c3e-3849e9984c75")
+    .build());
+
+// Confirm that the thermostat supports heat mode.
+if (thermostat.getCanHvacHeat())
+{
+  // Perform the heat request.
+  seam.thermostats().heat(ThermostatsHeatRequest.builder()
+    .deviceId(thermostat.getDeviceId())
+    .heatingSetPointCelsius(20.0)
+    .build());
+}
 ```
 
 **Response:**
 
 ```
-Thermostat ID: 518f692b-f865-4590-8c3e-3849e9984c75
-Mode: Optional[heat]
-Heating set point (Celsius): Optional[20.0]
+{
+  "status": "pending",
+  "action_type": "SET_HEAT",
+  "action_attempt_id": "241e79cd-4bda-499f-8e2e-d7ae01d273cf",
+  "result": null,
+  "error": null
+}
 ```
 {% endtab %}
 
@@ -185,16 +435,29 @@ Heating set point (Celsius): Optional[20.0]
 **Request:**
 
 ```go
-heat_request, uErr := client.Thermostats.Heat(context.Background(), &api.ThermostatsHeatRequest{
-  DeviceId: "5ce2cd35-09b1-458c-bb08-51ee83c35be7",
-  HeatingSetPointCelsius: api.Float64(20),
-})
+// Get the thermostat.
+thermostat, uErr := client.Devices.Get(
+  context.Background(),
+  &api.DevicesGetRequest{
+    DeviceId: api.String("518f692b-f865-4590-8c3e-3849e9984c75"),
+  })
+
+// Confirm that the thermostat supports heat mode.
+if *thermostat.CanHvacHeat {
+  // Perform the heat request.
+  client.Thermostats.Heat(
+      context.Background(),
+      &api.ThermostatsHeatRequest{
+        DeviceId: thermostat.DeviceId,
+        HeatingSetPointCelsius: api.Float64(20),
+      },
+    )
+  }
 
 if uErr != nil {
-return uErr
+    return uErr
 }
 
-fmt.Println(heat_request)
 return nil
 ```
 
@@ -217,24 +480,28 @@ return nil
 
 ### 2. Poll the Action Attempt to Verify the Setting Change
 
-Use the `action_attempt_id` from the previous response to poll the associated action attempt using the [Get Action Attempt](../../api-clients/action_attempts/get.md) request. When the setting modification completes successfully, the `status` of the action attempt changes to `success`.
+Use the `action_attempt_id` from the previous response to poll the associated action attempt using the [Get Action Attempt](../../api-clients/action\_attempts/get.md) request. When the setting modification completes successfully, the `status` of the action attempt changes to `success`.
 
 {% tabs %}
 {% tab title="Python" %}
 **Request:**
 
 ```python
-pprint(seam.action_attempts.get(action_attempt="4df7eb09-e17d-4d3a-a9c9-cfe718d3ce90"))
+seam.action_attempts.get(
+  action_attempt_id="4df7eb09-e17d-4d3a-a9c9-cfe718d3ce90"
+)
 ```
 
 **Response:**
 
 ```
-ActionAttempt(action_attempt_id='4df7eb09-e17d-4d3a-a9c9-cfe718d3ce90',
-              action_type='SET_HEAT',
-              status='success',
-              result={},
-              error=None)
+ActionAttempt(
+  action_attempt_id='4df7eb09-e17d-4d3a-a9c9-cfe718d3ce90',
+  action_type='SET_HEAT',
+  status='success',
+  result={},
+  error=None
+)
 ```
 {% endtab %}
 
@@ -246,7 +513,7 @@ ActionAttempt(action_attempt_id='4df7eb09-e17d-4d3a-a9c9-cfe718d3ce90',
 curl -X 'GET' \
   'https://connect.getseam.com/action_attempts/get' \
   -H 'accept: application/json' \
-  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Authorization: Bearer ${SEAM_API_KEY}' \
   -H 'Content-Type: application/json' \
   -d '{
   "action_attempt_id": "4df7eb09-e17d-4d3a-a9c9-cfe718d3ce90"
@@ -273,7 +540,9 @@ curl -X 'GET' \
 **Request:**
 
 ```javascript
-console.log(await seam.actionAttempts.get("4df7eb09-e17d-4d3a-a9c9-cfe718d3ce90"))
+await seam.actionAttempts.get(
+  action_attempt_id: "4df7eb09-e17d-4d3a-a9c9-cfe718d3ce90"
+);
 ```
 
 **Response:**
@@ -293,17 +562,21 @@ console.log(await seam.actionAttempts.get("4df7eb09-e17d-4d3a-a9c9-cfe718d3ce90"
 **Request:**
 
 ```java
-ActionAttempt attempt = seam.actionAttempts()
-        .get(ActionAttemptsGetRequest.builder()
-                .actionAttemptId("4df7eb09-e17d-4d3a-a9c9-cfe718d3ce90")
-                .build());
-System.out.println(attempt.isSuccess());
+seam.actionAttempts().get(ActionAttemptsGetRequest.builder()
+  .actionAttemptId("4df7eb09-e17d-4d3a-a9c9-cfe718d3ce90")
+  .build());
 ```
 
 **Response:**
 
 ```json
-true
+{
+  status: 'success',
+  action_attempt_id: '4df7eb09-e17d-4d3a-a9c9-cfe718d3ce90',
+  action_type: 'SET_HEAT',
+  result: {},
+  error: null
+}
 ```
 {% endtab %}
 
@@ -311,7 +584,7 @@ true
 **Request:**
 
 ```go
-action_attempt, uErr := client.ActionAttempts.Get(context.Background(), &api.ActionAttemptsGetRequest{
+_, uErr := client.ActionAttempts.Get(context.Background(), &api.ActionAttemptsGetRequest{
   ActionAttemptId: "40dc817d-9ae0-4037-9d4a-736700ee467b",
 })
 
@@ -319,7 +592,6 @@ if uErr != nil {
 return uErr
 }
 
-fmt.Println(action_attempt)
 return nil
 ```
 
@@ -354,22 +626,30 @@ Set the HVAC mode to `heat` by providing the `device_id` of the thermostat and t
 **Request:**
 
 ```python
-heat_request = seam.thermostats.heat(
-  device = "518f692b-f865-4590-8c3e-3849e9984c75",
-  heating_set_point_celsius = 20
+# Get the thermostat.
+thermostat = seam.devices.get(
+  device_id="518f692b-f865-4590-8c3e-3849e9984c75"
 )
 
-pprint(heat_request)
+# Confirm that the thermostat supports heat mode.
+if thermostat.can_hvac_heat:
+  # Perform the heat request.
+  seam.thermostats.heat(
+    device_id = "518f692b-f865-4590-8c3e-3849e9984c75",
+    heating_set_point_celsius = 20
+  )
 ```
 
 **Response:**
 
 ```
-ActionAttempt(action_attempt_id='97125745-15d9-4970-b5be-c34ec3ce1c81',
-              action_type='SET_HEAT',
-              status='success',
-              result={},
-              error=None)
+ActionAttempt(
+  action_attempt_id='97125745-15d9-4970-b5be-c34ec3ce1c81',
+  action_type='SET_HEAT',
+  status='success',
+  result={},
+  error=None
+)
 ```
 {% endtab %}
 
@@ -377,15 +657,31 @@ ActionAttempt(action_attempt_id='97125745-15d9-4970-b5be-c34ec3ce1c81',
 **Request:**
 
 ```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/thermostats/heat' \
-  -H 'accept: application/json' \
-  -H 'Authorization: Bearer ${API_KEY}' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "device_id": "518f692b-f865-4590-8c3e-3849e9984c75",
-  "heating_set_point_celsius": 20
-}'
+# Get the thermostat.
+thermostat=$(
+  # Use GET or POST.
+  curl -X 'GET' \
+    'https://connect.getseam.com/devices/get' \
+    -H 'accept: application/json' \
+    -H "Authorization: Bearer ${SEAM_API_KEY}" \
+    -H 'Content-Type: application/json' \
+    -d '{
+      "device_id": "518f692b-f865-4590-8c3e-3849e9984c75"
+  }')
+
+# Confirm that the thermostat supports heat mode.
+if  $(jq -r '.device.can_hvac_heat' <<< ${thermostat}); then \
+  # Perform the heat request.
+  curl -X 'POST' \
+    'https://connect.getseam.com/thermostats/heat' \
+    -H 'accept: application/json' \
+    -H "Authorization: Bearer ${SEAM_API_KEY}" \
+    -H 'Content-Type: application/json' \
+    -d "{
+      \"device_id\": \"$(jq -r '.device.device_id' <<< ${device})\",
+      \"heating_set_point_celsius\": 20
+  }';
+fi
 ```
 
 **Response:**
@@ -408,12 +704,19 @@ curl -X 'POST' \
 **Request:**
 
 ```javascript
-const heat_request = await seam.thermostats.heat({
-      device_id: "518f692b-f865-4590-8c3e-3849e9984c75",
-      heating_set_point_celsius: 20
-})
+# Get the thermostat.
+const thermostat = await seam.devices.get({
+  device_id: "518f692b-f865-4590-8c3e-3849e9984c75"
+});
 
-console.log(heat_request)
+// Confirm that the thermostat supports heat mode.
+if (thermostat.can_hvac_heat) {
+  // Perform the heat request.
+  await seam.thermostats.heat({
+    device_id: thermostat.device_id,
+    heating_set_point_celsius: 20
+  })
+};
 ```
 
 **Response:**
@@ -435,10 +738,19 @@ console.log(heat_request)
 **Request:**
 
 ```php
-$heat_request = $seam->thermostats->heat(
-  device_id: "518f692b-f865-4590-8c3e-3849e9984c75",
-  heating_set_point_celsius: 20
+// Get the thermostat.
+$thermostat = $seam->devices->get(
+  device_id: "5ce2cd35-09b1-458c-bb08-51ee83c35be7"
 );
+
+// Confirm that the thermostat supports heat mode.
+if ($thermostat->can_hvac_heat) {
+  // Perform the heat request.
+  $seam->thermostats->heat(
+    device_id: $thermostat->device_id,
+    heating_set_point_celsius: 20
+  );
+}
 ```
 
 **Response:**
@@ -452,27 +764,33 @@ None
 **Request:**
 
 ```java
-var deviceId = "518f692b-f865-4590-8c3e-3849e9984c75";
-seam.thermostats().heat(ThermostatsHeatRequest.builder()
-                .deviceId(deviceId)
-                .heatingSetPointCelsius(20.0)
-                .build());
-Device thermostat = seam.thermostats()
-        .get(ThermostatsGetRequest.builder()
-                .deviceId(deviceId)
-                .build());
-System.out.println("Thermostat ID: " + thermostat.getDeviceId());
-System.out.println("Mode: " + thermostat.getProperties().getCurrentClimateSetting().get().getHvacModeSetting());
-System.out.println("Heating set point (Celsius): " +
-  thermostat.getProperties().getCurrentClimateSetting().get().getHeatingSetPointCelsius());
+// Get the thermostat.
+Device thermostat = seam.devices()
+  .get(DevicesGetRequest.builder()
+    .deviceId("518f692b-f865-4590-8c3e-3849e9984c75")
+    .build());
+
+// Confirm that the thermostat supports heat mode.
+if (thermostat.getCanHvacHeat())
+{
+  // Perform the heat request.
+  seam.thermostats().heat(ThermostatsHeatRequest.builder()
+    .deviceId(thermostat.getDeviceId())
+    .heatingSetPointCelsius(20.0)
+    .build());
+}
 ```
 
 **Response:**
 
-```json
-Thermostat ID: 518f692b-f865-4590-8c3e-3849e9984c75
-Mode: Optional[heat]
-Heating set point (Celsius): Optional[20.0]
+```
+{
+  "status": "pending",
+  "action_type": "SET_HEAT",
+  "action_attempt_id": "241e79cd-4bda-499f-8e2e-d7ae01d273cf",
+  "result": null,
+  "error": null
+}
 ```
 {% endtab %}
 
@@ -480,16 +798,29 @@ Heating set point (Celsius): Optional[20.0]
 **Request:**
 
 ```go
-heat_request, uErr := client.Thermostats.Heat(context.Background(), &api.ThermostatsHeatRequest{
-  DeviceId: "518f692b-f865-4590-8c3e-3849e9984c75",
-  HeatingSetPointCelsius: api.Float64(20),
-})
+// Get the thermostat.
+thermostat, uErr := client.Devices.Get(
+  context.Background(),
+  &api.DevicesGetRequest{
+    DeviceId: api.String("518f692b-f865-4590-8c3e-3849e9984c75"),
+  })
+
+// Confirm that the thermostat supports heat mode.
+if *thermostat.CanHvacHeat {
+  // Perform the heat request.
+  client.Thermostats.Heat(
+      context.Background(),
+      &api.ThermostatsHeatRequest{
+        DeviceId: thermostat.DeviceId,
+        HeatingSetPointCelsius: api.Float64(20),
+      },
+    )
+  }
 
 if uErr != nil {
-return uErr
+    return uErr
 }
 
-fmt.Println(heat_request)
 return nil
 ```
 
@@ -523,22 +854,30 @@ Set the HVAC mode to `cool` by providing the `device_id` of the thermostat and t
 **Request:**
 
 ```python
-cool_request = seam.thermostats.cool(
-  device = "518f692b-f865-4590-8c3e-3849e9984c75",
-  cooling_set_point_celsius = 25
+# Get the thermostat.
+thermostat = seam.devices.get(
+  device_id="518f692b-f865-4590-8c3e-3849e9984c75"
 )
 
-pprint(cool_request)
+# Confirm that the thermostat supports cool mode.
+if thermostat.can_hvac_cool:
+  # Perform the cool request.
+  seam.thermostats.cool(
+    device_id = "518f692b-f865-4590-8c3e-3849e9984c75",
+    cooling_set_point_celsius = 25
+  )
 ```
 
 **Response:**
 
 ```
-ActionAttempt(action_attempt_id='87478724-0e30-4fed-9f2a-456971b7b04f',
-              action_type='SET_COOL',
-              status='success',
-              result={},
-              error=None)
+ActionAttempt(
+  action_attempt_id='87478724-0e30-4fed-9f2a-456971b7b04f',
+  action_type='SET_COOL',
+  status='success',
+  result={},
+  error=None
+)
 ```
 {% endtab %}
 
@@ -546,15 +885,31 @@ ActionAttempt(action_attempt_id='87478724-0e30-4fed-9f2a-456971b7b04f',
 **Request:**
 
 ```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/thermostats/cool' \
-  -H 'accept: application/json' \
-  -H 'Authorization: Bearer ${API_KEY}' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "device_id": "518f692b-f865-4590-8c3e-3849e9984c75",
-  "cooling_set_point_celsius": 25
-}'
+# Get the thermostat.
+thermostat=$(
+  # Use GET or POST.
+  curl -X 'GET' \
+    'https://connect.getseam.com/devices/get' \
+    -H 'accept: application/json' \
+    -H "Authorization: Bearer ${SEAM_API_KEY}" \
+    -H 'Content-Type: application/json' \
+    -d '{
+      "device_id": "518f692b-f865-4590-8c3e-3849e9984c75"
+  }')
+
+# Confirm that the thermostat supports cool mode.
+if  $(jq -r '.device.can_hvac_cool' <<< ${thermostat}); then \
+  # Perform the cool request.
+  curl -X 'POST' \
+    'https://connect.getseam.com/thermostats/cool' \
+    -H 'accept: application/json' \
+    -H "Authorization: Bearer ${SEAM_API_KEY}" \
+    -H 'Content-Type: application/json' \
+    -d "{
+      \"device_id\": \"$(jq -r '.device.device_id' <<< ${device})\",
+      \"cooling_set_point_celsius\": 25
+  }';
+fi
 ```
 
 **Response:**
@@ -564,7 +919,7 @@ curl -X 'POST' \
   "action_attempt": {
     "status": "pending",
     "action_type": "SET_COOL",
-    "action_attempt_id": "6c5fa5eb-aece-4258-9eeb-24cd24c44a8c",
+    "action_attempt_id": "87478724-0e30-4fed-9f2a-456971b7b04f",
     "result": null,
     "error": null
   },
@@ -577,12 +932,19 @@ curl -X 'POST' \
 **Request:**
 
 ```javascript
-const cool_request = await seam.thermostats.cool({
-      device_id: "518f692b-f865-4590-8c3e-3849e9984c75",
-      cooling_set_point_celsius: 25
-})
+# Get the thermostat.
+const thermostat = await seam.devices.get({
+  device_id: "518f692b-f865-4590-8c3e-3849e9984c75"
+});
 
-console.log(cool_request)
+// Confirm that the thermostat supports cool mode.
+if (thermostat.can_hvac_cool) {
+  // Perform the cool request.
+  await seam.thermostats.cool({
+    device_id: thermostat.device_id,
+    cooling_set_point_celsius: 25
+  })
+};
 ```
 
 **Response:**
@@ -591,7 +953,7 @@ console.log(cool_request)
 {
   actionAttempt: {
     status: 'success',
-    action_attempt_id: '3ef9ff5a-0d50-40a4-9ef4-94f44e923e6e',
+    action_attempt_id: '518f692b-f865-4590-8c3e-3849e9984c75',
     action_type: 'SET_COOL',
     result: {},
     error: null
@@ -604,10 +966,19 @@ console.log(cool_request)
 **Request:**
 
 ```php
-$cool_request = $seam->thermostats->cool(
-  device_id: "518f692b-f865-4590-8c3e-3849e9984c75",
-  cooling_set_point_celsius: 25
+// Get the thermostat.
+$thermostat = $seam->devices->get(
+  device_id: "5ce2cd35-09b1-458c-bb08-51ee83c35be7"
 );
+
+// Confirm that the thermostat supports cool mode.
+if ($thermostat->can_hvac_cool) {
+  // Perform the cool request.
+  $seam->thermostats->cool(
+    device_id: $thermostat->device_id,
+    cooling_set_point_celsius: 25
+  );
+}
 ```
 
 **Response:**
@@ -621,31 +992,33 @@ None
 **Request:**
 
 ```java
-var deviceId = "518f692b-f865-4590-8c3e-3849e9984c75";
-seam.thermostats().update(ThermostatsUpdateRequest.builder()
-                .deviceId(deviceId)
-                .defaultClimateSetting(ThermostatsUpdateRequestDefaultClimateSetting.builder()
-                        .hvacModeSetting(HvacModeSetting.COOL)
-                        .coolingSetPointCelsius(25.0)
-                        .manualOverrideAllowed(true)
-                        .build())
-                .build());
-Device thermostat = seam.thermostats()
-        .get(ThermostatsGetRequest.builder()
-                .deviceId(deviceId)
-                .build());
-System.out.println("Thermostat ID: " + thermostat.getDeviceId());
-System.out.println("Mode: " + thermostat.getProperties().getCurrentClimateSetting().get().getHvacModeSetting());
-System.out.println("Cooling set point (Celsius): " +
-  thermostat.getProperties().getCurrentClimateSetting().get().getCoolingSetPointCelsius());
+// Get the thermostat.
+Device thermostat = seam.devices()
+  .get(DevicesGetRequest.builder()
+    .deviceId("518f692b-f865-4590-8c3e-3849e9984c75")
+    .build());
+
+// Confirm that the thermostat supports cool mode.
+if (thermostat.getCanHvacCool())
+{
+  // Perform the cool request.
+  seam.thermostats().cool(ThermostatsHeatRequest.builder()
+    .deviceId(thermostat.getDeviceId())
+    .coolingSetPointCelsius(25.0)
+    .build());
+}
 ```
 
 **Response:**
 
-```json
-Thermostat ID: 518f692b-f865-4590-8c3e-3849e9984c75
-Mode: Optional[cool]
-Cooling set point (Celsius): Optional[25.0]
+```
+{
+  "status": "pending",
+  "action_type": "SET_COOL",
+  "action_attempt_id": "87478724-0e30-4fed-9f2a-456971b7b04f",
+  "result": null,
+  "error": null
+}
 ```
 {% endtab %}
 
@@ -653,16 +1026,29 @@ Cooling set point (Celsius): Optional[25.0]
 **Request:**
 
 ```go
-cool_request, uErr := client.Thermostats.Cool(context.Background(), &api.ThermostatsCoolRequest{
-  DeviceId: "518f692b-f865-4590-8c3e-3849e9984c75",
-  CoolingSetPointCelsius: api.Float64(25),
-})
+// Get the thermostat.
+thermostat, uErr := client.Devices.Get(
+  context.Background(),
+  &api.DevicesGetRequest{
+    DeviceId: api.String("518f692b-f865-4590-8c3e-3849e9984c75"),
+  })
+
+// Confirm that the thermostat supports cool mode.
+if *thermostat.CanHvacCool {
+  // Perform the cool request.
+  client.Thermostats.Cool(
+      context.Background(),
+      &api.ThermostatsCoolRequest{
+        DeviceId: thermostat.DeviceId,
+        CoolingSetPointCelsius: api.Float64(25),
+      },
+    )
+  }
 
 if uErr != nil {
-return uErr
+    return uErr
 }
 
-fmt.Println(cool_request)
 return nil
 ```
 
@@ -673,7 +1059,7 @@ return nil
   "action_attempt": {
     "status": "pending",
     "action_type": "SET_COOL",
-    "action_attempt_id": "3ef9ff5a-0d50-40a4-9ef4-94f44e923e6e",
+    "action_attempt_id": "87478724-0e30-4fed-9f2a-456971b7b04f",
     "result": null,
     "error": null
   },
@@ -687,7 +1073,7 @@ return nil
 
 ### Set a Thermostat to Heat-Cool Mode
 
-You can [set a thermostat to operate in heat-cool (also known as "auto") mode](../../api-clients/thermostats/heat_cool.md) and specify desired set point temperatures for both heating and cooling. By establishing the set points, the thermostat activates the associated heating and cooling systems as needed to maintain the specified temperature range.
+You can [set a thermostat to operate in heat-cool (also known as "auto") mode](../../api-clients/thermostats/heat\_cool.md) and specify desired set point temperatures for both heating and cooling. By establishing the set points, the thermostat activates the associated heating and cooling systems as needed to maintain the specified temperature range.
 
 Set the HVAC mode to `heat_cool` by providing the `device_id` of the thermostat and both the heating set point and the cooling set point in Celsius or Fahrenheit.
 
@@ -696,23 +1082,31 @@ Set the HVAC mode to `heat_cool` by providing the `device_id` of the thermostat 
 **Request:**
 
 ```python
-heat_and_cool_request = seam.thermostats.heat_cool(
-  device = "518f692b-f865-4590-8c3e-3849e9984c75",
-  heating_set_point_celsius = 20,
-  cooling_set_point_celsius = 25
+# Get the thermostat.
+thermostat = seam.devices.get(
+  device_id="518f692b-f865-4590-8c3e-3849e9984c75"
 )
 
-pprint(heat_and_cool_request)
+# Confirm that the thermostat supports heat-cool mode.
+if thermostat.can_hvac_heat_cool:
+  # Perform the heat_cool request.
+  seam.thermostats.heat_cool(
+    device_id = "518f692b-f865-4590-8c3e-3849e9984c75",
+    heating_set_point_celsius = 20,
+    cooling_set_point_celsius = 25
+  )
 ```
 
 **Response:**
 
 ```
-ActionAttempt(action_attempt_id='8050ec59-7f29-4d0d-9842-dedaf304740d',
-              action_type='SET_HEAT_COOL',
-              status='success',
-              result={},
-              error=None)
+ActionAttempt(
+  action_attempt_id='8050ec59-7f29-4d0d-9842-dedaf304740d',
+  action_type='SET_HEAT_COOL',
+  status='success',
+  result={},
+  error=None
+)
 ```
 {% endtab %}
 
@@ -720,16 +1114,32 @@ ActionAttempt(action_attempt_id='8050ec59-7f29-4d0d-9842-dedaf304740d',
 **Request:**
 
 ```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/thermostats/heat_cool' \
-  -H 'accept: application/json' \
-  -H 'Authorization: Bearer ${API_KEY}' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "device_id": "518f692b-f865-4590-8c3e-3849e9984c75",
-  "heating_set_point_celsius": 20,
-  "cooling_set_point_celsius": 25
-}'
+# Get the thermostat.
+thermostat=$(
+  # Use GET or POST.
+  curl -X 'GET' \
+    'https://connect.getseam.com/devices/get' \
+    -H 'accept: application/json' \
+    -H "Authorization: Bearer ${SEAM_API_KEY}" \
+    -H 'Content-Type: application/json' \
+    -d '{
+      "device_id": "518f692b-f865-4590-8c3e-3849e9984c75"
+  }')
+
+# Confirm that the thermostat supports heat-cool mode.
+if  $(jq -r '.device.can_hvac_heat_cool' <<< ${thermostat}); then \
+  # Perform the heat_cool request.
+  curl -X 'POST' \
+    'https://connect.getseam.com/thermostats/heat_cool' \
+    -H 'accept: application/json' \
+    -H "Authorization: Bearer ${SEAM_API_KEY}" \
+    -H 'Content-Type: application/json' \
+    -d "{
+      \"device_id\": \"$(jq -r '.device.device_id' <<< ${device})\",
+      \"heating_set_point_celsius\": 20,
+      \"cooling_set_point_celsius\": 25
+  }';
+fi
 ```
 
 **Response:**
@@ -739,7 +1149,7 @@ curl -X 'POST' \
   "action_attempt": {
     "status": "pending",
     "action_type": "SET_HEAT_COOL",
-    "action_attempt_id": "961b93c0-0397-4737-b96b-1379f6715a2f",
+    "action_attempt_id": "8050ec59-7f29-4d0d-9842-dedaf304740d",
     "result": null,
     "error": null
   },
@@ -752,11 +1162,20 @@ curl -X 'POST' \
 **Request:**
 
 ```javascript
-const heat_cool_request = await seam.thermostats.heatCool({
-      device_id: "518f692b-f865-4590-8c3e-3849e9984c75",
-      heating_set_point_celsius: 20,
-      cooling_set_point_celsius: 25,
-})
+# Get the thermostat.
+const thermostat = await seam.devices.get({
+  device_id: "518f692b-f865-4590-8c3e-3849e9984c75"
+});
+
+// Confirm that the thermostat supports heat-cool mode.
+if (thermostat.can_hvac_heat_cool) {
+  // Perform the heatCool request.
+  await seam.thermostats.heatCool({
+    device_id: thermostat.device_id,
+    heating_set_point_celsius: 20,
+    cooling_set_point_celsius: 25
+  })
+};
 ```
 
 **Response:**
@@ -765,7 +1184,7 @@ const heat_cool_request = await seam.thermostats.heatCool({
 {
   actionAttempt: {
     status: 'success',
-    action_attempt_id: '13229a60-38ce-4fec-bd93-85674e2257ff',
+    action_attempt_id: '8050ec59-7f29-4d0d-9842-dedaf304740d',
     action_type: 'SET_HEAT_COOL',
     result: {},
     error: null
@@ -778,11 +1197,20 @@ const heat_cool_request = await seam.thermostats.heatCool({
 **Request:**
 
 ```php
-$heat_cool_request = $seam->thermostats->heat_cool(
-  device_id: "518f692b-f865-4590-8c3e-3849e9984c75",
-  heating_set_point_celsius: 20,
-  cooling_set_point_celsius: 25
+// Get the thermostat.
+$thermostat = $seam->devices->get(
+  device_id: "5ce2cd35-09b1-458c-bb08-51ee83c35be7"
 );
+
+// Confirm that the thermostat supports heat-cool mode.
+if ($thermostat->can_hvac_heat_cool) {
+  // Perform the heat_cool request.
+  $seam->thermostats->heat_cool(
+    device_id: $thermostat->device_id,
+    heating_set_point_celsius: 20,
+    cooling_set_point_celsius: 25
+  );
+}
 ```
 
 **Response:**
@@ -796,35 +1224,34 @@ None
 **Request:**
 
 ```java
-var deviceId = "518f692b-f865-4590-8c3e-3849e9984c75";
-seam.thermostats().update(ThermostatsUpdateRequest.builder()
-                .deviceId(deviceId)
-                .defaultClimateSetting(ThermostatsUpdateRequestDefaultClimateSetting.builder()
-                        .hvacModeSetting(HvacModeSetting.HEAT_COOL)
-                        .heatingSetPointCelsius(20.0)
-                        .coolingSetPointCelsius(25.0)
-                        .manualOverrideAllowed(true)
-                        .build())
-                .build());
-Device thermostat = seam.thermostats()
-        .get(ThermostatsGetRequest.builder()
-                .deviceId(deviceId)
-                .build());
-System.out.println("Thermostat ID: " + thermostat.getDeviceId());
-System.out.println("Mode: " + thermostat.getProperties().getCurrentClimateSetting().get().getHvacModeSetting());
-System.out.println("Heating set point (Celsius): " +
-  thermostat.getProperties().getCurrentClimateSetting().get().getHeatingSetPointCelsius());
-System.out.println("Cooling set point (Celsius): " +
-  thermostat.getProperties().getCurrentClimateSetting().get().getCoolingSetPointCelsius());
+// Get the thermostat.
+Device thermostat = seam.devices()
+  .get(DevicesGetRequest.builder()
+    .deviceId("518f692b-f865-4590-8c3e-3849e9984c75")
+    .build());
+
+// Confirm that the thermostat supports heat-cool mode.
+if (thermostat.getCanHvacHeatCool())
+{
+  // Perform the heatCool request.
+  seam.thermostats().heatCool(ThermostatsHeatRequest.builder()
+    .deviceId(thermostat.getDeviceId())
+    .heatingSetPointCelsius(20.0)
+    .coolingSetPointCelsius(25.0)
+    .build());
+}
 ```
 
 **Response:**
 
-```json
-Thermostat ID: 518f692b-f865-4590-8c3e-3849e9984c75
-Mode: Optional[heat_cool]
-Heating set point (Celsius): Optional[20.0]
-Cooling set point (Celsius): Optional[25.0]
+```
+{
+  "status": "pending",
+  "action_type": "SET_HEAT_COOL",
+  "action_attempt_id": "8050ec59-7f29-4d0d-9842-dedaf304740d",
+  "result": null,
+  "error": null
+}
 ```
 {% endtab %}
 
@@ -832,17 +1259,30 @@ Cooling set point (Celsius): Optional[25.0]
 **Request:**
 
 ```go
-heat_cool_request, uErr := client.Thermostats.HeatCool(context.Background(), &api.ThermostatsHeatCoolRequest{
-  DeviceId: "518f692b-f865-4590-8c3e-3849e9984c75",
-  HeatingSetPointCelsius: api.Float64(20),
-  CoolingSetPointCelsius: api.Float64(25),
-})
+// Get the thermostat.
+thermostat, uErr := client.Devices.Get(
+  context.Background(),
+  &api.DevicesGetRequest{
+    DeviceId: api.String("518f692b-f865-4590-8c3e-3849e9984c75"),
+  })
+
+// Confirm that the thermostat supports heat-cool mode.
+if *thermostat.CanHvacHeatCool {
+  // Perform the HeatCool request.
+  client.Thermostats.HeatCool(
+      context.Background(),
+      &api.ThermostatsHeatCoolRequest{
+        DeviceId: thermostat.DeviceId,
+        HeatingSetPointCelsius: api.Float64(20),
+        CoolingSetPointCelsius: api.Float64(25),
+      },
+    )
+  }
 
 if uErr != nil {
-return uErr
+    return uErr
 }
 
-fmt.Println(heat_cool_request)
 return nil
 ```
 
@@ -853,7 +1293,7 @@ return nil
   "action_attempt": {
     "status": "pending",
     "action_type": "SET_HEAT_COOL",
-    "action_attempt_id": "922a3c60-98bb-4020-b6d9-cf556deacf0f",
+    "action_attempt_id": "8050ec59-7f29-4d0d-9842-dedaf304740d",
     "result": null,
     "error": null
   },
@@ -876,21 +1316,29 @@ Set the HVAC mode to `off` by providing the `device_id` of the thermostat.
 **Request:**
 
 ```python
-off_request = seam.thermostats.off(
-  device = "518f692b-f865-4590-8c3e-3849e9984c75"
+# Get the thermostat.
+thermostat = seam.devices.get(
+  device_id="518f692b-f865-4590-8c3e-3849e9984c75"
 )
 
-pprint(off_request)
+# Confirm that the thermostat supports off mode.
+if thermostat.can_turn_off_hvac:
+  # Perform the off request.
+  seam.thermostats.off(
+    device_id = "518f692b-f865-4590-8c3e-3849e9984c75"
+  )
 ```
 
 **Response:**
 
 ```
-ActionAttempt(action_attempt_id='ef94c8b2-3ff0-4e56-a97e-033ca07ba0fd',
-              action_type='SET_THERMOSTAT_OFF',
-              status='success',
-              result={},
-              error=None)
+ActionAttempt(
+  action_attempt_id='ef94c8b2-3ff0-4e56-a97e-033ca07ba0fd',
+  action_type='SET_THERMOSTAT_OFF',
+  status='success',
+  result={},
+  error=None
+)
 ```
 {% endtab %}
 
@@ -898,14 +1346,30 @@ ActionAttempt(action_attempt_id='ef94c8b2-3ff0-4e56-a97e-033ca07ba0fd',
 **Request:**
 
 ```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/thermostats/off' \
-  -H 'accept: application/json' \
-  -H 'Authorization: Bearer ${API_KEY}' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "device_id": "518f692b-f865-4590-8c3e-3849e9984c75"
-}'
+# Get the thermostat.
+thermostat=$(
+  # Use GET or POST.
+  curl -X 'GET' \
+    'https://connect.getseam.com/devices/get' \
+    -H 'accept: application/json' \
+    -H "Authorization: Bearer ${SEAM_API_KEY}" \
+    -H 'Content-Type: application/json' \
+    -d '{
+      "device_id": "518f692b-f865-4590-8c3e-3849e9984c75"
+  }')
+
+# Confirm that the thermostat supports off mode.
+if  $(jq -r '.device.can_turn_off_hvac' <<< ${thermostat}); then \
+  # Perform the off request.
+  curl -X 'POST' \
+    'https://connect.getseam.com/thermostats/off' \
+    -H 'accept: application/json' \
+    -H "Authorization: Bearer ${SEAM_API_KEY}" \
+    -H 'Content-Type: application/json' \
+    -d "{
+      \"device_id\": \"$(jq -r '.device.device_id' <<< ${device})\"
+  }';
+fi
 ```
 
 **Response:**
@@ -915,7 +1379,7 @@ curl -X 'POST' \
   "action_attempt": {
     "status": "pending",
     "action_type": "SET_THERMOSTAT_OFF",
-    "action_attempt_id": "724563fb-d8a4-46b3-81ce-5cbf26008c83",
+    "action_attempt_id": "ef94c8b2-3ff0-4e56-a97e-033ca07ba0fd",
     "result": null,
     "error": null
   },
@@ -928,11 +1392,18 @@ curl -X 'POST' \
 **Request:**
 
 ```javascript
-const off_request = await seam.thermostats.off({
-      device_id: "518f692b-f865-4590-8c3e-3849e9984c75"
-})
+# Get the thermostat.
+const thermostat = await seam.devices.get({
+  device_id: "518f692b-f865-4590-8c3e-3849e9984c75"
+});
 
-console.log(off_request)
+// Confirm that the thermostat supports off mode.
+if (thermostat.can_turn_off_hvac) {
+  // Perform the off request.
+  await seam.thermostats.off({
+    device_id: thermostat.device_id
+  })
+};
 ```
 
 **Response:**
@@ -941,7 +1412,7 @@ console.log(off_request)
 {
   actionAttempt: {
     status: 'success',
-    action_attempt_id: 'fffbe81e-f098-4c5f-b4a2-410dd036ae5b',
+    action_attempt_id: 'ef94c8b2-3ff0-4e56-a97e-033ca07ba0fd',
     action_type: 'SET_THERMOSTAT_OFF',
     result: {},
     error: null
@@ -954,9 +1425,18 @@ console.log(off_request)
 **Request:**
 
 ```php
-$off_request = $seam->thermostats->off(
-  device_id: "518f692b-f865-4590-8c3e-3849e9984c75"
+// Get the thermostat.
+$thermostat = $seam->devices->get(
+  device_id: "5ce2cd35-09b1-458c-bb08-51ee83c35be7"
 );
+
+// Confirm that the thermostat supports off mode.
+if ($thermostat->can_turn_off_hvac) {
+  // Perform the off request.
+  $seam->thermostats->off(
+    device_id: $thermostat->device_id
+  );
+}
 ```
 
 **Response:**
@@ -970,26 +1450,32 @@ None
 **Request:**
 
 ```java
-var deviceId = "518f692b-f865-4590-8c3e-3849e9984c75";
-seam.thermostats().update(ThermostatsUpdateRequest.builder()
-                .deviceId(deviceId)
-                .defaultClimateSetting(ThermostatsUpdateRequestDefaultClimateSetting.builder()
-                        .hvacModeSetting(HvacModeSetting.OFF)
-                        .build())
-                .build());
-Device thermostat = seam.thermostats()
-        .get(ThermostatsGetRequest.builder()
-                .deviceId(deviceId)
-                .build());
-System.out.println("Thermostat ID: " + thermostat.getDeviceId());
-System.out.println("Mode: " + thermostat.getProperties().getCurrentClimateSetting().get().getHvacModeSetting());
+// Get the thermostat.
+Device thermostat = seam.devices()
+  .get(DevicesGetRequest.builder()
+    .deviceId("518f692b-f865-4590-8c3e-3849e9984c75")
+    .build());
+
+// Confirm that the thermostat supports off mode.
+if (thermostat.getCanTurnOffHvac())
+{
+  // Perform the off request.
+  seam.thermostats().off(ThermostatsOffRequest.builder()
+    .deviceId(thermostat.getDeviceId())
+    .build());
+}
 ```
 
 **Response:**
 
-```json
-Thermostat ID: 518f692b-f865-4590-8c3e-3849e9984c75
-Mode: Optional[off]
+```
+{
+  "status": "pending",
+  "action_type": "SET_THERMOSTAT_OFF",
+  "action_attempt_id": "ef94c8b2-3ff0-4e56-a97e-033ca07ba0fd",
+  "result": null,
+  "error": null
+}
 ```
 {% endtab %}
 
@@ -997,15 +1483,28 @@ Mode: Optional[off]
 **Request:**
 
 ```go
-off_request, uErr := client.Thermostats.Off(context.Background(), &api.ThermostatsOffRequest{
-  DeviceId: "518f692b-f865-4590-8c3e-3849e9984c75",
-})
+// Get the thermostat.
+thermostat, uErr := client.Devices.Get(
+  context.Background(),
+  &api.DevicesGetRequest{
+    DeviceId: api.String("518f692b-f865-4590-8c3e-3849e9984c75"),
+  })
+
+// Confirm that the thermostat supports off mode.
+if *thermostat.CanTurnOffHvac {
+  // Perform the off request.
+  client.Thermostats.Off(
+      context.Background(),
+      &api.ThermostatsOffRequest{
+        DeviceId: thermostat.DeviceId,
+      },
+    )
+  }
 
 if uErr != nil {
-return uErr
+    return uErr
 }
 
-fmt.Println(off_request)
 return nil
 ```
 
@@ -1016,7 +1515,7 @@ return nil
   "action_attempt": {
     "status": "pending",
     "action_type": "SET_THERMOSTAT_OFF",
-    "action_attempt_id": "7bfa2738-e0fd-4915-b3e0-8d6bcc14a5ed",
+    "action_attempt_id": "ef94c8b2-3ff0-4e56-a97e-033ca07ba0fd",
     "result": null,
     "error": null
   },
@@ -1030,7 +1529,7 @@ return nil
 
 ### Set the Fan Mode
 
-You can [configure the fan associated with a thermostat](../../api-clients/thermostats/set_fan_mode.md) to operate in either `on` or `auto` mode. In the `on` setting, the fan runs continuously, while in the `auto` setting, the fan operates based on temperature needs and system demands.
+You can [configure the fan associated with a thermostat](../../api-clients/thermostats/set\_fan\_mode.md) to operate in either `on` or `auto` mode. In the `on` setting, the fan runs continuously, while in the `auto` setting, the fan operates based on temperature needs and system demands.
 
 Set the fan mode by providing the `device_id` of the thermostat and specifying the desired fan mode setting.
 

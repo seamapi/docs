@@ -4,6 +4,16 @@ description: Learn how to create Latch PIN codes.
 
 # Programming Code-Based Latch Credentials
 
+## Requirements for Syncing PIN Code Access Updates
+
+If you want to sync access updates to Latch-controlled entrances remotely, you must install the hard-wired [Latch hub](https://marketing.latch.com/latch-hub) to connect to all the wireless entrances. Once installed, you can use Seam to program code-based credentials, and the changes will sync automatically through the hub.
+
+Alternately, you can update entrances manually using the [Latch Manager App](https://support.latch.com/hc/en-us/articles/16123811974935-Door-Updates) whenever you've made changes to your users' access.
+
+***
+
+## Program a Code-Based Latch Credential
+
 To use the Seam API to program codes for users in a [Latch ACS](./):
 
 1. Create an [ACS user](../../products/access-systems/user-management.md).
@@ -483,5 +493,4 @@ To learn more about using the Seam API with your Latch ACS, see the following to
 * [Managing Credentials](../../capability-guides/access-systems/managing-credentials.md)
 * [Mobile Access](../../products/mobile-access-in-development/)
 * [Access Control Systems](../../api-clients/acs/) in the Seam API reference
-* [User Identities](../../api-clients/user_identities/) in the Seam API reference
-
+* [User Identities](../../api-clients/user\_identities/) in the Seam API reference

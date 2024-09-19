@@ -76,7 +76,11 @@ export function setEndpointLayoutContext(
 type ContextResourceProperty = Pick<
   Property,
   'name' | 'description' | 'isDeprecated' | 'deprecationMessage'
-> & { format: string; enumValues?: string[] }
+> & {
+  format: string
+  enumValues?: string[]
+  objectProperties?: ContextResourceProperty[]
+}
 interface ContextResource {
   name: string
   description: string
@@ -151,6 +155,12 @@ export function setApiRouteLayoutContext(
             contextResourceProp.enumValues = prop.values.map(({ name }) => name)
           }
 
+          if ('properties' in prop) {
+            contextResourceProp.objectProperties = flattenObjectProperties(
+              prop.properties,
+            )
+          }
+
           return contextResourceProp
         }),
       })
@@ -169,4 +179,24 @@ const normalizePropertyFormatForDocs = (format: PropertyFormat): string => {
   }
 
   return formatMap[format] ?? pascalCase(format)
+}
+
+const flattenObjectProperties = (
+  properties: Property[],
+  paths: string[] = [],
+): Property[] => {
+  const results: Property[] = []
+
+  for (const property of properties) {
+    const name = [...paths, property.name].join('.')
+
+    results.push({ ...property, name })
+
+    if (property.format === 'object') {
+      results.push(...flattenObjectProperties(property.properties, [name]))
+      continue
+    }
+  }
+
+  return results
 }

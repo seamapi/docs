@@ -35,6 +35,7 @@
     "@seamapi/blueprint": "^0.20.0",
     "change-case": "^5.4.4",
     "command-exists": "^1.2.9",
+    "del": "^7.1.0",
     "execa": "^9.3.1",
     "jstransformer-handlebars": "^1.2.0",
     "metalsmith": "^2.6.3",
