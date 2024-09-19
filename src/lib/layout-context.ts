@@ -44,12 +44,14 @@ export function setEndpointLayoutContext(
 
   file.request = {
     preferredMethod: endpoint.request?.preferredMethod ?? '',
-    parameters: endpoint.request.parameters.map((param) => ({
-      name: param.name,
-      required: param.isRequired,
-      description: param.description,
-      jsonType: param.jsonType,
-    })),
+    parameters: endpoint.request.parameters
+      .filter(({ isUndocumented }) => !isUndocumented)
+      .map((param) => ({
+        name: param.name,
+        required: param.isRequired,
+        description: param.description,
+        jsonType: param.jsonType,
+      })),
   }
 
   file.response = {
@@ -135,34 +137,38 @@ export function setApiRouteLayoutContext(
       file.resources.push({
         name: resourceName,
         description: resource.description,
-        properties: resource.properties.map((prop) => {
-          const {
-            name,
-            description,
-            format,
-            isDeprecated,
-            deprecationMessage,
-          } = prop
-          const contextResourceProp: ContextResourceProperty = {
-            name,
-            description,
-            format: normalizePropertyFormatForDocs(format),
-            isDeprecated,
-            deprecationMessage,
-          }
+        properties: resource.properties
+          .filter(({ isUndocumented }) => !isUndocumented)
+          .map((prop) => {
+            const {
+              name,
+              description,
+              format,
+              isDeprecated,
+              deprecationMessage,
+            } = prop
+            const contextResourceProp: ContextResourceProperty = {
+              name,
+              description,
+              format: normalizePropertyFormatForDocs(format),
+              isDeprecated,
+              deprecationMessage,
+            }
 
-          if ('values' in prop) {
-            contextResourceProp.enumValues = prop.values.map(({ name }) => name)
-          }
+            if ('values' in prop) {
+              contextResourceProp.enumValues = prop.values.map(
+                ({ name }) => name,
+              )
+            }
 
-          if ('properties' in prop) {
-            contextResourceProp.objectProperties = flattenObjectProperties(
-              prop.properties,
-            )
-          }
+            if ('properties' in prop) {
+              contextResourceProp.objectProperties = flattenObjectProperties(
+                prop.properties,
+              )
+            }
 
-          return contextResourceProp
-        }),
+            return contextResourceProp
+          }),
       })
     }
   }
@@ -187,7 +193,9 @@ const flattenObjectProperties = (
 ): Property[] => {
   const results: Property[] = []
 
-  for (const property of properties) {
+  for (const property of properties.filter(
+    ({ isUndocumented }) => !isUndocumented,
+  )) {
     const name = [...paths, property.name].join('.')
 
     results.push({ ...property, name })
