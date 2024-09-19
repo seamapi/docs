@@ -34,6 +34,8 @@ export const reference = (
         route.path.startsWith('/acs/users')
       )
     ) {
+      continue
+    }
 
     const k = `api${route.path}/README.md`
     files[k] = {
