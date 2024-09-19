@@ -46,6 +46,7 @@ export const reference = (
     setApiRouteLayoutContext(file, route, metadata)
 
     for (const endpoint of route.endpoints) {
+      if (endpoint.isUndocumented) continue
 
       const k = `api${endpoint.path}.md`
       files[k] = {
