@@ -44,12 +44,14 @@ export function setEndpointLayoutContext(
 
   file.request = {
     preferredMethod: endpoint.request?.preferredMethod ?? '',
-    parameters: endpoint.request.parameters.map((param) => ({
-      name: param.name,
-      required: param.isRequired,
-      description: param.description,
-      jsonType: param.jsonType,
-    })),
+    parameters: endpoint.request.parameters
+      .filter(({ isUndocumented }) => !isUndocumented)
+      .map((param) => ({
+        name: param.name,
+        required: param.isRequired,
+        description: param.description,
+        jsonType: param.jsonType,
+      })),
   }
 
   file.response = {
