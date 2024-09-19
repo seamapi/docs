@@ -29,10 +29,8 @@ export const reference = (
     if (route.isUndocumented) continue
 
     if (
-      !(
-        route.path.startsWith('/acs/systems') ||
-        route.path.startsWith('/acs/users')
-      )
+      !route.path.startsWith('/acs/systems') ||
+      route.path.startsWith('/acs/users')
     ) {
       continue
     }
