@@ -26,7 +26,13 @@ export const reference = (
   }
 
   for (const route of metadata.routes ?? []) {
-    if (!route.path.startsWith('/acs/systems')) {
+    if (route.isUndocumented) continue
+
+    if (
+      !(
+        route.path.startsWith('/acs/systems')
+      )
+    ) {
       continue
     }
 
@@ -39,6 +45,8 @@ export const reference = (
     setApiRouteLayoutContext(file, route, metadata)
 
     for (const endpoint of route.endpoints) {
+      if (endpoint.isUndocumented) continue
+
       const k = `api${endpoint.path}.md`
       files[k] = {
         contents: Buffer.from('\n'),
