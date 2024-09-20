@@ -39,4 +39,3 @@
 ## [`/thermostats/update_climate_preset`](./update_climate_preset.md)
 
 
-# Events

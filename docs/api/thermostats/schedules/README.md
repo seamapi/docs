@@ -18,4 +18,3 @@
 ## [`/thermostats/schedules/update`](./update.md)
 
 
-# Events
