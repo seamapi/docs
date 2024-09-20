@@ -1,10 +1,10 @@
-# 
+# Get an ACS User
 
 ```
-POST /acs/users/get ⇒ void
+POST /acs/users/get ⇒ { acs_user }
 ```
 
-
+Returns a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 ## Request Parameters
 
@@ -13,10 +13,10 @@ POST /acs/users/get ⇒ void
 Type: `string`\
 Required: Yes
 
-
+ID of the desired `acs_user`.
 
 ---
 
 ## Return Type
 
-void
+[acs_user](./README.md)

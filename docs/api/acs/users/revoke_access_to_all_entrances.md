@@ -1,10 +1,10 @@
-# 
+# Revoke ACS User Access to All Entrances
 
 ```
 POST /acs/users/revoke_access_to_all_entrances ⇒ void
 ```
 
-
+Revokes access to all [entrances](https://docs.seam.co/latest/api/acs/entrances) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 ## Request Parameters
 
@@ -13,7 +13,7 @@ POST /acs/users/revoke_access_to_all_entrances ⇒ void
 Type: `string`\
 Required: Yes
 
-
+ID of the desired `acs_user`.
 
 ---
 

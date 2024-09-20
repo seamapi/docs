@@ -1,10 +1,10 @@
-# 
+# List ACS Users
 
 ```
-POST /acs/users/list ⇒ void
+POST /acs/users/list ⇒ { acs_users: [acs_user, …] }
 ```
 
-
+Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 ## Request Parameters
 
@@ -13,7 +13,7 @@ POST /acs/users/list ⇒ void
 Type: `string`\
 Required: No
 
-
+ID of the `acs_system` for which you want to retrieve all `acs_user`s.
 
 ---
 
@@ -40,7 +40,7 @@ Required: No
 Type: `string`\
 Required: No
 
-
+Email address of the user identity for which you want to retrieve all `acs_user`s.
 
 ---
 
@@ -49,7 +49,7 @@ Required: No
 Type: `string`\
 Required: No
 
-
+ID of the user identity for which you want to retrieve all `acs_user`s.
 
 ---
 
@@ -58,10 +58,10 @@ Required: No
 Type: `string`\
 Required: No
 
-
+Phone number of the user identity for which you want to retrieve all `acs_user`s, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`).
 
 ---
 
 ## Return Type
 
-void
+Array<[acs_user](./README.md)>
