@@ -39,4 +39,3 @@
 ## [`/acs/users/update`](./update.md)
 
 
-# Events
