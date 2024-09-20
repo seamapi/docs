@@ -1,11 +1,31 @@
 ---
-- title: List ACS Systems by Connected Account
-  description: Pass a connected account ID to filter the ACS systems.
+- title: List ACS systems by connected account
+  description: To filter the list of ACS systems, include a `connected_account_id`.
   request:
     path: /acs/systems/list
     parameters:
-      connected_account_id: 8d7e0b3a-b889-49a7-9164-4b71a0506a33
+      connected_account_id: 123e4567-e89b-12d3-a456-426614174000
   response:
     body:
       acs_systems:
         - acs_system_id: 8d7e0b3a-b889-49a7-9164-4b71a0506a33
+- title: Get a Specific ACS system
+  description: Specify the `acs_system_id` of the ACS system that you want to retrieve.
+  request:
+    path: /acs/systems/get
+    parameters:
+      acs_system_id: 8d7e0b3a-b889-49a7-9164-4b71a0506a33
+  response:
+    body:
+      acs_system:
+        - acs_system_id: 8d7e0b3a-b889-49a7-9164-4b71a0506a33
+- title: List compatible credential manager ACS systems
+  description: Specify the `acs_system_id` for which you want to retrieve all compatible credential manager ACS systems.
+  request:
+    path: /acs/systems/list_compatible_credential_manager_acs_systems
+    parameters:
+      acs_system_id: 8d7e0b3a-b889-49a7-9164-4b71a0506a33
+  response:
+    body:
+      acs_systems:
+        - acs_system_id: aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4
