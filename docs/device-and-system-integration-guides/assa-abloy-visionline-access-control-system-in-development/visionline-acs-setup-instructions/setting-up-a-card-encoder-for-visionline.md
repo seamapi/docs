@@ -9,11 +9,12 @@ description: >-
 To set up an RFID encoder & updater for your Visionline plastic card integration, perform the following procedures:
 
 1. Install USB drivers.
-2. Connect to the Visionline server using USB.
+2. Connect to the Visionline server using USB and register the card encoder.
+3. Select the card encoder that the Visionline server should send cards to.
 
 ***
 
-## Install USB drivers
+## 1. Install USB drivers.
 
 1. Install the USBXpress Development Kit.\
    This file is available for download from the [Silabs web site](https://www.silabs.com/Support%20Documents/Software/USBXpress\_Install.exe).
@@ -31,7 +32,7 @@ To set up an RFID encoder & updater for your Visionline plastic card integration
 
 ***
 
-## 2. Connect to the Visionline Server Using USB
+## 2. Connect to the Visionline Server Using USB and Register the Card Encoder.
 
 {% hint style="info" %}
 To connect through USB, you must use firmware version 2.6.2.4 or higher for the RFID encoder. Visionline 1.22.1 or higher is also required.
@@ -57,3 +58,18 @@ To connect through USB, you must use firmware version 2.6.2.4 or higher for the 
 12. Click **Save**.
 13. In the **Device details** window, click **Close**.
 14. In the **Devices** window, click **Close**.
+
+***
+
+## 3. Select the card encoder that the Visionline server should send cards to.
+
+1. Click **File** and **Select encoder...**
+
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-09-21 at 9.57.41 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+
+2. Find the encoder you configured in the previous section, and click **OK**.
+
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-09-21 at 9.58.31 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+
+
+
