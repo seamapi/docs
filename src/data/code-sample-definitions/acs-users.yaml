@@ -61,4 +61,11 @@
       phone_number: +12222222222
   response:
     body:
-
+- title: Suspend an ACS User
+  description: "[Suspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#suspend-an-acs-user) a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Suspending an ACS user revokes their access temporarily. To restore an ACS user's access, you can [unsuspend](https://docs.seam.co/latest/api/acs/users/unsuspend) them."
+  request:
+    path: /acs/users/suspend
+    parameters:
+      acs_user_id: 8d7e0b3a-b889-49a7-9164-4b71a0506a33
+  response:
+    body:
