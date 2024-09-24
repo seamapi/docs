@@ -1,20 +1,36 @@
 ---
-title: Create a new ACS user
-description: Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-request:
-  path: /acs/users/create
-  parameters:
-    acs_system_id: 123e4567-e89b-12d3-a456-426614174000
-response:
-  body:
-    acs_user:
-      - acs_user_id: 123e4567-e89b-12d3-a456-426614174000
-      - acs_system_id: 123e4567-e89b-12d3-a456-426614174000
-      - acs_access_group_ids: [123e4567-e89b-12d3-a456-426614174000]
-      - workspace_id: 123e4567-e89b-12d3-a456-426614174000
-      - created_at: 2024-04-05T07:57:05.323Z
-      - display_name: Jane Doe
-      - full_name: Jane Doe
-      - email_address: jane@example.com
-      - phone_number: +15555550100
-
+- title: Create a new ACS user
+  description: Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+  request:
+    path: /acs/users/create
+    parameters:
+      acs_system_id: 123e4567-e89b-12d3-a456-426614174000
+  response:
+    body:
+      acs_user:
+        - acs_user_id: 123e4567-e89b-12d3-a456-426614174000
+        - acs_system_id: 123e4567-e89b-12d3-a456-426614174000
+        - acs_access_group_ids: [123e4567-e89b-12d3-a456-426614174000]
+        - workspace_id: 123e4567-e89b-12d3-a456-426614174000
+        - created_at: 2024-04-05T07:57:05.323Z
+        - display_name: Jane Doe
+        - full_name: Jane Doe
+        - email_address: jane@example.com
+        - phone_number: +15555550100
+- title: List all ACS users
+  description: Returns a list of all [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+  request:
+    path: /acs/users/list
+    parameters:
+  response:
+    body:
+      acs_users:
+        - acs_user_id: 123e4567-e89b-12d3-a456-426614174000
+          acs_system_id: 123e4567-e89b-12d3-a456-426614174000
+          acs_access_group_ids: [123e4567-e89b-12d3-a456-426614174000]
+          workspace_id: 123e4567-e89b-12d3-a456-426614174000
+          created_at: 2024-04-05T07:57:05.323Z
+          display_name: Jane Doe
+          full_name: Jane Doe
+          email_address: jane@example.com
+          phone_number: +15555550100
