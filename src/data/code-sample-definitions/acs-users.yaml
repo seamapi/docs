@@ -21,7 +21,6 @@
   description: Returns a list of all [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
   request:
     path: /acs/users/list
-    parameters:
   response:
     body:
       acs_users:
