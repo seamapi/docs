@@ -16,7 +16,7 @@
         display_name: Jane Doe
         full_name: Jane Doe
         email_address: jane@example.com
-        phone_number: +15555550100
+        phone_number: '+15555550100'
 - title: List all ACS users
   description: Returns a list of all [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
   request:
@@ -32,7 +32,7 @@
         display_name: Jane Doe
         full_name: Jane Doe
         email_address: jane@example.com
-        phone_number: +15555550100
+        phone_number: '+15555550100'
 - title: Get a specific ACS user
   description: Specify the `acs_user_id` of the specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to retrieve.
   request:
@@ -50,7 +50,7 @@
         display_name: Jane Doe
         full_name: Jane Doe
         email_address: jane@example.com
-        phone_number: +15555550100
+        phone_number: '+15555550100'
 - title: Update an ACS User
   description: Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
   request:
