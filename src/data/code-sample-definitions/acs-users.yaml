@@ -60,7 +60,7 @@
       acs_user_id: 8d7e0b3a-b889-49a7-9164-4b71a0506a33
       phone_number: +12222222222
   response:
-    body:
+    body: null
 - title: Suspend an ACS User
   description: "[Suspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#suspend-an-acs-user) a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Suspending an ACS user revokes their access temporarily. To restore an ACS user's access, you can [unsuspend](https://docs.seam.co/latest/api/acs/users/unsuspend) them."
   request:
@@ -68,7 +68,7 @@
     parameters:
       acs_user_id: 8d7e0b3a-b889-49a7-9164-4b71a0506a33
   response:
-    body:
+    body: null
 - title: Unsuspend an ACS User
   description: '[Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an ACS user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the ACS user restores their access.'
   request:
@@ -76,7 +76,7 @@
     parameters:
       acs_user_id: 8d7e0b3a-b889-49a7-9164-4b71a0506a33
   response:
-    body:
+    body: null
 - title: Delete an ACS User
   description: "Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials)."
   request:
@@ -84,7 +84,7 @@
     parameters:
       acs_user_id: 8d7e0b3a-b889-49a7-9164-4b71a0506a33
   response:
-    body:
+    body: null
 - title: Add an ACS User to an Access Group
   description: 'Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).'
   request:
@@ -93,7 +93,7 @@
       acs_user_id: 8d7e0b3a-b889-49a7-9164-4b71a0506a33
       acs_access_group_id: 123e4567-e89b-12d3-a456-426614174000
   response:
-    body:
+    body: null
 - title: Remove an ACS User from an Access Group
   description: 'Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).'
   request:
@@ -102,4 +102,5 @@
       acs_user_id: 8d7e0b3a-b889-49a7-9164-4b71a0506a33
       acs_access_group_id: 123e4567-e89b-12d3-a456-426614174000
   response:
-    body:
+    body: null
+
