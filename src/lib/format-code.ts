@@ -8,11 +8,6 @@ export const formatCode = async (
   content: string,
   syntax: CodeSampleSyntax,
 ): Promise<string> => {
-  // If no content, return empty string instead of trying to format
-  if (content === 'void') {
-    return ''
-  }
-
   const output = await formatCodeForSyntax(content, syntax)
   return output.trim()
 }
@@ -40,13 +35,7 @@ export const formatCodeForSyntax = async (
 }
 
 const formatJavascript = async (content: string): Promise<string> => {
-  try {
-    return await prettier(content, { parser: 'typescript' })
-  } catch {
-    // Prettier fails to format objects {} under `typescript` parser. Try
-    // to format under `json` in case content is an object.
-    return await prettier(content, { parser: 'json' })
-  }
+  return await prettier(content, { parser: 'typescript' })
 }
 
 const formatPython = async (content: string): Promise<string> => {
@@ -93,5 +82,9 @@ const formatPhp = async (content: string): Promise<string> => {
 }
 
 const formatJson = async (content: string): Promise<string> => {
+  if (content === 'void') {
+    return '{}'
+  }
+
   return await prettier(content, { parser: 'json' })
 }
