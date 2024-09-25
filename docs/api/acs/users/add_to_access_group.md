@@ -18,7 +18,7 @@ Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access
 
   ### Response
   ```javascript
-  
+  {}
   ```
     {% endtab %}
     {% tab title="Python" %}
@@ -69,7 +69,7 @@ $seam->acs->users->add_to_access_group(
 
   ### Response
   ```seam_cli
-  
+  {}
   ```
     {% endtab %}
 {% endtabs %}

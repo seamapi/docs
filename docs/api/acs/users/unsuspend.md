@@ -17,7 +17,7 @@ POST /acs/users/unsuspend ⇒ void
 
   ### Response
   ```javascript
-  
+  {}
   ```
     {% endtab %}
     {% tab title="Python" %}
@@ -64,7 +64,7 @@ $seam->acs->users->unsuspend(
 
   ### Response
   ```seam_cli
-  
+  {}
   ```
     {% endtab %}
 {% endtabs %}

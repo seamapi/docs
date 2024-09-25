@@ -18,7 +18,7 @@ Updates the properties of a specified [ACS user](https://docs.seam.co/latest/cap
 
   ### Response
   ```javascript
-  
+  {}
   ```
     {% endtab %}
     {% tab title="Python" %}
@@ -68,7 +68,7 @@ $seam->acs->users->update(
 
   ### Response
   ```seam_cli
-  
+  {}
   ```
     {% endtab %}
 {% endtabs %}

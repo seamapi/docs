@@ -18,7 +18,7 @@ Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/acc
 
   ### Response
   ```javascript
-  
+  {}
   ```
     {% endtab %}
     {% tab title="Python" %}
@@ -69,7 +69,7 @@ $seam->acs->users->remove_from_access_group(
 
   ### Response
   ```seam_cli
-  
+  {}
   ```
     {% endtab %}
 {% endtabs %}
