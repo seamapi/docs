@@ -21,7 +21,7 @@ systems by including the corresponding `acs_system_id` in the request body.
 
   ### Response
   ```javascript
-  [{ acs_system_id: "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }];
+  [{ "acs_system_id": "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }]
   ```
     {% endtab %}
     {% tab title="Python" %}

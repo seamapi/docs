@@ -6,6 +6,69 @@ POST /acs/users/unsuspend ⇒ void
 
 [Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an ACS user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the ACS user restores their access.
 
+{% tabs %}
+    {% tab title="JavaScript" %}
+  ### Request
+  ```javascript
+  await seam.acs.users.unsuspend({
+  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
+});
+  ```
+
+  ### Response
+  ```javascript
+  // void
+  ```
+    {% endtab %}
+    {% tab title="Python" %}
+  ### Request
+  ```python
+  seam.acs.users.unsuspend(acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")
+  ```
+
+  ### Response
+  ```python
+  None
+  ```
+    {% endtab %}
+    {% tab title="Ruby" %}
+  ### Request
+  ```ruby
+  seam.acs.users.unsuspend(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
+  ```
+
+  ### Response
+  ```ruby
+  nil
+  ```
+    {% endtab %}
+    {% tab title="PHP" %}
+  ### Request
+  ```php
+  <?php
+$seam->acs->users->unsuspend(
+    acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
+);
+  ```
+
+  ### Response
+  ```php
+  null
+  ```
+    {% endtab %}
+    {% tab title="Seam CLI" %}
+  ### Request
+  ```seam_cli
+  seam acs users unsuspend --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
+  ```
+
+  ### Response
+  ```seam_cli
+  {}
+  ```
+    {% endtab %}
+{% endtabs %}
+
 ## Request Parameters
 
 ### `acs_user_id`
