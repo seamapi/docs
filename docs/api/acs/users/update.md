@@ -18,7 +18,7 @@ Updates the properties of a specified [ACS user](https://docs.seam.co/latest/cap
 
   ### Response
   ```javascript
-  {}
+  // void
   ```
     {% endtab %}
     {% tab title="Python" %}

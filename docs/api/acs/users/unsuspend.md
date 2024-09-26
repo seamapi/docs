@@ -17,7 +17,7 @@ POST /acs/users/unsuspend ⇒ void
 
   ### Response
   ```javascript
-  {}
+  // void
   ```
     {% endtab %}
     {% tab title="Python" %}

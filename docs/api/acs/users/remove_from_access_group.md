@@ -18,7 +18,7 @@ Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/acc
 
   ### Response
   ```javascript
-  {}
+  // void
   ```
     {% endtab %}
     {% tab title="Python" %}
