@@ -82,9 +82,5 @@ const formatPhp = async (content: string): Promise<string> => {
 }
 
 const formatJson = async (content: string): Promise<string> => {
-  if (content === 'void') {
-    return '{}'
-  }
-
   return await prettier(content, { parser: 'json' })
 }
