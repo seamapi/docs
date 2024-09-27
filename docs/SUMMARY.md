@@ -229,6 +229,7 @@
 ## 🛠️ Developer Tools
 
 * [Webhooks](core-concepts/webhooks.md)
+* [Seam CLI](developer-tools/seam-cli.md)
 * [Sandbox Devices and Systems](device-guides/sandbox-and-sample-data/README.md)
   * [Sandbox 2N Intercoms](device-guides/sandbox-and-sample-data/2n-intercoms-sample-data.md)
   * [Sandbox 4SUITES Locks](device-guides/sandbox-and-sample-data/4suites-locks-sample-data.md)
