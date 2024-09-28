@@ -9,19 +9,19 @@
 {{#if codeSamples.length}}
 {% tabs %}
 {{#each codeSamples}}
-  {{#each this.code}}
-    {% tab title="{{this.title}}" %}
-  ### Request
-  ```{{@key}}
-  {{this.request}}
-  ```
+{{#each this.code}}
+{% tab title="{{this.title}}" %}
+### Request
+```{{@key}}
+{{this.request}}
+```
 
-  ### Response
-  ```{{@key}}
-  {{this.response}}
-  ```
-    {% endtab %}
-  {{/each}}
+### Response
+```{{@key}}
+{{this.response}}
+```
+{% endtab %}
+{{/each}}
 {{/each}}
 {% endtabs %}
 

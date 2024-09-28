@@ -11,66 +11,66 @@ To filter the list of returned access control systems by a specific connected ac
 response includes all access control systems connected to your workspace.
 
 {% tabs %}
-    {% tab title="JavaScript" %}
-  ### Request
-  ```javascript
-  await seam.acs.systems.list({
+{% tab title="JavaScript" %}
+### Request
+```javascript
+await seam.acs.systems.list({
   connected_account_id: "123e4567-e89b-12d3-a456-426614174000",
 });
-  ```
+```
 
-  ### Response
-  ```javascript
-  [{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
-  ```
-    {% endtab %}
-    {% tab title="Python" %}
-  ### Request
-  ```python
-  seam.acs.systems.list(connected_account_id="123e4567-e89b-12d3-a456-426614174000")
-  ```
+### Response
+```javascript
+[{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
+```
+{% endtab %}
+{% tab title="Python" %}
+### Request
+```python
+seam.acs.systems.list(connected_account_id="123e4567-e89b-12d3-a456-426614174000")
+```
 
-  ### Response
-  ```python
-  [AcsSystem(acs_system_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")]
-  ```
-    {% endtab %}
-    {% tab title="Ruby" %}
-  ### Request
-  ```ruby
-  seam.acs.systems.list(connected_account_id: "123e4567-e89b-12d3-a456-426614174000")
-  ```
+### Response
+```python
+[AcsSystem(acs_system_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")]
+```
+{% endtab %}
+{% tab title="Ruby" %}
+### Request
+```ruby
+seam.acs.systems.list(connected_account_id: "123e4567-e89b-12d3-a456-426614174000")
+```
 
-  ### Response
-  ```ruby
-  [{"acs_system_id" => "8d7e0b3a-b889-49a7-9164-4b71a0506a33"}]
-  ```
-    {% endtab %}
-    {% tab title="PHP" %}
-  ### Request
-  ```php
-  <?php
+### Response
+```ruby
+[{"acs_system_id" => "8d7e0b3a-b889-49a7-9164-4b71a0506a33"}]
+```
+{% endtab %}
+{% tab title="PHP" %}
+### Request
+```php
+<?php
 $seam->acs->systems->list(
     connected_account_id: "123e4567-e89b-12d3-a456-426614174000"
 );
-  ```
+```
 
-  ### Response
-  ```php
-  [["acs_system_id" => "8d7e0b3a-b889-49a7-9164-4b71a0506a33"]]
-  ```
-    {% endtab %}
-    {% tab title="Seam CLI" %}
-  ### Request
-  ```seam_cli
-  seam acs systems list --connected_account_id "123e4567-e89b-12d3-a456-426614174000"
-  ```
+### Response
+```php
+[["acs_system_id" => "8d7e0b3a-b889-49a7-9164-4b71a0506a33"]]
+```
+{% endtab %}
+{% tab title="Seam CLI" %}
+### Request
+```seam_cli
+seam acs systems list --connected_account_id "123e4567-e89b-12d3-a456-426614174000"
+```
 
-  ### Response
-  ```seam_cli
-  [{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
-  ```
-    {% endtab %}
+### Response
+```seam_cli
+[{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
+```
+{% endtab %}
 {% endtabs %}
 
 ## Request Parameters
