@@ -82,8 +82,8 @@ Required: No
 
 ID of the connected account by which to filter the list of returned access control systems.
 
----
+***
 
 ## Return Type
 
-Array<[acs_system](./README.md)>
+Array<[acs\_system](./)>

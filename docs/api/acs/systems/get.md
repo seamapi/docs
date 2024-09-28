@@ -78,8 +78,8 @@ Required: Yes
 
 ID of the desired access control system.
 
----
+***
 
 ## Return Type
 
-[acs_system](./README.md)
+[acs\_system](./)

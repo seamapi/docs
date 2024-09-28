@@ -27,9 +27,7 @@ await seam.acs.systems.listCompatibleCredentialManagerAcsSystems({
 {% tab title="Python" %}
 ### Request
 ```python
-seam.acs.systems.list_compatible_credential_manager_acs_systems(
-    acs_system_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33"
-)
+seam.acs.systems.list_compatible_credential_manager_acs_systems(acs_system_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 ```
 
 ### Response
@@ -84,8 +82,8 @@ Required: Yes
 
 ID of the ACS system for which you want to retrieve all compatible credential manager ACS systems.
 
----
+***
 
 ## Return Type
 
-Array<[acs_system](./README.md)>
+Array<[acs\_system](./)>
