@@ -26,6 +26,7 @@ await seam.acs.systems.listCompatibleCredentialManagerAcsSystems({
 [{ "acs_system_id": "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }]
 ```
 {% endtab %}
+
 {% tab title="Python" %}
 #### Request
 
@@ -41,6 +42,7 @@ seam.acs.systems.list_compatible_credential_manager_acs_systems(
 [AcsSystem(acs_system_id="aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4")]
 ```
 {% endtab %}
+
 {% tab title="Ruby" %}
 #### Request
 
@@ -54,6 +56,7 @@ seam.acs.systems.list_compatible_credential_manager_acs_systems(acs_system_id: "
 [{"acs_system_id" => "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4"}]
 ```
 {% endtab %}
+
 {% tab title="PHP" %}
 #### Request
 
@@ -70,6 +73,7 @@ $seam->acs->systems->list_compatible_credential_manager_acs_systems(
 [["acs_system_id" => "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4"]]
 ```
 {% endtab %}
+
 {% tab title="Seam CLI" %}
 #### Request
 
@@ -83,6 +87,7 @@ seam acs systems list-compatible-credential-manager-acs-systems --acs_system_id 
 [{ "acs_system_id": "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }]
 ```
 {% endtab %}
+
 {% endtabs %}
 
 ## Request Parameters
