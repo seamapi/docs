@@ -10,59 +10,59 @@ Specify the desired access control system by including the corresponding `acs_sy
 
 {% tabs %}
 {% tab title="JavaScript" %}
-### Request
+#### Request
 ```javascript
 await seam.acs.systems.get({
   acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
 });
 ```
 
-### Response
+#### Response
 ```javascript
 [{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
 ```
 {% endtab %}
 {% tab title="Python" %}
-### Request
+#### Request
 ```python
 seam.acs.systems.get(acs_system_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 ```
 
-### Response
+#### Response
 ```python
 [AcsSystem(acs_system_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")]
 ```
 {% endtab %}
 {% tab title="Ruby" %}
-### Request
+#### Request
 ```ruby
 seam.acs.systems.get(acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 ```
 
-### Response
+#### Response
 ```ruby
 [{"acs_system_id" => "8d7e0b3a-b889-49a7-9164-4b71a0506a33"}]
 ```
 {% endtab %}
 {% tab title="PHP" %}
-### Request
+#### Request
 ```php
 <?php
 $seam->acs->systems->get(acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33");
 ```
 
-### Response
+#### Response
 ```php
 [["acs_system_id" => "8d7e0b3a-b889-49a7-9164-4b71a0506a33"]]
 ```
 {% endtab %}
 {% tab title="Seam CLI" %}
-### Request
+#### Request
 ```seam_cli
 seam acs systems get --acs_system_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 ```
 
-### Response
+#### Response
 ```seam_cli
 [{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
 ```

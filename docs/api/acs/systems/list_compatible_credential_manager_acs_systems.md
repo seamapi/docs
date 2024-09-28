@@ -12,44 +12,44 @@ systems by including the corresponding `acs_system_id` in the request body.
 
 {% tabs %}
 {% tab title="JavaScript" %}
-### Request
+#### Request
 ```javascript
 await seam.acs.systems.listCompatibleCredentialManagerAcsSystems({
   acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
 });
 ```
 
-### Response
+#### Response
 ```javascript
 [{ "acs_system_id": "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }]
 ```
 {% endtab %}
 {% tab title="Python" %}
-### Request
+#### Request
 ```python
 seam.acs.systems.list_compatible_credential_manager_acs_systems(
     acs_system_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 )
 ```
 
-### Response
+#### Response
 ```python
 [AcsSystem(acs_system_id="aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4")]
 ```
 {% endtab %}
 {% tab title="Ruby" %}
-### Request
+#### Request
 ```ruby
 seam.acs.systems.list_compatible_credential_manager_acs_systems(acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 ```
 
-### Response
+#### Response
 ```ruby
 [{"acs_system_id" => "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4"}]
 ```
 {% endtab %}
 {% tab title="PHP" %}
-### Request
+#### Request
 ```php
 <?php
 $seam->acs->systems->list_compatible_credential_manager_acs_systems(
@@ -57,18 +57,18 @@ $seam->acs->systems->list_compatible_credential_manager_acs_systems(
 );
 ```
 
-### Response
+#### Response
 ```php
 [["acs_system_id" => "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4"]]
 ```
 {% endtab %}
 {% tab title="Seam CLI" %}
-### Request
+#### Request
 ```seam_cli
 seam acs systems list-compatible-credential-manager-acs-systems --acs_system_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 ```
 
-### Response
+#### Response
 ```seam_cli
 [{ "acs_system_id": "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }]
 ```
