@@ -21,15 +21,13 @@ systems by including the corresponding `acs_system_id` in the request body.
 
   ### Response
   ```javascript
-  [{ acs_system_id: "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }];
+  [{ "acs_system_id": "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }]
   ```
     {% endtab %}
     {% tab title="Python" %}
   ### Request
   ```python
-  seam.acs.systems.list_compatible_credential_manager_acs_systems(
-    acs_system_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33"
-)
+  seam.acs.systems.list_compatible_credential_manager_acs_systems(acs_system_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")
   ```
 
   ### Response
