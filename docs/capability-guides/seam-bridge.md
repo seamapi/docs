@@ -56,23 +56,16 @@ Seam provides two options for connecting the Seam Bridge to your workspace. If y
 
 #### **Pair Using a Connect Webview**
 
-First, perform the following steps:
+The developer creates a Connect Webview using `seam_bridge` as the `accepted_providers` key. Then, the person who installed the Seam Bridge performs the following steps:
 
-1. Create a Connect Webview using `seam_bridge` as the `accepted_providers` key.
-2. Share the following two pieces of information with your end user:
-   * The `url` of the created Connect Webview
-   * The invitation code that you copied during the [Seam Bridge application installation](seam-bridge.md#install-the-seam-bridge-application-on-the-on-premises-computer)
-
-Next, your end user performs the following steps:
-
-1. The end user accesses the Connect Webview and chooses **Seam Bridge** from the list of brands, if available.
-2. In the **Pairing Code** field, the end user types the invitation code that you copied during the [Seam Bridge application installation](seam-bridge.md#install-the-seam-bridge-application-on-the-on-premises-computer).
-3. In the **Bridge Name** field, the end user types a unique name.
+1. In the Connect Webview, choose **Seam Bridge** from the list of brands, if available.
+2. In the **Pairing Code** field, type the invitation code obtained during the [Seam Bridge application installation](seam-bridge.md#install-the-seam-bridge-application-on-the-on-premises-computer).
+3. In the **Bridge Name** field, type a unique name.
 
 <figure><img src="../.gitbook/assets/connect-webview-seam-bridge-info.png" alt="Type a unique Seam Bridge name and the pairing code from the Seam application installation." width="245"><figcaption><p>Type a unique Seam Bridge name and the pairing code from the Seam application installation.</p></figcaption></figure>
 
-4. The end user must remember the name of the Seam Network for future reference.\
-   They must use this Seam Network name when connecting their on-premises access control system in a Connect Webview.
+4. remember the name of the Seam Network for future reference.\
+   You must use this Seam Network name when connecting the on-premises access control system in a Connect Webview.
 
 ***
 
