@@ -18,7 +18,7 @@ This guide explains how to grant access permissions to ACS users by adding them 
 
 ## Add an ACS User to an Access Group
 
-To [add an ACS user to an access group](../../api-clients/acs/users/add_to_access_group.md), provide both the `acs_user_id` and the `acs_access_group_id`.
+To [add an ACS user to an access group](../../api/acs/users/add_to_access_group.md), provide both the `acs_user_id` and the `acs_access_group_id`.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -166,7 +166,7 @@ add, uErr := client.Acs.Users.AddToAccessGroup(
 
 ## Remove an ACS User from an Access Group
 
-To [remove an ACS user from an access group](../../api-clients/acs/users/remove_from_access_group.md), provide both the `acs_user_id` and the `acs_access_group_id`.
+To [remove an ACS user from an access group](../../api/acs/users/remove_from_access_group.md), provide both the `acs_user_id` and the `acs_access_group_id`.
 
 {% tabs %}
 {% tab title="Python" %}
