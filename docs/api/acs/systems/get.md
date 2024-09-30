@@ -1,4 +1,4 @@
-# Get a System
+# Get an ACS System
 
 ```
 POST /acs/systems/get ⇒ { acs_system }
@@ -14,14 +14,14 @@ Specify the desired access control system by including the corresponding `acs_sy
 
 ```javascript
 await seam.acs.systems.get({
-acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
+  acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
 });
 ```
 
 #### Response
 
 ```javascript
-[{ acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }];
+[{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
 ```
 {% endtab %}
 
@@ -64,7 +64,7 @@ $seam->acs->systems->get(acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33");
 #### Response
 
 ```php
-[{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
+[["acs_system_id" => "8d7e0b3a-b889-49a7-9164-4b71a0506a33"]]
 ```
 {% endtab %}
 
@@ -81,6 +81,7 @@ seam acs systems get --acs_system_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 [{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
 ```
 {% endtab %}
+
 {% endtabs %}
 
 ## Request Parameters

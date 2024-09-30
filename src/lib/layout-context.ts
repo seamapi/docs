@@ -17,6 +17,7 @@ export interface EndpointLayoutContext {
   response: {
     description: string
     resourceType: string | null
+    escapedResourceType: string | null
     responseKey: string | null
     responseType: string | null
   }
@@ -57,6 +58,7 @@ export function setEndpointLayoutContext(
   file.response = {
     description: endpoint.response.description,
     resourceType: null,
+    escapedResourceType: null,
     responseKey: null,
     responseType: null,
   }
@@ -64,6 +66,7 @@ export function setEndpointLayoutContext(
   if (endpoint.response.responseType !== 'void') {
     const { resourceType, responseKey, responseType } = endpoint.response
     file.response.resourceType = resourceType
+    file.response.escapedResourceType = resourceType.replaceAll('_', '\\_')
     file.response.responseKey = responseKey
     file.response.responseType = responseType
   }

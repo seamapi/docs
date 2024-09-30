@@ -1,4 +1,4 @@
-# List Systems
+# List ACS Systems
 
 ```
 POST /acs/systems/list ⇒ { acs_systems: [acs_system, …] }
@@ -6,7 +6,9 @@ POST /acs/systems/list ⇒ { acs_systems: [acs_system, …] }
 
 Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems).
 
-To filter the list of returned access control systems by a specific connected account ID, include the `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the response includes all access control systems connected to your workspace.
+To filter the list of returned access control systems by a specific connected account ID, include the 
+`connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the 
+response includes all access control systems connected to your workspace.
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -14,14 +16,14 @@ To filter the list of returned access control systems by a specific connected ac
 
 ```javascript
 await seam.acs.systems.list({
-connected_account_id: "123e4567-e89b-12d3-a456-426614174000",
+  connected_account_id: "123e4567-e89b-12d3-a456-426614174000",
 });
 ```
 
 #### Response
 
 ```javascript
-[{ acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }];
+[{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
 ```
 {% endtab %}
 
@@ -59,7 +61,7 @@ seam.acs.systems.list(connected_account_id: "123e4567-e89b-12d3-a456-42661417400
 ```php
 <?php
 $seam->acs->systems->list(
-  connected_account_id: "123e4567-e89b-12d3-a456-426614174000"
+    connected_account_id: "123e4567-e89b-12d3-a456-426614174000"
 );
 ```
 
@@ -83,6 +85,7 @@ seam acs systems list --connected_account_id "123e4567-e89b-12d3-a456-4266141740
 [{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
 ```
 {% endtab %}
+
 {% endtabs %}
 
 ## Request Parameters
