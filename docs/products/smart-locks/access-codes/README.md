@@ -29,7 +29,7 @@ In addition, for certain devices, Seam also supports [offline access codes](./#o
 
 ### **Ongoing Access Codes**
 
-Ongoing access code are ideal for residents or long-term users. Ongoing codes remain active on a device until they are removed. They can start right away or at a later date if you provide a `starts_at` timestamp.
+Ongoing access code are ideal for residents or long-term users. Ongoing codes start right away and remain active on a device until they are removed.
 
 <figure><picture><source srcset="../../../.gitbook/assets/ongoing-access-code-dark.png" media="(prefers-color-scheme: dark)"><img src="../../../.gitbook/assets/ongoing-access-code-light.png" alt="Timeline of an ongoing access code. The code remains active until you ask Seam to remove it."></picture><figcaption><p>Timeline of an ongoing access code. The code remains active until you ask Seam to remove it.</p></figcaption></figure>
 
