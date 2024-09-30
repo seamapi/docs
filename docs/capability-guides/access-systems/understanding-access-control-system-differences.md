@@ -10,7 +10,7 @@ Seam's universal API provides the flexibility to manage a variety of [ACSs](../.
 
 * Whether an ACS is cloud-based or on-premises
 * The specific licenses, if any, that each ACS manufacturer requires you to purchase
-* The manufacturer-specific ACS properties and metadata that you must configure to create and assign credentials to ACS users&#x20;
+* The manufacturer-specific ACS properties and metadata that you must configure to create and assign credentials to ACS users
 
 To understand the manufacturer-specific nuances of your ACS, see the relevant [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems).
 
@@ -42,12 +42,16 @@ To assign access permissions in an access group-based ACS, you add ACS users to 
 
 The following process describes the configuration steps for your application to grant access in an access group-based ACS:
 
-1. When the ACS connects to Seam, Seam automatically creates the `acs_system`. Seam also syncs the entrances and access groups from the connected ACS as `acs_entrance` and `acs_access_group` resources.\
+1. Connect the ACS system.\
+   When the ACS connects to Seam, Seam automatically creates the `acs_system`. Seam also syncs the entrances and access groups from the connected ACS as `acs_entrance` and `acs_access_group` resources.\
    Note that because Seam automatically syncs these entrance and access group resources from the ACS, you cannot create, edit, or delete them using the Seam API.
-2. Your application creates an `acs_user` for each user within this ACS. Each `acs_user` is configured with a set of attributes, such their name, email address, and phone number, as applicable.\
-   If you need to grant a single application user access to multiple ACSs—for example, if an application user needs access to multiple buildings, each of which uses a separate ACS, or if a single building has different ACSs for different floors—you can use Seam [user identities](../../api-clients/user_identities/) to link `acs_user`s in different `acs_system`s.
-3. Your application [adds](../../products/access-systems/assigning-users-to-access-groups.md#add-a-user-to-an-access-group) each `acs_user` to an `acs_access_group`. Note that the access group defines the entrances and access schedules for all the ACS users in this access group.
-4.  Your application creates `acs_credential`s with the following attributes:
+2. Create ACS users.\
+   Your application creates an `acs_user` for each user within this ACS. Each `acs_user` is configured with a set of attributes, such their name, email address, and phone number, as applicable.\
+   If you need to grant a single application user access to multiple ACSs—for example, if an application user needs access to multiple buildings, each of which uses a separate ACS, or if a single building has different ACSs for different floors—you can use Seam [user identities](../../api-clients/user\_identities/) to link `acs_user`s in different `acs_system`s.
+3. Add ACS users to access groups.\
+   Your application [adds](../../products/access-systems/assigning-users-to-access-groups.md#add-a-user-to-an-access-group) each `acs_user` to an `acs_access_group`. Note that the access group defines the entrances and access schedules for all the ACS users in this access group.
+4.  Create credentials.\
+    Your application creates `acs_credential`s with the following attributes:
 
     * ID of the `acs_user` to associate with this credential
     * Access method for the credential, such as `code`, `card`, or `mobile_key`
@@ -64,10 +68,13 @@ In a credential-based ACS, the [`acs_credential`](../../api-clients/acs/credenti
 
 The following process describes the configuration steps for your application to grant access in a credential-based ACS:
 
-1. When the ACS connects to Seam, Seam automatically creates the [`acs_system`](../../api/acs/systems/). Seam also syncs the entrances from the connected ACS as `acs_entrance` resources. Note that because Seam automatically syncs these entrance resources from the ACS, you cannot create, edit, or delete them using the Seam API.
-2. Your application [creates](../../products/access-systems/user-management.md#create-a-user) an [`acs_user`](../../api-clients/acs/users/) for each user within this ACS. Each `acs_user` is configured with a set of attributes, such their name, email address, and phone number, as applicable.\
-   If you need to grant a single application user access to multiple ACSs—for example, if an application user needs access to multiple buildings, each of which uses a separate ACS—you can use Seam [user identities](../../api-clients/user_identities/) to link `acs_user`s in different `acs_system`s.
-3.  Your application [creates](managing-credentials.md#create-a-credential-for-a-user) `acs_credential`s with the following attributes:
+1. Connect the ACS system.\
+   When the ACS connects to Seam, Seam automatically creates the [`acs_system`](../../api/acs/systems/). Seam also syncs the entrances from the connected ACS as `acs_entrance` resources. Note that because Seam automatically syncs these entrance resources from the ACS, you cannot create, edit, or delete them using the Seam API.
+2. Create ACS users.\
+   Your application [creates](../../products/access-systems/user-management.md#create-a-user) an [`acs_user`](../../api-clients/acs/users/) for each user within this ACS. Each `acs_user` is configured with a set of attributes, such their name, email address, and phone number, as applicable.\
+   If you need to grant a single application user access to multiple ACSs—for example, if an application user needs access to multiple buildings, each of which uses a separate ACS—you can use Seam [user identities](../../api-clients/user\_identities/) to link `acs_user`s in different `acs_system`s.
+3.  Create credentials.\
+    Your application [creates](managing-credentials.md#create-a-credential-for-a-user) `acs_credential`s with the following attributes:
 
     * ID of the `acs_user` to associate with this credential
     * Access method for the credential, such as `code`, `card`, or `mobile_key`
