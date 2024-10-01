@@ -31,8 +31,8 @@
 
 * [📋 Device and System Capabilities](capability-guides/device-and-system-capabilities.md)
 * [🔒 Smart Locks](products/smart-locks/README.md)
-  * [Locking and Unlocking](products/smart-locks/lock-and-unlock.md)
-  * [Managing Access Codes](products/smart-locks/access-codes/README.md)
+  * [Locking and Unlocking Smart Locks](products/smart-locks/lock-and-unlock.md)
+  * [Creating and Managing Smart Lock Access Codes](products/smart-locks/access-codes/README.md)
     * [Creating Access Codes](products/smart-locks/access-codes/creating-access-codes.md)
     * [Retrieving Access Codes](products/smart-locks/access-codes/retrieving-access-codes.md)
     * [Modifying Access Codes](products/smart-locks/access-codes/modifying-access-codes.md)
