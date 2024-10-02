@@ -6,9 +6,10 @@ require 'seamapi'
 api_url = "https://connect.getseam.com"
 
 # client = Seam::Client.new(base_uri: api_url, api_key: 'seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy')
+client = Seam::Client.new(api_key: 'seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm')
 # client = Seam::Client.new(base_uri: api_url, api_key: 'seam_test8yup_77ut771wVzFPcfhce9ti5Ccq')
-client = Seam::Client.new()
-seam = Seam::Client.new()
+# client = Seam::Client.new()
+# seam = Seam::Client.new()
 # client = Seam::Client.new(base_uri: api_url, api_key: 'seam_test8yup_77ut771wVzFPcfhce9ti5Ccq')
 # client = Seam::Client.new(api_key: 'seam_test8yup_77ut771wVzFPcfhce9ti5Ccq')
 # client = Seam::Client.new(
@@ -293,11 +294,11 @@ seam = Seam::Client.new()
 # )
 
 # Retrieve all devices for the connectedAccountId.
-connected_devices = seam.devices.list(
-  # connected_account_id: "11111111-1111-1111-1111-222222222222"
-  connected_account_id: "486466da-a19f-48b3-824d-b9aa30b936c9"
-)
-puts connected_devices.inspect
+# connected_devices = seam.devices.list(
+#   # connected_account_id: "11111111-1111-1111-1111-222222222222"
+#   connected_account_id: "486466da-a19f-48b3-824d-b9aa30b936c9"
+# )
+# puts connected_devices.inspect
 
 # puts devices.inspect
 
@@ -407,3 +408,12 @@ puts connected_devices.inspect
 # puts token
 
 # puts client.acs.systems.list().inspect
+
+# Get the device.
+device = client.devices.get("de49ed1a-0d19-4527-89ce-de7325149104")
+
+# Confirm that Seam supports simulated disconnection.
+if (device.can_simulate_disconnection)
+  # Perform the simulated disconnection.
+  client.devices.simulate.disconnect(device_id: device.device_id)
+end

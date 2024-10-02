@@ -79,7 +79,8 @@ public class Main {
     public static void main(String[] args) {
         int randomNumber = rand.nextInt(1_000_000);
 
-        String SEAM_API_KEY = "seam_test8yup_77ut771wVzFPcfhce9ti5Ccq";
+        // String SEAM_API_KEY = "seam_test8yup_77ut771wVzFPcfhce9ti5Ccq";
+        String SEAM_API_KEY = "seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm";
 
         // Get a Seam Client
         // Seam seam = Seam.builder()
@@ -825,7 +826,21 @@ System.out.println(connectedDevices);
 //                 .build());
 // System.out.println(device);
 
+// Get the device.
+Device device = seam.devices()
+  .get(DevicesGetRequest.builder()
+    .deviceId("de49ed1a-0d19-4527-89ce-de7325149104")
+    .build());
 
+// Confirm that Seam supports simulated disconnection.
+if (device.getCanSimulateDisconnection())
+{
+  // Perform the simulated disconnection.
+  seam.devices().simulate()
+    .disconnect(DevicesSimulateDisconnectRequest.builder()
+      .deviceId(device.getDeviceId())
+      .build());
+}
 
 
 

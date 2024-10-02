@@ -1000,3 +1000,12 @@ foreach (Device connectedDevice in connectedDevices)
 // seam.SystemsAcs.ListCompatibleCredentialManagerAcsSystems(
 //   acsSystemId: "11111111-1111-1111-1111-111111111111"
 // );
+
+// Get the device.
+Device device = seam.Devices.Get(deviceId: "de49ed1a-0d19-4527-89ce-de7325149104");
+
+// Confirm that Seam supports simulated disconnection.
+if (device.CanSimulateDisconnection == true) {
+  // Perform the simulated disconnection.
+  seam.Devices.Simulate.Disconnect(deviceId: device.DeviceId);
+}

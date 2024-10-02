@@ -1096,6 +1096,16 @@ seam = Seam(
 
 #   pprint(mobile_key)
 
-pprint(seam.access_codes.list(
-    device_id = "74fbfe51-9182-400b-8fa3-e4db90ab83f7"
-))
+# pprint(seam.access_codes.list(
+#     device_id = "74fbfe51-9182-400b-8fa3-e4db90ab83f7"
+# ))
+
+# Get the device.
+device = seam.devices.get(
+  device_id="de49ed1a-0d19-4527-89ce-de7325149104"
+)
+
+# Confirm that Seam supports simulated disconnection.
+if device.can_simulate_disconnection:
+  # Perform the simulated disconnection.
+  seam.devices.simulate.disconnect(device_id=device.device_id)

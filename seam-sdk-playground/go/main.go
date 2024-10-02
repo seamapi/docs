@@ -26,9 +26,9 @@ func main() {
 }
 
 func run() error {
-  SEAM_API_KEY := "seam_test8yup_77ut771wVzFPcfhce9ti5Ccq"
+  // SEAM_API_KEY := "seam_test8yup_77ut771wVzFPcfhce9ti5Ccq"
   // SEAM_API_KEY := "seam_testjMPq_3wh4WmfXuMRMZbAfpCmvUkUi"
-  // SEAM_API_KEY := "seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm"
+  SEAM_API_KEY := "seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm"
   // SEAM_API_KEY := "seam_test2P1X_2jq9k99HBroBF9zMamfdwwaZ"
 
 	client := seam.NewClient(
@@ -1399,7 +1399,29 @@ return nil
 //   },
 // )
 
+// Get the device.
+device, uErr := client.Devices.Get(
+  context.Background(),
+  &api.DevicesGetRequest{
+    DeviceId: api.String("de49ed1a-0d19-4527-89ce-de7325149104"),
+  })
 
+// Confirm that Seam supports simulated disconnection.
+if *device.CanSimulateDisconnection {
+  // Perform the simulated disconnection.
+  client.Devices.Simulate.Disconnect(
+      context.Background(),
+      &api.DevicesSimulateDisconnectRequest{
+        DeviceId: device.DeviceId,
+      },
+    )
+  }
+
+if uErr != nil {
+    return uErr
+}
+
+return nil
 
 
 }

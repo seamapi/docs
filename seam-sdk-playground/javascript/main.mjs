@@ -219,9 +219,9 @@ const seam = new Seam({
 //   access_code_id: "5824d0be-5e96-432e-b3c5-f4c49c07b1ba"
 // }))
 
-///////////////////////////////////
+//
 // Offline Access Codes
-///////////////////////////////////
+//
 
 // const lock = await seam.locks.get("ea12f6c6-e63e-447d-856b-ec9e92981000")
 // const lock = await seam.locks.get("bc14aaee-f485-470a-9bda-2abbcec2e4a6")
@@ -259,7 +259,7 @@ const seam = new Seam({
 // console.log(createdAccessCode)
 
 
-////////////////////////////////////////////////////////////////////////////
+//
 
 // const heat_request = await seam.thermostats.update({
 //   device_id: "518f692b-f865-4590-8c3e-3849e9984c75",
@@ -965,8 +965,21 @@ const seam = new Seam({
 //   // manufacturer: "nest"
 // }));
 
-console.log(await seam.thermostats.heat({
-  // device_id: "054765c8-a2fc-4599-b486-14c19f462c45",
-  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61",
-  heating_set_point_celsius: 20
-}));
+// console.log(await seam.thermostats.heat({
+//   // device_id: "054765c8-a2fc-4599-b486-14c19f462c45",
+//   device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61",
+//   heating_set_point_celsius: 20
+// }));
+
+// Get the device.
+const device = await seam.devices.get({
+  device_id: "de49ed1a-0d19-4527-89ce-de7325149104"
+});
+
+// Confirm that Seam supports simulated disconnection.
+if (device.can_simulate_disconnection) {
+  // Perform the simulated disconnection.
+  await seam.devices.simulate.disconnect({
+    device_id: device.device_id
+  })
+};
