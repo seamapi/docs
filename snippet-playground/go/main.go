@@ -12,7 +12,7 @@ import (
   api "github.com/seamapi/go"
 	seam "github.com/seamapi/go/client"
   // "github.com/seamapi/go/useridentities"
-  // "github.com/seamapi/go/acs"
+  "github.com/seamapi/go/acs"
 
 
 
@@ -1117,9 +1117,14 @@ return nil
 
 // return nil
 
-// acs_systems, uErr := client.Acs.Systems.List(
-//   context.Background(), &acs.SystemsListRequest{},
-// )
+acs_systems, err := client.Acs.Systems.List(
+  context.Background(), &acs.SystemsListRequest{},
+)
+if err != nil {
+  return err
+}
+fmt.Println(acs_systems)
+return nil
 
 // acs_user, uErr := client.Acs.Users.Create(
 //   context.Background(), &acs.UsersCreateRequest{

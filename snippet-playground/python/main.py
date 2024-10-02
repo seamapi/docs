@@ -9,6 +9,7 @@ seam = Seam(
 #     # api_key="seam_apikey1_token"
     # api_key="seam_test8yup_77ut771wVzFPcfhce9ti5Ccq"
     # api_key="seam_testjMPq_3wh4WmfXuMRMZbAfpCmvUkUi"
+    api_key="seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm"
 ) # Seam automatically uses your exported SEAM_API_KEY.
 
 # seam = Seam(
@@ -181,7 +182,9 @@ seam = Seam(
 # access_code_id="1bbd1eba-e4a2-4f96-b1b9-8498a5405b2b"
 
 # Delete the access code.
-# pprint(seam.access_codes.delete(access_code_id))
+# pprint(seam.access_codes.delete(
+#   access_code_id="11111111-1111-1111-1111-555555555555"
+# ))
 
 # Confirm that a request for the deleted access code returns 404.
 # try:
@@ -782,12 +785,12 @@ seam = Seam(
 # jane_user = seam.user_identities.create(
 #   email_address = "jane@example.com"
 # )
-jane_user = seam.user_identities.get(
-    user_identity_id="62557800-3619-4070-9aab-70e69b2b15a6"
-)
-building_a = seam.acs.systems.get(
-    acs_system_id="f4f660da-c96a-4cf6-9f81-507ff4772b30"
-)
+# jane_user = seam.user_identities.get(
+#     user_identity_id="62557800-3619-4070-9aab-70e69b2b15a6"
+# )
+# building_a = seam.acs.systems.get(
+#     acs_system_id="f4f660da-c96a-4cf6-9f81-507ff4772b30"
+# )
 
 # # Step 2:
 # # Retrieve a credential manager.
@@ -816,28 +819,28 @@ building_a = seam.acs.systems.get(
 #   full_name="Jane Doe",
 #   email_address="jane@example.com"
 # )
-building_a_resident = seam.acs.users.get(
-    acs_user_id="11877d08-f101-4532-96f0-02c48e0392e3"
-)
-entrances = seam.acs.entrances.list(
-    acs_system_id="f4f660da-c96a-4cf6-9f81-507ff4772b30"
-)
+# building_a_resident = seam.acs.users.get(
+#     acs_user_id="11877d08-f101-4532-96f0-02c48e0392e3"
+# )
+# entrances = seam.acs.entrances.list(
+#     acs_system_id="f4f660da-c96a-4cf6-9f81-507ff4772b30"
+# )
 # Step 5:
 # Create a mobile key for each door for the ACS user.
-for entrance in entrances:
-  mobile_key = seam.acs.credentials.create(
-    acs_user_id=building_a_resident.acs_user_id,
-    is_multi_phone_sync_credential=True,
-    access_method="mobile_key",
-    allowed_acs_entrance_ids=[
-      # You must specify only one entrance per mobile key.
-      entrance.acs_entrance_id
-    ],
-    starts_at="2024-07-13T16:50:42.072Z",
-    ends_at="2024-07-18T16:50:42.072Z"
-  )
+# for entrance in entrances:
+#   mobile_key = seam.acs.credentials.create(
+#     acs_user_id=building_a_resident.acs_user_id,
+#     is_multi_phone_sync_credential=True,
+#     access_method="mobile_key",
+#     allowed_acs_entrance_ids=[
+#       # You must specify only one entrance per mobile key.
+#       entrance.acs_entrance_id
+#     ],
+#     starts_at="2024-07-13T16:50:42.072Z",
+#     ends_at="2024-07-18T16:50:42.072Z"
+#   )
 
-  pprint(mobile_key)
+#   pprint(mobile_key)
 
 ####################################################
 
@@ -925,11 +928,11 @@ for entrance in entrances:
 # # print(connect_webview.connect_webview_id)
 
 # Retrieve all devices for the connected_account_id.
-connected_devices = seam.devices.list(
-  # connected_account_id="11111111-1111-1111-1111-222222222222"
-  connected_account_id="486466da-a19f-48b3-824d-b9aa30b936c9"
-)
-pprint(connected_devices)
+# connected_devices = seam.devices.list(
+#   # connected_account_id="11111111-1111-1111-1111-222222222222"
+#   connected_account_id="486466da-a19f-48b3-824d-b9aa30b936c9"
+# )
+# pprint(connected_devices)
 
 # connect_webview_id = "44912603-23e8-4126-8f02-29c875875a64";
 
@@ -1092,3 +1095,7 @@ pprint(connected_devices)
 #   )
 
 #   pprint(mobile_key)
+
+pprint(seam.access_codes.list(
+    device_id = "74fbfe51-9182-400b-8fa3-e4db90ab83f7"
+))

@@ -9,7 +9,8 @@ using Seam.Model;
 
 // var r = new string(Enumerable.Range(0, 10).Select(_ => "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"[new Random().Next(36)]).ToArray());
 
-var SEAM_API_KEY = "seam_test8yup_77ut771wVzFPcfhce9ti5Ccq";
+// var SEAM_API_KEY = "seam_test8yup_77ut771wVzFPcfhce9ti5Ccq";
+var SEAM_API_KEY = "seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm";
 // var SEAM_API_KEY = "seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm";
 
 // Get a Seam Client
@@ -252,6 +253,11 @@ var seam = new SeamClient(
 //   Console.WriteLine("Type: " + accessCode.Type);
 //   Console.WriteLine("Code: " + accessCode.Code);
 //   Console.WriteLine();
+// }
+
+// foreach(AccessCode accessCode in seam.AccessCodes.List(deviceId: "74fbfe51-9182-400b-8fa3-e4db90ab83f7"))
+// {
+//   Console.WriteLine(accessCode);
 // }
 
 // List<string> accessCodeIds = new() {

@@ -13,7 +13,8 @@ import { Seam } from "seam"
 
 const seam = new Seam({
   // endpoint: `https://connect.getseam.com`,
-  apiKey: "seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy"
+  // apiKey: "seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy"
+  apiKey: "seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm"
   // apiKey: "seam_test8yup_77ut771wVzFPcfhce9ti5Ccq"
   // apiKey: "seam_test24tc_7Mhe64ZMWJctwRodv8eK3PBJ"
 })
@@ -567,9 +568,9 @@ const seam = new Seam({
 //   console.log("Battery Status: " + device.properties.battery.status);
 // }
 
-console.log(await seam.devices.get({device_id: "ffc4d67f-e3a6-4ef8-ac84-f3770750422a"}));
+// console.log(await seam.devices.get({device_id: "ffc4d67f-e3a6-4ef8-ac84-f3770750422a"}));
 
-////////////////////////////////////
+// ////////////////////////////////////
 
 
 // console.log(await seam.devices.list());
@@ -661,12 +662,12 @@ console.log(await seam.devices.get({device_id: "ffc4d67f-e3a6-4ef8-ac84-f3770750
 //   console.log(credential);
 // }
 
-// Retrieve all devices for the connectedAccountId.
-const connectedDevices = await seam.devices.list({
-  // connected_account_id: "11111111-1111-1111-1111-222222222222"
-  connected_account_id: "486466da-a19f-48b3-824d-b9aa30b936c9"
-});
-console.log(connectedDevices);
+// // Retrieve all devices for the connectedAccountId.
+// const connectedDevices = await seam.devices.list({
+//   // connected_account_id: "11111111-1111-1111-1111-222222222222"
+//   connected_account_id: "486466da-a19f-48b3-824d-b9aa30b936c9"
+// });
+// console.log(connectedDevices);
 
 // const buildingA = await seam.acs.systems.get({
 //   acs_system_id: "f4f660da-c96a-4cf6-9f81-507ff4772b30"
@@ -959,3 +960,13 @@ console.log(connectedDevices);
 
 // console.log(updatedConnectWebview.login_successful) // true
 
+// console.log(await seam.thermostats.list({
+//   // user_identifier_key: "jane@example.com",
+//   // manufacturer: "nest"
+// }));
+
+console.log(await seam.thermostats.heat({
+  // device_id: "054765c8-a2fc-4599-b486-14c19f462c45",
+  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61",
+  heating_set_point_celsius: 20
+}));
