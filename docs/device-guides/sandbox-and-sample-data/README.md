@@ -70,6 +70,10 @@ description: >-
 [kwikset-locks-sample-data.md](kwikset-locks-sample-data.md)
 {% endcontent-ref %}
 
+{% content-ref url="../../developer-tools/sandbox-and-sample-data/sandbox-latch-access-control-system.md" %}
+[sandbox-latch-access-control-system.md](../../developer-tools/sandbox-and-sample-data/sandbox-latch-access-control-system.md)
+{% endcontent-ref %}
+
 {% content-ref url="linear-sample-data.md" %}
 [linear-sample-data.md](linear-sample-data.md)
 {% endcontent-ref %}

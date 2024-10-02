@@ -247,6 +247,7 @@
   * [Sandbox Honeywell Resideo Thermostats](developer-tools/sandbox-and-sample-data/sandbox-honeywell-thermostats.md)
   * [Sandbox igloohome Locks](device-guides/sandbox-and-sample-data/igloohome-sample-data.md)
   * [Sandbox Kwikset Locks](device-guides/sandbox-and-sample-data/kwikset-locks-sample-data.md)
+  * [Sandbox Latch Access Control System](developer-tools/sandbox-and-sample-data/sandbox-latch-access-control-system.md)
   * [Sandbox Linear Callboxes](device-guides/sandbox-and-sample-data/linear-sample-data.md)
   * [Sandbox Lockly Locks](device-guides/sandbox-and-sample-data/lockly-lock-sample-data.md)
   * [Sandbox Minut Sensors](device-guides/sandbox-and-sample-data/minut-noise-sensor-sample-data.md)
