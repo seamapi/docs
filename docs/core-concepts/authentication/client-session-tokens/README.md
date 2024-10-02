@@ -10,7 +10,7 @@ A client session enables a client, such as a web browser or mobile phone, to acc
 
 Once you create a client session on the backend, you can pass the resulting generated client session token from the backend to the frontend (that is, to the client). Using client session tokens on the frontend eliminates the need for your user's browser to communicate with your backend server. Instead, the client makes requests directly to the Seam API.
 
-Client sessions make it easy to control your users' access to devices. When you create a client session, you can specify [your own internal user ID for a desired user](../../../seam-components/overview/get-started-with-client-side-components.md#3-select-a-user-identifier-key), along with the [connected accounts](../../../api-clients/connected-accounts/) associated with this user. Then, you can [use client sessions on the backend to limit your users to only the devices that they own](implementing-client-sessions-for-device-management-in-the-backend.md).
+Client sessions make it easy to control your users' access to devices. When you create a client session, you can specify [your own internal user ID for a desired user](../../../seam-components/overview/get-started-with-client-side-components.md#3-select-a-user-identifier-key), along with the [connected accounts](../../../api-clients/connected_accounts/) associated with this user. Then, you can [use client sessions on the backend to limit your users to only the devices that they own](implementing-client-sessions-for-device-management-in-the-backend.md).
 
 {% hint style="info" %}
 If you are just getting started with Seam, see [Seam Components](../../../seam-components/overview/). In only a few minutes and with just a few lines of code, you can start controlling devices from your web application without interacting with the backend.
@@ -31,7 +31,7 @@ You can use client sessions in the following two ways:
 
 ## Create a Client Session for an Existing User and Retrieve the Session Token
 
-To [create a client session](../../../api-clients/client-sessions/create-a-client-session.md) for an existing user with connected accounts in your workspace, include the IDs of the user's connected accounts (`connected_account_ids`) and [provide your own unique internal user ID (`user_identifier_key`)](../../../seam-components/overview/get-started-with-client-side-components.md#3-select-a-user-identifier-key). Then, use the generated client session token to retrieve and manage the resources authorized through the connected accounts associated with this client session.
+To [create a client session](../../../api-clients/client_sessions/create.md) for an existing user with connected accounts in your workspace, include the IDs of the user's connected accounts (`connected_account_ids`) and [provide your own unique internal user ID (`user_identifier_key`)](../../../seam-components/overview/get-started-with-client-side-components.md#3-select-a-user-identifier-key). Then, use the generated client session token to retrieve and manage the resources authorized through the connected accounts associated with this client session.
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -61,7 +61,7 @@ Client session token: seam_cst1891oqCmE_6dBwV8PJ2Ffoe9dWYVyMfVHq
 
 ## List Client Sessions
 
-You can [list all client sessions](../../../api-clients/client-sessions/list-client-sessions.md) within your workspace.
+You can [list all client sessions](../../../api-clients/client_sessions/list.md) within your workspace.
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -82,10 +82,6 @@ await seam.clientSessions.list()
     created_at: '2023-12-26T04:23:46.829Z',
     client_session_id: 'c75d4330-ae01-4dfd-b6c5-f3e94e0d8168',
     user_identity_ids: [],
-    third_party_account_ids: [
-      '3ea0b67f-649f-4131-bfe3-f2035e77a3f9',
-      '6e1cad57-b244-40ca-b4f3-30a46c8000d4'
-    ],
     connect_webview_ids: [],
     device_count: 4,
     connected_account_ids: [
@@ -100,10 +96,6 @@ await seam.clientSessions.list()
     created_at: '2023-12-26T04:25:50.041Z',
     client_session_id: 'e1006128-19a8-4e4d-9a91-536d80cf9c21',
     user_identity_ids: [],
-    third_party_account_ids: [
-      '2e884e71-b2c1-41a0-bb2c-ec94a7b4c6a4',
-      'b0ccf472-cb63-400c-bf21-5b809f5e1afd'
-    ],
     connect_webview_ids: [],
     device_count: 4,
     connected_account_ids: [
@@ -121,7 +113,7 @@ await seam.clientSessions.list()
 
 ## Get a Client Session
 
-To [get a specific client session](../../../api-clients/client-sessions/get-a-client-session.md), provide the client session ID (`client_session_id`).
+To [get a specific client session](../../../api-clients/client_sessions/get.md), provide the client session ID (`client_session_id`).
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -158,7 +150,7 @@ const clientSession = await seam.clientSessions.get({
 
 ## Delete a Client Session
 
-To [delete a client session](../../../api-clients/client-sessions/delete-a-client-session.md), provide the client session ID (`client_session_id`).
+To [delete a client session](../../../api-clients/client_sessions/delete.md), provide the client session ID (`client_session_id`).
 
 {% tabs %}
 {% tab title="JavaScript" %}

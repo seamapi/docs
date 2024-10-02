@@ -4,10 +4,10 @@ description: When listing connected accounts, you can filter by custom metadata.
 
 # Filtering Connected Accounts by Custom Metadata
 
-When you use [List Connected Accounts](../../api-clients/connected-accounts/list-connected-accounts.md), you can filter the list by one or more [custom metadata](./) pairs. Include the `custom_metadata_has` parameter with a JSON string that specifies the desired key:value pairs.
+When you use [List Connected Accounts](../../api-clients/connected_accounts/list.md), you can filter the list by one or more [custom metadata](./) pairs. Include the `custom_metadata_has` parameter with a JSON string that specifies the desired key:value pairs.
 
 {% hint style="info" %}
-If the [Connect Webview](../connect-webviews/) associated with a connected account contains custom metadata, Seam transfers this custom metadata to the connected account. However, you can also use the [Update Connected Account](../../api-clients/connected-accounts/update-a-connected-account.md) method with the optional [`custom_metadata` property](../../api-clients/connected-accounts/#connected\_account-properties) to [change or add custom metadata for a connected account](adding-custom-metadata-to-a-connected-account.md).
+If the [Connect Webview](../connect-webviews/) associated with a connected account contains custom metadata, Seam transfers this custom metadata to the connected account. However, you can also use the [Update Connected Account](../../api-clients/connected_accounts/update.md) method with the optional [`custom_metadata` property](../../api-clients/connected_accounts/#connected\_account-properties) to [change or add custom metadata for a connected account](adding-custom-metadata-to-a-connected-account.md).
 {% endhint %}
 
 {% tabs %}

@@ -67,7 +67,7 @@ To [create an hourly-bound offline access code](../../products/smart-locks/acces
 
 #### 1. Create an Hourly-Bound Offline Access Code
 
-To create an hourly-bound offline access code, provide the `device_id` of the lock for which you want to create the code and set `is_offline_access_code` to `true`. Specify the `starts_at` and `ends_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamps to define the active time window for the offline code. You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../api-clients/access-codes/create-an-access-code.md).
+To create an hourly-bound offline access code, provide the `device_id` of the lock for which you want to create the code and set `is_offline_access_code` to `true`. Specify the `starts_at` and `ends_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamps to define the active time window for the offline code. You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../api-clients/access_codes/create.md).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -429,7 +429,7 @@ To create a daily-bound offline access code, provide the `device_id` of the lock
 
 Because daily-bound offline access codes require day-level duration granularity, you can also set `max_time_rounding` to `1day` (or `1d`), instead of the default `1hour` (or `1h`). Note that the Seam API returns an error if `max_time_rounding` is `1hour` and the necessary rounding amount exceeds one hour.
 
-You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../api-clients/access-codes/create-an-access-code.md).
+You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../api-clients/access_codes/create.md).
 
 {% tabs %}
 {% tab title="Python" %}

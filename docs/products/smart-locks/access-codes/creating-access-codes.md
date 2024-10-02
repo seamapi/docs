@@ -19,11 +19,11 @@ layout:
 
 ## Overview
 
-This guide explains how to create online access codes on an online smart lock. With the [Access Codes](../../../api-clients/access-codes/) API, generate PIN codes on a door lock and share it with visitors, allowing them keyless access.
+This guide explains how to create online access codes on an online smart lock. With the [Access Codes](../../../api-clients/access\_codes/) API, generate PIN codes on a door lock and share it with visitors, allowing them keyless access.
 
 Seam supports programming two types of online access codes for online door locks:
 
-1. **Ongoing**: Ideal for residents or long-term users. Ongoing codes remain active on a device until removed. Create one by leaving the `end_at` field empty. To remove the code, use the [Delete Access Code](../../../api-clients/access-codes/delete-an-access-code.md) endpoint.
+1. **Ongoing**: Ideal for residents or long-term users. Ongoing codes remain active on a device until removed. Create one by omitting both `starts_at` and `ends_at`. To remove the code, use the [Delete Access Code](../../../api-clients/access\_codes/delete.md) endpoint.
 2. **Time Bound**: Suitable for temporary access like guest visits or service appointments. These codes operate between a designated `starts_at` and `ends_at` time window, granting access only during that period.
 
 {% hint style="info" %}
@@ -36,10 +36,10 @@ For more information about creating offline access codes, see [Managing Offline 
 
 Before you attempt to create an [online](./#what-is-an-access-code) or [offline](./#offline-access-codes) access code, be sure to confirm that your device has the capability to perform these operations. You can inspect the capabilities of a device by checking the following [capability flags](../../../capability-guides/device-and-system-capabilities.md#capability-flags) for the device:
 
-* `can_program_online_access_codes`
-* `can_program_offline_access_codes`
+* `device.can_program_online_access_codes`
+* `device.can_program_offline_access_codes`
 
-Use [Get Device](../../../api-clients/devices/get-device.md) (or [Get Lock](../../../api-clients/locks/get-lock.md)) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to create an access code.
+Use [Get Device](../../../api-clients/devices/get.md) (or [Get Lock](../../../api-clients/locks/get.md)) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to create an access code.
 
 If either of these capability flags is `false` or not present, you can view the [properties](../../../api-clients/devices/#device-properties) of the device, [errors](../../../api-clients/devices/#device-error-types) or [warnings](../../../api-clients/devices/#device-warning-types) for the device, and [events](../../../api-clients/events/#event-types) related to the device to learn more about the cause of these issues. For example, you could examine the following device properties:
 
@@ -55,7 +55,7 @@ In addition, you could look for a `device.accessory_keypad_disconnected` event.
 **Request:**
 
 ```python
-seam.locks.get(device="11111111-1111-1111-1111-444444444444")
+seam.devices.get(device="11111111-1111-1111-1111-444444444444")
 ```
 
 **Response:**
@@ -76,7 +76,7 @@ Device(
 ```bash
 # Use GET or POST.
 curl -X 'GET' \
-  'https://connect.getseam.com/locks/get' \
+  'https://connect.getseam.com/devices/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
@@ -104,7 +104,7 @@ curl -X 'GET' \
 **Request:**
 
 ```javascript
-await seam.locks.get("11111111-1111-1111-1111-444444444444")
+await seam.devices.get("11111111-1111-1111-1111-444444444444")
 ```
 
 **Response:**
@@ -123,7 +123,7 @@ await seam.locks.get("11111111-1111-1111-1111-444444444444")
 **Request:**
 
 ```ruby
-client.locks.get("11111111-1111-1111-1111-444444444444")
+client.devices.get("11111111-1111-1111-1111-444444444444")
 ```
 
 **Response:**
@@ -180,8 +180,8 @@ seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 **Request:**
 
 ```java
-seam.locks()
-  .get(LocksGetRequest.builder()
+seam.devices()
+  .get(DevicesGetRequest.builder()
     .deviceId("11111111-1111-1111-1111-444444444444")
     .build());
 ```
@@ -232,9 +232,9 @@ Ongoing online access codes are ideal for long-term users that wish to keep the 
 
 ### 1. Create an Ongoing Online Access Code
 
-Set an ongoing online access code by providing the `device_id` of the smart lock on which you want to [create an access code](../../../api-clients/access-codes/create-an-access-code.md). Assign an optional `name` to the access code for easier identification within the [Seam Console](https://console.seam.co) and smart lock app.
+Set an ongoing online access code by providing the `device_id` of the smart lock on which you want to [create an access code](../../../api-clients/access\_codes/create.md). Assign an optional `name` to the access code for easier identification within the [Seam Console](https://console.seam.co) and smart lock app.
 
-To customize the PIN code, specify a desired PIN for the `code` property. See [Access Code Requirements for Door Locks](access-code-requirements-for-door-locks.md) to understand any requirements specific to the door lock.
+To customize the PIN code, specify a desired PIN for the `code` property. If you do not specify a `code`, you can set the `preferred_code_length`, and Seam generates a code of this length if the affected device supports the specified preferred code length. See [Access Code Requirements for Door Locks](access-code-requirements-for-door-locks.md) to understand any requirements specific to the door lock.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -242,7 +242,7 @@ To customize the PIN code, specify a desired PIN for the `code` property. See [A
 
 ```python
 # Get the device.
-device = seam.locks.get(
+device = seam.devices.get(
   device_id="11111111-1111-1111-1111-444444444444"
 )
 
@@ -285,7 +285,7 @@ device=$(
     -d '{
       "device_id": "11111111-1111-1111-1111-444444444444"
   }')
-  
+
 # Confirm that the device supports online access codes.
 if  $(jq -r '.device.can_program_online_access_codes' <<< ${device}); then \
   # Create the ongoing online access code.
@@ -331,7 +331,7 @@ fi
 
 ```javascript
 // Get the device.
-const device = await seam.locks.get({
+const device = await seam.devices.get({
   device_id: "11111111-1111-1111-1111-444444444444"
 });
 
@@ -365,7 +365,7 @@ if (device.can_program_online_access_codes) {
 
 ```ruby
 # Get the device.
-device = client.locks.get("11111111-1111-1111-1111-444444444444")
+device = client.devices.get("11111111-1111-1111-1111-444444444444")
 
 # Confirm that the device supports online access codes.
 if (device.can_program_online_access_codes)
@@ -397,7 +397,7 @@ end
 
 ```php
 // Get the device.
-$device = $seam->locks->get(device_id: "11111111-1111-1111-1111-444444444444");
+$device = $seam->devices->get(device_id: "11111111-1111-1111-1111-444444444444");
 
 // Confirm that the device supports online access codes.
 if ($device->can_program_online_access_codes) {
@@ -429,7 +429,7 @@ if ($device->can_program_online_access_codes) {
 
 ```csharp
 // Get the device.
-Device device = seam.Locks.Get(deviceId: "11111111-1111-1111-1111-444444444444");
+Device device = seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 
 // Confirm that the device supports online access codes.
 if (device.CanProgramOnlineAccessCodes == true) {
@@ -498,9 +498,9 @@ if (device.getCanProgramOnlineAccessCodes())
 
 ```go
 // Get the device.
-device, uErr := client.Locks.Get(
+device, uErr := client.Devices.Get(
   context.Background(),
-  &api.LocksGetRequest{
+  &api.DevicesGetRequest{
     DeviceId: api.String("11111111-1111-1111-1111-444444444444"),
   })
 
@@ -550,7 +550,7 @@ There are two methods to verify that an ongoing access code has been set on the 
 
 ### **Polling Method**
 
-Use the `access_code` reference returned by the create function to call the [Get Access Code](../../../api-clients/access-codes/get-an-access-code.md) function. A basic implementation would involve polling this endpoint until the `status` of the access code updates to `set`.
+Use the `access_code` reference returned by the create function to call the [Get Access Code](../../../api-clients/access\_codes/get/) function. A basic implementation would involve polling this endpoint until the `status` of the access code updates to `set`.
 
 If the `status` remains `setting` for a very long time, or if the `access_code` object contains any `warnings` or `errors` properties, consult [the guide on "Troubleshooting Access Code Issues"](troubleshooting-access-code-issues.md) for further guidance.
 
@@ -577,11 +577,11 @@ Time-bound online access codes are suitable for temporary access, like guest vis
 
 ### 1. Create a Time-Bound Online Access Code
 
-To set a time-bound online access code, provide the `device_id` of the smart lock on which you want to program a code, along with `starts_at` and `ends_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamps to define the active time window for the code. For more details, see the [Create Access Code](../../../api-clients/access-codes/create-an-access-code.md) endpoint.
+To set a time-bound online access code, provide the `device_id` of the smart lock on which you want to program a code, along with `starts_at` and `ends_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamps to define the active time window for the code. For more details, see the [Create Access Code](../../../api-clients/access\_codes/create.md) endpoint.
 
 As with ongoing codes, you can assign an optional `name` to the access code. A clear name helps users to identify the access code quickly within their smart lock app.
 
-Similarly, to customize the PIN code, specify a desired PIN in the `code` property. See the [Access Code Requirements for Door Locks](access-code-requirements-for-door-locks.md) to understand any requirements specific to the door lock brand.
+Similarly, to customize the PIN code, specify a desired PIN in the `code` property. If you do not specify a `code`, you can set the `preferred_code_length`, and Seam generates a code of this length if the affected device supports the specified preferred code length. See the [Access Code Requirements for Door Locks](access-code-requirements-for-door-locks.md) to understand any requirements specific to the door lock brand.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -622,7 +622,7 @@ AccessCode(
 {% endtab %}
 
 {% tab title="cURL (bash)" %}
-#### Request:
+**Request:**
 
 ```sh
 # Get the device.
@@ -655,7 +655,7 @@ if  $(jq -r '.device.can_program_online_access_codes' <<< ${device}); then \
 fi
 ```
 
-#### Response:
+**Response:**
 
 ```json
 {
@@ -936,7 +936,7 @@ There are two methods to verify that an time-bound access code has been set on t
 
 ### **Polling Method**
 
-Use the `access_code` reference returned by the create function to call the [Get Access Code](../../../api-clients/access-codes/get-an-access-code.md) function. In a basic implementation, you would poll this endpoint at the `starts_at` time to check if the access code's status is updated to `set`.
+Use the `access_code` reference returned by the create function to call the [Get Access Code](../../../api-clients/access\_codes/get/) function. In a basic implementation, you would poll this endpoint at the `starts_at` time to check if the access code's status is updated to `set`.
 
 If the `status` remains `setting`, or if the `access_code` object displays any `warnings` or `errors`, refer to [the "Troubleshooting Access Code Issues" guide](troubleshooting-access-code-issues.md) for assistance.
 

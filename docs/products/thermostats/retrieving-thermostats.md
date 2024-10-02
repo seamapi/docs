@@ -24,21 +24,7 @@ seam.thermostats.list()
     location=None,
     properties={
         'available_hvac_mode_settings': ['off', 'cool', 'heat', 'heat_cool'],
-        'can_enable_automatic_cooling': True,
-        'can_enable_automatic_heating': True,
         'current_climate_setting': {
-            'automatic_cooling_enabled': True,
-            'automatic_heating_enabled': True,
-            'cooling_set_point_celsius': 25,
-            'cooling_set_point_fahrenheit': 77,
-            'heating_set_point_celsius': 20,
-            'heating_set_point_fahrenheit': 68,
-            'hvac_mode_setting': 'heat_cool',
-            'manual_override_allowed': True
-        },
-        'default_climate_setting': {
-            'automatic_cooling_enabled': True,
-            'automatic_heating_enabled': True,
             'cooling_set_point_celsius': 25,
             'cooling_set_point_fahrenheit': 77,
             'heating_set_point_celsius': 20,
@@ -54,12 +40,9 @@ seam.thermostats.list()
         'has_direct_power': True,
         'image_alt_text': 'Ecobee 3 Lite Thermostat',
         'image_url': 'https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png',
-        'is_climate_setting_schedule_active': False,
         'is_cooling': False,
-        'is_cooling_available': True,
         'is_fan_running': False,
         'is_heating': False,
-        'is_heating_available': True,
         'is_temporary_manual_override_active': False,
         'manufacturer': 'ecobee',
         'max_cooling_set_point_celsius': 33.333333333333336,
@@ -134,24 +117,10 @@ curl -X 'GET' \
         "has_direct_power": true,
         "relative_humidity": 0.36,
         "temperature_celsius": 21.11111111111111,
-        "is_cooling_available": true,
-        "is_heating_available": true,
         "temperature_fahrenheit": 70,
         "current_climate_setting": {
           "hvac_mode_setting": "heat_cool",
           "manual_override_allowed": true,
-          "automatic_cooling_enabled": true,
-          "automatic_heating_enabled": true,
-          "cooling_set_point_celsius": 25,
-          "heating_set_point_celsius": 20,
-          "cooling_set_point_fahrenheit": 77,
-          "heating_set_point_fahrenheit": 68
-        },
-        "default_climate_setting": {
-          "hvac_mode_setting": "heat_cool",
-          "manual_override_allowed": true,
-          "automatic_cooling_enabled": true,
-          "automatic_heating_enabled": true,
           "cooling_set_point_celsius": 25,
           "heating_set_point_celsius": 20,
           "cooling_set_point_fahrenheit": 77,
@@ -163,8 +132,6 @@ curl -X 'GET' \
           "heat",
           "heat_cool"
         ],
-        "can_enable_automatic_cooling": true,
-        "can_enable_automatic_heating": true,
         "offline_access_codes_enabled": false,
         "max_cooling_set_point_celsius": 33.333333333333336,
         "max_heating_set_point_celsius": 26.11111111111111,
@@ -180,7 +147,6 @@ curl -X 'GET' \
         },
         "image_url": "https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png",
         "image_alt_text": "Ecobee 3 Lite Thermostat",
-        "is_climate_setting_schedule_active": false,
         "min_heating_set_point_fahrenheit": 45,
         "max_heating_set_point_fahrenheit": 79,
         "min_cooling_set_point_fahrenheit": 65,
@@ -227,14 +193,9 @@ console.log(await seam.thermostats.list())
       has_direct_power: true,
       relative_humidity: 0.36,
       temperature_celsius: 21.11111111111111,
-      is_cooling_available: true,
-      is_heating_available: true,
       temperature_fahrenheit: 70,
       current_climate_setting: [Object],
-      default_climate_setting: [Object],
       available_hvac_mode_settings: [Array],
-      can_enable_automatic_cooling: true,
-      can_enable_automatic_heating: true,
       max_cooling_set_point_celsius: 33.333333333333336,
       max_heating_set_point_celsius: 26.11111111111111,
       min_cooling_set_point_celsius: 18.333333333333336,
@@ -245,7 +206,6 @@ console.log(await seam.thermostats.list())
       model: [Object],
       image_url: 'https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png',
       image_alt_text: 'Ecobee 3 Lite Thermostat',
-      is_climate_setting_schedule_active: false,
       min_heating_set_point_fahrenheit: 45,
       max_heating_set_point_fahrenheit: 79,
       min_cooling_set_point_fahrenheit: 65,
@@ -308,24 +268,18 @@ echo json_encode($thermostats, JSON_PRETTY_PRINT);
             "temperature_fahrenheit": 70,
             "temperature_celsius": 21.11111111111111,
             "relative_humidity": 0.36,
-            "can_enable_automatic_heating": true,
-            "can_enable_automatic_cooling": true,
             "available_hvac_mode_settings": [
                 "off",
                 "cool",
                 "heat",
                 "heat_cool"
             ],
-            "is_heating_available": true,
-            "is_cooling_available": true,
             "is_heating": false,
             "is_cooling": false,
             "is_fan_running": false,
             "fan_mode_setting": "auto",
             "is_temporary_manual_override_active": false,
             "current_climate_setting": {
-                "automatic_heating_enabled": true,
-                "automatic_cooling_enabled": true,
                 "hvac_mode_setting": "heat_cool",
                 "cooling_set_point_celsius": 23.88888888888889,
                 "heating_set_point_celsius": 18.333333333333336,
@@ -333,9 +287,6 @@ echo json_encode($thermostats, JSON_PRETTY_PRINT);
                 "heating_set_point_fahrenheit": 65,
                 "manual_override_allowed": true
             },
-            "default_climate_setting": null,
-            "is_climate_setting_schedule_active": false,
-            "active_climate_setting_schedule": null,
             "min_cooling_set_point_celsius": 18.333333333333336,
             "min_cooling_set_point_fahrenheit": 65,
             "max_cooling_set_point_celsius": 33.333333333333336,
@@ -489,12 +440,8 @@ return nil
     "has_direct_power": true,
     "relative_humidity": 0.36,
     "temperature_celsius": 21.11111111111111,
-    "is_cooling_available": true,
-    "is_heating_available": true,
     "temperature_fahrenheit": 70,
     "current_climate_setting": {
-      "automatic_heating_enabled": true,
-      "automatic_cooling_enabled": true,
       "hvac_mode_setting": "heat_cool",
       "manual_override_allowed": true,
       "cooling_set_point_celsius": 23.88888888888889,
@@ -508,8 +455,6 @@ return nil
       "heat",
       "heat_cool"
     ],
-    "can_enable_automatic_cooling": true,
-    "can_enable_automatic_heating": true,
     "max_cooling_set_point_celsius": 33.333333333333336,
     "max_heating_set_point_celsius": 26.11111111111111,
     "min_cooling_set_point_celsius": 18.333333333333336,
@@ -524,7 +469,6 @@ return nil
     },
     "image_url": "https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png",
     "image_alt_text": "Ecobee 3 Lite Thermostat",
-    "is_climate_setting_schedule_active": false,
     "min_heating_set_point_fahrenheit": 45,
     "max_heating_set_point_fahrenheit": 79,
     "min_cooling_set_point_fahrenheit": 65,
@@ -548,17 +492,16 @@ return nil
 
 ## Retrieving Individual Thermostats
 
-To retrieve a specific [thermostat](./), include the desired `device_id` in the [Get Thermostat](../../thermostats/get-thermostat.md) or [Get Device](../../api-clients/devices/get-device.md) request.
+To retrieve a specific [thermostat](./), include the desired `device_id` in the [Get Device](../../api-clients/devices/get.md) request.
 
 {% tabs %}
 {% tab title="Python" %}
 **Request:**
 
 ```python
-device_id = "518f692b-f865-4590-8c3e-3849e9984c75"
-thermostat = seam.thermostats.get(device_id)
-
-pprint(thermostat)
+seam.devices.get(
+  device_id="518f692b-f865-4590-8c3e-3849e9984c75"
+)
 ```
 
 **Response:**
@@ -570,21 +513,7 @@ Device(
     location=None,
     properties={
         'available_hvac_mode_settings': ['off', 'cool', 'heat', 'heat_cool'],
-        'can_enable_automatic_cooling': True,
-        'can_enable_automatic_heating': True,
         'current_climate_setting': {
-            'automatic_cooling_enabled': True,
-            'automatic_heating_enabled': True,
-            'cooling_set_point_celsius': 25,
-            'cooling_set_point_fahrenheit': 77,
-            'heating_set_point_celsius': 20,
-            'heating_set_point_fahrenheit': 68,
-            'hvac_mode_setting': 'heat_cool',
-            'manual_override_allowed': True
-        },
-        'default_climate_setting': {
-            'automatic_cooling_enabled': True,
-            'automatic_heating_enabled': True,
             'cooling_set_point_celsius': 25,
             'cooling_set_point_fahrenheit': 77,
             'heating_set_point_celsius': 20,
@@ -600,12 +529,9 @@ Device(
         'has_direct_power': True,
         'image_alt_text': 'Ecobee 3 Lite Thermostat',
         'image_url': 'https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png',
-        'is_climate_setting_schedule_active': False,
         'is_cooling': False,
-        'is_cooling_available': True,
         'is_fan_running': False,
         'is_heating': False,
-        'is_heating_available': True,
         'is_temporary_manual_override_active': False,
         'manufacturer': 'ecobee',
         'max_cooling_set_point_celsius': 33.333333333333336,
@@ -649,7 +575,7 @@ Device(
 ```bash
 # Use GET or POST.
 curl -X 'GET' \
-  'https://connect.getseam.com/thermostats/get' \
+  'https://connect.getseam.com/devices/get' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
@@ -682,24 +608,10 @@ curl -X 'GET' \
       "has_direct_power": true,
       "relative_humidity": 0.36,
       "temperature_celsius": 21.11111111111111,
-      "is_cooling_available": true,
-      "is_heating_available": true,
       "temperature_fahrenheit": 70,
       "current_climate_setting": {
         "hvac_mode_setting": "heat_cool",
         "manual_override_allowed": true,
-        "automatic_cooling_enabled": true,
-        "automatic_heating_enabled": true,
-        "cooling_set_point_celsius": 25,
-        "heating_set_point_celsius": 20,
-        "cooling_set_point_fahrenheit": 77,
-        "heating_set_point_fahrenheit": 68
-      },
-      "default_climate_setting": {
-        "hvac_mode_setting": "heat_cool",
-        "manual_override_allowed": true,
-        "automatic_cooling_enabled": true,
-        "automatic_heating_enabled": true,
         "cooling_set_point_celsius": 25,
         "heating_set_point_celsius": 20,
         "cooling_set_point_fahrenheit": 77,
@@ -711,8 +623,6 @@ curl -X 'GET' \
         "heat",
         "heat_cool"
       ],
-      "can_enable_automatic_cooling": true,
-      "can_enable_automatic_heating": true,
       "max_cooling_set_point_celsius": 33.333333333333336,
       "max_heating_set_point_celsius": 26.11111111111111,
       "min_cooling_set_point_celsius": 18.333333333333336,
@@ -727,7 +637,6 @@ curl -X 'GET' \
       },
       "image_url": "https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png",
       "image_alt_text": "Ecobee 3 Lite Thermostat",
-      "is_climate_setting_schedule_active": false,
       "min_heating_set_point_fahrenheit": 45,
       "max_heating_set_point_fahrenheit": 79,
       "min_cooling_set_point_fahrenheit": 65,
@@ -751,9 +660,9 @@ curl -X 'GET' \
 **Request:**
 
 ```javascript
-console.log(await seam.thermostats.get({
+await seam.devices.get({
   device_id: "518f692b-f865-4590-8c3e-3849e9984c75"
-}))
+});
 ```
 
 **Response:**
@@ -777,32 +686,16 @@ console.log(await seam.thermostats.get({
     has_direct_power: true,
     relative_humidity: 0.36,
     temperature_celsius: 21.11111111111111,
-    is_cooling_available: true,
-    is_heating_available: true,
     temperature_fahrenheit: 70,
     current_climate_setting: {
       hvac_mode_setting: 'heat_cool',
       manual_override_allowed: true,
-      automatic_cooling_enabled: true,
-      automatic_heating_enabled: true,
-      cooling_set_point_celsius: 25,
-      heating_set_point_celsius: 20,
-      cooling_set_point_fahrenheit: 77,
-      heating_set_point_fahrenheit: 68
-    },
-    default_climate_setting: {
-      hvac_mode_setting: 'heat_cool',
-      manual_override_allowed: true,
-      automatic_cooling_enabled: true,
-      automatic_heating_enabled: true,
       cooling_set_point_celsius: 25,
       heating_set_point_celsius: 20,
       cooling_set_point_fahrenheit: 77,
       heating_set_point_fahrenheit: 68
     },
     available_hvac_mode_settings: [ 'off', 'cool', 'heat', 'heat_cool' ],
-    can_enable_automatic_cooling: true,
-    can_enable_automatic_heating: true,
     max_cooling_set_point_celsius: 33.333333333333336,
     max_heating_set_point_celsius: 26.11111111111111,
     min_cooling_set_point_celsius: 18.333333333333336,
@@ -817,7 +710,6 @@ console.log(await seam.thermostats.get({
     },
     image_url: 'https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png',
     image_alt_text: 'Ecobee 3 Lite Thermostat',
-    is_climate_setting_schedule_active: false,
     min_heating_set_point_fahrenheit: 45,
     max_heating_set_point_fahrenheit: 79,
     min_cooling_set_point_fahrenheit: 65,
@@ -839,10 +731,9 @@ console.log(await seam.thermostats.get({
 **Request:**
 
 ```php
-$thermostat = $seam->thermostats->get(
+$seam->devices->get(
   device_id: "5ce2cd35-09b1-458c-bb08-51ee83c35be7"
 );
-echo json_encode($thermostat, JSON_PRETTY_PRINT);
 ```
 
 **Response:**
@@ -880,24 +771,18 @@ echo json_encode($thermostat, JSON_PRETTY_PRINT);
         "temperature_fahrenheit": 70,
         "temperature_celsius": 21.11111111111111,
         "relative_humidity": 0.36,
-        "can_enable_automatic_heating": true,
-        "can_enable_automatic_cooling": true,
         "available_hvac_mode_settings": [
             "off",
             "cool",
             "heat",
             "heat_cool"
         ],
-        "is_heating_available": true,
-        "is_cooling_available": true,
         "is_heating": false,
         "is_cooling": false,
         "is_fan_running": false,
         "fan_mode_setting": "auto",
         "is_temporary_manual_override_active": false,
         "current_climate_setting": {
-            "automatic_heating_enabled": true,
-            "automatic_cooling_enabled": true,
             "hvac_mode_setting": "heat_cool",
             "cooling_set_point_celsius": 23.88888888888889,
             "heating_set_point_celsius": 18.333333333333336,
@@ -905,9 +790,6 @@ echo json_encode($thermostat, JSON_PRETTY_PRINT);
             "heating_set_point_fahrenheit": 65,
             "manual_override_allowed": true
         },
-        "default_climate_setting": null,
-        "is_climate_setting_schedule_active": false,
-        "active_climate_setting_schedule": null,
         "min_cooling_set_point_celsius": 18.333333333333336,
         "min_cooling_set_point_fahrenheit": 65,
         "max_cooling_set_point_celsius": 33.333333333333336,
@@ -936,8 +818,9 @@ echo json_encode($thermostat, JSON_PRETTY_PRINT);
 **Request:**
 
 ```csharp
-Device thermostat = seam.Thermostats.Get(deviceId: "518f692b-f865-4590-8c3e-3849e9984c75");
-Console.WriteLine(thermostat);
+seam.Devices.Get(
+  deviceId: "518f692b-f865-4590-8c3e-3849e9984c75"
+);
 ```
 
 **Response:**
@@ -980,10 +863,9 @@ Console.WriteLine(thermostat);
 **Request:**
 
 ```java
-Device thermostat = seam.thermostats().get(ThermostatsGetRequest.builder()
-              .deviceId("518f692b-f865-4590-8c3e-3849e9984c75")
-              .build());
-System.out.println(thermostat);
+seam.devices().get(DevicesGetRequest.builder()
+  .deviceId("518f692b-f865-4590-8c3e-3849e9984c75")
+  .build());
 ```
 
 **Response:**
@@ -1003,8 +885,6 @@ System.out.println(thermostat);
       "manufacturer_display_name" : "Ecobee"
     },
     "current_climate_setting" : {
-      "automatic_heating_enabled" : true,
-      "automatic_cooling_enabled" : true,
       "hvac_mode_setting" : "heat_cool",
       "cooling_set_point_celsius" : 25.0,
       "heating_set_point_celsius" : 20.0,
@@ -1024,25 +904,12 @@ System.out.println(thermostat);
     "min_heating_cooling_delta_fahrenheit" : 5,
     "available_hvac_mode_settings" : [ "off", "cool", "heat", "heat_cool" ],
     "has_direct_power" : true,
-    "can_enable_automatic_cooling" : true,
     "min_cooling_set_point_fahrenheit" : 65,
     "min_heating_cooling_delta_celsius" : 2.7777777777777777,
     "min_cooling_set_point_celsius" : 18.333333333333336,
-    "can_enable_automatic_heating" : true,
     "max_heating_set_point_fahrenheit" : 79,
-    "is_cooling_available" : true,
     "image_url" : "https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png",
     "is_fan_running" : false,
-    "default_climate_setting" : {
-      "hvac_mode_setting" : "heat_cool",
-      "manual_override_allowed" : true,
-      "automatic_cooling_enabled" : true,
-      "automatic_heating_enabled" : true,
-      "cooling_set_point_celsius" : 25,
-      "heating_set_point_celsius" : 20,
-      "cooling_set_point_fahrenheit" : 77,
-      "heating_set_point_fahrenheit" : 68
-    },
     "image_alt_text" : "Ecobee 3 Lite Thermostat",
     "min_heating_set_point_fahrenheit" : 45,
     "ecobee_metadata" : {
@@ -1050,10 +917,8 @@ System.out.println(thermostat);
       "ecobee_device_id" : "a64074f3-a0aa-4dbb-bbd3-f17f61701602"
     },
     "fan_mode_setting" : "auto",
-    "is_climate_setting_schedule_active" : false,
     "relative_humidity" : 0.36,
     "temperature_fahrenheit" : 70,
-    "is_heating_available" : true
   },
   "connected_account_id" : "2c00bc71-bca5-42c2-a1c5-74fd93ffcba1",
   "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
@@ -1067,7 +932,7 @@ System.out.println(thermostat);
 **Request:**
 
 ```go
-thermostat, uErr := client.Thermostats.Get(context.Background(), &api.ThermostatsGetRequest{
+thermostat, uErr := client.Devices.Get(context.Background(), &api.DevicesGetRequest{
       DeviceId: api.String("5ce2cd35-09b1-458c-bb08-51ee83c35be7"),
   })
 
@@ -1075,7 +940,6 @@ if uErr != nil {
     return uErr
 }
 
-fmt.Println(thermostat)
 return nil
 ```
 
@@ -1102,12 +966,8 @@ return nil
     "has_direct_power": true,
     "relative_humidity": 0.36,
     "temperature_celsius": 21.11111111111111,
-    "is_cooling_available": true,
-    "is_heating_available": true,
     "temperature_fahrenheit": 70,
     "current_climate_setting": {
-      "automatic_heating_enabled": true,
-      "automatic_cooling_enabled": true,
       "hvac_mode_setting": "heat_cool",
       "manual_override_allowed": true,
       "cooling_set_point_celsius": 23.88888888888889,
@@ -1121,8 +981,6 @@ return nil
       "heat",
       "heat_cool"
     ],
-    "can_enable_automatic_cooling": true,
-    "can_enable_automatic_heating": true,
     "max_cooling_set_point_celsius": 33.333333333333336,
     "max_heating_set_point_celsius": 26.11111111111111,
     "min_cooling_set_point_celsius": 18.333333333333336,
@@ -1137,7 +995,6 @@ return nil
     },
     "image_url": "https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png",
     "image_alt_text": "Ecobee 3 Lite Thermostat",
-    "is_climate_setting_schedule_active": false,
     "min_heating_set_point_fahrenheit": 45,
     "max_heating_set_point_fahrenheit": 79,
     "min_cooling_set_point_fahrenheit": 65,

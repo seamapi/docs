@@ -15,7 +15,7 @@ HVAC mode (`hvac_mode_setting`) governs the operation of your heating, ventilati
 
 ## HVAC Mode Constraints
 
-Some models of thermostats have specific requirements and constraints related to setting the HVAC mode. You can retrieve these requirements by issuing a [Get Device](../../api-clients/devices/get-device.md) or [List Devices](../../api-clients/devices/list-devices.md) request.&#x20;
+Some models of thermostats have specific requirements and constraints related to setting the HVAC mode. You can retrieve these requirements by issuing a [Get Device](../../api-clients/devices/get.md) or [List Devices](../../api-clients/devices/list.md) request.&#x20;
 
 The following example shows a set of thermostat HVAC mode requirements:
 
@@ -34,9 +34,6 @@ The following example shows a set of thermostat HVAC mode requirements:
         "heat",
         "heat_cool"
       ],
-      "can_enable_automatic_cooling": true,
-      "can_enable_automatic_heating": true,
-      ...
     },
     ...
   },
@@ -62,18 +59,3 @@ The following example shows a thermostat that supports both heating and cooling:
 ```
 
 ***
-
-## Can Enable Automatic Heating and Cooling Settings
-
-The `can_enable_automatic_heating` and `can_enable_automatic_cooling` settings indicate whether the thermostat supports heating and cooling modes, respectively. If `can_enable_automatic_heating` is `true`, the thermostat supports heating. Similarly, if `can_enable_automatic_cooling` is `true`, the thermostat supports cooling. When both of these settings are `true`, the thermostat supports heat-cool (auto) mode. The availability of heating or cooling options depends on the connected systems. If the thermostat is not connected to a specific system, the corresponding options may be absent.
-
-{% hint style="info" %}
-Note that you configure either `hvac_mode_setting` or `automatic_heating_enabled` and `automatic_cooling_enabled`, and Seam automatically adjusts the other property/pair correspondingly. For more information, see [Default Climate Setting](../../capability-guides/thermostats/managing-scheduled-climate-settings-in-development/setting-the-default-climate-setting.md) and [Climate Setting Schedules](../../capability-guides/thermostats/managing-scheduled-climate-settings-in-development/thermostats-climate-setting-schedules.md).
-{% endhint %}
-
-The following example shows a thermostat connected to both heating and cooling systems:
-
-```json
-"can_enable_automatic_cooling": true,
-"can_enable_automatic_heating": true
-```

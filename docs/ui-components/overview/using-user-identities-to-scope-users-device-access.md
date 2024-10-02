@@ -6,7 +6,7 @@ description: You can limit your users' access to a subset of devices.
 
 
 
-First, create the [user identity](../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) that corresponds to your user. Configure the user identity with your internal user ID or other identifying information. Then, use the [Grant Access to Device](../../api-clients/user-identities/grant-a-user-identity-access-to-a-device.md) method to assign the user identity access to specific devices.
+First, create the [user identity](../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) that corresponds to your user. Configure the user identity with your internal user ID or other identifying information. Then, use the [Grant Access to Device](../../api-clients/user_identities/grant_access_to_device.md) method to assign the user identity access to specific devices.
 
 After creating and configuring the user identity, create a [client session](../../core-concepts/authentication/client-session-tokens/) and capture the resulting [client session token](../../core-concepts/authentication/client-session-tokens/). When you use this token in your application, such as in a [Seam Component](../../seam-components/overview/), Seam limits you user's access to only the devices that you specified for the associated user identity.
 
@@ -47,12 +47,12 @@ user_identity=$(curl -X 'POST' \
   -d '{
         "user_identity_key": "user-1"
   }')
-  
+
 # Get the user identity ID.
 user_identity_id=$(echo $user_identity | jq -r '.user_identity.user_identity_id')
 
 # Grant the user identity access to a specific device.
-# For device_id, specify the ID of the device that you 
+# For device_id, specify the ID of the device that you
 # want your user to be able to access.
 curl -X 'POST' \
   'https://connect.getseam.com/user_identities/grant_access_to_device' \
@@ -74,7 +74,7 @@ client_session=$(curl -X 'POST' \
         \"user_identity_ids\": [\"$user_identity_id\"]
   }")
 
-# Get the resulting client session token and 
+# Get the resulting client session token and
 # use this token in your app.
 token=$(echo $client_session | jq -r '.client_session.token')
 ```

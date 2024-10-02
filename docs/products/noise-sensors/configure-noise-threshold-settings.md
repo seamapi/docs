@@ -8,7 +8,7 @@ Seam enables you to configure the [noise thresholds](./#what-is-a-threshold) of 
 
 ## Set Up Noise Thresholds
 
-First, create a threshold using the [Create Noise Thresholds](../../api-clients/noise-sensors/create-noise-threshold.md) endpoint. For example:
+First, create a threshold using the [Create Noise Thresholds](../../api-clients/noise_sensors/noise_thresholds/create.md) endpoint. For example:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -130,8 +130,8 @@ foreach (var prop in props)
 Status: pending
 ActionType: CREATE_NOISE_THRESHOLD
 ActionAttemptId: eb611597-64d2-4b1a-995b-fb00361922c6
-Result: 
-Error: 
+Result:
+Error:
 ```
 {% endtab %}
 

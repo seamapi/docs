@@ -10,7 +10,7 @@ description: Learn how to connect and control smartlocks with the Seam API.
 
 Seam is a simple API to connect and control almost any smartlocks. Seam already integrates popular smartlock brands such as [August](https://seam.co/manufacturers/august), [Yale](https://seam.co/manufacturers/yale), [Schlage](https://seam.co/manufacturers/schlage), [Igloo](https://www.seam.co/manufacturers/igloohome), and [Kwikset](https://www.seam.co/manufacturers/kwikset), as well as lesser known ones like [Nuki](https://www.seam.co/manufacturers/nuki), [Wyze](https://www.seam.co/manufacturers/wyze), or [TTLock](https://www.seam.co/manufacturers/ttlock).
 
-The main benefit of Seam is that you can connect devices from these brands and control them with an easy to use API without having to worry about the underlying specific of each devices. Seam abstracts functions in [capabilities](broken-reference/) such as `access_codes` or `locks` which you can use to integrate devices from multiple brands while expecting them to all behave more or less in the same way.
+The main benefit of Seam is that you can connect devices from these brands and control them with an easy to use API without having to worry about the underlying specific of each devices. Seam abstracts functions in [capabilities](https://github.com/seamapi/api-docs/blob/main/docs/device-guides/broken-reference/README.md) such as `access_codes` or `locks` which you can use to integrate devices from multiple brands while expecting them to all behave more or less in the same way.
 
 This guide is intended to show you how to connect and control smartlocks. To learn more about all devices supported by Seam such as thermostats and sensors, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
@@ -150,7 +150,7 @@ webview = seam.connect_webviews.create(
 
 puts webview.login_successful # false
 
-# Send the webview URL to your user 
+# Send the webview URL to your user
 puts webview.url
 ```
 {% endtab %}
@@ -429,7 +429,7 @@ await seam.accessCodes.list({
   {
     type: 'timebound',
     code: '888888',
-    starts_at: '2028-08-12T19:24:00.000Z', 
+    starts_at: '2028-08-12T19:24:00.000Z',
     ends_at: '2028-08-13T19:24:00.000Z',
     access_code_id: '8c2db4da-b137-4c08-a2c3-d611e6ff91b3',
   }
@@ -518,5 +518,5 @@ Now that you've completed this guide, you can try to build a real application to
 * [August Getting Started Guide](get-started-with-august-locks.md)
 * [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
 * [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list-events.md)
+* [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list.md)
 * [Core Concepts](../core-concepts/overview.md)

@@ -177,7 +177,7 @@ curl -X 'POST' \
   -H 'Content-Type: application/json' \
   -d '{
   "accepted_providers": ["august"]
-}' | jq -r '"Login Successful (false): " + (.connect_webview.login_successful | tostring), 
+}' | jq -r '"Login Successful (false): " + (.connect_webview.login_successful | tostring),
   "URL: " + .connect_webview.url'
   # Use the returned Connect Webview URL to display
   # the Connect Webview authorization flow to your user.
@@ -336,7 +336,7 @@ public class Main {
       .build());
 
     System.out.println(connectWebview.getLoginSuccessful()); // false
-    
+
     // Use the returned Connect Webview URL to display
     // the Connect Webview authorization flow to your user.
     System.out.println(connectWebview.getUrl());
@@ -388,18 +388,18 @@ func run() error {
       },
     },
   )
-  
+
   if err != nil {
     return err
   }
-  
+
   fmt.Println(connectWebview.LoginSuccessful) // false
-  
+
   // Use the returned Connect Webview URL to display
   // the Connect Webview authorization flow to your user.
   fmt.Println(connectWebview.Url)
 
-  return nil		
+  return nil
 }
 ```
 
@@ -432,7 +432,7 @@ Complete the Connect Webview authorization flow by entering the following [Augus
 * **2FA Method:** Email (jane@example.com)
 * **Two Factor Code:** 123456
 
-<figure><picture><source srcset="../.gitbook/assets/august_connect-flow-screens_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/august_connect-flow-screens_light.png" alt="Use the Seam Connect Webview authorization flow to connect a August account with Seam. This flow varies slightly based on the device manufacturer and region."></picture><figcaption><p>Use the Seam Connect Webview authorization flow to connect a August account with Seam. This flow varies slightly based on the device manufacturer and region.</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/august_connect-flow-screens_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/august_connect-flow-screens_light.png" alt="Use the Seam Connect Webview authorization flow to connect an August account with Seam. This flow varies slightly based on the device manufacturer and region."></picture><figcaption><p>Use the Seam Connect Webview authorization flow to connect an August account with Seam. This flow varies slightly based on the device manufacturer and region.</p></figcaption></figure>
 
 Confirm that authorization through the Connect Webview was successful by querying its status.
 
@@ -457,7 +457,7 @@ True
 **Code:**
 
 ```bash
-curl -X 'POST' \
+curl -X 'GET' \
   'https://connect.getseam.com/connect_webviews/get' \
   -H 'accept: application/json' \
   -H "Authorization: Bearer ${SEAM_API_KEY}" \
@@ -596,7 +596,7 @@ true
 
 ## Step 3: Retrieve August lock devices
 
-When you link a August account with Seam, we create a `device` object to represent each August lock in your account. You can then retrieve these August devices using the [List Devices](../api-clients/devices/list-devices.md) and [Get Device](../api-clients/devices/get-device.md) endpoints.
+When you link an August account with Seam, we create a `device` object to represent each August lock in your account. You can then retrieve these August devices using the [List Devices](../api-clients/devices/list.md) and [Get Device](../api-clients/devices/get.md) endpoints.
 
 The Seam API exposes each device's properties, such as the door lock status, power status, capabilities, and so on.
 
@@ -742,7 +742,7 @@ true
   },
   can_remotely_unlock: true,
   ...
-}   
+}
 ```
 {% endtab %}
 
@@ -1007,7 +1007,7 @@ Try out the following actions on your August lock:
 
 ### Unlock your lock
 
-To unlock a door, use the [Unlock Door](../api-clients/locks/unlock-a-lock.md) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](../core-concepts/action-attempts.md) to track the progress of the unlock operation.
+To unlock a door, use the [Unlock Door](../api-clients/locks/unlock_door.md) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](../core-concepts/action-attempts.md) to track the progress of the unlock operation.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -1244,7 +1244,7 @@ return nil
 {% endtab %}
 {% endtabs %}
 
-You can track the status of the unlock operation to confirm that the device unlocked successfully. Query the `locked` status of the device, [retrieve the action attempt](../api-clients/action-attempt/get-action-attempt.md) by ID, or look for a [`lock.unlocked` event](../api-clients/events/#event-types).
+You can track the status of the unlock operation to confirm that the device unlocked successfully. Query the `locked` status of the device, [retrieve the action attempt](../api-clients/action_attempts/get.md) by ID, or look for a [`lock.unlocked` event](../api-clients/events/#event-types).
 
 To query the `locked` status of the device:
 
@@ -1299,14 +1299,13 @@ Locked (false): false
 {% tab title="JavaScript" %}
 **Code:**
 
-```javascript
-// Get the device by ID.
+<pre class="language-javascript"><code class="lang-javascript">// Get the device by ID.
 const updatedFrontDoor = await seam.devices.get({device_id: frontDoor.device_id});
 
 // Inspect the locked property to confirm
 // that the unlock operation was successful.
-console.log(updatedFrontDoor.properties.locked) // false
-```
+<strong>console.log(updatedFrontDoor.properties.locked) // false
+</strong></code></pre>
 
 **Output:**
 
@@ -1424,7 +1423,7 @@ false
 {% endtabs %}
 
 {% hint style="success" %}
-Now that you have successfully unlocked your lock, you can use the [Lock Door](../api-clients/locks/lock-a-lock.md) endpoint to lock it again.
+Now that you have successfully unlocked your lock, you can use the [Lock Door](../api-clients/locks/lock_door.md) endpoint to lock it again.
 {% endhint %}
 
 ***
@@ -1879,7 +1878,7 @@ if *updatedFrontDoor.CanProgramOnlineAccessCodes {
     },
   )
   fmt.Println(accessCodes)
-  
+
   if err != nil {
       return err
   }

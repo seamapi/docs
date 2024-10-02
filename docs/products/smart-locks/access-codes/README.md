@@ -21,7 +21,7 @@ layout:
 
 ## What Is an Access Code?
 
-An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam [Access Code API](../../../api-clients/access-codes/), you can easily generate access codes on the hundreds of door lock models with which we integrate.
+An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam [Access Code API](../../../api-clients/access\_codes/), you can easily generate access codes on the hundreds of door lock models with which we integrate.
 
 Seam supports programming two types of access codes: [ongoing](./#ongoing-access-codes) and [time-bound](./#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`.
 
@@ -29,7 +29,7 @@ In addition, for certain devices, Seam also supports [offline access codes](./#o
 
 ### **Ongoing Access Codes**
 
-Ongoing access code are ideal for residents or long-term users. Ongoing codes remain active on a device until they are removed. They can start right away or at a later date if you provide a `starts_at` timestamp.
+Ongoing access code are ideal for residents or long-term users. Ongoing codes start right away and remain active on a device until they are removed.
 
 <figure><picture><source srcset="../../../.gitbook/assets/ongoing-access-code-dark.png" media="(prefers-color-scheme: dark)"><img src="../../../.gitbook/assets/ongoing-access-code-light.png" alt="Timeline of an ongoing access code. The code remains active until you ask Seam to remove it."></picture><figcaption><p>Timeline of an ongoing access code. The code remains active until you ask Seam to remove it.</p></figcaption></figure>
 
@@ -59,7 +59,7 @@ For [igloohome locks](../../../device-guides/igloohome-locks.md) and [dormakaba 
 
 Hourly-bound offline access codes are intended for shorter durations, while daily-bound offline codes are intended for longer durations. Device manufacturers set the bounds for these short- and long-term access codes, and some device manufacturers enforce a maximum duration for hourly-bound offline access codes. See the corresponding device guide for more information.
 
-To [create an hourly-bound or generic time-bound offline access code](offline-access-codes.md#program-an-hourly-bound-or-generic-time-bound-offline-access-code), specify the desired `starts_at` and `ends_at` date and time. To [create a daily-bound offline access code](offline-access-codes.md#program-a-daily-bound-offline-access-code), you must specify the same time in the `starts_at` and `ends_at` properties.
+To [create a time-bound offline access code](offline-access-codes.md#creating-time-bound-offline-access-codes), specify the desired `starts_at` and `ends_at` date and time. To [create a daily-bound offline access code](offline-access-codes.md#program-a-daily-bound-offline-access-code), you must specify the same time in the `starts_at` and `ends_at` properties.
 
 #### One-Time-Use Offline Access Codes
 
@@ -95,7 +95,7 @@ For locks that support setting codes with a schedule, Seam will preload access c
 
 ### **Just-in-time Scheduling**
 
-For those locks that lack native scheduling functionality, Seam will use its own scheduling infrastructure to program the code 30 minutes before the `starts_at` time, and remove it at the `ends_at` time.
+For those locks that lack native scheduling functionality, Seam will use its own scheduling infrastructure to program the code 60 minutes before the `starts_at` time, and remove it at the `ends_at` time.
 
 <figure><img src="../../../.gitbook/assets/just-in-time-programming-dark.png" alt=""><figcaption><p>When the <code>starts_at</code> time arrives, Seam adds the code to the device and activates it. It is then automatically deactivated at the <code>ends_at</code> timestamp.</p></figcaption></figure>
 
@@ -122,4 +122,4 @@ Occasionally, Seam may encounter issues when programming codes onto locks. Such 
 
 Seam offers a Backup Access Code service. When activated, this service automatically maintain a pool of pre-programmed access codes on a device. These codes are programmed in addition to the regular access codes on Seam, acting as a safety net in case of any issues with the primary codes. Please read about [how to enable and request a back up code here](backup-access-codes.md).
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><p><a href="backup-access-codes.md"><strong>Backup Access Code Pool</strong></a></p><p>Use our backup code pool service to automatically maintain a set of back up codes on your device.</p></td><td></td><td></td><td><a href="../../../.gitbook/assets/spaces_xnN2A67918om1UthYWsF_uploads_6mrS1LVdcoGmXAagf0SI_recycle key.webp">spaces_xnN2A67918om1UthYWsF_uploads_6mrS1LVdcoGmXAagf0SI_recycle key.webp</a></td><td><a href="broken-reference/">broken-reference</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><p><a href="backup-access-codes.md"><strong>Backup Access Code Pool</strong></a></p><p>Use our backup code pool service to automatically maintain a set of back up codes on your device.</p></td><td></td><td></td><td><a href="../../../.gitbook/assets/spaces_xnN2A67918om1UthYWsF_uploads_6mrS1LVdcoGmXAagf0SI_recycle key.webp">spaces_xnN2A67918om1UthYWsF_uploads_6mrS1LVdcoGmXAagf0SI_recycle key.webp</a></td><td><a href="backup-access-codes.md">backup-access-codes.md</a></td></tr></tbody></table>

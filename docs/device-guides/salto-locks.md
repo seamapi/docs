@@ -22,14 +22,14 @@ This integration works any devices connected via their [SaltoKS platform](https:
 
 We support the following features:
 
-* [Triggering web unlock actions](../api-clients/locks/unlock-a-lock.md)
+* [Triggering web unlock actions](../api-clients/locks/unlock_door.md)
 * [Programming access codes](../products/smart-locks/access-codes/) on door locks and card readers that have a PIN pad
 
 ***
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their Salto devices to Seam, include the `salto` [device provider key](../api-clients/connect-webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their Salto devices to Seam, include the `salto` [device provider key](../api-clients/connect_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 

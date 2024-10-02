@@ -4,7 +4,7 @@ description: Guide for using Tedee locks with Seam
 
 # Tedee Locks
 
-<figure><picture><source srcset="../../.gitbook/assets/tedee-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/tedee-manufacturer-page-cover-light.png" alt="Use Tedee locks with Seam."></picture><figcaption><p>Connect and control any Tedee device using the Seam API</p></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/tedee-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/tedee-manufacturer-page-cover-light.png" alt="Connect and control any Tedee device using the Seam API."></picture><figcaption><p>Connect and control any Tedee device using the Seam API.</p></figcaption></figure>
 
 ## Overview
 
@@ -35,7 +35,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables your users to connect their Tedee devices to Seam, include the `tedee` [device provider key](../../api-clients/connect-webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables your users to connect their Tedee devices to Seam, include the `tedee` [device provider key](../../api-clients/connect_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
