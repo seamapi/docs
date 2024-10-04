@@ -6,7 +6,13 @@ import metadata from '@metalsmith/metadata'
 import { deleteAsync } from 'del'
 import Metalsmith from 'metalsmith'
 
-import { blueprint, helpers, postprocess, reference } from './lib/index.js'
+import {
+  blueprint,
+  helpers,
+  postprocess,
+  reference,
+  report,
+} from './lib/index.js'
 
 const rootDir = dirname(fileURLToPath(import.meta.url))
 
@@ -23,9 +29,11 @@ Metalsmith(rootDir)
   )
   .use(blueprint)
   .use(reference)
+  .use(report)
   .use(
     layouts({
       default: 'default.hbs',
+      pattern: '**/*.md',
       engineOptions: {
         noEscape: true,
         helpers,
