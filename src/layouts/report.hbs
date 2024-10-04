@@ -1,0 +1,122 @@
+# Reference Documentation Report
+
+## Undocumented
+
+These items are intentionally undocumented.
+
+### Resource properties
+
+{{#each undocumented.resourceProperties}}
+- `{{name}}`: {{reason}}
+{{/each}}
+
+### Endpoints
+
+{{#each undocumented.endpoints}}
+- `{{path}}`: {{reason}}
+{{/each}}
+
+### Endpoint parameters
+
+{{#each undocumented.parameters}}
+- `{{path}}`
+    {{#each params}}
+    - `{{name}}`: {{reason}}
+    {{/each}}
+{{/each}}
+
+## No Description
+
+These items have an empty description.
+Items that are intentionally undocumented are not included in this section.
+
+### Resources
+
+{{#each noDescription.resources}}
+- `{{this}}`
+{{/each}}
+
+### Resource properties
+
+{{#each noDescription.properties}}
+- `{{this}}`
+{{/each}}
+
+### Endpoints
+
+{{#each noDescription.endpoints}}
+- `{{this}}`
+{{/each}}
+
+### Endpoint parameters
+
+{{#each noDescription.parameters}}
+- `{{path}}`
+    {{#each params}}
+    - `{{name}}`
+    {{/each}}
+{{/each}}
+
+## Draft
+
+These items have been marked as draft.
+
+### Resources
+
+{{#each draft.resources}}
+- `{{this}}`
+{{/each}}
+
+### Resource properties
+
+{{#each draft.properties}}
+- `{{this}}`
+{{/each}}
+
+### Endpoints
+
+{{#each draft.endpoints}}
+- `{{this}}`
+{{/each}}
+
+### Endpoint parameters
+
+{{#each draft.parameters}}
+- `{{path}}`
+    {{#each params}}
+    - `{{this}}`
+    {{/each}}
+{{/each}}
+
+## Missing `return_type`
+
+These routes are missing a `return_type` and should be fixed.
+
+{{#each missingReturnType}}
+- `{{this}}`
+{{/each}}
+
+## Deprecated
+
+These items are deprecated.
+
+### Resource properties
+
+{{#each deprecated.resourceProperties}}
+- `{{name}}`: {{reason}}
+{{/each}}
+
+### Endpoints
+
+{{#each deprecated.endpoints}}
+- `{{name}}`: {{reason}}
+{{/each}}
+
+### Endpoint parameters
+
+{{#each deprecated.parameters}}
+- `{{path}}`
+    {{#each params}}
+    - `{{name}}`: {{reason}}
+    {{/each}}
+{{/each}}
