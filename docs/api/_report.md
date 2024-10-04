@@ -11,11 +11,11 @@ These items are intentionally undocumented.
 
 ### Endpoints
 
-- ``: Intentionally undocumented
-- ``: Intentionally undocumented
-- ``: Intentionally undocumented
-- ``: Intentionally undocumented
-- ``: Intentionally undocumented
+- `/acs/encoders/encode_card`: Intentionally undocumented
+- `/acs/encoders/read_card`: Intentionally undocumented
+- `/acs/users/unmanaged`: Intentionally undocumented
+- `/acs/users/unmanaged/get`: Intentionally undocumented
+- `/acs/users/unmanaged/list`: Intentionally undocumented
 
 ### Endpoint parameters
 
@@ -27,70 +27,70 @@ Items that are intentionally undocumented are not included in this section.
 
 ### Resources
 
-- `acs_access_group`
-- `acs_credential`
-- `acs_credential_pool`
-- `acs_credential_provisioning_automation`
-- `acs_entrance`
-- `acs_user`
-- `event`
-- `thermostat_schedule`
+- ``
+- ``
+- ``
+- ``
+- ``
+- ``
+- ``
+- ``
 
 ### Resource properties
 
 
 ### Endpoints
 
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
-- `[object Object]`
+- `/acs/access_groups/add_user`
+- `/acs/access_groups/add_user`
+- `/acs/access_groups/get`
+- `/acs/access_groups/list`
+- `/acs/access_groups/list_accessible_entrances`
+- `/acs/access_groups/list_users`
+- `/acs/access_groups/remove_user`
+- `/acs/access_groups/unmanaged/get`
+- `/acs/access_groups/unmanaged/list`
+- `/acs/credential_pools/list`
+- `/acs/credential_provisioning_automations/launch`
+- `/acs/credentials/assign`
+- `/acs/credentials/assign`
+- `/acs/credentials/create`
+- `/acs/credentials/delete`
+- `/acs/credentials/get`
+- `/acs/credentials/list`
+- `/acs/credentials/list_accessible_entrances`
+- `/acs/credentials/unassign`
+- `/acs/credentials/unassign`
+- `/acs/credentials/update`
+- `/acs/credentials/update`
+- `/acs/credentials/unmanaged/get`
+- `/acs/credentials/unmanaged/list`
+- `/acs/encoders/list`
+- `/acs/entrances/get`
+- `/acs/entrances/grant_access`
+- `/acs/entrances/list`
+- `/acs/entrances/list_credentials_with_access`
+- `/events/get`
+- `/events/list`
+- `/thermostats/activate_climate_preset`
+- `/thermostats/cool`
+- `/thermostats/create_climate_preset`
+- `/thermostats/delete_climate_preset`
+- `/thermostats/get`
+- `/thermostats/heat`
+- `/thermostats/heat_cool`
+- `/thermostats/list`
+- `/thermostats/off`
+- `/thermostats/set_fallback_climate_preset`
+- `/thermostats/set_fan_mode`
+- `/thermostats/update_climate_preset`
+- `/thermostats/update_climate_preset`
+- `/thermostats/schedules/create`
+- `/thermostats/schedules/delete`
+- `/thermostats/schedules/get`
+- `/thermostats/schedules/list`
+- `/thermostats/schedules/update`
+- `/thermostats/schedules/update`
 
 ### Endpoint parameters
 
