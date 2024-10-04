@@ -65,14 +65,14 @@ function generateReport(metadata: Metadata): Report {
     deprecated: createEmptyReportSection(),
   }
 
-  const resources = metadata.resources ?? {};
+  const resources = metadata.resources ?? {}
   for (const [resourceName, resource] of Object.entries(resources)) {
-    processResource(resourceName, resource, report);
+    processResource(resourceName, resource, report)
   }
 
-  const routes = metadata.routes ?? [];
+  const routes = metadata.routes ?? []
   for (const route of routes) {
-    processRoute(route, report);
+    processRoute(route, report)
   }
 
   return report
@@ -96,7 +96,7 @@ function processResource(
   }
 
   for (const property of resource.properties) {
-    processProperty(resourceName, property, report);
+    processProperty(resourceName, property, report)
   }
 }
 
@@ -141,7 +141,7 @@ function processRoute(route: Route, report: Report): void {
   }
 
   for (const endpoint of route.endpoints) {
-    processEndpoint(endpoint, report);
+    processEndpoint(endpoint, report)
   }
 }
 
