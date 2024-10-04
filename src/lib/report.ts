@@ -29,9 +29,7 @@ interface ReportSection {
 interface Report {
   undocumented: ReportSection
   noDescription: ReportSection & { resources: string[] }
-  draft: Omit<ReportSection, 'resourceProperties'> & {
-    resourceProperties: string[]
-  }
+  draft: ReportSection
   missingReturnType: string[]
   deprecated: ReportSection
 }
