@@ -30,7 +30,6 @@ interface Report {
   undocumented: ReportSection
   noDescription: ReportSection & { resources: string[] }
   draft: ReportSection
-  missingReturnType: string[]
   deprecated: ReportSection
 }
 
@@ -59,7 +58,6 @@ function generateReport(metadata: Metadata): Report {
     undocumented: createEmptyReportSection(),
     noDescription: { ...createEmptyReportSection(), resources: [] },
     draft: { ...createEmptyReportSection(), resourceProperties: [] },
-    missingReturnType: [],
     deprecated: createEmptyReportSection(),
   }
 
@@ -160,12 +158,6 @@ function processEndpoint(endpoint: Endpoint, report: Report): void {
       name: endpoint.path,
       reason: endpoint.deprecationMessage ?? 'No reason provided',
     })
-  }
-  if (
-    'responseType' in endpoint.response &&
-    endpoint.response.responseType == null
-  ) {
-    report.missingReturnType.push(endpoint.path)
   }
 
   processParameters(endpoint.path, endpoint.request.parameters, report)
