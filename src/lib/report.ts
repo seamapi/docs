@@ -15,6 +15,8 @@ interface ReportItem {
   reason?: string
 }
 
+const defaultReason = 'No reason provided'
+
 interface ParameterReportItem {
   path: string
   params: ReportItem[]
@@ -90,6 +92,7 @@ function processResource(
   if (resource.description == null || resource.description.trim() === '') {
     report.noDescription.resources.push(resourceName)
   }
+  // TODO: draft, deprecated, undocumented when supported
 
   for (const property of resource.properties) {
     processProperty(resourceName, property, report)
@@ -102,39 +105,44 @@ function processProperty(
   report: Report,
 ): void {
   const propertyName = `${resourceName}.${property.name}`
+
   if (property.isUndocumented) {
     report.undocumented.resourceProperties.push({
       name: propertyName,
-      reason: 'Intentionally undocumented',
+      reason: 'Intentionally undocumented', // TODO: undocumentedMessage
     })
-  } else if (
-    property.description == null ||
-    property.description.trim() === ''
-  ) {
+  }
+
+  if (property.description == null || property.description.trim() === '') {
     report.noDescription.resourceProperties.push({ name: propertyName })
   }
+
   if (property.isDeprecated) {
     report.deprecated.resourceProperties.push({
       name: propertyName,
-      reason: property.deprecationMessage ?? 'No reason provided',
+      reason: property.deprecationMessage ?? defaultReason,
     })
   }
+
+  // TODO: draft
 }
 
 function processRoute(route: Route, report: Report): void {
   if (route.isUndocumented) {
     report.undocumented.endpoints.push({
       name: route.path,
-      reason: 'Intentionally undocumented',
+      reason: 'Intentionally undocumented', // TODO: undocumentedMessage
     })
   }
 
   if (route.isDeprecated) {
     report.deprecated.endpoints.push({
       name: route.path,
-      reason: 'No reason provided',
+      reason: defaultReason, // TODO: deprecationMessage
     })
   }
+
+  // TODO: draft, description
 
   for (const endpoint of route.endpoints) {
     processEndpoint(endpoint, report)
@@ -145,20 +153,22 @@ function processEndpoint(endpoint: Endpoint, report: Report): void {
   if (endpoint.isUndocumented) {
     report.undocumented.endpoints.push({
       name: endpoint.path,
-      reason: 'Intentionally undocumented',
+      reason: 'Intentionally undocumented', // TODO: undocumentedMessage
     })
-  } else if (
-    endpoint.description == null ||
-    endpoint.description.trim() === ''
-  ) {
+  }
+
+  if (endpoint.description == null || endpoint.description.trim() === '') {
     report.noDescription.endpoints.push({ name: endpoint.path })
   }
+
   if (endpoint.isDeprecated) {
     report.deprecated.endpoints.push({
       name: endpoint.path,
-      reason: endpoint.deprecationMessage ?? 'No reason provided',
+      reason: endpoint.deprecationMessage ?? defaultReason,
     })
   }
+
+  // TODO: draft
 
   processParameters(endpoint.path, endpoint.request.parameters, report)
 }
@@ -173,17 +183,23 @@ function processParameters(
       if (param.isUndocumented) {
         acc.undocumented.push({
           name: param.name,
-          reason: 'Intentionally undocumented',
+          reason: 'Intentionally undocumented', // TODO: undocumentedMessage
         })
-      } else if (param.description == null || param.description.trim() === '') {
+      }
+
+      if (param.description == null || param.description.trim() === '') {
         acc.noDescription.push(param.name)
       }
+
       if (param.isDeprecated) {
         acc.deprecated.push({
           name: param.name,
-          reason: param.deprecationMessage ?? 'No reason provided',
+          reason: param.deprecationMessage ?? defaultReason,
         })
       }
+
+      // TODO: draft
+
       return acc
     },
     {
