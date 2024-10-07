@@ -1,4 +1,5 @@
 # Reference Documentation Report
+{{#if (or undocumented.resourceProperties.length undocumented.endpoints.length undocumented.parameters.length)}}
 
 ## Undocumented
 
@@ -24,6 +25,8 @@ These items are intentionally undocumented.
     - `{{name}}`: {{reason}}
     {{/each}}
 {{/each}}
+{{/if}}
+{{#if (or noDescription.resources.length noDescription.properties.length noDescription.endpoints.length noDescription.parameters.length)}}
 
 ## No Description
 
@@ -56,6 +59,8 @@ Items that are intentionally undocumented are not included in this section.
     - `{{name}}`
     {{/each}}
 {{/each}}
+{{/if}}
+{{#if (or draft.resources.length draft.properties.length draft.endpoints.length draft.parameters.length)}}
 
 ## Draft
 
@@ -87,6 +92,8 @@ These items have been marked as draft.
     - `{{name}}`
     {{/each}}
 {{/each}}
+{{/if}}
+{{#if (or deprecated.resourceProperties.length deprecated.endpoints.length deprecated.parameters.length)}}
 
 ## Deprecated
 
@@ -112,3 +119,4 @@ These items are deprecated.
     - `{{name}}`: {{reason}}
     {{/each}}
 {{/each}}
+{{/if}}

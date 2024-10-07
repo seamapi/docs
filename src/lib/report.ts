@@ -30,7 +30,7 @@ interface ReportSection {
 
 interface Report {
   undocumented: ReportSection
-  noDescription: ReportSection & { resources: string[] }
+  noDescription: ReportSection & { resources: ReportItem[] }
   draft: ReportSection
   deprecated: ReportSection
 }
@@ -90,7 +90,7 @@ function processResource(
   report: Report,
 ): void {
   if (resource.description == null || resource.description.trim() === '') {
-    report.noDescription.resources.push(resourceName)
+    report.noDescription.resources.push({ name: resourceName })
   }
   // TODO: draft, deprecated, undocumented when supported
 
