@@ -4,18 +4,23 @@
 ## Undocumented
 
 These items are intentionally undocumented.
+{{#if undocumented.resourceProperties.length }}
 
 ### Resource properties
 
 {{#each undocumented.resourceProperties}}
 - `{{name}}`: {{reason}}
 {{/each}}
+{{/if}}
+{{#if undocumented.endpoints.length }}
 
 ### Endpoints
 
 {{#each undocumented.endpoints}}
 - `{{name}}`: {{reason}}
 {{/each}}
+{{/if}}
+{{#if undocumented.parameters.length }}
 
 ### Endpoint parameters
 
@@ -26,30 +31,38 @@ These items are intentionally undocumented.
     {{/each}}
 {{/each}}
 {{/if}}
+{{/if}}
 {{#if (or noDescription.resources.length noDescription.properties.length noDescription.endpoints.length noDescription.parameters.length)}}
 
 ## No Description
 
 These items have an empty description.
 Items that are intentionally undocumented are not included in this section.
+{{#if noDescription.resources.length }}
 
 ### Resources
 
 {{#each noDescription.resources}}
 - `{{name}}`
 {{/each}}
+{{/if}}
+{{#if noDescription.properties.length }}
 
 ### Resource properties
 
 {{#each noDescription.properties}}
 - `{{name}}`
 {{/each}}
+{{/if}}
+{{#if noDescription.endpoints.length }}
 
 ### Endpoints
 
 {{#each noDescription.endpoints}}
 - `{{name}}`
 {{/each}}
+{{/if}}
+{{#if noDescription.parameters.length }}
 
 ### Endpoint parameters
 
@@ -60,29 +73,37 @@ Items that are intentionally undocumented are not included in this section.
     {{/each}}
 {{/each}}
 {{/if}}
+{{/if}}
 {{#if (or draft.resources.length draft.properties.length draft.endpoints.length draft.parameters.length)}}
 
 ## Draft
 
 These items have been marked as draft.
+{{#if draft.resources.length }}
 
 ### Resources
 
 {{#each draft.resources}}
 - `{{name}}`
 {{/each}}
+{{/if}}
+{{#if draft.properties.length }}
 
 ### Resource properties
 
 {{#each draft.properties}}
 - `{{name}}`
 {{/each}}
+{{/if}}
+{{#if draft.endpoints.length }}
 
 ### Endpoints
 
 {{#each draft.endpoints}}
 - `{{name}}`
 {{/each}}
+{{/if}}
+{{#if draft.parameters.length }}
 
 ### Endpoint parameters
 
@@ -93,23 +114,29 @@ These items have been marked as draft.
     {{/each}}
 {{/each}}
 {{/if}}
+{{/if}}
 {{#if (or deprecated.resourceProperties.length deprecated.endpoints.length deprecated.parameters.length)}}
 
 ## Deprecated
 
 These items are deprecated.
+{{#if deprecated.resourceProperties.length }}
 
 ### Resource properties
 
 {{#each deprecated.resourceProperties}}
 - `{{name}}`: {{reason}}
 {{/each}}
+{{/if}}
+{{#if deprecated.endpoints.length }}
 
 ### Endpoints
 
 {{#each deprecated.endpoints}}
 - `{{name}}`: {{reason}}
 {{/each}}
+{{/if}}
+{{#if deprecated.parameters.length }}
 
 ### Endpoint parameters
 
@@ -119,4 +146,5 @@ These items are deprecated.
     - `{{name}}`: {{reason}}
     {{/each}}
 {{/each}}
+{{/if}}
 {{/if}}
