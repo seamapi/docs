@@ -336,11 +336,6 @@ These items have been marked as draft.
 ### Endpoint parameters
 
 
-## Missing `return_type`
-
-These routes are missing a `return_type` and should be fixed.
-
-
 ## Deprecated
 
 These items are deprecated.
