@@ -27,14 +27,14 @@ Items that are intentionally undocumented are not included in this section.
 
 ### Resources
 
-- ``
-- ``
-- ``
-- ``
-- ``
-- ``
-- ``
-- ``
+- `acs_access_group`
+- `acs_credential`
+- `acs_credential_pool`
+- `acs_credential_provisioning_automation`
+- `acs_entrance`
+- `acs_user`
+- `event`
+- `thermostat_schedule`
 
 ### Resource properties
 
@@ -323,22 +323,6 @@ Items that are intentionally undocumented are not included in this section.
     - `name`
     - `starts_at`
     - `thermostat_schedule_id`
-
-## Draft
-
-These items have been marked as draft.
-
-### Resources
-
-
-### Resource properties
-
-
-### Endpoints
-
-
-### Endpoint parameters
-
 
 ## Deprecated
 
