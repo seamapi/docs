@@ -65,11 +65,15 @@ Items that are intentionally undocumented are not included in this section.
 - `/acs/credentials/update`
 - `/acs/credentials/unmanaged/get`
 - `/acs/credentials/unmanaged/list`
+- `/acs/encoders/encode_card`
 - `/acs/encoders/list`
+- `/acs/encoders/read_card`
 - `/acs/entrances/get`
 - `/acs/entrances/grant_access`
 - `/acs/entrances/list`
 - `/acs/entrances/list_credentials_with_access`
+- `/acs/users/unmanaged/get`
+- `/acs/users/unmanaged/list`
 - `/events/get`
 - `/events/list`
 - `/thermostats/activate_climate_preset`
