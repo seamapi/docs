@@ -17,9 +17,6 @@ These items are intentionally undocumented.
 - `/acs/users/unmanaged/get`: Intentionally undocumented
 - `/acs/users/unmanaged/list`: Intentionally undocumented
 
-### Endpoint parameters
-
-
 ## No Description
 
 These items have an empty description.
@@ -35,9 +32,6 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_user`
 - `event`
 - `thermostat_schedule`
-
-### Resource properties
-
 
 ### Endpoints
 
@@ -335,9 +329,6 @@ These items are deprecated.
 - `acs_system.system_type`: Use `external_type`.
 - `acs_system.system_type_display_name`: Use `external_type_display_name`.
 - `acs_user.email`: use email_address.
-
-### Endpoints
-
 
 ### Endpoint parameters
 
