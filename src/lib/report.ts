@@ -15,7 +15,9 @@ interface ReportItem {
   reason?: string
 }
 
-const defaultReason = 'No reason provided'
+const defaultDeprecatedMessage = 'No deprecated message provided'
+const defaultDraftMessage = 'No draft message provided'
+const defaultUndocumentedMessage = 'No undocumented message provided'
 
 interface ParameterReportItem {
   path: string
@@ -109,7 +111,7 @@ function processProperty(
   if (property.isUndocumented) {
     report.undocumented.resourceProperties.push({
       name: propertyName,
-      reason: 'Intentionally undocumented', // TODO: undocumentedMessage
+      reason: defaultUndocumentedMessage, // TODO: undocumentedMessage
     })
   }
 
@@ -120,29 +122,41 @@ function processProperty(
   if (property.isDeprecated) {
     report.deprecated.resourceProperties.push({
       name: propertyName,
-      reason: property.deprecationMessage ?? defaultReason,
+      reason: property.deprecationMessage ?? defaultDeprecatedMessage,
     })
   }
 
-  // TODO: draft
+  if (property.isDraft) {
+    report.draft.resourceProperties.push({
+      name: propertyName,
+      reason: defaultDraftMessage, // TODO: draftMessage
+    })
+  }
 }
 
 function processRoute(route: Route, report: Report): void {
   if (route.isUndocumented) {
     report.undocumented.endpoints.push({
       name: route.path,
-      reason: 'Intentionally undocumented', // TODO: undocumentedMessage
+      reason: defaultUndocumentedMessage, // TODO: undocumentedMessage
     })
   }
 
   if (route.isDeprecated) {
     report.deprecated.endpoints.push({
       name: route.path,
-      reason: defaultReason, // TODO: deprecationMessage
+      reason: defaultDeprecatedMessage, // TODO: deprecationMessage
     })
   }
 
-  // TODO: draft, description
+  if (route.isDraft) {
+    report.draft.endpoints.push({
+      name: route.path,
+      reason: defaultDraftMessage, // TODO: draftMessage
+    })
+  }
+
+  // TODO: description
 
   for (const endpoint of route.endpoints) {
     processEndpoint(endpoint, report)
@@ -153,7 +167,7 @@ function processEndpoint(endpoint: Endpoint, report: Report): void {
   if (endpoint.isUndocumented) {
     report.undocumented.endpoints.push({
       name: endpoint.path,
-      reason: 'Intentionally undocumented', // TODO: undocumentedMessage
+      reason: defaultUndocumentedMessage, // TODO: undocumentedMessage
     })
   }
 
@@ -164,11 +178,16 @@ function processEndpoint(endpoint: Endpoint, report: Report): void {
   if (endpoint.isDeprecated) {
     report.deprecated.endpoints.push({
       name: endpoint.path,
-      reason: endpoint.deprecationMessage ?? defaultReason,
+      reason: endpoint.deprecationMessage ?? defaultDeprecatedMessage,
     })
   }
 
-  // TODO: draft
+  if (endpoint.isDraft) {
+    report.draft.endpoints.push({
+      name: endpoint.path,
+      reason: defaultDraftMessage, // TODO: draftMessage
+    })
+  }
 
   processParameters(endpoint.path, endpoint.request.parameters, report)
 }
@@ -183,7 +202,7 @@ function processParameters(
       if (param.isUndocumented) {
         acc.undocumented.push({
           name: param.name,
-          reason: 'Intentionally undocumented', // TODO: undocumentedMessage
+          reason: defaultUndocumentedMessage, // TODO: undocumentedMessage
         })
       }
 
@@ -194,11 +213,16 @@ function processParameters(
       if (param.isDeprecated) {
         acc.deprecated.push({
           name: param.name,
-          reason: param.deprecationMessage ?? defaultReason,
+          reason: param.deprecationMessage ?? defaultDeprecatedMessage,
         })
       }
 
-      // TODO: draft
+      if (param.isDraft) {
+        acc.draft.push({
+          name: param.name,
+          reason: defaultDraftMessage, // TODO: draftMessage
+        })
+      }
 
       return acc
     },
@@ -206,6 +230,7 @@ function processParameters(
       undocumented: [] as ReportItem[],
       noDescription: [] as string[],
       deprecated: [] as ReportItem[],
+      draft: [] as ReportItem[],
     },
   )
 
@@ -225,6 +250,12 @@ function processParameters(
     report.deprecated.parameters.push({
       path,
       params: categorizedParams.deprecated,
+    })
+  }
+  if (categorizedParams.draft.length > 0) {
+    report.draft.parameters.push({
+      path,
+      params: categorizedParams.draft,
     })
   }
 }
