@@ -207,7 +207,7 @@ function processParameters(
       }
 
       if (param.description == null || param.description.trim() === '') {
-        acc.noDescription.push(param.name)
+        acc.noDescription.push({ name: param.name })
       }
 
       if (param.isDeprecated) {
@@ -228,7 +228,7 @@ function processParameters(
     },
     {
       undocumented: [] as ReportItem[],
-      noDescription: [] as string[],
+      noDescription: [] as ReportItem[],
       deprecated: [] as ReportItem[],
       draft: [] as ReportItem[],
     },
@@ -243,7 +243,7 @@ function processParameters(
   if (categorizedParams.noDescription.length > 0) {
     report.noDescription.parameters.push({
       path,
-      params: categorizedParams.noDescription.map((name) => ({ name })),
+      params: categorizedParams.noDescription,
     })
   }
   if (categorizedParams.deprecated.length > 0) {
