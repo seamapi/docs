@@ -72,7 +72,7 @@ const formatGo = async (content: string): Promise<string> => {
     console.warn('Skipping go formatting: gofmt is not installed')
     return content
   }
-  const result = await execa({ input: content })`ruff format -`
+  const result = await execa({ input: content })`gofmt`
   return result.stdout
 }
 
