@@ -100,7 +100,7 @@ These items have been marked as draft.
 ### Resources
 
 {{#each draft.resources}}
-- `{{name}}`
+- `{{name}}`: {{reason}}
 {{/each}}
 {{/if}}
 {{#if draft.properties.length }}
@@ -108,7 +108,7 @@ These items have been marked as draft.
 ### Resource properties
 
 {{#each draft.properties}}
-- `{{name}}`
+- `{{name}}`: {{reason}}
 {{/each}}
 {{/if}}
 {{#if draft.namespaces.length }}
@@ -116,7 +116,7 @@ These items have been marked as draft.
 ### Namespaces
 
 {{#each draft.namespaces}}
-- `{{name}}`
+- `{{name}}`: {{reason}}
 {{/each}}
 {{/if}}
 {{#if draft.endpoints.length }}
@@ -124,7 +124,7 @@ These items have been marked as draft.
 ### Endpoints
 
 {{#each draft.endpoints}}
-- `{{name}}`
+- `{{name}}`: {{reason}}
 {{/each}}
 {{/if}}
 {{#if draft.parameters.length }}
@@ -134,7 +134,7 @@ These items have been marked as draft.
 {{#each draft.parameters}}
 - `{{path}}`
     {{#each params}}
-    - `{{name}}`
+    - `{{name}}`: {{reason}}
     {{/each}}
 {{/each}}
 {{/if}}
