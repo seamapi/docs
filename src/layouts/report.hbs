@@ -239,3 +239,11 @@ These items are deprecated.
     {{/each}}
 {{/each}}
 {{/if}}
+{{#if endpointsWithoutCodeSamples.length }}
+
+### Endpoints without code samples
+
+{{#each endpointsWithoutCodeSamples}}
+- `{{this}}`
+{{/each}}
+{{/if}}

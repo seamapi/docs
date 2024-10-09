@@ -20,6 +20,7 @@ interface Report {
   draft: ReportSection
   deprecated: ReportSection
   extraResponseKeys: MissingResponseKeyReport[]
+  endpointsWithoutCodeSamples: string[]
 }
 
 interface ReportSection {
@@ -74,6 +75,7 @@ function generateReport(metadata: Metadata): Report {
     draft: { ...createEmptyReportSection(), resourceProperties: [] },
     deprecated: createEmptyReportSection(),
     extraResponseKeys: [],
+    endpointsWithoutCodeSamples: [],
   }
 
   const resources = metadata.resources ?? {}
@@ -244,6 +246,10 @@ function processEndpoint(endpoint: Endpoint, report: Report): void {
       name: endpoint.path,
       reason: endpoint.draftMessage ?? defaultDraftMessage,
     })
+  }
+
+  if (endpoint.codeSamples.length === 0) {
+    report.endpointsWithoutCodeSamples.push(endpoint.path)
   }
 
   processResponseKeys(endpoint, report)
