@@ -4,6 +4,11 @@
 
 These items are intentionally undocumented.
 
+### Routes
+
+- `/acs/encoders`: No undocumented message provided
+- `/acs/users/unmanaged`: No undocumented message provided
+
 ### Resource properties
 
 - `acs_user.is_latest_desired_state_synced_with_provider`: Only used internally.
@@ -11,11 +16,9 @@ These items are intentionally undocumented.
 
 ### Endpoints
 
-- `/acs/encoders`: No undocumented message provided
 - `/acs/encoders/encode_card`: Encoding a card is currently unimplemented.
 - `/acs/encoders/list`: Encoders are in alpha.
 - `/acs/encoders/read_card`: Reading a card is currently unimplemented.
-- `/acs/users/unmanaged`: No undocumented message provided
 - `/acs/users/unmanaged/get`: No unmanaged users are currently implemented.
 - `/acs/users/unmanaged/list`: No unmanaged users are currently implemented.
 
