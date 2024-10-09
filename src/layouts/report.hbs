@@ -1,9 +1,25 @@
 # Documentation Report
-{{#if (or undocumented.resourceProperties.length undocumented.endpoints.length undocumented.parameters.length undocumented.namespaces.length)}}
+{{#if (or undocumented.routes.length undocumented.resources.length undocumented.resourceProperties.length undocumented.namespaces.length undocumented.endpoints.length undocumented.parameters.length)}}
 
 ## Undocumented
 
 These items are intentionally undocumented.
+{{#if undocumented.routes.length }}
+
+### Routes
+
+{{#each undocumented.routes}}
+- `{{name}}`: {{reason}}
+{{/each}}
+{{/if}}
+{{#if undocumented.resources.length }}
+
+### Resources
+
+{{#each undocumented.resources}}
+- `{{name}}`: {{reason}}
+{{/each}}
+{{/if}}
 {{#if undocumented.resourceProperties.length }}
 
 ### Resource properties
@@ -40,12 +56,20 @@ These items are intentionally undocumented.
 {{/each}}
 {{/if}}
 {{/if}}
-{{#if (or noDescription.resources.length noDescription.resourceProperties.length noDescription.endpoints.length noDescription.parameters.length noDescription.namespaces.length)}}
+{{#if (or noDescription.routes.length noDescription.resources.length noDescription.resourceProperties.length noDescription.namespaces.length noDescription.endpoints.length noDescription.parameters.length)}}
 
 ## No Description
 
 These items have an empty description.
 Items that are intentionally undocumented are not included in this section.
+{{#if noDescription.routes.length }}
+
+### Routes
+
+{{#each noDescription.routes}}
+- `{{name}}`
+{{/each}}
+{{/if}}
 {{#if noDescription.resources.length }}
 
 ### Resources
@@ -90,11 +114,19 @@ Items that are intentionally undocumented are not included in this section.
 {{/each}}
 {{/if}}
 {{/if}}
-{{#if (or draft.resources.length draft.resourceProperties.length draft.endpoints.length draft.parameters.length draft.namespaces.length)}}
+{{#if (or draft.routes.length draft.resources.length draft.resourceProperties.length draft.namespaces.length draft.endpoints.length draft.parameters.length)}}
 
 ## Draft
 
 These items have been marked as draft.
+{{#if draft.routes.length }}
+
+### Routes
+
+{{#each draft.routes}}
+- `{{name}}`: {{reason}}
+{{/each}}
+{{/if}}
 {{#if draft.resources.length }}
 
 ### Resources
@@ -139,11 +171,27 @@ These items have been marked as draft.
 {{/each}}
 {{/if}}
 {{/if}}
-{{#if (or deprecated.resourceProperties.length deprecated.endpoints.length deprecated.parameters.length deprecated.namespaces.length)}}
+{{#if (or deprecated.routes.length deprecated.resources.length deprecated.resourceProperties.length deprecated.namespaces.length deprecated.endpoints.length deprecated.parameters.length)}}
 
 ## Deprecated
 
 These items are deprecated.
+{{#if deprecated.routes.length }}
+
+### Routes
+
+{{#each deprecated.routes}}
+- `{{name}}`: {{reason}}
+{{/each}}
+{{/if}}
+{{#if deprecated.resources.length }}
+
+### Resources
+
+{{#each deprecated.resources}}
+- `{{name}}`: {{reason}}
+{{/each}}
+{{/if}}
 {{#if deprecated.resourceProperties.length }}
 
 ### Resource properties
