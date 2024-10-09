@@ -24,6 +24,7 @@ interface Report {
 }
 
 interface ReportSection {
+  routes: ReportItem[]
   resources: ReportItem[]
   resourceProperties: ReportItem[]
   namespaces: ReportItem[]
@@ -98,6 +99,7 @@ function createEmptyReportSection(): ReportSection {
     endpoints: [],
     parameters: [],
     namespaces: [],
+    routes: [],
   }
 }
 
@@ -171,21 +173,21 @@ function processProperty(
 
 function processRoute(route: Route, report: Report): void {
   if (route.isUndocumented) {
-    report.undocumented.endpoints.push({
+    report.undocumented.routes.push({
       name: route.path,
       reason: defaultUndocumentedMessage, // TODO: undocumentedMessage
     })
   }
 
   if (route.isDeprecated) {
-    report.deprecated.endpoints.push({
+    report.deprecated.routes.push({
       name: route.path,
       reason: defaultDeprecatedMessage, // TODO: deprecationMessage
     })
   }
 
   if (route.isDraft) {
-    report.draft.endpoints.push({
+    report.draft.routes.push({
       name: route.path,
       reason: defaultDraftMessage, // TODO: draftMessage
     })
