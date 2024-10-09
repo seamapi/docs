@@ -144,9 +144,7 @@ suspend, uErr := client.Acs.Users.Suspend(
 **Response:**
 
 ```json
-{
-  "ok": true
-}
+void
 ```
 {% endtab %}
 {% endtabs %}
@@ -287,9 +285,7 @@ unsuspend, uErr := client.Acs.Users.Unsuspend(
 **Response:**
 
 ```json
-{
-  "ok": true
-}
+void
 ```
 {% endtab %}
 {% endtabs %}

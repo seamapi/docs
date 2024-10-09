@@ -2,7 +2,7 @@
 description: Learn how to lock and unlock a smart lock, and confirm the action's success.
 ---
 
-# Locking and Unlocking
+# Locking and Unlocking Smart Locks
 
 ## Overview
 
@@ -259,7 +259,7 @@ if  $(jq -r '.device.can_remotely_lock' <<< ${device}); then \
     -H 'Content-Type: application/json' \
     -d "{
       \"device_id\": \"$(jq -r '.device.device_id' <<< ${device})\"
-  }';
+  }";
 fi
 ```
 

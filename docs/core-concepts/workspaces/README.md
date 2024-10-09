@@ -133,11 +133,15 @@ You can trigger test events for some virtual devices. This capability is useful 
 
 {% @supademo/embed demoId="NuhwAWiC1CaeGPRZzDENn" url="https://app.supademo.com/demo/NuhwAWiC1CaeGPRZzDENn" %}
 
+### Testing Your App
+
+To help you test your app against events—like device disconnection or removal—that are difficult to orchestrate in a QA environment using real devices, Seam provides a suite of `simulate` endpoints that you can use in a [sandbox workspace](./#sandbox-workspaces). See [Testing Your App Against Device Disconnection and Removal](../devices/testing-your-app-against-device-disconnection-and-removal.md).
+
 ### Resetting Sandbox Workspaces
 
 Sandbox workspace are unique in that you can reset them to the original starting state. For example, if you need to run complex continuous integration (CI) testing for an app, you can reset the sandbox workspace after each individual test run.
 
-You can reset a sandbox workspace either manually through the [Seam Console](./#reset-a-sandbox-workspace-using-the-seam-console) or programmatically using the [Seam API](./#reset-a-sandbox-workspace-using-the-seam-api). For detailed information about resetting a sandbox workspace through the Seam API, see the [Reset Workspace](../../api-clients/workspaces/reset_sandbox.md) API reference.
+You can reset a sandbox workspace either manually through the [Seam Console](./#reset-a-sandbox-workspace-using-the-seam-console) or programmatically using the [Seam API](./#reset-a-sandbox-workspace-using-the-seam-api). For detailed information about resetting a sandbox workspace through the Seam API, see the [Reset Workspace](../../api-clients/workspaces/reset\_sandbox.md) API reference.
 
 #### Reset a Sandbox Workspace Using the Seam Console
 
@@ -194,4 +198,4 @@ You can add teammates to your workspace.
 
 The Seam Console sends an email invitation to the specified teammate.
 
-{% @supademo/embed demoId="YLZEbSgX5shkgOyFb4LE9" url="https://app.supademo.com/demo/YLZEbSgX5shkgOyFb4LE9" %}
+{% @supademo/embed demoid="YLZEbSgX5shkgOyFb4LE9" url="https://app.supademo.com/demo/YLZEbSgX5shkgOyFb4LE9" %}
