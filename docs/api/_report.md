@@ -434,3 +434,8 @@ These items are deprecated.
     - `email`: use email_address.
 - `/thermostats/set_fan_mode`
     - `fan_mode`: use fan_mode_setting instead.
+
+### Extra response keys
+
+- `/events/get`
+    - `message`
