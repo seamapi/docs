@@ -228,3 +228,14 @@ These items are deprecated.
 {{/each}}
 {{/if}}
 {{/if}}
+{{#if extraResponseKeys.length }}
+
+### Extra response keys
+
+{{#each extraResponseKeys}}
+- `{{path}}`
+    {{#each keys}}
+    - `{{this}}`
+    {{/each}}
+{{/each}}
+{{/if}}

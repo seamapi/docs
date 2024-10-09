@@ -7,22 +7,19 @@ import type {
   Resource,
   Route,
 } from '@seamapi/blueprint'
+import { openapi } from '@seamapi/types/connect'
 import type Metalsmith from 'metalsmith'
-
-type Metadata = Partial<Pick<Blueprint, 'routes' | 'resources'>>
-
-interface ReportItem {
-  name: string
-  reason?: string
-}
 
 const defaultDeprecatedMessage = 'No deprecated message provided'
 const defaultDraftMessage = 'No draft message provided'
 const defaultUndocumentedMessage = 'No undocumented message provided'
 
-interface ParameterReportItem {
-  path: string
-  params: ReportItem[]
+interface Report {
+  undocumented: ReportSection
+  noDescription: ReportSection
+  draft: ReportSection
+  deprecated: ReportSection
+  extraResponseKeys: MissingResponseKeyReport[]
 }
 
 interface ReportSection {
@@ -33,12 +30,22 @@ interface ReportSection {
   parameters: ParameterReportItem[]
 }
 
-interface Report {
-  undocumented: ReportSection
-  noDescription: ReportSection
-  draft: ReportSection
-  deprecated: ReportSection
+interface MissingResponseKeyReport {
+  path: string
+  keys: string[]
 }
+
+interface ReportItem {
+  name: string
+  reason?: string
+}
+
+interface ParameterReportItem {
+  path: string
+  params: ReportItem[]
+}
+
+type Metadata = Partial<Pick<Blueprint, 'routes' | 'resources'>>
 
 export const report = (
   files: Metalsmith.Files,
@@ -66,6 +73,7 @@ function generateReport(metadata: Metadata): Report {
     noDescription: { ...createEmptyReportSection(), resources: [] },
     draft: { ...createEmptyReportSection(), resourceProperties: [] },
     deprecated: createEmptyReportSection(),
+    extraResponseKeys: [],
   }
 
   const resources = metadata.resources ?? {}
@@ -194,9 +202,9 @@ function processRoute(route: Route, report: Report): void {
 
 function processNamespace(namespace: Namespace, report: Report): void {
   const addNamespace = (section: ReportItem[], reason: string): void => {
-    if (!section.some((item) => item.name === namespace.path)) {
-      section.push({ name: namespace.path, reason })
-    }
+    if (section.some((item) => item.name === namespace.path)) return
+
+    section.push({ name: namespace.path, reason })
   }
 
   if (namespace.isDeprecated) {
@@ -238,7 +246,46 @@ function processEndpoint(endpoint: Endpoint, report: Report): void {
     })
   }
 
+  processResponseKeys(endpoint, report)
+
   processParameters(endpoint.path, endpoint.request.parameters, report)
+}
+
+function processResponseKeys(endpoint: Endpoint, report: Report): void {
+  if (!('responseKey' in endpoint.response)) return
+
+  const openapiResponseSchemaProps = getOpenapiResponseProperties(endpoint.path)
+  if (openapiResponseSchemaProps == null) return
+
+  const openapiResponsePropKeys = Object.keys(
+    openapiResponseSchemaProps,
+  ).filter((key) => key !== 'ok')
+  if (openapiResponsePropKeys.length <= 1) return
+
+  const endpointResponseKey = endpoint.response.responseKey
+  const extraResponseKeys = openapiResponsePropKeys.filter(
+    (key) => key !== endpointResponseKey,
+  )
+
+  report.extraResponseKeys.push({
+    path: endpoint.path,
+    keys: extraResponseKeys,
+  })
+}
+
+function getOpenapiResponseProperties(
+  path: string,
+): Record<string, unknown> | undefined {
+  const openapiEndpointDef = openapi.paths[path as keyof typeof openapi.paths]
+
+  if (openapiEndpointDef == null) {
+    // eslint-disable-next-line no-console
+    console.warn(`OpenAPI definition not found for endpoint: ${path}`)
+    return
+  }
+
+  return openapiEndpointDef.post.responses['200']?.content['application/json']
+    ?.schema?.properties
 }
 
 function processParameters(
