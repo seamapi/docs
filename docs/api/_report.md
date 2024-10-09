@@ -1,4 +1,4 @@
-# Reference Documentation Report
+# Documentation Report
 
 ## Undocumented
 
@@ -6,16 +6,18 @@ These items are intentionally undocumented.
 
 ### Resource properties
 
-- `acs_user.is_latest_desired_state_synced_with_provider`: Intentionally undocumented
-- `acs_user.latest_desired_state_synced_with_provider_at`: Intentionally undocumented
+- `acs_user.is_latest_desired_state_synced_with_provider`: No undocumented message provided
+- `acs_user.latest_desired_state_synced_with_provider_at`: No undocumented message provided
 
 ### Endpoints
 
-- `/acs/encoders/encode_card`: Intentionally undocumented
-- `/acs/encoders/read_card`: Intentionally undocumented
-- `/acs/users/unmanaged`: Intentionally undocumented
-- `/acs/users/unmanaged/get`: Intentionally undocumented
-- `/acs/users/unmanaged/list`: Intentionally undocumented
+- `/acs/encoders`: No undocumented message provided
+- `/acs/encoders/encode_card`: No undocumented message provided
+- `/acs/encoders/list`: No undocumented message provided
+- `/acs/encoders/read_card`: No undocumented message provided
+- `/acs/users/unmanaged`: No undocumented message provided
+- `/acs/users/unmanaged/get`: No undocumented message provided
+- `/acs/users/unmanaged/list`: No undocumented message provided
 
 ## No Description
 
