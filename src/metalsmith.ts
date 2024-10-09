@@ -33,7 +33,6 @@ Metalsmith(rootDir)
   .use(
     layouts({
       default: 'default.hbs',
-      pattern: '**/*.md',
       engineOptions: {
         noEscape: true,
         helpers,
