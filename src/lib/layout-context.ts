@@ -1,5 +1,19 @@
-import type { Blueprint, Endpoint, Property, Route } from '@seamapi/blueprint'
+import type {
+  Blueprint,
+  CodeSampleSdk,
+  Endpoint,
+  Property,
+  Route,
+} from '@seamapi/blueprint'
 import { pascalCase } from 'change-case'
+
+const supportedSdks: CodeSampleSdk[] = [
+  'javascript',
+  'python',
+  'php',
+  'ruby',
+  'seam_cli',
+]
 
 export interface EndpointLayoutContext {
   description: string
@@ -71,11 +85,16 @@ export function setEndpointLayoutContext(
     file.response.responseType = responseType
   }
 
-  file.codeSamples = endpoint.codeSamples.map((sample) => ({
-    title: sample.title,
-    description: sample.description,
-    code: sample.code,
-  }))
+  file.codeSamples = endpoint.codeSamples.map((sample) => {
+    const codeEntries = Object.entries(sample.code).filter(([k]) =>
+      supportedSdks.includes(k as CodeSampleSdk),
+    )
+    return {
+      title: sample.title,
+      description: sample.description,
+      code: Object.fromEntries(codeEntries),
+    }
+  })
 }
 
 type ContextResourceProperty = Pick<
