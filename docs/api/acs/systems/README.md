@@ -210,5 +210,5 @@ Returns a specified [access control system](https://docs.seam.co/latest/capabili
 Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems).
 ## [`/acs/systems/list_compatible_credential_manager_acs_systems`](./list_compatible_credential_manager_acs_systems.md)
 
-Returns a list of all credential manager ACS systems that are compatible with a specified 
+Returns a list of all credential manager ACS systems that are compatible with a specified
 [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
