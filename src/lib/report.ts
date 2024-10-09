@@ -25,6 +25,7 @@ interface ParameterReportItem {
 }
 
 interface ReportSection {
+  resources: ReportItem[]
   resourceProperties: ReportItem[]
   endpoints: ReportItem[]
   parameters: ParameterReportItem[]
@@ -80,6 +81,7 @@ function generateReport(metadata: Metadata): Report {
 
 function createEmptyReportSection(): ReportSection {
   return {
+    resources: [],
     resourceProperties: [],
     endpoints: [],
     parameters: [],
@@ -94,7 +96,27 @@ function processResource(
   if (resource.description == null || resource.description.trim() === '') {
     report.noDescription.resources.push({ name: resourceName })
   }
-  // TODO: draft, deprecated, undocumented when supported
+
+  if (resource.isDeprecated) {
+    report.deprecated.resources.push({
+      name: resourceName,
+      reason: resource.deprecationMessage ?? defaultDeprecatedMessage,
+    })
+  }
+
+  if (resource.isUndocumented) {
+    report.undocumented.resources.push({
+      name: resourceName,
+      reason: resource.undocumentedMessage ?? defaultUndocumentedMessage,
+    })
+
+    if (resource.isDraft) {
+      report.draft.resources.push({
+        name: resourceName,
+        reason: resource.draftMessage ?? defaultDraftMessage,
+      })
+    }
+  }
 
   for (const property of resource.properties) {
     processProperty(resourceName, property, report)
