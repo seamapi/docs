@@ -6,18 +6,18 @@ These items are intentionally undocumented.
 
 ### Resource properties
 
-- `acs_user.is_latest_desired_state_synced_with_provider`: No undocumented message provided
-- `acs_user.latest_desired_state_synced_with_provider_at`: No undocumented message provided
+- `acs_user.is_latest_desired_state_synced_with_provider`: Only used internally.
+- `acs_user.latest_desired_state_synced_with_provider_at`: Only used internally.
 
 ### Endpoints
 
 - `/acs/encoders`: No undocumented message provided
-- `/acs/encoders/encode_card`: No undocumented message provided
-- `/acs/encoders/list`: No undocumented message provided
-- `/acs/encoders/read_card`: No undocumented message provided
+- `/acs/encoders/encode_card`: Encoding a card is currently unimplemented.
+- `/acs/encoders/list`: Encoders are in alpha.
+- `/acs/encoders/read_card`: Reading a card is currently unimplemented.
 - `/acs/users/unmanaged`: No undocumented message provided
-- `/acs/users/unmanaged/get`: No undocumented message provided
-- `/acs/users/unmanaged/list`: No undocumented message provided
+- `/acs/users/unmanaged/get`: No unmanaged users are currently implemented.
+- `/acs/users/unmanaged/list`: No unmanaged users are currently implemented.
 
 ## No Description
 
