@@ -4,10 +4,10 @@
 POST /acs/systems/list_compatible_credential_manager_acs_systems ⇒ { acs_systems: [acs_system, …] }
 ```
 
-Returns a list of all credential manager ACS systems that are compatible with a specified 
+Returns a list of all credential manager ACS systems that are compatible with a specified
 [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-Specify the ACS system for which you want to retrieve all compatible credential manager ACS 
+Specify the ACS system for which you want to retrieve all compatible credential manager ACS
 systems by including the corresponding `acs_system_id` in the request body.
 
 {% tabs %}
@@ -84,6 +84,51 @@ seam acs systems list-compatible-credential-manager-acs-systems --acs_system_id 
 #### Response
 
 ```seam_cli
+[{ "acs_system_id": "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }]
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Request
+
+```go
+import api "github.com/seamapi/go"
+import systems "github.com/seamapi/go/systems"
+
+  client.Acs.Systems.ListCompatibleCredentialManagerAcsSystems(context.Background(), systems.SystemsListCompatibleCredentialManagerAcsSystemsRequest(AcsSystemId: api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33")))
+```
+
+#### Response
+
+```go
+[]api.AcsSystem{api.AcsSystem{AcsSystemId: "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4"}}
+```
+{% endtab %}
+
+{% tab title="Java" %}
+#### Request
+
+```java
+seam.acs().systems().listCompatibleCredentialManagerAcsSystems(SystemsListCompatibleCredentialManagerAcsSystemsRequest.builder().acsSystemId("8d7e0b3a-b889-49a7-9164-4b71a0506a33").build());
+```
+
+#### Response
+
+```java
+[{ "acs_system_id": "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }]
+```
+{% endtab %}
+
+{% tab title="C#" %}
+#### Request
+
+```csharp
+seam.Acs.Systems.ListCompatibleCredentialManagerAcsSystems(acsSystemId: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
+```
+
+#### Response
+
+```csharp
 [{ "acs_system_id": "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }]
 ```
 {% endtab %}

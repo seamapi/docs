@@ -6,8 +6,8 @@ POST /acs/systems/list ⇒ { acs_systems: [acs_system, …] }
 
 Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems).
 
-To filter the list of returned access control systems by a specific connected account ID, include the 
-`connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the 
+To filter the list of returned access control systems by a specific connected account ID, include the
+`connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the
 response includes all access control systems connected to your workspace.
 
 {% tabs %}
@@ -82,6 +82,51 @@ seam acs systems list --connected_account_id "123e4567-e89b-12d3-a456-4266141740
 #### Response
 
 ```seam_cli
+[{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Request
+
+```go
+import api "github.com/seamapi/go"
+import systems "github.com/seamapi/go/systems"
+
+  client.Acs.Systems.List(context.Background(), systems.SystemsListRequest(ConnectedAccountId: api.String("123e4567-e89b-12d3-a456-426614174000")))
+```
+
+#### Response
+
+```go
+[]api.AcsSystem{api.AcsSystem{AcsSystemId: "8d7e0b3a-b889-49a7-9164-4b71a0506a33"}}
+```
+{% endtab %}
+
+{% tab title="Java" %}
+#### Request
+
+```java
+seam.acs().systems().list(SystemsListRequest.builder().connectedAccountId("123e4567-e89b-12d3-a456-426614174000").build());
+```
+
+#### Response
+
+```java
+[{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
+```
+{% endtab %}
+
+{% tab title="C#" %}
+#### Request
+
+```csharp
+seam.Acs.Systems.List(connectedAccountId: "123e4567-e89b-12d3-a456-426614174000")
+```
+
+#### Response
+
+```csharp
 [{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
 ```
 {% endtab %}
