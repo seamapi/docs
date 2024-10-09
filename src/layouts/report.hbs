@@ -1,5 +1,5 @@
 # Documentation Report
-{{#if (or undocumented.resourceProperties.length undocumented.endpoints.length undocumented.parameters.length)}}
+{{#if (or undocumented.resourceProperties.length undocumented.endpoints.length undocumented.parameters.length undocumented.namespaces.length)}}
 
 ## Undocumented
 
@@ -9,6 +9,14 @@ These items are intentionally undocumented.
 ### Resource properties
 
 {{#each undocumented.resourceProperties}}
+- `{{name}}`: {{reason}}
+{{/each}}
+{{/if}}
+{{#if undocumented.namespaces.length }}
+
+### Namespaces
+
+{{#each undocumented.namespaces}}
 - `{{name}}`: {{reason}}
 {{/each}}
 {{/if}}
@@ -32,7 +40,7 @@ These items are intentionally undocumented.
 {{/each}}
 {{/if}}
 {{/if}}
-{{#if (or noDescription.resources.length noDescription.properties.length noDescription.endpoints.length noDescription.parameters.length)}}
+{{#if (or noDescription.resources.length noDescription.properties.length noDescription.endpoints.length noDescription.parameters.length noDescription.namespaces.length)}}
 
 ## No Description
 
@@ -51,6 +59,14 @@ Items that are intentionally undocumented are not included in this section.
 ### Resource properties
 
 {{#each noDescription.properties}}
+- `{{name}}`
+{{/each}}
+{{/if}}
+{{#if noDescription.namespaces.length }}
+
+### Namespaces
+
+{{#each noDescription.namespaces}}
 - `{{name}}`
 {{/each}}
 {{/if}}
@@ -74,7 +90,7 @@ Items that are intentionally undocumented are not included in this section.
 {{/each}}
 {{/if}}
 {{/if}}
-{{#if (or draft.resources.length draft.properties.length draft.endpoints.length draft.parameters.length)}}
+{{#if (or draft.resources.length draft.properties.length draft.endpoints.length draft.parameters.length draft.namespaces.length)}}
 
 ## Draft
 
@@ -92,6 +108,14 @@ These items have been marked as draft.
 ### Resource properties
 
 {{#each draft.properties}}
+- `{{name}}`
+{{/each}}
+{{/if}}
+{{#if draft.namespaces.length }}
+
+### Namespaces
+
+{{#each draft.namespaces}}
 - `{{name}}`
 {{/each}}
 {{/if}}
@@ -115,7 +139,7 @@ These items have been marked as draft.
 {{/each}}
 {{/if}}
 {{/if}}
-{{#if (or deprecated.resourceProperties.length deprecated.endpoints.length deprecated.parameters.length)}}
+{{#if (or deprecated.resourceProperties.length deprecated.endpoints.length deprecated.parameters.length deprecated.namespaces.length)}}
 
 ## Deprecated
 
@@ -125,6 +149,14 @@ These items are deprecated.
 ### Resource properties
 
 {{#each deprecated.resourceProperties}}
+- `{{name}}`: {{reason}}
+{{/each}}
+{{/if}}
+{{#if deprecated.namespaces.length }}
+
+### Namespaces
+
+{{#each deprecated.namespaces}}
 - `{{name}}`: {{reason}}
 {{/each}}
 {{/if}}

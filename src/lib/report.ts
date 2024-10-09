@@ -5,6 +5,7 @@ import type {
   Property,
   Resource,
   Route,
+  Namespace
 } from '@seamapi/blueprint'
 import type Metalsmith from 'metalsmith'
 
@@ -29,6 +30,7 @@ interface ReportSection {
   resourceProperties: ReportItem[]
   endpoints: ReportItem[]
   parameters: ParameterReportItem[]
+  namespaces: ReportItem[]
 }
 
 interface Report {
@@ -85,6 +87,7 @@ function createEmptyReportSection(): ReportSection {
     resourceProperties: [],
     endpoints: [],
     parameters: [],
+    namespaces: [],
   }
 }
 
@@ -178,10 +181,34 @@ function processRoute(route: Route, report: Report): void {
     })
   }
 
-  // TODO: description
+  if (route.namespace != null) {
+    processNamespace(route.namespace, report)
+  }
+
+  // TODO: route description
 
   for (const endpoint of route.endpoints) {
     processEndpoint(endpoint, report)
+  }
+}
+
+function processNamespace(namespace: Namespace, report: Report): void {
+  const addNamespace = (section: ReportItem[], reason: string) => {
+    if (!section.some((item) => item.name === namespace.path)) {
+      section.push({ name: namespace.path, reason })
+    }
+  }
+
+  if (namespace.isDeprecated) {
+    addNamespace(report.deprecated.namespaces, defaultDeprecatedMessage)
+  }
+
+  if (namespace.isDraft) {
+    addNamespace(report.draft.namespaces, defaultDraftMessage)
+  }
+
+  if (namespace.isUndocumented) {
+    addNamespace(report.undocumented.namespaces, defaultUndocumentedMessage)
   }
 }
 
