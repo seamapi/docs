@@ -40,7 +40,7 @@ These items are intentionally undocumented.
 {{/each}}
 {{/if}}
 {{/if}}
-{{#if (or noDescription.resources.length noDescription.properties.length noDescription.endpoints.length noDescription.parameters.length noDescription.namespaces.length)}}
+{{#if (or noDescription.resources.length noDescription.resourceProperties.length noDescription.endpoints.length noDescription.parameters.length noDescription.namespaces.length)}}
 
 ## No Description
 
@@ -54,11 +54,11 @@ Items that are intentionally undocumented are not included in this section.
 - `{{name}}`
 {{/each}}
 {{/if}}
-{{#if noDescription.properties.length }}
+{{#if noDescription.resourceProperties.length }}
 
 ### Resource properties
 
-{{#each noDescription.properties}}
+{{#each noDescription.resourceProperties}}
 - `{{name}}`
 {{/each}}
 {{/if}}
@@ -90,7 +90,7 @@ Items that are intentionally undocumented are not included in this section.
 {{/each}}
 {{/if}}
 {{/if}}
-{{#if (or draft.resources.length draft.properties.length draft.endpoints.length draft.parameters.length draft.namespaces.length)}}
+{{#if (or draft.resources.length draft.resourceProperties.length draft.endpoints.length draft.parameters.length draft.namespaces.length)}}
 
 ## Draft
 
@@ -103,11 +103,11 @@ These items have been marked as draft.
 - `{{name}}`: {{reason}}
 {{/each}}
 {{/if}}
-{{#if draft.properties.length }}
+{{#if draft.resourceProperties.length }}
 
 ### Resource properties
 
-{{#each draft.properties}}
+{{#each draft.resourceProperties}}
 - `{{name}}`: {{reason}}
 {{/each}}
 {{/if}}

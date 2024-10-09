@@ -28,14 +28,14 @@ interface ParameterReportItem {
 interface ReportSection {
   resources: ReportItem[]
   resourceProperties: ReportItem[]
+  namespaces: ReportItem[]
   endpoints: ReportItem[]
   parameters: ParameterReportItem[]
-  namespaces: ReportItem[]
 }
 
 interface Report {
   undocumented: ReportSection
-  noDescription: ReportSection & { resources: ReportItem[] }
+  noDescription: ReportSection
   draft: ReportSection
   deprecated: ReportSection
 }
