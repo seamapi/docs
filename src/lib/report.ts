@@ -193,7 +193,7 @@ function processRoute(route: Route, report: Report): void {
 }
 
 function processNamespace(namespace: Namespace, report: Report): void {
-  const addNamespace = (section: ReportItem[], reason: string) => {
+  const addNamespace = (section: ReportItem[], reason: string): void => {
     if (!section.some((item) => item.name === namespace.path)) {
       section.push({ name: namespace.path, reason })
     }
