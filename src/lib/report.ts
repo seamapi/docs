@@ -133,7 +133,7 @@ function processProperty(
   if (property.isUndocumented) {
     report.undocumented.resourceProperties.push({
       name: propertyName,
-      reason: defaultUndocumentedMessage, // TODO: undocumentedMessage
+      reason: property.undocumentedMessage ?? defaultUndocumentedMessage,
     })
   }
 
@@ -151,7 +151,7 @@ function processProperty(
   if (property.isDraft) {
     report.draft.resourceProperties.push({
       name: propertyName,
-      reason: defaultDraftMessage, // TODO: draftMessage
+      reason: property.draftMessage ?? defaultDraftMessage,
     })
   }
 }
@@ -189,7 +189,7 @@ function processEndpoint(endpoint: Endpoint, report: Report): void {
   if (endpoint.isUndocumented) {
     report.undocumented.endpoints.push({
       name: endpoint.path,
-      reason: defaultUndocumentedMessage, // TODO: undocumentedMessage
+      reason: endpoint.undocumentedMessage ?? defaultUndocumentedMessage,
     })
   }
 
@@ -207,7 +207,7 @@ function processEndpoint(endpoint: Endpoint, report: Report): void {
   if (endpoint.isDraft) {
     report.draft.endpoints.push({
       name: endpoint.path,
-      reason: defaultDraftMessage, // TODO: draftMessage
+      reason: endpoint.draftMessage ?? defaultDraftMessage,
     })
   }
 
@@ -224,7 +224,7 @@ function processParameters(
       if (param.isUndocumented) {
         acc.undocumented.push({
           name: param.name,
-          reason: defaultUndocumentedMessage, // TODO: undocumentedMessage
+          reason: param.undocumentedMessage ?? defaultUndocumentedMessage,
         })
       }
 
@@ -242,7 +242,7 @@ function processParameters(
       if (param.isDraft) {
         acc.draft.push({
           name: param.name,
-          reason: defaultDraftMessage, // TODO: draftMessage
+          reason: param.draftMessage ?? defaultDraftMessage,
         })
       }
 
