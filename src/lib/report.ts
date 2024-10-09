@@ -1,11 +1,11 @@
 import type {
   Blueprint,
   Endpoint,
+  Namespace,
   Parameter,
   Property,
   Resource,
   Route,
-  Namespace
 } from '@seamapi/blueprint'
 import type Metalsmith from 'metalsmith'
 
