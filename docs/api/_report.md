@@ -400,6 +400,8 @@ These items are deprecated.
 
 - `/events/get`
     - `message`
+- `/thermostats/list`
+    - `thermostats`
 
 ### Endpoints without code samples
 
