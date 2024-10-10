@@ -115,7 +115,7 @@ interface ContextResource {
 type ContextEndpoint = Pick<Endpoint, 'path' | 'description'>
 
 export interface RouteLayoutContext {
-  description: string | null
+  description: string
   resources: ContextResource[]
   endpoints: ContextEndpoint[]
 }
@@ -126,7 +126,12 @@ export function setApiRouteLayoutContext(
   blueprint: Blueprint,
   pathMetadata: PathMetadata,
 ): void {
-  file.description = pathMetadata[route.path]?.description ?? null
+  const description = pathMetadata[route.path]?.description
+  if (description == null || description.trim() === "") {
+    throw new Error(`Missing description for ${route.path}`)
+  }
+
+  file.description = description
   file.endpoints = route.endpoints.map(({ path, name, description }) => ({
     path,
     name,
