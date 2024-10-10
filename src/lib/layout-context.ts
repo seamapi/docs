@@ -7,6 +7,8 @@ import type {
 } from '@seamapi/blueprint'
 import { pascalCase } from 'change-case'
 
+import type { PathMetadata } from './reference.js'
+
 const supportedSdks: CodeSampleSdk[] = [
   'javascript',
   'python',
@@ -113,6 +115,7 @@ interface ContextResource {
 type ContextEndpoint = Pick<Endpoint, 'path' | 'description'>
 
 export interface RouteLayoutContext {
+  description: string | null
   resources: ContextResource[]
   endpoints: ContextEndpoint[]
 }
@@ -121,7 +124,9 @@ export function setApiRouteLayoutContext(
   file: Partial<RouteLayoutContext>,
   route: Route,
   blueprint: Blueprint,
+  pathMetadata: PathMetadata,
 ): void {
+  file.description = pathMetadata[route.path]?.description ?? null
   file.endpoints = route.endpoints.map(({ path, name, description }) => ({
     path,
     name,
