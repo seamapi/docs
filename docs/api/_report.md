@@ -133,7 +133,6 @@ Items that are intentionally undocumented are not included in this section.
 ### Endpoints
 
 - `/acs/access_groups/add_user`
-- `/acs/access_groups/add_user`
 - `/acs/access_groups/get`
 - `/acs/access_groups/list`
 - `/acs/access_groups/list_accessible_entrances`
@@ -144,15 +143,12 @@ Items that are intentionally undocumented are not included in this section.
 - `/acs/credential_pools/list`
 - `/acs/credential_provisioning_automations/launch`
 - `/acs/credentials/assign`
-- `/acs/credentials/assign`
 - `/acs/credentials/create`
 - `/acs/credentials/delete`
 - `/acs/credentials/get`
 - `/acs/credentials/list`
 - `/acs/credentials/list_accessible_entrances`
 - `/acs/credentials/unassign`
-- `/acs/credentials/unassign`
-- `/acs/credentials/update`
 - `/acs/credentials/update`
 - `/acs/credentials/unmanaged/get`
 - `/acs/credentials/unmanaged/list`
@@ -179,19 +175,14 @@ Items that are intentionally undocumented are not included in this section.
 - `/thermostats/set_fallback_climate_preset`
 - `/thermostats/set_fan_mode`
 - `/thermostats/update_climate_preset`
-- `/thermostats/update_climate_preset`
 - `/thermostats/schedules/create`
 - `/thermostats/schedules/delete`
 - `/thermostats/schedules/get`
 - `/thermostats/schedules/list`
 - `/thermostats/schedules/update`
-- `/thermostats/schedules/update`
 
 ### Endpoint parameters
 
-- `/acs/access_groups/add_user`
-    - `acs_access_group_id`
-    - `acs_user_id`
 - `/acs/access_groups/add_user`
     - `acs_access_group_id`
     - `acs_user_id`
@@ -223,9 +214,6 @@ Items that are intentionally undocumented are not included in this section.
 - `/acs/credentials/assign`
     - `acs_credential_id`
     - `acs_user_id`
-- `/acs/credentials/assign`
-    - `acs_credential_id`
-    - `acs_user_id`
 - `/acs/credentials/create`
     - `access_method`
     - `acs_user_id`
@@ -245,13 +233,6 @@ Items that are intentionally undocumented are not included in this section.
 - `/acs/credentials/unassign`
     - `acs_credential_id`
     - `acs_user_id`
-- `/acs/credentials/unassign`
-    - `acs_credential_id`
-    - `acs_user_id`
-- `/acs/credentials/update`
-    - `acs_credential_id`
-    - `code`
-    - `ends_at`
 - `/acs/credentials/update`
     - `acs_credential_id`
     - `code`
@@ -274,9 +255,6 @@ Items that are intentionally undocumented are not included in this section.
 - `/acs/users/list`
     - `created_before`
     - `limit`
-- `/acs/users/update`
-    - `email`
-    - `hid_acs_system_id`
 - `/acs/users/update`
     - `email`
     - `hid_acs_system_id`
@@ -375,17 +353,6 @@ Items that are intentionally undocumented are not included in this section.
     - `hvac_mode_setting`
     - `manual_override_allowed`
     - `name`
-- `/thermostats/update_climate_preset`
-    - `climate_preset_key`
-    - `cooling_set_point_celsius`
-    - `cooling_set_point_fahrenheit`
-    - `device_id`
-    - `fan_mode_setting`
-    - `heating_set_point_celsius`
-    - `heating_set_point_fahrenheit`
-    - `hvac_mode_setting`
-    - `manual_override_allowed`
-    - `name`
 - `/thermostats/schedules/create`
     - `climate_preset_key`
     - `device_id`
@@ -400,13 +367,6 @@ Items that are intentionally undocumented are not included in this section.
 - `/thermostats/schedules/list`
     - `device_id`
     - `user_identifier_key`
-- `/thermostats/schedules/update`
-    - `climate_preset_key`
-    - `ends_at`
-    - `max_override_period_minutes`
-    - `name`
-    - `starts_at`
-    - `thermostat_schedule_id`
 - `/thermostats/schedules/update`
     - `climate_preset_key`
     - `ends_at`
@@ -433,8 +393,6 @@ These items are deprecated.
     - `email`: use email_address.
 - `/acs/users/update`
     - `email`: use email_address.
-- `/acs/users/update`
-    - `email`: use email_address.
 - `/thermostats/set_fan_mode`
     - `fan_mode`: use fan_mode_setting instead.
 
@@ -446,7 +404,6 @@ These items are deprecated.
 ### Endpoints without code samples
 
 - `/acs/access_groups/add_user`
-- `/acs/access_groups/add_user`
 - `/acs/access_groups/get`
 - `/acs/access_groups/list`
 - `/acs/access_groups/list_accessible_entrances`
@@ -457,15 +414,12 @@ These items are deprecated.
 - `/acs/credential_pools/list`
 - `/acs/credential_provisioning_automations/launch`
 - `/acs/credentials/assign`
-- `/acs/credentials/assign`
 - `/acs/credentials/create`
 - `/acs/credentials/delete`
 - `/acs/credentials/get`
 - `/acs/credentials/list`
 - `/acs/credentials/list_accessible_entrances`
 - `/acs/credentials/unassign`
-- `/acs/credentials/unassign`
-- `/acs/credentials/update`
 - `/acs/credentials/update`
 - `/acs/credentials/unmanaged/get`
 - `/acs/credentials/unmanaged/list`
@@ -477,7 +431,6 @@ These items are deprecated.
 - `/acs/entrances/list`
 - `/acs/entrances/list_credentials_with_access`
 - `/acs/users/add_to_access_group`
-- `/acs/users/add_to_access_group`
 - `/acs/users/create`
 - `/acs/users/delete`
 - `/acs/users/get`
@@ -487,7 +440,6 @@ These items are deprecated.
 - `/acs/users/revoke_access_to_all_entrances`
 - `/acs/users/suspend`
 - `/acs/users/unsuspend`
-- `/acs/users/update`
 - `/acs/users/update`
 - `/acs/users/unmanaged/get`
 - `/acs/users/unmanaged/list`
@@ -505,10 +457,8 @@ These items are deprecated.
 - `/thermostats/set_fallback_climate_preset`
 - `/thermostats/set_fan_mode`
 - `/thermostats/update_climate_preset`
-- `/thermostats/update_climate_preset`
 - `/thermostats/schedules/create`
 - `/thermostats/schedules/delete`
 - `/thermostats/schedules/get`
 - `/thermostats/schedules/list`
-- `/thermostats/schedules/update`
 - `/thermostats/schedules/update`
