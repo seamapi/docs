@@ -1,0 +1,249 @@
+# Documentation Report
+{{#if (or undocumented.routes.length undocumented.resources.length undocumented.resourceProperties.length undocumented.namespaces.length undocumented.endpoints.length undocumented.parameters.length)}}
+
+## Undocumented
+
+These items are intentionally undocumented.
+{{#if undocumented.routes.length }}
+
+### Routes
+
+{{#each undocumented.routes}}
+- `{{name}}`: {{reason}}
+{{/each}}
+{{/if}}
+{{#if undocumented.resources.length }}
+
+### Resources
+
+{{#each undocumented.resources}}
+- `{{name}}`: {{reason}}
+{{/each}}
+{{/if}}
+{{#if undocumented.resourceProperties.length }}
+
+### Resource properties
+
+{{#each undocumented.resourceProperties}}
+- `{{name}}`: {{reason}}
+{{/each}}
+{{/if}}
+{{#if undocumented.namespaces.length }}
+
+### Namespaces
+
+{{#each undocumented.namespaces}}
+- `{{name}}`: {{reason}}
+{{/each}}
+{{/if}}
+{{#if undocumented.endpoints.length }}
+
+### Endpoints
+
+{{#each undocumented.endpoints}}
+- `{{name}}`: {{reason}}
+{{/each}}
+{{/if}}
+{{#if undocumented.parameters.length }}
+
+### Endpoint parameters
+
+{{#each undocumented.parameters}}
+- `{{path}}`
+    {{#each params}}
+    - `{{name}}`: {{reason}}
+    {{/each}}
+{{/each}}
+{{/if}}
+{{/if}}
+{{#if (or noDescription.routes.length noDescription.resources.length noDescription.resourceProperties.length noDescription.namespaces.length noDescription.endpoints.length noDescription.parameters.length)}}
+
+## No Description
+
+These items have an empty description.
+Items that are intentionally undocumented are not included in this section.
+{{#if noDescription.routes.length }}
+
+### Routes
+
+{{#each noDescription.routes}}
+- `{{name}}`
+{{/each}}
+{{/if}}
+{{#if noDescription.resources.length }}
+
+### Resources
+
+{{#each noDescription.resources}}
+- `{{name}}`
+{{/each}}
+{{/if}}
+{{#if noDescription.resourceProperties.length }}
+
+### Resource properties
+
+{{#each noDescription.resourceProperties}}
+- `{{name}}`
+{{/each}}
+{{/if}}
+{{#if noDescription.namespaces.length }}
+
+### Namespaces
+
+{{#each noDescription.namespaces}}
+- `{{name}}`
+{{/each}}
+{{/if}}
+{{#if noDescription.endpoints.length }}
+
+### Endpoints
+
+{{#each noDescription.endpoints}}
+- `{{name}}`
+{{/each}}
+{{/if}}
+{{#if noDescription.parameters.length }}
+
+### Endpoint parameters
+
+{{#each noDescription.parameters}}
+- `{{path}}`
+    {{#each params}}
+    - `{{name}}`
+    {{/each}}
+{{/each}}
+{{/if}}
+{{/if}}
+{{#if (or draft.routes.length draft.resources.length draft.resourceProperties.length draft.namespaces.length draft.endpoints.length draft.parameters.length)}}
+
+## Draft
+
+These items have been marked as draft.
+{{#if draft.routes.length }}
+
+### Routes
+
+{{#each draft.routes}}
+- `{{name}}`: {{reason}}
+{{/each}}
+{{/if}}
+{{#if draft.resources.length }}
+
+### Resources
+
+{{#each draft.resources}}
+- `{{name}}`: {{reason}}
+{{/each}}
+{{/if}}
+{{#if draft.resourceProperties.length }}
+
+### Resource properties
+
+{{#each draft.resourceProperties}}
+- `{{name}}`: {{reason}}
+{{/each}}
+{{/if}}
+{{#if draft.namespaces.length }}
+
+### Namespaces
+
+{{#each draft.namespaces}}
+- `{{name}}`: {{reason}}
+{{/each}}
+{{/if}}
+{{#if draft.endpoints.length }}
+
+### Endpoints
+
+{{#each draft.endpoints}}
+- `{{name}}`: {{reason}}
+{{/each}}
+{{/if}}
+{{#if draft.parameters.length }}
+
+### Endpoint parameters
+
+{{#each draft.parameters}}
+- `{{path}}`
+    {{#each params}}
+    - `{{name}}`: {{reason}}
+    {{/each}}
+{{/each}}
+{{/if}}
+{{/if}}
+{{#if (or deprecated.routes.length deprecated.resources.length deprecated.resourceProperties.length deprecated.namespaces.length deprecated.endpoints.length deprecated.parameters.length)}}
+
+## Deprecated
+
+These items are deprecated.
+{{#if deprecated.routes.length }}
+
+### Routes
+
+{{#each deprecated.routes}}
+- `{{name}}`: {{reason}}
+{{/each}}
+{{/if}}
+{{#if deprecated.resources.length }}
+
+### Resources
+
+{{#each deprecated.resources}}
+- `{{name}}`: {{reason}}
+{{/each}}
+{{/if}}
+{{#if deprecated.resourceProperties.length }}
+
+### Resource properties
+
+{{#each deprecated.resourceProperties}}
+- `{{name}}`: {{reason}}
+{{/each}}
+{{/if}}
+{{#if deprecated.namespaces.length }}
+
+### Namespaces
+
+{{#each deprecated.namespaces}}
+- `{{name}}`: {{reason}}
+{{/each}}
+{{/if}}
+{{#if deprecated.endpoints.length }}
+
+### Endpoints
+
+{{#each deprecated.endpoints}}
+- `{{name}}`: {{reason}}
+{{/each}}
+{{/if}}
+{{#if deprecated.parameters.length }}
+
+### Endpoint parameters
+
+{{#each deprecated.parameters}}
+- `{{path}}`
+    {{#each params}}
+    - `{{name}}`: {{reason}}
+    {{/each}}
+{{/each}}
+{{/if}}
+{{/if}}
+{{#if extraResponseKeys.length }}
+
+### Extra response keys
+
+{{#each extraResponseKeys}}
+- `{{path}}`
+    {{#each keys}}
+    - `{{this}}`
+    {{/each}}
+{{/each}}
+{{/if}}
+{{#if endpointsWithoutCodeSamples.length }}
+
+### Endpoints without code samples
+
+{{#each endpointsWithoutCodeSamples}}
+- `{{this}}`
+{{/each}}
+{{/if}}
