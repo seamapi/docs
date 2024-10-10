@@ -12,6 +12,7 @@ const supportedSdks: CodeSampleSdk[] = [
   'python',
   'php',
   'ruby',
+  'go',
   'seam_cli',
 ]
 
