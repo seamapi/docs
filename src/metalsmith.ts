@@ -25,6 +25,7 @@ Metalsmith(rootDir)
   .use(
     metadata({
       codeSampleDefinitions: './data/code-sample-definitions',
+      pathMetadata: './data/paths.yaml',
     }),
   )
   .use(blueprint)
