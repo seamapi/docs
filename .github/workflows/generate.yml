@@ -45,7 +45,7 @@ jobs:
         with:
           ruby-version: '3.3'
       - name: Setup Go
-        uses: ruby/setup-go@v5
+        uses: actions/setup-go@v5
         with:
           go-version: '^1.23.2'
       - name: Install standardrb
