@@ -127,7 +127,7 @@ export function setApiRouteLayoutContext(
   pathMetadata: PathMetadata,
 ): void {
   const description = pathMetadata[route.path]?.description
-  if (description == null || description.trim() === "") {
+  if (description == null || description.trim() === '') {
     throw new Error(`Missing description for ${route.path}`)
   }
 
