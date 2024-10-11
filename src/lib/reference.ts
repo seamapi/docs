@@ -14,18 +14,28 @@ type Metadata = Partial<Pick<Blueprint, 'routes' | 'resources'>>
 
 type File = EndpointLayoutContext & RouteLayoutContext & { layout: string }
 
+export type PathMetadata = Record<
+  string,
+  {
+    description?: string | null
+  }
+>
+
 export const reference = (
   files: Metalsmith.Files,
   metalsmith: Metalsmith,
 ): void => {
-  const metadata = {
+  const { pathMetadata = {}, ...metadata } =
+    metalsmith.metadata() as Metadata & { pathMetadata: PathMetadata }
+
+  const blueprint = {
     title: '',
     routes: [],
     resources: {},
-    ...(metalsmith.metadata() as Metadata),
+    ...metadata,
   }
 
-  for (const route of metadata.routes ?? []) {
+  for (const route of blueprint.routes ?? []) {
     if (route.isUndocumented) continue
 
     if (!route.path.startsWith('/acs/systems')) {
@@ -38,7 +48,7 @@ export const reference = (
     }
     const file = files[k] as unknown as File
     file.layout = 'api-route.hbs'
-    setApiRouteLayoutContext(file, route, metadata)
+    setApiRouteLayoutContext(file, route, blueprint, pathMetadata)
 
     for (const endpoint of route.endpoints) {
       if (endpoint.isUndocumented) continue

@@ -46,17 +46,18 @@ When you [create a Connect Webview](create.md), specify the desired provider cat
 | `noise_sensors`       | Only returns provider integrations marked as noise sensors.        |
 
 {% hint style="info" %}
-To list all providers within a category, use the [List Device Providers](../devices/list_device_providers.md) method with the desired `provider_category` filter.
+To list all providers within a category, use the [List Device Providers](../devices/list\_device\_providers.md) method with the desired `provider_category` filter.
 {% endhint %}
 
 ### Device Provider Keys
 
-To list all provider keys, use the [List Device Providers](../devices/list_device_providers.md) method with no filters.
+To list all provider keys, use the [List Device Providers](../devices/list\_device\_providers.md) method with no filters.
 
 | Provider Name                                                                                                                  | Device Provider Key             |
 | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------- |
 | [2N](../../device-guides/2n-intercom-systems.md)                                                                               | `my_2n`                         |
 | [4SUITES](../../device-and-system-integration-guides/4suites-locks/)                                                           | `four_suites`                   |
+| [Akiles](../../device-and-system-integration-guides/akiles-locks/)                                                             | `akiles`                        |
 | [Akuvox](https://akuvox.com/)                                                                                                  | `akuvox`                        |
 | [ASSA ABLOY Credential Service](../../device-guides/assa-abloy-credential-services-credential-manager-in-development.md)       | `assa_abloy_credential_service` |
 | [ASSA ABLOY Visionline Access Control System](../../device-guides/assa-abloy-visionline-access-control-system-in-development/) | `visionline`                    |
