@@ -18,7 +18,7 @@ These items are intentionally undocumented.
 
 - `/acs/encoders/encode_card`: Encoding a card is currently unimplemented.
 - `/acs/encoders/list`: Encoders are in alpha.
-- `/acs/encoders/read_card`: Reading a card is currently unimplemented.
+- `/acs/encoders/scan_card`: Reading a card is currently unimplemented.
 - `/acs/users/unmanaged/get`: No unmanaged users are currently implemented.
 - `/acs/users/unmanaged/list`: No unmanaged users are currently implemented.
 
@@ -154,7 +154,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/acs/credentials/unmanaged/list`
 - `/acs/encoders/encode_card`
 - `/acs/encoders/list`
-- `/acs/encoders/read_card`
+- `/acs/encoders/scan_card`
 - `/acs/entrances/get`
 - `/acs/entrances/grant_access`
 - `/acs/entrances/list`
@@ -427,7 +427,7 @@ These items are deprecated.
 - `/acs/credentials/unmanaged/list`
 - `/acs/encoders/encode_card`
 - `/acs/encoders/list`
-- `/acs/encoders/read_card`
+- `/acs/encoders/scan_card`
 - `/acs/entrances/get`
 - `/acs/entrances/grant_access`
 - `/acs/entrances/list`
