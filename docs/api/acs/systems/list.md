@@ -96,7 +96,12 @@ import api "github.com/seamapi/go"
 import systems "github.com/seamapi/go/systems"
 
 func main() {
-	client.Acs.Systems.List(context.Background(), systems.SystemsListRequest{ConnectedAccountId: api.String("123e4567-e89b-12d3-a456-426614174000")})
+	client.Acs.Systems.List(
+		context.Background(),
+		systems.SystemsListRequest{
+			ConnectedAccountId: api.String("123e4567-e89b-12d3-a456-426614174000"),
+		},
+	)
 }
 ```
 

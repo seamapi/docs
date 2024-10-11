@@ -92,7 +92,12 @@ import api "github.com/seamapi/go"
 import systems "github.com/seamapi/go/systems"
 
 func main() {
-	client.Acs.Systems.Get(context.Background(), systems.SystemsGetRequest{AcsSystemId: api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33")})
+	client.Acs.Systems.Get(
+		context.Background(),
+		systems.SystemsGetRequest{
+			AcsSystemId: api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
+		},
+	)
 }
 ```
 
