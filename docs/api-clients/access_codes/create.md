@@ -840,7 +840,7 @@ seam.accessCodes().create(AccessCodesCreateRequest.builder()
 {% endtab %}
 {% endtabs %}
 
-### Creating an Hourly-Bound Offline Access Code
+### Creating an Time-Bound Offline Access Code
 
 {% tabs %}
 {% tab title="Python" %}
@@ -851,7 +851,7 @@ device_id = "9689dc30-77d8-4728-9968-b3abd0835f47"
 
 created_access_code = seam.access_codes.create(
   device = device_id,
-  name = "my hourly-bound offline code",
+  name = "my time-bound offline code",
   starts_at = "2023-11-10T00:00:00-00:00",
   ends_at = "2023-11-15T18:00:00-00:00",
   is_offline_access_code = True
@@ -872,7 +872,7 @@ AccessCode(access_code_id='f078dce8-3c5e-4bc4-bd08-3ad013ee8be6',
            warnings=[],
            starts_at='2023-11-10T00:00:00.000Z',
            ends_at='2023-11-15T18:00:00.000Z',
-           name='my hourly-bound offline code5',
+           name='my time-bound offline code',
            status='unset',
            common_code_key=None,
            is_managed=True,
@@ -899,7 +899,7 @@ curl -X 'POST' \
   -H 'Content-Type: application/json' \
   -d '{
   "device_id": "9689dc30-77d8-4728-9968-b3abd0835f47",
-  "name": "my hourly-bound offline code",
+  "name": "my time-bound offline code",
   "starts_at": "2023-11-10T00:00:00-00:00",
   "ends_at": "2023-11-15T18:00:00-00:00",
   "is_offline_access_code": true
@@ -920,7 +920,7 @@ curl -X 'POST' \
   "access_code": {
     "access_code_id": "a4960c38-fe15-4766-8647-c93e8f05f84a",
     "device_id": "9689dc30-77d8-4728-9968-b3abd0835f47",
-    "name": "my hourly-bound offline code",
+    "name": "my time-bound offline code",
     "appearance": null,
     "code": null,
     "is_waiting_for_code_assignment": true,
@@ -952,7 +952,7 @@ const deviceId = "ea12f6c6-e63e-447d-856b-ec9e92981000"
 
 const createdAccessCode = await seam.accessCodes.create({
   device_id: deviceId,
-  name: "my hourly-bound offline code",
+  name: "my time-bound offline code",
   starts_at: "2023-12-22T06:00:00-00:00",
   ends_at: "2023-12-22T18:00:00-00:00",
   max_time_rounding: "1h",
@@ -968,7 +968,7 @@ console.log(createdAccessCode)
 {
   access_code_id: 'b4977781-7108-478a-a5ec-764b51ba2647',
   device_id: 'ea12f6c6-e63e-447d-856b-ec9e92981000',
-  name: 'my hourly-bound offline code',
+  name: 'my time-bound offline code',
   appearance: null,
   code: null,
   is_waiting_for_code_assignment: true,

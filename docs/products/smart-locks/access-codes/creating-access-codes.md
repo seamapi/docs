@@ -23,7 +23,7 @@ This guide explains how to create online access codes on an online smart lock. W
 
 Seam supports programming two types of online access codes for online door locks:
 
-1. **Ongoing**: Ideal for residents or long-term users. Ongoing codes remain active on a device until removed. Create one by leaving the `end_at` field empty. To remove the code, use the [Delete Access Code](../../../api-clients/access\_codes/delete.md) endpoint.
+1. **Ongoing**: Ideal for residents or long-term users. Ongoing codes remain active on a device until removed. Create one by omitting both `starts_at` and `ends_at`. To remove the code, use the [Delete Access Code](../../../api-clients/access\_codes/delete.md) endpoint.
 2. **Time Bound**: Suitable for temporary access like guest visits or service appointments. These codes operate between a designated `starts_at` and `ends_at` time window, granting access only during that period.
 
 {% hint style="info" %}

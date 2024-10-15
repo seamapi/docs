@@ -24,8 +24,7 @@ The property manager performs most of this procedure. The following instructions
      2. On the right, click **Edit**.
      3. Under **Partner access**, select **Seam**.
      4. At the top right, click **Save**.
-   *   Note the building ID within the URL for this page. You must send the ID of each building you want to connect to Seam. Save the building ID for a later step with further instructions.\
-
+   *   Note the building ID within the URL for this page. You must send the ID of each building you want to connect to Seam. Save the building ID for a later step with further instructions.\\
 
        <figure><img src="../../.gitbook/assets/latch-building-id.png" alt="In the Latch Mission Control dashboard, note the ID for each building that you want to connect to Seam."><figcaption><p>In the Latch Mission Control dashboard, note the ID for each building that you want to connect to Seam.</p></figcaption></figure>
 
@@ -33,11 +32,10 @@ The property manager performs most of this procedure. The following instructions
 
 The property manager or application developer must perform the following steps:
 
-1. Create a [Connect Webview](../../core-concepts/connect-webviews/), including `latch` in the set of [`accepted_providers`](../../api-clients/connect_webviews/#connect\_webview-properties).
+1. Create a [Connect Webview](../../core-concepts/connect-webviews/), including `latch` in the set of [`accepted_providers`](../../api-clients/connect\_webviews/#connect\_webview-properties).
 2. Display the Connect Webview and perform the following steps:
    * If the Connect Webview displays multiple brand options, select **Latch**.
-   *   In the **Connect a Latch Building** dialog, copy and note your Seam Connect ID. You must send this Connect ID to Seam. Save the Connect ID for a later step with further instructions.\
-
+   *   In the **Connect a Latch Building** dialog, copy and note your Seam Connect ID. You must send this Connect ID to Seam. Save the Connect ID for a later step with further instructions.
 
        <figure><img src="../../.gitbook/assets/workspace-id-for-latch.png" alt="Copy and note your Seam workspace ID." width="245"><figcaption><p>Copy and note your Seam workspace ID.</p></figcaption></figure>
    * Click **Continue**.

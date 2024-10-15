@@ -28,7 +28,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their ecobee devices to Seam, include the `ecobee` [device provider key](../api-clients/connect_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their ecobee devices to Seam, include the `ecobee` [device provider key](../api-clients/connect\_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -40,6 +40,12 @@ To control ecobee devices using Seam, you must prompt owners of these devices to
 2. In the ecobee app, add your ecobee thermostats.
 3. Note your login credentials for the ecobee app, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
 
+{% hint style="info" %}
+Make sure that you're authenticating with the user to whom the devices are registered. ecobee devices can only be registered to a single user.
+{% endhint %}
+
+
+
 ***
 
 ## Where to Order
@@ -49,4 +55,3 @@ To purchase ecobee thermostats, visit the ecobee online store.
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>ecobee Online Store</strong></td><td></td><td><a href="https://www.ecobee.com/en-us/smart-thermostats/">https://www.ecobee.com/en-us/smart-thermostats/</a></td><td><a href="../.gitbook/assets/ecobee-logo.png">ecobee-logo.png</a></td></tr></tbody></table>
 
 ***
-
