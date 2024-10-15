@@ -405,14 +405,6 @@ These items are deprecated.
 
 ### Endpoints without code samples
 
-- `/acs/access_groups/add_user`
-- `/acs/access_groups/get`
-- `/acs/access_groups/list`
-- `/acs/access_groups/list_accessible_entrances`
-- `/acs/access_groups/list_users`
-- `/acs/access_groups/remove_user`
-- `/acs/access_groups/unmanaged/get`
-- `/acs/access_groups/unmanaged/list`
 - `/acs/credential_pools/list`
 - `/acs/credential_provisioning_automations/launch`
 - `/acs/credentials/assign`
