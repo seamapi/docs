@@ -15,7 +15,7 @@ Required: Yes
 
 ID of the desired `acs_user`.
 
----
+***
 
 ## Return Type
 

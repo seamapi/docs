@@ -210,12 +210,16 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 Format: `ID`
 
+ID of the entrance.
+
 
 ---
 
 ### `acs_system_id`
 
 Format: `ID`
+
+ID of the access control system that contains the entrance.
 
 
 ---
@@ -224,12 +228,16 @@ Format: `ID`
 
 Format: `Datetime`
 
+Date and time at which the entrance was created.
+
 
 ---
 
 ### `display_name`
 
 Format: `String`
+
+Display name for the entrance.
 
 
 ---
@@ -256,6 +264,37 @@ Format: `Object`
 </details>
 <details>
 <summary>is_connected <code>boolean</code></summary>
+</details>
+
+---
+
+### `salto_ks_metadata`
+
+Format: `Object`
+
+<details>
+<summary>battery_level <code>string</code></summary>
+</details>
+<details>
+<summary>door_name <code>string</code></summary>
+</details>
+<details>
+<summary>intrusion_alarm <code>boolean</code></summary>
+</details>
+<details>
+<summary>left_open_alarm <code>boolean</code></summary>
+</details>
+<details>
+<summary>lock_type <code>string</code></summary>
+</details>
+<details>
+<summary>locked_state <code>string</code></summary>
+</details>
+<details>
+<summary>online <code>boolean</code></summary>
+</details>
+<details>
+<summary>privacy_mode <code>boolean</code></summary>
 </details>
 
 ---

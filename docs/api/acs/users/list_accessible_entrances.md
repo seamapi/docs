@@ -15,8 +15,8 @@ Required: Yes
 
 ID of the desired `acs_user`.
 
----
+***
 
 ## Return Type
 
-Array<[acs_entrance](./README.md)>
+Array<[acs\_entrance](./)>
