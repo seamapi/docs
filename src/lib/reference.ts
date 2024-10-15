@@ -1,6 +1,7 @@
 import type { Blueprint } from '@seamapi/blueprint'
 import type Metalsmith from 'metalsmith'
 
+import type { PathMetadata } from './blueprint.js'
 import {
   type EndpointLayoutContext,
   type RouteLayoutContext,
@@ -13,13 +14,6 @@ const sdks: Array<'javascript'> = []
 type Metadata = Partial<Pick<Blueprint, 'routes' | 'resources'>>
 
 type File = EndpointLayoutContext & RouteLayoutContext & { layout: string }
-
-export type PathMetadata = Record<
-  string,
-  {
-    description?: string | null
-  }
->
 
 export const reference = (
   files: Metalsmith.Files,
@@ -59,7 +53,7 @@ export const reference = (
       }
       const file = files[k] as unknown as File
       file.layout = 'api-endpoint.hbs'
-      setEndpointLayoutContext(file, endpoint)
+      setEndpointLayoutContext(file, endpoint, pathMetadata)
 
       for (const sdk of sdks) {
         const k = `sdk/${sdk}${endpoint.path}.md`
@@ -68,7 +62,7 @@ export const reference = (
         }
         const file = files[k] as unknown as File
         file.layout = 'sdk-reference.hbs'
-        setEndpointLayoutContext(file, endpoint)
+        setEndpointLayoutContext(file, endpoint, pathMetadata)
       }
     }
   }
