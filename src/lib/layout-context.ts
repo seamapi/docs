@@ -130,6 +130,7 @@ export interface RouteLayoutContext {
     description: string
   }
   description: string
+  path: string
   resources: ContextResource[]
   endpoints: ContextEndpoint[]
 }
@@ -145,6 +146,7 @@ export function setApiRouteLayoutContext(
     throw new Error(`Missing page metadata for ${route.path}`)
   }
   file.page = page
+  file.path = route.path
   file.endpoints = route.endpoints.map(({ path, name, description }) => ({
     path,
     name,

@@ -1,6 +1,10 @@
 ---
 description: Access Control Systems
 ---
+```
+/acs/systems
+```
+
 # `acs_system`
 
 Represents an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
