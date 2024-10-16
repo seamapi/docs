@@ -7,11 +7,11 @@
     body:
       thermostats:
         - device_id: 123e4567-e89b-12d3-a456-426614174000
-          device_type: "ecobee_thermostat"
+          device_type: 'ecobee_thermostat'
           capabilities_supported:
             - thermostat
           properties:
-            name: "Entryway"
+            name: 'Entryway'
             online: true,
             relative_humidity: 0.36
             temperature_farenheit: 70
@@ -39,11 +39,11 @@
     body:
       thermostat:
         - device_id: 123e4567-e89b-12d3-a456-426614174000
-          device_type: "ecobee_thermostat"
+          device_type: 'ecobee_thermostat'
           capabilities_supported:
             - thermostat
           properties:
-            name: "Entryway"
+            name: 'Entryway'
             online: true,
             relative_humidity: 0.36
             temperature_farenheit: 70
@@ -119,11 +119,10 @@
     path: /thermostats/set_fan_mode
     parameters:
       device_id: 123e4567-e89b-12d3-a456-426614174000
-      fan_mode_setting: "auto"
+      fan_mode_setting: 'auto'
   response:
     body:
       action_attempt:
         action_attempt_id: 123e4567-e89b-12d3-a456-426614174000
         status: pending
         action_type: LOCK_DOOR
-
