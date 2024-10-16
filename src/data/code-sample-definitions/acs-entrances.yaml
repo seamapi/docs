@@ -31,11 +31,11 @@
             created_at: '2024-04-05T07:57:05.323Z'
       devices:
         - device_id: 123e4567-e89b-12d3-a456-426614174000
-          device_type: "ecobee_thermostat"
+          device_type: 'ecobee_thermostat'
           capabilities_supported:
             - thermostat
           properties:
-            name: "Entryway"
+            name: 'Entryway'
             online: true,
             relative_humidity: 0.36
             temperature_farenheit: 70
