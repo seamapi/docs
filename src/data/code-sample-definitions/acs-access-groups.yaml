@@ -48,7 +48,7 @@
       acs_access_group_id: 44444444-4444-4444-4444-444444444444
       acs_user_id: 33333333-3333-3333-3333-333333333333
   response:
-    body: {}
+    body: null
 
 - title: Remove a user from an access group
   description: Specify the `acs_access_group_id` and `acs_user_id` to remove a user from an access group.
@@ -58,7 +58,7 @@
       acs_access_group_id: 44444444-4444-4444-4444-444444444444
       acs_user_id: 33333333-3333-3333-3333-333333333333
   response:
-    body: {}
+    body: null
 
 - title: List users in an access group
   description: Specify the `acs_access_group_id` to retrieve all users in an access group.
@@ -95,7 +95,7 @@
       acs_access_group_id: 44444444-4444-4444-4444-444444444444
       name: Updated Lobby Access
   response:
-    body: {}
+    body: null
 
 - title: Delete an access group
   description: Specify the `acs_access_group_id` to delete an access group.
@@ -104,7 +104,7 @@
     parameters:
       acs_access_group_id: 44444444-4444-4444-4444-444444444444
   response:
-    body: {}
+    body: null
 
 - title: Create an access group
   description: Specify the `acs_system_id` and `name` to create a new access group.
