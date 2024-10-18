@@ -67,6 +67,15 @@ Date and time at which the `acs_system` was created.
 
 ---
 
+### `default_credential_manager_acs_system_id`
+
+Format: `ID`
+
+ID of the default credential manager acs_system for this access control system.
+
+
+---
+
 ### `errors`
 
 Format: `List`
@@ -118,6 +127,15 @@ Alternative text for the `acs_system` image.
 Format: `String`
 
 URL for the image that represents the `acs_system`.
+
+
+---
+
+### `is_credential_manager`
+
+Format: `Boolean`
+
+Indicates if the `acs_system` is a credential manager.
 
 
 ---
