@@ -155,10 +155,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/acs/encoders/encode_card`
 - `/acs/encoders/list`
 - `/acs/encoders/scan_card`
-- `/acs/entrances/get`
 - `/acs/entrances/grant_access`
-- `/acs/entrances/list`
-- `/acs/entrances/list_credentials_with_access`
 - `/acs/users/unmanaged/get`
 - `/acs/users/unmanaged/list`
 - `/events/get`
@@ -374,6 +371,14 @@ Items that are intentionally undocumented are not included in this section.
     - `name`
     - `starts_at`
     - `thermostat_schedule_id`
+
+## Draft
+
+These items have been marked as draft.
+
+### Resource properties
+
+- `acs_system.default_credential_manager_acs_system_id`: Needs review
 
 ## Deprecated
 
