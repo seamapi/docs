@@ -33,7 +33,7 @@ Seam does not support [unmanaged access codes](../products/smart-locks/access-co
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their Kwikset devices to Seam, include the `kwikset` [device provider key](../api-clients/connect_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their Kwikset devices to Seam, include the `kwikset` [device provider key](../api-clients/connect\_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -45,8 +45,7 @@ To control Kwikset devices using Seam, you must prompt owners of these devices t
 
 1. Create an account in the [Kwikset App](https://www.kwikset.com/smart-locks/app) if you have not done so already.
 2. In the Kwikset App, add your Kwikset devices.
-3.  In the Kwikset App, click on the top left menu button, navigate to **Account Settings** and disable **2-Step Verification**.\
-
+3.  In the Kwikset App, click on the top left menu button, navigate to **Account Settings** and disable **2-Step Verification**.
 
     <figure><img src="../.gitbook/assets/kwikset-MFA-settings.png" alt="Disable 2-Step Verification before connecting your Kwikset account to Seam." width="180"><figcaption><p>Disable 2-Step Verification before connecting your Kwikset account to Seam.</p></figcaption></figure>
 

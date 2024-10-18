@@ -12,8 +12,9 @@ The following sections list the properties for events pertaining to various type
 
 ### Common Event Properties
 
-| `event_id`             | String                             | Unique identifier for the `event`.                                           |
+| Property               | Type                               | Description                                                                  |
 | ---------------------- | ---------------------------------- | ---------------------------------------------------------------------------- |
+| `event_id`             | String                             | Unique identifier for the `event`.                                           |
 | `event_type`           | See [Event Types](./#event-types). | Type of event.                                                               |
 | `created_at`           | String                             | Time at which the `event` was created. Displayed in an ISO8601 string.       |
 | `workspace_id`         | String                             | Unique identifier for the `workspace` to which the `event` belongs.          |
@@ -23,7 +24,7 @@ The following sections list the properties for events pertaining to various type
 
 In addition to the common event properties, the following properties are available for all events that pertain to devices:
 
-|             |        |                                                                |
+| Property    | Type   | Description                                                    |
 | ----------- | ------ | -------------------------------------------------------------- |
 | `device_id` | String | Unique identifier for the `device` that triggered the `event`. |
 
@@ -31,7 +32,7 @@ In addition to the common event properties, the following properties are availab
 
 In addition to the common event properties and common device event properties, the following properties are available for events that pertain to access codes:
 
-|                  |        |                                                                                                                                         |
+| Property         | Type   | Description                                                                                                                             |
 | ---------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------- |
 | `access_code_id` | String | Present on all of the `access_code.*` events. Specifies the unique identifier of the access code to which the event pertains.           |
 | `code`           | String | Only present on `access_code.set_on_device` and `access_code.scheduled_on_device` events. Specifies the code digits for an access code. |
@@ -40,16 +41,16 @@ In addition to the common event properties and common device event properties, t
 
 In addition to the common event properties and common device event properties, the following properties are available for events that pertain to lock actions:
 
-|                  |        |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| ---------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `method`         | Enum   | <p>Present on <code>lock.locked</code> and <code>lock.unlocked</code> events. Specifies the method used to perform the lock or unlock action.</p><p>Supported values:</p><ul><li><code>keycode</code></li></ul><ul><li><code>manual</code></li></ul><ul><li><code>unknown</code></li></ul><ul><li><code>seamapi</code></li></ul><ul><li><code>automatic</code> (for <a href="../../device-guides/kwikset-locks.md">Kwikset</a> <code>lock.locked</code> events only)</li></ul> |
-| `access_code_id` | String | <p>Specifies the unique identifier of the access code used to trigger this event. Seam includes this ID in the event if the affected device returns this information.<br>For a list of device manufacturers that send the <code>access_code_id</code> in lock events, see <a href="../../products/smart-locks/access-codes/#linking-unlock-events-and-access-codes">Linking Unlock Events and Access Codes</a>.</p>                                                            |
+| Property         | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| ---------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `method`         | Enum   | <p>Present on <code>lock.locked</code> and <code>lock.unlocked</code> events. Specifies the method used to perform the lock or unlock action.</p><p>Supported values for <code>lock.unlocked</code>:</p><ul><li><code>keycode</code></li><li><code>manual</code></li><li><code>unknown</code></li><li><code>seamapi</code></li></ul><p>Supported values for <code>lock.locked</code>:</p><ul><li><code>keycode</code></li><li><code>manual</code></li><li><code>unknown</code></li><li><code>seamapi</code></li><li><code>automatic</code> (for <a href="../../device-guides/kwikset-locks.md">Kwikset</a> and <a href="../../device-guides/igloohome-locks.md">igloohome</a> only)</li></ul> |
+| `access_code_id` | String | <p>Specifies the unique identifier of the access code used to trigger this event. Seam includes this ID in the event if the affected device returns this information.<br>For a list of device manufacturers that send the <code>access_code_id</code> in lock events, see <a href="../../products/smart-locks/access-codes/#linking-unlock-events-and-access-codes">Linking Unlock Events and Access Codes</a>.</p>                                                                                                                                                                                                                                                                           |
 
 ### Device Battery Event Properties
 
 In addition to the common event properties and common device event properties, the following properties are available for `device.low_battery` and `device.battery_status_changed` events:
 
-|                 |              |                                                                                           |
+| Property        | Type         | Description                                                                               |
 | --------------- | ------------ | ----------------------------------------------------------------------------------------- |
 | `battery_level` | Number (0-1) | Determines the battery level of the device. Only present on a `device.low_battery` event. |
 
@@ -57,7 +58,7 @@ In addition to the common event properties and common device event properties, t
 
 In addition to the device battery event properties, the following properties are available for `device.battery_status_changed` events:
 
-|                  |                                         |                                                  |
+| Property         | Type                                    | Description                                      |
 | ---------------- | --------------------------------------- | ------------------------------------------------ |
 | `battery_status` | `critical` or `low` or `good` or `full` | Specifies the new battery status for the device. |
 
@@ -65,7 +66,7 @@ In addition to the device battery event properties, the following properties are
 
 In addition to the common event properties and common device event properties, the following properties are available for `device.disconnected` events:
 
-|              |                                                                       |                                                                                                 |
+| Property     | Type                                                                  | Description                                                                                     |
 | ------------ | --------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | `error_code` | `account_disconnected` or `hub_disconnected` or `device_disconnected` | Only present on a `device.disconnected` event. A code to indicate the reason for disconnection. |
 
@@ -73,10 +74,10 @@ In addition to the common event properties and common device event properties, t
 
 Noise sensors emit an event whenever a predefined noise threshold has been exceeded. Seam tracks any noise thresholds that have been set in the user's app or built-in thresholds to the noise sensor. To see what thresholds are available, query `/noise_sensors/noise_thresholds/list`.
 
-|                        |                                           |                                                                                                                  |
-| ---------------------- | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `noise_threshold_id`   | String                                    | Identifier for the noise threshold, pass to `/noise_sensors/noise_thresholds/get`                                |
-| `noise_threshold_name` | String e.g. `"builtin_first_disturbance"` | Name of the threshold, this can be set via `/noise_sensors/noise_thresholds/create` or by the user in their app. |
+| Property               | Type                                               | Description                                                                                                      |
+| ---------------------- | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `noise_threshold_id`   | String                                             | Identifier for the noise threshold, pass to `/noise_sensors/noise_thresholds/get`                                |
+| `noise_threshold_name` | String, for example, `"builtin_first_disturbance"` | Name of the threshold, this can be set via `/noise_sensors/noise_thresholds/create` or by the user in their app. |
 
 ***
 
@@ -127,15 +128,15 @@ Noise sensors emit an event whenever a predefined noise threshold has been excee
 | `device.unmanaged.converted_to_managed`              | Successfully converted an unmanaged device to a managed device.                                                                                                                                                                                                                 |
 | `lock.locked`                                        | A door lock has been locked.                                                                                                                                                                                                                                                    |
 | `lock.unlocked`                                      | A door lock has been unlocked.                                                                                                                                                                                                                                                  |
-| `lock.access_denied`                                 | An incorrect access code was entered multiple times in a row on a device ([Kwikset](../../device-guides/kwikset-locks.md) only).                                                                                                                                                |
+| `lock.access_denied`                                 | An incorrect access code was entered multiple times in a row on a device ([Kwikset](../../device-guides/kwikset-locks.md) and [igloohome](../../device-guides/igloohome-locks.md) only).                                                                                        |
 | `noise_sensor.noise_threshold_triggered`             | The noise detected from a noise sensor exceeded a predefined threshold and/or duration.                                                                                                                                                                                         |
 
 ***
 
 ## List of Methods
 
-| [List Events](list.md)   | List and filter events           |
-| ------------------------------- | -------------------------------- |
+| [List Events](list.md) | List and filter events           |
+| ---------------------- | -------------------------------- |
 | [Get an Event](get.md) | Get data for an individual event |
 
 ***
