@@ -71,7 +71,7 @@ igloohome devices have an auto-relock feature that automatically locks the devic
 
 ### igloohome Access Denied Event
 
-igloohome devices have an "incorrect PIN lockout count" setting that you can configure on the device itself using Bluetooth or the device keypad. When an incorrect access code is entered too many times in a row, the Seam API emits a [`lock.access_denied` event](../api-clients/events/#event-types). The igloohome device also emits a warning siren, and the keypad is locked, until you perform a Master Bluetooth unlock on the device.
+Each time an igloohome device detects an invalid attempt of entry, Seam emits a [`lock.access_denied` event](../api-clients/events/#event-types). Invalid entry attempts include entering the wrong PIN, exceeding the PIN length, and using an invalid key card. The igloohome lock also flashes red to indicate an invalid attempt. If too many invalid attempts occur, igloohome locks produce a Keypad Security Lockout alarm, accompanied by light and sound indicators. For more information, see the igloohome support articles on [keypad security](https://support.igloohome.co/support/solutions/articles/35000169627-keypad-security-lockout-activated-and-deactivated) and [incorrect PINs](https://support.igloohome.co/support/solutions/articles/35000169625-incorrect-pin).
 
 ***
 
