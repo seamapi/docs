@@ -6,6 +6,8 @@ These items are intentionally undocumented.
 
 ### Routes
 
+- `/acs/credential_pools`: No undocumented message provided
+- `/acs/credential_provisioning_automations`: No undocumented message provided
 - `/acs/encoders`: No undocumented message provided
 - `/acs/users/unmanaged`: No undocumented message provided
 
@@ -16,6 +18,8 @@ These items are intentionally undocumented.
 
 ### Endpoints
 
+- `/acs/credential_pools/list`: Replaced by enrollment automations.
+- `/acs/credential_provisioning_automations/launch`: Replaced by enrollment automations.
 - `/acs/encoders/encode_card`: Encoding a card is currently unimplemented.
 - `/acs/encoders/list`: Encoders are in alpha.
 - `/acs/encoders/scan_card`: Reading a card is currently unimplemented.
@@ -118,6 +122,7 @@ Items that are intentionally undocumented are not included in this section.
 - `event.heating_set_point_fahrenheit`
 - `event.hvac_mode_setting`
 - `event.is_fallback_climate_preset`
+- `event.method`
 - `event.occurred_at`
 - `event.thermostat_schedule_id`
 - `event.workspace_id`
