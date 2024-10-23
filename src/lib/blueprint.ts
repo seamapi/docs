@@ -13,14 +13,11 @@ export const blueprint = async (
   const codeSampleDefinitions =
     'codeSampleDefinitions' in metadata ? metadata.codeSampleDefinitions : []
 
-  // UPSTREAM: Ideally, path metadata would be unnecessary and contained inside the blueprint.
-  const pathMetadata = 'pathMetadata' in metadata ? metadata.pathMetadata : {}
-
   const typesModule = TypesModuleSchema.parse({
     ...types,
     codeSampleDefinitions,
   })
 
   const blueprint = await createBlueprint(typesModule, { formatCode })
-  Object.assign(metadata, { ...blueprint, pathMetadata })
+  Object.assign(metadata, blueprint)
 }
