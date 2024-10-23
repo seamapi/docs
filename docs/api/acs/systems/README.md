@@ -94,7 +94,7 @@ Brand-specific terminology for the `acs_system` type.
 Possible enum values:
 - `pti_site`
 - `alta_org`
-- `salto_site`
+- `salto_ks_site`
 - `brivo_account`
 - `hid_credential_manager_organization`
 - `visionline_system`
@@ -160,7 +160,7 @@ Format: `Enum`
 Possible enum values:
 - `pti_site`
 - `alta_org`
-- `salto_site`
+- `salto_ks_site`
 - `brivo_account`
 - `hid_credential_manager_organization`
 - `visionline_system`
