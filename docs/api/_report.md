@@ -6,6 +6,8 @@ These items are intentionally undocumented.
 
 ### Routes
 
+- `/acs/credential_pools`: No undocumented message provided
+- `/acs/credential_provisioning_automations`: No undocumented message provided
 - `/acs/encoders`: No undocumented message provided
 - `/acs/users/unmanaged`: No undocumented message provided
 
@@ -16,6 +18,8 @@ These items are intentionally undocumented.
 
 ### Endpoints
 
+- `/acs/credential_pools/list`: Replaced by enrollment automations.
+- `/acs/credential_provisioning_automations/launch`: Replaced by enrollment automations.
 - `/acs/encoders/encode_card`: Encoding a card is currently unimplemented.
 - `/acs/encoders/list`: Encoders are in alpha.
 - `/acs/encoders/scan_card`: Reading a card is currently unimplemented.
@@ -118,6 +122,7 @@ Items that are intentionally undocumented are not included in this section.
 - `event.heating_set_point_fahrenheit`
 - `event.hvac_mode_setting`
 - `event.is_fallback_climate_preset`
+- `event.method`
 - `event.occurred_at`
 - `event.thermostat_schedule_id`
 - `event.workspace_id`
@@ -155,10 +160,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/acs/encoders/encode_card`
 - `/acs/encoders/list`
 - `/acs/encoders/scan_card`
-- `/acs/entrances/get`
 - `/acs/entrances/grant_access`
-- `/acs/entrances/list`
-- `/acs/entrances/list_credentials_with_access`
 - `/acs/users/unmanaged/get`
 - `/acs/users/unmanaged/list`
 - `/events/get`
@@ -375,6 +377,14 @@ Items that are intentionally undocumented are not included in this section.
     - `starts_at`
     - `thermostat_schedule_id`
 
+## Draft
+
+These items have been marked as draft.
+
+### Resource properties
+
+- `acs_system.default_credential_manager_acs_system_id`: Needs review
+
 ## Deprecated
 
 These items are deprecated.
@@ -424,17 +434,8 @@ These items are deprecated.
 - `/acs/entrances/grant_access`
 - `/acs/entrances/list`
 - `/acs/entrances/list_credentials_with_access`
-- `/acs/users/add_to_access_group`
-- `/acs/users/create`
-- `/acs/users/delete`
-- `/acs/users/get`
-- `/acs/users/list`
 - `/acs/users/list_accessible_entrances`
-- `/acs/users/remove_from_access_group`
 - `/acs/users/revoke_access_to_all_entrances`
-- `/acs/users/suspend`
-- `/acs/users/unsuspend`
-- `/acs/users/update`
 - `/acs/users/unmanaged/get`
 - `/acs/users/unmanaged/list`
 - `/events/get`

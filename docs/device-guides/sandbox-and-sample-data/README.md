@@ -102,6 +102,10 @@ description: >-
 [pti-storlogix-cloud-sample-data.md](pti-storlogix-cloud-sample-data.md)
 {% endcontent-ref %}
 
+{% content-ref url="../../developer-tools/sandbox-and-sample-data/sandbox-salto-ks-access-control-system.md" %}
+[sandbox-salto-ks-access-control-system.md](../../developer-tools/sandbox-and-sample-data/sandbox-salto-ks-access-control-system.md)
+{% endcontent-ref %}
+
 {% content-ref url="salto-sample-data.md" %}
 [salto-sample-data.md](salto-sample-data.md)
 {% endcontent-ref %}

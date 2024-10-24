@@ -45,24 +45,24 @@ The following example walks you through this process:
 # jane_user is a user_identity that represents
 # a user within your set of app users.
 building_a_resident = seam.acs.users.create(
-  acs_system_id="11111111-1111-1111-1111-111111111111",
-  user_identity_id=jane_user.user_identity_id,
-  full_name="Jane Doe",
-  email_address="jane@example.com"
+  acs_system_id = "11111111-1111-1111-1111-111111111111",
+  user_identity_id = jane_user.user_identity_id,
+  full_name = "Jane Doe",
+  email_address = "jane@example.com"
 )
 
 # Step 2:
 # Create a PIN code for each door for the ACS user.
 for entrance in entrances:
   credential = seam.acs.credentials.create(
-    acs_user_id=building_a_resident.acs_user_id,
-    access_method="code",
-    allowed_acs_entrance_ids=[
+    acs_user_id = building_a_resident.acs_user_id,
+    access_method = "code",
+    allowed_acs_entrance_ids = [
       # You must specify only one entrance per PIN code.
       entrance.acs_entrance_id
     ],
-    starts_at="2024-07-13T16:50:42.072Z",
-    ends_at="2024-07-18T16:50:42.072Z"
+    starts_at = "2024-07-13T16:50:42.072Z",
+    ends_at = "2024-07-18T16:50:42.072Z"
   )
 
   pprint(credential)
@@ -70,7 +70,7 @@ for entrance in entrances:
   # View the list of entrances to which the credential
   # grants access.
   seam.acs.credentials.list_accessible_entrances(
-    acs_credential_id=credential.acs_credential_id
+    acs_credential_id = credential.acs_credential_id
   )
 ```
 

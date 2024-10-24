@@ -8,9 +8,9 @@ You can create mobile credentials that enable your mobile app users to unlock en
 
 To use the Seam API to create mobile credentials for mobile app users in a Latch ACS:
 
-1.  Create a [user identity](../../api-clients/user_identities/) that corresponds to your user's app account.
+1.  Create a [user identity](../../api-clients/user\_identities/) that corresponds to your user's app account.
 
-    Seam [user identities](../../api-clients/user_identities/) enable you to match your own mobile app users to ACS users that you create using the Seam API.
+    Seam [user identities](../../api-clients/user\_identities/) enable you to match your own mobile app users to ACS users that you create using the Seam API.
 2. Retrieve a [credential manager](../../products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md#initialize-the-user-identity-with-a-credential-manager) for your Latch ACS.
 3. Set up an [enrollment automation](../../products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md) for the user identity, to enable mobile keys.
 4. Create an [ACS user](../../products/access-systems/user-management.md) on the Latch ACS or assign an existing ACS user to the user identity.\
@@ -49,15 +49,15 @@ jane_user = seam.user_identities.create(
 # Step 2:
 # Retrieve a credential manager.
 latch_credential_manager = seam.acs.systems.list_compatible_credential_manager_acs_systems(
-    acs_system_id=building_a.acs_system_id
+    acs_system_id = building_a.acs_system_id
   )[0]
 
 # Step 3:
 # Set up an enrollment automation for the user identity, to enable mobile keys.
 seam.user_identities.enrollment_automations.launch(
-  user_identity_id=jane_user.user_identity_id,
-  create_credential_manager_user=True,
-  credential_manager_acs_system_id=latch_credential_manager.acs_system_id
+  user_identity_id = jane_user.user_identity_id,
+  create_credential_manager_user = True,
+  credential_manager_acs_system_id = latch_credential_manager.acs_system_id
 )
 
 # Step 4:
@@ -68,26 +68,26 @@ building_a_resident = seam.acs.users.create(
   # include the user_identity_id.
   # Resources that you create for this ACS user
   # are available under the associated user identity.
-  user_identity_id=jane_user.user_identity_id,
-  acs_system_id=building_a.acs_system_id,
-  full_name="Jane Doe",
-  email_address="jane@example.com"
+  user_identity_id = jane_user.user_identity_id,
+  acs_system_id = building_a.acs_system_id,
+  full_name = "Jane Doe",
+  email_address = "jane@example.com"
 )
 
 # Step 5:
 # Create a mobile key for the entrances to which
 # you want to grant the ACS user access.
 mobile_key = seam.acs.credentials.create(
-  acs_user_id=building_a_resident.acs_user_id,
-  is_multi_phone_sync_credential=True,
-  access_method="mobile_key",
-  allowed_acs_entrance_ids=[
+  acs_user_id = building_a_resident.acs_user_id,
+  is_multi_phone_sync_credential = True,
+  access_method = "mobile_key",
+  allowed_acs_entrance_ids = [
     # You can include multiple entrances per mobile key.
     room_entrance.acs_entrance_id,
     common_door_entrance.acs_entrance_id
   ],
-  starts_at="2024-07-13T16:50:42.072Z",
-  ends_at="2024-07-18T16:50:42.072Z"
+  starts_at = "2024-07-13T16:50:42.072Z",
+  ends_at = "2024-07-18T16:50:42.072Z"
 )
 
 pprint(mobile_key)
@@ -95,7 +95,7 @@ pprint(mobile_key)
 # It is also useful to list the entrances
 # to which the mobile key grants access.
 seam.acs.credentials.list_accessible_entrances(
-  acs_credential_id=mobile_key.acs_credential_id
+  acs_credential_id = mobile_key.acs_credential_id
 )
 ```
 
@@ -297,6 +297,7 @@ const buildingAResident = await seam.acs.users.create({
 // you want to grant the ACS user access.
 const mobileKey = await seam.acs.credentials.create({
   acs_user_id: buildingAResident.acs_user_id,
+  is_multi_phone_sync_credential: true,
   access_method: "mobile_key",
   allowed_acs_entrance_ids: [
     // You can include multiple entrances per mobile key.
@@ -398,7 +399,6 @@ $building_a_resident = $seam->acs->users->create(
 // Step 5:
 // Create a mobile key for the entrances to which
 // you want to grant the ACS user access.
-
 $mobile_key = $seam->acs->credentials->create(
   acs_user_id: $building_a_resident->acs_user_id,
   is_multi_phone_sync_credential: true,
@@ -618,6 +618,7 @@ if err != nil {
 mobile_key, err := client.Acs.Credentials.Create(
   context.Background(), &acs.CredentialsCreateRequest{
     AcsUserId: building_a_resident.AcsUserId,
+    IsMultiPhoneSyncCredential: api.Bool(true),
     AccessMethod: "mobile_key",
     AllowedAcsEntranceIds: []string{
       // You can include multiple entrances per mobile key.
@@ -685,4 +686,4 @@ To learn more about using the Seam API with your Latch ACS, see the following to
 * [Managing Credentials](../../capability-guides/access-systems/managing-credentials.md)
 * [Mobile Access](../../products/mobile-access-in-development/)
 * [Access Control Systems](../../api-clients/acs/) in the Seam API reference
-* [User Identities](../../api-clients/user_identities/) in the Seam API reference
+* [User Identities](../../api-clients/user\_identities/) in the Seam API reference

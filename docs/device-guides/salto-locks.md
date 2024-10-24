@@ -1,18 +1,22 @@
 ---
-description: Guide for using Salto door locks with Seam
+description: Guide for using Salto KS door locks with Seam
 ---
 
-# Salto Locks
+# Salto KS Locks
 
 ## Overview
 
-Salto Systems produces world-class electronic access control solutions. Their locks work with a vast array of entrance types, from traditional doors and elevators, to key cylinders and parking stiles. They also support a versatile range of key credentials -- their locks work with RFID tags, mobile keys, and PIN codes. Using their mobile app and app dashboard, businesses can easily assign, monitor, and revoke access rights.
+Salto Systems produces world-class electronic access control solutions. Their locks work with a vast array of entrance types, from traditional doors and elevators, to key cylinders and parking stiles. They also support a versatile range of key credentials; their locks work with RFID tags, mobile keys, and PIN codes. Using their mobile app and app dashboard, businesses can easily assign, monitor, and revoke access rights.
+
+{% hint style="info" %}
+Seam supports two integrations for Salto KS. We recommend using the [Salto KS access control system integration](../device-and-system-integration-guides/salto-ks-access-control-system/) because it provides more robust functionality, such as managing ACS users and credentials. However, if you want to connect a single or just a few Salto KS locks, you can choose the Salto KS lock integration that this topic describes.
+{% endhint %}
 
 ***
 
 ## Supported Devices
 
-This integration works any devices connected via their [SaltoKS platform](https://saltoks.com/).
+This integration works any devices connected via their [Salto KS platform](https://saltoks.com/).
 
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
@@ -22,14 +26,14 @@ This integration works any devices connected via their [SaltoKS platform](https:
 
 We support the following features:
 
-* [Triggering web unlock actions](../api-clients/locks/unlock_door.md)
+* [Triggering web unlock actions](../api-clients/locks/unlock\_door.md)
 * [Programming access codes](../products/smart-locks/access-codes/) on door locks and card readers that have a PIN pad
 
 ***
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their Salto devices to Seam, include the `salto` [device provider key](../api-clients/connect_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their Salto devices to Seam, include the `salto` [device provider key](../api-clients/connect\_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -62,4 +66,4 @@ A Salto lock displaying an `unknown` device type indicates a weak connection wit
 
 Get in touch with a Salto representative in your region. They can refer you to a local installer that will service your area.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Salto Systems Sales Contact</strong></td><td></td><td><a href="https://saltosystems.com/en-us/offices/">https://saltosystems.com/en-us/offices/</a></td><td><a href="broken-reference">Broken file</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Salto Systems Sales Contact</strong></td><td></td><td><a href="https://saltosystems.com/en-us/offices/">https://saltosystems.com/en-us/offices/</a></td><td><a href="../.gitbook/assets/salto-logo.png">salto-logo.png</a></td></tr></tbody></table>
