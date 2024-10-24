@@ -40,8 +40,8 @@
         workspace_id: 00000000-0000-0000-0000-000000000000
         created_at: '2023-11-30T06:27:15.437Z'
 
-- title: Add a user to an access group
-  description: Specify the `acs_access_group_id` and `acs_user_id` to add a user to an access group.
+- title: Add an ACS user to an access group
+  description: Specify the `acs_access_group_id` and `acs_user_id` to add an ACS user to an access group.
   request:
     path: /acs/access_groups/add_user
     parameters:
@@ -50,8 +50,8 @@
   response:
     body: null
 
-- title: Remove a user from an access group
-  description: Specify the `acs_access_group_id` and `acs_user_id` to remove a user from an access group.
+- title: Remove an ACS user from an access group
+  description: Specify the `acs_access_group_id` and `acs_user_id` to remove an ACS user from an access group.
   request:
     path: /acs/access_groups/remove_user
     parameters:
@@ -60,8 +60,8 @@
   response:
     body: null
 
-- title: List users in an access group
-  description: Specify the `acs_access_group_id` to retrieve all users in an access group.
+- title: List ACS users in an access group
+  description: Specify the `acs_access_group_id` to retrieve all ACS users in an access group.
   request:
     path: /acs/access_groups/list_users
     parameters:
