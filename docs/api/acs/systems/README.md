@@ -67,6 +67,15 @@ Date and time at which the `acs_system` was created.
 
 ---
 
+### `default_credential_manager_acs_system_id`
+
+Format: `ID`
+
+ID of the default credential manager acs_system for this access control system.
+
+
+---
+
 ### `errors`
 
 Format: `List`
@@ -85,7 +94,7 @@ Brand-specific terminology for the `acs_system` type.
 Possible enum values:
 - `pti_site`
 - `alta_org`
-- `salto_site`
+- `salto_ks_site`
 - `brivo_account`
 - `hid_credential_manager_organization`
 - `visionline_system`
@@ -122,6 +131,15 @@ URL for the image that represents the `acs_system`.
 
 ---
 
+### `is_credential_manager`
+
+Format: `Boolean`
+
+Indicates if the `acs_system` is a credential manager.
+
+
+---
+
 ### `name`
 
 Format: `String`
@@ -142,7 +160,7 @@ Format: `Enum`
 Possible enum values:
 - `pti_site`
 - `alta_org`
-- `salto_site`
+- `salto_ks_site`
 - `brivo_account`
 - `hid_credential_manager_organization`
 - `visionline_system`
