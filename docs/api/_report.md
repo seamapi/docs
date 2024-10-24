@@ -241,6 +241,12 @@ Items that are intentionally undocumented are not included in this section.
     - `ends_at`
 - `/acs/credentials/unmanaged/get`
     - `acs_credential_id`
+- `/acs/encoders/encode_card`
+    - `acs_credential_id`
+    - `device_id`
+- `/acs/encoders/scan_card`
+    - `acs_system_id`
+    - `device_id`
 - `/acs/entrances/get`
     - `acs_entrance_id`
 - `/acs/entrances/grant_access`
