@@ -15,7 +15,7 @@ HVAC mode (`hvac_mode_setting`) governs the operation of your heating, ventilati
 
 ## HVAC Mode Constraints
 
-Some models of thermostats have specific requirements and constraints related to setting the HVAC mode. You can retrieve these requirements by issuing a [Get Device](../../api-clients/devices/get.md) or [List Devices](../../api-clients/devices/list.md) request.&#x20;
+Some models of thermostats have specific requirements and constraints related to setting the HVAC mode. You can retrieve these requirements by issuing a [Get Device](../../../api-clients/devices/get.md) or [List Devices](../../../api-clients/devices/list.md) request.
 
 The following example shows a set of thermostat HVAC mode requirements:
 
@@ -45,7 +45,7 @@ The following example shows a set of thermostat HVAC mode requirements:
 
 ## Available HVAC Mode Settings
 
-The `available_hvac_mode_settings` property includes an array of available HVAC modes. For example, if the array contains `["heat", "off"]`, it means that you can only set the thermostat to either `heat` mode or `off`  mode. The availability of heating or cooling options depends on the connected systems. If the thermostat is not connected to a specific system, the corresponding options may be absent.
+The `available_hvac_mode_settings` property includes an array of available HVAC modes. For example, if the array contains `["heat", "off"]`, it means that you can only set the thermostat to either `heat` mode or `off` mode. The availability of heating or cooling options depends on the connected systems. If the thermostat is not connected to a specific system, the corresponding options may be absent.
 
 The following example shows a thermostat that supports both heating and cooling:
 

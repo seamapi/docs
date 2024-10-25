@@ -4,79 +4,68 @@ description: Learn how to retrieve all thermostats or a specific thermostat by I
 
 # Retrieving Thermostats
 
-## Retrieving All Thermostats
+When you use the `/thermostats/list` and `/devices/get` endpoints to retrieve information about your connected thermostats, the Seam API returns the following categories of information:
 
-To retrieve all [thermostats](./), issue a [List Thermostats](../../thermostats/list-thermostats.md) request. For filtering options, see the [request body parameters](../../thermostats/list-thermostats.md#request-body-parameters) for the List Thermostats request.
+<table><thead><tr><th width="250">Category</th><th>Details</th></tr></thead><tbody><tr><td>Current conditions</td><td>Current temperature in Fahrenheit and Celsius, current relative humidity, and so on.</td></tr><tr><td>Current operational status</td><td>Whether the associated HVAC system is currently heating or cooling, whether the fan is currently running.</td></tr><tr><td>Available HVAC modes for the thermostat</td><td><code>heat</code>, <code>cool</code>, <code>heat_cool</code>, and <code>off</code>.</td></tr><tr><td>Available fan modes for the thermostat</td><td><code>on</code>, <code>auto</code>, and <code>circulate</code>.</td></tr><tr><td>Thermostat <a href="./#thermostat-capabilities">capability flags</a></td><td><p>Capabilities of the thermostat—at a granular level.</p><p>These capability flags include the following:</p><ul><li><code>device.can_hvac_heat</code></li><li><code>device.can_hvac_cool</code></li><li><code>device.can_hvac_heat_cool</code></li><li><code>device.can_turn_off_hvac</code></li></ul></td></tr><tr><td>Available climate presets</td><td>Climate presets that you can activate and schedule on the thermostat.</td></tr><tr><td>Climate preset constraints</td><td>Constraints related to climate presets for the specific thermostat brand or model.<br>For example, a thermostat might have a minimum or maximum cooling or heating <a href="../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md">set point</a> or a <a href="../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#minimum-heating-cooling-temperature-delta">minimum delta</a> between the cooling and heating set points.</td></tr></tbody></table>
+
+## List All Thermostats
+
+To retrieve all [thermostats](./), issue a [`/thermostats/list`](../../api-clients/thermostats/list.md) request. You can filter by a variety of criteria, including `connected_account_id`, `connect_webview_id`, `manufacturer`, `user_identifier_key`, and so on.
+
+The following example retrieves all Google Nest thermostats:
 
 {% tabs %}
 {% tab title="Python" %}
 **Request:**
 
 ```python
-seam.thermostats.list()
+seam.thermostats.list(
+  manufacturer = "nest"
+)
 ```
 
 **Response:**
 
-<pre><code><strong>[Device(
-</strong>    device_id='518f692b-f865-4590-8c3e-3849e9984c75',
-    device_type='ecobee_thermostat',
-    location=None,
+```
+[
+  Device(
+    can_hvac_cool=True,
+    can_hvac_heat=True,
+    can_hvac_heat_cool=True,
+    can_turn_off_hvac=True,
+    device_id='a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
+    device_type='nest_thermostat',
     properties={
-        'available_hvac_mode_settings': ['off', 'cool', 'heat', 'heat_cool'],
-        'current_climate_setting': {
-            'cooling_set_point_celsius': 25,
-            'cooling_set_point_fahrenheit': 77,
-            'heating_set_point_celsius': 20,
-            'heating_set_point_fahrenheit': 68,
-            'hvac_mode_setting': 'heat_cool',
-            'manual_override_allowed': True
-        },
-        'ecobee_metadata': {
-            'device_name': 'Thermostat 1',
-            'ecobee_device_id': 'a64074f3-a0aa-4dbb-bbd3-f17f61701602'
-        },
-        'fan_mode_setting': 'auto',
-        'has_direct_power': True,
-        'image_alt_text': 'Ecobee 3 Lite Thermostat',
-        'image_url': 'https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png',
-        'is_cooling': False,
-        'is_fan_running': False,
-        'is_heating': False,
-        'is_temporary_manual_override_active': False,
-        'manufacturer': 'ecobee',
-        'max_cooling_set_point_celsius': 33.333333333333336,
-        'max_cooling_set_point_fahrenheit': 92,
-        'max_heating_set_point_celsius': 26.11111111111111,
-        'max_heating_set_point_fahrenheit': 79,
-        'min_cooling_set_point_celsius': 18.333333333333336,
-        'min_cooling_set_point_fahrenheit': 65,
-        'min_heating_cooling_delta_celsius': 2.7777777777777777,
-        'min_heating_cooling_delta_fahrenheit': 5,
-        'min_heating_set_point_celsius': 7.222222222222222,
-        'min_heating_set_point_fahrenheit': 45,
-        'model': {
-            'accessory_keypad_supported': False,
-            'display_name': 'Thermostat',
-            'manufacturer_display_name': 'Ecobee',
-            'offline_access_codes_supported': False,
-            'online_access_codes_supported': True
-        },
-        'name': 'Thermostat 1',
-        'online': True,
-        'relative_humidity': 0.36,
-        'temperature_celsius': 21.11111111111111,
-        'temperature_fahrenheit': 70
+      'available_hvac_mode_settings': [
+        'heat',
+        'cool',
+        'heat_cool',
+        'off'
+      ],
+      'current_climate_setting': {
+        'display_name': 'eco',
+        'cooling_set_point_celsius': 25,
+        'cooling_set_point_fahrenheit': 77,
+        'heating_set_point_celsius': 20,
+        'heating_set_point_fahrenheit': 68,
+        'hvac_mode_setting': 'heat_cool',
+        'manual_override_allowed': True
+      },
+      'is_cooling': False,
+      'is_fan_running': False,
+      'is_heating': False,
+      'manufacturer': 'nest',
+      'online': True,
+      'relative_humidity': 0.46,
+      'temperature_celsius': 24.64,
+      'temperature_fahrenheit': 76.352,
+      ...
     },
-    capabilities_supported=['thermostat'],
-    errors=[],
-    warnings=[],
-    connected_account_id='2c00bc71-bca5-42c2-a1c5-74fd93ffcba1',
-    workspace_id='398d80b7-3f96-47c2-b85a-6f8ba21d07be',
-    created_at='2023-10-30T10:36:18.387Z',
-    is_managed=True
-)]
-</code></pre>
+    ...
+  ),
+  ...
+]
+```
 {% endtab %}
 
 {% tab title="cURL (bash)" %}
@@ -87,9 +76,11 @@ seam.thermostats.list()
 curl -X 'GET' \
   'https://connect.getseam.com/thermostats/list' \
   -H 'accept: application/json' \
-  -H 'Authorization: Bearer ${API_KEY}' \
+  -H "Authorization: Bearer ${API_KEY}" \
   -H 'Content-Type: application/json' \
-  -d '{}'
+  -d '{
+  "manufacturer": "nest"
+  }'
 ```
 
 **Response:**
@@ -98,69 +89,41 @@ curl -X 'GET' \
 {
   "thermostats": [
     {
-      "device_id": "518f692b-f865-4590-8c3e-3849e9984c75",
-      "device_type": "ecobee_thermostat",
-      "capabilities_supported": [
-        "thermostat"
-      ],
+      "device_id": "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61",
+      "device_type": "nest_thermostat",
       "properties": {
         "online": true,
         "is_cooling": false,
         "is_heating": false,
-        "manufacturer": "ecobee",
         "is_fan_running": false,
-        "ecobee_metadata": {
-          "device_name": "Thermostat 1",
-          "ecobee_device_id": "a64074f3-a0aa-4dbb-bbd3-f17f61701602"
-        },
-        "fan_mode_setting": "auto",
-        "has_direct_power": true,
-        "relative_humidity": 0.36,
-        "temperature_celsius": 21.11111111111111,
-        "temperature_fahrenheit": 70,
+        "manufacturer": "nest",
+        "relative_humidity": 0.46,
+        "temperature_celsius": 24.64,
+        "temperature_fahrenheit": 76.352,
         "current_climate_setting": {
+          "display_name": "eco",
           "hvac_mode_setting": "heat_cool",
           "manual_override_allowed": true,
           "cooling_set_point_celsius": 25,
-          "heating_set_point_celsius": 20,
           "cooling_set_point_fahrenheit": 77,
+          "heating_set_point_celsius": 20,
           "heating_set_point_fahrenheit": 68
         },
         "available_hvac_mode_settings": [
-          "off",
-          "cool",
           "heat",
-          "heat_cool"
+          "cool",
+          "heat_cool",
+          "off"
         ],
-        "offline_access_codes_enabled": false,
-        "max_cooling_set_point_celsius": 33.333333333333336,
-        "max_heating_set_point_celsius": 26.11111111111111,
-        "min_cooling_set_point_celsius": 18.333333333333336,
-        "min_heating_set_point_celsius": 7.222222222222222,
-        "min_heating_cooling_delta_celsius": 2.7777777777777777,
-        "is_temporary_manual_override_active": false,
-        "name": "Thermostat 1",
-        "model": {
-          "display_name": "Thermostat",
-          "manufacturer_display_name": "Ecobee",
-          "accessory_keypad_supported": false,
-        },
-        "image_url": "https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png",
-        "image_alt_text": "Ecobee 3 Lite Thermostat",
-        "min_heating_set_point_fahrenheit": 45,
-        "max_heating_set_point_fahrenheit": 79,
-        "min_cooling_set_point_fahrenheit": 65,
-        "max_cooling_set_point_fahrenheit": 92,
-        "min_heating_cooling_delta_fahrenheit": 5
+        ...
       },
-      "location": null,
-      "connected_account_id": "2c00bc71-bca5-42c2-a1c5-74fd93ffcba1",
-      "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-      "created_at": "2023-10-30T10:36:18.387Z",
-      "errors": [],
-      "warnings": [],
-      "is_managed": true
-    }
+      "can_hvac_cool": true,
+      "can_hvac_heat": true,
+      "can_turn_off_hvac": true,
+      "can_hvac_heat_cool": true,
+      ...
+    },
+    ...
   ],
   "ok": true
 }
@@ -171,7 +134,9 @@ curl -X 'GET' \
 **Request:**
 
 ```javascript
-console.log(await seam.thermostats.list())
+await seam.thermostats.list({
+  manufacturer: "nest"
+});
 ```
 
 **Response:**
@@ -179,48 +144,57 @@ console.log(await seam.thermostats.list())
 ```json
 [
   {
-    device_id: '518f692b-f865-4590-8c3e-3849e9984c75',
-    device_type: 'ecobee_thermostat',
-    capabilities_supported: [ 'thermostat' ],
+    device_id: 'a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
+    device_type: 'nest_thermostat',
     properties: {
       online: true,
       is_cooling: false,
       is_heating: false,
-      manufacturer: 'ecobee',
+      manufacturer: 'nest',
       is_fan_running: false,
-      ecobee_metadata: [Object],
-      fan_mode_setting: 'auto',
-      has_direct_power: true,
-      relative_humidity: 0.36,
-      temperature_celsius: 21.11111111111111,
-      temperature_fahrenheit: 70,
+      relative_humidity: 0.46,
+      temperature_celsius: 24.64,
+      temperature_fahrenheit: 76.352,
       current_climate_setting: [Object],
-      available_hvac_mode_settings: [Array],
-      max_cooling_set_point_celsius: 33.333333333333336,
-      max_heating_set_point_celsius: 26.11111111111111,
-      min_cooling_set_point_celsius: 18.333333333333336,
-      min_heating_set_point_celsius: 7.222222222222222,
-      min_heating_cooling_delta_celsius: 2.7777777777777777,
-      is_temporary_manual_override_active: false,
-      name: 'Thermostat 1',
-      model: [Object],
-      image_url: 'https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png',
-      image_alt_text: 'Ecobee 3 Lite Thermostat',
-      min_heating_set_point_fahrenheit: 45,
-      max_heating_set_point_fahrenheit: 79,
-      min_cooling_set_point_fahrenheit: 65,
-      max_cooling_set_point_fahrenheit: 92,
-      min_heating_cooling_delta_fahrenheit: 5
+      available_hvac_mode_settings: [
+        'heat',
+        'cool',
+        'heat_cool',
+        'off'
+      ],
+      current_climate_setting: {
+        display_name: 'eco',
+        hvac_mode_setting: 'heat_cool',
+        manual_override_allowed: true,
+        cooling_set_point_celsius: 25,
+        cooling_set_point_fahrenheit: 77,
+        heating_set_point_celsius: 20,
+        heating_set_point_fahrenheit: 68
+      },
+      ...
     },
-    location: null,
-    connected_account_id: '2c00bc71-bca5-42c2-a1c5-74fd93ffcba1',
-    workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be',
-    created_at: '2023-10-30T10:36:18.387Z',
-    errors: [],
-    warnings: [],
-    is_managed: true
-  }
+    can_hvac_cool: true,
+    can_hvac_heat: true,
+    can_turn_off_hvac: true,
+    can_hvac_heat_cool: true,
+    ...
+  },
+  ...
 ]
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+**Request:**
+
+```ruby
+# Coming soon!
+```
+
+**Response:**
+
+```
+# Coming soon!
 ```
 {% endtab %}
 
@@ -228,86 +202,51 @@ console.log(await seam.thermostats.list())
 **Request:**
 
 ```php
-$thermostats = $seam->thermostats->list();
-echo json_encode($thermostats, JSON_PRETTY_PRINT);
+$seam->thermostats->list(
+  manufacturer: "nest"
+);
 ```
 
 **Response:**
 
-```
+```json
 [
-    {
-        "device_id": "5ce2cd35-09b1-458c-bb08-51ee83c35be7",
-        "device_type": "ecobee_thermostat",
-        "capabilities_supported": [
-            "thermostat"
-        ],
-        "properties": {
-            "online": true,
-            "name": "Thermostat_1",
-            "model": {
-                "display_name": "Thermostat",
-                "manufacturer_display_name": "Ecobee",
-                "offline_access_codes_supported": null,
-                "online_access_codes_supported": null,
-                "accessory_keypad_supported": false
-            },
-            "has_direct_power": true,
-            "battery_level": null,
-            "battery": null,
-            "manufacturer": "ecobee",
-            "image_url": "https:\/\/connect.getseam.com\/assets\/images\/devices\/ecobee_3-lite_front.png",
-            "image_alt_text": "Ecobee 3 Lite Thermostat",
-            "serial_number": null,
-            ...
-            "ecobee_metadata": {
-                "ecobee_device_id": "c44f7f6a-97c6-4317-99a1-dae14fe20bb5",
-                "device_name": "Thermostat_1"
-            },
-            ...
-            "temperature_fahrenheit": 70,
-            "temperature_celsius": 21.11111111111111,
-            "relative_humidity": 0.36,
-            "available_hvac_mode_settings": [
-                "off",
-                "cool",
-                "heat",
-                "heat_cool"
-            ],
-            "is_heating": false,
-            "is_cooling": false,
-            "is_fan_running": false,
-            "fan_mode_setting": "auto",
-            "is_temporary_manual_override_active": false,
-            "current_climate_setting": {
-                "hvac_mode_setting": "heat_cool",
-                "cooling_set_point_celsius": 23.88888888888889,
-                "heating_set_point_celsius": 18.333333333333336,
-                "cooling_set_point_fahrenheit": 75,
-                "heating_set_point_fahrenheit": 65,
-                "manual_override_allowed": true
-            },
-            "min_cooling_set_point_celsius": 18.333333333333336,
-            "min_cooling_set_point_fahrenheit": 65,
-            "max_cooling_set_point_celsius": 33.333333333333336,
-            "max_cooling_set_point_fahrenheit": 92,
-            "min_heating_set_point_celsius": 7.222222222222222,
-            "min_heating_set_point_fahrenheit": 45,
-            "max_heating_set_point_celsius": 26.11111111111111,
-            "max_heating_set_point_fahrenheit": 79,
-            "min_heating_cooling_delta_celsius": 2.7777777777777777,
-            "min_heating_cooling_delta_fahrenheit": 5,
-            "assa_abloy_credential_service_metadata": null
-        },
-        "location": null,
-        "connected_account_id": "aaf37f42-f5a1-4223-a7db-2b61700bf2a9",
-        "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-        "errors": [],
-        "warnings": [],
-        "created_at": "2024-02-29T21:24:29.792Z",
-        "is_managed": true,
-        "custom_metadata": {}
-    },...
+  {
+    "can_hvac_cool": true,
+    "can_hvac_heat": true,
+    "can_hvac_heat_cool": true,
+    "can_turn_off_hvac": true,
+    "device_id": "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61",
+    "device_type": "nest_thermostat",
+    "properties": {
+      "manufacturer": "nest",
+      "online": true,
+      "available_hvac_mode_settings": [
+        "heat",
+        "cool",
+        "heat_cool",
+        "off"
+      ],
+      "current_climate_setting": {
+        "display_name": "eco",
+        "cooling_set_point_celsius": 25,
+        "cooling_set_point_fahrenheit": 77,
+        "heating_set_point_celsius": 20,
+        "heating_set_point_fahrenheit": 68,
+        "hvac_mode_setting": "heat_cool",
+        "manual_override_allowed": true
+      },
+      "is_cooling": false,
+      "is_fan_running": false,
+      "is_heating": false,
+      "relative_humidity": 0.46,
+      "temperature_celsius": 24.64,
+      "temperature_fahrenheit": 76.352,
+      ...
+    },
+    ...
+  },
+  ...
 ]
 ```
 {% endtab %}
@@ -316,90 +255,27 @@ echo json_encode($thermostats, JSON_PRETTY_PRINT);
 **Request:**
 
 ```csharp
-var thermostats = seam.Thermostats.List();
-foreach (var thermostat in thermostats)
-{
-  Console.WriteLine(thermostat);
-}
+// Coming soon!
 ```
 
 **Response:**
 
 ```json
-{
-  "device_id": "518f692b-f865-4590-8c3e-3849e9984c75",
-  "device_type": "ecobee_thermostat",
-  "capabilities_supported": [
-    "thermostat"
-  ],
-  "properties": {
-    "online": true,
-    "name": "Thermostat 1",
-    "model": {
-      "display_name": "Thermostat",
-      "manufacturer_display_name": "Ecobee",
-      "accessory_keypad_supported": false
-    },
-    "has_direct_power": true,
-    "manufacturer": "ecobee",
-    "image_url": "https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png",
-    "image_alt_text": "Ecobee 3 Lite Thermostat",
-    "ecobee_metadata": {
-      "ecobee_device_id": "a64074f3-a0aa-4dbb-bbd3-f17f61701602",
-      "device_name": "Thermostat 1"
-    }
-  },
-  "connected_account_id": "2c00bc71-bca5-42c2-a1c5-74fd93ffcba1",
-  "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  "errors": [],
-  "warnings": [],
-  "created_at": "2023-10-30T10:36:18.387Z",
-  "is_managed": true
-}
+// Coming soon!
 ```
 {% endtab %}
 
 {% tab title="Java" %}
 **Request:**
 
-```javascript
-var thermostats = seam.thermostats().list();
-System.out.println(thermostats);
+```java
+// Coming soon!
 ```
 
 **Response:**
 
 ```json
-{
-  "device_id": "518f692b-f865-4590-8c3e-3849e9984c75",
-  "device_type": "ecobee_thermostat",
-  "capabilities_supported": [
-    "thermostat"
-  ],
-  "properties": {
-    "online": true,
-    "name": "Thermostat 1",
-    "model": {
-      "display_name": "Thermostat",
-      "manufacturer_display_name": "Ecobee",
-      "accessory_keypad_supported": false
-    },
-    "has_direct_power": true,
-    "manufacturer": "ecobee",
-    "image_url": "https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png",
-    "image_alt_text": "Ecobee 3 Lite Thermostat",
-    "ecobee_metadata": {
-      "ecobee_device_id": "a64074f3-a0aa-4dbb-bbd3-f17f61701602",
-      "device_name": "Thermostat 1"
-    }
-  },
-  "connected_account_id": "2c00bc71-bca5-42c2-a1c5-74fd93ffcba1",
-  "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  "errors": [],
-  "warnings": [],
-  "created_at": "2023-10-30T10:36:18.387Z",
-  "is_managed": true
-}
+// Coming soon!
 ```
 {% endtab %}
 
@@ -407,92 +283,22 @@ System.out.println(thermostats);
 **Request:**
 
 ```go
-thermostats, uErr := client.Thermostats.List(context.Background(), nil)
-
-if uErr != nil {
-    return uErr
-}
-
-fmt.Println(thermostats)
-return nil
+// Coming soon!
 ```
 
 **Response:**
 
 ```json
-[{
-  "device_id": "5ce2cd35-09b1-458c-bb08-51ee83c35be7",
-  "device_type": "ecobee_thermostat",
-  "capabilities_supported": [
-    "thermostat"
-  ],
-  "properties": {
-    "online": true,
-    "is_cooling": false,
-    "is_heating": false,
-    "manufacturer": "ecobee",
-    "is_fan_running": false,
-    "ecobee_metadata": {
-      "device_name": "Thermostat_1",
-      "ecobee_device_id": "c44f7f6a-97c6-4317-99a1-dae14fe20bb5"
-    },
-    "fan_mode_setting": "auto",
-    "has_direct_power": true,
-    "relative_humidity": 0.36,
-    "temperature_celsius": 21.11111111111111,
-    "temperature_fahrenheit": 70,
-    "current_climate_setting": {
-      "hvac_mode_setting": "heat_cool",
-      "manual_override_allowed": true,
-      "cooling_set_point_celsius": 23.88888888888889,
-      "heating_set_point_celsius": 18.333333333333336,
-      "cooling_set_point_fahrenheit": 75,
-      "heating_set_point_fahrenheit": 65
-    },
-    "available_hvac_mode_settings": [
-      "off",
-      "cool",
-      "heat",
-      "heat_cool"
-    ],
-    "max_cooling_set_point_celsius": 33.333333333333336,
-    "max_heating_set_point_celsius": 26.11111111111111,
-    "min_cooling_set_point_celsius": 18.333333333333336,
-    "min_heating_set_point_celsius": 7.222222222222222,
-    "min_heating_cooling_delta_celsius": 2.7777777777777777,
-    "is_temporary_manual_override_active": false,
-    "name": "Thermostat_1",
-    "model": {
-      "display_name": "Thermostat",
-      "manufacturer_display_name": "Ecobee",
-      "accessory_keypad_supported": false
-    },
-    "image_url": "https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png",
-    "image_alt_text": "Ecobee 3 Lite Thermostat",
-    "min_heating_set_point_fahrenheit": 45,
-    "max_heating_set_point_fahrenheit": 79,
-    "min_cooling_set_point_fahrenheit": 65,
-    "max_cooling_set_point_fahrenheit": 92,
-    "min_heating_cooling_delta_fahrenheit": 5
-  },
-  "location": null,
-  "connected_account_id": "aaf37f42-f5a1-4223-a7db-2b61700bf2a9",
-  "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  "created_at": "2024-02-29T21:24:29.792Z",
-  "errors": [],
-  "warnings": [],
-  "is_managed": true,
-  "custom_metadata": {}
-}...]
+// Coming soon!
 ```
 {% endtab %}
 {% endtabs %}
 
 ***
 
-## Retrieving Individual Thermostats
+## Get an Individual Thermostat
 
-To retrieve a specific [thermostat](./), include the desired `device_id` in the [Get Device](../../api-clients/devices/get.md) request.
+To get a specific [thermostat](./), issue a [`/devices/get`](../../api-clients/devices/get.md) request, including the desired `device_id`.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -500,7 +306,7 @@ To retrieve a specific [thermostat](./), include the desired `device_id` in the 
 
 ```python
 seam.devices.get(
-  device_id="518f692b-f865-4590-8c3e-3849e9984c75"
+  device_id = "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
 )
 ```
 
@@ -508,64 +314,40 @@ seam.devices.get(
 
 ```
 Device(
-    device_id='518f692b-f865-4590-8c3e-3849e9984c75',
-    device_type='ecobee_thermostat',
-    location=None,
-    properties={
-        'available_hvac_mode_settings': ['off', 'cool', 'heat', 'heat_cool'],
-        'current_climate_setting': {
-            'cooling_set_point_celsius': 25,
-            'cooling_set_point_fahrenheit': 77,
-            'heating_set_point_celsius': 20,
-            'heating_set_point_fahrenheit': 68,
-            'hvac_mode_setting': 'heat_cool',
-            'manual_override_allowed': True
-        },
-        'ecobee_metadata': {
-            'device_name': 'Thermostat 1',
-            'ecobee_device_id': 'a64074f3-a0aa-4dbb-bbd3-f17f61701602'
-        },
-        'fan_mode_setting': 'auto',
-        'has_direct_power': True,
-        'image_alt_text': 'Ecobee 3 Lite Thermostat',
-        'image_url': 'https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png',
-        'is_cooling': False,
-        'is_fan_running': False,
-        'is_heating': False,
-        'is_temporary_manual_override_active': False,
-        'manufacturer': 'ecobee',
-        'max_cooling_set_point_celsius': 33.333333333333336,
-        'max_cooling_set_point_fahrenheit': 92,
-        'max_heating_set_point_celsius': 26.11111111111111,
-        'max_heating_set_point_fahrenheit': 79,
-        'min_cooling_set_point_celsius': 18.333333333333336,
-        'min_cooling_set_point_fahrenheit': 65,
-        'min_heating_cooling_delta_celsius': 2.7777777777777777,
-        'min_heating_cooling_delta_fahrenheit': 5,
-        'min_heating_set_point_celsius': 7.222222222222222,
-        'min_heating_set_point_fahrenheit': 45,
-        'model': {
-            'accessory_keypad_supported': False,
-            'display_name': 'Thermostat',
-            'manufacturer_display_name': 'Ecobee',
-            'offline_access_codes_supported': False,
-            'online_access_codes_supported': True
-        },
-        'name': 'Thermostat 1',
-        'online': True,
-        'relative_humidity': 0.36,
-        'temperature_celsius': 21.11111111111111,
-        'temperature_fahrenheit': 70
+  can_hvac_cool=True,
+  can_hvac_heat=True,
+  can_hvac_heat_cool=True,
+  can_turn_off_hvac=True,
+  device_id='a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
+  device_type='nest_thermostat',
+  properties={
+    'available_hvac_mode_settings': [
+      'heat',
+      'cool',
+      'heat_cool',
+      'off'
+    ],
+    'current_climate_setting': {
+      'display_name': 'eco',
+      'cooling_set_point_celsius': 25,
+      'cooling_set_point_fahrenheit': 77,
+      'heating_set_point_celsius': 20,
+      'heating_set_point_fahrenheit': 68,
+      'hvac_mode_setting': 'heat_cool',
+      'manual_override_allowed': True
     },
-    capabilities_supported=['thermostat'],
-    errors=[],
-    warnings=[],
-    connected_account_id='2c00bc71-bca5-42c2-a1c5-74fd93ffcba1',
-    workspace_id='398d80b7-3f96-47c2-b85a-6f8ba21d07be',
-    created_at='2023-10-30T10:36:18.387Z',
-    is_managed=True
+    'is_cooling': False,
+    'is_fan_running': False,
+    'is_heating': False,
+    'manufacturer': 'nest',
+    'online': True,
+    'relative_humidity': 0.46,
+    'temperature_celsius': 24.64,
+    'temperature_fahrenheit': 76.352,
+    ...
+  },
+  ...
 )
-
 ```
 {% endtab %}
 
@@ -580,7 +362,7 @@ curl -X 'GET' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
   -d '{
-  "device_id": "518f692b-f865-4590-8c3e-3849e9984c75"
+  "device_id": "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
 }'
 ```
 
@@ -588,68 +370,40 @@ curl -X 'GET' \
 
 ```json
 {
-  "thermostat": {
-    "device_id": "518f692b-f865-4590-8c3e-3849e9984c75",
-    "device_type": "ecobee_thermostat",
-    "capabilities_supported": [
-      "thermostat"
-    ],
+  "device": {
+    "device_id": "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61",
+    "device_type": "nest_thermostat",
     "properties": {
       "online": true,
       "is_cooling": false,
       "is_heating": false,
-      "manufacturer": "ecobee",
       "is_fan_running": false,
-      "ecobee_metadata": {
-        "device_name": "Thermostat 1",
-        "ecobee_device_id": "a64074f3-a0aa-4dbb-bbd3-f17f61701602"
-      },
-      "fan_mode_setting": "auto",
-      "has_direct_power": true,
-      "relative_humidity": 0.36,
-      "temperature_celsius": 21.11111111111111,
-      "temperature_fahrenheit": 70,
+      "manufacturer": "nest",
+      "relative_humidity": 0.46,
+      "temperature_celsius": 24.64,
+      "temperature_fahrenheit": 76.352,
       "current_climate_setting": {
+        "display_name": "eco",
         "hvac_mode_setting": "heat_cool",
         "manual_override_allowed": true,
         "cooling_set_point_celsius": 25,
-        "heating_set_point_celsius": 20,
         "cooling_set_point_fahrenheit": 77,
+        "heating_set_point_celsius": 20,
         "heating_set_point_fahrenheit": 68
       },
       "available_hvac_mode_settings": [
-        "off",
-        "cool",
         "heat",
-        "heat_cool"
+        "cool",
+        "heat_cool",
+        "off"
       ],
-      "max_cooling_set_point_celsius": 33.333333333333336,
-      "max_heating_set_point_celsius": 26.11111111111111,
-      "min_cooling_set_point_celsius": 18.333333333333336,
-      "min_heating_set_point_celsius": 7.222222222222222,
-      "min_heating_cooling_delta_celsius": 2.7777777777777777,
-      "is_temporary_manual_override_active": false,
-      "name": "Thermostat 1",
-      "model": {
-        "display_name": "Thermostat",
-        "manufacturer_display_name": "Ecobee",
-        "accessory_keypad_supported": false
-      },
-      "image_url": "https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png",
-      "image_alt_text": "Ecobee 3 Lite Thermostat",
-      "min_heating_set_point_fahrenheit": 45,
-      "max_heating_set_point_fahrenheit": 79,
-      "min_cooling_set_point_fahrenheit": 65,
-      "max_cooling_set_point_fahrenheit": 92,
-      "min_heating_cooling_delta_fahrenheit": 5
+      ...
     },
-    "location": null,
-    "connected_account_id": "2c00bc71-bca5-42c2-a1c5-74fd93ffcba1",
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "created_at": "2023-10-30T10:36:18.387Z",
-    "errors": [],
-    "warnings": [],
-    "is_managed": true
+    "can_hvac_cool": true,
+    "can_hvac_heat": true,
+    "can_turn_off_hvac": true,
+    "can_hvac_heat_cool": true,
+    ...
   },
   "ok": true
 }
@@ -661,7 +415,7 @@ curl -X 'GET' \
 
 ```javascript
 await seam.devices.get({
-  device_id: "518f692b-f865-4590-8c3e-3849e9984c75"
+  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
 });
 ```
 
@@ -669,61 +423,55 @@ await seam.devices.get({
 
 ```json
 {
-  device_id: '518f692b-f865-4590-8c3e-3849e9984c75',
-  device_type: 'ecobee_thermostat',
-  capabilities_supported: [ 'thermostat' ],
+  device_id: 'a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
+  device_type: 'nest_thermostat',
   properties: {
     online: true,
     is_cooling: false,
     is_heating: false,
-    manufacturer: 'ecobee',
+    manufacturer: 'nest',
     is_fan_running: false,
-    ecobee_metadata: {
-      device_name: 'Thermostat 1',
-      ecobee_device_id: 'a64074f3-a0aa-4dbb-bbd3-f17f61701602'
-    },
-    fan_mode_setting: 'auto',
-    has_direct_power: true,
-    relative_humidity: 0.36,
-    temperature_celsius: 21.11111111111111,
-    temperature_fahrenheit: 70,
+    relative_humidity: 0.46,
+    temperature_celsius: 24.64,
+    temperature_fahrenheit: 76.352,
+    current_climate_setting: [Object],
+    available_hvac_mode_settings: [
+      'heat',
+      'cool',
+      'heat_cool',
+      'off'
+    ],
     current_climate_setting: {
+      display_name: 'eco',
       hvac_mode_setting: 'heat_cool',
       manual_override_allowed: true,
       cooling_set_point_celsius: 25,
-      heating_set_point_celsius: 20,
       cooling_set_point_fahrenheit: 77,
+      heating_set_point_celsius: 20,
       heating_set_point_fahrenheit: 68
     },
-    available_hvac_mode_settings: [ 'off', 'cool', 'heat', 'heat_cool' ],
-    max_cooling_set_point_celsius: 33.333333333333336,
-    max_heating_set_point_celsius: 26.11111111111111,
-    min_cooling_set_point_celsius: 18.333333333333336,
-    min_heating_set_point_celsius: 7.222222222222222,
-    min_heating_cooling_delta_celsius: 2.7777777777777777,
-    is_temporary_manual_override_active: false,
-    name: 'Thermostat 1',
-    model: {
-      display_name: 'Thermostat',
-      manufacturer_display_name: 'Ecobee',
-      accessory_keypad_supported: false
-    },
-    image_url: 'https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png',
-    image_alt_text: 'Ecobee 3 Lite Thermostat',
-    min_heating_set_point_fahrenheit: 45,
-    max_heating_set_point_fahrenheit: 79,
-    min_cooling_set_point_fahrenheit: 65,
-    max_cooling_set_point_fahrenheit: 92,
-    min_heating_cooling_delta_fahrenheit: 5
+    ...
   },
-  location: null,
-  connected_account_id: '2c00bc71-bca5-42c2-a1c5-74fd93ffcba1',
-  workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be',
-  created_at: '2023-10-30T10:36:18.387Z',
-  errors: [],
-  warnings: [],
-  is_managed: true
+  can_hvac_cool: true,
+  can_hvac_heat: true,
+  can_turn_off_hvac: true,
+  can_hvac_heat_cool: true,
+  ...
 }
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+**Request:**
+
+```ruby
+# Coming soon!
+```
+
+**Response:**
+
+```
+# Coming soon!
 ```
 {% endtab %}
 
@@ -732,84 +480,47 @@ await seam.devices.get({
 
 ```php
 $seam->devices->get(
-  device_id: "5ce2cd35-09b1-458c-bb08-51ee83c35be7"
+  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
 );
 ```
 
 **Response:**
 
-```
+```json
 {
-    "device_id": "5ce2cd35-09b1-458c-bb08-51ee83c35be7",
-    "device_type": "ecobee_thermostat",
-    "capabilities_supported": [
-        "thermostat"
+  "can_hvac_cool": true,
+  "can_hvac_heat": true,
+  "can_hvac_heat_cool": true,
+  "can_turn_off_hvac": true,
+  "device_id": "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61",
+  "device_type": "nest_thermostat",
+  "properties": {
+    "manufacturer": "nest",
+    "online": true,
+    "available_hvac_mode_settings": [
+      "heat",
+      "cool",
+      "heat_cool",
+      "off"
     ],
-    "properties": {
-        "online": true,
-        "name": "Thermostat_1",
-        "model": {
-            "display_name": "Thermostat",
-            "manufacturer_display_name": "Ecobee",
-            "offline_access_codes_supported": null,
-            "online_access_codes_supported": null,
-            "accessory_keypad_supported": false
-        },
-        "has_direct_power": true,
-        "battery_level": null,
-        "battery": null,
-        "manufacturer": "ecobee",
-        "image_url": "https:\/\/connect.getseam.com\/assets\/images\/devices\/ecobee_3-lite_front.png",
-        "image_alt_text": "Ecobee 3 Lite Thermostat",
-        "serial_number": null,
-        ...
-        "ecobee_metadata": {
-            "ecobee_device_id": "c44f7f6a-97c6-4317-99a1-dae14fe20bb5",
-            "device_name": "Thermostat_1"
-        },
-        ...
-        "temperature_fahrenheit": 70,
-        "temperature_celsius": 21.11111111111111,
-        "relative_humidity": 0.36,
-        "available_hvac_mode_settings": [
-            "off",
-            "cool",
-            "heat",
-            "heat_cool"
-        ],
-        "is_heating": false,
-        "is_cooling": false,
-        "is_fan_running": false,
-        "fan_mode_setting": "auto",
-        "is_temporary_manual_override_active": false,
-        "current_climate_setting": {
-            "hvac_mode_setting": "heat_cool",
-            "cooling_set_point_celsius": 23.88888888888889,
-            "heating_set_point_celsius": 18.333333333333336,
-            "cooling_set_point_fahrenheit": 75,
-            "heating_set_point_fahrenheit": 65,
-            "manual_override_allowed": true
-        },
-        "min_cooling_set_point_celsius": 18.333333333333336,
-        "min_cooling_set_point_fahrenheit": 65,
-        "max_cooling_set_point_celsius": 33.333333333333336,
-        "max_cooling_set_point_fahrenheit": 92,
-        "min_heating_set_point_celsius": 7.222222222222222,
-        "min_heating_set_point_fahrenheit": 45,
-        "max_heating_set_point_celsius": 26.11111111111111,
-        "max_heating_set_point_fahrenheit": 79,
-        "min_heating_cooling_delta_celsius": 2.7777777777777777,
-        "min_heating_cooling_delta_fahrenheit": 5,
-        "assa_abloy_credential_service_metadata": null
+    "current_climate_setting": {
+      "display_name": "eco",
+      "cooling_set_point_celsius": 25,
+      "cooling_set_point_fahrenheit": 77,
+      "heating_set_point_celsius": 20,
+      "heating_set_point_fahrenheit": 68,
+      "hvac_mode_setting": "heat_cool",
+      "manual_override_allowed": true
     },
-    "location": null,
-    "connected_account_id": "aaf37f42-f5a1-4223-a7db-2b61700bf2a9",
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "errors": [],
-    "warnings": [],
-    "created_at": "2024-02-29T21:24:29.792Z",
-    "is_managed": true,
-    "custom_metadata": {}
+    "is_cooling": false,
+    "is_fan_running": false,
+    "is_heating": false,
+    "relative_humidity": 0.46,
+    "temperature_celsius": 24.64,
+    "temperature_fahrenheit": 76.352,
+    ...
+  },
+  ...
 }
 ```
 {% endtab %}
@@ -818,44 +529,13 @@ $seam->devices->get(
 **Request:**
 
 ```csharp
-seam.Devices.Get(
-  deviceId: "518f692b-f865-4590-8c3e-3849e9984c75"
-);
+// Coming soon!
 ```
 
 **Response:**
 
 ```
-{
-  "device_id": "518f692b-f865-4590-8c3e-3849e9984c75",
-  "device_type": "ecobee_thermostat",
-  "capabilities_supported": [
-    "thermostat"
-  ],
-  "properties": {
-    "online": true,
-    "name": "Thermostat 1",
-    "model": {
-      "display_name": "Thermostat",
-      "manufacturer_display_name": "Ecobee",
-      "accessory_keypad_supported": false
-    },
-    "has_direct_power": true,
-    "manufacturer": "ecobee",
-    "image_url": "https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png",
-    "image_alt_text": "Ecobee 3 Lite Thermostat",
-    "ecobee_metadata": {
-      "ecobee_device_id": "a64074f3-a0aa-4dbb-bbd3-f17f61701602",
-      "device_name": "Thermostat 1"
-    }
-  },
-  "connected_account_id": "2c00bc71-bca5-42c2-a1c5-74fd93ffcba1",
-  "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  "errors": [],
-  "warnings": [],
-  "created_at": "2023-10-30T10:36:18.387Z",
-  "is_managed": true
-}
+// Coming soon!
 ```
 {% endtab %}
 
@@ -863,68 +543,13 @@ seam.Devices.Get(
 **Request:**
 
 ```java
-seam.devices().get(DevicesGetRequest.builder()
-  .deviceId("518f692b-f865-4590-8c3e-3849e9984c75")
-  .build());
+// Coming soon!
 ```
 
 **Response:**
 
 ```json
-{
-  "device_id" : "518f692b-f865-4590-8c3e-3849e9984c75",
-  "device_type" : "ecobee_thermostat",
-  "capabilities_supported" : [ "thermostat" ],
-  "properties" : {
-    "online" : true,
-    "name" : "Thermostat 1",
-    "model" : {
-      "display_name" : "Thermostat",
-      "online_access_codes_supported" : true,
-      "accessory_keypad_supported" : false,
-      "manufacturer_display_name" : "Ecobee"
-    },
-    "current_climate_setting" : {
-      "hvac_mode_setting" : "heat_cool",
-      "cooling_set_point_celsius" : 25.0,
-      "heating_set_point_celsius" : 20.0,
-      "cooling_set_point_fahrenheit" : 77.0,
-      "heating_set_point_fahrenheit" : 68.0,
-      "manual_override_allowed" : true
-    },
-    "temperature_celsius" : 21.11111111111111,
-    "min_heating_set_point_celsius" : 7.222222222222222,
-    "max_cooling_set_point_fahrenheit" : 92,
-    "is_heating" : false,
-    "is_cooling" : false,
-    "manufacturer" : "ecobee",
-    "max_heating_set_point_celsius" : 26.11111111111111,
-    "max_cooling_set_point_celsius" : 33.333333333333336,
-    "is_temporary_manual_override_active" : false,
-    "min_heating_cooling_delta_fahrenheit" : 5,
-    "available_hvac_mode_settings" : [ "off", "cool", "heat", "heat_cool" ],
-    "has_direct_power" : true,
-    "min_cooling_set_point_fahrenheit" : 65,
-    "min_heating_cooling_delta_celsius" : 2.7777777777777777,
-    "min_cooling_set_point_celsius" : 18.333333333333336,
-    "max_heating_set_point_fahrenheit" : 79,
-    "image_url" : "https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png",
-    "is_fan_running" : false,
-    "image_alt_text" : "Ecobee 3 Lite Thermostat",
-    "min_heating_set_point_fahrenheit" : 45,
-    "ecobee_metadata" : {
-      "device_name" : "Thermostat 1",
-      "ecobee_device_id" : "a64074f3-a0aa-4dbb-bbd3-f17f61701602"
-    },
-    "fan_mode_setting" : "auto",
-    "relative_humidity" : 0.36,
-    "temperature_fahrenheit" : 70,
-  },
-  "connected_account_id" : "2c00bc71-bca5-42c2-a1c5-74fd93ffcba1",
-  "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  "created_at" : "2023-10-30T10:36:18.387Z",
-  "is_managed" : true
-}
+// Coming soon!
 ```
 {% endtab %}
 
@@ -932,84 +557,13 @@ seam.devices().get(DevicesGetRequest.builder()
 **Request:**
 
 ```go
-thermostat, uErr := client.Devices.Get(context.Background(), &api.DevicesGetRequest{
-      DeviceId: api.String("5ce2cd35-09b1-458c-bb08-51ee83c35be7"),
-  })
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
+// Coming soon!
 ```
 
 **Response:**
 
 ```json
-{
-  "device_id": "5ce2cd35-09b1-458c-bb08-51ee83c35be7",
-  "device_type": "ecobee_thermostat",
-  "capabilities_supported": [
-    "thermostat"
-  ],
-  "properties": {
-    "online": true,
-    "is_cooling": false,
-    "is_heating": false,
-    "manufacturer": "ecobee",
-    "is_fan_running": false,
-    "ecobee_metadata": {
-      "device_name": "Thermostat_1",
-      "ecobee_device_id": "c44f7f6a-97c6-4317-99a1-dae14fe20bb5"
-    },
-    "fan_mode_setting": "auto",
-    "has_direct_power": true,
-    "relative_humidity": 0.36,
-    "temperature_celsius": 21.11111111111111,
-    "temperature_fahrenheit": 70,
-    "current_climate_setting": {
-      "hvac_mode_setting": "heat_cool",
-      "manual_override_allowed": true,
-      "cooling_set_point_celsius": 23.88888888888889,
-      "heating_set_point_celsius": 18.333333333333336,
-      "cooling_set_point_fahrenheit": 75,
-      "heating_set_point_fahrenheit": 65
-    },
-    "available_hvac_mode_settings": [
-      "off",
-      "cool",
-      "heat",
-      "heat_cool"
-    ],
-    "max_cooling_set_point_celsius": 33.333333333333336,
-    "max_heating_set_point_celsius": 26.11111111111111,
-    "min_cooling_set_point_celsius": 18.333333333333336,
-    "min_heating_set_point_celsius": 7.222222222222222,
-    "min_heating_cooling_delta_celsius": 2.7777777777777777,
-    "is_temporary_manual_override_active": false,
-    "name": "Thermostat_1",
-    "model": {
-      "display_name": "Thermostat",
-      "manufacturer_display_name": "Ecobee",
-      "accessory_keypad_supported": false
-    },
-    "image_url": "https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png",
-    "image_alt_text": "Ecobee 3 Lite Thermostat",
-    "min_heating_set_point_fahrenheit": 45,
-    "max_heating_set_point_fahrenheit": 79,
-    "min_cooling_set_point_fahrenheit": 65,
-    "max_cooling_set_point_fahrenheit": 92,
-    "min_heating_cooling_delta_fahrenheit": 5
-  },
-  "location": null,
-  "connected_account_id": "aaf37f42-f5a1-4223-a7db-2b61700bf2a9",
-  "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  "created_at": "2024-02-29T21:24:29.792Z",
-  "errors": [],
-  "warnings": [],
-  "is_managed": true,
-  "custom_metadata": {}
-}
+// Coming soon!
 ```
 {% endtab %}
 {% endtabs %}

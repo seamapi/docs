@@ -66,7 +66,7 @@ curl -X 'GET' \
 
 ```json
 {
-  "lock": {
+  "device": {
     "device_id": "11111111-1111-1111-1111-444444444444",
     "can_remotely_lock": true,   // You can use /locks/lock_door on this device.
     "can_remotely_unlock": true, // You can use /locks/unlock_door on this device.
