@@ -33,7 +33,6 @@ Items that are intentionally undocumented are not included in this section.
 
 ### Resources
 
-- `acs_access_group`
 - `acs_credential`
 - `acs_credential_pool`
 - `acs_credential_provisioning_automation`
@@ -46,15 +45,8 @@ Items that are intentionally undocumented are not included in this section.
 
 - `acs_access_group.access_group_type`
 - `acs_access_group.access_group_type_display_name`
-- `acs_access_group.acs_access_group_id`
-- `acs_access_group.acs_system_id`
-- `acs_access_group.created_at`
 - `acs_access_group.display_name`
-- `acs_access_group.external_type`
-- `acs_access_group.external_type_display_name`
 - `acs_access_group.is_managed`
-- `acs_access_group.name`
-- `acs_access_group.workspace_id`
 - `acs_credential.access_method`
 - `acs_credential.acs_credential_id`
 - `acs_credential.acs_credential_pool_id`
@@ -137,14 +129,6 @@ Items that are intentionally undocumented are not included in this section.
 
 ### Endpoints
 
-- `/acs/access_groups/add_user`
-- `/acs/access_groups/get`
-- `/acs/access_groups/list`
-- `/acs/access_groups/list_accessible_entrances`
-- `/acs/access_groups/list_users`
-- `/acs/access_groups/remove_user`
-- `/acs/access_groups/unmanaged/get`
-- `/acs/access_groups/unmanaged/list`
 - `/acs/credential_pools/list`
 - `/acs/credential_provisioning_automations/launch`
 - `/acs/credentials/assign`
@@ -176,6 +160,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/thermostats/off`
 - `/thermostats/set_fallback_climate_preset`
 - `/thermostats/set_fan_mode`
+- `/thermostats/set_temperature_threshold`
 - `/thermostats/update_climate_preset`
 - `/thermostats/schedules/create`
 - `/thermostats/schedules/delete`
@@ -185,26 +170,6 @@ Items that are intentionally undocumented are not included in this section.
 
 ### Endpoint parameters
 
-- `/acs/access_groups/add_user`
-    - `acs_access_group_id`
-    - `acs_user_id`
-- `/acs/access_groups/get`
-    - `acs_access_group_id`
-- `/acs/access_groups/list`
-    - `acs_system_id`
-    - `acs_user_id`
-- `/acs/access_groups/list_accessible_entrances`
-    - `acs_access_group_id`
-- `/acs/access_groups/list_users`
-    - `acs_access_group_id`
-- `/acs/access_groups/remove_user`
-    - `acs_access_group_id`
-    - `acs_user_id`
-- `/acs/access_groups/unmanaged/get`
-    - `acs_access_group_id`
-- `/acs/access_groups/unmanaged/list`
-    - `acs_system_id`
-    - `acs_user_id`
 - `/acs/credential_pools/list`
     - `acs_system_id`
 - `/acs/credential_provisioning_automations/launch`
@@ -350,6 +315,12 @@ Items that are intentionally undocumented are not included in this section.
     - `fan_mode`
     - `fan_mode_setting`
     - `sync`
+- `/thermostats/set_temperature_threshold`
+    - `device_id`
+    - `lower_limit_celsius`
+    - `lower_limit_fahrenheit`
+    - `upper_limit_celsius`
+    - `upper_limit_fahrenheit`
 - `/thermostats/update_climate_preset`
     - `climate_preset_key`
     - `cooling_set_point_celsius`
@@ -465,6 +436,7 @@ These items are deprecated.
 - `/thermostats/off`
 - `/thermostats/set_fallback_climate_preset`
 - `/thermostats/set_fan_mode`
+- `/thermostats/set_temperature_threshold`
 - `/thermostats/update_climate_preset`
 - `/thermostats/schedules/create`
 - `/thermostats/schedules/delete`
