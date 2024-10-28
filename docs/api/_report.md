@@ -83,6 +83,7 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_credential_provisioning_automation.credential_manager_acs_system_id`
 - `acs_credential_provisioning_automation.user_identity_id`
 - `acs_credential_provisioning_automation.workspace_id`
+- `acs_entrance.dormakaba_community_metadata`
 - `acs_entrance.errors`
 - `acs_entrance.latch_metadata`
 - `acs_entrance.salto_ks_metadata`
@@ -255,6 +256,7 @@ Items that are intentionally undocumented are not included in this section.
     - `event_types`
     - `limit`
     - `since`
+    - `unstable_offset`
 - `/thermostats/activate_climate_preset`
     - `climate_preset_key`
     - `device_id`

@@ -100,6 +100,7 @@ Possible enum values:
 - `visionline_system`
 - `assa_abloy_credential_service`
 - `latch_building`
+- `dormakaba_community`
 
 
 ---
@@ -166,6 +167,7 @@ Possible enum values:
 - `visionline_system`
 - `assa_abloy_credential_service`
 - `latch_building`
+- `dormakaba_community`
 
 
 ---
