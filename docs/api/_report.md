@@ -396,14 +396,6 @@ These items are deprecated.
 
 - `/acs/credential_pools/list`
 - `/acs/credential_provisioning_automations/launch`
-- `/acs/credentials/assign`
-- `/acs/credentials/create`
-- `/acs/credentials/delete`
-- `/acs/credentials/get`
-- `/acs/credentials/list`
-- `/acs/credentials/list_accessible_entrances`
-- `/acs/credentials/unassign`
-- `/acs/credentials/update`
 - `/acs/credentials/unmanaged/get`
 - `/acs/credentials/unmanaged/list`
 - `/acs/encoders/encode_card`
