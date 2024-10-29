@@ -101,6 +101,7 @@ Possible enum values:
 - `assa_abloy_credential_service`
 - `latch_building`
 - `dormakaba_community`
+- `assa_abloy_vostio`
 
 
 ---
@@ -168,6 +169,7 @@ Possible enum values:
 - `assa_abloy_credential_service`
 - `latch_building`
 - `dormakaba_community`
+- `assa_abloy_vostio`
 
 
 ---
