@@ -1,6 +1,6 @@
 ---
-- title: List Thermostats
-  description: Returns a list of thermostats connected to your workspace. If no thermostats are connected, the list will be empty.
+- title: List thermostats
+  description: To filter the list of returned thermostats, specify the desired parameters.
   request:
     path: /thermostats/list
   response:
@@ -53,8 +53,8 @@
             connected_account_id: 123e4567-e89b-12d3-a456-426614174000
             workspace_id: 123e4567-e89b-12d3-a456-426614174000
             created_at: '2024-04-05T07:57:05.323Z'
-- title: Get a Thermostat
-  description: Retrieves the details of a thermostat.
+- title: Get a thermostat
+  description: Specify the `device_id` of the thermostat that you want to retrieve.
   request:
     path: /thermostats/get
     parameters:
@@ -85,48 +85,48 @@
             connected_account_id: 123e4567-e89b-12d3-a456-426614174000
             workspace_id: 123e4567-e89b-12d3-a456-426614174000
             created_at: '2024-04-05T07:57:05.323Z'
-- title: Set to Heat Mode
-  description: Set a thermostat to heating mode. To do so, you must include a heating set point in the payload, either in Celsius or Fahrenheit. For information about verifying the heating availability of the thermostat and validating the correct set points, see [HVAC Mode Constraints](https://docs.seam.co/latest/capability-guides/thermostats/hvac-mode#hvac-mode-constraints) and [Set Point Constraints](https://docs.seam.co/latest/capability-guides/thermostats/set-points#set-point-constraints).
+- title: Set to heat mode
+  description: Specify the desired heating set point in Celsius or Fahrenheit.
   request:
     path: /thermostats/heat
     parameters:
       device_id: 123e4567-e89b-12d3-a456-426614174000
-      heating_set_point_celcius: 25
+      heating_set_point_celsius: 25
   response:
     body:
       action_attempt:
         action_attempt_id: 123e4567-e89b-12d3-a456-426614174000
         status: pending
-        action_type: LOCK_DOOR
-- title: Set to Cool Mode
-  description: Set a thermostat to heating mode. To do so, you must include a heating set point in the payload, either in Celsius or Fahrenheit. For information about verifying the heating availability of the thermostat and validating the correct set points, see [HVAC Mode Constraints](https://docs.seam.co/latest/capability-guides/thermostats/hvac-mode#hvac-mode-constraints) and [Set Point Constraints](https://docs.seam.co/latest/capability-guides/thermostats/set-points#set-point-constraints).
+        action_type: SET_HEAT
+- title: Set to cool mode
+  description: Specify the desired cooling set point in Celsius or Fahrenheit.
   request:
-    path: /thermostats/heat
+    path: /thermostats/cool
     parameters:
       device_id: 123e4567-e89b-12d3-a456-426614174000
-      cooling_set_point_celcius: 25
+      cooling_set_point_celsius: 25
   response:
     body:
       action_attempt:
         action_attempt_id: 123e4567-e89b-12d3-a456-426614174000
         status: pending
-        action_type: LOCK_DOOR
-- title: Set to Heat-Cool (Auto) Mode
-  description: Set a thermostat to heating mode. To do so, you must include a heating set point in the payload, either in Celsius or Fahrenheit. For information about verifying the heating availability of the thermostat and validating the correct set points, see [HVAC Mode Constraints](https://docs.seam.co/latest/capability-guides/thermostats/hvac-mode#hvac-mode-constraints) and [Set Point Constraints](https://docs.seam.co/latest/capability-guides/thermostats/set-points#set-point-constraints).
+        action_type: SET_COOL
+- title: Set to heat-cool (auto) mode
+  description: Specify the desired heating set point in Celsius or Fahrenheit.
   request:
     path: /thermostats/heat_cool
     parameters:
       device_id: 123e4567-e89b-12d3-a456-426614174000
-      cooling_set_point_celcius: 25
-      heating_set_point: 20
+      cooling_set_point_celsius: 25
+      heating_set_point_celsius: 20
   response:
     body:
       action_attempt:
         action_attempt_id: 123e4567-e89b-12d3-a456-426614174000
         status: pending
-        action_type: LOCK_DOOR
-- title: Set to Off Mode
-  description: Set a thermostat to "off" mode.
+        action_type: SET_HEAT_COOL
+- title: Set to off mode
+  description: Specify the `device_id` of the thermostat that you want to set to off mode.
   request:
     path: /thermostats/off
     parameters:
@@ -136,9 +136,9 @@
       action_attempt:
         action_attempt_id: 123e4567-e89b-12d3-a456-426614174000
         status: pending
-        action_type: LOCK_DOOR
-- title: Set Fan Mode
-  description: Sets a thermostat fan mode.
+        action_type: SET_THERMOSTAT_OFF
+- title: Set fan mode setting
+  description: Specify the desired fan mode setting.
   request:
     path: /thermostats/set_fan_mode
     parameters:
@@ -149,4 +149,4 @@
       action_attempt:
         action_attempt_id: 123e4567-e89b-12d3-a456-426614174000
         status: pending
-        action_type: LOCK_DOOR
+        action_type: SET_FAN_MODE
