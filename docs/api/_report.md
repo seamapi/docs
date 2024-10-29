@@ -439,7 +439,6 @@ These items are deprecated.
 - `/events/get`
 - `/events/list`
 - `/thermostats/activate_climate_preset`
-- `/thermostats/cool`
 - `/thermostats/create_climate_preset`
 - `/thermostats/delete_climate_preset`
 - `/thermostats/set_fallback_climate_preset`
