@@ -2,15 +2,3 @@
 /acs/systems:
   page:
     title: Systems
-
-/acs/systems/get:
-  page:
-    title: Get an ACS System
-
-/acs/systems/list:
-  page:
-    title: List ACS Systems
-
-/acs/systems/list_compatible_credential_manager_acs_systems:
-  page:
-    title: List Compatible Credential Manager ACS Systems

@@ -21,9 +21,6 @@ export interface EndpointLayoutContext {
   description: string
   title: string
   path: string
-  page: {
-    title: string
-  }
   request: {
     preferredMethod: string
     parameters: Array<{
@@ -57,16 +54,10 @@ export interface EndpointLayoutContext {
 export function setEndpointLayoutContext(
   file: Partial<EndpointLayoutContext>,
   endpoint: Endpoint,
-  pathMetadata: PathMetadata,
 ): void {
   file.description = endpoint.description
   file.title = endpoint.title
   file.path = endpoint.path
-  const page = pathMetadata[endpoint.path]?.page
-  if (page == null) {
-    throw new Error(`Missing page metadata for ${endpoint.path}`)
-  }
-  file.page = page
 
   file.request = {
     preferredMethod: endpoint.request?.preferredMethod ?? '',
