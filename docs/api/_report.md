@@ -416,7 +416,6 @@ These items are deprecated.
 - `/thermostats/delete_climate_preset`
 - `/thermostats/get`
 - `/thermostats/set_fallback_climate_preset`
-- `/thermostats/set_fan_mode`
 - `/thermostats/set_temperature_threshold`
 - `/thermostats/update_climate_preset`
 - `/thermostats/schedules/create`
