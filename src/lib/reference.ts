@@ -7,6 +7,7 @@ import {
   setApiRouteLayoutContext,
   setEndpointLayoutContext,
 } from './layout-context.js'
+import { PathMetadataSchema } from './path-metadata.js'
 
 const sdks: Array<'javascript'> = []
 
@@ -14,19 +15,17 @@ type Metadata = Partial<Pick<Blueprint, 'routes' | 'resources'>>
 
 type File = EndpointLayoutContext & RouteLayoutContext & { layout: string }
 
-export type PathMetadata = Record<
-  string,
-  {
-    description?: string | null
-  }
->
-
 export const reference = (
   files: Metalsmith.Files,
   metalsmith: Metalsmith,
 ): void => {
-  const { pathMetadata = {}, ...metadata } =
-    metalsmith.metadata() as Metadata & { pathMetadata: PathMetadata }
+  const metadata = metalsmith.metadata() as Metadata
+
+  // UPSTREAM: Ideally, path metadata would be unnecessary and contained inside the blueprint.
+  const pathMetadata =
+    'pathMetadata' in metadata
+      ? PathMetadataSchema.parse(metadata.pathMetadata)
+      : {}
 
   const blueprint = {
     title: '',
