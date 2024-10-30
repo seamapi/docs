@@ -65,6 +65,7 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_credential_provisioning_automation.credential_manager_acs_system_id`
 - `acs_credential_provisioning_automation.user_identity_id`
 - `acs_credential_provisioning_automation.workspace_id`
+- `acs_entrance.assa_abloy_vostio_metadata`
 - `acs_entrance.dormakaba_community_metadata`
 - `acs_entrance.errors`
 - `acs_entrance.latch_metadata`
