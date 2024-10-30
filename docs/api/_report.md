@@ -33,7 +33,6 @@ Items that are intentionally undocumented are not included in this section.
 
 ### Resources
 
-- `acs_credential`
 - `acs_credential_pool`
 - `acs_credential_provisioning_automation`
 - `acs_entrance`
@@ -47,30 +46,13 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_access_group.access_group_type_display_name`
 - `acs_access_group.display_name`
 - `acs_access_group.is_managed`
-- `acs_credential.access_method`
-- `acs_credential.acs_credential_id`
 - `acs_credential.acs_credential_pool_id`
-- `acs_credential.acs_system_id`
-- `acs_credential.acs_user_id`
 - `acs_credential.card_number`
-- `acs_credential.code`
-- `acs_credential.created_at`
-- `acs_credential.display_name`
-- `acs_credential.ends_at`
 - `acs_credential.errors`
-- `acs_credential.external_type`
-- `acs_credential.external_type_display_name`
 - `acs_credential.is_issued`
-- `acs_credential.is_latest_desired_state_synced_with_provider`
 - `acs_credential.is_managed`
-- `acs_credential.is_multi_phone_sync_credential`
 - `acs_credential.issued_at`
-- `acs_credential.latest_desired_state_synced_with_provider_at`
-- `acs_credential.parent_acs_credential_id`
-- `acs_credential.starts_at`
-- `acs_credential.visionline_metadata`
 - `acs_credential.warnings`
-- `acs_credential.workspace_id`
 - `acs_credential_pool.acs_credential_pool_id`
 - `acs_credential_pool.acs_system_id`
 - `acs_credential_pool.created_at`
@@ -132,16 +114,6 @@ Items that are intentionally undocumented are not included in this section.
 
 - `/acs/credential_pools/list`
 - `/acs/credential_provisioning_automations/launch`
-- `/acs/credentials/assign`
-- `/acs/credentials/create`
-- `/acs/credentials/delete`
-- `/acs/credentials/get`
-- `/acs/credentials/list`
-- `/acs/credentials/list_accessible_entrances`
-- `/acs/credentials/unassign`
-- `/acs/credentials/update`
-- `/acs/credentials/unmanaged/get`
-- `/acs/credentials/unmanaged/list`
 - `/acs/encoders/encode_card`
 - `/acs/encoders/list`
 - `/acs/encoders/scan_card`
@@ -179,34 +151,6 @@ Items that are intentionally undocumented are not included in this section.
     - `credential_manager_acs_system_id`
     - `credential_manager_acs_user_id`
     - `user_identity_id`
-- `/acs/credentials/assign`
-    - `acs_credential_id`
-    - `acs_user_id`
-- `/acs/credentials/create`
-    - `access_method`
-    - `acs_user_id`
-    - `allowed_acs_entrance_ids`
-    - `code`
-    - `credential_manager_acs_system_id`
-    - `ends_at`
-    - `is_multi_phone_sync_credential`
-    - `starts_at`
-    - `visionline_metadata`
-- `/acs/credentials/delete`
-    - `acs_credential_id`
-- `/acs/credentials/get`
-    - `acs_credential_id`
-- `/acs/credentials/list_accessible_entrances`
-    - `acs_credential_id`
-- `/acs/credentials/unassign`
-    - `acs_credential_id`
-    - `acs_user_id`
-- `/acs/credentials/update`
-    - `acs_credential_id`
-    - `code`
-    - `ends_at`
-- `/acs/credentials/unmanaged/get`
-    - `acs_credential_id`
 - `/acs/encoders/encode_card`
     - `acs_credential_id`
     - `device_id`
@@ -247,6 +191,8 @@ Items that are intentionally undocumented are not included in this section.
 - `/events/list`
     - `access_code_id`
     - `access_code_ids`
+    - `acs_system_id`
+    - `acs_system_ids`
     - `between`
     - `connect_webview_id`
     - `connected_account_id`
