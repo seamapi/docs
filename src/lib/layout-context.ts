@@ -116,9 +116,7 @@ interface ContextResource {
 type ContextEndpoint = Pick<Endpoint, 'path' | 'description'>
 
 export interface RouteLayoutContext {
-  page: {
-    title: string
-  }
+  title: string
   description: string
   path: string
   resources: ContextResource[]
@@ -131,11 +129,11 @@ export function setApiRouteLayoutContext(
   blueprint: Blueprint,
   pathMetadata: PathMetadata,
 ): void {
-  const page = pathMetadata[route.path]?.page
+  const page = pathMetadata[route.path]
   if (page == null) {
     throw new Error(`Missing page metadata for ${route.path}`)
   }
-  file.page = page
+  file.title = page.title
   file.path = route.path
   file.endpoints = route.endpoints.map(({ path, name, description }) => ({
     path,
