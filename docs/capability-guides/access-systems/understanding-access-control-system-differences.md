@@ -20,7 +20,7 @@ To understand the manufacturer-specific nuances of your ACS, see the relevant [s
 
 Seam supports connecting to ACSs that are either cloud-based or on-premises.
 
-Cloud-based ACSs are hosted on the internet and are accessible by Seam over a secure connection.
+Cloud-based ACSs are hosted on the internet and are accessible by Seam over a secure connection. This type of ACS provides the benefits and ease of remote management. In addition, you can monitor real-time data and analytics.
 
 On-premises ACSs can also be connected to the internet but are typically protected by a firewall. To integrate with these systems, Seam requires the [Seam Bridge](../seam-bridge.md), an application installed on a local computer. Once installed, the [Seam Bridge](../seam-bridge.md) acts as a secure intermediary, handling network requests between Seam and the on-premises network, and enables secure communication through the firewall.
 
@@ -32,7 +32,7 @@ For detailed information about installing the Seam Bridge and connecting an on-p
 
 This section describes various ways in which ACSs handle assigning access permissions to users.
 
-### Access Group-based Access Control Systems
+### Access Group-Based Access Control Systems
 
 Access group-based ACSs use access groups as an efficient way to assign access permissions to [ACS users](../../products/access-systems/user-management.md). Each access group contains a list of entrances and the corresponding access schedule. Seam syncs all the access group and entrance information from the ACS.
 
@@ -60,7 +60,7 @@ The following process describes the configuration steps for your application to 
 
 You can also perform other management actions, as needed, such as [adding ACS users to](../../products/access-systems/assigning-users-to-access-groups.md#add-an-acs-user-to-an-access-group) and [removing ACS users from access groups](../../products/access-systems/assigning-users-to-access-groups.md#remove-an-acs-user-from-an-access-group), [assigning](assigning-credentials-to-users.md#assign-a-credential-to-a-user) and [unassigning](assigning-credentials-to-users.md#unassign-a-credential-from-a-user) existing credentials, [suspending](../../products/access-systems/suspending-and-unsuspending-users.md#suspend-an-acs-user) and [unsuspending](../../products/access-systems/suspending-and-unsuspending-users.md#unsuspend-an-acs-user) ACS users, [updating ACS users](../../products/access-systems/user-management.md#update-a-user) and [credentials](../../api-clients/acs/credentials/update.md), and [deleting ACS users](../../products/access-systems/user-management.md#delete-a-user) and [credentials](managing-credentials.md#delete-a-credential).
 
-### Credential-based Access Control Systems
+### Credential-Based Access Control Systems
 
 In a credential-based ACS, the [`acs_credential`](../../api-clients/acs/credentials/) resource contains the list of entrances to which the credential grants access. The `acs_credential` also contains the schedule that specifies when this access is valid. You specify each schedule by configuring a `starts_at` and `ends_at` date and time.
 

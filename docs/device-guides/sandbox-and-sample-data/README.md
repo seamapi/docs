@@ -14,6 +14,10 @@ description: >-
 [4suites-locks-sample-data.md](4suites-locks-sample-data.md)
 {% endcontent-ref %}
 
+{% content-ref url="../../developer-tools/sandbox-and-sample-data/sandbox-akiles-locks.md" %}
+[sandbox-akiles-locks.md](../../developer-tools/sandbox-and-sample-data/sandbox-akiles-locks.md)
+{% endcontent-ref %}
+
 {% content-ref url="assa-abloy-credential-service-sample-data.md" %}
 [assa-abloy-credential-service-sample-data.md](assa-abloy-credential-service-sample-data.md)
 {% endcontent-ref %}
@@ -96,6 +100,10 @@ description: >-
 
 {% content-ref url="pti-storlogix-cloud-sample-data.md" %}
 [pti-storlogix-cloud-sample-data.md](pti-storlogix-cloud-sample-data.md)
+{% endcontent-ref %}
+
+{% content-ref url="../../developer-tools/sandbox-and-sample-data/sandbox-salto-ks-access-control-system.md" %}
+[sandbox-salto-ks-access-control-system.md](../../developer-tools/sandbox-and-sample-data/sandbox-salto-ks-access-control-system.md)
 {% endcontent-ref %}
 
 {% content-ref url="salto-sample-data.md" %}

@@ -226,50 +226,37 @@ function processNamespace(namespace: Namespace, report: Report): void {
 
 function processEndpoint(endpoint: Endpoint, report: Report): void {
   if (endpoint.isUndocumented) {
-    addUniqueEndpoint(report.undocumented.endpoints, {
+    report.undocumented.endpoints.push({
       name: endpoint.path,
       reason: endpoint.undocumentedMessage ?? defaultUndocumentedMessage,
     })
   }
 
   if (endpoint.description == null || endpoint.description.trim() === '') {
-    addUniqueEndpoint(report.noDescription.endpoints, { name: endpoint.path })
+    report.noDescription.endpoints.push({ name: endpoint.path })
   }
 
   if (endpoint.isDeprecated) {
-    addUniqueEndpoint(report.deprecated.endpoints, {
+    report.deprecated.endpoints.push({
       name: endpoint.path,
       reason: endpoint.deprecationMessage ?? defaultDeprecatedMessage,
     })
   }
 
   if (endpoint.isDraft) {
-    addUniqueEndpoint(report.draft.endpoints, {
+    report.draft.endpoints.push({
       name: endpoint.path,
       reason: endpoint.draftMessage ?? defaultDraftMessage,
     })
   }
 
   if (endpoint.codeSamples.length === 0) {
-    if (!report.endpointsWithoutCodeSamples.includes(endpoint.path)) {
-      report.endpointsWithoutCodeSamples.push(endpoint.path)
-    }
+    report.endpointsWithoutCodeSamples.push(endpoint.path)
   }
 
   processResponseKeys(endpoint, report)
 
   processParameters(endpoint.path, endpoint.request.parameters, report)
-}
-
-function addUniqueEndpoint(
-  reportedEndpoints: ReportItem[],
-  newEndpoint: ReportItem,
-): void {
-  if (
-    !reportedEndpoints.some((endpoint) => endpoint.name === newEndpoint.name)
-  ) {
-    reportedEndpoints.push(newEndpoint)
-  }
 }
 
 function processResponseKeys(endpoint: Endpoint, report: Report): void {
@@ -352,38 +339,27 @@ function processParameters(
   )
 
   if (categorizedParams.undocumented.length > 0) {
-    addUniqueParameters(report.undocumented.parameters, {
+    report.undocumented.parameters.push({
       path,
       params: categorizedParams.undocumented,
     })
   }
   if (categorizedParams.noDescription.length > 0) {
-    addUniqueParameters(report.noDescription.parameters, {
+    report.noDescription.parameters.push({
       path,
       params: categorizedParams.noDescription,
     })
   }
   if (categorizedParams.deprecated.length > 0) {
-    addUniqueParameters(report.deprecated.parameters, {
+    report.deprecated.parameters.push({
       path,
       params: categorizedParams.deprecated,
     })
   }
   if (categorizedParams.draft.length > 0) {
-    addUniqueParameters(report.draft.parameters, {
+    report.draft.parameters.push({
       path,
       params: categorizedParams.draft,
     })
   }
-}
-
-const addUniqueParameters = (
-  reportedParams: ParameterReportItem[],
-  newParam: ParameterReportItem,
-): void => {
-  if (reportedParams.some((param) => param.path === newParam.path)) {
-    return
-  }
-
-  reportedParams.push(newParam)
 }

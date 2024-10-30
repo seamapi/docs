@@ -6,6 +6,8 @@ These items are intentionally undocumented.
 
 ### Routes
 
+- `/acs/credential_pools`: No undocumented message provided
+- `/acs/credential_provisioning_automations`: No undocumented message provided
 - `/acs/encoders`: No undocumented message provided
 - `/acs/users/unmanaged`: No undocumented message provided
 
@@ -16,9 +18,11 @@ These items are intentionally undocumented.
 
 ### Endpoints
 
+- `/acs/credential_pools/list`: Replaced by enrollment automations.
+- `/acs/credential_provisioning_automations/launch`: Replaced by enrollment automations.
 - `/acs/encoders/encode_card`: Encoding a card is currently unimplemented.
 - `/acs/encoders/list`: Encoders are in alpha.
-- `/acs/encoders/read_card`: Reading a card is currently unimplemented.
+- `/acs/encoders/scan_card`: Reading a card is currently unimplemented.
 - `/acs/users/unmanaged/get`: No unmanaged users are currently implemented.
 - `/acs/users/unmanaged/list`: No unmanaged users are currently implemented.
 
@@ -29,7 +33,6 @@ Items that are intentionally undocumented are not included in this section.
 
 ### Resources
 
-- `acs_access_group`
 - `acs_credential`
 - `acs_credential_pool`
 - `acs_credential_provisioning_automation`
@@ -42,15 +45,8 @@ Items that are intentionally undocumented are not included in this section.
 
 - `acs_access_group.access_group_type`
 - `acs_access_group.access_group_type_display_name`
-- `acs_access_group.acs_access_group_id`
-- `acs_access_group.acs_system_id`
-- `acs_access_group.created_at`
 - `acs_access_group.display_name`
-- `acs_access_group.external_type`
-- `acs_access_group.external_type_display_name`
 - `acs_access_group.is_managed`
-- `acs_access_group.name`
-- `acs_access_group.workspace_id`
 - `acs_credential.access_method`
 - `acs_credential.acs_credential_id`
 - `acs_credential.acs_credential_pool_id`
@@ -87,6 +83,7 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_credential_provisioning_automation.credential_manager_acs_system_id`
 - `acs_credential_provisioning_automation.user_identity_id`
 - `acs_credential_provisioning_automation.workspace_id`
+- `acs_entrance.dormakaba_community_metadata`
 - `acs_entrance.errors`
 - `acs_entrance.latch_metadata`
 - `acs_entrance.salto_ks_metadata`
@@ -118,6 +115,7 @@ Items that are intentionally undocumented are not included in this section.
 - `event.heating_set_point_fahrenheit`
 - `event.hvac_mode_setting`
 - `event.is_fallback_climate_preset`
+- `event.method`
 - `event.occurred_at`
 - `event.thermostat_schedule_id`
 - `event.workspace_id`
@@ -132,14 +130,6 @@ Items that are intentionally undocumented are not included in this section.
 
 ### Endpoints
 
-- `/acs/access_groups/add_user`
-- `/acs/access_groups/get`
-- `/acs/access_groups/list`
-- `/acs/access_groups/list_accessible_entrances`
-- `/acs/access_groups/list_users`
-- `/acs/access_groups/remove_user`
-- `/acs/access_groups/unmanaged/get`
-- `/acs/access_groups/unmanaged/list`
 - `/acs/credential_pools/list`
 - `/acs/credential_provisioning_automations/launch`
 - `/acs/credentials/assign`
@@ -154,11 +144,8 @@ Items that are intentionally undocumented are not included in this section.
 - `/acs/credentials/unmanaged/list`
 - `/acs/encoders/encode_card`
 - `/acs/encoders/list`
-- `/acs/encoders/read_card`
-- `/acs/entrances/get`
+- `/acs/encoders/scan_card`
 - `/acs/entrances/grant_access`
-- `/acs/entrances/list`
-- `/acs/entrances/list_credentials_with_access`
 - `/acs/users/unmanaged/get`
 - `/acs/users/unmanaged/list`
 - `/events/get`
@@ -174,6 +161,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/thermostats/off`
 - `/thermostats/set_fallback_climate_preset`
 - `/thermostats/set_fan_mode`
+- `/thermostats/set_temperature_threshold`
 - `/thermostats/update_climate_preset`
 - `/thermostats/schedules/create`
 - `/thermostats/schedules/delete`
@@ -183,26 +171,6 @@ Items that are intentionally undocumented are not included in this section.
 
 ### Endpoint parameters
 
-- `/acs/access_groups/add_user`
-    - `acs_access_group_id`
-    - `acs_user_id`
-- `/acs/access_groups/get`
-    - `acs_access_group_id`
-- `/acs/access_groups/list`
-    - `acs_system_id`
-    - `acs_user_id`
-- `/acs/access_groups/list_accessible_entrances`
-    - `acs_access_group_id`
-- `/acs/access_groups/list_users`
-    - `acs_access_group_id`
-- `/acs/access_groups/remove_user`
-    - `acs_access_group_id`
-    - `acs_user_id`
-- `/acs/access_groups/unmanaged/get`
-    - `acs_access_group_id`
-- `/acs/access_groups/unmanaged/list`
-    - `acs_system_id`
-    - `acs_user_id`
 - `/acs/credential_pools/list`
     - `acs_system_id`
 - `/acs/credential_provisioning_automations/launch`
@@ -239,6 +207,12 @@ Items that are intentionally undocumented are not included in this section.
     - `ends_at`
 - `/acs/credentials/unmanaged/get`
     - `acs_credential_id`
+- `/acs/encoders/encode_card`
+    - `acs_credential_id`
+    - `device_id`
+- `/acs/encoders/scan_card`
+    - `acs_system_id`
+    - `device_id`
 - `/acs/entrances/get`
     - `acs_entrance_id`
 - `/acs/entrances/grant_access`
@@ -282,6 +256,7 @@ Items that are intentionally undocumented are not included in this section.
     - `event_types`
     - `limit`
     - `since`
+    - `unstable_offset`
 - `/thermostats/activate_climate_preset`
     - `climate_preset_key`
     - `device_id`
@@ -342,6 +317,12 @@ Items that are intentionally undocumented are not included in this section.
     - `fan_mode`
     - `fan_mode_setting`
     - `sync`
+- `/thermostats/set_temperature_threshold`
+    - `device_id`
+    - `lower_limit_celsius`
+    - `lower_limit_fahrenheit`
+    - `upper_limit_celsius`
+    - `upper_limit_fahrenheit`
 - `/thermostats/update_climate_preset`
     - `climate_preset_key`
     - `cooling_set_point_celsius`
@@ -375,6 +356,14 @@ Items that are intentionally undocumented are not included in this section.
     - `starts_at`
     - `thermostat_schedule_id`
 
+## Draft
+
+These items have been marked as draft.
+
+### Resource properties
+
+- `acs_system.default_credential_manager_acs_system_id`: Needs review
+
 ## Deprecated
 
 These items are deprecated.
@@ -405,44 +394,19 @@ These items are deprecated.
 
 ### Endpoints without code samples
 
-- `/acs/access_groups/add_user`
-- `/acs/access_groups/get`
-- `/acs/access_groups/list`
-- `/acs/access_groups/list_accessible_entrances`
-- `/acs/access_groups/list_users`
-- `/acs/access_groups/remove_user`
-- `/acs/access_groups/unmanaged/get`
-- `/acs/access_groups/unmanaged/list`
 - `/acs/credential_pools/list`
 - `/acs/credential_provisioning_automations/launch`
-- `/acs/credentials/assign`
-- `/acs/credentials/create`
-- `/acs/credentials/delete`
-- `/acs/credentials/get`
-- `/acs/credentials/list`
-- `/acs/credentials/list_accessible_entrances`
-- `/acs/credentials/unassign`
-- `/acs/credentials/update`
 - `/acs/credentials/unmanaged/get`
 - `/acs/credentials/unmanaged/list`
 - `/acs/encoders/encode_card`
 - `/acs/encoders/list`
-- `/acs/encoders/read_card`
+- `/acs/encoders/scan_card`
 - `/acs/entrances/get`
 - `/acs/entrances/grant_access`
 - `/acs/entrances/list`
 - `/acs/entrances/list_credentials_with_access`
-- `/acs/users/add_to_access_group`
-- `/acs/users/create`
-- `/acs/users/delete`
-- `/acs/users/get`
-- `/acs/users/list`
 - `/acs/users/list_accessible_entrances`
-- `/acs/users/remove_from_access_group`
 - `/acs/users/revoke_access_to_all_entrances`
-- `/acs/users/suspend`
-- `/acs/users/unsuspend`
-- `/acs/users/update`
 - `/acs/users/unmanaged/get`
 - `/acs/users/unmanaged/list`
 - `/events/get`
@@ -458,6 +422,7 @@ These items are deprecated.
 - `/thermostats/off`
 - `/thermostats/set_fallback_climate_preset`
 - `/thermostats/set_fan_mode`
+- `/thermostats/set_temperature_threshold`
 - `/thermostats/update_climate_preset`
 - `/thermostats/schedules/create`
 - `/thermostats/schedules/delete`

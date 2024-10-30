@@ -44,7 +44,7 @@ We support customizable access codes for igloohome locks connected through the i
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their igloohome devices to Seam, include the `igloohome` [device provider key](../api-clients/connect_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their igloohome devices to Seam, include the `igloohome` [device provider key](../api-clients/connect\_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -61,6 +61,20 @@ To control igloohome devices using Seam, you must prompt owners of these devices
 
 ***
 
+## Brand-Specific Events
+
+Seam supports the following events and event property values for igloohome devices:
+
+### igloohome Auto-Relock
+
+igloohome devices have an auto-relock feature that automatically locks the device after a configurable period of time, for example, 30 seconds. The Seam API reports these auto-relock occurrences by emitting a [`lock.locked` event](../api-clients/events/#event-types) with `automatic` as the value for the [`method` property](../api-clients/events/#lock-events).
+
+### igloohome Access Denied Event
+
+Each time an igloohome device detects an invalid attempt of entry, Seam emits a [`lock.access_denied` event](../api-clients/events/#event-types). Invalid entry attempts include entering the wrong PIN, exceeding the PIN length, and using an invalid key card. The igloohome lock also flashes red to indicate an invalid attempt. If too many invalid attempts occur, igloohome locks produce a Keypad Security Lockout alarm, accompanied by light and sound indicators. For more information, see the igloohome support articles on [keypad security](https://support.igloohome.co/support/solutions/articles/35000169627-keypad-security-lockout-activated-and-deactivated) and [incorrect PINs](https://support.igloohome.co/support/solutions/articles/35000169625-incorrect-pin).
+
+***
+
 ## Where to Order
 
 Order igloohome devices directly from the igloohome website.
@@ -68,4 +82,3 @@ Order igloohome devices directly from the igloohome website.
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>igloohome</strong></td><td></td><td><a href="https://store-us.igloohome.co/">https://store-us.igloohome.co/</a></td><td><a href="../.gitbook/assets/igloohome-logo.png">igloohome-logo.png</a></td></tr></tbody></table>
 
 ***
-
