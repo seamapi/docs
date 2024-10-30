@@ -441,6 +441,7 @@ These items are deprecated.
 - `/thermostats/activate_climate_preset`
 - `/thermostats/create_climate_preset`
 - `/thermostats/delete_climate_preset`
+- `/thermostats/get`
 - `/thermostats/set_fallback_climate_preset`
 - `/thermostats/update_climate_preset`
 - `/thermostats/schedules/create`
