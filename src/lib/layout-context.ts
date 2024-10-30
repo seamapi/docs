@@ -7,7 +7,7 @@ import type {
 } from '@seamapi/blueprint'
 import { pascalCase } from 'change-case'
 
-import type { PathMetadata } from './reference.js'
+import type { PathMetadata } from './path-metadata.js'
 
 const supportedSdks: CodeSampleSdk[] = [
   'javascript',
@@ -116,7 +116,9 @@ interface ContextResource {
 type ContextEndpoint = Pick<Endpoint, 'path' | 'description'>
 
 export interface RouteLayoutContext {
-  description: string | null
+  title: string
+  description: string
+  path: string
   resources: ContextResource[]
   endpoints: ContextEndpoint[]
 }
@@ -127,7 +129,12 @@ export function setApiRouteLayoutContext(
   blueprint: Blueprint,
   pathMetadata: PathMetadata,
 ): void {
-  file.description = pathMetadata[route.path]?.description ?? null
+  const page = pathMetadata[route.path]
+  if (page == null) {
+    throw new Error(`Missing page metadata for ${route.path}`)
+  }
+  file.title = page.title
+  file.path = route.path
   file.endpoints = route.endpoints.map(({ path, name, description }) => ({
     path,
     name,

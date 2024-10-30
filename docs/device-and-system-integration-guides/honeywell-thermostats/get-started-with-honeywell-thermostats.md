@@ -527,7 +527,7 @@ return nil
 
 ## 4. Set the Current HVAC and Fan Mode Settings
 
-Seam enables you to adjust the [current heating and cooling settings](../../products/thermostats/configure-current-climate-settings.md) on a smart thermostat, including the [HVAC mode](../../products/thermostats/hvac-mode.md) and the corresponding [set points](../../products/thermostats/set-points.md). It also enables you to configure the [fan mode](../../products/thermostats/configure-current-climate-settings.md#set-the-fan-mode). These two operations return [action attempts](../../core-concepts/action-attempts.md).
+Seam enables you to adjust the [current heating and cooling settings](../../products/thermostats/configure-current-climate-settings.md) on a smart thermostat, including the [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) and the corresponding [set points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md). It also enables you to configure the [fan mode](../../products/thermostats/configure-current-climate-settings.md#set-the-fan-mode). These two operations return [action attempts](../../core-concepts/action-attempts.md).
 
 For example, use the following code samples to set your thermostat to heat mode and the fan mode to on:
 
