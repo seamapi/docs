@@ -1,21 +1,16 @@
----
-description: {{page.description}}
----
-```
-{{path}}
-```
+# {{title}}
 
 {{#each resources}}
-# `{{name}}`
+## `{{name}}`
 {{#if description}}
 
 {{description}}
 {{/if}}
 
-## Properties
+### Properties
 
 {{#each properties}}
-### `{{name}}`
+#### `{{name}}`
 {{#if isDeprecated}}
 
 {% hint style="warning" %}
@@ -51,18 +46,18 @@ Possible enum values:
 
 {{/each}}
 {{/each}}
-# Endpoints
+## Endpoints
 
 {{#each endpoints}}
-## [`{{path}}`](./{{name}}.md)
+### [`{{path}}`](./{{name}}.md)
 
 {{description}}
 {{/each}}
 {{#if events.length}}
-# Events
+## Events
 
 {{~#each events}}
-## `{{name}}`
+### `{{name}}`
 
 {{description}}
 

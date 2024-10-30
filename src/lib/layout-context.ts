@@ -23,7 +23,6 @@ export interface EndpointLayoutContext {
   path: string
   page: {
     title: string
-    description: string
   }
   request: {
     preferredMethod: string
@@ -127,7 +126,6 @@ type ContextEndpoint = Pick<Endpoint, 'path' | 'description'>
 export interface RouteLayoutContext {
   page: {
     title: string
-    description: string
   }
   description: string
   path: string

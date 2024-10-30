@@ -5,7 +5,6 @@ export const PathMetadataSchema = z.record(
   z.object({
     page: z.object({
       title: z.string().trim().min(1),
-      description: z.string().trim().min(1),
     }),
   }),
 )
