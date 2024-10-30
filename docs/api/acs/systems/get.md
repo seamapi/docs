@@ -1,6 +1,3 @@
----
-description: Get an ACS System
----
 # Get an ACS System
 
 ```

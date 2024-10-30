@@ -1,6 +1,3 @@
----
-description: List ACS Systems
----
 # List ACS Systems
 
 ```
