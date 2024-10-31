@@ -185,7 +185,7 @@
     * [List Access Groups](api/acs/access\_groups/list.md)
     * [Get an Access Group](api/acs/access\_groups/get.md)
     * [Add an ACS User to an Access Group](api/acs/access\_groups/add\_user.md)
-    * [Remove a User from an Access Group](api/acs/access\_groups/remove\_user.md)
+    * [Remove an ACS User from an Access Group](api/acs/access\_groups/remove\_user.md)
     * [List ACS Users in an Access Group](api/acs/access\_groups/list\_users.md)
   * [Credentials](api/acs/credentials/README.md)
     * [Create a Credential for an ACS User](api/acs/credentials/create.md)
