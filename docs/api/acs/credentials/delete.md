@@ -114,7 +114,7 @@ nil
 
 ### `acs_credential_id`
 
-Type: `string`\
+Type: `string`
 Required: Yes
 
 ID of the desired credential.

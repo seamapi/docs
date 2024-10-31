@@ -143,7 +143,7 @@ func main() {
 
 ### `acs_access_group_id`
 
-Type: `string`\
+Type: `string`
 Required: Yes
 
 ID of the access group for which you want to retrieve all accessible entrances.

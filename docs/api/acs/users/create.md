@@ -144,7 +144,7 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 
 ### `access_schedule`
 
-Type: `object`\
+Type: `object`
 Required: No
 
 `starts_at` and `ends_at` timestamps for the new `acs_user`'s access. If you specify an `access_schedule`, you must include both `starts_at` and `ends_at`. `ends_at` must be a time in the future and after `starts_at`. Only applicable to Salto KS access control systems.
@@ -153,7 +153,7 @@ Required: No
 
 ### `acs_access_group_ids`
 
-Type: `array`\
+Type: `array`
 Required: No
 
 Array of `access_group_id`s to indicate the access groups to which to add the new `acs_user`.
@@ -162,7 +162,7 @@ Array of `access_group_id`s to indicate the access groups to which to add the ne
 
 ### `acs_system_id`
 
-Type: `string`\
+Type: `string`
 Required: Yes
 
 ID of the `acs_system` to which to add the new `acs_user`.
@@ -171,7 +171,7 @@ ID of the `acs_system` to which to add the new `acs_user`.
 
 ### `email`
 
-Type: `string`\
+Type: `string`
 Required: No
 
 
@@ -180,7 +180,7 @@ Required: No
 
 ### `email_address`
 
-Type: `string`\
+Type: `string`
 Required: No
 
 Email address of the `acs_user`.
@@ -189,7 +189,7 @@ Email address of the `acs_user`.
 
 ### `full_name`
 
-Type: `string`\
+Type: `string`
 Required: No
 
 Full name of the `acs_user`.
@@ -198,7 +198,7 @@ Full name of the `acs_user`.
 
 ### `phone_number`
 
-Type: `string`\
+Type: `string`
 Required: No
 
 Phone number of the `acs_user` in E.164 format (for example, `+15555550100`).
@@ -207,7 +207,7 @@ Phone number of the `acs_user` in E.164 format (for example, `+15555550100`).
 
 ### `user_identity_id`
 
-Type: `string`\
+Type: `string`
 Required: No
 
 ID of the user identity with which to associate the new `acs_user`.

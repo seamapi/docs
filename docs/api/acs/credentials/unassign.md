@@ -120,7 +120,7 @@ nil
 
 ### `acs_credential_id`
 
-Type: `string`\
+Type: `string`
 Required: Yes
 
 ID of the desired credential.
@@ -129,7 +129,7 @@ ID of the desired credential.
 
 ### `acs_user_id`
 
-Type: `string`\
+Type: `string`
 Required: Yes
 
 ID of the desired user.

@@ -132,7 +132,7 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 
 ### `acs_system_id`
 
-Type: `string`\
+Type: `string`
 Required: No
 
 ID of the `acs_system` for which you want to retrieve all `acs_user`s.
@@ -141,7 +141,7 @@ ID of the `acs_system` for which you want to retrieve all `acs_user`s.
 
 ### `created_before`
 
-Type: `string`\
+Type: `string`
 Required: No
 
 
@@ -150,7 +150,7 @@ Required: No
 
 ### `limit`
 
-Type: `number`\
+Type: `number`
 Required: No
 
 
@@ -159,7 +159,7 @@ Required: No
 
 ### `user_identity_email_address`
 
-Type: `string`\
+Type: `string`
 Required: No
 
 Email address of the user identity for which you want to retrieve all `acs_user`s.
@@ -168,7 +168,7 @@ Email address of the user identity for which you want to retrieve all `acs_user`
 
 ### `user_identity_id`
 
-Type: `string`\
+Type: `string`
 Required: No
 
 ID of the user identity for which you want to retrieve all `acs_user`s.
@@ -177,7 +177,7 @@ ID of the user identity for which you want to retrieve all `acs_user`s.
 
 ### `user_identity_phone_number`
 
-Type: `string`\
+Type: `string`
 Required: No
 
 Phone number of the user identity for which you want to retrieve all `acs_user`s, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`).

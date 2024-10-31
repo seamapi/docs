@@ -10,7 +10,7 @@ POST /acs/entrances/grant_access ⇒ void
 
 ### `acs_entrance_id`
 
-Type: `string`\
+Type: `string`
 Required: Yes
 
 
@@ -19,7 +19,7 @@ Required: Yes
 
 ### `acs_user_id`
 
-Type: `string`\
+Type: `string`
 Required: Yes
 
 

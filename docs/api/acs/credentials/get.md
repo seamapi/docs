@@ -144,7 +144,7 @@ api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUs
 
 ### `acs_credential_id`
 
-Type: `string`\
+Type: `string`
 Required: Yes
 
 ID of the desired credential.

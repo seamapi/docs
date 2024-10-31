@@ -123,7 +123,7 @@ func main() {
 
 ### `acs_credential_id`
 
-Type: `string`\
+Type: `string`
 Required: No
 
 
@@ -132,7 +132,7 @@ Required: No
 
 ### `acs_system_id`
 
-Type: `string`\
+Type: `string`
 Required: No
 
 

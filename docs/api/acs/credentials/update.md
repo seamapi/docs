@@ -119,7 +119,7 @@ nil
 
 ### `acs_credential_id`
 
-Type: `string`\
+Type: `string`
 Required: Yes
 
 ID of the desired credential.
@@ -128,7 +128,7 @@ ID of the desired credential.
 
 ### `code`
 
-Type: `string`\
+Type: `string`
 Required: No
 
 Replacement access (PIN) code for the credential.
@@ -137,7 +137,7 @@ Replacement access (PIN) code for the credential.
 
 ### `ends_at`
 
-Type: `string`\
+Type: `string`
 Required: No
 
 Replacement date and time at which the validity of the credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after the `starts_at` value that you set when creating the credential.

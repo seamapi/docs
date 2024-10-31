@@ -179,7 +179,7 @@ api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUs
 
 ### `access_method`
 
-Type: `string`\
+Type: `string`
 Required: Yes
 
 Access method for the new credential. Supported values: `code`, `card`, `mobile_key`.
@@ -188,7 +188,7 @@ Access method for the new credential. Supported values: `code`, `card`, `mobile_
 
 ### `acs_user_id`
 
-Type: `string`\
+Type: `string`
 Required: Yes
 
 ID of the ACS user to whom the new credential belongs.
@@ -197,7 +197,7 @@ ID of the ACS user to whom the new credential belongs.
 
 ### `allowed_acs_entrance_ids`
 
-Type: `array`\
+Type: `array`
 Required: No
 
 Set of IDs of the [entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md) for which the new credential grants access.
@@ -206,7 +206,7 @@ Set of IDs of the [entrances](../../../capability-guides/access-systems/retrievi
 
 ### `code`
 
-Type: `string`\
+Type: `string`
 Required: No
 
 Access (PIN) code for the new credential. There may be manufacturer-specific code restrictions. For details, see the applicable [device or system integration guide](../../../device-and-system-integration-guides/overview.md).
@@ -215,7 +215,7 @@ Access (PIN) code for the new credential. There may be manufacturer-specific cod
 
 ### `credential_manager_acs_system_id`
 
-Type: `string`\
+Type: `string`
 Required: No
 
 ACS system ID of the credential manager for the new credential.
@@ -224,7 +224,7 @@ ACS system ID of the credential manager for the new credential.
 
 ### `ends_at`
 
-Type: `string`\
+Type: `string`
 Required: No
 
 Date and time at which the validity of the new credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
@@ -233,7 +233,7 @@ Date and time at which the validity of the new credential ends, in [ISO 8601](ht
 
 ### `is_multi_phone_sync_credential`
 
-Type: `boolean`\
+Type: `boolean`
 Required: No
 
 Indicates whether the new credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
@@ -242,7 +242,7 @@ Indicates whether the new credential is a [multi-phone sync credential](https://
 
 ### `starts_at`
 
-Type: `string`\
+Type: `string`
 Required: No
 
 Date and time at which the validity of the new credential starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
@@ -251,7 +251,7 @@ Date and time at which the validity of the new credential starts, in [ISO 8601](
 
 ### `visionline_metadata`
 
-Type: `object`\
+Type: `object`
 Required: No
 
 Visionline-specific metadata for the new credential.

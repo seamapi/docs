@@ -159,7 +159,7 @@ func main() {
 
 ### `acs_system_id`
 
-Type: `string`\
+Type: `string`
 Required: No
 
 ID of the access control system for which you want to retrieve all access groups.
@@ -168,7 +168,7 @@ ID of the access control system for which you want to retrieve all access groups
 
 ### `acs_user_id`
 
-Type: `string`\
+Type: `string`
 Required: No
 
 ID of the user for which you want to retrieve all access groups.

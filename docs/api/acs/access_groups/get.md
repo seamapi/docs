@@ -147,7 +147,7 @@ api.AcsAccessGroup{AcsAccessGroupId: "44444444-4444-4444-4444-444444444444", Nam
 
 ### `acs_access_group_id`
 
-Type: `string`\
+Type: `string`
 Required: Yes
 
 ID of the desired access group.

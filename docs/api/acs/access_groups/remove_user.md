@@ -120,7 +120,7 @@ nil
 
 ### `acs_access_group_id`
 
-Type: `string`\
+Type: `string`
 Required: Yes
 
 ID of the desired access group.
@@ -129,7 +129,7 @@ ID of the desired access group.
 
 ### `acs_user_id`
 
-Type: `string`\
+Type: `string`
 Required: Yes
 
 ID of the desired user.

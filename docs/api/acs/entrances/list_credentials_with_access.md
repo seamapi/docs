@@ -185,7 +185,7 @@ func main() {
 
 ### `acs_entrance_id`
 
-Type: `string`\
+Type: `string`
 Required: Yes
 
 
@@ -194,7 +194,7 @@ Required: Yes
 
 ### `include_if`
 
-Type: `array`\
+Type: `array`
 Required: No
 
 

@@ -114,7 +114,7 @@ func main() {
 
 ### `acs_system_id`
 
-Type: `string`\
+Type: `string`
 Required: Yes
 
 ID of the desired access control system.

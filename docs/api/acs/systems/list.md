@@ -118,7 +118,7 @@ func main() {
 
 ### `connected_account_id`
 
-Type: `string`\
+Type: `string`
 Required: No
 
 ID of the connected account by which to filter the list of returned access control systems.
