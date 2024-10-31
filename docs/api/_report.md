@@ -6,8 +6,10 @@ These items are intentionally undocumented.
 
 ### Routes
 
+- `/acs/access_groups/unmanaged`: No undocumented message provided
 - `/acs/credential_pools`: No undocumented message provided
 - `/acs/credential_provisioning_automations`: No undocumented message provided
+- `/acs/credentials/unmanaged`: No undocumented message provided
 - `/acs/encoders`: No undocumented message provided
 - `/acs/users/unmanaged`: No undocumented message provided
 
@@ -18,8 +20,12 @@ These items are intentionally undocumented.
 
 ### Endpoints
 
+- `/acs/access_groups/unmanaged/get`: No unmanaged access groups are currently implemented.
+- `/acs/access_groups/unmanaged/list`: No unmanaged access groups are currently implemented.
 - `/acs/credential_pools/list`: Replaced by enrollment automations.
 - `/acs/credential_provisioning_automations/launch`: Replaced by enrollment automations.
+- `/acs/credentials/unmanaged/get`: No unmanaged credentials are currently implemented.
+- `/acs/credentials/unmanaged/list`: No unmanaged credentials are currently implemented.
 - `/acs/encoders/encode_card`: Encoding a card is currently unimplemented.
 - `/acs/encoders/list`: Encoders are in alpha.
 - `/acs/encoders/scan_card`: Reading a card is currently unimplemented.
@@ -65,6 +71,7 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_credential_provisioning_automation.credential_manager_acs_system_id`
 - `acs_credential_provisioning_automation.user_identity_id`
 - `acs_credential_provisioning_automation.workspace_id`
+- `acs_entrance.assa_abloy_vostio_metadata`
 - `acs_entrance.dormakaba_community_metadata`
 - `acs_entrance.errors`
 - `acs_entrance.latch_metadata`
