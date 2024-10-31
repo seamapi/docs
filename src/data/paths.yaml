@@ -1,21 +1,15 @@
 ---
 /acs/systems:
   title: Systems
----
 /acs/users:
   title: ACS Users
----
 /acs/credentials:
   title: Credentials
----
 /acs/access_groups:
   title: Access Groups
----
 /acs/entrances:
   title: Entrances
----
 /thermostats:
   title: Thermostats
----
 /thermostats/schedules:
   title: Climate Schedules
