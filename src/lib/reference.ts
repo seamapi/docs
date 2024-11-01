@@ -2,8 +2,8 @@ import type { Blueprint } from '@seamapi/blueprint'
 import type Metalsmith from 'metalsmith'
 
 import {
-  type EndpointLayoutContext,
-  type RouteLayoutContext,
+  type ApiEndpointLayoutContext,
+  type ApiRouteLayoutContext,
   setApiRouteLayoutContext,
   setEndpointLayoutContext,
 } from './layout/index.js'
@@ -13,7 +13,8 @@ const sdks: Array<'javascript'> = []
 
 type Metadata = Partial<Pick<Blueprint, 'routes' | 'resources'>>
 
-type File = EndpointLayoutContext & RouteLayoutContext & { layout: string }
+type File = ApiEndpointLayoutContext &
+  ApiRouteLayoutContext & { layout: string }
 
 export const reference = (
   files: Metalsmith.Files,

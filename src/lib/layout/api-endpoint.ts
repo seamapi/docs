@@ -9,7 +9,7 @@ const supportedSdks: CodeSampleSdk[] = [
   'seam_cli',
 ]
 
-export interface EndpointLayoutContext {
+export interface ApiEndpointLayoutContext {
   description: string
   title: string
   path: string
@@ -44,7 +44,7 @@ export interface EndpointLayoutContext {
 }
 
 export function setEndpointLayoutContext(
-  file: Partial<EndpointLayoutContext>,
+  file: Partial<ApiEndpointLayoutContext>,
   endpoint: Endpoint,
 ): void {
   file.description = endpoint.description

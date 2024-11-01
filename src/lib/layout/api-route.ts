@@ -3,33 +3,33 @@ import { pascalCase } from 'change-case'
 
 import type { PathMetadata } from 'lib/path-metadata.js'
 
-export interface RouteLayoutContext {
+export interface ApiRouteLayoutContext {
   title: string
   description: string
   path: string
-  resources: ContextResource[]
-  endpoints: ContextEndpoint[]
+  resources: ApiRouteResouce[]
+  endpoints: ApiRouteEndpoint[]
 }
 
-type ContextResourceProperty = Pick<
+type ApiRouteResourceProperty = Pick<
   Property,
   'name' | 'description' | 'isDeprecated' | 'deprecationMessage'
 > & {
   format: string
   enumValues?: string[]
-  objectProperties?: ContextResourceProperty[]
+  objectProperties?: ApiRouteResourceProperty[]
 }
 
-interface ContextResource {
+interface ApiRouteResouce {
   name: string
   description: string
-  properties: ContextResourceProperty[]
+  properties: ApiRouteResourceProperty[]
 }
 
-type ContextEndpoint = Pick<Endpoint, 'path' | 'description'>
+type ApiRouteEndpoint = Pick<Endpoint, 'path' | 'description'>
 
 export function setApiRouteLayoutContext(
-  file: Partial<RouteLayoutContext>,
+  file: Partial<ApiRouteLayoutContext>,
   route: Route,
   blueprint: Blueprint,
   pathMetadata: PathMetadata,
@@ -69,7 +69,7 @@ export function setApiRouteLayoutContext(
             isDeprecated,
             deprecationMessage,
           } = prop
-          const contextResourceProp: ContextResourceProperty = {
+          const contextResourceProp: ApiRouteResourceProperty = {
             name,
             description,
             format: normalizePropertyFormatForDocs(format),
