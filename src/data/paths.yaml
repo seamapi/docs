@@ -1,3 +1,15 @@
 ---
 /acs/systems:
   title: Systems
+
+/acs/users:
+  title: Users
+
+/acs/entrances:
+  title: Entrances
+
+/acs/access_groups:
+  title: Access Groups
+
+/acs/credentials:
+  title: Credentials
