@@ -20,6 +20,6 @@
     - acs_access_group
 
 /acs/credentials:
-  title:
+  title: Credentials
   resources:
     - acs_credential
