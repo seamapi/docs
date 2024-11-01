@@ -6,7 +6,7 @@ import {
   type RouteLayoutContext,
   setApiRouteLayoutContext,
   setEndpointLayoutContext,
-} from './layout-context.js'
+} from './layout/index.js'
 import { PathMetadataSchema } from './path-metadata.js'
 
 const sdks: Array<'javascript'> = []

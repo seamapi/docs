@@ -7,7 +7,7 @@ import type {
 } from '@seamapi/blueprint'
 import { pascalCase } from 'change-case'
 
-import type { PathMetadata } from './path-metadata.js'
+import type { PathMetadata } from '../path-metadata.js'
 
 const supportedSdks: CodeSampleSdk[] = [
   'javascript',
