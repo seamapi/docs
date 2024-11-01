@@ -2,18 +2,15 @@
 
 ## `acs_access_group`
 
-
-    Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.
-    
-    The `acs_access_group` object represents an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
-  
+Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.
+The `acs_access_group` object represents an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ### Properties
 
 #### `access_group_type`
 
 {% hint style="warning" %}
-**Deprecated**. use external_type
+**Deprecated**. Use `external_type`.
 {% endhint %}
 
 Format: `Enum`
@@ -30,7 +27,7 @@ Possible enum values:
 #### `access_group_type_display_name`
 
 {% hint style="warning" %}
-**Deprecated**. use external_type_display_name
+**Deprecated**. Use `external_type_display_name`.
 {% endhint %}
 
 Format: `String`

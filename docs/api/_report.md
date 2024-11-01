@@ -41,7 +41,6 @@ Items that are intentionally undocumented are not included in this section.
 
 - `acs_credential_pool`
 - `acs_credential_provisioning_automation`
-- `acs_entrance`
 - `acs_user`
 - `event`
 - `thermostat_schedule`
@@ -317,8 +316,8 @@ These items are deprecated.
 
 ### Resource properties
 
-- `acs_access_group.access_group_type`: use external_type
-- `acs_access_group.access_group_type_display_name`: use external_type_display_name
+- `acs_access_group.access_group_type`: Use `external_type`.
+- `acs_access_group.access_group_type_display_name`: Use `external_type_display_name`.
 - `acs_system.system_type`: Use `external_type`.
 - `acs_system.system_type_display_name`: Use `external_type_display_name`.
 - `acs_user.email`: use email_address.
