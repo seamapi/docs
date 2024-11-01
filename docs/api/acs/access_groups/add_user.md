@@ -1,4 +1,4 @@
-# 
+# Add an ACS User to an Access Group
 
 ```
 PUT /acs/access_groups/add_user ⇒ void

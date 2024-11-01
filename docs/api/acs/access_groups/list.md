@@ -1,4 +1,4 @@
-# 
+# List Access Groups
 
 ```
 POST /acs/access_groups/list ⇒ { acs_access_groups: [acs_access_group, …] }

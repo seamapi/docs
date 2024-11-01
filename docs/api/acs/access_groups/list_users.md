@@ -1,4 +1,4 @@
-# 
+# List ACS Users in an Access Group
 
 ```
 POST /acs/access_groups/list_users ⇒ { acs_users: [acs_user, …] }

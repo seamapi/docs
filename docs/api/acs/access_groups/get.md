@@ -1,4 +1,4 @@
-# 
+# Get an Access Group
 
 ```
 POST /acs/access_groups/get ⇒ { acs_access_group }

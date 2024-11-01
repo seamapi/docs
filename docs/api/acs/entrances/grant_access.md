@@ -1,4 +1,4 @@
-# 
+# Grant an ACS User Access to an Entrance
 
 ```
 POST /acs/entrances/grant_access ⇒ void

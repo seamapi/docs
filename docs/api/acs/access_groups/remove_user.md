@@ -1,4 +1,4 @@
-# 
+# Remove an ACS User from an Access Group
 
 ```
 POST /acs/access_groups/remove_user ⇒ void

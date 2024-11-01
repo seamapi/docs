@@ -26,9 +26,9 @@ These items are intentionally undocumented.
 - `/acs/credential_provisioning_automations/launch`: Replaced by enrollment automations.
 - `/acs/credentials/unmanaged/get`: No unmanaged credentials are currently implemented.
 - `/acs/credentials/unmanaged/list`: No unmanaged credentials are currently implemented.
-- `/acs/encoders/encode_card`: Encoding a card is currently unimplemented.
+- `/acs/encoders/encode_credential`: Encoding a card is currently unimplemented.
 - `/acs/encoders/list`: Encoders are in alpha.
-- `/acs/encoders/scan_card`: Reading a card is currently unimplemented.
+- `/acs/encoders/scan_credential`: Reading a card is currently unimplemented.
 - `/acs/users/unmanaged/get`: No unmanaged users are currently implemented.
 - `/acs/users/unmanaged/list`: No unmanaged users are currently implemented.
 
@@ -121,9 +121,9 @@ Items that are intentionally undocumented are not included in this section.
 
 - `/acs/credential_pools/list`
 - `/acs/credential_provisioning_automations/launch`
-- `/acs/encoders/encode_card`
+- `/acs/encoders/encode_credential`
 - `/acs/encoders/list`
-- `/acs/encoders/scan_card`
+- `/acs/encoders/scan_credential`
 - `/acs/entrances/grant_access`
 - `/acs/users/unmanaged/get`
 - `/acs/users/unmanaged/list`
@@ -158,12 +158,6 @@ Items that are intentionally undocumented are not included in this section.
     - `credential_manager_acs_system_id`
     - `credential_manager_acs_user_id`
     - `user_identity_id`
-- `/acs/encoders/encode_card`
-    - `acs_credential_id`
-    - `device_id`
-- `/acs/encoders/scan_card`
-    - `acs_system_id`
-    - `device_id`
 - `/acs/entrances/get`
     - `acs_entrance_id`
 - `/acs/entrances/grant_access`
@@ -351,9 +345,9 @@ These items are deprecated.
 - `/acs/credential_provisioning_automations/launch`
 - `/acs/credentials/unmanaged/get`
 - `/acs/credentials/unmanaged/list`
-- `/acs/encoders/encode_card`
+- `/acs/encoders/encode_credential`
 - `/acs/encoders/list`
-- `/acs/encoders/scan_card`
+- `/acs/encoders/scan_credential`
 - `/acs/entrances/grant_access`
 - `/acs/users/list_accessible_entrances`
 - `/acs/users/revoke_access_to_all_entrances`
