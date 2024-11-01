@@ -129,83 +129,62 @@ export function setApiRouteLayoutContext(
   blueprint: Blueprint,
   pathMetadata: PathMetadata,
 ): void {
-  const page = pathMetadata[route.path]
-  if (page == null) {
-    throw new Error(`Missing page metadata for ${route.path}`)
+  const metadata = pathMetadata[route.path]
+  if (metadata == null) {
+    throw new Error(`Missing path metadata for ${route.path}`)
   }
-  file.title = page.title
+  file.title = metadata.title
   file.path = route.path
   file.endpoints = route.endpoints.map(({ path, name, description }) => ({
     path,
     name,
     description: getFirstParagraph(description),
   }))
+
   file.resources = []
-
-  const endpointsWithResourceType = route.endpoints.filter(
-    (e) =>
-      e.response.responseType === 'resource' ||
-      e.response.responseType === 'resource_list',
-  )
-
-  const uniqueResources = new Set<string>()
-
-  for (const endpoint of endpointsWithResourceType) {
-    if (!('resourceType' in endpoint.response)) {
-      // eslint-disable-next-line no-console
-      console.warn(`No resourceType in ${endpoint.path} endpoint response`)
-      continue
-    }
-
-    const resourceName = endpoint.response.resourceType
-    const resource = blueprint.resources[resourceName]
+  for (const resourceType of metadata.resources) {
+    const resource = blueprint.resources[resourceType]
 
     if (resource == null) {
-      // eslint-disable-next-line no-console
-      console.warn(`No resource ${resourceName} in blueprint`)
-      continue
+      throw new Error(
+        `Path metadata for ${route.path} has invalid resource type ${resourceType}`,
+      )
     }
 
-    if (!uniqueResources.has(resourceName)) {
-      uniqueResources.add(resourceName)
+    file.resources.push({
+      name: resource.resourceType,
+      description: resource.description,
+      properties: resource.properties
+        .filter(({ isUndocumented }) => !isUndocumented)
+        .map((prop) => {
+          const {
+            name,
+            description,
+            format,
+            isDeprecated,
+            deprecationMessage,
+          } = prop
+          const contextResourceProp: ContextResourceProperty = {
+            name,
+            description,
+            format: normalizePropertyFormatForDocs(format),
+            isDeprecated,
+            deprecationMessage,
+          }
 
-      file.resources.push({
-        name: resourceName,
-        description: resource.description,
-        properties: resource.properties
-          .filter(({ isUndocumented }) => !isUndocumented)
-          .map((prop) => {
-            const {
-              name,
-              description,
-              format,
-              isDeprecated,
-              deprecationMessage,
-            } = prop
-            const contextResourceProp: ContextResourceProperty = {
-              name,
-              description,
-              format: normalizePropertyFormatForDocs(format),
-              isDeprecated,
-              deprecationMessage,
-            }
+          if ('values' in prop) {
+            contextResourceProp.enumValues = prop.values.map(({ name }) => name)
+          }
 
-            if ('values' in prop) {
-              contextResourceProp.enumValues = prop.values.map(
-                ({ name }) => name,
-              )
-            }
+          if ('properties' in prop) {
+            contextResourceProp.objectProperties = flattenObjectProperties(
+              prop.properties,
+            )
+          }
 
-            if ('properties' in prop) {
-              contextResourceProp.objectProperties = flattenObjectProperties(
-                prop.properties,
-              )
-            }
-
-            return contextResourceProp
-          }),
-      })
-    }
+          return contextResourceProp
+        }),
+    })
   }
 }
 
