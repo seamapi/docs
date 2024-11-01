@@ -1,15 +1,25 @@
 ---
 /acs/systems:
   title: Systems
+  resources:
+    - acs_system
 
 /acs/users:
   title: Users
+  resources:
+    - acs_user
 
 /acs/entrances:
   title: Entrances
+  resources:
+    - acs_entrance
 
 /acs/access_groups:
   title: Access Groups
+  resources:
+    - acs_access_group
 
 /acs/credentials:
-  title: Credentials
+  title:
+  resources:
+    - acs_credential
