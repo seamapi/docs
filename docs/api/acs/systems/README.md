@@ -105,7 +105,7 @@ Possible enum values:
 - `dormakaba_community`
 - `legic_connect`
 - `assa_abloy_vostio`
-- `vostio_credential_service`
+- `assa_abloy_vostio_credential_service`
 
 
 ---
@@ -175,7 +175,7 @@ Possible enum values:
 - `dormakaba_community`
 - `legic_connect`
 - `assa_abloy_vostio`
-- `vostio_credential_service`
+- `assa_abloy_vostio_credential_service`
 
 
 ---
