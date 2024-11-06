@@ -69,7 +69,7 @@ curl -X 'POST' \
 **Request:**
 
 ```javascript
-await seam.thermostats.set_temperature_threshold({
+await seam.thermostats.setTemperatureThreshold({
   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
   lower_limit_celsius: 4,
   upper_limit_celsius: 30
@@ -402,7 +402,7 @@ curl -X 'POST' \
 **Request:**
 
 ```javascript
-await seam.thermostats.set_temperature_threshold({
+await seam.thermostats.setTemperatureThreshold({
   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
   lower_limit_celsius: null,
   upper_limit_celsius: null
