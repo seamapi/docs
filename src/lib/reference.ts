@@ -38,7 +38,10 @@ export const reference = (
   for (const route of blueprint.routes ?? []) {
     if (route.isUndocumented) continue
 
-    if (!route.path.startsWith('/acs')) {
+    if (
+      !route.path.startsWith('/acs') &&
+      !route.path.startsWith('/thermostats')
+    ) {
       continue
     }
 
