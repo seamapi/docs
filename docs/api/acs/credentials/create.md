@@ -204,6 +204,15 @@ Set of IDs of the [entrances](../../../capability-guides/access-systems/retrievi
 
 ***
 
+### `assa_abloy_vostio_metadata`
+
+Type: `object`
+Required: No
+
+Vostio-specific metadata for the new credential.
+
+***
+
 ### `code`
 
 Type: `string`

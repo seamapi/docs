@@ -26,9 +26,9 @@ These items are intentionally undocumented.
 - `/acs/credential_provisioning_automations/launch`: Replaced by enrollment automations.
 - `/acs/credentials/unmanaged/get`: No unmanaged credentials are currently implemented.
 - `/acs/credentials/unmanaged/list`: No unmanaged credentials are currently implemented.
-- `/acs/encoders/encode_credential`: Encoding a card is currently unimplemented.
+- `/acs/encoders/encode_card`: Encoding a card is currently unimplemented.
 - `/acs/encoders/list`: Encoders are in alpha.
-- `/acs/encoders/scan_credential`: Reading a card is currently unimplemented.
+- `/acs/encoders/scan_card`: Reading a card is currently unimplemented.
 - `/acs/users/unmanaged/get`: No unmanaged users are currently implemented.
 - `/acs/users/unmanaged/list`: No unmanaged users are currently implemented.
 
@@ -120,25 +120,18 @@ Items that are intentionally undocumented are not included in this section.
 
 - `/acs/credential_pools/list`
 - `/acs/credential_provisioning_automations/launch`
-- `/acs/encoders/encode_credential`
+- `/acs/encoders/encode_card`
 - `/acs/encoders/list`
-- `/acs/encoders/scan_credential`
+- `/acs/encoders/scan_card`
 - `/acs/entrances/grant_access`
 - `/acs/users/unmanaged/get`
 - `/acs/users/unmanaged/list`
 - `/events/get`
 - `/events/list`
 - `/thermostats/activate_climate_preset`
-- `/thermostats/cool`
 - `/thermostats/create_climate_preset`
 - `/thermostats/delete_climate_preset`
-- `/thermostats/get`
-- `/thermostats/heat`
-- `/thermostats/heat_cool`
-- `/thermostats/list`
-- `/thermostats/off`
 - `/thermostats/set_fallback_climate_preset`
-- `/thermostats/set_fan_mode`
 - `/thermostats/set_temperature_threshold`
 - `/thermostats/update_climate_preset`
 - `/thermostats/schedules/create`
@@ -157,6 +150,12 @@ Items that are intentionally undocumented are not included in this section.
     - `credential_manager_acs_system_id`
     - `credential_manager_acs_user_id`
     - `user_identity_id`
+- `/acs/encoders/encode_card`
+    - `acs_credential_id`
+    - `device_id`
+- `/acs/encoders/scan_card`
+    - `acs_system_id`
+    - `device_id`
 - `/acs/entrances/get`
     - `acs_entrance_id`
 - `/acs/entrances/grant_access`
@@ -207,9 +206,6 @@ Items that are intentionally undocumented are not included in this section.
     - `climate_preset_key`
     - `device_id`
 - `/thermostats/cool`
-    - `cooling_set_point_celsius`
-    - `cooling_set_point_fahrenheit`
-    - `device_id`
     - `sync`
 - `/thermostats/create_climate_preset`
     - `climate_preset_key`
@@ -225,20 +221,9 @@ Items that are intentionally undocumented are not included in this section.
 - `/thermostats/delete_climate_preset`
     - `climate_preset_key`
     - `device_id`
-- `/thermostats/get`
-    - `device_id`
-    - `name`
 - `/thermostats/heat`
-    - `device_id`
-    - `heating_set_point_celsius`
-    - `heating_set_point_fahrenheit`
     - `sync`
 - `/thermostats/heat_cool`
-    - `cooling_set_point_celsius`
-    - `cooling_set_point_fahrenheit`
-    - `device_id`
-    - `heating_set_point_celsius`
-    - `heating_set_point_fahrenheit`
     - `sync`
 - `/thermostats/list`
     - `connect_webview_id`
@@ -253,15 +238,12 @@ Items that are intentionally undocumented are not included in this section.
     - `manufacturer`
     - `user_identifier_key`
 - `/thermostats/off`
-    - `device_id`
     - `sync`
 - `/thermostats/set_fallback_climate_preset`
     - `climate_preset_key`
     - `device_id`
 - `/thermostats/set_fan_mode`
-    - `device_id`
     - `fan_mode`
-    - `fan_mode_setting`
     - `sync`
 - `/thermostats/set_temperature_threshold`
     - `device_id`
@@ -329,7 +311,7 @@ These items are deprecated.
 - `/acs/users/update`
     - `email`: use email_address.
 - `/thermostats/set_fan_mode`
-    - `fan_mode`: use fan_mode_setting instead.
+    - `fan_mode`: Use `fan_mode_setting` instead.
 
 ### Extra response keys
 
@@ -344,9 +326,9 @@ These items are deprecated.
 - `/acs/credential_provisioning_automations/launch`
 - `/acs/credentials/unmanaged/get`
 - `/acs/credentials/unmanaged/list`
-- `/acs/encoders/encode_credential`
+- `/acs/encoders/encode_card`
 - `/acs/encoders/list`
-- `/acs/encoders/scan_credential`
+- `/acs/encoders/scan_card`
 - `/acs/entrances/grant_access`
 - `/acs/users/list_accessible_entrances`
 - `/acs/users/revoke_access_to_all_entrances`
