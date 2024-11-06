@@ -28,11 +28,6 @@
   title: Thermostats
   resources: []
 
-/thermostats/climate_presets:
-  title: Climate Presets
-  resources:
-    - climate_preset
-
 /thermostats/schedules:
   title: Thermostat Schedules
   resources:
