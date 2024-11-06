@@ -6,7 +6,7 @@ description: >-
 
 # 🌡️ Thermostats
 
-<figure><picture><source srcset="../../.gitbook/assets/thermostats-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/thermostats-cover-light.png" alt="The Seam API provides flexible and robust functionality that enables you to control your users&#x27; thermostats."></picture><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/thermostats-cover.png" alt="The Seam API provides flexible and robust functionality that enables you to control your users&#x27; thermostats."><figcaption></figcaption></figure>
 
 ## What Is a Smart Thermostat?
 
