@@ -75,3 +75,52 @@ To incorporate a Connect Webview in your app using an HTML [iframe](https://www.
    When the connection completes successfully, you can close the iframe.
 5. [Retrieve the devices or ACS that your user has just connected to Seam.](./#id-5.-retrieve-connected-devices)
 6. [Use the Seam API to control your users' connected devices or ACS.](./#id-6.-use-the-seam-api-to-control-your-users-connected-devices)
+
+***
+
+## Opening Connect Webviews in iOS or Android Apps
+
+If you want to include a Connect Webview flow inside an iOS or Android app, it is important to note that iOS and Android require verification for each link to which a user navigates within an app. Consequently, you must register a navigation delegate to handle any links within the Connect Webview. For example, there is a link from the Connect Webview to the [Seam **Privacy & Legal** webpage](https://www.seam.co/legal). This link includes `target=_blank` in the anchor tag to open the privacy policy in a new tab or window. You must configure your iOS or Android app to handle opening links in a new browser tab or window.
+
+The following example shows how to handle all links to URLs that are not in the `getseam.com` or `seam.co` domain within a Connect Webview embedded in an iOS or Android app:
+
+{% tabs %}
+{% tab title="iOS (Swift)" %}
+```swift
+someWebView.navigationDelegate = self
+
+extension YourViewController: WKNavigationDelegate {
+  func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+    if let url = navigationAction.request.url, navigationAction.navigationType == .linkActivated {
+      if (url.host != "getseam.com" || url.host != "seam.co") {
+        UIApplication.shared.open(url)
+        decisionHandler(.cancel)
+        return
+      }
+    }
+    decisionHandler(.allow)
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Android (Kotlin)" %}
+```kotlin
+webView.webViewClient = object : WebViewClient() {
+  override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
+    if (Uri.parse(url).host != "getseam.com" || Uri.parse(url).host != "seam.co") {
+      val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+      view.context.startActivity(intent)
+      return true
+    }
+    return false
+  }
+}
+```
+{% endtab %}
+{% endtabs %}
+
+For details, see the following relevant iOS or Android documentation:
+
+* [iOS WKNavigationDelegate](https://developer.apple.com/documentation/webkit/wknavigationdelegate)
+* [Android shouldOverrideUrlLoading](https://developer.android.com/reference/android/webkit/WebViewClient#shouldOverrideUrlLoading\(android.webkit.WebView,%20android.webkit.WebResourceRequest\))
