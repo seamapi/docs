@@ -214,6 +214,7 @@
   * [Update a Climate Preset](api/thermostats/update\_climate\_preset.md)
   * [Delete a Climate Preset](api/thermostats/delete\_climate\_preset.md)
   * [Set a Fallback Climate Preset](api/thermostats/set\_fallback\_climate\_preset.md)
+  * [Set a Temperature Threshold](api/thermostats/set\_temperature\_threshold.md)
   * [Thermostat Schedules](api/thermostats/schedules/README.md)
     * [Get a Thermostat Schedule](api/thermostats/schedules/get.md)
     * [List Thermostat Schedules](api/thermostats/schedules/list.md)
