@@ -1,10 +1,10 @@
-# 
+# Create a Climate Schedule
 
 ```
 POST /thermostats/schedules/create ⇒ { thermostat_schedule }
 ```
 
-
+Creates a [climate schedule](../../../capability-guides/thermostats/creating-and-managing-climate-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 ## Request Parameters
 
@@ -13,7 +13,7 @@ POST /thermostats/schedules/create ⇒ { thermostat_schedule }
 Type: `string`
 Required: Yes
 
-
+Key of the [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to use for the climate schedule.
 
 ***
 
@@ -22,7 +22,7 @@ Required: Yes
 Type: `string`
 Required: Yes
 
-
+ID of the desired thermostat device.
 
 ***
 
@@ -31,7 +31,7 @@ Required: Yes
 Type: `string`
 Required: Yes
 
-
+Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 ***
 
@@ -40,7 +40,7 @@ Required: Yes
 Type: `number`
 Required: No
 
-
+Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-climate-schedules.md#specifying-manual-override-permissions).
 
 ***
 
@@ -49,7 +49,7 @@ Required: No
 Type: `string`
 Required: No
 
-
+User-friendly name to identify the climate schedule.
 
 ***
 
@@ -58,7 +58,7 @@ Required: No
 Type: `string`
 Required: Yes
 
-
+Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 ***
 

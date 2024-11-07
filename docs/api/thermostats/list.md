@@ -4,7 +4,7 @@
 POST /thermostats/list ⇒ { devices: [device, …] }
 ```
 
-Returns a list of thermostats connected to your workspace. If no thermostats are connected, the list will be empty.
+Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guides/thermostats).
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -174,7 +174,7 @@ func main() {
 Type: `string`
 Required: No
 
-
+ID of the Connect Webview by which to filter devices.
 
 ***
 
@@ -183,7 +183,7 @@ Required: No
 Type: `string`
 Required: No
 
-List all devices owned by this connected account
+ID of the connected account by which to filter.
 
 ***
 
@@ -192,7 +192,7 @@ List all devices owned by this connected account
 Type: `array`
 Required: No
 
-
+Array of IDs of the connected accounts by which to filter devices.
 
 ***
 
@@ -201,7 +201,7 @@ Required: No
 Type: `string`
 Required: No
 
-
+Date threshold for devices to return. If specified, returns only devices created before the specified date.
 
 ***
 
@@ -210,7 +210,7 @@ Required: No
 Type: `object`
 Required: No
 
-
+Set of key:value [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) pairs by which you want to filter devices.
 
 ***
 
@@ -219,7 +219,7 @@ Required: No
 Type: `array`
 Required: No
 
-
+Array of device IDs by which to filter devices.
 
 ***
 
@@ -228,25 +228,7 @@ Required: No
 Type: `array`
 Required: No
 
-
-
-***
-
-### `exclude_if`
-
-Type: `array`
-Required: No
-
-
-
-***
-
-### `include_if`
-
-Type: `array`
-Required: No
-
-
+Array of device types by which to filter devices.
 
 ***
 
@@ -255,7 +237,7 @@ Required: No
 Type: `number`
 Required: No
 
-
+Numerical limit on the number of devices to return.
 
 ***
 
@@ -264,7 +246,7 @@ Required: No
 Type: `string`
 Required: No
 
-
+Manufacturer by which to filter devices.
 
 ***
 
@@ -273,7 +255,7 @@ Required: No
 Type: `string`
 Required: No
 
-
+Your own internal user ID for the user by which to filter devices.
 
 ***
 

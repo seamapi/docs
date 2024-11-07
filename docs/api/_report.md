@@ -26,11 +26,28 @@ These items are intentionally undocumented.
 - `/acs/credential_provisioning_automations/launch`: Replaced by enrollment automations.
 - `/acs/credentials/unmanaged/get`: No unmanaged credentials are currently implemented.
 - `/acs/credentials/unmanaged/list`: No unmanaged credentials are currently implemented.
-- `/acs/encoders/encode_card`: Encoding a card is currently unimplemented.
+- `/acs/encoders/encode_credential`: Encoding a card is currently unimplemented.
 - `/acs/encoders/list`: Encoders are in alpha.
-- `/acs/encoders/scan_card`: Reading a card is currently unimplemented.
+- `/acs/encoders/scan_credential`: Reading a card is currently unimplemented.
 - `/acs/users/unmanaged/get`: No unmanaged users are currently implemented.
 - `/acs/users/unmanaged/list`: No unmanaged users are currently implemented.
+- `/thermostats/get`: Will be removed.
+
+### Endpoint parameters
+
+- `/thermostats/cool`
+    - `sync`: Only used internally.
+- `/thermostats/heat`
+    - `sync`: Only used internally.
+- `/thermostats/heat_cool`
+    - `sync`: Only used internally.
+- `/thermostats/list`
+    - `exclude_if`: Only used internally.
+    - `include_if`: Only used internally.
+- `/thermostats/off`
+    - `sync`: Only used internally.
+- `/thermostats/set_fan_mode`
+    - `sync`: Only used internally.
 
 ## No Description
 
@@ -76,6 +93,7 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_entrance.latch_metadata`
 - `acs_entrance.salto_ks_metadata`
 - `acs_entrance.visionline_metadata`
+- `acs_system.location`
 - `acs_system.system_type`
 - `acs_system.system_type_display_name`
 - `acs_system.visionline_metadata`
@@ -107,38 +125,19 @@ Items that are intentionally undocumented are not included in this section.
 - `event.occurred_at`
 - `event.thermostat_schedule_id`
 - `event.workspace_id`
-- `thermostat_schedule.climate_preset_key`
-- `thermostat_schedule.created_at`
-- `thermostat_schedule.device_id`
-- `thermostat_schedule.ends_at`
-- `thermostat_schedule.max_override_period_minutes`
-- `thermostat_schedule.name`
-- `thermostat_schedule.starts_at`
-- `thermostat_schedule.thermostat_schedule_id`
 
 ### Endpoints
 
 - `/acs/credential_pools/list`
 - `/acs/credential_provisioning_automations/launch`
-- `/acs/encoders/encode_card`
+- `/acs/encoders/encode_credential`
 - `/acs/encoders/list`
-- `/acs/encoders/scan_card`
+- `/acs/encoders/scan_credential`
 - `/acs/entrances/grant_access`
 - `/acs/users/unmanaged/get`
 - `/acs/users/unmanaged/list`
 - `/events/get`
 - `/events/list`
-- `/thermostats/activate_climate_preset`
-- `/thermostats/create_climate_preset`
-- `/thermostats/delete_climate_preset`
-- `/thermostats/set_fallback_climate_preset`
-- `/thermostats/set_temperature_threshold`
-- `/thermostats/update_climate_preset`
-- `/thermostats/schedules/create`
-- `/thermostats/schedules/delete`
-- `/thermostats/schedules/get`
-- `/thermostats/schedules/list`
-- `/thermostats/schedules/update`
 
 ### Endpoint parameters
 
@@ -150,12 +149,6 @@ Items that are intentionally undocumented are not included in this section.
     - `credential_manager_acs_system_id`
     - `credential_manager_acs_user_id`
     - `user_identity_id`
-- `/acs/encoders/encode_card`
-    - `acs_credential_id`
-    - `device_id`
-- `/acs/encoders/scan_card`
-    - `acs_system_id`
-    - `device_id`
 - `/acs/entrances/get`
     - `acs_entrance_id`
 - `/acs/entrances/grant_access`
@@ -202,87 +195,21 @@ Items that are intentionally undocumented are not included in this section.
     - `limit`
     - `since`
     - `unstable_offset`
-- `/thermostats/activate_climate_preset`
-    - `climate_preset_key`
-    - `device_id`
 - `/thermostats/cool`
     - `sync`
-- `/thermostats/create_climate_preset`
-    - `climate_preset_key`
-    - `cooling_set_point_celsius`
-    - `cooling_set_point_fahrenheit`
-    - `device_id`
-    - `fan_mode_setting`
-    - `heating_set_point_celsius`
-    - `heating_set_point_fahrenheit`
-    - `hvac_mode_setting`
-    - `manual_override_allowed`
-    - `name`
-- `/thermostats/delete_climate_preset`
-    - `climate_preset_key`
-    - `device_id`
 - `/thermostats/heat`
     - `sync`
 - `/thermostats/heat_cool`
     - `sync`
 - `/thermostats/list`
-    - `connect_webview_id`
-    - `connected_account_ids`
-    - `created_before`
-    - `custom_metadata_has`
-    - `device_ids`
-    - `device_types`
     - `exclude_if`
     - `include_if`
-    - `limit`
-    - `manufacturer`
-    - `user_identifier_key`
 - `/thermostats/off`
     - `sync`
-- `/thermostats/set_fallback_climate_preset`
-    - `climate_preset_key`
-    - `device_id`
 - `/thermostats/set_fan_mode`
+    - `device_id`
     - `fan_mode`
     - `sync`
-- `/thermostats/set_temperature_threshold`
-    - `device_id`
-    - `lower_limit_celsius`
-    - `lower_limit_fahrenheit`
-    - `upper_limit_celsius`
-    - `upper_limit_fahrenheit`
-- `/thermostats/update_climate_preset`
-    - `climate_preset_key`
-    - `cooling_set_point_celsius`
-    - `cooling_set_point_fahrenheit`
-    - `device_id`
-    - `fan_mode_setting`
-    - `heating_set_point_celsius`
-    - `heating_set_point_fahrenheit`
-    - `hvac_mode_setting`
-    - `manual_override_allowed`
-    - `name`
-- `/thermostats/schedules/create`
-    - `climate_preset_key`
-    - `device_id`
-    - `ends_at`
-    - `max_override_period_minutes`
-    - `name`
-    - `starts_at`
-- `/thermostats/schedules/delete`
-    - `thermostat_schedule_id`
-- `/thermostats/schedules/get`
-    - `thermostat_schedule_id`
-- `/thermostats/schedules/list`
-    - `device_id`
-    - `user_identifier_key`
-- `/thermostats/schedules/update`
-    - `climate_preset_key`
-    - `ends_at`
-    - `max_override_period_minutes`
-    - `name`
-    - `starts_at`
-    - `thermostat_schedule_id`
 
 ## Draft
 
@@ -326,9 +253,9 @@ These items are deprecated.
 - `/acs/credential_provisioning_automations/launch`
 - `/acs/credentials/unmanaged/get`
 - `/acs/credentials/unmanaged/list`
-- `/acs/encoders/encode_card`
+- `/acs/encoders/encode_credential`
 - `/acs/encoders/list`
-- `/acs/encoders/scan_card`
+- `/acs/encoders/scan_credential`
 - `/acs/entrances/grant_access`
 - `/acs/users/list_accessible_entrances`
 - `/acs/users/revoke_access_to_all_entrances`

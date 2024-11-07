@@ -1,10 +1,10 @@
-# 
+# List Climate Schedules
 
 ```
 POST /thermostats/schedules/list ⇒ { thermostat_schedules: [thermostat_schedule, …] }
 ```
 
-
+Returns a list of all [climate schedules](../../../capability-guides/thermostats/creating-and-managing-climate-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 ## Request Parameters
 
@@ -13,7 +13,7 @@ POST /thermostats/schedules/list ⇒ { thermostat_schedules: [thermostat_schedul
 Type: `string`
 Required: Yes
 
-
+ID of the desired thermostat device.
 
 ***
 
@@ -22,7 +22,7 @@ Required: Yes
 Type: `string`
 Required: No
 
-
+User identifier key by which to filter the list of returned climate schedules.
 
 ***
 

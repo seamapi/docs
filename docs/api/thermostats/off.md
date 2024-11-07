@@ -4,7 +4,7 @@
 POST /thermostats/off ⇒ { action_attempt }
 ```
 
-Sets a thermostat to "off" mode. See also [Setting the Current HVAC and Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
+Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to ["off" mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -126,16 +126,7 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 Type: `string`
 Required: Yes
 
-ID of the thermostat device.
-
-***
-
-### `sync`
-
-Type: `boolean`
-Required: No
-
-
+ID of the desired thermostat device.
 
 ***
 

@@ -4,40 +4,40 @@
 
 ### [`/thermostats/activate_climate_preset`](./activate_climate_preset.md)
 
-
+Activates a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 ### [`/thermostats/cool`](./cool.md)
 
-Sets a thermostat to cooling mode. You must include a cooling set point in Celsius or Fahrenheit. See also [Setting the Current HVAC and Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
+Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to [cool mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
 ### [`/thermostats/create_climate_preset`](./create_climate_preset.md)
 
-
+Creates a [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 ### [`/thermostats/delete_climate_preset`](./delete_climate_preset.md)
 
-
+Deletes a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 ### [`/thermostats/get`](./get.md)
 
-Returns a specific thermostat.
+Returns a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 ### [`/thermostats/heat`](./heat.md)
 
-Sets a thermostat to heating mode. You must include a heating set point in Celsius or Fahrenheit. See also [Setting the Current HVAC and Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
+Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to [heat mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
 ### [`/thermostats/heat_cool`](./heat_cool.md)
 
-Set a thermostat to heat-cool mode, also known as "auto" mode. To do so, you must include both cooling and heating set points in the payload, either in Celsius or Fahrenheit. For information about verifying the heating and cooling availability of the thermostat and validating the correct set points, see [HVAC Mode Constraints](https://docs.seam.co/latest/capability-guides/thermostats/hvac-mode#hvac-mode-constraints) and [Set Point Constraints](https://docs.seam.co/latest/capability-guides/thermostats/set-points#set-point-constraints).
+Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to [heat-cool ("auto") mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
 ### [`/thermostats/list`](./list.md)
 
-Returns a list of thermostats connected to your workspace. If no thermostats are connected, the list will be empty.
+Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guides/thermostats).
 ### [`/thermostats/off`](./off.md)
 
-Sets a thermostat to "off" mode. See also [Setting the Current HVAC and Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
+Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to ["off" mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
 ### [`/thermostats/set_fallback_climate_preset`](./set_fallback_climate_preset.md)
 
-
+Sets a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) as the ["fallback"](../../capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset.md) preset for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 ### [`/thermostats/set_fan_mode`](./set_fan_mode.md)
 
-Sets the fan mode setting for a thermostat. See also [Setting the Current HVAC and Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings) and [Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings).
+Sets the [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 ### [`/thermostats/set_temperature_threshold`](./set_temperature_threshold.md)
 
-
+Sets a [temperature threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) for a specified thermostat. Seam emits a `thermostat.temperature_threshold_exceeded` event and adds a warning on a thermostat if it reports a temperature outside the threshold range.
 ### [`/thermostats/update_climate_preset`](./update_climate_preset.md)
 
-
+Updates a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).

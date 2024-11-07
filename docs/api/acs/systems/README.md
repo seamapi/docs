@@ -146,6 +146,17 @@ Indicates if the `acs_system` is a credential manager.
 
 ---
 
+#### `location`
+
+Format: `Object`
+
+<details>
+<summary>time_zone <code>string</code></summary>
+Time zone in which the `acs_system` is located.
+</details>
+
+---
+
 #### `name`
 
 Format: `String`

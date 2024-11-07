@@ -1,10 +1,10 @@
-# Set Fan Mode Setting
+# Set the Fan Mode Setting
 
 ```
 POST /thermostats/set_fan_mode ⇒ { action_attempt }
 ```
 
-Sets the fan mode setting for a thermostat. See also [Setting the Current HVAC and Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings) and [Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings).
+Sets the [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -133,7 +133,7 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 Type: `string`
 Required: Yes
 
-ID of the thermostat device.
+
 
 ***
 
@@ -151,16 +151,7 @@ Required: No
 Type: `string`
 Required: No
 
-Fan mode setting of the thermostat. See also [Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings).
-
-***
-
-### `sync`
-
-Type: `boolean`
-Required: No
-
-
+Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for the thermostat.
 
 ***
 

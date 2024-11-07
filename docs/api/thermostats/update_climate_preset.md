@@ -1,10 +1,10 @@
-# 
+# Update a Climate Preset
 
 ```
 PATCH /thermostats/update_climate_preset ⇒ void
 ```
 
-
+Updates a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 ## Request Parameters
 
@@ -13,7 +13,7 @@ PATCH /thermostats/update_climate_preset ⇒ void
 Type: `string`
 Required: Yes
 
-
+Unique key to identify the climate preset.
 
 ***
 
@@ -22,7 +22,7 @@ Required: Yes
 Type: `number`
 Required: No
 
-
+Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
 ***
 
@@ -31,7 +31,7 @@ Required: No
 Type: `number`
 Required: No
 
-
+Temperature to which the thermostat should cool (in °F).
 
 ***
 
@@ -40,7 +40,7 @@ Required: No
 Type: `string`
 Required: Yes
 
-
+ID of the desired thermostat device.
 
 ***
 
@@ -49,7 +49,7 @@ Required: Yes
 Type: `string`
 Required: No
 
-
+Desired fan mode setting, such as `on`, `auto`, or `circulate`.
 
 ***
 
@@ -58,7 +58,7 @@ Required: No
 Type: `number`
 Required: No
 
-
+Temperature to which the thermostat should heat (in °C).
 
 ***
 
@@ -67,7 +67,7 @@ Required: No
 Type: `number`
 Required: No
 
-
+Temperature to which the thermostat should heat (in °F).
 
 ***
 
@@ -76,7 +76,7 @@ Required: No
 Type: `string`
 Required: No
 
-
+Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
 
 ***
 
@@ -85,7 +85,7 @@ Required: No
 Type: `boolean`
 Required: Yes
 
-
+Indicates whether a person at the thermostat can change the thermostat's settings.
 
 ***
 
@@ -94,7 +94,7 @@ Required: Yes
 Type: `string`
 Required: No
 
-
+User-friendly name to identify the climate preset.
 
 ***
 

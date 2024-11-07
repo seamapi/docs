@@ -4,7 +4,7 @@
 POST /thermostats/heat ⇒ { action_attempt }
 ```
 
-Sets a thermostat to heating mode. You must include a heating set point in Celsius or Fahrenheit. See also [Setting the Current HVAC and Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
+Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to [heat mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -133,7 +133,7 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 Type: `string`
 Required: Yes
 
-ID of the thermostat device.
+ID of the desired thermostat device.
 
 ***
 
@@ -142,7 +142,7 @@ ID of the thermostat device.
 Type: `number`
 Required: No
 
-Temperature to which the HVAC system connected to the thermostat should heat (in °C). You must set one of the `heating_set_point` parameters.
+Desired [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `heating_set_point` parameters.
 
 ***
 
@@ -151,16 +151,7 @@ Temperature to which the HVAC system connected to the thermostat should heat (in
 Type: `number`
 Required: No
 
-Temperature to which the HVAC system connected to the thermostat should heat (in °F). You must set one of the `heating_set_point` parameters.
-
-***
-
-### `sync`
-
-Type: `boolean`
-Required: No
-
-
+Desired [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `heating_set_point` parameters.
 
 ***
 

@@ -4,7 +4,7 @@
 POST /thermostats/heat_cool ⇒ { action_attempt }
 ```
 
-Set a thermostat to heat-cool mode, also known as "auto" mode. To do so, you must include both cooling and heating set points in the payload, either in Celsius or Fahrenheit. For information about verifying the heating and cooling availability of the thermostat and validating the correct set points, see [HVAC Mode Constraints](https://docs.seam.co/latest/capability-guides/thermostats/hvac-mode#hvac-mode-constraints) and [Set Point Constraints](https://docs.seam.co/latest/capability-guides/thermostats/set-points#set-point-constraints).
+Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to [heat-cool ("auto") mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -138,7 +138,7 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 Type: `number`
 Required: No
 
-Temperature to which the HVAC system connected to the thermostat should cool (in °C). You must set one of the `cooling_set_point` parameters.
+Desired [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `cooling_set_point` parameters.
 
 ***
 
@@ -147,7 +147,7 @@ Temperature to which the HVAC system connected to the thermostat should cool (in
 Type: `number`
 Required: No
 
-Temperature the thermostat should cool to (in °F). You must set one of the cooling_set_point parameters.
+Desired [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `cooling_set_point` parameters.
 
 ***
 
@@ -156,7 +156,7 @@ Temperature the thermostat should cool to (in °F). You must set one of the cool
 Type: `string`
 Required: Yes
 
-ID of the thermostat device.
+ID of the desired thermostat device.
 
 ***
 
@@ -165,7 +165,7 @@ ID of the thermostat device.
 Type: `number`
 Required: No
 
-Temperature to which the HVAC system connected to the thermostat should heat (in °C). You must set one of the `heating_set_point` parameters.
+Desired [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `heating_set_point` parameters.
 
 ***
 
@@ -174,16 +174,7 @@ Temperature to which the HVAC system connected to the thermostat should heat (in
 Type: `number`
 Required: No
 
-Temperature the thermostat should heat to (in °F). You must set one of the heating_set_point parameters.
-
-***
-
-### `sync`
-
-Type: `boolean`
-Required: No
-
-
+Desired [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `heating_set_point` parameters.
 
 ***
 
