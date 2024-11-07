@@ -105,7 +105,7 @@ Possible enum values:
 - `dormakaba_community`
 - `legic_connect`
 - `assa_abloy_vostio`
-- `vostio_credential_service`
+- `assa_abloy_vostio_credential_service`
 
 
 ---
@@ -146,6 +146,17 @@ Indicates if the `acs_system` is a credential manager.
 
 ---
 
+#### `location`
+
+Format: `Object`
+
+<details>
+<summary>time_zone <code>string</code></summary>
+Time zone in which the `acs_system` is located.
+</details>
+
+---
+
 #### `name`
 
 Format: `String`
@@ -175,7 +186,7 @@ Possible enum values:
 - `dormakaba_community`
 - `legic_connect`
 - `assa_abloy_vostio`
-- `vostio_credential_service`
+- `assa_abloy_vostio_credential_service`
 
 
 ---
