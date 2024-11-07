@@ -69,7 +69,7 @@ curl -X 'POST' \
 **Request:**
 
 ```javascript
-await seam.thermostats.set_temperature_threshold({
+await seam.thermostats.setTemperatureThreshold({
   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
   lower_limit_celsius: 4,
   upper_limit_celsius: 30
@@ -349,14 +349,24 @@ When the reported temperature for a thermostat returns to within the configured 
 
 ## Delete a Temperature Threshold
 
-To delete the temperature threshold range for a thermostat, issue a `/thermostats/set_temperature_threshold` request, providing the `device_id` of the desired thermostat and setting the following parameters to null:
+To delete the temperature threshold range for a thermostat, issue a `/thermostats/set_temperature_threshold` request, providing either of the following parameter combinations:
 
-* `lower_limit_celsius` or `lower_limit_fahrenheit`
-* `upper_limit_celsius` or `upper_limit_fahrenheit`
+* Provide only the `device_id` of the desired thermostat.
+* Provide the `device_id` of the desired thermostat and set the following parameters to null:
+  * `lower_limit_celsius` or `lower_limit_fahrenheit`
+  * `upper_limit_celsius` or `upper_limit_fahrenheit`
 
 {% tabs %}
 {% tab title="Python" %}
 **Request:**
+
+```python
+seam.thermostats.set_temperature_threshold(
+  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5"
+)
+```
+
+or
 
 ```python
 seam.thermostats.set_temperature_threshold(
@@ -375,6 +385,19 @@ None
 
 {% tab title="cURL (bash)" %}
 **Request:**
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/thermostats/set_temperature_threshold' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "device_id": "2d488679-6f07-4810-aed2-e726872c1dd5"
+}'
+```
+
+or
 
 ```bash
 curl -X 'POST' \
@@ -402,7 +425,15 @@ curl -X 'POST' \
 **Request:**
 
 ```javascript
-await seam.thermostats.set_temperature_threshold({
+await seam.thermostats.setTemperatureThreshold({
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+});
+```
+
+or
+
+```javascript
+await seam.thermostats.setTemperatureThreshold({
   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
   lower_limit_celsius: null,
   upper_limit_celsius: null
@@ -432,6 +463,14 @@ void
 
 {% tab title="PHP" %}
 **Request:**
+
+```php
+$seam->thermostats->set_temperature_threshold(
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+);
+```
+
+or
 
 ```php
 $seam->thermostats->set_temperature_threshold(
