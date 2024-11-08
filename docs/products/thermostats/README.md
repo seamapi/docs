@@ -50,7 +50,7 @@ Create named climate presets, such as "occupied," "eco," "unoccupied," "vacation
 
 You can set one of the configured climate presets as the fallback. Whenever another climate preset is not active, Seam reverts the thermostat back to the fallback climate preset.
 
-### Create Climate Schedules
+### Create Thermostat Schedules
 
 Schedule the climate presets that you have created. Simply specify the key of the climate preset, along with a starting and ending timestamp. You can also set the maximum override period in minutes. This parameter defines the period for which a person at the thermostat can change the thermostat's settings after the activation of the climate preset. At the end of this override period, Seam sets the thermostat back to the active climate preset.
 
@@ -92,4 +92,4 @@ To learn how to manage thermostats, see the following guides:
 * [Creating and Managing Climate Presets](../../capability-guides/thermostats/creating-and-managing-climate-presets/)
 * [Setting the Fallback Climate Preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset.md)
 * [Activating a Climate Preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/activating-a-climate-preset.md)
-* [Creating and Managing Climate Schedules](../../capability-guides/thermostats/creating-and-managing-climate-schedules.md)
+* [Creating and Managing Thermostat Schedules](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md)
