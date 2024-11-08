@@ -87,10 +87,154 @@
     path: /thermostats/set_fan_mode
     parameters:
       device_id: 123e4567-e89b-12d3-a456-426614174000
-      fan_mode_setting: 'auto'
+      fan_mode_setting: auto
   response:
     body:
       action_attempt:
         action_attempt_id: 123e4567-e89b-12d3-a456-426614174000
         status: pending
         action_type: SET_FAN_MODE
+- title: Set a temperature threshold
+  description: Specify the device_id of the desired thermostat, along with the desired upper and lower limits in °F or °C.
+  request:
+    path: /thermostats/set_temperature_threshold
+    parameters:
+      device_id: 123e4567-e89b-12d3-a456-426614174000
+      lower_limit_celsius: 4
+      upper_limit_celsius: 30
+  response:
+    body: null
+- title: Create a climate preset
+  description: Specify the device_id of the desired thermostat, along with the desired settings for the climate preset, including manual_override_allowed.
+  request:
+    path: /thermostats/create_climate_preset
+    parameters:
+      device_id: 123e4567-e89b-12d3-a456-426614174000
+      climate_preset_key: occupied
+      name: Occupied
+      fan_mode_setting: auto
+      hvac_mode_setting: heat_cool
+      cooling_set_point_celsius: 25
+      heating_set_point_celsius: 20
+      manual_override_allowed: true
+  response:
+    body: null
+- title: Update a climate preset
+  description: Specify the device_id of the desired thermostat and the climate_preset_key of the desired climate preset, along with the desired updated settings for the climate preset, including manual_override_allowed.
+  request:
+    path: /thermostats/update_climate_preset
+    parameters:
+      device_id: 123e4567-e89b-12d3-a456-426614174000
+      climate_preset_key: occupied
+      cooling_set_point_celsius: 24
+      manual_override_allowed: true
+  response:
+    body: null
+- title: Delete a climate preset
+  description: Specify the device_id of the desired thermostat and the climate_preset_key of the desired climate preset.
+  request:
+    path: /thermostats/delete_climate_preset
+    parameters:
+      device_id: 123e4567-e89b-12d3-a456-426614174000
+      climate_preset_key: occupied
+  response:
+    body: null
+- title: Set the fallback climate preset
+  description: Specify the device_id of the desired thermostat and the climate_preset_key of the desired fallback climate preset.
+  request:
+    path: /thermostats/set_fallback_climate_preset
+    parameters:
+      device_id: 123e4567-e89b-12d3-a456-426614174000
+      climate_preset_key: eco
+  response:
+    body: null
+- title: Activate a climate preset
+  description: Specify the device_id of the desired thermostat and the climate_preset_key of the desired climate preset.
+  request:
+    path: /thermostats/activate_climate_preset
+    parameters:
+      device_id: 123e4567-e89b-12d3-a456-426614174000
+      climate_preset_key: occupied
+  response:
+    body:
+      action_attempt:
+        action_attempt_id: 05de2295-d1dc-4748-aae3-9931658bde20
+        status: pending
+        action_type: ACTIVATE_CLIMATE_PRESET
+- title: Create a thermostat schedule
+  description: Specify the device_id of the desired thermostat and the climate_preset_key of the desired climate preset, as well as the desired starts_at and ends_at times.
+  request:
+    path: /thermostats/schedules/create
+    parameters:
+      device_id: 123e4567-e89b-12d3-a456-426614174000
+      name: Jim's stay
+      climate_preset_key: occupied
+      starts_at: 2024-11-01T15:00:00Z
+      ends_at: 2024-11-05T12:00:00Z
+      max_override_period_minutes: 90
+  response:
+    body:
+      thermostat_schedule:
+        thermostat_schedule_id: 56d29fcf-0674-4db5-8e03-b2370a77460a
+        name: Jim's stay
+        device_id: 2d488679-6f07-4810-aed2-e726872c1dd5
+        climate_preset_key: occupied
+        starts_at: 2024-11-01T15:00:00.000Z
+        ends_at: 2024-11-05T12:00:00.000Z
+        max_override_period_minutes: 90
+- title: List thermostat schedules for a thermostat
+  description: Specify the device_id of the desired thermostat.
+  request:
+    path: /thermostats/schedules/list
+    parameters:
+      device_id: 123e4567-e89b-12d3-a456-426614174000
+  response:
+    body:
+      thermostat_schedules:
+        - thermostat_schedule_id: 89d3507e-60e3-4101-bd1b-ba066ec30ad4
+          name: Joe's stay
+          device_id: 2d488679-6f07-4810-aed2-e726872c1dd5
+          climate_preset_key: occupied
+          starts_at: 2024-11-10T15:00:00.000Z
+          ends_at: 2024-11-15T12:00:00.000Z
+          max_override_period_minutes: 90
+        - thermostat_schedule_id: 665553d1-94f9-4e92-9739-06ac6362c959
+          name: Jane's stay
+          device_id: 2d488679-6f07-4810-aed2-e726872c1dd5
+          climate_preset_key: occupied
+          starts_at: 2024-11-16T15:00:00.000Z
+          ends_at: 2024-11-18T12:00:00.000Z
+          max_override_period_minutes: 90
+- title: Get a specific thermostat schedule
+  description: Specify the thermostat_schedule_id of the desired thermostat schedule.
+  request:
+    path: /thermostats/schedules/get
+    parameters:
+      thermostat_schedule_id: 89d3507e-60e3-4101-bd1b-ba066ec30ad4
+  response:
+    body:
+      thermostat_schedule:
+        thermostat_schedule_id: 89d3507e-60e3-4101-bd1b-ba066ec30ad4
+        name: Joe's stay
+        device_id: 2d488679-6f07-4810-aed2-e726872c1dd5
+        climate_preset_key: occupied
+        starts_at: 2024-11-10T15:00:00.000Z
+        ends_at: 2024-11-15T12:00:00.000Z
+        max_override_period_minutes: 90
+- title: Update a thermostat schedule
+  description: Specify the thermostat_schedule_id of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
+  request:
+    path: /thermostats/schedules/update
+    parameters:
+      thermostat_schedule_id: 89d3507e-60e3-4101-bd1b-ba066ec30ad4
+      ends_at: 2024-11-15T15:00:00Z
+  response:
+    body: null
+- title: Delete a thermostat schedule
+  description: Specify the thermostat_schedule_id of the desired thermostat schedule.
+  request:
+    path: /thermostats/schedules/delete
+    parameters:
+      thermostat_schedule_id: 89d3507e-60e3-4101-bd1b-ba066ec30ad4
+  response:
+    body: null
