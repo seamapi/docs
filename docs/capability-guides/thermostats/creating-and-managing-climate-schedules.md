@@ -1,16 +1,16 @@
 ---
 description: >-
-  Learn how to create, list, get, update, and delete climate schedules for
+  Learn how to create, list, get, update, and delete thermostat schedules for
   thermostats.
 ---
 
-# Creating and Managing Climate Schedules
+# Creating and Managing Thermostat Schedules
 
 Once you have created a set of [climate presets](creating-and-managing-climate-presets/) for a thermostat, you can define schedules using the `/thermostats/schedules/create` endpoint. The Seam API's scheduling mechanism is flexible and intelligent. It can prioritize and handle multiple scheduled climate presets. For example, you could [set a fallback](creating-and-managing-climate-presets/setting-the-fallback-climate-preset.md) energy-saving climate preset for whenever a short-term rental property is unoccupied. Then, you could schedule—in advance—a "comfort" climate preset to correspond to each upcoming guest's stay.
 
-Each climate schedule can contain the following properties:
+Each thermostat schedule can contain the following properties:
 
-<table><thead><tr><th width="339">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>name</code></td><td>(Optional) User-friendly name to identify the climate schedule.</td></tr><tr><td><code>climate_preset_key</code></td><td>(Required) Key of the climate preset to use for the climate schedule.</td></tr><tr><td><code>max_override_period_minutes</code></td><td>Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset.<br>Default: <code>0</code><br>See also <a href="creating-and-managing-climate-schedules.md#specifying-manual-override-permissions">Specifying Manual Override Permissions</a>.</td></tr><tr><td><code>starts_at</code></td><td>(Required) Date and time at which the climate schedule starts, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format.</td></tr><tr><td><code>ends_at</code></td><td>(Required) Date and time at which the climate schedule ends, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format.</td></tr></tbody></table>
+<table><thead><tr><th width="339">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>name</code></td><td>(Optional) User-friendly name to identify the thermostat schedule.</td></tr><tr><td><code>climate_preset_key</code></td><td>(Required) Key of the climate preset to use for the thermostat schedule.</td></tr><tr><td><code>max_override_period_minutes</code></td><td>Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset.<br>Default: <code>0</code><br>See also <a href="creating-and-managing-climate-schedules.md#specifying-manual-override-permissions">Specifying Manual Override Permissions</a>.</td></tr><tr><td><code>starts_at</code></td><td>(Required) Date and time at which the thermostat schedule starts, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format.</td></tr><tr><td><code>ends_at</code></td><td>(Required) Date and time at which the thermostat schedule ends, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format.</td></tr></tbody></table>
 
 ***
 
@@ -24,17 +24,17 @@ In the Seam API, use the `starts_at` and `ends_at` parameters to define the time
 
 ## Specifying Manual Override Permissions
 
-When creating a climate schedule for a thermostat, you can also specify the `max_override_period_minutes`. This parameter defines the period for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. At the end of this override period, Seam sets the thermostat back to the active climate preset. The override period starts again each time a person makes a change at the thermostat.
+When creating a thermostat schedule for a thermostat, you can also specify the `max_override_period_minutes`. This parameter defines the period for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. At the end of this override period, Seam sets the thermostat back to the active climate preset. The override period starts again each time a person makes a change at the thermostat.
 
 Through this override period setting, the Seam API provides you with the flexibility to customize the thermostat behavior to suit your needs. For example, a multifamily property manager may want to give complete control of the thermostat to a unit's residents as soon as they move into the unit. However, a short-term rental host may want to enforce stricter rules to ensure that their guests are using the associated HVAC system in a reasonable manner.
 
-To allow complete control at the thermostat, set `max_override_period_minutes` to `0`. To disable manual overrides entirely, set `manual_override_allowed` to `false` on the climate preset that you assign to the climate schedule.&#x20;
+To allow complete control at the thermostat, set `max_override_period_minutes` to `0`. To disable manual overrides entirely, set `manual_override_allowed` to `false` on the climate preset that you assign to the thermostat schedule.
 
 ***
 
-## Create a Climate Schedule
+## Create a Thermostat Schedule
 
-To create a climate schedule, issue a `/thermostats/schedules/create` request, providing the `device_id` of the desired thermostat, as well as the `climate_preset_key`, and the `starts_at` and `ends_at` timestamps. You can also specify a `name` for the climate schedule and the desired `max_override_period_minutes`. If you omit `max_override_period_minutes`, it defaults to `0`.
+To create a thermostat schedule, issue a `/thermostats/schedules/create` request, providing the `device_id` of the desired thermostat, as well as the `climate_preset_key`, and the `starts_at` and `ends_at` timestamps. You can also specify a `name` for the thermostat schedule and the desired `max_override_period_minutes`. If you omit `max_override_period_minutes`, it defaults to `0`.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -228,7 +228,7 @@ $seam->thermostats->schedules->create(
 
 Suppose a short-term rental host wants to set a fallback "unoccupied" climate preset that takes effect immediately, as well as scheduling an "occupied" climate preset for two periods that correspond to guest reservations.
 
-<figure><img src="../../.gitbook/assets/multiple-climate-schedules.png" alt="Seam handles a fallback climate preset, along with multiple climate schedules."><figcaption><p>Seam handles a fallback climate preset, along with multiple climate schedules.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/multiple-climate-schedules.png" alt="Seam handles a fallback climate preset, along with multiple thermostat schedules."><figcaption><p>Seam handles a fallback climate preset, along with multiple thermostat schedules.</p></figcaption></figure>
 
 The following example shows how to set up these schedules:
 
@@ -248,7 +248,7 @@ seam.thermostats.set_fallback_climate_preset(
   climate_preset_key = "unoccupied"
 )
 
-# Create the climate schedule for the first reservation.
+# Create the thermostat schedule for the first reservation.
 seam.thermostats.schedules.create(
   device_id = thermostat.device_id,
   name = "Joe's stay",
@@ -258,7 +258,7 @@ seam.thermostats.schedules.create(
   max_override_period_minutes = 90
 )
 
-# Create the climate schedule for the second reservation.
+# Create the thermostat schedule for the second reservation.
 seam.thermostats.schedules.create(
   device_id = thermostat.device_id,
   name = "Jane's stay",
@@ -322,7 +322,7 @@ curl -X 'POST' \
     \"climate_preset_key\": \"unoccupied\"
 }"
 
-# Create the climate schedule for the first reservation.
+# Create the thermostat schedule for the first reservation.
 curl -X 'POST' \
   'https://connect.getseam.com/thermostats/schedules/create' \
   -H 'accept: application/json' \
@@ -337,7 +337,7 @@ curl -X 'POST' \
     \"max_override_period_minutes\": 90
 }"
 
-# Create the climate schedule for the second reservation.
+# Create the thermostat schedule for the second reservation.
 curl -X 'POST' \
   'https://connect.getseam.com/thermostats/schedules/create' \
   -H 'accept: application/json' \
@@ -400,7 +400,7 @@ await seam.thermostats.setFallbackClimatePreset({
   climate_preset_key: "unoccupied"
 });
 
-// Create the climate schedule for the first reservation.
+// Create the thermostat schedule for the first reservation.
 await seam.thermostats.schedules.create({
   device_id: thermostat.device_id,
   name: "Joe's stay",
@@ -410,7 +410,7 @@ await seam.thermostats.schedules.create({
   max_override_period_minutes: 90
 });
 
-// Create the climate schedule for the second reservation.
+// Create the thermostat schedule for the second reservation.
 await seam.thermostats.schedules.create({
   device_id: thermostat.device_id,
   name: "Jane's stay",
@@ -476,7 +476,7 @@ $seam->thermostats->set_fallback_climate_preset(
   climate_preset_key: "unoccupied"
 );
 
-// Create the climate schedule for the first reservation.
+// Create the thermostat schedule for the first reservation.
 $seam->thermostats->schedules->create(
   device_id: $thermostat->device_id,
   name: "Joe's stay",
@@ -486,7 +486,7 @@ $seam->thermostats->schedules->create(
   max_override_period_minutes: 90
 );
 
-// Create the climate schedule for the second reservation.
+// Create the thermostat schedule for the second reservation.
 $seam->thermostats->schedules->create(
   device_id: $thermostat->device_id,
   name: "Jane's stay",
@@ -568,9 +568,9 @@ $seam->thermostats->schedules->create(
 
 ***
 
-## List All Climate Schedules for a Thermostat
+## List All Thermostat Schedules for a Thermostat
 
-To retrieve all climate schedules for a thermostat, issue a `/thermostats/schedules/list` request, specifying the `device_id` of the desired thermostat.
+To retrieve all thermostat schedules for a thermostat, issue a `/thermostats/schedules/list` request, specifying the `device_id` of the desired thermostat.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -788,9 +788,9 @@ $seam->thermostats->schedules->list(
 
 ***
 
-## Get an Individual Climate Schedule
+## Get an Individual Thermostat Schedule
 
-To get a specific climate schedule, issue a `/thermostats/schedules/get` request, including the `thermostat_schedule_id` of the desired climate schedule.
+To get a specific thermostat schedule, issue a `/thermostats/schedules/get` request, including the `thermostat_schedule_id` of the desired thermostat schedule.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -960,9 +960,9 @@ $seam->thermostats->schedules->get(
 
 ***
 
-## Update a Climate Schedule
+## Update a Thermostat Schedule
 
-To update a climate schedule, issue a `/thermostats/schedules/update` request, providing the `thermostat_schedule_id` of the desired climate schedule and the desired updated settings.
+To update a thermostat schedule, issue a `/thermostats/schedules/update` request, providing the `thermostat_schedule_id` of the desired thermostat schedule and the desired updated settings.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -1099,9 +1099,9 @@ void
 
 ***
 
-## Delete a Climate Schedule
+## Delete a Thermostat Schedule
 
-To delete a climate schedule, issue a `/thermostats/schedules/delete` request, providing the `thermostat_schedule_id` of the desired climate schedule.
+To delete a thermostat schedule, issue a `/thermostats/schedules/delete` request, providing the `thermostat_schedule_id` of the desired thermostat schedule.
 
 {% tabs %}
 {% tab title="Python" %}
