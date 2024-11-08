@@ -4,7 +4,7 @@
 POST /thermostats/schedules/get ⇒ { thermostat_schedule }
 ```
 
-Returns a specified [climate schedule](../../../capability-guides/thermostats/creating-and-managing-climate-schedules.md).
+Returns a specified [climate schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules).
 
 ## Request Parameters
 

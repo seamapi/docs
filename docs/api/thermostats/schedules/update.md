@@ -4,7 +4,7 @@
 PATCH /thermostats/schedules/update ⇒ void
 ```
 
-Updates a specified [climate schedule](../../../capability-guides/thermostats/creating-and-managing-climate-schedules.md).
+Updates a specified [climate schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules).
 
 ## Request Parameters
 
@@ -31,7 +31,7 @@ Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.
 Type: `number`
 Required: No
 
-Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-climate-schedules.md#specifying-manual-override-permissions).
+Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions).
 
 ***
 

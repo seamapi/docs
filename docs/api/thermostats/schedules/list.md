@@ -4,7 +4,7 @@
 POST /thermostats/schedules/list ⇒ { thermostat_schedules: [thermostat_schedule, …] }
 ```
 
-Returns a list of all [climate schedules](../../../capability-guides/thermostats/creating-and-managing-climate-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+Returns a list of all [climate schedules](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 ## Request Parameters
 

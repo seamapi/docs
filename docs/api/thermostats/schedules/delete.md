@@ -4,7 +4,7 @@
 POST /thermostats/schedules/delete ⇒ void
 ```
 
-Deletes a [climate schedule](../../../capability-guides/thermostats/creating-and-managing-climate-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+Deletes a [climate schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 ## Request Parameters
 

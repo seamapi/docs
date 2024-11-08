@@ -44,7 +44,7 @@ Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.
 
 Format: `Number`
 
-Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-climate-schedules.md#specifying-manual-override-permissions).
+Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions).
 
 
 ---
@@ -80,16 +80,16 @@ ID of the climate schedule.
 
 ### [`/thermostats/schedules/create`](./create.md)
 
-Creates a [climate schedule](../../../capability-guides/thermostats/creating-and-managing-climate-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+Creates a [climate schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 ### [`/thermostats/schedules/delete`](./delete.md)
 
-Deletes a [climate schedule](../../../capability-guides/thermostats/creating-and-managing-climate-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+Deletes a [climate schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 ### [`/thermostats/schedules/get`](./get.md)
 
-Returns a specified [climate schedule](../../../capability-guides/thermostats/creating-and-managing-climate-schedules.md).
+Returns a specified [climate schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules).
 ### [`/thermostats/schedules/list`](./list.md)
 
-Returns a list of all [climate schedules](../../../capability-guides/thermostats/creating-and-managing-climate-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+Returns a list of all [climate schedules](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 ### [`/thermostats/schedules/update`](./update.md)
 
-Updates a specified [climate schedule](../../../capability-guides/thermostats/creating-and-managing-climate-schedules.md).
+Updates a specified [climate schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules).
