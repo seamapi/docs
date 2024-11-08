@@ -12,7 +12,7 @@ You create a set of climate presets for each thermostat, customized for your—a
 
 ## Create a Climate Preset
 
-To create a climate preset, issue a `/thermostats/create_climate_preset` request, providing the `device_id` of the desired thermostat. Also, include the desired settings for the climate preset and, optionally, a name. Note that `manual_override_allowed` is required.
+To create a climate preset, issue a [`/thermostats/create_climate_preset`](../../../api/thermostats/create\_climate\_preset.md) request, providing the `device_id` of the desired thermostat. Also, include the desired settings for the climate preset and, optionally, a name. Note that `manual_override_allowed` is required.
 
 The following example creates two climate presets with the keys `occupied` and `unoccupied`:
 
@@ -272,7 +272,7 @@ void
 
 ## List All Climate Presets for a Thermostat
 
-To list climate presets for a thermostat, issue a `/devices/get` request, providing the `device_id` of the desired thermostat. Then, inspect the `available_climate_presets` property.
+To list climate presets for a thermostat, issue a [`/devices/get`](../../../api-clients/devices/get.md) request, providing the `device_id` of the desired thermostat. Then, inspect the `available_climate_presets` property.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -537,7 +537,7 @@ $seam->devices->get(
 
 ## Update a Climate Preset
 
-To update a climate preset, issue a `/thermostats/update_climate_preset` request, providing the `device_id` of the thermostat and the `climate_preset_key` of the desired climate preset. Also, include the desired updated settings for the climate preset. Note that `manual_override_allowed` is required.
+To update a climate preset, issue a [`/thermostats/update_climate_preset`](../../../api/thermostats/update\_climate\_preset.md) request, providing the `device_id` of the thermostat and the `climate_preset_key` of the desired climate preset. Also, include the desired updated settings for the climate preset. Note that `manual_override_allowed` is required.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -684,7 +684,7 @@ void
 
 ## Delete a Climate Preset
 
-To delete a climate preset, issue a `/thermostats/delete_climate_preset` request, providing the `device_id` of the thermostat and the `climate_preset_key` of the desired climate preset.
+To delete a climate preset, issue a [`/thermostats/delete_climate_preset`](../../../api/thermostats/delete\_climate\_preset.md) request, providing the `device_id` of the thermostat and the `climate_preset_key` of the desired climate preset.
 
 {% tabs %}
 {% tab title="Python" %}

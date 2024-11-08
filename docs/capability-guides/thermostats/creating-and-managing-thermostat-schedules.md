@@ -6,11 +6,11 @@ description: >-
 
 # Creating and Managing Thermostat Schedules
 
-Once you have created a set of [climate presets](creating-and-managing-climate-presets/) for a thermostat, you can define schedules using the `/thermostats/schedules/create` endpoint. The Seam API's scheduling mechanism is flexible and intelligent. It can prioritize and handle multiple scheduled climate presets. For example, you could [set a fallback](creating-and-managing-climate-presets/setting-the-fallback-climate-preset.md) energy-saving climate preset for whenever a short-term rental property is unoccupied. Then, you could schedule—in advance—a "comfort" climate preset to correspond to each upcoming guest's stay.
+Once you have created a set of [climate presets](creating-and-managing-climate-presets/) for a thermostat, you can define schedules using the [`/thermostats/schedules/create`](../../api/thermostats/schedules/create.md) endpoint. The Seam API's scheduling mechanism is flexible and intelligent. It can prioritize and handle multiple scheduled climate presets. For example, you could [set a fallback](creating-and-managing-climate-presets/setting-the-fallback-climate-preset.md) energy-saving climate preset for whenever a short-term rental property is unoccupied. Then, you could schedule—in advance—a "comfort" climate preset to correspond to each upcoming guest's stay.
 
 Each thermostat schedule can contain the following properties:
 
-<table><thead><tr><th width="339">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>name</code></td><td>(Optional) User-friendly name to identify the thermostat schedule.</td></tr><tr><td><code>climate_preset_key</code></td><td>(Required) Key of the climate preset to use for the thermostat schedule.</td></tr><tr><td><code>max_override_period_minutes</code></td><td>Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset.<br>Default: <code>0</code><br>See also <a href="creating-and-managing-climate-schedules.md#specifying-manual-override-permissions">Specifying Manual Override Permissions</a>.</td></tr><tr><td><code>starts_at</code></td><td>(Required) Date and time at which the thermostat schedule starts, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format.</td></tr><tr><td><code>ends_at</code></td><td>(Required) Date and time at which the thermostat schedule ends, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format.</td></tr></tbody></table>
+<table><thead><tr><th width="339">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>name</code></td><td>(Optional) User-friendly name to identify the thermostat schedule.</td></tr><tr><td><code>climate_preset_key</code></td><td>(Required) Key of the climate preset to use for the thermostat schedule.</td></tr><tr><td><code>max_override_period_minutes</code></td><td>Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset.<br>Default: <code>0</code><br>See also <a href="creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions">Specifying Manual Override Permissions</a>.</td></tr><tr><td><code>starts_at</code></td><td>(Required) Date and time at which the thermostat schedule starts, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format.</td></tr><tr><td><code>ends_at</code></td><td>(Required) Date and time at which the thermostat schedule ends, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format.</td></tr></tbody></table>
 
 ***
 
@@ -34,7 +34,7 @@ To allow complete control at the thermostat, set `max_override_period_minutes` t
 
 ## Create a Thermostat Schedule
 
-To create a thermostat schedule, issue a `/thermostats/schedules/create` request, providing the `device_id` of the desired thermostat, as well as the `climate_preset_key`, and the `starts_at` and `ends_at` timestamps. You can also specify a `name` for the thermostat schedule and the desired `max_override_period_minutes`. If you omit `max_override_period_minutes`, it defaults to `0`.
+To create a thermostat schedule, issue a [`/thermostats/schedules/create`](../../api/thermostats/schedules/create.md) request, providing the `device_id` of the desired thermostat, as well as the `climate_preset_key`, and the `starts_at` and `ends_at` timestamps. You can also specify a `name` for the thermostat schedule and the desired `max_override_period_minutes`. If you omit `max_override_period_minutes`, it defaults to `0`.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -570,7 +570,7 @@ $seam->thermostats->schedules->create(
 
 ## List All Thermostat Schedules for a Thermostat
 
-To retrieve all thermostat schedules for a thermostat, issue a `/thermostats/schedules/list` request, specifying the `device_id` of the desired thermostat.
+To retrieve all thermostat schedules for a thermostat, issue a [`/thermostats/schedules/list`](../../api/thermostats/schedules/list.md) request, specifying the `device_id` of the desired thermostat.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -790,7 +790,7 @@ $seam->thermostats->schedules->list(
 
 ## Get an Individual Thermostat Schedule
 
-To get a specific thermostat schedule, issue a `/thermostats/schedules/get` request, including the `thermostat_schedule_id` of the desired thermostat schedule.
+To get a specific thermostat schedule, issue a [`/thermostats/schedules/get`](../../api/thermostats/schedules/get.md) request, including the `thermostat_schedule_id` of the desired thermostat schedule.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -962,7 +962,7 @@ $seam->thermostats->schedules->get(
 
 ## Update a Thermostat Schedule
 
-To update a thermostat schedule, issue a `/thermostats/schedules/update` request, providing the `thermostat_schedule_id` of the desired thermostat schedule and the desired updated settings.
+To update a thermostat schedule, issue a [`/thermostats/schedules/update`](../../api/thermostats/schedules/update.md) request, providing the `thermostat_schedule_id` of the desired thermostat schedule and the desired updated settings.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -1101,7 +1101,7 @@ void
 
 ## Delete a Thermostat Schedule
 
-To delete a thermostat schedule, issue a `/thermostats/schedules/delete` request, providing the `thermostat_schedule_id` of the desired thermostat schedule.
+To delete a thermostat schedule, issue a [`/thermostats/schedules/delete`](../../api/thermostats/schedules/delete.md) request, providing the `thermostat_schedule_id` of the desired thermostat schedule.
 
 {% tabs %}
 {% tab title="Python" %}

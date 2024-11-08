@@ -8,7 +8,7 @@ In addition to [scheduling](../creating-and-managing-thermostat-schedules.md) cl
 
 Activating a climate preset returns an [action attempt](../../../core-concepts/action-attempts.md) that enables you to track the progress of the action. Poll this action attempt, until the action completes.
 
-To activate a climate preset, issue a `/thermostats/activate_climate_preset` request and specify the `climate_preset_key` of the desired climate preset.
+To activate a climate preset, issue a [`/thermostats/activate_climate_preset`](../../../api/thermostats/activate\_climate\_preset.md) request and specify the `climate_preset_key` of the desired climate preset.
 
 {% tabs %}
 {% tab title="Python" %}
