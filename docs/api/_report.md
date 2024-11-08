@@ -60,7 +60,6 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_credential_provisioning_automation`
 - `acs_user`
 - `event`
-- `thermostat_schedule`
 
 ### Resource properties
 
@@ -263,15 +262,4 @@ These items are deprecated.
 - `/acs/users/unmanaged/list`
 - `/events/get`
 - `/events/list`
-- `/thermostats/activate_climate_preset`
-- `/thermostats/create_climate_preset`
-- `/thermostats/delete_climate_preset`
 - `/thermostats/get`
-- `/thermostats/set_fallback_climate_preset`
-- `/thermostats/set_temperature_threshold`
-- `/thermostats/update_climate_preset`
-- `/thermostats/schedules/create`
-- `/thermostats/schedules/delete`
-- `/thermostats/schedules/get`
-- `/thermostats/schedules/list`
-- `/thermostats/schedules/update`

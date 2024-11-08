@@ -23,3 +23,12 @@
   title: Credentials
   resources:
     - acs_credential
+
+/thermostats:
+  title: Thermostats
+  resources: []
+
+/thermostats/schedules:
+  title: Thermostat Schedules
+  resources:
+    - thermostat_schedule
