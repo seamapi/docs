@@ -60,7 +60,6 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_credential_provisioning_automation`
 - `acs_user`
 - `event`
-- `thermostat_schedule`
 
 ### Resource properties
 

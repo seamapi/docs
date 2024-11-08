@@ -1,10 +1,10 @@
-# Delete a Climate Schedule
+# Delete a Thermostat Schedule
 
 ```
 POST /thermostats/schedules/delete ⇒ void
 ```
 
-Deletes a [climate schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+Deletes a [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -119,7 +119,7 @@ nil
 Type: `string`
 Required: Yes
 
-ID of the desired climate schedule.
+ID of the desired thermostat schedule.
 
 ***
 

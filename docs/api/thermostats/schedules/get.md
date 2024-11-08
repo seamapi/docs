@@ -1,10 +1,10 @@
-# Get a Climate Schedule
+# Get a Thermostat Schedule
 
 ```
 POST /thermostats/schedules/get ⇒ { thermostat_schedule }
 ```
 
-Returns a specified [climate schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules).
+Returns a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -143,7 +143,7 @@ api.ThermostatSchedule{ThermostatScheduleId: "89d3507e-60e3-4101-bd1b-ba066ec30a
 Type: `string`
 Required: Yes
 
-ID of the desired climate schedule.
+ID of the desired thermostat schedule.
 
 ***
 
