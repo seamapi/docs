@@ -6,6 +6,116 @@ PATCH /thermostats/schedules/update ⇒ void
 
 Updates a specified [climate schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules).
 
+{% tabs %}
+{% tab title="JavaScript" %}
+#### Request
+
+```javascript
+await seam.thermostats.schedules.update({
+  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
+  ends_at: "2024-11-15T15:00:00Z",
+});
+```
+
+#### Response
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="Python" %}
+#### Request
+
+```python
+seam.thermostats.schedules.update(
+    thermostat_schedule_id="89d3507e-60e3-4101-bd1b-ba066ec30ad4",
+    ends_at="2024-11-15T15:00:00Z",
+)
+```
+
+#### Response
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+#### Request
+
+```ruby
+seam.thermostats.schedules.update(thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4", ends_at: "2024-11-15T15:00:00Z")
+```
+
+#### Response
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+#### Request
+
+```php
+<?php
+$seam->thermostats->schedules->update(
+    thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
+    ends_at: "2024-11-15T15:00:00Z"
+);
+```
+
+#### Response
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+#### Request
+
+```seam_cli
+seam thermostats schedules update --thermostat_schedule_id "89d3507e-60e3-4101-bd1b-ba066ec30ad4" --ends_at "2024-11-15T15:00:00Z"
+```
+
+#### Response
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Request
+
+```go
+package main
+
+import api "github.com/seamapi/go"
+import schedules "github.com/seamapi/go/schedules"
+
+func main() {
+	client.Thermostats.Schedules.Update(
+		context.Background(),
+		schedules.SchedulesUpdateRequest{
+			ThermostatScheduleId: api.String("89d3507e-60e3-4101-bd1b-ba066ec30ad4"),
+			EndsAt:               api.String("2024-11-15T15:00:00Z"),
+		},
+	)
+}
+```
+
+#### Response
+
+```go
+nil
+```
+{% endtab %}
+
+{% endtabs %}
+
 ## Request Parameters
 
 ### `climate_preset_key`

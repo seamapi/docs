@@ -6,6 +6,139 @@ POST /thermostats/create_climate_preset ⇒ void
 
 Creates a [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
+{% tabs %}
+{% tab title="JavaScript" %}
+#### Request
+
+```javascript
+await seam.thermostats.createClimatePreset({
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  climate_preset_key: "occupied",
+  name: "Occupied",
+  fan_mode_setting: "auto",
+  hvac_mode_setting: "heat_cool",
+  cooling_set_point_celsius: 25,
+  heating_set_point_celsius: 20,
+  manual_override_allowed: true,
+});
+```
+
+#### Response
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="Python" %}
+#### Request
+
+```python
+seam.thermostats.create_climate_preset(
+    device_id="123e4567-e89b-12d3-a456-426614174000",
+    climate_preset_key="occupied",
+    name="Occupied",
+    fan_mode_setting="auto",
+    hvac_mode_setting="heat_cool",
+    cooling_set_point_celsius=25,
+    heating_set_point_celsius=20,
+    manual_override_allowed=true,
+)
+```
+
+#### Response
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+#### Request
+
+```ruby
+seam.thermostats.create_climate_preset(device_id: "123e4567-e89b-12d3-a456-426614174000", climate_preset_key: "occupied", name: "Occupied", fan_mode_setting: "auto", hvac_mode_setting: "heat_cool", cooling_set_point_celsius: 25, heating_set_point_celsius: 20, manual_override_allowed: true)
+```
+
+#### Response
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+#### Request
+
+```php
+<?php
+$seam->thermostats->create_climate_preset(
+    device_id: "123e4567-e89b-12d3-a456-426614174000",
+    climate_preset_key: "occupied",
+    name: "Occupied",
+    fan_mode_setting: "auto",
+    hvac_mode_setting: "heat_cool",
+    cooling_set_point_celsius: 25,
+    heating_set_point_celsius: 20,
+    manual_override_allowed: true
+);
+```
+
+#### Response
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+#### Request
+
+```seam_cli
+seam thermostats create-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "occupied" --name "Occupied" --fan_mode_setting "auto" --hvac_mode_setting "heat_cool" --cooling_set_point_celsius 25 --heating_set_point_celsius 20 --manual_override_allowed true
+```
+
+#### Response
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Request
+
+```go
+package main
+
+import api "github.com/seamapi/go"
+
+func main() {
+	client.Thermostats.CreateClimatePreset(
+		context.Background(),
+		api.ThermostatsCreateClimatePresetRequest{
+			DeviceId:               api.String("123e4567-e89b-12d3-a456-426614174000"),
+			ClimatePresetKey:       api.String("occupied"),
+			Name:                   api.String("Occupied"),
+			FanModeSetting:         api.String("auto"),
+			HvacModeSetting:        api.String("heat_cool"),
+			CoolingSetPointCelsius: api.Float64(25),
+			HeatingSetPointCelsius: api.Float64(20),
+			ManualOverrideAllowed:  api.Bool(true),
+		},
+	)
+}
+```
+
+#### Response
+
+```go
+nil
+```
+{% endtab %}
+
+{% endtabs %}
+
 ## Request Parameters
 
 ### `climate_preset_key`
