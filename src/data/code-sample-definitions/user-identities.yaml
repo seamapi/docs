@@ -1,6 +1,6 @@
 ---
 - title: Create a user identity
-  description: Creates a new user identity with the specified parameters.
+  description: Specify one or more of the unique `user_identity_key`, `email_address`, or `phone_number`. You can also specify the `full_name` of the user associated with the `user_identity`. 
   request:
     path: /user_identities/create
     parameters:
@@ -21,7 +21,7 @@
         workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be'
 
 - title: List user identities
-  description: Returns a list of all user identities.
+  description: To filter the list of user identities, specify the desired `credential_manager_acs_system_id`.
   request:
     path: /user_identities/list
   response:
@@ -37,7 +37,7 @@
           workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be'
 
 - title: Get a user identity
-  description: Returns a specified user identity.
+  description: Specify the `user_identity_id` of the user identity that you want to retrieve.
   request:
     path: /user_identities/get
     parameters:
@@ -55,7 +55,7 @@
         workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be'
 
 - title: Add an ACS user to a user identity
-  description: Adds a specified ACS user to a specified user identity.
+  description: Specify the desired `acs_user_id` and `user_identity_id`.
   request:
     path: /user_identities/add_acs_user
     parameters:
@@ -65,7 +65,7 @@
     body: null
 
 - title: List ACS users for a user identity
-  description: Returns a list of all ACS users assigned to a user identity.
+  description: Specify the desired `user_identity_id`.
   request:
     path: /user_identities/list_acs_users
     parameters:
@@ -86,7 +86,7 @@
           user_identity_phone_number: '+15555550110'
 
 - title: Remove an ACS user from a user identity
-  description: Removes a specified ACS user from a specified user identity.
+  description: Specify the desired `acs_user_id` and `user_identity_id`.
   request:
     path: /user_identities/remove_acs_user
     parameters:
@@ -96,7 +96,7 @@
     body: null
 
 - title: Grant a user identity access to a device
-  description: Grants a specified user identity access to a specified device.
+  description: Specify the desired `user_identity_id` and `device_id`.
   request:
     path: /user_identities/grant_access_to_device
     parameters:
@@ -106,7 +106,7 @@
     body: null
 
 - title: List accessible devices for a user identity
-  description: Returns a list of all devices associated with a user identity.
+  description: Specify the desired `user_identity_id`.
   request:
     path: /user_identities/list_accessible_devices
     parameters:
@@ -166,7 +166,7 @@
           custom_metadata: {}
 
 - title: List ACS systems associated with a user identity
-  description: Returns a list of all access control systems associated with a user identity.
+  description: Specify the desired `user_identity_id`.
   request:
     path: /user_identities/list_acs_systems
     parameters:
@@ -186,7 +186,7 @@
             - 'dc08066f-d9b8-42f0-9c4b-c781cd900153'
 
 - title: Revoke access to a device from a user identity
-  description: Revokes access to a specified device from a specified user identity.
+  description: Specify the desired `user_identity_id` and `device_id`.
   request:
     path: /user_identities/revoke_access_to_device
     parameters:
@@ -196,7 +196,7 @@
     body: null
 
 - title: Delete a user identity
-  description: Deletes a specified user identity.
+  description: Specify the desired `user_identity_id`.
   request:
     path: /user_identities/delete
     parameters:
@@ -205,7 +205,7 @@
     body: null
 
 - title: Launch an enrollment automation
-  description: Sets up a new enrollment automation for a specified user identity with a specified credential manager.
+  description: Specify the desired `user_identity_id` and `credential_manager_acs_system_id`. You can also specify an `acs_credential_pool_id`. Either set `create_credential_manager_user` to `true` or specify the `credential_manager_acs_user_id`.
   request:
     path: /user_identities/enrollment_automations/launch
     parameters:
@@ -225,7 +225,7 @@
         created_at: '2024-01-09T05:45:33.068Z'
 
 - title: List enrollment automations
-  description: Returns a list of all enrollment automations for a specified user identity.
+  description: Specify the desired `user_identity_id`.
   request:
     path: /user_identities/enrollment_automations/list
     parameters:
@@ -242,7 +242,7 @@
           created_at: '2024-01-09T05:45:33.068Z'
 
 - title: Get an enrollment automation
-  description: Returns a specified enrollment automation.
+  description: Specify the desired `enrollment_automation_id`.
   request:
     path: /user_identities/enrollment_automations/get
     parameters:
@@ -259,7 +259,7 @@
         created_at: '2024-01-09T05:45:33.068Z'
 
 - title: Delete an enrollment automation
-  description: Deletes a specified enrollment automation.
+  description: Specify the desired `enrollment_automation_id`.
   request:
     path: /user_identities/enrollment_automations/delete
     parameters:
