@@ -44,7 +44,7 @@ Manage your users' thermostats remotely using "imperative" endpoints. That is, d
 
 ### Create Climate Presets
 
-Create named climate presets, such as "occupied," "eco," "unoccupied," "vacation mode," and so on. In each of these custom climate presets, and depending on each thermostat's capabilities, you can define the desired heating and cooling set points, as well as the fan mode setting.
+Create named climate presets, such as "occupied," "eco," "unoccupied," "vacation mode," and so on. In each of these custom climate presets, and depending on each thermostat's capabilities, you can define the desired heating and cooling set points, as well as the fan mode setting. These presets make it quick and efficient for users to apply consistent climate settings tailored to different scenarios, enhancing both comfort and energy efficiency.
 
 ### Set the Fallback Preset
 
