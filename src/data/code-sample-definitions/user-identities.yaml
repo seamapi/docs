@@ -4,21 +4,21 @@
   request:
     path: /user_identities/create
     parameters:
-      user_identity_key: "jean_doe"
-      email_address: "jean@example.com"
-      phone_number: "+15555550110"
-      full_name: "Jean Doe"
+      user_identity_key: 'jean_doe'
+      email_address: 'jean@example.com'
+      phone_number: '+15555550110'
+      full_name: 'Jean Doe'
   response:
     body:
       user_identity:
-        user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"
-        user_identity_key: "jean_doe"
-        email_address: "jean@example.com"
-        phone_number: "+15555550110"
-        display_name: "Jean Doe"
-        full_name: "Jean Doe"
-        created_at: "2024-01-11T05:37:50.264Z"
-        workspace_id: "398d80b7-3f96-47c2-b85a-6f8ba21d07be"
+        user_identity_id: '48500a8e-5e7e-4bde-b7e5-0be97cae5d7a'
+        user_identity_key: 'jean_doe'
+        email_address: 'jean@example.com'
+        phone_number: '+15555550110'
+        display_name: 'Jean Doe'
+        full_name: 'Jean Doe'
+        created_at: '2024-01-11T05:37:50.264Z'
+        workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be'
 
 - title: List user identities
   description: Returns a list of all user identities.
@@ -27,40 +27,40 @@
   response:
     body:
       user_identities:
-        - user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"
-          user_identity_key: "jean_doe"
-          email_address: "jean@example.com"
-          phone_number: "+15555550110"
-          display_name: "Jean Doe"
-          full_name: "Jean Doe"
-          created_at: "2024-01-11T05:37:50.264Z"
-          workspace_id: "398d80b7-3f96-47c2-b85a-6f8ba21d07be"
+        - user_identity_id: '48500a8e-5e7e-4bde-b7e5-0be97cae5d7a'
+          user_identity_key: 'jean_doe'
+          email_address: 'jean@example.com'
+          phone_number: '+15555550110'
+          display_name: 'Jean Doe'
+          full_name: 'Jean Doe'
+          created_at: '2024-01-11T05:37:50.264Z'
+          workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be'
 
 - title: Get a user identity
   description: Returns a specified user identity.
   request:
     path: /user_identities/get
     parameters:
-      user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"
+      user_identity_id: '48500a8e-5e7e-4bde-b7e5-0be97cae5d7a'
   response:
     body:
       user_identity:
-        user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"
-        user_identity_key: "jean_doe"
-        email_address: "jean@example.com"
-        phone_number: "+15555550110"
-        display_name: "Jean Doe"
-        full_name: "Jean Doe"
-        created_at: "2024-01-11T05:37:50.264Z"
-        workspace_id: "398d80b7-3f96-47c2-b85a-6f8ba21d07be"
+        user_identity_id: '48500a8e-5e7e-4bde-b7e5-0be97cae5d7a'
+        user_identity_key: 'jean_doe'
+        email_address: 'jean@example.com'
+        phone_number: '+15555550110'
+        display_name: 'Jean Doe'
+        full_name: 'Jean Doe'
+        created_at: '2024-01-11T05:37:50.264Z'
+        workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be'
 
 - title: Add an ACS user to a user identity
   description: Adds a specified ACS user to a specified user identity.
   request:
     path: /user_identities/add_acs_user
     parameters:
-      user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"
-      acs_user_id: "4d223973-0874-4831-8630-bfcb29e6bce0"
+      user_identity_id: '48500a8e-5e7e-4bde-b7e5-0be97cae5d7a'
+      acs_user_id: '4d223973-0874-4831-8630-bfcb29e6bce0'
   response:
     body: null
 
@@ -69,29 +69,29 @@
   request:
     path: /user_identities/list_acs_users
     parameters:
-      user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"
+      user_identity_id: '48500a8e-5e7e-4bde-b7e5-0be97cae5d7a'
   response:
     body:
       acs_users:
-        - acs_user_id: "4d223973-0874-4831-8630-bfcb29e6bce0"
-          display_name: "Jean Doe"
-          full_name: "Jean Doe"
-          email_address: "jean@example.com"
-          acs_system_id: "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4"
-          workspace_id: "398d80b7-3f96-47c2-b85a-6f8ba21d07be"
-          created_at: "2024-01-11T05:45:41.349Z"
+        - acs_user_id: '4d223973-0874-4831-8630-bfcb29e6bce0'
+          display_name: 'Jean Doe'
+          full_name: 'Jean Doe'
+          email_address: 'jean@example.com'
+          acs_system_id: '8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4'
+          workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be'
+          created_at: '2024-01-11T05:45:41.349Z'
           is_suspended: false
-          user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"
-          user_identity_email_address: "jean@example.com"
-          user_identity_phone_number: "+15555550110"
+          user_identity_id: '48500a8e-5e7e-4bde-b7e5-0be97cae5d7a'
+          user_identity_email_address: 'jean@example.com'
+          user_identity_phone_number: '+15555550110'
 
 - title: Remove an ACS user from a user identity
   description: Removes a specified ACS user from a specified user identity.
   request:
     path: /user_identities/remove_acs_user
     parameters:
-      user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f"
-      acs_user_id: "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe"
+      user_identity_id: '5c945ab5-c75e-4bcb-8e5f-9410061c401f'
+      acs_user_id: 'c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe'
   response:
     body: null
 
@@ -100,8 +100,8 @@
   request:
     path: /user_identities/grant_access_to_device
     parameters:
-      user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf"
-      device_id: "054765c8-a2fc-4599-b486-14c19f462c45"
+      user_identity_id: 'f3a328b4-dd04-4370-9000-d52b7a01b0bf'
+      device_id: '054765c8-a2fc-4599-b486-14c19f462c45'
   response:
     body: null
 
@@ -110,56 +110,56 @@
   request:
     path: /user_identities/list_accessible_devices
     parameters:
-      user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf"
+      user_identity_id: 'f3a328b4-dd04-4370-9000-d52b7a01b0bf'
   response:
     body:
       accessible_devices:
-        - device_id: "054765c8-a2fc-4599-b486-14c19f462c45"
-          nickname: ""
-          display_name: "Seam Thermostat"
-          device_type: "nest_thermostat"
-          capabilities_supported: ["thermostat"]
+        - device_id: '054765c8-a2fc-4599-b486-14c19f462c45'
+          nickname: ''
+          display_name: 'Seam Thermostat'
+          device_type: 'nest_thermostat'
+          capabilities_supported: ['thermostat']
           properties:
             online: true
             is_cooling: false
             is_heating: false
-            manufacturer: "nest"
+            manufacturer: 'nest'
             nest_metadata:
-              custom_name: ""
-              device_name: "enterprises/nest_project_id/devices/AVPHwEvjFcX-wRmGdXApyxON24SAI0S9oU13a2GSVFLPVehUKH1ATqlASyKi2N2dbJCVW-B6-VxgbhdjUyyjA-K3Vo5C9g"
-              nest_device_id: "bcca8c5f-1854-4906-9911-c877d513e00a"
+              custom_name: ''
+              device_name: 'enterprises/nest_project_id/devices/AVPHwEvjFcX-wRmGdXApyxON24SAI0S9oU13a2GSVFLPVehUKH1ATqlASyKi2N2dbJCVW-B6-VxgbhdjUyyjA-K3Vo5C9g'
+              nest_device_id: 'bcca8c5f-1854-4906-9911-c877d513e00a'
             is_fan_running: false
             has_direct_power: true
             relative_humidity: 0.46
             temperature_celsius: 24.64
             temperature_fahrenheit: 76.352
             current_climate_setting:
-              hvac_mode_setting: "heat_cool"
+              hvac_mode_setting: 'heat_cool'
               manual_override_allowed: true
               cooling_set_point_celsius: 21.5
               heating_set_point_celsius: 20
               cooling_set_point_fahrenheit: 70.7
               heating_set_point_fahrenheit: 68
             available_hvac_mode_settings:
-              - "heat"
-              - "cool"
-              - "heat_cool"
-              - "off"
+              - 'heat'
+              - 'cool'
+              - 'heat_cool'
+              - 'off'
             is_temporary_manual_override_active: false
-            name: ""
+            name: ''
             appearance:
-              name: ""
+              name: ''
             model:
-              display_name: "Thermostat"
-              manufacturer_display_name: "Nest"
+              display_name: 'Thermostat'
+              manufacturer_display_name: 'Nest'
               accessory_keypad_supported: false
-            image_url: "https://connect.getseam.com/assets/images/devices/unknown-lock.png"
-            image_alt_text: "Placeholder Lock Image"
+            image_url: 'https://connect.getseam.com/assets/images/devices/unknown-lock.png'
+            image_alt_text: 'Placeholder Lock Image'
             is_climate_setting_schedule_active: false
           location: null
-          connected_account_id: "44284499-a50b-4947-86c1-58264f014be5"
-          workspace_id: "398d80b7-3f96-47c2-b85a-6f8ba21d07be"
-          created_at: "2024-02-29T21:57:33.397Z"
+          connected_account_id: '44284499-a50b-4947-86c1-58264f014be5'
+          workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be'
+          created_at: '2024-02-29T21:57:33.397Z'
           errors: []
           warnings: []
           is_managed: true
@@ -170,28 +170,28 @@
   request:
     path: /user_identities/list_acs_systems
     parameters:
-      user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f"
+      user_identity_id: '5c945ab5-c75e-4bcb-8e5f-9410061c401f'
   response:
     body:
       acs_systems:
-        - acs_system_id: "6737e186-8d54-48ce-a7da-a0be4d252172"
-          name: "Assa Abloy Credential Service"
-          workspace_id: "398d80b7-3f96-47c2-b85a-6f8ba21d07be"
-          created_at: "2024-01-05T07:16:51.971Z"
-          system_type: "assa_abloy_credential_service"
-          system_type_display_name: "Assa Abloy Credential Service"
-          external_type: "assa_abloy_credential_service"
-          external_type_display_name: "Assa Abloy Credential Service"
+        - acs_system_id: '6737e186-8d54-48ce-a7da-a0be4d252172'
+          name: 'Assa Abloy Credential Service'
+          workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be'
+          created_at: '2024-01-05T07:16:51.971Z'
+          system_type: 'assa_abloy_credential_service'
+          system_type_display_name: 'Assa Abloy Credential Service'
+          external_type: 'assa_abloy_credential_service'
+          external_type_display_name: 'Assa Abloy Credential Service'
           connected_account_ids:
-            - "dc08066f-d9b8-42f0-9c4b-c781cd900153"
+            - 'dc08066f-d9b8-42f0-9c4b-c781cd900153'
 
 - title: Revoke access to a device from a user identity
   description: Revokes access to a specified device from a specified user identity.
   request:
     path: /user_identities/revoke_access_to_device
     parameters:
-      user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf"
-      device_id: "054765c8-a2fc-4599-b486-14c19f462c45"
+      user_identity_id: 'f3a328b4-dd04-4370-9000-d52b7a01b0bf'
+      device_id: '054765c8-a2fc-4599-b486-14c19f462c45'
   response:
     body: null
 
@@ -200,7 +200,7 @@
   request:
     path: /user_identities/delete
     parameters:
-      user_identity_id: "44d48b20-0dbe-419d-91ca-ab8bceecd135"
+      user_identity_id: '44d48b20-0dbe-419d-91ca-ab8bceecd135'
   response:
     body: null
 
@@ -209,60 +209,60 @@
   request:
     path: /user_identities/enrollment_automations/launch
     parameters:
-      user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f"
-      credential_manager_acs_system_id: "6737e186-8d54-48ce-a7da-a0be4d252172"
-      acs_credential_pool_id: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+      user_identity_id: '5c945ab5-c75e-4bcb-8e5f-9410061c401f'
+      credential_manager_acs_system_id: '6737e186-8d54-48ce-a7da-a0be4d252172'
+      acs_credential_pool_id: '3fa85f64-5717-4562-b3fc-2c963f66afa6'
       create_credential_manager_user: true
   response:
     body:
       enrollment_automation:
-        user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f"
-        enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895"
-        acs_credential_provisioning_automation_id: "05505650-aa57-49ab-8f19-429738758895"
-        credential_manager_acs_system_id: "6737e186-8d54-48ce-a7da-a0be4d252172"
+        user_identity_id: '5c945ab5-c75e-4bcb-8e5f-9410061c401f'
+        enrollment_automation_id: '05505650-aa57-49ab-8f19-429738758895'
+        acs_credential_provisioning_automation_id: '05505650-aa57-49ab-8f19-429738758895'
+        credential_manager_acs_system_id: '6737e186-8d54-48ce-a7da-a0be4d252172'
         is_running: true
-        workspace_id: "398d80b7-3f96-47c2-b85a-6f8ba21d07be"
-        created_at: "2024-01-09T05:45:33.068Z"
+        workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be'
+        created_at: '2024-01-09T05:45:33.068Z'
 
 - title: List enrollment automations
   description: Returns a list of all enrollment automations for a specified user identity.
   request:
     path: /user_identities/enrollment_automations/list
     parameters:
-      user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f"
+      user_identity_id: '5c945ab5-c75e-4bcb-8e5f-9410061c401f'
   response:
     body:
       enrollment_automations:
-        - user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f"
-          enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895"
-          acs_credential_provisioning_automation_id: "05505650-aa57-49ab-8f19-429738758895"
-          credential_manager_acs_system_id: "6737e186-8d54-48ce-a7da-a0be4d252172"
+        - user_identity_id: '5c945ab5-c75e-4bcb-8e5f-9410061c401f'
+          enrollment_automation_id: '05505650-aa57-49ab-8f19-429738758895'
+          acs_credential_provisioning_automation_id: '05505650-aa57-49ab-8f19-429738758895'
+          credential_manager_acs_system_id: '6737e186-8d54-48ce-a7da-a0be4d252172'
           is_running: true
-          workspace_id: "398d80b7-3f96-47c2-b85a-6f8ba21d07be"
-          created_at: "2024-01-09T05:45:33.068Z"
+          workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be'
+          created_at: '2024-01-09T05:45:33.068Z'
 
 - title: Get an enrollment automation
   description: Returns a specified enrollment automation.
   request:
     path: /user_identities/enrollment_automations/get
     parameters:
-      enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895"
+      enrollment_automation_id: '05505650-aa57-49ab-8f19-429738758895'
   response:
     body:
       enrollment_automation:
-        user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f"
-        enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895"
-        acs_credential_provisioning_automation_id: "05505650-aa57-49ab-8f19-429738758895"
-        credential_manager_acs_system_id: "6737e186-8d54-48ce-a7da-a0be4d252172"
+        user_identity_id: '5c945ab5-c75e-4bcb-8e5f-9410061c401f'
+        enrollment_automation_id: '05505650-aa57-49ab-8f19-429738758895'
+        acs_credential_provisioning_automation_id: '05505650-aa57-49ab-8f19-429738758895'
+        credential_manager_acs_system_id: '6737e186-8d54-48ce-a7da-a0be4d252172'
         is_running: true
-        workspace_id: "398d80b7-3f96-47c2-b85a-6f8ba21d07be"
-        created_at: "2024-01-09T05:45:33.068Z"
+        workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be'
+        created_at: '2024-01-09T05:45:33.068Z'
 
 - title: Delete an enrollment automation
   description: Deletes a specified enrollment automation.
   request:
     path: /user_identities/enrollment_automations/delete
     parameters:
-      enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895"
+      enrollment_automation_id: '05505650-aa57-49ab-8f19-429738758895'
   response:
     body: null
