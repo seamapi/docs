@@ -80,7 +80,7 @@ To list all provider keys, use the [List Device Providers](../devices/list\_devi
 | [NoiseAware](../../device-guides/noiseaware-sensors.md)                                                                                             | `noiseaware`                    |
 | [Nuki](../../device-guides/nuki-locks.md)                                                                                                           | `nuki`                          |
 | [PTI Storlogix Cloud](../../device-guides/pti-storlogix-cloud.md)                                                                                   | `pti`                           |
-| [Salto KS ACS](../../device-and-system-integration-guides/salto-ks-access-control-system/) and [Salto KS Locks](../../device-guides/salto-locks.md) | `salto`                         |
+| [Salto KS ACS](../../device-and-system-integration-guides/salto-ks-access-control-system/) and [Salto KS Locks](../../device-guides/salto-locks.md) | `salto_ks`                         |
 | [Schlage](https://www.schlage.com/en/home/products/products-smart-locks.html)                                                                       | `schlage`                       |
 | [SmartThings](https://www.smartthings.com/)                                                                                                         | `smartthings`                   |
 | [Tedee](../../device-and-system-integration-guides/tedee-locks/)                                                                                    | `tedee`                         |
