@@ -1,6 +1,6 @@
 ---
 - title: Create a user identity
-  description: Specify one or more of the unique `user_identity_key`, `email_address`, or `phone_number`. You can also specify the `full_name` of the user associated with the `user_identity`. 
+  description: Specify one or more of the unique `user_identity_key`, `email_address`, or `phone_number`. You can also specify the `full_name` of the user associated with the `user_identity`.
   request:
     path: /user_identities/create
     parameters:
