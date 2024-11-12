@@ -106,7 +106,7 @@ from seam import Seam
 
 seam = Seam()
 
-webview = seam.connect_webviews.create(accepted_providers=["salto"])
+webview = seam.connect_webviews.create(accepted_providers=["salto_ks"])
 
 assert webview.login_successful is False
 
@@ -122,7 +122,7 @@ import { Seam } from 'seam'
 const seam = new Seam()
 
 const { connect_webview: connectWebview } = await seam.connectWebviews.create({
-  accepted_providers: ['salto'],
+  accepted_providers: ['salto_ks'],
 })
 
 console.log(connectWebview.login_successful) // false
@@ -138,7 +138,7 @@ require 'seamapi'
 
 seam = Seam::Client.new(api_key: 'MY_API_KEY')
 
-webview = seam.connect_webviews.create(accepted_providers: %w[salto])
+webview = seam.connect_webviews.create(accepted_providers: %w[salto_ks])
 
 puts webview.login_successful # false
 
@@ -154,7 +154,7 @@ use Seam\SeamClient;
 $seam = new SeamClient("YOUR_API_KEY");
 
 $webview = $seam->connect_webviews->create(
-  accepted_providers: ["salto"]
+  accepted_providers: ["salto_ks"]
 );
 
 echo json_encode($webview)
