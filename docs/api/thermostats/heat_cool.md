@@ -80,7 +80,12 @@ $seam->thermostats->heat_cool(
 #### Response
 
 ```php
-["action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000","status" => "pending","action_type" => "SET_HEAT_COOL"]
+<?php
+[
+    "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "status" => "pending",
+    "action_type" => "SET_HEAT_COOL",
+];
 ```
 {% endtab %}
 
