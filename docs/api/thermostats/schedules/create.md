@@ -97,7 +97,16 @@ $seam->thermostats->schedules->create(
 #### Response
 
 ```php
-["thermostat_schedule_id" => "56d29fcf-0674-4db5-8e03-b2370a77460a","name" => "Reservation 1","device_id" => "2d488679-6f07-4810-aed2-e726872c1dd5","climate_preset_key" => "occupied","starts_at" => "2024-11-01T15:00:00.000Z","ends_at" => "2024-11-05T12:00:00.000Z","max_override_period_minutes" => 90]
+<?php
+[
+    "thermostat_schedule_id" => "56d29fcf-0674-4db5-8e03-b2370a77460a",
+    "name" => "Reservation 1",
+    "device_id" => "2d488679-6f07-4810-aed2-e726872c1dd5",
+    "climate_preset_key" => "occupied",
+    "starts_at" => "2024-11-01T15:00:00.000Z",
+    "ends_at" => "2024-11-05T12:00:00.000Z",
+    "max_override_period_minutes" => 90,
+];
 ```
 {% endtab %}
 
@@ -182,6 +191,15 @@ Type: `string`
 Required: Yes
 
 Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+
+***
+
+### `is_override_allowed`
+
+Type: `boolean`
+Required: No
+
+
 
 ***
 

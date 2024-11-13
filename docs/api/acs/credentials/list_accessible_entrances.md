@@ -104,7 +104,27 @@ $seam->acs->credentials->list_accessible_entrances(
 #### Response
 
 ```php
-[["acs_entrance_id" => "55555555-5555-5555-5555-555555555555","acs_system_id" => "11111111-1111-1111-1111-111111111111","workspace_id" => "00000000-0000-0000-0000-000000000000","visionline_metadata" => ["profiles" => [["visionline_door_profile_id" => "Guest Door", "visionline_door_profile_type" => "BLE"]], "door_name" => "Guest Lock 2", "door_category" => "guest"],"latch_metadata" => null,"display_name" => "Guest Lock 2","created_at" => "2024-03-26T14:31:18.979Z"]]
+<?php
+[
+    [
+        "acs_entrance_id" => "55555555-5555-5555-5555-555555555555",
+        "acs_system_id" => "11111111-1111-1111-1111-111111111111",
+        "workspace_id" => "00000000-0000-0000-0000-000000000000",
+        "visionline_metadata" => [
+            "profiles" => [
+                [
+                    "visionline_door_profile_id" => "Guest Door",
+                    "visionline_door_profile_type" => "BLE",
+                ],
+            ],
+            "door_name" => "Guest Lock 2",
+            "door_category" => "guest",
+        ],
+        "latch_metadata" => null,
+        "display_name" => "Guest Lock 2",
+        "created_at" => "2024-03-26T14:31:18.979Z",
+    ],
+];
 ```
 {% endtab %}
 

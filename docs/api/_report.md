@@ -17,6 +17,7 @@ These items are intentionally undocumented.
 
 - `acs_user.is_latest_desired_state_synced_with_provider`: Only used internally.
 - `acs_user.latest_desired_state_synced_with_provider_at`: Only used internally.
+- `thermostat_schedule.unstable_is_override_allowed`: Unstable
 
 ### Endpoints
 
@@ -196,6 +197,8 @@ Items that are intentionally undocumented are not included in this section.
     - `unstable_offset`
 - `/thermostats/cool`
     - `sync`
+- `/thermostats/create_climate_preset`
+    - `manual_override_allowed`
 - `/thermostats/heat`
     - `sync`
 - `/thermostats/heat_cool`
@@ -209,6 +212,10 @@ Items that are intentionally undocumented are not included in this section.
     - `device_id`
     - `fan_mode`
     - `sync`
+- `/thermostats/schedules/create`
+    - `is_override_allowed`
+- `/thermostats/schedules/update`
+    - `is_override_allowed`
 
 ## Draft
 
@@ -238,6 +245,8 @@ These items are deprecated.
     - `email`: use email_address.
 - `/thermostats/set_fan_mode`
     - `fan_mode`: Use `fan_mode_setting` instead.
+- `/thermostats/update_climate_preset`
+    - `manual_override_allowed`: Use 'thermostat_schedule.is_override_allowed'
 
 ### Extra response keys
 

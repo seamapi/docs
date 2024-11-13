@@ -84,7 +84,18 @@ $seam->acs->credentials->get(
 #### Response
 
 ```php
-["acs_credential_id" => "99999999-9999-9999-9999-999999999999","acs_user_id" => "33333333-3333-3333-3333-333333333333","display_name" => "Multi Phone Sync Credential","code" => null,"acs_system_id" => "11111111-1111-1111-1111-111111111111","access_method" => "mobile_key","workspace_id" => "00000000-0000-0000-0000-000000000000","created_at" => "2024-04-12T03:56:22.396Z","is_multi_phone_sync_credential" => true]
+<?php
+[
+    "acs_credential_id" => "99999999-9999-9999-9999-999999999999",
+    "acs_user_id" => "33333333-3333-3333-3333-333333333333",
+    "display_name" => "Multi Phone Sync Credential",
+    "code" => null,
+    "acs_system_id" => "11111111-1111-1111-1111-111111111111",
+    "access_method" => "mobile_key",
+    "workspace_id" => "00000000-0000-0000-0000-000000000000",
+    "created_at" => "2024-04-12T03:56:22.396Z",
+    "is_multi_phone_sync_credential" => true,
+];
 ```
 {% endtab %}
 

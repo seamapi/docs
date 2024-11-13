@@ -70,7 +70,8 @@ $seam->acs->systems->list_compatible_credential_manager_acs_systems(
 #### Response
 
 ```php
-[["acs_system_id" => "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4"]]
+<?php
+[["acs_system_id" => "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4"]];
 ```
 {% endtab %}
 
