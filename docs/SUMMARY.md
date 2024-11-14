@@ -227,6 +227,7 @@
   * [Create a User Identity](api/user\_identities/create.md)
   * [List User Identities](api/user\_identities/list.md)
   * [Get a User Identity](api/user\_identities/get.md)
+  * [Update a User Identity](api/user\_identities/update.md)
   * [Add an ACS User to a User Identity](api/user\_identities/add\_acs\_user.md)
   * [List ACS Users Associated with a User Identity](api/user\_identities/list\_acs\_users.md)
   * [List ACS Systems Associated with a User Identity](api/user\_identities/list\_acs\_systems.md)
