@@ -103,8 +103,27 @@ $seam->thermostats->schedules->list(
 #### Response
 
 ```php
-[["thermostat_schedule_id" => "89d3507e-60e3-4101-bd1b-ba066ec30ad4","name" => "Reservation 2","device_id" => "2d488679-6f07-4810-aed2-e726872c1dd5","climate_preset_key" => "occupied","starts_at" => "2024-11-10T15:00:00.000Z","ends_at" => "2024-11-15T12:00:00.000Z","max_override_period_minutes" => 90],
-["thermostat_schedule_id" => "665553d1-94f9-4e92-9739-06ac6362c959","name" => "Reservation 3","device_id" => "2d488679-6f07-4810-aed2-e726872c1dd5","climate_preset_key" => "occupied","starts_at" => "2024-11-16T15:00:00.000Z","ends_at" => "2024-11-18T12:00:00.000Z","max_override_period_minutes" => 90]]
+<?php
+[
+    [
+        "thermostat_schedule_id" => "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
+        "name" => "Reservation 2",
+        "device_id" => "2d488679-6f07-4810-aed2-e726872c1dd5",
+        "climate_preset_key" => "occupied",
+        "starts_at" => "2024-11-10T15:00:00.000Z",
+        "ends_at" => "2024-11-15T12:00:00.000Z",
+        "max_override_period_minutes" => 90,
+    ],
+    [
+        "thermostat_schedule_id" => "665553d1-94f9-4e92-9739-06ac6362c959",
+        "name" => "Reservation 3",
+        "device_id" => "2d488679-6f07-4810-aed2-e726872c1dd5",
+        "climate_preset_key" => "occupied",
+        "starts_at" => "2024-11-16T15:00:00.000Z",
+        "ends_at" => "2024-11-18T12:00:00.000Z",
+        "max_override_period_minutes" => 90,
+    ],
+];
 ```
 {% endtab %}
 

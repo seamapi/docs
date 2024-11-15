@@ -76,7 +76,12 @@ $seam->thermostats->activate_climate_preset(
 #### Response
 
 ```php
-["action_attempt_id" => "05de2295-d1dc-4748-aae3-9931658bde20","status" => "pending","action_type" => "ACTIVATE_CLIMATE_PRESET"]
+<?php
+[
+    "action_attempt_id" => "05de2295-d1dc-4748-aae3-9931658bde20",
+    "status" => "pending",
+    "action_type" => "ACTIVATE_CLIMATE_PRESET",
+];
 ```
 {% endtab %}
 

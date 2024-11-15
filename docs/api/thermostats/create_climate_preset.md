@@ -216,9 +216,9 @@ Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat
 ### `manual_override_allowed`
 
 Type: `boolean`
-Required: Yes
+Required: No
 
-Indicates whether a person at the thermostat can change the thermostat's settings.
+
 
 ***
 

@@ -136,6 +136,15 @@ Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.i
 
 ***
 
+### `is_override_allowed`
+
+Type: `boolean`
+Required: No
+
+
+
+***
+
 ### `max_override_period_minutes`
 
 Type: `number`

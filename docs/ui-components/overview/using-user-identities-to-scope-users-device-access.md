@@ -6,7 +6,7 @@ description: You can limit your users' access to a subset of devices.
 
 
 
-First, create the [user identity](../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) that corresponds to your user. Configure the user identity with your internal user ID or other identifying information. Then, use the [Grant Access to Device](../../api-clients/user_identities/grant_access_to_device.md) method to assign the user identity access to specific devices.
+First, create the [user identity](../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) that corresponds to your user. Configure the user identity with your internal user ID or other identifying information. Then, use the [Grant Access to Device](../../api/user_identities/grant_access_to_device.md) method to assign the user identity access to specific devices.
 
 After creating and configuring the user identity, create a [client session](../../core-concepts/authentication/client-session-tokens/) and capture the resulting [client session token](../../core-concepts/authentication/client-session-tokens/). When you use this token in your application, such as in a [Seam Component](../../seam-components/overview/), Seam limits you user's access to only the devices that you specified for the associated user identity.
 
