@@ -263,9 +263,9 @@ if (frontDoor.can_remotely_unlock) {
 **Code:**
 
 ```ruby
-require "seamapi"
+require "seam"
 
-seam = Seam::Client.new() # Seam automatically uses your exported SEAM_API_KEY.
+seam = Seam.new() # Seam automatically uses your exported SEAM_API_KEY.
 
 # Retrieve all devices, filtered by manufacturer,
 # which is one of several filters that list() supports.
