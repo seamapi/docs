@@ -76,7 +76,12 @@ $seam->thermostats->set_fan_mode(
 #### Response
 
 ```php
-["action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000","status" => "pending","action_type" => "SET_FAN_MODE"]
+<?php
+[
+    "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "status" => "pending",
+    "action_type" => "SET_FAN_MODE",
+];
 ```
 {% endtab %}
 

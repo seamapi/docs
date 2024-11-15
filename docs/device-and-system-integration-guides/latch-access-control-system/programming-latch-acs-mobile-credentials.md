@@ -8,9 +8,9 @@ You can create mobile credentials that enable your mobile app users to unlock en
 
 To use the Seam API to create mobile credentials for mobile app users in a Latch ACS:
 
-1.  Create a [user identity](../../api-clients/user\_identities/) that corresponds to your user's app account.
+1.  Create a [user identity](../../api/user\_identities/) that corresponds to your user's app account.
 
-    Seam [user identities](../../api-clients/user\_identities/) enable you to match your own mobile app users to ACS users that you create using the Seam API.
+    Seam [user identities](../../api/user\_identities/) enable you to match your own mobile app users to ACS users that you create using the Seam API.
 2. Retrieve a [credential manager](../../products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md#initialize-the-user-identity-with-a-credential-manager) for your Latch ACS.
 3. Set up an [enrollment automation](../../products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md) for the user identity, to enable mobile keys.
 4. Create an [ACS user](../../products/access-systems/user-management.md) on the Latch ACS or assign an existing ACS user to the user identity.\
@@ -686,4 +686,4 @@ To learn more about using the Seam API with your Latch ACS, see the following to
 * [Managing Credentials](../../capability-guides/access-systems/managing-credentials.md)
 * [Mobile Access](../../products/mobile-access-in-development/)
 * [Access Control Systems](../../api/acs/) in the Seam API reference
-* [User Identities](../../api-clients/user\_identities/) in the Seam API reference
+* [User Identities](../../api/user\_identities/) in the Seam API reference

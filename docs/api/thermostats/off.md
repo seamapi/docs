@@ -70,7 +70,12 @@ $seam->thermostats->off(device_id: "123e4567-e89b-12d3-a456-426614174000");
 #### Response
 
 ```php
-["action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000","status" => "pending","action_type" => "SET_THERMOSTAT_OFF"]
+<?php
+[
+    "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "status" => "pending",
+    "action_type" => "SET_THERMOSTAT_OFF",
+];
 ```
 {% endtab %}
 

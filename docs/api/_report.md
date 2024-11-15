@@ -17,6 +17,7 @@ These items are intentionally undocumented.
 
 - `acs_user.is_latest_desired_state_synced_with_provider`: Only used internally.
 - `acs_user.latest_desired_state_synced_with_provider_at`: Only used internally.
+- `thermostat_schedule.unstable_is_override_allowed`: Unstable
 
 ### Endpoints
 
@@ -35,6 +36,18 @@ These items are intentionally undocumented.
 
 ### Endpoint parameters
 
+- `/devices/list`
+    - `exclude_if`: Only used internally.
+    - `include_if`: Only used internally.
+- `/devices/unmanaged/list`
+    - `exclude_if`: Only used internally.
+    - `include_if`: Only used internally.
+- `/locks/list`
+    - `exclude_if`: Only used internally.
+    - `include_if`: Only used internally.
+- `/noise_sensors/list`
+    - `exclude_if`: Only used internally.
+    - `include_if`: Only used internally.
 - `/thermostats/cool`
     - `sync`: Only used internally.
 - `/thermostats/heat`
@@ -56,10 +69,24 @@ Items that are intentionally undocumented are not included in this section.
 
 ### Resources
 
+- `access_code`
 - `acs_credential_pool`
 - `acs_credential_provisioning_automation`
 - `acs_user`
+- `client_session`
+- `connect_webview`
+- `connected_account`
+- `device`
+- `device_provider`
 - `event`
+- `network`
+- `noise_threshold`
+- `phone`
+- `service_health`
+- `unmanaged_access_code`
+- `unmanaged_device`
+- `webhook`
+- `workspace`
 
 ### Resource properties
 
@@ -101,6 +128,70 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_user.is_latest_desired_state_synced_with_provider`
 - `acs_user.is_managed`
 - `acs_user.latest_desired_state_synced_with_provider_at`
+- `client_session.client_session_id`
+- `client_session.connect_webview_ids`
+- `client_session.connected_account_ids`
+- `client_session.created_at`
+- `client_session.device_count`
+- `client_session.token`
+- `client_session.user_identifier_key`
+- `client_session.user_identity_ids`
+- `client_session.workspace_id`
+- `connect_webview.accepted_devices`
+- `connect_webview.accepted_providers`
+- `connect_webview.any_device_allowed`
+- `connect_webview.any_provider_allowed`
+- `connect_webview.authorized_at`
+- `connect_webview.automatically_manage_new_devices`
+- `connect_webview.connect_webview_id`
+- `connect_webview.connected_account_id`
+- `connect_webview.created_at`
+- `connect_webview.custom_metadata`
+- `connect_webview.custom_redirect_failure_url`
+- `connect_webview.custom_redirect_url`
+- `connect_webview.device_selection_mode`
+- `connect_webview.login_successful`
+- `connect_webview.selected_provider`
+- `connect_webview.status`
+- `connect_webview.url`
+- `connect_webview.wait_for_device_creation`
+- `connect_webview.workspace_id`
+- `connected_account.account_type`
+- `connected_account.account_type_display_name`
+- `connected_account.automatically_manage_new_devices`
+- `connected_account.connected_account_id`
+- `connected_account.created_at`
+- `connected_account.custom_metadata`
+- `connected_account.errors`
+- `connected_account.user_identifier`
+- `connected_account.warnings`
+- `device.can_hvac_cool`
+- `device.can_hvac_heat`
+- `device.can_hvac_heat_cool`
+- `device.can_program_offline_access_codes`
+- `device.can_program_online_access_codes`
+- `device.can_remotely_lock`
+- `device.can_remotely_unlock`
+- `device.can_simulate_connection`
+- `device.can_simulate_disconnection`
+- `device.can_simulate_removal`
+- `device.can_turn_off_hvac`
+- `device.custom_metadata`
+- `device_provider.can_hvac_cool`
+- `device_provider.can_hvac_heat`
+- `device_provider.can_hvac_heat_cool`
+- `device_provider.can_program_offline_access_codes`
+- `device_provider.can_program_online_access_codes`
+- `device_provider.can_remotely_lock`
+- `device_provider.can_remotely_unlock`
+- `device_provider.can_simulate_connection`
+- `device_provider.can_simulate_disconnection`
+- `device_provider.can_simulate_removal`
+- `device_provider.can_turn_off_hvac`
+- `device_provider.device_provider_name`
+- `device_provider.display_name`
+- `device_provider.image_url`
+- `device_provider.provider_categories`
 - `event.acs_credential_id`
 - `event.acs_system_id`
 - `event.acs_user_id`
@@ -124,9 +215,78 @@ Items that are intentionally undocumented are not included in this section.
 - `event.occurred_at`
 - `event.thermostat_schedule_id`
 - `event.workspace_id`
+- `network.created_at`
+- `network.display_name`
+- `network.network_id`
+- `network.workspace_id`
+- `noise_threshold.device_id`
+- `noise_threshold.ends_daily_at`
+- `noise_threshold.name`
+- `noise_threshold.noise_threshold_decibels`
+- `noise_threshold.noise_threshold_id`
+- `noise_threshold.noise_threshold_nrs`
+- `noise_threshold.starts_daily_at`
+- `phone.can_hvac_cool`
+- `phone.can_hvac_heat`
+- `phone.can_hvac_heat_cool`
+- `phone.can_program_offline_access_codes`
+- `phone.can_program_online_access_codes`
+- `phone.can_remotely_lock`
+- `phone.can_remotely_unlock`
+- `phone.can_simulate_connection`
+- `phone.can_simulate_disconnection`
+- `phone.can_simulate_removal`
+- `phone.can_turn_off_hvac`
+- `phone.custom_metadata`
+- `phone.device_type`
+- `phone.properties`
+- `service_health.description`
+- `service_health.service`
+- `service_health.status`
+- `unmanaged_access_code.is_managed`
+- `unmanaged_access_code.status`
+- `unmanaged_device.can_hvac_cool`
+- `unmanaged_device.can_hvac_heat`
+- `unmanaged_device.can_hvac_heat_cool`
+- `unmanaged_device.can_program_offline_access_codes`
+- `unmanaged_device.can_program_online_access_codes`
+- `unmanaged_device.can_remotely_lock`
+- `unmanaged_device.can_remotely_unlock`
+- `unmanaged_device.can_simulate_connection`
+- `unmanaged_device.can_simulate_disconnection`
+- `unmanaged_device.can_simulate_removal`
+- `unmanaged_device.can_turn_off_hvac`
+- `unmanaged_device.is_managed`
+- `unmanaged_device.properties`
+- `user_identity.display_name`
+- `user_identity.full_name`
+- `webhook.event_types`
+- `webhook.secret`
+- `webhook.url`
+- `webhook.webhook_id`
+- `workspace.company_name`
+- `workspace.connect_partner_name`
+- `workspace.is_sandbox`
+- `workspace.name`
+- `workspace.workspace_id`
 
 ### Endpoints
 
+- `/access_codes/create`
+- `/access_codes/create_multiple`
+- `/access_codes/delete`
+- `/access_codes/generate_code`
+- `/access_codes/get`
+- `/access_codes/list`
+- `/access_codes/pull_backup_access_code`
+- `/access_codes/update`
+- `/access_codes/update_multiple`
+- `/access_codes/simulate/create_unmanaged_access_code`
+- `/access_codes/unmanaged/convert_to_managed`
+- `/access_codes/unmanaged/delete`
+- `/access_codes/unmanaged/get`
+- `/access_codes/unmanaged/list`
+- `/access_codes/unmanaged/update`
 - `/acs/credential_pools/list`
 - `/acs/credential_provisioning_automations/launch`
 - `/acs/encoders/encode_credential`
@@ -135,11 +295,166 @@ Items that are intentionally undocumented are not included in this section.
 - `/acs/entrances/grant_access`
 - `/acs/users/unmanaged/get`
 - `/acs/users/unmanaged/list`
+- `/action_attempts/get`
+- `/action_attempts/list`
+- `/client_sessions/create`
+- `/client_sessions/delete`
+- `/client_sessions/get`
+- `/client_sessions/get_or_create`
+- `/client_sessions/grant_access`
+- `/client_sessions/list`
+- `/client_sessions/revoke`
+- `/connect_webviews/create`
+- `/connect_webviews/delete`
+- `/connect_webviews/get`
+- `/connect_webviews/list`
+- `/connected_accounts/delete`
+- `/connected_accounts/get`
+- `/connected_accounts/list`
+- `/connected_accounts/update`
+- `/devices/delete`
+- `/devices/get`
+- `/devices/list_device_providers`
+- `/devices/update`
+- `/devices/simulate/connect`
+- `/devices/simulate/disconnect`
+- `/devices/simulate/remove`
+- `/devices/unmanaged/get`
+- `/devices/unmanaged/list`
+- `/devices/unmanaged/update`
 - `/events/get`
 - `/events/list`
+- `/locks/get`
+- `/locks/list`
+- `/locks/lock_door`
+- `/locks/unlock_door`
+- `/networks/get`
+- `/networks/list`
+- `/noise_sensors/list`
+- `/noise_sensors/noise_thresholds/create`
+- `/noise_sensors/noise_thresholds/delete`
+- `/noise_sensors/noise_thresholds/get`
+- `/noise_sensors/noise_thresholds/list`
+- `/noise_sensors/noise_thresholds/update`
+- `/noise_sensors/simulate/trigger_noise_threshold`
+- `/phones/deactivate`
+- `/phones/list`
+- `/phones/simulate/create_sandbox_phone`
+- `/user_identities/update`
+- `/webhooks/create`
+- `/webhooks/delete`
+- `/webhooks/get`
+- `/webhooks/list`
+- `/webhooks/update`
+- `/workspaces/create`
+- `/workspaces/get`
+- `/workspaces/list`
+- `/workspaces/reset_sandbox`
 
 ### Endpoint parameters
 
+- `/access_codes/create`
+    - `allow_external_modification`
+    - `attempt_for_offline_device`
+    - `code`
+    - `common_code_key`
+    - `device_id`
+    - `ends_at`
+    - `is_external_modification_allowed`
+    - `is_offline_access_code`
+    - `is_one_time_use`
+    - `max_time_rounding`
+    - `name`
+    - `prefer_native_scheduling`
+    - `preferred_code_length`
+    - `starts_at`
+    - `sync`
+    - `use_backup_access_code_pool`
+    - `use_offline_access_code`
+- `/access_codes/create_multiple`
+    - `allow_external_modification`
+    - `attempt_for_offline_device`
+    - `behavior_when_code_cannot_be_shared`
+    - `code`
+    - `device_ids`
+    - `ends_at`
+    - `is_external_modification_allowed`
+    - `is_offline_access_code`
+    - `is_one_time_use`
+    - `max_time_rounding`
+    - `name`
+    - `prefer_native_scheduling`
+    - `preferred_code_length`
+    - `starts_at`
+    - `use_backup_access_code_pool`
+    - `use_offline_access_code`
+- `/access_codes/delete`
+    - `access_code_id`
+    - `device_id`
+    - `sync`
+- `/access_codes/generate_code`
+    - `device_id`
+- `/access_codes/get`
+    - `access_code_id`
+    - `code`
+    - `device_id`
+- `/access_codes/list`
+    - `access_code_ids`
+    - `device_id`
+    - `user_identifier_key`
+- `/access_codes/pull_backup_access_code`
+    - `access_code_id`
+- `/access_codes/update`
+    - `access_code_id`
+    - `allow_external_modification`
+    - `attempt_for_offline_device`
+    - `code`
+    - `device_id`
+    - `ends_at`
+    - `is_external_modification_allowed`
+    - `is_managed`
+    - `is_offline_access_code`
+    - `is_one_time_use`
+    - `max_time_rounding`
+    - `name`
+    - `prefer_native_scheduling`
+    - `preferred_code_length`
+    - `starts_at`
+    - `sync`
+    - `type`
+    - `use_backup_access_code_pool`
+    - `use_offline_access_code`
+- `/access_codes/update_multiple`
+    - `common_code_key`
+    - `ends_at`
+    - `name`
+    - `starts_at`
+- `/access_codes/simulate/create_unmanaged_access_code`
+    - `code`
+    - `device_id`
+    - `name`
+- `/access_codes/unmanaged/convert_to_managed`
+    - `access_code_id`
+    - `allow_external_modification`
+    - `force`
+    - `is_external_modification_allowed`
+    - `sync`
+- `/access_codes/unmanaged/delete`
+    - `access_code_id`
+    - `sync`
+- `/access_codes/unmanaged/get`
+    - `access_code_id`
+    - `code`
+    - `device_id`
+- `/access_codes/unmanaged/list`
+    - `device_id`
+    - `user_identifier_key`
+- `/access_codes/unmanaged/update`
+    - `access_code_id`
+    - `allow_external_modification`
+    - `force`
+    - `is_external_modification_allowed`
+    - `is_managed`
 - `/acs/credential_pools/list`
     - `acs_system_id`
 - `/acs/credential_provisioning_automations/launch`
@@ -175,6 +490,94 @@ Items that are intentionally undocumented are not included in this section.
     - `user_identity_email_address`
     - `user_identity_id`
     - `user_identity_phone_number`
+- `/action_attempts/get`
+    - `action_attempt_id`
+- `/action_attempts/list`
+    - `action_attempt_ids`
+- `/client_sessions/create`
+    - `connect_webview_ids`
+    - `connected_account_ids`
+    - `expires_at`
+    - `user_identifier_key`
+    - `user_identity_ids`
+- `/client_sessions/delete`
+    - `client_session_id`
+- `/client_sessions/get`
+    - `client_session_id`
+    - `user_identifier_key`
+- `/client_sessions/get_or_create`
+    - `connect_webview_ids`
+    - `connected_account_ids`
+    - `expires_at`
+    - `user_identifier_key`
+    - `user_identity_ids`
+- `/client_sessions/grant_access`
+    - `client_session_id`
+    - `connect_webview_ids`
+    - `connected_account_ids`
+    - `user_identifier_key`
+    - `user_identity_ids`
+- `/client_sessions/list`
+    - `client_session_id`
+    - `connect_webview_id`
+    - `user_identifier_key`
+    - `user_identity_id`
+    - `without_user_identifier_key`
+- `/client_sessions/revoke`
+    - `client_session_id`
+- `/connect_webviews/create`
+    - `accepted_providers`
+    - `automatically_manage_new_devices`
+    - `custom_metadata`
+    - `custom_redirect_failure_url`
+    - `custom_redirect_url`
+    - `device_selection_mode`
+    - `provider_category`
+    - `wait_for_device_creation`
+- `/connect_webviews/delete`
+    - `connect_webview_id`
+- `/connect_webviews/get`
+    - `connect_webview_id`
+- `/connect_webviews/list`
+    - `limit`
+- `/connected_accounts/delete`
+    - `connected_account_id`
+    - `sync`
+- `/connected_accounts/update`
+    - `automatically_manage_new_devices`
+    - `connected_account_id`
+    - `custom_metadata`
+- `/devices/delete`
+    - `device_id`
+- `/devices/get`
+    - `device_id`
+    - `name`
+- `/devices/list`
+    - `exclude_if`
+    - `include_if`
+- `/devices/list_device_providers`
+    - `provider_category`
+- `/devices/update`
+    - `custom_metadata`
+    - `device_id`
+    - `is_managed`
+    - `name`
+    - `properties`
+- `/devices/simulate/connect`
+    - `device_id`
+- `/devices/simulate/disconnect`
+    - `device_id`
+- `/devices/simulate/remove`
+    - `device_id`
+- `/devices/unmanaged/get`
+    - `device_id`
+    - `name`
+- `/devices/unmanaged/list`
+    - `exclude_if`
+    - `include_if`
+- `/devices/unmanaged/update`
+    - `device_id`
+    - `is_managed`
 - `/events/get`
     - `device_id`
     - `event_id`
@@ -194,8 +597,65 @@ Items that are intentionally undocumented are not included in this section.
     - `limit`
     - `since`
     - `unstable_offset`
+- `/locks/get`
+    - `device_id`
+    - `name`
+- `/locks/list`
+    - `exclude_if`
+    - `include_if`
+- `/locks/lock_door`
+    - `device_id`
+    - `sync`
+- `/locks/unlock_door`
+    - `device_id`
+    - `sync`
+- `/networks/get`
+    - `network_id`
+- `/noise_sensors/list`
+    - `exclude_if`
+    - `include_if`
+- `/noise_sensors/noise_thresholds/create`
+    - `device_id`
+    - `ends_daily_at`
+    - `name`
+    - `noise_threshold_decibels`
+    - `noise_threshold_nrs`
+    - `starts_daily_at`
+    - `sync`
+- `/noise_sensors/noise_thresholds/delete`
+    - `device_id`
+    - `noise_threshold_id`
+    - `sync`
+- `/noise_sensors/noise_thresholds/get`
+    - `noise_threshold_id`
+- `/noise_sensors/noise_thresholds/list`
+    - `device_id`
+    - `is_programmed`
+- `/noise_sensors/noise_thresholds/update`
+    - `device_id`
+    - `ends_daily_at`
+    - `name`
+    - `noise_threshold_decibels`
+    - `noise_threshold_id`
+    - `noise_threshold_nrs`
+    - `starts_daily_at`
+    - `sync`
+- `/noise_sensors/simulate/trigger_noise_threshold`
+    - `device_id`
+- `/phones/deactivate`
+    - `device_id`
+- `/phones/list`
+    - `acs_credential_id`
+    - `owner_user_identity_id`
+- `/phones/simulate/create_sandbox_phone`
+    - `assa_abloy_metadata`
+    - `custom_sdk_installation_id`
+    - `phone_metadata`
+    - `user_identity_id`
 - `/thermostats/cool`
     - `sync`
+- `/thermostats/create_climate_preset`
+    - `manual_override_allowed`
 - `/thermostats/heat`
     - `sync`
 - `/thermostats/heat_cool`
@@ -209,6 +669,32 @@ Items that are intentionally undocumented are not included in this section.
     - `device_id`
     - `fan_mode`
     - `sync`
+- `/thermostats/schedules/create`
+    - `is_override_allowed`
+- `/thermostats/schedules/update`
+    - `is_override_allowed`
+- `/user_identities/list`
+    - `credential_manager_acs_system_id`
+- `/user_identities/update`
+    - `full_name`
+- `/webhooks/create`
+    - `event_types`
+    - `url`
+- `/webhooks/delete`
+    - `webhook_id`
+- `/webhooks/get`
+    - `webhook_id`
+- `/webhooks/update`
+    - `event_types`
+    - `webhook_id`
+- `/workspaces/create`
+    - `company_name`
+    - `connect_partner_name`
+    - `is_sandbox`
+    - `name`
+    - `webview_logo_shape`
+    - `webview_primary_button_color`
+    - `webview_primary_button_text_color`
 
 ## Draft
 
@@ -229,6 +715,9 @@ These items are deprecated.
 - `acs_system.system_type`: Use `external_type`.
 - `acs_system.system_type_display_name`: Use `external_type_display_name`.
 - `acs_user.email`: use email_address.
+- `connect_webview.accepted_devices`: Unused. Will be removed.
+- `connect_webview.any_device_allowed`: Unused. Will be removed.
+- `workspace.connect_partner_name`: use company_name
 
 ### Endpoint parameters
 
@@ -238,16 +727,47 @@ These items are deprecated.
     - `email`: use email_address.
 - `/thermostats/set_fan_mode`
     - `fan_mode`: Use `fan_mode_setting` instead.
+- `/thermostats/update_climate_preset`
+    - `manual_override_allowed`: Use 'thermostat_schedule.is_override_allowed'
+- `/workspaces/create`
+    - `connect_partner_name`: use company_name
 
 ### Extra response keys
 
+- `/access_codes/create`
+    - `action_attempt`
 - `/events/get`
     - `message`
+- `/locks/get`
+    - `lock`
+- `/locks/list`
+    - `locks`
+- `/noise_sensors/list`
+    - `noise_sensors`
+- `/noise_sensors/noise_thresholds/create`
+    - `action_attempt`
 - `/thermostats/list`
     - `thermostats`
+- `/user_identities/list_accessible_devices`
+    - `accessible_devices`
 
 ### Endpoints without code samples
 
+- `/access_codes/create`
+- `/access_codes/create_multiple`
+- `/access_codes/delete`
+- `/access_codes/generate_code`
+- `/access_codes/get`
+- `/access_codes/list`
+- `/access_codes/pull_backup_access_code`
+- `/access_codes/update`
+- `/access_codes/update_multiple`
+- `/access_codes/simulate/create_unmanaged_access_code`
+- `/access_codes/unmanaged/convert_to_managed`
+- `/access_codes/unmanaged/delete`
+- `/access_codes/unmanaged/get`
+- `/access_codes/unmanaged/list`
+- `/access_codes/unmanaged/update`
 - `/acs/credential_pools/list`
 - `/acs/credential_provisioning_automations/launch`
 - `/acs/credentials/unmanaged/get`
@@ -260,6 +780,60 @@ These items are deprecated.
 - `/acs/users/revoke_access_to_all_entrances`
 - `/acs/users/unmanaged/get`
 - `/acs/users/unmanaged/list`
+- `/action_attempts/get`
+- `/action_attempts/list`
+- `/client_sessions/create`
+- `/client_sessions/delete`
+- `/client_sessions/get`
+- `/client_sessions/get_or_create`
+- `/client_sessions/grant_access`
+- `/client_sessions/list`
+- `/client_sessions/revoke`
+- `/connect_webviews/create`
+- `/connect_webviews/delete`
+- `/connect_webviews/get`
+- `/connect_webviews/list`
+- `/connected_accounts/delete`
+- `/connected_accounts/get`
+- `/connected_accounts/list`
+- `/connected_accounts/update`
+- `/devices/delete`
+- `/devices/get`
+- `/devices/list`
+- `/devices/list_device_providers`
+- `/devices/update`
+- `/devices/simulate/connect`
+- `/devices/simulate/disconnect`
+- `/devices/simulate/remove`
+- `/devices/unmanaged/get`
+- `/devices/unmanaged/list`
+- `/devices/unmanaged/update`
 - `/events/get`
 - `/events/list`
+- `/locks/get`
+- `/locks/list`
+- `/locks/lock_door`
+- `/locks/unlock_door`
+- `/networks/get`
+- `/networks/list`
+- `/noise_sensors/list`
+- `/noise_sensors/noise_thresholds/create`
+- `/noise_sensors/noise_thresholds/delete`
+- `/noise_sensors/noise_thresholds/get`
+- `/noise_sensors/noise_thresholds/list`
+- `/noise_sensors/noise_thresholds/update`
+- `/noise_sensors/simulate/trigger_noise_threshold`
+- `/phones/deactivate`
+- `/phones/list`
+- `/phones/simulate/create_sandbox_phone`
 - `/thermostats/get`
+- `/user_identities/update`
+- `/webhooks/create`
+- `/webhooks/delete`
+- `/webhooks/get`
+- `/webhooks/list`
+- `/webhooks/update`
+- `/workspaces/create`
+- `/workspaces/get`
+- `/workspaces/list`
+- `/workspaces/reset_sandbox`

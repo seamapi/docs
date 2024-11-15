@@ -106,7 +106,36 @@ $seam->thermostats->list();
 #### Response
 
 ```php
-[["device_id" => "123e4567-e89b-12d3-a456-426614174000","device_type" => "ecobee_thermostat","capabilities_supported" => ["thermostat"],"properties" => ["name" => "Entryway", "online" => "true,", "relative_humidity" => 0.36, "temperature_farenheit" => 70, "available_hvac_mode_settings" => ["cool", "heat", "heat_cool", "off"], "current_climate_setting" => ["hvac_mode_setting" => "heat_cool", "cooling_set_point_farenheit" => 75, "heating_set_point_farenheit" => 65, "manual_override_allowed" => false], "location" => null, "connected_account_id" => "123e4567-e89b-12d3-a456-426614174000", "workspace_id" => "123e4567-e89b-12d3-a456-426614174000", "created_at" => "2024-04-05T07:57:05.323Z"]]]
+<?php
+[
+    [
+        "device_id" => "123e4567-e89b-12d3-a456-426614174000",
+        "device_type" => "ecobee_thermostat",
+        "capabilities_supported" => ["thermostat"],
+        "properties" => [
+            "name" => "Entryway",
+            "online" => "true,",
+            "relative_humidity" => 0.36,
+            "temperature_farenheit" => 70,
+            "available_hvac_mode_settings" => [
+                "cool",
+                "heat",
+                "heat_cool",
+                "off",
+            ],
+            "current_climate_setting" => [
+                "hvac_mode_setting" => "heat_cool",
+                "cooling_set_point_farenheit" => 75,
+                "heating_set_point_farenheit" => 65,
+                "manual_override_allowed" => false,
+            ],
+            "location" => null,
+            "connected_account_id" => "123e4567-e89b-12d3-a456-426614174000",
+            "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
+            "created_at" => "2024-04-05T07:57:05.323Z",
+        ],
+    ],
+];
 ```
 {% endtab %}
 
