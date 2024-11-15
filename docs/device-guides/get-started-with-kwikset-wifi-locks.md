@@ -142,7 +142,7 @@ console.log(connectWebview.url)
 
 {% tab title="Ruby" %}
 ```ruby
-require "seamapi"
+require "seam"
 
 seam = Seam.new(api_key: "MY_API_KEY")
 

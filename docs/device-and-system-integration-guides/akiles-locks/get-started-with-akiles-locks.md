@@ -222,7 +222,7 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 **Code:**
 
 ```ruby
-require "seamapi"
+require "seam"
 
 seam = Seam.new() # Seam automatically uses your exported SEAM_API_KEY.
 

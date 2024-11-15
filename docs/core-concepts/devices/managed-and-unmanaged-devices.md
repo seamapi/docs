@@ -102,7 +102,7 @@ print(unmanaged_device)
 
 {% tab title="Ruby" %}
 ```ruby
-require "seamapi"
+require "seam"
 
 seam = Seam.new()
 device_id = "aa3958c3-4236-4f71-bd77-3b60f85b3456"
@@ -288,7 +288,7 @@ print(device)
 
 {% tab title="Ruby" %}
 ```ruby
-require "seamapi"
+require "seam"
 
 seam = Seam.new()
 device_id = "aa3958c3-4236-4f71-bd77-3b60f85b3456"

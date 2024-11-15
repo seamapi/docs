@@ -179,7 +179,7 @@ console.log(device)
 
 {% tab title="Ruby" %}
 ```ruby
-require "seamapi"
+require "seam"
 
 seam = Seam.new(api_key: "MY_API_KEY")
 device_id = "123e4567-e89b-12d3-a456-426614174000"
