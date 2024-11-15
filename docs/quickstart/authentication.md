@@ -66,7 +66,7 @@ print(workspace)
 ```ruby
 require "seamapi"
 
-seam = Seam::Client.new(api_key: "MY_API_KEY")
+seam = Seam.new(api_key: "MY_API_KEY")
 
 workspace = seam.workspaces.get
 

@@ -142,7 +142,7 @@ console.log(connectWebview.url)
 ```ruby
 require "seamapi"
 
-seam = Seam::Client.new(api_key: "MY_API_KEY")
+seam = Seam.new(api_key: "MY_API_KEY")
 
 webview = seam.connect_webviews.create(
   provider_category: "stable"

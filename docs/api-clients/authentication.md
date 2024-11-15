@@ -101,7 +101,7 @@ checkAuth();
 ```ruby
 require "seamapi"
 
-seam = Seam::Client.new() # Seam automatically uses your exported SEAM_API_KEY.
+seam = Seam.new() # Seam automatically uses your exported SEAM_API_KEY.
 
 workspace = seam.workspaces.get()
 

@@ -224,7 +224,7 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 ```ruby
 require "seamapi"
 
-seam = Seam::Client.new() # Seam automatically uses your exported SEAM_API_KEY.
+seam = Seam.new() # Seam automatically uses your exported SEAM_API_KEY.
 
 connect_webview = seam.connect_webviews.create(
   accepted_providers: ["akiles"]
