@@ -74,7 +74,15 @@ $seam->acs->entrances->list();
 #### Response
 
 ```php
-[["acs_system_id" => "123e4567-e89b-12d3-a456-426614174000","acs_entrance_id" => "123e4567-e89b-12d3-a456-426614174000","created_at" => "2024-04-05T07:57:05.323Z","display_name" => "text"]]
+<?php
+[
+    [
+        "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
+        "acs_entrance_id" => "123e4567-e89b-12d3-a456-426614174000",
+        "created_at" => "2024-04-05T07:57:05.323Z",
+        "display_name" => "text",
+    ],
+];
 ```
 {% endtab %}
 
