@@ -113,7 +113,7 @@
       user_identity_id: 'f3a328b4-dd04-4370-9000-d52b7a01b0bf'
   response:
     body:
-      accessible_devices:
+      devices:
         - device_id: '054765c8-a2fc-4599-b486-14c19f462c45'
           nickname: ''
           display_name: 'Seam Thermostat'

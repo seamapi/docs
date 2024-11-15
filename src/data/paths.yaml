@@ -32,3 +32,13 @@
   title: Thermostat Schedules
   resources:
     - thermostat_schedule
+
+/user_identities:
+  title: User Identities
+  resources:
+    - user_identity
+
+/user_identities/enrollment_automations:
+  title: Enrollment Automations
+  resources:
+    - enrollment_automation
