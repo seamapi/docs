@@ -9,6 +9,7 @@ import type {
 } from '@seamapi/blueprint'
 import { openapi } from '@seamapi/types/connect'
 import type Metalsmith from 'metalsmith'
+
 import { PathMetadataSchema } from './path-metadata.js'
 
 const defaultDeprecatedMessage = 'No deprecated message provided'
@@ -82,7 +83,7 @@ function generateReport(metadata: Metadata): Report {
     noTitle: {
       routes: [],
       endpoints: [],
-    }
+    },
   }
 
   const resources = metadata.resources ?? {}
@@ -200,9 +201,9 @@ function processRoute(route: Route, report: Report, metadata: Metadata): void {
   }
 
   const pathMetadata =
-  'pathMetadata' in metadata
-    ? PathMetadataSchema.parse(metadata.pathMetadata)
-    : {}
+    'pathMetadata' in metadata
+      ? PathMetadataSchema.parse(metadata.pathMetadata)
+      : {}
   if (pathMetadata[route.path]?.title == null) {
     report.noTitle.routes.push({ name: route.path })
   }
