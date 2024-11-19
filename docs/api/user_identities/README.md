@@ -4,9 +4,7 @@
 
 Represents a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with an application user account.
 
-### Properties
-
-#### `created_at`
+### `created_at`
 
 Format: `Datetime`
 
@@ -15,14 +13,14 @@ Date and time at which the user identity was created.
 
 ---
 
-#### `display_name`
+### `display_name`
 
 Format: `String`
 
 
 ---
 
-#### `email_address`
+### `email_address`
 
 Format: `String`
 
@@ -31,14 +29,14 @@ Unique email address for the user identity.
 
 ---
 
-#### `full_name`
+### `full_name`
 
 Format: `String`
 
 
 ---
 
-#### `phone_number`
+### `phone_number`
 
 Format: `String`
 
@@ -47,7 +45,7 @@ Unique phone number for the user identity in [E.164 format](https://www.itu.int/
 
 ---
 
-#### `user_identity_id`
+### `user_identity_id`
 
 Format: `ID`
 
@@ -56,7 +54,7 @@ ID of the user identity.
 
 ---
 
-#### `user_identity_key`
+### `user_identity_key`
 
 Format: `String`
 
@@ -65,7 +63,7 @@ Unique key for the user identity.
 
 ---
 
-#### `workspace_id`
+### `workspace_id`
 
 Format: `ID`
 

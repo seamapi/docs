@@ -4,9 +4,7 @@
 
 Represents an [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) within the [Seam mobile access solution](https://docs.seam.co/latest/capability-guides/mobile-access-in-development).
 
-### Properties
-
-#### `created_at`
+### `created_at`
 
 Format: `Datetime`
 
@@ -15,7 +13,7 @@ Date and time at which the enrollment automation was created.
 
 ---
 
-#### `credential_manager_acs_system_id`
+### `credential_manager_acs_system_id`
 
 Format: `ID`
 
@@ -24,7 +22,7 @@ ID of the associated [ACS system](https://docs.seam.co/latest/capability-guides/
 
 ---
 
-#### `enrollment_automation_id`
+### `enrollment_automation_id`
 
 Format: `ID`
 
@@ -33,7 +31,7 @@ ID of the enrollment automation.
 
 ---
 
-#### `user_identity_id`
+### `user_identity_id`
 
 Format: `ID`
 
@@ -42,7 +40,7 @@ ID of the associated [user identity](https://docs.seam.co/latest/capability-guid
 
 ---
 
-#### `workspace_id`
+### `workspace_id`
 
 Format: `ID`
 
