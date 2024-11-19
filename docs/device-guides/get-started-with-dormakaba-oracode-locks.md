@@ -181,7 +181,7 @@ Confirm the Connect Webview was successful by querying the status.
 {% tabs %}
 {% tab title="Python" %}
 ```python
-updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
+updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
 assert updated_webview.login_successful # true
 ```
@@ -199,7 +199,7 @@ console.log(updatedWebview.login_successful) // true
 
 {% tab title="Ruby" %}
 ```ruby
-updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
+updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
 puts updated_webview.login_successful # true
 ```
@@ -247,7 +247,7 @@ console.log(someLock)
 ```ruby
 some_lock = seam.locks.list.first
 
-puts some_lock.properties['battery_level']
+puts some_lock.properties.battery_level
 
 puts some_lock
 

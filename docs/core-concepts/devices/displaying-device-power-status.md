@@ -102,13 +102,13 @@ Battery Status: full
 **Request:**
 
 ```ruby
-device = client.devices.get("36cf1a96-196d-41b0-9804-88154387f1f9")
-if(device.properties['has_direct_power'] == true)
+device = client.devices.get(device_id: "36cf1a96-196d-41b0-9804-88154387f1f9")
+if(device.properties.has_direct_power == true)
   puts "Power Source: Wired"
 else
   puts "Power Source: Battery-powered"
-  puts "Battery Level: " + device.properties['battery']['level'].to_s
-  puts "Battery Status: " + device.properties['battery']['status']
+  puts "Battery Level: " + device.properties.battery.level.to_s
+  puts "Battery Status: " + device.properties.battery.status
 end
 ```
 
