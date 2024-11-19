@@ -1,4 +1,24 @@
 # Documentation Report
+{{#if (or noTitle.routes.length noTitle.endpoints.length )}}
+
+## Untitled
+{{#if noTitle.routes.length }}
+
+### Routes
+
+{{#each noTitle.routes}}
+- `{{name}}`
+{{/each}}
+{{/if}}
+{{#if noTitle.endpoints.length }}
+
+### Endpoints
+
+{{#each noTitle.endpoints}}
+- `{{name}}`
+{{/each}}
+{{/if}}
+{{/if}}
 {{#if (or undocumented.routes.length undocumented.resources.length undocumented.resourceProperties.length undocumented.namespaces.length undocumented.endpoints.length undocumented.parameters.length)}}
 
 ## Undocumented

@@ -9,6 +9,7 @@ import type {
 } from '@seamapi/blueprint'
 import { openapi } from '@seamapi/types/connect'
 import type Metalsmith from 'metalsmith'
+import { PathMetadataSchema } from './path-metadata.js'
 
 const defaultDeprecatedMessage = 'No deprecated message provided'
 const defaultDraftMessage = 'No draft message provided'
@@ -21,6 +22,7 @@ interface Report {
   deprecated: ReportSection
   extraResponseKeys: MissingResponseKeyReport[]
   endpointsWithoutCodeSamples: string[]
+  noTitle: Pick<ReportSection, 'routes' | 'endpoints'>
 }
 
 interface ReportSection {
@@ -77,6 +79,10 @@ function generateReport(metadata: Metadata): Report {
     deprecated: createEmptyReportSection(),
     extraResponseKeys: [],
     endpointsWithoutCodeSamples: [],
+    noTitle: {
+      routes: [],
+      endpoints: [],
+    }
   }
 
   const resources = metadata.resources ?? {}
@@ -86,7 +92,7 @@ function generateReport(metadata: Metadata): Report {
 
   const routes = metadata.routes ?? []
   for (const route of routes) {
-    processRoute(route, report)
+    processRoute(route, report, metadata)
   }
 
   return report
@@ -171,7 +177,7 @@ function processProperty(
   }
 }
 
-function processRoute(route: Route, report: Report): void {
+function processRoute(route: Route, report: Report, metadata: Metadata): void {
   if (route.isUndocumented) {
     report.undocumented.routes.push({
       name: route.path,
@@ -191,6 +197,14 @@ function processRoute(route: Route, report: Report): void {
       name: route.path,
       reason: defaultDraftMessage, // TODO: draftMessage
     })
+  }
+
+  const pathMetadata =
+  'pathMetadata' in metadata
+    ? PathMetadataSchema.parse(metadata.pathMetadata)
+    : {}
+  if (pathMetadata[route.path]?.title == null) {
+    report.noTitle.routes.push({ name: route.path })
   }
 
   if (route.namespace != null) {
@@ -252,6 +266,10 @@ function processEndpoint(endpoint: Endpoint, report: Report): void {
 
   if (endpoint.codeSamples.length === 0) {
     report.endpointsWithoutCodeSamples.push(endpoint.path)
+  }
+
+  if (endpoint.title.length === 0) {
+    report.noTitle.endpoints.push({ name: endpoint.path })
   }
 
   processResponseKeys(endpoint, report)
