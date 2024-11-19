@@ -188,7 +188,7 @@ Confirm the Connect Webview was successful by querying its status:
 {% tabs %}
 {% tab title="Python" %}
 ```python
-updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
+updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
 assert updated_webview.login_successful # true
 ```
@@ -206,7 +206,7 @@ console.log(updatedWebview.login_successful) // true
 
 {% tab title="Ruby" %}
 ```ruby
-updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
+updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
 puts updated_webview.login_successful # true
 ```
@@ -301,8 +301,8 @@ console.log(someLock)
 ```ruby
 some_lock = seam.locks.list.first
 
-puts some_lock.properties['online'] # true
-puts some_lock.properties['locked'] # true
+puts some_lock.properties.online # true
+puts some_lock.properties.locked # true
 
 puts some_lock.inspect # > #   warnings=[] #   errors=[] #   created_at=2023-05-03 18:01:16.965 UTC #   } #     "image_alt_text"=>"Placeholder Lock Image" #     "image_url"=>"https://connect.getseam.com/assets/images/devices/unknown-lock.png", #     "name"=>"Device 0", #     "supported_code_lengths"=>[4, 5, 6, 7, 8], #     }, #       "device_name"=>"Device 0" #       "device_id"=>1, #     "two_n_metadata"=>{ #     "serial_number"=>"ef730e77-8cc0-4290-a818-14388e9fe84f", #     "manufacturer"=>"two_n", #     "locked"=>true, #     "online"=>true, #   properties={ #   device_type="two_n_intercom" #   device_id="580365be-4f0f-42d9-9336-07f0bba09e28" # <Seam::Device:0x00c8bb8
 ```
@@ -343,13 +343,13 @@ Next, you can perform the basic action of locking and unlocking the door.
 {% tab title="Python" %}
 ```python
 # lock the door
-seam.locks.lock_door(some_lock)
-updated_lock = seam.locks.get(some_lock.device_id)
+seam.locks.lock_door(device_id: some_lock.device_id)
+updated_lock = seam.locks.get(device_id: some_lock.device_id)
 assert updated_lock.properties["locked"] is True
 
 # Now unlock the door
-seam.locks.unlock_door(some_lock)
-updated_lock = seam.locks.get(some_lock.device_id)
+seam.locks.unlock_door(device_id: some_lock.device_id)
+updated_lock = seam.locks.get(device_id: some_lock.device_id)
 assert updated_lock.properties["locked"] is False
 ```
 {% endtab %}
@@ -371,14 +371,14 @@ console.log(updatedLock.properties.locked) // false
 {% tab title="Ruby" %}
 ```ruby
 # lock the door
-seam.locks.lock_door(some_lock)
-updated_lock = seam.locks.get(some_lock.device_id)
-puts updated_lock.properties['locked'] # true
+seam.locks.lock_door(device_id: some_lock.device_id)
+updated_lock = seam.locks.get(device_id: some_lock.device_id)
+puts updated_lock.properties.locked # true
 
 # unlock the door
-seam.locks.unlock_door(some_lock)
-updated_lock = seam.locks.get(some_lock.device_id)
-puts updated_lock.properties['locked'] # false
+seam.locks.unlock_door(device_id: some_lock.device_id)
+updated_lock = seam.locks.get(device_id: some_lock.device_id)
+puts updated_lock.properties.locked # false
 ```
 {% endtab %}
 
@@ -501,8 +501,7 @@ seam.access_codes.create(
   ends_at: '2028-08-13T19:23:42+0000'
 )
 
-# you can use a device or a device_id as the "device" parameter
-seam.access_codes.list(some_lock)
+seam.access_codes.list(device_id: some_lock.device_id)
 
 # [<Seam::AccessCode:0x00730
 #   code="888888"
