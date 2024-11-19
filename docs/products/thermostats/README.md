@@ -6,7 +6,7 @@ description: >-
 
 # 🌡️ Thermostats
 
-<figure><picture><source srcset="../../.gitbook/assets/thermostats-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/thermostats-cover-light.png" alt="The Seam API provides flexible and robust functionality that enables you to control your users&#x27; thermostats."></picture><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/thermostats-cover.png" alt="The Seam API provides flexible and robust functionality that enables you to control your users&#x27; thermostats."><figcaption></figcaption></figure>
 
 ## What Is a Smart Thermostat?
 
@@ -34,9 +34,9 @@ First, connect your users' thermostats to Seam using the [Seam Console](../../co
 
 ### Learn and Monitor
 
-Retrieve and monitor your users' thermostats using the `/thermostats/list` and `/devices/get` endpoints. The Seam API returns robust, up-to-date information about your connected thermostats. In addition, you can use these endpoints to learn the capabilities of each thermostat.
+Retrieve and monitor your users' thermostats using the [`/thermostats/list`](../../api/thermostats/list.md) and [`/devices/get`](../../api-clients/devices/get.md) endpoints. The Seam API returns robust, up-to-date information about your connected thermostats. In addition, you can use these endpoints to learn the capabilities of each thermostat.
 
-Further, you can use the `/thermostats/set_temperature_threshold` endpoint to set upper and lower acceptable temperature bounds. If the thermostat reports a temperature outside this range, Seam emits a `thermostat.temperature_threshold_exceeded` event.
+Further, you can use the [`/thermostats/set_temperature_threshold`](../../api/thermostats/set\_temperature\_threshold.md) endpoint to set upper and lower acceptable temperature bounds. If the thermostat reports a temperature outside this range, Seam emits a [`thermostat.temperature_threshold_exceeded` event](../../api-clients/events/#event-types).
 
 ### Perform Remote Management
 
@@ -44,13 +44,13 @@ Manage your users' thermostats remotely using "imperative" endpoints. That is, d
 
 ### Create Climate Presets
 
-Create named climate presets, such as "occupied," "eco," "unoccupied," "vacation mode," and so on. In each of these custom climate presets, and depending on each thermostat's capabilities, you can define the desired heating and cooling set points, as well as the fan mode setting.
+Create named climate presets, such as "occupied," "eco," "unoccupied," "vacation mode," and so on. In each of these custom climate presets, and depending on each thermostat's capabilities, you can define the desired heating and cooling set points, as well as the fan mode setting. These presets make it quick and efficient for users to apply consistent climate settings tailored to different scenarios, enhancing both comfort and energy efficiency.
 
 ### Set the Fallback Preset
 
 You can set one of the configured climate presets as the fallback. Whenever another climate preset is not active, Seam reverts the thermostat back to the fallback climate preset.
 
-### Create Climate Schedules
+### Create Thermostat Schedules
 
 Schedule the climate presets that you have created. Simply specify the key of the climate preset, along with a starting and ending timestamp. You can also set the maximum override period in minutes. This parameter defines the period for which a person at the thermostat can change the thermostat's settings after the activation of the climate preset. At the end of this override period, Seam sets the thermostat back to the active climate preset.
 
@@ -92,4 +92,4 @@ To learn how to manage thermostats, see the following guides:
 * [Creating and Managing Climate Presets](../../capability-guides/thermostats/creating-and-managing-climate-presets/)
 * [Setting the Fallback Climate Preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset.md)
 * [Activating a Climate Preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/activating-a-climate-preset.md)
-* [Creating and Managing Climate Schedules](../../capability-guides/thermostats/creating-and-managing-climate-schedules.md)
+* [Creating and Managing Thermostat Schedules](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md)

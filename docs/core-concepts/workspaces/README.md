@@ -113,7 +113,7 @@ You can only connect virtual devices in a sandbox workspace. To connect a real d
 
 ### Connecting Virtual Devices
 
-To connect virtual devices, specify the login credentials for test device accounts in the [Seam Console](./#connect-devices-using-the-seam-console) or in [Connect Webviews](./#connect-devices-using-connect-webviews) within you apps. All manufacturers and devices that Seam supports have one or more sandbox test accounts with pre-seeded devices. For login credentials for all test device accounts, see [Sandbox & Sample Data](../../device-guides/sandbox-and-sample-data/).
+To connect virtual devices, specify the login credentials for test device accounts in the [Seam Console](./#connect-devices-using-the-seam-console) or in [Connect Webviews](./#connect-devices-using-connect-webviews) within you apps. All manufacturers and devices that Seam supports have one or more sandbox test accounts with pre-seeded devices. For login credentials for all test device accounts, see [Sandbox Devices and Systems](../../device-guides/sandbox-and-sample-data/).
 
 ### Interacting with a Virtual Device
 
@@ -198,4 +198,4 @@ You can add teammates to your workspace.
 
 The Seam Console sends an email invitation to the specified teammate.
 
-{% @supademo/embed demoid="YLZEbSgX5shkgOyFb4LE9" url="https://app.supademo.com/demo/YLZEbSgX5shkgOyFb4LE9" %}
+{% @supademo/embed demoId="YLZEbSgX5shkgOyFb4LE9" url="https://app.supademo.com/demo/YLZEbSgX5shkgOyFb4LE9" %}

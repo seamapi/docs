@@ -28,7 +28,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 COPY --from=golang /usr/local/go /usr/local/go
 ENV PATH="/usr/local/go/bin:${PATH}"
 
-RUN gem install seamapi
+RUN gem install seam
 RUN pip install seam --break-system-packages
 
 USER node

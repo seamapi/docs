@@ -2,7 +2,11 @@
 
 ## `acs_entrance`
 
-### `acs_entrance_id`
+Represents an [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+
+### Properties
+
+#### `acs_entrance_id`
 
 Format: `ID`
 

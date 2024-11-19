@@ -4,7 +4,9 @@ description: Learn how to create, list, update, and delete climate presets for t
 
 # Creating and Managing Climate Presets
 
-You create a set of climate presets for each thermostat, customized for your—and your users'—needs. Each climate preset can contain the following properties, depending on the [capabilities](../../../products/thermostats/#thermostat-capabilities) of the thermostat:
+You create a set of climate presets for each thermostat, customized for your—and your users'—needs. Each climate preset is a predefined configuration for a thermostat that specifies settings, such as HVAC mode, fan mode, and temperature set points. These presets make it quick and efficient for users to apply consistent climate settings tailored to different scenarios, enhancing both comfort and energy efficiency.
+
+Each climate preset can contain the following properties, depending on the [capabilities](../../../products/thermostats/#thermostat-capabilities) of the thermostat:
 
 <table><thead><tr><th width="339">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>climate_preset_key</code></td><td>(Required) Key to identify the climate preset.</td></tr><tr><td><code>name</code></td><td>(Optional) User-friendly name to identify the climate preset.</td></tr><tr><td><code>fan_mode_setting</code></td><td>Desired fan mode setting, such as <code>on</code>, <code>auto</code>, or <code>circulate</code>.</td></tr><tr><td><code>hvac_mode_setting</code></td><td>Desired <a href="../understanding-thermostat-concepts/hvac-mode.md">HVAC mode</a> setting, such as <code>heat</code>, <code>cool</code>, <code>heat_cool</code>, or <code>off</code>.</td></tr><tr><td><code>cooling_set_point_celsius</code></td><td>Temperature to which the thermostat should cool (in °C). See also <a href="../understanding-thermostat-concepts/set-points.md">Set Points</a>.</td></tr><tr><td><code>cooling_set_point_fahrenheit</code></td><td>Temperature to which the thermostat should cool (in °F).</td></tr><tr><td><code>heating_set_point_celsius</code></td><td>Temperature to which the thermostat should heat (in °C).</td></tr><tr><td><code>heating_set_point_fahrenheit</code></td><td>Temperature to which the thermostat should heat (in °F).</td></tr><tr><td><code>manual_override_allowed</code></td><td>(Required) Indicates whether a person at the thermostat can change the thermostat's settings.</td></tr></tbody></table>
 
@@ -12,7 +14,7 @@ You create a set of climate presets for each thermostat, customized for your—a
 
 ## Create a Climate Preset
 
-To create a climate preset, issue a `/thermostats/create_climate_preset` request, providing the `device_id` of the desired thermostat. Also, include the desired settings for the climate preset and, optionally, a name. Note that `manual_override_allowed` is required.
+To create a climate preset, issue a [`/thermostats/create_climate_preset`](../../../api/thermostats/create\_climate\_preset.md) request, providing the `device_id` of the desired thermostat. Also, include the desired settings for the climate preset and, optionally, a name. Note that `manual_override_allowed` is required.
 
 The following example creates two climate presets with the keys `occupied` and `unoccupied`:
 
@@ -272,7 +274,7 @@ void
 
 ## List All Climate Presets for a Thermostat
 
-To list climate presets for a thermostat, issue a `/devices/get` request, providing the `device_id` of the desired thermostat. Then, inspect the `available_climate_presets` property.
+To list climate presets for a thermostat, issue a [`/devices/get`](../../../api-clients/devices/get.md) request, providing the `device_id` of the desired thermostat. Then, inspect the `available_climate_presets` property.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -537,7 +539,7 @@ $seam->devices->get(
 
 ## Update a Climate Preset
 
-To update a climate preset, issue a `/thermostats/update_climate_preset` request, providing the `device_id` of the thermostat and the `climate_preset_key` of the desired climate preset. Also, include the desired updated settings for the climate preset. Note that `manual_override_allowed` is required.
+To update a climate preset, issue a [`/thermostats/update_climate_preset`](../../../api/thermostats/update\_climate\_preset.md) request, providing the `device_id` of the thermostat and the `climate_preset_key` of the desired climate preset. Also, include the desired updated settings for the climate preset. Note that `manual_override_allowed` is required.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -684,7 +686,7 @@ void
 
 ## Delete a Climate Preset
 
-To delete a climate preset, issue a `/thermostats/delete_climate_preset` request, providing the `device_id` of the thermostat and the `climate_preset_key` of the desired climate preset.
+To delete a climate preset, issue a [`/thermostats/delete_climate_preset`](../../../api/thermostats/delete\_climate\_preset.md) request, providing the `device_id` of the thermostat and the `climate_preset_key` of the desired climate preset.
 
 {% tabs %}
 {% tab title="Python" %}

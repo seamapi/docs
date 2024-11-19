@@ -84,7 +84,17 @@ $seam->acs->access_groups->list_accessible_entrances(
 #### Response
 
 ```php
-[["acs_entrance_id" => "66666666-6666-6666-6666-666666666666","name" => "Main Entrance","display_name" => "Main Entrance","acs_system_id" => "11111111-1111-1111-1111-111111111111","workspace_id" => "00000000-0000-0000-0000-000000000000","created_at" => "2024-10-15T12:00:00.000Z"]]
+<?php
+[
+    [
+        "acs_entrance_id" => "66666666-6666-6666-6666-666666666666",
+        "name" => "Main Entrance",
+        "display_name" => "Main Entrance",
+        "acs_system_id" => "11111111-1111-1111-1111-111111111111",
+        "workspace_id" => "00000000-0000-0000-0000-000000000000",
+        "created_at" => "2024-10-15T12:00:00.000Z",
+    ],
+];
 ```
 {% endtab %}
 

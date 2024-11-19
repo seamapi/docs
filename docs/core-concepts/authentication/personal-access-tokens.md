@@ -73,7 +73,7 @@ console.log(await seam.devices.list())
 
 {% tab title="Ruby" %}
 ```ruby
-client = Seam::Client.new(
+client = Seam.new(
   # Specify PAT.
   api_key: pat,
   # Specify workspace ID.

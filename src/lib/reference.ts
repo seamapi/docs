@@ -2,18 +2,19 @@ import type { Blueprint } from '@seamapi/blueprint'
 import type Metalsmith from 'metalsmith'
 
 import {
-  type EndpointLayoutContext,
-  type RouteLayoutContext,
+  type ApiEndpointLayoutContext,
+  type ApiRouteLayoutContext,
   setApiRouteLayoutContext,
   setEndpointLayoutContext,
-} from './layout-context.js'
+} from './layout/index.js'
 import { PathMetadataSchema } from './path-metadata.js'
 
 const sdks: Array<'javascript'> = []
 
 type Metadata = Partial<Pick<Blueprint, 'routes' | 'resources'>>
 
-type File = EndpointLayoutContext & RouteLayoutContext & { layout: string }
+type File = ApiEndpointLayoutContext &
+  ApiRouteLayoutContext & { layout: string }
 
 export const reference = (
   files: Metalsmith.Files,
@@ -37,7 +38,11 @@ export const reference = (
   for (const route of blueprint.routes ?? []) {
     if (route.isUndocumented) continue
 
-    if (!route.path.startsWith('/acs')) {
+    if (
+      !route.path.startsWith('/acs') &&
+      !route.path.startsWith('/thermostats') &&
+      !route.path.startsWith('/user_identities')
+    ) {
       continue
     }
 

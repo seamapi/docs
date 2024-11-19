@@ -6,11 +6,11 @@ description: Learn how to configure the current climate settings on a thermostat
 
 You can use the following Seam API "imperative" endpoints to set the current HVAC and fan mode settings for a connected thermostat, individually:
 
-* `/thermostats/heat`
-* `/thermostats/cool`
-* `/thermostats/heat_cool`
-* `/thermostats/off`
-* `/thermostats/set_fan_mode`
+* [`/thermostats/heat`](../../api/thermostats/heat.md)
+* [`/thermostats/cool`](../../api/thermostats/cool.md)
+* [`/thermostats/heat_cool`](../../api/thermostats/heat\_cool.md)
+* [`/thermostats/off`](../../api/thermostats/off.md)
+* [`/thermostats/set_fan_mode`](../../api/thermostats/set\_fan\_mode.md)
 
 Note that it's important to check the capabilities of a thermostat before attempting to use an imperative endpoint. For example, if a thermostat is attached to an HVAC system that does not have cooling capabilities, you cannot use `/thermostats/cool` or `/thermostats/heat_cool`. To check the capabilities of a thermostat, retrieve the thermostat and confirm the [relevant capability flags](./#thermostat-capabilities).
 
@@ -64,7 +64,7 @@ Before you attempt to set the HVAC or fan mode settings for a thermostat, be sur
 
 Use the [`/devices/get`](../../api-clients/devices/get.md) endpoint for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to perform the imperative thermostat action.
 
-If the relevant capability flag is `false` or not present, you can view the [properties](../../api-clients/thermostats/#thermostat-properties) of the device, [errors](../../api-clients/devices/#device-error-types) or [warnings](../../api-clients/devices/#device-warning-types) for the device, and [events](../../api-clients/events/#event-types) related to the device to learn more about the cause of these issues. For example, you could examine `device.properties.online`. In addition, you could look for a `device.disconnected` event.
+If the relevant capability flag is `false` or not present, you can view the [properties](../../api/thermostats/#thermostat-properties) of the device, [errors](../../api-clients/devices/#device-error-types) or [warnings](../../api-clients/devices/#device-warning-types) for the device, and [events](../../api-clients/events/#event-types) related to the device to learn more about the cause of these issues. For example, you could examine `device.properties.online`. In addition, you could look for a `device.disconnected` event.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -229,7 +229,7 @@ $seam->devices->get(
 
 ## Set a Thermostat to Heat Mode
 
-You can [set a thermostat to heat mode](../../api-clients/thermostats/heat.md) and specify a desired heating [set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) temperature. By establishing the set point, the thermostat activates the associated heating system to maintain the specified temperature.
+You can [set a thermostat to heat mode](../../api/thermostats/heat.md) and specify a desired heating [set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) temperature. By establishing the set point, the thermostat activates the associated heating system to maintain the specified temperature.
 
 Issue the thermostat `heat` request, providing the `device_id` of the thermostat and the `heating_set_point_celsius` or `heating_set_point_fahrenheit`.
 
@@ -437,7 +437,7 @@ if ($thermostat->can_hvac_heat) {
 
 ## Set a Thermostat to Cool Mode
 
-You can [set a thermostat to cool mode](../../api-clients/thermostats/cool.md) and specify a desired cooling [set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) temperature. By establishing the set point, the thermostat activates the associated cooling system to maintain the specified temperature.
+You can [set a thermostat to cool mode](../../api/thermostats/cool.md) and specify a desired cooling [set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) temperature. By establishing the set point, the thermostat activates the associated cooling system to maintain the specified temperature.
 
 Issue the thermostat `cool` request, providing the `device_id` of the thermostat and the `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`.
 
@@ -645,7 +645,7 @@ if ($thermostat->can_hvac_cool) {
 
 ## Set a Thermostat to Heat-Cool Mode
 
-You can [set a thermostat to heat-cool (also known as "auto") mode](../../api-clients/thermostats/heat\_cool.md) and specify desired [set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) temperatures for both heating and cooling. By establishing the set points, the thermostat activates the associated heating and cooling systems as needed to maintain the specified temperature range.
+You can [set a thermostat to heat-cool (also known as "auto") mode](../../api/thermostats/heat\_cool.md) and specify desired [set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) temperatures for both heating and cooling. By establishing the set points, the thermostat activates the associated heating and cooling systems as needed to maintain the specified temperature range.
 
 Issue the thermostat `heat_cool` request, providing the `device_id` of the thermostat and the following set points:
 
@@ -860,7 +860,7 @@ if ($thermostat->can_hvac_heat_cool) {
 
 ## Turn off Heating and Cooling
 
-You can [set a thermostat to "off" mode](../../api-clients/thermostats/off.md), which deactivates the associated heating and cooling systems. In this state, the thermostat does not regulate indoor temperatures.
+You can [set a thermostat to "off" mode](../../api/thermostats/off.md), which deactivates the associated heating and cooling systems. In this state, the thermostat does not regulate indoor temperatures.
 
 Issue the thermostat `off` request, providing the `device_id` of the thermostat.
 
@@ -1064,7 +1064,7 @@ if ($thermostat->can_turn_off_hvac) {
 
 ## Set the Fan Mode Setting
 
-You can [configure the fan mode setting for a thermostat](../../api-clients/thermostats/set\_fan\_mode.md). For details about the supported fan modes, see [Fan Mode Settings](configure-current-climate-settings.md#fan-mode-settings).
+You can [configure the fan mode setting for a thermostat](../../api/thermostats/set\_fan\_mode.md). For details about the supported fan modes, see [Fan Mode Settings](configure-current-climate-settings.md#fan-mode-settings).
 
 Set the fan mode setting by providing the `device_id` of the thermostat and specifying the desired `fan_mode_setting`.
 

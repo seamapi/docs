@@ -16,7 +16,8 @@ Seam supports the following 4SUITES locks:
 
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
-  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
+  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
+  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
   manufacturers='["4SUITES"]'
 />" %}
 
@@ -38,7 +39,7 @@ Seam provides client libraries for many languages, including JavaScript, Python,
 
 * JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
 * Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
-* Ruby Gem ([rubygem](https://rubygems.org/gems/seamapi), [GitHub](https://github.com/seamapi/ruby))
+* Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
 * PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
 * Java ([GitHub](https://github.com/seamapi/java))
 * C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
@@ -62,7 +63,7 @@ pip install seam
 
 {% tab title="Ruby" %}
 ```bash
-bundle add seamapi
+bundle add seam
 ```
 {% endtab %}
 
@@ -222,9 +223,9 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 **Code:**
 
 ```ruby
-require "seamapi"
+require "seam"
 
-seam = Seam::Client.new() # Seam automatically uses your exported SEAM_API_KEY.
+seam = Seam.new() # Seam automatically uses your exported SEAM_API_KEY.
 
 connect_webview = seam.connect_webviews.create(
   accepted_providers: ["four_suites"]

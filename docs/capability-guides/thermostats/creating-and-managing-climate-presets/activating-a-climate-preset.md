@@ -4,11 +4,11 @@ description: Learn how to activate a preconfigured climate preset immediately.
 
 # Activating a Climate Preset
 
-In addition to [scheduling](../creating-and-managing-climate-schedules.md) climate presets for a thermostat, you can activate a configured climate preset immediately. When you activate a climate preset, it overrides any scheduled climate preset that is already active on the thermostat.
+In addition to [scheduling](../creating-and-managing-thermostat-schedules.md) climate presets for a thermostat, you can activate a configured climate preset immediately. When you activate a climate preset, it overrides any scheduled climate preset that is already active on the thermostat.
 
 Activating a climate preset returns an [action attempt](../../../core-concepts/action-attempts.md) that enables you to track the progress of the action. Poll this action attempt, until the action completes.
 
-To activate a climate preset, issue a `/thermostats/activate_climate_preset` request and specify the `climate_preset_key` of the desired climate preset.
+To activate a climate preset, issue a [`/thermostats/activate_climate_preset`](../../../api/thermostats/activate\_climate\_preset.md) request and specify the `climate_preset_key` of the desired climate preset.
 
 {% tabs %}
 {% tab title="Python" %}
