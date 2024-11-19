@@ -4,9 +4,7 @@
 
 Represents a [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) that activates a configured [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time.
 
-### Properties
-
-#### `climate_preset_key`
+### `climate_preset_key`
 
 Format: `String`
 
@@ -15,7 +13,7 @@ Key of the [climate preset](../../../capability-guides/thermostats/creating-and-
 
 ---
 
-#### `created_at`
+### `created_at`
 
 Format: `Datetime`
 
@@ -24,7 +22,7 @@ Date and time at which the thermostat schedule was created.
 
 ---
 
-#### `device_id`
+### `device_id`
 
 Format: `ID`
 
@@ -33,7 +31,7 @@ ID of the desired thermostat device.
 
 ---
 
-#### `ends_at`
+### `ends_at`
 
 Format: `Datetime`
 
@@ -42,7 +40,7 @@ Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.i
 
 ---
 
-#### `max_override_period_minutes`
+### `max_override_period_minutes`
 
 Format: `Number`
 
@@ -51,7 +49,7 @@ Number of minutes for which a person at the thermostat can change the thermostat
 
 ---
 
-#### `name`
+### `name`
 
 Format: `String`
 
@@ -60,7 +58,7 @@ User-friendly name to identify the thermostat schedule.
 
 ---
 
-#### `starts_at`
+### `starts_at`
 
 Format: `Datetime`
 
@@ -69,7 +67,7 @@ Date and time at which the thermostat schedule starts, in [ISO 8601](https://www
 
 ---
 
-#### `thermostat_schedule_id`
+### `thermostat_schedule_id`
 
 Format: `ID`
 
