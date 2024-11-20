@@ -26,12 +26,7 @@ The following table details the requirements for compatibility with this Seam in
 
 <table><thead><tr><th width="187.33333333333331">Product Models</th><th>Compatibility</th><th>Accessories</th></tr></thead><tbody><tr><td><a href="https://nuki.io/en/smart-lock/">Smart Lock</a></td><td>Compatible only with Nuki Bridge</td><td><ul><li>Bridge</li><li>Keypad (optional)</li></ul></td></tr><tr><td><a href="https://nuki.io/en/smart-lock-pro/">Smart Lock Pro</a></td><td>Compatible</td><td><ul><li>Keypad (optional)</li></ul></td></tr><tr><td><a href="https://nuki.io/en/opener/">Opener</a></td><td>Compatible only with Nuki Bridge</td><td><ul><li>Bridge</li><li>Keypad (optional)</li></ul></td></tr></tbody></table>
 
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["Nuki"]'
-/>" %}
+For detailed information about the Nuki devices that Seam supports, see our [Nuki Supported Devices page](https://www.seam.co/manufacturers/nuki).
 
 We support the following features:
 

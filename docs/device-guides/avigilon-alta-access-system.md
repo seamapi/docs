@@ -16,12 +16,7 @@ This integration supports [all readers, controllers, and wireless locks connecte
 
 <figure><img src="../.gitbook/assets/avigilon-alta-acs-devices.png" alt="Avigilon Alta access system devices"><figcaption></figcaption></figure>
 
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["Avigilon Alta"]'
-/>" %}
+For detailed information about the Avigilon Alta-connected devices that Seam supports, see our [Avigilon Alta Supported Devices page](https://www.seam.co/manufacturers/avigilon-alta).
 
 We support the following features:
 

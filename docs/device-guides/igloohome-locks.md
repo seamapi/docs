@@ -18,18 +18,13 @@ In addition, the Seam integration supports the generation of [offline access cod
 
 This integration supports a series of igloohome devices for lock, unlock, and customizable access code provisioning actions. In addition, this integration supports a wider set of igloohome devices for offline access code (algoPIN) provisioning.
 
+For detailed information about the igloohome devices that Seam supports, see our [igloohome Supported Devices page](https://www.seam.co/manufacturers/igloohome).
+
 ### igloohome Bridge Support
 
 This integration supports lock, unlock, and customizable access code provisioning actions for a subset of igloohome smart locks, when combined with the [igloohome Bridge](https://www.igloohome.co/en-US/products/bridge). For a list of compatible igloohome smart locks, see the **Bridge Compatibility** area on the [igloohome Bridge ](https://www.igloohome.co/en-US/products/bridge)page.
 
 Each igloohome Bridge supports up to five compatible igloohome locks.
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["igloohome"]'
-/>" %}
 
 We support the following features:
 
