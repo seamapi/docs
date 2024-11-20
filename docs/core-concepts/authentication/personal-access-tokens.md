@@ -24,8 +24,6 @@ Never use a PAT in a web browser or expose it to your users.
 4. In the **Add Personal Access Token** dialog, type a name for your new PAT and then click **Create Personal Access Token**.
 5. Copy the newly-created PAT and store it for future use.
 
-{% @supademo/embed demoId="ZY2oBrHFSx2Tmuwq8vzd_" url="https://app.supademo.com/demo/ZY2oBrHFSx2Tmuwq8vzd_" %}
-
 ## Using the PAT to issue a Seam API request
 
 To use a PAT for authorization in the Seam API, you must specify the PAT in the `Authorization` header for the Seam HTTP API or in the `seam` constructor for the Seam SDK that you are using. You must also specify the ID of the workspace that you want to access. If you are using the Seam HTTP API, include the `seam-workspace` header with the desired workspace ID. If you are using a Seam SDK, specify the desired workspace ID in the `Seam` constructor.

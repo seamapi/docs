@@ -27,8 +27,6 @@ To get started with Seam, first connect a set of devices.
 
 Once authorized, the devices associated with this test account appear in your workspace.
 
-{% @supademo/embed demoId="h1y5QMki-7vzlghMzobuf" url="https://app.supademo.com/demo/h1y5QMki-7vzlghMzobuf" %}
-
 ## Step 2 — Get an API Key and SDK
 
 To control the devices that you connected in [Step 1](quickstart.md#step-1-connect-devices), you must create an API key and install the Seam SDK in the programming language of your choice.
@@ -39,8 +37,6 @@ To control the devices that you connected in [Step 1](quickstart.md#step-1-conne
 2. In the upper-right corner of the **API Keys** page, click **+ Add API Key**.
 3. In the **Add API Key** dialog, type a name for your new API key and then click **Create API Key**.
 4. Copy the newly-created API key and store it for future use.
-
-{% @supademo/embed demoId="vLRzYM2Nwoi4j_cH9WCNQ" url="https://app.supademo.com/demo/vLRzYM2Nwoi4j_cH9WCNQ" %}
 
 ### Install the Seam SDK
 

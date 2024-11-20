@@ -31,8 +31,6 @@ If you need to access multiple workspaces, create a [Personal Access Token](pers
 Production API keys do not include `test`, while API keys for sandbox workspaces do include `test`. In addition, if you accidentally commit your API key to a GitHub repo, the `seam_` prefix is detected, and you are notified.
 {% endhint %}
 
-{% @supademo/embed demoId="vLRzYM2Nwoi4j_cH9WCNQ" url="https://app.supademo.com/demo/vLRzYM2Nwoi4j_cH9WCNQ" %}
-
 ## Export an API Key
 
 Once you have created an API key, it is useful to export this key as an environment variable. Then, all installed Seam SDKs automatically use this exported API key.
