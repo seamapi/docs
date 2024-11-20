@@ -22,12 +22,7 @@ This integration supports the [Wyze Lock](https://www.wyze.com/products/wyze-loc
 Seam does not integrate with the [Wyze Lock Bolt](https://www.wyze.com/products/wyze-lock-bolt).
 {% endhint %}
 
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["Wyze"]'
-/>" %}
+For detailed information about the Wyze devices that Seam supports, see our [Wyze Supported Devices page](https://www.seam.co/manufacturers/wyze).
 
 We support the following features:
 

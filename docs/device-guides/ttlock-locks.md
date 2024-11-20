@@ -24,12 +24,7 @@ TTLock produces both hardware and software for smart locks. Many other manufactu
 
 This integration works any TTLock locks that are paired with [a TTLock Gateway](ttlock-locks.md#compatible-ttlock-gateways).
 
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["TTLock"]'
-/>" %}
+For detailed information about the TTLock devices that Seam supports, see our [TTLock Supported Devices page](https://www.seam.co/manufacturers/ttlock).
 
 We support the following features:
 
