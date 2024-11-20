@@ -14,11 +14,7 @@ ecobee smart thermostats are designed to lower energy costs. In addition to ener
 
 This integration supports all [ecobee thermostats](https://www.ecobee.com/en-us/smart-thermostats/).
 
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  manufacturers='["ecobee"]'
-/>" %}
+For detailed information about the ecobee devices that Seam supports, see our [ecobee Supported Devices page](https://www.seam.co/manufacturers/ecobee).
 
 We support the following features:
 

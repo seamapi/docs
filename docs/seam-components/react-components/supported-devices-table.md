@@ -21,13 +21,6 @@ The supported device table enables you to filter, sort, and view all the devices
 ]} />
 ```
 
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-/>" %}
-
-
-
 ### Props
 
 <table><thead><tr><th width="184">Name</th><th width="100.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>disableFilter</code></td><td>boolean<br><em>Optional</em></td><td>Hide the controls to filter the table. Default: <code>false</code></td></tr><tr><td><code>manufacturers</code></td><td>array<br><em>Optional</em></td><td>Only show devices from specified manufacturers.</td></tr><tr><td><code>excludedManufacturers</code></td><td>array<br><em>Optional</em></td><td>Hide devices from specified manufacturers.</td></tr><tr><td><code>className</code></td><td>string<br><em>Optional</em></td><td>Class name to add to the containing element of the rendered component.</td></tr></tbody></table>

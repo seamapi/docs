@@ -18,11 +18,7 @@ Seam supports two integrations for Salto KS. We recommend using the [Salto KS ac
 
 This integration works any devices connected via their [Salto KS platform](https://saltoks.com/).
 
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  manufacturers='["Salto"]'
-/>" %}
+For detailed information about the Salto devices that Seam supports, see our [Salto Supported Devices page](https://www.seam.co/manufacturers/salto).
 
 We support the following features:
 

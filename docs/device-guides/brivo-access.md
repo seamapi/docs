@@ -18,11 +18,7 @@ The Brivo Access platform supports the following wireless locks:
 
 <table><thead><tr><th width="210">Lock Brand</th><th>Integration Description</th></tr></thead><tbody><tr><td><a href="https://resources.brivo.com/data-sheets/allegion-ndele-wireless-locks-data-sheet">Allegion</a></td><td>Brivo partners with Allegion to provide AD Series, LE, NDE, and Control® wireless locks for multifamily and commercial real estate uses.</td></tr><tr><td><a href="https://resources.brivo.com/data-sheets/assa-abloy-wireless-locks-data-sheet">ASSA ABLOY Aperio™</a></td><td>Brivo provides a variety of ASSA ABLOY Aperio locks for small, medium, and enterprise uses.</td></tr><tr><td><a href="https://www.brivo.com/lp/request-consultation">Z-Wave</a></td><td>Brivo provides a variety of Z-Wave-supported locks for multifamily residential doors connected to the <a href="https://www.brivo.com/products/smart-home/">Brivo Smart Home</a>.</td></tr><tr><td><a href="https://www.brivo.com/lp/request-consultation">Salto</a></td><td>Brivo supports various Salto wireless locks.</td></tr></tbody></table>
 
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  manufacturers='["Brivo"]'
-/>" %}
+For detailed information about the Brivo-connected devices that Seam supports, see our [Brivo Supported Devices page](https://www.seam.co/manufacturers/brivo).
 
 We support the following features:
 

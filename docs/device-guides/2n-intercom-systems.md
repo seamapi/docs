@@ -14,11 +14,7 @@ description: Guide for using 2N® intercom systems with Seam
 
 This integration supports all [2N IP intercoms](https://wiki.2n.com/is/en).
 
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  manufacturers='["2N"]'
-/>" %}
+For detailed information about the 2N devices that Seam supports, see our [2N Supported Devices page](https://www.seam.co/manufacturers/2n).
 
 We support the following features:
 

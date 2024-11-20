@@ -76,8 +76,8 @@ Online: true
 **Request:**
 
 ```ruby
-device = client.devices.get("36cf1a96-196d-41b0-9804-88154387f1f9")
-puts "Online: " + device.properties['online'].to_s
+device = client.devices.get(device_id: "36cf1a96-196d-41b0-9804-88154387f1f9")
+puts "Online: " + device.properties.online.to_s
 ```
 
 **Response:**
@@ -91,7 +91,7 @@ Online: true
 **Request:**
 
 ```php
-$device = $seam->devices->get("36cf1a96-196d-41b0-9804-88154387f1f9");
+$device = $seam->devices->get(device_id: "36cf1a96-196d-41b0-9804-88154387f1f9");
 if ($device->properties->online === true) {
   echo "Online: true\n";
 } else {

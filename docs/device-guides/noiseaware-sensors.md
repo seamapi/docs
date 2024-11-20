@@ -14,11 +14,7 @@ Seam integrates with NoiseAware sensors to provide [privacy-safe noise monitorin
 
 This integration supports all [NoiseAware sensors](https://noiseaware.com/features/).
 
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  manufacturers='["NoiseAware"]'
-/>" %}
+For detailed information about the NoiseAware devices that Seam supports, see our [NoiseAware Supported Devices page](https://www.seam.co/manufacturers/noiseaware).
 
 We support the following features:
 

@@ -16,11 +16,7 @@ Google produces Nest smart thermostats as part of the Google smart home product 
 
 This integration supports all [Nest thermostats](https://store.google.com/us/category/nest\_thermostats).
 
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  manufacturers='["Nest"]'
-/>" %}
+For detailed information about the Google Nest devices that Seam supports, see our [Nest Supported Devices page](https://www.seam.co/manufacturers/nest).
 
 We support the following features:
 

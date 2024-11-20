@@ -12,11 +12,7 @@ This integration uses [Hubitat’s Maker API](https://docs2.hubitat.com/en/apps/
 
 This integration supports devices connected to a Hubitat Hub.
 
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  manufacturers='["Hubitat"]'
-/>" %}
+For detailed information about the Hubitat-connected devices that Seam supports, see our [Hubitat Supported Devices page](https://www.seam.co/manufacturers/hubitat).
 
 We support the following features:
 

@@ -20,11 +20,7 @@ The following table details the requirements for compatibility with this Seam in
 
 <table><thead><tr><th width="315">Capability</th><th>Required Accessories</th></tr></thead><tbody><tr><td>Remote lock/unlock</td><td><ul><li>Tedee smart bridge</li></ul></td></tr><tr><td>Access codes</td><td><ul><li>Tedee smart bridge</li><li>Tedee keypad</li></ul></td></tr></tbody></table>
 
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  manufacturers='["Tedee"]'
-/>" %}
+For detailed information about the Tedee devices that Seam supports, see our [Tedee Supported Devices page](https://www.seam.co/manufacturers/tedee).
 
 We support the following features:
 

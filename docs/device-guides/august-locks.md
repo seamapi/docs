@@ -24,11 +24,7 @@ The following table details the requirements for compatibility with this Seam in
 
 <table><thead><tr><th width="187.33333333333331">Product Models</th><th>Compatibility</th><th>Accessories</th></tr></thead><tbody><tr><td><a href="https://august.com/products/august-wifi-smart-lock">Wi-Fi Smart Lock</a></td><td>Compatible</td><td><ul><li>Smart Keypad (optional)</li></ul></td></tr><tr><td><a href="https://august.com/products/august-smart-lock-pro-connect">Smart Lock Pro</a></td><td>Compatible only with Connect Wi-Fi Bridge</td><td><ul><li>Connect Wi-Fi Bridge</li><li>Smart Keypad (optional)</li></ul></td></tr><tr><td><a href="https://august.com/products/august-smart-lock-connect">Smart Lock</a></td><td>Compatible only with Connect Wi-Fi Bridge</td><td><ul><li>Connect Wi-Fi Bridge</li><li>Smart Keypad (optional)</li></ul></td></tr></tbody></table>
 
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  manufacturers='["August"]'
-/>" %}
+For detailed information about the August devices that Seam supports, see our [August Supported Devices page](https://www.seam.co/manufacturers/august).
 
 We support the following features:
 

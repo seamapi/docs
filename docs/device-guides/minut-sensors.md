@@ -14,11 +14,7 @@ Seam integrates with the Minut sensor to provide [noise monitoring](https://supp
 
 This integration supports the [Minut sensor](https://www.minut.com/product/features).
 
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  manufacturers='["Minut"]'
-/>" %}
+For detailed information about the Minut devices that Seam supports, see our [Minut Supported Devices page](https://www.seam.co/manufacturers/minut).
 
 We support the following features:
 

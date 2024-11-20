@@ -102,13 +102,13 @@ print(unmanaged_device)
 
 {% tab title="Ruby" %}
 ```ruby
-require "seamapi"
+require "seam"
 
-seam = Seam::Client.new()
+seam = Seam.new()
 device_id = "aa3958c3-4236-4f71-bd77-3b60f85b3456"
 
 seam.devices.update(device_id: device_id, is_managed: false)
-unmanaged_device = seam.unmanaged_devices.get(device_id)
+unmanaged_device = seam.unmanaged_devices.get(device_id: device_id)
 puts unmanaged_device.inspect
 
 # <Seam::UnmanagedDevice:0x00438
@@ -288,13 +288,13 @@ print(device)
 
 {% tab title="Ruby" %}
 ```ruby
-require "seamapi"
+require "seam"
 
-seam = Seam::Client.new()
+seam = Seam.new()
 device_id = "aa3958c3-4236-4f71-bd77-3b60f85b3456"
 seam.unmanaged_devices.update(device_id: device_id, is_managed: true)
 
-device = seam.devices.get(device_id)
+device = seam.devices.get(device_id: device_id)
 
 puts device.inspect
 # <Seam::Device:0x00438

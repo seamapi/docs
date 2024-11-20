@@ -43,8 +43,6 @@ Production workspaces enable you to connect and control real devices from brands
 4. Disable **Sandbox mode**.
 5. Click **Create Workspace**.
 
-{% @supademo/embed demoId="nXyjx_lwg6VxyiIU4DJkE" url="https://app.supademo.com/demo/nXyjx_lwg6VxyiIU4DJkE" %}
-
 ### Connecting Devices
 
 You can use either of the following two ways to connect devices to a production workspace:
@@ -62,8 +60,6 @@ You can use either of the following two ways to connect devices to a production 
 5. Follow the login instructions to authorize these devices.
 
 Once authorized, the devices associated with this test account appear in the **Devices** table in your production workspace.
-
-{% @supademo/embed demoId="h1y5QMki-7vzlghMzobuf" url="https://app.supademo.com/demo/h1y5QMki-7vzlghMzobuf" %}
 
 #### Connect Devices Using Connect Webviews
 
@@ -113,7 +109,7 @@ You can only connect virtual devices in a sandbox workspace. To connect a real d
 
 ### Connecting Virtual Devices
 
-To connect virtual devices, specify the login credentials for test device accounts in the [Seam Console](./#connect-devices-using-the-seam-console) or in [Connect Webviews](./#connect-devices-using-connect-webviews) within you apps. All manufacturers and devices that Seam supports have one or more sandbox test accounts with pre-seeded devices. For login credentials for all test device accounts, see [Sandbox & Sample Data](../../device-guides/sandbox-and-sample-data/).
+To connect virtual devices, specify the login credentials for test device accounts in the [Seam Console](./#connect-devices-using-the-seam-console) or in [Connect Webviews](./#connect-devices-using-connect-webviews) within you apps. All manufacturers and devices that Seam supports have one or more sandbox test accounts with pre-seeded devices. For login credentials for all test device accounts, see [Sandbox Devices and Systems](../../device-guides/sandbox-and-sample-data/).
 
 ### Interacting with a Virtual Device
 
@@ -130,8 +126,6 @@ You can trigger test events for some virtual devices. This capability is useful 
    * For a virtual noise sensor, click **Trigger** to trigger a noise threshold alert.
 5. Click the **Events** tab for the device.\
    The **Events** tab displays the event.
-
-{% @supademo/embed demoId="NuhwAWiC1CaeGPRZzDENn" url="https://app.supademo.com/demo/NuhwAWiC1CaeGPRZzDENn" %}
 
 ### Testing Your App
 
@@ -197,5 +191,3 @@ You can add teammates to your workspace.
 6. Click **Add to Team**.
 
 The Seam Console sends an email invitation to the specified teammate.
-
-{% @supademo/embed demoid="YLZEbSgX5shkgOyFb4LE9" url="https://app.supademo.com/demo/YLZEbSgX5shkgOyFb4LE9" %}
