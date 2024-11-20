@@ -162,7 +162,7 @@ Confirm the Connect Webview was successful by querying its status:
 {% tabs %}
 {% tab title="Python" %}
 ```python
-updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
+updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
 assert updated_webview.login_successful # true
 ```
@@ -180,7 +180,7 @@ console.log(updatedWebview.login_successful) // true
 
 {% tab title="Ruby" %}
 ```ruby
-updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
+updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
 puts updated_webview.login_successful # true
 ```
@@ -269,8 +269,8 @@ console.log(someLock)
 ```ruby
 some_lock = seam.locks.list.first
 
-puts some_lock.properties['online'] # true
-puts some_lock.properties['locked'] # true
+puts some_lock.properties.online # true
+puts some_lock.properties.locked # true
 
 puts some_lock.inspect # > #   warnings=[] #   errors=[] #   created_at=2023-04-25 14:34:50 UTC #   } #     "image_alt_text"=>"Placeholder Lock Image" #     "image_url"=>"https://connect.getseam.com/assets/images/devices/unknown-lock.png", #     "name"=>"Device 2", #     }, #       "device_name"=>"Device 2" #       "relay_name"=>"firstRelay", #       "device_id"=>"9997", #     "controlbyweb_metadata"=>{ #     "manufacturer"=>"controlbyweb", #     "online"=>true, #     "locked"=>true, #   properties={ #   device_type="controlbyweb_device" #   device_id="4a570d13-9704-46e0-b69c-9fea80d6a7aa" # <Seam::Device:0x00146639380
 ```
@@ -309,7 +309,7 @@ await seam.locks.unlockDoor(someLock.device_id)
 {% tab title="Ruby" %}
 ```ruby
 # trigger the relay
-seam.locks.unlock_door(some_lock)
+seam.locks.unlock_door(device_id: some_lock.device_id)
 ```
 {% endtab %}
 {% endtabs %}

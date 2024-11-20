@@ -192,7 +192,7 @@ assert updated_webview.login_successful # true
 
 {% tab title="Ruby" %}
 ```ruby
-updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
+updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
 puts updated_webview.login_successful # true
 ```

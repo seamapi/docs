@@ -279,7 +279,7 @@ front_door = all_august_locks[0]
 if (front_door.can_remotely_unlock)
   # Perform the unlock operation
   # and return an action attempt.
-  action_attempt = seam.locks.unlock_door(front_door.device_id)
+  action_attempt = seam.locks.unlock_door(device_id: front_door.device_id)
 end
 ```
 

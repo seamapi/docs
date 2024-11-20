@@ -738,8 +738,8 @@ all_four_suites_locks = seam.devices.list(manufacturer: "four_suites")
 front_door = all_four_suites_locks[0]
 
 # Inspect specific properties.
-puts front_door.properties['online'] # true
-puts front_door.properties['locked'] # true
+puts front_door.properties.online # true
+puts front_door.properties.locked # true
 
 # View the entire returned device object.
 puts front_door.inspect
@@ -1074,7 +1074,7 @@ if (frontDoor.can_remotely_unlock) {
 if (front_door.can_remotely_unlock)
   # Perform the unlock operation
   # and return an action attempt.
-  action_attempt = seam.locks.unlock_door(front_door.device_id)
+  action_attempt = seam.locks.unlock_door(device_id: front_door.device_id)
 end
 ```
 
@@ -1288,7 +1288,7 @@ updated_front_door = seam.devices.get(device_id: front_door.device_id)
 
 # Inspect the locked property to confirm
 # that the unlock operation was successful.
-puts updated_front_door.properties['locked'] # false
+puts updated_front_door.properties.locked # false
 ```
 
 **Output:**

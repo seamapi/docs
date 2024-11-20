@@ -72,7 +72,7 @@ ID of device to be unlocked
 {% tabs %}
 {% tab title="Ruby" %}
 ```ruby
-seam.locks.unlock_door("123e4567-e89b-12d3-a456-426614174000")
+seam.locks.unlock_door(device_id: "123e4567-e89b-12d3-a456-426614174000")
 
 # <Seam::ActionAttempt:0x008f6b0                                                         
 #   status="pending"                                                                     

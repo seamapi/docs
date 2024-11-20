@@ -105,7 +105,7 @@ await seam.actionAttempts.get(
 
 {% tab title="Ruby" %}
 ```ruby
-seam.action_attempts.get("f7d02670-128a-49f1-b615-b44a2808e5c4")
+seam.action_attempts.get(action_attempt_id: "f7d02670-128a-49f1-b615-b44a2808e5c4")
 ```
 {% endtab %}
 {% endtabs %}

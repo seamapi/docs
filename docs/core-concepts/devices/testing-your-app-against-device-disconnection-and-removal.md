@@ -129,7 +129,7 @@ Coming soon!
 
 ```ruby
 # Get the device.
-device = client.devices.get("11111111-1111-1111-1111-444444444444")
+device = client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
 
 # Confirm that Seam supports simulated disconnection for the device.
 if (device.can_simulate_disconnection)
@@ -366,7 +366,7 @@ Coming soon!
 
 ```ruby
 # Get the device.
-device = client.devices.get("11111111-1111-1111-1111-444444444444")
+device = client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
 
 # Confirm that Seam supports simulated connection for the device.
 if (device.can_simulate_connection)
@@ -603,7 +603,7 @@ Coming soon!
 
 ```ruby
 # Get the device.
-device = client.devices.get("11111111-1111-1111-1111-444444444444")
+device = client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
 
 # Confirm that Seam supports simulated removal for the device.
 if (device.can_simulate_removal)
