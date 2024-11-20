@@ -16,8 +16,6 @@ When you first sign up for Seam, the [Seam Console](core-concepts/seam-console/)
 4. Disable **Sandbox mode**.
 5. Click **Create Workspace**.
 
-{% @supademo/embed demoId="nXyjx_lwg6VxyiIU4DJkE" url="https://app.supademo.com/demo/nXyjx_lwg6VxyiIU4DJkE" %}
-
 ## Create a Production API Key
 
 Once you have switched to your production (non-sandbox) workspace (for example, "My Production Workspace"), you must create a production API key.
@@ -31,14 +29,9 @@ Once you have switched to your production (non-sandbox) workspace (for example, 
 Production API keys do not include the `test` token, while API keys for sandbox workspaces do include this `test` token. In addition, if you accidentally commit your API key to a GitHub repo, the `seam_` prefix is detected, and you are notified.
 {% endhint %}
 
-{% @supademo/embed demoId="DChwTLKoiqFNyJ3PezXaW" url="https://app.supademo.com/demo/DChwTLKoiqFNyJ3PezXaW" %}
-
 ## Customize Your Connect Webviews
 
 You can customize your [Connect Webviews](core-concepts/connect-webviews/). Seam Connect Webviews are fully-embedded client-side components that you add to your app if you want to enable your users to import their own devices using your app. Your users interact with your Connect Webviews to link their device accounts with your app. That is, Connect Webviews walk your users through the process of logging in to their device accounts.
 
 1. In the left navigation pane of the [Seam Console](https://console.seam.co/), click **Webviews**.
 2. Add a logo, choose a logo shape, update the base button color, or change the inviter name that your Connect Webviews display to your users.
-
-{% @supademo/embed demoId="1yFG_z1w2nhjXw074goGF" url="https://app.supademo.com/demo/1yFG_z1w2nhjXw074goGF" %}
-

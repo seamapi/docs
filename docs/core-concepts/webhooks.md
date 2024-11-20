@@ -16,8 +16,6 @@ To configure webhook endpoints:
 4. Click **Create**.
 5. Copy your webhook secret and store it somewhere secure. You use this webhook secret to validate the payloads that you receive on your webhook.
 
-{% @supademo/embed demoId="o9OPTdLxdQi_jt2d5htNw" url="https://app.supademo.com/demo/o9OPTdLxdQi_jt2d5htNw" %}
-
 You can add webhooks through the Seam Console or programmatically. Let's start by looking at how to add and test a webhook using the Seam Console.
 
 ![Click + Add Webhook to create a webhook for your device events.](<../.gitbook/assets/image (22).png>)

@@ -43,8 +43,6 @@ Production workspaces enable you to connect and control real devices from brands
 4. Disable **Sandbox mode**.
 5. Click **Create Workspace**.
 
-{% @supademo/embed demoId="nXyjx_lwg6VxyiIU4DJkE" url="https://app.supademo.com/demo/nXyjx_lwg6VxyiIU4DJkE" %}
-
 ### Connecting Devices
 
 You can use either of the following two ways to connect devices to a production workspace:
@@ -62,8 +60,6 @@ You can use either of the following two ways to connect devices to a production 
 5. Follow the login instructions to authorize these devices.
 
 Once authorized, the devices associated with this test account appear in the **Devices** table in your production workspace.
-
-{% @supademo/embed demoId="h1y5QMki-7vzlghMzobuf" url="https://app.supademo.com/demo/h1y5QMki-7vzlghMzobuf" %}
 
 #### Connect Devices Using Connect Webviews
 
@@ -131,8 +127,6 @@ You can trigger test events for some virtual devices. This capability is useful 
 5. Click the **Events** tab for the device.\
    The **Events** tab displays the event.
 
-{% @supademo/embed demoId="NuhwAWiC1CaeGPRZzDENn" url="https://app.supademo.com/demo/NuhwAWiC1CaeGPRZzDENn" %}
-
 ### Testing Your App
 
 To help you test your app against events—like device disconnection or removal—that are difficult to orchestrate in a QA environment using real devices, Seam provides a suite of `simulate` endpoints that you can use in a [sandbox workspace](./#sandbox-workspaces). See [Testing Your App Against Device Disconnection and Removal](../devices/testing-your-app-against-device-disconnection-and-removal.md).
@@ -197,5 +191,3 @@ You can add teammates to your workspace.
 6. Click **Add to Team**.
 
 The Seam Console sends an email invitation to the specified teammate.
-
-{% @supademo/embed demoId="YLZEbSgX5shkgOyFb4LE9" url="https://app.supademo.com/demo/YLZEbSgX5shkgOyFb4LE9" %}
