@@ -20,13 +20,6 @@ The following table details the requirements for compatibility with this Seam in
 
 <table><thead><tr><th width="301.3333333333333">Product Models</th><th>Compatibility</th></tr></thead><tbody><tr><td>Schlage <a href="https://www.schlage.com/en/home/products/products-smart-locks/schlage-encode/wifi-smart-lock-listing.html">Encode</a> and <a href="https://www.schlage.com/en/home/products/products-smart-locks/schlage-encode-plus/homekit-smart-lock-listing.html">Encode Plus</a> Smart Wi-Fi Deadbolt</td><td>Compatible only with the <a href="https://www.schlage.com/en/home/smart-locks/schlage-app.html">Schlage Home App</a>.</td></tr><tr><td>Schlage <a href="https://www.schlage.com/en/home/products/products-smart-locks/schlage-connect/schlage-connect-listing.html">Connect</a> Smart Deadbolt</td><td>Compatible only with a compatible Z-Wave hub. Seam supports integration with the SmartThings hub.</td></tr><tr><td>Schlage Connected Keypad</td><td>Compatible only with a compatible Z-Wave hub. Seam supports integration with the SmartThings hub.</td></tr><tr><td>Schlage <a href="https://www.schlage.com/en/home/products/products-smart-locks/schlage-sense-smart-deadbolt/schlage-sense-smart-deadbolt-listing.html">Sense</a> lock</td><td>Contact <a href="mailto:support@seam.co">Seam Support</a>.</td></tr></tbody></table>
 
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["Schlage"]'
-/>" %}
-
 We support the following features:
 
 * [Triggering web lock and unlock actions](../../products/smart-locks/lock-and-unlock.md)

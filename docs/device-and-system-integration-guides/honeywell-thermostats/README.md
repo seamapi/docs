@@ -14,13 +14,6 @@ Honeywell Resideo produces Wi-Fi smart thermostats to manage energy costs while 
 
 This integration supports [Honeywell Resideo Wi-Fi-enabled thermostats](https://www.resideo.com/us/en/products/air/thermostats/).
 
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["Honeywell"]'
-/>" %}
-
 We support the following features:
 
 * [Configuring current thermostat settings](../../products/thermostats/configure-current-climate-settings.md)
