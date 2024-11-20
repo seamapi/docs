@@ -14,6 +14,8 @@ description: Guide for using 2N® intercom systems with Seam
 
 This integration supports all [2N IP intercoms](https://wiki.2n.com/is/en).
 
+For detailed information about the 2N devices that Seam supports, see our [2N Supported Devices page](https://www.seam.co/manufacturers/2n).
+
 We support the following features:
 
 * [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)

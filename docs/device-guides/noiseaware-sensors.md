@@ -14,6 +14,8 @@ Seam integrates with NoiseAware sensors to provide [privacy-safe noise monitorin
 
 This integration supports all [NoiseAware sensors](https://noiseaware.com/features/).
 
+For detailed information about the NoiseAware devices that Seam supports, see our [NoiseAware Supported Devices page](https://www.seam.co/manufacturers/noiseaware).
+
 We support the following features:
 
 * [Configuring noise threshold settings](../products/noise-sensors/configure-noise-threshold-settings.md)\

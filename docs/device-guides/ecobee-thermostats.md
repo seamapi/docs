@@ -14,6 +14,8 @@ ecobee smart thermostats are designed to lower energy costs. In addition to ener
 
 This integration supports all [ecobee thermostats](https://www.ecobee.com/en-us/smart-thermostats/).
 
+For detailed information about the ecobee devices that Seam supports, see our [ecobee Supported Devices page](https://www.seam.co/manufacturers/ecobee).
+
 We support the following features:
 
 * [Configuring current thermostat settings](../products/thermostats/configure-current-climate-settings.md)

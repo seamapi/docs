@@ -22,6 +22,8 @@ This integration supports the [Wyze Lock](https://www.wyze.com/products/wyze-loc
 Seam does not integrate with the [Wyze Lock Bolt](https://www.wyze.com/products/wyze-lock-bolt).
 {% endhint %}
 
+For detailed information about the Wyze devices that Seam supports, see our [Wyze Supported Devices page](https://www.seam.co/manufacturers/wyze).
+
 We support the following features:
 
 * [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)

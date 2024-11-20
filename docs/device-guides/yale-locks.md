@@ -28,6 +28,8 @@ Seam does not currently support integration with the Yale Smart Living app (for 
 
 When purchasing a Yale Lock or a network module separately, always verify the specific compatibility needs for your desired setup.
 
+For detailed information about the Yale devices that Seam supports, see our [Yale Supported Devices page](https://www.seam.co/manufacturers/yale).
+
 We support the following features:
 
 * [Triggering web unlock actions](../api-clients/locks/unlock_door.md)

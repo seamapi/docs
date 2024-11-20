@@ -14,6 +14,8 @@ description: Guide for using 4SUITES locks with Seam
 
 This integration supports all [4SUITES locks, lock upgrades, and readers](https://www.4suiteshq.com/products/).
 
+For detailed information about the 4SUITES devices that Seam supports, see our [4SUITES Supported Devices page](https://www.seam.co/manufacturers/4suites).
+
 We support the following features:
 
 * [Triggering web lock and unlock actions](../../products/smart-locks/lock-and-unlock.md)

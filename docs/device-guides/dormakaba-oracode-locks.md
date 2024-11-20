@@ -18,6 +18,8 @@ You can use a variety of dormakaba Oracode smart locks with the Oracode Live pla
 
 This integration supports all locks connected using the [Oracode Live](https://www.dormakaba.com/us-en/offering/products/vacation-short-term-rental-solutions/access-control-management/oracode-live--ka\_128503) platform. This integration supports [offline access code](../device-and-system-integration-guides/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes.md) provisioning for applicable dormakaba Oracode devices.
 
+For detailed information about the dormakaba Oracode devices that Seam supports, see our [dormakaba Supported Devices page](https://www.seam.co/manufacturers/dormakaba).
+
 We support the following features:
 
 * [Programming offline access codes](../products/smart-locks/access-codes/offline-access-codes.md)

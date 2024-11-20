@@ -14,6 +14,8 @@ Kwikset produces smart locks suitable for residential homes, rental properties, 
 
 This integration supports the Kwikset [Halo](https://www.kwikset.com/halo), [Halo Touch](https://www.kwikset.com/halo-touch), and [SmartCode](https://www.kwikset.com/products/electronic/electronic-smart-locks) lines of smart locks.
 
+For detailed information about the Kwikset devices that Seam supports, see our [Kwikset Supported Devices page](https://www.seam.co/manufacturers/kwikset).
+
 We support the following features:
 
 * [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)

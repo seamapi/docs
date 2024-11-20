@@ -18,6 +18,8 @@ Seam supports two integrations for Salto KS. We recommend using the [Salto KS ac
 
 This integration works any devices connected via their [Salto KS platform](https://saltoks.com/).
 
+For detailed information about the Salto devices that Seam supports, see our [Salto Supported Devices page](https://www.seam.co/manufacturers/salto).
+
 We support the following features:
 
 * [Triggering web unlock actions](../api-clients/locks/unlock\_door.md)

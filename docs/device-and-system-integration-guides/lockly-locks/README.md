@@ -16,6 +16,8 @@ Seam integrates with Lockly smart locks. With a focus on security, Lockly smart 
 
 This integration supports [all Lockly smart locks](https://lockly.com/collections/door-lock). Note that you must also install the [Secure Link Wi-Fi Hub](https://lockly.com/products/secure-link-wifi-hub?bvstate=pg:4/ct:r\&g\_campaign\_id=16972321320\&g\_adgroup\_id=\&utm\_source=google\&utm\_medium=pmax\&utm\_campaign=pfmx-20230201MCV\&gclid=Cj0KCQjwvL-oBhCxARIsAHkOiu0hV67HkcUG7buEnk3odH5k8\_I0JqFMU0r5V9Pp7gdGWgBYUQlCIr4aAq8jEALw\_wcB) to connect these locks to the internet.
 
+For detailed information about the Lockly devices that Seam supports, see our [Lockly Supported Devices page](https://www.seam.co/manufacturers/lockly).
+
 We support the following features:
 
 * [Programming online access codes](../../products/smart-locks/access-codes/) on locks that have a keypad

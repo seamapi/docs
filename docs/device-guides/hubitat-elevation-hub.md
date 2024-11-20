@@ -12,6 +12,8 @@ This integration uses [Hubitat’s Maker API](https://docs2.hubitat.com/en/apps/
 
 This integration supports devices connected to a Hubitat Hub.
 
+For detailed information about the Hubitat-connected devices that Seam supports, see our [Hubitat Supported Devices page](https://www.seam.co/manufacturers/hubitat).
+
 We support the following features:
 
 * [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md) for devices with this capability

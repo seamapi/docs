@@ -14,6 +14,8 @@ Seam integrates with the Minut sensor to provide [noise monitoring](https://supp
 
 This integration supports the [Minut sensor](https://www.minut.com/product/features).
 
+For detailed information about the Minut devices that Seam supports, see our [Minut Supported Devices page](https://www.seam.co/manufacturers/minut).
+
 We support the following features:
 
 * [Configuring noise threshold settings](../products/noise-sensors/configure-noise-threshold-settings.md)\

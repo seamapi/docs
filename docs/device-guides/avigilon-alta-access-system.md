@@ -16,6 +16,8 @@ This integration supports [all readers, controllers, and wireless locks connecte
 
 <figure><img src="../.gitbook/assets/avigilon-alta-acs-devices.png" alt="Avigilon Alta access system devices"><figcaption></figcaption></figure>
 
+For detailed information about the Avigilon Alta-connected devices that Seam supports, see our [Avigilon Alta Supported Devices page](https://www.seam.co/manufacturers/avigilon-alta).
+
 We support the following features:
 
 * [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)
