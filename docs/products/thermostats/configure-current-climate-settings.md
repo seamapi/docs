@@ -290,7 +290,7 @@ if  $(jq -r '.device.can_hvac_heat' <<< ${thermostat}); then \
     -H "Authorization: Bearer ${SEAM_API_KEY}" \
     -H 'Content-Type: application/json' \
     -d "{
-      \"device_id\": \"$(jq -r '.device.device_id' <<< ${device})\",
+      \"device_id\": \"$(jq -r '.device.device_id' <<< ${thermostat})\",
       \"heating_set_point_celsius\": 20
   }";
 fi
@@ -498,7 +498,7 @@ if  $(jq -r '.device.can_hvac_cool' <<< ${thermostat}); then \
     -H "Authorization: Bearer ${SEAM_API_KEY}" \
     -H 'Content-Type: application/json' \
     -d "{
-      \"device_id\": \"$(jq -r '.device.device_id' <<< ${device})\",
+      \"device_id\": \"$(jq -r '.device.device_id' <<< ${thermostat})\",
       \"cooling_set_point_celsius\": 25
   }";
 fi
@@ -710,7 +710,7 @@ if  $(jq -r '.device.can_hvac_heat_cool' <<< ${thermostat}); then \
     -H "Authorization: Bearer ${SEAM_API_KEY}" \
     -H 'Content-Type: application/json' \
     -d "{
-      \"device_id\": \"$(jq -r '.device.device_id' <<< ${device})\",
+      \"device_id\": \"$(jq -r '.device.device_id' <<< ${thermostat})\",
       \"heating_set_point_celsius\": 20,
       \"cooling_set_point_celsius\": 25
   }";
@@ -920,7 +920,7 @@ if  $(jq -r '.device.can_turn_off_hvac' <<< ${thermostat}); then \
     -H "Authorization: Bearer ${SEAM_API_KEY}" \
     -H 'Content-Type: application/json' \
     -d "{
-      \"device_id\": \"$(jq -r '.device.device_id' <<< ${device})\"
+      \"device_id\": \"$(jq -r '.device.device_id' <<< ${thermostat})\"
   }";
 fi
 ```
