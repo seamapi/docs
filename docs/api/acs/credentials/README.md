@@ -100,6 +100,8 @@ Date and time at which the credential validity ends, in [ISO 8601](https://www.i
 
 Format: `List`
 
+Errors associated with the `acs_credential`.
+
 
 ---
 
@@ -230,6 +232,8 @@ Visionline-specific metadata for the credential.
 ### `warnings`
 
 Format: `List`
+
+Warnings associated with the `acs_credential`.
 
 
 ---

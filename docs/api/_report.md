@@ -32,6 +32,7 @@ These items are intentionally undocumented.
 - `/acs/encoders/scan_credential`: Reading a card is currently unimplemented.
 - `/acs/users/unmanaged/get`: No unmanaged users are currently implemented.
 - `/acs/users/unmanaged/list`: No unmanaged users are currently implemented.
+- `/devices/delete`: Deleting a device is no longer supported and will be removed.
 - `/thermostats/get`: Will be removed.
 
 ### Endpoint parameters
@@ -96,11 +97,9 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_access_group.is_managed`
 - `acs_credential.acs_credential_pool_id`
 - `acs_credential.card_number`
-- `acs_credential.errors`
 - `acs_credential.is_issued`
 - `acs_credential.is_managed`
 - `acs_credential.issued_at`
-- `acs_credential.warnings`
 - `acs_credential_pool.acs_credential_pool_id`
 - `acs_credential_pool.acs_system_id`
 - `acs_credential_pool.created_at`
