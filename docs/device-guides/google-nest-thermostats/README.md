@@ -32,19 +32,25 @@ To create a [Connect Webview](../../core-concepts/connect-webviews/) that enable
 
 ## Setup Instructions
 
-To control Google Nest devices using Seam, you must first create a [Google Device Access](https://developers.google.com/nest/device-access) project—including an associated OAuth client—and provide information about this project to Seam through the [Seam Console](../../core-concepts/seam-console/).
+This integration requires several steps, including both Google Nest and Seam.
+
+### Create a Google Device Access Project
+
+First, create a [Google Device Access](https://developers.google.com/nest/device-access) project—including an associated OAuth client—and provide information about this project to Seam through the [Seam Console](../../core-concepts/seam-console/).
+
+### Apply for Google Commercial Development
+
+We recommend that you apply for [Google Commercial Development](https://developers.google.com/nest/device-access/project/apply) for your Nest devices. For detailed instructions, see [Obtain Google Nest Device Access and Commercial Development](obtain-google-nest-device-access-and-commercial-development.md).
 
 {% hint style="info" %}
-The initial Google Device Access Sandbox environment includes [account and rate limits](https://developers.google.com/nest/device-access/project/limits). Consequently, we recommend that you apply for [Google Commercial Development](https://developers.google.com/nest/device-access/project/apply) for your Nest devices.
+Note the restrictive [rate limits](https://developers.google.com/nest/device-access/project/limits) in the Google Device Access Sandbox environment while testing the integration with customers.
 {% endhint %}
 
-For detailed instructions, see [Obtain Google Nest Device Access and Commercial Development](obtain-google-nest-device-access-and-commercial-development.md).
-
-{% hint style="info" %}
 The period of time that Google takes to approve Commercial Development may range from a week to more than a month. For more information, see [Apply for Commercial Development](https://developers.google.com/nest/device-access/project/apply) on the Google Device Access site.
 
 Further, once Google approves your Commercial Development application, you can gradually scale the number of managed devices as you proceed through the Google stages to reach [Google certification for Commercial Production](https://developers.google.com/nest/device-access/project/apply#certification\_for\_commercial\_production).
-{% endhint %}
+
+### Connect Your Google Nest Devices to Seam
 
 Once you have set up Google Device Access, prompt the owners of these Google Nest devices (that is, your end users) to perform the following steps:
 
