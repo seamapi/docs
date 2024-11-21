@@ -292,7 +292,7 @@ if  $(jq -r '.device.can_hvac_heat' <<< ${thermostat}); then \
     -d "{
       \"device_id\": \"$(jq -r '.device.device_id' <<< ${device})\",
       \"heating_set_point_celsius\": 20
-  }';
+  }";
 fi
 ```
 
@@ -500,7 +500,7 @@ if  $(jq -r '.device.can_hvac_cool' <<< ${thermostat}); then \
     -d "{
       \"device_id\": \"$(jq -r '.device.device_id' <<< ${device})\",
       \"cooling_set_point_celsius\": 25
-  }';
+  }";
 fi
 ```
 
@@ -713,7 +713,7 @@ if  $(jq -r '.device.can_hvac_heat_cool' <<< ${thermostat}); then \
       \"device_id\": \"$(jq -r '.device.device_id' <<< ${device})\",
       \"heating_set_point_celsius\": 20,
       \"cooling_set_point_celsius\": 25
-  }';
+  }";
 fi
 ```
 
@@ -921,7 +921,7 @@ if  $(jq -r '.device.can_turn_off_hvac' <<< ${thermostat}); then \
     -H 'Content-Type: application/json' \
     -d "{
       \"device_id\": \"$(jq -r '.device.device_id' <<< ${device})\"
-  }';
+  }";
 fi
 ```
 
