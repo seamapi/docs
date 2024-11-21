@@ -316,7 +316,7 @@ fi
 **Request:**
 
 ```javascript
-# Get the thermostat.
+// Get the thermostat.
 const thermostat = await seam.devices.get({
   device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
 });
@@ -524,7 +524,7 @@ fi
 **Request:**
 
 ```javascript
-# Get the thermostat.
+// Get the thermostat.
 const thermostat = await seam.devices.get({
   device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
 });
@@ -737,7 +737,7 @@ fi
 **Request:**
 
 ```javascript
-# Get the thermostat.
+// Get the thermostat.
 const thermostat = await seam.devices.get({
   device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
 });
@@ -945,7 +945,7 @@ fi
 **Request:**
 
 ```javascript
-# Get the thermostat.
+// Get the thermostat.
 const thermostat = await seam.devices.get({
   device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
 });
