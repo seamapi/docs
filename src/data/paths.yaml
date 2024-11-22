@@ -2,12 +2,6 @@
 /acs:
   title: Access Control Systems
   description: Systems for managing and monitoring access to physical spaces
-  resources:
-    - acs_system
-    - acs_user
-    - acs_entrance
-    - acs_access_group
-    - acs_credential
 
 /acs/systems:
   title: Systems

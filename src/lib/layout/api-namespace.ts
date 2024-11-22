@@ -31,7 +31,10 @@ export function setNamespaceLayoutContext(
 
     file.title = namespaceMetadata.title
     file.description = namespaceMetadata.description ?? ''
-    file.resources = namespaceMetadata.resources.map((resourceName) => {
+    const namespaceResources = Object.entries(pathMetadata)
+      .filter(([p]) => p.startsWith(path))
+      .flatMap(([_, metadata]) => metadata.resources)
+    file.resources = namespaceResources.map((resourceName) => {
       const resource = blueprint.resources[resourceName]
 
       if (resource == null) {
