@@ -1,8 +1,9 @@
-import type { Blueprint } from '@seamapi/blueprint'
+import type { Blueprint, Route } from '@seamapi/blueprint'
 import type Metalsmith from 'metalsmith'
 
 import {
   type ApiEndpointLayoutContext,
+  type ApiNamespaceLayoutContext,
   type ApiRouteLayoutContext,
   setApiRouteLayoutContext,
   setEndpointLayoutContext,
@@ -15,7 +16,8 @@ const sdks: Array<'javascript'> = []
 type Metadata = Partial<Pick<Blueprint, 'routes' | 'resources'>>
 
 type File = ApiEndpointLayoutContext &
-  ApiRouteLayoutContext & { layout: string }
+  ApiRouteLayoutContext &
+  ApiNamespaceLayoutContext & { layout: string }
 
 export const reference = (
   files: Metalsmith.Files,
@@ -36,7 +38,20 @@ export const reference = (
     ...metadata,
   }
 
-  setNamespaceLayoutContext(files, blueprint, pathMetadata)
+  const namespacePaths = getNamespacePaths(blueprint.routes)
+  for (const path of namespacePaths) {
+    const namespaceMetadata = pathMetadata[path]
+    if (namespaceMetadata == null) continue
+
+    const k = `api${path}/README.md`
+    files[k] = {
+      contents: Buffer.from('\n'),
+    }
+    const file = files[k] as unknown as File
+    file.layout = 'api-namespace.hbs'
+
+    setNamespaceLayoutContext(file, path, blueprint.resources, pathMetadata)
+  }
 
   for (const route of blueprint.routes ?? []) {
     if (route.isUndocumented) continue
@@ -79,4 +94,14 @@ export const reference = (
       }
     }
   }
+}
+
+function getNamespacePaths(routes: Route[]): string[] {
+  return Array.from(
+    new Set(
+      routes.flatMap((route) =>
+        route.namespace != null ? [route.namespace.path] : [],
+      ),
+    ),
+  )
 }
