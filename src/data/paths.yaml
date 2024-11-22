@@ -9,7 +9,7 @@
     - acs_system
 
 /acs/users:
-  title: Users
+  title: ACS Users
   resources:
     - acs_user
 
