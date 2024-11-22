@@ -6,6 +6,7 @@ import {
   type ApiRouteLayoutContext,
   setApiRouteLayoutContext,
   setEndpointLayoutContext,
+  setNamespaceLayoutContext,
 } from './layout/index.js'
 import { PathMetadataSchema } from './path-metadata.js'
 
@@ -34,6 +35,8 @@ export const reference = (
     resources: {},
     ...metadata,
   }
+
+  setNamespaceLayoutContext(files, blueprint, pathMetadata)
 
   for (const route of blueprint.routes ?? []) {
     if (route.isUndocumented) continue
