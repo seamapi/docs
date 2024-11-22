@@ -4,8 +4,6 @@ description: Systems for managing and monitoring access to physical spaces
 
 # Access Control Systems
 
-In the Seam platform and API, access control systems namespace consists of the following components:
-
 ## Core Components
 
 ### 1. Acs System
