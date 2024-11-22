@@ -25,6 +25,7 @@ These items are intentionally undocumented.
 - `/acs/access_groups/unmanaged/list`: No unmanaged access groups are currently implemented.
 - `/acs/credential_pools/list`: Replaced by enrollment automations.
 - `/acs/credential_provisioning_automations/launch`: Replaced by enrollment automations.
+- `/acs/credentials/create_offline_code`: Unreleased.
 - `/acs/credentials/unmanaged/get`: No unmanaged credentials are currently implemented.
 - `/acs/credentials/unmanaged/list`: No unmanaged credentials are currently implemented.
 - `/acs/encoders/encode_credential`: Encoding a card is currently unimplemented.
@@ -769,6 +770,7 @@ These items are deprecated.
 - `/access_codes/unmanaged/update`
 - `/acs/credential_pools/list`
 - `/acs/credential_provisioning_automations/launch`
+- `/acs/credentials/create_offline_code`
 - `/acs/credentials/unmanaged/get`
 - `/acs/credentials/unmanaged/list`
 - `/acs/encoders/encode_credential`
@@ -826,6 +828,7 @@ These items are deprecated.
 - `/phones/list`
 - `/phones/simulate/create_sandbox_phone`
 - `/thermostats/get`
+- `/thermostats/set_hvac_mode`
 - `/user_identities/update`
 - `/webhooks/create`
 - `/webhooks/delete`

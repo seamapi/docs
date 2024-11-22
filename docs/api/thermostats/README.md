@@ -35,6 +35,9 @@ Sets a specified [climate preset](../../capability-guides/thermostats/creating-a
 ### [`/thermostats/set_fan_mode`](./set_fan_mode.md)
 
 Sets the [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+### [`/thermostats/set_hvac_mode`](./set_hvac_mode.md)
+
+Sets the [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 ### [`/thermostats/set_temperature_threshold`](./set_temperature_threshold.md)
 
 Sets a [temperature threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) for a specified thermostat. Seam emits a `thermostat.temperature_threshold_exceeded` event and adds a warning on a thermostat if it reports a temperature outside the threshold range.
