@@ -204,7 +204,7 @@ function processRoute(route: Route, report: Report, metadata: Metadata): void {
     'pathMetadata' in metadata
       ? PathMetadataSchema.parse(metadata.pathMetadata)
       : {}
-  if (pathMetadata[route.path]?.title == null) {
+  if (pathMetadata[route.path]?.title == null && !route.isUndocumented) {
     report.noTitle.routes.push({ name: route.path })
   }
 
@@ -269,7 +269,7 @@ function processEndpoint(endpoint: Endpoint, report: Report): void {
     report.endpointsWithoutCodeSamples.push(endpoint.path)
   }
 
-  if (endpoint.title.length === 0) {
+  if (endpoint.title.length === 0 && !endpoint.isUndocumented) {
     report.noTitle.endpoints.push({ name: endpoint.path })
   }
 
