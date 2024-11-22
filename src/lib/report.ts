@@ -10,6 +10,8 @@ import type {
 import { openapi } from '@seamapi/types/connect'
 import type Metalsmith from 'metalsmith'
 
+import { PathMetadataSchema } from './path-metadata.js'
+
 const defaultDeprecatedMessage = 'No deprecated message provided'
 const defaultDraftMessage = 'No draft message provided'
 const defaultUndocumentedMessage = 'No undocumented message provided'
@@ -21,6 +23,7 @@ interface Report {
   deprecated: ReportSection
   extraResponseKeys: MissingResponseKeyReport[]
   endpointsWithoutCodeSamples: string[]
+  noTitle: Pick<ReportSection, 'namespaces'>
 }
 
 interface ReportSection {
@@ -77,6 +80,9 @@ function generateReport(metadata: Metadata): Report {
     deprecated: createEmptyReportSection(),
     extraResponseKeys: [],
     endpointsWithoutCodeSamples: [],
+    noTitle: {
+      namespaces: [],
+    },
   }
 
   const resources = metadata.resources ?? {}
@@ -86,7 +92,7 @@ function generateReport(metadata: Metadata): Report {
 
   const routes = metadata.routes ?? []
   for (const route of routes) {
-    processRoute(route, report)
+    processRoute(route, report, metadata)
   }
 
   return report
@@ -171,7 +177,7 @@ function processProperty(
   }
 }
 
-function processRoute(route: Route, report: Report): void {
+function processRoute(route: Route, report: Report, metadata: Metadata): void {
   if (route.isUndocumented) {
     report.undocumented.routes.push({
       name: route.path,
@@ -193,6 +199,19 @@ function processRoute(route: Route, report: Report): void {
     })
   }
 
+  const pathMetadata =
+    'pathMetadata' in metadata
+      ? PathMetadataSchema.parse(metadata.pathMetadata)
+      : {}
+  const namespace = route.namespace
+  if (
+    namespace != null &&
+    pathMetadata[namespace.path]?.title == null &&
+    !namespace.isUndocumented
+  ) {
+    addUntitledNamespaceToReport(namespace.path, report)
+  }
+
   if (route.namespace != null) {
     processNamespace(route.namespace, report)
   }
@@ -202,6 +221,14 @@ function processRoute(route: Route, report: Report): void {
   for (const endpoint of route.endpoints) {
     processEndpoint(endpoint, report)
   }
+}
+
+const addUntitledNamespaceToReport = (
+  namespace: string,
+  report: Report,
+): void => {
+  if (report.noTitle.namespaces.some((n) => n.name === namespace)) return
+  report.noTitle.namespaces.push({ name: namespace })
 }
 
 function processNamespace(namespace: Namespace, report: Report): void {

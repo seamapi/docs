@@ -1,4 +1,16 @@
 # Documentation Report
+{{#if (or noTitle.namespaces.length )}}
+
+## Untitled
+{{#if noTitle.namespaces.length }}
+
+### Namespaces
+
+{{#each noTitle.namespaces}}
+- `{{name}}`
+{{/each}}
+{{/if}}
+{{/if}}
 {{#if (or undocumented.routes.length undocumented.resources.length undocumented.resourceProperties.length undocumented.namespaces.length undocumented.endpoints.length undocumented.parameters.length)}}
 
 ## Undocumented
