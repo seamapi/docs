@@ -1,0 +1,16 @@
+---
+description: {{description}}
+---
+
+# {{title}}
+
+In the Seam platform and API, {{toNoCase title}} namespace consists of the following components:
+
+## Core Components
+
+{{#each resources}}
+### {{add @index 1}}. {{toCapitalCase name}}
+- **API Object:** `{{name}}`
+- **Description:** {{description}}
+
+{{/each}}
