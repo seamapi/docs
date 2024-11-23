@@ -40,7 +40,7 @@ export function setApiRouteLayoutContext(
   }
   file.title = metadata.title
   file.path = route.path
-  file.endpoints = route.endpoints.map(({ path, name, description }) => ({
+  file.endpoints = route.endpoints.filter(({ isUndocumented }) => !isUndocumented).map(({ path, name, description }) => ({
     path,
     name,
     description: getFirstParagraph(description),
