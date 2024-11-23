@@ -14,9 +14,6 @@ Creates a [climate preset](../../capability-guides/thermostats/creating-and-mana
 ### [`/thermostats/delete_climate_preset`](./delete_climate_preset.md)
 
 Deletes a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
-### [`/thermostats/get`](./get.md)
-
-Returns a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 ### [`/thermostats/heat`](./heat.md)
 
 Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to [heat mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).

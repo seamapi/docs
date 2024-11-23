@@ -255,9 +255,6 @@ Assigns a specified [credential](../../../capability-guides/access-systems/manag
 ### [`/acs/credentials/create`](./create.md)
 
 Creates a new [credential](../../../capability-guides/access-systems/managing-credentials.md) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-### [`/acs/credentials/create_offline_code`](./create_offline_code.md)
-
-Creates a new offline [credential](../../../capability-guides/access-systems/managing-credentials.md) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 ### [`/acs/credentials/delete`](./delete.md)
 
 Deletes a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
