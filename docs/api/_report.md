@@ -59,7 +59,6 @@
 - `/connected_accounts/get`
 - `/connected_accounts/list`
 - `/connected_accounts/update`
-- `/devices/delete`
 - `/devices/get`
 - `/devices/list_device_providers`
 - `/devices/update`
