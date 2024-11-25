@@ -59,7 +59,6 @@
 - `/connected_accounts/get`
 - `/connected_accounts/list`
 - `/connected_accounts/update`
-- `/devices/delete`
 - `/devices/get`
 - `/devices/list_device_providers`
 - `/devices/update`
@@ -376,7 +375,6 @@ Items that are intentionally undocumented are not included in this section.
 - `/access_codes/generate_code`
 - `/access_codes/get`
 - `/access_codes/list`
-- `/access_codes/pull_backup_access_code`
 - `/access_codes/update`
 - `/access_codes/update_multiple`
 - `/access_codes/simulate/create_unmanaged_access_code`
@@ -834,6 +832,8 @@ These items are deprecated.
 
 - `/access_codes/create`
     - `action_attempt`
+- `/access_codes/pull_backup_access_code`
+    - `backup_access_code`
 - `/events/get`
     - `message`
 - `/locks/get`
