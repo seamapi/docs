@@ -8,7 +8,7 @@ You create a set of climate presets for each thermostat, customized for your—a
 
 Each climate preset can contain the following properties, depending on the [capabilities](../../../products/thermostats/#thermostat-capabilities) of the thermostat:
 
-<table><thead><tr><th width="339">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>climate_preset_key</code></td><td>(Required) Key to identify the climate preset.</td></tr><tr><td><code>name</code></td><td>(Optional) User-friendly name to identify the climate preset.</td></tr><tr><td><code>fan_mode_setting</code></td><td>Desired fan mode setting, such as <code>on</code>, <code>auto</code>, or <code>circulate</code>.</td></tr><tr><td><code>hvac_mode_setting</code></td><td>Desired <a href="../understanding-thermostat-concepts/hvac-mode.md">HVAC mode</a> setting, such as <code>heat</code>, <code>cool</code>, <code>heat_cool</code>, or <code>off</code>.</td></tr><tr><td><code>cooling_set_point_celsius</code></td><td>Temperature to which the thermostat should cool (in °C). See also <a href="../understanding-thermostat-concepts/set-points.md">Set Points</a>.</td></tr><tr><td><code>cooling_set_point_fahrenheit</code></td><td>Temperature to which the thermostat should cool (in °F).</td></tr><tr><td><code>heating_set_point_celsius</code></td><td>Temperature to which the thermostat should heat (in °C).</td></tr><tr><td><code>heating_set_point_fahrenheit</code></td><td>Temperature to which the thermostat should heat (in °F).</td></tr><tr><td><code>manual_override_allowed</code></td><td>(Required) Indicates whether a person at the thermostat can change the thermostat's settings.</td></tr></tbody></table>
+<table><thead><tr><th width="339">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>climate_preset_key</code></td><td>(Required) Key to identify the climate preset.</td></tr><tr><td><code>name</code></td><td>(Optional) User-friendly name to identify the climate preset.</td></tr><tr><td><code>fan_mode_setting</code></td><td>Desired fan mode setting, such as <code>on</code>, <code>auto</code>, or <code>circulate</code>.</td></tr><tr><td><code>hvac_mode_setting</code></td><td>Desired <a href="../understanding-thermostat-concepts/hvac-mode.md">HVAC mode</a> setting, such as <code>heat</code>, <code>cool</code>, <code>heat_cool</code>, or <code>off</code>.</td></tr><tr><td><code>cooling_set_point_celsius</code></td><td>Temperature to which the thermostat should cool (in °C). See also <a href="../understanding-thermostat-concepts/set-points.md">Set Points</a>.</td></tr><tr><td><code>cooling_set_point_fahrenheit</code></td><td>Temperature to which the thermostat should cool (in °F).</td></tr><tr><td><code>heating_set_point_celsius</code></td><td>Temperature to which the thermostat should heat (in °C).</td></tr><tr><td><code>heating_set_point_fahrenheit</code></td><td>Temperature to which the thermostat should heat (in °F).</td></tr><tr><td><code>manual_override_allowed</code></td><td>(Optional) Indicates whether a person at the thermostat or using the API can change the thermostat's settings.<br>Deprecated. Use <code>thermostat_schedule.is_override_allowed</code> instead.</td></tr></tbody></table>
 
 ***
 
@@ -39,8 +39,7 @@ if thermostat.can_hvac_heat_cool:
     fan_mode_setting = "auto",
     hvac_mode_setting = "heat_cool",
     cooling_set_point_celsius = 25,
-    heating_set_point_celsius = 20,
-    manual_override_allowed = True
+    heating_set_point_celsius = 20
   )
   
   seam.thermostats.create_climate_preset(
@@ -50,8 +49,7 @@ if thermostat.can_hvac_heat_cool:
     fan_mode_setting = "auto",
     hvac_mode_setting = "heat_cool",
     cooling_set_point_celsius = 30,
-    heating_set_point_celsius = 15,
-    manual_override_allowed = True
+    heating_set_point_celsius = 15
   )  
 ```
 
@@ -94,8 +92,7 @@ if  $(jq -r '.device.can_hvac_heat_cool' <<< ${thermostat}); then \
       \"fan_mode_setting\": \"auto\",
       \"hvac_mode_setting\": \"heat_cool\",
       \"cooling_set_point_celsius\": 25,
-      \"heating_set_point_celsius\": 20,
-      \"manual_override_allowed\": true
+      \"heating_set_point_celsius\": 20
   }";
   
   curl -X 'POST' \
@@ -110,8 +107,7 @@ if  $(jq -r '.device.can_hvac_heat_cool' <<< ${thermostat}); then \
       \"fan_mode_setting\": \"auto\",
       \"hvac_mode_setting\": \"heat_cool\",
       \"cooling_set_point_celsius\": 30,
-      \"heating_set_point_celsius\": 15,
-      \"manual_override_allowed\": true
+      \"heating_set_point_celsius\": 15
   }";
 fi
 ```
@@ -145,8 +141,7 @@ if (thermostat.can_hvac_heat_cool) {
     fan_mode_setting: "auto",
     hvac_mode_setting: "heat_cool",
     cooling_set_point_celsius: 25,
-    heating_set_point_celsius: 20,
-    manual_override_allowed: true
+    heating_set_point_celsius: 20
   });
 
   await seam.thermostats.createClimatePreset({
@@ -156,8 +151,7 @@ if (thermostat.can_hvac_heat_cool) {
     fan_mode_setting: "auto",
     hvac_mode_setting: "heat_cool",
     cooling_set_point_celsius: 30,
-    heating_set_point_celsius: 15,
-    manual_override_allowed: true
+    heating_set_point_celsius: 15
   });
 };
 ```
@@ -203,8 +197,7 @@ if ($thermostat->can_hvac_heat_cool) {
     fan_mode_setting: "auto",
     hvac_mode_setting: "heat_cool",
     cooling_set_point_celsius: 25,
-    heating_set_point_celsius: 20,
-    manual_override_allowed: true
+    heating_set_point_celsius: 20
   );
   
   $seam->thermostats->create_climate_preset(
@@ -214,8 +207,7 @@ if ($thermostat->can_hvac_heat_cool) {
     fan_mode_setting: "auto",
     hvac_mode_setting: "heat_cool",
     cooling_set_point_celsius: 30,
-    heating_set_point_celsius: 15,
-    manual_override_allowed: true
+    heating_set_point_celsius: 15
   );  
 }
 ```
@@ -230,7 +222,7 @@ void
 {% tab title="C#" %}
 **Request:**
 
-```java
+```csharp
 // Coming soon!
 ```
 
@@ -258,7 +250,7 @@ void
 {% tab title="Go" %}
 **Request:**
 
-```java
+```go
 // Coming soon!
 ```
 
@@ -302,7 +294,6 @@ Device(
         'heating_set_point_celsius': 20,
         'heating_set_point_fahrenheit': 68,
         'hvac_mode_setting': 'heat_cool',
-        'manual_override_allowed': True,
         'name': 'Occupied'
       },
       {
@@ -314,7 +305,6 @@ Device(
         'heating_set_point_celsius': 15,
         'heating_set_point_fahrenheit': 59,
         'hvac_mode_setting': 'heat_cool',
-        'manual_override_allowed': True,
         'name': 'Unoccupied'
       }
     ],
@@ -354,7 +344,6 @@ curl -X 'GET' \
           "display_name": "Occupied",
           "fan_mode_setting": "auto",
           "hvac_mode_setting": "heat_cool",
-          "manual_override_allowed": true,
           "cooling_set_point_celsius": 25,
           "heating_set_point_celsius": 20,
           "cooling_set_point_fahrenheit": 77,
@@ -366,7 +355,6 @@ curl -X 'GET' \
           "display_name": "Unoccupied",
           "fan_mode_setting": "auto",
           "hvac_mode_setting": "heat_cool",
-          "manual_override_allowed": true,
           "cooling_set_point_celsius": 30,
           "heating_set_point_celsius": 15,
           "cooling_set_point_fahrenheit": 86,
@@ -404,7 +392,6 @@ await seam.devices.get({
         display_name: 'Occupied',
         fan_mode_setting: 'auto',
         hvac_mode_setting: 'heat_cool',
-        manual_override_allowed: true,
         cooling_set_point_celsius: 25,
         heating_set_point_celsius: 20,
         cooling_set_point_fahrenheit: 77,
@@ -416,7 +403,6 @@ await seam.devices.get({
         display_name: 'Unoccupied',
         fan_mode_setting: 'auto',
         hvac_mode_setting: 'heat_cool',
-        manual_override_allowed: true,
         cooling_set_point_celsius: 30,
         heating_set_point_celsius: 15,
         cooling_set_point_fahrenheit: 86,
@@ -469,7 +455,6 @@ $seam->devices->get(
           "heating_set_point_celsius": 20,
           "heating_set_point_fahrenheit": 68,
           "hvac_mode_setting": "heat_cool",
-          "manual_override_allowed": true,
           "name": "Occupied"
         },
         {
@@ -481,7 +466,6 @@ $seam->devices->get(
           "heating_set_point_celsius": 15,
           "heating_set_point_fahrenheit": 59,
           "hvac_mode_setting": "heat_cool",
-          "manual_override_allowed": true,
           "name": "Unoccupied"
         }
     ],
@@ -549,8 +533,7 @@ To update a climate preset, issue a [`/thermostats/update_climate_preset`](../..
 seam.thermostats.update_climate_preset(
   device_id = "2d488679-6f07-4810-aed2-e726872c1dd5",
   climate_preset_key = "occupied",
-  cooling_set_point_celsius = 24,
-  manual_override_allowed = True
+  cooling_set_point_celsius = 24
 )
 ```
 
@@ -573,8 +556,7 @@ curl -X 'POST' \
   -d '{
     "device_id": "2d488679-6f07-4810-aed2-e726872c1dd5",
     "climate_preset_key": "occupied",
-    "cooling_set_point_celsius": 24,
-    "manual_override_allowed": true
+    "cooling_set_point_celsius": 24
 }'
 ```
 
@@ -594,8 +576,7 @@ curl -X 'POST' \
 await seam.thermostats.createClimatePreset({
   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
   climate_preset_key: "occupied",
-  cooling_set_point_celsius: 24,
-  manual_override_allowed: true
+  cooling_set_point_celsius: 24
 });
 ```
 
@@ -627,8 +608,7 @@ void
 $seam->thermostats->update_climate_preset(
   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
   climate_preset_key: "occupied",
-  cooling_set_point_celsius: 24,
-  manual_override_allowed: true
+  cooling_set_point_celsius: 24
 );
 ```
 
@@ -642,7 +622,7 @@ void
 {% tab title="C#" %}
 **Request:**
 
-```java
+```csharp
 // Coming soon!
 ```
 
@@ -670,7 +650,7 @@ void
 {% tab title="Go" %}
 **Request:**
 
-```java
+```go
 // Coming soon!
 ```
 

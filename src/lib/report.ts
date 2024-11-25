@@ -23,7 +23,7 @@ interface Report {
   deprecated: ReportSection
   extraResponseKeys: MissingResponseKeyReport[]
   endpointsWithoutCodeSamples: string[]
-  noTitle: Pick<ReportSection, 'namespaces'>
+  noTitle: Pick<ReportSection, 'namespaces' | 'routes' | 'endpoints'>
 }
 
 interface ReportSection {
@@ -82,6 +82,8 @@ function generateReport(metadata: Metadata): Report {
     endpointsWithoutCodeSamples: [],
     noTitle: {
       namespaces: [],
+      routes: [],
+      endpoints: [],
     },
   }
 
@@ -212,6 +214,10 @@ function processRoute(route: Route, report: Report, metadata: Metadata): void {
     addUntitledNamespaceToReport(namespace.path, report)
   }
 
+  if (pathMetadata[route.path]?.title == null && !route.isUndocumented) {
+    report.noTitle.routes.push({ name: route.path })
+  }
+
   if (route.namespace != null) {
     processNamespace(route.namespace, report)
   }
@@ -279,6 +285,10 @@ function processEndpoint(endpoint: Endpoint, report: Report): void {
 
   if (endpoint.codeSamples.length === 0) {
     report.endpointsWithoutCodeSamples.push(endpoint.path)
+  }
+
+  if (endpoint.title.length === 0 && !endpoint.isUndocumented) {
+    report.noTitle.endpoints.push({ name: endpoint.path })
   }
 
   processResponseKeys(endpoint, report)

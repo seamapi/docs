@@ -52,7 +52,7 @@ You can set one of the configured climate presets as the fallback. Whenever anot
 
 ### Create Thermostat Schedules
 
-Schedule the climate presets that you have created. Simply specify the key of the climate preset, along with a starting and ending timestamp. You can also set the maximum override period in minutes. This parameter defines the period for which a person at the thermostat can change the thermostat's settings after the activation of the climate preset. At the end of this override period, Seam sets the thermostat back to the active climate preset.
+Schedule the climate presets that you have created. Simply specify the key of the climate preset, along with a starting and ending timestamp. You can also indicate whether a person at the thermostat or using the API can change the thermostat's settings for the duration of the thermostat schedule. Further, you can set the maximum override period in minutes. At the end of this override period, Seam sets the thermostat back to the climate preset defined by the thermostat schedule.
 
 You can schedule multiple climate presets to meet your needs. Seam handles the prioritization of scheduled climate presets.
 

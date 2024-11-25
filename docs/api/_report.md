@@ -1,5 +1,103 @@
 # Documentation Report
 
+## Untitled
+
+### Routes
+
+- `/access_codes`
+- `/access_codes/simulate`
+- `/access_codes/unmanaged`
+- `/action_attempts`
+- `/client_sessions`
+- `/connect_webviews`
+- `/connected_accounts`
+- `/devices`
+- `/devices/simulate`
+- `/devices/unmanaged`
+- `/events`
+- `/locks`
+- `/networks`
+- `/noise_sensors`
+- `/noise_sensors/noise_thresholds`
+- `/noise_sensors/simulate`
+- `/phones`
+- `/phones/simulate`
+- `/webhooks`
+- `/workspaces`
+
+### Endpoints
+
+- `/access_codes/create`
+- `/access_codes/create_multiple`
+- `/access_codes/delete`
+- `/access_codes/generate_code`
+- `/access_codes/get`
+- `/access_codes/list`
+- `/access_codes/pull_backup_access_code`
+- `/access_codes/update`
+- `/access_codes/update_multiple`
+- `/access_codes/simulate/create_unmanaged_access_code`
+- `/access_codes/unmanaged/convert_to_managed`
+- `/access_codes/unmanaged/delete`
+- `/access_codes/unmanaged/get`
+- `/access_codes/unmanaged/list`
+- `/access_codes/unmanaged/update`
+- `/action_attempts/get`
+- `/action_attempts/list`
+- `/client_sessions/create`
+- `/client_sessions/delete`
+- `/client_sessions/get`
+- `/client_sessions/get_or_create`
+- `/client_sessions/grant_access`
+- `/client_sessions/list`
+- `/client_sessions/revoke`
+- `/connect_webviews/create`
+- `/connect_webviews/delete`
+- `/connect_webviews/get`
+- `/connect_webviews/list`
+- `/connected_accounts/delete`
+- `/connected_accounts/get`
+- `/connected_accounts/list`
+- `/connected_accounts/update`
+- `/devices/delete`
+- `/devices/get`
+- `/devices/list_device_providers`
+- `/devices/update`
+- `/devices/simulate/connect`
+- `/devices/simulate/disconnect`
+- `/devices/simulate/remove`
+- `/devices/unmanaged/get`
+- `/devices/unmanaged/list`
+- `/devices/unmanaged/update`
+- `/events/get`
+- `/events/list`
+- `/locks/get`
+- `/locks/list`
+- `/locks/lock_door`
+- `/locks/unlock_door`
+- `/networks/get`
+- `/networks/list`
+- `/noise_sensors/list`
+- `/noise_sensors/noise_thresholds/create`
+- `/noise_sensors/noise_thresholds/delete`
+- `/noise_sensors/noise_thresholds/get`
+- `/noise_sensors/noise_thresholds/list`
+- `/noise_sensors/noise_thresholds/update`
+- `/noise_sensors/simulate/trigger_noise_threshold`
+- `/phones/deactivate`
+- `/phones/list`
+- `/phones/simulate/create_sandbox_phone`
+- `/user_identities/update`
+- `/webhooks/create`
+- `/webhooks/delete`
+- `/webhooks/get`
+- `/webhooks/list`
+- `/webhooks/update`
+- `/workspaces/create`
+- `/workspaces/get`
+- `/workspaces/list`
+- `/workspaces/reset_sandbox`
+
 ## Undocumented
 
 These items are intentionally undocumented.
@@ -25,6 +123,7 @@ These items are intentionally undocumented.
 - `/acs/access_groups/unmanaged/list`: No unmanaged access groups are currently implemented.
 - `/acs/credential_pools/list`: Replaced by enrollment automations.
 - `/acs/credential_provisioning_automations/launch`: Replaced by enrollment automations.
+- `/acs/credentials/create_offline_code`: Unreleased.
 - `/acs/credentials/unmanaged/get`: No unmanaged credentials are currently implemented.
 - `/acs/credentials/unmanaged/list`: No unmanaged credentials are currently implemented.
 - `/acs/encoders/encode_credential`: Encoding a card is currently unimplemented.
@@ -769,6 +868,7 @@ These items are deprecated.
 - `/access_codes/unmanaged/update`
 - `/acs/credential_pools/list`
 - `/acs/credential_provisioning_automations/launch`
+- `/acs/credentials/create_offline_code`
 - `/acs/credentials/unmanaged/get`
 - `/acs/credentials/unmanaged/list`
 - `/acs/encoders/encode_credential`
@@ -826,6 +926,7 @@ These items are deprecated.
 - `/phones/list`
 - `/phones/simulate/create_sandbox_phone`
 - `/thermostats/get`
+- `/thermostats/set_hvac_mode`
 - `/user_identities/update`
 - `/webhooks/create`
 - `/webhooks/delete`

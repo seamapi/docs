@@ -24,17 +24,17 @@ In the Seam API, use the `starts_at` and `ends_at` parameters to define the time
 
 ## Specifying Manual Override Permissions
 
-When creating a thermostat schedule for a thermostat, you can also specify the `max_override_period_minutes`. This parameter defines the period for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. At the end of this override period, Seam sets the thermostat back to the active climate preset. The override period starts again each time a person makes a change at the thermostat.
+When creating a thermostat schedule for a thermostat, you can specify `is_override_allowed` and optionally the `max_override_period_minutes`. The `is_override_allowed` parameter indicates whether a person at the thermostat or via the Seam API can change the thermostat's settings for the active duration of that thermostat schedule. Setting `max_override_period_minutes` defines the length of the allowed override period. If an override period is allowed, at the end of this period, Seam sets the thermostat back to the climate preset defined by the thermostat schedule. The override period starts again each time a person makes a change at the thermostat or using the API.
 
-Through this override period setting, the Seam API provides you with the flexibility to customize the thermostat behavior to suit your needs. For example, a multifamily property manager may want to give complete control of the thermostat to a unit's residents as soon as they move into the unit. However, a short-term rental host may want to enforce stricter rules to ensure that their guests are using the associated HVAC system in a reasonable manner.
+Through these override period settings, the Seam API provides you with the flexibility to customize the thermostat behavior to suit your needs. For example, a multifamily property manager may want to give complete control of the thermostat to a unit's residents as soon as they move into the unit. However, a short-term rental host may want to enforce stricter rules to ensure that their guests are using the associated HVAC system in a reasonable manner.
 
-To allow complete control at the thermostat, set `max_override_period_minutes` to `0`. To disable manual overrides entirely, set `manual_override_allowed` to `false` on the climate preset that you assign to the thermostat schedule.
+To allow complete control at the thermostat, set `is_override_allowed` to `true` and `max_override_period_minutes` to `null`. To disable manual overrides entirely, set `is_override_allowed` to `false`.
 
 ***
 
 ## Create a Thermostat Schedule
 
-To create a thermostat schedule, issue a [`/thermostats/schedules/create`](../../api/thermostats/schedules/create.md) request, providing the `device_id` of the desired thermostat, as well as the `climate_preset_key`, and the `starts_at` and `ends_at` timestamps. You can also specify a `name` for the thermostat schedule and the desired `max_override_period_minutes`. If you omit `max_override_period_minutes`, it defaults to `0`.
+To create a thermostat schedule, issue a [`/thermostats/schedules/create`](../../api/thermostats/schedules/create.md) request, providing the `device_id` of the desired thermostat, as well as the `climate_preset_key`, and the `starts_at` and `ends_at` timestamps. You can also specify a `name` for the thermostat schedule and the desired `is_override_allowed` and `max_override_period_minutes` values.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -47,6 +47,7 @@ seam.thermostats.schedules.create(
   climate_preset_key = "occupied",
   starts_at = "2024-11-01T15:00:00Z",
   ends_at = "2024-11-05T12:00:00Z",
+  is_override_allowed = True,
   max_override_period_minutes = 90
 )
 ```
@@ -61,6 +62,7 @@ ThermostatSchedule(
   climate_preset_key='occupied',
   starts_at='2024-11-01T15:00:00.000Z',
   ends_at='2024-11-05T12:00:00.000Z',
+  is_override_allowed=True,
   max_override_period_minutes=90,
   ...
 )
@@ -82,6 +84,7 @@ curl -X 'POST' \
     "climate_preset_key": "occupied",
     "starts_at": "2024-11-01T15:00:00Z",
     "ends_at": "2024-11-05T12:00:00Z",
+    "is_override_allowed": true,
     "max_override_period_minutes": 90
 }'
 ```
@@ -97,6 +100,7 @@ curl -X 'POST' \
     "climate_preset_key": "occupied",
     "starts_at": "2024-11-01T15:00:00.000Z",
     "ends_at": "2024-11-05T12:00:00.000Z",
+    "is_override_allowed": true,
     "max_override_period_minutes": 90,
     ...
   },
@@ -115,6 +119,7 @@ await seam.thermostats.schedules.create({
   climate_preset_key: "occupied",
   starts_at: "2024-11-01T15:00:00Z",
   ends_at: "2024-11-05T12:00:00Z",
+  is_override_allowed: true,
   max_override_period_minutes: 90
 });
 ```
@@ -129,6 +134,7 @@ await seam.thermostats.schedules.create({
   climate_preset_key: 'occupied',
   starts_at: '2024-11-01T15:00:00.000Z',
   ends_at: '2024-11-05T12:00:00.000Z',
+  is_override_allowed: true,
   max_override_period_minutes: 90,
   ...
 }
@@ -159,6 +165,7 @@ $seam->thermostats->schedules->create(
   climate_preset_key: "occupied",
   starts_at: "2024-11-01T15:00:00Z",
   ends_at: "2024-11-05T12:00:00Z",
+  is_override_allowed: true,
   max_override_period_minutes: 90
 );
 ```
@@ -173,6 +180,7 @@ $seam->thermostats->schedules->create(
   "climate_preset_key": "occupied",
   "starts_at": "2024-11-01T15:00:00.000Z",
   "ends_at": "2024-11-05T12:00:00.000Z",
+  "is_override_allowed": true,
   "max_override_period_minutes": 90,
   ...
 }
@@ -182,7 +190,7 @@ $seam->thermostats->schedules->create(
 {% tab title="C#" %}
 **Request:**
 
-```java
+```csharp
 // Coming soon!
 ```
 
@@ -210,7 +218,7 @@ $seam->thermostats->schedules->create(
 {% tab title="Go" %}
 **Request:**
 
-```java
+```go
 // Coming soon!
 ```
 
@@ -255,6 +263,7 @@ seam.thermostats.schedules.create(
   climate_preset_key = "occupied",
   starts_at = "2024-11-10T15:00:00Z",
   ends_at = "2024-11-15T12:00:00Z",
+  is_override_allowed = True,
   max_override_period_minutes = 90
 )
 
@@ -265,6 +274,7 @@ seam.thermostats.schedules.create(
   climate_preset_key = "occupied",
   starts_at = "2024-11-16T15:00:00Z",
   ends_at = "2024-11-18T12:00:00Z",
+  is_override_allowed = True,
   max_override_period_minutes = 90
 )
 ```
@@ -279,6 +289,7 @@ ThermostatSchedule(
   climate_preset_key='occupied',
   starts_at='2024-11-10T15:00:00.000Z',
   ends_at='2024-11-15T12:00:00.000Z',
+  is_override_allowed=True,
   max_override_period_minutes=90,
   ...
 )
@@ -289,6 +300,7 @@ ThermostatSchedule(
   climate_preset_key='occupied',
   starts_at='2024-11-16T15:00:00.000Z',
   ends_at='2024-11-18T12:00:00.000Z',
+  is_override_allowed=True,
   max_override_period_minutes=90,
   ...
 )
@@ -334,6 +346,7 @@ curl -X 'POST' \
     \"climate_preset_key\": \"occupied\",
     \"starts_at\": \"2024-11-10T15:00:00Z\",
     \"ends_at\": \"2024-11-15T12:00:00Z\",
+    \"is_override_allowed\": true,
     \"max_override_period_minutes\": 90
 }"
 
@@ -349,6 +362,7 @@ curl -X 'POST' \
     \"climate_preset_key\": \"occupied\",
     \"starts_at\": \"2024-11-16T15:00:00Z\",
     \"ends_at\": \"2024-11-18T12:00:00Z\",
+    \"is_override_allowed\": true,
     \"max_override_period_minutes\": 90
 }"
 ```
@@ -364,6 +378,7 @@ curl -X 'POST' \
     "climate_preset_key":"occupied",
     "starts_at":"2024-11-10T15:00:00.000Z",
     "ends_at":"2024-11-15T12:00:00.000Z",
+    "is_override_allowed":true,
     "max_override_period_minutes":90,
     ...
   },
@@ -377,6 +392,7 @@ curl -X 'POST' \
     "climate_preset_key":"occupied",
     "starts_at":"2024-11-16T15:00:00.000Z",
     "ends_at":"2024-11-18T12:00:00.000Z",
+    "is_override_allowed":true,
     "max_override_period_minutes":90,
     ...
   },
@@ -407,6 +423,7 @@ await seam.thermostats.schedules.create({
   climate_preset_key: "occupied",
   starts_at: "2024-11-10T15:00:00Z",
   ends_at: "2024-11-15T12:00:00Z",
+  is_override_allowed: true,
   max_override_period_minutes: 90
 });
 
@@ -417,6 +434,7 @@ await seam.thermostats.schedules.create({
   climate_preset_key: "occupied",
   starts_at: "2024-11-16T15:00:00Z",
   ends_at: "2024-11-18T12:00:00Z",
+  is_override_allowed: true,
   max_override_period_minutes: 90
 });
 ```
@@ -431,6 +449,7 @@ await seam.thermostats.schedules.create({
   climate_preset_key: 'occupied',
   starts_at: '2024-11-10T15:00:00.000Z',
   ends_at: '2024-11-15T12:00:00.000Z',
+  is_override_allowed: true,
   max_override_period_minutes: 90,
   ...
 }
@@ -441,6 +460,7 @@ await seam.thermostats.schedules.create({
   climate_preset_key: 'occupied',
   starts_at: '2024-11-16T15:00:00.000Z',
   ends_at: '2024-11-18T12:00:00.000Z',
+  is_override_allowed: true,
   max_override_period_minutes: 90,
   ...
 }
@@ -483,6 +503,7 @@ $seam->thermostats->schedules->create(
   climate_preset_key: "occupied",
   starts_at: "2024-11-10T15:00:00Z",
   ends_at: "2024-11-15T12:00:00Z",
+  is_override_allowed: true,
   max_override_period_minutes: 90
 );
 
@@ -493,6 +514,7 @@ $seam->thermostats->schedules->create(
   climate_preset_key: "occupied",
   starts_at: "2024-11-16T15:00:00Z",
   ends_at: "2024-11-18T12:00:00Z",
+  is_override_allowed: true,
   max_override_period_minutes: 90
 );
 ```
@@ -507,6 +529,7 @@ $seam->thermostats->schedules->create(
   "climate_preset_key": "occupied",
   "starts_at": "2024-11-10T15:00:00.000Z",
   "ends_at": "2024-11-15T12:00:00.000Z",
+  "is_override_allowed": true,
   "max_override_period_minutes": 90,
   ...
 }
@@ -517,6 +540,7 @@ $seam->thermostats->schedules->create(
   "climate_preset_key": "occupied",
   "starts_at": "2024-11-16T15:00:00.000Z",
   "ends_at": "2024-11-18T12:00:00.000Z",
+  "is_override_allowed": true,
   "max_override_period_minutes": 90,
   ...
 }
@@ -526,7 +550,7 @@ $seam->thermostats->schedules->create(
 {% tab title="C#" %}
 **Request:**
 
-```java
+```csharp
 // Coming soon!
 ```
 
@@ -554,7 +578,7 @@ $seam->thermostats->schedules->create(
 {% tab title="Go" %}
 **Request:**
 
-```java
+```go
 // Coming soon!
 ```
 
@@ -593,6 +617,7 @@ seam.thermostats.schedules.list(
     climate_preset_key='occupied',
     starts_at='2024-11-10T15:00:00.000Z',
     ends_at='2024-11-15T12:00:00.000Z',
+    is_override_allowed=True,
     max_override_period_minutes=90,
     ...
   ),
@@ -603,6 +628,7 @@ seam.thermostats.schedules.list(
     climate_preset_key='occupied',
     starts_at='2024-11-16T15:00:00.000Z',
     ends_at='2024-11-18T12:00:00.000Z',
+    is_override_allowed=True,
     max_override_period_minutes=90,
     ...
   )
@@ -636,6 +662,7 @@ curl -X 'POST' \
       "climate_preset_key":"occupied",
       "starts_at":"2024-11-10T15:00:00.000Z",
       "ends_at":"2024-11-15T12:00:00.000Z",
+      "is_override_allowed": true,
       "max_override_period_minutes":90,
       ...
     },
@@ -646,6 +673,7 @@ curl -X 'POST' \
       "climate_preset_key":"occupied",
       "starts_at":"2024-11-16T15:00:00.000Z",
       "ends_at":"2024-11-18T12:00:00.000Z",
+      "is_override_allowed": true,
       "max_override_period_minutes":90,
       ...
     }
@@ -675,6 +703,7 @@ await seam.thermostats.schedules.list({
     climate_preset_key: 'occupied',
     starts_at: '2024-11-10T15:00:00.000Z',
     ends_at: '2024-11-15T12:00:00.000Z',
+    is_override_allowed: true,
     max_override_period_minutes: 90,
     ...
   },
@@ -685,6 +714,7 @@ await seam.thermostats.schedules.list({
     climate_preset_key: 'occupied',
     starts_at: '2024-11-16T15:00:00.000Z',
     ends_at: '2024-11-18T12:00:00.000Z',
+    is_override_allowed: true,
     max_override_period_minutes: 90,
     ...
   }
@@ -726,6 +756,7 @@ $seam->thermostats->schedules->list(
     "climate_preset_key": "occupied",
     "starts_at": "2024-11-10T15:00:00.000Z",
     "ends_at": "2024-11-15T12:00:00.000Z",
+    "is_override_allowed": true,
     "max_override_period_minutes": 90,
     ...
   },
@@ -736,6 +767,7 @@ $seam->thermostats->schedules->list(
     "climate_preset_key": "occupied",
     "starts_at": "2024-11-16T15:00:00.000Z",
     "ends_at": "2024-11-18T12:00:00.000Z",
+    "is_override_allowed": true,
     "max_override_period_minutes": 90,
     ...
   }
@@ -746,7 +778,7 @@ $seam->thermostats->schedules->list(
 {% tab title="C#" %}
 **Request:**
 
-```java
+```csharp
 // Coming soon!
 ```
 
@@ -774,7 +806,7 @@ $seam->thermostats->schedules->list(
 {% tab title="Go" %}
 **Request:**
 
-```java
+```go
 // Coming soon!
 ```
 
@@ -812,6 +844,7 @@ ThermostatSchedule(
   climate_preset_key='occupied',
   starts_at='2024-11-10T15:00:00.000Z',
   ends_at='2024-11-15T12:00:00.000Z',
+  is_override_allowed=True,
   max_override_period_minutes=90,
   ...
 )
@@ -843,6 +876,7 @@ curl -X 'POST' \
     "climate_preset_key":"occupied",
     "starts_at":"2024-11-10T15:00:00.000Z",
     "ends_at":"2024-11-15T12:00:00.000Z",
+    "is_override_allowed":true,
     "max_override_period_minutes":90,
     ...
   },
@@ -870,6 +904,7 @@ await seam.thermostats.schedules.get({
   climate_preset_key: 'occupied',
   starts_at: '2024-11-10T15:00:00.000Z',
   ends_at: '2024-11-15T12:00:00.000Z',
+  is_override_allowed: true,
   max_override_period_minutes: 90,
   ...
 }
@@ -909,6 +944,7 @@ $seam->thermostats->schedules->get(
   "climate_preset_key": "occupied",
   "starts_at": "2024-11-10T15:00:00.000Z",
   "ends_at": "2024-11-15T12:00:00.000Z",
+  "is_override_allowed": true,
   "max_override_period_minutes": 90,
   ...
 }
@@ -918,7 +954,7 @@ $seam->thermostats->schedules->get(
 {% tab title="C#" %}
 **Request:**
 
-```java
+```csharp
 // Coming soon!
 ```
 
@@ -946,7 +982,7 @@ $seam->thermostats->schedules->get(
 {% tab title="Go" %}
 **Request:**
 
-```java
+```go
 // Coming soon!
 ```
 
@@ -1057,7 +1093,7 @@ void
 {% tab title="C#" %}
 **Request:**
 
-```java
+```csharp
 // Coming soon!
 ```
 
@@ -1085,7 +1121,7 @@ void
 {% tab title="Go" %}
 **Request:**
 
-```java
+```go
 // Coming soon!
 ```
 
@@ -1192,7 +1228,7 @@ void
 {% tab title="C#" %}
 **Request:**
 
-```java
+```csharp
 // Coming soon!
 ```
 
@@ -1220,7 +1256,7 @@ void
 {% tab title="Go" %}
 **Request:**
 
-```java
+```go
 // Coming soon!
 ```
 

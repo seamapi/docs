@@ -54,8 +54,6 @@ export const reference = (
   }
 
   for (const route of blueprint.routes ?? []) {
-    if (route.isUndocumented) continue
-
     if (
       !route.path.startsWith('/acs') &&
       !route.path.startsWith('/thermostats') &&
@@ -63,6 +61,9 @@ export const reference = (
     ) {
       continue
     }
+
+    if (route.isUndocumented) continue
+    if (pathMetadata[route.path]?.title == null) continue
 
     const k = `api${route.path}/README.md`
     files[k] = {
@@ -74,6 +75,7 @@ export const reference = (
 
     for (const endpoint of route.endpoints) {
       if (endpoint.isUndocumented) continue
+      if (endpoint.title.length === 0) continue
 
       const k = `api${endpoint.path}.md`
       files[k] = {

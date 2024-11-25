@@ -1,5 +1,5 @@
 # Documentation Report
-{{#if (or noTitle.namespaces.length )}}
+{{#if (or noTitle.routes.length noTitle.endpoints.length noTitle.namespaces.length )}}
 
 ## Untitled
 {{#if noTitle.namespaces.length }}
@@ -7,6 +7,22 @@
 ### Namespaces
 
 {{#each noTitle.namespaces}}
+- `{{name}}`
+{{/each}}
+{{/if}}
+{{#if noTitle.routes.length }}
+
+### Routes
+
+{{#each noTitle.routes}}
+- `{{name}}`
+{{/each}}
+{{/if}}
+{{#if noTitle.endpoints.length }}
+
+### Endpoints
+
+{{#each noTitle.endpoints}}
 - `{{name}}`
 {{/each}}
 {{/if}}
