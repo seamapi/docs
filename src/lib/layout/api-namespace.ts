@@ -5,7 +5,11 @@ import type { PathMetadata } from 'lib/path-metadata.js'
 export interface ApiNamespaceLayoutContext {
   title: string
   description: string
-  resources: Array<{ name: string; description: string }>
+  resources: Array<{
+    name: string
+    description: string
+    link: string
+  }>
 }
 
 export function setNamespaceLayoutContext(
@@ -22,9 +26,12 @@ export function setNamespaceLayoutContext(
   file.title = namespaceMetadata.title
   file.description = namespaceMetadata.description ?? ''
 
-  const namespaceResources = Object.entries(pathMetadata)
-    .filter(([p]) => p.startsWith(namespace))
-    .flatMap(([_, metadata]) => metadata.resources)
+  const namespaceRoutes = Object.entries(pathMetadata).filter(([p]) =>
+    p.startsWith(namespace),
+  )
+  const namespaceResources = namespaceRoutes.flatMap(
+    ([_, metadata]) => metadata.resources,
+  )
   file.resources = namespaceResources.map((resourceName) => {
     const resource = resources[resourceName]
 
@@ -32,9 +39,20 @@ export function setNamespaceLayoutContext(
       throw new Error(`Resource ${resourceName} not found in blueprint`)
     }
 
+    const resourceRoute = namespaceRoutes.find(([_, metadata]) =>
+      metadata.resources.includes(resourceName),
+    )
+    if (resourceRoute == null) {
+      throw new Error(`Route for resource ${resourceName} not found`)
+    }
+    const [routePath] = resourceRoute
+
+    const docLink = `./${routePath.split('/').at(-1)}/README.md#${resourceName}`
+
     return {
       name: resourceName,
       description: resource.description,
+      link: docLink,
     }
   })
 }
