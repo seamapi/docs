@@ -46,8 +46,8 @@ export function setNamespaceLayoutContext(
       throw new Error(`Route for resource ${resourceName} not found`)
     }
     const [routePath] = resourceRoute
-
-    const docLink = `./${routePath.split('/').at(-1)}/README.md#${resourceName}`
+    const lastPathSegment = routePath.split('/').at(-1)
+    const docLink = `./${lastPathSegment}/README.md#${resourceName}`
 
     return {
       name: resourceName,
