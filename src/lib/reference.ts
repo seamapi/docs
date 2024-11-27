@@ -40,7 +40,6 @@ export const reference = (
 
   const namespacePaths = getNamespacePaths(blueprint.routes)
   for (const path of namespacePaths) {
-
     const k = `api${path}/README.md`
     files[k] = {
       contents: Buffer.from('\n'),
