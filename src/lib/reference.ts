@@ -40,8 +40,6 @@ export const reference = (
 
   const namespacePaths = getNamespacePaths(blueprint.routes)
   for (const path of namespacePaths) {
-    const namespaceMetadata = pathMetadata[path]
-    if (namespaceMetadata == null) continue
 
     const k = `api${path}/README.md`
     files[k] = {
