@@ -6,7 +6,7 @@ description: Guide for using the Avigilon Alta access system with Seam
 
 ## Overview
 
-Seam integrates with the Avigilon Alta access system that provides cloud-based access control for a variety of industries, including corporate, commercial, hospitality, multifamily residential, and others. With support for doors, elevators, turnstiles, and gates, the Avigilon Alta access control system enables you to secure a single building or multiple buildings using the same system. Further, users need only a single credential for all doors and access points.&#x20;
+Seam integrates with the Avigilon Alta access system that provides cloud-based access control for a variety of industries, including corporate, commercial, hospitality, multifamily residential, and others. With support for doors, elevators, turnstiles, and gates, the Avigilon Alta access control system enables you to secure a single building or multiple buildings using the same system. Further, users need only a single credential for all doors and access points.
 
 ***
 
@@ -16,7 +16,14 @@ This integration supports [all readers, controllers, and wireless locks connecte
 
 <figure><img src="../.gitbook/assets/avigilon-alta-acs-devices.png" alt="Avigilon Alta access system devices"><figcaption></figcaption></figure>
 
-For detailed information about the Avigilon Alta-connected devices that Seam supports, see our [Avigilon Alta Supported Devices page](https://www.seam.co/manufacturers/avigilon-alta).
+For detailed information about the Avigilon Alta-connected devices that Seam supports, see the following table and our [Avigilon Alta Supported Devices page](https://www.seam.co/manufacturers/avigilon-alta):
+
+{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
+  endpoint="https://connect.getseam.com"
+  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
+  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
+  manufacturers='["Avigilon"]'
+/>" %}
 
 We support the following features:
 
@@ -55,4 +62,3 @@ To purchase the Avigilon Alta access system and devices, request a quote from Av
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Avigilon Quote Request</strong></td><td></td><td><a href="https://www.avigilon.com/quote">https://www.avigilon.com/quote</a></td><td><a href="../.gitbook/assets/avigilon-alta-logo.png">avigilon-alta-logo.png</a></td></tr></tbody></table>
 
 ***
-

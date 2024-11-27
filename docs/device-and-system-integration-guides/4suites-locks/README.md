@@ -14,7 +14,14 @@ description: Guide for using 4SUITES locks with Seam
 
 This integration supports all [4SUITES locks, lock upgrades, and readers](https://www.4suiteshq.com/products/).
 
-For detailed information about the 4SUITES devices that Seam supports, see our [4SUITES Supported Devices page](https://www.seam.co/manufacturers/4suites).
+For detailed information about the 4SUITES devices that Seam supports, see the following table and our [4SUITES Supported Devices page](https://www.seam.co/manufacturers/4suites):
+
+{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
+  endpoint="https://connect.getseam.com"
+  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
+  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
+  manufacturers='["4SUITES"]'
+/>" %}
 
 We support the following features:
 
@@ -45,4 +52,3 @@ To purchase 4SUITES devices, request a quote using the 4SUITES **Contact Us Form
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>4SUITES Contact Us Form</strong></td><td></td><td><a href="https://www.4suiteshq.com/contact-us/">https://www.4suiteshq.com/contact-us/</a></td><td><a href="../../.gitbook/assets/4suites-logo.png">4suites-logo.png</a></td></tr></tbody></table>
 
 ***
-

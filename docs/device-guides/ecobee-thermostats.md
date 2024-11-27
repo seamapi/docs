@@ -14,7 +14,14 @@ ecobee smart thermostats are designed to lower energy costs. In addition to ener
 
 This integration supports all [ecobee thermostats](https://www.ecobee.com/en-us/smart-thermostats/).
 
-For detailed information about the ecobee devices that Seam supports, see our [ecobee Supported Devices page](https://www.seam.co/manufacturers/ecobee).
+For detailed information about the ecobee devices that Seam supports, see the following table and our [ecobee Supported Devices page](https://www.seam.co/manufacturers/ecobee):
+
+{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
+  endpoint="https://connect.getseam.com"
+  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
+  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
+  manufacturers='["ecobee"]'
+/>" %}
 
 We support the following features:
 
@@ -24,7 +31,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their ecobee devices to Seam, include the `ecobee` [device provider key](../api-clients/connect\_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their ecobee devices to Seam, include the `ecobee` [device provider key](../api-clients/connect_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -39,8 +46,6 @@ To control ecobee devices using Seam, you must prompt owners of these devices to
 {% hint style="info" %}
 Make sure that you're authenticating with the user to whom the devices are registered. ecobee devices can only be registered to a single user.
 {% endhint %}
-
-
 
 ***
 

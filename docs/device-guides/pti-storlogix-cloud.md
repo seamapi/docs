@@ -14,7 +14,14 @@ This integration uses [Storlogix Cloud](https://ptisecurity.com/products/storlog
 
 Seam integrates with any site that has Storlogix Cloud installed.
 
-For detailed information about the PTI devices that Seam supports, see our [PTI Supported Devices page](https://www.seam.co/manufacturers/pti).
+For detailed information about the PTI devices that Seam supports, see the following table and our [PTI Supported Devices page](https://www.seam.co/manufacturers/pti):
+
+{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
+  endpoint="https://connect.getseam.com"
+  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
+  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
+  manufacturers='["PTI"]'
+/>" %}
 
 We support the following features:
 
@@ -35,7 +42,7 @@ To create a [Connect Webview](../core-concepts/connect-webviews/) that enables y
 
 ***
 
-## Setup Instructions&#x20;
+## Setup Instructions
 
 To connect your Storlogix site, you must provide the following information about your facility to Seam:
 
@@ -92,7 +99,5 @@ The following warning might appear for PTI-related users:
 ## Where to Order
 
 To find a local PTI Security Systems installer, contact the PTI Security Systems Sales team. You can find the contact information for this team on the [PTI Security Systems Sales Contact Us Page](https://ptisecurity.com/contact-us-sales/).
-
-
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>PTI Security Systems Sales Contact Us Page</strong></td><td></td><td><a href="https://ptisecurity.com/contact-us-sales/">https://ptisecurity.com/contact-us-sales/</a></td><td><a href="../.gitbook/assets/contact-pti-sales.png">contact-pti-sales.png</a></td></tr></tbody></table>

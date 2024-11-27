@@ -14,6 +14,15 @@ Seam integrates seamlessly with the [ASSA ABLOY Visionline Access Control System
 
 This integration supports all readers and wireless locks connected to the Visionline ACS.
 
+For detailed information about the ASSA ABLOY Visionline devices that Seam supports, see the following table and our [ASSA ABLOY Supported Devices page](https://www.seam.co/manufacturers/assa-abloy):
+
+{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
+  endpoint="https://connect.getseam.com"
+  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
+  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
+  manufacturers='["Assa"]'
+/>" %}
+
 We support the following features:
 
 * [Managing access systems](../../products/access-systems/)

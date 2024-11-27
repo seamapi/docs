@@ -12,7 +12,14 @@ Seam provides a universal API to connect and control many brands of IoT devices 
 
 This guide gives you a rapid introduction to connecting and controlling your [August lock](august-locks.md) using the Seam API. For application developers, you can use the Seam API in your app, and your users can authorize your app to control their devices using Seam.
 
-For detailed information about the August devices that Seam supports, see our [August Supported Devices page](https://www.seam.co/manufacturers/august).
+For detailed information about the August devices that Seam supports, see the following table and our [August Supported Devices page](https://www.seam.co/manufacturers/august):
+
+{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
+  endpoint="https://connect.getseam.com"
+  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
+  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
+  manufacturers='["August"]'
+/>" %}
 
 To learn more about other IoT device and system brands that Seam supports—such as Yale, Schlage, Google Nest, and many more—visit our [integration page](https://www.seam.co/supported-devices-and-systems).
 
@@ -1937,7 +1944,7 @@ Now that you've completed this getting started guide for August devices, you can
 * [ ] **Explore**\
   See the [other devices and system integrations](../device-and-system-integration-guides/overview.md) that Seam supports.
 * [ ] **Learn**\
-  Read about Seam [concepts](broken-reference) and the [device and system capabilities ](../capability-guides/device-and-system-capabilities.md)that Seam supports.
+  Read about Seam [concepts](broken-reference/) and the [device and system capabilities ](../capability-guides/device-and-system-capabilities.md)that Seam supports.
 * [ ] **Use Seam Components**\
   Find out about [Seam Components](../seam-components/overview/), which are prebuilt UI components for building your device management flow.
 * [ ] **Use webhooks**\

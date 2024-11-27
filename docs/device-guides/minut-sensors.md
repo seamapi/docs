@@ -6,7 +6,7 @@ description: Guide for using Minut sensors with Seam
 
 ## Overview
 
-Seam integrates with the Minut sensor to provide [noise monitoring](https://support.minut.com/en/articles/5291774-settings-and-thresholds#h\_f83ac7d6c8) functions for the rental property and vacation rental industries. This camera-free, privacy-safe sensor notifies owners when guest noise levels exceed configured thresholds. In addition, the Minut sensor is weatherproof and, consequently, suitable for both outdoor and indoor use. For each Minut sensor, you can configure a regular noise threshold and an optional quiet hours threshold.
+Seam integrates with the Minut sensor to provide [noise monitoring](https://support.minut.com/en/articles/5291774-settings-and-thresholds#h_f83ac7d6c8) functions for the rental property and vacation rental industries. This camera-free, privacy-safe sensor notifies owners when guest noise levels exceed configured thresholds. In addition, the Minut sensor is weatherproof and, consequently, suitable for both outdoor and indoor use. For each Minut sensor, you can configure a regular noise threshold and an optional quiet hours threshold.
 
 ***
 
@@ -14,7 +14,14 @@ Seam integrates with the Minut sensor to provide [noise monitoring](https://supp
 
 This integration supports the [Minut sensor](https://www.minut.com/product/features).
 
-For detailed information about the Minut devices that Seam supports, see our [Minut Supported Devices page](https://www.seam.co/manufacturers/minut).
+For detailed information about the Minut devices that Seam supports, see the following table and our [Minut Supported Devices page](https://www.seam.co/manufacturers/minut):
+
+{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
+  endpoint="https://connect.getseam.com"
+  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
+  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
+  manufacturers='["Minut"]'
+/>" %}
 
 We support the following features:
 
@@ -48,4 +55,3 @@ To purchase Minut sensors, visit the Minut online store.
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Minut Online Store</strong></td><td></td><td><a href="https://store.minut.com/">https://store.minut.com/</a></td><td><a href="../.gitbook/assets/minut-logo.png">minut-logo.png</a></td></tr></tbody></table>
 
 ***
-

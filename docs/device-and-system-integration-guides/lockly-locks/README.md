@@ -14,9 +14,16 @@ Seam integrates with Lockly smart locks. With a focus on security, Lockly smart 
 
 ## Supported Devices
 
-This integration supports [all Lockly smart locks](https://lockly.com/collections/door-lock). Note that you must also install the [Secure Link Wi-Fi Hub](https://lockly.com/products/secure-link-wifi-hub?bvstate=pg:4/ct:r\&g\_campaign\_id=16972321320\&g\_adgroup\_id=\&utm\_source=google\&utm\_medium=pmax\&utm\_campaign=pfmx-20230201MCV\&gclid=Cj0KCQjwvL-oBhCxARIsAHkOiu0hV67HkcUG7buEnk3odH5k8\_I0JqFMU0r5V9Pp7gdGWgBYUQlCIr4aAq8jEALw\_wcB) to connect these locks to the internet.
+This integration supports [all Lockly smart locks](https://lockly.com/collections/door-lock). Note that you must also install the [Secure Link Wi-Fi Hub](https://lockly.com/products/secure-link-wifi-hub?bvstate=pg:4/ct:r\&g_campaign_id=16972321320\&g_adgroup_id=\&utm_source=google\&utm_medium=pmax\&utm_campaign=pfmx-20230201MCV\&gclid=Cj0KCQjwvL-oBhCxARIsAHkOiu0hV67HkcUG7buEnk3odH5k8_I0JqFMU0r5V9Pp7gdGWgBYUQlCIr4aAq8jEALw_wcB) to connect these locks to the internet.
 
-For detailed information about the Lockly devices that Seam supports, see our [Lockly Supported Devices page](https://www.seam.co/manufacturers/lockly).
+For detailed information about the Lockly devices that Seam supports, see the following table and our [Lockly Supported Devices page](https://www.seam.co/manufacturers/lockly):
+
+{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
+  endpoint="https://connect.getseam.com"
+  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
+  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
+  manufacturers='["Lockly"]'
+/>" %}
 
 We support the following features:
 
@@ -69,4 +76,3 @@ Order Lockly locks directly from the Lockly website.
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Lockly</strong></td><td></td><td><a href="https://lockly.com/collections/door-lock">https://lockly.com/collections/door-lock</a></td><td><a href="../../.gitbook/assets/lockly-logo.png">lockly-logo.png</a></td></tr></tbody></table>
 
 ***
-

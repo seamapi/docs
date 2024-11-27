@@ -12,7 +12,14 @@ Seam provides a universal API to connect and control many brands of IoT devices 
 
 This guide gives you a rapid introduction to connecting and controlling your [Akiles lock](./) using the Seam API. For application developers, you can use the Seam API in your app, and your users can authorize your app to control their devices using Seam.
 
-For detailed information about the Akiles devices that Seam supports, see our [Akiles Supported Devices page](https://www.seam.co/manufacturers/akiles).
+For detailed information about the Akiles devices that Seam supports, see the following table and our [Akiles Supported Devices page](https://www.seam.co/manufacturers/akiles):
+
+{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
+  endpoint="https://connect.getseam.com"
+  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
+  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
+  manufacturers='["Akiles"]'
+/>" %}
 
 To learn more about other IoT device and system brands that Seam supports—such as Yale, Schlage, Google Nest, and many more—visit our [integration page](https://www.seam.co/supported-devices-and-systems).
 
@@ -972,7 +979,7 @@ Try out the following actions on your Akiles lock:
 
 ### Unlock your lock
 
-To unlock a door, use the [Unlock Door](../../api-clients/locks/unlock\_door.md) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](../../core-concepts/action-attempts.md) to track the progress of the unlock operation.
+To unlock a door, use the [Unlock Door](../../api-clients/locks/unlock_door.md) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](../../core-concepts/action-attempts.md) to track the progress of the unlock operation.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -1209,7 +1216,7 @@ return nil
 {% endtab %}
 {% endtabs %}
 
-You can track the status of the unlock operation to confirm that the device unlocked successfully. Query the `locked` status of the device, [retrieve the action attempt](../../api-clients/action\_attempts/get.md) by ID, or look for a [`lock.unlocked` event](../../api-clients/events/#event-types).
+You can track the status of the unlock operation to confirm that the device unlocked successfully. Query the `locked` status of the device, [retrieve the action attempt](../../api-clients/action_attempts/get.md) by ID, or look for a [`lock.unlocked` event](../../api-clients/events/#event-types).
 
 To query the `locked` status of the device:
 
