@@ -41,7 +41,9 @@ export function setApiRouteLayoutContext(
   file.title = metadata.title
   file.path = route.path
   file.endpoints = route.endpoints
-    .filter(({ isUndocumented }) => !isUndocumented)
+    .filter(
+      ({ isUndocumented, title }) => !isUndocumented && title.length !== 0,
+    )
     .map(({ path, name, description }) => ({
       path,
       name,
