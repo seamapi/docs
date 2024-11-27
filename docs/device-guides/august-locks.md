@@ -8,7 +8,7 @@ description: Guide for using August locks with Seam
 
 August produces smart locks for the residential market. Seam integrates directly with the August Wi-Fi Smart Lock, as well as with additional August Smart Locks through the August Connect® Wi-Fi Bridge. In addition, Seam supports the August Smart Keypad accessory.
 
-Each August lock attaches to an existing deadbolt, replacing only the lock component on the inside of a door. Consequently, August locks do not change the exterior of locks, and the existing physical keys still work with installed August locks.&#x20;
+Each August lock attaches to an existing deadbolt, replacing only the lock component on the inside of a door. Consequently, August locks do not change the exterior of locks, and the existing physical keys still work with installed August locks.
 
 ***
 
@@ -24,7 +24,12 @@ The following table details the requirements for compatibility with this Seam in
 
 <table><thead><tr><th width="187.33333333333331">Product Models</th><th>Compatibility</th><th>Accessories</th></tr></thead><tbody><tr><td><a href="https://august.com/products/august-wifi-smart-lock">Wi-Fi Smart Lock</a></td><td>Compatible</td><td><ul><li>Smart Keypad (optional)</li></ul></td></tr><tr><td><a href="https://august.com/products/august-smart-lock-pro-connect">Smart Lock Pro</a></td><td>Compatible only with Connect Wi-Fi Bridge</td><td><ul><li>Connect Wi-Fi Bridge</li><li>Smart Keypad (optional)</li></ul></td></tr><tr><td><a href="https://august.com/products/august-smart-lock-connect">Smart Lock</a></td><td>Compatible only with Connect Wi-Fi Bridge</td><td><ul><li>Connect Wi-Fi Bridge</li><li>Smart Keypad (optional)</li></ul></td></tr></tbody></table>
 
-For detailed information about the August devices that Seam supports, see our [August Supported Devices page](https://www.seam.co/manufacturers/august).
+{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
+  endpoint="https://connect.getseam.com"
+  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
+  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
+  manufacturers='["August"]'
+/>" %}
 
 We support the following features:
 
@@ -64,4 +69,3 @@ Order August locks and accessories directly from the August website or from Amaz
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>August</strong></td><td></td><td><a href="https://august.com/">https://august.com/</a></td><td><a href="../.gitbook/assets/august-logo.png">august-logo.png</a></td></tr><tr><td></td><td><strong>August Products on Amazon</strong></td><td></td><td><a href="https://amzn.to/3sVFNTl">https://amzn.to/3sVFNTl</a></td><td><a href="../.gitbook/assets/august-on-amazon.png">august-on-amazon.png</a></td></tr></tbody></table>
 
 ***
-
