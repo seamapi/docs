@@ -1,11 +1,15 @@
 ---
+/acs:
+  title: Access Control Systems
+  description: Systems for managing and monitoring access to physical spaces
+
 /acs/systems:
   title: Systems
   resources:
     - acs_system
 
 /acs/users:
-  title: Users
+  title: ACS Users
   resources:
     - acs_user
 

@@ -164,7 +164,7 @@
   * [Lock a Lock](api-clients/locks/lock_door.md)
   * [Unlock a Lock](api-clients/locks/unlock_door.md)
   * [List Locks](api-clients/locks/list.md)
-* [Access Control Systems](api-clients/acs/README.md)
+* [Access Control Systems](api/acs/README.md)
   * [Systems](api/acs/systems/README.md)
     * [List ACS Systems](api/acs/systems/list.md)
     * [Get an ACS System](api/acs/systems/get.md)

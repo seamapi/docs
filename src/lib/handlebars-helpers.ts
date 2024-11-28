@@ -1,3 +1,5 @@
+import { capitalCase } from 'change-case'
+
 export const eq = (v1: unknown, v2: unknown): boolean => {
   return v1 === v2
 }
@@ -7,4 +9,12 @@ export const or = (...args: unknown[]): boolean => {
   args.pop()
 
   return args.some(Boolean)
+}
+
+export const add = (v1: number, v2: number): number => {
+  return v1 + v2
+}
+
+export const toCapitalCase = (str: string): string => {
+  return capitalCase(str)
 }

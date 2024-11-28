@@ -23,7 +23,7 @@ interface Report {
   deprecated: ReportSection
   extraResponseKeys: MissingResponseKeyReport[]
   endpointsWithoutCodeSamples: string[]
-  noTitle: Pick<ReportSection, 'routes' | 'endpoints'>
+  noTitle: Pick<ReportSection, 'namespaces' | 'routes' | 'endpoints'>
 }
 
 interface ReportSection {
@@ -81,6 +81,7 @@ function generateReport(metadata: Metadata): Report {
     extraResponseKeys: [],
     endpointsWithoutCodeSamples: [],
     noTitle: {
+      namespaces: [],
       routes: [],
       endpoints: [],
     },
@@ -204,6 +205,15 @@ function processRoute(route: Route, report: Report, metadata: Metadata): void {
     'pathMetadata' in metadata
       ? PathMetadataSchema.parse(metadata.pathMetadata)
       : {}
+  const namespace = route.namespace
+  if (
+    namespace != null &&
+    pathMetadata[namespace.path]?.title == null &&
+    !namespace.isUndocumented
+  ) {
+    addUntitledNamespaceToReport(namespace.path, report)
+  }
+
   if (pathMetadata[route.path]?.title == null && !route.isUndocumented) {
     report.noTitle.routes.push({ name: route.path })
   }
@@ -217,6 +227,14 @@ function processRoute(route: Route, report: Report, metadata: Metadata): void {
   for (const endpoint of route.endpoints) {
     processEndpoint(endpoint, report)
   }
+}
+
+const addUntitledNamespaceToReport = (
+  namespace: string,
+  report: Report,
+): void => {
+  if (report.noTitle.namespaces.some((n) => n.name === namespace)) return
+  report.noTitle.namespaces.push({ name: namespace })
 }
 
 function processNamespace(namespace: Namespace, report: Report): void {
