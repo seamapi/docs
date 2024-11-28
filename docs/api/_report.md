@@ -171,7 +171,6 @@ Items that are intentionally undocumented are not included in this section.
 - `access_code`
 - `acs_credential_pool`
 - `acs_credential_provisioning_automation`
-- `acs_user`
 - `client_session`
 - `connect_webview`
 - `connected_account`

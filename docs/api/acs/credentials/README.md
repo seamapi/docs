@@ -162,6 +162,15 @@ Indicates whether the credential is a [multi-phone sync credential](https://docs
 
 ---
 
+### `is_one_time_use`
+
+Format: `Boolean`
+
+Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use.
+
+
+---
+
 ### `issued_at`
 
 Format: `Datetime`
