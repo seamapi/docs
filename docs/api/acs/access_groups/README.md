@@ -16,7 +16,7 @@ Format: `Enum`
 Possible enum values:
 - `pti_unit`
 - `pti_access_level`
-- `salto_access_group`
+- `salto_ks_access_group`
 - `brivo_group`
 
 
@@ -76,7 +76,7 @@ Brand-specific terminology for the access group type.
 Possible enum values:
 - `pti_unit`
 - `pti_access_level`
-- `salto_access_group`
+- `salto_ks_access_group`
 - `brivo_group`
 
 
