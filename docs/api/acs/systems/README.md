@@ -95,6 +95,7 @@ Possible enum values:
 - `pti_site`
 - `alta_org`
 - `salto_ks_site`
+- `salto_space_system`
 - `brivo_account`
 - `hid_credential_manager_organization`
 - `visionline_system`
@@ -176,6 +177,7 @@ Possible enum values:
 - `pti_site`
 - `alta_org`
 - `salto_ks_site`
+- `salto_space_system`
 - `brivo_account`
 - `hid_credential_manager_organization`
 - `visionline_system`

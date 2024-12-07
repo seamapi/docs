@@ -229,6 +229,7 @@ Items that are intentionally undocumented are not included in this section.
 - `client_session.connected_account_ids`
 - `client_session.created_at`
 - `client_session.device_count`
+- `client_session.expires_at`
 - `client_session.token`
 - `client_session.user_identifier_key`
 - `client_session.user_identity_ids`
