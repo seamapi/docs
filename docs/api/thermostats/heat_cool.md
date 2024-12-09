@@ -1,5 +1,9 @@
 # Set to Heat-Cool (Auto) Mode
 
+{% hint style="info" %}
+**Authentication Methods:** `client_session_token`, `personal_access_token`, `console_session_token`, `api_key`
+{% endhint %}
+
 ```
 POST /thermostats/heat_cool ⇒ { action_attempt }
 ```

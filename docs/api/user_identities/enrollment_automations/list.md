@@ -1,5 +1,9 @@
 # List Enrollment Automations
 
+{% hint style="info" %}
+**Authentication Methods:** `client_session_token`, `personal_access_token`, `console_session_token`, `api_key`
+{% endhint %}
+
 ```
 POST /user_identities/enrollment_automations/list ⇒ { enrollment_automations: [enrollment_automation, …] }
 ```

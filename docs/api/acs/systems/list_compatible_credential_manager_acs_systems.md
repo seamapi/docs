@@ -1,5 +1,9 @@
 # List Compatible Credential Manager ACS Systems
 
+{% hint style="info" %}
+**Authentication Methods:** `personal_access_token`, `console_session_token`, `api_key`
+{% endhint %}
+
 ```
 POST /acs/systems/list_compatible_credential_manager_acs_systems ⇒ { acs_systems: [acs_system, …] }
 ```

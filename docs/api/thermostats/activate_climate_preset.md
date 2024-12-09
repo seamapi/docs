@@ -1,5 +1,9 @@
 # Activate a Climate Preset
 
+{% hint style="info" %}
+**Authentication Methods:** `personal_access_token`, `console_session_token`, `api_key`
+{% endhint %}
+
 ```
 POST /thermostats/activate_climate_preset ⇒ { action_attempt }
 ```

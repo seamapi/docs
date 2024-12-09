@@ -1,5 +1,9 @@
 # Delete an Enrollment Automation
 
+{% hint style="info" %}
+**Authentication Methods:** `personal_access_token`, `console_session_token`, `api_key`
+{% endhint %}
+
 ```
 POST /user_identities/enrollment_automations/delete ⇒ void
 ```

@@ -1,5 +1,9 @@
 # List Accessible Devices for a User Identity
 
+{% hint style="info" %}
+**Authentication Methods:** `api_key`, `personal_access_token`, `console_session_token`
+{% endhint %}
+
 ```
 POST /user_identities/list_accessible_devices ⇒ { devices: [device, …] }
 ```

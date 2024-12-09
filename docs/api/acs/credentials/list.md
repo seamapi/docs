@@ -1,5 +1,9 @@
 # List Credentials
 
+{% hint style="info" %}
+**Authentication Methods:** `api_key`, `client_session_token`, `personal_access_token`, `console_session_token`
+{% endhint %}
+
 ```
 POST /acs/credentials/list ⇒ { acs_credentials: [acs_credential, …] }
 ```

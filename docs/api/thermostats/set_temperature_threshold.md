@@ -1,5 +1,9 @@
 # Set a Temperature Threshold
 
+{% hint style="info" %}
+**Authentication Methods:** `api_key`, `personal_access_token`, `console_session_token`
+{% endhint %}
+
 ```
 PATCH /thermostats/set_temperature_threshold ⇒ void
 ```

@@ -1,5 +1,9 @@
 # Remove an ACS User from a User Identity
 
+{% hint style="info" %}
+**Authentication Methods:** `api_key`, `personal_access_token`, `console_session_token`
+{% endhint %}
+
 ```
 POST /user_identities/remove_acs_user ⇒ void
 ```

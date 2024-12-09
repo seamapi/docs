@@ -1,5 +1,9 @@
 # List ACS Users in an Access Group
 
+{% hint style="info" %}
+**Authentication Methods:** `personal_access_token`, `console_session_token`, `api_key`
+{% endhint %}
+
 ```
 POST /acs/access_groups/list_users ⇒ { acs_users: [acs_user, …] }
 ```

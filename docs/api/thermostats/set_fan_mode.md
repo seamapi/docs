@@ -1,5 +1,9 @@
 # Set the Fan Mode Setting
 
+{% hint style="info" %}
+**Authentication Methods:** `client_session_token`, `personal_access_token`, `console_session_token`, `api_key`
+{% endhint %}
+
 ```
 POST /thermostats/set_fan_mode ⇒ { action_attempt }
 ```

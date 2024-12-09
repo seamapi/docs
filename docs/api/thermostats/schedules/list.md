@@ -1,5 +1,9 @@
 # List Thermostat Schedules
 
+{% hint style="info" %}
+**Authentication Methods:** `api_key`, `client_session_token`, `personal_access_token`, `console_session_token`
+{% endhint %}
+
 ```
 POST /thermostats/schedules/list ⇒ { thermostat_schedules: [thermostat_schedule, …] }
 ```

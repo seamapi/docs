@@ -1,5 +1,9 @@
 # Add an ACS User to an Access Group
 
+{% hint style="info" %}
+**Authentication Methods:** `personal_access_token`, `console_session_token`, `api_key`
+{% endhint %}
+
 ```
 PUT /acs/users/add_to_access_group ⇒ void
 ```

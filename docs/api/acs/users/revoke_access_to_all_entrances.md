@@ -1,5 +1,9 @@
 # Revoke ACS User Access to All Entrances
 
+{% hint style="info" %}
+**Authentication Methods:** `api_key`, `personal_access_token`, `console_session_token`
+{% endhint %}
+
 ```
 POST /acs/users/revoke_access_to_all_entrances ⇒ void
 ```

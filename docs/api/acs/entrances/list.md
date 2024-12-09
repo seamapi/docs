@@ -1,5 +1,9 @@
 # List Entrances
 
+{% hint style="info" %}
+**Authentication Methods:** `api_key`, `client_session_token`, `personal_access_token`, `console_session_token`
+{% endhint %}
+
 ```
 POST /acs/entrances/list ⇒ { acs_entrances: [acs_entrance, …] }
 ```

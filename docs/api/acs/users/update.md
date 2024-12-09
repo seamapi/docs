@@ -1,5 +1,9 @@
 # Update an ACS User
 
+{% hint style="info" %}
+**Authentication Methods:** `api_key`, `personal_access_token`, `console_session_token`
+{% endhint %}
+
 ```
 PATCH /acs/users/update ⇒ void
 ```

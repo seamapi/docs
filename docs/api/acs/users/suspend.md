@@ -1,5 +1,9 @@
 # Suspend an ACS User
 
+{% hint style="info" %}
+**Authentication Methods:** `personal_access_token`, `console_session_token`, `api_key`
+{% endhint %}
+
 ```
 POST /acs/users/suspend ⇒ void
 ```

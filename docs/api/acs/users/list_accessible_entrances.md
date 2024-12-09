@@ -1,5 +1,9 @@
 # List ACS User-Accessible Entrances
 
+{% hint style="info" %}
+**Authentication Methods:** `client_session_token`, `personal_access_token`, `console_session_token`, `api_key`
+{% endhint %}
+
 ```
 POST /acs/users/list_accessible_entrances ⇒ { acs_entrances: [acs_entrance, …] }
 ```

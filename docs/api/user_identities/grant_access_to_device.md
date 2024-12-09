@@ -1,5 +1,9 @@
 # Grant a User Identity Access to a Device
 
+{% hint style="info" %}
+**Authentication Methods:** `api_key`, `personal_access_token`, `console_session_token`
+{% endhint %}
+
 ```
 PUT /user_identities/grant_access_to_device ⇒ void
 ```

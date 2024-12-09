@@ -1,5 +1,9 @@
 # Revoke Access to a Device from a User Identity
 
+{% hint style="info" %}
+**Authentication Methods:** `api_key`, `personal_access_token`, `console_session_token`
+{% endhint %}
+
 ```
 POST /user_identities/revoke_access_to_device ⇒ void
 ```
