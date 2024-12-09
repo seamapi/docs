@@ -1,5 +1,11 @@
 # {{title}}
 
+{{#if authMethods}}
+{% hint style="info" %}
+**Authentication Methods:** {{#each authMethods}}{{#if @index}}, {{/if}}`{{this}}`{{/each}}
+{% endhint %}
+
+{{/if}}
 ```
 {{request.preferredMethod}} {{path}} ⇒ {{#if response.responseKey}}{{#if (eq response.responseType "resource_list")}}{ {{response.responseKey}}: [{{response.resourceType}}, …] }{{else}}{ {{response.responseKey}} }{{/if}}{{else}}void{{/if}}
 ```

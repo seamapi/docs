@@ -1,4 +1,8 @@
-import type { CodeSampleSdk, Endpoint } from '@seamapi/blueprint'
+import type {
+  CodeSampleSdk,
+  Endpoint,
+  SeamAuthMethod,
+} from '@seamapi/blueprint'
 
 const supportedSdks: CodeSampleSdk[] = [
   'javascript',
@@ -13,6 +17,7 @@ export interface ApiEndpointLayoutContext {
   description: string
   title: string
   path: string
+  authMethods: SeamAuthMethod[]
   request: {
     preferredMethod: string
     parameters: Array<{
@@ -50,6 +55,7 @@ export function setEndpointLayoutContext(
   file.description = endpoint.description
   file.title = endpoint.title
   file.path = endpoint.path
+  file.authMethods = endpoint.authMethods
 
   file.request = {
     preferredMethod: endpoint.request?.preferredMethod ?? '',
