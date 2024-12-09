@@ -4,6 +4,10 @@
 POST /acs/entrances/grant_access ⇒ void
 ```
 
+{% hint style="info" %}
+**Authentication Methods:** `api_key`, `personal_access_token`, `console_session_token`
+{% endhint %}
+
 
 
 ## Request Parameters

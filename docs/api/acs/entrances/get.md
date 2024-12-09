@@ -4,6 +4,10 @@
 POST /acs/entrances/get ⇒ { acs_entrance }
 ```
 
+{% hint style="info" %}
+**Authentication Methods:** `api_key`, `client_session_token`
+{% endhint %}
+
 Returns a specified [ACS entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 {% tabs %}

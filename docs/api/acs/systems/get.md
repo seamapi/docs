@@ -4,6 +4,10 @@
 POST /acs/systems/get ⇒ { acs_system }
 ```
 
+{% hint style="info" %}
+**Authentication Methods:** `personal_access_token`, `console_session_token`, `api_key`
+{% endhint %}
+
 Returns a specified [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 Specify the desired access control system by including the corresponding `acs_system_id` in the request body.
