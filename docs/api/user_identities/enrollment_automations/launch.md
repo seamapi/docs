@@ -1,12 +1,12 @@
 # Launch an Enrollment Automation
 
-{% hint style="info" %}
-**Authentication Methods:** `personal_access_token`, `console_session_token`, `api_key`
-{% endhint %}
-
 ```
 POST /user_identities/enrollment_automations/launch ⇒ { enrollment_automation }
 ```
+
+{% hint style="info" %}
+**Authentication Methods:** `personal_access_token`, `console_session_token`, `api_key`
+{% endhint %}
 
 Sets up a new [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) with a specified [credential manager](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).
 

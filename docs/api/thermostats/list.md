@@ -1,12 +1,12 @@
 # List Thermostats
 
-{% hint style="info" %}
-**Authentication Methods:** `api_key`, `personal_access_token`, `console_session_token`, `client_session_token`
-{% endhint %}
-
 ```
 POST /thermostats/list ⇒ { devices: [device, …] }
 ```
+
+{% hint style="info" %}
+**Authentication Methods:** `api_key`, `personal_access_token`, `console_session_token`, `client_session_token`
+{% endhint %}
 
 Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guides/thermostats).
 

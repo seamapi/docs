@@ -1,12 +1,12 @@
 # List Credentials with Access to an Entrance
 
-{% hint style="info" %}
-**Authentication Methods:** `client_session_token`, `personal_access_token`, `console_session_token`, `api_key`
-{% endhint %}
-
 ```
 POST /acs/entrances/list_credentials_with_access ⇒ { acs_credentials: [acs_credential, …] }
 ```
+
+{% hint style="info" %}
+**Authentication Methods:** `client_session_token`, `personal_access_token`, `console_session_token`, `api_key`
+{% endhint %}
 
 Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md) with access to a specified [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 

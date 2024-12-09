@@ -1,12 +1,12 @@
 # Add an ACS User to an Access Group
 
-{% hint style="info" %}
-**Authentication Methods:** `personal_access_token`, `console_session_token`, `api_key`
-{% endhint %}
-
 ```
 PUT /acs/users/add_to_access_group ⇒ void
 ```
+
+{% hint style="info" %}
+**Authentication Methods:** `personal_access_token`, `console_session_token`, `api_key`
+{% endhint %}
 
 Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 

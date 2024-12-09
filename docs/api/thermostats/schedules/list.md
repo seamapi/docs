@@ -1,12 +1,12 @@
 # List Thermostat Schedules
 
-{% hint style="info" %}
-**Authentication Methods:** `api_key`, `client_session_token`, `personal_access_token`, `console_session_token`
-{% endhint %}
-
 ```
 POST /thermostats/schedules/list ⇒ { thermostat_schedules: [thermostat_schedule, …] }
 ```
+
+{% hint style="info" %}
+**Authentication Methods:** `api_key`, `client_session_token`, `personal_access_token`, `console_session_token`
+{% endhint %}
 
 Returns a list of all [thermostat schedules](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 

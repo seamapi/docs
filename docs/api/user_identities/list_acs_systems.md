@@ -1,12 +1,12 @@
 # List ACS Systems Associated with a User Identity
 
-{% hint style="info" %}
-**Authentication Methods:** `client_session_token`, `personal_access_token`, `console_session_token`, `api_key`
-{% endhint %}
-
 ```
 POST /user_identities/list_acs_systems ⇒ { acs_systems: [acs_system, …] }
 ```
+
+{% hint style="info" %}
+**Authentication Methods:** `client_session_token`, `personal_access_token`, `console_session_token`, `api_key`
+{% endhint %}
 
 Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 

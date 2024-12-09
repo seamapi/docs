@@ -1,12 +1,12 @@
 # Set a Temperature Threshold
 
-{% hint style="info" %}
-**Authentication Methods:** `api_key`, `personal_access_token`, `console_session_token`
-{% endhint %}
-
 ```
 PATCH /thermostats/set_temperature_threshold ⇒ void
 ```
+
+{% hint style="info" %}
+**Authentication Methods:** `api_key`, `personal_access_token`, `console_session_token`
+{% endhint %}
 
 Sets a [temperature threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) for a specified thermostat. Seam emits a `thermostat.temperature_threshold_exceeded` event and adds a warning on a thermostat if it reports a temperature outside the threshold range.
 

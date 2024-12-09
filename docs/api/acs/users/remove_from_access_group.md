@@ -1,12 +1,12 @@
 # Remove an ACS User from an Access Group
 
-{% hint style="info" %}
-**Authentication Methods:** `personal_access_token`, `console_session_token`, `api_key`
-{% endhint %}
-
 ```
 POST /acs/users/remove_from_access_group ⇒ void
 ```
+
+{% hint style="info" %}
+**Authentication Methods:** `personal_access_token`, `console_session_token`, `api_key`
+{% endhint %}
 
 Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 

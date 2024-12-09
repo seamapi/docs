@@ -1,12 +1,12 @@
 # Update a Credential
 
-{% hint style="info" %}
-**Authentication Methods:** `personal_access_token`, `console_session_token`, `api_key`
-{% endhint %}
-
 ```
 PATCH /acs/credentials/update ⇒ void
 ```
+
+{% hint style="info" %}
+**Authentication Methods:** `personal_access_token`, `console_session_token`, `api_key`
+{% endhint %}
 
 Updates the code and ends at date and time for a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 

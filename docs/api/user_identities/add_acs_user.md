@@ -1,12 +1,12 @@
 # Add an ACS User to a User Identity
 
-{% hint style="info" %}
-**Authentication Methods:** `api_key`, `personal_access_token`, `console_session_token`
-{% endhint %}
-
 ```
 PUT /user_identities/add_acs_user ⇒ void
 ```
+
+{% hint style="info" %}
+**Authentication Methods:** `api_key`, `personal_access_token`, `console_session_token`
+{% endhint %}
 
 Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 

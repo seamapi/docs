@@ -1,12 +1,12 @@
 # List Entrances
 
-{% hint style="info" %}
-**Authentication Methods:** `api_key`, `client_session_token`, `personal_access_token`, `console_session_token`
-{% endhint %}
-
 ```
 POST /acs/entrances/list ⇒ { acs_entrances: [acs_entrance, …] }
 ```
+
+{% hint style="info" %}
+**Authentication Methods:** `api_key`, `client_session_token`, `personal_access_token`, `console_session_token`
+{% endhint %}
 
 Returns a list of all [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 

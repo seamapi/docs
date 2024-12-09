@@ -1,12 +1,12 @@
 # Grant a User Identity Access to a Device
 
-{% hint style="info" %}
-**Authentication Methods:** `api_key`, `personal_access_token`, `console_session_token`
-{% endhint %}
-
 ```
 PUT /user_identities/grant_access_to_device ⇒ void
 ```
+
+{% hint style="info" %}
+**Authentication Methods:** `api_key`, `personal_access_token`, `console_session_token`
+{% endhint %}
 
 Grants a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) access to a specified [device](../../core-concepts/devices/README.md).
 

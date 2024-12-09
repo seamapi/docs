@@ -1,12 +1,12 @@
 # List Access Groups
 
-{% hint style="info" %}
-**Authentication Methods:** `personal_access_token`, `console_session_token`, `api_key`
-{% endhint %}
-
 ```
 POST /acs/access_groups/list ⇒ { acs_access_groups: [acs_access_group, …] }
 ```
+
+{% hint style="info" %}
+**Authentication Methods:** `personal_access_token`, `console_session_token`, `api_key`
+{% endhint %}
 
 Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 

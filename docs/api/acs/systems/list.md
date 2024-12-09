@@ -1,12 +1,12 @@
 # List ACS Systems
 
-{% hint style="info" %}
-**Authentication Methods:** `client_session_token`, `personal_access_token`, `console_session_token`, `api_key`
-{% endhint %}
-
 ```
 POST /acs/systems/list ⇒ { acs_systems: [acs_system, …] }
 ```
+
+{% hint style="info" %}
+**Authentication Methods:** `client_session_token`, `personal_access_token`, `console_session_token`, `api_key`
+{% endhint %}
 
 Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems).
 
