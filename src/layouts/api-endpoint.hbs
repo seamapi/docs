@@ -4,12 +4,6 @@
 {{request.preferredMethod}} {{path}} ⇒ {{#if response.responseKey}}{{#if (eq response.responseType "resource_list")}}{ {{response.responseKey}}: [{{response.resourceType}}, …] }{{else}}{ {{response.responseKey}} }{{/if}}{{else}}void{{/if}}
 ```
 
-{{#if authMethods}}
-{% hint style="info" %}
-**Authentication Methods:** {{#each authMethods}}{{#if @index}}, {{/if}}`{{this}}`{{/each}}
-{% endhint %}
-
-{{/if}}
 {{{description}}}
 
 {{#if codeSamples.length}}
@@ -33,6 +27,14 @@
 {{/each}}
 {{/each}}
 {% endtabs %}
+
+{{/if}}
+{{#if authMethods}}
+## Authentication Methods
+
+{{#each authMethods}}
+- {{this}}
+{{/each}}
 
 {{/if}}
 ## Request Parameters
