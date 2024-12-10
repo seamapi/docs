@@ -30,11 +30,19 @@
 
 {{/if}}
 {{#if authMethods}}
-## Authentication Methods
+## Authentication
 
-{{#each authMethods}}
-- {{this}}
-{{/each}}
+This endpoint supports the following authentication methods:
+
+<table>
+  <tbody>
+    {{#each authMethods}}
+    <tr>
+      <td>{{this}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
 
 {{/if}}
 ## Request Parameters
