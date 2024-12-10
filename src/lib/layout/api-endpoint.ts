@@ -17,7 +17,7 @@ export interface ApiEndpointLayoutContext {
   description: string
   title: string
   path: string
-  authMethods: SeamAuthMethod[]
+  authMethods: AuthMethodDisplayName[]
   request: {
     preferredMethod: string
     parameters: Array<{
@@ -48,6 +48,24 @@ export interface ApiEndpointLayoutContext {
   }>
 }
 
+type AuthMethodDisplayName =
+  | 'API Key'
+  | 'Client Session Token'
+  | 'Console Session Token'
+  | 'Personal Access Token'
+  | 'Publishable Key'
+
+const seamAuthMethodToDisplayNameMap: Record<
+  SeamAuthMethod,
+  AuthMethodDisplayName
+> = {
+  api_key: 'API Key',
+  client_session_token: 'Client Session Token',
+  console_session_token: 'Console Session Token',
+  personal_access_token: 'Personal Access Token',
+  publishable_key: 'Publishable Key',
+}
+
 export function setEndpointLayoutContext(
   file: Partial<ApiEndpointLayoutContext>,
   endpoint: Endpoint,
@@ -55,7 +73,9 @@ export function setEndpointLayoutContext(
   file.description = endpoint.description
   file.title = endpoint.title
   file.path = endpoint.path
-  file.authMethods = endpoint.authMethods
+  file.authMethods = endpoint.authMethods.map(
+    (method) => seamAuthMethodToDisplayNameMap[method],
+  )
 
   file.request = {
     preferredMethod: endpoint.request?.preferredMethod ?? '',
