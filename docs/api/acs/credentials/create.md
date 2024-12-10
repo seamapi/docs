@@ -5,7 +5,7 @@ POST /acs/credentials/create ⇒ { acs_credential }
 ```
 
 {% hint style="info" %}
-**Authentication Methods:** `personal_access_token`, `console_session_token`, `api_key`
+**Authentication Methods:** `Personal Access Token`, `Console Session Token`, `API Key`
 {% endhint %}
 
 Creates a new [credential](../../../capability-guides/access-systems/managing-credentials.md) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).

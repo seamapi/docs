@@ -5,7 +5,7 @@ POST /acs/users/list_accessible_entrances â‡’ { acs_entrances: [acs_entrance, â€
 ```
 
 {% hint style="info" %}
-**Authentication Methods:** `client_session_token`, `personal_access_token`, `console_session_token`, `api_key`
+**Authentication Methods:** `Client Session Token`, `Personal Access Token`, `Console Session Token`, `API Key`
 {% endhint %}
 
 Lists the [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) has access.

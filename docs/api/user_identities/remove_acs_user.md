@@ -5,7 +5,7 @@ POST /user_identities/remove_acs_user ⇒ void
 ```
 
 {% hint style="info" %}
-**Authentication Methods:** `api_key`, `personal_access_token`, `console_session_token`
+**Authentication Methods:** `API Key`, `Personal Access Token`, `Console Session Token`
 {% endhint %}
 
 Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).

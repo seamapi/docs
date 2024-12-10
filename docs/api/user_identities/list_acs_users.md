@@ -5,7 +5,7 @@ POST /user_identities/list_acs_users ⇒ { acs_users: [acs_user, …] }
 ```
 
 {% hint style="info" %}
-**Authentication Methods:** `api_key`, `personal_access_token`, `console_session_token`
+**Authentication Methods:** `API Key`, `Personal Access Token`, `Console Session Token`
 {% endhint %}
 
 Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).

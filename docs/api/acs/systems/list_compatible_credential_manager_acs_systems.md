@@ -5,7 +5,7 @@ POST /acs/systems/list_compatible_credential_manager_acs_systems ⇒ { acs_syste
 ```
 
 {% hint style="info" %}
-**Authentication Methods:** `personal_access_token`, `console_session_token`, `api_key`
+**Authentication Methods:** `Personal Access Token`, `Console Session Token`, `API Key`
 {% endhint %}
 
 Returns a list of all credential manager ACS systems that are compatible with a specified

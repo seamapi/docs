@@ -5,7 +5,7 @@ PATCH /thermostats/schedules/update ⇒ void
 ```
 
 {% hint style="info" %}
-**Authentication Methods:** `client_session_token`, `personal_access_token`, `console_session_token`, `api_key`
+**Authentication Methods:** `Client Session Token`, `Personal Access Token`, `Console Session Token`, `API Key`
 {% endhint %}
 
 Updates a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).

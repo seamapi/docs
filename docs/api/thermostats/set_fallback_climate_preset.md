@@ -5,7 +5,7 @@ POST /thermostats/set_fallback_climate_preset ⇒ void
 ```
 
 {% hint style="info" %}
-**Authentication Methods:** `personal_access_token`, `console_session_token`, `api_key`
+**Authentication Methods:** `Personal Access Token`, `Console Session Token`, `API Key`
 {% endhint %}
 
 Sets a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) as the ["fallback"](../../capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset.md) preset for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).

@@ -5,7 +5,7 @@ POST /acs/access_groups/list_accessible_entrances ⇒ { acs_entrances: [acs_entr
 ```
 
 {% hint style="info" %}
-**Authentication Methods:** `api_key`, `personal_access_token`, `console_session_token`
+**Authentication Methods:** `API Key`, `Personal Access Token`, `Console Session Token`
 {% endhint %}
 
 Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).

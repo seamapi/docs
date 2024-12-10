@@ -5,7 +5,7 @@ POST /acs/entrances/grant_access ⇒ void
 ```
 
 {% hint style="info" %}
-**Authentication Methods:** `api_key`, `personal_access_token`, `console_session_token`
+**Authentication Methods:** `API Key`, `Personal Access Token`, `Console Session Token`
 {% endhint %}
 
 

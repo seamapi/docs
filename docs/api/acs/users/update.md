@@ -5,7 +5,7 @@ PATCH /acs/users/update ⇒ void
 ```
 
 {% hint style="info" %}
-**Authentication Methods:** `api_key`, `personal_access_token`, `console_session_token`
+**Authentication Methods:** `API Key`, `Personal Access Token`, `Console Session Token`
 {% endhint %}
 
 Updates the properties of a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
