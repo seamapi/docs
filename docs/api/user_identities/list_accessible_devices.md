@@ -4,10 +4,6 @@
 POST /user_identities/list_accessible_devices ⇒ { devices: [device, …] }
 ```
 
-{% hint style="info" %}
-**Authentication Methods:** `API Key`, `Personal Access Token`, `Console Session Token`
-{% endhint %}
-
 Returns a list of all [devices](../../core-concepts/devices/README.md) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 {% tabs %}
@@ -330,6 +326,12 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- API Key
+- Personal Access Token
+- Console Session Token
 
 ## Request Parameters
 

@@ -4,10 +4,6 @@
 POST /acs/entrances/get ⇒ { acs_entrance }
 ```
 
-{% hint style="info" %}
-**Authentication Methods:** `API Key`, `Client Session Token`
-{% endhint %}
-
 Returns a specified [ACS entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 {% tabs %}
@@ -134,6 +130,11 @@ api.AcsEntrance{AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", AcsEntrance
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- API Key
+- Client Session Token
 
 ## Request Parameters
 

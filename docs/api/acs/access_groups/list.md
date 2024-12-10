@@ -4,10 +4,6 @@
 POST /acs/access_groups/list ⇒ { acs_access_groups: [acs_access_group, …] }
 ```
 
-{% hint style="info" %}
-**Authentication Methods:** `Personal Access Token`, `Console Session Token`, `API Key`
-{% endhint %}
-
 Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
 {% tabs %}
@@ -172,6 +168,12 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- Personal Access Token
+- Console Session Token
+- API Key
 
 ## Request Parameters
 

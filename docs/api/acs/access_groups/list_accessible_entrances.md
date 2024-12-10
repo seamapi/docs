@@ -4,10 +4,6 @@
 POST /acs/access_groups/list_accessible_entrances ⇒ { acs_entrances: [acs_entrance, …] }
 ```
 
-{% hint style="info" %}
-**Authentication Methods:** `API Key`, `Personal Access Token`, `Console Session Token`
-{% endhint %}
-
 Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
 {% tabs %}
@@ -152,6 +148,12 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- API Key
+- Personal Access Token
+- Console Session Token
 
 ## Request Parameters
 

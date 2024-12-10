@@ -4,10 +4,6 @@
 POST /thermostats/heat_cool ⇒ { action_attempt }
 ```
 
-{% hint style="info" %}
-**Authentication Methods:** `Client Session Token`, `Personal Access Token`, `Console Session Token`, `API Key`
-{% endhint %}
-
 Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to [heat-cool ("auto") mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
 
 {% tabs %}
@@ -139,6 +135,13 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- Client Session Token
+- Personal Access Token
+- Console Session Token
+- API Key
 
 ## Request Parameters
 

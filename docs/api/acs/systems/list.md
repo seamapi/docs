@@ -4,10 +4,6 @@
 POST /acs/systems/list ⇒ { acs_systems: [acs_system, …] }
 ```
 
-{% hint style="info" %}
-**Authentication Methods:** `Client Session Token`, `Personal Access Token`, `Console Session Token`, `API Key`
-{% endhint %}
-
 Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems).
 
 To filter the list of returned access control systems by a specific connected account ID, include the
@@ -118,6 +114,13 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- Client Session Token
+- Personal Access Token
+- Console Session Token
+- API Key
 
 ## Request Parameters
 

@@ -4,10 +4,6 @@
 POST /acs/entrances/list ⇒ { acs_entrances: [acs_entrance, …] }
 ```
 
-{% hint style="info" %}
-**Authentication Methods:** `API Key`, `Client Session Token`, `Personal Access Token`, `Console Session Token`
-{% endhint %}
-
 Returns a list of all [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 {% tabs %}
@@ -130,6 +126,13 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- API Key
+- Client Session Token
+- Personal Access Token
+- Console Session Token
 
 ## Request Parameters
 

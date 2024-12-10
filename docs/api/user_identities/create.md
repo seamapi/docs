@@ -4,10 +4,6 @@
 POST /user_identities/create ⇒ { user_identity }
 ```
 
-{% hint style="info" %}
-**Authentication Methods:** `API Key`, `Personal Access Token`, `Console Session Token`
-{% endhint %}
-
 Creates a new [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 {% tabs %}
@@ -163,6 +159,12 @@ api.UserIdentity{UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", UserIde
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- API Key
+- Personal Access Token
+- Console Session Token
 
 ## Request Parameters
 

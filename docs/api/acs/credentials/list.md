@@ -4,10 +4,6 @@
 POST /acs/credentials/list ⇒ { acs_credentials: [acs_credential, …] }
 ```
 
-{% hint style="info" %}
-**Authentication Methods:** `API Key`, `Client Session Token`, `Personal Access Token`, `Console Session Token`
-{% endhint %}
-
 Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md).
 
 {% tabs %}
@@ -176,6 +172,13 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- API Key
+- Client Session Token
+- Personal Access Token
+- Console Session Token
 
 ## Request Parameters
 

@@ -4,10 +4,6 @@
 POST /thermostats/schedules/create ⇒ { thermostat_schedule }
 ```
 
-{% hint style="info" %}
-**Authentication Methods:** `Client Session Token`, `Personal Access Token`, `Console Session Token`, `API Key`
-{% endhint %}
-
 Creates a [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 {% tabs %}
@@ -168,6 +164,13 @@ api.ThermostatSchedule{ThermostatScheduleId: "56d29fcf-0674-4db5-8e03-b2370a7746
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- Client Session Token
+- Personal Access Token
+- Console Session Token
+- API Key
 
 ## Request Parameters
 

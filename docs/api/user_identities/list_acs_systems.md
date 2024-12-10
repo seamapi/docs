@@ -4,10 +4,6 @@
 POST /user_identities/list_acs_systems ⇒ { acs_systems: [acs_system, …] }
 ```
 
-{% hint style="info" %}
-**Authentication Methods:** `Client Session Token`, `Personal Access Token`, `Console Session Token`, `API Key`
-{% endhint %}
-
 Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 {% tabs %}
@@ -163,6 +159,13 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- Client Session Token
+- Personal Access Token
+- Console Session Token
+- API Key
 
 ## Request Parameters
 

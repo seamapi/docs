@@ -4,10 +4,6 @@
 POST /acs/systems/get ⇒ { acs_system }
 ```
 
-{% hint style="info" %}
-**Authentication Methods:** `Personal Access Token`, `Console Session Token`, `API Key`
-{% endhint %}
-
 Returns a specified [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 Specify the desired access control system by including the corresponding `acs_system_id` in the request body.
@@ -114,6 +110,12 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- Personal Access Token
+- Console Session Token
+- API Key
 
 ## Request Parameters
 

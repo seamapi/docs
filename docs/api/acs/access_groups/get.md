@@ -4,10 +4,6 @@
 POST /acs/access_groups/get ⇒ { acs_access_group }
 ```
 
-{% hint style="info" %}
-**Authentication Methods:** `Personal Access Token`, `Console Session Token`, `API Key`
-{% endhint %}
-
 Returns a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
 {% tabs %}
@@ -158,6 +154,12 @@ api.AcsAccessGroup{AcsAccessGroupId: "44444444-4444-4444-4444-444444444444", Nam
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- Personal Access Token
+- Console Session Token
+- API Key
 
 ## Request Parameters
 

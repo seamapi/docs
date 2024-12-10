@@ -4,10 +4,6 @@
 POST /user_identities/enrollment_automations/launch ⇒ { enrollment_automation }
 ```
 
-{% hint style="info" %}
-**Authentication Methods:** `Personal Access Token`, `Console Session Token`, `API Key`
-{% endhint %}
-
 Sets up a new [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) with a specified [credential manager](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).
 
 {% tabs %}
@@ -162,6 +158,12 @@ api.Unknown{UserIdentityId: "5c945ab5-c75e-4bcb-8e5f-9410061c401f", EnrollmentAu
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- Personal Access Token
+- Console Session Token
+- API Key
 
 ## Request Parameters
 

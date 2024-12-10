@@ -4,10 +4,6 @@
 PATCH /acs/credentials/update ⇒ void
 ```
 
-{% hint style="info" %}
-**Authentication Methods:** `Personal Access Token`, `Console Session Token`, `API Key`
-{% endhint %}
-
 Updates the code and ends at date and time for a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 {% tabs %}
@@ -118,6 +114,12 @@ nil
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- Personal Access Token
+- Console Session Token
+- API Key
 
 ## Request Parameters
 

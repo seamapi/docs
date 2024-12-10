@@ -4,10 +4,6 @@
 POST /thermostats/list ⇒ { devices: [device, …] }
 ```
 
-{% hint style="info" %}
-**Authentication Methods:** `API Key`, `Personal Access Token`, `Console Session Token`, `Client Session Token`
-{% endhint %}
-
 Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guides/thermostats).
 
 {% tabs %}
@@ -199,6 +195,13 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- API Key
+- Personal Access Token
+- Console Session Token
+- Client Session Token
 
 ## Request Parameters
 

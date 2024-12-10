@@ -4,10 +4,6 @@
 POST /acs/credentials/delete ⇒ void
 ```
 
-{% hint style="info" %}
-**Authentication Methods:** `Personal Access Token`, `Console Session Token`, `API Key`
-{% endhint %}
-
 Deletes a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 {% tabs %}
@@ -113,6 +109,12 @@ nil
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- Personal Access Token
+- Console Session Token
+- API Key
 
 ## Request Parameters
 

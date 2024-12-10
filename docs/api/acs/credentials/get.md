@@ -4,10 +4,6 @@
 POST /acs/credentials/get ⇒ { acs_credential }
 ```
 
-{% hint style="info" %}
-**Authentication Methods:** `Personal Access Token`, `Console Session Token`, `API Key`
-{% endhint %}
-
 Returns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 {% tabs %}
@@ -154,6 +150,12 @@ api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUs
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- Personal Access Token
+- Console Session Token
+- API Key
 
 ## Request Parameters
 

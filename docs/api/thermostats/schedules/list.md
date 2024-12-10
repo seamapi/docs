@@ -4,10 +4,6 @@
 POST /thermostats/schedules/list ⇒ { thermostat_schedules: [thermostat_schedule, …] }
 ```
 
-{% hint style="info" %}
-**Authentication Methods:** `API Key`, `Client Session Token`, `Personal Access Token`, `Console Session Token`
-{% endhint %}
-
 Returns a list of all [thermostat schedules](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 {% tabs %}
@@ -191,6 +187,13 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- API Key
+- Client Session Token
+- Personal Access Token
+- Console Session Token
 
 ## Request Parameters
 

@@ -4,10 +4,6 @@
 POST /acs/systems/list_compatible_credential_manager_acs_systems ⇒ { acs_systems: [acs_system, …] }
 ```
 
-{% hint style="info" %}
-**Authentication Methods:** `Personal Access Token`, `Console Session Token`, `API Key`
-{% endhint %}
-
 Returns a list of all credential manager ACS systems that are compatible with a specified
 [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -120,6 +116,12 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- Personal Access Token
+- Console Session Token
+- API Key
 
 ## Request Parameters
 
