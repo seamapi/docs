@@ -159,11 +159,23 @@ api.Unknown{UserIdentityId: "5c945ab5-c75e-4bcb-8e5f-9410061c401f", EnrollmentAu
 
 {% endtabs %}
 
-## Authentication Methods
+## Authentication
 
-- Personal Access Token
-- Console Session Token
-- API Key
+This endpoint supports the following authentication methods:
+
+<table>
+  <tbody>
+    <tr>
+      <td>Personal Access Token</td>
+    </tr>
+    <tr>
+      <td>Console Session Token</td>
+    </tr>
+    <tr>
+      <td>API Key</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Request Parameters
 

@@ -151,11 +151,23 @@ api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUs
 
 {% endtabs %}
 
-## Authentication Methods
+## Authentication
 
-- Personal Access Token
-- Console Session Token
-- API Key
+This endpoint supports the following authentication methods:
+
+<table>
+  <tbody>
+    <tr>
+      <td>Personal Access Token</td>
+    </tr>
+    <tr>
+      <td>Console Session Token</td>
+    </tr>
+    <tr>
+      <td>API Key</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Request Parameters
 

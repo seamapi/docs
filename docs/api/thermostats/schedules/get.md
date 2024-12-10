@@ -145,12 +145,26 @@ api.ThermostatSchedule{ThermostatScheduleId: "89d3507e-60e3-4101-bd1b-ba066ec30a
 
 {% endtabs %}
 
-## Authentication Methods
+## Authentication
 
-- Client Session Token
-- Personal Access Token
-- Console Session Token
-- API Key
+This endpoint supports the following authentication methods:
+
+<table>
+  <tbody>
+    <tr>
+      <td>Client Session Token</td>
+    </tr>
+    <tr>
+      <td>Personal Access Token</td>
+    </tr>
+    <tr>
+      <td>Console Session Token</td>
+    </tr>
+    <tr>
+      <td>API Key</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Request Parameters
 

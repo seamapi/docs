@@ -6,12 +6,26 @@ POST /acs/users/list_accessible_entrances â‡’ { acs_entrances: [acs_entrance, â€
 
 Lists the [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) has access.
 
-## Authentication Methods
+## Authentication
 
-- Client Session Token
-- Personal Access Token
-- Console Session Token
-- API Key
+This endpoint supports the following authentication methods:
+
+<table>
+  <tbody>
+    <tr>
+      <td>Client Session Token</td>
+    </tr>
+    <tr>
+      <td>Personal Access Token</td>
+    </tr>
+    <tr>
+      <td>Console Session Token</td>
+    </tr>
+    <tr>
+      <td>API Key</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Request Parameters
 

@@ -155,11 +155,23 @@ api.AcsAccessGroup{AcsAccessGroupId: "44444444-4444-4444-4444-444444444444", Nam
 
 {% endtabs %}
 
-## Authentication Methods
+## Authentication
 
-- Personal Access Token
-- Console Session Token
-- API Key
+This endpoint supports the following authentication methods:
+
+<table>
+  <tbody>
+    <tr>
+      <td>Personal Access Token</td>
+    </tr>
+    <tr>
+      <td>Console Session Token</td>
+    </tr>
+    <tr>
+      <td>API Key</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Request Parameters
 

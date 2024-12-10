@@ -131,10 +131,20 @@ api.AcsEntrance{AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", AcsEntrance
 
 {% endtabs %}
 
-## Authentication Methods
+## Authentication
 
-- API Key
-- Client Session Token
+This endpoint supports the following authentication methods:
+
+<table>
+  <tbody>
+    <tr>
+      <td>API Key</td>
+    </tr>
+    <tr>
+      <td>Client Session Token</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Request Parameters
 

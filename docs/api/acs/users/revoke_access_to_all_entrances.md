@@ -6,11 +6,23 @@ POST /acs/users/revoke_access_to_all_entrances ⇒ void
 
 Revokes access to all [entrances](https://docs.seam.co/latest/api/acs/entrances) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
-## Authentication Methods
+## Authentication
 
-- API Key
-- Personal Access Token
-- Console Session Token
+This endpoint supports the following authentication methods:
+
+<table>
+  <tbody>
+    <tr>
+      <td>API Key</td>
+    </tr>
+    <tr>
+      <td>Personal Access Token</td>
+    </tr>
+    <tr>
+      <td>Console Session Token</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Request Parameters
 
