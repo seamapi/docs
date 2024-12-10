@@ -1,4 +1,5 @@
 import * as prettierPluginPhp from '@prettier/plugin-php/standalone'
+import * as prettierPluginRuby from '@prettier/plugin-ruby'
 import type { CodeSampleSyntax } from '@seamapi/blueprint'
 import commandExists from 'command-exists'
 import { execa } from 'execa'
@@ -53,15 +54,12 @@ const formatPython = async (content: string): Promise<string> => {
 }
 
 const formatRuby = async (content: string): Promise<string> => {
-  try {
-    await commandExists('ruff')
-  } catch {
-    // eslint-disable-next-line no-console
-    console.warn('Skipping ruby formatting: standardrb is not installed')
-    return content
-  }
-  const result = await execa({ input: content })`standardrb --stdin --fix -`
-  return result.stdout.split('\n').slice(1).join('\n')
+  return await prettier(content, {
+    parser: 'ruby',
+    plugins: [prettierPluginRuby.default],
+    printWidth: 100,
+    trailingComma: 'all',
+  })
 }
 
 const formatGo = async (content: string): Promise<string> => {
