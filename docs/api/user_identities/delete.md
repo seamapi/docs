@@ -109,6 +109,12 @@ nil
 
 {% endtabs %}
 
+## Authentication Methods
+
+- API key
+- Personal access token
+- Console session token
+
 ## Request Parameters
 
 ### `user_identity_id`

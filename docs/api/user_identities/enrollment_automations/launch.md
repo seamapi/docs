@@ -159,6 +159,12 @@ api.Unknown{UserIdentityId: "5c945ab5-c75e-4bcb-8e5f-9410061c401f", EnrollmentAu
 
 {% endtabs %}
 
+## Authentication Methods
+
+- Personal access token
+- Console session token
+- API key
+
 ## Request Parameters
 
 ### `acs_credential_pool_id`

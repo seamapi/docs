@@ -139,6 +139,12 @@ nil
 
 {% endtabs %}
 
+## Authentication Methods
+
+- Personal access token
+- Console session token
+- API key
+
 ## Request Parameters
 
 ### `climate_preset_key`

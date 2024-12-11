@@ -1,4 +1,8 @@
-import type { CodeSampleSdk, Endpoint } from '@seamapi/blueprint'
+import type {
+  CodeSampleSdk,
+  Endpoint,
+  SeamAuthMethod,
+} from '@seamapi/blueprint'
 
 const supportedSdks: CodeSampleSdk[] = [
   'javascript',
@@ -13,6 +17,7 @@ export interface ApiEndpointLayoutContext {
   description: string
   title: string
   path: string
+  authMethods: AuthMethodDisplayName[]
   request: {
     preferredMethod: string
     parameters: Array<{
@@ -43,6 +48,24 @@ export interface ApiEndpointLayoutContext {
   }>
 }
 
+type AuthMethodDisplayName =
+  | 'API key'
+  | 'Client session token'
+  | 'Console session token'
+  | 'Personal access token'
+  | 'Publishable key'
+
+const seamAuthMethodToDisplayNameMap: Record<
+  SeamAuthMethod,
+  AuthMethodDisplayName
+> = {
+  api_key: 'API key',
+  client_session_token: 'Client session token',
+  console_session_token: 'Console session token',
+  personal_access_token: 'Personal access token',
+  publishable_key: 'Publishable key',
+}
+
 export function setEndpointLayoutContext(
   file: Partial<ApiEndpointLayoutContext>,
   endpoint: Endpoint,
@@ -50,6 +73,9 @@ export function setEndpointLayoutContext(
   file.description = endpoint.description
   file.title = endpoint.title
   file.path = endpoint.path
+  file.authMethods = endpoint.authMethods.map(
+    (method) => seamAuthMethodToDisplayNameMap[method],
+  )
 
   file.request = {
     preferredMethod: endpoint.request?.preferredMethod ?? '',

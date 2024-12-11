@@ -6,6 +6,12 @@ POST /acs/entrances/grant_access ⇒ void
 
 
 
+## Authentication Methods
+
+- API key
+- Personal access token
+- Console session token
+
 ## Request Parameters
 
 ### `acs_entrance_id`

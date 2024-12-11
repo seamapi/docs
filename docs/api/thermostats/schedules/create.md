@@ -165,6 +165,13 @@ api.ThermostatSchedule{ThermostatScheduleId: "56d29fcf-0674-4db5-8e03-b2370a7746
 
 {% endtabs %}
 
+## Authentication Methods
+
+- Client session token
+- Personal access token
+- Console session token
+- API key
+
 ## Request Parameters
 
 ### `climate_preset_key`

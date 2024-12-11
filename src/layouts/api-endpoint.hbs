@@ -29,6 +29,14 @@
 {% endtabs %}
 
 {{/if}}
+{{#if authMethods}}
+## Authentication Methods
+
+{{#each authMethods}}
+- {{this}}
+{{/each}}
+
+{{/if}}
 ## Request Parameters
 
 {{#each request.parameters}}

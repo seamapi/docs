@@ -136,6 +136,13 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 
 {% endtabs %}
 
+## Authentication Methods
+
+- Client session token
+- Personal access token
+- Console session token
+- API key
+
 ## Request Parameters
 
 ### `cooling_set_point_celsius`

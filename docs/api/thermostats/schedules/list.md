@@ -188,6 +188,13 @@ func main() {
 
 {% endtabs %}
 
+## Authentication Methods
+
+- API key
+- Client session token
+- Personal access token
+- Console session token
+
 ## Request Parameters
 
 ### `device_id`

@@ -143,6 +143,13 @@ func main() {
 
 {% endtabs %}
 
+## Authentication Methods
+
+- API key
+- Client session token
+- Personal access token
+- Console session token
+
 ## Request Parameters
 
 ### `credential_manager_acs_system_id`

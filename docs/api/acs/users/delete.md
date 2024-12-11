@@ -108,6 +108,12 @@ nil
 
 {% endtabs %}
 
+## Authentication Methods
+
+- Personal access token
+- Console session token
+- API key
+
 ## Request Parameters
 
 ### `acs_user_id`

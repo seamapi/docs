@@ -196,6 +196,13 @@ func main() {
 
 {% endtabs %}
 
+## Authentication Methods
+
+- API key
+- Personal access token
+- Console session token
+- Client session token
+
 ## Request Parameters
 
 ### `connect_webview_id`

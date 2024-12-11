@@ -160,6 +160,13 @@ func main() {
 
 {% endtabs %}
 
+## Authentication Methods
+
+- Client session token
+- Personal access token
+- Console session token
+- API key
+
 ## Request Parameters
 
 ### `user_identity_id`
