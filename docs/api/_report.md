@@ -214,6 +214,7 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_entrance.errors`
 - `acs_entrance.latch_metadata`
 - `acs_entrance.salto_ks_metadata`
+- `acs_entrance.salto_space_metadata`
 - `acs_entrance.visionline_metadata`
 - `acs_system.location`
 - `acs_system.system_type`
