@@ -8,6 +8,10 @@ description: Use the Seam Bridge to connect on-premises systems to Seam.
 
 The Seam Bridge enables you to connect on-premises software systems to the Seam platform. Consisting of an executable file (that is, an application), the Seam Bridge is easy to install on an on-premises computer. Once installed, the Seam Bridge creates a Seam Network and functions as a secure intermediary, facilitating network requests between Seam and the on-premises network. This setup aims to enable smooth communication between cloud-based services and existing local systems, while prioritizing data security and network integrity.
 
+{% hint style="info" %}
+The Seam Bridge is a software-only component that Seam provides at no extra cost.
+{% endhint %}
+
 ***
 
 ## System Requirements
