@@ -49,21 +49,21 @@ export interface ApiEndpointLayoutContext {
 }
 
 type AuthMethodDisplayName =
-  | 'API Key'
-  | 'Client Session Token'
-  | 'Console Session Token'
-  | 'Personal Access Token'
-  | 'Publishable Key'
+  | 'API key'
+  | 'Client session token'
+  | 'Console session token'
+  | 'Personal access token'
+  | 'Publishable key'
 
 const seamAuthMethodToDisplayNameMap: Record<
   SeamAuthMethod,
   AuthMethodDisplayName
 > = {
-  api_key: 'API Key',
-  client_session_token: 'Client Session Token',
-  console_session_token: 'Console Session Token',
-  personal_access_token: 'Personal Access Token',
-  publishable_key: 'Publishable Key',
+  api_key: 'API key',
+  client_session_token: 'Client session token',
+  console_session_token: 'Console session token',
+  personal_access_token: 'Personal access token',
+  publishable_key: 'Publishable key',
 }
 
 export function setEndpointLayoutContext(
