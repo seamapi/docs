@@ -153,9 +153,9 @@ api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUs
 
 ## Authentication Methods
 
-- Personal Access Token
-- Console Session Token
-- API Key
+- Personal access token
+- Console session token
+- API key
 
 ## Request Parameters
 

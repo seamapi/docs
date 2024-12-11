@@ -117,9 +117,9 @@ nil
 
 ## Authentication Methods
 
-- API Key
-- Personal Access Token
-- Console Session Token
+- API key
+- Personal access token
+- Console session token
 
 ## Request Parameters
 

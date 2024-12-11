@@ -175,10 +175,10 @@ func main() {
 
 ## Authentication Methods
 
-- API Key
-- Client Session Token
-- Personal Access Token
-- Console Session Token
+- API key
+- Client session token
+- Personal access token
+- Console session token
 
 ## Request Parameters
 

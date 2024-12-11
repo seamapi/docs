@@ -114,10 +114,10 @@ nil
 
 ## Authentication Methods
 
-- Client Session Token
-- Personal Access Token
-- Console Session Token
-- API Key
+- Client session token
+- Personal access token
+- Console session token
+- API key
 
 ## Request Parameters
 

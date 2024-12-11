@@ -133,8 +133,8 @@ api.AcsEntrance{AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", AcsEntrance
 
 ## Authentication Methods
 
-- API Key
-- Client Session Token
+- API key
+- Client session token
 
 ## Request Parameters
 

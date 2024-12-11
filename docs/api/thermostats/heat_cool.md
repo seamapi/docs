@@ -138,10 +138,10 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 
 ## Authentication Methods
 
-- Client Session Token
-- Personal Access Token
-- Console Session Token
-- API Key
+- Client session token
+- Personal access token
+- Console session token
+- API key
 
 ## Request Parameters
 
