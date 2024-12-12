@@ -69,7 +69,7 @@ A thermostat was adjusted manually.
 
 <details>
 <summary>method <code>enum</code></summary>
-Method used to adjust the thermostat manually. <code>seam</code> indicates that the Seam API, Seam CLI, or Seam Console was used to adjust the thermostat.
+Method used to adjust the thermostat manually. `seam` indicates that the Seam API, Seam CLI, or Seam Console was used to adjust the thermostat.
 
 Possible enum values:
 - `seam`
@@ -92,7 +92,7 @@ Temperature, in °F, reported by the thermostat.
 </details>
 <details>
 <summary>upper_limit_celsius <code>number</code></summary>
-Upper temperature limit, in °C, defined by the set <a href="../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds">threshold</a>.
+Upper temperature limit, in °C, defined by the set <a href="https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds">threshold</a>.
 </details>
 <details>
 <summary>upper_limit_fahrenheit <code>number</code></summary>
