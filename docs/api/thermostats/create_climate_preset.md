@@ -224,7 +224,7 @@ Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat
 Type: `boolean`
 Required: No
 
-
+Indicates whether a person at the thermostat or using the API can change the thermostat's settings.
 
 ***
 

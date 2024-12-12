@@ -23,7 +23,7 @@ When creating credentials, you can configure [guest](./#issuing-guest-mobile-cre
 * [Issue Subsequent Credentials for a Reservation](./#issue-subsequent-credentials-for-a-reservation)
 
 {% hint style="info" %}
-Seam currently only supports issuing guest mobile credentials. We will extend support to plastic cards in the future.
+Seam currently only supports issuing guest mobile credentials and plastic cards.
 {% endhint %}
 
 ### Access Grant Process for Visionline
@@ -40,7 +40,7 @@ Use the following basic process to grant access in a Visionline ACS:
 
 ## Issuing Guest Mobile Credentials
 
-To issue a guest mobile credential for the Visionline ACS, create a credential with `visionline_metadata.card_function_type` set to `guest`. Also, for a guest credential, you normally set `visionline_metadata.card_format` to `rfid48`, unless the guest needs a higher-capacity `TLCode` card. For more information about Visionline metadata, see [`acs_credential.visionline_metadata` Properties](../mobile-credential-related-properties.md#acs\_credential.visionline\_metadata-properties).
+To issue a guest mobile credential for the Visionline ACS, create a credential with `visionline_metadata.card_function_type` set to `guest`. Also, for a guest credential, you normally set `visionline_metadata.card_format` to `rfid48`, unless the guest needs a higher-capacity `TLCode` card. For more information about Visionline metadata, see [`acs_credential.visionline_metadata` Properties](../mobile-credential-related-properties.md#acs_credential.visionline_metadata-properties).
 
 ### Guest Mobile Credential Types
 
@@ -108,7 +108,7 @@ if has_active_endpoint(user_identity.user_identity_id):
     visionline_metadata={
       "cardFormat": "rfid48",
       "label": "%ROOMNUM% - %SITENAME%",
-      "is_override_key": True
+      "override": True
     }
 )
 ```
