@@ -751,8 +751,6 @@ Items that are intentionally undocumented are not included in this section.
     - `user_identity_id`
 - `/thermostats/cool`
     - `sync`
-- `/thermostats/create_climate_preset`
-    - `manual_override_allowed`
 - `/thermostats/heat`
     - `sync`
 - `/thermostats/heat_cool`
@@ -766,10 +764,6 @@ Items that are intentionally undocumented are not included in this section.
     - `device_id`
     - `fan_mode`
     - `sync`
-- `/thermostats/schedules/create`
-    - `is_override_allowed`
-- `/thermostats/schedules/update`
-    - `is_override_allowed`
 - `/user_identities/list`
     - `credential_manager_acs_system_id`
 - `/user_identities/update`
@@ -822,6 +816,8 @@ These items are deprecated.
     - `email`: use email_address.
 - `/acs/users/update`
     - `email`: use email_address.
+- `/thermostats/create_climate_preset`
+    - `manual_override_allowed`: Use 'thermostat_schedule.is_override_allowed'
 - `/thermostats/set_fan_mode`
     - `fan_mode`: Use `fan_mode_setting` instead.
 - `/thermostats/update_climate_preset`

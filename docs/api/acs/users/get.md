@@ -67,7 +67,17 @@ seam.acs.users.get(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 #### Response
 
 ```ruby
-{"acs_user_id" => "123e4567-e89b-12d3-a456-426614174000", "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000", "acs_access_group_ids" => ["123e4567-e89b-12d3-a456-426614174000"], "workspace_id" => "123e4567-e89b-12d3-a456-426614174000", "created_at" => "2024-04-05T07:57:05.323Z", "display_name" => "Jane Doe", "full_name" => "Jane Doe", "email_address" => "jane@example.com", "phone_number" => "+15555550100"}
+{
+  "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
+  "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
+  "acs_access_group_ids" => ["123e4567-e89b-12d3-a456-426614174000"],
+  "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
+  "created_at" => "2024-04-05T07:57:05.323Z",
+  "display_name" => "Jane Doe",
+  "full_name" => "Jane Doe",
+  "email_address" => "jane@example.com",
+  "phone_number" => "+15555550100",
+}
 ```
 {% endtab %}
 

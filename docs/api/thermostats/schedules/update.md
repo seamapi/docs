@@ -45,7 +45,10 @@ None
 #### Request
 
 ```ruby
-seam.thermostats.schedules.update(thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4", ends_at: "2024-11-15T15:00:00Z")
+seam.thermostats.schedules.update(
+  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
+  ends_at: "2024-11-15T15:00:00Z",
+)
 ```
 
 #### Response
@@ -141,7 +144,7 @@ Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.i
 Type: `boolean`
 Required: No
 
-
+Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the schedule is active. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
 
 ***
 
@@ -150,7 +153,7 @@ Required: No
 Type: `number`
 Required: No
 
-Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
+Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
 
 ***
 

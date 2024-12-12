@@ -59,13 +59,23 @@ EnrollmentAutomation(
 #### Request
 
 ```ruby
-seam.user_identities.enrollment_automations.get(enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895")
+seam.user_identities.enrollment_automations.get(
+  enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895",
+)
 ```
 
 #### Response
 
 ```ruby
-{"user_identity_id" => "5c945ab5-c75e-4bcb-8e5f-9410061c401f", "enrollment_automation_id" => "05505650-aa57-49ab-8f19-429738758895", "acs_credential_provisioning_automation_id" => "05505650-aa57-49ab-8f19-429738758895", "credential_manager_acs_system_id" => "6737e186-8d54-48ce-a7da-a0be4d252172", "is_running" => true, "workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be", "created_at" => "2024-01-09T05:45:33.068Z"}
+{
+  "user_identity_id" => "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
+  "enrollment_automation_id" => "05505650-aa57-49ab-8f19-429738758895",
+  "acs_credential_provisioning_automation_id" => "05505650-aa57-49ab-8f19-429738758895",
+  "credential_manager_acs_system_id" => "6737e186-8d54-48ce-a7da-a0be4d252172",
+  "is_running" => true,
+  "workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+  "created_at" => "2024-01-09T05:45:33.068Z",
+}
 ```
 {% endtab %}
 

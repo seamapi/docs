@@ -52,13 +52,20 @@ ActionAttempt(
 #### Request
 
 ```ruby
-seam.thermostats.activate_climate_preset(device_id: "123e4567-e89b-12d3-a456-426614174000", climate_preset_key: "occupied")
+seam.thermostats.activate_climate_preset(
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  climate_preset_key: "occupied",
+)
 ```
 
 #### Response
 
 ```ruby
-{"action_attempt_id" => "05de2295-d1dc-4748-aae3-9931658bde20", "status" => "pending", "action_type" => "ACTIVATE_CLIMATE_PRESET"}
+{
+  "action_attempt_id" => "05de2295-d1dc-4748-aae3-9931658bde20",
+  "status" => "pending",
+  "action_type" => "ACTIVATE_CLIMATE_PRESET",
+}
 ```
 {% endtab %}
 
