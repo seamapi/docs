@@ -35,6 +35,7 @@
     path: /thermostats/set_hvac_mode
     parameters:
       device_id: 123e4567-e89b-12d3-a456-426614174000
+      hvac_mode_setting: 'heat_cool'
       heating_set_point_celsius: 20
       cooling_set_point_celsius: 25
   response:
