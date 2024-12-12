@@ -81,13 +81,34 @@ AcsCredential(
 #### Request
 
 ```ruby
-seam.acs.credentials.create(acs_user_id: "33333333-3333-3333-3333-333333333333", access_method: "mobile_key", allowed_acs_entrance_ids: ["55555555-5555-5555-5555-555555555555", "55555555-5555-5555-5555-000000000000"], credential_manager_acs_system_id: "88888888-8888-8888-8888-888888888888", is_multi_phone_sync_credential: true, starts_at: "2024-03-01T10:40:00Z", ends_at: "2024-03-04T10:40:00Z")
+seam.acs.credentials.create(
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  access_method: "mobile_key",
+  allowed_acs_entrance_ids: %w[
+    55555555-5555-5555-5555-555555555555
+    55555555-5555-5555-5555-000000000000
+  ],
+  credential_manager_acs_system_id: "88888888-8888-8888-8888-888888888888",
+  is_multi_phone_sync_credential: true,
+  starts_at: "2024-03-01T10:40:00Z",
+  ends_at: "2024-03-04T10:40:00Z",
+)
 ```
 
 #### Response
 
 ```ruby
-{"acs_credential_id" => "99999999-9999-9999-9999-999999999999", "acs_user_id" => "33333333-3333-3333-3333-333333333333", "display_name" => "Multi Phone Sync Credential", "code" => nil, "acs_system_id" => "88888888-8888-8888-8888-888888888888", "access_method" => "mobile_key", "workspace_id" => "00000000-0000-0000-0000-000000000000", "created_at" => "2024-04-12T03:56:22.396Z", "is_multi_phone_sync_credential" => true}
+{
+  "acs_credential_id" => "99999999-9999-9999-9999-999999999999",
+  "acs_user_id" => "33333333-3333-3333-3333-333333333333",
+  "display_name" => "Multi Phone Sync Credential",
+  "code" => nil,
+  "acs_system_id" => "88888888-8888-8888-8888-888888888888",
+  "access_method" => "mobile_key",
+  "workspace_id" => "00000000-0000-0000-0000-000000000000",
+  "created_at" => "2024-04-12T03:56:22.396Z",
+  "is_multi_phone_sync_credential" => true,
+}
 ```
 {% endtab %}
 
