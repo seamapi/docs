@@ -57,13 +57,22 @@ ActionAttempt(
 #### Request
 
 ```ruby
-seam.thermostats.set_hvac_mode(device_id: "123e4567-e89b-12d3-a456-426614174000", hvac_mode_setting: "heat_cool", heating_set_point_celsius: 20, cooling_set_point_celsius: 25)
+seam.thermostats.set_hvac_mode(
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  hvac_mode_setting: "heat_cool",
+  heating_set_point_celsius: 20,
+  cooling_set_point_celsius: 25,
+)
 ```
 
 #### Response
 
 ```ruby
-{"action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000", "status" => "success", "action_type" => "SET_HVAC_MODE"}
+{
+  "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
+  "status" => "success",
+  "action_type" => "SET_HVAC_MODE",
+}
 ```
 {% endtab %}
 

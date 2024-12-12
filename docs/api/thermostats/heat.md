@@ -54,7 +54,7 @@ ActionAttempt(
 ```ruby
 seam.thermostats.heat(
   device_id: "123e4567-e89b-12d3-a456-426614174000",
-  heating_set_point_celsius: 25,
+  heating_set_point_celsius: 20,
 )
 ```
 
