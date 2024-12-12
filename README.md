@@ -127,7 +127,7 @@ GitHub actions will automatically ensure the formatting is applied for all pull 
 - [shfmt](https://github.com/mvdan/sh)
 - [ruff](https://github.com/astral-sh/ruff)
 - [gofmt](https://go.dev/blog/gofmt)
-- [standardrb](https://github.com/standardrb/standard)
+- [syntax_tree](https://github.com/ruby-syntax-tree/syntax_tree)
 
 ## GitHub Actions
 
