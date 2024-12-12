@@ -200,7 +200,6 @@ func main() {
 
 - API key
 - Personal access token
-- Console session token
 - Client session token
 
 ## Request Parameters

@@ -143,7 +143,6 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 
 - Client session token
 - Personal access token
-- Console session token
 - API key
 
 ## Request Parameters

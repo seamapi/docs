@@ -10,7 +10,6 @@ Revokes access to all [entrances](https://docs.seam.co/latest/api/acs/entrances)
 
 - API key
 - Personal access token
-- Console session token
 
 ## Request Parameters
 

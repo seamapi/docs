@@ -10,7 +10,6 @@ POST /acs/entrances/grant_access ⇒ void
 
 - API key
 - Personal access token
-- Console session token
 
 ## Request Parameters
 

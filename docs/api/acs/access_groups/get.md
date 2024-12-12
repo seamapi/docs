@@ -158,7 +158,6 @@ api.AcsAccessGroup{AcsAccessGroupId: "44444444-4444-4444-4444-444444444444", Nam
 ## Authentication Methods
 
 - Personal access token
-- Console session token
 - API key
 
 ## Request Parameters

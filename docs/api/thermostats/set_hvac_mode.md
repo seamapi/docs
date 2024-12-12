@@ -10,7 +10,6 @@ Sets the [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/c
 
 - Client session token
 - Personal access token
-- Console session token
 - API key
 
 ## Request Parameters
