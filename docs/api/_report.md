@@ -923,7 +923,6 @@ These items are deprecated.
 - `/phones/list`
 - `/phones/simulate/create_sandbox_phone`
 - `/thermostats/get`
-- `/thermostats/set_hvac_mode`
 - `/user_identities/update`
 - `/webhooks/create`
 - `/webhooks/delete`
