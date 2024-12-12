@@ -13,6 +13,7 @@ Sets the [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/c
 ```javascript
 await seam.thermostats.setHvacMode({
   device_id: "123e4567-e89b-12d3-a456-426614174000",
+  hvac_mode_setting: "heat_cool",
   heating_set_point_celsius: 20,
   cooling_set_point_celsius: 25,
 });
@@ -35,6 +36,7 @@ await seam.thermostats.setHvacMode({
 ```python
 seam.thermostats.set_hvac_mode(
     device_id="123e4567-e89b-12d3-a456-426614174000",
+    hvac_mode_setting="heat_cool",
     heating_set_point_celsius=20,
     cooling_set_point_celsius=25,
 )
@@ -55,7 +57,7 @@ ActionAttempt(
 #### Request
 
 ```ruby
-seam.thermostats.set_hvac_mode(device_id: "123e4567-e89b-12d3-a456-426614174000", heating_set_point_celsius: 20, cooling_set_point_celsius: 25)
+seam.thermostats.set_hvac_mode(device_id: "123e4567-e89b-12d3-a456-426614174000", hvac_mode_setting: "heat_cool", heating_set_point_celsius: 20, cooling_set_point_celsius: 25)
 ```
 
 #### Response
@@ -72,6 +74,7 @@ seam.thermostats.set_hvac_mode(device_id: "123e4567-e89b-12d3-a456-426614174000"
 <?php
 $seam->thermostats->set_hvac_mode(
     device_id: "123e4567-e89b-12d3-a456-426614174000",
+    hvac_mode_setting: "heat_cool",
     heating_set_point_celsius: 20,
     cooling_set_point_celsius: 25
 );
@@ -93,7 +96,7 @@ $seam->thermostats->set_hvac_mode(
 #### Request
 
 ```seam_cli
-seam thermostats set-hvac-mode --device_id "123e4567-e89b-12d3-a456-426614174000" --heating_set_point_celsius 20 --cooling_set_point_celsius 25
+seam thermostats set-hvac-mode --device_id "123e4567-e89b-12d3-a456-426614174000" --hvac_mode_setting "heat_cool" --heating_set_point_celsius 20 --cooling_set_point_celsius 25
 ```
 
 #### Response
@@ -120,6 +123,7 @@ func main() {
 		context.Background(),
 		api.ThermostatsSetHvacModeRequest{
 			DeviceId:               api.String("123e4567-e89b-12d3-a456-426614174000"),
+			HvacModeSetting:        api.String("heat_cool"),
 			HeatingSetPointCelsius: api.Float64(20),
 			CoolingSetPointCelsius: api.Float64(25),
 		},
