@@ -49,7 +49,12 @@ None
 #### Request
 
 ```ruby
-seam.thermostats.update_climate_preset(device_id: "123e4567-e89b-12d3-a456-426614174000", climate_preset_key: "occupied", cooling_set_point_celsius: 24, manual_override_allowed: true)
+seam.thermostats.update_climate_preset(
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  climate_preset_key: "occupied",
+  cooling_set_point_celsius: 24,
+  manual_override_allowed: true,
+)
 ```
 
 #### Response

@@ -45,7 +45,10 @@ None
 #### Request
 
 ```ruby
-seam.acs.credentials.assign(acs_user_id: "33333333-3333-3333-3333-333333333333", acs_credential_id: "66666666-6666-6666-6666-666666666666")
+seam.acs.credentials.assign(
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  acs_credential_id: "66666666-6666-6666-6666-666666666666",
+)
 ```
 
 #### Response

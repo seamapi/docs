@@ -43,7 +43,9 @@ None
 #### Request
 
 ```ruby
-seam.user_identities.enrollment_automations.delete(enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895")
+seam.user_identities.enrollment_automations.delete(
+  enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895",
+)
 ```
 
 #### Response

@@ -49,7 +49,7 @@ seam.acs.systems.get(acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 #### Response
 
 ```ruby
-[{"acs_system_id" => "8d7e0b3a-b889-49a7-9164-4b71a0506a33"}]
+[{ "acs_system_id" => "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
 ```
 {% endtab %}
 

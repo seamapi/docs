@@ -91,7 +91,28 @@ seam.acs.access_groups.list_users(acs_access_group_id: "44444444-4444-4444-4444-
 #### Response
 
 ```ruby
-[{"acs_user_id" => "33333333-3333-3333-3333-333333333333", "display_name" => "Jane Doe", "full_name" => "Jane Doe", "email" => "jane@example.com", "email_address" => "jane@example.com", "phone_number" => "+15555550100", "acs_system_id" => "11111111-1111-1111-1111-111111111111", "workspace_id" => "00000000-0000-0000-0000-000000000000", "created_at" => "2024-04-05T07:14:28.531Z", "is_suspended" => false, "access_schedule" => {starts_at: "2024-03-01T10:40:00.000Z", ends_at: "2024-03-04T10:40:00.000Z"}, "user_identity_id" => "22222222-2222-2222-2222-222222222222", "user_identity_full_name" => "Jane Doe", "user_identity_email_address" => "jane@example.com", "user_identity_phone_number" => "+15555550100"}]
+[
+  {
+    "acs_user_id" => "33333333-3333-3333-3333-333333333333",
+    "display_name" => "Jane Doe",
+    "full_name" => "Jane Doe",
+    "email" => "jane@example.com",
+    "email_address" => "jane@example.com",
+    "phone_number" => "+15555550100",
+    "acs_system_id" => "11111111-1111-1111-1111-111111111111",
+    "workspace_id" => "00000000-0000-0000-0000-000000000000",
+    "created_at" => "2024-04-05T07:14:28.531Z",
+    "is_suspended" => false,
+    "access_schedule" => {
+      starts_at: "2024-03-01T10:40:00.000Z",
+      ends_at: "2024-03-04T10:40:00.000Z",
+    },
+    "user_identity_id" => "22222222-2222-2222-2222-222222222222",
+    "user_identity_full_name" => "Jane Doe",
+    "user_identity_email_address" => "jane@example.com",
+    "user_identity_phone_number" => "+15555550100",
+  },
+]
 ```
 {% endtab %}
 

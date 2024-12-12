@@ -45,7 +45,10 @@ None
 #### Request
 
 ```ruby
-seam.thermostats.schedules.update(thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4", ends_at: "2024-11-15T15:00:00Z")
+seam.thermostats.schedules.update(
+  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
+  ends_at: "2024-11-15T15:00:00Z",
+)
 ```
 
 #### Response

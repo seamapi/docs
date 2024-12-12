@@ -89,13 +89,38 @@ seam.acs.entrances.list_credentials_with_access(
 #### Request
 
 ```ruby
-seam.acs.entrances.list_credentials_with_access(acs_entrance_id: "123e4567-e89b-12d3-a456-426614174000")
+seam.acs.entrances.list_credentials_with_access(
+  acs_entrance_id: "123e4567-e89b-12d3-a456-426614174000",
+)
 ```
 
 #### Response
 
 ```ruby
-[{"acs_credential_id" => "123e4567-e89b-12d3-a456-426614174000", "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000", "acs_credential_pool_id" => "123e4567-e89b-12d3-a456-426614174000", "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000", "parent_acs_credential_id" => "123e4567-e89b-12d3-a456-426614174000", "display_name" => "text", "code" => "text", "card_number" => "text", "is_issued" => false, "issued_at" => "2024-10-15T12:54:04.155Z", "access_method" => "code", "external_type" => "pti_card", "external_type_display_name" => "text", "created_at" => "2024-10-15T12:54:04.155Z", "workspace_id" => "123e4567-e89b-12d3-a456-426614174000", "starts_at" => "text", "ends_at" => "text", "is_multi_phone_sync_credential" => false, "is_latest_desired_state_synced_with_provider" => false, "latest_desired_state_synced_with_provider_at" => "2024-10-15T12:54:04.155Z"}]
+[
+  {
+    "acs_credential_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "acs_credential_pool_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "parent_acs_credential_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "display_name" => "text",
+    "code" => "text",
+    "card_number" => "text",
+    "is_issued" => false,
+    "issued_at" => "2024-10-15T12:54:04.155Z",
+    "access_method" => "code",
+    "external_type" => "pti_card",
+    "external_type_display_name" => "text",
+    "created_at" => "2024-10-15T12:54:04.155Z",
+    "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "starts_at" => "text",
+    "ends_at" => "text",
+    "is_multi_phone_sync_credential" => false,
+    "is_latest_desired_state_synced_with_provider" => false,
+    "latest_desired_state_synced_with_provider_at" => "2024-10-15T12:54:04.155Z",
+  },
+]
 ```
 {% endtab %}
 

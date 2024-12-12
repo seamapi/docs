@@ -45,7 +45,10 @@ None
 #### Request
 
 ```ruby
-seam.acs.users.remove_from_access_group(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33", acs_access_group_id: "123e4567-e89b-12d3-a456-426614174000")
+seam.acs.users.remove_from_access_group(
+  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
+  acs_access_group_id: "123e4567-e89b-12d3-a456-426614174000",
+)
 ```
 
 #### Response
