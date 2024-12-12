@@ -54,10 +54,10 @@ type AuthMethodDisplayName =
   | 'Personal access token'
   | 'Publishable key'
 
-type InternalSeamAuthMethod = Extract<SeamAuthMethod, 'console_session_token'>
+type PublicSeamAuthMethod = Exclude<SeamAuthMethod, 'console_session_token'>
 
 const seamAuthMethodToDisplayNameMap: Record<
-  Exclude<SeamAuthMethod, InternalSeamAuthMethod>,
+  PublicSeamAuthMethod,
   AuthMethodDisplayName
 > = {
   api_key: 'API key',
@@ -74,9 +74,11 @@ export function setEndpointLayoutContext(
   file.title = endpoint.title
   file.path = endpoint.path
 
-  const internalAuthMethod: InternalSeamAuthMethod = 'console_session_token'
   file.authMethods = endpoint.authMethods
-    .filter((method) => method !== internalAuthMethod)
+    .filter(
+      (method): method is PublicSeamAuthMethod =>
+        method in seamAuthMethodToDisplayNameMap,
+    )
     .map((method) => seamAuthMethodToDisplayNameMap[method])
 
   file.request = {
