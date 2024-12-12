@@ -49,7 +49,7 @@ jobs:
         with:
           go-version: '^1.23.2'
       - name: Install syntax_tree
-        run: gem install syntax_tree
+        run: gem install syntax_tree -v 6.2.0
       - name: Normalize package-lock.json
         run: npm install
       - name: Generate docs
