@@ -42,7 +42,7 @@
     body:
       action_attempt:
         action_attempt_id: 123e4567-e89b-12d3-a456-426614174000
-        status: pending
+        status: success
         action_type: SET_HVAC_MODE
 - title: Set to heat mode
   description: Specify the desired heating set point in °C or °F.
