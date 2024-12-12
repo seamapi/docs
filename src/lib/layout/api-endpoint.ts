@@ -51,17 +51,18 @@ export interface ApiEndpointLayoutContext {
 type AuthMethodDisplayName =
   | 'API key'
   | 'Client session token'
-  | 'Console session token'
   | 'Personal access token'
   | 'Publishable key'
 
+type ConsoleSessionAuthMethod = Extract<SeamAuthMethod, 'console_session_token'>
+const internalAuthMethod: ConsoleSessionAuthMethod = 'console_session_token'
+
 const seamAuthMethodToDisplayNameMap: Record<
-  SeamAuthMethod,
+  Exclude<SeamAuthMethod, ConsoleSessionAuthMethod>,
   AuthMethodDisplayName
 > = {
   api_key: 'API key',
   client_session_token: 'Client session token',
-  console_session_token: 'Console session token',
   personal_access_token: 'Personal access token',
   publishable_key: 'Publishable key',
 }
@@ -73,9 +74,9 @@ export function setEndpointLayoutContext(
   file.description = endpoint.description
   file.title = endpoint.title
   file.path = endpoint.path
-  file.authMethods = endpoint.authMethods.map(
-    (method) => seamAuthMethodToDisplayNameMap[method],
-  )
+  file.authMethods = endpoint.authMethods
+    .filter((method) => method !== internalAuthMethod)
+    .map((method) => seamAuthMethodToDisplayNameMap[method])
 
   file.request = {
     preferredMethod: endpoint.request?.preferredMethod ?? '',
