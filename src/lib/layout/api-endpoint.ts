@@ -80,6 +80,7 @@ export function setEndpointLayoutContext(
         method in seamAuthMethodToDisplayNameMap,
     )
     .map((method) => seamAuthMethodToDisplayNameMap[method])
+    .sort()
 
   file.request = {
     preferredMethod: endpoint.request?.preferredMethod ?? '',
