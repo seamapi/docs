@@ -47,7 +47,11 @@ None
 #### Request
 
 ```ruby
-seam.thermostats.set_temperature_threshold(device_id: "123e4567-e89b-12d3-a456-426614174000", lower_limit_celsius: 4, upper_limit_celsius: 30)
+seam.thermostats.set_temperature_threshold(
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  lower_limit_celsius: 4,
+  upper_limit_celsius: 30,
+)
 ```
 
 #### Response

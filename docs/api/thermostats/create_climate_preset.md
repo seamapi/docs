@@ -57,7 +57,16 @@ None
 #### Request
 
 ```ruby
-seam.thermostats.create_climate_preset(device_id: "123e4567-e89b-12d3-a456-426614174000", climate_preset_key: "occupied", name: "Occupied", fan_mode_setting: "auto", hvac_mode_setting: "heat_cool", cooling_set_point_celsius: 25, heating_set_point_celsius: 20, manual_override_allowed: true)
+seam.thermostats.create_climate_preset(
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  climate_preset_key: "occupied",
+  name: "Occupied",
+  fan_mode_setting: "auto",
+  hvac_mode_setting: "heat_cool",
+  cooling_set_point_celsius: 25,
+  heating_set_point_celsius: 20,
+  manual_override_allowed: true,
+)
 ```
 
 #### Response
