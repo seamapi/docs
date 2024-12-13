@@ -22,7 +22,7 @@ TTLock produces both hardware and software for smart locks. Many other manufactu
 
 ## Supported Devices
 
-This integration works any TTLock locks that are paired with [a TTLock Gateway](ttlock-locks.md#compatible-ttlock-gateways).
+This integration works with any TTLock locks that are paired with a [TTLock Gateway](https://ttlock.com/#/productionCenter).
 
 For detailed information about the TTLock devices that Seam supports, see the following table and our [TTLock Supported Devices page](https://www.seam.co/manufacturers/ttlock):
 
@@ -35,7 +35,7 @@ For detailed information about the TTLock devices that Seam supports, see the fo
 
 We support the following features:
 
-* [Triggering web unlock actions](../api-clients/locks/unlock_door.md)
+* [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)
 * [Programming access codes](../products/smart-locks/access-codes/) on door locks and card readers that have a PIN pad
 
 ***
@@ -46,21 +46,13 @@ To create a [Connect Webview](../core-concepts/connect-webviews/) that enables y
 
 ***
 
-## Compatible TTLock Gateways
-
-The TTLock gateway allows the smart lock to connect directly to the internet. By pairing a door lock with the gateway, it becomes compatible with Seam. This enables the immediate retrieval of unlocking records, whether from fingerprints, passwords, or cards.
-
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4>Smart Gateway G2</h4></td><td>This gateway uses a Wifi connection to connect the door locks to the internet.</td><td></td><td><a href="../.gitbook/assets/G2-TT-Lock-App-Gateway-Bluetooth-Smart-Electronic-Door-Lock-Wifi-Adapter-2 copy (1).png">G2-TT-Lock-App-Gateway-Bluetooth-Smart-Electronic-Door-Lock-Wifi-Adapter-2 copy (1).png</a></td><td><a href="https://amzn.to/3qBcG6H">https://amzn.to/3qBcG6H</a></td></tr><tr><td><strong>Wired gateway G3/G3P (PoE power supply)</strong></td><td>This gateway uses a wired Power-over-ethernet connection to bridge the locks to the internet.</td><td><h4></h4></td><td><a href="../.gitbook/assets/TTLock-APP-Device-G3-Gateway-Bluetooth-compatible-To-RJ45-Ethernet-Bridge-For-Remote-Control-Lock.jpg_ copy (1).png">TTLock-APP-Device-G3-Gateway-Bluetooth-compatible-To-RJ45-Ethernet-Bridge-For-Remote-Control-Lock.jpg_ copy (1).png</a></td><td><a href="https://www.aliexpress.us/item/2255800336116314.html?spm=a2g0o.productlist.main.1.9cbd43b3ctHfxZ&#x26;algo_pvid=32dab18b-38f8-4119-8e58-24e42b4bc733&#x26;aem_p4p_detail=2023081416370273984849672280003173903&#x26;algo_exp_id=32dab18b-38f8-4119-8e58-24e42b4bc733-0&#x26;pdp_npi=4%40dis%21USD%2125.88%2122.0%21%21%2125.88%21%21%40210321c616920562226965846e9d3e%2112000031234243953%21sea%21US%210%21A&#x26;curPageLogUid=gVdrDzS7hmgF&#x26;search_p4p_id=2023081416370273984849672280003173903_1">https://www.aliexpress.us/item/2255800336116314.html?spm=a2g0o.productlist.main.1.9cbd43b3ctHfxZ&#x26;algo_pvid=32dab18b-38f8-4119-8e58-24e42b4bc733&#x26;aem_p4p_detail=2023081416370273984849672280003173903&#x26;algo_exp_id=32dab18b-38f8-4119-8e58-24e42b4bc733-0&#x26;pdp_npi=4%40dis%21USD%2125.88%2122.0%21%21%2125.88%21%21%40210321c616920562226965846e9d3e%2112000031234243953%21sea%21US%210%21A&#x26;curPageLogUid=gVdrDzS7hmgF&#x26;search_p4p_id=2023081416370273984849672280003173903_1</a></td></tr></tbody></table>
-
-***
-
 ## Setup Instructions
 
 To control TTLock devices using Seam, you must prompt owners of these devices to perform the following steps:
 
 1. Install your TTLock lock and set it up on the [TTLock app](https://www.ttlock.com/#/lock/app).\
    Follow [the instructions in this video](https://www.youtube.com/watch?v=IbgZNc1dAx4) to set up your door lock on the TTLock app.
-2. Pair the lock with [a supported TTLock gateway](ttlock-locks.md#compatible-ttlock-gateways).\
+2. Pair the lock with a [TTLock gateway](https://ttlock.com/#/productionCenter).\
    Follow [the instructions in this video](https://www.youtube.com/watch?v=-lhKbjVP1as) to pair your lock with a Gateway.
 3. In the [TTLock app](https://www.ttlock.com/#/lock/app), go to the lock settings and enable the Remote Unlock feature.\
    This feature must be enabled to unlock a TTLock device. Note that if Seam detects that this feature is disabled, a warning is added to the device.\
@@ -70,11 +62,11 @@ To control TTLock devices using Seam, you must prompt owners of these devices to
 
 ## Troubleshooting
 
-### "Lock not paired to gateway" error
+### Lock Not Paired to Gateway Error
 
 On the device, if you notice a `ttlock_lock_not_paired_to_gateway` error, you will need to purchase [a compatible gateway](ttlock-locks.md#compatible-ttlock-gateways) and pair it to the lock. Follow the [set up instructions](ttlock-locks.md#set-up-instructions) to configure the door lock.
 
-### "Gateway unlocking not enabled" warning
+### Gateway Unlocking Not Enabled Warning
 
 On the device, if you notice a `ttlock_lock_gateway_unlocking_not_enabled` warning, you will need to follow the [set up instructions](ttlock-locks.md#set-up-instructions) to turn on the "Remote Unlock" feature.
 
