@@ -111,6 +111,11 @@ func main() {
 
 {% endtabs %}
 
+## Authentication Methods
+
+- API key
+- Personal access token
+
 ## Request Parameters
 
 ### `acs_system_id`

@@ -119,6 +119,11 @@ nil
 
 {% endtabs %}
 
+## Authentication Methods
+
+- API key
+- Personal access token
+
 ## Request Parameters
 
 ### `acs_credential_id`

@@ -161,6 +161,11 @@ api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUs
 
 {% endtabs %}
 
+## Authentication Methods
+
+- API key
+- Personal access token
+
 ## Request Parameters
 
 ### `acs_credential_id`

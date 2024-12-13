@@ -114,6 +114,11 @@ nil
 
 {% endtabs %}
 
+## Authentication Methods
+
+- API key
+- Personal access token
+
 ## Request Parameters
 
 ### `enrollment_automation_id`

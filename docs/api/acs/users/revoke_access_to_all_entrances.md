@@ -6,6 +6,11 @@ POST /acs/users/revoke_access_to_all_entrances ⇒ void
 
 Revokes access to all [entrances](https://docs.seam.co/latest/api/acs/entrances) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
+## Authentication Methods
+
+- API key
+- Personal access token
+
 ## Request Parameters
 
 ### `acs_user_id`

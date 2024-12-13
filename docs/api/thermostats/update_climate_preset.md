@@ -128,6 +128,11 @@ nil
 
 {% endtabs %}
 
+## Authentication Methods
+
+- API key
+- Personal access token
+
 ## Request Parameters
 
 ### `climate_preset_key`
