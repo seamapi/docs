@@ -1,8 +1,8 @@
 ---
-description: Learn how to connect and control 33 Lock locks with the Seam API.
+description: Learn how to connect and control 33 Lock smart locks with the Seam API.
 ---
 
-# Get started with 33 Lock Locks
+# Get started with 33 Lock devices
 
 <figure><picture><source srcset="../../.gitbook/assets/33lock-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/33lock-manufacturer-page-cover-light.png" alt="Connect and control any 33 Locks device using the Seam API."></picture><figcaption><p>33 Lock smart locks</p></figcaption></figure>
 
@@ -124,7 +124,7 @@ This guide shows you how to create a Connect Webview programmatically using the 
 
 The [Seam Console](../../core-concepts/seam-console/) provides another easy way to connect devices to your Seam workspace.
 
-Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](get-started-with-33-lock-locks.md#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
+Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](get-started-with-33-lock-devices.md#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
 
 <img src="../../.gitbook/assets/add-devices-button.png" alt="You can also use the Seam Console to add devices." data-size="original">
 {% endhint %}
@@ -991,8 +991,8 @@ Each device that you connect to Seam has a specific set of capabilities. These c
 
 Try out the following actions on your 33 Lock device:
 
-* [ ] [Unlock your lock](get-started-with-33-lock-locks.md#unlock-your-lock)
-* [ ] [Program access codes on your lock](get-started-with-33-lock-locks.md#program-access-codes-on-your-lock)
+* [ ] [Unlock your lock](get-started-with-33-lock-devices.md#unlock-your-lock)
+* [ ] [Program access codes on your lock](get-started-with-33-lock-devices.md#program-access-codes-on-your-lock)
 
 ### Unlock your lock
 

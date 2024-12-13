@@ -1,8 +1,8 @@
 ---
-description: Guide for using 33 Lock locks with Seam
+description: Guide for using 33 Lock smart locks with Seam
 ---
 
-# 33 Lock Locks
+# 33 Lock Devices
 
 <figure><picture><source srcset="../../.gitbook/assets/33lock-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/33lock-manufacturer-page-cover-light.png" alt="Connect and control any 33 Locks device using the Seam API."></picture><figcaption><p>Connect and control any 33 Locks device using the Seam API.</p></figcaption></figure>
 
