@@ -49,8 +49,8 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: '^1.23.2'
-      - name: Install standardrb
-        run: gem install standard -v 1.31.0
+      - name: Install syntax_tree
+        run: gem install syntax_tree -v 6.2.0
       - name: Normalize package-lock.json
         run: npm install
       - name: Generate docs

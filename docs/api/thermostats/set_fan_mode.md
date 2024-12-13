@@ -52,13 +52,20 @@ ActionAttempt(
 #### Request
 
 ```ruby
-seam.thermostats.set_fan_mode(device_id: "123e4567-e89b-12d3-a456-426614174000", fan_mode_setting: "auto")
+seam.thermostats.set_fan_mode(
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  fan_mode_setting: "auto",
+)
 ```
 
 #### Response
 
 ```ruby
-{"action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000", "status" => "pending", "action_type" => "SET_FAN_MODE"}
+{
+  "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
+  "status" => "pending",
+  "action_type" => "SET_FAN_MODE",
+}
 ```
 {% endtab %}
 
@@ -130,6 +137,12 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- API key
+- Client session token
+- Personal access token
 
 ## Request Parameters
 

@@ -69,13 +69,28 @@ ThermostatSchedule(
 #### Request
 
 ```ruby
-seam.thermostats.schedules.create(device_id: "123e4567-e89b-12d3-a456-426614174000", name: "Reservation 1", climate_preset_key: "occupied", starts_at: "2024-11-01T15:00:00Z", ends_at: "2024-11-05T12:00:00Z", max_override_period_minutes: 90)
+seam.thermostats.schedules.create(
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  name: "Reservation 1",
+  climate_preset_key: "occupied",
+  starts_at: "2024-11-01T15:00:00Z",
+  ends_at: "2024-11-05T12:00:00Z",
+  max_override_period_minutes: 90,
+)
 ```
 
 #### Response
 
 ```ruby
-{"thermostat_schedule_id" => "56d29fcf-0674-4db5-8e03-b2370a77460a", "name" => "Reservation 1", "device_id" => "2d488679-6f07-4810-aed2-e726872c1dd5", "climate_preset_key" => "occupied", "starts_at" => "2024-11-01T15:00:00.000Z", "ends_at" => "2024-11-05T12:00:00.000Z", "max_override_period_minutes" => 90}
+{
+  "thermostat_schedule_id" => "56d29fcf-0674-4db5-8e03-b2370a77460a",
+  "name" => "Reservation 1",
+  "device_id" => "2d488679-6f07-4810-aed2-e726872c1dd5",
+  "climate_preset_key" => "occupied",
+  "starts_at" => "2024-11-01T15:00:00.000Z",
+  "ends_at" => "2024-11-05T12:00:00.000Z",
+  "max_override_period_minutes" => 90,
+}
 ```
 {% endtab %}
 
@@ -165,6 +180,12 @@ api.ThermostatSchedule{ThermostatScheduleId: "56d29fcf-0674-4db5-8e03-b2370a7746
 
 {% endtabs %}
 
+## Authentication Methods
+
+- API key
+- Client session token
+- Personal access token
+
 ## Request Parameters
 
 ### `climate_preset_key`
@@ -199,7 +220,7 @@ Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.i
 Type: `boolean`
 Required: No
 
-
+Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the schedule is active. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
 
 ***
 
@@ -208,7 +229,7 @@ Required: No
 Type: `number`
 Required: No
 
-Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
+Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
 
 ***
 

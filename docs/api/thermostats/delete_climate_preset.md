@@ -44,7 +44,10 @@ None
 #### Request
 
 ```ruby
-seam.thermostats.delete_climate_preset(device_id: "123e4567-e89b-12d3-a456-426614174000", climate_preset_key: "occupied")
+seam.thermostats.delete_climate_preset(
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  climate_preset_key: "occupied",
+)
 ```
 
 #### Response
@@ -113,6 +116,11 @@ nil
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- API key
+- Personal access token
 
 ## Request Parameters
 

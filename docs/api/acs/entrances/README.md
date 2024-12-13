@@ -69,6 +69,12 @@ Format: `Object`
 <details>
 <summary>access_point_name <code>string</code></summary>
 </details>
+<details>
+<summary>common_area_number <code>number</code></summary>
+</details>
+<details>
+<summary>inner_access_points_names <code>list</code></summary>
+</details>
 
 ---
 
@@ -125,6 +131,22 @@ Format: `Object`
 </details>
 <details>
 <summary>privacy_mode <code>boolean</code></summary>
+</details>
+
+---
+
+### `salto_space_metadata`
+
+Format: `Object`
+
+<details>
+<summary>door_description <code>string</code></summary>
+</details>
+<details>
+<summary>door_name <code>string</code></summary>
+</details>
+<details>
+<summary>ext_door_id <code>string</code></summary>
 </details>
 
 ---

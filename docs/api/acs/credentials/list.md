@@ -73,13 +73,30 @@ seam.acs.credentials.list(
 #### Request
 
 ```ruby
-seam.acs.credentials.list(acs_user_id: "33333333-3333-3333-3333-333333333333", acs_system_id: "11111111-1111-1111-1111-111111111111", user_identity_id: "22222222-2222-2222-2222-222222222222", is_multi_phone_sync_credential: true)
+seam.acs.credentials.list(
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  acs_system_id: "11111111-1111-1111-1111-111111111111",
+  user_identity_id: "22222222-2222-2222-2222-222222222222",
+  is_multi_phone_sync_credential: true,
+)
 ```
 
 #### Response
 
 ```ruby
-[{"acs_credential_id" => "99999999-9999-9999-9999-999999999999", "acs_user_id" => "33333333-3333-3333-3333-333333333333", "display_name" => "Multi Phone Sync Credential", "code" => nil, "acs_system_id" => "11111111-1111-1111-1111-111111111111", "access_method" => "mobile_key", "workspace_id" => "00000000-0000-0000-0000-000000000000", "created_at" => "2024-04-12T03:56:22.396Z", "is_multi_phone_sync_credential" => true}]
+[
+  {
+    "acs_credential_id" => "99999999-9999-9999-9999-999999999999",
+    "acs_user_id" => "33333333-3333-3333-3333-333333333333",
+    "display_name" => "Multi Phone Sync Credential",
+    "code" => nil,
+    "acs_system_id" => "11111111-1111-1111-1111-111111111111",
+    "access_method" => "mobile_key",
+    "workspace_id" => "00000000-0000-0000-0000-000000000000",
+    "created_at" => "2024-04-12T03:56:22.396Z",
+    "is_multi_phone_sync_credential" => true,
+  },
+]
 ```
 {% endtab %}
 
@@ -172,6 +189,12 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- API key
+- Client session token
+- Personal access token
 
 ## Request Parameters
 

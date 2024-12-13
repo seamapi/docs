@@ -81,13 +81,29 @@ seam.acs.credentials.list_accessible_entrances(
 #### Request
 
 ```ruby
-seam.acs.credentials.list_accessible_entrances(acs_credential_id: "66666666-6666-6666-6666-666666666666")
+seam.acs.credentials.list_accessible_entrances(
+  acs_credential_id: "66666666-6666-6666-6666-666666666666",
+)
 ```
 
 #### Response
 
 ```ruby
-[{"acs_entrance_id" => "55555555-5555-5555-5555-555555555555", "acs_system_id" => "11111111-1111-1111-1111-111111111111", "workspace_id" => "00000000-0000-0000-0000-000000000000", "visionline_metadata" => {profiles: [{visionline_door_profile_id: "Guest Door", visionline_door_profile_type: "BLE"}], door_name: "Guest Lock 2", door_category: "guest"}, "latch_metadata" => nil, "display_name" => "Guest Lock 2", "created_at" => "2024-03-26T14:31:18.979Z"}]
+[
+  {
+    "acs_entrance_id" => "55555555-5555-5555-5555-555555555555",
+    "acs_system_id" => "11111111-1111-1111-1111-111111111111",
+    "workspace_id" => "00000000-0000-0000-0000-000000000000",
+    "visionline_metadata" => {
+      profiles: [{ visionline_door_profile_id: "Guest Door", visionline_door_profile_type: "BLE" }],
+      door_name: "Guest Lock 2",
+      door_category: "guest",
+    },
+    "latch_metadata" => nil,
+    "display_name" => "Guest Lock 2",
+    "created_at" => "2024-03-26T14:31:18.979Z",
+  },
+]
 ```
 {% endtab %}
 
@@ -188,6 +204,11 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- API key
+- Personal access token
 
 ## Request Parameters
 

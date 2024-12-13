@@ -298,6 +298,8 @@
 * [Overview](device-and-system-integration-guides/overview.md)
 * [2N Intercom Systems](device-guides/2n-intercom-systems.md)
   * [Get started with 2N Intercoms](device-guides/get-started-with-2n-intercoms.md)
+* [33 Lock Devices](device-and-system-integration-guides/33-lock-devices/README.md)
+  * [Get started with 33 Lock devices](device-and-system-integration-guides/33-lock-devices/get-started-with-33-lock-devices.md)
 * [4SUITES Locks](device-and-system-integration-guides/4suites-locks/README.md)
   * [Get started with 4SUITES locks](device-and-system-integration-guides/4suites-locks/get-started-with-4suites-locks.md)
 * [Akiles Locks](device-and-system-integration-guides/akiles-locks/README.md)

@@ -45,7 +45,10 @@ None
 #### Request
 
 ```ruby
-seam.user_identities.remove_acs_user(user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f", acs_user_id: "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe")
+seam.user_identities.remove_acs_user(
+  user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
+  acs_user_id: "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe",
+)
 ```
 
 #### Response
@@ -114,6 +117,11 @@ nil
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- API key
+- Personal access token
 
 ## Request Parameters
 

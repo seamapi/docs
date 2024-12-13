@@ -45,7 +45,10 @@ None
 #### Request
 
 ```ruby
-seam.acs.access_groups.remove_user(acs_access_group_id: "44444444-4444-4444-4444-444444444444", acs_user_id: "33333333-3333-3333-3333-333333333333")
+seam.acs.access_groups.remove_user(
+  acs_access_group_id: "44444444-4444-4444-4444-444444444444",
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+)
 ```
 
 #### Response
@@ -115,6 +118,11 @@ nil
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- API key
+- Personal access token
 
 ## Request Parameters
 

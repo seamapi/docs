@@ -52,13 +52,20 @@ ActionAttempt(
 #### Request
 
 ```ruby
-seam.thermostats.cool(device_id: "123e4567-e89b-12d3-a456-426614174000", cooling_set_point_celsius: 25)
+seam.thermostats.cool(
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  cooling_set_point_celsius: 25,
+)
 ```
 
 #### Response
 
 ```ruby
-{"action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000", "status" => "pending", "action_type" => "SET_COOL"}
+{
+  "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
+  "status" => "pending",
+  "action_type" => "SET_COOL",
+}
 ```
 {% endtab %}
 
@@ -130,6 +137,12 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- API key
+- Client session token
+- Personal access token
 
 ## Request Parameters
 

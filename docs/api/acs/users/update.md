@@ -44,7 +44,10 @@ None
 #### Request
 
 ```ruby
-seam.acs.users.update(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33", phone_number: 12222222222)
+seam.acs.users.update(
+  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
+  phone_number: 12_222_222_222,
+)
 ```
 
 #### Response
@@ -114,6 +117,11 @@ nil
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- API key
+- Personal access token
 
 ## Request Parameters
 
