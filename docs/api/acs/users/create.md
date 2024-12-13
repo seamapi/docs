@@ -216,9 +216,9 @@ Email address of the `acs_user`.
 ### `full_name`
 
 Type: `string`
-Required: No
+Required: Yes
 
-Full name of the `acs_user`.
+Full name of the new `acs_user`.
 
 ***
 
