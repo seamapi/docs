@@ -161,8 +161,8 @@ api.Unknown{UserIdentityId: "5c945ab5-c75e-4bcb-8e5f-9410061c401f", EnrollmentAu
 
 ## Authentication Methods
 
-- Personal access token
 - API key
+- Personal access token
 
 ## Request Parameters
 

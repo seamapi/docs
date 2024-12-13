@@ -199,8 +199,8 @@ func main() {
 ## Authentication Methods
 
 - API key
-- Personal access token
 - Client session token
+- Personal access token
 
 ## Request Parameters
 

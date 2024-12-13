@@ -110,8 +110,8 @@ nil
 
 ## Authentication Methods
 
-- Personal access token
 - API key
+- Personal access token
 
 ## Request Parameters
 

@@ -118,9 +118,9 @@ nil
 
 ## Authentication Methods
 
+- API key
 - Client session token
 - Personal access token
-- API key
 
 ## Request Parameters
 

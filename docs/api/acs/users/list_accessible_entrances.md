@@ -8,9 +8,9 @@ Lists the [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a 
 
 ## Authentication Methods
 
+- API key
 - Client session token
 - Personal access token
-- API key
 
 ## Request Parameters
 

@@ -8,9 +8,9 @@ Sets the [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/c
 
 ## Authentication Methods
 
+- API key
 - Client session token
 - Personal access token
-- API key
 
 ## Request Parameters
 

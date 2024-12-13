@@ -188,8 +188,8 @@ api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUs
 
 ## Authentication Methods
 
-- Personal access token
 - API key
+- Personal access token
 
 ## Request Parameters
 
