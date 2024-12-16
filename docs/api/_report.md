@@ -108,6 +108,7 @@ These items are intentionally undocumented.
 - `/acs/credential_provisioning_automations`: No undocumented message provided
 - `/acs/credentials/unmanaged`: No undocumented message provided
 - `/acs/encoders`: No undocumented message provided
+- `/acs/encoders/simulate`: No undocumented message provided
 - `/acs/users/unmanaged`: No undocumented message provided
 
 ### Resource properties
@@ -125,9 +126,13 @@ These items are intentionally undocumented.
 - `/acs/credentials/create_offline_code`: Unreleased.
 - `/acs/credentials/unmanaged/get`: No unmanaged credentials are currently implemented.
 - `/acs/credentials/unmanaged/list`: No unmanaged credentials are currently implemented.
-- `/acs/encoders/encode_credential`: Encoding a card is currently unimplemented.
+- `/acs/encoders/encode_credential`: Encoders are in alpha.
 - `/acs/encoders/list`: Encoders are in alpha.
-- `/acs/encoders/scan_credential`: Reading a card is currently unimplemented.
+- `/acs/encoders/scan_credential`: Encoders are in alpha.
+- `/acs/encoders/simulate/next_credential_encode_will_fail`: Encoder simulations are in alpha.
+- `/acs/encoders/simulate/next_credential_encode_will_succeed`: Encoder simulations are in alpha.
+- `/acs/encoders/simulate/next_credential_scan_will_fail`: Encoder simulations are in alpha.
+- `/acs/encoders/simulate/next_credential_scan_will_succeed`: Encoder simulations are in alpha.
 - `/acs/users/unmanaged/get`: No unmanaged users are currently implemented.
 - `/acs/users/unmanaged/list`: No unmanaged users are currently implemented.
 - `/devices/delete`: Deleting a device is no longer supported and will be removed.
@@ -365,6 +370,10 @@ Items that are intentionally undocumented are not included in this section.
 - `/acs/encoders/encode_credential`
 - `/acs/encoders/list`
 - `/acs/encoders/scan_credential`
+- `/acs/encoders/simulate/next_credential_encode_will_fail`
+- `/acs/encoders/simulate/next_credential_encode_will_succeed`
+- `/acs/encoders/simulate/next_credential_scan_will_fail`
+- `/acs/encoders/simulate/next_credential_scan_will_succeed`
 - `/acs/entrances/grant_access`
 - `/acs/users/unmanaged/get`
 - `/acs/users/unmanaged/list`
@@ -536,6 +545,9 @@ Items that are intentionally undocumented are not included in this section.
     - `credential_manager_acs_system_id`
     - `credential_manager_acs_user_id`
     - `user_identity_id`
+- `/acs/encoders/simulate/next_credential_encode_will_succeed`
+    - `acs_encoder_id`
+    - `scenario`
 - `/acs/entrances/get`
     - `acs_entrance_id`
 - `/acs/entrances/grant_access`
@@ -847,6 +859,10 @@ These items are deprecated.
 - `/acs/encoders/encode_credential`
 - `/acs/encoders/list`
 - `/acs/encoders/scan_credential`
+- `/acs/encoders/simulate/next_credential_encode_will_fail`
+- `/acs/encoders/simulate/next_credential_encode_will_succeed`
+- `/acs/encoders/simulate/next_credential_scan_will_fail`
+- `/acs/encoders/simulate/next_credential_scan_will_succeed`
 - `/acs/entrances/grant_access`
 - `/acs/users/list_accessible_entrances`
 - `/acs/users/revoke_access_to_all_entrances`

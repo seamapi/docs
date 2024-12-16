@@ -18,6 +18,7 @@ Possible enum values:
 - `pti_access_level`
 - `salto_ks_access_group`
 - `brivo_group`
+- `salto_space_group`
 
 
 ---
@@ -78,6 +79,7 @@ Possible enum values:
 - `pti_access_level`
 - `salto_ks_access_group`
 - `brivo_group`
+- `salto_space_group`
 
 
 ---
