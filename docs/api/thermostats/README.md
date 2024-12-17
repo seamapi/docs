@@ -49,15 +49,15 @@ Updates a specified [climate preset](../../capability-guides/thermostats/creatin
 A thermostat [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) was activated.
 
 <details>
-<summary>thermostat_schedule_id <code>string</code></summary>
+<summary><code>thermostat_schedule_id</code> <code>string</code></summary>
 ID of the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules/README.md) that prompted the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to be activated.
 </details>
 <details>
-<summary>climate_preset_key <code>string</code></summary>
+<summary><code>climate_preset_key</code> <code>string</code></summary>
 Key of the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets) that was activated.
 </details>
 <details>
-<summary>is_fallback_climate_preset <code>boolean</code></summary>
+<summary><code>is_fallback_climate_preset</code> <code>boolean</code></summary>
 Indicates whether the [climate preset](../..capability-guides/thermostats/creating-and-managing-climate-presets/README.md) that was activated is the [fallback climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) for the thermostat.
 </details>
 
@@ -83,27 +83,27 @@ Possible enum values:
 A thermostat's temperature reading exceeded the set [threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
 
 <details>
-<summary>temperature_celsius <code>number</code></summary>
+<summary><code>temperature_celsius</code> <code>number</code></summary>
 Temperature, in °C, reported by the thermostat.
 </details>
 <details>
-<summary>temperature_fahrenheit <code>number</code></summary>
+<summary><code>temperature_fahrenheit</code> <code>number</code></summary>
 Temperature, in °F, reported by the thermostat.
 </details>
 <details>
-<summary>upper_limit_celsius <code>number</code></summary>
+<summary><code>upper_limit_celsius</code> <code>number</code></summary>
 Upper temperature limit, in °C, defined by the set <a href="https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds">threshold</a>.
 </details>
 <details>
-<summary>upper_limit_fahrenheit <code>number</code></summary>
+<summary><code>upper_limit_fahrenheit</code> <code>number</code></summary>
 Upper temperature limit, in °F, defined by the set [threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
 </details>
 <details>
-<summary>lower_limit_celsius <code>number</code></summary>
+<summary><code>lower_limit_celsius</code> <code>number</code></summary>
 Lower temperature limit, in °C, defined by the set [threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
 </details>
 <details>
-<summary>lower_limit_fahrenheit <code>number</code></summary>
+<summary><code>lower_limit_fahrenheit</code> <code>number</code></summary>
 Lower temperature limit, in °F, defined by the set [threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
 </details>
 
@@ -114,27 +114,27 @@ Lower temperature limit, in °F, defined by the set [threshold](../../capability
 A thermostat's temperature reading no longer exceeds the set [threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
 
 <details>
-<summary>temperature_celsius <code>number</code></summary>
+<summary><code>temperature_celsius</code> <code>number</code></summary>
 Temperature, in °C, reported by the thermostat.
 </details>
 <details>
-<summary>temperature_fahrenheit <code>number</code></summary>
+<summary><code>temperature_fahrenheit</code> <code>number</code></summary>
 Temperature, in °F, reported by the thermostat.
 </details>
 <details>
-<summary>upper_limit_celsius <code>number</code></summary>
+<summary><code>upper_limit_celsius</code> <code>number</code></summary>
 Upper temperature limit, in °C, defined by the set [threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
 </details>
 <details>
-<summary>upper_limit_fahrenheit <code>number</code></summary>
+<summary><code>upper_limit_fahrenheit</code> <code>number</code></summary>
 Upper temperature limit, in °F, defined by the set [threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
 </details>
 <details>
-<summary>lower_limit_celsius <code>number</code></summary>
+<summary><code>lower_limit_celsius</code> <code>number</code></summary>
 Lower temperature limit, in °C, defined by the set [threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
 </details>
 <details>
-<summary>lower_limit_fahrenheit <code>number</code></summary>
+<summary><code>lower_limit_fahrenheit</code> <code>number</code></summary>
 Lower temperature limit, in °F, defined by the set [threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
 </details>
 
