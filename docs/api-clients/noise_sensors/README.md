@@ -1,5 +1,5 @@
 ---
-description: Devices that will send alerts when noise levels exceed a threshold.
+description: Devices that send alerts when noise levels exceed a threshold.
 ---
 
 # Noise Sensors
@@ -8,7 +8,7 @@ description: Devices that will send alerts when noise levels exceed a threshold.
 
 ### List Noise Thresholds
 
-This endpoint allows to to generate a list of currently available noise thresholds for a specific device. For example, to generate the list of thresholds for a device with the id, `123e4567-e89b-12d3-a456-426614174000`, you would make the following call:
+This endpoint enables you to generate a list of currently available noise thresholds for a specific device. For example, to generate the list of thresholds for a device with the id, `123e4567-e89b-12d3-a456-426614174000`, you would make the following call:
 
 ```python
 seam.noise_sensors.noise_thresholds.list("123e4567-e89b-12d3-a456-426614174000")
@@ -98,8 +98,6 @@ This increases the noise threshold from 70 to 75 decibels. The above returns the
  }
 ```
 
-
-
 ### Delete Noise Thresholds
 
 Finally, you can delete a threshold. You’ll need to know the device and threshold id to delete the threshold. For example:
@@ -126,12 +124,34 @@ This permanently deletes the `built_in_normal` threshold from the device. You’
 }
 ```
 
+### Events
+
+#### `noise_sensor.noise_threshold_triggered`
+
+The noise detected from a noise sensor exceeded a predefined threshold or duration.
+
+<details>
+
+<summary><code>noise_threshold_id</code> <code>string</code></summary>
+
+ID of the [noise threshold](../../products/noise-sensors/#what-is-a-threshold) that was triggered.
+
+</details>
+
+<details>
+
+<summary><code>noise_threshold_name</code> <code>string</code></summary>
+
+Name of the [noise threshold](../../products/noise-sensors/#what-is-a-threshold) that was triggered, for example, `builtin_first_disturbance`.
+
+</details>
+
 ## Next Steps
 
-For more details on each endpoint, see our API References:
+For more details on each endpoint, see our API references:
 
-| [List Noise Thresholds](./noise_thresholds/list.md)   |
-| --------------------------------------------------- |
-| [Create Noise Threshold](./noise_thresholds/create.md) |
-| [Update Noise Threshold](./noise_thresholds/update.md) |
-| [Delete Noise Threshold](./noise_thresholds/delete.md) |
+| [List Noise Thresholds](noise_thresholds/list.md)    |
+| ---------------------------------------------------- |
+| [Create Noise Threshold](noise_thresholds/create.md) |
+| [Update Noise Threshold](noise_thresholds/update.md) |
+| [Delete Noise Threshold](noise_thresholds/delete.md) |
