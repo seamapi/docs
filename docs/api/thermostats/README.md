@@ -49,7 +49,7 @@ Updates a specified [climate preset](../../capability-guides/thermostats/creatin
 A thermostat [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/) was activated.
 
 <details>
-<summary><code>thermostat_schedule_id</code> <code>string</code></summary>
+<summary>`thermostat_schedule_id` `string`</summary>
 ID of the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules/) that prompted the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/) to be activated.
 </details>
 <details>
