@@ -80,7 +80,7 @@ A thermostat was adjusted manually.
 
 <details>
 
-<summary><code>method</code>code> <code>enum</code></summary>
+<summary><code>method</code> <code>enum</code></summary>
 
 Method used to adjust the thermostat manually. `seam` indicates that the Seam API, Seam CLI, or Seam Console was used to adjust the thermostat.
 
