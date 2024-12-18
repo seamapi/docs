@@ -46,7 +46,7 @@ Updates a specified [climate preset](../../capability-guides/thermostats/creatin
 
 ### `thermostat.climate_preset_activated`
 
-A thermostat [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/) was activated.
+A thermostat [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) was activated.
 
 <details>
   
