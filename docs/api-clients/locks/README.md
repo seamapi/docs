@@ -8,6 +8,8 @@ description: Devices that are able to be locked and unlocked.
 
 <table data-header-hidden><thead><tr><th width="250"></th><th></th></tr></thead><tbody><tr><td><a href="lock_door.md">Lock a Lock</a></td><td>Lock a Lock</td></tr><tr><td><a href="unlock_door.md">Unlock a Lock</a></td><td>Unlock a Lock</td></tr><tr><td><a href="list.md">List Locks</a></td><td>List Locks</td></tr></tbody></table>
 
+Learn about [locking](../../capability-guides/smart-locks/lock-and-unlock#locking-a-door) and [unlocking](../../products/smart-locks/lock-and-unlock#unlocking-a-door) actions.
+
 ### Events
 
 #### `lock.locked`
@@ -31,7 +33,7 @@ Supported values for `lock.locked`:
 - `manual`
 - `unknown`
 - `seamapi`
-- `automatic` (for [Kwikset](./../device-guides/kwikset-locks) and [igloohome](../../device-guides/igloohome-locks) only)
+- `automatic` (for [Kwikset](../../device-guides/kwikset-locks) and [igloohome](../../device-guides/igloohome-locks) only)
 </details>
 
 <details>
@@ -63,7 +65,7 @@ Supported values for `lock.locked`:
 - `manual`
 - `unknown`
 - `seamapi`
-- `automatic` (for [Kwikset](./../device-guides/kwikset-locks) and [igloohome](../../device-guides/igloohome-locks) only)
+- `automatic` (for [Kwikset](../../device-guides/kwikset-locks) and [igloohome](../../device-guides/igloohome-locks) only)
 </details>
 
 <details>
@@ -76,7 +78,7 @@ For a list of device manufacturers that send the `access_code_id` in lock events
 
 #### `lock.access_denied`
 
-An incorrect access code was entered one or more times in a row on a device ([Kwikset](./../device-guides/kwikset-locks) and [igloohome](../../device-guides/igloohome-locks) only).
+An incorrect access code was entered one or more times in a row on a device ([Kwikset](../../device-guides/kwikset-locks) and [igloohome](../../device-guides/igloohome-locks) only).
 
 <details>
 
