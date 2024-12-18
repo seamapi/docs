@@ -52,7 +52,7 @@ A thermostat [climate preset](../../capability-guides/thermostats/creating-and-m
   
 <summary><code>thermostat_schedule_id</code> <code>string</code></summary>
 
-ID of the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules/README.md) that prompted the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to be activated.
+ID of the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) that prompted the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to be activated.
 
 </details>
 
