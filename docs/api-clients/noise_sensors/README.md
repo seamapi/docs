@@ -134,7 +134,7 @@ The noise detected from a noise sensor exceeded a predefined threshold or durati
 
 <summary><code>noise_threshold_id</code> <code>string</code></summary>
 
-ID of the [noise threshold](../../products/noise-sensors/#what-is-a-threshold) that was triggered.
+ID (`uuid`) of the [noise threshold](../../products/noise-sensors/#what-is-a-threshold) that was triggered.
 
 </details>
 
