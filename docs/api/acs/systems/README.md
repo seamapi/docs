@@ -49,11 +49,23 @@ Indicates whether the `acs_system` supports [removing users from access groups](
 
 ---
 
+### `connected_account_id`
+
+Format: `ID`
+
+ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the `acs_system`.
+
+
+---
+
 ### `connected_account_ids`
 
 Format: `List`
 
 IDs of the [connected accounts](../../../core-concepts/connected-accounts/README.md) associated with the `acs_system`.
+---
+deprecated: Use `connected_account_id`.
+---
 
 
 ---
@@ -101,8 +113,8 @@ Possible enum values:
 - `visionline_system`
 - `assa_abloy_credential_service`
 - `latch_building`
-- `dormakaba_community`
-- `legic_connect`
+- `dormakaba_community_site`
+- `legic_connect_credential_service`
 - `assa_abloy_vostio`
 - `assa_abloy_vostio_credential_service`
 
@@ -183,8 +195,8 @@ Possible enum values:
 - `visionline_system`
 - `assa_abloy_credential_service`
 - `latch_building`
-- `dormakaba_community`
-- `legic_connect`
+- `dormakaba_community_site`
+- `legic_connect_credential_service`
 - `assa_abloy_vostio`
 - `assa_abloy_vostio_credential_service`
 
