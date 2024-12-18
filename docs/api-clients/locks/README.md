@@ -18,7 +18,7 @@ A door lock has been locked.
 
 <summary><code>method</code> <code>enum</code></summary>
 
-Present on `lock.locked` and `lock.unlocked` events. Specifies the method used to perform the [lock](../../products/smart-locks/lock-and-unlock#locking-a-door) or [unlock](../../products/smart-locks/lock-and-unlock#unlocking-a-door) action.
+Present on `lock.locked` and `lock.unlocked` events. Specifies the method used to perform the [lock](../../capability-guides/smart-locks/lock-and-unlock#locking-a-door) or [unlock](../../capability-guides/smart-locks/lock-and-unlock#unlocking-a-door) action.
 
 Supported values for `lock.unlocked`:
 - `keycode`
@@ -31,7 +31,7 @@ Supported values for `lock.locked`:
 - `manual`
 - `unknown`
 - `seamapi`
-- `automatic` (for [Kwikset](./../device-and-system-integration-guides/kwikset-locks) and [igloohome](../../device-and-system-integration-guides/igloohome-locks) only)
+- `automatic` (for [Kwikset](./../device-guides/kwikset-locks) and [igloohome](../../device-guides/igloohome-locks) only)
 </details>
 
 <details>
@@ -63,7 +63,7 @@ Supported values for `lock.locked`:
 - `manual`
 - `unknown`
 - `seamapi`
-- `automatic` (for [Kwikset](./../device-and-system-integration-guides/kwikset-locks) and [igloohome](../../device-and-system-integration-guides/igloohome-locks) only)
+- `automatic` (for [Kwikset](./../device-guides/kwikset-locks) and [igloohome](../../device-guides/igloohome-locks) only)
 </details>
 
 <details>
@@ -76,7 +76,7 @@ For a list of device manufacturers that send the `access_code_id` in lock events
 
 #### `lock.access_denied`
 
-An incorrect access code was entered one or more times in a row on a device ([Kwikset](./../device-and-system-integration-guides/kwikset-locks) and [igloohome](../../device-and-system-integration-guides/igloohome-locks) only).
+An incorrect access code was entered one or more times in a row on a device ([Kwikset](./../device-guides/kwikset-locks) and [igloohome](../../device-guides/igloohome-locks) only).
 
 <details>
 
