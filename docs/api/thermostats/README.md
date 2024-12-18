@@ -52,7 +52,7 @@ A thermostat [climate preset](../../capability-guides/thermostats/creating-and-m
   
 <summary><code>thermostat_schedule_id</code> <code>string</code></summary>
 
-ID of the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules/) that prompted the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/) to be activated.
+ID of the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules/README.md) that prompted the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to be activated.
 
 </details>
 
@@ -60,7 +60,7 @@ ID of the [thermostat schedule](../../capability-guides/thermostats/creating-and
 
 <summary><code>climate_preset_key</code> <code>string</code></summary>
 
-Key of the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/) that was activated.
+Key of the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) that was activated.
 
 </details>
 
@@ -68,7 +68,7 @@ Key of the [climate preset](../../capability-guides/thermostats/creating-and-man
 
 <summary><code>is_fallback_climate_preset</code> <code>boolean</code></summary>
 
-Indicates whether the [climate preset](../..capability-guides/thermostats/creating-and-managing-climate-presets/) that was activated is the [fallback climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset.md) for the thermostat.
+Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) that was activated is the [fallback climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset.md) for the thermostat.
 
 </details>
 
@@ -194,7 +194,7 @@ Lower temperature limit, in °C, defined by the set [threshold](../../capability
 
 <summary><code>lower_limit_fahrenheit</code> <code>number</code></summary>
 
-Lower temperature limit, in °F, defined by the set [threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
+Lower temperature limit, in °F, defined by the set [threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md).
 
 </details>
 
