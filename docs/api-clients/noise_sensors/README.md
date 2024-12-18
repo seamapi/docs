@@ -138,6 +138,14 @@ ID (`uuid`) of the [noise threshold](../../products/noise-sensors/#what-is-a-thr
 
 </details>
 
+<details>
+
+<summary><code>noise_threshold_name</code> <code>string</code></summary>
+
+Name of the [noise threshold](../../products/noise-sensors/#what-is-a-threshold) that was triggered, for example, `builtin_first_disturbance`.
+
+</details>
+
 ## Next Steps
 
 For more details on each endpoint, see our API references:
