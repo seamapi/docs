@@ -60,12 +60,13 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 
 ### `connected_account_ids`
 
+{% hint style="warning" %}
+**Deprecated**. Use `connected_account_id`.
+{% endhint %}
+
 Format: `List`
 
 IDs of the [connected accounts](../../../core-concepts/connected-accounts/README.md) associated with the `acs_system`.
----
-deprecated: Use `connected_account_id`.
----
 
 
 ---
