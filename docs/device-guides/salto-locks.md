@@ -40,11 +40,27 @@ To create a [Connect Webview](../core-concepts/connect-webviews/) that enables y
 
 ***
 
+## Setup Instructions
+
+To control Salto KS devices using Seam, you must prompt owners of these devices to perform the following steps:
+
+1. Create an account in the [Salto KS app](https://app.saltoks.com/) if you have not done so already.
+2. In the Salto KS app, add your Salto KS devices.
+3.  Note your login credentials for the Salto KS app, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
+
+    During the Connect Webview process, click **Allow and Continue** to confirm that you will allow Seam to add the requisite admin user to your Salto KS site for the integration with Seam.
+
+    {% hint style="warning" %}
+    Do not suspend or remove the Seam Integration admin user from your Salto KS site.
+    {% endhint %}
+
+***
+
 ## Brand-Specific Integration Considerations
 
 ### Access Code Limitations
 
-Salto Locks does not allow a user to configure custom PIN codes. When creating an access code on a Salto door lock, their system will automatically generate a 6-10 digit PIN code. You will be able to retrieve the PIN code from the `code` property on the access code object.
+Salto does not allow a user to configure custom PIN codes. When creating an access code on a Salto door lock, their system will automatically generate a 6-10 digit PIN code. You will be able to retrieve the PIN code from the `code` property on the access code object.
 
 ### Salto-Specific Access Code Errors
 
