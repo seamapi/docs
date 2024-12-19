@@ -212,29 +212,61 @@ Format: `Object`
 Visionline-specific metadata for the credential.
 
 <details>
-<summary>auto_join <code>boolean</code></summary>
+
+<summary><code>auto_join</code> Format: <code>boolean</code></summary>
+
+
 </details>
+
 <details>
-<summary>card_function_type <code>enum</code></summary>
+
+<summary><code>card_function_type</code> Format: <code>enum</code></summary>
+
+
 </details>
+
 <details>
-<summary>card_id <code>string</code></summary>
+
+<summary><code>card_id</code> Format: <code>string</code></summary>
+
+
 </details>
+
 <details>
-<summary>common_acs_entrance_ids <code>list</code></summary>
+
+<summary><code>common_acs_entrance_ids</code> Format: <code>list</code></summary>
+
+
 </details>
+
 <details>
-<summary>credential_id <code>string</code></summary>
+
+<summary><code>credential_id</code> Format: <code>string</code></summary>
+
+
 </details>
+
 <details>
-<summary>guest_acs_entrance_ids <code>list</code></summary>
+
+<summary><code>guest_acs_entrance_ids</code> Format: <code>list</code></summary>
+
+
 </details>
+
 <details>
-<summary>is_valid <code>boolean</code></summary>
+
+<summary><code>is_valid</code> Format: <code>boolean</code></summary>
+
+
 </details>
+
 <details>
-<summary>joiner_acs_credential_ids <code>list</code></summary>
+
+<summary><code>joiner_acs_credential_ids</code> Format: <code>list</code></summary>
+
+
 </details>
+
 
 ---
 
