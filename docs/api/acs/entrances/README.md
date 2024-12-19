@@ -27,20 +27,40 @@ ID of the access control system that contains the entrance.
 Format: `Object`
 
 <details>
-<summary>door_name <code>string</code></summary>
+
+<summary><code>door_name</code> Format: <code>string</code></summary>
+
+
 </details>
+
 <details>
-<summary>door_number <code>number</code></summary>
+
+<summary><code>door_number</code> Format: <code>number</code></summary>
+
+
 </details>
+
 <details>
-<summary>door_type <code>enum</code></summary>
+
+<summary><code>door_type</code> Format: <code>enum</code></summary>
+
+
 </details>
+
 <details>
-<summary>pms_id <code>string</code></summary>
+
+<summary><code>pms_id</code> Format: <code>string</code></summary>
+
+
 </details>
+
 <details>
-<summary>stand_open <code>boolean</code></summary>
+
+<summary><code>stand_open</code> Format: <code>boolean</code></summary>
+
+
 </details>
+
 
 ---
 
@@ -67,14 +87,26 @@ Display name for the entrance.
 Format: `Object`
 
 <details>
-<summary>access_point_name <code>string</code></summary>
+
+<summary><code>access_point_name</code> Format: <code>string</code></summary>
+
+
 </details>
+
 <details>
-<summary>common_area_number <code>number</code></summary>
+
+<summary><code>common_area_number</code> Format: <code>number</code></summary>
+
+
 </details>
+
 <details>
-<summary>inner_access_points_names <code>list</code></summary>
+
+<summary><code>inner_access_points_names</code> Format: <code>list</code></summary>
+
+
 </details>
+
 
 ---
 
@@ -90,17 +122,33 @@ Format: `List`
 Format: `Object`
 
 <details>
-<summary>accessibility_type <code>string</code></summary>
+
+<summary><code>accessibility_type</code> Format: <code>string</code></summary>
+
+
 </details>
+
 <details>
-<summary>door_name <code>string</code></summary>
+
+<summary><code>door_name</code> Format: <code>string</code></summary>
+
+
 </details>
+
 <details>
-<summary>door_type <code>string</code></summary>
+
+<summary><code>door_type</code> Format: <code>string</code></summary>
+
+
 </details>
+
 <details>
-<summary>is_connected <code>boolean</code></summary>
+
+<summary><code>is_connected</code> Format: <code>boolean</code></summary>
+
+
 </details>
+
 
 ---
 
@@ -109,29 +157,61 @@ Format: `Object`
 Format: `Object`
 
 <details>
-<summary>battery_level <code>string</code></summary>
+
+<summary><code>battery_level</code> Format: <code>string</code></summary>
+
+
 </details>
+
 <details>
-<summary>door_name <code>string</code></summary>
+
+<summary><code>door_name</code> Format: <code>string</code></summary>
+
+
 </details>
+
 <details>
-<summary>intrusion_alarm <code>boolean</code></summary>
+
+<summary><code>intrusion_alarm</code> Format: <code>boolean</code></summary>
+
+
 </details>
+
 <details>
-<summary>left_open_alarm <code>boolean</code></summary>
+
+<summary><code>left_open_alarm</code> Format: <code>boolean</code></summary>
+
+
 </details>
+
 <details>
-<summary>lock_type <code>string</code></summary>
+
+<summary><code>lock_type</code> Format: <code>string</code></summary>
+
+
 </details>
+
 <details>
-<summary>locked_state <code>string</code></summary>
+
+<summary><code>locked_state</code> Format: <code>string</code></summary>
+
+
 </details>
+
 <details>
-<summary>online <code>boolean</code></summary>
+
+<summary><code>online</code> Format: <code>boolean</code></summary>
+
+
 </details>
+
 <details>
-<summary>privacy_mode <code>boolean</code></summary>
+
+<summary><code>privacy_mode</code> Format: <code>boolean</code></summary>
+
+
 </details>
+
 
 ---
 
@@ -140,14 +220,26 @@ Format: `Object`
 Format: `Object`
 
 <details>
-<summary>door_description <code>string</code></summary>
+
+<summary><code>door_description</code> Format: <code>string</code></summary>
+
+
 </details>
+
 <details>
-<summary>door_name <code>string</code></summary>
+
+<summary><code>door_name</code> Format: <code>string</code></summary>
+
+
 </details>
+
 <details>
-<summary>ext_door_id <code>string</code></summary>
+
+<summary><code>ext_door_id</code> Format: <code>string</code></summary>
+
+
 </details>
+
 
 ---
 
@@ -156,14 +248,26 @@ Format: `Object`
 Format: `Object`
 
 <details>
-<summary>door_category <code>enum</code></summary>
+
+<summary><code>door_category</code> Format: <code>enum</code></summary>
+
+
 </details>
+
 <details>
-<summary>door_name <code>string</code></summary>
+
+<summary><code>door_name</code> Format: <code>string</code></summary>
+
+
 </details>
+
 <details>
-<summary>profiles <code>list</code></summary>
+
+<summary><code>profiles</code> Format: <code>list</code></summary>
+
+
 </details>
+
 
 ---
 
