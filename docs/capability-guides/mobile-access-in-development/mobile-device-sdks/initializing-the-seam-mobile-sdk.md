@@ -10,10 +10,15 @@ You must also use the Seam API to perform server-side actions. Consequently, [in
 
 {% tabs %}
 {% tab title="Android Kotlin" %}
-To install the Seam Android SDK, add `seam-phone-sdk-android` to the `dependencies` block of your [`app/build.gradle`](https://developer.android.com/studio/build/dependencies) file.
+To install the Seam Android SDK:
+
+1. Copy the Seam Android SDK `.aar` file (for example, `seam-phone-sdk-android.aar`) into the `libs` directory for your project.
+2.  Add the Android Archive (AAR) name (for example, `seam-phone-sdk-android`) to the `dependencies` block of the [`app/build.gradle`](https://developer.android.com/studio/build/dependencies) file for your app.
+
+    There may be additional dependencies required for your specific access control system. For details, see the appropriate [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 
 {% code title="build.gradle.kts" %}
-```kotlin
+```gradle
 plugins {
     id("com.android.application")
 }
@@ -27,6 +32,7 @@ dependencies {
     implementation(project(":seam-phone-sdk-android"))
 }
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="iOS Swift" %}
@@ -60,7 +66,7 @@ See the [device or system integration guide](../../../device-and-system-integrat
 
 A [user identity](../../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md) enables the application to request a user's mobile access permissions and use the app to unlock doors.
 
-First, use the Seam API to create a [user identity](../../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) that will correspond to the App User Account using your internal user ID or other identifying information.&#x20;
+First, use the Seam API to create a [user identity](../../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) that will correspond to the App User Account using your internal user ID or other identifying information.
 
 Then, using the user identity, create a [client session](../../../core-concepts/authentication/client-session-tokens/) and capture the resulting [client session token](../../../core-concepts/authentication/client-session-tokens/). This token will be used to authenticate the user on your application.
 
