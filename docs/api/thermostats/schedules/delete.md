@@ -112,6 +112,12 @@ nil
 
 {% endtabs %}
 
+## Authentication Methods
+
+- API key
+- Client session token
+- Personal access token
+
 ## Request Parameters
 
 ### `thermostat_schedule_id`

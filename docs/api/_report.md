@@ -86,7 +86,6 @@
 - `/phones/deactivate`
 - `/phones/list`
 - `/phones/simulate/create_sandbox_phone`
-- `/user_identities/update`
 - `/webhooks/create`
 - `/webhooks/delete`
 - `/webhooks/get`
@@ -108,6 +107,7 @@ These items are intentionally undocumented.
 - `/acs/credential_provisioning_automations`: No undocumented message provided
 - `/acs/credentials/unmanaged`: No undocumented message provided
 - `/acs/encoders`: No undocumented message provided
+- `/acs/encoders/simulate`: No undocumented message provided
 - `/acs/users/unmanaged`: No undocumented message provided
 
 ### Resource properties
@@ -125,9 +125,13 @@ These items are intentionally undocumented.
 - `/acs/credentials/create_offline_code`: Unreleased.
 - `/acs/credentials/unmanaged/get`: No unmanaged credentials are currently implemented.
 - `/acs/credentials/unmanaged/list`: No unmanaged credentials are currently implemented.
-- `/acs/encoders/encode_credential`: Encoding a card is currently unimplemented.
+- `/acs/encoders/encode_credential`: Encoders are in alpha.
 - `/acs/encoders/list`: Encoders are in alpha.
-- `/acs/encoders/scan_credential`: Reading a card is currently unimplemented.
+- `/acs/encoders/scan_credential`: Encoders are in alpha.
+- `/acs/encoders/simulate/next_credential_encode_will_fail`: Encoder simulations are in alpha.
+- `/acs/encoders/simulate/next_credential_encode_will_succeed`: Encoder simulations are in alpha.
+- `/acs/encoders/simulate/next_credential_scan_will_fail`: Encoder simulations are in alpha.
+- `/acs/encoders/simulate/next_credential_scan_will_succeed`: Encoder simulations are in alpha.
 - `/acs/users/unmanaged/get`: No unmanaged users are currently implemented.
 - `/acs/users/unmanaged/list`: No unmanaged users are currently implemented.
 - `/devices/delete`: Deleting a device is no longer supported and will be removed.
@@ -176,7 +180,6 @@ Items that are intentionally undocumented are not included in this section.
 - `connected_account`
 - `device`
 - `device_provider`
-- `event`
 - `network`
 - `noise_threshold`
 - `phone`
@@ -290,29 +293,6 @@ Items that are intentionally undocumented are not included in this section.
 - `device_provider.display_name`
 - `device_provider.image_url`
 - `device_provider.provider_categories`
-- `event.acs_credential_id`
-- `event.acs_system_id`
-- `event.acs_user_id`
-- `event.action_attempt_id`
-- `event.client_session_id`
-- `event.climate_preset_key`
-- `event.cooling_set_point_celsius`
-- `event.cooling_set_point_fahrenheit`
-- `event.created_at`
-- `event.device_id`
-- `event.enrollment_automation_id`
-- `event.event_description`
-- `event.event_id`
-- `event.event_type`
-- `event.fan_mode_setting`
-- `event.heating_set_point_celsius`
-- `event.heating_set_point_fahrenheit`
-- `event.hvac_mode_setting`
-- `event.is_fallback_climate_preset`
-- `event.method`
-- `event.occurred_at`
-- `event.thermostat_schedule_id`
-- `event.workspace_id`
 - `network.created_at`
 - `network.display_name`
 - `network.network_id`
@@ -389,6 +369,10 @@ Items that are intentionally undocumented are not included in this section.
 - `/acs/encoders/encode_credential`
 - `/acs/encoders/list`
 - `/acs/encoders/scan_credential`
+- `/acs/encoders/simulate/next_credential_encode_will_fail`
+- `/acs/encoders/simulate/next_credential_encode_will_succeed`
+- `/acs/encoders/simulate/next_credential_scan_will_fail`
+- `/acs/encoders/simulate/next_credential_scan_will_succeed`
 - `/acs/entrances/grant_access`
 - `/acs/users/unmanaged/get`
 - `/acs/users/unmanaged/list`
@@ -560,6 +544,9 @@ Items that are intentionally undocumented are not included in this section.
     - `credential_manager_acs_system_id`
     - `credential_manager_acs_user_id`
     - `user_identity_id`
+- `/acs/encoders/simulate/next_credential_encode_will_succeed`
+    - `acs_encoder_id`
+    - `scenario`
 - `/acs/entrances/get`
     - `acs_entrance_id`
 - `/acs/entrances/grant_access`
@@ -803,6 +790,7 @@ These items are deprecated.
 
 - `acs_access_group.access_group_type`: Use `external_type`.
 - `acs_access_group.access_group_type_display_name`: Use `external_type_display_name`.
+- `acs_system.connected_account_ids`: Use `connected_account_id`.
 - `acs_system.system_type`: Use `external_type`.
 - `acs_system.system_type_display_name`: Use `external_type_display_name`.
 - `acs_user.email`: use email_address.
@@ -871,6 +859,10 @@ These items are deprecated.
 - `/acs/encoders/encode_credential`
 - `/acs/encoders/list`
 - `/acs/encoders/scan_credential`
+- `/acs/encoders/simulate/next_credential_encode_will_fail`
+- `/acs/encoders/simulate/next_credential_encode_will_succeed`
+- `/acs/encoders/simulate/next_credential_scan_will_fail`
+- `/acs/encoders/simulate/next_credential_scan_will_succeed`
 - `/acs/entrances/grant_access`
 - `/acs/users/list_accessible_entrances`
 - `/acs/users/revoke_access_to_all_entrances`

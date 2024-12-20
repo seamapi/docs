@@ -182,6 +182,11 @@ func main() {
 
 {% endtabs %}
 
+## Authentication Methods
+
+- API key
+- Personal access token
+
 ## Request Parameters
 
 ### `user_identity_id`

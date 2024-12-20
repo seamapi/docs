@@ -2,7 +2,7 @@
 description: Learn how to connect and control your Salto lock with the Seam API.
 ---
 
-# Get started with Salto Locks
+# Get started with Salto KS Locks
 
 <figure><img src="../.gitbook/assets/salto-getting-started-guide-cover.jpg" alt=""><figcaption><p>Salto Locks</p></figcaption></figure>
 
@@ -172,7 +172,11 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 * **email:** jane@example.com
 * **password:** 1234
 
-<figure><img src="../.gitbook/assets/salto-connect-flow-screens.png" alt=""><figcaption><p>Seam Connect Webview flow to connect Salto account with Seam</p></figcaption></figure>
+{% hint style="warning" %}
+During the authorization process, Seam adds an admin user to your Salto KS site. Do not suspend or remove this Seam Integration admin user.
+{% endhint %}
+
+<figure><img src="../.gitbook/assets/salto-connect-flow-screens.png" alt="Seam Connect Webview flow to connect your Salto KS account with Seam"><figcaption><p>Seam Connect Webview flow to connect your Salto KS account with Seam</p></figcaption></figure>
 
 Confirm the Connect Webview was successful by querying its status:
 

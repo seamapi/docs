@@ -13,7 +13,7 @@ Updates the properties of a specified [ACS user](https://docs.seam.co/latest/cap
 ```javascript
 await seam.acs.users.update({
   acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  phone_number: 12222222222,
+  phone_number: "+15555550222",
 });
 ```
 
@@ -29,7 +29,7 @@ await seam.acs.users.update({
 
 ```python
 seam.acs.users.update(
-    acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33", phone_number=12222222222
+    acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33", phone_number="+15555550222"
 )
 ```
 
@@ -46,7 +46,7 @@ None
 ```ruby
 seam.acs.users.update(
   acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  phone_number: 12_222_222_222,
+  phone_number: "+15555550222",
 )
 ```
 
@@ -64,7 +64,7 @@ nil
 <?php
 $seam->acs->users->update(
     acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-    phone_number: 12222222222
+    phone_number: "+15555550222"
 );
 ```
 
@@ -79,7 +79,7 @@ null
 #### Request
 
 ```seam_cli
-seam acs users update --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33" --phone_number 12222222222
+seam acs users update --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33" --phone_number "+15555550222"
 ```
 
 #### Response
@@ -103,7 +103,7 @@ func main() {
 		context.Background(),
 		users.UsersUpdateRequest{
 			AcsUserId:   api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
-			PhoneNumber: api.Float64(12222222222),
+			PhoneNumber: api.String("+15555550222"),
 		},
 	)
 }
@@ -117,6 +117,11 @@ nil
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- API key
+- Personal access token
 
 ## Request Parameters
 

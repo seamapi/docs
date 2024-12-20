@@ -49,7 +49,20 @@ Indicates whether the `acs_system` supports [removing users from access groups](
 
 ---
 
+### `connected_account_id`
+
+Format: `ID`
+
+ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the `acs_system`.
+
+
+---
+
 ### `connected_account_ids`
+
+{% hint style="warning" %}
+**Deprecated**. Use `connected_account_id`.
+{% endhint %}
 
 Format: `List`
 
@@ -101,8 +114,8 @@ Possible enum values:
 - `visionline_system`
 - `assa_abloy_credential_service`
 - `latch_building`
-- `dormakaba_community`
-- `legic_connect`
+- `dormakaba_community_site`
+- `legic_connect_credential_service`
 - `assa_abloy_vostio`
 - `assa_abloy_vostio_credential_service`
 
@@ -150,9 +163,13 @@ Indicates if the `acs_system` is a credential manager.
 Format: `Object`
 
 <details>
-<summary>time_zone <code>string</code></summary>
+
+<summary><code>time_zone</code> Format: <code>string</code></summary>
+
 Time zone in which the `acs_system` is located.
+
 </details>
+
 
 ---
 
@@ -183,8 +200,8 @@ Possible enum values:
 - `visionline_system`
 - `assa_abloy_credential_service`
 - `latch_building`
-- `dormakaba_community`
-- `legic_connect`
+- `dormakaba_community_site`
+- `legic_connect_credential_service`
 - `assa_abloy_vostio`
 - `assa_abloy_vostio_credential_service`
 
@@ -207,17 +224,29 @@ Format: `String`
 Format: `Object`
 
 <details>
-<summary>lan_address <code>string</code></summary>
+
+<summary><code>lan_address</code> Format: <code>string</code></summary>
+
 IP address or hostname of the main Visionline server relative to the Seam Bridge on the local network.
+
 </details>
+
 <details>
-<summary>mobile_access_uuid <code>string</code></summary>
+
+<summary><code>mobile_access_uuid</code> Format: <code>string</code></summary>
+
 Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.
+
 </details>
+
 <details>
-<summary>system_id <code>string</code></summary>
+
+<summary><code>system_id</code> Format: <code>string</code></summary>
+
 Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager.
+
 </details>
+
 
 ---
 

@@ -157,6 +157,12 @@ api.EnrollmentAutomation{UserIdentityId: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
 
 {% endtabs %}
 
+## Authentication Methods
+
+- API key
+- Client session token
+- Personal access token
+
 ## Request Parameters
 
 ### `enrollment_automation_id`

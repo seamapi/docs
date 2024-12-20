@@ -13,6 +13,10 @@ Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-sy
 ```javascript
 await seam.acs.users.create({
   acs_system_id: "123e4567-e89b-12d3-a456-426614174000",
+  full_name: "Jane Doe",
+  email_address: "jane@example.com",
+  phone_number: "+15555550100",
+  acs_access_group_ids: ["123e4567-e89b-12d3-a456-426614174000"],
 });
 ```
 
@@ -37,7 +41,13 @@ await seam.acs.users.create({
 #### Request
 
 ```python
-seam.acs.users.create(acs_system_id="123e4567-e89b-12d3-a456-426614174000")
+seam.acs.users.create(
+    acs_system_id="123e4567-e89b-12d3-a456-426614174000",
+    full_name="Jane Doe",
+    email_address="jane@example.com",
+    phone_number="+15555550100",
+    acs_access_group_ids=["123e4567-e89b-12d3-a456-426614174000"],
+)
 ```
 
 #### Response
@@ -61,7 +71,13 @@ AcsUser(
 #### Request
 
 ```ruby
-seam.acs.users.create(acs_system_id: "123e4567-e89b-12d3-a456-426614174000")
+seam.acs.users.create(
+  acs_system_id: "123e4567-e89b-12d3-a456-426614174000",
+  full_name: "Jane Doe",
+  email_address: "jane@example.com",
+  phone_number: "+15555550100",
+  acs_access_group_ids: ["123e4567-e89b-12d3-a456-426614174000"],
+)
 ```
 
 #### Response
@@ -87,7 +103,11 @@ seam.acs.users.create(acs_system_id: "123e4567-e89b-12d3-a456-426614174000")
 ```php
 <?php
 $seam->acs->users->create(
-    acs_system_id: "123e4567-e89b-12d3-a456-426614174000"
+    acs_system_id: "123e4567-e89b-12d3-a456-426614174000",
+    full_name: "Jane Doe",
+    email_address: "jane@example.com",
+    phone_number: "+15555550100",
+    acs_access_group_ids: ["123e4567-e89b-12d3-a456-426614174000"]
 );
 ```
 
@@ -113,7 +133,7 @@ $seam->acs->users->create(
 #### Request
 
 ```seam_cli
-seam acs users create --acs_system_id "123e4567-e89b-12d3-a456-426614174000"
+seam acs users create --acs_system_id "123e4567-e89b-12d3-a456-426614174000" --full_name "Jane Doe" --email_address "jane@example.com" --phone_number "+15555550100" --acs_access_group_ids ["123e4567-e89b-12d3-a456-426614174000"]
 ```
 
 #### Response
@@ -146,7 +166,11 @@ func main() {
 	client.Acs.Users.Create(
 		context.Background(),
 		users.UsersCreateRequest{
-			AcsSystemId: api.String("123e4567-e89b-12d3-a456-426614174000"),
+			AcsSystemId:       api.String("123e4567-e89b-12d3-a456-426614174000"),
+			FullName:          api.String("Jane Doe"),
+			EmailAddress:      api.String("jane@example.com"),
+			PhoneNumber:       api.String("+15555550100"),
+			AcsAccessGroupIds: [1]string{api.String("123e4567-e89b-12d3-a456-426614174000")},
 		},
 	)
 }
@@ -160,6 +184,11 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 {% endtab %}
 
 {% endtabs %}
+
+## Authentication Methods
+
+- API key
+- Personal access token
 
 ## Request Parameters
 
@@ -211,9 +240,9 @@ Email address of the `acs_user`.
 ### `full_name`
 
 Type: `string`
-Required: No
+Required: Yes
 
-Full name of the `acs_user`.
+Full name of the new `acs_user`.
 
 ***
 
