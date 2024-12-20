@@ -122,17 +122,17 @@ token=$(echo $client_session | jq -r '.client_session.token')
 {% tab title="JavaScript" %}
 ```javascript
 // Create the user identity.
-const user_identity = await seam.userIdentities.create({
+const userIdentity = await seam.userIdentities.create({
     email_address: "jane@example.com"
 });
 
 // Create the client session.
-const client_session = await seam.clientSessions.create({
-    user_identity_ids: [user_identity.user_identity_id]
+const clientSession = await seam.clientSessions.create({
+    user_identity_ids: [userIdentity.user_identity_id]
 });
 
 // Use this token to launch your mobile controller.
-const token = client_session.token;
+const token = clientSession.token;
 ```
 {% endtab %}
 
@@ -242,7 +242,7 @@ curl -X 'POST' \
 await seam.userIdentities.enrollmentAutomations.launch({
     // Use the acs_system_id for the credential manager.
     credential_manager_acs_system_id: "6737e186-8d54-48ce-a7da-a0be4d252172",
-    user_identity_id: user_identity.user_identity_id,
+    user_identity_id: userIdentity.user_identity_id,
     // Automatically create a new credential manager user
     // or specify the desired existing credential_manager_acs_user_id.
     create_credential_manager_user: true
