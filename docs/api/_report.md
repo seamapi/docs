@@ -86,7 +86,6 @@
 - `/phones/deactivate`
 - `/phones/list`
 - `/phones/simulate/create_sandbox_phone`
-- `/user_identities/update`
 - `/webhooks/create`
 - `/webhooks/delete`
 - `/webhooks/get`
@@ -791,6 +790,7 @@ These items are deprecated.
 
 - `acs_access_group.access_group_type`: Use `external_type`.
 - `acs_access_group.access_group_type_display_name`: Use `external_type_display_name`.
+- `acs_system.connected_account_ids`: Use `connected_account_id`.
 - `acs_system.system_type`: Use `external_type`.
 - `acs_system.system_type_display_name`: Use `external_type_display_name`.
 - `acs_user.email`: use email_address.
