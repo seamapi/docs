@@ -19,6 +19,7 @@ Possible enum values:
 - `salto_ks_access_group`
 - `brivo_group`
 - `salto_space_group`
+- `dormakaba_community_access_group`
 
 
 ---
@@ -80,6 +81,7 @@ Possible enum values:
 - `salto_ks_access_group`
 - `brivo_group`
 - `salto_space_group`
+- `dormakaba_community_access_group`
 
 
 ---
@@ -105,6 +107,15 @@ Format: `Boolean`
 Format: `String`
 
 Name of the access group.
+
+
+---
+
+### `warnings`
+
+Format: `List`
+
+Warnings associated with the `acs_access_group`.
 
 
 ---
