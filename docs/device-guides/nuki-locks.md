@@ -78,6 +78,26 @@ To control Nuki devices using Seam, you must prompt owners of these devices to p
 
 ***
 
+## Brand-Specific Restrictions
+
+Nuki imposes the following limits on Nuki App users, lock permissions, and entry codes, that is, access codes:
+
+### Nuki App Users
+
+For Nuki Smart Lock 2.0 and newer, you can create 200 app users.
+
+### Lock Permissions
+
+For Nuki Smart Lock, you can create 100 permissions.
+
+### Access Codes
+
+For Smart Lock 3.0 and newer connected to a Nuki Keypad, you can create 200 access codes, in addition to the aforementioned permissions.
+
+For Smart Lock 2.0 and previous versions connected to a Nuki Keypad, you can create 100 access codes, in addition to the aforementioned permissions.
+
+***
+
 ## Where to Order
 
 To purchase Nuki devices, visit the Nuki online store.
