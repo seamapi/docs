@@ -100,20 +100,6 @@ Format: `Object`
 
 </details>
 
-<details>
-
-<summary><code>inner_access_points_names</code> Format: <code>list</code></summary>
-
-
-</details>
-
-<details>
-
-<summary><code>lease_ids</code> Format: <code>list</code></summary>
-
-
-</details>
-
 
 ---
 
