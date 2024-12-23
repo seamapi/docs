@@ -10,7 +10,7 @@ description: >-
 
 ## Managing Mobile Credentials
 
-Mobile access is the use of a mobile device, such as a smartphone, tablet, or wearable, to gain access to secured doors, gates, services, and more. This functionality is incorporated in [access control systems](../access-systems/) (ACSs) of diverse types and levels of complexity.
+Mobile access is the use of a mobile device, such as a smartphone, tablet, or wearable, to gain access to secured doors, gates, services, and more. This functionality is incorporated in [access control systems](../../products/access-systems/) (ACSs) of diverse types and levels of complexity.
 
 The Seam mobile access solution makes it easy to issue and retrieve mobile credentials across a wide variety of access control systems. This guide provides an overview of these basic operations and introduces the basic terminology related to mobile access.&#x20;
 
@@ -19,7 +19,7 @@ The Seam mobile access solution makes it easy to issue and retrieve mobile crede
 ## Applicable Lock and Access Platforms
 
 The Seam mobile access solution is primarily focused on electronic locks and access hardware that support Bluetooth® or near-field communication (NFC) wireless technology. These groups of devices include a vast array of modern electronic door locks, turnstiles, and gate systems. Before implementation, it is important to verify that the existing hardware can communicate with smartphones through one of these wireless technologies.\
-If you aim to enable mobile access with Wi-Fi or Z-Wave locks, see [Smart Locks](../smart-locks/). This section describes  API endpoints that you can use directly in your mobile application.
+If you aim to enable mobile access with Wi-Fi or Z-Wave locks, see [Smart Locks](../../products/smart-locks/). This section describes  API endpoints that you can use directly in your mobile application.
 
 ***
 

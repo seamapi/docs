@@ -481,6 +481,6 @@ To learn more about using the Seam API with your Salto KS ACS, see the following
 * [Access Group-Based Access Control Systems](../../capability-guides/access-systems/understanding-access-control-system-differences.md#access-group-based-access-control-systems)
 * [Managing ACS Users](../../products/access-systems/user-management.md)
 * [Managing Credentials](../../capability-guides/access-systems/managing-credentials.md)
-* [Mobile Access](../../products/mobile-access-in-development/)
+* [Mobile Access](../../capability-guides/mobile-access/)
 * [Access Control Systems](../../api/acs/) in the Seam API reference
-* [User Identities](../../api/user\_identities/) in the Seam API reference
+* [User Identities](../../api/user_identities/) in the Seam API reference

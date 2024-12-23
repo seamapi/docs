@@ -22,7 +22,7 @@ To [create a credential for an ACS user](../../api/acs/credentials/create.md), p
 
 * `code` for a PIN code-based credential
 * `card` for a plastic key card-based credential
-* `mobile_key` for a [Seam mobile key](../../products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md#what-are-multi-phone-sync-credentials).
+* `mobile_key` for a [Seam mobile key](../mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#what-are-multi-phone-sync-credentials).
 
 Depending on the ACS and the type of credential you are issuing, you can also specify the following properties for the new credential:
 
@@ -424,7 +424,7 @@ credential, uErr := client.Acs.Credentials.Create(
 
 ### Create a Seam Mobile Key
 
-Depending on the ACS for which you want to create a credential, you may also need to include system-specific metadata. See the [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS. For more information about mobile access and issuing mobile credentials, see [Mobile Access](../../products/mobile-access-in-development/) and [Issuing Mobile Credentials from an Access Control System](../../products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md).
+Depending on the ACS for which you want to create a credential, you may also need to include system-specific metadata. See the [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS. For more information about mobile access and issuing mobile credentials, see [Mobile Access](../mobile-access/) and [Issuing Mobile Credentials from an Access Control System](../mobile-access/issuing-mobile-credentials-from-an-access-control-system.md).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -720,7 +720,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 
 ## List Credentials
 
-You can [list all ACS credentials](../../api/acs/credentials/list.md) for a specific [ACS user](../../products/access-systems/user-management.md) or [user identity](../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity). You can also [list all credentials for an ACS system](../../api/acs/credentials/list.md).
+You can [list all ACS credentials](../../api/acs/credentials/list.md) for a specific [ACS user](../../products/access-systems/user-management.md) or [user identity](../mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity). You can also [list all credentials for an ACS system](../../api/acs/credentials/list.md).
 
 ### List Credentials by ACS User
 
@@ -932,7 +932,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 
 ### List Credentials by User Identity
 
-To [list all ACS credentials](../../api/acs/credentials/list.md) for a specific [user identity](../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity), provide the `user_identity_id`.
+To [list all ACS credentials](../../api/acs/credentials/list.md) for a specific [user identity](../mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity), provide the `user_identity_id`.
 
 {% tabs %}
 {% tab title="Python" %}

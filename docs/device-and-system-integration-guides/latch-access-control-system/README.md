@@ -34,7 +34,7 @@ For more information about managing your Latch ACS through Seam, see the followi
 * [Programming Latch ACS Mobile Credentials](programming-latch-acs-mobile-credentials.md)
 * [Credential-based ACS](../../capability-guides/access-systems/understanding-access-control-system-differences.md#credential-based-acs)
 * [Access Control Systems](../../products/access-systems/)
-* [Mobile Access](../../products/mobile-access-in-development/)
+* [Mobile Access](../../capability-guides/mobile-access/)
 
 ***
 
@@ -45,13 +45,13 @@ This integration supports all wireless locks and readers connected to the Latch 
 We support the following features:
 
 * [Managing access systems](../../products/access-systems/)
-* [Issuing mobile access credentials](../../products/mobile-access-in-development/)
+* [Issuing mobile access credentials](../../capability-guides/mobile-access/)
 
 ***
 
 ### Device Provider Key
 
-To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables you to connect your Latch ACS to Seam, include the `latch` [device provider key](../../api-clients/connect\_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables you to connect your Latch ACS to Seam, include the `latch` [device provider key](../../api-clients/connect_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
