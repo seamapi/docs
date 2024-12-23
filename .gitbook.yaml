@@ -142,3 +142,14 @@ redirects:
   api-clients/user-identities: api-clients/user_identities/README.md
   api-clients/workspaces/get-workspace: api-clients/workspaces/get.md
   api-clients/workspaces/reset-workspace: api-clients/workspaces/reset_sandbox.md
+  capability-guides/mobile-access-in-development: products/mobile-access/README.md
+  capability-guides/mobile-access-in-development/mobile-access-setup: products/mobile-access/mobile-access-setup.md
+  capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities: products/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md
+  capability-guides/mobile-access-in-development/managing-phones-for-a-user-identity: products/mobile-access/managing-phones-for-a-user-identity.md
+  capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system: products/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md
+  capability-guides/mobile-access-in-development/developing-in-a-sandbox-workspace: capability-guides/mobile-access/developing-in-a-sandbox-workspace.md
+  capability-guides/mobile-access-in-development/mobile-device-sdks: capability-guides/mobile-access/mobile-device-sdks/README.md
+  capability-guides/mobile-access-in-development/mobile-device-sdks/initializing-the-seam-mobile-sdk: capability-guides/mobile-access/mobile-device-sdks/initializing-the-seam-mobile-sdk.md
+  capability-guides/mobile-access-in-development/mobile-device-sdks/handling-system-permissions: capability-guides/mobile-access/mobile-device-sdks/handling-system-permissions.md
+  capability-guides/mobile-access-in-development/mobile-device-sdks/using-unlock-with-tap: capability-guides/mobile-access/mobile-device-sdks/using-unlock-with-tap.md
+  
