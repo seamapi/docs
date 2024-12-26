@@ -12,11 +12,12 @@ Seam provides a universal API to connect and control many brands of IoT devices 
 
 This guide gives you a rapid introduction to connecting and controlling your [August lock](august-locks.md) using the Seam API. For application developers, you can use the Seam API in your app, and your users can authorize your app to control their devices using Seam.
 
-Seam supports the following August locks:
+For detailed information about the August devices that Seam supports, see the following table and our [August Supported Devices page](https://www.seam.co/manufacturers/august):
 
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
-  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
+  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
+  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
   manufacturers='["August"]'
 />" %}
 
@@ -38,7 +39,7 @@ Seam provides client libraries for many languages, including JavaScript, Python,
 
 * JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
 * Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
-* Ruby Gem ([rubygem](https://rubygems.org/gems/seamapi), [GitHub](https://github.com/seamapi/ruby))
+* Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
 * PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
 * Java ([GitHub](https://github.com/seamapi/java))
 * C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
@@ -62,7 +63,7 @@ pip install seam
 
 {% tab title="Ruby" %}
 ```bash
-bundle add seamapi
+bundle add seam
 ```
 {% endtab %}
 
@@ -106,8 +107,6 @@ go get github.com/seamapi/go
 {% endtabs %}
 
 Next, go to [https://console.seam.co/](https://console.seam.co/) and [sign up for Seam](../core-concepts/seam-console/#create-a-seam-account) to get your [API key](../core-concepts/authentication/api-keys.md).
-
-{% @supademo/embed demoId="vLRzYM2Nwoi4j_cH9WCNQ" url="https://app.supademo.com/demo/vLRzYM2Nwoi4j_cH9WCNQ" %}
 
 Then, export your API key as an environment variable.
 
@@ -222,9 +221,9 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 **Code:**
 
 ```ruby
-require "seamapi"
+require "seam"
 
-seam = Seam::Client.new() # Seam automatically uses your exported SEAM_API_KEY.
+seam = Seam.new() # Seam automatically uses your exported SEAM_API_KEY.
 
 connect_webview = seam.connect_webviews.create(
   accepted_providers: ["august"]
@@ -758,8 +757,8 @@ all_august_locks = seam.devices.list(manufacturer: "august")
 front_door = all_august_locks[0]
 
 # Inspect specific properties.
-puts front_door.properties['online'] # true
-puts front_door.properties['locked'] # true
+puts front_door.properties.online # true
+puts front_door.properties.locked # true
 
 # View the entire returned device object.
 puts front_door.inspect
@@ -1110,7 +1109,7 @@ if (frontDoor.can_remotely_unlock) {
 if (front_door.can_remotely_unlock)
   # Perform the unlock operation
   # and return an action attempt.
-  action_attempt = seam.locks.unlock_door(front_door.device_id)
+  action_attempt = seam.locks.unlock_door(device_id: front_door.device_id)
 end
 ```
 
@@ -1323,7 +1322,7 @@ updated_front_door = seam.devices.get(device_id: front_door.device_id)
 
 # Inspect the locked property to confirm
 # that the unlock operation was successful.
-puts updated_front_door.properties['locked'] # false
+puts updated_front_door.properties.locked # false
 ```
 
 **Output:**
@@ -1625,7 +1624,7 @@ if (updatedFrontDoor.can_program_online_access_codes) {
 ```ruby
 # Confirm that the device supports online access codes.
 # Here's another capability flag!
-if (updated_front_door['can_program_online_access_codes'])
+if (updated_front_door.can_program_online_access_codes)
   # Create an ongoing online access code.
   seam.access_codes.create(
     device_id: updated_front_door.device_id,
@@ -1945,7 +1944,7 @@ Now that you've completed this getting started guide for August devices, you can
 * [ ] **Explore**\
   See the [other devices and system integrations](../device-and-system-integration-guides/overview.md) that Seam supports.
 * [ ] **Learn**\
-  Read about Seam [concepts](broken-reference) and the [device and system capabilities ](../capability-guides/device-and-system-capabilities.md)that Seam supports.
+  Read about Seam [concepts](broken-reference/) and the [device and system capabilities ](../capability-guides/device-and-system-capabilities.md)that Seam supports.
 * [ ] **Use Seam Components**\
   Find out about [Seam Components](../seam-components/overview/), which are prebuilt UI components for building your device management flow.
 * [ ] **Use webhooks**\
@@ -1953,7 +1952,7 @@ Now that you've completed this getting started guide for August devices, you can
 * [ ] **Find out more**\
   Explore the other types of devices and systems that you can control with Seam, including [access control systems](../products/access-systems/), [thermostats](../products/thermostats/), and [noise sensors](../products/noise-sensors/).
 * [ ] **Develop for mobile access**\
-  Learn about Seam's [mobile access solution](../products/mobile-access-in-development/).
+  Learn about Seam's [mobile access solution](../capability-guides/mobile-access/).
 
 {% hint style="info" %}
 If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).

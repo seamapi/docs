@@ -2,7 +2,7 @@
 description: Learn how to connect and control your Salto lock with the Seam API.
 ---
 
-# Get started with Salto Locks
+# Get started with Salto KS Locks
 
 <figure><img src="../.gitbook/assets/salto-getting-started-guide-cover.jpg" alt=""><figcaption><p>Salto Locks</p></figcaption></figure>
 
@@ -18,7 +18,7 @@ Seam provides client libraries for many languages, such as JavaScript, Python, R
 
 * JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
 * Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
-* Ruby Gem ([rubygem](https://rubygems.org/gems/seamapi), [GitHub](https://github.com/seamapi/ruby))
+* Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
 * PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
 * Java ([GitHub](https://github.com/seamapi/java))
 * C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
@@ -40,7 +40,7 @@ pip install seam
 
 {% tab title="Ruby" %}
 ```bash
-bundle add seamapi
+bundle add seam
 ```
 {% endtab %}
 
@@ -134,9 +134,9 @@ console.log(connectWebview.url)
 
 {% tab title="Ruby" %}
 ```ruby
-require 'seamapi'
+require "seam"
 
-seam = Seam::Client.new(api_key: 'MY_API_KEY')
+seam = Seam.new(api_key: 'MY_API_KEY')
 
 webview = seam.connect_webviews.create(accepted_providers: %w[salto])
 
@@ -172,14 +172,18 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 * **email:** jane@example.com
 * **password:** 1234
 
-<figure><img src="../.gitbook/assets/salto-connect-flow-screens.png" alt=""><figcaption><p>Seam Connect Webview flow to connect Salto account with Seam</p></figcaption></figure>
+{% hint style="warning" %}
+During the authorization process, Seam adds an admin user to your Salto KS site. Do not suspend or remove this Seam Integration admin user.
+{% endhint %}
+
+<figure><img src="../.gitbook/assets/salto-connect-flow-screens.png" alt="Seam Connect Webview flow to connect your Salto KS account with Seam"><figcaption><p>Seam Connect Webview flow to connect your Salto KS account with Seam</p></figcaption></figure>
 
 Confirm the Connect Webview was successful by querying its status:
 
 {% tabs %}
 {% tab title="Python" %}
 ```python
-updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
+updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
 assert updated_webview.login_successful # true
 ```
@@ -197,7 +201,7 @@ console.log(updatedWebview.login_successful) // true
 
 {% tab title="Ruby" %}
 ```ruby
-updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
+updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
 puts updated_webview.login_successful # true
 ```
@@ -282,8 +286,8 @@ console.log(someLock)
 ```ruby
 some_lock = seam.locks.list.first
 
-puts some_lock.properties['online'] # true
-puts some_lock.properties['locked'] # true
+puts some_lock.properties.online # true
+puts some_lock.properties.locked # true
 
 puts some_lock
 
@@ -335,13 +339,13 @@ Next, you can perform the basic action of locking and unlocking a door. Note tha
 {% tab title="Python" %}
 ```python
 # lock the door
-seam.locks.lock_door(some_lock)
-updated_lock = seam.locks.get(some_lock.device_id)
+seam.locks.lock_door(device_id: some_lock.device_id)
+updated_lock = seam.locks.get(device_id: some_lock.device_id)
 assert updated_lock.properties["locked"] is True
 
 # Now unlock the door
-seam.locks.unlock_door(some_lock)
-updated_lock = seam.locks.get(some_lock.device_id)
+seam.locks.unlock_door(device_id: some_lock.device_id)
+updated_lock = seam.locks.get(device_id: some_lock.device_id)
 assert updated_lock.properties["locked"] is False
 ```
 {% endtab %}
@@ -363,14 +367,14 @@ console.log(updatedLock.properties.locked) // false
 {% tab title="Ruby" %}
 ```ruby
 # lock the door
-seam.locks.lock_door(some_lock)
-updated_lock = seam.locks.get(some_lock.device_id)
-puts updated_lock.properties['locked'] # true
+seam.locks.lock_door(device_id: some_lock.device_id)
+updated_lock = seam.locks.get(device_id: some_lock.device_id)
+puts updated_lock.properties.locked # true
 
 # unlock the door
-seam.locks.unlock_door(some_lock)
-updated_lock = seam.locks.get(some_lock.device_id)
-puts updated_lock.properties['locked'] # false
+seam.locks.unlock_door(device_id: some_lock.device_id)
+updated_lock = seam.locks.get(device_id: some_lock.device_id)
+puts updated_lock.properties.locked # false
 ```
 {% endtab %}
 
@@ -496,8 +500,7 @@ seam.access_codes.create(
   ends_at: '2028-08-13T19:23:42+0000'
 )
 
-# you can use a device or a device_id as the "device" parameter
-seam.access_codes.list(some_lock)
+seam.access_codes.list(device_id: some_lock.device_id)
 
 # [<Seam::AccessCode:0x00690
 #   access_code_id="631a3a30-3fa7-462a-b3bc-65528ccf8765"

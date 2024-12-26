@@ -27,8 +27,6 @@ To get started with Seam, first connect a set of devices.
 
 Once authorized, the devices associated with this test account appear in your workspace.
 
-{% @supademo/embed demoId="h1y5QMki-7vzlghMzobuf" url="https://app.supademo.com/demo/h1y5QMki-7vzlghMzobuf" %}
-
 ## Step 2 — Get an API Key and SDK
 
 To control the devices that you connected in [Step 1](quickstart.md#step-1-connect-devices), you must create an API key and install the Seam SDK in the programming language of your choice.
@@ -40,8 +38,6 @@ To control the devices that you connected in [Step 1](quickstart.md#step-1-conne
 3. In the **Add API Key** dialog, type a name for your new API key and then click **Create API Key**.
 4. Copy the newly-created API key and store it for future use.
 
-{% @supademo/embed demoId="vLRzYM2Nwoi4j_cH9WCNQ" url="https://app.supademo.com/demo/vLRzYM2Nwoi4j_cH9WCNQ" %}
-
 ### Install the Seam SDK
 
 Install one of the Seam SDKs in the programming language of your choice.
@@ -50,7 +46,7 @@ Seam provides client libraries for many languages, such as JavaScript, Python, R
 
 * JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
 * Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
-* Ruby Gem ([rubygem](https://rubygems.org/gems/seamapi), [GitHub](https://github.com/seamapi/ruby))
+* Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
 * PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
 * Java ([GitHub](https://github.com/seamapi/java))
 * C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
@@ -72,7 +68,7 @@ pip install seam
 
 {% tab title="Ruby" %}
 ```bash
-bundle add seamapi
+bundle add seam
 ```
 {% endtab %}
 
@@ -263,9 +259,9 @@ if (frontDoor.can_remotely_unlock) {
 **Code:**
 
 ```ruby
-require "seamapi"
+require "seam"
 
-seam = Seam::Client.new() # Seam automatically uses your exported SEAM_API_KEY.
+seam = Seam.new() # Seam automatically uses your exported SEAM_API_KEY.
 
 # Retrieve all devices, filtered by manufacturer,
 # which is one of several filters that list() supports.
@@ -279,7 +275,7 @@ front_door = all_august_locks[0]
 if (front_door.can_remotely_unlock)
   # Perform the unlock operation
   # and return an action attempt.
-  action_attempt = seam.locks.unlock_door(front_door.device_id)
+  action_attempt = seam.locks.unlock_door(device_id: front_door.device_id)
 end
 ```
 

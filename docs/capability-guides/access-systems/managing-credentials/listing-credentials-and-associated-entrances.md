@@ -10,7 +10,7 @@ Once you have [created credentials](../managing-credentials.md), you can retriev
 
 ## List Entrances Associated with a Credential
 
-To [list the entrances to which a specific credential grants access](../../../api-clients/acs/credentials/list_accessible_entrances.md), use `list_accessible_entrances` and provide the `acs_credential_id`.
+To [list the entrances to which a specific credential grants access](../../../api/acs/credentials/list_accessible_entrances.md), use `list_accessible_entrances` and provide the `acs_credential_id`.
 
 {% tabs %}
 {% tab title="Python" %}

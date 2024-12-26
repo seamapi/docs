@@ -14,9 +14,12 @@ Kwikset produces smart locks suitable for residential homes, rental properties, 
 
 This integration supports the Kwikset [Halo](https://www.kwikset.com/halo), [Halo Touch](https://www.kwikset.com/halo-touch), and [SmartCode](https://www.kwikset.com/products/electronic/electronic-smart-locks) lines of smart locks.
 
+For detailed information about the Kwikset devices that Seam supports, see the following table and our [Kwikset Supported Devices page](https://www.seam.co/manufacturers/kwikset):
+
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
-  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
+  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
+  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
   manufacturers='["Kwikset"]'
 />" %}
 
@@ -45,8 +48,7 @@ To control Kwikset devices using Seam, you must prompt owners of these devices t
 
 1. Create an account in the [Kwikset App](https://www.kwikset.com/smart-locks/app) if you have not done so already.
 2. In the Kwikset App, add your Kwikset devices.
-3.  In the Kwikset App, click on the top left menu button, navigate to **Account Settings** and disable **2-Step Verification**.\
-
+3.  In the Kwikset App, click on the top left menu button, navigate to **Account Settings** and disable **2-Step Verification**.
 
     <figure><img src="../.gitbook/assets/kwikset-MFA-settings.png" alt="Disable 2-Step Verification before connecting your Kwikset account to Seam." width="180"><figcaption><p>Disable 2-Step Verification before connecting your Kwikset account to Seam.</p></figcaption></figure>
 

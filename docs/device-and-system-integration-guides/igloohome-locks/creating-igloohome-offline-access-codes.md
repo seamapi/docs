@@ -210,7 +210,7 @@ if (device.can_program_offline_access_codes) {
 
 ```ruby
 # Get the device.
-device = client.locks.get("11111111-1111-1111-1111-444444444444")
+device = client.locks.get(device_id: "11111111-1111-1111-1111-444444444444")
 
 # Confirm that the device supports offline access codes.
 if (device.can_program_offline_access_codes)
@@ -575,7 +575,7 @@ if (device.can_program_offline_access_codes) {
 
 ```ruby
 # Get the device.
-device = client.locks.get("11111111-1111-1111-1111-444444444444")
+device = client.locks.get(device_id: "11111111-1111-1111-1111-444444444444")
 
 # Confirm that the device supports offline access codes.
 if (device.can_program_offline_access_codes)

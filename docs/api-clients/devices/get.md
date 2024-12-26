@@ -49,7 +49,7 @@ console.log(await seam.devices.get({device_id: "30fd243b-3054-4384-a713-5487076a
 
 {% tab title="Ruby" %}
 ```ruby
-puts client.devices.get("30fd243b-3054-4384-a713-5487076a3826").inspect
+puts client.devices.get(device_id: "30fd243b-3054-4384-a713-5487076a3826").inspect
 ```
 {% endtab %}
 

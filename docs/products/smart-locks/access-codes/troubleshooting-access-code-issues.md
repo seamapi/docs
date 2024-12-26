@@ -108,7 +108,7 @@ Warnings:
 **Request:**
 
 ```ruby
-access_code = client.access_codes.get("8f1f576f-ee52-4f12-97f6-7a1593965dec")
+access_code = client.access_codes.get(access_code_id: "8f1f576f-ee52-4f12-97f6-7a1593965dec")
 puts "Errors:"
 puts access_code.errors
 puts "Warnings:"

@@ -6,12 +6,18 @@ description: >-
 
 # Sandbox Devices and Systems
 
+You can connect and work with virtual devices and systems in a [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces). This ability to work with sandbox devices and systems is quite handy because it removes the need to own physical devices from multiple brands. Importantly, virtual devices behave identically to the corresponding real devices. That is, if your app works with a virtual device in a sandbox workspace, it will also work with a real device in a [production workspace](../../core-concepts/workspaces/#production-workspaces).
+
 {% content-ref url="2n-intercoms-sample-data.md" %}
 [2n-intercoms-sample-data.md](2n-intercoms-sample-data.md)
 {% endcontent-ref %}
 
 {% content-ref url="4suites-locks-sample-data.md" %}
 [4suites-locks-sample-data.md](4suites-locks-sample-data.md)
+{% endcontent-ref %}
+
+{% content-ref url="../../developer-tools/sandbox-and-sample-data/sandbox-akiles-locks.md" %}
+[sandbox-akiles-locks.md](../../developer-tools/sandbox-and-sample-data/sandbox-akiles-locks.md)
 {% endcontent-ref %}
 
 {% content-ref url="assa-abloy-credential-service-sample-data.md" %}
@@ -96,6 +102,10 @@ description: >-
 
 {% content-ref url="pti-storlogix-cloud-sample-data.md" %}
 [pti-storlogix-cloud-sample-data.md](pti-storlogix-cloud-sample-data.md)
+{% endcontent-ref %}
+
+{% content-ref url="../../developer-tools/sandbox-and-sample-data/sandbox-salto-ks-access-control-system.md" %}
+[sandbox-salto-ks-access-control-system.md](../../developer-tools/sandbox-and-sample-data/sandbox-salto-ks-access-control-system.md)
 {% endcontent-ref %}
 
 {% content-ref url="salto-sample-data.md" %}

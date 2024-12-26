@@ -4,7 +4,7 @@ description: Learn how to manage credentials and assign them to users.
 
 # Managing Credentials
 
-An ACS generally uses digital means of access to authorize an [ACS user](../../products/access-systems/user-management.md) trying to get through a specific entrance. Examples of credentials include RFID cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.
+An ACS generally uses digital means of access to authorize an [ACS user](../../products/access-systems/user-management.md) trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.
 
 <figure><img src="../../.gitbook/assets/acs-credential-types.png" alt="Examples of ACS user credentials"><figcaption><p>Examples of ACS user credentials</p></figcaption></figure>
 
@@ -18,11 +18,11 @@ You can assign a credential to an ACS user when you create the credential. You c
 
 ## Create a Credential for an ACS User
 
-To [create a credential for an ACS user](../../api-clients/acs/credentials/create.md), provide the `acs_user_id` and the desired `access_method`. Seam supports the following access methods:
+To [create a credential for an ACS user](../../api/acs/credentials/create.md), provide the `acs_user_id` and the desired `access_method`. Seam supports the following access methods:
 
 * `code` for a PIN code-based credential
-* `card` for a key card-based credential
-* `mobile_key` for a [Seam mobile key](../../products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md#what-are-multi-phone-sync-credentials).
+* `card` for a plastic key card-based credential
+* `mobile_key` for a [Seam mobile key](../mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#what-are-multi-phone-sync-credentials).
 
 Depending on the ACS and the type of credential you are issuing, you can also specify the following properties for the new credential:
 
@@ -37,6 +37,10 @@ Make sure to note any manufacturer-specific metadata and restrictions. For detai
 {% endhint %}
 
 The response includes the `acs_credential_id` of the newly-created credential, the `acs_user_id` associated with the credential, and additional attributes of the credential.
+
+{% hint style="info" %}
+If you are creating card-based credentials, and your ACS requires card encoding, see also [Creating and Encoding Card-based Credentials](working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md).
+{% endhint %}
 
 ***
 
@@ -231,7 +235,9 @@ credential, uErr := client.Acs.Credentials.Create(
 
 ***
 
-### Create a Key Card-based Credential
+### Create a Card-based Credential
+
+To create a plastic key card-based credential, set the `access_method` to `card`. Once you've created a credential, some access control systems require you to encode the card with the credential. To learn whether your ACS requires card encoding, see the [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS. For card encoding instructions, see [Creating and Encoding Card-based Credentials](working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -418,7 +424,7 @@ credential, uErr := client.Acs.Credentials.Create(
 
 ### Create a Seam Mobile Key
 
-Depending on the ACS for which you want to create a credential, you may also need to include system-specific metadata. See the [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS. For more information about mobile access and issuing mobile credentials, see [Mobile Access](../../products/mobile-access-in-development/) and [Issuing Mobile Credentials from an Access Control System](../../products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md).
+Depending on the ACS for which you want to create a credential, you may also need to include system-specific metadata. See the [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS. For more information about mobile access and issuing mobile credentials, see [Mobile Access](../mobile-access/) and [Issuing Mobile Credentials from an Access Control System](../mobile-access/issuing-mobile-credentials-from-an-access-control-system.md).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -714,11 +720,11 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 
 ## List Credentials
 
-You can [list all ACS credentials](../../api-clients/acs/credentials/list.md) for a specific [ACS user](../../products/access-systems/user-management.md) or [user identity](../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity). You can also [list all credentials for an ACS system](../../api-clients/acs/credentials/list.md).
+You can [list all ACS credentials](../../api/acs/credentials/list.md) for a specific [ACS user](../../products/access-systems/user-management.md) or [user identity](../mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity). You can also [list all credentials for an ACS system](../../api/acs/credentials/list.md).
 
 ### List Credentials by ACS User
 
-To [list all ACS credentials](../../api-clients/acs/credentials/list.md) for a specific [ACS user](../../products/access-systems/user-management.md), provide the `acs_user_id`.
+To [list all ACS credentials](../../api/acs/credentials/list.md) for a specific [ACS user](../../products/access-systems/user-management.md), provide the `acs_user_id`.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -926,7 +932,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 
 ### List Credentials by User Identity
 
-To [list all ACS credentials](../../api-clients/acs/credentials/list.md) for a specific [user identity](../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity), provide the `user_identity_id`.
+To [list all ACS credentials](../../api/acs/credentials/list.md) for a specific [user identity](../mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity), provide the `user_identity_id`.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -1136,7 +1142,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 
 ## Get a Credential
 
-To [get a credential](../../api-clients/acs/credentials/get.md), provide the `acs_credential_id` of the credential that you want to retrieve. These details include the user associated with the credential, the access method, the schedule for the credential, if applicable, and so on.
+To [get a credential](../../api/acs/credentials/get.md), provide the `acs_credential_id` of the credential that you want to retrieve. These details include the user associated with the credential, the access method, the schedule for the credential, if applicable, and so on.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -1340,7 +1346,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 
 ## Delete a Credential
 
-To [delete a credential](../../api-clients/acs/credentials/delete.md), provide the `acs_credential_id`.
+To [delete a credential](../../api/acs/credentials/delete.md), provide the `acs_credential_id`.
 
 {% tabs %}
 {% tab title="Python" %}

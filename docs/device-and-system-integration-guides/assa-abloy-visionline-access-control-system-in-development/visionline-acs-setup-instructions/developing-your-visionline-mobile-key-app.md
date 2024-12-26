@@ -97,12 +97,12 @@ To set up your demo Visionline instance to integrate with Seam:
 
 ## 2. Develop and test your app
 
-Learn about [Seam mobile access](../../../products/mobile-access-in-development/), as well as how to use the Seam API to perform the following tasks:
+Learn about [Seam mobile access](../../../capability-guides/mobile-access/), as well as how to use the Seam API to perform the following tasks:
 
 * [Create ACS users.](../../../products/access-systems/user-management.md#create-an-acs-user)
-* [Use user identities to manage mobile credentials.](../../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md)
+* [Use user identities to manage mobile credentials.](../../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md)
 * [Issue mobile credentials for your Visionline ACS.](../credential-types/)
-* [Use the Seam mobile SDKs to load credentials into your app.](../../../capability-guides/mobile-access-in-development/mobile-device-sdks/)
+* [Use the Seam mobile SDKs to load credentials into your app.](../../../capability-guides/mobile-access/mobile-device-sdks/)
 
 ***
 

@@ -4,7 +4,7 @@ description: Learn how to delete mobile credentials.
 
 # Revoking Mobile Credentials
 
-To revoke a mobile credential, [delete the credential](../../../capability-guides/access-systems/managing-credentials.md#delete-a-credential). Seam issues a discard command for the Visionline card. If you are deleting a [multi-phone sync credential](../../../products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md#what-are-multi-phone-sync-credentials), Seam discards all of the credentials that were created underneath it.
+To revoke a mobile credential, [delete the credential](../../../capability-guides/access-systems/managing-credentials.md#delete-a-credential). Seam issues a discard command for the Visionline card. If you are deleting a [multi-phone sync credential](../../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#what-are-multi-phone-sync-credentials), Seam discards all of the credentials that were created underneath it.
 
 {% tabs %}
 {% tab title="Python" %}

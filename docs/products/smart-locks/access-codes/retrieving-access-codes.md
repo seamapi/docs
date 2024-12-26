@@ -200,7 +200,7 @@ console.log(await seam.accessCodes.list({
 ```ruby
 device_id = "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
 
-puts client.access_codes.list(device_id).inspect
+puts client.access_codes.list(device_id: device_id).inspect
 ```
 
 **Response:**
@@ -835,7 +835,7 @@ console.log(await seam.accessCodes.get({
 **Request:**
 
 ```ruby
-puts client.access_codes.get("6fe348a8-5938-4b73-8a36-86f7ffdfc431").inspect
+puts client.access_codes.get(access_code_id: "6fe348a8-5938-4b73-8a36-86f7ffdfc431").inspect
 ```
 
 **Response:**

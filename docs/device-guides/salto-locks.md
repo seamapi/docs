@@ -1,22 +1,29 @@
 ---
-description: Guide for using Salto door locks with Seam
+description: Guide for using Salto KS door locks with Seam
 ---
 
-# Salto Locks
+# Salto KS Locks
 
 ## Overview
 
-Salto Systems produces world-class electronic access control solutions. Their locks work with a vast array of entrance types, from traditional doors and elevators, to key cylinders and parking stiles. They also support a versatile range of key credentials -- their locks work with RFID tags, mobile keys, and PIN codes. Using their mobile app and app dashboard, businesses can easily assign, monitor, and revoke access rights.
+Salto Systems produces world-class electronic access control solutions. Their locks work with a vast array of entrance types, from traditional doors and elevators, to key cylinders and parking stiles. They also support a versatile range of key credentials; their locks work with RFID tags, mobile keys, and PIN codes. Using their mobile app and app dashboard, businesses can easily assign, monitor, and revoke access rights.
+
+{% hint style="info" %}
+Seam supports two integrations for Salto KS. We recommend using the [Salto KS access control system integration](../device-and-system-integration-guides/salto-ks-access-control-system/) because it provides more robust functionality, such as managing ACS users and credentials. However, if you want to connect a single or just a few Salto KS locks, you can choose the Salto KS lock integration that this topic describes.
+{% endhint %}
 
 ***
 
 ## Supported Devices
 
-This integration works any devices connected via their [SaltoKS platform](https://saltoks.com/).
+This integration works any devices connected via their [Salto KS platform](https://saltoks.com/).
+
+For detailed information about the Salto devices that Seam supports, see the following table and our [Salto Supported Devices page](https://www.seam.co/manufacturers/salto):
 
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
-  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
+  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
+  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
   manufacturers='["Salto"]'
 />" %}
 
@@ -33,11 +40,27 @@ To create a [Connect Webview](../core-concepts/connect-webviews/) that enables y
 
 ***
 
+## Setup Instructions
+
+To control Salto KS devices using Seam, you must prompt owners of these devices to perform the following steps:
+
+1. Create an account in the [Salto KS app](https://app.saltoks.com/) if you have not done so already.
+2. In the Salto KS app, add your Salto KS devices.
+3.  Note your login credentials for the Salto KS app, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
+
+    During the Connect Webview process, click **Allow and Continue** to confirm that you will allow Seam to add the requisite admin user to your Salto KS site for the integration with Seam.
+
+    {% hint style="warning" %}
+    Do not suspend or remove the Seam Integration admin user from your Salto KS site.
+    {% endhint %}
+
+***
+
 ## Brand-Specific Integration Considerations
 
 ### Access Code Limitations
 
-Salto Locks does not allow a user to configure custom PIN codes. When creating an access code on a Salto door lock, their system will automatically generate a 6-10 digit PIN code. You will be able to retrieve the PIN code from the `code` property on the access code object.
+Salto does not allow a user to configure custom PIN codes. When creating an access code on a Salto door lock, their system will automatically generate a 6-10 digit PIN code. You will be able to retrieve the PIN code from the `code` property on the access code object.
 
 ### Salto-Specific Access Code Errors
 
@@ -62,4 +85,4 @@ A Salto lock displaying an `unknown` device type indicates a weak connection wit
 
 Get in touch with a Salto representative in your region. They can refer you to a local installer that will service your area.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Salto Systems Sales Contact</strong></td><td></td><td><a href="https://saltosystems.com/en-us/offices/">https://saltosystems.com/en-us/offices/</a></td><td><a href="broken-reference">Broken file</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Salto Systems Sales Contact</strong></td><td></td><td><a href="https://saltosystems.com/en-us/offices/">https://saltosystems.com/en-us/offices/</a></td><td><a href="../.gitbook/assets/salto-logo.png">salto-logo.png</a></td></tr></tbody></table>

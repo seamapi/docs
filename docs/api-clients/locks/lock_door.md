@@ -76,7 +76,7 @@ description: Issue a lock command on the Device by its Device ID
 {% tabs %}
 {% tab title="Ruby" %}
 ```ruby
-seam.locks.lock_door("123e4567-e89b-12d3-a456-426614174000")
+seam.locks.lock_door(device_id: "123e4567-e89b-12d3-a456-426614174000")
 
 #<Seam::ActionAttempt:0x00438
 #  status="pending"

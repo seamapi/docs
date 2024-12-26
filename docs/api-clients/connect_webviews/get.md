@@ -55,7 +55,7 @@ await seam.connectWebviews.get(
 
 {% tab title="Ruby" %}
 ```ruby
-seam.connect_webviews.get("123e4567-e89b-12d3-a456-426614174000")
+seam.connect_webviews.get(connect_webview_id: "123e4567-e89b-12d3-a456-426614174000")
 
 # <Seam::ConnectWebview:0x00bd4e8                                                            
 #   url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=48880840-278b-4f55-bdc4-42ba8611952b&auth_token=asjDHKADH8392hf923FH"

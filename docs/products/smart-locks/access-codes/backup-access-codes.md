@@ -124,7 +124,7 @@ console.log(await seam.devices.get({
 **Request:**
 
 ```ruby
-puts client.devices.get("6aae9d08-fed6-4ca5-8328-e36849ab48fe").inspect
+puts client.devices.get(device_id: "6aae9d08-fed6-4ca5-8328-e36849ab48fe").inspect
 ```
 
 **Response:**
@@ -593,7 +593,7 @@ Is backup access code available: true
 **Request:**
 
 ```ruby
-access_code = client.access_codes.get("995d1927-e0db-4a97-b759-515193e6edbc")
+access_code = client.access_codes.get(access_code_id: "995d1927-e0db-4a97-b759-515193e6edbc")
 puts "Is backup access code available: #{access_code.is_backup_access_code_available}"
 ```
 
@@ -803,7 +803,7 @@ console.log(backupAccessCode)
 
 ```ruby
 access_code_id="995d1927-e0db-4a97-b759-515193e6edbc"
-puts client.access_codes.pull_backup_access_code(access_code_id).inspect
+puts client.access_codes.pull_backup_access_code(access_code_id: access_code_id).inspect
 ```
 
 **Response:**

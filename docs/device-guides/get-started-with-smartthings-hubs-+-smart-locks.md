@@ -12,7 +12,7 @@ Seam provides client libraries for many languages, such as JavaScript, Python, R
 
 * JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
 * Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
-* Ruby Gem ([rubygem](https://rubygems.org/gems/seamapi), [GitHub](https://github.com/seamapi/ruby))
+* Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
 * PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
 * Java ([GitHub](https://github.com/seamapi/java))
 * C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
@@ -34,7 +34,7 @@ pip install seam
 
 {% tab title="Ruby" %}
 ```bash
-bundle add seamapi
+bundle add seam
 ```
 {% endtab %}
 
@@ -136,9 +136,9 @@ console.log(webview)
 
 {% tab title="Ruby" %}
 ```ruby
-require "seamapi"
+require "seam"
 
-seam = Seam::Client.new(api_key: "MY_API_KEY")
+seam = Seam.new(api_key: "MY_API_KEY")
 
 webview = seam.connect_webviews.create(
   accepted_providers: ["smartthings"]
@@ -167,7 +167,7 @@ Now, send the Connect Webview URL to the user. When the user signs in, you see a
 {% tabs %}
 {% tab title="Python" %}
 ```python
-updated_webview = seam.connect_webviews.get(webview.connect_webview_id)
+updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
 assert updated_webview.login_successful
 ```
@@ -319,12 +319,11 @@ console.log(updated_device.properties.locked)
 
 {% tab title="Ruby" %}
 ```ruby
-action_attempt = seam.locks.lock_door(some_lock.device_id)
-action_attempt.wait_until_finished
+action_attempt = seam.locks.lock_door(device_id: some_lock.device_id)
 
-updated_lock = seam.devices.get(some_lock.device_id)
+updated_lock = seam.devices.get(device_id: some_lock.device_id)
 
-puts updated_lock.properties["locked"]
+puts updated_lock.properties.locked
 # true
 ```
 {% endtab %}
@@ -387,12 +386,11 @@ console.log(updated_lock.properties.locked)
 
 {% tab title="Ruby" %}
 ```ruby
-action_attempt = seam.locks.unlock_door(some_lock.device_id)
-action_attempt.wait_until_finished
+action_attempt = seam.locks.unlock_door(device_id: some_lock.device_id)
 
-updated_lock = seam.devices.get(some_lock.device_id)
+updated_lock = seam.devices.get(device_id: some_lock.device_id)
 
-puts updated_lock.properties["locked"]
+puts updated_lock.properties.locked
 # false
 ```
 {% endtab %}
@@ -564,7 +562,7 @@ await seam.access_codes.remove({
 
 {% tab title="Ruby" %}
 ```ruby
-attempt = seam.access_codes.delete(access_code.access_code_id)
+attempt = seam.access_codes.delete(access_code_id: access_code.access_code_id)
 
 puts attempt
 # <Seam::ActionAttempt:0x0000000107026c98 
@@ -674,7 +672,7 @@ console.log(access_codes)
 
 {% tab title="Ruby" %}
 ```ruby
-access_codes = seam.access_codes.list(some_lock.device_id)
+access_codes = seam.access_codes.list(device_id: some_lock.device_id)
 
 puts access_codes
 # [<Seam::AccessCode:0x002cf60 

@@ -1,12 +1,16 @@
 ---
-description: Use the Seam Bridge to connect on-premises systems to Seam.
+description: Use Seam Bridge to connect on-premises systems to Seam.
 ---
 
 # 📡 Seam Bridge
 
 ## Overview
 
-The Seam Bridge enables you to connect on-premises software systems to the Seam platform. Consisting of an executable file (that is, an application), the Seam Bridge is easy to install on an on-premises computer. Once installed, the Seam Bridge creates a Seam Network and functions as a secure intermediary, facilitating network requests between Seam and the on-premises network. This setup aims to enable smooth communication between cloud-based services and existing local systems, while prioritizing data security and network integrity.
+Seam Bridge enables you to connect on-premises software systems to the Seam platform. Consisting of an executable file (that is, an application), Seam Bridge is easy to install on an on-premises computer. Once installed, Seam Bridge creates a Seam network and functions as a secure intermediary, facilitating network requests between Seam and the on-premises network. This setup aims to enable smooth communication between cloud-based services and existing local systems, while prioritizing data security and network integrity.
+
+{% hint style="info" %}
+Seam Bridge is a software-only component that Seam provides at no extra cost.
+{% endhint %}
 
 ***
 
@@ -20,7 +24,7 @@ The Seam Bridge enables you to connect on-premises software systems to the Seam 
 
 ## Installation Instructions
 
-To install the Seam Bridge, first install the Seam Bridge application on an on-premises computer. Then, pair the Seam Bridge with your Seam [workspace](../core-concepts/workspaces/).
+To install Seam Bridge, first install the Seam Bridge application on an on-premises computer. Then, pair Seam Bridge with your Seam [workspace](../core-concepts/workspaces/).
 
 ### **Install the Seam Bridge Application on the On-Premises Computer**
 
@@ -28,49 +32,53 @@ To install the Seam Bridge, first install the Seam Bridge application on an on-p
 2.  Run the downloaded `SeamBridge.exe`.
 
     This application opens a webpage containing the Seam Bridge settings.
-3.  Click on "Create Pairing Code".\
+3.  Click **Create Pairing Code**.\
 
 
     <figure><img src="../.gitbook/assets/Screenshot 2024-04-12 at 5.31.18 PM.png" alt=""><figcaption></figcaption></figure>
 4.  Copy the pairing code that the webpage displays.
 
-    The installer uses this code to pair the Seam Bridge to the workspace, using a Connect Webview.\
+    The installer uses this code to pair Seam Bridge to the workspace, using a Connect Webview.\
 
 
     <figure><img src="../.gitbook/assets/Screenshot 2024-04-12 at 5.36.00 PM.png" alt=""><figcaption></figcaption></figure>
 
-### Pairing the Seam Bridge with Your Workspace
+### Pairing Seam Bridge with Your Workspace
 
-Seam provides two options for connecting the Seam Bridge to your workspace. If you are a developer who wants to connect your own device, see [Pair using the Seam Console](seam-bridge.md#pair-using-the-seam-console). Alternately, if you are coordinating with an external party to set up a Seam Bridge, see [Pair Using a Connect Webview](seam-bridge.md#pair-using-a-connect-webview).
+Seam provides two options for connecting Seam Bridge to your workspace. If you are a developer who wants to connect your own device, see [Pair using Seam Console](seam-bridge.md#pair-using-the-seam-console). Alternately, if you are coordinating with an external party to set up Seam Bridge, see [Pair Using a Connect Webview](seam-bridge.md#pair-using-a-connect-webview).
 
-#### **Pair Using the Seam Console**
+{% hint style="info" %}
+Alternately, you can connect Seam Bridge to your workspace while you are connecting your access control system to Seam.
+{% endhint %}
 
-1. Log in to your account on the [Seam Console](https://console.getseam.com).
+#### **Pair Using Seam Console**
+
+1. Log in to your account in [Seam Console](https://console.getseam.com).
 2. Click **Devices** to view the **Devices** page.
 3. In the upper-right corner of the **Devices** page, click **+ Add Devices**.
 4. Select **Seam Bridge**.
 5. In the **Pairing Code** field, type the invitation code that you copied during the [Seam Bridge application installation](seam-bridge.md#install-the-seam-bridge-application-on-the-on-premises-computer).
 6. In the **Bridge Name** field, type a unique name.
-7. Make sure to remember the name of the Seam Network for future reference.\
-   You must use this Seam Network name when connecting the on-premises access control system in a Connect Webview.
+7. Make sure to remember the Seam Bridge name for future reference.\
+   You must use this Seam Bridge name when connecting the on-premises access control system in a Connect Webview.
 
 #### **Pair Using a Connect Webview**
 
-The developer creates a Connect Webview using `seam_bridge` as the `accepted_providers` key. Then, the person who installed the Seam Bridge performs the following steps:
+The developer creates a Connect Webview using `seam_bridge` as the `accepted_providers` key. Then, the person who installed Seam Bridge performs the following steps:
 
 1. In the Connect Webview, choose **Seam Bridge** from the list of brands, if available.
 2. In the **Pairing Code** field, type the invitation code obtained during the [Seam Bridge application installation](seam-bridge.md#install-the-seam-bridge-application-on-the-on-premises-computer).
 3. In the **Bridge Name** field, type a unique name.
 
-<figure><img src="../.gitbook/assets/connect-webview-seam-bridge-info.png" alt="Type a unique Seam Bridge name and the pairing code from the Seam application installation." width="245"><figcaption><p>Type a unique Seam Bridge name and the pairing code from the Seam application installation.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/connect-webview-seam-bridge-info.png" alt="Type a unique Seam Bridge name and the pairing code from the Seam Bridge application installation." width="245"><figcaption><p>Type a unique Seam Bridge name and the pairing code from the Seam Bridge application installation.</p></figcaption></figure>
 
-4. remember the name of the Seam Network for future reference.\
-   You must use this Seam Network name when connecting the on-premises access control system in a Connect Webview.
+4. Remember the Seam Bridge name for future reference.\
+   You must use this Seam Bridge name when connecting the on-premises access control system in a Connect Webview.
 
 ***
 
 ## Connecting the On-Premises Software System
 
-After installing the Seam Bridge application and connecting the Seam Bridge to your workspace, connect your on-premises software system to Seam using a Connect Webview. For detailed instructions on how to connect your system, see the setup instructions in the appropriate brand-specific guide within the [Device Guides](../device-and-system-integration-guides/overview.md) section.
+After installing the Seam Bridge application and connecting Seam Bridge to your workspace, connect your on-premises software system to Seam using a Connect Webview. For detailed instructions on how to connect your system, see the setup instructions in the appropriate brand-specific guide within the [Device Guides](../device-and-system-integration-guides/overview.md) section.
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Device Guides</strong></td><td>Get started →</td><td></td><td><a href="../device-and-system-integration-guides/overview.md">overview.md</a></td><td><a href="../.gitbook/assets/image (9).png">image (9).png</a></td></tr></tbody></table>

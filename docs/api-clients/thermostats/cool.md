@@ -14,7 +14,7 @@ layout:
 
 # Set to Cool Mode
 
-Set a thermostat to cooling mode. To do so, you must include a cooling set point in the payload, either in Celsius or Fahrenheit. For information about verifying the cooling availability of the thermostat and validating the correct set points, see [HVAC Mode Constraints](../../products/thermostats/hvac-mode.md#hvac-mode-constraints) and [Set Point Constraints](../../products/thermostats/set-points.md#set-point-constraints).
+Set a thermostat to cooling mode. To do so, you must include a cooling set point in the payload, either in Celsius or Fahrenheit. For information about verifying the cooling availability of the thermostat and validating the correct set points, see [HVAC Mode Constraints](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md#hvac-mode-constraints) and [Set Point Constraints](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#set-point-constraints).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/thermostats/cool" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)

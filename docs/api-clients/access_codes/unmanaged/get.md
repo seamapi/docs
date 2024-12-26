@@ -58,7 +58,7 @@ Not all providers support unmanaged access codes. The following providers do not
 {% tab title="Ruby" %}
 
 ```ruby
-seam.access_codes.unmanaged.get("123e4567-e89b-12d3-a456-426614174000")
+seam.access_codes.unmanaged.get(access_code_id: "123e4567-e89b-12d3-a456-426614174000")
 
 # <Seam::AccessCode:0x007cd58
 #   code="669781"

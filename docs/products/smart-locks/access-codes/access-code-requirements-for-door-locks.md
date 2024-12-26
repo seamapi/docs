@@ -232,7 +232,7 @@ console.log(device.properties.code_constraints)
 **Request:**
 
 ```ruby
-puts client.devices.get("ed4bb795-f29f-43e5-bc0f-35f69f9141b5").inspect
+puts client.devices.get(device_id: "ed4bb795-f29f-43e5-bc0f-35f69f9141b5").inspect
 ```
 
 **Response:**

@@ -123,7 +123,7 @@ await seam.devices.get("11111111-1111-1111-1111-444444444444")
 **Request:**
 
 ```ruby
-client.devices.get("11111111-1111-1111-1111-444444444444")
+client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
 ```
 
 **Response:**
@@ -365,7 +365,7 @@ if (device.can_program_online_access_codes) {
 
 ```ruby
 # Get the device.
-device = client.devices.get("11111111-1111-1111-1111-444444444444")
+device = client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
 
 # Confirm that the device supports online access codes.
 if (device.can_program_online_access_codes)
@@ -724,7 +724,7 @@ if (device.can_program_online_access_codes) {
 
 ```ruby
 # Get the device.
-device = client.locks.get("11111111-1111-1111-1111-444444444444")
+device = client.locks.get(device_id: "11111111-1111-1111-1111-444444444444")
 
 # Confirm that the device supports online access codes.
 if (device.can_program_online_access_codes)

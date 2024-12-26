@@ -14,7 +14,7 @@ layout:
 
 # Set to Heat-Cool (Auto) Mode
 
-Set a thermostat to heat-cool mode, also known as "auto" mode. To do so, you must include both cooling and heating set points in the payload, either in Celsius or Fahrenheit. For information about verifying the heating and cooling availability of the thermostat and validating the correct set points, see [HVAC Mode Constraints](../../products/thermostats/hvac-mode.md#hvac-mode-constraints) and [Set Point Constraints](../../products/thermostats/set-points.md#set-point-constraints).
+Set a thermostat to heat-cool mode, also known as "auto" mode. To do so, you must include both cooling and heating set points in the payload, either in Celsius or Fahrenheit. For information about verifying the heating and cooling availability of the thermostat and validating the correct set points, see [HVAC Mode Constraints](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md#hvac-mode-constraints) and [Set Point Constraints](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#set-point-constraints).
 
 {% swagger src="https://connect.getseam.com/openapi.json" path="/thermostats/heat_cool" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)

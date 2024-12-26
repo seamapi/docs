@@ -1,8 +1,8 @@
-# `acs_system`
+# Systems
+
+## `acs_system`
 
 Represents an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
-
-## Properties
 
 ### `acs_system_id`
 
@@ -49,7 +49,20 @@ Indicates whether the `acs_system` supports [removing users from access groups](
 
 ---
 
+### `connected_account_id`
+
+Format: `ID`
+
+ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the `acs_system`.
+
+
+---
+
 ### `connected_account_ids`
+
+{% hint style="warning" %}
+**Deprecated**. Use `connected_account_id`.
+{% endhint %}
 
 Format: `List`
 
@@ -63,6 +76,15 @@ IDs of the [connected accounts](../../../core-concepts/connected-accounts/README
 Format: `Datetime`
 
 Date and time at which the `acs_system` was created.
+
+
+---
+
+### `default_credential_manager_acs_system_id`
+
+Format: `ID`
+
+ID of the default credential manager acs_system for this access control system.
 
 
 ---
@@ -85,12 +107,17 @@ Brand-specific terminology for the `acs_system` type.
 Possible enum values:
 - `pti_site`
 - `alta_org`
-- `salto_site`
+- `salto_ks_site`
+- `salto_space_system`
 - `brivo_account`
 - `hid_credential_manager_organization`
 - `visionline_system`
 - `assa_abloy_credential_service`
 - `latch_building`
+- `dormakaba_community_site`
+- `legic_connect_credential_service`
+- `assa_abloy_vostio`
+- `assa_abloy_vostio_credential_service`
 
 
 ---
@@ -122,6 +149,30 @@ URL for the image that represents the `acs_system`.
 
 ---
 
+### `is_credential_manager`
+
+Format: `Boolean`
+
+Indicates if the `acs_system` is a credential manager.
+
+
+---
+
+### `location`
+
+Format: `Object`
+
+<details>
+
+<summary><code>time_zone</code> Format: <code>string</code></summary>
+
+Time zone in which the `acs_system` is located.
+
+</details>
+
+
+---
+
 ### `name`
 
 Format: `String`
@@ -142,12 +193,17 @@ Format: `Enum`
 Possible enum values:
 - `pti_site`
 - `alta_org`
-- `salto_site`
+- `salto_ks_site`
+- `salto_space_system`
 - `brivo_account`
 - `hid_credential_manager_organization`
 - `visionline_system`
 - `assa_abloy_credential_service`
 - `latch_building`
+- `dormakaba_community_site`
+- `legic_connect_credential_service`
+- `assa_abloy_vostio`
+- `assa_abloy_vostio_credential_service`
 
 
 ---
@@ -168,17 +224,29 @@ Format: `String`
 Format: `Object`
 
 <details>
-<summary>lan_address <code>string</code></summary>
+
+<summary><code>lan_address</code> Format: <code>string</code></summary>
+
 IP address or hostname of the main Visionline server relative to the Seam Bridge on the local network.
+
 </details>
+
 <details>
-<summary>mobile_access_uuid <code>string</code></summary>
+
+<summary><code>mobile_access_uuid</code> Format: <code>string</code></summary>
+
 Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.
+
 </details>
+
 <details>
-<summary>system_id <code>string</code></summary>
+
+<summary><code>system_id</code> Format: <code>string</code></summary>
+
 Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager.
+
 </details>
+
 
 ---
 
@@ -200,15 +268,15 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 ---
 
-# Endpoints
+## Endpoints
 
-## [`/acs/systems/get`](./get.md)
+### [`/acs/systems/get`](./get.md)
 
 Returns a specified [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
-## [`/acs/systems/list`](./list.md)
+### [`/acs/systems/list`](./list.md)
 
 Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems).
-## [`/acs/systems/list_compatible_credential_manager_acs_systems`](./list_compatible_credential_manager_acs_systems.md)
+### [`/acs/systems/list_compatible_credential_manager_acs_systems`](./list_compatible_credential_manager_acs_systems.md)
 
-Returns a list of all credential manager ACS systems that are compatible with a specified 
+Returns a list of all credential manager ACS systems that are compatible with a specified
 [access control system](https://docs.seam.co/latest/capability-guides/access-systems).

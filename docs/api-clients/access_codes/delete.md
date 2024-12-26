@@ -15,7 +15,7 @@
 {% tabs %}
 {% tab title="Ruby" %}
 ```ruby
-seam.access_codes.delete("123e4567-e89b-12d3-a456-426614174000")
+seam.access_codes.delete(access_code_id: "123e4567-e89b-12d3-a456-426614174000")
 
 # <Seam::ActionAttempt:0x0000000107026c98 
 #  status="success"            

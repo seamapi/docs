@@ -12,7 +12,7 @@ You can suspend an ACS user to revoke their access temporarily. Suspending an AC
 
 ## Suspend an ACS User
 
-To [suspend an ACS user](../../api-clients/acs/users/suspend.md), provide the `acs_user_id`.
+To [suspend an ACS user](../../api/acs/users/suspend.md), provide the `acs_user_id`.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -144,9 +144,7 @@ suspend, uErr := client.Acs.Users.Suspend(
 **Response:**
 
 ```json
-{
-  "ok": true
-}
+void
 ```
 {% endtab %}
 {% endtabs %}
@@ -155,7 +153,7 @@ suspend, uErr := client.Acs.Users.Suspend(
 
 ## Unsuspend an ACS User
 
-To [unsuspend an ACS user](../../api-clients/acs/users/unsuspend.md), provide the `acs_user_id`.
+To [unsuspend an ACS user](../../api/acs/users/unsuspend.md), provide the `acs_user_id`.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -287,9 +285,7 @@ unsuspend, uErr := client.Acs.Users.Unsuspend(
 **Response:**
 
 ```json
-{
-  "ok": true
-}
+void
 ```
 {% endtab %}
 {% endtabs %}

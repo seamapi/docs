@@ -2,7 +2,7 @@
 description: Learn how to lock and unlock a smart lock, and confirm the action's success.
 ---
 
-# Locking and Unlocking
+# Locking and Unlocking Smart Locks
 
 ## Overview
 
@@ -66,7 +66,7 @@ curl -X 'GET' \
 
 ```json
 {
-  "lock": {
+  "device": {
     "device_id": "11111111-1111-1111-1111-444444444444",
     "can_remotely_lock": true,   // You can use /locks/lock_door on this device.
     "can_remotely_unlock": true, // You can use /locks/unlock_door on this device.
@@ -100,7 +100,7 @@ await seam.devices.get("11111111-1111-1111-1111-444444444444")
 **Request:**
 
 ```ruby
-client.devices.get("11111111-1111-1111-1111-444444444444")
+client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
 ```
 
 **Response:**
@@ -259,7 +259,7 @@ if  $(jq -r '.device.can_remotely_lock' <<< ${device}); then \
     -H 'Content-Type: application/json' \
     -d "{
       \"device_id\": \"$(jq -r '.device.device_id' <<< ${device})\"
-  }';
+  }";
 fi
 ```
 
@@ -317,12 +317,12 @@ if (device.can_remotely_lock) {
 
 ```ruby
 # Get the device.
-device = client.devices.get("11111111-1111-1111-1111-444444444444")
+device = client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
 
 # Confirm that the device can remotely lock.
 if (device.can_remotely_lock)
   # Perform the lock operation.
-  client.locks.lock_door(device.device_id)
+  client.locks.lock_door(device_id: device.device_id)
 end
 ```
 
@@ -585,12 +585,12 @@ if (device.can_remotely_unlock) {
 
 ```ruby
 # Get the device.
-device = client.devices.get("11111111-1111-1111-1111-444444444444")
+device = client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
 
 # Confirm that the device can remotely unlock.
 if (device.can_remotely_unlock)
   # Perform the unlock operation.
-  client.locks.unlock_door(device.device_id)
+  client.locks.unlock_door(device_id: device.device_id)
 end
 ```
 
@@ -821,7 +821,7 @@ await seam.locks.lockDoor({
 **Request:**
 
 ```ruby
-client.locks.lock_door("11111111-1111-1111-1111-444444444444")
+client.locks.lock_door(device_id: "11111111-1111-1111-1111-444444444444")
 ```
 
 **Response:**
@@ -1007,7 +1007,7 @@ await seam.actionAttempts.get({action_attempt_id: "11111111-2222-3333-4444-55555
 **Request:**
 
 ```ruby
-client.action_attempts.get("11111111-2222-3333-4444-555555555555")
+client.action_attempts.get(action_attempt_id: "11111111-2222-3333-4444-555555555555")
 ```
 
 **Response:**
@@ -1201,7 +1201,7 @@ await seam.devices.get("11111111-1111-1111-1111-444444444444")
 **Request:**
 
 ```ruby
-client.devices.get("11111111-1111-1111-1111-444444444444")
+client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
 ```
 
 **Response:**

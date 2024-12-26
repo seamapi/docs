@@ -16,7 +16,7 @@ Seam provides client libraries for many languages, such as JavaScript, Python, R
 
 * JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
 * Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
-* Ruby Gem ([rubygem](https://rubygems.org/gems/seamapi), [GitHub](https://github.com/seamapi/ruby))
+* Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
 * PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
 * Java ([GitHub](https://github.com/seamapi/java))
 * C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
@@ -38,7 +38,7 @@ pip install seam
 
 {% tab title="Ruby" %}
 ```bash
-bundle add seamapi
+bundle add seam
 ```
 {% endtab %}
 
@@ -514,7 +514,7 @@ return nil
 
 ## 4. Set the Current HVAC and Fan Mode Settings
 
-Seam enables you to adjust the [current heating and cooling settings](../products/thermostats/configure-current-climate-settings.md) on a smart thermostat, including the [HVAC mode](../products/thermostats/hvac-mode.md) and the corresponding [set points](../products/thermostats/set-points.md). It also enables you to configure the [fan mode](../products/thermostats/configure-current-climate-settings.md#set-the-fan-mode). These two operations return [action attempts](../core-concepts/action-attempts.md).
+Seam enables you to adjust the [current heating and cooling settings](../products/thermostats/configure-current-climate-settings.md) on a smart thermostat, including the [HVAC mode](../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) and the corresponding [set points](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md). It also enables you to configure the [fan mode](../products/thermostats/configure-current-climate-settings.md#set-the-fan-mode). These two operations return [action attempts](../core-concepts/action-attempts.md).
 
 For example, use the following code samples to set your thermostat to heat mode and the fan mode to on:
 

@@ -49,7 +49,7 @@ console.log(await seam.devices.unmanaged.get({device_id: "882dd63f-db9b-4210-bac
 
 {% tab title="Ruby" %}
 ```ruby
-puts client.unmanaged_devices.get("882dd63f-db9b-4210-bac2-68372aa0aff7").inspect
+puts client.unmanaged_devices.get(device_id: "882dd63f-db9b-4210-bac2-68372aa0aff7").inspect
 ```
 {% endtab %}
 

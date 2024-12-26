@@ -570,7 +570,7 @@ console.log(await seam.accessCodes.get({
 **Request:**
 
 ```ruby
-puts client.access_codes.get("6fe348a8-5938-4b73-8a36-86f7ffdfc431").inspect
+puts client.access_codes.get(access_code_id: "6fe348a8-5938-4b73-8a36-86f7ffdfc431").inspect
 ```
 
 **Response:**
@@ -621,7 +621,7 @@ puts updated_access_code.inspect
 **Request:**
 
 ```ruby
-puts client.access_codes.get("6fe348a8-5938-4b73-8a36-86f7ffdfc431").inspect
+puts client.access_codes.get(access_code_id: "6fe348a8-5938-4b73-8a36-86f7ffdfc431").inspect
 ```
 
 **Response:**
@@ -1140,7 +1140,7 @@ console.log(await seam.accessCodes.get({
 **Request:**
 
 ```ruby
-puts client.access_codes.get("6fe348a8-5938-4b73-8a36-86f7ffdfc431").inspect
+puts client.access_codes.get(access_code_id: "6fe348a8-5938-4b73-8a36-86f7ffdfc431").inspect
 ```
 
 **Response:**
@@ -1195,7 +1195,7 @@ puts updated_access_code.inspect
 **Request:**
 
 ```ruby
-puts client.access_codes.get("6fe348a8-5938-4b73-8a36-86f7ffdfc431").inspect
+puts client.access_codes.get(access_code_id: "6fe348a8-5938-4b73-8a36-86f7ffdfc431").inspect
 ```
 
 **Response:**

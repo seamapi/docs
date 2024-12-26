@@ -29,12 +29,20 @@
 {% endtabs %}
 
 {{/if}}
+{{#if authMethods}}
+## Authentication Methods
+
+{{#each authMethods}}
+- {{this}}
+{{/each}}
+
+{{/if}}
 ## Request Parameters
 
 {{#each request.parameters}}
 ### `{{this.name}}`
 
-Type: `{{this.jsonType}}`\
+Type: `{{this.jsonType}}`
 Required: {{#if this.required}}Yes{{else}}No{{/if}}
 
 {{this.description}}

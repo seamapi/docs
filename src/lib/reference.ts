@@ -1,36 +1,66 @@
-import type { Blueprint } from '@seamapi/blueprint'
+import type { Blueprint, Route } from '@seamapi/blueprint'
 import type Metalsmith from 'metalsmith'
 
 import {
-  type EndpointLayoutContext,
-  type RouteLayoutContext,
+  type ApiEndpointLayoutContext,
+  type ApiNamespaceLayoutContext,
+  type ApiRouteLayoutContext,
   setApiRouteLayoutContext,
   setEndpointLayoutContext,
-} from './layout-context.js'
+  setNamespaceLayoutContext,
+} from './layout/index.js'
+import { PathMetadataSchema } from './path-metadata.js'
 
 const sdks: Array<'javascript'> = []
 
 type Metadata = Partial<Pick<Blueprint, 'routes' | 'resources'>>
 
-type File = EndpointLayoutContext & RouteLayoutContext & { layout: string }
+type File = ApiEndpointLayoutContext &
+  ApiRouteLayoutContext &
+  ApiNamespaceLayoutContext & { layout: string }
 
 export const reference = (
   files: Metalsmith.Files,
   metalsmith: Metalsmith,
 ): void => {
-  const metadata = {
+  const metadata = metalsmith.metadata() as Metadata
+
+  // UPSTREAM: Ideally, path metadata would be unnecessary and contained inside the blueprint.
+  const pathMetadata =
+    'pathMetadata' in metadata
+      ? PathMetadataSchema.parse(metadata.pathMetadata)
+      : {}
+
+  const blueprint = {
     title: '',
     routes: [],
     resources: {},
-    ...(metalsmith.metadata() as Metadata),
+    ...metadata,
   }
 
-  for (const route of metadata.routes ?? []) {
-    if (route.isUndocumented) continue
+  const namespacePaths = getNamespacePaths(blueprint.routes)
+  for (const path of namespacePaths) {
+    const k = `api${path}/README.md`
+    files[k] = {
+      contents: Buffer.from('\n'),
+    }
+    const file = files[k] as unknown as File
+    file.layout = 'api-namespace.hbs'
 
-    if (!route.path.startsWith('/acs/systems')) {
+    setNamespaceLayoutContext(file, path, blueprint.resources, pathMetadata)
+  }
+
+  for (const route of blueprint.routes ?? []) {
+    if (
+      !route.path.startsWith('/acs') &&
+      !route.path.startsWith('/thermostats') &&
+      !route.path.startsWith('/user_identities')
+    ) {
       continue
     }
+
+    if (route.isUndocumented) continue
+    if (pathMetadata[route.path]?.title == null) continue
 
     const k = `api${route.path}/README.md`
     files[k] = {
@@ -38,10 +68,11 @@ export const reference = (
     }
     const file = files[k] as unknown as File
     file.layout = 'api-route.hbs'
-    setApiRouteLayoutContext(file, route, metadata)
+    setApiRouteLayoutContext(file, route, blueprint, pathMetadata)
 
     for (const endpoint of route.endpoints) {
       if (endpoint.isUndocumented) continue
+      if (endpoint.title.length === 0) continue
 
       const k = `api${endpoint.path}.md`
       files[k] = {
@@ -62,4 +93,14 @@ export const reference = (
       }
     }
   }
+}
+
+function getNamespacePaths(routes: Route[]): string[] {
+  return Array.from(
+    new Set(
+      routes.flatMap((route) =>
+        route.namespace != null ? [route.namespace.path] : [],
+      ),
+    ),
+  )
 }

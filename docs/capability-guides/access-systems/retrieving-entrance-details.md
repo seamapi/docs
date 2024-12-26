@@ -12,7 +12,7 @@ In an ACS, an entrance is a secured door, gate, zone, or other method of entry. 
 
 ## List All Entrances
 
-You can [list all `acs_entrance` resources](../../api-clients/acs/entrances/list.md) in your workspace. Note that entrance details include manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+You can [list all `acs_entrance` resources](../../api/acs/entrances/list.md) in your workspace. Note that entrance details include manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -202,7 +202,7 @@ acs_entrances, uErr := client.Acs.Entrances.List(
 
 ## List Entrances in an ACS
 
-To list all `acs_entrance`s in a specific ACS, include the `acs_system_id` filter in the [List Entrances](../../api-clients/acs/entrances/list.md) request. Note that entrance details include manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+To list all `acs_entrance`s in a specific ACS, include the `acs_system_id` filter in the [List Entrances](../../api/acs/entrances/list.md) request. Note that entrance details include manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -400,7 +400,7 @@ acs_entrances, uErr := client.Acs.Entrances.List(
 
 ## List Credentials Associated with an Entrance
 
-To [list the credentials that grant access to a specific entrance](../../api-clients/acs/entrances/list_credentials_with_access.md), use `list_credentials_with_access` method for the `acs_entrance` object and provide the `acs_entrance_id`.
+To [list the credentials that grant access to a specific entrance](../../api/acs/entrances/list_credentials_with_access.md), use `list_credentials_with_access` method for the `acs_entrance` object and provide the `acs_entrance_id`.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -634,13 +634,13 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 
 ## List Entrances Associated with a Credential
 
-To [list the entrances to which a specific credential grants access](../../api-clients/acs/credentials/list_accessible_entrances.md), use `list_accessible_entrances` method for the `acs_credential` object and provide the `acs_credential_id`. For details, see [Managing Credentials](managing-credentials.md#list-entrances-associated-with-a-credential).
+To [list the entrances to which a specific credential grants access](../../api/acs/credentials/list_accessible_entrances.md), use `list_accessible_entrances` method for the `acs_credential` object and provide the `acs_credential_id`. For details, see [Managing Credentials](managing-credentials.md#list-entrances-associated-with-a-credential).
 
 ***
 
 ## Get an Entrance
 
-You can [get the details of a specific `acs_entrance`](../../api-clients/acs/entrances/get.md). Note that entrance details include manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+You can [get the details of a specific `acs_entrance`](../../api/acs/entrances/get.md). Note that entrance details include manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
 
 {% tabs %}
 {% tab title="Python" %}

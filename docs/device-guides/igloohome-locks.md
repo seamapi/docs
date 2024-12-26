@@ -18,17 +18,20 @@ In addition, the Seam integration supports the generation of [offline access cod
 
 This integration supports a series of igloohome devices for lock, unlock, and customizable access code provisioning actions. In addition, this integration supports a wider set of igloohome devices for offline access code (algoPIN) provisioning.
 
+For detailed information about the igloohome devices that Seam supports, see the following table and our [igloohome Supported Devices page](https://www.seam.co/manufacturers/igloohome):
+
+{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
+  endpoint="https://connect.getseam.com"
+  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
+  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
+  manufacturers='["igloohome"]'
+/>" %}
+
 ### igloohome Bridge Support
 
 This integration supports lock, unlock, and customizable access code provisioning actions for a subset of igloohome smart locks, when combined with the [igloohome Bridge](https://www.igloohome.co/en-US/products/bridge). For a list of compatible igloohome smart locks, see the **Bridge Compatibility** area on the [igloohome Bridge ](https://www.igloohome.co/en-US/products/bridge)page.
 
 Each igloohome Bridge supports up to five compatible igloohome locks.
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  client-session-token="seam_cst126DAjfor_2kxn8QAAEUkj3Zu4Nr1Aoauy"
-  manufacturers='["igloohome"]'
-/>" %}
 
 We support the following features:
 
@@ -61,6 +64,20 @@ To control igloohome devices using Seam, you must prompt owners of these devices
 
 ***
 
+## Brand-Specific Events
+
+Seam supports the following events and event property values for igloohome devices:
+
+### igloohome Auto-Relock
+
+igloohome devices have an auto-relock feature that automatically locks the device after a configurable period of time, for example, 30 seconds. The Seam API reports these auto-relock occurrences by emitting a [`lock.locked` event](../api-clients/events/#event-types) with `automatic` as the value for the [`method` property](../api-clients/events/#lock-events).
+
+### igloohome Access Denied Event
+
+Each time an igloohome device detects an invalid attempt of entry, Seam emits a [`lock.access_denied` event](../api-clients/events/#event-types). Invalid entry attempts include entering the wrong PIN, exceeding the PIN length, and using an invalid key card. The igloohome lock also flashes red to indicate an invalid attempt. If too many invalid attempts occur, igloohome locks produce a Keypad Security Lockout alarm, accompanied by light and sound indicators. For more information, see the igloohome support articles on [keypad security](https://support.igloohome.co/support/solutions/articles/35000169627-keypad-security-lockout-activated-and-deactivated) and [incorrect PINs](https://support.igloohome.co/support/solutions/articles/35000169625-incorrect-pin).
+
+***
+
 ## Where to Order
 
 Order igloohome devices directly from the igloohome website.
@@ -68,4 +85,3 @@ Order igloohome devices directly from the igloohome website.
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>igloohome</strong></td><td></td><td><a href="https://store-us.igloohome.co/">https://store-us.igloohome.co/</a></td><td><a href="../.gitbook/assets/igloohome-logo.png">igloohome-logo.png</a></td></tr></tbody></table>
 
 ***
-
