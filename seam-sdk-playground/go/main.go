@@ -6,7 +6,7 @@ import (
 	// "math/rand"
 	"os"
 //   "encoding/json"
-//   "time"
+  "time"
 //   "reflect"
 
   api "github.com/seamapi/go"
@@ -28,8 +28,10 @@ func main() {
 func run() error {
   // SEAM_API_KEY := "seam_test8yup_77ut771wVzFPcfhce9ti5Ccq"
   // SEAM_API_KEY := "seam_testjMPq_3wh4WmfXuMRMZbAfpCmvUkUi"
-  SEAM_API_KEY := "seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm"
+  // SEAM_API_KEY := "seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm"
+  // SEAM_API_KEY := "seam_2bQGnv5M_4fxHvu2U7ofPqQHEdzGCGMQe"
   // SEAM_API_KEY := "seam_test2P1X_2jq9k99HBroBF9zMamfdwwaZ"
+  SEAM_API_KEY := "seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy"
 
 	client := seam.NewClient(
 		// seam.WithBaseURL(fmt.Sprintf("https://%d.fakeseamconnect.seam.vc", rand.Intn(1000000))),
@@ -431,21 +433,21 @@ func run() error {
 // fmt.Println(createdConnectWebview)
 // return nil
 
-// Retrieve all devices for the ConnectedAccountId.
-connectedDevices, err := client.Devices.List(
-  context.Background(), &api.DevicesListRequest{
-    // ConnectedAccountId: api.String("11111111-1111-1111-1111-222222222222"),
-    ConnectedAccountId: api.String("486466da-a19f-48b3-824d-b9aa30b936c9"),
-  },
-)
+// // Retrieve all devices for the ConnectedAccountId.
+// connectedDevices, err := client.Devices.List(
+//   context.Background(), &api.DevicesListRequest{
+//     // ConnectedAccountId: api.String("11111111-1111-1111-1111-222222222222"),
+//     ConnectedAccountId: api.String("486466da-a19f-48b3-824d-b9aa30b936c9"),
+//   },
+// )
 
-if err != nil {
-  return err
-}
+// if err != nil {
+//   return err
+// }
 
-fmt.Println(connectedDevices)
+// fmt.Println(connectedDevices)
 
-return nil
+// return nil
 
 
 // connectWebview, err := client.ConnectWebviews.Create(
@@ -1117,14 +1119,14 @@ return nil
 
 // return nil
 
-acs_systems, err := client.Acs.Systems.List(
-  context.Background(), &acs.SystemsListRequest{},
-)
-if err != nil {
-  return err
-}
-fmt.Println(acs_systems)
-return nil
+// acs_systems, err := client.Acs.Systems.List(
+//   context.Background(), &acs.SystemsListRequest{},
+// )
+// if err != nil {
+//   return err
+// }
+// fmt.Println(acs_systems)
+// return nil
 
 // acs_user, uErr := client.Acs.Users.Create(
 //   context.Background(), &acs.UsersCreateRequest{
@@ -1399,29 +1401,181 @@ return nil
 //   },
 // )
 
-// Get the device.
-device, uErr := client.Devices.Get(
-  context.Background(),
-  &api.DevicesGetRequest{
-    DeviceId: api.String("de49ed1a-0d19-4527-89ce-de7325149104"),
-  })
+// // Get the device.
+// device, uErr := client.Devices.Get(
+//   context.Background(),
+//   &api.DevicesGetRequest{
+//     DeviceId: api.String("de49ed1a-0d19-4527-89ce-de7325149104"),
+//   })
 
-// Confirm that Seam supports simulated disconnection.
-if *device.CanSimulateDisconnection {
-  // Perform the simulated disconnection.
-  client.Devices.Simulate.Disconnect(
-      context.Background(),
-      &api.DevicesSimulateDisconnectRequest{
-        DeviceId: device.DeviceId,
-      },
-    )
-  }
+// // Confirm that Seam supports simulated disconnection.
+// if *device.CanSimulateDisconnection {
+//   // Perform the simulated disconnection.
+//   client.Devices.Simulate.Disconnect(
+//       context.Background(),
+//       &api.DevicesSimulateDisconnectRequest{
+//         DeviceId: device.DeviceId,
+//       },
+//     )
+//   }
 
-if uErr != nil {
-    return uErr
+// if uErr != nil {
+//     return uErr
+// }
+
+// return nil
+
+
+// // Get the ACS system.
+// buildingA, err := client.Acs.Systems.Get(
+//   context.Background(), &acs.SystemsGetRequest{
+//     // AcsSystemId: "11111111-1111-1111-1111-111111111111",
+//     AcsSystemId: "c5b5bf04-0cc1-4736-935f-27c0db21b8b2",
+//   },
+// )
+// if err != nil {
+//   return err
+// }
+
+
+// // Define the listing.
+// // listingId := "2222222-2222"
+// seamAccessGroupIds := [...]string{
+//   "ed8afaa3-3106-47cb-b2fd-77051ba0c764",
+//   "6ec20d55-cff7-4cbb-8408-d4b5cabfcf36",
+// }
+// // seamAccessGroupIds := [...]string{
+// //   "555555-5555",
+// //   "666666-6666",
+// // }
+
+// // Define the reservation.
+// reservation := map[string]string{
+//   "reservationId": "3333122-432",
+//   "guestEmail": "jane@example.com",
+//   "listingId": "2222222-2222",
+// }
+
+// checkIn, err := time.Parse(time.RFC3339, "2024-11-01T15:00:00Z")
+// checkOut, err := time.Parse(time.RFC3339, "2024-11-04T11:00:00Z")
+// if err != nil {
+//   return err
+// }
+
+// // Create the new ACS user, including the
+// // desired access schedule.
+// reservationUser, err := client.Acs.Users.Create(
+//   context.Background(), &acs.UsersCreateRequest{
+//     FullName: api.String(reservation["reservationId"]),
+//     AcsSystemId: buildingA.AcsSystemId,
+//     AccessSchedule: &acs.UsersCreateRequestAccessSchedule{
+//       StartsAt: checkIn,
+//       EndsAt: checkOut,
+//     },
+//   },
+// )
+// if err != nil {
+//   return err
+// }
+
+// // Add the ACS user to all access groups for the listing.
+// for _, groupIdToAdd := range seamAccessGroupIds {
+//   client.Acs.Users.AddToAccessGroup(
+//     context.Background(), &acs.UsersAddToAccessGroupRequest{
+//       AcsUserId: reservationUser.AcsUserId,
+//       AcsAccessGroupId: groupIdToAdd,
+//     },
+//   )
+//   if err != nil {
+//     return err
+//   }
+// }
+
+// // Create a PIN code for the ACS user.
+// reservationPinCode, err := client.Acs.Credentials.Create(
+//   context.Background(), &acs.CredentialsCreateRequest{
+//     AcsUserId: reservationUser.AcsUserId,
+//     AccessMethod: "code",
+// })
+// if err != nil {
+//     return err
+// }
+
+// // View the new credential.
+// fmt.Println(reservationPinCode)
+// return nil
+
+// Create the group of linked access codes.
+// Each returned access code includes a common_code_key.
+// accessCodes, err := client.AccessCodes.CreateMultiple(
+//   context.Background(),
+//   &api.AccessCodesCreateMultipleRequest{
+//     DeviceIds: []string{
+//         "8e94044d-a4d1-4691-9f7e-e97d3e8a0b73",
+//         "d87eea5d-71c6-4633-a966-396c5ac51177",
+//       },
+//     Name: api.String("Jane's reservation"),
+//     StartsAt: api.String("2024-11-15T15:00:00Z"),
+//     EndsAt: api.String("2024-11-17T11:00:00Z"),
+//     PreferredCodeLength: api.Float64(4),
+//   },
+// )
+
+// if err != nil {
+//     return err
+// }
+
+// fmt.Println(accessCodes)
+// return nil
+
+// Step 1:
+// Create the new ACS user.
+acs_user, err := client.Acs.Users.Create(
+  context.Background(), &acs.UsersCreateRequest{
+    // AcsSystemId: "11111111-1111-1111-1111-111111111111",
+    AcsSystemId: "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
+    FullName: api.String("Jane Doe Go"),
+    EmailAddress: api.String("jane-go@example.com"),
+  },
+)
+if err != nil {
+  return err
 }
 
+startsAt, err := time.Parse(time.RFC3339, "2024-12-10T15:00:00Z")
+endsAt, err := time.Parse(time.RFC3339, "2024-12-14T12:00:00Z")
+if err != nil {
+  return err
+}
+
+// Step 2:
+// Create a card-based credential for each entrance for the ACS user.
+credential, err := client.Acs.Credentials.Create(
+  context.Background(), &acs.CredentialsCreateRequest{
+    AcsUserId: acs_user.AcsUserId,
+    AccessMethod: "card",
+    AllowedAcsEntranceIds: []string{
+      // List the IDs of the entrances to which
+      // you want to grant access.
+      // room_101.AcsEntranceId,
+      "d3351d70-efb6-45d4-a580-fa7b2ffca586",
+    },
+    StartsAt: api.Time(startsAt),
+    EndsAt: api.Time(endsAt),
+    VisionlineMetadata: &acs.CredentialsCreateRequestVisionlineMetadata{
+      CardFormat: acs.CredentialsCreateRequestVisionlineMetadataCardFormatRfid48.Ptr(),
+      Override: api.Bool(true),
+    },
+  },
+);
+if err != nil {
+  return err
+};
+
+fmt.Println(credential)
 return nil
+
+
 
 
 }

@@ -10,8 +10,9 @@ using Seam.Model;
 // var r = new string(Enumerable.Range(0, 10).Select(_ => "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"[new Random().Next(36)]).ToArray());
 
 // var SEAM_API_KEY = "seam_test8yup_77ut771wVzFPcfhce9ti5Ccq";
-var SEAM_API_KEY = "seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm";
 // var SEAM_API_KEY = "seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm";
+// var SEAM_API_KEY = "seam_2bQGnv5M_4fxHvu2U7ofPqQHEdzGCGMQe";
+var SEAM_API_KEY = "seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy";
 
 // Get a Seam Client
 var seam = new SeamClient(
@@ -1001,11 +1002,59 @@ foreach (Device connectedDevice in connectedDevices)
 //   acsSystemId: "11111111-1111-1111-1111-111111111111"
 // );
 
-// Get the device.
-Device device = seam.Devices.Get(deviceId: "de49ed1a-0d19-4527-89ce-de7325149104");
+// // Get the device.
+// Device device = seam.Devices.Get(deviceId: "de49ed1a-0d19-4527-89ce-de7325149104");
 
-// Confirm that Seam supports simulated disconnection.
-if (device.CanSimulateDisconnection == true) {
-  // Perform the simulated disconnection.
-  seam.Devices.Simulate.Disconnect(deviceId: device.DeviceId);
-}
+// // Confirm that Seam supports simulated disconnection.
+// if (device.CanSimulateDisconnection == true) {
+//   // Perform the simulated disconnection.
+//   seam.Devices.Simulate.Disconnect(deviceId: device.DeviceId);
+// }
+
+// // Create the group of linked access codes.
+// // Each returned access code includes a common_code_key.
+// var accessCodes = seam.AccessCodes.CreateMultiple(
+//   deviceIds: new List<string>(new string[] {
+//     "8e94044d-a4d1-4691-9f7e-e97d3e8a0b73",
+//     "d87eea5d-71c6-4633-a966-396c5ac51177"
+//   }),
+//   name: "Jane's reservation",
+//   startsAt: "2024-11-15T15:00:00Z",
+//   endsAt: "2024-11-17T11:00:00Z",
+//   preferredCodeLength: 4
+// );
+
+// Console.WriteLine(seam.AccessCodes.Get(accessCodeId: "91006a91-a5a6-43a9-aabf-746afdbbfbff"));
+// var commonCodeKey = "auto_set_by_create_multiple_72f81ee3-997f-4fdc-81d0-289dabc28ae7";
+// // Update the starting and ending times
+// // for all these linked access codes,
+// // using the common_code_key to identify
+// // the group of access codes to update.
+// seam.AccessCodes.UpdateMultiple(
+//   commonCodeKey: commonCodeKey,
+//   startsAt: "2024-11-15T12:00:00Z",
+//   endsAt: "2024-11-17T15:00:00Z"
+// );
+
+// Step 1:
+// Create the new ACS user.
+AcsUser acsUser = seam.UsersAcs.Create(
+  acsSystemId: "11111111-1111-1111-1111-111111111111",
+  fullName: "Jane Doe",
+  emailAddress: "jane@example.com"
+);
+
+// Step 2:
+// Create a card-based credential for each entrance for the ACS user.
+AcsCredential credential = seam.CredentialsAcs.Create(
+  acsUserId: acsUser.acsUserId,
+  accessMethod: "card",
+  allowedAcsEntranceIds: new List<string>
+  {
+    // List the IDs of the entrances to which
+    // you want to grant access.
+    room_101.acsEntranceId
+  },
+  startsAt: "2024-12-01T15:00:00.000Z",
+  endsAt: "2024-12-04T12:00:00.000Z"
+);

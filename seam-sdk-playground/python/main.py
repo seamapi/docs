@@ -9,7 +9,10 @@ seam = Seam(
 #     # api_key="seam_apikey1_token"
     # api_key="seam_test8yup_77ut771wVzFPcfhce9ti5Ccq"
     # api_key="seam_testjMPq_3wh4WmfXuMRMZbAfpCmvUkUi"
-    api_key="seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm"
+    # api_key="seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm"
+    # api_key="seam_2bQGnv5M_4fxHvu2U7ofPqQHEdzGCGMQe"
+    api_key="seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy"
+    # api_key="seam_test32r3_9H3EoytYeuWBZBaJFkyJw3Vn"
 ) # Seam automatically uses your exported SEAM_API_KEY.
 
 # seam = Seam(
@@ -1100,12 +1103,300 @@ seam = Seam(
 #     device_id = "74fbfe51-9182-400b-8fa3-e4db90ab83f7"
 # ))
 
-# Get the device.
-device = seam.devices.get(
-  device_id="de49ed1a-0d19-4527-89ce-de7325149104"
-)
+# # Get the device.
+# device = seam.devices.get(
+#   device_id="de49ed1a-0d19-4527-89ce-de7325149104"
+# )
 
-# Confirm that Seam supports simulated disconnection.
-if device.can_simulate_disconnection:
-  # Perform the simulated disconnection.
-  seam.devices.simulate.disconnect(device_id=device.device_id)
+# # Confirm that Seam supports simulated disconnection.
+# if device.can_simulate_disconnection:
+#   # Perform the simulated disconnection.
+#   seam.devices.simulate.disconnect(device_id=device.device_id)
+
+# # Get the device.
+# device = seam.devices.get(
+#   device_id="de49ed1a-0d19-4527-89ce-de7325149104"
+# )
+
+# # Confirm that Seam supports simulated connection.
+# if device.can_simulate_connection:
+#   # Perform the simulated connection.
+#   seam.devices.simulate.connect(device_id=device.device_id)
+
+# # Get the ACS system.
+# # building_a = seam.acs.systems.get(acs_system_id="11111111-1111-1111-1111-111111111111")
+# building_a = seam.acs.systems.get(acs_system_id="c5b5bf04-0cc1-4736-935f-27c0db21b8b2")
+
+# # Define the listing.
+# listing = {
+#   "listing_id": "2222222-2222",
+#   # "seam_access_group_ids": ["555555-5555", "666666-6666"]
+#   "seam_access_group_ids": ["ed8afaa3-3106-47cb-b2fd-77051ba0c764", "6ec20d55-cff7-4cbb-8408-d4b5cabfcf36"]
+# }
+
+# # Define the reservation.
+# reservation = {
+#   "reservation_id": "3333122-432",
+#   "guest_email": "jane@example.com",
+#   "listing_id": "2222222-2222",
+#   "check_in": "2024-11-01T15:00:00.000Z",
+#   "check_out": "2024-11-04T11:00:00.000Z"
+# }
+
+# # Create the new ACS user, including the
+# # desired access schedule.
+# reservation_user = seam.acs.users.create(
+#   full_name = reservation["reservation_id"],
+#   acs_system_id = building_a.acs_system_id,
+#   access_schedule = {
+#     "starts_at": reservation["check_in"],
+#     "ends_at": reservation["check_out"]
+#   }
+# )
+
+# # Add the ACS user to all access groups for the listing.
+# for group_id_to_add in listing["seam_access_group_ids"]:
+#   seam.acs.users.add_to_access_group(
+#     acs_user_id = reservation_user.acs_user_id,
+#     acs_access_group_id = group_id_to_add
+#   )
+
+# # Create a PIN code for the ACS user.
+# reservation_pin_code = seam.acs.credentials.create(
+#   acs_user_id = reservation_user.acs_user_id,
+#   access_method = "code"
+# )
+
+# # View the new credential.
+# pprint(reservation_pin_code)
+
+# # Get the ACS system.
+# building_a = seam.acs.systems.get(
+#   # acs_system_id = "11111111-1111-1111-1111-111111111111"
+#   acs_system_id = "c5b5bf04-0cc1-4736-935f-27c0db21b8b2"
+# )
+
+# # Define the listing.
+# listing = {
+#   "listing_id": "2222222-2222",
+#   "seam_access_group_ids": [
+#     "ed8afaa3-3106-47cb-b2fd-77051ba0c764",
+#     "6ec20d55-cff7-4cbb-8408-d4b5cabfcf36"
+#   ]
+#   # "seam_access_group_ids": [
+#   #   "555555-5555",
+#   #   "666666-6666"
+#   # ]
+# }
+
+# # Define the reservation.
+# reservation = {
+#   "reservation_id": "3333122-433",
+#   "guest_email": "jane@example.com",
+#   "listing_id": "2222222-2222",
+#   "check_in": "2024-11-01T15:00:00.000Z",
+#   "check_out": "2024-11-04T11:00:00.000Z"
+# }
+
+# # Step 1:
+# # Create a user identity that corresponds to your user's mobile app account.
+# jane_user = seam.user_identities.create(
+#   # email_address = "jane@example.com"
+#   email_address = "janePython2@example.com"
+# )
+
+# # Step 2:
+# # Retrieve a credential manager.
+# salto_ks_credential_manager = seam.acs.systems.list_compatible_credential_manager_acs_systems(
+#     acs_system_id = building_a.acs_system_id
+#   )[0]
+
+# # Step 3:
+# # Set up an enrollment automation for the user identity, to enable mobile keys.
+# seam.user_identities.enrollment_automations.launch(
+#   user_identity_id = jane_user.user_identity_id,
+#   create_credential_manager_user = True,
+#   credential_manager_acs_system_id = salto_ks_credential_manager.acs_system_id
+# )
+
+# # Step 4:
+# # Create an ACS user on the Salto KS ACS.
+# # Specify the access schedule for the user.
+# reservation_user = seam.acs.users.create(
+#   user_identity_id = jane_user.user_identity_id,
+#   acs_system_id = building_a.acs_system_id,
+#   full_name = reservation["reservation_id"],
+#   access_schedule = {
+#     "starts_at": reservation["check_in"],
+#     "ends_at": reservation["check_out"]
+#   }
+# )
+
+# # Step 5:
+# # Add the ACS user to all access groups for the listing.
+# for group_id_to_add in listing["seam_access_group_ids"]:
+#   seam.acs.users.add_to_access_group(
+#     acs_user_id = reservation_user.acs_user_id,
+#     acs_access_group_id = group_id_to_add
+#   )
+
+# # Step 6:
+# # Create a mobile key for the ACS user.
+# reservation_mobile_key = seam.acs.credentials.create(
+#   acs_user_id = reservation_user.acs_user_id,
+#   is_multi_phone_sync_credential = True,
+#   access_method = "mobile_key"
+# )
+
+# # View the new credential.
+# pprint(reservation_mobile_key)
+
+# pprint(seam.thermostats.activate_climate_preset(
+#   device_id= "2d488679-6f07-4810-aed2-e726872c1dd5",
+#   climate_preset_key="occupied"
+# ))
+
+# pprint(seam.thermostats.schedules.create(
+#   device_id = "2d488679-6f07-4810-aed2-e726872c1dd5",
+#   name = "Jim's stay 2",
+#   climate_preset_key = "occupied",
+#   max_override_period_minutes = 90,
+#   starts_at = "2024-11-06T15:00:01Z",
+#   ends_at = "2024-11-07T12:00:00Z"
+# ))
+
+# # Get the thermostat.
+# thermostat = seam.devices.get(
+#   device_id = "2d488679-6f07-4810-aed2-e726872c1dd5"
+# )
+
+# # ??????????????????????????????????????????????????
+# # Confirm that the thermostat has the desired
+# # configured climate preset.
+# if "occupied" in thermostat.properties.available_climate_presets:
+#   pprint("HERE")
+#   # Create the climate schedule.
+#   seam.thermostats.schedules.create(
+#     device_id = thermostat.device_id,
+#     name = "Jim's stay",
+#     climate_preset_key = "occupied",
+#     max_override_period_minutes = 90,
+#     starts_at = "2024-11-01T15:00:00Z",
+#     ends_at = "2024-11-05T12:00:00Z"
+#   )
+
+# # Get the thermostat.
+# thermostat = seam.devices.get(
+#   device_id = "2d488679-6f07-4810-aed2-e726872c1dd5"
+# )
+
+# # Set the fallback climate preset.
+# seam.thermostats.set_fallback_climate_preset(
+#   device_id = thermostat.device_id,
+#   climate_preset_key = "unoccupied"
+# )
+
+# # Schedule the climate preset for the first reservation.
+# pprint(seam.thermostats.schedules.create(
+#   device_id = thermostat.device_id,
+#   name = "Joe's stay",
+#   climate_preset_key = "occupied",
+#   max_override_period_minutes = 90,
+#   starts_at = "2024-11-10T15:00:00Z",
+#   ends_at = "2024-11-15T12:00:00Z"
+# ))
+
+# # Schedule the climate preset for the second reservation.
+# pprint(seam.thermostats.schedules.create(
+#   device_id = thermostat.device_id,
+#   name = "Jane's stay",
+#   climate_preset_key = "occupied",
+#   max_override_period_minutes = 90,
+#   starts_at = "2024-11-16T15:00:00Z",
+#   ends_at = "2024-11-18T12:00:00Z"
+# ))
+
+# pprint(seam.thermostats.schedules.list(
+#   device_id = "2d488679-6f07-4810-aed2-e726872c1dd5"
+# ))
+
+# pprint(seam.thermostats.schedules.update(
+#   thermostat_schedule_id = "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
+#   ends_at = "2024-11-15T15:00:00Z"
+# ))
+
+# # Create the group of linked access codes.
+# # Each returned access code includes a common_code_key.
+# pprint(seam.access_codes.create_multiple(
+#   device_ids = [
+#     "8e94044d-a4d1-4691-9f7e-e97d3e8a0b73",
+#     "d87eea5d-71c6-4633-a966-396c5ac51177"
+#   ],
+#   name = "Jane's reservation",
+#   starts_at = "2024-11-15T15:00:00Z",
+#   ends_at = "2024-11-17T11:00:00Z",
+#   preferred_code_length = 4
+# ))
+
+# common_code_key = "auto_set_by_create_multiple_a11a027a-5070-47f5-aabf-279051117b0d"
+# # Update the starting and ending times
+# # for all these linked access codes,
+# # using the common_code_key to identify
+# # the group of access codes to update.
+# seam.access_codes.update_multiple(
+#   common_code_key = common_code_key,
+#   starts_at = "2024-11-15T12:00:00Z",
+#   ends_at = "2024-11-17T15:00:00Z"
+# )
+
+# pprint(seam.access_codes.get(access_code_id="adcd39ff-a334-4890-9904-0c056d8f8f8c"))
+
+# # Step 1:
+# # Create the new ACS user.
+# acs_user = seam.acs.users.create(
+#   # acs_system_id = "11111111-1111-1111-1111-111111111111",
+#   acs_system_id = "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
+#   full_name = "Jane Doe Python",
+#   email_address = "jane-python@example.com"
+# )
+
+# # Step 2:
+# # Create a card-based credential for each entrance for the ACS user.
+# credential = seam.acs.credentials.create(
+#   acs_user_id = acs_user.acs_user_id,
+#   access_method = "card",
+#   # List the IDs of the entrances to which
+#   # you want to grant access.
+#   allowed_acs_entrance_ids = [
+#     # room_101.seam_acs_entrance_id
+#     "d3351d70-efb6-45d4-a580-fa7b2ffca586"
+#   ],
+#   starts_at = "2024-12-10T15:00:00.000Z",
+#   ends_at = "2024-12-14T12:00:00.000Z",
+
+#   visionline_metadata = {
+#         "card_format": "rfid48",
+#         "override": True
+#     }
+# )
+
+# pprint(credential)
+
+# pprint(seam.acs.systems.list())
+# pprint(seam.acs.encoders.list(
+#   # acs_system_ids = [building_system_id]
+#   # acs_system_ids = ["8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4"]
+#   acs_system_ids = ["6cbe6afc-0957-4612-804e-38bb042e306a"]
+# ))
+
+# credential = seam.acs.credentials.get(acs_credential_id="578209ed-415d-48ea-99ba-13e063b1fb9c")
+# # encoder = seam.acs.encoders.list(acs_system_ids = ["8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4"])
+
+# encoding_action_attempt = seam.acs.encoders.encode_credential(
+#   acs_credential_id = credential.acs_credential_id,
+#   # acs_encoder_id = encoder.acs_encoder_id
+#   acs_encoder_id="22bae2e3-10dd-4cb4-9047-3bcf1fd9c390"
+# )
+
+# # pprint(seam.acs.credentials.get(acs_credential_id="ea5117bd-9e61-4dee-bff7-71f470300741"))
+# pprint(seam.action_attempts.get(action_attempt_id=encoding_action_attempt.action_attempt_id))

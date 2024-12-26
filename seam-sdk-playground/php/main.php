@@ -12,7 +12,9 @@ require __DIR__ . '/vendor/autoload.php';
 // );
 
 // $SEAM_API_KEY = "seam_test8yup_77ut771wVzFPcfhce9ti5Ccq";
-$SEAM_API_KEY = "seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm";
+// $SEAM_API_KEY = "seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm";
+// $SEAM_API_KEY = "seam_2bQGnv5M_4fxHvu2U7ofPqQHEdzGCGMQe";
+$SEAM_API_KEY = "seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy";
 
 // use Seam\SeamClient;
 
@@ -533,11 +535,183 @@ $seam = new Seam\SeamClient(
 //   acs_credential_id: "66666666-6666-6666-6666-666666666666"
 // );
 
-// Get the device.
-$device = $seam->devices->get(device_id: "de49ed1a-0d19-4527-89ce-de7325149104");
+// // Get the device.
+// $device = $seam->devices->get(device_id: "de49ed1a-0d19-4527-89ce-de7325149104");
 
-// Confirm that Seam supports simulated disconnection.
-if ($device->can_simulate_disconnection) {
-  // Perform the simulated disconnection.
-  $seam->devices->simulate->disconnect(device_id: $device->device_id);
-}
+// // Confirm that Seam supports simulated disconnection.
+// if ($device->can_simulate_disconnection) {
+//   // Perform the simulated disconnection.
+//   $seam->devices->simulate->disconnect(device_id: $device->device_id);
+// }
+
+// // Get the device.
+// $device = $seam->devices->get(device_id: "de49ed1a-0d19-4527-89ce-de7325149104");
+
+// // Confirm that Seam supports simulated connection.
+// if ($device->can_simulate_connection) {
+//   // Perform the simulated connection.
+//   $seam->devices->simulate->connect(device_id: $device->device_id);
+// }
+
+// // Get the ACS system.
+// $building_a = $seam->acs->systems->get(
+//   // acs_system_id: "11111111-1111-1111-1111-111111111111"
+//   acs_system_id: "c5b5bf04-0cc1-4736-935f-27c0db21b8b2"
+// );
+
+// // Define the listing.
+// $listing = array(
+//   "listing_id" => "2222222-2222",
+//   "seam_access_group_ids" => array(
+//     "ed8afaa3-3106-47cb-b2fd-77051ba0c764",
+//     "6ec20d55-cff7-4cbb-8408-d4b5cabfcf36"
+//   )
+//   // "seam_access_group_ids" => array(
+//   //   "555555-5555",
+//   //   "666666-6666"
+//   // )
+// );
+
+// // Define the reservation.
+// $reservation = array(
+//   "reservation_id" => "3333122-432",
+//   "guest_email" => "jane@example.com",
+//   "listing_id" => "2222222-2222",
+//   "check_in" => "2024-11-01T15:00:00.000Z",
+//   "check_out" => "2024-11-04T11:00:00.000Z"
+// );
+
+// // Create the new ACS user, including the
+// // desired access schedule.
+// $reservation_user = $seam->acs->users->create(
+//   full_name: $reservation["reservation_id"],
+//   acs_system_id: $building_a->acs_system_id,
+//   access_schedule: array(
+//     "starts_at" => $reservation["check_in"],
+//     "ends_at" => $reservation["check_out"]
+//   )
+// );
+
+// // Add the ACS user to all access groups for the listing.
+// foreach ($listing['seam_access_group_ids'] as $group_id_to_add) {
+//   $seam->acs->users->add_to_access_group(
+//     acs_user_id: $reservation_user->acs_user_id,
+//     acs_access_group_id: $group_id_to_add
+//   );
+// };
+
+// // Create a PIN code for the ACS user.
+// $reservation_pin_code = $seam->acs->credentials->create(
+//   acs_user_id: $reservation_user->acs_user_id,
+//   access_method: "code"
+// );
+
+// // View the new credential.
+// echo json_encode($reservation_pin_code, JSON_PRETTY_PRINT);
+
+// echo json_encode($seam->thermostats->list(
+//   manufacturer: "nest"
+// ), JSON_PRETTY_PRINT);
+
+// echo json_encode($seam->devices->get(
+//   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+// ), JSON_PRETTY_PRINT);
+
+// echo json_encode($seam->thermostats->activate_climate_preset(
+//   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
+//   climate_preset_key: "occupied"
+// ), JSON_PRETTY_PRINT);
+
+// echo json_encode($seam->thermostats->schedules->create(
+//   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
+//   name: "Jim's stay",
+//   climate_preset_key: "occupied",
+//   max_override_period_minutes: 90,
+//   starts_at: "2024-11-21T15:00:00Z",
+//   ends_at: "2024-11-25T12:00:00Z"
+// ), JSON_PRETTY_PRINT);
+
+// // Get the thermostat.
+// $thermostat = $seam->devices->get(
+//   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+// );
+
+// // Set the fallback climate preset.
+// $seam->thermostats->set_fallback_climate_preset(
+//   device_id: $thermostat->device_id,
+//   climate_preset_key: "unoccupied"
+// );
+
+// // Create the climate schedule for the first reservation.
+// echo json_encode($seam->thermostats->schedules->create(
+//   device_id: $thermostat->device_id,
+//   name: "Joe's stay",
+//   climate_preset_key: "occupied",
+//   starts_at: "2024-11-10T15:00:00Z",
+//   ends_at: "2024-11-15T12:00:00Z",
+//   max_override_period_minutes: 90
+// ), JSON_PRETTY_PRINT);
+
+// // Create the climate schedule for the second reservation.
+// echo json_encode($seam->thermostats->schedules->create(
+//   device_id: $thermostat->device_id,
+//   name: "Jane's stay",
+//   climate_preset_key: "occupied",
+//   starts_at: "2024-11-16T15:00:00Z",
+//   ends_at: "2024-11-18T12:00:00Z",
+//   max_override_period_minutes: 90
+// ), JSON_PRETTY_PRINT);
+
+// echo json_encode($seam->thermostats->schedules->list(
+//   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+// ), JSON_PRETTY_PRINT);
+
+// Create the group of linked access codes.
+// Each returned access code includes a common_code_key.
+// $access_codes = $seam->access_codes->create_multiple(
+//   device_ids: [
+//     "8e94044d-a4d1-4691-9f7e-e97d3e8a0b73",
+//     "d87eea5d-71c6-4633-a966-396c5ac51177"
+//   ],
+//   name: "Jane's reservation",
+//   starts_at: "2024-11-15T15:00:00Z",
+//   ends_at: "2024-11-17T11:00:00Z",
+//   preferred_code_length: 4
+// );
+
+// // echo json_encode($access_codes, JSON_PRETTY_PRINT);
+// $common_code_key = "auto_set_by_create_multiple_016220b4-7d89-40a6-9d19-db532941875b";
+// // Update the starting and ending times
+// // for all these linked access codes,
+// // using the common_code_key to identify
+// // the group of access codes to update.
+// $seam->access_codes->update_multiple(
+//   common_code_key: $common_code_key,
+//   starts_at: "2024-11-15T12:00:00Z",
+//   ends_at: "2024-11-17T15:00:00Z"
+// );
+
+// Step 1:
+// Create the new ACS user.
+$acs_user = $seam->acs->users->create(
+  // acs_system_id: "11111111-1111-1111-1111-111111111111",
+  acs_system_id: "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
+  full_name: "Jane Doe PHP",
+  email_address: "jane-php@example.com"
+);
+
+// Step 2:
+// Create a card-based credential for each entrance for the ACS user.
+$credential = $seam->acs->credentials->create(
+  acs_user_id: $acs_user->acs_user_id,
+  access_method: "card",
+  allowed_acs_entrance_ids: [
+    // List the IDs of the entrances to which
+    // you want to grant access.
+    // $room_101->seam_acs_entrance_id
+    "d3351d70-efb6-45d4-a580-fa7b2ffca586"
+  ],
+  starts_at: "2024-12-10T15:00:00.000Z",
+  ends_at: "2024-12-14T12:00:00.000Z",
+  visionline_metadata: array('card_format' => "rfid48", 'is_override_key' => true)
+);

@@ -24,17 +24,21 @@ import com.seam.api.types.SelectionMode;
 import com.seam.api.types.DevicesListDeviceProvidersRequestProviderCategory;
 import com.seam.api.types.ConnectedAccount;
 import com.seam.api.types.EventsListRequestEventType;
+import com.seam.api.types.UserIdentity;
 import com.seam.api.resources.devices.requests.DevicesGetRequest;
 import com.seam.api.resources.devices.requests.DevicesListRequest;
+import com.seam.api.resources.devices.simulate.requests.SimulateDisconnectRequest;
 import com.seam.api.resources.locks.requests.LocksGetRequest;
 import com.seam.api.resources.locks.requests.LocksLockDoorRequest;
 import com.seam.api.resources.locks.requests.LocksUnlockDoorRequest;
 import com.seam.api.resources.actionattempts.requests.ActionAttemptsGetRequest;
 import com.seam.api.resources.actionattempts.requests.ActionAttemptsListRequest;
 import com.seam.api.resources.accesscodes.requests.AccessCodesCreateRequest;
+import com.seam.api.resources.accesscodes.requests.AccessCodesCreateMultipleRequest;
 import com.seam.api.resources.accesscodes.requests.AccessCodesListRequest;
 import com.seam.api.resources.accesscodes.requests.AccessCodesGetRequest;
 import com.seam.api.resources.accesscodes.requests.AccessCodesUpdateRequest;
+import com.seam.api.resources.accesscodes.requests.AccessCodesUpdateMultipleRequest;
 import com.seam.api.resources.accesscodes.requests.AccessCodesDeleteRequest;
 import com.seam.api.resources.accesscodes.requests.AccessCodesPullBackupAccessCodeRequest;
 import com.seam.api.resources.accesscodes.unmanaged.requests.UnmanagedListRequest;
@@ -52,6 +56,7 @@ import com.seam.api.resources.thermostats.climatesettingschedules.requests.Clima
 import com.seam.api.resources.thermostats.climatesettingschedules.requests.ClimateSettingSchedulesUpdateRequest;
 import com.seam.api.resources.thermostats.climatesettingschedules.requests.ClimateSettingSchedulesDeleteRequest;
 import com.seam.api.resources.noisesensors.noisethresholds.requests.NoiseThresholdsCreateRequest;
+import com.seam.api.resources.useridentities.requests.UserIdentitiesCreateRequest;
 import com.seam.api.resources.connectwebviews.requests.ConnectWebviewsCreateRequest;
 import com.seam.api.resources.connectwebviews.requests.ConnectWebviewsGetRequest;
 import com.seam.api.resources.devices.requests.DevicesListDeviceProvidersRequest;
@@ -80,7 +85,8 @@ public class Main {
         int randomNumber = rand.nextInt(1_000_000);
 
         // String SEAM_API_KEY = "seam_test8yup_77ut771wVzFPcfhce9ti5Ccq";
-        String SEAM_API_KEY = "seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm";
+        // String SEAM_API_KEY = "seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm";
+        String SEAM_API_KEY = "seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy";
 
         // Get a Seam Client
         // Seam seam = Seam.builder()
@@ -651,11 +657,11 @@ public class Main {
 //                 .build());
 
 // Retrieve all devices for the connectedAccountId.
-var connectedDevices = seam.devices().list(DevicesListRequest.builder()
-  // .connectedAccountId("11111111-1111-1111-1111-222222222222")
-  .connectedAccountId("486466da-a19f-48b3-824d-b9aa30b936c9")
-  .build());
-System.out.println(connectedDevices);
+// var connectedDevices = seam.devices().list(DevicesListRequest.builder()
+//   // .connectedAccountId("11111111-1111-1111-1111-222222222222")
+//   .connectedAccountId("486466da-a19f-48b3-824d-b9aa30b936c9")
+//   .build());
+// System.out.println(connectedDevices);
 
 // System.out.println(seam.connectedAccounts().list());
 
@@ -826,29 +832,53 @@ System.out.println(connectedDevices);
 //                 .build());
 // System.out.println(device);
 
-// Get the device.
-Device device = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("de49ed1a-0d19-4527-89ce-de7325149104")
-    .build());
+// // Get the device.
+// Device device = seam.devices()
+//   .get(DevicesGetRequest.builder()
+//     .deviceId("de49ed1a-0d19-4527-89ce-de7325149104")
+//     .build());
 
-// Confirm that Seam supports simulated disconnection.
-if (device.getCanSimulateDisconnection())
-{
-  // Perform the simulated disconnection.
-  seam.devices().simulate()
-    .disconnect(DevicesSimulateDisconnectRequest.builder()
-      .deviceId(device.getDeviceId())
-      .build());
-}
+// // Confirm that Seam supports simulated disconnection.
+// if (device.getCanSimulateDisconnection())
+// {
+//   // Perform the simulated disconnection.
+//   seam.devices().simulate()
+//     .disconnect(SimulateDisconnectRequest.builder()
+//       .deviceId(device.getDeviceId())
+//       .build());
+// }
 
+// // Create the group of linked access codes.
+// // Each returned access code includes a common_code_key.
+// var accessCodes = seam.accessCodes()
+//   .createMultiple(AccessCodesCreateMultipleRequest.builder()
+//     .deviceIds(new ArrayList<>(Arrays.asList(
+//       "8e94044d-a4d1-4691-9f7e-e97d3e8a0b73",
+//       "d87eea5d-71c6-4633-a966-396c5ac51177"
+//     )))
+//     .name("Jane's reservation")
+//     .startsAt("2024-11-15T15:00:00Z")
+//     .endsAt("2024-11-17T11:00:00Z")
+//     .preferredCodeLength(4)
+//     .build());
 
+// System.out.println(accessCodes);
 
+// UserIdentity UserIdentity = seam.userIdentities()
+//   .create(UserIdentitiesCreateRequest.builder()
+//     .userIdentityKey("jean_doe")
+//     .emailAddress("jean@example.com")
+//     .phoneNumber("+15555550110")
+//     .fullName("Jean Doe")
+//     .build());
 
+// System.out.println(UserIdentity);
 
+var devices = seam.devices().list(DevicesListRequest.builder()
+                .deviceType(DeviceType.HONEYWELL_THERMOSTAT)
+                .build());
 
-
-
+System.out.println(devices);
 
 
 

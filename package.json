@@ -39,7 +39,8 @@
     "execa": "^9.3.1",
     "jstransformer-handlebars": "^1.2.0",
     "metalsmith": "^2.6.3",
-    "prettier": "^3.0.0"
+    "prettier": "^3.0.0",
+    "seam": "^1.36.0"
   },
   "devDependencies": {
     "@seamapi/types": "1.258.1",

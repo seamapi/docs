@@ -13,8 +13,9 @@ import { Seam } from "seam"
 
 const seam = new Seam({
   // endpoint: `https://connect.getseam.com`,
-  // apiKey: "seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy"
-  apiKey: "seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm"
+  apiKey: "seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy"
+  // apiKey: "seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm"
+  // apiKey: "seam_2bQGnv5M_4fxHvu2U7ofPqQHEdzGCGMQe"
   // apiKey: "seam_test8yup_77ut771wVzFPcfhce9ti5Ccq"
   // apiKey: "seam_test24tc_7Mhe64ZMWJctwRodv8eK3PBJ"
 })
@@ -971,15 +972,297 @@ const seam = new Seam({
 //   heating_set_point_celsius: 20
 // }));
 
-// Get the device.
-const device = await seam.devices.get({
-  device_id: "de49ed1a-0d19-4527-89ce-de7325149104"
+// // Get the device.
+// const device = await seam.devices.get({
+//   device_id: "de49ed1a-0d19-4527-89ce-de7325149104"
+// });
+
+// // Confirm that Seam supports simulated disconnection.
+// if (device.can_simulate_disconnection) {
+//   // Perform the simulated disconnection.
+//   await seam.devices.simulate.disconnect({
+//     device_id: device.device_id
+//   });
+//   // eslint-disable-next-line no-console
+//   console.log("HERE");
+// };
+
+// // Confirm that Seam supports simulated connection.
+// if (device.can_simulate_connection) {
+//   // Perform the simulated connection.
+//   await seam.devices.simulate.connect({
+//     device_id: device.device_id
+//   });
+//   // eslint-disable-next-line no-console
+//   console.log("HERE");
+// };
+
+// // Get the ACS system.
+// const buildingA = await seam.acs.systems.get({
+//   // acs_system_id: "11111111-1111-1111-1111-111111111111"
+//   acs_system_id: "c5b5bf04-0cc1-4736-935f-27c0db21b8b2"
+// });
+
+// // Define the listing.
+// const listing = {
+//   "listingId": "2222222-2222",
+//   "seamAccessGroupIds": [
+//     "ed8afaa3-3106-47cb-b2fd-77051ba0c764",
+//     "6ec20d55-cff7-4cbb-8408-d4b5cabfcf36"
+//   ]
+//   // "seamAccessGroupIds": [
+//   //   "555555-5555",
+//   //   "666666-6666"
+//   // ]
+// };
+
+// // Define the reservation.
+// const reservation = {
+//   "reservationId": "3333122-432",
+//   "guestEmail": "jane@example.com",
+//   "listingId": "2222222-2222",
+//   "checkIn": "2024-11-01T15:00:00.000Z",
+//   "checkOut": "2024-11-04T11:00:00.000Z"
+// };
+
+// // Create the new ACS user, including the
+// // desired access schedule.
+// const reservationUser = await seam.acs.users.create({
+//   full_name: reservation.reservationId,
+//   acs_system_id: buildingA.acs_system_id,
+//   access_schedule: {
+//     "starts_at": reservation.checkIn,
+//     "ends_at": reservation.checkOut
+//   }
+// });
+
+// // Add the ACS user to all access groups for the listing.
+// for (const groupIdToAdd of listing.seamAccessGroupIds) {
+//   await seam.acs.users.addToAccessGroup({
+//     acs_user_id: reservationUser.acs_user_id,
+//     acs_access_group_id: groupIdToAdd
+//   });
+// }
+
+// // Create a PIN code for the ACS user.
+// const reservationPinCode = await seam.acs.credentials.create({
+//   acs_user_id: reservationUser.acs_user_id,
+//   access_method: "code"
+// });
+
+// // View the new credential.
+// // eslint-disable-next-line no-console
+// console.log(reservationPinCode);
+
+// eslint-disable-next-line no-console
+// console.log(await seam.thermostats.list({
+//   manufacturer: "nest"
+// }));
+
+// const therm = await seam.thermostats.list({manufacturer: "nest"});
+// // eslint-disable-next-line no-console
+// console.log(therm[0].properties.current_climate_setting);
+
+// eslint-disable-next-line no-console
+// console.log(await seam.thermostats.setFanMode({
+//   // device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61",
+//   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
+//   fan_mode_setting: "auto"
+// }));
+
+// // Get the thermostat.
+// const thermostat = await seam.devices.get({
+//   // device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+//   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+// });
+
+// // Confirm that the thermostat supports heat_cool mode
+// // so that the climate presets can use this mode.
+// if (thermostat.can_hvac_heat_cool) {
+//   // Create the climate presets.
+//   await seam.thermostats.createClimatePreset({
+//     device_id: thermostat.device_id,
+//     climate_preset_key: "occupied",
+//     name: "Occupied",
+//     fan_mode_setting: "auto",
+//     hvac_mode_setting: "heat_cool",
+//     cooling_set_point_celsius: 25,
+//     heating_set_point_celsius: 20,
+//     manual_override_allowed: true
+//   });
+
+//   await seam.thermostats.createClimatePreset({
+//     device_id: thermostat.device_id,
+//     climate_preset_key: "unoccupied",
+//     name: "Unoccupied",
+//     fan_mode_setting: "auto",
+//     hvac_mode_setting: "heat_cool",
+//     cooling_set_point_celsius: 30,
+//     heating_set_point_celsius: 15,
+//     manual_override_allowed: true
+//   });
+// };
+
+// const therm = await seam.devices.get({
+//   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+// });
+// // eslint-disable-next-line no-console
+// console.log(therm.properties.available_climate_presets);
+
+// // eslint-disable-next-line no-console
+// console.log(await seam.thermostats.activateClimatePreset({
+//   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
+//   climate_preset_key: "occupied"
+// }));
+
+// eslint-disable-next-line no-console
+// console.log(await seam.thermostats.schedules.create({
+//   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
+//   name: "Jim's stay",
+//   climate_preset_key: "occupied",
+//   max_override_period_minutes: 90,
+//   starts_at: "2024-11-11T15:00:00Z",
+//   ends_at: "2024-11-15T12:00:00Z"
+// }));
+
+// // Get the thermostat.
+// const thermostat = await seam.devices.get({
+//   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+// });
+
+// // Set the fallback climate preset.
+// await seam.thermostats.setFallbackClimatePreset({
+//   device_id: thermostat.device_id,
+//   climate_preset_key: "unoccupied"
+// });
+
+// // Create the climate schedule for the first reservation.
+// // eslint-disable-next-line no-console
+// console.log(await seam.thermostats.schedules.create({
+//   device_id: thermostat.device_id,
+//   name: "Joe's stay",
+//   climate_preset_key: "occupied",
+//   starts_at: "2024-11-10T15:00:00Z",
+//   ends_at: "2024-11-15T12:00:00Z",
+//   max_override_period_minutes: 90
+// }));
+
+// // Create the climate schedule for the second reservation.
+// // eslint-disable-next-line no-console
+// console.log(await seam.thermostats.schedules.create({
+//   device_id: thermostat.device_id,
+//   name: "Jane's stay",
+//   climate_preset_key: "occupied",
+//   starts_at: "2024-11-16T15:00:00Z",
+//   ends_at: "2024-11-18T12:00:00Z",
+//   max_override_period_minutes: 90
+// }));
+
+// // eslint-disable-next-line no-console
+// console.log(await seam.thermostats.schedules.list({
+//   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+// }));
+
+// // Create the group of linked access codes.
+// // Each returned access code includes a common_code_key.
+// const linkedCodes = await seam.accessCodes.createMultiple({
+//   device_ids: [
+//     "8e94044d-a4d1-4691-9f7e-e97d3e8a0b73",
+//     "d87eea5d-71c6-4633-a966-396c5ac51177"
+//   ],
+//   name: "Jane's reservation",
+//   starts_at: "2024-11-15T15:00:00Z",
+//   ends_at: "2024-11-17T11:00:00Z"
+// });
+
+// // Update the starting and ending times
+// // for all these linked access codes.
+// await seam.accessCodes.updateMultiple({
+//   common_code_key: linkedCodes[0].common_code_key,
+//   starts_at: "2024-11-15T12:00:00Z",
+//   ends_at: "2024-11-17T15:00:00Z"
+// });
+
+// // Create the group of linked access codes.
+// // Each returned access code includes a common_code_key.
+// const accessCodes = await seam.accessCodes.createMultiple({
+//   device_ids: [
+//     "8e94044d-a4d1-4691-9f7e-e97d3e8a0b73",
+//     "d87eea5d-71c6-4633-a966-396c5ac51177"
+//   ],
+//   name: "Jane's reservation",
+//   starts_at: "2024-12-15T15:00:00Z",
+//   ends_at: "2024-12-17T11:00:00Z",
+//   preferred_code_length: 4
+// });
+
+// // eslint-disable-next-line no-console
+// console.log(accessCodes);
+
+// const commonCodeKey = "auto_set_by_create_multiple_72f81ee3-997f-4fdc-81d0-289dabc28ae7";
+// // Update the starting and ending times
+// // for all these linked access codes,
+// // using the common_code_key to identify
+// // the group of access codes to update.
+// // eslint-disable-next-line no-console
+// console.log(
+// await seam.accessCodes.updateMultiple({
+//   common_code_key: commonCodeKey,
+//   starts_at: "2024-11-15T12:00:00Z",
+//   ends_at: "2024-11-17T15:00:00Z"
+// })
+// // // eslint-disable-next-line no-console
+// // console.log(accessCodes);
+// );
+
+// // Get the thermostat.
+// const thermostat = await seam.devices.get({
+//   device_id: "bad6d447-f847-4672-94a9-5992398d0278"
+// });
+
+// // Confirm that the thermostat supports the desired mode.
+// if (thermostat.can_hvac_heat) {
+//   // Set the HVAC mode.
+//   await seam.thermostats.setHvacMode({
+//     device_id: thermostat.device_id,
+//     hvac_mode_setting: "heat",
+//     heating_set_point_celsius: 20
+//   })
+// };
+
+// Step 1:
+// Create the new ACS user.
+const acsUser = await seam.acs.users.create({
+  // acs_system_id: "11111111-1111-1111-1111-111111111111",
+  acs_system_id: "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
+  full_name: "Jane Doe JS",
+  email_address: "jane-js@example.com"
 });
 
-// Confirm that Seam supports simulated disconnection.
-if (device.can_simulate_disconnection) {
-  // Perform the simulated disconnection.
-  await seam.devices.simulate.disconnect({
-    device_id: device.device_id
-  })
-};
+// eslint-disable-next-line no-console
+console.log(acsUser);
+
+
+// Step 2:
+// Create a card-based credential for each entrance for the ACS user.
+const credential = await seam.acs.credentials.create({
+  acs_user_id: acsUser.acs_user_id,
+  access_method: "card",
+  allowed_acs_entrance_ids: [
+    // List the IDs of the entrances to which
+    // you want to grant access.
+    // room101.seam_acs_entrance_id
+    "d3351d70-efb6-45d4-a580-fa7b2ffca586"
+  ],
+  starts_at: "2024-12-10T15:00:00.000Z",
+  ends_at: "2024-12-14T12:00:00.000Z",
+
+  visionline_metadata: {
+    "card_format": "rfid48",
+    "override": true
+  }
+});
+
+// eslint-disable-next-line no-console
+console.log(credential);
+
