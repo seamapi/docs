@@ -691,27 +691,29 @@ $seam = new Seam\SeamClient(
 //   ends_at: "2024-11-17T15:00:00Z"
 // );
 
-// Step 1:
-// Create the new ACS user.
-$acs_user = $seam->acs->users->create(
-  // acs_system_id: "11111111-1111-1111-1111-111111111111",
-  acs_system_id: "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
-  full_name: "Jane Doe PHP",
-  email_address: "jane-php@example.com"
-);
+// // Step 1:
+// // Create the new ACS user.
+// $acs_user = $seam->acs->users->create(
+//   // acs_system_id: "11111111-1111-1111-1111-111111111111",
+//   acs_system_id: "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
+//   full_name: "Jane Doe PHP",
+//   email_address: "jane-php@example.com"
+// );
 
-// Step 2:
-// Create a card-based credential for each entrance for the ACS user.
-$credential = $seam->acs->credentials->create(
-  acs_user_id: $acs_user->acs_user_id,
-  access_method: "card",
-  allowed_acs_entrance_ids: [
-    // List the IDs of the entrances to which
-    // you want to grant access.
-    // $room_101->seam_acs_entrance_id
-    "d3351d70-efb6-45d4-a580-fa7b2ffca586"
-  ],
-  starts_at: "2024-12-10T15:00:00.000Z",
-  ends_at: "2024-12-14T12:00:00.000Z",
-  visionline_metadata: array('card_format' => "rfid48", 'is_override_key' => true)
-);
+// // Step 2:
+// // Create a card-based credential for each entrance for the ACS user.
+// $credential = $seam->acs->credentials->create(
+//   acs_user_id: $acs_user->acs_user_id,
+//   access_method: "card",
+//   allowed_acs_entrance_ids: [
+//     // List the IDs of the entrances to which
+//     // you want to grant access.
+//     // $room_101->seam_acs_entrance_id
+//     "d3351d70-efb6-45d4-a580-fa7b2ffca586"
+//   ],
+//   starts_at: "2024-12-10T15:00:00.000Z",
+//   ends_at: "2024-12-14T12:00:00.000Z",
+//   visionline_metadata: array('card_format' => "rfid48", 'is_override_key' => true)
+// );
+
+echo json_encode($seam->devices->list(), JSON_PRETTY_PRINT);

@@ -1398,5 +1398,5 @@ seam = Seam(
 #   acs_encoder_id="22bae2e3-10dd-4cb4-9047-3bcf1fd9c390"
 # )
 
-# # pprint(seam.acs.credentials.get(acs_credential_id="ea5117bd-9e61-4dee-bff7-71f470300741"))
+pprint(seam.acs.credentials.get(acs_credential_id="ea5117bd-9e61-4dee-bff7-71f470300741"))
 # pprint(seam.action_attempts.get(action_attempt_id=encoding_action_attempt.action_attempt_id))

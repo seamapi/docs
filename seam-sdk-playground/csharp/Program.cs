@@ -56,8 +56,8 @@ var seam = new SeamClient(
 // }
 
 // foreach (var device in seam.Devices.List(
-  // deviceTypes: new() {Seam.Api.Devices.ListRequest.DeviceTypesEnum.MinutSensor, Seam.Api.Devices.ListRequest.DeviceTypesEnum.AugustLock}
-  // includeIf: new() {"CanRemotelyUnlock"}
+//   // deviceTypes: new() {Seam.Api.Devices.ListRequest.DeviceTypesEnum.MinutSensor, Seam.Api.Devices.ListRequest.DeviceTypesEnum.AugustLock}
+//   // includeIf: new() {"CanRemotelyUnlock"}
 // )) {Console.WriteLine(device);};
 
 // Console.WriteLine(seam.Devices.Get(deviceId: "13c59a88-7808-42d3-be0b-adb8f2f1d076"));
@@ -607,16 +607,16 @@ var seam = new SeamClient(
 
 // Console.WriteLine(createdConnectWebview);
 
-// Retrieve all devices for the connectedAccountId.
-var connectedDevices = seam.Devices.List(
-  // connectedAccountId: "11111111-1111-1111-1111-222222222222"
-  connectedAccountId: "486466da-a19f-48b3-824d-b9aa30b936c9"
-);
+// // Retrieve all devices for the connectedAccountId.
+// var connectedDevices = seam.Devices.List(
+//   // connectedAccountId: "11111111-1111-1111-1111-222222222222"
+//   connectedAccountId: "486466da-a19f-48b3-824d-b9aa30b936c9"
+// );
 
-foreach (Device connectedDevice in connectedDevices)
-{
-  Console.WriteLine(connectedDevice);
-}
+// foreach (Device connectedDevice in connectedDevices)
+// {
+//   Console.WriteLine(connectedDevice);
+// }
 
 // var connectWebview = seam.ConnectWebviews.Create(
 //   acceptedProviders: new() {Seam.Api.ConnectWebviews.CreateRequest.AcceptedProvidersEnum.FourSuites}
@@ -1036,25 +1036,25 @@ foreach (Device connectedDevice in connectedDevices)
 //   endsAt: "2024-11-17T15:00:00Z"
 // );
 
-// Step 1:
-// Create the new ACS user.
-AcsUser acsUser = seam.UsersAcs.Create(
-  acsSystemId: "11111111-1111-1111-1111-111111111111",
-  fullName: "Jane Doe",
-  emailAddress: "jane@example.com"
-);
+// // Step 1:
+// // Create the new ACS user.
+// AcsUser acsUser = seam.UsersAcs.Create(
+//   acsSystemId: "11111111-1111-1111-1111-111111111111",
+//   fullName: "Jane Doe",
+//   emailAddress: "jane@example.com"
+// );
 
-// Step 2:
-// Create a card-based credential for each entrance for the ACS user.
-AcsCredential credential = seam.CredentialsAcs.Create(
-  acsUserId: acsUser.acsUserId,
-  accessMethod: "card",
-  allowedAcsEntranceIds: new List<string>
-  {
-    // List the IDs of the entrances to which
-    // you want to grant access.
-    room_101.acsEntranceId
-  },
-  startsAt: "2024-12-01T15:00:00.000Z",
-  endsAt: "2024-12-04T12:00:00.000Z"
-);
+// // Step 2:
+// // Create a card-based credential for each entrance for the ACS user.
+// AcsCredential credential = seam.CredentialsAcs.Create(
+//   acsUserId: acsUser.acsUserId,
+//   accessMethod: "card",
+//   allowedAcsEntranceIds: new List<string>
+//   {
+//     // List the IDs of the entrances to which
+//     // you want to grant access.
+//     room_101.acsEntranceId
+//   },
+//   startsAt: "2024-12-01T15:00:00.000Z",
+//   endsAt: "2024-12-04T12:00:00.000Z"
+// );

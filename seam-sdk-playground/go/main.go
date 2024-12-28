@@ -6,13 +6,13 @@ import (
 	// "math/rand"
 	"os"
 //   "encoding/json"
-  "time"
+  // "time"
 //   "reflect"
 
   api "github.com/seamapi/go"
 	seam "github.com/seamapi/go/client"
   // "github.com/seamapi/go/useridentities"
-  "github.com/seamapi/go/acs"
+  // "github.com/seamapi/go/acs"
 
 
 
@@ -47,20 +47,20 @@ func run() error {
 	// fmt.Println(devices)
 	// return nil
 
-// devices, uErr := client.Devices.List(
-//   context.Background(),
-//   &api.DevicesListRequest{
-//     IncludeIf: []api.DevicesListRequestIncludeIfItem{
-//       api.DevicesListRequestIncludeIfItemCanRemotelyUnlock,
-//     },
-//   })
+devices, uErr := client.Devices.List(
+  context.Background(),
+  &api.DevicesListRequest{
+    // IncludeIf: []api.DevicesListRequestIncludeIfItem{
+    //   api.DevicesListRequestIncludeIfItemCanRemotelyUnlock,
+    // },
+  })
 
-// if uErr != nil {
-//     return uErr
-// }
+if uErr != nil {
+    return uErr
+}
 
-// fmt.Println(devices)
-// return nil
+fmt.Println(devices)
+return nil
 
 // // Get the device.
 // device, uErr := client.Locks.Get(
@@ -1528,52 +1528,52 @@ func run() error {
 // fmt.Println(accessCodes)
 // return nil
 
-// Step 1:
-// Create the new ACS user.
-acs_user, err := client.Acs.Users.Create(
-  context.Background(), &acs.UsersCreateRequest{
-    // AcsSystemId: "11111111-1111-1111-1111-111111111111",
-    AcsSystemId: "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
-    FullName: api.String("Jane Doe Go"),
-    EmailAddress: api.String("jane-go@example.com"),
-  },
-)
-if err != nil {
-  return err
-}
+// // Step 1:
+// // Create the new ACS user.
+// acs_user, err := client.Acs.Users.Create(
+//   context.Background(), &acs.UsersCreateRequest{
+//     // AcsSystemId: "11111111-1111-1111-1111-111111111111",
+//     AcsSystemId: "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
+//     FullName: api.String("Jane Doe Go"),
+//     EmailAddress: api.String("jane-go@example.com"),
+//   },
+// )
+// if err != nil {
+//   return err
+// }
 
-startsAt, err := time.Parse(time.RFC3339, "2024-12-10T15:00:00Z")
-endsAt, err := time.Parse(time.RFC3339, "2024-12-14T12:00:00Z")
-if err != nil {
-  return err
-}
+// startsAt, err := time.Parse(time.RFC3339, "2024-12-10T15:00:00Z")
+// endsAt, err := time.Parse(time.RFC3339, "2024-12-14T12:00:00Z")
+// if err != nil {
+//   return err
+// }
 
-// Step 2:
-// Create a card-based credential for each entrance for the ACS user.
-credential, err := client.Acs.Credentials.Create(
-  context.Background(), &acs.CredentialsCreateRequest{
-    AcsUserId: acs_user.AcsUserId,
-    AccessMethod: "card",
-    AllowedAcsEntranceIds: []string{
-      // List the IDs of the entrances to which
-      // you want to grant access.
-      // room_101.AcsEntranceId,
-      "d3351d70-efb6-45d4-a580-fa7b2ffca586",
-    },
-    StartsAt: api.Time(startsAt),
-    EndsAt: api.Time(endsAt),
-    VisionlineMetadata: &acs.CredentialsCreateRequestVisionlineMetadata{
-      CardFormat: acs.CredentialsCreateRequestVisionlineMetadataCardFormatRfid48.Ptr(),
-      Override: api.Bool(true),
-    },
-  },
-);
-if err != nil {
-  return err
-};
+// // Step 2:
+// // Create a card-based credential for each entrance for the ACS user.
+// credential, err := client.Acs.Credentials.Create(
+//   context.Background(), &acs.CredentialsCreateRequest{
+//     AcsUserId: acs_user.AcsUserId,
+//     AccessMethod: "card",
+//     AllowedAcsEntranceIds: []string{
+//       // List the IDs of the entrances to which
+//       // you want to grant access.
+//       // room_101.AcsEntranceId,
+//       "d3351d70-efb6-45d4-a580-fa7b2ffca586",
+//     },
+//     StartsAt: api.Time(startsAt),
+//     EndsAt: api.Time(endsAt),
+//     VisionlineMetadata: &acs.CredentialsCreateRequestVisionlineMetadata{
+//       CardFormat: acs.CredentialsCreateRequestVisionlineMetadataCardFormatRfid48.Ptr(),
+//       Override: api.Bool(true),
+//     },
+//   },
+// );
+// if err != nil {
+//   return err
+// };
 
-fmt.Println(credential)
-return nil
+// fmt.Println(credential)
+// return nil
 
 
 

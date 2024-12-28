@@ -32,8 +32,8 @@
     "@metalsmith/layouts": "^2.7.0",
     "@metalsmith/metadata": "^0.3.0",
     "@prettier/plugin-php": "^0.22.2",
-    "@seamapi/blueprint": "^0.30.0",
     "@prettier/plugin-ruby": "^4.0.4",
+    "@seamapi/blueprint": "^0.30.0",
     "@seamapi/types": "1.321.1",
     "change-case": "^5.4.4",
     "command-exists": "^1.2.9",
@@ -42,6 +42,7 @@
     "jstransformer-handlebars": "^1.2.0",
     "metalsmith": "^2.6.3",
     "prettier": "^3.0.0",
+    "seam": "^1.42.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {

@@ -24,10 +24,10 @@ import com.seam.api.types.SelectionMode;
 import com.seam.api.types.DevicesListDeviceProvidersRequestProviderCategory;
 import com.seam.api.types.ConnectedAccount;
 import com.seam.api.types.EventsListRequestEventType;
-import com.seam.api.types.UserIdentity;
+// import com.seam.api.types.UserIdentity;
 import com.seam.api.resources.devices.requests.DevicesGetRequest;
 import com.seam.api.resources.devices.requests.DevicesListRequest;
-import com.seam.api.resources.devices.simulate.requests.SimulateDisconnectRequest;
+// import com.seam.api.resources.devices.simulate.requests.SimulateDisconnectRequest;
 import com.seam.api.resources.locks.requests.LocksGetRequest;
 import com.seam.api.resources.locks.requests.LocksLockDoorRequest;
 import com.seam.api.resources.locks.requests.LocksUnlockDoorRequest;
@@ -38,7 +38,7 @@ import com.seam.api.resources.accesscodes.requests.AccessCodesCreateMultipleRequ
 import com.seam.api.resources.accesscodes.requests.AccessCodesListRequest;
 import com.seam.api.resources.accesscodes.requests.AccessCodesGetRequest;
 import com.seam.api.resources.accesscodes.requests.AccessCodesUpdateRequest;
-import com.seam.api.resources.accesscodes.requests.AccessCodesUpdateMultipleRequest;
+// import com.seam.api.resources.accesscodes.requests.AccessCodesUpdateMultipleRequest;
 import com.seam.api.resources.accesscodes.requests.AccessCodesDeleteRequest;
 import com.seam.api.resources.accesscodes.requests.AccessCodesPullBackupAccessCodeRequest;
 import com.seam.api.resources.accesscodes.unmanaged.requests.UnmanagedListRequest;
@@ -56,7 +56,7 @@ import com.seam.api.resources.thermostats.climatesettingschedules.requests.Clima
 import com.seam.api.resources.thermostats.climatesettingschedules.requests.ClimateSettingSchedulesUpdateRequest;
 import com.seam.api.resources.thermostats.climatesettingschedules.requests.ClimateSettingSchedulesDeleteRequest;
 import com.seam.api.resources.noisesensors.noisethresholds.requests.NoiseThresholdsCreateRequest;
-import com.seam.api.resources.useridentities.requests.UserIdentitiesCreateRequest;
+// import com.seam.api.resources.useridentities.requests.UserIdentitiesCreateRequest;
 import com.seam.api.resources.connectwebviews.requests.ConnectWebviewsCreateRequest;
 import com.seam.api.resources.connectwebviews.requests.ConnectWebviewsGetRequest;
 import com.seam.api.resources.devices.requests.DevicesListDeviceProvidersRequest;
@@ -874,11 +874,11 @@ public class Main {
 
 // System.out.println(UserIdentity);
 
-var devices = seam.devices().list(DevicesListRequest.builder()
-                .deviceType(DeviceType.HONEYWELL_THERMOSTAT)
+var accessCodes = seam.accessCodes().list(AccessCodesListRequest.builder()
+                .deviceId("8e94044d-a4d1-4691-9f7e-e97d3e8a0b73")
                 .build());
 
-System.out.println(devices);
+System.out.println(accessCodes);
 
 
 

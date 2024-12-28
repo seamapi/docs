@@ -512,36 +512,36 @@ seam = Seam.new(api_key: 'seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy')
 # )).inspect
 # puts (seam.devices.get(device_id: device_id)).can_program_online_access_codes.inspect
 
-# Step 1:
-# Create the new ACS user.
-acs_user = seam.acs.users.create(
-  # acs_system_id: "11111111-1111-1111-1111-111111111111",
-  acs_system_id: "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
-  full_name: "Jane Doe Ruby4",
-  email_address: "jane-ruby4@example.com"
-)
+# # Step 1:
+# # Create the new ACS user.
+# acs_user = seam.acs.users.create(
+#   # acs_system_id: "11111111-1111-1111-1111-111111111111",
+#   acs_system_id: "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
+#   full_name: "Jane Doe Ruby4",
+#   email_address: "jane-ruby4@example.com"
+# )
 
-# Step 2:
-# Create a card-based credential for each entrance for the ACS user.
-credential = seam.acs.credentials.create(
-  acs_user_id: acs_user.acs_user_id,
-  access_method: "card",
-  # access_method: "code",
-  # List the IDs of the entrances to which
-  # you want to grant access.
-  allowed_acs_entrance_ids: [
-    # room_101.seam_acs_entrance_id
-    "d3351d70-efb6-45d4-a580-fa7b2ffca586"
-  ],
-  starts_at: "2024-12-17T15:00:00.000Z",
-  ends_at: "2024-12-18T12:00:00.000Z",
-  visionline_metadata: {
-      "card_format": "rfid48",
-      "override": true
-  }
-)
+# # Step 2:
+# # Create a card-based credential for each entrance for the ACS user.
+# credential = seam.acs.credentials.create(
+#   acs_user_id: acs_user.acs_user_id,
+#   access_method: "card",
+#   # access_method: "code",
+#   # List the IDs of the entrances to which
+#   # you want to grant access.
+#   allowed_acs_entrance_ids: [
+#     # room_101.seam_acs_entrance_id
+#     "d3351d70-efb6-45d4-a580-fa7b2ffca586"
+#   ],
+#   starts_at: "2024-12-17T15:00:00.000Z",
+#   ends_at: "2024-12-18T12:00:00.000Z",
+#   visionline_metadata: {
+#       "card_format": "rfid48",
+#       "override": true
+#   }
+# )
 
-puts credential.inspect
+# puts credential.inspect
 
 # puts (seam.acs.users.list(
 #   acs_system_id: "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4"
@@ -558,3 +558,4 @@ puts credential.inspect
 # action_attempt = seam.action_attempts.get(action_attempt_id: "f0f125d9-fece-48d8-a828-529797ac8d46")
 # puts action_attempt.result.inspect
 
+puts seam.devices.list().inspect

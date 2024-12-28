@@ -1230,39 +1230,41 @@ const seam = new Seam({
 //   })
 // };
 
-// Step 1:
-// Create the new ACS user.
-const acsUser = await seam.acs.users.create({
-  // acs_system_id: "11111111-1111-1111-1111-111111111111",
-  acs_system_id: "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
-  full_name: "Jane Doe JS",
-  email_address: "jane-js@example.com"
-});
+// // Step 1:
+// // Create the new ACS user.
+// const acsUser = await seam.acs.users.create({
+//   // acs_system_id: "11111111-1111-1111-1111-111111111111",
+//   acs_system_id: "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
+//   full_name: "Jane Doe JS",
+//   email_address: "jane-js@example.com"
+// });
+
+// // eslint-disable-next-line no-console
+// console.log(acsUser);
+
+
+// // Step 2:
+// // Create a card-based credential for each entrance for the ACS user.
+// const credential = await seam.acs.credentials.create({
+//   acs_user_id: acsUser.acs_user_id,
+//   access_method: "card",
+//   allowed_acs_entrance_ids: [
+//     // List the IDs of the entrances to which
+//     // you want to grant access.
+//     // room101.seam_acs_entrance_id
+//     "d3351d70-efb6-45d4-a580-fa7b2ffca586"
+//   ],
+//   starts_at: "2024-12-10T15:00:00.000Z",
+//   ends_at: "2024-12-14T12:00:00.000Z",
+
+//   visionline_metadata: {
+//     "card_format": "rfid48",
+//     "override": true
+//   }
+// });
+
+// // eslint-disable-next-line no-console
+// console.log(credential);
 
 // eslint-disable-next-line no-console
-console.log(acsUser);
-
-
-// Step 2:
-// Create a card-based credential for each entrance for the ACS user.
-const credential = await seam.acs.credentials.create({
-  acs_user_id: acsUser.acs_user_id,
-  access_method: "card",
-  allowed_acs_entrance_ids: [
-    // List the IDs of the entrances to which
-    // you want to grant access.
-    // room101.seam_acs_entrance_id
-    "d3351d70-efb6-45d4-a580-fa7b2ffca586"
-  ],
-  starts_at: "2024-12-10T15:00:00.000Z",
-  ends_at: "2024-12-14T12:00:00.000Z",
-
-  visionline_metadata: {
-    "card_format": "rfid48",
-    "override": true
-  }
-});
-
-// eslint-disable-next-line no-console
-console.log(credential);
-
+console.log(await seam.devices.list());
