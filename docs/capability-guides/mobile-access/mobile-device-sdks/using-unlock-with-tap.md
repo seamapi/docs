@@ -50,7 +50,7 @@ class MyEventHandler implements ISeamEventHandler {
 {% tab title="iOS Swift" %}
 ```swift
 // Retrieve mobile credentials explicitly.
-if (seam.phone.get().nativeMetadata.isInitialized) {
+if (seam.phone.get().nativeMetadata.isInitialized) { // Coming soon!
   let credentials = seam.phone.native.credentials.list()
 }
 
@@ -88,7 +88,7 @@ if (requiredPermissions.isNotEmpty()) {
 
 {% tab title="iOS Swift" %}
 ```swift
-let requiredPermissions = seam.phone.native.listRequiredIosPermissions(
+let requiredPermissions = seam.phone.native.listRequiredIosPermissions( // Coming soon!
   enableUnlockWithTap: true
 )
 
@@ -137,7 +137,7 @@ fun handleEvent(event: SeamEvent) {
   // Check for changes in the phone state under the phone namespace.
   switch (event) {
   case .phone:
-    let phone = seam.phone.get().nativeMetadata
+    let phone = seam.phone.get().nativeMetadata // Coming soon!
     
     // Verify if the phone cannot unlock with tap.
     if(!phone.canUnlockWithTap) {
@@ -185,7 +185,7 @@ if (seam.phone.get().can_unlock_with_tap) {
 fun handleEvent(event: SeamEvent) {
   // Check for changes in the phone state, under the phone namespace.
   if (event is SeamEvent.Phone) {
-    unlockWithTap = seam.phone.native.unlockWithTap.get()
+    unlockWithTap = seam.phone.native.unlockWithTap.get() // Coming soon!
 
     if (unlockWithTap.isRunning) {
       if (!unlockWithTap.isScanning) {
@@ -223,12 +223,12 @@ func handleEvent(event: SeamEvent) {
   // Check for changes in the phone state, under the phone namespace.
   switch(event) {
   case .phone: 
-    let unlockWithTap = seam.phone.native.unlockWithTap.get()
+    let unlockWithTap = seam.phone.native.unlockWithTap.get() // Coming soon!
     if unlockWithTap.isRunning {
       if !unlockWithTap.isScanning {
         // Set the UI state to indicate that the phone is not scanning.
         // Check the error map because scanning is expected but is not occurring.
-        let errors = seam.phone.get().nativeMetadata.errors
+        let errors = seam.phone.get().nativeMetadata.errors // Coming soon!
         // Errors to look out for could include:
         // - BluetoothConnectionRequired: Bluetooth is turned off.
         // - NoCredential: Missing credentials for operation.

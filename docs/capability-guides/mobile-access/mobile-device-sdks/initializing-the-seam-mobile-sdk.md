@@ -398,7 +398,7 @@ func (
     // If the event is under the phone namespace, the phone state may have changed.
     switch(event) {
     case .phone:
-        let phone = seam.phone.get().nativeMetadata
+        let phone = seam.phone.get().nativeMetadata // Coming soon!
         
         // Check for the desired state of the phone for all app features to work.
         if (!phone.isInitialized || !phone.canUnlockWithTap) {

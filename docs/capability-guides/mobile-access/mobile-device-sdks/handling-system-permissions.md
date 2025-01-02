@@ -21,7 +21,7 @@ if (requiredPermissions.isNotEmpty()) {
 
 {% tab title="iOS Swift" %}
 ```swift
-let requiredPermissions = seam.phone.native.listRequiredIosPermissions(
+let requiredPermissions = seam.phone.native.listRequiredIosPermissions( // Coming soon!
   enableUnlockWithTap: true
 )
 
@@ -80,13 +80,13 @@ func eventDelegate(
     // Note that these events are located under the phone namespace.
     switch (event) {
     case .phone: 
-       let phone = seam.phone.get().nativeMetadata
+       let phone = seam.phone.get().nativeMetadata // Coming soon!
        
        // The desired state has not been met.
        if(!phone.canUnlockWithTap) {
          if (phone.errors.contains(where: $0 == {.phone(.native(.missingRequiredIosPermissions)))}) {
            // Need to update the required permissions.
-           let requiredPermissions = seam.phone.native.listRequiredIosPermissions(
+           let requiredPermissions = seam.phone.native.listRequiredIosPermissions( // Coming soon!
              enableUnlockWithTap: true
            )
            // Request the requiredPermissions or prompt the user to do so.
