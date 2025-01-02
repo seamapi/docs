@@ -7,23 +7,30 @@ export interface ApiRouteLayoutContext {
   title: string
   description: string
   path: string
-  resources: ApiRouteResouce[]
+  resources: ApiRouteResource[]
   endpoints: ApiRouteEndpoint[]
+  events: ApiRouteEvent[]
 }
 
-type ApiRouteResourceProperty = Pick<
+interface ApiRouteEvent {
+  name: string
+  description: string
+  properties: ApiRouteProperty[]
+}
+
+type ApiRouteProperty = Pick<
   Property,
   'name' | 'description' | 'isDeprecated' | 'deprecationMessage'
 > & {
   format: string
   enumValues?: string[]
-  objectProperties?: ApiRouteResourceProperty[]
+  objectProperties?: ApiRouteProperty[]
 }
 
-interface ApiRouteResouce {
+interface ApiRouteResource {
   name: string
   description: string
-  properties: ApiRouteResourceProperty[]
+  properties: ApiRouteProperty[]
 }
 
 type ApiRouteEndpoint = Pick<Endpoint, 'path' | 'description'>
@@ -34,6 +41,7 @@ export function setApiRouteLayoutContext(
   blueprint: Blueprint,
   pathMetadata: PathMetadata,
 ): void {
+  file.events = []
   const metadata = pathMetadata[route.path]
   if (metadata == null) {
     throw new Error(`Missing path metadata for ${route.path}`)
@@ -51,7 +59,11 @@ export function setApiRouteLayoutContext(
     }))
 
   file.resources = []
+  const resourceTypes = new Set<string>()
   for (const resourceType of metadata.resources) {
+    // UPSTREAM: thermostat_schedule.errors schema is defined with z.any() which is not supported by the blueprint
+    if (resourceType === 'thermostat_schedule') continue
+
     const resource = blueprint.resources[resourceType]
 
     if (resource == null) {
@@ -60,45 +72,65 @@ export function setApiRouteLayoutContext(
       )
     }
 
+    resourceTypes.add(resourceType)
+
     file.resources.push({
       name: resource.resourceType,
       description: resource.description,
       properties: resource.properties
         .filter(({ isUndocumented }) => !isUndocumented)
-        .map((prop) => {
-          const {
-            name,
-            description,
-            format,
-            isDeprecated,
-            deprecationMessage,
-          } = prop
-          const contextResourceProp: ApiRouteResourceProperty = {
-            name,
-            description,
-            format: normalizePropertyFormatForDocs(format),
-            isDeprecated,
-            deprecationMessage,
-          }
+        .map(mapBlueprintPropertyToRouteProperty),
+    })
+  }
 
-          if ('values' in prop) {
-            contextResourceProp.enumValues = prop.values.map(({ name }) => name)
-          }
+  for (const event of blueprint.events) {
+    if (
+      event.targetResourceType == null ||
+      !resourceTypes.has(event.targetResourceType)
+    ) {
+      continue
+    }
 
-          if ('properties' in prop) {
-            contextResourceProp.objectProperties = flattenObjectProperties(
-              prop.properties,
-            )
-          }
-
-          return contextResourceProp
-        }),
+    file.events.push({
+      name: event.eventType,
+      description: event.description,
+      properties: event.properties
+        .filter(({ isUndocumented }) => !isUndocumented)
+        .map(mapBlueprintPropertyToRouteProperty),
     })
   }
 }
 
 const getFirstParagraph = (text: string): string =>
   text.split('\n\n').at(0) ?? text
+
+const mapBlueprintPropertyToRouteProperty = (
+  prop: Property,
+): ApiRouteProperty => {
+  const { name, description, format, isDeprecated, deprecationMessage } = prop
+  const contextRouteProp: ApiRouteProperty = {
+    name,
+    description,
+    isDeprecated,
+    deprecationMessage,
+    format: '',
+  }
+
+  if ('values' in prop && prop.values.length > 1) {
+    contextRouteProp.format = normalizePropertyFormatForDocs(format)
+    contextRouteProp.enumValues = prop.values.map(({ name }) => name)
+  } else if ('values' in prop && prop.values.length === 1) {
+    contextRouteProp.format = normalizePropertyFormatForDocs('string')
+  } else {
+    contextRouteProp.format = normalizePropertyFormatForDocs(format)
+  }
+
+  if ('properties' in prop) {
+    contextRouteProp.objectProperties = flattenObjectProperties(prop.properties)
+  }
+
+  return contextRouteProp
+}
 
 type PropertyFormat = Property['format']
 
