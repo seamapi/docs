@@ -63,3 +63,58 @@ Sets up a new [enrollment automation](https://docs.seam.co/latest/capability-gui
 ### [`/user_identities/enrollment_automations/list`](./list.md)
 
 Returns a list of all [enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+
+## Events
+
+### `enrollment_automation.deleted`
+
+An enrollment automation was deleted.
+
+<details>
+
+<summary><code>created_at</code> <code>Datetime</code></summary>
+
+Time at which the event was created.
+
+</details>
+
+<details>
+
+<summary><code>enrollment_automation_id</code> <code>ID</code></summary>
+
+ID of the enrollment automation.
+
+</details>
+
+<details>
+
+<summary><code>event_id</code> <code>ID</code></summary>
+
+ID of the event.
+
+</details>
+
+<details>
+
+<summary><code>event_type</code> <code>String</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>occurred_at</code> <code>Datetime</code></summary>
+
+Time when the event occurred.
+
+</details>
+
+<details>
+
+<summary><code>workspace_id</code> <code>ID</code></summary>
+
+ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
+</details>
+
+---
+

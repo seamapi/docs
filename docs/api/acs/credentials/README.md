@@ -314,3 +314,146 @@ Unassigns a specified [credential](../../../capability-guides/access-systems/man
 ### [`/acs/credentials/update`](./update.md)
 
 Updates the code and ends at date and time for a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+## Events
+
+### `acs_credential.deleted`
+
+An ACS credential was deleted.
+
+<details>
+
+<summary><code>acs_credential_id</code> <code>ID</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>acs_system_id</code> <code>ID</code></summary>
+
+ID of the ACS system.
+
+</details>
+
+<details>
+
+<summary><code>connected_account_id</code> <code>ID</code></summary>
+
+{% hint style="warning" %}
+**Deprecated**. Will be removed.
+{% endhint %}
+
+ID of the connected account.
+
+</details>
+
+<details>
+
+<summary><code>created_at</code> <code>Datetime</code></summary>
+
+Time at which the event was created.
+
+</details>
+
+<details>
+
+<summary><code>event_id</code> <code>ID</code></summary>
+
+ID of the event.
+
+</details>
+
+<details>
+
+<summary><code>event_type</code> <code>String</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>occurred_at</code> <code>Datetime</code></summary>
+
+Time when the event occurred.
+
+</details>
+
+<details>
+
+<summary><code>workspace_id</code> <code>ID</code></summary>
+
+ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
+</details>
+
+---
+
+### `acs_credential.issued`
+
+An ACS credential was issued.
+
+<details>
+
+<summary><code>acs_credential_id</code> <code>ID</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>acs_system_id</code> <code>ID</code></summary>
+
+ID of the ACS system.
+
+</details>
+
+<details>
+
+<summary><code>connected_account_id</code> <code>ID</code></summary>
+
+{% hint style="warning" %}
+**Deprecated**. Will be removed.
+{% endhint %}
+
+ID of the connected account.
+
+</details>
+
+<details>
+
+<summary><code>created_at</code> <code>Datetime</code></summary>
+
+Time at which the event was created.
+
+</details>
+
+<details>
+
+<summary><code>event_id</code> <code>ID</code></summary>
+
+ID of the event.
+
+</details>
+
+<details>
+
+<summary><code>event_type</code> <code>String</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>occurred_at</code> <code>Datetime</code></summary>
+
+Time when the event occurred.
+
+</details>
+
+<details>
+
+<summary><code>workspace_id</code> <code>ID</code></summary>
+
+ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
+</details>
+
+---
+
