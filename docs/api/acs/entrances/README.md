@@ -28,35 +28,35 @@ Format: `Object`
 
 <details>
 
-<summary><code>door_name</code> Format: <code>string</code></summary>
+<summary><code>door_name</code> Format: <code>String</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>door_number</code> Format: <code>number</code></summary>
+<summary><code>door_number</code> Format: <code>Number</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>door_type</code> Format: <code>enum</code></summary>
+<summary><code>door_type</code> Format: <code>Enum</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>pms_id</code> Format: <code>string</code></summary>
+<summary><code>pms_id</code> Format: <code>String</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>stand_open</code> Format: <code>boolean</code></summary>
+<summary><code>stand_open</code> Format: <code>Boolean</code></summary>
 
 
 </details>
@@ -88,14 +88,14 @@ Format: `Object`
 
 <details>
 
-<summary><code>access_point_name</code> Format: <code>string</code></summary>
+<summary><code>access_point_name</code> Format: <code>String</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>common_area_number</code> Format: <code>number</code></summary>
+<summary><code>common_area_number</code> Format: <code>Number</code></summary>
 
 
 </details>
@@ -116,28 +116,28 @@ Format: `Object`
 
 <details>
 
-<summary><code>accessibility_type</code> Format: <code>string</code></summary>
+<summary><code>accessibility_type</code> Format: <code>String</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>door_name</code> Format: <code>string</code></summary>
+<summary><code>door_name</code> Format: <code>String</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>door_type</code> Format: <code>string</code></summary>
+<summary><code>door_type</code> Format: <code>String</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>is_connected</code> Format: <code>boolean</code></summary>
+<summary><code>is_connected</code> Format: <code>Boolean</code></summary>
 
 
 </details>
@@ -151,56 +151,56 @@ Format: `Object`
 
 <details>
 
-<summary><code>battery_level</code> Format: <code>string</code></summary>
+<summary><code>battery_level</code> Format: <code>String</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>door_name</code> Format: <code>string</code></summary>
+<summary><code>door_name</code> Format: <code>String</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>intrusion_alarm</code> Format: <code>boolean</code></summary>
+<summary><code>intrusion_alarm</code> Format: <code>Boolean</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>left_open_alarm</code> Format: <code>boolean</code></summary>
+<summary><code>left_open_alarm</code> Format: <code>Boolean</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>lock_type</code> Format: <code>string</code></summary>
+<summary><code>lock_type</code> Format: <code>String</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>locked_state</code> Format: <code>string</code></summary>
+<summary><code>locked_state</code> Format: <code>String</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>online</code> Format: <code>boolean</code></summary>
+<summary><code>online</code> Format: <code>Boolean</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>privacy_mode</code> Format: <code>boolean</code></summary>
+<summary><code>privacy_mode</code> Format: <code>Boolean</code></summary>
 
 
 </details>
@@ -214,21 +214,21 @@ Format: `Object`
 
 <details>
 
-<summary><code>door_description</code> Format: <code>string</code></summary>
+<summary><code>door_description</code> Format: <code>String</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>door_name</code> Format: <code>string</code></summary>
+<summary><code>door_name</code> Format: <code>String</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>ext_door_id</code> Format: <code>string</code></summary>
+<summary><code>ext_door_id</code> Format: <code>String</code></summary>
 
 
 </details>
@@ -242,21 +242,21 @@ Format: `Object`
 
 <details>
 
-<summary><code>door_category</code> Format: <code>enum</code></summary>
+<summary><code>door_category</code> Format: <code>Enum</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>door_name</code> Format: <code>string</code></summary>
+<summary><code>door_name</code> Format: <code>String</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>profiles</code> Format: <code>list</code></summary>
+<summary><code>profiles</code> Format: <code>List</code></summary>
 
 
 </details>
