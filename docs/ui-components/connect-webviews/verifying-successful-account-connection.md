@@ -9,7 +9,7 @@ description: >-
 Use one of the following methods to find out when your user's account has connected successfully to Seam through your app:
 
 * If you've redirected your app to the Connect Webview, [poll](verifying-successful-account-connection.md#polling) or use a [webhook](verifying-successful-account-connection.md#webhook) to determine when the Connect Webview has completed successfully. You can then [retrieve the device or ACS](retrieving-devices-or-access-control-systems-connected-through-a-connect-webview.md) associated with the newly-connected account.
-* If you've embedded the Connect Webview in an [iframe](https://www.w3schools.com/html/html\_iframe.asp), use [event listening](verifying-successful-account-connection.md#event-listening) to determine when to close the iframe. You can then [retrieve the device or ACS](retrieving-devices-or-access-control-systems-connected-through-a-connect-webview.md) associated with the newly-connected account.
+* If you've embedded the Connect Webview in an [iframe](https://www.w3schools.com/html/html_iframe.asp), use [event listening](verifying-successful-account-connection.md#event-listening) to determine when to close the iframe. You can then [retrieve the device or ACS](retrieving-devices-or-access-control-systems-connected-through-a-connect-webview.md) associated with the newly-connected account.
 
 {% hint style="info" %}
 You do not need to delete a Connect Webview once a user completes it. Instead, you can simply ignore completed Connect Webviews.
@@ -249,7 +249,7 @@ For more information, see [Webhooks](../../core-concepts/webhooks.md).
 
 ## **Event Listening**
 
-When you [host a Connect Webview in an HTML iframe](../../core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app.md#embed-the-connect-webview-in-an-iframe), the [iframe](https://www.w3schools.com/html/html\_iframe.asp) uses `window.parent.postMessage` to send messages to the parent window that is hosting the iframe. `window.parent.postMessage` is a cross-origin communication mechanism available in web browsers.
+When you [host a Connect Webview in an HTML iframe](../../core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app.md#embed-the-connect-webview-in-an-iframe), the [iframe](https://www.w3schools.com/html/html_iframe.asp) uses `window.parent.postMessage` to send messages to the parent window that is hosting the iframe. `window.parent.postMessage` is a cross-origin communication mechanism available in web browsers.
 
 Register an event listener for the parent window containing the iframe to monitor for `message` events. Specifically, listen for a `connect_webview.login_succeeded` event. This event indicates that Seam has successfully established the connection to the user's device or ACS account. A `connect_webview.login_failed` event indicates that the account connection did not complete successfully.
 
@@ -267,3 +267,16 @@ window.addEventListener(
 );
 ```
 
+***
+
+## Additional Connection-Related Events
+
+Once you have received a `connect_webview.login_succeeded` event, you can use webhooks or listen for any of the following useful connection-related events:
+
+| Event                                    | Description                                                                                                                                                                                                                                                                                                              |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `connected_account.created`              | A [connected account](../../core-concepts/connected-accounts/) has been imported into your Seam workspace.                                                                                                                                                                                                               |
+| `connected_account.connected`            | Seam has established connection to or is reconnected to a [connected account](../../core-concepts/connected-accounts/).                                                                                                                                                                                                  |
+| `connected_account.completed_first_sync` | Seam has finished the first sync of a connected account, and the corresponding devices or systems are now available.                                                                                                                                                                                                     |
+| `device.added`                           | A device was added to Seam or was re-added to Seam after having been removed.                                                                                                                                                                                                                                            |
+| `device.connected`                       | <p>The status of a device changed from offline to online. That is, the <code>device.properties.online</code> property changed from <code>false</code> to <code>true</code>.<br>Note that some devices operate entirely in offline mode, so Seam never emits a <code>device.connected</code> event for these devices.</p> |
