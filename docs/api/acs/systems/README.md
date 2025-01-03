@@ -289,7 +289,7 @@ An ACS system was connected.
 
 <details>
 
-<summary><code>acs_system_id</code> <code>ID</code></summary>
+<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
 
 ID of the ACS system.
 
@@ -297,7 +297,7 @@ ID of the ACS system.
 
 <details>
 
-<summary><code>connected_account_id</code> <code>ID</code></summary>
+<summary><code>connected_account_id</code> Format: <code>ID</code></summary>
 
 {% hint style="warning" %}
 **Deprecated**. Will be removed.
@@ -309,7 +309,7 @@ ID of the connected account.
 
 <details>
 
-<summary><code>created_at</code> <code>Datetime</code></summary>
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
 Time at which the event was created.
 
@@ -317,7 +317,7 @@ Time at which the event was created.
 
 <details>
 
-<summary><code>event_id</code> <code>ID</code></summary>
+<summary><code>event_id</code> Format: <code>ID</code></summary>
 
 ID of the event.
 
@@ -325,13 +325,13 @@ ID of the event.
 
 <details>
 
-<summary><code>event_type</code> <code>String</code></summary>
+<summary><code>event_type</code> Format: <code>String</code></summary>
 
 </details>
 
 <details>
 
-<summary><code>occurred_at</code> <code>Datetime</code></summary>
+<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
 Time when the event occurred.
 
@@ -339,7 +339,7 @@ Time when the event occurred.
 
 <details>
 
-<summary><code>workspace_id</code> <code>ID</code></summary>
+<summary><code>workspace_id</code> Format: <code>ID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
@@ -353,7 +353,7 @@ An ACS system was added.
 
 <details>
 
-<summary><code>acs_system_id</code> <code>ID</code></summary>
+<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
 
 ID of the ACS system.
 
@@ -361,7 +361,7 @@ ID of the ACS system.
 
 <details>
 
-<summary><code>connected_account_id</code> <code>ID</code></summary>
+<summary><code>connected_account_id</code> Format: <code>ID</code></summary>
 
 {% hint style="warning" %}
 **Deprecated**. Will be removed.
@@ -373,7 +373,7 @@ ID of the connected account.
 
 <details>
 
-<summary><code>created_at</code> <code>Datetime</code></summary>
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
 Time at which the event was created.
 
@@ -381,7 +381,7 @@ Time at which the event was created.
 
 <details>
 
-<summary><code>event_id</code> <code>ID</code></summary>
+<summary><code>event_id</code> Format: <code>ID</code></summary>
 
 ID of the event.
 
@@ -389,13 +389,13 @@ ID of the event.
 
 <details>
 
-<summary><code>event_type</code> <code>String</code></summary>
+<summary><code>event_type</code> Format: <code>String</code></summary>
 
 </details>
 
 <details>
 
-<summary><code>occurred_at</code> <code>Datetime</code></summary>
+<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
 Time when the event occurred.
 
@@ -403,7 +403,7 @@ Time when the event occurred.
 
 <details>
 
-<summary><code>workspace_id</code> <code>ID</code></summary>
+<summary><code>workspace_id</code> Format: <code>ID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
@@ -417,7 +417,7 @@ An ACS system was disconnected.
 
 <details>
 
-<summary><code>acs_system_id</code> <code>ID</code></summary>
+<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
 
 ID of the ACS system.
 
@@ -425,7 +425,7 @@ ID of the ACS system.
 
 <details>
 
-<summary><code>connected_account_id</code> <code>ID</code></summary>
+<summary><code>connected_account_id</code> Format: <code>ID</code></summary>
 
 {% hint style="warning" %}
 **Deprecated**. Will be removed.
@@ -437,7 +437,7 @@ ID of the connected account.
 
 <details>
 
-<summary><code>created_at</code> <code>Datetime</code></summary>
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
 Time at which the event was created.
 
@@ -445,7 +445,7 @@ Time at which the event was created.
 
 <details>
 
-<summary><code>event_id</code> <code>ID</code></summary>
+<summary><code>event_id</code> Format: <code>ID</code></summary>
 
 ID of the event.
 
@@ -453,13 +453,13 @@ ID of the event.
 
 <details>
 
-<summary><code>event_type</code> <code>String</code></summary>
+<summary><code>event_type</code> Format: <code>String</code></summary>
 
 </details>
 
 <details>
 
-<summary><code>occurred_at</code> <code>Datetime</code></summary>
+<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
 Time when the event occurred.
 
@@ -467,7 +467,7 @@ Time when the event occurred.
 
 <details>
 
-<summary><code>workspace_id</code> <code>ID</code></summary>
+<summary><code>workspace_id</code> Format: <code>ID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 

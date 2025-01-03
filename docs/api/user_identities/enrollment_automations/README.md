@@ -72,7 +72,7 @@ An enrollment automation was deleted.
 
 <details>
 
-<summary><code>created_at</code> <code>Datetime</code></summary>
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
 Time at which the event was created.
 
@@ -80,7 +80,7 @@ Time at which the event was created.
 
 <details>
 
-<summary><code>enrollment_automation_id</code> <code>ID</code></summary>
+<summary><code>enrollment_automation_id</code> Format: <code>ID</code></summary>
 
 ID of the enrollment automation.
 
@@ -88,7 +88,7 @@ ID of the enrollment automation.
 
 <details>
 
-<summary><code>event_id</code> <code>ID</code></summary>
+<summary><code>event_id</code> Format: <code>ID</code></summary>
 
 ID of the event.
 
@@ -96,13 +96,13 @@ ID of the event.
 
 <details>
 
-<summary><code>event_type</code> <code>String</code></summary>
+<summary><code>event_type</code> Format: <code>String</code></summary>
 
 </details>
 
 <details>
 
-<summary><code>occurred_at</code> <code>Datetime</code></summary>
+<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
 Time when the event occurred.
 
@@ -110,7 +110,7 @@ Time when the event occurred.
 
 <details>
 
-<summary><code>workspace_id</code> <code>ID</code></summary>
+<summary><code>workspace_id</code> Format: <code>ID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
