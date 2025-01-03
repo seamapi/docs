@@ -142,18 +142,27 @@ const normalizePropertyFormatForDocs = (format: PropertyFormat): string => {
   return formatMap[format] ?? pascalCase(format)
 }
 
+type PropertyWithNormalizedFormat = Omit<Property, 'format'> & {
+  format: string
+}
+
 const flattenObjectProperties = (
   properties: Property[],
   paths: string[] = [],
-): Property[] => {
-  const results: Property[] = []
+): PropertyWithNormalizedFormat[] => {
+  const results: PropertyWithNormalizedFormat[] = []
 
   for (const property of properties.filter(
     ({ isUndocumented }) => !isUndocumented,
   )) {
     const name = [...paths, property.name].join('.')
 
-    results.push({ ...property, name })
+    const { format, ...rest } = property
+    results.push({
+      ...rest,
+      format: normalizePropertyFormatForDocs(format),
+      name,
+    })
 
     if (property.format === 'object') {
       results.push(...flattenObjectProperties(property.properties, [name]))
