@@ -286,6 +286,15 @@ Indicates whether the new credential is a [multi-phone sync credential](https://
 
 ***
 
+### `salto_space_metadata`
+
+Type: `object`
+Required: No
+
+Salto Space-specific metadata for the new credential.
+
+***
+
 ### `starts_at`
 
 Type: `string`
