@@ -194,7 +194,7 @@ Also, if your [ACS architecture](../../capability-guides/access-systems/understa
 
 In addition, if your ACS architecture supports assigning access schedules directly to ACS users, you can specify an `access_schedule` for the user, including a `starts_at` and `ends_at` date and time.
 
-Further, you can use the `user_identity_id` parameter to associate a new ACS user with a [user identity](../../api/user_identities/). You can use a user identity to link an ACS user with an app user in your system, such as a [mobile access app user](../mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) or an app user who needs access to multiple ACSs.
+Further, you can use the `user_identity_id` parameter to associate a new ACS user with a [user identity](../../api/user_identities/). You can use a user identity to link an ACS user with an app user in your system, such as a [mobile access app user](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) or an app user who needs access to multiple ACSs.
 
 {% tabs %}
 {% tab title="Python" %}

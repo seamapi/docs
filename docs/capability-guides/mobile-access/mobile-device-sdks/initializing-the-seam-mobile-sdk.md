@@ -64,9 +64,9 @@ See the [device or system integration guide](../../../device-and-system-integrat
 
 ## 3. Configure a User Identity for your App User and Generate a Client Session Token
 
-A [user identity](../../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md) enables the application to request a user's mobile access permissions and use the app to unlock doors.
+A [user identity](../managing-mobile-app-user-accounts-with-user-identities.md) enables the application to request a user's mobile access permissions and use the app to unlock doors.
 
-First, use the Seam API to create a [user identity](../../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) that will correspond to the App User Account using your internal user ID or other identifying information.
+First, use the Seam API to create a [user identity](../managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) that will correspond to the App User Account using your internal user ID or other identifying information.
 
 Then, using the user identity, create a [client session](../../../core-concepts/authentication/client-session-tokens/) and capture the resulting [client session token](../../../core-concepts/authentication/client-session-tokens/). This token will be used to authenticate the user on your application.
 
@@ -398,7 +398,7 @@ func (
     // If the event is under the phone namespace, the phone state may have changed.
     switch(event) {
     case .phone:
-        let phone = seam.phone.get().nativeMetadata
+        let phone = seam.phone.get().nativeMetadata // Coming soon!
         
         // Check for the desired state of the phone for all app features to work.
         if (!phone.isInitialized || !phone.canUnlockWithTap) {

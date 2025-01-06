@@ -30,8 +30,8 @@ Seam currently only supports issuing guest mobile credentials and plastic cards.
 
 Use the following basic process to grant access in a Visionline ACS:
 
-1. Set up the mobile user account by creating a [user identity](../../../products/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity).
-2. Turn on the [enrollment automation](../../../products/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system.md) for this user identity and credential manager.
+1. Set up the mobile user account by creating a [user identity](../../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity).
+2. Turn on the [enrollment automation](../../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md) for this user identity and credential manager.
 3. Associate the user identity with an [ACS user](../../../products/access-systems/#what-is-a-user).
 4. Gather the entrances to which the credential should have access.
 5. Create the [guest](./#issuing-guest-mobile-credentials) mobile credential.

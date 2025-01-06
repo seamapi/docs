@@ -40,6 +40,15 @@ Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.i
 
 ---
 
+### `errors`
+
+Format: `List`
+
+Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.
+
+
+---
+
 ### `max_override_period_minutes`
 
 Format: `Number`

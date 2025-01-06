@@ -27,7 +27,7 @@ We support the following features:
 
 * [Managing access systems](../../products/access-systems/)
 * [Issuing plastic card credentials](../../capability-guides/access-systems/managing-credentials.md#create-a-key-card-based-credential)
-* [Issuing mobile access credentials](../../products/mobile-access-in-development/)
+* [Issuing mobile access credentials](../../capability-guides/mobile-access/)
 
 ***
 

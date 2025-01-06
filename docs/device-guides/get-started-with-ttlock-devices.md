@@ -1950,7 +1950,7 @@ Now that you've completed this getting started guide for TTLock devices, you can
 * [ ] **Find out more**\
   Explore the other types of devices and systems that you can control with Seam, including [access control systems](../products/access-systems/), [thermostats](../products/thermostats/), and [noise sensors](../products/noise-sensors/).
 * [ ] **Develop for mobile access**\
-  Learn about Seam's [mobile access solution](../products/mobile-access-in-development/).
+  Learn about Seam's [mobile access solution](../capability-guides/mobile-access/).
 
 {% hint style="info" %}
 If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).

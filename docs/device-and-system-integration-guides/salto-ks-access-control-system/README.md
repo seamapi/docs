@@ -31,7 +31,7 @@ For more information about managing your Salto KS ACS through Seam, see the foll
 * [Programming Code-Based Salto KS Credentials](programming-code-based-salto-ks-credentials.md)
 * [Access Group-Based Access Control Systems](../../capability-guides/access-systems/understanding-access-control-system-differences.md#access-group-based-access-control-systems)
 * [Access Control Systems](../../products/access-systems/)
-* [Mobile Access](../../products/mobile-access-in-development/)
+* [Mobile Access](../../capability-guides/mobile-access/)
 
 ***
 

@@ -12,7 +12,7 @@ Seam user identities are a feature for tracking and managing user accounts in yo
 
 ### User Identities Can Be Connected to Users in Multiple Access Control Systems
 
-User identities can be linked to one [ACS user](../access-systems/#what-is-a-user) in each access control system. Any mobile credentials issued to these ACS users are consolidated under the user identity. Consequently, a user's mobile app account has access to these credentials through the user identity.
+User identities can be linked to one [ACS user](../../products/access-systems/#what-is-a-user) in each access control system. Any mobile credentials issued to these ACS users are consolidated under the user identity. Consequently, a user's mobile app account has access to these credentials through the user identity.
 
 <figure><img src="../../.gitbook/assets/acs identites.png" alt="A user identity can be connected to an ACS user in each ACS." width="563"><figcaption></figcaption></figure>
 
