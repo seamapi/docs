@@ -61,9 +61,6 @@ export function setApiRouteLayoutContext(
   file.resources = []
   const resourceTypes = new Set<string>()
   for (const resourceType of metadata.resources) {
-    // UPSTREAM: thermostat_schedule.errors schema is defined with z.any() which is not supported by the blueprint
-    if (resourceType === 'thermostat_schedule') continue
-
     const resource = blueprint.resources[resourceType]
 
     if (resource == null) {
