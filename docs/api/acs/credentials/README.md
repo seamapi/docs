@@ -213,56 +213,56 @@ Visionline-specific metadata for the credential.
 
 <details>
 
-<summary><code>auto_join</code> Format: <code>boolean</code></summary>
+<summary><code>auto_join</code> Format: <code>Boolean</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>card_function_type</code> Format: <code>enum</code></summary>
+<summary><code>card_function_type</code> Format: <code>Enum</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>card_id</code> Format: <code>string</code></summary>
+<summary><code>card_id</code> Format: <code>String</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>common_acs_entrance_ids</code> Format: <code>list</code></summary>
+<summary><code>common_acs_entrance_ids</code> Format: <code>List</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>credential_id</code> Format: <code>string</code></summary>
+<summary><code>credential_id</code> Format: <code>String</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>guest_acs_entrance_ids</code> Format: <code>list</code></summary>
+<summary><code>guest_acs_entrance_ids</code> Format: <code>List</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>is_valid</code> Format: <code>boolean</code></summary>
+<summary><code>is_valid</code> Format: <code>Boolean</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>joiner_acs_credential_ids</code> Format: <code>list</code></summary>
+<summary><code>joiner_acs_credential_ids</code> Format: <code>List</code></summary>
 
 
 </details>
@@ -314,3 +314,138 @@ Unassigns a specified [credential](../../../capability-guides/access-systems/man
 ### [`/acs/credentials/update`](./update.md)
 
 Updates the code and ends at date and time for a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+## Events
+
+### `acs_credential.deleted`
+
+An ACS credential was deleted.
+
+<details>
+
+<summary><code>acs_credential_id</code> Format: <code>ID</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
+
+ID of the ACS system.
+
+</details>
+
+<details>
+
+<summary><code>connected_account_id</code> Format: <code>ID</code></summary>
+
+ID of the connected account.
+
+</details>
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Time at which the event was created.
+
+</details>
+
+<details>
+
+<summary><code>event_id</code> Format: <code>ID</code></summary>
+
+ID of the event.
+
+</details>
+
+<details>
+
+<summary><code>event_type</code> Format: <code>String</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
+
+Time when the event occurred.
+
+</details>
+
+<details>
+
+<summary><code>workspace_id</code> Format: <code>ID</code></summary>
+
+ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
+</details>
+
+---
+
+### `acs_credential.issued`
+
+An ACS credential was issued.
+
+<details>
+
+<summary><code>acs_credential_id</code> Format: <code>ID</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
+
+ID of the ACS system.
+
+</details>
+
+<details>
+
+<summary><code>connected_account_id</code> Format: <code>ID</code></summary>
+
+ID of the connected account.
+
+</details>
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Time at which the event was created.
+
+</details>
+
+<details>
+
+<summary><code>event_id</code> Format: <code>ID</code></summary>
+
+ID of the event.
+
+</details>
+
+<details>
+
+<summary><code>event_type</code> Format: <code>String</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
+
+Time when the event occurred.
+
+</details>
+
+<details>
+
+<summary><code>workspace_id</code> Format: <code>ID</code></summary>
+
+ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
+</details>
+
+---
+

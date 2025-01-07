@@ -12,7 +12,7 @@ Format: `Object`
 
 <details>
 
-<summary><code>ends_at</code> Format: <code>datetime</code></summary>
+<summary><code>ends_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
@@ -20,7 +20,7 @@ Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org
 
 <details>
 
-<summary><code>starts_at</code> Format: <code>datetime</code></summary>
+<summary><code>starts_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
@@ -250,3 +250,72 @@ Revokes access to all [entrances](https://docs.seam.co/latest/api/acs/entrances)
 ### [`/acs/users/update`](./update.md)
 
 Updates the properties of a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+## Events
+
+### `acs_user.deleted`
+
+An ACS user was deleted.
+
+<details>
+
+<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
+
+ID of the ACS system.
+
+</details>
+
+<details>
+
+<summary><code>acs_user_id</code> Format: <code>ID</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>connected_account_id</code> Format: <code>ID</code></summary>
+
+ID of the connected account.
+
+</details>
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Time at which the event was created.
+
+</details>
+
+<details>
+
+<summary><code>event_id</code> Format: <code>ID</code></summary>
+
+ID of the event.
+
+</details>
+
+<details>
+
+<summary><code>event_type</code> Format: <code>String</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
+
+Time when the event occurred.
+
+</details>
+
+<details>
+
+<summary><code>workspace_id</code> Format: <code>ID</code></summary>
+
+ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
+</details>
+
+---
+
