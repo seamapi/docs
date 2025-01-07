@@ -114,6 +114,7 @@ These items are intentionally undocumented.
 
 - `acs_user.is_latest_desired_state_synced_with_provider`: Only used internally.
 - `acs_user.latest_desired_state_synced_with_provider_at`: Only used internally.
+- `thermostat_schedule.unstable_is_override_allowed`: Unstable
 
 ### Endpoints
 

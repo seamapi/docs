@@ -275,10 +275,6 @@ ID of the ACS system.
 
 <summary><code>connected_account_id</code> Format: <code>ID</code></summary>
 
-{% hint style="warning" %}
-**Deprecated**. Will be removed.
-{% endhint %}
-
 ID of the connected account.
 
 </details>
