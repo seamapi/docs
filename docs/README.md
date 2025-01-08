@@ -12,9 +12,19 @@ To get started quickly with Seam, follow the [Quick Start](quickstart.md) to cre
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Get</strong> <strong>API Key</strong> (free)</td><td>Sign up for the Seam Console and get your API keys. →</td><td></td><td><a href=".gitbook/assets/seam-api-key.png">seam-api-key.png</a></td><td><a href="https://console.seam.co/">https://console.seam.co/</a></td></tr><tr><td><strong>Quick Start</strong> (5 mins)</td><td>Learn how to connect a device and issue your first API call. →</td><td></td><td><a href=".gitbook/assets/seam-quick-start-light.png">seam-quick-start-light.png</a></td><td><a href="quickstart.md">quickstart.md</a></td></tr></tbody></table>
 
+{% tabs %}
+{% tab title="Smart Locks and Access Codes API" %}
 {% embed url="https://youtu.be/99ZpSq2Z1-8" %}
-You can control you IoT devices easily with the Seam API. In this video, learn how to get started!
+You can control your smart locks easily with the Seam API. In this video, learn how to get started!
 {% endembed %}
+{% endtab %}
+
+{% tab title="Thermostats API" %}
+{% embed url="https://www.youtube.com/watch?amp;ab_channel=Seam&amp;t=102s&v=3CYvoJtAGNc" %}
+You can control your thermostats easily with the Seam API. In this video, learn how to get started!
+{% endembed %}
+{% endtab %}
+{% endtabs %}
 
 ## Install an SDK
 
