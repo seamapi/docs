@@ -319,7 +319,7 @@ Updates the code and ends at date and time for a specified [credential](../../..
 
 ### `acs_credential.deleted`
 
-An ACS credential was deleted.
+An [ACS credential](../../../capability-guides/access-systems/managing-credentials.md) was deleted.
 
 <details>
 
@@ -331,7 +331,7 @@ An ACS credential was deleted.
 
 <summary><code>acs_system_id</code> Format: <code>ID</code></summary>
 
-ID of the ACS system.
+ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 </details>
 
@@ -339,7 +339,7 @@ ID of the ACS system.
 
 <summary><code>connected_account_id</code> Format: <code>ID</code></summary>
 
-ID of the connected account.
+ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
 </details>
 
@@ -347,7 +347,7 @@ ID of the connected account.
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
-Time at which the event was created.
+Date and time at which the event was created.
 
 </details>
 
@@ -369,7 +369,7 @@ ID of the event.
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
-Time when the event occurred.
+Date and time at which the event occurred.
 
 </details>
 
@@ -385,7 +385,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
 ### `acs_credential.issued`
 
-An ACS credential was issued.
+An [ACS credential](../../../capability-guides/access-systems/managing-credentials.md) was issued.
 
 <details>
 
@@ -397,7 +397,7 @@ An ACS credential was issued.
 
 <summary><code>acs_system_id</code> Format: <code>ID</code></summary>
 
-ID of the ACS system.
+ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 </details>
 
@@ -405,7 +405,7 @@ ID of the ACS system.
 
 <summary><code>connected_account_id</code> Format: <code>ID</code></summary>
 
-ID of the connected account.
+ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
 </details>
 
@@ -413,7 +413,7 @@ ID of the connected account.
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
-Time at which the event was created.
+Date and time at which the event was created.
 
 </details>
 
@@ -435,7 +435,7 @@ ID of the event.
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
-Time when the event occurred.
+Date and time at which the event occurred.
 
 </details>
 

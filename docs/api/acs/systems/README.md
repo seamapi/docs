@@ -285,13 +285,13 @@ Returns a list of all credential manager ACS systems that are compatible with a 
 
 ### `acs_system.connected`
 
-An ACS system was connected.
+An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) was connected.
 
 <details>
 
 <summary><code>acs_system_id</code> Format: <code>ID</code></summary>
 
-ID of the ACS system.
+ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 </details>
 
@@ -299,7 +299,7 @@ ID of the ACS system.
 
 <summary><code>connected_account_id</code> Format: <code>ID</code></summary>
 
-ID of the connected account.
+ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
 </details>
 
@@ -307,7 +307,7 @@ ID of the connected account.
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
-Time at which the event was created.
+Date and time at which the event was created.
 
 </details>
 
@@ -329,7 +329,7 @@ ID of the event.
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
-Time when the event occurred.
+Date and time at which the event occurred.
 
 </details>
 
@@ -345,13 +345,13 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
 ### `acs_system.added`
 
-An ACS system was added.
+An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) was added.
 
 <details>
 
 <summary><code>acs_system_id</code> Format: <code>ID</code></summary>
 
-ID of the ACS system.
+ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 </details>
 
@@ -359,7 +359,7 @@ ID of the ACS system.
 
 <summary><code>connected_account_id</code> Format: <code>ID</code></summary>
 
-ID of the connected account.
+ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
 </details>
 
@@ -367,7 +367,7 @@ ID of the connected account.
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
-Time at which the event was created.
+Date and time at which the event was created.
 
 </details>
 
@@ -389,7 +389,7 @@ ID of the event.
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
-Time when the event occurred.
+Date and time at which the event occurred.
 
 </details>
 
@@ -405,13 +405,13 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
 ### `acs_system.disconnected`
 
-An ACS system was disconnected.
+An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) was disconnected.
 
 <details>
 
 <summary><code>acs_system_id</code> Format: <code>ID</code></summary>
 
-ID of the ACS system.
+ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 </details>
 
@@ -419,7 +419,7 @@ ID of the ACS system.
 
 <summary><code>connected_account_id</code> Format: <code>ID</code></summary>
 
-ID of the connected account.
+ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
 </details>
 
@@ -427,7 +427,7 @@ ID of the connected account.
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
-Time at which the event was created.
+Date and time at which the event was created.
 
 </details>
 
@@ -449,7 +449,7 @@ ID of the event.
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
-Time when the event occurred.
+Date and time at which the event occurred.
 
 </details>
 
