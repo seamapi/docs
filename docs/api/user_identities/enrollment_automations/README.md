@@ -68,13 +68,13 @@ Returns a list of all [enrollment automations](https://docs.seam.co/latest/capab
 
 ### `enrollment_automation.deleted`
 
-An enrollment automation was deleted.
+An [enrollment automation](../../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) was deleted.
 
 <details>
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
-Time at which the event was created.
+Date and time at which the event was created.
 
 </details>
 
@@ -82,7 +82,7 @@ Time at which the event was created.
 
 <summary><code>enrollment_automation_id</code> Format: <code>ID</code></summary>
 
-ID of the enrollment automation.
+ID of the [enrollment automation](../../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut).
 
 </details>
 
@@ -104,7 +104,7 @@ ID of the event.
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
-Time when the event occurred.
+Date and time at which the event occurred.
 
 </details>
 
