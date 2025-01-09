@@ -93,13 +93,6 @@ Format: `Object`
 
 </details>
 
-<details>
-
-<summary><code>common_area_number</code> Format: <code>Number</code></summary>
-
-
-</details>
-
 
 ---
 
