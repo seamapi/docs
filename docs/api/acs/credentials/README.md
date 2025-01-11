@@ -117,6 +117,8 @@ Possible enum values:
 - `hid_credential`
 - `visionline_card`
 - `salto_ks_credential`
+- `assa_abloy_vostio_card`
+- `assa_abloy_vostio_mobile_key`
 
 
 ---
