@@ -54,6 +54,18 @@ To create a [Connect Webview](../../core-concepts/connect-webviews/) that enable
 
 ## Brand-Specific Restrictions
 
+Note the following Salto KS restrictions:
+
+### Salto KS Account Type
+
+You must use a Salto KS production environment account to connect to Seam. You cannot use "Accept Environment" credentials.
+
+To confirm that your Salto KS account is a production environment account, note the Salto KS dashboard URL. Make sure that the subdomain within this URL is `app`, for example, `https://app.saltoks.com`.
+
+A subdomain of `app-accept`, for example, `https://app-accept.saltoks.com`, indicates an "Accept Environment" that you cannot connect to Seam.
+
+### ACS Credentials
+
 When creating a credential for Salto KS, you cannot specify a custom PIN code. Instead, Salto KS generates the PIN code.
 
 ***
