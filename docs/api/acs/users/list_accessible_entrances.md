@@ -11,8 +11,8 @@ Lists the [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a 
 - API key
 - Client session token
 - Personal access token
-  Must also include the `seam-workspace` header in the request.
-
+    Must also include the `seam-workspace` header in the request
+  
 ## Request Parameters
 
 ### `acs_user_id`

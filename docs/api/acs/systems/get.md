@@ -115,8 +115,8 @@ func main() {
 
 - API key
 - Personal access token
-  Must also include the `seam-workspace` header in the request.
-
+    Must also include the `seam-workspace` header in the request
+  
 ## Request Parameters
 
 ### `acs_system_id`

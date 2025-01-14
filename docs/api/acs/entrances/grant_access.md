@@ -10,8 +10,8 @@ POST /acs/entrances/grant_access ⇒ void
 
 - API key
 - Personal access token
-  Must also include the `seam-workspace` header in the request.
-
+    Must also include the `seam-workspace` header in the request
+  
 ## Request Parameters
 
 ### `acs_entrance_id`
