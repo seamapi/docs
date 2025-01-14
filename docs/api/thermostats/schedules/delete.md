@@ -117,6 +117,7 @@ nil
 - API key
 - Client session token
 - Personal access token
+  - Must also include the `seam-workspace` header in the request
 
 ## Request Parameters
 
