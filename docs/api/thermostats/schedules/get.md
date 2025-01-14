@@ -158,8 +158,8 @@ api.ThermostatSchedule{ThermostatScheduleId: "89d3507e-60e3-4101-bd1b-ba066ec30a
 - API key
 - Client session token
 - Personal access token
-    Must also include the `seam-workspace` header in the request
-  
+  <br>Must also include the `seam-workspace` header in the request.
+
 ## Request Parameters
 
 ### `thermostat_schedule_id`

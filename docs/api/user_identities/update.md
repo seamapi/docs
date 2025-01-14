@@ -10,8 +10,8 @@ PATCH /user_identities/update ⇒ void
 
 - API key
 - Personal access token
-    Must also include the `seam-workspace` header in the request
-  
+  <br>Must also include the `seam-workspace` header in the request.
+
 ## Request Parameters
 
 ### `email_address`

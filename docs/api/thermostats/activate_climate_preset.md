@@ -142,8 +142,8 @@ api.ActionAttempt{ActionAttemptId: "05de2295-d1dc-4748-aae3-9931658bde20", Statu
 
 - API key
 - Personal access token
-    Must also include the `seam-workspace` header in the request
-  
+  <br>Must also include the `seam-workspace` header in the request.
+
 ## Request Parameters
 
 ### `climate_preset_key`

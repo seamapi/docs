@@ -176,8 +176,8 @@ api.Unknown{UserIdentityId: "5c945ab5-c75e-4bcb-8e5f-9410061c401f", EnrollmentAu
 
 - API key
 - Personal access token
-    Must also include the `seam-workspace` header in the request
-  
+  <br>Must also include the `seam-workspace` header in the request.
+
 ## Request Parameters
 
 ### `acs_credential_pool_id`
