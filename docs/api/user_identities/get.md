@@ -159,7 +159,7 @@ api.UserIdentity{UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", UserIde
 
 - API key
 - Personal access token
-  - Must also include the `seam-workspace` header in the request
+  Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
