@@ -34,6 +34,9 @@
 
 {{#each authMethods}}
 - {{this}}
+{{#if (eq this 'Personal access token')}}
+  - {{#if (eq ../workspaceScope 'required')}}Must also include the `seam-workspace` header in the request{{/if}}{{#if (eq ../workspaceScope 'optional')}}Can also include the `seam-workspace` header in the request{{/if}}{{#if (eq ../workspaceScope 'none')}}Must omit the `seam-workspace` header from the request{{/if}}
+{{/if}}
 {{/each}}
 
 {{/if}}
