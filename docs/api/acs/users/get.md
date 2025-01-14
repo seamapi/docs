@@ -22,7 +22,6 @@ await seam.acs.users.get({
 {
   "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
   "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "acs_access_group_ids": ["123e4567-e89b-12d3-a456-426614174000"],
   "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
   "created_at": "2024-04-05T07:57:05.323Z",
   "display_name": "Jane Doe",
@@ -46,7 +45,6 @@ seam.acs.users.get(acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 AcsUser(
     acs_user_id="123e4567-e89b-12d3-a456-426614174000",
     acs_system_id="123e4567-e89b-12d3-a456-426614174000",
-    acs_access_group_ids=["123e4567-e89b-12d3-a456-426614174000"],
     workspace_id="123e4567-e89b-12d3-a456-426614174000",
     created_at="2024-04-05T07:57:05.323Z",
     display_name="Jane Doe",
@@ -70,7 +68,6 @@ seam.acs.users.get(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 {
   "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
   "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "acs_access_group_ids" => ["123e4567-e89b-12d3-a456-426614174000"],
   "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
   "created_at" => "2024-04-05T07:57:05.323Z",
   "display_name" => "Jane Doe",
@@ -96,7 +93,6 @@ $seam->acs->users->get(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33");
 [
     "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
     "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "acs_access_group_ids" => ["123e4567-e89b-12d3-a456-426614174000"],
     "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
     "created_at" => "2024-04-05T07:57:05.323Z",
     "display_name" => "Jane Doe",
@@ -120,7 +116,6 @@ seam acs users get --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 {
   "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
   "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "acs_access_group_ids": ["123e4567-e89b-12d3-a456-426614174000"],
   "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
   "created_at": "2024-04-05T07:57:05.323Z",
   "display_name": "Jane Doe",
@@ -153,7 +148,7 @@ func main() {
 #### Response
 
 ```go
-api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", AcsAccessGroupIds: []string{"123e4567-e89b-12d3-a456-426614174000"}, WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "Jane Doe", FullName: "Jane Doe", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100"}
+api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "Jane Doe", FullName: "Jane Doe", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100"}
 ```
 {% endtab %}
 
