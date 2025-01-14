@@ -53,6 +53,50 @@ ID of the ACS user to whom the credential belongs.
 
 ---
 
+### `assa_abloy_vostio_metadata`
+
+Format: `Object`
+
+Vostio-specific metadata for the credential.
+
+<details>
+
+<summary><code>door_names</code> Format: <code>List</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>endpoint_id</code> Format: <code>String</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>key_id</code> Format: <code>String</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>key_issuing_request_id</code> Format: <code>String</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>override_guest_acs_entrance_ids</code> Format: <code>List</code></summary>
+
+
+</details>
+
+
+---
+
 ### `card_number`
 
 Format: `String`
@@ -117,8 +161,8 @@ Possible enum values:
 - `hid_credential`
 - `visionline_card`
 - `salto_ks_credential`
-- `assa_abloy_vostio_card`
-- `assa_abloy_vostio_mobile_key`
+- `assa_abloy_vostio_key`
+- `salto_space_key`
 
 
 ---

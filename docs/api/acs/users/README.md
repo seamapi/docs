@@ -107,6 +107,7 @@ Possible enum values:
 - `salto_site_user`
 - `latch_user`
 - `dormakaba_community_user`
+- `salto_space_user`
 
 
 ---
