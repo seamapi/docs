@@ -2,6 +2,7 @@ import type {
   CodeSampleSdk,
   Endpoint,
   SeamAuthMethod,
+  SeamWorkspaceScope,
 } from '@seamapi/blueprint'
 
 const supportedSdks: CodeSampleSdk[] = [
@@ -18,6 +19,7 @@ export interface ApiEndpointLayoutContext {
   title: string
   path: string
   authMethods: AuthMethodDisplayName[]
+  workspaceScope: SeamWorkspaceScope
   request: {
     preferredMethod: string
     parameters: Array<{
@@ -73,6 +75,7 @@ export function setEndpointLayoutContext(
   file.description = endpoint.description
   file.title = endpoint.title
   file.path = endpoint.path
+  file.workspaceScope = endpoint.workspaceScope
 
   file.authMethods = endpoint.authMethods
     .filter(

@@ -165,6 +165,7 @@ api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUs
 
 - API key
 - Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
