@@ -10,8 +10,7 @@ Format: `ID`
 
 ID of the `acs_system`.
 
-
----
+***
 
 ### `can_add_acs_users_to_acs_access_groups`
 
@@ -19,8 +18,7 @@ Format: `Boolean`
 
 Indicates whether the `acs_system` supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](../../../capability-guides/access-systems/understanding-access-control-system-differences.md#access-group-based-access-control-systems).
 
-
----
+***
 
 ### `can_automate_enrollment`
 
@@ -28,8 +26,7 @@ Format: `Boolean`
 
 Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`.
 
-
----
+***
 
 ### `can_create_acs_access_groups`
 
@@ -37,8 +34,7 @@ Format: `Boolean`
 
 Indicates whether the `acs_system` supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](../../../capability-guides/access-systems/understanding-access-control-system-differences.md#access-group-based-access-control-systems).
 
-
----
+***
 
 ### `can_remove_acs_users_from_acs_access_groups`
 
@@ -46,17 +42,15 @@ Format: `Boolean`
 
 Indicates whether the `acs_system` supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](../../../capability-guides/access-systems/understanding-access-control-system-differences.md#access-group-based-access-control-systems).
 
-
----
+***
 
 ### `connected_account_id`
 
 Format: `ID`
 
-ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the `acs_system`.
+ID of the [connected account](../../../core-concepts/connected-accounts/) associated with the `acs_system`.
 
-
----
+***
 
 ### `connected_account_ids`
 
@@ -66,10 +60,9 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 
 Format: `List`
 
-IDs of the [connected accounts](../../../core-concepts/connected-accounts/README.md) associated with the `acs_system`.
+IDs of the [connected accounts](../../../core-concepts/connected-accounts/) associated with the `acs_system`.
 
-
----
+***
 
 ### `created_at`
 
@@ -77,17 +70,15 @@ Format: `Datetime`
 
 Date and time at which the `acs_system` was created.
 
-
----
+***
 
 ### `default_credential_manager_acs_system_id`
 
 Format: `ID`
 
-ID of the default credential manager acs_system for this access control system.
+ID of the default credential manager acs\_system for this access control system.
 
-
----
+***
 
 ### `errors`
 
@@ -95,8 +86,7 @@ Format: `List`
 
 Errors associated with the `acs_system`.
 
-
----
+***
 
 ### `external_type`
 
@@ -105,22 +95,22 @@ Format: `Enum`
 Brand-specific terminology for the `acs_system` type.
 
 Possible enum values:
-- `pti_site`
-- `alta_org`
-- `salto_ks_site`
-- `salto_space_system`
-- `brivo_account`
-- `hid_credential_manager_organization`
-- `visionline_system`
-- `assa_abloy_credential_service`
-- `latch_building`
-- `dormakaba_community_site`
-- `legic_connect_credential_service`
-- `assa_abloy_vostio`
-- `assa_abloy_vostio_credential_service`
 
+* `pti_site`
+* `alta_org`
+* `salto_ks_site`
+* `salto_space_system`
+* `brivo_account`
+* `hid_credential_manager_organization`
+* `visionline_system`
+* `assa_abloy_credential_service`
+* `latch_building`
+* `dormakaba_community_site`
+* `legic_connect_credential_service`
+* `assa_abloy_vostio`
+* `assa_abloy_vostio_credential_service`
 
----
+***
 
 ### `external_type_display_name`
 
@@ -128,8 +118,7 @@ Format: `String`
 
 Display name that corresponds to the brand-specific terminology for the `acs_system` type.
 
-
----
+***
 
 ### `image_alt_text`
 
@@ -137,8 +126,7 @@ Format: `String`
 
 Alternative text for the `acs_system` image.
 
-
----
+***
 
 ### `image_url`
 
@@ -146,8 +134,7 @@ Format: `String`
 
 URL for the image that represents the `acs_system`.
 
-
----
+***
 
 ### `is_credential_manager`
 
@@ -155,8 +142,7 @@ Format: `Boolean`
 
 Indicates if the `acs_system` is a credential manager.
 
-
----
+***
 
 ### `location`
 
@@ -170,8 +156,7 @@ Time zone in which the `acs_system` is located.
 
 </details>
 
-
----
+***
 
 ### `name`
 
@@ -179,8 +164,7 @@ Format: `String`
 
 Name of the `acs_system`.
 
-
----
+***
 
 ### `system_type`
 
@@ -191,22 +175,22 @@ Name of the `acs_system`.
 Format: `Enum`
 
 Possible enum values:
-- `pti_site`
-- `alta_org`
-- `salto_ks_site`
-- `salto_space_system`
-- `brivo_account`
-- `hid_credential_manager_organization`
-- `visionline_system`
-- `assa_abloy_credential_service`
-- `latch_building`
-- `dormakaba_community_site`
-- `legic_connect_credential_service`
-- `assa_abloy_vostio`
-- `assa_abloy_vostio_credential_service`
 
+* `pti_site`
+* `alta_org`
+* `salto_ks_site`
+* `salto_space_system`
+* `brivo_account`
+* `hid_credential_manager_organization`
+* `visionline_system`
+* `assa_abloy_credential_service`
+* `latch_building`
+* `dormakaba_community_site`
+* `legic_connect_credential_service`
+* `assa_abloy_vostio`
+* `assa_abloy_vostio_credential_service`
 
----
+***
 
 ### `system_type_display_name`
 
@@ -216,8 +200,7 @@ Possible enum values:
 
 Format: `String`
 
-
----
+***
 
 ### `visionline_metadata`
 
@@ -247,8 +230,7 @@ Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel i
 
 </details>
 
-
----
+***
 
 ### `warnings`
 
@@ -256,42 +238,41 @@ Format: `List`
 
 Warnings associated with the `acs_system`.
 
-
----
+***
 
 ### `workspace_id`
 
 Format: `ID`
 
-ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the `acs_system`.
+ID of the [workspace](../../../core-concepts/workspaces/) that contains the `acs_system`.
 
-
----
+***
 
 ## Endpoints
 
-### [`/acs/systems/get`](./get.md)
+### [`/acs/systems/get`](get.md)
 
 Returns a specified [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
-### [`/acs/systems/list`](./list.md)
+
+### [`/acs/systems/list`](list.md)
 
 Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems).
-### [`/acs/systems/list_compatible_credential_manager_acs_systems`](./list_compatible_credential_manager_acs_systems.md)
 
-Returns a list of all credential manager ACS systems that are compatible with a specified
-[access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+### [`/acs/systems/list_compatible_credential_manager_acs_systems`](list_compatible_credential_manager_acs_systems.md)
+
+Returns a list of all credential manager ACS systems that are compatible with a specified [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ## Events
 
 ### `acs_system.connected`
 
-An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) was connected.
+An ACS system was connected.
 
 <details>
 
 <summary><code>acs_system_id</code> Format: <code>ID</code></summary>
 
-ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+ID of the ACS system.
 
 </details>
 
@@ -299,7 +280,7 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 <summary><code>connected_account_id</code> Format: <code>ID</code></summary>
 
-ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+ID of the connected account.
 
 </details>
 
@@ -307,7 +288,7 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
-Date and time at which the event was created.
+Time at which the event was created.
 
 </details>
 
@@ -323,13 +304,15 @@ ID of the event.
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
-Date and time at which the event occurred.
+Time when the event occurred.
 
 </details>
 
@@ -337,21 +320,21 @@ Date and time at which the event occurred.
 
 <summary><code>workspace_id</code> Format: <code>ID</code></summary>
 
-ID of the [workspace](../../../core-concepts/workspaces/README.md).
+ID of the [workspace](../../../core-concepts/workspaces/).
 
 </details>
 
----
+***
 
 ### `acs_system.added`
 
-An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) was added.
+An ACS system was added.
 
 <details>
 
 <summary><code>acs_system_id</code> Format: <code>ID</code></summary>
 
-ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+ID of the ACS system.
 
 </details>
 
@@ -359,7 +342,7 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 <summary><code>connected_account_id</code> Format: <code>ID</code></summary>
 
-ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+ID of the connected account.
 
 </details>
 
@@ -367,7 +350,7 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
-Date and time at which the event was created.
+Time at which the event was created.
 
 </details>
 
@@ -383,13 +366,15 @@ ID of the event.
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
-Date and time at which the event occurred.
+Time when the event occurred.
 
 </details>
 
@@ -397,21 +382,21 @@ Date and time at which the event occurred.
 
 <summary><code>workspace_id</code> Format: <code>ID</code></summary>
 
-ID of the [workspace](../../../core-concepts/workspaces/README.md).
+ID of the [workspace](../../../core-concepts/workspaces/).
 
 </details>
 
----
+***
 
 ### `acs_system.disconnected`
 
-An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) was disconnected.
+An ACS system was disconnected.
 
 <details>
 
 <summary><code>acs_system_id</code> Format: <code>ID</code></summary>
 
-ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+ID of the ACS system.
 
 </details>
 
@@ -419,7 +404,7 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 <summary><code>connected_account_id</code> Format: <code>ID</code></summary>
 
-ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+ID of the connected account.
 
 </details>
 
@@ -427,7 +412,7 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
-Date and time at which the event was created.
+Time at which the event was created.
 
 </details>
 
@@ -443,13 +428,15 @@ ID of the event.
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
-Date and time at which the event occurred.
+Time when the event occurred.
 
 </details>
 
@@ -457,9 +444,8 @@ Date and time at which the event occurred.
 
 <summary><code>workspace_id</code> Format: <code>ID</code></summary>
 
-ID of the [workspace](../../../core-concepts/workspaces/README.md).
+ID of the [workspace](../../../core-concepts/workspaces/).
 
 </details>
 
----
-
+***

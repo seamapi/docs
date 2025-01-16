@@ -18,29 +18,28 @@ An enrollment automation initializes the phones for a user identity with a crede
 
 ### Initialize the User Identity with a Credential Manager
 
-To set up an enrollment automation, call the [Launch Enrollment Automation](../../api/user_identities/enrollment_automations/launch.md) function with the ID of the user identity (`user_identity_id`) and the system ID of the credential manager (`credential_manager_acs_system_id`).
+To set up an enrollment automation, call the [Launch Enrollment Automation](../../api/user_identities/enrollment_automations/launch.md) function with the ID of the user identity and the system ID of the credential manager. You can also choose to create a credential manager user.
 
 {% tabs %}
 {% tab title="Python" %}
-**Request:**
+**Command:**
 
 ```python
-seam.enrollment_automations.launch(
-  user_identity_id = "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
-  credential_manager_acs_system_id = "6737e186-8d54-48ce-a7da-a0be4d252172"
+seam.user_identities.enrollment_automations.launch(
+  user_identity_id = "22222222-2222-2222-2222-222222222222",
+  credential_manager_acs_system_id = "88888888-8888-8888-8888-888888888888",
+  create_credential_manager_user = True
 )
 ```
 
-**Response:**
+**Output:**
 
 ```
-EnrollmentAutomation(user_identity_id='5c945ab5-c75e-4bcb-8e5f-9410061c401f',
-    enrollment_automation_id='05505650-aa57-49ab-8f19-429738758895',
-    acs_credential_provisioning_automation_id='05505650-aa57-49ab-8f19-429738758895',
-    credential_manager_acs_system_id='6737e186-8d54-48ce-a7da-a0be4d252172',
-    is_running=True,
-    workspace_id='398d80b7-3f96-47c2-b85a-6f8ba21d07be',
-    created_at="2024-01-09T05:45:33.068Z")
+EnrollmentAutomation(
+  user_identity_id='22222222-2222-2222-2222-222222222222',
+  enrollment_automation_id='77777777-8888-7777-7777-888888888888',
+  ...
+)
 ```
 {% endtab %}
 
@@ -51,12 +50,11 @@ EnrollmentAutomation(user_identity_id='5c945ab5-c75e-4bcb-8e5f-9410061c401f',
 curl -X 'POST' \
   'https://connect.getseam.com/user_identities/enrollment_automations/launch' \
   -H 'accept: application/json' \
-  -H 'Authorization: Bearer ${API_KEY}' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
-  "user_identity_id": "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
-  "credential_manager_acs_system_id": "6737e186-8d54-48ce-a7da-a0be4d252172",
-  "acs_credential_pool_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "user_identity_id": "22222222-2222-2222-2222-222222222222",
+  "credential_manager_acs_system_id": "88888888-8888-8888-8888-888888888888",
   "create_credential_manager_user": true
 }'
 ```
@@ -66,27 +64,118 @@ curl -X 'POST' \
 ```json
 {
   "enrollment_automation": {
-    "user_identity_id": "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
-    "enrollment_automation_id": "05505650-aa57-49ab-8f19-429738758895",
-    "acs_credential_provisioning_automation_id": "05505650-aa57-49ab-8f19-429738758895",
-    "credential_manager_acs_system_id": "6737e186-8d54-48ce-a7da-a0be4d252172",
-    "is_running": true,
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "created_at": "2024-01-09T05:45:33.068Z"
+    "user_identity_id": "22222222-2222-2222-2222-222222222222",
+    "enrollment_automation_id": "77777777-8888-7777-7777-888888888888",
+    ...
   },
   "ok": true
 }
 ```
 {% endtab %}
 
+{% tab title="JavaScript" %}
+**Command:**
+
+```javascript
+await seam.userIdentities.enrollmentAutomations.launch({
+  user_identity_id: "22222222-2222-2222-2222-222222222222",
+  credential_manager_acs_system_id: "88888888-8888-8888-8888-888888888888",
+  create_credential_manager_user: true,
+});
+```
+
+**Output:**
+
+```json
+{
+  "user_identity_id": "22222222-2222-2222-2222-222222222222",
+  "enrollment_automation_id": "77777777-8888-7777-7777-888888888888",
+  ...
+}
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+**Command:**
+
+```ruby
+seam.user_identities.enrollment_automations.launch(
+  user_identity_id: "22222222-2222-2222-2222-222222222222",
+  credential_manager_acs_system_id: "88888888-8888-8888-8888-888888888888",
+  create_credential_manager_user: true,
+)
+```
+
+**Output:**
+
+```
+<Seam::Resources::EnrollmentAutomation:0x005f0
+  user_identity_id="22222222-2222-2222-2222-222222222222"
+  enrollment_automation_id="77777777-8888-7777-7777-888888888888"
+  ...
+>
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+**Command:**
+
+```php
+$seam->user_identities->->enrollment_automations->launch(
+  user_identity_id: "22222222-2222-2222-2222-222222222222",
+  credential_manager_acs_system_id: "88888888-8888-8888-8888-888888888888",
+  create_credential_manager_user: true
+);
+```
+
+**Output:**
+
+```json
+{
+  "user_identity_id": "22222222-2222-2222-2222-222222222222",
+  "enrollment_automation_id": "77777777-8888-7777-7777-888888888888",
+  ...
+}
+```
+{% endtab %}
+
+{% tab title="C#" %}
+**Command:**
+
+```csharp
+Coming soon!
+```
+
+**Output:**
+
+```json
+Coming soon!
+```
+{% endtab %}
+
+{% tab title="Java" %}
+**Command:**
+
+```java
+Coming soon!
+```
+
+**Output:**
+
+```json
+Coming soon!
+```
+{% endtab %}
+
 {% tab title="Go" %}
-**Request:**
+**Command:**
 
 ```go
-enrollmentAutomation, uErr := client.UserIdentities.EnrollmentAutomations.Launch(context.Background(), &useridentities.EnrollmentAutomationsLaunchRequest{
-    UserIdentityId: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
-    CredentialManagerAcsSystemId: "6737e186-8d54-48ce-a7da-a0be4d252172",
-    AcsCredentialPoolId: api.String("3fa85f64-5717-4562-b3fc-2c963f66afa6"),
+enrollmentAutomation, uErr := client.UserIdentities.EnrollmentAutomations.Launch(
+  context.Background(),
+  &api.EnrollmentAutomationsLaunchRequest{
+    UserIdentityId: api.String("22222222-2222-2222-2222-222222222222"),
+    CredentialManagerAcsSystemId: api.String("88888888-8888-8888-8888-888888888888"),
     CreateCredentialManagerUser: api.Bool(true),
 })
 
@@ -98,24 +187,20 @@ fmt.Println(enrollmentAutomation)
 return nil
 ```
 
-**Response:**
+**Output:**
 
 ```json
 {
-    "user_identity_id": "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
-    "enrollment_automation_id": "05505650-aa57-49ab-8f19-429738758895",
-    "acs_credential_provisioning_automation_id": "05505650-aa57-49ab-8f19-429738758895",
-    "credential_manager_acs_system_id": "6737e186-8d54-48ce-a7da-a0be4d252172",
-    "is_running": true,
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "created_at": "2024-01-09T05:45:33.068Z"
+  "user_identity_id": "22222222-2222-2222-2222-222222222222",
+  "enrollment_automation_id": "77777777-8888-7777-7777-888888888888",
+  ...
 }
 ```
 {% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
-We may automate this step in the next iteration of our API. Consequently, you may not need to perform this step in the future.
+We may automate this step in a future iteration of our API. Consequently, you may not need to perform this step in the future.
 {% endhint %}
 
 ***
@@ -130,39 +215,44 @@ When issuing mobile credentials for a mobile app user, it is necessary to issue 
 
 ## Issuing Multi-Phone Sync Credentials
 
-To issue mobile credentials, you must configure a multi-phone sync credential. This type of credential automatically replicates itself when the app user logs in on a new phone. To configure a multi-phone sync credential, include the ID of the ACS user (`acs_user_id`), set `is_multi_phone_sync_credential` to `true`, and include the card details that would be shared across these credentials.
+To issue mobile credentials, you must configure a multi-phone sync credential. This type of credential automatically replicates itself when the app user logs in on a new phone. To configure a multi-phone sync credential, include the ID of the ACS user, set `is_multi_phone_sync_credential` to `true`, and include the card details that should be shared across these credentials.
+
+Seam configures the card details that you include in the request across all the credentials that it creates for each phone. Include only common card details, such as the [facility code](https://www.idwholesaler.com/learning-center/26-bit-proximity-card/), and omit any unique card details, such as the card number. For more information about specific card properties, see the user guide for the access control system or credential manager.
 
 {% hint style="info" %}
-Seam configures the card details that you include in the request across all the credentials that it creates for each phone. Include only common card details, such as the [facility code](https://www.idwholesaler.com/learning-center/26-bit-proximity-card/), and omit any unique card details such as the card number. For more information about specific card properties, see the user guide for the access control system or credential manager.
+The code samples in this section contain manufacturer-specific metadata that may vary by ACS. For details, see the [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS.
 {% endhint %}
 
 {% tabs %}
 {% tab title="Python" %}
-**Request:**
+**Command:**
 
 ```python
 seam.acs.credentials.create(
-  is_multi_phone_sync_credential = True,
-  acs_user_id = "4d223973-0874-4831-8630-bfcb29e6bce0",
-  access_method = "mobile_key",
-  # System-specific properties
-  card_format = "rfid48",
-  facility_code = "9",
+  is_multi_phone_sync_credential=True,
+  acs_user_id="33333333-3333-3333-3333-333333333333",
+  access_method="mobile_key",
+  credential_manager_acs_system_id="88888888-8888-8888-8888-888888888888",
+  # ACS manufacturer-specific properties
+  visionline_metadata={
+    "cardFormat": "rfid48",
+    "label": "%ROOMNUM% - %SITENAME%",
+    "override": True
+  },
+  ...
 )
 ```
 
-**Response:**
+**Output:**
 
 ```
-AcsCredential(acs_credential_id='28dd02cb-7d54-42ee-94b4-1e70af0b21e1',
-    acs_user_id='4d223973-0874-4831-8630-bfcb29e6bce0',
-    display_name='Multi Phone Sync Credential',
-    code=null,
-    acs_system_id='8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4',
-    access_method='mobile_key',
-    workspace_id='398d80b7-3f96-47c2-b85a-6f8ba21d07be',
-    created_at='2024-01-11T10:42:25.848Z',
-    is_multi_phone_sync_credential=True)
+AcsCredential(
+  acs_credential_id='99999999-9999-9999-9999-999999999999',
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  access_method='mobile_key',
+  is_multi_phone_sync_credential=True,
+  ...
+)
 ```
 {% endtab %}
 
@@ -170,17 +260,23 @@ AcsCredential(acs_credential_id='28dd02cb-7d54-42ee-94b4-1e70af0b21e1',
 **Request:**
 
 ```bash
+# Note the manufacturer-specific visionline_metadata in this request.
 curl -X 'POST' \
   'https://connect.getseam.com/acs/credentials/create' \
   -H 'accept: application/json' \
-  -H 'Authorization: Bearer seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy' \
+  -H "Authorization: Bearer ${API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
-  "acs_user_id": "4d223973-0874-4831-8630-bfcb29e6bce0",
   "is_multi_phone_sync_credential": true,
-  "card_format": "rfid48",
-  "facility_code": "9",
-  "access_method": "mobile_key"
+  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  "access_method": "mobile_key",
+  "credential_manager_acs_system_id": "88888888-8888-8888-8888-888888888888",
+  "visionline_metadata": {
+    "cardFormat": "rfid48",
+    "label": "%ROOMNUM% - %SITENAME%",
+    "override": true
+  },
+  ...
 }'
 ```
 
@@ -189,57 +285,172 @@ curl -X 'POST' \
 ```json
 {
   "acs_credential": {
-    "acs_credential_id": "28dd02cb-7d54-42ee-94b4-1e70af0b21e1",
-    "acs_user_id": "4d223973-0874-4831-8630-bfcb29e6bce0",
-    "display_name": "Multi Phone Sync Credential",
-    "code": null,
-    "acs_system_id": "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
+    "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+    "acs_user_id": "33333333-3333-3333-3333-333333333333",
     "access_method": "mobile_key",
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "created_at": "2024-01-11T10:42:25.848Z",
-    "is_multi_phone_sync_credential": true
+    "is_multi_phone_sync_credential": true,
+    ...
   },
   "ok": true
 }
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
+{% tab title="JavaScript" %}
+**Command:**
 
-```go
-acsCredential, uErr := client.Acs.Credentials.Create(context.Background(), &acs.CredentialsCreateRequest{
-    AcsUserId: "4d223973-0874-4831-8630-bfcb29e6bce0",
-    IsMultiPhoneSyncCredential: api.Bool(true),
-    CardFormat: acs.CredentialsCreateRequestCardFormatRfid48.Ptr(),
-    // FacilityCode: "9",
-    AccessMethod: "mobile_key",
-})
-
-if uErr != nil {
-    return uErr
-}
-
-fmt.Println(acsCredential)
-return nil
+```javascript
+await seam.acs.credentials.create({
+  is_multi_phone_sync_credential: true,
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  access_method: "mobile_key",
+  credential_manager_acs_system_id: "88888888-8888-8888-8888-888888888888",
+  // ACS manufacturer-specific properties
+  visionline_metadata: {
+    "cardFormat": "rfid48",
+    "label": "%ROOMNUM% - %SITENAME%",
+    "override": true
+  },
+  ...
+});
 ```
 
-**Response:**
+**Output:**
 
 ```json
 {
-  "acs_credential": {
-    "acs_credential_id": "4b7705a6-59a4-4885-a9bc-72eb27277558",
-    "acs_user_id": "4d223973-0874-4831-8630-bfcb29e6bce0",
-    "display_name": "Multi Phone Sync Credential",
-    "code": null,
-    "acs_system_id": "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
-    "access_method": "mobile_key",
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "created_at": "2024-01-11T11:47:57.039Z",
-    "is_multi_phone_sync_credential": true
+  acs_credential_id: '99999999-9999-9999-9999-999999999999',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  access_method: 'mobile_key',
+  is_multi_phone_sync_credential: true,
+  ...
+}
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+**Command:**
+
+```ruby
+seam.acs.credentials.create(
+  is_multi_phone_sync_credential: true,
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  access_method: "mobile_key",
+  credential_manager_acs_system_id: "88888888-8888-8888-8888-888888888888",
+  # ACS manufacturer-specific properties
+  visionline_metadata: {
+    "cardFormat" => "rfid48",
+    "label" => "%ROOMNUM% - %SITENAME%",
+    "override" => true
   },
-  "ok": true
+  ...
+)
+```
+
+**Output:**
+
+```
+<Seam::Resources::AcsCredential:0x005f0
+  acs_credential_id="99999999-9999-9999-9999-999999999999"
+  acs_user_id="33333333-3333-3333-3333-333333333333"
+  access_method="mobile_key"
+  is_multi_phone_sync_credential=true
+  ...
+>
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+**Command:**
+
+```php
+$seam->acs->credentials->create(
+  is_multi_phone_sync_credential: true,
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  access_method: "mobile_key",
+  credential_manager_acs_system_id: "88888888-8888-8888-8888-888888888888",
+  // ACS manufacturer-specific properties
+  visionline_metadata => [
+    "cardFormat" => "rfid48",
+    "label" => "%ROOMNUM% - %SITENAME%",
+    "override" => true
+  ],
+  ...
+);
+```
+
+**Output:**
+
+```json
+{
+  "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  "access_method": "mobile_key",
+  "is_multi_phone_sync_credential": true,
+  ...
+}
+```
+{% endtab %}
+
+{% tab title="C#" %}
+**Command:**
+
+```csharp
+Coming soon!
+```
+
+**Output:**
+
+```json
+Coming soon!
+```
+{% endtab %}
+
+{% tab title="Java" %}
+**Command:**
+
+```java
+// Coming soon!
+```
+
+**Output:**
+
+```json
+// Coming soon!
+```
+{% endtab %}
+
+{% tab title="Go" %}
+**Command:**
+
+```go
+credential, uErr := client.Acs.Credentials.Create(
+  context.Background(),
+  &acs.CredentialsCreateRequest{
+    IsMultiPhoneSyncCredential: api.Bool(true),
+    AcsUserId: "33333333-3333-3333-3333-333333333333",
+    AccessMethod: "mobile_key",
+    CredentialManagerAcsSystemId: api.String("88888888-8888-8888-8888-888888888888"),
+    // ACS manufacturer-specific properties
+    VisionlineMetadata: &acs.CredentialsCreateRequestVisionlineMetadata{
+      CardFormat: acs.CredentialsCreateRequestVisionlineMetadataCardFormatRfid48.Ptr(),
+      Label: api.String("%ROOMNUM% - %SITENAME%"),
+      Override: api.Bool(true),
+    },
+    ...
+  },
+)
+```
+
+**Output:**
+
+```json
+{
+  acs_credential_id: '99999999-9999-9999-9999-999999999999',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  access_method: 'mobile_key',
+  is_multi_phone_sync_credential: true,
+  ...
 }
 ```
 {% endtab %}
