@@ -28,6 +28,10 @@
   resources:
     - acs_credential
 
+/acs/phones:
+  title: Phones
+  resources: []
+
 /thermostats:
   title: Thermostats
   resources: []
