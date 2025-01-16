@@ -115,6 +115,8 @@ These items are intentionally undocumented.
 - `acs_user.is_latest_desired_state_synced_with_provider`: Only used internally.
 - `acs_user.latest_desired_state_synced_with_provider_at`: Only used internally.
 - `thermostat_schedule.unstable_is_override_allowed`: Unstable
+- `unmanaged_acs_user.is_latest_desired_state_synced_with_provider`: Only used internally.
+- `unmanaged_acs_user.latest_desired_state_synced_with_provider_at`: Only used internally.
 
 ### Endpoints
 
@@ -168,6 +170,7 @@ Items that are intentionally undocumented are not included in this section.
 - `access_code`
 - `acs_credential_pool`
 - `acs_credential_provisioning_automation`
+- `acs_encoder`
 - `client_session`
 - `connect_webview`
 - `connected_account`
@@ -178,6 +181,7 @@ Items that are intentionally undocumented are not included in this section.
 - `phone`
 - `service_health`
 - `unmanaged_access_code`
+- `unmanaged_acs_access_group`
 - `webhook`
 - `workspace`
 
@@ -304,6 +308,20 @@ Items that are intentionally undocumented are not included in this section.
 - `service_health.status`
 - `unmanaged_access_code.is_managed`
 - `unmanaged_access_code.status`
+- `unmanaged_acs_access_group.access_group_type`
+- `unmanaged_acs_access_group.access_group_type_display_name`
+- `unmanaged_acs_access_group.display_name`
+- `unmanaged_acs_access_group.is_managed`
+- `unmanaged_acs_credential.acs_credential_pool_id`
+- `unmanaged_acs_credential.card_number`
+- `unmanaged_acs_credential.is_issued`
+- `unmanaged_acs_credential.is_managed`
+- `unmanaged_acs_credential.issued_at`
+- `unmanaged_acs_user.email`
+- `unmanaged_acs_user.hid_acs_system_id`
+- `unmanaged_acs_user.is_latest_desired_state_synced_with_provider`
+- `unmanaged_acs_user.is_managed`
+- `unmanaged_acs_user.latest_desired_state_synced_with_provider_at`
 - `user_identity.display_name`
 - `user_identity.full_name`
 - `webhook.event_types`
@@ -754,6 +772,9 @@ These items are deprecated.
 - `acs_user.email`: use email_address.
 - `connect_webview.accepted_devices`: Unused. Will be removed.
 - `connect_webview.any_device_allowed`: Unused. Will be removed.
+- `unmanaged_acs_access_group.access_group_type`: Use `external_type`.
+- `unmanaged_acs_access_group.access_group_type_display_name`: Use `external_type_display_name`.
+- `unmanaged_acs_user.email`: use email_address.
 - `workspace.connect_partner_name`: use company_name
 
 ### Endpoint parameters
