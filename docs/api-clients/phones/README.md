@@ -14,7 +14,7 @@ ID of the `phone`.
 
 ### `device_type`
 
-Format: `Enum`&#x20;
+Format: `Enum`
 
 Type of phone.
 
