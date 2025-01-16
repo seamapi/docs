@@ -1267,4 +1267,18 @@ const seam = new Seam({
 // console.log(credential);
 
 // eslint-disable-next-line no-console
-console.log(await seam.devices.list());
+// console.log(await seam.devices.list());
+
+const userIdentity = await seam.userIdentities.create({
+  user_identity_key: "jean_doe_js",
+  email_address: "jean-js@example.com",
+  phone_number: "+15555550112",
+  full_name: "Jean Doe JS",
+});
+
+// eslint-disable-next-line no-console
+console.log(userIdentity);
+
+await seam.phones.simulate.createSandboxPhone({
+  user_identity_id: userIdentity.user_identity_id,
+});

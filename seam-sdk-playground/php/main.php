@@ -716,4 +716,13 @@ $seam = new Seam\SeamClient(
 //   visionline_metadata: array('card_format' => "rfid48", 'is_override_key' => true)
 // );
 
-echo json_encode($seam->devices->list(), JSON_PRETTY_PRINT);
+// echo json_encode($seam->devices->list(), JSON_PRETTY_PRINT);
+
+$user_identity = $seam->user_identities->create(
+  user_identity_key: "jean_doe_php",
+  email_address: "jean-php@example.com",
+  phone_number: "+15555550114",
+  full_name: "Jean Doe PHP"
+);
+
+echo json_encode($user_identity, JSON_PRETTY_PRINT);

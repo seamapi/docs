@@ -547,7 +547,8 @@ seam = Seam.new(api_key: 'seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy')
 #   acs_system_id: "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4"
 # )).inspect
 
-# credential = seam.acs.credentials.get(acs_credential_id: "ea5117bd-9e61-4dee-bff7-71f470300741")
+credential = seam.acs.credentials.get(acs_credential_id: "ea5117bd-9e61-4dee-bff7-71f470300741")
+puts credential.inspect
 # encoders = seam.acs.encoders.list(acs_system_ids: ["8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4"])
 
 # encoding_action_attempt = seam.acs.encoders.encode_credential(
@@ -558,4 +559,13 @@ seam = Seam.new(api_key: 'seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy')
 # action_attempt = seam.action_attempts.get(action_attempt_id: "f0f125d9-fece-48d8-a828-529797ac8d46")
 # puts action_attempt.result.inspect
 
-puts seam.devices.list().inspect
+# puts seam.devices.list().inspect
+
+# user_identity = seam.user_identities.create(
+#   user_identity_key: "jean_doe_ruby",
+#   email_address: "jean-ruby@example.com",
+#   phone_number: "+15555550113",
+#   full_name: "Jean Doe Ruby",
+# )
+
+# puts user_identity.inspect

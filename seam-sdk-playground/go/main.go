@@ -10,8 +10,8 @@ import (
 //   "reflect"
 
   api "github.com/seamapi/go"
-	seam "github.com/seamapi/go/client"
-  // "github.com/seamapi/go/useridentities"
+  seam "github.com/seamapi/go/client"
+//   "github.com/seamapi/go/useridentities"
   // "github.com/seamapi/go/acs"
 
 
@@ -47,20 +47,20 @@ func run() error {
 	// fmt.Println(devices)
 	// return nil
 
-devices, uErr := client.Devices.List(
-  context.Background(),
-  &api.DevicesListRequest{
-    // IncludeIf: []api.DevicesListRequestIncludeIfItem{
-    //   api.DevicesListRequestIncludeIfItemCanRemotelyUnlock,
-    // },
-  })
+// devices, uErr := client.Devices.List(
+//   context.Background(),
+//   &api.DevicesListRequest{
+// //     // IncludeIf: []api.DevicesListRequestIncludeIfItem{
+// //     //   api.DevicesListRequestIncludeIfItemCanRemotelyUnlock,
+// //     // },
+//   })
 
-if uErr != nil {
-    return uErr
-}
+// if uErr != nil {
+//     return uErr
+// }
 
-fmt.Println(devices)
-return nil
+// fmt.Println(devices)
+// return nil
 
 // // Get the device.
 // device, uErr := client.Locks.Get(
@@ -1575,7 +1575,19 @@ return nil
 // fmt.Println(credential)
 // return nil
 
-
+userIdentity, uErr := client.UserIdentities.Create(context.Background(), &api.UserIdentitiesCreateRequest{
+	UserIdentityKey: api.String("jean_doe_go"),
+	EmailAddress: api.String("jean-go@example.com"),
+	PhoneNumber: api.String("+15555550115"),
+	FullName: api.String("Jean Doe Go"),
+  })
+  
+  if uErr != nil {
+	  return uErr
+  }
+  
+  fmt.Println(userIdentity)
+  return nil
 
 
 }
