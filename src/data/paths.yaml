@@ -30,7 +30,8 @@
 
 /acs/phones:
   title: Phones
-  resources: []
+  resources:
+    - phone
 
 /thermostats:
   title: Thermostats
