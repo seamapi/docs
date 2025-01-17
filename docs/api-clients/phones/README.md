@@ -58,28 +58,6 @@ Format: `Object`
 
 ***
 
-### `location`
-
-Format: `Object`
-
-<details>
-
-<summary><code>location_name</code> Format: <code>String</code></summary>
-
-Name of the device location.
-
-</details>
-
-<details>
-
-<summary><code>timezone</code> Format: <code>String</code></summary>
-
-Time zone of the device location.
-
-</details>
-
-***
-
 ### `workspace_id`
 
 Format: `ID`
@@ -109,14 +87,6 @@ Warnings associated with the `phone`.
 Format: `Datetime`
 
 Date and time at which the `phone` was created.
-
-***
-
-### `is_managed`
-
-Format: `Boolean`
-
-Indicates whether Seam manages the device.
 
 ***
 
