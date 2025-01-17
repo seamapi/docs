@@ -14,7 +14,11 @@ To connect the Salto KS ACS to Seam:
 
            A subdomain of `app-accept`, for example, `https://app-accept.saltoks.com`, indicates an "Accept Environment" that you cannot connect to Seam.
        * You must use a Salto KS web app user account that has "Site Admin" rights.
-   * Click **Continue**.
+   *   Select the Salto KS sites that you want to integrate with Seam.
+
+       {% hint style="success" %}
+       Make sure that your installer has released your Salto KS sites. Seam cannot perform actions on unreleased Salto KS sites.
+       {% endhint %}
    *   Confirm that you will allow Seam to add the requisite admin user to your Salto KS site for the integration with Seam, click **Allow and Continue**.
 
        {% hint style="warning" %}

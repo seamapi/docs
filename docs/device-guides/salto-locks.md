@@ -49,14 +49,17 @@ To control Salto KS devices using Seam, you must prompt owners of these devices 
     To confirm that your Salto KS account is a production environment account, note the Salto KS dashboard URL. Make sure that the subdomain within this URL is `app`, for example, `https://app.saltoks.com`.
 
     A subdomain of `app-accept`, for example, `https://app-accept.saltoks.com`, indicates an "Accept Environment" that you cannot connect to Seam.
-2. In the Salto KS app, add your Salto KS devices.
-3.  Note your login credentials for the Salto KS app, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
+2.  In the Salto KS app, add your Salto KS devices.
 
-    During the Connect Webview process, click **Allow and Continue** to confirm that you will allow Seam to add the requisite admin user to your Salto KS site for the integration with Seam.
-
-    {% hint style="warning" %}
-    Do not suspend or remove the Seam Integration admin user from your Salto KS site.
+    {% hint style="success" %}
+    Make sure that your installer has released your Salto KS site. Seam cannot perform actions on unreleased Salto KS sites.
     {% endhint %}
+3. Note your login credentials for the Salto KS app, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
+   *   During the Connect Webview process, click **Allow and Continue** to confirm that you will allow Seam to add the requisite admin user to your Salto KS site for the integration with Seam.
+
+       {% hint style="warning" %}
+       Do not suspend or remove the Seam Integration admin user from your Salto KS site.
+       {% endhint %}
 
 ***
 
