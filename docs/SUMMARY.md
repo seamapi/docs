@@ -144,7 +144,6 @@
   * [Device Provider Metadata](reference/device-provider-metadata.md)
   * [Get a Device](api-clients/devices/get.md)
   * [Update a Device](api-clients/devices/update.md)
-  * [Delete a Device](api-clients/devices/delete.md)
   * [Unmanaged Devices](api-clients/devices/unmanaged/README.md)
     * [Update an Unmanaged Device](api-clients/devices/unmanaged/update.md)
     * [List Unmanaged Devices](api-clients/devices/unmanaged/list.md)

@@ -92,7 +92,7 @@ Seam recommends adding error handling logic to you app for each generic error in
 When Seam is able to provide more specific information beyond one of the [generic errors](./#generic-errors), one or more errors from the list of specific errors may appear. This gives your app the option to display additional context or suggest provider specific resolutions.
 
 {% hint style="info" %}
-If the connected account associated with a device has an error, it is attached to the device alongside any other device errors. Treat these errors as specific errors. See [Connected Account Error Types](../connected\_accounts/#connected-account-error-types).
+If the connected account associated with a device has an error, it is attached to the device alongside any other device errors. Treat these errors as specific errors. See [Connected Account Error Types](../connected_accounts/#connected-account-error-types).
 {% endhint %}
 
 | Error Type                          | Description                                                                                                                     |
@@ -128,7 +128,7 @@ On some account types, Seam provides additional information about the manufactur
 
 ## Device Providers
 
-Seam maintains a list of device providers that you can access using the [List Device Providers](list\_device\_providers.md) endpoint.
+Seam maintains a list of device providers that you can access using the [List Device Providers](list_device_providers.md) endpoint.
 
 The `device_provider` object includes the following information:
 
@@ -164,10 +164,9 @@ The `constraint_type` property can be one of the following enum values:
 You can perform the following actions on `device` objects:
 
 * [List devices](list.md)
-* [List device providers](list\_device\_providers.md)
+* [List device providers](list_device_providers.md)
 * [Get a device](get.md)
 * [Update a device](update.md)
 * [List unmanaged devices](unmanaged/list.md)
 * [Get an unmanaged devices](unmanaged/get/)
 * [Update an unmanaged device](unmanaged/update.md)
-* [Delete a device](delete.md)
