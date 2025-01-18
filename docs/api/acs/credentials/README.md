@@ -2,8 +2,7 @@
 
 ## `acs_credential`
 
-Means by which a user gains access at an entrance.
-The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.
+Means by which a user gains access at an entrance. The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.
 
 ### `access_method`
 

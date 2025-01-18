@@ -24,6 +24,7 @@
 - `/noise_sensors/simulate`
 - `/phones`
 - `/phones/simulate`
+- `/thermostats/simulate`
 - `/webhooks`
 - `/workspaces`
 
@@ -88,6 +89,7 @@
 - `/phones/deactivate`
 - `/phones/list`
 - `/phones/simulate/create_sandbox_phone`
+- `/thermostats/simulate/temperature_reached`
 - `/webhooks/create`
 - `/webhooks/delete`
 - `/webhooks/get`
@@ -400,6 +402,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/phones/deactivate`
 - `/phones/list`
 - `/phones/simulate/create_sandbox_phone`
+- `/thermostats/simulate/temperature_reached`
 - `/user_identities/update`
 - `/webhooks/create`
 - `/webhooks/delete`
@@ -727,6 +730,10 @@ Items that are intentionally undocumented are not included in this section.
     - `device_id`
     - `fan_mode`
     - `sync`
+- `/thermostats/simulate/temperature_reached`
+    - `device_id`
+    - `temperature_celsius`
+    - `temperature_fahrenheit`
 - `/user_identities/list`
     - `credential_manager_acs_system_id`
 - `/user_identities/update`
@@ -894,6 +901,7 @@ These items are deprecated.
 - `/phones/list`
 - `/phones/simulate/create_sandbox_phone`
 - `/thermostats/get`
+- `/thermostats/simulate/temperature_reached`
 - `/user_identities/update`
 - `/webhooks/create`
 - `/webhooks/delete`
