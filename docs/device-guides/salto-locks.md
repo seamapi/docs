@@ -46,7 +46,7 @@ This section describes how to connect your Salto KS devices to Seam.
 
 ### Prerequisites
 
-Note the following requirements before connecting your Salto KS access control system to Seam:
+Note the following requirements before connecting your Salto KS devices to Seam:
 
 #### Site Admin
 
