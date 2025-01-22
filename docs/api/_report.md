@@ -89,6 +89,7 @@
 - `/phones/deactivate`
 - `/phones/list`
 - `/phones/simulate/create_sandbox_phone`
+- `/thermostats/simulate/hvac_mode_adjusted`
 - `/thermostats/simulate/temperature_reached`
 - `/webhooks/create`
 - `/webhooks/delete`
@@ -402,6 +403,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/phones/deactivate`
 - `/phones/list`
 - `/phones/simulate/create_sandbox_phone`
+- `/thermostats/simulate/hvac_mode_adjusted`
 - `/thermostats/simulate/temperature_reached`
 - `/user_identities/update`
 - `/webhooks/create`
@@ -901,6 +903,7 @@ These items are deprecated.
 - `/phones/list`
 - `/phones/simulate/create_sandbox_phone`
 - `/thermostats/get`
+- `/thermostats/simulate/hvac_mode_adjusted`
 - `/thermostats/simulate/temperature_reached`
 - `/user_identities/update`
 - `/webhooks/create`
