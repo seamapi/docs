@@ -81,6 +81,7 @@
     * [Setting the Fallback Climate Preset](capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset.md)
     * [Activating a Climate Preset](capability-guides/thermostats/creating-and-managing-climate-presets/activating-a-climate-preset.md)
   * [Creating and Managing Thermostat Schedules](capability-guides/thermostats/creating-and-managing-thermostat-schedules.md)
+  * [Testing Your Thermostat App with Simulate Endpoints](capability-guides/thermostats/testing-your-thermostat-app-with-simulate-endpoints.md)
 * [👂 Noise Sensors](products/noise-sensors/README.md)
   * [Configuring Noise Threshold Settings](products/noise-sensors/configure-noise-threshold-settings.md)
 * [📡 Seam Bridge](capability-guides/seam-bridge.md)

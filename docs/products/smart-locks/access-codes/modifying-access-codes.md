@@ -1276,7 +1276,7 @@ client.AccessCodes.Update(
   context.Background(),
   &api.AccessCodesUpdateRequest{
     AccessCodeId: api.String("11111111-1111-1111-1111-555555555555"),
-    Type: seamgo.AccessCodesUpdateRequestTypeOngoing.Ptr(),
+    Type: api.AccessCodesUpdateRequestTypeOngoing.Ptr(),
   },
 )
 ```
