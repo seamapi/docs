@@ -21,7 +21,7 @@ Seam provides additional `simulate` endpoints to help you [test your app against
 
 ## Checking Capability Flags
 
-Before using the `simulate` endpoints, check the relevant capabilities of the sandbox thermostat that you want to test. For example, if you want to use `/thermostats/simulate/hvac_mode_adjusted` to simulate having set the HVAC mode on a thermostat to `heat`, you must first make sure that the thermostat supports heat mode.
+Before using the `simulate` endpoints, check the relevant capabilities of the sandbox thermostat that you want to test. For example, if you want to use `/thermostats/simulate/hvac_mode_adjusted` to simulate having set the [HVAC mode](understanding-thermostat-concepts/hvac-mode.md) on a thermostat to `heat`, you must first make sure that the thermostat supports heat mode.
 
 The following device properties show the relevant capabilities of a thermostat:
 
@@ -36,7 +36,7 @@ For more information, see [Thermostat Capabilities](../../products/thermostats/#
 
 ## Simulate Adjusting the HVAC Mode
 
-The `/thermostats/simulate/hvac_mode_adjusted` endpoint enables you to simulate having adjusted the HVAC mode for a thermostat. This simulation is helpful for testing that your app is receiving [thermostat events](../../api-clients/events/) correctly, such as `thermostat.manually_adjusted`.
+The `/thermostats/simulate/hvac_mode_adjusted` endpoint enables you to simulate having adjusted the [HVAC mode](understanding-thermostat-concepts/hvac-mode.md) for a thermostat. This simulation is helpful for testing that your app is receiving [thermostat events](../../api-clients/events/) correctly, such as `thermostat.manually_adjusted`.
 
 You can simulate having set the HVAC mode to any of the following settings:
 
