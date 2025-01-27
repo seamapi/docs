@@ -9,7 +9,7 @@ description: >-
 Seam's suite of `simulate` endpoints help you to test your thermostat app against events that can be difficult to orchestrate in your quality assurance (QA) environment using real devices. Seam provides the following thermostat-related `simulate` endpoints that you can use in a [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
 * [`/thermostats/simulate/hvac_mode_adjusted`](testing-your-thermostat-app-with-simulate-endpoints.md#simulate-adjusting-the-hvac-mode)
-* [`/thermostats/simulate/set_reported_temperature`](testing-your-thermostat-app-with-simulate-endpoints.md#simulate-setting-the-reported-temperature)
+* [`/thermostats/simulate/temperature_reached`](testing-your-thermostat-app-with-simulate-endpoints.md#simulate-reaching-a-desired-temperature)
 
 Seam supports these endpoints for all thermostat [sandbox devices](../../device-guides/sandbox-and-sample-data/).
 
@@ -321,16 +321,16 @@ void
 
 ***
 
-## Simulate Setting the Reported Temperature
+## Simulate Reaching a Desired Temperature
 
-The `/thermostats/simulate/set_reported_temperature` endpoint enables you to simulate setting the reported temperature for a thermostat. This simulation is helpful for testing that your app is receiving [thermostat events](../../api-clients/events/) correctly, such as `thermostat.temperature_changed` and `thermostat.temperature_reached_set_point`.
+The `/thermostats/simulate/temperature_reached` endpoint enables you to simulate the thermostat reaching a specified temperature. This simulation is helpful for testing that your app is receiving [thermostat events](../../api-clients/events/) correctly, such as `thermostat.temperature_changed` and `thermostat.temperature_reached_set_point`.
 
-Specify the desired reported temperature that you want to simulate using either of the following parameters:
+Specify the desired temperature that you want to simulate the thermostat reaching using either of the following parameters:
 
 * `temperature_celsius`
 * `temperature_fahrenheit`
 
-To simulate setting the reported temperature:
+To simulate reaching a desired temperature:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -342,8 +342,8 @@ thermostat = seam.devices.get(
   device_id="11111111-1111-1111-2222-444444444444"
 )
 
-# Simulate setting the reported temperature.
-seam.thermostats.simulate.set_reported_temperature(
+# Simulate reaching the specified temperature.
+seam.thermostats.simulate.temperature_reached(
   device_id = thermostat.device_id,
   temperature_celsius = 25
 )
@@ -372,9 +372,9 @@ thermostat=$(
       "device_id": "11111111-1111-1111-2222-444444444444"
   }')
 
-# Simulate setting the reported temperature.
+# Simulate reaching the specified temperature.
 curl -X 'POST' \
-  'https://connect.getseam.com/thermostats/simulate/set_reported_temperature' \
+  'https://connect.getseam.com/thermostats/simulate/temperature_reached' \
   -H 'accept: application/json' \
   -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
@@ -402,8 +402,8 @@ const thermostat = await seam.devices.get({
   device_id: "11111111-1111-1111-2222-444444444444"
 });
 
-// Simulate setting the reported temperature.
-await seam.thermostats.simulate.setReportedTemperature({
+// Simulate reaching the specified temperature.
+await seam.thermostats.simulate.temperatureReached({
   device_id: thermostat.device_id,
   temperature_celsius: 25
 });
@@ -427,8 +427,8 @@ Coming soon!
 # Get the device.
 thermostat = client.devices.get(device_id: "11111111-1111-1111-2222-444444444444")
 
-# Simulate setting the reported temperature.
-client.thermostats.simulate.set_reported_temperature(
+# Simulate reaching the specified temperature.
+client.thermostats.simulate.temperature_reached(
   device_id: thermostat.device_id,
   temperature_celsius: 25
 )
@@ -448,8 +448,8 @@ nil
 // Get the device.
 $thermostat = $seam->devices->get(device_id: "11111111-1111-1111-2222-444444444444");
 
-// Simulate setting the reported temperature.
-$seam->thermostats->simulate->set_reported_temperature(
+// Simulate reaching the specified temperature.
+$seam->thermostats->simulate->temperature_reached(
   device_id: $thermostat->device_id,
   temperature_celsius: 25
 );
@@ -473,8 +473,8 @@ Coming soon!
 // Get the device.
 Device thermostat = seam.Devices.Get(deviceId: "11111111-1111-1111-2222-444444444444");
 
-// Simulate setting the reported temperature.
-seam.Thermostats.Simulate.SetReportedTemperature(
+// Simulate reaching the specified temperature.
+seam.Thermostats.Simulate.TemperatureReached(
   deviceId: thermostat.DeviceId,
   temperatureCelsius: 25
 );
@@ -501,9 +501,9 @@ Device thermostat = seam.devices()
     .deviceId("11111111-1111-1111-2222-444444444444")
     .build());
 
-// Simulate setting the reported temperature.
+// Simulate reaching the specified temperature.
 seam.thermostats().simulate()
-  .setReportedTemperature(ThermostatsSimulateSetReportedTemperatureRequest.builder()
+  .temperatureReached(ThermostatsSimulateTemperatureReachedRequest.builder()
     .deviceId(thermostat.getDeviceId())
     .temperatureCelsius(25)
     .build());
@@ -531,10 +531,10 @@ thermostat, uErr := client.Devices.Get(
     DeviceId: api.String("11111111-1111-1111-2222-444444444444"),
   })
 
-// Simulate setting the reported temperature.    
-client.Thermostats.Simulate.SetReportedTemperature(
+// Simulate reaching the specified temperature.
+client.Thermostats.Simulate.TemperatureReached(
   context.Background(),
-  &api.ThermostatsSimulateSetReportedTemperatureRequest{
+  &api.ThermostatsSimulateTemperatureReachedRequest{
     DeviceId: thermostat.DeviceId,
     TemperatureCelsius: 25,
   })
