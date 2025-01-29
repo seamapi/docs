@@ -218,6 +218,7 @@
   * [Set to Cool Mode](api/thermostats/cool.md)
   * [Set to Heat-Cool (Auto) Mode](api/thermostats/heat_cool.md)
   * [Set to Off Mode](api/thermostats/off.md)
+  * [Set the HVAC Mode](api/thermostats/set_hvac_mode.md)
   * [Set Fan Mode](api/thermostats/set_fan_mode.md)
   * [Activate a Climate Preset](api/thermostats/activate_climate_preset.md)
   * [Create a Climate Preset](api/thermostats/create_climate_preset.md)
