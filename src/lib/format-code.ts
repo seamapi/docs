@@ -13,7 +13,7 @@ export const formatCode = async (
   return output.trim()
 }
 
-export const formatCodeForSyntax = async (
+const formatCodeForSyntax = async (
   content: string,
   syntax: CodeSampleSyntax,
 ): Promise<string> => {
