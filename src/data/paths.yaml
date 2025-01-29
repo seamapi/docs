@@ -33,7 +33,7 @@
   resources: []
 
 /thermostats/simulate:
-  title: Thermostat Simulation
+  title: Thermostat Simulations
 
 /thermostats/schedules:
   title: Thermostat Schedules
