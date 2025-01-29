@@ -1,4 +1,4 @@
-# Thermostat Simulation
+# Thermostat Simulations
 
 ## Endpoints
 
