@@ -24,7 +24,6 @@
 - `/noise_sensors/simulate`
 - `/phones`
 - `/phones/simulate`
-- `/thermostats/simulate`
 - `/webhooks`
 - `/workspaces`
 
