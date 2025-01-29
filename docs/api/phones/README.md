@@ -210,6 +210,20 @@ Format: `Object`
 
 </details>
 
+<details>
+
+<summary><code>salto_space_credential_service_metadata</code> Format: <code>Object</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>salto_space_credential_service_metadata.has_active_phone</code> Format: <code>Boolean</code></summary>
+
+
+</details>
+
 
 ---
 
