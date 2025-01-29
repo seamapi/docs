@@ -28,7 +28,7 @@
   resources:
     - acs_credential
 
-/acs/phones:
+/phones:
   title: Phones
   resources:
     - phone
