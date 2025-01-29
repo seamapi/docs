@@ -22,7 +22,6 @@
 - `/noise_sensors`
 - `/noise_sensors/noise_thresholds`
 - `/noise_sensors/simulate`
-- `/phones`
 - `/phones/simulate`
 - `/thermostats/simulate`
 - `/webhooks`
