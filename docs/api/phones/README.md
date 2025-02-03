@@ -2,6 +2,8 @@
 
 ## `phone`
 
+Properties of the phone.
+
 ### `can_hvac_cool`
 
 Format: `Boolean`
@@ -117,6 +119,8 @@ Unique identifier for the device.
 
 Format: `Enum`
 
+Type of phone.
+
 Possible enum values:
 - `android_phone`
 - `ios_phone`
@@ -193,6 +197,7 @@ Format: `Object`
 
 <summary><code>assa_abloy_credential_service_metadata</code> Format: <code>Object</code></summary>
 
+ASSA ABLOY Credential Service metadata for the phone.
 
 </details>
 
@@ -200,6 +205,7 @@ Format: `Object`
 
 <summary><code>assa_abloy_credential_service_metadata.endpoints</code> Format: <code>List</code></summary>
 
+Endpoints associated with the phone.
 
 </details>
 
@@ -207,6 +213,7 @@ Format: `Object`
 
 <summary><code>assa_abloy_credential_service_metadata.has_active_endpoint</code> Format: <code>Boolean</code></summary>
 
+Indicates whether the credential service has active endpoints associated with the phone.
 
 </details>
 
@@ -214,6 +221,7 @@ Format: `Object`
 
 <summary><code>salto_space_credential_service_metadata</code> Format: <code>Object</code></summary>
 
+Salto Space credential service metadata for the phone.
 
 </details>
 
@@ -221,6 +229,7 @@ Format: `Object`
 
 <summary><code>salto_space_credential_service_metadata.has_active_phone</code> Format: <code>Boolean</code></summary>
 
+Indicates whether the credential service has an active associated phone.
 
 </details>
 
@@ -247,6 +256,12 @@ Unique identifier for the Seam workspace associated with the device.
 
 ## Endpoints
 
+### [`/phones/deactivate`](./deactivate.md)
+
+Deactivates a phone, which is useful, for example, if a user has lost their phone. For more information, see [App User Lost Phone Process](../../capability-guides/mobile-access/managing-phones-for-a-user-identity.md#app-user-lost-phone-process).
+### [`/phones/list`](./list.md)
+
+Returns a list of all phones. To filter the list of returned phones by a specific owner user identity or credential, include the `owner_user_identity_id` or `acs_credential_id`, respectively, in the request body.
 
 ## Events
 
