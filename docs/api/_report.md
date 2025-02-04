@@ -175,7 +175,6 @@ Items that are intentionally undocumented are not included in this section.
 - `event`
 - `network`
 - `noise_threshold`
-- `service_health`
 - `unmanaged_access_code`
 - `unmanaged_acs_access_group`
 - `webhook`
@@ -298,9 +297,6 @@ Items that are intentionally undocumented are not included in this section.
 - `phone.can_turn_off_hvac`
 - `phone.custom_metadata`
 - `phone.properties`
-- `service_health.description`
-- `service_health.service`
-- `service_health.status`
 - `unmanaged_access_code.is_managed`
 - `unmanaged_access_code.status`
 - `unmanaged_acs_access_group.access_group_type`
