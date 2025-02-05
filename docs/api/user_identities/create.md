@@ -220,4 +220,4 @@ Unique key for the user identity.
 
 ## Return Type
 
-[user\_identity](./)
+[user\_identity](./) 

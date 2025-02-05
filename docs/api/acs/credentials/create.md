@@ -316,4 +316,4 @@ Visionline-specific metadata for the new credential.
 
 ## Return Type
 
-[acs\_credential](./)
+[acs\_credential](./) 
