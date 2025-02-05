@@ -180,4 +180,4 @@ ID of the desired credential.
 
 ## Return Type
 
-[acs\_credential](./) 
+[acs\_credential](./)

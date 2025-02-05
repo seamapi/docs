@@ -173,4 +173,4 @@ ID of the desired thermostat schedule.
 
 ## Return Type
 
-[thermostat\_schedule](./) 
+[thermostat\_schedule](./)
