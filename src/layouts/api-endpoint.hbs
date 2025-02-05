@@ -55,4 +55,4 @@ Required: {{#if this.required}}Yes{{else}}No{{/if}}
 {{/each}}
 ## Return Type
 
-{{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array<[{{response.escapedResourceType}}](./)>{{else}}[{{response.escapedResourceType}}](./) {{#if response.actionAttemptType}}(type: `{{response.actionAttemptType}}`){{/if}}{{/if}}{{else}}void{{/if}}
+{{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array<[{{response.escapedResourceType}}](./)>{{else}}[{{response.escapedResourceType}}](./){{#if response.actionAttemptType}} (type: `{{response.actionAttemptType}}`){{/if}}{{/if}}{{else}}void{{/if}}
