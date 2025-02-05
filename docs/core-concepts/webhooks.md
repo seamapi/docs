@@ -4,17 +4,30 @@ description: Learn about using webhooks to receive notifications of events.
 
 # Webhooks
 
+A webhook is an HTTP callback that you configure with an external service. When a specific event occurs, the service sends an HTTP POST request with a JSON payload to the URL you provide. This allows you to receive real-time notifications and process events immediately.
+
 ## Configuring Webhooks
 
-You can configure endpoints in each workspace for an app to receive webhook [event](../api-clients/events/) notifications for resources, such as devices and connected accounts.
+You can configure endpoints in each workspace for your app to receive event notifications for resources like devices and connected accounts.
 
-To configure webhook endpoints:
+**To configure webhook endpoints:**
 
-1. In the left navigation pane of the [Seam Console](https://console.seam.co/), click **Webhooks**.
-2. Click **+ Add Webhook**.
-3. In the **Create Webhook** dialog, type your webhook URL and select the [event types](../api-clients/events/#event-types) for which you want to receive events.
-4. Click **Create**.
-5. Copy your webhook secret and store it somewhere secure. You use this webhook secret to validate the payloads that you receive on your webhook.
+1. **Access the Webhooks Section:**
+In the left navigation pane of the Seam Console, click Webhooks.
+
+2. **Add a New Webhook:**
+Click + Add Webhook.
+
+3. **Enter the Webhook Details:**
+- In the Create Webhook dialog, type your public webhook URL.
+- Select the event types (for example, device.connected or device.low_battery) for which you want to receive events.
+
+4. **Secure Your Webhook:**
+Click Create. Copy your webhook secret and store it somewhere secure; you will use this secret to validate the payloads received at your endpoint.
+
+5. **Test Your Webhook:** You can test your endpoint using external tools such as [Beeceptor](https://beeceptor.com/webhook-integration/) and [ngrok](https://ngrok.com/).
+
+> **Note:** When using external tools, use them carefully and ensure that you do not expose sensitive information or compromise your system’s security.
 
 You can add webhooks through the Seam Console or programmatically. Let's start by looking at how to add and test a webhook using the Seam Console.
 
@@ -34,19 +47,46 @@ You can view all the event types and the included fields in the **Event Catalog*
 
 We use webhooks from Svix. For more information about consuming events, such as testing or verifying webhooks, see the [Svix docs](https://docs.svix.com/receiving/introduction).
 
-## Retry Schedule for Webhooks
+## Webhook Security
 
-Seam delivers each webhook event based on a retry schedule with exponential backoff. Each message is attempted based on the following schedule, where each period is started following the failure of the preceding attempt:
+Seam webhooks are signed using an HMAC with SHA-256. If you wish to verify those signatures on your end, contact our team.
 
-* Immediately
-* 5 seconds
-* 5 minutes
-* 30 minutes
-* 2 hours
-* 5 hours
-* 10 hours
-* 10 hours (in addition to the previous)
+**Signature Verification**
 
-For example, an attempt that fails three times before eventually succeeding will be delivered roughly 35 minutes and 5 seconds following the first attempt.
+- **Webhook Secret:** Use the webhook secret from your configuration to verify that incoming payloads are genuine.
+- **Signature Header:** Look for a signature header (e.g., X-Signature) in each request. Compute an HMAC (using SHA-256, for example) from the payload and compare it with the signature.
 
-If you remove or disable a webhook, delivery attempts to the endpoint are disabled as well.
+**Example (Node.js):**
+
+```
+const crypto = require('crypto');
+
+function verifySignature(secret, payload, signature) {
+  const hmac = crypto.createHmac('sha256', secret);
+  hmac.update(payload);
+  const digest = hmac.digest('hex');
+  return digest === signature;
+}
+```
+
+
+## Handling Failures and Retries
+
+Your webhook endpoint must be able to handle failures gracefully. If an event delivery fails (for example, due to a non-2xx HTTP status code), Seam automatically retries delivery using an exponential backoff schedule.
+
+### Retry Schedule
+
+The following table outlines the retry delays after each failed attempt:
+
+| Attempt         | Delay After Previous Attempt |
+|-----------------|-------------------------------|
+| 1 (Initial)     | Immediately                   |
+| 2               | 5 seconds                     |
+| 3               | 5 minutes                     |
+| 4               | 30 minutes                    |
+| 5               | 2 hours                       |
+| 6               | 5 hours                       |
+| 7               | 10 hours                      |
+| 8               | 10 additional hours           |
+
+Example: If an event fails three times and then succeeds, the final successful delivery will occur roughly 35 minutes and 5 seconds after the first attempt.
