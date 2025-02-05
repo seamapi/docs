@@ -176,4 +176,4 @@ ID of the desired thermostat device.
 
 ## Return Type
 
-[action\_attempt](./)
+[action\_attempt](./) (type: `SET_HVAC_MODE`)

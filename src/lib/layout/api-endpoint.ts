@@ -35,6 +35,7 @@ export interface ApiEndpointLayoutContext {
     escapedResourceType: string | null
     responseKey: string | null
     responseType: string | null
+    actionAttemptType?: string
   }
   codeSamples: Array<{
     title: string
@@ -111,6 +112,13 @@ export function setEndpointLayoutContext(
     file.response.escapedResourceType = resourceType.replaceAll('_', '\\_')
     file.response.responseKey = responseKey
     file.response.responseType = responseType
+  }
+
+  if (
+    endpoint.response.responseType === 'resource' &&
+    endpoint.response.actionAttemptType != null
+  ) {
+    file.response.actionAttemptType = endpoint.response.actionAttemptType
   }
 
   file.codeSamples = endpoint.codeSamples.map((sample) => {
