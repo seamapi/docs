@@ -25,7 +25,7 @@ Click + Add Webhook.
 4. **Secure Your Webhook:**
 Click Create. Copy your webhook secret and store it somewhere secure; you will use this secret to validate the payloads received at your endpoint.
 
-5. **Test Your Webhook:** You can test your endpoint using external tools such as [Beeceptor](https://beeceptor.com/webhook-integration/) and [ngrok](https://ngrok.com/).
+5. **Test Your Webhook:** You can test your endpoint using external tools such as [Beeceptor](https://beeceptor.com/webhook-integration/) and [ngrok](https://ngrok.com/). These tools provide a public URL where you can accept incoming HTTP requests, inspect, and route to localhost services.
 
 > **Note:** When using external tools, use them carefully and ensure that you do not expose sensitive information or compromise your system’s security.
 
@@ -45,7 +45,7 @@ You can view all the event types and the included fields in the **Event Catalog*
 
 ![Go to the "Event Catalog" tab to view all available events.](<../.gitbook/assets/image (27).png>)
 
-We use webhooks from Svix. For more information about consuming events, such as testing or verifying webhooks, see the [Svix docs](https://docs.svix.com/receiving/introduction).
+Seam uses webhooks from Svix. For more information about consuming events, such as testing or verifying webhooks, see the [Svix docs](https://docs.svix.com/receiving/introduction).
 
 ## Webhook Security
 
