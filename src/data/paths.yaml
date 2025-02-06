@@ -28,6 +28,11 @@
   resources:
     - acs_credential
 
+/acs/encoders:
+  title: Encoders
+  resources:
+    - acs_encoder
+
 /thermostats:
   title: Thermostats
   resources: []
