@@ -4,7 +4,7 @@ Seam's sandbox workspaces enable you to develop integrations without access to a
 
 ## Creating a Simulated Phone for a User Identity
 
-When issuing mobile credentials, some systems require the user identity to have a provisioned phone. While you are developing and testing your integration, you can add a simulated phone in your sandbox workspace. Use the following flow to [add a simulated phone](../../api-clients/phones/create-a-sandbox-phone.md) for a user identity:
+When issuing mobile credentials, some systems require the user identity to have a provisioned phone. While you are developing and testing your integration, you can add a simulated phone in your sandbox workspace. Use the following flow to [add a simulated phone](../../api/phones/create-a-sandbox-phone.md) for a user identity:
 
 {% tabs %}
 {% tab title="Python" %}
