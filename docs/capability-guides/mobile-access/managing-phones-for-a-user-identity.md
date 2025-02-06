@@ -22,7 +22,7 @@ If an app user loses their phone or wants to deactivate it, you can deactivate t
 
 <figure><img src="../../.gitbook/assets/image (3) (1).png" alt="When a phone is revoked, Seam revokes all the credentials issued to this phone."><figcaption></figcaption></figure>
 
-To [deactivate](../../api-clients/phones/deactivate-a-phone.md) a phone, provide the ID of the phone. When a phone is deactivated, Seam also revokes all the credentials issued to the deactivated phone. Seam also removes the associated ACS credentials from the ACS.
+To [deactivate](../../api/phones/deactivate.md) a phone, provide the ID of the phone. When a phone is deactivated, Seam also revokes all the credentials issued to the deactivated phone. Seam also removes the associated ACS credentials from the ACS.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -169,7 +169,7 @@ nil
 
 ## Retrieving Phones for a User Identity
 
-To retrieve the list of phones that the mobile app user has used to sign in to their account, use the [List Phones](../../api-clients/phones/list-phones.md) endpoint and include the ID of the user identity.
+To retrieve the list of phones that the mobile app user has used to sign in to their account, use the [List Phones](../../api/phones/list.md) endpoint and include the ID of the user identity.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -409,7 +409,7 @@ return nil
 Coming soon!
 {% endhint %}
 
-To retrieve a phone by its ID, use the [Get Phone](../../api-clients/phones/get-a-phone.md) endpoint and include the `device_id` of the phone.
+To retrieve a phone by its ID, use the [Get Phone](../../api/phones/get.md) endpoint and include the `device_id` of the phone.
 
 {% tabs %}
 {% tab title="Python" %}
