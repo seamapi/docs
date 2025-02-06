@@ -22,3 +22,6 @@ The `acs_access_group` object represents an [access group](https://docs.seam.co/
 ### [`acs_credential`](./credentials/README.md#acs_credential)
 Means by which a user gains access at an entrance. The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.
 
+### [`acs_encoder`](./encoders/README.md#acs_encoder)
+
+
