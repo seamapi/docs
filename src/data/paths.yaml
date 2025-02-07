@@ -33,6 +33,11 @@
   resources:
     - acs_encoder
 
+/acs/encoders/simulate:
+  title: Encoders
+  resources:
+    - acs_encoder
+
 /thermostats:
   title: Thermostats
   resources: []
