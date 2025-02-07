@@ -36,6 +36,7 @@ export const reference = (
     routes: [],
     resources: {},
     events: [],
+    actionAttempts: [],
     ...metadata,
   }
 
