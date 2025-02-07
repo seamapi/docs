@@ -34,9 +34,7 @@
     - acs_encoder
 
 /acs/encoders/simulate:
-  title: Encoders
-  resources:
-    - acs_encoder
+  title: Encoder Simulations
 
 /thermostats:
   title: Thermostats
