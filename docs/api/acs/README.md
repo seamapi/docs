@@ -25,6 +25,3 @@ Means by which a user gains access at an entrance. The `acs_credential` object r
 ### [`acs_encoder`](./encoders/README.md#acs_encoder)
 
 
-### [`acs_encoder`](./encoders/README.md#acs_encoder)
-
-
