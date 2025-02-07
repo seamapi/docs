@@ -160,4 +160,4 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 
 ## Return Type
 
-[action\_attempt](./) (type: `SET_HVAC_MODE`)
+[action\_attempt](./) (action type: `SET_HVAC_MODE`)

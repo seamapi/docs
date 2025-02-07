@@ -176,4 +176,4 @@ Desired [heating set point](../../capability-guides/thermostats/understanding-th
 
 ## Return Type
 
-[action\_attempt](./) (type: `SET_HVAC_MODE`)
+[action\_attempt](./) (action type: `SET_HVAC_MODE`)
