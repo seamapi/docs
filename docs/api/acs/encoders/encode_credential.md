@@ -34,4 +34,4 @@ ID of the `acs_encoder` to use to encode the `acs_credential`.
 
 ## Return Type
 
-[action\_attempt](./)
+[action\_attempt](./) (action type: `ENCODE_CREDENTIAL`)
