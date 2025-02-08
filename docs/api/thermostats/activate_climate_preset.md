@@ -166,4 +166,4 @@ ID of the desired thermostat device.
 
 ## Return Type
 
-[action\_attempt](./)
+[action\_attempt](./) (action type: `ACTIVATE_CLIMATE_PRESET`)
