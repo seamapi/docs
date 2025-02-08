@@ -199,6 +199,8 @@ func main() {
 
 ## Request Parameters
 
+None.
+
 ## Return Type
 
 Array<[acs\_credential](./)>

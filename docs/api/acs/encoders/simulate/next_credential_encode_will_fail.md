@@ -14,6 +14,8 @@ Simulates that the next attempt to encode a [credential](../../../../capability-
 
 ## Request Parameters
 
+None.
+
 ## Return Type
 
 void

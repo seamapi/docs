@@ -14,6 +14,8 @@ Returns a list of all [encoders](../../../capability-guides/access-systems/worki
 
 ## Request Parameters
 
+None.
+
 ## Return Type
 
 Array<[acs\_encoder](./)>
