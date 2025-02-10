@@ -163,7 +163,7 @@ api.UserIdentity{UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", UserIde
 
 ## Request Parameters
 
-None.
+None
 
 ## Return Type
 

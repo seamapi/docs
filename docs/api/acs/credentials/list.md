@@ -199,7 +199,7 @@ func main() {
 
 ## Request Parameters
 
-None.
+None
 
 ## Return Type
 

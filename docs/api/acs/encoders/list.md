@@ -14,7 +14,7 @@ Returns a list of all [encoders](../../../capability-guides/access-systems/worki
 
 ## Request Parameters
 
-None.
+None
 
 ## Return Type
 

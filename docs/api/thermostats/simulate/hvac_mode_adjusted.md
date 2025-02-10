@@ -14,7 +14,7 @@ Simulates having adjusted the [HVAC mode](../../../capability-guides/thermostats
 
 ## Request Parameters
 
-None.
+None
 
 ## Return Type
 

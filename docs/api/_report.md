@@ -8,6 +8,7 @@
 - `/access_codes/simulate`
 - `/access_codes/unmanaged`
 - `/action_attempts`
+- `/bridges`
 - `/client_sessions`
 - `/connect_webviews`
 - `/connected_accounts`
@@ -44,6 +45,7 @@
 - `/access_codes/unmanaged/update`
 - `/action_attempts/get`
 - `/action_attempts/list`
+- `/bridges/get`
 - `/client_sessions/create`
 - `/client_sessions/delete`
 - `/client_sessions/get`
@@ -165,7 +167,6 @@ Items that are intentionally undocumented are not included in this section.
 - `access_code`
 - `acs_credential_pool`
 - `acs_credential_provisioning_automation`
-- `acs_encoder`
 - `client_session`
 - `connect_webview`
 - `connected_account`
@@ -333,6 +334,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/acs/users/unmanaged/list`
 - `/action_attempts/get`
 - `/action_attempts/list`
+- `/bridges/get`
 - `/client_sessions/create`
 - `/client_sessions/delete`
 - `/client_sessions/get`
@@ -527,6 +529,8 @@ Items that are intentionally undocumented are not included in this section.
     - `action_attempt_id`
 - `/action_attempts/list`
     - `action_attempt_ids`
+- `/bridges/get`
+    - `bridge_id`
 - `/client_sessions/create`
     - `connect_webview_ids`
     - `connected_account_ids`
@@ -812,6 +816,7 @@ These items are deprecated.
 - `/acs/users/unmanaged/list`
 - `/action_attempts/get`
 - `/action_attempts/list`
+- `/bridges/get`
 - `/client_sessions/create`
 - `/client_sessions/delete`
 - `/client_sessions/get`

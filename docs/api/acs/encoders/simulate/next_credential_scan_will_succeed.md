@@ -14,7 +14,7 @@ Simulates that the next attempt to scan a [credential](../../../../capability-gu
 
 ## Request Parameters
 
-None.
+None
 
 ## Return Type
 
