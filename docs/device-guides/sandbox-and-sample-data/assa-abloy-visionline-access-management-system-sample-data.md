@@ -3,11 +3,27 @@
 Use the following set of credentials to add virtual [ASSA ABLOY Visionline Access Control System](../assa-abloy-visionline-access-control-system-in-development/)-connected devices to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
 {% hint style="info" %}
-To use the virtual Visionline Access Control System (ACS) with the virtual [Seam Bridge](../../capability-guides/seam-bridge.md):&#x20;
-
-1. Connect the virtual Seam Bridge using a [Connect Webview](../../core-concepts/connect-webviews/) and the corresponding [Seam Bridge sample credentials](seam-bridge-sample-data.md).
-2. Connect virtual ASSA ABLOY Credential Services using a Connect Webview and the corresponding [ASSA ABLOY Credential Services sample credentials](assa-abloy-credential-service-sample-data.md).
-3. Connect the virtual Visionline ACS using a Connect Webview and the Visionline sample credentials.&#x20;
+To use the virtual Visionline Access Control System (ACS) to issue mobile keys in a sandbox workspace, you must also connect the [virtual ASSA ABLOY Credential Services](assa-abloy-credential-service-sample-data.md).
 {% endhint %}
 
-<table><thead><tr><th width="123">Name</th><th width="61">System ID</th><th>Username</th><th width="109">Password</th><th>Mobile Access UUID</th><th>Is Seam Bridge Installed on the Same Computer as Visionline?</th><th width="334">IP Address of Computer Running Visionline</th></tr></thead><tbody><tr><td>Any string to identify this Visionline ACS site</td><td>1</td><td>jane</td><td>1234</td><td>1</td><td>No</td><td>192.168.1.100</td></tr></tbody></table>
+## Sandbox Seam Bridge Credentials
+
+| Pairing Token                        | Bridge Name                       |
+| ------------------------------------ | --------------------------------- |
+| 123456 (or any six-character string) | My Network (or any unique string) |
+
+## Visionline Credentials
+
+<table><thead><tr><th width="328">Name</th><th width="282">Username</th><th width="162">Password</th></tr></thead><tbody><tr><td>Any string to identify this Visionline ACS site, for example, My Visionline Site</td><td>jane</td><td>1234</td></tr></tbody></table>
+
+## Mobile Key Information
+
+If you plan to create mobile keys, select the **Mobile Keys will be issued in this system** field and specify the following information:
+
+| Mobile Access UUID | System ID |
+| ------------------ | --------- |
+| 1                  | 1         |
+
+## Seam Bridge Connection Information
+
+Normally, leave the **Seam Bridge and Visionline server are installed on different computers** field unchecked. If you choose to select this field, type `192.168.1.100` in the **IP Address of Computer running Visionline server** field.

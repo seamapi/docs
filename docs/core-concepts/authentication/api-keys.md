@@ -20,12 +20,13 @@ Each API key is associated with a specific workspace. For example, if you have a
 If you need to access multiple workspaces, create a [Personal Access Token](personal-access-tokens.md) to use instead of a workspace-specific API key.
 {% endhint %}
 
-1. In the upper-right corner of the [Seam Console](https://console.seam.co/), click the down arrow to display the workspace list.
-2. Click the workspace for which you want to create an API key.
-3. In the left navigation pane, click **API Keys**.
-4. In the upper-right corner of the **API Keys** page, click **+ Add API Key**.
-5. In the **Add API Key** dialog, type a name for your new API key and then click **Create API Key**.
-6. Copy the newly-created API key and store it for future use.
+1. In the upper-left corner of [Seam Console](https://console.seam.co/), click the workspace switcher.![Use the Seam Console workspace switcher to switch between workspaces and create new workspaces.](../../.gitbook/assets/workspace-switcher.png)
+2. Click **New Workspace**.
+3. Click the workspace for which you want to create an API key.
+4. In the left navigation pane, click **API Keys**.
+5. In the upper-right corner of the **API Keys** page, click **Add API Key**.
+6. In the **Add API Key** dialog, type a name for your new API key and then click **Create API Key**.
+7. Copy the newly-created API key and store it for future use.
 
 {% hint style="info" %}
 Production API keys do not include `test`, while API keys for sandbox workspaces do include `test`. In addition, if you accidentally commit your API key to a GitHub repo, the `seam_` prefix is detected, and you are notified.

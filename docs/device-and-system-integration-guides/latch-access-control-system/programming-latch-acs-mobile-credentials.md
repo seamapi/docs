@@ -681,7 +681,7 @@ To learn more about using the Seam API with your Latch ACS, see the following to
 
 * [Programming PIN Codes for Latch ACS Users](programming-code-based-latch-credentials.md)
 * [Access Control Systems](../../products/access-systems/)
-* [Credential-based ACS](../../capability-guides/access-systems/understanding-access-control-system-differences.md#credential-based-acs)
+* [Credential-based ACS](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#credential-based-acs)
 * [Managing ACS Users](../../products/access-systems/user-management.md)
 * [Managing Credentials](../../capability-guides/access-systems/managing-credentials.md)
 * [Mobile Access](../../capability-guides/mobile-access/)
