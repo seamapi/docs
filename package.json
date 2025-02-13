@@ -34,7 +34,7 @@
     "@prettier/plugin-php": "^0.22.2",
     "@seamapi/blueprint": "^0.35.0",
     "@prettier/plugin-ruby": "^4.0.4",
-    "@seamapi/types": "1.345.0",
+    "@seamapi/types": "1.352.0",
     "change-case": "^5.4.4",
     "command-exists": "^1.2.9",
     "del": "^8.0.0",
