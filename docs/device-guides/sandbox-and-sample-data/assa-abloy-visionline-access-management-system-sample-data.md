@@ -6,7 +6,7 @@ Use the following set of credentials to add virtual [ASSA ABLOY Visionline Acces
 To use the virtual Visionline Access Control System (ACS) to issue mobile keys in a sandbox workspace, you must also connect the [virtual ASSA ABLOY Credential Services](assa-abloy-credential-service-sample-data.md).
 {% endhint %}
 
-## Sandbox Seam Bridge Credentials
+## Sandbox Seam Bridge Connection Credentials
 
 | Pairing Token                        | Bridge Name                       |
 | ------------------------------------ | --------------------------------- |
@@ -14,7 +14,7 @@ To use the virtual Visionline Access Control System (ACS) to issue mobile keys i
 
 ## Visionline Credentials
 
-<table><thead><tr><th width="328">Name</th><th width="282">Username</th><th width="162">Password</th></tr></thead><tbody><tr><td>Any string to identify this Visionline ACS site, for example, My Visionline Site</td><td>jane</td><td>1234</td></tr></tbody></table>
+<table><thead><tr><th width="328">Visionline Site Name</th><th width="282">Username</th><th width="162">Password</th></tr></thead><tbody><tr><td>Any string to identify this Visionline ACS site, for example, My Visionline Site</td><td>jane</td><td>1234</td></tr></tbody></table>
 
 ## Mobile Key Information
 

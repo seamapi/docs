@@ -297,6 +297,7 @@
   * [Sandbox PTI Storlogix Cloud](device-guides/sandbox-and-sample-data/pti-storlogix-cloud-sample-data.md)
   * [Sandbox Salto KS Access Control System](developer-tools/sandbox-and-sample-data/sandbox-salto-ks-access-control-system.md)
   * [Sandbox Salto Locks](device-guides/sandbox-and-sample-data/salto-sample-data.md)
+  * [Sandbox Salto Space Access Control System](developer-tools/sandbox-and-sample-data/sandbox-salto-space-access-control-system.md)
   * [Sandbox Schlage Encode Locks](device-guides/sandbox-and-sample-data/schlage-encode-sample-data.md)
   * [Sandbox Seam Bridge](device-guides/sandbox-and-sample-data/seam-bridge-sample-data.md)
   * [Sandbox SmartThings Hub](device-guides/sandbox-and-sample-data/smartthings-sample-data.md)
