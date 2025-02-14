@@ -7,9 +7,8 @@
 - `/access_codes`
 - `/access_codes/simulate`
 - `/access_codes/unmanaged`
-- `/acs/encoders`
-- `/acs/encoders/simulate`
 - `/action_attempts`
+- `/bridges`
 - `/client_sessions`
 - `/connect_webviews`
 - `/connected_accounts`
@@ -46,6 +45,7 @@
 - `/access_codes/unmanaged/update`
 - `/action_attempts/get`
 - `/action_attempts/list`
+- `/bridges/get`
 - `/client_sessions/create`
 - `/client_sessions/delete`
 - `/client_sessions/get`
@@ -167,7 +167,6 @@ Items that are intentionally undocumented are not included in this section.
 - `access_code`
 - `acs_credential_pool`
 - `acs_credential_provisioning_automation`
-- `acs_encoder`
 - `client_session`
 - `connect_webview`
 - `connected_account`
@@ -175,7 +174,6 @@ Items that are intentionally undocumented are not included in this section.
 - `event`
 - `network`
 - `noise_threshold`
-- `service_health`
 - `unmanaged_access_code`
 - `unmanaged_acs_access_group`
 - `webhook`
@@ -285,22 +283,6 @@ Items that are intentionally undocumented are not included in this section.
 - `noise_threshold.noise_threshold_id`
 - `noise_threshold.noise_threshold_nrs`
 - `noise_threshold.starts_daily_at`
-- `phone.can_hvac_cool`
-- `phone.can_hvac_heat`
-- `phone.can_hvac_heat_cool`
-- `phone.can_program_offline_access_codes`
-- `phone.can_program_online_access_codes`
-- `phone.can_remotely_lock`
-- `phone.can_remotely_unlock`
-- `phone.can_simulate_connection`
-- `phone.can_simulate_disconnection`
-- `phone.can_simulate_removal`
-- `phone.can_turn_off_hvac`
-- `phone.custom_metadata`
-- `phone.properties`
-- `service_health.description`
-- `service_health.service`
-- `service_health.status`
 - `unmanaged_access_code.is_managed`
 - `unmanaged_access_code.status`
 - `unmanaged_acs_access_group.access_group_type`
@@ -352,6 +334,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/acs/users/unmanaged/list`
 - `/action_attempts/get`
 - `/action_attempts/list`
+- `/bridges/get`
 - `/client_sessions/create`
 - `/client_sessions/delete`
 - `/client_sessions/get`
@@ -546,6 +529,8 @@ Items that are intentionally undocumented are not included in this section.
     - `action_attempt_id`
 - `/action_attempts/list`
     - `action_attempt_ids`
+- `/bridges/get`
+    - `bridge_id`
 - `/client_sessions/create`
     - `connect_webview_ids`
     - `connected_account_ids`
@@ -831,6 +816,7 @@ These items are deprecated.
 - `/acs/users/unmanaged/list`
 - `/action_attempts/get`
 - `/action_attempts/list`
+- `/bridges/get`
 - `/client_sessions/create`
 - `/client_sessions/delete`
 - `/client_sessions/get`
