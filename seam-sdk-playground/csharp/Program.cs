@@ -1058,3 +1058,11 @@ var seam = new SeamClient(
 //   startsAt: "2024-12-01T15:00:00.000Z",
 //   endsAt: "2024-12-04T12:00:00.000Z"
 // );
+
+// var thermostat = seam.Devices.Get(deviceId: "bad6d447-f847-4672-94a9-5992398d0278");
+
+// seam.Thermostats.Simulate.HvacModeAdjusted(
+//     deviceId: thermostat.DeviceId,
+//     hvacMode: "heat",
+//     heatingSetPointFahrenheit: 68
+//   );

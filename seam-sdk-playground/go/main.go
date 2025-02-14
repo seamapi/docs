@@ -6,13 +6,13 @@ import (
 	// "math/rand"
 	"os"
 //   "encoding/json"
-  // "time"
+//   "time"
 //   "reflect"
 
   api "github.com/seamapi/go"
   seam "github.com/seamapi/go/client"
 //   "github.com/seamapi/go/useridentities"
-  // "github.com/seamapi/go/acs"
+  "github.com/seamapi/go/acs"
 
 
 
@@ -31,7 +31,8 @@ func run() error {
   // SEAM_API_KEY := "seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm"
   // SEAM_API_KEY := "seam_2bQGnv5M_4fxHvu2U7ofPqQHEdzGCGMQe"
   // SEAM_API_KEY := "seam_test2P1X_2jq9k99HBroBF9zMamfdwwaZ"
-  SEAM_API_KEY := "seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy"
+//   SEAM_API_KEY := "seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy"
+  SEAM_API_KEY := "seam_test2atJ_AUXaAAMdnyhGvzsTFMzqZhUq"
 
 	client := seam.NewClient(
 		// seam.WithBaseURL(fmt.Sprintf("https://%d.fakeseamconnect.seam.vc", rand.Intn(1000000))),
@@ -1575,19 +1576,164 @@ func run() error {
 // fmt.Println(credential)
 // return nil
 
-userIdentity, uErr := client.UserIdentities.Create(context.Background(), &api.UserIdentitiesCreateRequest{
-	UserIdentityKey: api.String("jean_doe_go"),
-	EmailAddress: api.String("jean-go@example.com"),
-	PhoneNumber: api.String("+15555550115"),
-	FullName: api.String("Jean Doe Go"),
-  })
+// userIdentity, uErr := client.UserIdentities.Create(context.Background(), &api.UserIdentitiesCreateRequest{
+// 	UserIdentityKey: api.String("jean_doe_go"),
+// 	EmailAddress: api.String("jean-go@example.com"),
+// 	PhoneNumber: api.String("+15555550115"),
+// 	FullName: api.String("Jean Doe Go"),
+//   })
   
-  if uErr != nil {
-	  return uErr
+//   if uErr != nil {
+// 	  return uErr
+//   }
+  
+//   fmt.Println(userIdentity)
+//   return nil
+
+// acsSystemId := "0180e699-e3bb-40ce-9f18-ab830e874618"
+
+// acsUser, err := client.Acs.Users.Create(
+//     context.Background(), &acs.UsersCreateRequest{
+//       FullName: api.String("Jim Doe"),
+//       // Use the ACS system ID that you copied earlier from Seam Console.
+//       AcsSystemId: acsSystemId,
+//     },
+//   )
+//   if err != nil {
+//     return err
+//   }
+  
+//   fmt.Println(acsUser)
+//   return nil
+
+// acsUser, err := client.Acs.Users.Get(
+// 	context.Background(),
+// 	&acs.UsersGetRequest{
+// 		AcsUserId: "52e2cad2-2ea7-4aa0-bc8e-2f4338434a0f",
+// 	},
+// )
+
+// if err != nil {
+//   return err
+// }
+
+// startsAt, err := time.Parse(time.RFC3339, "2025-02-10T15:00:00Z")
+// endsAt, err := time.Parse(time.RFC3339, "2025-02-12T11:00:00Z")
+// if err != nil {
+//   return err
+// }
+
+// vingcardLock2EntranceId := "adbe42d4-c722-4904-a0bb-a61ed80b3b9f"
+// guestLock1EntranceId := "4430da5b-2fcf-4409-adda-8ffca903fff0"
+
+// keyCardCredential, err := client.Acs.Credentials.Create(
+//   context.Background(), &acs.CredentialsCreateRequest{
+//     AcsUserId: acsUser.AcsUserId,
+//     AccessMethod: "card",
+//     AllowedAcsEntranceIds: []string{
+//       vingcardLock2EntranceId,
+//       guestLock1EntranceId,
+//     },
+//     StartsAt: api.Time(startsAt),
+//     EndsAt: api.Time(endsAt),
+//     VisionlineMetadata: &acs.CredentialsCreateRequestVisionlineMetadata{
+//       CardFormat: acs.CredentialsCreateRequestVisionlineMetadataCardFormatRfid48.Ptr(),
+//       Override: api.Bool(true),
+//     },
+//   },
+// );
+// if err != nil {
+//   return err
+// };
+
+// fmt.Println(keyCardCredential)
+// return nil
+
+// jenDoeUser, err := client.UserIdentities.Create(
+//     context.Background(), &api.UserIdentitiesCreateRequest{
+//       EmailAddress: api.String("jen.doe@example.com"),
+//     },
+//   )
+//   if err != nil {
+//     return err
+//   }
+  
+//   fmt.Println(jenDoeUser)
+//   return nil
+
+
+// jenDoeUserUserIdentityId := "9c85791b-4520-469b-994f-03804418944d"
+// credentialManagerAcsSystemId := "5cf8a89d-e815-44d0-984d-22115ae5b5dc"
+
+// client.UserIdentities.EnrollmentAutomations.Launch(
+// 	context.Background(), &useridentities.EnrollmentAutomationsLaunchRequest{
+// 	  UserIdentityId: jenDoeUserUserIdentityId,
+// 	  CreateCredentialManagerUser: api.Bool(true),
+// 	  // Use the credential manager ID that you copied earlier from Seam Console.
+// 	  CredentialManagerAcsSystemId: credentialManagerAcsSystemId,
+// 	},
+//   )
+  
+//   return nil
+
+// acsSystemId := "641deca1-5a32-4af9-8088-03ab4c62e268"
+
+// checkIn, err := time.Parse(time.RFC3339, "2025-02-10T15:00:00.000Z")
+// checkOut, err := time.Parse(time.RFC3339, "2025-02-12T11:00:00.000Z")
+// if err != nil {
+//   return err
+// }
+
+// acsUser, err := client.Acs.Users.Create(
+//   context.Background(), &acs.UsersCreateRequest{
+//     FullName: api.String("Jen Doe"),
+// 	EmailAddress: api.String("jen.doe@example.com"),
+//     // Use the ACS system ID that you copied earlier from Seam Console.
+//     AcsSystemId: acsSystemId,
+//     UserIdentityId: api.String(jenDoeUserUserIdentityId),
+//     AccessSchedule: &acs.UsersCreateRequestAccessSchedule{
+//       StartsAt: checkIn,
+//       EndsAt: checkOut,
+//     },
+//   },
+// )
+// if err != nil {
+//   return err
+// }
+
+// fmt.Println(acsUser)
+
+// return nil
+
+acsUserAcsUserId := "7dd936b1-eaba-44b6-98d3-d9be086ac865"
+// accessGroupId := "760a0560-373d-4cc7-b46d-81a62c383988"
+
+// _, err := client.Acs.Users.AddToAccessGroup(
+// 	context.Background(), &acs.UsersAddToAccessGroupRequest{
+// 	  AcsUserId: acsUserAcsUserId,
+// 	  // Use the access group ID that you copied earlier from Seam Console.
+// 	  AcsAccessGroupId: accessGroupId,
+// 	},
+//   )
+//   if err != nil {
+// 	return err
+//   }
+  
+// return nil
+
+mobileKey, err := client.Acs.Credentials.Create(
+	context.Background(), &acs.CredentialsCreateRequest{
+	  AcsUserId: acsUserAcsUserId,
+	  IsMultiPhoneSyncCredential: api.Bool(true),
+	  AccessMethod: "mobile_key",
+  })
+  if err != nil {
+	  return err
   }
   
-  fmt.Println(userIdentity)
+  fmt.Println(mobileKey)
   return nil
+
 
 
 }

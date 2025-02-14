@@ -547,8 +547,8 @@ seam = Seam.new(api_key: 'seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy')
 #   acs_system_id: "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4"
 # )).inspect
 
-credential = seam.acs.credentials.get(acs_credential_id: "ea5117bd-9e61-4dee-bff7-71f470300741")
-puts credential.inspect
+# credential = seam.acs.credentials.get(acs_credential_id: "ea5117bd-9e61-4dee-bff7-71f470300741")
+# puts credential.inspect
 # encoders = seam.acs.encoders.list(acs_system_ids: ["8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4"])
 
 # encoding_action_attempt = seam.acs.encoders.encode_credential(
@@ -569,3 +569,15 @@ puts credential.inspect
 # )
 
 # puts user_identity.inspect
+
+acs_system_id = "2d176e49-35fd-40bb-ab4c-d2c80c508799"
+acs_user = seam.acs.users.create(
+  full_name: "Jane Doe Test Ruby",
+  # Use the ACS system ID that you copied earlier from the Seam Console.
+  acs_system_id: acs_system_id,
+  access_schedule: {
+    "starts_at": "2025-02-10T15:00:00.000Z",
+    "ends_at": "2025-02-12T11:00:00.000Z" 
+   }
+)
+puts acs_user.inspect

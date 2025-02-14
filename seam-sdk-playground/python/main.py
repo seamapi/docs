@@ -11,8 +11,9 @@ seam = Seam(
     # api_key="seam_testjMPq_3wh4WmfXuMRMZbAfpCmvUkUi"
     # api_key="seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm"
     # api_key="seam_2bQGnv5M_4fxHvu2U7ofPqQHEdzGCGMQe"
-    api_key="seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy"
+    # api_key="seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy"
     # api_key="seam_test32r3_9H3EoytYeuWBZBaJFkyJw3Vn"
+    api_key="seam_test2atJ_AUXaAAMdnyhGvzsTFMzqZhUq"
 ) # Seam automatically uses your exported SEAM_API_KEY.
 
 # seam = Seam(
@@ -1401,12 +1402,48 @@ seam = Seam(
 # pprint(seam.acs.credentials.get(acs_credential_id="ea5117bd-9e61-4dee-bff7-71f470300741"))
 # pprint(seam.action_attempts.get(action_attempt_id=encoding_action_attempt.action_attempt_id))
 
-user_identity = seam.user_identities.create(
-  user_identity_key = "jean_doe_python",
-  email_address = "jean-python@example.com",
-  phone_number = "+15555550110",
-  full_name = "Jean Doe Python"
+# user_identity = seam.user_identities.create(
+#   user_identity_key = "jean_doe_python",
+#   email_address = "jean-python@example.com",
+#   phone_number = "+15555550110",
+#   full_name = "Jean Doe Python"
+# )
+
+# pprint(user_identity)
+
+# acs_system_id="641deca1-5a32-4af9-8088-03ab4c62e268"
+
+# acs_user = seam.acs.users.create(
+#   full_name = "June Doe",
+#   # Use the ACS system ID that you copied earlier from the Seam Console.
+#   acs_system_id = acs_system_id,
+#   access_schedule = {
+#     "starts_at": "2025-02-10T15:00:00.000Z",
+#     "ends_at": "2025-02-12T11:00:00.000Z"
+#   }
+# )
+
+# pprint(acs_user)
+
+acs_user = seam.acs.users.get(
+  acs_user_id = "610e4794-bb3e-4c0f-be0e-576aed051743"
 )
 
-pprint(user_identity)
+# access_group_id = "760a0560-373d-4cc7-b46d-81a62c383988"
 
+# seam.acs.users.add_to_access_group(
+#   acs_user_id = acs_user.acs_user_id,
+#   # Use the access group ID that you copied earlier from the Seam Console.
+#   acs_access_group_id = access_group_id
+# )
+
+# pin_code_credential = seam.acs.credentials.create(
+#   acs_user_id = acs_user.acs_user_id,
+#   access_method = "code"
+# )
+
+# pprint(pin_code_credential)
+
+pprint(seam.acs.credentials.get(
+    acs_credential_id="45fa674d-b1eb-4889-a890-1500b0bf9c93"
+))
