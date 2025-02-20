@@ -14,7 +14,32 @@ Simulates that the next attempt to encode a [credential](../../../../capability-
 
 ## Request Parameters
 
-None
+### `acs_encoder_id`
+
+Type: `string`
+Required: Yes
+
+ID of the `acs_encoder` that will be used in the next request to encode the `acs_credential`.
+
+***
+
+### `error_code`
+
+Type: `string`
+Required: No
+
+Code of the error to simulate.
+
+***
+
+### `acs_credential_id`
+
+Type: `string`
+Required: No
+
+ID of the `acs_credential` that will fail to be encoded onto a card in the next request.
+
+***
 
 ## Return Type
 

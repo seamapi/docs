@@ -14,7 +14,41 @@ Returns a list of all [encoders](../../../capability-guides/access-systems/worki
 
 ## Request Parameters
 
-None
+### `acs_system_id`
+
+Type: `string`
+Required: No
+
+ID of the `acs_system` for which you want to retrieve all `acs_encoder`s.
+
+***
+
+### `limit`
+
+Type: `number`
+Required: No
+
+Number of `acs_encoders` to return.
+
+***
+
+### `acs_system_ids`
+
+Type: `array`
+Required: No
+
+IDs of the `acs_system`s for which you want to retrieve all `acs_encoder`s.
+
+***
+
+### `acs_encoder_ids`
+
+Type: `array`
+Required: No
+
+IDs of the `acs_encoder`s that you want to retrieve.
+
+***
 
 ## Return Type
 

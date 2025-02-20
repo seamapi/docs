@@ -498,6 +498,9 @@ Items that are intentionally undocumented are not included in this section.
     - `credential_manager_acs_system_id`
     - `credential_manager_acs_user_id`
     - `user_identity_id`
+- `/acs/encoders/simulate/next_credential_scan_will_fail`
+    - `error_code`
+    - `acs_credential_id_on_seam`
 - `/acs/entrances/get`
     - `acs_entrance_id`
 - `/acs/entrances/grant_access`
@@ -580,6 +583,9 @@ Items that are intentionally undocumented are not included in this section.
 - `/connected_accounts/delete`
     - `connected_account_id`
     - `sync`
+- `/connected_accounts/get`
+    - `connected_account_id`
+    - `email`
 - `/connected_accounts/update`
     - `automatically_manage_new_devices`
     - `connected_account_id`
@@ -590,6 +596,7 @@ Items that are intentionally undocumented are not included in this section.
     - `device_id`
     - `name`
 - `/devices/list`
+    - `device_type`
     - `exclude_if`
     - `include_if`
 - `/devices/list_device_providers`
@@ -610,6 +617,7 @@ Items that are intentionally undocumented are not included in this section.
     - `device_id`
     - `name`
 - `/devices/unmanaged/list`
+    - `device_type`
     - `exclude_if`
     - `include_if`
 - `/devices/unmanaged/update`
@@ -638,6 +646,7 @@ Items that are intentionally undocumented are not included in this section.
     - `device_id`
     - `name`
 - `/locks/list`
+    - `device_type`
     - `exclude_if`
     - `include_if`
 - `/locks/lock_door`
@@ -649,6 +658,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/networks/get`
     - `network_id`
 - `/noise_sensors/list`
+    - `device_type`
     - `exclude_if`
     - `include_if`
 - `/noise_sensors/noise_thresholds/create`
@@ -686,6 +696,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/thermostats/heat_cool`
     - `sync`
 - `/thermostats/list`
+    - `device_type`
     - `exclude_if`
     - `include_if`
 - `/thermostats/off`
@@ -694,6 +705,10 @@ Items that are intentionally undocumented are not included in this section.
     - `device_id`
     - `fan_mode`
     - `sync`
+- `/thermostats/set_hvac_mode`
+    - `hvac_mode_setting`
+- `/user_identities/get`
+    - `user_identity_key`
 - `/user_identities/list`
     - `credential_manager_acs_system_id`
 - `/user_identities/update`

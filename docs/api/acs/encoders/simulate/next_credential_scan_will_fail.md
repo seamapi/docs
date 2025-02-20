@@ -14,7 +14,32 @@ Simulates that the next attempt to scan a [credential](../../../../capability-gu
 
 ## Request Parameters
 
-None
+### `acs_encoder_id`
+
+Type: `string`
+Required: Yes
+
+ID of the `acs_encoder` that will fail to scan the `acs_credential` in the next request.
+
+***
+
+### `error_code`
+
+Type: `string`
+Required: No
+
+
+
+***
+
+### `acs_credential_id_on_seam`
+
+Type: `string`
+Required: No
+
+
+
+***
 
 ## Return Type
 
