@@ -2,8 +2,7 @@
 
 ## `acs_credential`
 
-Means by which a user gains access at an entrance.
-The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.
+Means by which a user gains access at an entrance. The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.
 
 ### `access_method`
 
@@ -49,6 +48,50 @@ ID of the access control system that contains the credential.
 Format: `ID`
 
 ID of the ACS user to whom the credential belongs.
+
+
+---
+
+### `assa_abloy_vostio_metadata`
+
+Format: `Object`
+
+Vostio-specific metadata for the credential.
+
+<details>
+
+<summary><code>door_names</code> Format: <code>List</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>endpoint_id</code> Format: <code>String</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>key_id</code> Format: <code>String</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>key_issuing_request_id</code> Format: <code>String</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>override_guest_acs_entrance_ids</code> Format: <code>List</code></summary>
+
+
+</details>
 
 
 ---
@@ -117,6 +160,8 @@ Possible enum values:
 - `hid_credential`
 - `visionline_card`
 - `salto_ks_credential`
+- `assa_abloy_vostio_key`
+- `salto_space_key`
 
 
 ---
@@ -213,56 +258,56 @@ Visionline-specific metadata for the credential.
 
 <details>
 
-<summary><code>auto_join</code> Format: <code>boolean</code></summary>
+<summary><code>auto_join</code> Format: <code>Boolean</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>card_function_type</code> Format: <code>enum</code></summary>
+<summary><code>card_function_type</code> Format: <code>Enum</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>card_id</code> Format: <code>string</code></summary>
+<summary><code>card_id</code> Format: <code>String</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>common_acs_entrance_ids</code> Format: <code>list</code></summary>
+<summary><code>common_acs_entrance_ids</code> Format: <code>List</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>credential_id</code> Format: <code>string</code></summary>
+<summary><code>credential_id</code> Format: <code>String</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>guest_acs_entrance_ids</code> Format: <code>list</code></summary>
+<summary><code>guest_acs_entrance_ids</code> Format: <code>List</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>is_valid</code> Format: <code>boolean</code></summary>
+<summary><code>is_valid</code> Format: <code>Boolean</code></summary>
 
 
 </details>
 
 <details>
 
-<summary><code>joiner_acs_credential_ids</code> Format: <code>list</code></summary>
+<summary><code>joiner_acs_credential_ids</code> Format: <code>List</code></summary>
 
 
 </details>
@@ -314,3 +359,204 @@ Unassigns a specified [credential](../../../capability-guides/access-systems/man
 ### [`/acs/credentials/update`](./update.md)
 
 Updates the code and ends at date and time for a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+## Events
+
+### `acs_credential.deleted`
+
+An [ACS credential](../../../capability-guides/access-systems/managing-credentials.md) was deleted.
+
+<details>
+
+<summary><code>acs_credential_id</code> Format: <code>ID</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
+
+ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+
+</details>
+
+<details>
+
+<summary><code>connected_account_id</code> Format: <code>ID</code></summary>
+
+ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+
+</details>
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which the event was created.
+
+</details>
+
+<details>
+
+<summary><code>event_id</code> Format: <code>ID</code></summary>
+
+ID of the event.
+
+</details>
+
+<details>
+
+<summary><code>event_type</code> Format: <code>String</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which the event occurred.
+
+</details>
+
+<details>
+
+<summary><code>workspace_id</code> Format: <code>ID</code></summary>
+
+ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
+</details>
+
+---
+
+### `acs_credential.issued`
+
+An [ACS credential](../../../capability-guides/access-systems/managing-credentials.md) was issued.
+
+<details>
+
+<summary><code>acs_credential_id</code> Format: <code>ID</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
+
+ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+
+</details>
+
+<details>
+
+<summary><code>connected_account_id</code> Format: <code>ID</code></summary>
+
+ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+
+</details>
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which the event was created.
+
+</details>
+
+<details>
+
+<summary><code>event_id</code> Format: <code>ID</code></summary>
+
+ID of the event.
+
+</details>
+
+<details>
+
+<summary><code>event_type</code> Format: <code>String</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which the event occurred.
+
+</details>
+
+<details>
+
+<summary><code>workspace_id</code> Format: <code>ID</code></summary>
+
+ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
+</details>
+
+---
+
+### `acs_credential.reissued`
+
+An [ACS credential](../../../capability-guides/access-systems/managing-credentials.md) was reissued.
+
+<details>
+
+<summary><code>acs_credential_id</code> Format: <code>ID</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
+
+ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+
+</details>
+
+<details>
+
+<summary><code>connected_account_id</code> Format: <code>ID</code></summary>
+
+ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+
+</details>
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which the event was created.
+
+</details>
+
+<details>
+
+<summary><code>event_id</code> Format: <code>ID</code></summary>
+
+ID of the event.
+
+</details>
+
+<details>
+
+<summary><code>event_type</code> Format: <code>String</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which the event occurred.
+
+</details>
+
+<details>
+
+<summary><code>workspace_id</code> Format: <code>ID</code></summary>
+
+ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
+</details>
+
+---
+

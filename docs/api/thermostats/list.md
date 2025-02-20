@@ -224,6 +224,7 @@ func main() {
 - API key
 - Client session token
 - Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
@@ -278,6 +279,15 @@ Type: `array`
 Required: No
 
 Array of device IDs by which to filter devices.
+
+***
+
+### `device_type`
+
+Type: `string`
+Required: No
+
+
 
 ***
 

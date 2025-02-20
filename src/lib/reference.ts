@@ -35,6 +35,8 @@ export const reference = (
     title: '',
     routes: [],
     resources: {},
+    events: [],
+    actionAttempts: [],
     ...metadata,
   }
 
@@ -95,12 +97,14 @@ export const reference = (
   }
 }
 
-function getNamespacePaths(routes: Route[]): string[] {
+const getNamespacePaths = (routes: Route[]): string[] => {
   return Array.from(
     new Set(
-      routes.flatMap((route) =>
-        route.namespace != null ? [route.namespace.path] : [],
-      ),
+      routes
+        .filter(({ isUndocumented }) => !isUndocumented)
+        .flatMap((route) =>
+          route.namespace != null ? [route.namespace.path] : [],
+        ),
     ),
   )
 }

@@ -9,9 +9,9 @@ description: >-
 
 When developing an app to control IoT devices—before moving to production—it is imperative to test your app against events like device disconnection and removal. However, it can be difficult to orchestrate these events in your quality assurance (QA) environment using real devices. To help you test your app more easily and effectively, Seam provides the following suite of `simulate` endpoints that you can use in a [sandbox workspace](../workspaces/#sandbox-workspaces):
 
-* [`devices/simulate/disconnect`](testing-your-app-against-device-disconnection-and-removal.md#simulate-disconnecting-a-device)
-* [`devices/simulate/connect`](testing-your-app-against-device-disconnection-and-removal.md#simulate-connecting-a-device)
-* [`devices/simulate/remove`](testing-your-app-against-device-disconnection-and-removal.md#simulate-removing-a-device)
+* [`/devices/simulate/disconnect`](testing-your-app-against-device-disconnection-and-removal.md#simulate-disconnecting-a-device)
+* [`/devices/simulate/connect`](testing-your-app-against-device-disconnection-and-removal.md#simulate-connecting-a-device)
+* [`/devices/simulate/remove`](testing-your-app-against-device-disconnection-and-removal.md#simulate-removing-a-device)
 
 {% hint style="info" %}
 Currently, Seam supports these endpoints for [August](../../device-guides/sandbox-and-sample-data/august-locks-sample-data.md) and [Yale](../../device-guides/sandbox-and-sample-data/yale-sample-data.md) sandbox devices.

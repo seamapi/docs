@@ -149,6 +149,7 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 - API key
 - Client session token
 - Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
@@ -199,4 +200,4 @@ Desired [heating set point](../../capability-guides/thermostats/understanding-th
 
 ## Return Type
 
-[action\_attempt](./)
+[action\_attempt](./) (action type: `SET_HVAC_MODE`)

@@ -16,7 +16,7 @@ The Seam integration for Salto KS enables you to create ACS users and assign acc
 
 ## Salto KS Resources
 
-The Seam ACS schema consists of a series of resources that interact intuitively, enabling you to use the Seam API to manage your Salto KS ACS in a logical, efficient manner. Salto KS is an [access group-based ACS](../../capability-guides/access-systems/understanding-access-control-system-differences.md#access-group-based-access-control-systems), so you [create ACS users](../../products/access-systems/user-management.md#create-an-acs-user) and then assign them to access groups to specify the entrances to which these users have access. You can also configure access schedules for ACS users.
+The Seam ACS schema consists of a series of resources that interact intuitively, enabling you to use the Seam API to manage your Salto KS ACS in a logical, efficient manner. Salto KS is an [access group-based ACS](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-group-based-access-control-systems), so you [create ACS users](../../products/access-systems/user-management.md#create-an-acs-user) and then assign them to access groups to specify the entrances to which these users have access. You can also configure access schedules for ACS users.
 
 The following diagram shows the Seam resources for a Salto KS ACS and the relationships between these resources:
 
@@ -29,7 +29,7 @@ The following table provides a brief description of each of the Seam resources f
 For more information about managing your Salto KS ACS through Seam, see the following topics:
 
 * [Programming Code-Based Salto KS Credentials](programming-code-based-salto-ks-credentials.md)
-* [Access Group-Based Access Control Systems](../../capability-guides/access-systems/understanding-access-control-system-differences.md#access-group-based-access-control-systems)
+* [Access Group-Based Access Control Systems](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-group-based-access-control-systems)
 * [Access Control Systems](../../products/access-systems/)
 * [Mobile Access](../../capability-guides/mobile-access/)
 
@@ -53,6 +53,18 @@ To create a [Connect Webview](../../core-concepts/connect-webviews/) that enable
 ***
 
 ## Brand-Specific Restrictions
+
+Note the following Salto KS restrictions:
+
+### Salto KS Account Type
+
+You must use a Salto KS production environment account to connect to Seam. You cannot use "Accept Environment" credentials.
+
+To confirm that your Salto KS account is a production environment account, note the Salto KS dashboard URL. Make sure that the subdomain within this URL is `app`, for example, `https://app.saltoks.com`.
+
+A subdomain of `app-accept`, for example, `https://app-accept.saltoks.com`, indicates an "Accept Environment" that you cannot connect to Seam.
+
+### ACS Credentials
 
 When creating a credential for Salto KS, you cannot specify a custom PIN code. Instead, Salto KS generates the PIN code.
 

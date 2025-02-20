@@ -6,6 +6,10 @@ description: >-
 
 # 🔒 Smart Locks
 
+{% embed url="https://youtu.be/99ZpSq2Z1-8" %}
+You can control your smart locks easily with the Seam API. In this video, learn how to get started!
+{% endembed %}
+
 The Seam API enables you to control connected smart locks from a wide variety of manufacturers, including locks that provide online and offline access code programming. For example, you can use the Seam API to implement the following common scenarios:
 
 * **Shareable Web Pass:** Create a web pass to distribute to guests or visitors. When this pass is used, it can lock or unlock the smart lock.

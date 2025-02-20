@@ -7,7 +7,10 @@
 - `/access_codes`
 - `/access_codes/simulate`
 - `/access_codes/unmanaged`
+- `/acs/encoders`
+- `/acs/encoders/simulate`
 - `/action_attempts`
+- `/bridges`
 - `/client_sessions`
 - `/connect_webviews`
 - `/connected_accounts`
@@ -44,6 +47,8 @@
 - `/access_codes/unmanaged/update`
 - `/action_attempts/get`
 - `/action_attempts/list`
+- `/bridges/get`
+- `/bridges/list`
 - `/client_sessions/create`
 - `/client_sessions/delete`
 - `/client_sessions/get`
@@ -83,9 +88,6 @@
 - `/noise_sensors/noise_thresholds/list`
 - `/noise_sensors/noise_thresholds/update`
 - `/noise_sensors/simulate/trigger_noise_threshold`
-- `/phones/deactivate`
-- `/phones/list`
-- `/phones/simulate/create_sandbox_phone`
 - `/webhooks/create`
 - `/webhooks/delete`
 - `/webhooks/get`
@@ -106,15 +108,20 @@ These items are intentionally undocumented.
 - `/acs/credential_pools`: No undocumented message provided
 - `/acs/credential_provisioning_automations`: No undocumented message provided
 - `/acs/credentials/unmanaged`: No undocumented message provided
-- `/acs/encoders`: No undocumented message provided
-- `/acs/encoders/simulate`: No undocumented message provided
 - `/acs/users/unmanaged`: No undocumented message provided
+- `/seam/bridge/v1/bridge_client_sessions`: No undocumented message provided
 
 ### Resource properties
 
 - `acs_user.is_latest_desired_state_synced_with_provider`: Only used internally.
 - `acs_user.latest_desired_state_synced_with_provider_at`: Only used internally.
 - `thermostat_schedule.unstable_is_override_allowed`: Unstable
+- `unmanaged_acs_user.is_latest_desired_state_synced_with_provider`: Only used internally.
+- `unmanaged_acs_user.latest_desired_state_synced_with_provider_at`: Only used internally.
+
+### Namespaces
+
+- `/seam/bridge/v1`: No undocumented message provided
 
 ### Endpoints
 
@@ -125,16 +132,12 @@ These items are intentionally undocumented.
 - `/acs/credentials/create_offline_code`: Unreleased.
 - `/acs/credentials/unmanaged/get`: No unmanaged credentials are currently implemented.
 - `/acs/credentials/unmanaged/list`: No unmanaged credentials are currently implemented.
-- `/acs/encoders/encode_credential`: Encoders are in alpha.
-- `/acs/encoders/list`: Encoders are in alpha.
-- `/acs/encoders/scan_credential`: Encoders are in alpha.
-- `/acs/encoders/simulate/next_credential_encode_will_fail`: Encoder simulations are in alpha.
-- `/acs/encoders/simulate/next_credential_encode_will_succeed`: Encoder simulations are in alpha.
-- `/acs/encoders/simulate/next_credential_scan_will_fail`: Encoder simulations are in alpha.
-- `/acs/encoders/simulate/next_credential_scan_will_succeed`: Encoder simulations are in alpha.
 - `/acs/users/unmanaged/get`: No unmanaged users are currently implemented.
 - `/acs/users/unmanaged/list`: No unmanaged users are currently implemented.
 - `/devices/delete`: Deleting a device is no longer supported and will be removed.
+- `/seam/bridge/v1/bridge_client_sessions/create`: Seam Bridge Client only.
+- `/seam/bridge/v1/bridge_client_sessions/get`: Seam Bridge Client only.
+- `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`: Seam Bridge Client only.
 - `/thermostats/get`: Will be removed.
 
 ### Endpoint parameters
@@ -178,14 +181,12 @@ Items that are intentionally undocumented are not included in this section.
 - `client_session`
 - `connect_webview`
 - `connected_account`
-- `device`
 - `device_provider`
+- `event`
 - `network`
 - `noise_threshold`
-- `phone`
-- `service_health`
 - `unmanaged_access_code`
-- `unmanaged_device`
+- `unmanaged_acs_access_group`
 - `webhook`
 - `workspace`
 
@@ -266,18 +267,6 @@ Items that are intentionally undocumented are not included in this section.
 - `connected_account.errors`
 - `connected_account.user_identifier`
 - `connected_account.warnings`
-- `device.can_hvac_cool`
-- `device.can_hvac_heat`
-- `device.can_hvac_heat_cool`
-- `device.can_program_offline_access_codes`
-- `device.can_program_online_access_codes`
-- `device.can_remotely_lock`
-- `device.can_remotely_unlock`
-- `device.can_simulate_connection`
-- `device.can_simulate_disconnection`
-- `device.can_simulate_removal`
-- `device.can_turn_off_hvac`
-- `device.custom_metadata`
 - `device_provider.can_hvac_cool`
 - `device_provider.can_hvac_heat`
 - `device_provider.can_hvac_heat_cool`
@@ -293,6 +282,7 @@ Items that are intentionally undocumented are not included in this section.
 - `device_provider.display_name`
 - `device_provider.image_url`
 - `device_provider.provider_categories`
+- `event.event_type`
 - `network.created_at`
 - `network.display_name`
 - `network.network_id`
@@ -304,38 +294,22 @@ Items that are intentionally undocumented are not included in this section.
 - `noise_threshold.noise_threshold_id`
 - `noise_threshold.noise_threshold_nrs`
 - `noise_threshold.starts_daily_at`
-- `phone.can_hvac_cool`
-- `phone.can_hvac_heat`
-- `phone.can_hvac_heat_cool`
-- `phone.can_program_offline_access_codes`
-- `phone.can_program_online_access_codes`
-- `phone.can_remotely_lock`
-- `phone.can_remotely_unlock`
-- `phone.can_simulate_connection`
-- `phone.can_simulate_disconnection`
-- `phone.can_simulate_removal`
-- `phone.can_turn_off_hvac`
-- `phone.custom_metadata`
-- `phone.device_type`
-- `phone.properties`
-- `service_health.description`
-- `service_health.service`
-- `service_health.status`
 - `unmanaged_access_code.is_managed`
 - `unmanaged_access_code.status`
-- `unmanaged_device.can_hvac_cool`
-- `unmanaged_device.can_hvac_heat`
-- `unmanaged_device.can_hvac_heat_cool`
-- `unmanaged_device.can_program_offline_access_codes`
-- `unmanaged_device.can_program_online_access_codes`
-- `unmanaged_device.can_remotely_lock`
-- `unmanaged_device.can_remotely_unlock`
-- `unmanaged_device.can_simulate_connection`
-- `unmanaged_device.can_simulate_disconnection`
-- `unmanaged_device.can_simulate_removal`
-- `unmanaged_device.can_turn_off_hvac`
-- `unmanaged_device.is_managed`
-- `unmanaged_device.properties`
+- `unmanaged_acs_access_group.access_group_type`
+- `unmanaged_acs_access_group.access_group_type_display_name`
+- `unmanaged_acs_access_group.display_name`
+- `unmanaged_acs_access_group.is_managed`
+- `unmanaged_acs_credential.acs_credential_pool_id`
+- `unmanaged_acs_credential.card_number`
+- `unmanaged_acs_credential.is_issued`
+- `unmanaged_acs_credential.is_managed`
+- `unmanaged_acs_credential.issued_at`
+- `unmanaged_acs_user.email`
+- `unmanaged_acs_user.hid_acs_system_id`
+- `unmanaged_acs_user.is_latest_desired_state_synced_with_provider`
+- `unmanaged_acs_user.is_managed`
+- `unmanaged_acs_user.latest_desired_state_synced_with_provider_at`
 - `user_identity.display_name`
 - `user_identity.full_name`
 - `webhook.event_types`
@@ -366,18 +340,13 @@ Items that are intentionally undocumented are not included in this section.
 - `/access_codes/unmanaged/update`
 - `/acs/credential_pools/list`
 - `/acs/credential_provisioning_automations/launch`
-- `/acs/encoders/encode_credential`
-- `/acs/encoders/list`
-- `/acs/encoders/scan_credential`
-- `/acs/encoders/simulate/next_credential_encode_will_fail`
-- `/acs/encoders/simulate/next_credential_encode_will_succeed`
-- `/acs/encoders/simulate/next_credential_scan_will_fail`
-- `/acs/encoders/simulate/next_credential_scan_will_succeed`
 - `/acs/entrances/grant_access`
 - `/acs/users/unmanaged/get`
 - `/acs/users/unmanaged/list`
 - `/action_attempts/get`
 - `/action_attempts/list`
+- `/bridges/get`
+- `/bridges/list`
 - `/client_sessions/create`
 - `/client_sessions/delete`
 - `/client_sessions/get`
@@ -418,9 +387,6 @@ Items that are intentionally undocumented are not included in this section.
 - `/noise_sensors/noise_thresholds/list`
 - `/noise_sensors/noise_thresholds/update`
 - `/noise_sensors/simulate/trigger_noise_threshold`
-- `/phones/deactivate`
-- `/phones/list`
-- `/phones/simulate/create_sandbox_phone`
 - `/user_identities/update`
 - `/webhooks/create`
 - `/webhooks/delete`
@@ -544,9 +510,9 @@ Items that are intentionally undocumented are not included in this section.
     - `credential_manager_acs_system_id`
     - `credential_manager_acs_user_id`
     - `user_identity_id`
-- `/acs/encoders/simulate/next_credential_encode_will_succeed`
-    - `acs_encoder_id`
-    - `scenario`
+- `/acs/encoders/simulate/next_credential_scan_will_fail`
+    - `error_code`
+    - `acs_credential_id_on_seam`
 - `/acs/entrances/get`
     - `acs_entrance_id`
 - `/acs/entrances/grant_access`
@@ -562,7 +528,6 @@ Items that are intentionally undocumented are not included in this section.
     - `email`
 - `/acs/users/list`
     - `created_before`
-    - `limit`
 - `/acs/users/update`
     - `email`
     - `hid_acs_system_id`
@@ -578,6 +543,8 @@ Items that are intentionally undocumented are not included in this section.
     - `action_attempt_id`
 - `/action_attempts/list`
     - `action_attempt_ids`
+- `/bridges/get`
+    - `bridge_id`
 - `/client_sessions/create`
     - `connect_webview_ids`
     - `connected_account_ids`
@@ -627,6 +594,9 @@ Items that are intentionally undocumented are not included in this section.
 - `/connected_accounts/delete`
     - `connected_account_id`
     - `sync`
+- `/connected_accounts/get`
+    - `connected_account_id`
+    - `email`
 - `/connected_accounts/update`
     - `automatically_manage_new_devices`
     - `connected_account_id`
@@ -637,6 +607,7 @@ Items that are intentionally undocumented are not included in this section.
     - `device_id`
     - `name`
 - `/devices/list`
+    - `device_type`
     - `exclude_if`
     - `include_if`
 - `/devices/list_device_providers`
@@ -657,6 +628,7 @@ Items that are intentionally undocumented are not included in this section.
     - `device_id`
     - `name`
 - `/devices/unmanaged/list`
+    - `device_type`
     - `exclude_if`
     - `include_if`
 - `/devices/unmanaged/update`
@@ -676,6 +648,7 @@ Items that are intentionally undocumented are not included in this section.
     - `connected_account_id`
     - `device_id`
     - `device_ids`
+    - `event_ids`
     - `event_type`
     - `event_types`
     - `limit`
@@ -685,6 +658,7 @@ Items that are intentionally undocumented are not included in this section.
     - `device_id`
     - `name`
 - `/locks/list`
+    - `device_type`
     - `exclude_if`
     - `include_if`
 - `/locks/lock_door`
@@ -696,6 +670,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/networks/get`
     - `network_id`
 - `/noise_sensors/list`
+    - `device_type`
     - `exclude_if`
     - `include_if`
 - `/noise_sensors/noise_thresholds/create`
@@ -726,16 +701,10 @@ Items that are intentionally undocumented are not included in this section.
     - `sync`
 - `/noise_sensors/simulate/trigger_noise_threshold`
     - `device_id`
-- `/phones/deactivate`
-    - `device_id`
-- `/phones/list`
-    - `acs_credential_id`
-    - `owner_user_identity_id`
-- `/phones/simulate/create_sandbox_phone`
-    - `assa_abloy_metadata`
-    - `custom_sdk_installation_id`
-    - `phone_metadata`
-    - `user_identity_id`
+- `/seam/bridge/v1/bridge_client_sessions/create`
+    - `bridge_client_machine_identifier_key`
+    - `bridge_client_name`
+    - `bridge_client_time_zone`
 - `/thermostats/cool`
     - `sync`
 - `/thermostats/heat`
@@ -743,6 +712,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/thermostats/heat_cool`
     - `sync`
 - `/thermostats/list`
+    - `device_type`
     - `exclude_if`
     - `include_if`
 - `/thermostats/off`
@@ -751,6 +721,10 @@ Items that are intentionally undocumented are not included in this section.
     - `device_id`
     - `fan_mode`
     - `sync`
+- `/thermostats/set_hvac_mode`
+    - `hvac_mode_setting`
+- `/user_identities/get`
+    - `user_identity_key`
 - `/user_identities/list`
     - `credential_manager_acs_system_id`
 - `/user_identities/update`
@@ -796,6 +770,9 @@ These items are deprecated.
 - `acs_user.email`: use email_address.
 - `connect_webview.accepted_devices`: Unused. Will be removed.
 - `connect_webview.any_device_allowed`: Unused. Will be removed.
+- `unmanaged_acs_access_group.access_group_type`: Use `external_type`.
+- `unmanaged_acs_access_group.access_group_type_display_name`: Use `external_type_display_name`.
+- `unmanaged_acs_user.email`: use email_address.
 - `workspace.connect_partner_name`: use company_name
 
 ### Endpoint parameters
@@ -819,6 +796,8 @@ These items are deprecated.
     - `action_attempt`
 - `/access_codes/pull_backup_access_code`
     - `backup_access_code`
+- `/acs/users/list`
+    - `pagination`
 - `/events/get`
     - `message`
 - `/locks/get`
@@ -870,6 +849,8 @@ These items are deprecated.
 - `/acs/users/unmanaged/list`
 - `/action_attempts/get`
 - `/action_attempts/list`
+- `/bridges/get`
+- `/bridges/list`
 - `/client_sessions/create`
 - `/client_sessions/delete`
 - `/client_sessions/get`
@@ -912,9 +893,15 @@ These items are deprecated.
 - `/noise_sensors/noise_thresholds/update`
 - `/noise_sensors/simulate/trigger_noise_threshold`
 - `/phones/deactivate`
+- `/phones/get`
 - `/phones/list`
 - `/phones/simulate/create_sandbox_phone`
+- `/seam/bridge/v1/bridge_client_sessions/create`
+- `/seam/bridge/v1/bridge_client_sessions/get`
+- `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`
 - `/thermostats/get`
+- `/thermostats/simulate/hvac_mode_adjusted`
+- `/thermostats/simulate/temperature_reached`
 - `/user_identities/update`
 - `/webhooks/create`
 - `/webhooks/delete`

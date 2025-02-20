@@ -1,4 +1,5 @@
 import { dirname } from 'node:path'
+import { env } from 'node:process'
 import { fileURLToPath } from 'node:url'
 
 import layouts from '@metalsmith/layouts'
@@ -28,7 +29,7 @@ Metalsmith(rootDir)
       pathMetadata: './data/paths.yaml',
     }),
   )
-  .use(blueprint)
+  .use(blueprint({ skipCodeFormat: env['SKIP_CODE_FORMAT'] != null }))
   .use(reference)
   .use(report)
   .use(

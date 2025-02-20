@@ -169,17 +169,14 @@ acs_systems, uErr := client.Acs.Systems.List(
 **Response:**
 
 ```json
-{
-  "acs_systems": [
-    {
-      "acs_system_id": "11111111-1111-1111-1111-111111111111",
-      "name": "Visionline System",
-      ...
-    },
+[
+  {
+    "acs_system_id": "11111111-1111-1111-1111-111111111111",
+    "name": "Visionline System",
     ...
-  ],
-  "ok": true
-}
+  },
+  ...
+]
 ```
 {% endtab %}
 {% endtabs %}
@@ -190,7 +187,7 @@ acs_systems, uErr := client.Acs.Systems.List(
 
 To [create an ACS user](../../api/acs/users/create.md), provide the `acs_system_id` of the ACS system and the attributes of the user, such as the `full_name`, `email_address`, `phone_number`, and so on.
 
-Also, if your [ACS architecture](../../capability-guides/access-systems/understanding-access-control-system-differences.md) supports access groups, you can also assign an ACS user to one or more access groups. To do so, when you create the user, include the IDs of the access group to which you want add the user. The `acs_access_group_ids` parameter accepts an array of strings.
+Also, if your [ACS architecture](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md) supports access groups, you can also assign an ACS user to one or more access groups. To do so, when you create the user, include the IDs of the access group to which you want add the user. The `acs_access_group_ids` parameter accepts an array of strings.
 
 In addition, if your ACS architecture supports assigning access schedules directly to ACS users, you can specify an `access_schedule` for the user, including a `starts_at` and `ends_at` date and time.
 
@@ -387,15 +384,12 @@ acs_user, uErr := client.Acs.Users.Create(
 
 ```json
 {
-  "acs_user": {
-    "acs_user_id": "33333333-3333-3333-3333-333333333333",
-    "full_name": "Jane Doe",
-    "email_address": "jane@example.com",
-    "phone_number": "+15555550101",
-    "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    ...
-  },
-  "ok": true
+  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15555550101",
+  "acs_system_id": "11111111-1111-1111-1111-111111111111",
+  ...
 }
 ```
 {% endtab %}
@@ -577,18 +571,15 @@ acs_users, uErr := client.Acs.Users.List(
 **Response:**
 
 ```json
-{
-  "acs_users": [
-    {
-      "acs_user_id": "33333333-3333-3333-3333-333333333333",
-      "full_name": "Jane Doe",
-      "email_address": "jane@example.com",
-      ...
-    },
+[
+  {
+    "acs_user_id": "33333333-3333-3333-3333-333333333333",
+    "full_name": "Jane Doe",
+    "email_address": "jane@example.com",
     ...
-  ],
-  "ok": true
-}
+  },
+  ...
+]
 ```
 {% endtab %}
 {% endtabs %}
@@ -792,20 +783,17 @@ acs_user, uErr := client.Acs.Users.Get(
 
 ```json
 {
-  "acs_user": {
-    "acs_user_id": "33333333-3333-3333-3333-333333333333",
-    "full_name": "Jane Doe",
-    "email_address": "jane@example.com",
-    "phone_number": "+15555550100",
-    "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "access_schedule": {
-      "starts_at": "2024-03-01T10:40:00.000Z",
-      "ends_at": "2024-03-04T10:40:00.000Z"
-    },
-    "user_identity_id": "22222222-2222-2222-2222-222222222222",
-    ...
+  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15555550100",
+  "acs_system_id": "11111111-1111-1111-1111-111111111111",
+  "access_schedule": {
+    "starts_at": "2024-03-01T10:40:00.000Z",
+    "ends_at": "2024-03-04T10:40:00.000Z"
   },
-  "ok": true
+  "user_identity_id": "22222222-2222-2222-2222-222222222222",
+  ...
 }
 ```
 {% endtab %}
@@ -953,14 +941,7 @@ acs_user, uErr := client.Acs.Users.Update(
 **Response:**
 
 ```json
-{
-  "acs_user": {
-    "acs_user_id": "33333333-3333-3333-3333-333333333333",
-    "full_name": "Jack Doe",
-    ...
-  },
-  "ok": true
-}
+void
 ```
 {% endtab %}
 {% endtabs %}
@@ -1101,9 +1082,7 @@ deletion, uErr := client.Acs.Users.Delete(
 **Response:**
 
 ```json
-{
-  "ok": true
-}
+void
 ```
 {% endtab %}
 {% endtabs %}

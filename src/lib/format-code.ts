@@ -13,7 +13,7 @@ export const formatCode = async (
   return output.trim()
 }
 
-export const formatCodeForSyntax = async (
+const formatCodeForSyntax = async (
   content: string,
   syntax: CodeSampleSyntax,
 ): Promise<string> => {
@@ -54,6 +54,16 @@ const formatPython = async (content: string): Promise<string> => {
 }
 
 const formatRuby = async (content: string): Promise<string> => {
+  try {
+    await commandExists('ruby')
+    await execa({ input: 'require "syntax_tree"' })`ruby`
+  } catch {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'Skipping ruby formatting: ruby and syntax_tree are not installed',
+    )
+    return content
+  }
   return await prettier(content, {
     parser: 'ruby',
     plugins: [prettierPluginRuby.default],

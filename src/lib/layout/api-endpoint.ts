@@ -2,6 +2,7 @@ import type {
   CodeSampleSdk,
   Endpoint,
   SeamAuthMethod,
+  SeamWorkspaceScope,
 } from '@seamapi/blueprint'
 
 const supportedSdks: CodeSampleSdk[] = [
@@ -18,6 +19,7 @@ export interface ApiEndpointLayoutContext {
   title: string
   path: string
   authMethods: AuthMethodDisplayName[]
+  workspaceScope: SeamWorkspaceScope
   request: {
     preferredMethod: string
     parameters: Array<{
@@ -33,6 +35,7 @@ export interface ApiEndpointLayoutContext {
     escapedResourceType: string | null
     responseKey: string | null
     responseType: string | null
+    actionAttemptType?: string
   }
   codeSamples: Array<{
     title: string
@@ -73,6 +76,7 @@ export function setEndpointLayoutContext(
   file.description = endpoint.description
   file.title = endpoint.title
   file.path = endpoint.path
+  file.workspaceScope = endpoint.workspaceScope
 
   file.authMethods = endpoint.authMethods
     .filter(
@@ -108,6 +112,13 @@ export function setEndpointLayoutContext(
     file.response.escapedResourceType = resourceType.replaceAll('_', '\\_')
     file.response.responseKey = responseKey
     file.response.responseType = responseType
+  }
+
+  if (
+    endpoint.response.responseType === 'resource' &&
+    endpoint.response.actionAttemptType != null
+  ) {
+    file.response.actionAttemptType = endpoint.response.actionAttemptType
   }
 
   file.codeSamples = endpoint.codeSamples.map((sample) => {

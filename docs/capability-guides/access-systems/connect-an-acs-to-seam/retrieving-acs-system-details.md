@@ -4,13 +4,13 @@ description: Learn how to list and get information about your ACS systems.
 
 # Retrieving ACS System Details
 
-You can list details for all the ACSs in your [workspace](../../core-concepts/workspaces/) or get these details for a specific ACS. Note that Seam represents the ACS as an [`acs_system`](../../api/acs/systems/) resource. When you want to [create ACS users](../../products/access-systems/user-management.md#create-a-user) for your ACS, you must first obtain the ID of the `acs_system` for which you want to create these users.
+You can list details for all the ACSs in your [workspace](../../../core-concepts/workspaces/) or get these details for a specific ACS. Note that Seam represents the ACS as an [`acs_system`](../../../api/acs/systems/) resource. When you want to [create ACS users](../../../products/access-systems/user-management.md#create-a-user) for your ACS, you must first obtain the ID of the `acs_system` for which you want to create these users.
 
 ***
 
 ## List ACS Systems
 
-You can [list all `acs_system` resources](../../api/acs/systems/list.md) in your workspace. Note the `acs_system_id` in the response.
+You can [list all `acs_system` resources](../../../api/acs/systems/list.md) in your workspace. Note the `acs_system_id` in the response.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -184,7 +184,7 @@ acs_systems, uErr := client.Acs.Systems.List(
 
 ## Get an ACS System
 
-You can [get the details of a specific `acs_system`](../../api/acs/systems/get.md) in your workspace. These details include the `acs_system_id`, date and time at which the `acs_system` was created in Seam, the name and type of the `acs_system`, and so on.
+You can [get the details of a specific `acs_system`](../../../api/acs/systems/get.md) in your workspace. These details include the `acs_system_id`, date and time at which the `acs_system` was created in Seam, the name and type of the `acs_system`, and so on.
 
 {% tabs %}
 {% tab title="Python" %}

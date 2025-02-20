@@ -8,13 +8,15 @@ You can use the following Seam API "imperative" endpoints to set the current HVA
 
 * [`/thermostats/heat`](../../api/thermostats/heat.md)
 * [`/thermostats/cool`](../../api/thermostats/cool.md)
-* [`/thermostats/heat_cool`](../../api/thermostats/heat\_cool.md)
+* [`/thermostats/heat_cool`](../../api/thermostats/heat_cool.md)
 * [`/thermostats/off`](../../api/thermostats/off.md)
-* [`/thermostats/set_fan_mode`](../../api/thermostats/set\_fan\_mode.md)
+* [`/thermostats/set_fan_mode`](../../api/thermostats/set_fan_mode.md)
 
 Note that it's important to check the capabilities of a thermostat before attempting to use an imperative endpoint. For example, if a thermostat is attached to an HVAC system that does not have cooling capabilities, you cannot use `/thermostats/cool` or `/thermostats/heat_cool`. To check the capabilities of a thermostat, retrieve the thermostat and confirm the [relevant capability flags](./#thermostat-capabilities).
 
 These imperative operations return an [action attempt](../../core-concepts/action-attempts.md) that enables you to track the progress of the action. Poll this action attempt, until the action completes.
+
+Further, Seam emits a [`thermostat.temperature_reached_set_point` event](../../api-clients/events/#event-types) when the thermostat reports a temperature within 1° Celsius of the heating or cooling temperature that you requested.
 
 ***
 
@@ -50,6 +52,8 @@ To configure and then verify a climate setting on a thermostat, perform the foll
    * [Set the Fan Mode Setting](configure-current-climate-settings.md#set-the-fan-mode-setting)
 3. Poll the action attempt.\
    See [Poll the Action Attempt](configure-current-climate-settings.md#poll-the-action-attempt).
+4. If desired, configure a webhook to watch for a `thermostat.temperature_reached_set_point` event that indicates that the thermostat has reported a temperature within 1° Celsius of the heating or cooling [set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) that you requested.\
+   See [Webhooks](../../core-concepts/webhooks.md).
 
 ***
 
@@ -645,7 +649,7 @@ if ($thermostat->can_hvac_cool) {
 
 ## Set a Thermostat to Heat-Cool Mode
 
-You can [set a thermostat to heat-cool (also known as "auto") mode](../../api/thermostats/heat\_cool.md) and specify desired [set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) temperatures for both heating and cooling. By establishing the set points, the thermostat activates the associated heating and cooling systems as needed to maintain the specified temperature range.
+You can [set a thermostat to heat-cool (also known as "auto") mode](../../api/thermostats/heat_cool.md) and specify desired [set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) temperatures for both heating and cooling. By establishing the set points, the thermostat activates the associated heating and cooling systems as needed to maintain the specified temperature range.
 
 Issue the thermostat `heat_cool` request, providing the `device_id` of the thermostat and the following set points:
 
@@ -1064,7 +1068,7 @@ if ($thermostat->can_turn_off_hvac) {
 
 ## Set the Fan Mode Setting
 
-You can [configure the fan mode setting for a thermostat](../../api/thermostats/set\_fan\_mode.md). For details about the supported fan modes, see [Fan Mode Settings](configure-current-climate-settings.md#fan-mode-settings).
+You can [configure the fan mode setting for a thermostat](../../api/thermostats/set_fan_mode.md). For details about the supported fan modes, see [Fan Mode Settings](configure-current-climate-settings.md#fan-mode-settings).
 
 Set the fan mode setting by providing the `device_id` of the thermostat and specifying the desired `fan_mode_setting`.
 
@@ -1230,7 +1234,7 @@ $seam->thermostats->set_fan_mode(
 
 ## Poll the Action Attempt
 
-The imperative HVAC or fan mode setting request returns an [action attempt](../../core-concepts/action-attempts.md). Use the `action_attempt_id` from this response to poll the associated action attempt using the [`/action_attempts/get`](../../api-clients/action\_attempts/get.md) request. When the setting modification completes successfully, the `status` of the action attempt changes to `success`.
+The imperative HVAC or fan mode setting request returns an [action attempt](../../core-concepts/action-attempts.md). Use the `action_attempt_id` from this response to poll the associated action attempt using the [`/action_attempts/get`](../../api-clients/action_attempts/get.md) request. When the setting modification completes successfully, the `status` of the action attempt changes to `success`.
 
 {% tabs %}
 {% tab title="Python" %}

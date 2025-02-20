@@ -208,12 +208,12 @@ To launch an enrollment automation, include the `user_identity_id`, and include 
 ```python
 # Launch the enrollment automation.
 seam.user_identities_enrollment_automations.launch(
-    # Use the acs_system_id for the credential manager.
-    credential_manager_acs_system_id="6737e186-8d54-48ce-a7da-a0be4d252172",
-    user_identity_id=user_identity.user_identity_id,
-    # Automatically create a new credential manager user
-    # or specify the desired existing credential_manager_acs_user_id.
-    create_credential_manager_user=True
+  # Use the acs_system_id for the credential manager.
+  credential_manager_acs_system_id="6737e186-8d54-48ce-a7da-a0be4d252172",
+  user_identity_id=user_identity.user_identity_id,
+  # Automatically create a new credential manager user
+  # or specify the desired existing credential_manager_acs_user_id.
+  create_credential_manager_user=True
 )
 ```
 {% endtab %}

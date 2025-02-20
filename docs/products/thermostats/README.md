@@ -26,6 +26,10 @@ The Seam API's thermostat features enable PMSs to satisfy a variety of scenarios
 * If you're a multifamily property manager, you can set unoccupied units' thermostats to energy saving settings and also schedule comfortable climates for unit tours, maintenance, and cleaners. Further, when a unit becomes occupied, you can pass control of the unit's thermostats to the new residents.
 * If you're a short-term rental host or property manager, you can configure Seam to help you monitor your thermostats proactively. In this way, reported temperatures outside acceptable thresholds automatically alert you to potential HVAC system issues.
 
+{% embed url="https://www.youtube.com/watch?amp;ab_channel=Seam&amp;t=102s&v=3CYvoJtAGNc" %}
+You can control your thermostats easily with the Seam API. In this video, learn how to get started!
+{% endembed %}
+
 ***
 
 ## Managing Thermostats with Seam
@@ -36,7 +40,7 @@ First, connect your users' thermostats to Seam using the [Seam Console](../../co
 
 Retrieve and monitor your users' thermostats using the [`/thermostats/list`](../../api/thermostats/list.md) and [`/devices/get`](../../api-clients/devices/get.md) endpoints. The Seam API returns robust, up-to-date information about your connected thermostats. In addition, you can use these endpoints to learn the capabilities of each thermostat.
 
-Further, you can use the [`/thermostats/set_temperature_threshold`](../../api/thermostats/set\_temperature\_threshold.md) endpoint to set upper and lower acceptable temperature bounds. If the thermostat reports a temperature outside this range, Seam emits a [`thermostat.temperature_threshold_exceeded` event](../../api-clients/events/#event-types).
+Further, you can use the [`/thermostats/set_temperature_threshold`](../../api/thermostats/set_temperature_threshold.md) endpoint to set upper and lower acceptable temperature bounds. If the thermostat reports a temperature outside this range, Seam emits a [`thermostat.temperature_threshold_exceeded` event](../../api-clients/events/#event-types).
 
 ### Perform Remote Management
 
