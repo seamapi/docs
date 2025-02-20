@@ -142,3 +142,7 @@ redirects:
   api-clients/user-identities: api-clients/user_identities/README.md
   api-clients/workspaces/get-workspace: api-clients/workspaces/get.md
   api-clients/workspaces/reset-workspace: api-clients/workspaces/reset_sandbox.md
+  api/phones/get-a-phone: api-clients/phones/get.md
+  api/phones/list-phones: api-clients/phones/list.md
+  api/phones/deactivate-a-phone: api-clients/phones/deactivate.md
+  api-clients/phones/create-a-sandbox-phone: api-clients/phones/simulate/create_sandbox_phone.md

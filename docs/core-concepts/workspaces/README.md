@@ -33,12 +33,14 @@ There is no limit to the number of workspaces that you can create, but most Seam
 
 ## Production Workspaces
 
-Production workspaces enable you to connect and control real devices from brands, such as August, Schlage, Brivo, Nest, and more.
+Production workspaces enable you to connect and control real devices from brands, such as August, Schlage, Ecobee, Google Nest, and more.
 
 ### Create a Production Workspace
 
-1. In the upper-right corner of the [Seam Console](https://console.seam.co/), click the down arrow to display the workspace list.
-2. Click **+ Add Workspace**.
+1.  In the upper-left corner of [Seam Console](https://console.seam.co/), click the workspace switcher to display the workspace list.
+
+    ![Use the Seam Console workspace switcher to switch between workspaces and create new workspaces.](../../.gitbook/assets/workspace-switcher.png)
+2. Click **New Workspace**.
 3. In the **Add a Workspace** dialog, type a name for your new workspace and your company name.
 4. Disable **Sandbox mode**.
 5. Click **Create Workspace**.
@@ -47,14 +49,14 @@ Production workspaces enable you to connect and control real devices from brands
 
 You can use either of the following two ways to connect devices to a production workspace:
 
-* Use the [Seam Console](./#connect-devices-using-the-seam-console).
+* Use [Seam Console](./#connect-devices-using-seam-console).
 * Use [Connect Webviews](./#connect-devices-using-connect-webviews).
 
-#### Connect Devices Using the Seam Console
+#### Connect Devices Using Seam Console
 
-1. In the left navigation pane of the [Seam Console](https://console.seam.co/), click **Devices**.
-2. In the upper-right corner of the **Devices** page, click **+ Add Device**.\
-   The Seam Console displays a [Connect Webview](../connect-webviews/) (that is, an authorization flow) that enables you to connect a device account to Seam.
+1. In the top navigation pane of [Seam Console](https://console.seam.co/), click **Devices**.
+2. In the upper-right corner of the **Devices** page, click **Add Devices**.\
+   Seam Console displays a [Connect Webview](../connect-webviews/) (that is, an authorization flow) that enables you to connect a device account to Seam.
 3. In the Connect Webview, click **Continue**.
 4. In the manufacturer list, select the manufacturer of the devices that you want to connect.
 5. Follow the login instructions to authorize these devices.
@@ -67,7 +69,7 @@ If you are creating an application (app) to control your users' devices, use [Co
 
 <figure><img src="../../.gitbook/assets/Seam Connect.png" alt="Use Connect Webviews to enable your users to authorize your app to control their devices."><figcaption></figcaption></figure>
 
-### Common Workspace Setup
+### Single Workspace Setup (More Common)
 
 Most Seam customers use a single production workspace to connect all their devices, regardless of whether these devices are ones that they own or they are controlling thousands of end customers' devices. For example, a property management app with thousands of customers could still use a single production workspace to connect all customers' devices.
 
@@ -101,8 +103,10 @@ You can only connect virtual devices in a sandbox workspace. To connect a real d
 
 ### Create a Sandbox Workspace
 
-1. In the upper-right corner of the [Seam Console](https://console.seam.co/), click the down arrow to display the workspaces list.
-2. Click **+ Add Workspace**.
+1.  In the upper-left corner of [Seam Console](https://console.seam.co/), click the workspace switcher to display the workspace list.
+
+    ![Use the Seam Console workspace switcher to switch between workspaces and create new workspaces.](../../.gitbook/assets/workspace-switcher.png)
+2. Click **New Workspace**.
 3. In the **Add a Workspace** dialog, type a name for your new workspace and your company name.
 4. Enable **Sandbox mode**.
 5. Click **Create Workspace**.
@@ -115,17 +119,17 @@ To connect virtual devices, specify the login credentials for test device accoun
 
 You can trigger test events for some virtual devices. This capability is useful for testing code that depends on receiving event notifications from the Seam API. For example, virtual noise sensor devices, such as Minut, provide the ability to trigger a "noise event" that emits an event to your webhook endpoint. Once you have triggered an event, you can view this even on the **Events** tab for the virtual device.
 
-1. In the left navigation pane of the [Seam Console](https://console.seam.co/), click **Devices**.
+1. In the top navigation pane of the [Seam Console](https://console.seam.co/), click **Devices**.
 2. In the **Devices** table, click the device with which you want to interact.
 3. Click the **Actions** tab.\
    The **Actions** tab lists the actions that you can perform on this virtual device.
 4. Click the desired action, as applicable for that action.\
    For example:
-   * For a virtual door lock, click the **Locked** toggle to lock or unlock the lock.
-   * For a virtual thermostat, click **Edit** and then modify a climate setting.
+   * For a virtual door lock, click **Locked** to lock or unlock the lock.
+   * For a virtual thermostat, click **Edit** and then modify the climate or fan setting.
    * For a virtual noise sensor, click **Trigger** to trigger a noise threshold alert.
 5. Click the **Events** tab for the device.\
-   The **Events** tab displays the event.
+   The **Events** tab displays events for the device.
 
 ### Testing Your App
 
@@ -135,15 +139,18 @@ To help you test your app against eventsâ€”like device disconnection or removalâ
 
 Sandbox workspace are unique in that you can reset them to the original starting state. For example, if you need to run complex continuous integration (CI) testing for an app, you can reset the sandbox workspace after each individual test run.
 
-You can reset a sandbox workspace either manually through the [Seam Console](./#reset-a-sandbox-workspace-using-the-seam-console) or programmatically using the [Seam API](./#reset-a-sandbox-workspace-using-the-seam-api). For detailed information about resetting a sandbox workspace through the Seam API, see the [Reset Workspace](../../api-clients/workspaces/reset\_sandbox.md) API reference.
+You can reset a sandbox workspace either manually through [Seam Console](./#reset-a-sandbox-workspace-using-the-seam-console) or programmatically using the [Seam API](./#reset-a-sandbox-workspace-using-the-seam-api). For detailed information about resetting a sandbox workspace through the Seam API, see the [Reset Workspace](../../api-clients/workspaces/reset_sandbox.md) API reference.
 
-#### Reset a Sandbox Workspace Using the Seam Console
+#### Reset a Sandbox Workspace Using Seam Console
 
-1. In the upper-right corner of the [Seam Console](https://console.seam.co/), click the down arrow to display the workspace list.
+1.  In the upper-left corner of [Seam Console](https://console.seam.co/), click the workspace switcher to display the workspace list.
+
+    ![Use the Seam Console workspace switcher to switch between workspaces and create new workspaces.](../../.gitbook/assets/workspace-switcher.png)
 2. Select the name of the sandbox workspace that you want to reset.\
-   The Seam Console switches to the selected sandbox workspace.
-3. In the upper-right corner of the [Seam Console](https://console.seam.co/), click the down arrow again.
-4. In the workspace list, below the name of the selected sandbox workspace, click **Reset**.
+   Seam Console switches to the selected sandbox workspace.
+3. In the top navigation pane of [Seam Console](https://console.seam.co/), click **Settings**.
+4. At the upper-right corner of the **Workspace Settings** page, click ![Seam Console three-dot menu button](../../.gitbook/assets/three-dot-menu-button.png) and then select **Reset Sandbox**.
+5. Click **Reset Workspace** to confirm the reset.
 
 #### Reset a Sandbox Workspace Using the Seam API
 
@@ -183,11 +190,14 @@ $seam->workspaces->reset_sandbox();
 
 You can add teammates to your workspace.
 
-1. In the upper-right corner of the [Seam Console](https://console.seam.co/), click the down arrow to display the workspace list.
-2. Click the workspace that you want to share.
+1.  In the upper-left corner of [Seam Console](https://console.seam.co/), click the workspace switcher to display the workspace list.
+
+    ![Use the Seam Console workspace switcher to switch between workspaces and create new workspaces.](../../.gitbook/assets/workspace-switcher.png)
+2. Select the name of the workspace that you want to share.\
+   Seam Console switches to the selected workspace.
 3. In the left navigation pane, click **Team**.
-4. In the upper-right corner of the **Team** page, click **+ Add member**.
+4. In the upper-right corner of the **Team** page, click **Add member**.
 5. In the **Add Organization Member** dialog, type the email address of the teammate that you want to add to this workspace.
 6. Click **Add to Team**.
 
-The Seam Console sends an email invitation to the specified teammate.
+Seam Console sends an email invitation to the specified teammate.

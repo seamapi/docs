@@ -36,6 +36,14 @@
 /acs/encoders/simulate:
   title: Encoder Simulations
 
+/phones:
+  title: Phones
+  resources:
+    - phone
+
+/phones/simulate:
+  title: Phone Simulations
+
 /thermostats:
   title: Thermostats
   resources: []

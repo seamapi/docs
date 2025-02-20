@@ -23,8 +23,7 @@ Locate your ASSA ABLOY tenant account username and password, as well as your app
 
 1. In a web browser, go to the [ASSA ABLOY Global Solutions Technology Partner Portal](https://my.assaabloyglobalsolutions.com/tpp).
 2. Log in to the ASSA ABLOY Global Solutions Technology Partner Portal.
-3.  Click **Accounts > Account List**.\
-
+3.  Click **Accounts > Account List**.
 
     <figure><img src="../.gitbook/assets/assa-abloy-accounts-account-list-menu-item.png" alt="In the ASSA ABLOY Global Solutions Technology Partner Portal, click Accounts > Account List."><figcaption></figcaption></figure>
 4. In the **Agreements** area, locate and open the text (`.txt`) file.\
@@ -38,7 +37,7 @@ Once you have received certification, ASSA ABLOY provides your production creden
 
 ## Setup Instructions
 
-1. Create and then display a [Connect Webview](../core-concepts/connect-webviews/), including `assa_abloy_credential_service` in the set of [`accepted_providers`](../api-clients/connect_webviews/#connect\_webview-properties).\
+1. Create and then display a [Connect Webview](../core-concepts/connect-webviews/), including `assa_abloy_credential_service` in the set of [`accepted_providers`](../api-clients/connect_webviews/#connect_webview-properties).\
    Alternately, in the left navigation pane of the [Seam Console](https://console.seam.co/), click **Access Systems**. Then, in the upper-right corner of the **Access Systems** page, click **+ New Access System**.
 2.  In the Connect Webview, perform the following steps:
 
@@ -46,8 +45,6 @@ Once you have received certification, ASSA ABLOY provides your production creden
     * In the **Username** field, type your tenant account username.
     * In the **Password** field, type your tenant account password.
     * In the **Credential Services URL** field, type the credential services URL.
-
-
 
     <figure><img src="../.gitbook/assets/connect-webview-assa-abloy-credential-service-credentials.png" alt="" width="181"><figcaption></figcaption></figure>
 

@@ -4,7 +4,7 @@ description: Learn how to create a card-based credential for Visionline.
 
 # Creating Visionline Card-based Credentials
 
-To create a credential to endocde on a plastic key card for a Visionline ACS:
+To create a credential to encode on a plastic key card for a Visionline ACS:
 
 1. Set up an [ACS user](../../products/access-systems/user-management.md).
 2.  Create a [credential](../../capability-guides/access-systems/managing-credentials.md#create-a-card-based-credential) with the `access_method` set to `card` and the appropriate [`visionline_metadata`](mobile-credential-related-properties.md#acs_credential.visionline_metadata-properties), such as the card format.

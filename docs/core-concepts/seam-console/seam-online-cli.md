@@ -1,31 +1,32 @@
 ---
 description: >-
   Use the interactive Seam Online CLI as a user-friendly and efficient way to
-  explore and test the Seam API from within the Seam Console.
+  explore and test the Seam API from within Seam Console.
 ---
 
 # Seam Online CLI
 
 <figure><img src="../../.gitbook/assets/seam-cli-demo.gif" alt="Use the interactive Seam CLI to explore and test the Seam API." width="563"><figcaption><p>Use the interactive Seam CLI to explore and test the Seam API.</p></figcaption></figure>
 
-The Seam Online Command Line Interface (CLI) is a fully interactive CLI version of the [Seam API](broken-reference). You access the Seam Online CLI from within the [Seam Console](./). Quick, intuitive, and easy to use, the Seam Online CLI enables you to perform a variety of useful tasks, including the following:
+The Seam Online Command Line Interface (CLI) is a fully interactive CLI version of the [Seam API](broken-reference). You access the Seam Online CLI from within [Seam Console](./). Quick, intuitive, and easy to use, the Seam Online CLI enables you to perform a variety of useful tasks, including the following:
 
 * Explore and test all the available methods in the Seam API interactively.
 * View resources or test API functions easily and quickly.
 * Inspect the results of your API commands.
-* Access Seam API functionality that is not currently available in the Seam Console.
+* Access Seam API functionality that is not currently available in Seam Console.
 
 {% hint style="info" %}
-In addition to using the Seam Online CLI within the Seam Console, you can also [install and use the Seam CLI locally](../../developer-tools/seam-cli.md).
+In addition to using the Seam Online CLI within Seam Console, you can also [install and use the Seam CLI locally](../../developer-tools/seam-cli.md).
 {% endhint %}
 
 <table data-card-size="large" data-view="cards" data-full-width="false"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Seam Online CLI Demo</strong></td><td></td><td></td><td><a href="../../.gitbook/assets/seam-online-cli.png">seam-online-cli.png</a></td><td><a href="https://youtu.be/GGmQQ57jBn0">https://youtu.be/GGmQQ57jBn0</a></td></tr></tbody></table>
 
 ## Access the Seam Online CLI
 
-1. In the upper-right corner of the [Seam Console](https://console.seam.co/), click the down arrow to display the [workspace](../workspaces/) list.
+1. In the upper-left corner of [Seam Console](https://console.seam.co/), click the workspace switcher.![Use the Seam Console workspace switcher to switch between workspaces and create new workspaces.](../../.gitbook/assets/workspace-switcher.png)
 2. Click the workspace for which you want to use the Seam Online CLI.
-3. In the left navigation pane, click **Online CLI**.
+3. In the top navigation pane, click **Developer**.
+4. In the left navigation pane, click **Online CLI**.
 
 The Seam Online CLI opens in a new browser tab or window.
 
