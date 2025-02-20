@@ -28,6 +28,14 @@
   resources:
     - acs_credential
 
+/acs/encoders:
+  title: Encoders
+  resources:
+    - acs_encoder
+
+/acs/encoders/simulate:
+  title: Encoder Simulations
+
 /phones:
   title: Phones
   resources:

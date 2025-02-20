@@ -7,8 +7,6 @@
 - `/access_codes`
 - `/access_codes/simulate`
 - `/access_codes/unmanaged`
-- `/acs/encoders`
-- `/acs/encoders/simulate`
 - `/action_attempts`
 - `/bridges`
 - `/client_sessions`
