@@ -42,6 +42,7 @@
 {{/if}}
 ## Request Parameters
 
+{{#if request.parameters.length}}
 {{#each request.parameters}}
 ### `{{this.name}}`
 
@@ -53,6 +54,10 @@ Required: {{#if this.required}}Yes{{else}}No{{/if}}
 ***
 
 {{/each}}
+{{else}}
+None
+
+{{/if}}
 ## Return Type
 
 {{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array<[{{response.escapedResourceType}}](./)>{{else}}[{{response.escapedResourceType}}](./){{#if response.actionAttemptType}} (action type: `{{response.actionAttemptType}}`){{/if}}{{/if}}{{else}}void{{/if}}
