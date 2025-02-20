@@ -176,7 +176,16 @@ Required: No
 Type: `number`
 Required: No
 
+Maximum number of records to return per page.
 
+***
+
+### `page_cursor`
+
+Type: `string`
+Required: No
+
+Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
 
 ***
 
