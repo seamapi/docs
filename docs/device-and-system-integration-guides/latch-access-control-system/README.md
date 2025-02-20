@@ -18,7 +18,7 @@ Latch enables you to install wireless door locks and intercom systems in your bu
 
 ## Latch ACS Resources
 
-The Seam ACS schema consists of a series of resources that interact intuitively, enabling you to use the Seam API to manage your Latch ACS in a logical, efficient manner. Latch is a [credential-based ACS](../../capability-guides/access-systems/understanding-access-control-system-differences.md#credential-based-access-control-systems), so you [create ACS users](../../products/access-systems/user-management.md#create-an-acs-user) and then grant them access permissions using credentials. When you create a credential, you specify the ACS user to which to assign the credential, as well as the allowed entrances and the start and end times for the access schedule.
+The Seam ACS schema consists of a series of resources that interact intuitively, enabling you to use the Seam API to manage your Latch ACS in a logical, efficient manner. Latch is a [credential-based ACS](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#credential-based-access-control-systems), so you [create ACS users](../../products/access-systems/user-management.md#create-an-acs-user) and then grant them access permissions using credentials. When you create a credential, you specify the ACS user to which to assign the credential, as well as the allowed entrances and the start and end times for the access schedule.
 
 The following diagram shows the Seam resources for a Latch ACS and the relationships between these resources:
 
@@ -32,7 +32,7 @@ For more information about managing your Latch ACS through Seam, see the followi
 
 * [Programming Code-Based Latch Credentials](programming-code-based-latch-credentials.md)
 * [Programming Latch ACS Mobile Credentials](programming-latch-acs-mobile-credentials.md)
-* [Credential-based ACS](../../capability-guides/access-systems/understanding-access-control-system-differences.md#credential-based-acs)
+* [Credential-based ACS](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#credential-based-acs)
 * [Access Control Systems](../../products/access-systems/)
 * [Mobile Access](../../capability-guides/mobile-access/)
 

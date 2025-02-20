@@ -9,7 +9,7 @@ description: >-
 Some ACSs use access groups, which are sets of ACS users, combined with sets of permissions. These permissions include both the set of areas or assets that the ACS users can access and the schedule during which the users can access these areas or assets. Instead of assigning access rights individually to each ACS user, which can be time-consuming and error-prone, administrators can assign users to an access group, thereby ensuring that the users inherit all the permissions associated with the access group. Using access groups streamlines the process of managing large numbers of ACS users, especially in bigger organizations or complexes.
 
 {% hint style="info" %}
-To learn whether your ACS supports access groups, see the [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS.
+To learn whether your ACS supports access groups, see the [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS.
 {% endhint %}
 
 This guide explains how to grant access permissions to ACS users by adding them to the appropriate access groups.
@@ -18,7 +18,7 @@ This guide explains how to grant access permissions to ACS users by adding them 
 
 ## Add an ACS User to an Access Group
 
-To [add an ACS user to an access group](../../api/acs/users/add_to_access_group.md), provide both the `acs_user_id` and the `acs_access_group_id`.
+To [add an ACS user to an access group](../../../api/acs/users/add_to_access_group.md), provide both the `acs_user_id` and the `acs_access_group_id`.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -44,7 +44,7 @@ None
 ```bash
 curl -X 'POST' \
   'https://connect.getseam.com/acs/users/add_to_access_group' \
-  -H "Authorization: Bearer ${API_KEY}" \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
   "acs_user_id": "33333333-3333-3333-3333-333333333333",
@@ -155,9 +155,7 @@ add, uErr := client.Acs.Users.AddToAccessGroup(
 **Response:**
 
 ```json
-{
-  "ok": true
-}
+void
 ```
 {% endtab %}
 {% endtabs %}
@@ -166,7 +164,7 @@ add, uErr := client.Acs.Users.AddToAccessGroup(
 
 ## Remove an ACS User from an Access Group
 
-To [remove an ACS user from an access group](../../api/acs/users/remove_from_access_group.md), provide both the `acs_user_id` and the `acs_access_group_id`.
+To [remove an ACS user from an access group](../../../api/acs/users/remove_from_access_group.md), provide both the `acs_user_id` and the `acs_access_group_id`.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -193,7 +191,7 @@ None
 curl -X 'POST' \
   'https://connect.getseam.com/acs/users/remove_from_access_group' \
   -H 'accept: */*' \
-  -H "Authorization: Bearer ${API_KEY}" \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
   "acs_user_id": "33333333-3333-3333-3333-333333333333",
@@ -294,7 +292,7 @@ void
 
 ```go
 remove, uErr := client.Acs.Users.RemoveFromAccessGroup(
-  context.Background(), &#x26;acs.UsersRemoveFromAccessGroupRequest{
+  context.Background(), &acs.UsersRemoveFromAccessGroupRequest{
     AcsUserId: "33333333-3333-3333-3333-333333333333",
     AcsAccessGroupId: "44444444-4444-4444-4444-444444444444",
   },
@@ -304,9 +302,7 @@ remove, uErr := client.Acs.Users.RemoveFromAccessGroup(
 **Response:**
 
 ```json
-{
-  "ok": true
-}
+void
 ```
 {% endtab %}
 {% endtabs %}

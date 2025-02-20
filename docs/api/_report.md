@@ -10,6 +10,7 @@
 - `/acs/encoders`
 - `/acs/encoders/simulate`
 - `/action_attempts`
+- `/bridges`
 - `/client_sessions`
 - `/connect_webviews`
 - `/connected_accounts`
@@ -44,6 +45,8 @@
 - `/access_codes/unmanaged/update`
 - `/action_attempts/get`
 - `/action_attempts/list`
+- `/bridges/get`
+- `/bridges/list`
 - `/client_sessions/create`
 - `/client_sessions/delete`
 - `/client_sessions/get`
@@ -104,6 +107,7 @@ These items are intentionally undocumented.
 - `/acs/credential_provisioning_automations`: No undocumented message provided
 - `/acs/credentials/unmanaged`: No undocumented message provided
 - `/acs/users/unmanaged`: No undocumented message provided
+- `/seam/bridge/v1/bridge_client_sessions`: No undocumented message provided
 
 ### Resource properties
 
@@ -112,6 +116,10 @@ These items are intentionally undocumented.
 - `thermostat_schedule.unstable_is_override_allowed`: Unstable
 - `unmanaged_acs_user.is_latest_desired_state_synced_with_provider`: Only used internally.
 - `unmanaged_acs_user.latest_desired_state_synced_with_provider_at`: Only used internally.
+
+### Namespaces
+
+- `/seam/bridge/v1`: No undocumented message provided
 
 ### Endpoints
 
@@ -125,6 +133,9 @@ These items are intentionally undocumented.
 - `/acs/users/unmanaged/get`: No unmanaged users are currently implemented.
 - `/acs/users/unmanaged/list`: No unmanaged users are currently implemented.
 - `/devices/delete`: Deleting a device is no longer supported and will be removed.
+- `/seam/bridge/v1/bridge_client_sessions/create`: Seam Bridge Client only.
+- `/seam/bridge/v1/bridge_client_sessions/get`: Seam Bridge Client only.
+- `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`: Seam Bridge Client only.
 - `/thermostats/get`: Will be removed.
 
 ### Endpoint parameters
@@ -165,7 +176,6 @@ Items that are intentionally undocumented are not included in this section.
 - `access_code`
 - `acs_credential_pool`
 - `acs_credential_provisioning_automation`
-- `acs_encoder`
 - `client_session`
 - `connect_webview`
 - `connected_account`
@@ -333,6 +343,8 @@ Items that are intentionally undocumented are not included in this section.
 - `/acs/users/unmanaged/list`
 - `/action_attempts/get`
 - `/action_attempts/list`
+- `/bridges/get`
+- `/bridges/list`
 - `/client_sessions/create`
 - `/client_sessions/delete`
 - `/client_sessions/get`
@@ -496,6 +508,9 @@ Items that are intentionally undocumented are not included in this section.
     - `credential_manager_acs_system_id`
     - `credential_manager_acs_user_id`
     - `user_identity_id`
+- `/acs/encoders/simulate/next_credential_scan_will_fail`
+    - `error_code`
+    - `acs_credential_id_on_seam`
 - `/acs/entrances/get`
     - `acs_entrance_id`
 - `/acs/entrances/grant_access`
@@ -511,7 +526,6 @@ Items that are intentionally undocumented are not included in this section.
     - `email`
 - `/acs/users/list`
     - `created_before`
-    - `limit`
 - `/acs/users/update`
     - `email`
     - `hid_acs_system_id`
@@ -527,6 +541,8 @@ Items that are intentionally undocumented are not included in this section.
     - `action_attempt_id`
 - `/action_attempts/list`
     - `action_attempt_ids`
+- `/bridges/get`
+    - `bridge_id`
 - `/client_sessions/create`
     - `connect_webview_ids`
     - `connected_account_ids`
@@ -576,6 +592,9 @@ Items that are intentionally undocumented are not included in this section.
 - `/connected_accounts/delete`
     - `connected_account_id`
     - `sync`
+- `/connected_accounts/get`
+    - `connected_account_id`
+    - `email`
 - `/connected_accounts/update`
     - `automatically_manage_new_devices`
     - `connected_account_id`
@@ -586,6 +605,7 @@ Items that are intentionally undocumented are not included in this section.
     - `device_id`
     - `name`
 - `/devices/list`
+    - `device_type`
     - `exclude_if`
     - `include_if`
 - `/devices/list_device_providers`
@@ -606,6 +626,7 @@ Items that are intentionally undocumented are not included in this section.
     - `device_id`
     - `name`
 - `/devices/unmanaged/list`
+    - `device_type`
     - `exclude_if`
     - `include_if`
 - `/devices/unmanaged/update`
@@ -625,6 +646,7 @@ Items that are intentionally undocumented are not included in this section.
     - `connected_account_id`
     - `device_id`
     - `device_ids`
+    - `event_ids`
     - `event_type`
     - `event_types`
     - `limit`
@@ -634,6 +656,7 @@ Items that are intentionally undocumented are not included in this section.
     - `device_id`
     - `name`
 - `/locks/list`
+    - `device_type`
     - `exclude_if`
     - `include_if`
 - `/locks/lock_door`
@@ -645,6 +668,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/networks/get`
     - `network_id`
 - `/noise_sensors/list`
+    - `device_type`
     - `exclude_if`
     - `include_if`
 - `/noise_sensors/noise_thresholds/create`
@@ -675,6 +699,10 @@ Items that are intentionally undocumented are not included in this section.
     - `sync`
 - `/noise_sensors/simulate/trigger_noise_threshold`
     - `device_id`
+- `/seam/bridge/v1/bridge_client_sessions/create`
+    - `bridge_client_machine_identifier_key`
+    - `bridge_client_name`
+    - `bridge_client_time_zone`
 - `/thermostats/cool`
     - `sync`
 - `/thermostats/heat`
@@ -682,6 +710,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/thermostats/heat_cool`
     - `sync`
 - `/thermostats/list`
+    - `device_type`
     - `exclude_if`
     - `include_if`
 - `/thermostats/off`
@@ -690,6 +719,10 @@ Items that are intentionally undocumented are not included in this section.
     - `device_id`
     - `fan_mode`
     - `sync`
+- `/thermostats/set_hvac_mode`
+    - `hvac_mode_setting`
+- `/user_identities/get`
+    - `user_identity_key`
 - `/user_identities/list`
     - `credential_manager_acs_system_id`
 - `/user_identities/update`
@@ -761,6 +794,8 @@ These items are deprecated.
     - `action_attempt`
 - `/access_codes/pull_backup_access_code`
     - `backup_access_code`
+- `/acs/users/list`
+    - `pagination`
 - `/events/get`
     - `message`
 - `/locks/get`
@@ -812,6 +847,8 @@ These items are deprecated.
 - `/acs/users/unmanaged/list`
 - `/action_attempts/get`
 - `/action_attempts/list`
+- `/bridges/get`
+- `/bridges/list`
 - `/client_sessions/create`
 - `/client_sessions/delete`
 - `/client_sessions/get`
@@ -854,8 +891,12 @@ These items are deprecated.
 - `/noise_sensors/noise_thresholds/update`
 - `/noise_sensors/simulate/trigger_noise_threshold`
 - `/phones/deactivate`
+- `/phones/get`
 - `/phones/list`
 - `/phones/simulate/create_sandbox_phone`
+- `/seam/bridge/v1/bridge_client_sessions/create`
+- `/seam/bridge/v1/bridge_client_sessions/get`
+- `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`
 - `/thermostats/get`
 - `/thermostats/simulate/hvac_mode_adjusted`
 - `/thermostats/simulate/temperature_reached`

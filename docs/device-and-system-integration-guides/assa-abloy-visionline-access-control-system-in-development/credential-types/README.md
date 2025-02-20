@@ -10,7 +10,7 @@ This guide describes how to issue guest and staff mobile credentials on the Visi
 
 ## Access Permission Assignment for Visionline
 
-Visionline is a [credential-based access control system](../../../capability-guides/access-systems/understanding-access-control-system-differences.md#credential-based-access-control-systems). That is, you create ACS users and credentials. Within these credentials, you specify the set of entrances to which you want to grant access and the schedules for this access.
+Visionline is a [credential-based access control system](../../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#credential-based-access-control-systems). That is, you create ACS users and credentials. Within these credentials, you specify the set of entrances to which you want to grant access and the schedules for this access.
 
 <figure><img src="../../../.gitbook/assets/acs-arch-credential-based.png" alt="Seam resource relationships for a credential-based ACS"><figcaption><p>Seam resource relationships for a credential-based ACS</p></figcaption></figure>
 

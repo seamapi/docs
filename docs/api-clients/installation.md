@@ -61,4 +61,10 @@ dependencies {
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
+
+{% tab title="Go" %}
+```bash
+go get github.com/seamapi/go
+```
+{% endtab %}
 {% endtabs %}

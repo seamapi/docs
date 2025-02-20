@@ -8,7 +8,7 @@ description: >-
 
 In some instances, it may be necessary to access multiple workspaces with a single Seam credential. For example, you may want to set up separate workspaces for each of your users to control different sets of devices. For more information about scenarios in which multiple workspaces are useful, see [Per-Customer Workspace Setup](../workspaces/#per-customer-workspace-setup-less-common).
 
-Because [API keys](api-keys.md) are scoped to a single workspace, Seam provides Personal Access Tokens (PATs) to enable multi-workspace authorization. First, [create a PAT](personal-access-tokens.md#create-a-personal-access-token). Then, [use this PAT with a workspace ID](personal-access-tokens.md#use-a-pat-and-workspace-id-in-the-seam-api) to access the desired workspace.&#x20;
+Because [API keys](api-keys.md) are scoped to a single workspace, Seam provides Personal Access Tokens (PATs) to enable multi-workspace authorization. First, [create a PAT](personal-access-tokens.md#create-a-personal-access-token). Then, [use this PAT with a workspace ID](personal-access-tokens.md#use-a-pat-and-workspace-id-in-the-seam-api) to access the desired workspace.
 
 {% hint style="warning" %}
 Never use a PAT in a web browser or expose it to your users.
@@ -18,9 +18,9 @@ Never use a PAT in a web browser or expose it to your users.
 
 ## Create a Personal Access Token
 
-1. In the upper-right corner of the [Seam Console](https://console.seam.co/), click your username and then **Settings**.
+1. In the top navigation pane  of [Seam Console](https://console.seam.co/), click **Developer**.
 2. In the left navigation pane, **Personal Access Tokens**.
-3. In the upper-right corner of the **Personal Access Tokens** page, click **+ Add Personal Access Token**.
+3. In the upper-right corner of the **Personal Access Tokens** page, click **Add Personal Access Token**.
 4. In the **Add Personal Access Token** dialog, type a name for your new PAT and then click **Create Personal Access Token**.
 5. Copy the newly-created PAT and store it for future use.
 

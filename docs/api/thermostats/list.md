@@ -282,6 +282,15 @@ Array of device IDs by which to filter devices.
 
 ***
 
+### `device_type`
+
+Type: `string`
+Required: No
+
+
+
+***
+
 ### `device_types`
 
 Type: `array`

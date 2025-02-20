@@ -27,6 +27,7 @@ For detailed information about the Lockly devices that Seam supports, see the fo
 
 We support the following features:
 
+* [Triggering web lock and unlock actions](../../products/smart-locks/lock-and-unlock.md)
 * [Programming online access codes](../../products/smart-locks/access-codes/) on locks that have a keypad
 * [Programming offline access codes](../../products/smart-locks/access-codes/offline-access-codes.md) on locks that have a keypad
 
@@ -66,6 +67,16 @@ To control Lockly devices using Seam, you must prompt owners of these devices to
 
     <figure><img src="../../.gitbook/assets/lockly-access-portal-account-created-successfully.png" alt="Note the information for the newly-created user account." width="563"><figcaption></figcaption></figure>
 10. Note the client ID, access key ID, access key secret, token ID, and token secret.
+
+***
+
+## Brand-Specific Restrictions
+
+Note the following Lockly-specific restrictions:
+
+### Access Codes
+
+Lockly supports creating custom access codes. These custom codes must be six to eight digits long.
 
 ***
 
