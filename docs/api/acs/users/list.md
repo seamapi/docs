@@ -189,6 +189,15 @@ Identifies the specific page of results to return, obtained from the previous pa
 
 ***
 
+### `search`
+
+Type: `string`
+Required: No
+
+String to partial match between full_name, phone_number and email_address.
+
+***
+
 ### `user_identity_email_address`
 
 Type: `string`
