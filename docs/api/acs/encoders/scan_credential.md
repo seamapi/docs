@@ -25,4 +25,28 @@ ID of the `acs_encoder` to use for the scan.
 
 ## Return Type
 
-[action\_attempt](./) (action type: `SCAN_CREDENTIAL`)
+[action\_attempt](./)
+
+### `SCAN_CREDENTIAL` action type
+
+Reading credential data from physical encoder.
+
+
+#### `action_attempt_id`
+
+Format: `ID`
+
+The ID of the action attempt.
+
+#### `action_type`
+
+Format: `String`
+
+#### `status`
+
+Format: `Enum`
+
+Possible enum values:
+- `success`
+- `pending`
+- `error`

@@ -34,4 +34,28 @@ ID of the `acs_encoder` to use to encode the `acs_credential`.
 
 ## Return Type
 
-[action\_attempt](./) (action type: `ENCODE_CREDENTIAL`)
+[action\_attempt](./)
+
+### `ENCODE_CREDENTIAL` action type
+
+Encoding credential data from physical encoder.
+
+
+#### `action_attempt_id`
+
+Format: `ID`
+
+The ID of the action attempt.
+
+#### `action_type`
+
+Format: `String`
+
+#### `status`
+
+Format: `Enum`
+
+Possible enum values:
+- `success`
+- `pending`
+- `error`
