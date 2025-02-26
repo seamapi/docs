@@ -168,22 +168,27 @@ ID of the desired thermostat device.
 
 [action\_attempt](./)
 
-### `ACTIVATE_CLIMATE_PRESET` action type
+## `ACTIVATE_CLIMATE_PRESET`
 
 Activating climate preset.
 
-
-#### `action_attempt_id`
+### `action_attempt_id`
 
 Format: `ID`
 
 The ID of the action attempt.
 
-#### `action_type`
+
+---
+
+### `action_type`
 
 Format: `String`
 
-#### `status`
+
+---
+
+### `status`
 
 Format: `Enum`
 
@@ -191,3 +196,7 @@ Possible enum values:
 - `success`
 - `pending`
 - `error`
+
+
+---
+

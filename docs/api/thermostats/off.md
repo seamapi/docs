@@ -150,22 +150,27 @@ ID of the desired thermostat device.
 
 [action\_attempt](./)
 
-### `SET_HVAC_MODE` action type
+## `SET_HVAC_MODE`
 
 Setting HVAC mode.
 
-
-#### `action_attempt_id`
+### `action_attempt_id`
 
 Format: `ID`
 
 The ID of the action attempt.
 
-#### `action_type`
+
+---
+
+### `action_type`
 
 Format: `String`
 
-#### `status`
+
+---
+
+### `status`
 
 Format: `Enum`
 
@@ -173,3 +178,7 @@ Possible enum values:
 - `success`
 - `pending`
 - `error`
+
+
+---
+
