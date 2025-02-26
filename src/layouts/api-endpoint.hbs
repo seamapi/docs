@@ -63,46 +63,5 @@ None
 {{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array<[{{response.escapedResourceType}}](./)>{{else}}[{{response.escapedResourceType}}](./){{/if}}{{else}}void{{/if}}
 {{#if response.actionAttempt}}
 
-### `{{response.actionAttempt.name}}` action type
-{{#if response.actionAttempt.description}}
-
-{{response.actionAttempt.description}}
-{{/if}}
-
-{{#each response.actionAttempt.properties}}
-
-#### `{{name}}`
-{{#if isDeprecated}}
-
-{% hint style="warning" %}
-**Deprecated**. {{deprecationMessage}}
-{% endhint %}
-{{/if}}
-
-Format: `{{format}}`
-{{#if description}}
-
-{{description}}
-{{/if}}
-{{#if enumValues}}
-
-Possible enum values:
-{{#each enumValues}}
-- `{{this}}`
-{{/each}}
-{{/if}}
-{{#if objectProperties}}
-<details>
-
-<summary><code>{{this.name}}</code> Format: <code>{{this.format}}</code></summary>
-{{#if this.description}}
-
-{{this.description}}
-{{/if}}
-
-</details>
-{{#each objectProperties}}
-{{/each}}
-{{/if}}
-{{/each}}
+{{> api-resource response.actionAttempt}}
 {{/if}}
