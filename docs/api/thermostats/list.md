@@ -287,7 +287,7 @@ Array of device IDs by which to filter devices.
 Type: `string`
 Required: No
 
-
+Device type by which to filter devices.
 
 ***
 

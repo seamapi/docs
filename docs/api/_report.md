@@ -603,7 +603,6 @@ Items that are intentionally undocumented are not included in this section.
     - `device_id`
     - `name`
 - `/devices/list`
-    - `device_type`
     - `exclude_if`
     - `include_if`
 - `/devices/list_device_providers`
@@ -624,7 +623,6 @@ Items that are intentionally undocumented are not included in this section.
     - `device_id`
     - `name`
 - `/devices/unmanaged/list`
-    - `device_type`
     - `exclude_if`
     - `include_if`
 - `/devices/unmanaged/update`
@@ -654,7 +652,6 @@ Items that are intentionally undocumented are not included in this section.
     - `device_id`
     - `name`
 - `/locks/list`
-    - `device_type`
     - `exclude_if`
     - `include_if`
 - `/locks/lock_door`
@@ -666,7 +663,6 @@ Items that are intentionally undocumented are not included in this section.
 - `/networks/get`
     - `network_id`
 - `/noise_sensors/list`
-    - `device_type`
     - `exclude_if`
     - `include_if`
 - `/noise_sensors/noise_thresholds/create`
@@ -708,7 +704,6 @@ Items that are intentionally undocumented are not included in this section.
 - `/thermostats/heat_cool`
     - `sync`
 - `/thermostats/list`
-    - `device_type`
     - `exclude_if`
     - `include_if`
 - `/thermostats/off`

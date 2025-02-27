@@ -27,7 +27,7 @@ type ApiRouteProperty = Pick<
   objectProperties?: ApiRouteProperty[]
 }
 
-interface ApiRouteResource {
+export interface ApiRouteResource {
   name: string
   description: string
   properties: ApiRouteProperty[]
@@ -101,7 +101,7 @@ export function setApiRouteLayoutContext(
 const getFirstParagraph = (text: string): string =>
   text.split('\n\n').at(0) ?? text
 
-const mapBlueprintPropertyToRouteProperty = (
+export const mapBlueprintPropertyToRouteProperty = (
   prop: Property,
 ): ApiRouteProperty => {
   const { name, description, format, isDeprecated, deprecationMessage } = prop
@@ -132,9 +132,7 @@ const mapBlueprintPropertyToRouteProperty = (
 type PropertyFormat = Property['format']
 
 const normalizePropertyFormatForDocs = (format: PropertyFormat): string => {
-  const formatMap: Partial<Record<PropertyFormat, string>> = {
-    id: 'ID',
-  }
+  const formatMap: Partial<Record<PropertyFormat, string>> = { id: 'ID' }
 
   return formatMap[format] ?? pascalCase(format)
 }

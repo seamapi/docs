@@ -43,9 +43,7 @@ export const reference = (
   const namespacePaths = getNamespacePaths(blueprint.routes)
   for (const path of namespacePaths) {
     const k = `api${path}/README.md`
-    files[k] = {
-      contents: Buffer.from('\n'),
-    }
+    files[k] = { contents: Buffer.from('\n') }
     const file = files[k] as unknown as File
     file.layout = 'api-namespace.hbs'
 
@@ -66,9 +64,7 @@ export const reference = (
     if (pathMetadata[route.path]?.title == null) continue
 
     const k = `api${route.path}/README.md`
-    files[k] = {
-      contents: Buffer.from('\n'),
-    }
+    files[k] = { contents: Buffer.from('\n') }
     const file = files[k] as unknown as File
     file.layout = 'api-route.hbs'
     setApiRouteLayoutContext(file, route, blueprint, pathMetadata)
@@ -78,21 +74,17 @@ export const reference = (
       if (endpoint.title.length === 0) continue
 
       const k = `api${endpoint.path}.md`
-      files[k] = {
-        contents: Buffer.from('\n'),
-      }
+      files[k] = { contents: Buffer.from('\n') }
       const file = files[k] as unknown as File
       file.layout = 'api-endpoint.hbs'
-      setEndpointLayoutContext(file, endpoint)
+      setEndpointLayoutContext(file, endpoint, blueprint.actionAttempts)
 
       for (const sdk of sdks) {
         const k = `sdk/${sdk}${endpoint.path}.md`
-        files[k] = {
-          contents: Buffer.from('\n'),
-        }
+        files[k] = { contents: Buffer.from('\n') }
         const file = files[k] as unknown as File
         file.layout = 'sdk-reference.hbs'
-        setEndpointLayoutContext(file, endpoint)
+        setEndpointLayoutContext(file, endpoint, blueprint.actionAttempts)
       }
     }
   }

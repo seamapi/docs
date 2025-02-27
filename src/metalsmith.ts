@@ -9,6 +9,7 @@ import Metalsmith from 'metalsmith'
 
 import {
   blueprint,
+  getPartials,
   helpers,
   postprocess,
   reference,
@@ -38,6 +39,7 @@ Metalsmith(rootDir)
       engineOptions: {
         noEscape: true,
         helpers,
+        partials: getPartials(),
       },
     }),
   )

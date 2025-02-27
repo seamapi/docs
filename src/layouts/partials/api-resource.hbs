@@ -1,0 +1,54 @@
+{{#if headingOffset}}
+### `{{name}}`
+{{else}}
+## `{{name}}`
+{{/if}}
+{{#if description}}
+
+{{description}}
+{{/if}}
+
+{{#each properties}}
+{{#if ../headingOffset}}
+#### `{{name}}`
+{{else}}
+### `{{name}}`
+{{/if}}
+{{#if isDeprecated}}
+
+{% hint style="warning" %}
+**Deprecated**. {{deprecationMessage}}
+{% endhint %}
+{{/if}}
+
+Format: `{{format}}`
+{{#if description}}
+
+{{description}}
+{{/if}}
+{{#if enumValues}}
+
+Possible enum values:
+{{#each enumValues}}
+- `{{this}}`
+{{/each}}
+{{/if}}
+
+{{#if objectProperties}}
+{{#each objectProperties}}
+<details>
+
+<summary><code>{{this.name}}</code> Format: <code>{{this.format}}</code></summary>
+
+{{#if this.description}}
+{{this.description}}
+{{/if}}
+
+</details>
+
+{{/each}}
+{{/if}}
+
+---
+
+{{/each}}
