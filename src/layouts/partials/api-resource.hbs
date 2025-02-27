@@ -1,11 +1,19 @@
+{{#if headingOffset}}
+### `{{name}}`
+{{else}}
 ## `{{name}}`
+{{/if}}
 {{#if description}}
 
 {{description}}
 {{/if}}
 
 {{#each properties}}
+{{#if ../headingOffset}}
+#### `{{name}}`
+{{else}}
 ### `{{name}}`
+{{/if}}
 {{#if isDeprecated}}
 
 {% hint style="warning" %}
