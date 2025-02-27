@@ -10,6 +10,7 @@ import Metalsmith from 'metalsmith'
 import {
   blueprint,
   helpers,
+  getHandlebarsPartials,
   postprocess,
   reference,
   report,
@@ -18,6 +19,8 @@ import {
 const rootDir = dirname(fileURLToPath(import.meta.url))
 
 await Promise.all([deleteAsync('./docs/api'), deleteAsync('./docs/sdk')])
+
+const partials = await getHandlebarsPartials(`${rootDir}/layouts/partials`)
 
 Metalsmith(rootDir)
   .source('./docs')
@@ -38,6 +41,7 @@ Metalsmith(rootDir)
       engineOptions: {
         noEscape: true,
         helpers,
+        partials,
       },
     }),
   )
