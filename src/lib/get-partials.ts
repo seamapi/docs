@@ -1,10 +1,11 @@
 import fs from 'fs'
-import Handlebars from 'handlebars'
 import path from 'path'
 
 const PARTIALS_DIR = path.join(process.cwd(), 'src', 'layouts', 'partials')
 
-function registerPartials(): void {
+export function getPartials(): Record<string, string> {
+  const partials: Record<string, string> = {}
+
   try {
     const files = fs.readdirSync(PARTIALS_DIR)
 
@@ -18,16 +19,16 @@ function registerPartials(): void {
 
       try {
         const content = fs.readFileSync(partialPath, 'utf8')
-        Handlebars.registerPartial(partialName, content)
+        partials[partialName] = content
       } catch (err) {
         // eslint-disable-next-line no-console
-        console.error(`Failed to register partial ${filename}:`, err)
+        console.error(`Failed to read partial ${filename}:`, err)
       }
     }
   } catch (err) {
     // eslint-disable-next-line no-console
     console.error('Failed to read partials directory:', err)
   }
-}
 
-registerPartials()
+  return partials
+}
