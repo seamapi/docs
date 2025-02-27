@@ -9,8 +9,8 @@ import Metalsmith from 'metalsmith'
 
 import {
   blueprint,
-  helpers,
   getHandlebarsPartials,
+  helpers,
   postprocess,
   reference,
   report,
