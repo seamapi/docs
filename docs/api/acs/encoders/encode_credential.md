@@ -36,11 +36,11 @@ ID of the `acs_encoder` to use to encode the `acs_credential`.
 
 [action\_attempt](./)
 
-## `ENCODE_CREDENTIAL`
+### `ENCODE_CREDENTIAL`
 
 Encoding credential data from physical encoder.
 
-### `action_attempt_id`
+#### `action_attempt_id`
 
 Format: `ID`
 
@@ -49,14 +49,14 @@ The ID of the action attempt.
 
 ---
 
-### `action_type`
+#### `action_type`
 
 Format: `String`
 
 
 ---
 
-### `status`
+#### `status`
 
 Format: `Enum`
 
