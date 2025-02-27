@@ -1,6 +1,6 @@
 export * from './blueprint.js'
 export * as helpers from './handlebars-helpers.js'
+export * from './handlebars-partials.js'
 export * from './postprocess.js'
 export * from './reference.js'
-export * from './register-partials.js'
 export * from './report.js'
