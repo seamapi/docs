@@ -1,6 +1,7 @@
-import { readFile } from 'fs/promises'
+import { readFile } from 'node:fs/promises'
+import { parse } from 'node:path'
+
 import { glob } from 'glob'
-import { parse } from 'path'
 
 export const getHandlebarsPartials = async (
   rootPath: string,
