@@ -1,9 +1,15 @@
 import type {
+  ActionAttempt,
   CodeSampleSdk,
   Endpoint,
   SeamAuthMethod,
   SeamWorkspaceScope,
 } from '@seamapi/blueprint'
+
+import {
+  type ApiRouteResource,
+  mapBlueprintPropertyToRouteProperty,
+} from './api-route.js'
 
 const supportedSdks: CodeSampleSdk[] = [
   'javascript',
@@ -35,7 +41,7 @@ export interface ApiEndpointLayoutContext {
     escapedResourceType: string | null
     responseKey: string | null
     responseType: string | null
-    actionAttemptType?: string
+    actionAttempt?: ApiRouteResource
   }
   codeSamples: Array<{
     title: string
@@ -72,6 +78,7 @@ const seamAuthMethodToDisplayNameMap: Record<
 export function setEndpointLayoutContext(
   file: Partial<ApiEndpointLayoutContext>,
   endpoint: Endpoint,
+  actionAttempts: ActionAttempt[],
 ): void {
   file.description = endpoint.description
   file.title = endpoint.title
@@ -118,7 +125,23 @@ export function setEndpointLayoutContext(
     endpoint.response.responseType === 'resource' &&
     endpoint.response.actionAttemptType != null
   ) {
-    file.response.actionAttemptType = endpoint.response.actionAttemptType
+    const endpointActionAttemptType = endpoint.response.actionAttemptType
+    const actionAttempt = actionAttempts.find(
+      (attempt) => attempt.actionAttemptType === endpointActionAttemptType,
+    )
+    if (actionAttempt == null) {
+      throw new Error(
+        `Action attempt ${endpointActionAttemptType} not found in blueprint`,
+      )
+    }
+
+    file.response.actionAttempt = {
+      name: actionAttempt.actionAttemptType,
+      description: actionAttempt.description,
+      properties: actionAttempt.properties
+        .filter(({ isUndocumented }) => !isUndocumented)
+        .map(mapBlueprintPropertyToRouteProperty),
+    }
   }
 
   file.codeSamples = endpoint.codeSamples.map((sample) => {

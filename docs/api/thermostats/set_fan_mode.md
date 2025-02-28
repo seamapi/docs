@@ -176,4 +176,65 @@ Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermos
 
 ## Return Type
 
-[action\_attempt](./) (action type: `SET_FAN_MODE`)
+[action\_attempt](./)
+
+### `SET_FAN_MODE`
+
+Setting fan mode.
+
+#### `action_attempt_id`
+
+Format: `ID`
+
+The ID of the action attempt.
+
+
+---
+
+#### `action_type`
+
+Format: `String`
+
+
+---
+
+#### `error`
+
+Format: `Object`
+
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>type</code> Format: <code>String</code></summary>
+
+
+</details>
+
+
+---
+
+#### `result`
+
+Format: `Object`
+
+
+---
+
+#### `status`
+
+Format: `Enum`
+
+Possible enum values:
+- `success`
+- `pending`
+- `error`
+
+
+---
+

@@ -33,7 +33,7 @@
     "@metalsmith/metadata": "^0.3.0",
     "@prettier/plugin-php": "^0.22.2",
     "@prettier/plugin-ruby": "^4.0.4",
-    "@seamapi/blueprint": "^0.35.0",
+    "@seamapi/blueprint": "^0.36.1",
     "@seamapi/types": "1.355.0",
     "change-case": "^5.4.4",
     "command-exists": "^1.2.9",
