@@ -47,6 +47,159 @@ Format: `String`
 
 ---
 
+#### `result`
+
+Format: `Object`
+
+<details>
+
+<summary><code>acs_credential_on_encoder</code> Format: <code>Object</code></summary>
+
+Snapshot of credential data read from physical encoder.
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.card_number</code> Format: <code>String</code></summary>
+
+A number or string that physically identifies this card.
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time the credential was created.
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.ends_at</code> Format: <code>Datetime</code></summary>
+
+Date and time the credential will stop being useable.
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.is_issued</code> Format: <code>Boolean</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.starts_at</code> Format: <code>Datetime</code></summary>
+
+Date and time the credential will become useable.
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.visionline_metadata</code> Format: <code>Object</code></summary>
+
+Visionline-specific metadata for the credential.
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.visionline_metadata.cancelled</code> Format: <code>Boolean</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.visionline_metadata.card_format</code> Format: <code>Enum</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.visionline_metadata.card_holder</code> Format: <code>String</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.visionline_metadata.card_id</code> Format: <code>String</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.visionline_metadata.common_acs_entrance_ids</code> Format: <code>List</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.visionline_metadata.discarded</code> Format: <code>Boolean</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.visionline_metadata.expired</code> Format: <code>Boolean</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.visionline_metadata.guest_acs_entrance_ids</code> Format: <code>List</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.visionline_metadata.number_of_issued_cards</code> Format: <code>Number</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.visionline_metadata.overridden</code> Format: <code>Boolean</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.visionline_metadata.overwritten</code> Format: <code>Boolean</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.visionline_metadata.pending_auto_update</code> Format: <code>Boolean</code></summary>
+
+
+</details>
+
+<details>
+
+<summary><code>warnings</code> Format: <code>List</code></summary>
+
+
+</details>
+
+
+---
+
 #### `status`
 
 Format: `Enum`
