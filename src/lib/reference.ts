@@ -31,12 +31,13 @@ export const reference = (
       ? PathMetadataSchema.parse(metadata.pathMetadata)
       : {}
 
-  const blueprint = {
+  const blueprint: Blueprint = {
     title: '',
     routes: [],
     resources: {},
     events: [],
     actionAttempts: [],
+    pagination: null,
     ...metadata,
   }
 
