@@ -194,7 +194,7 @@ Identifies the specific page of results to return, obtained from the previous pa
 Type: `string`
 Required: No
 
-String to partial match between full_name, phone_number and email_address.
+String for which to search. Filters returned `acs_user`s to include all records that satisfy a partial match using `full_name`, `phone_number`, or `email_address`.
 
 ***
 
