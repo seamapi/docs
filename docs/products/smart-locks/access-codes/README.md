@@ -15,13 +15,13 @@ layout:
     visible: true
 ---
 
-# Managing Access Codes
+# Creating and Managing Smart Lock Access Codes
 
 <figure><img src="../../../.gitbook/assets/code_unlock.gif" alt=""><figcaption></figcaption></figure>
 
 ## What Is an Access Code?
 
-An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam [Access Code API](../../../api-clients/access\_codes/), you can easily generate access codes on the hundreds of door lock models with which we integrate.
+An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam [Access Code API](../../../api-clients/access_codes/), you can easily generate access codes on the hundreds of door lock models with which we integrate.
 
 Seam supports programming two types of access codes: [ongoing](./#ongoing-access-codes) and [time-bound](./#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`.
 
@@ -108,6 +108,7 @@ When a user unlocks a door using an access code, Seam issues a [`lock.unlocked` 
 Currently, the following device manufacturers send the `access_code_id` in the `lock.unlocked` event:
 
 * August
+* Kwikset
 * Salto KS
 * Schlage
 * Tedee
