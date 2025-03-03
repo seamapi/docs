@@ -39,6 +39,7 @@
     "command-exists": "^1.2.9",
     "del": "^8.0.0",
     "execa": "^9.3.1",
+    "glob": "^11.0.1",
     "jstransformer-handlebars": "^1.2.0",
     "metalsmith": "^2.6.3",
     "prettier": "^3.0.0",
