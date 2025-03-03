@@ -43,7 +43,7 @@ Supported values for `lock.locked`:
 
 <summary><code>access_code_id</code> <code>string</code></summary>
 
-Specifies the unique identifier of the access code used to trigger this event. Seam includes this ID in the event if the affected device returns this information. For a list of device manufacturers that send the `access_code_id` in lock events, see [Linking Unlock Events and Access Codes](../../products/smart-locks/access-codes.md#linking-unlock-events-and-access-codes).
+Specifies the unique identifier of the access code used to trigger this event. Seam includes this ID in the event if the affected device returns this information. For a list of device manufacturers that send the `access_code_id` in lock events, see [Linking Unlock Events and Access Codes](../../products/smart-locks/access-codes/#linking-unlock-events-and-access-codes).
 
 </details>
 
@@ -78,7 +78,7 @@ Supported values for `lock.locked`:
 
 <summary><code>access_code_id</code> <code>string</code></summary>
 
-Specifies the unique identifier of the access code used to trigger this event. Seam includes this ID in the event if the affected device returns this information. For a list of device manufacturers that send the `access_code_id` in lock events, see [Linking Unlock Events and Access Codes](../../products/smart-locks/access-codes.md#linking-unlock-events-and-access-codes).
+Specifies the unique identifier of the access code used to trigger this event. Seam includes this ID in the event if the affected device returns this information. For a list of device manufacturers that send the `access_code_id` in lock events, see [Linking Unlock Events and Access Codes](../../products/smart-locks/access-codes/#linking-unlock-events-and-access-codes).
 
 </details>
 
@@ -90,6 +90,6 @@ An incorrect access code was entered one or more times in a row on a device ([Kw
 
 <summary><code>access_code_id</code> <code>string</code></summary>
 
-Specifies the unique identifier of the access code used to trigger this event. Seam includes this ID in the event if the affected device returns this information. For a list of device manufacturers that send the `access_code_id` in lock events, see [Linking Unlock Events and Access Codes](../../products/smart-locks/access-codes.md#linking-unlock-events-and-access-codes).
+Specifies the unique identifier of the access code used to trigger this event. Seam includes this ID in the event if the affected device returns this information. For a list of device manufacturers that send the `access_code_id` in lock events, see [Linking Unlock Events and Access Codes](../../products/smart-locks/access-codes/#linking-unlock-events-and-access-codes).
 
 </details>
