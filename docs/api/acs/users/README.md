@@ -17,7 +17,6 @@ Format: `Object`
 Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 </details>
-
 <details>
 
 <summary><code>starts_at</code> Format: <code>Datetime</code></summary>
@@ -25,7 +24,6 @@ Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org
 Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 </details>
-
 
 ---
 

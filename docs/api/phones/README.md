@@ -84,7 +84,6 @@ Properties of the phone.
 ASSA ABLOY Credential Service metadata for the phone.
 
 </details>
-
 <details>
 
 <summary><code>assa_abloy_credential_service_metadata.endpoints</code> Format: <code>List</code></summary>
@@ -92,7 +91,6 @@ ASSA ABLOY Credential Service metadata for the phone.
 Endpoints associated with the phone.
 
 </details>
-
 <details>
 
 <summary><code>assa_abloy_credential_service_metadata.has_active_endpoint</code> Format: <code>Boolean</code></summary>
@@ -100,7 +98,6 @@ Endpoints associated with the phone.
 Indicates whether the credential service has active endpoints associated with the phone.
 
 </details>
-
 <details>
 
 <summary><code>salto_space_credential_service_metadata</code> Format: <code>Object</code></summary>
@@ -108,7 +105,6 @@ Indicates whether the credential service has active endpoints associated with th
 Salto Space credential service metadata for the phone.
 
 </details>
-
 <details>
 
 <summary><code>salto_space_credential_service_metadata.has_active_phone</code> Format: <code>Boolean</code></summary>
@@ -116,7 +112,6 @@ Salto Space credential service metadata for the phone.
 Indicates whether the credential service has an active associated phone.
 
 </details>
-
 
 ---
 

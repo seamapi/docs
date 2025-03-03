@@ -170,7 +170,6 @@ Time zone in which the `acs_system` is located.
 
 </details>
 
-
 ---
 
 ### `name`
@@ -230,7 +229,6 @@ Format: `Object`
 IP address or hostname of the main Visionline server relative to the Seam Bridge on the local network.
 
 </details>
-
 <details>
 
 <summary><code>mobile_access_uuid</code> Format: <code>String</code></summary>
@@ -238,7 +236,6 @@ IP address or hostname of the main Visionline server relative to the Seam Bridge
 Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.
 
 </details>
-
 <details>
 
 <summary><code>system_id</code> Format: <code>String</code></summary>
@@ -246,7 +243,6 @@ Keyset loaded into a reader. Mobile keys and reader administration tools securel
 Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager.
 
 </details>
-
 
 ---
 

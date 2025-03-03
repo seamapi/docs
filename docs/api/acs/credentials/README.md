@@ -62,37 +62,27 @@ Vostio-specific metadata for the credential.
 
 <summary><code>door_names</code> Format: <code>List</code></summary>
 
-
 </details>
-
 <details>
 
 <summary><code>endpoint_id</code> Format: <code>String</code></summary>
 
-
 </details>
-
 <details>
 
 <summary><code>key_id</code> Format: <code>String</code></summary>
 
-
 </details>
-
 <details>
 
 <summary><code>key_issuing_request_id</code> Format: <code>String</code></summary>
 
-
 </details>
-
 <details>
 
 <summary><code>override_guest_acs_entrance_ids</code> Format: <code>List</code></summary>
 
-
 </details>
-
 
 ---
 
@@ -260,58 +250,42 @@ Visionline-specific metadata for the credential.
 
 <summary><code>auto_join</code> Format: <code>Boolean</code></summary>
 
-
 </details>
-
 <details>
 
 <summary><code>card_function_type</code> Format: <code>Enum</code></summary>
 
-
 </details>
-
 <details>
 
 <summary><code>card_id</code> Format: <code>String</code></summary>
 
-
 </details>
-
 <details>
 
 <summary><code>common_acs_entrance_ids</code> Format: <code>List</code></summary>
 
-
 </details>
-
 <details>
 
 <summary><code>credential_id</code> Format: <code>String</code></summary>
 
-
 </details>
-
 <details>
 
 <summary><code>guest_acs_entrance_ids</code> Format: <code>List</code></summary>
 
-
 </details>
-
 <details>
 
 <summary><code>is_valid</code> Format: <code>Boolean</code></summary>
 
-
 </details>
-
 <details>
 
 <summary><code>joiner_acs_credential_ids</code> Format: <code>List</code></summary>
 
-
 </details>
-
 
 ---
 
