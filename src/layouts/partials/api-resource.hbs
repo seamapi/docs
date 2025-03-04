@@ -33,12 +33,13 @@ Possible enum values:
 - `{{this}}`
 {{/each}}
 {{/if}}
-
-{{#if objectProperties}}
+{{#unless (eq objectProperties undefined)}}
 {{#if (eq objectProperties.length 0)}}
+
 This object has no properties.
 {{else}}
 {{#each objectProperties}}
+
 <details>
 
 <summary><code>{{this.name}}</code> Format: <code>{{this.format}}</code></summary>
@@ -50,7 +51,7 @@ This object has no properties.
 </details>
 {{/each}}
 {{/if}}
-{{/if}}
+{{/unless}}
 
 ---
 
