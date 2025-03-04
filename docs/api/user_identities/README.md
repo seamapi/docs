@@ -10,13 +10,11 @@ Format: `Datetime`
 
 Date and time at which the user identity was created.
 
-
 ---
 
 ### `display_name`
 
 Format: `String`
-
 
 ---
 
@@ -26,13 +24,11 @@ Format: `String`
 
 Unique email address for the user identity.
 
-
 ---
 
 ### `full_name`
 
 Format: `String`
-
 
 ---
 
@@ -42,7 +38,6 @@ Format: `String`
 
 Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).
 
-
 ---
 
 ### `user_identity_id`
@@ -50,7 +45,6 @@ Unique phone number for the user identity in [E.164 format](https://www.itu.int/
 Format: `ID`
 
 ID of the user identity.
-
 
 ---
 
@@ -60,7 +54,6 @@ Format: `String`
 
 Unique key for the user identity.
 
-
 ---
 
 ### `workspace_id`
@@ -68,7 +61,6 @@ Unique key for the user identity.
 Format: `ID`
 
 ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the user identity.
-
 
 ---
 

@@ -21,7 +21,6 @@ Possible enum values:
 - `salto_space_group`
 - `dormakaba_community_access_group`
 
-
 ---
 
 ### `access_group_type_display_name`
@@ -32,7 +31,6 @@ Possible enum values:
 
 Format: `String`
 
-
 ---
 
 ### `acs_access_group_id`
@@ -40,7 +38,6 @@ Format: `String`
 Format: `ID`
 
 ID of the access group.
-
 
 ---
 
@@ -50,7 +47,6 @@ Format: `ID`
 
 ID of the access control system that contains the access group.
 
-
 ---
 
 ### `created_at`
@@ -59,13 +55,11 @@ Format: `Datetime`
 
 Date and time at which the access group was created.
 
-
 ---
 
 ### `display_name`
 
 Format: `String`
-
 
 ---
 
@@ -83,7 +77,6 @@ Possible enum values:
 - `salto_space_group`
 - `dormakaba_community_access_group`
 
-
 ---
 
 ### `external_type_display_name`
@@ -92,13 +85,11 @@ Format: `String`
 
 Display name that corresponds to the brand-specific terminology for the access group type.
 
-
 ---
 
 ### `is_managed`
 
 Format: `Boolean`
-
 
 ---
 
@@ -108,7 +99,6 @@ Format: `String`
 
 Name of the access group.
 
-
 ---
 
 ### `warnings`
@@ -117,7 +107,6 @@ Format: `List`
 
 Warnings associated with the `acs_access_group`.
 
-
 ---
 
 ### `workspace_id`
@@ -125,7 +114,6 @@ Warnings associated with the `acs_access_group`.
 Format: `ID`
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the access group.
-
 
 ---
 

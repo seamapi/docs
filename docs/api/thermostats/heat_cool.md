@@ -212,13 +212,11 @@ Format: `ID`
 
 The ID of the action attempt.
 
-
 ---
 
 #### `action_type`
 
 Format: `String`
-
 
 ---
 
@@ -231,6 +229,7 @@ Format: `Object`
 <summary><code>message</code> Format: <code>String</code></summary>
 
 </details>
+
 <details>
 
 <summary><code>type</code> Format: <code>String</code></summary>
@@ -243,6 +242,7 @@ Format: `Object`
 
 Format: `Object`
 
+This object has no properties.
 
 ---
 
@@ -254,7 +254,6 @@ Possible enum values:
 - `success`
 - `pending`
 - `error`
-
 
 ---
 

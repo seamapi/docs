@@ -46,13 +46,11 @@ Format: `ID`
 
 The ID of the action attempt.
 
-
 ---
 
 #### `action_type`
 
 Format: `String`
-
 
 ---
 
@@ -64,7 +62,6 @@ Possible enum values:
 - `success`
 - `pending`
 - `error`
-
 
 ---
 

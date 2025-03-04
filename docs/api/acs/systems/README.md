@@ -10,7 +10,6 @@ Format: `ID`
 
 ID of the `acs_system`.
 
-
 ---
 
 ### `can_add_acs_users_to_acs_access_groups`
@@ -18,7 +17,6 @@ ID of the `acs_system`.
 Format: `Boolean`
 
 Indicates whether the `acs_system` supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).
-
 
 ---
 
@@ -28,7 +26,6 @@ Format: `Boolean`
 
 Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`.
 
-
 ---
 
 ### `can_create_acs_access_groups`
@@ -36,7 +33,6 @@ Indicates whether it is possible to [launch enrollment automations](https://docs
 Format: `Boolean`
 
 Indicates whether the `acs_system` supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).
-
 
 ---
 
@@ -46,7 +42,6 @@ Format: `Boolean`
 
 Indicates whether the `acs_system` supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).
 
-
 ---
 
 ### `connected_account_id`
@@ -54,7 +49,6 @@ Indicates whether the `acs_system` supports [removing users from access groups](
 Format: `ID`
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the `acs_system`.
-
 
 ---
 
@@ -68,7 +62,6 @@ Format: `List`
 
 IDs of the [connected accounts](../../../core-concepts/connected-accounts/README.md) associated with the `acs_system`.
 
-
 ---
 
 ### `created_at`
@@ -76,7 +69,6 @@ IDs of the [connected accounts](../../../core-concepts/connected-accounts/README
 Format: `Datetime`
 
 Date and time at which the `acs_system` was created.
-
 
 ---
 
@@ -86,7 +78,6 @@ Format: `ID`
 
 ID of the default credential manager acs_system for this access control system.
 
-
 ---
 
 ### `errors`
@@ -94,7 +85,6 @@ ID of the default credential manager acs_system for this access control system.
 Format: `List`
 
 Errors associated with the `acs_system`.
-
 
 ---
 
@@ -119,7 +109,6 @@ Possible enum values:
 - `assa_abloy_vostio`
 - `assa_abloy_vostio_credential_service`
 
-
 ---
 
 ### `external_type_display_name`
@@ -127,7 +116,6 @@ Possible enum values:
 Format: `String`
 
 Display name that corresponds to the brand-specific terminology for the `acs_system` type.
-
 
 ---
 
@@ -137,7 +125,6 @@ Format: `String`
 
 Alternative text for the `acs_system` image.
 
-
 ---
 
 ### `image_url`
@@ -146,7 +133,6 @@ Format: `String`
 
 URL for the image that represents the `acs_system`.
 
-
 ---
 
 ### `is_credential_manager`
@@ -154,7 +140,6 @@ URL for the image that represents the `acs_system`.
 Format: `Boolean`
 
 Indicates if the `acs_system` is a credential manager.
-
 
 ---
 
@@ -177,7 +162,6 @@ Time zone in which the `acs_system` is located.
 Format: `String`
 
 Name of the `acs_system`.
-
 
 ---
 
@@ -204,7 +188,6 @@ Possible enum values:
 - `assa_abloy_vostio`
 - `assa_abloy_vostio_credential_service`
 
-
 ---
 
 ### `system_type_display_name`
@@ -214,7 +197,6 @@ Possible enum values:
 {% endhint %}
 
 Format: `String`
-
 
 ---
 
@@ -229,6 +211,7 @@ Format: `Object`
 IP address or hostname of the main Visionline server relative to the Seam Bridge on the local network.
 
 </details>
+
 <details>
 
 <summary><code>mobile_access_uuid</code> Format: <code>String</code></summary>
@@ -236,6 +219,7 @@ IP address or hostname of the main Visionline server relative to the Seam Bridge
 Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.
 
 </details>
+
 <details>
 
 <summary><code>system_id</code> Format: <code>String</code></summary>
@@ -252,7 +236,6 @@ Format: `List`
 
 Warnings associated with the `acs_system`.
 
-
 ---
 
 ### `workspace_id`
@@ -260,7 +243,6 @@ Warnings associated with the `acs_system`.
 Format: `ID`
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the `acs_system`.
-
 
 ---
 

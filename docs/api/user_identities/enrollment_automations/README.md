@@ -10,7 +10,6 @@ Format: `Datetime`
 
 Date and time at which the enrollment automation was created.
 
-
 ---
 
 ### `credential_manager_acs_system_id`
@@ -18,7 +17,6 @@ Date and time at which the enrollment automation was created.
 Format: `ID`
 
 ID of the associated [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) that serves as the credential manager.
-
 
 ---
 
@@ -28,7 +26,6 @@ Format: `ID`
 
 ID of the enrollment automation.
 
-
 ---
 
 ### `user_identity_id`
@@ -37,7 +34,6 @@ Format: `ID`
 
 ID of the associated [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
-
 ---
 
 ### `workspace_id`
@@ -45,7 +41,6 @@ ID of the associated [user identity](https://docs.seam.co/latest/capability-guid
 Format: `ID`
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the enrollment automation.
-
 
 ---
 

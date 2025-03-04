@@ -15,7 +15,6 @@ Possible enum values:
 - `card`
 - `mobile_key`
 
-
 ---
 
 ### `acs_credential_id`
@@ -24,13 +23,11 @@ Format: `ID`
 
 ID of the credential.
 
-
 ---
 
 ### `acs_credential_pool_id`
 
 Format: `ID`
-
 
 ---
 
@@ -40,7 +37,6 @@ Format: `ID`
 
 ID of the access control system that contains the credential.
 
-
 ---
 
 ### `acs_user_id`
@@ -48,7 +44,6 @@ ID of the access control system that contains the credential.
 Format: `ID`
 
 ID of the ACS user to whom the credential belongs.
-
 
 ---
 
@@ -63,21 +58,25 @@ Vostio-specific metadata for the credential.
 <summary><code>door_names</code> Format: <code>List</code></summary>
 
 </details>
+
 <details>
 
 <summary><code>endpoint_id</code> Format: <code>String</code></summary>
 
 </details>
+
 <details>
 
 <summary><code>key_id</code> Format: <code>String</code></summary>
 
 </details>
+
 <details>
 
 <summary><code>key_issuing_request_id</code> Format: <code>String</code></summary>
 
 </details>
+
 <details>
 
 <summary><code>override_guest_acs_entrance_ids</code> Format: <code>List</code></summary>
@@ -90,7 +89,6 @@ Vostio-specific metadata for the credential.
 
 Format: `String`
 
-
 ---
 
 ### `code`
@@ -98,7 +96,6 @@ Format: `String`
 Format: `String`
 
 Access (PIN) code for the credential.
-
 
 ---
 
@@ -108,7 +105,6 @@ Format: `Datetime`
 
 Date and time at which the credential was created.
 
-
 ---
 
 ### `display_name`
@@ -116,7 +112,6 @@ Date and time at which the credential was created.
 Format: `String`
 
 Display name that corresponds to the credential type.
-
 
 ---
 
@@ -126,7 +121,6 @@ Format: `String`
 
 Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
 
-
 ---
 
 ### `errors`
@@ -134,7 +128,6 @@ Date and time at which the credential validity ends, in [ISO 8601](https://www.i
 Format: `List`
 
 Errors associated with the `acs_credential`.
-
 
 ---
 
@@ -153,7 +146,6 @@ Possible enum values:
 - `assa_abloy_vostio_key`
 - `salto_space_key`
 
-
 ---
 
 ### `external_type_display_name`
@@ -162,13 +154,11 @@ Format: `String`
 
 Display name that corresponds to the brand-specific terminology for the credential type.
 
-
 ---
 
 ### `is_issued`
 
 Format: `Boolean`
-
 
 ---
 
@@ -178,13 +168,11 @@ Format: `Boolean`
 
 Indicates whether the latest state of the credential has been synced from Seam to the provider.
 
-
 ---
 
 ### `is_managed`
 
 Format: `Boolean`
-
 
 ---
 
@@ -194,7 +182,6 @@ Format: `Boolean`
 
 Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
 
-
 ---
 
 ### `is_one_time_use`
@@ -203,13 +190,11 @@ Format: `Boolean`
 
 Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use.
 
-
 ---
 
 ### `issued_at`
 
 Format: `Datetime`
-
 
 ---
 
@@ -219,7 +204,6 @@ Format: `Datetime`
 
 Date and time at which the state of the credential was most recently synced from Seam to the provider.
 
-
 ---
 
 ### `parent_acs_credential_id`
@@ -228,7 +212,6 @@ Format: `ID`
 
 ID of the parent credential.
 
-
 ---
 
 ### `starts_at`
@@ -236,7 +219,6 @@ ID of the parent credential.
 Format: `String`
 
 Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
-
 
 ---
 
@@ -251,36 +233,43 @@ Visionline-specific metadata for the credential.
 <summary><code>auto_join</code> Format: <code>Boolean</code></summary>
 
 </details>
+
 <details>
 
 <summary><code>card_function_type</code> Format: <code>Enum</code></summary>
 
 </details>
+
 <details>
 
 <summary><code>card_id</code> Format: <code>String</code></summary>
 
 </details>
+
 <details>
 
 <summary><code>common_acs_entrance_ids</code> Format: <code>List</code></summary>
 
 </details>
+
 <details>
 
 <summary><code>credential_id</code> Format: <code>String</code></summary>
 
 </details>
+
 <details>
 
 <summary><code>guest_acs_entrance_ids</code> Format: <code>List</code></summary>
 
 </details>
+
 <details>
 
 <summary><code>is_valid</code> Format: <code>Boolean</code></summary>
 
 </details>
+
 <details>
 
 <summary><code>joiner_acs_credential_ids</code> Format: <code>List</code></summary>
@@ -295,7 +284,6 @@ Format: `List`
 
 Warnings associated with the `acs_credential`.
 
-
 ---
 
 ### `workspace_id`
@@ -303,7 +291,6 @@ Warnings associated with the `acs_credential`.
 Format: `ID`
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the credential.
-
 
 ---
 
