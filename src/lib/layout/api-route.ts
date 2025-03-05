@@ -92,12 +92,11 @@ export function setApiRouteLayoutContext(
 
     resourceTypes.add(resourceType)
 
-    const warnings = resource.properties.find((p) => p.name === 'warnings')
-    const errors = resource.properties.find((p) => p.name === 'errors')
-
+    const warningsProp = resource.properties.find((p) => p.name === 'warnings')
+    const errorsProp = resource.properties.find((p) => p.name === 'errors')
     const resourceWarnings =
-      warnings != null ? collectResourceWarnings(warnings) : []
-    const resourceErrors = errors != null ? collectResourceErrors(errors) : []
+      warningsProp != null ? collectResourceWarnings(warningsProp) : []
+    const resourceErrors = errorsProp != null ? collectResourceErrors(errorsProp) : []
 
     file.resources.push({
       name: resource.resourceType,
