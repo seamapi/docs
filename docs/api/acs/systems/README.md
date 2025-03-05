@@ -246,6 +246,62 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 ---
 
+## Errors
+
+### `seam_bridge_disconnected`
+
+Indicates that the Seam API cannot communicate with the [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
+  This error might also occur if the Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/README.md).
+  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+
+---
+
+### `visionline_instance_unreachable`
+
+Indicates that the Seam Bridge is functioning correctly and the Seam API can communicate with the Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/latest/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).
+  For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](../../../core-concepts/workspaces/README.md).
+  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
+
+---
+
+### `salto_ks_subscription_limit_exceeded`
+
+Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.
+
+---
+
+### `acs_system_disconnected`
+
+Indicates that the access system has been disconnected. See [this guide](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system guide) to resolve the issue.
+
+---
+
+### `account_disconnected`
+
+Indicates that the login credentials are invalid. Reconnect the account using the Connect Webview to restore access.
+
+---
+
+### `salto_ks_certification_expired`
+
+
+
+---
+
+## Warnings
+
+### `salto_ks_subscription_limit_almost_reached`
+
+
+
+---
+
+### `time_zone_does_not_match_location`
+
+
+
+---
+
 ## Endpoints
 
 ### [`/acs/systems/get`](./get.md)
