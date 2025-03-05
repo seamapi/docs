@@ -2,11 +2,11 @@
 description: Create access codes across multiple devices that share a common code
 ---
 
-# Create Many Access Codes
+# Create Multiple Linked Access Codes
 
-{% swagger src="../../.gitbook/assets/openapi (2).json" path="/access_codes/create_multiple" method="post" %}
+{% openapi src="../../.gitbook/assets/openapi (2).json" path="/access_codes/create_multiple" method="post" %}
 [openapi (2).json](<../../.gitbook/assets/openapi (2).json>)
-{% endswagger %}
+{% endopenapi %}
 
 ### Code Example
 
@@ -49,13 +49,14 @@ await seam.accessCodes.createMultiple({
 
 ### Parameters
 
-| `device_ids`                          | type: string\[]                                           | <p><br>ID of the Device</p>                                                                                                                                                |
-| ------------------------------------- | --------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`                                | <p>type: string<br>Optional</p>                           | Name of Access Codes                                                                                                                                                       |
-| `starts_at`                           | <p>type: string<br>Optional</p>                           | From when is the code valid                                                                                                                                                |
-| `ends_at`                             | <p>type: string<br>Optional</p>                           | Code expiry                                                                                                                                                                |
-| `behavior_when_code_cannot_be_shared` | <p>type: enum<br>Optional, default <code>throw</code></p> | If `throw`, no access codes will be created if any device cannot share a code. If `create_random_code`, a random code will be created on devices that cannot share a code. |
-| `preferred_code_length`               | <p>type: number<br>Optional</p>                           | <p>Preferred code length<br>If the affected devices do not support the preferred code length, Seam reverts to using the shortest supported code length.</p>                |
+| `device_ids`                          | type: string\[]                                           | <p><br>ID of the Device</p>                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| ------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`                                | <p>type: string<br>Optional</p>                           | Name of Access Codes                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `starts_at`                           | <p>type: string<br>Optional</p>                           | From when is the code valid                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `ends_at`                             | <p>type: string<br>Optional</p>                           | Code expiry                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `behavior_when_code_cannot_be_shared` | <p>type: enum<br>Optional, default <code>throw</code></p> | If `throw`, no access codes will be created if any device cannot share a code. If `create_random_code`, a random code will be created on devices that cannot share a code.                                                                                                                                                                                                                                                                                      |
+| `preferred_code_length`               | <p>type: number<br>Optional</p>                           | <p>Preferred code length<br>If the affected devices do not support the preferred code length, Seam reverts to using the shortest supported code length.</p>                                                                                                                                                                                                                                                                                                     |
+| `code`                                | <p>type: string<br>Optional</p>                           | <p>Code (PIN) to assign to each created access code.</p><p>If you specify a <code>code</code>, Seam does not link the created access codes with a <code>common_code_key</code>, so you cannot then update these access codes using <a href="update-multiple-linked-access-codes.md"><code>/access_codes/update_multiple</code></a>. You can, however, update each access code individually using <a href="update.md"><code>/access_codes/update</code></a>.</p> |
 
 ### Response
 

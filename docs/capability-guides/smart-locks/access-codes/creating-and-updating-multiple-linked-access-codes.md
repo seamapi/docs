@@ -6,18 +6,24 @@ description: >-
 
 # Creating and Updating Multiple Linked Access Codes
 
-Users with more than one door lock in a property may want to create groups of linked access codes, all of which have the same code (PIN). For example, a short-term rental host may want to provide guests the same PIN for both a front door lock and a back door lock. In this case, use [`/access_codes/create_multiple`](../../../api-clients/access\_codes/create\_multiple.md). Specify the `device_id` of each device for which you want to create linked access codes. You can also include additional optional properties, such as the following:
+Users with more than one door lock in a property may want to create groups of linked access codes, all of which have the same code (PIN). For example, a short-term rental host may want to provide guests the same PIN for both a front door lock and a back door lock. In this case, use [`/access_codes/create_multiple`](../../../api-clients/access_codes/create_multiple.md). Specify the `device_id` of each device for which you want to create linked access codes. You can also include additional optional properties, such as the following:
 
 * A name to apply to all of the access codes.
 * The `preferred_code_length`.
 * Whether to throw an error or create a random code if any of the included devices cannot share a code.
 * Starting and ending timestamps if you want to create time-bound access codes.
 
-Note that you cannot specify a custom code.
-
 When you use `/access_codes/create_multiple`, Seam assigns a `common_code_key` to all of the created access codes and returns this key. The `common_code_key` identifies all the access codes within this linked group.
 
-Then, you can change the starting or ending time for the group of access codes—for example, if a short-term rental guest requests an early check-in or late checkout. To update a group of linked access codes, use `/access_codes/update_multiple`, specifying the `common_code_key` of the linked access code group, along with the replacement starting and ending timestamps.
+Then, you can change the starting or ending time for the group of access codes—for example, if a short-term rental guest requests an early check-in or late checkout. To update a group of linked access codes, use [`/access_codes/update_multiple`](../../../api-clients/access_codes/update-multiple-linked-access-codes.md), specifying the `common_code_key` of the linked access code group, along with the replacement starting and ending timestamps.
+
+***
+
+## Specifying Custom Codes
+
+When you use `/access_codes/create_multiple`, you can specify a custom `code`. Seam assigns this custom `code` to each of the resulting access codes. However, in this case, Seam does not link these access codes together with a `common_code_key`. That is, `common_code_key` remains null for these access codes.
+
+If you want to change these access codes that are not linked by a `common_code_key`, you cannot use `/access_codes/update_multiple`. However, you can update each of these access codes individually, using [`/access_codes/update`](../../../api-clients/access_codes/update.md).
 
 ***
 
