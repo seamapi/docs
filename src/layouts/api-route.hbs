@@ -2,6 +2,30 @@
 
 {{#each resources}}
 {{> api-resource this}}
+{{#if errors.length}}
+## Errors
+
+{{#each errors}}
+### `{{name}}`
+
+{{description}}
+
+---
+
+{{/each}}
+{{/if}}
+{{#if warnings.length}}
+## Warnings
+
+{{#each warnings}}
+### `{{name}}`
+
+{{description}}
+
+---
+
+{{/each}}
+{{/if}}
 {{/each}}
 ## Endpoints
 
