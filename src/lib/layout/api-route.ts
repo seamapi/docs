@@ -1,4 +1,11 @@
-import type { Blueprint, Endpoint, Property, Route } from '@seamapi/blueprint'
+import type {
+  Blueprint,
+  DiscriminatedListProperty,
+  Endpoint,
+  EnumProperty,
+  Property,
+  Route,
+} from '@seamapi/blueprint'
 import { pascalCase } from 'change-case'
 
 import type { PathMetadata } from 'lib/path-metadata.js'
@@ -7,7 +14,12 @@ export interface ApiRouteLayoutContext {
   title: string
   description: string
   path: string
-  resources: ApiRouteResource[]
+  resources: Array<
+    ApiRouteResource & {
+      warnings: ApiWarning[]
+      errors: ApiError[]
+    }
+  >
   endpoints: ApiRouteEndpoint[]
   events: ApiRouteEvent[]
 }
@@ -31,6 +43,15 @@ export interface ApiRouteResource {
   name: string
   description: string
   properties: ApiRouteProperty[]
+}
+
+interface ApiWarning {
+  name: string
+  description: string
+}
+interface ApiError {
+  name: string
+  description: string
 }
 
 type ApiRouteEndpoint = Pick<Endpoint, 'path' | 'description'>
@@ -71,12 +92,21 @@ export function setApiRouteLayoutContext(
 
     resourceTypes.add(resourceType)
 
+    const warnings = resource.properties.find((p) => p.name === 'warnings')
+    const errors = resource.properties.find((p) => p.name === 'errors')
+
+    const resourceWarnings =
+      warnings != null ? collectResourceWarnings(warnings) : []
+    const resourceErrors = errors != null ? collectResourceErrors(errors) : []
+
     file.resources.push({
       name: resource.resourceType,
       description: resource.description,
       properties: resource.properties
         .filter(({ isUndocumented }) => !isUndocumented)
         .map(mapBlueprintPropertyToRouteProperty),
+      errors: resourceErrors,
+      warnings: resourceWarnings,
     })
   }
 
@@ -100,6 +130,67 @@ export function setApiRouteLayoutContext(
 
 const getFirstParagraph = (text: string): string =>
   text.split('\n\n').at(0) ?? text
+
+function collectResourceWarnings(warnings: Property | undefined): ApiWarning[] {
+  if (!isDiscriminatedObjectProperty(warnings)) {
+    return []
+  }
+
+  return warnings.variants
+    .map((variant) => {
+      const warningCode = findEnumProperty(variant.properties, 'warning_code')
+      if (warningCode?.values?.[0]?.name == null) {
+        return null
+      }
+
+      return {
+        name: warningCode.values[0].name,
+        description: variant.description,
+      }
+    })
+    .filter((warning): warning is ApiWarning => warning !== null)
+}
+
+function collectResourceErrors(errors: Property | undefined): ApiError[] {
+  if (!isDiscriminatedObjectProperty(errors)) {
+    return []
+  }
+
+  return errors.variants
+    .map((variant) => {
+      const errorCode = findEnumProperty(variant.properties, 'error_code')
+      if (errorCode?.values?.[0]?.name == null) {
+        return null
+      }
+
+      return {
+        name: errorCode.values[0].name,
+        description: variant.description,
+      }
+    })
+    .filter((error): error is ApiError => error !== null)
+}
+
+function isDiscriminatedObjectProperty(
+  prop: Property | undefined,
+): prop is DiscriminatedListProperty {
+  return (
+    prop != null &&
+    'itemFormat' in prop &&
+    prop.itemFormat === 'discriminated_object'
+  )
+}
+
+function findEnumProperty(
+  properties: Property[],
+  name: string,
+): EnumProperty | null {
+  const prop = properties.find(
+    (p) => p.name === name && p.format === 'enum',
+  ) as EnumProperty | undefined
+
+  return prop ?? null
+}
 
 export const mapBlueprintPropertyToRouteProperty = (
   prop: Property,
