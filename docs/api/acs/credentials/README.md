@@ -294,6 +294,44 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 ---
 
+## Warnings
+
+### `waiting_to_be_issued`
+
+Indicates that the credential is waiting to be issued.
+
+---
+
+### `schedule_externally_modified`
+
+Indicates that the schedule of one of the credential's children was modified externally.
+
+---
+
+### `schedule_modified`
+
+Indicates that the schedule of this credential was modified to avoid creating a credential with a start date in the past.
+
+---
+
+### `being_deleted`
+
+Indicates that this credential is being deleted.
+
+---
+
+### `unknown_issue_with_acs_credential`
+
+An unknown issue occurred while syncing the state of this credential with the provider. This issue may affect the proper functioning of this credential.
+
+---
+
+### `needs_to_be_reissued`
+
+Access permissions for this [credential](../../../capability-guides/access-systems/managing-credentials.md) have changed. [Reissue](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md) (re-encode) this credential. This issue may affect the proper functioning of the credential.
+
+---
+
 ## Endpoints
 
 ### [`/acs/credentials/assign`](./assign.md)
