@@ -10,7 +10,6 @@ Format: `Datetime`
 
 Date and time at which the `phone` was created.
 
-
 ---
 
 ### `custom_metadata`
@@ -19,7 +18,6 @@ Format: `Record`
 
 Optional [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) for the phone.
 
-
 ---
 
 ### `device_id`
@@ -27,7 +25,6 @@ Optional [custom metadata](../../core-concepts/devices/adding-custom-metadata-to
 Format: `ID`
 
 ID of the `phone`.
-
 
 ---
 
@@ -41,7 +38,6 @@ Possible enum values:
 - `ios_phone`
 - `android_phone`
 
-
 ---
 
 ### `display_name`
@@ -49,7 +45,6 @@ Possible enum values:
 Format: `String`
 
 Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name` otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.
-
 
 ---
 
@@ -59,7 +54,6 @@ Format: `List`
 
 Errors associated with the `phone`.
 
-
 ---
 
 ### `nickname`
@@ -67,7 +61,6 @@ Errors associated with the `phone`.
 Format: `String`
 
 Optional nickname to describe the phone, settable through Seam.
-
 
 ---
 
@@ -117,7 +110,6 @@ Indicates whether the credential service has an active associated phone.
 
 </details>
 
-
 ---
 
 ### `warnings`
@@ -126,7 +118,6 @@ Format: `List`
 
 Warnings associated with the `phone`.
 
-
 ---
 
 ### `workspace_id`
@@ -134,7 +125,6 @@ Warnings associated with the `phone`.
 Format: `ID`
 
 ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the `phone`.
-
 
 ---
 

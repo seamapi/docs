@@ -26,7 +26,6 @@ Date and time at which the user's access starts, in [ISO 8601](https://www.iso.o
 
 </details>
 
-
 ---
 
 ### `acs_system_id`
@@ -34,7 +33,6 @@ Date and time at which the user's access starts, in [ISO 8601](https://www.iso.o
 Format: `ID`
 
 ID of the access control system that contains the `acs_user`.
-
 
 ---
 
@@ -44,7 +42,6 @@ Format: `ID`
 
 ID of the `acs_user`.
 
-
 ---
 
 ### `created_at`
@@ -53,7 +50,6 @@ Format: `Datetime`
 
 Date and time at which the `acs_user` was created.
 
-
 ---
 
 ### `display_name`
@@ -61,7 +57,6 @@ Date and time at which the `acs_user` was created.
 Format: `String`
 
 Display name for the `acs_user`.
-
 
 ---
 
@@ -73,7 +68,6 @@ Display name for the `acs_user`.
 
 Format: `String`
 
-
 ---
 
 ### `email_address`
@@ -82,7 +76,6 @@ Format: `String`
 
 Email address of the `acs_user`.
 
-
 ---
 
 ### `errors`
@@ -90,7 +83,6 @@ Email address of the `acs_user`.
 Format: `List`
 
 Errors associated with the `acs_user`.
-
 
 ---
 
@@ -109,7 +101,6 @@ Possible enum values:
 - `dormakaba_community_user`
 - `salto_space_user`
 
-
 ---
 
 ### `external_type_display_name`
@@ -117,7 +108,6 @@ Possible enum values:
 Format: `String`
 
 Display name that corresponds to the brand-specific terminology for the `acs_user` type.
-
 
 ---
 
@@ -127,20 +117,17 @@ Format: `String`
 
 Full name of the `acs_user`.
 
-
 ---
 
 ### `hid_acs_system_id`
 
 Format: `ID`
 
-
 ---
 
 ### `is_managed`
 
 Format: `Boolean`
-
 
 ---
 
@@ -150,7 +137,6 @@ Format: `Boolean`
 
 Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users).
 
-
 ---
 
 ### `phone_number`
@@ -158,7 +144,6 @@ Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/l
 Format: `String`
 
 Phone number of the `acs_user` in E.164 format (for example, `+15555550100`).
-
 
 ---
 
@@ -168,7 +153,6 @@ Format: `String`
 
 Email address of the user identity associated with the `acs_user`.
 
-
 ---
 
 ### `user_identity_full_name`
@@ -176,7 +160,6 @@ Email address of the user identity associated with the `acs_user`.
 Format: `String`
 
 Full name of the user identity associated with the `acs_user`.
-
 
 ---
 
@@ -186,7 +169,6 @@ Format: `String`
 
 ID of the user identity associated with the `acs_user`.
 
-
 ---
 
 ### `user_identity_phone_number`
@@ -194,7 +176,6 @@ ID of the user identity associated with the `acs_user`.
 Format: `String`
 
 Phone number of the user identity associated with the `acs_user` in E.164 format (for example, `+15555550100`).
-
 
 ---
 
@@ -204,7 +185,6 @@ Format: `List`
 
 Warnings associated with the `acs_user`.
 
-
 ---
 
 ### `workspace_id`
@@ -212,7 +192,6 @@ Warnings associated with the `acs_user`.
 Format: `ID`
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the `acs_user`.
-
 
 ---
 

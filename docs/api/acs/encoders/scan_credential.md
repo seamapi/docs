@@ -37,13 +37,11 @@ Format: `ID`
 
 The ID of the action attempt.
 
-
 ---
 
 #### `action_type`
 
 Format: `String`
-
 
 ---
 
@@ -87,7 +85,6 @@ Date and time the credential will stop being useable.
 
 <summary><code>acs_credential_on_encoder.is_issued</code> Format: <code>Boolean</code></summary>
 
-
 </details>
 
 <details>
@@ -110,13 +107,11 @@ Visionline-specific metadata for the credential.
 
 <summary><code>acs_credential_on_encoder.visionline_metadata.cancelled</code> Format: <code>Boolean</code></summary>
 
-
 </details>
 
 <details>
 
 <summary><code>acs_credential_on_encoder.visionline_metadata.card_format</code> Format: <code>Enum</code></summary>
-
 
 </details>
 
@@ -124,13 +119,11 @@ Visionline-specific metadata for the credential.
 
 <summary><code>acs_credential_on_encoder.visionline_metadata.card_holder</code> Format: <code>String</code></summary>
 
-
 </details>
 
 <details>
 
 <summary><code>acs_credential_on_encoder.visionline_metadata.card_id</code> Format: <code>String</code></summary>
-
 
 </details>
 
@@ -138,13 +131,11 @@ Visionline-specific metadata for the credential.
 
 <summary><code>acs_credential_on_encoder.visionline_metadata.common_acs_entrance_ids</code> Format: <code>List</code></summary>
 
-
 </details>
 
 <details>
 
 <summary><code>acs_credential_on_encoder.visionline_metadata.discarded</code> Format: <code>Boolean</code></summary>
-
 
 </details>
 
@@ -152,13 +143,11 @@ Visionline-specific metadata for the credential.
 
 <summary><code>acs_credential_on_encoder.visionline_metadata.expired</code> Format: <code>Boolean</code></summary>
 
-
 </details>
 
 <details>
 
 <summary><code>acs_credential_on_encoder.visionline_metadata.guest_acs_entrance_ids</code> Format: <code>List</code></summary>
-
 
 </details>
 
@@ -166,13 +155,11 @@ Visionline-specific metadata for the credential.
 
 <summary><code>acs_credential_on_encoder.visionline_metadata.number_of_issued_cards</code> Format: <code>Number</code></summary>
 
-
 </details>
 
 <details>
 
 <summary><code>acs_credential_on_encoder.visionline_metadata.overridden</code> Format: <code>Boolean</code></summary>
-
 
 </details>
 
@@ -180,13 +167,11 @@ Visionline-specific metadata for the credential.
 
 <summary><code>acs_credential_on_encoder.visionline_metadata.overwritten</code> Format: <code>Boolean</code></summary>
 
-
 </details>
 
 <details>
 
 <summary><code>acs_credential_on_encoder.visionline_metadata.pending_auto_update</code> Format: <code>Boolean</code></summary>
-
 
 </details>
 
@@ -194,9 +179,7 @@ Visionline-specific metadata for the credential.
 
 <summary><code>warnings</code> Format: <code>List</code></summary>
 
-
 </details>
-
 
 ---
 
@@ -208,7 +191,6 @@ Possible enum values:
 - `success`
 - `pending`
 - `error`
-
 
 ---
 

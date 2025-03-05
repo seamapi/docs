@@ -10,7 +10,6 @@ Format: `ID`
 
 ID of the `acs_encoder`.
 
-
 ---
 
 ### `acs_system_id`
@@ -18,7 +17,6 @@ ID of the `acs_encoder`.
 Format: `ID`
 
 ID of the access control system that contains the `acs_encoder`.
-
 
 ---
 
@@ -28,7 +26,6 @@ Format: `Datetime`
 
 Date and time at which the `acs_encoder` was created.
 
-
 ---
 
 ### `display_name`
@@ -36,7 +33,6 @@ Date and time at which the `acs_encoder` was created.
 Format: `String`
 
 Display name for the `acs_encoder`.
-
 
 ---
 
@@ -46,7 +42,6 @@ Format: `List`
 
 Errors associated with the `acs_encoder`.
 
-
 ---
 
 ### `workspace_id`
@@ -54,7 +49,6 @@ Errors associated with the `acs_encoder`.
 Format: `ID`
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the `acs_system`.
-
 
 ---
 
