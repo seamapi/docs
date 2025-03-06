@@ -190,7 +190,7 @@ function addLinkTargetsToProperties(
 
   for (const prop of properties) {
     const linkTarget = linkableProperties[prop.name]
-    if (linkTarget) {
+    if (linkTarget != null) {
       prop.linkTarget = linkTarget
     }
   }
