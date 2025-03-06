@@ -78,7 +78,7 @@ Email address of the `acs_user`.
 
 ---
 
-### `errors`
+### `[errors](./#errors-1)`
 
 Format: `List`
 
@@ -179,7 +179,7 @@ Phone number of the user identity associated with the `acs_user` in E.164 format
 
 ---
 
-### `warnings`
+### `[warnings](./#warnings-1)`
 
 Format: `List`
 

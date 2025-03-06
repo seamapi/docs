@@ -278,7 +278,7 @@ Visionline-specific metadata for the credential.
 
 ---
 
-### `warnings`
+### `[warnings](./#warnings-1)`
 
 Format: `List`
 

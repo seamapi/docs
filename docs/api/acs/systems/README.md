@@ -80,7 +80,7 @@ ID of the default credential manager acs_system for this access control system.
 
 ---
 
-### `errors`
+### `[errors](./#errors-1)`
 
 Format: `List`
 
@@ -230,7 +230,7 @@ Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel i
 
 ---
 
-### `warnings`
+### `[warnings](./#warnings-1)`
 
 Format: `List`
 
