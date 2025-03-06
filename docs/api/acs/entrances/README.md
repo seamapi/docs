@@ -4,7 +4,7 @@
 
 Represents an [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-### `acs_entrance_id`
+### acs_entrance_id
 
 Format: `ID`
 
@@ -12,7 +12,7 @@ ID of the entrance.
 
 ---
 
-### `acs_system_id`
+### acs_system_id
 
 Format: `ID`
 
@@ -20,7 +20,7 @@ ID of the access control system that contains the entrance.
 
 ---
 
-### `assa_abloy_vostio_metadata`
+### assa_abloy_vostio_metadata
 
 Format: `Object`
 
@@ -56,7 +56,7 @@ Format: `Object`
 
 ---
 
-### `created_at`
+### created_at
 
 Format: `Datetime`
 
@@ -64,7 +64,7 @@ Date and time at which the entrance was created.
 
 ---
 
-### `display_name`
+### display_name
 
 Format: `String`
 
@@ -72,7 +72,7 @@ Display name for the entrance.
 
 ---
 
-### `dormakaba_community_metadata`
+### dormakaba_community_metadata
 
 Format: `Object`
 
@@ -84,13 +84,13 @@ Format: `Object`
 
 ---
 
-### `errors`
+### errors
 
 Format: `List`
 
 ---
 
-### `latch_metadata`
+### latch_metadata
 
 Format: `Object`
 
@@ -120,7 +120,7 @@ Format: `Object`
 
 ---
 
-### `salto_ks_metadata`
+### salto_ks_metadata
 
 Format: `Object`
 
@@ -174,7 +174,7 @@ Format: `Object`
 
 ---
 
-### `salto_space_metadata`
+### salto_space_metadata
 
 Format: `Object`
 
@@ -198,7 +198,7 @@ Format: `Object`
 
 ---
 
-### `visionline_metadata`
+### visionline_metadata
 
 Format: `Object`
 
