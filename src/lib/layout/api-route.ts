@@ -37,7 +37,7 @@ type ApiRouteProperty = Pick<
   format: string
   enumValues?: string[]
   objectProperties?: ApiRouteProperty[]
-  linkTarget?: string // Store just the link target, not the full markdown link
+  linkTarget?: string
 }
 
 export interface ApiRouteResource {
