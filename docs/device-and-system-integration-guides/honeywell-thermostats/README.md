@@ -4,6 +4,8 @@ description: Guide for using Honeywell Resideo thermostats with Seam
 
 # Honeywell Resideo Thermostats
 
+<figure><picture><source srcset="../../.gitbook/assets/honeywell-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/honeywell-manufacturer-page-cover-light.png" alt="Honeywell Resideo Thermostats"></picture><figcaption><p>Honeywell Resideo Thermostats</p></figcaption></figure>
+
 ## Overview
 
 Honeywell Resideo produces Wi-Fi smart thermostats to manage energy costs while maintaining comfortable temperatures. Honeywell Resideo thermostat models include a variety of features, such as color touchscreens.

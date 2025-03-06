@@ -4,7 +4,7 @@ description: Guide for using Nest thermostats with Seam
 
 # Google Nest Thermostats
 
-<figure><picture><source srcset="../../.gitbook/assets/nest-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/nest-manufacturer-page-cover-light.png" alt="Use Nest thermostats with Seam."></picture><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/nest-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/nest-manufacturer-page-cover-light.png" alt="Google Nest Thermostats"></picture><figcaption><p>Google Nest Thermostats</p></figcaption></figure>
 
 ## Overview
 

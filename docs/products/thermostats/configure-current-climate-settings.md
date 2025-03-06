@@ -261,7 +261,7 @@ if thermostat.can_hvac_heat:
 ```
 ActionAttempt(
   action_attempt_id='97125745-15d9-4970-b5be-c34ec3ce1c81',
-  action_type='SET_HEAT',
+  action_type='SET_HVAC_MODE',
   status='success',
   result={},
   error=None
@@ -306,7 +306,7 @@ fi
 {
   "action_attempt": {
     "status": "pending",
-    "action_type": "SET_HEAT",
+    "action_type": "SET_HVAC_MODE",
     "action_attempt_id": "97125745-15d9-4970-b5be-c34ec3ce1c81",
     "result": null,
     "error": null
@@ -341,7 +341,7 @@ if (thermostat.can_hvac_heat) {
 {
   status: 'success',
   action_attempt_id: '97125745-15d9-4970-b5be-c34ec3ce1c81',
-  action_type: 'SET_HEAT',
+  action_type: 'SET_HVAC_MODE',
   result: {},
   error: null
 }
@@ -352,13 +352,30 @@ if (thermostat.can_hvac_heat) {
 **Request:**
 
 ```ruby
-# Coming soon!
+// Get the thermostat.
+thermostat = seam.devices.get({
+  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+});
+
+# Confirm that the thermostat supports heat mode.
+if (thermostat.can_hvac_heat)
+  # Perform the heat request.
+  seam.thermostats.heat(
+    device_id: thermostat.device_id,
+    heating_set_point_celsius: 20
+  )
+end
 ```
 
 **Response:**
 
 ```
-# Coming soon!
+<Seam::Resources::ActionAttempt:0x005f0
+  status="success"
+  action_type="SET_HVAC_MODE"
+  action_attempt_id="97125745-15d9-4970-b5be-c34ec3ce1c81"
+  result={}
+  error=nil>
 ```
 {% endtab %}
 
@@ -387,7 +404,7 @@ if ($thermostat->can_hvac_heat) {
 {
   status: 'success',
   action_attempt_id: '97125745-15d9-4970-b5be-c34ec3ce1c81',
-  action_type: 'SET_HEAT',
+  action_type: 'SET_HVAC_MODE',
   result: {},
   error: null
 }
@@ -469,7 +486,7 @@ if thermostat.can_hvac_cool:
 ```
 ActionAttempt(
   action_attempt_id='87478724-0e30-4fed-9f2a-456971b7b04f',
-  action_type='SET_COOL',
+  action_type='SET_HVAC_MODE',
   status='success',
   result={},
   error=None
@@ -514,7 +531,7 @@ fi
 {
   "action_attempt": {
     "status": "pending",
-    "action_type": "SET_COOL",
+    "action_type": "SET_HVAC_MODE",
     "action_attempt_id": "87478724-0e30-4fed-9f2a-456971b7b04f",
     "result": null,
     "error": null
@@ -549,7 +566,7 @@ if (thermostat.can_hvac_cool) {
 {
   status: 'success',
   action_attempt_id: '87478724-0e30-4fed-9f2a-456971b7b04f',
-  action_type: 'SET_COOL',
+  action_type: 'SET_HVAC_MODE',
   result: {},
   error: null
 }
@@ -560,13 +577,30 @@ if (thermostat.can_hvac_cool) {
 **Request:**
 
 ```ruby
-# Coming soon!
+// Get the thermostat.
+thermostat = seam.devices.get({
+  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+});
+
+# Confirm that the thermostat supports cool mode.
+if (thermostat.can_hvac_cool)
+  # Perform the cool request.
+  seam.thermostats.cool(
+    device_id: thermostat.device_id,
+    cooling_set_point_celsius: 25
+  )
+end
 ```
 
 **Response:**
 
 ```
-# Coming soon!
+<Seam::Resources::ActionAttempt:0x005f0
+  status="success"
+  action_type="SET_HVAC_MODE"
+  action_attempt_id="87478724-0e30-4fed-9f2a-456971b7b04f"
+  result={}
+  error=nil>
 ```
 {% endtab %}
 
@@ -595,7 +629,7 @@ if ($thermostat->can_hvac_cool) {
 {
   status: 'success',
   action_attempt_id: '87478724-0e30-4fed-9f2a-456971b7b04f',
-  action_type: 'SET_COOL',
+  action_type: 'SET_HVAC_MODE',
   result: {},
   error: null
 }
@@ -681,7 +715,7 @@ if thermostat.can_hvac_heat_cool:
 ```
 ActionAttempt(
   action_attempt_id='8050ec59-7f29-4d0d-9842-dedaf304740d',
-  action_type='SET_HEAT_COOL',
+  action_type='SET_HVAC_MODE',
   status='success',
   result={},
   error=None
@@ -727,7 +761,7 @@ fi
 {
   "action_attempt": {
     "status": "pending",
-    "action_type": "SET_HEAT_COOL",
+    "action_type": "SET_HVAC_MODE",
     "action_attempt_id": "8050ec59-7f29-4d0d-9842-dedaf304740d",
     "result": null,
     "error": null
@@ -763,7 +797,7 @@ if (thermostat.can_hvac_heat_cool) {
 {
   status: 'success',
   action_attempt_id: '8050ec59-7f29-4d0d-9842-dedaf304740d',
-  action_type: 'SET_HEAT_COOL',
+  action_type: 'SET_HVAC_MODE',
   result: {},
   error: null
 }
@@ -774,13 +808,31 @@ if (thermostat.can_hvac_heat_cool) {
 **Request:**
 
 ```ruby
-# Coming soon!
+// Get the thermostat.
+thermostat = seam.devices.get({
+  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+});
+
+# Confirm that the thermostat supports heat-cool mode.
+if (thermostat.can_hvac_heat_cool)
+  # Perform the heat_cool request.
+  seam.thermostats.heat_cool(
+    device_id: thermostat.device_id,
+    heating_set_point_celsius: 20,
+    cooling_set_point_celsius: 25
+  )
+end
 ```
 
 **Response:**
 
 ```
-# Coming soon!
+<Seam::Resources::ActionAttempt:0x005f0
+  status="success"
+  action_type="SET_HVAC_MODE"
+  action_attempt_id="8050ec59-7f29-4d0d-9842-dedaf304740d"
+  result={}
+  error=nil>
 ```
 {% endtab %}
 
@@ -810,7 +862,7 @@ if ($thermostat->can_hvac_heat_cool) {
 {
   status: 'success',
   action_attempt_id: '8050ec59-7f29-4d0d-9842-dedaf304740d',
-  action_type: 'SET_HEAT_COOL',
+  action_type: 'SET_HVAC_MODE',
   result: {},
   error: null
 }
@@ -891,7 +943,7 @@ if thermostat.can_turn_off_hvac:
 ```
 ActionAttempt(
   action_attempt_id='ef94c8b2-3ff0-4e56-a97e-033ca07ba0fd',
-  action_type='SET_THERMOSTAT_OFF',
+  action_type='SET_HVAC_MODE',
   status='success',
   result={},
   error=None
@@ -935,7 +987,7 @@ fi
 {
   "action_attempt": {
     "status": "pending",
-    "action_type": "SET_THERMOSTAT_OFF",
+    "action_type": "SET_HVAC_MODE",
     "action_attempt_id": "ef94c8b2-3ff0-4e56-a97e-033ca07ba0fd",
     "result": null,
     "error": null
@@ -969,7 +1021,7 @@ if (thermostat.can_turn_off_hvac) {
 {
   status: 'success',
   action_attempt_id: 'ef94c8b2-3ff0-4e56-a97e-033ca07ba0fd',
-  action_type: 'SET_THERMOSTAT_OFF',
+  action_type: 'SET_HVAC_MODE',
   result: {},
   error: null
 }
@@ -980,13 +1032,29 @@ if (thermostat.can_turn_off_hvac) {
 **Request:**
 
 ```ruby
-# Coming soon!
+// Get the thermostat.
+thermostat = seam.devices.get({
+  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+});
+
+# Confirm that the thermostat supports off mode.
+if (thermostat.can_turn_off_hvac)
+  # Perform the off request.
+  seam.thermostats.off(
+    device_id: thermostat.device_id
+  )
+end
 ```
 
 **Response:**
 
 ```
-# Coming soon!
+<Seam::Resources::ActionAttempt:0x005f0
+  status="success"
+  action_type="SET_HVAC_MODE"
+  action_attempt_id="ef94c8b2-3ff0-4e56-a97e-033ca07ba0fd"
+  result={}
+  error=nil>
 ```
 {% endtab %}
 
@@ -1014,7 +1082,7 @@ if ($thermostat->can_turn_off_hvac) {
 {
   status: 'success',
   action_attempt_id: 'ef94c8b2-3ff0-4e56-a97e-033ca07ba0fd',
-  action_type: 'SET_THERMOSTAT_OFF',
+  action_type: 'SET_HVAC_MODE',
   result: {},
   error: null
 }

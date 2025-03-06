@@ -1276,7 +1276,7 @@ const updatedFrontDoor = await seam.devices.get({device_id: frontDoor.device_id}
 
 // Inspect the locked property to confirm
 // that the unlock operation was successful.
-<strong>console.log(updatedFrontDoor.properties.locked) // false
+<strong>console.log(updatedFrontDoor.properties.locked); // false
 </strong></code></pre>
 
 **Output:**

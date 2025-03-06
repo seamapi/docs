@@ -14,7 +14,7 @@ Each climate preset can contain the following properties, depending on the [capa
 
 ## Create a Climate Preset
 
-To create a climate preset, issue a [`/thermostats/create_climate_preset`](../../../api/thermostats/create\_climate\_preset.md) request, providing the `device_id` of the desired thermostat. Also, include the desired settings for the climate preset and, optionally, a name. Note that `manual_override_allowed` is required.
+To create a climate preset, issue a [`/thermostats/create_climate_preset`](../../../api/thermostats/create_climate_preset.md) request, providing the `device_id` of the desired thermostat. Also, include the desired settings for the climate preset and, optionally, a name. Note that `manual_override_allowed` is required.
 
 The following example creates two climate presets with the keys `occupied` and `unoccupied`:
 
@@ -167,13 +167,41 @@ void
 **Request:**
 
 ```ruby
-# Coming soon!
+# Get the thermostat.
+thermostat = seam.devices.get(
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+)
+
+# Confirm that the thermostat supports heat_cool mode
+# so that the climate presets can use this mode.
+if (thermostat.can_hvac_heat_cool)
+  # Create the climate presets.
+  seam.thermostats.create_climate_preset(
+    device_id: thermostat.device_id,
+    climate_preset_key: "occupied",
+    name: "Occupied",
+    fan_mode_setting: "auto",
+    hvac_mode_setting: "heat_cool",
+    cooling_set_point_celsius: 25,
+    heating_set_point_celsius: 20
+  )
+
+  seam.thermostats.create_climate_preset(
+    device_id: thermostat.device_id,
+    climate_preset_key: "unoccupied",
+    name: "Unoccupied",
+    fan_mode_setting: "auto",
+    hvac_mode_setting: "heat_cool",
+    cooling_set_point_celsius: 30,
+    heating_set_point_celsius: 15
+  )
+end
 ```
 
 **Response:**
 
 ```
-# Coming soon!
+nil
 ```
 {% endtab %}
 
@@ -294,7 +322,8 @@ Device(
         'heating_set_point_celsius': 20,
         'heating_set_point_fahrenheit': 68,
         'hvac_mode_setting': 'heat_cool',
-        'name': 'Occupied'
+        'name': 'Occupied',
+        ...
       },
       {
         'climate_preset_key': 'unoccupied',
@@ -305,7 +334,8 @@ Device(
         'heating_set_point_celsius': 15,
         'heating_set_point_fahrenheit': 59,
         'hvac_mode_setting': 'heat_cool',
-        'name': 'Unoccupied'
+        'name': 'Unoccupied',
+        ...
       }
     ],
     ...
@@ -347,7 +377,8 @@ curl -X 'GET' \
           "cooling_set_point_celsius": 25,
           "heating_set_point_celsius": 20,
           "cooling_set_point_fahrenheit": 77,
-          "heating_set_point_fahrenheit": 68
+          "heating_set_point_fahrenheit": 68,
+          ...
         },
         {
           "climate_preset_key": "unoccupied",
@@ -358,7 +389,8 @@ curl -X 'GET' \
           "cooling_set_point_celsius": 30,
           "heating_set_point_celsius": 15,
           "cooling_set_point_fahrenheit": 86,
-          "heating_set_point_fahrenheit": 59
+          "heating_set_point_fahrenheit": 59,
+          ...
         }
       ],
       ...
@@ -395,7 +427,8 @@ await seam.devices.get({
         cooling_set_point_celsius: 25,
         heating_set_point_celsius: 20,
         cooling_set_point_fahrenheit: 77,
-        heating_set_point_fahrenheit: 68
+        heating_set_point_fahrenheit: 68,
+        ...
       },
       {
         climate_preset_key: 'unoccupied',
@@ -406,7 +439,8 @@ await seam.devices.get({
         cooling_set_point_celsius: 30,
         heating_set_point_celsius: 15,
         cooling_set_point_fahrenheit: 86,
-        heating_set_point_fahrenheit: 59
+        heating_set_point_fahrenheit: 59,
+        ...
       }
     ],
     ...
@@ -420,13 +454,48 @@ await seam.devices.get({
 **Request:**
 
 ```ruby
-# Coming soon!
+seam.devices.get(
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+)
 ```
 
 **Response:**
 
 ```
-# Coming soon!
+<Seam::Resources::Device:0x005f0
+  device_id="2d488679-6f07-4810-aed2-e726872c1dd5"
+  properties=#<Seam::DeepHashAccessor:0x000001bf948fdbd0 @data={
+    "available_climate_presets"=>[
+      {
+        "climate_preset_key"=>"occupied",
+        "name"=>"Occupied",
+        "display_name"=>"Occupied",
+        "fan_mode_setting"=>"auto",
+        "hvac_mode_setting"=>"heat_cool",
+        "cooling_set_point_celsius"=>25,
+        "heating_set_point_celsius"=>20,
+        "cooling_set_point_fahrenheit"=>77,
+        "heating_set_point_fahrenheit"=>68,
+        ...
+      },      
+      {
+        "climate_preset_key"=>"unoccupied",
+        "name"=>"Unoccupied",
+        "display_name"=>"Unoccupied",
+        "fan_mode_setting"=>"auto",
+        "hvac_mode_setting"=>"heat_cool",
+        "manual_override_allowed"=>true,
+        "cooling_set_point_celsius"=>30,
+        "heating_set_point_celsius"=>15,
+        "cooling_set_point_fahrenheit"=>86,
+        "heating_set_point_fahrenheit"=>59,
+        ...
+      }
+    ]
+    ...
+ }
+ ...
+>
 ```
 {% endtab %}
 
@@ -455,7 +524,8 @@ $seam->devices->get(
           "heating_set_point_celsius": 20,
           "heating_set_point_fahrenheit": 68,
           "hvac_mode_setting": "heat_cool",
-          "name": "Occupied"
+          "name": "Occupied",
+          ...
         },
         {
           "climate_preset_key": "unoccupied",
@@ -466,7 +536,8 @@ $seam->devices->get(
           "heating_set_point_celsius": 15,
           "heating_set_point_fahrenheit": 59,
           "hvac_mode_setting": "heat_cool",
-          "name": "Unoccupied"
+          "name": "Unoccupied",
+          ...
         }
     ],
     ...
@@ -523,7 +594,7 @@ $seam->devices->get(
 
 ## Update a Climate Preset
 
-To update a climate preset, issue a [`/thermostats/update_climate_preset`](../../../api/thermostats/update\_climate\_preset.md) request, providing the `device_id` of the thermostat and the `climate_preset_key` of the desired climate preset. Also, include the desired updated settings for the climate preset. Note that `manual_override_allowed` is required.
+To update a climate preset, issue a [`/thermostats/update_climate_preset`](../../../api/thermostats/update_climate_preset.md) request, providing the `device_id` of the thermostat and the `climate_preset_key` of the desired climate preset. Also, include the desired updated settings for the climate preset. Note that `manual_override_allowed` is required.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -573,7 +644,7 @@ curl -X 'POST' \
 **Request:**
 
 ```javascript
-await seam.thermostats.createClimatePreset({
+await seam.thermostats.updateClimatePreset({
   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
   climate_preset_key: "occupied",
   cooling_set_point_celsius: 24
@@ -591,13 +662,17 @@ void
 **Request:**
 
 ```ruby
-# Coming soon!
+seam.thermostats.update_climate_preset(
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
+  climate_preset_key: "occupied",
+  cooling_set_point_celsius: 24
+)
 ```
 
 **Response:**
 
 ```
-# Coming soon!
+nil
 ```
 {% endtab %}
 
@@ -666,7 +741,7 @@ void
 
 ## Delete a Climate Preset
 
-To delete a climate preset, issue a [`/thermostats/delete_climate_preset`](../../../api/thermostats/delete\_climate\_preset.md) request, providing the `device_id` of the thermostat and the `climate_preset_key` of the desired climate preset.
+To delete a climate preset, issue a [`/thermostats/delete_climate_preset`](../../../api/thermostats/delete_climate_preset.md) request, providing the `device_id` of the thermostat and the `climate_preset_key` of the desired climate preset.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -731,13 +806,16 @@ void
 **Request:**
 
 ```ruby
-# Coming soon!
+seam.thermostats.delete_climate_preset(
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
+  climate_preset_key: "occupied"
+)
 ```
 
 **Response:**
 
 ```
-# Coming soon!
+nil
 ```
 {% endtab %}
 

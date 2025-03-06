@@ -4,6 +4,8 @@ description: Guide for using ecobee thermostats with Seam
 
 # ecobee Thermostats
 
+<figure><picture><source srcset="../.gitbook/assets/ecobee-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/ecobee-manufacturer-page-cover-light.png" alt="ecobee Thermostats"></picture><figcaption><p>ecobee Thermostats</p></figcaption></figure>
+
 ## Overview
 
 ecobee smart thermostats are designed to lower energy costs. In addition to energy efficiency features, such as climate setting scheduling, occupancy sensors, and automatic air conditioning pause when a window or door is left open, ecobee thermostats are hard-wired, instead of battery-powered, for reliability.

@@ -25,7 +25,7 @@ See the following reference topics:
   * [Noise Sensors](noise_sensors/)
 * [Access Control Systems](../api/acs/)
   * [User Identities](../api/user_identities/)
-  * [Phones](phones/)
+  * [Phones](../api/phones/)
 
 ## Monitoring
 

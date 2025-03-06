@@ -147,13 +147,31 @@ await seam.thermostats.schedules.create({
 **Request:**
 
 ```ruby
-# Coming soon!
+seam.thermostats.schedules.create({
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
+  name: "Jim's stay",
+  climate_preset_key: "occupied",
+  starts_at: "2024-11-01T15:00:00Z",
+  ends_at: "2024-11-05T12:00:00Z",
+  is_override_allowed: true,
+  max_override_period_minutes: 90
+)
 ```
 
 **Response:**
 
 ```
-# Coming soon!
+<Seam::Resources::ThermostatSchedule:0x005f0
+  thermostat_schedule_id="4a5bd61f-b402-41a5-9757-d92ba1e20708"
+  name="Jim's stay"
+  device_id="2d488679-6f07-4810-aed2-e726872c1dd5"
+  climate_preset_key="occupied"
+  starts_at=2024-11-01 15:00:00 UTC
+  ends_at=2024-11-05 12:00:00 UTC
+  is_override_allowed=true
+  max_override_period_minutes=90
+  ...
+>
 ```
 {% endtab %}
 
@@ -473,13 +491,65 @@ await seam.thermostats.schedules.create({
 **Request:**
 
 ```ruby
-# Coming soon!
+# Get the thermostat.
+thermostat = seam.devices.get(
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+)
+
+# Set the fallback climate preset.
+seam.thermostats.set_fallback_climate_preset(
+  device_id: thermostat.device_id,
+  climate_preset_key: "unoccupied"
+)
+
+# Create the thermostat schedule for the first reservation.
+seam.thermostats.schedules.create(
+  device_id: thermostat.device_id,
+  name: "Joe's stay",
+  climate_preset_key: "occupied",
+  starts_at: "2024-11-10T15:00:00Z",
+  ends_at: "2024-11-15T12:00:00Z",
+  is_override_allowed: true,
+  max_override_period_minutes: 90
+)
+
+# Create the thermostat schedule for the second reservation.
+seam.thermostats.schedules.create(
+  device_id: thermostat.device_id,
+  name: "Jane's stay",
+  climate_preset_key: "occupied",
+  starts_at: "2024-11-16T15:00:00Z",
+  ends_at: "2024-11-18T12:00:00Z",
+  is_override_allowed: true,
+  max_override_period_minutes: 90
+)
 ```
 
 **Response:**
 
 ```
-# Coming soon!
+<Seam::Resources::ThermostatSchedule:0x005f0
+  thermostat_schedule_id="4082a585-cf6e-4f6c-889d-d208fde226d0"
+  name="Joe's stay"
+  device_id="2d488679-6f07-4810-aed2-e726872c1dd5"
+  climate_preset_key="occupied"
+  starts_at=2024-11-10 15:00:00 UTC
+  ends_at=2024-11-15 12:00:00 UTC
+  is_override_allowed=true
+  max_override_period_minutes=90
+  ...
+>
+<Seam::Resources::ThermostatSchedule:0x005f0
+  thermostat_schedule_id="9d2b1c55-68cc-4c86-8478-dea3249e26b7"
+  name="Jane's stay"
+  device_id="2d488679-6f07-4810-aed2-e726872c1dd5"
+  climate_preset_key="occupied"
+  starts_at=2024-11-16 15:00:00 UTC
+  ends_at=2024-11-18 12:00:00 UTC
+  is_override_allowed=true
+  max_override_period_minutes=90
+  ...
+>
 ```
 {% endtab %}
 
@@ -728,13 +798,38 @@ await seam.thermostats.schedules.list({
 **Request:**
 
 ```ruby
-# Coming soon!
+seam.thermostats.schedules.list(
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+)
 ```
 
 **Response:**
 
 ```
-# Coming soon!
+[
+  <Seam::Resources::ThermostatSchedule:0x005f0
+    thermostat_schedule_id="4082a585-cf6e-4f6c-889d-d208fde226d0"
+    name="Joe's stay"
+    device_id="2d488679-6f07-4810-aed2-e726872c1dd5"
+    climate_preset_key="occupied"
+    starts_at=2024-11-10 15:00:00 UTC
+    ends_at=2024-11-15 12:00:00 UTC
+    is_override_allowed=true
+    max_override_period_minutes=90
+    ...
+  >,
+  <Seam::Resources::ThermostatSchedule:0x005f0
+    thermostat_schedule_id="9d2b1c55-68cc-4c86-8478-dea3249e26b7"
+    name="Jane's stay"
+    device_id="2d488679-6f07-4810-aed2-e726872c1dd5"
+    climate_preset_key="occupied"
+    starts_at=2024-11-16 15:00:00 UTC
+    ends_at=2024-11-18 12:00:00 UTC
+    is_override_allowed=true
+    max_override_period_minutes=90
+    ...
+  >
+]
 ```
 {% endtab %}
 
@@ -917,13 +1012,25 @@ await seam.thermostats.schedules.get({
 **Request:**
 
 ```ruby
-# Coming soon!
+seam.thermostats.schedules.get(
+  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
+)
 ```
 
 **Response:**
 
 ```
-# Coming soon!
+<Seam::Resources::ThermostatSchedule:0x005f0
+  thermostat_schedule_id="89d3507e-60e3-4101-bd1b-ba066ec30ad4"
+  name="Joe's stay"
+  device_id="2d488679-6f07-4810-aed2-e726872c1dd5"
+  climate_preset_key="occupied"
+  starts_at=2024-11-10 15:00:00 UTC
+  ends_at=2024-11-15 12:00:00 UTC
+  is_override_allowed=true
+  max_override_period_minutes=90
+  ...
+>
 ```
 {% endtab %}
 
@@ -1065,13 +1172,16 @@ void
 **Request:**
 
 ```ruby
-# Coming soon!
+seam.thermostats.schedules.update(
+  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
+  ends_at: "2024-11-15T15:00:00Z"
+)
 ```
 
 **Response:**
 
 ```
-# Coming soon!
+nil
 ```
 {% endtab %}
 
@@ -1201,13 +1311,15 @@ void
 **Request:**
 
 ```ruby
-# Coming soon!
+seam.thermostats.schedules.delete(
+  thermostat_schedule_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+)
 ```
 
 **Response:**
 
 ```
-# Coming soon!
+nil
 ```
 {% endtab %}
 

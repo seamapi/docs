@@ -155,7 +155,6 @@ await seam.thermostats.list({
       relative_humidity: 0.46,
       temperature_celsius: 24.64,
       temperature_fahrenheit: 76.352,
-      current_climate_setting: [Object],
       available_hvac_mode_settings: [
         'heat',
         'cool',
@@ -188,13 +187,56 @@ await seam.thermostats.list({
 **Request:**
 
 ```ruby
-# Coming soon!
+seam.thermostats.list(
+  manufacturer: "nest"
+)
 ```
 
 **Response:**
 
 ```
-# Coming soon!
+[
+  <Seam::Resources::Device:0x005f0
+    device_id="a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+    device_type="nest_thermostat"
+    properties=#<Seam::DeepHashAccessor:0x0000016b1791f068 @data={
+      "online"=>true,
+      "is_cooling"=>false,
+      "is_heating"=>false,
+      "manufacturer"=>"nest",
+      "is_fan_running"=>false,
+      "relative_humidity"=>0.36,
+      "temperature_celsius"=>21.11111111111111,
+      "temperature_fahrenheit"=>70,
+      "available_hvac_mode_settings"=>[
+        "heat",
+        "cool",
+        "heat_cool",
+        "off"
+      ],
+      "current_climate_setting"=>{
+        "climate_preset_key"=>"unoccupied",
+        "can_edit"=>true,
+        "can_delete"=>true,
+        "display_name"=>"unoccupied",
+        "fan_mode_setting"=>"auto",
+        "hvac_mode_setting"=>"heat_cool",
+        "manual_override_allowed"=>true,
+        "cooling_set_point_celsius"=>30,
+        "heating_set_point_celsius"=>15,
+        "cooling_set_point_fahrenheit"=>86,
+        "heating_set_point_fahrenheit"=>59
+      },
+      ...
+    }>
+    can_hvac_cool=true
+    can_hvac_heat=true
+    can_turn_off_hvac=true
+    can_hvac_heat_cool=true
+    ...
+  >,
+  ...
+]
 ```
 {% endtab %}
 
