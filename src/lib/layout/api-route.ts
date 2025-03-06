@@ -37,6 +37,7 @@ type ApiRouteProperty = Pick<
   format: string
   enumValues?: string[]
   objectProperties?: ApiRouteProperty[]
+  linkTarget?: string // Store just the link target, not the full markdown link
 }
 
 export interface ApiRouteResource {
@@ -99,12 +100,19 @@ export function setApiRouteLayoutContext(
     const resourceErrors =
       errorsProp != null ? collectResourceErrors(errorsProp) : []
 
+    const properties = resource.properties
+      .filter(({ isUndocumented }) => !isUndocumented)
+      .map(mapBlueprintPropertyToRouteProperty)
+
+    addLinkTargetsToProperties(properties, {
+      errors: resourceErrors.length > 0,
+      warnings: resourceWarnings.length > 0,
+    })
+
     file.resources.push({
       name: resource.resourceType,
       description: resource.description,
-      properties: resource.properties
-        .filter(({ isUndocumented }) => !isUndocumented)
-        .map(mapBlueprintPropertyToRouteProperty),
+      properties,
       errors: resourceErrors,
       warnings: resourceWarnings,
     })
@@ -169,6 +177,23 @@ function collectResourceErrors(errors: Property | undefined): ApiError[] {
       }
     })
     .filter((error): error is ApiError => error !== null)
+}
+
+function addLinkTargetsToProperties(
+  properties: ApiRouteProperty[],
+  sections: { errors: boolean; warnings: boolean },
+): void {
+  const linkableProperties: Record<string, string | undefined> = {
+    errors: sections.errors ? './#errors-1' : undefined,
+    warnings: sections.warnings ? './#warnings-1' : undefined,
+  }
+
+  for (const prop of properties) {
+    const linkTarget = linkableProperties[prop.name]
+    if (linkTarget) {
+      prop.linkTarget = linkTarget
+    }
+  }
 }
 
 function isDiscriminatedObjectProperty(

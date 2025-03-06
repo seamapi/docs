@@ -10,9 +10,9 @@
 
 {{#each properties}}
 {{#if ../headingOffset}}
-#### `{{name}}`
+#### `{{#if linkTarget}}[{{name}}]({{linkTarget}}){{else}}{{name}}{{/if}}`
 {{else}}
-### `{{name}}`
+### `{{#if linkTarget}}[{{name}}]({{linkTarget}}){{else}}{{name}}{{/if}}`
 {{/if}}
 {{#if isDeprecated}}
 
