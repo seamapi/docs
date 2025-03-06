@@ -4,7 +4,7 @@
 
 Means by which a user gains access at an entrance. The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.
 
-### access_method
+### `access_method`
 
 Format: `Enum`
 
@@ -17,7 +17,7 @@ Possible enum values:
 
 ---
 
-### acs_credential_id
+### `acs_credential_id`
 
 Format: `ID`
 
@@ -25,13 +25,13 @@ ID of the credential.
 
 ---
 
-### acs_credential_pool_id
+### `acs_credential_pool_id`
 
 Format: `ID`
 
 ---
 
-### acs_system_id
+### `acs_system_id`
 
 Format: `ID`
 
@@ -39,7 +39,7 @@ ID of the access control system that contains the credential.
 
 ---
 
-### acs_user_id
+### `acs_user_id`
 
 Format: `ID`
 
@@ -47,7 +47,7 @@ ID of the ACS user to whom the credential belongs.
 
 ---
 
-### assa_abloy_vostio_metadata
+### `assa_abloy_vostio_metadata`
 
 Format: `Object`
 
@@ -85,13 +85,13 @@ Vostio-specific metadata for the credential.
 
 ---
 
-### card_number
+### `card_number`
 
 Format: `String`
 
 ---
 
-### code
+### `code`
 
 Format: `String`
 
@@ -99,7 +99,7 @@ Access (PIN) code for the credential.
 
 ---
 
-### created_at
+### `created_at`
 
 Format: `Datetime`
 
@@ -107,7 +107,7 @@ Date and time at which the credential was created.
 
 ---
 
-### display_name
+### `display_name`
 
 Format: `String`
 
@@ -115,7 +115,7 @@ Display name that corresponds to the credential type.
 
 ---
 
-### ends_at
+### `ends_at`
 
 Format: `String`
 
@@ -123,7 +123,7 @@ Date and time at which the credential validity ends, in [ISO 8601](https://www.i
 
 ---
 
-### errors
+### `errors`
 
 Format: `List`
 
@@ -131,7 +131,7 @@ Errors associated with the `acs_credential`.
 
 ---
 
-### external_type
+### `external_type`
 
 Format: `Enum`
 
@@ -148,7 +148,7 @@ Possible enum values:
 
 ---
 
-### external_type_display_name
+### `external_type_display_name`
 
 Format: `String`
 
@@ -156,13 +156,13 @@ Display name that corresponds to the brand-specific terminology for the credenti
 
 ---
 
-### is_issued
+### `is_issued`
 
 Format: `Boolean`
 
 ---
 
-### is_latest_desired_state_synced_with_provider
+### `is_latest_desired_state_synced_with_provider`
 
 Format: `Boolean`
 
@@ -170,13 +170,13 @@ Indicates whether the latest state of the credential has been synced from Seam t
 
 ---
 
-### is_managed
+### `is_managed`
 
 Format: `Boolean`
 
 ---
 
-### is_multi_phone_sync_credential
+### `is_multi_phone_sync_credential`
 
 Format: `Boolean`
 
@@ -184,7 +184,7 @@ Indicates whether the credential is a [multi-phone sync credential](https://docs
 
 ---
 
-### is_one_time_use
+### `is_one_time_use`
 
 Format: `Boolean`
 
@@ -192,13 +192,13 @@ Indicates whether the credential can only be used once. If "true," the code beco
 
 ---
 
-### issued_at
+### `issued_at`
 
 Format: `Datetime`
 
 ---
 
-### latest_desired_state_synced_with_provider_at
+### `latest_desired_state_synced_with_provider_at`
 
 Format: `Datetime`
 
@@ -206,7 +206,7 @@ Date and time at which the state of the credential was most recently synced from
 
 ---
 
-### parent_acs_credential_id
+### `parent_acs_credential_id`
 
 Format: `ID`
 
@@ -214,7 +214,7 @@ ID of the parent credential.
 
 ---
 
-### starts_at
+### `starts_at`
 
 Format: `String`
 
@@ -222,7 +222,7 @@ Date and time at which the credential validity starts, in [ISO 8601](https://www
 
 ---
 
-### visionline_metadata
+### `visionline_metadata`
 
 Format: `Object`
 
@@ -286,7 +286,7 @@ Warnings associated with the `acs_credential`.
 
 ---
 
-### workspace_id
+### `workspace_id`
 
 Format: `ID`
 

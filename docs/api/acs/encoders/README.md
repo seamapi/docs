@@ -4,7 +4,7 @@
 
 Represents a hardware device that encodes [credential](../../../capability-guides/access-systems/managing-credentials.md) data onto physical cards within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). See also [Working with Card Encoders and Scanners](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
-### acs_encoder_id
+### `acs_encoder_id`
 
 Format: `ID`
 
@@ -12,7 +12,7 @@ ID of the `acs_encoder`.
 
 ---
 
-### acs_system_id
+### `acs_system_id`
 
 Format: `ID`
 
@@ -20,7 +20,7 @@ ID of the access control system that contains the `acs_encoder`.
 
 ---
 
-### created_at
+### `created_at`
 
 Format: `Datetime`
 
@@ -28,7 +28,7 @@ Date and time at which the `acs_encoder` was created.
 
 ---
 
-### display_name
+### `display_name`
 
 Format: `String`
 
@@ -36,7 +36,7 @@ Display name for the `acs_encoder`.
 
 ---
 
-### errors
+### `errors`
 
 Format: `List`
 
@@ -44,7 +44,7 @@ Errors associated with the `acs_encoder`.
 
 ---
 
-### workspace_id
+### `workspace_id`
 
 Format: `ID`
 

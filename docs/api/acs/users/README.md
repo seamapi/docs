@@ -4,7 +4,7 @@
 
 Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-### access_schedule
+### `access_schedule`
 
 Format: `Object`
 
@@ -28,7 +28,7 @@ Date and time at which the user's access starts, in [ISO 8601](https://www.iso.o
 
 ---
 
-### acs_system_id
+### `acs_system_id`
 
 Format: `ID`
 
@@ -36,7 +36,7 @@ ID of the access control system that contains the `acs_user`.
 
 ---
 
-### acs_user_id
+### `acs_user_id`
 
 Format: `ID`
 
@@ -44,7 +44,7 @@ ID of the `acs_user`.
 
 ---
 
-### created_at
+### `created_at`
 
 Format: `Datetime`
 
@@ -52,7 +52,7 @@ Date and time at which the `acs_user` was created.
 
 ---
 
-### display_name
+### `display_name`
 
 Format: `String`
 
@@ -60,7 +60,7 @@ Display name for the `acs_user`.
 
 ---
 
-### email
+### `email`
 
 {% hint style="warning" %}
 **Deprecated**. use email_address.
@@ -70,7 +70,7 @@ Format: `String`
 
 ---
 
-### email_address
+### `email_address`
 
 Format: `String`
 
@@ -86,7 +86,7 @@ Errors associated with the `acs_user`.
 
 ---
 
-### external_type
+### `external_type`
 
 Format: `Enum`
 
@@ -103,7 +103,7 @@ Possible enum values:
 
 ---
 
-### external_type_display_name
+### `external_type_display_name`
 
 Format: `String`
 
@@ -111,7 +111,7 @@ Display name that corresponds to the brand-specific terminology for the `acs_use
 
 ---
 
-### full_name
+### `full_name`
 
 Format: `String`
 
@@ -119,19 +119,19 @@ Full name of the `acs_user`.
 
 ---
 
-### hid_acs_system_id
+### `hid_acs_system_id`
 
 Format: `ID`
 
 ---
 
-### is_managed
+### `is_managed`
 
 Format: `Boolean`
 
 ---
 
-### is_suspended
+### `is_suspended`
 
 Format: `Boolean`
 
@@ -139,7 +139,7 @@ Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/l
 
 ---
 
-### phone_number
+### `phone_number`
 
 Format: `String`
 
@@ -147,7 +147,7 @@ Phone number of the `acs_user` in E.164 format (for example, `+15555550100`).
 
 ---
 
-### user_identity_email_address
+### `user_identity_email_address`
 
 Format: `String`
 
@@ -155,7 +155,7 @@ Email address of the user identity associated with the `acs_user`.
 
 ---
 
-### user_identity_full_name
+### `user_identity_full_name`
 
 Format: `String`
 
@@ -163,7 +163,7 @@ Full name of the user identity associated with the `acs_user`.
 
 ---
 
-### user_identity_id
+### `user_identity_id`
 
 Format: `String`
 
@@ -171,7 +171,7 @@ ID of the user identity associated with the `acs_user`.
 
 ---
 
-### user_identity_phone_number
+### `user_identity_phone_number`
 
 Format: `String`
 
@@ -187,7 +187,7 @@ Warnings associated with the `acs_user`.
 
 ---
 
-### workspace_id
+### `workspace_id`
 
 Format: `ID`
 

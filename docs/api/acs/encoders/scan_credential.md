@@ -31,7 +31,7 @@ ID of the `acs_encoder` to use for the scan.
 
 Reading credential data from physical encoder.
 
-#### action_attempt_id
+#### `action_attempt_id`
 
 Format: `ID`
 
@@ -39,13 +39,13 @@ The ID of the action attempt.
 
 ---
 
-#### action_type
+#### `action_type`
 
 Format: `String`
 
 ---
 
-#### error
+#### `error`
 
 Format: `Object`
 
@@ -63,7 +63,7 @@ Format: `Object`
 
 ---
 
-#### result
+#### `result`
 
 Format: `Object`
 
@@ -485,7 +485,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 ---
 
-#### status
+#### `status`
 
 Format: `Enum`
 

@@ -154,7 +154,7 @@ ID of the desired thermostat device.
 
 Setting HVAC mode.
 
-#### action_attempt_id
+#### `action_attempt_id`
 
 Format: `ID`
 
@@ -162,13 +162,13 @@ The ID of the action attempt.
 
 ---
 
-#### action_type
+#### `action_type`
 
 Format: `String`
 
 ---
 
-#### error
+#### `error`
 
 Format: `Object`
 
@@ -186,7 +186,7 @@ Format: `Object`
 
 ---
 
-#### result
+#### `result`
 
 Format: `Object`
 
@@ -194,7 +194,7 @@ This object has no properties.
 
 ---
 
-#### status
+#### `status`
 
 Format: `Enum`
 
