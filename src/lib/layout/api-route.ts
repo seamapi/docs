@@ -159,43 +159,6 @@ function collectResourceWarnings(warnings: Property | undefined): ApiWarning[] {
     .filter((warning): warning is ApiWarning => warning !== null)
 }
 
-function collectResourceErrors(errors: Property | undefined): ApiError[] {
-  if (!isDiscriminatedObjectProperty(errors)) {
-    return []
-  }
-
-  return errors.variants
-    .map((variant) => {
-      const errorCode = findEnumProperty(variant.properties, 'error_code')
-      if (errorCode?.values?.[0]?.name == null) {
-        return null
-      }
-
-      return {
-        name: errorCode.values[0].name,
-        description: variant.description,
-      }
-    })
-    .filter((error): error is ApiError => error !== null)
-}
-
-function addLinkTargetsToProperties(
-  properties: ApiRouteProperty[],
-  sections: { errors: boolean; warnings: boolean },
-): void {
-  const linkableProperties: Record<string, string | undefined> = {
-    errors: sections.errors ? './#errors-1' : undefined,
-    warnings: sections.warnings ? './#warnings-1' : undefined,
-  }
-
-  for (const prop of properties) {
-    const linkTarget = linkableProperties[prop.name]
-    if (linkTarget != null) {
-      prop.linkTarget = linkTarget
-    }
-  }
-}
-
 function isDiscriminatedObjectProperty(
   prop: Property | undefined,
 ): prop is DiscriminatedListProperty {
@@ -215,6 +178,26 @@ function findEnumProperty(
   ) as EnumProperty | undefined
 
   return prop ?? null
+}
+
+function collectResourceErrors(errors: Property | undefined): ApiError[] {
+  if (!isDiscriminatedObjectProperty(errors)) {
+    return []
+  }
+
+  return errors.variants
+    .map((variant) => {
+      const errorCode = findEnumProperty(variant.properties, 'error_code')
+      if (errorCode?.values?.[0]?.name == null) {
+        return null
+      }
+
+      return {
+        name: errorCode.values[0].name,
+        description: variant.description,
+      }
+    })
+    .filter((error): error is ApiError => error !== null)
 }
 
 export const mapBlueprintPropertyToRouteProperty = (
@@ -282,4 +265,21 @@ const flattenObjectProperties = (
   }
 
   return results
+}
+
+function addLinkTargetsToProperties(
+  properties: ApiRouteProperty[],
+  sections: { errors: boolean; warnings: boolean },
+): void {
+  const linkableProperties: Record<string, string | undefined> = {
+    errors: sections.errors ? './#errors-1' : undefined,
+    warnings: sections.warnings ? './#warnings-1' : undefined,
+  }
+
+  for (const prop of properties) {
+    const linkTarget = linkableProperties[prop.name]
+    if (linkTarget != null) {
+      prop.linkTarget = linkTarget
+    }
+  }
 }
