@@ -56,9 +56,23 @@ end
 
 ***
 
-## 2. Implement any Manufacturer-Specific Requirements
+## 2. Implement any Manufacturer- and Mobile OS-Specific Requirements
+
+Note the following manufacturer- and OS-specific requirements:
+
+### Manufacturer-Specific Requirements
 
 See the [device or system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems) for the access control system or device for which you are planning to develop. Further, you may need to register for developer access with the ACS that you have chosen to use.
+
+***
+
+### iOS Requirement
+
+If you are developing an iOS app, add [`requestAutomaticPassPresentationSuppression()`](https://developer.apple.com/documentation/passkit/pkpasslibrary/requestautomaticpasspresentationsuppression\(responsehandler:\)) to your app to prevent the user's phone from displaying Apple Wallet while scanning for Bluetooth low energy (BLE) or similar locks. This method suppresses Apple Wallet while your mobile app is in the foreground.
+
+{% hint style="info" %}
+The use of this method requires a special entitlement from Apple.
+{% endhint %}
 
 ***
 
