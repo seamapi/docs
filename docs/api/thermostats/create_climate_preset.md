@@ -161,7 +161,7 @@ nil
 Type: `string`
 Required: Yes
 
-Unique key to identify the climate preset.
+Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
 
 ***
 
@@ -179,7 +179,7 @@ Temperature to which the thermostat should cool (in °C). See also [Set Points](
 Type: `number`
 Required: No
 
-Temperature to which the thermostat should cool (in °F).
+Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
 ***
 
@@ -197,7 +197,7 @@ ID of the desired thermostat device.
 Type: `string`
 Required: No
 
-Desired fan mode setting, such as `on`, `auto`, or `circulate`.
+Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
 
 ***
 
@@ -206,7 +206,7 @@ Desired fan mode setting, such as `on`, `auto`, or `circulate`.
 Type: `number`
 Required: No
 
-Temperature to which the thermostat should heat (in °C).
+Temperature to which the thermostat should heat (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
 ***
 
@@ -215,7 +215,7 @@ Temperature to which the thermostat should heat (in °C).
 Type: `number`
 Required: No
 
-Temperature to which the thermostat should heat (in °F).
+Temperature to which the thermostat should heat (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
 ***
 
@@ -242,7 +242,7 @@ Indicates whether a person at the thermostat or using the API can change the the
 Type: `string`
 Required: No
 
-User-friendly name to identify the climate preset.
+User-friendly name to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
 
 ***
 

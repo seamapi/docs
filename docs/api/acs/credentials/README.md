@@ -2,13 +2,13 @@
 
 ## `acs_credential`
 
-Means by which a user gains access at an entrance. The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.
+Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md). The `acs_credential` object represents a [credential](../../../capability-guides/access-systems/managing-credentials.md) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code.
 
 ### `access_method`
 
 Format: `Enum`
 
-Access method for the credential. Supported values: `code`, `card`, `mobile_key`.
+Access method for the [credential](../../../capability-guides/access-systems/managing-credentials.md). Supported values: `code`, `card`, `mobile_key`.
 
 Possible enum values:
 - `code`
@@ -21,7 +21,7 @@ Possible enum values:
 
 Format: `ID`
 
-ID of the credential.
+ID of the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 ---
 
@@ -35,7 +35,7 @@ Format: `ID`
 
 Format: `ID`
 
-ID of the access control system that contains the credential.
+ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 ---
 
@@ -43,7 +43,7 @@ ID of the access control system that contains the credential.
 
 Format: `ID`
 
-ID of the ACS user to whom the credential belongs.
+ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](../../../capability-guides/access-systems/managing-credentials.md) belongs.
 
 ---
 
@@ -51,7 +51,7 @@ ID of the ACS user to whom the credential belongs.
 
 Format: `Object`
 
-Vostio-specific metadata for the credential.
+Vostio-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 <details>
 
@@ -89,13 +89,15 @@ Vostio-specific metadata for the credential.
 
 Format: `String`
 
+Number of the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
 ---
 
 ### `code`
 
 Format: `String`
 
-Access (PIN) code for the credential.
+Access (PIN) code for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 ---
 
@@ -103,7 +105,7 @@ Access (PIN) code for the credential.
 
 Format: `Datetime`
 
-Date and time at which the credential was created.
+Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) was created.
 
 ---
 
@@ -111,7 +113,7 @@ Date and time at which the credential was created.
 
 Format: `String`
 
-Display name that corresponds to the credential type.
+Display name that corresponds to the [credential](../../../capability-guides/access-systems/managing-credentials.md) type.
 
 ---
 
@@ -119,7 +121,7 @@ Display name that corresponds to the credential type.
 
 Format: `String`
 
-Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
+Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
 
 ---
 
@@ -127,7 +129,7 @@ Date and time at which the credential validity ends, in [ISO 8601](https://www.i
 
 Format: `List`
 
-Errors associated with the `acs_credential`.
+Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 ---
 
@@ -135,7 +137,7 @@ Errors associated with the `acs_credential`.
 
 Format: `Enum`
 
-Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.
+Brand-specific terminology for the [credential](../../../capability-guides/access-systems/managing-credentials.md) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.
 
 Possible enum values:
 - `pti_card`
@@ -152,7 +154,7 @@ Possible enum values:
 
 Format: `String`
 
-Display name that corresponds to the brand-specific terminology for the credential type.
+Display name that corresponds to the brand-specific terminology for the [credential](../../../capability-guides/access-systems/managing-credentials.md) type.
 
 ---
 
@@ -160,13 +162,15 @@ Display name that corresponds to the brand-specific terminology for the credenti
 
 Format: `Boolean`
 
+Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) has been encoded onto a card.
+
 ---
 
 ### `is_latest_desired_state_synced_with_provider`
 
 Format: `Boolean`
 
-Indicates whether the latest state of the credential has been synced from Seam to the provider.
+Indicates whether the latest state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) has been synced from Seam to the provider.
 
 ---
 
@@ -180,7 +184,7 @@ Format: `Boolean`
 
 Format: `Boolean`
 
-Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
+Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
 
 ---
 
@@ -188,7 +192,7 @@ Indicates whether the credential is a [multi-phone sync credential](https://docs
 
 Format: `Boolean`
 
-Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use.
+Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) can only be used once. If `true`, the code becomes invalid after the first use.
 
 ---
 
@@ -196,13 +200,15 @@ Indicates whether the credential can only be used once. If "true," the code beco
 
 Format: `Datetime`
 
+Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) was encoded onto a card.
+
 ---
 
 ### `latest_desired_state_synced_with_provider_at`
 
 Format: `Datetime`
 
-Date and time at which the state of the credential was most recently synced from Seam to the provider.
+Date and time at which the state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) was most recently synced from Seam to the provider.
 
 ---
 
@@ -210,7 +216,7 @@ Date and time at which the state of the credential was most recently synced from
 
 Format: `ID`
 
-ID of the parent credential.
+ID of the parent [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 ---
 
@@ -218,7 +224,7 @@ ID of the parent credential.
 
 Format: `String`
 
-Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 ---
 
@@ -226,7 +232,7 @@ Date and time at which the credential validity starts, in [ISO 8601](https://www
 
 Format: `Object`
 
-Visionline-specific metadata for the credential.
+Visionline-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 <details>
 
@@ -282,7 +288,7 @@ Visionline-specific metadata for the credential.
 
 Format: `List`
 
-Warnings associated with the `acs_credential`.
+Warnings associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 ---
 
@@ -290,7 +296,7 @@ Warnings associated with the `acs_credential`.
 
 Format: `ID`
 
-ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the credential.
+ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 ---
 
@@ -298,37 +304,37 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 ### `waiting_to_be_issued`
 
-Indicates that the credential is waiting to be issued.
+Indicates that the [credential](../../../capability-guides/access-systems/managing-credentials.md) is waiting to be issued.
 
 ---
 
 ### `schedule_externally_modified`
 
-Indicates that the schedule of one of the credential's children was modified externally.
+Indicates that the schedule of one of the [credential](../../../capability-guides/access-systems/managing-credentials.md)'s children was modified externally.
 
 ---
 
 ### `schedule_modified`
 
-Indicates that the schedule of this credential was modified to avoid creating a credential with a start date in the past.
+Indicates that the schedule of the [credential](../../../capability-guides/access-systems/managing-credentials.md) was modified to avoid creating a credential with a start date in the past.
 
 ---
 
 ### `being_deleted`
 
-Indicates that this credential is being deleted.
+Indicates that the [credential](../../../capability-guides/access-systems/managing-credentials.md) is being deleted.
 
 ---
 
 ### `unknown_issue_with_acs_credential`
 
-An unknown issue occurred while syncing the state of this credential with the provider. This issue may affect the proper functioning of this credential.
+An unknown issue occurred while syncing the state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) with the provider. This issue may affect the proper functioning of the credential.
 
 ---
 
 ### `needs_to_be_reissued`
 
-Access permissions for this [credential](../../../capability-guides/access-systems/managing-credentials.md) have changed. [Reissue](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md) (re-encode) this credential. This issue may affect the proper functioning of the credential.
+Access permissions for the [credential](../../../capability-guides/access-systems/managing-credentials.md) have changed. [Reissue](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md) (re-encode) the credential. This issue may affect the proper functioning of the credential.
 
 ---
 

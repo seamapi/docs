@@ -8,7 +8,7 @@ Represents an [access control system](https://docs.seam.co/latest/capability-gui
 
 Format: `ID`
 
-ID of the `acs_system`.
+ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ---
 
@@ -16,7 +16,7 @@ ID of the `acs_system`.
 
 Format: `Boolean`
 
-Indicates whether the `acs_system` supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).
+Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).
 
 ---
 
@@ -24,7 +24,7 @@ Indicates whether the `acs_system` supports [adding users to access groups](http
 
 Format: `Boolean`
 
-Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`.
+Indicates whether it is possible to [launch enrollment automations](../../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ---
 
@@ -32,7 +32,7 @@ Indicates whether it is possible to [launch enrollment automations](https://docs
 
 Format: `Boolean`
 
-Indicates whether the `acs_system` supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).
+Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).
 
 ---
 
@@ -40,7 +40,7 @@ Indicates whether the `acs_system` supports creating [access groups](https://doc
 
 Format: `Boolean`
 
-Indicates whether the `acs_system` supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).
+Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).
 
 ---
 
@@ -48,7 +48,7 @@ Indicates whether the `acs_system` supports [removing users from access groups](
 
 Format: `ID`
 
-ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the `acs_system`.
+ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ---
 
@@ -60,7 +60,7 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 
 Format: `List`
 
-IDs of the [connected accounts](../../../core-concepts/connected-accounts/README.md) associated with the `acs_system`.
+IDs of the [connected accounts](../../../core-concepts/connected-accounts/README.md) associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ---
 
@@ -68,7 +68,7 @@ IDs of the [connected accounts](../../../core-concepts/connected-accounts/README
 
 Format: `Datetime`
 
-Date and time at which the `acs_system` was created.
+Date and time at which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) was created.
 
 ---
 
@@ -76,7 +76,7 @@ Date and time at which the `acs_system` was created.
 
 Format: `ID`
 
-ID of the default credential manager acs_system for this access control system.
+ID of the default credential manager `acs_system` for this [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ---
 
@@ -84,7 +84,7 @@ ID of the default credential manager acs_system for this access control system.
 
 Format: `List`
 
-Errors associated with the `acs_system`.
+Errors associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ---
 
@@ -92,7 +92,7 @@ Errors associated with the `acs_system`.
 
 Format: `Enum`
 
-Brand-specific terminology for the `acs_system` type.
+Brand-specific terminology for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) type.
 
 Possible enum values:
 - `pti_site`
@@ -115,7 +115,7 @@ Possible enum values:
 
 Format: `String`
 
-Display name that corresponds to the brand-specific terminology for the `acs_system` type.
+Display name that corresponds to the brand-specific terminology for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) type.
 
 ---
 
@@ -123,7 +123,7 @@ Display name that corresponds to the brand-specific terminology for the `acs_sys
 
 Format: `String`
 
-Alternative text for the `acs_system` image.
+Alternative text for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) image.
 
 ---
 
@@ -131,7 +131,7 @@ Alternative text for the `acs_system` image.
 
 Format: `String`
 
-URL for the image that represents the `acs_system`.
+URL for the image that represents the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ---
 
@@ -139,7 +139,7 @@ URL for the image that represents the `acs_system`.
 
 Format: `Boolean`
 
-Indicates if the `acs_system` is a credential manager.
+Indicates whether the `acs_system` is a credential manager.
 
 ---
 
@@ -151,7 +151,7 @@ Format: `Object`
 
 <summary><code>time_zone</code> Format: <code>String</code></summary>
 
-Time zone in which the `acs_system` is located.
+Time zone in which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) is located.
 
 </details>
 
@@ -161,7 +161,7 @@ Time zone in which the `acs_system` is located.
 
 Format: `String`
 
-Name of the `acs_system`.
+Name of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ---
 
@@ -208,7 +208,7 @@ Format: `Object`
 
 <summary><code>lan_address</code> Format: <code>String</code></summary>
 
-IP address or hostname of the main Visionline server relative to the Seam Bridge on the local network.
+IP address or hostname of the main Visionline server relative to [Seam Bridge](../../../capability-guides/seam-bridge.md) on the local network.
 
 </details>
 
@@ -234,7 +234,7 @@ Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel i
 
 Format: `List`
 
-Warnings associated with the `acs_system`.
+Warnings associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ---
 
@@ -242,7 +242,7 @@ Warnings associated with the `acs_system`.
 
 Format: `ID`
 
-ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the `acs_system`.
+ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ---
 
@@ -250,15 +250,15 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 ### `seam_bridge_disconnected`
 
-Indicates that the Seam API cannot communicate with the [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
-  This error might also occur if the Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/README.md).
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
+  This error might also occur if Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/README.md).
   See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
 ---
 
 ### `visionline_instance_unreachable`
 
-Indicates that the Seam Bridge is functioning correctly and the Seam API can communicate with the Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/latest/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).
+Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/latest/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).
   For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](../../../core-concepts/workspaces/README.md).
   See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
 
@@ -272,19 +272,19 @@ Indicates that the maximum number of users allowed for the site has been reached
 
 ### `acs_system_disconnected`
 
-Indicates that the access system has been disconnected. See [this guide](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system guide) to resolve the issue.
+Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md) to resolve the issue.
 
 ---
 
 ### `account_disconnected`
 
-Indicates that the login credentials are invalid. Reconnect the account using the Connect Webview to restore access.
+Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) to restore access.
 
 ---
 
 ### `salto_ks_certification_expired`
 
-
+Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.
 
 ---
 
@@ -292,13 +292,13 @@ Indicates that the login credentials are invalid. Reconnect the account using th
 
 ### `salto_ks_subscription_limit_almost_reached`
 
-
+Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site to rectify the issue.
 
 ---
 
 ### `time_zone_does_not_match_location`
 
-
+Indicates the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 ---
 

@@ -8,7 +8,7 @@ Represents a [thermostat schedule](../../../capability-guides/thermostats/creati
 
 Format: `String`
 
-Key of the [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to use for the thermostat schedule.
+Key of the [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to use for the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
 ---
 
@@ -16,7 +16,7 @@ Key of the [climate preset](../../../capability-guides/thermostats/creating-and-
 
 Format: `Datetime`
 
-Date and time at which the thermostat schedule was created.
+Date and time at which the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) was created.
 
 ---
 
@@ -24,7 +24,7 @@ Date and time at which the thermostat schedule was created.
 
 Format: `ID`
 
-ID of the desired thermostat device.
+ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device.
 
 ---
 
@@ -32,7 +32,7 @@ ID of the desired thermostat device.
 
 Format: `Datetime`
 
-Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+Date and time at which the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 ---
 
@@ -40,7 +40,7 @@ Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.i
 
 Format: `List`
 
-Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.
+Errors associated with the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
 ---
 
@@ -48,7 +48,7 @@ Array of errors associated with the thermostat schedule. Each error object withi
 
 Format: `Number`
 
-Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
+Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md). See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
 
 ---
 
@@ -56,7 +56,7 @@ Number of minutes for which a person at the thermostat can change the thermostat
 
 Format: `String`
 
-User-friendly name to identify the thermostat schedule.
+User-friendly name to identify the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
 ---
 
@@ -64,7 +64,7 @@ User-friendly name to identify the thermostat schedule.
 
 Format: `Datetime`
 
-Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+Date and time at which the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 ---
 
@@ -72,7 +72,7 @@ Date and time at which the thermostat schedule starts, in [ISO 8601](https://www
 
 Format: `ID`
 
-ID of the thermostat schedule.
+ID of the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
 ---
 

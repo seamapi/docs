@@ -193,10 +193,7 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_access_group.display_name`
 - `acs_access_group.is_managed`
 - `acs_credential.acs_credential_pool_id`
-- `acs_credential.card_number`
-- `acs_credential.is_issued`
 - `acs_credential.is_managed`
-- `acs_credential.issued_at`
 - `acs_credential_pool.acs_credential_pool_id`
 - `acs_credential_pool.acs_system_id`
 - `acs_credential_pool.created_at`
@@ -209,13 +206,6 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_credential_provisioning_automation.credential_manager_acs_system_id`
 - `acs_credential_provisioning_automation.user_identity_id`
 - `acs_credential_provisioning_automation.workspace_id`
-- `acs_entrance.assa_abloy_vostio_metadata`
-- `acs_entrance.dormakaba_community_metadata`
-- `acs_entrance.errors`
-- `acs_entrance.latch_metadata`
-- `acs_entrance.salto_ks_metadata`
-- `acs_entrance.salto_space_metadata`
-- `acs_entrance.visionline_metadata`
 - `acs_system.location`
 - `acs_system.system_type`
 - `acs_system.system_type_display_name`
@@ -297,10 +287,7 @@ Items that are intentionally undocumented are not included in this section.
 - `unmanaged_acs_access_group.display_name`
 - `unmanaged_acs_access_group.is_managed`
 - `unmanaged_acs_credential.acs_credential_pool_id`
-- `unmanaged_acs_credential.card_number`
-- `unmanaged_acs_credential.is_issued`
 - `unmanaged_acs_credential.is_managed`
-- `unmanaged_acs_credential.issued_at`
 - `unmanaged_acs_user.email`
 - `unmanaged_acs_user.hid_acs_system_id`
 - `unmanaged_acs_user.is_latest_desired_state_synced_with_provider`
@@ -738,14 +725,6 @@ Items that are intentionally undocumented are not included in this section.
     - `webview_logo_shape`
     - `webview_primary_button_color`
     - `webview_primary_button_text_color`
-
-## Draft
-
-These items have been marked as draft.
-
-### Resource properties
-
-- `acs_system.default_credential_manager_acs_system_id`: Needs review
 
 ## Deprecated
 
