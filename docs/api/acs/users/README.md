@@ -78,7 +78,7 @@ Email address of the `acs_user`.
 
 ---
 
-### `errors`
+### [`errors`](./#errors-1)
 
 Format: `List`
 
@@ -179,7 +179,7 @@ Phone number of the user identity associated with the `acs_user` in E.164 format
 
 ---
 
-### `warnings`
+### [`warnings`](./#warnings-1)
 
 Format: `List`
 
@@ -192,6 +192,58 @@ Warnings associated with the `acs_user`.
 Format: `ID`
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the `acs_user`.
+
+---
+
+## Errors
+
+### `deleted_externally`
+
+Indicates that the ACS user was deleted from the ACS system outside of Seam.
+
+---
+
+### `salto_ks_subscription_limit_exceeded`
+
+Indicates that the user could not be subscribed on Salto KS because the subscription limit has been exceeded.
+
+---
+
+### `failed_to_create_on_acs_system`
+
+Indicates that the user was not created on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.
+
+---
+
+### `failed_to_update_on_acs_system`
+
+Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.
+
+---
+
+### `failed_to_delete_on_acs_system`
+
+Indicates that the user was not deleted on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.
+
+---
+
+## Warnings
+
+### `being_deleted`
+
+Indicates that the user is being deleted from the ACS system. This is a temporary state, and the user will be deleted shortly.
+
+---
+
+### `salto_ks_user_not_subscribed`
+
+Indicates that the user is not subscribed on the Salto KS, so they cannot unlock doors or perform any actions. This occur when the their access schedule hasn’t started yet, or if their access schedule has ended, or if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.
+
+---
+
+### `unknown_issue_with_acs_user`
+
+An unknown issue occurred while syncing the state of this user with the provider. This issue may affect the proper functioning of this user.
 
 ---
 
