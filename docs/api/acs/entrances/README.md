@@ -8,7 +8,7 @@ Represents an [entrance](../../../capability-guides/access-systems/retrieving-en
 
 Format: `ID`
 
-ID of the entrance.
+ID of the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 ---
 
@@ -16,13 +16,15 @@ ID of the entrance.
 
 Format: `ID`
 
-ID of the access control system that contains the entrance.
+ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 ---
 
 ### `assa_abloy_vostio_metadata`
 
 Format: `Object`
+
+ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 <details>
 
@@ -60,7 +62,7 @@ Format: `Object`
 
 Format: `Datetime`
 
-Date and time at which the entrance was created.
+Date and time at which the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md) was created.
 
 ---
 
@@ -68,13 +70,15 @@ Date and time at which the entrance was created.
 
 Format: `String`
 
-Display name for the entrance.
+Display name for the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 ---
 
 ### `dormakaba_community_metadata`
 
 Format: `Object`
+
+dormakaba Community-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 <details>
 
@@ -88,11 +92,15 @@ Format: `Object`
 
 Format: `List`
 
+Errors associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
 ---
 
 ### `latch_metadata`
 
 Format: `Object`
+
+Latch-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 <details>
 
@@ -123,6 +131,8 @@ Format: `Object`
 ### `salto_ks_metadata`
 
 Format: `Object`
+
+Salto KS-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 <details>
 
@@ -178,6 +188,8 @@ Format: `Object`
 
 Format: `Object`
 
+Salto Space-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
 <details>
 
 <summary><code>door_description</code> Format: <code>String</code></summary>
@@ -201,6 +213,8 @@ Format: `Object`
 ### `visionline_metadata`
 
 Format: `Object`
+
+Visionline-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 <details>
 

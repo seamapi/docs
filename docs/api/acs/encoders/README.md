@@ -8,7 +8,7 @@ Represents a hardware device that encodes [credential](../../../capability-guide
 
 Format: `ID`
 
-ID of the `acs_encoder`.
+ID of the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners.
 
 ---
 
@@ -16,7 +16,7 @@ ID of the `acs_encoder`.
 
 Format: `ID`
 
-ID of the access control system that contains the `acs_encoder`.
+ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 ---
 
@@ -24,7 +24,7 @@ ID of the access control system that contains the `acs_encoder`.
 
 Format: `Datetime`
 
-Date and time at which the `acs_encoder` was created.
+Date and time at which the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) was created.
 
 ---
 
@@ -32,7 +32,7 @@ Date and time at which the `acs_encoder` was created.
 
 Format: `String`
 
-Display name for the `acs_encoder`.
+Display name for the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 ---
 
@@ -40,7 +40,7 @@ Display name for the `acs_encoder`.
 
 Format: `List`
 
-Errors associated with the `acs_encoder`.
+Errors associated with the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 ---
 
@@ -48,7 +48,7 @@ Errors associated with the `acs_encoder`.
 
 Format: `ID`
 
-ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the `acs_system`.
+ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 ---
 

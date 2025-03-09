@@ -141,7 +141,7 @@ nil
 Type: `string`
 Required: Yes
 
-Unique key to identify the climate preset.
+Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
 
 ***
 
@@ -159,7 +159,7 @@ Temperature to which the thermostat should cool (in °C). See also [Set Points](
 Type: `number`
 Required: No
 
-Temperature to which the thermostat should cool (in °F).
+Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
 ***
 
@@ -177,7 +177,7 @@ ID of the desired thermostat device.
 Type: `string`
 Required: No
 
-Desired fan mode setting, such as `on`, `auto`, or `circulate`.
+Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
 
 ***
 
@@ -186,7 +186,7 @@ Desired fan mode setting, such as `on`, `auto`, or `circulate`.
 Type: `number`
 Required: No
 
-Temperature to which the thermostat should heat (in °C).
+Temperature to which the thermostat should heat (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
 ***
 
@@ -195,7 +195,7 @@ Temperature to which the thermostat should heat (in °C).
 Type: `number`
 Required: No
 
-Temperature to which the thermostat should heat (in °F).
+Temperature to which the thermostat should heat (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
 ***
 
@@ -213,7 +213,7 @@ Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat
 Type: `boolean`
 Required: Yes
 
-Indicates whether a person at the thermostat can change the thermostat's settings.
+Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
 
 ***
 
@@ -222,7 +222,7 @@ Indicates whether a person at the thermostat can change the thermostat's setting
 Type: `string`
 Required: No
 
-User-friendly name to identify the climate preset.
+User-friendly name to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
 
 ***
 

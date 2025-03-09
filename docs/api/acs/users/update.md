@@ -140,7 +140,7 @@ Required: No
 Type: `string`
 Required: Yes
 
-ID of the `acs_user`.
+ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 ***
 
@@ -158,7 +158,7 @@ Required: No
 Type: `string`
 Required: No
 
-Email address of the `acs_user`.
+Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 ***
 
@@ -167,7 +167,7 @@ Email address of the `acs_user`.
 Type: `string`
 Required: No
 
-Full name of the `acs_user`.
+Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 ***
 
@@ -185,7 +185,7 @@ Required: No
 Type: `string`
 Required: No
 
-Phone number of the `acs_user` in E.164 format (for example, `+15555550100`).
+Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
 
 ***
 

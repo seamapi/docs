@@ -76,13 +76,13 @@ Format: `Object`
 
 Format: `Object`
 
-Means by which a user gains access at an entrance. The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.
+Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md). The `acs_credential` object represents a [credential](../../../capability-guides/access-systems/managing-credentials.md) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code.
 
 <details>
 
 <summary><code>access_method</code> Format: <code>Enum</code></summary>
 
-Access method for the credential. Supported values: `code`, `card`, `mobile_key`.
+Access method for the [credential](../../../capability-guides/access-systems/managing-credentials.md). Supported values: `code`, `card`, `mobile_key`.
 
 </details>
 
@@ -90,7 +90,7 @@ Access method for the credential. Supported values: `code`, `card`, `mobile_key`
 
 <summary><code>acs_credential_id</code> Format: <code>ID</code></summary>
 
-ID of the credential.
+ID of the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 </details>
 
@@ -104,7 +104,7 @@ ID of the credential.
 
 <summary><code>acs_system_id</code> Format: <code>ID</code></summary>
 
-ID of the access control system that contains the credential.
+ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 </details>
 
@@ -112,7 +112,7 @@ ID of the access control system that contains the credential.
 
 <summary><code>acs_user_id</code> Format: <code>ID</code></summary>
 
-ID of the ACS user to whom the credential belongs.
+ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](../../../capability-guides/access-systems/managing-credentials.md) belongs.
 
 </details>
 
@@ -120,7 +120,7 @@ ID of the ACS user to whom the credential belongs.
 
 <summary><code>assa_abloy_vostio_metadata</code> Format: <code>Object</code></summary>
 
-Vostio-specific metadata for the credential.
+Vostio-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 </details>
 
@@ -158,13 +158,15 @@ Vostio-specific metadata for the credential.
 
 <summary><code>card_number</code> Format: <code>String</code></summary>
 
+Number of the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
 </details>
 
 <details>
 
 <summary><code>code</code> Format: <code>String</code></summary>
 
-Access (PIN) code for the credential.
+Access (PIN) code for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 </details>
 
@@ -172,7 +174,7 @@ Access (PIN) code for the credential.
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
-Date and time at which the credential was created.
+Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) was created.
 
 </details>
 
@@ -180,7 +182,7 @@ Date and time at which the credential was created.
 
 <summary><code>display_name</code> Format: <code>String</code></summary>
 
-Display name that corresponds to the credential type.
+Display name that corresponds to the [credential](../../../capability-guides/access-systems/managing-credentials.md) type.
 
 </details>
 
@@ -188,7 +190,7 @@ Display name that corresponds to the credential type.
 
 <summary><code>ends_at</code> Format: <code>String</code></summary>
 
-Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
+Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
 
 </details>
 
@@ -196,7 +198,7 @@ Date and time at which the credential validity ends, in [ISO 8601](https://www.i
 
 <summary><code>errors</code> Format: <code>List</code></summary>
 
-Errors associated with the `acs_credential`.
+Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 </details>
 
@@ -204,7 +206,7 @@ Errors associated with the `acs_credential`.
 
 <summary><code>external_type</code> Format: <code>Enum</code></summary>
 
-Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.
+Brand-specific terminology for the [credential](../../../capability-guides/access-systems/managing-credentials.md) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.
 
 </details>
 
@@ -212,7 +214,7 @@ Brand-specific terminology for the credential type. Supported values: `pti_card`
 
 <summary><code>external_type_display_name</code> Format: <code>String</code></summary>
 
-Display name that corresponds to the brand-specific terminology for the credential type.
+Display name that corresponds to the brand-specific terminology for the [credential](../../../capability-guides/access-systems/managing-credentials.md) type.
 
 </details>
 
@@ -220,13 +222,15 @@ Display name that corresponds to the brand-specific terminology for the credenti
 
 <summary><code>is_issued</code> Format: <code>Boolean</code></summary>
 
+Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) has been encoded onto a card.
+
 </details>
 
 <details>
 
 <summary><code>is_latest_desired_state_synced_with_provider</code> Format: <code>Boolean</code></summary>
 
-Indicates whether the latest state of the credential has been synced from Seam to the provider.
+Indicates whether the latest state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) has been synced from Seam to the provider.
 
 </details>
 
@@ -240,7 +244,7 @@ Indicates whether the latest state of the credential has been synced from Seam t
 
 <summary><code>is_multi_phone_sync_credential</code> Format: <code>Boolean</code></summary>
 
-Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
+Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
 
 </details>
 
@@ -248,7 +252,7 @@ Indicates whether the credential is a [multi-phone sync credential](https://docs
 
 <summary><code>is_one_time_use</code> Format: <code>Boolean</code></summary>
 
-Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use.
+Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) can only be used once. If `true`, the code becomes invalid after the first use.
 
 </details>
 
@@ -256,13 +260,15 @@ Indicates whether the credential can only be used once. If "true," the code beco
 
 <summary><code>issued_at</code> Format: <code>Datetime</code></summary>
 
+Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) was encoded onto a card.
+
 </details>
 
 <details>
 
 <summary><code>latest_desired_state_synced_with_provider_at</code> Format: <code>Datetime</code></summary>
 
-Date and time at which the state of the credential was most recently synced from Seam to the provider.
+Date and time at which the state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) was most recently synced from Seam to the provider.
 
 </details>
 
@@ -270,7 +276,7 @@ Date and time at which the state of the credential was most recently synced from
 
 <summary><code>parent_acs_credential_id</code> Format: <code>ID</code></summary>
 
-ID of the parent credential.
+ID of the parent [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 </details>
 
@@ -278,7 +284,7 @@ ID of the parent credential.
 
 <summary><code>starts_at</code> Format: <code>String</code></summary>
 
-Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 </details>
 
@@ -286,7 +292,7 @@ Date and time at which the credential validity starts, in [ISO 8601](https://www
 
 <summary><code>visionline_metadata</code> Format: <code>Object</code></summary>
 
-Visionline-specific metadata for the credential.
+Visionline-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 </details>
 
@@ -342,7 +348,7 @@ Visionline-specific metadata for the credential.
 
 <summary><code>warnings</code> Format: <code>List</code></summary>
 
-Warnings associated with the `acs_credential`.
+Warnings associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 </details>
 
@@ -350,7 +356,7 @@ Warnings associated with the `acs_credential`.
 
 <summary><code>workspace_id</code> Format: <code>ID</code></summary>
 
-ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the credential.
+ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 </details>
 
