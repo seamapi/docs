@@ -42,6 +42,12 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
 
 <summary><code>door_type</code> Format: <code>Enum</code></summary>
 
+Possible enum values:
+- `CommonDoor`
+- `EntranceDoor`
+- `GuestDoor`
+- `Elevator`
+
 </details>
 
 <details>
@@ -219,6 +225,13 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 <details>
 
 <summary><code>door_category</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `entrance`
+- `guest`
+- `elevator reader`
+- `common`
+- `common (PMS)`
 
 </details>
 

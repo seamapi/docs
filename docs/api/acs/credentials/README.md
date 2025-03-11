@@ -244,6 +244,10 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 
 <summary><code>card_function_type</code> Format: <code>Enum</code></summary>
 
+Possible enum values:
+- `guest`
+- `staff`
+
 </details>
 
 <details>

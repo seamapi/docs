@@ -59,6 +59,11 @@ Format: `Object`
 
 <summary><code>type</code> Format: <code>Enum</code></summary>
 
+Possible enum values:
+- `uncategorized_error`
+- `action_attempt_expired`
+- `no_credential_on_encoder`
+
 </details>
 
 ---
@@ -134,6 +139,10 @@ Indicates whether the card associated with the [credential](../../../capability-
 <summary><code>acs_credential_on_encoder.visionline_metadata.card_format</code> Format: <code>Enum</code></summary>
 
 Format of the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+Possible enum values:
+- `TLCode`
+- `rfid48`
 
 </details>
 
@@ -230,6 +239,11 @@ Matching acs_credential currently encoded on this card.
 <summary><code>acs_credential_on_seam.access_method</code> Format: <code>Enum</code></summary>
 
 Access method for the [credential](../../../capability-guides/access-systems/managing-credentials.md). Supported values: `code`, `card`, `mobile_key`.
+
+Possible enum values:
+- `code`
+- `card`
+- `mobile_key`
 
 </details>
 
@@ -355,6 +369,15 @@ Errors associated with the [credential](../../../capability-guides/access-system
 
 Brand-specific terminology for the [credential](../../../capability-guides/access-systems/managing-credentials.md) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.
 
+Possible enum values:
+- `pti_card`
+- `brivo_credential`
+- `hid_credential`
+- `visionline_card`
+- `salto_ks_credential`
+- `assa_abloy_vostio_key`
+- `salto_space_key`
+
 </details>
 
 <details>
@@ -452,6 +475,10 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 <details>
 
 <summary><code>acs_credential_on_seam.visionline_metadata.card_function_type</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `guest`
+- `staff`
 
 </details>
 

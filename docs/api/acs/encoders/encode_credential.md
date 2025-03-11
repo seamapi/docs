@@ -68,6 +68,13 @@ Format: `Object`
 
 <summary><code>type</code> Format: <code>Enum</code></summary>
 
+Possible enum values:
+- `uncategorized_error`
+- `action_attempt_expired`
+- `no_credential_on_encoder`
+- `incompatible_card_format`
+- `credential_cannot_be_reissued`
+
 </details>
 
 ---
@@ -83,6 +90,11 @@ Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/acces
 <summary><code>access_method</code> Format: <code>Enum</code></summary>
 
 Access method for the [credential](../../../capability-guides/access-systems/managing-credentials.md). Supported values: `code`, `card`, `mobile_key`.
+
+Possible enum values:
+- `code`
+- `card`
+- `mobile_key`
 
 </details>
 
@@ -208,6 +220,15 @@ Errors associated with the [credential](../../../capability-guides/access-system
 
 Brand-specific terminology for the [credential](../../../capability-guides/access-systems/managing-credentials.md) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.
 
+Possible enum values:
+- `pti_card`
+- `brivo_credential`
+- `hid_credential`
+- `visionline_card`
+- `salto_ks_credential`
+- `assa_abloy_vostio_key`
+- `salto_space_key`
+
 </details>
 
 <details>
@@ -305,6 +326,10 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 <details>
 
 <summary><code>visionline_metadata.card_function_type</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `guest`
+- `staff`
 
 </details>
 
