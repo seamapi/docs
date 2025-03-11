@@ -16,9 +16,7 @@
 {{/if}}
 {{#if isDeprecated}}
 
-{% hint style="warning" %}
-**Deprecated**. {{deprecationMessage}}
-{% endhint %}
+{{> deprecated-warning}}
 {{/if}}
 
 Format: `{{format}}`
