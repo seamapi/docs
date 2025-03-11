@@ -250,3 +250,138 @@ Returns a list of all [ACS entrances](../../../capability-guides/access-systems/
 ### [`/acs/entrances/list_credentials_with_access`](./list_credentials_with_access.md)
 
 Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md) with access to a specified [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
+## Events
+
+### `acs_entrance.added`
+
+An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was added.
+
+<details>
+
+<summary><code>acs_entrance_id</code> Format: <code>ID</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
+
+ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+
+</details>
+
+<details>
+
+<summary><code>connected_account_id</code> Format: <code>ID</code></summary>
+
+ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+
+</details>
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which the event was created.
+
+</details>
+
+<details>
+
+<summary><code>event_id</code> Format: <code>ID</code></summary>
+
+ID of the event.
+
+</details>
+
+<details>
+
+<summary><code>event_type</code> Format: <code>String</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which the event occurred.
+
+</details>
+
+<details>
+
+<summary><code>workspace_id</code> Format: <code>ID</code></summary>
+
+ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
+</details>
+
+---
+
+### `acs_entrance.removed`
+
+An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was removed.
+
+<details>
+
+<summary><code>acs_entrance_id</code> Format: <code>ID</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
+
+ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+
+</details>
+
+<details>
+
+<summary><code>connected_account_id</code> Format: <code>ID</code></summary>
+
+ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+
+</details>
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which the event was created.
+
+</details>
+
+<details>
+
+<summary><code>event_id</code> Format: <code>ID</code></summary>
+
+ID of the event.
+
+</details>
+
+<details>
+
+<summary><code>event_type</code> Format: <code>String</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which the event occurred.
+
+</details>
+
+<details>
+
+<summary><code>workspace_id</code> Format: <code>ID</code></summary>
+
+ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
+</details>
+
+---
+
