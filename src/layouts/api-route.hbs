@@ -51,9 +51,7 @@
 <summary><code>{{name}}</code> Format: <code>{{format}}</code></summary>
 {{#if isDeprecated}}
 
-{% hint style="warning" %}
-**Deprecated**. {{deprecationMessage}}
-{% endhint %}
+{{> deprecated-warning}}
 {{/if}}
 
 {{#if description}}
