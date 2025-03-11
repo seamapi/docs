@@ -38,15 +38,7 @@ This object has no properties.
 {{else}}
 {{#each objectProperties}}
 
-<details>
-
-<summary><code>{{this.name}}</code> Format: <code>{{this.format}}</code></summary>
-{{#if this.description}}
-
-{{this.description}}
-{{/if}}
-
-</details>
+{{> object-property-details this}}
 {{/each}}
 {{/if}}
 {{/unless}}
