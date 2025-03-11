@@ -37,6 +37,8 @@ type ApiRouteProperty = Pick<
   format: string
   enumValues?: string[]
   objectProperties?: ApiRouteProperty[]
+  listProperties?: ApiRouteProperty[]
+  listItemFormat?: string
   linkTarget?: string
 }
 
@@ -210,6 +212,7 @@ export const mapBlueprintPropertyToRouteProperty = (
     isDeprecated,
     deprecationMessage,
     format: '',
+    listItemFormat: '',
   }
 
   if ('values' in prop && prop.values.length > 1) {
@@ -228,10 +231,24 @@ export const mapBlueprintPropertyToRouteProperty = (
     )
   }
 
+  if ('itemProperties' in prop) {
+    const flattenedProperties = flattenObjectProperties(prop.itemProperties)
+    contextRouteProp.listProperties = flattenedProperties.map(
+      mapBlueprintPropertyToRouteProperty,
+    )
+  }
+
+  if (format === 'list') {
+    contextRouteProp.listItemFormat = normalizePropertyFormatForDocs(
+      prop.itemFormat,
+    )
+  }
+
   return contextRouteProp
 }
 
-type PropertyFormat = Property['format']
+type PropertyFormat = Property['format'] | ListProperty['itemFormat']
+type ListProperty = Extract<Property, { format: 'list' }>
 
 const normalizePropertyFormatForDocs = (format: PropertyFormat): string => {
   const formatMap: Partial<Record<PropertyFormat, string>> = { id: 'ID' }

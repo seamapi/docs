@@ -20,6 +20,10 @@
 {{/if}}
 
 Format: `{{format}}`
+{{#if listItemFormat}}
+
+Item format: `{{listItemFormat}}`
+{{/if}}
 {{#if description}}
 
 {{description}}
@@ -38,10 +42,14 @@ This object has no properties.
 {{else}}
 {{#each objectProperties}}
 
-{{> object-property-details this}}
+{{> property-details this}}
 {{/each}}
 {{/if}}
 {{/unless}}
+{{#if listProperties}}
+
+{{> property-details this}}
+{{/if}}
 
 ---
 
