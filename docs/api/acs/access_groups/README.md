@@ -105,7 +105,17 @@ Name of the access group.
 
 Format: `List`
 
+Item format: `Object`
+
 Warnings associated with the `acs_access_group`.
+
+<details>
+
+<summary><code>warnings</code> Format: <code>List</code> Item format: <code>Object</code></summary>
+
+Warnings associated with the `acs_access_group`.
+
+</details>
 
 ---
 

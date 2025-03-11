@@ -98,7 +98,17 @@ dormakaba Community-specific metadata associated with the [entrance](../../../ca
 
 Format: `List`
 
+Item format: `Object`
+
 Errors associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
+<details>
+
+<summary><code>errors</code> Format: <code>List</code> Item format: <code>Object</code></summary>
+
+Errors associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
+</details>
 
 ---
 
@@ -243,7 +253,7 @@ Possible enum values:
 
 <details>
 
-<summary><code>profiles</code> Format: <code>List</code></summary>
+<summary><code>profiles</code> Format: <code>List</code> Item format: <code>Object</code></summary>
 
 </details>
 

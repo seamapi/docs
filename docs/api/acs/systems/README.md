@@ -60,6 +60,8 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 
 Format: `List`
 
+Item format: `ID`
+
 IDs of the [connected accounts](../../../core-concepts/connected-accounts/README.md) associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ---
@@ -83,6 +85,8 @@ ID of the default credential manager `acs_system` for this [access control syste
 ### [`errors`](./#errors-1)
 
 Format: `List`
+
+Item format: `DiscriminatedObject`
 
 Errors associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -233,6 +237,8 @@ Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel i
 ### [`warnings`](./#warnings-1)
 
 Format: `List`
+
+Item format: `DiscriminatedObject`
 
 Warnings associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 

@@ -52,7 +52,17 @@ Display name of the phone. Defaults to `nickname` (if it is set) or `properties.
 
 Format: `List`
 
+Item format: `Object`
+
 Errors associated with the `phone`.
+
+<details>
+
+<summary><code>errors</code> Format: <code>List</code> Item format: <code>Object</code></summary>
+
+Errors associated with the `phone`.
+
+</details>
 
 ---
 
@@ -80,7 +90,7 @@ ASSA ABLOY Credential Service metadata for the phone.
 
 <details>
 
-<summary><code>assa_abloy_credential_service_metadata.endpoints</code> Format: <code>List</code></summary>
+<summary><code>assa_abloy_credential_service_metadata.endpoints</code> Format: <code>List</code> Item format: <code>Object</code></summary>
 
 Endpoints associated with the phone.
 
@@ -116,7 +126,17 @@ Indicates whether the credential service has an active associated phone.
 
 Format: `List`
 
+Item format: `Object`
+
 Warnings associated with the `phone`.
+
+<details>
+
+<summary><code>warnings</code> Format: <code>List</code> Item format: <code>Object</code></summary>
+
+Warnings associated with the `phone`.
+
+</details>
 
 ---
 

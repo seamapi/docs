@@ -55,7 +55,7 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 <details>
 
-<summary><code>door_names</code> Format: <code>List</code></summary>
+<summary><code>door_names</code> Format: <code>List</code> Item format: <code>String</code></summary>
 
 </details>
 
@@ -79,7 +79,7 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 <details>
 
-<summary><code>override_guest_acs_entrance_ids</code> Format: <code>List</code></summary>
+<summary><code>override_guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>String</code></summary>
 
 </details>
 
@@ -129,7 +129,17 @@ Date and time at which the [credential](../../../capability-guides/access-system
 
 Format: `List`
 
+Item format: `Object`
+
 Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+<details>
+
+<summary><code>errors</code> Format: <code>List</code> Item format: <code>Object</code></summary>
+
+Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+</details>
 
 ---
 
@@ -258,7 +268,7 @@ Possible enum values:
 
 <details>
 
-<summary><code>common_acs_entrance_ids</code> Format: <code>List</code></summary>
+<summary><code>common_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>ID</code></summary>
 
 </details>
 
@@ -270,7 +280,7 @@ Possible enum values:
 
 <details>
 
-<summary><code>guest_acs_entrance_ids</code> Format: <code>List</code></summary>
+<summary><code>guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>ID</code></summary>
 
 </details>
 
@@ -282,7 +292,7 @@ Possible enum values:
 
 <details>
 
-<summary><code>joiner_acs_credential_ids</code> Format: <code>List</code></summary>
+<summary><code>joiner_acs_credential_ids</code> Format: <code>List</code> Item format: <code>ID</code></summary>
 
 </details>
 
@@ -291,6 +301,8 @@ Possible enum values:
 ### [`warnings`](./#warnings-1)
 
 Format: `List`
+
+Item format: `DiscriminatedObject`
 
 Warnings associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 

@@ -40,7 +40,17 @@ Display name for the [encoder](../../../capability-guides/access-systems/working
 
 Format: `List`
 
+Item format: `Object`
+
 Errors associated with the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+
+<details>
+
+<summary><code>errors</code> Format: <code>List</code> Item format: <code>Object</code></summary>
+
+Errors associated with the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+
+</details>
 
 ---
 

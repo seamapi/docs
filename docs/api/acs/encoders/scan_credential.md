@@ -164,7 +164,7 @@ Card ID for the Visionline card associated with the [credential](../../../capabi
 
 <details>
 
-<summary><code>acs_credential_on_encoder.visionline_metadata.common_acs_entrance_ids</code> Format: <code>List</code></summary>
+<summary><code>acs_credential_on_encoder.visionline_metadata.common_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>ID</code></summary>
 
 IDs of the common [entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md) for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -188,7 +188,7 @@ Indicates whether the card associated with the [credential](../../../capability-
 
 <details>
 
-<summary><code>acs_credential_on_encoder.visionline_metadata.guest_acs_entrance_ids</code> Format: <code>List</code></summary>
+<summary><code>acs_credential_on_encoder.visionline_metadata.guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>ID</code></summary>
 
 IDs of the guest [entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md) for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -287,7 +287,7 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 <details>
 
-<summary><code>acs_credential_on_seam.assa_abloy_vostio_metadata.door_names</code> Format: <code>List</code></summary>
+<summary><code>acs_credential_on_seam.assa_abloy_vostio_metadata.door_names</code> Format: <code>List</code> Item format: <code>String</code></summary>
 
 </details>
 
@@ -311,7 +311,7 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 <details>
 
-<summary><code>acs_credential_on_seam.assa_abloy_vostio_metadata.override_guest_acs_entrance_ids</code> Format: <code>List</code></summary>
+<summary><code>acs_credential_on_seam.assa_abloy_vostio_metadata.override_guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>String</code></summary>
 
 </details>
 
@@ -357,7 +357,7 @@ Date and time at which the [credential](../../../capability-guides/access-system
 
 <details>
 
-<summary><code>acs_credential_on_seam.errors</code> Format: <code>List</code></summary>
+<summary><code>acs_credential_on_seam.errors</code> Format: <code>List</code> Item format: <code>Object</code></summary>
 
 Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -490,7 +490,7 @@ Possible enum values:
 
 <details>
 
-<summary><code>acs_credential_on_seam.visionline_metadata.common_acs_entrance_ids</code> Format: <code>List</code></summary>
+<summary><code>acs_credential_on_seam.visionline_metadata.common_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>ID</code></summary>
 
 </details>
 
@@ -502,7 +502,7 @@ Possible enum values:
 
 <details>
 
-<summary><code>acs_credential_on_seam.visionline_metadata.guest_acs_entrance_ids</code> Format: <code>List</code></summary>
+<summary><code>acs_credential_on_seam.visionline_metadata.guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>ID</code></summary>
 
 </details>
 
@@ -514,13 +514,13 @@ Possible enum values:
 
 <details>
 
-<summary><code>acs_credential_on_seam.visionline_metadata.joiner_acs_credential_ids</code> Format: <code>List</code></summary>
+<summary><code>acs_credential_on_seam.visionline_metadata.joiner_acs_credential_ids</code> Format: <code>List</code> Item format: <code>ID</code></summary>
 
 </details>
 
 <details>
 
-<summary><code>acs_credential_on_seam.warnings</code> Format: <code>List</code></summary>
+<summary><code>acs_credential_on_seam.warnings</code> Format: <code>List</code> Item format: <code>Object</code></summary>
 
 Warnings associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -536,7 +536,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 <details>
 
-<summary><code>warnings</code> Format: <code>List</code></summary>
+<summary><code>warnings</code> Format: <code>List</code> Item format: <code>Object</code></summary>
 
 </details>
 

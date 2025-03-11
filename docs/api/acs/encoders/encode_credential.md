@@ -138,7 +138,7 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 <details>
 
-<summary><code>assa_abloy_vostio_metadata.door_names</code> Format: <code>List</code></summary>
+<summary><code>assa_abloy_vostio_metadata.door_names</code> Format: <code>List</code> Item format: <code>String</code></summary>
 
 </details>
 
@@ -162,7 +162,7 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 <details>
 
-<summary><code>assa_abloy_vostio_metadata.override_guest_acs_entrance_ids</code> Format: <code>List</code></summary>
+<summary><code>assa_abloy_vostio_metadata.override_guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>String</code></summary>
 
 </details>
 
@@ -208,7 +208,7 @@ Date and time at which the [credential](../../../capability-guides/access-system
 
 <details>
 
-<summary><code>errors</code> Format: <code>List</code></summary>
+<summary><code>errors</code> Format: <code>List</code> Item format: <code>Object</code></summary>
 
 Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -341,7 +341,7 @@ Possible enum values:
 
 <details>
 
-<summary><code>visionline_metadata.common_acs_entrance_ids</code> Format: <code>List</code></summary>
+<summary><code>visionline_metadata.common_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>ID</code></summary>
 
 </details>
 
@@ -353,7 +353,7 @@ Possible enum values:
 
 <details>
 
-<summary><code>visionline_metadata.guest_acs_entrance_ids</code> Format: <code>List</code></summary>
+<summary><code>visionline_metadata.guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>ID</code></summary>
 
 </details>
 
@@ -365,13 +365,13 @@ Possible enum values:
 
 <details>
 
-<summary><code>visionline_metadata.joiner_acs_credential_ids</code> Format: <code>List</code></summary>
+<summary><code>visionline_metadata.joiner_acs_credential_ids</code> Format: <code>List</code> Item format: <code>ID</code></summary>
 
 </details>
 
 <details>
 
-<summary><code>warnings</code> Format: <code>List</code></summary>
+<summary><code>warnings</code> Format: <code>List</code> Item format: <code>Object</code></summary>
 
 Warnings associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
