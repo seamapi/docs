@@ -222,7 +222,10 @@ export const mapBlueprintPropertyToRouteProperty = (
   }
 
   if ('properties' in prop) {
-    contextRouteProp.objectProperties = flattenObjectProperties(prop.properties)
+    const flattenedProperties = flattenObjectProperties(prop.properties)
+    contextRouteProp.objectProperties = flattenedProperties.map(
+      mapBlueprintPropertyToRouteProperty,
+    )
   }
 
   return contextRouteProp
@@ -236,25 +239,19 @@ const normalizePropertyFormatForDocs = (format: PropertyFormat): string => {
   return formatMap[format] ?? pascalCase(format)
 }
 
-type PropertyWithNormalizedFormat = Omit<Property, 'format'> & {
-  format: string
-}
-
 const flattenObjectProperties = (
   properties: Property[],
   paths: string[] = [],
-): PropertyWithNormalizedFormat[] => {
-  const results: PropertyWithNormalizedFormat[] = []
+): Property[] => {
+  const results: Property[] = []
 
   for (const property of properties.filter(
     ({ isUndocumented }) => !isUndocumented,
   )) {
     const name = [...paths, property.name].join('.')
 
-    const { format, ...rest } = property
     results.push({
-      ...rest,
-      format: normalizePropertyFormatForDocs(format),
+      ...property,
       name,
     })
 
