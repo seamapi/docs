@@ -361,6 +361,18 @@ Date and time at which the [credential](../../../capability-guides/access-system
 
 Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
+
+<details>
+
+<summary><code>error_code</code> Format: <code>String</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+</details>
 </details>
 
 <details>
@@ -524,6 +536,38 @@ Possible enum values:
 
 Warnings associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the warning.
+
+</details>
+
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+</details>
+
+<details>
+
+<summary><code>warning_code</code> Format: <code>Enum</code></summary>
+
+Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
+Possible enum values:
+- `waiting_to_be_issued`
+- `schedule_externally_modified`
+- `schedule_modified`
+- `being_deleted`
+- `unknown_issue_with_acs_credential`
+- `needs_to_be_reissued`
+
+</details>
 </details>
 
 <details>
@@ -538,6 +582,22 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 <summary><code>warnings</code> Format: <code>List</code> Item format: <code>Object</code></summary>
 
+
+<details>
+
+<summary><code>warning_code</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `acs_credential_on_encoder_out_of_sync`
+- `acs_credential_on_seam_not_found`
+
+</details>
+
+<details>
+
+<summary><code>warning_message</code> Format: <code>String</code></summary>
+
+</details>
 </details>
 
 ---

@@ -98,6 +98,22 @@ ASSA ABLOY Credential Service metadata for the phone.
 
 Endpoints associated with the phone.
 
+
+<details>
+
+<summary><code>endpoint_id</code> Format: <code>String</code></summary>
+
+ID of the associated endpoint.
+
+</details>
+
+<details>
+
+<summary><code>is_active</code> Format: <code>Boolean</code></summary>
+
+Indicated whether the endpoint is active.
+
+</details>
 </details>
 
 <details>
