@@ -28,7 +28,9 @@ In addition to using the Seam Online CLI within Seam Console, you can also [inst
 3. In the top navigation pane, click **Developer**.
 4. In the left navigation pane, click **Online CLI**.
 
-The Seam Online CLI opens in a new browser tab or window.
+The Seam Online CLI opens in a new browser tab or window. It initializes and then displays the following message:
+
+`👋 try running 'seam' to get started!`
 
 Each instance of the Seam Online CLI begins within the workspace from which you opened the CLI. However, you can use `seam select workspace` to switch to a different workspace or `seam login` to use a Personal Access Token for multi-workspace access.
 
