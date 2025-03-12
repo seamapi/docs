@@ -171,4 +171,4 @@ In addition to the common event properties and common device event properties, t
 
 Use the Webhooks sandbox in the Seam Console to see the different payloads for each event and test them against your own endpoints!
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-09-01 at 9.38.05 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/testing-your-webhooks.png" alt=""><figcaption></figcaption></figure>

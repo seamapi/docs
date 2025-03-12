@@ -10,7 +10,7 @@ The access code details component shows the properties, settings, and issues for
 
 ### Size: Mobile
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2023-05-18 at 10.01.03 PM.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/access-code-details.png" alt="" width="375"><figcaption></figcaption></figure>
 
 ### Props
 

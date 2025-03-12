@@ -16,7 +16,7 @@ You can configure heating and cooling set point temperatures in Fahrenheit or Ce
 
 For heating, the heating set point (`heating_set_point_fahrenheit` or `heating_set_point_celsius`) is the target temperature that the thermostat turns on the furnace or heating system to reach. Once the space reaches the configured temperature, the thermostat turns off the heating system, until the temperature of the space drops below the set point again.
 
-<figure><img src="../../../.gitbook/assets/Screen Shot 2023-06-12 at 4.04.38 PM.png" alt="The heating set point is the target temperature that the thermostat turns on the furnace or heating system to reach." width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/heating-set-point.png" alt="The heating set point is the target temperature that the thermostat turns on the furnace or heating system to reach." width="563"><figcaption></figcaption></figure>
 
 ***
 
@@ -24,7 +24,7 @@ For heating, the heating set point (`heating_set_point_fahrenheit` or `heating_s
 
 For cooling, the cooling set point (`cooling_set_point_fahrenheit` or `cooling_set_point_celsius`) is the target temperature that the thermostat turns on the air conditioner or cooling system to reach. Once that space reaches the configured temperature, the thermostat turns off the cooling system, until the temperature of the space rises above the set point again.
 
-<figure><img src="../../../.gitbook/assets/Screen Shot 2023-06-12 at 4.04.54 PM.png" alt="The cooling set point is the target temperature that the thermostat turns on the air conditioner or cooling system to reach." width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/cooling-set-point.png" alt="The cooling set point is the target temperature that the thermostat turns on the air conditioner or cooling system to reach." width="563"><figcaption></figcaption></figure>
 
 ***
 
@@ -34,7 +34,7 @@ In heat-cool mode, the thermostat uses the heating set point (`heating_set_point
 
 Note that there may be a required minimum temperature difference between the cooling and heating set points. For more information, see [Minimum Heating Cooling Temperature Delta](set-points.md#minimum-heating-cooling-temperature-delta).
 
-<figure><img src="../../../.gitbook/assets/Screen Shot 2023-06-12 at 4.04.21 PM.png" alt="In heat-cool mode, the thermostat uses the heating and cooling set points as the target temperatures for turning on the heating and cooling systems, respectively." width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/set-points.png" alt="In heat-cool mode, the thermostat uses the heating and cooling set points as the target temperatures for turning on the heating and cooling systems, respectively." width="563"><figcaption></figcaption></figure>
 
 ***
 

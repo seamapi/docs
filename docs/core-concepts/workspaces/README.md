@@ -42,7 +42,9 @@ Production workspaces enable you to connect and control real devices from brands
     ![Use the Seam Console workspace switcher to switch between workspaces and create new workspaces.](../../.gitbook/assets/workspace-switcher.png)
 2. Click **New Workspace**.
 3. In the **Add a Workspace** dialog, type a name for your new workspace and your company name.
-4. Disable **Sandbox mode**.
+4.  Disable **Sandbox mode**.
+
+    ![To create a production workspace, disable sandbox mode.](../../.gitbook/assets/add-production-workspace.png)
 5. Click **Create Workspace**.
 
 ### Connecting Devices

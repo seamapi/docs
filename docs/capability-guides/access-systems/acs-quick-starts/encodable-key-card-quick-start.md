@@ -63,6 +63,7 @@ In this quick start, use Seam Console to connect a virtual ACS to your sandbox w
        1. In the **Visionline Site Name** field, type any string to identify this virtual Visionline ACS site, for example, `My Visionline Site`.
        2. In the **Username** field, type `jane`.
        3. In the **Password** field, type `1234`.
+       4. Click **Submit**.
     6. Click **Close**.
 
     The **Access Systems** page now displays the newly-connected virtual Visionline access control system.

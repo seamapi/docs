@@ -6,7 +6,7 @@ description: Guide for using the ASSA ABLOY Visionline Access Control System wit
 
 ## Overview
 
-Seam integrates seamlessly with the [ASSA ABLOY Visionline Access Control System](https://www.assaabloyglobalsolutions.com/en/hospitality-solutions/access-management-systems-for-hotels#gw-group-text-and-media-14987d7731) (ACS), a widely-used on-premise control platform for hotels. This system supports doors, elevators, turnstiles, and gates, enabling you to secure either a single building or multiple buildings using the same setup. Visionline uses a data-on-card platform, significantly reducing installation costs because the locks can function offline. Additionally, the capability of the system to operate independently of network connectivity enhances the reliability and flexibility.
+Seam integrates seamlessly with the [ASSA ABLOY Visionline Access Control System](https://www.assaabloyglobalsolutions.com/en/hospitality-solutions/access-management-systems-for-hotels#gw-group-text-and-media-14987d7731) (ACS), a widely-used on-premises access control platform for hotels. This system supports doors, elevators, turnstiles, and gates, enabling you to secure either a single building or multiple buildings using the same setup. Visionline uses a data-on-card platform, significantly reducing installation costs because the locks can function offline. Additionally, the capability of the system to operate independently of network connectivity enhances the reliability and flexibility.
 
 ***
 

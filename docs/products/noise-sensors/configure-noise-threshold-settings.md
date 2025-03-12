@@ -176,13 +176,13 @@ You can set up webhooks in the [Seam Console](https://console.seam.co).
 1. In the left-hand navigation pane of Seam Console, click **Webhooks**.
 2.  On the **Webhooks** page, click **+ Add Webhook**.
 
-    <figure><img src="../../.gitbook/assets/Screen Shot 2023-08-13 at 4.39.14 PM (1).png" alt="On the Webhooks page in the Seam Console, click + Add Webhook."><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/add-webhook-button.png" alt="On the Webhooks page in the Seam Console, click + Add Webhook."><figcaption></figcaption></figure>
 3. In the **Create Webhook** dialog:
    1. Type your URL.
    2. Select the event types for which you want to receive events.
    3. Click **Create**.
 
-The Seam Console displays the URL and secret for the newly-created webhook. To test your webhook, click **Test your webhook**.&#x20;
+The Seam Console displays the URL and secret for the newly-created webhook. To test your webhook, click **Test your webhook**.
 
 ## Monitor Events
 

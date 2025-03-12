@@ -10,11 +10,11 @@ The access codes table shows a list of current and future access codes and their
 
 ### Size: Mobile
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2023-05-18 at 9.52.00 PM.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/access-codes-table.png" alt="" width="375"><figcaption></figcaption></figure>
 
 ### Size: Desktop
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2023-05-18 at 9.52.28 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/access-code-table.png" alt=""><figcaption></figcaption></figure>
 
 ### Props
 
