@@ -104,9 +104,17 @@ Errors associated with the [entrance](../../../capability-guides/access-systems/
 
 <details>
 
-<summary><code>errors</code> Format: <code>List</code> Item format: <code>Object</code></summary>
+<summary><code>error_code</code> Format: <code>String</code></summary>
 
-Errors associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+</details>
+
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
 </details>
 

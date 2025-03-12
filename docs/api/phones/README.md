@@ -58,9 +58,13 @@ Errors associated with the `phone`.
 
 <details>
 
-<summary><code>errors</code> Format: <code>List</code> Item format: <code>Object</code></summary>
+<summary><code>error_code</code> Format: <code>String</code></summary>
 
-Errors associated with the `phone`.
+</details>
+
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
 
 </details>
 
@@ -132,9 +136,13 @@ Warnings associated with the `phone`.
 
 <details>
 
-<summary><code>warnings</code> Format: <code>List</code> Item format: <code>Object</code></summary>
+<summary><code>message</code> Format: <code>String</code></summary>
 
-Warnings associated with the `phone`.
+</details>
+
+<details>
+
+<summary><code>warning_code</code> Format: <code>String</code></summary>
 
 </details>
 

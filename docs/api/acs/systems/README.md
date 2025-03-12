@@ -86,7 +86,7 @@ ID of the default credential manager `acs_system` for this [access control syste
 
 Format: `List`
 
-Item format: `DiscriminatedObject`
+Item format: `Object`
 
 Errors associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -238,7 +238,7 @@ Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel i
 
 Format: `List`
 
-Item format: `DiscriminatedObject`
+Item format: `Object`
 
 Warnings associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 

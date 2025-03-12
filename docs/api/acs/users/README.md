@@ -82,7 +82,7 @@ Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/ac
 
 Format: `List`
 
-Item format: `DiscriminatedObject`
+Item format: `Object`
 
 Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
@@ -185,7 +185,7 @@ Phone number of the user identity associated with the [ACS user](https://docs.se
 
 Format: `List`
 
-Item format: `DiscriminatedObject`
+Item format: `Object`
 
 Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 

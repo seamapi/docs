@@ -135,9 +135,13 @@ Errors associated with the [credential](../../../capability-guides/access-system
 
 <details>
 
-<summary><code>errors</code> Format: <code>List</code> Item format: <code>Object</code></summary>
+<summary><code>error_code</code> Format: <code>String</code></summary>
 
-Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+</details>
+
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
 
 </details>
 
@@ -302,7 +306,7 @@ Possible enum values:
 
 Format: `List`
 
-Item format: `DiscriminatedObject`
+Item format: `Object`
 
 Warnings associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 

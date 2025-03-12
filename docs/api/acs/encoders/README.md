@@ -46,9 +46,25 @@ Errors associated with the [encoder](../../../capability-guides/access-systems/w
 
 <details>
 
-<summary><code>errors</code> Format: <code>List</code> Item format: <code>Object</code></summary>
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
-Errors associated with the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+Date and time at which Seam created the error.
+
+</details>
+
+<details>
+
+<summary><code>error_code</code> Format: <code>String</code></summary>
+
+Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+</details>
+
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
 </details>
 

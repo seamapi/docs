@@ -111,9 +111,25 @@ Warnings associated with the `acs_access_group`.
 
 <details>
 
-<summary><code>warnings</code> Format: <code>List</code> Item format: <code>Object</code></summary>
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
-Warnings associated with the `acs_access_group`.
+Date and time at which Seam created the warning.
+
+</details>
+
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+</details>
+
+<details>
+
+<summary><code>warning_code</code> Format: <code>String</code></summary>
+
+Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
 
 </details>
 
