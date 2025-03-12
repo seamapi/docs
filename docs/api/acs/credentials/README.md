@@ -137,8 +137,6 @@ Errors associated with the [credential](../../../capability-guides/access-system
 
 <summary><code>errors</code> Format: <code>List</code> Item format: <code>Object</code></summary>
 
-Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
-
 </details>
 
 ---

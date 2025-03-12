@@ -60,8 +60,6 @@ Errors associated with the `phone`.
 
 <summary><code>errors</code> Format: <code>List</code> Item format: <code>Object</code></summary>
 
-Errors associated with the `phone`.
-
 </details>
 
 ---
@@ -84,15 +82,11 @@ Properties of the phone.
 
 <summary><code>assa_abloy_credential_service_metadata</code> Format: <code>Object</code></summary>
 
-ASSA ABLOY Credential Service metadata for the phone.
-
 </details>
 
 <details>
 
 <summary><code>assa_abloy_credential_service_metadata.endpoints</code> Format: <code>List</code> Item format: <code>Object</code></summary>
-
-Endpoints associated with the phone.
 
 </details>
 
@@ -100,23 +94,17 @@ Endpoints associated with the phone.
 
 <summary><code>assa_abloy_credential_service_metadata.has_active_endpoint</code> Format: <code>Boolean</code></summary>
 
-Indicates whether the credential service has active endpoints associated with the phone.
-
 </details>
 
 <details>
 
 <summary><code>salto_space_credential_service_metadata</code> Format: <code>Object</code></summary>
 
-Salto Space credential service metadata for the phone.
-
 </details>
 
 <details>
 
 <summary><code>salto_space_credential_service_metadata.has_active_phone</code> Format: <code>Boolean</code></summary>
-
-Indicates whether the credential service has an active associated phone.
 
 </details>
 
@@ -133,8 +121,6 @@ Warnings associated with the `phone`.
 <details>
 
 <summary><code>warnings</code> Format: <code>List</code> Item format: <code>Object</code></summary>
-
-Warnings associated with the `phone`.
 
 </details>
 

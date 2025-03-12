@@ -48,8 +48,6 @@ Errors associated with the [thermostat schedule](../../../capability-guides/ther
 
 <summary><code>errors</code> Format: <code>List</code> Item format: <code>Object</code></summary>
 
-Errors associated with the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
-
 </details>
 
 ---
