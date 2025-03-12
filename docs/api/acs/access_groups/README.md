@@ -138,6 +138,8 @@ Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/
 
 Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
+---
+
 ## Events
 
 ### `acs_access_group.deleted`

@@ -283,6 +283,8 @@ Revokes access to all [entrances](https://docs.seam.co/latest/api/acs/entrances)
 
 Updates the properties of a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
+---
+
 ## Events
 
 ### `acs_user.deleted`

@@ -365,6 +365,8 @@ Unassigns a specified [credential](../../../capability-guides/access-systems/man
 
 Updates the code and ends at date and time for a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
+---
+
 ## Events
 
 ### `acs_credential.deleted`
