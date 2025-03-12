@@ -251,7 +251,10 @@ type PropertyFormat = Property['format'] | ListProperty['itemFormat']
 type ListProperty = Extract<Property, { format: 'list' }>
 
 const normalizePropertyFormatForDocs = (format: PropertyFormat): string => {
-  const formatMap: Partial<Record<PropertyFormat, string>> = { id: 'ID' }
+  const formatMap: Partial<Record<PropertyFormat, string>> = {
+    id: 'ID',
+    discriminated_object: 'Object',
+  }
 
   return formatMap[format] ?? pascalCase(format)
 }
