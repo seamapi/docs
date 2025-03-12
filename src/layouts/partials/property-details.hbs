@@ -6,7 +6,7 @@
 {{> deprecated-warning}}
 {{/if}}
 
-{{#if description}}
+{{#if (and description (not hideDescription))}}
 {{description}}
 
 {{/if}}
