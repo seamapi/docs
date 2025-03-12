@@ -106,6 +106,8 @@ Errors associated with the [entrance](../../../capability-guides/access-systems/
 
 <summary><code>errors</code> Format: <code>List</code> Item format: <code>Object</code></summary>
 
+Errors associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
 </details>
 
 ---

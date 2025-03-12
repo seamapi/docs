@@ -48,6 +48,8 @@ Errors associated with the [encoder](../../../capability-guides/access-systems/w
 
 <summary><code>errors</code> Format: <code>List</code> Item format: <code>Object</code></summary>
 
+Errors associated with the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+
 </details>
 
 ---
