@@ -17,4 +17,10 @@ Possible enum values:
 {{/each}}
 
 {{/if}}
+{{#if listProperties}}
+{{#each listProperties}}
+
+{{> property-details this}}
+{{/each}}
+{{/if}}
 </details>
