@@ -19,7 +19,7 @@ export const and = (...args: unknown[]): boolean => {
 }
 
 export const not = (value: unknown): boolean => {
-  return !value
+  return value === false || value == null || value === 0 || value === ''
 }
 
 export const add = (v1: number, v2: number): number => {
