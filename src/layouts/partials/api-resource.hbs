@@ -42,13 +42,13 @@ This object has no properties.
 {{else}}
 {{#each objectProperties}}
 
-{{> property-details hideDescription=true}}
+{{> property-details this}}
 {{/each}}
 {{/if}}
 {{/unless}}
 {{#if listProperties}}
 
-{{> property-details hideDescription=true}}
+{{> property-details this}}
 {{/if}}
 
 ---
