@@ -11,17 +11,6 @@ export const or = (...args: unknown[]): boolean => {
   return args.some(Boolean)
 }
 
-export const and = (...args: unknown[]): boolean => {
-  // remove the last argument, which is the Handlebars options object
-  args.pop()
-
-  return args.every(Boolean)
-}
-
-export const not = (value: unknown): boolean => {
-  return value === false || value == null || value === 0 || value === ''
-}
-
 export const add = (v1: number, v2: number): number => {
   return v1 + v2
 }
