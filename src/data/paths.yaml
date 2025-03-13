@@ -65,3 +65,12 @@
   title: Enrollment Automations
   resources:
     - enrollment_automation
+
+/devices:
+  title: Devices
+  resources: []
+
+/devices/device_providers:
+  title: Device Providers
+  resources:
+    - device_provider
