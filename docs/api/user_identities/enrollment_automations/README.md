@@ -59,6 +59,8 @@ Sets up a new [enrollment automation](https://docs.seam.co/latest/capability-gui
 
 Returns a list of all [enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
+---
+
 ## Events
 
 ### `enrollment_automation.deleted`
