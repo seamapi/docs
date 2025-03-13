@@ -68,9 +68,5 @@
 
 /devices:
   title: Devices
-  resources: []
-
-/devices/device_providers:
-  title: Device Providers
   resources:
-    - device_provider
+    - device
