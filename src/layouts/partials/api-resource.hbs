@@ -16,12 +16,14 @@
 {{/if}}
 {{#if isDeprecated}}
 
-{% hint style="warning" %}
-**Deprecated**. {{deprecationMessage}}
-{% endhint %}
+{{> deprecated-warning}}
 {{/if}}
 
 Format: `{{format}}`
+{{#if listItemFormat}}
+
+Item format: `{{listItemFormat}}`
+{{/if}}
 {{#if description}}
 
 {{description}}
@@ -40,18 +42,16 @@ This object has no properties.
 {{else}}
 {{#each objectProperties}}
 
-<details>
-
-<summary><code>{{this.name}}</code> Format: <code>{{this.format}}</code></summary>
-{{#if this.description}}
-
-{{this.description}}
-{{/if}}
-
-</details>
+{{> property-details this}}
 {{/each}}
 {{/if}}
 {{/unless}}
+{{#if listProperties}}
+{{#each listProperties}}
+
+{{> property-details this}}
+{{/each}}
+{{/if}}
 
 ---
 

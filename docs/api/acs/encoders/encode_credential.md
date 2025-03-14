@@ -42,7 +42,7 @@ Encoding credential data from physical encoder.
 
 #### `action_attempt_id`
 
-Format: `ID`
+Format: `UUID`
 
 The ID of the action attempt.
 
@@ -68,6 +68,13 @@ Format: `Object`
 
 <summary><code>type</code> Format: <code>Enum</code></summary>
 
+Possible enum values:
+- `uncategorized_error`
+- `action_attempt_expired`
+- `no_credential_on_encoder`
+- `incompatible_card_format`
+- `credential_cannot_be_reissued`
+
 </details>
 
 ---
@@ -84,11 +91,16 @@ Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/acces
 
 Access method for the [credential](../../../capability-guides/access-systems/managing-credentials.md). Supported values: `code`, `card`, `mobile_key`.
 
+Possible enum values:
+- `code`
+- `card`
+- `mobile_key`
+
 </details>
 
 <details>
 
-<summary><code>acs_credential_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_credential_id</code> Format: <code>UUID</code></summary>
 
 ID of the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -96,13 +108,13 @@ ID of the [credential](../../../capability-guides/access-systems/managing-creden
 
 <details>
 
-<summary><code>acs_credential_pool_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_credential_pool_id</code> Format: <code>UUID</code></summary>
 
 </details>
 
 <details>
 
-<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -110,7 +122,7 @@ ID of the [access control system](https://docs.seam.co/latest/capability-guides/
 
 <details>
 
-<summary><code>acs_user_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_user_id</code> Format: <code>UUID</code></summary>
 
 ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](../../../capability-guides/access-systems/managing-credentials.md) belongs.
 
@@ -126,7 +138,7 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 <details>
 
-<summary><code>assa_abloy_vostio_metadata.door_names</code> Format: <code>List</code></summary>
+<summary><code>assa_abloy_vostio_metadata.door_names</code> Format: <code>List</code> Item format: <code>String</code></summary>
 
 </details>
 
@@ -150,7 +162,7 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 <details>
 
-<summary><code>assa_abloy_vostio_metadata.override_guest_acs_entrance_ids</code> Format: <code>List</code></summary>
+<summary><code>assa_abloy_vostio_metadata.override_guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>String</code></summary>
 
 </details>
 
@@ -196,10 +208,22 @@ Date and time at which the [credential](../../../capability-guides/access-system
 
 <details>
 
-<summary><code>errors</code> Format: <code>List</code></summary>
+<summary><code>errors</code> Format: <code>List</code> Item format: <code>Object</code></summary>
 
 Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
+
+<details>
+
+<summary><code>error_code</code> Format: <code>String</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+</details>
 </details>
 
 <details>
@@ -207,6 +231,15 @@ Errors associated with the [credential](../../../capability-guides/access-system
 <summary><code>external_type</code> Format: <code>Enum</code></summary>
 
 Brand-specific terminology for the [credential](../../../capability-guides/access-systems/managing-credentials.md) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.
+
+Possible enum values:
+- `pti_card`
+- `brivo_credential`
+- `hid_credential`
+- `visionline_card`
+- `salto_ks_credential`
+- `assa_abloy_vostio_key`
+- `salto_space_key`
 
 </details>
 
@@ -274,7 +307,7 @@ Date and time at which the state of the [credential](../../../capability-guides/
 
 <details>
 
-<summary><code>parent_acs_credential_id</code> Format: <code>ID</code></summary>
+<summary><code>parent_acs_credential_id</code> Format: <code>UUID</code></summary>
 
 ID of the parent [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -306,6 +339,10 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 
 <summary><code>visionline_metadata.card_function_type</code> Format: <code>Enum</code></summary>
 
+Possible enum values:
+- `guest`
+- `staff`
+
 </details>
 
 <details>
@@ -316,7 +353,7 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 
 <details>
 
-<summary><code>visionline_metadata.common_acs_entrance_ids</code> Format: <code>List</code></summary>
+<summary><code>visionline_metadata.common_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
 
 </details>
 
@@ -328,7 +365,7 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 
 <details>
 
-<summary><code>visionline_metadata.guest_acs_entrance_ids</code> Format: <code>List</code></summary>
+<summary><code>visionline_metadata.guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
 
 </details>
 
@@ -340,21 +377,53 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 
 <details>
 
-<summary><code>visionline_metadata.joiner_acs_credential_ids</code> Format: <code>List</code></summary>
+<summary><code>visionline_metadata.joiner_acs_credential_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
 
 </details>
 
 <details>
 
-<summary><code>warnings</code> Format: <code>List</code></summary>
+<summary><code>warnings</code> Format: <code>List</code> Item format: <code>Object</code></summary>
 
 Warnings associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the warning.
+
 </details>
 
 <details>
 
-<summary><code>workspace_id</code> Format: <code>ID</code></summary>
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+</details>
+
+<details>
+
+<summary><code>warning_code</code> Format: <code>Enum</code></summary>
+
+Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
+Possible enum values:
+- `waiting_to_be_issued`
+- `schedule_externally_modified`
+- `schedule_modified`
+- `being_deleted`
+- `unknown_issue_with_acs_credential`
+- `needs_to_be_reissued`
+
+</details>
+</details>
+
+<details>
+
+<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 

@@ -6,7 +6,7 @@ Represents an [access control system](https://docs.seam.co/latest/capability-gui
 
 ### `acs_system_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -46,7 +46,7 @@ Indicates whether the [access control system](https://docs.seam.co/latest/capabi
 
 ### `connected_account_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -59,6 +59,8 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 {% endhint %}
 
 Format: `List`
+
+Item format: `UUID`
 
 IDs of the [connected accounts](../../../core-concepts/connected-accounts/README.md) associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -74,7 +76,7 @@ Date and time at which the [access control system](https://docs.seam.co/latest/c
 
 ### `default_credential_manager_acs_system_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the default credential manager `acs_system` for this [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -83,6 +85,8 @@ ID of the default credential manager `acs_system` for this [access control syste
 ### [`errors`](./#errors-1)
 
 Format: `List`
+
+Item format: `Object`
 
 Errors associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -234,13 +238,15 @@ Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel i
 
 Format: `List`
 
+Item format: `Object`
+
 Warnings associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ---
 
 ### `workspace_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -325,7 +331,7 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 <details>
 
-<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -333,7 +339,7 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 <details>
 
-<summary><code>connected_account_id</code> Format: <code>ID</code></summary>
+<summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
@@ -349,7 +355,7 @@ Date and time at which the event was created.
 
 <details>
 
-<summary><code>event_id</code> Format: <code>ID</code></summary>
+<summary><code>event_id</code> Format: <code>UUID</code></summary>
 
 ID of the event.
 
@@ -371,7 +377,7 @@ Date and time at which the event occurred.
 
 <details>
 
-<summary><code>workspace_id</code> Format: <code>ID</code></summary>
+<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
@@ -385,7 +391,7 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 <details>
 
-<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -393,7 +399,7 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 <details>
 
-<summary><code>connected_account_id</code> Format: <code>ID</code></summary>
+<summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
@@ -409,7 +415,7 @@ Date and time at which the event was created.
 
 <details>
 
-<summary><code>event_id</code> Format: <code>ID</code></summary>
+<summary><code>event_id</code> Format: <code>UUID</code></summary>
 
 ID of the event.
 
@@ -431,7 +437,7 @@ Date and time at which the event occurred.
 
 <details>
 
-<summary><code>workspace_id</code> Format: <code>ID</code></summary>
+<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
@@ -445,7 +451,7 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 <details>
 
-<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -453,7 +459,7 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 <details>
 
-<summary><code>connected_account_id</code> Format: <code>ID</code></summary>
+<summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
@@ -469,7 +475,7 @@ Date and time at which the event was created.
 
 <details>
 
-<summary><code>event_id</code> Format: <code>ID</code></summary>
+<summary><code>event_id</code> Format: <code>UUID</code></summary>
 
 ID of the event.
 
@@ -491,7 +497,7 @@ Date and time at which the event occurred.
 
 <details>
 
-<summary><code>workspace_id</code> Format: <code>ID</code></summary>
+<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 

@@ -35,7 +35,7 @@ Format: `String`
 
 ### `acs_access_group_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the access group.
 
@@ -43,7 +43,7 @@ ID of the access group.
 
 ### `acs_system_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the access control system that contains the access group.
 
@@ -105,13 +105,39 @@ Name of the access group.
 
 Format: `List`
 
+Item format: `Object`
+
 Warnings associated with the `acs_access_group`.
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the warning.
+
+</details>
+
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+</details>
+
+<details>
+
+<summary><code>warning_code</code> Format: <code>String</code></summary>
+
+Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
+</details>
 
 ---
 
 ### `workspace_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the access group.
 
@@ -148,13 +174,13 @@ An ACS access group was deleted.
 
 <details>
 
-<summary><code>acs_access_group_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_access_group_id</code> Format: <code>UUID</code></summary>
 
 </details>
 
 <details>
 
-<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -162,7 +188,7 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 <details>
 
-<summary><code>connected_account_id</code> Format: <code>ID</code></summary>
+<summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
@@ -178,7 +204,7 @@ Date and time at which the event was created.
 
 <details>
 
-<summary><code>event_id</code> Format: <code>ID</code></summary>
+<summary><code>event_id</code> Format: <code>UUID</code></summary>
 
 ID of the event.
 
@@ -200,7 +226,7 @@ Date and time at which the event occurred.
 
 <details>
 
-<summary><code>workspace_id</code> Format: <code>ID</code></summary>
+<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 

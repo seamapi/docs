@@ -6,7 +6,7 @@ Represents an [entrance](../../../capability-guides/access-systems/retrieving-en
 
 ### `acs_entrance_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
@@ -14,7 +14,7 @@ ID of the [entrance](../../../capability-guides/access-systems/retrieving-entran
 
 ### `acs_system_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
@@ -41,6 +41,12 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
 <details>
 
 <summary><code>door_type</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `CommonDoor`
+- `EntranceDoor`
+- `GuestDoor`
+- `Elevator`
 
 </details>
 
@@ -92,7 +98,25 @@ dormakaba Community-specific metadata associated with the [entrance](../../../ca
 
 Format: `List`
 
+Item format: `Object`
+
 Errors associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
+<details>
+
+<summary><code>error_code</code> Format: <code>String</code></summary>
+
+Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+</details>
+
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
+</details>
 
 ---
 
@@ -220,6 +244,13 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 
 <summary><code>door_category</code> Format: <code>Enum</code></summary>
 
+Possible enum values:
+- `entrance`
+- `guest`
+- `elevator reader`
+- `common`
+- `common (PMS)`
+
 </details>
 
 <details>
@@ -230,8 +261,25 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 
 <details>
 
-<summary><code>profiles</code> Format: <code>List</code></summary>
+<summary><code>profiles</code> Format: <code>List</code> Item format: <code>Object</code></summary>
 
+
+<details>
+
+<summary><code>visionline_door_profile_id</code> Format: <code>String</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>visionline_door_profile_type</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `BLE`
+- `commonDoor`
+- `touch`
+
+</details>
 </details>
 
 ---

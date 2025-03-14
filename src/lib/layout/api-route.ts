@@ -37,6 +37,8 @@ type ApiRouteProperty = Pick<
   format: string
   enumValues?: string[]
   objectProperties?: ApiRouteProperty[]
+  listProperties?: ApiRouteProperty[]
+  listItemFormat?: string
   linkTarget?: string
 }
 
@@ -210,6 +212,7 @@ export const mapBlueprintPropertyToRouteProperty = (
     isDeprecated,
     deprecationMessage,
     format: '',
+    listItemFormat: '',
   }
 
   if ('values' in prop && prop.values.length > 1) {
@@ -222,39 +225,53 @@ export const mapBlueprintPropertyToRouteProperty = (
   }
 
   if ('properties' in prop) {
-    contextRouteProp.objectProperties = flattenObjectProperties(prop.properties)
+    const flattenedProperties = flattenObjectProperties(prop.properties)
+    contextRouteProp.objectProperties = flattenedProperties.map(
+      mapBlueprintPropertyToRouteProperty,
+    )
+  }
+
+  if ('itemProperties' in prop) {
+    const flattenedProperties = flattenObjectProperties(prop.itemProperties)
+    contextRouteProp.listProperties = flattenedProperties.map(
+      mapBlueprintPropertyToRouteProperty,
+    )
+  }
+
+  if (format === 'list') {
+    contextRouteProp.listItemFormat = normalizePropertyFormatForDocs(
+      prop.itemFormat,
+    )
   }
 
   return contextRouteProp
 }
 
-type PropertyFormat = Property['format']
+type PropertyFormat = Property['format'] | ListProperty['itemFormat']
+type ListProperty = Extract<Property, { format: 'list' }>
 
 const normalizePropertyFormatForDocs = (format: PropertyFormat): string => {
-  const formatMap: Partial<Record<PropertyFormat, string>> = { id: 'ID' }
+  const formatMap: Partial<Record<PropertyFormat, string>> = {
+    id: 'UUID',
+    discriminated_object: 'Object',
+  }
 
   return formatMap[format] ?? pascalCase(format)
-}
-
-type PropertyWithNormalizedFormat = Omit<Property, 'format'> & {
-  format: string
 }
 
 const flattenObjectProperties = (
   properties: Property[],
   paths: string[] = [],
-): PropertyWithNormalizedFormat[] => {
-  const results: PropertyWithNormalizedFormat[] = []
+): Property[] => {
+  const results: Property[] = []
 
   for (const property of properties.filter(
     ({ isUndocumented }) => !isUndocumented,
   )) {
     const name = [...paths, property.name].join('.')
 
-    const { format, ...rest } = property
     results.push({
-      ...rest,
-      format: normalizePropertyFormatForDocs(format),
+      ...property,
       name,
     })
 
