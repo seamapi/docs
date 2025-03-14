@@ -252,7 +252,7 @@ type ListProperty = Extract<Property, { format: 'list' }>
 
 const normalizePropertyFormatForDocs = (format: PropertyFormat): string => {
   const formatMap: Partial<Record<PropertyFormat, string>> = {
-    id: 'ID',
+    id: 'UUID',
     discriminated_object: 'Object',
   }
 
