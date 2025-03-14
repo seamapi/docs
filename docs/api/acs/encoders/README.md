@@ -6,7 +6,7 @@ Represents a hardware device that encodes [credential](../../../capability-guide
 
 ### `acs_encoder_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners.
 
@@ -14,7 +14,7 @@ ID of the [encoder](https://docs.seam.co/latest/capability-guides/access-systems
 
 ### `acs_system_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
@@ -72,7 +72,7 @@ Detailed description of the error. Provides insights into the issue and potentia
 
 ### `workspace_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
@@ -98,7 +98,7 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 
 <details>
 
-<summary><code>acs_encoder_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_encoder_id</code> Format: <code>UUID</code></summary>
 
 ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
@@ -106,7 +106,7 @@ ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-c
 
 <details>
 
-<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -114,7 +114,7 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 <details>
 
-<summary><code>connected_account_id</code> Format: <code>ID</code></summary>
+<summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
@@ -130,7 +130,7 @@ Date and time at which the event was created.
 
 <details>
 
-<summary><code>event_id</code> Format: <code>ID</code></summary>
+<summary><code>event_id</code> Format: <code>UUID</code></summary>
 
 ID of the event.
 
@@ -152,7 +152,7 @@ Date and time at which the event occurred.
 
 <details>
 
-<summary><code>workspace_id</code> Format: <code>ID</code></summary>
+<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
@@ -166,7 +166,7 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 
 <details>
 
-<summary><code>acs_encoder_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_encoder_id</code> Format: <code>UUID</code></summary>
 
 ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
@@ -174,7 +174,7 @@ ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-c
 
 <details>
 
-<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -182,7 +182,7 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 <details>
 
-<summary><code>connected_account_id</code> Format: <code>ID</code></summary>
+<summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
@@ -198,7 +198,7 @@ Date and time at which the event was created.
 
 <details>
 
-<summary><code>event_id</code> Format: <code>ID</code></summary>
+<summary><code>event_id</code> Format: <code>UUID</code></summary>
 
 ID of the event.
 
@@ -220,7 +220,7 @@ Date and time at which the event occurred.
 
 <details>
 
-<summary><code>workspace_id</code> Format: <code>ID</code></summary>
+<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 

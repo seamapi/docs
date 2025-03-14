@@ -22,7 +22,7 @@ Date and time at which the [thermostat schedule](../../../capability-guides/ther
 
 ### `device_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device.
 
@@ -88,7 +88,7 @@ Date and time at which the [thermostat schedule](../../../capability-guides/ther
 
 ### `thermostat_schedule_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 

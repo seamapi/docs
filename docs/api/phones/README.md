@@ -22,7 +22,7 @@ Optional [custom metadata](../../core-concepts/devices/adding-custom-metadata-to
 
 ### `device_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the `phone`.
 
@@ -166,7 +166,7 @@ Warnings associated with the `phone`.
 
 ### `workspace_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the `phone`.
 
@@ -200,7 +200,7 @@ Date and time at which the event was created.
 
 <details>
 
-<summary><code>device_id</code> Format: <code>ID</code></summary>
+<summary><code>device_id</code> Format: <code>UUID</code></summary>
 
 ID of the [device](../../core-concepts/devices/README.md).
 
@@ -208,7 +208,7 @@ ID of the [device](../../core-concepts/devices/README.md).
 
 <details>
 
-<summary><code>event_id</code> Format: <code>ID</code></summary>
+<summary><code>event_id</code> Format: <code>UUID</code></summary>
 
 ID of the event.
 
@@ -230,7 +230,7 @@ Date and time at which the event occurred.
 
 <details>
 
-<summary><code>workspace_id</code> Format: <code>ID</code></summary>
+<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../core-concepts/workspaces/README.md).
 

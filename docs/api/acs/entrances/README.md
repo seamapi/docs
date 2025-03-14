@@ -6,7 +6,7 @@ Represents an [entrance](../../../capability-guides/access-systems/retrieving-en
 
 ### `acs_entrance_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
@@ -14,7 +14,7 @@ ID of the [entrance](../../../capability-guides/access-systems/retrieving-entran
 
 ### `acs_system_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 

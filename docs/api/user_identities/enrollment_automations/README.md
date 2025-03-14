@@ -14,7 +14,7 @@ Date and time at which the enrollment automation was created.
 
 ### `credential_manager_acs_system_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the associated [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) that serves as the credential manager.
 
@@ -22,7 +22,7 @@ ID of the associated [ACS system](https://docs.seam.co/latest/capability-guides/
 
 ### `enrollment_automation_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the enrollment automation.
 
@@ -30,7 +30,7 @@ ID of the enrollment automation.
 
 ### `user_identity_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the associated [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
@@ -38,7 +38,7 @@ ID of the associated [user identity](https://docs.seam.co/latest/capability-guid
 
 ### `workspace_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the enrollment automation.
 
@@ -75,7 +75,7 @@ Date and time at which the event was created.
 
 <details>
 
-<summary><code>enrollment_automation_id</code> Format: <code>ID</code></summary>
+<summary><code>enrollment_automation_id</code> Format: <code>UUID</code></summary>
 
 ID of the [enrollment automation](../../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut).
 
@@ -83,7 +83,7 @@ ID of the [enrollment automation](../../../capability-guides/mobile-access/issui
 
 <details>
 
-<summary><code>event_id</code> Format: <code>ID</code></summary>
+<summary><code>event_id</code> Format: <code>UUID</code></summary>
 
 ID of the event.
 
@@ -105,7 +105,7 @@ Date and time at which the event occurred.
 
 <details>
 
-<summary><code>workspace_id</code> Format: <code>ID</code></summary>
+<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 

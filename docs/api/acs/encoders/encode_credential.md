@@ -42,7 +42,7 @@ Encoding credential data from physical encoder.
 
 #### `action_attempt_id`
 
-Format: `ID`
+Format: `UUID`
 
 The ID of the action attempt.
 
@@ -100,7 +100,7 @@ Possible enum values:
 
 <details>
 
-<summary><code>acs_credential_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_credential_id</code> Format: <code>UUID</code></summary>
 
 ID of the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -108,13 +108,13 @@ ID of the [credential](../../../capability-guides/access-systems/managing-creden
 
 <details>
 
-<summary><code>acs_credential_pool_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_credential_pool_id</code> Format: <code>UUID</code></summary>
 
 </details>
 
 <details>
 
-<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -122,7 +122,7 @@ ID of the [access control system](https://docs.seam.co/latest/capability-guides/
 
 <details>
 
-<summary><code>acs_user_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_user_id</code> Format: <code>UUID</code></summary>
 
 ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](../../../capability-guides/access-systems/managing-credentials.md) belongs.
 
@@ -307,7 +307,7 @@ Date and time at which the state of the [credential](../../../capability-guides/
 
 <details>
 
-<summary><code>parent_acs_credential_id</code> Format: <code>ID</code></summary>
+<summary><code>parent_acs_credential_id</code> Format: <code>UUID</code></summary>
 
 ID of the parent [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -353,7 +353,7 @@ Possible enum values:
 
 <details>
 
-<summary><code>visionline_metadata.common_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>ID</code></summary>
+<summary><code>visionline_metadata.common_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
 
 </details>
 
@@ -365,7 +365,7 @@ Possible enum values:
 
 <details>
 
-<summary><code>visionline_metadata.guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>ID</code></summary>
+<summary><code>visionline_metadata.guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
 
 </details>
 
@@ -377,7 +377,7 @@ Possible enum values:
 
 <details>
 
-<summary><code>visionline_metadata.joiner_acs_credential_ids</code> Format: <code>List</code> Item format: <code>ID</code></summary>
+<summary><code>visionline_metadata.joiner_acs_credential_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
 
 </details>
 
@@ -423,7 +423,7 @@ Possible enum values:
 
 <details>
 
-<summary><code>workspace_id</code> Format: <code>ID</code></summary>
+<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 

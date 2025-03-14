@@ -30,7 +30,7 @@ Date and time at which the user's access starts, in [ISO 8601](https://www.iso.o
 
 ### `acs_system_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
@@ -38,7 +38,7 @@ ID of the [access control system](https://docs.seam.co/latest/capability-guides/
 
 ### `acs_user_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
@@ -123,7 +123,7 @@ Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access
 
 ### `hid_acs_system_id`
 
-Format: `ID`
+Format: `UUID`
 
 ---
 
@@ -193,7 +193,7 @@ Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-g
 
 ### `workspace_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
@@ -295,7 +295,7 @@ An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-
 
 <details>
 
-<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -303,13 +303,13 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 <details>
 
-<summary><code>acs_user_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_user_id</code> Format: <code>UUID</code></summary>
 
 </details>
 
 <details>
 
-<summary><code>connected_account_id</code> Format: <code>ID</code></summary>
+<summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
@@ -325,7 +325,7 @@ Date and time at which the event was created.
 
 <details>
 
-<summary><code>event_id</code> Format: <code>ID</code></summary>
+<summary><code>event_id</code> Format: <code>UUID</code></summary>
 
 ID of the event.
 
@@ -347,7 +347,7 @@ Date and time at which the event occurred.
 
 <details>
 
-<summary><code>workspace_id</code> Format: <code>ID</code></summary>
+<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 

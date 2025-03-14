@@ -222,7 +222,7 @@ Setting HVAC mode.
 
 #### `action_attempt_id`
 
-Format: `ID`
+Format: `UUID`
 
 The ID of the action attempt.
 
