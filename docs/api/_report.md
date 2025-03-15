@@ -106,6 +106,7 @@ These items are intentionally undocumented.
 - `/acs/credentials/unmanaged`: No undocumented message provided
 - `/acs/users/unmanaged`: No undocumented message provided
 - `/seam/bridge/v1/bridge_client_sessions`: No undocumented message provided
+- `/unstable_locations`: No undocumented message provided
 
 ### Resource properties
 
@@ -135,21 +136,32 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1/bridge_client_sessions/get`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`: Seam Bridge Client only.
 - `/thermostats/get`: Will be removed.
+- `/unstable_locations/add_devices`: Experimental locations.
+- `/unstable_locations/create`: Experimental locations.
+- `/unstable_locations/delete`: Experimental locations.
+- `/unstable_locations/get`: Experimental locations.
+- `/unstable_locations/list`: Experimental locations.
+- `/unstable_locations/remove_devices`: Experimental locations.
+- `/unstable_locations/update`: Experimental locations.
 
 ### Endpoint parameters
 
 - `/devices/list`
     - `exclude_if`: Only used internally.
     - `include_if`: Only used internally.
+    - `unstable_location_id`: Experimental locations.
 - `/devices/unmanaged/list`
     - `exclude_if`: Only used internally.
     - `include_if`: Only used internally.
+    - `unstable_location_id`: Experimental locations.
 - `/locks/list`
     - `exclude_if`: Only used internally.
     - `include_if`: Only used internally.
+    - `unstable_location_id`: Experimental locations.
 - `/noise_sensors/list`
     - `exclude_if`: Only used internally.
     - `include_if`: Only used internally.
+    - `unstable_location_id`: Experimental locations.
 - `/thermostats/cool`
     - `sync`: Only used internally.
 - `/thermostats/heat`
@@ -159,6 +171,7 @@ These items are intentionally undocumented.
 - `/thermostats/list`
     - `exclude_if`: Only used internally.
     - `include_if`: Only used internally.
+    - `unstable_location_id`: Experimental locations.
 - `/thermostats/off`
     - `sync`: Only used internally.
 - `/thermostats/set_fan_mode`
@@ -592,6 +605,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/devices/list`
     - `exclude_if`
     - `include_if`
+    - `unstable_location_id`
 - `/devices/list_device_providers`
     - `provider_category`
 - `/devices/update`
@@ -612,6 +626,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/devices/unmanaged/list`
     - `exclude_if`
     - `include_if`
+    - `unstable_location_id`
 - `/devices/unmanaged/update`
     - `device_id`
     - `is_managed`
@@ -641,6 +656,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/locks/list`
     - `exclude_if`
     - `include_if`
+    - `unstable_location_id`
 - `/locks/lock_door`
     - `device_id`
     - `sync`
@@ -652,6 +668,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/noise_sensors/list`
     - `exclude_if`
     - `include_if`
+    - `unstable_location_id`
 - `/noise_sensors/noise_thresholds/create`
     - `device_id`
     - `ends_daily_at`
@@ -693,6 +710,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/thermostats/list`
     - `exclude_if`
     - `include_if`
+    - `unstable_location_id`
 - `/thermostats/off`
     - `sync`
 - `/thermostats/set_fan_mode`
@@ -701,6 +719,25 @@ Items that are intentionally undocumented are not included in this section.
     - `sync`
 - `/thermostats/set_hvac_mode`
     - `hvac_mode_setting`
+- `/unstable_locations/add_devices`
+    - `device_ids`
+    - `location_id`
+- `/unstable_locations/create`
+    - `geolocation`
+    - `name`
+    - `time_zone`
+- `/unstable_locations/delete`
+    - `location_id`
+- `/unstable_locations/get`
+    - `location_id`
+- `/unstable_locations/remove_devices`
+    - `device_ids`
+    - `location_id`
+- `/unstable_locations/update`
+    - `geolocation`
+    - `location_id`
+    - `name`
+    - `time_zone`
 - `/user_identities/get`
     - `user_identity_key`
 - `/user_identities/list`
@@ -872,6 +909,13 @@ These items are deprecated.
 - `/thermostats/get`
 - `/thermostats/simulate/hvac_mode_adjusted`
 - `/thermostats/simulate/temperature_reached`
+- `/unstable_locations/add_devices`
+- `/unstable_locations/create`
+- `/unstable_locations/delete`
+- `/unstable_locations/get`
+- `/unstable_locations/list`
+- `/unstable_locations/remove_devices`
+- `/unstable_locations/update`
 - `/user_identities/update`
 - `/webhooks/create`
 - `/webhooks/delete`
