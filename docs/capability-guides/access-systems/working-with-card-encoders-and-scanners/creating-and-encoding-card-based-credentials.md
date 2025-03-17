@@ -22,7 +22,7 @@ This process consists of the following basic steps:
 4. Confirm that the card was encoded successfully using polling or a [webhook](../../../core-concepts/webhooks.md).\
    See [Confirm Successful Encoding](creating-and-encoding-card-based-credentials.md#id-4.-confirm-successful-encoding). Also, see a list of [common encoding errors](creating-and-encoding-card-based-credentials.md#common-encoding-errors).
 
-Once you have written a credential to a card, you cannot reuse the credential for another card. That is, you must create a separate credential for each card. However, you can reuse a card by re-encoding the  card with a new credential.
+Once you have written a credential to a card, you cannot reuse the credential for another card. That is, you must create a separate credential for each card. However, you can reuse a card by re-encoding the card with a new credential.
 
 ***
 
@@ -1101,7 +1101,9 @@ await seam.acs.credentials.get({
   access_method: 'card',
   starts_at: '2024-12-01T15:00:00.000Z',
   ends_at: '2024-12-04T12:00:00.000Z',
-  is_issued: false,
+  is_issued: true,
+  card_number: '1234abc',
+  issued_at: '2024-10-23T19:46:06.113Z',
   ...
 }
 ```
