@@ -22,7 +22,7 @@ Date and time at which the [thermostat schedule](../../../capability-guides/ther
 
 ### `device_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device.
 
@@ -40,7 +40,25 @@ Date and time at which the [thermostat schedule](../../../capability-guides/ther
 
 Format: `List`
 
+Item format: `Object`
+
 Errors associated with the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
+
+<details>
+
+<summary><code>error_code</code> Format: <code>String</code></summary>
+
+Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+</details>
+
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
+</details>
 
 ---
 
@@ -70,7 +88,7 @@ Date and time at which the [thermostat schedule](../../../capability-guides/ther
 
 ### `thermostat_schedule_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 

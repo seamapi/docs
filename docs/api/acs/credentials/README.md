@@ -19,7 +19,7 @@ Possible enum values:
 
 ### `acs_credential_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -27,13 +27,13 @@ ID of the [credential](../../../capability-guides/access-systems/managing-creden
 
 ### `acs_credential_pool_id`
 
-Format: `ID`
+Format: `UUID`
 
 ---
 
 ### `acs_system_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -41,7 +41,7 @@ ID of the [access control system](https://docs.seam.co/latest/capability-guides/
 
 ### `acs_user_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](../../../capability-guides/access-systems/managing-credentials.md) belongs.
 
@@ -55,7 +55,7 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 <details>
 
-<summary><code>door_names</code> Format: <code>List</code></summary>
+<summary><code>door_names</code> Format: <code>List</code> Item format: <code>String</code></summary>
 
 </details>
 
@@ -79,7 +79,7 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 <details>
 
-<summary><code>override_guest_acs_entrance_ids</code> Format: <code>List</code></summary>
+<summary><code>override_guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>String</code></summary>
 
 </details>
 
@@ -129,7 +129,21 @@ Date and time at which the [credential](../../../capability-guides/access-system
 
 Format: `List`
 
+Item format: `Object`
+
 Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+<details>
+
+<summary><code>error_code</code> Format: <code>String</code></summary>
+
+</details>
+
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+</details>
 
 ---
 
@@ -214,7 +228,7 @@ Date and time at which the state of the [credential](../../../capability-guides/
 
 ### `parent_acs_credential_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the parent [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -244,6 +258,10 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 
 <summary><code>card_function_type</code> Format: <code>Enum</code></summary>
 
+Possible enum values:
+- `guest`
+- `staff`
+
 </details>
 
 <details>
@@ -254,7 +272,7 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 
 <details>
 
-<summary><code>common_acs_entrance_ids</code> Format: <code>List</code></summary>
+<summary><code>common_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
 
 </details>
 
@@ -266,7 +284,7 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 
 <details>
 
-<summary><code>guest_acs_entrance_ids</code> Format: <code>List</code></summary>
+<summary><code>guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
 
 </details>
 
@@ -278,7 +296,7 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 
 <details>
 
-<summary><code>joiner_acs_credential_ids</code> Format: <code>List</code></summary>
+<summary><code>joiner_acs_credential_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
 
 </details>
 
@@ -288,13 +306,15 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 
 Format: `List`
 
+Item format: `Object`
+
 Warnings associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 ---
 
 ### `workspace_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -375,13 +395,13 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 <details>
 
-<summary><code>acs_credential_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_credential_id</code> Format: <code>UUID</code></summary>
 
 </details>
 
 <details>
 
-<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -389,7 +409,7 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 <details>
 
-<summary><code>connected_account_id</code> Format: <code>ID</code></summary>
+<summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
@@ -405,7 +425,7 @@ Date and time at which the event was created.
 
 <details>
 
-<summary><code>event_id</code> Format: <code>ID</code></summary>
+<summary><code>event_id</code> Format: <code>UUID</code></summary>
 
 ID of the event.
 
@@ -427,7 +447,7 @@ Date and time at which the event occurred.
 
 <details>
 
-<summary><code>workspace_id</code> Format: <code>ID</code></summary>
+<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
@@ -441,13 +461,13 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 <details>
 
-<summary><code>acs_credential_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_credential_id</code> Format: <code>UUID</code></summary>
 
 </details>
 
 <details>
 
-<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -455,7 +475,7 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 <details>
 
-<summary><code>connected_account_id</code> Format: <code>ID</code></summary>
+<summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
@@ -471,7 +491,7 @@ Date and time at which the event was created.
 
 <details>
 
-<summary><code>event_id</code> Format: <code>ID</code></summary>
+<summary><code>event_id</code> Format: <code>UUID</code></summary>
 
 ID of the event.
 
@@ -493,7 +513,7 @@ Date and time at which the event occurred.
 
 <details>
 
-<summary><code>workspace_id</code> Format: <code>ID</code></summary>
+<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
@@ -507,13 +527,13 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 <details>
 
-<summary><code>acs_credential_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_credential_id</code> Format: <code>UUID</code></summary>
 
 </details>
 
 <details>
 
-<summary><code>acs_system_id</code> Format: <code>ID</code></summary>
+<summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -521,7 +541,7 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 <details>
 
-<summary><code>connected_account_id</code> Format: <code>ID</code></summary>
+<summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
@@ -537,7 +557,7 @@ Date and time at which the event was created.
 
 <details>
 
-<summary><code>event_id</code> Format: <code>ID</code></summary>
+<summary><code>event_id</code> Format: <code>UUID</code></summary>
 
 ID of the event.
 
@@ -559,7 +579,7 @@ Date and time at which the event occurred.
 
 <details>
 
-<summary><code>workspace_id</code> Format: <code>ID</code></summary>
+<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 

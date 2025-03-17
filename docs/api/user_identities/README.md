@@ -42,7 +42,7 @@ Unique phone number for the user identity in [E.164 format](https://www.itu.int/
 
 ### `user_identity_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the user identity.
 
@@ -58,7 +58,7 @@ Unique key for the user identity.
 
 ### `workspace_id`
 
-Format: `ID`
+Format: `UUID`
 
 ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the user identity.
 
