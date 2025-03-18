@@ -112,9 +112,11 @@ These items are intentionally undocumented.
 
 - `acs_user.is_latest_desired_state_synced_with_provider`: Only used internally.
 - `acs_user.latest_desired_state_synced_with_provider_at`: Only used internally.
+- `acs_user.pending_modifications`: Experimental.
 - `thermostat_schedule.unstable_is_override_allowed`: Unstable
 - `unmanaged_acs_user.is_latest_desired_state_synced_with_provider`: Only used internally.
 - `unmanaged_acs_user.latest_desired_state_synced_with_provider_at`: Only used internally.
+- `unmanaged_acs_user.pending_modifications`: Experimental.
 
 ### Namespaces
 
@@ -228,6 +230,7 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_user.is_latest_desired_state_synced_with_provider`
 - `acs_user.is_managed`
 - `acs_user.latest_desired_state_synced_with_provider_at`
+- `acs_user.pending_modifications`
 - `client_session.client_session_id`
 - `client_session.connect_webview_ids`
 - `client_session.connected_account_ids`
@@ -306,6 +309,7 @@ Items that are intentionally undocumented are not included in this section.
 - `unmanaged_acs_user.is_latest_desired_state_synced_with_provider`
 - `unmanaged_acs_user.is_managed`
 - `unmanaged_acs_user.latest_desired_state_synced_with_provider_at`
+- `unmanaged_acs_user.pending_modifications`
 - `user_identity.display_name`
 - `user_identity.full_name`
 - `webhook.event_types`
