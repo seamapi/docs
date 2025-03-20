@@ -1,21 +1,21 @@
 {{#if isDeprecated}}
-
 {{> deprecated-warning}}
+
 {{/if}}
 {{#if description}}
-
 {{description}}
+
 {{/if}}
 {{#if enumValues}}
-
 Possible enum values:
 {{#each enumValues}}
 - `{{this}}`
 {{/each}}
+
 {{/if}}
 {{#if listProperties}}
 {{#each listProperties}}
-
 {{> property-nested this}}
+
 {{/each}}
 {{/if}} 
