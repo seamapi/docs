@@ -47,7 +47,6 @@ Possible enum values:
 - `EntranceDoor`
 - `GuestDoor`
 - `Elevator`
-
 </details>
 
 <details>
@@ -250,7 +249,6 @@ Possible enum values:
 - `elevator reader`
 - `common`
 - `common (PMS)`
-
 </details>
 
 <details>
@@ -263,12 +261,12 @@ Possible enum values:
 
 <summary><code>profiles</code> Format: <code>List</code> Item format: <code>Object</code></summary>
 
-**<code>visionline_door_profile_id</code>** Format: <code>String</code>
+<code>visionline_door_profile_id</code> Format: <code>String</code>
 
 
 
 
-**<code>visionline_door_profile_type</code>** Format: <code>Enum</code>
+<code>visionline_door_profile_type</code> Format: <code>Enum</code>
 
 
 Possible enum values:

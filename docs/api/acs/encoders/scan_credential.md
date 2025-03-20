@@ -63,7 +63,6 @@ Possible enum values:
 - `uncategorized_error`
 - `action_attempt_expired`
 - `no_credential_on_encoder`
-
 </details>
 
 ---
@@ -143,7 +142,6 @@ Format of the card associated with the [credential](../../../capability-guides/a
 Possible enum values:
 - `TLCode`
 - `rfid48`
-
 </details>
 
 <details>
@@ -244,7 +242,6 @@ Possible enum values:
 - `code`
 - `card`
 - `mobile_key`
-
 </details>
 
 <details>
@@ -361,12 +358,12 @@ Date and time at which the [credential](../../../capability-guides/access-system
 
 Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-**<code>error_code</code>** Format: <code>String</code>
+<code>error_code</code> Format: <code>String</code>
 
 
 
 
-**<code>message</code>** Format: <code>String</code>
+<code>message</code> Format: <code>String</code>
 
 
 
@@ -387,7 +384,6 @@ Possible enum values:
 - `salto_ks_credential`
 - `assa_abloy_vostio_key`
 - `salto_space_key`
-
 </details>
 
 <details>
@@ -489,7 +485,6 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 Possible enum values:
 - `guest`
 - `staff`
-
 </details>
 
 <details>
@@ -534,19 +529,19 @@ Possible enum values:
 
 Warnings associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-**<code>created_at</code>** Format: <code>Datetime</code>
+<code>created_at</code> Format: <code>Datetime</code>
 
 Date and time at which Seam created the warning.
 
 
 
-**<code>message</code>** Format: <code>String</code>
+<code>message</code> Format: <code>String</code>
 
 Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
 
 
 
-**<code>warning_code</code>** Format: <code>Enum</code>
+<code>warning_code</code> Format: <code>Enum</code>
 
 Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
 
@@ -573,7 +568,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 <summary><code>warnings</code> Format: <code>List</code> Item format: <code>Object</code></summary>
 
-**<code>warning_code</code>** Format: <code>Enum</code>
+<code>warning_code</code> Format: <code>Enum</code>
 
 
 Possible enum values:
@@ -581,7 +576,7 @@ Possible enum values:
 - `acs_credential_on_seam_not_found`
 
 
-**<code>warning_message</code>** Format: <code>String</code>
+<code>warning_message</code> Format: <code>String</code>
 
 
 

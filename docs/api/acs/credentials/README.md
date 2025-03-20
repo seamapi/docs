@@ -261,7 +261,6 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 Possible enum values:
 - `guest`
 - `staff`
-
 </details>
 
 <details>
