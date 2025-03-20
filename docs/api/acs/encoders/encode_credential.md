@@ -150,31 +150,6 @@ ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-system
 Vostio-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
-**<code>door_names</code>** Format: <code>List</code> Item format: <code>String</code>
-
-
-
-
-**<code>endpoint_id</code>** Format: <code>String</code>
-
-
-
-
-**<code>key_id</code>** Format: <code>String</code>
-
-
-
-
-**<code>key_issuing_request_id</code>** Format: <code>String</code>
-
-
-
-
-**<code>override_guest_acs_entrance_ids</code>** Format: <code>List</code> Item format: <code>String</code>
-
-
-
-
 </details>
 
 <details>
@@ -410,49 +385,6 @@ Date and time at which the [credential](../../../capability-guides/access-system
 
 
 Visionline-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
-
-
-**<code>auto_join</code>** Format: <code>Boolean</code>
-
-
-
-
-**<code>card_function_type</code>** Format: <code>Enum</code>
-
-
-Possible enum values:
-- `guest`
-- `staff`
-
-
-**<code>card_id</code>** Format: <code>String</code>
-
-
-
-
-**<code>common_acs_entrance_ids</code>** Format: <code>List</code> Item format: <code>UUID</code>
-
-
-
-
-**<code>credential_id</code>** Format: <code>String</code>
-
-
-
-
-**<code>guest_acs_entrance_ids</code>** Format: <code>List</code> Item format: <code>UUID</code>
-
-
-
-
-**<code>is_valid</code>** Format: <code>Boolean</code>
-
-
-
-
-**<code>joiner_acs_credential_ids</code>** Format: <code>List</code> Item format: <code>UUID</code>
-
-
 
 
 </details>
