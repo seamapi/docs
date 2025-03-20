@@ -90,15 +90,14 @@ Properties of the phone.
 
 <summary><code>assa_abloy_credential_service_metadata</code> Format: <code>Object</code></summary>
 
-
 ASSA ABLOY Credential Service metadata for the phone.
+
 
 </details>
 
 <details>
 
 <summary><code>assa_abloy_credential_service_metadata.endpoints</code> Format: <code>List</code> Item format: <code>Object</code></summary>
-
 
 Endpoints associated with the phone.
 
@@ -114,14 +113,15 @@ Indicated whether the endpoint is active.
 
 
 
+
 </details>
 
 <details>
 
 <summary><code>assa_abloy_credential_service_metadata.has_active_endpoint</code> Format: <code>Boolean</code></summary>
 
-
 Indicates whether the credential service has active endpoints associated with the phone.
+
 
 </details>
 
@@ -129,8 +129,8 @@ Indicates whether the credential service has active endpoints associated with th
 
 <summary><code>salto_space_credential_service_metadata</code> Format: <code>Object</code></summary>
 
-
 Salto Space credential service metadata for the phone.
+
 
 </details>
 
@@ -138,8 +138,8 @@ Salto Space credential service metadata for the phone.
 
 <summary><code>salto_space_credential_service_metadata.has_active_phone</code> Format: <code>Boolean</code></summary>
 
-
 Indicates whether the credential service has an active associated phone.
+
 
 </details>
 
@@ -201,8 +201,8 @@ A phone device was deactivated.
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
-
 Date and time at which the event was created.
+
 
 </details>
 
@@ -210,8 +210,8 @@ Date and time at which the event was created.
 
 <summary><code>device_id</code> Format: <code>UUID</code></summary>
 
-
 ID of the [device](../../core-concepts/devices/README.md).
+
 
 </details>
 
@@ -219,8 +219,8 @@ ID of the [device](../../core-concepts/devices/README.md).
 
 <summary><code>event_id</code> Format: <code>UUID</code></summary>
 
-
 ID of the event.
+
 
 </details>
 
@@ -235,8 +235,8 @@ ID of the event.
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
-
 Date and time at which the event occurred.
+
 
 </details>
 
@@ -244,8 +244,8 @@ Date and time at which the event occurred.
 
 <summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
-
 ID of the [workspace](../../core-concepts/workspaces/README.md).
+
 
 </details>
 

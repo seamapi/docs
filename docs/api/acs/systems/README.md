@@ -155,8 +155,8 @@ Format: `Object`
 
 <summary><code>time_zone</code> Format: <code>String</code></summary>
 
-
 Time zone in which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) is located.
+
 
 </details>
 
@@ -213,8 +213,8 @@ Format: `Object`
 
 <summary><code>lan_address</code> Format: <code>String</code></summary>
 
-
 IP address or hostname of the main Visionline server relative to [Seam Bridge](../../../capability-guides/seam-bridge.md) on the local network.
+
 
 </details>
 
@@ -222,8 +222,8 @@ IP address or hostname of the main Visionline server relative to [Seam Bridge](.
 
 <summary><code>mobile_access_uuid</code> Format: <code>String</code></summary>
 
-
 Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.
+
 
 </details>
 
@@ -231,8 +231,8 @@ Keyset loaded into a reader. Mobile keys and reader administration tools securel
 
 <summary><code>system_id</code> Format: <code>String</code></summary>
 
-
 Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager.
+
 
 </details>
 
@@ -337,8 +337,8 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 <summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
-
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+
 
 </details>
 
@@ -346,8 +346,8 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 <summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
-
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+
 
 </details>
 
@@ -355,8 +355,8 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
-
 Date and time at which the event was created.
+
 
 </details>
 
@@ -364,8 +364,8 @@ Date and time at which the event was created.
 
 <summary><code>event_id</code> Format: <code>UUID</code></summary>
 
-
 ID of the event.
+
 
 </details>
 
@@ -380,8 +380,8 @@ ID of the event.
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
-
 Date and time at which the event occurred.
+
 
 </details>
 
@@ -389,8 +389,8 @@ Date and time at which the event occurred.
 
 <summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
-
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
 
 </details>
 
@@ -404,8 +404,8 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 <summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
-
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+
 
 </details>
 
@@ -413,8 +413,8 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 <summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
-
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+
 
 </details>
 
@@ -422,8 +422,8 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
-
 Date and time at which the event was created.
+
 
 </details>
 
@@ -431,8 +431,8 @@ Date and time at which the event was created.
 
 <summary><code>event_id</code> Format: <code>UUID</code></summary>
 
-
 ID of the event.
+
 
 </details>
 
@@ -447,8 +447,8 @@ ID of the event.
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
-
 Date and time at which the event occurred.
+
 
 </details>
 
@@ -456,8 +456,8 @@ Date and time at which the event occurred.
 
 <summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
-
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
 
 </details>
 
@@ -471,8 +471,8 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 <summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
-
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+
 
 </details>
 
@@ -480,8 +480,8 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 <summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
-
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+
 
 </details>
 
@@ -489,8 +489,8 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
-
 Date and time at which the event was created.
+
 
 </details>
 
@@ -498,8 +498,8 @@ Date and time at which the event was created.
 
 <summary><code>event_id</code> Format: <code>UUID</code></summary>
 
-
 ID of the event.
+
 
 </details>
 
@@ -514,8 +514,8 @@ ID of the event.
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
-
 Date and time at which the event occurred.
+
 
 </details>
 
@@ -523,8 +523,8 @@ Date and time at which the event occurred.
 
 <summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
-
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
 
 </details>
 
