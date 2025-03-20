@@ -14,17 +14,6 @@ Possible enum values:
 {{/each}}
 
 {{/if}}
-{{#unless (eq objectProperties undefined)}}
-{{#if (eq objectProperties.length 0)}}
-
-This object has no properties.
-{{else}}
-{{#each objectProperties}}
-
-{{> property-nested this}}
-{{/each}}
-{{/if}}
-{{/unless}}
 {{#if listProperties}}
 {{#each listProperties}}
 

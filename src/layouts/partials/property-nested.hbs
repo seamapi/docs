@@ -1,17 +1,6 @@
 **<code>{{name}}</code>** Format: <code>{{format}}</code>{{#if listItemFormat}} Item format: <code>{{listItemFormat}}</code>{{/if}}
 {{> property-nested-internal}}
 
-{{#unless (eq objectProperties undefined)}}
-{{#if (eq objectProperties.length 0)}}
-
-This object has no properties.
-{{else}}
-{{#each objectProperties}}
-
-{{> property-nested this}}
-{{/each}}
-{{/if}}
-{{/unless}}
 {{#if listProperties}}
 {{#each listProperties}}
 
