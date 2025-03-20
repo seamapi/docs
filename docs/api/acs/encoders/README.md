@@ -48,7 +48,9 @@ Errors associated with the [encoder](../../../capability-guides/access-systems/w
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
+
 Date and time at which Seam created the error.
+
 
 </details>
 
@@ -56,7 +58,9 @@ Date and time at which Seam created the error.
 
 <summary><code>error_code</code> Format: <code>String</code></summary>
 
+
 Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
 
 </details>
 
@@ -64,7 +68,9 @@ Unique identifier of the type of error. Enables quick recognition and categoriza
 
 <summary><code>message</code> Format: <code>String</code></summary>
 
+
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
 
 </details>
 
@@ -102,7 +108,9 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 
 <summary><code>acs_encoder_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+
 
 </details>
 
@@ -110,7 +118,9 @@ ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-c
 
 <summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+
 
 </details>
 
@@ -118,7 +128,9 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 <summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+
 
 </details>
 
@@ -126,7 +138,9 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
+
 Date and time at which the event was created.
+
 
 </details>
 
@@ -134,7 +148,9 @@ Date and time at which the event was created.
 
 <summary><code>event_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the event.
+
 
 </details>
 
@@ -142,13 +158,17 @@ ID of the event.
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
+
 Date and time at which the event occurred.
+
 
 </details>
 
@@ -156,7 +176,9 @@ Date and time at which the event occurred.
 
 <summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
 
 </details>
 
@@ -170,7 +192,9 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 
 <summary><code>acs_encoder_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+
 
 </details>
 
@@ -178,7 +202,9 @@ ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-c
 
 <summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+
 
 </details>
 
@@ -186,7 +212,9 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 <summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+
 
 </details>
 
@@ -194,7 +222,9 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
+
 Date and time at which the event was created.
+
 
 </details>
 
@@ -202,7 +232,9 @@ Date and time at which the event was created.
 
 <summary><code>event_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the event.
+
 
 </details>
 
@@ -210,13 +242,17 @@ ID of the event.
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
+
 Date and time at which the event occurred.
+
 
 </details>
 
@@ -224,7 +260,9 @@ Date and time at which the event occurred.
 
 <summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
 
 </details>
 

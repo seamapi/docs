@@ -60,11 +60,15 @@ Errors associated with the `phone`.
 
 <summary><code>error_code</code> Format: <code>String</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>message</code> Format: <code>String</code></summary>
+
+
 
 </details>
 
@@ -88,7 +92,33 @@ Properties of the phone.
 
 <summary><code>assa_abloy_credential_service_metadata</code> Format: <code>Object</code></summary>
 
+
 ASSA ABLOY Credential Service metadata for the phone.
+
+
+**<code>endpoints</code>** Format: <code>List</code> Item format: <code>Object</code>
+
+Endpoints associated with the phone.
+
+
+
+**<code>endpoint_id</code>** Format: <code>String</code>
+
+ID of the associated endpoint.
+
+
+
+**<code>is_active</code>** Format: <code>Boolean</code>
+
+Indicated whether the endpoint is active.
+
+
+
+**<code>has_active_endpoint</code>** Format: <code>Boolean</code>
+
+Indicates whether the credential service has active endpoints associated with the phone.
+
+
 
 </details>
 
@@ -96,31 +126,31 @@ ASSA ABLOY Credential Service metadata for the phone.
 
 <summary><code>assa_abloy_credential_service_metadata.endpoints</code> Format: <code>List</code> Item format: <code>Object</code></summary>
 
+
 Endpoints associated with the phone.
 
 
-<details>
-
-<summary><code>endpoint_id</code> Format: <code>String</code></summary>
+**<code>endpoint_id</code>** Format: <code>String</code>
 
 ID of the associated endpoint.
 
-</details>
 
-<details>
 
-<summary><code>is_active</code> Format: <code>Boolean</code></summary>
+**<code>is_active</code>** Format: <code>Boolean</code>
 
 Indicated whether the endpoint is active.
 
-</details>
+
+
 </details>
 
 <details>
 
 <summary><code>assa_abloy_credential_service_metadata.has_active_endpoint</code> Format: <code>Boolean</code></summary>
 
+
 Indicates whether the credential service has active endpoints associated with the phone.
+
 
 </details>
 
@@ -128,7 +158,15 @@ Indicates whether the credential service has active endpoints associated with th
 
 <summary><code>salto_space_credential_service_metadata</code> Format: <code>Object</code></summary>
 
+
 Salto Space credential service metadata for the phone.
+
+
+**<code>has_active_phone</code>** Format: <code>Boolean</code>
+
+Indicates whether the credential service has an active associated phone.
+
+
 
 </details>
 
@@ -136,7 +174,9 @@ Salto Space credential service metadata for the phone.
 
 <summary><code>salto_space_credential_service_metadata.has_active_phone</code> Format: <code>Boolean</code></summary>
 
+
 Indicates whether the credential service has an active associated phone.
+
 
 </details>
 
@@ -154,11 +194,15 @@ Warnings associated with the `phone`.
 
 <summary><code>message</code> Format: <code>String</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>warning_code</code> Format: <code>String</code></summary>
+
+
 
 </details>
 
@@ -196,7 +240,9 @@ A phone device was deactivated.
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
+
 Date and time at which the event was created.
+
 
 </details>
 
@@ -204,7 +250,9 @@ Date and time at which the event was created.
 
 <summary><code>device_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [device](../../core-concepts/devices/README.md).
+
 
 </details>
 
@@ -212,7 +260,9 @@ ID of the [device](../../core-concepts/devices/README.md).
 
 <summary><code>event_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the event.
+
 
 </details>
 
@@ -220,13 +270,17 @@ ID of the event.
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
+
 Date and time at which the event occurred.
+
 
 </details>
 
@@ -234,7 +288,9 @@ Date and time at which the event occurred.
 
 <summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [workspace](../../core-concepts/workspaces/README.md).
+
 
 </details>
 

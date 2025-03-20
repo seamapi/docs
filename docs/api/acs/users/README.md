@@ -14,7 +14,9 @@ Format: `Object`
 
 <summary><code>ends_at</code> Format: <code>Datetime</code></summary>
 
+
 Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+
 
 </details>
 
@@ -22,7 +24,9 @@ Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org
 
 <summary><code>starts_at</code> Format: <code>Datetime</code></summary>
 
+
 Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+
 
 </details>
 
@@ -299,7 +303,9 @@ An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-
 
 <summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+
 
 </details>
 
@@ -307,13 +313,17 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 <summary><code>acs_user_id</code> Format: <code>UUID</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+
 
 </details>
 
@@ -321,7 +331,9 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
+
 Date and time at which the event was created.
+
 
 </details>
 
@@ -329,7 +341,9 @@ Date and time at which the event was created.
 
 <summary><code>event_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the event.
+
 
 </details>
 
@@ -337,13 +351,17 @@ ID of the event.
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
+
 Date and time at which the event occurred.
+
 
 </details>
 
@@ -351,7 +369,9 @@ Date and time at which the event occurred.
 
 <summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
 
 </details>
 

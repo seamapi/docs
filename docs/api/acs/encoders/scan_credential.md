@@ -53,16 +53,20 @@ Format: `Object`
 
 <summary><code>message</code> Format: <code>String</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>type</code> Format: <code>Enum</code></summary>
 
+
 Possible enum values:
 - `uncategorized_error`
 - `action_attempt_expired`
 - `no_credential_on_encoder`
+
 
 </details>
 
@@ -76,67 +80,52 @@ Format: `Object`
 
 <summary><code>acs_credential_on_encoder</code> Format: <code>Object</code></summary>
 
+
 Snapshot of credential data read from physical encoder.
 
-</details>
 
-<details>
-
-<summary><code>acs_credential_on_encoder.card_number</code> Format: <code>String</code></summary>
+**<code>card_number</code>** Format: <code>String</code>
 
 A number or string that physically identifies the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_encoder.created_at</code> Format: <code>Datetime</code></summary>
+**<code>created_at</code>** Format: <code>Datetime</code>
 
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) was created.
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_encoder.ends_at</code> Format: <code>Datetime</code></summary>
+**<code>ends_at</code>** Format: <code>Datetime</code>
 
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) will stop being usable.
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_encoder.is_issued</code> Format: <code>Boolean</code></summary>
+**<code>is_issued</code>** Format: <code>Boolean</code>
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_encoder.starts_at</code> Format: <code>Datetime</code></summary>
+
+**<code>starts_at</code>** Format: <code>Datetime</code>
 
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) becomes usable.
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_encoder.visionline_metadata</code> Format: <code>Object</code></summary>
+**<code>visionline_metadata</code>** Format: <code>Object</code>
 
 Visionline-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_encoder.visionline_metadata.cancelled</code> Format: <code>Boolean</code></summary>
+**<code>cancelled</code>** Format: <code>Boolean</code>
 
 Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is cancelled.
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_encoder.visionline_metadata.card_format</code> Format: <code>Enum</code></summary>
+**<code>card_format</code>** Format: <code>Enum</code>
 
 Format of the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -144,13 +133,308 @@ Possible enum values:
 - `TLCode`
 - `rfid48`
 
+
+**<code>card_holder</code>** Format: <code>String</code>
+
+Holden of the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+
+**<code>card_id</code>** Format: <code>String</code>
+
+Card ID for the Visionline card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+
+**<code>common_acs_entrance_ids</code>** Format: <code>List</code> Item format: <code>UUID</code>
+
+IDs of the common [entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md) for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+
+**<code>discarded</code>** Format: <code>Boolean</code>
+
+Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is discarded.
+
+
+
+**<code>expired</code>** Format: <code>Boolean</code>
+
+Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is expired.
+
+
+
+**<code>guest_acs_entrance_ids</code>** Format: <code>List</code> Item format: <code>UUID</code>
+
+IDs of the guest [entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md) for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+
+**<code>number_of_issued_cards</code>** Format: <code>Number</code>
+
+Number of issued cards associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+
+**<code>overridden</code>** Format: <code>Boolean</code>
+
+Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is overridden.
+
+
+
+**<code>overwritten</code>** Format: <code>Boolean</code>
+
+Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is overwritten.
+
+
+
+**<code>pending_auto_update</code>** Format: <code>Boolean</code>
+
+Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is pending auto-update.
+
+
+
+**<code>visionline_metadata.cancelled</code>** Format: <code>Boolean</code>
+
+Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is cancelled.
+
+
+
+**<code>visionline_metadata.card_format</code>** Format: <code>Enum</code>
+
+Format of the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+Possible enum values:
+- `TLCode`
+- `rfid48`
+
+
+**<code>visionline_metadata.card_holder</code>** Format: <code>String</code>
+
+Holden of the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+
+**<code>visionline_metadata.card_id</code>** Format: <code>String</code>
+
+Card ID for the Visionline card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+
+**<code>visionline_metadata.common_acs_entrance_ids</code>** Format: <code>List</code> Item format: <code>UUID</code>
+
+IDs of the common [entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md) for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+
+**<code>visionline_metadata.discarded</code>** Format: <code>Boolean</code>
+
+Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is discarded.
+
+
+
+**<code>visionline_metadata.expired</code>** Format: <code>Boolean</code>
+
+Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is expired.
+
+
+
+**<code>visionline_metadata.guest_acs_entrance_ids</code>** Format: <code>List</code> Item format: <code>UUID</code>
+
+IDs of the guest [entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md) for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+
+**<code>visionline_metadata.number_of_issued_cards</code>** Format: <code>Number</code>
+
+Number of issued cards associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+
+**<code>visionline_metadata.overridden</code>** Format: <code>Boolean</code>
+
+Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is overridden.
+
+
+
+**<code>visionline_metadata.overwritten</code>** Format: <code>Boolean</code>
+
+Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is overwritten.
+
+
+
+**<code>visionline_metadata.pending_auto_update</code>** Format: <code>Boolean</code>
+
+Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is pending auto-update.
+
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.card_number</code> Format: <code>String</code></summary>
+
+
+A number or string that physically identifies the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.created_at</code> Format: <code>Datetime</code></summary>
+
+
+Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) was created.
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.ends_at</code> Format: <code>Datetime</code></summary>
+
+
+Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) will stop being usable.
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.is_issued</code> Format: <code>Boolean</code></summary>
+
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.starts_at</code> Format: <code>Datetime</code></summary>
+
+
+Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) becomes usable.
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.visionline_metadata</code> Format: <code>Object</code></summary>
+
+
+Visionline-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+**<code>cancelled</code>** Format: <code>Boolean</code>
+
+Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is cancelled.
+
+
+
+**<code>card_format</code>** Format: <code>Enum</code>
+
+Format of the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+Possible enum values:
+- `TLCode`
+- `rfid48`
+
+
+**<code>card_holder</code>** Format: <code>String</code>
+
+Holden of the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+
+**<code>card_id</code>** Format: <code>String</code>
+
+Card ID for the Visionline card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+
+**<code>common_acs_entrance_ids</code>** Format: <code>List</code> Item format: <code>UUID</code>
+
+IDs of the common [entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md) for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+
+**<code>discarded</code>** Format: <code>Boolean</code>
+
+Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is discarded.
+
+
+
+**<code>expired</code>** Format: <code>Boolean</code>
+
+Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is expired.
+
+
+
+**<code>guest_acs_entrance_ids</code>** Format: <code>List</code> Item format: <code>UUID</code>
+
+IDs of the guest [entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md) for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+
+**<code>number_of_issued_cards</code>** Format: <code>Number</code>
+
+Number of issued cards associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+
+**<code>overridden</code>** Format: <code>Boolean</code>
+
+Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is overridden.
+
+
+
+**<code>overwritten</code>** Format: <code>Boolean</code>
+
+Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is overwritten.
+
+
+
+**<code>pending_auto_update</code>** Format: <code>Boolean</code>
+
+Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is pending auto-update.
+
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.visionline_metadata.cancelled</code> Format: <code>Boolean</code></summary>
+
+
+Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is cancelled.
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_encoder.visionline_metadata.card_format</code> Format: <code>Enum</code></summary>
+
+
+Format of the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+Possible enum values:
+- `TLCode`
+- `rfid48`
+
+
 </details>
 
 <details>
 
 <summary><code>acs_credential_on_encoder.visionline_metadata.card_holder</code> Format: <code>String</code></summary>
 
+
 Holden of the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
 
 </details>
 
@@ -158,7 +442,9 @@ Holden of the card associated with the [credential](../../../capability-guides/a
 
 <summary><code>acs_credential_on_encoder.visionline_metadata.card_id</code> Format: <code>String</code></summary>
 
+
 Card ID for the Visionline card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
 
 </details>
 
@@ -166,7 +452,9 @@ Card ID for the Visionline card associated with the [credential](../../../capabi
 
 <summary><code>acs_credential_on_encoder.visionline_metadata.common_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
 
+
 IDs of the common [entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md) for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
 
 </details>
 
@@ -174,7 +462,9 @@ IDs of the common [entrances](../../../capability-guides/access-systems/retrievi
 
 <summary><code>acs_credential_on_encoder.visionline_metadata.discarded</code> Format: <code>Boolean</code></summary>
 
+
 Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is discarded.
+
 
 </details>
 
@@ -182,7 +472,9 @@ Indicates whether the card associated with the [credential](../../../capability-
 
 <summary><code>acs_credential_on_encoder.visionline_metadata.expired</code> Format: <code>Boolean</code></summary>
 
+
 Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is expired.
+
 
 </details>
 
@@ -190,7 +482,9 @@ Indicates whether the card associated with the [credential](../../../capability-
 
 <summary><code>acs_credential_on_encoder.visionline_metadata.guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
 
+
 IDs of the guest [entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md) for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
 
 </details>
 
@@ -198,7 +492,9 @@ IDs of the guest [entrances](../../../capability-guides/access-systems/retrievin
 
 <summary><code>acs_credential_on_encoder.visionline_metadata.number_of_issued_cards</code> Format: <code>Number</code></summary>
 
+
 Number of issued cards associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
 
 </details>
 
@@ -206,7 +502,9 @@ Number of issued cards associated with the [credential](../../../capability-guid
 
 <summary><code>acs_credential_on_encoder.visionline_metadata.overridden</code> Format: <code>Boolean</code></summary>
 
+
 Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is overridden.
+
 
 </details>
 
@@ -214,7 +512,9 @@ Indicates whether the card associated with the [credential](../../../capability-
 
 <summary><code>acs_credential_on_encoder.visionline_metadata.overwritten</code> Format: <code>Boolean</code></summary>
 
+
 Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is overwritten.
+
 
 </details>
 
@@ -222,7 +522,9 @@ Indicates whether the card associated with the [credential](../../../capability-
 
 <summary><code>acs_credential_on_encoder.visionline_metadata.pending_auto_update</code> Format: <code>Boolean</code></summary>
 
+
 Indicates whether the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md) is pending auto-update.
+
 
 </details>
 
@@ -230,13 +532,11 @@ Indicates whether the card associated with the [credential](../../../capability-
 
 <summary><code>acs_credential_on_seam</code> Format: <code>Object</code></summary>
 
+
 Matching acs_credential currently encoded on this card.
 
-</details>
 
-<details>
-
-<summary><code>acs_credential_on_seam.access_method</code> Format: <code>Enum</code></summary>
+**<code>access_method</code>** Format: <code>Enum</code>
 
 Access method for the [credential](../../../capability-guides/access-systems/managing-credentials.md). Supported values: `code`, `card`, `mobile_key`.
 
@@ -245,139 +545,133 @@ Possible enum values:
 - `card`
 - `mobile_key`
 
-</details>
 
-<details>
-
-<summary><code>acs_credential_on_seam.acs_credential_id</code> Format: <code>UUID</code></summary>
+**<code>acs_credential_id</code>** Format: <code>UUID</code>
 
 ID of the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.acs_credential_pool_id</code> Format: <code>UUID</code></summary>
+**<code>acs_credential_pool_id</code>** Format: <code>UUID</code>
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.acs_system_id</code> Format: <code>UUID</code></summary>
+
+**<code>acs_system_id</code>** Format: <code>UUID</code>
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.acs_user_id</code> Format: <code>UUID</code></summary>
+**<code>acs_user_id</code>** Format: <code>UUID</code>
 
 ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](../../../capability-guides/access-systems/managing-credentials.md) belongs.
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.assa_abloy_vostio_metadata</code> Format: <code>Object</code></summary>
+**<code>assa_abloy_vostio_metadata</code>** Format: <code>Object</code>
 
 Vostio-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.assa_abloy_vostio_metadata.door_names</code> Format: <code>List</code> Item format: <code>String</code></summary>
+**<code>door_names</code>** Format: <code>List</code> Item format: <code>String</code>
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.assa_abloy_vostio_metadata.endpoint_id</code> Format: <code>String</code></summary>
 
-</details>
+**<code>endpoint_id</code>** Format: <code>String</code>
 
-<details>
 
-<summary><code>acs_credential_on_seam.assa_abloy_vostio_metadata.key_id</code> Format: <code>String</code></summary>
 
-</details>
 
-<details>
+**<code>key_id</code>** Format: <code>String</code>
 
-<summary><code>acs_credential_on_seam.assa_abloy_vostio_metadata.key_issuing_request_id</code> Format: <code>String</code></summary>
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.assa_abloy_vostio_metadata.override_guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>String</code></summary>
+**<code>key_issuing_request_id</code>** Format: <code>String</code>
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.card_number</code> Format: <code>String</code></summary>
+
+**<code>override_guest_acs_entrance_ids</code>** Format: <code>List</code> Item format: <code>String</code>
+
+
+
+
+**<code>assa_abloy_vostio_metadata.door_names</code>** Format: <code>List</code> Item format: <code>String</code>
+
+
+
+
+**<code>assa_abloy_vostio_metadata.endpoint_id</code>** Format: <code>String</code>
+
+
+
+
+**<code>assa_abloy_vostio_metadata.key_id</code>** Format: <code>String</code>
+
+
+
+
+**<code>assa_abloy_vostio_metadata.key_issuing_request_id</code>** Format: <code>String</code>
+
+
+
+
+**<code>assa_abloy_vostio_metadata.override_guest_acs_entrance_ids</code>** Format: <code>List</code> Item format: <code>String</code>
+
+
+
+
+**<code>card_number</code>** Format: <code>String</code>
 
 Number of the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.code</code> Format: <code>String</code></summary>
+**<code>code</code>** Format: <code>String</code>
 
 Access (PIN) code for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.created_at</code> Format: <code>Datetime</code></summary>
+**<code>created_at</code>** Format: <code>Datetime</code>
 
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) was created.
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.display_name</code> Format: <code>String</code></summary>
+**<code>display_name</code>** Format: <code>String</code>
 
 Display name that corresponds to the [credential](../../../capability-guides/access-systems/managing-credentials.md) type.
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.ends_at</code> Format: <code>String</code></summary>
+**<code>ends_at</code>** Format: <code>String</code>
 
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.errors</code> Format: <code>List</code> Item format: <code>Object</code></summary>
+**<code>errors</code>** Format: <code>List</code> Item format: <code>Object</code>
 
 Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
-<details>
 
-<summary><code>error_code</code> Format: <code>String</code></summary>
+**<code>error_code</code>** Format: <code>String</code>
 
-</details>
 
-<details>
 
-<summary><code>message</code> Format: <code>String</code></summary>
 
-</details>
-</details>
+**<code>message</code>** Format: <code>String</code>
 
-<details>
 
-<summary><code>acs_credential_on_seam.external_type</code> Format: <code>Enum</code></summary>
+
+
+**<code>external_type</code>** Format: <code>Enum</code>
 
 Brand-specific terminology for the [credential](../../../capability-guides/access-systems/managing-credentials.md) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.
 
@@ -390,172 +684,177 @@ Possible enum values:
 - `assa_abloy_vostio_key`
 - `salto_space_key`
 
-</details>
 
-<details>
-
-<summary><code>acs_credential_on_seam.external_type_display_name</code> Format: <code>String</code></summary>
+**<code>external_type_display_name</code>** Format: <code>String</code>
 
 Display name that corresponds to the brand-specific terminology for the [credential](../../../capability-guides/access-systems/managing-credentials.md) type.
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.is_issued</code> Format: <code>Boolean</code></summary>
+**<code>is_issued</code>** Format: <code>Boolean</code>
 
 Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) has been encoded onto a card.
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.is_latest_desired_state_synced_with_provider</code> Format: <code>Boolean</code></summary>
+**<code>is_latest_desired_state_synced_with_provider</code>** Format: <code>Boolean</code>
 
 Indicates whether the latest state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) has been synced from Seam to the provider.
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.is_managed</code> Format: <code>Boolean</code></summary>
+**<code>is_managed</code>** Format: <code>Boolean</code>
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.is_multi_phone_sync_credential</code> Format: <code>Boolean</code></summary>
+
+**<code>is_multi_phone_sync_credential</code>** Format: <code>Boolean</code>
 
 Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.is_one_time_use</code> Format: <code>Boolean</code></summary>
+**<code>is_one_time_use</code>** Format: <code>Boolean</code>
 
 Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) can only be used once. If `true`, the code becomes invalid after the first use.
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.issued_at</code> Format: <code>Datetime</code></summary>
+**<code>issued_at</code>** Format: <code>Datetime</code>
 
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) was encoded onto a card.
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.latest_desired_state_synced_with_provider_at</code> Format: <code>Datetime</code></summary>
+**<code>latest_desired_state_synced_with_provider_at</code>** Format: <code>Datetime</code>
 
 Date and time at which the state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) was most recently synced from Seam to the provider.
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.parent_acs_credential_id</code> Format: <code>UUID</code></summary>
+**<code>parent_acs_credential_id</code>** Format: <code>UUID</code>
 
 ID of the parent [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.starts_at</code> Format: <code>String</code></summary>
+**<code>starts_at</code>** Format: <code>String</code>
 
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.visionline_metadata</code> Format: <code>Object</code></summary>
+**<code>visionline_metadata</code>** Format: <code>Object</code>
 
 Visionline-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.visionline_metadata.auto_join</code> Format: <code>Boolean</code></summary>
+**<code>auto_join</code>** Format: <code>Boolean</code>
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.visionline_metadata.card_function_type</code> Format: <code>Enum</code></summary>
+
+**<code>card_function_type</code>** Format: <code>Enum</code>
+
 
 Possible enum values:
 - `guest`
 - `staff`
 
-</details>
 
-<details>
+**<code>card_id</code>** Format: <code>String</code>
 
-<summary><code>acs_credential_on_seam.visionline_metadata.card_id</code> Format: <code>String</code></summary>
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.visionline_metadata.common_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
+**<code>common_acs_entrance_ids</code>** Format: <code>List</code> Item format: <code>UUID</code>
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.visionline_metadata.credential_id</code> Format: <code>String</code></summary>
 
-</details>
+**<code>credential_id</code>** Format: <code>String</code>
 
-<details>
 
-<summary><code>acs_credential_on_seam.visionline_metadata.guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
 
-</details>
 
-<details>
+**<code>guest_acs_entrance_ids</code>** Format: <code>List</code> Item format: <code>UUID</code>
 
-<summary><code>acs_credential_on_seam.visionline_metadata.is_valid</code> Format: <code>Boolean</code></summary>
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.visionline_metadata.joiner_acs_credential_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
+**<code>is_valid</code>** Format: <code>Boolean</code>
 
-</details>
 
-<details>
 
-<summary><code>acs_credential_on_seam.warnings</code> Format: <code>List</code> Item format: <code>Object</code></summary>
+
+**<code>joiner_acs_credential_ids</code>** Format: <code>List</code> Item format: <code>UUID</code>
+
+
+
+
+**<code>visionline_metadata.auto_join</code>** Format: <code>Boolean</code>
+
+
+
+
+**<code>visionline_metadata.card_function_type</code>** Format: <code>Enum</code>
+
+
+Possible enum values:
+- `guest`
+- `staff`
+
+
+**<code>visionline_metadata.card_id</code>** Format: <code>String</code>
+
+
+
+
+**<code>visionline_metadata.common_acs_entrance_ids</code>** Format: <code>List</code> Item format: <code>UUID</code>
+
+
+
+
+**<code>visionline_metadata.credential_id</code>** Format: <code>String</code>
+
+
+
+
+**<code>visionline_metadata.guest_acs_entrance_ids</code>** Format: <code>List</code> Item format: <code>UUID</code>
+
+
+
+
+**<code>visionline_metadata.is_valid</code>** Format: <code>Boolean</code>
+
+
+
+
+**<code>visionline_metadata.joiner_acs_credential_ids</code>** Format: <code>List</code> Item format: <code>UUID</code>
+
+
+
+
+**<code>warnings</code>** Format: <code>List</code> Item format: <code>Object</code>
 
 Warnings associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
-<details>
 
-<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+**<code>created_at</code>** Format: <code>Datetime</code>
 
 Date and time at which Seam created the warning.
 
-</details>
 
-<details>
 
-<summary><code>message</code> Format: <code>String</code></summary>
+**<code>message</code>** Format: <code>String</code>
 
 Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
 
-</details>
 
-<details>
 
-<summary><code>warning_code</code> Format: <code>Enum</code></summary>
+**<code>warning_code</code>** Format: <code>Enum</code>
 
 Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
 
@@ -567,14 +866,493 @@ Possible enum values:
 - `unknown_issue_with_acs_credential`
 - `needs_to_be_reissued`
 
+
+**<code>workspace_id</code>** Format: <code>UUID</code>
+
+ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+
 </details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.access_method</code> Format: <code>Enum</code></summary>
+
+
+Access method for the [credential](../../../capability-guides/access-systems/managing-credentials.md). Supported values: `code`, `card`, `mobile_key`.
+
+Possible enum values:
+- `code`
+- `card`
+- `mobile_key`
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.acs_credential_id</code> Format: <code>UUID</code></summary>
+
+
+ID of the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.acs_credential_pool_id</code> Format: <code>UUID</code></summary>
+
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.acs_system_id</code> Format: <code>UUID</code></summary>
+
+
+ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.acs_user_id</code> Format: <code>UUID</code></summary>
+
+
+ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](../../../capability-guides/access-systems/managing-credentials.md) belongs.
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.assa_abloy_vostio_metadata</code> Format: <code>Object</code></summary>
+
+
+Vostio-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+**<code>door_names</code>** Format: <code>List</code> Item format: <code>String</code>
+
+
+
+
+**<code>endpoint_id</code>** Format: <code>String</code>
+
+
+
+
+**<code>key_id</code>** Format: <code>String</code>
+
+
+
+
+**<code>key_issuing_request_id</code>** Format: <code>String</code>
+
+
+
+
+**<code>override_guest_acs_entrance_ids</code>** Format: <code>List</code> Item format: <code>String</code>
+
+
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.assa_abloy_vostio_metadata.door_names</code> Format: <code>List</code> Item format: <code>String</code></summary>
+
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.assa_abloy_vostio_metadata.endpoint_id</code> Format: <code>String</code></summary>
+
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.assa_abloy_vostio_metadata.key_id</code> Format: <code>String</code></summary>
+
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.assa_abloy_vostio_metadata.key_issuing_request_id</code> Format: <code>String</code></summary>
+
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.assa_abloy_vostio_metadata.override_guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>String</code></summary>
+
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.card_number</code> Format: <code>String</code></summary>
+
+
+Number of the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.code</code> Format: <code>String</code></summary>
+
+
+Access (PIN) code for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.created_at</code> Format: <code>Datetime</code></summary>
+
+
+Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) was created.
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.display_name</code> Format: <code>String</code></summary>
+
+
+Display name that corresponds to the [credential](../../../capability-guides/access-systems/managing-credentials.md) type.
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.ends_at</code> Format: <code>String</code></summary>
+
+
+Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.errors</code> Format: <code>List</code> Item format: <code>Object</code></summary>
+
+
+Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+**<code>error_code</code>** Format: <code>String</code>
+
+
+
+
+**<code>message</code>** Format: <code>String</code>
+
+
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.external_type</code> Format: <code>Enum</code></summary>
+
+
+Brand-specific terminology for the [credential](../../../capability-guides/access-systems/managing-credentials.md) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.
+
+Possible enum values:
+- `pti_card`
+- `brivo_credential`
+- `hid_credential`
+- `visionline_card`
+- `salto_ks_credential`
+- `assa_abloy_vostio_key`
+- `salto_space_key`
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.external_type_display_name</code> Format: <code>String</code></summary>
+
+
+Display name that corresponds to the brand-specific terminology for the [credential](../../../capability-guides/access-systems/managing-credentials.md) type.
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.is_issued</code> Format: <code>Boolean</code></summary>
+
+
+Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) has been encoded onto a card.
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.is_latest_desired_state_synced_with_provider</code> Format: <code>Boolean</code></summary>
+
+
+Indicates whether the latest state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) has been synced from Seam to the provider.
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.is_managed</code> Format: <code>Boolean</code></summary>
+
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.is_multi_phone_sync_credential</code> Format: <code>Boolean</code></summary>
+
+
+Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.is_one_time_use</code> Format: <code>Boolean</code></summary>
+
+
+Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) can only be used once. If `true`, the code becomes invalid after the first use.
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.issued_at</code> Format: <code>Datetime</code></summary>
+
+
+Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) was encoded onto a card.
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.latest_desired_state_synced_with_provider_at</code> Format: <code>Datetime</code></summary>
+
+
+Date and time at which the state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) was most recently synced from Seam to the provider.
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.parent_acs_credential_id</code> Format: <code>UUID</code></summary>
+
+
+ID of the parent [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.starts_at</code> Format: <code>String</code></summary>
+
+
+Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.visionline_metadata</code> Format: <code>Object</code></summary>
+
+
+Visionline-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+**<code>auto_join</code>** Format: <code>Boolean</code>
+
+
+
+
+**<code>card_function_type</code>** Format: <code>Enum</code>
+
+
+Possible enum values:
+- `guest`
+- `staff`
+
+
+**<code>card_id</code>** Format: <code>String</code>
+
+
+
+
+**<code>common_acs_entrance_ids</code>** Format: <code>List</code> Item format: <code>UUID</code>
+
+
+
+
+**<code>credential_id</code>** Format: <code>String</code>
+
+
+
+
+**<code>guest_acs_entrance_ids</code>** Format: <code>List</code> Item format: <code>UUID</code>
+
+
+
+
+**<code>is_valid</code>** Format: <code>Boolean</code>
+
+
+
+
+**<code>joiner_acs_credential_ids</code>** Format: <code>List</code> Item format: <code>UUID</code>
+
+
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.visionline_metadata.auto_join</code> Format: <code>Boolean</code></summary>
+
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.visionline_metadata.card_function_type</code> Format: <code>Enum</code></summary>
+
+
+Possible enum values:
+- `guest`
+- `staff`
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.visionline_metadata.card_id</code> Format: <code>String</code></summary>
+
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.visionline_metadata.common_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
+
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.visionline_metadata.credential_id</code> Format: <code>String</code></summary>
+
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.visionline_metadata.guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
+
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.visionline_metadata.is_valid</code> Format: <code>Boolean</code></summary>
+
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.visionline_metadata.joiner_acs_credential_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
+
+
+
+</details>
+
+<details>
+
+<summary><code>acs_credential_on_seam.warnings</code> Format: <code>List</code> Item format: <code>Object</code></summary>
+
+
+Warnings associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+**<code>created_at</code>** Format: <code>Datetime</code>
+
+Date and time at which Seam created the warning.
+
+
+
+**<code>message</code>** Format: <code>String</code>
+
+Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+
+
+**<code>warning_code</code>** Format: <code>Enum</code>
+
+Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
+Possible enum values:
+- `waiting_to_be_issued`
+- `schedule_externally_modified`
+- `schedule_modified`
+- `being_deleted`
+- `unknown_issue_with_acs_credential`
+- `needs_to_be_reissued`
+
+
 </details>
 
 <details>
 
 <summary><code>acs_credential_on_seam.workspace_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
 
 </details>
 
@@ -583,21 +1361,20 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 <summary><code>warnings</code> Format: <code>List</code> Item format: <code>Object</code></summary>
 
 
-<details>
 
-<summary><code>warning_code</code> Format: <code>Enum</code></summary>
+**<code>warning_code</code>** Format: <code>Enum</code>
+
 
 Possible enum values:
 - `acs_credential_on_encoder_out_of_sync`
 - `acs_credential_on_seam_not_found`
 
-</details>
 
-<details>
+**<code>warning_message</code>** Format: <code>String</code>
 
-<summary><code>warning_message</code> Format: <code>String</code></summary>
 
-</details>
+
+
 </details>
 
 ---

@@ -204,11 +204,15 @@ Format: `Object`
 
 <summary><code>message</code> Format: <code>String</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>type</code> Format: <code>String</code></summary>
+
+
 
 </details>
 

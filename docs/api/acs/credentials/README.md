@@ -57,11 +57,15 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 <summary><code>door_names</code> Format: <code>List</code> Item format: <code>String</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>endpoint_id</code> Format: <code>String</code></summary>
+
+
 
 </details>
 
@@ -69,17 +73,23 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 <summary><code>key_id</code> Format: <code>String</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>key_issuing_request_id</code> Format: <code>String</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>override_guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>String</code></summary>
+
+
 
 </details>
 
@@ -137,11 +147,15 @@ Errors associated with the [credential](../../../capability-guides/access-system
 
 <summary><code>error_code</code> Format: <code>String</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>message</code> Format: <code>String</code></summary>
+
+
 
 </details>
 
@@ -252,15 +266,19 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 
 <summary><code>auto_join</code> Format: <code>Boolean</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>card_function_type</code> Format: <code>Enum</code></summary>
 
+
 Possible enum values:
 - `guest`
 - `staff`
+
 
 </details>
 
@@ -268,11 +286,15 @@ Possible enum values:
 
 <summary><code>card_id</code> Format: <code>String</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>common_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
+
+
 
 </details>
 
@@ -280,11 +302,15 @@ Possible enum values:
 
 <summary><code>credential_id</code> Format: <code>String</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
+
+
 
 </details>
 
@@ -292,11 +318,15 @@ Possible enum values:
 
 <summary><code>is_valid</code> Format: <code>Boolean</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>joiner_acs_credential_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
+
+
 
 </details>
 
@@ -397,13 +427,17 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 <summary><code>acs_credential_id</code> Format: <code>UUID</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+
 
 </details>
 
@@ -411,7 +445,9 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 <summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+
 
 </details>
 
@@ -419,7 +455,9 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
+
 Date and time at which the event was created.
+
 
 </details>
 
@@ -427,7 +465,9 @@ Date and time at which the event was created.
 
 <summary><code>event_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the event.
+
 
 </details>
 
@@ -435,13 +475,17 @@ ID of the event.
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
+
 Date and time at which the event occurred.
+
 
 </details>
 
@@ -449,7 +493,9 @@ Date and time at which the event occurred.
 
 <summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
 
 </details>
 
@@ -463,13 +509,17 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 <summary><code>acs_credential_id</code> Format: <code>UUID</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+
 
 </details>
 
@@ -477,7 +527,9 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 <summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+
 
 </details>
 
@@ -485,7 +537,9 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
+
 Date and time at which the event was created.
+
 
 </details>
 
@@ -493,7 +547,9 @@ Date and time at which the event was created.
 
 <summary><code>event_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the event.
+
 
 </details>
 
@@ -501,13 +557,17 @@ ID of the event.
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
+
 Date and time at which the event occurred.
+
 
 </details>
 
@@ -515,7 +575,9 @@ Date and time at which the event occurred.
 
 <summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
 
 </details>
 
@@ -529,13 +591,17 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 <summary><code>acs_credential_id</code> Format: <code>UUID</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+
 
 </details>
 
@@ -543,7 +609,9 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 <summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+
 
 </details>
 
@@ -551,7 +619,9 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
+
 Date and time at which the event was created.
+
 
 </details>
 
@@ -559,7 +629,9 @@ Date and time at which the event was created.
 
 <summary><code>event_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the event.
+
 
 </details>
 
@@ -567,13 +639,17 @@ ID of the event.
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
 
+
+
 </details>
 
 <details>
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
+
 Date and time at which the event occurred.
+
 
 </details>
 
@@ -581,7 +657,9 @@ Date and time at which the event occurred.
 
 <summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
+
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
 
 </details>
 
