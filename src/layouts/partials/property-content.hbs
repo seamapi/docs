@@ -1,6 +1,3 @@
-<details>
-
-<summary><code>{{name}}</code> Format: <code>{{format}}</code>{{#if listItemFormat}} Item format: <code>{{listItemFormat}}</code>{{/if}}</summary>
 {{#if isDeprecated}}
 
 {{> deprecated-warning}}
@@ -17,10 +14,20 @@ Possible enum values:
 {{/each}}
 
 {{/if}}
+{{#unless (eq objectProperties undefined)}}
+{{#if (eq objectProperties.length 0)}}
+
+This object has no properties.
+{{else}}
+{{#each objectProperties}}
+
+{{> property-nested this}}
+{{/each}}
+{{/if}}
+{{/unless}}
 {{#if listProperties}}
 {{#each listProperties}}
 
-{{> property-details this}}
+{{> property-nested this}}
 {{/each}}
-{{/if}}
-</details>
+{{/if}} 
