@@ -22,7 +22,7 @@ Make sure that your computer meets the following requirements:
 Make sure that all locks meet the following requirements:
 
 * ASSA ABLOY online locks:
-  *   Bluetooth modules and licenses installed
+  *   Bluetooth modules installed
 
       See [Step 3: Confirm BLE Module on All Locks](step-3-confirm-ble-module-on-all-locks.md).
 
