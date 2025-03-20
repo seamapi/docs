@@ -16,7 +16,6 @@ Format: `Object`
 
 Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
-
 </details>
 
 <details>
@@ -24,7 +23,6 @@ Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org
 <summary><code>starts_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
-
 
 </details>
 
@@ -303,13 +301,11 @@ An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-
 </details>
 
 <details>
 
 <summary><code>acs_user_id</code> Format: <code>UUID</code></summary>
-
 
 </details>
 
@@ -319,7 +315,6 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
-
 </details>
 
 <details>
@@ -327,7 +322,6 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the event was created.
-
 
 </details>
 
@@ -337,13 +331,11 @@ Date and time at which the event was created.
 
 ID of the event.
 
-
 </details>
 
 <details>
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
-
 
 </details>
 
@@ -353,7 +345,6 @@ ID of the event.
 
 Date and time at which the event occurred.
 
-
 </details>
 
 <details>
@@ -361,7 +352,6 @@ Date and time at which the event occurred.
 <summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
 
 </details>
 

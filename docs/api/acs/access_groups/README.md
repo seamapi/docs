@@ -115,7 +115,6 @@ Warnings associated with the `acs_access_group`.
 
 Date and time at which Seam created the warning.
 
-
 </details>
 
 <details>
@@ -124,7 +123,6 @@ Date and time at which Seam created the warning.
 
 Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
 
-
 </details>
 
 <details>
@@ -132,7 +130,6 @@ Detailed description of the warning. Provides insights into the issue and potent
 <summary><code>warning_code</code> Format: <code>String</code></summary>
 
 Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-
 
 </details>
 
@@ -179,7 +176,6 @@ An ACS access group was deleted.
 
 <summary><code>acs_access_group_id</code> Format: <code>UUID</code></summary>
 
-
 </details>
 
 <details>
@@ -187,7 +183,6 @@ An ACS access group was deleted.
 <summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
-
 
 </details>
 
@@ -197,7 +192,6 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
-
 </details>
 
 <details>
@@ -205,7 +199,6 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the event was created.
-
 
 </details>
 
@@ -215,13 +208,11 @@ Date and time at which the event was created.
 
 ID of the event.
 
-
 </details>
 
 <details>
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
-
 
 </details>
 
@@ -231,7 +222,6 @@ ID of the event.
 
 Date and time at which the event occurred.
 
-
 </details>
 
 <details>
@@ -239,7 +229,6 @@ Date and time at which the event occurred.
 <summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
 
 </details>
 
