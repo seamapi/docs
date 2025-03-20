@@ -63,7 +63,6 @@ Format: `Object`
 <summary><code>message</code> Format: <code>String</code></summary>
 
 
-
 </details>
 
 <details>
@@ -77,7 +76,6 @@ Possible enum values:
 - `no_credential_on_encoder`
 - `incompatible_card_format`
 - `credential_cannot_be_reissued`
-
 
 </details>
 
@@ -101,7 +99,6 @@ Possible enum values:
 - `card`
 - `mobile_key`
 
-
 </details>
 
 <details>
@@ -111,13 +108,11 @@ Possible enum values:
 
 ID of the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-
 </details>
 
 <details>
 
 <summary><code>acs_credential_pool_id</code> Format: <code>UUID</code></summary>
-
 
 
 </details>
@@ -129,7 +124,6 @@ ID of the [credential](../../../capability-guides/access-systems/managing-creden
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-
 </details>
 
 <details>
@@ -138,7 +132,6 @@ ID of the [access control system](https://docs.seam.co/latest/capability-guides/
 
 
 ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](../../../capability-guides/access-systems/managing-credentials.md) belongs.
-
 
 </details>
 
@@ -149,13 +142,11 @@ ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-system
 
 Vostio-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-
 </details>
 
 <details>
 
 <summary><code>assa_abloy_vostio_metadata.door_names</code> Format: <code>List</code> Item format: <code>String</code></summary>
-
 
 
 </details>
@@ -165,13 +156,11 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 <summary><code>assa_abloy_vostio_metadata.endpoint_id</code> Format: <code>String</code></summary>
 
 
-
 </details>
 
 <details>
 
 <summary><code>assa_abloy_vostio_metadata.key_id</code> Format: <code>String</code></summary>
-
 
 
 </details>
@@ -181,13 +170,11 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 <summary><code>assa_abloy_vostio_metadata.key_issuing_request_id</code> Format: <code>String</code></summary>
 
 
-
 </details>
 
 <details>
 
 <summary><code>assa_abloy_vostio_metadata.override_guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>String</code></summary>
-
 
 
 </details>
@@ -199,7 +186,6 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 Number of the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-
 </details>
 
 <details>
@@ -208,7 +194,6 @@ Number of the card associated with the [credential](../../../capability-guides/a
 
 
 Access (PIN) code for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
-
 
 </details>
 
@@ -219,7 +204,6 @@ Access (PIN) code for the [credential](../../../capability-guides/access-systems
 
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) was created.
 
-
 </details>
 
 <details>
@@ -228,7 +212,6 @@ Date and time at which the [credential](../../../capability-guides/access-system
 
 
 Display name that corresponds to the [credential](../../../capability-guides/access-systems/managing-credentials.md) type.
-
 
 </details>
 
@@ -239,7 +222,6 @@ Display name that corresponds to the [credential](../../../capability-guides/acc
 
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
 
-
 </details>
 
 <details>
@@ -248,7 +230,6 @@ Date and time at which the [credential](../../../capability-guides/access-system
 
 
 Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
-
 
 **<code>error_code</code>** Format: <code>String</code>
 
@@ -278,7 +259,6 @@ Possible enum values:
 - `assa_abloy_vostio_key`
 - `salto_space_key`
 
-
 </details>
 
 <details>
@@ -287,7 +267,6 @@ Possible enum values:
 
 
 Display name that corresponds to the brand-specific terminology for the [credential](../../../capability-guides/access-systems/managing-credentials.md) type.
-
 
 </details>
 
@@ -298,7 +277,6 @@ Display name that corresponds to the brand-specific terminology for the [credent
 
 Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) has been encoded onto a card.
 
-
 </details>
 
 <details>
@@ -308,13 +286,11 @@ Indicates whether the [credential](../../../capability-guides/access-systems/man
 
 Indicates whether the latest state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) has been synced from Seam to the provider.
 
-
 </details>
 
 <details>
 
 <summary><code>is_managed</code> Format: <code>Boolean</code></summary>
-
 
 
 </details>
@@ -326,7 +302,6 @@ Indicates whether the latest state of the [credential](../../../capability-guide
 
 Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
 
-
 </details>
 
 <details>
@@ -335,7 +310,6 @@ Indicates whether the [credential](../../../capability-guides/access-systems/man
 
 
 Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) can only be used once. If `true`, the code becomes invalid after the first use.
-
 
 </details>
 
@@ -346,7 +320,6 @@ Indicates whether the [credential](../../../capability-guides/access-systems/man
 
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) was encoded onto a card.
 
-
 </details>
 
 <details>
@@ -355,7 +328,6 @@ Date and time at which the [credential](../../../capability-guides/access-system
 
 
 Date and time at which the state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) was most recently synced from Seam to the provider.
-
 
 </details>
 
@@ -366,7 +338,6 @@ Date and time at which the state of the [credential](../../../capability-guides/
 
 ID of the parent [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-
 </details>
 
 <details>
@@ -375,7 +346,6 @@ ID of the parent [credential](../../../capability-guides/access-systems/managing
 
 
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
-
 
 </details>
 
@@ -386,13 +356,11 @@ Date and time at which the [credential](../../../capability-guides/access-system
 
 Visionline-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-
 </details>
 
 <details>
 
 <summary><code>visionline_metadata.auto_join</code> Format: <code>Boolean</code></summary>
-
 
 
 </details>
@@ -406,13 +374,11 @@ Possible enum values:
 - `guest`
 - `staff`
 
-
 </details>
 
 <details>
 
 <summary><code>visionline_metadata.card_id</code> Format: <code>String</code></summary>
-
 
 
 </details>
@@ -422,13 +388,11 @@ Possible enum values:
 <summary><code>visionline_metadata.common_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
 
 
-
 </details>
 
 <details>
 
 <summary><code>visionline_metadata.credential_id</code> Format: <code>String</code></summary>
-
 
 
 </details>
@@ -438,7 +402,6 @@ Possible enum values:
 <summary><code>visionline_metadata.guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
 
 
-
 </details>
 
 <details>
@@ -446,13 +409,11 @@ Possible enum values:
 <summary><code>visionline_metadata.is_valid</code> Format: <code>Boolean</code></summary>
 
 
-
 </details>
 
 <details>
 
 <summary><code>visionline_metadata.joiner_acs_credential_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
-
 
 
 </details>
@@ -463,7 +424,6 @@ Possible enum values:
 
 
 Warnings associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
-
 
 **<code>created_at</code>** Format: <code>Datetime</code>
 
@@ -498,7 +458,6 @@ Possible enum values:
 
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
-
 
 </details>
 

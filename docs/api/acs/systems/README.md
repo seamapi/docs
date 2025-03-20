@@ -158,7 +158,6 @@ Format: `Object`
 
 Time zone in which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) is located.
 
-
 </details>
 
 ---
@@ -217,7 +216,6 @@ Format: `Object`
 
 IP address or hostname of the main Visionline server relative to [Seam Bridge](../../../capability-guides/seam-bridge.md) on the local network.
 
-
 </details>
 
 <details>
@@ -227,7 +225,6 @@ IP address or hostname of the main Visionline server relative to [Seam Bridge](.
 
 Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.
 
-
 </details>
 
 <details>
@@ -236,7 +233,6 @@ Keyset loaded into a reader. Mobile keys and reader administration tools securel
 
 
 Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager.
-
 
 </details>
 
@@ -344,7 +340,6 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-
 </details>
 
 <details>
@@ -353,7 +348,6 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
-
 
 </details>
 
@@ -364,7 +358,6 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 
 Date and time at which the event was created.
 
-
 </details>
 
 <details>
@@ -374,13 +367,11 @@ Date and time at which the event was created.
 
 ID of the event.
 
-
 </details>
 
 <details>
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
-
 
 
 </details>
@@ -392,7 +383,6 @@ ID of the event.
 
 Date and time at which the event occurred.
 
-
 </details>
 
 <details>
@@ -401,7 +391,6 @@ Date and time at which the event occurred.
 
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
 
 </details>
 
@@ -418,7 +407,6 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-
 </details>
 
 <details>
@@ -427,7 +415,6 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
-
 
 </details>
 
@@ -438,7 +425,6 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 
 Date and time at which the event was created.
 
-
 </details>
 
 <details>
@@ -448,13 +434,11 @@ Date and time at which the event was created.
 
 ID of the event.
 
-
 </details>
 
 <details>
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
-
 
 
 </details>
@@ -466,7 +450,6 @@ ID of the event.
 
 Date and time at which the event occurred.
 
-
 </details>
 
 <details>
@@ -475,7 +458,6 @@ Date and time at which the event occurred.
 
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
 
 </details>
 
@@ -492,7 +474,6 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-
 </details>
 
 <details>
@@ -501,7 +482,6 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
-
 
 </details>
 
@@ -512,7 +492,6 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 
 Date and time at which the event was created.
 
-
 </details>
 
 <details>
@@ -522,13 +501,11 @@ Date and time at which the event was created.
 
 ID of the event.
 
-
 </details>
 
 <details>
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
-
 
 
 </details>
@@ -540,7 +517,6 @@ ID of the event.
 
 Date and time at which the event occurred.
 
-
 </details>
 
 <details>
@@ -549,7 +525,6 @@ Date and time at which the event occurred.
 
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
 
 </details>
 

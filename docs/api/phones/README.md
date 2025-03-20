@@ -61,13 +61,11 @@ Errors associated with the `phone`.
 <summary><code>error_code</code> Format: <code>String</code></summary>
 
 
-
 </details>
 
 <details>
 
 <summary><code>message</code> Format: <code>String</code></summary>
-
 
 
 </details>
@@ -95,7 +93,6 @@ Properties of the phone.
 
 ASSA ABLOY Credential Service metadata for the phone.
 
-
 </details>
 
 <details>
@@ -104,7 +101,6 @@ ASSA ABLOY Credential Service metadata for the phone.
 
 
 Endpoints associated with the phone.
-
 
 **<code>endpoint_id</code>** Format: <code>String</code>
 
@@ -127,7 +123,6 @@ Indicated whether the endpoint is active.
 
 Indicates whether the credential service has active endpoints associated with the phone.
 
-
 </details>
 
 <details>
@@ -137,7 +132,6 @@ Indicates whether the credential service has active endpoints associated with th
 
 Salto Space credential service metadata for the phone.
 
-
 </details>
 
 <details>
@@ -146,7 +140,6 @@ Salto Space credential service metadata for the phone.
 
 
 Indicates whether the credential service has an active associated phone.
-
 
 </details>
 
@@ -165,13 +158,11 @@ Warnings associated with the `phone`.
 <summary><code>message</code> Format: <code>String</code></summary>
 
 
-
 </details>
 
 <details>
 
 <summary><code>warning_code</code> Format: <code>String</code></summary>
-
 
 
 </details>
@@ -213,7 +204,6 @@ A phone device was deactivated.
 
 Date and time at which the event was created.
 
-
 </details>
 
 <details>
@@ -222,7 +212,6 @@ Date and time at which the event was created.
 
 
 ID of the [device](../../core-concepts/devices/README.md).
-
 
 </details>
 
@@ -233,13 +222,11 @@ ID of the [device](../../core-concepts/devices/README.md).
 
 ID of the event.
 
-
 </details>
 
 <details>
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
-
 
 
 </details>
@@ -251,7 +238,6 @@ ID of the event.
 
 Date and time at which the event occurred.
 
-
 </details>
 
 <details>
@@ -260,7 +246,6 @@ Date and time at which the event occurred.
 
 
 ID of the [workspace](../../core-concepts/workspaces/README.md).
-
 
 </details>
 

@@ -58,13 +58,11 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 <summary><code>door_names</code> Format: <code>List</code> Item format: <code>String</code></summary>
 
 
-
 </details>
 
 <details>
 
 <summary><code>endpoint_id</code> Format: <code>String</code></summary>
-
 
 
 </details>
@@ -74,7 +72,6 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 <summary><code>key_id</code> Format: <code>String</code></summary>
 
 
-
 </details>
 
 <details>
@@ -82,13 +79,11 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 <summary><code>key_issuing_request_id</code> Format: <code>String</code></summary>
 
 
-
 </details>
 
 <details>
 
 <summary><code>override_guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>String</code></summary>
-
 
 
 </details>
@@ -148,13 +143,11 @@ Errors associated with the [credential](../../../capability-guides/access-system
 <summary><code>error_code</code> Format: <code>String</code></summary>
 
 
-
 </details>
 
 <details>
 
 <summary><code>message</code> Format: <code>String</code></summary>
-
 
 
 </details>
@@ -267,7 +260,6 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 <summary><code>auto_join</code> Format: <code>Boolean</code></summary>
 
 
-
 </details>
 
 <details>
@@ -279,13 +271,11 @@ Possible enum values:
 - `guest`
 - `staff`
 
-
 </details>
 
 <details>
 
 <summary><code>card_id</code> Format: <code>String</code></summary>
-
 
 
 </details>
@@ -295,13 +285,11 @@ Possible enum values:
 <summary><code>common_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
 
 
-
 </details>
 
 <details>
 
 <summary><code>credential_id</code> Format: <code>String</code></summary>
-
 
 
 </details>
@@ -311,7 +299,6 @@ Possible enum values:
 <summary><code>guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
 
 
-
 </details>
 
 <details>
@@ -319,13 +306,11 @@ Possible enum values:
 <summary><code>is_valid</code> Format: <code>Boolean</code></summary>
 
 
-
 </details>
 
 <details>
 
 <summary><code>joiner_acs_credential_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
-
 
 
 </details>
@@ -428,7 +413,6 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 <summary><code>acs_credential_id</code> Format: <code>UUID</code></summary>
 
 
-
 </details>
 
 <details>
@@ -437,7 +421,6 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
-
 
 </details>
 
@@ -448,7 +431,6 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
-
 </details>
 
 <details>
@@ -457,7 +439,6 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 
 
 Date and time at which the event was created.
-
 
 </details>
 
@@ -468,13 +449,11 @@ Date and time at which the event was created.
 
 ID of the event.
 
-
 </details>
 
 <details>
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
-
 
 
 </details>
@@ -486,7 +465,6 @@ ID of the event.
 
 Date and time at which the event occurred.
 
-
 </details>
 
 <details>
@@ -495,7 +473,6 @@ Date and time at which the event occurred.
 
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
 
 </details>
 
@@ -510,7 +487,6 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 <summary><code>acs_credential_id</code> Format: <code>UUID</code></summary>
 
 
-
 </details>
 
 <details>
@@ -519,7 +495,6 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
-
 
 </details>
 
@@ -530,7 +505,6 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
-
 </details>
 
 <details>
@@ -539,7 +513,6 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 
 
 Date and time at which the event was created.
-
 
 </details>
 
@@ -550,13 +523,11 @@ Date and time at which the event was created.
 
 ID of the event.
 
-
 </details>
 
 <details>
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
-
 
 
 </details>
@@ -568,7 +539,6 @@ ID of the event.
 
 Date and time at which the event occurred.
 
-
 </details>
 
 <details>
@@ -577,7 +547,6 @@ Date and time at which the event occurred.
 
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
 
 </details>
 
@@ -592,7 +561,6 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 <summary><code>acs_credential_id</code> Format: <code>UUID</code></summary>
 
 
-
 </details>
 
 <details>
@@ -601,7 +569,6 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
-
 
 </details>
 
@@ -612,7 +579,6 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
-
 </details>
 
 <details>
@@ -621,7 +587,6 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 
 
 Date and time at which the event was created.
-
 
 </details>
 
@@ -632,13 +597,11 @@ Date and time at which the event was created.
 
 ID of the event.
 
-
 </details>
 
 <details>
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
-
 
 
 </details>
@@ -650,7 +613,6 @@ ID of the event.
 
 Date and time at which the event occurred.
 
-
 </details>
 
 <details>
@@ -659,7 +621,6 @@ Date and time at which the event occurred.
 
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
 
 </details>
 

@@ -51,7 +51,6 @@ Errors associated with the [thermostat schedule](../../../capability-guides/ther
 
 Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
 
-
 </details>
 
 <details>
@@ -60,7 +59,6 @@ Unique identifier of the type of error. Enables quick recognition and categoriza
 
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
 
 </details>
 
