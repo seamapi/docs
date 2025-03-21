@@ -210,12 +210,14 @@ Date and time at which the [credential](../../../capability-guides/access-system
 
 Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-<code>error_code</code> Format: <code>String</code>
+- <code>error_code</code> Format: <code>String</code>
 
 
 
 
-<code>message</code> Format: <code>String</code>
+
+- <code>message</code> Format: <code>String</code>
+
 
 
 
@@ -381,19 +383,21 @@ Possible enum values:
 
 Warnings associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-<code>created_at</code> Format: <code>Datetime</code>
+- <code>created_at</code> Format: <code>Datetime</code>
 
 Date and time at which Seam created the warning.
 
 
 
-<code>message</code> Format: <code>String</code>
+
+- <code>message</code> Format: <code>String</code>
 
 Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
 
 
 
-<code>warning_code</code> Format: <code>Enum</code>
+
+- <code>warning_code</code> Format: <code>Enum</code>
 
 Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
 
@@ -404,6 +408,7 @@ Possible enum values:
 - `being_deleted`
 - `unknown_issue_with_acs_credential`
 - `needs_to_be_reissued`
+
 
 
 </details>
