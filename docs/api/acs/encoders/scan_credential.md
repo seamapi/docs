@@ -63,7 +63,6 @@ Possible enum values:
 - `uncategorized_error`
 - `action_attempt_expired`
 - `no_credential_on_encoder`
-
 </details>
 
 ---
@@ -143,7 +142,6 @@ Format of the card associated with the [credential](../../../capability-guides/a
 Possible enum values:
 - `TLCode`
 - `rfid48`
-
 </details>
 
 <details>
@@ -244,7 +242,6 @@ Possible enum values:
 - `code`
 - `card`
 - `mobile_key`
-
 </details>
 
 <details>
@@ -361,18 +358,18 @@ Date and time at which the [credential](../../../capability-guides/access-system
 
 Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
+- <code>error_code</code> Format: <code>String</code>
 
-<details>
 
-<summary><code>error_code</code> Format: <code>String</code></summary>
 
-</details>
 
-<details>
 
-<summary><code>message</code> Format: <code>String</code></summary>
+- <code>message</code> Format: <code>String</code>
 
-</details>
+
+
+
+
 </details>
 
 <details>
@@ -389,7 +386,6 @@ Possible enum values:
 - `salto_ks_credential`
 - `assa_abloy_vostio_key`
 - `salto_space_key`
-
 </details>
 
 <details>
@@ -491,7 +487,6 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 Possible enum values:
 - `guest`
 - `staff`
-
 </details>
 
 <details>
@@ -536,26 +531,21 @@ Possible enum values:
 
 Warnings associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-
-<details>
-
-<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+- <code>created_at</code> Format: <code>Datetime</code>
 
 Date and time at which Seam created the warning.
 
-</details>
 
-<details>
 
-<summary><code>message</code> Format: <code>String</code></summary>
+
+- <code>message</code> Format: <code>String</code>
 
 Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
 
-</details>
 
-<details>
 
-<summary><code>warning_code</code> Format: <code>Enum</code></summary>
+
+- <code>warning_code</code> Format: <code>Enum</code>
 
 Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
 
@@ -567,7 +557,8 @@ Possible enum values:
 - `unknown_issue_with_acs_credential`
 - `needs_to_be_reissued`
 
-</details>
+
+
 </details>
 
 <details>
@@ -582,22 +573,21 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 <summary><code>warnings</code> Format: <code>List</code> Item format: <code>Object</code></summary>
 
+- <code>warning_code</code> Format: <code>Enum</code>
 
-<details>
-
-<summary><code>warning_code</code> Format: <code>Enum</code></summary>
 
 Possible enum values:
 - `acs_credential_on_encoder_out_of_sync`
 - `acs_credential_on_seam_not_found`
 
-</details>
 
-<details>
 
-<summary><code>warning_message</code> Format: <code>String</code></summary>
+- <code>warning_message</code> Format: <code>String</code>
 
-</details>
+
+
+
+
 </details>
 
 ---
