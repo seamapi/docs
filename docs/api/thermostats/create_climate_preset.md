@@ -165,6 +165,15 @@ Unique key to identify the [climate preset](../../capability-guides/thermostats/
 
 ***
 
+### `device_id`
+
+Type: `string`
+Required: Yes
+
+ID of the desired thermostat device.
+
+***
+
 ### `cooling_set_point_celsius`
 
 Type: `number`
@@ -180,15 +189,6 @@ Type: `number`
 Required: No
 
 Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
-***
-
-### `device_id`
-
-Type: `string`
-Required: Yes
-
-ID of the desired thermostat device.
 
 ***
 

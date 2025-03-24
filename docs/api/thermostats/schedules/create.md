@@ -216,6 +216,15 @@ Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.i
 
 ***
 
+### `starts_at`
+
+Type: `string`
+Required: Yes
+
+Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+
+***
+
 ### `is_override_allowed`
 
 Type: `boolean`
@@ -240,15 +249,6 @@ Type: `string`
 Required: No
 
 User-friendly name to identify the thermostat schedule.
-
-***
-
-### `starts_at`
-
-Type: `string`
-Required: Yes
-
-Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 ***
 
