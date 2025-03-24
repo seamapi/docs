@@ -23,7 +23,7 @@ ID of the `acs_encoder` that will fail to scan the `acs_credential` in the next 
 
 ***
 
-### `error_code`
+### `acs_credential_id_on_seam`
 
 Type: `string`
 Required: No
@@ -32,7 +32,7 @@ Required: No
 
 ***
 
-### `acs_credential_id_on_seam`
+### `error_code`
 
 Type: `string`
 Required: No

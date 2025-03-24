@@ -153,6 +153,15 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 
 ## Request Parameters
 
+### `device_id`
+
+Type: `string`
+Required: Yes
+
+ID of the desired thermostat device.
+
+***
+
 ### `cooling_set_point_celsius`
 
 Type: `number`
@@ -168,15 +177,6 @@ Type: `number`
 Required: No
 
 Desired [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `cooling_set_point` parameters.
-
-***
-
-### `device_id`
-
-Type: `string`
-Required: Yes
-
-ID of the desired thermostat device.
 
 ***
 

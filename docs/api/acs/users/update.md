@@ -126,21 +126,21 @@ nil
 
 ## Request Parameters
 
-### `access_schedule`
-
-Type: `object`
-Required: No
-
-`starts_at` and `ends_at` timestamps for the `acs_user`'s access. If you specify an `access_schedule`, you must include both `starts_at` and `ends_at`. `ends_at` must be a time in the future and after `starts_at`.
-
-***
-
 ### `acs_user_id`
 
 Type: `string`
 Required: Yes
 
 ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+***
+
+### `access_schedule`
+
+Type: `object`
+Required: No
+
+`starts_at` and `ends_at` timestamps for the `acs_user`'s access. If you specify an `access_schedule`, you must include both `starts_at` and `ends_at`. `ends_at` must be a time in the future and after `starts_at`.
 
 ***
 

@@ -14,6 +14,15 @@ PATCH /user_identities/update ⇒ void
 
 ## Request Parameters
 
+### `user_identity_id`
+
+Type: `string`
+Required: Yes
+
+ID of the user identity.
+
+***
+
 ### `email_address`
 
 Type: `string`
@@ -38,15 +47,6 @@ Type: `string`
 Required: No
 
 Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).
-
-***
-
-### `user_identity_id`
-
-Type: `string`
-Required: Yes
-
-ID of the user identity.
 
 ***
 

@@ -102,7 +102,12 @@ export function setEndpointLayoutContext(
         required: param.isRequired,
         description: param.description,
         jsonType: param.jsonType,
-      })),
+      }))
+      .sort((a, b) => {
+        if (a.required && !b.required) return -1
+        if (!a.required && b.required) return 1
+        return a.name.localeCompare(b.name)
+      }),
   }
 
   file.response = {

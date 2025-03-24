@@ -128,6 +128,15 @@ nil
 
 ## Request Parameters
 
+### `thermostat_schedule_id`
+
+Type: `string`
+Required: Yes
+
+ID of the desired thermostat schedule.
+
+***
+
 ### `climate_preset_key`
 
 Type: `string`
@@ -179,15 +188,6 @@ Type: `string`
 Required: No
 
 Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
-
-***
-
-### `thermostat_schedule_id`
-
-Type: `string`
-Required: Yes
-
-ID of the desired thermostat schedule.
 
 ***
 
