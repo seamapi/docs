@@ -63,6 +63,8 @@
 - `/devices/get`
 - `/devices/list_device_providers`
 - `/devices/update`
+- `/devices/simulate/access_code_lock`
+- `/devices/simulate/access_code_unlock`
 - `/devices/simulate/connect`
 - `/devices/simulate/disconnect`
 - `/devices/simulate/remove`
@@ -366,6 +368,8 @@ Items that are intentionally undocumented are not included in this section.
 - `/devices/get`
 - `/devices/list_device_providers`
 - `/devices/update`
+- `/devices/simulate/access_code_lock`
+- `/devices/simulate/access_code_unlock`
 - `/devices/simulate/connect`
 - `/devices/simulate/disconnect`
 - `/devices/simulate/remove`
@@ -618,6 +622,12 @@ Items that are intentionally undocumented are not included in this section.
     - `is_managed`
     - `name`
     - `properties`
+- `/devices/simulate/access_code_lock`
+    - `access_code_id`
+    - `device_id`
+- `/devices/simulate/access_code_unlock`
+    - `access_code_id`
+    - `device_id`
 - `/devices/simulate/connect`
     - `device_id`
 - `/devices/simulate/disconnect`
@@ -882,6 +892,8 @@ These items are deprecated.
 - `/devices/list`
 - `/devices/list_device_providers`
 - `/devices/update`
+- `/devices/simulate/access_code_lock`
+- `/devices/simulate/access_code_unlock`
 - `/devices/simulate/connect`
 - `/devices/simulate/disconnect`
 - `/devices/simulate/remove`
