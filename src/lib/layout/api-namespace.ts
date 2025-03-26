@@ -5,6 +5,7 @@ import type { PathMetadata } from 'lib/path-metadata.js'
 export interface ApiNamespaceLayoutContext {
   title: string
   description: string
+  overview: string
   resources: Array<{
     name: string
     description: string
@@ -15,6 +16,7 @@ export interface ApiNamespaceLayoutContext {
 export function setNamespaceLayoutContext(
   file: ApiNamespaceLayoutContext,
   namespace: string,
+  overview: string,
   resources: Blueprint['resources'],
   pathMetadata: PathMetadata,
 ): void {
@@ -25,6 +27,7 @@ export function setNamespaceLayoutContext(
 
   file.title = namespaceMetadata.title
   file.description = namespaceMetadata.description ?? ''
+  file.overview = namespaceMetadata.overview
 
   const namespaceRoutes = Object.entries(pathMetadata).filter(([p]) =>
     p.startsWith(namespace),
