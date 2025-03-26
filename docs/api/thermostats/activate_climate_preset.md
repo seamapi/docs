@@ -172,7 +172,7 @@ ID of the desired thermostat device.
 
 Activating climate preset.
 
-#### Properties
+### Properties
 
 #### `action_attempt_id`
 

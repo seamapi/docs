@@ -220,7 +220,7 @@ Desired [heating set point](../../capability-guides/thermostats/understanding-th
 
 Setting HVAC mode.
 
-#### Properties
+### Properties
 
 #### `action_attempt_id`
 

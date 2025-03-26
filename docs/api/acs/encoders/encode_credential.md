@@ -40,7 +40,7 @@ ID of the `acs_encoder` to use to encode the `acs_credential`.
 
 Encoding credential data from physical encoder.
 
-#### Properties
+### Properties
 
 #### `action_attempt_id`
 

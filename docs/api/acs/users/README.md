@@ -6,7 +6,7 @@ The ACS Users route contains the following resources:
 
 Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-### Properties
+## Properties
 
 ### `access_schedule`
 

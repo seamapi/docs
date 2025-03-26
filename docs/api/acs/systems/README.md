@@ -6,7 +6,7 @@ The Systems route contains the following resources:
 
 Represents an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-### Properties
+## Properties
 
 ### `acs_system_id`
 
