@@ -6,9 +6,9 @@ The Thermostat Schedules route contains the following resources:
 
 Represents a [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) that activates a configured [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time.
 
-## Properties
+### Properties
 
-#### `climate_preset_key`
+### `climate_preset_key`
 
 Format: `String`
 
@@ -16,7 +16,7 @@ Key of the [climate preset](../../../capability-guides/thermostats/creating-and-
 
 ---
 
-#### `created_at`
+### `created_at`
 
 Format: `Datetime`
 
@@ -24,7 +24,7 @@ Date and time at which the [thermostat schedule](../../../capability-guides/ther
 
 ---
 
-#### `device_id`
+### `device_id`
 
 Format: `UUID`
 
@@ -32,7 +32,7 @@ ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/the
 
 ---
 
-#### `ends_at`
+### `ends_at`
 
 Format: `Datetime`
 
@@ -40,7 +40,7 @@ Date and time at which the [thermostat schedule](../../../capability-guides/ther
 
 ---
 
-#### `errors`
+### `errors`
 
 Format: `List`
 
@@ -66,7 +66,7 @@ Detailed description of the error. Provides insights into the issue and potentia
 
 ---
 
-#### `max_override_period_minutes`
+### `max_override_period_minutes`
 
 Format: `Number`
 
@@ -74,7 +74,7 @@ Number of minutes for which a person at the thermostat can change the thermostat
 
 ---
 
-#### `name`
+### `name`
 
 Format: `String`
 
@@ -82,7 +82,7 @@ User-friendly name to identify the [thermostat schedule](../../../capability-gui
 
 ---
 
-#### `starts_at`
+### `starts_at`
 
 Format: `Datetime`
 
@@ -90,7 +90,7 @@ Date and time at which the [thermostat schedule](../../../capability-guides/ther
 
 ---
 
-#### `thermostat_schedule_id`
+### `thermostat_schedule_id`
 
 Format: `UUID`
 

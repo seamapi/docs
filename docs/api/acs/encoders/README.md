@@ -6,9 +6,9 @@ The Encoders route contains the following resources:
 
 Represents a hardware device that encodes [credential](../../../capability-guides/access-systems/managing-credentials.md) data onto physical cards within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). See also [Working with Card Encoders and Scanners](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
-## Properties
+### Properties
 
-#### `acs_encoder_id`
+### `acs_encoder_id`
 
 Format: `UUID`
 
@@ -16,7 +16,7 @@ ID of the [encoder](https://docs.seam.co/latest/capability-guides/access-systems
 
 ---
 
-#### `acs_system_id`
+### `acs_system_id`
 
 Format: `UUID`
 
@@ -24,7 +24,7 @@ ID of the [access control system](https://docs.seam.co/latest/capability-guides/
 
 ---
 
-#### `created_at`
+### `created_at`
 
 Format: `Datetime`
 
@@ -32,7 +32,7 @@ Date and time at which the [encoder](../../../capability-guides/access-systems/w
 
 ---
 
-#### `display_name`
+### `display_name`
 
 Format: `String`
 
@@ -40,7 +40,7 @@ Display name for the [encoder](../../../capability-guides/access-systems/working
 
 ---
 
-#### `errors`
+### `errors`
 
 Format: `List`
 
@@ -74,7 +74,7 @@ Detailed description of the error. Provides insights into the issue and potentia
 
 ---
 
-#### `workspace_id`
+### `workspace_id`
 
 Format: `UUID`
 

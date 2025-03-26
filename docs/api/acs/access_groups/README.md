@@ -7,9 +7,9 @@ The Access Groups route contains the following resources:
 Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.
 The `acs_access_group` object represents an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-## Properties
+### Properties
 
-#### `access_group_type`
+### `access_group_type`
 
 {% hint style="warning" %}
 **Deprecated**. Use `external_type`.
@@ -27,7 +27,7 @@ Possible enum values:
 
 ---
 
-#### `access_group_type_display_name`
+### `access_group_type_display_name`
 
 {% hint style="warning" %}
 **Deprecated**. Use `external_type_display_name`.
@@ -37,7 +37,7 @@ Format: `String`
 
 ---
 
-#### `acs_access_group_id`
+### `acs_access_group_id`
 
 Format: `UUID`
 
@@ -45,7 +45,7 @@ ID of the access group.
 
 ---
 
-#### `acs_system_id`
+### `acs_system_id`
 
 Format: `UUID`
 
@@ -53,7 +53,7 @@ ID of the access control system that contains the access group.
 
 ---
 
-#### `created_at`
+### `created_at`
 
 Format: `Datetime`
 
@@ -61,13 +61,13 @@ Date and time at which the access group was created.
 
 ---
 
-#### `display_name`
+### `display_name`
 
 Format: `String`
 
 ---
 
-#### `external_type`
+### `external_type`
 
 Format: `Enum`
 
@@ -83,7 +83,7 @@ Possible enum values:
 
 ---
 
-#### `external_type_display_name`
+### `external_type_display_name`
 
 Format: `String`
 
@@ -91,13 +91,13 @@ Display name that corresponds to the brand-specific terminology for the access g
 
 ---
 
-#### `is_managed`
+### `is_managed`
 
 Format: `Boolean`
 
 ---
 
-#### `name`
+### `name`
 
 Format: `String`
 
@@ -105,7 +105,7 @@ Name of the access group.
 
 ---
 
-#### `warnings`
+### `warnings`
 
 Format: `List`
 
@@ -139,7 +139,7 @@ Unique identifier of the type of warning. Enables quick recognition and categori
 
 ---
 
-#### `workspace_id`
+### `workspace_id`
 
 Format: `UUID`
 

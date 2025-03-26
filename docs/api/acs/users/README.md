@@ -6,9 +6,9 @@ The ACS Users route contains the following resources:
 
 Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-## Properties
+### Properties
 
-#### `access_schedule`
+### `access_schedule`
 
 Format: `Object`
 
@@ -32,7 +32,7 @@ Date and time at which the user's access starts, in [ISO 8601](https://www.iso.o
 
 ---
 
-#### `acs_system_id`
+### `acs_system_id`
 
 Format: `UUID`
 
@@ -40,7 +40,7 @@ ID of the [access control system](https://docs.seam.co/latest/capability-guides/
 
 ---
 
-#### `acs_user_id`
+### `acs_user_id`
 
 Format: `UUID`
 
@@ -48,7 +48,7 @@ ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-system
 
 ---
 
-#### `created_at`
+### `created_at`
 
 Format: `Datetime`
 
@@ -56,7 +56,7 @@ Date and time at which the [ACS user](https://docs.seam.co/latest/capability-gui
 
 ---
 
-#### `display_name`
+### `display_name`
 
 Format: `String`
 
@@ -64,7 +64,7 @@ Display name for the [ACS user](https://docs.seam.co/latest/capability-guides/ac
 
 ---
 
-#### `email`
+### `email`
 
 {% hint style="warning" %}
 **Deprecated**. use email_address.
@@ -74,7 +74,7 @@ Format: `String`
 
 ---
 
-#### `email_address`
+### `email_address`
 
 Format: `String`
 
@@ -82,7 +82,7 @@ Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/ac
 
 ---
 
-#### [`errors`](./#errors-1)
+### [`errors`](./#errors-1)
 
 Format: `List`
 
@@ -92,7 +92,7 @@ Errors associated with the [ACS user](https://docs.seam.co/latest/capability-gui
 
 ---
 
-#### `external_type`
+### `external_type`
 
 Format: `Enum`
 
@@ -109,7 +109,7 @@ Possible enum values:
 
 ---
 
-#### `external_type_display_name`
+### `external_type_display_name`
 
 Format: `String`
 
@@ -117,7 +117,7 @@ Display name that corresponds to the brand-specific terminology for the [ACS use
 
 ---
 
-#### `full_name`
+### `full_name`
 
 Format: `String`
 
@@ -125,19 +125,19 @@ Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access
 
 ---
 
-#### `hid_acs_system_id`
+### `hid_acs_system_id`
 
 Format: `UUID`
 
 ---
 
-#### `is_managed`
+### `is_managed`
 
 Format: `Boolean`
 
 ---
 
-#### `is_suspended`
+### `is_suspended`
 
 Format: `Boolean`
 
@@ -145,7 +145,7 @@ Indicates whether the [ACS user](https://docs.seam.co/latest/capability-guides/a
 
 ---
 
-#### `phone_number`
+### `phone_number`
 
 Format: `String`
 
@@ -153,7 +153,7 @@ Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/acc
 
 ---
 
-#### `user_identity_email_address`
+### `user_identity_email_address`
 
 Format: `String`
 
@@ -161,7 +161,7 @@ Email address of the user identity associated with the [ACS user](https://docs.s
 
 ---
 
-#### `user_identity_full_name`
+### `user_identity_full_name`
 
 Format: `String`
 
@@ -169,7 +169,7 @@ Full name of the user identity associated with the [ACS user](https://docs.seam.
 
 ---
 
-#### `user_identity_id`
+### `user_identity_id`
 
 Format: `String`
 
@@ -177,7 +177,7 @@ ID of the user identity associated with the [ACS user](https://docs.seam.co/late
 
 ---
 
-#### `user_identity_phone_number`
+### `user_identity_phone_number`
 
 Format: `String`
 
@@ -185,7 +185,7 @@ Phone number of the user identity associated with the [ACS user](https://docs.se
 
 ---
 
-#### [`warnings`](./#warnings-1)
+### [`warnings`](./#warnings-1)
 
 Format: `List`
 
@@ -195,7 +195,7 @@ Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-g
 
 ---
 
-#### `workspace_id`
+### `workspace_id`
 
 Format: `UUID`
 

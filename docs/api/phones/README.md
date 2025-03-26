@@ -6,9 +6,9 @@ The Phones route contains the following resources:
 
 Represents an app user's mobile phone.
 
-## Properties
+### Properties
 
-#### `created_at`
+### `created_at`
 
 Format: `Datetime`
 
@@ -16,7 +16,7 @@ Date and time at which the `phone` was created.
 
 ---
 
-#### `custom_metadata`
+### `custom_metadata`
 
 Format: `Record`
 
@@ -24,7 +24,7 @@ Optional [custom metadata](../../core-concepts/devices/adding-custom-metadata-to
 
 ---
 
-#### `device_id`
+### `device_id`
 
 Format: `UUID`
 
@@ -32,7 +32,7 @@ ID of the `phone`.
 
 ---
 
-#### `device_type`
+### `device_type`
 
 Format: `Enum`
 
@@ -44,7 +44,7 @@ Possible enum values:
 
 ---
 
-#### `display_name`
+### `display_name`
 
 Format: `String`
 
@@ -52,7 +52,7 @@ Display name of the phone. Defaults to `nickname` (if it is set) or `properties.
 
 ---
 
-#### `errors`
+### `errors`
 
 Format: `List`
 
@@ -74,7 +74,7 @@ Errors associated with the `phone`.
 
 ---
 
-#### `nickname`
+### `nickname`
 
 Format: `String`
 
@@ -82,7 +82,7 @@ Optional nickname to describe the phone, settable through Seam.
 
 ---
 
-#### `properties`
+### `properties`
 
 Format: `Object`
 
@@ -146,7 +146,7 @@ Indicates whether the credential service has an active associated phone.
 
 ---
 
-#### `warnings`
+### `warnings`
 
 Format: `List`
 
@@ -168,7 +168,7 @@ Warnings associated with the `phone`.
 
 ---
 
-#### `workspace_id`
+### `workspace_id`
 
 Format: `UUID`
 

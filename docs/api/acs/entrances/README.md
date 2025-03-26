@@ -6,9 +6,9 @@ The Entrances route contains the following resources:
 
 Represents an [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-## Properties
+### Properties
 
-#### `acs_entrance_id`
+### `acs_entrance_id`
 
 Format: `UUID`
 
@@ -16,7 +16,7 @@ ID of the [entrance](../../../capability-guides/access-systems/retrieving-entran
 
 ---
 
-#### `acs_system_id`
+### `acs_system_id`
 
 Format: `UUID`
 
@@ -24,7 +24,7 @@ ID of the [access control system](https://docs.seam.co/latest/capability-guides/
 
 ---
 
-#### `assa_abloy_vostio_metadata`
+### `assa_abloy_vostio_metadata`
 
 Format: `Object`
 
@@ -68,7 +68,7 @@ Possible enum values:
 
 ---
 
-#### `created_at`
+### `created_at`
 
 Format: `Datetime`
 
@@ -76,7 +76,7 @@ Date and time at which the [entrance](../../../capability-guides/access-systems/
 
 ---
 
-#### `display_name`
+### `display_name`
 
 Format: `String`
 
@@ -84,7 +84,7 @@ Display name for the [entrance](../../../capability-guides/access-systems/retrie
 
 ---
 
-#### `dormakaba_community_metadata`
+### `dormakaba_community_metadata`
 
 Format: `Object`
 
@@ -98,7 +98,7 @@ dormakaba Community-specific metadata associated with the [entrance](../../../ca
 
 ---
 
-#### `errors`
+### `errors`
 
 Format: `List`
 
@@ -124,7 +124,7 @@ Detailed description of the error. Provides insights into the issue and potentia
 
 ---
 
-#### `latch_metadata`
+### `latch_metadata`
 
 Format: `Object`
 
@@ -156,7 +156,7 @@ Latch-specific metadata associated with the [entrance](../../../capability-guide
 
 ---
 
-#### `salto_ks_metadata`
+### `salto_ks_metadata`
 
 Format: `Object`
 
@@ -212,7 +212,7 @@ Salto KS-specific metadata associated with the [entrance](../../../capability-gu
 
 ---
 
-#### `salto_space_metadata`
+### `salto_space_metadata`
 
 Format: `Object`
 
@@ -238,7 +238,7 @@ Salto Space-specific metadata associated with the [entrance](../../../capability
 
 ---
 
-#### `visionline_metadata`
+### `visionline_metadata`
 
 Format: `Object`
 
