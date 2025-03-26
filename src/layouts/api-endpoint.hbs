@@ -6,9 +6,8 @@
 
 {{{description}}}
 
-{{#if codeSamples.length}}
+{{#with primaryCodeSample}}
 {% tabs %}
-{{#each codeSamples}}
 {{#each this.code}}
 {% tab title="{{this.title}}" %}
 #### Request
@@ -25,10 +24,9 @@
 {% endtab %}
 
 {{/each}}
-{{/each}}
 {% endtabs %}
 
-{{/if}}
+{{/with}}
 {{#if authMethods}}
 ## Authentication Methods
 
