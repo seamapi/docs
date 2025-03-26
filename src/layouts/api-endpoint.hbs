@@ -8,9 +8,13 @@
 
 {{#if codeSamples.length}}
 {{#each codeSamples}}
+## {{this.title}}
+
+{{this.description}}
+
 {% tabs %}
 {{#each this.code}}
-{% tab title="{{this.title}} TEST" %}
+{% tab title="{{this.title}}" %}
 #### Request
 
 ```{{@key}}
@@ -25,9 +29,8 @@
 {% endtab %}
 
 {{/each}}
-{{/each}}
 {% endtabs %}
-
+{{/each}}
 {{/if}}
 {{#if authMethods}}
 ## Authentication Methods
