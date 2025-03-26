@@ -8,7 +8,7 @@ Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/acces
 
 ## Properties
 
-### `access_method`
+#### `access_method`
 
 Format: `Enum`
 
@@ -21,7 +21,7 @@ Possible enum values:
 
 ---
 
-### `acs_credential_id`
+#### `acs_credential_id`
 
 Format: `UUID`
 
@@ -29,13 +29,13 @@ ID of the [credential](../../../capability-guides/access-systems/managing-creden
 
 ---
 
-### `acs_credential_pool_id`
+#### `acs_credential_pool_id`
 
 Format: `UUID`
 
 ---
 
-### `acs_system_id`
+#### `acs_system_id`
 
 Format: `UUID`
 
@@ -43,7 +43,7 @@ ID of the [access control system](https://docs.seam.co/latest/capability-guides/
 
 ---
 
-### `acs_user_id`
+#### `acs_user_id`
 
 Format: `UUID`
 
@@ -51,7 +51,7 @@ ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-system
 
 ---
 
-### `assa_abloy_vostio_metadata`
+#### `assa_abloy_vostio_metadata`
 
 Format: `Object`
 
@@ -89,7 +89,7 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 ---
 
-### `card_number`
+#### `card_number`
 
 Format: `String`
 
@@ -97,7 +97,7 @@ Number of the card associated with the [credential](../../../capability-guides/a
 
 ---
 
-### `code`
+#### `code`
 
 Format: `String`
 
@@ -105,7 +105,7 @@ Access (PIN) code for the [credential](../../../capability-guides/access-systems
 
 ---
 
-### `created_at`
+#### `created_at`
 
 Format: `Datetime`
 
@@ -113,7 +113,7 @@ Date and time at which the [credential](../../../capability-guides/access-system
 
 ---
 
-### `display_name`
+#### `display_name`
 
 Format: `String`
 
@@ -121,7 +121,7 @@ Display name that corresponds to the [credential](../../../capability-guides/acc
 
 ---
 
-### `ends_at`
+#### `ends_at`
 
 Format: `String`
 
@@ -129,7 +129,7 @@ Date and time at which the [credential](../../../capability-guides/access-system
 
 ---
 
-### `errors`
+#### `errors`
 
 Format: `List`
 
@@ -151,7 +151,7 @@ Errors associated with the [credential](../../../capability-guides/access-system
 
 ---
 
-### `external_type`
+#### `external_type`
 
 Format: `Enum`
 
@@ -168,7 +168,7 @@ Possible enum values:
 
 ---
 
-### `external_type_display_name`
+#### `external_type_display_name`
 
 Format: `String`
 
@@ -176,7 +176,7 @@ Display name that corresponds to the brand-specific terminology for the [credent
 
 ---
 
-### `is_issued`
+#### `is_issued`
 
 Format: `Boolean`
 
@@ -184,7 +184,7 @@ Indicates whether the [credential](../../../capability-guides/access-systems/man
 
 ---
 
-### `is_latest_desired_state_synced_with_provider`
+#### `is_latest_desired_state_synced_with_provider`
 
 Format: `Boolean`
 
@@ -192,13 +192,13 @@ Indicates whether the latest state of the [credential](../../../capability-guide
 
 ---
 
-### `is_managed`
+#### `is_managed`
 
 Format: `Boolean`
 
 ---
 
-### `is_multi_phone_sync_credential`
+#### `is_multi_phone_sync_credential`
 
 Format: `Boolean`
 
@@ -206,7 +206,7 @@ Indicates whether the [credential](../../../capability-guides/access-systems/man
 
 ---
 
-### `is_one_time_use`
+#### `is_one_time_use`
 
 Format: `Boolean`
 
@@ -214,7 +214,7 @@ Indicates whether the [credential](../../../capability-guides/access-systems/man
 
 ---
 
-### `issued_at`
+#### `issued_at`
 
 Format: `Datetime`
 
@@ -222,7 +222,7 @@ Date and time at which the [credential](../../../capability-guides/access-system
 
 ---
 
-### `latest_desired_state_synced_with_provider_at`
+#### `latest_desired_state_synced_with_provider_at`
 
 Format: `Datetime`
 
@@ -230,7 +230,7 @@ Date and time at which the state of the [credential](../../../capability-guides/
 
 ---
 
-### `parent_acs_credential_id`
+#### `parent_acs_credential_id`
 
 Format: `UUID`
 
@@ -238,7 +238,7 @@ ID of the parent [credential](../../../capability-guides/access-systems/managing
 
 ---
 
-### `starts_at`
+#### `starts_at`
 
 Format: `String`
 
@@ -246,7 +246,7 @@ Date and time at which the [credential](../../../capability-guides/access-system
 
 ---
 
-### `visionline_metadata`
+#### `visionline_metadata`
 
 Format: `Object`
 
@@ -306,7 +306,7 @@ Possible enum values:
 
 ---
 
-### [`warnings`](./#warnings-1)
+#### [`warnings`](./#warnings-1)
 
 Format: `List`
 
@@ -316,7 +316,7 @@ Warnings associated with the [credential](../../../capability-guides/access-syst
 
 ---
 
-### `workspace_id`
+#### `workspace_id`
 
 Format: `UUID`
 

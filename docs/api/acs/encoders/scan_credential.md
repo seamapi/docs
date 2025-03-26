@@ -31,9 +31,9 @@ ID of the `acs_encoder` to use for the scan.
 
 Reading credential data from physical encoder.
 
-#### Properties
+## Properties
 
-#### `action_attempt_id`
+##### `action_attempt_id`
 
 Format: `UUID`
 
@@ -41,13 +41,13 @@ The ID of the action attempt.
 
 ---
 
-#### `action_type`
+##### `action_type`
 
 Format: `String`
 
 ---
 
-#### `error`
+##### `error`
 
 Format: `Object`
 
@@ -70,7 +70,7 @@ Possible enum values:
 
 ---
 
-#### `result`
+##### `result`
 
 Format: `Object`
 
@@ -604,7 +604,7 @@ Possible enum values:
 
 ---
 
-#### `status`
+##### `status`
 
 Format: `Enum`
 

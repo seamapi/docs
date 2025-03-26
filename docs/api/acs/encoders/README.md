@@ -8,7 +8,7 @@ Represents a hardware device that encodes [credential](../../../capability-guide
 
 ## Properties
 
-### `acs_encoder_id`
+#### `acs_encoder_id`
 
 Format: `UUID`
 
@@ -16,7 +16,7 @@ ID of the [encoder](https://docs.seam.co/latest/capability-guides/access-systems
 
 ---
 
-### `acs_system_id`
+#### `acs_system_id`
 
 Format: `UUID`
 
@@ -24,7 +24,7 @@ ID of the [access control system](https://docs.seam.co/latest/capability-guides/
 
 ---
 
-### `created_at`
+#### `created_at`
 
 Format: `Datetime`
 
@@ -32,7 +32,7 @@ Date and time at which the [encoder](../../../capability-guides/access-systems/w
 
 ---
 
-### `display_name`
+#### `display_name`
 
 Format: `String`
 
@@ -40,7 +40,7 @@ Display name for the [encoder](../../../capability-guides/access-systems/working
 
 ---
 
-### `errors`
+#### `errors`
 
 Format: `List`
 
@@ -74,7 +74,7 @@ Detailed description of the error. Provides insights into the issue and potentia
 
 ---
 
-### `workspace_id`
+#### `workspace_id`
 
 Format: `UUID`
 
