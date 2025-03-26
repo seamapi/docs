@@ -168,9 +168,11 @@ ID of the desired thermostat device.
 
 [action\_attempt](./)
 
-### `ACTIVATE_CLIMATE_PRESET`
+### The `ACTIVATE_CLIMATE_PRESET` Resource
 
 Activating climate preset.
+
+#### Properties
 
 #### `action_attempt_id`
 

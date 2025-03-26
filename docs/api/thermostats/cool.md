@@ -178,9 +178,11 @@ Desired [cooling set point](../../capability-guides/thermostats/understanding-th
 
 [action\_attempt](./)
 
-### `SET_HVAC_MODE`
+### The `SET_HVAC_MODE` Resource
 
 Setting HVAC mode.
+
+#### Properties
 
 #### `action_attempt_id`
 

@@ -150,9 +150,11 @@ ID of the desired thermostat device.
 
 [action\_attempt](./)
 
-### `SET_HVAC_MODE`
+### The `SET_HVAC_MODE` Resource
 
 Setting HVAC mode.
+
+#### Properties
 
 #### `action_attempt_id`
 

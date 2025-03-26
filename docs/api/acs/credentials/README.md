@@ -2,9 +2,11 @@
 
 The Credentials route contains the following resources:
 
-## `acs_credential`
+## The `acs_credential` Resource
 
 Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md). The `acs_credential` object represents a [credential](../../../capability-guides/access-systems/managing-credentials.md) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code.
+
+## Properties
 
 ### `access_method`
 

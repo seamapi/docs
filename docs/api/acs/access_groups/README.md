@@ -2,10 +2,12 @@
 
 The Access Groups route contains the following resources:
 
-## `acs_access_group`
+## The `acs_access_group` Resource
 
 Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.
 The `acs_access_group` object represents an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+
+## Properties
 
 ### `access_group_type`
 

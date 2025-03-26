@@ -36,9 +36,11 @@ ID of the `acs_encoder` to use to encode the `acs_credential`.
 
 [action\_attempt](./)
 
-### `ENCODE_CREDENTIAL`
+### The `ENCODE_CREDENTIAL` Resource
 
 Encoding credential data from physical encoder.
+
+#### Properties
 
 #### `action_attempt_id`
 

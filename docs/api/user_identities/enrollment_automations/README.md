@@ -2,9 +2,11 @@
 
 The Enrollment Automations route contains the following resources:
 
-## `enrollment_automation`
+## The `enrollment_automation` Resource
 
 Represents an [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) within the [Seam mobile access solution](https://docs.seam.co/latest/capability-guides/mobile-access-in-development).
+
+## Properties
 
 ### `created_at`
 

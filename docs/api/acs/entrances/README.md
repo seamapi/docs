@@ -2,9 +2,11 @@
 
 The Entrances route contains the following resources:
 
-## `acs_entrance`
+## The `acs_entrance` Resource
 
 Represents an [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+
+## Properties
 
 ### `acs_entrance_id`
 

@@ -178,9 +178,11 @@ Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermos
 
 [action\_attempt](./)
 
-### `SET_FAN_MODE`
+### The `SET_FAN_MODE` Resource
 
 Setting fan mode.
+
+#### Properties
 
 #### `action_attempt_id`
 

@@ -27,9 +27,11 @@ ID of the `acs_encoder` to use for the scan.
 
 [action\_attempt](./)
 
-### `SCAN_CREDENTIAL`
+### The `SCAN_CREDENTIAL` Resource
 
 Reading credential data from physical encoder.
+
+#### Properties
 
 #### `action_attempt_id`
 
