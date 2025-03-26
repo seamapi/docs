@@ -16,6 +16,355 @@ await seam.acs.users.create({
   full_name: "Jane Doe",
   email_address: "jane@example.com",
   phone_number: "+15555550100",
+});
+```
+
+#### Response
+
+```javascript
+{
+  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
+  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+  "created_at": "2024-04-05T07:57:05.323Z",
+  "display_name": "Jane Doe",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15555550100"
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+#### Request
+
+```python
+seam.acs.users.create(
+    acs_system_id="123e4567-e89b-12d3-a456-426614174000",
+    full_name="Jane Doe",
+    email_address="jane@example.com",
+    phone_number="+15555550100",
+)
+```
+
+#### Response
+
+```python
+AcsUser(
+    acs_user_id="123e4567-e89b-12d3-a456-426614174000",
+    acs_system_id="123e4567-e89b-12d3-a456-426614174000",
+    workspace_id="123e4567-e89b-12d3-a456-426614174000",
+    created_at="2024-04-05T07:57:05.323Z",
+    display_name="Jane Doe",
+    full_name="Jane Doe",
+    email_address="jane@example.com",
+    phone_number="+15555550100",
+)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+#### Request
+
+```ruby
+seam.acs.users.create(
+  acs_system_id: "123e4567-e89b-12d3-a456-426614174000",
+  full_name: "Jane Doe",
+  email_address: "jane@example.com",
+  phone_number: "+15555550100",
+)
+```
+
+#### Response
+
+```ruby
+{
+  "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
+  "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
+  "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
+  "created_at" => "2024-04-05T07:57:05.323Z",
+  "display_name" => "Jane Doe",
+  "full_name" => "Jane Doe",
+  "email_address" => "jane@example.com",
+  "phone_number" => "+15555550100",
+}
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+#### Request
+
+```php
+<?php
+$seam->acs->users->create(
+    acs_system_id: "123e4567-e89b-12d3-a456-426614174000",
+    full_name: "Jane Doe",
+    email_address: "jane@example.com",
+    phone_number: "+15555550100"
+);
+```
+
+#### Response
+
+```php
+<?php
+[
+    "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "created_at" => "2024-04-05T07:57:05.323Z",
+    "display_name" => "Jane Doe",
+    "full_name" => "Jane Doe",
+    "email_address" => "jane@example.com",
+    "phone_number" => "+15555550100",
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+#### Request
+
+```seam_cli
+seam acs users create --acs_system_id "123e4567-e89b-12d3-a456-426614174000" --full_name "Jane Doe" --email_address "jane@example.com" --phone_number "+15555550100"
+```
+
+#### Response
+
+```seam_cli
+{
+  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
+  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+  "created_at": "2024-04-05T07:57:05.323Z",
+  "display_name": "Jane Doe",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15555550100"
+}
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Request
+
+```go
+package main
+
+import api "github.com/seamapi/go"
+import users "github.com/seamapi/go/users"
+
+func main() {
+	client.Acs.Users.Create(
+		context.Background(),
+		users.UsersCreateRequest{
+			AcsSystemId:  api.String("123e4567-e89b-12d3-a456-426614174000"),
+			FullName:     api.String("Jane Doe"),
+			EmailAddress: api.String("jane@example.com"),
+			PhoneNumber:  api.String("+15555550100"),
+		},
+	)
+}
+```
+
+#### Response
+
+```go
+api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "Jane Doe", FullName: "Jane Doe", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100"}
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+#### Request
+
+```javascript
+await seam.acs.users.create({
+  acs_system_id: "123e4567-e89b-12d3-a456-426614174000",
+  full_name: "Jane Doe",
+  email_address: "jane@example.com",
+  phone_number: "+15555550100",
+  access_schedule: {
+    starts_at: "2024-11-01T15:00:00.000Z",
+    ends_at: "2024-11-04T11:00:00.000Z",
+  },
+});
+```
+
+#### Response
+
+```javascript
+{
+  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
+  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+  "created_at": "2024-04-05T07:57:05.323Z",
+  "display_name": "Jane Doe",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15555550100"
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+#### Request
+
+```python
+seam.acs.users.create(
+    acs_system_id="123e4567-e89b-12d3-a456-426614174000",
+    full_name="Jane Doe",
+    email_address="jane@example.com",
+    phone_number="+15555550100",
+    access_schedule={
+        "starts_at": "2024-11-01T15:00:00.000Z",
+        "ends_at": "2024-11-04T11:00:00.000Z",
+    },
+)
+```
+
+#### Response
+
+```python
+AcsUser(
+    acs_user_id="123e4567-e89b-12d3-a456-426614174000",
+    acs_system_id="123e4567-e89b-12d3-a456-426614174000",
+    workspace_id="123e4567-e89b-12d3-a456-426614174000",
+    created_at="2024-04-05T07:57:05.323Z",
+    display_name="Jane Doe",
+    full_name="Jane Doe",
+    email_address="jane@example.com",
+    phone_number="+15555550100",
+)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+#### Request
+
+```ruby
+seam.acs.users.create(
+  acs_system_id: "123e4567-e89b-12d3-a456-426614174000",
+  full_name: "Jane Doe",
+  email_address: "jane@example.com",
+  phone_number: "+15555550100",
+  access_schedule: {
+    starts_at: "2024-11-01T15:00:00.000Z",
+    ends_at: "2024-11-04T11:00:00.000Z",
+  },
+)
+```
+
+#### Response
+
+```ruby
+{
+  "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
+  "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
+  "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
+  "created_at" => "2024-04-05T07:57:05.323Z",
+  "display_name" => "Jane Doe",
+  "full_name" => "Jane Doe",
+  "email_address" => "jane@example.com",
+  "phone_number" => "+15555550100",
+}
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+#### Request
+
+```php
+<?php
+$seam->acs->users->create(
+    acs_system_id: "123e4567-e89b-12d3-a456-426614174000",
+    full_name: "Jane Doe",
+    email_address: "jane@example.com",
+    phone_number: "+15555550100",
+    access_schedule: [
+        "starts_at" => "2024-11-01T15:00:00.000Z",
+        "ends_at" => "2024-11-04T11:00:00.000Z",
+    ]
+);
+```
+
+#### Response
+
+```php
+<?php
+[
+    "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "created_at" => "2024-04-05T07:57:05.323Z",
+    "display_name" => "Jane Doe",
+    "full_name" => "Jane Doe",
+    "email_address" => "jane@example.com",
+    "phone_number" => "+15555550100",
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+#### Request
+
+```seam_cli
+seam acs users create --acs_system_id "123e4567-e89b-12d3-a456-426614174000" --full_name "Jane Doe" --email_address "jane@example.com" --phone_number "+15555550100" --access_schedule {"starts_at":"2024-11-01T15:00:00.000Z","ends_at":"2024-11-04T11:00:00.000Z"}
+```
+
+#### Response
+
+```seam_cli
+{
+  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
+  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+  "created_at": "2024-04-05T07:57:05.323Z",
+  "display_name": "Jane Doe",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15555550100"
+}
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Request
+
+```go
+package main
+
+import api "github.com/seamapi/go"
+import users "github.com/seamapi/go/users"
+
+func main() {
+	client.Acs.Users.Create(
+		context.Background(),
+		users.UsersCreateRequest{
+			AcsSystemId:    api.String("123e4567-e89b-12d3-a456-426614174000"),
+			FullName:       api.String("Jane Doe"),
+			EmailAddress:   api.String("jane@example.com"),
+			PhoneNumber:    api.String("+15555550100"),
+			AccessSchedule: users.UsersCreateRequestAccessSchedule{StartsAt: api.String("2024-11-01T15:00:00.000Z"), EndsAt: api.String("2024-11-04T11:00:00.000Z")},
+		},
+	)
+}
+```
+
+#### Response
+
+```go
+api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "Jane Doe", FullName: "Jane Doe", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100"}
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+#### Request
+
+```javascript
+await seam.acs.users.create({
+  acs_system_id: "123e4567-e89b-12d3-a456-426614174000",
+  full_name: "Jane Doe",
+  email_address: "jane@example.com",
+  phone_number: "+15555550100",
   acs_access_group_ids: ["123e4567-e89b-12d3-a456-426614174000"],
 });
 ```
