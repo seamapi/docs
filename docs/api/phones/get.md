@@ -26,3 +26,8 @@ Device ID of the desired phone.
 ## Return Type
 
 [phone](./)
+
+***
+
+## Code Samples
+

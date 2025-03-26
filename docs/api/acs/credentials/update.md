@@ -118,6 +118,7 @@ nil
 {% endtab %}
 
 {% endtabs %}
+
 ## Authentication Methods
 
 - API key
@@ -156,3 +157,121 @@ Replacement date and time at which the validity of the credential ends, in [ISO 
 ## Return Type
 
 void
+
+***
+
+## Code Samples
+### Update a credential
+
+Specify the desired `acs_credential_id` and updated `code` to update the credential.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+#### Request
+
+```javascript
+await seam.acs.credentials.update({
+  acs_credential_id: "66666666-6666-6666-6666-666666666666",
+  code: "7890",
+});
+```
+
+#### Response
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="Python" %}
+#### Request
+
+```python
+seam.acs.credentials.update(
+    acs_credential_id="66666666-6666-6666-6666-666666666666", code="7890"
+)
+```
+
+#### Response
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+#### Request
+
+```ruby
+seam.acs.credentials.update(acs_credential_id: "66666666-6666-6666-6666-666666666666", code: "7890")
+```
+
+#### Response
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+#### Request
+
+```php
+<?php
+$seam->acs->credentials->update(
+    acs_credential_id: "66666666-6666-6666-6666-666666666666",
+    code: "7890"
+);
+```
+
+#### Response
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+#### Request
+
+```seam_cli
+seam acs credentials update --acs_credential_id "66666666-6666-6666-6666-666666666666" --code "7890"
+```
+
+#### Response
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Request
+
+```go
+package main
+
+import api "github.com/seamapi/go"
+import credentials "github.com/seamapi/go/credentials"
+
+func main() {
+	client.Acs.Credentials.Update(
+		context.Background(),
+		credentials.CredentialsUpdateRequest{
+			AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
+			Code:            api.String("7890"),
+		},
+	)
+}
+```
+
+#### Response
+
+```go
+nil
+```
+{% endtab %}
+
+{% endtabs %}
+
+

@@ -53,3 +53,8 @@ Number of `acs_encoders` to return.
 ## Return Type
 
 Array<[acs\_encoder](./)>
+
+***
+
+## Code Samples
+

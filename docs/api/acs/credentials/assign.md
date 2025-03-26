@@ -122,6 +122,7 @@ nil
 {% endtab %}
 
 {% endtabs %}
+
 ## Authentication Methods
 
 - API key
@@ -151,3 +152,125 @@ ID of the desired user.
 ## Return Type
 
 void
+
+***
+
+## Code Samples
+### Assign a credential to an ACS user
+
+Specify the desired `acs_user_id` and `acs_credential_id` to assign a credential to an ACS user.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+#### Request
+
+```javascript
+await seam.acs.credentials.assign({
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  acs_credential_id: "66666666-6666-6666-6666-666666666666",
+});
+```
+
+#### Response
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="Python" %}
+#### Request
+
+```python
+seam.acs.credentials.assign(
+    acs_user_id="33333333-3333-3333-3333-333333333333",
+    acs_credential_id="66666666-6666-6666-6666-666666666666",
+)
+```
+
+#### Response
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+#### Request
+
+```ruby
+seam.acs.credentials.assign(
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  acs_credential_id: "66666666-6666-6666-6666-666666666666",
+)
+```
+
+#### Response
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+#### Request
+
+```php
+<?php
+$seam->acs->credentials->assign(
+    acs_user_id: "33333333-3333-3333-3333-333333333333",
+    acs_credential_id: "66666666-6666-6666-6666-666666666666"
+);
+```
+
+#### Response
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+#### Request
+
+```seam_cli
+seam acs credentials assign --acs_user_id "33333333-3333-3333-3333-333333333333" --acs_credential_id "66666666-6666-6666-6666-666666666666"
+```
+
+#### Response
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Request
+
+```go
+package main
+
+import api "github.com/seamapi/go"
+import credentials "github.com/seamapi/go/credentials"
+
+func main() {
+	client.Acs.Credentials.Assign(
+		context.Background(),
+		credentials.CredentialsAssignRequest{
+			AcsUserId:       api.String("33333333-3333-3333-3333-333333333333"),
+			AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
+		},
+	)
+}
+```
+
+#### Response
+
+```go
+nil
+```
+{% endtab %}
+
+{% endtabs %}
+
+

@@ -137,6 +137,7 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
+
 ## Authentication Methods
 
 - API key
@@ -167,3 +168,140 @@ Required: No
 ## Return Type
 
 Array<[acs\_entrance](./)>
+
+***
+
+## Code Samples
+### List entrances
+
+To filter the list of entrances, specify the desired `acs_system_id` or `acs_user_id`.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+#### Request
+
+```javascript
+await seam.acs.entrances.list();
+```
+
+#### Response
+
+```javascript
+[
+  {
+    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+    "acs_entrance_id": "123e4567-e89b-12d3-a456-426614174000",
+    "created_at": "2024-04-05T07:57:05.323Z",
+    "display_name": "text"
+  }
+]
+```
+{% endtab %}
+
+{% tab title="Python" %}
+#### Request
+
+```python
+seam.acs.entrances.list()
+```
+
+#### Response
+
+```python
+[
+    AcsEntrance(
+        acs_system_id="123e4567-e89b-12d3-a456-426614174000",
+        acs_entrance_id="123e4567-e89b-12d3-a456-426614174000",
+        created_at="2024-04-05T07:57:05.323Z",
+        display_name="text",
+    )
+]
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+#### Request
+
+```ruby
+seam.acs.entrances.list()
+```
+
+#### Response
+
+```ruby
+[
+  {
+    "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "acs_entrance_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "created_at" => "2024-04-05T07:57:05.323Z",
+    "display_name" => "text",
+  },
+]
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+#### Request
+
+```php
+<?php
+$seam->acs->entrances->list();
+```
+
+#### Response
+
+```php
+<?php
+[
+    [
+        "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
+        "acs_entrance_id" => "123e4567-e89b-12d3-a456-426614174000",
+        "created_at" => "2024-04-05T07:57:05.323Z",
+        "display_name" => "text",
+    ],
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+#### Request
+
+```seam_cli
+seam acs entrances list
+```
+
+#### Response
+
+```seam_cli
+[
+  {
+    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+    "acs_entrance_id": "123e4567-e89b-12d3-a456-426614174000",
+    "created_at": "2024-04-05T07:57:05.323Z",
+    "display_name": "text"
+  }
+]
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Request
+
+```go
+package main
+
+func main() {
+	client.Acs.Entrances.List(context.Background())
+}
+```
+
+#### Response
+
+```go
+[]api.AcsEntrance{api.AcsEntrance{AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", AcsEntranceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "text"}}
+```
+{% endtab %}
+
+{% endtabs %}
+
+

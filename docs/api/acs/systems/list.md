@@ -118,6 +118,7 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
+
 ## Authentication Methods
 
 - API key
@@ -139,3 +140,117 @@ ID of the connected account by which to filter the list of returned access contr
 ## Return Type
 
 Array<[acs\_system](./)>
+
+***
+
+## Code Samples
+### List ACS systems by connected account
+
+To filter the list of ACS systems, include a `connected_account_id`.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+#### Request
+
+```javascript
+await seam.acs.systems.list({
+  connected_account_id: "123e4567-e89b-12d3-a456-426614174000",
+});
+```
+
+#### Response
+
+```javascript
+[{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
+```
+{% endtab %}
+
+{% tab title="Python" %}
+#### Request
+
+```python
+seam.acs.systems.list(connected_account_id="123e4567-e89b-12d3-a456-426614174000")
+```
+
+#### Response
+
+```python
+[AcsSystem(acs_system_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")]
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+#### Request
+
+```ruby
+seam.acs.systems.list(connected_account_id: "123e4567-e89b-12d3-a456-426614174000")
+```
+
+#### Response
+
+```ruby
+[{ "acs_system_id" => "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+#### Request
+
+```php
+<?php
+$seam->acs->systems->list(
+    connected_account_id: "123e4567-e89b-12d3-a456-426614174000"
+);
+```
+
+#### Response
+
+```php
+<?php
+[["acs_system_id" => "8d7e0b3a-b889-49a7-9164-4b71a0506a33"]];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+#### Request
+
+```seam_cli
+seam acs systems list --connected_account_id "123e4567-e89b-12d3-a456-426614174000"
+```
+
+#### Response
+
+```seam_cli
+[{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Request
+
+```go
+package main
+
+import api "github.com/seamapi/go"
+import systems "github.com/seamapi/go/systems"
+
+func main() {
+	client.Acs.Systems.List(
+		context.Background(),
+		systems.SystemsListRequest{
+			ConnectedAccountId: api.String("123e4567-e89b-12d3-a456-426614174000"),
+		},
+	)
+}
+```
+
+#### Response
+
+```go
+[]api.AcsSystem{api.AcsSystem{AcsSystemId: "8d7e0b3a-b889-49a7-9164-4b71a0506a33"}}
+```
+{% endtab %}
+
+{% endtabs %}
+
+

@@ -27,3 +27,8 @@ Device ID of the desired phone.
 ## Return Type
 
 void
+
+***
+
+## Code Samples
+

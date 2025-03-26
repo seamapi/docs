@@ -44,3 +44,8 @@ Desired simulated temperature in °F. You must set `temperature_fahrenheit` or `
 ## Return Type
 
 void
+
+***
+
+## Code Samples
+
