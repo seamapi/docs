@@ -29,15 +29,11 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
 <details>
 
 <summary><code>door_name</code> Format: <code>String</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>door_number</code> Format: <code>Number</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>door_type</code> Format: <code>Enum</code></summary>
@@ -48,19 +44,14 @@ Possible enum values:
 - `GuestDoor`
 - `Elevator`
 </details>
-
 <details>
 
 <summary><code>pms_id</code> Format: <code>String</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>stand_open</code> Format: <code>Boolean</code></summary>
-
 </details>
-
 ---
 
 ### `created_at`
@@ -88,9 +79,7 @@ dormakaba Community-specific metadata associated with the [entrance](../../../ca
 <details>
 
 <summary><code>access_point_name</code> Format: <code>String</code></summary>
-
 </details>
-
 ---
 
 ### `errors`
@@ -106,17 +95,13 @@ Errors associated with the [entrance](../../../capability-guides/access-systems/
 <summary><code>error_code</code> Format: <code>String</code></summary>
 
 Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-
 </details>
-
 <details>
 
 <summary><code>message</code> Format: <code>String</code></summary>
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
 </details>
-
 ---
 
 ### `latch_metadata`
@@ -128,27 +113,19 @@ Latch-specific metadata associated with the [entrance](../../../capability-guide
 <details>
 
 <summary><code>accessibility_type</code> Format: <code>String</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>door_name</code> Format: <code>String</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>door_type</code> Format: <code>String</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>is_connected</code> Format: <code>Boolean</code></summary>
-
 </details>
-
 ---
 
 ### `salto_ks_metadata`
@@ -160,51 +137,35 @@ Salto KS-specific metadata associated with the [entrance](../../../capability-gu
 <details>
 
 <summary><code>battery_level</code> Format: <code>String</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>door_name</code> Format: <code>String</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>intrusion_alarm</code> Format: <code>Boolean</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>left_open_alarm</code> Format: <code>Boolean</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>lock_type</code> Format: <code>String</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>locked_state</code> Format: <code>String</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>online</code> Format: <code>Boolean</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>privacy_mode</code> Format: <code>Boolean</code></summary>
-
 </details>
-
 ---
 
 ### `salto_space_metadata`
@@ -216,21 +177,15 @@ Salto Space-specific metadata associated with the [entrance](../../../capability
 <details>
 
 <summary><code>door_description</code> Format: <code>String</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>door_name</code> Format: <code>String</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>ext_door_id</code> Format: <code>String</code></summary>
-
 </details>
-
 ---
 
 ### `visionline_metadata`
@@ -250,13 +205,10 @@ Possible enum values:
 - `common`
 - `common (PMS)`
 </details>
-
 <details>
 
 <summary><code>door_name</code> Format: <code>String</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>profiles</code> Format: <code>List</code> Item format: <code>Object</code></summary>
@@ -264,21 +216,14 @@ Possible enum values:
 - <code>visionline_door_profile_id</code> Format: <code>String</code>
 
 
-
-
-
 - <code>visionline_door_profile_type</code> Format: <code>Enum</code>
 
-
-Possible enum values:
-- `BLE`
-- `commonDoor`
-- `touch`
-
-
+  Possible enum values:
+  - `BLE`
+  - `commonDoor`
+  - `touch`
 
 </details>
-
 ---
 
 ## Endpoints
@@ -307,63 +252,47 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 <details>
 
 <summary><code>acs_entrance_id</code> Format: <code>UUID</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
-
 </details>
-
 <details>
 
 <summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
-
 </details>
-
 <details>
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the event was created.
-
 </details>
-
 <details>
 
 <summary><code>event_id</code> Format: <code>UUID</code></summary>
 
 ID of the event.
-
 </details>
-
 <details>
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the event occurred.
-
 </details>
-
 <details>
 
 <summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
 </details>
-
 ---
 
 ### `acs_entrance.removed`
@@ -373,62 +302,46 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 <details>
 
 <summary><code>acs_entrance_id</code> Format: <code>UUID</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
-
 </details>
-
 <details>
 
 <summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
-
 </details>
-
 <details>
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the event was created.
-
 </details>
-
 <details>
 
 <summary><code>event_id</code> Format: <code>UUID</code></summary>
 
 ID of the event.
-
 </details>
-
 <details>
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the event occurred.
-
 </details>
-
 <details>
 
 <summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
 </details>
-
 ---
 

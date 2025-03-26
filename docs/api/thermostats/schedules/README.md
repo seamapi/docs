@@ -49,17 +49,13 @@ Errors associated with the [thermostat schedule](../../../capability-guides/ther
 <summary><code>error_code</code> Format: <code>String</code></summary>
 
 Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-
 </details>
-
 <details>
 
 <summary><code>message</code> Format: <code>String</code></summary>
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
 </details>
-
 ---
 
 ### `max_override_period_minutes`
