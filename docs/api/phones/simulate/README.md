@@ -1,5 +1,7 @@
 # Phone Simulations
 
+The Phone Simulations route contains the following resources:
+
 ## Endpoints
 
 ### [`/phones/simulate/create_sandbox_phone`](./create_sandbox_phone.md)

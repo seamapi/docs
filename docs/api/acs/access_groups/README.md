@@ -1,5 +1,7 @@
 # Access Groups
 
+The Access Groups route contains the following resources:
+
 ## `acs_access_group`
 
 Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.
