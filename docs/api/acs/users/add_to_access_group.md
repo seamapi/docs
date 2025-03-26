@@ -7,7 +7,7 @@ PUT /acs/users/add_to_access_group ⇒ void
 Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
 {% tabs %}
-{% tab title="JavaScript" %}
+{% tab title="JavaScript TEST" %}
 #### Request
 
 ```javascript
@@ -24,7 +24,7 @@ await seam.acs.users.addToAccessGroup({
 ```
 {% endtab %}
 
-{% tab title="Python" %}
+{% tab title="Python TEST" %}
 #### Request
 
 ```python
@@ -41,7 +41,7 @@ None
 ```
 {% endtab %}
 
-{% tab title="Ruby" %}
+{% tab title="Ruby TEST" %}
 #### Request
 
 ```ruby
@@ -58,7 +58,7 @@ nil
 ```
 {% endtab %}
 
-{% tab title="PHP" %}
+{% tab title="PHP TEST" %}
 #### Request
 
 ```php
@@ -76,7 +76,7 @@ null
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
+{% tab title="Seam CLI TEST" %}
 #### Request
 
 ```seam_cli
@@ -90,7 +90,7 @@ seam acs users add-to-access-group --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0
 ```
 {% endtab %}
 
-{% tab title="Go" %}
+{% tab title="Go TEST" %}
 #### Request
 
 ```go

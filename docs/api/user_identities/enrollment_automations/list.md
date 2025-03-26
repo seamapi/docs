@@ -7,7 +7,7 @@ POST /user_identities/enrollment_automations/list ⇒ { enrollment_automations: 
 Returns a list of all [enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 {% tabs %}
-{% tab title="JavaScript" %}
+{% tab title="JavaScript TEST" %}
 #### Request
 
 ```javascript
@@ -33,7 +33,7 @@ await seam.userIdentities.enrollmentAutomations.list({
 ```
 {% endtab %}
 
-{% tab title="Python" %}
+{% tab title="Python TEST" %}
 #### Request
 
 ```python
@@ -59,7 +59,7 @@ seam.user_identities.enrollment_automations.list(
 ```
 {% endtab %}
 
-{% tab title="Ruby" %}
+{% tab title="Ruby TEST" %}
 #### Request
 
 ```ruby
@@ -85,7 +85,7 @@ seam.user_identities.enrollment_automations.list(
 ```
 {% endtab %}
 
-{% tab title="PHP" %}
+{% tab title="PHP TEST" %}
 #### Request
 
 ```php
@@ -115,7 +115,7 @@ $seam->user_identities->enrollment_automations->list(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
+{% tab title="Seam CLI TEST" %}
 #### Request
 
 ```seam_cli
@@ -139,7 +139,7 @@ seam user-identities enrollment-automations list --user_identity_id "5c945ab5-c7
 ```
 {% endtab %}
 
-{% tab title="Go" %}
+{% tab title="Go TEST" %}
 #### Request
 
 ```go

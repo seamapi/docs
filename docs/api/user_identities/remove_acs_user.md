@@ -7,7 +7,7 @@ POST /user_identities/remove_acs_user ⇒ void
 Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 {% tabs %}
-{% tab title="JavaScript" %}
+{% tab title="JavaScript TEST" %}
 #### Request
 
 ```javascript
@@ -24,7 +24,7 @@ await seam.userIdentities.removeAcsUser({
 ```
 {% endtab %}
 
-{% tab title="Python" %}
+{% tab title="Python TEST" %}
 #### Request
 
 ```python
@@ -41,7 +41,7 @@ None
 ```
 {% endtab %}
 
-{% tab title="Ruby" %}
+{% tab title="Ruby TEST" %}
 #### Request
 
 ```ruby
@@ -58,7 +58,7 @@ nil
 ```
 {% endtab %}
 
-{% tab title="PHP" %}
+{% tab title="PHP TEST" %}
 #### Request
 
 ```php
@@ -76,7 +76,7 @@ null
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
+{% tab title="Seam CLI TEST" %}
 #### Request
 
 ```seam_cli
@@ -90,7 +90,7 @@ seam user-identities remove-acs-user --user_identity_id "5c945ab5-c75e-4bcb-8e5f
 ```
 {% endtab %}
 
-{% tab title="Go" %}
+{% tab title="Go TEST" %}
 #### Request
 
 ```go

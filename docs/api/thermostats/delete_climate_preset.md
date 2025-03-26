@@ -7,7 +7,7 @@ POST /thermostats/delete_climate_preset ⇒ void
 Deletes a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 {% tabs %}
-{% tab title="JavaScript" %}
+{% tab title="JavaScript TEST" %}
 #### Request
 
 ```javascript
@@ -24,7 +24,7 @@ await seam.thermostats.deleteClimatePreset({
 ```
 {% endtab %}
 
-{% tab title="Python" %}
+{% tab title="Python TEST" %}
 #### Request
 
 ```python
@@ -40,7 +40,7 @@ None
 ```
 {% endtab %}
 
-{% tab title="Ruby" %}
+{% tab title="Ruby TEST" %}
 #### Request
 
 ```ruby
@@ -57,7 +57,7 @@ nil
 ```
 {% endtab %}
 
-{% tab title="PHP" %}
+{% tab title="PHP TEST" %}
 #### Request
 
 ```php
@@ -75,7 +75,7 @@ null
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
+{% tab title="Seam CLI TEST" %}
 #### Request
 
 ```seam_cli
@@ -89,7 +89,7 @@ seam thermostats delete-climate-preset --device_id "123e4567-e89b-12d3-a456-4266
 ```
 {% endtab %}
 
-{% tab title="Go" %}
+{% tab title="Go TEST" %}
 #### Request
 
 ```go

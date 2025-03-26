@@ -7,7 +7,7 @@ POST /acs/entrances/list_credentials_with_access ⇒ { acs_credentials: [acs_cre
 Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md) with access to a specified [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 {% tabs %}
-{% tab title="JavaScript" %}
+{% tab title="JavaScript TEST" %}
 #### Request
 
 ```javascript
@@ -46,7 +46,7 @@ await seam.acs.entrances.listCredentialsWithAccess({
 ```
 {% endtab %}
 
-{% tab title="Python" %}
+{% tab title="Python TEST" %}
 #### Request
 
 ```python
@@ -85,7 +85,7 @@ seam.acs.entrances.list_credentials_with_access(
 ```
 {% endtab %}
 
-{% tab title="Ruby" %}
+{% tab title="Ruby TEST" %}
 #### Request
 
 ```ruby
@@ -124,7 +124,7 @@ seam.acs.entrances.list_credentials_with_access(
 ```
 {% endtab %}
 
-{% tab title="PHP" %}
+{% tab title="PHP TEST" %}
 #### Request
 
 ```php
@@ -166,7 +166,7 @@ $seam->acs->entrances->list_credentials_with_access(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
+{% tab title="Seam CLI TEST" %}
 #### Request
 
 ```seam_cli
@@ -203,7 +203,7 @@ seam acs entrances list-credentials-with-access --acs_entrance_id "123e4567-e89b
 ```
 {% endtab %}
 
-{% tab title="Go" %}
+{% tab title="Go TEST" %}
 #### Request
 
 ```go

@@ -11,7 +11,7 @@ Specify the ACS system for which you want to retrieve all compatible credential 
 systems by including the corresponding `acs_system_id` in the request body.
 
 {% tabs %}
-{% tab title="JavaScript" %}
+{% tab title="JavaScript TEST" %}
 #### Request
 
 ```javascript
@@ -27,7 +27,7 @@ await seam.acs.systems.listCompatibleCredentialManagerAcsSystems({
 ```
 {% endtab %}
 
-{% tab title="Python" %}
+{% tab title="Python TEST" %}
 #### Request
 
 ```python
@@ -43,7 +43,7 @@ seam.acs.systems.list_compatible_credential_manager_acs_systems(
 ```
 {% endtab %}
 
-{% tab title="Ruby" %}
+{% tab title="Ruby TEST" %}
 #### Request
 
 ```ruby
@@ -59,7 +59,7 @@ seam.acs.systems.list_compatible_credential_manager_acs_systems(
 ```
 {% endtab %}
 
-{% tab title="PHP" %}
+{% tab title="PHP TEST" %}
 #### Request
 
 ```php
@@ -77,7 +77,7 @@ $seam->acs->systems->list_compatible_credential_manager_acs_systems(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
+{% tab title="Seam CLI TEST" %}
 #### Request
 
 ```seam_cli
@@ -91,7 +91,7 @@ seam acs systems list-compatible-credential-manager-acs-systems --acs_system_id 
 ```
 {% endtab %}
 
-{% tab title="Go" %}
+{% tab title="Go TEST" %}
 #### Request
 
 ```go

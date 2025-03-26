@@ -7,7 +7,7 @@ POST /acs/credentials/list_accessible_entrances ⇒ { acs_entrances: [acs_entran
 Returns a list of all [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a [credential](https://docs.seam.co/latest/api/acs/credentials) grants access.
 
 {% tabs %}
-{% tab title="JavaScript" %}
+{% tab title="JavaScript TEST" %}
 #### Request
 
 ```javascript
@@ -42,7 +42,7 @@ await seam.acs.credentials.listAccessibleEntrances({
 ```
 {% endtab %}
 
-{% tab title="Python" %}
+{% tab title="Python TEST" %}
 #### Request
 
 ```python
@@ -77,7 +77,7 @@ seam.acs.credentials.list_accessible_entrances(
 ```
 {% endtab %}
 
-{% tab title="Ruby" %}
+{% tab title="Ruby TEST" %}
 #### Request
 
 ```ruby
@@ -107,7 +107,7 @@ seam.acs.credentials.list_accessible_entrances(
 ```
 {% endtab %}
 
-{% tab title="PHP" %}
+{% tab title="PHP TEST" %}
 #### Request
 
 ```php
@@ -144,7 +144,7 @@ $seam->acs->credentials->list_accessible_entrances(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
+{% tab title="Seam CLI TEST" %}
 #### Request
 
 ```seam_cli
@@ -177,7 +177,7 @@ seam acs credentials list-accessible-entrances --acs_credential_id "66666666-666
 ```
 {% endtab %}
 
-{% tab title="Go" %}
+{% tab title="Go TEST" %}
 #### Request
 
 ```go

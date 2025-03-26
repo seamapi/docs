@@ -7,7 +7,7 @@ POST /thermostats/list ⇒ { devices: [device, …] }
 Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guides/thermostats).
 
 {% tabs %}
-{% tab title="JavaScript" %}
+{% tab title="JavaScript TEST" %}
 #### Request
 
 ```javascript
@@ -44,7 +44,7 @@ await seam.thermostats.list();
 ```
 {% endtab %}
 
-{% tab title="Python" %}
+{% tab title="Python TEST" %}
 #### Request
 
 ```python
@@ -81,7 +81,7 @@ seam.thermostats.list()
 ```
 {% endtab %}
 
-{% tab title="Ruby" %}
+{% tab title="Ruby TEST" %}
 #### Request
 
 ```ruby
@@ -118,7 +118,7 @@ seam.thermostats.list()
 ```
 {% endtab %}
 
-{% tab title="PHP" %}
+{% tab title="PHP TEST" %}
 #### Request
 
 ```php
@@ -162,7 +162,7 @@ $seam->thermostats->list();
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
+{% tab title="Seam CLI TEST" %}
 #### Request
 
 ```seam_cli
@@ -199,7 +199,7 @@ seam thermostats list
 ```
 {% endtab %}
 
-{% tab title="Go" %}
+{% tab title="Go TEST" %}
 #### Request
 
 ```go

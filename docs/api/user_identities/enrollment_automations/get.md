@@ -7,7 +7,7 @@ POST /user_identities/enrollment_automations/get ⇒ { enrollment_automation }
 Returns a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).
 
 {% tabs %}
-{% tab title="JavaScript" %}
+{% tab title="JavaScript TEST" %}
 #### Request
 
 ```javascript
@@ -31,7 +31,7 @@ await seam.userIdentities.enrollmentAutomations.get({
 ```
 {% endtab %}
 
-{% tab title="Python" %}
+{% tab title="Python TEST" %}
 #### Request
 
 ```python
@@ -55,7 +55,7 @@ EnrollmentAutomation(
 ```
 {% endtab %}
 
-{% tab title="Ruby" %}
+{% tab title="Ruby TEST" %}
 #### Request
 
 ```ruby
@@ -79,7 +79,7 @@ seam.user_identities.enrollment_automations.get(
 ```
 {% endtab %}
 
-{% tab title="PHP" %}
+{% tab title="PHP TEST" %}
 #### Request
 
 ```php
@@ -107,7 +107,7 @@ $seam->user_identities->enrollment_automations->get(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
+{% tab title="Seam CLI TEST" %}
 #### Request
 
 ```seam_cli
@@ -129,7 +129,7 @@ seam user-identities enrollment-automations get --enrollment_automation_id "0550
 ```
 {% endtab %}
 
-{% tab title="Go" %}
+{% tab title="Go TEST" %}
 #### Request
 
 ```go

@@ -7,7 +7,7 @@ POST /acs/users/create ⇒ { acs_user }
 Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 {% tabs %}
-{% tab title="JavaScript" %}
+{% tab title="JavaScript TEST" %}
 #### Request
 
 ```javascript
@@ -35,7 +35,7 @@ await seam.acs.users.create({
 ```
 {% endtab %}
 
-{% tab title="Python" %}
+{% tab title="Python TEST" %}
 #### Request
 
 ```python
@@ -63,7 +63,7 @@ AcsUser(
 ```
 {% endtab %}
 
-{% tab title="Ruby" %}
+{% tab title="Ruby TEST" %}
 #### Request
 
 ```ruby
@@ -91,7 +91,7 @@ seam.acs.users.create(
 ```
 {% endtab %}
 
-{% tab title="PHP" %}
+{% tab title="PHP TEST" %}
 #### Request
 
 ```php
@@ -121,7 +121,7 @@ $seam->acs->users->create(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
+{% tab title="Seam CLI TEST" %}
 #### Request
 
 ```seam_cli
@@ -144,7 +144,7 @@ seam acs users create --acs_system_id "123e4567-e89b-12d3-a456-426614174000" --f
 ```
 {% endtab %}
 
-{% tab title="Go" %}
+{% tab title="Go TEST" %}
 #### Request
 
 ```go
@@ -173,7 +173,8 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tabs %}
+{% tab title="JavaScript TEST" %}
 #### Request
 
 ```javascript
@@ -205,7 +206,7 @@ await seam.acs.users.create({
 ```
 {% endtab %}
 
-{% tab title="Python" %}
+{% tab title="Python TEST" %}
 #### Request
 
 ```python
@@ -237,7 +238,7 @@ AcsUser(
 ```
 {% endtab %}
 
-{% tab title="Ruby" %}
+{% tab title="Ruby TEST" %}
 #### Request
 
 ```ruby
@@ -269,7 +270,7 @@ seam.acs.users.create(
 ```
 {% endtab %}
 
-{% tab title="PHP" %}
+{% tab title="PHP TEST" %}
 #### Request
 
 ```php
@@ -303,7 +304,7 @@ $seam->acs->users->create(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
+{% tab title="Seam CLI TEST" %}
 #### Request
 
 ```seam_cli
@@ -326,7 +327,7 @@ seam acs users create --acs_system_id "123e4567-e89b-12d3-a456-426614174000" --f
 ```
 {% endtab %}
 
-{% tab title="Go" %}
+{% tab title="Go TEST" %}
 #### Request
 
 ```go
@@ -356,7 +357,8 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tabs %}
+{% tab title="JavaScript TEST" %}
 #### Request
 
 ```javascript
@@ -385,7 +387,7 @@ await seam.acs.users.create({
 ```
 {% endtab %}
 
-{% tab title="Python" %}
+{% tab title="Python TEST" %}
 #### Request
 
 ```python
@@ -414,7 +416,7 @@ AcsUser(
 ```
 {% endtab %}
 
-{% tab title="Ruby" %}
+{% tab title="Ruby TEST" %}
 #### Request
 
 ```ruby
@@ -443,7 +445,7 @@ seam.acs.users.create(
 ```
 {% endtab %}
 
-{% tab title="PHP" %}
+{% tab title="PHP TEST" %}
 #### Request
 
 ```php
@@ -474,7 +476,7 @@ $seam->acs->users->create(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
+{% tab title="Seam CLI TEST" %}
 #### Request
 
 ```seam_cli
@@ -497,7 +499,7 @@ seam acs users create --acs_system_id "123e4567-e89b-12d3-a456-426614174000" --f
 ```
 {% endtab %}
 
-{% tab title="Go" %}
+{% tab title="Go TEST" %}
 #### Request
 
 ```go

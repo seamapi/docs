@@ -7,7 +7,7 @@ POST /acs/credentials/list ⇒ { acs_credentials: [acs_credential, …] }
 Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md).
 
 {% tabs %}
-{% tab title="JavaScript" %}
+{% tab title="JavaScript TEST" %}
 #### Request
 
 ```javascript
@@ -38,7 +38,7 @@ await seam.acs.credentials.list({
 ```
 {% endtab %}
 
-{% tab title="Python" %}
+{% tab title="Python TEST" %}
 #### Request
 
 ```python
@@ -69,7 +69,7 @@ seam.acs.credentials.list(
 ```
 {% endtab %}
 
-{% tab title="Ruby" %}
+{% tab title="Ruby TEST" %}
 #### Request
 
 ```ruby
@@ -100,7 +100,7 @@ seam.acs.credentials.list(
 ```
 {% endtab %}
 
-{% tab title="PHP" %}
+{% tab title="PHP TEST" %}
 #### Request
 
 ```php
@@ -133,7 +133,7 @@ $seam->acs->credentials->list(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
+{% tab title="Seam CLI TEST" %}
 #### Request
 
 ```seam_cli
@@ -159,7 +159,7 @@ seam acs credentials list --acs_user_id "33333333-3333-3333-3333-333333333333" -
 ```
 {% endtab %}
 
-{% tab title="Go" %}
+{% tab title="Go TEST" %}
 #### Request
 
 ```go

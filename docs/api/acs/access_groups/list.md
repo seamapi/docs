@@ -7,7 +7,7 @@ POST /acs/access_groups/list ⇒ { acs_access_groups: [acs_access_group, …] }
 Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
 {% tabs %}
-{% tab title="JavaScript" %}
+{% tab title="JavaScript TEST" %}
 #### Request
 
 ```javascript
@@ -37,7 +37,7 @@ await seam.acs.accessGroups.list({
 ```
 {% endtab %}
 
-{% tab title="Python" %}
+{% tab title="Python TEST" %}
 #### Request
 
 ```python
@@ -67,7 +67,7 @@ seam.acs.access_groups.list(
 ```
 {% endtab %}
 
-{% tab title="Ruby" %}
+{% tab title="Ruby TEST" %}
 #### Request
 
 ```ruby
@@ -97,7 +97,7 @@ seam.acs.access_groups.list(
 ```
 {% endtab %}
 
-{% tab title="PHP" %}
+{% tab title="PHP TEST" %}
 #### Request
 
 ```php
@@ -129,7 +129,7 @@ $seam->acs->access_groups->list(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
+{% tab title="Seam CLI TEST" %}
 #### Request
 
 ```seam_cli
@@ -156,7 +156,7 @@ seam acs access-groups list --acs_system_id "11111111-1111-1111-1111-11111111111
 ```
 {% endtab %}
 
-{% tab title="Go" %}
+{% tab title="Go TEST" %}
 #### Request
 
 ```go
