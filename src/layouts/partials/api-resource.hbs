@@ -8,17 +8,17 @@
 {{description}}
 {{/if}}
 
-{{#if ../headingOffset}}
+{{#if headingOffset}}
 #### Properties
 {{else}}
-## Properties
+### Properties
 {{/if}}
 
 {{#each properties}}
 {{#if ../headingOffset}}
-##### {{#if linkTarget}}[`{{name}}`]({{linkTarget}}){{else}}`{{name}}`{{/if}}
-{{else}}
 #### {{#if linkTarget}}[`{{name}}`]({{linkTarget}}){{else}}`{{name}}`{{/if}}
+{{else}}
+### {{#if linkTarget}}[`{{name}}`]({{linkTarget}}){{else}}`{{name}}`{{/if}}
 {{/if}}
 {{#if isDeprecated}}
 
