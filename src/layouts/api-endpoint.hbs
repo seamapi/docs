@@ -47,3 +47,11 @@ None
 
 {{> api-resource headingOffset=true}}
 {{/with}}
+
+{{#if addtionalCodeSamples.length}}
+## Additional Code Samples
+
+{{#each addtionalCodeSamples}}
+{{> code-sample }}
+{{/each}}
+{{/if}}
