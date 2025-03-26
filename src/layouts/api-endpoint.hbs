@@ -30,6 +30,7 @@
 
 {{/each}}
 {% endtabs %}
+
 {{/each}}
 {{/if}}
 {{#if authMethods}}
@@ -68,3 +69,35 @@ None
 
 {{> api-resource response.actionAttempt headingOffset=true}}
 {{/if}}
+
+***
+
+## Code Samples
+  {{#if codeSamples.length}}
+{{#each this.codeSamples}}
+### {{this.title}}
+
+{{this.description}}
+
+{% tabs %}
+{{#each this.code}}
+{% tab title="{{this.title}}" %}
+#### Request
+
+```{{@key}}
+{{this.request}}
+```
+
+#### Response
+
+```{{@key}}
+{{this.response}}
+```
+{% endtab %}
+
+{{/each}}
+{% endtabs %}
+
+{{/each}}
+{{/if}}
+
