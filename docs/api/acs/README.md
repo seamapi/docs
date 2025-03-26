@@ -2,7 +2,7 @@
 description: Systems for managing and monitoring access to physical spaces
 ---
 
-# Access Control Systems
+# The Access Control Systems Namespace
 
 Access control systems centralize access authorization for buildings, which means that you can use a single system to grant users access to one or more entrances. An access control system manages the following elements:
 
@@ -20,6 +20,8 @@ To grant access using the Seam access control system API, use the following basi
    If you are developing a mobile app to provide access for your users, you can also use [Seam's iOS and Android SDKs](../../capability-guides/mobile-access/mobile-device-sdks/README.md) that pair with the Seam API to create and manage mobile keys.
 
 ## Resources
+
+The Access Control Systems namespace contains the following resources:
 
 ### [`acs_system`](./systems/README.md#acs_system)
 Represents an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
