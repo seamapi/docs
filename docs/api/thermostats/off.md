@@ -6,8 +6,12 @@ POST /thermostats/off ⇒ { action_attempt }
 
 Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to ["off" mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
 
+## Set to off mode
+
+Specify the `device_id` of the thermostat that you want to set to off mode.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -27,7 +31,7 @@ await seam.thermostats.off({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -45,7 +49,7 @@ ActionAttempt(
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -63,7 +67,7 @@ seam.thermostats.off(device_id: "123e4567-e89b-12d3-a456-426614174000")
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -83,7 +87,7 @@ $seam->thermostats->off(device_id: "123e4567-e89b-12d3-a456-426614174000");
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -101,7 +105,7 @@ seam thermostats off --device_id "123e4567-e89b-12d3-a456-426614174000"
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -127,7 +131,6 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

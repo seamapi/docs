@@ -6,8 +6,12 @@ POST /thermostats/activate_climate_preset ⇒ { action_attempt }
 
 Activates a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
+## Activate a climate preset
+
+Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -28,7 +32,7 @@ await seam.thermostats.activateClimatePreset({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -48,7 +52,7 @@ ActionAttempt(
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -69,7 +73,7 @@ seam.thermostats.activate_climate_preset(
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -92,7 +96,7 @@ $seam->thermostats->activate_climate_preset(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -110,7 +114,7 @@ seam thermostats activate-climate-preset --device_id "123e4567-e89b-12d3-a456-42
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -137,7 +141,6 @@ api.ActionAttempt{ActionAttemptId: "05de2295-d1dc-4748-aae3-9931658bde20", Statu
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

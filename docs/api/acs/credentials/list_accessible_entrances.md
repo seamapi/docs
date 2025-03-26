@@ -6,8 +6,12 @@ POST /acs/credentials/list_accessible_entrances ⇒ { acs_entrances: [acs_entran
 
 Returns a list of all [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a [credential](https://docs.seam.co/latest/api/acs/credentials) grants access.
 
+## List accessible entrances
+
+Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -42,7 +46,7 @@ await seam.acs.credentials.listAccessibleEntrances({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -77,7 +81,7 @@ seam.acs.credentials.list_accessible_entrances(
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -107,7 +111,7 @@ seam.acs.credentials.list_accessible_entrances(
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -144,7 +148,7 @@ $seam->acs->credentials->list_accessible_entrances(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -177,7 +181,7 @@ seam acs credentials list-accessible-entrances --acs_credential_id "66666666-666
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -204,7 +208,6 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

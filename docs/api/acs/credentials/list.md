@@ -6,8 +6,12 @@ POST /acs/credentials/list ⇒ { acs_credentials: [acs_credential, …] }
 
 Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md).
 
+## List credentials
+
+Filter the list of returned credentials by `acs_user_id`, `acs_system_id`, or `user_identity_id`. You can also include `is_multi_phone_sync_credential`.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -38,7 +42,7 @@ await seam.acs.credentials.list({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -69,7 +73,7 @@ seam.acs.credentials.list(
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -100,7 +104,7 @@ seam.acs.credentials.list(
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -133,7 +137,7 @@ $seam->acs->credentials->list(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -159,7 +163,7 @@ seam acs credentials list --acs_user_id "33333333-3333-3333-3333-333333333333" -
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -189,7 +193,6 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

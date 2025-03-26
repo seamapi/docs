@@ -10,8 +10,12 @@ To filter the list of returned access control systems by a specific connected ac
 `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the
 response includes all access control systems connected to your workspace.
 
+## List ACS systems by connected account
+
+To filter the list of ACS systems, include a `connected_account_id`.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -27,7 +31,7 @@ await seam.acs.systems.list({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -41,7 +45,7 @@ seam.acs.systems.list(connected_account_id="123e4567-e89b-12d3-a456-426614174000
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -55,7 +59,7 @@ seam.acs.systems.list(connected_account_id: "123e4567-e89b-12d3-a456-42661417400
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -73,7 +77,7 @@ $seam->acs->systems->list(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -87,7 +91,7 @@ seam acs systems list --connected_account_id "123e4567-e89b-12d3-a456-4266141740
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -114,7 +118,6 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

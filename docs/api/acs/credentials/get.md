@@ -6,8 +6,12 @@ POST /acs/credentials/get ⇒ { acs_credential }
 
 Returns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
+## Get a credential
+
+Specify the `acs_credential_id` of the credential that you want to retrieve.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -33,7 +37,7 @@ await seam.acs.credentials.get({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -57,7 +61,7 @@ AcsCredential(
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -81,7 +85,7 @@ seam.acs.credentials.get(acs_credential_id: "66666666-6666-6666-6666-66666666666
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -109,7 +113,7 @@ $seam->acs->credentials->get(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -133,7 +137,7 @@ seam acs credentials get --acs_credential_id "66666666-6666-6666-6666-6666666666
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -160,7 +164,6 @@ api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUs
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

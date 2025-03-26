@@ -10,8 +10,12 @@ Returns a list of all credential manager ACS systems that are compatible with a 
 Specify the ACS system for which you want to retrieve all compatible credential manager ACS
 systems by including the corresponding `acs_system_id` in the request body.
 
+## List compatible credential manager ACS systems
+
+Specify the `acs_system_id` for which you want to retrieve all compatible credential manager ACS systems.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -27,7 +31,7 @@ await seam.acs.systems.listCompatibleCredentialManagerAcsSystems({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -43,7 +47,7 @@ seam.acs.systems.list_compatible_credential_manager_acs_systems(
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -59,7 +63,7 @@ seam.acs.systems.list_compatible_credential_manager_acs_systems(
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -77,7 +81,7 @@ $seam->acs->systems->list_compatible_credential_manager_acs_systems(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -91,7 +95,7 @@ seam acs systems list-compatible-credential-manager-acs-systems --acs_system_id 
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -118,7 +122,6 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

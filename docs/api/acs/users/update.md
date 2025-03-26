@@ -6,8 +6,12 @@ PATCH /acs/users/update ⇒ void
 
 Updates the properties of a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
+## Update an ACS user
+
+Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -24,7 +28,7 @@ await seam.acs.users.update({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -40,7 +44,7 @@ None
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -57,7 +61,7 @@ nil
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -75,7 +79,7 @@ null
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -89,7 +93,7 @@ seam acs users update --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33" --pho
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -117,7 +121,6 @@ nil
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

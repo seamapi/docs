@@ -6,8 +6,12 @@ POST /user_identities/enrollment_automations/launch ⇒ { enrollment_automation 
 
 Sets up a new [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) with a specified [credential manager](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).
 
+## Launch an enrollment automation
+
+Specify the desired `user_identity_id` and `credential_manager_acs_system_id`. You can also specify an `acs_credential_pool_id`. Either set `create_credential_manager_user` to `true` or specify the `credential_manager_acs_user_id`.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -34,7 +38,7 @@ await seam.userIdentities.enrollmentAutomations.launch({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -61,7 +65,7 @@ Unknown(
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -88,7 +92,7 @@ seam.user_identities.enrollment_automations.launch(
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -119,7 +123,7 @@ $seam->user_identities->enrollment_automations->launch(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -141,7 +145,7 @@ seam user-identities enrollment-automations launch --user_identity_id "5c945ab5-
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -171,7 +175,6 @@ api.Unknown{UserIdentityId: "5c945ab5-c75e-4bcb-8e5f-9410061c401f", EnrollmentAu
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

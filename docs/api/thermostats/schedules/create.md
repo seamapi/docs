@@ -6,8 +6,12 @@ POST /thermostats/schedules/create ⇒ { thermostat_schedule }
 
 Creates a [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
+## Create a thermostat schedule
+
+Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, as well as the desired `starts_at` and `ends_at` times.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -36,7 +40,7 @@ await seam.thermostats.schedules.create({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -65,7 +69,7 @@ ThermostatSchedule(
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -94,7 +98,7 @@ seam.thermostats.schedules.create(
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -125,7 +129,7 @@ $seam->thermostats->schedules->create(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -147,7 +151,7 @@ seam thermostats schedules create --device_id "123e4567-e89b-12d3-a456-426614174
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -179,7 +183,6 @@ api.ThermostatSchedule{ThermostatScheduleId: "56d29fcf-0674-4db5-8e03-b2370a7746
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

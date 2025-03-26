@@ -6,8 +6,12 @@ POST /acs/access_groups/get ⇒ { acs_access_group }
 
 Returns a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
+## Get a specific access group
+
+Specify the `acs_access_group_id` of the access group that you want to retrieve.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -34,7 +38,7 @@ await seam.acs.accessGroups.get({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -59,7 +63,7 @@ AcsAccessGroup(
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -84,7 +88,7 @@ seam.acs.access_groups.get(acs_access_group_id: "44444444-4444-4444-4444-4444444
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -113,7 +117,7 @@ $seam->acs->access_groups->get(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -138,7 +142,7 @@ seam acs access-groups get --acs_access_group_id "44444444-4444-4444-4444-444444
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -165,7 +169,6 @@ api.AcsAccessGroup{AcsAccessGroupId: "44444444-4444-4444-4444-444444444444", Nam
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

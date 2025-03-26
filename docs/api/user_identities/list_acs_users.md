@@ -6,8 +6,12 @@ POST /user_identities/list_acs_users ⇒ { acs_users: [acs_user, …] }
 
 Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
+## List ACS users for a user identity
+
+Specify the desired `user_identity_id`.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -37,7 +41,7 @@ await seam.userIdentities.listAcsUsers({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -67,7 +71,7 @@ seam.user_identities.list_acs_users(
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -95,7 +99,7 @@ seam.user_identities.list_acs_users(user_identity_id: "48500a8e-5e7e-4bde-b7e5-0
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -127,7 +131,7 @@ $seam->user_identities->list_acs_users(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -155,7 +159,7 @@ seam user-identities list-acs-users --user_identity_id "48500a8e-5e7e-4bde-b7e5-
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -181,7 +185,6 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

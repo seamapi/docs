@@ -6,8 +6,12 @@ POST /acs/entrances/get ⇒ { acs_entrance }
 
 Returns a specified [ACS entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
+## Get an entrance
+
+Specify the `acs_entrance_id` of the entrance that you want to retrieve.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -28,7 +32,7 @@ await seam.acs.entrances.get({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -47,7 +51,7 @@ AcsEntrance(
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -66,7 +70,7 @@ seam.acs.entrances.get(acs_entrance_id: "123e4567-e89b-12d3-a456-426614174000")
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -89,7 +93,7 @@ $seam->acs->entrances->get(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -108,7 +112,7 @@ seam acs entrances get --acs_entrance_id "123e4567-e89b-12d3-a456-426614174000"
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -135,7 +139,6 @@ api.AcsEntrance{AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", AcsEntrance
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

@@ -6,8 +6,12 @@ POST /user_identities/get ⇒ { user_identity }
 
 Returns a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
+## Get a user identity
+
+Specify the `user_identity_id` of the user identity that you want to retrieve.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -32,7 +36,7 @@ await seam.userIdentities.get({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -55,7 +59,7 @@ UserIdentity(
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -78,7 +82,7 @@ seam.user_identities.get(user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -105,7 +109,7 @@ $seam->user_identities->get(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -128,7 +132,7 @@ seam user-identities get --user_identity_id "48500a8e-5e7e-4bde-b7e5-0be97cae5d7
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -154,7 +158,6 @@ api.UserIdentity{UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", UserIde
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

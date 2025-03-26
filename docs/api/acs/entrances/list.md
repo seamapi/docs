@@ -6,8 +6,12 @@ POST /acs/entrances/list ⇒ { acs_entrances: [acs_entrance, …] }
 
 Returns a list of all [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
+## List entrances
+
+To filter the list of entrances, specify the desired `acs_system_id` or `acs_user_id`.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -28,7 +32,7 @@ await seam.acs.entrances.list();
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -49,7 +53,7 @@ seam.acs.entrances.list()
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -70,7 +74,7 @@ seam.acs.entrances.list()
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -93,7 +97,7 @@ $seam->acs->entrances->list();
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -114,7 +118,7 @@ seam acs entrances list
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -133,7 +137,6 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

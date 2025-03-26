@@ -6,8 +6,12 @@ POST /user_identities/list_acs_systems ⇒ { acs_systems: [acs_system, …] }
 
 Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
+## List ACS systems associated with a user identity
+
+Specify the desired `user_identity_id`.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -35,7 +39,7 @@ await seam.userIdentities.listAcsSystems({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -63,7 +67,7 @@ seam.user_identities.list_acs_systems(
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -89,7 +93,7 @@ seam.user_identities.list_acs_systems(user_identity_id: "5c945ab5-c75e-4bcb-8e5f
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -119,7 +123,7 @@ $seam->user_identities->list_acs_systems(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -145,7 +149,7 @@ seam user-identities list-acs-systems --user_identity_id "5c945ab5-c75e-4bcb-8e5
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -171,7 +175,6 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

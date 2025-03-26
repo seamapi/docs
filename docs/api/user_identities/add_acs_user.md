@@ -6,8 +6,12 @@ PUT /user_identities/add_acs_user ⇒ void
 
 Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
+## Add an ACS user to a user identity
+
+Specify the desired `acs_user_id` and `user_identity_id`.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -24,7 +28,7 @@ await seam.userIdentities.addAcsUser({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -41,7 +45,7 @@ None
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -58,7 +62,7 @@ nil
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -76,7 +80,7 @@ null
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -90,7 +94,7 @@ seam user-identities add-acs-user --user_identity_id "48500a8e-5e7e-4bde-b7e5-0b
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -117,7 +121,6 @@ nil
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

@@ -6,8 +6,12 @@ POST /thermostats/set_hvac_mode ⇒ { action_attempt }
 
 Sets the [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
+## Set HVAC mode
+
+Specify the desired heating and cooling set points in °C or °F.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -30,7 +34,7 @@ await seam.thermostats.setHvacMode({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -53,7 +57,7 @@ ActionAttempt(
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -76,7 +80,7 @@ seam.thermostats.set_hvac_mode(
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -101,7 +105,7 @@ $seam->thermostats->set_hvac_mode(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -119,7 +123,7 @@ seam thermostats set-hvac-mode --device_id "123e4567-e89b-12d3-a456-426614174000
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -148,7 +152,6 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

@@ -6,8 +6,12 @@ PATCH /thermostats/schedules/update ⇒ void
 
 Updates a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
+## Update a thermostat schedule
+
+Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -24,7 +28,7 @@ await seam.thermostats.schedules.update({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -41,7 +45,7 @@ None
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -58,7 +62,7 @@ nil
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -76,7 +80,7 @@ null
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -90,7 +94,7 @@ seam thermostats schedules update --thermostat_schedule_id "89d3507e-60e3-4101-b
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -118,7 +122,6 @@ nil
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

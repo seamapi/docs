@@ -6,8 +6,12 @@ PATCH /acs/credentials/unassign ⇒ void
 
 Unassigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) from a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
+## Unassign a credential from an ACS user
+
+Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -24,7 +28,7 @@ await seam.acs.credentials.unassign({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -41,7 +45,7 @@ None
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -58,7 +62,7 @@ nil
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -76,7 +80,7 @@ null
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -90,7 +94,7 @@ seam acs credentials unassign --acs_user_id "33333333-3333-3333-3333-33333333333
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -118,7 +122,6 @@ nil
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

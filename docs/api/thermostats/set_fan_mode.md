@@ -6,8 +6,12 @@ POST /thermostats/set_fan_mode ⇒ { action_attempt }
 
 Sets the [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
+## Set fan mode setting
+
+Specify the desired fan mode setting.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -28,7 +32,7 @@ await seam.thermostats.setFanMode({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -48,7 +52,7 @@ ActionAttempt(
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -69,7 +73,7 @@ seam.thermostats.set_fan_mode(
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -92,7 +96,7 @@ $seam->thermostats->set_fan_mode(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -110,7 +114,7 @@ seam thermostats set-fan-mode --device_id "123e4567-e89b-12d3-a456-426614174000"
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -137,7 +141,6 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

@@ -6,8 +6,12 @@ POST /user_identities/list_accessible_devices ⇒ { devices: [device, …] }
 
 Returns a list of all [devices](../../core-concepts/devices/README.md) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
+## List accessible devices for a user identity
+
+Specify the desired `user_identity_id`.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -75,7 +79,7 @@ await seam.userIdentities.listAccessibleDevices({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -143,7 +147,7 @@ seam.user_identities.list_accessible_devices(
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -215,7 +219,7 @@ seam.user_identities.list_accessible_devices(
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -292,7 +296,7 @@ $seam->user_identities->list_accessible_devices(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -358,7 +362,7 @@ seam user-identities list-accessible-devices --user_identity_id "f3a328b4-dd04-4
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -384,7 +388,6 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

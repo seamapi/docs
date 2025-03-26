@@ -6,8 +6,12 @@ POST /acs/access_groups/list ⇒ { acs_access_groups: [acs_access_group, …] }
 
 Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
+## List access groups
+
+To filter the list of access groups, include an `acs_system_id` or `acs_user_id`.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -37,7 +41,7 @@ await seam.acs.accessGroups.list({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -67,7 +71,7 @@ seam.acs.access_groups.list(
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -97,7 +101,7 @@ seam.acs.access_groups.list(
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -129,7 +133,7 @@ $seam->acs->access_groups->list(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -156,7 +160,7 @@ seam acs access-groups list --acs_system_id "11111111-1111-1111-1111-11111111111
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -184,7 +188,6 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

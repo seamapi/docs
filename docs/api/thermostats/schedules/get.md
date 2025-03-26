@@ -6,8 +6,12 @@ POST /thermostats/schedules/get ⇒ { thermostat_schedule }
 
 Returns a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
+## Get a specific thermostat schedule
+
+Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -31,7 +35,7 @@ await seam.thermostats.schedules.get({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -55,7 +59,7 @@ ThermostatSchedule(
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -77,7 +81,7 @@ seam.thermostats.schedules.get(thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -103,7 +107,7 @@ $seam->thermostats->schedules->get(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -125,7 +129,7 @@ seam thermostats schedules get --thermostat_schedule_id "89d3507e-60e3-4101-bd1b
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -152,7 +156,6 @@ api.ThermostatSchedule{ThermostatScheduleId: "89d3507e-60e3-4101-bd1b-ba066ec30a
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

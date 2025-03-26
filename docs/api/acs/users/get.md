@@ -6,8 +6,12 @@ POST /acs/users/get ⇒ { acs_user }
 
 Returns a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
+## Get a specific ACS user
+
+Specify the `acs_user_id` of the specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to retrieve.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -32,7 +36,7 @@ await seam.acs.users.get({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -55,7 +59,7 @@ AcsUser(
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -78,7 +82,7 @@ seam.acs.users.get(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -103,7 +107,7 @@ $seam->acs->users->get(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33");
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -126,7 +130,7 @@ seam acs users get --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -153,7 +157,6 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

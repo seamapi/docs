@@ -6,8 +6,12 @@ POST /user_identities/enrollment_automations/get ⇒ { enrollment_automation }
 
 Returns a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).
 
+## Get an enrollment automation
+
+Specify the desired `enrollment_automation_id`.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -31,7 +35,7 @@ await seam.userIdentities.enrollmentAutomations.get({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -55,7 +59,7 @@ EnrollmentAutomation(
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -79,7 +83,7 @@ seam.user_identities.enrollment_automations.get(
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -107,7 +111,7 @@ $seam->user_identities->enrollment_automations->get(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -129,7 +133,7 @@ seam user-identities enrollment-automations get --enrollment_automation_id "0550
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -156,7 +160,6 @@ api.EnrollmentAutomation{UserIdentityId: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key

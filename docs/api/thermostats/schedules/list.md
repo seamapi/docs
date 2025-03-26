@@ -6,8 +6,12 @@ POST /thermostats/schedules/list ⇒ { thermostat_schedules: [thermostat_schedul
 
 Returns a list of all [thermostat schedules](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
+## List thermostat schedules for a thermostat
+
+Specify the `device_id` of the desired thermostat.
+
 {% tabs %}
-{% tab title="JavaScript TEST" %}
+{% tab title="JavaScript" %}
 #### Request
 
 ```javascript
@@ -42,7 +46,7 @@ await seam.thermostats.schedules.list({
 ```
 {% endtab %}
 
-{% tab title="Python TEST" %}
+{% tab title="Python" %}
 #### Request
 
 ```python
@@ -75,7 +79,7 @@ seam.thermostats.schedules.list(device_id="123e4567-e89b-12d3-a456-426614174000"
 ```
 {% endtab %}
 
-{% tab title="Ruby TEST" %}
+{% tab title="Ruby" %}
 #### Request
 
 ```ruby
@@ -108,7 +112,7 @@ seam.thermostats.schedules.list(device_id: "123e4567-e89b-12d3-a456-426614174000
 ```
 {% endtab %}
 
-{% tab title="PHP TEST" %}
+{% tab title="PHP" %}
 #### Request
 
 ```php
@@ -145,7 +149,7 @@ $seam->thermostats->schedules->list(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI TEST" %}
+{% tab title="Seam CLI" %}
 #### Request
 
 ```seam_cli
@@ -178,7 +182,7 @@ seam thermostats schedules list --device_id "123e4567-e89b-12d3-a456-42661417400
 ```
 {% endtab %}
 
-{% tab title="Go TEST" %}
+{% tab title="Go" %}
 #### Request
 
 ```go
@@ -205,7 +209,6 @@ func main() {
 {% endtab %}
 
 {% endtabs %}
-
 ## Authentication Methods
 
 - API key
