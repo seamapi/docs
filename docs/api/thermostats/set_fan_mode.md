@@ -188,39 +188,13 @@ Setting fan mode.
 
 Format: `UUID`
 
-The ID of the action attempt.
+ID of the action attempt.
 
 ---
 
 #### `action_type`
 
 Format: `String`
-
----
-
-#### `error`
-
-Format: `Object`
-
-<details>
-
-<summary><code>message</code> Format: <code>String</code></summary>
-
-</details>
-
-<details>
-
-<summary><code>type</code> Format: <code>String</code></summary>
-
-</details>
-
----
-
-#### `result`
-
-Format: `Object`
-
-This object has no properties.
 
 ---
 

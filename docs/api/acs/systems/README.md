@@ -6,7 +6,9 @@ The Systems route contains the following resources:
 
 Represents an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-## Properties
+Within an `acs_system`, create [`acs_user`s](https://docs.seam.co/latest/api/acs/users#acs_user) and [`acs_credential`s](https://docs.seam.co/latest/api/acs/credentials#acs_credential) to grant access to the `acs_user`s.
+
+For details about the resources associated with an access control system, see the [access control systems namespace](https://docs.seam.co/latest/api/acs).
 
 ### `acs_system_id`
 

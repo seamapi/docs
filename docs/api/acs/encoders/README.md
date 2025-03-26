@@ -4,7 +4,20 @@ The Encoders route contains the following resources:
 
 ## The `acs_encoder` Resource
 
-Represents a hardware device that encodes [credential](../../../capability-guides/access-systems/managing-credentials.md) data onto physical cards within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). See also [Working with Card Encoders and Scanners](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+Represents a hardware device that encodes [credential](../../../capability-guides/access-systems/managing-credentials.md) data onto physical cards within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+
+Some access control systems require credentials to be encoded onto plastic key cards using a card encoder. This process involves the following two key steps:
+
+1. Credential creation
+   Configure the access parameters for the credential.
+2. Card encoding
+   Write the credential data onto the card using a compatible card encoder.
+
+Separately, the Seam API also supports card scanning, which enables you to scan and read the encoded data on a card. You can use this action to confirm consistency with access control system records or diagnose discrepancies if needed.
+
+ See [Working with Card Encoders and Scanners](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+
+To verify if your access control system requires a card encoder, see the corresponding [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 
 ## Properties
 
