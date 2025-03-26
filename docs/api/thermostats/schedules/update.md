@@ -6,10 +6,6 @@ PATCH /thermostats/schedules/update ⇒ void
 
 Updates a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
-## Update a thermostat schedule
-
-Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

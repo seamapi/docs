@@ -6,10 +6,6 @@ POST /thermostats/list ⇒ { devices: [device, …] }
 
 Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guides/thermostats).
 
-## List thermostats
-
-To filter the list of returned thermostats, specify the desired parameters.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

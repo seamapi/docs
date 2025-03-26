@@ -6,10 +6,6 @@ PATCH /acs/credentials/update ⇒ void
 
 Updates the code and ends at date and time for a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-## Update a credential
-
-Specify the desired `acs_credential_id` and updated `code` to update the credential.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

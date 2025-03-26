@@ -6,10 +6,6 @@ POST /thermostats/schedules/get ⇒ { thermostat_schedule }
 
 Returns a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
-## Get a specific thermostat schedule
-
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

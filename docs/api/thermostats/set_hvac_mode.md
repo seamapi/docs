@@ -6,10 +6,6 @@ POST /thermostats/set_hvac_mode ⇒ { action_attempt }
 
 Sets the [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-## Set HVAC mode
-
-Specify the desired heating and cooling set points in °C or °F.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

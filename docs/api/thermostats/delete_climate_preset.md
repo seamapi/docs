@@ -6,10 +6,6 @@ POST /thermostats/delete_climate_preset ⇒ void
 
 Deletes a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-## Delete a climate preset
-
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

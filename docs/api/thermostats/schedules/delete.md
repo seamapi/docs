@@ -6,10 +6,6 @@ POST /thermostats/schedules/delete ⇒ void
 
 Deletes a [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-## Delete a thermostat schedule
-
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

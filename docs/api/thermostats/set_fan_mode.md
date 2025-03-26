@@ -6,10 +6,6 @@ POST /thermostats/set_fan_mode ⇒ { action_attempt }
 
 Sets the [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-## Set fan mode setting
-
-Specify the desired fan mode setting.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

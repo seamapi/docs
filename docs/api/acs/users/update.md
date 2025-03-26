@@ -6,10 +6,6 @@ PATCH /acs/users/update ⇒ void
 
 Updates the properties of a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
-## Update an ACS user
-
-Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

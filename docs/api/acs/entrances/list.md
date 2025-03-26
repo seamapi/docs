@@ -6,10 +6,6 @@ POST /acs/entrances/list ⇒ { acs_entrances: [acs_entrance, …] }
 
 Returns a list of all [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
-## List entrances
-
-To filter the list of entrances, specify the desired `acs_system_id` or `acs_user_id`.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

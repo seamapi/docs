@@ -6,10 +6,6 @@ POST /user_identities/list_accessible_devices ⇒ { devices: [device, …] }
 
 Returns a list of all [devices](../../core-concepts/devices/README.md) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
-## List accessible devices for a user identity
-
-Specify the desired `user_identity_id`.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

@@ -6,10 +6,6 @@ POST /thermostats/off ⇒ { action_attempt }
 
 Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to ["off" mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
 
-## Set to off mode
-
-Specify the `device_id` of the thermostat that you want to set to off mode.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

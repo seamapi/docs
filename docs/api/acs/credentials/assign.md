@@ -6,10 +6,6 @@ PATCH /acs/credentials/assign ⇒ void
 
 Assigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) to a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
-## Assign a credential to an ACS user
-
-Specify the desired `acs_user_id` and `acs_credential_id` to assign a credential to an ACS user.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

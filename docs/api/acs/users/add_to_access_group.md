@@ -6,10 +6,6 @@ PUT /acs/users/add_to_access_group ⇒ void
 
 Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
-## Add an ACS user to an access group
-
-Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

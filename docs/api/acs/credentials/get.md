@@ -6,10 +6,6 @@ POST /acs/credentials/get ⇒ { acs_credential }
 
 Returns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-## Get a credential
-
-Specify the `acs_credential_id` of the credential that you want to retrieve.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

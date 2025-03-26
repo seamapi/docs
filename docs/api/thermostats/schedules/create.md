@@ -6,10 +6,6 @@ POST /thermostats/schedules/create ⇒ { thermostat_schedule }
 
 Creates a [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-## Create a thermostat schedule
-
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, as well as the desired `starts_at` and `ends_at` times.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

@@ -6,10 +6,6 @@ POST /acs/access_groups/list ⇒ { acs_access_groups: [acs_access_group, …] }
 
 Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
-## List access groups
-
-To filter the list of access groups, include an `acs_system_id` or `acs_user_id`.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

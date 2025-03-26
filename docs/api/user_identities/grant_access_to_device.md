@@ -6,10 +6,6 @@ PUT /user_identities/grant_access_to_device ⇒ void
 
 Grants a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) access to a specified [device](../../core-concepts/devices/README.md).
 
-## Grant a user identity access to a device
-
-Specify the desired `user_identity_id` and `device_id`.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

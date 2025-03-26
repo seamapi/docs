@@ -6,10 +6,6 @@ POST /user_identities/create ⇒ { user_identity }
 
 Creates a new [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
-## Create a user identity
-
-Specify one or more of the unique `user_identity_key`, `email_address`, or `phone_number`. You can also specify the `full_name` of the user associated with the `user_identity`.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

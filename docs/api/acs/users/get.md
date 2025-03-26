@@ -6,10 +6,6 @@ POST /acs/users/get ⇒ { acs_user }
 
 Returns a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
-## Get a specific ACS user
-
-Specify the `acs_user_id` of the specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to retrieve.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

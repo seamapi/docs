@@ -6,10 +6,6 @@ POST /user_identities/get ⇒ { user_identity }
 
 Returns a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
-## Get a user identity
-
-Specify the `user_identity_id` of the user identity that you want to retrieve.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

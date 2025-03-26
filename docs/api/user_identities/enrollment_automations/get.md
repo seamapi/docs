@@ -6,10 +6,6 @@ POST /user_identities/enrollment_automations/get ⇒ { enrollment_automation }
 
 Returns a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).
 
-## Get an enrollment automation
-
-Specify the desired `enrollment_automation_id`.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

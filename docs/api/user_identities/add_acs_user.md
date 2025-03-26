@@ -6,10 +6,6 @@ PUT /user_identities/add_acs_user ⇒ void
 
 Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
-## Add an ACS user to a user identity
-
-Specify the desired `acs_user_id` and `user_identity_id`.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

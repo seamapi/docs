@@ -6,10 +6,6 @@ POST /acs/access_groups/list_accessible_entrances ⇒ { acs_entrances: [acs_entr
 
 Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
-## List accessible entrances for an access group
-
-Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

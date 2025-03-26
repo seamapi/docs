@@ -6,10 +6,6 @@ PATCH /thermostats/set_temperature_threshold ⇒ void
 
 Sets a [temperature threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) for a specified thermostat. Seam emits a `thermostat.temperature_threshold_exceeded` event and adds a warning on a thermostat if it reports a temperature outside the threshold range.
 
-## Set a temperature threshold
-
-Specify the `device_id` of the desired thermostat, along with the desired upper and lower limits in °C or °F.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

@@ -6,10 +6,6 @@ POST /user_identities/enrollment_automations/launch ⇒ { enrollment_automation 
 
 Sets up a new [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) with a specified [credential manager](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).
 
-## Launch an enrollment automation
-
-Specify the desired `user_identity_id` and `credential_manager_acs_system_id`. You can also specify an `acs_credential_pool_id`. Either set `create_credential_manager_user` to `true` or specify the `credential_manager_acs_user_id`.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

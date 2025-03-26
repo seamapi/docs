@@ -6,10 +6,6 @@ POST /acs/users/delete ⇒ void
 
 Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).
 
-## Delete an ACS user
-
-Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

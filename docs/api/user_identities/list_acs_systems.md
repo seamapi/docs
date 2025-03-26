@@ -6,10 +6,6 @@ POST /user_identities/list_acs_systems ⇒ { acs_systems: [acs_system, …] }
 
 Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
-## List ACS systems associated with a user identity
-
-Specify the desired `user_identity_id`.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

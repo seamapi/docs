@@ -6,10 +6,6 @@ POST /acs/users/list ⇒ { acs_users: [acs_user, …] }
 
 Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
-## List all ACS users
-
-Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

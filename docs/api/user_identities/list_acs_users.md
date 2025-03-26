@@ -6,10 +6,6 @@ POST /user_identities/list_acs_users ⇒ { acs_users: [acs_user, …] }
 
 Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
-## List ACS users for a user identity
-
-Specify the desired `user_identity_id`.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

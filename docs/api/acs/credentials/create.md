@@ -6,10 +6,6 @@ POST /acs/credentials/create ⇒ { acs_credential }
 
 Creates a new [credential](../../../capability-guides/access-systems/managing-credentials.md) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
-## Create a credential for an ACS user
-
-Specify the `acs_user_id` and `access_method` to create a new credential. You can also specify additional parameters, depending on the `access_method`.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

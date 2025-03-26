@@ -6,10 +6,6 @@ POST /acs/entrances/list_credentials_with_access ⇒ { acs_credentials: [acs_cre
 
 Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md) with access to a specified [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
-## List credentials with access to an entrance
-
-Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

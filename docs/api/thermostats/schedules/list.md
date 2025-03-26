@@ -6,10 +6,6 @@ POST /thermostats/schedules/list ⇒ { thermostat_schedules: [thermostat_schedul
 
 Returns a list of all [thermostat schedules](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-## List thermostat schedules for a thermostat
-
-Specify the `device_id` of the desired thermostat.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

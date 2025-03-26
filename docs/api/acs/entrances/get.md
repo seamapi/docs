@@ -6,10 +6,6 @@ POST /acs/entrances/get ⇒ { acs_entrance }
 
 Returns a specified [ACS entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
-## Get an entrance
-
-Specify the `acs_entrance_id` of the entrance that you want to retrieve.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

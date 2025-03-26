@@ -6,10 +6,6 @@ POST /user_identities/remove_acs_user ⇒ void
 
 Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
-## Remove an ACS user from a user identity
-
-Specify the desired `acs_user_id` and `user_identity_id`.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

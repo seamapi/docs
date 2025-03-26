@@ -6,10 +6,6 @@ POST /acs/access_groups/remove_user ⇒ void
 
 Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
-## Remove an ACS user from an access group
-
-Specify the `acs_access_group_id` and `acs_user_id` to remove an ACS user from an access group.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

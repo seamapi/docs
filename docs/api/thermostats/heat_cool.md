@@ -6,10 +6,6 @@ POST /thermostats/heat_cool ⇒ { action_attempt }
 
 Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to [heat-cool ("auto") mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
 
-## Set to heat-cool (auto) mode
-
-Specify the desired heating set point in °C or °F.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

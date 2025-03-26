@@ -6,10 +6,6 @@ POST /acs/credentials/list_accessible_entrances ⇒ { acs_entrances: [acs_entran
 
 Returns a list of all [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a [credential](https://docs.seam.co/latest/api/acs/credentials) grants access.
 
-## List accessible entrances
-
-Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

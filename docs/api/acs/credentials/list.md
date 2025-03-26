@@ -6,10 +6,6 @@ POST /acs/credentials/list ⇒ { acs_credentials: [acs_credential, …] }
 
 Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md).
 
-## List credentials
-
-Filter the list of returned credentials by `acs_user_id`, `acs_system_id`, or `user_identity_id`. You can also include `is_multi_phone_sync_credential`.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

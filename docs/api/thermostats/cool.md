@@ -6,10 +6,6 @@ POST /thermostats/cool ⇒ { action_attempt }
 
 Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to [cool mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
 
-## Set to cool mode
-
-Specify the desired cooling set point in °C or °F.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

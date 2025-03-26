@@ -6,10 +6,6 @@ POST /acs/access_groups/list_users ⇒ { acs_users: [acs_user, …] }
 
 Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
-## List ACS users in an access group
-
-Specify the `acs_access_group_id` to retrieve all ACS users in an access group.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

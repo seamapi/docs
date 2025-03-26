@@ -6,10 +6,6 @@ POST /thermostats/set_fallback_climate_preset ⇒ void
 
 Sets a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) as the ["fallback"](../../capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset.md) preset for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-## Set the fallback climate preset
-
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired fallback climate preset.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

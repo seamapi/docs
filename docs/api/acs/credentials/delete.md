@@ -6,10 +6,6 @@ POST /acs/credentials/delete ⇒ void
 
 Deletes a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-## Delete a credential
-
-Specify the desired `acs_credential_id` to delete the specified credential.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

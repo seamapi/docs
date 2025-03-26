@@ -6,10 +6,6 @@ PATCH /acs/credentials/unassign ⇒ void
 
 Unassigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) from a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
-## Unassign a credential from an ACS user
-
-Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

@@ -6,10 +6,6 @@ POST /thermostats/create_climate_preset ⇒ void
 
 Creates a [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-## Create a climate preset
-
-Specify the `device_id` of the desired thermostat, along with the desired settings for the climate preset, including `manual_override_allowed`.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

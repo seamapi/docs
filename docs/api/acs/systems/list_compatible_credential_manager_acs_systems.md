@@ -10,10 +10,6 @@ Returns a list of all credential manager ACS systems that are compatible with a 
 Specify the ACS system for which you want to retrieve all compatible credential manager ACS
 systems by including the corresponding `acs_system_id` in the request body.
 
-## List compatible credential manager ACS systems
-
-Specify the `acs_system_id` for which you want to retrieve all compatible credential manager ACS systems.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request

@@ -8,10 +8,6 @@ Returns a specified [access control system](https://docs.seam.co/latest/capabili
 
 Specify the desired access control system by including the corresponding `acs_system_id` in the request body.
 
-## Get a Specific ACS system
-
-Specify the `acs_system_id` of the ACS system that you want to retrieve.
-
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Request
