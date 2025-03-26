@@ -1,11 +1,17 @@
 {{#if headingOffset}}
-### `{{name}}`
+### The `{{name}}` Resource
 {{else}}
-## `{{name}}`
+## The `{{name}}` Resource
 {{/if}}
 {{#if description}}
 
 {{description}}
+{{/if}}
+
+{{#if headingOffset}}
+#### Properties
+{{else}}
+## Properties
 {{/if}}
 
 {{#each properties}}
