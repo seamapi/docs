@@ -8,13 +8,13 @@ Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+**Request**
 
 ```javascript
 await seam.acs.users.list();
 ```
 
-#### Response
+**Response**
 
 ```javascript
 {
@@ -31,13 +31,13 @@ await seam.acs.users.list();
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+**Request**
 
 ```python
 seam.acs.users.list()
 ```
 
-#### Response
+**Response**
 
 ```python
 AcsUser(
@@ -54,13 +54,13 @@ AcsUser(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+**Request**
 
 ```ruby
 seam.acs.users.list()
 ```
 
-#### Response
+**Response**
 
 ```ruby
 {
@@ -77,14 +77,14 @@ seam.acs.users.list()
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+**Request**
 
 ```php
 <?php
 $seam->acs->users->list();
 ```
 
-#### Response
+**Response**
 
 ```php
 <?php
@@ -102,13 +102,13 @@ $seam->acs->users->list();
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+**Request**
 
 ```seam_cli
 seam acs users list
 ```
 
-#### Response
+**Response**
 
 ```seam_cli
 {
@@ -125,7 +125,7 @@ seam acs users list
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+**Request**
 
 ```go
 package main
@@ -135,28 +135,26 @@ func main() {
 }
 ```
 
-#### Response
+**Response**
 
 ```go
 api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "Jane Doe", FullName: "Jane Doe", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100"}
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Authentication Methods
 
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
+* API key
+* Client session token
+* Personal access token\
+  Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `acs_system_id`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 ID of the `acs_system` for which you want to retrieve all `acs_user`s.
 
@@ -164,17 +162,13 @@ ID of the `acs_system` for which you want to retrieve all `acs_user`s.
 
 ### `created_before`
 
-Type: `string`
-Required: No
-
-
+Type: `string` Required: No
 
 ***
 
 ### `limit`
 
-Type: `number`
-Required: No
+Type: `number` Required: No
 
 Maximum number of records to return per page.
 
@@ -182,8 +176,7 @@ Maximum number of records to return per page.
 
 ### `page_cursor`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
 
@@ -191,8 +184,7 @@ Identifies the specific page of results to return, obtained from the previous pa
 
 ### `search`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 String for which to search. Filters returned `acs_user`s to include all records that satisfy a partial match using `full_name`, `phone_number`, or `email_address`.
 
@@ -200,8 +192,7 @@ String for which to search. Filters returned `acs_user`s to include all records 
 
 ### `user_identity_email_address`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 Email address of the user identity for which you want to retrieve all `acs_user`s.
 
@@ -209,8 +200,7 @@ Email address of the user identity for which you want to retrieve all `acs_user`
 
 ### `user_identity_id`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 ID of the user identity for which you want to retrieve all `acs_user`s.
 
@@ -218,8 +208,7 @@ ID of the user identity for which you want to retrieve all `acs_user`s.
 
 ### `user_identity_phone_number`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 Phone number of the user identity for which you want to retrieve all `acs_user`s, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`).
 

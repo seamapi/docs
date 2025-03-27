@@ -8,16 +8,15 @@ Returns a list of all phones. To filter the list of returned phones by a specifi
 
 ## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
+* API key
+* Personal access token\
+  Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `acs_credential_id`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 ID of the [credential](../../capability-guides/access-systems/managing-credentials.md) by which to filter the list of returned phones.
 
@@ -25,8 +24,7 @@ ID of the [credential](../../capability-guides/access-systems/managing-credentia
 
 ### `owner_user_identity_id`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 ID of the user identity that represents the owner by which to filter the list of returned phones.
 

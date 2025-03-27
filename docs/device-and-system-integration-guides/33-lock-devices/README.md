@@ -18,6 +18,10 @@ This integration works with all 33 Lock locks. Note that 33 Lock devices require
 
 For detailed information about the 33 Lock devices that Seam supports, see our [33 Lock Supported Devices page](https://www.seam.co/manufacturers/33-lock).
 
+***
+
+## Supported Features
+
 We support the following features:
 
 * [Triggering web lock and unlock actions](../../products/smart-locks/lock-and-unlock.md)

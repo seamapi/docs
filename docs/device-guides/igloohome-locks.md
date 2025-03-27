@@ -33,6 +33,10 @@ This integration supports lock, unlock, and customizable access code provisionin
 
 Each igloohome Bridge supports up to five compatible igloohome locks.
 
+***
+
+## Supported Features
+
 We support the following features:
 
 * [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md) for igloohome smart locks connected through the igloohome Bridge

@@ -8,7 +8,7 @@ POST /acs/users/unsuspend ⇒ void
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+**Request**
 
 ```javascript
 await seam.acs.users.unsuspend({
@@ -16,7 +16,7 @@ await seam.acs.users.unsuspend({
 });
 ```
 
-#### Response
+**Response**
 
 ```javascript
 // void
@@ -24,13 +24,13 @@ await seam.acs.users.unsuspend({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+**Request**
 
 ```python
 seam.acs.users.unsuspend(acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 ```
 
-#### Response
+**Response**
 
 ```python
 None
@@ -38,13 +38,13 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+**Request**
 
 ```ruby
 seam.acs.users.unsuspend(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 ```
 
-#### Response
+**Response**
 
 ```ruby
 nil
@@ -52,7 +52,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+**Request**
 
 ```php
 <?php
@@ -61,7 +61,7 @@ $seam->acs->users->unsuspend(
 );
 ```
 
-#### Response
+**Response**
 
 ```php
 null
@@ -69,13 +69,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+**Request**
 
 ```seam_cli
 seam acs users unsuspend --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 ```
 
-#### Response
+**Response**
 
 ```seam_cli
 {}
@@ -83,7 +83,7 @@ seam acs users unsuspend --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+**Request**
 
 ```go
 package main
@@ -101,27 +101,25 @@ func main() {
 }
 ```
 
-#### Response
+**Response**
 
 ```go
 nil
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
+* API key
+* Personal access token\
+  Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `acs_user_id`
 
-Type: `string`
-Required: Yes
+Type: `string` Required: Yes
 
 ID of the desired `acs_user`.
 

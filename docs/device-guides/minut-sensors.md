@@ -23,6 +23,10 @@ For detailed information about the Minut devices that Seam supports, see the fol
   manufacturers='["Minut"]'
 />" %}
 
+***
+
+## Supported Features
+
 We support the following features:
 
 * [Configuring noise threshold settings](../products/noise-sensors/configure-noise-threshold-settings.md)\

@@ -8,7 +8,7 @@ Returns a specified [access group](https://docs.seam.co/latest/capability-guides
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+**Request**
 
 ```javascript
 await seam.acs.accessGroups.get({
@@ -16,7 +16,7 @@ await seam.acs.accessGroups.get({
 });
 ```
 
-#### Response
+**Response**
 
 ```javascript
 {
@@ -35,13 +35,13 @@ await seam.acs.accessGroups.get({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+**Request**
 
 ```python
 seam.acs.access_groups.get(acs_access_group_id="44444444-4444-4444-4444-444444444444")
 ```
 
-#### Response
+**Response**
 
 ```python
 AcsAccessGroup(
@@ -60,13 +60,13 @@ AcsAccessGroup(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+**Request**
 
 ```ruby
 seam.acs.access_groups.get(acs_access_group_id: "44444444-4444-4444-4444-444444444444")
 ```
 
-#### Response
+**Response**
 
 ```ruby
 {
@@ -85,7 +85,7 @@ seam.acs.access_groups.get(acs_access_group_id: "44444444-4444-4444-4444-4444444
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+**Request**
 
 ```php
 <?php
@@ -94,7 +94,7 @@ $seam->acs->access_groups->get(
 );
 ```
 
-#### Response
+**Response**
 
 ```php
 <?php
@@ -114,13 +114,13 @@ $seam->acs->access_groups->get(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+**Request**
 
 ```seam_cli
 seam acs access-groups get --acs_access_group_id "44444444-4444-4444-4444-444444444444"
 ```
 
-#### Response
+**Response**
 
 ```seam_cli
 {
@@ -139,7 +139,7 @@ seam acs access-groups get --acs_access_group_id "44444444-4444-4444-4444-444444
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+**Request**
 
 ```go
 package main
@@ -157,27 +157,25 @@ func main() {
 }
 ```
 
-#### Response
+**Response**
 
 ```go
 api.AcsAccessGroup{AcsAccessGroupId: "44444444-4444-4444-4444-444444444444", Name: "Lobby Access", DisplayName: "Lobby Access", AccessGroupTypeDisplayName: "PTI access level", AccessGroupType: "pti_access_level", ExternalType: "pti_access_level", ExternalTypeDisplayName: "PTI access level", AcsSystemId: "11111111-1111-1111-1111-111111111111", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2023-11-30T06:27:15.437Z"}
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
+* API key
+* Personal access token\
+  Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `acs_access_group_id`
 
-Type: `string`
-Required: Yes
+Type: `string` Required: Yes
 
 ID of the desired access group.
 

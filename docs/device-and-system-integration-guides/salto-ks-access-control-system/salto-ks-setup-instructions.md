@@ -1,5 +1,5 @@
 ---
-description: Learn how to connect your Salto KS access control system to Seam.
+description: Learn how to connect your Salto KS access system to Seam.
 ---
 
 # Salto KS Setup Instructions

@@ -8,7 +8,7 @@ Deletes a specified [enrollment automation](https://docs.seam.co/latest/capabili
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+**Request**
 
 ```javascript
 await seam.userIdentities.enrollmentAutomations.delete({
@@ -16,7 +16,7 @@ await seam.userIdentities.enrollmentAutomations.delete({
 });
 ```
 
-#### Response
+**Response**
 
 ```javascript
 // void
@@ -24,7 +24,7 @@ await seam.userIdentities.enrollmentAutomations.delete({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+**Request**
 
 ```python
 seam.user_identities.enrollment_automations.delete(
@@ -32,7 +32,7 @@ seam.user_identities.enrollment_automations.delete(
 )
 ```
 
-#### Response
+**Response**
 
 ```python
 None
@@ -40,7 +40,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+**Request**
 
 ```ruby
 seam.user_identities.enrollment_automations.delete(
@@ -48,7 +48,7 @@ seam.user_identities.enrollment_automations.delete(
 )
 ```
 
-#### Response
+**Response**
 
 ```ruby
 nil
@@ -56,7 +56,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+**Request**
 
 ```php
 <?php
@@ -65,7 +65,7 @@ $seam->user_identities->enrollment_automations->delete(
 );
 ```
 
-#### Response
+**Response**
 
 ```php
 null
@@ -73,13 +73,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+**Request**
 
 ```seam_cli
 seam user-identities enrollment-automations delete --enrollment_automation_id "05505650-aa57-49ab-8f19-429738758895"
 ```
 
-#### Response
+**Response**
 
 ```seam_cli
 {}
@@ -87,7 +87,7 @@ seam user-identities enrollment-automations delete --enrollment_automation_id "0
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+**Request**
 
 ```go
 package main
@@ -105,27 +105,25 @@ func main() {
 }
 ```
 
-#### Response
+**Response**
 
 ```go
 nil
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
+* API key
+* Personal access token\
+  Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `enrollment_automation_id`
 
-Type: `string`
-Required: Yes
+Type: `string` Required: Yes
 
 ID of the desired enrollment automation.
 

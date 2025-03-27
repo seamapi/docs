@@ -25,9 +25,16 @@ For detailed information about the Google Nest devices that Seam supports, see t
   manufacturers='["Nest"]'
 />" %}
 
+***
+
+## Supported Features
+
 We support the following features:
 
 * [Configuring current thermostat settings](../../products/thermostats/configure-current-climate-settings.md)
+* [Creating and managing climate presets](../../capability-guides/thermostats/creating-and-managing-climate-presets/)
+* [Creating and managing thermostat schedules](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md)
+* [Setting and monitoring temperature thresholds](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md)
 
 ***
 

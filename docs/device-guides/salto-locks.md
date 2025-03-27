@@ -4,6 +4,8 @@ description: Guide for using Salto KS door locks with Seam
 
 # Salto KS Locks
 
+<figure><picture><source srcset="../.gitbook/assets/salto-ks-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/salto-ks-manufacturer-page-cover-light.png" alt="Connect and control your Salto KS locks using the Seam API."></picture><figcaption><p>Connect and control your Salto KS locks using the Seam API.</p></figcaption></figure>
+
 ## Overview
 
 Salto Systems produces world-class electronic access control solutions. Their locks work with a vast array of entrance types, from traditional doors and elevators, to key cylinders and parking stiles. They also support a versatile range of key credentials; their locks work with RFID tags, mobile keys, and PIN codes. Using their mobile app and app dashboard, businesses can easily assign, monitor, and revoke access rights.
@@ -26,6 +28,10 @@ For detailed information about the Salto devices that Seam supports, see the fol
   user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
   manufacturers='["Salto"]'
 />" %}
+
+***
+
+## Supported Features
 
 We support the following features:
 
