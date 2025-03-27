@@ -122,6 +122,8 @@ func main() {
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `connected_account_id`
@@ -131,7 +133,10 @@ Required: No
 
 ID of the connected account by which to filter the list of returned access control systems.
 
-***
+---
+
+
+---
 
 ## Return Type
 

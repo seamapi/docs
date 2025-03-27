@@ -120,6 +120,8 @@ nil
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `enrollment_automation_id`
@@ -129,7 +131,10 @@ Required: Yes
 
 ID of the desired enrollment automation.
 
-***
+---
+
+
+---
 
 ## Return Type
 

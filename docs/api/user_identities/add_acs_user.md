@@ -124,6 +124,8 @@ nil
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `acs_user_id`
@@ -133,7 +135,7 @@ Required: Yes
 
 ID of the desired ACS user.
 
-***
+---
 
 ### `user_identity_id`
 
@@ -142,7 +144,10 @@ Required: Yes
 
 ID of the desired user identity.
 
-***
+---
+
+
+---
 
 ## Return Type
 

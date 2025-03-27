@@ -151,6 +151,8 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `device_id`
@@ -160,7 +162,7 @@ Required: Yes
 
 ID of the desired thermostat device.
 
-***
+---
 
 ### `cooling_set_point_celsius`
 
@@ -169,7 +171,7 @@ Required: No
 
 Desired [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `cooling_set_point` parameters.
 
-***
+---
 
 ### `cooling_set_point_fahrenheit`
 
@@ -178,7 +180,7 @@ Required: No
 
 Desired [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `cooling_set_point` parameters.
 
-***
+---
 
 ### `heating_set_point_celsius`
 
@@ -187,7 +189,7 @@ Required: No
 
 Desired [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `heating_set_point` parameters.
 
-***
+---
 
 ### `heating_set_point_fahrenheit`
 
@@ -196,7 +198,10 @@ Required: No
 
 Desired [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `heating_set_point` parameters.
 
-***
+---
+
+
+---
 
 ## Return Type
 

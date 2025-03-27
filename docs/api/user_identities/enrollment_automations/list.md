@@ -174,6 +174,8 @@ func main() {
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `user_identity_id`
@@ -183,7 +185,10 @@ Required: Yes
 
 ID of the user identity for which you want to retrieve all enrollment automations.
 
-***
+---
+
+
+---
 
 ## Return Type
 

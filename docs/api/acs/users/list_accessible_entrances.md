@@ -13,6 +13,8 @@ Lists the [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a 
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `acs_user_id`
@@ -22,7 +24,10 @@ Required: Yes
 
 ID of the desired `acs_user`.
 
-***
+---
+
+
+---
 
 ## Return Type
 

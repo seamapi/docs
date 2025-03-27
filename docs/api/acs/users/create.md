@@ -181,6 +181,8 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `acs_system_id`
@@ -190,7 +192,7 @@ Required: Yes
 
 ID of the `acs_system` to which to add the new `acs_user`.
 
-***
+---
 
 ### `full_name`
 
@@ -199,7 +201,7 @@ Required: Yes
 
 Full name of the new `acs_user`.
 
-***
+---
 
 ### `access_schedule`
 
@@ -208,7 +210,7 @@ Required: No
 
 `starts_at` and `ends_at` timestamps for the new `acs_user`'s access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. `starts_at` defaults to the current time if not provided. `ends_at` is optional and must be a time in the future and after `starts_at`.
 
-***
+---
 
 ### `acs_access_group_ids`
 
@@ -217,7 +219,7 @@ Required: No
 
 Array of `access_group_id`s to indicate the access groups to which to add the new `acs_user`.
 
-***
+---
 
 ### `email`
 
@@ -226,7 +228,7 @@ Required: No
 
 
 
-***
+---
 
 ### `email_address`
 
@@ -235,7 +237,7 @@ Required: No
 
 Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
-***
+---
 
 ### `phone_number`
 
@@ -244,7 +246,7 @@ Required: No
 
 Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
 
-***
+---
 
 ### `user_identity_id`
 
@@ -253,13 +255,22 @@ Required: No
 
 ID of the user identity with which to associate the new `acs_user`.
 
-***
+---
+
+
+---
 
 ## Return Type
 
 [acs\_user](./)
 
-## Additional Code Samples
+---
+
+## Code Samples
+
+### Create a new ACS user
+
+Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with an access schedule.
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -446,6 +457,10 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 {% endtab %}
 
 {% endtabs %}
+### Create a new ACS user in an access group
+
+Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and assigns the new user to an [access group](../../../capability-guides/access-systems/user-management/assigning-users-to-access-groups.md).
+
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Code

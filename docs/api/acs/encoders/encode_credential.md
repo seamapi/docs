@@ -12,6 +12,8 @@ Encodes an existing [credential](../../../capability-guides/access-systems/manag
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `acs_credential_id`
@@ -21,7 +23,7 @@ Required: Yes
 
 ID of the `acs_credential` to encode onto a card.
 
-***
+---
 
 ### `acs_encoder_id`
 
@@ -30,7 +32,10 @@ Required: Yes
 
 ID of the `acs_encoder` to use to encode the `acs_credential`.
 
-***
+---
+
+
+---
 
 ## Return Type
 

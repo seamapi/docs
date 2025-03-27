@@ -12,6 +12,8 @@ Simulates a [thermostat](https://docs.seam.co/latest/capability-guides/thermosta
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `device_id`
@@ -21,7 +23,7 @@ Required: Yes
 
 ID of the desired thermostat device.
 
-***
+---
 
 ### `temperature_celsius`
 
@@ -30,7 +32,7 @@ Required: No
 
 Desired simulated temperature in °C. You must set `temperature_celsius` or `temperature_fahrenheit`.
 
-***
+---
 
 ### `temperature_fahrenheit`
 
@@ -39,7 +41,10 @@ Required: No
 
 Desired simulated temperature in °F. You must set `temperature_fahrenheit` or `temperature_celsius`.
 
-***
+---
+
+
+---
 
 ## Return Type
 

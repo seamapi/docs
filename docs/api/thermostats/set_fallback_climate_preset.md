@@ -123,6 +123,8 @@ nil
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `climate_preset_key`
@@ -132,7 +134,7 @@ Required: Yes
 
 Climate preset key of the desired climate preset.
 
-***
+---
 
 ### `device_id`
 
@@ -141,7 +143,10 @@ Required: Yes
 
 ID of the desired thermostat device.
 
-***
+---
+
+
+---
 
 ## Return Type
 

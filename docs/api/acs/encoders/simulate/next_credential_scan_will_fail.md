@@ -12,6 +12,8 @@ Simulates that the next attempt to scan a [credential](../../../../capability-gu
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `acs_encoder_id`
@@ -21,7 +23,7 @@ Required: Yes
 
 ID of the `acs_encoder` that will fail to scan the `acs_credential` in the next request.
 
-***
+---
 
 ### `acs_credential_id_on_seam`
 
@@ -30,7 +32,7 @@ Required: No
 
 
 
-***
+---
 
 ### `error_code`
 
@@ -39,7 +41,10 @@ Required: No
 
 
 
-***
+---
+
+
+---
 
 ## Return Type
 

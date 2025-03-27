@@ -160,6 +160,8 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `acs_user_id`
@@ -169,7 +171,10 @@ Required: Yes
 
 ID of the desired `acs_user`.
 
-***
+---
+
+
+---
 
 ## Return Type
 

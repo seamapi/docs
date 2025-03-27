@@ -12,6 +12,8 @@ Revokes access to all [entrances](https://docs.seam.co/latest/api/acs/entrances)
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `acs_user_id`
@@ -21,7 +23,10 @@ Required: Yes
 
 ID of the desired `acs_user`.
 
-***
+---
+
+
+---
 
 ## Return Type
 

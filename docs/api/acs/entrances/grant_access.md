@@ -12,6 +12,8 @@ POST /acs/entrances/grant_access ⇒ void
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `acs_entrance_id`
@@ -21,7 +23,7 @@ Required: Yes
 
 
 
-***
+---
 
 ### `acs_user_id`
 
@@ -30,7 +32,10 @@ Required: Yes
 
 
 
-***
+---
+
+
+---
 
 ## Return Type
 

@@ -12,6 +12,8 @@ Scans an encoded [acs_credential](../../../capability-guides/access-systems/mana
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `acs_encoder_id`
@@ -21,7 +23,10 @@ Required: Yes
 
 ID of the `acs_encoder` to use for the scan.
 
-***
+---
+
+
+---
 
 ## Return Type
 

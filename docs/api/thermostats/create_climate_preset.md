@@ -155,6 +155,8 @@ nil
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `climate_preset_key`
@@ -164,7 +166,7 @@ Required: Yes
 
 Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
 
-***
+---
 
 ### `device_id`
 
@@ -173,7 +175,7 @@ Required: Yes
 
 ID of the desired thermostat device.
 
-***
+---
 
 ### `cooling_set_point_celsius`
 
@@ -182,7 +184,7 @@ Required: No
 
 Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
-***
+---
 
 ### `cooling_set_point_fahrenheit`
 
@@ -191,7 +193,7 @@ Required: No
 
 Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
-***
+---
 
 ### `fan_mode_setting`
 
@@ -200,7 +202,7 @@ Required: No
 
 Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
 
-***
+---
 
 ### `heating_set_point_celsius`
 
@@ -209,7 +211,7 @@ Required: No
 
 Temperature to which the thermostat should heat (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
-***
+---
 
 ### `heating_set_point_fahrenheit`
 
@@ -218,7 +220,7 @@ Required: No
 
 Temperature to which the thermostat should heat (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
-***
+---
 
 ### `hvac_mode_setting`
 
@@ -227,7 +229,7 @@ Required: No
 
 Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
 
-***
+---
 
 ### `manual_override_allowed`
 
@@ -236,7 +238,7 @@ Required: No
 
 Indicates whether a person at the thermostat or using the API can change the thermostat's settings.
 
-***
+---
 
 ### `name`
 
@@ -245,7 +247,10 @@ Required: No
 
 User-friendly name to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
 
-***
+---
+
+
+---
 
 ## Return Type
 

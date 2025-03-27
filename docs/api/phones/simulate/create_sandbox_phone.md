@@ -12,6 +12,8 @@ Creates a new simulated phone in a [sandbox workspace](../../../core-concepts/wo
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `user_identity_id`
@@ -21,7 +23,7 @@ Required: Yes
 
 ID of the user identity to associate with the simulated phone.
 
-***
+---
 
 ### `assa_abloy_metadata`
 
@@ -30,7 +32,7 @@ Required: No
 
 ASSA ABLOY metadata to associate with the simulated phone.
 
-***
+---
 
 ### `custom_sdk_installation_id`
 
@@ -39,7 +41,7 @@ Required: No
 
 ID of the custom SDK installation to use for the simulated phone.
 
-***
+---
 
 ### `phone_metadata`
 
@@ -48,7 +50,10 @@ Required: No
 
 Metadata to associate with the simulated phone.
 
-***
+---
+
+
+---
 
 ## Return Type
 

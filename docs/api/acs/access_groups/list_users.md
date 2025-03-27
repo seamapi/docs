@@ -224,6 +224,8 @@ func main() {
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `acs_access_group_id`
@@ -233,7 +235,10 @@ Required: Yes
 
 ID of the access group for which you want to retrieve all users.
 
-***
+---
+
+
+---
 
 ## Return Type
 

@@ -12,6 +12,8 @@ Returns a single phone entry matching the provided `device_id`.
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `device_id`
@@ -21,7 +23,10 @@ Required: Yes
 
 Device ID of the desired phone.
 
-***
+---
+
+
+---
 
 ## Return Type
 

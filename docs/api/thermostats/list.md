@@ -226,6 +226,8 @@ func main() {
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `connect_webview_id`
@@ -235,7 +237,7 @@ Required: No
 
 ID of the Connect Webview by which to filter devices.
 
-***
+---
 
 ### `connected_account_id`
 
@@ -244,7 +246,7 @@ Required: No
 
 ID of the connected account by which to filter.
 
-***
+---
 
 ### `connected_account_ids`
 
@@ -253,7 +255,7 @@ Required: No
 
 Array of IDs of the connected accounts by which to filter devices.
 
-***
+---
 
 ### `created_before`
 
@@ -262,7 +264,7 @@ Required: No
 
 Date threshold for devices to return. If specified, returns only devices created before the specified date.
 
-***
+---
 
 ### `custom_metadata_has`
 
@@ -271,7 +273,7 @@ Required: No
 
 Set of key:value [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) pairs by which you want to filter devices.
 
-***
+---
 
 ### `device_ids`
 
@@ -280,7 +282,7 @@ Required: No
 
 Array of device IDs by which to filter devices.
 
-***
+---
 
 ### `device_type`
 
@@ -289,7 +291,7 @@ Required: No
 
 Device type by which to filter devices.
 
-***
+---
 
 ### `device_types`
 
@@ -298,7 +300,7 @@ Required: No
 
 Array of device types by which to filter devices.
 
-***
+---
 
 ### `limit`
 
@@ -307,7 +309,7 @@ Required: No
 
 Numerical limit on the number of devices to return.
 
-***
+---
 
 ### `manufacturer`
 
@@ -316,7 +318,7 @@ Required: No
 
 Manufacturer by which to filter devices.
 
-***
+---
 
 ### `user_identifier_key`
 
@@ -325,7 +327,10 @@ Required: No
 
 Your own internal user ID for the user by which to filter devices.
 
-***
+---
+
+
+---
 
 ## Return Type
 

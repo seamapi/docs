@@ -172,6 +172,8 @@ api.AcsAccessGroup{AcsAccessGroupId: "44444444-4444-4444-4444-444444444444", Nam
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `acs_access_group_id`
@@ -181,7 +183,10 @@ Required: Yes
 
 ID of the desired access group.
 
-***
+---
+
+
+---
 
 ## Return Type
 

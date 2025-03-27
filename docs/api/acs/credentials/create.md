@@ -213,6 +213,8 @@ api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUs
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `access_method`
@@ -222,7 +224,7 @@ Required: Yes
 
 Access method for the new credential. Supported values: `code`, `card`, `mobile_key`.
 
-***
+---
 
 ### `acs_user_id`
 
@@ -231,7 +233,7 @@ Required: Yes
 
 ID of the ACS user to whom the new credential belongs.
 
-***
+---
 
 ### `allowed_acs_entrance_ids`
 
@@ -240,7 +242,7 @@ Required: No
 
 Set of IDs of the [entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md) for which the new credential grants access.
 
-***
+---
 
 ### `assa_abloy_vostio_metadata`
 
@@ -249,7 +251,7 @@ Required: No
 
 Vostio-specific metadata for the new credential.
 
-***
+---
 
 ### `code`
 
@@ -258,7 +260,7 @@ Required: No
 
 Access (PIN) code for the new credential. There may be manufacturer-specific code restrictions. For details, see the applicable [device or system integration guide](../../../device-and-system-integration-guides/overview.md).
 
-***
+---
 
 ### `credential_manager_acs_system_id`
 
@@ -267,7 +269,7 @@ Required: No
 
 ACS system ID of the credential manager for the new credential.
 
-***
+---
 
 ### `ends_at`
 
@@ -276,7 +278,7 @@ Required: No
 
 Date and time at which the validity of the new credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
 
-***
+---
 
 ### `is_multi_phone_sync_credential`
 
@@ -285,7 +287,7 @@ Required: No
 
 Indicates whether the new credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
 
-***
+---
 
 ### `salto_space_metadata`
 
@@ -294,7 +296,7 @@ Required: No
 
 Salto Space-specific metadata for the new credential.
 
-***
+---
 
 ### `starts_at`
 
@@ -303,7 +305,7 @@ Required: No
 
 Date and time at which the validity of the new credential starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
-***
+---
 
 ### `visionline_metadata`
 
@@ -312,7 +314,10 @@ Required: No
 
 Visionline-specific metadata for the new credential.
 
-***
+---
+
+
+---
 
 ## Return Type
 

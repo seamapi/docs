@@ -211,6 +211,8 @@ func main() {
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `acs_credential_id`
@@ -220,7 +222,10 @@ Required: Yes
 
 ID of the credential for which you want to retrieve all entrances to which this credential grants access.
 
-***
+---
+
+
+---
 
 ## Return Type
 

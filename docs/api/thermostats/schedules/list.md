@@ -213,6 +213,8 @@ func main() {
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `device_id`
@@ -222,7 +224,7 @@ Required: Yes
 
 ID of the desired thermostat device.
 
-***
+---
 
 ### `user_identifier_key`
 
@@ -231,7 +233,10 @@ Required: No
 
 User identifier key by which to filter the list of returned thermostat schedules.
 
-***
+---
+
+
+---
 
 ## Return Type
 

@@ -12,6 +12,8 @@ Simulates that the next attempt to encode a [credential](../../../../capability-
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `acs_encoder_id`
@@ -21,7 +23,7 @@ Required: Yes
 
 ID of the `acs_encoder` that will be used in the next request to encode the `acs_credential`.
 
-***
+---
 
 ### `scenario`
 
@@ -30,7 +32,10 @@ Required: No
 
 Scenario to simulate.
 
-***
+---
+
+
+---
 
 ## Return Type
 

@@ -117,6 +117,8 @@ func main() {
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `acs_system_id`
@@ -126,7 +128,10 @@ Required: Yes
 
 ID of the desired access control system.
 
-***
+---
+
+
+---
 
 ## Return Type
 

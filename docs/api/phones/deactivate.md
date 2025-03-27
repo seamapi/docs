@@ -13,6 +13,8 @@ Deactivates a phone, which is useful, for example, if a user has lost their phon
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `device_id`
@@ -22,7 +24,10 @@ Required: Yes
 
 Device ID of the desired phone.
 
-***
+---
+
+
+---
 
 ## Return Type
 

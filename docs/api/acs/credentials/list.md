@@ -197,6 +197,8 @@ func main() {
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `acs_system_id`
@@ -206,7 +208,7 @@ Required: No
 
 ID of the access control system for which you want to retrieve all credentials.
 
-***
+---
 
 ### `acs_user_id`
 
@@ -215,7 +217,7 @@ Required: No
 
 ID of the ACS user for which you want to retrieve all credentials.
 
-***
+---
 
 ### `created_before`
 
@@ -224,7 +226,7 @@ Required: No
 
 Date and time, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format, before which events to return were created.
 
-***
+---
 
 ### `is_multi_phone_sync_credential`
 
@@ -233,7 +235,7 @@ Required: No
 
 Indicates whether you want to retrieve only multi-phone sync credentials or non-multi-phone sync credentials.
 
-***
+---
 
 ### `limit`
 
@@ -242,7 +244,7 @@ Required: No
 
 Number of credentials to return.
 
-***
+---
 
 ### `user_identity_id`
 
@@ -251,7 +253,10 @@ Required: No
 
 ID of the user identity for which you want to retrieve all credentials.
 
-***
+---
+
+
+---
 
 ## Return Type
 

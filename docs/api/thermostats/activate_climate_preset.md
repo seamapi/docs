@@ -144,6 +144,8 @@ api.ActionAttempt{ActionAttemptId: "05de2295-d1dc-4748-aae3-9931658bde20", Statu
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `climate_preset_key`
@@ -153,7 +155,7 @@ Required: Yes
 
 Climate preset key of the desired climate preset.
 
-***
+---
 
 ### `device_id`
 
@@ -162,7 +164,10 @@ Required: Yes
 
 ID of the desired thermostat device.
 
-***
+---
+
+
+---
 
 ## Return Type
 

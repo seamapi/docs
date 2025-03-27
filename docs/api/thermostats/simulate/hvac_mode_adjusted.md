@@ -12,6 +12,8 @@ Simulates having adjusted the [HVAC mode](../../../capability-guides/thermostats
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `device_id`
@@ -21,7 +23,7 @@ Required: Yes
 
 ID of the desired thermostat device.
 
-***
+---
 
 ### `hvac_mode`
 
@@ -30,7 +32,7 @@ Required: Yes
 
 Desired [HVAC mode](../../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) to simulate.
 
-***
+---
 
 ### `cooling_set_point_celsius`
 
@@ -39,7 +41,7 @@ Required: No
 
 Desired simulated cooling [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`.
 
-***
+---
 
 ### `cooling_set_point_fahrenheit`
 
@@ -48,7 +50,7 @@ Required: No
 
 Desired simulated cooling [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`.
 
-***
+---
 
 ### `heating_set_point_celsius`
 
@@ -57,7 +59,7 @@ Required: No
 
 Desired simulated heating [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`.
 
-***
+---
 
 ### `heating_set_point_fahrenheit`
 
@@ -66,7 +68,10 @@ Required: No
 
 Desired simulated heating [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`.
 
-***
+---
+
+
+---
 
 ## Return Type
 

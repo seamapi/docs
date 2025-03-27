@@ -141,6 +141,8 @@ func main() {
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `acs_credential_id`
@@ -150,7 +152,7 @@ Required: No
 
 
 
-***
+---
 
 ### `acs_system_id`
 
@@ -159,7 +161,10 @@ Required: No
 
 
 
-***
+---
+
+
+---
 
 ## Return Type
 
