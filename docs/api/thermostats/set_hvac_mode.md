@@ -234,31 +234,6 @@ Format: `String`
 
 ---
 
-<<<<<<< HEAD
-#### `error`
-
-Format: `Object`
-
-<details>
-
-<summary><code>message</code> Format: <code>String</code></summary>
-</details>
-<details>
-
-<summary><code>type</code> Format: <code>String</code></summary>
-</details>
----
-
-#### `result`
-
-Format: `Object`
-
-This object has no properties.
-
----
-
-=======
->>>>>>> 85fe55468e31eda661e51396831b1d6d9a7dd530
 #### `status`
 
 Format: `Enum`
