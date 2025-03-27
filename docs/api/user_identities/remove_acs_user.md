@@ -8,7 +8,7 @@ Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/acc
 
 {% tabs %}
 {% tab title="JavaScript" %}
-**Request**
+#### Request
 
 ```javascript
 await seam.userIdentities.removeAcsUser({
@@ -17,7 +17,7 @@ await seam.userIdentities.removeAcsUser({
 });
 ```
 
-**Response**
+#### Response
 
 ```javascript
 // void
@@ -25,7 +25,7 @@ await seam.userIdentities.removeAcsUser({
 {% endtab %}
 
 {% tab title="Python" %}
-**Request**
+#### Request
 
 ```python
 seam.user_identities.remove_acs_user(
@@ -34,7 +34,7 @@ seam.user_identities.remove_acs_user(
 )
 ```
 
-**Response**
+#### Response
 
 ```python
 None
@@ -42,7 +42,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-**Request**
+#### Request
 
 ```ruby
 seam.user_identities.remove_acs_user(
@@ -51,7 +51,7 @@ seam.user_identities.remove_acs_user(
 )
 ```
 
-**Response**
+#### Response
 
 ```ruby
 nil
@@ -59,7 +59,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-**Request**
+#### Request
 
 ```php
 <?php
@@ -69,7 +69,7 @@ $seam->user_identities->remove_acs_user(
 );
 ```
 
-**Response**
+#### Response
 
 ```php
 null
@@ -77,13 +77,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-**Request**
+#### Request
 
 ```seam_cli
 seam user-identities remove-acs-user --user_identity_id "5c945ab5-c75e-4bcb-8e5f-9410061c401f" --acs_user_id "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe"
 ```
 
-**Response**
+#### Response
 
 ```seam_cli
 {}
@@ -91,7 +91,7 @@ seam user-identities remove-acs-user --user_identity_id "5c945ab5-c75e-4bcb-8e5f
 {% endtab %}
 
 {% tab title="Go" %}
-**Request**
+#### Request
 
 ```go
 package main
@@ -109,25 +109,27 @@ func main() {
 }
 ```
 
-**Response**
+#### Response
 
 ```go
 nil
 ```
 {% endtab %}
+
 {% endtabs %}
 
 ## Authentication Methods
 
-* API key
-* Personal access token\
-  Must also include the `seam-workspace` header in the request.
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `acs_user_id`
 
-Type: `string` Required: Yes
+Type: `string`
+Required: Yes
 
 ID of the ACS user.
 
@@ -135,7 +137,8 @@ ID of the ACS user.
 
 ### `user_identity_id`
 
-Type: `string` Required: Yes
+Type: `string`
+Required: Yes
 
 ID of the desired user identity.
 

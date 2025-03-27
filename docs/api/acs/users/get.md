@@ -8,7 +8,7 @@ Returns a specified [ACS user](https://docs.seam.co/latest/capability-guides/acc
 
 {% tabs %}
 {% tab title="JavaScript" %}
-**Request**
+#### Request
 
 ```javascript
 await seam.acs.users.get({
@@ -16,7 +16,7 @@ await seam.acs.users.get({
 });
 ```
 
-**Response**
+#### Response
 
 ```javascript
 {
@@ -33,13 +33,13 @@ await seam.acs.users.get({
 {% endtab %}
 
 {% tab title="Python" %}
-**Request**
+#### Request
 
 ```python
 seam.acs.users.get(acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 ```
 
-**Response**
+#### Response
 
 ```python
 AcsUser(
@@ -56,13 +56,13 @@ AcsUser(
 {% endtab %}
 
 {% tab title="Ruby" %}
-**Request**
+#### Request
 
 ```ruby
 seam.acs.users.get(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 ```
 
-**Response**
+#### Response
 
 ```ruby
 {
@@ -79,14 +79,14 @@ seam.acs.users.get(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 {% endtab %}
 
 {% tab title="PHP" %}
-**Request**
+#### Request
 
 ```php
 <?php
 $seam->acs->users->get(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33");
 ```
 
-**Response**
+#### Response
 
 ```php
 <?php
@@ -104,13 +104,13 @@ $seam->acs->users->get(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33");
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-**Request**
+#### Request
 
 ```seam_cli
 seam acs users get --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 ```
 
-**Response**
+#### Response
 
 ```seam_cli
 {
@@ -127,7 +127,7 @@ seam acs users get --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 {% endtab %}
 
 {% tab title="Go" %}
-**Request**
+#### Request
 
 ```go
 package main
@@ -145,25 +145,27 @@ func main() {
 }
 ```
 
-**Response**
+#### Response
 
 ```go
 api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "Jane Doe", FullName: "Jane Doe", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100"}
 ```
 {% endtab %}
+
 {% endtabs %}
 
 ## Authentication Methods
 
-* API key
-* Personal access token\
-  Must also include the `seam-workspace` header in the request.
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `acs_user_id`
 
-Type: `string` Required: Yes
+Type: `string`
+Required: Yes
 
 ID of the desired `acs_user`.
 

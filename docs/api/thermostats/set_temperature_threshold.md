@@ -8,7 +8,7 @@ Sets a [temperature threshold](../../capability-guides/thermostats/setting-and-m
 
 {% tabs %}
 {% tab title="JavaScript" %}
-**Request**
+#### Request
 
 ```javascript
 await seam.thermostats.setTemperatureThreshold({
@@ -18,7 +18,7 @@ await seam.thermostats.setTemperatureThreshold({
 });
 ```
 
-**Response**
+#### Response
 
 ```javascript
 // void
@@ -26,7 +26,7 @@ await seam.thermostats.setTemperatureThreshold({
 {% endtab %}
 
 {% tab title="Python" %}
-**Request**
+#### Request
 
 ```python
 seam.thermostats.set_temperature_threshold(
@@ -36,7 +36,7 @@ seam.thermostats.set_temperature_threshold(
 )
 ```
 
-**Response**
+#### Response
 
 ```python
 None
@@ -44,7 +44,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-**Request**
+#### Request
 
 ```ruby
 seam.thermostats.set_temperature_threshold(
@@ -54,7 +54,7 @@ seam.thermostats.set_temperature_threshold(
 )
 ```
 
-**Response**
+#### Response
 
 ```ruby
 nil
@@ -62,7 +62,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-**Request**
+#### Request
 
 ```php
 <?php
@@ -73,7 +73,7 @@ $seam->thermostats->set_temperature_threshold(
 );
 ```
 
-**Response**
+#### Response
 
 ```php
 null
@@ -81,13 +81,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-**Request**
+#### Request
 
 ```seam_cli
 seam thermostats set-temperature-threshold --device_id "123e4567-e89b-12d3-a456-426614174000" --lower_limit_celsius 4 --upper_limit_celsius 30
 ```
 
-**Response**
+#### Response
 
 ```seam_cli
 {}
@@ -95,7 +95,7 @@ seam thermostats set-temperature-threshold --device_id "123e4567-e89b-12d3-a456-
 {% endtab %}
 
 {% tab title="Go" %}
-**Request**
+#### Request
 
 ```go
 package main
@@ -114,25 +114,27 @@ func main() {
 }
 ```
 
-**Response**
+#### Response
 
 ```go
 nil
 ```
 {% endtab %}
+
 {% endtabs %}
 
 ## Authentication Methods
 
-* API key
-* Personal access token\
-  Must also include the `seam-workspace` header in the request.
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `device_id`
 
-Type: `string` Required: Yes
+Type: `string`
+Required: Yes
 
 ID of the desired thermostat device.
 
@@ -140,7 +142,8 @@ ID of the desired thermostat device.
 
 ### `lower_limit_celsius`
 
-Type: `number` Required: No
+Type: `number`
+Required: No
 
 Lower temperature limit in in °C. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both.
 
@@ -148,7 +151,8 @@ Lower temperature limit in in °C. Seam alerts you if the reported temperature i
 
 ### `lower_limit_fahrenheit`
 
-Type: `number` Required: No
+Type: `number`
+Required: No
 
 Lower temperature limit in in °F. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both.
 
@@ -156,7 +160,8 @@ Lower temperature limit in in °F. Seam alerts you if the reported temperature i
 
 ### `upper_limit_celsius`
 
-Type: `number` Required: No
+Type: `number`
+Required: No
 
 Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both.
 
@@ -164,7 +169,8 @@ Upper temperature limit in in °C. Seam alerts you if the reported temperature i
 
 ### `upper_limit_fahrenheit`
 
-Type: `number` Required: No
+Type: `number`
+Required: No
 
 Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both.
 

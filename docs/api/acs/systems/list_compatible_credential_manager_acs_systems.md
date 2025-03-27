@@ -4,13 +4,15 @@
 POST /acs/systems/list_compatible_credential_manager_acs_systems ⇒ { acs_systems: [acs_system, …] }
 ```
 
-Returns a list of all credential manager ACS systems that are compatible with a specified [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+Returns a list of all credential manager ACS systems that are compatible with a specified
+[access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-Specify the ACS system for which you want to retrieve all compatible credential manager ACS systems by including the corresponding `acs_system_id` in the request body.
+Specify the ACS system for which you want to retrieve all compatible credential manager ACS
+systems by including the corresponding `acs_system_id` in the request body.
 
 {% tabs %}
 {% tab title="JavaScript" %}
-**Request**
+#### Request
 
 ```javascript
 await seam.acs.systems.listCompatibleCredentialManagerAcsSystems({
@@ -18,7 +20,7 @@ await seam.acs.systems.listCompatibleCredentialManagerAcsSystems({
 });
 ```
 
-**Response**
+#### Response
 
 ```javascript
 [{ "acs_system_id": "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }]
@@ -26,7 +28,7 @@ await seam.acs.systems.listCompatibleCredentialManagerAcsSystems({
 {% endtab %}
 
 {% tab title="Python" %}
-**Request**
+#### Request
 
 ```python
 seam.acs.systems.list_compatible_credential_manager_acs_systems(
@@ -34,7 +36,7 @@ seam.acs.systems.list_compatible_credential_manager_acs_systems(
 )
 ```
 
-**Response**
+#### Response
 
 ```python
 [AcsSystem(acs_system_id="aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4")]
@@ -42,7 +44,7 @@ seam.acs.systems.list_compatible_credential_manager_acs_systems(
 {% endtab %}
 
 {% tab title="Ruby" %}
-**Request**
+#### Request
 
 ```ruby
 seam.acs.systems.list_compatible_credential_manager_acs_systems(
@@ -50,7 +52,7 @@ seam.acs.systems.list_compatible_credential_manager_acs_systems(
 )
 ```
 
-**Response**
+#### Response
 
 ```ruby
 [{ "acs_system_id" => "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }]
@@ -58,7 +60,7 @@ seam.acs.systems.list_compatible_credential_manager_acs_systems(
 {% endtab %}
 
 {% tab title="PHP" %}
-**Request**
+#### Request
 
 ```php
 <?php
@@ -67,7 +69,7 @@ $seam->acs->systems->list_compatible_credential_manager_acs_systems(
 );
 ```
 
-**Response**
+#### Response
 
 ```php
 <?php
@@ -76,13 +78,13 @@ $seam->acs->systems->list_compatible_credential_manager_acs_systems(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-**Request**
+#### Request
 
 ```seam_cli
 seam acs systems list-compatible-credential-manager-acs-systems --acs_system_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 ```
 
-**Response**
+#### Response
 
 ```seam_cli
 [{ "acs_system_id": "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }]
@@ -90,7 +92,7 @@ seam acs systems list-compatible-credential-manager-acs-systems --acs_system_id 
 {% endtab %}
 
 {% tab title="Go" %}
-**Request**
+#### Request
 
 ```go
 package main
@@ -108,25 +110,27 @@ func main() {
 }
 ```
 
-**Response**
+#### Response
 
 ```go
 []api.AcsSystem{api.AcsSystem{AcsSystemId: "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4"}}
 ```
 {% endtab %}
+
 {% endtabs %}
 
 ## Authentication Methods
 
-* API key
-* Personal access token\
-  Must also include the `seam-workspace` header in the request.
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `acs_system_id`
 
-Type: `string` Required: Yes
+Type: `string`
+Required: Yes
 
 ID of the ACS system for which you want to retrieve all compatible credential manager ACS systems.
 

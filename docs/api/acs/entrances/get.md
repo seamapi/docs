@@ -8,7 +8,7 @@ Returns a specified [ACS entrance](../../../capability-guides/access-systems/ret
 
 {% tabs %}
 {% tab title="JavaScript" %}
-**Request**
+#### Request
 
 ```javascript
 await seam.acs.entrances.get({
@@ -16,7 +16,7 @@ await seam.acs.entrances.get({
 });
 ```
 
-**Response**
+#### Response
 
 ```javascript
 {
@@ -29,13 +29,13 @@ await seam.acs.entrances.get({
 {% endtab %}
 
 {% tab title="Python" %}
-**Request**
+#### Request
 
 ```python
 seam.acs.entrances.get(acs_entrance_id="123e4567-e89b-12d3-a456-426614174000")
 ```
 
-**Response**
+#### Response
 
 ```python
 AcsEntrance(
@@ -48,13 +48,13 @@ AcsEntrance(
 {% endtab %}
 
 {% tab title="Ruby" %}
-**Request**
+#### Request
 
 ```ruby
 seam.acs.entrances.get(acs_entrance_id: "123e4567-e89b-12d3-a456-426614174000")
 ```
 
-**Response**
+#### Response
 
 ```ruby
 {
@@ -67,7 +67,7 @@ seam.acs.entrances.get(acs_entrance_id: "123e4567-e89b-12d3-a456-426614174000")
 {% endtab %}
 
 {% tab title="PHP" %}
-**Request**
+#### Request
 
 ```php
 <?php
@@ -76,7 +76,7 @@ $seam->acs->entrances->get(
 );
 ```
 
-**Response**
+#### Response
 
 ```php
 <?php
@@ -90,13 +90,13 @@ $seam->acs->entrances->get(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-**Request**
+#### Request
 
 ```seam_cli
 seam acs entrances get --acs_entrance_id "123e4567-e89b-12d3-a456-426614174000"
 ```
 
-**Response**
+#### Response
 
 ```seam_cli
 {
@@ -109,7 +109,7 @@ seam acs entrances get --acs_entrance_id "123e4567-e89b-12d3-a456-426614174000"
 {% endtab %}
 
 {% tab title="Go" %}
-**Request**
+#### Request
 
 ```go
 package main
@@ -127,24 +127,28 @@ func main() {
 }
 ```
 
-**Response**
+#### Response
 
 ```go
 api.AcsEntrance{AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", AcsEntranceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "text"}
 ```
 {% endtab %}
+
 {% endtabs %}
 
 ## Authentication Methods
 
-* API key
-* Client session token
+- API key
+- Client session token
 
 ## Request Parameters
 
 ### `acs_entrance_id`
 
-Type: `string` Required: Yes
+Type: `string`
+Required: Yes
+
+
 
 ***
 

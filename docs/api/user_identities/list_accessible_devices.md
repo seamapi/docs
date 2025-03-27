@@ -4,11 +4,11 @@
 POST /user_identities/list_accessible_devices ⇒ { devices: [device, …] }
 ```
 
-Returns a list of all [devices](../../core-concepts/devices/) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Returns a list of all [devices](../../core-concepts/devices/README.md) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 {% tabs %}
 {% tab title="JavaScript" %}
-**Request**
+#### Request
 
 ```javascript
 await seam.userIdentities.listAccessibleDevices({
@@ -16,7 +16,7 @@ await seam.userIdentities.listAccessibleDevices({
 });
 ```
 
-**Response**
+#### Response
 
 ```javascript
 [
@@ -76,7 +76,7 @@ await seam.userIdentities.listAccessibleDevices({
 {% endtab %}
 
 {% tab title="Python" %}
-**Request**
+#### Request
 
 ```python
 seam.user_identities.list_accessible_devices(
@@ -84,7 +84,7 @@ seam.user_identities.list_accessible_devices(
 )
 ```
 
-**Response**
+#### Response
 
 ```python
 [
@@ -144,7 +144,7 @@ seam.user_identities.list_accessible_devices(
 {% endtab %}
 
 {% tab title="Ruby" %}
-**Request**
+#### Request
 
 ```ruby
 seam.user_identities.list_accessible_devices(
@@ -152,7 +152,7 @@ seam.user_identities.list_accessible_devices(
 )
 ```
 
-**Response**
+#### Response
 
 ```ruby
 [
@@ -216,7 +216,7 @@ seam.user_identities.list_accessible_devices(
 {% endtab %}
 
 {% tab title="PHP" %}
-**Request**
+#### Request
 
 ```php
 <?php
@@ -225,7 +225,7 @@ $seam->user_identities->list_accessible_devices(
 );
 ```
 
-**Response**
+#### Response
 
 ```php
 <?php
@@ -293,13 +293,13 @@ $seam->user_identities->list_accessible_devices(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-**Request**
+#### Request
 
 ```seam_cli
 seam user-identities list-accessible-devices --user_identity_id "f3a328b4-dd04-4370-9000-d52b7a01b0bf"
 ```
 
-**Response**
+#### Response
 
 ```seam_cli
 [
@@ -359,7 +359,7 @@ seam user-identities list-accessible-devices --user_identity_id "f3a328b4-dd04-4
 {% endtab %}
 
 {% tab title="Go" %}
-**Request**
+#### Request
 
 ```go
 package main
@@ -376,25 +376,27 @@ func main() {
 }
 ```
 
-**Response**
+#### Response
 
 ```go
 []api.Device{api.Device{DeviceId: "054765c8-a2fc-4599-b486-14c19f462c45", Nickname: "", DisplayName: "Seam Thermostat", DeviceType: "nest_thermostat", CapabilitiesSupported: []string{"thermostat"}, Properties: api.DeviceProperties{Online: true, IsCooling: false, IsHeating: false, Manufacturer: "nest", NestMetadata: api.DevicePropertiesNestMetadata{CustomName: "", DeviceName: "enterprises/nest_project_id/devices/AVPHwEvjFcX-wRmGdXApyxON24SAI0S9oU13a2GSVFLPVehUKH1ATqlASyKi2N2dbJCVW-B6-VxgbhdjUyyjA-K3Vo5C9g", NestDeviceId: "bcca8c5f-1854-4906-9911-c877d513e00a"}, IsFanRunning: false, HasDirectPower: true, RelativeHumidity: 0.46, TemperatureCelsius: 24.64, TemperatureFahrenheit: 76.352, CurrentClimateSetting: api.DevicePropertiesCurrentClimateSetting{HvacModeSetting: "heat_cool", ManualOverrideAllowed: true, CoolingSetPointCelsius: 21.5, HeatingSetPointCelsius: 20, CoolingSetPointFahrenheit: 70.7, HeatingSetPointFahrenheit: 68}, AvailableHvacModeSettings: []string{"heat", "cool", "heat_cool", "off"}, IsTemporaryManualOverrideActive: false, Name: "", Appearance: api.DevicePropertiesAppearance{Name: ""}, Model: api.DevicePropertiesModel{DisplayName: "Thermostat", ManufacturerDisplayName: "Nest", AccessoryKeypadSupported: false}, ImageUrl: "https://connect.getseam.com/assets/images/devices/unknown-lock.png", ImageAltText: "Placeholder Lock Image", IsClimateSettingScheduleActive: false}, Location: nil, ConnectedAccountId: "44284499-a50b-4947-86c1-58264f014be5", WorkspaceId: "398d80b7-3f96-47c2-b85a-6f8ba21d07be", CreatedAt: "2024-02-29T21:57:33.397Z", Errors: nil, Warnings: nil, IsManaged: true, CustomMetadata: struct{}{}}}
 ```
 {% endtab %}
+
 {% endtabs %}
 
 ## Authentication Methods
 
-* API key
-* Personal access token\
-  Must also include the `seam-workspace` header in the request.
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `user_identity_id`
 
-Type: `string` Required: Yes
+Type: `string`
+Required: Yes
 
 ID of the user identity for which you want to retrieve all accessible devices.
 
