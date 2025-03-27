@@ -177,8 +177,6 @@ Desired [heating set point](../../capability-guides/thermostats/understanding-th
 ---
 
 
----
-
 ## Return Type
 
 [action\_attempt](./)

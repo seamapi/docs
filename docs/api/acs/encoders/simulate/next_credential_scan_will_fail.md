@@ -44,8 +44,6 @@ Required: No
 ---
 
 
----
-
 ## Return Type
 
 void

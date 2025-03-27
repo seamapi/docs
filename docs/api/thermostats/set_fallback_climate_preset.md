@@ -146,8 +146,6 @@ ID of the desired thermostat device.
 ---
 
 
----
-
 ## Return Type
 
 void

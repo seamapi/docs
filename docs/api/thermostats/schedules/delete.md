@@ -133,8 +133,6 @@ ID of the desired thermostat schedule.
 ---
 
 
----
-
 ## Return Type
 
 void

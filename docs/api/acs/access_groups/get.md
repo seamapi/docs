@@ -186,8 +186,6 @@ ID of the desired access group.
 ---
 
 
----
-
 ## Return Type
 
 [acs\_access\_group](./)

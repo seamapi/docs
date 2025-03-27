@@ -62,8 +62,6 @@ Unique key for the user identity.
 ---
 
 
----
-
 ## Return Type
 
 void

@@ -71,8 +71,6 @@ Desired simulated heating [set point](../../../capability-guides/thermostats/und
 ---
 
 
----
-
 ## Return Type
 
 void

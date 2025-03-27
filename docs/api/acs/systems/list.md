@@ -136,8 +136,6 @@ ID of the connected account by which to filter the list of returned access contr
 ---
 
 
----
-
 ## Return Type
 
 Array<[acs\_system](./)>

@@ -35,8 +35,6 @@ Required: Yes
 ---
 
 
----
-
 ## Return Type
 
 void

@@ -261,8 +261,6 @@ Required: No
 ---
 
 
----
-
 ## Return Type
 
 Array<[acs\_credential](./)>

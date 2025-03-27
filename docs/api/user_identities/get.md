@@ -184,8 +184,6 @@ Required: No
 ---
 
 
----
-
 ## Return Type
 
 [user\_identity](./)

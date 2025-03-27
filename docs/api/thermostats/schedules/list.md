@@ -236,8 +236,6 @@ User identifier key by which to filter the list of returned thermostat schedules
 ---
 
 
----
-
 ## Return Type
 
 Array<[thermostat\_schedule](./)>

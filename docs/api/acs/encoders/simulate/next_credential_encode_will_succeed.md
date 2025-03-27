@@ -35,8 +35,6 @@ Scenario to simulate.
 ---
 
 
----
-
 ## Return Type
 
 void

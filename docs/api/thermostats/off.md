@@ -149,8 +149,6 @@ ID of the desired thermostat device.
 ---
 
 
----
-
 ## Return Type
 
 [action\_attempt](./)

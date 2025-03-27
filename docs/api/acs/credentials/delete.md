@@ -130,8 +130,6 @@ ID of the desired credential.
 ---
 
 
----
-
 ## Return Type
 
 void

@@ -180,8 +180,6 @@ ID of the access group for which you want to retrieve all accessible entrances.
 ---
 
 
----
-
 ## Return Type
 
 Array<[acs\_entrance](./)>

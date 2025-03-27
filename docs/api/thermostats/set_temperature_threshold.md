@@ -179,8 +179,6 @@ Upper temperature limit in in °C. Seam alerts you if the reported temperature i
 ---
 
 
----
-
 ## Return Type
 
 void

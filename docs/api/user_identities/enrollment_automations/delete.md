@@ -134,8 +134,6 @@ ID of the desired enrollment automation.
 ---
 
 
----
-
 ## Return Type
 
 void

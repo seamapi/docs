@@ -188,8 +188,6 @@ ID of the user identity for which you want to retrieve all enrollment automation
 ---
 
 
----
-
 ## Return Type
 
 Array<[enrollment\_automation](./)>

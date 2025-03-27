@@ -26,8 +26,6 @@ ID of the `acs_encoder` to use for the scan.
 ---
 
 
----
-
 ## Return Type
 
 [action\_attempt](./)

@@ -148,8 +148,6 @@ ID of the desired `acs_user`.
 ---
 
 
----
-
 ## Return Type
 
 void

@@ -164,8 +164,6 @@ Required: No
 ---
 
 
----
-
 ## Return Type
 
 Array<[acs\_entrance](./)>

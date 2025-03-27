@@ -175,8 +175,6 @@ Required: No
 ---
 
 
----
-
 ## Return Type
 
 Array<[user\_identity](./)>

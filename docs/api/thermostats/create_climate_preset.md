@@ -250,8 +250,6 @@ User-friendly name to identify the [climate preset](../../capability-guides/ther
 ---
 
 
----
-
 ## Return Type
 
 void

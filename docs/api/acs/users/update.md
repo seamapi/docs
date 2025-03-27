@@ -192,8 +192,6 @@ Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/acc
 ---
 
 
----
-
 ## Return Type
 
 void

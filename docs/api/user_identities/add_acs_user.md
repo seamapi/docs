@@ -147,8 +147,6 @@ ID of the desired user identity.
 ---
 
 
----
-
 ## Return Type
 
 void

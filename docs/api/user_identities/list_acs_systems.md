@@ -193,8 +193,6 @@ ID of the user identity for which you want to retrieve all access control system
 ---
 
 
----
-
 ## Return Type
 
 Array<[acs\_system](./)>

@@ -177,8 +177,6 @@ Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermos
 ---
 
 
----
-
 ## Return Type
 
 [action\_attempt](./)

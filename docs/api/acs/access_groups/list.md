@@ -214,8 +214,6 @@ ID of the user for which you want to retrieve all access groups.
 ---
 
 
----
-
 ## Return Type
 
 Array<[acs\_access\_group](./)>

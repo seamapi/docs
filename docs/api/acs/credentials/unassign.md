@@ -148,8 +148,6 @@ ID of the desired user.
 ---
 
 
----
-
 ## Return Type
 
 void

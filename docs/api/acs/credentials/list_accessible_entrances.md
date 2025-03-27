@@ -225,8 +225,6 @@ ID of the credential for which you want to retrieve all entrances to which this 
 ---
 
 
----
-
 ## Return Type
 
 Array<[acs\_entrance](./)>

@@ -181,8 +181,6 @@ ID of the desired credential.
 ---
 
 
----
-
 ## Return Type
 
 [acs\_credential](./)

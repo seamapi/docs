@@ -202,8 +202,6 @@ ID of the user identity for which you want to retrieve all ACS users.
 ---
 
 
----
-
 ## Return Type
 
 Array<[acs\_user](./)>

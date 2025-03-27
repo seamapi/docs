@@ -139,8 +139,6 @@ ID of the ACS system for which you want to retrieve all compatible credential ma
 ---
 
 
----
-
 ## Return Type
 
 Array<[acs\_system](./)>
