@@ -153,6 +153,15 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 
 ## Request Parameters
 
+### `device_id`
+
+Type: `string`
+Required: Yes
+
+ID of the desired thermostat device.
+
+***
+
 ### `cooling_set_point_celsius`
 
 Type: `number`
@@ -168,15 +177,6 @@ Type: `number`
 Required: No
 
 Desired [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `cooling_set_point` parameters.
-
-***
-
-### `device_id`
-
-Type: `string`
-Required: Yes
-
-ID of the desired thermostat device.
 
 ***
 
@@ -210,7 +210,7 @@ Setting HVAC mode.
 
 Format: `UUID`
 
-The ID of the action attempt.
+ID of the action attempt.
 
 ---
 
@@ -220,6 +220,7 @@ Format: `String`
 
 ---
 
+<<<<<<< HEAD
 #### `error`
 
 Format: `Object`
@@ -242,6 +243,8 @@ This object has no properties.
 
 ---
 
+=======
+>>>>>>> 85fe55468e31eda661e51396831b1d6d9a7dd530
 #### `status`
 
 Format: `Enum`

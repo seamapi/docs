@@ -151,6 +151,7 @@ nil
 ## Authentication Methods
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
@@ -162,6 +163,15 @@ Type: `string`
 Required: Yes
 
 Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+
+***
+
+### `device_id`
+
+Type: `string`
+Required: Yes
+
+ID of the desired thermostat device.
 
 ***
 
@@ -180,15 +190,6 @@ Type: `number`
 Required: No
 
 Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
-***
-
-### `device_id`
-
-Type: `string`
-Required: Yes
-
-ID of the desired thermostat device.
 
 ***
 

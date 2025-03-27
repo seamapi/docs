@@ -199,15 +199,6 @@ func main() {
 
 ## Request Parameters
 
-### `acs_user_id`
-
-Type: `string`
-Required: No
-
-ID of the ACS user for which you want to retrieve all credentials.
-
-***
-
 ### `acs_system_id`
 
 Type: `string`
@@ -217,12 +208,12 @@ ID of the access control system for which you want to retrieve all credentials.
 
 ***
 
-### `user_identity_id`
+### `acs_user_id`
 
 Type: `string`
 Required: No
 
-ID of the user identity for which you want to retrieve all credentials.
+ID of the ACS user for which you want to retrieve all credentials.
 
 ***
 
@@ -250,6 +241,15 @@ Type: `number`
 Required: No
 
 Number of credentials to return.
+
+***
+
+### `user_identity_id`
+
+Type: `string`
+Required: No
+
+ID of the user identity for which you want to retrieve all credentials.
 
 ***
 

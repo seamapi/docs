@@ -131,6 +131,7 @@ nil
 ## Authentication Methods
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
@@ -142,6 +143,24 @@ Type: `string`
 Required: Yes
 
 Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+
+***
+
+### `device_id`
+
+Type: `string`
+Required: Yes
+
+ID of the desired thermostat device.
+
+***
+
+### `manual_override_allowed`
+
+Type: `boolean`
+Required: Yes
+
+Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
 
 ***
 
@@ -160,15 +179,6 @@ Type: `number`
 Required: No
 
 Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
-***
-
-### `device_id`
-
-Type: `string`
-Required: Yes
-
-ID of the desired thermostat device.
 
 ***
 
@@ -205,15 +215,6 @@ Type: `string`
 Required: No
 
 Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
-
-***
-
-### `manual_override_allowed`
-
-Type: `boolean`
-Required: Yes
-
-Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
 
 ***
 

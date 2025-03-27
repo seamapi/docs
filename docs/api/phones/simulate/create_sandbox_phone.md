@@ -14,6 +14,15 @@ Creates a new simulated phone in a [sandbox workspace](../../../core-concepts/wo
 
 ## Request Parameters
 
+### `user_identity_id`
+
+Type: `string`
+Required: Yes
+
+ID of the user identity to associate with the simulated phone.
+
+***
+
 ### `assa_abloy_metadata`
 
 Type: `object`
@@ -38,15 +47,6 @@ Type: `object`
 Required: No
 
 Metadata to associate with the simulated phone.
-
-***
-
-### `user_identity_id`
-
-Type: `string`
-Required: Yes
-
-ID of the user identity to associate with the simulated phone.
 
 ***
 

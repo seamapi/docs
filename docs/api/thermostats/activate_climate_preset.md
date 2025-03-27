@@ -176,7 +176,7 @@ Activating climate preset.
 
 Format: `UUID`
 
-The ID of the action attempt.
+ID of the action attempt.
 
 ---
 

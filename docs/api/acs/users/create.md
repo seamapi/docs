@@ -188,6 +188,24 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 
 ## Request Parameters
 
+### `acs_system_id`
+
+Type: `string`
+Required: Yes
+
+ID of the `acs_system` to which to add the new `acs_user`.
+
+***
+
+### `full_name`
+
+Type: `string`
+Required: Yes
+
+Full name of the new `acs_user`.
+
+***
+
 ### `access_schedule`
 
 Type: `object`
@@ -206,15 +224,6 @@ Array of `access_group_id`s to indicate the access groups to which to add the ne
 
 ***
 
-### `acs_system_id`
-
-Type: `string`
-Required: Yes
-
-ID of the `acs_system` to which to add the new `acs_user`.
-
-***
-
 ### `email`
 
 Type: `string`
@@ -230,15 +239,6 @@ Type: `string`
 Required: No
 
 Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
-***
-
-### `full_name`
-
-Type: `string`
-Required: Yes
-
-Full name of the new `acs_user`.
 
 ***
 

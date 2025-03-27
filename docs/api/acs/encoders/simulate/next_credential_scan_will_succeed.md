@@ -14,21 +14,21 @@ Simulates that the next attempt to scan a [credential](../../../../capability-gu
 
 ## Request Parameters
 
-### `acs_credential_id_on_seam`
-
-Type: `string`
-Required: No
-
-ID of the Seam `acs_credential` that matches the `acs_credential` on the encoder in this simulation.
-
-***
-
 ### `acs_encoder_id`
 
 Type: `string`
 Required: Yes
 
 ID of the `acs_encoder` that will be used in the next request to scan the `acs_credential`.
+
+***
+
+### `acs_credential_id_on_seam`
+
+Type: `string`
+Required: No
+
+ID of the Seam `acs_credential` that matches the `acs_credential` on the encoder in this simulation.
 
 ***
 

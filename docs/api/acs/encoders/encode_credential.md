@@ -38,13 +38,13 @@ ID of the `acs_encoder` to use to encode the `acs_credential`.
 
 ### `ENCODE_CREDENTIAL`
 
-Encoding credential data from physical encoder.
+Action attempt to track encoding credential data from the physical encoder onto a card.
 
 #### `action_attempt_id`
 
 Format: `UUID`
 
-The ID of the action attempt.
+ID of the action attempt.
 
 ---
 

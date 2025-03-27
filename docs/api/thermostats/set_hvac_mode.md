@@ -224,7 +224,7 @@ Setting HVAC mode.
 
 Format: `UUID`
 
-The ID of the action attempt.
+ID of the action attempt.
 
 ---
 
@@ -234,6 +234,7 @@ Format: `String`
 
 ---
 
+<<<<<<< HEAD
 #### `error`
 
 Format: `Object`
@@ -256,6 +257,8 @@ This object has no properties.
 
 ---
 
+=======
+>>>>>>> 85fe55468e31eda661e51396831b1d6d9a7dd530
 #### `status`
 
 Format: `Enum`

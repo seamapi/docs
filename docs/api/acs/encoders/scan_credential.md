@@ -35,7 +35,7 @@ Reading credential data from physical encoder.
 
 Format: `UUID`
 
-The ID of the action attempt.
+ID of the action attempt.
 
 ---
 
