@@ -63,8 +63,6 @@
 - `/devices/get`
 - `/devices/list_device_providers`
 - `/devices/update`
-- `/devices/simulate/access_code_lock`
-- `/devices/simulate/access_code_unlock`
 - `/devices/simulate/connect`
 - `/devices/simulate/disconnect`
 - `/devices/simulate/remove`
@@ -136,6 +134,8 @@ These items are intentionally undocumented.
 - `/acs/users/unmanaged/get`: No unmanaged users are currently implemented.
 - `/acs/users/unmanaged/list`: No unmanaged users are currently implemented.
 - `/devices/delete`: Deleting a device is no longer supported and will be removed.
+- `/devices/simulate/access_code_lock`: Unreleased.
+- `/devices/simulate/access_code_unlock`: Unreleased.
 - `/seam/bridge/v1/bridge_client_sessions/create`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/get`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`: Seam Bridge Client only.
