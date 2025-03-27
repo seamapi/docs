@@ -5,6 +5,7 @@ import type {
   SeamAuthMethod,
   SeamWorkspaceScope,
 } from '@seamapi/blueprint'
+import type { CodeSample } from 'node_modules/@seamapi/blueprint/dist/index.cjs'
 
 import {
   type ApiRouteResource,
@@ -43,18 +44,21 @@ export interface ApiEndpointLayoutContext {
     responseType: string | null
     actionAttempt?: ApiRouteResource
   }
-  codeSamples: Array<{
-    title: string
-    description: string
-    code: Record<
-      string,
-      {
-        title: string
-        request: string
-        response: string
-      }
-    >
-  }>
+  primaryCodeSample: CodeSampleContext | null
+  addtionalCodeSamples: CodeSampleContext[]
+}
+
+interface CodeSampleContext {
+  title: string
+  description: string
+  code: Record<
+    string,
+    {
+      title: string
+      request: string
+      response: string
+    }
+  >
 }
 
 type AuthMethodDisplayName =
@@ -149,14 +153,19 @@ export function setEndpointLayoutContext(
     }
   }
 
-  file.codeSamples = endpoint.codeSamples.map((sample) => {
-    const codeEntries = Object.entries(sample.code).filter(([k]) =>
-      supportedSdks.includes(k as CodeSampleSdk),
-    )
-    return {
-      title: sample.title,
-      description: sample.description,
-      code: Object.fromEntries(codeEntries),
-    }
-  })
+  const [primaryCodeSample, ...addtionalCodeSamples] = endpoint.codeSamples
+  file.primaryCodeSample =
+    primaryCodeSample == null ? null : mapCodeSample(primaryCodeSample)
+  file.addtionalCodeSamples = addtionalCodeSamples.map(mapCodeSample)
+}
+
+const mapCodeSample = (sample: CodeSample): CodeSampleContext => {
+  const codeEntries = Object.entries(sample.code).filter(([k]) =>
+    supportedSdks.includes(k as CodeSampleSdk),
+  )
+  return {
+    title: sample.title,
+    description: sample.description,
+    code: Object.fromEntries(codeEntries),
+  }
 }

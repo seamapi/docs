@@ -8,7 +8,7 @@ Returns a specified [credential](../../../capability-guides/access-systems/manag
 
 {% tabs %}
 {% tab title="JavaScript" %}
-**Request**
+#### Request
 
 ```javascript
 await seam.acs.credentials.get({
@@ -16,7 +16,7 @@ await seam.acs.credentials.get({
 });
 ```
 
-**Response**
+#### Response
 
 ```javascript
 {
@@ -34,13 +34,13 @@ await seam.acs.credentials.get({
 {% endtab %}
 
 {% tab title="Python" %}
-**Request**
+#### Request
 
 ```python
 seam.acs.credentials.get(acs_credential_id="66666666-6666-6666-6666-666666666666")
 ```
 
-**Response**
+#### Response
 
 ```python
 AcsCredential(
@@ -58,13 +58,13 @@ AcsCredential(
 {% endtab %}
 
 {% tab title="Ruby" %}
-**Request**
+#### Request
 
 ```ruby
 seam.acs.credentials.get(acs_credential_id: "66666666-6666-6666-6666-666666666666")
 ```
 
-**Response**
+#### Response
 
 ```ruby
 {
@@ -82,7 +82,7 @@ seam.acs.credentials.get(acs_credential_id: "66666666-6666-6666-6666-66666666666
 {% endtab %}
 
 {% tab title="PHP" %}
-**Request**
+#### Request
 
 ```php
 <?php
@@ -91,7 +91,7 @@ $seam->acs->credentials->get(
 );
 ```
 
-**Response**
+#### Response
 
 ```php
 <?php
@@ -110,13 +110,13 @@ $seam->acs->credentials->get(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-**Request**
+#### Request
 
 ```seam_cli
 seam acs credentials get --acs_credential_id "66666666-6666-6666-6666-666666666666"
 ```
 
-**Response**
+#### Response
 
 ```seam_cli
 {
@@ -134,7 +134,7 @@ seam acs credentials get --acs_credential_id "66666666-6666-6666-6666-6666666666
 {% endtab %}
 
 {% tab title="Go" %}
-**Request**
+#### Request
 
 ```go
 package main
@@ -152,25 +152,27 @@ func main() {
 }
 ```
 
-**Response**
+#### Response
 
 ```go
 api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUserId: "33333333-3333-3333-3333-333333333333", DisplayName: "Multi Phone Sync Credential", Code: nil, AcsSystemId: "11111111-1111-1111-1111-111111111111", AccessMethod: "mobile_key", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2024-04-12T03:56:22.396Z", IsMultiPhoneSyncCredential: true}
 ```
 {% endtab %}
+
 {% endtabs %}
 
 ## Authentication Methods
 
-* API key
-* Personal access token\
-  Must also include the `seam-workspace` header in the request.
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `acs_credential_id`
 
-Type: `string` Required: Yes
+Type: `string`
+Required: Yes
 
 ID of the desired credential.
 

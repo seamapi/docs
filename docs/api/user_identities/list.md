@@ -8,13 +8,13 @@ Returns a list of all [user identities](https://docs.seam.co/latest/capability-g
 
 {% tabs %}
 {% tab title="JavaScript" %}
-**Request**
+#### Request
 
 ```javascript
 await seam.userIdentities.list();
 ```
 
-**Response**
+#### Response
 
 ```javascript
 [
@@ -33,13 +33,13 @@ await seam.userIdentities.list();
 {% endtab %}
 
 {% tab title="Python" %}
-**Request**
+#### Request
 
 ```python
 seam.user_identities.list()
 ```
 
-**Response**
+#### Response
 
 ```python
 [
@@ -58,13 +58,13 @@ seam.user_identities.list()
 {% endtab %}
 
 {% tab title="Ruby" %}
-**Request**
+#### Request
 
 ```ruby
 seam.user_identities.list()
 ```
 
-**Response**
+#### Response
 
 ```ruby
 [
@@ -83,14 +83,14 @@ seam.user_identities.list()
 {% endtab %}
 
 {% tab title="PHP" %}
-**Request**
+#### Request
 
 ```php
 <?php
 $seam->user_identities->list();
 ```
 
-**Response**
+#### Response
 
 ```php
 <?php
@@ -110,13 +110,13 @@ $seam->user_identities->list();
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-**Request**
+#### Request
 
 ```seam_cli
 seam user-identities list
 ```
 
-**Response**
+#### Response
 
 ```seam_cli
 [
@@ -135,7 +135,7 @@ seam user-identities list
 {% endtab %}
 
 {% tab title="Go" %}
-**Request**
+#### Request
 
 ```go
 package main
@@ -145,26 +145,30 @@ func main() {
 }
 ```
 
-**Response**
+#### Response
 
 ```go
 []api.UserIdentity{api.UserIdentity{UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", UserIdentityKey: "jean_doe", EmailAddress: "jean@example.com", PhoneNumber: "+15555550110", DisplayName: "Jean Doe", FullName: "Jean Doe", CreatedAt: "2024-01-11T05:37:50.264Z", WorkspaceId: "398d80b7-3f96-47c2-b85a-6f8ba21d07be"}}
 ```
 {% endtab %}
+
 {% endtabs %}
 
 ## Authentication Methods
 
-* API key
-* Client session token
-* Personal access token\
-  Must also include the `seam-workspace` header in the request.
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `credential_manager_acs_system_id`
 
-Type: `string` Required: No
+Type: `string`
+Required: No
+
+
 
 ***
 

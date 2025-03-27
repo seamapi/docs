@@ -6,29 +6,10 @@
 
 {{{description}}}
 
-{{#if codeSamples.length}}
-{% tabs %}
-{{#each codeSamples}}
-{{#each this.code}}
-{% tab title="{{this.title}}" %}
-#### Request
+{{#with primaryCodeSample}}
+{{> code-sample }}
 
-```{{@key}}
-{{this.request}}
-```
-
-#### Response
-
-```{{@key}}
-{{this.response}}
-```
-{% endtab %}
-
-{{/each}}
-{{/each}}
-{% endtabs %}
-
-{{/if}}
+{{/with}}
 {{#if authMethods}}
 ## Authentication Methods
 
@@ -61,7 +42,15 @@ None
 ## Return Type
 
 {{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array<[{{response.escapedResourceType}}](./)>{{else}}[{{response.escapedResourceType}}](./){{/if}}{{else}}void{{/if}}
-{{#if response.actionAttempt}}
+{{#with response.actionAttempt}}
 
-{{> api-resource response.actionAttempt headingOffset=true}}
+{{> api-resource headingOffset=true}}
+{{/with}}
+{{#if addtionalCodeSamples.length}}
+
+## Additional Code Samples
+
+{{#each addtionalCodeSamples}}
+{{> code-sample }}
+{{/each}}
 {{/if}}

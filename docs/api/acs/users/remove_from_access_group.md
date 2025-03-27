@@ -8,7 +8,7 @@ Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/acc
 
 {% tabs %}
 {% tab title="JavaScript" %}
-**Request**
+#### Request
 
 ```javascript
 await seam.acs.users.removeFromAccessGroup({
@@ -17,7 +17,7 @@ await seam.acs.users.removeFromAccessGroup({
 });
 ```
 
-**Response**
+#### Response
 
 ```javascript
 // void
@@ -25,7 +25,7 @@ await seam.acs.users.removeFromAccessGroup({
 {% endtab %}
 
 {% tab title="Python" %}
-**Request**
+#### Request
 
 ```python
 seam.acs.users.remove_from_access_group(
@@ -34,7 +34,7 @@ seam.acs.users.remove_from_access_group(
 )
 ```
 
-**Response**
+#### Response
 
 ```python
 None
@@ -42,7 +42,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-**Request**
+#### Request
 
 ```ruby
 seam.acs.users.remove_from_access_group(
@@ -51,7 +51,7 @@ seam.acs.users.remove_from_access_group(
 )
 ```
 
-**Response**
+#### Response
 
 ```ruby
 nil
@@ -59,7 +59,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-**Request**
+#### Request
 
 ```php
 <?php
@@ -69,7 +69,7 @@ $seam->acs->users->remove_from_access_group(
 );
 ```
 
-**Response**
+#### Response
 
 ```php
 null
@@ -77,13 +77,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-**Request**
+#### Request
 
 ```seam_cli
 seam acs users remove-from-access-group --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33" --acs_access_group_id "123e4567-e89b-12d3-a456-426614174000"
 ```
 
-**Response**
+#### Response
 
 ```seam_cli
 {}
@@ -91,7 +91,7 @@ seam acs users remove-from-access-group --acs_user_id "8d7e0b3a-b889-49a7-9164-4
 {% endtab %}
 
 {% tab title="Go" %}
-**Request**
+#### Request
 
 ```go
 package main
@@ -110,25 +110,27 @@ func main() {
 }
 ```
 
-**Response**
+#### Response
 
 ```go
 nil
 ```
 {% endtab %}
+
 {% endtabs %}
 
 ## Authentication Methods
 
-* API key
-* Personal access token\
-  Must also include the `seam-workspace` header in the request.
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `acs_access_group_id`
 
-Type: `string` Required: Yes
+Type: `string`
+Required: Yes
 
 ID of the desired access group.
 
@@ -136,7 +138,8 @@ ID of the desired access group.
 
 ### `acs_user_id`
 
-Type: `string` Required: Yes
+Type: `string`
+Required: Yes
 
 ID of the desired `acs_user`.
 

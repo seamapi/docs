@@ -4,11 +4,11 @@
 PUT /user_identities/grant_access_to_device ⇒ void
 ```
 
-Grants a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) access to a specified [device](../../core-concepts/devices/).
+Grants a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) access to a specified [device](../../core-concepts/devices/README.md).
 
 {% tabs %}
 {% tab title="JavaScript" %}
-**Request**
+#### Request
 
 ```javascript
 await seam.userIdentities.grantAccessToDevice({
@@ -17,7 +17,7 @@ await seam.userIdentities.grantAccessToDevice({
 });
 ```
 
-**Response**
+#### Response
 
 ```javascript
 // void
@@ -25,7 +25,7 @@ await seam.userIdentities.grantAccessToDevice({
 {% endtab %}
 
 {% tab title="Python" %}
-**Request**
+#### Request
 
 ```python
 seam.user_identities.grant_access_to_device(
@@ -34,7 +34,7 @@ seam.user_identities.grant_access_to_device(
 )
 ```
 
-**Response**
+#### Response
 
 ```python
 None
@@ -42,7 +42,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-**Request**
+#### Request
 
 ```ruby
 seam.user_identities.grant_access_to_device(
@@ -51,7 +51,7 @@ seam.user_identities.grant_access_to_device(
 )
 ```
 
-**Response**
+#### Response
 
 ```ruby
 nil
@@ -59,7 +59,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-**Request**
+#### Request
 
 ```php
 <?php
@@ -69,7 +69,7 @@ $seam->user_identities->grant_access_to_device(
 );
 ```
 
-**Response**
+#### Response
 
 ```php
 null
@@ -77,13 +77,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-**Request**
+#### Request
 
 ```seam_cli
 seam user-identities grant-access-to-device --user_identity_id "f3a328b4-dd04-4370-9000-d52b7a01b0bf" --device_id "054765c8-a2fc-4599-b486-14c19f462c45"
 ```
 
-**Response**
+#### Response
 
 ```seam_cli
 {}
@@ -91,7 +91,7 @@ seam user-identities grant-access-to-device --user_identity_id "f3a328b4-dd04-43
 {% endtab %}
 
 {% tab title="Go" %}
-**Request**
+#### Request
 
 ```go
 package main
@@ -109,25 +109,27 @@ func main() {
 }
 ```
 
-**Response**
+#### Response
 
 ```go
 nil
 ```
 {% endtab %}
+
 {% endtabs %}
 
 ## Authentication Methods
 
-* API key
-* Personal access token\
-  Must also include the `seam-workspace` header in the request.
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `device_id`
 
-Type: `string` Required: Yes
+Type: `string`
+Required: Yes
 
 ID of the desired managed device.
 
@@ -135,7 +137,8 @@ ID of the desired managed device.
 
 ### `user_identity_id`
 
-Type: `string` Required: Yes
+Type: `string`
+Required: Yes
 
 ID of the desired user identity.
 

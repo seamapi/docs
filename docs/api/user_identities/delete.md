@@ -8,7 +8,7 @@ Deletes a specified [user identity](https://docs.seam.co/latest/capability-guide
 
 {% tabs %}
 {% tab title="JavaScript" %}
-**Request**
+#### Request
 
 ```javascript
 await seam.userIdentities.delete({
@@ -16,7 +16,7 @@ await seam.userIdentities.delete({
 });
 ```
 
-**Response**
+#### Response
 
 ```javascript
 // void
@@ -24,13 +24,13 @@ await seam.userIdentities.delete({
 {% endtab %}
 
 {% tab title="Python" %}
-**Request**
+#### Request
 
 ```python
 seam.user_identities.delete(user_identity_id="44d48b20-0dbe-419d-91ca-ab8bceecd135")
 ```
 
-**Response**
+#### Response
 
 ```python
 None
@@ -38,13 +38,13 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-**Request**
+#### Request
 
 ```ruby
 seam.user_identities.delete(user_identity_id: "44d48b20-0dbe-419d-91ca-ab8bceecd135")
 ```
 
-**Response**
+#### Response
 
 ```ruby
 nil
@@ -52,7 +52,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-**Request**
+#### Request
 
 ```php
 <?php
@@ -61,7 +61,7 @@ $seam->user_identities->delete(
 );
 ```
 
-**Response**
+#### Response
 
 ```php
 null
@@ -69,13 +69,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-**Request**
+#### Request
 
 ```seam_cli
 seam user-identities delete --user_identity_id "44d48b20-0dbe-419d-91ca-ab8bceecd135"
 ```
 
-**Response**
+#### Response
 
 ```seam_cli
 {}
@@ -83,7 +83,7 @@ seam user-identities delete --user_identity_id "44d48b20-0dbe-419d-91ca-ab8bceec
 {% endtab %}
 
 {% tab title="Go" %}
-**Request**
+#### Request
 
 ```go
 package main
@@ -100,25 +100,27 @@ func main() {
 }
 ```
 
-**Response**
+#### Response
 
 ```go
 nil
 ```
 {% endtab %}
+
 {% endtabs %}
 
 ## Authentication Methods
 
-* API key
-* Personal access token\
-  Must also include the `seam-workspace` header in the request.
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `user_identity_id`
 
-Type: `string` Required: Yes
+Type: `string`
+Required: Yes
 
 ID of the desired user identity.
 
