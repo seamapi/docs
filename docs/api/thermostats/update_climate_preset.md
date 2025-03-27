@@ -8,7 +8,7 @@ Updates a specified [climate preset](../../capability-guides/thermostats/creatin
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.updateClimatePreset({
@@ -19,7 +19,7 @@ await seam.thermostats.updateClimatePreset({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -27,7 +27,7 @@ await seam.thermostats.updateClimatePreset({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.update_climate_preset(
@@ -38,7 +38,7 @@ seam.thermostats.update_climate_preset(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -46,7 +46,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.update_climate_preset(
@@ -57,7 +57,7 @@ seam.thermostats.update_climate_preset(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -65,7 +65,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -77,7 +77,7 @@ $seam->thermostats->update_climate_preset(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -85,13 +85,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats update-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "occupied" --cooling_set_point_celsius 24 --manual_override_allowed true
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -99,7 +99,7 @@ seam thermostats update-climate-preset --device_id "123e4567-e89b-12d3-a456-4266
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -119,7 +119,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil

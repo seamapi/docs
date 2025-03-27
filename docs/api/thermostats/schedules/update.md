@@ -8,7 +8,7 @@ Updates a specified [thermostat schedule](../../../capability-guides/thermostats
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.schedules.update({
@@ -17,7 +17,7 @@ await seam.thermostats.schedules.update({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -25,7 +25,7 @@ await seam.thermostats.schedules.update({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.schedules.update(
@@ -34,7 +34,7 @@ seam.thermostats.schedules.update(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -42,7 +42,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.schedules.update(
@@ -51,7 +51,7 @@ seam.thermostats.schedules.update(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -59,7 +59,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -69,7 +69,7 @@ $seam->thermostats->schedules->update(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -77,13 +77,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats schedules update --thermostat_schedule_id "89d3507e-60e3-4101-bd1b-ba066ec30ad4" --ends_at "2024-11-15T15:00:00Z"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -91,7 +91,7 @@ seam thermostats schedules update --thermostat_schedule_id "89d3507e-60e3-4101-b
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -110,7 +110,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil

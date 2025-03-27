@@ -8,7 +8,7 @@ Returns a list of all [access groups](https://docs.seam.co/latest/capability-gui
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.accessGroups.list({
@@ -17,7 +17,7 @@ await seam.acs.accessGroups.list({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 [
@@ -38,7 +38,7 @@ await seam.acs.accessGroups.list({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.access_groups.list(
@@ -47,7 +47,7 @@ seam.acs.access_groups.list(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 [
@@ -68,7 +68,7 @@ seam.acs.access_groups.list(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.access_groups.list(
@@ -77,7 +77,7 @@ seam.acs.access_groups.list(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 [
@@ -98,7 +98,7 @@ seam.acs.access_groups.list(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -108,7 +108,7 @@ $seam->acs->access_groups->list(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -130,13 +130,13 @@ $seam->acs->access_groups->list(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs access-groups list --acs_system_id "11111111-1111-1111-1111-111111111111" --acs_user_id "33333333-3333-3333-3333-333333333333"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 [
@@ -157,7 +157,7 @@ seam acs access-groups list --acs_system_id "11111111-1111-1111-1111-11111111111
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -176,7 +176,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 []api.AcsAccessGroup{api.AcsAccessGroup{AcsAccessGroupId: "44444444-4444-4444-4444-444444444444", Name: "Lobby Access", DisplayName: "Lobby Access", AccessGroupTypeDisplayName: "PTI access level", AccessGroupType: "pti_access_level", ExternalType: "pti_access_level", ExternalTypeDisplayName: "PTI access level", AcsSystemId: "11111111-1111-1111-1111-111111111111", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2023-11-30T06:27:15.437Z"}}

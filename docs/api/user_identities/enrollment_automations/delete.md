@@ -8,7 +8,7 @@ Deletes a specified [enrollment automation](https://docs.seam.co/latest/capabili
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.userIdentities.enrollmentAutomations.delete({
@@ -16,7 +16,7 @@ await seam.userIdentities.enrollmentAutomations.delete({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -24,7 +24,7 @@ await seam.userIdentities.enrollmentAutomations.delete({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.user_identities.enrollment_automations.delete(
@@ -32,7 +32,7 @@ seam.user_identities.enrollment_automations.delete(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -40,7 +40,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.user_identities.enrollment_automations.delete(
@@ -48,7 +48,7 @@ seam.user_identities.enrollment_automations.delete(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -56,7 +56,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -65,7 +65,7 @@ $seam->user_identities->enrollment_automations->delete(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -73,13 +73,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam user-identities enrollment-automations delete --enrollment_automation_id "05505650-aa57-49ab-8f19-429738758895"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -87,7 +87,7 @@ seam user-identities enrollment-automations delete --enrollment_automation_id "0
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -105,7 +105,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil

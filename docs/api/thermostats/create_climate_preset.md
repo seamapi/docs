@@ -8,7 +8,7 @@ Creates a [climate preset](../../capability-guides/thermostats/creating-and-mana
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.createClimatePreset({
@@ -23,7 +23,7 @@ await seam.thermostats.createClimatePreset({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -31,7 +31,7 @@ await seam.thermostats.createClimatePreset({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.create_climate_preset(
@@ -46,7 +46,7 @@ seam.thermostats.create_climate_preset(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -54,7 +54,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.create_climate_preset(
@@ -69,7 +69,7 @@ seam.thermostats.create_climate_preset(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -77,7 +77,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -93,7 +93,7 @@ $seam->thermostats->create_climate_preset(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -101,13 +101,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats create-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "occupied" --name "Occupied" --fan_mode_setting "auto" --hvac_mode_setting "heat_cool" --cooling_set_point_celsius 25 --heating_set_point_celsius 20 --manual_override_allowed true
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -115,7 +115,7 @@ seam thermostats create-climate-preset --device_id "123e4567-e89b-12d3-a456-4266
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -139,7 +139,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil

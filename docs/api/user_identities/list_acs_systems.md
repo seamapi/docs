@@ -8,7 +8,7 @@ Returns a list of all [access control systems](https://docs.seam.co/latest/capab
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.userIdentities.listAcsSystems({
@@ -16,7 +16,7 @@ await seam.userIdentities.listAcsSystems({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 [
@@ -36,7 +36,7 @@ await seam.userIdentities.listAcsSystems({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.user_identities.list_acs_systems(
@@ -44,7 +44,7 @@ seam.user_identities.list_acs_systems(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 [
@@ -64,13 +64,13 @@ seam.user_identities.list_acs_systems(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.user_identities.list_acs_systems(user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f")
 ```
 
-#### Response
+#### Output
 
 ```ruby
 [
@@ -90,7 +90,7 @@ seam.user_identities.list_acs_systems(user_identity_id: "5c945ab5-c75e-4bcb-8e5f
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -99,7 +99,7 @@ $seam->user_identities->list_acs_systems(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -120,13 +120,13 @@ $seam->user_identities->list_acs_systems(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam user-identities list-acs-systems --user_identity_id "5c945ab5-c75e-4bcb-8e5f-9410061c401f"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 [
@@ -146,7 +146,7 @@ seam user-identities list-acs-systems --user_identity_id "5c945ab5-c75e-4bcb-8e5
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -163,7 +163,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 []api.AcsSystem{api.AcsSystem{AcsSystemId: "6737e186-8d54-48ce-a7da-a0be4d252172", Name: "Assa Abloy Credential Service", WorkspaceId: "398d80b7-3f96-47c2-b85a-6f8ba21d07be", CreatedAt: "2024-01-05T07:16:51.971Z", SystemType: "assa_abloy_credential_service", SystemTypeDisplayName: "Assa Abloy Credential Service", ExternalType: "assa_abloy_credential_service", ExternalTypeDisplayName: "Assa Abloy Credential Service", ConnectedAccountIds: []string{"dc08066f-d9b8-42f0-9c4b-c781cd900153"}}}

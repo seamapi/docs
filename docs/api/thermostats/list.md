@@ -8,13 +8,13 @@ Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guide
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.list();
 ```
 
-#### Response
+#### Output
 
 ```javascript
 [
@@ -45,13 +45,13 @@ await seam.thermostats.list();
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.list()
 ```
 
-#### Response
+#### Output
 
 ```python
 [
@@ -82,13 +82,13 @@ seam.thermostats.list()
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.list()
 ```
 
-#### Response
+#### Output
 
 ```ruby
 [
@@ -119,14 +119,14 @@ seam.thermostats.list()
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
 $seam->thermostats->list();
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -163,13 +163,13 @@ $seam->thermostats->list();
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats list
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 [
@@ -200,7 +200,7 @@ seam thermostats list
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -210,7 +210,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 []api.Device{api.Device{DeviceId: "123e4567-e89b-12d3-a456-426614174000", DeviceType: "ecobee_thermostat", CapabilitiesSupported: []string{"thermostat"}, Properties: api.DeviceProperties{Name: "Entryway", Online: "true,", RelativeHumidity: 0.36, TemperatureFarenheit: 70, AvailableHvacModeSettings: []string{"cool", "heat", "heat_cool", "off"}, CurrentClimateSetting: api.DevicePropertiesCurrentClimateSetting{HvacModeSetting: "heat_cool", CoolingSetPointFarenheit: 75, HeatingSetPointFarenheit: 65, ManualOverrideAllowed: false}, Location: nil, ConnectedAccountId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z"}}}

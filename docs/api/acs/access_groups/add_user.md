@@ -8,7 +8,7 @@ Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.accessGroups.addUser({
@@ -17,7 +17,7 @@ await seam.acs.accessGroups.addUser({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -25,7 +25,7 @@ await seam.acs.accessGroups.addUser({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.access_groups.add_user(
@@ -34,7 +34,7 @@ seam.acs.access_groups.add_user(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -42,7 +42,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.access_groups.add_user(
@@ -51,7 +51,7 @@ seam.acs.access_groups.add_user(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -59,7 +59,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -69,7 +69,7 @@ $seam->acs->access_groups->add_user(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -77,13 +77,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs access-groups add-user --acs_access_group_id "44444444-4444-4444-4444-444444444444" --acs_user_id "33333333-3333-3333-3333-333333333333"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -91,7 +91,7 @@ seam acs access-groups add-user --acs_access_group_id "44444444-4444-4444-4444-4
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -110,7 +110,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil

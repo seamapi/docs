@@ -8,7 +8,7 @@ Sets a [temperature threshold](../../capability-guides/thermostats/setting-and-m
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.setTemperatureThreshold({
@@ -18,7 +18,7 @@ await seam.thermostats.setTemperatureThreshold({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -26,7 +26,7 @@ await seam.thermostats.setTemperatureThreshold({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.set_temperature_threshold(
@@ -36,7 +36,7 @@ seam.thermostats.set_temperature_threshold(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -44,7 +44,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.set_temperature_threshold(
@@ -54,7 +54,7 @@ seam.thermostats.set_temperature_threshold(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -62,7 +62,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -73,7 +73,7 @@ $seam->thermostats->set_temperature_threshold(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -81,13 +81,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats set-temperature-threshold --device_id "123e4567-e89b-12d3-a456-426614174000" --lower_limit_celsius 4 --upper_limit_celsius 30
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -95,7 +95,7 @@ seam thermostats set-temperature-threshold --device_id "123e4567-e89b-12d3-a456-
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -114,7 +114,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil

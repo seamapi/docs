@@ -8,7 +8,7 @@ POST /acs/users/unsuspend ⇒ void
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.users.unsuspend({
@@ -16,7 +16,7 @@ await seam.acs.users.unsuspend({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -24,13 +24,13 @@ await seam.acs.users.unsuspend({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.users.unsuspend(acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -38,13 +38,13 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.users.unsuspend(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -52,7 +52,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -61,7 +61,7 @@ $seam->acs->users->unsuspend(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -69,13 +69,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs users unsuspend --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -83,7 +83,7 @@ seam acs users unsuspend --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -101,7 +101,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil

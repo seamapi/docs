@@ -8,7 +8,7 @@ Activates a specified [climate preset](../../capability-guides/thermostats/creat
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.activateClimatePreset({
@@ -17,7 +17,7 @@ await seam.thermostats.activateClimatePreset({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 {
@@ -29,7 +29,7 @@ await seam.thermostats.activateClimatePreset({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.activate_climate_preset(
@@ -37,7 +37,7 @@ seam.thermostats.activate_climate_preset(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 ActionAttempt(
@@ -49,7 +49,7 @@ ActionAttempt(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.activate_climate_preset(
@@ -58,7 +58,7 @@ seam.thermostats.activate_climate_preset(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 {
@@ -70,7 +70,7 @@ seam.thermostats.activate_climate_preset(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -80,7 +80,7 @@ $seam->thermostats->activate_climate_preset(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -93,13 +93,13 @@ $seam->thermostats->activate_climate_preset(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats activate-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "occupied"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {
@@ -111,7 +111,7 @@ seam thermostats activate-climate-preset --device_id "123e4567-e89b-12d3-a456-42
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -129,7 +129,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 api.ActionAttempt{ActionAttemptId: "05de2295-d1dc-4748-aae3-9931658bde20", Status: "pending", ActionType: "ACTIVATE_CLIMATE_PRESET"}

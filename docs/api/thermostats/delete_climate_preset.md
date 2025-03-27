@@ -8,7 +8,7 @@ Deletes a specified [climate preset](../../capability-guides/thermostats/creatin
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.deleteClimatePreset({
@@ -17,7 +17,7 @@ await seam.thermostats.deleteClimatePreset({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -25,7 +25,7 @@ await seam.thermostats.deleteClimatePreset({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.delete_climate_preset(
@@ -33,7 +33,7 @@ seam.thermostats.delete_climate_preset(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -41,7 +41,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.delete_climate_preset(
@@ -50,7 +50,7 @@ seam.thermostats.delete_climate_preset(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -58,7 +58,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -68,7 +68,7 @@ $seam->thermostats->delete_climate_preset(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -76,13 +76,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats delete-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "occupied"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -90,7 +90,7 @@ seam thermostats delete-climate-preset --device_id "123e4567-e89b-12d3-a456-4266
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -108,7 +108,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil

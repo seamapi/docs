@@ -8,7 +8,7 @@ Updates the properties of a specified [ACS user](https://docs.seam.co/latest/cap
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.users.update({
@@ -17,7 +17,7 @@ await seam.acs.users.update({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -25,7 +25,7 @@ await seam.acs.users.update({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.users.update(
@@ -33,7 +33,7 @@ seam.acs.users.update(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -41,7 +41,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.users.update(
@@ -50,7 +50,7 @@ seam.acs.users.update(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -58,7 +58,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -68,7 +68,7 @@ $seam->acs->users->update(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -76,13 +76,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs users update --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33" --phone_number "+15555550222"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -90,7 +90,7 @@ seam acs users update --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33" --pho
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -109,7 +109,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil

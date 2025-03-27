@@ -8,7 +8,7 @@ Creates a new [user identity](https://docs.seam.co/latest/capability-guides/mobi
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.userIdentities.create({
@@ -19,7 +19,7 @@ await seam.userIdentities.create({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 {
@@ -36,7 +36,7 @@ await seam.userIdentities.create({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.user_identities.create(
@@ -47,7 +47,7 @@ seam.user_identities.create(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 UserIdentity(
@@ -64,7 +64,7 @@ UserIdentity(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.user_identities.create(
@@ -75,7 +75,7 @@ seam.user_identities.create(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 {
@@ -92,7 +92,7 @@ seam.user_identities.create(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -104,7 +104,7 @@ $seam->user_identities->create(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -122,13 +122,13 @@ $seam->user_identities->create(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam user-identities create --user_identity_key "jean_doe" --email_address "jean@example.com" --phone_number "+15555550110" --full_name "Jean Doe"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {
@@ -145,7 +145,7 @@ seam user-identities create --user_identity_key "jean_doe" --email_address "jean
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -165,7 +165,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 api.UserIdentity{UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", UserIdentityKey: "jean_doe", EmailAddress: "jean@example.com", PhoneNumber: "+15555550110", DisplayName: "Jean Doe", FullName: "Jean Doe", CreatedAt: "2024-01-11T05:37:50.264Z", WorkspaceId: "398d80b7-3f96-47c2-b85a-6f8ba21d07be"}

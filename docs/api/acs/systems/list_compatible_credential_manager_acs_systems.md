@@ -12,7 +12,7 @@ systems by including the corresponding `acs_system_id` in the request body.
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.systems.listCompatibleCredentialManagerAcsSystems({
@@ -20,7 +20,7 @@ await seam.acs.systems.listCompatibleCredentialManagerAcsSystems({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 [{ "acs_system_id": "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }]
@@ -28,7 +28,7 @@ await seam.acs.systems.listCompatibleCredentialManagerAcsSystems({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.systems.list_compatible_credential_manager_acs_systems(
@@ -36,7 +36,7 @@ seam.acs.systems.list_compatible_credential_manager_acs_systems(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 [AcsSystem(acs_system_id="aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4")]
@@ -44,7 +44,7 @@ seam.acs.systems.list_compatible_credential_manager_acs_systems(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.systems.list_compatible_credential_manager_acs_systems(
@@ -52,7 +52,7 @@ seam.acs.systems.list_compatible_credential_manager_acs_systems(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 [{ "acs_system_id" => "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }]
@@ -60,7 +60,7 @@ seam.acs.systems.list_compatible_credential_manager_acs_systems(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -69,7 +69,7 @@ $seam->acs->systems->list_compatible_credential_manager_acs_systems(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -78,13 +78,13 @@ $seam->acs->systems->list_compatible_credential_manager_acs_systems(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs systems list-compatible-credential-manager-acs-systems --acs_system_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 [{ "acs_system_id": "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }]
@@ -92,7 +92,7 @@ seam acs systems list-compatible-credential-manager-acs-systems --acs_system_id 
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -110,7 +110,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 []api.AcsSystem{api.AcsSystem{AcsSystemId: "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4"}}

@@ -8,7 +8,7 @@ Sets the [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/c
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.setHvacMode({
@@ -19,7 +19,7 @@ await seam.thermostats.setHvacMode({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 {
@@ -31,7 +31,7 @@ await seam.thermostats.setHvacMode({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.set_hvac_mode(
@@ -42,7 +42,7 @@ seam.thermostats.set_hvac_mode(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 ActionAttempt(
@@ -54,7 +54,7 @@ ActionAttempt(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.set_hvac_mode(
@@ -65,7 +65,7 @@ seam.thermostats.set_hvac_mode(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 {
@@ -77,7 +77,7 @@ seam.thermostats.set_hvac_mode(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -89,7 +89,7 @@ $seam->thermostats->set_hvac_mode(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -102,13 +102,13 @@ $seam->thermostats->set_hvac_mode(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats set-hvac-mode --device_id "123e4567-e89b-12d3-a456-426614174000" --hvac_mode_setting "heat_cool" --heating_set_point_celsius 20 --cooling_set_point_celsius 25
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {
@@ -120,7 +120,7 @@ seam thermostats set-hvac-mode --device_id "123e4567-e89b-12d3-a456-426614174000
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -140,7 +140,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Status: "success", ActionType: "SET_HVAC_MODE"}

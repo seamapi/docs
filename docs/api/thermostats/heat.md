@@ -8,7 +8,7 @@ Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/ther
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.heat({
@@ -17,7 +17,7 @@ await seam.thermostats.heat({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 {
@@ -29,7 +29,7 @@ await seam.thermostats.heat({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.heat(
@@ -37,7 +37,7 @@ seam.thermostats.heat(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 ActionAttempt(
@@ -49,7 +49,7 @@ ActionAttempt(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.heat(
@@ -58,7 +58,7 @@ seam.thermostats.heat(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 {
@@ -70,7 +70,7 @@ seam.thermostats.heat(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -80,7 +80,7 @@ $seam->thermostats->heat(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -93,13 +93,13 @@ $seam->thermostats->heat(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats heat --device_id "123e4567-e89b-12d3-a456-426614174000" --heating_set_point_celsius 20
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {
@@ -111,7 +111,7 @@ seam thermostats heat --device_id "123e4567-e89b-12d3-a456-426614174000" --heati
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -129,7 +129,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Status: "pending", ActionType: "SET_HEAT"}

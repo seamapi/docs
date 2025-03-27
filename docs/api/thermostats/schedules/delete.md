@@ -8,7 +8,7 @@ Deletes a [thermostat schedule](../../../capability-guides/thermostats/creating-
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.schedules.delete({
@@ -16,7 +16,7 @@ await seam.thermostats.schedules.delete({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -24,7 +24,7 @@ await seam.thermostats.schedules.delete({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.schedules.delete(
@@ -32,7 +32,7 @@ seam.thermostats.schedules.delete(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -40,13 +40,13 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.schedules.delete(thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4")
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -54,7 +54,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -63,7 +63,7 @@ $seam->thermostats->schedules->delete(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -71,13 +71,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats schedules delete --thermostat_schedule_id "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -85,7 +85,7 @@ seam thermostats schedules delete --thermostat_schedule_id "89d3507e-60e3-4101-b
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -103,7 +103,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil

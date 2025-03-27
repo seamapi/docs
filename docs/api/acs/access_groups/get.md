@@ -8,7 +8,7 @@ Returns a specified [access group](https://docs.seam.co/latest/capability-guides
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.accessGroups.get({
@@ -16,7 +16,7 @@ await seam.acs.accessGroups.get({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 {
@@ -35,13 +35,13 @@ await seam.acs.accessGroups.get({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.access_groups.get(acs_access_group_id="44444444-4444-4444-4444-444444444444")
 ```
 
-#### Response
+#### Output
 
 ```python
 AcsAccessGroup(
@@ -60,13 +60,13 @@ AcsAccessGroup(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.access_groups.get(acs_access_group_id: "44444444-4444-4444-4444-444444444444")
 ```
 
-#### Response
+#### Output
 
 ```ruby
 {
@@ -85,7 +85,7 @@ seam.acs.access_groups.get(acs_access_group_id: "44444444-4444-4444-4444-4444444
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -94,7 +94,7 @@ $seam->acs->access_groups->get(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -114,13 +114,13 @@ $seam->acs->access_groups->get(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs access-groups get --acs_access_group_id "44444444-4444-4444-4444-444444444444"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {
@@ -139,7 +139,7 @@ seam acs access-groups get --acs_access_group_id "44444444-4444-4444-4444-444444
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -157,7 +157,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 api.AcsAccessGroup{AcsAccessGroupId: "44444444-4444-4444-4444-444444444444", Name: "Lobby Access", DisplayName: "Lobby Access", AccessGroupTypeDisplayName: "PTI access level", AccessGroupType: "pti_access_level", ExternalType: "pti_access_level", ExternalTypeDisplayName: "PTI access level", AcsSystemId: "11111111-1111-1111-1111-111111111111", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2023-11-30T06:27:15.437Z"}

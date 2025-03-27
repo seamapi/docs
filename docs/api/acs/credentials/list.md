@@ -8,7 +8,7 @@ Returns a list of all [credentials](../../../capability-guides/access-systems/ma
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.credentials.list({
@@ -19,7 +19,7 @@ await seam.acs.credentials.list({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 [
@@ -39,7 +39,7 @@ await seam.acs.credentials.list({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.credentials.list(
@@ -50,7 +50,7 @@ seam.acs.credentials.list(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 [
@@ -70,7 +70,7 @@ seam.acs.credentials.list(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.credentials.list(
@@ -81,7 +81,7 @@ seam.acs.credentials.list(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 [
@@ -101,7 +101,7 @@ seam.acs.credentials.list(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -113,7 +113,7 @@ $seam->acs->credentials->list(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -134,13 +134,13 @@ $seam->acs->credentials->list(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs credentials list --acs_user_id "33333333-3333-3333-3333-333333333333" --acs_system_id "11111111-1111-1111-1111-111111111111" --user_identity_id "22222222-2222-2222-2222-222222222222" --is_multi_phone_sync_credential true
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 [
@@ -160,7 +160,7 @@ seam acs credentials list --acs_user_id "33333333-3333-3333-3333-333333333333" -
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -181,7 +181,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 []api.AcsCredential{api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUserId: "33333333-3333-3333-3333-333333333333", DisplayName: "Multi Phone Sync Credential", Code: nil, AcsSystemId: "11111111-1111-1111-1111-111111111111", AccessMethod: "mobile_key", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2024-04-12T03:56:22.396Z", IsMultiPhoneSyncCredential: true}}

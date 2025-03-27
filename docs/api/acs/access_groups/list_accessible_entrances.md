@@ -8,7 +8,7 @@ Returns a list of all accessible entrances for a specified [access group](https:
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.accessGroups.listAccessibleEntrances({
@@ -16,7 +16,7 @@ await seam.acs.accessGroups.listAccessibleEntrances({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 [
@@ -33,7 +33,7 @@ await seam.acs.accessGroups.listAccessibleEntrances({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.access_groups.list_accessible_entrances(
@@ -41,7 +41,7 @@ seam.acs.access_groups.list_accessible_entrances(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 [
@@ -58,7 +58,7 @@ seam.acs.access_groups.list_accessible_entrances(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.access_groups.list_accessible_entrances(
@@ -66,7 +66,7 @@ seam.acs.access_groups.list_accessible_entrances(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 [
@@ -83,7 +83,7 @@ seam.acs.access_groups.list_accessible_entrances(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -92,7 +92,7 @@ $seam->acs->access_groups->list_accessible_entrances(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -110,13 +110,13 @@ $seam->acs->access_groups->list_accessible_entrances(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs access-groups list-accessible-entrances --acs_access_group_id "44444444-4444-4444-4444-444444444444"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 [
@@ -133,7 +133,7 @@ seam acs access-groups list-accessible-entrances --acs_access_group_id "44444444
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -151,7 +151,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 []api.AcsEntrance{api.AcsEntrance{AcsEntranceId: "66666666-6666-6666-6666-666666666666", Name: "Main Entrance", DisplayName: "Main Entrance", AcsSystemId: "11111111-1111-1111-1111-111111111111", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2024-10-15T12:00:00.000Z"}}

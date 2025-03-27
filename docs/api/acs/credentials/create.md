@@ -8,7 +8,7 @@ Creates a new [credential](../../../capability-guides/access-systems/managing-cr
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.credentials.create({
@@ -25,7 +25,7 @@ await seam.acs.credentials.create({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 {
@@ -43,7 +43,7 @@ await seam.acs.credentials.create({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.credentials.create(
@@ -60,7 +60,7 @@ seam.acs.credentials.create(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 AcsCredential(
@@ -78,7 +78,7 @@ AcsCredential(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.credentials.create(
@@ -95,7 +95,7 @@ seam.acs.credentials.create(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 {
@@ -113,7 +113,7 @@ seam.acs.credentials.create(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -131,7 +131,7 @@ $seam->acs->credentials->create(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -150,13 +150,13 @@ $seam->acs->credentials->create(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs credentials create --acs_user_id "33333333-3333-3333-3333-333333333333" --access_method "mobile_key" --allowed_acs_entrance_ids ["55555555-5555-5555-5555-555555555555","55555555-5555-5555-5555-000000000000"] --credential_manager_acs_system_id "88888888-8888-8888-8888-888888888888" --is_multi_phone_sync_credential true --starts_at "2024-03-01T10:40:00Z" --ends_at "2024-03-04T10:40:00Z"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {
@@ -174,7 +174,7 @@ seam acs credentials create --acs_user_id "33333333-3333-3333-3333-333333333333"
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -198,7 +198,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUserId: "33333333-3333-3333-3333-333333333333", DisplayName: "Multi Phone Sync Credential", Code: nil, AcsSystemId: "88888888-8888-8888-8888-888888888888", AccessMethod: "mobile_key", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2024-04-12T03:56:22.396Z", IsMultiPhoneSyncCredential: true}

@@ -8,7 +8,7 @@ Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.accessGroups.listUsers({
@@ -16,7 +16,7 @@ await seam.acs.accessGroups.listUsers({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 [
@@ -45,7 +45,7 @@ await seam.acs.accessGroups.listUsers({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.access_groups.list_users(
@@ -53,7 +53,7 @@ seam.acs.access_groups.list_users(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 [
@@ -82,13 +82,13 @@ seam.acs.access_groups.list_users(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.access_groups.list_users(acs_access_group_id: "44444444-4444-4444-4444-444444444444")
 ```
 
-#### Response
+#### Output
 
 ```ruby
 [
@@ -117,7 +117,7 @@ seam.acs.access_groups.list_users(acs_access_group_id: "44444444-4444-4444-4444-
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -126,7 +126,7 @@ $seam->acs->access_groups->list_users(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -156,13 +156,13 @@ $seam->acs->access_groups->list_users(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs access-groups list-users --acs_access_group_id "44444444-4444-4444-4444-444444444444"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 [
@@ -191,7 +191,7 @@ seam acs access-groups list-users --acs_access_group_id "44444444-4444-4444-4444
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -209,7 +209,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 []api.AcsUser{api.AcsUser{AcsUserId: "33333333-3333-3333-3333-333333333333", DisplayName: "Jane Doe", FullName: "Jane Doe", Email: "jane@example.com", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100", AcsSystemId: "11111111-1111-1111-1111-111111111111", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2024-04-05T07:14:28.531Z", IsSuspended: false, AccessSchedule: api.AcsUserAccessSchedule{StartsAt: "2024-03-01T10:40:00.000Z", EndsAt: "2024-03-04T10:40:00.000Z"}, UserIdentityId: "22222222-2222-2222-2222-222222222222", UserIdentityFullName: "Jane Doe", UserIdentityEmailAddress: "jane@example.com", UserIdentityPhoneNumber: "+15555550100"}}

@@ -8,13 +8,13 @@ Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.users.list();
 ```
 
-#### Response
+#### Output
 
 ```javascript
 {
@@ -31,13 +31,13 @@ await seam.acs.users.list();
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.users.list()
 ```
 
-#### Response
+#### Output
 
 ```python
 AcsUser(
@@ -54,13 +54,13 @@ AcsUser(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.users.list()
 ```
 
-#### Response
+#### Output
 
 ```ruby
 {
@@ -77,14 +77,14 @@ seam.acs.users.list()
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
 $seam->acs->users->list();
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -102,13 +102,13 @@ $seam->acs->users->list();
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs users list
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {
@@ -125,7 +125,7 @@ seam acs users list
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -135,7 +135,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "Jane Doe", FullName: "Jane Doe", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100"}

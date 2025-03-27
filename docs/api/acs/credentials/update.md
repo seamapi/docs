@@ -8,7 +8,7 @@ Updates the code and ends at date and time for a specified [credential](../../..
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.credentials.update({
@@ -17,7 +17,7 @@ await seam.acs.credentials.update({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -25,7 +25,7 @@ await seam.acs.credentials.update({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.credentials.update(
@@ -33,7 +33,7 @@ seam.acs.credentials.update(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -41,13 +41,13 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.credentials.update(acs_credential_id: "66666666-6666-6666-6666-666666666666", code: "7890")
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -55,7 +55,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -65,7 +65,7 @@ $seam->acs->credentials->update(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -73,13 +73,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs credentials update --acs_credential_id "66666666-6666-6666-6666-666666666666" --code "7890"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -87,7 +87,7 @@ seam acs credentials update --acs_credential_id "66666666-6666-6666-6666-6666666
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -106,7 +106,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil

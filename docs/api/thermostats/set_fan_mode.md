@@ -8,7 +8,7 @@ Sets the [fan mode setting](https://docs.seam.co/latest/capability-guides/thermo
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.setFanMode({
@@ -17,7 +17,7 @@ await seam.thermostats.setFanMode({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 {
@@ -29,7 +29,7 @@ await seam.thermostats.setFanMode({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.set_fan_mode(
@@ -37,7 +37,7 @@ seam.thermostats.set_fan_mode(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 ActionAttempt(
@@ -49,7 +49,7 @@ ActionAttempt(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.set_fan_mode(
@@ -58,7 +58,7 @@ seam.thermostats.set_fan_mode(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 {
@@ -70,7 +70,7 @@ seam.thermostats.set_fan_mode(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -80,7 +80,7 @@ $seam->thermostats->set_fan_mode(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -93,13 +93,13 @@ $seam->thermostats->set_fan_mode(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats set-fan-mode --device_id "123e4567-e89b-12d3-a456-426614174000" --fan_mode_setting "auto"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {
@@ -111,7 +111,7 @@ seam thermostats set-fan-mode --device_id "123e4567-e89b-12d3-a456-426614174000"
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -129,7 +129,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Status: "pending", ActionType: "SET_FAN_MODE"}
