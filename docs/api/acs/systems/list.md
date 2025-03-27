@@ -6,13 +6,11 @@ POST /acs/systems/list ⇒ { acs_systems: [acs_system, …] }
 
 Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems).
 
-To filter the list of returned access control systems by a specific connected account ID, include the
-`connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the
-response includes all access control systems connected to your workspace.
+To filter the list of returned access control systems by a specific connected account ID, include the `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the response includes all access control systems connected to your workspace.
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+**Request**
 
 ```javascript
 await seam.acs.systems.list({
@@ -20,7 +18,7 @@ await seam.acs.systems.list({
 });
 ```
 
-#### Response
+**Response**
 
 ```javascript
 [{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
@@ -28,13 +26,13 @@ await seam.acs.systems.list({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+**Request**
 
 ```python
 seam.acs.systems.list(connected_account_id="123e4567-e89b-12d3-a456-426614174000")
 ```
 
-#### Response
+**Response**
 
 ```python
 [AcsSystem(acs_system_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")]
@@ -42,13 +40,13 @@ seam.acs.systems.list(connected_account_id="123e4567-e89b-12d3-a456-426614174000
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+**Request**
 
 ```ruby
 seam.acs.systems.list(connected_account_id: "123e4567-e89b-12d3-a456-426614174000")
 ```
 
-#### Response
+**Response**
 
 ```ruby
 [{ "acs_system_id" => "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
@@ -56,7 +54,7 @@ seam.acs.systems.list(connected_account_id: "123e4567-e89b-12d3-a456-42661417400
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+**Request**
 
 ```php
 <?php
@@ -65,7 +63,7 @@ $seam->acs->systems->list(
 );
 ```
 
-#### Response
+**Response**
 
 ```php
 <?php
@@ -74,13 +72,13 @@ $seam->acs->systems->list(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+**Request**
 
 ```seam_cli
 seam acs systems list --connected_account_id "123e4567-e89b-12d3-a456-426614174000"
 ```
 
-#### Response
+**Response**
 
 ```seam_cli
 [{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
@@ -88,7 +86,7 @@ seam acs systems list --connected_account_id "123e4567-e89b-12d3-a456-4266141740
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+**Request**
 
 ```go
 package main
@@ -106,28 +104,26 @@ func main() {
 }
 ```
 
-#### Response
+**Response**
 
 ```go
 []api.AcsSystem{api.AcsSystem{AcsSystemId: "8d7e0b3a-b889-49a7-9164-4b71a0506a33"}}
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Authentication Methods
 
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
+* API key
+* Client session token
+* Personal access token\
+  Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `connected_account_id`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 ID of the connected account by which to filter the list of returned access control systems.
 

@@ -8,7 +8,7 @@ Unassigns a specified [credential](../../../capability-guides/access-systems/man
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+**Request**
 
 ```javascript
 await seam.acs.credentials.unassign({
@@ -17,7 +17,7 @@ await seam.acs.credentials.unassign({
 });
 ```
 
-#### Response
+**Response**
 
 ```javascript
 // void
@@ -25,7 +25,7 @@ await seam.acs.credentials.unassign({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+**Request**
 
 ```python
 seam.acs.credentials.unassign(
@@ -34,7 +34,7 @@ seam.acs.credentials.unassign(
 )
 ```
 
-#### Response
+**Response**
 
 ```python
 None
@@ -42,7 +42,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+**Request**
 
 ```ruby
 seam.acs.credentials.unassign(
@@ -51,7 +51,7 @@ seam.acs.credentials.unassign(
 )
 ```
 
-#### Response
+**Response**
 
 ```ruby
 nil
@@ -59,7 +59,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+**Request**
 
 ```php
 <?php
@@ -69,7 +69,7 @@ $seam->acs->credentials->unassign(
 );
 ```
 
-#### Response
+**Response**
 
 ```php
 null
@@ -77,13 +77,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+**Request**
 
 ```seam_cli
 seam acs credentials unassign --acs_user_id "33333333-3333-3333-3333-333333333333" --acs_credential_id "66666666-6666-6666-6666-666666666666"
 ```
 
-#### Response
+**Response**
 
 ```seam_cli
 {}
@@ -91,7 +91,7 @@ seam acs credentials unassign --acs_user_id "33333333-3333-3333-3333-33333333333
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+**Request**
 
 ```go
 package main
@@ -110,27 +110,25 @@ func main() {
 }
 ```
 
-#### Response
+**Response**
 
 ```go
 nil
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
+* API key
+* Personal access token\
+  Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `acs_credential_id`
 
-Type: `string`
-Required: Yes
+Type: `string` Required: Yes
 
 ID of the desired credential.
 
@@ -138,8 +136,7 @@ ID of the desired credential.
 
 ### `acs_user_id`
 
-Type: `string`
-Required: Yes
+Type: `string` Required: Yes
 
 ID of the desired user.
 

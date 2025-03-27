@@ -8,13 +8,13 @@ Returns a list of all [ACS entrances](../../../capability-guides/access-systems/
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+**Request**
 
 ```javascript
 await seam.acs.entrances.list();
 ```
 
-#### Response
+**Response**
 
 ```javascript
 [
@@ -29,13 +29,13 @@ await seam.acs.entrances.list();
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+**Request**
 
 ```python
 seam.acs.entrances.list()
 ```
 
-#### Response
+**Response**
 
 ```python
 [
@@ -50,13 +50,13 @@ seam.acs.entrances.list()
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+**Request**
 
 ```ruby
 seam.acs.entrances.list()
 ```
 
-#### Response
+**Response**
 
 ```ruby
 [
@@ -71,14 +71,14 @@ seam.acs.entrances.list()
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+**Request**
 
 ```php
 <?php
 $seam->acs->entrances->list();
 ```
 
-#### Response
+**Response**
 
 ```php
 <?php
@@ -94,13 +94,13 @@ $seam->acs->entrances->list();
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+**Request**
 
 ```seam_cli
 seam acs entrances list
 ```
 
-#### Response
+**Response**
 
 ```seam_cli
 [
@@ -115,7 +115,7 @@ seam acs entrances list
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+**Request**
 
 ```go
 package main
@@ -125,39 +125,32 @@ func main() {
 }
 ```
 
-#### Response
+**Response**
 
 ```go
 []api.AcsEntrance{api.AcsEntrance{AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", AcsEntranceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "text"}}
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Authentication Methods
 
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
+* API key
+* Client session token
+* Personal access token\
+  Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `acs_credential_id`
 
-Type: `string`
-Required: No
-
-
+Type: `string` Required: No
 
 ***
 
 ### `acs_system_id`
 
-Type: `string`
-Required: No
-
-
+Type: `string` Required: No
 
 ***
 

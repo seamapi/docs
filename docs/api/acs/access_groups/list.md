@@ -8,7 +8,7 @@ Returns a list of all [access groups](https://docs.seam.co/latest/capability-gui
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+**Request**
 
 ```javascript
 await seam.acs.accessGroups.list({
@@ -17,7 +17,7 @@ await seam.acs.accessGroups.list({
 });
 ```
 
-#### Response
+**Response**
 
 ```javascript
 [
@@ -38,7 +38,7 @@ await seam.acs.accessGroups.list({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+**Request**
 
 ```python
 seam.acs.access_groups.list(
@@ -47,7 +47,7 @@ seam.acs.access_groups.list(
 )
 ```
 
-#### Response
+**Response**
 
 ```python
 [
@@ -68,7 +68,7 @@ seam.acs.access_groups.list(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+**Request**
 
 ```ruby
 seam.acs.access_groups.list(
@@ -77,7 +77,7 @@ seam.acs.access_groups.list(
 )
 ```
 
-#### Response
+**Response**
 
 ```ruby
 [
@@ -98,7 +98,7 @@ seam.acs.access_groups.list(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+**Request**
 
 ```php
 <?php
@@ -108,7 +108,7 @@ $seam->acs->access_groups->list(
 );
 ```
 
-#### Response
+**Response**
 
 ```php
 <?php
@@ -130,13 +130,13 @@ $seam->acs->access_groups->list(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+**Request**
 
 ```seam_cli
 seam acs access-groups list --acs_system_id "11111111-1111-1111-1111-111111111111" --acs_user_id "33333333-3333-3333-3333-333333333333"
 ```
 
-#### Response
+**Response**
 
 ```seam_cli
 [
@@ -157,7 +157,7 @@ seam acs access-groups list --acs_system_id "11111111-1111-1111-1111-11111111111
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+**Request**
 
 ```go
 package main
@@ -176,27 +176,25 @@ func main() {
 }
 ```
 
-#### Response
+**Response**
 
 ```go
 []api.AcsAccessGroup{api.AcsAccessGroup{AcsAccessGroupId: "44444444-4444-4444-4444-444444444444", Name: "Lobby Access", DisplayName: "Lobby Access", AccessGroupTypeDisplayName: "PTI access level", AccessGroupType: "pti_access_level", ExternalType: "pti_access_level", ExternalTypeDisplayName: "PTI access level", AcsSystemId: "11111111-1111-1111-1111-111111111111", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2023-11-30T06:27:15.437Z"}}
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
+* API key
+* Personal access token\
+  Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `acs_system_id`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 ID of the access control system for which you want to retrieve all access groups.
 
@@ -204,8 +202,7 @@ ID of the access control system for which you want to retrieve all access groups
 
 ### `acs_user_id`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 ID of the user for which you want to retrieve all access groups.
 

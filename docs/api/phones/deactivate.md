@@ -8,17 +8,16 @@ Deactivates a phone, which is useful, for example, if a user has lost their phon
 
 ## Authentication Methods
 
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
+* API key
+* Client session token
+* Personal access token\
+  Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `device_id`
 
-Type: `string`
-Required: Yes
+Type: `string` Required: Yes
 
 Device ID of the desired phone.
 

@@ -8,7 +8,7 @@ Returns a list of all [enrollment automations](https://docs.seam.co/latest/capab
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+**Request**
 
 ```javascript
 await seam.userIdentities.enrollmentAutomations.list({
@@ -16,7 +16,7 @@ await seam.userIdentities.enrollmentAutomations.list({
 });
 ```
 
-#### Response
+**Response**
 
 ```javascript
 [
@@ -34,7 +34,7 @@ await seam.userIdentities.enrollmentAutomations.list({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+**Request**
 
 ```python
 seam.user_identities.enrollment_automations.list(
@@ -42,7 +42,7 @@ seam.user_identities.enrollment_automations.list(
 )
 ```
 
-#### Response
+**Response**
 
 ```python
 [
@@ -60,7 +60,7 @@ seam.user_identities.enrollment_automations.list(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+**Request**
 
 ```ruby
 seam.user_identities.enrollment_automations.list(
@@ -68,7 +68,7 @@ seam.user_identities.enrollment_automations.list(
 )
 ```
 
-#### Response
+**Response**
 
 ```ruby
 [
@@ -86,7 +86,7 @@ seam.user_identities.enrollment_automations.list(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+**Request**
 
 ```php
 <?php
@@ -95,7 +95,7 @@ $seam->user_identities->enrollment_automations->list(
 );
 ```
 
-#### Response
+**Response**
 
 ```php
 <?php
@@ -116,13 +116,13 @@ $seam->user_identities->enrollment_automations->list(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+**Request**
 
 ```seam_cli
 seam user-identities enrollment-automations list --user_identity_id "5c945ab5-c75e-4bcb-8e5f-9410061c401f"
 ```
 
-#### Response
+**Response**
 
 ```seam_cli
 [
@@ -140,7 +140,7 @@ seam user-identities enrollment-automations list --user_identity_id "5c945ab5-c7
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+**Request**
 
 ```go
 package main
@@ -158,28 +158,26 @@ func main() {
 }
 ```
 
-#### Response
+**Response**
 
 ```go
 []api.EnrollmentAutomation{api.EnrollmentAutomation{UserIdentityId: "5c945ab5-c75e-4bcb-8e5f-9410061c401f", EnrollmentAutomationId: "05505650-aa57-49ab-8f19-429738758895", AcsCredentialProvisioningAutomationId: "05505650-aa57-49ab-8f19-429738758895", CredentialManagerAcsSystemId: "6737e186-8d54-48ce-a7da-a0be4d252172", IsRunning: true, WorkspaceId: "398d80b7-3f96-47c2-b85a-6f8ba21d07be", CreatedAt: "2024-01-09T05:45:33.068Z"}}
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Authentication Methods
 
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
+* API key
+* Client session token
+* Personal access token\
+  Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `user_identity_id`
 
-Type: `string`
-Required: Yes
+Type: `string` Required: Yes
 
 ID of the user identity for which you want to retrieve all enrollment automations.
 

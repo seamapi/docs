@@ -8,7 +8,7 @@ Returns a list of all [entrances](https://docs.seam.co/latest/api/acs/entrances)
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+**Request**
 
 ```javascript
 await seam.acs.credentials.listAccessibleEntrances({
@@ -16,7 +16,7 @@ await seam.acs.credentials.listAccessibleEntrances({
 });
 ```
 
-#### Response
+**Response**
 
 ```javascript
 [
@@ -43,7 +43,7 @@ await seam.acs.credentials.listAccessibleEntrances({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+**Request**
 
 ```python
 seam.acs.credentials.list_accessible_entrances(
@@ -51,7 +51,7 @@ seam.acs.credentials.list_accessible_entrances(
 )
 ```
 
-#### Response
+**Response**
 
 ```python
 [
@@ -78,7 +78,7 @@ seam.acs.credentials.list_accessible_entrances(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+**Request**
 
 ```ruby
 seam.acs.credentials.list_accessible_entrances(
@@ -86,7 +86,7 @@ seam.acs.credentials.list_accessible_entrances(
 )
 ```
 
-#### Response
+**Response**
 
 ```ruby
 [
@@ -108,7 +108,7 @@ seam.acs.credentials.list_accessible_entrances(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+**Request**
 
 ```php
 <?php
@@ -117,7 +117,7 @@ $seam->acs->credentials->list_accessible_entrances(
 );
 ```
 
-#### Response
+**Response**
 
 ```php
 <?php
@@ -145,13 +145,13 @@ $seam->acs->credentials->list_accessible_entrances(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+**Request**
 
 ```seam_cli
 seam acs credentials list-accessible-entrances --acs_credential_id "66666666-6666-6666-6666-666666666666"
 ```
 
-#### Response
+**Response**
 
 ```seam_cli
 [
@@ -178,7 +178,7 @@ seam acs credentials list-accessible-entrances --acs_credential_id "66666666-666
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+**Request**
 
 ```go
 package main
@@ -196,27 +196,25 @@ func main() {
 }
 ```
 
-#### Response
+**Response**
 
 ```go
 []api.AcsEntrance{api.AcsEntrance{AcsEntranceId: "55555555-5555-5555-5555-555555555555", AcsSystemId: "11111111-1111-1111-1111-111111111111", WorkspaceId: "00000000-0000-0000-0000-000000000000", VisionlineMetadata: api.AcsEntranceVisionlineMetadata{Profiles: []AcsEntranceVisionlineMetadataProfiles{api.AcsEntranceVisionlineMetadataProfilesProfiles{VisionlineDoorProfileId: "Guest Door", VisionlineDoorProfileType: "BLE"}}, DoorName: "Guest Lock 2", DoorCategory: "guest"}, LatchMetadata: nil, DisplayName: "Guest Lock 2", CreatedAt: "2024-03-26T14:31:18.979Z"}}
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
+* API key
+* Personal access token\
+  Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `acs_credential_id`
 
-Type: `string`
-Required: Yes
+Type: `string` Required: Yes
 
 ID of the credential for which you want to retrieve all entrances to which this credential grants access.
 

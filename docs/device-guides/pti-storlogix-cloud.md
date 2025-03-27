@@ -10,7 +10,7 @@ This integration uses [Storlogix Cloud](https://ptisecurity.com/products/storlog
 
 ***
 
-## Supported Devices and Capabilities
+## Supported Devices
 
 Seam integrates with any site that has Storlogix Cloud installed.
 
@@ -22,6 +22,10 @@ For detailed information about the PTI devices that Seam supports, see the follo
   user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
   manufacturers='["PTI"]'
 />" %}
+
+***
+
+## Supported Features
 
 We support the following features:
 

@@ -23,6 +23,10 @@ For detailed information about the 2N devices that Seam supports, see the follow
   manufacturers='["2N"]'
 />" %}
 
+***
+
+## Supported Features
+
 We support the following features:
 
 * [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)

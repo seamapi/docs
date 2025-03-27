@@ -8,7 +8,7 @@ Creates a new [user identity](https://docs.seam.co/latest/capability-guides/mobi
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+**Request**
 
 ```javascript
 await seam.userIdentities.create({
@@ -19,7 +19,7 @@ await seam.userIdentities.create({
 });
 ```
 
-#### Response
+**Response**
 
 ```javascript
 {
@@ -36,7 +36,7 @@ await seam.userIdentities.create({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+**Request**
 
 ```python
 seam.user_identities.create(
@@ -47,7 +47,7 @@ seam.user_identities.create(
 )
 ```
 
-#### Response
+**Response**
 
 ```python
 UserIdentity(
@@ -64,7 +64,7 @@ UserIdentity(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+**Request**
 
 ```ruby
 seam.user_identities.create(
@@ -75,7 +75,7 @@ seam.user_identities.create(
 )
 ```
 
-#### Response
+**Response**
 
 ```ruby
 {
@@ -92,7 +92,7 @@ seam.user_identities.create(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+**Request**
 
 ```php
 <?php
@@ -104,7 +104,7 @@ $seam->user_identities->create(
 );
 ```
 
-#### Response
+**Response**
 
 ```php
 <?php
@@ -122,13 +122,13 @@ $seam->user_identities->create(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+**Request**
 
 ```seam_cli
 seam user-identities create --user_identity_key "jean_doe" --email_address "jean@example.com" --phone_number "+15555550110" --full_name "Jean Doe"
 ```
 
-#### Response
+**Response**
 
 ```seam_cli
 {
@@ -145,7 +145,7 @@ seam user-identities create --user_identity_key "jean_doe" --email_address "jean
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+**Request**
 
 ```go
 package main
@@ -165,27 +165,25 @@ func main() {
 }
 ```
 
-#### Response
+**Response**
 
 ```go
 api.UserIdentity{UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", UserIdentityKey: "jean_doe", EmailAddress: "jean@example.com", PhoneNumber: "+15555550110", DisplayName: "Jean Doe", FullName: "Jean Doe", CreatedAt: "2024-01-11T05:37:50.264Z", WorkspaceId: "398d80b7-3f96-47c2-b85a-6f8ba21d07be"}
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
+* API key
+* Personal access token\
+  Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `email_address`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 Unique email address for the user identity.
 
@@ -193,8 +191,7 @@ Unique email address for the user identity.
 
 ### `full_name`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 Full name of the user associated with the user identity.
 
@@ -202,8 +199,7 @@ Full name of the user associated with the user identity.
 
 ### `phone_number`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 Unique phone number for the user identity in E.164 format (for example, +15555550100).
 
@@ -211,8 +207,7 @@ Unique phone number for the user identity in E.164 format (for example, +1555555
 
 ### `user_identity_key`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 Unique key for the user identity.
 

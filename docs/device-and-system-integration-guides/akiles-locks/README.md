@@ -29,6 +29,10 @@ For detailed information about the Akiles devices that Seam supports, see the fo
   manufacturers='["Akiles"]'
 />" %}
 
+***
+
+## Supported Features
+
 We support the following features:
 
 * [Triggering web unlock actions](../../products/smart-locks/lock-and-unlock.md)

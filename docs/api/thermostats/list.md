@@ -8,13 +8,13 @@ Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guide
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+**Request**
 
 ```javascript
 await seam.thermostats.list();
 ```
 
-#### Response
+**Response**
 
 ```javascript
 [
@@ -45,13 +45,13 @@ await seam.thermostats.list();
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+**Request**
 
 ```python
 seam.thermostats.list()
 ```
 
-#### Response
+**Response**
 
 ```python
 [
@@ -82,13 +82,13 @@ seam.thermostats.list()
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+**Request**
 
 ```ruby
 seam.thermostats.list()
 ```
 
-#### Response
+**Response**
 
 ```ruby
 [
@@ -119,14 +119,14 @@ seam.thermostats.list()
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+**Request**
 
 ```php
 <?php
 $seam->thermostats->list();
 ```
 
-#### Response
+**Response**
 
 ```php
 <?php
@@ -163,13 +163,13 @@ $seam->thermostats->list();
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+**Request**
 
 ```seam_cli
 seam thermostats list
 ```
 
-#### Response
+**Response**
 
 ```seam_cli
 [
@@ -200,7 +200,7 @@ seam thermostats list
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+**Request**
 
 ```go
 package main
@@ -210,28 +210,26 @@ func main() {
 }
 ```
 
-#### Response
+**Response**
 
 ```go
 []api.Device{api.Device{DeviceId: "123e4567-e89b-12d3-a456-426614174000", DeviceType: "ecobee_thermostat", CapabilitiesSupported: []string{"thermostat"}, Properties: api.DeviceProperties{Name: "Entryway", Online: "true,", RelativeHumidity: 0.36, TemperatureFarenheit: 70, AvailableHvacModeSettings: []string{"cool", "heat", "heat_cool", "off"}, CurrentClimateSetting: api.DevicePropertiesCurrentClimateSetting{HvacModeSetting: "heat_cool", CoolingSetPointFarenheit: 75, HeatingSetPointFarenheit: 65, ManualOverrideAllowed: false}, Location: nil, ConnectedAccountId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z"}}}
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Authentication Methods
 
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
+* API key
+* Client session token
+* Personal access token\
+  Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `connect_webview_id`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 ID of the Connect Webview by which to filter devices.
 
@@ -239,8 +237,7 @@ ID of the Connect Webview by which to filter devices.
 
 ### `connected_account_id`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 ID of the connected account by which to filter.
 
@@ -248,8 +245,7 @@ ID of the connected account by which to filter.
 
 ### `connected_account_ids`
 
-Type: `array`
-Required: No
+Type: `array` Required: No
 
 Array of IDs of the connected accounts by which to filter devices.
 
@@ -257,8 +253,7 @@ Array of IDs of the connected accounts by which to filter devices.
 
 ### `created_before`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 Date threshold for devices to return. If specified, returns only devices created before the specified date.
 
@@ -266,8 +261,7 @@ Date threshold for devices to return. If specified, returns only devices created
 
 ### `custom_metadata_has`
 
-Type: `object`
-Required: No
+Type: `object` Required: No
 
 Set of key:value [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) pairs by which you want to filter devices.
 
@@ -275,8 +269,7 @@ Set of key:value [custom metadata](../../core-concepts/devices/adding-custom-met
 
 ### `device_ids`
 
-Type: `array`
-Required: No
+Type: `array` Required: No
 
 Array of device IDs by which to filter devices.
 
@@ -284,8 +277,7 @@ Array of device IDs by which to filter devices.
 
 ### `device_type`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 Device type by which to filter devices.
 
@@ -293,8 +285,7 @@ Device type by which to filter devices.
 
 ### `device_types`
 
-Type: `array`
-Required: No
+Type: `array` Required: No
 
 Array of device types by which to filter devices.
 
@@ -302,8 +293,7 @@ Array of device types by which to filter devices.
 
 ### `limit`
 
-Type: `number`
-Required: No
+Type: `number` Required: No
 
 Numerical limit on the number of devices to return.
 
@@ -311,8 +301,7 @@ Numerical limit on the number of devices to return.
 
 ### `manufacturer`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 Manufacturer by which to filter devices.
 
@@ -320,8 +309,7 @@ Manufacturer by which to filter devices.
 
 ### `user_identifier_key`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 Your own internal user ID for the user by which to filter devices.
 

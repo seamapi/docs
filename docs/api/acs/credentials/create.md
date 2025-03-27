@@ -8,7 +8,7 @@ Creates a new [credential](../../../capability-guides/access-systems/managing-cr
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+**Request**
 
 ```javascript
 await seam.acs.credentials.create({
@@ -25,7 +25,7 @@ await seam.acs.credentials.create({
 });
 ```
 
-#### Response
+**Response**
 
 ```javascript
 {
@@ -43,7 +43,7 @@ await seam.acs.credentials.create({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+**Request**
 
 ```python
 seam.acs.credentials.create(
@@ -60,7 +60,7 @@ seam.acs.credentials.create(
 )
 ```
 
-#### Response
+**Response**
 
 ```python
 AcsCredential(
@@ -78,7 +78,7 @@ AcsCredential(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+**Request**
 
 ```ruby
 seam.acs.credentials.create(
@@ -95,7 +95,7 @@ seam.acs.credentials.create(
 )
 ```
 
-#### Response
+**Response**
 
 ```ruby
 {
@@ -113,7 +113,7 @@ seam.acs.credentials.create(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+**Request**
 
 ```php
 <?php
@@ -131,7 +131,7 @@ $seam->acs->credentials->create(
 );
 ```
 
-#### Response
+**Response**
 
 ```php
 <?php
@@ -150,13 +150,13 @@ $seam->acs->credentials->create(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+**Request**
 
 ```seam_cli
 seam acs credentials create --acs_user_id "33333333-3333-3333-3333-333333333333" --access_method "mobile_key" --allowed_acs_entrance_ids ["55555555-5555-5555-5555-555555555555","55555555-5555-5555-5555-000000000000"] --credential_manager_acs_system_id "88888888-8888-8888-8888-888888888888" --is_multi_phone_sync_credential true --starts_at "2024-03-01T10:40:00Z" --ends_at "2024-03-04T10:40:00Z"
 ```
 
-#### Response
+**Response**
 
 ```seam_cli
 {
@@ -174,7 +174,7 @@ seam acs credentials create --acs_user_id "33333333-3333-3333-3333-333333333333"
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+**Request**
 
 ```go
 package main
@@ -198,27 +198,25 @@ func main() {
 }
 ```
 
-#### Response
+**Response**
 
 ```go
 api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUserId: "33333333-3333-3333-3333-333333333333", DisplayName: "Multi Phone Sync Credential", Code: nil, AcsSystemId: "88888888-8888-8888-8888-888888888888", AccessMethod: "mobile_key", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2024-04-12T03:56:22.396Z", IsMultiPhoneSyncCredential: true}
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
+* API key
+* Personal access token\
+  Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `access_method`
 
-Type: `string`
-Required: Yes
+Type: `string` Required: Yes
 
 Access method for the new credential. Supported values: `code`, `card`, `mobile_key`.
 
@@ -226,8 +224,7 @@ Access method for the new credential. Supported values: `code`, `card`, `mobile_
 
 ### `acs_user_id`
 
-Type: `string`
-Required: Yes
+Type: `string` Required: Yes
 
 ID of the ACS user to whom the new credential belongs.
 
@@ -235,8 +232,7 @@ ID of the ACS user to whom the new credential belongs.
 
 ### `allowed_acs_entrance_ids`
 
-Type: `array`
-Required: No
+Type: `array` Required: No
 
 Set of IDs of the [entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md) for which the new credential grants access.
 
@@ -244,8 +240,7 @@ Set of IDs of the [entrances](../../../capability-guides/access-systems/retrievi
 
 ### `assa_abloy_vostio_metadata`
 
-Type: `object`
-Required: No
+Type: `object` Required: No
 
 Vostio-specific metadata for the new credential.
 
@@ -253,8 +248,7 @@ Vostio-specific metadata for the new credential.
 
 ### `code`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 Access (PIN) code for the new credential. There may be manufacturer-specific code restrictions. For details, see the applicable [device or system integration guide](../../../device-and-system-integration-guides/overview.md).
 
@@ -262,8 +256,7 @@ Access (PIN) code for the new credential. There may be manufacturer-specific cod
 
 ### `credential_manager_acs_system_id`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 ACS system ID of the credential manager for the new credential.
 
@@ -271,8 +264,7 @@ ACS system ID of the credential manager for the new credential.
 
 ### `ends_at`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 Date and time at which the validity of the new credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
 
@@ -280,8 +272,7 @@ Date and time at which the validity of the new credential ends, in [ISO 8601](ht
 
 ### `is_multi_phone_sync_credential`
 
-Type: `boolean`
-Required: No
+Type: `boolean` Required: No
 
 Indicates whether the new credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
 
@@ -289,8 +280,7 @@ Indicates whether the new credential is a [multi-phone sync credential](https://
 
 ### `salto_space_metadata`
 
-Type: `object`
-Required: No
+Type: `object` Required: No
 
 Salto Space-specific metadata for the new credential.
 
@@ -298,8 +288,7 @@ Salto Space-specific metadata for the new credential.
 
 ### `starts_at`
 
-Type: `string`
-Required: No
+Type: `string` Required: No
 
 Date and time at which the validity of the new credential starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
@@ -307,8 +296,7 @@ Date and time at which the validity of the new credential starts, in [ISO 8601](
 
 ### `visionline_metadata`
 
-Type: `object`
-Required: No
+Type: `object` Required: No
 
 Visionline-specific metadata for the new credential.
 

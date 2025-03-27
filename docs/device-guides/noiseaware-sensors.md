@@ -23,6 +23,10 @@ For detailed information about the NoiseAware devices that Seam supports, see th
   manufacturers='["NoiseAware"]'
 />" %}
 
+***
+
+## Supported Features
+
 We support the following features:
 
 * [Configuring noise threshold settings](../products/noise-sensors/configure-noise-threshold-settings.md)\

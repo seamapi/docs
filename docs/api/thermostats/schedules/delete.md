@@ -8,7 +8,7 @@ Deletes a [thermostat schedule](../../../capability-guides/thermostats/creating-
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+**Request**
 
 ```javascript
 await seam.thermostats.schedules.delete({
@@ -16,7 +16,7 @@ await seam.thermostats.schedules.delete({
 });
 ```
 
-#### Response
+**Response**
 
 ```javascript
 // void
@@ -24,7 +24,7 @@ await seam.thermostats.schedules.delete({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+**Request**
 
 ```python
 seam.thermostats.schedules.delete(
@@ -32,7 +32,7 @@ seam.thermostats.schedules.delete(
 )
 ```
 
-#### Response
+**Response**
 
 ```python
 None
@@ -40,13 +40,13 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+**Request**
 
 ```ruby
 seam.thermostats.schedules.delete(thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4")
 ```
 
-#### Response
+**Response**
 
 ```ruby
 nil
@@ -54,7 +54,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+**Request**
 
 ```php
 <?php
@@ -63,7 +63,7 @@ $seam->thermostats->schedules->delete(
 );
 ```
 
-#### Response
+**Response**
 
 ```php
 null
@@ -71,13 +71,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+**Request**
 
 ```seam_cli
 seam thermostats schedules delete --thermostat_schedule_id "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
 ```
 
-#### Response
+**Response**
 
 ```seam_cli
 {}
@@ -85,7 +85,7 @@ seam thermostats schedules delete --thermostat_schedule_id "89d3507e-60e3-4101-b
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+**Request**
 
 ```go
 package main
@@ -103,28 +103,26 @@ func main() {
 }
 ```
 
-#### Response
+**Response**
 
 ```go
 nil
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Authentication Methods
 
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
+* API key
+* Client session token
+* Personal access token\
+  Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `thermostat_schedule_id`
 
-Type: `string`
-Required: Yes
+Type: `string` Required: Yes
 
 ID of the desired thermostat schedule.
 

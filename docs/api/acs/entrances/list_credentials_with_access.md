@@ -8,7 +8,7 @@ Returns a list of all [credentials](../../../capability-guides/access-systems/ma
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+**Request**
 
 ```javascript
 await seam.acs.entrances.listCredentialsWithAccess({
@@ -16,7 +16,7 @@ await seam.acs.entrances.listCredentialsWithAccess({
 });
 ```
 
-#### Response
+**Response**
 
 ```javascript
 [
@@ -47,7 +47,7 @@ await seam.acs.entrances.listCredentialsWithAccess({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+**Request**
 
 ```python
 seam.acs.entrances.list_credentials_with_access(
@@ -55,7 +55,7 @@ seam.acs.entrances.list_credentials_with_access(
 )
 ```
 
-#### Response
+**Response**
 
 ```python
 [
@@ -86,7 +86,7 @@ seam.acs.entrances.list_credentials_with_access(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+**Request**
 
 ```ruby
 seam.acs.entrances.list_credentials_with_access(
@@ -94,7 +94,7 @@ seam.acs.entrances.list_credentials_with_access(
 )
 ```
 
-#### Response
+**Response**
 
 ```ruby
 [
@@ -125,7 +125,7 @@ seam.acs.entrances.list_credentials_with_access(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+**Request**
 
 ```php
 <?php
@@ -134,7 +134,7 @@ $seam->acs->entrances->list_credentials_with_access(
 );
 ```
 
-#### Response
+**Response**
 
 ```php
 <?php
@@ -167,13 +167,13 @@ $seam->acs->entrances->list_credentials_with_access(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+**Request**
 
 ```seam_cli
 seam acs entrances list-credentials-with-access --acs_entrance_id "123e4567-e89b-12d3-a456-426614174000"
 ```
 
-#### Response
+**Response**
 
 ```seam_cli
 [
@@ -204,7 +204,7 @@ seam acs entrances list-credentials-with-access --acs_entrance_id "123e4567-e89b
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+**Request**
 
 ```go
 package main
@@ -222,39 +222,32 @@ func main() {
 }
 ```
 
-#### Response
+**Response**
 
 ```go
 []api.AcsCredential{api.AcsCredential{AcsCredentialId: "123e4567-e89b-12d3-a456-426614174000", AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsCredentialPoolId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", ParentAcsCredentialId: "123e4567-e89b-12d3-a456-426614174000", DisplayName: "text", Code: "text", CardNumber: "text", IsIssued: false, IssuedAt: "2024-10-15T12:54:04.155Z", AccessMethod: "code", ExternalType: "pti_card", ExternalTypeDisplayName: "text", CreatedAt: "2024-10-15T12:54:04.155Z", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", StartsAt: "text", EndsAt: "text", IsMultiPhoneSyncCredential: false, IsLatestDesiredStateSyncedWithProvider: false, LatestDesiredStateSyncedWithProviderAt: "2024-10-15T12:54:04.155Z"}}
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Authentication Methods
 
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
+* API key
+* Client session token
+* Personal access token\
+  Must also include the `seam-workspace` header in the request.
 
 ## Request Parameters
 
 ### `acs_entrance_id`
 
-Type: `string`
-Required: Yes
-
-
+Type: `string` Required: Yes
 
 ***
 
 ### `include_if`
 
-Type: `array`
-Required: No
-
-
+Type: `array` Required: No
 
 ***
 
