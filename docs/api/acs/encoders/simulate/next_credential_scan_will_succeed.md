@@ -44,8 +44,3 @@ Scenario to simulate.
 ## Return Type
 
 void
-
-***
-
-## Code Samples
-

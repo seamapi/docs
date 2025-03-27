@@ -44,8 +44,3 @@ Code of the error to simulate.
 ## Return Type
 
 void
-
-***
-
-## Code Samples
-

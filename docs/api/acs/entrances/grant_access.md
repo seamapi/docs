@@ -35,8 +35,3 @@ Required: Yes
 ## Return Type
 
 void
-
-***
-
-## Code Samples
-

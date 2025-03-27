@@ -44,8 +44,3 @@ Required: No
 ## Return Type
 
 void
-
-***
-
-## Code Samples
-
