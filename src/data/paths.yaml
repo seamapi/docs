@@ -80,3 +80,8 @@
   title: Enrollment Automations
   resources:
     - enrollment_automation
+
+/access_codes:
+  title: Access Codes
+  resources:
+    - access_code
