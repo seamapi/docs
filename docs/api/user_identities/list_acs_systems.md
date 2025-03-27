@@ -1,8 +1,12 @@
 # List ACS Systems Associated with a User Identity
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /user_identities/list_acs_systems ⇒ { acs_systems: [acs_system, …] }
 ```
+{% endtab %}
+{% endtabs %}
 
 Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 

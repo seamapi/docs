@@ -1,8 +1,12 @@
 # Remove an ACS User from an Access Group
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/users/remove_from_access_group ⇒ void
 ```
+{% endtab %}
+{% endtabs %}
 
 Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 

@@ -1,8 +1,12 @@
 # Grant an ACS User Access to an Entrance
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/entrances/grant_access ⇒ void
 ```
+{% endtab %}
+{% endtabs %}
 
 
 

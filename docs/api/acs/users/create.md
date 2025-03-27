@@ -1,8 +1,12 @@
 # Create an ACS User
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/users/create ⇒ { acs_user }
 ```
+{% endtab %}
+{% endtabs %}
 
 Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 

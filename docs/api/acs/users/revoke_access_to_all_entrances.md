@@ -1,8 +1,12 @@
 # Revoke ACS User Access to All Entrances
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/users/revoke_access_to_all_entrances ⇒ void
 ```
+{% endtab %}
+{% endtabs %}
 
 Revokes access to all [entrances](https://docs.seam.co/latest/api/acs/entrances) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 

@@ -1,8 +1,12 @@
 # Get an Access Group
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/access_groups/get ⇒ { acs_access_group }
 ```
+{% endtab %}
+{% endtabs %}
 
 Returns a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 

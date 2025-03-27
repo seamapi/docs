@@ -1,8 +1,12 @@
 # Add an ACS User to an Access Group
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 PUT /acs/access_groups/add_user ⇒ void
 ```
+{% endtab %}
+{% endtabs %}
 
 Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 

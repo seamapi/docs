@@ -1,8 +1,12 @@
 # List ACS Systems
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/systems/list ⇒ { acs_systems: [acs_system, …] }
 ```
+{% endtab %}
+{% endtabs %}
 
 Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems).
 

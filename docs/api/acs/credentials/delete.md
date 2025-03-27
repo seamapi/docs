@@ -1,8 +1,12 @@
 # Delete a Credential
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/credentials/delete ⇒ void
 ```
+{% endtab %}
+{% endtabs %}
 
 Deletes a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 

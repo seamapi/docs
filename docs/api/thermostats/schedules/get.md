@@ -1,8 +1,12 @@
 # Get a Thermostat Schedule
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /thermostats/schedules/get ⇒ { thermostat_schedule }
 ```
+{% endtab %}
+{% endtabs %}
 
 Returns a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 

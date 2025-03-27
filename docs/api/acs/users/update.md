@@ -1,8 +1,12 @@
 # Update an ACS User
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 PATCH /acs/users/update ⇒ void
 ```
+{% endtab %}
+{% endtabs %}
 
 Updates the properties of a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 

@@ -1,8 +1,12 @@
 # Unassign a Credential from an ACS User
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 PATCH /acs/credentials/unassign ⇒ void
 ```
+{% endtab %}
+{% endtabs %}
 
 Unassigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) from a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 

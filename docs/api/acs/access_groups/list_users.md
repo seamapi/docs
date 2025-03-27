@@ -1,8 +1,12 @@
 # List ACS Users in an Access Group
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/access_groups/list_users ⇒ { acs_users: [acs_user, …] }
 ```
+{% endtab %}
+{% endtabs %}
 
 Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 

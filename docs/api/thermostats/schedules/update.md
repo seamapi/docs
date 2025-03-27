@@ -1,8 +1,12 @@
 # Update a Thermostat Schedule
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 PATCH /thermostats/schedules/update ⇒ void
 ```
+{% endtab %}
+{% endtabs %}
 
 Updates a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 

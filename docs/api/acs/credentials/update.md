@@ -1,8 +1,12 @@
 # Update a Credential
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 PATCH /acs/credentials/update ⇒ void
 ```
+{% endtab %}
+{% endtabs %}
 
 Updates the code and ends at date and time for a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 

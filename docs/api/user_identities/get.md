@@ -1,8 +1,12 @@
 # Get a User Identity
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /user_identities/get ⇒ { user_identity }
 ```
+{% endtab %}
+{% endtabs %}
 
 Returns a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 

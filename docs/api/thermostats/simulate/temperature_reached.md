@@ -1,8 +1,12 @@
 # Temperature Reached
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /thermostats/simulate/temperature_reached ⇒ void
 ```
+{% endtab %}
+{% endtabs %}
 
 Simulates a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) reaching a specified temperature. Only applicable for [sandbox devices](../../../core-concepts/workspaces/README.md#sandbox-workspaces). See also [Testing Your Thermostat App with Simulate Endpoints](../../../capability-guides/thermostats/testing-your-thermostat-app-with-simulate-endpoints.md).
 

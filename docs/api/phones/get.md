@@ -1,8 +1,12 @@
 # Get Phone
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /phones/get ⇒ { phone }
 ```
+{% endtab %}
+{% endtabs %}
 
 Returns a single phone entry matching the provided `device_id`.
 

@@ -1,8 +1,12 @@
 # Get an ACS User
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/users/get ⇒ { acs_user }
 ```
+{% endtab %}
+{% endtabs %}
 
 Returns a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 

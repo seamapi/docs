@@ -1,8 +1,12 @@
 # List User Identities
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /user_identities/list ⇒ { user_identities: [user_identity, …] }
 ```
+{% endtab %}
+{% endtabs %}
 
 Returns a list of all [user identities](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 

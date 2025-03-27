@@ -1,8 +1,12 @@
 # Simulate that the Next Credential Encoding Will Fail
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/encoders/simulate/next_credential_encode_will_fail ⇒ void
 ```
+{% endtab %}
+{% endtabs %}
 
 Simulates that the next attempt to encode a [credential](../../../../capability-guides/access-systems/managing-credentials.md) using the specified [encoder](../../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) will fail. You can only perform this action within a [sandbox workspace](../../../../core-concepts/workspaces/README.md#sandbox-workspaces).
 

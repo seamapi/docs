@@ -1,8 +1,12 @@
 # Suspend an ACS User
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/users/suspend ⇒ void
 ```
+{% endtab %}
+{% endtabs %}
 
 [Suspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#suspend-an-acs-user) a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Suspending an ACS user revokes their access temporarily. To restore an ACS user's access, you can [unsuspend](https://docs.seam.co/latest/api/acs/users/unsuspend) them.
 

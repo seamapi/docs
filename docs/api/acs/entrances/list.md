@@ -1,8 +1,12 @@
 # List Entrances
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/entrances/list ⇒ { acs_entrances: [acs_entrance, …] }
 ```
+{% endtab %}
+{% endtabs %}
 
 Returns a list of all [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 

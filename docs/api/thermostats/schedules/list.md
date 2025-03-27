@@ -1,8 +1,12 @@
 # List Thermostat Schedules
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /thermostats/schedules/list ⇒ { thermostat_schedules: [thermostat_schedule, …] }
 ```
+{% endtab %}
+{% endtabs %}
 
 Returns a list of all [thermostat schedules](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 

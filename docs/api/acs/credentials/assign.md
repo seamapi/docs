@@ -1,8 +1,12 @@
 # Assign a Credential to an ACS User
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 PATCH /acs/credentials/assign ⇒ void
 ```
+{% endtab %}
+{% endtabs %}
 
 Assigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) to a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 

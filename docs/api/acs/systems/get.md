@@ -1,8 +1,12 @@
 # Get an ACS System
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/systems/get ⇒ { acs_system }
 ```
+{% endtab %}
+{% endtabs %}
 
 Returns a specified [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 

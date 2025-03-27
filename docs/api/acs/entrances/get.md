@@ -1,8 +1,12 @@
 # Get an Entrance
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/entrances/get ⇒ { acs_entrance }
 ```
+{% endtab %}
+{% endtabs %}
 
 Returns a specified [ACS entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
