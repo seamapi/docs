@@ -2,7 +2,7 @@
 description: Systems for managing and monitoring access to physical spaces
 ---
 
-# Access Control Systems (ACS)
+# Access Control Systems
 
 Access control systems centralize access authorization for buildings, which means that you can use a single system to grant users access to one or more entrances. An access control system manages the following elements:
 
@@ -21,7 +21,7 @@ To grant access using the Seam access control system API, use the following basi
 
 ## Resources
 
-The Access Control Systems (ACS) namespace contains the following resources:
+The Access Control Systems namespace contains the following resources:
 
 ### [`acs_system`](./systems/README.md#acs_system)
 Represents an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
