@@ -31,6 +31,10 @@ For detailed information about the Wyze devices that Seam supports, see the foll
   manufacturers='["Wyze"]'
 />" %}
 
+***
+
+## Supported Features
+
 We support the following features:
 
 * [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)

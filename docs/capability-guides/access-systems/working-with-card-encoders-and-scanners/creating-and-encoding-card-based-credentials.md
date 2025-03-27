@@ -1239,7 +1239,7 @@ return nil
 
 ### Confirm Successful Encoding by Using a Webhook
 
-To confirm successful encoding, you can use a [webhook](../../../core-concepts/webhooks.md) to listen for an `acs_credential.issued` event that contains the `acs_credential_id` in the payload.
+To confirm successful encoding, you can use a [webhook](../../../core-concepts/webhooks.md) to listen for an `acs_credential.issued` event that contains the `acs_credential_id` in the payload. If you are re-encoding a card, listen for `acs_credential.reissued` instead of `acs_credential.issued`.
 
 ```json
 {

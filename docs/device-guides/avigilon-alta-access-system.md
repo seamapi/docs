@@ -25,6 +25,10 @@ For detailed information about the Avigilon Alta-connected devices that Seam sup
   manufacturers='["Avigilon"]'
 />" %}
 
+***
+
+## Supported Features
+
 We support the following features:
 
 * [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)

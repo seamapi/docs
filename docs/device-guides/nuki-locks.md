@@ -35,6 +35,10 @@ For detailed information about the Nuki devices that Seam supports, see the foll
   manufacturers='["Nuki"]'
 />" %}
 
+***
+
+## Supported Features
+
 We support the following features:
 
 * [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)

@@ -38,9 +38,13 @@ For more information about managing your Latch ACS through Seam, see the followi
 
 ***
 
-## Supported Features
+## Supported Devices
 
 This integration supports all wireless locks and readers connected to the Latch ACS.
+
+***
+
+## Supported Features
 
 We support the following features:
 

@@ -1,6 +1,6 @@
-# Sandbox Salto Space Access Control System
+# Sandbox Salto Space Access System
 
-Use the following set of credentials to add virtual Salto Space access control system to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
+Use the following set of credentials to add the virtual Salto Space access system to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
 ## Sandbox Seam Bridge Connection Credentials
 
@@ -10,4 +10,4 @@ Use the following set of credentials to add virtual Salto Space access control s
 
 ## Salto Space Credentials
 
-<table><thead><tr><th width="351">System Name</th><th width="159">LAN URL</th><th width="125">Username</th><th width="162">Password</th></tr></thead><tbody><tr><td>Any string to identify this Visionline ACS site, for example, My Visionline Site</td><td>192.168.1.100</td><td>jane</td><td>1234</td></tr></tbody></table>
+<table><thead><tr><th width="311">System Name</th><th width="201.4000244140625">LAN URL of the Salto Space server</th><th width="101.800048828125">Username</th><th width="112.39990234375">Password</th></tr></thead><tbody><tr><td>Any string to identify this Salto Space site, for example, My Salto Space Site</td><td>http://192.168.1.101:8100</td><td>jane</td><td>1234</td></tr></tbody></table>
