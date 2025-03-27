@@ -20,7 +20,9 @@
 {{/if}}
 {{/each}}
 
+---
 {{/if}}
+
 ## Request Parameters
 
 {{#if request.parameters.length}}
@@ -32,13 +34,16 @@ Required: {{#if this.required}}Yes{{else}}No{{/if}}
 
 {{this.description}}
 
-***
+---
 
 {{/each}}
 {{else}}
 None
 
 {{/if}}
+
+---
+
 ## Return Type
 
 {{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array<[{{response.escapedResourceType}}](./)>{{else}}[{{response.escapedResourceType}}](./){{/if}}{{else}}void{{/if}}
@@ -48,7 +53,9 @@ None
 {{/with}}
 {{#if addtionalCodeSamples.length}}
 
-## Additional Code Samples
+---
+
+## Code Samples
 
 {{#each addtionalCodeSamples}}
 {{> code-sample }}
