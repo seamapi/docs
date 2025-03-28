@@ -25,6 +25,10 @@ For detailed information about the Lockly devices that Seam supports, see the fo
   manufacturers='["Lockly"]'
 />" %}
 
+***
+
+## Supported Features
+
 We support the following features:
 
 * [Triggering web lock and unlock actions](../../products/smart-locks/lock-and-unlock.md)

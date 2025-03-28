@@ -1,0 +1,18 @@
+{% tabs %}
+{{#each this.code}}
+{% tab title="{{this.title}}" %}
+#### Request
+
+```{{@key}}
+{{this.request}}
+```
+
+#### Response
+
+```{{@key}}
+{{this.response}}
+```
+{% endtab %}
+
+{{/each}}
+{% endtabs %}

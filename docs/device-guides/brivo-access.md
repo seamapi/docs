@@ -27,6 +27,10 @@ For detailed information about the Brivo-connected devices that Seam supports, s
   manufacturers='["Brivo"]'
 />" %}
 
+***
+
+## Supported Features
+
 We support the following features:
 
 * [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)

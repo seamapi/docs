@@ -4,7 +4,7 @@ description: Guide for using the Salto KS Access Control System with Seam
 
 # Salto KS Access Control System
 
-<figure><picture><source srcset="../../.gitbook/assets/salto-ks-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/salto-ks-manufacturer-page-cover-light.png" alt="Connect and control your Salto KS ACS using the Seam API."></picture><figcaption><p>Connect and control your Salto KS ACS using the Seam API.</p></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/salto-ks-acs-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/salto-ks-acs-manufacturer-page-cover-light.png" alt="Connect and control your Salto KS ACS using the Seam API."></picture><figcaption><p>Connect and control your Salto KS ACS using the Seam API.</p></figcaption></figure>
 
 ## Overview
 
@@ -20,29 +20,42 @@ The Seam ACS schema consists of a series of resources that interact intuitively,
 
 The following diagram shows the Seam resources for a Salto KS ACS and the relationships between these resources:
 
-<figure><img src="../../.gitbook/assets/salto-ks-acs.png" alt="Seam resources enable you to manage your Salto KS ACS intuitively."><figcaption><p>Seam resources enable you to manage your Salto KS ACS intuitively.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/salto-ks-acs.png" alt="Seam resources enable you to manage your Salto Space ACS intuitively."><figcaption><p>Seam resources enable you to manage your Salto Space ACS intuitively.</p></figcaption></figure>
 
-The following table provides a brief description of each of the Seam resources for the Salto KS ACS:
+The following table provides a brief description of each of the Seam resources for the Salto Space ACS:
 
-<table><thead><tr><th width="233">Seam Resource</th><th>Description</th></tr></thead><tbody><tr><td><p><picture><source srcset="../../.gitbook/assets/acs-user_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/acs-user_light.png" alt="" data-size="line"></picture></p><p> <a href="../../api/acs/users/"><code>acs_user</code></a></p></td><td>Individual who has been granted access to specific entrances within a property. ACS users could include employees, residents, and temporary guests. You can configure access schedules for users, if desired. You assign a unique credential to each user.</td></tr><tr><td><p><picture><source srcset="../../.gitbook/assets/acs-access-group_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/acs-access-group_light.png" alt="" data-size="line"></picture></p><p> <a href="../../api/acs/access_groups/"><code>acs_access_group</code></a></p></td><td>Collection of users with shared access permissions. Instead of assigning permissions individually, users are grouped based on their access needs. Access groups streamline the management of access rights and ensure consistency.</td></tr><tr><td><p><picture><source srcset="../../.gitbook/assets/acs-schedule_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/acs-schedule_light.png" alt="" data-size="line"></picture></p><p> <code>access_schedule</code></p></td><td>Timeframe during which access is permitted. By associating schedules with ACS users and then assigning users to access groups, property managers can control when users can enter specific areas, enhancing security and operational efficiency.<br>If you set an access schedule for a Salto KS ACS user, the user appears as "unsubscribed" in the ACS until the <code>starts_at</code> time. Once the start time arrives, Seam switches the ACS user to "subscribed," which activates their access.</td></tr><tr><td><p><picture><source srcset="../../.gitbook/assets/acs-entrance_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/acs-entrance_light.png" alt="" data-size="line"></picture></p><p> <a href="../../api/acs/entrances/"><code>acs_entrance</code></a></p></td><td>Physical points of entry within a property that are secured with Salto KS smart access devices. Access permissions are assigned to these entrances through access groups and access schedules.</td></tr><tr><td><p><picture><source srcset="../../.gitbook/assets/acs-credential_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/acs-credential_light.png" alt="" data-size="line"></picture></p><p> <a href="../../api/acs/credentials/"><code>acs_credential</code></a></p></td><td><p>PINs, key cards or tags, or mobile keys.</p><ul><li>PINs: Unique personal identification numbers assigned to each user. For Salto KS, you cannot specify a custom PIN code. Instead, Salto KS generates the PIN code.</li><li>Key cards to tags: Physical cards that users can swipe or tap at access points.</li><li>Mobile keys: Digital keys stored on users' mobile devices, enabling them to access entrances using their smartphones.</li></ul></td></tr></tbody></table>
+<table><thead><tr><th width="233">Seam Resource</th><th>Description</th></tr></thead><tbody><tr><td><picture><source srcset="../../.gitbook/assets/acs-user_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/acs-user_light.png" alt="" data-size="line"></picture> <a href="../../api/acs/users/"><code>acs_user</code></a></td><td>Individual who has been granted access to specific entrances within a property. ACS users could include employees, residents, and temporary guests. You can configure access schedules for users, if desired. You assign a unique credential to each user.</td></tr><tr><td><picture><source srcset="../../.gitbook/assets/acs-access-group_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/acs-access-group_light.png" alt="" data-size="line"></picture> <a href="../../api/acs/access_groups/"><code>acs_access_group</code></a></td><td>Collection of users with shared access permissions. Instead of assigning permissions individually, users are grouped based on their access needs. Access groups streamline the management of access rights and ensure consistency.</td></tr><tr><td><picture><source srcset="../../.gitbook/assets/acs-schedule_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/acs-schedule_light.png" alt="" data-size="line"></picture> <code>access_schedule</code></td><td>Timeframe during which access is permitted. By associating schedules with ACS users and then assigning users to access groups, property managers can control when users can enter specific areas, enhancing security and operational efficiency.<br>If you set an access schedule for a Salto KS ACS user, the user appears as "unsubscribed" in the ACS until the <code>starts_at</code> time. Once the start time arrives, Seam switches the ACS user to "subscribed," which activates their access.</td></tr><tr><td><picture><source srcset="../../.gitbook/assets/acs-entrance_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/acs-entrance_light.png" alt="" data-size="line"></picture> <a href="../../api/acs/entrances/"><code>acs_entrance</code></a></td><td>Physical points of entry within a property that are secured with Salto KS smart access devices. Access permissions are assigned to these entrances through access groups and access schedules.</td></tr><tr><td><picture><source srcset="../../.gitbook/assets/acs-credential_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/acs-credential_light.png" alt="" data-size="line"></picture> <a href="../../api/acs/credentials/"><code>acs_credential</code></a></td><td><p>PINs, key cards or tags, or mobile keys.</p><ul><li>PINs: Unique personal identification numbers assigned to each user. For Salto KS, you cannot specify a custom PIN code. Instead, Salto KS generates the PIN code.</li><li>Key cards or tags: Physical cards that users can swipe or tap at access points.</li><li>Mobile keys: Digital keys stored on users' mobile devices, enabling them to access entrances using their smartphones.</li></ul></td></tr></tbody></table>
 
 For more information about managing your Salto KS ACS through Seam, see the following topics:
 
-* [Programming Code-Based Salto KS Credentials](programming-code-based-salto-ks-credentials.md)
+* [Programming Salto KS PIN Code Credentials](programming-code-based-salto-ks-credentials.md)
+* [Programming Salto KS Mobile Credentials](programming-salto-ks-mobile-credentials.md)
 * [Access Group-Based Access Control Systems](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-group-based-access-control-systems)
 * [Access Control Systems](../../products/access-systems/)
 * [Mobile Access](../../capability-guides/mobile-access/)
 
 ***
 
-## Supported Features
+## Supported Devices
 
-This integration supports all Salto KS locks connected to the Salto KS ACS.
+This integration supports all Salto locks connected to the Salto KS ACS.
+
+{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
+  endpoint="https://connect.getseam.com"
+  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
+  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
+  manufacturers='["Salto"]'
+/>" %}
+
+***
+
+## Supported Features
 
 We support the following features:
 
 * [Managing access systems](../../products/access-systems/)
 * [Issuing code-based credentials](programming-code-based-salto-ks-credentials.md)
+* [Issuing mobile access credentials](../../capability-guides/mobile-access/)
 
 ***
 
@@ -70,6 +83,24 @@ When creating a credential for Salto KS, you cannot specify a custom PIN code. I
 
 ***
 
+## Brand-Specific Behaviors
+
+Note the following Salto KS behaviors:
+
+### Proximity Behavior
+
+To use access devices successfully within a Salto KS access system, it is important to understand the following proximity behavior requirements:
+
+#### Card Readers
+
+Card readers within a Salto KS access system are powered. Consequently, they can read a credential from up to 30 cm away. If you disable the proximity setting, this distance increases up to 15 meters.
+
+#### Unit Doors
+
+Unit door locks within a Salto KS access system must first be woken up, and then a credential can be read. To use mobile keys with these locks, you must hold the back of the phone to the lock. There is no way to disable this requirement.
+
+***
+
 ## Brand-Specific Errors
 
 For information about Salto KS ACS-related errors, see [Troubleshooting Your ACS](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md).
@@ -80,4 +111,4 @@ For information about Salto KS ACS-related errors, see [Troubleshooting Your ACS
 
 To purchase the Salto KS ACS and devices, contact Salto KS Sales.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Salto KS Sales Contact Page</strong></td><td></td><td><a href="https://saltosystems.com/en/contact/">https://saltosystems.com/en/contact/</a></td><td><a href="../../.gitbook/assets/salto-logo.png">salto-logo.png</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Salto KS Sales Contact Page</strong></td><td></td><td><a href="https://saltosystems.com/en/contact/">https://saltosystems.com/en/contact/</a></td><td><a href="../../.gitbook/assets/salto-ks-logo.png">salto-ks-logo.png</a></td></tr></tbody></table>

@@ -12,7 +12,9 @@ To use the Seam API to create mobile credentials for mobile app users in a Salto
 
     Seam user identities enable you to match your own mobile app users to ACS users that you create using the Seam API.
 2. Retrieve a [credential manager](../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#initialize-the-user-identity-with-a-credential-manager) for your Salto KS ACS.
-3. Set up an [enrollment automation](../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md) for the user identity, to enable mobile keys.
+3.  Set up an [enrollment automation](../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md) for the user identity, to enable mobile keys.
+
+    Use the Salto KS Credential Manager for this enrollment automation.
 4. Create an [ACS user](../../products/access-systems/user-management.md) on the Salto KS ACS or assign an existing ACS user to the user identity.\
    The resources that you create for the ACS user are available under the associated user identity.
    * For Salto KS, you can specify the `access_schedule` for the ACS user. The `access_schedule` consists of `starts_at` and `ends_at` times. In this case, a Salto KS ACS user appears as "unsubscribed" in the ACS until the `starts_at` time. Once the start time arrives, Seam switches the ACS user to "subscribed," which activates their access.
@@ -61,6 +63,8 @@ jane_user = seam.user_identities.create(
 
 # Step 2:
 # Retrieve a credential manager.
+# In your app, find the acs_system_id of the Salto KS Credential Manager
+# and then use this ID to set up an enrollment automation in the next step.
 salto_ks_credential_manager = seam.acs.systems.list_compatible_credential_manager_acs_systems(
     acs_system_id = building_a.acs_system_id
   )[0]
@@ -159,6 +163,8 @@ jane_user=$(curl -X 'POST' \
 
 # Step 2:
 # Retrieve a credential manager.
+# In your app, find the acs_system_id of the Salto KS Credential Manager
+# and then use this ID to set up an enrollment automation in the next step.
 salto_ks_credential_manager=$(curl -X 'POST' \
   'https://connect.getseam.com/acs/systems/list_compatible_credential_manager_acs_systems' \
   -H 'accept: application/json' \
@@ -281,6 +287,8 @@ const janeUser = await seam.userIdentities.create({
 
 // Step 2:
 // Retrieve a credential manager.
+// In your app, find the acs_system_id of the Salto KS Credential Manager
+// and then use this ID to set up an enrollment automation in the next step.
 const saltoKsCredentialManager = (await seam.acs.systems
   .listCompatibleCredentialManagerAcsSystems({
     acs_system_id: buildingA.acs_system_id
@@ -390,6 +398,8 @@ $jane_user = $seam->user_identities->create(
 
 // Step 2:
 // Retrieve a credential manager.
+// In your app, find the acs_system_id of the Salto KS Credential Manager
+// and then use this ID to set up an enrollment automation in the next step.
 $salto_ks_credential_manager = $seam->acs->systems->list_compatible_credential_manager_acs_systems(
   acs_system_id: $building_a->acs_system_id
 )[0];
@@ -524,6 +534,8 @@ if err != nil {
 
 // Step 2:
 // Retrieve a credential manager.
+// In your app, find the acs_system_id of the Salto KS Credential Manager
+// and then use this ID to set up an enrollment automation in the next step.
 saltoKsCredentialManagers, err := client.Acs.Systems.ListCompatibleCredentialManagerAcsSystems(
     context.Background(), &acs.SystemsListCompatibleCredentialManagerAcsSystemsRequest{
       AcsSystemId: buildingA.AcsSystemId,

@@ -23,6 +23,10 @@ For detailed information about the ASSA ABLOY Visionline devices that Seam suppo
   manufacturers='["Assa"]'
 />" %}
 
+***
+
+## Supported Features
+
 We support the following features:
 
 * [Managing access systems](../../products/access-systems/)

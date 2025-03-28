@@ -37,6 +37,10 @@ For detailed information about the Yale devices that Seam supports, see the foll
   manufacturers='["Yale"]'
 />" %}
 
+***
+
+## Supported Features
+
 We support the following features:
 
 * [Triggering web unlock actions](../api-clients/locks/unlock_door.md)
@@ -92,4 +96,4 @@ When you encounter this error, it means that here are no more free slots availab
 
 Here are a few recommended vendors you can use to order Yale locks. Some of these vendors can even help with installation services.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Amazon - Yale Locks</strong></td><td></td><td></td><td><a href="https://amzn.to/3q5R5TM">https://amzn.to/3q5R5TM</a></td><td><a href="../.gitbook/assets/Screen Shot 2023-07-27 at 10.40.18 AM.png">Screen Shot 2023-07-27 at 10.40.18 AM.png</a></td></tr><tr><td><strong>GoKeyless - Yale Locks</strong></td><td></td><td></td><td><a href="https://www.gokeyless.com/pa_brand/yale-home/">https://www.gokeyless.com/pa_brand/yale-home/</a></td><td><a href="../.gitbook/assets/Screen Shot 2023-07-27 at 10.37.07 AM (1).png">Screen Shot 2023-07-27 at 10.37.07 AM (1).png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Amazon - Yale Locks</strong></td><td></td><td></td><td><a href="https://amzn.to/3q5R5TM">https://amzn.to/3q5R5TM</a></td><td><a href="../.gitbook/assets/yale-on-amazon.png">yale-on-amazon.png</a></td></tr><tr><td><strong>GoKeyless - Yale Locks</strong></td><td></td><td></td><td><a href="https://www.gokeyless.com/pa_brand/yale-home/">https://www.gokeyless.com/pa_brand/yale-home/</a></td><td><a href="../.gitbook/assets/yale-on-gokeyless.png">yale-on-gokeyless.png</a></td></tr></tbody></table>
