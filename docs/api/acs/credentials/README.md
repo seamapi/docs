@@ -56,24 +56,29 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 <details>
 
-<summary><code>door_names</code> Format: <code>List</code> Item format: <code>String</code></summary>
+<summary><code>door_names</code> <i>List</i> <i>String</i></summary>
 </details>
+
 <details>
 
-<summary><code>endpoint_id</code> Format: <code>String</code></summary>
+<summary><code>endpoint_id</code> <i>String</i></summary>
 </details>
+
 <details>
 
-<summary><code>key_id</code> Format: <code>String</code></summary>
+<summary><code>key_id</code> <i>String</i></summary>
 </details>
+
 <details>
 
-<summary><code>key_issuing_request_id</code> Format: <code>String</code></summary>
+<summary><code>key_issuing_request_id</code> <i>String</i></summary>
 </details>
+
 <details>
 
-<summary><code>override_guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>String</code></summary>
+<summary><code>override_guest_acs_entrance_ids</code> <i>List</i> <i>String</i></summary>
 </details>
+
 ---
 `card_number` *String*
 
@@ -112,12 +117,14 @@ Errors associated with the [credential](../../../capability-guides/access-system
 
 <details>
 
-<summary><code>error_code</code> Format: <code>String</code></summary>
+<summary><code>error_code</code> <i>String</i></summary>
 </details>
+
 <details>
 
-<summary><code>message</code> Format: <code>String</code></summary>
+<summary><code>message</code> <i>String</i></summary>
 </details>
+
 ---
 `external_type` *Enum*
 
@@ -203,40 +210,48 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 
 <details>
 
-<summary><code>auto_join</code> Format: <code>Boolean</code></summary>
+<summary><code>auto_join</code> <i>Boolean</i></summary>
 </details>
+
 <details>
 
-<summary><code>card_function_type</code> Format: <code>Enum</code></summary>
+<summary><code>card_function_type</code> <i>Enum</i></summary>
 
 Possible enum values:
 - `guest`
 - `staff`
 </details>
+
 <details>
 
-<summary><code>card_id</code> Format: <code>String</code></summary>
+<summary><code>card_id</code> <i>String</i></summary>
 </details>
+
 <details>
 
-<summary><code>common_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
+<summary><code>common_acs_entrance_ids</code> <i>List</i> <i>UUID</i></summary>
 </details>
+
 <details>
 
-<summary><code>credential_id</code> Format: <code>String</code></summary>
+<summary><code>credential_id</code> <i>String</i></summary>
 </details>
+
 <details>
 
-<summary><code>guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
+<summary><code>guest_acs_entrance_ids</code> <i>List</i> <i>UUID</i></summary>
 </details>
+
 <details>
 
-<summary><code>is_valid</code> Format: <code>Boolean</code></summary>
+<summary><code>is_valid</code> <i>Boolean</i></summary>
 </details>
+
 <details>
 
-<summary><code>joiner_acs_credential_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
+<summary><code>joiner_acs_credential_ids</code> <i>List</i> <i>UUID</i></summary>
 </details>
+
 ---
 [`warnings`](./#warnings-1) *List* *of Objects*
 
@@ -325,48 +340,56 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 <details>
 
-<summary><code>acs_credential_id</code> Format: <code>UUID</code></summary>
+<summary><code>acs_credential_id</code> <i>UUID</i></summary>
 </details>
+
 <details>
 
-<summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
+<summary><code>acs_system_id</code> <i>UUID</i></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
+
 <details>
 
-<summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
+<summary><code>connected_account_id</code> <i>UUID</i></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
+
 <details>
 
-<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+<summary><code>created_at</code> <i>Datetime</i></summary>
 
 Date and time at which the event was created.
 </details>
+
 <details>
 
-<summary><code>event_id</code> Format: <code>UUID</code></summary>
+<summary><code>event_id</code> <i>UUID</i></summary>
 
 ID of the event.
 </details>
+
 <details>
 
-<summary><code>event_type</code> Format: <code>String</code></summary>
+<summary><code>event_type</code> <i>String</i></summary>
 </details>
+
 <details>
 
-<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
+<summary><code>occurred_at</code> <i>Datetime</i></summary>
 
 Date and time at which the event occurred.
 </details>
+
 <details>
 
-<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
+<summary><code>workspace_id</code> <i>UUID</i></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>
+
 ---
 
 ### `acs_credential.issued`
@@ -375,48 +398,56 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 <details>
 
-<summary><code>acs_credential_id</code> Format: <code>UUID</code></summary>
+<summary><code>acs_credential_id</code> <i>UUID</i></summary>
 </details>
+
 <details>
 
-<summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
+<summary><code>acs_system_id</code> <i>UUID</i></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
+
 <details>
 
-<summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
+<summary><code>connected_account_id</code> <i>UUID</i></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
+
 <details>
 
-<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+<summary><code>created_at</code> <i>Datetime</i></summary>
 
 Date and time at which the event was created.
 </details>
+
 <details>
 
-<summary><code>event_id</code> Format: <code>UUID</code></summary>
+<summary><code>event_id</code> <i>UUID</i></summary>
 
 ID of the event.
 </details>
+
 <details>
 
-<summary><code>event_type</code> Format: <code>String</code></summary>
+<summary><code>event_type</code> <i>String</i></summary>
 </details>
+
 <details>
 
-<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
+<summary><code>occurred_at</code> <i>Datetime</i></summary>
 
 Date and time at which the event occurred.
 </details>
+
 <details>
 
-<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
+<summary><code>workspace_id</code> <i>UUID</i></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>
+
 ---
 
 ### `acs_credential.reissued`
@@ -425,47 +456,55 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 <details>
 
-<summary><code>acs_credential_id</code> Format: <code>UUID</code></summary>
+<summary><code>acs_credential_id</code> <i>UUID</i></summary>
 </details>
+
 <details>
 
-<summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
+<summary><code>acs_system_id</code> <i>UUID</i></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
+
 <details>
 
-<summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
+<summary><code>connected_account_id</code> <i>UUID</i></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
+
 <details>
 
-<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+<summary><code>created_at</code> <i>Datetime</i></summary>
 
 Date and time at which the event was created.
 </details>
+
 <details>
 
-<summary><code>event_id</code> Format: <code>UUID</code></summary>
+<summary><code>event_id</code> <i>UUID</i></summary>
 
 ID of the event.
 </details>
+
 <details>
 
-<summary><code>event_type</code> Format: <code>String</code></summary>
+<summary><code>event_type</code> <i>String</i></summary>
 </details>
+
 <details>
 
-<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
+<summary><code>occurred_at</code> <i>Datetime</i></summary>
 
 Date and time at which the event occurred.
 </details>
+
 <details>
 
-<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
+<summary><code>workspace_id</code> <i>UUID</i></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>
+
 ---
 

@@ -53,12 +53,14 @@ Errors associated with the `phone`.
 
 <details>
 
-<summary><code>error_code</code> Format: <code>String</code></summary>
+<summary><code>error_code</code> <i>String</i></summary>
 </details>
+
 <details>
 
-<summary><code>message</code> Format: <code>String</code></summary>
+<summary><code>message</code> <i>String</i></summary>
 </details>
+
 ---
 `nickname` *String*
 
@@ -73,13 +75,14 @@ Properties of the phone.
 
 <details>
 
-<summary><code>assa_abloy_credential_service_metadata</code> Format: <code>Object</code></summary>
+<summary><code>assa_abloy_credential_service_metadata</code> <i>Object</i></summary>
 
 ASSA ABLOY Credential Service metadata for the phone.
 </details>
+
 <details>
 
-<summary><code>assa_abloy_credential_service_metadata.endpoints</code> Format: <code>List</code> Item format: <code>Object</code></summary>
+<summary><code>assa_abloy_credential_service_metadata.endpoints</code> <i>List</i> <i>Object</i></summary>
 
 Endpoints associated with the phone.
 
@@ -93,24 +96,28 @@ Endpoints associated with the phone.
   Indicated whether the endpoint is active.
 
 </details>
+
 <details>
 
-<summary><code>assa_abloy_credential_service_metadata.has_active_endpoint</code> Format: <code>Boolean</code></summary>
+<summary><code>assa_abloy_credential_service_metadata.has_active_endpoint</code> <i>Boolean</i></summary>
 
 Indicates whether the credential service has active endpoints associated with the phone.
 </details>
+
 <details>
 
-<summary><code>salto_space_credential_service_metadata</code> Format: <code>Object</code></summary>
+<summary><code>salto_space_credential_service_metadata</code> <i>Object</i></summary>
 
 Salto Space credential service metadata for the phone.
 </details>
+
 <details>
 
-<summary><code>salto_space_credential_service_metadata.has_active_phone</code> Format: <code>Boolean</code></summary>
+<summary><code>salto_space_credential_service_metadata.has_active_phone</code> <i>Boolean</i></summary>
 
 Indicates whether the credential service has an active associated phone.
 </details>
+
 ---
 `warnings` *List* *of Objects*
 
@@ -119,12 +126,14 @@ Warnings associated with the `phone`.
 
 <details>
 
-<summary><code>message</code> Format: <code>String</code></summary>
+<summary><code>message</code> <i>String</i></summary>
 </details>
+
 <details>
 
-<summary><code>warning_code</code> Format: <code>String</code></summary>
+<summary><code>warning_code</code> <i>String</i></summary>
 </details>
+
 ---
 `workspace_id` *UUID*
 
@@ -154,37 +163,43 @@ A phone device was deactivated.
 
 <details>
 
-<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+<summary><code>created_at</code> <i>Datetime</i></summary>
 
 Date and time at which the event was created.
 </details>
+
 <details>
 
-<summary><code>device_id</code> Format: <code>UUID</code></summary>
+<summary><code>device_id</code> <i>UUID</i></summary>
 
 ID of the [device](../../core-concepts/devices/README.md).
 </details>
+
 <details>
 
-<summary><code>event_id</code> Format: <code>UUID</code></summary>
+<summary><code>event_id</code> <i>UUID</i></summary>
 
 ID of the event.
 </details>
+
 <details>
 
-<summary><code>event_type</code> Format: <code>String</code></summary>
+<summary><code>event_type</code> <i>String</i></summary>
 </details>
+
 <details>
 
-<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
+<summary><code>occurred_at</code> <i>Datetime</i></summary>
 
 Date and time at which the event occurred.
 </details>
+
 <details>
 
-<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
+<summary><code>workspace_id</code> <i>UUID</i></summary>
 
 ID of the [workspace](../../core-concepts/workspaces/README.md).
 </details>
+
 ---
 
