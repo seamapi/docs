@@ -53,10 +53,12 @@ Action attempt to track encoding credential data from the physical encoder onto 
 
 ID of the action attempt.
 
+---
 `action_type` *String*
 
 Type of action that the action attempt tracks.
 
+---
 `status` *Enum*
 
 <details>
@@ -66,3 +68,4 @@ Type of action that the action attempt tracks.
 - `error`
 </details>
 
+---
