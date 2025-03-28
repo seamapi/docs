@@ -56,7 +56,7 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 <details>
 
-<summary><code>door_names</code> <i>List</i> <i>String</i></summary>
+<summary><code>door_names</code> <i>List</i> <i>of Strings</i></summary>
 </details>
 
 <details>
@@ -76,7 +76,7 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 <details>
 
-<summary><code>override_guest_acs_entrance_ids</code> <i>List</i> <i>String</i></summary>
+<summary><code>override_guest_acs_entrance_ids</code> <i>List</i> <i>of Strings</i></summary>
 </details>
 
 ---
@@ -216,10 +216,14 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 <details>
 
 <summary><code>card_function_type</code> <i>Enum</i></summary>
+<details>
 
-Possible enum values:
+<summary>Possible enum values:</summary>
+
 - `guest`
 - `staff`
+</details>
+
 </details>
 
 <details>
@@ -229,7 +233,7 @@ Possible enum values:
 
 <details>
 
-<summary><code>common_acs_entrance_ids</code> <i>List</i> <i>UUID</i></summary>
+<summary><code>common_acs_entrance_ids</code> <i>List</i> <i>of UUIDs</i></summary>
 </details>
 
 <details>
@@ -239,7 +243,7 @@ Possible enum values:
 
 <details>
 
-<summary><code>guest_acs_entrance_ids</code> <i>List</i> <i>UUID</i></summary>
+<summary><code>guest_acs_entrance_ids</code> <i>List</i> <i>of UUIDs</i></summary>
 </details>
 
 <details>
@@ -249,7 +253,7 @@ Possible enum values:
 
 <details>
 
-<summary><code>joiner_acs_credential_ids</code> <i>List</i> <i>UUID</i></summary>
+<summary><code>joiner_acs_credential_ids</code> <i>List</i> <i>of UUIDs</i></summary>
 </details>
 
 ---

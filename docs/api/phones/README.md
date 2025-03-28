@@ -82,18 +82,20 @@ ASSA ABLOY Credential Service metadata for the phone.
 
 <details>
 
-<summary><code>assa_abloy_credential_service_metadata.endpoints</code> <i>List</i> <i>Object</i></summary>
+<summary><code>assa_abloy_credential_service_metadata.endpoints</code> <i>List</i> <i>of Objects</i></summary>
 
 Endpoints associated with the phone.
 
-- <code>endpoint_id</code> Format: <code>String</code>
+- <code>endpoint_id</code> <i>String</i>
 
   ID of the associated endpoint.
 
 
-- <code>is_active</code> Format: <code>Boolean</code>
+
+- <code>is_active</code> <i>Boolean</i>
 
   Indicated whether the endpoint is active.
+
 
 </details>
 
