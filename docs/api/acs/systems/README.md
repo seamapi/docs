@@ -164,9 +164,7 @@ Format: `Object`
 <summary><code>time_zone</code> Format: <code>String</code></summary>
 
 Time zone in which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) is located.
-
 </details>
-
 ---
 
 ### `name`
@@ -221,25 +219,19 @@ Format: `Object`
 <summary><code>lan_address</code> Format: <code>String</code></summary>
 
 IP address or hostname of the main Visionline server relative to [Seam Bridge](../../../capability-guides/seam-bridge.md) on the local network.
-
 </details>
-
 <details>
 
 <summary><code>mobile_access_uuid</code> Format: <code>String</code></summary>
 
 Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.
-
 </details>
-
 <details>
 
 <summary><code>system_id</code> Format: <code>String</code></summary>
 
 Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager.
-
 </details>
-
 ---
 
 ### [`warnings`](./#warnings-1)
@@ -342,55 +334,41 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 <summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
-
 </details>
-
 <details>
 
 <summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
-
 </details>
-
 <details>
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the event was created.
-
 </details>
-
 <details>
 
 <summary><code>event_id</code> Format: <code>UUID</code></summary>
 
 ID of the event.
-
 </details>
-
 <details>
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the event occurred.
-
 </details>
-
 <details>
 
 <summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
 </details>
-
 ---
 
 ### `acs_system.added`
@@ -402,55 +380,41 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 <summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
-
 </details>
-
 <details>
 
 <summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
-
 </details>
-
 <details>
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the event was created.
-
 </details>
-
 <details>
 
 <summary><code>event_id</code> Format: <code>UUID</code></summary>
 
 ID of the event.
-
 </details>
-
 <details>
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the event occurred.
-
 </details>
-
 <details>
 
 <summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
 </details>
-
 ---
 
 ### `acs_system.disconnected`
@@ -462,54 +426,40 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 <summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
-
 </details>
-
 <details>
 
 <summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
-
 </details>
-
 <details>
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the event was created.
-
 </details>
-
 <details>
 
 <summary><code>event_id</code> Format: <code>UUID</code></summary>
 
 ID of the event.
-
 </details>
-
 <details>
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the event occurred.
-
 </details>
-
 <details>
 
 <summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
 </details>
-
 ---
 

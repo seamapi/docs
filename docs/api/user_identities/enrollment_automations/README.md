@@ -76,46 +76,34 @@ An [enrollment automation](../../../capability-guides/mobile-access/issuing-mobi
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the event was created.
-
 </details>
-
 <details>
 
 <summary><code>enrollment_automation_id</code> Format: <code>UUID</code></summary>
 
 ID of the [enrollment automation](../../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut).
-
 </details>
-
 <details>
 
 <summary><code>event_id</code> Format: <code>UUID</code></summary>
 
 ID of the event.
-
 </details>
-
 <details>
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the event occurred.
-
 </details>
-
 <details>
 
 <summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
 </details>
-
 ---
 
