@@ -15,19 +15,20 @@
 {{/if}}
 
 {{#each properties}}
-{{#if linkTarget}}[`{{name}}`]({{linkTarget}}){{else}}`{{name}}`{{/if}} *{{format}}`*{{#if listItemFormat}}* of {{listItemFormat}}s*{{/if}}
-{{#if isDeprecated}}
-{{> deprecated-warning}}
-{{/if}}
+{{#if linkTarget}}[`{{name}}`]({{linkTarget}}){{else}}`{{name}}`{{/if}} *{{format}}*{{#if listItemFormat}}* of {{listItemFormat}}s*{{/if}}
 {{#if description}}
 {{description}}
 {{/if}}
+{{#if isDeprecated}}
+{{> deprecated-warning}}
+{{/if}}
 {{#if enumValues}}
-
-Possible enum values:
+<details>
+<summary>Possible enum values:</summary>
 {{#each enumValues}}
 - `{{this}}`
 {{/each}}
+</details>
 {{/if}}
 {{#unless (eq objectProperties undefined)}}
 {{#if (eq objectProperties.length 0)}}
