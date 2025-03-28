@@ -93,11 +93,13 @@ To use access devices successfully within a Salto KS access system, it is import
 
 #### Card Readers
 
-Card readers within a Salto KS access system are powered. Consequently, they can read a credential from up to 30 cm away. If you disable the proximity setting, this distance increases up to 15 meters.
+Card readers within a Salto KS access system are powered. Consequently, they can read a credential from up to around 30 cm away if Near Detection Mode is enabled. If you disable this setting, this distance increases to around 15 meters.
+
+For more details, see [this Salto KS document](https://support.saltosystems.com/ks/hardware/lock-information-and-settings/#im-having-proximity-issues-how-close-does-a-phone-need-to-be-to-a-lock-to-open-it).
 
 #### Unit Doors
 
-Unit door locks within a Salto KS access system must first be woken up, and then a credential can be read. To use mobile keys with these locks, you must hold the back of the phone to the lock. There is no way to disable this requirement.
+Unit door locks within a Salto KS access system must first be woken up, and then a credential can be read. To use mobile keys with these locks, you must hold (tap) the back of the phone to the lock. There is no way to disable this requirement.
 
 ***
 
