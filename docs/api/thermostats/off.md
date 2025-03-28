@@ -167,8 +167,10 @@ Setting HVAC mode.
 
 ID of the action attempt.
 
+
 ---
 `action_type` *String*
+
 
 ---
 `status` *Enum*
@@ -181,5 +183,6 @@ ID of the action attempt.
 - `pending`
 - `error`
 </details>
+
 
 ---

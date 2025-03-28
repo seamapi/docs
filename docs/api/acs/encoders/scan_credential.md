@@ -44,8 +44,10 @@ Reading credential data from physical encoder.
 
 ID of the action attempt.
 
+
 ---
 `action_type` *String*
+
 
 ---
 `status` *Enum*
@@ -58,5 +60,6 @@ ID of the action attempt.
 - `pending`
 - `error`
 </details>
+
 
 ---

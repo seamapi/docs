@@ -25,20 +25,24 @@ To verify if your access control system requires a card encoder, see the corresp
 
 ID of the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners.
 
+
 ---
 `acs_system_id` *UUID*
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+
 
 ---
 `created_at` *Datetime*
 
 Date and time at which the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) was created.
 
+
 ---
 `display_name` *String*
 
 Display name for the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+
 
 ---
 `errors` *List* *of Objects*
@@ -63,10 +67,12 @@ Unique identifier of the type of error. Enables quick recognition and categoriza
 <summary><code>message</code> Format: <code>String</code></summary>
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-</details>---
+</details>
+---
 `workspace_id` *UUID*
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+
 
 ---
 ## Endpoints

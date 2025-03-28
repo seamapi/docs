@@ -12,20 +12,24 @@ Represents a [thermostat schedule](../../../capability-guides/thermostats/creati
 
 Key of the [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to use for the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
+
 ---
 `created_at` *Datetime*
 
 Date and time at which the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) was created.
+
 
 ---
 `device_id` *UUID*
 
 ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device.
 
+
 ---
 `ends_at` *Datetime*
 
 Date and time at which the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+
 
 ---
 `errors` *List* *of Objects*
@@ -44,25 +48,30 @@ Unique identifier of the type of error. Enables quick recognition and categoriza
 <summary><code>message</code> Format: <code>String</code></summary>
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-</details>---
+</details>
+---
 `max_override_period_minutes` *Number*
 
 Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md). See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
+
 
 ---
 `name` *String*
 
 User-friendly name to identify the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
+
 ---
 `starts_at` *Datetime*
 
 Date and time at which the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
+
 ---
 `thermostat_schedule_id` *UUID*
 
 ID of the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
+
 
 ---
 ## Endpoints
