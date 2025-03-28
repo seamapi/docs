@@ -1,6 +1,5 @@
 # Activate a Climate Preset
 
-## Signature
 ```
 POST /thermostats/activate_climate_preset ⇒ { action_attempt }
 ```

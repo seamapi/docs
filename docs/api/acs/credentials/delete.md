@@ -1,6 +1,5 @@
 # Delete a Credential
 
-## Signature
 ```
 POST /acs/credentials/delete ⇒ void
 ```

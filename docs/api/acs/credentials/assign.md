@@ -1,6 +1,5 @@
 # Assign a Credential to an ACS User
 
-## Signature
 ```
 PATCH /acs/credentials/assign ⇒ void
 ```

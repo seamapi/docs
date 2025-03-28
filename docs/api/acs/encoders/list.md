@@ -1,6 +1,5 @@
 # List Encoders
 
-## Signature
 ```
 POST /acs/encoders/list ⇒ { acs_encoders: [acs_encoder, …] }
 ```

@@ -1,6 +1,5 @@
 # Encode a Credential
 
-## Signature
 ```
 POST /acs/encoders/encode_credential ⇒ { action_attempt }
 ```

@@ -1,6 +1,5 @@
 # Get an Access Group
 
-## Signature
 ```
 POST /acs/access_groups/get ⇒ { acs_access_group }
 ```

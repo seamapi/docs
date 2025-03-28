@@ -1,6 +1,5 @@
 # Grant a User Identity Access to a Device
 
-## Signature
 ```
 PUT /user_identities/grant_access_to_device ⇒ void
 ```

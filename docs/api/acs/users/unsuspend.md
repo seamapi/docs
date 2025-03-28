@@ -1,6 +1,5 @@
 # Unsuspend an ACS User
 
-## Signature
 ```
 POST /acs/users/unsuspend ⇒ void
 ```

@@ -1,6 +1,5 @@
 # List Entrances
 
-## Signature
 ```
 POST /acs/entrances/list ⇒ { acs_entrances: [acs_entrance, …] }
 ```

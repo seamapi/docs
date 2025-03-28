@@ -1,6 +1,5 @@
 # Create an ACS User
 
-## Signature
 ```
 POST /acs/users/create ⇒ { acs_user }
 ```

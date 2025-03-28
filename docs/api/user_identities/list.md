@@ -1,6 +1,5 @@
 # List User Identities
 
-## Signature
 ```
 POST /user_identities/list ⇒ { user_identities: [user_identity, …] }
 ```

@@ -1,6 +1,5 @@
 # List ACS Systems
 
-## Signature
 ```
 POST /acs/systems/list ⇒ { acs_systems: [acs_system, …] }
 ```

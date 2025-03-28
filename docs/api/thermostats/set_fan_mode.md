@@ -1,6 +1,5 @@
 # Set the Fan Mode Setting
 
-## Signature
 ```
 POST /thermostats/set_fan_mode ⇒ { action_attempt }
 ```

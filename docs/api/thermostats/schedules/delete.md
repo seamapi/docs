@@ -1,6 +1,5 @@
 # Delete a Thermostat Schedule
 
-## Signature
 ```
 POST /thermostats/schedules/delete ⇒ void
 ```

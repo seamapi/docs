@@ -1,6 +1,5 @@
 # List Thermostats
 
-## Signature
 ```
 POST /thermostats/list ⇒ { devices: [device, …] }
 ```

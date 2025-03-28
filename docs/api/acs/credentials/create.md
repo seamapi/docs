@@ -1,6 +1,5 @@
 # Create a Credential for an ACS User
 
-## Signature
 ```
 POST /acs/credentials/create ⇒ { acs_credential }
 ```

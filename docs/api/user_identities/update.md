@@ -1,6 +1,5 @@
 # Update a User Identity
 
-## Signature
 ```
 PATCH /user_identities/update ⇒ void
 ```

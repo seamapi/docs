@@ -1,6 +1,5 @@
 # Launch an Enrollment Automation
 
-## Signature
 ```
 POST /user_identities/enrollment_automations/launch ⇒ { enrollment_automation }
 ```

@@ -1,6 +1,5 @@
 # Set the HVAC Mode
 
-## Signature
 ```
 POST /thermostats/set_hvac_mode ⇒ { action_attempt }
 ```

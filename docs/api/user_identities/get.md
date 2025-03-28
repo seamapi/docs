@@ -1,6 +1,5 @@
 # Get a User Identity
 
-## Signature
 ```
 POST /user_identities/get ⇒ { user_identity }
 ```

@@ -1,6 +1,5 @@
 # Create a Thermostat Schedule
 
-## Signature
 ```
 POST /thermostats/schedules/create ⇒ { thermostat_schedule }
 ```

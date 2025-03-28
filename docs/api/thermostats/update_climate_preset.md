@@ -1,6 +1,5 @@
 # Update a Climate Preset
 
-## Signature
 ```
 PATCH /thermostats/update_climate_preset ⇒ void
 ```

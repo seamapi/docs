@@ -1,6 +1,5 @@
 # List Compatible Credential Manager ACS Systems
 
-## Signature
 ```
 POST /acs/systems/list_compatible_credential_manager_acs_systems ⇒ { acs_systems: [acs_system, …] }
 ```

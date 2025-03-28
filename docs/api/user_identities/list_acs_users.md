@@ -1,6 +1,5 @@
 # List ACS Users Associated with a User Identity
 
-## Signature
 ```
 POST /user_identities/list_acs_users ⇒ { acs_users: [acs_user, …] }
 ```

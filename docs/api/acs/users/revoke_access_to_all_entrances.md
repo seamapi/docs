@@ -1,6 +1,5 @@
 # Revoke ACS User Access to All Entrances
 
-## Signature
 ```
 POST /acs/users/revoke_access_to_all_entrances ⇒ void
 ```

@@ -1,6 +1,5 @@
 # List ACS User-Accessible Entrances
 
-## Signature
 ```
 POST /acs/users/list_accessible_entrances ⇒ { acs_entrances: [acs_entrance, …] }
 ```

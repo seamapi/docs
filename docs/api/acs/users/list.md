@@ -1,6 +1,5 @@
 # List ACS Users
 
-## Signature
 ```
 POST /acs/users/list ⇒ { acs_users: [acs_user, …] }
 ```

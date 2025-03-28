@@ -1,6 +1,5 @@
 # List Enrollment Automations
 
-## Signature
 ```
 POST /user_identities/enrollment_automations/list ⇒ { enrollment_automations: [enrollment_automation, …] }
 ```

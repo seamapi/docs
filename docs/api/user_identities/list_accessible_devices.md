@@ -1,6 +1,5 @@
 # List Accessible Devices for a User Identity
 
-## Signature
 ```
 POST /user_identities/list_accessible_devices ⇒ { devices: [device, …] }
 ```

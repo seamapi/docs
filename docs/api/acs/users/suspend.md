@@ -1,6 +1,5 @@
 # Suspend an ACS User
 
-## Signature
 ```
 POST /acs/users/suspend ⇒ void
 ```
