@@ -174,7 +174,9 @@ ID of the action attempt.
 `status` *Enum*
 
 <details>
+
 <summary>Possible enum values:</summary>
+
 - `success`
 - `pending`
 - `error`

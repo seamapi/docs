@@ -71,7 +71,9 @@ Errors associated with the [access control system](https://docs.seam.co/latest/c
 Brand-specific terminology for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) type.
 
 <details>
+
 <summary>Possible enum values:</summary>
+
 - `pti_site`
 - `alta_org`
 - `salto_ks_site`
@@ -129,7 +131,9 @@ Name of the [access control system](https://docs.seam.co/latest/capability-guide
 {% endhint %}
 
 <details>
+
 <summary>Possible enum values:</summary>
+
 - `pti_site`
 - `alta_org`
 - `salto_ks_site`

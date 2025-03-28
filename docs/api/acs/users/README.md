@@ -71,7 +71,9 @@ Errors associated with the [ACS user](https://docs.seam.co/latest/capability-gui
 Brand-specific terminology for the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) type.
 
 <details>
+
 <summary>Possible enum values:</summary>
+
 - `pti_user`
 - `brivo_user`
 - `hid_credential_manager_user`

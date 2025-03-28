@@ -28,7 +28,9 @@ ID of the `phone`.
 Type of phone.
 
 <details>
+
 <summary>Possible enum values:</summary>
+
 - `ios_phone`
 - `android_phone`
 </details>

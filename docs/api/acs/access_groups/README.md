@@ -19,7 +19,9 @@ To learn whether your access control system supports access groups, see the corr
 {% endhint %}
 
 <details>
+
 <summary>Possible enum values:</summary>
+
 - `pti_unit`
 - `pti_access_level`
 - `salto_ks_access_group`
@@ -59,7 +61,9 @@ Date and time at which the access group was created.
 Brand-specific terminology for the access group type.
 
 <details>
+
 <summary>Possible enum values:</summary>
+
 - `pti_unit`
 - `pti_access_level`
 - `salto_ks_access_group`

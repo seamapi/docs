@@ -17,7 +17,9 @@ For each `acs_credential`, you define the access method. You can also specify ad
 Access method for the [credential](../../../capability-guides/access-systems/managing-credentials.md). Supported values: `code`, `card`, `mobile_key`.
 
 <details>
+
 <summary>Possible enum values:</summary>
+
 - `code`
 - `card`
 - `mobile_key`
@@ -110,7 +112,9 @@ Errors associated with the [credential](../../../capability-guides/access-system
 Brand-specific terminology for the [credential](../../../capability-guides/access-systems/managing-credentials.md) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.
 
 <details>
+
 <summary>Possible enum values:</summary>
+
 - `pti_card`
 - `brivo_credential`
 - `hid_credential`

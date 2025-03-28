@@ -62,7 +62,9 @@ Type of action that the action attempt tracks.
 `status` *Enum*
 
 <details>
+
 <summary>Possible enum values:</summary>
+
 - `success`
 - `pending`
 - `error`
