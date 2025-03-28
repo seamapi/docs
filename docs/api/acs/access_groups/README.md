@@ -12,7 +12,7 @@ To learn whether your access control system supports access groups, see the corr
 
 ## Properties
 
-`access_group_type` *Enum*
+**`access_group_type`** *Enum*
 
 {% hint style="warning" %}
 **Deprecated**. Use `external_type`.
@@ -32,7 +32,7 @@ To learn whether your access control system supports access groups, see the corr
 
 
 ---
-`access_group_type_display_name` *String*
+**`access_group_type_display_name`** *String*
 
 {% hint style="warning" %}
 **Deprecated**. Use `external_type_display_name`.
@@ -40,29 +40,29 @@ To learn whether your access control system supports access groups, see the corr
 
 
 ---
-`acs_access_group_id` *UUID*
+**`acs_access_group_id`** *UUID*
 
 ID of the access group.
 
 
 ---
-`acs_system_id` *UUID*
+**`acs_system_id`** *UUID*
 
 ID of the access control system that contains the access group.
 
 
 ---
-`created_at` *Datetime*
+**`created_at`** *Datetime*
 
 Date and time at which the access group was created.
 
 
 ---
-`display_name` *String*
+**`display_name`** *String*
 
 
 ---
-`external_type` *Enum*
+**`external_type`** *Enum*
 
 Brand-specific terminology for the access group type.
 
@@ -80,50 +80,50 @@ Brand-specific terminology for the access group type.
 
 
 ---
-`external_type_display_name` *String*
+**`external_type_display_name`** *String*
 
 Display name that corresponds to the brand-specific terminology for the access group type.
 
 
 ---
-`is_managed` *Boolean*
+**`is_managed`** *Boolean*
 
 
 ---
-`name` *String*
+**`name`** *String*
 
 Name of the access group.
 
 
 ---
-`warnings` *List* *of Objects*
+**`warnings`** *List* *of Objects*
 
 Warnings associated with the `acs_access_group`.
 
 
 <details>
 
-<summary><code>created_at</code> <i>Datetime</i></summary>
+<summary><b><code>created_at**</code></b> <i>Datetime</i></summary>
 
 Date and time at which Seam created the warning.
 </details>
 
 <details>
 
-<summary><code>message</code> <i>String</i></summary>
+<summary><b><code>message**</code></b> <i>String</i></summary>
 
 Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
 </details>
 
 <details>
 
-<summary><code>warning_code</code> <i>String</i></summary>
+<summary><b><code>warning_code**</code></b> <i>String</i></summary>
 
 Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
 </details>
 
 ---
-`workspace_id` *UUID*
+**`workspace_id`** *UUID*
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the access group.
 
@@ -160,52 +160,52 @@ An ACS access group was deleted.
 
 <details>
 
-<summary><code>acs_access_group_id</code> <i>UUID</i></summary>
+<summary><b><code>acs_access_group_id**</code></b> <i>UUID</i></summary>
 </details>
 
 <details>
 
-<summary><code>acs_system_id</code> <i>UUID</i></summary>
+<summary><b><code>acs_system_id**</code></b> <i>UUID</i></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
 
 <details>
 
-<summary><code>connected_account_id</code> <i>UUID</i></summary>
+<summary><b><code>connected_account_id**</code></b> <i>UUID</i></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
 
 <details>
 
-<summary><code>created_at</code> <i>Datetime</i></summary>
+<summary><b><code>created_at**</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event was created.
 </details>
 
 <details>
 
-<summary><code>event_id</code> <i>UUID</i></summary>
+<summary><b><code>event_id**</code></b> <i>UUID</i></summary>
 
 ID of the event.
 </details>
 
 <details>
 
-<summary><code>event_type</code> <i>String</i></summary>
+<summary><b><code>event_type**</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><code>occurred_at</code> <i>Datetime</i></summary>
+<summary><b><code>occurred_at**</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event occurred.
 </details>
 
 <details>
 
-<summary><code>workspace_id</code> <i>UUID</i></summary>
+<summary><b><code>workspace_id**</code></b> <i>UUID</i></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>

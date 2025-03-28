@@ -12,7 +12,7 @@ For each `acs_credential`, you define the access method. You can also specify ad
 
 ## Properties
 
-`access_method` *Enum*
+**`access_method`** *Enum*
 
 Access method for the [credential](../../../capability-guides/access-systems/managing-credentials.md). Supported values: `code`, `card`, `mobile_key`.
 
@@ -27,106 +27,106 @@ Access method for the [credential](../../../capability-guides/access-systems/man
 
 
 ---
-`acs_credential_id` *UUID*
+**`acs_credential_id`** *UUID*
 
 ID of the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
 ---
-`acs_credential_pool_id` *UUID*
+**`acs_credential_pool_id`** *UUID*
 
 
 ---
-`acs_system_id` *UUID*
+**`acs_system_id`** *UUID*
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
 ---
-`acs_user_id` *UUID*
+**`acs_user_id`** *UUID*
 
 ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](../../../capability-guides/access-systems/managing-credentials.md) belongs.
 
 
 ---
-`assa_abloy_vostio_metadata` *Object*
+**`assa_abloy_vostio_metadata`** *Object*
 
 Vostio-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
 <details>
 
-<summary><code>door_names</code> <i>List</i> <i>of Strings</i></summary>
+<summary><b><code>door_names**</code></b> <i>List</i> <i>of Strings</i></summary>
 </details>
 
 <details>
 
-<summary><code>endpoint_id</code> <i>String</i></summary>
+<summary><b><code>endpoint_id**</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><code>key_id</code> <i>String</i></summary>
+<summary><b><code>key_id**</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><code>key_issuing_request_id</code> <i>String</i></summary>
+<summary><b><code>key_issuing_request_id**</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><code>override_guest_acs_entrance_ids</code> <i>List</i> <i>of Strings</i></summary>
+<summary><b><code>override_guest_acs_entrance_ids**</code></b> <i>List</i> <i>of Strings</i></summary>
 </details>
 
 ---
-`card_number` *String*
+**`card_number`** *String*
 
 Number of the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
 ---
-`code` *String*
+**`code`** *String*
 
 Access (PIN) code for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
 ---
-`created_at` *Datetime*
+**`created_at`** *Datetime*
 
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) was created.
 
 
 ---
-`display_name` *String*
+**`display_name`** *String*
 
 Display name that corresponds to the [credential](../../../capability-guides/access-systems/managing-credentials.md) type.
 
 
 ---
-`ends_at` *String*
+**`ends_at`** *String*
 
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
 
 
 ---
-`errors` *List* *of Objects*
+**`errors`** *List* *of Objects*
 
 Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
 <details>
 
-<summary><code>error_code</code> <i>String</i></summary>
+<summary><b><code>error_code**</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><code>message</code> <i>String</i></summary>
+<summary><b><code>message**</code></b> <i>String</i></summary>
 </details>
 
 ---
-`external_type` *Enum*
+**`external_type`** *Enum*
 
 Brand-specific terminology for the [credential](../../../capability-guides/access-systems/managing-credentials.md) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.
 
@@ -145,77 +145,77 @@ Brand-specific terminology for the [credential](../../../capability-guides/acces
 
 
 ---
-`external_type_display_name` *String*
+**`external_type_display_name`** *String*
 
 Display name that corresponds to the brand-specific terminology for the [credential](../../../capability-guides/access-systems/managing-credentials.md) type.
 
 
 ---
-`is_issued` *Boolean*
+**`is_issued`** *Boolean*
 
 Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) has been encoded onto a card.
 
 
 ---
-`is_latest_desired_state_synced_with_provider` *Boolean*
+**`is_latest_desired_state_synced_with_provider`** *Boolean*
 
 Indicates whether the latest state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) has been synced from Seam to the provider.
 
 
 ---
-`is_managed` *Boolean*
+**`is_managed`** *Boolean*
 
 
 ---
-`is_multi_phone_sync_credential` *Boolean*
+**`is_multi_phone_sync_credential`** *Boolean*
 
 Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
 
 
 ---
-`is_one_time_use` *Boolean*
+**`is_one_time_use`** *Boolean*
 
 Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) can only be used once. If `true`, the code becomes invalid after the first use.
 
 
 ---
-`issued_at` *Datetime*
+**`issued_at`** *Datetime*
 
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) was encoded onto a card.
 
 
 ---
-`latest_desired_state_synced_with_provider_at` *Datetime*
+**`latest_desired_state_synced_with_provider_at`** *Datetime*
 
 Date and time at which the state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) was most recently synced from Seam to the provider.
 
 
 ---
-`parent_acs_credential_id` *UUID*
+**`parent_acs_credential_id`** *UUID*
 
 ID of the parent [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
 ---
-`starts_at` *String*
+**`starts_at`** *String*
 
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 
 ---
-`visionline_metadata` *Object*
+**`visionline_metadata`** *Object*
 
 Visionline-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
 <details>
 
-<summary><code>auto_join</code> <i>Boolean</i></summary>
+<summary><b><code>auto_join**</code></b> <i>Boolean</i></summary>
 </details>
 
 <details>
 
-<summary><code>card_function_type</code> <i>Enum</i></summary>
+<summary><b><code>card_function_type**</code></b> <i>Enum</i></summary>
 <details>
 
 <summary>Possible enum values:</summary>
@@ -228,42 +228,42 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 
 <details>
 
-<summary><code>card_id</code> <i>String</i></summary>
+<summary><b><code>card_id**</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><code>common_acs_entrance_ids</code> <i>List</i> <i>of UUIDs</i></summary>
+<summary><b><code>common_acs_entrance_ids**</code></b> <i>List</i> <i>of UUIDs</i></summary>
 </details>
 
 <details>
 
-<summary><code>credential_id</code> <i>String</i></summary>
+<summary><b><code>credential_id**</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><code>guest_acs_entrance_ids</code> <i>List</i> <i>of UUIDs</i></summary>
+<summary><b><code>guest_acs_entrance_ids**</code></b> <i>List</i> <i>of UUIDs</i></summary>
 </details>
 
 <details>
 
-<summary><code>is_valid</code> <i>Boolean</i></summary>
+<summary><b><code>is_valid**</code></b> <i>Boolean</i></summary>
 </details>
 
 <details>
 
-<summary><code>joiner_acs_credential_ids</code> <i>List</i> <i>of UUIDs</i></summary>
+<summary><b><code>joiner_acs_credential_ids**</code></b> <i>List</i> <i>of UUIDs</i></summary>
 </details>
 
 ---
-[`warnings`](./#warnings-1) *List* *of Objects*
+[**`warnings`**](./#warnings-1) *List* *of Objects*
 
 Warnings associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
 ---
-`workspace_id` *UUID*
+**`workspace_id`** *UUID*
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -344,52 +344,52 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 <details>
 
-<summary><code>acs_credential_id</code> <i>UUID</i></summary>
+<summary><b><code>acs_credential_id**</code></b> <i>UUID</i></summary>
 </details>
 
 <details>
 
-<summary><code>acs_system_id</code> <i>UUID</i></summary>
+<summary><b><code>acs_system_id**</code></b> <i>UUID</i></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
 
 <details>
 
-<summary><code>connected_account_id</code> <i>UUID</i></summary>
+<summary><b><code>connected_account_id**</code></b> <i>UUID</i></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
 
 <details>
 
-<summary><code>created_at</code> <i>Datetime</i></summary>
+<summary><b><code>created_at**</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event was created.
 </details>
 
 <details>
 
-<summary><code>event_id</code> <i>UUID</i></summary>
+<summary><b><code>event_id**</code></b> <i>UUID</i></summary>
 
 ID of the event.
 </details>
 
 <details>
 
-<summary><code>event_type</code> <i>String</i></summary>
+<summary><b><code>event_type**</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><code>occurred_at</code> <i>Datetime</i></summary>
+<summary><b><code>occurred_at**</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event occurred.
 </details>
 
 <details>
 
-<summary><code>workspace_id</code> <i>UUID</i></summary>
+<summary><b><code>workspace_id**</code></b> <i>UUID</i></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>
@@ -402,52 +402,52 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 <details>
 
-<summary><code>acs_credential_id</code> <i>UUID</i></summary>
+<summary><b><code>acs_credential_id**</code></b> <i>UUID</i></summary>
 </details>
 
 <details>
 
-<summary><code>acs_system_id</code> <i>UUID</i></summary>
+<summary><b><code>acs_system_id**</code></b> <i>UUID</i></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
 
 <details>
 
-<summary><code>connected_account_id</code> <i>UUID</i></summary>
+<summary><b><code>connected_account_id**</code></b> <i>UUID</i></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
 
 <details>
 
-<summary><code>created_at</code> <i>Datetime</i></summary>
+<summary><b><code>created_at**</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event was created.
 </details>
 
 <details>
 
-<summary><code>event_id</code> <i>UUID</i></summary>
+<summary><b><code>event_id**</code></b> <i>UUID</i></summary>
 
 ID of the event.
 </details>
 
 <details>
 
-<summary><code>event_type</code> <i>String</i></summary>
+<summary><b><code>event_type**</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><code>occurred_at</code> <i>Datetime</i></summary>
+<summary><b><code>occurred_at**</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event occurred.
 </details>
 
 <details>
 
-<summary><code>workspace_id</code> <i>UUID</i></summary>
+<summary><b><code>workspace_id**</code></b> <i>UUID</i></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>
@@ -460,52 +460,52 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 <details>
 
-<summary><code>acs_credential_id</code> <i>UUID</i></summary>
+<summary><b><code>acs_credential_id**</code></b> <i>UUID</i></summary>
 </details>
 
 <details>
 
-<summary><code>acs_system_id</code> <i>UUID</i></summary>
+<summary><b><code>acs_system_id**</code></b> <i>UUID</i></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
 
 <details>
 
-<summary><code>connected_account_id</code> <i>UUID</i></summary>
+<summary><b><code>connected_account_id**</code></b> <i>UUID</i></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
 
 <details>
 
-<summary><code>created_at</code> <i>Datetime</i></summary>
+<summary><b><code>created_at**</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event was created.
 </details>
 
 <details>
 
-<summary><code>event_id</code> <i>UUID</i></summary>
+<summary><b><code>event_id**</code></b> <i>UUID</i></summary>
 
 ID of the event.
 </details>
 
 <details>
 
-<summary><code>event_type</code> <i>String</i></summary>
+<summary><b><code>event_type**</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><code>occurred_at</code> <i>Datetime</i></summary>
+<summary><b><code>occurred_at**</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event occurred.
 </details>
 
 <details>
 
-<summary><code>workspace_id</code> <i>UUID</i></summary>
+<summary><b><code>workspace_id**</code></b> <i>UUID</i></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>

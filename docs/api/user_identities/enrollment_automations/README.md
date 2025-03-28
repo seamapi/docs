@@ -8,31 +8,31 @@ Represents an [enrollment automation](https://docs.seam.co/latest/capability-gui
 
 ## Properties
 
-`created_at` *Datetime*
+**`created_at`** *Datetime*
 
 Date and time at which the enrollment automation was created.
 
 
 ---
-`credential_manager_acs_system_id` *UUID*
+**`credential_manager_acs_system_id`** *UUID*
 
 ID of the associated [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) that serves as the credential manager.
 
 
 ---
-`enrollment_automation_id` *UUID*
+**`enrollment_automation_id`** *UUID*
 
 ID of the enrollment automation.
 
 
 ---
-`user_identity_id` *UUID*
+**`user_identity_id`** *UUID*
 
 ID of the associated [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 
 ---
-`workspace_id` *UUID*
+**`workspace_id`** *UUID*
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the enrollment automation.
 
@@ -63,40 +63,40 @@ An [enrollment automation](../../../capability-guides/mobile-access/issuing-mobi
 
 <details>
 
-<summary><code>created_at</code> <i>Datetime</i></summary>
+<summary><b><code>created_at**</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event was created.
 </details>
 
 <details>
 
-<summary><code>enrollment_automation_id</code> <i>UUID</i></summary>
+<summary><b><code>enrollment_automation_id**</code></b> <i>UUID</i></summary>
 
 ID of the [enrollment automation](../../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut).
 </details>
 
 <details>
 
-<summary><code>event_id</code> <i>UUID</i></summary>
+<summary><b><code>event_id**</code></b> <i>UUID</i></summary>
 
 ID of the event.
 </details>
 
 <details>
 
-<summary><code>event_type</code> <i>String</i></summary>
+<summary><b><code>event_type**</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><code>occurred_at</code> <i>Datetime</i></summary>
+<summary><b><code>occurred_at**</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event occurred.
 </details>
 
 <details>
 
-<summary><code>workspace_id</code> <i>UUID</i></summary>
+<summary><b><code>workspace_id**</code></b> <i>UUID</i></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>

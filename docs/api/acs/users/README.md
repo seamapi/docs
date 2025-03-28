@@ -12,51 +12,51 @@ For details about how to configure `acs_user`s in your access control system, se
 
 ## Properties
 
-`access_schedule` *Object*
+**`access_schedule`** *Object*
 
 `starts_at` and `ends_at` timestamps for the [ACS user's](https://docs.seam.co/latest/capability-guides/access-systems/user-management) access.
 
 
 <details>
 
-<summary><code>ends_at</code> <i>Datetime</i></summary>
+<summary><b><code>ends_at**</code></b> <i>Datetime</i></summary>
 
 Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 </details>
 
 <details>
 
-<summary><code>starts_at</code> <i>Datetime</i></summary>
+<summary><b><code>starts_at**</code></b> <i>Datetime</i></summary>
 
 Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 </details>
 
 ---
-`acs_system_id` *UUID*
+**`acs_system_id`** *UUID*
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 ---
-`acs_user_id` *UUID*
+**`acs_user_id`** *UUID*
 
 ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 ---
-`created_at` *Datetime*
+**`created_at`** *Datetime*
 
 Date and time at which the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created.
 
 
 ---
-`display_name` *String*
+**`display_name`** *String*
 
 Display name for the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 ---
-`email` *String*
+**`email`** *String*
 
 {% hint style="warning" %}
 **Deprecated**. use email_address.
@@ -64,19 +64,19 @@ Display name for the [ACS user](https://docs.seam.co/latest/capability-guides/ac
 
 
 ---
-`email_address` *String*
+**`email_address`** *String*
 
 Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 ---
-[`errors`](./#errors-1) *List* *of Objects*
+[**`errors`**](./#errors-1) *List* *of Objects*
 
 Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 ---
-`external_type` *Enum*
+**`external_type`** *Enum*
 
 Brand-specific terminology for the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) type.
 
@@ -95,69 +95,69 @@ Brand-specific terminology for the [ACS user](https://docs.seam.co/latest/capabi
 
 
 ---
-`external_type_display_name` *String*
+**`external_type_display_name`** *String*
 
 Display name that corresponds to the brand-specific terminology for the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) type.
 
 
 ---
-`full_name` *String*
+**`full_name`** *String*
 
 Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 ---
-`hid_acs_system_id` *UUID*
+**`hid_acs_system_id`** *UUID*
 
 
 ---
-`is_managed` *Boolean*
+**`is_managed`** *Boolean*
 
 
 ---
-`is_suspended` *Boolean*
+**`is_suspended`** *Boolean*
 
 Indicates whether the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users).
 
 
 ---
-`phone_number` *String*
+**`phone_number`** *String*
 
 Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
 
 
 ---
-`user_identity_email_address` *String*
+**`user_identity_email_address`** *String*
 
 Email address of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 ---
-`user_identity_full_name` *String*
+**`user_identity_full_name`** *String*
 
 Full name of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 ---
-`user_identity_id` *String*
+**`user_identity_id`** *String*
 
 ID of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 ---
-`user_identity_phone_number` *String*
+**`user_identity_phone_number`** *String*
 
 Phone number of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
 
 
 ---
-[`warnings`](./#warnings-1) *List* *of Objects*
+[**`warnings`**](./#warnings-1) *List* *of Objects*
 
 Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 ---
-`workspace_id` *UUID*
+**`workspace_id`** *UUID*
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
@@ -261,52 +261,52 @@ An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-
 
 <details>
 
-<summary><code>acs_system_id</code> <i>UUID</i></summary>
+<summary><b><code>acs_system_id**</code></b> <i>UUID</i></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
 
 <details>
 
-<summary><code>acs_user_id</code> <i>UUID</i></summary>
+<summary><b><code>acs_user_id**</code></b> <i>UUID</i></summary>
 </details>
 
 <details>
 
-<summary><code>connected_account_id</code> <i>UUID</i></summary>
+<summary><b><code>connected_account_id**</code></b> <i>UUID</i></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
 
 <details>
 
-<summary><code>created_at</code> <i>Datetime</i></summary>
+<summary><b><code>created_at**</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event was created.
 </details>
 
 <details>
 
-<summary><code>event_id</code> <i>UUID</i></summary>
+<summary><b><code>event_id**</code></b> <i>UUID</i></summary>
 
 ID of the event.
 </details>
 
 <details>
 
-<summary><code>event_type</code> <i>String</i></summary>
+<summary><b><code>event_type**</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><code>occurred_at</code> <i>Datetime</i></summary>
+<summary><b><code>occurred_at**</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event occurred.
 </details>
 
 <details>
 
-<summary><code>workspace_id</code> <i>UUID</i></summary>
+<summary><b><code>workspace_id**</code></b> <i>UUID</i></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>

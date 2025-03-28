@@ -215,17 +215,17 @@ Setting HVAC mode.
 
 ### Properties
 
-`action_attempt_id` *UUID*
+**`action_attempt_id`** *UUID*
 
 ID of the action attempt.
 
 
 ---
-`action_type` *String*
+**`action_type`** *String*
 
 
 ---
-`status` *Enum*
+**`status`** *Enum*
 
 <details>
 
