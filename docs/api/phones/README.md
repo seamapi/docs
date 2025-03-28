@@ -8,26 +8,22 @@ Represents an app user's mobile phone.
 
 ## Properties
 
-`created_at` Format: `Datetime`
-
+`created_at` *Datetime`*
 Date and time at which the `phone` was created.
 
 ---
 
-`custom_metadata` Format: `Record`
-
+`custom_metadata` *Record`*
 Optional [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) for the phone.
 
 ---
 
-`device_id` Format: `UUID`
-
+`device_id` *UUID`*
 ID of the `phone`.
 
 ---
 
-`device_type` Format: `Enum`
-
+`device_type` *Enum`*
 Type of phone.
 
 Possible enum values:
@@ -36,14 +32,12 @@ Possible enum values:
 
 ---
 
-`display_name` Format: `String`
-
+`display_name` *String`*
 Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name` otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.
 
 ---
 
-`errors` Format: `List` Item format: `Object`
-
+`errors` *List`** of Objects*
 Errors associated with the `phone`.
 
 <details>
@@ -56,14 +50,12 @@ Errors associated with the `phone`.
 </details>
 ---
 
-`nickname` Format: `String`
-
+`nickname` *String`*
 Optional nickname to describe the phone, settable through Seam.
 
 ---
 
-`properties` Format: `Object`
-
+`properties` *Object`*
 Properties of the phone.
 
 <details>
@@ -108,8 +100,7 @@ Indicates whether the credential service has an active associated phone.
 </details>
 ---
 
-`warnings` Format: `List` Item format: `Object`
-
+`warnings` *List`** of Objects*
 Warnings associated with the `phone`.
 
 <details>
@@ -122,8 +113,7 @@ Warnings associated with the `phone`.
 </details>
 ---
 
-`workspace_id` Format: `UUID`
-
+`workspace_id` *UUID`*
 ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the `phone`.
 
 ---

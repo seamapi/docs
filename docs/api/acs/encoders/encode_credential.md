@@ -49,20 +49,17 @@ Action attempt to track encoding credential data from the physical encoder onto 
 
 ### Properties
 
-`action_attempt_id` Format: `UUID`
-
+`action_attempt_id` *UUID`*
 ID of the action attempt.
 
 ---
 
-`action_type` Format: `String`
-
+`action_type` *String`*
 Type of action that the action attempt tracks.
 
 ---
 
-`status` Format: `Enum`
-
+`status` *Enum`*
 
 Possible enum values:
 - `success`

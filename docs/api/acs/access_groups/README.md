@@ -12,11 +12,10 @@ To learn whether your access control system supports access groups, see the corr
 
 ## Properties
 
-`access_group_type` Format: `Enum`
+`access_group_type` *Enum`*
 {% hint style="warning" %}
 **Deprecated**. Use `external_type`.
 {% endhint %}
-
 
 Possible enum values:
 - `pti_unit`
@@ -28,39 +27,33 @@ Possible enum values:
 
 ---
 
-`access_group_type_display_name` Format: `String`
+`access_group_type_display_name` *String`*
 {% hint style="warning" %}
 **Deprecated**. Use `external_type_display_name`.
 {% endhint %}
 
-
 ---
 
-`acs_access_group_id` Format: `UUID`
-
+`acs_access_group_id` *UUID`*
 ID of the access group.
 
 ---
 
-`acs_system_id` Format: `UUID`
-
+`acs_system_id` *UUID`*
 ID of the access control system that contains the access group.
 
 ---
 
-`created_at` Format: `Datetime`
-
+`created_at` *Datetime`*
 Date and time at which the access group was created.
 
 ---
 
-`display_name` Format: `String`
-
+`display_name` *String`*
 
 ---
 
-`external_type` Format: `Enum`
-
+`external_type` *Enum`*
 Brand-specific terminology for the access group type.
 
 Possible enum values:
@@ -73,25 +66,21 @@ Possible enum values:
 
 ---
 
-`external_type_display_name` Format: `String`
-
+`external_type_display_name` *String`*
 Display name that corresponds to the brand-specific terminology for the access group type.
 
 ---
 
-`is_managed` Format: `Boolean`
-
+`is_managed` *Boolean`*
 
 ---
 
-`name` Format: `String`
-
+`name` *String`*
 Name of the access group.
 
 ---
 
-`warnings` Format: `List` Item format: `Object`
-
+`warnings` *List`** of Objects*
 Warnings associated with the `acs_access_group`.
 
 <details>
@@ -114,8 +103,7 @@ Unique identifier of the type of warning. Enables quick recognition and categori
 </details>
 ---
 
-`workspace_id` Format: `UUID`
-
+`workspace_id` *UUID`*
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the access group.
 
 ---
