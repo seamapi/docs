@@ -83,6 +83,24 @@ When creating a credential for Salto KS, you cannot specify a custom PIN code. I
 
 ***
 
+## Brand-Specific Behaviors
+
+Note the following Salto KS behaviors:
+
+### Proximity Behavior
+
+To use access devices successfully within a Salto KS access system, it is important to understand the following proximity behavior requirements:
+
+#### Card Readers
+
+Card readers within a Salto KS access system are powered. Consequently, they can read a credential from up to 30 cm away. If you disable the proximity setting, this distance increases up to 15 meters.
+
+#### Unit Doors
+
+Unit door locks within a Salto KS access system must first be woken up, and then a credential can be read. To use mobile keys with these locks, you must hold the back of the phone to the lock. There is no way to disable this requirement.
+
+***
+
 ## Brand-Specific Errors
 
 For information about Salto KS ACS-related errors, see [Troubleshooting Your ACS](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md).
