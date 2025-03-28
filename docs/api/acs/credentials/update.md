@@ -1,14 +1,18 @@
 # Update a Credential
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 PATCH /acs/credentials/update ⇒ void
 ```
+{% endtab %}
+{% endtabs %}
 
 Updates the code and ends at date and time for a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.credentials.update({
@@ -17,7 +21,7 @@ await seam.acs.credentials.update({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -25,7 +29,7 @@ await seam.acs.credentials.update({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.credentials.update(
@@ -33,7 +37,7 @@ seam.acs.credentials.update(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -41,13 +45,13 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.credentials.update(acs_credential_id: "66666666-6666-6666-6666-666666666666", code: "7890")
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -55,7 +59,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -65,7 +69,7 @@ $seam->acs->credentials->update(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -73,13 +77,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs credentials update --acs_credential_id "66666666-6666-6666-6666-666666666666" --code "7890"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -87,7 +91,7 @@ seam acs credentials update --acs_credential_id "66666666-6666-6666-6666-6666666
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -106,7 +110,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil
@@ -121,6 +125,8 @@ nil
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `acs_credential_id`
@@ -130,7 +136,7 @@ Required: Yes
 
 ID of the desired credential.
 
-***
+---
 
 ### `code`
 
@@ -139,7 +145,7 @@ Required: No
 
 Replacement access (PIN) code for the credential.
 
-***
+---
 
 ### `ends_at`
 
@@ -148,7 +154,8 @@ Required: No
 
 Replacement date and time at which the validity of the credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after the `starts_at` value that you set when creating the credential.
 
-***
+---
+
 
 ## Return Type
 

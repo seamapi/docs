@@ -1,14 +1,18 @@
 # Update a Thermostat Schedule
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 PATCH /thermostats/schedules/update ⇒ void
 ```
+{% endtab %}
+{% endtabs %}
 
 Updates a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.schedules.update({
@@ -17,7 +21,7 @@ await seam.thermostats.schedules.update({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -25,7 +29,7 @@ await seam.thermostats.schedules.update({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.schedules.update(
@@ -34,7 +38,7 @@ seam.thermostats.schedules.update(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -42,7 +46,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.schedules.update(
@@ -51,7 +55,7 @@ seam.thermostats.schedules.update(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -59,7 +63,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -69,7 +73,7 @@ $seam->thermostats->schedules->update(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -77,13 +81,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats schedules update --thermostat_schedule_id "89d3507e-60e3-4101-bd1b-ba066ec30ad4" --ends_at "2024-11-15T15:00:00Z"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -91,7 +95,7 @@ seam thermostats schedules update --thermostat_schedule_id "89d3507e-60e3-4101-b
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -110,7 +114,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil
@@ -126,6 +130,8 @@ nil
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `thermostat_schedule_id`
@@ -135,7 +141,7 @@ Required: Yes
 
 ID of the desired thermostat schedule.
 
-***
+---
 
 ### `climate_preset_key`
 
@@ -144,7 +150,7 @@ Required: No
 
 Key of the [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to use for the thermostat schedule.
 
-***
+---
 
 ### `ends_at`
 
@@ -153,7 +159,7 @@ Required: No
 
 Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
-***
+---
 
 ### `is_override_allowed`
 
@@ -162,7 +168,7 @@ Required: No
 
 Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the schedule is active. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
 
-***
+---
 
 ### `max_override_period_minutes`
 
@@ -171,7 +177,7 @@ Required: No
 
 Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
 
-***
+---
 
 ### `name`
 
@@ -180,7 +186,7 @@ Required: No
 
 User-friendly name to identify the thermostat schedule.
 
-***
+---
 
 ### `starts_at`
 
@@ -189,7 +195,8 @@ Required: No
 
 Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
-***
+---
+
 
 ## Return Type
 

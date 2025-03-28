@@ -1,20 +1,24 @@
 # List Thermostats
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /thermostats/list ⇒ { devices: [device, …] }
 ```
+{% endtab %}
+{% endtabs %}
 
 Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guides/thermostats).
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.list();
 ```
 
-#### Response
+#### Output
 
 ```javascript
 [
@@ -45,13 +49,13 @@ await seam.thermostats.list();
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.list()
 ```
 
-#### Response
+#### Output
 
 ```python
 [
@@ -82,13 +86,13 @@ seam.thermostats.list()
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.list()
 ```
 
-#### Response
+#### Output
 
 ```ruby
 [
@@ -119,14 +123,14 @@ seam.thermostats.list()
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
 $seam->thermostats->list();
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -163,13 +167,13 @@ $seam->thermostats->list();
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats list
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 [
@@ -200,7 +204,7 @@ seam thermostats list
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -210,7 +214,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 []api.Device{api.Device{DeviceId: "123e4567-e89b-12d3-a456-426614174000", DeviceType: "ecobee_thermostat", CapabilitiesSupported: []string{"thermostat"}, Properties: api.DeviceProperties{Name: "Entryway", Online: "true,", RelativeHumidity: 0.36, TemperatureFarenheit: 70, AvailableHvacModeSettings: []string{"cool", "heat", "heat_cool", "off"}, CurrentClimateSetting: api.DevicePropertiesCurrentClimateSetting{HvacModeSetting: "heat_cool", CoolingSetPointFarenheit: 75, HeatingSetPointFarenheit: 65, ManualOverrideAllowed: false}, Location: nil, ConnectedAccountId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z"}}}
@@ -226,6 +230,8 @@ func main() {
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `connect_webview_id`
@@ -235,7 +241,7 @@ Required: No
 
 ID of the Connect Webview by which to filter devices.
 
-***
+---
 
 ### `connected_account_id`
 
@@ -244,7 +250,7 @@ Required: No
 
 ID of the connected account by which to filter.
 
-***
+---
 
 ### `connected_account_ids`
 
@@ -253,7 +259,7 @@ Required: No
 
 Array of IDs of the connected accounts by which to filter devices.
 
-***
+---
 
 ### `created_before`
 
@@ -262,7 +268,7 @@ Required: No
 
 Date threshold for devices to return. If specified, returns only devices created before the specified date.
 
-***
+---
 
 ### `custom_metadata_has`
 
@@ -271,7 +277,7 @@ Required: No
 
 Set of key:value [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) pairs by which you want to filter devices.
 
-***
+---
 
 ### `device_ids`
 
@@ -280,7 +286,7 @@ Required: No
 
 Array of device IDs by which to filter devices.
 
-***
+---
 
 ### `device_type`
 
@@ -289,7 +295,7 @@ Required: No
 
 Device type by which to filter devices.
 
-***
+---
 
 ### `device_types`
 
@@ -298,7 +304,7 @@ Required: No
 
 Array of device types by which to filter devices.
 
-***
+---
 
 ### `limit`
 
@@ -307,7 +313,7 @@ Required: No
 
 Numerical limit on the number of devices to return.
 
-***
+---
 
 ### `manufacturer`
 
@@ -316,7 +322,7 @@ Required: No
 
 Manufacturer by which to filter devices.
 
-***
+---
 
 ### `user_identifier_key`
 
@@ -325,7 +331,8 @@ Required: No
 
 Your own internal user ID for the user by which to filter devices.
 
-***
+---
+
 
 ## Return Type
 
