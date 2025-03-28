@@ -1,5 +1,6 @@
 # Get an ACS User
 
+## Signature
 ```
 POST /acs/users/get ⇒ { acs_user }
 ```

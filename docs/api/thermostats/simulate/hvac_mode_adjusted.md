@@ -1,5 +1,6 @@
 # HVAC Mode Adjusted
 
+## Signature
 ```
 POST /thermostats/simulate/hvac_mode_adjusted ⇒ void
 ```

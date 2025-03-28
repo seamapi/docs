@@ -1,5 +1,6 @@
 # Get an ACS System
 
+## Signature
 ```
 POST /acs/systems/get ⇒ { acs_system }
 ```

@@ -1,5 +1,6 @@
 # Simulate that the Next Credential Encoding Will Succeed
 
+## Signature
 ```
 POST /acs/encoders/simulate/next_credential_encode_will_succeed ⇒ void
 ```

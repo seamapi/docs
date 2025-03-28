@@ -1,5 +1,6 @@
 # Update a Credential
 
+## Signature
 ```
 PATCH /acs/credentials/update ⇒ void
 ```

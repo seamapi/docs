@@ -1,5 +1,6 @@
 # Delete an ACS User
 
+## Signature
 ```
 POST /acs/users/delete ⇒ void
 ```

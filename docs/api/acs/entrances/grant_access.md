@@ -1,5 +1,6 @@
 # Grant an ACS User Access to an Entrance
 
+## Signature
 ```
 POST /acs/entrances/grant_access ⇒ void
 ```

@@ -1,5 +1,6 @@
 # List Accessible Entrances
 
+## Signature
 ```
 POST /acs/credentials/list_accessible_entrances ⇒ { acs_entrances: [acs_entrance, …] }
 ```

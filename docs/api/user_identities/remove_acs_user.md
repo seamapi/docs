@@ -1,5 +1,6 @@
 # Remove an ACS User from a User Identity
 
+## Signature
 ```
 POST /user_identities/remove_acs_user ⇒ void
 ```

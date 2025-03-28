@@ -1,5 +1,6 @@
 # List Thermostat Schedules
 
+## Signature
 ```
 POST /thermostats/schedules/list ⇒ { thermostat_schedules: [thermostat_schedule, …] }
 ```

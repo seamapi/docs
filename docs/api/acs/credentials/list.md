@@ -1,5 +1,6 @@
 # List Credentials
 
+## Signature
 ```
 POST /acs/credentials/list ⇒ { acs_credentials: [acs_credential, …] }
 ```

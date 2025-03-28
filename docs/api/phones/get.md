@@ -1,5 +1,6 @@
 # Get Phone
 
+## Signature
 ```
 POST /phones/get ⇒ { phone }
 ```

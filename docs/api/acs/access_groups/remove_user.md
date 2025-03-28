@@ -1,5 +1,6 @@
 # Remove an ACS User from an Access Group
 
+## Signature
 ```
 POST /acs/access_groups/remove_user ⇒ void
 ```

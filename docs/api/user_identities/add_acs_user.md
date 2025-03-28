@@ -1,5 +1,6 @@
 # Add an ACS User to a User Identity
 
+## Signature
 ```
 PUT /user_identities/add_acs_user ⇒ void
 ```

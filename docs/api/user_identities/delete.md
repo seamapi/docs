@@ -1,5 +1,6 @@
 # Delete a User Identity
 
+## Signature
 ```
 POST /user_identities/delete ⇒ void
 ```

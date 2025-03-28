@@ -1,5 +1,6 @@
 # Set to Cool Mode
 
+## Signature
 ```
 POST /thermostats/cool ⇒ { action_attempt }
 ```

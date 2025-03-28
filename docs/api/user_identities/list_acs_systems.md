@@ -1,5 +1,6 @@
 # List ACS Systems Associated with a User Identity
 
+## Signature
 ```
 POST /user_identities/list_acs_systems ⇒ { acs_systems: [acs_system, …] }
 ```

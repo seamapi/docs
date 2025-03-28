@@ -1,5 +1,6 @@
 # Create a Climate Preset
 
+## Signature
 ```
 POST /thermostats/create_climate_preset ⇒ void
 ```

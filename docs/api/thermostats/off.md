@@ -1,5 +1,6 @@
 # Set to Off Mode
 
+## Signature
 ```
 POST /thermostats/off ⇒ { action_attempt }
 ```

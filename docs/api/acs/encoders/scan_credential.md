@@ -1,5 +1,6 @@
 # Scan a Credential
 
+## Signature
 ```
 POST /acs/encoders/scan_credential ⇒ { action_attempt }
 ```

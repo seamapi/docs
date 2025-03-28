@@ -1,5 +1,6 @@
 # Get a Credential
 
+## Signature
 ```
 POST /acs/credentials/get ⇒ { acs_credential }
 ```

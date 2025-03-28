@@ -1,5 +1,6 @@
 # Set to Heat Mode
 
+## Signature
 ```
 POST /thermostats/heat ⇒ { action_attempt }
 ```

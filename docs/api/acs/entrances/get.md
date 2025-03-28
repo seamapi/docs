@@ -1,5 +1,6 @@
 # Get an Entrance
 
+## Signature
 ```
 POST /acs/entrances/get ⇒ { acs_entrance }
 ```

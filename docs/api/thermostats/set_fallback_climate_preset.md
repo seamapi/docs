@@ -1,5 +1,6 @@
 # Set the Fallback Climate Preset
 
+## Signature
 ```
 POST /thermostats/set_fallback_climate_preset ⇒ void
 ```

@@ -1,5 +1,6 @@
 # Set to Heat-Cool (Auto) Mode
 
+## Signature
 ```
 POST /thermostats/heat_cool ⇒ { action_attempt }
 ```

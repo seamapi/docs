@@ -1,5 +1,6 @@
 # Update a Thermostat Schedule
 
+## Signature
 ```
 PATCH /thermostats/schedules/update ⇒ void
 ```

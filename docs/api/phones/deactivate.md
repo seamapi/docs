@@ -1,5 +1,6 @@
 # Deactivate a Phone
 
+## Signature
 ```
 POST /phones/deactivate ⇒ void
 ```

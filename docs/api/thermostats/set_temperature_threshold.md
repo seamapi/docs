@@ -1,5 +1,6 @@
 # Set a Temperature Threshold
 
+## Signature
 ```
 PATCH /thermostats/set_temperature_threshold ⇒ void
 ```

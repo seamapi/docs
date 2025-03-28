@@ -1,5 +1,6 @@
 # Temperature Reached
 
+## Signature
 ```
 POST /thermostats/simulate/temperature_reached ⇒ void
 ```

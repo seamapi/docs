@@ -1,5 +1,6 @@
 # Create a User Identity
 
+## Signature
 ```
 POST /user_identities/create ⇒ { user_identity }
 ```

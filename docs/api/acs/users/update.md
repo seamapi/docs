@@ -1,5 +1,6 @@
 # Update an ACS User
 
+## Signature
 ```
 PATCH /acs/users/update ⇒ void
 ```

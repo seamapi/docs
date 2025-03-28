@@ -1,5 +1,6 @@
 # Delete a Climate Preset
 
+## Signature
 ```
 POST /thermostats/delete_climate_preset ⇒ void
 ```

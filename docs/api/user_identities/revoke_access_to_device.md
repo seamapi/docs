@@ -1,5 +1,6 @@
 # Revoke Access to a Device from a User Identity
 
+## Signature
 ```
 POST /user_identities/revoke_access_to_device ⇒ void
 ```

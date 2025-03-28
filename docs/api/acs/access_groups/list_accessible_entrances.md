@@ -1,5 +1,6 @@
 # List Entrances Accessible to an Access Group
 
+## Signature
 ```
 POST /acs/access_groups/list_accessible_entrances ⇒ { acs_entrances: [acs_entrance, …] }
 ```

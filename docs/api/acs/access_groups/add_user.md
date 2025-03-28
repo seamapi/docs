@@ -1,5 +1,6 @@
 # Add an ACS User to an Access Group
 
+## Signature
 ```
 PUT /acs/access_groups/add_user ⇒ void
 ```

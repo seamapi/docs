@@ -1,5 +1,6 @@
 # List Phones
 
+## Signature
 ```
 POST /phones/list ⇒ { phones: [phone, …] }
 ```

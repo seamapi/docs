@@ -1,5 +1,6 @@
 # Unassign a Credential from an ACS User
 
+## Signature
 ```
 PATCH /acs/credentials/unassign ⇒ void
 ```

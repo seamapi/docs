@@ -1,5 +1,6 @@
 # Get a Thermostat Schedule
 
+## Signature
 ```
 POST /thermostats/schedules/get ⇒ { thermostat_schedule }
 ```

@@ -1,5 +1,6 @@
 # Create a Sandbox Phone
 
+## Signature
 ```
 POST /phones/simulate/create_sandbox_phone ⇒ { phone }
 ```
