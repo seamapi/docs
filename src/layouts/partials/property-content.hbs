@@ -1,17 +1,21 @@
-{{#if isDeprecated}}
-
-{{> deprecated-warning}}
-{{/if}}
 {{#if description}}
 
 {{description}}
 {{/if}}
-{{#if enumValues}}
+{{#if isDeprecated}}
 
-Possible enum values:
+{{> deprecated-warning}}
+{{/if}}
+{{#if enumValues}}
+<details>
+
+<summary>Possible enum values:</summary>
+
 {{#each enumValues}}
 - `{{this}}`
 {{/each}}
+</details>
+
 {{/if}}
 {{#if listProperties}}
 {{#each listProperties}}
