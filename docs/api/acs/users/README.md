@@ -12,7 +12,7 @@ For details about how to configure `acs_user`s in your access control system, se
 
 ## Properties
 
-`access_schedule` *Object`*
+`access_schedule` *Object*
 `starts_at` and `ends_at` timestamps for the [ACS user's](https://docs.seam.co/latest/capability-guides/access-systems/user-management) access.
 
 <details>
@@ -26,50 +26,26 @@ Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org
 <summary><code>starts_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
-</details>
----
-
-`acs_system_id` *UUID`*
+</details>`acs_system_id` *UUID*
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
----
-
-`acs_user_id` *UUID`*
+`acs_user_id` *UUID*
 ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
----
-
-`created_at` *Datetime`*
+`created_at` *Datetime*
 Date and time at which the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created.
-
----
-
-`display_name` *String`*
+`display_name` *String*
 Display name for the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
----
-
-`email` *String`*
+`email` *String*
 {% hint style="warning" %}
 **Deprecated**. use email_address.
 {% endhint %}
-
----
-
-`email_address` *String`*
+`email_address` *String*
 Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
----
-
-[`errors`](./#errors-1) *List`** of Objects*
+[`errors`](./#errors-1) *List** of Objects*
 Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
----
-
-`external_type` *Enum`*
+`external_type` *Enum*
 Brand-specific terminology for the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) type.
-
-Possible enum values:
+<details>
+<summary>Possible enum values:</summary>
 - `pti_user`
 - `brivo_user`
 - `hid_credential_manager_user`
@@ -77,67 +53,29 @@ Possible enum values:
 - `latch_user`
 - `dormakaba_community_user`
 - `salto_space_user`
-
----
-
-`external_type_display_name` *String`*
+</details>
+`external_type_display_name` *String*
 Display name that corresponds to the brand-specific terminology for the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) type.
-
----
-
-`full_name` *String`*
+`full_name` *String*
 Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
----
-
-`hid_acs_system_id` *UUID`*
-
----
-
-`is_managed` *Boolean`*
-
----
-
-`is_suspended` *Boolean`*
+`hid_acs_system_id` *UUID*
+`is_managed` *Boolean*
+`is_suspended` *Boolean*
 Indicates whether the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users).
-
----
-
-`phone_number` *String`*
+`phone_number` *String*
 Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
-
----
-
-`user_identity_email_address` *String`*
+`user_identity_email_address` *String*
 Email address of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
----
-
-`user_identity_full_name` *String`*
+`user_identity_full_name` *String*
 Full name of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
----
-
-`user_identity_id` *String`*
+`user_identity_id` *String*
 ID of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
----
-
-`user_identity_phone_number` *String`*
+`user_identity_phone_number` *String*
 Phone number of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
-
----
-
-[`warnings`](./#warnings-1) *List`** of Objects*
+[`warnings`](./#warnings-1) *List** of Objects*
 Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
----
-
-`workspace_id` *UUID`*
+`workspace_id` *UUID*
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
----
-
 ## Errors
 
 ### `deleted_externally`

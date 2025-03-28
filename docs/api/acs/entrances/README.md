@@ -10,17 +10,11 @@ In an access control system, an entrance is a secured door, gate, zone, or other
 
 ## Properties
 
-`acs_entrance_id` *UUID`*
+`acs_entrance_id` *UUID*
 ID of the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
-
----
-
-`acs_system_id` *UUID`*
+`acs_system_id` *UUID*
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
-
----
-
-`assa_abloy_vostio_metadata` *Object`*
+`assa_abloy_vostio_metadata` *Object*
 ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 <details>
@@ -48,29 +42,17 @@ Possible enum values:
 <details>
 
 <summary><code>stand_open</code> Format: <code>Boolean</code></summary>
-</details>
----
-
-`created_at` *Datetime`*
+</details>`created_at` *Datetime*
 Date and time at which the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md) was created.
-
----
-
-`display_name` *String`*
+`display_name` *String*
 Display name for the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
-
----
-
-`dormakaba_community_metadata` *Object`*
+`dormakaba_community_metadata` *Object*
 dormakaba Community-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 <details>
 
 <summary><code>access_point_name</code> Format: <code>String</code></summary>
-</details>
----
-
-`errors` *List`** of Objects*
+</details>`errors` *List** of Objects*
 Errors associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 <details>
@@ -84,10 +66,7 @@ Unique identifier of the type of error. Enables quick recognition and categoriza
 <summary><code>message</code> Format: <code>String</code></summary>
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-</details>
----
-
-`latch_metadata` *Object`*
+</details>`latch_metadata` *Object*
 Latch-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 <details>
@@ -105,10 +84,7 @@ Latch-specific metadata associated with the [entrance](../../../capability-guide
 <details>
 
 <summary><code>is_connected</code> Format: <code>Boolean</code></summary>
-</details>
----
-
-`salto_ks_metadata` *Object`*
+</details>`salto_ks_metadata` *Object*
 Salto KS-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 <details>
@@ -142,10 +118,7 @@ Salto KS-specific metadata associated with the [entrance](../../../capability-gu
 <details>
 
 <summary><code>privacy_mode</code> Format: <code>Boolean</code></summary>
-</details>
----
-
-`salto_space_metadata` *Object`*
+</details>`salto_space_metadata` *Object*
 Salto Space-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 <details>
@@ -159,10 +132,7 @@ Salto Space-specific metadata associated with the [entrance](../../../capability
 <details>
 
 <summary><code>ext_door_id</code> Format: <code>String</code></summary>
-</details>
----
-
-`visionline_metadata` *Object`*
+</details>`visionline_metadata` *Object*
 Visionline-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 <details>
@@ -194,10 +164,7 @@ Possible enum values:
   - `commonDoor`
   - `touch`
 
-</details>
----
-
-## Endpoints
+</details>## Endpoints
 
 ### [`/acs/entrances/get`](./get.md)
 

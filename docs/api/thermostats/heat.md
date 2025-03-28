@@ -191,21 +191,13 @@ Setting HVAC mode.
 
 ### Properties
 
-`action_attempt_id` *UUID`*
+`action_attempt_id` *UUID*
 ID of the action attempt.
-
----
-
-`action_type` *String`*
-
----
-
-`status` *Enum`*
-
-Possible enum values:
+`action_type` *String*
+`status` *Enum*
+<details>
+<summary>Possible enum values:</summary>
 - `success`
 - `pending`
 - `error`
-
----
-
+</details>

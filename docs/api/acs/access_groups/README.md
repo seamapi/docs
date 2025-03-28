@@ -12,75 +12,47 @@ To learn whether your access control system supports access groups, see the corr
 
 ## Properties
 
-`access_group_type` *Enum`*
+`access_group_type` *Enum*
 {% hint style="warning" %}
 **Deprecated**. Use `external_type`.
 {% endhint %}
-
-Possible enum values:
+<details>
+<summary>Possible enum values:</summary>
 - `pti_unit`
 - `pti_access_level`
 - `salto_ks_access_group`
 - `brivo_group`
 - `salto_space_group`
 - `dormakaba_community_access_group`
-
----
-
-`access_group_type_display_name` *String`*
+</details>
+`access_group_type_display_name` *String*
 {% hint style="warning" %}
 **Deprecated**. Use `external_type_display_name`.
 {% endhint %}
-
----
-
-`acs_access_group_id` *UUID`*
+`acs_access_group_id` *UUID*
 ID of the access group.
-
----
-
-`acs_system_id` *UUID`*
+`acs_system_id` *UUID*
 ID of the access control system that contains the access group.
-
----
-
-`created_at` *Datetime`*
+`created_at` *Datetime*
 Date and time at which the access group was created.
-
----
-
-`display_name` *String`*
-
----
-
-`external_type` *Enum`*
+`display_name` *String*
+`external_type` *Enum*
 Brand-specific terminology for the access group type.
-
-Possible enum values:
+<details>
+<summary>Possible enum values:</summary>
 - `pti_unit`
 - `pti_access_level`
 - `salto_ks_access_group`
 - `brivo_group`
 - `salto_space_group`
 - `dormakaba_community_access_group`
-
----
-
-`external_type_display_name` *String`*
+</details>
+`external_type_display_name` *String*
 Display name that corresponds to the brand-specific terminology for the access group type.
-
----
-
-`is_managed` *Boolean`*
-
----
-
-`name` *String`*
+`is_managed` *Boolean*
+`name` *String*
 Name of the access group.
-
----
-
-`warnings` *List`** of Objects*
+`warnings` *List** of Objects*
 Warnings associated with the `acs_access_group`.
 
 <details>
@@ -100,14 +72,8 @@ Detailed description of the warning. Provides insights into the issue and potent
 <summary><code>warning_code</code> Format: <code>String</code></summary>
 
 Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-</details>
----
-
-`workspace_id` *UUID`*
+</details>`workspace_id` *UUID*
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the access group.
-
----
-
 ## Endpoints
 
 ### [`/acs/access_groups/add_user`](./add_user.md)
