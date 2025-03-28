@@ -1,39 +1,40 @@
 {{#if headingOffset}}
-### `{{name}}`
+### The `{{name}}` Resource
 {{else}}
-## `{{name}}`
+## The `{{name}}` Resource
 {{/if}}
 {{#if description}}
 
 {{description}}
+{{/if}}
+
+{{#if headingOffset}}
+### Properties
+{{else}}
+## Properties
 {{/if}}
 
 {{#each properties}}
-{{#if ../headingOffset}}
-#### {{#if linkTarget}}[`{{name}}`]({{linkTarget}}){{else}}`{{name}}`{{/if}}
-{{else}}
-### {{#if linkTarget}}[`{{name}}`]({{linkTarget}}){{else}}`{{name}}`{{/if}}
+{{#if linkTarget}}[**`{{name}}`**]({{linkTarget}}){{else}}**`{{name}}`**{{/if}} *{{format}}*{{#if listItemFormat}} *of {{listItemFormat}}s*{{/if}}
+
+{{#if description}}
+{{description}}
+
 {{/if}}
 {{#if isDeprecated}}
-
 {{> deprecated-warning}}
-{{/if}}
 
-Format: `{{format}}`
-{{#if listItemFormat}}
-
-Item format: `{{listItemFormat}}`
-{{/if}}
-{{#if description}}
-
-{{description}}
 {{/if}}
 {{#if enumValues}}
+<details>
 
-Possible enum values:
+<summary>Possible enum values:</summary>
+
 {{#each enumValues}}
 - `{{this}}`
 {{/each}}
+</details>
+
 {{/if}}
 {{#unless (eq objectProperties undefined)}}
 {{#if (eq objectProperties.length 0)}}
@@ -54,5 +55,4 @@ This object has no properties.
 {{/if}}
 
 ---
-
 {{/each}}

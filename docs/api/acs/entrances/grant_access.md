@@ -1,8 +1,12 @@
 # Grant an ACS User Access to an Entrance
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/entrances/grant_access ⇒ void
 ```
+{% endtab %}
+{% endtabs %}
 
 
 
@@ -11,6 +15,8 @@ POST /acs/entrances/grant_access ⇒ void
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
+
+---
 
 ## Request Parameters
 
@@ -21,7 +27,7 @@ Required: Yes
 
 
 
-***
+---
 
 ### `acs_user_id`
 
@@ -30,7 +36,8 @@ Required: Yes
 
 
 
-***
+---
+
 
 ## Return Type
 

@@ -8,6 +8,49 @@
       full_name: 'Jane Doe'
       email_address: 'jane@example.com'
       phone_number: '+15555550100'
+  response:
+    body:
+      acs_user:
+        acs_user_id: '123e4567-e89b-12d3-a456-426614174000'
+        acs_system_id: '123e4567-e89b-12d3-a456-426614174000'
+        workspace_id: '123e4567-e89b-12d3-a456-426614174000'
+        created_at: '2024-04-05T07:57:05.323Z'
+        display_name: 'Jane Doe'
+        full_name: 'Jane Doe'
+        email_address: 'jane@example.com'
+        phone_number: '+15555550100'
+- title: 'Create a new ACS user'
+  description: 'Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with an access schedule.'
+  request:
+    path: '/acs/users/create'
+    parameters:
+      acs_system_id: '123e4567-e89b-12d3-a456-426614174000'
+      full_name: 'Jane Doe'
+      email_address: 'jane@example.com'
+      phone_number: '+15555550100'
+      access_schedule:
+        starts_at: '2024-11-01T15:00:00.000Z'
+        ends_at: '2024-11-04T11:00:00.000Z'
+  response:
+    body:
+      acs_user:
+        acs_user_id: '123e4567-e89b-12d3-a456-426614174000'
+        acs_system_id: '123e4567-e89b-12d3-a456-426614174000'
+        workspace_id: '123e4567-e89b-12d3-a456-426614174000'
+        created_at: '2024-04-05T07:57:05.323Z'
+        display_name: 'Jane Doe'
+        full_name: 'Jane Doe'
+        email_address: 'jane@example.com'
+        phone_number: '+15555550100'
+- title: 'Create a new ACS user in an access group'
+  description: 'Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and assigns the new user to an [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).'
+  request:
+    path: '/acs/users/create'
+    parameters:
+      acs_system_id: '123e4567-e89b-12d3-a456-426614174000'
+      full_name: 'Jane Doe'
+      email_address: 'jane@example.com'
+      phone_number: '+15555550100'
       acs_access_group_ids: ['123e4567-e89b-12d3-a456-426614174000']
   response:
     body:

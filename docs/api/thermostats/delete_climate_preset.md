@@ -1,14 +1,18 @@
 # Delete a Climate Preset
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /thermostats/delete_climate_preset ⇒ void
 ```
+{% endtab %}
+{% endtabs %}
 
 Deletes a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.deleteClimatePreset({
@@ -17,7 +21,7 @@ await seam.thermostats.deleteClimatePreset({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -25,7 +29,7 @@ await seam.thermostats.deleteClimatePreset({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.delete_climate_preset(
@@ -33,7 +37,7 @@ seam.thermostats.delete_climate_preset(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -41,7 +45,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.delete_climate_preset(
@@ -50,7 +54,7 @@ seam.thermostats.delete_climate_preset(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -58,7 +62,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -68,7 +72,7 @@ $seam->thermostats->delete_climate_preset(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -76,13 +80,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats delete-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "occupied"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -90,7 +94,7 @@ seam thermostats delete-climate-preset --device_id "123e4567-e89b-12d3-a456-4266
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -108,7 +112,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil
@@ -124,6 +128,8 @@ nil
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `climate_preset_key`
@@ -133,7 +139,7 @@ Required: Yes
 
 Climate preset key of the desired climate preset.
 
-***
+---
 
 ### `device_id`
 
@@ -142,7 +148,8 @@ Required: Yes
 
 ID of the desired thermostat device.
 
-***
+---
+
 
 ## Return Type
 

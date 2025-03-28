@@ -1,14 +1,18 @@
 # List Accessible Entrances
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/credentials/list_accessible_entrances ⇒ { acs_entrances: [acs_entrance, …] }
 ```
+{% endtab %}
+{% endtabs %}
 
 Returns a list of all [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a [credential](https://docs.seam.co/latest/api/acs/credentials) grants access.
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.credentials.listAccessibleEntrances({
@@ -16,7 +20,7 @@ await seam.acs.credentials.listAccessibleEntrances({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 [
@@ -43,7 +47,7 @@ await seam.acs.credentials.listAccessibleEntrances({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.credentials.list_accessible_entrances(
@@ -51,7 +55,7 @@ seam.acs.credentials.list_accessible_entrances(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 [
@@ -78,7 +82,7 @@ seam.acs.credentials.list_accessible_entrances(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.credentials.list_accessible_entrances(
@@ -86,7 +90,7 @@ seam.acs.credentials.list_accessible_entrances(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 [
@@ -108,7 +112,7 @@ seam.acs.credentials.list_accessible_entrances(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -117,7 +121,7 @@ $seam->acs->credentials->list_accessible_entrances(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -145,13 +149,13 @@ $seam->acs->credentials->list_accessible_entrances(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs credentials list-accessible-entrances --acs_credential_id "66666666-6666-6666-6666-666666666666"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 [
@@ -178,7 +182,7 @@ seam acs credentials list-accessible-entrances --acs_credential_id "66666666-666
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -196,7 +200,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 []api.AcsEntrance{api.AcsEntrance{AcsEntranceId: "55555555-5555-5555-5555-555555555555", AcsSystemId: "11111111-1111-1111-1111-111111111111", WorkspaceId: "00000000-0000-0000-0000-000000000000", VisionlineMetadata: api.AcsEntranceVisionlineMetadata{Profiles: []AcsEntranceVisionlineMetadataProfiles{api.AcsEntranceVisionlineMetadataProfilesProfiles{VisionlineDoorProfileId: "Guest Door", VisionlineDoorProfileType: "BLE"}}, DoorName: "Guest Lock 2", DoorCategory: "guest"}, LatchMetadata: nil, DisplayName: "Guest Lock 2", CreatedAt: "2024-03-26T14:31:18.979Z"}}
@@ -211,6 +215,8 @@ func main() {
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `acs_credential_id`
@@ -220,7 +226,8 @@ Required: Yes
 
 ID of the credential for which you want to retrieve all entrances to which this credential grants access.
 
-***
+---
+
 
 ## Return Type
 

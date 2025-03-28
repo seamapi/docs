@@ -1,14 +1,18 @@
 # Set the Fan Mode Setting
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /thermostats/set_fan_mode ⇒ { action_attempt }
 ```
+{% endtab %}
+{% endtabs %}
 
 Sets the [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.setFanMode({
@@ -17,7 +21,7 @@ await seam.thermostats.setFanMode({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 {
@@ -29,7 +33,7 @@ await seam.thermostats.setFanMode({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.set_fan_mode(
@@ -37,7 +41,7 @@ seam.thermostats.set_fan_mode(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 ActionAttempt(
@@ -49,7 +53,7 @@ ActionAttempt(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.set_fan_mode(
@@ -58,7 +62,7 @@ seam.thermostats.set_fan_mode(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 {
@@ -70,7 +74,7 @@ seam.thermostats.set_fan_mode(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -80,7 +84,7 @@ $seam->thermostats->set_fan_mode(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -93,13 +97,13 @@ $seam->thermostats->set_fan_mode(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats set-fan-mode --device_id "123e4567-e89b-12d3-a456-426614174000" --fan_mode_setting "auto"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {
@@ -111,7 +115,7 @@ seam thermostats set-fan-mode --device_id "123e4567-e89b-12d3-a456-426614174000"
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -129,7 +133,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Status: "pending", ActionType: "SET_FAN_MODE"}
@@ -145,6 +149,8 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `device_id`
@@ -154,7 +160,7 @@ Required: Yes
 
 
 
-***
+---
 
 ### `fan_mode`
 
@@ -163,7 +169,7 @@ Required: No
 
 
 
-***
+---
 
 ### `fan_mode_setting`
 
@@ -172,38 +178,39 @@ Required: No
 
 Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for the thermostat.
 
-***
+---
+
 
 ## Return Type
 
 [action\_attempt](./)
 
-### `SET_FAN_MODE`
+### The `SET_FAN_MODE` Resource
 
 Setting fan mode.
 
-#### `action_attempt_id`
+### Properties
 
-Format: `UUID`
+**`action_attempt_id`** *UUID*
 
 ID of the action attempt.
 
----
-
-#### `action_type`
-
-Format: `String`
 
 ---
+**`action_type`** *String*
 
-#### `status`
 
-Format: `Enum`
+---
+**`status`** *Enum*
 
-Possible enum values:
+<details>
+
+<summary>Possible enum values:</summary>
+
 - `success`
 - `pending`
 - `error`
+</details>
+
 
 ---
-
