@@ -15,7 +15,7 @@
 {{/if}}
 
 {{#each properties}}
-{{#if linkTarget}}[`{{name}}`]({{linkTarget}}){{else}}`{{name}}`{{/if}} *{{format}}*{{#if listItemFormat}}* of {{listItemFormat}}s*{{/if}}
+{{#if linkTarget}}[`{{name}}`]({{linkTarget}}){{else}}`{{name}}`{{/if}} *{{format}}*{{#if listItemFormat}} *of {{listItemFormat}}s*{{/if}}
 
 {{#if description}}
 {{description}}
@@ -51,4 +51,5 @@ This object has no properties.
 {{> property-collapsible this}}
 {{/each}}
 {{/if}}
+---
 {{/each}}
