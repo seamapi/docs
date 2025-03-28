@@ -42,14 +42,14 @@ This object has no properties.
 {{else}}
 {{#each objectProperties}}
 
-{{> property-details }}
+{{> property-collapsible this}}
 {{/each}}
 {{/if}}
 {{/unless}}
 {{#if listProperties}}
 {{#each listProperties}}
 
-{{> property-details }}
+{{> property-collapsible this}}
 {{/each}}
 {{/if}}
 

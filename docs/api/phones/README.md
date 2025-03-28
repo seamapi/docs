@@ -59,15 +59,11 @@ Errors associated with the `phone`.
 <details>
 
 <summary><code>error_code</code> Format: <code>String</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>message</code> Format: <code>String</code></summary>
-
 </details>
-
 ---
 
 ### `nickname`
@@ -89,57 +85,41 @@ Properties of the phone.
 <summary><code>assa_abloy_credential_service_metadata</code> Format: <code>Object</code></summary>
 
 ASSA ABLOY Credential Service metadata for the phone.
-
 </details>
-
 <details>
 
 <summary><code>assa_abloy_credential_service_metadata.endpoints</code> Format: <code>List</code> Item format: <code>Object</code></summary>
 
 Endpoints associated with the phone.
 
+- <code>endpoint_id</code> Format: <code>String</code>
 
-<details>
+  ID of the associated endpoint.
 
-<summary><code>endpoint_id</code> Format: <code>String</code></summary>
 
-ID of the associated endpoint.
+- <code>is_active</code> Format: <code>Boolean</code>
 
-</details>
-
-<details>
-
-<summary><code>is_active</code> Format: <code>Boolean</code></summary>
-
-Indicated whether the endpoint is active.
+  Indicated whether the endpoint is active.
 
 </details>
-</details>
-
 <details>
 
 <summary><code>assa_abloy_credential_service_metadata.has_active_endpoint</code> Format: <code>Boolean</code></summary>
 
 Indicates whether the credential service has active endpoints associated with the phone.
-
 </details>
-
 <details>
 
 <summary><code>salto_space_credential_service_metadata</code> Format: <code>Object</code></summary>
 
 Salto Space credential service metadata for the phone.
-
 </details>
-
 <details>
 
 <summary><code>salto_space_credential_service_metadata.has_active_phone</code> Format: <code>Boolean</code></summary>
 
 Indicates whether the credential service has an active associated phone.
-
 </details>
-
 ---
 
 ### `warnings`
@@ -153,15 +133,11 @@ Warnings associated with the `phone`.
 <details>
 
 <summary><code>message</code> Format: <code>String</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>warning_code</code> Format: <code>String</code></summary>
-
 </details>
-
 ---
 
 ### `workspace_id`
@@ -197,46 +173,34 @@ A phone device was deactivated.
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the event was created.
-
 </details>
-
 <details>
 
 <summary><code>device_id</code> Format: <code>UUID</code></summary>
 
 ID of the [device](../../core-concepts/devices/README.md).
-
 </details>
-
 <details>
 
 <summary><code>event_id</code> Format: <code>UUID</code></summary>
 
 ID of the event.
-
 </details>
-
 <details>
 
 <summary><code>event_type</code> Format: <code>String</code></summary>
-
 </details>
-
 <details>
 
 <summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the event occurred.
-
 </details>
-
 <details>
 
 <summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 ID of the [workspace](../../core-concepts/workspaces/README.md).
-
 </details>
-
 ---
 
