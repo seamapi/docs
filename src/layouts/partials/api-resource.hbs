@@ -16,11 +16,14 @@
 
 {{#each properties}}
 {{#if linkTarget}}[`{{name}}`]({{linkTarget}}){{else}}`{{name}}`{{/if}} *{{format}}*{{#if listItemFormat}}* of {{listItemFormat}}s*{{/if}}
+
 {{#if description}}
 {{description}}
+
 {{/if}}
 {{#if isDeprecated}}
 {{> deprecated-warning}}
+
 {{/if}}
 {{#if enumValues}}
 <details>
@@ -29,6 +32,7 @@
 - `{{this}}`
 {{/each}}
 </details>
+
 {{/if}}
 {{#unless (eq objectProperties undefined)}}
 {{#if (eq objectProperties.length 0)}}
