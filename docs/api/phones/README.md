@@ -9,22 +9,35 @@ Represents an app user's mobile phone.
 ## Properties
 
 `created_at` *Datetime*
+
 Date and time at which the `phone` was created.
+
 `custom_metadata` *Record*
+
 Optional [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) for the phone.
+
 `device_id` *UUID*
+
 ID of the `phone`.
+
 `device_type` *Enum*
+
 Type of phone.
+
 <details>
 <summary>Possible enum values:</summary>
 - `ios_phone`
 - `android_phone`
 </details>
+
 `display_name` *String*
+
 Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name` otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.
+
 `errors` *List** of Objects*
+
 Errors associated with the `phone`.
+
 
 <details>
 
@@ -34,9 +47,13 @@ Errors associated with the `phone`.
 
 <summary><code>message</code> Format: <code>String</code></summary>
 </details>`nickname` *String*
+
 Optional nickname to describe the phone, settable through Seam.
+
 `properties` *Object*
+
 Properties of the phone.
+
 
 <details>
 
@@ -78,7 +95,9 @@ Salto Space credential service metadata for the phone.
 
 Indicates whether the credential service has an active associated phone.
 </details>`warnings` *List** of Objects*
+
 Warnings associated with the `phone`.
+
 
 <details>
 
@@ -88,7 +107,9 @@ Warnings associated with the `phone`.
 
 <summary><code>warning_code</code> Format: <code>String</code></summary>
 </details>`workspace_id` *UUID*
+
 ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the `phone`.
+
 ## Endpoints
 
 ### [`/phones/deactivate`](./deactivate.md)

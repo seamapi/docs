@@ -41,12 +41,17 @@ Reading credential data from physical encoder.
 ### Properties
 
 `action_attempt_id` *UUID*
+
 ID of the action attempt.
+
 `action_type` *String*
+
 `status` *Enum*
+
 <details>
 <summary>Possible enum values:</summary>
 - `success`
 - `pending`
 - `error`
 </details>
+
