@@ -181,23 +181,19 @@ Activating climate preset.
 
 ### Properties
 
-#### `action_attempt_id`
-
-Format: `UUID`
+`action_attempt_id` Format: `UUID`
 
 ID of the action attempt.
 
 ---
 
-#### `action_type`
+`action_type` Format: `String`
 
-Format: `String`
 
 ---
 
-#### `status`
+`status` Format: `Enum`
 
-Format: `Enum`
 
 Possible enum values:
 - `success`

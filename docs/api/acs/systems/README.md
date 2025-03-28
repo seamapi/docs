@@ -12,97 +12,70 @@ For details about the resources associated with an access control system, see th
 
 ## Properties
 
-### `acs_system_id`
-
-Format: `UUID`
+`acs_system_id` Format: `UUID`
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ---
 
-### `can_add_acs_users_to_acs_access_groups`
-
-Format: `Boolean`
+`can_add_acs_users_to_acs_access_groups` Format: `Boolean`
 
 Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).
 
 ---
 
-### `can_automate_enrollment`
-
-Format: `Boolean`
+`can_automate_enrollment` Format: `Boolean`
 
 Indicates whether it is possible to [launch enrollment automations](../../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ---
 
-### `can_create_acs_access_groups`
-
-Format: `Boolean`
+`can_create_acs_access_groups` Format: `Boolean`
 
 Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).
 
 ---
 
-### `can_remove_acs_users_from_acs_access_groups`
-
-Format: `Boolean`
+`can_remove_acs_users_from_acs_access_groups` Format: `Boolean`
 
 Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).
 
 ---
 
-### `connected_account_id`
-
-Format: `UUID`
+`connected_account_id` Format: `UUID`
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ---
 
-### `connected_account_ids`
-
+`connected_account_ids` Format: `List` Item format: `UUID`
 {% hint style="warning" %}
 **Deprecated**. Use `connected_account_id`.
 {% endhint %}
-
-Format: `List`
-
-Item format: `UUID`
 
 IDs of the [connected accounts](../../../core-concepts/connected-accounts/README.md) associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ---
 
-### `created_at`
-
-Format: `Datetime`
+`created_at` Format: `Datetime`
 
 Date and time at which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) was created.
 
 ---
 
-### `default_credential_manager_acs_system_id`
-
-Format: `UUID`
+`default_credential_manager_acs_system_id` Format: `UUID`
 
 ID of the default credential manager `acs_system` for this [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ---
 
-### [`errors`](./#errors-1)
-
-Format: `List`
-
-Item format: `Object`
+[`errors`](./#errors-1) Format: `List` Item format: `Object`
 
 Errors associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ---
 
-### `external_type`
-
-Format: `Enum`
+`external_type` Format: `Enum`
 
 Brand-specific terminology for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) type.
 
@@ -123,41 +96,32 @@ Possible enum values:
 
 ---
 
-### `external_type_display_name`
-
-Format: `String`
+`external_type_display_name` Format: `String`
 
 Display name that corresponds to the brand-specific terminology for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) type.
 
 ---
 
-### `image_alt_text`
-
-Format: `String`
+`image_alt_text` Format: `String`
 
 Alternative text for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) image.
 
 ---
 
-### `image_url`
-
-Format: `String`
+`image_url` Format: `String`
 
 URL for the image that represents the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ---
 
-### `is_credential_manager`
-
-Format: `Boolean`
+`is_credential_manager` Format: `Boolean`
 
 Indicates whether the `acs_system` is a credential manager.
 
 ---
 
-### `location`
+`location` Format: `Object`
 
-Format: `Object`
 
 <details>
 
@@ -167,21 +131,17 @@ Time zone in which the [access control system](https://docs.seam.co/latest/capab
 </details>
 ---
 
-### `name`
-
-Format: `String`
+`name` Format: `String`
 
 Name of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ---
 
-### `system_type`
-
+`system_type` Format: `Enum`
 {% hint style="warning" %}
 **Deprecated**. Use `external_type`.
 {% endhint %}
 
-Format: `Enum`
 
 Possible enum values:
 - `pti_site`
@@ -200,19 +160,16 @@ Possible enum values:
 
 ---
 
-### `system_type_display_name`
-
+`system_type_display_name` Format: `String`
 {% hint style="warning" %}
 **Deprecated**. Use `external_type_display_name`.
 {% endhint %}
 
-Format: `String`
 
 ---
 
-### `visionline_metadata`
+`visionline_metadata` Format: `Object`
 
-Format: `Object`
 
 <details>
 
@@ -234,19 +191,13 @@ Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel i
 </details>
 ---
 
-### [`warnings`](./#warnings-1)
-
-Format: `List`
-
-Item format: `Object`
+[`warnings`](./#warnings-1) Format: `List` Item format: `Object`
 
 Warnings associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ---
 
-### `workspace_id`
-
-Format: `UUID`
+`workspace_id` Format: `UUID`
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 

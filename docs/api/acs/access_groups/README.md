@@ -12,13 +12,11 @@ To learn whether your access control system supports access groups, see the corr
 
 ## Properties
 
-### `access_group_type`
-
+`access_group_type` Format: `Enum`
 {% hint style="warning" %}
 **Deprecated**. Use `external_type`.
 {% endhint %}
 
-Format: `Enum`
 
 Possible enum values:
 - `pti_unit`
@@ -30,49 +28,38 @@ Possible enum values:
 
 ---
 
-### `access_group_type_display_name`
-
+`access_group_type_display_name` Format: `String`
 {% hint style="warning" %}
 **Deprecated**. Use `external_type_display_name`.
 {% endhint %}
 
-Format: `String`
 
 ---
 
-### `acs_access_group_id`
-
-Format: `UUID`
+`acs_access_group_id` Format: `UUID`
 
 ID of the access group.
 
 ---
 
-### `acs_system_id`
-
-Format: `UUID`
+`acs_system_id` Format: `UUID`
 
 ID of the access control system that contains the access group.
 
 ---
 
-### `created_at`
-
-Format: `Datetime`
+`created_at` Format: `Datetime`
 
 Date and time at which the access group was created.
 
 ---
 
-### `display_name`
+`display_name` Format: `String`
 
-Format: `String`
 
 ---
 
-### `external_type`
-
-Format: `Enum`
+`external_type` Format: `Enum`
 
 Brand-specific terminology for the access group type.
 
@@ -86,33 +73,24 @@ Possible enum values:
 
 ---
 
-### `external_type_display_name`
-
-Format: `String`
+`external_type_display_name` Format: `String`
 
 Display name that corresponds to the brand-specific terminology for the access group type.
 
 ---
 
-### `is_managed`
+`is_managed` Format: `Boolean`
 
-Format: `Boolean`
 
 ---
 
-### `name`
-
-Format: `String`
+`name` Format: `String`
 
 Name of the access group.
 
 ---
 
-### `warnings`
-
-Format: `List`
-
-Item format: `Object`
+`warnings` Format: `List` Item format: `Object`
 
 Warnings associated with the `acs_access_group`.
 
@@ -136,9 +114,7 @@ Unique identifier of the type of warning. Enables quick recognition and categori
 </details>
 ---
 
-### `workspace_id`
-
-Format: `UUID`
+`workspace_id` Format: `UUID`
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the access group.
 

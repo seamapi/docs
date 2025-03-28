@@ -10,25 +10,19 @@ In an access control system, an entrance is a secured door, gate, zone, or other
 
 ## Properties
 
-### `acs_entrance_id`
-
-Format: `UUID`
+`acs_entrance_id` Format: `UUID`
 
 ID of the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 ---
 
-### `acs_system_id`
-
-Format: `UUID`
+`acs_system_id` Format: `UUID`
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 ---
 
-### `assa_abloy_vostio_metadata`
-
-Format: `Object`
+`assa_abloy_vostio_metadata` Format: `Object`
 
 ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
@@ -60,25 +54,19 @@ Possible enum values:
 </details>
 ---
 
-### `created_at`
-
-Format: `Datetime`
+`created_at` Format: `Datetime`
 
 Date and time at which the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md) was created.
 
 ---
 
-### `display_name`
-
-Format: `String`
+`display_name` Format: `String`
 
 Display name for the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 ---
 
-### `dormakaba_community_metadata`
-
-Format: `Object`
+`dormakaba_community_metadata` Format: `Object`
 
 dormakaba Community-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
@@ -88,11 +76,7 @@ dormakaba Community-specific metadata associated with the [entrance](../../../ca
 </details>
 ---
 
-### `errors`
-
-Format: `List`
-
-Item format: `Object`
+`errors` Format: `List` Item format: `Object`
 
 Errors associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
@@ -110,9 +94,7 @@ Detailed description of the error. Provides insights into the issue and potentia
 </details>
 ---
 
-### `latch_metadata`
-
-Format: `Object`
+`latch_metadata` Format: `Object`
 
 Latch-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
@@ -134,9 +116,7 @@ Latch-specific metadata associated with the [entrance](../../../capability-guide
 </details>
 ---
 
-### `salto_ks_metadata`
-
-Format: `Object`
+`salto_ks_metadata` Format: `Object`
 
 Salto KS-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
@@ -174,9 +154,7 @@ Salto KS-specific metadata associated with the [entrance](../../../capability-gu
 </details>
 ---
 
-### `salto_space_metadata`
-
-Format: `Object`
+`salto_space_metadata` Format: `Object`
 
 Salto Space-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
@@ -194,9 +172,7 @@ Salto Space-specific metadata associated with the [entrance](../../../capability
 </details>
 ---
 
-### `visionline_metadata`
-
-Format: `Object`
+`visionline_metadata` Format: `Object`
 
 Visionline-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
