@@ -28,7 +28,7 @@
 {{#if enumValues}}
 <details>
 
-<summary>Possible enum values:</summary>
+<summary>Enum values:</summary>
 
 {{#each enumValues}}
 - `{{this}}`
@@ -41,10 +41,14 @@
 
 This object has no properties.
 {{else}}
+<details>
+
+<summary>Child Properties</summary>
 {{#each objectProperties}}
 
 {{> property-collapsible this}}
 {{/each}}
+</details>
 {{/if}}
 {{/unless}}
 {{#if listProperties}}
