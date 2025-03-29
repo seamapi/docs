@@ -279,37 +279,37 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 ---
 ## Warnings
 
-### `waiting_to_be_issued`
+**`waiting_to_be_issued`**
 
 Indicates that the [credential](../../../capability-guides/access-systems/managing-credentials.md) is waiting to be issued.
 
 ---
 
-### `schedule_externally_modified`
+**`schedule_externally_modified`**
 
 Indicates that the schedule of one of the [credential](../../../capability-guides/access-systems/managing-credentials.md)'s children was modified externally.
 
 ---
 
-### `schedule_modified`
+**`schedule_modified`**
 
 Indicates that the schedule of the [credential](../../../capability-guides/access-systems/managing-credentials.md) was modified to avoid creating a credential with a start date in the past.
 
 ---
 
-### `being_deleted`
+**`being_deleted`**
 
 Indicates that the [credential](../../../capability-guides/access-systems/managing-credentials.md) is being deleted.
 
 ---
 
-### `unknown_issue_with_acs_credential`
+**`unknown_issue_with_acs_credential`**
 
 An unknown issue occurred while syncing the state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) with the provider. This issue may affect the proper functioning of the credential.
 
 ---
 
-### `needs_to_be_reissued`
+**`needs_to_be_reissued`**
 
 Access permissions for the [credential](../../../capability-guides/access-systems/managing-credentials.md) have changed. [Reissue](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md) (re-encode) the credential. This issue may affect the proper functioning of the credential.
 
@@ -317,28 +317,28 @@ Access permissions for the [credential](../../../capability-guides/access-system
 
 ## Endpoints
 
-### [`/acs/credentials/assign`](./assign.md)
+[**`/acs/credentials/assign`**](./assign.md)
 
 Assigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) to a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-### [`/acs/credentials/create`](./create.md)
+[**`/acs/credentials/create`**](./create.md)
 
 Creates a new [credential](../../../capability-guides/access-systems/managing-credentials.md) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-### [`/acs/credentials/delete`](./delete.md)
+[**`/acs/credentials/delete`**](./delete.md)
 
 Deletes a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
-### [`/acs/credentials/get`](./get.md)
+[**`/acs/credentials/get`**](./get.md)
 
 Returns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
-### [`/acs/credentials/list`](./list.md)
+[**`/acs/credentials/list`**](./list.md)
 
 Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md).
-### [`/acs/credentials/list_accessible_entrances`](./list_accessible_entrances.md)
+[**`/acs/credentials/list_accessible_entrances`**](./list_accessible_entrances.md)
 
 Returns a list of all [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a [credential](https://docs.seam.co/latest/api/acs/credentials) grants access.
-### [`/acs/credentials/unassign`](./unassign.md)
+[**`/acs/credentials/unassign`**](./unassign.md)
 
 Unassigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) from a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-### [`/acs/credentials/update`](./update.md)
+[**`/acs/credentials/update`**](./update.md)
 
 Updates the code and ends at date and time for a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -346,7 +346,7 @@ Updates the code and ends at date and time for a specified [credential](../../..
 
 ## Events
 
-### `acs_credential.deleted`
+**`acs_credential.deleted`**
 
 An [ACS credential](../../../capability-guides/access-systems/managing-credentials.md) was deleted.
 
@@ -404,7 +404,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
 ---
 
-### `acs_credential.issued`
+**`acs_credential.issued`**
 
 An [ACS credential](../../../capability-guides/access-systems/managing-credentials.md) was issued.
 
@@ -462,7 +462,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
 ---
 
-### `acs_credential.reissued`
+**`acs_credential.reissued`**
 
 An [ACS credential](../../../capability-guides/access-systems/managing-credentials.md) was reissued.
 

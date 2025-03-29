@@ -224,7 +224,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 ---
 ## Errors
 
-### `seam_bridge_disconnected`
+**`seam_bridge_disconnected`**
 
 Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
   This error might also occur if Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/README.md).
@@ -232,7 +232,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capab
 
 ---
 
-### `visionline_instance_unreachable`
+**`visionline_instance_unreachable`**
 
 Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/latest/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).
   For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](../../../core-concepts/workspaces/README.md).
@@ -240,25 +240,25 @@ Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is funct
 
 ---
 
-### `salto_ks_subscription_limit_exceeded`
+**`salto_ks_subscription_limit_exceeded`**
 
 Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.
 
 ---
 
-### `acs_system_disconnected`
+**`acs_system_disconnected`**
 
 Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md) to resolve the issue.
 
 ---
 
-### `account_disconnected`
+**`account_disconnected`**
 
 Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) to restore access.
 
 ---
 
-### `salto_ks_certification_expired`
+**`salto_ks_certification_expired`**
 
 Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.
 
@@ -266,13 +266,13 @@ Indicates that the [access control system](https://docs.seam.co/latest/capabilit
 
 ## Warnings
 
-### `salto_ks_subscription_limit_almost_reached`
+**`salto_ks_subscription_limit_almost_reached`**
 
 Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site to rectify the issue.
 
 ---
 
-### `time_zone_does_not_match_location`
+**`time_zone_does_not_match_location`**
 
 Indicates the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
@@ -280,13 +280,13 @@ Indicates the [access control system](https://docs.seam.co/latest/capability-gui
 
 ## Endpoints
 
-### [`/acs/systems/get`](./get.md)
+[**`/acs/systems/get`**](./get.md)
 
 Returns a specified [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
-### [`/acs/systems/list`](./list.md)
+[**`/acs/systems/list`**](./list.md)
 
 Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems).
-### [`/acs/systems/list_compatible_credential_manager_acs_systems`](./list_compatible_credential_manager_acs_systems.md)
+[**`/acs/systems/list_compatible_credential_manager_acs_systems`**](./list_compatible_credential_manager_acs_systems.md)
 
 Returns a list of all credential manager ACS systems that are compatible with a specified
 [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
@@ -295,7 +295,7 @@ Returns a list of all credential manager ACS systems that are compatible with a 
 
 ## Events
 
-### `acs_system.connected`
+**`acs_system.connected`**
 
 An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) was connected.
 
@@ -348,7 +348,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
 ---
 
-### `acs_system.added`
+**`acs_system.added`**
 
 An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) was added.
 
@@ -401,7 +401,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
 ---
 
-### `acs_system.disconnected`
+**`acs_system.disconnected`**
 
 An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) was disconnected.
 
