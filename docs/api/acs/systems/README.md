@@ -82,7 +82,7 @@ Brand-specific terminology for the [access control system](https://docs.seam.co/
 
 <details>
 
-<summary>Possible enum values:</summary>
+<summary>Enum values:</summary>
 
 - `pti_site`
 - `alta_org`
@@ -127,12 +127,16 @@ Indicates whether the `acs_system` is a credential manager.
 ---
 **`location`** *Object*
 
+<details>
+
+<summary>Child Properties</summary>
 
 <details>
 
 <summary><b><code>time_zone</code></b> <i>String</i></summary>
 
 Time zone in which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) is located.
+</details>
 </details>
 
 ---
@@ -150,7 +154,7 @@ Name of the [access control system](https://docs.seam.co/latest/capability-guide
 
 <details>
 
-<summary>Possible enum values:</summary>
+<summary>Enum values:</summary>
 
 - `pti_site`
 - `alta_org`
@@ -179,6 +183,9 @@ Name of the [access control system](https://docs.seam.co/latest/capability-guide
 ---
 **`visionline_metadata`** *Object*
 
+<details>
+
+<summary>Child Properties</summary>
 
 <details>
 
@@ -199,6 +206,7 @@ Keyset loaded into a reader. Mobile keys and reader administration tools securel
 <summary><b><code>system_id</code></b> <i>String</i></summary>
 
 Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager.
+</details>
 </details>
 
 ---

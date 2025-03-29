@@ -65,7 +65,7 @@ Type of action that the action attempt tracks.
 
 <details>
 
-<summary>Possible enum values:</summary>
+<summary>Enum values:</summary>
 
 - `success`
 - `pending`

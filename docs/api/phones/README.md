@@ -32,7 +32,7 @@ Type of phone.
 
 <details>
 
-<summary>Possible enum values:</summary>
+<summary>Enum values:</summary>
 
 - `ios_phone`
 - `android_phone`
@@ -72,6 +72,9 @@ Optional nickname to describe the phone, settable through Seam.
 
 Properties of the phone.
 
+<details>
+
+<summary>Child Properties</summary>
 
 <details>
 
@@ -118,6 +121,7 @@ Salto Space credential service metadata for the phone.
 <summary><b><code>salto_space_credential_service_metadata.has_active_phone</code></b> <i>Boolean</i></summary>
 
 Indicates whether the credential service has an active associated phone.
+</details>
 </details>
 
 ---

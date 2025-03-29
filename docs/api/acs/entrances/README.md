@@ -26,6 +26,9 @@ ID of the [access control system](https://docs.seam.co/latest/capability-guides/
 
 ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
+<details>
+
+<summary>Child Properties</summary>
 
 <details>
 
@@ -61,6 +64,7 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
 
 <summary><b><code>stand_open</code></b> <i>Boolean</i></summary>
 </details>
+</details>
 
 ---
 **`created_at`** *Datetime*
@@ -79,10 +83,14 @@ Display name for the [entrance](../../../capability-guides/access-systems/retrie
 
 dormakaba Community-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
+<details>
+
+<summary>Child Properties</summary>
 
 <details>
 
 <summary><b><code>access_point_name</code></b> <i>String</i></summary>
+</details>
 </details>
 
 ---
@@ -110,6 +118,9 @@ Detailed description of the error. Provides insights into the issue and potentia
 
 Latch-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
+<details>
+
+<summary>Child Properties</summary>
 
 <details>
 
@@ -130,12 +141,16 @@ Latch-specific metadata associated with the [entrance](../../../capability-guide
 
 <summary><b><code>is_connected</code></b> <i>Boolean</i></summary>
 </details>
+</details>
 
 ---
 **`salto_ks_metadata`** *Object*
 
 Salto KS-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
+<details>
+
+<summary>Child Properties</summary>
 
 <details>
 
@@ -176,12 +191,16 @@ Salto KS-specific metadata associated with the [entrance](../../../capability-gu
 
 <summary><b><code>privacy_mode</code></b> <i>Boolean</i></summary>
 </details>
+</details>
 
 ---
 **`salto_space_metadata`** *Object*
 
 Salto Space-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
+<details>
+
+<summary>Child Properties</summary>
 
 <details>
 
@@ -197,12 +216,16 @@ Salto Space-specific metadata associated with the [entrance](../../../capability
 
 <summary><b><code>ext_door_id</code></b> <i>String</i></summary>
 </details>
+</details>
 
 ---
 **`visionline_metadata`** *Object*
 
 Visionline-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
+<details>
+
+<summary>Child Properties</summary>
 
 <details>
 
@@ -246,6 +269,7 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 </details>
 
 
+</details>
 </details>
 
 ---

@@ -18,7 +18,7 @@ Access method for the [credential](../../../capability-guides/access-systems/man
 
 <details>
 
-<summary>Possible enum values:</summary>
+<summary>Enum values:</summary>
 
 - `code`
 - `card`
@@ -53,6 +53,9 @@ ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-system
 
 Vostio-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
+<details>
+
+<summary>Child Properties</summary>
 
 <details>
 
@@ -77,6 +80,7 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 <details>
 
 <summary><b><code>override_guest_acs_entrance_ids</code></b> <i>List</i> <i>of Strings</i></summary>
+</details>
 </details>
 
 ---
@@ -132,7 +136,7 @@ Brand-specific terminology for the [credential](../../../capability-guides/acces
 
 <details>
 
-<summary>Possible enum values:</summary>
+<summary>Enum values:</summary>
 
 - `pti_card`
 - `brivo_credential`
@@ -207,6 +211,9 @@ Date and time at which the [credential](../../../capability-guides/access-system
 
 Visionline-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
+<details>
+
+<summary>Child Properties</summary>
 
 <details>
 
@@ -254,6 +261,7 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 <details>
 
 <summary><b><code>joiner_acs_credential_ids</code></b> <i>List</i> <i>of UUIDs</i></summary>
+</details>
 </details>
 
 ---

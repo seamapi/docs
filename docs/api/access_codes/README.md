@@ -122,7 +122,7 @@ Date and time at which the time-bound access code becomes active.
 
 <details>
 
-<summary>Possible enum values:</summary>
+<summary>Enum values:</summary>
 
 - `setting`
 - `set`
@@ -139,7 +139,7 @@ Nature of the access code. Values are "ongoing" for access codes that are active
 
 <details>
 
-<summary>Possible enum values:</summary>
+<summary>Enum values:</summary>
 
 - `time_bound`
 - `ongoing`

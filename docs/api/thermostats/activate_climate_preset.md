@@ -195,7 +195,7 @@ ID of the action attempt.
 
 <details>
 
-<summary>Possible enum values:</summary>
+<summary>Enum values:</summary>
 
 - `success`
 - `pending`

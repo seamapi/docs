@@ -20,7 +20,7 @@ To learn whether your access control system supports access groups, see the corr
 
 <details>
 
-<summary>Possible enum values:</summary>
+<summary>Enum values:</summary>
 
 - `pti_unit`
 - `pti_access_level`
@@ -68,7 +68,7 @@ Brand-specific terminology for the access group type.
 
 <details>
 
-<summary>Possible enum values:</summary>
+<summary>Enum values:</summary>
 
 - `pti_unit`
 - `pti_access_level`
