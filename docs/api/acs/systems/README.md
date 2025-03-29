@@ -130,7 +130,7 @@ Indicates whether the `acs_system` is a credential manager.
 
 <details>
 
-<summary><b><code>time_zone**</code></b> <i>String</i></summary>
+<summary><b><code>time_zone</code></b> <i>String</i></summary>
 
 Time zone in which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) is located.
 </details>
@@ -182,21 +182,21 @@ Name of the [access control system](https://docs.seam.co/latest/capability-guide
 
 <details>
 
-<summary><b><code>lan_address**</code></b> <i>String</i></summary>
+<summary><b><code>lan_address</code></b> <i>String</i></summary>
 
 IP address or hostname of the main Visionline server relative to [Seam Bridge](../../../capability-guides/seam-bridge.md) on the local network.
 </details>
 
 <details>
 
-<summary><b><code>mobile_access_uuid**</code></b> <i>String</i></summary>
+<summary><b><code>mobile_access_uuid</code></b> <i>String</i></summary>
 
 Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.
 </details>
 
 <details>
 
-<summary><b><code>system_id**</code></b> <i>String</i></summary>
+<summary><b><code>system_id</code></b> <i>String</i></summary>
 
 Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager.
 </details>
@@ -293,47 +293,47 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 <details>
 
-<summary><b><code>acs_system_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>acs_system_id</code></b> <i>UUID</i></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
 
 <details>
 
-<summary><b><code>connected_account_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
 
 <details>
 
-<summary><b><code>created_at**</code></b> <i>Datetime</i></summary>
+<summary><b><code>created_at</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event was created.
 </details>
 
 <details>
 
-<summary><b><code>event_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>event_id</code></b> <i>UUID</i></summary>
 
 ID of the event.
 </details>
 
 <details>
 
-<summary><b><code>event_type**</code></b> <i>String</i></summary>
+<summary><b><code>event_type</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>occurred_at**</code></b> <i>Datetime</i></summary>
+<summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event occurred.
 </details>
 
 <details>
 
-<summary><b><code>workspace_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>
@@ -346,47 +346,47 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 <details>
 
-<summary><b><code>acs_system_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>acs_system_id</code></b> <i>UUID</i></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
 
 <details>
 
-<summary><b><code>connected_account_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
 
 <details>
 
-<summary><b><code>created_at**</code></b> <i>Datetime</i></summary>
+<summary><b><code>created_at</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event was created.
 </details>
 
 <details>
 
-<summary><b><code>event_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>event_id</code></b> <i>UUID</i></summary>
 
 ID of the event.
 </details>
 
 <details>
 
-<summary><b><code>event_type**</code></b> <i>String</i></summary>
+<summary><b><code>event_type</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>occurred_at**</code></b> <i>Datetime</i></summary>
+<summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event occurred.
 </details>
 
 <details>
 
-<summary><b><code>workspace_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>
@@ -399,47 +399,47 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 <details>
 
-<summary><b><code>acs_system_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>acs_system_id</code></b> <i>UUID</i></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
 
 <details>
 
-<summary><b><code>connected_account_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
 
 <details>
 
-<summary><b><code>created_at**</code></b> <i>Datetime</i></summary>
+<summary><b><code>created_at</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event was created.
 </details>
 
 <details>
 
-<summary><b><code>event_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>event_id</code></b> <i>UUID</i></summary>
 
 ID of the event.
 </details>
 
 <details>
 
-<summary><b><code>event_type**</code></b> <i>String</i></summary>
+<summary><b><code>event_type</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>occurred_at**</code></b> <i>Datetime</i></summary>
+<summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event occurred.
 </details>
 
 <details>
 
-<summary><b><code>workspace_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>

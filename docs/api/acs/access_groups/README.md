@@ -103,21 +103,21 @@ Warnings associated with the `acs_access_group`.
 
 <details>
 
-<summary><b><code>created_at**</code></b> <i>Datetime</i></summary>
+<summary><b><code>created_at</code></b> <i>Datetime</i></summary>
 
 Date and time at which Seam created the warning.
 </details>
 
 <details>
 
-<summary><b><code>message**</code></b> <i>String</i></summary>
+<summary><b><code>message</code></b> <i>String</i></summary>
 
 Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
 </details>
 
 <details>
 
-<summary><b><code>warning_code**</code></b> <i>String</i></summary>
+<summary><b><code>warning_code</code></b> <i>String</i></summary>
 
 Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
 </details>
@@ -160,52 +160,52 @@ An ACS access group was deleted.
 
 <details>
 
-<summary><b><code>acs_access_group_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>acs_access_group_id</code></b> <i>UUID</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>acs_system_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>acs_system_id</code></b> <i>UUID</i></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
 
 <details>
 
-<summary><b><code>connected_account_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
 
 <details>
 
-<summary><b><code>created_at**</code></b> <i>Datetime</i></summary>
+<summary><b><code>created_at</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event was created.
 </details>
 
 <details>
 
-<summary><b><code>event_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>event_id</code></b> <i>UUID</i></summary>
 
 ID of the event.
 </details>
 
 <details>
 
-<summary><b><code>event_type**</code></b> <i>String</i></summary>
+<summary><b><code>event_type</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>occurred_at**</code></b> <i>Datetime</i></summary>
+<summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event occurred.
 </details>
 
 <details>
 
-<summary><b><code>workspace_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>

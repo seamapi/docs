@@ -29,17 +29,17 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
 
 <details>
 
-<summary><b><code>door_name**</code></b> <i>String</i></summary>
+<summary><b><code>door_name</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>door_number**</code></b> <i>Number</i></summary>
+<summary><b><code>door_number</code></b> <i>Number</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>door_type**</code></b> <i>Enum</i></summary>
+<summary><b><code>door_type</code></b> <i>Enum</i></summary>
 <details>
 
 <summary>Possible enum values:</summary>
@@ -54,12 +54,12 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
 
 <details>
 
-<summary><b><code>pms_id**</code></b> <i>String</i></summary>
+<summary><b><code>pms_id</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>stand_open**</code></b> <i>Boolean</i></summary>
+<summary><b><code>stand_open</code></b> <i>Boolean</i></summary>
 </details>
 
 ---
@@ -82,7 +82,7 @@ dormakaba Community-specific metadata associated with the [entrance](../../../ca
 
 <details>
 
-<summary><b><code>access_point_name**</code></b> <i>String</i></summary>
+<summary><b><code>access_point_name</code></b> <i>String</i></summary>
 </details>
 
 ---
@@ -93,14 +93,14 @@ Errors associated with the [entrance](../../../capability-guides/access-systems/
 
 <details>
 
-<summary><b><code>error_code**</code></b> <i>String</i></summary>
+<summary><b><code>error_code</code></b> <i>String</i></summary>
 
 Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
 </details>
 
 <details>
 
-<summary><b><code>message**</code></b> <i>String</i></summary>
+<summary><b><code>message</code></b> <i>String</i></summary>
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 </details>
@@ -113,22 +113,22 @@ Latch-specific metadata associated with the [entrance](../../../capability-guide
 
 <details>
 
-<summary><b><code>accessibility_type**</code></b> <i>String</i></summary>
+<summary><b><code>accessibility_type</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>door_name**</code></b> <i>String</i></summary>
+<summary><b><code>door_name</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>door_type**</code></b> <i>String</i></summary>
+<summary><b><code>door_type</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>is_connected**</code></b> <i>Boolean</i></summary>
+<summary><b><code>is_connected</code></b> <i>Boolean</i></summary>
 </details>
 
 ---
@@ -139,42 +139,42 @@ Salto KS-specific metadata associated with the [entrance](../../../capability-gu
 
 <details>
 
-<summary><b><code>battery_level**</code></b> <i>String</i></summary>
+<summary><b><code>battery_level</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>door_name**</code></b> <i>String</i></summary>
+<summary><b><code>door_name</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>intrusion_alarm**</code></b> <i>Boolean</i></summary>
+<summary><b><code>intrusion_alarm</code></b> <i>Boolean</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>left_open_alarm**</code></b> <i>Boolean</i></summary>
+<summary><b><code>left_open_alarm</code></b> <i>Boolean</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>lock_type**</code></b> <i>String</i></summary>
+<summary><b><code>lock_type</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>locked_state**</code></b> <i>String</i></summary>
+<summary><b><code>locked_state</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>online**</code></b> <i>Boolean</i></summary>
+<summary><b><code>online</code></b> <i>Boolean</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>privacy_mode**</code></b> <i>Boolean</i></summary>
+<summary><b><code>privacy_mode</code></b> <i>Boolean</i></summary>
 </details>
 
 ---
@@ -185,17 +185,17 @@ Salto Space-specific metadata associated with the [entrance](../../../capability
 
 <details>
 
-<summary><b><code>door_description**</code></b> <i>String</i></summary>
+<summary><b><code>door_description</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>door_name**</code></b> <i>String</i></summary>
+<summary><b><code>door_name</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>ext_door_id**</code></b> <i>String</i></summary>
+<summary><b><code>ext_door_id</code></b> <i>String</i></summary>
 </details>
 
 ---
@@ -206,7 +206,7 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 
 <details>
 
-<summary><b><code>door_category**</code></b> <i>Enum</i></summary>
+<summary><b><code>door_category</code></b> <i>Enum</i></summary>
 <details>
 
 <summary>Possible enum values:</summary>
@@ -222,12 +222,12 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 
 <details>
 
-<summary><b><code>door_name**</code></b> <i>String</i></summary>
+<summary><b><code>door_name</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>profiles**</code></b> <i>List</i> <i>of Objects</i></summary>
+<summary><b><code>profiles</code></b> <i>List</i> <i>of Objects</i></summary>
 
 - <b><code>visionline_door_profile_id</code></b> <i>String</i>
 
@@ -238,7 +238,7 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 
 <details>
 
-<summary>Possible enum values:</summary>
+<summary>Enum values:</summary>
 
   - `BLE`
   - `commonDoor`
@@ -274,52 +274,52 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 
 <details>
 
-<summary><b><code>acs_entrance_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>acs_entrance_id</code></b> <i>UUID</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>acs_system_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>acs_system_id</code></b> <i>UUID</i></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
 
 <details>
 
-<summary><b><code>connected_account_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
 
 <details>
 
-<summary><b><code>created_at**</code></b> <i>Datetime</i></summary>
+<summary><b><code>created_at</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event was created.
 </details>
 
 <details>
 
-<summary><b><code>event_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>event_id</code></b> <i>UUID</i></summary>
 
 ID of the event.
 </details>
 
 <details>
 
-<summary><b><code>event_type**</code></b> <i>String</i></summary>
+<summary><b><code>event_type</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>occurred_at**</code></b> <i>Datetime</i></summary>
+<summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event occurred.
 </details>
 
 <details>
 
-<summary><b><code>workspace_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>
@@ -332,52 +332,52 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 
 <details>
 
-<summary><b><code>acs_entrance_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>acs_entrance_id</code></b> <i>UUID</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>acs_system_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>acs_system_id</code></b> <i>UUID</i></summary>
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
 
 <details>
 
-<summary><b><code>connected_account_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
 
 <details>
 
-<summary><b><code>created_at**</code></b> <i>Datetime</i></summary>
+<summary><b><code>created_at</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event was created.
 </details>
 
 <details>
 
-<summary><b><code>event_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>event_id</code></b> <i>UUID</i></summary>
 
 ID of the event.
 </details>
 
 <details>
 
-<summary><b><code>event_type**</code></b> <i>String</i></summary>
+<summary><b><code>event_type</code></b> <i>String</i></summary>
 </details>
 
 <details>
 
-<summary><b><code>occurred_at**</code></b> <i>Datetime</i></summary>
+<summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
 
 Date and time at which the event occurred.
 </details>
 
 <details>
 
-<summary><b><code>workspace_id**</code></b> <i>UUID</i></summary>
+<summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>
