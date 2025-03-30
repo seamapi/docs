@@ -60,33 +60,29 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 <details>
 
 <summary><b><code>door_names</code></b> <i>List</i> <i>of Strings</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>endpoint_id</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>key_id</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>key_issuing_request_id</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>override_guest_acs_entrance_ids</code></b> <i>List</i> <i>of Strings</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 </details>
+
 
 ---
 **`card_number`** *String*
@@ -127,13 +123,11 @@ Errors associated with the [credential](../../../capability-guides/access-system
 <details>
 
 <summary><b><code>error_code</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>message</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 ---
@@ -225,16 +219,14 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 <details>
 
 <summary><b><code>auto_join</code></b> <i>Boolean</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>card_function_type</code></b> <i>Enum</i></summary>
-PROPERTY COLLAPSIBLE
 <details>
 
-<summary>Possible enum values:</summary>
+<summary>Enum values:</summary>
 
 - `guest`
 - `staff`
@@ -245,39 +237,34 @@ PROPERTY COLLAPSIBLE
 <details>
 
 <summary><b><code>card_id</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>common_acs_entrance_ids</code></b> <i>List</i> <i>of UUIDs</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>credential_id</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>guest_acs_entrance_ids</code></b> <i>List</i> <i>of UUIDs</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>is_valid</code></b> <i>Boolean</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>joiner_acs_credential_ids</code></b> <i>List</i> <i>of UUIDs</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 </details>
+
 
 ---
 [**`warnings`**](./#warnings-1) *List* *of Objects*
@@ -335,27 +322,35 @@ Access permissions for the [credential](../../../capability-guides/access-system
 [**`/acs/credentials/assign`**](./assign.md)
 
 Assigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) to a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
 [**`/acs/credentials/create`**](./create.md)
 
 Creates a new [credential](../../../capability-guides/access-systems/managing-credentials.md) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
 [**`/acs/credentials/delete`**](./delete.md)
 
 Deletes a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
 [**`/acs/credentials/get`**](./get.md)
 
 Returns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
 [**`/acs/credentials/list`**](./list.md)
 
 Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md).
+
 [**`/acs/credentials/list_accessible_entrances`**](./list_accessible_entrances.md)
 
 Returns a list of all [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a [credential](https://docs.seam.co/latest/api/acs/credentials) grants access.
+
 [**`/acs/credentials/unassign`**](./unassign.md)
 
 Unassigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) from a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
 [**`/acs/credentials/update`**](./update.md)
 
 Updates the code and ends at date and time for a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
 
 ---
 
@@ -368,14 +363,11 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 <details>
 
 <summary><b><code>acs_credential_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>acs_system_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
@@ -383,8 +375,6 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
@@ -392,8 +382,6 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -401,8 +389,6 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -410,14 +396,11 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -425,8 +408,6 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>
@@ -440,14 +421,11 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 <details>
 
 <summary><b><code>acs_credential_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>acs_system_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
@@ -455,8 +433,6 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
@@ -464,8 +440,6 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -473,8 +447,6 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -482,14 +454,11 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -497,8 +466,6 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>
@@ -512,14 +479,11 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 <details>
 
 <summary><b><code>acs_credential_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>acs_system_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
@@ -527,8 +491,6 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
@@ -536,8 +498,6 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -545,8 +505,6 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -554,14 +512,11 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -569,8 +524,6 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>

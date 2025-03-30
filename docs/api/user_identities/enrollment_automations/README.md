@@ -43,15 +43,19 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 [**`/user_identities/enrollment_automations/delete`**](./delete.md)
 
 Deletes a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system). You must delete all enrollment automations associated with a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) before [deleting the user identity](https://docs.seam.co/latest/api/user_identities/delete).
+
 [**`/user_identities/enrollment_automations/get`**](./get.md)
 
 Returns a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).
+
 [**`/user_identities/enrollment_automations/launch`**](./launch.md)
 
 Sets up a new [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) with a specified [credential manager](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).
+
 [**`/user_identities/enrollment_automations/list`**](./list.md)
 
 Returns a list of all [enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+
 
 ---
 
@@ -64,8 +68,6 @@ An [enrollment automation](../../../capability-guides/mobile-access/issuing-mobi
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -73,8 +75,6 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>enrollment_automation_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [enrollment automation](../../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut).
 </details>
@@ -82,8 +82,6 @@ ID of the [enrollment automation](../../../capability-guides/mobile-access/issui
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -91,14 +89,11 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -106,8 +101,6 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>

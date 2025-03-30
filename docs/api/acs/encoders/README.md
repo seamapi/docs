@@ -53,8 +53,6 @@ Errors associated with the [encoder](../../../capability-guides/access-systems/w
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Date and time at which Seam created the error.
 </details>
@@ -62,8 +60,6 @@ Date and time at which Seam created the error.
 <details>
 
 <summary><b><code>error_code</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
 </details>
@@ -71,8 +67,6 @@ Unique identifier of the type of error. Enables quick recognition and categoriza
 <details>
 
 <summary><b><code>message</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 </details>
@@ -89,12 +83,15 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 [**`/acs/encoders/encode_credential`**](./encode_credential.md)
 
 Encodes an existing [credential](../../../capability-guides/access-systems/managing-credentials.md) onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+
 [**`/acs/encoders/list`**](./list.md)
 
 Returns a list of all [encoders](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+
 [**`/acs/encoders/scan_credential`**](./scan_credential.md)
 
 Scans an encoded [acs_credential](../../../capability-guides/access-systems/managing-credentials.md) from a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+
 
 ---
 
@@ -107,8 +104,6 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 <details>
 
 <summary><b><code>acs_encoder_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 </details>
@@ -116,8 +111,6 @@ ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-c
 <details>
 
 <summary><b><code>acs_system_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
@@ -125,8 +118,6 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
@@ -134,8 +125,6 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -143,8 +132,6 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -152,14 +139,11 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -167,8 +151,6 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>
@@ -182,8 +164,6 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 <details>
 
 <summary><b><code>acs_encoder_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 </details>
@@ -191,8 +171,6 @@ ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-c
 <details>
 
 <summary><b><code>acs_system_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
@@ -200,8 +178,6 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
@@ -209,8 +185,6 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -218,8 +192,6 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -227,14 +199,11 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -242,8 +211,6 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>

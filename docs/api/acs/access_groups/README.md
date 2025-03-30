@@ -104,8 +104,6 @@ Warnings associated with the `acs_access_group`.
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Date and time at which Seam created the warning.
 </details>
@@ -113,8 +111,6 @@ Date and time at which Seam created the warning.
 <details>
 
 <summary><b><code>message</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
 </details>
@@ -122,8 +118,6 @@ Detailed description of the warning. Provides insights into the issue and potent
 <details>
 
 <summary><b><code>warning_code</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
 </details>
@@ -140,21 +134,27 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 [**`/acs/access_groups/add_user`**](./add_user.md)
 
 Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+
 [**`/acs/access_groups/get`**](./get.md)
 
 Returns a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+
 [**`/acs/access_groups/list`**](./list.md)
 
 Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+
 [**`/acs/access_groups/list_accessible_entrances`**](./list_accessible_entrances.md)
 
 Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+
 [**`/acs/access_groups/list_users`**](./list_users.md)
 
 Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+
 [**`/acs/access_groups/remove_user`**](./remove_user.md)
 
 Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+
 
 ---
 
@@ -167,14 +167,11 @@ An ACS access group was deleted.
 <details>
 
 <summary><b><code>acs_access_group_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>acs_system_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
@@ -182,8 +179,6 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
@@ -191,8 +186,6 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -200,8 +193,6 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -209,14 +200,11 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -224,8 +212,6 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>

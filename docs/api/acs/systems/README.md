@@ -134,12 +134,11 @@ Indicates whether the `acs_system` is a credential manager.
 <details>
 
 <summary><b><code>time_zone</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Time zone in which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) is located.
 </details>
 </details>
+
 
 ---
 **`name`** *String*
@@ -192,8 +191,6 @@ Name of the [access control system](https://docs.seam.co/latest/capability-guide
 <details>
 
 <summary><b><code>lan_address</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 IP address or hostname of the main Visionline server relative to [Seam Bridge](../../../capability-guides/seam-bridge.md) on the local network.
 </details>
@@ -201,8 +198,6 @@ IP address or hostname of the main Visionline server relative to [Seam Bridge](.
 <details>
 
 <summary><b><code>mobile_access_uuid</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.
 </details>
@@ -210,12 +205,11 @@ Keyset loaded into a reader. Mobile keys and reader administration tools securel
 <details>
 
 <summary><b><code>system_id</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager.
 </details>
 </details>
+
 
 ---
 [**`warnings`**](./#warnings-1) *List* *of Objects*
@@ -291,13 +285,16 @@ Indicates the [access control system](https://docs.seam.co/latest/capability-gui
 [**`/acs/systems/get`**](./get.md)
 
 Returns a specified [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+
 [**`/acs/systems/list`**](./list.md)
 
 Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems).
+
 [**`/acs/systems/list_compatible_credential_manager_acs_systems`**](./list_compatible_credential_manager_acs_systems.md)
 
 Returns a list of all credential manager ACS systems that are compatible with a specified
 [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+
 
 ---
 
@@ -310,8 +307,6 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 <details>
 
 <summary><b><code>acs_system_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
@@ -319,8 +314,6 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
@@ -328,8 +321,6 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -337,8 +328,6 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -346,14 +335,11 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -361,8 +347,6 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>
@@ -376,8 +360,6 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 <details>
 
 <summary><b><code>acs_system_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
@@ -385,8 +367,6 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
@@ -394,8 +374,6 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -403,8 +381,6 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -412,14 +388,11 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -427,8 +400,6 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>
@@ -442,8 +413,6 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 <details>
 
 <summary><b><code>acs_system_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
@@ -451,8 +420,6 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
@@ -460,8 +427,6 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -469,8 +434,6 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -478,14 +441,11 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
-PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -493,8 +453,6 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
-PROPERTY COLLAPSIBLE
-PROPERTY CONTENT
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>
