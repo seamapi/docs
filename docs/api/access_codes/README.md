@@ -153,6 +153,8 @@ Collection of warnings associated with the access code, structured in a dictiona
 
 
 ---
+## Endpoints
+
 ## Errors
 
 **`smartthings_failed_to_set_access_code`**
@@ -456,8 +458,6 @@ Management was transferred to another workspace.
 Unable to confirm the access code is set on Kwikset device.
 
 ---
-
-## Endpoints
 
 
 ---

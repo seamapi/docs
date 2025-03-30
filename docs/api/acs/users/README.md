@@ -166,6 +166,8 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 
 ---
+## Endpoints
+
 ## Errors
 
 **`deleted_externally`**
@@ -217,52 +219,6 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
 An unknown issue occurred while syncing the state of this [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user.
 
 ---
-
-## Endpoints
-
-[**`/acs/users/add_to_access_group`**](./add_to_access_group.md)
-
-Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
-
-[**`/acs/users/create`**](./create.md)
-
-Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
-[**`/acs/users/delete`**](./delete.md)
-
-Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).
-
-[**`/acs/users/get`**](./get.md)
-
-Returns a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
-[**`/acs/users/list`**](./list.md)
-
-Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
-[**`/acs/users/list_accessible_entrances`**](./list_accessible_entrances.md)
-
-Lists the [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) has access.
-
-[**`/acs/users/remove_from_access_group`**](./remove_from_access_group.md)
-
-Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
-
-[**`/acs/users/revoke_access_to_all_entrances`**](./revoke_access_to_all_entrances.md)
-
-Revokes access to all [entrances](https://docs.seam.co/latest/api/acs/entrances) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
-[**`/acs/users/suspend`**](./suspend.md)
-
-[Suspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#suspend-an-acs-user) a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Suspending an ACS user revokes their access temporarily. To restore an ACS user's access, you can [unsuspend](https://docs.seam.co/latest/api/acs/users/unsuspend) them.
-
-[**`/acs/users/unsuspend`**](./unsuspend.md)
-
-[Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an ACS user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the ACS user restores their access.
-
-[**`/acs/users/update`**](./update.md)
-
-Updates the properties of a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 ---

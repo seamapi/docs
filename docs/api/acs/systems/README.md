@@ -220,6 +220,8 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 
 ---
+## Endpoints
+
 ## Errors
 
 **`seam_bridge_disconnected`**
@@ -275,21 +277,6 @@ Indicates that the Salto KS site has exceeded 80% of the maximum number of allow
 Indicates the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 ---
-
-## Endpoints
-
-[**`/acs/systems/get`**](./get.md)
-
-Returns a specified [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
-
-[**`/acs/systems/list`**](./list.md)
-
-Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems).
-
-[**`/acs/systems/list_compatible_credential_manager_acs_systems`**](./list_compatible_credential_manager_acs_systems.md)
-
-Returns a list of all credential manager ACS systems that are compatible with a specified
-[access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 
 ---
