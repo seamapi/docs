@@ -131,12 +131,10 @@ Indicates whether the `acs_system` is a credential manager.
 
 <summary>Child Properties</summary>
 
-<details>
+<b><code>time_zone</code></b> <i>String</i>
 
-<summary><b><code>time_zone</code></b> <i>String</i></summary>
+  Time zone in which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) is located.
 
-Time zone in which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) is located.
-</details>
 </details>
 
 
@@ -188,26 +186,20 @@ Name of the [access control system](https://docs.seam.co/latest/capability-guide
 
 <summary>Child Properties</summary>
 
-<details>
+<b><code>lan_address</code></b> <i>String</i>
 
-<summary><b><code>lan_address</code></b> <i>String</i></summary>
+  IP address or hostname of the main Visionline server relative to [Seam Bridge](../../../capability-guides/seam-bridge.md) on the local network.
 
-IP address or hostname of the main Visionline server relative to [Seam Bridge](../../../capability-guides/seam-bridge.md) on the local network.
-</details>
 
-<details>
+<b><code>mobile_access_uuid</code></b> <i>String</i>
 
-<summary><b><code>mobile_access_uuid</code></b> <i>String</i></summary>
+  Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.
 
-Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.
-</details>
 
-<details>
+<b><code>system_id</code></b> <i>String</i>
 
-<summary><b><code>system_id</code></b> <i>String</i></summary>
+  Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager.
 
-Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager.
-</details>
 </details>
 
 

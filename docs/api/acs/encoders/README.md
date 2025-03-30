@@ -50,26 +50,20 @@ Display name for the [encoder](../../../capability-guides/access-systems/working
 Errors associated with the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 
-<details>
+<b><code>created_at</code></b> <i>Datetime</i>
 
-<summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+  Date and time at which Seam created the error.
 
-Date and time at which Seam created the error.
-</details>
 
-<details>
+<b><code>error_code</code></b> <i>String</i>
 
-<summary><b><code>error_code</code></b> <i>String</i></summary>
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
 
-Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-</details>
 
-<details>
+<b><code>message</code></b> <i>String</i>
 
-<summary><b><code>message</code></b> <i>String</i></summary>
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-</details>
 
 ---
 **`workspace_id`** *UUID*

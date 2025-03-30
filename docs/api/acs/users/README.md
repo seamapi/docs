@@ -20,19 +20,15 @@ For details about how to configure `acs_user`s in your access control system, se
 
 <summary>Child Properties</summary>
 
-<details>
+<b><code>ends_at</code></b> <i>Datetime</i>
 
-<summary><b><code>ends_at</code></b> <i>Datetime</i></summary>
+  Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
-Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
-</details>
 
-<details>
+<b><code>starts_at</code></b> <i>Datetime</i>
 
-<summary><b><code>starts_at</code></b> <i>Datetime</i></summary>
+  Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
-Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
-</details>
 </details>
 
 

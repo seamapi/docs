@@ -101,26 +101,20 @@ Name of the access group.
 Warnings associated with the `acs_access_group`.
 
 
-<details>
+<b><code>created_at</code></b> <i>Datetime</i>
 
-<summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+  Date and time at which Seam created the warning.
 
-Date and time at which Seam created the warning.
-</details>
 
-<details>
+<b><code>message</code></b> <i>String</i>
 
-<summary><b><code>message</code></b> <i>String</i></summary>
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
 
-Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-</details>
 
-<details>
+<b><code>warning_code</code></b> <i>String</i>
 
-<summary><b><code>warning_code</code></b> <i>String</i></summary>
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
 
-Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-</details>
 
 ---
 **`workspace_id`** *UUID*

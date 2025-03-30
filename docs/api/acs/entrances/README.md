@@ -30,40 +30,31 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
 
 <summary>Child Properties</summary>
 
-<details>
+<b><code>door_name</code></b> <i>String</i>
 
-<summary><b><code>door_name</code></b> <i>String</i></summary>
-</details>
 
-<details>
+<b><code>door_number</code></b> <i>Number</i>
 
-<summary><b><code>door_number</code></b> <i>Number</i></summary>
-</details>
 
-<details>
+<b><code>door_type</code></b> <i>Enum</i>
 
-<summary><b><code>door_type</code></b> <i>Enum</i></summary>
+
 <details>
 
 <summary>Enum values:</summary>
 
-- `CommonDoor`
-- `EntranceDoor`
-- `GuestDoor`
-- `Elevator`
+  - `CommonDoor`
+  - `EntranceDoor`
+  - `GuestDoor`
+  - `Elevator`
 </details>
 
-</details>
 
-<details>
+<b><code>pms_id</code></b> <i>String</i>
 
-<summary><b><code>pms_id</code></b> <i>String</i></summary>
-</details>
 
-<details>
+<b><code>stand_open</code></b> <i>Boolean</i>
 
-<summary><b><code>stand_open</code></b> <i>Boolean</i></summary>
-</details>
 </details>
 
 
@@ -88,10 +79,8 @@ dormakaba Community-specific metadata associated with the [entrance](../../../ca
 
 <summary>Child Properties</summary>
 
-<details>
+<b><code>access_point_name</code></b> <i>String</i>
 
-<summary><b><code>access_point_name</code></b> <i>String</i></summary>
-</details>
 </details>
 
 
@@ -101,19 +90,15 @@ dormakaba Community-specific metadata associated with the [entrance](../../../ca
 Errors associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 
-<details>
+<b><code>error_code</code></b> <i>String</i>
 
-<summary><b><code>error_code</code></b> <i>String</i></summary>
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
 
-Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-</details>
 
-<details>
+<b><code>message</code></b> <i>String</i>
 
-<summary><b><code>message</code></b> <i>String</i></summary>
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-</details>
 
 ---
 **`latch_metadata`** *Object*
@@ -124,25 +109,17 @@ Latch-specific metadata associated with the [entrance](../../../capability-guide
 
 <summary>Child Properties</summary>
 
-<details>
+<b><code>accessibility_type</code></b> <i>String</i>
 
-<summary><b><code>accessibility_type</code></b> <i>String</i></summary>
-</details>
 
-<details>
+<b><code>door_name</code></b> <i>String</i>
 
-<summary><b><code>door_name</code></b> <i>String</i></summary>
-</details>
 
-<details>
+<b><code>door_type</code></b> <i>String</i>
 
-<summary><b><code>door_type</code></b> <i>String</i></summary>
-</details>
 
-<details>
+<b><code>is_connected</code></b> <i>Boolean</i>
 
-<summary><b><code>is_connected</code></b> <i>Boolean</i></summary>
-</details>
 </details>
 
 
@@ -155,45 +132,29 @@ Salto KS-specific metadata associated with the [entrance](../../../capability-gu
 
 <summary>Child Properties</summary>
 
-<details>
+<b><code>battery_level</code></b> <i>String</i>
 
-<summary><b><code>battery_level</code></b> <i>String</i></summary>
-</details>
 
-<details>
+<b><code>door_name</code></b> <i>String</i>
 
-<summary><b><code>door_name</code></b> <i>String</i></summary>
-</details>
 
-<details>
+<b><code>intrusion_alarm</code></b> <i>Boolean</i>
 
-<summary><b><code>intrusion_alarm</code></b> <i>Boolean</i></summary>
-</details>
 
-<details>
+<b><code>left_open_alarm</code></b> <i>Boolean</i>
 
-<summary><b><code>left_open_alarm</code></b> <i>Boolean</i></summary>
-</details>
 
-<details>
+<b><code>lock_type</code></b> <i>String</i>
 
-<summary><b><code>lock_type</code></b> <i>String</i></summary>
-</details>
 
-<details>
+<b><code>locked_state</code></b> <i>String</i>
 
-<summary><b><code>locked_state</code></b> <i>String</i></summary>
-</details>
 
-<details>
+<b><code>online</code></b> <i>Boolean</i>
 
-<summary><b><code>online</code></b> <i>Boolean</i></summary>
-</details>
 
-<details>
+<b><code>privacy_mode</code></b> <i>Boolean</i>
 
-<summary><b><code>privacy_mode</code></b> <i>Boolean</i></summary>
-</details>
 </details>
 
 
@@ -206,20 +167,14 @@ Salto Space-specific metadata associated with the [entrance](../../../capability
 
 <summary>Child Properties</summary>
 
-<details>
+<b><code>door_description</code></b> <i>String</i>
 
-<summary><b><code>door_description</code></b> <i>String</i></summary>
-</details>
 
-<details>
+<b><code>door_name</code></b> <i>String</i>
 
-<summary><b><code>door_name</code></b> <i>String</i></summary>
-</details>
 
-<details>
+<b><code>ext_door_id</code></b> <i>String</i>
 
-<summary><b><code>ext_door_id</code></b> <i>String</i></summary>
-</details>
 </details>
 
 
@@ -232,30 +187,26 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 
 <summary>Child Properties</summary>
 
-<details>
+<b><code>door_category</code></b> <i>Enum</i>
 
-<summary><b><code>door_category</code></b> <i>Enum</i></summary>
+
 <details>
 
 <summary>Enum values:</summary>
 
-- `entrance`
-- `guest`
-- `elevator reader`
-- `common`
-- `common (PMS)`
+  - `entrance`
+  - `guest`
+  - `elevator reader`
+  - `common`
+  - `common (PMS)`
 </details>
 
-</details>
 
-<details>
+<b><code>door_name</code></b> <i>String</i>
 
-<summary><b><code>door_name</code></b> <i>String</i></summary>
-</details>
 
-<details>
+<b><code>profiles</code></b> <i>List</i> <i>of Objects</i>
 
-<summary><b><code>profiles</code></b> <i>List</i> <i>of Objects</i></summary>
 
 - <b><code>visionline_door_profile_id</code></b> <i>String</i>
 
@@ -274,7 +225,6 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 </details>
 
 
-</details>
 </details>
 
 

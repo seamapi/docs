@@ -57,30 +57,20 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 <summary>Child Properties</summary>
 
-<details>
+<b><code>door_names</code></b> <i>List</i> <i>of Strings</i>
 
-<summary><b><code>door_names</code></b> <i>List</i> <i>of Strings</i></summary>
-</details>
 
-<details>
+<b><code>endpoint_id</code></b> <i>String</i>
 
-<summary><b><code>endpoint_id</code></b> <i>String</i></summary>
-</details>
 
-<details>
+<b><code>key_id</code></b> <i>String</i>
 
-<summary><b><code>key_id</code></b> <i>String</i></summary>
-</details>
 
-<details>
+<b><code>key_issuing_request_id</code></b> <i>String</i>
 
-<summary><b><code>key_issuing_request_id</code></b> <i>String</i></summary>
-</details>
 
-<details>
+<b><code>override_guest_acs_entrance_ids</code></b> <i>List</i> <i>of Strings</i>
 
-<summary><b><code>override_guest_acs_entrance_ids</code></b> <i>List</i> <i>of Strings</i></summary>
-</details>
 </details>
 
 
@@ -120,15 +110,11 @@ Date and time at which the [credential](../../../capability-guides/access-system
 Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
-<details>
+<b><code>error_code</code></b> <i>String</i>
 
-<summary><b><code>error_code</code></b> <i>String</i></summary>
-</details>
 
-<details>
+<b><code>message</code></b> <i>String</i>
 
-<summary><b><code>message</code></b> <i>String</i></summary>
-</details>
 
 ---
 **`external_type`** *Enum*
@@ -216,53 +202,38 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 
 <summary>Child Properties</summary>
 
-<details>
+<b><code>auto_join</code></b> <i>Boolean</i>
 
-<summary><b><code>auto_join</code></b> <i>Boolean</i></summary>
-</details>
 
-<details>
+<b><code>card_function_type</code></b> <i>Enum</i>
 
-<summary><b><code>card_function_type</code></b> <i>Enum</i></summary>
+
 <details>
 
 <summary>Enum values:</summary>
 
-- `guest`
-- `staff`
+  - `guest`
+  - `staff`
 </details>
 
-</details>
 
-<details>
+<b><code>card_id</code></b> <i>String</i>
 
-<summary><b><code>card_id</code></b> <i>String</i></summary>
-</details>
 
-<details>
+<b><code>common_acs_entrance_ids</code></b> <i>List</i> <i>of UUIDs</i>
 
-<summary><b><code>common_acs_entrance_ids</code></b> <i>List</i> <i>of UUIDs</i></summary>
-</details>
 
-<details>
+<b><code>credential_id</code></b> <i>String</i>
 
-<summary><b><code>credential_id</code></b> <i>String</i></summary>
-</details>
 
-<details>
+<b><code>guest_acs_entrance_ids</code></b> <i>List</i> <i>of UUIDs</i>
 
-<summary><b><code>guest_acs_entrance_ids</code></b> <i>List</i> <i>of UUIDs</i></summary>
-</details>
 
-<details>
+<b><code>is_valid</code></b> <i>Boolean</i>
 
-<summary><b><code>is_valid</code></b> <i>Boolean</i></summary>
-</details>
 
-<details>
+<b><code>joiner_acs_credential_ids</code></b> <i>List</i> <i>of UUIDs</i>
 
-<summary><b><code>joiner_acs_credential_ids</code></b> <i>List</i> <i>of UUIDs</i></summary>
-</details>
 </details>
 
 

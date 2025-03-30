@@ -37,19 +37,15 @@ Date and time at which the [thermostat schedule](../../../capability-guides/ther
 Errors associated with the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
 
-<details>
+<b><code>error_code</code></b> <i>String</i>
 
-<summary><b><code>error_code</code></b> <i>String</i></summary>
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
 
-Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-</details>
 
-<details>
+<b><code>message</code></b> <i>String</i>
 
-<summary><b><code>message</code></b> <i>String</i></summary>
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-</details>
 
 ---
 **`max_override_period_minutes`** *Number*

@@ -51,15 +51,11 @@ Display name of the phone. Defaults to `nickname` (if it is set) or `properties.
 Errors associated with the `phone`.
 
 
-<details>
+<b><code>error_code</code></b> <i>String</i>
 
-<summary><b><code>error_code</code></b> <i>String</i></summary>
-</details>
 
-<details>
+<b><code>message</code></b> <i>String</i>
 
-<summary><b><code>message</code></b> <i>String</i></summary>
-</details>
 
 ---
 **`nickname`** *String*
@@ -76,18 +72,15 @@ Properties of the phone.
 
 <summary>Child Properties</summary>
 
-<details>
+<b><code>assa_abloy_credential_service_metadata</code></b> <i>Object</i>
 
-<summary><b><code>assa_abloy_credential_service_metadata</code></b> <i>Object</i></summary>
+  ASSA ABLOY Credential Service metadata for the phone.
 
-ASSA ABLOY Credential Service metadata for the phone.
-</details>
 
-<details>
+<b><code>assa_abloy_credential_service_metadata.endpoints</code></b> <i>List</i> <i>of Objects</i>
 
-<summary><b><code>assa_abloy_credential_service_metadata.endpoints</code></b> <i>List</i> <i>of Objects</i></summary>
+  Endpoints associated with the phone.
 
-Endpoints associated with the phone.
 
 - <b><code>endpoint_id</code></b> <i>String</i>
 
@@ -100,28 +93,21 @@ Endpoints associated with the phone.
   Indicated whether the endpoint is active.
 
 
-</details>
 
-<details>
+<b><code>assa_abloy_credential_service_metadata.has_active_endpoint</code></b> <i>Boolean</i>
 
-<summary><b><code>assa_abloy_credential_service_metadata.has_active_endpoint</code></b> <i>Boolean</i></summary>
+  Indicates whether the credential service has active endpoints associated with the phone.
 
-Indicates whether the credential service has active endpoints associated with the phone.
-</details>
 
-<details>
+<b><code>salto_space_credential_service_metadata</code></b> <i>Object</i>
 
-<summary><b><code>salto_space_credential_service_metadata</code></b> <i>Object</i></summary>
+  Salto Space credential service metadata for the phone.
 
-Salto Space credential service metadata for the phone.
-</details>
 
-<details>
+<b><code>salto_space_credential_service_metadata.has_active_phone</code></b> <i>Boolean</i>
 
-<summary><b><code>salto_space_credential_service_metadata.has_active_phone</code></b> <i>Boolean</i></summary>
+  Indicates whether the credential service has an active associated phone.
 
-Indicates whether the credential service has an active associated phone.
-</details>
 </details>
 
 
@@ -131,15 +117,11 @@ Indicates whether the credential service has an active associated phone.
 Warnings associated with the `phone`.
 
 
-<details>
+<b><code>message</code></b> <i>String</i>
 
-<summary><b><code>message</code></b> <i>String</i></summary>
-</details>
 
-<details>
+<b><code>warning_code</code></b> <i>String</i>
 
-<summary><b><code>warning_code</code></b> <i>String</i></summary>
-</details>
 
 ---
 **`workspace_id`** *UUID*
