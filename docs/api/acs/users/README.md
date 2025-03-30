@@ -299,6 +299,8 @@ An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-
 
 </details>
 
+---
+
 ## Endpoints
 
 

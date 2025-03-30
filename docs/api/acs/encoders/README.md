@@ -141,6 +141,8 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 
 </details>
 
+---
+
 **`acs_encoder.removed`**
 
 An [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) was removed.
@@ -195,6 +197,8 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 
 
 </details>
+
+---
 
 ## Endpoints
 

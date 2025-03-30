@@ -354,6 +354,8 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 </details>
 
+---
+
 **`acs_system.added`**
 
 An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) was added.
@@ -403,6 +405,8 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 </details>
 
+---
+
 **`acs_system.disconnected`**
 
 An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) was disconnected.
@@ -451,6 +455,8 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 
 </details>
+
+---
 
 ## Endpoints
 

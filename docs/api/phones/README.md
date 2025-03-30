@@ -197,6 +197,8 @@ A phone device was deactivated.
 
 </details>
 
+---
+
 ## Endpoints
 
 

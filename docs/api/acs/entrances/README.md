@@ -324,6 +324,8 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 
 </details>
 
+---
+
 **`acs_entrance.removed`**
 
 An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was removed.
@@ -376,6 +378,8 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 
 
 </details>
+
+---
 
 ## Endpoints
 

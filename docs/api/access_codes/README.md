@@ -540,6 +540,8 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 </details>
 
+---
+
 **`access_code.changed`**
 
 An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was changed.
@@ -594,6 +596,8 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 
 </details>
+
+---
 
 **`access_code.scheduled_on_device`**
 
@@ -656,6 +660,8 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 </details>
 
+---
+
 **`access_code.set_on_device`**
 
 An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was set on a device.
@@ -717,6 +723,8 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 </details>
 
+---
+
 **`access_code.removed_from_device`**
 
 An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was removed from a device.
@@ -771,6 +779,8 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 
 </details>
+
+---
 
 **`access_code.delay_in_setting_on_device`**
 
@@ -827,6 +837,8 @@ There was an unusually long delay in setting an [access code](https://docs.seam.
 
 </details>
 
+---
+
 **`access_code.failed_to_set_on_device`**
 
 An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) failed to be set on a device.
@@ -881,6 +893,8 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 
 </details>
+
+---
 
 **`access_code.deleted`**
 
@@ -943,6 +957,8 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 </details>
 
+---
+
 **`access_code.delay_in_removing_from_device`**
 
 There was an unusually long delay in removing an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) from a device.
@@ -997,6 +1013,8 @@ There was an unusually long delay in removing an [access code](https://docs.seam
 
 
 </details>
+
+---
 
 **`access_code.failed_to_remove_from_device`**
 
@@ -1053,6 +1071,8 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 </details>
 
+---
+
 **`access_code.modified_external_to_seam`**
 
 An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was modified outside of Seam.
@@ -1108,6 +1128,8 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 </details>
 
+---
+
 **`access_code.deleted_external_to_seam`**
 
 An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was deleted outside of Seam.
@@ -1162,6 +1184,8 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 
 </details>
+
+---
 
 **`access_code.backup_access_code_pulled`**
 
@@ -1222,6 +1246,8 @@ A [backup access code](https://docs.seam.co/latest/capability-guides/smart-locks
 
 </details>
 
+---
+
 **`access_code.unmanaged.converted_to_managed`**
 
 An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) was converted successfully to a managed access code.
@@ -1276,6 +1302,8 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 
 </details>
+
+---
 
 **`access_code.unmanaged.failed_to_convert_to_managed`**
 
@@ -1332,6 +1360,8 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 </details>
 
+---
+
 **`access_code.unmanaged.created`**
 
 An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) was created on a device.
@@ -1387,6 +1417,8 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 </details>
 
+---
+
 **`access_code.unmanaged.removed`**
 
 An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) was removed from a device.
@@ -1441,6 +1473,8 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 
 </details>
+
+---
 
 ## Endpoints
 

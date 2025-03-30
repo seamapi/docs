@@ -388,6 +388,8 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 </details>
 
+---
+
 **`acs_credential.issued`**
 
 An [ACS credential](../../../capability-guides/access-systems/managing-credentials.md) was issued.
@@ -441,6 +443,8 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 </details>
 
+---
+
 **`acs_credential.reissued`**
 
 An [ACS credential](../../../capability-guides/access-systems/managing-credentials.md) was reissued.
@@ -493,6 +497,8 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 
 </details>
+
+---
 
 ## Endpoints
 
