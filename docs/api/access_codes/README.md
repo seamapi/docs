@@ -177,8 +177,6 @@ Collection of warnings associated with the access code, structured in a dictiona
 ## Endpoints
 
 
----
-
 ## Events
 
 **`access_code.created`**

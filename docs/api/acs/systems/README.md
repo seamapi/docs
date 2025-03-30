@@ -261,8 +261,6 @@ Returns a list of all credential manager ACS systems that are compatible with a 
 [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 
----
-
 ## Events
 
 **`acs_system.connected`**

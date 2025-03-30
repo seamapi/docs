@@ -289,8 +289,6 @@ Returns a list of all [ACS entrances](../../../capability-guides/access-systems/
 Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md) with access to a specified [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 
----
-
 ## Events
 
 **`acs_entrance.added`**
