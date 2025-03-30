@@ -114,7 +114,7 @@ Warnings associated with the `acs_access_group`.
 
 <details>
 
-<summary>Child Properties</summary>
+<summary>Child Object Properties</summary>
 
 - <b><code>created_at</code></b> <i>Datetime</i>
 

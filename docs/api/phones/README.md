@@ -59,7 +59,7 @@ Errors associated with the `phone`.
 
 <details>
 
-<summary>Child Properties</summary>
+<summary>Child Object Properties</summary>
 
 - <b><code>error_code</code></b> <i>String</i>
 
@@ -140,7 +140,7 @@ Warnings associated with the `phone`.
 
 <details>
 
-<summary>Child Properties</summary>
+<summary>Child Object Properties</summary>
 
 - <b><code>message</code></b> <i>String</i>
 

@@ -44,7 +44,7 @@ Errors associated with the [thermostat schedule](../../../capability-guides/ther
 
 <details>
 
-<summary>Child Properties</summary>
+<summary>Child Object Properties</summary>
 
 - <b><code>error_code</code></b> <i>String</i>
 

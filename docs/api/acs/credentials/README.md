@@ -129,7 +129,7 @@ Errors associated with the [credential](../../../capability-guides/access-system
 
 <details>
 
-<summary>Child Properties</summary>
+<summary>Child Object Properties</summary>
 
 - <b><code>error_code</code></b> <i>String</i>
 

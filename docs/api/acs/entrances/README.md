@@ -105,7 +105,7 @@ Errors associated with the [entrance](../../../capability-guides/access-systems/
 
 <details>
 
-<summary>Child Properties</summary>
+<summary>Child Object Properties</summary>
 
 - <b><code>error_code</code></b> <i>String</i>
 
