@@ -55,10 +55,15 @@ This object has no properties.
 {{/if}}
 {{/unless}}
 {{#if listProperties}}
+<details>
+
+<summary>Child Properties</summary>
 {{#each listProperties}}
 
 - {{> property-nested this}}
 {{/each}}
+</details>
+
 {{/if}}
 
 ---
