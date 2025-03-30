@@ -57,6 +57,9 @@ Display name of the phone. Defaults to `nickname` (if it is set) or `properties.
 
 Errors associated with the `phone`.
 
+<details>
+
+<summary>Child Properties</summary>
 
 - <b><code>error_code</code></b> <i>String</i>
 
@@ -64,6 +67,8 @@ Errors associated with the `phone`.
 
 - <b><code>message</code></b> <i>String</i>
 
+
+</details>
 
 
 ---
@@ -133,6 +138,9 @@ Properties of the phone.
 
 Warnings associated with the `phone`.
 
+<details>
+
+<summary>Child Properties</summary>
 
 - <b><code>message</code></b> <i>String</i>
 
@@ -140,6 +148,8 @@ Warnings associated with the `phone`.
 
 - <b><code>warning_code</code></b> <i>String</i>
 
+
+</details>
 
 
 ---

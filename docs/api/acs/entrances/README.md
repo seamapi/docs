@@ -103,6 +103,9 @@ dormakaba Community-specific metadata associated with the [entrance](../../../ca
 
 Errors associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
+<details>
+
+<summary>Child Properties</summary>
 
 - <b><code>error_code</code></b> <i>String</i>
 
@@ -114,6 +117,8 @@ Errors associated with the [entrance](../../../capability-guides/access-systems/
 
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
+
+</details>
 
 
 ---

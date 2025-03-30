@@ -127,6 +127,9 @@ Date and time at which the [credential](../../../capability-guides/access-system
 
 Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
+<details>
+
+<summary>Child Properties</summary>
 
 - <b><code>error_code</code></b> <i>String</i>
 
@@ -134,6 +137,8 @@ Errors associated with the [credential](../../../capability-guides/access-system
 
 - <b><code>message</code></b> <i>String</i>
 
+
+</details>
 
 
 ---

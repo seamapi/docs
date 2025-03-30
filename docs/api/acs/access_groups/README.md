@@ -112,6 +112,9 @@ Name of the access group.
 
 Warnings associated with the `acs_access_group`.
 
+<details>
+
+<summary>Child Properties</summary>
 
 - <b><code>created_at</code></b> <i>Datetime</i>
 
@@ -129,6 +132,8 @@ Warnings associated with the `acs_access_group`.
 
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
 
+
+</details>
 
 
 ---

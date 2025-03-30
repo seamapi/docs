@@ -55,6 +55,9 @@ Display name for the [encoder](../../../capability-guides/access-systems/working
 
 Errors associated with the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
+<details>
+
+<summary>Child Properties</summary>
 
 - <b><code>created_at</code></b> <i>Datetime</i>
 
@@ -72,6 +75,8 @@ Errors associated with the [encoder](../../../capability-guides/access-systems/w
 
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
+
+</details>
 
 
 ---
