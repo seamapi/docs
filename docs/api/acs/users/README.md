@@ -23,6 +23,8 @@ For details about how to configure `acs_user`s in your access control system, se
 <details>
 
 <summary><b><code>ends_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 </details>
@@ -30,6 +32,8 @@ Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org
 <details>
 
 <summary><b><code>starts_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 </details>
@@ -266,6 +270,8 @@ An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-
 <details>
 
 <summary><b><code>acs_system_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
@@ -273,11 +279,14 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 <details>
 
 <summary><b><code>acs_user_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
@@ -285,6 +294,8 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -292,6 +303,8 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -299,11 +312,14 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -311,6 +327,8 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>

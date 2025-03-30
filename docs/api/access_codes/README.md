@@ -471,6 +471,8 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <details>
 
 <summary><b><code>access_code_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 </details>
@@ -478,6 +480,8 @@ ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-lock
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 </details>
@@ -485,6 +489,8 @@ ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -492,6 +498,8 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>device_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [device](../../core-concepts/devices/README.md).
 </details>
@@ -499,6 +507,8 @@ ID of the [device](../../core-concepts/devices/README.md).
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -506,11 +516,14 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -518,6 +531,8 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [workspace](../../core-concepts/workspaces/README.md).
 </details>
@@ -531,6 +546,8 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <details>
 
 <summary><b><code>access_code_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 </details>
@@ -538,6 +555,8 @@ ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-lock
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 </details>
@@ -545,6 +564,8 @@ ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -552,6 +573,8 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>device_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [device](../../core-concepts/devices/README.md).
 </details>
@@ -559,6 +582,8 @@ ID of the [device](../../core-concepts/devices/README.md).
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -566,11 +591,14 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -578,6 +606,8 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [workspace](../../core-concepts/workspaces/README.md).
 </details>
@@ -591,6 +621,8 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <details>
 
 <summary><b><code>access_code_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 </details>
@@ -598,6 +630,8 @@ ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-lock
 <details>
 
 <summary><b><code>code</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 </details>
@@ -605,6 +639,8 @@ Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-l
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 </details>
@@ -612,6 +648,8 @@ ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -619,6 +657,8 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>device_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [device](../../core-concepts/devices/README.md).
 </details>
@@ -626,6 +666,8 @@ ID of the [device](../../core-concepts/devices/README.md).
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -633,11 +675,14 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -645,6 +690,8 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [workspace](../../core-concepts/workspaces/README.md).
 </details>
@@ -658,6 +705,8 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <details>
 
 <summary><b><code>access_code_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 </details>
@@ -665,6 +714,8 @@ ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-lock
 <details>
 
 <summary><b><code>code</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 </details>
@@ -672,6 +723,8 @@ Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-l
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 </details>
@@ -679,6 +732,8 @@ ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -686,6 +741,8 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>device_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [device](../../core-concepts/devices/README.md).
 </details>
@@ -693,6 +750,8 @@ ID of the [device](../../core-concepts/devices/README.md).
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -700,11 +759,14 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -712,6 +774,8 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [workspace](../../core-concepts/workspaces/README.md).
 </details>
@@ -725,6 +789,8 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <details>
 
 <summary><b><code>access_code_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 </details>
@@ -732,6 +798,8 @@ ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-lock
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 </details>
@@ -739,6 +807,8 @@ ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -746,6 +816,8 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>device_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [device](../../core-concepts/devices/README.md).
 </details>
@@ -753,6 +825,8 @@ ID of the [device](../../core-concepts/devices/README.md).
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -760,11 +834,14 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -772,6 +849,8 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [workspace](../../core-concepts/workspaces/README.md).
 </details>
@@ -785,6 +864,8 @@ There was an unusually long delay in setting an [access code](https://docs.seam.
 <details>
 
 <summary><b><code>access_code_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 </details>
@@ -792,6 +873,8 @@ ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-lock
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 </details>
@@ -799,6 +882,8 @@ ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -806,6 +891,8 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>device_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [device](../../core-concepts/devices/README.md).
 </details>
@@ -813,6 +900,8 @@ ID of the [device](../../core-concepts/devices/README.md).
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -820,11 +909,14 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -832,6 +924,8 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [workspace](../../core-concepts/workspaces/README.md).
 </details>
@@ -845,6 +939,8 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <details>
 
 <summary><b><code>access_code_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 </details>
@@ -852,6 +948,8 @@ ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-lock
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 </details>
@@ -859,6 +957,8 @@ ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -866,6 +966,8 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>device_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [device](../../core-concepts/devices/README.md).
 </details>
@@ -873,6 +975,8 @@ ID of the [device](../../core-concepts/devices/README.md).
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -880,11 +984,14 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -892,6 +999,8 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [workspace](../../core-concepts/workspaces/README.md).
 </details>
@@ -905,6 +1014,8 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <details>
 
 <summary><b><code>access_code_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 </details>
@@ -912,6 +1023,8 @@ ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-lock
 <details>
 
 <summary><b><code>code</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 </details>
@@ -919,6 +1032,8 @@ Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-l
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 </details>
@@ -926,6 +1041,8 @@ ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -933,6 +1050,8 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>device_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [device](../../core-concepts/devices/README.md).
 </details>
@@ -940,6 +1059,8 @@ ID of the [device](../../core-concepts/devices/README.md).
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -947,11 +1068,14 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -959,6 +1083,8 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [workspace](../../core-concepts/workspaces/README.md).
 </details>
@@ -972,6 +1098,8 @@ There was an unusually long delay in removing an [access code](https://docs.seam
 <details>
 
 <summary><b><code>access_code_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 </details>
@@ -979,6 +1107,8 @@ ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-lock
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 </details>
@@ -986,6 +1116,8 @@ ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -993,6 +1125,8 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>device_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [device](../../core-concepts/devices/README.md).
 </details>
@@ -1000,6 +1134,8 @@ ID of the [device](../../core-concepts/devices/README.md).
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -1007,11 +1143,14 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -1019,6 +1158,8 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [workspace](../../core-concepts/workspaces/README.md).
 </details>
@@ -1032,6 +1173,8 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <details>
 
 <summary><b><code>access_code_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 </details>
@@ -1039,6 +1182,8 @@ ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-lock
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 </details>
@@ -1046,6 +1191,8 @@ ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -1053,6 +1200,8 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>device_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [device](../../core-concepts/devices/README.md).
 </details>
@@ -1060,6 +1209,8 @@ ID of the [device](../../core-concepts/devices/README.md).
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -1067,11 +1218,14 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -1079,6 +1233,8 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [workspace](../../core-concepts/workspaces/README.md).
 </details>
@@ -1092,6 +1248,8 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <details>
 
 <summary><b><code>access_code_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 </details>
@@ -1099,6 +1257,8 @@ ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-lock
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 </details>
@@ -1106,6 +1266,8 @@ ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -1113,6 +1275,8 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>device_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [device](../../core-concepts/devices/README.md).
 </details>
@@ -1120,6 +1284,8 @@ ID of the [device](../../core-concepts/devices/README.md).
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -1127,11 +1293,14 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -1139,6 +1308,8 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [workspace](../../core-concepts/workspaces/README.md).
 </details>
@@ -1152,6 +1323,8 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <details>
 
 <summary><b><code>access_code_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 </details>
@@ -1159,6 +1332,8 @@ ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-lock
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 </details>
@@ -1166,6 +1341,8 @@ ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -1173,6 +1350,8 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>device_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [device](../../core-concepts/devices/README.md).
 </details>
@@ -1180,6 +1359,8 @@ ID of the [device](../../core-concepts/devices/README.md).
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -1187,11 +1368,14 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -1199,6 +1383,8 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [workspace](../../core-concepts/workspaces/README.md).
 </details>
@@ -1212,6 +1398,8 @@ A [backup access code](https://docs.seam.co/latest/capability-guides/smart-locks
 <details>
 
 <summary><b><code>access_code_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 </details>
@@ -1219,11 +1407,14 @@ ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-lock
 <details>
 
 <summary><b><code>backup_access_code_id</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 </details>
@@ -1231,6 +1422,8 @@ ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -1238,6 +1431,8 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>device_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [device](../../core-concepts/devices/README.md).
 </details>
@@ -1245,6 +1440,8 @@ ID of the [device](../../core-concepts/devices/README.md).
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -1252,11 +1449,14 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -1264,6 +1464,8 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [workspace](../../core-concepts/workspaces/README.md).
 </details>
@@ -1277,6 +1479,8 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 <details>
 
 <summary><b><code>access_code_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 </details>
@@ -1284,6 +1488,8 @@ ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-lock
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 </details>
@@ -1291,6 +1497,8 @@ ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -1298,6 +1506,8 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>device_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [device](../../core-concepts/devices/README.md).
 </details>
@@ -1305,6 +1515,8 @@ ID of the [device](../../core-concepts/devices/README.md).
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -1312,11 +1524,14 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -1324,6 +1539,8 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [workspace](../../core-concepts/workspaces/README.md).
 </details>
@@ -1337,6 +1554,8 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 <details>
 
 <summary><b><code>access_code_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 </details>
@@ -1344,6 +1563,8 @@ ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-lock
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 </details>
@@ -1351,6 +1572,8 @@ ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -1358,6 +1581,8 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>device_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [device](../../core-concepts/devices/README.md).
 </details>
@@ -1365,6 +1590,8 @@ ID of the [device](../../core-concepts/devices/README.md).
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -1372,11 +1599,14 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -1384,6 +1614,8 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [workspace](../../core-concepts/workspaces/README.md).
 </details>
@@ -1397,6 +1629,8 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 <details>
 
 <summary><b><code>access_code_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 </details>
@@ -1404,6 +1638,8 @@ ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-lock
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 </details>
@@ -1411,6 +1647,8 @@ ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -1418,6 +1656,8 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>device_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [device](../../core-concepts/devices/README.md).
 </details>
@@ -1425,6 +1665,8 @@ ID of the [device](../../core-concepts/devices/README.md).
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -1432,11 +1674,14 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -1444,6 +1689,8 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [workspace](../../core-concepts/workspaces/README.md).
 </details>
@@ -1457,6 +1704,8 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 <details>
 
 <summary><b><code>access_code_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 </details>
@@ -1464,6 +1713,8 @@ ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-lock
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 </details>
@@ -1471,6 +1722,8 @@ ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -1478,6 +1731,8 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>device_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [device](../../core-concepts/devices/README.md).
 </details>
@@ -1485,6 +1740,8 @@ ID of the [device](../../core-concepts/devices/README.md).
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -1492,11 +1749,14 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -1504,6 +1764,8 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [workspace](../../core-concepts/workspaces/README.md).
 </details>

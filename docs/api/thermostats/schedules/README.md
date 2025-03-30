@@ -40,6 +40,8 @@ Errors associated with the [thermostat schedule](../../../capability-guides/ther
 <details>
 
 <summary><b><code>error_code</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
 </details>
@@ -47,6 +49,8 @@ Unique identifier of the type of error. Enables quick recognition and categoriza
 <details>
 
 <summary><b><code>message</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 </details>

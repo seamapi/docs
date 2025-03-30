@@ -33,16 +33,19 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
 <details>
 
 <summary><b><code>door_name</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>door_number</code></b> <i>Number</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>door_type</code></b> <i>Enum</i></summary>
+PROPERTY COLLAPSIBLE
 <details>
 
 <summary>Possible enum values:</summary>
@@ -58,11 +61,13 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
 <details>
 
 <summary><b><code>pms_id</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>stand_open</code></b> <i>Boolean</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 </details>
 
@@ -90,6 +95,7 @@ dormakaba Community-specific metadata associated with the [entrance](../../../ca
 <details>
 
 <summary><b><code>access_point_name</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 </details>
 
@@ -102,6 +108,8 @@ Errors associated with the [entrance](../../../capability-guides/access-systems/
 <details>
 
 <summary><b><code>error_code</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
 </details>
@@ -109,6 +117,8 @@ Unique identifier of the type of error. Enables quick recognition and categoriza
 <details>
 
 <summary><b><code>message</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 </details>
@@ -125,21 +135,25 @@ Latch-specific metadata associated with the [entrance](../../../capability-guide
 <details>
 
 <summary><b><code>accessibility_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>door_name</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>door_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>is_connected</code></b> <i>Boolean</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 </details>
 
@@ -155,41 +169,49 @@ Salto KS-specific metadata associated with the [entrance](../../../capability-gu
 <details>
 
 <summary><b><code>battery_level</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>door_name</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>intrusion_alarm</code></b> <i>Boolean</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>left_open_alarm</code></b> <i>Boolean</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>lock_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>locked_state</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>online</code></b> <i>Boolean</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>privacy_mode</code></b> <i>Boolean</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 </details>
 
@@ -205,16 +227,19 @@ Salto Space-specific metadata associated with the [entrance](../../../capability
 <details>
 
 <summary><b><code>door_description</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>door_name</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>ext_door_id</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 </details>
 
@@ -230,6 +255,7 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 <details>
 
 <summary><b><code>door_category</code></b> <i>Enum</i></summary>
+PROPERTY COLLAPSIBLE
 <details>
 
 <summary>Possible enum values:</summary>
@@ -246,17 +272,21 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 <details>
 
 <summary><b><code>door_name</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>profiles</code></b> <i>List</i> <i>of Objects</i></summary>
+PROPERTY COLLAPSIBLE
 
 - <b><code>visionline_door_profile_id</code></b> <i>String</i>
+PROPERTY NESTED
 
 
 
 - <b><code>visionline_door_profile_type</code></b> <i>Enum</i>
+PROPERTY NESTED
 
 
 <details>
@@ -299,11 +329,14 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 <details>
 
 <summary><b><code>acs_entrance_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>acs_system_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
@@ -311,6 +344,8 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
@@ -318,6 +353,8 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -325,6 +362,8 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -332,11 +371,14 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -344,6 +386,8 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>
@@ -357,11 +401,14 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 <details>
 
 <summary><b><code>acs_entrance_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>acs_system_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 </details>
@@ -369,6 +416,8 @@ ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-syst
 <details>
 
 <summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 </details>
@@ -376,6 +425,8 @@ ID of the [connected account](../../../core-concepts/connected-accounts/README.m
 <details>
 
 <summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event was created.
 </details>
@@ -383,6 +434,8 @@ Date and time at which the event was created.
 <details>
 
 <summary><b><code>event_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the event.
 </details>
@@ -390,11 +443,14 @@ ID of the event.
 <details>
 
 <summary><b><code>event_type</code></b> <i>String</i></summary>
+PROPERTY COLLAPSIBLE
 </details>
 
 <details>
 
 <summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 Date and time at which the event occurred.
 </details>
@@ -402,6 +458,8 @@ Date and time at which the event occurred.
 <details>
 
 <summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
+PROPERTY COLLAPSIBLE
+PROPERTY CONTENT
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>
