@@ -50,19 +50,22 @@ Display name for the [encoder](../../../capability-guides/access-systems/working
 Errors associated with the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 
-<b><code>created_at</code></b> <i>Datetime</i>
+- <b><code>created_at</code></b> <i>Datetime</i>
 
   Date and time at which Seam created the error.
 
 
-<b><code>error_code</code></b> <i>String</i>
+
+- <b><code>error_code</code></b> <i>String</i>
 
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
 
 
-<b><code>message</code></b> <i>String</i>
+
+- <b><code>message</code></b> <i>String</i>
 
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
 
 
 ---

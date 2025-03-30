@@ -54,7 +54,7 @@ ID of the action attempt.
 
 <details>
 
-<summary>Enum values:</summary>
+<summary>Enum values</summary>
 
 - `success`
 - `pending`

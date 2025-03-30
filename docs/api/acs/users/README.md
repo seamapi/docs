@@ -20,14 +20,16 @@ For details about how to configure `acs_user`s in your access control system, se
 
 <summary>Child Properties</summary>
 
-<b><code>ends_at</code></b> <i>Datetime</i>
+- <b><code>ends_at</code></b> <i>Datetime</i>
 
   Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 
-<b><code>starts_at</code></b> <i>Datetime</i>
+
+- <b><code>starts_at</code></b> <i>Datetime</i>
 
   Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+
 
 </details>
 
@@ -83,7 +85,7 @@ Brand-specific terminology for the [ACS user](https://docs.seam.co/latest/capabi
 
 <details>
 
-<summary>Enum values:</summary>
+<summary>Enum values</summary>
 
 - `pti_user`
 - `brivo_user`

@@ -20,7 +20,7 @@ To learn whether your access control system supports access groups, see the corr
 
 <details>
 
-<summary>Enum values:</summary>
+<summary>Enum values</summary>
 
 - `pti_unit`
 - `pti_access_level`
@@ -68,7 +68,7 @@ Brand-specific terminology for the access group type.
 
 <details>
 
-<summary>Enum values:</summary>
+<summary>Enum values</summary>
 
 - `pti_unit`
 - `pti_access_level`
@@ -101,19 +101,22 @@ Name of the access group.
 Warnings associated with the `acs_access_group`.
 
 
-<b><code>created_at</code></b> <i>Datetime</i>
+- <b><code>created_at</code></b> <i>Datetime</i>
 
   Date and time at which Seam created the warning.
 
 
-<b><code>message</code></b> <i>String</i>
+
+- <b><code>message</code></b> <i>String</i>
 
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
 
 
-<b><code>warning_code</code></b> <i>String</i>
+
+- <b><code>warning_code</code></b> <i>String</i>
 
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
 
 
 ---

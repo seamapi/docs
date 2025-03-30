@@ -18,7 +18,7 @@ Access method for the [credential](../../../capability-guides/access-systems/man
 
 <details>
 
-<summary>Enum values:</summary>
+<summary>Enum values</summary>
 
 - `code`
 - `card`
@@ -57,19 +57,24 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 <summary>Child Properties</summary>
 
-<b><code>door_names</code></b> <i>List</i> <i>of Strings</i>
+- <b><code>door_names</code></b> <i>List</i> <i>of Strings</i>
 
 
-<b><code>endpoint_id</code></b> <i>String</i>
+
+- <b><code>endpoint_id</code></b> <i>String</i>
 
 
-<b><code>key_id</code></b> <i>String</i>
+
+- <b><code>key_id</code></b> <i>String</i>
 
 
-<b><code>key_issuing_request_id</code></b> <i>String</i>
+
+- <b><code>key_issuing_request_id</code></b> <i>String</i>
 
 
-<b><code>override_guest_acs_entrance_ids</code></b> <i>List</i> <i>of Strings</i>
+
+- <b><code>override_guest_acs_entrance_ids</code></b> <i>List</i> <i>of Strings</i>
+
 
 </details>
 
@@ -110,10 +115,12 @@ Date and time at which the [credential](../../../capability-guides/access-system
 Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
-<b><code>error_code</code></b> <i>String</i>
+- <b><code>error_code</code></b> <i>String</i>
 
 
-<b><code>message</code></b> <i>String</i>
+
+- <b><code>message</code></b> <i>String</i>
+
 
 
 ---
@@ -123,7 +130,7 @@ Brand-specific terminology for the [credential](../../../capability-guides/acces
 
 <details>
 
-<summary>Enum values:</summary>
+<summary>Enum values</summary>
 
 - `pti_card`
 - `brivo_credential`
@@ -202,10 +209,11 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 
 <summary>Child Properties</summary>
 
-<b><code>auto_join</code></b> <i>Boolean</i>
+- <b><code>auto_join</code></b> <i>Boolean</i>
 
 
-<b><code>card_function_type</code></b> <i>Enum</i>
+
+- <b><code>card_function_type</code></b> <i>Enum</i>
 
 
 <details>
@@ -217,22 +225,29 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 </details>
 
 
-<b><code>card_id</code></b> <i>String</i>
+
+- <b><code>card_id</code></b> <i>String</i>
 
 
-<b><code>common_acs_entrance_ids</code></b> <i>List</i> <i>of UUIDs</i>
+
+- <b><code>common_acs_entrance_ids</code></b> <i>List</i> <i>of UUIDs</i>
 
 
-<b><code>credential_id</code></b> <i>String</i>
+
+- <b><code>credential_id</code></b> <i>String</i>
 
 
-<b><code>guest_acs_entrance_ids</code></b> <i>List</i> <i>of UUIDs</i>
+
+- <b><code>guest_acs_entrance_ids</code></b> <i>List</i> <i>of UUIDs</i>
 
 
-<b><code>is_valid</code></b> <i>Boolean</i>
+
+- <b><code>is_valid</code></b> <i>Boolean</i>
 
 
-<b><code>joiner_acs_credential_ids</code></b> <i>List</i> <i>of UUIDs</i>
+
+- <b><code>joiner_acs_credential_ids</code></b> <i>List</i> <i>of UUIDs</i>
+
 
 </details>
 

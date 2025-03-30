@@ -30,13 +30,15 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
 
 <summary>Child Properties</summary>
 
-<b><code>door_name</code></b> <i>String</i>
+- <b><code>door_name</code></b> <i>String</i>
 
 
-<b><code>door_number</code></b> <i>Number</i>
+
+- <b><code>door_number</code></b> <i>Number</i>
 
 
-<b><code>door_type</code></b> <i>Enum</i>
+
+- <b><code>door_type</code></b> <i>Enum</i>
 
 
 <details>
@@ -50,10 +52,13 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
 </details>
 
 
-<b><code>pms_id</code></b> <i>String</i>
+
+- <b><code>pms_id</code></b> <i>String</i>
 
 
-<b><code>stand_open</code></b> <i>Boolean</i>
+
+- <b><code>stand_open</code></b> <i>Boolean</i>
+
 
 </details>
 
@@ -79,7 +84,8 @@ dormakaba Community-specific metadata associated with the [entrance](../../../ca
 
 <summary>Child Properties</summary>
 
-<b><code>access_point_name</code></b> <i>String</i>
+- <b><code>access_point_name</code></b> <i>String</i>
+
 
 </details>
 
@@ -90,14 +96,16 @@ dormakaba Community-specific metadata associated with the [entrance](../../../ca
 Errors associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 
-<b><code>error_code</code></b> <i>String</i>
+- <b><code>error_code</code></b> <i>String</i>
 
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
 
 
-<b><code>message</code></b> <i>String</i>
+
+- <b><code>message</code></b> <i>String</i>
 
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
 
 
 ---
@@ -109,16 +117,20 @@ Latch-specific metadata associated with the [entrance](../../../capability-guide
 
 <summary>Child Properties</summary>
 
-<b><code>accessibility_type</code></b> <i>String</i>
+- <b><code>accessibility_type</code></b> <i>String</i>
 
 
-<b><code>door_name</code></b> <i>String</i>
+
+- <b><code>door_name</code></b> <i>String</i>
 
 
-<b><code>door_type</code></b> <i>String</i>
+
+- <b><code>door_type</code></b> <i>String</i>
 
 
-<b><code>is_connected</code></b> <i>Boolean</i>
+
+- <b><code>is_connected</code></b> <i>Boolean</i>
+
 
 </details>
 
@@ -132,28 +144,36 @@ Salto KS-specific metadata associated with the [entrance](../../../capability-gu
 
 <summary>Child Properties</summary>
 
-<b><code>battery_level</code></b> <i>String</i>
+- <b><code>battery_level</code></b> <i>String</i>
 
 
-<b><code>door_name</code></b> <i>String</i>
+
+- <b><code>door_name</code></b> <i>String</i>
 
 
-<b><code>intrusion_alarm</code></b> <i>Boolean</i>
+
+- <b><code>intrusion_alarm</code></b> <i>Boolean</i>
 
 
-<b><code>left_open_alarm</code></b> <i>Boolean</i>
+
+- <b><code>left_open_alarm</code></b> <i>Boolean</i>
 
 
-<b><code>lock_type</code></b> <i>String</i>
+
+- <b><code>lock_type</code></b> <i>String</i>
 
 
-<b><code>locked_state</code></b> <i>String</i>
+
+- <b><code>locked_state</code></b> <i>String</i>
 
 
-<b><code>online</code></b> <i>Boolean</i>
+
+- <b><code>online</code></b> <i>Boolean</i>
 
 
-<b><code>privacy_mode</code></b> <i>Boolean</i>
+
+- <b><code>privacy_mode</code></b> <i>Boolean</i>
+
 
 </details>
 
@@ -167,13 +187,16 @@ Salto Space-specific metadata associated with the [entrance](../../../capability
 
 <summary>Child Properties</summary>
 
-<b><code>door_description</code></b> <i>String</i>
+- <b><code>door_description</code></b> <i>String</i>
 
 
-<b><code>door_name</code></b> <i>String</i>
+
+- <b><code>door_name</code></b> <i>String</i>
 
 
-<b><code>ext_door_id</code></b> <i>String</i>
+
+- <b><code>ext_door_id</code></b> <i>String</i>
+
 
 </details>
 
@@ -187,7 +210,7 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 
 <summary>Child Properties</summary>
 
-<b><code>door_category</code></b> <i>Enum</i>
+- <b><code>door_category</code></b> <i>Enum</i>
 
 
 <details>
@@ -202,10 +225,12 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 </details>
 
 
-<b><code>door_name</code></b> <i>String</i>
+
+- <b><code>door_name</code></b> <i>String</i>
 
 
-<b><code>profiles</code></b> <i>List</i> <i>of Objects</i>
+
+- <b><code>profiles</code></b> <i>List</i> <i>of Objects</i>
 
 
 - <b><code>visionline_door_profile_id</code></b> <i>String</i>
@@ -223,6 +248,7 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
   - `commonDoor`
   - `touch`
 </details>
+
 
 
 </details>

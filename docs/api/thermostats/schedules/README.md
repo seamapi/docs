@@ -37,14 +37,16 @@ Date and time at which the [thermostat schedule](../../../capability-guides/ther
 Errors associated with the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
 
-<b><code>error_code</code></b> <i>String</i>
+- <b><code>error_code</code></b> <i>String</i>
 
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
 
 
-<b><code>message</code></b> <i>String</i>
+
+- <b><code>message</code></b> <i>String</i>
 
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
 
 
 ---

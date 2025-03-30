@@ -32,7 +32,7 @@ Type of phone.
 
 <details>
 
-<summary>Enum values:</summary>
+<summary>Enum values</summary>
 
 - `ios_phone`
 - `android_phone`
@@ -51,10 +51,12 @@ Display name of the phone. Defaults to `nickname` (if it is set) or `properties.
 Errors associated with the `phone`.
 
 
-<b><code>error_code</code></b> <i>String</i>
+- <b><code>error_code</code></b> <i>String</i>
 
 
-<b><code>message</code></b> <i>String</i>
+
+- <b><code>message</code></b> <i>String</i>
+
 
 
 ---
@@ -72,12 +74,13 @@ Properties of the phone.
 
 <summary>Child Properties</summary>
 
-<b><code>assa_abloy_credential_service_metadata</code></b> <i>Object</i>
+- <b><code>assa_abloy_credential_service_metadata</code></b> <i>Object</i>
 
   ASSA ABLOY Credential Service metadata for the phone.
 
 
-<b><code>assa_abloy_credential_service_metadata.endpoints</code></b> <i>List</i> <i>of Objects</i>
+
+- <b><code>assa_abloy_credential_service_metadata.endpoints</code></b> <i>List</i> <i>of Objects</i>
 
   Endpoints associated with the phone.
 
@@ -94,19 +97,23 @@ Properties of the phone.
 
 
 
-<b><code>assa_abloy_credential_service_metadata.has_active_endpoint</code></b> <i>Boolean</i>
+
+- <b><code>assa_abloy_credential_service_metadata.has_active_endpoint</code></b> <i>Boolean</i>
 
   Indicates whether the credential service has active endpoints associated with the phone.
 
 
-<b><code>salto_space_credential_service_metadata</code></b> <i>Object</i>
+
+- <b><code>salto_space_credential_service_metadata</code></b> <i>Object</i>
 
   Salto Space credential service metadata for the phone.
 
 
-<b><code>salto_space_credential_service_metadata.has_active_phone</code></b> <i>Boolean</i>
+
+- <b><code>salto_space_credential_service_metadata.has_active_phone</code></b> <i>Boolean</i>
 
   Indicates whether the credential service has an active associated phone.
+
 
 </details>
 
@@ -117,10 +124,12 @@ Properties of the phone.
 Warnings associated with the `phone`.
 
 
-<b><code>message</code></b> <i>String</i>
+- <b><code>message</code></b> <i>String</i>
 
 
-<b><code>warning_code</code></b> <i>String</i>
+
+- <b><code>warning_code</code></b> <i>String</i>
+
 
 
 ---

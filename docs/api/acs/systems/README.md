@@ -82,7 +82,7 @@ Brand-specific terminology for the [access control system](https://docs.seam.co/
 
 <details>
 
-<summary>Enum values:</summary>
+<summary>Enum values</summary>
 
 - `pti_site`
 - `alta_org`
@@ -131,9 +131,10 @@ Indicates whether the `acs_system` is a credential manager.
 
 <summary>Child Properties</summary>
 
-<b><code>time_zone</code></b> <i>String</i>
+- <b><code>time_zone</code></b> <i>String</i>
 
   Time zone in which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) is located.
+
 
 </details>
 
@@ -153,7 +154,7 @@ Name of the [access control system](https://docs.seam.co/latest/capability-guide
 
 <details>
 
-<summary>Enum values:</summary>
+<summary>Enum values</summary>
 
 - `pti_site`
 - `alta_org`
@@ -186,19 +187,22 @@ Name of the [access control system](https://docs.seam.co/latest/capability-guide
 
 <summary>Child Properties</summary>
 
-<b><code>lan_address</code></b> <i>String</i>
+- <b><code>lan_address</code></b> <i>String</i>
 
   IP address or hostname of the main Visionline server relative to [Seam Bridge](../../../capability-guides/seam-bridge.md) on the local network.
 
 
-<b><code>mobile_access_uuid</code></b> <i>String</i>
+
+- <b><code>mobile_access_uuid</code></b> <i>String</i>
 
   Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.
 
 
-<b><code>system_id</code></b> <i>String</i>
+
+- <b><code>system_id</code></b> <i>String</i>
 
   Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager.
+
 
 </details>
 
