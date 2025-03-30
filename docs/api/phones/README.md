@@ -164,43 +164,40 @@ A phone device was deactivated.
 
 <details>
 
-<summary><b><code>created_at</code></b> <i>Datetime</i></summary>
+<summary>Properties</summary>
 
-Date and time at which the event was created.
+- <b><code>created_at</code></b> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+
+
+- <b><code>device_id</code></b> <i>UUID</i>
+
+  ID of the [device](../../core-concepts/devices/README.md).
+
+
+
+- <b><code>event_id</code></b> <i>UUID</i>
+
+  ID of the event.
+
+
+
+- <b><code>event_type</code></b> <i>String</i>
+
+
+
+- <b><code>occurred_at</code></b> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+
+
+- <b><code>workspace_id</code></b> <i>UUID</i>
+
+  ID of the [workspace](../../core-concepts/workspaces/README.md).
+
+
 </details>
-
-<details>
-
-<summary><b><code>device_id</code></b> <i>UUID</i></summary>
-
-ID of the [device](../../core-concepts/devices/README.md).
-</details>
-
-<details>
-
-<summary><b><code>event_id</code></b> <i>UUID</i></summary>
-
-ID of the event.
-</details>
-
-<details>
-
-<summary><b><code>event_type</code></b> <i>String</i></summary>
-</details>
-
-<details>
-
-<summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
-
-Date and time at which the event occurred.
-</details>
-
-<details>
-
-<summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
-
-ID of the [workspace](../../core-concepts/workspaces/README.md).
-</details>
-
----
 

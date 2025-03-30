@@ -100,59 +100,54 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 
 <details>
 
-<summary><b><code>acs_encoder_id</code></b> <i>UUID</i></summary>
+<summary>Properties</summary>
 
-ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+- <b><code>acs_encoder_id</code></b> <i>UUID</i>
+
+  ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+
+
+
+- <b><code>acs_system_id</code></b> <i>UUID</i>
+
+  ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+
+
+
+- <b><code>connected_account_id</code></b> <i>UUID</i>
+
+  ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+
+
+
+- <b><code>created_at</code></b> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+
+
+- <b><code>event_id</code></b> <i>UUID</i>
+
+  ID of the event.
+
+
+
+- <b><code>event_type</code></b> <i>String</i>
+
+
+
+- <b><code>occurred_at</code></b> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+
+
+- <b><code>workspace_id</code></b> <i>UUID</i>
+
+  ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
+
 </details>
-
-<details>
-
-<summary><b><code>acs_system_id</code></b> <i>UUID</i></summary>
-
-ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
-</details>
-
-<details>
-
-<summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
-
-ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
-</details>
-
-<details>
-
-<summary><b><code>created_at</code></b> <i>Datetime</i></summary>
-
-Date and time at which the event was created.
-</details>
-
-<details>
-
-<summary><b><code>event_id</code></b> <i>UUID</i></summary>
-
-ID of the event.
-</details>
-
-<details>
-
-<summary><b><code>event_type</code></b> <i>String</i></summary>
-</details>
-
-<details>
-
-<summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
-
-Date and time at which the event occurred.
-</details>
-
-<details>
-
-<summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
-
-ID of the [workspace](../../../core-concepts/workspaces/README.md).
-</details>
-
----
 
 **`acs_encoder.removed`**
 
@@ -160,57 +155,52 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 
 <details>
 
-<summary><b><code>acs_encoder_id</code></b> <i>UUID</i></summary>
+<summary>Properties</summary>
 
-ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+- <b><code>acs_encoder_id</code></b> <i>UUID</i>
+
+  ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+
+
+
+- <b><code>acs_system_id</code></b> <i>UUID</i>
+
+  ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+
+
+
+- <b><code>connected_account_id</code></b> <i>UUID</i>
+
+  ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+
+
+
+- <b><code>created_at</code></b> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+
+
+- <b><code>event_id</code></b> <i>UUID</i>
+
+  ID of the event.
+
+
+
+- <b><code>event_type</code></b> <i>String</i>
+
+
+
+- <b><code>occurred_at</code></b> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+
+
+- <b><code>workspace_id</code></b> <i>UUID</i>
+
+  ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
+
 </details>
-
-<details>
-
-<summary><b><code>acs_system_id</code></b> <i>UUID</i></summary>
-
-ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
-</details>
-
-<details>
-
-<summary><b><code>connected_account_id</code></b> <i>UUID</i></summary>
-
-ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
-</details>
-
-<details>
-
-<summary><b><code>created_at</code></b> <i>Datetime</i></summary>
-
-Date and time at which the event was created.
-</details>
-
-<details>
-
-<summary><b><code>event_id</code></b> <i>UUID</i></summary>
-
-ID of the event.
-</details>
-
-<details>
-
-<summary><b><code>event_type</code></b> <i>String</i></summary>
-</details>
-
-<details>
-
-<summary><b><code>occurred_at</code></b> <i>Datetime</i></summary>
-
-Date and time at which the event occurred.
-</details>
-
-<details>
-
-<summary><b><code>workspace_id</code></b> <i>UUID</i></summary>
-
-ID of the [workspace](../../../core-concepts/workspaces/README.md).
-</details>
-
----
 
