@@ -187,6 +187,116 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 ---
 
+
+## Errors
+
+**`deleted_externally`**
+
+Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted from the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) outside of Seam.
+
+---
+
+**`salto_ks_subscription_limit_exceeded`**
+
+Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.
+
+---
+
+**`failed_to_create_on_acs_system`**
+
+Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not created on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`failed_to_update_on_acs_system`**
+
+Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not updated on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`failed_to_delete_on_acs_system`**
+
+Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not deleted on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+
+## Warnings
+
+**`being_deleted`**
+
+Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is being deleted from the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is a temporary state, and the ACS user will be deleted shortly.
+
+---
+
+**`salto_ks_user_not_subscribed`**
+
+Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is not subscribed on Salto KS, so they cannot unlock doors or perform any actions. This occurs when the their access schedule hasn’t started yet, if their access schedule has ended, if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.
+
+---
+
+**`unknown_issue_with_acs_user`**
+
+An unknown issue occurred while syncing the state of this [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user.
+
+---
+
+
+## Events
+
+**`acs_user.deleted`**
+
+An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted.
+
+<details>
+
+<summary>Properties</summary>
+
+- <b><code>acs_system_id</code></b> <i>UUID</i>
+
+  ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+
+
+
+- <b><code>acs_user_id</code></b> <i>UUID</i>
+
+
+
+- <b><code>connected_account_id</code></b> <i>UUID</i>
+
+  ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+
+
+
+- <b><code>created_at</code></b> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+
+
+- <b><code>event_id</code></b> <i>UUID</i>
+
+  ID of the event.
+
+
+
+- <b><code>event_type</code></b> <i>String</i>
+
+
+
+- <b><code>occurred_at</code></b> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+
+
+- <b><code>workspace_id</code></b> <i>UUID</i>
+
+  ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
+
+</details>
+
 ## Endpoints
 
 
@@ -244,59 +354,4 @@ Revokes access to all [entrances](https://docs.seam.co/latest/api/acs/entrances)
 
 Updates the properties of a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
-
-## Events
-
-**`acs_user.deleted`**
-
-An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted.
-
-<details>
-
-<summary>Properties</summary>
-
-- <b><code>acs_system_id</code></b> <i>UUID</i>
-
-  ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
-
-
-
-- <b><code>acs_user_id</code></b> <i>UUID</i>
-
-
-
-- <b><code>connected_account_id</code></b> <i>UUID</i>
-
-  ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
-
-
-
-- <b><code>created_at</code></b> <i>Datetime</i>
-
-  Date and time at which the event was created.
-
-
-
-- <b><code>event_id</code></b> <i>UUID</i>
-
-  ID of the event.
-
-
-
-- <b><code>event_type</code></b> <i>String</i>
-
-
-
-- <b><code>occurred_at</code></b> <i>Datetime</i>
-
-  Date and time at which the event occurred.
-
-
-
-- <b><code>workspace_id</code></b> <i>UUID</i>
-
-  ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
-
-</details>
 

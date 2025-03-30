@@ -110,3 +110,4 @@ Returns a list of all [thermostat schedules](../../../capability-guides/thermost
 
 Updates a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
+
