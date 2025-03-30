@@ -82,7 +82,7 @@ Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/ac
 
 ---
 
-[**`errors`**](./#errors-1) *List* *of Objects*
+[**`errors`**](./#errors) *List* *of Objects*
 
 Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
@@ -175,7 +175,7 @@ Phone number of the user identity associated with the [ACS user](https://docs.se
 
 ---
 
-[**`warnings`**](./#warnings-1) *List* *of Objects*
+[**`warnings`**](./#warnings) *List* *of Objects*
 
 Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 

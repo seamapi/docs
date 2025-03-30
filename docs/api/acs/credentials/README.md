@@ -279,7 +279,7 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 
 ---
 
-[**`warnings`**](./#warnings-1) *List* *of Objects*
+[**`warnings`**](./#warnings) *List* *of Objects*
 
 Warnings associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 

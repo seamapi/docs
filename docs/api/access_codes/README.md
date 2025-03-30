@@ -50,7 +50,7 @@ Date and time after which the time-bound access code becomes inactive.
 
 ---
 
-[**`errors`**](./#errors-1) *List* *of Objects*
+[**`errors`**](./#errors) *List* *of Objects*
 
 Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.
 
@@ -169,7 +169,7 @@ Nature of the access code. Values are "ongoing" for access codes that are active
 
 ---
 
-[**`warnings`**](./#warnings-1) *List* *of Objects*
+[**`warnings`**](./#warnings) *List* *of Objects*
 
 Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention.
 
