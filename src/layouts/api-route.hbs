@@ -50,11 +50,14 @@ The {{title}} route contains the following resources:
 {{description}}
 
 {{/if}}
-{{#each properties}}
-{{> property-collapsible this}}
+<details>
 
+<summary>Properties</summary>
+{{#each properties}}
+
+- {{> property-nested this}}
 {{/each}}
----
+</details>
 
 {{/each}}
 {{/if}}
