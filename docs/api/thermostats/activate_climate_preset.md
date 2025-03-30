@@ -179,6 +179,8 @@ ID of the desired thermostat device.
 
 Activating climate preset.
 
+---
+
 ### Properties
 
 **`action_attempt_id`** *UUID*

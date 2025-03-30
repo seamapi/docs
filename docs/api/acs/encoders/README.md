@@ -19,6 +19,8 @@ Separately, the Seam API also supports card scanning, which enables you to scan 
 
 To verify if your access control system requires a card encoder, see the corresponding [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 
+---
+
 ## Properties
 
 **`acs_encoder_id`** *UUID*

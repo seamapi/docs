@@ -10,6 +10,8 @@ An access control system generally uses digital means of access to authorize a u
 
 For each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type.
 
+---
+
 ## Properties
 
 **`access_method`** *Enum*

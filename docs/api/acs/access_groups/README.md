@@ -10,6 +10,8 @@ Some access control systems use [access group](https://docs.seam.co/latest/capab
 
 To learn whether your access control system supports access groups, see the corresponding [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 
+---
+
 ## Properties
 
 **`access_group_type`** *Enum*

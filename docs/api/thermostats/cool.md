@@ -189,6 +189,8 @@ Desired [cooling set point](../../capability-guides/thermostats/understanding-th
 
 Setting HVAC mode.
 
+---
+
 ### Properties
 
 **`action_attempt_id`** *UUID*

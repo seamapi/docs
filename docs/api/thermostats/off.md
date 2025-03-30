@@ -161,6 +161,8 @@ ID of the desired thermostat device.
 
 Setting HVAC mode.
 
+---
+
 ### Properties
 
 **`action_attempt_id`** *UUID*

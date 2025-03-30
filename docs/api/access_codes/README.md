@@ -4,6 +4,8 @@ The Access Codes route contains the following resources:
 
 ## The `access_code` Resource
 
+---
+
 ## Properties
 
 **`access_code_id`** *UUID*

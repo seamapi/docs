@@ -10,6 +10,8 @@ An `acs_user` typically refers to an individual who requires access, like an emp
 
 For details about how to configure `acs_user`s in your access control system, see the corresponding [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 
+---
+
 ## Properties
 
 **`access_schedule`** *Object*

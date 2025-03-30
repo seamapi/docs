@@ -47,6 +47,8 @@ ID of the `acs_encoder` to use to encode the `acs_credential`.
 
 Action attempt to track encoding credential data from the physical encoder onto a card.
 
+---
+
 ### Properties
 
 **`action_attempt_id`** *UUID*

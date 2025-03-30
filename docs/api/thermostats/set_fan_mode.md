@@ -189,6 +189,8 @@ Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermos
 
 Setting fan mode.
 
+---
+
 ### Properties
 
 **`action_attempt_id`** *UUID*

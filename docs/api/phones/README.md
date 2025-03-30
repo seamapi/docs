@@ -6,6 +6,8 @@ The Phones route contains the following resources:
 
 Represents an app user's mobile phone.
 
+---
+
 ## Properties
 
 **`created_at`** *Datetime*
