@@ -4,6 +4,14 @@ The {{title}} route contains the following resources:
 
 {{#each resources}}
 {{> api-resource }}
+## Endpoints
+
+{{#each endpoints}}
+[**`{{path}}`**](./{{name}}.md)
+
+{{description}}
+
+{{/each}}
 {{#if errors.length}}
 ## Errors
 
@@ -28,14 +36,6 @@ The {{title}} route contains the following resources:
 
 {{/each}}
 {{/if}}
-{{/each}}
-## Endpoints
-
-{{#each endpoints}}
-[**`{{path}}`**](./{{name}}.md)
-
-{{description}}
-
 {{/each}}
 {{#if events.length}}
 
