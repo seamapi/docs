@@ -258,6 +258,26 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 ## Endpoints
 
 
+[**`/acs/entrances/get`**](./get.md)
+
+Returns a specified [ACS entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
+
+[**`/acs/entrances/grant_access`**](./grant_access.md)
+
+
+
+
+[**`/acs/entrances/list`**](./list.md)
+
+Returns a list of all [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
+
+[**`/acs/entrances/list_credentials_with_access`**](./list_credentials_with_access.md)
+
+Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md) with access to a specified [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
+
 ---
 
 ## Events

@@ -267,43 +267,45 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 ---
 ## Endpoints
 
-## Warnings
 
-**`waiting_to_be_issued`**
+[**`/acs/credentials/assign`**](./assign.md)
 
-Indicates that the [credential](../../../capability-guides/access-systems/managing-credentials.md) is waiting to be issued.
+Assigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) to a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
----
 
-**`schedule_externally_modified`**
+[**`/acs/credentials/create`**](./create.md)
 
-Indicates that the schedule of one of the [credential](../../../capability-guides/access-systems/managing-credentials.md)'s children was modified externally.
+Creates a new [credential](../../../capability-guides/access-systems/managing-credentials.md) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
----
 
-**`schedule_modified`**
+[**`/acs/credentials/delete`**](./delete.md)
 
-Indicates that the schedule of the [credential](../../../capability-guides/access-systems/managing-credentials.md) was modified to avoid creating a credential with a start date in the past.
+Deletes a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
----
 
-**`being_deleted`**
+[**`/acs/credentials/get`**](./get.md)
 
-Indicates that the [credential](../../../capability-guides/access-systems/managing-credentials.md) is being deleted.
+Returns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
----
 
-**`unknown_issue_with_acs_credential`**
+[**`/acs/credentials/list`**](./list.md)
 
-An unknown issue occurred while syncing the state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) with the provider. This issue may affect the proper functioning of the credential.
+Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md).
 
----
 
-**`needs_to_be_reissued`**
+[**`/acs/credentials/list_accessible_entrances`**](./list_accessible_entrances.md)
 
-Access permissions for the [credential](../../../capability-guides/access-systems/managing-credentials.md) have changed. [Reissue](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md) (re-encode) the credential. This issue may affect the proper functioning of the credential.
+Returns a list of all [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a [credential](https://docs.seam.co/latest/api/acs/credentials) grants access.
 
----
+
+[**`/acs/credentials/unassign`**](./unassign.md)
+
+Unassigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) from a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+
+[**`/acs/credentials/update`**](./update.md)
+
+Updates the code and ends at date and time for a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
 ---
