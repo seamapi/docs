@@ -14,30 +14,35 @@ Date and time at which the enrollment automation was created.
 
 
 ---
+
 **`credential_manager_acs_system_id`** *UUID*
 
 ID of the associated [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) that serves as the credential manager.
 
 
 ---
+
 **`enrollment_automation_id`** *UUID*
 
 ID of the enrollment automation.
 
 
 ---
+
 **`user_identity_id`** *UUID*
 
 ID of the associated [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 
 ---
+
 **`workspace_id`** *UUID*
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the enrollment automation.
 
 
 ---
+
 ## Endpoints
 
 

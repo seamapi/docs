@@ -16,12 +16,14 @@ ID of the [entrance](../../../capability-guides/access-systems/retrieving-entran
 
 
 ---
+
 **`acs_system_id`** *UUID*
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 
 ---
+
 **`assa_abloy_vostio_metadata`** *Object*
 
 ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
@@ -64,18 +66,21 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
 
 
 ---
+
 **`created_at`** *Datetime*
 
 Date and time at which the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md) was created.
 
 
 ---
+
 **`display_name`** *String*
 
 Display name for the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 
 ---
+
 **`dormakaba_community_metadata`** *Object*
 
 dormakaba Community-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
@@ -91,6 +96,7 @@ dormakaba Community-specific metadata associated with the [entrance](../../../ca
 
 
 ---
+
 **`errors`** *List* *of Objects*
 
 Errors associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
@@ -109,6 +115,7 @@ Errors associated with the [entrance](../../../capability-guides/access-systems/
 
 
 ---
+
 **`latch_metadata`** *Object*
 
 Latch-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
@@ -136,6 +143,7 @@ Latch-specific metadata associated with the [entrance](../../../capability-guide
 
 
 ---
+
 **`salto_ks_metadata`** *Object*
 
 Salto KS-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
@@ -179,6 +187,7 @@ Salto KS-specific metadata associated with the [entrance](../../../capability-gu
 
 
 ---
+
 **`salto_space_metadata`** *Object*
 
 Salto Space-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
@@ -202,6 +211,7 @@ Salto Space-specific metadata associated with the [entrance](../../../capability
 
 
 ---
+
 **`visionline_metadata`** *Object*
 
 Visionline-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
@@ -255,6 +265,7 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 
 
 ---
+
 ## Endpoints
 
 

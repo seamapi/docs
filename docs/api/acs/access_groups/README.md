@@ -32,6 +32,7 @@ To learn whether your access control system supports access groups, see the corr
 
 
 ---
+
 **`access_group_type_display_name`** *String*
 
 {% hint style="warning" %}
@@ -40,28 +41,33 @@ To learn whether your access control system supports access groups, see the corr
 
 
 ---
+
 **`acs_access_group_id`** *UUID*
 
 ID of the access group.
 
 
 ---
+
 **`acs_system_id`** *UUID*
 
 ID of the access control system that contains the access group.
 
 
 ---
+
 **`created_at`** *Datetime*
 
 Date and time at which the access group was created.
 
 
 ---
+
 **`display_name`** *String*
 
 
 ---
+
 **`external_type`** *Enum*
 
 Brand-specific terminology for the access group type.
@@ -80,22 +86,26 @@ Brand-specific terminology for the access group type.
 
 
 ---
+
 **`external_type_display_name`** *String*
 
 Display name that corresponds to the brand-specific terminology for the access group type.
 
 
 ---
+
 **`is_managed`** *Boolean*
 
 
 ---
+
 **`name`** *String*
 
 Name of the access group.
 
 
 ---
+
 **`warnings`** *List* *of Objects*
 
 Warnings associated with the `acs_access_group`.
@@ -120,12 +130,14 @@ Warnings associated with the `acs_access_group`.
 
 
 ---
+
 **`workspace_id`** *UUID*
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the access group.
 
 
 ---
+
 ## Endpoints
 
 
