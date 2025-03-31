@@ -32,12 +32,14 @@ Type: `{{this.jsonType}}`
 Item format: `{{this.itemFormat}}`
 {{/if}}
 Required: {{#if this.required}}Yes{{else}}No{{/if}}
+{{#if this.description}}
+
+{{this.description}}
+{{/if}}
 {{#if this.itemEnumValues}}
 
 {{> enum-values enumValues=this.itemEnumValues}}
 {{/if}}
-
-{{this.description}}
 
 ***
 
