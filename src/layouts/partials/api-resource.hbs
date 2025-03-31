@@ -36,10 +36,7 @@ Item format: `{{listItemFormat}}`
 {{/if}}
 {{#if enumValues}}
 
-Possible enum values:
-{{#each enumValues}}
-- `{{this}}`
-{{/each}}
+{{> enum-values}}
 {{/if}}
 {{#unless (eq objectProperties undefined)}}
 {{#if (eq objectProperties.length 0)}}
