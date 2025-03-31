@@ -3,10 +3,19 @@ package main
 import (
 	"context"
 	"fmt"
-	"math/rand"
+	// "math/rand"
 	"os"
+//   "encoding/json"
+//   "time"
+//   "reflect"
 
-	seam "github.com/seamapi/go/client"
+  api "github.com/seamapi/go"
+  seam "github.com/seamapi/go/client"
+  "github.com/seamapi/go/useridentities"
+  "github.com/seamapi/go/acs"
+
+
+
 )
 
 func main() {
@@ -17,14 +26,1808 @@ func main() {
 }
 
 func run() error {
+  // SEAM_API_KEY := "seam_test8yup_77ut771wVzFPcfhce9ti5Ccq"
+  // SEAM_API_KEY := "seam_testjMPq_3wh4WmfXuMRMZbAfpCmvUkUi"
+  // SEAM_API_KEY := "seam_testMyUj_6Exz7BVtFUM6GrHggvm9DFXm"
+  // SEAM_API_KEY := "seam_2bQGnv5M_4fxHvu2U7ofPqQHEdzGCGMQe"
+  // SEAM_API_KEY := "seam_test2P1X_2jq9k99HBroBF9zMamfdwwaZ"
+//   SEAM_API_KEY := "seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy"
+  SEAM_API_KEY := "seam_test2atJ_AUXaAAMdnyhGvzsTFMzqZhUq"
+
 	client := seam.NewClient(
-		seam.WithBaseURL(fmt.Sprintf("https://%d.fakeseamconnect.seam.vc", rand.Intn(1000000))),
-		seam.WithApiKey("seam_apikey1_token"),
+		// seam.WithBaseURL(fmt.Sprintf("https://%d.fakeseamconnect.seam.vc", rand.Intn(1000000))),
+		// seam.WithApiKey("seam_apikey1_token"),
+		// seam.WithApiKey("seam_test2scj_2c636ceHmdU1ZJEHp5svCZgy"),
+		// seam.WithApiKey("seam_test8yup_77ut771wVzFPcfhce9ti5Ccq"),
+		seam.WithApiKey(SEAM_API_KEY),
 	)
-	devices, err := client.Devices.List(context.Background(), nil)
+	// devices, err := client.Devices.List(context.Background(), nil)
+	// if err != nil {
+	// 	return err
+	// }
+	// fmt.Println(devices)
+	// return nil
+
+// devices, uErr := client.Devices.List(
+//   context.Background(),
+//   &api.DevicesListRequest{
+// //     // IncludeIf: []api.DevicesListRequestIncludeIfItem{
+// //     //   api.DevicesListRequestIncludeIfItemCanRemotelyUnlock,
+// //     // },
+//   })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// fmt.Println(devices)
+// return nil
+
+// // Get the device.
+// device, uErr := client.Locks.Get(
+//   context.Background(),
+//   &api.LocksGetRequest{
+//     DeviceId: api.String("59112086-537a-49c0-96dc-ce74f5abfbd7"),
+//   })
+
+// // Confirm that the device can remotely lock.
+// if *device.CanRemotelyLock {
+//   // Perform the lock operation.
+//   fmt.Println(client.Locks.LockDoor(
+//       context.Background(),
+//       &api.LocksLockDoorRequest{
+//         DeviceId: "59112086-537a-49c0-96dc-ce74f5abfbd7",
+//       },
+//     ))
+//   }
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// return nil
+
+// // Get the device.
+// device, uErr := client.Locks.Get(
+//   context.Background(),
+//   &api.LocksGetRequest{
+//     DeviceId: api.String("59112086-537a-49c0-96dc-ce74f5abfbd7"),
+//   })
+
+// // Confirm that the device supports online access codes.
+// if *device.CanProgramOnlineAccessCodes {
+//   // Create the ongoing online access code.
+//   client.AccessCodes.Create(
+//       context.Background(),
+//       &api.AccessCodesCreateRequest{
+//         DeviceId: device.DeviceId,
+//         Name: api.String("my ongoing code"),
+//         Code: api.String("1234"),
+//       },
+//     )
+//   }
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// return nil
+
+// // Get the device.
+// device, uErr := client.Locks.Get(
+//     context.Background(),
+//     &api.LocksGetRequest{
+//       DeviceId: api.String("11111111-1111-1111-1111-444444444444"),
+//     })
+
+//   // Confirm that the device supports offline access codes.
+//   if *device.CanProgramOfflineAccessCodes {
+//     // Create the hourly-bound offline access code.
+//     client.AccessCodes.Create(
+//         context.Background(),
+//         &api.AccessCodesCreateRequest{
+//           DeviceId: "11111111-1111-1111-1111-444444444444",
+//           Name: api.String("my hourly-bound offline code"),
+//           StartsAt: api.String("2023-11-10T00:00:00Z"),
+//           EndsAt: api.String("2023-11-15T18:00:00Z"),
+//           IsOfflineAccessCode: api.Bool(true),
+//         },
+//       )
+//     }
+
+//   if uErr != nil {
+//       return uErr
+//   }
+
+//   return nil
+
+// userIdentityKey := "jenny_lee"
+// email := "jenny@example.com"
+// // phoneNumber := "+15555550111"
+// // fullName := "Jenny Lee"
+
+// userIdentity, uErr := client.UserIdentities.Create(context.Background(), &useridentities.UserIdentitiesCreateRequest{
+//     // UserIdentityKey: &userIdentityKey,
+//     UserIdentityKey: api.String("fred_smith"),
+//     EmailAddress: api.String("fred@example.com"),
+//     // EmailAddress: &email,
+//     // PhoneNumber: &phoneNumber,
+//     // FullName: &fullName,
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// fmt.Println(userIdentity)
+// return nil
+
+// userIdentity, uErr := client.UserIdentities.Create(context.Background(), &api.UserIdentitiesCreateRequest{
+//     UserIdentityKey: api.String("12345"),
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// fmt.Println(userIdentity)
+// return nil
+
+
+// userIdentities, err := client.UserIdentities.List(context.Background())
+// if err != nil {
+//     return err
+// }
+// fmt.Println(userIdentities)
+// return nil
+
+// userIdentity, uErr := client.UserIdentities.Get(
+//     context.Background(),
+//     useridentities.NewUserIdentitiesGetRequestFromUserIdentitiesGetRequestUserIdentityId(
+//         &useridentities.UserIdentitiesGetRequestUserIdentityId{
+//             UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+//         },
+//     ),
+// )
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// fmt.Println(userIdentity)
+// return nil
+
+// _, uErr := client.UserIdentities.AddAcsUser(context.Background(), &useridentities.UserIdentitiesAddAcsUserRequest{
+//     UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+//     AcsUserId: "4d223973-0874-4831-8630-bfcb29e6bce0",
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// return nil
+
+// acsUsers, uErr := client.UserIdentities.ListAcsUsers(context.Background(), &useridentities.UserIdentitiesListAcsUsersRequest{
+//     UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// fmt.Println(acsUsers)
+// return nil
+
+// acsSystems, uErr := client.UserIdentities.ListAcsSystems(context.Background(), &useridentities.UserIdentitiesListAcsSystemsRequest{
+//     UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// fmt.Println(acsSystems)
+// return nil
+
+// _, uErr := client.UserIdentities.RemoveAcsUser(context.Background(), &useridentities.UserIdentitiesRemoveAcsUserRequest{
+//     UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+//     AcsUserId: "4d223973-0874-4831-8630-bfcb29e6bce0",
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// return nil
+
+// _, uErr := client.UserIdentities.GrantAccessToDevice(context.Background(), &api.UserIdentitiesGrantAccessToDeviceRequest{
+//     UserIdentityId: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
+//     DeviceId: "054765c8-a2fc-4599-b486-14c19f462c45",
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// // fmt.Println(deviceGrant)
+// return nil
+
+// accessibleDevices, uErr := client.UserIdentities.ListAccessibleDevices(context.Background(), &api.UserIdentitiesListAccessibleDevicesRequest{
+//     UserIdentityId: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// fmt.Println(accessibleDevices)
+// return nil
+
+// _, uErr := client.UserIdentities.RevokeAccessToDevice(context.Background(), &api.UserIdentitiesRevokeAccessToDeviceRequest{
+//     UserIdentityId: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
+//     DeviceId: "054765c8-a2fc-4599-b486-14c19f462c45",
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// // fmt.Println(revokeDevice)
+// return nil
+
+
+
+
+// _, uErr := client.UserIdentities.Delete(context.Background(), &api.UserIdentitiesDeleteRequest{
+//   UserIdentityId: "44d48b20-0dbe-419d-91ca-ab8bceecd135",
+// })
+
+// if uErr != nil {
+//   return uErr
+// }
+
+// return nil
+
+// enrollmentAutomation, uErr := client.UserIdentities.EnrollmentAutomations.Launch(context.Background(), &useridentities.EnrollmentAutomationsLaunchRequest{
+//     UserIdentityId: "eec124d4-ece5-4367-b154-dbd42127c2bb",
+//     CredentialManagerAcsSystemId: "6737e186-8d54-48ce-a7da-a0be4d252172",
+//     AcsCredentialPoolId: api.String("3fa85f64-5717-4562-b3fc-2c963f66afa6"),
+//     CreateCredentialManagerUser: api.Bool(true),
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// fmt.Println(enrollmentAutomation)
+// return nil
+
+// enrollmentAutomation, uErr := client.UserIdentities.EnrollmentAutomations.Launch(context.Background(), &useridentities.EnrollmentAutomationsLaunchRequest{
+//     // Use the ACS system ID for the credential service.
+//     CredentialManagerAcsSystemId: "6737e186-8d54-48ce-a7da-a0be4d252172",
+//     // Use the user identity ID for the guest user identity.
+//     UserIdentityId: "f3dd17cd-4a23-41e1-8aac-1905ae05ad6d",
+//     CreateCredentialManagerUser: api.Bool(true),
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// fmt.Println(enrollmentAutomation)
+// return nil
+
+
+// enrollmentAutomation, uErr := client.UserIdentities.EnrollmentAutomations.Launch(context.Background(), &useridentities.EnrollmentAutomationsLaunchRequest{
+//     UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+//     CredentialManagerAcsSystemId: "6737e186-8d54-48ce-a7da-a0be4d252172",
+//     AcsCredentialPoolId: api.String("3fa85f64-5717-4562-b3fc-2c963f66afa6"),
+//     CreateCredentialManagerUser: api.Bool(true),
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// fmt.Println(enrollmentAutomation)
+// return nil
+
+// enrollmentAutomations, uErr := client.UserIdentities.EnrollmentAutomations.List(context.Background(), &useridentities.EnrollmentAutomationsListRequest{
+//     UserIdentityId: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// fmt.Println(enrollmentAutomations)
+// return nil
+
+// enrollmentAutomation, uErr := client.UserIdentities.EnrollmentAutomations.Get(
+//     context.Background(),
+//     useridentities.NewEnrollmentAutomationsGetRequestFromEnrollmentAutomationsGetRequestUserIdentityId(
+//         &useridentities.EnrollmentAutomationsGetRequestUserIdentityId{
+//             UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+//         },
+//     ),
+// )
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// fmt.Println(enrollmentAutomation)
+// return nil
+
+// acsCredential, uErr := client.Acs.Credentials.Create(context.Background(), &acs.CredentialsCreateRequest{
+//     AcsUserId: "4d223973-0874-4831-8630-bfcb29e6bce0",
+//     IsMultiPhoneSyncCredential: api.Bool(true),
+//     CardFormat: acs.CredentialsCreateRequestCardFormatRfid48.Ptr(),
+//     // FacilityCode: "9",
+//     AccessMethod: "mobile_key",
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// fmt.Println(acsCredential)
+// return nil
+
+// users, err := client.Acs.Users.List(context.Background(), &acs.UsersListRequest{})
+// if err != nil {
+//     return err
+// }
+// fmt.Println(users)
+// return nil
+
+	// devices, err := client.Devices.List(context.Background(), nil)
+	// if err != nil {
+	// 	return err
+	// }
+	// fmt.Println(devices)
+	// return nil
+
+// DOES NOT WORK (YET?)
+// connectWebviews, err := client.ConnectWebviews.List(
+//   context.Background(),
+//   &api.ConnectWebviewsListRequest{
+//     CustomMetadataHas: {"internal_account_id":"user-1"},
+//   },
+// )
+// if err != nil {
+//   return err
+// }
+// fmt.Println(connectWebviews)
+// return nil
+
+// customMetadata := map[string]ConnectWebviewsCreateRequestCustomMetadataValue
+
+// INCORRECT
+// connectWebview, err := client.ConnectWebviews.Create(
+//   context.Background(),
+//   &api.ConnectWebviewsCreateRequest{
+//     CustomMetadata: map[string]string{"internal_account_id":"user-1"},
+//   },
+// )
+// if err != nil {
+//   return err
+// }
+// fmt.Println(connectWebview)
+// return nil
+
+// createdConnectWebview, err := client.ConnectWebviews.Create(
+//     context.Background(),
+//     &api.ConnectWebviewsCreateRequest{
+//       CustomRedirectUrl: api.String("https://example.com/redirect"),
+//       CustomRedirectFailureUrl: api.String("https://example.com/failure-redirect"),
+//       ProviderCategory: api.ProviderCategoryStable.Ptr(),
+//       WaitForDeviceCreation: api.Bool(true),
+//     },
+//   )
+
+// if err != nil {
+//   return err
+// }
+
+// fmt.Println(createdConnectWebview)
+// return nil
+
+// // Retrieve all devices for the ConnectedAccountId.
+// connectedDevices, err := client.Devices.List(
+//   context.Background(), &api.DevicesListRequest{
+//     // ConnectedAccountId: api.String("11111111-1111-1111-1111-222222222222"),
+//     ConnectedAccountId: api.String("486466da-a19f-48b3-824d-b9aa30b936c9"),
+//   },
+// )
+
+// if err != nil {
+//   return err
+// }
+
+// fmt.Println(connectedDevices)
+
+// return nil
+
+
+// connectWebview, err := client.ConnectWebviews.Create(
+//   context.Background(),
+//   &api.ConnectWebviewsCreateRequest{
+// 			AcceptedProviders: []api.AcceptedProvider{
+// 				api.AcceptedProviderFourSuites,
+// 			},
+//   },
+// )
+// if err != nil {
+//   return err
+// }
+// fmt.Println(connectWebview.LoginSuccessful) // false
+// fmt.Println(connectWebview.Url)
+// return nil
+
+// connectWebviewId := "44912603-23e8-4126-8f02-29c875875a64";
+// updatedConnectWebview, err := client.ConnectWebviews.Get(
+//   context.Background(),
+//   &api.ConnectWebviewsGetRequest{
+//     ConnectWebviewId: connectWebviewId,
+//   },
+// )
+
+// if err != nil {
+//   return err
+// }
+
+// fmt.Println(updatedConnectWebview.LoginSuccessful) // true
+
+// return nil
+
+// updatedConnectWebview, err := client.ConnectWebviews.Get(
+//   context.Background(),
+//   &api.ConnectWebviewsGetRequest{
+// 			ConnectWebviewId: connectWebview.ConnectWebviewId,
+//   },
+// )
+// if err != nil {
+//   return err
+// }
+// fmt.Println(updatedConnectWebview.LoginSuccessful) // true
+// return nil
+
+// connectedAccounts, err := client.ConnectedAccounts.List(context.Background())
+// if err != nil {
+//   return err
+// }
+// fmt.Println(connectedAccounts)
+// return nil
+
+// connectWebviews, err := client.ConnectWebviews.List(context.Background(), nil)
+// if err != nil {
+//   return err
+// }
+// fmt.Println(connectWebviews)
+// return nil
+
+// // Retrieve all devices, filtered by manufacturer,
+// // which is one of several filters that list() supports.
+// all4suitesLocks, err := client.Devices.List(
+//   context.Background(), &api.DevicesListRequest{
+//     // Manufacturer: api.ManufacturerFourSuites.Ptr(),
+//     // Manufacturer: api.ManufacturerYale.Ptr(),
+//     Manufacturer: api.ManufacturerAugust.Ptr(),
+//   },
+// )
+
+// // Select the first device as an example.
+// someLock := all4suitesLocks[0]
+
+// if err != nil {
+//   return err
+// }
+
+// Inspect specific properties.
+// fmt.Println(someLock.Properties.Online) // true
+// fmt.Println(*someLock.Properties.Locked) // true
+
+// View the entire returned device object.
+// fmt.Println(someLock)
+
+// return nil
+
+// // Confirm that the device can remotely unlock.
+// if *someLock.CanRemotelyUnlock {
+//   // Perform the unlock operation.
+//   actionAttempt, err := client.Locks.UnlockDoor(
+//       context.Background(),
+//       &api.LocksUnlockDoorRequest{
+//         DeviceId: someLock.DeviceId,
+//       },
+//     )
+//   fmt.Println(actionAttempt)
+//   if err != nil {
+//     return err
+//   }
+// }
+
+// return nil
+
+// actionAttempt, err := client.ActionAttempts.Get(
+//   context.Background(), &api.ActionAttemptsGetRequest{
+//     ActionAttemptId: "478d43dc-b74a-48c8-8a3a-09f9d0b4f153",
+//   },
+// )
+// fmt.Println(actionAttempt)
+
+// // Get the device by ID.
+// updatedLock, err := client.Devices.Get(
+//   context.Background(), &api.DevicesGetRequest{
+//     DeviceId: api.String(someLock.DeviceId),
+//   },
+// )
+
+// if err != nil {
+//   return err
+// }
+
+// Inspect the locked property to confirm
+// that the unlock operation was successful.
+// fmt.Println(*updatedLock.Properties.Locked) // false
+
+// return nil
+
+// // Confirm that the device supports online access codes.
+// if *updatedLock.CanProgramOnlineAccessCodes {
+//   // Create an ongoing online access code.
+//   client.AccessCodes.Create(
+//     context.Background(),
+//     &api.AccessCodesCreateRequest{
+//       DeviceId: updatedLock.DeviceId,
+//       Name: api.String("my ongoing code"),
+//       Code: api.String("1234"),
+//     },
+//   )
+//   // Create a time-bound online access code.
+//   client.AccessCodes.Create(
+//     context.Background(),
+//     &api.AccessCodesCreateRequest{
+//       DeviceId: updatedLock.DeviceId,
+//       Name: api.String("my time-bound code"),
+//       StartsAt: api.String("2025-01-01T16:00:00Z"),
+//       EndsAt: api.String("2025-01-22T12:00:00Z"),
+//       Code: api.String("2345"),
+//     },
+//   )
+//   // List all access codes for this device.
+//   accessCodes, err := client.AccessCodes.List(
+//     context.Background(),
+//     &api.AccessCodesListRequest{
+//       DeviceId: updatedLock.DeviceId,
+//     },
+//   )
+//   fmt.Println(accessCodes)
+//   if err != nil {
+//     return err
+//   }
+// }
+
+// return nil
+
+// jane_user, err := client.UserIdentities.Get(
+//   context.Background(), api.NewUserIdentitiesGetRequestFromUserIdentitiesGetRequestUserIdentityId(
+//     &api.UserIdentitiesGetRequestUserIdentityId{
+//       UserIdentityId: "d2993de6-31b5-4dc7-abee-6185c95d7c2c",
+//     },
+//   ),
+// )
+// if err != nil {
+//   return err
+// }
+
+// entrances, err := client.Acs.Entrances.List(
+//   context.Background(), &acs.EntrancesListRequest{
+//     AcsSystemId: api.String("6929fa70-a6c4-4dcf-be3f-34b1a4116553"),
+//   },
+// )
+// if err != nil {
+//   return err
+// }
+
+// // Step 1:
+// // Create the new user on the Latch ACS.
+// // jane_user is a UserIdentity that represents
+// // a user within your set of app users.
+// building_a_resident, err := client.Acs.Users.Create(
+//   context.Background(), &acs.UsersCreateRequest{
+//     // AcsSystemId: "11111111-1111-1111-1111-111111111111",
+//     AcsSystemId: "6929fa70-a6c4-4dcf-be3f-34b1a4116553",
+//     UserIdentityId: api.String(jane_user.UserIdentityId),
+//     FullName: api.String("Jane Doe"),
+//     EmailAddress: api.String("jane@example.com"),
+//   },
+// )
+// if err != nil {
+//   return err
+// }
+
+// // Step 2:
+// // Create a PIN code for each door for the ACS user.
+// startsAt, err := time.Parse(time.RFC3339, "2024-07-13T16:50:42Z")
+// endsAt, err := time.Parse(time.RFC3339, "2024-07-18T16:50:42Z")
+// if err != nil {
+//   return err
+// }
+
+// for _, entrance := range entrances {
+//   // fmt.Println(entrance)
+//   credential, err := client.Acs.Credentials.Create(
+//     context.Background(), &acs.CredentialsCreateRequest{
+//       AcsUserId: building_a_resident.AcsUserId,
+//       // Use either AcsUserId or UserIdentityId.
+//       // UserIdentityId: jane_user.UserIdentityId,
+//       AccessMethod: "code",
+//       AllowedAcsEntranceIds: []string{
+//         // You must specify only one entrance per PIN code.
+//         entrance.AcsEntranceId,
+//       },
+//       StartsAt: api.Time(startsAt),
+//       EndsAt: api.Time(endsAt),
+//     },
+//   );
+//   if err != nil {
+//   return err
+//   };
+
+//   fmt.Println(credential);
+// }
+
+// return nil
+
+
+
+// building_a, err := client.Acs.Systems.Get(
+//     context.Background(), &acs.SystemsGetRequest{
+//       AcsSystemId: "f4f660da-c96a-4cf6-9f81-507ff4772b30",
+//     },
+//   )
+// if err != nil {
+//   return err
+// }
+
+// entrances, err := client.Acs.Entrances.List(
+//   context.Background(), &acs.EntrancesListRequest{
+//     AcsSystemId: api.String("f4f660da-c96a-4cf6-9f81-507ff4772b30"),
+//   },
+// )
+// if err != nil {
+//   return err
+// }
+
+// // Step 1:
+// // Create a user identity that corresponds to your user's app account.
+// jane_user, err := client.UserIdentities.Create(
+//   context.Background(), &api.UserIdentitiesCreateRequest{
+//     EmailAddress: api.String("jane7@example.com"),
+//   },
+// )
+// if err != nil {
+//   return err
+// }
+
+// // Step 2:
+// // Retrieve a credential manager.
+// // latch_credential_managers, err := client.Acs.Systems.ListCompatibleCredentialManagerAcsSystems(
+// latch_credential_managers, err := client.Acs.Systems.List(
+//     // context.Background(), &acs.SystemsListCompatibleCredentialManagerAcsSystemsRequest{
+//     context.Background(), &acs.SystemsListRequest{
+//       // AcsSystemId: building_a.AcsSystemId,
+//     },
+//   )
+// if err != nil {
+//   return err
+// }
+// latch_credential_manager := latch_credential_managers[0]
+
+// // Step 3:
+// // Set up an enrollment automation for the user identity, to enable mobile keys.
+// client.UserIdentities.EnrollmentAutomations.Launch(
+//   context.Background(), &useridentities.EnrollmentAutomationsLaunchRequest{
+//     UserIdentityId: jane_user.UserIdentityId,
+//     CreateCredentialManagerUser: api.Bool(true),
+//     CredentialManagerAcsSystemId: latch_credential_manager.AcsSystemId,
+//   },
+// )
+
+// // Step 4:
+// // Create an ACS user on the Latch ACS
+// // or assign the ACS user to the user identity.
+// building_a_resident, err := client.Acs.Users.Create(
+//   context.Background(), &acs.UsersCreateRequest{
+//     // To associate the ACS user with a user identity,
+//     // include the UserIdentityId.
+//     // Resources that you create for this ACS user
+//     // are available under the associated user identity.
+//     UserIdentityId: api.String(jane_user.UserIdentityId),
+//     AcsSystemId: building_a.AcsSystemId,
+//     FullName: api.String("Jane Doe7"),
+//     EmailAddress: api.String("jane7@example.com"),
+//   },
+// )
+// if err != nil {
+//   return err
+// }
+
+// startsAt, err := time.Parse(time.RFC3339, "2024-07-13T16:50:42Z")
+// endsAt, err := time.Parse(time.RFC3339, "2024-07-18T16:50:42Z")
+// if err != nil {
+//   return err
+// }
+
+// // Step 5:
+// // Create a mobile key for each door for the ACS user.
+// for _, entrance := range entrances {
+//   mobile_key, err := client.Acs.Credentials.Create(
+//     context.Background(), &acs.CredentialsCreateRequest{
+//       AcsUserId: building_a_resident.AcsUserId,
+//       AccessMethod: "mobile_key",
+//       AllowedAcsEntranceIds: []string{
+//         // You must specify only one entrance per mobile key.
+//         entrance.AcsEntranceId,
+//       },
+//       StartsAt: api.Time(startsAt),
+//       EndsAt: api.Time(endsAt),
+//     },
+//   );
+//   if err != nil {
+//   return err
+//   };
+
+//   fmt.Println(mobile_key);
+// }
+
+// return nil
+
+
+
+
+// devices, err := client.Devices.List(
+// 	context.Background(), nil)
+// if err != nil {
+// 	return err
+// }
+// fmt.Println(devices)
+// return nil
+
+// devices, err := client.Devices.List(
+// 	context.Background(), &api.DevicesListRequest{
+//     DeviceType: api.DeviceTypeEcobeeThermostat.Ptr(),
+//   },
+// )
+// if err != nil {
+// 	return err
+// }
+// fmt.Println(devices)
+// return nil
+
+
+// device, err := client.Devices.Get(
+// 	context.Background(),
+//   &api.DevicesGetRequest{
+//     DeviceId: api.String("36cf1a96-196d-41b0-9804-88154387f1f9"),
+//   },
+// )
+// if err != nil {
+// 	return err
+// }
+// fmt.Println("Online:", device.Properties.Online)
+// return nil
+
+// device_connected_events, err := client.Events.List(
+// 	context.Background(),
+//   &api.EventsListRequest{
+//     DeviceId: api.String("36cf1a96-196d-41b0-9804-88154387f1f9"),
+//     EventType: api.EventTypeDeviceConnected.Ptr(),
+//     Since: api.String("2024-01-01T00:00:00Z"),
+//   },
+// )
+// if err != nil {
+// 	return err
+// }
+// fmt.Println(device_connected_events)
+// return nil
+
+// In progress
+// device, err := client.Devices.Get(
+// 	context.Background(),
+//   &api.DevicesGetRequest{
+//     // DeviceId: api.String("c2cc3831-f347-444e-b83b-d1f14dbb5893"),
+//     DeviceId: api.String("36cf1a96-196d-41b0-9804-88154387f1f9"),
+//   },
+// )
+// if err != nil {
+// 	return err
+// }
+// fmt.Println("Online:", device.Properties.Online)
+// return nil
+
+// acsUsers, uErr := client.UserIdentities.ListAcsUsers(context.Background(), &api.UserIdentitiesListAcsUsersRequest{
+//     UserIdentityId: "c041aa50-6495-4d16-8dcf-86664bdee28d",
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// fmt.Println(acsUsers)
+// return nil
+
+
+
+
+// credentials, uErr := client.Acs.Credentials.List(context.Background(), &acs.CredentialsListRequest{
+//     UserIdentityId: "c041aa50-6495-4d16-8dcf-86664bdee28d",
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// fmt.Println(credentials)
+// return nil
+
+// credentials, uErr := client.Acs.Credentials.List(context.Background(), acs.NewCredentialsListRequestFromCredentialsListRequestUserIdentityId(&acs.CredentialsListRequestUserIdentityId{
+// 	UserIdentityId: "c041aa50-6495-4d16-8dcf-86664bdee28d",
+// }))
+
+// if uErr != nil {
+// 	return uErr
+// }
+
+// fmt.Println(credentials)
+// return nil
+
+
+
+// _, uErr := client.Acs.Credentials.Delete(context.Background(), &acs.CredentialsDeleteRequest{
+//     AcsCredentialId: "967c1fe0-fa8e-43a5-b7d1-3cfe1ffca31d",
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// return nil
+
+// _, uErr := client.Acs.Credentials.Delete(context.Background(), &acs.CredentialsDeleteRequest{
+//     AcsCredentialId: "2abb3708-92f1-4692-95bc-89fba36030fd",
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// return nil
+
+// enrollmentAutomations, uErr := client.UserIdentities.EnrollmentAutomations.List(context.Background(), &useridentities.EnrollmentAutomationsListRequest{
+//     UserIdentityId: "c041aa50-6495-4d16-8dcf-86664bdee28d",
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// fmt.Println(enrollmentAutomations)
+// return nil
+
+// acsUser, uErr := client.Acs.Users.Get(
+//     context.Background(),
+//     &acs.UsersGetRequest{
+//         AcsUserId: "d15565e5-d8d1-4e0d-b107-6082929fb31d",
+//     },
+// )
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// Incorrect
+// _, err := client.UserIdentities.AddAcsUser(context.Background(), &api.UserIdentitiesAddAcsUserRequest{
+//     UserIdentityId: "f3dd17cd-4a23-41e1-8aac-1905ae05ad6d",
+//     AcsUserId: &acsUser.acsUserId,
+// })
+
+// if err != nil {
+//     return err
+// }
+
+// return nil
+
+// thermostats, uErr := client.Thermostats.List(context.Background(), nil)
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// fmt.Println(thermostats)
+// return nil
+
+// thermostat, uErr := client.Thermostats.Get(context.Background(), &api.ThermostatsGetRequest{
+//       DeviceId: api.String("5ce2cd35-09b1-458c-bb08-51ee83c35be7"),
+//   })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// fmt.Println(thermostat)
+// return nil
+
+// heat_attempt, uErr := client.Thermostats.Heat(context.Background(), &api.ThermostatsHeatRequest{
+//   DeviceId: "5ce2cd35-09b1-458c-bb08-51ee83c35be7",
+//   HeatingSetPointCelsius: api.Float64(20),
+// })
+
+// if uErr != nil {
+// return uErr
+// }
+
+// fmt.Println(heat_attempt)
+// return nil
+
+// action_attempt, uErr := client.ActionAttempts.Get(context.Background(), &api.ActionAttemptsGetRequest{
+//   ActionAttemptId: "b1607dc9-929c-4800-95d4-c97e34bb7778",
+// })
+
+// if uErr != nil {
+// return uErr
+// }
+
+// fmt.Println(action_attempt)
+// return nil
+
+// heat_cool_request, uErr := client.Thermostats.HeatCool(context.Background(), &api.ThermostatsHeatCoolRequest{
+//   DeviceId: "5ce2cd35-09b1-458c-bb08-51ee83c35be7",
+//   HeatingSetPointCelsius: api.Float64(20),
+//   CoolingSetPointCelsius: api.Float64(25),
+// })
+
+// if uErr != nil {
+// return uErr
+// }
+
+// fmt.Println(heat_cool_request)
+// return nil
+
+// off_request, uErr := client.Thermostats.Off(context.Background(), &api.ThermostatsOffRequest{
+//   DeviceId: "5ce2cd35-09b1-458c-bb08-51ee83c35be7",
+// })
+
+// if uErr != nil {
+// return uErr
+// }
+
+// fmt.Println(off_request)
+// return nil
+// }
+
+// fan_on_request, uErr := client.Thermostats.SetFanMode(context.Background(), &api.ThermostatsSetFanModeRequest{
+//   DeviceId: "5ce2cd35-09b1-458c-bb08-51ee83c35be7",
+//   FanMode: api.FanModeOn.Ptr(),
+// })
+
+// if uErr != nil {
+// return uErr
+// }
+
+// fmt.Println(fan_on_request)
+// return nil
+// }
+
+
+// heat_request, uErr := client.Thermostats.Heat(context.Background(), &api.ThermostatsHeatRequest{
+//   DeviceId: "5ce2cd35-09b1-458c-bb08-51ee83c35be7",
+//   HeatingSetPointCelsius: api.Float64(20),
+// })
+
+// if uErr != nil {
+// return uErr
+// }
+
+// fmt.Println(heat_request)
+
+// // {
+// //   "action_attempt": {
+// //     "status": "pending",
+// //     "action_type": "SET_HEAT",
+// //     "action_attempt_id": "241e79cd-4bda-499f-8e2e-d7ae01d273cf",
+// //     "result": null,
+// //     "error": null
+// //   },
+// //   "ok": true
+// // }
+
+// fan_on_request, uErr := client.Thermostats.SetFanMode(context.Background(), &api.ThermostatsSetFanModeRequest{
+//   DeviceId: "5ce2cd35-09b1-458c-bb08-51ee83c35be7",
+//   FanMode: api.FanModeOn.Ptr(),
+// })
+
+// if uErr != nil {
+// return uErr
+// }
+
+// fmt.Println(fan_on_request)
+// return nil
+
+// // {
+// //   "action_attempt": {
+// //     "status": "pending",
+// //     "action_type": "SET_FAN_MODE",
+// //     "action_attempt_id": "1a6993af-4b00-4ca5-bacf-074164959878",
+// //     "result": null,
+// //     "error": null
+// //   },
+// //   "ok": true
+// // }
+
+// devices, err := client.Devices.List(
+// 	context.Background(), &api.DevicesListRequest{
+//     DeviceType: api.DeviceTypeNestThermostat.Ptr(),
+//   },
+// )
+// if err != nil {
+// 	return err
+// }
+// fmt.Println(devices)
+// return nil
+
+// devices, err := client.Devices.List(
+// 	context.Background(), &api.DevicesListRequest{
+//     DeviceType: api.DeviceTypeHoneywellThermostat.Ptr(),
+//   },
+// )
+// if err != nil {
+// 	return err
+// }
+// fmt.Println(devices)
+// return nil
+
+// // Create the user identity.
+// response, uErr := client.UserIdentities.Create(context.Background(), &api.UserIdentitiesCreateRequest{
+//     EmailAddress: api.String("jane_go3@example.com"),
+// })
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// // Launch the enrollment automation.
+// client.UserIdentities.EnrollmentAutomations.Launch(context.Background(), &useridentities.EnrollmentAutomationsLaunchRequest{
+//   // Use the AcsSystemId for the credential manager.
+//   CredentialManagerAcsSystemId: "6737e186-8d54-48ce-a7da-a0be4d252172",
+//   UserIdentityId: response.UserIdentity.UserIdentityId,
+//   // Automatically create a new credential manager user
+//   // or specify the desired existing CredentialManagerAcsUserId.
+//   CreateCredentialManagerUser: api.Bool(true),
+// })
+
+// // Create the client session.
+// clientSession, uErr := client.ClientSessions.Create(context.Background(), &api.ClientSessionsCreateRequest{
+//   UserIdentityIds: []string{response.UserIdentity.UserIdentityId},
+// })
+
+// // Use this token to launch your mobile controller.
+// token := clientSession.Token
+// fmt.Println("Token:", token)
+
+// return nil
+
+// acs_systems, err := client.Acs.Systems.List(
+//   context.Background(), &acs.SystemsListRequest{},
+// )
+// if err != nil {
+//   return err
+// }
+// fmt.Println(acs_systems)
+// return nil
+
+// acs_user, uErr := client.Acs.Users.Create(
+//   context.Background(), &acs.UsersCreateRequest{
+//     // AcsSystemId: "11111111-1111-1111-1111-111111111111",
+//     AcsSystemId: "14a43ebe-a1a3-4f95-ba34-ffdc909f86d3",
+//     // UserIdentityId: api.String("22222222-2222-2222-2222-222222222222"),
+//     UserIdentityId: api.String("3cb62920-6a5e-4226-8db8-9e9c795f15a6"),
+//     AcsAccessGroupIds: []string{"b1626096-1a2f-4de6-8bdc-f194e6c141ef"},
+//     // AcsAccessGroupIds: []string{"44444444-4444-4444-4444-444444444444"},
+//     FullName: api.String("Jane Doe"),
+//     EmailAddress: api.String("jane@example.com"),
+//     PhoneNumber: api.String("+15555550101"),
+//   },
+// )
+
+// startsAt, err := time.Parse(time.RFC3339, "2024-03-01T10:40:00Z")
+// endsAt, err := time.Parse(time.RFC3339, "2024-03-04T10:40:00Z")
+// if err != nil {
+//   return err
+// }
+
+// acs_user, uErr := client.Acs.Users.Create(
+//     context.Background(), &acs.UsersCreateRequest{
+//       AcsSystemId: "14a43ebe-a1a3-4f95-ba34-ffdc909f86d3",
+//       UserIdentityId: api.String("3cb62920-6a5e-4226-8db8-9e9c795f15a6"),
+//       AcsAccessGroupIds: []string{"b1626096-1a2f-4de6-8bdc-f194e6c141ef"},
+//       FullName: api.String("Jane Doe"),
+//       EmailAddress: api.String("jane@example.com"),
+//       PhoneNumber: api.String("+15555550101"),
+//       AccessSchedule: &acs.UsersCreateRequestAccessSchedule{
+//         StartsAt: startsAt,
+//         EndsAt: endsAt,
+//       },
+//     },
+//   )
+
+// acs_user, uErr := client.Acs.Entrances.ListCredentialsWithAccess
+
+
+// acs_user, uErr := client.Acs.Users.Update(
+//   context.Background(), &acs.UsersUpdateRequest{
+//     // AcsUserId: "33333333-3333-3333-3333-333333333333",
+//     AcsUserId: "8ba2ad9c-09c9-4921-979c-e031cedef346",
+//     FullName: api.String("Jack Doe"),
+//   },
+// )
+
+// _, uErr := client.Acs.Users.Delete(
+//   context.Background(), &acs.UsersDeleteRequest{
+//     // AcsUserId: string("33333333-3333-3333-3333-333333333333"),
+//     AcsUserId: "7066c6d3-b946-46eb-b334-cb2de4091c52",
+//   },
+// )
+
+// acs_users, uErr := client.Acs.Users.List(
+//   context.Background(), &acs.UsersListRequest{
+//     // AcsSystemId: api.String("11111111-1111-1111-1111-111111111111"),
+//     AcsSystemId: api.String("14a43ebe-a1a3-4f95-ba34-ffdc909f86d3"),
+//   },
+// )
+
+// add, uErr := client.Acs.Users.AddToAccessGroup(
+//   context.Background(), &acs.UsersAddToAccessGroupRequest{
+//     AcsUserId: string("29a5cebd-0d45-409e-93b1-ad97cf7a04f6"),
+//     AcsAccessGroupId: string("44444444-4444-4444-4444-444444444444"),
+//   },
+// )
+
+// remove, uErr := client.Acs.Users.RemoveFromAccessGroup(
+//   context.Background(), &acs.UsersRemoveFromAccessGroupRequest{
+//     AcsUserId: string("33333333-3333-3333-3333-333333333333"),
+//     AcsAccessGroupId: string("44444444-4444-4444-4444-444444444444"),
+//   },
+// )
+
+// acs_entrances, uErr := client.Acs.Entrances.List(
+//   context.Background(), &acs.EntrancesListRequest{
+//     // AcsSystemId: api.String("11111111-1111-1111-1111-111111111111"),
+//     AcsSystemId: api.String("14a43ebe-a1a3-4f95-ba34-ffdc909f86d3"),
+//   },
+// )
+
+// acs_entrance, uErr := client.Acs.Entrances.Get(
+//   context.Background(), &acs.EntrancesGetRequest{
+//     // AcsEntranceId: "55555555-5555-5555-5555-555555555555",
+//     AcsEntranceId: "e961348a-2ffb-4a17-a7d2-943bf304d782",
+//   },
+// )
+
+// access, uErr := client.Acs.Entrances.GrantAccess(
+//   context.Background(), &acs.EntrancesGrantAccessRequest{
+//     // AcsEntranceId: "55555555-5555-5555-5555-555555555555",
+//     AcsEntranceId: "e961348a-2ffb-4a17-a7d2-943bf304d782",
+//     // AcsUserId: "33333333-3333-3333-3333-333333333333",
+//     AcsUserId: "29a5cebd-0d45-409e-93b1-ad97cf7a04f6",
+//   },
+// )
+
+// startsAt, err := time.Parse(time.RFC3339, "2024-03-01T10:40:00Z")
+// // if err != nil {
+// //   return err
+// // }
+// endsAt, err := time.Parse(time.RFC3339, "2024-03-04T10:40:00Z")
+// if err != nil {
+//   return err
+// }
+
+// credential, uErr := client.Acs.Credentials.Create(
+//   context.Background(), &acs.CredentialsCreateRequest{
+//     // AcsUserId: "33333333-3333-3333-3333-333333333333",
+//     AcsUserId: "0cc73a31-db4b-4b4e-a7ce-ada9b71ced15",
+//     AllowedEntranceIds: {
+//         // "55555555-5555-5555-5555-555555555555",
+//         "e961348a-2ffb-4a17-a7d2-943bf304d782",
+//         // "55555555-5555-5555-5555-000000000000",
+//         "fb6565fa-f9c6-4f7e-899d-f7f061260c17",
+//       },
+//     // CredentialManagerAcsSystemId: api.String("88888888-8888-8888-8888-888888888888"),
+//     CredentialManagerAcsSystemId: api.String("f43c0c38-ae6e-4a54-911d-8c802302eced"),
+//     AccessMethod: "mobile_key",
+//     IsMultiPhoneSyncCredential: api.Bool(true),
+// 	  // StartsAt: api.Time(startsAt),
+//     // EndsAt: api.Time(endsAt),
+//   },
+// )
+
+// credential, uErr := client.Acs.Credentials.Create(
+//   context.Background(), &acs.CredentialsCreateRequest{
+//     // AcsUserId: "33333333-3333-3333-3333-333333333333",
+//     AcsUserId: "b530cda9-bdc1-4c95-b44d-bf9a99711bbf",
+//     AccessMethod: "code",
+//     Code: api.String("824759"),
+//   },
+// );
+
+// credential, uErr := client.Acs.Credentials.Create(
+//   context.Background(), &acs.CredentialsCreateRequest{
+//     // AcsUserId: "33333333-3333-3333-3333-333333333333",
+//     AcsUserId: "b530cda9-bdc1-4c95-b44d-bf9a99711bbf",
+//     AccessMethod: "card",
+//     Code: api.String("123456"),
+//   },
+// );
+
+// deletion, uErr := client.Acs.Credentials.Delete(
+//   context.Background(), &acs.CredentialsDeleteRequest{
+//     // acsCredentialId: "66666666-6666-6666-6666-666666666666",
+//     AcsCredentialId: "73840f76-191f-40c9-b65b-1bfa77fcc7ee",
+//   },
+// );
+
+// suspend, uErr := client.Acs.Users.Suspend(
+//   context.Background(), &acs.UsersSuspendRequest{
+//     // AcsUserId: "33333333-3333-3333-3333-333333333333",
+//     AcsUserId: "b530cda9-bdc1-4c95-b44d-bf9a99711bbf",
+//   },
+// );
+
+// unsuspend, uErr := client.Acs.Users.Unsuspend(
+//   context.Background(), &acs.UsersUnsuspendRequest{
+//     // AcsUserId: "33333333-3333-3333-3333-333333333333",
+//     AcsUserId: "b530cda9-bdc1-4c95-b44d-bf9a99711bbf",
+//   },
+// );
+
+// acs_system, uErr := client.Acs.Systems.Get(
+//   context.Background(), &acs.SystemsGetRequest{
+//     // AcsSystemId: "55555555-5555-5555-5555-555555555555",
+//     AcsSystemId: "449c8955-4741-4c44-aa41-943c79a46368",
+//   },
+// )
+
+// acs_access_groups, uErr := client.Acs.AccessGroups.List(
+//   context.Background(), &acs.AccessGroupsListRequest{
+//     AcsSystemId: api.String("449c8955-4741-4c44-aa41-943c79a46368"),
+//     AcsUserId: api.String("412b7bd5-d6ca-4836-9b41-0c5a0ce360a1"),
+//   },
+// )
+
+// acs_access_group, uErr := client.Acs.AccessGroups.Get(
+//   context.Background(), &acs.AccessGroupsGetRequest{
+//     AcsAccessGroupId: "d959202c-d9cc-4469-a053-74fb7d85b2fa",
+//   },
+// )
+
+// add, uErr := client.Acs.Users.AddToAccessGroup(
+//   context.Background(), &acs.UsersAddToAccessGroupRequest{
+//     AcsUserId: "412b7bd5-d6ca-4836-9b41-0c5a0ce360a1",
+//     AcsAccessGroupId: "d959202c-d9cc-4469-a053-74fb7d85b2fa",
+//   },
+// )
+
+// remove, uErr := client.Acs.Users.RemoveFromAccessGroup(
+//   context.Background(), &acs.UsersRemoveFromAccessGroupRequest{
+//     AcsUserId: "412b7bd5-d6ca-4836-9b41-0c5a0ce360a1",
+//     AcsAccessGroupId: "d959202c-d9cc-4469-a053-74fb7d85b2fa",
+//   },
+// )
+
+// add, uErr := client.Acs.AccessGroups.AddUser(
+//   context.Background(), &acs.AccessGroupsAddUserRequest{
+//     AcsAccessGroupId: "d959202c-d9cc-4469-a053-74fb7d85b2fa",
+//     AcsUserId: "412b7bd5-d6ca-4836-9b41-0c5a0ce360a1",
+//   },
+// )
+
+// remove, uErr := client.Acs.AccessGroups.RemoveUser(
+//   context.Background(), &acs.AccessGroupsRemoveUserRequest{
+//     AcsAccessGroupId: "d959202c-d9cc-4469-a053-74fb7d85b2fa",
+//     AcsUserId: "412b7bd5-d6ca-4836-9b41-0c5a0ce360a1",
+//   },
+// )
+
+// acs_users, uErr := client.Acs.AccessGroups.ListUsers(
+//   context.Background(), &acs.AccessGroupsListUsersRequest{
+//     AcsAccessGroupId: "d959202c-d9cc-4469-a053-74fb7d85b2fa",
+//   },
+// )
+
+// assign, uErr := client.Acs.Credentials.Assign(
+//     context.Background(), &acs.CredentialsAssignRequest{
+//       AcsUserId: "412b7bd5-d6ca-4836-9b41-0c5a0ce360a1",
+//       AcsCredentialId: "15a42839-3517-40fe-ab07-17d78b410b23",
+//     },
+//   )
+
+// acs_credentials, uErr := client.Acs.Credentials.List(
+//     context.Background(), &acs.CredentialsListRequest{
+//       AcsUserId: api.String("412b7bd5-d6ca-4836-9b41-0c5a0ce360a1"),
+//       AcsSystemId: api.String("449c8955-4741-4c44-aa41-943c79a46368"),
+//       UserIdentityId: api.String("3cb62920-6a5e-4226-8db8-9e9c795f15a6"),
+//       IsMultiPhoneSyncCredential: api.Bool(true),
+//     },
+//   )
+
+// acs_credential, uErr := client.Acs.Credentials.Get(
+//     context.Background(), &acs.CredentialsGetRequest{
+//       AcsCredentialId: "15a42839-3517-40fe-ab07-17d78b410b23",
+//     },
+//   )
+
+// acs_credential, uErr := client.Acs.Credentials.Update(
+//     context.Background(), &acs.CredentialsUpdateRequest{
+//       AcsCredentialId: "15a42839-3517-40fe-ab07-17d78b410b23",
+//       Code: "7890",
+//     },
+//   )
+
+// acs_credential, uErr := client.Acs.Credentials.Unassign(
+//     context.Background(), &acs.CredentialsUnassignRequest{
+//       AcsUserId: "412b7bd5-d6ca-4836-9b41-0c5a0ce360a1",
+//       AcsCredentialId: "15a42839-3517-40fe-ab07-17d78b410b23",
+// },
+//   )
+
+// deletion, uErr := client.Acs.Credentials.Delete(
+//   context.Background(), &acs.CredentialsDeleteRequest{
+//     AcsCredentialId: "15a42839-3517-40fe-ab07-17d78b410b23",
+//   },
+// )
+
+// if uErr != nil {
+//   return uErr
+// }
+// fmt.Println(deletion)
+// return nil
+
+// credential_manager, uErr := client.Acs.Systems.ListCompatibleCredentialManagerAcsSystems(
+//   context.Background(), &acs.Systems.ListCompatibleCredentialManagerAcsSystemsRequest{
+//     // AcsSystemId: "55555555-5555-5555-5555-555555555555",
+//     AcsSystemId: "449c8955-4741-4c44-aa41-943c79a46368",
+//   },
+// )
+
+// // Get the device.
+// device, uErr := client.Devices.Get(
+//   context.Background(),
+//   &api.DevicesGetRequest{
+//     DeviceId: api.String("de49ed1a-0d19-4527-89ce-de7325149104"),
+//   })
+
+// // Confirm that Seam supports simulated disconnection.
+// if *device.CanSimulateDisconnection {
+//   // Perform the simulated disconnection.
+//   client.Devices.Simulate.Disconnect(
+//       context.Background(),
+//       &api.DevicesSimulateDisconnectRequest{
+//         DeviceId: device.DeviceId,
+//       },
+//     )
+//   }
+
+// if uErr != nil {
+//     return uErr
+// }
+
+// return nil
+
+
+// // Get the ACS system.
+// buildingA, err := client.Acs.Systems.Get(
+//   context.Background(), &acs.SystemsGetRequest{
+//     // AcsSystemId: "11111111-1111-1111-1111-111111111111",
+//     AcsSystemId: "c5b5bf04-0cc1-4736-935f-27c0db21b8b2",
+//   },
+// )
+// if err != nil {
+//   return err
+// }
+
+
+// // Define the listing.
+// // listingId := "2222222-2222"
+// seamAccessGroupIds := [...]string{
+//   "ed8afaa3-3106-47cb-b2fd-77051ba0c764",
+//   "6ec20d55-cff7-4cbb-8408-d4b5cabfcf36",
+// }
+// // seamAccessGroupIds := [...]string{
+// //   "555555-5555",
+// //   "666666-6666",
+// // }
+
+// // Define the reservation.
+// reservation := map[string]string{
+//   "reservationId": "3333122-432",
+//   "guestEmail": "jane@example.com",
+//   "listingId": "2222222-2222",
+// }
+
+// checkIn, err := time.Parse(time.RFC3339, "2024-11-01T15:00:00Z")
+// checkOut, err := time.Parse(time.RFC3339, "2024-11-04T11:00:00Z")
+// if err != nil {
+//   return err
+// }
+
+// // Create the new ACS user, including the
+// // desired access schedule.
+// reservationUser, err := client.Acs.Users.Create(
+//   context.Background(), &acs.UsersCreateRequest{
+//     FullName: api.String(reservation["reservationId"]),
+//     AcsSystemId: buildingA.AcsSystemId,
+//     AccessSchedule: &acs.UsersCreateRequestAccessSchedule{
+//       StartsAt: checkIn,
+//       EndsAt: checkOut,
+//     },
+//   },
+// )
+// if err != nil {
+//   return err
+// }
+
+// // Add the ACS user to all access groups for the listing.
+// for _, groupIdToAdd := range seamAccessGroupIds {
+//   client.Acs.Users.AddToAccessGroup(
+//     context.Background(), &acs.UsersAddToAccessGroupRequest{
+//       AcsUserId: reservationUser.AcsUserId,
+//       AcsAccessGroupId: groupIdToAdd,
+//     },
+//   )
+//   if err != nil {
+//     return err
+//   }
+// }
+
+// // Create a PIN code for the ACS user.
+// reservationPinCode, err := client.Acs.Credentials.Create(
+//   context.Background(), &acs.CredentialsCreateRequest{
+//     AcsUserId: reservationUser.AcsUserId,
+//     AccessMethod: "code",
+// })
+// if err != nil {
+//     return err
+// }
+
+// // View the new credential.
+// fmt.Println(reservationPinCode)
+// return nil
+
+// Create the group of linked access codes.
+// Each returned access code includes a common_code_key.
+// accessCodes, err := client.AccessCodes.CreateMultiple(
+//   context.Background(),
+//   &api.AccessCodesCreateMultipleRequest{
+//     DeviceIds: []string{
+//         "8e94044d-a4d1-4691-9f7e-e97d3e8a0b73",
+//         "d87eea5d-71c6-4633-a966-396c5ac51177",
+//       },
+//     Name: api.String("Jane's reservation"),
+//     StartsAt: api.String("2024-11-15T15:00:00Z"),
+//     EndsAt: api.String("2024-11-17T11:00:00Z"),
+//     PreferredCodeLength: api.Float64(4),
+//   },
+// )
+
+// if err != nil {
+//     return err
+// }
+
+// fmt.Println(accessCodes)
+// return nil
+
+// // Step 1:
+// // Create the new ACS user.
+// acs_user, err := client.Acs.Users.Create(
+//   context.Background(), &acs.UsersCreateRequest{
+//     // AcsSystemId: "11111111-1111-1111-1111-111111111111",
+//     AcsSystemId: "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
+//     FullName: api.String("Jane Doe Go"),
+//     EmailAddress: api.String("jane-go@example.com"),
+//   },
+// )
+// if err != nil {
+//   return err
+// }
+
+// startsAt, err := time.Parse(time.RFC3339, "2024-12-10T15:00:00Z")
+// endsAt, err := time.Parse(time.RFC3339, "2024-12-14T12:00:00Z")
+// if err != nil {
+//   return err
+// }
+
+// // Step 2:
+// // Create a card-based credential for each entrance for the ACS user.
+// credential, err := client.Acs.Credentials.Create(
+//   context.Background(), &acs.CredentialsCreateRequest{
+//     AcsUserId: acs_user.AcsUserId,
+//     AccessMethod: "card",
+//     AllowedAcsEntranceIds: []string{
+//       // List the IDs of the entrances to which
+//       // you want to grant access.
+//       // room_101.AcsEntranceId,
+//       "d3351d70-efb6-45d4-a580-fa7b2ffca586",
+//     },
+//     StartsAt: api.Time(startsAt),
+//     EndsAt: api.Time(endsAt),
+//     VisionlineMetadata: &acs.CredentialsCreateRequestVisionlineMetadata{
+//       CardFormat: acs.CredentialsCreateRequestVisionlineMetadataCardFormatRfid48.Ptr(),
+//       Override: api.Bool(true),
+//     },
+//   },
+// );
+// if err != nil {
+//   return err
+// };
+
+// fmt.Println(credential)
+// return nil
+
+// userIdentity, uErr := client.UserIdentities.Create(context.Background(), &api.UserIdentitiesCreateRequest{
+// 	UserIdentityKey: api.String("jean_doe_go"),
+// 	EmailAddress: api.String("jean-go@example.com"),
+// 	PhoneNumber: api.String("+15555550115"),
+// 	FullName: api.String("Jean Doe Go"),
+//   })
+  
+//   if uErr != nil {
+// 	  return uErr
+//   }
+  
+//   fmt.Println(userIdentity)
+//   return nil
+
+// acsSystemId := "0180e699-e3bb-40ce-9f18-ab830e874618"
+
+// acsUser, err := client.Acs.Users.Create(
+//     context.Background(), &acs.UsersCreateRequest{
+//       FullName: api.String("Jim Doe"),
+//       // Use the ACS system ID that you copied earlier from Seam Console.
+//       AcsSystemId: acsSystemId,
+//     },
+//   )
+//   if err != nil {
+//     return err
+//   }
+  
+//   fmt.Println(acsUser)
+//   return nil
+
+// acsUser, err := client.Acs.Users.Get(
+// 	context.Background(),
+// 	&acs.UsersGetRequest{
+// 		AcsUserId: "52e2cad2-2ea7-4aa0-bc8e-2f4338434a0f",
+// 	},
+// )
+
+// if err != nil {
+//   return err
+// }
+
+// startsAt, err := time.Parse(time.RFC3339, "2025-02-10T15:00:00Z")
+// endsAt, err := time.Parse(time.RFC3339, "2025-02-12T11:00:00Z")
+// if err != nil {
+//   return err
+// }
+
+// vingcardLock2EntranceId := "adbe42d4-c722-4904-a0bb-a61ed80b3b9f"
+// guestLock1EntranceId := "4430da5b-2fcf-4409-adda-8ffca903fff0"
+
+// keyCardCredential, err := client.Acs.Credentials.Create(
+//   context.Background(), &acs.CredentialsCreateRequest{
+//     AcsUserId: acsUser.AcsUserId,
+//     AccessMethod: "card",
+//     AllowedAcsEntranceIds: []string{
+//       vingcardLock2EntranceId,
+//       guestLock1EntranceId,
+//     },
+//     StartsAt: api.Time(startsAt),
+//     EndsAt: api.Time(endsAt),
+//     VisionlineMetadata: &acs.CredentialsCreateRequestVisionlineMetadata{
+//       CardFormat: acs.CredentialsCreateRequestVisionlineMetadataCardFormatRfid48.Ptr(),
+//       Override: api.Bool(true),
+//     },
+//   },
+// );
+// if err != nil {
+//   return err
+// };
+
+// fmt.Println(keyCardCredential)
+// return nil
+
+// jenDoeUser, err := client.UserIdentities.Create(
+//     context.Background(), &api.UserIdentitiesCreateRequest{
+//       EmailAddress: api.String("jen.doe@example.com"),
+//     },
+//   )
+//   if err != nil {
+//     return err
+//   }
+  
+//   fmt.Println(jenDoeUser)
+//   return nil
+
+
+// jenDoeUserUserIdentityId := "9c85791b-4520-469b-994f-03804418944d"
+// credentialManagerAcsSystemId := "5cf8a89d-e815-44d0-984d-22115ae5b5dc"
+
+// client.UserIdentities.EnrollmentAutomations.Launch(
+// 	context.Background(), &useridentities.EnrollmentAutomationsLaunchRequest{
+// 	  UserIdentityId: jenDoeUserUserIdentityId,
+// 	  CreateCredentialManagerUser: api.Bool(true),
+// 	  // Use the credential manager ID that you copied earlier from Seam Console.
+// 	  CredentialManagerAcsSystemId: credentialManagerAcsSystemId,
+// 	},
+//   )
+  
+//   return nil
+
+// acsSystemId := "641deca1-5a32-4af9-8088-03ab4c62e268"
+
+// checkIn, err := time.Parse(time.RFC3339, "2025-02-10T15:00:00.000Z")
+// checkOut, err := time.Parse(time.RFC3339, "2025-02-12T11:00:00.000Z")
+// if err != nil {
+//   return err
+// }
+
+// acsUser, err := client.Acs.Users.Create(
+//   context.Background(), &acs.UsersCreateRequest{
+//     FullName: api.String("Jen Doe"),
+// 	EmailAddress: api.String("jen.doe@example.com"),
+//     // Use the ACS system ID that you copied earlier from Seam Console.
+//     AcsSystemId: acsSystemId,
+//     UserIdentityId: api.String(jenDoeUserUserIdentityId),
+//     AccessSchedule: &acs.UsersCreateRequestAccessSchedule{
+//       StartsAt: checkIn,
+//       EndsAt: checkOut,
+//     },
+//   },
+// )
+// if err != nil {
+//   return err
+// }
+
+// fmt.Println(acsUser)
+
+// return nil
+
+// acsUserAcsUserId := "7dd936b1-eaba-44b6-98d3-d9be086ac865"
+// accessGroupId := "760a0560-373d-4cc7-b46d-81a62c383988"
+
+// _, err := client.Acs.Users.AddToAccessGroup(
+// 	context.Background(), &acs.UsersAddToAccessGroupRequest{
+// 	  AcsUserId: acsUserAcsUserId,
+// 	  // Use the access group ID that you copied earlier from Seam Console.
+// 	  AcsAccessGroupId: accessGroupId,
+// 	},
+//   )
+//   if err != nil {
+// 	return err
+//   }
+  
+// return nil
+
+// mobileKey, err := client.Acs.Credentials.Create(
+// 	context.Background(), &acs.CredentialsCreateRequest{
+// 	  AcsUserId: acsUserAcsUserId,
+// 	  IsMultiPhoneSyncCredential: api.Bool(true),
+// 	  AccessMethod: "mobile_key",
+//   })
+//   if err != nil {
+// 	  return err
+//   }
+  
+//   fmt.Println(mobileKey)
+//   return nil
+
+// Get the access system.
+buildingA, err := client.Acs.Systems.Get(
+	context.Background(), &acs.SystemsGetRequest{
+	//   AcsSystemId: "11111111-1111-1111-1111-111111111111",
+	  AcsSystemId: "88885b0f-24f6-451a-923b-21d61778bd47",
+	},
+  )
+  if err != nil {
+	return err
+  }
+  
+  // Step 1:
+  // Create a user identity that corresponds to your user's app account.
+  janeUser, err := client.UserIdentities.Create(
+	context.Background(), &api.UserIdentitiesCreateRequest{
+	  FullName: api.String("Jane Doe"),
+	},
+  )
+  if err != nil {
+	return err
+  }
+  
+  // Step 2:
+  // Retrieve a credential manager.
+  saltoSpaceCredentialManagers, err := client.Acs.Systems.ListCompatibleCredentialManagerAcsSystems(
+	  context.Background(), &acs.SystemsListCompatibleCredentialManagerAcsSystemsRequest{
+		AcsSystemId: buildingA.AcsSystemId,
+	  },
+	)
+  if err != nil {
+	return err
+  }
+  saltoSpaceCredentialManager := saltoSpaceCredentialManagers[0]
+  
+  // Step 3:
+  // Set up an enrollment automation for the user identity, to enable mobile keys.
+  client.UserIdentities.EnrollmentAutomations.Launch(
+	context.Background(), &useridentities.EnrollmentAutomationsLaunchRequest{
+	  UserIdentityId: janeUser.UserIdentityId,
+	  CreateCredentialManagerUser: api.Bool(true),
+	  CredentialManagerAcsSystemId: saltoSpaceCredentialManager.AcsSystemId,
+	},
+  )
+  
+  // Step 4:
+  // Create an access system user on the Salto Space access system.
+  accessSystemUser, err := client.Acs.Users.Create(
+	context.Background(), &acs.UsersCreateRequest{
+	  UserIdentityId: api.String(janeUser.UserIdentityId),
+	  AcsSystemId: buildingA.AcsSystemId,
+	  FullName: janeUser.FullName,
+	  PhoneNumber: api.String("+15555550100"),
+	},
+  )
+  if err != nil {
+	return err
+  }
+  
+  // Step 5:
+  // Add the access system user to all desired access groups.
+  accessGroupIds := [...]string{
+	// "44444444-4444-4444-4444-333333333333",
+	// "44444444-4444-4444-4444-444444444444",
+	"9777c9c5-2a33-40c7-b829-1da1e84df074",
+  }
+  for _, accessGroupId := range accessGroupIds {
+	client.Acs.Users.AddToAccessGroup(
+	  context.Background(), &acs.UsersAddToAccessGroupRequest{
+		AcsUserId: accessSystemUser.AcsUserId,
+		AcsAccessGroupId: accessGroupId,
+	  },
+	)
 	if err != nil {
-		return err
+	  return err
 	}
-	fmt.Println(devices)
-	return nil
+  }
+  
+  // Step 6:
+  // Create a mobile key for the access system user.
+  mobileKey, err := client.Acs.Credentials.Create(
+	context.Background(), &acs.CredentialsCreateRequest{
+	  AcsUserId: accessSystemUser.AcsUserId,
+	  IsMultiPhoneSyncCredential: api.Bool(true),
+	  AccessMethod: "mobile_key",
+	},
+  )
+  if err != nil {
+	return err
+  }
+  
+  // View the new credential.
+  fmt.Println(mobileKey)
+  
+  return nil
+
+
 }
