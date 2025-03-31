@@ -2,6 +2,7 @@ import type {
   ActionAttempt,
   CodeSampleSdk,
   Endpoint,
+  EnumProperty,
   SeamAuthMethod,
   SeamWorkspaceScope,
 } from '@seamapi/blueprint'
@@ -34,6 +35,8 @@ export interface ApiEndpointLayoutContext {
       required: boolean
       description: string
       jsonType: string
+      itemFormat?: string
+      itemEnumValues?: EnumProperty['values']
     }>
   }
   response: {
@@ -106,6 +109,12 @@ export function setEndpointLayoutContext(
         required: param.isRequired,
         description: param.description,
         jsonType: param.jsonType,
+        ...(param.jsonType === 'array' && {
+          itemFormat: param.itemFormat,
+          ...(param.itemFormat === 'enum' && {
+            itemEnumValues: param.itemEnumValues,
+          }),
+        }),
       }))
       .sort((a, b) => {
         if (a.required && !b.required) return -1
