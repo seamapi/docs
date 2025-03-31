@@ -252,11 +252,11 @@ Required: Yes
 ### `include_if`
 
 Type: `array`
-Item format: `enum`
+Item format: `Enum`
 Required: No
 
 Possible enum values:
-- `[object Object]`
+- `visionline_metadata.is_valid`
 
 
 
