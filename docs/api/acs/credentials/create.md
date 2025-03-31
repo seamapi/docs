@@ -242,6 +242,7 @@ ID of the ACS user to whom the new credential belongs.
 ### `allowed_acs_entrance_ids`
 
 Type: `array`
+Item format: `UUID`
 Required: No
 
 Set of IDs of the [entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md) for which the new credential grants access.

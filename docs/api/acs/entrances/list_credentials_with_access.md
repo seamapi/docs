@@ -251,19 +251,18 @@ func main() {
 Type: `string`
 Required: Yes
 
-
-
----
+***
 
 ### `include_if`
 
 Type: `array`
+Item format: `Enum`
 Required: No
 
+Possible enum values:
+- `visionline_metadata.is_valid`
 
-
----
-
+***
 
 ## Return Type
 

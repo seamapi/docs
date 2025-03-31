@@ -155,9 +155,7 @@ Required: No
 Type: `string`
 Required: No
 
-
-
----
+***
 
 ### `email_address`
 
@@ -182,9 +180,7 @@ Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access
 Type: `string`
 Required: No
 
-
-
----
+***
 
 ### `phone_number`
 
