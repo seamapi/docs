@@ -2,7 +2,6 @@ import type {
   ActionAttempt,
   CodeSampleSdk,
   Endpoint,
-  EnumProperty,
   SeamAuthMethod,
   SeamWorkspaceScope,
 } from '@seamapi/blueprint'
@@ -11,6 +10,7 @@ import type { CodeSample } from 'node_modules/@seamapi/blueprint/dist/index.cjs'
 import {
   type ApiRouteResource,
   mapBlueprintPropertyToRouteProperty,
+  normalizePropertyFormatForDocs,
 } from './api-route.js'
 
 const supportedSdks: CodeSampleSdk[] = [
@@ -36,7 +36,7 @@ export interface ApiEndpointLayoutContext {
       description: string
       jsonType: string
       itemFormat?: string
-      itemEnumValues?: EnumProperty['values']
+      itemEnumValues?: string[]
     }>
   }
   response: {
@@ -110,9 +110,9 @@ export function setEndpointLayoutContext(
         description: param.description,
         jsonType: param.jsonType,
         ...(param.jsonType === 'array' && {
-          itemFormat: param.itemFormat,
+          itemFormat: normalizePropertyFormatForDocs(param.itemFormat),
           ...(param.itemFormat === 'enum' && {
-            itemEnumValues: param.itemEnumValues,
+            itemEnumValues: param.itemEnumValues.map(({ name }) => name),
           }),
         }),
       }))
