@@ -299,6 +299,8 @@ Type: `array`
 Item format: `Enum`
 Required: No
 
+Array of device types by which to filter devices.
+
 Possible enum values:
 - `akuvox_lock`
 - `august_lock`
@@ -335,8 +337,6 @@ Possible enum values:
 - `tado_thermostat`
 - `ios_phone`
 - `android_phone`
-
-Array of device types by which to filter devices.
 
 ***
 
