@@ -344,7 +344,7 @@ Possible enum values:
 - `ios_phone`
 - `android_phone`
 
-***
+---
 
 ### `limit`
 

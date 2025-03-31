@@ -158,14 +158,14 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 Type: `string`
 Required: Yes
 
-***
+---
 
 ### `fan_mode`
 
 Type: `string`
 Required: No
 
-***
+---
 
 ### `fan_mode_setting`
 

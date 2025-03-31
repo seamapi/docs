@@ -34,14 +34,15 @@ ID of the `acs_encoder` that will fail to scan the `acs_credential` in the next 
 Type: `string`
 Required: No
 
-***
+---
 
 ### `error_code`
 
 Type: `string`
 Required: No
 
-***
+---
+
 
 ## Return Type
 
