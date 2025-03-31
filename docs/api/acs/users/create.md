@@ -218,6 +218,7 @@ Required: No
 ### `acs_access_group_ids`
 
 Type: `array`
+Item format: `id`
 Required: No
 
 Array of `access_group_id`s to indicate the access groups to which to add the new `acs_user`.

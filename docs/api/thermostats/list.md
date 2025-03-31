@@ -249,6 +249,7 @@ ID of the connected account by which to filter.
 ### `connected_account_ids`
 
 Type: `array`
+Item format: `id`
 Required: No
 
 Array of IDs of the connected accounts by which to filter devices.
@@ -276,6 +277,7 @@ Set of key:value [custom metadata](../../core-concepts/devices/adding-custom-met
 ### `device_ids`
 
 Type: `array`
+Item format: `id`
 Required: No
 
 Array of device IDs by which to filter devices.
@@ -294,7 +296,45 @@ Device type by which to filter devices.
 ### `device_types`
 
 Type: `array`
+Item format: `enum`
 Required: No
+
+Possible enum values:
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
+- `[object Object]`
 
 Array of device types by which to filter devices.
 

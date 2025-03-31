@@ -252,7 +252,11 @@ Required: Yes
 ### `include_if`
 
 Type: `array`
+Item format: `enum`
 Required: No
+
+Possible enum values:
+- `[object Object]`
 
 
 
