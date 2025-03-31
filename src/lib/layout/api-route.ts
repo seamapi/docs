@@ -250,7 +250,9 @@ export const mapBlueprintPropertyToRouteProperty = (
 type PropertyFormat = Property['format'] | ListProperty['itemFormat']
 type ListProperty = Extract<Property, { format: 'list' }>
 
-export const normalizePropertyFormatForDocs = (format: PropertyFormat): string => {
+export const normalizePropertyFormatForDocs = (
+  format: PropertyFormat,
+): string => {
   const formatMap: Partial<Record<PropertyFormat, string>> = {
     id: 'UUID',
     discriminated_object: 'Object',
