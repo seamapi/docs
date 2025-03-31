@@ -43,7 +43,7 @@ Unique email address for the user identity.
 Type: `string`
 Required: No
 
-***
+---
 
 ### `phone_number`
 

@@ -183,7 +183,8 @@ ID of the desired user identity.
 Type: `string`
 Required: No
 
-***
+---
+
 
 ## Return Type
 

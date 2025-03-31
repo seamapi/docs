@@ -251,7 +251,7 @@ func main() {
 Type: `string`
 Required: Yes
 
-***
+---
 
 ### `include_if`
 
@@ -262,7 +262,8 @@ Required: No
 Possible enum values:
 - `visionline_metadata.is_valid`
 
-***
+---
+
 
 ## Return Type
 

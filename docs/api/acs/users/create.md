@@ -231,7 +231,7 @@ Array of `access_group_id`s to indicate the access groups to which to add the ne
 Type: `string`
 Required: No
 
-***
+---
 
 ### `email_address`
 
