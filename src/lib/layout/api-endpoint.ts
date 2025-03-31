@@ -45,7 +45,7 @@ export interface ApiEndpointLayoutContext {
     actionAttempt?: ApiRouteResource
   }
   primaryCodeSample: CodeSampleContext | null
-  addtionalCodeSamples: CodeSampleContext[]
+  additionalCodeSamples: CodeSampleContext[]
 }
 
 interface CodeSampleContext {
@@ -153,10 +153,10 @@ export function setEndpointLayoutContext(
     }
   }
 
-  const [primaryCodeSample, ...addtionalCodeSamples] = endpoint.codeSamples
+  const [primaryCodeSample, ...additionalCodeSamples] = endpoint.codeSamples
   file.primaryCodeSample =
     primaryCodeSample == null ? null : mapCodeSample(primaryCodeSample)
-  file.addtionalCodeSamples = addtionalCodeSamples.map(mapCodeSample)
+  file.additionalCodeSamples = additionalCodeSamples.map(mapCodeSample)
 }
 
 const mapCodeSample = (sample: CodeSample): CodeSampleContext => {
