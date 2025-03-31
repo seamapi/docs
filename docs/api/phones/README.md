@@ -61,11 +61,11 @@ Errors associated with the `phone`.
 
 <summary>Child Object Properties</summary>
 
-- <b><code>error_code</code></b> <i>String</i>
+- <code><b>error_code</b></code> <i>String</i>
 
 
 
-- <b><code>message</code></b> <i>String</i>
+- <code><b>message</b></code> <i>String</i>
 
 
 </details>
@@ -88,43 +88,43 @@ Properties of the phone.
 
 <summary>Child Properties</summary>
 
-- <b><code>assa_abloy_credential_service_metadata</code></b> <i>Object</i>
+- <code><b>assa_abloy_credential_service_metadata</b></code> <i>Object</i>
 
   ASSA ABLOY Credential Service metadata for the phone.
 
 
 
-- <b><code>assa_abloy_credential_service_metadata.endpoints</code></b> <i>List</i> <i>of Objects</i>
+- <code><b>assa_abloy_credential_service_metadata.endpoints</b></code> <i>List</i> <i>of Objects</i>
 
   Endpoints associated with the phone.
 
 
-- <b><code>endpoint_id</code></b> <i>String</i>
+- <code><b>endpoint_id</b></code> <i>String</i>
 
   ID of the associated endpoint.
 
 
 
-- <b><code>is_active</code></b> <i>Boolean</i>
+- <code><b>is_active</b></code> <i>Boolean</i>
 
   Indicated whether the endpoint is active.
 
 
 
 
-- <b><code>assa_abloy_credential_service_metadata.has_active_endpoint</code></b> <i>Boolean</i>
+- <code><b>assa_abloy_credential_service_metadata.has_active_endpoint</b></code> <i>Boolean</i>
 
   Indicates whether the credential service has active endpoints associated with the phone.
 
 
 
-- <b><code>salto_space_credential_service_metadata</code></b> <i>Object</i>
+- <code><b>salto_space_credential_service_metadata</b></code> <i>Object</i>
 
   Salto Space credential service metadata for the phone.
 
 
 
-- <b><code>salto_space_credential_service_metadata.has_active_phone</code></b> <i>Boolean</i>
+- <code><b>salto_space_credential_service_metadata.has_active_phone</b></code> <i>Boolean</i>
 
   Indicates whether the credential service has an active associated phone.
 
@@ -142,11 +142,11 @@ Warnings associated with the `phone`.
 
 <summary>Child Object Properties</summary>
 
-- <b><code>message</code></b> <i>String</i>
+- <code><b>message</b></code> <i>String</i>
 
 
 
-- <b><code>warning_code</code></b> <i>String</i>
+- <code><b>warning_code</b></code> <i>String</i>
 
 
 </details>
@@ -172,35 +172,35 @@ A phone device was deactivated.
 
 <summary>Properties</summary>
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>device_id</code></b> <i>UUID</i>
+- <code><b>device_id</b></code> <i>UUID</i>
 
   ID of the [device](../../core-concepts/devices/README.md).
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
 

@@ -493,47 +493,47 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <summary>Properties</summary>
 
-- <b><code>access_code_id</code></b> <i>UUID</i>
+- <code><b>access_code_id</b></code> <i>UUID</i>
 
   ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 
-- <b><code>connected_account_id</code></b> <i>UUID</i>
+- <code><b>connected_account_id</b></code> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
 
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>device_id</code></b> <i>UUID</i>
+- <code><b>device_id</b></code> <i>UUID</i>
 
   ID of the [device](../../core-concepts/devices/README.md).
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
 
@@ -550,47 +550,47 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <summary>Properties</summary>
 
-- <b><code>access_code_id</code></b> <i>UUID</i>
+- <code><b>access_code_id</b></code> <i>UUID</i>
 
   ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 
-- <b><code>connected_account_id</code></b> <i>UUID</i>
+- <code><b>connected_account_id</b></code> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
 
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>device_id</code></b> <i>UUID</i>
+- <code><b>device_id</b></code> <i>UUID</i>
 
   ID of the [device](../../core-concepts/devices/README.md).
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
 
@@ -607,53 +607,53 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <summary>Properties</summary>
 
-- <b><code>access_code_id</code></b> <i>UUID</i>
+- <code><b>access_code_id</b></code> <i>UUID</i>
 
   ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 
-- <b><code>code</code></b> <i>String</i>
+- <code><b>code</b></code> <i>String</i>
 
   Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 
-- <b><code>connected_account_id</code></b> <i>UUID</i>
+- <code><b>connected_account_id</b></code> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
 
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>device_id</code></b> <i>UUID</i>
+- <code><b>device_id</b></code> <i>UUID</i>
 
   ID of the [device](../../core-concepts/devices/README.md).
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
 
@@ -670,53 +670,53 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <summary>Properties</summary>
 
-- <b><code>access_code_id</code></b> <i>UUID</i>
+- <code><b>access_code_id</b></code> <i>UUID</i>
 
   ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 
-- <b><code>code</code></b> <i>String</i>
+- <code><b>code</b></code> <i>String</i>
 
   Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 
-- <b><code>connected_account_id</code></b> <i>UUID</i>
+- <code><b>connected_account_id</b></code> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
 
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>device_id</code></b> <i>UUID</i>
+- <code><b>device_id</b></code> <i>UUID</i>
 
   ID of the [device](../../core-concepts/devices/README.md).
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
 
@@ -733,47 +733,47 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <summary>Properties</summary>
 
-- <b><code>access_code_id</code></b> <i>UUID</i>
+- <code><b>access_code_id</b></code> <i>UUID</i>
 
   ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 
-- <b><code>connected_account_id</code></b> <i>UUID</i>
+- <code><b>connected_account_id</b></code> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
 
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>device_id</code></b> <i>UUID</i>
+- <code><b>device_id</b></code> <i>UUID</i>
 
   ID of the [device](../../core-concepts/devices/README.md).
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
 
@@ -790,47 +790,47 @@ There was an unusually long delay in setting an [access code](https://docs.seam.
 
 <summary>Properties</summary>
 
-- <b><code>access_code_id</code></b> <i>UUID</i>
+- <code><b>access_code_id</b></code> <i>UUID</i>
 
   ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 
-- <b><code>connected_account_id</code></b> <i>UUID</i>
+- <code><b>connected_account_id</b></code> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
 
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>device_id</code></b> <i>UUID</i>
+- <code><b>device_id</b></code> <i>UUID</i>
 
   ID of the [device](../../core-concepts/devices/README.md).
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
 
@@ -847,47 +847,47 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <summary>Properties</summary>
 
-- <b><code>access_code_id</code></b> <i>UUID</i>
+- <code><b>access_code_id</b></code> <i>UUID</i>
 
   ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 
-- <b><code>connected_account_id</code></b> <i>UUID</i>
+- <code><b>connected_account_id</b></code> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
 
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>device_id</code></b> <i>UUID</i>
+- <code><b>device_id</b></code> <i>UUID</i>
 
   ID of the [device](../../core-concepts/devices/README.md).
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
 
@@ -904,53 +904,53 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <summary>Properties</summary>
 
-- <b><code>access_code_id</code></b> <i>UUID</i>
+- <code><b>access_code_id</b></code> <i>UUID</i>
 
   ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 
-- <b><code>code</code></b> <i>String</i>
+- <code><b>code</b></code> <i>String</i>
 
   Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 
-- <b><code>connected_account_id</code></b> <i>UUID</i>
+- <code><b>connected_account_id</b></code> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
 
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>device_id</code></b> <i>UUID</i>
+- <code><b>device_id</b></code> <i>UUID</i>
 
   ID of the [device](../../core-concepts/devices/README.md).
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
 
@@ -967,47 +967,47 @@ There was an unusually long delay in removing an [access code](https://docs.seam
 
 <summary>Properties</summary>
 
-- <b><code>access_code_id</code></b> <i>UUID</i>
+- <code><b>access_code_id</b></code> <i>UUID</i>
 
   ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 
-- <b><code>connected_account_id</code></b> <i>UUID</i>
+- <code><b>connected_account_id</b></code> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
 
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>device_id</code></b> <i>UUID</i>
+- <code><b>device_id</b></code> <i>UUID</i>
 
   ID of the [device](../../core-concepts/devices/README.md).
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
 
@@ -1024,47 +1024,47 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <summary>Properties</summary>
 
-- <b><code>access_code_id</code></b> <i>UUID</i>
+- <code><b>access_code_id</b></code> <i>UUID</i>
 
   ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 
-- <b><code>connected_account_id</code></b> <i>UUID</i>
+- <code><b>connected_account_id</b></code> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
 
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>device_id</code></b> <i>UUID</i>
+- <code><b>device_id</b></code> <i>UUID</i>
 
   ID of the [device](../../core-concepts/devices/README.md).
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
 
@@ -1081,47 +1081,47 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <summary>Properties</summary>
 
-- <b><code>access_code_id</code></b> <i>UUID</i>
+- <code><b>access_code_id</b></code> <i>UUID</i>
 
   ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 
-- <b><code>connected_account_id</code></b> <i>UUID</i>
+- <code><b>connected_account_id</b></code> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
 
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>device_id</code></b> <i>UUID</i>
+- <code><b>device_id</b></code> <i>UUID</i>
 
   ID of the [device](../../core-concepts/devices/README.md).
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
 
@@ -1138,47 +1138,47 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <summary>Properties</summary>
 
-- <b><code>access_code_id</code></b> <i>UUID</i>
+- <code><b>access_code_id</b></code> <i>UUID</i>
 
   ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 
-- <b><code>connected_account_id</code></b> <i>UUID</i>
+- <code><b>connected_account_id</b></code> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
 
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>device_id</code></b> <i>UUID</i>
+- <code><b>device_id</b></code> <i>UUID</i>
 
   ID of the [device](../../core-concepts/devices/README.md).
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
 
@@ -1195,51 +1195,51 @@ A [backup access code](https://docs.seam.co/latest/capability-guides/smart-locks
 
 <summary>Properties</summary>
 
-- <b><code>access_code_id</code></b> <i>UUID</i>
+- <code><b>access_code_id</b></code> <i>UUID</i>
 
   ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 
-- <b><code>backup_access_code_id</code></b> <i>String</i>
+- <code><b>backup_access_code_id</b></code> <i>String</i>
 
 
 
-- <b><code>connected_account_id</code></b> <i>UUID</i>
+- <code><b>connected_account_id</b></code> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
 
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>device_id</code></b> <i>UUID</i>
+- <code><b>device_id</b></code> <i>UUID</i>
 
   ID of the [device](../../core-concepts/devices/README.md).
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
 
@@ -1256,47 +1256,47 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <summary>Properties</summary>
 
-- <b><code>access_code_id</code></b> <i>UUID</i>
+- <code><b>access_code_id</b></code> <i>UUID</i>
 
   ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 
-- <b><code>connected_account_id</code></b> <i>UUID</i>
+- <code><b>connected_account_id</b></code> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
 
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>device_id</code></b> <i>UUID</i>
+- <code><b>device_id</b></code> <i>UUID</i>
 
   ID of the [device](../../core-concepts/devices/README.md).
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
 
@@ -1313,47 +1313,47 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <summary>Properties</summary>
 
-- <b><code>access_code_id</code></b> <i>UUID</i>
+- <code><b>access_code_id</b></code> <i>UUID</i>
 
   ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 
-- <b><code>connected_account_id</code></b> <i>UUID</i>
+- <code><b>connected_account_id</b></code> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
 
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>device_id</code></b> <i>UUID</i>
+- <code><b>device_id</b></code> <i>UUID</i>
 
   ID of the [device](../../core-concepts/devices/README.md).
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
 
@@ -1370,47 +1370,47 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <summary>Properties</summary>
 
-- <b><code>access_code_id</code></b> <i>UUID</i>
+- <code><b>access_code_id</b></code> <i>UUID</i>
 
   ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 
-- <b><code>connected_account_id</code></b> <i>UUID</i>
+- <code><b>connected_account_id</b></code> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
 
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>device_id</code></b> <i>UUID</i>
+- <code><b>device_id</b></code> <i>UUID</i>
 
   ID of the [device](../../core-concepts/devices/README.md).
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
 
@@ -1427,47 +1427,47 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <summary>Properties</summary>
 
-- <b><code>access_code_id</code></b> <i>UUID</i>
+- <code><b>access_code_id</b></code> <i>UUID</i>
 
   ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 
-- <b><code>connected_account_id</code></b> <i>UUID</i>
+- <code><b>connected_account_id</b></code> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
 
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>device_id</code></b> <i>UUID</i>
+- <code><b>device_id</b></code> <i>UUID</i>
 
   ID of the [device](../../core-concepts/devices/README.md).
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
 

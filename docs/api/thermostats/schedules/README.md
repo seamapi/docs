@@ -46,13 +46,13 @@ Errors associated with the [thermostat schedule](../../../capability-guides/ther
 
 <summary>Child Object Properties</summary>
 
-- <b><code>error_code</code></b> <i>String</i>
+- <code><b>error_code</b></code> <i>String</i>
 
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
 
 
 
-- <b><code>message</code></b> <i>String</i>
+- <code><b>message</b></code> <i>String</i>
 
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 

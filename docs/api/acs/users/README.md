@@ -22,13 +22,13 @@ For details about how to configure `acs_user`s in your access control system, se
 
 <summary>Child Properties</summary>
 
-- <b><code>ends_at</code></b> <i>Datetime</i>
+- <code><b>ends_at</b></code> <i>Datetime</i>
 
   Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 
 
-- <b><code>starts_at</code></b> <i>Datetime</i>
+- <code><b>starts_at</b></code> <i>Datetime</i>
 
   Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
@@ -254,45 +254,45 @@ An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-
 
 <summary>Properties</summary>
 
-- <b><code>acs_system_id</code></b> <i>UUID</i>
+- <code><b>acs_system_id</b></code> <i>UUID</i>
 
   ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 
 
-- <b><code>acs_user_id</code></b> <i>UUID</i>
+- <code><b>acs_user_id</b></code> <i>UUID</i>
 
 
 
-- <b><code>connected_account_id</code></b> <i>UUID</i>
+- <code><b>connected_account_id</b></code> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
 
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../../core-concepts/workspaces/README.md).
 

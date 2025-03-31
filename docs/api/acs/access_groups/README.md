@@ -116,19 +116,19 @@ Warnings associated with the `acs_access_group`.
 
 <summary>Child Object Properties</summary>
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which Seam created the warning.
 
 
 
-- <b><code>message</code></b> <i>String</i>
+- <code><b>message</b></code> <i>String</i>
 
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
 
 
 
-- <b><code>warning_code</code></b> <i>String</i>
+- <code><b>warning_code</b></code> <i>String</i>
 
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
 
@@ -156,45 +156,45 @@ An ACS access group was deleted.
 
 <summary>Properties</summary>
 
-- <b><code>acs_access_group_id</code></b> <i>UUID</i>
+- <code><b>acs_access_group_id</b></code> <i>UUID</i>
 
 
 
-- <b><code>acs_system_id</code></b> <i>UUID</i>
+- <code><b>acs_system_id</b></code> <i>UUID</i>
 
   ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 
 
-- <b><code>connected_account_id</code></b> <i>UUID</i>
+- <code><b>connected_account_id</b></code> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
 
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../../core-concepts/workspaces/README.md).
 

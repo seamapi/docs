@@ -148,7 +148,7 @@ Indicates whether the `acs_system` is a credential manager.
 
 <summary>Child Properties</summary>
 
-- <b><code>time_zone</code></b> <i>String</i>
+- <code><b>time_zone</b></code> <i>String</i>
 
   Time zone in which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) is located.
 
@@ -208,19 +208,19 @@ Name of the [access control system](https://docs.seam.co/latest/capability-guide
 
 <summary>Child Properties</summary>
 
-- <b><code>lan_address</code></b> <i>String</i>
+- <code><b>lan_address</b></code> <i>String</i>
 
   IP address or hostname of the main Visionline server relative to [Seam Bridge](../../../capability-guides/seam-bridge.md) on the local network.
 
 
 
-- <b><code>mobile_access_uuid</code></b> <i>String</i>
+- <code><b>mobile_access_uuid</b></code> <i>String</i>
 
   Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.
 
 
 
-- <b><code>system_id</code></b> <i>String</i>
+- <code><b>system_id</b></code> <i>String</i>
 
   Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager.
 
@@ -313,41 +313,41 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 <summary>Properties</summary>
 
-- <b><code>acs_system_id</code></b> <i>UUID</i>
+- <code><b>acs_system_id</b></code> <i>UUID</i>
 
   ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 
 
-- <b><code>connected_account_id</code></b> <i>UUID</i>
+- <code><b>connected_account_id</b></code> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
 
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
@@ -364,41 +364,41 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 <summary>Properties</summary>
 
-- <b><code>acs_system_id</code></b> <i>UUID</i>
+- <code><b>acs_system_id</b></code> <i>UUID</i>
 
   ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 
 
-- <b><code>connected_account_id</code></b> <i>UUID</i>
+- <code><b>connected_account_id</b></code> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
 
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
@@ -415,41 +415,41 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 <summary>Properties</summary>
 
-- <b><code>acs_system_id</code></b> <i>UUID</i>
+- <code><b>acs_system_id</b></code> <i>UUID</i>
 
   ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 
 
-- <b><code>connected_account_id</code></b> <i>UUID</i>
+- <code><b>connected_account_id</b></code> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
 
 
-- <b><code>created_at</code></b> <i>Datetime</i>
+- <code><b>created_at</b></code> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <b><code>event_id</code></b> <i>UUID</i>
+- <code><b>event_id</b></code> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <b><code>event_type</code></b> <i>String</i>
+- <code><b>event_type</b></code> <i>String</i>
 
 
 
-- <b><code>occurred_at</code></b> <i>Datetime</i>
+- <code><b>occurred_at</b></code> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <b><code>workspace_id</code></b> <i>UUID</i>
+- <code><b>workspace_id</b></code> <i>UUID</i>
 
   ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
