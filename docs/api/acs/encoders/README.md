@@ -59,19 +59,19 @@ Errors associated with the [encoder](../../../capability-guides/access-systems/w
 
 <summary>Child Object Properties</summary>
 
-- <code><b>created_at</b></code> <i>Datetime</i>
+- <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which Seam created the error.
 
 
 
-- <code><b>error_code</b></code> <i>String</i>
+- <strong><code>error_code</code></strong> <i>String</i>
 
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
 
 
 
-- <code><b>message</b></code> <i>String</i>
+- <strong><code>message</code></strong> <i>String</i>
 
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
@@ -99,47 +99,47 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 
 <summary>Properties</summary>
 
-- <code><b>acs_encoder_id</b></code> <i>UUID</i>
+- <strong><code>acs_encoder_id</code></strong> <i>UUID</i>
 
   ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 
 
-- <code><b>acs_system_id</b></code> <i>UUID</i>
+- <strong><code>acs_system_id</code></strong> <i>UUID</i>
 
   ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 
 
-- <code><b>connected_account_id</b></code> <i>UUID</i>
+- <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
 
 
-- <code><b>created_at</b></code> <i>Datetime</i>
+- <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <code><b>event_id</b></code> <i>UUID</i>
+- <strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <code><b>event_type</b></code> <i>String</i>
+- <strong><code>event_type</code></strong> <i>String</i>
 
 
 
-- <code><b>occurred_at</b></code> <i>Datetime</i>
+- <strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <code><b>workspace_id</b></code> <i>UUID</i>
+- <strong><code>workspace_id</code></strong> <i>UUID</i>
 
   ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
@@ -156,47 +156,47 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 
 <summary>Properties</summary>
 
-- <code><b>acs_encoder_id</b></code> <i>UUID</i>
+- <strong><code>acs_encoder_id</code></strong> <i>UUID</i>
 
   ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 
 
-- <code><b>acs_system_id</b></code> <i>UUID</i>
+- <strong><code>acs_system_id</code></strong> <i>UUID</i>
 
   ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 
 
-- <code><b>connected_account_id</b></code> <i>UUID</i>
+- <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
 
 
-- <code><b>created_at</b></code> <i>Datetime</i>
+- <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <code><b>event_id</b></code> <i>UUID</i>
+- <strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <code><b>event_type</b></code> <i>String</i>
+- <strong><code>event_type</code></strong> <i>String</i>
 
 
 
-- <code><b>occurred_at</b></code> <i>Datetime</i>
+- <strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <code><b>workspace_id</b></code> <i>UUID</i>
+- <strong><code>workspace_id</code></strong> <i>UUID</i>
 
   ID of the [workspace](../../../core-concepts/workspaces/README.md).
 

@@ -64,23 +64,23 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 <summary>Child Properties</summary>
 
-- <code><b>door_names</b></code> <i>List</i> <i>of Strings</i>
+- <strong><code>door_names</code></strong> <i>List</i> <i>of Strings</i>
 
 
 
-- <code><b>endpoint_id</b></code> <i>String</i>
+- <strong><code>endpoint_id</code></strong> <i>String</i>
 
 
 
-- <code><b>key_id</b></code> <i>String</i>
+- <strong><code>key_id</code></strong> <i>String</i>
 
 
 
-- <code><b>key_issuing_request_id</b></code> <i>String</i>
+- <strong><code>key_issuing_request_id</code></strong> <i>String</i>
 
 
 
-- <code><b>override_guest_acs_entrance_ids</b></code> <i>List</i> <i>of Strings</i>
+- <strong><code>override_guest_acs_entrance_ids</code></strong> <i>List</i> <i>of Strings</i>
 
 
 </details>
@@ -131,11 +131,11 @@ Errors associated with the [credential](../../../capability-guides/access-system
 
 <summary>Child Object Properties</summary>
 
-- <code><b>error_code</b></code> <i>String</i>
+- <strong><code>error_code</code></strong> <i>String</i>
 
 
 
-- <code><b>message</b></code> <i>String</i>
+- <strong><code>message</code></strong> <i>String</i>
 
 
 </details>
@@ -239,11 +239,11 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 
 <summary>Child Properties</summary>
 
-- <code><b>auto_join</b></code> <i>Boolean</i>
+- <strong><code>auto_join</code></strong> <i>Boolean</i>
 
 
 
-- <code><b>card_function_type</b></code> <i>Enum</i>
+- <strong><code>card_function_type</code></strong> <i>Enum</i>
 
 
 <details>
@@ -256,27 +256,27 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 
 
 
-- <code><b>card_id</b></code> <i>String</i>
+- <strong><code>card_id</code></strong> <i>String</i>
 
 
 
-- <code><b>common_acs_entrance_ids</b></code> <i>List</i> <i>of UUIDs</i>
+- <strong><code>common_acs_entrance_ids</code></strong> <i>List</i> <i>of UUIDs</i>
 
 
 
-- <code><b>credential_id</b></code> <i>String</i>
+- <strong><code>credential_id</code></strong> <i>String</i>
 
 
 
-- <code><b>guest_acs_entrance_ids</b></code> <i>List</i> <i>of UUIDs</i>
+- <strong><code>guest_acs_entrance_ids</code></strong> <i>List</i> <i>of UUIDs</i>
 
 
 
-- <code><b>is_valid</b></code> <i>Boolean</i>
+- <strong><code>is_valid</code></strong> <i>Boolean</i>
 
 
 
-- <code><b>joiner_acs_credential_ids</b></code> <i>List</i> <i>of UUIDs</i>
+- <strong><code>joiner_acs_credential_ids</code></strong> <i>List</i> <i>of UUIDs</i>
 
 
 </details>
@@ -348,45 +348,45 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 <summary>Properties</summary>
 
-- <code><b>acs_credential_id</b></code> <i>UUID</i>
+- <strong><code>acs_credential_id</code></strong> <i>UUID</i>
 
 
 
-- <code><b>acs_system_id</b></code> <i>UUID</i>
+- <strong><code>acs_system_id</code></strong> <i>UUID</i>
 
   ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 
 
-- <code><b>connected_account_id</b></code> <i>UUID</i>
+- <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
 
 
-- <code><b>created_at</b></code> <i>Datetime</i>
+- <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <code><b>event_id</b></code> <i>UUID</i>
+- <strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <code><b>event_type</b></code> <i>String</i>
+- <strong><code>event_type</code></strong> <i>String</i>
 
 
 
-- <code><b>occurred_at</b></code> <i>Datetime</i>
+- <strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <code><b>workspace_id</b></code> <i>UUID</i>
+- <strong><code>workspace_id</code></strong> <i>UUID</i>
 
   ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
@@ -403,45 +403,45 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 <summary>Properties</summary>
 
-- <code><b>acs_credential_id</b></code> <i>UUID</i>
+- <strong><code>acs_credential_id</code></strong> <i>UUID</i>
 
 
 
-- <code><b>acs_system_id</b></code> <i>UUID</i>
+- <strong><code>acs_system_id</code></strong> <i>UUID</i>
 
   ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 
 
-- <code><b>connected_account_id</b></code> <i>UUID</i>
+- <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
 
 
-- <code><b>created_at</b></code> <i>Datetime</i>
+- <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <code><b>event_id</b></code> <i>UUID</i>
+- <strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <code><b>event_type</b></code> <i>String</i>
+- <strong><code>event_type</code></strong> <i>String</i>
 
 
 
-- <code><b>occurred_at</b></code> <i>Datetime</i>
+- <strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <code><b>workspace_id</b></code> <i>UUID</i>
+- <strong><code>workspace_id</code></strong> <i>UUID</i>
 
   ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
@@ -458,45 +458,45 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 <summary>Properties</summary>
 
-- <code><b>acs_credential_id</b></code> <i>UUID</i>
+- <strong><code>acs_credential_id</code></strong> <i>UUID</i>
 
 
 
-- <code><b>acs_system_id</b></code> <i>UUID</i>
+- <strong><code>acs_system_id</code></strong> <i>UUID</i>
 
   ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 
 
-- <code><b>connected_account_id</b></code> <i>UUID</i>
+- <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
 
 
-- <code><b>created_at</b></code> <i>Datetime</i>
+- <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
 
 
-- <code><b>event_id</b></code> <i>UUID</i>
+- <strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.
 
 
 
-- <code><b>event_type</b></code> <i>String</i>
+- <strong><code>event_type</code></strong> <i>String</i>
 
 
 
-- <code><b>occurred_at</b></code> <i>Datetime</i>
+- <strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 
 
-- <code><b>workspace_id</b></code> <i>UUID</i>
+- <strong><code>workspace_id</code></strong> <i>UUID</i>
 
   ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
