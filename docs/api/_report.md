@@ -105,6 +105,8 @@ These items are intentionally undocumented.
 - `/acs/credentials/unmanaged`: No undocumented message provided
 - `/acs/users/unmanaged`: No undocumented message provided
 - `/seam/bridge/v1/bridge_client_sessions`: No undocumented message provided
+- `/seam/bridge/v1/bridge_connected_systems`: No undocumented message provided
+- `/unstable_access_grants`: No undocumented message provided
 - `/unstable_locations`: No undocumented message provided
 
 ### Resource properties
@@ -138,7 +140,9 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1/bridge_client_sessions/create`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/get`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`: Seam Bridge Client only.
+- `/seam/bridge/v1/bridge_connected_systems/list`: Seam Bridge Client only.
 - `/thermostats/get`: Will be removed.
+- `/unstable_access_grants/create`: Unreleased.
 - `/unstable_locations/add_devices`: Experimental locations.
 - `/unstable_locations/create`: Experimental locations.
 - `/unstable_locations/delete`: Experimental locations.
@@ -759,6 +763,8 @@ Items that are intentionally undocumented are not included in this section.
     - `sync`
 - `/thermostats/set_hvac_mode`
     - `hvac_mode_setting`
+- `/unstable_access_grants/create`
+    - `desired_access_methods`
 - `/unstable_locations/add_devices`
     - `device_ids`
     - `location_id`
@@ -802,6 +808,7 @@ Items that are intentionally undocumented are not included in this section.
     - `webview_logo_shape`
     - `webview_primary_button_color`
     - `webview_primary_button_text_color`
+    - `webview_success_message`
 
 ## Deprecated
 
@@ -948,9 +955,11 @@ These items are deprecated.
 - `/seam/bridge/v1/bridge_client_sessions/create`
 - `/seam/bridge/v1/bridge_client_sessions/get`
 - `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`
+- `/seam/bridge/v1/bridge_connected_systems/list`
 - `/thermostats/get`
 - `/thermostats/simulate/hvac_mode_adjusted`
 - `/thermostats/simulate/temperature_reached`
+- `/unstable_access_grants/create`
 - `/unstable_locations/add_devices`
 - `/unstable_locations/create`
 - `/unstable_locations/delete`
