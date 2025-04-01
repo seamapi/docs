@@ -129,7 +129,7 @@ func main() {
 
 ### `acs_system_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the ACS system for which you want to retrieve all compatible credential manager ACS systems.

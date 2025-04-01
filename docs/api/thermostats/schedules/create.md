@@ -191,7 +191,7 @@ api.ThermostatSchedule{ThermostatScheduleId: "56d29fcf-0674-4db5-8e03-b2370a7746
 
 ### `climate_preset_key`
 
-Type: `string`
+Format: `String`
 Required: Yes
 
 Key of the [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to use for the thermostat schedule.
@@ -200,7 +200,7 @@ Key of the [climate preset](../../../capability-guides/thermostats/creating-and-
 
 ### `device_id`
 
-Type: `string`
+Format: `String`
 Required: Yes
 
 ID of the desired thermostat device.
@@ -209,7 +209,7 @@ ID of the desired thermostat device.
 
 ### `ends_at`
 
-Type: `string`
+Format: `String`
 Required: Yes
 
 Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
@@ -218,7 +218,7 @@ Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.i
 
 ### `starts_at`
 
-Type: `string`
+Format: `String`
 Required: Yes
 
 Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
@@ -227,7 +227,7 @@ Date and time at which the thermostat schedule starts, in [ISO 8601](https://www
 
 ### `is_override_allowed`
 
-Type: `boolean`
+Format: `Boolean`
 Required: No
 
 Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the schedule is active. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
@@ -236,7 +236,7 @@ Indicates whether a person at the thermostat or using the API can change the the
 
 ### `max_override_period_minutes`
 
-Type: `number`
+Format: `Number`
 Required: No
 
 Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
@@ -245,7 +245,7 @@ Number of minutes for which a person at the thermostat or using the API can chan
 
 ### `name`
 
-Type: `string`
+Format: `String`
 Required: No
 
 User-friendly name to identify the thermostat schedule.

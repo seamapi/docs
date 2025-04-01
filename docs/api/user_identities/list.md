@@ -165,7 +165,7 @@ func main() {
 
 ### `credential_manager_acs_system_id`
 
-Type: `string`
+Format: `UUID`
 Required: No
 
 ***

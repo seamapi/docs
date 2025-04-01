@@ -16,7 +16,7 @@ Returns a list of all [encoders](../../../capability-guides/access-systems/worki
 
 ### `acs_encoder_ids`
 
-Type: `array`
+Format: `List`
 Item format: `UUID`
 Required: No
 
@@ -26,7 +26,7 @@ IDs of the `acs_encoder`s that you want to retrieve.
 
 ### `acs_system_id`
 
-Type: `string`
+Format: `UUID`
 Required: No
 
 ID of the `acs_system` for which you want to retrieve all `acs_encoder`s.
@@ -35,7 +35,7 @@ ID of the `acs_system` for which you want to retrieve all `acs_encoder`s.
 
 ### `acs_system_ids`
 
-Type: `array`
+Format: `List`
 Item format: `UUID`
 Required: No
 
@@ -45,7 +45,7 @@ IDs of the `acs_system`s for which you want to retrieve all `acs_encoder`s.
 
 ### `limit`
 
-Type: `number`
+Format: `Number`
 Required: No
 
 Number of `acs_encoders` to return.

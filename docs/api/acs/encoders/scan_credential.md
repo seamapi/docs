@@ -16,7 +16,7 @@ Scans an encoded [acs_credential](../../../capability-guides/access-systems/mana
 
 ### `acs_encoder_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the `acs_encoder` to use for the scan.

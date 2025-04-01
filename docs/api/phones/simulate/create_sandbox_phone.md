@@ -16,7 +16,7 @@ Creates a new simulated phone in a [sandbox workspace](../../../core-concepts/wo
 
 ### `user_identity_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the user identity to associate with the simulated phone.
@@ -25,7 +25,7 @@ ID of the user identity to associate with the simulated phone.
 
 ### `assa_abloy_metadata`
 
-Type: `object`
+Format: `Object`
 Required: No
 
 ASSA ABLOY metadata to associate with the simulated phone.
@@ -34,7 +34,7 @@ ASSA ABLOY metadata to associate with the simulated phone.
 
 ### `custom_sdk_installation_id`
 
-Type: `string`
+Format: `String`
 Required: No
 
 ID of the custom SDK installation to use for the simulated phone.
@@ -43,7 +43,7 @@ ID of the custom SDK installation to use for the simulated phone.
 
 ### `phone_metadata`
 
-Type: `object`
+Format: `Object`
 Required: No
 
 Metadata to associate with the simulated phone.

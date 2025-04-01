@@ -182,7 +182,7 @@ api.Unknown{UserIdentityId: "5c945ab5-c75e-4bcb-8e5f-9410061c401f", EnrollmentAu
 
 ### `credential_manager_acs_system_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired ACS system that serves as the credential manager.
@@ -191,7 +191,7 @@ ID of the desired ACS system that serves as the credential manager.
 
 ### `user_identity_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired user identity.
@@ -200,7 +200,7 @@ ID of the desired user identity.
 
 ### `acs_credential_pool_id`
 
-Type: `string`
+Format: `UUID`
 Required: No
 
 ID of the ACS credential pool from which to obtain credentials for the user identity.
@@ -209,7 +209,7 @@ ID of the ACS credential pool from which to obtain credentials for the user iden
 
 ### `create_credential_manager_user`
 
-Type: `boolean`
+Format: `Boolean`
 Required: No
 
 Indicates whether to create an associated credential manager user. If you set `create_credential_manager_user` to `true`, you cannot specify a `credential_manager_acs_user_id`.
@@ -218,7 +218,7 @@ Indicates whether to create an associated credential manager user. If you set `c
 
 ### `credential_manager_acs_user_id`
 
-Type: `string`
+Format: `UUID`
 Required: No
 
 ID of the associated ACS user within the credential manager. If you specify a `credential_manager_acs_user_id`, you cannot set `create_credential_manager_user` to `true`.

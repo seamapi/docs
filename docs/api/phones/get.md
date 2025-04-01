@@ -16,7 +16,7 @@ Returns a single phone entry matching the provided `device_id`.
 
 ### `device_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 Device ID of the desired phone.

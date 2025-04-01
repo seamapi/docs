@@ -128,7 +128,7 @@ nil
 
 ### `acs_user_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
@@ -137,7 +137,7 @@ ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-system
 
 ### `access_schedule`
 
-Type: `object`
+Format: `Object`
 Required: No
 
 `starts_at` and `ends_at` timestamps for the `acs_user`'s access. If you specify an `access_schedule`, you must include both `starts_at` and `ends_at`. `ends_at` must be a time in the future and after `starts_at`.
@@ -146,14 +146,18 @@ Required: No
 
 ### `email`
 
-Type: `string`
+Format: `String`
 Required: No
+
+{% hint style="warning" %}
+**Deprecated**. use email_address.
+{% endhint %}
 
 ***
 
 ### `email_address`
 
-Type: `string`
+Format: `String`
 Required: No
 
 Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
@@ -162,7 +166,7 @@ Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/ac
 
 ### `full_name`
 
-Type: `string`
+Format: `String`
 Required: No
 
 Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
@@ -171,14 +175,14 @@ Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access
 
 ### `hid_acs_system_id`
 
-Type: `string`
+Format: `UUID`
 Required: No
 
 ***
 
 ### `phone_number`
 
-Type: `string`
+Format: `String`
 Required: No
 
 Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).

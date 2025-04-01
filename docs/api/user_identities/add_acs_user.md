@@ -128,7 +128,7 @@ nil
 
 ### `acs_user_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired ACS user.
@@ -137,7 +137,7 @@ ID of the desired ACS user.
 
 ### `user_identity_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired user identity.

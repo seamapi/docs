@@ -16,7 +16,7 @@ Revokes access to all [entrances](https://docs.seam.co/latest/api/acs/entrances)
 
 ### `acs_user_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired `acs_user`.

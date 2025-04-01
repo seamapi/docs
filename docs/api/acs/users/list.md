@@ -155,7 +155,7 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 
 ### `acs_system_id`
 
-Type: `string`
+Format: `UUID`
 Required: No
 
 ID of the `acs_system` for which you want to retrieve all `acs_user`s.
@@ -164,14 +164,14 @@ ID of the `acs_system` for which you want to retrieve all `acs_user`s.
 
 ### `created_before`
 
-Type: `string`
+Format: `Datetime`
 Required: No
 
 ***
 
 ### `limit`
 
-Type: `number`
+Format: `Number`
 Required: No
 
 Maximum number of records to return per page.
@@ -180,7 +180,7 @@ Maximum number of records to return per page.
 
 ### `page_cursor`
 
-Type: `string`
+Format: `String`
 Required: No
 
 Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
@@ -189,7 +189,7 @@ Identifies the specific page of results to return, obtained from the previous pa
 
 ### `search`
 
-Type: `string`
+Format: `String`
 Required: No
 
 String for which to search. Filters returned `acs_user`s to include all records that satisfy a partial match using `full_name`, `phone_number`, or `email_address`.
@@ -198,7 +198,7 @@ String for which to search. Filters returned `acs_user`s to include all records 
 
 ### `user_identity_email_address`
 
-Type: `string`
+Format: `String`
 Required: No
 
 Email address of the user identity for which you want to retrieve all `acs_user`s.
@@ -207,7 +207,7 @@ Email address of the user identity for which you want to retrieve all `acs_user`
 
 ### `user_identity_id`
 
-Type: `string`
+Format: `UUID`
 Required: No
 
 ID of the user identity for which you want to retrieve all `acs_user`s.
@@ -216,7 +216,7 @@ ID of the user identity for which you want to retrieve all `acs_user`s.
 
 ### `user_identity_phone_number`
 
-Type: `string`
+Format: `String`
 Required: No
 
 Phone number of the user identity for which you want to retrieve all `acs_user`s, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`).

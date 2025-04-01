@@ -201,7 +201,7 @@ func main() {
 
 ### `acs_system_id`
 
-Type: `string`
+Format: `UUID`
 Required: No
 
 ID of the access control system for which you want to retrieve all credentials.
@@ -210,7 +210,7 @@ ID of the access control system for which you want to retrieve all credentials.
 
 ### `acs_user_id`
 
-Type: `string`
+Format: `UUID`
 Required: No
 
 ID of the ACS user for which you want to retrieve all credentials.
@@ -219,7 +219,7 @@ ID of the ACS user for which you want to retrieve all credentials.
 
 ### `created_before`
 
-Type: `string`
+Format: `Datetime`
 Required: No
 
 Date and time, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format, before which events to return were created.
@@ -228,7 +228,7 @@ Date and time, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.h
 
 ### `is_multi_phone_sync_credential`
 
-Type: `boolean`
+Format: `Boolean`
 Required: No
 
 Indicates whether you want to retrieve only multi-phone sync credentials or non-multi-phone sync credentials.
@@ -237,7 +237,7 @@ Indicates whether you want to retrieve only multi-phone sync credentials or non-
 
 ### `limit`
 
-Type: `number`
+Format: `Number`
 Required: No
 
 Number of credentials to return.
@@ -246,7 +246,7 @@ Number of credentials to return.
 
 ### `user_identity_id`
 
-Type: `string`
+Format: `UUID`
 Required: No
 
 ID of the user identity for which you want to retrieve all credentials.

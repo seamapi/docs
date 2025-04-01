@@ -119,7 +119,7 @@ nil
 
 ### `user_identity_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired user identity.

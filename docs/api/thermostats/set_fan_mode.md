@@ -149,24 +149,38 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 
 ### `device_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ***
 
 ### `fan_mode`
 
-Type: `string`
+Format: `Enum`
 Required: No
+
+Possible enum values:
+- `auto`
+- `on`
+- `circulate`
+
+{% hint style="warning" %}
+**Deprecated**. Use `fan_mode_setting` instead.
+{% endhint %}
 
 ***
 
 ### `fan_mode_setting`
 
-Type: `string`
+Format: `Enum`
 Required: No
 
 Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for the thermostat.
+
+Possible enum values:
+- `auto`
+- `on`
+- `circulate`
 
 ***
 

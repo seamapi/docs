@@ -17,7 +17,7 @@ Deactivates a phone, which is useful, for example, if a user has lost their phon
 
 ### `device_id`
 
-Type: `string`
+Format: `String`
 Required: Yes
 
 Device ID of the desired phone.

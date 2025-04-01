@@ -123,7 +123,7 @@ nil
 
 ### `thermostat_schedule_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired thermostat schedule.

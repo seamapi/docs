@@ -124,7 +124,7 @@ nil
 
 ### `enrollment_automation_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired enrollment automation.
