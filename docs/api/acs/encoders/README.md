@@ -65,9 +65,12 @@ Date and time at which Seam created the error.
 </details>
 <details>
 
-<summary><code>error_code</code> Format: <code>String</code></summary>
+<summary><code>error_code</code> Format: <code>Enum</code></summary>
 
 Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+Possible enum values:
+- `acs_encoder_removed`
 </details>
 <details>
 
@@ -137,7 +140,10 @@ ID of the event.
 </details>
 <details>
 
-<summary><code>event_type</code> Format: <code>String</code></summary>
+<summary><code>event_type</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `acs_encoder.added`
 </details>
 <details>
 
@@ -189,7 +195,10 @@ ID of the event.
 </details>
 <details>
 
-<summary><code>event_type</code> Format: <code>String</code></summary>
+<summary><code>event_type</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `acs_encoder.removed`
 </details>
 <details>
 

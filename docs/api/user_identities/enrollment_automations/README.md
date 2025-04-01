@@ -87,7 +87,10 @@ ID of the event.
 </details>
 <details>
 
-<summary><code>event_type</code> Format: <code>String</code></summary>
+<summary><code>event_type</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `enrollment_automation.deleted`
 </details>
 <details>
 

@@ -192,7 +192,10 @@ ID of the action attempt.
 
 #### `action_type`
 
-Format: `String`
+Format: `Enum`
+
+Possible enum values:
+- `SET_HVAC_MODE`
 
 ---
 
