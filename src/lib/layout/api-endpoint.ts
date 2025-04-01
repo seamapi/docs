@@ -34,7 +34,8 @@ export interface ApiEndpointLayoutContext {
       name: string
       required: boolean
       description: string
-      jsonType: string
+      format: string
+      enumValues?: string[]
       itemFormat?: string
       itemEnumValues?: string[]
     }>
@@ -108,9 +109,17 @@ export function setEndpointLayoutContext(
         name: param.name,
         required: param.isRequired,
         description: param.description,
-        jsonType: param.jsonType,
+        format: normalizePropertyFormatForDocs(param.format),
+        isDeprecated: param.isDeprecated,
+        deprecationMessage: param.deprecationMessage,
+
+        ...(param.format === 'enum' && {
+          enumValues: param.values.map(({ name }) => name),
+        }),
+
         ...(param.jsonType === 'array' && {
           itemFormat: normalizePropertyFormatForDocs(param.itemFormat),
+
           ...(param.itemFormat === 'enum' && {
             itemEnumValues: param.itemEnumValues.map(({ name }) => name),
           }),
