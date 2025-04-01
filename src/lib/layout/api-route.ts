@@ -211,17 +211,12 @@ export const mapBlueprintPropertyToRouteProperty = (
     description,
     isDeprecated,
     deprecationMessage,
-    format: '',
+    format: normalizePropertyFormatForDocs(format),
     listItemFormat: '',
   }
 
-  if ('values' in prop && prop.values.length > 1) {
-    contextRouteProp.format = normalizePropertyFormatForDocs(format)
+  if ('values' in prop) {
     contextRouteProp.enumValues = prop.values.map(({ name }) => name)
-  } else if ('values' in prop && prop.values.length === 1) {
-    contextRouteProp.format = normalizePropertyFormatForDocs('string')
-  } else {
-    contextRouteProp.format = normalizePropertyFormatForDocs(format)
   }
 
   if ('properties' in prop) {
