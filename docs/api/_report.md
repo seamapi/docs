@@ -853,6 +853,8 @@ These items are deprecated.
     - `backup_access_code`
 - `/acs/users/list`
     - `pagination`
+- `/connected_accounts/list`
+    - `pagination`
 - `/events/get`
     - `message`
 - `/locks/get`
