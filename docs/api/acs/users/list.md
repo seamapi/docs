@@ -167,8 +167,6 @@ ID of the `acs_system` for which you want to retrieve all `acs_user`s.
 Type: `string`
 Required: No
 
-
-
 ***
 
 ### `limit`

@@ -8,10 +8,7 @@
 {{/if}}
 {{#if enumValues}}
 
-Possible enum values:
-{{#each enumValues}}
-- `{{this}}`
-{{/each}}
+{{> enum-values}}
 {{/if}}
 {{#if listProperties}}
 {{#each listProperties}}
