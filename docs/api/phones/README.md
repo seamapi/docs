@@ -1,8 +1,12 @@
 # Phones
 
-## `phone`
+The Phones route contains the following resources:
+
+## The `phone` Resource
 
 Represents an app user's mobile phone.
+
+## Properties
 
 ### `created_at`
 

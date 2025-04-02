@@ -1,11 +1,17 @@
 {{#if headingOffset}}
-### `{{name}}`
+### The `{{name}}` Resource
 {{else}}
-## `{{name}}`
+## The `{{name}}` Resource
 {{/if}}
 {{#if description}}
 
 {{description}}
+{{/if}}
+
+{{#if headingOffset}}
+### Properties
+{{else}}
+## Properties
 {{/if}}
 
 {{#each properties}}
@@ -30,10 +36,7 @@ Item format: `{{listItemFormat}}`
 {{/if}}
 {{#if enumValues}}
 
-Possible enum values:
-{{#each enumValues}}
-- `{{this}}`
-{{/each}}
+{{> enum-values}}
 {{/if}}
 {{#unless (eq objectProperties undefined)}}
 {{#if (eq objectProperties.length 0)}}

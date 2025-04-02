@@ -1,8 +1,12 @@
 # {{title}}
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 {{request.preferredMethod}} {{path}} ⇒ {{#if response.responseKey}}{{#if (eq response.responseType "resource_list")}}{ {{response.responseKey}}: [{{response.resourceType}}, …] }{{else}}{ {{response.responseKey}} }{{/if}}{{else}}void{{/if}}
 ```
+{% endtab %}
+{% endtabs %}
 
 {{{description}}}
 
@@ -20,7 +24,9 @@
 {{/if}}
 {{/each}}
 
+---
 {{/if}}
+
 ## Request Parameters
 
 {{#if request.parameters.length}}
@@ -28,17 +34,27 @@
 ### `{{this.name}}`
 
 Type: `{{this.jsonType}}`
+{{#if this.itemFormat}}
+Item format: `{{this.itemFormat}}`
+{{/if}}
 Required: {{#if this.required}}Yes{{else}}No{{/if}}
+{{#if this.description}}
 
 {{this.description}}
+{{/if}}
+{{#if this.itemEnumValues}}
 
-***
+{{> enum-values enumValues=this.itemEnumValues}}
+{{/if}}
+
+---
 
 {{/each}}
 {{else}}
 None
 
 {{/if}}
+
 ## Return Type
 
 {{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array<[{{response.escapedResourceType}}](./)>{{else}}[{{response.escapedResourceType}}](./){{/if}}{{else}}void{{/if}}
@@ -46,11 +62,17 @@ None
 
 {{> api-resource headingOffset=true}}
 {{/with}}
-{{#if addtionalCodeSamples.length}}
+{{#if additionalCodeSamples.length}}
 
-## Additional Code Samples
+---
 
-{{#each addtionalCodeSamples}}
+## Code Samples
+
+{{#each additionalCodeSamples}}
+### {{this.title}}
+
+{{this.description}}
+
 {{> code-sample }}
 {{/each}}
 {{/if}}

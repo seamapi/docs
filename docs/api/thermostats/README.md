@@ -1,5 +1,7 @@
 # Thermostats
 
+The Thermostats route contains the following resources:
+
 ## Endpoints
 
 ### [`/thermostats/activate_climate_preset`](./activate_climate_preset.md)

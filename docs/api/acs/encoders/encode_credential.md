@@ -1,8 +1,12 @@
 # Encode a Credential
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/encoders/encode_credential ⇒ { action_attempt }
 ```
+{% endtab %}
+{% endtabs %}
 
 Encodes an existing [credential](../../../capability-guides/access-systems/managing-credentials.md) onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
@@ -11,6 +15,8 @@ Encodes an existing [credential](../../../capability-guides/access-systems/manag
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
+
+---
 
 ## Request Parameters
 
@@ -21,7 +27,7 @@ Required: Yes
 
 ID of the `acs_credential` to encode onto a card.
 
-***
+---
 
 ### `acs_encoder_id`
 
@@ -30,15 +36,18 @@ Required: Yes
 
 ID of the `acs_encoder` to use to encode the `acs_credential`.
 
-***
+---
+
 
 ## Return Type
 
 [action\_attempt](./)
 
-### `ENCODE_CREDENTIAL`
+### The `ENCODE_CREDENTIAL` Resource
 
 Action attempt to track encoding credential data from the physical encoder onto a card.
+
+### Properties
 
 #### `action_attempt_id`
 

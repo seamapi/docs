@@ -1,14 +1,18 @@
 # Remove an ACS User from an Access Group
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/access_groups/remove_user ⇒ void
 ```
+{% endtab %}
+{% endtabs %}
 
 Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.accessGroups.removeUser({
@@ -17,7 +21,7 @@ await seam.acs.accessGroups.removeUser({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -25,7 +29,7 @@ await seam.acs.accessGroups.removeUser({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.access_groups.remove_user(
@@ -34,7 +38,7 @@ seam.acs.access_groups.remove_user(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -42,7 +46,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.access_groups.remove_user(
@@ -51,7 +55,7 @@ seam.acs.access_groups.remove_user(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -59,7 +63,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -69,7 +73,7 @@ $seam->acs->access_groups->remove_user(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -77,13 +81,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs access-groups remove-user --acs_access_group_id "44444444-4444-4444-4444-444444444444" --acs_user_id "33333333-3333-3333-3333-333333333333"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -91,7 +95,7 @@ seam acs access-groups remove-user --acs_access_group_id "44444444-4444-4444-444
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -110,7 +114,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil
@@ -125,6 +129,8 @@ nil
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `acs_access_group_id`
@@ -134,7 +140,7 @@ Required: Yes
 
 ID of the desired access group.
 
-***
+---
 
 ### `acs_user_id`
 
@@ -143,7 +149,8 @@ Required: Yes
 
 ID of the desired user.
 
-***
+---
+
 
 ## Return Type
 

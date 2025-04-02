@@ -1,5 +1,7 @@
 # Thermostat Simulations
 
+The Thermostat Simulations route contains the following resources:
+
 ## Endpoints
 
 ### [`/thermostats/simulate/hvac_mode_adjusted`](./hvac_mode_adjusted.md)

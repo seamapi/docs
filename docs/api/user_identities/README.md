@@ -1,8 +1,12 @@
 # User Identities
 
-## `user_identity`
+The User Identities route contains the following resources:
+
+## The `user_identity` Resource
 
 Represents a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with an application user account.
+
+## Properties
 
 ### `created_at`
 

@@ -1,5 +1,7 @@
 # Encoder Simulations
 
+The Encoder Simulations route contains the following resources:
+
 ## Endpoints
 
 ### [`/acs/encoders/simulate/next_credential_encode_will_fail`](./next_credential_encode_will_fail.md)
