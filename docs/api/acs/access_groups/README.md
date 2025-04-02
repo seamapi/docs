@@ -130,8 +130,7 @@ Detailed description of the warning. Provides insights into the issue and potent
 
 Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
 
-Possible enum values:
-- `unknown_issue_with_acs_access_group`
+Value: `unknown_issue_with_acs_access_group`
 </details>
 ---
 
@@ -204,8 +203,7 @@ ID of the event.
 
 <summary><code>event_type</code> Format: <code>Enum</code></summary>
 
-Possible enum values:
-- `acs_access_group.deleted`
+Value: `acs_access_group.deleted`
 </details>
 <details>
 
