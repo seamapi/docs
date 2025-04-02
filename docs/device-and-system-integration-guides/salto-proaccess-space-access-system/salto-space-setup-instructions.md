@@ -48,7 +48,7 @@ To identify this URL:
 1.  On the Windows computer that is running the Salto Space server, open a **Command Prompt** window.
 
     That is, click **Start**, type `cmd`, and press **Enter**.
-2.  In the **Command Prompt** window, type `ipcofig` and then press **Enter**.
+2.  In the **Command Prompt** window, type `ipconfig` and then press **Enter**.
 
     This command displays the computer's Windows IP configuration.
 3.  Note the IPv4 address that the computer is using to connect to the internet.
