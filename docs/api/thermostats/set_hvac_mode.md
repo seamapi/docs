@@ -172,8 +172,6 @@ ID of the desired thermostat device.
 Type: `string`
 Required: Yes
 
-
-
 ***
 
 ### `cooling_set_point_celsius`

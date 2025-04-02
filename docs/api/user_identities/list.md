@@ -168,8 +168,6 @@ func main() {
 Type: `string`
 Required: No
 
-
-
 ***
 
 ## Return Type

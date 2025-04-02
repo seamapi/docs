@@ -19,16 +19,12 @@ POST /acs/entrances/grant_access ⇒ void
 Type: `string`
 Required: Yes
 
-
-
 ***
 
 ### `acs_user_id`
 
 Type: `string`
 Required: Yes
-
-
 
 ***
 
