@@ -250,7 +250,9 @@ export const mapBlueprintPropertyToRouteProperty = (
 type PropertyFormat = Property['format'] | ListProperty['itemFormat']
 type ListProperty = Extract<Property, { format: 'list' }>
 
-const normalizePropertyFormatForDocs = (format: PropertyFormat): string => {
+export const normalizePropertyFormatForDocs = (
+  format: PropertyFormat,
+): string => {
   const formatMap: Partial<Record<PropertyFormat, string>> = {
     id: 'UUID',
     discriminated_object: 'Object',
@@ -289,8 +291,8 @@ function addLinkTargetsToProperties(
   sections: { errors: boolean; warnings: boolean },
 ): void {
   const linkableProperties: Record<string, string | undefined> = {
-    errors: sections.errors ? './#errors-1' : undefined,
-    warnings: sections.warnings ? './#warnings-1' : undefined,
+    errors: sections.errors ? './#errors' : undefined,
+    warnings: sections.warnings ? './#warnings' : undefined,
   }
 
   for (const prop of properties) {

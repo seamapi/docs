@@ -1,14 +1,18 @@
 # Activate a Climate Preset
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /thermostats/activate_climate_preset ⇒ { action_attempt }
 ```
+{% endtab %}
+{% endtabs %}
 
 Activates a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.activateClimatePreset({
@@ -17,7 +21,7 @@ await seam.thermostats.activateClimatePreset({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 {
@@ -29,7 +33,7 @@ await seam.thermostats.activateClimatePreset({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.activate_climate_preset(
@@ -37,7 +41,7 @@ seam.thermostats.activate_climate_preset(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 ActionAttempt(
@@ -49,7 +53,7 @@ ActionAttempt(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.activate_climate_preset(
@@ -58,7 +62,7 @@ seam.thermostats.activate_climate_preset(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 {
@@ -70,7 +74,7 @@ seam.thermostats.activate_climate_preset(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -80,7 +84,7 @@ $seam->thermostats->activate_climate_preset(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -93,13 +97,13 @@ $seam->thermostats->activate_climate_preset(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats activate-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "occupied"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {
@@ -111,7 +115,7 @@ seam thermostats activate-climate-preset --device_id "123e4567-e89b-12d3-a456-42
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -129,7 +133,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 api.ActionAttempt{ActionAttemptId: "05de2295-d1dc-4748-aae3-9931658bde20", Status: "pending", ActionType: "ACTIVATE_CLIMATE_PRESET"}
@@ -144,6 +148,8 @@ api.ActionAttempt{ActionAttemptId: "05de2295-d1dc-4748-aae3-9931658bde20", Statu
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `climate_preset_key`
@@ -153,7 +159,7 @@ Required: Yes
 
 Climate preset key of the desired climate preset.
 
-***
+---
 
 ### `device_id`
 
@@ -162,38 +168,44 @@ Required: Yes
 
 ID of the desired thermostat device.
 
-***
+---
+
 
 ## Return Type
 
 [action\_attempt](./)
 
-### `ACTIVATE_CLIMATE_PRESET`
+### The `ACTIVATE_CLIMATE_PRESET` Resource
 
 Activating climate preset.
 
-#### `action_attempt_id`
+---
 
-Format: `UUID`
+### Properties
+
+**`action_attempt_id`** *UUID*
 
 ID of the action attempt.
 
----
-
-#### `action_type`
-
-Format: `String`
 
 ---
 
-#### `status`
+**`action_type`** *String*
 
-Format: `Enum`
 
-Possible enum values:
+---
+
+**`status`** *Enum*
+
+<details>
+
+<summary>Enum values</summary>
+
 - `success`
 - `pending`
 - `error`
+</details>
+
 
 ---
 

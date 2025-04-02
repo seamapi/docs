@@ -10,6 +10,7 @@ import type { CodeSample } from 'node_modules/@seamapi/blueprint/dist/index.cjs'
 import {
   type ApiRouteResource,
   mapBlueprintPropertyToRouteProperty,
+  normalizePropertyFormatForDocs,
 } from './api-route.js'
 
 const supportedSdks: CodeSampleSdk[] = [
@@ -34,6 +35,8 @@ export interface ApiEndpointLayoutContext {
       required: boolean
       description: string
       jsonType: string
+      itemFormat?: string
+      itemEnumValues?: string[]
     }>
   }
   response: {
@@ -45,7 +48,7 @@ export interface ApiEndpointLayoutContext {
     actionAttempt?: ApiRouteResource
   }
   primaryCodeSample: CodeSampleContext | null
-  addtionalCodeSamples: CodeSampleContext[]
+  additionalCodeSamples: CodeSampleContext[]
 }
 
 interface CodeSampleContext {
@@ -106,6 +109,12 @@ export function setEndpointLayoutContext(
         required: param.isRequired,
         description: param.description,
         jsonType: param.jsonType,
+        ...(param.jsonType === 'array' && {
+          itemFormat: normalizePropertyFormatForDocs(param.itemFormat),
+          ...(param.itemFormat === 'enum' && {
+            itemEnumValues: param.itemEnumValues.map(({ name }) => name),
+          }),
+        }),
       }))
       .sort((a, b) => {
         if (a.required && !b.required) return -1
@@ -153,10 +162,10 @@ export function setEndpointLayoutContext(
     }
   }
 
-  const [primaryCodeSample, ...addtionalCodeSamples] = endpoint.codeSamples
+  const [primaryCodeSample, ...additionalCodeSamples] = endpoint.codeSamples
   file.primaryCodeSample =
     primaryCodeSample == null ? null : mapCodeSample(primaryCodeSample)
-  file.addtionalCodeSamples = addtionalCodeSamples.map(mapCodeSample)
+  file.additionalCodeSamples = additionalCodeSamples.map(mapCodeSample)
 }
 
 const mapCodeSample = (sample: CodeSample): CodeSampleContext => {

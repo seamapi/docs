@@ -1,14 +1,18 @@
 # Create a Climate Preset
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /thermostats/create_climate_preset ⇒ void
 ```
+{% endtab %}
+{% endtabs %}
 
 Creates a [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.createClimatePreset({
@@ -23,7 +27,7 @@ await seam.thermostats.createClimatePreset({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -31,7 +35,7 @@ await seam.thermostats.createClimatePreset({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.create_climate_preset(
@@ -46,7 +50,7 @@ seam.thermostats.create_climate_preset(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -54,7 +58,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.create_climate_preset(
@@ -69,7 +73,7 @@ seam.thermostats.create_climate_preset(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -77,7 +81,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -93,7 +97,7 @@ $seam->thermostats->create_climate_preset(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -101,13 +105,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats create-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "occupied" --name "Occupied" --fan_mode_setting "auto" --hvac_mode_setting "heat_cool" --cooling_set_point_celsius 25 --heating_set_point_celsius 20 --manual_override_allowed true
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -115,7 +119,7 @@ seam thermostats create-climate-preset --device_id "123e4567-e89b-12d3-a456-4266
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -139,7 +143,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil
@@ -155,6 +159,8 @@ nil
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `climate_preset_key`
@@ -164,7 +170,7 @@ Required: Yes
 
 Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
 
-***
+---
 
 ### `device_id`
 
@@ -173,7 +179,7 @@ Required: Yes
 
 ID of the desired thermostat device.
 
-***
+---
 
 ### `cooling_set_point_celsius`
 
@@ -182,7 +188,7 @@ Required: No
 
 Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
-***
+---
 
 ### `cooling_set_point_fahrenheit`
 
@@ -191,7 +197,7 @@ Required: No
 
 Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
-***
+---
 
 ### `fan_mode_setting`
 
@@ -200,7 +206,7 @@ Required: No
 
 Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
 
-***
+---
 
 ### `heating_set_point_celsius`
 
@@ -209,7 +215,7 @@ Required: No
 
 Temperature to which the thermostat should heat (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
-***
+---
 
 ### `heating_set_point_fahrenheit`
 
@@ -218,7 +224,7 @@ Required: No
 
 Temperature to which the thermostat should heat (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
-***
+---
 
 ### `hvac_mode_setting`
 
@@ -227,7 +233,7 @@ Required: No
 
 Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
 
-***
+---
 
 ### `manual_override_allowed`
 
@@ -236,7 +242,7 @@ Required: No
 
 Indicates whether a person at the thermostat or using the API can change the thermostat's settings.
 
-***
+---
 
 ### `name`
 
@@ -245,7 +251,8 @@ Required: No
 
 User-friendly name to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
 
-***
+---
+
 
 ## Return Type
 

@@ -1,14 +1,18 @@
 # Get an Entrance
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/entrances/get ⇒ { acs_entrance }
 ```
+{% endtab %}
+{% endtabs %}
 
 Returns a specified [ACS entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.entrances.get({
@@ -16,7 +20,7 @@ await seam.acs.entrances.get({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 {
@@ -29,13 +33,13 @@ await seam.acs.entrances.get({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.entrances.get(acs_entrance_id="123e4567-e89b-12d3-a456-426614174000")
 ```
 
-#### Response
+#### Output
 
 ```python
 AcsEntrance(
@@ -48,13 +52,13 @@ AcsEntrance(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.entrances.get(acs_entrance_id: "123e4567-e89b-12d3-a456-426614174000")
 ```
 
-#### Response
+#### Output
 
 ```ruby
 {
@@ -67,7 +71,7 @@ seam.acs.entrances.get(acs_entrance_id: "123e4567-e89b-12d3-a456-426614174000")
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -76,7 +80,7 @@ $seam->acs->entrances->get(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -90,13 +94,13 @@ $seam->acs->entrances->get(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs entrances get --acs_entrance_id "123e4567-e89b-12d3-a456-426614174000"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {
@@ -109,7 +113,7 @@ seam acs entrances get --acs_entrance_id "123e4567-e89b-12d3-a456-426614174000"
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -127,7 +131,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 api.AcsEntrance{AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", AcsEntranceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "text"}
@@ -141,6 +145,8 @@ api.AcsEntrance{AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", AcsEntrance
 - API key
 - Client session token
 
+---
+
 ## Request Parameters
 
 ### `acs_entrance_id`
@@ -148,9 +154,8 @@ api.AcsEntrance{AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", AcsEntrance
 Type: `string`
 Required: Yes
 
+---
 
-
-***
 
 ## Return Type
 

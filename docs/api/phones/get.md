@@ -1,8 +1,12 @@
 # Get Phone
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /phones/get ⇒ { phone }
 ```
+{% endtab %}
+{% endtabs %}
 
 Returns a single phone entry matching the provided `device_id`.
 
@@ -11,6 +15,8 @@ Returns a single phone entry matching the provided `device_id`.
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
+
+---
 
 ## Request Parameters
 
@@ -21,7 +27,8 @@ Required: Yes
 
 Device ID of the desired phone.
 
-***
+---
+
 
 ## Return Type
 

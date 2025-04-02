@@ -1,8 +1,12 @@
 # Temperature Reached
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /thermostats/simulate/temperature_reached ⇒ void
 ```
+{% endtab %}
+{% endtabs %}
 
 Simulates a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) reaching a specified temperature. Only applicable for [sandbox devices](../../../core-concepts/workspaces/README.md#sandbox-workspaces). See also [Testing Your Thermostat App with Simulate Endpoints](../../../capability-guides/thermostats/testing-your-thermostat-app-with-simulate-endpoints.md).
 
@@ -11,6 +15,8 @@ Simulates a [thermostat](https://docs.seam.co/latest/capability-guides/thermosta
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
+
+---
 
 ## Request Parameters
 
@@ -21,7 +27,7 @@ Required: Yes
 
 ID of the desired thermostat device.
 
-***
+---
 
 ### `temperature_celsius`
 
@@ -30,7 +36,7 @@ Required: No
 
 Desired simulated temperature in °C. You must set `temperature_celsius` or `temperature_fahrenheit`.
 
-***
+---
 
 ### `temperature_fahrenheit`
 
@@ -39,7 +45,8 @@ Required: No
 
 Desired simulated temperature in °F. You must set `temperature_fahrenheit` or `temperature_celsius`.
 
-***
+---
+
 
 ## Return Type
 

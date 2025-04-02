@@ -1,14 +1,18 @@
 # Set the Fallback Climate Preset
 
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /thermostats/set_fallback_climate_preset ⇒ void
 ```
+{% endtab %}
+{% endtabs %}
 
 Sets a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) as the ["fallback"](../../capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset.md) preset for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.setFallbackClimatePreset({
@@ -17,7 +21,7 @@ await seam.thermostats.setFallbackClimatePreset({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -25,7 +29,7 @@ await seam.thermostats.setFallbackClimatePreset({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.set_fallback_climate_preset(
@@ -33,7 +37,7 @@ seam.thermostats.set_fallback_climate_preset(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -41,7 +45,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.set_fallback_climate_preset(
@@ -50,7 +54,7 @@ seam.thermostats.set_fallback_climate_preset(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -58,7 +62,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -68,7 +72,7 @@ $seam->thermostats->set_fallback_climate_preset(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -76,13 +80,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats set-fallback-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "eco"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -90,7 +94,7 @@ seam thermostats set-fallback-climate-preset --device_id "123e4567-e89b-12d3-a45
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -108,7 +112,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil
@@ -123,6 +127,8 @@ nil
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+---
+
 ## Request Parameters
 
 ### `climate_preset_key`
@@ -132,7 +138,7 @@ Required: Yes
 
 Climate preset key of the desired climate preset.
 
-***
+---
 
 ### `device_id`
 
@@ -141,7 +147,8 @@ Required: Yes
 
 ID of the desired thermostat device.
 
-***
+---
+
 
 ## Return Type
 
