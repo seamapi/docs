@@ -13,15 +13,13 @@ Specify the desired access control system by including the corresponding `acs_sy
 #### Request
 
 ```javascript
-await seam.acs.systems.get({
-  acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-});
+await seam.acs.systems.get({"acs_system_id":"8d7e0b3a-b889-49a7-9164-4b71a0506a33"})
 ```
 
 #### Response
 
 ```javascript
-[{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
+[{"acs_system_id":"8d7e0b3a-b889-49a7-9164-4b71a0506a33"}]
 ```
 {% endtab %}
 
@@ -49,7 +47,7 @@ seam.acs.systems.get(acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 #### Response
 
 ```ruby
-[{ "acs_system_id" => "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
+[{"acs_system_id" => "8d7e0b3a-b889-49a7-9164-4b71a0506a33"}]
 ```
 {% endtab %}
 
@@ -58,14 +56,14 @@ seam.acs.systems.get(acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 
 ```php
 <?php
-$seam->acs->systems->get(acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33");
+$seam->acs->systems->get(acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 ```
 
 #### Response
 
 ```php
 <?php
-[["acs_system_id" => "8d7e0b3a-b889-49a7-9164-4b71a0506a33"]];
+[["acs_system_id" => "8d7e0b3a-b889-49a7-9164-4b71a0506a33"]]
 ```
 {% endtab %}
 
@@ -79,7 +77,7 @@ seam acs systems get --acs_system_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 #### Response
 
 ```seam_cli
-[{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
+[{"acs_system_id":"8d7e0b3a-b889-49a7-9164-4b71a0506a33"}]
 ```
 {% endtab %}
 
@@ -88,18 +86,17 @@ seam acs systems get --acs_system_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 
 ```go
 package main
-
-import api "github.com/seamapi/go"
+  import api "github.com/seamapi/go"
 import systems "github.com/seamapi/go/systems"
 
-func main() {
-	client.Acs.Systems.Get(
-		context.Background(),
-		systems.SystemsGetRequest{
-			AcsSystemId: api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
-		},
-	)
-}
+  func main() {
+  client.Acs.Systems.Get(
+context.Background(),
+systems.SystemsGetRequest{
+AcsSystemId: api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
+},
+)
+  }
 ```
 
 #### Response

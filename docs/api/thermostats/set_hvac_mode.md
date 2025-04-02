@@ -11,22 +11,13 @@ Sets the [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/c
 #### Request
 
 ```javascript
-await seam.thermostats.setHvacMode({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  hvac_mode_setting: "heat_cool",
-  heating_set_point_celsius: 20,
-  cooling_set_point_celsius: 25,
-});
+await seam.thermostats.setHvacMode({"device_id":"123e4567-e89b-12d3-a456-426614174000","hvac_mode_setting":"heat_cool","heating_set_point_celsius":20,"cooling_set_point_celsius":25})
 ```
 
 #### Response
 
 ```javascript
-{
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "success",
-  "action_type": "SET_HVAC_MODE"
-}
+{"action_attempt_id":"123e4567-e89b-12d3-a456-426614174000","status":"success","action_type":"SET_HVAC_MODE"}
 ```
 {% endtab %}
 
@@ -34,22 +25,13 @@ await seam.thermostats.setHvacMode({
 #### Request
 
 ```python
-seam.thermostats.set_hvac_mode(
-    device_id="123e4567-e89b-12d3-a456-426614174000",
-    hvac_mode_setting="heat_cool",
-    heating_set_point_celsius=20,
-    cooling_set_point_celsius=25,
-)
+seam.thermostats.set_hvac_mode(device_id="123e4567-e89b-12d3-a456-426614174000", hvac_mode_setting="heat_cool", heating_set_point_celsius=20, cooling_set_point_celsius=25)
 ```
 
 #### Response
 
 ```python
-ActionAttempt(
-    action_attempt_id="123e4567-e89b-12d3-a456-426614174000",
-    status="success",
-    action_type="SET_HVAC_MODE",
-)
+ActionAttempt(action_attempt_id="123e4567-e89b-12d3-a456-426614174000", status="success", action_type="SET_HVAC_MODE")
 ```
 {% endtab %}
 
@@ -57,22 +39,13 @@ ActionAttempt(
 #### Request
 
 ```ruby
-seam.thermostats.set_hvac_mode(
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  hvac_mode_setting: "heat_cool",
-  heating_set_point_celsius: 20,
-  cooling_set_point_celsius: 25,
-)
+seam.thermostats.set_hvac_mode(device_id: "123e4567-e89b-12d3-a456-426614174000", hvac_mode_setting: "heat_cool", heating_set_point_celsius: 20, cooling_set_point_celsius: 25)
 ```
 
 #### Response
 
 ```ruby
-{
-  "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "status" => "success",
-  "action_type" => "SET_HVAC_MODE",
-}
+{"action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000","status" => "success","action_type" => "SET_HVAC_MODE"}
 ```
 {% endtab %}
 
@@ -81,23 +54,14 @@ seam.thermostats.set_hvac_mode(
 
 ```php
 <?php
-$seam->thermostats->set_hvac_mode(
-    device_id: "123e4567-e89b-12d3-a456-426614174000",
-    hvac_mode_setting: "heat_cool",
-    heating_set_point_celsius: 20,
-    cooling_set_point_celsius: 25
-);
+$seam->thermostats->set_hvac_mode(device_id: "123e4567-e89b-12d3-a456-426614174000",hvac_mode_setting: "heat_cool",heating_set_point_celsius: 20,cooling_set_point_celsius: 25)
 ```
 
 #### Response
 
 ```php
 <?php
-[
-    "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "status" => "success",
-    "action_type" => "SET_HVAC_MODE",
-];
+["action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000","status" => "success","action_type" => "SET_HVAC_MODE"]
 ```
 {% endtab %}
 
@@ -111,11 +75,7 @@ seam thermostats set-hvac-mode --device_id "123e4567-e89b-12d3-a456-426614174000
 #### Response
 
 ```seam_cli
-{
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "success",
-  "action_type": "SET_HVAC_MODE"
-}
+{"action_attempt_id":"123e4567-e89b-12d3-a456-426614174000","status":"success","action_type":"SET_HVAC_MODE"}
 ```
 {% endtab %}
 
@@ -124,20 +84,19 @@ seam thermostats set-hvac-mode --device_id "123e4567-e89b-12d3-a456-426614174000
 
 ```go
 package main
+  import api "github.com/seamapi/go"
 
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.SetHvacMode(
-		context.Background(),
-		api.ThermostatsSetHvacModeRequest{
-			DeviceId:               api.String("123e4567-e89b-12d3-a456-426614174000"),
-			HvacModeSetting:        api.String("heat_cool"),
-			HeatingSetPointCelsius: api.Float64(20),
-			CoolingSetPointCelsius: api.Float64(25),
-		},
-	)
-}
+  func main() {
+  client.Thermostats.SetHvacMode(
+context.Background(),
+api.ThermostatsSetHvacModeRequest{
+DeviceId: api.String("123e4567-e89b-12d3-a456-426614174000"),
+HvacModeSetting: api.String("heat_cool"),
+HeatingSetPointCelsius: api.Float64(20),
+CoolingSetPointCelsius: api.Float64(25),
+},
+)
+  }
 ```
 
 #### Response

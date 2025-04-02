@@ -11,20 +11,13 @@ Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/ther
 #### Request
 
 ```javascript
-await seam.thermostats.cool({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  cooling_set_point_celsius: 25,
-});
+await seam.thermostats.cool({"device_id":"123e4567-e89b-12d3-a456-426614174000","cooling_set_point_celsius":25})
 ```
 
 #### Response
 
 ```javascript
-{
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "pending",
-  "action_type": "SET_COOL"
-}
+{"action_attempt_id":"123e4567-e89b-12d3-a456-426614174000","status":"pending","action_type":"SET_COOL"}
 ```
 {% endtab %}
 
@@ -32,19 +25,13 @@ await seam.thermostats.cool({
 #### Request
 
 ```python
-seam.thermostats.cool(
-    device_id="123e4567-e89b-12d3-a456-426614174000", cooling_set_point_celsius=25
-)
+seam.thermostats.cool(device_id="123e4567-e89b-12d3-a456-426614174000", cooling_set_point_celsius=25)
 ```
 
 #### Response
 
 ```python
-ActionAttempt(
-    action_attempt_id="123e4567-e89b-12d3-a456-426614174000",
-    status="pending",
-    action_type="SET_COOL",
-)
+ActionAttempt(action_attempt_id="123e4567-e89b-12d3-a456-426614174000", status="pending", action_type="SET_COOL")
 ```
 {% endtab %}
 
@@ -52,20 +39,13 @@ ActionAttempt(
 #### Request
 
 ```ruby
-seam.thermostats.cool(
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  cooling_set_point_celsius: 25,
-)
+seam.thermostats.cool(device_id: "123e4567-e89b-12d3-a456-426614174000", cooling_set_point_celsius: 25)
 ```
 
 #### Response
 
 ```ruby
-{
-  "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "status" => "pending",
-  "action_type" => "SET_COOL",
-}
+{"action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000","status" => "pending","action_type" => "SET_COOL"}
 ```
 {% endtab %}
 
@@ -74,21 +54,14 @@ seam.thermostats.cool(
 
 ```php
 <?php
-$seam->thermostats->cool(
-    device_id: "123e4567-e89b-12d3-a456-426614174000",
-    cooling_set_point_celsius: 25
-);
+$seam->thermostats->cool(device_id: "123e4567-e89b-12d3-a456-426614174000",cooling_set_point_celsius: 25)
 ```
 
 #### Response
 
 ```php
 <?php
-[
-    "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "status" => "pending",
-    "action_type" => "SET_COOL",
-];
+["action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000","status" => "pending","action_type" => "SET_COOL"]
 ```
 {% endtab %}
 
@@ -102,11 +75,7 @@ seam thermostats cool --device_id "123e4567-e89b-12d3-a456-426614174000" --cooli
 #### Response
 
 ```seam_cli
-{
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "pending",
-  "action_type": "SET_COOL"
-}
+{"action_attempt_id":"123e4567-e89b-12d3-a456-426614174000","status":"pending","action_type":"SET_COOL"}
 ```
 {% endtab %}
 
@@ -115,18 +84,17 @@ seam thermostats cool --device_id "123e4567-e89b-12d3-a456-426614174000" --cooli
 
 ```go
 package main
+  import api "github.com/seamapi/go"
 
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.Cool(
-		context.Background(),
-		api.ThermostatsCoolRequest{
-			DeviceId:               api.String("123e4567-e89b-12d3-a456-426614174000"),
-			CoolingSetPointCelsius: api.Float64(25),
-		},
-	)
-}
+  func main() {
+  client.Thermostats.Cool(
+context.Background(),
+api.ThermostatsCoolRequest{
+DeviceId: api.String("123e4567-e89b-12d3-a456-426614174000"),
+CoolingSetPointCelsius: api.Float64(25),
+},
+)
+  }
 ```
 
 #### Response

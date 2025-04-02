@@ -11,10 +11,7 @@ Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/acc
 #### Request
 
 ```javascript
-await seam.acs.users.removeFromAccessGroup({
-  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  acs_access_group_id: "123e4567-e89b-12d3-a456-426614174000",
-});
+await seam.acs.users.removeFromAccessGroup({"acs_user_id":"8d7e0b3a-b889-49a7-9164-4b71a0506a33","acs_access_group_id":"123e4567-e89b-12d3-a456-426614174000"})
 ```
 
 #### Response
@@ -28,10 +25,7 @@ await seam.acs.users.removeFromAccessGroup({
 #### Request
 
 ```python
-seam.acs.users.remove_from_access_group(
-    acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-    acs_access_group_id="123e4567-e89b-12d3-a456-426614174000",
-)
+seam.acs.users.remove_from_access_group(acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33", acs_access_group_id="123e4567-e89b-12d3-a456-426614174000")
 ```
 
 #### Response
@@ -45,10 +39,7 @@ None
 #### Request
 
 ```ruby
-seam.acs.users.remove_from_access_group(
-  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  acs_access_group_id: "123e4567-e89b-12d3-a456-426614174000",
-)
+seam.acs.users.remove_from_access_group(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33", acs_access_group_id: "123e4567-e89b-12d3-a456-426614174000")
 ```
 
 #### Response
@@ -63,10 +54,7 @@ nil
 
 ```php
 <?php
-$seam->acs->users->remove_from_access_group(
-    acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-    acs_access_group_id: "123e4567-e89b-12d3-a456-426614174000"
-);
+$seam->acs->users->remove_from_access_group(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",acs_access_group_id: "123e4567-e89b-12d3-a456-426614174000")
 ```
 
 #### Response
@@ -95,19 +83,18 @@ seam acs users remove-from-access-group --acs_user_id "8d7e0b3a-b889-49a7-9164-4
 
 ```go
 package main
-
-import api "github.com/seamapi/go"
+  import api "github.com/seamapi/go"
 import users "github.com/seamapi/go/users"
 
-func main() {
-	client.Acs.Users.RemoveFromAccessGroup(
-		context.Background(),
-		users.UsersRemoveFromAccessGroupRequest{
-			AcsUserId:        api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
-			AcsAccessGroupId: api.String("123e4567-e89b-12d3-a456-426614174000"),
-		},
-	)
-}
+  func main() {
+  client.Acs.Users.RemoveFromAccessGroup(
+context.Background(),
+users.UsersRemoveFromAccessGroupRequest{
+AcsUserId: api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
+AcsAccessGroupId: api.String("123e4567-e89b-12d3-a456-426614174000"),
+},
+)
+  }
 ```
 
 #### Response

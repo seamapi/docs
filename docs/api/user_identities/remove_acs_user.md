@@ -11,10 +11,7 @@ Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/acc
 #### Request
 
 ```javascript
-await seam.userIdentities.removeAcsUser({
-  user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
-  acs_user_id: "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe",
-});
+await seam.userIdentities.removeAcsUser({"user_identity_id":"5c945ab5-c75e-4bcb-8e5f-9410061c401f","acs_user_id":"c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe"})
 ```
 
 #### Response
@@ -28,10 +25,7 @@ await seam.userIdentities.removeAcsUser({
 #### Request
 
 ```python
-seam.user_identities.remove_acs_user(
-    user_identity_id="5c945ab5-c75e-4bcb-8e5f-9410061c401f",
-    acs_user_id="c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe",
-)
+seam.user_identities.remove_acs_user(user_identity_id="5c945ab5-c75e-4bcb-8e5f-9410061c401f", acs_user_id="c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe")
 ```
 
 #### Response
@@ -45,10 +39,7 @@ None
 #### Request
 
 ```ruby
-seam.user_identities.remove_acs_user(
-  user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
-  acs_user_id: "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe",
-)
+seam.user_identities.remove_acs_user(user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f", acs_user_id: "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe")
 ```
 
 #### Response
@@ -63,10 +54,7 @@ nil
 
 ```php
 <?php
-$seam->user_identities->remove_acs_user(
-    user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
-    acs_user_id: "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe"
-);
+$seam->user_identities->remove_acs_user(user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",acs_user_id: "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe")
 ```
 
 #### Response
@@ -95,18 +83,17 @@ seam user-identities remove-acs-user --user_identity_id "5c945ab5-c75e-4bcb-8e5f
 
 ```go
 package main
+  import api "github.com/seamapi/go"
 
-import api "github.com/seamapi/go"
-
-func main() {
-	client.UserIdentities.RemoveAcsUser(
-		context.Background(),
-		api.UserIdentitiesRemoveAcsUserRequest{
-			UserIdentityId: api.String("5c945ab5-c75e-4bcb-8e5f-9410061c401f"),
-			AcsUserId:      api.String("c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe"),
-		},
-	)
-}
+  func main() {
+  client.UserIdentities.RemoveAcsUser(
+context.Background(),
+api.UserIdentitiesRemoveAcsUserRequest{
+UserIdentityId: api.String("5c945ab5-c75e-4bcb-8e5f-9410061c401f"),
+AcsUserId: api.String("c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe"),
+},
+)
+  }
 ```
 
 #### Response

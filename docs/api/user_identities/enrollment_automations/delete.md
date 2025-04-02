@@ -11,9 +11,7 @@ Deletes a specified [enrollment automation](https://docs.seam.co/latest/capabili
 #### Request
 
 ```javascript
-await seam.userIdentities.enrollmentAutomations.delete({
-  enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895",
-});
+await seam.userIdentities.enrollmentAutomations.delete({"enrollment_automation_id":"05505650-aa57-49ab-8f19-429738758895"})
 ```
 
 #### Response
@@ -27,9 +25,7 @@ await seam.userIdentities.enrollmentAutomations.delete({
 #### Request
 
 ```python
-seam.user_identities.enrollment_automations.delete(
-    enrollment_automation_id="05505650-aa57-49ab-8f19-429738758895"
-)
+seam.user_identities.enrollment_automations.delete(enrollment_automation_id="05505650-aa57-49ab-8f19-429738758895")
 ```
 
 #### Response
@@ -43,9 +39,7 @@ None
 #### Request
 
 ```ruby
-seam.user_identities.enrollment_automations.delete(
-  enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895",
-)
+seam.user_identities.enrollment_automations.delete(enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895")
 ```
 
 #### Response
@@ -60,9 +54,7 @@ nil
 
 ```php
 <?php
-$seam->user_identities->enrollment_automations->delete(
-    enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895"
-);
+$seam->user_identities->enrollment_automations->delete(enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895")
 ```
 
 #### Response
@@ -91,18 +83,17 @@ seam user-identities enrollment-automations delete --enrollment_automation_id "0
 
 ```go
 package main
-
-import api "github.com/seamapi/go"
+  import api "github.com/seamapi/go"
 import enrollmentautomations "github.com/seamapi/go/enrollmentautomations"
 
-func main() {
-	client.UserIdentities.EnrollmentAutomations.Delete(
-		context.Background(),
-		enrollmentautomations.EnrollmentAutomationsDeleteRequest{
-			EnrollmentAutomationId: api.String("05505650-aa57-49ab-8f19-429738758895"),
-		},
-	)
-}
+  func main() {
+  client.UserIdentities.EnrollmentAutomations.Delete(
+context.Background(),
+enrollmentautomations.EnrollmentAutomationsDeleteRequest{
+EnrollmentAutomationId: api.String("05505650-aa57-49ab-8f19-429738758895"),
+},
+)
+  }
 ```
 
 #### Response

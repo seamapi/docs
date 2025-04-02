@@ -11,23 +11,13 @@ Returns a specified [thermostat schedule](../../../capability-guides/thermostats
 #### Request
 
 ```javascript
-await seam.thermostats.schedules.get({
-  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-});
+await seam.thermostats.schedules.get({"thermostat_schedule_id":"89d3507e-60e3-4101-bd1b-ba066ec30ad4"})
 ```
 
 #### Response
 
 ```javascript
-{
-  "thermostat_schedule_id": "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-  "name": "Reservation 2",
-  "device_id": "2d488679-6f07-4810-aed2-e726872c1dd5",
-  "climate_preset_key": "occupied",
-  "starts_at": "2024-11-10T15:00:00.000Z",
-  "ends_at": "2024-11-15T12:00:00.000Z",
-  "max_override_period_minutes": 90
-}
+{"thermostat_schedule_id":"89d3507e-60e3-4101-bd1b-ba066ec30ad4","name":"Reservation 2","device_id":"2d488679-6f07-4810-aed2-e726872c1dd5","climate_preset_key":"occupied","starts_at":"2024-11-10T15:00:00.000Z","ends_at":"2024-11-15T12:00:00.000Z","max_override_period_minutes":90}
 ```
 {% endtab %}
 
@@ -35,23 +25,13 @@ await seam.thermostats.schedules.get({
 #### Request
 
 ```python
-seam.thermostats.schedules.get(
-    thermostat_schedule_id="89d3507e-60e3-4101-bd1b-ba066ec30ad4"
-)
+seam.thermostats.schedules.get(thermostat_schedule_id="89d3507e-60e3-4101-bd1b-ba066ec30ad4")
 ```
 
 #### Response
 
 ```python
-ThermostatSchedule(
-    thermostat_schedule_id="89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-    name="Reservation 2",
-    device_id="2d488679-6f07-4810-aed2-e726872c1dd5",
-    climate_preset_key="occupied",
-    starts_at="2024-11-10T15:00:00.000Z",
-    ends_at="2024-11-15T12:00:00.000Z",
-    max_override_period_minutes=90,
-)
+ThermostatSchedule(thermostat_schedule_id="89d3507e-60e3-4101-bd1b-ba066ec30ad4", name="Reservation 2", device_id="2d488679-6f07-4810-aed2-e726872c1dd5", climate_preset_key="occupied", starts_at="2024-11-10T15:00:00.000Z", ends_at="2024-11-15T12:00:00.000Z", max_override_period_minutes=90)
 ```
 {% endtab %}
 
@@ -65,15 +45,7 @@ seam.thermostats.schedules.get(thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-
 #### Response
 
 ```ruby
-{
-  "thermostat_schedule_id" => "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-  "name" => "Reservation 2",
-  "device_id" => "2d488679-6f07-4810-aed2-e726872c1dd5",
-  "climate_preset_key" => "occupied",
-  "starts_at" => "2024-11-10T15:00:00.000Z",
-  "ends_at" => "2024-11-15T12:00:00.000Z",
-  "max_override_period_minutes" => 90,
-}
+{"thermostat_schedule_id" => "89d3507e-60e3-4101-bd1b-ba066ec30ad4","name" => "Reservation 2","device_id" => "2d488679-6f07-4810-aed2-e726872c1dd5","climate_preset_key" => "occupied","starts_at" => "2024-11-10T15:00:00.000Z","ends_at" => "2024-11-15T12:00:00.000Z","max_override_period_minutes" => 90}
 ```
 {% endtab %}
 
@@ -82,24 +54,14 @@ seam.thermostats.schedules.get(thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-
 
 ```php
 <?php
-$seam->thermostats->schedules->get(
-    thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
-);
+$seam->thermostats->schedules->get(thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4")
 ```
 
 #### Response
 
 ```php
 <?php
-[
-    "thermostat_schedule_id" => "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-    "name" => "Reservation 2",
-    "device_id" => "2d488679-6f07-4810-aed2-e726872c1dd5",
-    "climate_preset_key" => "occupied",
-    "starts_at" => "2024-11-10T15:00:00.000Z",
-    "ends_at" => "2024-11-15T12:00:00.000Z",
-    "max_override_period_minutes" => 90,
-];
+["thermostat_schedule_id" => "89d3507e-60e3-4101-bd1b-ba066ec30ad4","name" => "Reservation 2","device_id" => "2d488679-6f07-4810-aed2-e726872c1dd5","climate_preset_key" => "occupied","starts_at" => "2024-11-10T15:00:00.000Z","ends_at" => "2024-11-15T12:00:00.000Z","max_override_period_minutes" => 90]
 ```
 {% endtab %}
 
@@ -113,15 +75,7 @@ seam thermostats schedules get --thermostat_schedule_id "89d3507e-60e3-4101-bd1b
 #### Response
 
 ```seam_cli
-{
-  "thermostat_schedule_id": "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-  "name": "Reservation 2",
-  "device_id": "2d488679-6f07-4810-aed2-e726872c1dd5",
-  "climate_preset_key": "occupied",
-  "starts_at": "2024-11-10T15:00:00.000Z",
-  "ends_at": "2024-11-15T12:00:00.000Z",
-  "max_override_period_minutes": 90
-}
+{"thermostat_schedule_id":"89d3507e-60e3-4101-bd1b-ba066ec30ad4","name":"Reservation 2","device_id":"2d488679-6f07-4810-aed2-e726872c1dd5","climate_preset_key":"occupied","starts_at":"2024-11-10T15:00:00.000Z","ends_at":"2024-11-15T12:00:00.000Z","max_override_period_minutes":90}
 ```
 {% endtab %}
 
@@ -130,18 +84,17 @@ seam thermostats schedules get --thermostat_schedule_id "89d3507e-60e3-4101-bd1b
 
 ```go
 package main
-
-import api "github.com/seamapi/go"
+  import api "github.com/seamapi/go"
 import schedules "github.com/seamapi/go/schedules"
 
-func main() {
-	client.Thermostats.Schedules.Get(
-		context.Background(),
-		schedules.SchedulesGetRequest{
-			ThermostatScheduleId: api.String("89d3507e-60e3-4101-bd1b-ba066ec30ad4"),
-		},
-	)
-}
+  func main() {
+  client.Thermostats.Schedules.Get(
+context.Background(),
+schedules.SchedulesGetRequest{
+ThermostatScheduleId: api.String("89d3507e-60e3-4101-bd1b-ba066ec30ad4"),
+},
+)
+  }
 ```
 
 #### Response

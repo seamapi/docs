@@ -11,10 +11,7 @@ Updates a specified [thermostat schedule](../../../capability-guides/thermostats
 #### Request
 
 ```javascript
-await seam.thermostats.schedules.update({
-  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-  ends_at: "2024-11-15T15:00:00Z",
-});
+await seam.thermostats.schedules.update({"thermostat_schedule_id":"89d3507e-60e3-4101-bd1b-ba066ec30ad4","ends_at":"2024-11-15T15:00:00Z"})
 ```
 
 #### Response
@@ -28,10 +25,7 @@ await seam.thermostats.schedules.update({
 #### Request
 
 ```python
-seam.thermostats.schedules.update(
-    thermostat_schedule_id="89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-    ends_at="2024-11-15T15:00:00Z",
-)
+seam.thermostats.schedules.update(thermostat_schedule_id="89d3507e-60e3-4101-bd1b-ba066ec30ad4", ends_at="2024-11-15T15:00:00Z")
 ```
 
 #### Response
@@ -45,10 +39,7 @@ None
 #### Request
 
 ```ruby
-seam.thermostats.schedules.update(
-  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-  ends_at: "2024-11-15T15:00:00Z",
-)
+seam.thermostats.schedules.update(thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4", ends_at: "2024-11-15T15:00:00Z")
 ```
 
 #### Response
@@ -63,10 +54,7 @@ nil
 
 ```php
 <?php
-$seam->thermostats->schedules->update(
-    thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-    ends_at: "2024-11-15T15:00:00Z"
-);
+$seam->thermostats->schedules->update(thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",ends_at: "2024-11-15T15:00:00Z")
 ```
 
 #### Response
@@ -95,19 +83,18 @@ seam thermostats schedules update --thermostat_schedule_id "89d3507e-60e3-4101-b
 
 ```go
 package main
-
-import api "github.com/seamapi/go"
+  import api "github.com/seamapi/go"
 import schedules "github.com/seamapi/go/schedules"
 
-func main() {
-	client.Thermostats.Schedules.Update(
-		context.Background(),
-		schedules.SchedulesUpdateRequest{
-			ThermostatScheduleId: api.String("89d3507e-60e3-4101-bd1b-ba066ec30ad4"),
-			EndsAt:               api.String("2024-11-15T15:00:00Z"),
-		},
-	)
-}
+  func main() {
+  client.Thermostats.Schedules.Update(
+context.Background(),
+schedules.SchedulesUpdateRequest{
+ThermostatScheduleId: api.String("89d3507e-60e3-4101-bd1b-ba066ec30ad4"),
+EndsAt: api.String("2024-11-15T15:00:00Z"),
+},
+)
+  }
 ```
 
 #### Response

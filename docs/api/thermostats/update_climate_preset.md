@@ -11,12 +11,7 @@ Updates a specified [climate preset](../../capability-guides/thermostats/creatin
 #### Request
 
 ```javascript
-await seam.thermostats.updateClimatePreset({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  climate_preset_key: "occupied",
-  cooling_set_point_celsius: 24,
-  manual_override_allowed: true,
-});
+await seam.thermostats.updateClimatePreset({"device_id":"123e4567-e89b-12d3-a456-426614174000","climate_preset_key":"occupied","cooling_set_point_celsius":24,"manual_override_allowed":true})
 ```
 
 #### Response
@@ -30,12 +25,7 @@ await seam.thermostats.updateClimatePreset({
 #### Request
 
 ```python
-seam.thermostats.update_climate_preset(
-    device_id="123e4567-e89b-12d3-a456-426614174000",
-    climate_preset_key="occupied",
-    cooling_set_point_celsius=24,
-    manual_override_allowed=true,
-)
+seam.thermostats.update_climate_preset(device_id="123e4567-e89b-12d3-a456-426614174000", climate_preset_key="occupied", cooling_set_point_celsius=24, manual_override_allowed=true)
 ```
 
 #### Response
@@ -49,12 +39,7 @@ None
 #### Request
 
 ```ruby
-seam.thermostats.update_climate_preset(
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  climate_preset_key: "occupied",
-  cooling_set_point_celsius: 24,
-  manual_override_allowed: true,
-)
+seam.thermostats.update_climate_preset(device_id: "123e4567-e89b-12d3-a456-426614174000", climate_preset_key: "occupied", cooling_set_point_celsius: 24, manual_override_allowed: true)
 ```
 
 #### Response
@@ -69,12 +54,7 @@ nil
 
 ```php
 <?php
-$seam->thermostats->update_climate_preset(
-    device_id: "123e4567-e89b-12d3-a456-426614174000",
-    climate_preset_key: "occupied",
-    cooling_set_point_celsius: 24,
-    manual_override_allowed: true
-);
+$seam->thermostats->update_climate_preset(device_id: "123e4567-e89b-12d3-a456-426614174000",climate_preset_key: "occupied",cooling_set_point_celsius: 24,manual_override_allowed: true)
 ```
 
 #### Response
@@ -103,20 +83,19 @@ seam thermostats update-climate-preset --device_id "123e4567-e89b-12d3-a456-4266
 
 ```go
 package main
+  import api "github.com/seamapi/go"
 
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.UpdateClimatePreset(
-		context.Background(),
-		api.ThermostatsUpdateClimatePresetRequest{
-			DeviceId:               api.String("123e4567-e89b-12d3-a456-426614174000"),
-			ClimatePresetKey:       api.String("occupied"),
-			CoolingSetPointCelsius: api.Float64(24),
-			ManualOverrideAllowed:  api.Bool(true),
-		},
-	)
-}
+  func main() {
+  client.Thermostats.UpdateClimatePreset(
+context.Background(),
+api.ThermostatsUpdateClimatePresetRequest{
+DeviceId: api.String("123e4567-e89b-12d3-a456-426614174000"),
+ClimatePresetKey: api.String("occupied"),
+CoolingSetPointCelsius: api.Float64(24),
+ManualOverrideAllowed: api.Bool(true),
+},
+)
+  }
 ```
 
 #### Response

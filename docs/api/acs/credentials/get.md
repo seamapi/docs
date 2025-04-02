@@ -11,25 +11,13 @@ Returns a specified [credential](../../../capability-guides/access-systems/manag
 #### Request
 
 ```javascript
-await seam.acs.credentials.get({
-  acs_credential_id: "66666666-6666-6666-6666-666666666666",
-});
+await seam.acs.credentials.get({"acs_credential_id":"66666666-6666-6666-6666-666666666666"})
 ```
 
 #### Response
 
 ```javascript
-{
-  "acs_credential_id": "99999999-9999-9999-9999-999999999999",
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "display_name": "Multi Phone Sync Credential",
-  "code": null,
-  "acs_system_id": "11111111-1111-1111-1111-111111111111",
-  "access_method": "mobile_key",
-  "workspace_id": "00000000-0000-0000-0000-000000000000",
-  "created_at": "2024-04-12T03:56:22.396Z",
-  "is_multi_phone_sync_credential": true
-}
+{"acs_credential_id":"99999999-9999-9999-9999-999999999999","acs_user_id":"33333333-3333-3333-3333-333333333333","display_name":"Multi Phone Sync Credential","code":null,"acs_system_id":"11111111-1111-1111-1111-111111111111","access_method":"mobile_key","workspace_id":"00000000-0000-0000-0000-000000000000","created_at":"2024-04-12T03:56:22.396Z","is_multi_phone_sync_credential":true}
 ```
 {% endtab %}
 
@@ -43,17 +31,7 @@ seam.acs.credentials.get(acs_credential_id="66666666-6666-6666-6666-666666666666
 #### Response
 
 ```python
-AcsCredential(
-    acs_credential_id="99999999-9999-9999-9999-999999999999",
-    acs_user_id="33333333-3333-3333-3333-333333333333",
-    display_name="Multi Phone Sync Credential",
-    code=None,
-    acs_system_id="11111111-1111-1111-1111-111111111111",
-    access_method="mobile_key",
-    workspace_id="00000000-0000-0000-0000-000000000000",
-    created_at="2024-04-12T03:56:22.396Z",
-    is_multi_phone_sync_credential=true,
-)
+AcsCredential(acs_credential_id="99999999-9999-9999-9999-999999999999", acs_user_id="33333333-3333-3333-3333-333333333333", display_name="Multi Phone Sync Credential", code=None, acs_system_id="11111111-1111-1111-1111-111111111111", access_method="mobile_key", workspace_id="00000000-0000-0000-0000-000000000000", created_at="2024-04-12T03:56:22.396Z", is_multi_phone_sync_credential=true)
 ```
 {% endtab %}
 
@@ -67,17 +45,7 @@ seam.acs.credentials.get(acs_credential_id: "66666666-6666-6666-6666-66666666666
 #### Response
 
 ```ruby
-{
-  "acs_credential_id" => "99999999-9999-9999-9999-999999999999",
-  "acs_user_id" => "33333333-3333-3333-3333-333333333333",
-  "display_name" => "Multi Phone Sync Credential",
-  "code" => nil,
-  "acs_system_id" => "11111111-1111-1111-1111-111111111111",
-  "access_method" => "mobile_key",
-  "workspace_id" => "00000000-0000-0000-0000-000000000000",
-  "created_at" => "2024-04-12T03:56:22.396Z",
-  "is_multi_phone_sync_credential" => true,
-}
+{"acs_credential_id" => "99999999-9999-9999-9999-999999999999","acs_user_id" => "33333333-3333-3333-3333-333333333333","display_name" => "Multi Phone Sync Credential","code" => nil,"acs_system_id" => "11111111-1111-1111-1111-111111111111","access_method" => "mobile_key","workspace_id" => "00000000-0000-0000-0000-000000000000","created_at" => "2024-04-12T03:56:22.396Z","is_multi_phone_sync_credential" => true}
 ```
 {% endtab %}
 
@@ -86,26 +54,14 @@ seam.acs.credentials.get(acs_credential_id: "66666666-6666-6666-6666-66666666666
 
 ```php
 <?php
-$seam->acs->credentials->get(
-    acs_credential_id: "66666666-6666-6666-6666-666666666666"
-);
+$seam->acs->credentials->get(acs_credential_id: "66666666-6666-6666-6666-666666666666")
 ```
 
 #### Response
 
 ```php
 <?php
-[
-    "acs_credential_id" => "99999999-9999-9999-9999-999999999999",
-    "acs_user_id" => "33333333-3333-3333-3333-333333333333",
-    "display_name" => "Multi Phone Sync Credential",
-    "code" => null,
-    "acs_system_id" => "11111111-1111-1111-1111-111111111111",
-    "access_method" => "mobile_key",
-    "workspace_id" => "00000000-0000-0000-0000-000000000000",
-    "created_at" => "2024-04-12T03:56:22.396Z",
-    "is_multi_phone_sync_credential" => true,
-];
+["acs_credential_id" => "99999999-9999-9999-9999-999999999999","acs_user_id" => "33333333-3333-3333-3333-333333333333","display_name" => "Multi Phone Sync Credential","code" => null,"acs_system_id" => "11111111-1111-1111-1111-111111111111","access_method" => "mobile_key","workspace_id" => "00000000-0000-0000-0000-000000000000","created_at" => "2024-04-12T03:56:22.396Z","is_multi_phone_sync_credential" => true]
 ```
 {% endtab %}
 
@@ -119,17 +75,7 @@ seam acs credentials get --acs_credential_id "66666666-6666-6666-6666-6666666666
 #### Response
 
 ```seam_cli
-{
-  "acs_credential_id": "99999999-9999-9999-9999-999999999999",
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "display_name": "Multi Phone Sync Credential",
-  "code": null,
-  "acs_system_id": "11111111-1111-1111-1111-111111111111",
-  "access_method": "mobile_key",
-  "workspace_id": "00000000-0000-0000-0000-000000000000",
-  "created_at": "2024-04-12T03:56:22.396Z",
-  "is_multi_phone_sync_credential": true
-}
+{"acs_credential_id":"99999999-9999-9999-9999-999999999999","acs_user_id":"33333333-3333-3333-3333-333333333333","display_name":"Multi Phone Sync Credential","code":null,"acs_system_id":"11111111-1111-1111-1111-111111111111","access_method":"mobile_key","workspace_id":"00000000-0000-0000-0000-000000000000","created_at":"2024-04-12T03:56:22.396Z","is_multi_phone_sync_credential":true}
 ```
 {% endtab %}
 
@@ -138,18 +84,17 @@ seam acs credentials get --acs_credential_id "66666666-6666-6666-6666-6666666666
 
 ```go
 package main
-
-import api "github.com/seamapi/go"
+  import api "github.com/seamapi/go"
 import credentials "github.com/seamapi/go/credentials"
 
-func main() {
-	client.Acs.Credentials.Get(
-		context.Background(),
-		credentials.CredentialsGetRequest{
-			AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
-		},
-	)
-}
+  func main() {
+  client.Acs.Credentials.Get(
+context.Background(),
+credentials.CredentialsGetRequest{
+AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
+},
+)
+  }
 ```
 
 #### Response

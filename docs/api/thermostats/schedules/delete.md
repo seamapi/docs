@@ -11,9 +11,7 @@ Deletes a [thermostat schedule](../../../capability-guides/thermostats/creating-
 #### Request
 
 ```javascript
-await seam.thermostats.schedules.delete({
-  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-});
+await seam.thermostats.schedules.delete({"thermostat_schedule_id":"89d3507e-60e3-4101-bd1b-ba066ec30ad4"})
 ```
 
 #### Response
@@ -27,9 +25,7 @@ await seam.thermostats.schedules.delete({
 #### Request
 
 ```python
-seam.thermostats.schedules.delete(
-    thermostat_schedule_id="89d3507e-60e3-4101-bd1b-ba066ec30ad4"
-)
+seam.thermostats.schedules.delete(thermostat_schedule_id="89d3507e-60e3-4101-bd1b-ba066ec30ad4")
 ```
 
 #### Response
@@ -58,9 +54,7 @@ nil
 
 ```php
 <?php
-$seam->thermostats->schedules->delete(
-    thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
-);
+$seam->thermostats->schedules->delete(thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4")
 ```
 
 #### Response
@@ -89,18 +83,17 @@ seam thermostats schedules delete --thermostat_schedule_id "89d3507e-60e3-4101-b
 
 ```go
 package main
-
-import api "github.com/seamapi/go"
+  import api "github.com/seamapi/go"
 import schedules "github.com/seamapi/go/schedules"
 
-func main() {
-	client.Thermostats.Schedules.Delete(
-		context.Background(),
-		schedules.SchedulesDeleteRequest{
-			ThermostatScheduleId: api.String("89d3507e-60e3-4101-bd1b-ba066ec30ad4"),
-		},
-	)
-}
+  func main() {
+  client.Thermostats.Schedules.Delete(
+context.Background(),
+schedules.SchedulesDeleteRequest{
+ThermostatScheduleId: api.String("89d3507e-60e3-4101-bd1b-ba066ec30ad4"),
+},
+)
+  }
 ```
 
 #### Response

@@ -11,10 +11,7 @@ Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access
 #### Request
 
 ```javascript
-await seam.userIdentities.addAcsUser({
-  user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-  acs_user_id: "4d223973-0874-4831-8630-bfcb29e6bce0",
-});
+await seam.userIdentities.addAcsUser({"user_identity_id":"48500a8e-5e7e-4bde-b7e5-0be97cae5d7a","acs_user_id":"4d223973-0874-4831-8630-bfcb29e6bce0"})
 ```
 
 #### Response
@@ -28,10 +25,7 @@ await seam.userIdentities.addAcsUser({
 #### Request
 
 ```python
-seam.user_identities.add_acs_user(
-    user_identity_id="48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    acs_user_id="4d223973-0874-4831-8630-bfcb29e6bce0",
-)
+seam.user_identities.add_acs_user(user_identity_id="48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", acs_user_id="4d223973-0874-4831-8630-bfcb29e6bce0")
 ```
 
 #### Response
@@ -45,10 +39,7 @@ None
 #### Request
 
 ```ruby
-seam.user_identities.add_acs_user(
-  user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-  acs_user_id: "4d223973-0874-4831-8630-bfcb29e6bce0",
-)
+seam.user_identities.add_acs_user(user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", acs_user_id: "4d223973-0874-4831-8630-bfcb29e6bce0")
 ```
 
 #### Response
@@ -63,10 +54,7 @@ nil
 
 ```php
 <?php
-$seam->user_identities->add_acs_user(
-    user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    acs_user_id: "4d223973-0874-4831-8630-bfcb29e6bce0"
-);
+$seam->user_identities->add_acs_user(user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",acs_user_id: "4d223973-0874-4831-8630-bfcb29e6bce0")
 ```
 
 #### Response
@@ -95,18 +83,17 @@ seam user-identities add-acs-user --user_identity_id "48500a8e-5e7e-4bde-b7e5-0b
 
 ```go
 package main
+  import api "github.com/seamapi/go"
 
-import api "github.com/seamapi/go"
-
-func main() {
-	client.UserIdentities.AddAcsUser(
-		context.Background(),
-		api.UserIdentitiesAddAcsUserRequest{
-			UserIdentityId: api.String("48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"),
-			AcsUserId:      api.String("4d223973-0874-4831-8630-bfcb29e6bce0"),
-		},
-	)
-}
+  func main() {
+  client.UserIdentities.AddAcsUser(
+context.Background(),
+api.UserIdentitiesAddAcsUserRequest{
+UserIdentityId: api.String("48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"),
+AcsUserId: api.String("4d223973-0874-4831-8630-bfcb29e6bce0"),
+},
+)
+  }
 ```
 
 #### Response

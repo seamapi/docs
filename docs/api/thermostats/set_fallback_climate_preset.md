@@ -11,10 +11,7 @@ Sets a specified [climate preset](../../capability-guides/thermostats/creating-a
 #### Request
 
 ```javascript
-await seam.thermostats.setFallbackClimatePreset({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  climate_preset_key: "eco",
-});
+await seam.thermostats.setFallbackClimatePreset({"device_id":"123e4567-e89b-12d3-a456-426614174000","climate_preset_key":"eco"})
 ```
 
 #### Response
@@ -28,9 +25,7 @@ await seam.thermostats.setFallbackClimatePreset({
 #### Request
 
 ```python
-seam.thermostats.set_fallback_climate_preset(
-    device_id="123e4567-e89b-12d3-a456-426614174000", climate_preset_key="eco"
-)
+seam.thermostats.set_fallback_climate_preset(device_id="123e4567-e89b-12d3-a456-426614174000", climate_preset_key="eco")
 ```
 
 #### Response
@@ -44,10 +39,7 @@ None
 #### Request
 
 ```ruby
-seam.thermostats.set_fallback_climate_preset(
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  climate_preset_key: "eco",
-)
+seam.thermostats.set_fallback_climate_preset(device_id: "123e4567-e89b-12d3-a456-426614174000", climate_preset_key: "eco")
 ```
 
 #### Response
@@ -62,10 +54,7 @@ nil
 
 ```php
 <?php
-$seam->thermostats->set_fallback_climate_preset(
-    device_id: "123e4567-e89b-12d3-a456-426614174000",
-    climate_preset_key: "eco"
-);
+$seam->thermostats->set_fallback_climate_preset(device_id: "123e4567-e89b-12d3-a456-426614174000",climate_preset_key: "eco")
 ```
 
 #### Response
@@ -94,18 +83,17 @@ seam thermostats set-fallback-climate-preset --device_id "123e4567-e89b-12d3-a45
 
 ```go
 package main
+  import api "github.com/seamapi/go"
 
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.SetFallbackClimatePreset(
-		context.Background(),
-		api.ThermostatsSetFallbackClimatePresetRequest{
-			DeviceId:         api.String("123e4567-e89b-12d3-a456-426614174000"),
-			ClimatePresetKey: api.String("eco"),
-		},
-	)
-}
+  func main() {
+  client.Thermostats.SetFallbackClimatePreset(
+context.Background(),
+api.ThermostatsSetFallbackClimatePresetRequest{
+DeviceId: api.String("123e4567-e89b-12d3-a456-426614174000"),
+ClimatePresetKey: api.String("eco"),
+},
+)
+  }
 ```
 
 #### Response

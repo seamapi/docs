@@ -11,10 +11,7 @@ Assigns a specified [credential](../../../capability-guides/access-systems/manag
 #### Request
 
 ```javascript
-await seam.acs.credentials.assign({
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  acs_credential_id: "66666666-6666-6666-6666-666666666666",
-});
+await seam.acs.credentials.assign({"acs_user_id":"33333333-3333-3333-3333-333333333333","acs_credential_id":"66666666-6666-6666-6666-666666666666"})
 ```
 
 #### Response
@@ -28,10 +25,7 @@ await seam.acs.credentials.assign({
 #### Request
 
 ```python
-seam.acs.credentials.assign(
-    acs_user_id="33333333-3333-3333-3333-333333333333",
-    acs_credential_id="66666666-6666-6666-6666-666666666666",
-)
+seam.acs.credentials.assign(acs_user_id="33333333-3333-3333-3333-333333333333", acs_credential_id="66666666-6666-6666-6666-666666666666")
 ```
 
 #### Response
@@ -45,10 +39,7 @@ None
 #### Request
 
 ```ruby
-seam.acs.credentials.assign(
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  acs_credential_id: "66666666-6666-6666-6666-666666666666",
-)
+seam.acs.credentials.assign(acs_user_id: "33333333-3333-3333-3333-333333333333", acs_credential_id: "66666666-6666-6666-6666-666666666666")
 ```
 
 #### Response
@@ -63,10 +54,7 @@ nil
 
 ```php
 <?php
-$seam->acs->credentials->assign(
-    acs_user_id: "33333333-3333-3333-3333-333333333333",
-    acs_credential_id: "66666666-6666-6666-6666-666666666666"
-);
+$seam->acs->credentials->assign(acs_user_id: "33333333-3333-3333-3333-333333333333",acs_credential_id: "66666666-6666-6666-6666-666666666666")
 ```
 
 #### Response
@@ -95,19 +83,18 @@ seam acs credentials assign --acs_user_id "33333333-3333-3333-3333-333333333333"
 
 ```go
 package main
-
-import api "github.com/seamapi/go"
+  import api "github.com/seamapi/go"
 import credentials "github.com/seamapi/go/credentials"
 
-func main() {
-	client.Acs.Credentials.Assign(
-		context.Background(),
-		credentials.CredentialsAssignRequest{
-			AcsUserId:       api.String("33333333-3333-3333-3333-333333333333"),
-			AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
-		},
-	)
-}
+  func main() {
+  client.Acs.Credentials.Assign(
+context.Background(),
+credentials.CredentialsAssignRequest{
+AcsUserId: api.String("33333333-3333-3333-3333-333333333333"),
+AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
+},
+)
+  }
 ```
 
 #### Response

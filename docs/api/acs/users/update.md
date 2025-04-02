@@ -11,10 +11,7 @@ Updates the properties of a specified [ACS user](https://docs.seam.co/latest/cap
 #### Request
 
 ```javascript
-await seam.acs.users.update({
-  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  phone_number: "+15555550222",
-});
+await seam.acs.users.update({"acs_user_id":"8d7e0b3a-b889-49a7-9164-4b71a0506a33","phone_number":"+15555550222"})
 ```
 
 #### Response
@@ -28,9 +25,7 @@ await seam.acs.users.update({
 #### Request
 
 ```python
-seam.acs.users.update(
-    acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33", phone_number="+15555550222"
-)
+seam.acs.users.update(acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33", phone_number="+15555550222")
 ```
 
 #### Response
@@ -44,10 +39,7 @@ None
 #### Request
 
 ```ruby
-seam.acs.users.update(
-  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  phone_number: "+15555550222",
-)
+seam.acs.users.update(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33", phone_number: "+15555550222")
 ```
 
 #### Response
@@ -62,10 +54,7 @@ nil
 
 ```php
 <?php
-$seam->acs->users->update(
-    acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-    phone_number: "+15555550222"
-);
+$seam->acs->users->update(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",phone_number: "+15555550222")
 ```
 
 #### Response
@@ -94,19 +83,18 @@ seam acs users update --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33" --pho
 
 ```go
 package main
-
-import api "github.com/seamapi/go"
+  import api "github.com/seamapi/go"
 import users "github.com/seamapi/go/users"
 
-func main() {
-	client.Acs.Users.Update(
-		context.Background(),
-		users.UsersUpdateRequest{
-			AcsUserId:   api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
-			PhoneNumber: api.String("+15555550222"),
-		},
-	)
-}
+  func main() {
+  client.Acs.Users.Update(
+context.Background(),
+users.UsersUpdateRequest{
+AcsUserId: api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
+PhoneNumber: api.String("+15555550222"),
+},
+)
+  }
 ```
 
 #### Response

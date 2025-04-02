@@ -11,9 +11,7 @@ Deletes a specified [user identity](https://docs.seam.co/latest/capability-guide
 #### Request
 
 ```javascript
-await seam.userIdentities.delete({
-  user_identity_id: "44d48b20-0dbe-419d-91ca-ab8bceecd135",
-});
+await seam.userIdentities.delete({"user_identity_id":"44d48b20-0dbe-419d-91ca-ab8bceecd135"})
 ```
 
 #### Response
@@ -56,9 +54,7 @@ nil
 
 ```php
 <?php
-$seam->user_identities->delete(
-    user_identity_id: "44d48b20-0dbe-419d-91ca-ab8bceecd135"
-);
+$seam->user_identities->delete(user_identity_id: "44d48b20-0dbe-419d-91ca-ab8bceecd135")
 ```
 
 #### Response
@@ -87,17 +83,16 @@ seam user-identities delete --user_identity_id "44d48b20-0dbe-419d-91ca-ab8bceec
 
 ```go
 package main
+  import api "github.com/seamapi/go"
 
-import api "github.com/seamapi/go"
-
-func main() {
-	client.UserIdentities.Delete(
-		context.Background(),
-		api.UserIdentitiesDeleteRequest{
-			UserIdentityId: api.String("44d48b20-0dbe-419d-91ca-ab8bceecd135"),
-		},
-	)
-}
+  func main() {
+  client.UserIdentities.Delete(
+context.Background(),
+api.UserIdentitiesDeleteRequest{
+UserIdentityId: api.String("44d48b20-0dbe-419d-91ca-ab8bceecd135"),
+},
+)
+  }
 ```
 
 #### Response

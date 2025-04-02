@@ -11,19 +11,13 @@ Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/ther
 #### Request
 
 ```javascript
-await seam.thermostats.off({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-});
+await seam.thermostats.off({"device_id":"123e4567-e89b-12d3-a456-426614174000"})
 ```
 
 #### Response
 
 ```javascript
-{
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "pending",
-  "action_type": "SET_THERMOSTAT_OFF"
-}
+{"action_attempt_id":"123e4567-e89b-12d3-a456-426614174000","status":"pending","action_type":"SET_THERMOSTAT_OFF"}
 ```
 {% endtab %}
 
@@ -37,11 +31,7 @@ seam.thermostats.off(device_id="123e4567-e89b-12d3-a456-426614174000")
 #### Response
 
 ```python
-ActionAttempt(
-    action_attempt_id="123e4567-e89b-12d3-a456-426614174000",
-    status="pending",
-    action_type="SET_THERMOSTAT_OFF",
-)
+ActionAttempt(action_attempt_id="123e4567-e89b-12d3-a456-426614174000", status="pending", action_type="SET_THERMOSTAT_OFF")
 ```
 {% endtab %}
 
@@ -55,11 +45,7 @@ seam.thermostats.off(device_id: "123e4567-e89b-12d3-a456-426614174000")
 #### Response
 
 ```ruby
-{
-  "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "status" => "pending",
-  "action_type" => "SET_THERMOSTAT_OFF",
-}
+{"action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000","status" => "pending","action_type" => "SET_THERMOSTAT_OFF"}
 ```
 {% endtab %}
 
@@ -68,18 +54,14 @@ seam.thermostats.off(device_id: "123e4567-e89b-12d3-a456-426614174000")
 
 ```php
 <?php
-$seam->thermostats->off(device_id: "123e4567-e89b-12d3-a456-426614174000");
+$seam->thermostats->off(device_id: "123e4567-e89b-12d3-a456-426614174000")
 ```
 
 #### Response
 
 ```php
 <?php
-[
-    "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "status" => "pending",
-    "action_type" => "SET_THERMOSTAT_OFF",
-];
+["action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000","status" => "pending","action_type" => "SET_THERMOSTAT_OFF"]
 ```
 {% endtab %}
 
@@ -93,11 +75,7 @@ seam thermostats off --device_id "123e4567-e89b-12d3-a456-426614174000"
 #### Response
 
 ```seam_cli
-{
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "pending",
-  "action_type": "SET_THERMOSTAT_OFF"
-}
+{"action_attempt_id":"123e4567-e89b-12d3-a456-426614174000","status":"pending","action_type":"SET_THERMOSTAT_OFF"}
 ```
 {% endtab %}
 
@@ -106,17 +84,16 @@ seam thermostats off --device_id "123e4567-e89b-12d3-a456-426614174000"
 
 ```go
 package main
+  import api "github.com/seamapi/go"
 
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.Off(
-		context.Background(),
-		api.ThermostatsOffRequest{
-			DeviceId: api.String("123e4567-e89b-12d3-a456-426614174000"),
-		},
-	)
-}
+  func main() {
+  client.Thermostats.Off(
+context.Background(),
+api.ThermostatsOffRequest{
+DeviceId: api.String("123e4567-e89b-12d3-a456-426614174000"),
+},
+)
+  }
 ```
 
 #### Response

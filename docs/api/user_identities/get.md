@@ -11,24 +11,13 @@ Returns a specified [user identity](https://docs.seam.co/latest/capability-guide
 #### Request
 
 ```javascript
-await seam.userIdentities.get({
-  user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-});
+await seam.userIdentities.get({"user_identity_id":"48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"})
 ```
 
 #### Response
 
 ```javascript
-{
-  "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-  "user_identity_key": "jean_doe",
-  "email_address": "jean@example.com",
-  "phone_number": "+15555550110",
-  "display_name": "Jean Doe",
-  "full_name": "Jean Doe",
-  "created_at": "2024-01-11T05:37:50.264Z",
-  "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be"
-}
+{"user_identity_id":"48500a8e-5e7e-4bde-b7e5-0be97cae5d7a","user_identity_key":"jean_doe","email_address":"jean@example.com","phone_number":"+15555550110","display_name":"Jean Doe","full_name":"Jean Doe","created_at":"2024-01-11T05:37:50.264Z","workspace_id":"398d80b7-3f96-47c2-b85a-6f8ba21d07be"}
 ```
 {% endtab %}
 
@@ -42,16 +31,7 @@ seam.user_identities.get(user_identity_id="48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"
 #### Response
 
 ```python
-UserIdentity(
-    user_identity_id="48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    user_identity_key="jean_doe",
-    email_address="jean@example.com",
-    phone_number="+15555550110",
-    display_name="Jean Doe",
-    full_name="Jean Doe",
-    created_at="2024-01-11T05:37:50.264Z",
-    workspace_id="398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-)
+UserIdentity(user_identity_id="48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", user_identity_key="jean_doe", email_address="jean@example.com", phone_number="+15555550110", display_name="Jean Doe", full_name="Jean Doe", created_at="2024-01-11T05:37:50.264Z", workspace_id="398d80b7-3f96-47c2-b85a-6f8ba21d07be")
 ```
 {% endtab %}
 
@@ -65,16 +45,7 @@ seam.user_identities.get(user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a
 #### Response
 
 ```ruby
-{
-  "user_identity_id" => "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-  "user_identity_key" => "jean_doe",
-  "email_address" => "jean@example.com",
-  "phone_number" => "+15555550110",
-  "display_name" => "Jean Doe",
-  "full_name" => "Jean Doe",
-  "created_at" => "2024-01-11T05:37:50.264Z",
-  "workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-}
+{"user_identity_id" => "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a","user_identity_key" => "jean_doe","email_address" => "jean@example.com","phone_number" => "+15555550110","display_name" => "Jean Doe","full_name" => "Jean Doe","created_at" => "2024-01-11T05:37:50.264Z","workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be"}
 ```
 {% endtab %}
 
@@ -83,25 +54,14 @@ seam.user_identities.get(user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a
 
 ```php
 <?php
-$seam->user_identities->get(
-    user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"
-);
+$seam->user_identities->get(user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a")
 ```
 
 #### Response
 
 ```php
 <?php
-[
-    "user_identity_id" => "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    "user_identity_key" => "jean_doe",
-    "email_address" => "jean@example.com",
-    "phone_number" => "+15555550110",
-    "display_name" => "Jean Doe",
-    "full_name" => "Jean Doe",
-    "created_at" => "2024-01-11T05:37:50.264Z",
-    "workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-];
+["user_identity_id" => "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a","user_identity_key" => "jean_doe","email_address" => "jean@example.com","phone_number" => "+15555550110","display_name" => "Jean Doe","full_name" => "Jean Doe","created_at" => "2024-01-11T05:37:50.264Z","workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be"]
 ```
 {% endtab %}
 
@@ -115,16 +75,7 @@ seam user-identities get --user_identity_id "48500a8e-5e7e-4bde-b7e5-0be97cae5d7
 #### Response
 
 ```seam_cli
-{
-  "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-  "user_identity_key": "jean_doe",
-  "email_address": "jean@example.com",
-  "phone_number": "+15555550110",
-  "display_name": "Jean Doe",
-  "full_name": "Jean Doe",
-  "created_at": "2024-01-11T05:37:50.264Z",
-  "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be"
-}
+{"user_identity_id":"48500a8e-5e7e-4bde-b7e5-0be97cae5d7a","user_identity_key":"jean_doe","email_address":"jean@example.com","phone_number":"+15555550110","display_name":"Jean Doe","full_name":"Jean Doe","created_at":"2024-01-11T05:37:50.264Z","workspace_id":"398d80b7-3f96-47c2-b85a-6f8ba21d07be"}
 ```
 {% endtab %}
 
@@ -133,17 +84,16 @@ seam user-identities get --user_identity_id "48500a8e-5e7e-4bde-b7e5-0be97cae5d7
 
 ```go
 package main
+  import api "github.com/seamapi/go"
 
-import api "github.com/seamapi/go"
-
-func main() {
-	client.UserIdentities.Get(
-		context.Background(),
-		api.UserIdentitiesGetRequest{
-			UserIdentityId: api.String("48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"),
-		},
-	)
-}
+  func main() {
+  client.UserIdentities.Get(
+context.Background(),
+api.UserIdentitiesGetRequest{
+UserIdentityId: api.String("48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"),
+},
+)
+  }
 ```
 
 #### Response

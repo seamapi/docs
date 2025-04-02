@@ -11,10 +11,7 @@ Grants a specified [user identity](https://docs.seam.co/latest/capability-guides
 #### Request
 
 ```javascript
-await seam.userIdentities.grantAccessToDevice({
-  user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
-  device_id: "054765c8-a2fc-4599-b486-14c19f462c45",
-});
+await seam.userIdentities.grantAccessToDevice({"user_identity_id":"f3a328b4-dd04-4370-9000-d52b7a01b0bf","device_id":"054765c8-a2fc-4599-b486-14c19f462c45"})
 ```
 
 #### Response
@@ -28,10 +25,7 @@ await seam.userIdentities.grantAccessToDevice({
 #### Request
 
 ```python
-seam.user_identities.grant_access_to_device(
-    user_identity_id="f3a328b4-dd04-4370-9000-d52b7a01b0bf",
-    device_id="054765c8-a2fc-4599-b486-14c19f462c45",
-)
+seam.user_identities.grant_access_to_device(user_identity_id="f3a328b4-dd04-4370-9000-d52b7a01b0bf", device_id="054765c8-a2fc-4599-b486-14c19f462c45")
 ```
 
 #### Response
@@ -45,10 +39,7 @@ None
 #### Request
 
 ```ruby
-seam.user_identities.grant_access_to_device(
-  user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
-  device_id: "054765c8-a2fc-4599-b486-14c19f462c45",
-)
+seam.user_identities.grant_access_to_device(user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf", device_id: "054765c8-a2fc-4599-b486-14c19f462c45")
 ```
 
 #### Response
@@ -63,10 +54,7 @@ nil
 
 ```php
 <?php
-$seam->user_identities->grant_access_to_device(
-    user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
-    device_id: "054765c8-a2fc-4599-b486-14c19f462c45"
-);
+$seam->user_identities->grant_access_to_device(user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",device_id: "054765c8-a2fc-4599-b486-14c19f462c45")
 ```
 
 #### Response
@@ -95,18 +83,17 @@ seam user-identities grant-access-to-device --user_identity_id "f3a328b4-dd04-43
 
 ```go
 package main
+  import api "github.com/seamapi/go"
 
-import api "github.com/seamapi/go"
-
-func main() {
-	client.UserIdentities.GrantAccessToDevice(
-		context.Background(),
-		api.UserIdentitiesGrantAccessToDeviceRequest{
-			UserIdentityId: api.String("f3a328b4-dd04-4370-9000-d52b7a01b0bf"),
-			DeviceId:       api.String("054765c8-a2fc-4599-b486-14c19f462c45"),
-		},
-	)
-}
+  func main() {
+  client.UserIdentities.GrantAccessToDevice(
+context.Background(),
+api.UserIdentitiesGrantAccessToDeviceRequest{
+UserIdentityId: api.String("f3a328b4-dd04-4370-9000-d52b7a01b0bf"),
+DeviceId: api.String("054765c8-a2fc-4599-b486-14c19f462c45"),
+},
+)
+  }
 ```
 
 #### Response
