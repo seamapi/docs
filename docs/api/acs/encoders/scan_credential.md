@@ -43,8 +43,7 @@ ID of the action attempt.
 
 Format: `Enum`
 
-Possible enum values:
-- `SCAN_CREDENTIAL`
+Value: `SCAN_CREDENTIAL`
 
 ---
 

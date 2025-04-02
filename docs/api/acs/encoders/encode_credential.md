@@ -54,8 +54,7 @@ Format: `Enum`
 
 Type of action that the action attempt tracks.
 
-Possible enum values:
-- `ENCODE_CREDENTIAL`
+Value: `ENCODE_CREDENTIAL`
 
 ---
 

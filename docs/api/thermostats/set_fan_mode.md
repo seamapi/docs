@@ -194,8 +194,7 @@ ID of the action attempt.
 
 Format: `Enum`
 
-Possible enum values:
-- `SET_FAN_MODE`
+Value: `SET_FAN_MODE`
 
 ---
 
