@@ -11,13 +11,22 @@ Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/
 #### Request
 
 ```javascript
-await seam.acs.users.list()
+await seam.acs.users.list();
 ```
 
 #### Response
 
 ```javascript
-{"acs_user_id":"123e4567-e89b-12d3-a456-426614174000","acs_system_id":"123e4567-e89b-12d3-a456-426614174000","workspace_id":"123e4567-e89b-12d3-a456-426614174000","created_at":"2024-04-05T07:57:05.323Z","display_name":"Jane Doe","full_name":"Jane Doe","email_address":"jane@example.com","phone_number":"+15555550100"}
+{
+  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
+  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+  "created_at": "2024-04-05T07:57:05.323Z",
+  "display_name": "Jane Doe",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15555550100"
+}
 ```
 {% endtab %}
 
@@ -31,7 +40,16 @@ seam.acs.users.list()
 #### Response
 
 ```python
-AcsUser(acs_user_id="123e4567-e89b-12d3-a456-426614174000", acs_system_id="123e4567-e89b-12d3-a456-426614174000", workspace_id="123e4567-e89b-12d3-a456-426614174000", created_at="2024-04-05T07:57:05.323Z", display_name="Jane Doe", full_name="Jane Doe", email_address="jane@example.com", phone_number="+15555550100")
+AcsUser(
+    acs_user_id="123e4567-e89b-12d3-a456-426614174000",
+    acs_system_id="123e4567-e89b-12d3-a456-426614174000",
+    workspace_id="123e4567-e89b-12d3-a456-426614174000",
+    created_at="2024-04-05T07:57:05.323Z",
+    display_name="Jane Doe",
+    full_name="Jane Doe",
+    email_address="jane@example.com",
+    phone_number="+15555550100",
+)
 ```
 {% endtab %}
 
@@ -45,7 +63,16 @@ seam.acs.users.list()
 #### Response
 
 ```ruby
-{"acs_user_id" => "123e4567-e89b-12d3-a456-426614174000","acs_system_id" => "123e4567-e89b-12d3-a456-426614174000","workspace_id" => "123e4567-e89b-12d3-a456-426614174000","created_at" => "2024-04-05T07:57:05.323Z","display_name" => "Jane Doe","full_name" => "Jane Doe","email_address" => "jane@example.com","phone_number" => "+15555550100"}
+{
+  "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
+  "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
+  "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
+  "created_at" => "2024-04-05T07:57:05.323Z",
+  "display_name" => "Jane Doe",
+  "full_name" => "Jane Doe",
+  "email_address" => "jane@example.com",
+  "phone_number" => "+15555550100",
+}
 ```
 {% endtab %}
 
@@ -54,14 +81,23 @@ seam.acs.users.list()
 
 ```php
 <?php
-$seam->acs->users->list()
+$seam->acs->users->list();
 ```
 
 #### Response
 
 ```php
 <?php
-["acs_user_id" => "123e4567-e89b-12d3-a456-426614174000","acs_system_id" => "123e4567-e89b-12d3-a456-426614174000","workspace_id" => "123e4567-e89b-12d3-a456-426614174000","created_at" => "2024-04-05T07:57:05.323Z","display_name" => "Jane Doe","full_name" => "Jane Doe","email_address" => "jane@example.com","phone_number" => "+15555550100"]
+[
+    "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "created_at" => "2024-04-05T07:57:05.323Z",
+    "display_name" => "Jane Doe",
+    "full_name" => "Jane Doe",
+    "email_address" => "jane@example.com",
+    "phone_number" => "+15555550100",
+];
 ```
 {% endtab %}
 
@@ -69,13 +105,22 @@ $seam->acs->users->list()
 #### Request
 
 ```seam_cli
-seam acs users list 
+seam acs users list
 ```
 
 #### Response
 
 ```seam_cli
-{"acs_user_id":"123e4567-e89b-12d3-a456-426614174000","acs_system_id":"123e4567-e89b-12d3-a456-426614174000","workspace_id":"123e4567-e89b-12d3-a456-426614174000","created_at":"2024-04-05T07:57:05.323Z","display_name":"Jane Doe","full_name":"Jane Doe","email_address":"jane@example.com","phone_number":"+15555550100"}
+{
+  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
+  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+  "created_at": "2024-04-05T07:57:05.323Z",
+  "display_name": "Jane Doe",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15555550100"
+}
 ```
 {% endtab %}
 
@@ -84,12 +129,10 @@ seam acs users list
 
 ```go
 package main
-  
 
-  func main() {
-  client.Acs.Users.List(context.Background(),
-)
-  }
+func main() {
+	client.Acs.Users.List(context.Background())
+}
 ```
 
 #### Response

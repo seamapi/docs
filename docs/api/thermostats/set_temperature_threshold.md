@@ -11,7 +11,11 @@ Sets a [temperature threshold](../../capability-guides/thermostats/setting-and-m
 #### Request
 
 ```javascript
-await seam.thermostats.setTemperatureThreshold({"device_id":"123e4567-e89b-12d3-a456-426614174000","lower_limit_celsius":4,"upper_limit_celsius":30})
+await seam.thermostats.setTemperatureThreshold({
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  lower_limit_celsius: 4,
+  upper_limit_celsius: 30,
+});
 ```
 
 #### Response
@@ -25,7 +29,11 @@ await seam.thermostats.setTemperatureThreshold({"device_id":"123e4567-e89b-12d3-
 #### Request
 
 ```python
-seam.thermostats.set_temperature_threshold(device_id="123e4567-e89b-12d3-a456-426614174000", lower_limit_celsius=4, upper_limit_celsius=30)
+seam.thermostats.set_temperature_threshold(
+    device_id="123e4567-e89b-12d3-a456-426614174000",
+    lower_limit_celsius=4,
+    upper_limit_celsius=30,
+)
 ```
 
 #### Response
@@ -39,7 +47,11 @@ None
 #### Request
 
 ```ruby
-seam.thermostats.set_temperature_threshold(device_id: "123e4567-e89b-12d3-a456-426614174000", lower_limit_celsius: 4, upper_limit_celsius: 30)
+seam.thermostats.set_temperature_threshold(
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  lower_limit_celsius: 4,
+  upper_limit_celsius: 30,
+)
 ```
 
 #### Response
@@ -54,7 +66,11 @@ nil
 
 ```php
 <?php
-$seam->thermostats->set_temperature_threshold(device_id: "123e4567-e89b-12d3-a456-426614174000",lower_limit_celsius: 4,upper_limit_celsius: 30)
+$seam->thermostats->set_temperature_threshold(
+    device_id: "123e4567-e89b-12d3-a456-426614174000",
+    lower_limit_celsius: 4,
+    upper_limit_celsius: 30
+);
 ```
 
 #### Response
@@ -83,18 +99,19 @@ seam thermostats set-temperature-threshold --device_id "123e4567-e89b-12d3-a456-
 
 ```go
 package main
-  import api "github.com/seamapi/go"
 
-  func main() {
-  client.Thermostats.SetTemperatureThreshold(
-context.Background(),
-api.ThermostatsSetTemperatureThresholdRequest{
-DeviceId: api.String("123e4567-e89b-12d3-a456-426614174000"),
-LowerLimitCelsius: api.Float64(4),
-UpperLimitCelsius: api.Float64(30),
-},
-)
-  }
+import api "github.com/seamapi/go"
+
+func main() {
+	client.Thermostats.SetTemperatureThreshold(
+		context.Background(),
+		api.ThermostatsSetTemperatureThresholdRequest{
+			DeviceId:          api.String("123e4567-e89b-12d3-a456-426614174000"),
+			LowerLimitCelsius: api.Float64(4),
+			UpperLimitCelsius: api.Float64(30),
+		},
+	)
+}
 ```
 
 #### Response

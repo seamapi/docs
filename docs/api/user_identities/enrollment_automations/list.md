@@ -11,13 +11,25 @@ Returns a list of all [enrollment automations](https://docs.seam.co/latest/capab
 #### Request
 
 ```javascript
-await seam.userIdentities.enrollmentAutomations.list({"user_identity_id":"5c945ab5-c75e-4bcb-8e5f-9410061c401f"})
+await seam.userIdentities.enrollmentAutomations.list({
+  user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
+});
 ```
 
 #### Response
 
 ```javascript
-[{"user_identity_id":"5c945ab5-c75e-4bcb-8e5f-9410061c401f","enrollment_automation_id":"05505650-aa57-49ab-8f19-429738758895","acs_credential_provisioning_automation_id":"05505650-aa57-49ab-8f19-429738758895","credential_manager_acs_system_id":"6737e186-8d54-48ce-a7da-a0be4d252172","is_running":true,"workspace_id":"398d80b7-3f96-47c2-b85a-6f8ba21d07be","created_at":"2024-01-09T05:45:33.068Z"}]
+[
+  {
+    "user_identity_id": "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
+    "enrollment_automation_id": "05505650-aa57-49ab-8f19-429738758895",
+    "acs_credential_provisioning_automation_id": "05505650-aa57-49ab-8f19-429738758895",
+    "credential_manager_acs_system_id": "6737e186-8d54-48ce-a7da-a0be4d252172",
+    "is_running": true,
+    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+    "created_at": "2024-01-09T05:45:33.068Z"
+  }
+]
 ```
 {% endtab %}
 
@@ -25,13 +37,25 @@ await seam.userIdentities.enrollmentAutomations.list({"user_identity_id":"5c945a
 #### Request
 
 ```python
-seam.user_identities.enrollment_automations.list(user_identity_id="5c945ab5-c75e-4bcb-8e5f-9410061c401f")
+seam.user_identities.enrollment_automations.list(
+    user_identity_id="5c945ab5-c75e-4bcb-8e5f-9410061c401f"
+)
 ```
 
 #### Response
 
 ```python
-[EnrollmentAutomation(user_identity_id="5c945ab5-c75e-4bcb-8e5f-9410061c401f", enrollment_automation_id="05505650-aa57-49ab-8f19-429738758895", acs_credential_provisioning_automation_id="05505650-aa57-49ab-8f19-429738758895", credential_manager_acs_system_id="6737e186-8d54-48ce-a7da-a0be4d252172", is_running=true, workspace_id="398d80b7-3f96-47c2-b85a-6f8ba21d07be", created_at="2024-01-09T05:45:33.068Z")]
+[
+    EnrollmentAutomation(
+        user_identity_id="5c945ab5-c75e-4bcb-8e5f-9410061c401f",
+        enrollment_automation_id="05505650-aa57-49ab-8f19-429738758895",
+        acs_credential_provisioning_automation_id="05505650-aa57-49ab-8f19-429738758895",
+        credential_manager_acs_system_id="6737e186-8d54-48ce-a7da-a0be4d252172",
+        is_running=true,
+        workspace_id="398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+        created_at="2024-01-09T05:45:33.068Z",
+    )
+]
 ```
 {% endtab %}
 
@@ -39,13 +63,25 @@ seam.user_identities.enrollment_automations.list(user_identity_id="5c945ab5-c75e
 #### Request
 
 ```ruby
-seam.user_identities.enrollment_automations.list(user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f")
+seam.user_identities.enrollment_automations.list(
+  user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
+)
 ```
 
 #### Response
 
 ```ruby
-[{"user_identity_id" => "5c945ab5-c75e-4bcb-8e5f-9410061c401f","enrollment_automation_id" => "05505650-aa57-49ab-8f19-429738758895","acs_credential_provisioning_automation_id" => "05505650-aa57-49ab-8f19-429738758895","credential_manager_acs_system_id" => "6737e186-8d54-48ce-a7da-a0be4d252172","is_running" => true,"workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be","created_at" => "2024-01-09T05:45:33.068Z"}]
+[
+  {
+    "user_identity_id" => "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
+    "enrollment_automation_id" => "05505650-aa57-49ab-8f19-429738758895",
+    "acs_credential_provisioning_automation_id" => "05505650-aa57-49ab-8f19-429738758895",
+    "credential_manager_acs_system_id" => "6737e186-8d54-48ce-a7da-a0be4d252172",
+    "is_running" => true,
+    "workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+    "created_at" => "2024-01-09T05:45:33.068Z",
+  },
+]
 ```
 {% endtab %}
 
@@ -54,14 +90,28 @@ seam.user_identities.enrollment_automations.list(user_identity_id: "5c945ab5-c75
 
 ```php
 <?php
-$seam->user_identities->enrollment_automations->list(user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f")
+$seam->user_identities->enrollment_automations->list(
+    user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f"
+);
 ```
 
 #### Response
 
 ```php
 <?php
-[["user_identity_id" => "5c945ab5-c75e-4bcb-8e5f-9410061c401f","enrollment_automation_id" => "05505650-aa57-49ab-8f19-429738758895","acs_credential_provisioning_automation_id" => "05505650-aa57-49ab-8f19-429738758895","credential_manager_acs_system_id" => "6737e186-8d54-48ce-a7da-a0be4d252172","is_running" => true,"workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be","created_at" => "2024-01-09T05:45:33.068Z"]]
+[
+    [
+        "user_identity_id" => "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
+        "enrollment_automation_id" => "05505650-aa57-49ab-8f19-429738758895",
+        "acs_credential_provisioning_automation_id" =>
+            "05505650-aa57-49ab-8f19-429738758895",
+        "credential_manager_acs_system_id" =>
+            "6737e186-8d54-48ce-a7da-a0be4d252172",
+        "is_running" => true,
+        "workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+        "created_at" => "2024-01-09T05:45:33.068Z",
+    ],
+];
 ```
 {% endtab %}
 
@@ -75,7 +125,17 @@ seam user-identities enrollment-automations list --user_identity_id "5c945ab5-c7
 #### Response
 
 ```seam_cli
-[{"user_identity_id":"5c945ab5-c75e-4bcb-8e5f-9410061c401f","enrollment_automation_id":"05505650-aa57-49ab-8f19-429738758895","acs_credential_provisioning_automation_id":"05505650-aa57-49ab-8f19-429738758895","credential_manager_acs_system_id":"6737e186-8d54-48ce-a7da-a0be4d252172","is_running":true,"workspace_id":"398d80b7-3f96-47c2-b85a-6f8ba21d07be","created_at":"2024-01-09T05:45:33.068Z"}]
+[
+  {
+    "user_identity_id": "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
+    "enrollment_automation_id": "05505650-aa57-49ab-8f19-429738758895",
+    "acs_credential_provisioning_automation_id": "05505650-aa57-49ab-8f19-429738758895",
+    "credential_manager_acs_system_id": "6737e186-8d54-48ce-a7da-a0be4d252172",
+    "is_running": true,
+    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+    "created_at": "2024-01-09T05:45:33.068Z"
+  }
+]
 ```
 {% endtab %}
 
@@ -84,17 +144,18 @@ seam user-identities enrollment-automations list --user_identity_id "5c945ab5-c7
 
 ```go
 package main
-  import api "github.com/seamapi/go"
+
+import api "github.com/seamapi/go"
 import enrollmentautomations "github.com/seamapi/go/enrollmentautomations"
 
-  func main() {
-  client.UserIdentities.EnrollmentAutomations.List(
-context.Background(),
-enrollmentautomations.EnrollmentAutomationsListRequest{
-UserIdentityId: api.String("5c945ab5-c75e-4bcb-8e5f-9410061c401f"),
-},
-)
-  }
+func main() {
+	client.UserIdentities.EnrollmentAutomations.List(
+		context.Background(),
+		enrollmentautomations.EnrollmentAutomationsListRequest{
+			UserIdentityId: api.String("5c945ab5-c75e-4bcb-8e5f-9410061c401f"),
+		},
+	)
+}
 ```
 
 #### Response

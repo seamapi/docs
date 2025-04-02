@@ -11,13 +11,36 @@ Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guide
 #### Request
 
 ```javascript
-await seam.thermostats.list()
+await seam.thermostats.list();
 ```
 
 #### Response
 
 ```javascript
-[{"device_id":"123e4567-e89b-12d3-a456-426614174000","device_type":"ecobee_thermostat","capabilities_supported":["thermostat"],"properties":{"name":"Entryway","online":"true,","relative_humidity":0.36,"temperature_farenheit":70,"available_hvac_mode_settings":["cool","heat","heat_cool","off"],"current_climate_setting":{"hvac_mode_setting":"heat_cool","cooling_set_point_farenheit":75,"heating_set_point_farenheit":65,"manual_override_allowed":false},"location":null,"connected_account_id":"123e4567-e89b-12d3-a456-426614174000","workspace_id":"123e4567-e89b-12d3-a456-426614174000","created_at":"2024-04-05T07:57:05.323Z"}}]
+[
+  {
+    "device_id": "123e4567-e89b-12d3-a456-426614174000",
+    "device_type": "ecobee_thermostat",
+    "capabilities_supported": ["thermostat"],
+    "properties": {
+      "name": "Entryway",
+      "online": "true,",
+      "relative_humidity": 0.36,
+      "temperature_farenheit": 70,
+      "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+      "current_climate_setting": {
+        "hvac_mode_setting": "heat_cool",
+        "cooling_set_point_farenheit": 75,
+        "heating_set_point_farenheit": 65,
+        "manual_override_allowed": false
+      },
+      "location": null,
+      "connected_account_id": "123e4567-e89b-12d3-a456-426614174000",
+      "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+      "created_at": "2024-04-05T07:57:05.323Z"
+    }
+  }
+]
 ```
 {% endtab %}
 
@@ -31,7 +54,30 @@ seam.thermostats.list()
 #### Response
 
 ```python
-[Device(device_id="123e4567-e89b-12d3-a456-426614174000", device_type="ecobee_thermostat", capabilities_supported=["thermostat"], properties={"name":"Entryway","online":"true,","relative_humidity":0.36,"temperature_farenheit":70,"available_hvac_mode_settings":["cool","heat","heat_cool","off"],"current_climate_setting":{"hvac_mode_setting":"heat_cool","cooling_set_point_farenheit":75,"heating_set_point_farenheit":65,"manual_override_allowed":false},"location":null,"connected_account_id":"123e4567-e89b-12d3-a456-426614174000","workspace_id":"123e4567-e89b-12d3-a456-426614174000","created_at":"2024-04-05T07:57:05.323Z"})]
+[
+    Device(
+        device_id="123e4567-e89b-12d3-a456-426614174000",
+        device_type="ecobee_thermostat",
+        capabilities_supported=["thermostat"],
+        properties={
+            "name": "Entryway",
+            "online": "true,",
+            "relative_humidity": 0.36,
+            "temperature_farenheit": 70,
+            "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+            "current_climate_setting": {
+                "hvac_mode_setting": "heat_cool",
+                "cooling_set_point_farenheit": 75,
+                "heating_set_point_farenheit": 65,
+                "manual_override_allowed": false,
+            },
+            "location": null,
+            "connected_account_id": "123e4567-e89b-12d3-a456-426614174000",
+            "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+            "created_at": "2024-04-05T07:57:05.323Z",
+        },
+    )
+]
 ```
 {% endtab %}
 
@@ -45,7 +91,30 @@ seam.thermostats.list()
 #### Response
 
 ```ruby
-[{"device_id" => "123e4567-e89b-12d3-a456-426614174000","device_type" => "ecobee_thermostat","capabilities_supported" => ["thermostat"],"properties" => {"name":"Entryway","online":"true,","relative_humidity":0.36,"temperature_farenheit":70,"available_hvac_mode_settings":["cool","heat","heat_cool","off"],"current_climate_setting":{"hvac_mode_setting":"heat_cool","cooling_set_point_farenheit":75,"heating_set_point_farenheit":65,"manual_override_allowed":false},"location":null,"connected_account_id":"123e4567-e89b-12d3-a456-426614174000","workspace_id":"123e4567-e89b-12d3-a456-426614174000","created_at":"2024-04-05T07:57:05.323Z"}}]
+[
+  {
+    "device_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "device_type" => "ecobee_thermostat",
+    "capabilities_supported" => ["thermostat"],
+    "properties" => {
+      name: "Entryway",
+      online: "true,",
+      relative_humidity: 0.36,
+      temperature_farenheit: 70,
+      available_hvac_mode_settings: %w[cool heat heat_cool off],
+      current_climate_setting: {
+        hvac_mode_setting: "heat_cool",
+        cooling_set_point_farenheit: 75,
+        heating_set_point_farenheit: 65,
+        manual_override_allowed: false,
+      },
+      location: null,
+      connected_account_id: "123e4567-e89b-12d3-a456-426614174000",
+      workspace_id: "123e4567-e89b-12d3-a456-426614174000",
+      created_at: "2024-04-05T07:57:05.323Z",
+    },
+  },
+]
 ```
 {% endtab %}
 
@@ -54,14 +123,42 @@ seam.thermostats.list()
 
 ```php
 <?php
-$seam->thermostats->list()
+$seam->thermostats->list();
 ```
 
 #### Response
 
 ```php
 <?php
-[["device_id" => "123e4567-e89b-12d3-a456-426614174000","device_type" => "ecobee_thermostat","capabilities_supported" => ["thermostat"],"properties" => ["name" => "Entryway", "online" => "true,", "relative_humidity" => 0.36, "temperature_farenheit" => 70, "available_hvac_mode_settings" => ["cool", "heat", "heat_cool", "off"], "current_climate_setting" => ["hvac_mode_setting" => "heat_cool", "cooling_set_point_farenheit" => 75, "heating_set_point_farenheit" => 65, "manual_override_allowed" => false], "location" => null, "connected_account_id" => "123e4567-e89b-12d3-a456-426614174000", "workspace_id" => "123e4567-e89b-12d3-a456-426614174000", "created_at" => "2024-04-05T07:57:05.323Z"]]]
+[
+    [
+        "device_id" => "123e4567-e89b-12d3-a456-426614174000",
+        "device_type" => "ecobee_thermostat",
+        "capabilities_supported" => ["thermostat"],
+        "properties" => [
+            "name" => "Entryway",
+            "online" => "true,",
+            "relative_humidity" => 0.36,
+            "temperature_farenheit" => 70,
+            "available_hvac_mode_settings" => [
+                "cool",
+                "heat",
+                "heat_cool",
+                "off",
+            ],
+            "current_climate_setting" => [
+                "hvac_mode_setting" => "heat_cool",
+                "cooling_set_point_farenheit" => 75,
+                "heating_set_point_farenheit" => 65,
+                "manual_override_allowed" => false,
+            ],
+            "location" => null,
+            "connected_account_id" => "123e4567-e89b-12d3-a456-426614174000",
+            "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
+            "created_at" => "2024-04-05T07:57:05.323Z",
+        ],
+    ],
+];
 ```
 {% endtab %}
 
@@ -69,13 +166,36 @@ $seam->thermostats->list()
 #### Request
 
 ```seam_cli
-seam thermostats list 
+seam thermostats list
 ```
 
 #### Response
 
 ```seam_cli
-[{"device_id":"123e4567-e89b-12d3-a456-426614174000","device_type":"ecobee_thermostat","capabilities_supported":["thermostat"],"properties":{"name":"Entryway","online":"true,","relative_humidity":0.36,"temperature_farenheit":70,"available_hvac_mode_settings":["cool","heat","heat_cool","off"],"current_climate_setting":{"hvac_mode_setting":"heat_cool","cooling_set_point_farenheit":75,"heating_set_point_farenheit":65,"manual_override_allowed":false},"location":null,"connected_account_id":"123e4567-e89b-12d3-a456-426614174000","workspace_id":"123e4567-e89b-12d3-a456-426614174000","created_at":"2024-04-05T07:57:05.323Z"}}]
+[
+  {
+    "device_id": "123e4567-e89b-12d3-a456-426614174000",
+    "device_type": "ecobee_thermostat",
+    "capabilities_supported": ["thermostat"],
+    "properties": {
+      "name": "Entryway",
+      "online": "true,",
+      "relative_humidity": 0.36,
+      "temperature_farenheit": 70,
+      "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+      "current_climate_setting": {
+        "hvac_mode_setting": "heat_cool",
+        "cooling_set_point_farenheit": 75,
+        "heating_set_point_farenheit": 65,
+        "manual_override_allowed": false
+      },
+      "location": null,
+      "connected_account_id": "123e4567-e89b-12d3-a456-426614174000",
+      "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+      "created_at": "2024-04-05T07:57:05.323Z"
+    }
+  }
+]
 ```
 {% endtab %}
 
@@ -84,12 +204,10 @@ seam thermostats list
 
 ```go
 package main
-  
 
-  func main() {
-  client.Thermostats.List(context.Background(),
-)
-  }
+func main() {
+	client.Thermostats.List(context.Background())
+}
 ```
 
 #### Response

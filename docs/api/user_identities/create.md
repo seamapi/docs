@@ -11,13 +11,27 @@ Creates a new [user identity](https://docs.seam.co/latest/capability-guides/mobi
 #### Request
 
 ```javascript
-await seam.userIdentities.create({"user_identity_key":"jean_doe","email_address":"jean@example.com","phone_number":"+15555550110","full_name":"Jean Doe"})
+await seam.userIdentities.create({
+  user_identity_key: "jean_doe",
+  email_address: "jean@example.com",
+  phone_number: "+15555550110",
+  full_name: "Jean Doe",
+});
 ```
 
 #### Response
 
 ```javascript
-{"user_identity_id":"48500a8e-5e7e-4bde-b7e5-0be97cae5d7a","user_identity_key":"jean_doe","email_address":"jean@example.com","phone_number":"+15555550110","display_name":"Jean Doe","full_name":"Jean Doe","created_at":"2024-01-11T05:37:50.264Z","workspace_id":"398d80b7-3f96-47c2-b85a-6f8ba21d07be"}
+{
+  "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+  "user_identity_key": "jean_doe",
+  "email_address": "jean@example.com",
+  "phone_number": "+15555550110",
+  "display_name": "Jean Doe",
+  "full_name": "Jean Doe",
+  "created_at": "2024-01-11T05:37:50.264Z",
+  "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be"
+}
 ```
 {% endtab %}
 
@@ -25,13 +39,27 @@ await seam.userIdentities.create({"user_identity_key":"jean_doe","email_address"
 #### Request
 
 ```python
-seam.user_identities.create(user_identity_key="jean_doe", email_address="jean@example.com", phone_number="+15555550110", full_name="Jean Doe")
+seam.user_identities.create(
+    user_identity_key="jean_doe",
+    email_address="jean@example.com",
+    phone_number="+15555550110",
+    full_name="Jean Doe",
+)
 ```
 
 #### Response
 
 ```python
-UserIdentity(user_identity_id="48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", user_identity_key="jean_doe", email_address="jean@example.com", phone_number="+15555550110", display_name="Jean Doe", full_name="Jean Doe", created_at="2024-01-11T05:37:50.264Z", workspace_id="398d80b7-3f96-47c2-b85a-6f8ba21d07be")
+UserIdentity(
+    user_identity_id="48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+    user_identity_key="jean_doe",
+    email_address="jean@example.com",
+    phone_number="+15555550110",
+    display_name="Jean Doe",
+    full_name="Jean Doe",
+    created_at="2024-01-11T05:37:50.264Z",
+    workspace_id="398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+)
 ```
 {% endtab %}
 
@@ -39,13 +67,27 @@ UserIdentity(user_identity_id="48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", user_ident
 #### Request
 
 ```ruby
-seam.user_identities.create(user_identity_key: "jean_doe", email_address: "jean@example.com", phone_number: "+15555550110", full_name: "Jean Doe")
+seam.user_identities.create(
+  user_identity_key: "jean_doe",
+  email_address: "jean@example.com",
+  phone_number: "+15555550110",
+  full_name: "Jean Doe",
+)
 ```
 
 #### Response
 
 ```ruby
-{"user_identity_id" => "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a","user_identity_key" => "jean_doe","email_address" => "jean@example.com","phone_number" => "+15555550110","display_name" => "Jean Doe","full_name" => "Jean Doe","created_at" => "2024-01-11T05:37:50.264Z","workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be"}
+{
+  "user_identity_id" => "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+  "user_identity_key" => "jean_doe",
+  "email_address" => "jean@example.com",
+  "phone_number" => "+15555550110",
+  "display_name" => "Jean Doe",
+  "full_name" => "Jean Doe",
+  "created_at" => "2024-01-11T05:37:50.264Z",
+  "workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+}
 ```
 {% endtab %}
 
@@ -54,14 +96,28 @@ seam.user_identities.create(user_identity_key: "jean_doe", email_address: "jean@
 
 ```php
 <?php
-$seam->user_identities->create(user_identity_key: "jean_doe",email_address: "jean@example.com",phone_number: "+15555550110",full_name: "Jean Doe")
+$seam->user_identities->create(
+    user_identity_key: "jean_doe",
+    email_address: "jean@example.com",
+    phone_number: "+15555550110",
+    full_name: "Jean Doe"
+);
 ```
 
 #### Response
 
 ```php
 <?php
-["user_identity_id" => "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a","user_identity_key" => "jean_doe","email_address" => "jean@example.com","phone_number" => "+15555550110","display_name" => "Jean Doe","full_name" => "Jean Doe","created_at" => "2024-01-11T05:37:50.264Z","workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be"]
+[
+    "user_identity_id" => "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+    "user_identity_key" => "jean_doe",
+    "email_address" => "jean@example.com",
+    "phone_number" => "+15555550110",
+    "display_name" => "Jean Doe",
+    "full_name" => "Jean Doe",
+    "created_at" => "2024-01-11T05:37:50.264Z",
+    "workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+];
 ```
 {% endtab %}
 
@@ -75,7 +131,16 @@ seam user-identities create --user_identity_key "jean_doe" --email_address "jean
 #### Response
 
 ```seam_cli
-{"user_identity_id":"48500a8e-5e7e-4bde-b7e5-0be97cae5d7a","user_identity_key":"jean_doe","email_address":"jean@example.com","phone_number":"+15555550110","display_name":"Jean Doe","full_name":"Jean Doe","created_at":"2024-01-11T05:37:50.264Z","workspace_id":"398d80b7-3f96-47c2-b85a-6f8ba21d07be"}
+{
+  "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+  "user_identity_key": "jean_doe",
+  "email_address": "jean@example.com",
+  "phone_number": "+15555550110",
+  "display_name": "Jean Doe",
+  "full_name": "Jean Doe",
+  "created_at": "2024-01-11T05:37:50.264Z",
+  "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be"
+}
 ```
 {% endtab %}
 
@@ -84,19 +149,20 @@ seam user-identities create --user_identity_key "jean_doe" --email_address "jean
 
 ```go
 package main
-  import api "github.com/seamapi/go"
 
-  func main() {
-  client.UserIdentities.Create(
-context.Background(),
-api.UserIdentitiesCreateRequest{
-UserIdentityKey: api.String("jean_doe"),
-EmailAddress: api.String("jean@example.com"),
-PhoneNumber: api.String("+15555550110"),
-FullName: api.String("Jean Doe"),
-},
-)
-  }
+import api "github.com/seamapi/go"
+
+func main() {
+	client.UserIdentities.Create(
+		context.Background(),
+		api.UserIdentitiesCreateRequest{
+			UserIdentityKey: api.String("jean_doe"),
+			EmailAddress:    api.String("jean@example.com"),
+			PhoneNumber:     api.String("+15555550110"),
+			FullName:        api.String("Jean Doe"),
+		},
+	)
+}
 ```
 
 #### Response

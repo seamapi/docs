@@ -11,7 +11,10 @@ Unassigns a specified [credential](../../../capability-guides/access-systems/man
 #### Request
 
 ```javascript
-await seam.acs.credentials.unassign({"acs_user_id":"33333333-3333-3333-3333-333333333333","acs_credential_id":"66666666-6666-6666-6666-666666666666"})
+await seam.acs.credentials.unassign({
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  acs_credential_id: "66666666-6666-6666-6666-666666666666",
+});
 ```
 
 #### Response
@@ -25,7 +28,10 @@ await seam.acs.credentials.unassign({"acs_user_id":"33333333-3333-3333-3333-3333
 #### Request
 
 ```python
-seam.acs.credentials.unassign(acs_user_id="33333333-3333-3333-3333-333333333333", acs_credential_id="66666666-6666-6666-6666-666666666666")
+seam.acs.credentials.unassign(
+    acs_user_id="33333333-3333-3333-3333-333333333333",
+    acs_credential_id="66666666-6666-6666-6666-666666666666",
+)
 ```
 
 #### Response
@@ -39,7 +45,10 @@ None
 #### Request
 
 ```ruby
-seam.acs.credentials.unassign(acs_user_id: "33333333-3333-3333-3333-333333333333", acs_credential_id: "66666666-6666-6666-6666-666666666666")
+seam.acs.credentials.unassign(
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  acs_credential_id: "66666666-6666-6666-6666-666666666666",
+)
 ```
 
 #### Response
@@ -54,7 +63,10 @@ nil
 
 ```php
 <?php
-$seam->acs->credentials->unassign(acs_user_id: "33333333-3333-3333-3333-333333333333",acs_credential_id: "66666666-6666-6666-6666-666666666666")
+$seam->acs->credentials->unassign(
+    acs_user_id: "33333333-3333-3333-3333-333333333333",
+    acs_credential_id: "66666666-6666-6666-6666-666666666666"
+);
 ```
 
 #### Response
@@ -83,18 +95,19 @@ seam acs credentials unassign --acs_user_id "33333333-3333-3333-3333-33333333333
 
 ```go
 package main
-  import api "github.com/seamapi/go"
+
+import api "github.com/seamapi/go"
 import credentials "github.com/seamapi/go/credentials"
 
-  func main() {
-  client.Acs.Credentials.Unassign(
-context.Background(),
-credentials.CredentialsUnassignRequest{
-AcsUserId: api.String("33333333-3333-3333-3333-333333333333"),
-AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
-},
-)
-  }
+func main() {
+	client.Acs.Credentials.Unassign(
+		context.Background(),
+		credentials.CredentialsUnassignRequest{
+			AcsUserId:       api.String("33333333-3333-3333-3333-333333333333"),
+			AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
+		},
+	)
+}
 ```
 
 #### Response

@@ -11,7 +11,10 @@ Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/acc
 #### Request
 
 ```javascript
-await seam.acs.accessGroups.removeUser({"acs_access_group_id":"44444444-4444-4444-4444-444444444444","acs_user_id":"33333333-3333-3333-3333-333333333333"})
+await seam.acs.accessGroups.removeUser({
+  acs_access_group_id: "44444444-4444-4444-4444-444444444444",
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+});
 ```
 
 #### Response
@@ -25,7 +28,10 @@ await seam.acs.accessGroups.removeUser({"acs_access_group_id":"44444444-4444-444
 #### Request
 
 ```python
-seam.acs.access_groups.remove_user(acs_access_group_id="44444444-4444-4444-4444-444444444444", acs_user_id="33333333-3333-3333-3333-333333333333")
+seam.acs.access_groups.remove_user(
+    acs_access_group_id="44444444-4444-4444-4444-444444444444",
+    acs_user_id="33333333-3333-3333-3333-333333333333",
+)
 ```
 
 #### Response
@@ -39,7 +45,10 @@ None
 #### Request
 
 ```ruby
-seam.acs.access_groups.remove_user(acs_access_group_id: "44444444-4444-4444-4444-444444444444", acs_user_id: "33333333-3333-3333-3333-333333333333")
+seam.acs.access_groups.remove_user(
+  acs_access_group_id: "44444444-4444-4444-4444-444444444444",
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+)
 ```
 
 #### Response
@@ -54,7 +63,10 @@ nil
 
 ```php
 <?php
-$seam->acs->access_groups->remove_user(acs_access_group_id: "44444444-4444-4444-4444-444444444444",acs_user_id: "33333333-3333-3333-3333-333333333333")
+$seam->acs->access_groups->remove_user(
+    acs_access_group_id: "44444444-4444-4444-4444-444444444444",
+    acs_user_id: "33333333-3333-3333-3333-333333333333"
+);
 ```
 
 #### Response
@@ -83,18 +95,19 @@ seam acs access-groups remove-user --acs_access_group_id "44444444-4444-4444-444
 
 ```go
 package main
-  import api "github.com/seamapi/go"
+
+import api "github.com/seamapi/go"
 import accessgroups "github.com/seamapi/go/accessgroups"
 
-  func main() {
-  client.Acs.AccessGroups.RemoveUser(
-context.Background(),
-accessgroups.AccessGroupsRemoveUserRequest{
-AcsAccessGroupId: api.String("44444444-4444-4444-4444-444444444444"),
-AcsUserId: api.String("33333333-3333-3333-3333-333333333333"),
-},
-)
-  }
+func main() {
+	client.Acs.AccessGroups.RemoveUser(
+		context.Background(),
+		accessgroups.AccessGroupsRemoveUserRequest{
+			AcsAccessGroupId: api.String("44444444-4444-4444-4444-444444444444"),
+			AcsUserId:        api.String("33333333-3333-3333-3333-333333333333"),
+		},
+	)
+}
 ```
 
 #### Response

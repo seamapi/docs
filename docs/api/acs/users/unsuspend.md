@@ -11,7 +11,9 @@ POST /acs/users/unsuspend ⇒ void
 #### Request
 
 ```javascript
-await seam.acs.users.unsuspend({"acs_user_id":"8d7e0b3a-b889-49a7-9164-4b71a0506a33"})
+await seam.acs.users.unsuspend({
+  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
+});
 ```
 
 #### Response
@@ -54,7 +56,9 @@ nil
 
 ```php
 <?php
-$seam->acs->users->unsuspend(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
+$seam->acs->users->unsuspend(
+    acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
+);
 ```
 
 #### Response
@@ -83,17 +87,18 @@ seam acs users unsuspend --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 
 ```go
 package main
-  import api "github.com/seamapi/go"
+
+import api "github.com/seamapi/go"
 import users "github.com/seamapi/go/users"
 
-  func main() {
-  client.Acs.Users.Unsuspend(
-context.Background(),
-users.UsersUnsuspendRequest{
-AcsUserId: api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
-},
-)
-  }
+func main() {
+	client.Acs.Users.Unsuspend(
+		context.Background(),
+		users.UsersUnsuspendRequest{
+			AcsUserId: api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
+		},
+	)
+}
 ```
 
 #### Response

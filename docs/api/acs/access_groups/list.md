@@ -11,13 +11,29 @@ Returns a list of all [access groups](https://docs.seam.co/latest/capability-gui
 #### Request
 
 ```javascript
-await seam.acs.accessGroups.list({"acs_system_id":"11111111-1111-1111-1111-111111111111","acs_user_id":"33333333-3333-3333-3333-333333333333"})
+await seam.acs.accessGroups.list({
+  acs_system_id: "11111111-1111-1111-1111-111111111111",
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+});
 ```
 
 #### Response
 
 ```javascript
-[{"acs_access_group_id":"44444444-4444-4444-4444-444444444444","name":"Lobby Access","display_name":"Lobby Access","access_group_type_display_name":"PTI access level","access_group_type":"pti_access_level","external_type":"pti_access_level","external_type_display_name":"PTI access level","acs_system_id":"11111111-1111-1111-1111-111111111111","workspace_id":"00000000-0000-0000-0000-000000000000","created_at":"2023-11-30T06:27:15.437Z"}]
+[
+  {
+    "acs_access_group_id": "44444444-4444-4444-4444-444444444444",
+    "name": "Lobby Access",
+    "display_name": "Lobby Access",
+    "access_group_type_display_name": "PTI access level",
+    "access_group_type": "pti_access_level",
+    "external_type": "pti_access_level",
+    "external_type_display_name": "PTI access level",
+    "acs_system_id": "11111111-1111-1111-1111-111111111111",
+    "workspace_id": "00000000-0000-0000-0000-000000000000",
+    "created_at": "2023-11-30T06:27:15.437Z"
+  }
+]
 ```
 {% endtab %}
 
@@ -25,13 +41,29 @@ await seam.acs.accessGroups.list({"acs_system_id":"11111111-1111-1111-1111-11111
 #### Request
 
 ```python
-seam.acs.access_groups.list(acs_system_id="11111111-1111-1111-1111-111111111111", acs_user_id="33333333-3333-3333-3333-333333333333")
+seam.acs.access_groups.list(
+    acs_system_id="11111111-1111-1111-1111-111111111111",
+    acs_user_id="33333333-3333-3333-3333-333333333333",
+)
 ```
 
 #### Response
 
 ```python
-[AcsAccessGroup(acs_access_group_id="44444444-4444-4444-4444-444444444444", name="Lobby Access", display_name="Lobby Access", access_group_type_display_name="PTI access level", access_group_type="pti_access_level", external_type="pti_access_level", external_type_display_name="PTI access level", acs_system_id="11111111-1111-1111-1111-111111111111", workspace_id="00000000-0000-0000-0000-000000000000", created_at="2023-11-30T06:27:15.437Z")]
+[
+    AcsAccessGroup(
+        acs_access_group_id="44444444-4444-4444-4444-444444444444",
+        name="Lobby Access",
+        display_name="Lobby Access",
+        access_group_type_display_name="PTI access level",
+        access_group_type="pti_access_level",
+        external_type="pti_access_level",
+        external_type_display_name="PTI access level",
+        acs_system_id="11111111-1111-1111-1111-111111111111",
+        workspace_id="00000000-0000-0000-0000-000000000000",
+        created_at="2023-11-30T06:27:15.437Z",
+    )
+]
 ```
 {% endtab %}
 
@@ -39,13 +71,29 @@ seam.acs.access_groups.list(acs_system_id="11111111-1111-1111-1111-111111111111"
 #### Request
 
 ```ruby
-seam.acs.access_groups.list(acs_system_id: "11111111-1111-1111-1111-111111111111", acs_user_id: "33333333-3333-3333-3333-333333333333")
+seam.acs.access_groups.list(
+  acs_system_id: "11111111-1111-1111-1111-111111111111",
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+)
 ```
 
 #### Response
 
 ```ruby
-[{"acs_access_group_id" => "44444444-4444-4444-4444-444444444444","name" => "Lobby Access","display_name" => "Lobby Access","access_group_type_display_name" => "PTI access level","access_group_type" => "pti_access_level","external_type" => "pti_access_level","external_type_display_name" => "PTI access level","acs_system_id" => "11111111-1111-1111-1111-111111111111","workspace_id" => "00000000-0000-0000-0000-000000000000","created_at" => "2023-11-30T06:27:15.437Z"}]
+[
+  {
+    "acs_access_group_id" => "44444444-4444-4444-4444-444444444444",
+    "name" => "Lobby Access",
+    "display_name" => "Lobby Access",
+    "access_group_type_display_name" => "PTI access level",
+    "access_group_type" => "pti_access_level",
+    "external_type" => "pti_access_level",
+    "external_type_display_name" => "PTI access level",
+    "acs_system_id" => "11111111-1111-1111-1111-111111111111",
+    "workspace_id" => "00000000-0000-0000-0000-000000000000",
+    "created_at" => "2023-11-30T06:27:15.437Z",
+  },
+]
 ```
 {% endtab %}
 
@@ -54,14 +102,30 @@ seam.acs.access_groups.list(acs_system_id: "11111111-1111-1111-1111-111111111111
 
 ```php
 <?php
-$seam->acs->access_groups->list(acs_system_id: "11111111-1111-1111-1111-111111111111",acs_user_id: "33333333-3333-3333-3333-333333333333")
+$seam->acs->access_groups->list(
+    acs_system_id: "11111111-1111-1111-1111-111111111111",
+    acs_user_id: "33333333-3333-3333-3333-333333333333"
+);
 ```
 
 #### Response
 
 ```php
 <?php
-[["acs_access_group_id" => "44444444-4444-4444-4444-444444444444","name" => "Lobby Access","display_name" => "Lobby Access","access_group_type_display_name" => "PTI access level","access_group_type" => "pti_access_level","external_type" => "pti_access_level","external_type_display_name" => "PTI access level","acs_system_id" => "11111111-1111-1111-1111-111111111111","workspace_id" => "00000000-0000-0000-0000-000000000000","created_at" => "2023-11-30T06:27:15.437Z"]]
+[
+    [
+        "acs_access_group_id" => "44444444-4444-4444-4444-444444444444",
+        "name" => "Lobby Access",
+        "display_name" => "Lobby Access",
+        "access_group_type_display_name" => "PTI access level",
+        "access_group_type" => "pti_access_level",
+        "external_type" => "pti_access_level",
+        "external_type_display_name" => "PTI access level",
+        "acs_system_id" => "11111111-1111-1111-1111-111111111111",
+        "workspace_id" => "00000000-0000-0000-0000-000000000000",
+        "created_at" => "2023-11-30T06:27:15.437Z",
+    ],
+];
 ```
 {% endtab %}
 
@@ -75,7 +139,20 @@ seam acs access-groups list --acs_system_id "11111111-1111-1111-1111-11111111111
 #### Response
 
 ```seam_cli
-[{"acs_access_group_id":"44444444-4444-4444-4444-444444444444","name":"Lobby Access","display_name":"Lobby Access","access_group_type_display_name":"PTI access level","access_group_type":"pti_access_level","external_type":"pti_access_level","external_type_display_name":"PTI access level","acs_system_id":"11111111-1111-1111-1111-111111111111","workspace_id":"00000000-0000-0000-0000-000000000000","created_at":"2023-11-30T06:27:15.437Z"}]
+[
+  {
+    "acs_access_group_id": "44444444-4444-4444-4444-444444444444",
+    "name": "Lobby Access",
+    "display_name": "Lobby Access",
+    "access_group_type_display_name": "PTI access level",
+    "access_group_type": "pti_access_level",
+    "external_type": "pti_access_level",
+    "external_type_display_name": "PTI access level",
+    "acs_system_id": "11111111-1111-1111-1111-111111111111",
+    "workspace_id": "00000000-0000-0000-0000-000000000000",
+    "created_at": "2023-11-30T06:27:15.437Z"
+  }
+]
 ```
 {% endtab %}
 
@@ -84,18 +161,19 @@ seam acs access-groups list --acs_system_id "11111111-1111-1111-1111-11111111111
 
 ```go
 package main
-  import api "github.com/seamapi/go"
+
+import api "github.com/seamapi/go"
 import accessgroups "github.com/seamapi/go/accessgroups"
 
-  func main() {
-  client.Acs.AccessGroups.List(
-context.Background(),
-accessgroups.AccessGroupsListRequest{
-AcsSystemId: api.String("11111111-1111-1111-1111-111111111111"),
-AcsUserId: api.String("33333333-3333-3333-3333-333333333333"),
-},
-)
-  }
+func main() {
+	client.Acs.AccessGroups.List(
+		context.Background(),
+		accessgroups.AccessGroupsListRequest{
+			AcsSystemId: api.String("11111111-1111-1111-1111-111111111111"),
+			AcsUserId:   api.String("33333333-3333-3333-3333-333333333333"),
+		},
+	)
+}
 ```
 
 #### Response

@@ -13,13 +13,15 @@ To filter the list of returned access control systems by a specific connected ac
 #### Request
 
 ```javascript
-await seam.acs.systems.list({"connected_account_id":"123e4567-e89b-12d3-a456-426614174000"})
+await seam.acs.systems.list({
+  connected_account_id: "123e4567-e89b-12d3-a456-426614174000",
+});
 ```
 
 #### Response
 
 ```javascript
-[{"acs_system_id":"8d7e0b3a-b889-49a7-9164-4b71a0506a33"}]
+[{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
 ```
 {% endtab %}
 
@@ -47,7 +49,7 @@ seam.acs.systems.list(connected_account_id: "123e4567-e89b-12d3-a456-42661417400
 #### Response
 
 ```ruby
-[{"acs_system_id" => "8d7e0b3a-b889-49a7-9164-4b71a0506a33"}]
+[{ "acs_system_id" => "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
 ```
 {% endtab %}
 
@@ -56,14 +58,16 @@ seam.acs.systems.list(connected_account_id: "123e4567-e89b-12d3-a456-42661417400
 
 ```php
 <?php
-$seam->acs->systems->list(connected_account_id: "123e4567-e89b-12d3-a456-426614174000")
+$seam->acs->systems->list(
+    connected_account_id: "123e4567-e89b-12d3-a456-426614174000"
+);
 ```
 
 #### Response
 
 ```php
 <?php
-[["acs_system_id" => "8d7e0b3a-b889-49a7-9164-4b71a0506a33"]]
+[["acs_system_id" => "8d7e0b3a-b889-49a7-9164-4b71a0506a33"]];
 ```
 {% endtab %}
 
@@ -77,7 +81,7 @@ seam acs systems list --connected_account_id "123e4567-e89b-12d3-a456-4266141740
 #### Response
 
 ```seam_cli
-[{"acs_system_id":"8d7e0b3a-b889-49a7-9164-4b71a0506a33"}]
+[{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
 ```
 {% endtab %}
 
@@ -86,17 +90,18 @@ seam acs systems list --connected_account_id "123e4567-e89b-12d3-a456-4266141740
 
 ```go
 package main
-  import api "github.com/seamapi/go"
+
+import api "github.com/seamapi/go"
 import systems "github.com/seamapi/go/systems"
 
-  func main() {
-  client.Acs.Systems.List(
-context.Background(),
-systems.SystemsListRequest{
-ConnectedAccountId: api.String("123e4567-e89b-12d3-a456-426614174000"),
-},
-)
-  }
+func main() {
+	client.Acs.Systems.List(
+		context.Background(),
+		systems.SystemsListRequest{
+			ConnectedAccountId: api.String("123e4567-e89b-12d3-a456-426614174000"),
+		},
+	)
+}
 ```
 
 #### Response

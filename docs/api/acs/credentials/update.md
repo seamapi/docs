@@ -11,7 +11,10 @@ Updates the code and ends at date and time for a specified [credential](../../..
 #### Request
 
 ```javascript
-await seam.acs.credentials.update({"acs_credential_id":"66666666-6666-6666-6666-666666666666","code":"7890"})
+await seam.acs.credentials.update({
+  acs_credential_id: "66666666-6666-6666-6666-666666666666",
+  code: "7890",
+});
 ```
 
 #### Response
@@ -25,7 +28,9 @@ await seam.acs.credentials.update({"acs_credential_id":"66666666-6666-6666-6666-
 #### Request
 
 ```python
-seam.acs.credentials.update(acs_credential_id="66666666-6666-6666-6666-666666666666", code="7890")
+seam.acs.credentials.update(
+    acs_credential_id="66666666-6666-6666-6666-666666666666", code="7890"
+)
 ```
 
 #### Response
@@ -54,7 +59,10 @@ nil
 
 ```php
 <?php
-$seam->acs->credentials->update(acs_credential_id: "66666666-6666-6666-6666-666666666666",code: "7890")
+$seam->acs->credentials->update(
+    acs_credential_id: "66666666-6666-6666-6666-666666666666",
+    code: "7890"
+);
 ```
 
 #### Response
@@ -83,18 +91,19 @@ seam acs credentials update --acs_credential_id "66666666-6666-6666-6666-6666666
 
 ```go
 package main
-  import api "github.com/seamapi/go"
+
+import api "github.com/seamapi/go"
 import credentials "github.com/seamapi/go/credentials"
 
-  func main() {
-  client.Acs.Credentials.Update(
-context.Background(),
-credentials.CredentialsUpdateRequest{
-AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
-Code: api.String("7890"),
-},
-)
-  }
+func main() {
+	client.Acs.Credentials.Update(
+		context.Background(),
+		credentials.CredentialsUpdateRequest{
+			AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
+			Code:            api.String("7890"),
+		},
+	)
+}
 ```
 
 #### Response

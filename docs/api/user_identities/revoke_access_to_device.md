@@ -11,7 +11,10 @@ Revokes access to a specified [device](../../core-concepts/devices/README.md) fr
 #### Request
 
 ```javascript
-await seam.userIdentities.revokeAccessToDevice({"user_identity_id":"f3a328b4-dd04-4370-9000-d52b7a01b0bf","device_id":"054765c8-a2fc-4599-b486-14c19f462c45"})
+await seam.userIdentities.revokeAccessToDevice({
+  user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
+  device_id: "054765c8-a2fc-4599-b486-14c19f462c45",
+});
 ```
 
 #### Response
@@ -25,7 +28,10 @@ await seam.userIdentities.revokeAccessToDevice({"user_identity_id":"f3a328b4-dd0
 #### Request
 
 ```python
-seam.user_identities.revoke_access_to_device(user_identity_id="f3a328b4-dd04-4370-9000-d52b7a01b0bf", device_id="054765c8-a2fc-4599-b486-14c19f462c45")
+seam.user_identities.revoke_access_to_device(
+    user_identity_id="f3a328b4-dd04-4370-9000-d52b7a01b0bf",
+    device_id="054765c8-a2fc-4599-b486-14c19f462c45",
+)
 ```
 
 #### Response
@@ -39,7 +45,10 @@ None
 #### Request
 
 ```ruby
-seam.user_identities.revoke_access_to_device(user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf", device_id: "054765c8-a2fc-4599-b486-14c19f462c45")
+seam.user_identities.revoke_access_to_device(
+  user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
+  device_id: "054765c8-a2fc-4599-b486-14c19f462c45",
+)
 ```
 
 #### Response
@@ -54,7 +63,10 @@ nil
 
 ```php
 <?php
-$seam->user_identities->revoke_access_to_device(user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",device_id: "054765c8-a2fc-4599-b486-14c19f462c45")
+$seam->user_identities->revoke_access_to_device(
+    user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
+    device_id: "054765c8-a2fc-4599-b486-14c19f462c45"
+);
 ```
 
 #### Response
@@ -83,17 +95,18 @@ seam user-identities revoke-access-to-device --user_identity_id "f3a328b4-dd04-4
 
 ```go
 package main
-  import api "github.com/seamapi/go"
 
-  func main() {
-  client.UserIdentities.RevokeAccessToDevice(
-context.Background(),
-api.UserIdentitiesRevokeAccessToDeviceRequest{
-UserIdentityId: api.String("f3a328b4-dd04-4370-9000-d52b7a01b0bf"),
-DeviceId: api.String("054765c8-a2fc-4599-b486-14c19f462c45"),
-},
-)
-  }
+import api "github.com/seamapi/go"
+
+func main() {
+	client.UserIdentities.RevokeAccessToDevice(
+		context.Background(),
+		api.UserIdentitiesRevokeAccessToDeviceRequest{
+			UserIdentityId: api.String("f3a328b4-dd04-4370-9000-d52b7a01b0bf"),
+			DeviceId:       api.String("054765c8-a2fc-4599-b486-14c19f462c45"),
+		},
+	)
+}
 ```
 
 #### Response

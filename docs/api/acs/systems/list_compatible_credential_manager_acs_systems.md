@@ -15,13 +15,15 @@ systems by including the corresponding `acs_system_id` in the request body.
 #### Request
 
 ```javascript
-await seam.acs.systems.listCompatibleCredentialManagerAcsSystems({"acs_system_id":"8d7e0b3a-b889-49a7-9164-4b71a0506a33"})
+await seam.acs.systems.listCompatibleCredentialManagerAcsSystems({
+  acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
+});
 ```
 
 #### Response
 
 ```javascript
-[{"acs_system_id":"aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4"}]
+[{ "acs_system_id": "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }]
 ```
 {% endtab %}
 
@@ -29,7 +31,9 @@ await seam.acs.systems.listCompatibleCredentialManagerAcsSystems({"acs_system_id
 #### Request
 
 ```python
-seam.acs.systems.list_compatible_credential_manager_acs_systems(acs_system_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")
+seam.acs.systems.list_compatible_credential_manager_acs_systems(
+    acs_system_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33"
+)
 ```
 
 #### Response
@@ -43,13 +47,15 @@ seam.acs.systems.list_compatible_credential_manager_acs_systems(acs_system_id="8
 #### Request
 
 ```ruby
-seam.acs.systems.list_compatible_credential_manager_acs_systems(acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
+seam.acs.systems.list_compatible_credential_manager_acs_systems(
+  acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
+)
 ```
 
 #### Response
 
 ```ruby
-[{"acs_system_id" => "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4"}]
+[{ "acs_system_id" => "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }]
 ```
 {% endtab %}
 
@@ -58,14 +64,16 @@ seam.acs.systems.list_compatible_credential_manager_acs_systems(acs_system_id: "
 
 ```php
 <?php
-$seam->acs->systems->list_compatible_credential_manager_acs_systems(acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
+$seam->acs->systems->list_compatible_credential_manager_acs_systems(
+    acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
+);
 ```
 
 #### Response
 
 ```php
 <?php
-[["acs_system_id" => "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4"]]
+[["acs_system_id" => "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4"]];
 ```
 {% endtab %}
 
@@ -79,7 +87,7 @@ seam acs systems list-compatible-credential-manager-acs-systems --acs_system_id 
 #### Response
 
 ```seam_cli
-[{"acs_system_id":"aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4"}]
+[{ "acs_system_id": "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }]
 ```
 {% endtab %}
 
@@ -88,17 +96,18 @@ seam acs systems list-compatible-credential-manager-acs-systems --acs_system_id 
 
 ```go
 package main
-  import api "github.com/seamapi/go"
+
+import api "github.com/seamapi/go"
 import systems "github.com/seamapi/go/systems"
 
-  func main() {
-  client.Acs.Systems.ListCompatibleCredentialManagerAcsSystems(
-context.Background(),
-systems.SystemsListCompatibleCredentialManagerAcsSystemsRequest{
-AcsSystemId: api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
-},
-)
-  }
+func main() {
+	client.Acs.Systems.ListCompatibleCredentialManagerAcsSystems(
+		context.Background(),
+		systems.SystemsListCompatibleCredentialManagerAcsSystemsRequest{
+			AcsSystemId: api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
+		},
+	)
+}
 ```
 
 #### Response

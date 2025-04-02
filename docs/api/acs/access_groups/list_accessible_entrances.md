@@ -11,13 +11,24 @@ Returns a list of all accessible entrances for a specified [access group](https:
 #### Request
 
 ```javascript
-await seam.acs.accessGroups.listAccessibleEntrances({"acs_access_group_id":"44444444-4444-4444-4444-444444444444"})
+await seam.acs.accessGroups.listAccessibleEntrances({
+  acs_access_group_id: "44444444-4444-4444-4444-444444444444",
+});
 ```
 
 #### Response
 
 ```javascript
-[{"acs_entrance_id":"66666666-6666-6666-6666-666666666666","name":"Main Entrance","display_name":"Main Entrance","acs_system_id":"11111111-1111-1111-1111-111111111111","workspace_id":"00000000-0000-0000-0000-000000000000","created_at":"2024-10-15T12:00:00.000Z"}]
+[
+  {
+    "acs_entrance_id": "66666666-6666-6666-6666-666666666666",
+    "name": "Main Entrance",
+    "display_name": "Main Entrance",
+    "acs_system_id": "11111111-1111-1111-1111-111111111111",
+    "workspace_id": "00000000-0000-0000-0000-000000000000",
+    "created_at": "2024-10-15T12:00:00.000Z"
+  }
+]
 ```
 {% endtab %}
 
@@ -25,13 +36,24 @@ await seam.acs.accessGroups.listAccessibleEntrances({"acs_access_group_id":"4444
 #### Request
 
 ```python
-seam.acs.access_groups.list_accessible_entrances(acs_access_group_id="44444444-4444-4444-4444-444444444444")
+seam.acs.access_groups.list_accessible_entrances(
+    acs_access_group_id="44444444-4444-4444-4444-444444444444"
+)
 ```
 
 #### Response
 
 ```python
-[AcsEntrance(acs_entrance_id="66666666-6666-6666-6666-666666666666", name="Main Entrance", display_name="Main Entrance", acs_system_id="11111111-1111-1111-1111-111111111111", workspace_id="00000000-0000-0000-0000-000000000000", created_at="2024-10-15T12:00:00.000Z")]
+[
+    AcsEntrance(
+        acs_entrance_id="66666666-6666-6666-6666-666666666666",
+        name="Main Entrance",
+        display_name="Main Entrance",
+        acs_system_id="11111111-1111-1111-1111-111111111111",
+        workspace_id="00000000-0000-0000-0000-000000000000",
+        created_at="2024-10-15T12:00:00.000Z",
+    )
+]
 ```
 {% endtab %}
 
@@ -39,13 +61,24 @@ seam.acs.access_groups.list_accessible_entrances(acs_access_group_id="44444444-4
 #### Request
 
 ```ruby
-seam.acs.access_groups.list_accessible_entrances(acs_access_group_id: "44444444-4444-4444-4444-444444444444")
+seam.acs.access_groups.list_accessible_entrances(
+  acs_access_group_id: "44444444-4444-4444-4444-444444444444",
+)
 ```
 
 #### Response
 
 ```ruby
-[{"acs_entrance_id" => "66666666-6666-6666-6666-666666666666","name" => "Main Entrance","display_name" => "Main Entrance","acs_system_id" => "11111111-1111-1111-1111-111111111111","workspace_id" => "00000000-0000-0000-0000-000000000000","created_at" => "2024-10-15T12:00:00.000Z"}]
+[
+  {
+    "acs_entrance_id" => "66666666-6666-6666-6666-666666666666",
+    "name" => "Main Entrance",
+    "display_name" => "Main Entrance",
+    "acs_system_id" => "11111111-1111-1111-1111-111111111111",
+    "workspace_id" => "00000000-0000-0000-0000-000000000000",
+    "created_at" => "2024-10-15T12:00:00.000Z",
+  },
+]
 ```
 {% endtab %}
 
@@ -54,14 +87,25 @@ seam.acs.access_groups.list_accessible_entrances(acs_access_group_id: "44444444-
 
 ```php
 <?php
-$seam->acs->access_groups->list_accessible_entrances(acs_access_group_id: "44444444-4444-4444-4444-444444444444")
+$seam->acs->access_groups->list_accessible_entrances(
+    acs_access_group_id: "44444444-4444-4444-4444-444444444444"
+);
 ```
 
 #### Response
 
 ```php
 <?php
-[["acs_entrance_id" => "66666666-6666-6666-6666-666666666666","name" => "Main Entrance","display_name" => "Main Entrance","acs_system_id" => "11111111-1111-1111-1111-111111111111","workspace_id" => "00000000-0000-0000-0000-000000000000","created_at" => "2024-10-15T12:00:00.000Z"]]
+[
+    [
+        "acs_entrance_id" => "66666666-6666-6666-6666-666666666666",
+        "name" => "Main Entrance",
+        "display_name" => "Main Entrance",
+        "acs_system_id" => "11111111-1111-1111-1111-111111111111",
+        "workspace_id" => "00000000-0000-0000-0000-000000000000",
+        "created_at" => "2024-10-15T12:00:00.000Z",
+    ],
+];
 ```
 {% endtab %}
 
@@ -75,7 +119,16 @@ seam acs access-groups list-accessible-entrances --acs_access_group_id "44444444
 #### Response
 
 ```seam_cli
-[{"acs_entrance_id":"66666666-6666-6666-6666-666666666666","name":"Main Entrance","display_name":"Main Entrance","acs_system_id":"11111111-1111-1111-1111-111111111111","workspace_id":"00000000-0000-0000-0000-000000000000","created_at":"2024-10-15T12:00:00.000Z"}]
+[
+  {
+    "acs_entrance_id": "66666666-6666-6666-6666-666666666666",
+    "name": "Main Entrance",
+    "display_name": "Main Entrance",
+    "acs_system_id": "11111111-1111-1111-1111-111111111111",
+    "workspace_id": "00000000-0000-0000-0000-000000000000",
+    "created_at": "2024-10-15T12:00:00.000Z"
+  }
+]
 ```
 {% endtab %}
 
@@ -84,17 +137,18 @@ seam acs access-groups list-accessible-entrances --acs_access_group_id "44444444
 
 ```go
 package main
-  import api "github.com/seamapi/go"
+
+import api "github.com/seamapi/go"
 import accessgroups "github.com/seamapi/go/accessgroups"
 
-  func main() {
-  client.Acs.AccessGroups.ListAccessibleEntrances(
-context.Background(),
-accessgroups.AccessGroupsListAccessibleEntrancesRequest{
-AcsAccessGroupId: api.String("44444444-4444-4444-4444-444444444444"),
-},
-)
-  }
+func main() {
+	client.Acs.AccessGroups.ListAccessibleEntrances(
+		context.Background(),
+		accessgroups.AccessGroupsListAccessibleEntrancesRequest{
+			AcsAccessGroupId: api.String("44444444-4444-4444-4444-444444444444"),
+		},
+	)
+}
 ```
 
 #### Response

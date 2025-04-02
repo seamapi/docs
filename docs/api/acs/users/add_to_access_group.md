@@ -11,7 +11,10 @@ Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access
 #### Request
 
 ```javascript
-await seam.acs.users.addToAccessGroup({"acs_user_id":"8d7e0b3a-b889-49a7-9164-4b71a0506a33","acs_access_group_id":"123e4567-e89b-12d3-a456-426614174000"})
+await seam.acs.users.addToAccessGroup({
+  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
+  acs_access_group_id: "123e4567-e89b-12d3-a456-426614174000",
+});
 ```
 
 #### Response
@@ -25,7 +28,10 @@ await seam.acs.users.addToAccessGroup({"acs_user_id":"8d7e0b3a-b889-49a7-9164-4b
 #### Request
 
 ```python
-seam.acs.users.add_to_access_group(acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33", acs_access_group_id="123e4567-e89b-12d3-a456-426614174000")
+seam.acs.users.add_to_access_group(
+    acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33",
+    acs_access_group_id="123e4567-e89b-12d3-a456-426614174000",
+)
 ```
 
 #### Response
@@ -39,7 +45,10 @@ None
 #### Request
 
 ```ruby
-seam.acs.users.add_to_access_group(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33", acs_access_group_id: "123e4567-e89b-12d3-a456-426614174000")
+seam.acs.users.add_to_access_group(
+  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
+  acs_access_group_id: "123e4567-e89b-12d3-a456-426614174000",
+)
 ```
 
 #### Response
@@ -54,7 +63,10 @@ nil
 
 ```php
 <?php
-$seam->acs->users->add_to_access_group(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",acs_access_group_id: "123e4567-e89b-12d3-a456-426614174000")
+$seam->acs->users->add_to_access_group(
+    acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
+    acs_access_group_id: "123e4567-e89b-12d3-a456-426614174000"
+);
 ```
 
 #### Response
@@ -83,18 +95,19 @@ seam acs users add-to-access-group --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0
 
 ```go
 package main
-  import api "github.com/seamapi/go"
+
+import api "github.com/seamapi/go"
 import users "github.com/seamapi/go/users"
 
-  func main() {
-  client.Acs.Users.AddToAccessGroup(
-context.Background(),
-users.UsersAddToAccessGroupRequest{
-AcsUserId: api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
-AcsAccessGroupId: api.String("123e4567-e89b-12d3-a456-426614174000"),
-},
-)
-  }
+func main() {
+	client.Acs.Users.AddToAccessGroup(
+		context.Background(),
+		users.UsersAddToAccessGroupRequest{
+			AcsUserId:        api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
+			AcsAccessGroupId: api.String("123e4567-e89b-12d3-a456-426614174000"),
+		},
+	)
+}
 ```
 
 #### Response

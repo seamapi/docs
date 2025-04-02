@@ -11,13 +11,20 @@ Sets the [fan mode setting](https://docs.seam.co/latest/capability-guides/thermo
 #### Request
 
 ```javascript
-await seam.thermostats.setFanMode({"device_id":"123e4567-e89b-12d3-a456-426614174000","fan_mode_setting":"auto"})
+await seam.thermostats.setFanMode({
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  fan_mode_setting: "auto",
+});
 ```
 
 #### Response
 
 ```javascript
-{"action_attempt_id":"123e4567-e89b-12d3-a456-426614174000","status":"pending","action_type":"SET_FAN_MODE"}
+{
+  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
+  "status": "pending",
+  "action_type": "SET_FAN_MODE"
+}
 ```
 {% endtab %}
 
@@ -25,13 +32,19 @@ await seam.thermostats.setFanMode({"device_id":"123e4567-e89b-12d3-a456-42661417
 #### Request
 
 ```python
-seam.thermostats.set_fan_mode(device_id="123e4567-e89b-12d3-a456-426614174000", fan_mode_setting="auto")
+seam.thermostats.set_fan_mode(
+    device_id="123e4567-e89b-12d3-a456-426614174000", fan_mode_setting="auto"
+)
 ```
 
 #### Response
 
 ```python
-ActionAttempt(action_attempt_id="123e4567-e89b-12d3-a456-426614174000", status="pending", action_type="SET_FAN_MODE")
+ActionAttempt(
+    action_attempt_id="123e4567-e89b-12d3-a456-426614174000",
+    status="pending",
+    action_type="SET_FAN_MODE",
+)
 ```
 {% endtab %}
 
@@ -39,13 +52,20 @@ ActionAttempt(action_attempt_id="123e4567-e89b-12d3-a456-426614174000", status="
 #### Request
 
 ```ruby
-seam.thermostats.set_fan_mode(device_id: "123e4567-e89b-12d3-a456-426614174000", fan_mode_setting: "auto")
+seam.thermostats.set_fan_mode(
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  fan_mode_setting: "auto",
+)
 ```
 
 #### Response
 
 ```ruby
-{"action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000","status" => "pending","action_type" => "SET_FAN_MODE"}
+{
+  "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
+  "status" => "pending",
+  "action_type" => "SET_FAN_MODE",
+}
 ```
 {% endtab %}
 
@@ -54,14 +74,21 @@ seam.thermostats.set_fan_mode(device_id: "123e4567-e89b-12d3-a456-426614174000",
 
 ```php
 <?php
-$seam->thermostats->set_fan_mode(device_id: "123e4567-e89b-12d3-a456-426614174000",fan_mode_setting: "auto")
+$seam->thermostats->set_fan_mode(
+    device_id: "123e4567-e89b-12d3-a456-426614174000",
+    fan_mode_setting: "auto"
+);
 ```
 
 #### Response
 
 ```php
 <?php
-["action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000","status" => "pending","action_type" => "SET_FAN_MODE"]
+[
+    "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "status" => "pending",
+    "action_type" => "SET_FAN_MODE",
+];
 ```
 {% endtab %}
 
@@ -75,7 +102,11 @@ seam thermostats set-fan-mode --device_id "123e4567-e89b-12d3-a456-426614174000"
 #### Response
 
 ```seam_cli
-{"action_attempt_id":"123e4567-e89b-12d3-a456-426614174000","status":"pending","action_type":"SET_FAN_MODE"}
+{
+  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
+  "status": "pending",
+  "action_type": "SET_FAN_MODE"
+}
 ```
 {% endtab %}
 
@@ -84,17 +115,18 @@ seam thermostats set-fan-mode --device_id "123e4567-e89b-12d3-a456-426614174000"
 
 ```go
 package main
-  import api "github.com/seamapi/go"
 
-  func main() {
-  client.Thermostats.SetFanMode(
-context.Background(),
-api.ThermostatsSetFanModeRequest{
-DeviceId: api.String("123e4567-e89b-12d3-a456-426614174000"),
-FanModeSetting: api.String("auto"),
-},
-)
-  }
+import api "github.com/seamapi/go"
+
+func main() {
+	client.Thermostats.SetFanMode(
+		context.Background(),
+		api.ThermostatsSetFanModeRequest{
+			DeviceId:       api.String("123e4567-e89b-12d3-a456-426614174000"),
+			FanModeSetting: api.String("auto"),
+		},
+	)
+}
 ```
 
 #### Response

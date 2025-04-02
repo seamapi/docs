@@ -11,7 +11,10 @@ Deletes a specified [climate preset](../../capability-guides/thermostats/creatin
 #### Request
 
 ```javascript
-await seam.thermostats.deleteClimatePreset({"device_id":"123e4567-e89b-12d3-a456-426614174000","climate_preset_key":"occupied"})
+await seam.thermostats.deleteClimatePreset({
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  climate_preset_key: "occupied",
+});
 ```
 
 #### Response
@@ -25,7 +28,9 @@ await seam.thermostats.deleteClimatePreset({"device_id":"123e4567-e89b-12d3-a456
 #### Request
 
 ```python
-seam.thermostats.delete_climate_preset(device_id="123e4567-e89b-12d3-a456-426614174000", climate_preset_key="occupied")
+seam.thermostats.delete_climate_preset(
+    device_id="123e4567-e89b-12d3-a456-426614174000", climate_preset_key="occupied"
+)
 ```
 
 #### Response
@@ -39,7 +44,10 @@ None
 #### Request
 
 ```ruby
-seam.thermostats.delete_climate_preset(device_id: "123e4567-e89b-12d3-a456-426614174000", climate_preset_key: "occupied")
+seam.thermostats.delete_climate_preset(
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  climate_preset_key: "occupied",
+)
 ```
 
 #### Response
@@ -54,7 +62,10 @@ nil
 
 ```php
 <?php
-$seam->thermostats->delete_climate_preset(device_id: "123e4567-e89b-12d3-a456-426614174000",climate_preset_key: "occupied")
+$seam->thermostats->delete_climate_preset(
+    device_id: "123e4567-e89b-12d3-a456-426614174000",
+    climate_preset_key: "occupied"
+);
 ```
 
 #### Response
@@ -83,17 +94,18 @@ seam thermostats delete-climate-preset --device_id "123e4567-e89b-12d3-a456-4266
 
 ```go
 package main
-  import api "github.com/seamapi/go"
 
-  func main() {
-  client.Thermostats.DeleteClimatePreset(
-context.Background(),
-api.ThermostatsDeleteClimatePresetRequest{
-DeviceId: api.String("123e4567-e89b-12d3-a456-426614174000"),
-ClimatePresetKey: api.String("occupied"),
-},
-)
-  }
+import api "github.com/seamapi/go"
+
+func main() {
+	client.Thermostats.DeleteClimatePreset(
+		context.Background(),
+		api.ThermostatsDeleteClimatePresetRequest{
+			DeviceId:         api.String("123e4567-e89b-12d3-a456-426614174000"),
+			ClimatePresetKey: api.String("occupied"),
+		},
+	)
+}
 ```
 
 #### Response
