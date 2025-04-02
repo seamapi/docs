@@ -16,7 +16,7 @@ Encodes an existing [credential](../../../capability-guides/access-systems/manag
 
 ### `acs_credential_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the `acs_credential` to encode onto a card.
@@ -25,7 +25,7 @@ ID of the `acs_credential` to encode onto a card.
 
 ### `acs_encoder_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the `acs_encoder` to use to encode the `acs_credential`.

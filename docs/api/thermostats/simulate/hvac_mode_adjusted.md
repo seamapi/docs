@@ -16,7 +16,7 @@ Simulates having adjusted the [HVAC mode](../../../capability-guides/thermostats
 
 ### `device_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired thermostat device.
@@ -25,16 +25,22 @@ ID of the desired thermostat device.
 
 ### `hvac_mode`
 
-Type: `string`
+Format: `Enum`
 Required: Yes
 
 Desired [HVAC mode](../../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) to simulate.
+
+Possible enum values:
+- `off`
+- `cool`
+- `heat`
+- `heat_cool`
 
 ***
 
 ### `cooling_set_point_celsius`
 
-Type: `number`
+Format: `Number`
 Required: No
 
 Desired simulated cooling [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`.
@@ -43,7 +49,7 @@ Desired simulated cooling [set point](../../../capability-guides/thermostats/und
 
 ### `cooling_set_point_fahrenheit`
 
-Type: `number`
+Format: `Number`
 Required: No
 
 Desired simulated cooling [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`.
@@ -52,7 +58,7 @@ Desired simulated cooling [set point](../../../capability-guides/thermostats/und
 
 ### `heating_set_point_celsius`
 
-Type: `number`
+Format: `Number`
 Required: No
 
 Desired simulated heating [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`.
@@ -61,7 +67,7 @@ Desired simulated heating [set point](../../../capability-guides/thermostats/und
 
 ### `heating_set_point_fahrenheit`
 
-Type: `number`
+Format: `Number`
 Required: No
 
 Desired simulated heating [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`.

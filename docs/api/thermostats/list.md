@@ -230,7 +230,7 @@ func main() {
 
 ### `connect_webview_id`
 
-Type: `string`
+Format: `UUID`
 Required: No
 
 ID of the Connect Webview by which to filter devices.
@@ -239,7 +239,7 @@ ID of the Connect Webview by which to filter devices.
 
 ### `connected_account_id`
 
-Type: `string`
+Format: `UUID`
 Required: No
 
 ID of the connected account by which to filter.
@@ -248,7 +248,7 @@ ID of the connected account by which to filter.
 
 ### `connected_account_ids`
 
-Type: `array`
+Format: `List`
 Item format: `UUID`
 Required: No
 
@@ -258,7 +258,7 @@ Array of IDs of the connected accounts by which to filter devices.
 
 ### `created_before`
 
-Type: `string`
+Format: `Datetime`
 Required: No
 
 Date threshold for devices to return. If specified, returns only devices created before the specified date.
@@ -267,7 +267,7 @@ Date threshold for devices to return. If specified, returns only devices created
 
 ### `custom_metadata_has`
 
-Type: `object`
+Format: `Record`
 Required: No
 
 Set of key:value [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) pairs by which you want to filter devices.
@@ -276,7 +276,7 @@ Set of key:value [custom metadata](../../core-concepts/devices/adding-custom-met
 
 ### `device_ids`
 
-Type: `array`
+Format: `List`
 Item format: `UUID`
 Required: No
 
@@ -286,16 +286,53 @@ Array of device IDs by which to filter devices.
 
 ### `device_type`
 
-Type: `string`
+Format: `Enum`
 Required: No
 
 Device type by which to filter devices.
+
+Possible enum values:
+- `akuvox_lock`
+- `august_lock`
+- `brivo_access_point`
+- `butterflymx_panel`
+- `avigilon_alta_entry`
+- `doorking_lock`
+- `genie_door`
+- `igloo_lock`
+- `linear_lock`
+- `lockly_lock`
+- `kwikset_lock`
+- `nuki_lock`
+- `salto_lock`
+- `schlage_lock`
+- `seam_relay`
+- `smartthings_lock`
+- `wyze_lock`
+- `yale_lock`
+- `two_n_intercom`
+- `controlbyweb_device`
+- `ttlock_lock`
+- `igloohome_lock`
+- `hubitat_lock`
+- `four_suites_door`
+- `dormakaba_oracode_door`
+- `tedee_lock`
+- `akiles_lock`
+- `noiseaware_activity_zone`
+- `minut_sensor`
+- `ecobee_thermostat`
+- `nest_thermostat`
+- `honeywell_resideo_thermostat`
+- `tado_thermostat`
+- `ios_phone`
+- `android_phone`
 
 ***
 
 ### `device_types`
 
-Type: `array`
+Format: `List`
 Item format: `Enum`
 Required: No
 
@@ -342,7 +379,7 @@ Possible enum values:
 
 ### `limit`
 
-Type: `number`
+Format: `Number`
 Required: No
 
 Numerical limit on the number of devices to return.
@@ -351,16 +388,54 @@ Numerical limit on the number of devices to return.
 
 ### `manufacturer`
 
-Type: `string`
+Format: `Enum`
 Required: No
 
 Manufacturer by which to filter devices.
+
+Possible enum values:
+- `akuvox`
+- `august`
+- `avigilon_alta`
+- `brivo`
+- `butterflymx`
+- `doorking`
+- `four_suites`
+- `genie`
+- `igloo`
+- `keywe`
+- `kwikset`
+- `linear`
+- `lockly`
+- `nuki`
+- `philia`
+- `salto`
+- `samsung`
+- `schlage`
+- `seam`
+- `unknown`
+- `wyze`
+- `yale`
+- `minut`
+- `two_n`
+- `ttlock`
+- `nest`
+- `igloohome`
+- `ecobee`
+- `hubitat`
+- `controlbyweb`
+- `smartthings`
+- `dormakaba_oracode`
+- `tedee`
+- `honeywell_resideo`
+- `akiles`
+- `tado`
 
 ***
 
 ### `user_identifier_key`
 
-Type: `string`
+Format: `String`
 Required: No
 
 Your own internal user ID for the user by which to filter devices.

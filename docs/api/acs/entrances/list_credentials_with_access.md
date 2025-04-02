@@ -242,14 +242,14 @@ func main() {
 
 ### `acs_entrance_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ***
 
 ### `include_if`
 
-Type: `array`
+Format: `List`
 Item format: `Enum`
 Required: No
 

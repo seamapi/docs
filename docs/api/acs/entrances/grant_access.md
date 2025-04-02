@@ -16,14 +16,14 @@ POST /acs/entrances/grant_access ⇒ void
 
 ### `acs_entrance_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ***
 
 ### `acs_user_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ***

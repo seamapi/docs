@@ -120,7 +120,7 @@ nil
 
 ### `acs_credential_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired credential.

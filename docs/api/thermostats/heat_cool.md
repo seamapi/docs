@@ -155,7 +155,7 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 
 ### `device_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired thermostat device.
@@ -164,7 +164,7 @@ ID of the desired thermostat device.
 
 ### `cooling_set_point_celsius`
 
-Type: `number`
+Format: `Number`
 Required: No
 
 Desired [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `cooling_set_point` parameters.
@@ -173,7 +173,7 @@ Desired [cooling set point](../../capability-guides/thermostats/understanding-th
 
 ### `cooling_set_point_fahrenheit`
 
-Type: `number`
+Format: `Number`
 Required: No
 
 Desired [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `cooling_set_point` parameters.
@@ -182,7 +182,7 @@ Desired [cooling set point](../../capability-guides/thermostats/understanding-th
 
 ### `heating_set_point_celsius`
 
-Type: `number`
+Format: `Number`
 Required: No
 
 Desired [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `heating_set_point` parameters.
@@ -191,7 +191,7 @@ Desired [heating set point](../../capability-guides/thermostats/understanding-th
 
 ### `heating_set_point_fahrenheit`
 
-Type: `number`
+Format: `Number`
 Required: No
 
 Desired [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `heating_set_point` parameters.

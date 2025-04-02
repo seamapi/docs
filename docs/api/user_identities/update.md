@@ -16,7 +16,7 @@ PATCH /user_identities/update ⇒ void
 
 ### `user_identity_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the user identity.
@@ -25,7 +25,7 @@ ID of the user identity.
 
 ### `email_address`
 
-Type: `string`
+Format: `String`
 Required: No
 
 Unique email address for the user identity.
@@ -34,14 +34,14 @@ Unique email address for the user identity.
 
 ### `full_name`
 
-Type: `string`
+Format: `String`
 Required: No
 
 ***
 
 ### `phone_number`
 
-Type: `string`
+Format: `String`
 Required: No
 
 Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).
@@ -50,7 +50,7 @@ Unique phone number for the user identity in [E.164 format](https://www.itu.int/
 
 ### `user_identity_key`
 
-Type: `string`
+Format: `String`
 Required: No
 
 Unique key for the user identity.

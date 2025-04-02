@@ -129,7 +129,7 @@ nil
 
 ### `acs_access_group_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired access group.
@@ -138,7 +138,7 @@ ID of the desired access group.
 
 ### `acs_user_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired user.

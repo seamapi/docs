@@ -164,7 +164,7 @@ api.ThermostatSchedule{ThermostatScheduleId: "89d3507e-60e3-4101-bd1b-ba066ec30a
 
 ### `thermostat_schedule_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired thermostat schedule.

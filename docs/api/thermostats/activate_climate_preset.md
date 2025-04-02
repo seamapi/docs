@@ -148,7 +148,7 @@ api.ActionAttempt{ActionAttemptId: "05de2295-d1dc-4748-aae3-9931658bde20", Statu
 
 ### `climate_preset_key`
 
-Type: `string`
+Format: `String`
 Required: Yes
 
 Climate preset key of the desired climate preset.
@@ -157,7 +157,7 @@ Climate preset key of the desired climate preset.
 
 ### `device_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired thermostat device.

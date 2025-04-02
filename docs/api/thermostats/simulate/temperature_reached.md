@@ -16,7 +16,7 @@ Simulates a [thermostat](https://docs.seam.co/latest/capability-guides/thermosta
 
 ### `device_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired thermostat device.
@@ -25,7 +25,7 @@ ID of the desired thermostat device.
 
 ### `temperature_celsius`
 
-Type: `number`
+Format: `Number`
 Required: No
 
 Desired simulated temperature in °C. You must set `temperature_celsius` or `temperature_fahrenheit`.
@@ -34,7 +34,7 @@ Desired simulated temperature in °C. You must set `temperature_celsius` or `tem
 
 ### `temperature_fahrenheit`
 
-Type: `number`
+Format: `Number`
 Required: No
 
 Desired simulated temperature in °F. You must set `temperature_fahrenheit` or `temperature_celsius`.

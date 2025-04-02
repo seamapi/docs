@@ -133,7 +133,7 @@ nil
 
 ### `device_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired thermostat device.
@@ -142,7 +142,7 @@ ID of the desired thermostat device.
 
 ### `lower_limit_celsius`
 
-Type: `number`
+Format: `Number`
 Required: No
 
 Lower temperature limit in in °C. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both.
@@ -151,7 +151,7 @@ Lower temperature limit in in °C. Seam alerts you if the reported temperature i
 
 ### `lower_limit_fahrenheit`
 
-Type: `number`
+Format: `Number`
 Required: No
 
 Lower temperature limit in in °F. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both.
@@ -160,7 +160,7 @@ Lower temperature limit in in °F. Seam alerts you if the reported temperature i
 
 ### `upper_limit_celsius`
 
-Type: `number`
+Format: `Number`
 Required: No
 
 Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both.
@@ -169,7 +169,7 @@ Upper temperature limit in in °C. Seam alerts you if the reported temperature i
 
 ### `upper_limit_fahrenheit`
 
-Type: `number`
+Format: `Number`
 Required: No
 
 Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both.

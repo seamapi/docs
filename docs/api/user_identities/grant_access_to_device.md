@@ -128,7 +128,7 @@ nil
 
 ### `device_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired managed device.
@@ -137,7 +137,7 @@ ID of the desired managed device.
 
 ### `user_identity_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired user identity.

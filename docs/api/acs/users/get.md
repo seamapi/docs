@@ -164,7 +164,7 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 
 ### `acs_user_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired `acs_user`.

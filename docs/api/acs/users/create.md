@@ -190,7 +190,7 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 
 ### `acs_system_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the `acs_system` to which to add the new `acs_user`.
@@ -199,7 +199,7 @@ ID of the `acs_system` to which to add the new `acs_user`.
 
 ### `full_name`
 
-Type: `string`
+Format: `String`
 Required: Yes
 
 Full name of the new `acs_user`.
@@ -208,7 +208,7 @@ Full name of the new `acs_user`.
 
 ### `access_schedule`
 
-Type: `object`
+Format: `Object`
 Required: No
 
 `starts_at` and `ends_at` timestamps for the new `acs_user`'s access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. `starts_at` defaults to the current time if not provided. `ends_at` is optional and must be a time in the future and after `starts_at`.
@@ -217,7 +217,7 @@ Required: No
 
 ### `acs_access_group_ids`
 
-Type: `array`
+Format: `List`
 Item format: `UUID`
 Required: No
 
@@ -227,14 +227,18 @@ Array of `access_group_id`s to indicate the access groups to which to add the ne
 
 ### `email`
 
-Type: `string`
+Format: `String`
 Required: No
+
+{% hint style="warning" %}
+**Deprecated**. use email_address.
+{% endhint %}
 
 ***
 
 ### `email_address`
 
-Type: `string`
+Format: `String`
 Required: No
 
 Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
@@ -243,7 +247,7 @@ Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/ac
 
 ### `phone_number`
 
-Type: `string`
+Format: `String`
 Required: No
 
 Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
@@ -252,7 +256,7 @@ Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/acc
 
 ### `user_identity_id`
 
-Type: `string`
+Format: `UUID`
 Required: No
 
 ID of the user identity with which to associate the new `acs_user`.

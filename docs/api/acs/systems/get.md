@@ -121,7 +121,7 @@ func main() {
 
 ### `acs_system_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired access control system.

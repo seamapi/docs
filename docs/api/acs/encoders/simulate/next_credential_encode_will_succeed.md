@@ -16,7 +16,7 @@ Simulates that the next attempt to encode a [credential](../../../../capability-
 
 ### `acs_encoder_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the `acs_encoder` that will be used in the next request to encode the `acs_credential`.
@@ -25,10 +25,13 @@ ID of the `acs_encoder` that will be used in the next request to encode the `acs
 
 ### `scenario`
 
-Type: `string`
+Format: `Enum`
 Required: No
 
 Scenario to simulate.
+
+Possible enum values:
+- `credential_is_issued`
 
 ***
 

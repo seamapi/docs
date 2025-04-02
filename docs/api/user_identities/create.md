@@ -184,7 +184,7 @@ api.UserIdentity{UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", UserIde
 
 ### `email_address`
 
-Type: `string`
+Format: `String`
 Required: No
 
 Unique email address for the user identity.
@@ -193,7 +193,7 @@ Unique email address for the user identity.
 
 ### `full_name`
 
-Type: `string`
+Format: `String`
 Required: No
 
 Full name of the user associated with the user identity.
@@ -202,7 +202,7 @@ Full name of the user associated with the user identity.
 
 ### `phone_number`
 
-Type: `string`
+Format: `String`
 Required: No
 
 Unique phone number for the user identity in E.164 format (for example, +15555550100).
@@ -211,7 +211,7 @@ Unique phone number for the user identity in E.164 format (for example, +1555555
 
 ### `user_identity_key`
 
-Type: `string`
+Format: `String`
 Required: No
 
 Unique key for the user identity.

@@ -217,7 +217,7 @@ func main() {
 
 ### `device_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired thermostat device.
@@ -226,7 +226,7 @@ ID of the desired thermostat device.
 
 ### `user_identifier_key`
 
-Type: `string`
+Format: `String`
 Required: No
 
 User identifier key by which to filter the list of returned thermostat schedules.

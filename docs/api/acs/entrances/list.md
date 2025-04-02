@@ -145,14 +145,14 @@ func main() {
 
 ### `acs_credential_id`
 
-Type: `string`
+Format: `UUID`
 Required: No
 
 ***
 
 ### `acs_system_id`
 
-Type: `string`
+Format: `UUID`
 Required: No
 
 ***

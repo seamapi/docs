@@ -16,7 +16,7 @@ Simulates that the next attempt to scan a [credential](../../../../capability-gu
 
 ### `acs_encoder_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the `acs_encoder` that will fail to scan the `acs_credential` in the next request.
@@ -25,15 +25,20 @@ ID of the `acs_encoder` that will fail to scan the `acs_credential` in the next 
 
 ### `acs_credential_id_on_seam`
 
-Type: `string`
+Format: `UUID`
 Required: No
 
 ***
 
 ### `error_code`
 
-Type: `string`
+Format: `Enum`
 Required: No
+
+Possible enum values:
+- `no_credential_on_encoder`
+- `uncategorized_error`
+- `action_attempt_expired`
 
 ***
 

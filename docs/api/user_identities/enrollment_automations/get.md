@@ -168,7 +168,7 @@ api.EnrollmentAutomation{UserIdentityId: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
 
 ### `enrollment_automation_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the desired enrollment automation.

@@ -178,7 +178,7 @@ func main() {
 
 ### `user_identity_id`
 
-Type: `string`
+Format: `UUID`
 Required: Yes
 
 ID of the user identity for which you want to retrieve all enrollment automations.
