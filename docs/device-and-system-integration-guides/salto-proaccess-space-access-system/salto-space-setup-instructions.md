@@ -48,7 +48,7 @@ To identify this URL:
 1.  On the Windows computer that is running the Salto Space server, open a **Command Prompt** window.
 
     That is, click **Start**, type `cmd`, and press **Enter**.
-2.  In the **Command Prompt** window, type `ipcofig` and then press **Enter**.
+2.  In the **Command Prompt** window, type `ipconfig` and then press **Enter**.
 
     This command displays the computer's Windows IP configuration.
 3.  Note the IPv4 address that the computer is using to connect to the internet.
@@ -90,7 +90,7 @@ Perform the following process for each Salto Space site that you want to integra
     2. In the **Name your bridge** field, type a unique name for Seam Bridge.
     3. Click **Submit**.
 12. On the **Enter your credentials** page:
-    1. In the **System Name** field, type a name to identify the Visionline site within your Seam workspace.
+    1. In the **System Name** field, type a name to identify the Salto Space site within your Seam workspace.
     2.  In the **LAN URL of the Salto Space server** field, type the [URL that you identified](salto-space-setup-instructions.md#lan-url-of-the-salto-space-server) before beginning this process.
 
         For example: `http://192.168.1.101:8100`
