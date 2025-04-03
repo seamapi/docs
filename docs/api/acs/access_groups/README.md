@@ -204,9 +204,6 @@ ID of the event.
 
 <summary><code>event_type</code> Format: <code>Enum</code></summary>
 
-Possible enum values:
-- `acs_access_group.deleted`
-
 Value: `acs_access_group.deleted`
 </details>
 <details>

@@ -184,9 +184,6 @@ ID of the action attempt.
 
 Format: `Enum`
 
-Possible enum values:
-- `ACTIVATE_CLIMATE_PRESET`
-
 ---
 
 #### `status`

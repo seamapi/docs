@@ -353,9 +353,6 @@ ID of the event.
 
 <summary><code>event_type</code> Format: <code>Enum</code></summary>
 
-Possible enum values:
-- `acs_system.connected`
-
 Value: `acs_system.connected`
 </details>
 <details>
@@ -404,9 +401,6 @@ ID of the event.
 
 <summary><code>event_type</code> Format: <code>Enum</code></summary>
 
-Possible enum values:
-- `acs_system.added`
-
 Value: `acs_system.added`
 </details>
 <details>
@@ -454,9 +448,6 @@ ID of the event.
 <details>
 
 <summary><code>event_type</code> Format: <code>Enum</code></summary>
-
-Possible enum values:
-- `acs_system.disconnected`
 
 Value: `acs_system.disconnected`
 </details>

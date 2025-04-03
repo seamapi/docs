@@ -142,9 +142,6 @@ ID of the event.
 
 <summary><code>event_type</code> Format: <code>Enum</code></summary>
 
-Possible enum values:
-- `acs_encoder.added`
-
 Value: `acs_encoder.added`
 </details>
 <details>
@@ -198,9 +195,6 @@ ID of the event.
 <details>
 
 <summary><code>event_type</code> Format: <code>Enum</code></summary>
-
-Possible enum values:
-- `acs_encoder.removed`
 
 Value: `acs_encoder.removed`
 </details>
