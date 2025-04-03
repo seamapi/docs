@@ -54,6 +54,8 @@ Format: `Enum`
 
 Type of action that the action attempt tracks.
 
+Value: `ENCODE_CREDENTIAL`
+
 ---
 
 #### `status`

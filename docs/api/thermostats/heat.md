@@ -194,6 +194,8 @@ ID of the action attempt.
 
 Format: `Enum`
 
+Value: `SET_HVAC_MODE`
+
 ---
 
 #### `status`

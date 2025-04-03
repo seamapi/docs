@@ -190,6 +190,8 @@ ID of the action attempt.
 
 Format: `Enum`
 
+Value: `SET_FAN_MODE`
+
 ---
 
 #### `status`
