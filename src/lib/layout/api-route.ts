@@ -217,15 +217,15 @@ export const mapBlueprintPropertyToRouteProperty = (
   }
 
   if ('values' in prop) {
-    contextRouteProp.enumValues = prop.values.map(({ name }) => name)
-
-    const propNamesWithDeterminedValue = ['event_type', 'action_type']
+    const singleValueEnumProps = ['event_type', 'action_type']
     if (
-      propNamesWithDeterminedValue.includes(name) &&
+      singleValueEnumProps.includes(name) &&
       prop.values.length === 1 &&
       prop.values[0] != null
     ) {
       contextRouteProp.value = prop.values[0].name
+    } else {
+      contextRouteProp.enumValues = prop.values.map(({ name }) => name)
     }
   }
 
