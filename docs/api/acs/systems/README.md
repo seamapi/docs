@@ -8,11 +8,23 @@ Within an `acs_system`, create [`acs_user`s](https://docs.seam.co/latest/api/acs
 
 For details about the resources associated with an access control system, see the [access control systems namespace](https://docs.seam.co/latest/api/acs).
 
+### `acs_access_group_count`
+
+Format: `Number`
+
+---
+
 ### `acs_system_id`
 
 Format: `UUID`
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+
+---
+
+### `acs_users_count`
+
+Format: `Number`
 
 ---
 
@@ -254,7 +266,14 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
   This error might also occur if Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/README.md).
-  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+  See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+
+---
+
+### `bridge_disconnected`
+
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
+    See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
 ---
 
