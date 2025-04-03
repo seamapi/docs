@@ -399,6 +399,9 @@ ID of the event.
 
 <summary><code>event_type</code> Format: <code>Enum</code></summary>
 
+Possible enum values:
+- `acs_credential.deleted`
+
 Value: `acs_credential.deleted`
 </details>
 <details>
@@ -451,6 +454,9 @@ ID of the event.
 
 <summary><code>event_type</code> Format: <code>Enum</code></summary>
 
+Possible enum values:
+- `acs_credential.issued`
+
 Value: `acs_credential.issued`
 </details>
 <details>
@@ -502,6 +508,9 @@ ID of the event.
 <details>
 
 <summary><code>event_type</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `acs_credential.reissued`
 
 Value: `acs_credential.reissued`
 </details>

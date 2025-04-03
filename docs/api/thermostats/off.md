@@ -166,7 +166,8 @@ ID of the action attempt.
 
 Format: `Enum`
 
-Value: `SET_HVAC_MODE`
+Possible enum values:
+- `SET_HVAC_MODE`
 
 ---
 

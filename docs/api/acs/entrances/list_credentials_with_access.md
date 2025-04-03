@@ -253,7 +253,8 @@ Type: `array`
 Item format: `Enum`
 Required: No
 
-Value: `visionline_metadata.is_valid`
+Possible enum values:
+- `visionline_metadata.is_valid`
 
 ***
 

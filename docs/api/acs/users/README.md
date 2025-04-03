@@ -327,6 +327,9 @@ ID of the event.
 
 <summary><code>event_type</code> Format: <code>Enum</code></summary>
 
+Possible enum values:
+- `acs_user.deleted`
+
 Value: `acs_user.deleted`
 </details>
 <details>

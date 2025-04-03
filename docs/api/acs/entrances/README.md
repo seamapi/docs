@@ -283,6 +283,9 @@ ID of the event.
 
 <summary><code>event_type</code> Format: <code>Enum</code></summary>
 
+Possible enum values:
+- `acs_entrance.added`
+
 Value: `acs_entrance.added`
 </details>
 <details>
@@ -334,6 +337,9 @@ ID of the event.
 <details>
 
 <summary><code>event_type</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `acs_entrance.removed`
 
 Value: `acs_entrance.removed`
 </details>
