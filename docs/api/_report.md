@@ -229,6 +229,8 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_credential_provisioning_automation.credential_manager_acs_system_id`
 - `acs_credential_provisioning_automation.user_identity_id`
 - `acs_credential_provisioning_automation.workspace_id`
+- `acs_system.acs_access_group_count`
+- `acs_system.acs_users_count`
 - `acs_system.location`
 - `acs_system.system_type`
 - `acs_system.system_type_display_name`
@@ -852,6 +854,8 @@ These items are deprecated.
 - `/access_codes/pull_backup_access_code`
     - `backup_access_code`
 - `/acs/users/list`
+    - `pagination`
+- `/connected_accounts/list`
     - `pagination`
 - `/events/get`
     - `message`

@@ -292,41 +292,11 @@ Required: No
 Device type by which to filter devices.
 
 Possible enum values:
-- `akuvox_lock`
-- `august_lock`
-- `brivo_access_point`
-- `butterflymx_panel`
-- `avigilon_alta_entry`
-- `doorking_lock`
-- `genie_door`
-- `igloo_lock`
-- `linear_lock`
-- `lockly_lock`
-- `kwikset_lock`
-- `nuki_lock`
-- `salto_lock`
-- `schlage_lock`
-- `seam_relay`
-- `smartthings_lock`
-- `wyze_lock`
-- `yale_lock`
-- `two_n_intercom`
-- `controlbyweb_device`
-- `ttlock_lock`
-- `igloohome_lock`
-- `hubitat_lock`
-- `four_suites_door`
-- `dormakaba_oracode_door`
-- `tedee_lock`
-- `akiles_lock`
-- `noiseaware_activity_zone`
-- `minut_sensor`
 - `ecobee_thermostat`
 - `nest_thermostat`
 - `honeywell_resideo_thermostat`
 - `tado_thermostat`
-- `ios_phone`
-- `android_phone`
+- `sensi_thermostat`
 
 ***
 
@@ -339,41 +309,11 @@ Required: No
 Array of device types by which to filter devices.
 
 Possible enum values:
-- `akuvox_lock`
-- `august_lock`
-- `brivo_access_point`
-- `butterflymx_panel`
-- `avigilon_alta_entry`
-- `doorking_lock`
-- `genie_door`
-- `igloo_lock`
-- `linear_lock`
-- `lockly_lock`
-- `kwikset_lock`
-- `nuki_lock`
-- `salto_lock`
-- `schlage_lock`
-- `seam_relay`
-- `smartthings_lock`
-- `wyze_lock`
-- `yale_lock`
-- `two_n_intercom`
-- `controlbyweb_device`
-- `ttlock_lock`
-- `igloohome_lock`
-- `hubitat_lock`
-- `four_suites_door`
-- `dormakaba_oracode_door`
-- `tedee_lock`
-- `akiles_lock`
-- `noiseaware_activity_zone`
-- `minut_sensor`
 - `ecobee_thermostat`
 - `nest_thermostat`
 - `honeywell_resideo_thermostat`
 - `tado_thermostat`
-- `ios_phone`
-- `android_phone`
+- `sensi_thermostat`
 
 ***
 
@@ -394,41 +334,9 @@ Required: No
 Manufacturer by which to filter devices.
 
 Possible enum values:
-- `akuvox`
-- `august`
-- `avigilon_alta`
-- `brivo`
-- `butterflymx`
-- `doorking`
-- `four_suites`
-- `genie`
-- `igloo`
-- `keywe`
-- `kwikset`
-- `linear`
-- `lockly`
-- `nuki`
-- `philia`
-- `salto`
-- `samsung`
-- `schlage`
-- `seam`
-- `unknown`
-- `wyze`
-- `yale`
-- `minut`
-- `two_n`
-- `ttlock`
-- `nest`
-- `igloohome`
 - `ecobee`
-- `hubitat`
-- `controlbyweb`
-- `smartthings`
-- `dormakaba_oracode`
-- `tedee`
+- `nest`
 - `honeywell_resideo`
-- `akiles`
 - `tado`
 
 ***
