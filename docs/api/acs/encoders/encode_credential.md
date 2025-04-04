@@ -50,9 +50,11 @@ ID of the action attempt.
 
 #### `action_type`
 
-Format: `String`
+Format: `Enum`
 
 Type of action that the action attempt tracks.
+
+Value: `ENCODE_CREDENTIAL`
 
 ---
 

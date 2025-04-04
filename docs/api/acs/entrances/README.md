@@ -281,7 +281,9 @@ ID of the event.
 </details>
 <details>
 
-<summary><code>event_type</code> Format: <code>String</code></summary>
+<summary><code>event_type</code> Format: <code>Enum</code></summary>
+
+Value: `acs_entrance.added`
 </details>
 <details>
 
@@ -331,7 +333,9 @@ ID of the event.
 </details>
 <details>
 
-<summary><code>event_type</code> Format: <code>String</code></summary>
+<summary><code>event_type</code> Format: <code>Enum</code></summary>
+
+Value: `acs_entrance.removed`
 </details>
 <details>
 

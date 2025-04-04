@@ -32,6 +32,10 @@ Item format: `{{listItemFormat}}`
 
 {{> enum-values}}
 {{/if}}
+{{#if value}}
+
+Value: `{{value}}`
+{{/if}}
 {{#unless (eq objectProperties undefined)}}
 {{#if (eq objectProperties.length 0)}}
 

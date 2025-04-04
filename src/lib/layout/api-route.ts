@@ -40,6 +40,7 @@ type ApiRouteProperty = Pick<
   listProperties?: ApiRouteProperty[]
   listItemFormat?: string
   linkTarget?: string
+  value?: string
 }
 
 export interface ApiRouteResource {
@@ -211,17 +212,21 @@ export const mapBlueprintPropertyToRouteProperty = (
     description,
     isDeprecated,
     deprecationMessage,
-    format: '',
+    format: normalizePropertyFormatForDocs(format),
     listItemFormat: '',
   }
 
-  if ('values' in prop && prop.values.length > 1) {
-    contextRouteProp.format = normalizePropertyFormatForDocs(format)
-    contextRouteProp.enumValues = prop.values.map(({ name }) => name)
-  } else if ('values' in prop && prop.values.length === 1) {
-    contextRouteProp.format = normalizePropertyFormatForDocs('string')
-  } else {
-    contextRouteProp.format = normalizePropertyFormatForDocs(format)
+  if ('values' in prop) {
+    const singleValueEnumProps = ['event_type', 'action_type']
+    if (
+      singleValueEnumProps.includes(name) &&
+      prop.values.length === 1 &&
+      prop.values[0] != null
+    ) {
+      contextRouteProp.value = prop.values[0].name
+    } else {
+      contextRouteProp.enumValues = prop.values.map(({ name }) => name)
+    }
   }
 
   if ('properties' in prop) {

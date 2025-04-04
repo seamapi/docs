@@ -397,7 +397,9 @@ ID of the event.
 </details>
 <details>
 
-<summary><code>event_type</code> Format: <code>String</code></summary>
+<summary><code>event_type</code> Format: <code>Enum</code></summary>
+
+Value: `acs_credential.deleted`
 </details>
 <details>
 
@@ -447,7 +449,9 @@ ID of the event.
 </details>
 <details>
 
-<summary><code>event_type</code> Format: <code>String</code></summary>
+<summary><code>event_type</code> Format: <code>Enum</code></summary>
+
+Value: `acs_credential.issued`
 </details>
 <details>
 
@@ -497,7 +501,9 @@ ID of the event.
 </details>
 <details>
 
-<summary><code>event_type</code> Format: <code>String</code></summary>
+<summary><code>event_type</code> Format: <code>Enum</code></summary>
+
+Value: `acs_credential.reissued`
 </details>
 <details>
 
