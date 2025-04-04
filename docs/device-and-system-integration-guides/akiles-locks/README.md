@@ -64,7 +64,7 @@ To control Akiles devices using Seam, you must prompt owners of these devices to
     * [Google Play](https://play.google.com/store/apps/details?id=app.akiles\&hl=en)
 
     Make sure to note your credentials for the Akiles app.
-4. In the Akiles app, click the top-left menu and select **Devices**.
+4. In the Akiles app, click the upper-left menu and select **Devices**.
 5. At the upper-right corner, click **Actions +** and select **New Device**.
 6. Type a name for the new device and select the site with which you want to associate the device.
 7. In the **Device Type** area, add the Akiles Gateway.
@@ -73,14 +73,14 @@ To control Akiles devices using Seam, you must prompt owners of these devices to
      The Akiles app displays Device and Version information based on the hardware ID.
    * Click **Create Device**.\
      The Akiles app creates the device representation and displays the device status. A Gateway takes a moment to connect to the Akiles server, run a firmware auto-update, and reboot.
-8. Adding each Akiles lock.
+8. Add each Akiles lock.
    * Using the photo that you took of the QR code inside the lock, scan this code to retrieve the hardware ID number. Note that smartphone photo apps are capable of scanning QR codes in photos.
    * In the **Device Type** field, paste the hardware ID number.\
      The Akiles app displays Device and Version information based on the hardware ID.
    * Click **Create Device**.\
      The Akiles app creates the device representation and displays that the device status is offline.
 9. Connect each lock to the Gateway.
-   * Click the top-left menu and select **Links**.\
+   * Click the upper-left menu and select **Links**.\
      By default, the Akiles app displays a link between the Gateway and server. You can check the link status in this location at any time.
    * Click **Link +**.
    * Clear the **Server** field to remove **Server** from **Central Device**.
@@ -88,7 +88,7 @@ To control Akiles devices using Seam, you must prompt owners of these devices to
    * **Peripheral Device** and select **Lock**.
    * Click **Create Link**.\
      This link connects the lock to the Akiles server and may take several minutes to complete. It also performs firmware updates that take additional time.
-10. Click the top-left menu, select **Devices**, and make sure that all devices are online.
+10. Click the upper-left menu, select **Devices**, and make sure that all devices are online.
 
 ### Connect Akiles Devices to Seam
 
