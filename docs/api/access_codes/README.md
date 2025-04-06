@@ -2,6 +2,8 @@
 
 The Access Codes route contains the following resources:
 
+- [`access_code`](./#access_code)
+
 ## The `access_code` Resource
 
 {% tabs %}

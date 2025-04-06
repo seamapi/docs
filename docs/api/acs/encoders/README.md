@@ -2,6 +2,8 @@
 
 The Encoders route contains the following resources:
 
+- [`acs_encoder`](./#acs_encoder)
+
 ## The `acs_encoder` Resource
 
 Represents a hardware device that encodes [credential](../../../capability-guides/access-systems/managing-credentials.md) data onto physical cards within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
