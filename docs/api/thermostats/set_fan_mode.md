@@ -20,18 +20,15 @@ POST /thermostats/set_fan_mode ⇒ { action_attempt }
 
 ## Request Parameters
 
-**`device_id`** *string*
-Required: Yes
+**`device_id`** ** (Required)
 
 ---
 
-**`fan_mode`** *string*
-Required: No
+**`fan_mode`** **
 
 ---
 
-**`fan_mode_setting`** *string*
-Required: No
+**`fan_mode_setting`** **
 
 Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for the thermostat.
 

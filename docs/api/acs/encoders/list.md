@@ -19,29 +19,25 @@ POST /acs/encoders/list ⇒ { acs_encoders: [acs_encoder, …] }
 
 ## Request Parameters
 
-**`acs_encoder_ids`** *array* *of UUIDs*
-Required: No
+**`acs_encoder_ids`** ** *of UUIDs*
 
 IDs of the `acs_encoder`s that you want to retrieve.
 
 ---
 
-**`acs_system_id`** *string*
-Required: No
+**`acs_system_id`** **
 
 ID of the `acs_system` for which you want to retrieve all `acs_encoder`s.
 
 ---
 
-**`acs_system_ids`** *array* *of UUIDs*
-Required: No
+**`acs_system_ids`** ** *of UUIDs*
 
 IDs of the `acs_system`s for which you want to retrieve all `acs_encoder`s.
 
 ---
 
-**`limit`** *number*
-Required: No
+**`limit`** **
 
 Number of `acs_encoders` to return.
 

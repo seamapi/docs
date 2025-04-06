@@ -19,8 +19,7 @@ POST /acs/access_groups/list_users ⇒ { acs_users: [acs_user, …] }
 
 ## Request Parameters
 
-**`acs_access_group_id`** *string*
-Required: Yes
+**`acs_access_group_id`** ** (Required)
 
 ID of the access group for which you want to retrieve all users.
 

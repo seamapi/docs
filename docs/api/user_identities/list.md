@@ -20,8 +20,7 @@ POST /user_identities/list ⇒ { user_identities: [user_identity, …] }
 
 ## Request Parameters
 
-**`credential_manager_acs_system_id`** *string*
-Required: No
+**`credential_manager_acs_system_id`** **
 
 ---
 

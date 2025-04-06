@@ -19,8 +19,7 @@ POST /acs/users/delete ⇒ void
 
 ## Request Parameters
 
-**`acs_user_id`** *string*
-Required: Yes
+**`acs_user_id`** ** (Required)
 
 ID of the desired `acs_user`.
 

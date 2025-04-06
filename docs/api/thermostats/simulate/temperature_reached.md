@@ -19,22 +19,19 @@ POST /thermostats/simulate/temperature_reached ⇒ void
 
 ## Request Parameters
 
-**`device_id`** *string*
-Required: Yes
+**`device_id`** ** (Required)
 
 ID of the desired thermostat device.
 
 ---
 
-**`temperature_celsius`** *number*
-Required: No
+**`temperature_celsius`** **
 
 Desired simulated temperature in °C. You must set `temperature_celsius` or `temperature_fahrenheit`.
 
 ---
 
-**`temperature_fahrenheit`** *number*
-Required: No
+**`temperature_fahrenheit`** **
 
 Desired simulated temperature in °F. You must set `temperature_fahrenheit` or `temperature_celsius`.
 

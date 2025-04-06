@@ -18,8 +18,7 @@ POST /acs/entrances/get ⇒ { acs_entrance }
 
 ## Request Parameters
 
-**`acs_entrance_id`** *string*
-Required: Yes
+**`acs_entrance_id`** ** (Required)
 
 ---
 

@@ -19,8 +19,7 @@ POST /acs/access_groups/get ⇒ { acs_access_group }
 
 ## Request Parameters
 
-**`acs_access_group_id`** *string*
-Required: Yes
+**`acs_access_group_id`** ** (Required)
 
 ID of the desired access group.
 

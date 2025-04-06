@@ -19,8 +19,7 @@ POST /user_identities/delete ⇒ void
 
 ## Request Parameters
 
-**`user_identity_id`** *string*
-Required: Yes
+**`user_identity_id`** ** (Required)
 
 ID of the desired user identity.
 

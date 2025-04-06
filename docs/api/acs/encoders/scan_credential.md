@@ -19,8 +19,7 @@ POST /acs/encoders/scan_credential ⇒ { action_attempt }
 
 ## Request Parameters
 
-**`acs_encoder_id`** *string*
-Required: Yes
+**`acs_encoder_id`** ** (Required)
 
 ID of the `acs_encoder` to use for the scan.
 

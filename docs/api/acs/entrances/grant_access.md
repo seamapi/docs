@@ -19,13 +19,11 @@ POST /acs/entrances/grant_access ⇒ void
 
 ## Request Parameters
 
-**`acs_entrance_id`** *string*
-Required: Yes
+**`acs_entrance_id`** ** (Required)
 
 ---
 
-**`acs_user_id`** *string*
-Required: Yes
+**`acs_user_id`** ** (Required)
 
 ---
 

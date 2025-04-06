@@ -19,15 +19,13 @@ PATCH /acs/credentials/unassign ⇒ void
 
 ## Request Parameters
 
-**`acs_credential_id`** *string*
-Required: Yes
+**`acs_credential_id`** ** (Required)
 
 ID of the desired credential.
 
 ---
 
-**`acs_user_id`** *string*
-Required: Yes
+**`acs_user_id`** ** (Required)
 
 ID of the desired user.
 

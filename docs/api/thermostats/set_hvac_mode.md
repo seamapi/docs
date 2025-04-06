@@ -20,41 +20,35 @@ POST /thermostats/set_hvac_mode ⇒ { action_attempt }
 
 ## Request Parameters
 
-**`device_id`** *string*
-Required: Yes
+**`device_id`** ** (Required)
 
 ID of the desired thermostat device.
 
 ---
 
-**`hvac_mode_setting`** *string*
-Required: Yes
+**`hvac_mode_setting`** ** (Required)
 
 ---
 
-**`cooling_set_point_celsius`** *number*
-Required: No
+**`cooling_set_point_celsius`** **
 
 Desired [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `cooling_set_point` parameters.
 
 ---
 
-**`cooling_set_point_fahrenheit`** *number*
-Required: No
+**`cooling_set_point_fahrenheit`** **
 
 Desired [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `cooling_set_point` parameters.
 
 ---
 
-**`heating_set_point_celsius`** *number*
-Required: No
+**`heating_set_point_celsius`** **
 
 Desired [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `heating_set_point` parameters.
 
 ---
 
-**`heating_set_point_fahrenheit`** *number*
-Required: No
+**`heating_set_point_fahrenheit`** **
 
 Desired [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `heating_set_point` parameters.
 

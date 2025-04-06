@@ -20,55 +20,47 @@ POST /acs/users/list ⇒ { acs_users: [acs_user, …] }
 
 ## Request Parameters
 
-**`acs_system_id`** *string*
-Required: No
+**`acs_system_id`** **
 
 ID of the `acs_system` for which you want to retrieve all `acs_user`s.
 
 ---
 
-**`created_before`** *string*
-Required: No
+**`created_before`** **
 
 ---
 
-**`limit`** *number*
-Required: No
+**`limit`** **
 
 Maximum number of records to return per page.
 
 ---
 
-**`page_cursor`** *string*
-Required: No
+**`page_cursor`** **
 
 Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
 
 ---
 
-**`search`** *string*
-Required: No
+**`search`** **
 
 String for which to search. Filters returned `acs_user`s to include all records that satisfy a partial match using `full_name`, `phone_number`, or `email_address`.
 
 ---
 
-**`user_identity_email_address`** *string*
-Required: No
+**`user_identity_email_address`** **
 
 Email address of the user identity for which you want to retrieve all `acs_user`s.
 
 ---
 
-**`user_identity_id`** *string*
-Required: No
+**`user_identity_id`** **
 
 ID of the user identity for which you want to retrieve all `acs_user`s.
 
 ---
 
-**`user_identity_phone_number`** *string*
-Required: No
+**`user_identity_phone_number`** **
 
 Phone number of the user identity for which you want to retrieve all `acs_user`s, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`).
 

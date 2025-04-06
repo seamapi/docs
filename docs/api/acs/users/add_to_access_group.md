@@ -19,15 +19,13 @@ PUT /acs/users/add_to_access_group ⇒ void
 
 ## Request Parameters
 
-**`acs_access_group_id`** *string*
-Required: Yes
+**`acs_access_group_id`** ** (Required)
 
 ID of the desired access group.
 
 ---
 
-**`acs_user_id`** *string*
-Required: Yes
+**`acs_user_id`** ** (Required)
 
 ID of the desired `acs_user`.
 

@@ -19,8 +19,7 @@ POST /acs/access_groups/list_accessible_entrances ⇒ { acs_entrances: [acs_entr
 
 ## Request Parameters
 
-**`acs_access_group_id`** *string*
-Required: Yes
+**`acs_access_group_id`** ** (Required)
 
 ID of the access group for which you want to retrieve all accessible entrances.
 

@@ -20,13 +20,11 @@ POST /acs/entrances/list ⇒ { acs_entrances: [acs_entrance, …] }
 
 ## Request Parameters
 
-**`acs_credential_id`** *string*
-Required: No
+**`acs_credential_id`** **
 
 ---
 
-**`acs_system_id`** *string*
-Required: No
+**`acs_system_id`** **
 
 ---
 

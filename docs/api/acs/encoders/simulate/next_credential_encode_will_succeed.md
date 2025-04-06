@@ -19,15 +19,13 @@ POST /acs/encoders/simulate/next_credential_encode_will_succeed ⇒ void
 
 ## Request Parameters
 
-**`acs_encoder_id`** *string*
-Required: Yes
+**`acs_encoder_id`** ** (Required)
 
 ID of the `acs_encoder` that will be used in the next request to encode the `acs_credential`.
 
 ---
 
-**`scenario`** *string*
-Required: No
+**`scenario`** **
 
 Scenario to simulate.
 

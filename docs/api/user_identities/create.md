@@ -19,29 +19,25 @@ POST /user_identities/create ⇒ { user_identity }
 
 ## Request Parameters
 
-**`email_address`** *string*
-Required: No
+**`email_address`** **
 
 Unique email address for the user identity.
 
 ---
 
-**`full_name`** *string*
-Required: No
+**`full_name`** **
 
 Full name of the user associated with the user identity.
 
 ---
 
-**`phone_number`** *string*
-Required: No
+**`phone_number`** **
 
 Unique phone number for the user identity in E.164 format (for example, +15555550100).
 
 ---
 
-**`user_identity_key`** *string*
-Required: No
+**`user_identity_key`** **
 
 Unique key for the user identity.
 

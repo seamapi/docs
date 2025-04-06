@@ -19,8 +19,7 @@ POST /acs/credentials/list_accessible_entrances ⇒ { acs_entrances: [acs_entran
 
 ## Request Parameters
 
-**`acs_credential_id`** *string*
-Required: Yes
+**`acs_credential_id`** ** (Required)
 
 ID of the credential for which you want to retrieve all entrances to which this credential grants access.
 

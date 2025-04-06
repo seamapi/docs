@@ -19,55 +19,47 @@ POST /acs/users/create ⇒ { acs_user }
 
 ## Request Parameters
 
-**`acs_system_id`** *string*
-Required: Yes
+**`acs_system_id`** ** (Required)
 
 ID of the `acs_system` to which to add the new `acs_user`.
 
 ---
 
-**`full_name`** *string*
-Required: Yes
+**`full_name`** ** (Required)
 
 Full name of the new `acs_user`.
 
 ---
 
-**`access_schedule`** *object*
-Required: No
+**`access_schedule`** **
 
 `starts_at` and `ends_at` timestamps for the new `acs_user`'s access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. `starts_at` defaults to the current time if not provided. `ends_at` is optional and must be a time in the future and after `starts_at`.
 
 ---
 
-**`acs_access_group_ids`** *array* *of UUIDs*
-Required: No
+**`acs_access_group_ids`** ** *of UUIDs*
 
 Array of `access_group_id`s to indicate the access groups to which to add the new `acs_user`.
 
 ---
 
-**`email`** *string*
-Required: No
+**`email`** **
 
 ---
 
-**`email_address`** *string*
-Required: No
+**`email_address`** **
 
 Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 ---
 
-**`phone_number`** *string*
-Required: No
+**`phone_number`** **
 
 Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
 
 ---
 
-**`user_identity_id`** *string*
-Required: No
+**`user_identity_id`** **
 
 ID of the user identity with which to associate the new `acs_user`.
 

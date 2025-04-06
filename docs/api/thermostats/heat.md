@@ -20,22 +20,19 @@ POST /thermostats/heat ⇒ { action_attempt }
 
 ## Request Parameters
 
-**`device_id`** *string*
-Required: Yes
+**`device_id`** ** (Required)
 
 ID of the desired thermostat device.
 
 ---
 
-**`heating_set_point_celsius`** *number*
-Required: No
+**`heating_set_point_celsius`** **
 
 Desired [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `heating_set_point` parameters.
 
 ---
 
-**`heating_set_point_fahrenheit`** *number*
-Required: No
+**`heating_set_point_fahrenheit`** **
 
 Desired [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `heating_set_point` parameters.
 

@@ -20,8 +20,7 @@ POST /thermostats/schedules/get ⇒ { thermostat_schedule }
 
 ## Request Parameters
 
-**`thermostat_schedule_id`** *string*
-Required: Yes
+**`thermostat_schedule_id`** ** (Required)
 
 ID of the desired thermostat schedule.
 

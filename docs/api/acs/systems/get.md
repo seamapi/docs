@@ -21,8 +21,7 @@ POST /acs/systems/get ⇒ { acs_system }
 
 ## Request Parameters
 
-**`acs_system_id`** *string*
-Required: Yes
+**`acs_system_id`** ** (Required)
 
 ID of the desired access control system.
 

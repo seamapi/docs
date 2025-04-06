@@ -19,15 +19,13 @@ POST /thermostats/set_fallback_climate_preset ⇒ void
 
 ## Request Parameters
 
-**`climate_preset_key`** *string*
-Required: Yes
+**`climate_preset_key`** ** (Required)
 
 Climate preset key of the desired climate preset.
 
 ---
 
-**`device_id`** *string*
-Required: Yes
+**`device_id`** ** (Required)
 
 ID of the desired thermostat device.
 

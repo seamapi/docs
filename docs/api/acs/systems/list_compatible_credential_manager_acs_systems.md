@@ -23,8 +23,7 @@ POST /acs/systems/list_compatible_credential_manager_acs_systems ⇒ { acs_syste
 
 ## Request Parameters
 
-**`acs_system_id`** *string*
-Required: Yes
+**`acs_system_id`** ** (Required)
 
 ID of the ACS system for which you want to retrieve all compatible credential manager ACS systems.
 

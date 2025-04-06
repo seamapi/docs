@@ -19,15 +19,13 @@ POST /user_identities/get ⇒ { user_identity }
 
 ## Request Parameters
 
-**`user_identity_id`** *string*
-Required: No
+**`user_identity_id`** **
 
 ID of the desired user identity.
 
 ---
 
-**`user_identity_key`** *string*
-Required: No
+**`user_identity_key`** **
 
 ---
 

@@ -19,20 +19,17 @@ POST /acs/encoders/simulate/next_credential_scan_will_fail ⇒ void
 
 ## Request Parameters
 
-**`acs_encoder_id`** *string*
-Required: Yes
+**`acs_encoder_id`** ** (Required)
 
 ID of the `acs_encoder` that will fail to scan the `acs_credential` in the next request.
 
 ---
 
-**`acs_credential_id_on_seam`** *string*
-Required: No
+**`acs_credential_id_on_seam`** **
 
 ---
 
-**`error_code`** *string*
-Required: No
+**`error_code`** **
 
 ---
 

@@ -20,8 +20,7 @@ POST /user_identities/enrollment_automations/get ⇒ { enrollment_automation }
 
 ## Request Parameters
 
-**`enrollment_automation_id`** *string*
-Required: Yes
+**`enrollment_automation_id`** ** (Required)
 
 ID of the desired enrollment automation.
 

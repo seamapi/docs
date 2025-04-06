@@ -20,50 +20,43 @@ PATCH /thermostats/schedules/update ⇒ void
 
 ## Request Parameters
 
-**`thermostat_schedule_id`** *string*
-Required: Yes
+**`thermostat_schedule_id`** ** (Required)
 
 ID of the desired thermostat schedule.
 
 ---
 
-**`climate_preset_key`** *string*
-Required: No
+**`climate_preset_key`** **
 
 Key of the [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to use for the thermostat schedule.
 
 ---
 
-**`ends_at`** *string*
-Required: No
+**`ends_at`** **
 
 Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 ---
 
-**`is_override_allowed`** *boolean*
-Required: No
+**`is_override_allowed`** **
 
 Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the schedule is active. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
 
 ---
 
-**`max_override_period_minutes`** *number*
-Required: No
+**`max_override_period_minutes`** **
 
 Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
 
 ---
 
-**`name`** *string*
-Required: No
+**`name`** **
 
 User-friendly name to identify the thermostat schedule.
 
 ---
 
-**`starts_at`** *string*
-Required: No
+**`starts_at`** **
 
 Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 

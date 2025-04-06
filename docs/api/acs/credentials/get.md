@@ -19,8 +19,7 @@ POST /acs/credentials/get ⇒ { acs_credential }
 
 ## Request Parameters
 
-**`acs_credential_id`** *string*
-Required: Yes
+**`acs_credential_id`** ** (Required)
 
 ID of the desired credential.
 
