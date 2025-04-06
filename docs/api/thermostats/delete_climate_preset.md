@@ -36,3 +36,124 @@ ID of the desired thermostat device.
 ## Return Type
 
 void
+
+---
+
+## Examples
+  
+### Delete a climate preset
+
+Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+#### Code
+
+```javascript
+await seam.thermostats.deleteClimatePreset({
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  climate_preset_key: "occupied",
+});
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="Python" %}
+#### Code
+
+```python
+seam.thermostats.delete_climate_preset(
+    device_id="123e4567-e89b-12d3-a456-426614174000", climate_preset_key="occupied"
+)
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+#### Code
+
+```ruby
+seam.thermostats.delete_climate_preset(
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  climate_preset_key: "occupied",
+)
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+#### Code
+
+```php
+<?php
+$seam->thermostats->delete_climate_preset(
+    device_id: "123e4567-e89b-12d3-a456-426614174000",
+    climate_preset_key: "occupied"
+);
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+#### Code
+
+```seam_cli
+seam thermostats delete-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "occupied"
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Code
+
+```go
+package main
+
+import api "github.com/seamapi/go"
+
+func main() {
+	client.Thermostats.DeleteClimatePreset(
+		context.Background(),
+		api.ThermostatsDeleteClimatePresetRequest{
+			DeviceId:         api.String("123e4567-e89b-12d3-a456-426614174000"),
+			ClimatePresetKey: api.String("occupied"),
+		},
+	)
+}
+```
+
+#### Output
+
+```go
+nil
+```
+{% endtab %}
+
+{% endtabs %}
+
+

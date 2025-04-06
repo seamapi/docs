@@ -61,3 +61,125 @@ Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/acc
 ## Return Type
 
 void
+
+---
+
+## Examples
+  
+### Update an ACS user
+
+Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+{% tabs %}
+{% tab title="JavaScript" %}
+#### Code
+
+```javascript
+await seam.acs.users.update({
+  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
+  phone_number: "+15555550222",
+});
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="Python" %}
+#### Code
+
+```python
+seam.acs.users.update(
+    acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33", phone_number="+15555550222"
+)
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+#### Code
+
+```ruby
+seam.acs.users.update(
+  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
+  phone_number: "+15555550222",
+)
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+#### Code
+
+```php
+<?php
+$seam->acs->users->update(
+    acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
+    phone_number: "+15555550222"
+);
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+#### Code
+
+```seam_cli
+seam acs users update --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33" --phone_number "+15555550222"
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Code
+
+```go
+package main
+
+import api "github.com/seamapi/go"
+import users "github.com/seamapi/go/users"
+
+func main() {
+	client.Acs.Users.Update(
+		context.Background(),
+		users.UsersUpdateRequest{
+			AcsUserId:   api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
+			PhoneNumber: api.String("+15555550222"),
+		},
+	)
+}
+```
+
+#### Output
+
+```go
+nil
+```
+{% endtab %}
+
+{% endtabs %}
+
+

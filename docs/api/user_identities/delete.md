@@ -29,3 +29,116 @@ ID of the desired user identity.
 ## Return Type
 
 void
+
+---
+
+## Examples
+  
+### Delete a user identity
+
+Specify the desired `user_identity_id`.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+#### Code
+
+```javascript
+await seam.userIdentities.delete({
+  user_identity_id: "44d48b20-0dbe-419d-91ca-ab8bceecd135",
+});
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="Python" %}
+#### Code
+
+```python
+seam.user_identities.delete(user_identity_id="44d48b20-0dbe-419d-91ca-ab8bceecd135")
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+#### Code
+
+```ruby
+seam.user_identities.delete(user_identity_id: "44d48b20-0dbe-419d-91ca-ab8bceecd135")
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+#### Code
+
+```php
+<?php
+$seam->user_identities->delete(
+    user_identity_id: "44d48b20-0dbe-419d-91ca-ab8bceecd135"
+);
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+#### Code
+
+```seam_cli
+seam user-identities delete --user_identity_id "44d48b20-0dbe-419d-91ca-ab8bceecd135"
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Code
+
+```go
+package main
+
+import api "github.com/seamapi/go"
+
+func main() {
+	client.UserIdentities.Delete(
+		context.Background(),
+		api.UserIdentitiesDeleteRequest{
+			UserIdentityId: api.String("44d48b20-0dbe-419d-91ca-ab8bceecd135"),
+		},
+	)
+}
+```
+
+#### Output
+
+```go
+nil
+```
+{% endtab %}
+
+{% endtabs %}
+
+

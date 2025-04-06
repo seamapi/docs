@@ -53,3 +53,130 @@ Upper temperature limit in in °C. Seam alerts you if the reported temperature i
 ## Return Type
 
 void
+
+---
+
+## Examples
+  
+### Set a temperature threshold
+
+Specify the `device_id` of the desired thermostat, along with the desired upper and lower limits in °C or °F.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+#### Code
+
+```javascript
+await seam.thermostats.setTemperatureThreshold({
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  lower_limit_celsius: 4,
+  upper_limit_celsius: 30,
+});
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="Python" %}
+#### Code
+
+```python
+seam.thermostats.set_temperature_threshold(
+    device_id="123e4567-e89b-12d3-a456-426614174000",
+    lower_limit_celsius=4,
+    upper_limit_celsius=30,
+)
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+#### Code
+
+```ruby
+seam.thermostats.set_temperature_threshold(
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  lower_limit_celsius: 4,
+  upper_limit_celsius: 30,
+)
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+#### Code
+
+```php
+<?php
+$seam->thermostats->set_temperature_threshold(
+    device_id: "123e4567-e89b-12d3-a456-426614174000",
+    lower_limit_celsius: 4,
+    upper_limit_celsius: 30
+);
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+#### Code
+
+```seam_cli
+seam thermostats set-temperature-threshold --device_id "123e4567-e89b-12d3-a456-426614174000" --lower_limit_celsius 4 --upper_limit_celsius 30
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Code
+
+```go
+package main
+
+import api "github.com/seamapi/go"
+
+func main() {
+	client.Thermostats.SetTemperatureThreshold(
+		context.Background(),
+		api.ThermostatsSetTemperatureThresholdRequest{
+			DeviceId:          api.String("123e4567-e89b-12d3-a456-426614174000"),
+			LowerLimitCelsius: api.Float64(4),
+			UpperLimitCelsius: api.Float64(30),
+		},
+	)
+}
+```
+
+#### Output
+
+```go
+nil
+```
+{% endtab %}
+
+{% endtabs %}
+
+

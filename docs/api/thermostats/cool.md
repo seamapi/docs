@@ -89,3 +89,145 @@ ID of the action attempt.
 
 ---
 
+
+---
+
+## Examples
+  
+### Set to cool mode
+
+Specify the desired cooling set point in °C or °F.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+#### Code
+
+```javascript
+await seam.thermostats.cool({
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  cooling_set_point_celsius: 25,
+});
+```
+
+#### Output
+
+```javascript
+{
+  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
+  "status": "pending",
+  "action_type": "SET_COOL"
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+#### Code
+
+```python
+seam.thermostats.cool(
+    device_id="123e4567-e89b-12d3-a456-426614174000", cooling_set_point_celsius=25
+)
+```
+
+#### Output
+
+```python
+ActionAttempt(
+    action_attempt_id="123e4567-e89b-12d3-a456-426614174000",
+    status="pending",
+    action_type="SET_COOL",
+)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+#### Code
+
+```ruby
+seam.thermostats.cool(
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  cooling_set_point_celsius: 25,
+)
+```
+
+#### Output
+
+```ruby
+{
+  "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
+  "status" => "pending",
+  "action_type" => "SET_COOL",
+}
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+#### Code
+
+```php
+<?php
+$seam->thermostats->cool(
+    device_id: "123e4567-e89b-12d3-a456-426614174000",
+    cooling_set_point_celsius: 25
+);
+```
+
+#### Output
+
+```php
+<?php
+[
+    "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "status" => "pending",
+    "action_type" => "SET_COOL",
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+#### Code
+
+```seam_cli
+seam thermostats cool --device_id "123e4567-e89b-12d3-a456-426614174000" --cooling_set_point_celsius 25
+```
+
+#### Output
+
+```seam_cli
+{
+  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
+  "status": "pending",
+  "action_type": "SET_COOL"
+}
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Code
+
+```go
+package main
+
+import api "github.com/seamapi/go"
+
+func main() {
+	client.Thermostats.Cool(
+		context.Background(),
+		api.ThermostatsCoolRequest{
+			DeviceId:               api.String("123e4567-e89b-12d3-a456-426614174000"),
+			CoolingSetPointCelsius: api.Float64(25),
+		},
+	)
+}
+```
+
+#### Output
+
+```go
+api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Status: "pending", ActionType: "SET_COOL"}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
