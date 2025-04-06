@@ -6,6 +6,7 @@
 ```
 {{request.preferredMethod}} {{path}} ⇒ {{#if response.responseKey}}{{#if (eq response.responseType "resource_list")}}{ {{response.responseKey}}: [{{response.resourceType}}, …] }{{else}}{ {{response.responseKey}} }{{/if}}{{else}}void{{/if}}
 ```
+{% endhint %}
 
 {{#if authMethods}}
 <details>
@@ -20,31 +21,24 @@
 {{/each}}
 </details>
 {{/if}}
-{% endhint %}
-
-{{#with primaryCodeSample}}
-{{> code-sample }}
-
-{{/with}}
 
 ## Request Parameters
 
 {{#if request.parameters.length}}
 {{#each request.parameters}}
-### `{{this.name}}`
-
-Type: `{{this.jsonType}}`
-{{#if this.itemFormat}}
-Item format: `{{this.itemFormat}}`
-{{/if}}
+**`{{this.name}}`** *{{this.jsonType}}*{{#if this.itemFormat}} *of {{this.itemFormat}}s*{{/if}}
 Required: {{#if this.required}}Yes{{else}}No{{/if}}
 {{#if this.description}}
 
 {{this.description}}
 {{/if}}
 {{#if this.itemEnumValues}}
+<details>
+
+<summary>Enum values</summary>
 
 {{> enum-values enumValues=this.itemEnumValues}}
+</details>
 {{/if}}
 
 ---
@@ -66,7 +60,16 @@ None
 
 ---
 
-## Code Samples
+## Examples
+  
+{{#with primaryCodeSample}}
+### {{this.title}}
+
+{{this.description}}
+
+{{> code-sample }}
+
+{{/with}}
 
 {{#each additionalCodeSamples}}
 ### {{this.title}}
