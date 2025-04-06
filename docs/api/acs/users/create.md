@@ -65,6 +65,7 @@ ID of the user identity with which to associate the new `acs_user`.
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
+
 ## Return Type
 
 [acs\_user](./)

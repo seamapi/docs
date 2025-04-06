@@ -31,6 +31,7 @@ ID of the `acs_encoder` to use to encode the `acs_credential`.
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
+
 ## Return Type
 
 [action\_attempt](./)

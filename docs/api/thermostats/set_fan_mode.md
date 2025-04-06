@@ -34,6 +34,7 @@ Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermos
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
+
 ## Return Type
 
 [action\_attempt](./)

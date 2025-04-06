@@ -49,6 +49,7 @@ Upper temperature limit in in °C. Seam alerts you if the reported temperature i
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
+
 ## Return Type
 
 void

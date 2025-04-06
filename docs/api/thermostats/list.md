@@ -127,6 +127,7 @@ Your own internal user ID for the user by which to filter devices.
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
+
 ## Return Type
 
 Array<[device](./)>

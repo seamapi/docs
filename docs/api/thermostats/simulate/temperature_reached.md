@@ -37,6 +37,7 @@ Desired simulated temperature in °F. You must set `temperature_fahrenheit` or `
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
+
 ## Return Type
 
 void

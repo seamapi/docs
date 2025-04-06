@@ -31,6 +31,7 @@ ID of the user identity that represents the owner by which to filter the list of
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
+
 ## Return Type
 
 Array<[phone](./)>

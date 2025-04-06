@@ -24,6 +24,7 @@ POST /user_identities/list ⇒ { user_identities: [user_identity, …] }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
+
 ## Return Type
 
 Array<[user\_identity](./)>

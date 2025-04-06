@@ -57,6 +57,7 @@ Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/acc
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
+
 ## Return Type
 
 void

@@ -22,6 +22,7 @@ POST /acs/entrances/get ⇒ { acs_entrance }
 - API key
 - Client session token
 </details>
+
 ## Return Type
 
 [acs\_entrance](./)

@@ -31,6 +31,7 @@ ID of the user for which you want to retrieve all access groups.
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
+
 ## Return Type
 
 Array<[acs\_access\_group](./)>
