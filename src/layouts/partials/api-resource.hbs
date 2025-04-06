@@ -8,11 +8,18 @@
 {{description}}
 {{/if}}
 
+{% tabs %}
+{% tab title="JSON" %}
 ```json
+{
 {{#each properties}}
-{{name}}: [example value],
+  {{properties.indexOf(this)}}
+  {{name}}: [example value],
 {{/each}}
+}
 ```
+{% endtab %}
+{% endtabs %}
 
 ---
 
