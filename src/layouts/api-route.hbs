@@ -2,6 +2,12 @@
 
 The {{title}} route contains the following resources:
 
+{{#if resources.length}}
+{{#each resources}}
+- [`{{name}}`](./#{{name}})
+{{/each}}
+{{/if}}
+
 {{#each resources}}
 {{> api-resource }}
 {{#if errors.length}}
