@@ -108,7 +108,7 @@ export function setEndpointLayoutContext(
         name: param.name,
         required: param.isRequired,
         description: param.description,
-        jsonType: param.jsonType,
+        jsonType: normalizePropertyFormatForDocs(param.jsonType),
         ...(param.jsonType === 'array' && {
           itemFormat: normalizePropertyFormatForDocs(param.itemFormat),
           ...(param.itemFormat === 'enum' && {
