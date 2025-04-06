@@ -38,6 +38,12 @@ ID of the `acs_encoder` to use for the scan.
 
 Reading credential data from physical encoder.
 
+```json
+action_attempt_id: [example value],
+action_type: [example value],
+status: [example value],
+```
+
 ---
 
 ### Properties

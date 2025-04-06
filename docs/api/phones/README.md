@@ -6,6 +6,19 @@ The Phones route contains the following resources:
 
 Represents an app user's mobile phone.
 
+```json
+created_at: [example value],
+custom_metadata: [example value],
+device_id: [example value],
+device_type: [example value],
+display_name: [example value],
+errors: [example value],
+nickname: [example value],
+properties: [example value],
+warnings: [example value],
+workspace_id: [example value],
+```
+
 ---
 
 ## Properties

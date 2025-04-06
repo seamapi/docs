@@ -161,6 +161,12 @@ ID of the desired thermostat device.
 
 Setting HVAC mode.
 
+```json
+action_attempt_id: [example value],
+action_type: [example value],
+status: [example value],
+```
+
 ---
 
 ### Properties

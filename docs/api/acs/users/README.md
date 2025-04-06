@@ -10,6 +10,30 @@ An `acs_user` typically refers to an individual who requires access, like an emp
 
 For details about how to configure `acs_user`s in your access control system, see the corresponding [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 
+```json
+access_schedule: [example value],
+acs_system_id: [example value],
+acs_user_id: [example value],
+created_at: [example value],
+display_name: [example value],
+email: [example value],
+email_address: [example value],
+errors: [example value],
+external_type: [example value],
+external_type_display_name: [example value],
+full_name: [example value],
+hid_acs_system_id: [example value],
+is_managed: [example value],
+is_suspended: [example value],
+phone_number: [example value],
+user_identity_email_address: [example value],
+user_identity_full_name: [example value],
+user_identity_id: [example value],
+user_identity_phone_number: [example value],
+warnings: [example value],
+workspace_id: [example value],
+```
+
 ---
 
 ## Properties

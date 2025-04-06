@@ -47,6 +47,12 @@ ID of the `acs_encoder` to use to encode the `acs_credential`.
 
 Action attempt to track encoding credential data from the physical encoder onto a card.
 
+```json
+action_attempt_id: [example value],
+action_type: [example value],
+status: [example value],
+```
+
 ---
 
 ### Properties
