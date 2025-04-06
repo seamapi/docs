@@ -8,6 +8,15 @@ POST /phones/simulate/create_sandbox_phone ⇒ { phone }
 ```
 {% endhint %}
 
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
+
 ## Parameters
 
 **`user_identity_id`** *String* (Required)
@@ -34,15 +43,6 @@ Metadata to associate with the simulated phone.
 
 ---
 
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-</details>
 
 ## Return Type
 

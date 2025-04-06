@@ -8,6 +8,15 @@ POST /thermostats/activate_climate_preset ⇒ { action_attempt }
 ```
 {% endhint %}
 
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
+
 ## Parameters
 
 **`climate_preset_key`** *String* (Required)
@@ -22,15 +31,6 @@ ID of the desired thermostat device.
 
 ---
 
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-</details>
 
 ## Return Type
 

@@ -8,6 +8,15 @@ POST /acs/users/create ⇒ { acs_user }
 ```
 {% endhint %}
 
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
+
 ## Parameters
 
 **`acs_system_id`** *String* (Required)
@@ -56,15 +65,6 @@ ID of the user identity with which to associate the new `acs_user`.
 
 ---
 
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-</details>
 
 ## Return Type
 

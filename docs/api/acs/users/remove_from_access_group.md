@@ -8,6 +8,15 @@ POST /acs/users/remove_from_access_group ⇒ void
 ```
 {% endhint %}
 
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
+
 ## Parameters
 
 **`acs_access_group_id`** *String* (Required)
@@ -22,15 +31,6 @@ ID of the desired `acs_user`.
 
 ---
 
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-</details>
 
 ## Return Type
 

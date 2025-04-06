@@ -12,15 +12,6 @@ POST /acs/systems/list_compatible_credential_manager_acs_systems ⇒ { acs_syste
 ```
 {% endhint %}
 
-## Parameters
-
-**`acs_system_id`** *String* (Required)
-
-ID of the ACS system for which you want to retrieve all compatible credential manager ACS systems.
-
----
-
-
 <details>
 
 <summary>Authentication Methods</summary>
@@ -29,6 +20,15 @@ ID of the ACS system for which you want to retrieve all compatible credential ma
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
+
+## Parameters
+
+**`acs_system_id`** *String* (Required)
+
+ID of the ACS system for which you want to retrieve all compatible credential manager ACS systems.
+
+---
+
 
 ## Return Type
 

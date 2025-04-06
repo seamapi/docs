@@ -8,6 +8,15 @@ POST /user_identities/enrollment_automations/launch ⇒ { enrollment_automation 
 ```
 {% endhint %}
 
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
+
 ## Parameters
 
 **`credential_manager_acs_system_id`** *String* (Required)
@@ -40,15 +49,6 @@ ID of the associated ACS user within the credential manager. If you specify a `c
 
 ---
 
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-</details>
 
 ## Return Type
 

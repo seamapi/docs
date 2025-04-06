@@ -8,15 +8,6 @@ POST /thermostats/schedules/delete ⇒ void
 ```
 {% endhint %}
 
-## Parameters
-
-**`thermostat_schedule_id`** *String* (Required)
-
-ID of the desired thermostat schedule.
-
----
-
-
 <details>
 
 <summary>Authentication Methods</summary>
@@ -26,6 +17,15 @@ ID of the desired thermostat schedule.
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
+
+## Parameters
+
+**`thermostat_schedule_id`** *String* (Required)
+
+ID of the desired thermostat schedule.
+
+---
+
 
 ## Return Type
 

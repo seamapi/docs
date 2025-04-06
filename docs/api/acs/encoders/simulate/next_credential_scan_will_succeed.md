@@ -8,6 +8,15 @@ POST /acs/encoders/simulate/next_credential_scan_will_succeed ⇒ void
 ```
 {% endhint %}
 
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
+
 ## Parameters
 
 **`acs_encoder_id`** *String* (Required)
@@ -28,15 +37,6 @@ Scenario to simulate.
 
 ---
 
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-</details>
 
 ## Return Type
 

@@ -8,15 +8,6 @@ POST /acs/access_groups/list_accessible_entrances ⇒ { acs_entrances: [acs_entr
 ```
 {% endhint %}
 
-## Parameters
-
-**`acs_access_group_id`** *String* (Required)
-
-ID of the access group for which you want to retrieve all accessible entrances.
-
----
-
-
 <details>
 
 <summary>Authentication Methods</summary>
@@ -25,6 +16,15 @@ ID of the access group for which you want to retrieve all accessible entrances.
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
+
+## Parameters
+
+**`acs_access_group_id`** *String* (Required)
+
+ID of the access group for which you want to retrieve all accessible entrances.
+
+---
+
 
 ## Return Type
 

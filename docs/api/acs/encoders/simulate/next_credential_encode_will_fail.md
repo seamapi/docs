@@ -8,6 +8,15 @@ POST /acs/encoders/simulate/next_credential_encode_will_fail ⇒ void
 ```
 {% endhint %}
 
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
+
 ## Parameters
 
 **`acs_encoder_id`** *String* (Required)
@@ -28,15 +37,6 @@ Code of the error to simulate.
 
 ---
 
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-</details>
 
 ## Return Type
 

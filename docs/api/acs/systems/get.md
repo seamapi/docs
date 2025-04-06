@@ -10,15 +10,6 @@ POST /acs/systems/get ⇒ { acs_system }
 ```
 {% endhint %}
 
-## Parameters
-
-**`acs_system_id`** *String* (Required)
-
-ID of the desired access control system.
-
----
-
-
 <details>
 
 <summary>Authentication Methods</summary>
@@ -27,6 +18,15 @@ ID of the desired access control system.
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
+
+## Parameters
+
+**`acs_system_id`** *String* (Required)
+
+ID of the desired access control system.
+
+---
+
 
 ## Return Type
 

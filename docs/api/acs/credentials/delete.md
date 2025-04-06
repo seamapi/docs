@@ -8,15 +8,6 @@ POST /acs/credentials/delete ⇒ void
 ```
 {% endhint %}
 
-## Parameters
-
-**`acs_credential_id`** *String* (Required)
-
-ID of the desired credential.
-
----
-
-
 <details>
 
 <summary>Authentication Methods</summary>
@@ -25,6 +16,15 @@ ID of the desired credential.
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
+
+## Parameters
+
+**`acs_credential_id`** *String* (Required)
+
+ID of the desired credential.
+
+---
+
 
 ## Return Type
 

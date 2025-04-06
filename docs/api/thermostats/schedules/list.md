@@ -8,6 +8,16 @@ POST /thermostats/schedules/list ⇒ { thermostat_schedules: [thermostat_schedul
 ```
 {% endhint %}
 
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
+
 ## Parameters
 
 **`device_id`** *String* (Required)
@@ -22,16 +32,6 @@ User identifier key by which to filter the list of returned thermostat schedules
 
 ---
 
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-</details>
 
 ## Return Type
 

@@ -8,6 +8,16 @@ POST /thermostats/create_climate_preset ⇒ void
 ```
 {% endhint %}
 
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
+
 ## Parameters
 
 **`climate_preset_key`** *String* (Required)
@@ -70,16 +80,6 @@ User-friendly name to identify the [climate preset](../../capability-guides/ther
 
 ---
 
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-</details>
 
 ## Return Type
 

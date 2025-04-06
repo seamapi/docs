@@ -8,15 +8,6 @@ POST /acs/credentials/list_accessible_entrances ⇒ { acs_entrances: [acs_entran
 ```
 {% endhint %}
 
-## Parameters
-
-**`acs_credential_id`** *String* (Required)
-
-ID of the credential for which you want to retrieve all entrances to which this credential grants access.
-
----
-
-
 <details>
 
 <summary>Authentication Methods</summary>
@@ -25,6 +16,15 @@ ID of the credential for which you want to retrieve all entrances to which this 
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
+
+## Parameters
+
+**`acs_credential_id`** *String* (Required)
+
+ID of the credential for which you want to retrieve all entrances to which this credential grants access.
+
+---
+
 
 ## Return Type
 

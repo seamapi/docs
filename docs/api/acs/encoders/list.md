@@ -8,6 +8,15 @@ POST /acs/encoders/list ⇒ { acs_encoders: [acs_encoder, …] }
 ```
 {% endhint %}
 
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
+
 ## Parameters
 
 **`acs_encoder_ids`** *Array* *of UUIDs*
@@ -34,15 +43,6 @@ Number of `acs_encoders` to return.
 
 ---
 
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-</details>
 
 ## Return Type
 

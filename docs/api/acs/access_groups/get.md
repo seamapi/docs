@@ -8,15 +8,6 @@ POST /acs/access_groups/get ⇒ { acs_access_group }
 ```
 {% endhint %}
 
-## Parameters
-
-**`acs_access_group_id`** *String* (Required)
-
-ID of the desired access group.
-
----
-
-
 <details>
 
 <summary>Authentication Methods</summary>
@@ -25,6 +16,15 @@ ID of the desired access group.
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
+
+## Parameters
+
+**`acs_access_group_id`** *String* (Required)
+
+ID of the desired access group.
+
+---
+
 
 ## Return Type
 

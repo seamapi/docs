@@ -8,15 +8,6 @@ POST /user_identities/enrollment_automations/delete ⇒ void
 ```
 {% endhint %}
 
-## Parameters
-
-**`enrollment_automation_id`** *String* (Required)
-
-ID of the desired enrollment automation.
-
----
-
-
 <details>
 
 <summary>Authentication Methods</summary>
@@ -25,6 +16,15 @@ ID of the desired enrollment automation.
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
+
+## Parameters
+
+**`enrollment_automation_id`** *String* (Required)
+
+ID of the desired enrollment automation.
+
+---
+
 
 ## Return Type
 

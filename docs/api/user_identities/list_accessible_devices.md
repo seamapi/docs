@@ -8,15 +8,6 @@ POST /user_identities/list_accessible_devices ⇒ { devices: [device, …] }
 ```
 {% endhint %}
 
-## Parameters
-
-**`user_identity_id`** *String* (Required)
-
-ID of the user identity for which you want to retrieve all accessible devices.
-
----
-
-
 <details>
 
 <summary>Authentication Methods</summary>
@@ -25,6 +16,15 @@ ID of the user identity for which you want to retrieve all accessible devices.
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
+
+## Parameters
+
+**`user_identity_id`** *String* (Required)
+
+ID of the user identity for which you want to retrieve all accessible devices.
+
+---
+
 
 ## Return Type
 

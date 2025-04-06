@@ -8,15 +8,6 @@ POST /acs/access_groups/list_users ⇒ { acs_users: [acs_user, …] }
 ```
 {% endhint %}
 
-## Parameters
-
-**`acs_access_group_id`** *String* (Required)
-
-ID of the access group for which you want to retrieve all users.
-
----
-
-
 <details>
 
 <summary>Authentication Methods</summary>
@@ -25,6 +16,15 @@ ID of the access group for which you want to retrieve all users.
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
+
+## Parameters
+
+**`acs_access_group_id`** *String* (Required)
+
+ID of the access group for which you want to retrieve all users.
+
+---
+
 
 ## Return Type
 
