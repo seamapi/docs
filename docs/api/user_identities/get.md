@@ -1,14 +1,26 @@
 # Get a User Identity
 
+Returns a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+
+{% hint style="info" %}
 {% tabs %}
 {% tab title="Signature" %}
 ```
 POST /user_identities/get ⇒ { user_identity }
 ```
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
+
 {% endtab %}
 {% endtabs %}
-
-Returns a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+{% endhint %}
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -159,13 +171,6 @@ api.UserIdentity{UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", UserIde
 
 {% endtabs %}
 
-## Authentication Methods
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
----
 
 ## Request Parameters
 

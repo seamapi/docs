@@ -1,16 +1,29 @@
 # List ACS Systems
 
+Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems).
+
+To filter the list of returned access control systems by a specific connected account ID, include the `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the response includes all access control systems connected to your workspace.
+
+{% hint style="info" %}
 {% tabs %}
 {% tab title="Signature" %}
 ```
 POST /acs/systems/list ⇒ { acs_systems: [acs_system, …] }
 ```
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
+
 {% endtab %}
 {% endtabs %}
-
-Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems).
-
-To filter the list of returned access control systems by a specific connected account ID, include the `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the response includes all access control systems connected to your workspace.
+{% endhint %}
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -117,14 +130,6 @@ func main() {
 
 {% endtabs %}
 
-## Authentication Methods
-
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
----
 
 ## Request Parameters
 

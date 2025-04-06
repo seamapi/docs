@@ -1,14 +1,26 @@
 # Unsuspend an ACS User
 
+[Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an ACS user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the ACS user restores their access.
+
+{% hint style="info" %}
 {% tabs %}
 {% tab title="Signature" %}
 ```
 POST /acs/users/unsuspend ⇒ void
 ```
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
+
 {% endtab %}
 {% endtabs %}
-
-[Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an ACS user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the ACS user restores their access.
+{% endhint %}
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -114,13 +126,6 @@ nil
 
 {% endtabs %}
 
-## Authentication Methods
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
----
 
 ## Request Parameters
 

@@ -1,22 +1,27 @@
 # Update a User Identity
 
+
+
+{% hint style="info" %}
 {% tabs %}
 {% tab title="Signature" %}
 ```
 PATCH /user_identities/update ⇒ void
 ```
-{% endtab %}
-{% endtabs %}
 
+<details>
 
-
-## Authentication Methods
+<summary>Authentication Methods</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
+</details>
 
----
+{% endtab %}
+{% endtabs %}
+{% endhint %}
+
 
 ## Request Parameters
 

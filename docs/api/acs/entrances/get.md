@@ -1,14 +1,25 @@
 # Get an Entrance
 
+Returns a specified [ACS entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
+{% hint style="info" %}
 {% tabs %}
 {% tab title="Signature" %}
 ```
 POST /acs/entrances/get ⇒ { acs_entrance }
 ```
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+</details>
+
 {% endtab %}
 {% endtabs %}
-
-Returns a specified [ACS entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+{% endhint %}
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -140,12 +151,6 @@ api.AcsEntrance{AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", AcsEntrance
 
 {% endtabs %}
 
-## Authentication Methods
-
-- API key
-- Client session token
-
----
 
 ## Request Parameters
 

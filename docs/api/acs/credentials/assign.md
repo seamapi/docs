@@ -1,14 +1,26 @@
 # Assign a Credential to an ACS User
 
+Assigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) to a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+{% hint style="info" %}
 {% tabs %}
 {% tab title="Signature" %}
 ```
 PATCH /acs/credentials/assign ⇒ void
 ```
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
+
 {% endtab %}
 {% endtabs %}
-
-Assigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) to a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+{% endhint %}
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -123,13 +135,6 @@ nil
 
 {% endtabs %}
 
-## Authentication Methods
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
----
 
 ## Request Parameters
 

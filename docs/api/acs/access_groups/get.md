@@ -1,14 +1,26 @@
 # Get an Access Group
 
+Returns a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+
+{% hint style="info" %}
 {% tabs %}
 {% tab title="Signature" %}
 ```
 POST /acs/access_groups/get ⇒ { acs_access_group }
 ```
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
+
 {% endtab %}
 {% endtabs %}
-
-Returns a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+{% endhint %}
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -170,13 +182,6 @@ api.AcsAccessGroup{AcsAccessGroupId: "44444444-4444-4444-4444-444444444444", Nam
 
 {% endtabs %}
 
-## Authentication Methods
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
----
 
 ## Request Parameters
 

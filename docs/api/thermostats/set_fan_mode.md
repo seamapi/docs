@@ -1,14 +1,27 @@
 # Set the Fan Mode Setting
 
+Sets the [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+
+{% hint style="info" %}
 {% tabs %}
 {% tab title="Signature" %}
 ```
 POST /thermostats/set_fan_mode ⇒ { action_attempt }
 ```
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
+
 {% endtab %}
 {% endtabs %}
-
-Sets the [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+{% endhint %}
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -142,14 +155,6 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 
 {% endtabs %}
 
-## Authentication Methods
-
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
----
 
 ## Request Parameters
 

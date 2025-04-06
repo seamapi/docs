@@ -1,22 +1,27 @@
 # Create a Sandbox Phone
 
+Creates a new simulated phone in a [sandbox workspace](../../../core-concepts/workspaces/README.md#sandbox-workspaces). For more information, see [Creating a Simulated Phone for a User Identity](../../../capability-guides/mobile-access/developing-in-a-sandbox-workspace.md#creating-a-simulated-phone-for-a-user-identity).
+
+{% hint style="info" %}
 {% tabs %}
 {% tab title="Signature" %}
 ```
 POST /phones/simulate/create_sandbox_phone ⇒ { phone }
 ```
-{% endtab %}
-{% endtabs %}
 
-Creates a new simulated phone in a [sandbox workspace](../../../core-concepts/workspaces/README.md#sandbox-workspaces). For more information, see [Creating a Simulated Phone for a User Identity](../../../capability-guides/mobile-access/developing-in-a-sandbox-workspace.md#creating-a-simulated-phone-for-a-user-identity).
+<details>
 
-## Authentication Methods
+<summary>Authentication Methods</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
+</details>
 
----
+{% endtab %}
+{% endtabs %}
+{% endhint %}
+
 
 ## Request Parameters
 

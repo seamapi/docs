@@ -1,14 +1,26 @@
 # Get a Credential
 
+Returns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+{% hint style="info" %}
 {% tabs %}
 {% tab title="Signature" %}
 ```
 POST /acs/credentials/get ⇒ { acs_credential }
 ```
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
+
 {% endtab %}
 {% endtabs %}
-
-Returns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
+{% endhint %}
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -165,13 +177,6 @@ api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUs
 
 {% endtabs %}
 
-## Authentication Methods
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
----
 
 ## Request Parameters
 

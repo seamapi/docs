@@ -1,22 +1,27 @@
 # List Phones
 
+Returns a list of all phones. To filter the list of returned phones by a specific owner user identity or credential, include the `owner_user_identity_id` or `acs_credential_id`, respectively, in the request body.
+
+{% hint style="info" %}
 {% tabs %}
 {% tab title="Signature" %}
 ```
 POST /phones/list ⇒ { phones: [phone, …] }
 ```
-{% endtab %}
-{% endtabs %}
 
-Returns a list of all phones. To filter the list of returned phones by a specific owner user identity or credential, include the `owner_user_identity_id` or `acs_credential_id`, respectively, in the request body.
+<details>
 
-## Authentication Methods
+<summary>Authentication Methods</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
+</details>
 
----
+{% endtab %}
+{% endtabs %}
+{% endhint %}
+
 
 ## Request Parameters
 

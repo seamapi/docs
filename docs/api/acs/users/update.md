@@ -1,14 +1,26 @@
 # Update an ACS User
 
+Updates the properties of a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+{% hint style="info" %}
 {% tabs %}
 {% tab title="Signature" %}
 ```
 PATCH /acs/users/update ⇒ void
 ```
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
+
 {% endtab %}
 {% endtabs %}
-
-Updates the properties of a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+{% endhint %}
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -122,13 +134,6 @@ nil
 
 {% endtabs %}
 
-## Authentication Methods
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
----
 
 ## Request Parameters
 

@@ -1,14 +1,27 @@
 # List ACS Users
 
+Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+{% hint style="info" %}
 {% tabs %}
 {% tab title="Signature" %}
 ```
 POST /acs/users/list ⇒ { acs_users: [acs_user, …] }
 ```
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
+
 {% endtab %}
 {% endtabs %}
-
-Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+{% endhint %}
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -148,14 +161,6 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 
 {% endtabs %}
 
-## Authentication Methods
-
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
----
 
 ## Request Parameters
 
