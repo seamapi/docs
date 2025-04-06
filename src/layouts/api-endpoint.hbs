@@ -12,7 +12,8 @@
 
 {{#if request.parameters.length}}
 {{#each request.parameters}}
-**`{{this.name}}`** *{{this.format}}*{{#if this.itemFormat}} *of {{this.itemFormat}}s*{{/if}}{{#if this.required}} (Required){{/if}}
+**`{{this.name}}`** *{{this.format}}*{{#if this.itemFormat}} *of {{this.itemFormat}}s*{{/if}}
+{{#if this.required}} (Required){{/if}}
 {{#if this.description}}
 
 {{this.description}}
