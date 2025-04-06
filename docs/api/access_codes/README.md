@@ -4,29 +4,35 @@ The Access Codes route contains the following resources:
 
 ## The `access_code` Resource
 
+{% tabs %}
+{% tab title="JSON" %}
 ```json
-access_code_id: [example value],
-code: [example value],
-common_code_key: [example value],
-created_at: [example value],
-device_id: [example value],
-ends_at: [example value],
-errors: [example value],
-is_backup: [example value],
-is_backup_access_code_available: [example value],
-is_external_modification_allowed: [example value],
-is_managed: [example value],
-is_offline_access_code: [example value],
-is_one_time_use: [example value],
-is_scheduled_on_device: [example value],
-is_waiting_for_code_assignment: [example value],
-name: [example value],
-pulled_backup_access_code_id: [example value],
-starts_at: [example value],
-status: [example value],
-type: [example value],
-warnings: [example value],
+{
+  access_code_id: [example value],
+  code: [example value],
+  common_code_key: [example value],
+  created_at: [example value],
+  device_id: [example value],
+  ends_at: [example value],
+  errors: [example value],
+  is_backup: [example value],
+  is_backup_access_code_available: [example value],
+  is_external_modification_allowed: [example value],
+  is_managed: [example value],
+  is_offline_access_code: [example value],
+  is_one_time_use: [example value],
+  is_scheduled_on_device: [example value],
+  is_waiting_for_code_assignment: [example value],
+  name: [example value],
+  pulled_backup_access_code_id: [example value],
+  starts_at: [example value],
+  status: [example value],
+  type: [example value],
+  warnings: [example value]
+}
 ```
+{% endtab %}
+{% endtabs %}
 
 ---
 

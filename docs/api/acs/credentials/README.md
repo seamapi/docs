@@ -10,34 +10,40 @@ An access control system generally uses digital means of access to authorize a u
 
 For each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type.
 
+{% tabs %}
+{% tab title="JSON" %}
 ```json
-access_method: [example value],
-acs_credential_id: [example value],
-acs_credential_pool_id: [example value],
-acs_system_id: [example value],
-acs_user_id: [example value],
-assa_abloy_vostio_metadata: [example value],
-card_number: [example value],
-code: [example value],
-created_at: [example value],
-display_name: [example value],
-ends_at: [example value],
-errors: [example value],
-external_type: [example value],
-external_type_display_name: [example value],
-is_issued: [example value],
-is_latest_desired_state_synced_with_provider: [example value],
-is_managed: [example value],
-is_multi_phone_sync_credential: [example value],
-is_one_time_use: [example value],
-issued_at: [example value],
-latest_desired_state_synced_with_provider_at: [example value],
-parent_acs_credential_id: [example value],
-starts_at: [example value],
-visionline_metadata: [example value],
-warnings: [example value],
-workspace_id: [example value],
+{
+  access_method: [example value],
+  acs_credential_id: [example value],
+  acs_credential_pool_id: [example value],
+  acs_system_id: [example value],
+  acs_user_id: [example value],
+  assa_abloy_vostio_metadata: [example value],
+  card_number: [example value],
+  code: [example value],
+  created_at: [example value],
+  display_name: [example value],
+  ends_at: [example value],
+  errors: [example value],
+  external_type: [example value],
+  external_type_display_name: [example value],
+  is_issued: [example value],
+  is_latest_desired_state_synced_with_provider: [example value],
+  is_managed: [example value],
+  is_multi_phone_sync_credential: [example value],
+  is_one_time_use: [example value],
+  issued_at: [example value],
+  latest_desired_state_synced_with_provider_at: [example value],
+  parent_acs_credential_id: [example value],
+  starts_at: [example value],
+  visionline_metadata: [example value],
+  warnings: [example value],
+  workspace_id: [example value]
+}
 ```
+{% endtab %}
+{% endtabs %}
 
 ---
 

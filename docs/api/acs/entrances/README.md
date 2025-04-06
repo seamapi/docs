@@ -8,19 +8,25 @@ Represents an [entrance](../../../capability-guides/access-systems/retrieving-en
 
 In an access control system, an entrance is a secured door, gate, zone, or other method of entry. You can list details for all the `acs_entrance` resources in your workspace or get these details for a specific `acs_entrance`. You can also list all entrances associated with a specific credential, and you can list all credentials associated with a specific entrance.
 
+{% tabs %}
+{% tab title="JSON" %}
 ```json
-acs_entrance_id: [example value],
-acs_system_id: [example value],
-assa_abloy_vostio_metadata: [example value],
-created_at: [example value],
-display_name: [example value],
-dormakaba_community_metadata: [example value],
-errors: [example value],
-latch_metadata: [example value],
-salto_ks_metadata: [example value],
-salto_space_metadata: [example value],
-visionline_metadata: [example value],
+{
+  acs_entrance_id: [example value],
+  acs_system_id: [example value],
+  assa_abloy_vostio_metadata: [example value],
+  created_at: [example value],
+  display_name: [example value],
+  dormakaba_community_metadata: [example value],
+  errors: [example value],
+  latch_metadata: [example value],
+  salto_ks_metadata: [example value],
+  salto_space_metadata: [example value],
+  visionline_metadata: [example value]
+}
 ```
+{% endtab %}
+{% endtabs %}
 
 ---
 

@@ -185,11 +185,17 @@ Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermos
 
 Setting fan mode.
 
+{% tabs %}
+{% tab title="JSON" %}
 ```json
-action_attempt_id: [example value],
-action_type: [example value],
-status: [example value],
+{
+  action_attempt_id: [example value],
+  action_type: [example value],
+  status: [example value]
+}
 ```
+{% endtab %}
+{% endtabs %}
 
 ---
 

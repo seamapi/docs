@@ -189,11 +189,17 @@ Desired [heating set point](../../capability-guides/thermostats/understanding-th
 
 Setting HVAC mode.
 
+{% tabs %}
+{% tab title="JSON" %}
 ```json
-action_attempt_id: [example value],
-action_type: [example value],
-status: [example value],
+{
+  action_attempt_id: [example value],
+  action_type: [example value],
+  status: [example value]
+}
 ```
+{% endtab %}
+{% endtabs %}
 
 ---
 

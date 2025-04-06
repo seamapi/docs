@@ -6,17 +6,23 @@ The Thermostat Schedules route contains the following resources:
 
 Represents a [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) that activates a configured [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time.
 
+{% tabs %}
+{% tab title="JSON" %}
 ```json
-climate_preset_key: [example value],
-created_at: [example value],
-device_id: [example value],
-ends_at: [example value],
-errors: [example value],
-max_override_period_minutes: [example value],
-name: [example value],
-starts_at: [example value],
-thermostat_schedule_id: [example value],
+{
+  climate_preset_key: [example value],
+  created_at: [example value],
+  device_id: [example value],
+  ends_at: [example value],
+  errors: [example value],
+  max_override_period_minutes: [example value],
+  name: [example value],
+  starts_at: [example value],
+  thermostat_schedule_id: [example value]
+}
 ```
+{% endtab %}
+{% endtabs %}
 
 ---
 

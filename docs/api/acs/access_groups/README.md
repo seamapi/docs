@@ -10,20 +10,26 @@ Some access control systems use [access group](https://docs.seam.co/latest/capab
 
 To learn whether your access control system supports access groups, see the corresponding [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 
+{% tabs %}
+{% tab title="JSON" %}
 ```json
-access_group_type: [example value],
-access_group_type_display_name: [example value],
-acs_access_group_id: [example value],
-acs_system_id: [example value],
-created_at: [example value],
-display_name: [example value],
-external_type: [example value],
-external_type_display_name: [example value],
-is_managed: [example value],
-name: [example value],
-warnings: [example value],
-workspace_id: [example value],
+{
+  access_group_type: [example value],
+  access_group_type_display_name: [example value],
+  acs_access_group_id: [example value],
+  acs_system_id: [example value],
+  created_at: [example value],
+  display_name: [example value],
+  external_type: [example value],
+  external_type_display_name: [example value],
+  is_managed: [example value],
+  name: [example value],
+  warnings: [example value],
+  workspace_id: [example value]
+}
 ```
+{% endtab %}
+{% endtabs %}
 
 ---
 

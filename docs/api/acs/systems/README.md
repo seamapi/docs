@@ -10,30 +10,36 @@ Within an `acs_system`, create [`acs_user`s](https://docs.seam.co/latest/api/acs
 
 For details about the resources associated with an access control system, see the [access control systems namespace](https://docs.seam.co/latest/api/acs).
 
+{% tabs %}
+{% tab title="JSON" %}
 ```json
-acs_system_id: [example value],
-can_add_acs_users_to_acs_access_groups: [example value],
-can_automate_enrollment: [example value],
-can_create_acs_access_groups: [example value],
-can_remove_acs_users_from_acs_access_groups: [example value],
-connected_account_id: [example value],
-connected_account_ids: [example value],
-created_at: [example value],
-default_credential_manager_acs_system_id: [example value],
-errors: [example value],
-external_type: [example value],
-external_type_display_name: [example value],
-image_alt_text: [example value],
-image_url: [example value],
-is_credential_manager: [example value],
-location: [example value],
-name: [example value],
-system_type: [example value],
-system_type_display_name: [example value],
-visionline_metadata: [example value],
-warnings: [example value],
-workspace_id: [example value],
+{
+  acs_system_id: [example value],
+  can_add_acs_users_to_acs_access_groups: [example value],
+  can_automate_enrollment: [example value],
+  can_create_acs_access_groups: [example value],
+  can_remove_acs_users_from_acs_access_groups: [example value],
+  connected_account_id: [example value],
+  connected_account_ids: [example value],
+  created_at: [example value],
+  default_credential_manager_acs_system_id: [example value],
+  errors: [example value],
+  external_type: [example value],
+  external_type_display_name: [example value],
+  image_alt_text: [example value],
+  image_url: [example value],
+  is_credential_manager: [example value],
+  location: [example value],
+  name: [example value],
+  system_type: [example value],
+  system_type_display_name: [example value],
+  visionline_metadata: [example value],
+  warnings: [example value],
+  workspace_id: [example value]
+}
 ```
+{% endtab %}
+{% endtabs %}
 
 ---
 

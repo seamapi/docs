@@ -179,11 +179,17 @@ ID of the desired thermostat device.
 
 Activating climate preset.
 
+{% tabs %}
+{% tab title="JSON" %}
 ```json
-action_attempt_id: [example value],
-action_type: [example value],
-status: [example value],
+{
+  action_attempt_id: [example value],
+  action_type: [example value],
+  status: [example value]
+}
 ```
+{% endtab %}
+{% endtabs %}
 
 ---
 

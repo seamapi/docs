@@ -6,16 +6,22 @@ The User Identities route contains the following resources:
 
 Represents a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with an application user account.
 
+{% tabs %}
+{% tab title="JSON" %}
 ```json
-created_at: [example value],
-display_name: [example value],
-email_address: [example value],
-full_name: [example value],
-phone_number: [example value],
-user_identity_id: [example value],
-user_identity_key: [example value],
-workspace_id: [example value],
+{
+  created_at: [example value],
+  display_name: [example value],
+  email_address: [example value],
+  full_name: [example value],
+  phone_number: [example value],
+  user_identity_id: [example value],
+  user_identity_key: [example value],
+  workspace_id: [example value]
+}
 ```
+{% endtab %}
+{% endtabs %}
 
 ---
 
