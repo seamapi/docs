@@ -8,17 +8,7 @@ POST /acs/users/list ⇒ { acs_users: [acs_user, …] }
 ```
 {% endhint %}
 
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-</details>
-
-## Request Parameters
+## Parameters
 
 **`acs_system_id`** **
 
@@ -66,6 +56,16 @@ Phone number of the user identity for which you want to retrieve all `acs_user`s
 
 ---
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
 
 ## Return Type
 

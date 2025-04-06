@@ -8,6 +8,15 @@ POST /phones/get ⇒ { phone }
 ```
 {% endhint %}
 
+## Parameters
+
+**`device_id`** ** (Required)
+
+Device ID of the desired phone.
+
+---
+
+
 <details>
 
 <summary>Authentication Methods</summary>
@@ -16,15 +25,6 @@ POST /phones/get ⇒ { phone }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-## Request Parameters
-
-**`device_id`** ** (Required)
-
-Device ID of the desired phone.
-
----
-
 
 ## Return Type
 

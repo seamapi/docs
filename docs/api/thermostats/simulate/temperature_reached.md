@@ -8,16 +8,7 @@ POST /thermostats/simulate/temperature_reached ⇒ void
 ```
 {% endhint %}
 
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-</details>
-
-## Request Parameters
+## Parameters
 
 **`device_id`** ** (Required)
 
@@ -37,6 +28,15 @@ Desired simulated temperature in °F. You must set `temperature_fahrenheit` or `
 
 ---
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
 
 ## Return Type
 

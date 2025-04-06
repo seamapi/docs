@@ -8,16 +8,7 @@ POST /acs/credentials/create ⇒ { acs_credential }
 ```
 {% endhint %}
 
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-</details>
-
-## Request Parameters
+## Parameters
 
 **`access_method`** ** (Required)
 
@@ -85,6 +76,15 @@ Visionline-specific metadata for the new credential.
 
 ---
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
 
 ## Return Type
 

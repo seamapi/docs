@@ -8,6 +8,15 @@ POST /acs/users/get ⇒ { acs_user }
 ```
 {% endhint %}
 
+## Parameters
+
+**`acs_user_id`** ** (Required)
+
+ID of the desired `acs_user`.
+
+---
+
+
 <details>
 
 <summary>Authentication Methods</summary>
@@ -16,15 +25,6 @@ POST /acs/users/get ⇒ { acs_user }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-## Request Parameters
-
-**`acs_user_id`** ** (Required)
-
-ID of the desired `acs_user`.
-
----
-
 
 ## Return Type
 

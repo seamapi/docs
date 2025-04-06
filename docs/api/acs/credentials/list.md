@@ -8,17 +8,7 @@ POST /acs/credentials/list ⇒ { acs_credentials: [acs_credential, …] }
 ```
 {% endhint %}
 
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-</details>
-
-## Request Parameters
+## Parameters
 
 **`acs_system_id`** **
 
@@ -56,6 +46,16 @@ ID of the user identity for which you want to retrieve all credentials.
 
 ---
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
 
 ## Return Type
 

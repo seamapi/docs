@@ -8,16 +8,7 @@ POST /thermostats/set_fallback_climate_preset ⇒ void
 ```
 {% endhint %}
 
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-</details>
-
-## Request Parameters
+## Parameters
 
 **`climate_preset_key`** ** (Required)
 
@@ -31,6 +22,15 @@ ID of the desired thermostat device.
 
 ---
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
 
 ## Return Type
 

@@ -8,16 +8,7 @@ POST /thermostats/simulate/hvac_mode_adjusted ⇒ void
 ```
 {% endhint %}
 
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-</details>
-
-## Request Parameters
+## Parameters
 
 **`device_id`** ** (Required)
 
@@ -55,6 +46,15 @@ Desired simulated heating [set point](../../../capability-guides/thermostats/und
 
 ---
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
 
 ## Return Type
 

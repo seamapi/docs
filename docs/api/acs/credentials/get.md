@@ -8,6 +8,15 @@ POST /acs/credentials/get ⇒ { acs_credential }
 ```
 {% endhint %}
 
+## Parameters
+
+**`acs_credential_id`** ** (Required)
+
+ID of the desired credential.
+
+---
+
+
 <details>
 
 <summary>Authentication Methods</summary>
@@ -16,15 +25,6 @@ POST /acs/credentials/get ⇒ { acs_credential }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-## Request Parameters
-
-**`acs_credential_id`** ** (Required)
-
-ID of the desired credential.
-
----
-
 
 ## Return Type
 

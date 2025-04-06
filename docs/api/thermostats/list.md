@@ -8,17 +8,7 @@ POST /thermostats/list ⇒ { devices: [device, …] }
 ```
 {% endhint %}
 
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-</details>
-
-## Request Parameters
+## Parameters
 
 **`connect_webview_id`** **
 
@@ -127,6 +117,16 @@ Your own internal user ID for the user by which to filter devices.
 
 ---
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
 
 ## Return Type
 

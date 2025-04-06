@@ -8,17 +8,7 @@ POST /acs/entrances/list ⇒ { acs_entrances: [acs_entrance, …] }
 ```
 {% endhint %}
 
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-</details>
-
-## Request Parameters
+## Parameters
 
 **`acs_credential_id`** **
 
@@ -28,6 +18,16 @@ POST /acs/entrances/list ⇒ { acs_entrances: [acs_entrance, …] }
 
 ---
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
 
 ## Return Type
 

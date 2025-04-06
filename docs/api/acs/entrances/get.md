@@ -8,6 +8,13 @@ POST /acs/entrances/get ⇒ { acs_entrance }
 ```
 {% endhint %}
 
+## Parameters
+
+**`acs_entrance_id`** ** (Required)
+
+---
+
+
 <details>
 
 <summary>Authentication Methods</summary>
@@ -15,13 +22,6 @@ POST /acs/entrances/get ⇒ { acs_entrance }
 - API key
 - Client session token
 </details>
-
-## Request Parameters
-
-**`acs_entrance_id`** ** (Required)
-
----
-
 
 ## Return Type
 

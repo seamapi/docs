@@ -8,6 +8,15 @@ POST /acs/encoders/scan_credential ⇒ { action_attempt }
 ```
 {% endhint %}
 
+## Parameters
+
+**`acs_encoder_id`** ** (Required)
+
+ID of the `acs_encoder` to use for the scan.
+
+---
+
+
 <details>
 
 <summary>Authentication Methods</summary>
@@ -16,15 +25,6 @@ POST /acs/encoders/scan_credential ⇒ { action_attempt }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-## Request Parameters
-
-**`acs_encoder_id`** ** (Required)
-
-ID of the `acs_encoder` to use for the scan.
-
----
-
 
 ## Return Type
 

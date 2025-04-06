@@ -8,6 +8,15 @@ POST /acs/users/list_accessible_entrances â‡’ { acs_entrances: [acs_entrance, â€
 ```
 {% endhint %}
 
+## Parameters
+
+**`acs_user_id`** ** (Required)
+
+ID of the desired `acs_user`.
+
+---
+
+
 <details>
 
 <summary>Authentication Methods</summary>
@@ -17,15 +26,6 @@ POST /acs/users/list_accessible_entrances â‡’ { acs_entrances: [acs_entrance, â€
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-## Request Parameters
-
-**`acs_user_id`** ** (Required)
-
-ID of the desired `acs_user`.
-
----
-
 
 ## Return Type
 

@@ -10,6 +10,15 @@ POST /acs/systems/list ⇒ { acs_systems: [acs_system, …] }
 ```
 {% endhint %}
 
+## Parameters
+
+**`connected_account_id`** **
+
+ID of the connected account by which to filter the list of returned access control systems.
+
+---
+
+
 <details>
 
 <summary>Authentication Methods</summary>
@@ -19,15 +28,6 @@ POST /acs/systems/list ⇒ { acs_systems: [acs_system, …] }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-## Request Parameters
-
-**`connected_account_id`** **
-
-ID of the connected account by which to filter the list of returned access control systems.
-
----
-
 
 ## Return Type
 

@@ -8,17 +8,7 @@ PATCH /thermostats/schedules/update ⇒ void
 ```
 {% endhint %}
 
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-</details>
-
-## Request Parameters
+## Parameters
 
 **`thermostat_schedule_id`** ** (Required)
 
@@ -62,6 +52,16 @@ Date and time at which the thermostat schedule starts, in [ISO 8601](https://www
 
 ---
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
 
 ## Return Type
 

@@ -8,6 +8,13 @@ POST /user_identities/list ⇒ { user_identities: [user_identity, …] }
 ```
 {% endhint %}
 
+## Parameters
+
+**`credential_manager_acs_system_id`** **
+
+---
+
+
 <details>
 
 <summary>Authentication Methods</summary>
@@ -17,13 +24,6 @@ POST /user_identities/list ⇒ { user_identities: [user_identity, …] }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-## Request Parameters
-
-**`credential_manager_acs_system_id`** **
-
----
-
 
 ## Return Type
 

@@ -8,6 +8,15 @@ POST /thermostats/off ⇒ { action_attempt }
 ```
 {% endhint %}
 
+## Parameters
+
+**`device_id`** ** (Required)
+
+ID of the desired thermostat device.
+
+---
+
+
 <details>
 
 <summary>Authentication Methods</summary>
@@ -17,15 +26,6 @@ POST /thermostats/off ⇒ { action_attempt }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-## Request Parameters
-
-**`device_id`** ** (Required)
-
-ID of the desired thermostat device.
-
----
-
 
 ## Return Type
 

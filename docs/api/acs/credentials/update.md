@@ -8,16 +8,7 @@ PATCH /acs/credentials/update ⇒ void
 ```
 {% endhint %}
 
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-</details>
-
-## Request Parameters
+## Parameters
 
 **`acs_credential_id`** ** (Required)
 
@@ -37,6 +28,15 @@ Replacement date and time at which the validity of the credential ends, in [ISO 
 
 ---
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
 
 ## Return Type
 

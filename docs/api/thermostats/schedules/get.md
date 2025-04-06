@@ -8,6 +8,15 @@ POST /thermostats/schedules/get ⇒ { thermostat_schedule }
 ```
 {% endhint %}
 
+## Parameters
+
+**`thermostat_schedule_id`** ** (Required)
+
+ID of the desired thermostat schedule.
+
+---
+
+
 <details>
 
 <summary>Authentication Methods</summary>
@@ -17,15 +26,6 @@ POST /thermostats/schedules/get ⇒ { thermostat_schedule }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-## Request Parameters
-
-**`thermostat_schedule_id`** ** (Required)
-
-ID of the desired thermostat schedule.
-
----
-
 
 ## Return Type
 

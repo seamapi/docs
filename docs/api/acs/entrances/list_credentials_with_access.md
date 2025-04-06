@@ -8,17 +8,7 @@ POST /acs/entrances/list_credentials_with_access ⇒ { acs_credentials: [acs_cre
 ```
 {% endhint %}
 
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-</details>
-
-## Request Parameters
+## Parameters
 
 **`acs_entrance_id`** ** (Required)
 
@@ -35,6 +25,16 @@ Possible enum values:
 
 ---
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
 
 ## Return Type
 

@@ -8,6 +8,15 @@ POST /user_identities/enrollment_automations/list ⇒ { enrollment_automations: 
 ```
 {% endhint %}
 
+## Parameters
+
+**`user_identity_id`** ** (Required)
+
+ID of the user identity for which you want to retrieve all enrollment automations.
+
+---
+
+
 <details>
 
 <summary>Authentication Methods</summary>
@@ -17,15 +26,6 @@ POST /user_identities/enrollment_automations/list ⇒ { enrollment_automations: 
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-## Request Parameters
-
-**`user_identity_id`** ** (Required)
-
-ID of the user identity for which you want to retrieve all enrollment automations.
-
----
-
 
 ## Return Type
 

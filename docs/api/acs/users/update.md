@@ -8,16 +8,7 @@ PATCH /acs/users/update ⇒ void
 ```
 {% endhint %}
 
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-</details>
-
-## Request Parameters
+## Parameters
 
 **`acs_user_id`** ** (Required)
 
@@ -57,6 +48,15 @@ Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/acc
 
 ---
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+</details>
 
 ## Return Type
 

@@ -8,6 +8,15 @@ POST /user_identities/list_acs_users ⇒ { acs_users: [acs_user, …] }
 ```
 {% endhint %}
 
+## Parameters
+
+**`user_identity_id`** ** (Required)
+
+ID of the user identity for which you want to retrieve all ACS users.
+
+---
+
+
 <details>
 
 <summary>Authentication Methods</summary>
@@ -16,15 +25,6 @@ POST /user_identities/list_acs_users ⇒ { acs_users: [acs_user, …] }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-## Request Parameters
-
-**`user_identity_id`** ** (Required)
-
-ID of the user identity for which you want to retrieve all ACS users.
-
----
-
 
 ## Return Type
 
