@@ -10,7 +10,8 @@ POST /phones/deactivate ⇒ void
 
 ## Parameters
 
-**`device_id`** ** (Required)
+**`device_id`** **
+ (Required)
 
 Device ID of the desired phone.
 

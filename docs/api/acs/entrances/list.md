@@ -12,9 +12,11 @@ POST /acs/entrances/list ⇒ { acs_entrances: [acs_entrance, …] }
 
 **`acs_credential_id`** **
 
+
 ---
 
 **`acs_system_id`** **
+
 
 ---
 

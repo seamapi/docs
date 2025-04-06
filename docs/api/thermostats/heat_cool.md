@@ -10,7 +10,8 @@ POST /thermostats/heat_cool ⇒ { action_attempt }
 
 ## Parameters
 
-**`device_id`** ** (Required)
+**`device_id`** **
+ (Required)
 
 ID of the desired thermostat device.
 
@@ -18,11 +19,13 @@ ID of the desired thermostat device.
 
 **`cooling_set_point_celsius`** **
 
+
 Desired [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `cooling_set_point` parameters.
 
 ---
 
 **`cooling_set_point_fahrenheit`** **
+
 
 Desired [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `cooling_set_point` parameters.
 
@@ -30,11 +33,13 @@ Desired [cooling set point](../../capability-guides/thermostats/understanding-th
 
 **`heating_set_point_celsius`** **
 
+
 Desired [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `heating_set_point` parameters.
 
 ---
 
 **`heating_set_point_fahrenheit`** **
+
 
 Desired [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `heating_set_point` parameters.
 

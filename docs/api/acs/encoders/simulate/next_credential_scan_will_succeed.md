@@ -10,7 +10,8 @@ POST /acs/encoders/simulate/next_credential_scan_will_succeed ⇒ void
 
 ## Parameters
 
-**`acs_encoder_id`** ** (Required)
+**`acs_encoder_id`** **
+ (Required)
 
 ID of the `acs_encoder` that will be used in the next request to scan the `acs_credential`.
 
@@ -18,11 +19,13 @@ ID of the `acs_encoder` that will be used in the next request to scan the `acs_c
 
 **`acs_credential_id_on_seam`** **
 
+
 ID of the Seam `acs_credential` that matches the `acs_credential` on the encoder in this simulation.
 
 ---
 
 **`scenario`** **
+
 
 Scenario to simulate.
 

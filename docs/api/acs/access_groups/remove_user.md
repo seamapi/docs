@@ -10,13 +10,15 @@ POST /acs/access_groups/remove_user ⇒ void
 
 ## Parameters
 
-**`acs_access_group_id`** ** (Required)
+**`acs_access_group_id`** **
+ (Required)
 
 ID of the desired access group.
 
 ---
 
-**`acs_user_id`** ** (Required)
+**`acs_user_id`** **
+ (Required)
 
 ID of the desired user.
 

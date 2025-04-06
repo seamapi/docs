@@ -10,7 +10,8 @@ POST /acs/credentials/get ⇒ { acs_credential }
 
 ## Parameters
 
-**`acs_credential_id`** ** (Required)
+**`acs_credential_id`** **
+ (Required)
 
 ID of the desired credential.
 

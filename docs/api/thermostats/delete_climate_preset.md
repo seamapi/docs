@@ -10,13 +10,15 @@ POST /thermostats/delete_climate_preset ⇒ void
 
 ## Parameters
 
-**`climate_preset_key`** ** (Required)
+**`climate_preset_key`** **
+ (Required)
 
 Climate preset key of the desired climate preset.
 
 ---
 
-**`device_id`** ** (Required)
+**`device_id`** **
+ (Required)
 
 ID of the desired thermostat device.
 

@@ -10,7 +10,8 @@ POST /user_identities/enrollment_automations/list ⇒ { enrollment_automations: 
 
 ## Parameters
 
-**`user_identity_id`** ** (Required)
+**`user_identity_id`** **
+ (Required)
 
 ID of the user identity for which you want to retrieve all enrollment automations.
 

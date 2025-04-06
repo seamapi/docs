@@ -10,7 +10,8 @@ POST /acs/encoders/simulate/next_credential_encode_will_fail ⇒ void
 
 ## Parameters
 
-**`acs_encoder_id`** ** (Required)
+**`acs_encoder_id`** **
+ (Required)
 
 ID of the `acs_encoder` that will be used in the next request to encode the `acs_credential`.
 
@@ -18,11 +19,13 @@ ID of the `acs_encoder` that will be used in the next request to encode the `acs
 
 **`acs_credential_id`** **
 
+
 ID of the `acs_credential` that will fail to be encoded onto a card in the next request.
 
 ---
 
 **`error_code`** **
+
 
 Code of the error to simulate.
 

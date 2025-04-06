@@ -10,7 +10,8 @@ POST /user_identities/enrollment_automations/delete ⇒ void
 
 ## Parameters
 
-**`enrollment_automation_id`** ** (Required)
+**`enrollment_automation_id`** **
+ (Required)
 
 ID of the desired enrollment automation.
 

@@ -10,7 +10,8 @@ POST /acs/users/get ⇒ { acs_user }
 
 ## Parameters
 
-**`acs_user_id`** ** (Required)
+**`acs_user_id`** **
+ (Required)
 
 ID of the desired `acs_user`.
 

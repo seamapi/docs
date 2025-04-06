@@ -10,13 +10,15 @@ POST /user_identities/revoke_access_to_device ⇒ void
 
 ## Parameters
 
-**`device_id`** ** (Required)
+**`device_id`** **
+ (Required)
 
 ID of the desired managed device.
 
 ---
 
-**`user_identity_id`** ** (Required)
+**`user_identity_id`** **
+ (Required)
 
 ID of the desired user identity.
 

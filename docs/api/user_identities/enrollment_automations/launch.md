@@ -10,13 +10,15 @@ POST /user_identities/enrollment_automations/launch ⇒ { enrollment_automation 
 
 ## Parameters
 
-**`credential_manager_acs_system_id`** ** (Required)
+**`credential_manager_acs_system_id`** **
+ (Required)
 
 ID of the desired ACS system that serves as the credential manager.
 
 ---
 
-**`user_identity_id`** ** (Required)
+**`user_identity_id`** **
+ (Required)
 
 ID of the desired user identity.
 
@@ -24,17 +26,20 @@ ID of the desired user identity.
 
 **`acs_credential_pool_id`** **
 
+
 ID of the ACS credential pool from which to obtain credentials for the user identity.
 
 ---
 
 **`create_credential_manager_user`** **
 
+
 Indicates whether to create an associated credential manager user. If you set `create_credential_manager_user` to `true`, you cannot specify a `credential_manager_acs_user_id`.
 
 ---
 
 **`credential_manager_acs_user_id`** **
+
 
 ID of the associated ACS user within the credential manager. If you specify a `credential_manager_acs_user_id`, you cannot set `create_credential_manager_user` to `true`.
 

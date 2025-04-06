@@ -10,7 +10,8 @@ POST /acs/users/list_accessible_entrances â‡’ { acs_entrances: [acs_entrance, â€
 
 ## Parameters
 
-**`acs_user_id`** ** (Required)
+**`acs_user_id`** **
+ (Required)
 
 ID of the desired `acs_user`.
 

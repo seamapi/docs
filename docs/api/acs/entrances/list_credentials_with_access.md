@@ -10,11 +10,13 @@ POST /acs/entrances/list_credentials_with_access ⇒ { acs_credentials: [acs_cre
 
 ## Parameters
 
-**`acs_entrance_id`** ** (Required)
+**`acs_entrance_id`** **
+ (Required)
 
 ---
 
 **`include_if`** ** *of Enums*
+
 <details>
 
 <summary>Enum values</summary>

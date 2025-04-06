@@ -10,13 +10,15 @@ POST /acs/encoders/encode_credential ⇒ { action_attempt }
 
 ## Parameters
 
-**`acs_credential_id`** ** (Required)
+**`acs_credential_id`** **
+ (Required)
 
 ID of the `acs_credential` to encode onto a card.
 
 ---
 
-**`acs_encoder_id`** ** (Required)
+**`acs_encoder_id`** **
+ (Required)
 
 ID of the `acs_encoder` to use to encode the `acs_credential`.
 

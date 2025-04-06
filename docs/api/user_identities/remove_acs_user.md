@@ -10,13 +10,15 @@ POST /user_identities/remove_acs_user ⇒ void
 
 ## Parameters
 
-**`acs_user_id`** ** (Required)
+**`acs_user_id`** **
+ (Required)
 
 ID of the ACS user.
 
 ---
 
-**`user_identity_id`** ** (Required)
+**`user_identity_id`** **
+ (Required)
 
 ID of the desired user identity.
 

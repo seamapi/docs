@@ -10,7 +10,8 @@ POST /user_identities/list_acs_systems ⇒ { acs_systems: [acs_system, …] }
 
 ## Parameters
 
-**`user_identity_id`** ** (Required)
+**`user_identity_id`** **
+ (Required)
 
 ID of the user identity for which you want to retrieve all access control systems.
 

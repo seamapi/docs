@@ -12,11 +12,13 @@ POST /user_identities/get ⇒ { user_identity }
 
 **`user_identity_id`** **
 
+
 ID of the desired user identity.
 
 ---
 
 **`user_identity_key`** **
+
 
 ---
 
