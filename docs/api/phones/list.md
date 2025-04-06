@@ -10,15 +10,13 @@ POST /phones/list ⇒ { phones: [phone, …] }
 
 ## Parameters
 
-**`acs_credential_id`** **
-
+**`acs_credential_id`** *String*
 
 ID of the [credential](../../capability-guides/access-systems/managing-credentials.md) by which to filter the list of returned phones.
 
 ---
 
-**`owner_user_identity_id`** **
-
+**`owner_user_identity_id`** *String*
 
 ID of the user identity that represents the owner by which to filter the list of returned phones.
 

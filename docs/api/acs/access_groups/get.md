@@ -10,8 +10,7 @@ POST /acs/access_groups/get ⇒ { acs_access_group }
 
 ## Parameters
 
-**`acs_access_group_id`** **
- (Required)
+**`acs_access_group_id`** *String* (Required)
 
 ID of the desired access group.
 

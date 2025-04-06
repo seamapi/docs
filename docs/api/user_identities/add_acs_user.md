@@ -10,15 +10,13 @@ PUT /user_identities/add_acs_user ⇒ void
 
 ## Parameters
 
-**`acs_user_id`** **
- (Required)
+**`acs_user_id`** *String* (Required)
 
 ID of the desired ACS user.
 
 ---
 
-**`user_identity_id`** **
- (Required)
+**`user_identity_id`** *String* (Required)
 
 ID of the desired user identity.
 

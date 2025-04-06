@@ -10,8 +10,7 @@ POST /acs/credentials/delete ⇒ void
 
 ## Parameters
 
-**`acs_credential_id`** **
- (Required)
+**`acs_credential_id`** *String* (Required)
 
 ID of the desired credential.
 

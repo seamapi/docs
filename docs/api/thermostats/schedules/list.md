@@ -10,15 +10,13 @@ POST /thermostats/schedules/list ⇒ { thermostat_schedules: [thermostat_schedul
 
 ## Parameters
 
-**`device_id`** **
- (Required)
+**`device_id`** *String* (Required)
 
 ID of the desired thermostat device.
 
 ---
 
-**`user_identifier_key`** **
-
+**`user_identifier_key`** *String*
 
 User identifier key by which to filter the list of returned thermostat schedules.
 

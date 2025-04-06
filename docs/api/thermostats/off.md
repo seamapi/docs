@@ -10,8 +10,7 @@ POST /thermostats/off ⇒ { action_attempt }
 
 ## Parameters
 
-**`device_id`** **
- (Required)
+**`device_id`** *String* (Required)
 
 ID of the desired thermostat device.
 

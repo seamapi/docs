@@ -10,8 +10,7 @@ POST /user_identities/list ⇒ { user_identities: [user_identity, …] }
 
 ## Parameters
 
-**`credential_manager_acs_system_id`** **
-
+**`credential_manager_acs_system_id`** *String*
 
 ---
 

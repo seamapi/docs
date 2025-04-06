@@ -10,57 +10,49 @@ POST /thermostats/list ⇒ { devices: [device, …] }
 
 ## Parameters
 
-**`connect_webview_id`** **
-
+**`connect_webview_id`** *String*
 
 ID of the Connect Webview by which to filter devices.
 
 ---
 
-**`connected_account_id`** **
-
+**`connected_account_id`** *String*
 
 ID of the connected account by which to filter.
 
 ---
 
-**`connected_account_ids`** ** *of UUIDs*
-
+**`connected_account_ids`** *Array* *of UUIDs*
 
 Array of IDs of the connected accounts by which to filter devices.
 
 ---
 
-**`created_before`** **
-
+**`created_before`** *String*
 
 Date threshold for devices to return. If specified, returns only devices created before the specified date.
 
 ---
 
-**`custom_metadata_has`** **
-
+**`custom_metadata_has`** *Object*
 
 Set of key:value [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) pairs by which you want to filter devices.
 
 ---
 
-**`device_ids`** ** *of UUIDs*
-
+**`device_ids`** *Array* *of UUIDs*
 
 Array of device IDs by which to filter devices.
 
 ---
 
-**`device_type`** **
-
+**`device_type`** *String*
 
 Device type by which to filter devices.
 
 ---
 
-**`device_types`** ** *of Enums*
-
+**`device_types`** *Array* *of Enums*
 
 Array of device types by which to filter devices.
 <details>
@@ -107,22 +99,19 @@ Possible enum values:
 
 ---
 
-**`limit`** **
-
+**`limit`** *Number*
 
 Numerical limit on the number of devices to return.
 
 ---
 
-**`manufacturer`** **
-
+**`manufacturer`** *String*
 
 Manufacturer by which to filter devices.
 
 ---
 
-**`user_identifier_key`** **
-
+**`user_identifier_key`** *String*
 
 Your own internal user ID for the user by which to filter devices.
 

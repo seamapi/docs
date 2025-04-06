@@ -10,8 +10,7 @@ POST /user_identities/enrollment_automations/get ⇒ { enrollment_automation }
 
 ## Parameters
 
-**`enrollment_automation_id`** **
- (Required)
+**`enrollment_automation_id`** *String* (Required)
 
 ID of the desired enrollment automation.
 

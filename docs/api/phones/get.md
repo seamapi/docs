@@ -10,8 +10,7 @@ POST /phones/get ⇒ { phone }
 
 ## Parameters
 
-**`device_id`** **
- (Required)
+**`device_id`** *String* (Required)
 
 Device ID of the desired phone.
 

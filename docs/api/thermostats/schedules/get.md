@@ -10,8 +10,7 @@ POST /thermostats/schedules/get ⇒ { thermostat_schedule }
 
 ## Parameters
 
-**`thermostat_schedule_id`** **
- (Required)
+**`thermostat_schedule_id`** *String* (Required)
 
 ID of the desired thermostat schedule.
 

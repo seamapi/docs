@@ -10,29 +10,25 @@ POST /user_identities/create ⇒ { user_identity }
 
 ## Parameters
 
-**`email_address`** **
-
+**`email_address`** *String*
 
 Unique email address for the user identity.
 
 ---
 
-**`full_name`** **
-
+**`full_name`** *String*
 
 Full name of the user associated with the user identity.
 
 ---
 
-**`phone_number`** **
-
+**`phone_number`** *String*
 
 Unique phone number for the user identity in E.164 format (for example, +15555550100).
 
 ---
 
-**`user_identity_key`** **
-
+**`user_identity_key`** *String*
 
 Unique key for the user identity.
 

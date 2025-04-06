@@ -10,13 +10,11 @@ POST /acs/entrances/grant_access ⇒ void
 
 ## Parameters
 
-**`acs_entrance_id`** **
- (Required)
+**`acs_entrance_id`** *String* (Required)
 
 ---
 
-**`acs_user_id`** **
- (Required)
+**`acs_user_id`** *String* (Required)
 
 ---
 

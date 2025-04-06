@@ -10,15 +10,13 @@ POST /acs/users/remove_from_access_group ⇒ void
 
 ## Parameters
 
-**`acs_access_group_id`** **
- (Required)
+**`acs_access_group_id`** *String* (Required)
 
 ID of the desired access group.
 
 ---
 
-**`acs_user_id`** **
- (Required)
+**`acs_user_id`** *String* (Required)
 
 ID of the desired `acs_user`.
 

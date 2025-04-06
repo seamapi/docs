@@ -10,8 +10,7 @@ POST /acs/users/unsuspend ⇒ void
 
 ## Parameters
 
-**`acs_user_id`** **
- (Required)
+**`acs_user_id`** *String* (Required)
 
 ID of the desired `acs_user`.
 

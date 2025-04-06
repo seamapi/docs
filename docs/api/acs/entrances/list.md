@@ -10,13 +10,11 @@ POST /acs/entrances/list ⇒ { acs_entrances: [acs_entrance, …] }
 
 ## Parameters
 
-**`acs_credential_id`** **
-
+**`acs_credential_id`** *String*
 
 ---
 
-**`acs_system_id`** **
-
+**`acs_system_id`** *String*
 
 ---
 

@@ -10,15 +10,13 @@ POST /thermostats/activate_climate_preset ⇒ { action_attempt }
 
 ## Parameters
 
-**`climate_preset_key`** **
- (Required)
+**`climate_preset_key`** *String* (Required)
 
 Climate preset key of the desired climate preset.
 
 ---
 
-**`device_id`** **
- (Required)
+**`device_id`** *String* (Required)
 
 ID of the desired thermostat device.
 

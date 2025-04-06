@@ -10,8 +10,7 @@ POST /acs/entrances/get ⇒ { acs_entrance }
 
 ## Parameters
 
-**`acs_entrance_id`** **
- (Required)
+**`acs_entrance_id`** *String* (Required)
 
 ---
 

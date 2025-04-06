@@ -10,29 +10,25 @@ POST /phones/simulate/create_sandbox_phone ⇒ { phone }
 
 ## Parameters
 
-**`user_identity_id`** **
- (Required)
+**`user_identity_id`** *String* (Required)
 
 ID of the user identity to associate with the simulated phone.
 
 ---
 
-**`assa_abloy_metadata`** **
-
+**`assa_abloy_metadata`** *Object*
 
 ASSA ABLOY metadata to associate with the simulated phone.
 
 ---
 
-**`custom_sdk_installation_id`** **
-
+**`custom_sdk_installation_id`** *String*
 
 ID of the custom SDK installation to use for the simulated phone.
 
 ---
 
-**`phone_metadata`** **
-
+**`phone_metadata`** *Object*
 
 Metadata to associate with the simulated phone.
 

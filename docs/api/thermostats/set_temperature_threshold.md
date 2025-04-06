@@ -10,36 +10,31 @@ PATCH /thermostats/set_temperature_threshold ⇒ void
 
 ## Parameters
 
-**`device_id`** **
- (Required)
+**`device_id`** *String* (Required)
 
 ID of the desired thermostat device.
 
 ---
 
-**`lower_limit_celsius`** **
-
+**`lower_limit_celsius`** *Number*
 
 Lower temperature limit in in °C. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both.
 
 ---
 
-**`lower_limit_fahrenheit`** **
-
+**`lower_limit_fahrenheit`** *Number*
 
 Lower temperature limit in in °F. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both.
 
 ---
 
-**`upper_limit_celsius`** **
-
+**`upper_limit_celsius`** *Number*
 
 Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both.
 
 ---
 
-**`upper_limit_fahrenheit`** **
-
+**`upper_limit_fahrenheit`** *Number*
 
 Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both.
 

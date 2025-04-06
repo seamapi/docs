@@ -10,15 +10,13 @@ POST /user_identities/get ⇒ { user_identity }
 
 ## Parameters
 
-**`user_identity_id`** **
-
+**`user_identity_id`** *String*
 
 ID of the desired user identity.
 
 ---
 
-**`user_identity_key`** **
-
+**`user_identity_key`** *String*
 
 ---
 

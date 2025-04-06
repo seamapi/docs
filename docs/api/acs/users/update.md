@@ -10,46 +10,39 @@ PATCH /acs/users/update ⇒ void
 
 ## Parameters
 
-**`acs_user_id`** **
- (Required)
+**`acs_user_id`** *String* (Required)
 
 ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 ---
 
-**`access_schedule`** **
-
+**`access_schedule`** *Object*
 
 `starts_at` and `ends_at` timestamps for the `acs_user`'s access. If you specify an `access_schedule`, you must include both `starts_at` and `ends_at`. `ends_at` must be a time in the future and after `starts_at`.
 
 ---
 
-**`email`** **
-
+**`email`** *String*
 
 ---
 
-**`email_address`** **
-
+**`email_address`** *String*
 
 Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 ---
 
-**`full_name`** **
-
+**`full_name`** *String*
 
 Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 ---
 
-**`hid_acs_system_id`** **
-
+**`hid_acs_system_id`** *String*
 
 ---
 
-**`phone_number`** **
-
+**`phone_number`** *String*
 
 Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
 

@@ -10,15 +10,13 @@ POST /acs/access_groups/list ⇒ { acs_access_groups: [acs_access_group, …] }
 
 ## Parameters
 
-**`acs_system_id`** **
-
+**`acs_system_id`** *String*
 
 ID of the access control system for which you want to retrieve all access groups.
 
 ---
 
-**`acs_user_id`** **
-
+**`acs_user_id`** *String*
 
 ID of the user for which you want to retrieve all access groups.
 
