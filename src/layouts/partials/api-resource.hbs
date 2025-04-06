@@ -13,8 +13,11 @@
 ```json
 {
 {{#each properties}}
-  {{properties.indexOf(this)}}
+{{#if @last}}
+  {{name}}: [example value]
+{{else}}
   {{name}}: [example value],
+{{/if}}
 {{/each}}
 }
 ```
