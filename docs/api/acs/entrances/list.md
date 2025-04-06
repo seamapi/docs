@@ -2,9 +2,7 @@
 
 Returns a list of all [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
-{% hint style="info" %}
-{% tabs %}
-{% tab title="Signature" %}
+{% hint style="success" %}
 ```
 POST /acs/entrances/list ⇒ { acs_entrances: [acs_entrance, …] }
 ```
@@ -18,9 +16,6 @@ POST /acs/entrances/list ⇒ { acs_entrances: [acs_entrance, …] }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-{% endtab %}
-{% endtabs %}
 {% endhint %}
 
 {% tabs %}

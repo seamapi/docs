@@ -2,9 +2,7 @@
 
 Sets up a new [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) with a specified [credential manager](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).
 
-{% hint style="info" %}
-{% tabs %}
-{% tab title="Signature" %}
+{% hint style="success" %}
 ```
 POST /user_identities/enrollment_automations/launch ⇒ { enrollment_automation }
 ```
@@ -17,9 +15,6 @@ POST /user_identities/enrollment_automations/launch ⇒ { enrollment_automation 
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-{% endtab %}
-{% endtabs %}
 {% endhint %}
 
 {% tabs %}

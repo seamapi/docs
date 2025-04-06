@@ -2,9 +2,7 @@
 
 Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
-{% hint style="info" %}
-{% tabs %}
-{% tab title="Signature" %}
+{% hint style="success" %}
 ```
 POST /acs/access_groups/list_users ⇒ { acs_users: [acs_user, …] }
 ```
@@ -17,9 +15,6 @@ POST /acs/access_groups/list_users ⇒ { acs_users: [acs_user, …] }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-{% endtab %}
-{% endtabs %}
 {% endhint %}
 
 {% tabs %}

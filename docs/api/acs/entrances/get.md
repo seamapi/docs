@@ -2,9 +2,7 @@
 
 Returns a specified [ACS entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
-{% hint style="info" %}
-{% tabs %}
-{% tab title="Signature" %}
+{% hint style="success" %}
 ```
 POST /acs/entrances/get ⇒ { acs_entrance }
 ```
@@ -16,9 +14,6 @@ POST /acs/entrances/get ⇒ { acs_entrance }
 - API key
 - Client session token
 </details>
-
-{% endtab %}
-{% endtabs %}
 {% endhint %}
 
 {% tabs %}

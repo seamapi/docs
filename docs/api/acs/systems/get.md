@@ -4,9 +4,7 @@ Returns a specified [access control system](https://docs.seam.co/latest/capabili
 
 Specify the desired access control system by including the corresponding `acs_system_id` in the request body.
 
-{% hint style="info" %}
-{% tabs %}
-{% tab title="Signature" %}
+{% hint style="success" %}
 ```
 POST /acs/systems/get ⇒ { acs_system }
 ```
@@ -19,9 +17,6 @@ POST /acs/systems/get ⇒ { acs_system }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-{% endtab %}
-{% endtabs %}
 {% endhint %}
 
 {% tabs %}

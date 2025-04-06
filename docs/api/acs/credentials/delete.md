@@ -2,9 +2,7 @@
 
 Deletes a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-{% hint style="info" %}
-{% tabs %}
-{% tab title="Signature" %}
+{% hint style="success" %}
 ```
 POST /acs/credentials/delete ⇒ void
 ```
@@ -17,9 +15,6 @@ POST /acs/credentials/delete ⇒ void
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-{% endtab %}
-{% endtabs %}
 {% endhint %}
 
 {% tabs %}

@@ -2,9 +2,7 @@
 
 Lists the [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) has access.
 
-{% hint style="info" %}
-{% tabs %}
-{% tab title="Signature" %}
+{% hint style="success" %}
 ```
 POST /acs/users/list_accessible_entrances ⇒ { acs_entrances: [acs_entrance, …] }
 ```
@@ -18,9 +16,6 @@ POST /acs/users/list_accessible_entrances ⇒ { acs_entrances: [acs_entrance, �
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-{% endtab %}
-{% endtabs %}
 {% endhint %}
 
 

@@ -4,9 +4,7 @@ Returns a list of all [access control systems](https://docs.seam.co/latest/capab
 
 To filter the list of returned access control systems by a specific connected account ID, include the `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the response includes all access control systems connected to your workspace.
 
-{% hint style="info" %}
-{% tabs %}
-{% tab title="Signature" %}
+{% hint style="success" %}
 ```
 POST /acs/systems/list ⇒ { acs_systems: [acs_system, …] }
 ```
@@ -20,9 +18,6 @@ POST /acs/systems/list ⇒ { acs_systems: [acs_system, …] }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-{% endtab %}
-{% endtabs %}
 {% endhint %}
 
 {% tabs %}

@@ -2,9 +2,7 @@
 
 Returns a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
-{% hint style="info" %}
-{% tabs %}
-{% tab title="Signature" %}
+{% hint style="success" %}
 ```
 POST /thermostats/schedules/get ⇒ { thermostat_schedule }
 ```
@@ -18,9 +16,6 @@ POST /thermostats/schedules/get ⇒ { thermostat_schedule }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-{% endtab %}
-{% endtabs %}
 {% endhint %}
 
 {% tabs %}

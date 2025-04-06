@@ -2,9 +2,7 @@
 
 Returns a list of all [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a [credential](https://docs.seam.co/latest/api/acs/credentials) grants access.
 
-{% hint style="info" %}
-{% tabs %}
-{% tab title="Signature" %}
+{% hint style="success" %}
 ```
 POST /acs/credentials/list_accessible_entrances ⇒ { acs_entrances: [acs_entrance, …] }
 ```
@@ -17,9 +15,6 @@ POST /acs/credentials/list_accessible_entrances ⇒ { acs_entrances: [acs_entran
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-{% endtab %}
-{% endtabs %}
 {% endhint %}
 
 {% tabs %}

@@ -2,9 +2,7 @@
 
 Updates the code and ends at date and time for a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-{% hint style="info" %}
-{% tabs %}
-{% tab title="Signature" %}
+{% hint style="success" %}
 ```
 PATCH /acs/credentials/update ⇒ void
 ```
@@ -17,9 +15,6 @@ PATCH /acs/credentials/update ⇒ void
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-{% endtab %}
-{% endtabs %}
 {% endhint %}
 
 {% tabs %}

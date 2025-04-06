@@ -2,9 +2,7 @@
 
 Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
-{% hint style="info" %}
-{% tabs %}
-{% tab title="Signature" %}
+{% hint style="success" %}
 ```
 POST /acs/users/create ⇒ { acs_user }
 ```
@@ -17,9 +15,6 @@ POST /acs/users/create ⇒ { acs_user }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-{% endtab %}
-{% endtabs %}
 {% endhint %}
 
 {% tabs %}

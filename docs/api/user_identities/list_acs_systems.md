@@ -2,9 +2,7 @@
 
 Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
-{% hint style="info" %}
-{% tabs %}
-{% tab title="Signature" %}
+{% hint style="success" %}
 ```
 POST /user_identities/list_acs_systems ⇒ { acs_systems: [acs_system, …] }
 ```
@@ -18,9 +16,6 @@ POST /user_identities/list_acs_systems ⇒ { acs_systems: [acs_system, …] }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-{% endtab %}
-{% endtabs %}
 {% endhint %}
 
 {% tabs %}

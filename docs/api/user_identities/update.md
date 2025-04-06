@@ -2,9 +2,7 @@
 
 
 
-{% hint style="info" %}
-{% tabs %}
-{% tab title="Signature" %}
+{% hint style="success" %}
 ```
 PATCH /user_identities/update ⇒ void
 ```
@@ -17,9 +15,6 @@ PATCH /user_identities/update ⇒ void
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-{% endtab %}
-{% endtabs %}
 {% endhint %}
 
 

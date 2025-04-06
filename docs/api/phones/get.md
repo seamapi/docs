@@ -2,9 +2,7 @@
 
 Returns a single phone entry matching the provided `device_id`.
 
-{% hint style="info" %}
-{% tabs %}
-{% tab title="Signature" %}
+{% hint style="success" %}
 ```
 POST /phones/get ⇒ { phone }
 ```
@@ -17,9 +15,6 @@ POST /phones/get ⇒ { phone }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-{% endtab %}
-{% endtabs %}
 {% endhint %}
 
 

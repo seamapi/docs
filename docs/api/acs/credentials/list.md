@@ -2,9 +2,7 @@
 
 Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md).
 
-{% hint style="info" %}
-{% tabs %}
-{% tab title="Signature" %}
+{% hint style="success" %}
 ```
 POST /acs/credentials/list ⇒ { acs_credentials: [acs_credential, …] }
 ```
@@ -18,9 +16,6 @@ POST /acs/credentials/list ⇒ { acs_credentials: [acs_credential, …] }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-{% endtab %}
-{% endtabs %}
 {% endhint %}
 
 {% tabs %}

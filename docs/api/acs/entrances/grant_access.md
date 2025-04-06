@@ -2,9 +2,7 @@
 
 
 
-{% hint style="info" %}
-{% tabs %}
-{% tab title="Signature" %}
+{% hint style="success" %}
 ```
 POST /acs/entrances/grant_access ⇒ void
 ```
@@ -17,9 +15,6 @@ POST /acs/entrances/grant_access ⇒ void
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-{% endtab %}
-{% endtabs %}
 {% endhint %}
 
 

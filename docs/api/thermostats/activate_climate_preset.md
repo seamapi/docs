@@ -2,9 +2,7 @@
 
 Activates a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-{% hint style="info" %}
-{% tabs %}
-{% tab title="Signature" %}
+{% hint style="success" %}
 ```
 POST /thermostats/activate_climate_preset ⇒ { action_attempt }
 ```
@@ -17,9 +15,6 @@ POST /thermostats/activate_climate_preset ⇒ { action_attempt }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-{% endtab %}
-{% endtabs %}
 {% endhint %}
 
 {% tabs %}

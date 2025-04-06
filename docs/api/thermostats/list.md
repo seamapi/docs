@@ -2,9 +2,7 @@
 
 Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guides/thermostats).
 
-{% hint style="info" %}
-{% tabs %}
-{% tab title="Signature" %}
+{% hint style="success" %}
 ```
 POST /thermostats/list ⇒ { devices: [device, …] }
 ```
@@ -18,9 +16,6 @@ POST /thermostats/list ⇒ { devices: [device, …] }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-{% endtab %}
-{% endtabs %}
 {% endhint %}
 
 {% tabs %}

@@ -2,9 +2,7 @@
 
 Returns a list of all [thermostat schedules](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-{% hint style="info" %}
-{% tabs %}
-{% tab title="Signature" %}
+{% hint style="success" %}
 ```
 POST /thermostats/schedules/list ⇒ { thermostat_schedules: [thermostat_schedule, …] }
 ```
@@ -18,9 +16,6 @@ POST /thermostats/schedules/list ⇒ { thermostat_schedules: [thermostat_schedul
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
-{% endtab %}
-{% endtabs %}
 {% endhint %}
 
 {% tabs %}
