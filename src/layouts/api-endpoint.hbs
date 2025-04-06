@@ -1,21 +1,18 @@
 # {{title}}
 
+{{{description}}}
+
+{% hint style="info" %}
 {% tabs %}
 {% tab title="Signature" %}
 ```
 {{request.preferredMethod}} {{path}} ⇒ {{#if response.responseKey}}{{#if (eq response.responseType "resource_list")}}{ {{response.responseKey}}: [{{response.resourceType}}, …] }{{else}}{ {{response.responseKey}} }{{/if}}{{else}}void{{/if}}
 ```
-{% endtab %}
-{% endtabs %}
 
-{{{description}}}
-
-{{#with primaryCodeSample}}
-{{> code-sample }}
-
-{{/with}}
 {{#if authMethods}}
-## Authentication Methods
+<details>
+
+<summary>Authentication Methods</summary>
 
 {{#each authMethods}}
 - {{this}}
@@ -23,9 +20,17 @@
   <br>{{#if (eq ../workspaceScope 'required')}}Must also include the `seam-workspace` header in the request.{{/if}}{{#if (eq ../workspaceScope 'optional')}}Can also include the `seam-workspace` header in the request.{{/if}}{{#if (eq ../workspaceScope 'none')}}Must omit the `seam-workspace` header from the request.{{/if}}
 {{/if}}
 {{/each}}
-
----
+</details>
 {{/if}}
+
+{% endtab %}
+{% endtabs %}
+{% endhint %}
+
+{{#with primaryCodeSample}}
+{{> code-sample }}
+
+{{/with}}
 
 ## Request Parameters
 
