@@ -50,12 +50,12 @@ None
 
 ## Return Type
 
-{{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array<[{{response.escapedResourceType}}](./)>{{else}}[{{response.escapedResourceType}}](./){{/if}}{{else}}void{{/if}}
+{{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array of [{{response.escapedResourceType}}s](./){{else}}[{{response.escapedResourceType}}](./){{/if}}{{else}}void{{/if}}
 {{#with response.actionAttempt}}
 
 {{> api-resource headingOffset=true}}
 {{/with}}
-{{#if additionalCodeSamples.length}}
+{{#if primaryCodeSample}}
 
 ---
 
