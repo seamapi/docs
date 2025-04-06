@@ -25,7 +25,6 @@ Device ID of the desired phone.
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
 ## Return Type
 
 [phone](./)

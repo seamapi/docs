@@ -37,7 +37,6 @@ Replacement date and time at which the validity of the credential ends, in [ISO 
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
 ## Return Type
 
 void

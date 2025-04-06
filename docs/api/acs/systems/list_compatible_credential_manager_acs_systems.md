@@ -29,7 +29,6 @@ ID of the ACS system for which you want to retrieve all compatible credential ma
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
 ## Return Type
 
 Array<[acs\_system](./)>

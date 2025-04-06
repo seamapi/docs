@@ -55,7 +55,6 @@ Desired simulated heating [set point](../../../capability-guides/thermostats/und
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
 ## Return Type
 
 void

@@ -25,7 +25,6 @@ ID of the credential for which you want to retrieve all entrances to which this 
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
 ## Return Type
 
 Array<[acs\_entrance](./)>

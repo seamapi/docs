@@ -50,7 +50,6 @@ Desired [heating set point](../../capability-guides/thermostats/understanding-th
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
 ## Return Type
 
 [action\_attempt](./)

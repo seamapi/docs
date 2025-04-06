@@ -80,7 +80,6 @@ User-friendly name to identify the [climate preset](../../capability-guides/ther
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
 ## Return Type
 
 void

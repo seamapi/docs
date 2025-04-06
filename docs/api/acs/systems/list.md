@@ -28,7 +28,6 @@ ID of the connected account by which to filter the list of returned access contr
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
 ## Return Type
 
 Array<[acs\_system](./)>

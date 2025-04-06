@@ -26,7 +26,6 @@ ID of the desired thermostat device.
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
 ## Return Type
 
 [action\_attempt](./)

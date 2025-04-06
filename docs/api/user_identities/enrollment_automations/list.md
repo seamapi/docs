@@ -26,7 +26,6 @@ ID of the user identity for which you want to retrieve all enrollment automation
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
 ## Return Type
 
 Array<[enrollment\_automation](./)>

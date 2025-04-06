@@ -43,7 +43,6 @@ Metadata to associate with the simulated phone.
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-
 ## Return Type
 
 [phone](./)
