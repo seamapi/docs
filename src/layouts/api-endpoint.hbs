@@ -8,6 +8,20 @@
 ```
 {% endhint %}
 
+{{#if authMethods}}
+<details>
+
+<summary>Authentication Methods</summary>
+
+{{#each authMethods}}
+- {{this}}
+{{#if (eq this 'Personal access token')}}
+  <br>{{#if (eq ../workspaceScope 'required')}}Must also include the `seam-workspace` header in the request.{{/if}}{{#if (eq ../workspaceScope 'optional')}}Can also include the `seam-workspace` header in the request.{{/if}}{{#if (eq ../workspaceScope 'none')}}Must omit the `seam-workspace` header from the request.{{/if}}
+{{/if}}
+{{/each}}
+</details>
+{{/if}}
+
 ## Parameters
 
 {{#if request.parameters.length}}
@@ -32,20 +46,6 @@
 {{else}}
 None
 
-{{/if}}
-
-{{#if authMethods}}
-<details>
-
-<summary>Authentication Methods</summary>
-
-{{#each authMethods}}
-- {{this}}
-{{#if (eq this 'Personal access token')}}
-  <br>{{#if (eq ../workspaceScope 'required')}}Must also include the `seam-workspace` header in the request.{{/if}}{{#if (eq ../workspaceScope 'optional')}}Can also include the `seam-workspace` header in the request.{{/if}}{{#if (eq ../workspaceScope 'none')}}Must omit the `seam-workspace` header from the request.{{/if}}
-{{/if}}
-{{/each}}
-</details>
 {{/if}}
 
 ## Return Type
