@@ -2,9 +2,7 @@
 
 {{{description}}}
 
-{% hint style="info" %}
-{% tabs %}
-{% tab title="Signature" %}
+{% hint style="success" %}
 ```
 {{request.preferredMethod}} {{path}} ⇒ {{#if response.responseKey}}{{#if (eq response.responseType "resource_list")}}{ {{response.responseKey}}: [{{response.resourceType}}, …] }{{else}}{ {{response.responseKey}} }{{/if}}{{else}}void{{/if}}
 ```
@@ -22,9 +20,6 @@
 {{/each}}
 </details>
 {{/if}}
-
-{% endtab %}
-{% endtabs %}
 {% endhint %}
 
 {{#with primaryCodeSample}}
