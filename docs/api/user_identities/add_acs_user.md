@@ -6,6 +6,7 @@ Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access
 ```
 PUT /user_identities/add_acs_user ⇒ void
 ```
+{% endhint %}
 
 <details>
 
@@ -15,135 +16,17 @@ PUT /user_identities/add_acs_user ⇒ void
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-{% endhint %}
-
-{% tabs %}
-{% tab title="JavaScript" %}
-#### Code
-
-```javascript
-await seam.userIdentities.addAcsUser({
-  user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-  acs_user_id: "4d223973-0874-4831-8630-bfcb29e6bce0",
-});
-```
-
-#### Output
-
-```javascript
-// void
-```
-{% endtab %}
-
-{% tab title="Python" %}
-#### Code
-
-```python
-seam.user_identities.add_acs_user(
-    user_identity_id="48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    acs_user_id="4d223973-0874-4831-8630-bfcb29e6bce0",
-)
-```
-
-#### Output
-
-```python
-None
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-#### Code
-
-```ruby
-seam.user_identities.add_acs_user(
-  user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-  acs_user_id: "4d223973-0874-4831-8630-bfcb29e6bce0",
-)
-```
-
-#### Output
-
-```ruby
-nil
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-#### Code
-
-```php
-<?php
-$seam->user_identities->add_acs_user(
-    user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    acs_user_id: "4d223973-0874-4831-8630-bfcb29e6bce0"
-);
-```
-
-#### Output
-
-```php
-null
-```
-{% endtab %}
-
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam user-identities add-acs-user --user_identity_id "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a" --acs_user_id "4d223973-0874-4831-8630-bfcb29e6bce0"
-```
-
-#### Output
-
-```seam_cli
-{}
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.UserIdentities.AddAcsUser(
-		context.Background(),
-		api.UserIdentitiesAddAcsUserRequest{
-			UserIdentityId: api.String("48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"),
-			AcsUserId:      api.String("4d223973-0874-4831-8630-bfcb29e6bce0"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
-{% endtabs %}
-
 
 ## Request Parameters
 
-### `acs_user_id`
-
-Type: `string`
+**`acs_user_id`** *string*
 Required: Yes
 
 ID of the desired ACS user.
 
 ---
 
-### `user_identity_id`
-
-Type: `string`
+**`user_identity_id`** *string*
 Required: Yes
 
 ID of the desired user identity.

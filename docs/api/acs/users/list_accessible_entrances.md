@@ -6,6 +6,7 @@ Lists the [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a 
 ```
 POST /acs/users/list_accessible_entrances ⇒ { acs_entrances: [acs_entrance, …] }
 ```
+{% endhint %}
 
 <details>
 
@@ -16,14 +17,10 @@ POST /acs/users/list_accessible_entrances ⇒ { acs_entrances: [acs_entrance, �
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-{% endhint %}
-
 
 ## Request Parameters
 
-### `acs_user_id`
-
-Type: `string`
+**`acs_user_id`** *string*
 Required: Yes
 
 ID of the desired `acs_user`.

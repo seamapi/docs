@@ -6,6 +6,7 @@ Encodes an existing [credential](../../../capability-guides/access-systems/manag
 ```
 POST /acs/encoders/encode_credential ⇒ { action_attempt }
 ```
+{% endhint %}
 
 <details>
 
@@ -15,23 +16,17 @@ POST /acs/encoders/encode_credential ⇒ { action_attempt }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-{% endhint %}
-
 
 ## Request Parameters
 
-### `acs_credential_id`
-
-Type: `string`
+**`acs_credential_id`** *string*
 Required: Yes
 
 ID of the `acs_credential` to encode onto a card.
 
 ---
 
-### `acs_encoder_id`
-
-Type: `string`
+**`acs_encoder_id`** *string*
 Required: Yes
 
 ID of the `acs_encoder` to use to encode the `acs_credential`.

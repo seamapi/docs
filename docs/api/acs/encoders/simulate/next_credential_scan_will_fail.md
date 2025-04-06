@@ -6,6 +6,7 @@ Simulates that the next attempt to scan a [credential](../../../../capability-gu
 ```
 POST /acs/encoders/simulate/next_credential_scan_will_fail ⇒ void
 ```
+{% endhint %}
 
 <details>
 
@@ -15,30 +16,22 @@ POST /acs/encoders/simulate/next_credential_scan_will_fail ⇒ void
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-{% endhint %}
-
 
 ## Request Parameters
 
-### `acs_encoder_id`
-
-Type: `string`
+**`acs_encoder_id`** *string*
 Required: Yes
 
 ID of the `acs_encoder` that will fail to scan the `acs_credential` in the next request.
 
 ---
 
-### `acs_credential_id_on_seam`
-
-Type: `string`
+**`acs_credential_id_on_seam`** *string*
 Required: No
 
 ---
 
-### `error_code`
-
-Type: `string`
+**`error_code`** *string*
 Required: No
 
 ---

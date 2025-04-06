@@ -6,6 +6,7 @@ Sets a specified [climate preset](../../capability-guides/thermostats/creating-a
 ```
 POST /thermostats/set_fallback_climate_preset ⇒ void
 ```
+{% endhint %}
 
 <details>
 
@@ -15,134 +16,17 @@ POST /thermostats/set_fallback_climate_preset ⇒ void
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-{% endhint %}
-
-{% tabs %}
-{% tab title="JavaScript" %}
-#### Code
-
-```javascript
-await seam.thermostats.setFallbackClimatePreset({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  climate_preset_key: "eco",
-});
-```
-
-#### Output
-
-```javascript
-// void
-```
-{% endtab %}
-
-{% tab title="Python" %}
-#### Code
-
-```python
-seam.thermostats.set_fallback_climate_preset(
-    device_id="123e4567-e89b-12d3-a456-426614174000", climate_preset_key="eco"
-)
-```
-
-#### Output
-
-```python
-None
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-#### Code
-
-```ruby
-seam.thermostats.set_fallback_climate_preset(
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  climate_preset_key: "eco",
-)
-```
-
-#### Output
-
-```ruby
-nil
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-#### Code
-
-```php
-<?php
-$seam->thermostats->set_fallback_climate_preset(
-    device_id: "123e4567-e89b-12d3-a456-426614174000",
-    climate_preset_key: "eco"
-);
-```
-
-#### Output
-
-```php
-null
-```
-{% endtab %}
-
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam thermostats set-fallback-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "eco"
-```
-
-#### Output
-
-```seam_cli
-{}
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.SetFallbackClimatePreset(
-		context.Background(),
-		api.ThermostatsSetFallbackClimatePresetRequest{
-			DeviceId:         api.String("123e4567-e89b-12d3-a456-426614174000"),
-			ClimatePresetKey: api.String("eco"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
-{% endtabs %}
-
 
 ## Request Parameters
 
-### `climate_preset_key`
-
-Type: `string`
+**`climate_preset_key`** *string*
 Required: Yes
 
 Climate preset key of the desired climate preset.
 
 ---
 
-### `device_id`
-
-Type: `string`
+**`device_id`** *string*
 Required: Yes
 
 ID of the desired thermostat device.

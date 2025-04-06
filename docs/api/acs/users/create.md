@@ -6,6 +6,7 @@ Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-sy
 ```
 POST /acs/users/create ⇒ { acs_user }
 ```
+{% endhint %}
 
 <details>
 
@@ -15,7 +16,75 @@ POST /acs/users/create ⇒ { acs_user }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-{% endhint %}
+
+## Request Parameters
+
+**`acs_system_id`** *string*
+Required: Yes
+
+ID of the `acs_system` to which to add the new `acs_user`.
+
+---
+
+**`full_name`** *string*
+Required: Yes
+
+Full name of the new `acs_user`.
+
+---
+
+**`access_schedule`** *object*
+Required: No
+
+`starts_at` and `ends_at` timestamps for the new `acs_user`'s access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. `starts_at` defaults to the current time if not provided. `ends_at` is optional and must be a time in the future and after `starts_at`.
+
+---
+
+**`acs_access_group_ids`** *array* *of UUIDs*
+Required: No
+
+Array of `access_group_id`s to indicate the access groups to which to add the new `acs_user`.
+
+---
+
+**`email`** *string*
+Required: No
+
+---
+
+**`email_address`** *string*
+Required: No
+
+Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+---
+
+**`phone_number`** *string*
+Required: No
+
+Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
+
+---
+
+**`user_identity_id`** *string*
+Required: No
+
+ID of the user identity with which to associate the new `acs_user`.
+
+---
+
+
+## Return Type
+
+[acs\_user](./)
+
+---
+
+## Examples
+  
+### Create a new ACS user
+
+Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -186,88 +255,6 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 
 {% endtabs %}
 
-
-## Request Parameters
-
-### `acs_system_id`
-
-Type: `string`
-Required: Yes
-
-ID of the `acs_system` to which to add the new `acs_user`.
-
----
-
-### `full_name`
-
-Type: `string`
-Required: Yes
-
-Full name of the new `acs_user`.
-
----
-
-### `access_schedule`
-
-Type: `object`
-Required: No
-
-`starts_at` and `ends_at` timestamps for the new `acs_user`'s access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. `starts_at` defaults to the current time if not provided. `ends_at` is optional and must be a time in the future and after `starts_at`.
-
----
-
-### `acs_access_group_ids`
-
-Type: `array`
-Item format: `UUID`
-Required: No
-
-Array of `access_group_id`s to indicate the access groups to which to add the new `acs_user`.
-
----
-
-### `email`
-
-Type: `string`
-Required: No
-
----
-
-### `email_address`
-
-Type: `string`
-Required: No
-
-Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
----
-
-### `phone_number`
-
-Type: `string`
-Required: No
-
-Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
-
----
-
-### `user_identity_id`
-
-Type: `string`
-Required: No
-
-ID of the user identity with which to associate the new `acs_user`.
-
----
-
-
-## Return Type
-
-[acs\_user](./)
-
----
-
-## Code Samples
 
 ### Create a new ACS user
 

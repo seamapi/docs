@@ -6,6 +6,7 @@ Simulates having adjusted the [HVAC mode](../../../capability-guides/thermostats
 ```
 POST /thermostats/simulate/hvac_mode_adjusted ⇒ void
 ```
+{% endhint %}
 
 <details>
 
@@ -15,59 +16,45 @@ POST /thermostats/simulate/hvac_mode_adjusted ⇒ void
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-{% endhint %}
-
 
 ## Request Parameters
 
-### `device_id`
-
-Type: `string`
+**`device_id`** *string*
 Required: Yes
 
 ID of the desired thermostat device.
 
 ---
 
-### `hvac_mode`
-
-Type: `string`
+**`hvac_mode`** *string*
 Required: Yes
 
 Desired [HVAC mode](../../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) to simulate.
 
 ---
 
-### `cooling_set_point_celsius`
-
-Type: `number`
+**`cooling_set_point_celsius`** *number*
 Required: No
 
 Desired simulated cooling [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`.
 
 ---
 
-### `cooling_set_point_fahrenheit`
-
-Type: `number`
+**`cooling_set_point_fahrenheit`** *number*
 Required: No
 
 Desired simulated cooling [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`.
 
 ---
 
-### `heating_set_point_celsius`
-
-Type: `number`
+**`heating_set_point_celsius`** *number*
 Required: No
 
 Desired simulated heating [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`.
 
 ---
 
-### `heating_set_point_fahrenheit`
-
-Type: `number`
+**`heating_set_point_fahrenheit`** *number*
 Required: No
 
 Desired simulated heating [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`.

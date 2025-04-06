@@ -6,6 +6,7 @@ Creates a new simulated phone in a [sandbox workspace](../../../core-concepts/wo
 ```
 POST /phones/simulate/create_sandbox_phone ⇒ { phone }
 ```
+{% endhint %}
 
 <details>
 
@@ -15,41 +16,31 @@ POST /phones/simulate/create_sandbox_phone ⇒ { phone }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-{% endhint %}
-
 
 ## Request Parameters
 
-### `user_identity_id`
-
-Type: `string`
+**`user_identity_id`** *string*
 Required: Yes
 
 ID of the user identity to associate with the simulated phone.
 
 ---
 
-### `assa_abloy_metadata`
-
-Type: `object`
+**`assa_abloy_metadata`** *object*
 Required: No
 
 ASSA ABLOY metadata to associate with the simulated phone.
 
 ---
 
-### `custom_sdk_installation_id`
-
-Type: `string`
+**`custom_sdk_installation_id`** *string*
 Required: No
 
 ID of the custom SDK installation to use for the simulated phone.
 
 ---
 
-### `phone_metadata`
-
-Type: `object`
+**`phone_metadata`** *object*
 Required: No
 
 Metadata to associate with the simulated phone.

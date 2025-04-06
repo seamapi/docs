@@ -6,6 +6,7 @@ Simulates a [thermostat](https://docs.seam.co/latest/capability-guides/thermosta
 ```
 POST /thermostats/simulate/temperature_reached ⇒ void
 ```
+{% endhint %}
 
 <details>
 
@@ -15,32 +16,24 @@ POST /thermostats/simulate/temperature_reached ⇒ void
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-{% endhint %}
-
 
 ## Request Parameters
 
-### `device_id`
-
-Type: `string`
+**`device_id`** *string*
 Required: Yes
 
 ID of the desired thermostat device.
 
 ---
 
-### `temperature_celsius`
-
-Type: `number`
+**`temperature_celsius`** *number*
 Required: No
 
 Desired simulated temperature in °C. You must set `temperature_celsius` or `temperature_fahrenheit`.
 
 ---
 
-### `temperature_fahrenheit`
-
-Type: `number`
+**`temperature_fahrenheit`** *number*
 Required: No
 
 Desired simulated temperature in °F. You must set `temperature_fahrenheit` or `temperature_celsius`.

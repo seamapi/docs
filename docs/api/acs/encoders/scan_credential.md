@@ -6,6 +6,7 @@ Scans an encoded [acs_credential](../../../capability-guides/access-systems/mana
 ```
 POST /acs/encoders/scan_credential ⇒ { action_attempt }
 ```
+{% endhint %}
 
 <details>
 
@@ -15,14 +16,10 @@ POST /acs/encoders/scan_credential ⇒ { action_attempt }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-{% endhint %}
-
 
 ## Request Parameters
 
-### `acs_encoder_id`
-
-Type: `string`
+**`acs_encoder_id`** *string*
 Required: Yes
 
 ID of the `acs_encoder` to use for the scan.

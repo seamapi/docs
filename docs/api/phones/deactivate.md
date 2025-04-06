@@ -6,6 +6,7 @@ Deactivates a phone, which is useful, for example, if a user has lost their phon
 ```
 POST /phones/deactivate ⇒ void
 ```
+{% endhint %}
 
 <details>
 
@@ -16,14 +17,10 @@ POST /phones/deactivate ⇒ void
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-{% endhint %}
-
 
 ## Request Parameters
 
-### `device_id`
-
-Type: `string`
+**`device_id`** *string*
 Required: Yes
 
 Device ID of the desired phone.

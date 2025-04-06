@@ -6,6 +6,7 @@ Returns a list of all [encoders](../../../capability-guides/access-systems/worki
 ```
 POST /acs/encoders/list ⇒ { acs_encoders: [acs_encoder, …] }
 ```
+{% endhint %}
 
 <details>
 
@@ -15,43 +16,31 @@ POST /acs/encoders/list ⇒ { acs_encoders: [acs_encoder, …] }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-{% endhint %}
-
 
 ## Request Parameters
 
-### `acs_encoder_ids`
-
-Type: `array`
-Item format: `UUID`
+**`acs_encoder_ids`** *array* *of UUIDs*
 Required: No
 
 IDs of the `acs_encoder`s that you want to retrieve.
 
 ---
 
-### `acs_system_id`
-
-Type: `string`
+**`acs_system_id`** *string*
 Required: No
 
 ID of the `acs_system` for which you want to retrieve all `acs_encoder`s.
 
 ---
 
-### `acs_system_ids`
-
-Type: `array`
-Item format: `UUID`
+**`acs_system_ids`** *array* *of UUIDs*
 Required: No
 
 IDs of the `acs_system`s for which you want to retrieve all `acs_encoder`s.
 
 ---
 
-### `limit`
-
-Type: `number`
+**`limit`** *number*
 Required: No
 
 Number of `acs_encoders` to return.

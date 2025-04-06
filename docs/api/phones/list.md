@@ -6,6 +6,7 @@ Returns a list of all phones. To filter the list of returned phones by a specifi
 ```
 POST /phones/list ⇒ { phones: [phone, …] }
 ```
+{% endhint %}
 
 <details>
 
@@ -15,23 +16,17 @@ POST /phones/list ⇒ { phones: [phone, …] }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-{% endhint %}
-
 
 ## Request Parameters
 
-### `acs_credential_id`
-
-Type: `string`
+**`acs_credential_id`** *string*
 Required: No
 
 ID of the [credential](../../capability-guides/access-systems/managing-credentials.md) by which to filter the list of returned phones.
 
 ---
 
-### `owner_user_identity_id`
-
-Type: `string`
+**`owner_user_identity_id`** *string*
 Required: No
 
 ID of the user identity that represents the owner by which to filter the list of returned phones.

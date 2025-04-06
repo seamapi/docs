@@ -6,6 +6,7 @@
 ```
 POST /acs/entrances/grant_access ⇒ void
 ```
+{% endhint %}
 
 <details>
 
@@ -15,21 +16,15 @@ POST /acs/entrances/grant_access ⇒ void
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-{% endhint %}
-
 
 ## Request Parameters
 
-### `acs_entrance_id`
-
-Type: `string`
+**`acs_entrance_id`** *string*
 Required: Yes
 
 ---
 
-### `acs_user_id`
-
-Type: `string`
+**`acs_user_id`** *string*
 Required: Yes
 
 ---

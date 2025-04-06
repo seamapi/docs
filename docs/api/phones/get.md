@@ -6,6 +6,7 @@ Returns a single phone entry matching the provided `device_id`.
 ```
 POST /phones/get ⇒ { phone }
 ```
+{% endhint %}
 
 <details>
 
@@ -15,14 +16,10 @@ POST /phones/get ⇒ { phone }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-{% endhint %}
-
 
 ## Request Parameters
 
-### `device_id`
-
-Type: `string`
+**`device_id`** *string*
 Required: Yes
 
 Device ID of the desired phone.

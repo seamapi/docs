@@ -6,6 +6,7 @@ Simulates that the next attempt to encode a [credential](../../../../capability-
 ```
 POST /acs/encoders/simulate/next_credential_encode_will_succeed ⇒ void
 ```
+{% endhint %}
 
 <details>
 
@@ -15,23 +16,17 @@ POST /acs/encoders/simulate/next_credential_encode_will_succeed ⇒ void
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-{% endhint %}
-
 
 ## Request Parameters
 
-### `acs_encoder_id`
-
-Type: `string`
+**`acs_encoder_id`** *string*
 Required: Yes
 
 ID of the `acs_encoder` that will be used in the next request to encode the `acs_credential`.
 
 ---
 
-### `scenario`
-
-Type: `string`
+**`scenario`** *string*
 Required: No
 
 Scenario to simulate.

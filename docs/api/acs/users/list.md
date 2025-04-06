@@ -6,6 +6,7 @@ Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/
 ```
 POST /acs/users/list ⇒ { acs_users: [acs_user, …] }
 ```
+{% endhint %}
 
 <details>
 
@@ -16,213 +17,57 @@ POST /acs/users/list ⇒ { acs_users: [acs_user, …] }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-{% endhint %}
-
-{% tabs %}
-{% tab title="JavaScript" %}
-#### Code
-
-```javascript
-await seam.acs.users.list();
-```
-
-#### Output
-
-```javascript
-{
-  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-  "created_at": "2024-04-05T07:57:05.323Z",
-  "display_name": "Jane Doe",
-  "full_name": "Jane Doe",
-  "email_address": "jane@example.com",
-  "phone_number": "+15555550100"
-}
-```
-{% endtab %}
-
-{% tab title="Python" %}
-#### Code
-
-```python
-seam.acs.users.list()
-```
-
-#### Output
-
-```python
-AcsUser(
-    acs_user_id="123e4567-e89b-12d3-a456-426614174000",
-    acs_system_id="123e4567-e89b-12d3-a456-426614174000",
-    workspace_id="123e4567-e89b-12d3-a456-426614174000",
-    created_at="2024-04-05T07:57:05.323Z",
-    display_name="Jane Doe",
-    full_name="Jane Doe",
-    email_address="jane@example.com",
-    phone_number="+15555550100",
-)
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-#### Code
-
-```ruby
-seam.acs.users.list()
-```
-
-#### Output
-
-```ruby
-{
-  "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "created_at" => "2024-04-05T07:57:05.323Z",
-  "display_name" => "Jane Doe",
-  "full_name" => "Jane Doe",
-  "email_address" => "jane@example.com",
-  "phone_number" => "+15555550100",
-}
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-#### Code
-
-```php
-<?php
-$seam->acs->users->list();
-```
-
-#### Output
-
-```php
-<?php
-[
-    "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "created_at" => "2024-04-05T07:57:05.323Z",
-    "display_name" => "Jane Doe",
-    "full_name" => "Jane Doe",
-    "email_address" => "jane@example.com",
-    "phone_number" => "+15555550100",
-];
-```
-{% endtab %}
-
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam acs users list
-```
-
-#### Output
-
-```seam_cli
-{
-  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-  "created_at": "2024-04-05T07:57:05.323Z",
-  "display_name": "Jane Doe",
-  "full_name": "Jane Doe",
-  "email_address": "jane@example.com",
-  "phone_number": "+15555550100"
-}
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Code
-
-```go
-package main
-
-func main() {
-	client.Acs.Users.List(context.Background())
-}
-```
-
-#### Output
-
-```go
-api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "Jane Doe", FullName: "Jane Doe", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100"}
-```
-{% endtab %}
-
-{% endtabs %}
-
 
 ## Request Parameters
 
-### `acs_system_id`
-
-Type: `string`
+**`acs_system_id`** *string*
 Required: No
 
 ID of the `acs_system` for which you want to retrieve all `acs_user`s.
 
 ---
 
-### `created_before`
-
-Type: `string`
+**`created_before`** *string*
 Required: No
 
 ---
 
-### `limit`
-
-Type: `number`
+**`limit`** *number*
 Required: No
 
 Maximum number of records to return per page.
 
 ---
 
-### `page_cursor`
-
-Type: `string`
+**`page_cursor`** *string*
 Required: No
 
 Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
 
 ---
 
-### `search`
-
-Type: `string`
+**`search`** *string*
 Required: No
 
 String for which to search. Filters returned `acs_user`s to include all records that satisfy a partial match using `full_name`, `phone_number`, or `email_address`.
 
 ---
 
-### `user_identity_email_address`
-
-Type: `string`
+**`user_identity_email_address`** *string*
 Required: No
 
 Email address of the user identity for which you want to retrieve all `acs_user`s.
 
 ---
 
-### `user_identity_id`
-
-Type: `string`
+**`user_identity_id`** *string*
 Required: No
 
 ID of the user identity for which you want to retrieve all `acs_user`s.
 
 ---
 
-### `user_identity_phone_number`
-
-Type: `string`
+**`user_identity_phone_number`** *string*
 Required: No
 
 Phone number of the user identity for which you want to retrieve all `acs_user`s, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`).

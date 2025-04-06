@@ -6,6 +6,7 @@ Deletes a specified [enrollment automation](https://docs.seam.co/latest/capabili
 ```
 POST /user_identities/enrollment_automations/delete ⇒ void
 ```
+{% endhint %}
 
 <details>
 
@@ -15,122 +16,10 @@ POST /user_identities/enrollment_automations/delete ⇒ void
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-{% endhint %}
-
-{% tabs %}
-{% tab title="JavaScript" %}
-#### Code
-
-```javascript
-await seam.userIdentities.enrollmentAutomations.delete({
-  enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895",
-});
-```
-
-#### Output
-
-```javascript
-// void
-```
-{% endtab %}
-
-{% tab title="Python" %}
-#### Code
-
-```python
-seam.user_identities.enrollment_automations.delete(
-    enrollment_automation_id="05505650-aa57-49ab-8f19-429738758895"
-)
-```
-
-#### Output
-
-```python
-None
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-#### Code
-
-```ruby
-seam.user_identities.enrollment_automations.delete(
-  enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895",
-)
-```
-
-#### Output
-
-```ruby
-nil
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-#### Code
-
-```php
-<?php
-$seam->user_identities->enrollment_automations->delete(
-    enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895"
-);
-```
-
-#### Output
-
-```php
-null
-```
-{% endtab %}
-
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam user-identities enrollment-automations delete --enrollment_automation_id "05505650-aa57-49ab-8f19-429738758895"
-```
-
-#### Output
-
-```seam_cli
-{}
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import enrollmentautomations "github.com/seamapi/go/enrollmentautomations"
-
-func main() {
-	client.UserIdentities.EnrollmentAutomations.Delete(
-		context.Background(),
-		enrollmentautomations.EnrollmentAutomationsDeleteRequest{
-			EnrollmentAutomationId: api.String("05505650-aa57-49ab-8f19-429738758895"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
-{% endtabs %}
-
 
 ## Request Parameters
 
-### `enrollment_automation_id`
-
-Type: `string`
+**`enrollment_automation_id`** *string*
 Required: Yes
 
 ID of the desired enrollment automation.

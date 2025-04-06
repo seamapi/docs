@@ -6,6 +6,7 @@ Revokes access to all [entrances](https://docs.seam.co/latest/api/acs/entrances)
 ```
 POST /acs/users/revoke_access_to_all_entrances ⇒ void
 ```
+{% endhint %}
 
 <details>
 
@@ -15,14 +16,10 @@ POST /acs/users/revoke_access_to_all_entrances ⇒ void
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-{% endhint %}
-
 
 ## Request Parameters
 
-### `acs_user_id`
-
-Type: `string`
+**`acs_user_id`** *string*
 Required: Yes
 
 ID of the desired `acs_user`.

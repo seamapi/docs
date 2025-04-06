@@ -6,6 +6,7 @@ Creates a new [credential](../../../capability-guides/access-systems/managing-cr
 ```
 POST /acs/credentials/create ⇒ { acs_credential }
 ```
+{% endhint %}
 
 <details>
 
@@ -15,306 +16,80 @@ POST /acs/credentials/create ⇒ { acs_credential }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-{% endhint %}
-
-{% tabs %}
-{% tab title="JavaScript" %}
-#### Code
-
-```javascript
-await seam.acs.credentials.create({
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  access_method: "mobile_key",
-  allowed_acs_entrance_ids: [
-    "55555555-5555-5555-5555-555555555555",
-    "55555555-5555-5555-5555-000000000000",
-  ],
-  credential_manager_acs_system_id: "88888888-8888-8888-8888-888888888888",
-  is_multi_phone_sync_credential: true,
-  starts_at: "2024-03-01T10:40:00Z",
-  ends_at: "2024-03-04T10:40:00Z",
-});
-```
-
-#### Output
-
-```javascript
-{
-  "acs_credential_id": "99999999-9999-9999-9999-999999999999",
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "display_name": "Multi Phone Sync Credential",
-  "code": null,
-  "acs_system_id": "88888888-8888-8888-8888-888888888888",
-  "access_method": "mobile_key",
-  "workspace_id": "00000000-0000-0000-0000-000000000000",
-  "created_at": "2024-04-12T03:56:22.396Z",
-  "is_multi_phone_sync_credential": true
-}
-```
-{% endtab %}
-
-{% tab title="Python" %}
-#### Code
-
-```python
-seam.acs.credentials.create(
-    acs_user_id="33333333-3333-3333-3333-333333333333",
-    access_method="mobile_key",
-    allowed_acs_entrance_ids=[
-        "55555555-5555-5555-5555-555555555555",
-        "55555555-5555-5555-5555-000000000000",
-    ],
-    credential_manager_acs_system_id="88888888-8888-8888-8888-888888888888",
-    is_multi_phone_sync_credential=true,
-    starts_at="2024-03-01T10:40:00Z",
-    ends_at="2024-03-04T10:40:00Z",
-)
-```
-
-#### Output
-
-```python
-AcsCredential(
-    acs_credential_id="99999999-9999-9999-9999-999999999999",
-    acs_user_id="33333333-3333-3333-3333-333333333333",
-    display_name="Multi Phone Sync Credential",
-    code=None,
-    acs_system_id="88888888-8888-8888-8888-888888888888",
-    access_method="mobile_key",
-    workspace_id="00000000-0000-0000-0000-000000000000",
-    created_at="2024-04-12T03:56:22.396Z",
-    is_multi_phone_sync_credential=true,
-)
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-#### Code
-
-```ruby
-seam.acs.credentials.create(
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  access_method: "mobile_key",
-  allowed_acs_entrance_ids: %w[
-    55555555-5555-5555-5555-555555555555
-    55555555-5555-5555-5555-000000000000
-  ],
-  credential_manager_acs_system_id: "88888888-8888-8888-8888-888888888888",
-  is_multi_phone_sync_credential: true,
-  starts_at: "2024-03-01T10:40:00Z",
-  ends_at: "2024-03-04T10:40:00Z",
-)
-```
-
-#### Output
-
-```ruby
-{
-  "acs_credential_id" => "99999999-9999-9999-9999-999999999999",
-  "acs_user_id" => "33333333-3333-3333-3333-333333333333",
-  "display_name" => "Multi Phone Sync Credential",
-  "code" => nil,
-  "acs_system_id" => "88888888-8888-8888-8888-888888888888",
-  "access_method" => "mobile_key",
-  "workspace_id" => "00000000-0000-0000-0000-000000000000",
-  "created_at" => "2024-04-12T03:56:22.396Z",
-  "is_multi_phone_sync_credential" => true,
-}
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-#### Code
-
-```php
-<?php
-$seam->acs->credentials->create(
-    acs_user_id: "33333333-3333-3333-3333-333333333333",
-    access_method: "mobile_key",
-    allowed_acs_entrance_ids: [
-        "55555555-5555-5555-5555-555555555555",
-        "55555555-5555-5555-5555-000000000000",
-    ],
-    credential_manager_acs_system_id: "88888888-8888-8888-8888-888888888888",
-    is_multi_phone_sync_credential: true,
-    starts_at: "2024-03-01T10:40:00Z",
-    ends_at: "2024-03-04T10:40:00Z"
-);
-```
-
-#### Output
-
-```php
-<?php
-[
-    "acs_credential_id" => "99999999-9999-9999-9999-999999999999",
-    "acs_user_id" => "33333333-3333-3333-3333-333333333333",
-    "display_name" => "Multi Phone Sync Credential",
-    "code" => null,
-    "acs_system_id" => "88888888-8888-8888-8888-888888888888",
-    "access_method" => "mobile_key",
-    "workspace_id" => "00000000-0000-0000-0000-000000000000",
-    "created_at" => "2024-04-12T03:56:22.396Z",
-    "is_multi_phone_sync_credential" => true,
-];
-```
-{% endtab %}
-
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam acs credentials create --acs_user_id "33333333-3333-3333-3333-333333333333" --access_method "mobile_key" --allowed_acs_entrance_ids ["55555555-5555-5555-5555-555555555555","55555555-5555-5555-5555-000000000000"] --credential_manager_acs_system_id "88888888-8888-8888-8888-888888888888" --is_multi_phone_sync_credential true --starts_at "2024-03-01T10:40:00Z" --ends_at "2024-03-04T10:40:00Z"
-```
-
-#### Output
-
-```seam_cli
-{
-  "acs_credential_id": "99999999-9999-9999-9999-999999999999",
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "display_name": "Multi Phone Sync Credential",
-  "code": null,
-  "acs_system_id": "88888888-8888-8888-8888-888888888888",
-  "access_method": "mobile_key",
-  "workspace_id": "00000000-0000-0000-0000-000000000000",
-  "created_at": "2024-04-12T03:56:22.396Z",
-  "is_multi_phone_sync_credential": true
-}
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import credentials "github.com/seamapi/go/credentials"
-
-func main() {
-	client.Acs.Credentials.Create(
-		context.Background(),
-		credentials.CredentialsCreateRequest{
-			AcsUserId:                    api.String("33333333-3333-3333-3333-333333333333"),
-			AccessMethod:                 api.String("mobile_key"),
-			AllowedAcsEntranceIds:        [2]string{api.String("55555555-5555-5555-5555-555555555555"), api.String("55555555-5555-5555-5555-000000000000")},
-			CredentialManagerAcsSystemId: api.String("88888888-8888-8888-8888-888888888888"),
-			IsMultiPhoneSyncCredential:   api.Bool(true),
-			StartsAt:                     api.String("2024-03-01T10:40:00Z"),
-			EndsAt:                       api.String("2024-03-04T10:40:00Z"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUserId: "33333333-3333-3333-3333-333333333333", DisplayName: "Multi Phone Sync Credential", Code: nil, AcsSystemId: "88888888-8888-8888-8888-888888888888", AccessMethod: "mobile_key", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2024-04-12T03:56:22.396Z", IsMultiPhoneSyncCredential: true}
-```
-{% endtab %}
-
-{% endtabs %}
-
 
 ## Request Parameters
 
-### `access_method`
-
-Type: `string`
+**`access_method`** *string*
 Required: Yes
 
 Access method for the new credential. Supported values: `code`, `card`, `mobile_key`.
 
 ---
 
-### `acs_user_id`
-
-Type: `string`
+**`acs_user_id`** *string*
 Required: Yes
 
 ID of the ACS user to whom the new credential belongs.
 
 ---
 
-### `allowed_acs_entrance_ids`
-
-Type: `array`
-Item format: `UUID`
+**`allowed_acs_entrance_ids`** *array* *of UUIDs*
 Required: No
 
 Set of IDs of the [entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md) for which the new credential grants access.
 
 ---
 
-### `assa_abloy_vostio_metadata`
-
-Type: `object`
+**`assa_abloy_vostio_metadata`** *object*
 Required: No
 
 Vostio-specific metadata for the new credential.
 
 ---
 
-### `code`
-
-Type: `string`
+**`code`** *string*
 Required: No
 
 Access (PIN) code for the new credential. There may be manufacturer-specific code restrictions. For details, see the applicable [device or system integration guide](../../../device-and-system-integration-guides/overview.md).
 
 ---
 
-### `credential_manager_acs_system_id`
-
-Type: `string`
+**`credential_manager_acs_system_id`** *string*
 Required: No
 
 ACS system ID of the credential manager for the new credential.
 
 ---
 
-### `ends_at`
-
-Type: `string`
+**`ends_at`** *string*
 Required: No
 
 Date and time at which the validity of the new credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
 
 ---
 
-### `is_multi_phone_sync_credential`
-
-Type: `boolean`
+**`is_multi_phone_sync_credential`** *boolean*
 Required: No
 
 Indicates whether the new credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
 
 ---
 
-### `salto_space_metadata`
-
-Type: `object`
+**`salto_space_metadata`** *object*
 Required: No
 
 Salto Space-specific metadata for the new credential.
 
 ---
 
-### `starts_at`
-
-Type: `string`
+**`starts_at`** *string*
 Required: No
 
 Date and time at which the validity of the new credential starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 ---
 
-### `visionline_metadata`
-
-Type: `object`
+**`visionline_metadata`** *object*
 Required: No
 
 Visionline-specific metadata for the new credential.

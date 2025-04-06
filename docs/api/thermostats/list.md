@@ -6,6 +6,7 @@ Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guide
 ```
 POST /thermostats/list ⇒ { devices: [device, …] }
 ```
+{% endhint %}
 
 <details>
 
@@ -16,296 +17,65 @@ POST /thermostats/list ⇒ { devices: [device, …] }
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
-{% endhint %}
-
-{% tabs %}
-{% tab title="JavaScript" %}
-#### Code
-
-```javascript
-await seam.thermostats.list();
-```
-
-#### Output
-
-```javascript
-[
-  {
-    "device_id": "123e4567-e89b-12d3-a456-426614174000",
-    "device_type": "ecobee_thermostat",
-    "capabilities_supported": ["thermostat"],
-    "properties": {
-      "name": "Entryway",
-      "online": "true,",
-      "relative_humidity": 0.36,
-      "temperature_farenheit": 70,
-      "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
-      "current_climate_setting": {
-        "hvac_mode_setting": "heat_cool",
-        "cooling_set_point_farenheit": 75,
-        "heating_set_point_farenheit": 65,
-        "manual_override_allowed": false
-      },
-      "location": null,
-      "connected_account_id": "123e4567-e89b-12d3-a456-426614174000",
-      "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-      "created_at": "2024-04-05T07:57:05.323Z"
-    }
-  }
-]
-```
-{% endtab %}
-
-{% tab title="Python" %}
-#### Code
-
-```python
-seam.thermostats.list()
-```
-
-#### Output
-
-```python
-[
-    Device(
-        device_id="123e4567-e89b-12d3-a456-426614174000",
-        device_type="ecobee_thermostat",
-        capabilities_supported=["thermostat"],
-        properties={
-            "name": "Entryway",
-            "online": "true,",
-            "relative_humidity": 0.36,
-            "temperature_farenheit": 70,
-            "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
-            "current_climate_setting": {
-                "hvac_mode_setting": "heat_cool",
-                "cooling_set_point_farenheit": 75,
-                "heating_set_point_farenheit": 65,
-                "manual_override_allowed": false,
-            },
-            "location": null,
-            "connected_account_id": "123e4567-e89b-12d3-a456-426614174000",
-            "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-            "created_at": "2024-04-05T07:57:05.323Z",
-        },
-    )
-]
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-#### Code
-
-```ruby
-seam.thermostats.list()
-```
-
-#### Output
-
-```ruby
-[
-  {
-    "device_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "device_type" => "ecobee_thermostat",
-    "capabilities_supported" => ["thermostat"],
-    "properties" => {
-      name: "Entryway",
-      online: "true,",
-      relative_humidity: 0.36,
-      temperature_farenheit: 70,
-      available_hvac_mode_settings: %w[cool heat heat_cool off],
-      current_climate_setting: {
-        hvac_mode_setting: "heat_cool",
-        cooling_set_point_farenheit: 75,
-        heating_set_point_farenheit: 65,
-        manual_override_allowed: false,
-      },
-      location: null,
-      connected_account_id: "123e4567-e89b-12d3-a456-426614174000",
-      workspace_id: "123e4567-e89b-12d3-a456-426614174000",
-      created_at: "2024-04-05T07:57:05.323Z",
-    },
-  },
-]
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-#### Code
-
-```php
-<?php
-$seam->thermostats->list();
-```
-
-#### Output
-
-```php
-<?php
-[
-    [
-        "device_id" => "123e4567-e89b-12d3-a456-426614174000",
-        "device_type" => "ecobee_thermostat",
-        "capabilities_supported" => ["thermostat"],
-        "properties" => [
-            "name" => "Entryway",
-            "online" => "true,",
-            "relative_humidity" => 0.36,
-            "temperature_farenheit" => 70,
-            "available_hvac_mode_settings" => [
-                "cool",
-                "heat",
-                "heat_cool",
-                "off",
-            ],
-            "current_climate_setting" => [
-                "hvac_mode_setting" => "heat_cool",
-                "cooling_set_point_farenheit" => 75,
-                "heating_set_point_farenheit" => 65,
-                "manual_override_allowed" => false,
-            ],
-            "location" => null,
-            "connected_account_id" => "123e4567-e89b-12d3-a456-426614174000",
-            "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
-            "created_at" => "2024-04-05T07:57:05.323Z",
-        ],
-    ],
-];
-```
-{% endtab %}
-
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam thermostats list
-```
-
-#### Output
-
-```seam_cli
-[
-  {
-    "device_id": "123e4567-e89b-12d3-a456-426614174000",
-    "device_type": "ecobee_thermostat",
-    "capabilities_supported": ["thermostat"],
-    "properties": {
-      "name": "Entryway",
-      "online": "true,",
-      "relative_humidity": 0.36,
-      "temperature_farenheit": 70,
-      "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
-      "current_climate_setting": {
-        "hvac_mode_setting": "heat_cool",
-        "cooling_set_point_farenheit": 75,
-        "heating_set_point_farenheit": 65,
-        "manual_override_allowed": false
-      },
-      "location": null,
-      "connected_account_id": "123e4567-e89b-12d3-a456-426614174000",
-      "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-      "created_at": "2024-04-05T07:57:05.323Z"
-    }
-  }
-]
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Code
-
-```go
-package main
-
-func main() {
-	client.Thermostats.List(context.Background())
-}
-```
-
-#### Output
-
-```go
-[]api.Device{api.Device{DeviceId: "123e4567-e89b-12d3-a456-426614174000", DeviceType: "ecobee_thermostat", CapabilitiesSupported: []string{"thermostat"}, Properties: api.DeviceProperties{Name: "Entryway", Online: "true,", RelativeHumidity: 0.36, TemperatureFarenheit: 70, AvailableHvacModeSettings: []string{"cool", "heat", "heat_cool", "off"}, CurrentClimateSetting: api.DevicePropertiesCurrentClimateSetting{HvacModeSetting: "heat_cool", CoolingSetPointFarenheit: 75, HeatingSetPointFarenheit: 65, ManualOverrideAllowed: false}, Location: nil, ConnectedAccountId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z"}}}
-```
-{% endtab %}
-
-{% endtabs %}
-
 
 ## Request Parameters
 
-### `connect_webview_id`
-
-Type: `string`
+**`connect_webview_id`** *string*
 Required: No
 
 ID of the Connect Webview by which to filter devices.
 
 ---
 
-### `connected_account_id`
-
-Type: `string`
+**`connected_account_id`** *string*
 Required: No
 
 ID of the connected account by which to filter.
 
 ---
 
-### `connected_account_ids`
-
-Type: `array`
-Item format: `UUID`
+**`connected_account_ids`** *array* *of UUIDs*
 Required: No
 
 Array of IDs of the connected accounts by which to filter devices.
 
 ---
 
-### `created_before`
-
-Type: `string`
+**`created_before`** *string*
 Required: No
 
 Date threshold for devices to return. If specified, returns only devices created before the specified date.
 
 ---
 
-### `custom_metadata_has`
-
-Type: `object`
+**`custom_metadata_has`** *object*
 Required: No
 
 Set of key:value [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) pairs by which you want to filter devices.
 
 ---
 
-### `device_ids`
-
-Type: `array`
-Item format: `UUID`
+**`device_ids`** *array* *of UUIDs*
 Required: No
 
 Array of device IDs by which to filter devices.
 
 ---
 
-### `device_type`
-
-Type: `string`
+**`device_type`** *string*
 Required: No
 
 Device type by which to filter devices.
 
 ---
 
-### `device_types`
-
-Type: `array`
-Item format: `Enum`
+**`device_types`** *array* *of Enums*
 Required: No
 
 Array of device types by which to filter devices.
+<details>
+
+<summary>Enum values</summary>
 
 Possible enum values:
 - `akuvox_lock`
@@ -343,30 +113,25 @@ Possible enum values:
 - `tado_thermostat`
 - `ios_phone`
 - `android_phone`
+</details>
 
 ---
 
-### `limit`
-
-Type: `number`
+**`limit`** *number*
 Required: No
 
 Numerical limit on the number of devices to return.
 
 ---
 
-### `manufacturer`
-
-Type: `string`
+**`manufacturer`** *string*
 Required: No
 
 Manufacturer by which to filter devices.
 
 ---
 
-### `user_identifier_key`
-
-Type: `string`
+**`user_identifier_key`** *string*
 Required: No
 
 Your own internal user ID for the user by which to filter devices.
