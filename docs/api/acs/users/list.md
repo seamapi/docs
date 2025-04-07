@@ -70,24 +70,7 @@ Phone number of the user identity for which you want to retrieve all `acs_user`s
 ## Return Type
 
 Array of [acs\_users](./)
-
-### The `` Resource
-
-OK
-
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-}
-```
-{% endtab %}
-{% endtabs %}
-
----
-
-### Properties
-
+[object Object]
 
 ---
 

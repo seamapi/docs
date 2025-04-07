@@ -69,24 +69,7 @@ ID of the user identity with which to associate the new `acs_user`.
 ## Return Type
 
 [acs\_user](./)
-
-### The `` Resource
-
-OK
-
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-}
-```
-{% endtab %}
-{% endtabs %}
-
----
-
-### Properties
-
+[object Object]
 
 ---
 

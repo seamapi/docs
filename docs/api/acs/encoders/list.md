@@ -47,21 +47,4 @@ Number of `acs_encoders` to return.
 ## Return Type
 
 Array of [acs\_encoders](./)
-
-### The `` Resource
-
-OK
-
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-}
-```
-{% endtab %}
-{% endtabs %}
-
----
-
-### Properties
-
+[object Object]

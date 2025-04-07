@@ -28,24 +28,7 @@ POST /user_identities/list ⇒ { user_identities: [user_identity, …] }
 ## Return Type
 
 Array of [user\_identitys](./)
-
-### The `` Resource
-
-OK
-
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-}
-```
-{% endtab %}
-{% endtabs %}
-
----
-
-### Properties
-
+[object Object]
 
 ---
 

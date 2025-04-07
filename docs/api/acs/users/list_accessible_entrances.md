@@ -30,21 +30,4 @@ ID of the desired `acs_user`.
 ## Return Type
 
 Array of [acs\_entrances](./)
-
-### The `` Resource
-
-OK
-
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-}
-```
-{% endtab %}
-{% endtabs %}
-
----
-
-### Properties
-
+[object Object]

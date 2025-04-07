@@ -39,24 +39,7 @@ Possible enum values:
 ## Return Type
 
 Array of [acs\_credentials](./)
-
-### The `` Resource
-
-OK
-
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-}
-```
-{% endtab %}
-{% endtabs %}
-
----
-
-### Properties
-
+[object Object]
 
 ---
 

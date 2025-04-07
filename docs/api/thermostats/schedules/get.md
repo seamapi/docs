@@ -30,24 +30,7 @@ ID of the desired thermostat schedule.
 ## Return Type
 
 [thermostat\_schedule](./)
-
-### The `` Resource
-
-OK
-
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-}
-```
-{% endtab %}
-{% endtabs %}
-
----
-
-### Properties
-
+[object Object]
 
 ---
 

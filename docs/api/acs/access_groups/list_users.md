@@ -29,24 +29,7 @@ ID of the access group for which you want to retrieve all users.
 ## Return Type
 
 Array of [acs\_users](./)
-
-### The `` Resource
-
-OK
-
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-}
-```
-{% endtab %}
-{% endtabs %}
-
----
-
-### Properties
-
+[object Object]
 
 ---
 

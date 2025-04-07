@@ -29,24 +29,7 @@ ID of the user identity for which you want to retrieve all accessible devices.
 ## Return Type
 
 Array of [devices](./)
-
-### The `` Resource
-
-OK
-
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-}
-```
-{% endtab %}
-{% endtabs %}
-
----
-
-### Properties
-
+[object Object]
 
 ---
 

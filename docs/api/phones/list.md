@@ -35,21 +35,4 @@ ID of the user identity that represents the owner by which to filter the list of
 ## Return Type
 
 Array of [phones](./)
-
-### The `` Resource
-
-OK
-
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-}
-```
-{% endtab %}
-{% endtabs %}
-
----
-
-### Properties
-
+[object Object]

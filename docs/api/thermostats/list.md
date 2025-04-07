@@ -131,24 +131,7 @@ Your own internal user ID for the user by which to filter devices.
 ## Return Type
 
 Array of [devices](./)
-
-### The `` Resource
-
-OK
-
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-}
-```
-{% endtab %}
-{% endtabs %}
-
----
-
-### Properties
-
+[object Object]
 
 ---
 

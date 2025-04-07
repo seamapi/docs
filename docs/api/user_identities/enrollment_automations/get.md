@@ -30,24 +30,7 @@ ID of the desired enrollment automation.
 ## Return Type
 
 [enrollment\_automation](./)
-
-### The `` Resource
-
-OK
-
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-}
-```
-{% endtab %}
-{% endtabs %}
-
----
-
-### Properties
-
+[object Object]
 
 ---
 

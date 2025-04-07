@@ -26,24 +26,7 @@ POST /acs/entrances/get ⇒ { acs_entrance }
 ## Return Type
 
 [acs\_entrance](./)
-
-### The `` Resource
-
-OK
-
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-}
-```
-{% endtab %}
-{% endtabs %}
-
----
-
-### Properties
-
+[object Object]
 
 ---
 

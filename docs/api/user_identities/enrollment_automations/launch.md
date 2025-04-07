@@ -53,24 +53,7 @@ ID of the associated ACS user within the credential manager. If you specify a `c
 ## Return Type
 
 [unknown](./)
-
-### The `` Resource
-
-OK
-
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-}
-```
-{% endtab %}
-{% endtabs %}
-
----
-
-### Properties
-
+[object Object]
 
 ---
 
