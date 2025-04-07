@@ -53,7 +53,7 @@ None
 {{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array of [{{response.escapedResourceType}}s](./){{else}}[{{response.escapedResourceType}}](./){{/if}}{{else}}void{{/if}}
 {{#with response.actionAttempt}}
 
-{{> api-resource headingOffset=true}}
+{{> api-response-resource headingOffset=true}}
 {{/with}}
 {{#if response.resourceType}}
 {{#unless response.actionAttempt}}
