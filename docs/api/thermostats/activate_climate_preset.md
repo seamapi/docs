@@ -36,10 +36,6 @@ ID of the desired thermostat device.
 
 [action\_attempt](./)
 
-### The `ACTIVATE_CLIMATE_PRESET` Resource
-
-Activating climate preset.
-
 {% tabs %}
 {% tab title="JSON" %}
 ```json
@@ -51,37 +47,6 @@ Activating climate preset.
 ```
 {% endtab %}
 {% endtabs %}
-
----
-
-### Properties
-
-**`action_attempt_id`** *UUID*
-
-ID of the action attempt.
-
-
----
-
-**`action_type`** *String*
-
-
----
-
-**`status`** *Enum*
-
-<details>
-
-<summary>Enum values</summary>
-
-- `success`
-- `pending`
-- `error`
-</details>
-
-
----
-
 
 ---
 
