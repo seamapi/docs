@@ -31,6 +31,24 @@ ID of the desired thermostat schedule.
 
 [thermostat\_schedule](./)
 
+### The `` Resource
+
+OK
+
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+### Properties
+
+
 ---
 
 ## Examples

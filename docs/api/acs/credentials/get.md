@@ -30,6 +30,24 @@ ID of the desired credential.
 
 [acs\_credential](./)
 
+### The `` Resource
+
+OK
+
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+### Properties
+
+
 ---
 
 ## Examples

@@ -30,6 +30,24 @@ ID of the credential for which you want to retrieve all entrances to which this 
 
 Array of [acs\_entrances](./)
 
+### The `` Resource
+
+OK
+
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+### Properties
+
+
 ---
 
 ## Examples

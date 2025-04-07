@@ -54,6 +54,24 @@ ID of the associated ACS user within the credential manager. If you specify a `c
 
 [unknown](./)
 
+### The `` Resource
+
+OK
+
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+### Properties
+
+
 ---
 
 ## Examples

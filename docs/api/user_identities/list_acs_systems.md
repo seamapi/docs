@@ -31,6 +31,24 @@ ID of the user identity for which you want to retrieve all access control system
 
 Array of [acs\_systems](./)
 
+### The `` Resource
+
+OK
+
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+### Properties
+
+
 ---
 
 ## Examples

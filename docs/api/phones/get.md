@@ -29,3 +29,21 @@ Device ID of the desired phone.
 ## Return Type
 
 [phone](./)
+
+### The `` Resource
+
+OK
+
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+### Properties
+

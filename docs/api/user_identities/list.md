@@ -29,6 +29,24 @@ POST /user_identities/list ⇒ { user_identities: [user_identity, …] }
 
 Array of [user\_identitys](./)
 
+### The `` Resource
+
+OK
+
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+### Properties
+
+
 ---
 
 ## Examples

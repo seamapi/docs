@@ -67,6 +67,24 @@ User-friendly name to identify the thermostat schedule.
 
 [thermostat\_schedule](./)
 
+### The `` Resource
+
+OK
+
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+### Properties
+
+
 ---
 
 ## Examples

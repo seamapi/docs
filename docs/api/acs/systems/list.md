@@ -33,6 +33,24 @@ ID of the connected account by which to filter the list of returned access contr
 
 Array of [acs\_systems](./)
 
+### The `` Resource
+
+OK
+
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+### Properties
+
+
 ---
 
 ## Examples

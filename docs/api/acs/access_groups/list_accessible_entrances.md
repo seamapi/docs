@@ -30,6 +30,24 @@ ID of the access group for which you want to retrieve all accessible entrances.
 
 Array of [acs\_entrances](./)
 
+### The `` Resource
+
+OK
+
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+### Properties
+
+
 ---
 
 ## Examples

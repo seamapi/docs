@@ -47,3 +47,21 @@ Metadata to associate with the simulated phone.
 ## Return Type
 
 [phone](./)
+
+### The `` Resource
+
+OK
+
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+### Properties
+

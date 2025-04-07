@@ -34,6 +34,24 @@ ID of the ACS system for which you want to retrieve all compatible credential ma
 
 Array of [acs\_systems](./)
 
+### The `` Resource
+
+OK
+
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+### Properties
+
+
 ---
 
 ## Examples

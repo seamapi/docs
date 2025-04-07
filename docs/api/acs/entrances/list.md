@@ -33,6 +33,24 @@ POST /acs/entrances/list ⇒ { acs_entrances: [acs_entrance, …] }
 
 Array of [acs\_entrances](./)
 
+### The `` Resource
+
+OK
+
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+### Properties
+
+
 ---
 
 ## Examples
