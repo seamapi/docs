@@ -29,7 +29,9 @@ ID of the desired access group.
 ## Return Type
 
 [acs\_access\_group](./)
-acs_access_group
+```
+JSON representation of acs_access_group
+```
 
 ---
 

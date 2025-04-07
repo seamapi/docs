@@ -60,7 +60,9 @@ ID of the user identity for which you want to retrieve all credentials.
 ## Return Type
 
 Array of [acs\_credentials](./)
-acs_credentials
+```
+JSON representation of acs_credential
+```
 
 ---
 

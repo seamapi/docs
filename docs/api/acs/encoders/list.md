@@ -47,4 +47,6 @@ Number of `acs_encoders` to return.
 ## Return Type
 
 Array of [acs\_encoders](./)
-acs_encoders
+```
+JSON representation of acs_encoder
+```

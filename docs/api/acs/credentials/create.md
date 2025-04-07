@@ -89,7 +89,9 @@ Visionline-specific metadata for the new credential.
 ## Return Type
 
 [acs\_credential](./)
-acs_credential
+```
+JSON representation of acs_credential
+```
 
 ---
 

@@ -47,4 +47,6 @@ Metadata to associate with the simulated phone.
 ## Return Type
 
 [phone](./)
-phone
+```
+JSON representation of phone
+```

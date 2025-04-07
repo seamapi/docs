@@ -39,7 +39,9 @@ Possible enum values:
 ## Return Type
 
 Array of [acs\_credentials](./)
-acs_credentials
+```
+JSON representation of acs_credential
+```
 
 ---
 

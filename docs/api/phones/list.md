@@ -35,4 +35,6 @@ ID of the user identity that represents the owner by which to filter the list of
 ## Return Type
 
 Array of [phones](./)
-phones
+```
+JSON representation of phone
+```

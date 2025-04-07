@@ -33,7 +33,9 @@ ID of the desired user identity.
 ## Return Type
 
 [user\_identity](./)
-user_identity
+```
+JSON representation of user_identity
+```
 
 ---
 

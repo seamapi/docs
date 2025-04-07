@@ -32,7 +32,9 @@ ID of the connected account by which to filter the list of returned access contr
 ## Return Type
 
 Array of [acs\_systems](./)
-acs_systems
+```
+JSON representation of acs_system
+```
 
 ---
 

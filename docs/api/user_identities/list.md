@@ -28,7 +28,9 @@ POST /user_identities/list ⇒ { user_identities: [user_identity, …] }
 ## Return Type
 
 Array of [user\_identitys](./)
-user_identities
+```
+JSON representation of user_identity
+```
 
 ---
 

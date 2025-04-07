@@ -66,7 +66,9 @@ User-friendly name to identify the thermostat schedule.
 ## Return Type
 
 [thermostat\_schedule](./)
-thermostat_schedule
+```
+JSON representation of thermostat_schedule
+```
 
 ---
 

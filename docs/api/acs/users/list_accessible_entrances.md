@@ -30,4 +30,6 @@ ID of the desired `acs_user`.
 ## Return Type
 
 Array of [acs\_entrances](./)
-acs_entrances
+```
+JSON representation of acs_entrance
+```

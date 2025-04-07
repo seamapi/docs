@@ -39,10 +39,7 @@ Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermos
 
 [action\_attempt](./)
 
-### The `SET_FAN_MODE` Resource
-
-Setting fan mode.
-
+**Action attempt type: SET_FAN_MODE**
 {% tabs %}
 {% tab title="JSON" %}
 ```json
@@ -54,37 +51,6 @@ Setting fan mode.
 ```
 {% endtab %}
 {% endtabs %}
-
----
-
-### Properties
-
-**`action_attempt_id`** *UUID*
-
-ID of the action attempt.
-
-
----
-
-**`action_type`** *String*
-
-
----
-
-**`status`** *Enum*
-
-<details>
-
-<summary>Enum values</summary>
-
-- `success`
-- `pending`
-- `error`
-</details>
-
-
----
-
 
 ---
 

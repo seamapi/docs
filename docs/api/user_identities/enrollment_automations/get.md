@@ -30,7 +30,9 @@ ID of the desired enrollment automation.
 ## Return Type
 
 [enrollment\_automation](./)
-enrollment_automation
+```
+JSON representation of enrollment_automation
+```
 
 ---
 

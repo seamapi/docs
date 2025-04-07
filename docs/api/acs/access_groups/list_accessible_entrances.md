@@ -29,7 +29,9 @@ ID of the access group for which you want to retrieve all accessible entrances.
 ## Return Type
 
 Array of [acs\_entrances](./)
-acs_entrances
+```
+JSON representation of acs_entrance
+```
 
 ---
 

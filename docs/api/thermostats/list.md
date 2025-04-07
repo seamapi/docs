@@ -131,7 +131,9 @@ Your own internal user ID for the user by which to filter devices.
 ## Return Type
 
 Array of [devices](./)
-devices
+```
+JSON representation of device
+```
 
 ---
 

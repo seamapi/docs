@@ -29,7 +29,9 @@ ID of the user identity for which you want to retrieve all ACS users.
 ## Return Type
 
 Array of [acs\_users](./)
-acs_users
+```
+JSON representation of acs_user
+```
 
 ---
 

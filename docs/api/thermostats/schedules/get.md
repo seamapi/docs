@@ -30,7 +30,9 @@ ID of the desired thermostat schedule.
 ## Return Type
 
 [thermostat\_schedule](./)
-thermostat_schedule
+```
+JSON representation of thermostat_schedule
+```
 
 ---
 

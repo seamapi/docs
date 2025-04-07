@@ -30,10 +30,7 @@ ID of the `acs_encoder` to use for the scan.
 
 [action\_attempt](./)
 
-### The `SCAN_CREDENTIAL` Resource
-
-Reading credential data from physical encoder.
-
+**Action attempt type: SCAN_CREDENTIAL**
 {% tabs %}
 {% tab title="JSON" %}
 ```json
@@ -45,34 +42,3 @@ Reading credential data from physical encoder.
 ```
 {% endtab %}
 {% endtabs %}
-
----
-
-### Properties
-
-**`action_attempt_id`** *UUID*
-
-ID of the action attempt.
-
-
----
-
-**`action_type`** *String*
-
-
----
-
-**`status`** *Enum*
-
-<details>
-
-<summary>Enum values</summary>
-
-- `success`
-- `pending`
-- `error`
-</details>
-
-
----
-

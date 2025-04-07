@@ -26,7 +26,9 @@ POST /acs/entrances/get ⇒ { acs_entrance }
 ## Return Type
 
 [acs\_entrance](./)
-acs_entrance
+```
+JSON representation of acs_entrance
+```
 
 ---
 

@@ -29,7 +29,9 @@ ID of the desired `acs_user`.
 ## Return Type
 
 [acs\_user](./)
-acs_user
+```
+JSON representation of acs_user
+```
 
 ---
 

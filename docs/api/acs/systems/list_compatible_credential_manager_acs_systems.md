@@ -33,7 +33,9 @@ ID of the ACS system for which you want to retrieve all compatible credential ma
 ## Return Type
 
 Array of [acs\_systems](./)
-acs_systems
+```
+JSON representation of acs_system
+```
 
 ---
 
