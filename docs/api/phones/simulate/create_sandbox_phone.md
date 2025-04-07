@@ -47,6 +47,12 @@ Metadata to associate with the simulated phone.
 ## Return Type
 
 [phone](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of phone
+}
 ```
-JSON representation of phone
-```
+{% endtab %}
+{% endtabs %}

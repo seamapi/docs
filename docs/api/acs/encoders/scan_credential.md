@@ -30,7 +30,7 @@ ID of the `acs_encoder` to use for the scan.
 
 [action\_attempt](./)
 
-**Action attempt type: SCAN_CREDENTIAL**
+**`SCAN_CREDENTIAL`**
 {% tabs %}
 {% tab title="JSON" %}
 ```json

@@ -29,9 +29,15 @@ ID of the desired access group.
 ## Return Type
 
 [acs\_access\_group](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of acs_access_group
+}
 ```
-JSON representation of acs_access_group
-```
+{% endtab %}
+{% endtabs %}
 
 ---
 

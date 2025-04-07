@@ -47,9 +47,15 @@ Unique key for the user identity.
 ## Return Type
 
 [user\_identity](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of user_identity
+}
 ```
-JSON representation of user_identity
-```
+{% endtab %}
+{% endtabs %}
 
 ---
 

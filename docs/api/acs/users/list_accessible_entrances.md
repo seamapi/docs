@@ -30,6 +30,12 @@ ID of the desired `acs_user`.
 ## Return Type
 
 Array of [acs\_entrances](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of acs_entrance
+}
 ```
-JSON representation of acs_entrance
-```
+{% endtab %}
+{% endtabs %}

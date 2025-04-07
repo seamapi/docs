@@ -29,9 +29,15 @@ ID of the access group for which you want to retrieve all accessible entrances.
 ## Return Type
 
 Array of [acs\_entrances](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of acs_entrance
+}
 ```
-JSON representation of acs_entrance
-```
+{% endtab %}
+{% endtabs %}
 
 ---
 

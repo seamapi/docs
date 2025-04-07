@@ -35,9 +35,15 @@ ID of the user for which you want to retrieve all access groups.
 ## Return Type
 
 Array of [acs\_access\_groups](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of acs_access_group
+}
 ```
-JSON representation of acs_access_group
-```
+{% endtab %}
+{% endtabs %}
 
 ---
 

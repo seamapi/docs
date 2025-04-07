@@ -31,7 +31,7 @@ ID of the desired thermostat device.
 
 [action\_attempt](./)
 
-**Action attempt type: SET_HVAC_MODE**
+**`SET_HVAC_MODE`**
 {% tabs %}
 {% tab title="JSON" %}
 ```json

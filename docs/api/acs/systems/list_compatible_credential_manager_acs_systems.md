@@ -33,9 +33,15 @@ ID of the ACS system for which you want to retrieve all compatible credential ma
 ## Return Type
 
 Array of [acs\_systems](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of acs_system
+}
 ```
-JSON representation of acs_system
-```
+{% endtab %}
+{% endtabs %}
 
 ---
 

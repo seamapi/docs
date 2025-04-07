@@ -29,9 +29,15 @@ ID of the desired credential.
 ## Return Type
 
 [acs\_credential](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of acs_credential
+}
 ```
-JSON representation of acs_credential
-```
+{% endtab %}
+{% endtabs %}
 
 ---
 

@@ -36,7 +36,7 @@ ID of the desired thermostat device.
 
 [action\_attempt](./)
 
-**Action attempt type: ACTIVATE_CLIMATE_PRESET**
+**`ACTIVATE_CLIMATE_PRESET`**
 {% tabs %}
 {% tab title="JSON" %}
 ```json

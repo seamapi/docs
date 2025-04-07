@@ -43,7 +43,7 @@ Desired [heating set point](../../capability-guides/thermostats/understanding-th
 
 [action\_attempt](./)
 
-**Action attempt type: SET_HVAC_MODE**
+**`SET_HVAC_MODE`**
 {% tabs %}
 {% tab title="JSON" %}
 ```json

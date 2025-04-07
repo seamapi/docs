@@ -39,7 +39,7 @@ Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermos
 
 [action\_attempt](./)
 
-**Action attempt type: SET_FAN_MODE**
+**`SET_FAN_MODE`**
 {% tabs %}
 {% tab title="JSON" %}
 ```json

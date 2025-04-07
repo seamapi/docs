@@ -47,6 +47,12 @@ Number of `acs_encoders` to return.
 ## Return Type
 
 Array of [acs\_encoders](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of acs_encoder
+}
 ```
-JSON representation of acs_encoder
-```
+{% endtab %}
+{% endtabs %}

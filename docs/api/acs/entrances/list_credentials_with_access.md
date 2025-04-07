@@ -39,9 +39,15 @@ Possible enum values:
 ## Return Type
 
 Array of [acs\_credentials](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of acs_credential
+}
 ```
-JSON representation of acs_credential
-```
+{% endtab %}
+{% endtabs %}
 
 ---
 

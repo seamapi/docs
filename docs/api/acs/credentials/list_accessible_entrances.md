@@ -29,9 +29,15 @@ ID of the credential for which you want to retrieve all entrances to which this 
 ## Return Type
 
 Array of [acs\_entrances](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of acs_entrance
+}
 ```
-JSON representation of acs_entrance
-```
+{% endtab %}
+{% endtabs %}
 
 ---
 

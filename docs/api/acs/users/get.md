@@ -29,9 +29,15 @@ ID of the desired `acs_user`.
 ## Return Type
 
 [acs\_user](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of acs_user
+}
 ```
-JSON representation of acs_user
-```
+{% endtab %}
+{% endtabs %}
 
 ---
 

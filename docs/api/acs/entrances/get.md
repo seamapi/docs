@@ -26,9 +26,15 @@ POST /acs/entrances/get ⇒ { acs_entrance }
 ## Return Type
 
 [acs\_entrance](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of acs_entrance
+}
 ```
-JSON representation of acs_entrance
-```
+{% endtab %}
+{% endtabs %}
 
 ---
 

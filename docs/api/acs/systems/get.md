@@ -31,9 +31,15 @@ ID of the desired access control system.
 ## Return Type
 
 [acs\_system](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of acs_system
+}
 ```
-JSON representation of acs_system
-```
+{% endtab %}
+{% endtabs %}
 
 ---
 

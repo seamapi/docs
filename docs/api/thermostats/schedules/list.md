@@ -36,9 +36,15 @@ User identifier key by which to filter the list of returned thermostat schedules
 ## Return Type
 
 Array of [thermostat\_schedules](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of thermostat_schedule
+}
 ```
-JSON representation of thermostat_schedule
-```
+{% endtab %}
+{% endtabs %}
 
 ---
 

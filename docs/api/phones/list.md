@@ -35,6 +35,12 @@ ID of the user identity that represents the owner by which to filter the list of
 ## Return Type
 
 Array of [phones](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of phone
+}
 ```
-JSON representation of phone
-```
+{% endtab %}
+{% endtabs %}

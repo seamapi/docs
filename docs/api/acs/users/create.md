@@ -69,9 +69,15 @@ ID of the user identity with which to associate the new `acs_user`.
 ## Return Type
 
 [acs\_user](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of acs_user
+}
 ```
-JSON representation of acs_user
-```
+{% endtab %}
+{% endtabs %}
 
 ---
 
