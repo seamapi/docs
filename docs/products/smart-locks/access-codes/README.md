@@ -101,6 +101,16 @@ For those locks that lack native scheduling functionality, Seam will use its own
 
 ***
 
+## Access Code Names <a href="#access-code-names" id="access-code-names"></a>
+
+Note that the `name` provided on Seam is used to identify the code on Seam and is not necessarily the name that appears on the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break names down into components, such as `first_name` and `last_name`.
+
+To provide a consistent experience, Seam identifies an access code on Seam by its `name` but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.
+
+To help end users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break a name down into components).
+
+***
+
 ## Linking Unlock Events and Access Codes
 
 When a user unlocks a door using an access code, Seam issues a [`lock.unlocked` event](../../../api-clients/events/#event-types). Some device manufacturers include the ID of the access code in [lock-related events](../../../api-clients/events/#lock-events). This information is useful for troubleshooting and logging. Further, if you name access codes in a way that identifies the associated users, you can use these `lock.unlocked` events to identify the users who unlocked the doors.
@@ -114,6 +124,16 @@ Currently, the following device manufacturers send the `access_code_id` in the `
 * Tedee
 * TTLock
 * Yale
+
+***
+
+## External Modification <a href="#external-modification" id="external-modification"></a>
+
+Seam attempts to keep an access code on a device in sync with the declared state of the access code on Seam. For example, the start time and end time of the access code are set to match the declared state of the access code on Seam. Any updates to the access code timings on Seam are reflected on the device. In general, if the access code is modified externally to Seam (through the lock provider's app, for example), Seam attempts to re-set the access code on the device to match the declared state of the access code on Seam. This also applies if the access code is removed from the device. Seam attempts to re-set the access code on the device, until the declared ending time of the access code has passed.
+
+When external modifications are detected, Seam sends an `access_code.modified_external_to_seam` event and adds a `code_modified_external_to_seam` error on the access code.
+
+This behavior can sometimes be surprising to users, so we recommend that you inform your users that Seam attempts to re-set access codes on the device if they are modified or removed externally. If you want to disable this behavior, you can set the `allow_external_modification` flag to `true` when creating an access code. When this flag is set to `true`, Seam sets `code_modified_external_to_seam` as a warning on the code instead of an error.
 
 ***
 
