@@ -1,0 +1,15 @@
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+{{#each properties}}
+{{#if @last}}
+  {{name}}: [example value]
+{{else}}
+  {{name}}: [example value],
+{{/if}}
+{{/each}}
+}
+```
+{% endtab %}
+{% endtabs %}
