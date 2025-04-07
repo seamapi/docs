@@ -85,3 +85,6 @@
   title: Access Codes
   resources:
     - access_code
+
+/access_codes/simulate:
+  title: Access Code Simulations
