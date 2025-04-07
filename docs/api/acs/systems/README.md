@@ -16,7 +16,9 @@ For details about the resources associated with an access control system, see th
 {% tab title="JSON" %}
 ```json
 {
+  acs_access_group_count: [example value],
   acs_system_id: [example value],
+  acs_user_count: [example value],
   can_add_acs_users_to_acs_access_groups: [example value],
   can_automate_enrollment: [example value],
   can_create_acs_access_groups: [example value],
@@ -47,9 +49,19 @@ For details about the resources associated with an access control system, see th
 
 ## Properties
 
+**`acs_access_group_count`** *Number*
+
+
+---
+
 **`acs_system_id`** *UUID*
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+
+
+---
+
+**`acs_user_count`** *Number*
 
 
 ---
@@ -284,7 +296,14 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
   This error might also occur if Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/README.md).
-  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+  See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+
+---
+
+**`bridge_disconnected`**
+
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
+    See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
 ---
 
@@ -506,7 +525,6 @@ Returns a list of all [access control systems](https://docs.seam.co/latest/capab
 
 [**`/acs/systems/list_compatible_credential_manager_acs_systems`**](./list_compatible_credential_manager_acs_systems.md)
 
-Returns a list of all credential manager ACS systems that are compatible with a specified
-[access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+Returns a list of all credential manager ACS systems that are compatible with a specified [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 

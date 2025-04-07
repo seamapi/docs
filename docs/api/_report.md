@@ -24,21 +24,7 @@
 
 ### Endpoints
 
-- `/access_codes/create`
-- `/access_codes/create_multiple`
-- `/access_codes/delete`
 - `/access_codes/generate_code`
-- `/access_codes/get`
-- `/access_codes/list`
-- `/access_codes/pull_backup_access_code`
-- `/access_codes/update`
-- `/access_codes/update_multiple`
-- `/access_codes/simulate/create_unmanaged_access_code`
-- `/access_codes/unmanaged/convert_to_managed`
-- `/access_codes/unmanaged/delete`
-- `/access_codes/unmanaged/get`
-- `/access_codes/unmanaged/list`
-- `/access_codes/unmanaged/update`
 - `/action_attempts/get`
 - `/action_attempts/list`
 - `/bridges/get`
@@ -112,11 +98,11 @@ These items are intentionally undocumented.
 
 - `acs_user.is_latest_desired_state_synced_with_provider`: Only used internally.
 - `acs_user.latest_desired_state_synced_with_provider_at`: Only used internally.
-- `acs_user.pending_modifications`: Experimental.
+- `acs_user.pending_mutations`: Experimental.
 - `thermostat_schedule.unstable_is_override_allowed`: Unstable
 - `unmanaged_acs_user.is_latest_desired_state_synced_with_provider`: Only used internally.
 - `unmanaged_acs_user.latest_desired_state_synced_with_provider_at`: Only used internally.
-- `unmanaged_acs_user.pending_modifications`: Experimental.
+- `unmanaged_acs_user.pending_mutations`: Experimental.
 
 ### Namespaces
 
@@ -152,6 +138,16 @@ These items are intentionally undocumented.
 
 ### Endpoint parameters
 
+- `/access_codes/create`
+    - `sync`: Only used internally.
+- `/access_codes/delete`
+    - `sync`: Only used internally.
+- `/access_codes/update`
+    - `sync`: Only used internally.
+- `/access_codes/unmanaged/convert_to_managed`
+    - `sync`: Only used internally.
+- `/access_codes/unmanaged/delete`
+    - `sync`: Only used internally.
 - `/devices/list`
     - `exclude_if`: Only used internally.
     - `include_if`: Only used internally.
@@ -190,7 +186,6 @@ Items that are intentionally undocumented are not included in this section.
 
 ### Resources
 
-- `access_code`
 - `acs_credential_pool`
 - `acs_credential_provisioning_automation`
 - `client_session`
@@ -201,7 +196,6 @@ Items that are intentionally undocumented are not included in this section.
 - `event`
 - `network`
 - `noise_threshold`
-- `unmanaged_access_code`
 - `unmanaged_acs_access_group`
 - `unmanaged_device`
 - `webhook`
@@ -227,6 +221,8 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_credential_provisioning_automation.credential_manager_acs_system_id`
 - `acs_credential_provisioning_automation.user_identity_id`
 - `acs_credential_provisioning_automation.workspace_id`
+- `acs_system.acs_access_group_count`
+- `acs_system.acs_user_count`
 - `acs_system.location`
 - `acs_system.system_type`
 - `acs_system.system_type_display_name`
@@ -236,7 +232,7 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_user.is_latest_desired_state_synced_with_provider`
 - `acs_user.is_managed`
 - `acs_user.latest_desired_state_synced_with_provider_at`
-- `acs_user.pending_modifications`
+- `acs_user.pending_mutations`
 - `client_session.client_session_id`
 - `client_session.connect_webview_ids`
 - `client_session.connected_account_ids`
@@ -314,8 +310,6 @@ Items that are intentionally undocumented are not included in this section.
 - `noise_threshold.noise_threshold_id`
 - `noise_threshold.noise_threshold_nrs`
 - `noise_threshold.starts_daily_at`
-- `unmanaged_access_code.is_managed`
-- `unmanaged_access_code.status`
 - `unmanaged_acs_access_group.access_group_type`
 - `unmanaged_acs_access_group.access_group_type_display_name`
 - `unmanaged_acs_access_group.display_name`
@@ -327,7 +321,7 @@ Items that are intentionally undocumented are not included in this section.
 - `unmanaged_acs_user.is_latest_desired_state_synced_with_provider`
 - `unmanaged_acs_user.is_managed`
 - `unmanaged_acs_user.latest_desired_state_synced_with_provider_at`
-- `unmanaged_acs_user.pending_modifications`
+- `unmanaged_acs_user.pending_mutations`
 - `unmanaged_device.can_hvac_cool`
 - `unmanaged_device.can_hvac_heat`
 - `unmanaged_device.can_hvac_heat_cool`
@@ -355,20 +349,7 @@ Items that are intentionally undocumented are not included in this section.
 
 ### Endpoints
 
-- `/access_codes/create`
-- `/access_codes/create_multiple`
-- `/access_codes/delete`
 - `/access_codes/generate_code`
-- `/access_codes/get`
-- `/access_codes/list`
-- `/access_codes/update`
-- `/access_codes/update_multiple`
-- `/access_codes/simulate/create_unmanaged_access_code`
-- `/access_codes/unmanaged/convert_to_managed`
-- `/access_codes/unmanaged/delete`
-- `/access_codes/unmanaged/get`
-- `/access_codes/unmanaged/list`
-- `/access_codes/unmanaged/update`
 - `/acs/credential_pools/list`
 - `/acs/credential_provisioning_automations/launch`
 - `/acs/entrances/grant_access`
@@ -434,106 +415,25 @@ Items that are intentionally undocumented are not included in this section.
 ### Endpoint parameters
 
 - `/access_codes/create`
-    - `allow_external_modification`
     - `attempt_for_offline_device`
-    - `code`
-    - `common_code_key`
-    - `device_id`
-    - `ends_at`
-    - `is_external_modification_allowed`
-    - `is_offline_access_code`
-    - `is_one_time_use`
-    - `max_time_rounding`
-    - `name`
-    - `prefer_native_scheduling`
-    - `preferred_code_length`
-    - `starts_at`
     - `sync`
-    - `use_backup_access_code_pool`
     - `use_offline_access_code`
 - `/access_codes/create_multiple`
-    - `allow_external_modification`
     - `attempt_for_offline_device`
-    - `behavior_when_code_cannot_be_shared`
-    - `code`
-    - `device_ids`
-    - `ends_at`
-    - `is_external_modification_allowed`
-    - `is_offline_access_code`
-    - `is_one_time_use`
-    - `max_time_rounding`
-    - `name`
-    - `prefer_native_scheduling`
-    - `preferred_code_length`
-    - `starts_at`
-    - `use_backup_access_code_pool`
     - `use_offline_access_code`
 - `/access_codes/delete`
-    - `access_code_id`
-    - `device_id`
     - `sync`
 - `/access_codes/generate_code`
     - `device_id`
-- `/access_codes/get`
-    - `access_code_id`
-    - `code`
-    - `device_id`
-- `/access_codes/list`
-    - `access_code_ids`
-    - `device_id`
-    - `user_identifier_key`
-- `/access_codes/pull_backup_access_code`
-    - `access_code_id`
 - `/access_codes/update`
-    - `access_code_id`
-    - `allow_external_modification`
     - `attempt_for_offline_device`
-    - `code`
-    - `device_id`
-    - `ends_at`
-    - `is_external_modification_allowed`
-    - `is_managed`
-    - `is_offline_access_code`
-    - `is_one_time_use`
-    - `max_time_rounding`
-    - `name`
-    - `prefer_native_scheduling`
-    - `preferred_code_length`
-    - `starts_at`
     - `sync`
-    - `type`
-    - `use_backup_access_code_pool`
     - `use_offline_access_code`
-- `/access_codes/update_multiple`
-    - `common_code_key`
-    - `ends_at`
-    - `name`
-    - `starts_at`
-- `/access_codes/simulate/create_unmanaged_access_code`
-    - `code`
-    - `device_id`
-    - `name`
 - `/access_codes/unmanaged/convert_to_managed`
-    - `access_code_id`
-    - `allow_external_modification`
-    - `force`
-    - `is_external_modification_allowed`
     - `sync`
 - `/access_codes/unmanaged/delete`
-    - `access_code_id`
     - `sync`
-- `/access_codes/unmanaged/get`
-    - `access_code_id`
-    - `code`
-    - `device_id`
-- `/access_codes/unmanaged/list`
-    - `device_id`
-    - `user_identifier_key`
 - `/access_codes/unmanaged/update`
-    - `access_code_id`
-    - `allow_external_modification`
-    - `force`
-    - `is_external_modification_allowed`
     - `is_managed`
 - `/acs/credential_pools/list`
     - `acs_system_id`
@@ -850,6 +750,8 @@ These items are deprecated.
 - `/access_codes/pull_backup_access_code`
     - `backup_access_code`
 - `/acs/users/list`
+    - `pagination`
+- `/connected_accounts/list`
     - `pagination`
 - `/events/get`
     - `message`

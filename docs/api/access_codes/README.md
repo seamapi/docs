@@ -6,6 +6,14 @@ The Access Codes route contains the following resources:
 
 ## The `access_code` Resource
 
+Represents a smart lock [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+
+An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam Access Code API, you can easily generate access codes on the hundreds of door lock models with which we integrate.
+
+Seam supports programming two types of access codes: [ongoing](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`.
+
+In addition, for certain devices, Seam also supports [offline access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#offline-access-codes). Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code.
+
 {% tabs %}
 {% tab title="JSON" %}
 ```json
@@ -84,7 +92,7 @@ Date and time after which the time-bound access code becomes inactive.
 
 [**`errors`**](./#errors) *List* *of Objects*
 
-Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.
+Errors associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 ---
@@ -119,14 +127,14 @@ Indicates whether Seam manages the access code.
 
 **`is_offline_access_code`** *Boolean*
 
-Indicates whether the access code is intended for use in offline scenarios. If "true," this code can be created on a device without a network connection.
+Indicates whether the access code is intended for use in offline scenarios. If `true`, this code can be created on a device without a network connection.
 
 
 ---
 
 **`is_one_time_use`** *Boolean*
 
-Indicates whether the access code can only be used once. If "true," the code becomes invalid after the first use.
+Indicates whether the access code can only be used once. If `true`, the code becomes invalid after the first use.
 
 
 ---
@@ -168,9 +176,7 @@ Date and time at which the time-bound access code becomes active.
 
 **`status`** *Enum*
 
-
-    Current status of the access code within the operational lifecycle. Values are "setting," a transitional phase that indicates that the code is being configured or activated; "set", which indicates that the code is active and operational; "unset," which indicates a deactivated or unused state, either before activation or after deliberate deactivation; "removing," which indicates a transitional period in which the code is being deleted or made inactive; and "unknown," which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting.
-  
+Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting.
 
 <details>
 
@@ -188,7 +194,7 @@ Date and time at which the time-bound access code becomes active.
 
 **`type`** *Enum*
 
-Nature of the access code. Values are "ongoing" for access codes that are active continuously until deactivated manually or "time_bound" for access codes that have a specific duration.
+Nature of the access code. Values are `ongoing` for access codes that are active continuously until deactivated manually or `time_bound` for access codes that have a specific duration.
 
 <details>
 
@@ -203,7 +209,7 @@ Nature of the access code. Values are "ongoing" for access codes that are active
 
 [**`warnings`**](./#warnings) *List* *of Objects*
 
-Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention.
+Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 ---
@@ -213,7 +219,7 @@ Collection of warnings associated with the access code, structured in a dictiona
 
 **`smartthings_failed_to_set_access_code`**
 
-Failed to set code on Smart Things device.
+Failed to set code on SmartThings device.
 
 ---
 
@@ -267,13 +273,13 @@ Igloohome bridge is offline.
 
 **`igloohome_offline_access_code_no_variance_available`**
 
-Lock as reached max amount of codes.
+Lock has reached maximum amount of codes.
 
 ---
 
 **`kwikset_unable_to_confirm_code`**
 
-Unable to confirm the access code is set on Kwikset device.
+Unable to confirm that the access code is set on Kwikset device.
 
 ---
 
@@ -439,12 +445,19 @@ Credentials provided were invalid.
 
 ---
 
+**`bridge_disconnected`**
+
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
+  See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+
+---
+
 
 ## Warnings
 
 **`smartthings_failed_to_set_access_code`**
 
-Failed to set code on Smart Things device.
+Failed to set code on SmartThings device.
 
 ---
 
@@ -480,7 +493,7 @@ Delay in removing code from device.
 
 **`third_party_integration_detected`**
 
-Third party integration detected that may cause access codes to fail.
+Third-party integration detected that may cause access codes to fail.
 
 ---
 
@@ -510,7 +523,7 @@ Management was transferred to another workspace.
 
 **`kwikset_unable_to_confirm_code`**
 
-Unable to confirm the access code is set on Kwikset device.
+Unable to confirm that the access code is set on Kwikset device.
 
 ---
 
@@ -1509,5 +1522,45 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 ---
 
 ## Endpoints
+
+
+[**`/access_codes/create`**](./create.md)
+
+Creates a new [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+
+
+[**`/access_codes/create_multiple`**](./create_multiple.md)
+
+Creates new [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that share a common code across multiple devices.
+
+
+[**`/access_codes/delete`**](./delete.md)
+
+Deletes an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+
+
+[**`/access_codes/get`**](./get.md)
+
+Returns a specified [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+
+
+[**`/access_codes/list`**](./list.md)
+
+Returns a list of all [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+
+
+[**`/access_codes/pull_backup_access_code`**](./pull_backup_access_code.md)
+
+Retrieves a backup access code for an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). See also [Managing Backup Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes).
+
+
+[**`/access_codes/update`**](./update.md)
+
+Updates a specified active or upcoming [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+
+
+[**`/access_codes/update_multiple`**](./update_multiple.md)
+
+Updates [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that share a common code across multiple devices.
 
 
