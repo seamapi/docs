@@ -29,7 +29,7 @@ ID of the user identity for which you want to retrieve all accessible devices.
 ## Return Type
 
 Array of [devices](./)
-[object Object]
+devices
 
 ---
 

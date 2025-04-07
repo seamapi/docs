@@ -30,4 +30,4 @@ ID of the desired `acs_user`.
 ## Return Type
 
 Array of [acs\_entrances](./)
-[object Object]
+acs_entrances

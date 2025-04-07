@@ -53,7 +53,7 @@ ID of the associated ACS user within the credential manager. If you specify a `c
 ## Return Type
 
 [unknown](./)
-[object Object]
+enrollment_automation
 
 ---
 

@@ -66,7 +66,7 @@ User-friendly name to identify the thermostat schedule.
 ## Return Type
 
 [thermostat\_schedule](./)
-[object Object]
+thermostat_schedule
 
 ---
 

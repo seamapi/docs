@@ -47,4 +47,4 @@ Number of `acs_encoders` to return.
 ## Return Type
 
 Array of [acs\_encoders](./)
-[object Object]
+acs_encoders

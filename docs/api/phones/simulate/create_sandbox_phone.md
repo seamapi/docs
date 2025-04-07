@@ -47,4 +47,4 @@ Metadata to associate with the simulated phone.
 ## Return Type
 
 [phone](./)
-[object Object]
+phone

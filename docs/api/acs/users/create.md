@@ -69,7 +69,7 @@ ID of the user identity with which to associate the new `acs_user`.
 ## Return Type
 
 [acs\_user](./)
-[object Object]
+acs_user
 
 ---
 

@@ -29,4 +29,4 @@ Device ID of the desired phone.
 ## Return Type
 
 [phone](./)
-[object Object]
+phone

@@ -29,7 +29,7 @@ ID of the desired `acs_user`.
 ## Return Type
 
 [acs\_user](./)
-[object Object]
+acs_user
 
 ---
 

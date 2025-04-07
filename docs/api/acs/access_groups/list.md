@@ -35,7 +35,7 @@ ID of the user for which you want to retrieve all access groups.
 ## Return Type
 
 Array of [acs\_access\_groups](./)
-[object Object]
+acs_access_groups
 
 ---
 

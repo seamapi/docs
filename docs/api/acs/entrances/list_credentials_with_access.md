@@ -39,7 +39,7 @@ Possible enum values:
 ## Return Type
 
 Array of [acs\_credentials](./)
-[object Object]
+acs_credentials
 
 ---
 

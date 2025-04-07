@@ -60,7 +60,7 @@ ID of the user identity for which you want to retrieve all credentials.
 ## Return Type
 
 Array of [acs\_credentials](./)
-[object Object]
+acs_credentials
 
 ---
 

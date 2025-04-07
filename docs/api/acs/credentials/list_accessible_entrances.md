@@ -29,7 +29,7 @@ ID of the credential for which you want to retrieve all entrances to which this 
 ## Return Type
 
 Array of [acs\_entrances](./)
-[object Object]
+acs_entrances
 
 ---
 

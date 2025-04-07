@@ -30,7 +30,7 @@ ID of the desired thermostat schedule.
 ## Return Type
 
 [thermostat\_schedule](./)
-[object Object]
+thermostat_schedule
 
 ---
 

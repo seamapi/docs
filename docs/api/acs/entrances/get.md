@@ -26,7 +26,7 @@ POST /acs/entrances/get ⇒ { acs_entrance }
 ## Return Type
 
 [acs\_entrance](./)
-[object Object]
+acs_entrance
 
 ---
 

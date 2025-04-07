@@ -30,7 +30,7 @@ ID of the desired enrollment automation.
 ## Return Type
 
 [enrollment\_automation](./)
-[object Object]
+enrollment_automation
 
 ---
 

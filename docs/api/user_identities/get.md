@@ -33,7 +33,7 @@ ID of the desired user identity.
 ## Return Type
 
 [user\_identity](./)
-[object Object]
+user_identity
 
 ---
 

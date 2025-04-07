@@ -29,7 +29,7 @@ ID of the desired credential.
 ## Return Type
 
 [acs\_credential](./)
-[object Object]
+acs_credential
 
 ---
 

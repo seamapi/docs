@@ -36,6 +36,10 @@ ID of the `acs_encoder` to use to encode the `acs_credential`.
 
 [action\_attempt](./)
 
+### The `ENCODE_CREDENTIAL` Resource
+
+Action attempt to track encoding credential data from the physical encoder onto a card.
+
 {% tabs %}
 {% tab title="JSON" %}
 ```json
@@ -47,3 +51,36 @@ ID of the `acs_encoder` to use to encode the `acs_credential`.
 ```
 {% endtab %}
 {% endtabs %}
+
+---
+
+### Properties
+
+**`action_attempt_id`** *UUID*
+
+ID of the action attempt.
+
+
+---
+
+**`action_type`** *String*
+
+Type of action that the action attempt tracks.
+
+
+---
+
+**`status`** *Enum*
+
+<details>
+
+<summary>Enum values</summary>
+
+- `success`
+- `pending`
+- `error`
+</details>
+
+
+---
+

@@ -29,7 +29,7 @@ ID of the desired access group.
 ## Return Type
 
 [acs\_access\_group](./)
-[object Object]
+acs_access_group
 
 ---
 

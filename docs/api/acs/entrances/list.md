@@ -32,7 +32,7 @@ POST /acs/entrances/list ⇒ { acs_entrances: [acs_entrance, …] }
 ## Return Type
 
 Array of [acs\_entrances](./)
-[object Object]
+acs_entrances
 
 ---
 

@@ -59,6 +59,10 @@ Desired [heating set point](../../capability-guides/thermostats/understanding-th
 
 [action\_attempt](./)
 
+### The `SET_HVAC_MODE` Resource
+
+Setting HVAC mode.
+
 {% tabs %}
 {% tab title="JSON" %}
 ```json
@@ -70,6 +74,37 @@ Desired [heating set point](../../capability-guides/thermostats/understanding-th
 ```
 {% endtab %}
 {% endtabs %}
+
+---
+
+### Properties
+
+**`action_attempt_id`** *UUID*
+
+ID of the action attempt.
+
+
+---
+
+**`action_type`** *String*
+
+
+---
+
+**`status`** *Enum*
+
+<details>
+
+<summary>Enum values</summary>
+
+- `success`
+- `pending`
+- `error`
+</details>
+
+
+---
+
 
 ---
 
