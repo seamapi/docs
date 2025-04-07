@@ -57,10 +57,7 @@ None
 {{/with}}
 {{#if response.resourceType}}
 {{#unless response.actionAttempt}}
-{{#with response}}
-
-{{> api-resource headingOffset=true}}
-{{/with}}
+{{response}}
 {{/unless}}
 {{/if}}
 {{#if primaryCodeSample}}
