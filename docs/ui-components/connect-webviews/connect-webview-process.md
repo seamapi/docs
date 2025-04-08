@@ -362,7 +362,7 @@ If your user wants to connect additional devices or ACS from different brands to
 
 Continue using the Seam API to control your users' connected devices or ACS. For example, if you app user has connected a lock that support remote unlock operations, your app can now unlock the lock.
 
-To learn about the actions that you can perform using the Seam API, see the Seam [capability guides](../../core-concepts/connect-webviews/broken-reference/). These guides provide helpful tutorials and code samples, categorized by capability types.
+To learn about the actions that you can perform using the Seam API, see the Seam [capability guides](broken-reference). These guides provide helpful tutorials and code samples, categorized by capability types.
 
 * [Smart locks](../../products/smart-locks/), including [locking/unlocking](../../products/smart-locks/lock-and-unlock.md) and [managing access codes](../../products/smart-locks/access-codes/)
 * [Access control systems](../../products/access-systems/)
