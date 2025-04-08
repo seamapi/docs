@@ -553,7 +553,9 @@ ID of the event.
 </details>
 <details>
 
-<summary><code>event_type</code> Format: <code>String</code></summary>
+<summary><code>event_type</code> Format: <code>Enum</code></summary>
+
+Value: `acs_credential.invalidated`
 </details>
 <details>
 
