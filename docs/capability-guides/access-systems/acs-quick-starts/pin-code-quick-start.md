@@ -785,7 +785,7 @@ return nil
 
 ***
 
-## View Your New Credential
+## Step 6: View Your New Credential
 
 You can use Seam Console, the Seam API, or the [Seam CLI](../../../core-concepts/seam-console/seam-online-cli.md) to view the following information about your successfully-created credential:
 

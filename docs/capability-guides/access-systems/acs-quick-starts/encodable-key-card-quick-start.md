@@ -29,6 +29,9 @@ This quick start walks you through the following basic steps:
 5. View the following information about your successfully-created credential:
    * The list of entrances to which the ACS user now has access.
    * The access schedule for the credential.
+6.  Encode the credential onto a card.
+
+    Some access control systems—including Visionline—require you to encode credentials onto key cards.
 
 :rocket: Let's get started!
 
@@ -658,7 +661,7 @@ return nil
 
 ***
 
-## View Your New Credential
+## Step 5: View Your New Credential
 
 You can use Seam Console, the Seam API, or the [Seam CLI](../../../core-concepts/seam-console/seam-online-cli.md) to view the following information about your successfully-created credential:
 
@@ -681,15 +684,350 @@ To use Seam Console to view information about your new key card credential:
 
     <figure><img src="../../../.gitbook/assets/key-card-quick-start-entrances-and-access-schedule.png" alt="View the entrances and access schedule for the credential that you created."><figcaption><p>View the entrances and access schedule for the credential that you created.</p></figcaption></figure>
 
-{% hint style="info" %}
-Visionline requires you to encode credentials onto key cards. You can use the Seam API or Seam Console to handle this step. For details, see [Working with Card Encoders and Scanners](../working-with-card-encoders-and-scanners/).
-{% endhint %}
+***
+
+## Step 6: Encode the Credential onto a Card
+
+Encode the credential that you created onto a card for the Visionline access control system.
+
+First, find the encoder that you want to use and note its ID. Then, encode the credential onto the card using the encoder that you identified. Finally, confirm that the card was encoded successfully.
+
+For more information, see [Working with Card Encoders and Scanners](../working-with-card-encoders-and-scanners/).
+
+{% tabs %}
+{% tab title="Python" %}
+**Code:**
+
+```python
+# Get the encoder that you want to use.
+encoder = seam.acs.encoders.list(
+  acs_system_ids = [acs_system_id]
+)[0]
+
+# Encode the card.
+encoding_action_attempt = seam.acs.encoders.encode_credential(
+  acs_credential_id = key_card_credential.acs_credential_id,
+  acs_encoder_id = encoder.acs_encoder_id
+)
+
+# Confirm that the encoding succeeded by 
+# polling the returned action attempt
+# until its status is success.
+# You can also use a webhook.
+seam.action_attempts.get(
+  action_attempt_id = encoding_action_attempt.action_attempt_id
+)
+```
+
+**Output:**
+
+```
+ActionAttempt(
+  status='success',
+  action_attempt_id='11111111-2222-3333-4444-555555555555',
+  action_type='ENCODE_CREDENTIAL',
+  result={
+    acs_credential_id='66666666-6666-6666-6666-666666666666',
+    card_number='1234abc',
+    is_issued=True,
+    issued_at='2025-02-10T12:00:00.000Z',
+    ...
+  },
+  error=null
+)
+```
+{% endtab %}
+
+{% tab title="cURL (bash)" %}
+**Code:**
+
+```bash
+# Get the encoder that you want to use.
+encoder=$(curl -X 'POST' \
+  'https://connect.getseam.com/acs/encoders/list' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+  \"acs_system_id\": \"${acs_system_id}\"
+}" | jq -r '.acs_encoders[0]')
+
+# Encode the card.
+encoding_action_attempt=$(curl -X 'POST' \
+  'https://connect.getseam.com/acs/encoders/encode_credential' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+  \"acs_credential_id\": \"$(jq -r '.acs_credential.acs_credential_id' <<< ${key_card_credential})\",
+  \"acs_encoder_id\": \"$(jq -r '.acs_encoder_id' <<< ${encoder})\"
+}")
+
+# Confirm that the encoding succeeded by 
+# polling the returned action attempt
+# until its status is success.
+# You can also use a webhook.
+curl -X 'POST' \
+  'https://connect.getseam.com/action_attempts/get' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+  \"action_attempt_id\": \"$(jq -r '.action_attempt.action_attempt_id' <<< ${encoding_action_attempt})\"
+}"
+```
+
+**Output:**
+
+```json
+{
+  "action_attempt":
+    {
+      "status": "success",
+      "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+      "action_type": "ENCODE_CREDENTIAL",
+      "result": {
+        "acs_credential_id": "66666666-6666-6666-6666-666666666666",
+        "card_number": "1234abc",
+        "is_issued": true,
+        "issued_at": "2025-02-10T12:00:00.000Z",
+        ...
+      },
+      "error": null
+    },
+  "ok": true
+}
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+**Code:**
+
+```javascript
+// Get the encoder that you want to use.
+const encoder = (await seam.acs.encoders.list({
+  acs_system_ids = [acsSystemId]
+}))[0];
+
+// Encode the card.
+const encodingActionAttempt = await seam.acs.encoders.encodeCredential({
+  acs_credential_id: keyCardCredential.acs_credential_id,
+  acs_encoder_id: encoder.acs_encoder_id
+});
+
+// Confirm that the encoding succeeded by 
+// polling the returned action attempt
+// until its status is success.
+// You can also use a webhook.
+await seam.actionAttempts.get({
+  action_attempt_id: encodingActionAttempt.action_attempt_id
+});
+```
+
+**Output:**
+
+```json
+{
+  status: 'success',
+  action_attempt_id: '11111111-2222-3333-4444-555555555555",
+  action_type: 'ENCODE_CREDENTIAL',
+  result: {
+    acs_credential_id: "66666666-6666-6666-6666-666666666666',
+    card_number: '1234abc',
+    is_issued: true,
+    issued_at: '2025-02-10T12:00:00.000Z',
+    ...
+  },
+  error: null
+}
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+**Code:**
+
+```ruby
+# Get the encoder that you want to use.
+encoder = (seam.acs.encoders.list(
+  acs_system_ids = [acs_system_id]
+))[0]
+
+# Encode the card.
+encoding_action_attempt = seam.acs.encoders.encode_credential(
+  acs_credential_id: key_card_credential.acs_credential_id,
+  acs_encoder_id: encoder.acs_encoder_id
+)
+
+# Confirm that the encoding succeeded by 
+# polling the returned action attempt
+# until its status is success.
+# You can also use a webhook.
+seam.action_attempts.get(
+  action_attempt_id: encoding_action_attempt.action_attempt_id
+)
+```
+
+**Output:**
+
+```
+<Seam::Resources::ActionAttempt:0x00410
+  status="success"
+  action_attempt_id="11111111-2222-3333-4444-555555555555"
+  action_type="ENCODE_CREDENTIAL"
+  result={
+    acs_credential_id="66666666-6666-6666-6666-666666666666"
+    card_number="1234abc"
+    is_issued=true,
+    issued_at="2025-02-10T12:00:00.000Z"
+    ...
+  }
+  error=nil
+>
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+**Code:**
+
+```php
+// Get the encoder that you want to use.
+$encoder = $seam->acs->encoders->list(
+  acs_system_ids = [$acs_system_id]
+)[0];
+
+// Encode the card.
+$encoding_action_attempt = $seam->acs->encoders->encode_credential(
+  acs_credential_id: $key_card_credential->acs_credential_id,
+  acs_encoder_id: $encoder->acs_encoder_id
+);
+
+// Confirm that the encoding succeeded by 
+// polling the returned action attempt
+// until its status is success.
+// You can also use a webhook.
+$seam->action_attempts->get(
+  action_attempt_id: $encoding_action_attempt->action_attempt_id
+);
+```
+
+**Output:**
+
+```json
+{
+  "status": "success",
+  "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+  "action_type": "ENCODE_CREDENTIAL",
+  "result": {
+    "acs_credential_id": "66666666-6666-6666-6666-666666666666",
+    "card_number": "1234abc",
+    "is_issued": true,
+    "issued_at": "2025-02-10T12:00:00.000Z",
+    ...
+  },
+  "error": null
+}
+```
+{% endtab %}
+
+{% tab title="C#" %}
+**Code:**
+
+```csharp
+// Coming soon!
+```
+
+**Output:**
+
+```json
+// Coming soon!
+```
+{% endtab %}
+
+{% tab title="Java" %}
+**Code:**
+
+```java
+// Coming soon!
+```
+
+**Output:**
+
+```json
+// Coming soon!
+```
+{% endtab %}
+
+{% tab title="Go" %}
+**Code:**
+
+```go
+// Get the encoder that you want to use.
+encoders, err := client.Acs.Encoders.List(
+  context.Background(), &acs.EncodersListRequest{
+    AcsSystemIds: []string{
+      acsSystemId,
+    },
+  },
+)
+if err != nil {
+  return err
+}
+encoder := encoders[0]
+
+// Encode the card.
+encodingActionAttempt, err := client.Acs.Encoders.EncodeCredential(
+  context.Background(), &acs.EncodersEncodeCredentialRequest{
+    AcsCredentialId: keyCardCredential.AcsCredentialId,
+    AcsEncoderId: encoder.AcsEncoderId,
+  },
+)
+if err != nil {
+  return err
+}
+
+// Confirm that the encoding succeeded by 
+// polling the returned action attempt
+// until its status is success.
+// You can also use a webhook.
+actionAttempt, err := client.ActionAttempts.Get(
+  context.Background(), &api.ActionAttemptsGetRequest{
+    ActionAttemptId: encodingActionAttempt.ActionAttemptId,
+  },
+)
+if err != nil {
+  return err
+}
+
+fmt.Println(actionAttempt)
+
+return nil
+```
+
+**Output:**
+
+```json
+{
+  "status": "success",
+  "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+  "action_type": "ENCODE_CREDENTIAL",
+  "result": {
+    "acs_credential_id": "66666666-6666-6666-6666-666666666666",
+    "card_number": "1234abc",
+    "is_issued": true,
+    "issued_at": "2025-02-10T12:00:00.000Z",
+    ...
+  },
+  "error": null
+}
+```
+{% endtab %}
+{% endtabs %}
 
 ***
 
 ## Next Steps
 
-Now that you've created a encodable key card credential, try out the other ACS quick starts.
+Now that you've created a key card credential and encoded it onto a card, try out the other ACS quick starts.
 
 * [Mobile Key Quick Start](mobile-key-quick-start.md)
 * [PIN Code Quick Start](pin-code-quick-start.md)

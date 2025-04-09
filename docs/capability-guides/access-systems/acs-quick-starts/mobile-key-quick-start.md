@@ -1178,7 +1178,7 @@ return nil
 
 ***
 
-## View Your New Credential
+## Step 9: View Your New Credential
 
 You can use Seam Console, the Seam API, or the [Seam CLI](../../../core-concepts/seam-console/seam-online-cli.md) to view the following information about your successfully-created mobile key:
 

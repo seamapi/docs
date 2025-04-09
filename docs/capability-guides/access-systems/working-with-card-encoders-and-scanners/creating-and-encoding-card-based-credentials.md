@@ -383,7 +383,7 @@ return nil
 
 There may be multiple encoders at a location, so it’s important to select the right one to encode the credential.
 
-This example shows how to retrieve all encoders in a building connected to a single ACS system. Once you've identified the encoder you'd like to use, grab the `acs_encoder_id` of the chosen encoder for the next step.
+This example shows how to retrieve all encoders in a building connected to a single ACS system. Once you've identified the encoder you'd like to use, save the `acs_encoder_id` of the chosen encoder for the next step.
 
 {% tabs %}
 {% tab title="Python" %}

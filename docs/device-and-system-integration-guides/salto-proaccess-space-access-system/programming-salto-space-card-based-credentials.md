@@ -304,15 +304,15 @@ const encoder = (await seam.acs.encoders.list({
   acs_system_ids = [building_a.acs_system_id]
 }))[0];
 
-# Then, encode the card.
+// Then, encode the card.
 const encodingActionAttempt = await seam.acs.encoders.encodeCredential({
   acs_credential_id: cardCredential.acs_credential_id,
   acs_encoder_id: encoder.acs_encoder_id
 });
 
-# To confirm that the encoding succeeded, 
-# poll the returned action attempt
-# until its status is success.
+// To confirm that the encoding succeeded, 
+// poll the returned action attempt
+// until its status is success.
 await seam.actionAttempts.get({
   action_attempt_id: encodingActionAttempt.action_attempt_id
 });
