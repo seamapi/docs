@@ -8,7 +8,7 @@ description: >-
 
 <figure><img src="../../../.gitbook/assets/scan-card.png" alt=""><figcaption></figcaption></figure>
 
-You can use an encoder to scan a plastic key card to read its encoded parameters. The scan result  includes the card's properties, such as its card number, serial number, and other useful details. The returned payload can also reveal whether the card is up-to-date with the server. If discrepancies are detected, Seam also provides warnings to indicate that the card is out-of-date and needs re-encoding.
+You can use an encoder to scan a plastic key card to read its encoded parameters. The scan result  includes the card's properties, such as its card number, serial number, and other useful details. The returned payload can also reveal whether the card is up to date with the server. If discrepancies are detected, Seam also provides warnings to indicate that the card is out of date and needs re-encoding.
 
 The scanning process consists of the following basic steps:
 
