@@ -93,9 +93,24 @@ To use access devices successfully within a Salto KS access system, it is import
 
 #### Card Readers
 
-Card readers within a Salto KS access system are powered. Consequently, they can read a credential from up to around 30 cm away if Near Detection Mode is enabled. If you disable this setting, this distance increases to around 15 meters.
+Card readers within a Salto KS access system are powered. By default, near detection mode is enabled, which means that readers can read a BLE credential from up to around 30 cm away. If you disable near detection mode, the range increases to around 15 meters. For more details, see [this Salto KS document](https://support.saltosystems.com/ks/hardware/lock-information-and-settings/#im-having-proximity-issues-how-close-does-a-phone-need-to-be-to-a-lock-to-open-it).
 
-For more details, see [this Salto KS document](https://support.saltosystems.com/ks/hardware/lock-information-and-settings/#im-having-proximity-issues-how-close-does-a-phone-need-to-be-to-a-lock-to-open-it).
+To disable or enable near detection mode:
+
+1. Log in to the [Salto KS web app](https://app.saltoks.com/).
+2. In the top navigation pane, click **Locks**.
+3. Click the reader for which you’d like to modify the proximity settings.
+4.  On the reader page, click **Settings**.
+
+    <figure><img src="../../.gitbook/assets/salto-ks-lock-settings-button.png" alt="On the reader page, click Settings."><figcaption><p>On the reader page, click <strong>Settings</strong>.</p></figcaption></figure>
+5.  In the **Near Detection Mode** area, click **Edit**.
+
+    <figure><img src="../../.gitbook/assets/salto-ks-near-detection-mode-edit-button.png" alt="On the Lock Settings page, in the Near Detection Mode area, click Edit."><figcaption><p>On the <strong>Lock Settings</strong> page, in the <strong>Near Detection Mode</strong> area, click <strong>Edit</strong>.</p></figcaption></figure>
+6. In the **Near Detection Mode** dialog:
+   * To disable near detection mode, clear the **Enable near detection mode** checkbox.
+   * To enable near detection mode, select the **Enable near detection mode** checkbox.
+7. Click **Save**.
+8. Repeat this process for all additional readers for which you want to disable or enable near detection mode.
 
 #### Unit Doors
 

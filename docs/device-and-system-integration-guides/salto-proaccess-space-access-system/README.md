@@ -67,6 +67,29 @@ To create a [Connect Webview](../../core-concepts/connect-webviews/) that enable
 
 ***
 
+## Brand-Specific Behaviors
+
+Note the following Salto Space behaviors:
+
+### Proximity Behavior
+
+To use access devices successfully within a Salto Space access system, it is important to understand the following proximity behavior requirements:
+
+#### Card Readers
+
+Card readers within a Salto Space access system are powered. By default, near detection mode is enabled (that is, "far opening" is disabled), which means that readers can read a BLE credential from up to around 30 cm away. If you enable far opening, the range increases to around 15 meters.
+
+To enable or disable far opening:
+
+1. Log in to the Salto ProAccess Space desktop app.
+2. In the top navigation pane, go to **System > Salto Network**.
+3. Click the triangle next to the controller that hosts the reader for which you’d like to modify the proximity settings.
+4. In the **Inputs** area for the controller, click the desired reader.
+5. In the configuration window for the reader, enable or disable far opening.
+6. Repeat this process for all additional readers for which you want to enable or disable far opening.
+
+***
+
 ## Brand-Specific Errors
 
 For information about Salto Space access system-related errors, see [Troubleshooting Your Access System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md).

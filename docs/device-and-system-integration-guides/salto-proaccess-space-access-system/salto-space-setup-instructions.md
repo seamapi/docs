@@ -23,7 +23,7 @@ Before connecting your Salto Space access system to Seam, you must first configu
 Perform the following process for each Salto Space site that you want to integrate with Seam:
 
 1. Log in to the Salto ProAccess Space desktop app.
-2. In the top navigation pane, click **System > General options**.
+2. In the top navigation pane, go to **System > General options**.
 3. On the **General options** page, click the **SHIP** tab.
 4.  In the **Salto SHIP Server** pane:
 
