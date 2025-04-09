@@ -73,7 +73,7 @@ Perform the following process for each Salto Space site that you want to integra
     Seam Console displays a Connect Webview that enables you to connect your access system to Seam.
 3. In the Connect Webview, click **Continue**.
 4. If the Connect Webview displays multiple brand options, click **Salto Space**.
-5.  On the **Set up your Seam Bridge** page, click [**latest Seam Bridge client**](https://github.com/seamapi/seam-bridge-client/releases/latest).
+5.  On the **Set up your Seam Bridge** page, click [**latest Seam Bridge client**](https://github.com/seamapi/seam-bridge/releases/latest).
 
     [Seam Bridge](../../capability-guides/seam-bridge.md) is a software-only component that enables you to connect on-premises software systems to the Seam platform. Because Salto Space is an on-premises access system, Seam Bridge is required for Salto Space systems.
 6.  Download the Seam Bridge executable onto the on-premises computer that is running Salto Space or onto a computer on the same network.

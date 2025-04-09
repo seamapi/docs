@@ -28,7 +28,7 @@ To install Seam Bridge, first install the Seam Bridge application on an on-premi
 
 ### **Install the Seam Bridge Application on the On-Premises Computer**
 
-1. In a web browser, go to [the Seam Bridge releases page](https://github.com/seamapi/seam-bridge-client/releases/latest) and download the latest version of the Seam Bridge executable.
+1. In a web browser, go to [the Seam Bridge releases page](https://github.com/seamapi/seam-bridge/releases/latest) and download the latest version of the Seam Bridge executable.
 2.  Run the downloaded executable file.
 
     This application opens a webpage containing the Seam Bridge settings.
