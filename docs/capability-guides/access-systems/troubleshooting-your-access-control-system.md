@@ -143,3 +143,15 @@ This warning occurs in any of the following situations:
 ### `acs_user.warnings.being_deleted`
 
 The ACS user is being deleted from the ACS system. This is a temporary state, and the deletion will complete shortly.
+
+***
+
+## Credential Errors
+
+These errors alert you to issues involving your credentials.
+
+### `acs_credential.invalidated`
+
+An credential was invalidated and cannot be used anymore. The implications of this error vary by brand and access control system.
+
+For Visionline, if a card is considered invalid if it is overridden, discarded, canceled, or overwritten. If you receive this event for a Visionline credential, check its `visionline_metadata.is_valid` property.
