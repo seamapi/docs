@@ -130,6 +130,9 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1/bridge_connected_systems/list`: Seam Bridge Client only.
 - `/thermostats/get`: Will be removed.
 - `/unstable_access_grants/create`: Unreleased.
+- `/unstable_access_grants/get`: Unreleased.
+- `/unstable_access_grants/list`: Unreleased.
+- `/unstable_access_grants/list_access_methods`: Unreleased.
 - `/unstable_locations/add_devices`: Experimental locations.
 - `/unstable_locations/create`: Experimental locations.
 - `/unstable_locations/delete`: Experimental locations.
@@ -793,6 +796,7 @@ These items are deprecated.
 - `/acs/credentials/unmanaged/get`
 - `/acs/credentials/unmanaged/list`
 - `/acs/encoders/encode_credential`
+- `/acs/encoders/get`
 - `/acs/encoders/list`
 - `/acs/encoders/scan_credential`
 - `/acs/encoders/simulate/next_credential_encode_will_fail`
@@ -863,6 +867,9 @@ These items are deprecated.
 - `/thermostats/simulate/hvac_mode_adjusted`
 - `/thermostats/simulate/temperature_reached`
 - `/unstable_access_grants/create`
+- `/unstable_access_grants/get`
+- `/unstable_access_grants/list`
+- `/unstable_access_grants/list_access_methods`
 - `/unstable_locations/add_devices`
 - `/unstable_locations/create`
 - `/unstable_locations/delete`
