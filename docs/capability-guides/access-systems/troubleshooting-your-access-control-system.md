@@ -16,7 +16,7 @@ This error indicates that the Seam API cannot communicate with your [Seam Bridge
 
 To troubleshoot this error:
 
-* Make sure that you are running the [latest version of the Seam Bridge](https://github.com/seamapi/seam-bridge/releases/latest). If not, reinstall and then start the Seam Bridge executable. See the [Seam Bridge installation instructions](../seam-bridge.md#installation-instructions).
+* Make sure that you are running the [latest version of the Seam Bridge](https://www.seam.co/seam-bridge/releases/latest). If not, reinstall and then start the Seam Bridge executable. See the [Seam Bridge installation instructions](../seam-bridge.md#installation-instructions).
 * Reconnect the Seam Bridge. To reconnect, you can go to your ACS in the **Access Systems** area of the [Seam Console](https://console.seam.co/) or use a [Connect Webview](../../api-clients/connect_webviews/). For more information, see [Pairing the Seam Bridge with Your Workspace](../seam-bridge.md#pairing-the-seam-bridge-with-your-workspace).
 * Restart the Seam Bridge executable.
 
