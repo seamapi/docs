@@ -210,6 +210,7 @@
     * [List Accessible Entrances](api/acs/credentials/list_accessible_entrances.md)
   * [Encoders](api/acs/encoders/README.md)
     * [Encode a Credential](api/acs/encoders/encode_credential.md)
+    * [Get an Encoder](api/acs/encoders/get.md)
     * [List Encoders](api/acs/encoders/list.md)
     * [Scan a Credential](api/acs/encoders/scan_credential.md)
     * [Encoder Simulations](api/acs/encoders/simulate/README.md)
