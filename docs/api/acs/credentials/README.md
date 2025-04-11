@@ -521,7 +521,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md).
 
 ### `acs_credential.invalidated`
 
-An [ACS credential](../../../capability-guides/access-systems/managing-credentials.md) was invalidated.
+An [ACS credential](../../../capability-guides/access-systems/managing-credentials.md) was invalidated. That is, the credential cannot be used anymore.
 
 <details>
 
