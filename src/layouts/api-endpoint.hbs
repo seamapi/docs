@@ -44,6 +44,12 @@ Required: {{#if this.required}}Yes{{else}}No{{/if}}
 
 {{> enum-values}}
 {{/if}}
+{{#if this.objectParameters}}
+{{#each this.objectParameters}}
+
+{{> property-collapsible this}}
+{{/each}}
+{{/if}}
 {{#if this.isDeprecated}}
 
 {{> deprecated-warning}}
