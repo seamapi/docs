@@ -259,14 +259,17 @@ Vostio-specific metadata for the new credential.
 
 <summary><code>join_all_guest_acs_entrances</code> Format: <code>Boolean</code></summary>
 </details>
+
 <details>
 
 <summary><code>override_all_guest_acs_entrances</code> Format: <code>Boolean</code></summary>
 </details>
+
 <details>
 
 <summary><code>override_guest_acs_entrance_ids</code> Format: <code>List</code></summary>
 </details>
+
 ***
 
 ### `code`
@@ -316,10 +319,12 @@ Salto Space-specific metadata for the new credential.
 
 <summary><code>assign_new_key</code> Format: <code>Boolean</code></summary>
 </details>
+
 <details>
 
 <summary><code>update_current_key</code> Format: <code>Boolean</code></summary>
 </details>
+
 ***
 
 ### `starts_at`
@@ -346,10 +351,12 @@ Visionline-specific metadata for the new credential.
 **Deprecated**. Read-only endpoint references moved to `endpoint`.
 {% endhint %}
 </details>
+
 <details>
 
 <summary><code>auto_join</code> Format: <code>Boolean</code></summary>
 </details>
+
 <details>
 
 <summary><code>card_format</code> Format: <code>Enum</code></summary>
@@ -358,6 +365,7 @@ Possible enum values:
 - `TLCode`
 - `rfid48`
 </details>
+
 <details>
 
 <summary><code>card_function_type</code> Format: <code>Enum</code></summary>
@@ -366,6 +374,7 @@ Possible enum values:
 - `guest`
 - `staff`
 </details>
+
 <details>
 
 <summary><code>is_override_key</code> Format: <code>Boolean</code></summary>
@@ -374,14 +383,17 @@ Possible enum values:
 **Deprecated**. Use `override` instead.
 {% endhint %}
 </details>
+
 <details>
 
 <summary><code>joiner_acs_credential_ids</code> Format: <code>List</code></summary>
 </details>
+
 <details>
 
 <summary><code>override</code> Format: <code>Boolean</code></summary>
 </details>
+
 ***
 
 ## Return Type

@@ -217,10 +217,12 @@ Required: No
 
 <summary><code>ends_at</code> Format: <code>Datetime</code></summary>
 </details>
+
 <details>
 
 <summary><code>starts_at</code> Format: <code>Datetime</code></summary>
 </details>
+
 ***
 
 ### `acs_access_group_ids`
