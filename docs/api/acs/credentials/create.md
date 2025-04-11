@@ -255,6 +255,21 @@ Required: No
 
 Vostio-specific metadata for the new credential.
 
+<details>
+
+<summary><code>join_all_guest_acs_entrances</code> Format: <code>Boolean</code></summary>
+</details>
+
+<details>
+
+<summary><code>override_all_guest_acs_entrances</code> Format: <code>Boolean</code></summary>
+</details>
+
+<details>
+
+<summary><code>override_guest_acs_entrance_ids</code> Format: <code>List</code></summary>
+</details>
+
 ***
 
 ### `code`
@@ -300,6 +315,16 @@ Required: No
 
 Salto Space-specific metadata for the new credential.
 
+<details>
+
+<summary><code>assign_new_key</code> Format: <code>Boolean</code></summary>
+</details>
+
+<details>
+
+<summary><code>update_current_key</code> Format: <code>Boolean</code></summary>
+</details>
+
 ***
 
 ### `starts_at`
@@ -317,6 +342,57 @@ Format: `Object`
 Required: No
 
 Visionline-specific metadata for the new credential.
+
+<details>
+
+<summary><code>assa_abloy_credential_service_mobile_endpoint_id</code> Format: <code>UUID</code></summary>
+
+{% hint style="warning" %}
+**Deprecated**. Read-only endpoint references moved to `endpoint`.
+{% endhint %}
+</details>
+
+<details>
+
+<summary><code>auto_join</code> Format: <code>Boolean</code></summary>
+</details>
+
+<details>
+
+<summary><code>card_format</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `TLCode`
+- `rfid48`
+</details>
+
+<details>
+
+<summary><code>card_function_type</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `guest`
+- `staff`
+</details>
+
+<details>
+
+<summary><code>is_override_key</code> Format: <code>Boolean</code></summary>
+
+{% hint style="warning" %}
+**Deprecated**. Use `override` instead.
+{% endhint %}
+</details>
+
+<details>
+
+<summary><code>joiner_acs_credential_ids</code> Format: <code>List</code></summary>
+</details>
+
+<details>
+
+<summary><code>override</code> Format: <code>Boolean</code></summary>
+</details>
 
 ***
 

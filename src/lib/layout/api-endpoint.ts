@@ -2,6 +2,7 @@ import type {
   ActionAttempt,
   CodeSampleSdk,
   Endpoint,
+  Parameter,
   SeamAuthMethod,
   SeamWorkspaceScope,
 } from '@seamapi/blueprint'
@@ -30,15 +31,7 @@ export interface ApiEndpointLayoutContext {
   workspaceScope: SeamWorkspaceScope
   request: {
     preferredMethod: string
-    parameters: Array<{
-      name: string
-      required: boolean
-      description: string
-      format: string
-      enumValues?: string[]
-      itemFormat?: string
-      itemEnumValues?: string[]
-    }>
+    parameters: ApiEndpointParameter[]
   }
   response: {
     description: string
@@ -50,6 +43,25 @@ export interface ApiEndpointLayoutContext {
   }
   primaryCodeSample: CodeSampleContext | null
   additionalCodeSamples: CodeSampleContext[]
+}
+
+type AuthMethodDisplayName =
+  | 'API key'
+  | 'Client session token'
+  | 'Personal access token'
+  | 'Publishable key'
+
+interface ApiEndpointParameter {
+  name: string
+  required: boolean
+  description: string
+  format: string
+  isDeprecated: boolean
+  deprecationMessage: string
+  enumValues?: string[]
+  itemFormat?: string
+  itemEnumValues?: string[]
+  objectParameters?: ApiEndpointParameter[]
 }
 
 interface CodeSampleContext {
@@ -64,12 +76,6 @@ interface CodeSampleContext {
     }
   >
 }
-
-type AuthMethodDisplayName =
-  | 'API key'
-  | 'Client session token'
-  | 'Personal access token'
-  | 'Publishable key'
 
 type PublicSeamAuthMethod = Exclude<SeamAuthMethod, 'console_session_token'>
 
@@ -105,26 +111,7 @@ export function setEndpointLayoutContext(
     preferredMethod: endpoint.request?.preferredMethod ?? '',
     parameters: endpoint.request.parameters
       .filter(({ isUndocumented }) => !isUndocumented)
-      .map((param) => ({
-        name: param.name,
-        required: param.isRequired,
-        description: param.description,
-        format: normalizePropertyFormatForDocs(param.format),
-        isDeprecated: param.isDeprecated,
-        deprecationMessage: param.deprecationMessage,
-
-        ...(param.format === 'enum' && {
-          enumValues: param.values.map(({ name }) => name),
-        }),
-
-        ...(param.jsonType === 'array' && {
-          itemFormat: normalizePropertyFormatForDocs(param.itemFormat),
-
-          ...(param.itemFormat === 'enum' && {
-            itemEnumValues: param.itemEnumValues.map(({ name }) => name),
-          }),
-        }),
-      }))
+      .map(mapBlueprintParamToEndpointParam)
       .sort((a, b) => {
         if (a.required && !b.required) return -1
         if (!a.required && b.required) return 1
@@ -175,6 +162,35 @@ export function setEndpointLayoutContext(
   file.primaryCodeSample =
     primaryCodeSample == null ? null : mapCodeSample(primaryCodeSample)
   file.additionalCodeSamples = additionalCodeSamples.map(mapCodeSample)
+}
+
+const mapBlueprintParamToEndpointParam = (
+  param: Parameter,
+): ApiEndpointParameter => {
+  return {
+    name: param.name,
+    required: param.isRequired,
+    description: param.description,
+    format: normalizePropertyFormatForDocs(param.format),
+    isDeprecated: param.isDeprecated,
+    deprecationMessage: param.deprecationMessage,
+
+    ...(param.format === 'enum' && {
+      enumValues: param.values.map(({ name }) => name),
+    }),
+
+    ...(param.jsonType === 'array' && {
+      itemFormat: normalizePropertyFormatForDocs(param.itemFormat),
+
+      ...(param.itemFormat === 'enum' && {
+        itemEnumValues: param.itemEnumValues.map(({ name }) => name),
+      }),
+    }),
+
+    ...(param.format === 'object' && {
+      objectParameters: param.parameters.map(mapBlueprintParamToEndpointParam),
+    }),
+  }
 }
 
 const mapCodeSample = (sample: CodeSample): CodeSampleContext => {

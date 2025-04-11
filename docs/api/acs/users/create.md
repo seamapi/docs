@@ -213,6 +213,16 @@ Required: No
 
 `starts_at` and `ends_at` timestamps for the new `acs_user`'s access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. `starts_at` defaults to the current time if not provided. `ends_at` is optional and must be a time in the future and after `starts_at`.
 
+<details>
+
+<summary><code>ends_at</code> Format: <code>Datetime</code></summary>
+</details>
+
+<details>
+
+<summary><code>starts_at</code> Format: <code>Datetime</code></summary>
+</details>
+
 ***
 
 ### `acs_access_group_ids`
