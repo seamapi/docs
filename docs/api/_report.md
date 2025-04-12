@@ -127,6 +127,7 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1/bridge_client_sessions/create`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/get`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`: Seam Bridge Client only.
+- `/seam/bridge/v1/bridge_client_sessions/report_status`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_connected_systems/list`: Seam Bridge Client only.
 - `/thermostats/get`: Will be removed.
 - `/unstable_access_grants/create`: Unreleased.
@@ -649,6 +650,9 @@ Items that are intentionally undocumented are not included in this section.
     - `bridge_client_machine_identifier_key`
     - `bridge_client_name`
     - `bridge_client_time_zone`
+- `/seam/bridge/v1/bridge_client_sessions/report_status`
+    - `is_tailscale_connected`
+    - `tailscale_ip_v4`
 - `/thermostats/cool`
     - `sync`
 - `/thermostats/heat`
@@ -862,6 +866,7 @@ These items are deprecated.
 - `/seam/bridge/v1/bridge_client_sessions/create`
 - `/seam/bridge/v1/bridge_client_sessions/get`
 - `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`
+- `/seam/bridge/v1/bridge_client_sessions/report_status`
 - `/seam/bridge/v1/bridge_connected_systems/list`
 - `/thermostats/get`
 - `/thermostats/simulate/hvac_mode_adjusted`
