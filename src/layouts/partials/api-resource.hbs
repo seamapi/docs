@@ -40,9 +40,9 @@
 {{/if}}
 
 <table>
-<tr><th>** Property **</th><th>** Description **</th></tr>
+<tr><th>Property</th><th>Description</th></tr>
 {{#each properties}}
-<tr><td>{{#if linkTarget}}[**`{{name}}`**]({{linkTarget}}){{else}}**`{{name}}`**{{/if}} *{{format}}*{{#if listItemFormat}} *of {{listItemFormat}}s*{{/if}}</td>
+<tr><td>{{#if linkTarget}}<a href="{{linkTarget}}"><strong><code>{{name}}</code></strong></a>{{else}}<strong><code>{{name}}</code></strong>{{/if}} <i>{{format}}</i>{{#if listItemFormat}} <i>of {{listItemFormat}}s</i>{{/if}}</td>
 <td>
 {{#if description}}
 {{description}}
