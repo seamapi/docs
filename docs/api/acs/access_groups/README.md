@@ -178,7 +178,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 ## Events
 
 <table>
-<tr><th width="25%">Event</th><th>Description</th></tr>
+<tr><th style="width:25%">Event</th><th>Description</th></tr>
 <tr><td><strong><code>acs_access_group.deleted</code></strong></td>
 <td>
 An ACS access group was deleted.
@@ -238,7 +238,7 @@ An ACS access group was deleted.
 ## Endpoints
 
 <table>
-<tr><th width="25%">Endpoint</th><th>Description</th></tr>
+<tr><th style="width:25%">Endpoint</th><th>Description</th></tr>
 
 <tr><td><a href="./add_user.md"><strong><code>/acs/access_groups/add_user</code></strong></a></td>
 

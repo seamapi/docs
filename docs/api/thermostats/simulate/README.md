@@ -5,7 +5,7 @@
 ## Endpoints
 
 <table>
-<tr><th width="25%">Endpoint</th><th>Description</th></tr>
+<tr><th style="width:25%">Endpoint</th><th>Description</th></tr>
 
 <tr><td><a href="./hvac_mode_adjusted.md"><strong><code>/thermostats/simulate/hvac_mode_adjusted</code></strong></a></td>
 

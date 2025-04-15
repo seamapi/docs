@@ -5,7 +5,7 @@
 ## Endpoints
 
 <table>
-<tr><th width="25%">Endpoint</th><th>Description</th></tr>
+<tr><th style="width:25%">Endpoint</th><th>Description</th></tr>
 
 <tr><td><a href="./create_unmanaged_access_code.md"><strong><code>/access_codes/simulate/create_unmanaged_access_code</code></strong></a></td>
 

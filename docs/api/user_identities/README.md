@@ -92,7 +92,7 @@ ID of the [workspace](../../core-concepts/workspaces/README.md) that contains th
 ## Endpoints
 
 <table>
-<tr><th width="25%">Endpoint</th><th>Description</th></tr>
+<tr><th style="width:25%">Endpoint</th><th>Description</th></tr>
 
 <tr><td><a href="./add_acs_user.md"><strong><code>/user_identities/add_acs_user</code></strong></a></td>
 

@@ -115,7 +115,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 ## Events
 
 <table>
-<tr><th width="25%">Event</th><th>Description</th></tr>
+<tr><th style="width:25%">Event</th><th>Description</th></tr>
 <tr><td><strong><code>acs_encoder.added</code></strong></td>
 <td>
 An [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) was added.
@@ -233,7 +233,7 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 ## Endpoints
 
 <table>
-<tr><th width="25%">Endpoint</th><th>Description</th></tr>
+<tr><th style="width:25%">Endpoint</th><th>Description</th></tr>
 
 <tr><td><a href="./encode_credential.md"><strong><code>/acs/encoders/encode_credential</code></strong></a></td>
 

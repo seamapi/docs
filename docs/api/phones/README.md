@@ -192,7 +192,7 @@ ID of the [workspace](../../core-concepts/workspaces/README.md) that contains th
 ## Events
 
 <table>
-<tr><th width="25%">Event</th><th>Description</th></tr>
+<tr><th style="width:25%">Event</th><th>Description</th></tr>
 <tr><td><strong><code>phone.deactivated</code></strong></td>
 <td>
 A phone device was deactivated.
@@ -242,7 +242,7 @@ A phone device was deactivated.
 ## Endpoints
 
 <table>
-<tr><th width="25%">Endpoint</th><th>Description</th></tr>
+<tr><th style="width:25%">Endpoint</th><th>Description</th></tr>
 
 <tr><td><a href="./deactivate.md"><strong><code>/phones/deactivate</code></strong></a></td>
 

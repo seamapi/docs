@@ -121,7 +121,7 @@ ID of the [thermostat schedule](../../../capability-guides/thermostats/creating-
 ## Endpoints
 
 <table>
-<tr><th width="25%">Endpoint</th><th>Description</th></tr>
+<tr><th style="width:25%">Endpoint</th><th>Description</th></tr>
 
 <tr><td><a href="./create.md"><strong><code>/thermostats/schedules/create</code></strong></a></td>
 

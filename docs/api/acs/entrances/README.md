@@ -305,7 +305,7 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 ## Events
 
 <table>
-<tr><th width="25%">Event</th><th>Description</th></tr>
+<tr><th style="width:25%">Event</th><th>Description</th></tr>
 <tr><td><strong><code>acs_entrance.added</code></strong></td>
 <td>
 An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was added.
@@ -419,7 +419,7 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 ## Endpoints
 
 <table>
-<tr><th width="25%">Endpoint</th><th>Description</th></tr>
+<tr><th style="width:25%">Endpoint</th><th>Description</th></tr>
 
 <tr><td><a href="./get.md"><strong><code>/acs/entrances/get</code></strong></a></td>
 
