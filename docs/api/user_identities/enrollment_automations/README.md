@@ -1,6 +1,13 @@
 # Enrollment Automations
 
-## The `enrollment_automation` Resource
+## The enrollment_automation Object
+
+- [Properties](./#Properties)
+- [Errors](./#Errors)
+- [Warnings](./#Warnings)
+- [Events](./#Events)
+- [Endpoints](./#Endpoints)
+
 
 Represents an [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) within the [Seam mobile access solution](https://docs.seam.co/latest/capability-guides/mobile-access-in-development).
 

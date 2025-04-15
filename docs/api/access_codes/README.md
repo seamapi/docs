@@ -1,6 +1,13 @@
 # Access Codes
 
-## The `access_code` Resource
+## The access_code Object
+
+- [Properties](./#Properties)
+- [Errors](./#Errors)
+- [Warnings](./#Warnings)
+- [Events](./#Events)
+- [Endpoints](./#Endpoints)
+
 
 Represents a smart lock [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 

@@ -1,6 +1,13 @@
 # Entrances
 
-## The `acs_entrance` Resource
+## The acs_entrance Object
+
+- [Properties](./#Properties)
+- [Errors](./#Errors)
+- [Warnings](./#Warnings)
+- [Events](./#Events)
+- [Endpoints](./#Endpoints)
+
 
 Represents an [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 

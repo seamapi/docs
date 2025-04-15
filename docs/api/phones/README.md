@@ -1,6 +1,13 @@
 # Phones
 
-## The `phone` Resource
+## The phone Object
+
+- [Properties](./#Properties)
+- [Errors](./#Errors)
+- [Warnings](./#Warnings)
+- [Events](./#Events)
+- [Endpoints](./#Endpoints)
+
 
 Represents an app user's mobile phone.
 

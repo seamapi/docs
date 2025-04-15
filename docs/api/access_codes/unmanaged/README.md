@@ -1,6 +1,13 @@
 # Unmanaged Access Code
 
-## The `unmanaged_access_code` Resource
+## The unmanaged_access_code Object
+
+- [Properties](./#Properties)
+- [Errors](./#Errors)
+- [Warnings](./#Warnings)
+- [Events](./#Events)
+- [Endpoints](./#Endpoints)
+
 
 Represents an [unmanaged smart lock access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).
 
