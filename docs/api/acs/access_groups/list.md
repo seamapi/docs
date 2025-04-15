@@ -16,13 +16,11 @@ POST /acs/access_groups/list ⇒ { acs_access_groups: [acs_access_group, …] }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods](https://docs.seam.co/latest/api/authentication)</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
-
-To learn more, see [Authentication]{https://docs.seam.co/latest/api/authentication}.
 </details>
 
 ## Request Parameters

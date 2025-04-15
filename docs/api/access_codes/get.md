@@ -18,12 +18,10 @@ POST /access_codes/get ⇒ { access_code }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods](https://docs.seam.co/latest/api/authentication)</summary>
 
 - API key
 - Client session token
-
-To learn more, see [Authentication]{https://docs.seam.co/latest/api/authentication}.
 </details>
 
 ## Request Parameters

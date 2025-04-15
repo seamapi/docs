@@ -16,20 +16,18 @@ POST /phones/list ⇒ { phones: [phone, …] }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods](https://docs.seam.co/latest/api/authentication)</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
-
-To learn more, see [Authentication]{https://docs.seam.co/latest/api/authentication}.
 </details>
 
 ## Request Parameters
 
 **`acs_credential_id`** *String*
 
-ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) by which to filter the list of returned phones.
+ID of the [credential](../../capability-guides/access-systems/managing-credentials.md) by which to filter the list of returned phones.
 
 ---
 

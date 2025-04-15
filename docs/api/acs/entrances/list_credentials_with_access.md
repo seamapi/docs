@@ -16,14 +16,12 @@ POST /acs/entrances/list_credentials_with_access ⇒ { acs_credentials: [acs_cre
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods](https://docs.seam.co/latest/api/authentication)</summary>
 
 - API key
 - Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
-
-To learn more, see [Authentication]{https://docs.seam.co/latest/api/authentication}.
 </details>
 
 ## Request Parameters

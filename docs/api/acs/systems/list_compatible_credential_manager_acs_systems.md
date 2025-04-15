@@ -18,13 +18,11 @@ POST /acs/systems/list_compatible_credential_manager_acs_systems ⇒ { acs_syste
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods](https://docs.seam.co/latest/api/authentication)</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
-
-To learn more, see [Authentication]{https://docs.seam.co/latest/api/authentication}.
 </details>
 
 ## Request Parameters
