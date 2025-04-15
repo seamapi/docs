@@ -27,36 +27,44 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`device_id`** *String* (Required)
+<table>
+<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><td><strong><code>device_id</code></strong> <i>String</i> (Required)</td>
+<td>
 
 ID of the desired thermostat device.
 
 ---
-
-**`lower_limit_celsius`** *Number*
+</td></tr>
+<tr><td><strong><code>lower_limit_celsius</code></strong> <i>Number</i></td>
+<td>
 
 Lower temperature limit in in °C. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both.
 
 ---
-
-**`lower_limit_fahrenheit`** *Number*
+</td></tr>
+<tr><td><strong><code>lower_limit_fahrenheit</code></strong> <i>Number</i></td>
+<td>
 
 Lower temperature limit in in °F. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both.
 
 ---
-
-**`upper_limit_celsius`** *Number*
-
-Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both.
-
----
-
-**`upper_limit_fahrenheit`** *Number*
+</td></tr>
+<tr><td><strong><code>upper_limit_celsius</code></strong> <i>Number</i></td>
+<td>
 
 Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both.
 
 ---
+</td></tr>
+<tr><td><strong><code>upper_limit_fahrenheit</code></strong> <i>Number</i></td>
+<td>
 
+Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both.
+
+---
+</td></tr>
+</table>
 
 ## Response
 

@@ -27,24 +27,30 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_credential_id`** *String* (Required)
+<table>
+<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><td><strong><code>acs_credential_id</code></strong> <i>String</i> (Required)</td>
+<td>
 
 ID of the desired credential.
 
 ---
-
-**`code`** *String*
+</td></tr>
+<tr><td><strong><code>code</code></strong> <i>String</i></td>
+<td>
 
 Replacement access (PIN) code for the credential.
 
 ---
-
-**`ends_at`** *String*
+</td></tr>
+<tr><td><strong><code>ends_at</code></strong> <i>String</i></td>
+<td>
 
 Replacement date and time at which the validity of the credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after the `starts_at` value that you set when creating the credential.
 
 ---
-
+</td></tr>
+</table>
 
 ## Response
 

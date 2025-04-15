@@ -27,18 +27,23 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`device_id`** *String* (Required)
+<table>
+<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><td><strong><code>device_id</code></strong> <i>String</i> (Required)</td>
+<td>
 
 ID of the desired managed device.
 
 ---
-
-**`user_identity_id`** *String* (Required)
+</td></tr>
+<tr><td><strong><code>user_identity_id</code></strong> <i>String</i> (Required)</td>
+<td>
 
 ID of the desired user identity.
 
 ---
-
+</td></tr>
+</table>
 
 ## Response
 

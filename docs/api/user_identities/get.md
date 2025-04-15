@@ -27,16 +27,21 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`user_identity_id`** *String*
+<table>
+<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><td><strong><code>user_identity_id</code></strong> <i>String</i></td>
+<td>
 
 ID of the desired user identity.
 
 ---
-
-**`user_identity_key`** *String*
+</td></tr>
+<tr><td><strong><code>user_identity_key</code></strong> <i>String</i></td>
+<td>
 
 ---
-
+</td></tr>
+</table>
 
 ## Response
 

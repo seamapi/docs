@@ -28,42 +28,51 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_system_id`** *String*
+<table>
+<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><td><strong><code>acs_system_id</code></strong> <i>String</i></td>
+<td>
 
 ID of the access control system for which you want to retrieve all credentials.
 
 ---
-
-**`acs_user_id`** *String*
+</td></tr>
+<tr><td><strong><code>acs_user_id</code></strong> <i>String</i></td>
+<td>
 
 ID of the ACS user for which you want to retrieve all credentials.
 
 ---
-
-**`created_before`** *String*
+</td></tr>
+<tr><td><strong><code>created_before</code></strong> <i>String</i></td>
+<td>
 
 Date and time, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format, before which events to return were created.
 
 ---
-
-**`is_multi_phone_sync_credential`** *Boolean*
+</td></tr>
+<tr><td><strong><code>is_multi_phone_sync_credential</code></strong> <i>Boolean</i></td>
+<td>
 
 Indicates whether you want to retrieve only multi-phone sync credentials or non-multi-phone sync credentials.
 
 ---
-
-**`limit`** *Number*
+</td></tr>
+<tr><td><strong><code>limit</code></strong> <i>Number</i></td>
+<td>
 
 Number of credentials to return.
 
 ---
-
-**`user_identity_id`** *String*
+</td></tr>
+<tr><td><strong><code>user_identity_id</code></strong> <i>String</i></td>
+<td>
 
 ID of the user identity for which you want to retrieve all credentials.
 
 ---
-
+</td></tr>
+</table>
 
 ## Response
 

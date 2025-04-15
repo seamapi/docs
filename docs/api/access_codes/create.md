@@ -28,98 +28,117 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`device_id`** *String* (Required)
+<table>
+<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><td><strong><code>device_id</code></strong> <i>String</i> (Required)</td>
+<td>
 
 ID of the device for which to create the new access code.
 
 ---
-
-**`allow_external_modification`** *Boolean*
+</td></tr>
+<tr><td><strong><code>allow_external_modification</code></strong> <i>Boolean</i></td>
+<td>
 
 Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.
 
 ---
-
-**`attempt_for_offline_device`** *Boolean*
+</td></tr>
+<tr><td><strong><code>attempt_for_offline_device</code></strong> <i>Boolean</i></td>
+<td>
 
 ---
-
-**`code`** *String*
+</td></tr>
+<tr><td><strong><code>code</code></strong> <i>String</i></td>
+<td>
 
 Code to be used for access.
 
 ---
-
-**`common_code_key`** *String*
+</td></tr>
+<tr><td><strong><code>common_code_key</code></strong> <i>String</i></td>
+<td>
 
 Key to identify access codes that should have the same code. Any two access codes with the same `common_code_key` are guaranteed to have the same `code`. See also [Creating and Updating Multiple Linked Access Codes](../../capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes.md).
 
 ---
-
-**`ends_at`** *String*
+</td></tr>
+<tr><td><strong><code>ends_at</code></strong> <i>String</i></td>
+<td>
 
 Date and time at which the validity of the new access code ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
 
 ---
-
-**`is_external_modification_allowed`** *Boolean*
+</td></tr>
+<tr><td><strong><code>is_external_modification_allowed</code></strong> <i>Boolean</i></td>
+<td>
 
 Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.
 
 ---
-
-**`is_offline_access_code`** *Boolean*
+</td></tr>
+<tr><td><strong><code>is_offline_access_code</code></strong> <i>Boolean</i></td>
+<td>
 
 Indicates whether the access code is an [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes).
 
 ---
-
-**`is_one_time_use`** *Boolean*
+</td></tr>
+<tr><td><strong><code>is_one_time_use</code></strong> <i>Boolean</i></td>
+<td>
 
 Indicates whether the [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) is a single-use access code.
 
 ---
-
-**`max_time_rounding`** *String*
+</td></tr>
+<tr><td><strong><code>max_time_rounding</code></strong> <i>String</i></td>
+<td>
 
 Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.
 
 ---
-
-**`name`** *String*
+</td></tr>
+<tr><td><strong><code>name</code></strong> <i>String</i></td>
+<td>
 
 Name of the new access code.
 
 ---
-
-**`prefer_native_scheduling`** *Boolean*
+</td></tr>
+<tr><td><strong><code>prefer_native_scheduling</code></strong> <i>Boolean</i></td>
+<td>
 
 Indicates whether [native scheduling](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`.
 
 ---
-
-**`preferred_code_length`** *Number*
+</td></tr>
+<tr><td><strong><code>preferred_code_length</code></strong> <i>Number</i></td>
+<td>
 
 Preferred code length. Only applicable if you do not specify a `code`. If the affected device does not support the preferred code length, Seam reverts to using the shortest supported code length.
 
 ---
-
-**`starts_at`** *String*
+</td></tr>
+<tr><td><strong><code>starts_at</code></strong> <i>String</i></td>
+<td>
 
 Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 ---
-
-**`use_backup_access_code_pool`** *Boolean*
+</td></tr>
+<tr><td><strong><code>use_backup_access_code_pool</code></strong> <i>Boolean</i></td>
+<td>
 
 Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](../../api-clients/access_codes/pull_backup_access_code.md).
 
 ---
-
-**`use_offline_access_code`** *Boolean*
+</td></tr>
+<tr><td><strong><code>use_offline_access_code</code></strong> <i>Boolean</i></td>
+<td>
 
 ---
-
+</td></tr>
+</table>
 
 ## Response
 

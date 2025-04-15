@@ -28,48 +28,58 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`thermostat_schedule_id`** *String* (Required)
+<table>
+<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><td><strong><code>thermostat_schedule_id</code></strong> <i>String</i> (Required)</td>
+<td>
 
 ID of the desired thermostat schedule.
 
 ---
-
-**`climate_preset_key`** *String*
+</td></tr>
+<tr><td><strong><code>climate_preset_key</code></strong> <i>String</i></td>
+<td>
 
 Key of the [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to use for the thermostat schedule.
 
 ---
-
-**`ends_at`** *String*
+</td></tr>
+<tr><td><strong><code>ends_at</code></strong> <i>String</i></td>
+<td>
 
 Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 ---
-
-**`is_override_allowed`** *Boolean*
+</td></tr>
+<tr><td><strong><code>is_override_allowed</code></strong> <i>Boolean</i></td>
+<td>
 
 Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the schedule is active. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
 
 ---
-
-**`max_override_period_minutes`** *Number*
+</td></tr>
+<tr><td><strong><code>max_override_period_minutes</code></strong> <i>Number</i></td>
+<td>
 
 Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
 
 ---
-
-**`name`** *String*
+</td></tr>
+<tr><td><strong><code>name</code></strong> <i>String</i></td>
+<td>
 
 User-friendly name to identify the thermostat schedule.
 
 ---
-
-**`starts_at`** *String*
+</td></tr>
+<tr><td><strong><code>starts_at</code></strong> <i>String</i></td>
+<td>
 
 Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 ---
-
+</td></tr>
+</table>
 
 ## Response
 

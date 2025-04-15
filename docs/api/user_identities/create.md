@@ -27,30 +27,37 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`email_address`** *String*
+<table>
+<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><td><strong><code>email_address</code></strong> <i>String</i></td>
+<td>
 
 Unique email address for the user identity.
 
 ---
-
-**`full_name`** *String*
+</td></tr>
+<tr><td><strong><code>full_name</code></strong> <i>String</i></td>
+<td>
 
 Full name of the user associated with the user identity.
 
 ---
-
-**`phone_number`** *String*
+</td></tr>
+<tr><td><strong><code>phone_number</code></strong> <i>String</i></td>
+<td>
 
 Unique phone number for the user identity in E.164 format (for example, +15555550100).
 
 ---
-
-**`user_identity_key`** *String*
+</td></tr>
+<tr><td><strong><code>user_identity_key</code></strong> <i>String</i></td>
+<td>
 
 Unique key for the user identity.
 
 ---
-
+</td></tr>
+</table>
 
 ## Response
 

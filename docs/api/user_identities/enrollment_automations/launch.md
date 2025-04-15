@@ -27,36 +27,44 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`credential_manager_acs_system_id`** *String* (Required)
+<table>
+<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><td><strong><code>credential_manager_acs_system_id</code></strong> <i>String</i> (Required)</td>
+<td>
 
 ID of the desired ACS system that serves as the credential manager.
 
 ---
-
-**`user_identity_id`** *String* (Required)
+</td></tr>
+<tr><td><strong><code>user_identity_id</code></strong> <i>String</i> (Required)</td>
+<td>
 
 ID of the desired user identity.
 
 ---
-
-**`acs_credential_pool_id`** *String*
+</td></tr>
+<tr><td><strong><code>acs_credential_pool_id</code></strong> <i>String</i></td>
+<td>
 
 ID of the ACS credential pool from which to obtain credentials for the user identity.
 
 ---
-
-**`create_credential_manager_user`** *Boolean*
+</td></tr>
+<tr><td><strong><code>create_credential_manager_user</code></strong> <i>Boolean</i></td>
+<td>
 
 Indicates whether to create an associated credential manager user. If you set `create_credential_manager_user` to `true`, you cannot specify a `credential_manager_acs_user_id`.
 
 ---
-
-**`credential_manager_acs_user_id`** *String*
+</td></tr>
+<tr><td><strong><code>credential_manager_acs_user_id</code></strong> <i>String</i></td>
+<td>
 
 ID of the associated ACS user within the credential manager. If you specify a `credential_manager_acs_user_id`, you cannot set `create_credential_manager_user` to `true`.
 
 ---
-
+</td></tr>
+</table>
 
 ## Response
 

@@ -27,18 +27,23 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_encoder_id`** *String* (Required)
+<table>
+<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><td><strong><code>acs_encoder_id</code></strong> <i>String</i> (Required)</td>
+<td>
 
 ID of the `acs_encoder` that will be used in the next request to encode the `acs_credential`.
 
 ---
-
-**`scenario`** *String*
+</td></tr>
+<tr><td><strong><code>scenario</code></strong> <i>String</i></td>
+<td>
 
 Scenario to simulate.
 
 ---
-
+</td></tr>
+</table>
 
 ## Response
 

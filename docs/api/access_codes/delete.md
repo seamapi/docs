@@ -28,18 +28,23 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`access_code_id`** *String* (Required)
+<table>
+<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><td><strong><code>access_code_id</code></strong> <i>String</i> (Required)</td>
+<td>
 
 ID of the access code to delete.
 
 ---
-
-**`device_id`** *String*
+</td></tr>
+<tr><td><strong><code>device_id</code></strong> <i>String</i></td>
+<td>
 
 ID of the device for which to delete the access code.
 
 ---
-
+</td></tr>
+</table>
 
 ## Response
 

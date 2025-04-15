@@ -27,30 +27,37 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_encoder_ids`** *Array* *of UUIDs*
+<table>
+<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><td><strong><code>acs_encoder_ids</code></strong> <i>Array</i> <i>of UUIDs</i></td>
+<td>
 
 IDs of the `acs_encoder`s that you want to retrieve.
 
 ---
-
-**`acs_system_id`** *String*
+</td></tr>
+<tr><td><strong><code>acs_system_id</code></strong> <i>String</i></td>
+<td>
 
 ID of the `acs_system` for which you want to retrieve all `acs_encoder`s.
 
 ---
-
-**`acs_system_ids`** *Array* *of UUIDs*
+</td></tr>
+<tr><td><strong><code>acs_system_ids</code></strong> <i>Array</i> <i>of UUIDs</i></td>
+<td>
 
 IDs of the `acs_system`s for which you want to retrieve all `acs_encoder`s.
 
 ---
-
-**`limit`** *Number*
+</td></tr>
+<tr><td><strong><code>limit</code></strong> <i>Number</i></td>
+<td>
 
 Number of `acs_encoders` to return.
 
 ---
-
+</td></tr>
+</table>
 
 ## Response
 

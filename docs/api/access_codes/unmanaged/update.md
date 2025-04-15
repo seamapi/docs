@@ -28,34 +28,42 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`access_code_id`** *String* (Required)
+<table>
+<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><td><strong><code>access_code_id</code></strong> <i>String</i> (Required)</td>
+<td>
 
 ID of the unmanaged access code that you want to update.
 
 ---
-
-**`is_managed`** *Boolean* (Required)
+</td></tr>
+<tr><td><strong><code>is_managed</code></strong> <i>Boolean</i> (Required)</td>
+<td>
 
 ---
-
-**`allow_external_modification`** *Boolean*
+</td></tr>
+<tr><td><strong><code>allow_external_modification</code></strong> <i>Boolean</i></td>
+<td>
 
 Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed.
 
 ---
-
-**`force`** *Boolean*
+</td></tr>
+<tr><td><strong><code>force</code></strong> <i>Boolean</i></td>
+<td>
 
 Indicates whether to force the unmanaged access code update.
 
 ---
-
-**`is_external_modification_allowed`** *Boolean*
+</td></tr>
+<tr><td><strong><code>is_external_modification_allowed</code></strong> <i>Boolean</i></td>
+<td>
 
 Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed.
 
 ---
-
+</td></tr>
+</table>
 
 ## Response
 

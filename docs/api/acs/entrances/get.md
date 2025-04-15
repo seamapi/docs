@@ -26,10 +26,14 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_entrance_id`** *String* (Required)
+<table>
+<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><td><strong><code>acs_entrance_id</code></strong> <i>String</i> (Required)</td>
+<td>
 
 ---
-
+</td></tr>
+</table>
 
 ## Response
 

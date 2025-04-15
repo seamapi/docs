@@ -30,12 +30,16 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`connected_account_id`** *String*
+<table>
+<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><td><strong><code>connected_account_id</code></strong> <i>String</i></td>
+<td>
 
 ID of the connected account by which to filter the list of returned access control systems.
 
 ---
-
+</td></tr>
+</table>
 
 ## Response
 

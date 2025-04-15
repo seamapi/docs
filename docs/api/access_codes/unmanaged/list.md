@@ -28,18 +28,23 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`device_id`** *String* (Required)
+<table>
+<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><td><strong><code>device_id</code></strong> <i>String</i> (Required)</td>
+<td>
 
 ID of the device for which you want to list unmanaged access codes.
 
 ---
-
-**`user_identifier_key`** *String*
+</td></tr>
+<tr><td><strong><code>user_identifier_key</code></strong> <i>String</i></td>
+<td>
 
 Your user ID for the user by which to filter unmanaged access codes.
 
 ---
-
+</td></tr>
+</table>
 
 ## Response
 

@@ -28,11 +28,15 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_entrance_id`** *String* (Required)
+<table>
+<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><td><strong><code>acs_entrance_id</code></strong> <i>String</i> (Required)</td>
+<td>
 
 ---
-
-**`include_if`** *Array* *of Enums*
+</td></tr>
+<tr><td><strong><code>include_if</code></strong> <i>Array</i> <i>of Enums</i></td>
+<td>
 <details>
 
 <summary>Enum values</summary>
@@ -42,7 +46,8 @@ Possible enum values:
 </details>
 
 ---
-
+</td></tr>
+</table>
 
 ## Response
 

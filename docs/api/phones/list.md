@@ -27,18 +27,23 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_credential_id`** *String*
+<table>
+<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><td><strong><code>acs_credential_id</code></strong> <i>String</i></td>
+<td>
 
 ID of the [credential](../../capability-guides/access-systems/managing-credentials.md) by which to filter the list of returned phones.
 
 ---
-
-**`owner_user_identity_id`** *String*
+</td></tr>
+<tr><td><strong><code>owner_user_identity_id</code></strong> <i>String</i></td>
+<td>
 
 ID of the user identity that represents the owner by which to filter the list of returned phones.
 
 ---
-
+</td></tr>
+</table>
 
 ## Response
 

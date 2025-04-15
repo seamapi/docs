@@ -29,12 +29,16 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_system_id`** *String* (Required)
+<table>
+<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><td><strong><code>acs_system_id</code></strong> <i>String</i> (Required)</td>
+<td>
 
 ID of the ACS system for which you want to retrieve all compatible credential manager ACS systems.
 
 ---
-
+</td></tr>
+</table>
 
 ## Response
 
