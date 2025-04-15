@@ -44,36 +44,36 @@ To verify if your access control system requires a card encoder, see the corresp
 ## Properties
 
 <table>
-<tr><th>** Property **</th><th>** Description **</th></tr>
-<tr><td>**`acs_encoder_id`** *UUID*</td>
+<tr><th>Property</th><th>Description</th></tr>
+<tr><td><strong><code>acs_encoder_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners.
 
 
 </td></tr>
 
-<tr><td>**`acs_system_id`** *UUID*</td>
+<tr><td><strong><code>acs_system_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 
 </td></tr>
 
-<tr><td>**`created_at`** *Datetime*</td>
+<tr><td><strong><code>created_at</code></strong> <i>Datetime</i></td>
 <td>
 Date and time at which the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) was created.
 
 
 </td></tr>
 
-<tr><td>**`display_name`** *String*</td>
+<tr><td><strong><code>display_name</code></strong> <i>String</i></td>
 <td>
 Display name for the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 
 </td></tr>
 
-<tr><td>**`errors`** *List* *of Objects*</td>
+<tr><td><strong><code>errors</code></strong> <i>List</i> <i>of Objects</i></td>
 <td>
 Errors associated with the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
@@ -103,7 +103,7 @@ Errors associated with the [encoder](../../../capability-guides/access-systems/w
 
 </td></tr>
 
-<tr><td>**`workspace_id`** *UUID*</td>
+<tr><td><strong><code>workspace_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 

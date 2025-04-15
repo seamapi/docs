@@ -50,8 +50,8 @@ For details about how to configure `acs_user`s in your access control system, se
 ## Properties
 
 <table>
-<tr><th>** Property **</th><th>** Description **</th></tr>
-<tr><td>**`access_schedule`** *Object*</td>
+<tr><th>Property</th><th>Description</th></tr>
+<tr><td><strong><code>access_schedule</code></strong> <i>Object</i></td>
 <td>
 `starts_at` and `ends_at` timestamps for the [ACS user's](https://docs.seam.co/latest/capability-guides/access-systems/user-management) access.
 
@@ -75,35 +75,35 @@ For details about how to configure `acs_user`s in your access control system, se
 
 </td></tr>
 
-<tr><td>**`acs_system_id`** *UUID*</td>
+<tr><td><strong><code>acs_system_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 </td></tr>
 
-<tr><td>**`acs_user_id`** *UUID*</td>
+<tr><td><strong><code>acs_user_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 </td></tr>
 
-<tr><td>**`created_at`** *Datetime*</td>
+<tr><td><strong><code>created_at</code></strong> <i>Datetime</i></td>
 <td>
 Date and time at which the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created.
 
 
 </td></tr>
 
-<tr><td>**`display_name`** *String*</td>
+<tr><td><strong><code>display_name</code></strong> <i>String</i></td>
 <td>
 Display name for the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 </td></tr>
 
-<tr><td>**`email`** *String*</td>
+<tr><td><strong><code>email</code></strong> <i>String</i></td>
 <td>
 {% hint style="warning" %}
 **Deprecated**. use email_address.
@@ -112,21 +112,21 @@ Display name for the [ACS user](https://docs.seam.co/latest/capability-guides/ac
 
 </td></tr>
 
-<tr><td>**`email_address`** *String*</td>
+<tr><td><strong><code>email_address</code></strong> <i>String</i></td>
 <td>
 Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 </td></tr>
 
-<tr><td>[**`errors`**](./#errors) *List* *of Objects*</td>
+<tr><td><a href="./#errors"><strong><code>errors</code></strong></a> <i>List</i> <i>of Objects</i></td>
 <td>
 Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 </td></tr>
 
-<tr><td>**`external_type`** *Enum*</td>
+<tr><td><strong><code>external_type</code></strong> <i>Enum</i></td>
 <td>
 Brand-specific terminology for the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) type.
 
@@ -146,80 +146,80 @@ Brand-specific terminology for the [ACS user](https://docs.seam.co/latest/capabi
 
 </td></tr>
 
-<tr><td>**`external_type_display_name`** *String*</td>
+<tr><td><strong><code>external_type_display_name</code></strong> <i>String</i></td>
 <td>
 Display name that corresponds to the brand-specific terminology for the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) type.
 
 
 </td></tr>
 
-<tr><td>**`full_name`** *String*</td>
+<tr><td><strong><code>full_name</code></strong> <i>String</i></td>
 <td>
 Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 </td></tr>
 
-<tr><td>**`hid_acs_system_id`** *UUID*</td>
+<tr><td><strong><code>hid_acs_system_id</code></strong> <i>UUID</i></td>
 <td>
 
 </td></tr>
 
-<tr><td>**`is_managed`** *Boolean*</td>
+<tr><td><strong><code>is_managed</code></strong> <i>Boolean</i></td>
 <td>
 
 </td></tr>
 
-<tr><td>**`is_suspended`** *Boolean*</td>
+<tr><td><strong><code>is_suspended</code></strong> <i>Boolean</i></td>
 <td>
 Indicates whether the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users).
 
 
 </td></tr>
 
-<tr><td>**`phone_number`** *String*</td>
+<tr><td><strong><code>phone_number</code></strong> <i>String</i></td>
 <td>
 Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
 
 
 </td></tr>
 
-<tr><td>**`user_identity_email_address`** *String*</td>
+<tr><td><strong><code>user_identity_email_address</code></strong> <i>String</i></td>
 <td>
 Email address of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 </td></tr>
 
-<tr><td>**`user_identity_full_name`** *String*</td>
+<tr><td><strong><code>user_identity_full_name</code></strong> <i>String</i></td>
 <td>
 Full name of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 </td></tr>
 
-<tr><td>**`user_identity_id`** *String*</td>
+<tr><td><strong><code>user_identity_id</code></strong> <i>String</i></td>
 <td>
 ID of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 </td></tr>
 
-<tr><td>**`user_identity_phone_number`** *String*</td>
+<tr><td><strong><code>user_identity_phone_number</code></strong> <i>String</i></td>
 <td>
 Phone number of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
 
 
 </td></tr>
 
-<tr><td>[**`warnings`**](./#warnings) *List* *of Objects*</td>
+<tr><td><a href="./#warnings"><strong><code>warnings</code></strong></a> <i>List</i> <i>of Objects</i></td>
 <td>
 Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 </td></tr>
 
-<tr><td>**`workspace_id`** *UUID*</td>
+<tr><td><strong><code>workspace_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 

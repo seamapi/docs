@@ -35,29 +35,29 @@ Represents an app user's mobile phone.
 ## Properties
 
 <table>
-<tr><th>** Property **</th><th>** Description **</th></tr>
-<tr><td>**`created_at`** *Datetime*</td>
+<tr><th>Property</th><th>Description</th></tr>
+<tr><td><strong><code>created_at</code></strong> <i>Datetime</i></td>
 <td>
 Date and time at which the `phone` was created.
 
 
 </td></tr>
 
-<tr><td>**`custom_metadata`** *Record*</td>
+<tr><td><strong><code>custom_metadata</code></strong> <i>Record</i></td>
 <td>
 Optional [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) for the phone.
 
 
 </td></tr>
 
-<tr><td>**`device_id`** *UUID*</td>
+<tr><td><strong><code>device_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the `phone`.
 
 
 </td></tr>
 
-<tr><td>**`device_type`** *Enum*</td>
+<tr><td><strong><code>device_type</code></strong> <i>Enum</i></td>
 <td>
 Type of phone.
 
@@ -72,14 +72,14 @@ Type of phone.
 
 </td></tr>
 
-<tr><td>**`display_name`** *String*</td>
+<tr><td><strong><code>display_name</code></strong> <i>String</i></td>
 <td>
 Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name` otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.
 
 
 </td></tr>
 
-<tr><td>**`errors`** *List* *of Objects*</td>
+<tr><td><strong><code>errors</code></strong> <i>List</i> <i>of Objects</i></td>
 <td>
 Errors associated with the `phone`.
 
@@ -99,14 +99,14 @@ Errors associated with the `phone`.
 
 </td></tr>
 
-<tr><td>**`nickname`** *String*</td>
+<tr><td><strong><code>nickname</code></strong> <i>String</i></td>
 <td>
 Optional nickname to describe the phone, settable through Seam.
 
 
 </td></tr>
 
-<tr><td>**`properties`** *Object*</td>
+<tr><td><strong><code>properties</code></strong> <i>Object</i></td>
 <td>
 Properties of the phone.
 
@@ -160,7 +160,7 @@ Properties of the phone.
 
 </td></tr>
 
-<tr><td>**`warnings`** *List* *of Objects*</td>
+<tr><td><strong><code>warnings</code></strong> <i>List</i> <i>of Objects</i></td>
 <td>
 Warnings associated with the `phone`.
 
@@ -180,7 +180,7 @@ Warnings associated with the `phone`.
 
 </td></tr>
 
-<tr><td>**`workspace_id`** *UUID*</td>
+<tr><td><strong><code>workspace_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the `phone`.
 

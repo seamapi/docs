@@ -41,8 +41,8 @@ To learn whether your access control system supports access groups, see the corr
 ## Properties
 
 <table>
-<tr><th>** Property **</th><th>** Description **</th></tr>
-<tr><td>**`access_group_type`** *Enum*</td>
+<tr><th>Property</th><th>Description</th></tr>
+<tr><td><strong><code>access_group_type</code></strong> <i>Enum</i></td>
 <td>
 {% hint style="warning" %}
 **Deprecated**. Use `external_type`.
@@ -63,7 +63,7 @@ To learn whether your access control system supports access groups, see the corr
 
 </td></tr>
 
-<tr><td>**`access_group_type_display_name`** *String*</td>
+<tr><td><strong><code>access_group_type_display_name</code></strong> <i>String</i></td>
 <td>
 {% hint style="warning" %}
 **Deprecated**. Use `external_type_display_name`.
@@ -72,33 +72,33 @@ To learn whether your access control system supports access groups, see the corr
 
 </td></tr>
 
-<tr><td>**`acs_access_group_id`** *UUID*</td>
+<tr><td><strong><code>acs_access_group_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the access group.
 
 
 </td></tr>
 
-<tr><td>**`acs_system_id`** *UUID*</td>
+<tr><td><strong><code>acs_system_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the access control system that contains the access group.
 
 
 </td></tr>
 
-<tr><td>**`created_at`** *Datetime*</td>
+<tr><td><strong><code>created_at</code></strong> <i>Datetime</i></td>
 <td>
 Date and time at which the access group was created.
 
 
 </td></tr>
 
-<tr><td>**`display_name`** *String*</td>
+<tr><td><strong><code>display_name</code></strong> <i>String</i></td>
 <td>
 
 </td></tr>
 
-<tr><td>**`external_type`** *Enum*</td>
+<tr><td><strong><code>external_type</code></strong> <i>Enum</i></td>
 <td>
 Brand-specific terminology for the access group type.
 
@@ -117,26 +117,26 @@ Brand-specific terminology for the access group type.
 
 </td></tr>
 
-<tr><td>**`external_type_display_name`** *String*</td>
+<tr><td><strong><code>external_type_display_name</code></strong> <i>String</i></td>
 <td>
 Display name that corresponds to the brand-specific terminology for the access group type.
 
 
 </td></tr>
 
-<tr><td>**`is_managed`** *Boolean*</td>
+<tr><td><strong><code>is_managed</code></strong> <i>Boolean</i></td>
 <td>
 
 </td></tr>
 
-<tr><td>**`name`** *String*</td>
+<tr><td><strong><code>name</code></strong> <i>String</i></td>
 <td>
 Name of the access group.
 
 
 </td></tr>
 
-<tr><td>**`warnings`** *List* *of Objects*</td>
+<tr><td><strong><code>warnings</code></strong> <i>List</i> <i>of Objects</i></td>
 <td>
 Warnings associated with the `acs_access_group`.
 
@@ -166,7 +166,7 @@ Warnings associated with the `acs_access_group`.
 
 </td></tr>
 
-<tr><td>**`workspace_id`** *UUID*</td>
+<tr><td><strong><code>workspace_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the access group.
 

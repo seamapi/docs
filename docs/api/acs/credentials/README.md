@@ -55,8 +55,8 @@ For each `acs_credential`, you define the access method. You can also specify ad
 ## Properties
 
 <table>
-<tr><th>** Property **</th><th>** Description **</th></tr>
-<tr><td>**`access_method`** *Enum*</td>
+<tr><th>Property</th><th>Description</th></tr>
+<tr><td><strong><code>access_method</code></strong> <i>Enum</i></td>
 <td>
 Access method for the [credential](../../../capability-guides/access-systems/managing-credentials.md). Supported values: `code`, `card`, `mobile_key`.
 
@@ -72,33 +72,33 @@ Access method for the [credential](../../../capability-guides/access-systems/man
 
 </td></tr>
 
-<tr><td>**`acs_credential_id`** *UUID*</td>
+<tr><td><strong><code>acs_credential_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
 </td></tr>
 
-<tr><td>**`acs_credential_pool_id`** *UUID*</td>
+<tr><td><strong><code>acs_credential_pool_id</code></strong> <i>UUID</i></td>
 <td>
 
 </td></tr>
 
-<tr><td>**`acs_system_id`** *UUID*</td>
+<tr><td><strong><code>acs_system_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
 </td></tr>
 
-<tr><td>**`acs_user_id`** *UUID*</td>
+<tr><td><strong><code>acs_user_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](../../../capability-guides/access-systems/managing-credentials.md) belongs.
 
 
 </td></tr>
 
-<tr><td>**`assa_abloy_vostio_metadata`** *Object*</td>
+<tr><td><strong><code>assa_abloy_vostio_metadata</code></strong> <i>Object</i></td>
 <td>
 Vostio-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -130,42 +130,42 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 </td></tr>
 
-<tr><td>**`card_number`** *String*</td>
+<tr><td><strong><code>card_number</code></strong> <i>String</i></td>
 <td>
 Number of the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
 </td></tr>
 
-<tr><td>**`code`** *String*</td>
+<tr><td><strong><code>code</code></strong> <i>String</i></td>
 <td>
 Access (PIN) code for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
 </td></tr>
 
-<tr><td>**`created_at`** *Datetime*</td>
+<tr><td><strong><code>created_at</code></strong> <i>Datetime</i></td>
 <td>
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) was created.
 
 
 </td></tr>
 
-<tr><td>**`display_name`** *String*</td>
+<tr><td><strong><code>display_name</code></strong> <i>String</i></td>
 <td>
 Display name that corresponds to the [credential](../../../capability-guides/access-systems/managing-credentials.md) type.
 
 
 </td></tr>
 
-<tr><td>**`ends_at`** *String*</td>
+<tr><td><strong><code>ends_at</code></strong> <i>String</i></td>
 <td>
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
 
 
 </td></tr>
 
-<tr><td>**`errors`** *List* *of Objects*</td>
+<tr><td><strong><code>errors</code></strong> <i>List</i> <i>of Objects</i></td>
 <td>
 Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -185,7 +185,7 @@ Errors associated with the [credential](../../../capability-guides/access-system
 
 </td></tr>
 
-<tr><td>**`external_type`** *Enum*</td>
+<tr><td><strong><code>external_type</code></strong> <i>Enum</i></td>
 <td>
 Brand-specific terminology for the [credential](../../../capability-guides/access-systems/managing-credentials.md) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.
 
@@ -205,75 +205,75 @@ Brand-specific terminology for the [credential](../../../capability-guides/acces
 
 </td></tr>
 
-<tr><td>**`external_type_display_name`** *String*</td>
+<tr><td><strong><code>external_type_display_name</code></strong> <i>String</i></td>
 <td>
 Display name that corresponds to the brand-specific terminology for the [credential](../../../capability-guides/access-systems/managing-credentials.md) type.
 
 
 </td></tr>
 
-<tr><td>**`is_issued`** *Boolean*</td>
+<tr><td><strong><code>is_issued</code></strong> <i>Boolean</i></td>
 <td>
 Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) has been encoded onto a card.
 
 
 </td></tr>
 
-<tr><td>**`is_latest_desired_state_synced_with_provider`** *Boolean*</td>
+<tr><td><strong><code>is_latest_desired_state_synced_with_provider</code></strong> <i>Boolean</i></td>
 <td>
 Indicates whether the latest state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) has been synced from Seam to the provider.
 
 
 </td></tr>
 
-<tr><td>**`is_managed`** *Boolean*</td>
+<tr><td><strong><code>is_managed</code></strong> <i>Boolean</i></td>
 <td>
 
 </td></tr>
 
-<tr><td>**`is_multi_phone_sync_credential`** *Boolean*</td>
+<tr><td><strong><code>is_multi_phone_sync_credential</code></strong> <i>Boolean</i></td>
 <td>
 Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
 
 
 </td></tr>
 
-<tr><td>**`is_one_time_use`** *Boolean*</td>
+<tr><td><strong><code>is_one_time_use</code></strong> <i>Boolean</i></td>
 <td>
 Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) can only be used once. If `true`, the code becomes invalid after the first use.
 
 
 </td></tr>
 
-<tr><td>**`issued_at`** *Datetime*</td>
+<tr><td><strong><code>issued_at</code></strong> <i>Datetime</i></td>
 <td>
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) was encoded onto a card.
 
 
 </td></tr>
 
-<tr><td>**`latest_desired_state_synced_with_provider_at`** *Datetime*</td>
+<tr><td><strong><code>latest_desired_state_synced_with_provider_at</code></strong> <i>Datetime</i></td>
 <td>
 Date and time at which the state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) was most recently synced from Seam to the provider.
 
 
 </td></tr>
 
-<tr><td>**`parent_acs_credential_id`** *UUID*</td>
+<tr><td><strong><code>parent_acs_credential_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the parent [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
 </td></tr>
 
-<tr><td>**`starts_at`** *String*</td>
+<tr><td><strong><code>starts_at</code></strong> <i>String</i></td>
 <td>
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 
 </td></tr>
 
-<tr><td>**`visionline_metadata`** *Object*</td>
+<tr><td><strong><code>visionline_metadata</code></strong> <i>Object</i></td>
 <td>
 Visionline-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -326,14 +326,14 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 
 </td></tr>
 
-<tr><td>[**`warnings`**](./#warnings) *List* *of Objects*</td>
+<tr><td><a href="./#warnings"><strong><code>warnings</code></strong></a> <i>List</i> <i>of Objects</i></td>
 <td>
 Warnings associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
 </td></tr>
 
-<tr><td>**`workspace_id`** *UUID*</td>
+<tr><td><strong><code>workspace_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 

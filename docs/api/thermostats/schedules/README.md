@@ -34,36 +34,36 @@ Represents a [thermostat schedule](../../../capability-guides/thermostats/creati
 ## Properties
 
 <table>
-<tr><th>** Property **</th><th>** Description **</th></tr>
-<tr><td>**`climate_preset_key`** *String*</td>
+<tr><th>Property</th><th>Description</th></tr>
+<tr><td><strong><code>climate_preset_key</code></strong> <i>String</i></td>
 <td>
 Key of the [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to use for the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
 
 </td></tr>
 
-<tr><td>**`created_at`** *Datetime*</td>
+<tr><td><strong><code>created_at</code></strong> <i>Datetime</i></td>
 <td>
 Date and time at which the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) was created.
 
 
 </td></tr>
 
-<tr><td>**`device_id`** *UUID*</td>
+<tr><td><strong><code>device_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device.
 
 
 </td></tr>
 
-<tr><td>**`ends_at`** *Datetime*</td>
+<tr><td><strong><code>ends_at</code></strong> <i>Datetime</i></td>
 <td>
 Date and time at which the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 
 </td></tr>
 
-<tr><td>**`errors`** *List* *of Objects*</td>
+<tr><td><strong><code>errors</code></strong> <i>List</i> <i>of Objects</i></td>
 <td>
 Errors associated with the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
@@ -87,28 +87,28 @@ Errors associated with the [thermostat schedule](../../../capability-guides/ther
 
 </td></tr>
 
-<tr><td>**`max_override_period_minutes`** *Number*</td>
+<tr><td><strong><code>max_override_period_minutes</code></strong> <i>Number</i></td>
 <td>
 Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md). See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
 
 
 </td></tr>
 
-<tr><td>**`name`** *String*</td>
+<tr><td><strong><code>name</code></strong> <i>String</i></td>
 <td>
 User-friendly name to identify the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
 
 </td></tr>
 
-<tr><td>**`starts_at`** *Datetime*</td>
+<tr><td><strong><code>starts_at</code></strong> <i>Datetime</i></td>
 <td>
 Date and time at which the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 
 </td></tr>
 
-<tr><td>**`thermostat_schedule_id`** *UUID*</td>
+<tr><td><strong><code>thermostat_schedule_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 

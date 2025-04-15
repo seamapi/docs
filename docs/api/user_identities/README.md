@@ -33,53 +33,53 @@ Represents a [user identity](https://docs.seam.co/latest/capability-guides/mobil
 ## Properties
 
 <table>
-<tr><th>** Property **</th><th>** Description **</th></tr>
-<tr><td>**`created_at`** *Datetime*</td>
+<tr><th>Property</th><th>Description</th></tr>
+<tr><td><strong><code>created_at</code></strong> <i>Datetime</i></td>
 <td>
 Date and time at which the user identity was created.
 
 
 </td></tr>
 
-<tr><td>**`display_name`** *String*</td>
+<tr><td><strong><code>display_name</code></strong> <i>String</i></td>
 <td>
 
 </td></tr>
 
-<tr><td>**`email_address`** *String*</td>
+<tr><td><strong><code>email_address</code></strong> <i>String</i></td>
 <td>
 Unique email address for the user identity.
 
 
 </td></tr>
 
-<tr><td>**`full_name`** *String*</td>
+<tr><td><strong><code>full_name</code></strong> <i>String</i></td>
 <td>
 
 </td></tr>
 
-<tr><td>**`phone_number`** *String*</td>
+<tr><td><strong><code>phone_number</code></strong> <i>String</i></td>
 <td>
 Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).
 
 
 </td></tr>
 
-<tr><td>**`user_identity_id`** *UUID*</td>
+<tr><td><strong><code>user_identity_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the user identity.
 
 
 </td></tr>
 
-<tr><td>**`user_identity_key`** *String*</td>
+<tr><td><strong><code>user_identity_key</code></strong> <i>String</i></td>
 <td>
 Unique key for the user identity.
 
 
 </td></tr>
 
-<tr><td>**`workspace_id`** *UUID*</td>
+<tr><td><strong><code>workspace_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the user identity.
 

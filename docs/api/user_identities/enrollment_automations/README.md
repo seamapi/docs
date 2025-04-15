@@ -30,36 +30,36 @@ Represents an [enrollment automation](https://docs.seam.co/latest/capability-gui
 ## Properties
 
 <table>
-<tr><th>** Property **</th><th>** Description **</th></tr>
-<tr><td>**`created_at`** *Datetime*</td>
+<tr><th>Property</th><th>Description</th></tr>
+<tr><td><strong><code>created_at</code></strong> <i>Datetime</i></td>
 <td>
 Date and time at which the enrollment automation was created.
 
 
 </td></tr>
 
-<tr><td>**`credential_manager_acs_system_id`** *UUID*</td>
+<tr><td><strong><code>credential_manager_acs_system_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the associated [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) that serves as the credential manager.
 
 
 </td></tr>
 
-<tr><td>**`enrollment_automation_id`** *UUID*</td>
+<tr><td><strong><code>enrollment_automation_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the enrollment automation.
 
 
 </td></tr>
 
-<tr><td>**`user_identity_id`** *UUID*</td>
+<tr><td><strong><code>user_identity_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the associated [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 
 </td></tr>
 
-<tr><td>**`workspace_id`** *UUID*</td>
+<tr><td><strong><code>workspace_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the enrollment automation.
 

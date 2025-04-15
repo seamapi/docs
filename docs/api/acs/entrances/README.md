@@ -38,22 +38,22 @@ In an access control system, an entrance is a secured door, gate, zone, or other
 ## Properties
 
 <table>
-<tr><th>** Property **</th><th>** Description **</th></tr>
-<tr><td>**`acs_entrance_id`** *UUID*</td>
+<tr><th>Property</th><th>Description</th></tr>
+<tr><td><strong><code>acs_entrance_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 
 </td></tr>
 
-<tr><td>**`acs_system_id`** *UUID*</td>
+<tr><td><strong><code>acs_system_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 
 </td></tr>
 
-<tr><td>**`assa_abloy_vostio_metadata`** *Object*</td>
+<tr><td><strong><code>assa_abloy_vostio_metadata</code></strong> <i>Object</i></td>
 <td>
 ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
@@ -96,21 +96,21 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
 
 </td></tr>
 
-<tr><td>**`created_at`** *Datetime*</td>
+<tr><td><strong><code>created_at</code></strong> <i>Datetime</i></td>
 <td>
 Date and time at which the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md) was created.
 
 
 </td></tr>
 
-<tr><td>**`display_name`** *String*</td>
+<tr><td><strong><code>display_name</code></strong> <i>String</i></td>
 <td>
 Display name for the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 
 </td></tr>
 
-<tr><td>**`dormakaba_community_metadata`** *Object*</td>
+<tr><td><strong><code>dormakaba_community_metadata</code></strong> <i>Object</i></td>
 <td>
 dormakaba Community-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
@@ -126,7 +126,7 @@ dormakaba Community-specific metadata associated with the [entrance](../../../ca
 
 </td></tr>
 
-<tr><td>**`errors`** *List* *of Objects*</td>
+<tr><td><strong><code>errors</code></strong> <i>List</i> <i>of Objects</i></td>
 <td>
 Errors associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
@@ -150,7 +150,7 @@ Errors associated with the [entrance](../../../capability-guides/access-systems/
 
 </td></tr>
 
-<tr><td>**`latch_metadata`** *Object*</td>
+<tr><td><strong><code>latch_metadata</code></strong> <i>Object</i></td>
 <td>
 Latch-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
@@ -178,7 +178,7 @@ Latch-specific metadata associated with the [entrance](../../../capability-guide
 
 </td></tr>
 
-<tr><td>**`salto_ks_metadata`** *Object*</td>
+<tr><td><strong><code>salto_ks_metadata</code></strong> <i>Object</i></td>
 <td>
 Salto KS-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
@@ -222,7 +222,7 @@ Salto KS-specific metadata associated with the [entrance](../../../capability-gu
 
 </td></tr>
 
-<tr><td>**`salto_space_metadata`** *Object*</td>
+<tr><td><strong><code>salto_space_metadata</code></strong> <i>Object</i></td>
 <td>
 Salto Space-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
@@ -246,7 +246,7 @@ Salto Space-specific metadata associated with the [entrance](../../../capability
 
 </td></tr>
 
-<tr><td>**`visionline_metadata`** *Object*</td>
+<tr><td><strong><code>visionline_metadata</code></strong> <i>Object</i></td>
 <td>
 Visionline-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
