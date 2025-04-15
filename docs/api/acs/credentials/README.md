@@ -55,7 +55,7 @@ For each `acs_credential`, you define the access method. You can also specify ad
 ## Properties
 
 <table>
-<tr><th>Property</th><th>Description</th></tr>
+<tr><th width="25%">Property</th><th>Description</th></tr>
 <tr><td><strong><code>access_method</code></strong> <i>Enum</i></td>
 <td>
 Access method for the [credential](../../../capability-guides/access-systems/managing-credentials.md). Supported values: `code`, `card`, `mobile_key`.

@@ -44,7 +44,7 @@ To verify if your access control system requires a card encoder, see the corresp
 ## Properties
 
 <table>
-<tr><th>Property</th><th>Description</th></tr>
+<tr><th width="25%">Property</th><th>Description</th></tr>
 <tr><td><strong><code>acs_encoder_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners.

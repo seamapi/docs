@@ -30,7 +30,7 @@ Represents an [enrollment automation](https://docs.seam.co/latest/capability-gui
 ## Properties
 
 <table>
-<tr><th>Property</th><th>Description</th></tr>
+<tr><th width="25%">Property</th><th>Description</th></tr>
 <tr><td><strong><code>created_at</code></strong> <i>Datetime</i></td>
 <td>
 Date and time at which the enrollment automation was created.

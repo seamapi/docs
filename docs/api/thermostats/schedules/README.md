@@ -34,7 +34,7 @@ Represents a [thermostat schedule](../../../capability-guides/thermostats/creati
 ## Properties
 
 <table>
-<tr><th>Property</th><th>Description</th></tr>
+<tr><th width="25%">Property</th><th>Description</th></tr>
 <tr><td><strong><code>climate_preset_key</code></strong> <i>String</i></td>
 <td>
 Key of the [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to use for the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
