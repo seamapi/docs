@@ -38,7 +38,7 @@ In an access control system, an entrance is a secured door, gate, zone, or other
 ## Properties
 
 <table>
-<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><th style="width:25%">Property</th><th>Description</th></tr>
 <tr><td><strong><code>acs_entrance_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).

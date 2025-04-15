@@ -50,7 +50,7 @@ For details about how to configure `acs_user`s in your access control system, se
 ## Properties
 
 <table>
-<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><th style="width:25%">Property</th><th>Description</th></tr>
 <tr><td><strong><code>access_schedule</code></strong> <i>Object</i></td>
 <td>
 `starts_at` and `ends_at` timestamps for the [ACS user's](https://docs.seam.co/latest/capability-guides/access-systems/user-management) access.

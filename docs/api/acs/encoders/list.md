@@ -28,7 +28,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Request Parameters
 
 <table>
-<tr><th width="25%">Parameter</th><th>Description</th></tr>
+<tr><th style="width:25%">Parameter</th><th>Description</th></tr>
 <tr><td><strong><code>acs_encoder_ids</code></strong> <i>Array</i> <i>of UUIDs</i></td>
 <td>
 

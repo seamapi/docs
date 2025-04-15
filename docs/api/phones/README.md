@@ -35,7 +35,7 @@ Represents an app user's mobile phone.
 ## Properties
 
 <table>
-<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><th style="width:25%">Property</th><th>Description</th></tr>
 <tr><td><strong><code>created_at</code></strong> <i>Datetime</i></td>
 <td>
 Date and time at which the `phone` was created.

@@ -52,7 +52,7 @@ In addition, for certain devices, Seam also supports [offline access codes](http
 ## Properties
 
 <table>
-<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><th style="width:25%">Property</th><th>Description</th></tr>
 <tr><td><strong><code>access_code_id</code></strong> <i>UUID</i></td>
 <td>
 Unique identifier for the access code.

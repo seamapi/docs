@@ -53,7 +53,7 @@ For details about the resources associated with an access control system, see th
 ## Properties
 
 <table>
-<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><th style="width:25%">Property</th><th>Description</th></tr>
 <tr><td><strong><code>acs_access_group_count</code></strong> <i>Number</i></td>
 <td>
 

@@ -41,7 +41,7 @@ To learn whether your access control system supports access groups, see the corr
 ## Properties
 
 <table>
-<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><th style="width:25%">Property</th><th>Description</th></tr>
 <tr><td><strong><code>access_group_type</code></strong> <i>Enum</i></td>
 <td>
 {% hint style="warning" %}
