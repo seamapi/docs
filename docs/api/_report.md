@@ -96,6 +96,10 @@ These items are intentionally undocumented.
 - `/unstable_access_grants`: No undocumented message provided
 - `/unstable_locations`: No undocumented message provided
 
+### Resources
+
+- `instant_key`: Unreleased.
+
 ### Resource properties
 
 - `acs_user.is_latest_desired_state_synced_with_provider`: Only used internally.
@@ -126,6 +130,7 @@ These items are intentionally undocumented.
 - `/devices/simulate/access_code_unlock`: Unreleased.
 - `/seam/bridge/v1/bridge_client_sessions/create`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/get`: Seam Bridge Client only.
+- `/seam/bridge/v1/bridge_client_sessions/refresh_telemetry_token`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/report_status`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_connected_systems/list`: Seam Bridge Client only.
@@ -200,6 +205,7 @@ Items that are intentionally undocumented are not included in this section.
 - `device`
 - `device_provider`
 - `event`
+- `instant_key`
 - `network`
 - `noise_threshold`
 - `unmanaged_acs_access_group`
@@ -305,6 +311,13 @@ Items that are intentionally undocumented are not included in this section.
 - `device_provider.image_url`
 - `device_provider.provider_categories`
 - `event.event_type`
+- `instant_key.client_session_id`
+- `instant_key.created_at`
+- `instant_key.expires_at`
+- `instant_key.instant_key_id`
+- `instant_key.instant_key_url`
+- `instant_key.user_identity_id`
+- `instant_key.workspace_id`
 - `network.created_at`
 - `network.display_name`
 - `network.network_id`
@@ -865,6 +878,7 @@ These items are deprecated.
 - `/phones/simulate/create_sandbox_phone`
 - `/seam/bridge/v1/bridge_client_sessions/create`
 - `/seam/bridge/v1/bridge_client_sessions/get`
+- `/seam/bridge/v1/bridge_client_sessions/refresh_telemetry_token`
 - `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`
 - `/seam/bridge/v1/bridge_client_sessions/report_status`
 - `/seam/bridge/v1/bridge_connected_systems/list`
@@ -882,6 +896,7 @@ These items are deprecated.
 - `/unstable_locations/list`
 - `/unstable_locations/remove_devices`
 - `/unstable_locations/update`
+- `/user_identities/generate_instant_key`
 - `/user_identities/update`
 - `/webhooks/create`
 - `/webhooks/delete`
