@@ -42,77 +42,77 @@ Prior to using Seam to manage your devices, you may have used another lock manag
 
 ## Properties
 
-**`access_code_id`** *UUID*
+<a id="access_code_id"/>**`access_code_id`** *UUID*
 
 Unique identifier for the access code.
 
 
 ---
 
-**`code`** *String*
+<a id="code"/>**`code`** *String*
 
 Code used for access. Typically, a numeric or alphanumeric string.
 
 
 ---
 
-**`created_at`** *Datetime*
+<a id="created_at"/>**`created_at`** *Datetime*
 
 Date and time at which the access code was created.
 
 
 ---
 
-**`device_id`** *UUID*
+<a id="device_id"/>**`device_id`** *UUID*
 
 Unique identifier for the device associated with the access code.
 
 
 ---
 
-**`ends_at`** *Datetime*
+<a id="ends_at"/>**`ends_at`** *Datetime*
 
 Date and time after which the time-bound access code becomes inactive.
 
 
 ---
 
-[**`errors`**](./#errors) *List* *of Objects*
+<a id="errors"/>[**`errors`**](./#errors) *List* *of Objects*
 
 Errors associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 ---
 
-**`is_managed`** *Boolean*
+<a id="is_managed"/>**`is_managed`** *Boolean*
 
 Indicates that Seam does not manage the access code.
 
 
 ---
 
-**`name`** *String*
+<a id="name"/>**`name`** *String*
 
 Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
 
 
 ---
 
-**`starts_at`** *Datetime*
+<a id="starts_at"/>**`starts_at`** *Datetime*
 
 Date and time at which the time-bound access code becomes active.
 
 
 ---
 
-**`status`** *String*
+<a id="status"/>**`status`** *String*
 
 Current status of the access code within the operational lifecycle. `set` indicates that the code is active and operational.
 
 
 ---
 
-**`type`** *Enum*
+<a id="type"/>**`type`** *Enum*
 
 Nature of the access code. Values are `ongoing` for access codes that are active continuously until deactivated manually or `time_bound` for access codes that have a specific duration.
 
@@ -127,7 +127,7 @@ Nature of the access code. Values are `ongoing` for access codes that are active
 
 ---
 
-[**`warnings`**](./#warnings) *List* *of Objects*
+<a id="warnings"/>[**`warnings`**](./#warnings) *List* *of Objects*
 
 Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 

@@ -40,7 +40,7 @@ To learn whether your access control system supports access groups, see the corr
 
 ## Properties
 
-**`access_group_type`** *Enum*
+<a id="access_group_type"/>**`access_group_type`** *Enum*
 
 {% hint style="warning" %}
 **Deprecated**. Use `external_type`.
@@ -61,7 +61,7 @@ To learn whether your access control system supports access groups, see the corr
 
 ---
 
-**`access_group_type_display_name`** *String*
+<a id="access_group_type_display_name"/>**`access_group_type_display_name`** *String*
 
 {% hint style="warning" %}
 **Deprecated**. Use `external_type_display_name`.
@@ -70,33 +70,33 @@ To learn whether your access control system supports access groups, see the corr
 
 ---
 
-**`acs_access_group_id`** *UUID*
+<a id="acs_access_group_id"/>**`acs_access_group_id`** *UUID*
 
 ID of the access group.
 
 
 ---
 
-**`acs_system_id`** *UUID*
+<a id="acs_system_id"/>**`acs_system_id`** *UUID*
 
 ID of the access control system that contains the access group.
 
 
 ---
 
-**`created_at`** *Datetime*
+<a id="created_at"/>**`created_at`** *Datetime*
 
 Date and time at which the access group was created.
 
 
 ---
 
-**`display_name`** *String*
+<a id="display_name"/>**`display_name`** *String*
 
 
 ---
 
-**`external_type`** *Enum*
+<a id="external_type"/>**`external_type`** *Enum*
 
 Brand-specific terminology for the access group type.
 
@@ -115,26 +115,26 @@ Brand-specific terminology for the access group type.
 
 ---
 
-**`external_type_display_name`** *String*
+<a id="external_type_display_name"/>**`external_type_display_name`** *String*
 
 Display name that corresponds to the brand-specific terminology for the access group type.
 
 
 ---
 
-**`is_managed`** *Boolean*
+<a id="is_managed"/>**`is_managed`** *Boolean*
 
 
 ---
 
-**`name`** *String*
+<a id="name"/>**`name`** *String*
 
 Name of the access group.
 
 
 ---
 
-**`warnings`** *List* *of Objects*
+<a id="warnings"/>**`warnings`** *List* *of Objects*
 
 Warnings associated with the `acs_access_group`.
 
@@ -164,7 +164,7 @@ Warnings associated with the `acs_access_group`.
 
 ---
 
-**`workspace_id`** *UUID*
+<a id="workspace_id"/>**`workspace_id`** *UUID*
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the access group.
 
