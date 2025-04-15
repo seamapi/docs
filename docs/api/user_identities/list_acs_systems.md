@@ -16,12 +16,14 @@ POST /user_identities/list_acs_systems ⇒ { acs_systems: [acs_system, …] }
 
 <details>
 
-<summary>[Authentication Methods](https://docs.seam.co/latest/api/authentication)</summary>
+<summary>Authentication Methods</summary>
 
 - API key
 - Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
 </details>
 
 ## Request Parameters
