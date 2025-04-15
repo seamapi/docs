@@ -32,58 +32,61 @@ Represents a [user identity](https://docs.seam.co/latest/capability-guides/mobil
 
 ## Properties
 
-**`created_at`** *Datetime*
-
+<table>
+<tr><th>** Property **</th><th>** Description **</th></tr>
+<tr><td>**`created_at`** *Datetime*</td>
+<td>
 Date and time at which the user identity was created.
 
 
----
+</td></tr>
 
-**`display_name`** *String*
+<tr><td>**`display_name`** *String*</td>
+<td>
 
+</td></tr>
 
----
-
-**`email_address`** *String*
-
+<tr><td>**`email_address`** *String*</td>
+<td>
 Unique email address for the user identity.
 
 
----
+</td></tr>
 
-**`full_name`** *String*
+<tr><td>**`full_name`** *String*</td>
+<td>
 
+</td></tr>
 
----
-
-**`phone_number`** *String*
-
+<tr><td>**`phone_number`** *String*</td>
+<td>
 Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).
 
 
----
+</td></tr>
 
-**`user_identity_id`** *UUID*
-
+<tr><td>**`user_identity_id`** *UUID*</td>
+<td>
 ID of the user identity.
 
 
----
+</td></tr>
 
-**`user_identity_key`** *String*
-
+<tr><td>**`user_identity_key`** *String*</td>
+<td>
 Unique key for the user identity.
 
 
----
+</td></tr>
 
-**`workspace_id`** *UUID*
-
+<tr><td>**`workspace_id`** *UUID*</td>
+<td>
 ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the user identity.
 
 
----
+</td></tr>
 
+</table>
 ## Endpoints
 
 

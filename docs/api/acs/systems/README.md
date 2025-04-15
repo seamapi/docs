@@ -52,60 +52,62 @@ For details about the resources associated with an access control system, see th
 
 ## Properties
 
-**`acs_access_group_count`** *Number*
+<table>
+<tr><th>** Property **</th><th>** Description **</th></tr>
+<tr><td>**`acs_access_group_count`** *Number*</td>
+<td>
 
+</td></tr>
 
----
-
-**`acs_system_id`** *UUID*
-
+<tr><td>**`acs_system_id`** *UUID*</td>
+<td>
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 
----
+</td></tr>
 
-**`acs_user_count`** *Number*
+<tr><td>**`acs_user_count`** *Number*</td>
+<td>
 
+</td></tr>
 
----
-
-**`can_add_acs_users_to_acs_access_groups`** *Boolean*
-
+<tr><td>**`can_add_acs_users_to_acs_access_groups`** *Boolean*</td>
+<td>
 Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).
 
 
----
+</td></tr>
 
-**`can_automate_enrollment`** *Boolean*
-
+<tr><td>**`can_automate_enrollment`** *Boolean*</td>
+<td>
 Indicates whether it is possible to [launch enrollment automations](../../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 
----
+</td></tr>
 
-**`can_create_acs_access_groups`** *Boolean*
-
+<tr><td>**`can_create_acs_access_groups`** *Boolean*</td>
+<td>
 Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).
 
 
----
+</td></tr>
 
-**`can_remove_acs_users_from_acs_access_groups`** *Boolean*
-
+<tr><td>**`can_remove_acs_users_from_acs_access_groups`** *Boolean*</td>
+<td>
 Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).
 
 
----
+</td></tr>
 
-**`connected_account_id`** *UUID*
-
+<tr><td>**`connected_account_id`** *UUID*</td>
+<td>
 ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 
----
+</td></tr>
 
-**`connected_account_ids`** *List* *of UUIDs*
-
+<tr><td>**`connected_account_ids`** *List* *of UUIDs*</td>
+<td>
 IDs of the [connected accounts](../../../core-concepts/connected-accounts/README.md) associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 {% hint style="warning" %}
@@ -113,31 +115,31 @@ IDs of the [connected accounts](../../../core-concepts/connected-accounts/README
 {% endhint %}
 
 
----
+</td></tr>
 
-**`created_at`** *Datetime*
-
+<tr><td>**`created_at`** *Datetime*</td>
+<td>
 Date and time at which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) was created.
 
 
----
+</td></tr>
 
-**`default_credential_manager_acs_system_id`** *UUID*
-
+<tr><td>**`default_credential_manager_acs_system_id`** *UUID*</td>
+<td>
 ID of the default credential manager `acs_system` for this [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 
----
+</td></tr>
 
-[**`errors`**](./#errors) *List* *of Objects*
-
+<tr><td>[**`errors`**](./#errors) *List* *of Objects*</td>
+<td>
 Errors associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 
----
+</td></tr>
 
-**`external_type`** *Enum*
-
+<tr><td>**`external_type`** *Enum*</td>
+<td>
 Brand-specific terminology for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) type.
 
 <details>
@@ -160,38 +162,38 @@ Brand-specific terminology for the [access control system](https://docs.seam.co/
 </details>
 
 
----
+</td></tr>
 
-**`external_type_display_name`** *String*
-
+<tr><td>**`external_type_display_name`** *String*</td>
+<td>
 Display name that corresponds to the brand-specific terminology for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) type.
 
 
----
+</td></tr>
 
-**`image_alt_text`** *String*
-
+<tr><td>**`image_alt_text`** *String*</td>
+<td>
 Alternative text for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) image.
 
 
----
+</td></tr>
 
-**`image_url`** *String*
-
+<tr><td>**`image_url`** *String*</td>
+<td>
 URL for the image that represents the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 
----
+</td></tr>
 
-**`is_credential_manager`** *Boolean*
-
+<tr><td>**`is_credential_manager`** *Boolean*</td>
+<td>
 Indicates whether the `acs_system` is a credential manager.
 
 
----
+</td></tr>
 
-**`location`** *Object*
-
+<tr><td>**`location`** *Object*</td>
+<td>
 <details>
 
 <summary>Child Properties</summary>
@@ -204,17 +206,17 @@ Indicates whether the `acs_system` is a credential manager.
 </details>
 
 
----
+</td></tr>
 
-**`name`** *String*
-
+<tr><td>**`name`** *String*</td>
+<td>
 Name of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 
----
+</td></tr>
 
-**`system_type`** *Enum*
-
+<tr><td>**`system_type`** *Enum*</td>
+<td>
 {% hint style="warning" %}
 **Deprecated**. Use `external_type`.
 {% endhint %}
@@ -239,19 +241,19 @@ Name of the [access control system](https://docs.seam.co/latest/capability-guide
 </details>
 
 
----
+</td></tr>
 
-**`system_type_display_name`** *String*
-
+<tr><td>**`system_type_display_name`** *String*</td>
+<td>
 {% hint style="warning" %}
 **Deprecated**. Use `external_type_display_name`.
 {% endhint %}
 
 
----
+</td></tr>
 
-**`visionline_metadata`** *Object*
-
+<tr><td>**`visionline_metadata`** *Object*</td>
+<td>
 <details>
 
 <summary>Child Properties</summary>
@@ -276,22 +278,23 @@ Name of the [access control system](https://docs.seam.co/latest/capability-guide
 </details>
 
 
----
+</td></tr>
 
-[**`warnings`**](./#warnings) *List* *of Objects*
-
+<tr><td>[**`warnings`**](./#warnings) *List* *of Objects*</td>
+<td>
 Warnings associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 
----
+</td></tr>
 
-**`workspace_id`** *UUID*
-
+<tr><td>**`workspace_id`** *UUID*</td>
+<td>
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 
----
+</td></tr>
 
+</table>
 
 ## Errors
 

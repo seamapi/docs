@@ -43,36 +43,38 @@ To verify if your access control system requires a card encoder, see the corresp
 
 ## Properties
 
-**`acs_encoder_id`** *UUID*
-
+<table>
+<tr><th>** Property **</th><th>** Description **</th></tr>
+<tr><td>**`acs_encoder_id`** *UUID*</td>
+<td>
 ID of the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners.
 
 
----
+</td></tr>
 
-**`acs_system_id`** *UUID*
-
+<tr><td>**`acs_system_id`** *UUID*</td>
+<td>
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 
----
+</td></tr>
 
-**`created_at`** *Datetime*
-
+<tr><td>**`created_at`** *Datetime*</td>
+<td>
 Date and time at which the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) was created.
 
 
----
+</td></tr>
 
-**`display_name`** *String*
-
+<tr><td>**`display_name`** *String*</td>
+<td>
 Display name for the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 
----
+</td></tr>
 
-**`errors`** *List* *of Objects*
-
+<tr><td>**`errors`** *List* *of Objects*</td>
+<td>
 Errors associated with the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 <details>
@@ -99,15 +101,16 @@ Errors associated with the [encoder](../../../capability-guides/access-systems/w
 </details>
 
 
----
+</td></tr>
 
-**`workspace_id`** *UUID*
-
+<tr><td>**`workspace_id`** *UUID*</td>
+<td>
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 
----
+</td></tr>
 
+</table>
 
 ## Events
 

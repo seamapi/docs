@@ -29,41 +29,44 @@ Represents an [enrollment automation](https://docs.seam.co/latest/capability-gui
 
 ## Properties
 
-**`created_at`** *Datetime*
-
+<table>
+<tr><th>** Property **</th><th>** Description **</th></tr>
+<tr><td>**`created_at`** *Datetime*</td>
+<td>
 Date and time at which the enrollment automation was created.
 
 
----
+</td></tr>
 
-**`credential_manager_acs_system_id`** *UUID*
-
+<tr><td>**`credential_manager_acs_system_id`** *UUID*</td>
+<td>
 ID of the associated [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) that serves as the credential manager.
 
 
----
+</td></tr>
 
-**`enrollment_automation_id`** *UUID*
-
+<tr><td>**`enrollment_automation_id`** *UUID*</td>
+<td>
 ID of the enrollment automation.
 
 
----
+</td></tr>
 
-**`user_identity_id`** *UUID*
-
+<tr><td>**`user_identity_id`** *UUID*</td>
+<td>
 ID of the associated [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 
----
+</td></tr>
 
-**`workspace_id`** *UUID*
-
+<tr><td>**`workspace_id`** *UUID*</td>
+<td>
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the enrollment automation.
 
 
----
+</td></tr>
 
+</table>
 
 ## Events
 

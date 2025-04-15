@@ -51,134 +51,136 @@ In addition, for certain devices, Seam also supports [offline access codes](http
 
 ## Properties
 
-**`access_code_id`** *UUID*
-
+<table>
+<tr><th>** Property **</th><th>** Description **</th></tr>
+<tr><td>**`access_code_id`** *UUID*</td>
+<td>
 Unique identifier for the access code.
 
 
----
+</td></tr>
 
-**`code`** *String*
-
+<tr><td>**`code`** *String*</td>
+<td>
 Code used for access. Typically, a numeric or alphanumeric string.
 
 
----
+</td></tr>
 
-**`common_code_key`** *String*
-
+<tr><td>**`common_code_key`** *String*</td>
+<td>
 Unique identifier for a group of access codes that share the same code.
 
 
----
+</td></tr>
 
-**`created_at`** *Datetime*
-
+<tr><td>**`created_at`** *Datetime*</td>
+<td>
 Date and time at which the access code was created.
 
 
----
+</td></tr>
 
-**`device_id`** *UUID*
-
+<tr><td>**`device_id`** *UUID*</td>
+<td>
 Unique identifier for the device associated with the access code.
 
 
----
+</td></tr>
 
-**`ends_at`** *Datetime*
-
+<tr><td>**`ends_at`** *Datetime*</td>
+<td>
 Date and time after which the time-bound access code becomes inactive.
 
 
----
+</td></tr>
 
-[**`errors`**](./#errors) *List* *of Objects*
-
+<tr><td>[**`errors`**](./#errors) *List* *of Objects*</td>
+<td>
 Errors associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
----
+</td></tr>
 
-**`is_backup`** *Boolean*
-
+<tr><td>**`is_backup`** *Boolean*</td>
+<td>
 Indicates whether the access code is a backup code.
 
 
----
+</td></tr>
 
-**`is_backup_access_code_available`** *Boolean*
-
+<tr><td>**`is_backup_access_code_available`** *Boolean*</td>
+<td>
 Indicates whether a backup access code is available for use if the primary access code is lost or compromised.
 
 
----
+</td></tr>
 
-**`is_external_modification_allowed`** *Boolean*
-
+<tr><td>**`is_external_modification_allowed`** *Boolean*</td>
+<td>
 Indicates whether changes to the access code from external sources are permitted.
 
 
----
+</td></tr>
 
-**`is_managed`** *Boolean*
-
+<tr><td>**`is_managed`** *Boolean*</td>
+<td>
 Indicates whether Seam manages the access code.
 
 
----
+</td></tr>
 
-**`is_offline_access_code`** *Boolean*
-
+<tr><td>**`is_offline_access_code`** *Boolean*</td>
+<td>
 Indicates whether the access code is intended for use in offline scenarios. If `true`, this code can be created on a device without a network connection.
 
 
----
+</td></tr>
 
-**`is_one_time_use`** *Boolean*
-
+<tr><td>**`is_one_time_use`** *Boolean*</td>
+<td>
 Indicates whether the access code can only be used once. If `true`, the code becomes invalid after the first use.
 
 
----
+</td></tr>
 
-**`is_scheduled_on_device`** *Boolean*
-
+<tr><td>**`is_scheduled_on_device`** *Boolean*</td>
+<td>
 Indicates whether the code is set on the device according to a preconfigured schedule.
 
 
----
+</td></tr>
 
-**`is_waiting_for_code_assignment`** *Boolean*
-
+<tr><td>**`is_waiting_for_code_assignment`** *Boolean*</td>
+<td>
 Indicates whether the access code is waiting for a code assignment.
 
 
----
+</td></tr>
 
-**`name`** *String*
-
+<tr><td>**`name`** *String*</td>
+<td>
 Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
 
 
----
+</td></tr>
 
-**`pulled_backup_access_code_id`** *UUID*
-
+<tr><td>**`pulled_backup_access_code_id`** *UUID*</td>
+<td>
 Identifier of the pulled backup access code. Used to associate the pulled backup access code with the original access code.
 
 
----
+</td></tr>
 
-**`starts_at`** *Datetime*
-
+<tr><td>**`starts_at`** *Datetime*</td>
+<td>
 Date and time at which the time-bound access code becomes active.
 
 
----
+</td></tr>
 
-**`status`** *Enum*
-
+<tr><td>**`status`** *Enum*</td>
+<td>
 Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting.
 
 <details>
@@ -193,10 +195,10 @@ Current status of the access code within the operational lifecycle. Values are `
 </details>
 
 
----
+</td></tr>
 
-**`type`** *Enum*
-
+<tr><td>**`type`** *Enum*</td>
+<td>
 Nature of the access code. Values are `ongoing` for access codes that are active continuously until deactivated manually or `time_bound` for access codes that have a specific duration.
 
 <details>
@@ -208,15 +210,16 @@ Nature of the access code. Values are `ongoing` for access codes that are active
 </details>
 
 
----
+</td></tr>
 
-[**`warnings`**](./#warnings) *List* *of Objects*
-
+<tr><td>[**`warnings`**](./#warnings) *List* *of Objects*</td>
+<td>
 Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
----
+</td></tr>
 
+</table>
 
 ## Errors
 

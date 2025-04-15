@@ -37,22 +37,24 @@ In an access control system, an entrance is a secured door, gate, zone, or other
 
 ## Properties
 
-**`acs_entrance_id`** *UUID*
-
+<table>
+<tr><th>** Property **</th><th>** Description **</th></tr>
+<tr><td>**`acs_entrance_id`** *UUID*</td>
+<td>
 ID of the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 
----
+</td></tr>
 
-**`acs_system_id`** *UUID*
-
+<tr><td>**`acs_system_id`** *UUID*</td>
+<td>
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 
----
+</td></tr>
 
-**`assa_abloy_vostio_metadata`** *Object*
-
+<tr><td>**`assa_abloy_vostio_metadata`** *Object*</td>
+<td>
 ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 <details>
@@ -92,24 +94,24 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
 </details>
 
 
----
+</td></tr>
 
-**`created_at`** *Datetime*
-
+<tr><td>**`created_at`** *Datetime*</td>
+<td>
 Date and time at which the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md) was created.
 
 
----
+</td></tr>
 
-**`display_name`** *String*
-
+<tr><td>**`display_name`** *String*</td>
+<td>
 Display name for the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 
----
+</td></tr>
 
-**`dormakaba_community_metadata`** *Object*
-
+<tr><td>**`dormakaba_community_metadata`** *Object*</td>
+<td>
 dormakaba Community-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 <details>
@@ -122,10 +124,10 @@ dormakaba Community-specific metadata associated with the [entrance](../../../ca
 </details>
 
 
----
+</td></tr>
 
-**`errors`** *List* *of Objects*
-
+<tr><td>**`errors`** *List* *of Objects*</td>
+<td>
 Errors associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 <details>
@@ -146,10 +148,10 @@ Errors associated with the [entrance](../../../capability-guides/access-systems/
 </details>
 
 
----
+</td></tr>
 
-**`latch_metadata`** *Object*
-
+<tr><td>**`latch_metadata`** *Object*</td>
+<td>
 Latch-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 <details>
@@ -174,10 +176,10 @@ Latch-specific metadata associated with the [entrance](../../../capability-guide
 </details>
 
 
----
+</td></tr>
 
-**`salto_ks_metadata`** *Object*
-
+<tr><td>**`salto_ks_metadata`** *Object*</td>
+<td>
 Salto KS-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 <details>
@@ -218,10 +220,10 @@ Salto KS-specific metadata associated with the [entrance](../../../capability-gu
 </details>
 
 
----
+</td></tr>
 
-**`salto_space_metadata`** *Object*
-
+<tr><td>**`salto_space_metadata`** *Object*</td>
+<td>
 Salto Space-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 <details>
@@ -242,10 +244,10 @@ Salto Space-specific metadata associated with the [entrance](../../../capability
 </details>
 
 
----
+</td></tr>
 
-**`visionline_metadata`** *Object*
-
+<tr><td>**`visionline_metadata`** *Object*</td>
+<td>
 Visionline-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 <details>
@@ -296,8 +298,9 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 </details>
 
 
----
+</td></tr>
 
+</table>
 
 ## Events
 

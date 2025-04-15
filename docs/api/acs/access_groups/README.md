@@ -40,8 +40,10 @@ To learn whether your access control system supports access groups, see the corr
 
 ## Properties
 
-**`access_group_type`** *Enum*
-
+<table>
+<tr><th>** Property **</th><th>** Description **</th></tr>
+<tr><td>**`access_group_type`** *Enum*</td>
+<td>
 {% hint style="warning" %}
 **Deprecated**. Use `external_type`.
 {% endhint %}
@@ -59,45 +61,45 @@ To learn whether your access control system supports access groups, see the corr
 </details>
 
 
----
+</td></tr>
 
-**`access_group_type_display_name`** *String*
-
+<tr><td>**`access_group_type_display_name`** *String*</td>
+<td>
 {% hint style="warning" %}
 **Deprecated**. Use `external_type_display_name`.
 {% endhint %}
 
 
----
+</td></tr>
 
-**`acs_access_group_id`** *UUID*
-
+<tr><td>**`acs_access_group_id`** *UUID*</td>
+<td>
 ID of the access group.
 
 
----
+</td></tr>
 
-**`acs_system_id`** *UUID*
-
+<tr><td>**`acs_system_id`** *UUID*</td>
+<td>
 ID of the access control system that contains the access group.
 
 
----
+</td></tr>
 
-**`created_at`** *Datetime*
-
+<tr><td>**`created_at`** *Datetime*</td>
+<td>
 Date and time at which the access group was created.
 
 
----
+</td></tr>
 
-**`display_name`** *String*
+<tr><td>**`display_name`** *String*</td>
+<td>
 
+</td></tr>
 
----
-
-**`external_type`** *Enum*
-
+<tr><td>**`external_type`** *Enum*</td>
+<td>
 Brand-specific terminology for the access group type.
 
 <details>
@@ -113,29 +115,29 @@ Brand-specific terminology for the access group type.
 </details>
 
 
----
+</td></tr>
 
-**`external_type_display_name`** *String*
-
+<tr><td>**`external_type_display_name`** *String*</td>
+<td>
 Display name that corresponds to the brand-specific terminology for the access group type.
 
 
----
+</td></tr>
 
-**`is_managed`** *Boolean*
+<tr><td>**`is_managed`** *Boolean*</td>
+<td>
 
+</td></tr>
 
----
-
-**`name`** *String*
-
+<tr><td>**`name`** *String*</td>
+<td>
 Name of the access group.
 
 
----
+</td></tr>
 
-**`warnings`** *List* *of Objects*
-
+<tr><td>**`warnings`** *List* *of Objects*</td>
+<td>
 Warnings associated with the `acs_access_group`.
 
 <details>
@@ -162,15 +164,16 @@ Warnings associated with the `acs_access_group`.
 </details>
 
 
----
+</td></tr>
 
-**`workspace_id`** *UUID*
-
+<tr><td>**`workspace_id`** *UUID*</td>
+<td>
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the access group.
 
 
----
+</td></tr>
 
+</table>
 
 ## Events
 

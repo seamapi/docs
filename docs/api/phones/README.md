@@ -34,29 +34,31 @@ Represents an app user's mobile phone.
 
 ## Properties
 
-**`created_at`** *Datetime*
-
+<table>
+<tr><th>** Property **</th><th>** Description **</th></tr>
+<tr><td>**`created_at`** *Datetime*</td>
+<td>
 Date and time at which the `phone` was created.
 
 
----
+</td></tr>
 
-**`custom_metadata`** *Record*
-
+<tr><td>**`custom_metadata`** *Record*</td>
+<td>
 Optional [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) for the phone.
 
 
----
+</td></tr>
 
-**`device_id`** *UUID*
-
+<tr><td>**`device_id`** *UUID*</td>
+<td>
 ID of the `phone`.
 
 
----
+</td></tr>
 
-**`device_type`** *Enum*
-
+<tr><td>**`device_type`** *Enum*</td>
+<td>
 Type of phone.
 
 <details>
@@ -68,17 +70,17 @@ Type of phone.
 </details>
 
 
----
+</td></tr>
 
-**`display_name`** *String*
-
+<tr><td>**`display_name`** *String*</td>
+<td>
 Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name` otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.
 
 
----
+</td></tr>
 
-**`errors`** *List* *of Objects*
-
+<tr><td>**`errors`** *List* *of Objects*</td>
+<td>
 Errors associated with the `phone`.
 
 <details>
@@ -95,17 +97,17 @@ Errors associated with the `phone`.
 </details>
 
 
----
+</td></tr>
 
-**`nickname`** *String*
-
+<tr><td>**`nickname`** *String*</td>
+<td>
 Optional nickname to describe the phone, settable through Seam.
 
 
----
+</td></tr>
 
-**`properties`** *Object*
-
+<tr><td>**`properties`** *Object*</td>
+<td>
 Properties of the phone.
 
 <details>
@@ -156,10 +158,10 @@ Properties of the phone.
 </details>
 
 
----
+</td></tr>
 
-**`warnings`** *List* *of Objects*
-
+<tr><td>**`warnings`** *List* *of Objects*</td>
+<td>
 Warnings associated with the `phone`.
 
 <details>
@@ -176,15 +178,16 @@ Warnings associated with the `phone`.
 </details>
 
 
----
+</td></tr>
 
-**`workspace_id`** *UUID*
-
+<tr><td>**`workspace_id`** *UUID*</td>
+<td>
 ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the `phone`.
 
 
----
+</td></tr>
 
+</table>
 
 ## Events
 
