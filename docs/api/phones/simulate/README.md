@@ -5,7 +5,7 @@
 ## Endpoints
 
 <table>
-<tr><th style="width:25%">Endpoint</th><th>Description</th></tr>
+<tr><th width="250">Endpoint</th><th>Description</th></tr>
 
 <tr><td><a href="./create_sandbox_phone.md"><strong><code>/phones/simulate/create_sandbox_phone</code></strong></a></td>
 

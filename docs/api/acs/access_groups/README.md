@@ -41,7 +41,7 @@ To learn whether your access control system supports access groups, see the corr
 ## Properties
 
 <table>
-<tr><th style="width:25%">Property</th><th>Description</th></tr>
+<tr><th width="250">Property</th><th>Description</th></tr>
 <tr><td><strong><code>access_group_type</code></strong> <i>Enum</i></td>
 <td>
 {% hint style="warning" %}
@@ -178,7 +178,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 ## Events
 
 <table>
-<tr><th style="width:25%">Event</th><th>Description</th></tr>
+<tr><th width="250">Event</th><th>Description</th></tr>
 <tr><td><strong><code>acs_access_group.deleted</code></strong></td>
 <td>
 An ACS access group was deleted.
@@ -238,7 +238,7 @@ An ACS access group was deleted.
 ## Endpoints
 
 <table>
-<tr><th style="width:25%">Endpoint</th><th>Description</th></tr>
+<tr><th width="250">Endpoint</th><th>Description</th></tr>
 
 <tr><td><a href="./add_user.md"><strong><code>/acs/access_groups/add_user</code></strong></a></td>
 

@@ -55,7 +55,7 @@ For each `acs_credential`, you define the access method. You can also specify ad
 ## Properties
 
 <table>
-<tr><th style="width:25%">Property</th><th>Description</th></tr>
+<tr><th width="250">Property</th><th>Description</th></tr>
 <tr><td><strong><code>access_method</code></strong> <i>Enum</i></td>
 <td>
 Access method for the [credential](../../../capability-guides/access-systems/managing-credentials.md). Supported values: `code`, `card`, `mobile_key`.
@@ -345,7 +345,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 ## Warnings
 
 <table>
-<tr><th style="width:25%">Warning</th><th>Description</th></tr>
+<tr><th width="250">Warning</th><th>Description</th></tr>
 <tr><td><strong><code>waiting_to_be_issued</code></strong></td>
 
 <td>Indicates that the [credential](../../../capability-guides/access-systems/managing-credentials.md) is waiting to be issued.</td>
@@ -375,7 +375,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 ## Events
 
 <table>
-<tr><th style="width:25%">Event</th><th>Description</th></tr>
+<tr><th width="250">Event</th><th>Description</th></tr>
 <tr><td><strong><code>acs_credential.deleted</code></strong></td>
 <td>
 An [ACS credential](../../../capability-guides/access-systems/managing-credentials.md) was deleted.
@@ -597,7 +597,7 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 ## Endpoints
 
 <table>
-<tr><th style="width:25%">Endpoint</th><th>Description</th></tr>
+<tr><th width="250">Endpoint</th><th>Description</th></tr>
 
 <tr><td><a href="./assign.md"><strong><code>/acs/credentials/assign</code></strong></a></td>
 

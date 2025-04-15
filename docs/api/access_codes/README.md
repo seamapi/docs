@@ -52,7 +52,7 @@ In addition, for certain devices, Seam also supports [offline access codes](http
 ## Properties
 
 <table>
-<tr><th style="width:25%">Property</th><th>Description</th></tr>
+<tr><th width="250">Property</th><th>Description</th></tr>
 <tr><td><strong><code>access_code_id</code></strong> <i>UUID</i></td>
 <td>
 Unique identifier for the access code.
@@ -224,7 +224,7 @@ Warnings associated with the [access code](https://docs.seam.co/latest/capabilit
 ## Errors
 
 <table>
-<tr><th style="width:25%">Error</th><th>Description</th></tr>
+<tr><th width="250">Error</th><th>Description</th></tr>
 <tr><td><strong><code>smartthings_failed_to_set_access_code</code></strong></td>
 
 <td>Failed to set code on SmartThings device.</td>
@@ -387,7 +387,7 @@ Warnings associated with the [access code](https://docs.seam.co/latest/capabilit
 ## Warnings
 
 <table>
-<tr><th style="width:25%">Warning</th><th>Description</th></tr>
+<tr><th width="250">Warning</th><th>Description</th></tr>
 <tr><td><strong><code>smartthings_failed_to_set_access_code</code></strong></td>
 
 <td>Failed to set code on SmartThings device.</td>
@@ -441,7 +441,7 @@ Warnings associated with the [access code](https://docs.seam.co/latest/capabilit
 ## Events
 
 <table>
-<tr><th style="width:25%">Event</th><th>Description</th></tr>
+<tr><th width="250">Event</th><th>Description</th></tr>
 <tr><td><strong><code>access_code.created</code></strong></td>
 <td>
 An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was created.
@@ -1421,7 +1421,7 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 ## Endpoints
 
 <table>
-<tr><th style="width:25%">Endpoint</th><th>Description</th></tr>
+<tr><th width="250">Endpoint</th><th>Description</th></tr>
 
 <tr><td><a href="./create.md"><strong><code>/access_codes/create</code></strong></a></td>
 

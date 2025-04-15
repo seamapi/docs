@@ -43,7 +43,7 @@ Prior to using Seam to manage your devices, you may have used another lock manag
 ## Properties
 
 <table>
-<tr><th style="width:25%">Property</th><th>Description</th></tr>
+<tr><th width="250">Property</th><th>Description</th></tr>
 <tr><td><strong><code>access_code_id</code></strong> <i>UUID</i></td>
 <td>
 Unique identifier for the access code.
@@ -141,7 +141,7 @@ Warnings associated with the [access code](https://docs.seam.co/latest/capabilit
 ## Errors
 
 <table>
-<tr><th style="width:25%">Error</th><th>Description</th></tr>
+<tr><th width="250">Error</th><th>Description</th></tr>
 <tr><td><strong><code>smartthings_failed_to_set_access_code</code></strong></td>
 
 <td>Failed to set code on SmartThings device.</td>
@@ -304,7 +304,7 @@ Warnings associated with the [access code](https://docs.seam.co/latest/capabilit
 ## Warnings
 
 <table>
-<tr><th style="width:25%">Warning</th><th>Description</th></tr>
+<tr><th width="250">Warning</th><th>Description</th></tr>
 <tr><td><strong><code>smartthings_failed_to_set_access_code</code></strong></td>
 
 <td>Failed to set code on SmartThings device.</td>
@@ -359,7 +359,7 @@ Warnings associated with the [access code](https://docs.seam.co/latest/capabilit
 ## Endpoints
 
 <table>
-<tr><th style="width:25%">Endpoint</th><th>Description</th></tr>
+<tr><th width="250">Endpoint</th><th>Description</th></tr>
 
 <tr><td><a href="./convert_to_managed.md"><strong><code>/access_codes/unmanaged/convert_to_managed</code></strong></a></td>
 

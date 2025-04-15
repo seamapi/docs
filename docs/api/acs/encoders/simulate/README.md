@@ -5,7 +5,7 @@
 ## Endpoints
 
 <table>
-<tr><th style="width:25%">Endpoint</th><th>Description</th></tr>
+<tr><th width="250">Endpoint</th><th>Description</th></tr>
 
 <tr><td><a href="./next_credential_encode_will_fail.md"><strong><code>/acs/encoders/simulate/next_credential_encode_will_fail</code></strong></a></td>
 

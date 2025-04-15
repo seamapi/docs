@@ -5,7 +5,7 @@
 ## Endpoints
 
 <table>
-<tr><th style="width:25%">Endpoint</th><th>Description</th></tr>
+<tr><th width="250">Endpoint</th><th>Description</th></tr>
 
 <tr><td><a href="./activate_climate_preset.md"><strong><code>/thermostats/activate_climate_preset</code></strong></a></td>
 

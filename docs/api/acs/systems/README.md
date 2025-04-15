@@ -53,7 +53,7 @@ For details about the resources associated with an access control system, see th
 ## Properties
 
 <table>
-<tr><th style="width:25%">Property</th><th>Description</th></tr>
+<tr><th width="250">Property</th><th>Description</th></tr>
 <tr><td><strong><code>acs_access_group_count</code></strong> <i>Number</i></td>
 <td>
 
@@ -299,7 +299,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 ## Errors
 
 <table>
-<tr><th style="width:25%">Error</th><th>Description</th></tr>
+<tr><th width="250">Error</th><th>Description</th></tr>
 <tr><td><strong><code>seam_bridge_disconnected</code></strong></td>
 
 <td>Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
@@ -338,7 +338,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 ## Warnings
 
 <table>
-<tr><th style="width:25%">Warning</th><th>Description</th></tr>
+<tr><th width="250">Warning</th><th>Description</th></tr>
 <tr><td><strong><code>salto_ks_subscription_limit_almost_reached</code></strong></td>
 
 <td>Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site to rectify the issue.</td>
@@ -352,7 +352,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 ## Events
 
 <table>
-<tr><th style="width:25%">Event</th><th>Description</th></tr>
+<tr><th width="250">Event</th><th>Description</th></tr>
 <tr><td><strong><code>acs_system.connected</code></strong></td>
 <td>
 An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) was connected.
@@ -508,7 +508,7 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 ## Endpoints
 
 <table>
-<tr><th style="width:25%">Endpoint</th><th>Description</th></tr>
+<tr><th width="250">Endpoint</th><th>Description</th></tr>
 
 <tr><td><a href="./get.md"><strong><code>/acs/systems/get</code></strong></a></td>
 

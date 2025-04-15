@@ -38,7 +38,7 @@ In an access control system, an entrance is a secured door, gate, zone, or other
 ## Properties
 
 <table>
-<tr><th style="width:25%">Property</th><th>Description</th></tr>
+<tr><th width="250">Property</th><th>Description</th></tr>
 <tr><td><strong><code>acs_entrance_id</code></strong> <i>UUID</i></td>
 <td>
 ID of the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
@@ -305,7 +305,7 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 ## Events
 
 <table>
-<tr><th style="width:25%">Event</th><th>Description</th></tr>
+<tr><th width="250">Event</th><th>Description</th></tr>
 <tr><td><strong><code>acs_entrance.added</code></strong></td>
 <td>
 An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was added.
@@ -419,7 +419,7 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 ## Endpoints
 
 <table>
-<tr><th style="width:25%">Endpoint</th><th>Description</th></tr>
+<tr><th width="250">Endpoint</th><th>Description</th></tr>
 
 <tr><td><a href="./get.md"><strong><code>/acs/entrances/get</code></strong></a></td>
 

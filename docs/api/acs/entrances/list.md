@@ -29,7 +29,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Request Parameters
 
 <table>
-<tr><th style="width:25%">Parameter</th><th>Description</th></tr>
+<tr><th width="250">Parameter</th><th>Description</th></tr>
 <tr><td><strong><code>acs_credential_id</code></strong> <i>String</i></td>
 <td>
 </td></tr>

@@ -50,7 +50,7 @@ For details about how to configure `acs_user`s in your access control system, se
 ## Properties
 
 <table>
-<tr><th style="width:25%">Property</th><th>Description</th></tr>
+<tr><th width="250">Property</th><th>Description</th></tr>
 <tr><td><strong><code>access_schedule</code></strong> <i>Object</i></td>
 <td>
 `starts_at` and `ends_at` timestamps for the [ACS user's](https://docs.seam.co/latest/capability-guides/access-systems/user-management) access.
@@ -231,7 +231,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 ## Errors
 
 <table>
-<tr><th style="width:25%">Error</th><th>Description</th></tr>
+<tr><th width="250">Error</th><th>Description</th></tr>
 <tr><td><strong><code>deleted_externally</code></strong></td>
 
 <td>Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted from the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) outside of Seam.</td>
@@ -257,7 +257,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 ## Warnings
 
 <table>
-<tr><th style="width:25%">Warning</th><th>Description</th></tr>
+<tr><th width="250">Warning</th><th>Description</th></tr>
 <tr><td><strong><code>being_deleted</code></strong></td>
 
 <td>Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is being deleted from the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is a temporary state, and the ACS user will be deleted shortly.</td>
@@ -275,7 +275,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 ## Events
 
 <table>
-<tr><th style="width:25%">Event</th><th>Description</th></tr>
+<tr><th width="250">Event</th><th>Description</th></tr>
 <tr><td><strong><code>acs_user.deleted</code></strong></td>
 <td>
 An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted.
@@ -335,7 +335,7 @@ An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-
 ## Endpoints
 
 <table>
-<tr><th style="width:25%">Endpoint</th><th>Description</th></tr>
+<tr><th width="250">Endpoint</th><th>Description</th></tr>
 
 <tr><td><a href="./add_to_access_group.md"><strong><code>/acs/users/add_to_access_group</code></strong></a></td>
 

@@ -33,7 +33,7 @@ Represents a [user identity](https://docs.seam.co/latest/capability-guides/mobil
 ## Properties
 
 <table>
-<tr><th style="width:25%">Property</th><th>Description</th></tr>
+<tr><th width="250">Property</th><th>Description</th></tr>
 <tr><td><strong><code>created_at</code></strong> <i>Datetime</i></td>
 <td>
 Date and time at which the user identity was created.
@@ -92,7 +92,7 @@ ID of the [workspace](../../core-concepts/workspaces/README.md) that contains th
 ## Endpoints
 
 <table>
-<tr><th style="width:25%">Endpoint</th><th>Description</th></tr>
+<tr><th width="250">Endpoint</th><th>Description</th></tr>
 
 <tr><td><a href="./add_acs_user.md"><strong><code>/user_identities/add_acs_user</code></strong></a></td>
 
