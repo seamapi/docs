@@ -10,14 +10,14 @@ PATCH /user_identities/update ⇒ void
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`user_identity_id`** *String* (Required)
 
@@ -48,6 +48,6 @@ Unique key for the user identity.
 ---
 
 
-## Return Type
+## Response
 
 void

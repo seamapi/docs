@@ -10,7 +10,7 @@ POST /thermostats/schedules/create ⇒ { thermostat_schedule }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -18,7 +18,7 @@ POST /thermostats/schedules/create ⇒ { thermostat_schedule }
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`climate_preset_key`** *String* (Required)
 
@@ -63,7 +63,7 @@ User-friendly name to identify the thermostat schedule.
 ---
 
 
-## Return Type
+## Response
 
 [thermostat\_schedule](./)
 {% tabs %}

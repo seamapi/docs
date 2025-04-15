@@ -10,14 +10,14 @@ POST /thermostats/simulate/hvac_mode_adjusted ⇒ void
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`device_id`** *String* (Required)
 
@@ -56,6 +56,6 @@ Desired simulated heating [set point](../../../capability-guides/thermostats/und
 ---
 
 
-## Return Type
+## Response
 
 void

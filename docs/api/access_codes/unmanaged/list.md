@@ -10,7 +10,7 @@ POST /access_codes/unmanaged/list â‡’ { access_codes: [unmanaged_access_code, â€
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -18,7 +18,7 @@ POST /access_codes/unmanaged/list â‡’ { access_codes: [unmanaged_access_code, â€
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`device_id`** *String* (Required)
 
@@ -33,7 +33,7 @@ Your user ID for the user by which to filter unmanaged access codes.
 ---
 
 
-## Return Type
+## Response
 
 Array of [unmanaged\_access\_codes](./)
 {% tabs %}

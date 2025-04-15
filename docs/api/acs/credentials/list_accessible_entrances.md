@@ -10,14 +10,14 @@ POST /acs/credentials/list_accessible_entrances ⇒ { acs_entrances: [acs_entran
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`acs_credential_id`** *String* (Required)
 
@@ -26,7 +26,7 @@ ID of the credential for which you want to retrieve all entrances to which this 
 ---
 
 
-## Return Type
+## Response
 
 Array of [acs\_entrances](./)
 {% tabs %}

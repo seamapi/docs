@@ -10,7 +10,7 @@ POST /thermostats/create_climate_preset ⇒ void
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -18,7 +18,7 @@ POST /thermostats/create_climate_preset ⇒ void
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`climate_preset_key`** *String* (Required)
 
@@ -81,7 +81,7 @@ User-friendly name to identify the [climate preset](../../capability-guides/ther
 ---
 
 
-## Return Type
+## Response
 
 void
 

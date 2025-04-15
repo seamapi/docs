@@ -12,7 +12,7 @@ PUT /access_codes/update ⇒ void
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -20,7 +20,7 @@ PUT /access_codes/update ⇒ void
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`access_code_id`** *String* (Required)
 
@@ -127,6 +127,6 @@ Indicates whether to use a [backup access code pool](https://docs.seam.co/latest
 ---
 
 
-## Return Type
+## Response
 
 void

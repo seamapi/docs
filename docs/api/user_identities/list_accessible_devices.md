@@ -10,14 +10,14 @@ POST /user_identities/list_accessible_devices ⇒ { devices: [device, …] }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`user_identity_id`** *String* (Required)
 
@@ -26,7 +26,7 @@ ID of the user identity for which you want to retrieve all accessible devices.
 ---
 
 
-## Return Type
+## Response
 
 Array of [devices](./)
 {% tabs %}

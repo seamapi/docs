@@ -10,7 +10,7 @@ POST /access_codes/delete ⇒ void
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -18,7 +18,7 @@ POST /access_codes/delete ⇒ void
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`access_code_id`** *String* (Required)
 
@@ -33,6 +33,6 @@ ID of the device for which to delete the access code.
 ---
 
 
-## Return Type
+## Response
 
 void

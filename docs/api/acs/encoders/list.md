@@ -10,14 +10,14 @@ POST /acs/encoders/list ⇒ { acs_encoders: [acs_encoder, …] }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`acs_encoder_ids`** *Array* *of UUIDs*
 
@@ -44,7 +44,7 @@ Number of `acs_encoders` to return.
 ---
 
 
-## Return Type
+## Response
 
 Array of [acs\_encoders](./)
 {% tabs %}

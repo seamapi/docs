@@ -12,14 +12,14 @@ POST /acs/systems/get ⇒ { acs_system }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`acs_system_id`** *String* (Required)
 
@@ -28,7 +28,7 @@ ID of the desired access control system.
 ---
 
 
-## Return Type
+## Response
 
 [acs\_system](./)
 {% tabs %}

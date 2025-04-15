@@ -12,14 +12,14 @@ POST /acs/systems/list_compatible_credential_manager_acs_systems ⇒ { acs_syste
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`acs_system_id`** *String* (Required)
 
@@ -28,7 +28,7 @@ ID of the ACS system for which you want to retrieve all compatible credential ma
 ---
 
 
-## Return Type
+## Response
 
 Array of [acs\_systems](./)
 {% tabs %}

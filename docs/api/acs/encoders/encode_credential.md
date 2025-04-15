@@ -10,14 +10,14 @@ POST /acs/encoders/encode_credential ⇒ { action_attempt }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`acs_credential_id`** *String* (Required)
 
@@ -32,7 +32,7 @@ ID of the `acs_encoder` to use to encode the `acs_credential`.
 ---
 
 
-## Return Type
+## Response
 
 [action\_attempt](./)
 

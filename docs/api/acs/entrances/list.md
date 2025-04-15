@@ -10,7 +10,7 @@ POST /acs/entrances/list ⇒ { acs_entrances: [acs_entrance, …] }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -18,7 +18,7 @@ POST /acs/entrances/list ⇒ { acs_entrances: [acs_entrance, …] }
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`acs_credential_id`** *String*
 
@@ -29,7 +29,7 @@ POST /acs/entrances/list ⇒ { acs_entrances: [acs_entrance, …] }
 ---
 
 
-## Return Type
+## Response
 
 Array of [acs\_entrances](./)
 {% tabs %}

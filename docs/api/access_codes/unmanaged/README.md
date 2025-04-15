@@ -1,9 +1,5 @@
 # Unmanaged Access Code
 
-The Unmanaged Access Code route contains the following resources:
-
-- [`unmanaged_access_code`](./#unmanaged_access_code)
-
 ## The `unmanaged_access_code` Resource
 
 Represents an [unmanaged smart lock access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).

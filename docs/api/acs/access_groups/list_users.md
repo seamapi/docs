@@ -10,14 +10,14 @@ POST /acs/access_groups/list_users ⇒ { acs_users: [acs_user, …] }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`acs_access_group_id`** *String* (Required)
 
@@ -26,7 +26,7 @@ ID of the access group for which you want to retrieve all users.
 ---
 
 
-## Return Type
+## Response
 
 Array of [acs\_users](./)
 {% tabs %}

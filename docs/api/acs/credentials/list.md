@@ -10,7 +10,7 @@ POST /acs/credentials/list ⇒ { acs_credentials: [acs_credential, …] }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -18,7 +18,7 @@ POST /acs/credentials/list ⇒ { acs_credentials: [acs_credential, …] }
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`acs_system_id`** *String*
 
@@ -57,7 +57,7 @@ ID of the user identity for which you want to retrieve all credentials.
 ---
 
 
-## Return Type
+## Response
 
 Array of [acs\_credentials](./)
 {% tabs %}

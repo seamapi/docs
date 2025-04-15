@@ -10,7 +10,7 @@ POST /thermostats/list ⇒ { devices: [device, …] }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -18,7 +18,7 @@ POST /thermostats/list ⇒ { devices: [device, …] }
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`connect_webview_id`** *String*
 
@@ -46,7 +46,7 @@ Date threshold for devices to return. If specified, returns only devices created
 
 **`custom_metadata_has`** *Object*
 
-Set of key:value [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) pairs by which you want to filter devices.
+Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices.
 
 ---
 
@@ -98,7 +98,7 @@ Your own internal user ID for the user by which to filter devices.
 ---
 
 
-## Return Type
+## Response
 
 Array of [devices](./)
 {% tabs %}

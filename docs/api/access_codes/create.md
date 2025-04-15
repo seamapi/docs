@@ -10,7 +10,7 @@ POST /access_codes/create ⇒ { access_code }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -18,7 +18,7 @@ POST /access_codes/create ⇒ { access_code }
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`device_id`** *String* (Required)
 
@@ -113,7 +113,7 @@ Indicates whether to use a [backup access code pool](https://docs.seam.co/latest
 ---
 
 
-## Return Type
+## Response
 
 [access\_code](./)
 

@@ -10,7 +10,7 @@ POST /thermostats/schedules/delete ⇒ void
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -18,7 +18,7 @@ POST /thermostats/schedules/delete ⇒ void
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`thermostat_schedule_id`** *String* (Required)
 
@@ -27,7 +27,7 @@ ID of the desired thermostat schedule.
 ---
 
 
-## Return Type
+## Response
 
 void
 

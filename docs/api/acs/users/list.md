@@ -10,7 +10,7 @@ POST /acs/users/list ⇒ { acs_users: [acs_user, …] }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -18,7 +18,7 @@ POST /acs/users/list ⇒ { acs_users: [acs_user, …] }
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`acs_system_id`** *String*
 
@@ -67,7 +67,7 @@ Phone number of the user identity for which you want to retrieve all `acs_user`s
 ---
 
 
-## Return Type
+## Response
 
 Array of [acs\_users](./)
 {% tabs %}

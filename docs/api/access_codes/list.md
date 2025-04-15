@@ -12,7 +12,7 @@ POST /access_codes/list ⇒ { access_codes: [access_code, …] }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -20,7 +20,7 @@ POST /access_codes/list ⇒ { access_codes: [access_code, …] }
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`access_code_ids`** *Array* *of UUIDs*
 
@@ -41,7 +41,7 @@ Your user ID for the user by which to filter access codes.
 ---
 
 
-## Return Type
+## Response
 
 Array of [access\_codes](./)
 {% tabs %}

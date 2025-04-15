@@ -10,7 +10,7 @@ PATCH /access_codes/unmanaged/update ⇒ void
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -18,7 +18,7 @@ PATCH /access_codes/unmanaged/update ⇒ void
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`access_code_id`** *String* (Required)
 
@@ -49,6 +49,6 @@ Indicates whether [external modification](https://docs.seam.co/latest/capability
 ---
 
 
-## Return Type
+## Response
 
 void

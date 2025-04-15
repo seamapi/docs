@@ -12,13 +12,13 @@ POST /access_codes/get ⇒ { access_code }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
 </details>
 
-## Parameters
+## Request Parameters
 
 **`access_code_id`** *String*
 
@@ -39,7 +39,7 @@ ID of the device containing the access code that you want to get. You must speci
 ---
 
 
-## Return Type
+## Response
 
 [access\_code](./)
 {% tabs %}

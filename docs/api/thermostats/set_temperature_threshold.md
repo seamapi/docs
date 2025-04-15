@@ -10,14 +10,14 @@ PATCH /thermostats/set_temperature_threshold ⇒ void
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`device_id`** *String* (Required)
 
@@ -50,7 +50,7 @@ Upper temperature limit in in °C. Seam alerts you if the reported temperature i
 ---
 
 
-## Return Type
+## Response
 
 void
 

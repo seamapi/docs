@@ -10,14 +10,14 @@ PUT /user_identities/add_acs_user ⇒ void
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`acs_user_id`** *String* (Required)
 
@@ -32,7 +32,7 @@ ID of the desired user identity.
 ---
 
 
-## Return Type
+## Response
 
 void
 

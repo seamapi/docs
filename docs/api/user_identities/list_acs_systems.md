@@ -10,7 +10,7 @@ POST /user_identities/list_acs_systems ⇒ { acs_systems: [acs_system, …] }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -18,7 +18,7 @@ POST /user_identities/list_acs_systems ⇒ { acs_systems: [acs_system, …] }
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`user_identity_id`** *String* (Required)
 
@@ -27,7 +27,7 @@ ID of the user identity for which you want to retrieve all access control system
 ---
 
 
-## Return Type
+## Response
 
 Array of [acs\_systems](./)
 {% tabs %}

@@ -10,14 +10,14 @@ POST /phones/simulate/create_sandbox_phone ⇒ { phone }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`user_identity_id`** *String* (Required)
 
@@ -44,7 +44,7 @@ Metadata to associate with the simulated phone.
 ---
 
 
-## Return Type
+## Response
 
 [phone](./)
 {% tabs %}

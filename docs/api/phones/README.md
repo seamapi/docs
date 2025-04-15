@@ -1,9 +1,5 @@
 # Phones
 
-The Phones route contains the following resources:
-
-- [`phone`](./#phone)
-
 ## The `phone` Resource
 
 Represents an app user's mobile phone.

@@ -10,7 +10,7 @@ POST /acs/users/list_accessible_entrances â‡’ { acs_entrances: [acs_entrance, â€
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -18,7 +18,7 @@ POST /acs/users/list_accessible_entrances â‡’ { acs_entrances: [acs_entrance, â€
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`acs_user_id`** *String* (Required)
 
@@ -27,7 +27,7 @@ ID of the desired `acs_user`.
 ---
 
 
-## Return Type
+## Response
 
 Array of [acs\_entrances](./)
 {% tabs %}

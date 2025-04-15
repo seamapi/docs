@@ -10,14 +10,14 @@ PUT /acs/users/add_to_access_group ⇒ void
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`acs_access_group_id`** *String* (Required)
 
@@ -32,7 +32,7 @@ ID of the desired `acs_user`.
 ---
 
 
-## Return Type
+## Response
 
 void
 

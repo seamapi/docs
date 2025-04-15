@@ -10,14 +10,14 @@ POST /user_identities/delete ⇒ void
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`user_identity_id`** *String* (Required)
 
@@ -26,7 +26,7 @@ ID of the desired user identity.
 ---
 
 
-## Return Type
+## Response
 
 void
 

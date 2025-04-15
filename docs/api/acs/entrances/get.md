@@ -10,20 +10,20 @@ POST /acs/entrances/get ⇒ { acs_entrance }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
 </details>
 
-## Parameters
+## Request Parameters
 
 **`acs_entrance_id`** *String* (Required)
 
 ---
 
 
-## Return Type
+## Response
 
 [acs\_entrance](./)
 {% tabs %}

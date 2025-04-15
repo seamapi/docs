@@ -10,7 +10,7 @@ POST /access_codes/unmanaged/delete ⇒ void
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -18,7 +18,7 @@ POST /access_codes/unmanaged/delete ⇒ void
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`access_code_id`** *String* (Required)
 
@@ -27,6 +27,6 @@ ID of the unmanaged access code to delete.
 ---
 
 
-## Return Type
+## Response
 
 void

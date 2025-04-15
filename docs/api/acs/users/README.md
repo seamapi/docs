@@ -1,9 +1,5 @@
 # ACS Users
 
-The ACS Users route contains the following resources:
-
-- [`acs_user`](./#acs_user)
-
 ## The `acs_user` Resource
 
 Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).

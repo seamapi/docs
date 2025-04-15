@@ -10,7 +10,7 @@ POST /user_identities/list ⇒ { user_identities: [user_identity, …] }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -18,14 +18,14 @@ POST /user_identities/list ⇒ { user_identities: [user_identity, …] }
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`credential_manager_acs_system_id`** *String*
 
 ---
 
 
-## Return Type
+## Response
 
 Array of [user\_identitys](./)
 {% tabs %}

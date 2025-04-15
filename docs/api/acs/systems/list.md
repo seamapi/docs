@@ -12,7 +12,7 @@ POST /acs/systems/list ⇒ { acs_systems: [acs_system, …] }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -20,7 +20,7 @@ POST /acs/systems/list ⇒ { acs_systems: [acs_system, …] }
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`connected_account_id`** *String*
 
@@ -29,7 +29,7 @@ ID of the connected account by which to filter the list of returned access contr
 ---
 
 
-## Return Type
+## Response
 
 Array of [acs\_systems](./)
 {% tabs %}

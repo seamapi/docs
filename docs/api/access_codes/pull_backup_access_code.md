@@ -18,7 +18,7 @@ POST /access_codes/pull_backup_access_code ⇒ { access_code }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -26,7 +26,7 @@ POST /access_codes/pull_backup_access_code ⇒ { access_code }
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`access_code_id`** *String* (Required)
 
@@ -35,7 +35,7 @@ ID of the access code for which you want to pull a backup access code.
 ---
 
 
-## Return Type
+## Response
 
 [access\_code](./)
 {% tabs %}

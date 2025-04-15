@@ -10,14 +10,14 @@ PATCH /acs/credentials/update ⇒ void
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`acs_credential_id`** *String* (Required)
 
@@ -38,7 +38,7 @@ Replacement date and time at which the validity of the credential ends, in [ISO 
 ---
 
 
-## Return Type
+## Response
 
 void
 

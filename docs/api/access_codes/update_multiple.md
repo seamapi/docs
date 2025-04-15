@@ -14,7 +14,7 @@ PATCH /access_codes/update_multiple ⇒ void
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -22,7 +22,7 @@ PATCH /access_codes/update_multiple ⇒ void
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`common_code_key`** *String* (Required)
 
@@ -49,6 +49,6 @@ Date and time at which the validity of the new access code starts, in [ISO 8601]
 ---
 
 
-## Return Type
+## Response
 
 void

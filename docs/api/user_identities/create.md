@@ -10,14 +10,14 @@ POST /user_identities/create ⇒ { user_identity }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`email_address`** *String*
 
@@ -44,7 +44,7 @@ Unique key for the user identity.
 ---
 
 
-## Return Type
+## Response
 
 [user\_identity](./)
 {% tabs %}

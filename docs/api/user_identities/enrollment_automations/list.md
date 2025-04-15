@@ -10,7 +10,7 @@ POST /user_identities/enrollment_automations/list ⇒ { enrollment_automations: 
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -18,7 +18,7 @@ POST /user_identities/enrollment_automations/list ⇒ { enrollment_automations: 
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`user_identity_id`** *String* (Required)
 
@@ -27,7 +27,7 @@ ID of the user identity for which you want to retrieve all enrollment automation
 ---
 
 
-## Return Type
+## Response
 
 Array of [enrollment\_automations](./)
 {% tabs %}

@@ -10,7 +10,7 @@ POST /access_codes/simulate/create_unmanaged_access_code ⇒ { access_code }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -18,7 +18,7 @@ POST /access_codes/simulate/create_unmanaged_access_code ⇒ { access_code }
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`code`** *String* (Required)
 
@@ -39,7 +39,7 @@ Name of the simulated unmanaged access code.
 ---
 
 
-## Return Type
+## Response
 
 [unmanaged\_access\_code](./)
 {% tabs %}

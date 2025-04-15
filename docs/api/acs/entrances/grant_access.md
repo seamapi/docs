@@ -10,14 +10,14 @@ POST /acs/entrances/grant_access ⇒ void
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`acs_entrance_id`** *String* (Required)
 
@@ -28,6 +28,6 @@ POST /acs/entrances/grant_access ⇒ void
 ---
 
 
-## Return Type
+## Response
 
 void

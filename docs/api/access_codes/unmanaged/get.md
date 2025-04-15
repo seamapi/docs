@@ -12,7 +12,7 @@ POST /access_codes/unmanaged/get ⇒ { access_code }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -20,7 +20,7 @@ POST /access_codes/unmanaged/get ⇒ { access_code }
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`access_code_id`** *String*
 
@@ -41,7 +41,7 @@ ID of the device containing the unmanaged access code that you want to get. You 
 ---
 
 
-## Return Type
+## Response
 
 [unmanaged\_access\_code](./)
 {% tabs %}

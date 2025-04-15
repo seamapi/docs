@@ -10,14 +10,14 @@ POST /acs/encoders/scan_credential ⇒ { action_attempt }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`acs_encoder_id`** *String* (Required)
 
@@ -26,7 +26,7 @@ ID of the `acs_encoder` to use for the scan.
 ---
 
 
-## Return Type
+## Response
 
 [action\_attempt](./)
 

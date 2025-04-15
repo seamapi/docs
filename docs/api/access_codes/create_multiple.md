@@ -18,7 +18,7 @@ PUT /access_codes/create_multiple ⇒ { access_codes: [access_code, …] }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -26,7 +26,7 @@ PUT /access_codes/create_multiple ⇒ { access_codes: [access_code, …] }
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`device_ids`** *Array* *of UUIDs* (Required)
 
@@ -121,7 +121,7 @@ Indicates whether to use a [backup access code pool](https://docs.seam.co/latest
 ---
 
 
-## Return Type
+## Response
 
 Array of [access\_codes](./)
 {% tabs %}

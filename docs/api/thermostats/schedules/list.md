@@ -10,7 +10,7 @@ POST /thermostats/schedules/list ⇒ { thermostat_schedules: [thermostat_schedul
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -18,7 +18,7 @@ POST /thermostats/schedules/list ⇒ { thermostat_schedules: [thermostat_schedul
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`device_id`** *String* (Required)
 
@@ -33,7 +33,7 @@ User identifier key by which to filter the list of returned thermostat schedules
 ---
 
 
-## Return Type
+## Response
 
 Array of [thermostat\_schedules](./)
 {% tabs %}

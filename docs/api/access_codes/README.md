@@ -1,9 +1,5 @@
 # Access Codes
 
-The Access Codes route contains the following resources:
-
-- [`access_code`](./#access_code)
-
 ## The `access_code` Resource
 
 Represents a smart lock [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).

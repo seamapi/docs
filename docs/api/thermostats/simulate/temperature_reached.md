@@ -10,14 +10,14 @@ POST /thermostats/simulate/temperature_reached ⇒ void
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`device_id`** *String* (Required)
 
@@ -38,6 +38,6 @@ Desired simulated temperature in °F. You must set `temperature_fahrenheit` or `
 ---
 
 
-## Return Type
+## Response
 
 void

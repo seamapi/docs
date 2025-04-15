@@ -10,7 +10,7 @@ POST /thermostats/delete_climate_preset ⇒ void
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -18,7 +18,7 @@ POST /thermostats/delete_climate_preset ⇒ void
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`climate_preset_key`** *String* (Required)
 
@@ -33,7 +33,7 @@ ID of the desired thermostat device.
 ---
 
 
-## Return Type
+## Response
 
 void
 

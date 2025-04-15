@@ -10,7 +10,7 @@ POST /user_identities/enrollment_automations/get ⇒ { enrollment_automation }
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Client session token
@@ -18,7 +18,7 @@ POST /user_identities/enrollment_automations/get ⇒ { enrollment_automation }
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`enrollment_automation_id`** *String* (Required)
 
@@ -27,7 +27,7 @@ ID of the desired enrollment automation.
 ---
 
 
-## Return Type
+## Response
 
 [enrollment\_automation](./)
 {% tabs %}

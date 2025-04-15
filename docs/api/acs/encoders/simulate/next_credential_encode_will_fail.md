@@ -10,14 +10,14 @@ POST /acs/encoders/simulate/next_credential_encode_will_fail ⇒ void
 
 <details>
 
-<summary>Authentication Methods</summary>
+<summary>[Authentication Methods]{https://docs.seam.co/latest/api/authentication}</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 </details>
 
-## Parameters
+## Request Parameters
 
 **`acs_encoder_id`** *String* (Required)
 
@@ -38,6 +38,6 @@ Code of the error to simulate.
 ---
 
 
-## Return Type
+## Response
 
 void
