@@ -47,6 +47,7 @@ export interface ApiRouteResource {
   name: string
   description: string
   properties: ApiRouteProperty[]
+  events: ApiRouteEvent[]
 }
 
 interface ApiWarning {
@@ -84,7 +85,6 @@ export function setApiRouteLayoutContext(
     }))
 
   file.resources = []
-  const resourceTypes = new Set<string>()
   for (const resourceType of metadata.resources) {
     const resource = blueprint.resources[resourceType]
 
@@ -94,7 +94,26 @@ export function setApiRouteLayoutContext(
       )
     }
 
-    resourceTypes.add(resourceType)
+    const resourceEvents: ApiRouteEvent[] = []
+    for (const event of blueprint.events) {
+      if (
+        event.targetResourceType == null ||
+        event.targetResourceType !== resourceType
+      ) {
+        continue
+      }
+
+      const routeEvent: ApiRouteEvent = {
+        name: event.eventType,
+        description: event.description,
+        properties: event.properties
+          .filter(({ isUndocumented }) => !isUndocumented)
+          .map(mapBlueprintPropertyToRouteProperty),
+      }
+
+      resourceEvents.push(routeEvent)
+      file.events.push(routeEvent)
+    }
 
     const warningsProp = resource.properties.find((p) => p.name === 'warnings')
     const errorsProp = resource.properties.find((p) => p.name === 'errors')
@@ -118,23 +137,7 @@ export function setApiRouteLayoutContext(
       properties,
       errors: resourceErrors,
       warnings: resourceWarnings,
-    })
-  }
-
-  for (const event of blueprint.events) {
-    if (
-      event.targetResourceType == null ||
-      !resourceTypes.has(event.targetResourceType)
-    ) {
-      continue
-    }
-
-    file.events.push({
-      name: event.eventType,
-      description: event.description,
-      properties: event.properties
-        .filter(({ isUndocumented }) => !isUndocumented)
-        .map(mapBlueprintPropertyToRouteProperty),
+      events: resourceEvents,
     })
   }
 }
