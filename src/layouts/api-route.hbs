@@ -6,36 +6,40 @@
 
 ## Errors
 
+<table>
+<tr><th width="25%">Error</th><th>Description</th></tr>
 {{#each errors}}
-**`{{name}}`**
+<tr><td><strong><code>{{name}}</code></strong></td>
 
-{{description}}
-
----
-
+<td>{{description}}</td>
+</tr>
 {{/each}}
+</table>
 {{/if}}
 {{#if warnings.length}}
 
 ## Warnings
 
+<table>
+<tr><th width="25%">Warning</th><th>Description</th></tr>
 {{#each warnings}}
-**`{{name}}`**
+<tr><td><strong><code>{{name}}</code></strong></td>
 
-{{description}}
-
----
-
+<td>{{description}}</td>
+</tr>
 {{/each}}
+</table>
 {{/if}}
 {{/each}}
 {{#if events.length}}
 
 ## Events
 
+<table>
+<tr><th width="25%">Event</th><th>Description</th></tr>
 {{#each events}}
-**`{{name}}`**
-
+<tr><td><strong><code>{{name}}</code></strong></td>
+<td>
 {{#if description}}
 {{description}}
 
@@ -49,17 +53,20 @@
 {{/each}}
 </details>
 
----
-
+</td></tr>
 {{/each}}
 {{/if}}
+</table>
+
 ## Endpoints
 
+<table>
+<tr><th width="25%">Endpoint</th><th>Description</th></tr>
 {{#each endpoints}}
 
-[**`{{path}}`**](./{{name}}.md)
+<tr><td><a href="./{{name}}.md"><strong><code>{{path}}</code></strong></a></td>
 
-{{description}}
+<td>{{description}}</td></tr>
 
 {{/each}}
-
+</table>
