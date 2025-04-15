@@ -49,7 +49,7 @@ For details about how to configure `acs_user`s in your access control system, se
 
 ## Properties
 
-<a id="access_schedule"/>**`access_schedule`** *Object*
+**`access_schedule`** *Object*
 
 `starts_at` and `ends_at` timestamps for the [ACS user's](https://docs.seam.co/latest/capability-guides/access-systems/user-management) access.
 
@@ -73,35 +73,35 @@ For details about how to configure `acs_user`s in your access control system, se
 
 ---
 
-<a id="acs_system_id"/>**`acs_system_id`** *UUID*
+**`acs_system_id`** *UUID*
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 ---
 
-<a id="acs_user_id"/>**`acs_user_id`** *UUID*
+**`acs_user_id`** *UUID*
 
 ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 ---
 
-<a id="created_at"/>**`created_at`** *Datetime*
+**`created_at`** *Datetime*
 
 Date and time at which the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created.
 
 
 ---
 
-<a id="display_name"/>**`display_name`** *String*
+**`display_name`** *String*
 
 Display name for the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 ---
 
-<a id="email"/>**`email`** *String*
+**`email`** *String*
 
 {% hint style="warning" %}
 **Deprecated**. use email_address.
@@ -110,21 +110,21 @@ Display name for the [ACS user](https://docs.seam.co/latest/capability-guides/ac
 
 ---
 
-<a id="email_address"/>**`email_address`** *String*
+**`email_address`** *String*
 
 Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 ---
 
-<a id="errors"/>[**`errors`**](./#errors) *List* *of Objects*
+[**`errors`**](./#errors) *List* *of Objects*
 
 Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 ---
 
-<a id="external_type"/>**`external_type`** *Enum*
+**`external_type`** *Enum*
 
 Brand-specific terminology for the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) type.
 
@@ -144,80 +144,80 @@ Brand-specific terminology for the [ACS user](https://docs.seam.co/latest/capabi
 
 ---
 
-<a id="external_type_display_name"/>**`external_type_display_name`** *String*
+**`external_type_display_name`** *String*
 
 Display name that corresponds to the brand-specific terminology for the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) type.
 
 
 ---
 
-<a id="full_name"/>**`full_name`** *String*
+**`full_name`** *String*
 
 Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 ---
 
-<a id="hid_acs_system_id"/>**`hid_acs_system_id`** *UUID*
+**`hid_acs_system_id`** *UUID*
 
 
 ---
 
-<a id="is_managed"/>**`is_managed`** *Boolean*
+**`is_managed`** *Boolean*
 
 
 ---
 
-<a id="is_suspended"/>**`is_suspended`** *Boolean*
+**`is_suspended`** *Boolean*
 
 Indicates whether the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users).
 
 
 ---
 
-<a id="phone_number"/>**`phone_number`** *String*
+**`phone_number`** *String*
 
 Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
 
 
 ---
 
-<a id="user_identity_email_address"/>**`user_identity_email_address`** *String*
+**`user_identity_email_address`** *String*
 
 Email address of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 ---
 
-<a id="user_identity_full_name"/>**`user_identity_full_name`** *String*
+**`user_identity_full_name`** *String*
 
 Full name of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 ---
 
-<a id="user_identity_id"/>**`user_identity_id`** *String*
+**`user_identity_id`** *String*
 
 ID of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 ---
 
-<a id="user_identity_phone_number"/>**`user_identity_phone_number`** *String*
+**`user_identity_phone_number`** *String*
 
 Phone number of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
 
 
 ---
 
-<a id="warnings"/>[**`warnings`**](./#warnings) *List* *of Objects*
+[**`warnings`**](./#warnings) *List* *of Objects*
 
 Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 ---
 
-<a id="workspace_id"/>**`workspace_id`** *UUID*
+**`workspace_id`** *UUID*
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 

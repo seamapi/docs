@@ -43,35 +43,35 @@ To verify if your access control system requires a card encoder, see the corresp
 
 ## Properties
 
-<a id="acs_encoder_id"/>**`acs_encoder_id`** *UUID*
+**`acs_encoder_id`** *UUID*
 
 ID of the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners.
 
 
 ---
 
-<a id="acs_system_id"/>**`acs_system_id`** *UUID*
+**`acs_system_id`** *UUID*
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 
 ---
 
-<a id="created_at"/>**`created_at`** *Datetime*
+**`created_at`** *Datetime*
 
 Date and time at which the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) was created.
 
 
 ---
 
-<a id="display_name"/>**`display_name`** *String*
+**`display_name`** *String*
 
 Display name for the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 
 ---
 
-<a id="errors"/>**`errors`** *List* *of Objects*
+**`errors`** *List* *of Objects*
 
 Errors associated with the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
@@ -101,7 +101,7 @@ Errors associated with the [encoder](../../../capability-guides/access-systems/w
 
 ---
 
-<a id="workspace_id"/>**`workspace_id`** *UUID*
+**`workspace_id`** *UUID*
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 

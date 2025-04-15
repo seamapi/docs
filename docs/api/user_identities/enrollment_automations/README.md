@@ -29,35 +29,35 @@ Represents an [enrollment automation](https://docs.seam.co/latest/capability-gui
 
 ## Properties
 
-<a id="created_at"/>**`created_at`** *Datetime*
+**`created_at`** *Datetime*
 
 Date and time at which the enrollment automation was created.
 
 
 ---
 
-<a id="credential_manager_acs_system_id"/>**`credential_manager_acs_system_id`** *UUID*
+**`credential_manager_acs_system_id`** *UUID*
 
 ID of the associated [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) that serves as the credential manager.
 
 
 ---
 
-<a id="enrollment_automation_id"/>**`enrollment_automation_id`** *UUID*
+**`enrollment_automation_id`** *UUID*
 
 ID of the enrollment automation.
 
 
 ---
 
-<a id="user_identity_id"/>**`user_identity_id`** *UUID*
+**`user_identity_id`** *UUID*
 
 ID of the associated [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 
 ---
 
-<a id="workspace_id"/>**`workspace_id`** *UUID*
+**`workspace_id`** *UUID*
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the enrollment automation.
 

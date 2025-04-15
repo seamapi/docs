@@ -33,35 +33,35 @@ Represents a [thermostat schedule](../../../capability-guides/thermostats/creati
 
 ## Properties
 
-<a id="climate_preset_key"/>**`climate_preset_key`** *String*
+**`climate_preset_key`** *String*
 
 Key of the [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to use for the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
 
 ---
 
-<a id="created_at"/>**`created_at`** *Datetime*
+**`created_at`** *Datetime*
 
 Date and time at which the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) was created.
 
 
 ---
 
-<a id="device_id"/>**`device_id`** *UUID*
+**`device_id`** *UUID*
 
 ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device.
 
 
 ---
 
-<a id="ends_at"/>**`ends_at`** *Datetime*
+**`ends_at`** *Datetime*
 
 Date and time at which the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 
 ---
 
-<a id="errors"/>**`errors`** *List* *of Objects*
+**`errors`** *List* *of Objects*
 
 Errors associated with the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
@@ -85,28 +85,28 @@ Errors associated with the [thermostat schedule](../../../capability-guides/ther
 
 ---
 
-<a id="max_override_period_minutes"/>**`max_override_period_minutes`** *Number*
+**`max_override_period_minutes`** *Number*
 
 Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md). See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
 
 
 ---
 
-<a id="name"/>**`name`** *String*
+**`name`** *String*
 
 User-friendly name to identify the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
 
 ---
 
-<a id="starts_at"/>**`starts_at`** *Datetime*
+**`starts_at`** *Datetime*
 
 Date and time at which the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 
 ---
 
-<a id="thermostat_schedule_id"/>**`thermostat_schedule_id`** *UUID*
+**`thermostat_schedule_id`** *UUID*
 
 ID of the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 

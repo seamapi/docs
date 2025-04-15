@@ -34,28 +34,28 @@ Represents an app user's mobile phone.
 
 ## Properties
 
-<a id="created_at"/>**`created_at`** *Datetime*
+**`created_at`** *Datetime*
 
 Date and time at which the `phone` was created.
 
 
 ---
 
-<a id="custom_metadata"/>**`custom_metadata`** *Record*
+**`custom_metadata`** *Record*
 
 Optional [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) for the phone.
 
 
 ---
 
-<a id="device_id"/>**`device_id`** *UUID*
+**`device_id`** *UUID*
 
 ID of the `phone`.
 
 
 ---
 
-<a id="device_type"/>**`device_type`** *Enum*
+**`device_type`** *Enum*
 
 Type of phone.
 
@@ -70,14 +70,14 @@ Type of phone.
 
 ---
 
-<a id="display_name"/>**`display_name`** *String*
+**`display_name`** *String*
 
 Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name` otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.
 
 
 ---
 
-<a id="errors"/>**`errors`** *List* *of Objects*
+**`errors`** *List* *of Objects*
 
 Errors associated with the `phone`.
 
@@ -97,14 +97,14 @@ Errors associated with the `phone`.
 
 ---
 
-<a id="nickname"/>**`nickname`** *String*
+**`nickname`** *String*
 
 Optional nickname to describe the phone, settable through Seam.
 
 
 ---
 
-<a id="properties"/>**`properties`** *Object*
+**`properties`** *Object*
 
 Properties of the phone.
 
@@ -158,7 +158,7 @@ Properties of the phone.
 
 ---
 
-<a id="warnings"/>**`warnings`** *List* *of Objects*
+**`warnings`** *List* *of Objects*
 
 Warnings associated with the `phone`.
 
@@ -178,7 +178,7 @@ Warnings associated with the `phone`.
 
 ---
 
-<a id="workspace_id"/>**`workspace_id`** *UUID*
+**`workspace_id`** *UUID*
 
 ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the `phone`.
 

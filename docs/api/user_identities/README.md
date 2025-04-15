@@ -32,52 +32,52 @@ Represents a [user identity](https://docs.seam.co/latest/capability-guides/mobil
 
 ## Properties
 
-<a id="created_at"/>**`created_at`** *Datetime*
+**`created_at`** *Datetime*
 
 Date and time at which the user identity was created.
 
 
 ---
 
-<a id="display_name"/>**`display_name`** *String*
+**`display_name`** *String*
 
 
 ---
 
-<a id="email_address"/>**`email_address`** *String*
+**`email_address`** *String*
 
 Unique email address for the user identity.
 
 
 ---
 
-<a id="full_name"/>**`full_name`** *String*
+**`full_name`** *String*
 
 
 ---
 
-<a id="phone_number"/>**`phone_number`** *String*
+**`phone_number`** *String*
 
 Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).
 
 
 ---
 
-<a id="user_identity_id"/>**`user_identity_id`** *UUID*
+**`user_identity_id`** *UUID*
 
 ID of the user identity.
 
 
 ---
 
-<a id="user_identity_key"/>**`user_identity_key`** *String*
+**`user_identity_key`** *String*
 
 Unique key for the user identity.
 
 
 ---
 
-<a id="workspace_id"/>**`workspace_id`** *UUID*
+**`workspace_id`** *UUID*
 
 ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the user identity.
 

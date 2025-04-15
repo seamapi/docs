@@ -54,7 +54,7 @@ For each `acs_credential`, you define the access method. You can also specify ad
 
 ## Properties
 
-<a id="access_method"/>**`access_method`** *Enum*
+**`access_method`** *Enum*
 
 Access method for the [credential](../../../capability-guides/access-systems/managing-credentials.md). Supported values: `code`, `card`, `mobile_key`.
 
@@ -70,33 +70,33 @@ Access method for the [credential](../../../capability-guides/access-systems/man
 
 ---
 
-<a id="acs_credential_id"/>**`acs_credential_id`** *UUID*
+**`acs_credential_id`** *UUID*
 
 ID of the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
 ---
 
-<a id="acs_credential_pool_id"/>**`acs_credential_pool_id`** *UUID*
+**`acs_credential_pool_id`** *UUID*
 
 
 ---
 
-<a id="acs_system_id"/>**`acs_system_id`** *UUID*
+**`acs_system_id`** *UUID*
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
 ---
 
-<a id="acs_user_id"/>**`acs_user_id`** *UUID*
+**`acs_user_id`** *UUID*
 
 ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](../../../capability-guides/access-systems/managing-credentials.md) belongs.
 
 
 ---
 
-<a id="assa_abloy_vostio_metadata"/>**`assa_abloy_vostio_metadata`** *Object*
+**`assa_abloy_vostio_metadata`** *Object*
 
 Vostio-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -128,42 +128,42 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 ---
 
-<a id="card_number"/>**`card_number`** *String*
+**`card_number`** *String*
 
 Number of the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
 ---
 
-<a id="code"/>**`code`** *String*
+**`code`** *String*
 
 Access (PIN) code for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
 ---
 
-<a id="created_at"/>**`created_at`** *Datetime*
+**`created_at`** *Datetime*
 
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) was created.
 
 
 ---
 
-<a id="display_name"/>**`display_name`** *String*
+**`display_name`** *String*
 
 Display name that corresponds to the [credential](../../../capability-guides/access-systems/managing-credentials.md) type.
 
 
 ---
 
-<a id="ends_at"/>**`ends_at`** *String*
+**`ends_at`** *String*
 
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
 
 
 ---
 
-<a id="errors"/>**`errors`** *List* *of Objects*
+**`errors`** *List* *of Objects*
 
 Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -183,7 +183,7 @@ Errors associated with the [credential](../../../capability-guides/access-system
 
 ---
 
-<a id="external_type"/>**`external_type`** *Enum*
+**`external_type`** *Enum*
 
 Brand-specific terminology for the [credential](../../../capability-guides/access-systems/managing-credentials.md) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.
 
@@ -203,75 +203,75 @@ Brand-specific terminology for the [credential](../../../capability-guides/acces
 
 ---
 
-<a id="external_type_display_name"/>**`external_type_display_name`** *String*
+**`external_type_display_name`** *String*
 
 Display name that corresponds to the brand-specific terminology for the [credential](../../../capability-guides/access-systems/managing-credentials.md) type.
 
 
 ---
 
-<a id="is_issued"/>**`is_issued`** *Boolean*
+**`is_issued`** *Boolean*
 
 Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) has been encoded onto a card.
 
 
 ---
 
-<a id="is_latest_desired_state_synced_with_provider"/>**`is_latest_desired_state_synced_with_provider`** *Boolean*
+**`is_latest_desired_state_synced_with_provider`** *Boolean*
 
 Indicates whether the latest state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) has been synced from Seam to the provider.
 
 
 ---
 
-<a id="is_managed"/>**`is_managed`** *Boolean*
+**`is_managed`** *Boolean*
 
 
 ---
 
-<a id="is_multi_phone_sync_credential"/>**`is_multi_phone_sync_credential`** *Boolean*
+**`is_multi_phone_sync_credential`** *Boolean*
 
 Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
 
 
 ---
 
-<a id="is_one_time_use"/>**`is_one_time_use`** *Boolean*
+**`is_one_time_use`** *Boolean*
 
 Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) can only be used once. If `true`, the code becomes invalid after the first use.
 
 
 ---
 
-<a id="issued_at"/>**`issued_at`** *Datetime*
+**`issued_at`** *Datetime*
 
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) was encoded onto a card.
 
 
 ---
 
-<a id="latest_desired_state_synced_with_provider_at"/>**`latest_desired_state_synced_with_provider_at`** *Datetime*
+**`latest_desired_state_synced_with_provider_at`** *Datetime*
 
 Date and time at which the state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) was most recently synced from Seam to the provider.
 
 
 ---
 
-<a id="parent_acs_credential_id"/>**`parent_acs_credential_id`** *UUID*
+**`parent_acs_credential_id`** *UUID*
 
 ID of the parent [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
 ---
 
-<a id="starts_at"/>**`starts_at`** *String*
+**`starts_at`** *String*
 
 Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 
 ---
 
-<a id="visionline_metadata"/>**`visionline_metadata`** *Object*
+**`visionline_metadata`** *Object*
 
 Visionline-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -324,14 +324,14 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 
 ---
 
-<a id="warnings"/>[**`warnings`**](./#warnings) *List* *of Objects*
+[**`warnings`**](./#warnings) *List* *of Objects*
 
 Warnings associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 
 ---
 
-<a id="workspace_id"/>**`workspace_id`** *UUID*
+**`workspace_id`** *UUID*
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
