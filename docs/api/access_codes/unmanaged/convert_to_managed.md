@@ -1,5 +1,9 @@
 # Convert an Unmanaged Access Code
 
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
+
 Converts an [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) to an [access code managed through Seam](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 An unmanaged access code has a limited set of operations that you can perform on it. Once you convert an unmanaged access code to a managed access code, the full set of access code operations and lifecycle events becomes available for it.

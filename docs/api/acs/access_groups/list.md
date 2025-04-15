@@ -1,5 +1,9 @@
 # List Access Groups
 
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
+
 Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
 {% hint style="success" %}

@@ -1,5 +1,9 @@
 # Get an Unmanaged Access Code
 
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
+
 Returns a specified [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).
 
 You must specify either `access_code_id` or both `device_id` and `code`.

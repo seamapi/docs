@@ -1,5 +1,9 @@
 # Create a Sandbox Phone
 
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
+
 Creates a new simulated phone in a [sandbox workspace](../../../core-concepts/workspaces/README.md#sandbox-workspaces). For more information, see [Creating a Simulated Phone for a User Identity](../../../capability-guides/mobile-access/developing-in-a-sandbox-workspace.md#creating-a-simulated-phone-for-a-user-identity).
 
 {% hint style="success" %}

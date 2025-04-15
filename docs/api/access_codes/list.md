@@ -1,5 +1,9 @@
 # List Access Codes
 
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
+
 Returns a list of all [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 Specify either `device_id` or `access_code_ids`.

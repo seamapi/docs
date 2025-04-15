@@ -1,5 +1,9 @@
 # Get an Access Code
 
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
+
 Returns a specified [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 You must specify either `access_code_id` or both `device_id` and `code`.

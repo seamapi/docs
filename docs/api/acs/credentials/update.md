@@ -1,5 +1,9 @@
 # Update a Credential
 
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
+
 Updates the code and ends at date and time for a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 {% hint style="success" %}

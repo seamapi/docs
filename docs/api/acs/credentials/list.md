@@ -1,5 +1,9 @@
 # List Credentials
 
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
+
 Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md).
 
 {% hint style="success" %}

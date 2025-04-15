@@ -1,5 +1,9 @@
 # Update Multiple Linked Access Codes
 
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
+
 Updates [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that share a common code across multiple devices.
 
 Specify the `common_code_key` to identify the set of access codes that you want to update.

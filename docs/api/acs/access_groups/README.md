@@ -2,11 +2,11 @@
 
 ## The acs_access_group Object
 
-- [Properties](./#Properties)
-- [Errors](./#Errors)
-- [Warnings](./#Warnings)
-- [Events](./#Events)
-- [Endpoints](./#Endpoints)
+- [Properties](./#properties)
+- [Errors](./#errors)
+- [Warnings](./#warnings)
+- [Events](./#events)
+- [Endpoints](./#endpoints)
 
 
 Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.

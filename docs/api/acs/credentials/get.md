@@ -1,5 +1,9 @@
 # Get a Credential
 
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
+
 Returns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 {% hint style="success" %}

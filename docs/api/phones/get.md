@@ -1,5 +1,9 @@
 # Get Phone
 
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
+
 Returns a single phone entry matching the provided `device_id`.
 
 {% hint style="success" %}

@@ -1,5 +1,9 @@
 # Update a Thermostat Schedule
 
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
+
 Updates a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
 {% hint style="success" %}

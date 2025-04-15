@@ -2,11 +2,11 @@
 
 ## The acs_user Object
 
-- [Properties](./#Properties)
-- [Errors](./#Errors)
-- [Warnings](./#Warnings)
-- [Events](./#Events)
-- [Endpoints](./#Endpoints)
+- [Properties](./#properties)
+- [Errors](./#errors)
+- [Warnings](./#warnings)
+- [Events](./#events)
+- [Endpoints](./#endpoints)
 
 
 Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).

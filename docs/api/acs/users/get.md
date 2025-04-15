@@ -1,5 +1,9 @@
 # Get an ACS User
 
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
+
 Returns a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 {% hint style="success" %}

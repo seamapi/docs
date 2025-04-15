@@ -1,5 +1,9 @@
 # Delete an Unmanaged Access Code
 
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
+
 Deletes an [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).
 
 {% hint style="success" %}

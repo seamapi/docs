@@ -2,11 +2,11 @@
 
 ## The phone Object
 
-- [Properties](./#Properties)
-- [Errors](./#Errors)
-- [Warnings](./#Warnings)
-- [Events](./#Events)
-- [Endpoints](./#Endpoints)
+- [Properties](./#properties)
+- [Errors](./#errors)
+- [Warnings](./#warnings)
+- [Events](./#events)
+- [Endpoints](./#endpoints)
 
 
 Represents an app user's mobile phone.
