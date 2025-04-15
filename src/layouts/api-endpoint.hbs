@@ -34,7 +34,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 {{#if request.parameters.length}}
 <table>
-<tr><th width="25%">Parameter</th><th>Description</th></tr>
+<tr><th style="width:25%">Parameter</th><th>Description</th></tr>
 {{#each request.parameters}}
 <tr><td><strong><code>{{this.name}}</code></strong> <i>{{this.jsonType}}</i>{{#if this.itemFormat}} <i>of {{this.itemFormat}}s</i>{{/if}}{{#if this.required}} (Required){{/if}}</td>
 <td>
