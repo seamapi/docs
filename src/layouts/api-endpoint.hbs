@@ -33,8 +33,11 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Request Parameters
 
 {{#if request.parameters.length}}
+<table>
+<tr><th width="25%">Property</th><th>Description</th></tr>
 {{#each request.parameters}}
-**`{{this.name}}`** *{{this.jsonType}}*{{#if this.itemFormat}} *of {{this.itemFormat}}s*{{/if}}{{#if this.required}} (Required){{/if}}
+<tr><td><strong><code>{{this.name}}</code></strong> <i>{{this.jsonType}}</i>{{#if this.itemFormat}} <i>of {{this.itemFormat}}s</i>{{/if}}{{#if this.required}} (Required){{/if}}</td>
+<td>
 {{#if this.description}}
 
 {{this.description}}
@@ -49,8 +52,9 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 {{/if}}
 
 ---
-
+</td></tr>
 {{/each}}
+</table>
 {{else}}
 None
 
