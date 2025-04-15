@@ -10,11 +10,13 @@ Specify the `common_code_key` to identify the set of access codes that you want 
 
 See also [Update Linked Access Codes](../../capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes.md#update-linked-access-codes).
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 PATCH /access_codes/update_multiple ⇒ void
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

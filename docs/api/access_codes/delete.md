@@ -6,11 +6,13 @@
 
 Deletes an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /access_codes/delete ⇒ void
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

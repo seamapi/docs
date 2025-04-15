@@ -6,11 +6,13 @@
 
 Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/access_groups/list ⇒ { acs_access_groups: [acs_access_group, …] }
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

@@ -6,11 +6,13 @@
 
 Creates a [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /thermostats/schedules/create ⇒ { thermostat_schedule }
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

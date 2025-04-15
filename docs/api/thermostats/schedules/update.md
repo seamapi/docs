@@ -6,11 +6,13 @@
 
 Updates a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 PATCH /thermostats/schedules/update ⇒ void
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

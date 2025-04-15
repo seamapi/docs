@@ -6,11 +6,13 @@
 
 
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/entrances/grant_access ⇒ void
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

@@ -6,11 +6,13 @@
 
 Assigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) to a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 PATCH /acs/credentials/assign ⇒ void
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

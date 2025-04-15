@@ -6,11 +6,13 @@
 
 Returns a list of all [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/entrances/list ⇒ { acs_entrances: [acs_entrance, …] }
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

@@ -6,11 +6,13 @@
 
 Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/users/list ⇒ { acs_users: [acs_user, …] }
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

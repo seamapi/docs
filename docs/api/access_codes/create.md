@@ -6,11 +6,13 @@
 
 Creates a new [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /access_codes/create ⇒ { access_code }
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

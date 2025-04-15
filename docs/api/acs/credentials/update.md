@@ -6,11 +6,13 @@
 
 Updates the code and ends at date and time for a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 PATCH /acs/credentials/update ⇒ void
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

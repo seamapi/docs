@@ -6,11 +6,13 @@
 
 Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md) with access to a specified [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/entrances/list_credentials_with_access ⇒ { acs_credentials: [acs_credential, …] }
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

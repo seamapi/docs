@@ -6,11 +6,13 @@
 
 Updates a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 PATCH /thermostats/update_climate_preset ⇒ void
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

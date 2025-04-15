@@ -6,11 +6,13 @@
 
 Returns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/credentials/get ⇒ { acs_credential }
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

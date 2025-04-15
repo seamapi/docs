@@ -6,11 +6,13 @@
 
 Sets the [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /thermostats/set_fan_mode ⇒ { action_attempt }
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

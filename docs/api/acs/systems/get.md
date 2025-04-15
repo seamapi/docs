@@ -8,11 +8,13 @@ Returns a specified [access control system](https://docs.seam.co/latest/capabili
 
 Specify the desired access control system by including the corresponding `acs_system_id` in the request body.
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/systems/get ⇒ { acs_system }
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

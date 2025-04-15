@@ -8,11 +8,13 @@ Returns a specified [access code](https://docs.seam.co/latest/capability-guides/
 
 You must specify either `access_code_id` or both `device_id` and `code`.
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /access_codes/get ⇒ { access_code }
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

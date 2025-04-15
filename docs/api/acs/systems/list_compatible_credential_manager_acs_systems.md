@@ -8,11 +8,13 @@ Returns a list of all credential manager ACS systems that are compatible with a 
 
 Specify the ACS system for which you want to retrieve all compatible credential manager ACS systems by including the corresponding `acs_system_id` in the request body.
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/systems/list_compatible_credential_manager_acs_systems ⇒ { acs_systems: [acs_system, …] }
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

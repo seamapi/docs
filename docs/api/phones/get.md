@@ -6,11 +6,13 @@
 
 Returns a single phone entry matching the provided `device_id`.
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /phones/get ⇒ { phone }
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

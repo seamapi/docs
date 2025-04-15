@@ -8,11 +8,13 @@ Returns a specified [unmanaged access code](https://docs.seam.co/latest/capabili
 
 You must specify either `access_code_id` or both `device_id` and `code`.
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /access_codes/unmanaged/get ⇒ { access_code }
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

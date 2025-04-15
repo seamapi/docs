@@ -6,11 +6,13 @@
 
 Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guides/thermostats).
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /thermostats/list ⇒ { devices: [device, …] }
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

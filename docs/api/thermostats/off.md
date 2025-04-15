@@ -6,11 +6,13 @@
 
 Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to ["off" mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /thermostats/off ⇒ { action_attempt }
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

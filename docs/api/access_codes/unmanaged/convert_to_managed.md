@@ -10,11 +10,13 @@ An unmanaged access code has a limited set of operations that you can perform on
 
 Note that not all device providers support converting an unmanaged access code to a managed access code.
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 PATCH /access_codes/unmanaged/convert_to_managed ⇒ void
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

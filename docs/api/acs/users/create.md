@@ -6,11 +6,13 @@
 
 Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/users/create ⇒ { acs_user }
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

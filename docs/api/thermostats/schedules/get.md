@@ -6,11 +6,13 @@
 
 Returns a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /thermostats/schedules/get ⇒ { thermostat_schedule }
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

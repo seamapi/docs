@@ -6,11 +6,13 @@
 
 Activates a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /thermostats/activate_climate_preset ⇒ { action_attempt }
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 

@@ -6,11 +6,13 @@
 
 Deletes a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-{% hint style="success" %}
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/credentials/delete ⇒ void
 ```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 <details>
 
