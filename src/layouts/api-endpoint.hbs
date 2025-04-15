@@ -32,7 +32,7 @@
 
 {{#if request.parameters.length}}
 {{#each request.parameters}}
-**`{{this.name}}`** *{{this.jsonType}}*{{#if this.itemFormat}} *of {{this.itemFormat}}s*{{/if}}{{#if this.required}} (Required){{/if}}{#{{this.name}}}
+**`{{this.name}}`** *{{this.jsonType}}*{{#if this.itemFormat}} *of {{this.itemFormat}}s*{{/if}}{{#if this.required}} (Required){{/if}}
 {{#if this.description}}
 
 {{this.description}}
