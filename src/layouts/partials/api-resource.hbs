@@ -39,9 +39,11 @@
 ## Properties
 {{/if}}
 
+<table>
+<tr><th>** Property **</th><th>** Description **</th></tr>
 {{#each properties}}
-{{#if linkTarget}}[**`{{name}}`**]({{linkTarget}}){{else}}**`{{name}}`**{{/if}} *{{format}}*{{#if listItemFormat}} *of {{listItemFormat}}s*{{/if}}
-
+<tr><td>{{#if linkTarget}}[**`{{name}}`**]({{linkTarget}}){{else}}**`{{name}}`**{{/if}} *{{format}}*{{#if listItemFormat}} *of {{listItemFormat}}s*{{/if}}</td>
+<td>
 {{#if description}}
 {{description}}
 
@@ -89,6 +91,7 @@ This object has no properties.
 
 {{/if}}
 
----
+</td></tr>
 
 {{/each}}
+</table>
