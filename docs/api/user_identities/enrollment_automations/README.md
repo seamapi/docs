@@ -70,8 +70,10 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 ## Events
 
-**`enrollment_automation.deleted`**
-
+<table>
+<tr><th width="25%">Event</th><th>Description</th></tr>
+<tr><td><strong><code>enrollment_automation.deleted</code></strong></td>
+<td>
 An [enrollment automation](../../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) was deleted.
 
 <details>
@@ -113,28 +115,31 @@ An [enrollment automation](../../../capability-guides/mobile-access/issuing-mobi
 
 </details>
 
----
+</td></tr>
+</table>
 
 ## Endpoints
 
+<table>
+<tr><th width="25%">Endpoint</th><th>Description</th></tr>
 
-[**`/user_identities/enrollment_automations/delete`**](./delete.md)
+<tr><td><a href="./delete.md"><strong><code>/user_identities/enrollment_automations/delete</code></strong></a></td>
 
-Deletes a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system). You must delete all enrollment automations associated with a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) before [deleting the user identity](https://docs.seam.co/latest/api/user_identities/delete).
-
-
-[**`/user_identities/enrollment_automations/get`**](./get.md)
-
-Returns a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).
+<td>Deletes a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system). You must delete all enrollment automations associated with a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) before [deleting the user identity](https://docs.seam.co/latest/api/user_identities/delete).</td></tr>
 
 
-[**`/user_identities/enrollment_automations/launch`**](./launch.md)
+<tr><td><a href="./get.md"><strong><code>/user_identities/enrollment_automations/get</code></strong></a></td>
 
-Sets up a new [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) with a specified [credential manager](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).
-
-
-[**`/user_identities/enrollment_automations/list`**](./list.md)
-
-Returns a list of all [enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+<td>Returns a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).</td></tr>
 
 
+<tr><td><a href="./launch.md"><strong><code>/user_identities/enrollment_automations/launch</code></strong></a></td>
+
+<td>Sets up a new [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) with a specified [credential manager](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).</td></tr>
+
+
+<tr><td><a href="./list.md"><strong><code>/user_identities/enrollment_automations/list</code></strong></a></td>
+
+<td>Returns a list of all [enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).</td></tr>
+
+</table>

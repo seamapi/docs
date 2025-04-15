@@ -33,34 +33,26 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Request Parameters
 
 <table>
-<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><th width="25%">Parameter</th><th>Description</th></tr>
 <tr><td><strong><code>access_code_id</code></strong> <i>String</i> (Required)</td>
 <td>
 
 ID of the unmanaged access code that you want to convert to a managed access code.
-
----
 </td></tr>
 <tr><td><strong><code>allow_external_modification</code></strong> <i>Boolean</i></td>
 <td>
 
 Indicates whether external modification of the access code is allowed.
-
----
 </td></tr>
 <tr><td><strong><code>force</code></strong> <i>Boolean</i></td>
 <td>
 
 Indicates whether to force the access code conversion. To switch management of an access code from one Seam workspace to another, set `force` to `true`.
-
----
 </td></tr>
 <tr><td><strong><code>is_external_modification_allowed</code></strong> <i>Boolean</i></td>
 <td>
 
 Indicates whether external modification of the access code is allowed.
-
----
 </td></tr>
 </table>
 

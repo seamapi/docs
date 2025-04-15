@@ -28,13 +28,11 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Request Parameters
 
 <table>
-<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><th width="25%">Parameter</th><th>Description</th></tr>
 <tr><td><strong><code>acs_credential_id</code></strong> <i>String</i> (Required)</td>
 <td>
 
 ID of the credential for which you want to retrieve all entrances to which this credential grants access.
-
----
 </td></tr>
 </table>
 

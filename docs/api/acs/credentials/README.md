@@ -344,47 +344,40 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 ## Warnings
 
-**`waiting_to_be_issued`**
+<table>
+<tr><th width="25%">Warning</th><th>Description</th></tr>
+<tr><td><strong><code>waiting_to_be_issued</code></strong></td>
 
-Indicates that the [credential](../../../capability-guides/access-systems/managing-credentials.md) is waiting to be issued.
+<td>Indicates that the [credential](../../../capability-guides/access-systems/managing-credentials.md) is waiting to be issued.</td>
+</tr>
+<tr><td><strong><code>schedule_externally_modified</code></strong></td>
 
----
+<td>Indicates that the schedule of one of the [credential](../../../capability-guides/access-systems/managing-credentials.md)'s children was modified externally.</td>
+</tr>
+<tr><td><strong><code>schedule_modified</code></strong></td>
 
-**`schedule_externally_modified`**
+<td>Indicates that the schedule of the [credential](../../../capability-guides/access-systems/managing-credentials.md) was modified to avoid creating a credential with a start date in the past.</td>
+</tr>
+<tr><td><strong><code>being_deleted</code></strong></td>
 
-Indicates that the schedule of one of the [credential](../../../capability-guides/access-systems/managing-credentials.md)'s children was modified externally.
+<td>Indicates that the [credential](../../../capability-guides/access-systems/managing-credentials.md) is being deleted.</td>
+</tr>
+<tr><td><strong><code>unknown_issue_with_acs_credential</code></strong></td>
 
----
+<td>An unknown issue occurred while syncing the state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) with the provider. This issue may affect the proper functioning of the credential.</td>
+</tr>
+<tr><td><strong><code>needs_to_be_reissued</code></strong></td>
 
-**`schedule_modified`**
-
-Indicates that the schedule of the [credential](../../../capability-guides/access-systems/managing-credentials.md) was modified to avoid creating a credential with a start date in the past.
-
----
-
-**`being_deleted`**
-
-Indicates that the [credential](../../../capability-guides/access-systems/managing-credentials.md) is being deleted.
-
----
-
-**`unknown_issue_with_acs_credential`**
-
-An unknown issue occurred while syncing the state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) with the provider. This issue may affect the proper functioning of the credential.
-
----
-
-**`needs_to_be_reissued`**
-
-Access permissions for the [credential](../../../capability-guides/access-systems/managing-credentials.md) have changed. [Reissue](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md) (re-encode) the credential. This issue may affect the proper functioning of the credential.
-
----
-
+<td>Access permissions for the [credential](../../../capability-guides/access-systems/managing-credentials.md) have changed. [Reissue](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md) (re-encode) the credential. This issue may affect the proper functioning of the credential.</td>
+</tr>
+</table>
 
 ## Events
 
-**`acs_credential.deleted`**
-
+<table>
+<tr><th width="25%">Event</th><th>Description</th></tr>
+<tr><td><strong><code>acs_credential.deleted</code></strong></td>
+<td>
 An [ACS credential](../../../capability-guides/access-systems/managing-credentials.md) was deleted.
 
 <details>
@@ -436,10 +429,9 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 </details>
 
----
-
-**`acs_credential.issued`**
-
+</td></tr>
+<tr><td><strong><code>acs_credential.issued</code></strong></td>
+<td>
 An [ACS credential](../../../capability-guides/access-systems/managing-credentials.md) was issued.
 
 <details>
@@ -491,10 +483,9 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 </details>
 
----
-
-**`acs_credential.reissued`**
-
+</td></tr>
+<tr><td><strong><code>acs_credential.reissued</code></strong></td>
+<td>
 An [ACS credential](../../../capability-guides/access-systems/managing-credentials.md) was reissued.
 
 <details>
@@ -546,10 +537,9 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 </details>
 
----
-
-**`acs_credential.invalidated`**
-
+</td></tr>
+<tr><td><strong><code>acs_credential.invalidated</code></strong></td>
+<td>
 An [ACS credential](../../../capability-guides/access-systems/managing-credentials.md) was invalidated.
 
 <details>
@@ -601,48 +591,51 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 </details>
 
----
+</td></tr>
+</table>
 
 ## Endpoints
 
+<table>
+<tr><th width="25%">Endpoint</th><th>Description</th></tr>
 
-[**`/acs/credentials/assign`**](./assign.md)
+<tr><td><a href="./assign.md"><strong><code>/acs/credentials/assign</code></strong></a></td>
 
-Assigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) to a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
-
-[**`/acs/credentials/create`**](./create.md)
-
-Creates a new [credential](../../../capability-guides/access-systems/managing-credentials.md) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+<td>Assigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) to a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).</td></tr>
 
 
-[**`/acs/credentials/delete`**](./delete.md)
+<tr><td><a href="./create.md"><strong><code>/acs/credentials/create</code></strong></a></td>
 
-Deletes a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
-
-
-[**`/acs/credentials/get`**](./get.md)
-
-Returns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
+<td>Creates a new [credential](../../../capability-guides/access-systems/managing-credentials.md) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).</td></tr>
 
 
-[**`/acs/credentials/list`**](./list.md)
+<tr><td><a href="./delete.md"><strong><code>/acs/credentials/delete</code></strong></a></td>
 
-Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md).
-
-
-[**`/acs/credentials/list_accessible_entrances`**](./list_accessible_entrances.md)
-
-Returns a list of all [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a [credential](https://docs.seam.co/latest/api/acs/credentials) grants access.
+<td>Deletes a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).</td></tr>
 
 
-[**`/acs/credentials/unassign`**](./unassign.md)
+<tr><td><a href="./get.md"><strong><code>/acs/credentials/get</code></strong></a></td>
 
-Unassigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) from a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
-
-[**`/acs/credentials/update`**](./update.md)
-
-Updates the code and ends at date and time for a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
+<td>Returns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).</td></tr>
 
 
+<tr><td><a href="./list.md"><strong><code>/acs/credentials/list</code></strong></a></td>
+
+<td>Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md).</td></tr>
+
+
+<tr><td><a href="./list_accessible_entrances.md"><strong><code>/acs/credentials/list_accessible_entrances</code></strong></a></td>
+
+<td>Returns a list of all [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a [credential](https://docs.seam.co/latest/api/acs/credentials) grants access.</td></tr>
+
+
+<tr><td><a href="./unassign.md"><strong><code>/acs/credentials/unassign</code></strong></a></td>
+
+<td>Unassigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) from a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).</td></tr>
+
+
+<tr><td><a href="./update.md"><strong><code>/acs/credentials/update</code></strong></a></td>
+
+<td>Updates the code and ends at date and time for a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).</td></tr>
+
+</table>

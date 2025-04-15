@@ -28,83 +28,61 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Request Parameters
 
 <table>
-<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><th width="25%">Parameter</th><th>Description</th></tr>
 <tr><td><strong><code>access_method</code></strong> <i>String</i> (Required)</td>
 <td>
 
 Access method for the new credential. Supported values: `code`, `card`, `mobile_key`.
-
----
 </td></tr>
 <tr><td><strong><code>acs_user_id</code></strong> <i>String</i> (Required)</td>
 <td>
 
 ID of the ACS user to whom the new credential belongs.
-
----
 </td></tr>
 <tr><td><strong><code>allowed_acs_entrance_ids</code></strong> <i>Array</i> <i>of UUIDs</i></td>
 <td>
 
 Set of IDs of the [entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md) for which the new credential grants access.
-
----
 </td></tr>
 <tr><td><strong><code>assa_abloy_vostio_metadata</code></strong> <i>Object</i></td>
 <td>
 
 Vostio-specific metadata for the new credential.
-
----
 </td></tr>
 <tr><td><strong><code>code</code></strong> <i>String</i></td>
 <td>
 
 Access (PIN) code for the new credential. There may be manufacturer-specific code restrictions. For details, see the applicable [device or system integration guide](../../../device-and-system-integration-guides/overview.md).
-
----
 </td></tr>
 <tr><td><strong><code>credential_manager_acs_system_id</code></strong> <i>String</i></td>
 <td>
 
 ACS system ID of the credential manager for the new credential.
-
----
 </td></tr>
 <tr><td><strong><code>ends_at</code></strong> <i>String</i></td>
 <td>
 
 Date and time at which the validity of the new credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
-
----
 </td></tr>
 <tr><td><strong><code>is_multi_phone_sync_credential</code></strong> <i>Boolean</i></td>
 <td>
 
 Indicates whether the new credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
-
----
 </td></tr>
 <tr><td><strong><code>salto_space_metadata</code></strong> <i>Object</i></td>
 <td>
 
 Salto Space-specific metadata for the new credential.
-
----
 </td></tr>
 <tr><td><strong><code>starts_at</code></strong> <i>String</i></td>
 <td>
 
 Date and time at which the validity of the new credential starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
-
----
 </td></tr>
 <tr><td><strong><code>visionline_metadata</code></strong> <i>Object</i></td>
 <td>
 
 Visionline-specific metadata for the new credential.
-
----
 </td></tr>
 </table>
 

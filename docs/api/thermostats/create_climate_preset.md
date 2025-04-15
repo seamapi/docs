@@ -29,76 +29,56 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Request Parameters
 
 <table>
-<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><th width="25%">Parameter</th><th>Description</th></tr>
 <tr><td><strong><code>climate_preset_key</code></strong> <i>String</i> (Required)</td>
 <td>
 
 Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
-
----
 </td></tr>
 <tr><td><strong><code>device_id</code></strong> <i>String</i> (Required)</td>
 <td>
 
 ID of the desired thermostat device.
-
----
 </td></tr>
 <tr><td><strong><code>cooling_set_point_celsius</code></strong> <i>Number</i></td>
 <td>
 
 Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
----
 </td></tr>
 <tr><td><strong><code>cooling_set_point_fahrenheit</code></strong> <i>Number</i></td>
 <td>
 
 Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
----
 </td></tr>
 <tr><td><strong><code>fan_mode_setting</code></strong> <i>String</i></td>
 <td>
 
 Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
-
----
 </td></tr>
 <tr><td><strong><code>heating_set_point_celsius</code></strong> <i>Number</i></td>
 <td>
 
 Temperature to which the thermostat should heat (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
----
 </td></tr>
 <tr><td><strong><code>heating_set_point_fahrenheit</code></strong> <i>Number</i></td>
 <td>
 
 Temperature to which the thermostat should heat (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
----
 </td></tr>
 <tr><td><strong><code>hvac_mode_setting</code></strong> <i>String</i></td>
 <td>
 
 Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
-
----
 </td></tr>
 <tr><td><strong><code>manual_override_allowed</code></strong> <i>Boolean</i></td>
 <td>
 
 Indicates whether a person at the thermostat or using the API can change the thermostat's settings.
-
----
 </td></tr>
 <tr><td><strong><code>name</code></strong> <i>String</i></td>
 <td>
 
 User-friendly name to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
-
----
 </td></tr>
 </table>
 

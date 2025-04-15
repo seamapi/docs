@@ -29,60 +29,44 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Request Parameters
 
 <table>
-<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><th width="25%">Parameter</th><th>Description</th></tr>
 <tr><td><strong><code>acs_system_id</code></strong> <i>String</i></td>
 <td>
 
 ID of the `acs_system` for which you want to retrieve all `acs_user`s.
-
----
 </td></tr>
 <tr><td><strong><code>created_before</code></strong> <i>String</i></td>
 <td>
-
----
 </td></tr>
 <tr><td><strong><code>limit</code></strong> <i>Number</i></td>
 <td>
 
 Maximum number of records to return per page.
-
----
 </td></tr>
 <tr><td><strong><code>page_cursor</code></strong> <i>String</i></td>
 <td>
 
 Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
-
----
 </td></tr>
 <tr><td><strong><code>search</code></strong> <i>String</i></td>
 <td>
 
 String for which to search. Filters returned `acs_user`s to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address`, `acs_user_id`, `user_identity_id`, `user_identity_full_name` or `user_identity_phone_number`.
-
----
 </td></tr>
 <tr><td><strong><code>user_identity_email_address</code></strong> <i>String</i></td>
 <td>
 
 Email address of the user identity for which you want to retrieve all `acs_user`s.
-
----
 </td></tr>
 <tr><td><strong><code>user_identity_id</code></strong> <i>String</i></td>
 <td>
 
 ID of the user identity for which you want to retrieve all `acs_user`s.
-
----
 </td></tr>
 <tr><td><strong><code>user_identity_phone_number</code></strong> <i>String</i></td>
 <td>
 
 Phone number of the user identity for which you want to retrieve all `acs_user`s, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`).
-
----
 </td></tr>
 </table>
 

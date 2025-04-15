@@ -114,8 +114,10 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 ## Events
 
-**`acs_encoder.added`**
-
+<table>
+<tr><th width="25%">Event</th><th>Description</th></tr>
+<tr><td><strong><code>acs_encoder.added</code></strong></td>
+<td>
 An [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) was added.
 
 <details>
@@ -169,10 +171,9 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 
 </details>
 
----
-
-**`acs_encoder.removed`**
-
+</td></tr>
+<tr><td><strong><code>acs_encoder.removed</code></strong></td>
+<td>
 An [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) was removed.
 
 <details>
@@ -226,23 +227,26 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 
 </details>
 
----
+</td></tr>
+</table>
 
 ## Endpoints
 
+<table>
+<tr><th width="25%">Endpoint</th><th>Description</th></tr>
 
-[**`/acs/encoders/encode_credential`**](./encode_credential.md)
+<tr><td><a href="./encode_credential.md"><strong><code>/acs/encoders/encode_credential</code></strong></a></td>
 
-Encodes an existing [credential](../../../capability-guides/access-systems/managing-credentials.md) onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
-
-
-[**`/acs/encoders/list`**](./list.md)
-
-Returns a list of all [encoders](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+<td>Encodes an existing [credential](../../../capability-guides/access-systems/managing-credentials.md) onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).</td></tr>
 
 
-[**`/acs/encoders/scan_credential`**](./scan_credential.md)
+<tr><td><a href="./list.md"><strong><code>/acs/encoders/list</code></strong></a></td>
 
-Scans an encoded [acs_credential](../../../capability-guides/access-systems/managing-credentials.md) from a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+<td>Returns a list of all [encoders](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).</td></tr>
 
 
+<tr><td><a href="./scan_credential.md"><strong><code>/acs/encoders/scan_credential</code></strong></a></td>
+
+<td>Scans an encoded [acs_credential](../../../capability-guides/access-systems/managing-credentials.md) from a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).</td></tr>
+
+</table>

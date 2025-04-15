@@ -177,8 +177,10 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 ## Events
 
-**`acs_access_group.deleted`**
-
+<table>
+<tr><th width="25%">Event</th><th>Description</th></tr>
+<tr><td><strong><code>acs_access_group.deleted</code></strong></td>
+<td>
 An ACS access group was deleted.
 
 <details>
@@ -230,38 +232,41 @@ An ACS access group was deleted.
 
 </details>
 
----
+</td></tr>
+</table>
 
 ## Endpoints
 
+<table>
+<tr><th width="25%">Endpoint</th><th>Description</th></tr>
 
-[**`/acs/access_groups/add_user`**](./add_user.md)
+<tr><td><a href="./add_user.md"><strong><code>/acs/access_groups/add_user</code></strong></a></td>
 
-Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
-
-
-[**`/acs/access_groups/get`**](./get.md)
-
-Returns a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+<td>Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).</td></tr>
 
 
-[**`/acs/access_groups/list`**](./list.md)
+<tr><td><a href="./get.md"><strong><code>/acs/access_groups/get</code></strong></a></td>
 
-Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
-
-
-[**`/acs/access_groups/list_accessible_entrances`**](./list_accessible_entrances.md)
-
-Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+<td>Returns a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).</td></tr>
 
 
-[**`/acs/access_groups/list_users`**](./list_users.md)
+<tr><td><a href="./list.md"><strong><code>/acs/access_groups/list</code></strong></a></td>
 
-Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
-
-
-[**`/acs/access_groups/remove_user`**](./remove_user.md)
-
-Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+<td>Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).</td></tr>
 
 
+<tr><td><a href="./list_accessible_entrances.md"><strong><code>/acs/access_groups/list_accessible_entrances</code></strong></a></td>
+
+<td>Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).</td></tr>
+
+
+<tr><td><a href="./list_users.md"><strong><code>/acs/access_groups/list_users</code></strong></a></td>
+
+<td>Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).</td></tr>
+
+
+<tr><td><a href="./remove_user.md"><strong><code>/acs/access_groups/remove_user</code></strong></a></td>
+
+<td>Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).</td></tr>
+
+</table>

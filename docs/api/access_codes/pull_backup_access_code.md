@@ -37,13 +37,11 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Request Parameters
 
 <table>
-<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><th width="25%">Parameter</th><th>Description</th></tr>
 <tr><td><strong><code>access_code_id</code></strong> <i>String</i> (Required)</td>
 <td>
 
 ID of the access code for which you want to pull a backup access code.
-
----
 </td></tr>
 </table>
 

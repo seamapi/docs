@@ -87,66 +87,70 @@ ID of the [workspace](../../core-concepts/workspaces/README.md) that contains th
 </td></tr>
 
 </table>
+</table>
+
 ## Endpoints
 
+<table>
+<tr><th width="25%">Endpoint</th><th>Description</th></tr>
 
-[**`/user_identities/add_acs_user`**](./add_acs_user.md)
+<tr><td><a href="./add_acs_user.md"><strong><code>/user_identities/add_acs_user</code></strong></a></td>
 
-Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
-
-
-[**`/user_identities/create`**](./create.md)
-
-Creates a new [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+<td>Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).</td></tr>
 
 
-[**`/user_identities/delete`**](./delete.md)
+<tr><td><a href="./create.md"><strong><code>/user_identities/create</code></strong></a></td>
 
-Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). To delete a user identity, you must first delete any [ACS credentials](https://docs.seam.co/latest/api/access-control-systems/credentials) and [enrollment automations](https://docs.seam.co/latest/api/user_identities/enrollment_automations/delete) associated with the user identity. You must also deactivate any associated phones.
-
-
-[**`/user_identities/get`**](./get.md)
-
-Returns a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+<td>Creates a new [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).</td></tr>
 
 
-[**`/user_identities/grant_access_to_device`**](./grant_access_to_device.md)
+<tr><td><a href="./delete.md"><strong><code>/user_identities/delete</code></strong></a></td>
 
-Grants a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) access to a specified [device](../../core-concepts/devices/README.md).
-
-
-[**`/user_identities/list`**](./list.md)
-
-Returns a list of all [user identities](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+<td>Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). To delete a user identity, you must first delete any [ACS credentials](https://docs.seam.co/latest/api/access-control-systems/credentials) and [enrollment automations](https://docs.seam.co/latest/api/user_identities/enrollment_automations/delete) associated with the user identity. You must also deactivate any associated phones.</td></tr>
 
 
-[**`/user_identities/list_accessible_devices`**](./list_accessible_devices.md)
+<tr><td><a href="./get.md"><strong><code>/user_identities/get</code></strong></a></td>
 
-Returns a list of all [devices](../../core-concepts/devices/README.md) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
-
-
-[**`/user_identities/list_acs_systems`**](./list_acs_systems.md)
-
-Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+<td>Returns a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).</td></tr>
 
 
-[**`/user_identities/list_acs_users`**](./list_acs_users.md)
+<tr><td><a href="./grant_access_to_device.md"><strong><code>/user_identities/grant_access_to_device</code></strong></a></td>
 
-Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
-
-
-[**`/user_identities/remove_acs_user`**](./remove_acs_user.md)
-
-Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+<td>Grants a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) access to a specified [device](../../core-concepts/devices/README.md).</td></tr>
 
 
-[**`/user_identities/revoke_access_to_device`**](./revoke_access_to_device.md)
+<tr><td><a href="./list.md"><strong><code>/user_identities/list</code></strong></a></td>
 
-Revokes access to a specified [device](../../core-concepts/devices/README.md) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
-
-
-[**`/user_identities/update`**](./update.md)
+<td>Returns a list of all [user identities](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).</td></tr>
 
 
+<tr><td><a href="./list_accessible_devices.md"><strong><code>/user_identities/list_accessible_devices</code></strong></a></td>
+
+<td>Returns a list of all [devices](../../core-concepts/devices/README.md) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).</td></tr>
 
 
+<tr><td><a href="./list_acs_systems.md"><strong><code>/user_identities/list_acs_systems</code></strong></a></td>
+
+<td>Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).</td></tr>
+
+
+<tr><td><a href="./list_acs_users.md"><strong><code>/user_identities/list_acs_users</code></strong></a></td>
+
+<td>Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).</td></tr>
+
+
+<tr><td><a href="./remove_acs_user.md"><strong><code>/user_identities/remove_acs_user</code></strong></a></td>
+
+<td>Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).</td></tr>
+
+
+<tr><td><a href="./revoke_access_to_device.md"><strong><code>/user_identities/revoke_access_to_device</code></strong></a></td>
+
+<td>Revokes access to a specified [device](../../core-concepts/devices/README.md) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).</td></tr>
+
+
+<tr><td><a href="./update.md"><strong><code>/user_identities/update</code></strong></a></td>
+
+<td></td></tr>
+
+</table>

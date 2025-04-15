@@ -304,8 +304,10 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 
 ## Events
 
-**`acs_entrance.added`**
-
+<table>
+<tr><th width="25%">Event</th><th>Description</th></tr>
+<tr><td><strong><code>acs_entrance.added</code></strong></td>
+<td>
 An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was added.
 
 <details>
@@ -357,10 +359,9 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 
 </details>
 
----
-
-**`acs_entrance.removed`**
-
+</td></tr>
+<tr><td><strong><code>acs_entrance.removed</code></strong></td>
+<td>
 An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was removed.
 
 <details>
@@ -412,28 +413,31 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 
 </details>
 
----
+</td></tr>
+</table>
 
 ## Endpoints
 
+<table>
+<tr><th width="25%">Endpoint</th><th>Description</th></tr>
 
-[**`/acs/entrances/get`**](./get.md)
+<tr><td><a href="./get.md"><strong><code>/acs/entrances/get</code></strong></a></td>
 
-Returns a specified [ACS entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
-
-
-[**`/acs/entrances/grant_access`**](./grant_access.md)
-
+<td>Returns a specified [ACS entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).</td></tr>
 
 
+<tr><td><a href="./grant_access.md"><strong><code>/acs/entrances/grant_access</code></strong></a></td>
 
-[**`/acs/entrances/list`**](./list.md)
-
-Returns a list of all [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
-
-
-[**`/acs/entrances/list_credentials_with_access`**](./list_credentials_with_access.md)
-
-Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md) with access to a specified [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+<td></td></tr>
 
 
+<tr><td><a href="./list.md"><strong><code>/acs/entrances/list</code></strong></a></td>
+
+<td>Returns a list of all [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).</td></tr>
+
+
+<tr><td><a href="./list_credentials_with_access.md"><strong><code>/acs/entrances/list_credentials_with_access</code></strong></a></td>
+
+<td>Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md) with access to a specified [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).</td></tr>
+
+</table>

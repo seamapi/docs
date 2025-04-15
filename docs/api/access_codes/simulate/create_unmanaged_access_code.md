@@ -29,27 +29,21 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Request Parameters
 
 <table>
-<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><th width="25%">Parameter</th><th>Description</th></tr>
 <tr><td><strong><code>code</code></strong> <i>String</i> (Required)</td>
 <td>
 
 Code of the simulated unmanaged access code.
-
----
 </td></tr>
 <tr><td><strong><code>device_id</code></strong> <i>String</i> (Required)</td>
 <td>
 
 ID of the device for which you want to simulate the creation of an unmanaged access code.
-
----
 </td></tr>
 <tr><td><strong><code>name</code></strong> <i>String</i> (Required)</td>
 <td>
 
 Name of the simulated unmanaged access code.
-
----
 </td></tr>
 </table>
 

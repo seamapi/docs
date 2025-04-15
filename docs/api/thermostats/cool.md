@@ -29,27 +29,21 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Request Parameters
 
 <table>
-<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><th width="25%">Parameter</th><th>Description</th></tr>
 <tr><td><strong><code>device_id</code></strong> <i>String</i> (Required)</td>
 <td>
 
 ID of the desired thermostat device.
-
----
 </td></tr>
 <tr><td><strong><code>cooling_set_point_celsius</code></strong> <i>Number</i></td>
 <td>
 
 Desired [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `cooling_set_point` parameters.
-
----
 </td></tr>
 <tr><td><strong><code>cooling_set_point_fahrenheit</code></strong> <i>Number</i></td>
 <td>
 
 Desired [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `cooling_set_point` parameters.
-
----
 </td></tr>
 </table>
 

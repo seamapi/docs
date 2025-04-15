@@ -28,51 +28,37 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Request Parameters
 
 <table>
-<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><th width="25%">Parameter</th><th>Description</th></tr>
 <tr><td><strong><code>acs_user_id</code></strong> <i>String</i> (Required)</td>
 <td>
 
 ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
----
 </td></tr>
 <tr><td><strong><code>access_schedule</code></strong> <i>Object</i></td>
 <td>
 
 `starts_at` and `ends_at` timestamps for the `acs_user`'s access. If you specify an `access_schedule`, you must include both `starts_at` and `ends_at`. `ends_at` must be a time in the future and after `starts_at`.
-
----
 </td></tr>
 <tr><td><strong><code>email</code></strong> <i>String</i></td>
 <td>
-
----
 </td></tr>
 <tr><td><strong><code>email_address</code></strong> <i>String</i></td>
 <td>
 
 Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
----
 </td></tr>
 <tr><td><strong><code>full_name</code></strong> <i>String</i></td>
 <td>
 
 Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
----
 </td></tr>
 <tr><td><strong><code>hid_acs_system_id</code></strong> <i>String</i></td>
 <td>
-
----
 </td></tr>
 <tr><td><strong><code>phone_number</code></strong> <i>String</i></td>
 <td>
 
 Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
-
----
 </td></tr>
 </table>
 

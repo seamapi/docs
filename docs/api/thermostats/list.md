@@ -29,55 +29,41 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Request Parameters
 
 <table>
-<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><th width="25%">Parameter</th><th>Description</th></tr>
 <tr><td><strong><code>connect_webview_id</code></strong> <i>String</i></td>
 <td>
 
 ID of the Connect Webview by which to filter devices.
-
----
 </td></tr>
 <tr><td><strong><code>connected_account_id</code></strong> <i>String</i></td>
 <td>
 
 ID of the connected account by which to filter.
-
----
 </td></tr>
 <tr><td><strong><code>connected_account_ids</code></strong> <i>Array</i> <i>of UUIDs</i></td>
 <td>
 
 Array of IDs of the connected accounts by which to filter devices.
-
----
 </td></tr>
 <tr><td><strong><code>created_before</code></strong> <i>String</i></td>
 <td>
 
 Date threshold for devices to return. If specified, returns only devices created before the specified date.
-
----
 </td></tr>
 <tr><td><strong><code>custom_metadata_has</code></strong> <i>Object</i></td>
 <td>
 
 Set of key:value [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) pairs by which you want to filter devices.
-
----
 </td></tr>
 <tr><td><strong><code>device_ids</code></strong> <i>Array</i> <i>of UUIDs</i></td>
 <td>
 
 Array of device IDs by which to filter devices.
-
----
 </td></tr>
 <tr><td><strong><code>device_type</code></strong> <i>String</i></td>
 <td>
 
 Device type by which to filter devices.
-
----
 </td></tr>
 <tr><td><strong><code>device_types</code></strong> <i>Array</i> <i>of Enums</i></td>
 <td>
@@ -94,29 +80,21 @@ Possible enum values:
 - `tado_thermostat`
 - `sensi_thermostat`
 </details>
-
----
 </td></tr>
 <tr><td><strong><code>limit</code></strong> <i>Number</i></td>
 <td>
 
 Numerical limit on the number of devices to return.
-
----
 </td></tr>
 <tr><td><strong><code>manufacturer</code></strong> <i>String</i></td>
 <td>
 
 Manufacturer by which to filter devices.
-
----
 </td></tr>
 <tr><td><strong><code>user_identifier_key</code></strong> <i>String</i></td>
 <td>
 
 Your own internal user ID for the user by which to filter devices.
-
----
 </td></tr>
 </table>
 

@@ -191,8 +191,10 @@ ID of the [workspace](../../core-concepts/workspaces/README.md) that contains th
 
 ## Events
 
-**`phone.deactivated`**
-
+<table>
+<tr><th width="25%">Event</th><th>Description</th></tr>
+<tr><td><strong><code>phone.deactivated</code></strong></td>
+<td>
 A phone device was deactivated.
 
 <details>
@@ -234,23 +236,26 @@ A phone device was deactivated.
 
 </details>
 
----
+</td></tr>
+</table>
 
 ## Endpoints
 
+<table>
+<tr><th width="25%">Endpoint</th><th>Description</th></tr>
 
-[**`/phones/deactivate`**](./deactivate.md)
+<tr><td><a href="./deactivate.md"><strong><code>/phones/deactivate</code></strong></a></td>
 
-Deactivates a phone, which is useful, for example, if a user has lost their phone. For more information, see [App User Lost Phone Process](../../capability-guides/mobile-access/managing-phones-for-a-user-identity.md#app-user-lost-phone-process).
-
-
-[**`/phones/get`**](./get.md)
-
-Returns a single phone entry matching the provided `device_id`.
+<td>Deactivates a phone, which is useful, for example, if a user has lost their phone. For more information, see [App User Lost Phone Process](../../capability-guides/mobile-access/managing-phones-for-a-user-identity.md#app-user-lost-phone-process).</td></tr>
 
 
-[**`/phones/list`**](./list.md)
+<tr><td><a href="./get.md"><strong><code>/phones/get</code></strong></a></td>
 
-Returns a list of all phones. To filter the list of returned phones by a specific owner user identity or credential, include the `owner_user_identity_id` or `acs_credential_id`, respectively, in the request body.
+<td>Returns a single phone entry matching the provided `device_id`.</td></tr>
 
 
+<tr><td><a href="./list.md"><strong><code>/phones/list</code></strong></a></td>
+
+<td>Returns a list of all phones. To filter the list of returned phones by a specific owner user identity or credential, include the `owner_user_identity_id` or `acs_credential_id`, respectively, in the request body.</td></tr>
+
+</table>

@@ -28,60 +28,44 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Request Parameters
 
 <table>
-<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><th width="25%">Parameter</th><th>Description</th></tr>
 <tr><td><strong><code>acs_system_id</code></strong> <i>String</i> (Required)</td>
 <td>
 
 ID of the `acs_system` to which to add the new `acs_user`.
-
----
 </td></tr>
 <tr><td><strong><code>full_name</code></strong> <i>String</i> (Required)</td>
 <td>
 
 Full name of the new `acs_user`.
-
----
 </td></tr>
 <tr><td><strong><code>access_schedule</code></strong> <i>Object</i></td>
 <td>
 
 `starts_at` and `ends_at` timestamps for the new `acs_user`'s access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. `starts_at` defaults to the current time if not provided. `ends_at` is optional and must be a time in the future and after `starts_at`.
-
----
 </td></tr>
 <tr><td><strong><code>acs_access_group_ids</code></strong> <i>Array</i> <i>of UUIDs</i></td>
 <td>
 
 Array of `access_group_id`s to indicate the access groups to which to add the new `acs_user`.
-
----
 </td></tr>
 <tr><td><strong><code>email</code></strong> <i>String</i></td>
 <td>
-
----
 </td></tr>
 <tr><td><strong><code>email_address</code></strong> <i>String</i></td>
 <td>
 
 Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
----
 </td></tr>
 <tr><td><strong><code>phone_number</code></strong> <i>String</i></td>
 <td>
 
 Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
-
----
 </td></tr>
 <tr><td><strong><code>user_identity_id</code></strong> <i>String</i></td>
 <td>
 
 ID of the user identity with which to associate the new `acs_user`.
-
----
 </td></tr>
 </table>
 

@@ -29,23 +29,17 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Request Parameters
 
 <table>
-<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><th width="25%">Parameter</th><th>Description</th></tr>
 <tr><td><strong><code>device_id</code></strong> <i>String</i> (Required)</td>
 <td>
-
----
 </td></tr>
 <tr><td><strong><code>fan_mode</code></strong> <i>String</i></td>
 <td>
-
----
 </td></tr>
 <tr><td><strong><code>fan_mode_setting</code></strong> <i>String</i></td>
 <td>
 
 Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for the thermostat.
-
----
 </td></tr>
 </table>
 

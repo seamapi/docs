@@ -230,62 +230,54 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 ## Errors
 
-**`deleted_externally`**
+<table>
+<tr><th width="25%">Error</th><th>Description</th></tr>
+<tr><td><strong><code>deleted_externally</code></strong></td>
 
-Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted from the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) outside of Seam.
+<td>Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted from the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) outside of Seam.</td>
+</tr>
+<tr><td><strong><code>salto_ks_subscription_limit_exceeded</code></strong></td>
 
----
+<td>Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.</td>
+</tr>
+<tr><td><strong><code>failed_to_create_on_acs_system</code></strong></td>
 
-**`salto_ks_subscription_limit_exceeded`**
+<td>Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not created on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).</td>
+</tr>
+<tr><td><strong><code>failed_to_update_on_acs_system</code></strong></td>
 
-Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.
+<td>Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not updated on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).</td>
+</tr>
+<tr><td><strong><code>failed_to_delete_on_acs_system</code></strong></td>
 
----
-
-**`failed_to_create_on_acs_system`**
-
-Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not created on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
-
----
-
-**`failed_to_update_on_acs_system`**
-
-Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not updated on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
-
----
-
-**`failed_to_delete_on_acs_system`**
-
-Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not deleted on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
-
----
-
+<td>Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not deleted on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).</td>
+</tr>
+</table>
 
 ## Warnings
 
-**`being_deleted`**
+<table>
+<tr><th width="25%">Warning</th><th>Description</th></tr>
+<tr><td><strong><code>being_deleted</code></strong></td>
 
-Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is being deleted from the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is a temporary state, and the ACS user will be deleted shortly.
+<td>Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is being deleted from the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is a temporary state, and the ACS user will be deleted shortly.</td>
+</tr>
+<tr><td><strong><code>salto_ks_user_not_subscribed</code></strong></td>
 
----
+<td>Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is not subscribed on Salto KS, so they cannot unlock doors or perform any actions. This occurs when the their access schedule hasn’t started yet, if their access schedule has ended, if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.</td>
+</tr>
+<tr><td><strong><code>unknown_issue_with_acs_user</code></strong></td>
 
-**`salto_ks_user_not_subscribed`**
-
-Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is not subscribed on Salto KS, so they cannot unlock doors or perform any actions. This occurs when the their access schedule hasn’t started yet, if their access schedule has ended, if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.
-
----
-
-**`unknown_issue_with_acs_user`**
-
-An unknown issue occurred while syncing the state of this [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user.
-
----
-
+<td>An unknown issue occurred while syncing the state of this [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user.</td>
+</tr>
+</table>
 
 ## Events
 
-**`acs_user.deleted`**
-
+<table>
+<tr><th width="25%">Event</th><th>Description</th></tr>
+<tr><td><strong><code>acs_user.deleted</code></strong></td>
+<td>
 An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted.
 
 <details>
@@ -337,63 +329,66 @@ An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-
 
 </details>
 
----
+</td></tr>
+</table>
 
 ## Endpoints
 
+<table>
+<tr><th width="25%">Endpoint</th><th>Description</th></tr>
 
-[**`/acs/users/add_to_access_group`**](./add_to_access_group.md)
+<tr><td><a href="./add_to_access_group.md"><strong><code>/acs/users/add_to_access_group</code></strong></a></td>
 
-Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
-
-
-[**`/acs/users/create`**](./create.md)
-
-Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+<td>Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).</td></tr>
 
 
-[**`/acs/users/delete`**](./delete.md)
+<tr><td><a href="./create.md"><strong><code>/acs/users/create</code></strong></a></td>
 
-Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).
-
-
-[**`/acs/users/get`**](./get.md)
-
-Returns a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+<td>Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).</td></tr>
 
 
-[**`/acs/users/list`**](./list.md)
+<tr><td><a href="./delete.md"><strong><code>/acs/users/delete</code></strong></a></td>
 
-Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
-
-[**`/acs/users/list_accessible_entrances`**](./list_accessible_entrances.md)
-
-Lists the [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) has access.
+<td>Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).</td></tr>
 
 
-[**`/acs/users/remove_from_access_group`**](./remove_from_access_group.md)
+<tr><td><a href="./get.md"><strong><code>/acs/users/get</code></strong></a></td>
 
-Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
-
-
-[**`/acs/users/revoke_access_to_all_entrances`**](./revoke_access_to_all_entrances.md)
-
-Revokes access to all [entrances](https://docs.seam.co/latest/api/acs/entrances) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+<td>Returns a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).</td></tr>
 
 
-[**`/acs/users/suspend`**](./suspend.md)
+<tr><td><a href="./list.md"><strong><code>/acs/users/list</code></strong></a></td>
 
-[Suspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#suspend-an-acs-user) a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Suspending an ACS user revokes their access temporarily. To restore an ACS user's access, you can [unsuspend](https://docs.seam.co/latest/api/acs/users/unsuspend) them.
-
-
-[**`/acs/users/unsuspend`**](./unsuspend.md)
-
-[Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an ACS user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the ACS user restores their access.
+<td>Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).</td></tr>
 
 
-[**`/acs/users/update`**](./update.md)
+<tr><td><a href="./list_accessible_entrances.md"><strong><code>/acs/users/list_accessible_entrances</code></strong></a></td>
 
-Updates the properties of a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+<td>Lists the [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) has access.</td></tr>
 
 
+<tr><td><a href="./remove_from_access_group.md"><strong><code>/acs/users/remove_from_access_group</code></strong></a></td>
+
+<td>Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).</td></tr>
+
+
+<tr><td><a href="./revoke_access_to_all_entrances.md"><strong><code>/acs/users/revoke_access_to_all_entrances</code></strong></a></td>
+
+<td>Revokes access to all [entrances](https://docs.seam.co/latest/api/acs/entrances) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).</td></tr>
+
+
+<tr><td><a href="./suspend.md"><strong><code>/acs/users/suspend</code></strong></a></td>
+
+<td>[Suspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#suspend-an-acs-user) a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Suspending an ACS user revokes their access temporarily. To restore an ACS user's access, you can [unsuspend](https://docs.seam.co/latest/api/acs/users/unsuspend) them.</td></tr>
+
+
+<tr><td><a href="./unsuspend.md"><strong><code>/acs/users/unsuspend</code></strong></a></td>
+
+<td>[Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an ACS user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the ACS user restores their access.</td></tr>
+
+
+<tr><td><a href="./update.md"><strong><code>/acs/users/update</code></strong></a></td>
+
+<td>Updates the properties of a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).</td></tr>
+
+</table>

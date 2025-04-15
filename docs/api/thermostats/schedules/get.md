@@ -29,13 +29,11 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Request Parameters
 
 <table>
-<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><th width="25%">Parameter</th><th>Description</th></tr>
 <tr><td><strong><code>thermostat_schedule_id</code></strong> <i>String</i> (Required)</td>
 <td>
 
 ID of the desired thermostat schedule.
-
----
 </td></tr>
 </table>
 

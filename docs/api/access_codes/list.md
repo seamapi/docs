@@ -31,27 +31,21 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Request Parameters
 
 <table>
-<tr><th width="25%">Property</th><th>Description</th></tr>
+<tr><th width="25%">Parameter</th><th>Description</th></tr>
 <tr><td><strong><code>access_code_ids</code></strong> <i>Array</i> <i>of UUIDs</i></td>
 <td>
 
 IDs of the access codes that you want to retrieve. Specify either `device_id` or `access_code_ids`.
-
----
 </td></tr>
 <tr><td><strong><code>device_id</code></strong> <i>String</i></td>
 <td>
 
 ID of the device for which you want to list access codes. Specify either `device_id` or `access_code_ids`.
-
----
 </td></tr>
 <tr><td><strong><code>user_identifier_key</code></strong> <i>String</i></td>
 <td>
 
 Your user ID for the user by which to filter access codes.
-
----
 </td></tr>
 </table>
 

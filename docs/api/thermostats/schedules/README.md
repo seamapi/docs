@@ -116,31 +116,35 @@ ID of the [thermostat schedule](../../../capability-guides/thermostats/creating-
 </td></tr>
 
 </table>
+</table>
+
 ## Endpoints
 
+<table>
+<tr><th width="25%">Endpoint</th><th>Description</th></tr>
 
-[**`/thermostats/schedules/create`**](./create.md)
+<tr><td><a href="./create.md"><strong><code>/thermostats/schedules/create</code></strong></a></td>
 
-Creates a [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
-
-
-[**`/thermostats/schedules/delete`**](./delete.md)
-
-Deletes a [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+<td>Creates a [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).</td></tr>
 
 
-[**`/thermostats/schedules/get`**](./get.md)
+<tr><td><a href="./delete.md"><strong><code>/thermostats/schedules/delete</code></strong></a></td>
 
-Returns a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
-
-
-[**`/thermostats/schedules/list`**](./list.md)
-
-Returns a list of all [thermostat schedules](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+<td>Deletes a [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).</td></tr>
 
 
-[**`/thermostats/schedules/update`**](./update.md)
+<tr><td><a href="./get.md"><strong><code>/thermostats/schedules/get</code></strong></a></td>
 
-Updates a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
+<td>Returns a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).</td></tr>
 
 
+<tr><td><a href="./list.md"><strong><code>/thermostats/schedules/list</code></strong></a></td>
+
+<td>Returns a list of all [thermostat schedules](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).</td></tr>
+
+
+<tr><td><a href="./update.md"><strong><code>/thermostats/schedules/update</code></strong></a></td>
+
+<td>Updates a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).</td></tr>
+
+</table>
