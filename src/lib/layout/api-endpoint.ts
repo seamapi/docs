@@ -39,7 +39,7 @@ export interface ApiEndpointLayoutContext {
     escapedResourceType: string | null
     responseKey: string | null
     responseType: string | null
-    actionAttempt?: ApiRouteResource
+    actionAttempt?: Omit<ApiRouteResource, 'events'>
   }
   primaryCodeSample: CodeSampleContext | null
   additionalCodeSamples: CodeSampleContext[]
