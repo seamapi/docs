@@ -1,8 +1,8 @@
 # Android SDK
 
-Seam SDK allows you to build your own mobile app that supports mobile access or smart device management.
+Seam SDK enables you to build your own mobile app that supports mobile access or smart device management.
 
-Get started with our [integration guide ](../../capability-guides/mobile-access/mobile-device-sdks/)and sample integration (Coming soon!), or browse the SDK reference documentation (Coming soon!).
+Get started with our [integration guide ](../../capability-guides/mobile-access/mobile-device-sdks/)and sample integration (Coming soon!), or browse the [SDK reference documentation](https://android.seam.vc/).
 
 ***
 
