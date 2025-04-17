@@ -30,7 +30,7 @@ When creating a schedule for a thermostat, you can specify `is_override_allowed`
 
 Through these override period settings, the Seam API provides you with the flexibility to customize the thermostat behavior to suit your needs. For example, a multifamily property manager may want to give complete control of the thermostat to a unit's residents as soon as they move into the unit. However, a short-term rental host may want to enforce stricter rules to ensure that their guests are using the associated HVAC system in a reasonable manner.
 
-To allow complete control at the thermostat, set `is_override_allowed` to `true` and `max_override_period_minutes` to `0`. To disable manual overrides entirely, set `is_override_allowed` to `false`.
+To allow complete control at the thermostat, set `is_override_allowed` to `true` and `max_override_period_minutes` to `null`. To disable manual overrides entirely, set `is_override_allowed` to `false`.
 
 ***
 
