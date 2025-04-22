@@ -4,13 +4,17 @@ description: >-
   codes.
 ---
 
-# Backup Access Codes
+# Managing Backup Access Codes
 
 A backup access code pool is a collection of pre-programmed access codes stored on a device, ready for use. These codes are programmed in addition to the regular access codes on Seam, serving as a safety net for any issues with the primary codes.
 
 If there's ever a complication with a primary access code—be it due to intermittent connectivity, manual removal from a device, or provider outages—a backup code can be retrieved. Its end time can then be adjusted to align with the original code, facilitating seamless and uninterrupted access.
 
 To bulletproof your implementation of access codes, it's essential to maintain a pool of backup access codes for each device. Seam provides a robust implementation of this backup pool system, and this article will help you learn how to use our backup access pool system.
+
+{% hint style="info" %}
+Seam supports backup access codes for [time-bound access codes](./#time-bound-access-codes) only.
+{% endhint %}
 
 ***
 
@@ -512,7 +516,7 @@ You can retrieve a backup access code to use instead.
 
 ### 3. Confirm the availability of a backup access code
 
-To confirm that a backup access code is available for retrieval, check the `is_backup_access_code_available` property on the access code by inspecting the response from [Get Access Code](../../../api-clients/access_codes/get) or [List Access Codes](../../../api-clients/access_codes/list.md). If the backup code pool has been exhausted, this property returns `false`.
+To confirm that a backup access code is available for retrieval, check the `is_backup_access_code_available` property on the access code by inspecting the response from [Get Access Code](../../../api-clients/access_codes/get/) or [List Access Codes](../../../api-clients/access_codes/list.md). If the backup code pool has been exhausted, this property returns `false`.
 
 {% hint style="info" %}
 Note that we only support pulling backup codes for `time_bound` codes at this time.
