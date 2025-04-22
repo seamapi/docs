@@ -17,7 +17,7 @@ To develop your mobile key app, perform the following procedures to connect your
 
 ## Connect Credential Services to Seam
 
-ASSA ABLOY Credential Services stores all the mobile credentials that your application issues. For more information about ASSA ABLOY Credential Services, see the [ASSA ABLOY Credential Services integration guide](../../../../../device-guides/assa-abloy-credential-services-credential-manager-in-development.md).
+ASSA ABLOY Credential Services stores all the mobile credentials that your application issues. For more information about ASSA ABLOY Credential Services, see the [ASSA ABLOY Credential Services integration guide](../../../../assa-abloy-credential-services-credential-manager.md).
 
 You received a Credential Services development "tenant" account during the [mandatory ASSA ABLOY mobile development course](step-1-complete-the-assa-abloy-mobile-development-course.md). To find out the credentials and details for this account, see [Retrieve Your ASSA ABLOY Credential Services Development Account Details](step-10-connect-your-visionline-development-account-to-seam.md#retrieve-your-assa-abloy-credential-services-development-account-details). Then, [connect your development Credential Services account to Seam](step-10-connect-your-visionline-development-account-to-seam.md#connect-credential-services).
 

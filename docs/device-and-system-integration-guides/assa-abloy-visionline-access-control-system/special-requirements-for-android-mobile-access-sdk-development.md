@@ -8,7 +8,7 @@ description: >-
 
 ## Add XML File with ASSA ABLOY AID
 
-To develop an Android mobile app that integrates with the ASSA ABLOY Visionline ACS, you must register for the ASSA ABLOY partnership program. Note that if you plan to integrate with the [ASSA ABLOY Visionline credential manager](../../device-guides/assa-abloy-credential-services-credential-manager-in-development.md), you must also register for this program. For details, see [https://www.abloy.com/global/en/partnership-and-integrations](https://www.abloy.com/global/en/partnership-and-integrations).
+To develop an Android mobile app that integrates with the ASSA ABLOY Visionline ACS, you must register for the ASSA ABLOY partnership program. Note that if you plan to integrate with the [ASSA ABLOY Visionline credential manager](../assa-abloy-credential-services-credential-manager.md), you must also register for this program. For details, see [https://www.abloy.com/global/en/partnership-and-integrations](https://www.abloy.com/global/en/partnership-and-integrations).
 
 After you register for the ASSA ABLOY partnership program, ASSA ABLOY provides a Host-based Card Emulation application ID (HCE AID).
 
@@ -35,7 +35,7 @@ For additional information about this resource file, contact [ASSA ABLOY](https:
 
 When developing a mobile app for Android 7, you cannot start and stop Bluetooth low energy (BLE) scanning within a timeframe of approximately 30 seconds. This Android restriction is intended to optimize mobile device battery life. Instead, use a continuous BLE scan.
 
-For more information, see the [ASSA ABLOY knowledge base](https://my.assaabloyglobalsolutions.com/tpp?id=kb\_article\_view\&sys\_kb\_id=a42f98e8db340450812df3b31d9619b1) (ASSA ABLOY login required).
+For more information, see the [ASSA ABLOY knowledge base](https://my.assaabloyglobalsolutions.com/tpp?id=kb_article_view\&sys_kb_id=a42f98e8db340450812df3b31d9619b1) (ASSA ABLOY login required).
 
 ***
 

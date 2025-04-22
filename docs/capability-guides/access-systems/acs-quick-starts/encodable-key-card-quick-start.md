@@ -6,7 +6,7 @@ description: >-
 
 # Encodable Key Card Quick Start
 
-In this quick start, create an ACS user for a virtual [ASSA ABLOY Visionline](../../../device-guides/assa-abloy-visionline-access-control-system-in-development/) access control system. Then, grant the user access to an entrance using a encodable key card credential.
+In this quick start, create an ACS user for a virtual [ASSA ABLOY Visionline](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/) access control system. Then, grant the user access to an entrance using a encodable key card credential.
 
 {% hint style="info" %}
 This quick start walks you through the process that applies specifically to the Visionline ACS. There are often differences between access control systems. For example, for some access control systems, you encode credentials onto cards. For others, you do not encode data onto cards, but, rather, assign cards to users.
@@ -387,7 +387,7 @@ func run() error {
 
 ## Step 4: Create an Encodable Key Card Credential
 
-Create an encodable key card credential for the ACS user. In this credential, specify the set of allowed entrances and the access schedule. For Visionline, you must also specify some system-specific metadata, such as the card format and whether the credential is an [override credential](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types/#credential-types-for-visionline).
+Create an encodable key card credential for the ACS user. In this credential, specify the set of allowed entrances and the access schedule. For Visionline, you must also specify some system-specific metadata, such as the card format and whether the credential is an [override credential](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/credential-types/#credential-types-for-visionline).
 
 If this credential were intended for a real Visionline card, you'd need to create the credential and then encode this data onto the key card. Other access control systems do not use encodable cards, but, rather, assign cards to users.
 
