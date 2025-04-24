@@ -510,7 +510,7 @@ Once the action attempt's `status` is `success`, view the action attempt payload
     ],
     "acs_credential_on_seam": {
       "starts_at": "2024-12-01T15:00:00.000Z",
-      "ends_at": "2024-12-04T12:00:00.000Z"
+      "ends_at": "2024-12-04T12:00:00.000Z",
       "card_number": "1234abc",
       "display_name": "Card 1234abc",
       "access_method": "card",
