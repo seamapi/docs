@@ -26,6 +26,6 @@ For detailed instructions, see the following topics:
 
 [Step 9: Create a Production Workspace](step-9-create-a-production-workspace.md)
 
-[Step 10: Connect Your Visionline Development Account to Seam](step-10-connect-your-visionline-development-account-to-seam.md)
+[Step 10: Connect Your Visionline Development Account to Seam](../../../../assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-10-connect-your-visionline-development-account-to-seam.md)
 
 [Next Steps](next-steps.md)

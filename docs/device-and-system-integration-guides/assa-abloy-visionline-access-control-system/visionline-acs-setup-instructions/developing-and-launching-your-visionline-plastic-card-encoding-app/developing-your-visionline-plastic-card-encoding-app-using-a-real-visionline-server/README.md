@@ -28,6 +28,6 @@ For detailed instructions, see the following topics:
 
 [Step 7: Create a Production Workspace](step-7-create-a-production-workspace.md)
 
-[Step 8: Connect Your Visionline Development Account to Seam](step-8-connect-your-visionline-development-account-to-seam.md)
+[Step 8: Connect Your Visionline Development Account to Seam](../../../../assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-8-connect-your-visionline-development-account-to-seam.md)
 
 [Next Steps](next-steps.md)

@@ -46,4 +46,4 @@ These instructions use Visionline 1.27. If you are using Visionline 1.28, you ma
     10. In the **Operators** window, click **Close**.
 
     <figure><img src="../../../../../.gitbook/assets/visionline-add-operator.png" alt="Configure the new user as an operator with the System Manager operator template."><figcaption><p>Configure the new user as an operator with the System Manager operator template.</p></figcaption></figure>
-4. Note the username and password for this Visionline user. You must use these credentials when you [connect your Visionline account to Seam](step-5-connect-your-visionline-production-account-to-seam.md).
+4. Note the username and password for this Visionline user. You must use these credentials when you [connect your Visionline account to Seam](../../../../assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-5-connect-your-visionline-production-account-to-seam.md).

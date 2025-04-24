@@ -21,7 +21,7 @@ If you already connected your Visionline ACS to Seam during the development phas
 
 ASSA ABLOY Credential Services stores all the mobile credentials that your application issues. For more information about ASSA ABLOY Credential Services, see the [ASSA ABLOY Credential Services integration guide](../../../../assa-abloy-credential-services-credential-manager.md).
 
-You received a Credential Services production "tenant" account from ASSA ABLOY when you [obtained ASSA ABLOY certification](step-1-obtain-assa-abloy-certification-for-your-mobile-key-app.md) for your mobile key app. ASSA ABLOY provided you with the following production-phase information upon certification:
+You received a Credential Services production "tenant" account from ASSA ABLOY when you [obtained ASSA ABLOY certification](../../../../assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-1-obtain-assa-abloy-certification-for-your-mobile-key-app.md) for your mobile key app. ASSA ABLOY provided you with the following production-phase information upon certification:
 
 * Tenant account username
 * Tenant account password
@@ -62,7 +62,7 @@ Perform this process for each Visionline site that you want to connect to Seam.
 
 1.  Identify your production Visionline mobile access UUID and system ID.
 
-    Note that you received these details when you [obtained ASSA ABLOY certification](step-1-obtain-assa-abloy-certification-for-your-mobile-key-app.md). Alternately, to find this information:
+    Note that you received these details when you [obtained ASSA ABLOY certification](../../../../assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-1-obtain-assa-abloy-certification-for-your-mobile-key-app.md). Alternately, to find this information:
 
     1. In the Visionline application, at the bottom of the left navigation pane, click **Lists**.
     2. In the **System setup** section of the left navigation pane, double-click **Mobile Access Accounts**.
@@ -85,11 +85,11 @@ Perform this process for each Visionline site that you want to connect to Seam.
 7.  Download the Seam Bridge executable onto the on-premises computer that is running Visionline or onto a computer on the same network.
 
     For systems requirements, see [Seam Bridge](../../../../../capability-guides/seam-bridge.md).
-8.  Run the downloaded Seam Bridge executable file.
+8. Run the downloaded Seam Bridge app.
+9. In the **Welcome to Seam Bridge** window, type a name for the site that you are connecting using Seam Bridge and then click **Start pairing**.
+10. Copy the pairing code.
 
-    This application opens a webpage containing the Seam Bridge settings.
-9. Click **Create Pairing Code**.
-10. Copy the pairing code that the webpage displays.
+    <figure><img src="../../../../../.gitbook/assets/seam-bridge-pairing-code.png" alt="Use the pairing code to pair Seam Bridge with your workspace." width="375"><figcaption><p>Use the pairing code to pair Seam Bridge with your workspace.</p></figcaption></figure>
 11. In the Connect Webview, click **Continue**.
 12. On the **Visionline info** page:
     1. In the **Enter your pairing token** field, paste the pairing code that you copied.
@@ -99,7 +99,7 @@ Perform this process for each Visionline site that you want to connect to Seam.
     1. In the **Visionline Site Name** field, type a name to identify the Visionline site within your Seam workspace.
     2.  In the **Username** field, type the username for your Visionline production account.
 
-        This account is the one that you [created or identified in Visionline for the connection with Seam](step-6-configure-a-visionline-user-account.md).
+        This account is the one that you [created or identified in Visionline for the connection with Seam](../../../../assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-6-configure-a-visionline-user-account.md).
     3. In the **Password** field, type the password for your Visionline production account.
     4. Select the **Mobile Keys will be issued in this system** checkbox.
     5. In the **Mobile Access UUID** field, type your production mobile access UUID.

@@ -79,11 +79,11 @@ Perform the following process for each Salto Space site that you want to integra
 6.  Download the Seam Bridge executable onto the on-premises computer that is running Salto Space or onto a computer on the same network.
 
     For systems requirements, see [Seam Bridge](../../capability-guides/seam-bridge.md).
-7.  Run the downloaded Seam Bridge executable file.
+7. Run the downloaded Seam Bridge app.
+8. In the **Welcome to Seam Bridge** window, type a name for the site that you are connecting using Seam Bridge and then click **Start pairing**.
+9.  Copy the pairing code.
 
-    This application opens a webpage containing the Seam Bridge settings.
-8. Click **Create Pairing Code**.
-9. Copy the pairing code that the webpage displays.
+    <figure><img src="../../.gitbook/assets/seam-bridge-pairing-code.png" alt="Use the pairing code to pair Seam Bridge with your workspace." width="375"><figcaption><p>Use the pairing code to pair Seam Bridge with your workspace.</p></figcaption></figure>
 10. In the Connect Webview, click **Continue**.
 11. On the **Seam Bridge Connection** page:
     1. In the **Enter your pairing token** field, paste the pairing code that you copied.

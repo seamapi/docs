@@ -36,4 +36,4 @@ This process can be quite time-consuming because it requires interaction with al
 Skip this step if you have already created a production workspace during the development phase and want to use this workspace to launch your app.
 {% endhint %}
 
-[Step 9: Connect Your Visionline Production Account to Seam](step-9-connect-your-visionline-production-account-to-seam.md)
+[Step 9: Connect Your Visionline Production Account to Seam](../../../../assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-9-connect-your-visionline-production-account-to-seam.md)

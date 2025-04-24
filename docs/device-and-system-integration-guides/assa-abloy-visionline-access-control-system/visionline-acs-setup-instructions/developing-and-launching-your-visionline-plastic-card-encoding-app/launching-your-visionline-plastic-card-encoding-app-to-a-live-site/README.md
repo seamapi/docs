@@ -20,4 +20,4 @@ For detailed instructions, see the following topics:
 Skip this step if you have already created a production workspace during the development phase and want to use this workspace to launch your app.
 {% endhint %}
 
-[Step 5: Connect Your Visionline Production Account to Seam](step-5-connect-your-visionline-production-account-to-seam.md)
+[Step 5: Connect Your Visionline Production Account to Seam](../../../../assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-5-connect-your-visionline-production-account-to-seam.md)
