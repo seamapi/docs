@@ -49,7 +49,7 @@ Note the following SmartThings-specific features:
 
 ### Reporting Access Code Length Constraints
 
-For SmartThings-connected devices, you can report the set of supported access code lengths or the minimum and maximum supported code lengths. For details, see [Report Device Access Code Constraints](../api/access_codes/report-device-access-code-constraints.md).
+For SmartThings-connected devices, you can report the set of supported access code lengths or the minimum and maximum supported code lengths. For details, see [Report Device Access Code Constraints](../api-clients/access_codes/report-device-access-code-constraints.md).
 
 ***
 
