@@ -2,9 +2,9 @@
 
 ## Overview
 
-Seam provides a universal API to connect and control many brands of smart locks. This guide provides a rapid introduction to connecting and controlling your [SmartThings Hub](https://www.seam.co/manufacturers/smartthings) and smart lock using the Seam API. SmartThings Hub is connected to your local network using either Wi-Fi or Ethernet. The smart lock is paired to SmartThings via Zigbee or Z-Wave. These locks can then be remotely locked, unlocked, and have access codes programmed to allow keyless entry.
+Seam provides a universal API to connect and control many brands of smart locks. This guide provides a rapid introduction to connecting and controlling your [SmartThings Hub](https://www.seam.co/manufacturers/smartthings) and smart lock using the Seam API. SmartThings Hubs are connected to your local network using either Wi-Fi or Ethernet. The smart lock is paired to SmartThings using Zigbee or Z-Wave. These locks can then be remotely locked and unlocked, and they can also have access codes programmed to allow keyless entry.
 
-To learn more about other smart lock brands supported by Seam such as August, Yale, and Salto, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
+To learn more about other smart lock brands supported by Seam such as August, Yale, and Salto, see our [integration page](https://www.seam.co/supported-devices-and-systems).
 
 ## 1 — Install Seam SDK
 
