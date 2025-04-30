@@ -116,7 +116,7 @@ Warnings are returned in a list:
 * [Get an access code](get.md)
 * [Update an access code](update.md)
 * [Update multiple linked access codes](update-multiple-linked-access-codes.md)
-* [Report device access code constraints](../../api/access_codes/report-device-access-code-constraints.md)
+* [Report device access code constraints](../../api-clients/access_codes/report-device-access-code-constraints.md)
 * [Delete an access code](delete.md)
 * [List unmanaged access codes](unmanaged/list.md)
 * [Convert an unmanaged access code](unmanaged/convert_to_managed.md)
