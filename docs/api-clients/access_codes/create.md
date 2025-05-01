@@ -4,11 +4,7 @@ description: Create an access code for a device by ID
 
 # Create an Access Code
 
-{% swagger src="https://connect.getseam.com/openapi.json" path="/access_codes/create" method="post" %}
-[https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
-{% endswagger %}
-
-***
+Creates an [access code](../../products/smart-locks/access-codes/) for a device.
 
 ## Code Examples
 
