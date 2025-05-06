@@ -60,7 +60,6 @@ The items in this list are objects. The specific structure of each object depend
 {{/if}}
 {{#if this.properties.length}}
 
-Variant Properties:
   {{#each this.properties}}
 
 {{> property-collapsible this}}
@@ -72,7 +71,7 @@ This variant has no additional specific properties.
 {% endtab %}
   {{/each}}
 {% endtabs %}
-{{else if listProperties}}
+{{#if listProperties}}
 {{#each listProperties}}
 
 {{> property-collapsible this}}
