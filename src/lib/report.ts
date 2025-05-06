@@ -334,7 +334,7 @@ function getOpenapiResponseProperties(
     return res.content['application/json']?.schema?.properties
   }
 
-  return
+  
 }
 
 function processParameters(
