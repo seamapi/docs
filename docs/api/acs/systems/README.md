@@ -106,6 +106,208 @@ Item format: `Object`
 
 Errors associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
+The items in this list are objects. The specific structure of each object depends on the value of its `error_code` field. Each object will be one of the following variants:
+{% tabs %}
+{% tab title="seam_bridge_disconnected" %}
+
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
+  This error might also occur if Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/README.md).
+  See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the error.
+</details>
+<details>
+
+<summary><code>error_code</code> Format: <code>Enum</code></summary>
+
+Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+Possible enum values:
+- `seam_bridge_disconnected`
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+</details>{% endtab %}
+{% tab title="bridge_disconnected" %}
+
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
+    See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the error.
+</details>
+<details>
+
+<summary><code>error_code</code> Format: <code>Enum</code></summary>
+
+Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+Possible enum values:
+- `bridge_disconnected`
+</details>
+<details>
+
+<summary><code>is_bridge_error</code> Format: <code>Boolean</code></summary>
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+</details>{% endtab %}
+{% tab title="visionline_instance_unreachable" %}
+
+Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/README.md).
+  For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](../../../core-concepts/workspaces/README.md).
+  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the error.
+</details>
+<details>
+
+<summary><code>error_code</code> Format: <code>Enum</code></summary>
+
+Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+Possible enum values:
+- `visionline_instance_unreachable`
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+</details>{% endtab %}
+{% tab title="salto_ks_subscription_limit_exceeded" %}
+
+Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the error.
+</details>
+<details>
+
+<summary><code>error_code</code> Format: <code>Enum</code></summary>
+
+Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+Possible enum values:
+- `salto_ks_subscription_limit_exceeded`
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+</details>{% endtab %}
+{% tab title="acs_system_disconnected" %}
+
+Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md) to resolve the issue.
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the error.
+</details>
+<details>
+
+<summary><code>error_code</code> Format: <code>Enum</code></summary>
+
+Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+Possible enum values:
+- `acs_system_disconnected`
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+</details>{% endtab %}
+{% tab title="account_disconnected" %}
+
+Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) to restore access.
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the error.
+</details>
+<details>
+
+<summary><code>error_code</code> Format: <code>Enum</code></summary>
+
+Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+Possible enum values:
+- `account_disconnected`
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+</details>{% endtab %}
+{% tab title="salto_ks_certification_expired" %}
+
+Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the error.
+</details>
+<details>
+
+<summary><code>error_code</code> Format: <code>Enum</code></summary>
+
+Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+Possible enum values:
+- `salto_ks_certification_expired`
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+</details>{% endtab %}
+{% endtabs %}
+
 ---
 
 ### `external_type`
@@ -173,6 +375,7 @@ Format: `Object`
 
 Time zone in which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) is located.
 </details>
+
 ---
 
 ### `name`
@@ -228,18 +431,21 @@ Format: `Object`
 
 IP address or hostname of the main Visionline server relative to [Seam Bridge](../../../capability-guides/seam-bridge.md) on the local network.
 </details>
+
 <details>
 
 <summary><code>mobile_access_uuid</code> Format: <code>String</code></summary>
 
 Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.
 </details>
+
 <details>
 
 <summary><code>system_id</code> Format: <code>String</code></summary>
 
 Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager.
 </details>
+
 ---
 
 ### [`warnings`](./#warnings-1)
@@ -249,6 +455,72 @@ Format: `List`
 Item format: `Object`
 
 Warnings associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+
+The items in this list are objects. The specific structure of each object depends on the value of its `warning_code` field. Each object will be one of the following variants:
+{% tabs %}
+{% tab title="salto_ks_subscription_limit_almost_reached" %}
+
+Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site to rectify the issue.
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the warning.
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+</details>
+<details>
+
+<summary><code>warning_code</code> Format: <code>Enum</code></summary>
+
+Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
+Possible enum values:
+- `salto_ks_subscription_limit_almost_reached`
+</details>{% endtab %}
+{% tab title="time_zone_does_not_match_location" %}
+
+Indicates the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the warning.
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+</details>
+<details>
+
+<summary><code>misconfigured_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
+
+{% hint style="warning" %}
+**Deprecated**. this field is deprecated.
+{% endhint %}
+</details>
+<details>
+
+<summary><code>warning_code</code> Format: <code>Enum</code></summary>
+
+Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
+Possible enum values:
+- `time_zone_does_not_match_location`
+</details>{% endtab %}
+{% endtabs %}
 
 ---
 

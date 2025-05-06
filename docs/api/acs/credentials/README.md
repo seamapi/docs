@@ -61,22 +61,27 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 <summary><code>door_names</code> Format: <code>List</code> Item format: <code>String</code></summary>
 </details>
+
 <details>
 
 <summary><code>endpoint_id</code> Format: <code>String</code></summary>
 </details>
+
 <details>
 
 <summary><code>key_id</code> Format: <code>String</code></summary>
 </details>
+
 <details>
 
 <summary><code>key_issuing_request_id</code> Format: <code>String</code></summary>
 </details>
+
 <details>
 
 <summary><code>override_guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>String</code></summary>
 </details>
+
 ---
 
 ### `card_number`
@@ -131,10 +136,12 @@ Errors associated with the [credential](../../../capability-guides/access-system
 
 <summary><code>error_code</code> Format: <code>String</code></summary>
 </details>
+
 <details>
 
 <summary><code>message</code> Format: <code>String</code></summary>
 </details>
+
 ---
 
 ### `external_type`
@@ -242,6 +249,7 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 
 <summary><code>auto_join</code> Format: <code>Boolean</code></summary>
 </details>
+
 <details>
 
 <summary><code>card_function_type</code> Format: <code>Enum</code></summary>
@@ -250,30 +258,37 @@ Possible enum values:
 - `guest`
 - `staff`
 </details>
+
 <details>
 
 <summary><code>card_id</code> Format: <code>String</code></summary>
 </details>
+
 <details>
 
 <summary><code>common_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
 </details>
+
 <details>
 
 <summary><code>credential_id</code> Format: <code>String</code></summary>
 </details>
+
 <details>
 
 <summary><code>guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
 </details>
+
 <details>
 
 <summary><code>is_valid</code> Format: <code>Boolean</code></summary>
 </details>
+
 <details>
 
 <summary><code>joiner_acs_credential_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
 </details>
+
 ---
 
 ### [`warnings`](./#warnings-1)
@@ -283,6 +298,172 @@ Format: `List`
 Item format: `Object`
 
 Warnings associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+The items in this list are objects. The specific structure of each object depends on the value of its `warning_code` field. Each object will be one of the following variants:
+{% tabs %}
+{% tab title="waiting_to_be_issued" %}
+
+Indicates that the [credential](../../../capability-guides/access-systems/managing-credentials.md) is waiting to be issued.
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the warning.
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+</details>
+<details>
+
+<summary><code>warning_code</code> Format: <code>Enum</code></summary>
+
+Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
+Possible enum values:
+- `waiting_to_be_issued`
+</details>{% endtab %}
+{% tab title="schedule_externally_modified" %}
+
+Indicates that the schedule of one of the [credential](../../../capability-guides/access-systems/managing-credentials.md)'s children was modified externally.
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the warning.
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+</details>
+<details>
+
+<summary><code>warning_code</code> Format: <code>Enum</code></summary>
+
+Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
+Possible enum values:
+- `schedule_externally_modified`
+</details>{% endtab %}
+{% tab title="schedule_modified" %}
+
+Indicates that the schedule of the [credential](../../../capability-guides/access-systems/managing-credentials.md) was modified to avoid creating a credential with a start date in the past.
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the warning.
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+</details>
+<details>
+
+<summary><code>warning_code</code> Format: <code>Enum</code></summary>
+
+Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
+Possible enum values:
+- `schedule_modified`
+</details>{% endtab %}
+{% tab title="being_deleted" %}
+
+Indicates that the [credential](../../../capability-guides/access-systems/managing-credentials.md) is being deleted.
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the warning.
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+</details>
+<details>
+
+<summary><code>warning_code</code> Format: <code>Enum</code></summary>
+
+Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
+Possible enum values:
+- `being_deleted`
+</details>{% endtab %}
+{% tab title="unknown_issue_with_acs_credential" %}
+
+An unknown issue occurred while syncing the state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) with the provider. This issue may affect the proper functioning of the credential.
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the warning.
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+</details>
+<details>
+
+<summary><code>warning_code</code> Format: <code>Enum</code></summary>
+
+Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
+Possible enum values:
+- `unknown_issue_with_acs_credential`
+</details>{% endtab %}
+{% tab title="needs_to_be_reissued" %}
+
+Access permissions for the [credential](../../../capability-guides/access-systems/managing-credentials.md) have changed. [Reissue](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md) (re-encode) the credential. This issue may affect the proper functioning of the credential.
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the warning.
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+</details>
+<details>
+
+<summary><code>warning_code</code> Format: <code>Enum</code></summary>
+
+Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
+Possible enum values:
+- `needs_to_be_reissued`
+</details>{% endtab %}
+{% endtabs %}
 
 ---
 

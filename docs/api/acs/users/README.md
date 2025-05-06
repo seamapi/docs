@@ -20,12 +20,14 @@ Format: `Object`
 
 Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 </details>
+
 <details>
 
 <summary><code>starts_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 </details>
+
 ---
 
 ### `acs_system_id`
@@ -85,6 +87,135 @@ Format: `List`
 Item format: `Object`
 
 Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+The items in this list are objects. The specific structure of each object depends on the value of its `error_code` field. Each object will be one of the following variants:
+{% tabs %}
+{% tab title="deleted_externally" %}
+
+Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted from the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) outside of Seam.
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the error.
+</details>
+<details>
+
+<summary><code>error_code</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `deleted_externally`
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+</details>{% endtab %}
+{% tab title="salto_ks_subscription_limit_exceeded" %}
+
+Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the error.
+</details>
+<details>
+
+<summary><code>error_code</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `salto_ks_subscription_limit_exceeded`
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+</details>{% endtab %}
+{% tab title="failed_to_create_on_acs_system" %}
+
+Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not created on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the error.
+</details>
+<details>
+
+<summary><code>error_code</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `failed_to_create_on_acs_system`
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+</details>{% endtab %}
+{% tab title="failed_to_update_on_acs_system" %}
+
+Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not updated on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the error.
+</details>
+<details>
+
+<summary><code>error_code</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `failed_to_update_on_acs_system`
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+</details>{% endtab %}
+{% tab title="failed_to_delete_on_acs_system" %}
+
+Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not deleted on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the error.
+</details>
+<details>
+
+<summary><code>error_code</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `failed_to_delete_on_acs_system`
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+</details>{% endtab %}
+{% endtabs %}
 
 ---
 
@@ -188,6 +319,85 @@ Format: `List`
 Item format: `Object`
 
 Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+The items in this list are objects. The specific structure of each object depends on the value of its `warning_code` field. Each object will be one of the following variants:
+{% tabs %}
+{% tab title="being_deleted" %}
+
+Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is being deleted from the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is a temporary state, and the ACS user will be deleted shortly.
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the warning.
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+</details>
+<details>
+
+<summary><code>warning_code</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `being_deleted`
+</details>{% endtab %}
+{% tab title="salto_ks_user_not_subscribed" %}
+
+Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is not subscribed on Salto KS, so they cannot unlock doors or perform any actions. This occurs when the their access schedule hasn’t started yet, if their access schedule has ended, if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the warning.
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+</details>
+<details>
+
+<summary><code>warning_code</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `salto_ks_user_not_subscribed`
+</details>{% endtab %}
+{% tab title="unknown_issue_with_acs_user" %}
+
+An unknown issue occurred while syncing the state of this [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user.
+
+Variant Properties:
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which Seam created the warning.
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+</details>
+<details>
+
+<summary><code>warning_code</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `unknown_issue_with_acs_user`
+</details>{% endtab %}
+{% endtabs %}
 
 ---
 
