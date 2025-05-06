@@ -330,8 +330,9 @@ function getOpenapiResponseProperties(
   }
 
   const res = openapiEndpointDef.post.responses['200']
-  if ('content' in res)
+  if ('content' in res) {
     return res.content['application/json']?.schema?.properties
+  }
 }
 
 function processParameters(
