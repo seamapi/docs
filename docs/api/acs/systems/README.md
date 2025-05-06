@@ -106,7 +106,17 @@ Item format: `Object`
 
 Errors associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-The items in this list are objects. The specific structure of each object depends on the value of its `error_code` field. Each object will be one of the following variants:
+The items in this list are objects. The specific structure of each object depends on the value of its `error_code` field.
+The `error_code` field can be one of the following values:
+- `seam_bridge_disconnected`
+- `bridge_disconnected`
+- `visionline_instance_unreachable`
+- `salto_ks_subscription_limit_exceeded`
+- `acs_system_disconnected`
+- `account_disconnected`
+- `salto_ks_certification_expired`
+
+Each object will be one of the following variants:
 {% tabs %}
 {% tab title="seam_bridge_disconnected" %}
 
@@ -114,7 +124,6 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capab
   This error might also occur if Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/README.md).
   See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
-Variant Properties:
 
 <details>
 
@@ -142,7 +151,6 @@ Detailed description of the error. Provides insights into the issue and potentia
 Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
     See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
-Variant Properties:
 
 <details>
 
@@ -175,7 +183,6 @@ Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is funct
   For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](../../../core-concepts/workspaces/README.md).
   See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
 
-Variant Properties:
 
 <details>
 
@@ -202,7 +209,6 @@ Detailed description of the error. Provides insights into the issue and potentia
 
 Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.
 
-Variant Properties:
 
 <details>
 
@@ -229,7 +235,6 @@ Detailed description of the error. Provides insights into the issue and potentia
 
 Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md) to resolve the issue.
 
-Variant Properties:
 
 <details>
 
@@ -256,7 +261,6 @@ Detailed description of the error. Provides insights into the issue and potentia
 
 Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) to restore access.
 
-Variant Properties:
 
 <details>
 
@@ -283,7 +287,6 @@ Detailed description of the error. Provides insights into the issue and potentia
 
 Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.
 
-Variant Properties:
 
 <details>
 
@@ -456,13 +459,17 @@ Item format: `Object`
 
 Warnings associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-The items in this list are objects. The specific structure of each object depends on the value of its `warning_code` field. Each object will be one of the following variants:
+The items in this list are objects. The specific structure of each object depends on the value of its `warning_code` field.
+The `warning_code` field can be one of the following values:
+- `salto_ks_subscription_limit_almost_reached`
+- `time_zone_does_not_match_location`
+
+Each object will be one of the following variants:
 {% tabs %}
 {% tab title="salto_ks_subscription_limit_almost_reached" %}
 
 Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site to rectify the issue.
 
-Variant Properties:
 
 <details>
 
@@ -489,7 +496,6 @@ Possible enum values:
 
 Indicates the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
-Variant Properties:
 
 <details>
 

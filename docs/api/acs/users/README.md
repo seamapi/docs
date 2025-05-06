@@ -88,13 +88,20 @@ Item format: `Object`
 
 Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
-The items in this list are objects. The specific structure of each object depends on the value of its `error_code` field. Each object will be one of the following variants:
+The items in this list are objects. The specific structure of each object depends on the value of its `error_code` field.
+The `error_code` field can be one of the following values:
+- `deleted_externally`
+- `salto_ks_subscription_limit_exceeded`
+- `failed_to_create_on_acs_system`
+- `failed_to_update_on_acs_system`
+- `failed_to_delete_on_acs_system`
+
+Each object will be one of the following variants:
 {% tabs %}
 {% tab title="deleted_externally" %}
 
 Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted from the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) outside of Seam.
 
-Variant Properties:
 
 <details>
 
@@ -119,7 +126,6 @@ Detailed description of the error. Provides insights into the issue and potentia
 
 Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.
 
-Variant Properties:
 
 <details>
 
@@ -144,7 +150,6 @@ Detailed description of the error. Provides insights into the issue and potentia
 
 Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not created on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
 
-Variant Properties:
 
 <details>
 
@@ -169,7 +174,6 @@ Detailed description of the error. Provides insights into the issue and potentia
 
 Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not updated on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
 
-Variant Properties:
 
 <details>
 
@@ -194,7 +198,6 @@ Detailed description of the error. Provides insights into the issue and potentia
 
 Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not deleted on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
 
-Variant Properties:
 
 <details>
 
@@ -320,13 +323,18 @@ Item format: `Object`
 
 Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
-The items in this list are objects. The specific structure of each object depends on the value of its `warning_code` field. Each object will be one of the following variants:
+The items in this list are objects. The specific structure of each object depends on the value of its `warning_code` field.
+The `warning_code` field can be one of the following values:
+- `being_deleted`
+- `salto_ks_user_not_subscribed`
+- `unknown_issue_with_acs_user`
+
+Each object will be one of the following variants:
 {% tabs %}
 {% tab title="being_deleted" %}
 
 Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is being deleted from the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is a temporary state, and the ACS user will be deleted shortly.
 
-Variant Properties:
 
 <details>
 
@@ -351,7 +359,6 @@ Possible enum values:
 
 Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is not subscribed on Salto KS, so they cannot unlock doors or perform any actions. This occurs when the their access schedule hasn’t started yet, if their access schedule has ended, if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.
 
-Variant Properties:
 
 <details>
 
@@ -376,7 +383,6 @@ Possible enum values:
 
 An unknown issue occurred while syncing the state of this [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user.
 
-Variant Properties:
 
 <details>
 
