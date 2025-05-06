@@ -329,8 +329,9 @@ function getOpenapiResponseProperties(
     return
   }
 
-  return openapiEndpointDef.post.responses['200']?.content['application/json']
-    ?.schema?.properties
+  const res = openapiEndpointDef.post.responses['200']
+  if ('content' in res) return res.content['application/json']?.schema?.properties
+  return
 }
 
 function processParameters(
