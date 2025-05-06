@@ -320,19 +320,21 @@ function processResponseKeys(endpoint: Endpoint, report: Report): void {
 
 function getOpenapiResponseProperties(
   path: string,
-): Record<string, unknown> | undefined {
+): Record<string, unknown> | undefined | null {
   const openapiEndpointDef = openapi.paths[path as keyof typeof openapi.paths]
 
   if (openapiEndpointDef == null) {
     // eslint-disable-next-line no-console
     console.warn(`OpenAPI definition not found for endpoint: ${path}`)
-    return
+    return null
   }
 
   const res = openapiEndpointDef.post.responses['200']
   if ('content' in res) {
     return res.content['application/json']?.schema?.properties
   }
+
+  return null
 }
 
 function processParameters(
