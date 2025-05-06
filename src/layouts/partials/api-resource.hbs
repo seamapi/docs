@@ -48,7 +48,33 @@ This object has no properties.
 {{/each}}
 {{/if}}
 {{/unless}}
-{{#if listProperties}}
+{{#if discriminatorVariants}}
+  {{#if discriminatorVariants.length}}
+
+The items in this list are objects. The specific structure of each object depends on the value of its `{{discriminator}}` field. Each object will be one of the following variants:
+{% tabs %}
+  {{#each discriminatorVariants}}
+{% tab title="{{this.name}}" %}
+{{#if this.description}}
+
+{{this.description}}
+{{/if}}
+{{#if this.properties.length}}
+
+Variant Properties:
+  {{#each this.properties}}
+
+{{> property-collapsible this}}
+  {{/each}}
+{{else}}
+
+This variant has no additional specific properties.
+{{/if}}
+{% endtab %}
+  {{/each}}
+{% endtabs %}
+  {{/if}}
+{{else if listProperties}}
 {{#each listProperties}}
 
 {{> property-collapsible this}}
