@@ -49,7 +49,6 @@ This object has no properties.
 {{/if}}
 {{/unless}}
 {{#if discriminatorVariants}}
-  {{#if discriminatorVariants.length}}
 
 The items in this list are objects. The specific structure of each object depends on the value of its `{{discriminator}}` field. Each object will be one of the following variants:
 {% tabs %}
@@ -73,7 +72,6 @@ This variant has no additional specific properties.
 {% endtab %}
   {{/each}}
 {% endtabs %}
-  {{/if}}
 {{else if listProperties}}
 {{#each listProperties}}
 
