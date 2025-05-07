@@ -61,10 +61,9 @@ Variants:
 {{this.description}}
 {{/if}}
 {{#if this.properties.length}}
-
   {{#each this.properties}}
 
-{{> property-collapsible this}}
+{{> property-non-collapsible this}}
   {{/each}}
 {{else}}
 
