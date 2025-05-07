@@ -177,7 +177,6 @@ Format: `String`
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
----
 </details>
 <details>
 <summary><code>bridge_disconnected</code></summary>
@@ -216,7 +215,6 @@ Format: `String`
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
----
 </details>
 <details>
 <summary><code>visionline_instance_unreachable</code></summary>
@@ -250,7 +248,6 @@ Format: `String`
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
----
 </details>
 <details>
 <summary><code>salto_ks_subscription_limit_exceeded</code></summary>
@@ -282,7 +279,6 @@ Format: `String`
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
----
 </details>
 <details>
 <summary><code>acs_system_disconnected</code></summary>
@@ -314,7 +310,6 @@ Format: `String`
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
----
 </details>
 <details>
 <summary><code>account_disconnected</code></summary>
@@ -346,7 +341,6 @@ Format: `String`
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
----
 </details>
 <details>
 <summary><code>salto_ks_certification_expired</code></summary>
@@ -378,7 +372,6 @@ Format: `String`
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
----
 </details>
 
 ---
@@ -562,7 +555,6 @@ Unique identifier of the type of warning. Enables quick recognition and categori
 Possible enum values:
 - `salto_ks_subscription_limit_almost_reached`
 
----
 </details>
 <details>
 <summary><code>time_zone_does_not_match_location</code></summary>
@@ -604,7 +596,6 @@ Unique identifier of the type of warning. Enables quick recognition and categori
 Possible enum values:
 - `time_zone_does_not_match_location`
 
----
 </details>
 
 ---

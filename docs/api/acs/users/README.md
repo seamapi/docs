@@ -119,7 +119,6 @@ Format: `String`
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
----
 </details>
 <details>
 <summary><code>salto_ks_subscription_limit_exceeded</code></summary>
@@ -149,7 +148,6 @@ Format: `String`
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
----
 </details>
 <details>
 <summary><code>failed_to_create_on_acs_system</code></summary>
@@ -179,7 +177,6 @@ Format: `String`
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
----
 </details>
 <details>
 <summary><code>failed_to_update_on_acs_system</code></summary>
@@ -209,7 +206,6 @@ Format: `String`
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
----
 </details>
 <details>
 <summary><code>failed_to_delete_on_acs_system</code></summary>
@@ -239,7 +235,6 @@ Format: `String`
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
----
 </details>
 
 ---
@@ -336,7 +331,6 @@ Format: `Enum`
 Possible enum values:
 - `creating`
 
----
 </details>
 <details>
 <summary><code>deleting</code></summary>
@@ -366,7 +360,6 @@ Format: `Enum`
 Possible enum values:
 - `deleting`
 
----
 </details>
 <details>
 <summary><code>updating_user_information</code></summary>
@@ -406,7 +399,6 @@ Possible enum values:
 Format: `Object`
 
 
----
 </details>
 <details>
 <summary><code>updating_access_schedule</code></summary>
@@ -448,7 +440,6 @@ Possible enum values:
 Format: `Object`
 
 
----
 </details>
 <details>
 <summary><code>updating_suspension_state</code></summary>
@@ -490,7 +481,6 @@ Possible enum values:
 Format: `Object`
 
 
----
 </details>
 <details>
 <summary><code>updating_group_membership</code></summary>
@@ -536,7 +526,6 @@ Format: `Object`
 
 New access group membership.
 
----
 </details>
 
 ---
@@ -620,7 +609,6 @@ Format: `Enum`
 Possible enum values:
 - `being_deleted`
 
----
 </details>
 <details>
 <summary><code>salto_ks_user_not_subscribed</code></summary>
@@ -650,7 +638,6 @@ Format: `Enum`
 Possible enum values:
 - `salto_ks_user_not_subscribed`
 
----
 </details>
 <details>
 <summary><code>unknown_issue_with_acs_user</code></summary>
@@ -680,7 +667,6 @@ Format: `Enum`
 Possible enum values:
 - `unknown_issue_with_acs_user`
 
----
 </details>
 
 ---

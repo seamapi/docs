@@ -332,7 +332,6 @@ Unique identifier of the type of warning. Enables quick recognition and categori
 Possible enum values:
 - `waiting_to_be_issued`
 
----
 </details>
 <details>
 <summary><code>schedule_externally_modified</code></summary>
@@ -364,7 +363,6 @@ Unique identifier of the type of warning. Enables quick recognition and categori
 Possible enum values:
 - `schedule_externally_modified`
 
----
 </details>
 <details>
 <summary><code>schedule_modified</code></summary>
@@ -396,7 +394,6 @@ Unique identifier of the type of warning. Enables quick recognition and categori
 Possible enum values:
 - `schedule_modified`
 
----
 </details>
 <details>
 <summary><code>being_deleted</code></summary>
@@ -428,7 +425,6 @@ Unique identifier of the type of warning. Enables quick recognition and categori
 Possible enum values:
 - `being_deleted`
 
----
 </details>
 <details>
 <summary><code>unknown_issue_with_acs_credential</code></summary>
@@ -460,7 +456,6 @@ Unique identifier of the type of warning. Enables quick recognition and categori
 Possible enum values:
 - `unknown_issue_with_acs_credential`
 
----
 </details>
 <details>
 <summary><code>needs_to_be_reissued</code></summary>
@@ -492,7 +487,6 @@ Unique identifier of the type of warning. Enables quick recognition and categori
 Possible enum values:
 - `needs_to_be_reissued`
 
----
 </details>
 
 ---
