@@ -269,6 +269,200 @@ Indicates whether the [ACS user](https://docs.seam.co/latest/capability-guides/a
 
 ---
 
+### `pending_mutations`
+
+Format: `List`
+
+Item format: `Object`
+
+Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system.
+
+The specific structure of each object in this list depends on the value of its `mutation_code` field.
+
+Variants:
+{% tabs %}
+{% tab title="creating" %}
+
+Seam is in the process of pushing a user creation to the integrated access system.
+
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which the mutation was created.
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the mutation.
+</details>
+<details>
+
+<summary><code>mutation_code</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `creating`
+</details>{% endtab %}
+{% tab title="deleting" %}
+
+Seam is in the process of pushing a user deletion to the integrated access system.
+
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which the mutation was created.
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the mutation.
+</details>
+<details>
+
+<summary><code>mutation_code</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `deleting`
+</details>{% endtab %}
+{% tab title="updating_user_information" %}
+
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which the mutation was created.
+</details>
+<details>
+
+<summary><code>from</code> Format: <code>Object</code></summary>
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the mutation.
+</details>
+<details>
+
+<summary><code>mutation_code</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `updating_user_information`
+</details>
+<details>
+
+<summary><code>to</code> Format: <code>Object</code></summary>
+</details>{% endtab %}
+{% tab title="updating_access_schedule" %}
+
+Seam is in the process of pushing an access schedule update to the integrated access system.
+
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which the mutation was created.
+</details>
+<details>
+
+<summary><code>from</code> Format: <code>Object</code></summary>
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the mutation.
+</details>
+<details>
+
+<summary><code>mutation_code</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `updating_access_schedule`
+</details>
+<details>
+
+<summary><code>to</code> Format: <code>Object</code></summary>
+</details>{% endtab %}
+{% tab title="updating_suspension_state" %}
+
+Seam is in the process of pushing a suspension state update to the integrated access system.
+
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which the mutation was created.
+</details>
+<details>
+
+<summary><code>from</code> Format: <code>Object</code></summary>
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the mutation.
+</details>
+<details>
+
+<summary><code>mutation_code</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `updating_suspension_state`
+</details>
+<details>
+
+<summary><code>to</code> Format: <code>Object</code></summary>
+</details>{% endtab %}
+{% tab title="updating_group_membership" %}
+
+Seam is in the process of pushing an access group membership update to the integrated access system.
+
+
+<details>
+
+<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+
+Date and time at which the mutation was created.
+</details>
+<details>
+
+<summary><code>from</code> Format: <code>Object</code></summary>
+
+Old access group membership.
+</details>
+<details>
+
+<summary><code>message</code> Format: <code>String</code></summary>
+
+Detailed description of the mutation.
+</details>
+<details>
+
+<summary><code>mutation_code</code> Format: <code>Enum</code></summary>
+
+Possible enum values:
+- `updating_group_membership`
+</details>
+<details>
+
+<summary><code>to</code> Format: <code>Object</code></summary>
+
+New access group membership.
+</details>{% endtab %}
+{% endtabs %}
+
+---
+
 ### `phone_number`
 
 Format: `String`

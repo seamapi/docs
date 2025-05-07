@@ -52,11 +52,47 @@ Indicates whether the [access control system](https://docs.seam.co/latest/capabi
 
 ---
 
+### `can_create_user`
+
+Format: `Boolean`
+
+---
+
+### `can_delete_user`
+
+Format: `Boolean`
+
+---
+
 ### `can_remove_acs_users_from_acs_access_groups`
 
 Format: `Boolean`
 
 Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).
+
+---
+
+### `can_update_user_group_membership`
+
+Format: `Boolean`
+
+---
+
+### `can_update_user_information`
+
+Format: `Boolean`
+
+---
+
+### `can_update_user_schedule`
+
+Format: `Boolean`
+
+---
+
+### `can_update_user_supension_state`
+
+Format: `Boolean`
 
 ---
 

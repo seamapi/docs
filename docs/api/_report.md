@@ -79,6 +79,7 @@
 - `/workspaces/get`
 - `/workspaces/list`
 - `/workspaces/reset_sandbox`
+- `/workspaces/update`
 
 ## Undocumented
 
@@ -91,28 +92,23 @@ These items are intentionally undocumented.
 - `/acs/credential_provisioning_automations`: No undocumented message provided
 - `/acs/credentials/unmanaged`: No undocumented message provided
 - `/acs/users/unmanaged`: No undocumented message provided
+- `/locks/simulate`: No undocumented message provided
 - `/seam/bridge/v1/bridge_client_sessions`: No undocumented message provided
 - `/seam/bridge/v1/bridge_connected_systems`: No undocumented message provided
+- `/seam/instant_key/v1/client_sessions`: No undocumented message provided
+- `/thermostats/daily_programs`: No undocumented message provided
 - `/unstable_access_grants`: No undocumented message provided
+- `/unstable_access_methods`: No undocumented message provided
 - `/unstable_locations`: No undocumented message provided
 
 ### Resources
 
 - `instant_key`: Unreleased.
 
-### Resource properties
-
-- `acs_user.is_latest_desired_state_synced_with_provider`: Only used internally.
-- `acs_user.latest_desired_state_synced_with_provider_at`: Only used internally.
-- `acs_user.pending_mutations`: Experimental.
-- `thermostat_schedule.unstable_is_override_allowed`: Unstable
-- `unmanaged_acs_user.is_latest_desired_state_synced_with_provider`: Only used internally.
-- `unmanaged_acs_user.latest_desired_state_synced_with_provider_at`: Only used internally.
-- `unmanaged_acs_user.pending_mutations`: Experimental.
-
 ### Namespaces
 
 - `/seam/bridge/v1`: No undocumented message provided
+- `/seam/instant_key/v1`: No undocumented message provided
 
 ### Endpoints
 
@@ -126,24 +122,33 @@ These items are intentionally undocumented.
 - `/acs/users/unmanaged/get`: No unmanaged users are currently implemented.
 - `/acs/users/unmanaged/list`: No unmanaged users are currently implemented.
 - `/devices/delete`: Deleting a device is no longer supported and will be removed.
-- `/devices/simulate/access_code_lock`: Unreleased.
-- `/devices/simulate/access_code_unlock`: Unreleased.
+- `/locks/simulate/keypad_code_entry`: Unreleased.
+- `/locks/simulate/manual_lock_via_keypad`: Unreleased.
 - `/seam/bridge/v1/bridge_client_sessions/create`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/get`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/refresh_telemetry_token`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/report_status`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_connected_systems/list`: Seam Bridge Client only.
+- `/seam/instant_key/v1/client_sessions/exchange_short_code`: Seam Instant Key only.
+- `/thermostats/activate_weekly_program`: Unreleased.
+- `/thermostats/clear_weekly_program`: Unreleased.
 - `/thermostats/get`: Will be removed.
+- `/thermostats/daily_programs/create`: Unreleased.
+- `/thermostats/daily_programs/delete`: Unreleased.
+- `/thermostats/daily_programs/update`: Unreleased.
 - `/unstable_access_grants/create`: Unreleased.
 - `/unstable_access_grants/get`: Unreleased.
 - `/unstable_access_grants/list`: Unreleased.
-- `/unstable_access_grants/list_access_methods`: Unreleased.
+- `/unstable_access_methods/get`: Unreleased.
+- `/unstable_access_methods/list`: Unreleased.
+- `/unstable_locations/add_acs_entrances`: Experimental locations.
 - `/unstable_locations/add_devices`: Experimental locations.
 - `/unstable_locations/create`: Experimental locations.
 - `/unstable_locations/delete`: Experimental locations.
 - `/unstable_locations/get`: Experimental locations.
 - `/unstable_locations/list`: Experimental locations.
+- `/unstable_locations/remove_acs_entrances`: Experimental locations.
 - `/unstable_locations/remove_devices`: Experimental locations.
 - `/unstable_locations/update`: Experimental locations.
 
@@ -159,6 +164,8 @@ These items are intentionally undocumented.
     - `sync`: Only used internally.
 - `/access_codes/unmanaged/delete`
     - `sync`: Only used internally.
+- `/acs/entrances/list`
+    - `location_id`: Experimental locations.
 - `/devices/list`
     - `exclude_if`: Only used internally.
     - `include_if`: Only used internally.
@@ -235,16 +242,19 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_credential_provisioning_automation.workspace_id`
 - `acs_system.acs_access_group_count`
 - `acs_system.acs_user_count`
+- `acs_system.can_create_user`
+- `acs_system.can_delete_user`
+- `acs_system.can_update_user_group_membership`
+- `acs_system.can_update_user_information`
+- `acs_system.can_update_user_schedule`
+- `acs_system.can_update_user_supension_state`
 - `acs_system.location`
 - `acs_system.system_type`
 - `acs_system.system_type_display_name`
 - `acs_system.visionline_metadata`
 - `acs_user.email`
 - `acs_user.hid_acs_system_id`
-- `acs_user.is_latest_desired_state_synced_with_provider`
 - `acs_user.is_managed`
-- `acs_user.latest_desired_state_synced_with_provider_at`
-- `acs_user.pending_mutations`
 - `client_session.client_session_id`
 - `client_session.connect_webview_ids`
 - `client_session.connected_account_ids`
@@ -337,10 +347,7 @@ Items that are intentionally undocumented are not included in this section.
 - `unmanaged_acs_credential.is_managed`
 - `unmanaged_acs_user.email`
 - `unmanaged_acs_user.hid_acs_system_id`
-- `unmanaged_acs_user.is_latest_desired_state_synced_with_provider`
 - `unmanaged_acs_user.is_managed`
-- `unmanaged_acs_user.latest_desired_state_synced_with_provider_at`
-- `unmanaged_acs_user.pending_mutations`
 - `unmanaged_device.can_hvac_cool`
 - `unmanaged_device.can_hvac_heat`
 - `unmanaged_device.can_hvac_heat_cool`
@@ -362,6 +369,7 @@ Items that are intentionally undocumented are not included in this section.
 - `webhook.webhook_id`
 - `workspace.company_name`
 - `workspace.connect_partner_name`
+- `workspace.connect_webview_customization`
 - `workspace.is_sandbox`
 - `workspace.name`
 - `workspace.workspace_id`
@@ -397,8 +405,6 @@ Items that are intentionally undocumented are not included in this section.
 - `/devices/get`
 - `/devices/list_device_providers`
 - `/devices/update`
-- `/devices/simulate/access_code_lock`
-- `/devices/simulate/access_code_unlock`
 - `/devices/simulate/connect`
 - `/devices/simulate/disconnect`
 - `/devices/simulate/remove`
@@ -411,6 +417,8 @@ Items that are intentionally undocumented are not included in this section.
 - `/locks/list`
 - `/locks/lock_door`
 - `/locks/unlock_door`
+- `/locks/simulate/keypad_code_entry`
+- `/locks/simulate/manual_lock_via_keypad`
 - `/networks/get`
 - `/networks/list`
 - `/noise_sensors/list`
@@ -430,6 +438,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/workspaces/get`
 - `/workspaces/list`
 - `/workspaces/reset_sandbox`
+- `/workspaces/update`
 
 ### Endpoint parameters
 
@@ -473,6 +482,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/acs/entrances/list`
     - `acs_credential_id`
     - `acs_system_id`
+    - `location_id`
 - `/acs/entrances/list_credentials_with_access`
     - `acs_entrance_id`
     - `include_if`
@@ -570,12 +580,6 @@ Items that are intentionally undocumented are not included in this section.
     - `is_managed`
     - `name`
     - `properties`
-- `/devices/simulate/access_code_lock`
-    - `access_code_id`
-    - `device_id`
-- `/devices/simulate/access_code_unlock`
-    - `access_code_id`
-    - `device_id`
 - `/devices/simulate/connect`
     - `device_id`
 - `/devices/simulate/disconnect`
@@ -625,6 +629,11 @@ Items that are intentionally undocumented are not included in this section.
 - `/locks/unlock_door`
     - `device_id`
     - `sync`
+- `/locks/simulate/keypad_code_entry`
+    - `code`
+    - `device_id`
+- `/locks/simulate/manual_lock_via_keypad`
+    - `device_id`
 - `/networks/get`
     - `network_id`
 - `/noise_sensors/list`
@@ -685,17 +694,25 @@ Items that are intentionally undocumented are not included in this section.
 - `/thermostats/set_hvac_mode`
     - `hvac_mode_setting`
 - `/unstable_access_grants/create`
-    - `desired_access_methods`
+    - `requested_access_methods`
+- `/unstable_locations/add_acs_entrances`
+    - `acs_entrance_ids`
+    - `location_id`
 - `/unstable_locations/add_devices`
     - `device_ids`
     - `location_id`
 - `/unstable_locations/create`
+    - `acs_entrance_ids`
+    - `device_ids`
     - `geolocation`
     - `name`
     - `time_zone`
 - `/unstable_locations/delete`
     - `location_id`
 - `/unstable_locations/get`
+    - `location_id`
+- `/unstable_locations/remove_acs_entrances`
+    - `acs_entrance_ids`
     - `location_id`
 - `/unstable_locations/remove_devices`
     - `device_ids`
@@ -724,12 +741,18 @@ Items that are intentionally undocumented are not included in this section.
 - `/workspaces/create`
     - `company_name`
     - `connect_partner_name`
+    - `connect_webview_customization`
     - `is_sandbox`
     - `name`
     - `webview_logo_shape`
     - `webview_primary_button_color`
     - `webview_primary_button_text_color`
     - `webview_success_message`
+- `/workspaces/update`
+    - `connect_partner_name`
+    - `connect_webview_customization`
+    - `is_suspended`
+    - `name`
 
 ## Deprecated
 
@@ -764,6 +787,10 @@ These items are deprecated.
     - `manual_override_allowed`: Use 'thermostat_schedule.is_override_allowed'
 - `/workspaces/create`
     - `connect_partner_name`: use company_name
+    - `webview_logo_shape`: Use `connect_webview_customization.webview_logo_shape` instead.
+    - `webview_primary_button_color`: Use `connect_webview_customization.webview_primary_button_color` instead.
+    - `webview_primary_button_text_color`: Use `connect_webview_customization.webview_primary_button_text_color` instead.
+    - `webview_success_message`: Use `connect_webview_customization.webview_success_message` instead.
 
 ### Extra response keys
 
@@ -774,6 +801,8 @@ These items are deprecated.
 - `/acs/users/list`
     - `pagination`
 - `/connected_accounts/list`
+    - `pagination`
+- `/devices/list`
     - `pagination`
 - `/events/get`
     - `message`
@@ -799,6 +828,7 @@ These items are deprecated.
 - `/access_codes/get`
 - `/access_codes/list`
 - `/access_codes/pull_backup_access_code`
+- `/access_codes/report_device_constraints`
 - `/access_codes/update`
 - `/access_codes/update_multiple`
 - `/access_codes/simulate/create_unmanaged_access_code`
@@ -812,6 +842,7 @@ These items are deprecated.
 - `/acs/credentials/create_offline_code`
 - `/acs/credentials/unmanaged/get`
 - `/acs/credentials/unmanaged/list`
+- `/acs/encoders/encode_access_method`
 - `/acs/encoders/encode_credential`
 - `/acs/encoders/get`
 - `/acs/encoders/list`
@@ -849,8 +880,6 @@ These items are deprecated.
 - `/devices/list`
 - `/devices/list_device_providers`
 - `/devices/update`
-- `/devices/simulate/access_code_lock`
-- `/devices/simulate/access_code_unlock`
 - `/devices/simulate/connect`
 - `/devices/simulate/disconnect`
 - `/devices/simulate/remove`
@@ -863,6 +892,8 @@ These items are deprecated.
 - `/locks/list`
 - `/locks/lock_door`
 - `/locks/unlock_door`
+- `/locks/simulate/keypad_code_entry`
+- `/locks/simulate/manual_lock_via_keypad`
 - `/networks/get`
 - `/networks/list`
 - `/noise_sensors/list`
@@ -882,18 +913,27 @@ These items are deprecated.
 - `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`
 - `/seam/bridge/v1/bridge_client_sessions/report_status`
 - `/seam/bridge/v1/bridge_connected_systems/list`
+- `/seam/instant_key/v1/client_sessions/exchange_short_code`
+- `/thermostats/activate_weekly_program`
+- `/thermostats/clear_weekly_program`
 - `/thermostats/get`
+- `/thermostats/daily_programs/create`
+- `/thermostats/daily_programs/delete`
+- `/thermostats/daily_programs/update`
 - `/thermostats/simulate/hvac_mode_adjusted`
 - `/thermostats/simulate/temperature_reached`
 - `/unstable_access_grants/create`
 - `/unstable_access_grants/get`
 - `/unstable_access_grants/list`
-- `/unstable_access_grants/list_access_methods`
+- `/unstable_access_methods/get`
+- `/unstable_access_methods/list`
+- `/unstable_locations/add_acs_entrances`
 - `/unstable_locations/add_devices`
 - `/unstable_locations/create`
 - `/unstable_locations/delete`
 - `/unstable_locations/get`
 - `/unstable_locations/list`
+- `/unstable_locations/remove_acs_entrances`
 - `/unstable_locations/remove_devices`
 - `/unstable_locations/update`
 - `/user_identities/generate_instant_key`
@@ -907,3 +947,4 @@ These items are deprecated.
 - `/workspaces/get`
 - `/workspaces/list`
 - `/workspaces/reset_sandbox`
+- `/workspaces/update`
