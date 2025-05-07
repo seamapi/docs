@@ -302,8 +302,8 @@ Warnings associated with the [credential](../../../capability-guides/access-syst
 The specific structure of each object in this list depends on the value of its `warning_code` field.
 
 Variants:
-{% tabs %}
-{% tab title="waiting_to_be_issued" %}
+<details>
+<summary><code>waiting_to_be_issued</code></summary>
 
 Indicates that the [credential](../../../capability-guides/access-systems/managing-credentials.md) is waiting to be issued.
 
@@ -328,8 +328,9 @@ Unique identifier of the type of warning. Enables quick recognition and categori
 
 Possible enum values:
 - `waiting_to_be_issued`
-</details>{% endtab %}
-{% tab title="schedule_externally_modified" %}
+</details></details>
+<details>
+<summary><code>schedule_externally_modified</code></summary>
 
 Indicates that the schedule of one of the [credential](../../../capability-guides/access-systems/managing-credentials.md)'s children was modified externally.
 
@@ -354,8 +355,9 @@ Unique identifier of the type of warning. Enables quick recognition and categori
 
 Possible enum values:
 - `schedule_externally_modified`
-</details>{% endtab %}
-{% tab title="schedule_modified" %}
+</details></details>
+<details>
+<summary><code>schedule_modified</code></summary>
 
 Indicates that the schedule of the [credential](../../../capability-guides/access-systems/managing-credentials.md) was modified to avoid creating a credential with a start date in the past.
 
@@ -380,8 +382,9 @@ Unique identifier of the type of warning. Enables quick recognition and categori
 
 Possible enum values:
 - `schedule_modified`
-</details>{% endtab %}
-{% tab title="being_deleted" %}
+</details></details>
+<details>
+<summary><code>being_deleted</code></summary>
 
 Indicates that the [credential](../../../capability-guides/access-systems/managing-credentials.md) is being deleted.
 
@@ -406,8 +409,9 @@ Unique identifier of the type of warning. Enables quick recognition and categori
 
 Possible enum values:
 - `being_deleted`
-</details>{% endtab %}
-{% tab title="unknown_issue_with_acs_credential" %}
+</details></details>
+<details>
+<summary><code>unknown_issue_with_acs_credential</code></summary>
 
 An unknown issue occurred while syncing the state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) with the provider. This issue may affect the proper functioning of the credential.
 
@@ -432,8 +436,9 @@ Unique identifier of the type of warning. Enables quick recognition and categori
 
 Possible enum values:
 - `unknown_issue_with_acs_credential`
-</details>{% endtab %}
-{% tab title="needs_to_be_reissued" %}
+</details></details>
+<details>
+<summary><code>needs_to_be_reissued</code></summary>
 
 Access permissions for the [credential](../../../capability-guides/access-systems/managing-credentials.md) have changed. [Reissue](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md) (re-encode) the credential. This issue may affect the proper functioning of the credential.
 
@@ -458,8 +463,7 @@ Unique identifier of the type of warning. Enables quick recognition and categori
 
 Possible enum values:
 - `needs_to_be_reissued`
-</details>{% endtab %}
-{% endtabs %}
+</details></details>
 
 ---
 

@@ -145,8 +145,8 @@ Errors associated with the [access control system](https://docs.seam.co/latest/c
 The specific structure of each object in this list depends on the value of its `error_code` field.
 
 Variants:
-{% tabs %}
-{% tab title="seam_bridge_disconnected" %}
+<details>
+<summary><code>seam_bridge_disconnected</code></summary>
 
 Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
   This error might also occur if Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/README.md).
@@ -173,8 +173,9 @@ Possible enum values:
 <summary><code>message</code> Format: <code>String</code></summary>
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-</details>{% endtab %}
-{% tab title="bridge_disconnected" %}
+</details></details>
+<details>
+<summary><code>bridge_disconnected</code></summary>
 
 Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
     See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
@@ -204,8 +205,9 @@ Possible enum values:
 <summary><code>message</code> Format: <code>String</code></summary>
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-</details>{% endtab %}
-{% tab title="visionline_instance_unreachable" %}
+</details></details>
+<details>
+<summary><code>visionline_instance_unreachable</code></summary>
 
 Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/README.md).
   For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](../../../core-concepts/workspaces/README.md).
@@ -232,8 +234,9 @@ Possible enum values:
 <summary><code>message</code> Format: <code>String</code></summary>
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-</details>{% endtab %}
-{% tab title="salto_ks_subscription_limit_exceeded" %}
+</details></details>
+<details>
+<summary><code>salto_ks_subscription_limit_exceeded</code></summary>
 
 Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.
 
@@ -258,8 +261,9 @@ Possible enum values:
 <summary><code>message</code> Format: <code>String</code></summary>
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-</details>{% endtab %}
-{% tab title="acs_system_disconnected" %}
+</details></details>
+<details>
+<summary><code>acs_system_disconnected</code></summary>
 
 Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md) to resolve the issue.
 
@@ -284,8 +288,9 @@ Possible enum values:
 <summary><code>message</code> Format: <code>String</code></summary>
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-</details>{% endtab %}
-{% tab title="account_disconnected" %}
+</details></details>
+<details>
+<summary><code>account_disconnected</code></summary>
 
 Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) to restore access.
 
@@ -310,8 +315,9 @@ Possible enum values:
 <summary><code>message</code> Format: <code>String</code></summary>
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-</details>{% endtab %}
-{% tab title="salto_ks_certification_expired" %}
+</details></details>
+<details>
+<summary><code>salto_ks_certification_expired</code></summary>
 
 Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.
 
@@ -336,8 +342,7 @@ Possible enum values:
 <summary><code>message</code> Format: <code>String</code></summary>
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-</details>{% endtab %}
-{% endtabs %}
+</details></details>
 
 ---
 
@@ -490,8 +495,8 @@ Warnings associated with the [access control system](https://docs.seam.co/latest
 The specific structure of each object in this list depends on the value of its `warning_code` field.
 
 Variants:
-{% tabs %}
-{% tab title="salto_ks_subscription_limit_almost_reached" %}
+<details>
+<summary><code>salto_ks_subscription_limit_almost_reached</code></summary>
 
 Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site to rectify the issue.
 
@@ -516,8 +521,9 @@ Unique identifier of the type of warning. Enables quick recognition and categori
 
 Possible enum values:
 - `salto_ks_subscription_limit_almost_reached`
-</details>{% endtab %}
-{% tab title="time_zone_does_not_match_location" %}
+</details></details>
+<details>
+<summary><code>time_zone_does_not_match_location</code></summary>
 
 Indicates the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
@@ -550,8 +556,7 @@ Unique identifier of the type of warning. Enables quick recognition and categori
 
 Possible enum values:
 - `time_zone_does_not_match_location`
-</details>{% endtab %}
-{% endtabs %}
+</details></details>
 
 ---
 
