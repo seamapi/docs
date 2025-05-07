@@ -50,13 +50,9 @@ This object has no properties.
 {{/unless}}
 {{#if discriminatorVariants}}
 
-The items in this list are objects. The specific structure of each object depends on the value of its `{{discriminator}}` field.
-The `{{discriminator}}` field can be one of the following values:
-{{#each discriminatorVariants}}
-- `{{this.name}}`
-{{/each}}
+The specific structure of each object in this list depends on the value of its `{{discriminator}}` field.
 
-Each object will be one of the following variants:
+Variants:
 {% tabs %}
   {{#each discriminatorVariants}}
 {% tab title="{{this.name}}" %}
