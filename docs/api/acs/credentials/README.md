@@ -299,16 +299,9 @@ Item format: `Object`
 
 Warnings associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-The items in this list are objects. The specific structure of each object depends on the value of its `warning_code` field.
-The `warning_code` field can be one of the following values:
-- `waiting_to_be_issued`
-- `schedule_externally_modified`
-- `schedule_modified`
-- `being_deleted`
-- `unknown_issue_with_acs_credential`
-- `needs_to_be_reissued`
+The specific structure of each object in this list depends on the value of its `warning_code` field.
 
-Each object will be one of the following variants:
+Variants:
 {% tabs %}
 {% tab title="waiting_to_be_issued" %}
 

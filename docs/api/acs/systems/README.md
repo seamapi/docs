@@ -106,17 +106,9 @@ Item format: `Object`
 
 Errors associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-The items in this list are objects. The specific structure of each object depends on the value of its `error_code` field.
-The `error_code` field can be one of the following values:
-- `seam_bridge_disconnected`
-- `bridge_disconnected`
-- `visionline_instance_unreachable`
-- `salto_ks_subscription_limit_exceeded`
-- `acs_system_disconnected`
-- `account_disconnected`
-- `salto_ks_certification_expired`
+The specific structure of each object in this list depends on the value of its `error_code` field.
 
-Each object will be one of the following variants:
+Variants:
 {% tabs %}
 {% tab title="seam_bridge_disconnected" %}
 
@@ -459,12 +451,9 @@ Item format: `Object`
 
 Warnings associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-The items in this list are objects. The specific structure of each object depends on the value of its `warning_code` field.
-The `warning_code` field can be one of the following values:
-- `salto_ks_subscription_limit_almost_reached`
-- `time_zone_does_not_match_location`
+The specific structure of each object in this list depends on the value of its `warning_code` field.
 
-Each object will be one of the following variants:
+Variants:
 {% tabs %}
 {% tab title="salto_ks_subscription_limit_almost_reached" %}
 

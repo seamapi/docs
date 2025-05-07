@@ -88,15 +88,9 @@ Item format: `Object`
 
 Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
-The items in this list are objects. The specific structure of each object depends on the value of its `error_code` field.
-The `error_code` field can be one of the following values:
-- `deleted_externally`
-- `salto_ks_subscription_limit_exceeded`
-- `failed_to_create_on_acs_system`
-- `failed_to_update_on_acs_system`
-- `failed_to_delete_on_acs_system`
+The specific structure of each object in this list depends on the value of its `error_code` field.
 
-Each object will be one of the following variants:
+Variants:
 {% tabs %}
 {% tab title="deleted_externally" %}
 
@@ -323,13 +317,9 @@ Item format: `Object`
 
 Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
-The items in this list are objects. The specific structure of each object depends on the value of its `warning_code` field.
-The `warning_code` field can be one of the following values:
-- `being_deleted`
-- `salto_ks_user_not_subscribed`
-- `unknown_issue_with_acs_user`
+The specific structure of each object in this list depends on the value of its `warning_code` field.
 
-Each object will be one of the following variants:
+Variants:
 {% tabs %}
 {% tab title="being_deleted" %}
 
