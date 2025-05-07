@@ -341,6 +341,15 @@ Possible enum values:
 
 ***
 
+### `page_cursor`
+
+Format: `String`
+Required: No
+
+Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
+
+***
+
 ### `user_identifier_key`
 
 Format: `String`

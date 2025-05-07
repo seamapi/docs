@@ -90,6 +90,9 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 ## Endpoints
 
+### [`/acs/encoders/encode_access_method`](./encode_access_method.md)
+
+Encodes an existing access method onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 ### [`/acs/encoders/encode_credential`](./encode_credential.md)
 
 Encodes an existing [credential](../../../capability-guides/access-systems/managing-credentials.md) onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
