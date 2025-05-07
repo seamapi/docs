@@ -63,7 +63,7 @@ Variants:
 {{#if this.properties.length}}
   {{#each this.properties}}
 
-{{> property-non-collapsible this}}
+{{> property-non-collapsible this isLast=@last}}
   {{/each}}
 {{else}}
 
