@@ -326,11 +326,27 @@ function getOpenapiResponseProperties(
   if (openapiEndpointDef == null) {
     // eslint-disable-next-line no-console
     console.warn(`OpenAPI definition not found for endpoint: ${path}`)
-    return
+    return undefined
   }
 
-  return openapiEndpointDef.post.responses['200']?.content['application/json']
-    ?.schema?.properties
+  if (openapiEndpointDef.post?.responses == null) {
+    return undefined
+  }
+
+  const responseObj = openapiEndpointDef.post.responses['200']
+
+  if ('content' in responseObj) {
+    const jsonContent = responseObj.content['application/json']
+    if (
+      jsonContent?.schema &&
+      'properties' in jsonContent.schema &&
+      jsonContent.schema.properties
+    ) {
+      return jsonContent.schema.properties
+    }
+  }
+
+  return undefined
 }
 
 function processParameters(
