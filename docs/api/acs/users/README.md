@@ -141,6 +141,16 @@ Indicates whether the [ACS user](https://docs.seam.co/latest/capability-guides/a
 
 ---
 
+### `pending_mutations`
+
+Format: `List`
+
+Item format: `Object`
+
+Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system.
+
+---
+
 ### `phone_number`
 
 Format: `String`
@@ -248,6 +258,12 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
 ### `unknown_issue_with_acs_user`
 
 An unknown issue occurred while syncing the state of this [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user.
+
+---
+
+### `latch_resident_user`
+
+Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created on Latch Mission Control. Please use the Latch Mission Control to manage this user.
 
 ---
 
