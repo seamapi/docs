@@ -53,9 +53,9 @@ This object has no properties.
 The specific structure of each object in this list depends on the value of its `{{discriminator}}` field.
 
 Variants:
-{% tabs %}
   {{#each discriminatorVariants}}
-{% tab title="{{this.name}}" %}
+<details>
+<summary><code>{{this.name}}</code></summary>
 {{#if this.description}}
 
 {{this.description}}
@@ -70,9 +70,8 @@ Variants:
 
 This variant has no additional specific properties.
 {{/if}}
-{% endtab %}
+</details>
   {{/each}}
-{% endtabs %}
 {{/if}}
 {{#if listProperties}}
 {{#each listProperties}}
