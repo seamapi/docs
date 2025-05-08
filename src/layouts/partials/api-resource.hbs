@@ -44,13 +44,39 @@ This object has no properties.
 {{#each objectProperties}}
 
 {{> property-collapsible this}}
+
 {{/each}}
 {{/if}}
 {{/unless}}
+{{#if discriminatorVariants}}
+
+The specific structure of each object in this list depends on the value of its `{{discriminator}}` field.
+
+Variants:
+  {{#each discriminatorVariants}}
+<details>
+<summary><code>{{this.name}}</code></summary>
+{{#if this.description}}
+
+{{this.description}}
+{{/if}}
+{{#if this.properties.length}}
+  {{#each this.properties}}
+
+{{> property-non-collapsible this isLast=@last}}
+  {{/each}}
+{{else}}
+
+This variant has no additional specific properties.
+{{/if}}
+</details>
+  {{/each}}
+{{/if}}
 {{#if listProperties}}
 {{#each listProperties}}
 
 {{> property-collapsible this}}
+
 {{/each}}
 {{/if}}
 

@@ -63,6 +63,7 @@ Errors associated with the [encoder](../../../capability-guides/access-systems/w
 
 Date and time at which Seam created the error.
 </details>
+
 <details>
 
 <summary><code>error_code</code> Format: <code>Enum</code></summary>
@@ -72,12 +73,14 @@ Unique identifier of the type of error. Enables quick recognition and categoriza
 Possible enum values:
 - `acs_encoder_removed`
 </details>
+
 <details>
 
 <summary><code>message</code> Format: <code>String</code></summary>
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 </details>
+
 ---
 
 ### `workspace_id`

@@ -41,6 +41,12 @@ type ApiRouteProperty = Pick<
   listItemFormat?: string
   linkTarget?: string
   value?: string
+  discriminator?: string
+  discriminatorVariants?: Array<{
+    name: string
+    description: string
+    properties: ApiRouteProperty[]
+  }>
 }
 
 export interface ApiRouteResource {
@@ -250,6 +256,27 @@ export const mapBlueprintPropertyToRouteProperty = (
     contextRouteProp.listItemFormat = normalizePropertyFormatForDocs(
       prop.itemFormat,
     )
+
+    if (prop.itemFormat === 'discriminated_object') {
+      const discriminatedListProp = prop
+      contextRouteProp.discriminator = discriminatedListProp.discriminator
+      contextRouteProp.discriminatorVariants =
+        discriminatedListProp.variants.map((variant) => {
+          const discriminatorProperty = variant.properties.find(
+            (p) => p.name === discriminatedListProp.discriminator,
+          )
+          const variantName =
+            (discriminatorProperty as EnumProperty)?.values?.[0]?.name ??
+            'unknown_variant'
+          return {
+            name: variantName,
+            description: variant.description,
+            properties: variant.properties
+              .filter((p) => !p.isUndocumented)
+              .map(mapBlueprintPropertyToRouteProperty),
+          }
+        })
+    }
   }
 
   return contextRouteProp

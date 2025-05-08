@@ -32,10 +32,12 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
 
 <summary><code>door_name</code> Format: <code>String</code></summary>
 </details>
+
 <details>
 
 <summary><code>door_number</code> Format: <code>Number</code></summary>
 </details>
+
 <details>
 
 <summary><code>door_type</code> Format: <code>Enum</code></summary>
@@ -46,14 +48,17 @@ Possible enum values:
 - `GuestDoor`
 - `Elevator`
 </details>
+
 <details>
 
 <summary><code>pms_id</code> Format: <code>String</code></summary>
 </details>
+
 <details>
 
 <summary><code>stand_open</code> Format: <code>Boolean</code></summary>
 </details>
+
 ---
 
 ### `created_at`
@@ -82,6 +87,7 @@ dormakaba Community-specific metadata associated with the [entrance](../../../ca
 
 <summary><code>access_point_name</code> Format: <code>String</code></summary>
 </details>
+
 ---
 
 ### `errors`
@@ -98,12 +104,14 @@ Errors associated with the [entrance](../../../capability-guides/access-systems/
 
 Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
 </details>
+
 <details>
 
 <summary><code>message</code> Format: <code>String</code></summary>
 
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 </details>
+
 ---
 
 ### `latch_metadata`
@@ -116,18 +124,22 @@ Latch-specific metadata associated with the [entrance](../../../capability-guide
 
 <summary><code>accessibility_type</code> Format: <code>String</code></summary>
 </details>
+
 <details>
 
 <summary><code>door_name</code> Format: <code>String</code></summary>
 </details>
+
 <details>
 
 <summary><code>door_type</code> Format: <code>String</code></summary>
 </details>
+
 <details>
 
 <summary><code>is_connected</code> Format: <code>Boolean</code></summary>
 </details>
+
 ---
 
 ### `salto_ks_metadata`
@@ -140,34 +152,42 @@ Salto KS-specific metadata associated with the [entrance](../../../capability-gu
 
 <summary><code>battery_level</code> Format: <code>String</code></summary>
 </details>
+
 <details>
 
 <summary><code>door_name</code> Format: <code>String</code></summary>
 </details>
+
 <details>
 
 <summary><code>intrusion_alarm</code> Format: <code>Boolean</code></summary>
 </details>
+
 <details>
 
 <summary><code>left_open_alarm</code> Format: <code>Boolean</code></summary>
 </details>
+
 <details>
 
 <summary><code>lock_type</code> Format: <code>String</code></summary>
 </details>
+
 <details>
 
 <summary><code>locked_state</code> Format: <code>String</code></summary>
 </details>
+
 <details>
 
 <summary><code>online</code> Format: <code>Boolean</code></summary>
 </details>
+
 <details>
 
 <summary><code>privacy_mode</code> Format: <code>Boolean</code></summary>
 </details>
+
 ---
 
 ### `salto_space_metadata`
@@ -180,14 +200,17 @@ Salto Space-specific metadata associated with the [entrance](../../../capability
 
 <summary><code>door_description</code> Format: <code>String</code></summary>
 </details>
+
 <details>
 
 <summary><code>door_name</code> Format: <code>String</code></summary>
 </details>
+
 <details>
 
 <summary><code>ext_door_id</code> Format: <code>String</code></summary>
 </details>
+
 ---
 
 ### `visionline_metadata`
@@ -207,10 +230,12 @@ Possible enum values:
 - `common`
 - `common (PMS)`
 </details>
+
 <details>
 
 <summary><code>door_name</code> Format: <code>String</code></summary>
 </details>
+
 <details>
 
 <summary><code>profiles</code> Format: <code>List</code> Item format: <code>Object</code></summary>
@@ -226,6 +251,7 @@ Possible enum values:
   - `touch`
 
 </details>
+
 ---
 
 ## Endpoints

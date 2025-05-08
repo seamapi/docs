@@ -320,7 +320,7 @@ function processResponseKeys(endpoint: Endpoint, report: Report): void {
 
 function getOpenapiResponseProperties(
   path: string,
-): Record<string, unknown> | undefined | null {
+): Record<string, unknown> | null {
   const openapiEndpointDef = openapi.paths[path as keyof typeof openapi.paths]
 
   if (openapiEndpointDef == null) {
@@ -329,9 +329,19 @@ function getOpenapiResponseProperties(
     return null
   }
 
-  const res = openapiEndpointDef.post.responses['200']
-  if ('content' in res) {
-    return res.content['application/json']?.schema?.properties
+  if (openapiEndpointDef.post?.responses == null) return null
+
+  const responseObj = openapiEndpointDef.post.responses['200']
+
+  if ('content' in responseObj) {
+    const jsonContent = responseObj.content['application/json']
+    if (
+      jsonContent?.schema != null &&
+      'properties' in jsonContent.schema &&
+      jsonContent.schema.properties != null
+    ) {
+      return jsonContent.schema.properties
+    }
   }
 
   return null

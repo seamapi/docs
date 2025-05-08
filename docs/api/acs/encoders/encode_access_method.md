@@ -66,6 +66,7 @@ Format: `Object`
 
 <summary><code>message</code> Format: <code>String</code></summary>
 </details>
+
 <details>
 
 <summary><code>type</code> Format: <code>Enum</code></summary>
@@ -77,6 +78,7 @@ Possible enum values:
 - `incompatible_card_format`
 - `credential_cannot_be_reissued`
 </details>
+
 ---
 
 #### `result`
@@ -91,36 +93,42 @@ If an encoding attempt was successful, includes the `access_method` data that wa
 
 ID of the access method.
 </details>
+
 <details>
 
 <summary><code>created_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the access method was created.
 </details>
+
 <details>
 
 <summary><code>display_name</code> Format: <code>String</code></summary>
 
 Display name of the access method.
 </details>
+
 <details>
 
 <summary><code>instant_key_url</code> Format: <code>String</code></summary>
 
 URL of instant key for mobile key access methods.
 </details>
+
 <details>
 
 <summary><code>is_card_encoding_required</code> Format: <code>Boolean</code></summary>
 
 Whether card encoding is required for plastic card access methods.
 </details>
+
 <details>
 
 <summary><code>issued_at</code> Format: <code>Datetime</code></summary>
 
 Date and time at which the access method was issued.
 </details>
+
 <details>
 
 <summary><code>mode</code> Format: <code>Enum</code></summary>
@@ -132,12 +140,14 @@ Possible enum values:
 - `card`
 - `mobile_key`
 </details>
+
 <details>
 
 <summary><code>workspace_id</code> Format: <code>UUID</code></summary>
 
 Unique identifier for the Seam workspace associated with the access grant.
 </details>
+
 ---
 
 #### `status`

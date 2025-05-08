@@ -118,12 +118,14 @@ Warnings associated with the `acs_access_group`.
 
 Date and time at which Seam created the warning.
 </details>
+
 <details>
 
 <summary><code>message</code> Format: <code>String</code></summary>
 
 Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
 </details>
+
 <details>
 
 <summary><code>warning_code</code> Format: <code>Enum</code></summary>
@@ -133,6 +135,7 @@ Unique identifier of the type of warning. Enables quick recognition and categori
 Possible enum values:
 - `unknown_issue_with_acs_access_group`
 </details>
+
 ---
 
 ### `workspace_id`
