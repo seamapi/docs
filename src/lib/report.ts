@@ -338,9 +338,9 @@ function getOpenapiResponseProperties(
   if ('content' in responseObj) {
     const jsonContent = responseObj.content['application/json']
     if (
-      jsonContent?.schema &&
+      jsonContent?.schema != null &&
       'properties' in jsonContent.schema &&
-      jsonContent.schema.properties
+      jsonContent.schema.properties != null
     ) {
       return jsonContent.schema.properties
     }
