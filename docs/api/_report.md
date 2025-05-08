@@ -796,6 +796,8 @@ These items are deprecated.
 
 - `/access_codes/create`
     - `action_attempt`
+- `/access_codes/list`
+    - `pagination`
 - `/access_codes/pull_backup_access_code`
     - `backup_access_code`
 - `/acs/users/list`

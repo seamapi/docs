@@ -731,6 +731,12 @@ An unknown issue occurred while syncing the state of this [ACS user](https://doc
 
 ---
 
+### `latch_resident_user`
+
+Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created on Latch Mission Control. Please use the Latch Mission Control to manage this user.
+
+---
+
 ## Endpoints
 
 ### [`/acs/users/add_to_access_group`](./add_to_access_group.md)

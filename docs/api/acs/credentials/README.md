@@ -158,6 +158,7 @@ Possible enum values:
 - `salto_ks_credential`
 - `assa_abloy_vostio_key`
 - `salto_space_key`
+- `latch_access`
 
 ---
 
