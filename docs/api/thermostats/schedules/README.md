@@ -68,14 +68,6 @@ Indicates whether a person at the thermostat can change the thermostat's setting
 
 ---
 
-### `is_override_allowed`
-
-Format: `Boolean`
-
-Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) starts.
-
----
-
 ### `max_override_period_minutes`
 
 Format: `Number`

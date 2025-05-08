@@ -668,6 +668,35 @@ Possible enum values:
 - `unknown_issue_with_acs_user`
 
 </details>
+<details>
+<summary><code>latch_resident_user</code></summary>
+
+Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created on Latch Mission Control. Please use the Latch Mission Control to manage this user.
+
+**`created_at`**
+Format: `Datetime`
+
+
+Date and time at which Seam created the warning.
+
+---
+
+**`message`**
+Format: `String`
+
+
+Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+---
+
+**`warning_code`**
+Format: `Enum`
+
+
+Possible enum values:
+- `latch_resident_user`
+
+</details>
 
 ---
 
