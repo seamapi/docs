@@ -20,20 +20,26 @@ You can customize the following characteristics of your Connect Webviews:
 
 You can customize the look and feel of your Connect Webviews in the following ways:
 
-* **Inviter Name:** Define the name to display in your Connect Webviews as the entity requesting user authorization for Seam to access their device or access control system account.
+* **Inviter name:** Define the name to display in your Connect Webviews as the entity requesting user authorization for Seam to access their device or access control system account.
 * **Logo:** Choose a logo for your Connect Webviews. Ensure that the image file size does not exceed 1 MB.
-* **Logo Shape:** Select the shape of your logo displayed in Connect Webviews. Choices are **Circle** (default) or **Square**.
-* **Primary Button Style:** Customize the background and text colors of the action button in your Connect Webview flow using a hex color code. The default color is #232426, which is almost black, and the default text color on the button is white.
+* **Logo shape:** Select the shape of your logo displayed in Connect Webviews. Choices are **Circle** (default) or **Square**.
+* **Primary button style:** Customize the background and text colors of the action button in your Connect Webview flow using a hex color code. The default color is #232426, which is almost black, and the default text color on the button is white.
+* **Success message:** Customize the message that the Connect Webview displays when the connection completes successfully.
 
 It is important to note that any changes you make to the customization features will apply to all of your new Connect Webviews.
 
-<figure><img src="../../.gitbook/assets/connect-webview-customization.png" alt="Customize the look-and-feel characteristics of your Connect Webviews."><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-webview-customization.png" alt="You can customize the look and feel of Connect Webviews."><figcaption><p>You can customize the look and feel of Connect Webviews.</p></figcaption></figure>
+
+To customize the look and feel of your Connect Webviews:
 
 1. In the top navigation pane of [Seam Console](https://console.seam.co/), click **Developer**.
 2. In the left navigation pane, click **Webviews**.
-3.  In the **Customize your Webview** pane on the **Webviews** page, configure any of the following features:
+3. On the **Webviews** page, click **Configure your webview**.
+4.  In the **Customize your Webview** pane, configure any of the following features:
 
-    <table><thead><tr><th width="229">Customization Features</th><th>Instructions</th></tr></thead><tbody><tr><td>Inviter name</td><td><ol><li>In the <strong>Inviter Name</strong> area, click <strong>Edit</strong>.</li><li>Type the desired inviter name and then click <strong>Save</strong>.</li></ol></td></tr><tr><td>Logo</td><td><ol><li>In the <strong>Logo</strong> area, click <strong>Upload new logo</strong>.</li><li>Navigate to and select the image file that contains the desired logo.<br>The image file size cannot exceed 1 MB.</li><li>Click <strong>Open</strong>.</li></ol></td></tr><tr><td>Logo shape</td><td><ol><li>In the <strong>Logo Shape</strong> area, click <strong>Edit</strong>.</li><li>Select Circle or <strong>Square</strong> and then click <strong>Save</strong>.</li></ol></td></tr><tr><td>Primary button color</td><td><ol><li>In the <strong>Primary Button Color</strong> area, click <strong>Edit</strong>.</li><li>Type the desired <a href="https://www.w3schools.com/colors/colors_picker.asp">hex color code</a> and then click <strong>Save</strong>.</li></ol><p>Note that the default primary button color is <code>#232426</code> (almost black).</p></td></tr></tbody></table>
+    <table><thead><tr><th width="229">Feature</th><th>Instructions</th></tr></thead><tbody><tr><td>Inviter name</td><td><ol><li>In the <strong>Inviter Name</strong> area, click <strong>Edit</strong>.</li><li>Type the desired inviter name and then click <strong>Save</strong>.</li></ol></td></tr><tr><td>Logo</td><td><ol><li>In the <strong>Logo</strong> area, click <strong>Upload new logo</strong>.</li><li>Navigate to and select the image file that contains the desired logo.<br>The image file size cannot exceed 1 MB.</li><li>Click <strong>Open</strong>.</li></ol></td></tr><tr><td>Logo shape</td><td><ol><li>In the <strong>Logo Shape</strong> area, click <strong>Edit</strong>.</li><li>Select <strong>Circle</strong> or <strong>Square</strong> and then click <strong>Save</strong>.</li></ol></td></tr><tr><td>Primary button style</td><td><ol><li>In the <strong>Primary Button Style</strong> area, click <strong>Edit</strong>.</li><li>Click the <strong>Button Background Color</strong> field and specify the desired color. Default:  <code>#232426</code> (almost black).</li><li>Click the <strong>Button Text Color</strong> field and specify the desired color. Default: <code>#ffffff</code> (white).</li><li>Click <strong>Save</strong>.</li></ol></td></tr><tr><td>Success message</td><td><ol><li>In the <strong>Success Message</strong> area, click <strong>Edit</strong>.</li><li><p>In the <strong>Message</strong> field, type the desired success message.</p><p>To reset the success message, click <strong>Clear</strong>.</p></li><li>Click <strong>Save</strong>.</li></ol></td></tr></tbody></table>
+
+
 
 ***
 
