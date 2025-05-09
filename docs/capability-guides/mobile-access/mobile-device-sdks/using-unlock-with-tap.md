@@ -6,7 +6,7 @@ description: >-
 
 # Using Unlock With Tap
 
-Unlock With Tap in mobile apps functions similarly to using a traditional proximity card. The app launches an unlock scanning process. When the user holds their phone close to the lock that they want to open, the phone communicates wirelessly with the lock and transmits an access credential. Once the lock verifies these credentials and confirms access is granted, it unlocks.
+Unlock With Tap in mobile apps functions similarly to using a traditional proximity card. The app launches an unlock scanning process. When the user holds their phone close to the lock that they want to open, the phone communicates wirelessly with the lock and transmits an access credential. Once the lock verifies this credential and confirms that access is granted, it unlocks.
 
 In your app, you use `seam.phone.native.unlockWithTap.launch` to initiate this unlock scanning process. Note that `unlockWithTap` automatically starts scanning whenever it is possible to scan and stops scanning whenever it is not possible to scan. That is, when an issue obstructs the phone from scanning, the `can_scan` capability changes to `false`, and Seam adds the resulting error to the error list. Further, the error explains to the user how to fix the causing issue.
 
