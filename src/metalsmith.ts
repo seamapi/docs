@@ -29,6 +29,7 @@ Metalsmith(rootDir)
   .use(
     metadata({
       codeSampleDefinitions: './data/code-sample-definitions',
+      resourceSampleDefinitions: './data/resource-sample-definitions',
       pathMetadata: './data/paths.yaml',
     }),
   )

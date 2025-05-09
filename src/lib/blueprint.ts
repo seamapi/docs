@@ -12,9 +12,15 @@ export const blueprint =
     const codeSampleDefinitions =
       'codeSampleDefinitions' in metadata ? metadata.codeSampleDefinitions : []
 
+    const resourceSampleDefinitions =
+      'resourceSampleDefinitions' in metadata
+        ? metadata.resourceSampleDefinitions
+        : []
+
     const typesModule = TypesModuleSchema.parse({
       ...types,
       codeSampleDefinitions,
+      resourceSampleDefinitions,
     })
 
     const blueprint = await createBlueprint(typesModule, {
