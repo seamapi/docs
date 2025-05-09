@@ -96,6 +96,7 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1/bridge_client_sessions`: No undocumented message provided
 - `/seam/bridge/v1/bridge_connected_systems`: No undocumented message provided
 - `/seam/instant_key/v1/client_sessions`: No undocumented message provided
+- `/seam/mobile_sdk/v1/acs/credentials`: No undocumented message provided
 - `/thermostats/daily_programs`: No undocumented message provided
 - `/unstable_access_grants`: No undocumented message provided
 - `/unstable_access_methods`: No undocumented message provided
@@ -109,6 +110,7 @@ These items are intentionally undocumented.
 
 - `/seam/bridge/v1`: No undocumented message provided
 - `/seam/instant_key/v1`: No undocumented message provided
+- `/seam/mobile_sdk/v1/acs`: No undocumented message provided
 
 ### Endpoints
 
@@ -131,6 +133,7 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1/bridge_client_sessions/report_status`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_connected_systems/list`: Seam Bridge Client only.
 - `/seam/instant_key/v1/client_sessions/exchange_short_code`: Seam Instant Key only.
+- `/seam/mobile_sdk/v1/acs/credentials/list`: Mobile SDK only.
 - `/thermostats/activate_weekly_program`: Unreleased.
 - `/thermostats/clear_weekly_program`: Unreleased.
 - `/thermostats/get`: Will be removed.
@@ -916,6 +919,7 @@ These items are deprecated.
 - `/seam/bridge/v1/bridge_client_sessions/report_status`
 - `/seam/bridge/v1/bridge_connected_systems/list`
 - `/seam/instant_key/v1/client_sessions/exchange_short_code`
+- `/seam/mobile_sdk/v1/acs/credentials/list`
 - `/thermostats/activate_weekly_program`
 - `/thermostats/clear_weekly_program`
 - `/thermostats/get`

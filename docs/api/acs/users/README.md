@@ -236,6 +236,35 @@ Format: `String`
 Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
 </details>
+<details>
+<summary><code>latch_conflict_with_resident_user</code></summary>
+
+Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).
+
+**`created_at`**
+Format: `Datetime`
+
+
+Date and time at which Seam created the error.
+
+---
+
+**`error_code`**
+Format: `Enum`
+
+
+Possible enum values:
+- `latch_conflict_with_resident_user`
+
+---
+
+**`message`**
+Format: `String`
+
+
+Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
+</details>
 
 ---
 
@@ -737,6 +766,12 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
 ### `failed_to_delete_on_acs_system`
 
 Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not deleted on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+### `latch_conflict_with_resident_user`
+
+Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).
 
 ---
 
