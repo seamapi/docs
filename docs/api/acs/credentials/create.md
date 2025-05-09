@@ -257,6 +257,11 @@ Vostio-specific metadata for the new credential.
 
 <details>
 
+<summary><code>auto_join</code> Format: <code>Boolean</code></summary>
+</details>
+
+<details>
+
 <summary><code>join_all_guest_acs_entrances</code> Format: <code>Boolean</code></summary>
 </details>
 

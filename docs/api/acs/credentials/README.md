@@ -59,6 +59,11 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 <details>
 
+<summary><code>auto_join</code> Format: <code>Boolean</code></summary>
+</details>
+
+<details>
+
 <summary><code>door_names</code> Format: <code>List</code> Item format: <code>String</code></summary>
 </details>
 
