@@ -7,6 +7,11 @@ import type {
   Route,
 } from '@seamapi/blueprint'
 import { pascalCase } from 'change-case'
+import type {
+  SdkName,
+  SyntaxName,
+} from 'node_modules/@seamapi/blueprint/dist/index.cjs'
+import type { ResourceSample } from 'node_modules/@seamapi/blueprint/lib/samples/resource-sample.js'
 
 import type { PathMetadata } from 'lib/path-metadata.js'
 
@@ -18,6 +23,7 @@ export interface ApiRouteLayoutContext {
     ApiRouteResource & {
       warnings: ApiWarning[]
       errors: ApiError[]
+      resourceSamples: ResourceSampleContext[]
     }
   >
   endpoints: ApiRouteEndpoint[]
@@ -28,6 +34,12 @@ interface ApiRouteEvent {
   name: string
   description: string
   properties: ApiRouteProperty[]
+}
+
+interface ResourceSampleContext {
+  title: string
+  resourceData: string
+  resourceDataSyntax: SyntaxName
 }
 
 type ApiRouteProperty = Pick<
@@ -144,6 +156,7 @@ export function setApiRouteLayoutContext(
       errors: resourceErrors,
       warnings: resourceWarnings,
       events: resourceEvents,
+      resourceSamples: resource.resourceSamples.map(mapResourceSample),
     })
   }
 }
@@ -335,5 +348,23 @@ function addLinkTargetsToProperties(
     if (linkTarget != null) {
       prop.linkTarget = linkTarget
     }
+  }
+}
+
+const mapResourceSample = (sample: ResourceSample): ResourceSampleContext => {
+  const jsonSample = Object.entries(sample.resource).find(
+    ([k]) => (k as SdkName) === 'seam_cli',
+  )?.[1]
+
+  if (jsonSample == null) {
+    throw new Error(
+      `Missing seam_cli for ${sample.resource_type} resource sample: ${sample.title}`,
+    )
+  }
+
+  return {
+    title: sample.title,
+    resourceData: jsonSample.resource_data,
+    resourceDataSyntax: jsonSample.resource_data_syntax,
   }
 }

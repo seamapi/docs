@@ -1,0 +1,6 @@
+---
+- title: ACS System
+  description: A basic system.
+  resource_type: acs_system
+  properties:
+    acs_system_id: 'bbcea306-7201-4d85-b527-3abc55277203'

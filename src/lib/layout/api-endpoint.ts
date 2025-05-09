@@ -1,8 +1,8 @@
 import type {
   ActionAttempt,
-  CodeSampleSdk,
   Endpoint,
   Parameter,
+  SdkName,
   SeamAuthMethod,
   SeamWorkspaceScope,
 } from '@seamapi/blueprint'
@@ -14,7 +14,7 @@ import {
   normalizePropertyFormatForDocs,
 } from './api-route.js'
 
-const supportedSdks: CodeSampleSdk[] = [
+const supportedSdks: SdkName[] = [
   'javascript',
   'python',
   'php',
@@ -195,7 +195,7 @@ const mapBlueprintParamToEndpointParam = (
 
 const mapCodeSample = (sample: CodeSample): CodeSampleContext => {
   const codeEntries = Object.entries(sample.code).filter(([k]) =>
-    supportedSdks.includes(k as CodeSampleSdk),
+    supportedSdks.includes(k as SdkName),
   )
   return {
     title: sample.title,
