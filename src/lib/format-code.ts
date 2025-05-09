@@ -1,13 +1,13 @@
 import * as prettierPluginPhp from '@prettier/plugin-php/standalone'
 import * as prettierPluginRuby from '@prettier/plugin-ruby'
-import type { CodeSampleSyntax } from '@seamapi/blueprint'
+import type { SyntaxName } from '@seamapi/blueprint'
 import commandExists from 'command-exists'
 import { execa } from 'execa'
 import { format as prettier } from 'prettier'
 
 export const formatCode = async (
   content: string,
-  syntax: CodeSampleSyntax,
+  syntax: SyntaxName,
 ): Promise<string> => {
   const output = await formatCodeForSyntax(content, syntax)
   return output.trim()
@@ -15,7 +15,7 @@ export const formatCode = async (
 
 const formatCodeForSyntax = async (
   content: string,
-  syntax: CodeSampleSyntax,
+  syntax: SyntaxName,
 ): Promise<string> => {
   switch (syntax) {
     case 'javascript':
