@@ -30,4 +30,4 @@ The **Access Systems** page now displays the newly-connected access control syst
 
 First, use the Seam API to create a Connect Webview. Then, display this Connect Webview to your user. You user completes the Connect Webview to authorize the ACS connection to Seam.
 
-For detailed instructions, see [Connect Webview Process](../../../ui-components/connect-webviews/connect-webview-process.md).
+For detailed instructions, see [Connect Webview Process](../../../core-concepts/connect-webviews/connect-webview-process.md).

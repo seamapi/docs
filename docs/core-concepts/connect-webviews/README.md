@@ -5,7 +5,7 @@ description: >-
   the Seam API.
 ---
 
-# 🔌 Connect Webviews
+# Connect Webviews
 
 <figure><img src="../../.gitbook/assets/connect-webview-cover.png" alt="The Connect Webview flow walks your users through the process of authorizing your app to control their devices or ACS with the Seam API."><figcaption><p>The Connect Webview flow walks your users through the process of authorizing your app to control their devices or ACS with the Seam API.</p></figcaption></figure>
 
@@ -19,6 +19,6 @@ Seam handles all the authentication steps, and—once your user has completed th
 
 ## Get Started with Connect Webviews
 
-First, learn how to [create, display, and complete Connect Webviews](../../ui-components/connect-webviews/connect-webview-process.md).
+First, learn how to [create, display, and complete Connect Webviews](connect-webview-process.md).
 
 Then, learn how to [customize your Connect Webviews](customizing-connect-webviews.md).
