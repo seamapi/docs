@@ -103,6 +103,6 @@ const formatPhp = async (content: string): Promise<string> => {
   })
 }
 
-const formatJson = async (content: string): Promise<string> => {
+export const formatJson = async (content: string): Promise<string> => {
   return await prettier(content, { parser: 'json' })
 }
