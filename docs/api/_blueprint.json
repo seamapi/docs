@@ -28855,6 +28855,75 @@
                   "jsonType": "string",
                   "values": [
                     {
+                      "name": "no_space_for_access_code_on_device",
+                      "description": "",
+                      "isDeprecated": false,
+                      "deprecationMessage": "",
+                      "isUndocumented": false,
+                      "undocumentedMessage": "",
+                      "isDraft": false,
+                      "draftMessage": ""
+                    }
+                  ]
+                },
+                {
+                  "name": "is_access_code_error",
+                  "description": "Indicates that this is an access code error.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "boolean",
+                  "jsonType": "boolean"
+                },
+                {
+                  "name": "message",
+                  "description": "Detailed description of the error. Provides insights into the issue and potentially how to rectify it.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "string",
+                  "jsonType": "string"
+                }
+              ],
+              "description": "No space for access code on device."
+            },
+            {
+              "properties": [
+                {
+                  "name": "created_at",
+                  "description": "Date and time at which Seam created the error.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "datetime",
+                  "jsonType": "string"
+                },
+                {
+                  "name": "error_code",
+                  "description": "Unique identifier of the type of error. Enables quick recognition and categorization of the issue.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "enum",
+                  "jsonType": "string",
+                  "values": [
+                    {
                       "name": "igloohome_bridge_too_many_pending_jobs",
                       "description": "",
                       "isDeprecated": false,
@@ -49733,6 +49802,75 @@
                 }
               ],
               "description": "An attempt to modify this access code was prevented."
+            },
+            {
+              "properties": [
+                {
+                  "name": "created_at",
+                  "description": "Date and time at which Seam created the error.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "datetime",
+                  "jsonType": "string"
+                },
+                {
+                  "name": "error_code",
+                  "description": "Unique identifier of the type of error. Enables quick recognition and categorization of the issue.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "enum",
+                  "jsonType": "string",
+                  "values": [
+                    {
+                      "name": "no_space_for_access_code_on_device",
+                      "description": "",
+                      "isDeprecated": false,
+                      "deprecationMessage": "",
+                      "isUndocumented": false,
+                      "undocumentedMessage": "",
+                      "isDraft": false,
+                      "draftMessage": ""
+                    }
+                  ]
+                },
+                {
+                  "name": "is_access_code_error",
+                  "description": "Indicates that this is an access code error.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "boolean",
+                  "jsonType": "boolean"
+                },
+                {
+                  "name": "message",
+                  "description": "Detailed description of the error. Provides insights into the issue and potentially how to rectify it.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "string",
+                  "jsonType": "string"
+                }
+              ],
+              "description": "No space for access code on device."
             },
             {
               "properties": [
