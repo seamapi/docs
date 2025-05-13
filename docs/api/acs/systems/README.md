@@ -9,7 +9,7 @@ Within an `acs_system`, create [`acs_user`s](https://docs.seam.co/latest/api/acs
 For details about the resources associated with an access control system, see the [access control systems namespace](https://docs.seam.co/latest/api/acs).
 
 {% tabs %}
-{% tab title="Json" %}
+{% tab title="JSON" %}
 ```json
 { "acs_system_id": "bbcea306-7201-4d85-b527-3abc55277203" }
 ```
