@@ -7,6 +7,18 @@
 
 {{description}}
 {{/if}}
+{{#if resourceSamples.length}}
+
+{% tabs %}
+{{#each resourceSamples}}
+{% tab title="{{toCapitalCase this.resourceDataSyntax}}" %}
+```{{this.resourceDataSyntax}}
+{{{this.resourceData}}}
+```
+{% endtab %}
+{{/each}}
+{% endtabs %}
+{{/if}}
 
 {{#each properties}}
 {{#if ../headingOffset}}
