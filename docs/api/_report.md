@@ -106,6 +106,11 @@ These items are intentionally undocumented.
 
 - `instant_key`: Unreleased.
 
+### Resource properties
+
+- `acs_user.last_successful_sync_at`: Only used internally.
+- `unmanaged_acs_user.last_successful_sync_at`: Only used internally.
+
 ### Namespaces
 
 - `/seam/bridge/v1`: No undocumented message provided
