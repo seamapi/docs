@@ -11,7 +11,7 @@
 
 {% tabs %}
 {{#each resourceSamples}}
-{% tab title="{{toCapitalCase this.resourceDataSyntax}}" %}
+{% tab title="{{#if (eq this.resourceDataSyntax 'json')}}JSON{{else}}{{toCapitalCase this.resourceDataSyntax}}{{/if}}" %}
 ```{{this.resourceDataSyntax}}
 {{{this.resourceData}}}
 ```
