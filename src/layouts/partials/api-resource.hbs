@@ -7,6 +7,18 @@
 
 {{description}}
 {{/if}}
+{{#if resourceSamples.length}}
+
+{% tabs %}
+{{#each resourceSamples}}
+{% tab title="{{#if (eq this.resourceDataSyntax 'json')}}JSON{{else}}{{toCapitalCase this.resourceDataSyntax}}{{/if}}" %}
+```{{this.resourceDataSyntax}}
+{{{this.resourceData}}}
+```
+{% endtab %}
+{{/each}}
+{% endtabs %}
+{{/if}}
 
 {{#each properties}}
 {{#if ../headingOffset}}
