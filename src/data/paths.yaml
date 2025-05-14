@@ -80,3 +80,8 @@
   title: Enrollment Automations
   resources:
     - enrollment_automation
+
+/connected_accounts:
+  title: Connected Accounts
+  resources:
+    - connected_account
