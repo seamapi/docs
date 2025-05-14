@@ -53,15 +53,6 @@ export const reference = (
   }
 
   for (const route of blueprint.routes ?? []) {
-    if (
-      !route.path.startsWith('/acs') &&
-      !route.path.startsWith('/thermostats') &&
-      !route.path.startsWith('/phones') &&
-      !route.path.startsWith('/user_identities')
-    ) {
-      continue
-    }
-
     if (route.isUndocumented) continue
     if (pathMetadata[route.path]?.title == null) continue
 
