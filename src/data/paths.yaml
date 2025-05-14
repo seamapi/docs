@@ -80,3 +80,18 @@
   title: Enrollment Automations
   resources:
     - enrollment_automation
+
+/access_codes:
+  title: Access Codes
+  resources:
+    - access_code
+
+/access_codes/simulate:
+  title: Access Code Simulations
+  resources:
+    - unmanaged_access_code
+
+/access_codes/unmanaged:
+  title: Unmanaged Access Codes
+  resources:
+    - unmanaged_access_code
