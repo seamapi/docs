@@ -88,8 +88,7 @@
 
 /access_codes/simulate:
   title: Access Code Simulations
-  resources:
-    - unmanaged_access_code
+  resources: []
 
 /access_codes/unmanaged:
   title: Unmanaged Access Codes
