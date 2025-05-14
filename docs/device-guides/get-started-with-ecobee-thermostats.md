@@ -770,7 +770,7 @@ Fan running: false
   },
   can_hvac_cool: true,
   can_hvac_heat: true,
-  can_hvac_heat_cool: true
+  can_hvac_heat_cool: true,
   can_turn_off_hvac: true,
   ...
 }
@@ -1337,9 +1337,9 @@ heat
 
 ### Create and schedule climate presets
 
-You can use the Seam API to create climate presets for ecobee thermostats. Each climate preset is a predefined configuration that specifies settings, such as HVAC mode, fan mode, and temperature set points. Climate presets make it quick and efficient for users to apply consistent climate settings tailored to different scenarios, enhancing both comfort and energy efficiency. For example, you could create two climate presets: a comfort preset for when a vacation rental is occupied and an eco preset for when the vacation rental is empty.
+You can use the Seam API to create climate presets for ecobee thermostats. Each climate preset is a saved group of settings, such as HVAC mode, fan mode, and temperature set points. Climate presets make it quick and easy to apply consistent climate settings for different scenarios. For example, you could create two climate presets: a comfort preset for when a vacation rental is occupied and an eco preset for when the vacation rental is empty.
 
-Once you create climate presets, you can schedule them to start and stop whenever you'd like. For example, you could schedule your thermostat to switch to the comfort preset in sync with your vacation rental reservations. You can even set a fallback climate preset, such as eco, and Seam enforces this preset's settings on your thermostat whenever there is no other active climate preset.
+You can schedule climate presets to start and stop whenever you'd like. You can even set a fallback climate preset, such as eco.
 
 In this example, create comfort and eco climate presets, set eco as the fallback, and schedule the comfort climate preset to coincide with two vacation rental reservations.
 

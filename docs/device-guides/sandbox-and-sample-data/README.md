@@ -124,6 +124,10 @@ You can connect and work with virtual devices and systems in a [sandbox workspac
 [seam-bridge-sample-data.md](seam-bridge-sample-data.md)
 {% endcontent-ref %}
 
+{% content-ref url="../../developer-tools/sandbox-and-sample-data/sandbox-sensi-thermostats.md" %}
+[sandbox-sensi-thermostats.md](../../developer-tools/sandbox-and-sample-data/sandbox-sensi-thermostats.md)
+{% endcontent-ref %}
+
 {% content-ref url="smartthings-sample-data.md" %}
 [smartthings-sample-data.md](smartthings-sample-data.md)
 {% endcontent-ref %}

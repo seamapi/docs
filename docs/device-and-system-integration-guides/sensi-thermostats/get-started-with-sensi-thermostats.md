@@ -1,32 +1,30 @@
 ---
-description: >-
-  Learn how to connect and control Honeywell Resideo thermostats with the Seam
-  API.
+description: Learn how to connect and control Sensi thermostats with the Seam API.
 ---
 
-# Get Started with Honeywell Resideo Thermostats
+# Get Started with Sensi Thermostats
 
-<figure><picture><source srcset="../../.gitbook/assets/honeywell-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/honeywell-manufacturer-page-cover-light.png" alt="Honeywell Resideo Thermostats"></picture><figcaption><p>Honeywell Resideo Thermostats</p></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/sensi-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/sensi-manufacturer-page-cover-light.png" alt="Sensi Thermostats"></picture><figcaption><p>Sensi Thermostats</p></figcaption></figure>
 
 ## Overview
 
 Seam provides a universal API to connect and control many brands of IoT devices and systems, including thermostats, smart locks, access control systems (ACSs), and noise sensors.
 
-This guide gives you a rapid introduction to connecting and controlling your [Honeywell Resideo](https://www.seam.co/manufacturers/honeywell) thermostats using the Seam API. For application developers, you can use the Seam API in your app, and your users can authorize your app to control their devices using Seam.
+This guide gives you a rapid introduction to connecting and controlling your [Sensi](https://www.seam.co/manufacturers/sensi) thermostats using the Seam API. For application developers, you can use the Seam API in your app, and your users can authorize your app to control their devices using Seam.
 
-For detailed information about the Honeywell Resideo devices that Seam supports, see the following table and our [Honeywell Resideo Supported Devices page](https://www.seam.co/manufacturers/honeywell):
+For detailed information about the Sensi devices that Seam supports, see the following table and our [Sensi Supported Devices page](https://www.seam.co/manufacturers/sensi):
 
 {% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
   endpoint="https://connect.getseam.com"
   publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
   user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["Honeywell"]'
+  manufacturers='["sensi"]'
 />" %}
 
-To learn more about other IoT device and system brands that Seam supports—such as ecobee, Google Nest, Yale, Schlage, and many more—visit our [integration page](https://www.seam.co/supported-devices-and-systems).
+To learn more about other IoT device and system brands that Seam supports—such as ecobee, Honeywell Resideo, Google Nest, Yale, Schlage, and many more—visit our [integration page](https://www.seam.co/supported-devices-and-systems).
 
 {% hint style="success" %}
-This guide shows you how to install a Seam SDK and then control your Honeywell Resideo thermostat using the Seam API.
+This guide shows you how to install a Seam SDK and then control your Sensi thermostat using the Seam API.
 
 Another easy way to learn about what you can do with the Seam API is to explore the [interactive Seam CLI](../../core-concepts/seam-console/seam-online-cli.md), which you can access from directly within the [Seam Console](../../core-concepts/seam-console/).
 
@@ -117,23 +115,23 @@ $ export SEAM_API_KEY=seam_test2bMS_94SrGUXuNR2JmJkjtvBQDg5c
 ```
 
 {% hint style="info" %}
-This guide uses a [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces). You can only connect virtual devices and systems in this type of workspace. If you want to connect a real Honeywell Resideo thermostat, use a [non-sandbox workspace](../../core-concepts/workspaces/#production-workspaces) and API key.
+This guide uses a [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces). You can only connect virtual devices and systems in this type of workspace. If you want to connect a real Sensi thermostat, use a [non-sandbox workspace](../../core-concepts/workspaces/#production-workspaces) and API key.
 {% endhint %}
 
 ***
 
-## Step 2: Link your Honeywell Resideo account with Seam
+## Step 2: Link your Sensi account with Seam
 
-To control your Honeywell Resideo thermostat using the Seam API, you must first authorize your Seam workspace to connect to your Honeywell Resideo account. If your application needs to connect to your users' Honeywell Resideo accounts, Seam provides fully-embedded, [customizable](../../core-concepts/connect-webviews/customizing-connect-webviews.md) client-side [Connect Webviews](../../core-concepts/connect-webviews/) to collect their authorization securely. These user-friendly pre-built authorization flows walk your users through the process of granting your Seam workspace permission to control their Honeywell Resideo thermostats. The Connect Webview presents a flow that prompts your users to enter their credentials for their Honeywell Resideo account.
+To control your Sensi thermostat using the Seam API, you must first authorize your Seam workspace to connect to your Sensi account. If your application needs to connect to your users' Sensi accounts, Seam provides fully-embedded, [customizable](../../core-concepts/connect-webviews/customizing-connect-webviews.md) client-side [Connect Webviews](../../core-concepts/connect-webviews/) to collect their authorization securely. These user-friendly pre-built authorization flows walk your users through the process of granting your Seam workspace permission to control their Sensi thermostats. The Connect Webview presents a flow that prompts your users to enter their credentials for their Sensi account.
 
-In this guide, you create a Connect Webview object. Then, you display the graphical component of the created Connect Webview and enter a set of sample credentials to connect a sandbox Honeywell Resideo account.
+In this guide, you create a Connect Webview object. Then, you display the graphical component of the created Connect Webview and enter a set of sample credentials to connect a sandbox Sensi account.
 
 {% hint style="success" %}
 This guide shows you how to create a Connect Webview programmatically using the Seam API.
 
 The [Seam Console](../../core-concepts/seam-console/) provides another easy way to connect devices to your Seam workspace.
 
-Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](get-started-with-honeywell-thermostats.md#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
+Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](get-started-with-sensi-thermostats.md#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
 
 <img src="../../.gitbook/assets/add-devices-button.png" alt="You can also use the Seam Console to add devices." data-size="original">
 {% endhint %}
@@ -151,7 +149,7 @@ from seam import Seam
 
 seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
 
-connect_webview = seam.connect_webviews.create(accepted_providers=["honeywell_resideo"])
+connect_webview = seam.connect_webviews.create(accepted_providers=["sensi"])
 
 assert connect_webview.login_successful is False
 
@@ -177,7 +175,7 @@ curl -X 'POST' \
   -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
-  "accepted_providers": ["honeywell_resideo"]
+  "accepted_providers": ["sensi"]
 }' | jq -r '"Login Successful (false): " + (.connect_webview.login_successful | tostring),
   "URL: " + .connect_webview.url'
   # Use the returned Connect Webview URL to display
@@ -201,7 +199,7 @@ import { Seam } from "seam";
 const seam = new Seam(); // Seam automatically uses your exported SEAM_API_KEY.
 
 const connectWebview = await seam.connectWebviews.create({
-  accepted_providers: ['honeywell_resideo']
+  accepted_providers: ['sensi']
 });
 
 console.log(connectWebview.login_successful); // false
@@ -228,7 +226,7 @@ require "seam"
 seam = Seam.new() # Seam automatically uses your exported SEAM_API_KEY.
 
 connect_webview = seam.connect_webviews.create(
-  accepted_providers: ["honeywell_resideo"]
+  accepted_providers: ["sensi"]
 )
 
 puts connect_webview.login_successful # false
@@ -256,7 +254,7 @@ require 'vendor/autoload.php';
 $seam = new Seam\SeamClient(); // Seam automatically uses your exported SEAM_API_KEY.
 
 $connect_webview = $seam->connect_webviews->create(
-  accepted_providers: ["honeywell_resideo"]
+  accepted_providers: ["sensi"]
 );
 
 echo $connect_webview->login_successful ? 'true' : 'false', "\n"; // false
@@ -283,7 +281,7 @@ using Seam.Client;
 var seam = new SeamClient(apiToken: SEAM_API_KEY);
 
 var connectWebview = seam.ConnectWebviews.Create(
-  acceptedProviders: new() {Seam.Api.ConnectWebviews.CreateRequest.AcceptedProvidersEnum.Ecobee}
+  acceptedProviders: new() {Seam.Api.ConnectWebviews.CreateRequest.AcceptedProvidersEnum.Sensi}
 );
 
 Console.WriteLine(connectWebview.LoginSuccessful); // False
@@ -333,7 +331,7 @@ public class Main {
       .build();
 
     ConnectWebview connectWebview = seam.connectWebviews().create(ConnectWebviewsCreateRequest.builder()
-      .acceptedProviders(List.of(AcceptedProvider.ECOBEE))
+      .acceptedProviders(List.of(AcceptedProvider.SENSI))
       .build());
 
     System.out.println(connectWebview.getLoginSuccessful()); // false
@@ -385,7 +383,7 @@ func run() error {
     context.Background(),
     &api.ConnectWebviewsCreateRequest{
       AcceptedProviders: []api.AcceptedProvider{
-        api.AcceptedProviderEcobee,
+        api.AcceptedProviderSensi,
       },
     },
   )
@@ -422,15 +420,15 @@ In a web browser, go to the URL that the Connect Webview object returned.
 For application developers, you can redirect your user to this Connect Webview URL so that they can authorize your app to control their devices using Seam. We even provide a prebuilt [Connect Account Button](../../seam-components/react-components/connect-account-button.md) within our suite of [Seam Components](../../seam-components/overview/) that help you build your device management flow.
 
 {% hint style="success" %}
-Because you're using a sandbox workspace, you can connect Seam's test Honeywell Resideo account. We provide [virtual devices](../../device-guides/sandbox-and-sample-data/) for each of the brands that we support. These sandbox devices and systems enable you to test your app with devices from multiple brands without the need to own all the corresponding physical devices.
+Because you're using a sandbox workspace, you can connect Seam's test Sensi account. We provide [virtual devices](../../device-guides/sandbox-and-sample-data/) for each of the brands that we support. These sandbox devices and systems enable you to test your app with devices from multiple brands without the need to own all the corresponding physical devices.
 {% endhint %}
 
-Complete the Connect Webview authorization flow by entering the following [Honeywell Resideo sandbox account](../../developer-tools/sandbox-and-sample-data/sandbox-honeywell-thermostats.md) credentials:
+Complete the Connect Webview authorization flow by entering the following [Sensi sandbox account](../../developer-tools/sandbox-and-sample-data/sandbox-sensi-thermostats.md) credentials:
 
 * **Email:** jane@example.com
 * **Password:** 1234
 
-<figure><picture><source srcset="../../.gitbook/assets/honeywell_connect-flow-screens_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/honeywell_connect-flow-screens_light.png" alt="Use the Seam Connect Webview authorization flow to connect a Honeywell Resideo account with Seam. This flow varies slightly based on the device manufacturer."></picture><figcaption><p>Use the Seam Connect Webview authorization flow to connect a Honeywell Resideo account with Seam. This flow varies slightly based on the device manufacturer.</p></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/sensi_connect-flow-screens_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/sensi_connect-flow-screens_light.png" alt="Use the Seam Connect Webview authorization flow to connect an ecobee account with Seam. This flow varies slightly based on the device manufacturer."></picture><figcaption><p>Use the Seam Connect Webview authorization flow to connect an Sensi account with Seam. This flow varies slightly based on the device manufacturer.</p></figcaption></figure>
 
 Confirm that authorization through the Connect Webview was successful by querying its status.
 
@@ -592,9 +590,9 @@ true
 
 ***
 
-## Step 3: Retrieve Honeywell Resideo thermostat devices
+## Step 3: Retrieve Sensi thermostat devices
 
-When you link a Honeywell Resideo account with Seam, we create a `device` object to represent each Honeywell Resideo thermostat in your account. You can then retrieve these Honeywell Resideo devices using the [List Devices](../../api-clients/devices/list.md) and [Get Device](../../api-clients/devices/get.md) endpoints.
+When you link an Sensi account with Seam, we create a `device` object to represent each Sensi thermostat in your account. You can then retrieve these Sensi devices using the [List Devices](../../api-clients/devices/list.md) and [Get Device](../../api-clients/devices/get.md) endpoints.
 
 The Seam API exposes each device's properties, such as the current temperature reading in Fahrenheit and Celsius, current HVAC and fan modes, available climate presets, thermostat-specific constraints, and much more.
 
@@ -605,10 +603,10 @@ The Seam API exposes each device's properties, such as the current temperature r
 ```python
 # Retrieve all devices, filtered by manufacturer,
 # which is one of several filters that list() supports.
-all_honeywell_resideo_thermostats = seam.devices.list(manufacturer="honeywell_resideo")
+all_sensi_thermostats = seam.devices.list(manufacturer="sensi")
 
 # Select the first device as an example.
-living_room_thermostat = all_honeywell_resideo_thermostats[0]
+living_room_thermostat = all_sensi_thermostats[0]
 
 # Inspect specific properties.
 pprint("Current temperature: " + str(living_room_thermostat.properties["temperature_fahrenheit"]))
@@ -629,7 +627,7 @@ Device(
   connected_account_id='11111111-1111-1111-1111-222222222222',
   created_at='2024-10-03T22:12:15.666Z',
   properties={
-    'manufacturer': 'honeywell_resideo',
+    'manufacturer': 'sensi',
     'online': True,
     'temperature_celsius': 21.11111111111111,
     'temperature_fahrenheit': 70,
@@ -649,7 +647,6 @@ Device(
   },
   can_hvac_cool=True,
   can_hvac_heat=True,
-  can_hvac_heat_cool=True,
   can_turn_off_hvac=True,
   ...
 )
@@ -662,7 +659,7 @@ Device(
 ```bash
 # Retrieve all devices, filtered by manufacturer, which is
 # one of several filters that the list endpoint supports.
-all_honeywell_resideo_thermostats=$(
+all_sensi_thermostats=$(
   # Use GET or POST.
   curl -X 'GET' \
     'https://connect.getseam.com/devices/list' \
@@ -670,11 +667,11 @@ all_honeywell_resideo_thermostats=$(
     -H "Authorization: Bearer ${SEAM_API_KEY}" \
     -H 'Content-Type: application/json' \
     -d '{
-    "manufacturer": "honeywell_resideo"
+    "manufacturer": "sensi"
   }')
 
 # Select the first device as an example.
-living_room_thermostat=$(jq -r '.devices[0]' <<< ${all_honeywell_resideo_thermostats})
+living_room_thermostat=$(jq -r '.devices[0]' <<< ${all_sensi_thermostats})
 
 # Inspect specific properties.
 echo $(jq -r '"Current temperature: " + (.properties.temperature_fahrenheit | tostring)' <<< ${living_room_thermostat})
@@ -695,7 +692,7 @@ Fan running: false
   "connected_account_id": "11111111-1111-1111-1111-222222222222",
   "created_at": "2024-10-03T22:12:15.666Z",
   "properties": {
-    "manufacturer": "honeywell_resideo",
+    "manufacturer": "sensi",
     "online": true,
     "temperature_celsius": 21.11111111111111,
     "temperature_fahrenheit": 70,
@@ -715,7 +712,6 @@ Fan running: false
   },
   "can_hvac_cool": true,
   "can_hvac_heat": true,
-  "can_hvac_heat_cool": true,
   "can_turn_off_hvac": true,
   ...
 }
@@ -728,10 +724,10 @@ Fan running: false
 ```javascript
 // Retrieve all devices, filtered by manufacturer,
 // which is one of several filters that list() supports.
-const allHoneywellResideoThermostats = await seam.devices.list({manufacturer: "honeywell_resideo"});
+const allSensiThermostats = await seam.devices.list({manufacturer: "sensi"});
 
 // Select the first device as an example.
-const livingRoomThermostat = allHoneywellResideoThermostats[0];
+const livingRoomThermostat = allSensiThermostats[0];
 
 // Inspect specific properties.
 console.log("Current temperature: " + livingRoomThermostat.properties.temperature_fahrenheit);
@@ -752,7 +748,7 @@ Fan running: false
   connected_account_id: '11111111-1111-1111-1111-222222222222',
   created_at: '2024-10-03T22:12:15.666Z',
   properties: {
-    manufacturer: 'honeywell_resideo',
+    manufacturer: 'sensi',
     online: true,
     temperature_celsius: 21.11111111111111,
     temperature_fahrenheit: 70,
@@ -772,7 +768,6 @@ Fan running: false
   },
   can_hvac_cool: true,
   can_hvac_heat: true,
-  can_hvac_heat_cool: true,
   can_turn_off_hvac: true,
   ...
 }
@@ -785,10 +780,10 @@ Fan running: false
 ```ruby
 # Retrieve all devices, filtered by manufacturer,
 # which is one of several filters that list() supports.
-all_honeywell_resideo_thermostats = seam.devices.list(manufacturer: "honeywell_resideo")
+all_sensi_thermostats = seam.devices.list(manufacturer: "sensi")
 
 # Select the first device as an example.
-living_room_thermostat = all_honeywell_resideo_thermostats[0]
+living_room_thermostat = all_sensi_thermostats[0]
 
 # Inspect specific properties.
 puts "Current temperature: " + living_room_thermostat.properties.temperature_fahrenheit.to_s
@@ -809,7 +804,7 @@ Fan running: false
   connected_account_id="11111111-1111-1111-1111-222222222222"
   created_at=2024-10-03 22:12:15.666 UTC
   properties=#<Seam::DeepHashAccessor:0x0000016b1791f068 @data={
-    "manufacturer"=>"honeywell_resideo",
+    "manufacturer"=>"sensi",
     "online"=>true,
     "temperature_celsius"=>21.11111111111111,
     "temperature_fahrenheit"=>70,
@@ -829,7 +824,6 @@ Fan running: false
   }>
   can_hvac_cool=true
   can_hvac_heat=true
-  can_hvac_heat_cool=true
   can_turn_off_hvac=true
   ...
 >
@@ -842,10 +836,10 @@ Fan running: false
 ```php
 // Retrieve all devices, filtered by manufacturer,
 // which is one of several filters that list() supports.
-$all_honeywell_resideo_thermostats = $seam->devices->list(manufacturer: "honeywell_resideo");
+$all_sensi_thermostats = $seam->devices->list(manufacturer: "sensi");
 
 // Select the first device as an example.
-$living_room_thermostat = $all_honeywell_resideo_thermostats[0];
+$living_room_thermostat = $all_sensi_thermostats[0];
 
 // Inspect specific properties.
 echo "Current temperature: ", $living_room_thermostat->properties->temperature_fahrenheit, "\n";
@@ -866,7 +860,7 @@ Fan running: false
   "connected_account_id": "11111111-1111-1111-1111-222222222222",
   "created_at": "2024-10-03T22:12:15.666Z",
   "properties": {
-    "manufacturer": "honeywell_resideo",
+    "manufacturer": "sensi",
     "online": true,
     "temperature_celsius": 21.11111111111111,
     "temperature_fahrenheit": 70,
@@ -887,7 +881,6 @@ Fan running: false
   },
   "can_hvac_cool": true,
   "can_hvac_heat": true,
-  "can_hvac_heat_cool": true,
   "can_turn_off_hvac": true,
   ...
 }
@@ -939,18 +932,18 @@ Fan running: false
 
 ***
 
-## Step 4: Control your Honeywell Resideo thermostat
+## Step 4: Control your Sensi thermostat
 
-Next, you can use the Seam API to control your Honeywell Resideo thermostat.
+Next, you can use the Seam API to control your Sensi thermostat.
 
 Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use. For thermostats, device-specific capabilities include whether you can [set the HVAC mode](../../products/thermostats/configure-current-climate-settings.md) to `heat`, `cool`, or `heat_cool`. Seam's intuitive and granular [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
 
 Seam provides additional actions for thermostats, such as setting the fan mode, creating and scheduling climate presets, and setting temperature thresholds. You can also monitor for Seam thermostat-related events, such as reported temperatures outside your set thresholds.
 
-Try out the following actions on your Honeywell Resideo thermostat:
+Try out the following actions on your Sensi thermostat:
 
-* [ ] [Set the HVAC mode](get-started-with-honeywell-thermostats.md#set-the-hvac-mode)
-* [ ] [Create and schedule climate presets](get-started-with-honeywell-thermostats.md#create-and-schedule-climate-presets)
+* [ ] [Set the HVAC mode](get-started-with-sensi-thermostats.md#set-the-hvac-mode)
+* [ ] [Create and schedule climate presets](get-started-with-sensi-thermostats.md#create-and-schedule-climate-presets)
 
 ### Set the HVAC mode
 
@@ -958,7 +951,7 @@ To set the HVAC mode, use any of the following endpoints or their equivalents in
 
 * `/thermostats/heat`
 * `/thermostats/cool`
-* `/thermostats/heat_cool`
+* `/thermostats/heat_cool` (for devices that support this mode)
 * `/thermostats/off`
 *   `/thermostats/set_hvac_mode`
 
@@ -1339,7 +1332,7 @@ heat
 
 ### Create and schedule climate presets
 
-You can use the Seam API to create climate presets for Honeywell Resideo thermostats. Each climate preset is a saved group of settings, such as HVAC mode, fan mode, and temperature set points. Climate presets make it quick and easy to apply consistent climate settings for different scenarios. For example, you could create two climate presets: a comfort preset for when a vacation rental is occupied and an eco preset for when the vacation rental is empty.
+You can use the Seam API to create climate presets for Sensi thermostats. Each climate preset is a saved group of settings, such as HVAC mode, fan mode, and temperature set points. Climate presets make it quick and easy to apply consistent climate settings for different scenarios. For example, you could create two climate presets: a comfort preset for when a vacation rental is occupied and an eco preset for when the vacation rental is empty.
 
 You can schedule climate presets to start and stop whenever you'd like. You can even set a fallback climate preset, such as eco.
 
@@ -1350,18 +1343,17 @@ In this example, create comfort and eco climate presets, set eco as the fallback
 **Code:**
 
 ```python
-# Confirm that the thermostat supports heat_cool mode
+# Confirm that the thermostat supports cool mode
 # so that the climate presets can use this mode.
-if updated_living_room_thermostat.can_hvac_heat_cool:
+if updated_living_room_thermostat.can_hvac_cool:
   # Create the climate presets.
   seam.thermostats.create_climate_preset(
     device_id = updated_living_room_thermostat.device_id,
     climate_preset_key = "comfort",
     name = "Comfort",
     fan_mode_setting = "auto",
-    hvac_mode_setting = "heat_cool",
-    cooling_set_point_celsius = 25,
-    heating_set_point_celsius = 20
+    hvac_mode_setting = "cool",
+    cooling_set_point_celsius = 25
   )
   
   seam.thermostats.create_climate_preset(
@@ -1369,9 +1361,8 @@ if updated_living_room_thermostat.can_hvac_heat_cool:
     climate_preset_key = "eco",
     name = "Eco",
     fan_mode_setting = "auto",
-    hvac_mode_setting = "heat_cool",
-    cooling_set_point_celsius = 30,
-    heating_set_point_celsius = 15
+    hvac_mode_setting = "cool",
+    cooling_set_point_celsius = 30
   )
 
   # Then, set eco as the fallback climate setting.
@@ -1434,9 +1425,9 @@ ThermostatSchedule(
 **Code:**
 
 ```bash
-# Confirm that the thermostat supports heat_cool mode
+# Confirm that the thermostat supports cool mode
 # so that the climate presets can use this mode.
-if  $(jq -r '.device.can_hvac_heat_cool' <<< ${updated_living_room_thermostat}); then \
+if  $(jq -r '.device.can_hvac_cool' <<< ${updated_living_room_thermostat}); then \
   # Create the climate presets.
   curl -X 'POST' \
     'https://connect.getseam.com/thermostats/create_climate_preset' \
@@ -1448,9 +1439,8 @@ if  $(jq -r '.device.can_hvac_heat_cool' <<< ${updated_living_room_thermostat});
       \"climate_preset_key\": \"comfort\",
       \"name\": \"Comfort\",
       \"fan_mode_setting\": \"auto\",
-      \"hvac_mode_setting\": \"heat_cool\",
-      \"cooling_set_point_celsius\": 25,
-      \"heating_set_point_celsius\": 20
+      \"hvac_mode_setting\": \"cool\",
+      \"cooling_set_point_celsius\": 25
   }";
 
   curl -X 'POST' \
@@ -1463,9 +1453,8 @@ if  $(jq -r '.device.can_hvac_heat_cool' <<< ${updated_living_room_thermostat});
       \"climate_preset_key\": \"eco\",
       \"name\": \"Eco\",
       \"fan_mode_setting\": \"auto\",
-      \"hvac_mode_setting\": \"heat_cool\",
-      \"cooling_set_point_celsius\": 30,
-      \"heating_set_point_celsius\": 15
+      \"hvac_mode_setting\": \"cool\",
+      \"cooling_set_point_celsius\": 30
   }";
 
   # Then, set eco as the fallback climate setting.
@@ -1550,18 +1539,17 @@ fi
 **Code:**
 
 ```javascript
-// Confirm that the thermostat supports heat_cool mode
+// Confirm that the thermostat supports cool mode
 // so that the climate presets can use this mode.
-if (updatedLivingRoomThermostat.can_hvac_heat_cool) {
+if (updatedLivingRoomThermostat.can_hvac_cool) {
   // Create the climate presets.
   await seam.thermostats.createClimatePreset({
     device_id: updatedLivingRoomThermostat.device_id,
     climate_preset_key: "comfort",
     name: "Comfort",
     fan_mode_setting: "auto",
-    hvac_mode_setting: "heat_cool",
-    cooling_set_point_celsius: 25,
-    heating_set_point_celsius: 20
+    hvac_mode_setting: "cool",
+    cooling_set_point_celsius: 25
   });
   
   await seam.thermostats.createClimatePreset({
@@ -1569,9 +1557,8 @@ if (updatedLivingRoomThermostat.can_hvac_heat_cool) {
     climate_preset_key: "eco",
     name: "Eco",
     fan_mode_setting: "auto",
-    hvac_mode_setting: "heat_cool",
-    cooling_set_point_celsius: 30,
-    heating_set_point_celsius: 15
+    hvac_mode_setting: "cool",
+    cooling_set_point_celsius: 30
   });
 
   // Then, set eco as the fallback climate setting.
@@ -1635,18 +1622,17 @@ if (updatedLivingRoomThermostat.can_hvac_heat_cool) {
 **Code:**
 
 ```ruby
-# Confirm that the thermostat supports heat_cool mode
+# Confirm that the thermostat supports cool mode
 # so that the climate presets can use this mode.
-if (updated_living_room_thermostat.can_hvac_heat_cool)
+if (updated_living_room_thermostat.can_hvac_cool)
   # Create the climate presets.
   seam.thermostats.create_climate_preset(
     device_id: updated_living_room_thermostat.device_id,
     climate_preset_key: "comfort",
     name: "Comfort",
     fan_mode_setting: "auto",
-    hvac_mode_setting: "heat_cool",
-    cooling_set_point_celsius: 25,
-    heating_set_point_celsius: 20
+    hvac_mode_setting: "cool",
+    cooling_set_point_celsius: 25
   )
 
   seam.thermostats.create_climate_preset(
@@ -1654,9 +1640,8 @@ if (updated_living_room_thermostat.can_hvac_heat_cool)
     climate_preset_key: "eco",
     name: "Eco",
     fan_mode_setting: "auto",
-    hvac_mode_setting: "heat_cool",
-    cooling_set_point_celsius: 30,
-    heating_set_point_celsius: 15
+    hvac_mode_setting: "cool",
+    cooling_set_point_celsius: 30
   )
   
   # Then, set eco as the fallback climate setting.
@@ -1720,18 +1705,17 @@ end
 **Code:**
 
 ```php
-// Confirm that the thermostat supports heat_cool mode
+// Confirm that the thermostat supports cool mode
 // so that the climate presets can use this mode.
-if ($updated_living_room_thermostat->can_hvac_heat_cool) {
+if ($updated_living_room_thermostat->can_hvac_cool) {
   // Create the climate presets.
   $seam->thermostats->create_climate_preset(
     device_id: $updated_living_room_thermostat->device_id,
     climate_preset_key: "comfort",
     name: "Comfort",
     fan_mode_setting: "auto",
-    hvac_mode_setting: "heat_cool",
-    cooling_set_point_celsius: 25,
-    heating_set_point_celsius: 20
+    hvac_mode_setting: "cool",
+    cooling_set_point_celsius: 25
   );
   
   $seam->thermostats->create_climate_preset(
@@ -1739,9 +1723,8 @@ if ($updated_living_room_thermostat->can_hvac_heat_cool) {
     climate_preset_key: "eco",
     name: "Eco",
     fan_mode_setting: "auto",
-    hvac_mode_setting: "heat_cool",
-    cooling_set_point_celsius: 30,
-    heating_set_point_celsius: 15
+    hvac_mode_setting: "cool",
+    cooling_set_point_celsius: 30
   );
     
   // Then, set eco as the fallback climate setting.
@@ -1846,11 +1829,11 @@ if ($updated_living_room_thermostat->can_hvac_heat_cool) {
 
 ***
 
-## Step 5: Connect a real Honeywell Resideo thermostat
+## Step 5: Connect a real Sensi thermostat
 
-Now that you have learned the basics of using the Seam API, you can connect and control a real Honeywell Resideo device. To do so, make sure to switch to a [non-sandbox workspace](../../core-concepts/workspaces/#production-workspaces) and [API key](../../core-concepts/authentication/api-keys.md).
+Now that you have learned the basics of using the Seam API, you can connect and control a real Sensi device. To do so, make sure to switch to a [non-sandbox workspace](../../core-concepts/workspaces/#production-workspaces) and [API key](../../core-concepts/authentication/api-keys.md).
 
-For more details about setting up your real Honeywell Resideo thermostat, see the [Honeywell Resideo thermostats integration guide](./).
+For more details about setting up your real Sensi thermostat, see the [Sensi thermostats integration guide](./).
 
 ***
 
@@ -1862,7 +1845,7 @@ Seam makes it easy to develop your application. The robust Seam API and Seam SDK
 
 ## Next steps
 
-Now that you've completed this getting started guide for Honeywell Resideo devices, you can learn more about what you can do with the Seam API.
+Now that you've completed this getting started guide for Sensi devices, you can learn more about what you can do with the Seam API.
 
 * [ ] **Explore**\
   See the [other devices and system integrations](../overview.md) that Seam supports.
