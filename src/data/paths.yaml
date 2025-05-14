@@ -80,3 +80,85 @@
   title: Enrollment Automations
   resources:
     - enrollment_automation
+
+/access_codes:
+  title: Access Codes
+  resources:
+    - access_code
+
+/access_codes/simulate:
+  title: Access Code Simulations
+  resources:
+    - unmanaged_access_code
+
+/access_codes/unmanaged:
+  title: Unmanaged Access Codes
+  resources:
+    - unmanaged_access_code
+
+/client_sessions:
+  title: Client Sessions
+  resources:
+    - client_session
+
+/connect_webviews:
+  title: Connect Webviews
+  resources:
+    - connect_webview
+
+/connected_accounts:
+  title: Connected Accounts
+  resources:
+    - connected_account
+
+/devices:
+  title: Devices
+  resources:
+    - device
+
+/devices/simulate:
+  title: Device Simulations
+  resources:
+    - unmanaged_device
+
+/events:
+  title: Events
+  resources:
+    - event
+
+/locks:
+  title: Locks
+  resources:
+    - device
+
+/networks:
+  title: Networks
+  resources:
+    - network
+
+/noise_sensors:
+  title: Noise Sensors
+  resources:
+    - device
+
+/noise_sensors/noise_thresholds:
+  title: Noise Thresholds
+  resources:
+    - noise_threshold
+
+/noise_sensors/simulate:
+  title: Noise Sensor Simulations
+  resources: []
+
+/webhooks:
+  title: Webhooks
+  resources:
+    - webhook
+
+/workspaces:
+  title: Workspaces
+  resources:
+    - workspace
+# Missing documented paths:
+#   '/bridges' - 'bridge' resource not defined in openapi global component schemas
+#   '/action_attempts' - defined separately in Blueprint, need to figure out how to adopt it
