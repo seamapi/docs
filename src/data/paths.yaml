@@ -80,3 +80,8 @@
   title: Enrollment Automations
   resources:
     - enrollment_automation
+
+/client_sessions:
+  title: Client Sessions
+  resources:
+    - client_session
