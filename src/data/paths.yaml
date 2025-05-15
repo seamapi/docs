@@ -80,3 +80,8 @@
   title: Enrollment Automations
   resources:
     - enrollment_automation
+
+/locks:
+  title: Locks
+  resources:
+    - lock
