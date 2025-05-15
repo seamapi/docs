@@ -90,7 +90,7 @@
   title: Device Simulations
   resources: []
 
-/devices/unmanage:
+/devices/unmanaged:
   title: Unmanage Devices
   resources:
     - unmanaged_device
