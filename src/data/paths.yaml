@@ -80,3 +80,17 @@
   title: Enrollment Automations
   resources:
     - enrollment_automation
+
+/devices:
+  title: Devices
+  resources:
+    - device
+
+/devices/simulate:
+  title: Device Simulations
+  resources: []
+
+/devices/unmanage:
+  title: Unmanage Devices
+  resources:
+    - unmanaged_device
