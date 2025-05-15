@@ -80,3 +80,17 @@
   title: Enrollment Automations
   resources:
     - enrollment_automation
+
+/noise_sensors:
+  title: Noise Sensors
+  resources:
+    - noise_sensor
+
+/noise_sensors/simulate:
+  title: Noise Sensor Simulations
+  resources: []
+
+/noise_sensors/noise_threshold:
+  title: Noise Thresholds
+  resources:
+    - noise_threshold
