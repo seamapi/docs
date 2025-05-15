@@ -80,3 +80,8 @@
   title: Enrollment Automations
   resources:
     - enrollment_automation
+
+/events:
+  title: Events
+  resources:
+    - event
