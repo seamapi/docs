@@ -84,7 +84,7 @@
 /locks:
   title: Locks
   resources:
-    - lock
+    - device
 
 /locks/simulate:
   title: Lock Simulations
