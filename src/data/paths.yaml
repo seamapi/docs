@@ -80,3 +80,8 @@
   title: Enrollment Automations
   resources:
     - enrollment_automation
+
+/webhooks:
+  title: Webhooks
+  resources:
+    - webhook
