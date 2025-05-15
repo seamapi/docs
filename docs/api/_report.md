@@ -12,7 +12,6 @@
 - `/client_sessions`
 - `/connect_webviews`
 - `/connected_accounts`
-- `/devices/unmanaged`
 - `/events`
 - `/locks`
 - `/networks`
