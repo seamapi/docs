@@ -85,3 +85,7 @@
   title: Locks
   resources:
     - lock
+
+/locks/simulate:
+  title: Lock Simulations
+  resources: []
