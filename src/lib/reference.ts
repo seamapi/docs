@@ -57,7 +57,8 @@ export const reference = (
       !route.path.startsWith('/acs') &&
       !route.path.startsWith('/thermostats') &&
       !route.path.startsWith('/phones') &&
-      !route.path.startsWith('/user_identities')
+      !route.path.startsWith('/user_identities') &&
+      !route.path.startsWith('/events')
     ) {
       continue
     }

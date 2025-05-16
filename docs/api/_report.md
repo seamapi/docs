@@ -15,7 +15,6 @@
 - `/devices`
 - `/devices/simulate`
 - `/devices/unmanaged`
-- `/events`
 - `/locks`
 - `/networks`
 - `/noise_sensors`
