@@ -10,7 +10,6 @@
 - `/action_attempts`
 - `/bridges`
 - `/client_sessions`
-- `/connect_webviews`
 - `/connected_accounts`
 - `/devices`
 - `/devices/simulate`

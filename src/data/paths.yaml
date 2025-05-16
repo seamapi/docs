@@ -80,3 +80,8 @@
   title: Enrollment Automations
   resources:
     - enrollment_automation
+
+/connect_webviews:
+  title: Connect Webviews
+  resources:
+    - connect_webview
