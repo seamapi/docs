@@ -17,7 +17,7 @@ import type { PathMetadata } from 'lib/path-metadata.js'
 
 export interface ApiRouteLayoutContext {
   title: string
-  description: string
+  overview: string | undefined
   path: string
   resources: Array<
     ApiRouteResource & {
@@ -91,6 +91,7 @@ export function setApiRouteLayoutContext(
   }
 
   file.title = metadata.title
+  file.overview = metadata.overview
   file.path = route.path
 
   const eventsByRoutePath = groupEventsByRoutePath(blueprint.events)
