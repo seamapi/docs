@@ -22,7 +22,6 @@
 - `/noise_sensors/noise_thresholds`
 - `/noise_sensors/simulate`
 - `/webhooks`
-- `/workspaces`
 
 ### Endpoints
 

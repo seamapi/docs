@@ -80,3 +80,8 @@
   title: Enrollment Automations
   resources:
     - enrollment_automation
+
+/workspaces:
+  title: Workspaces
+  resources:
+    - workspace
