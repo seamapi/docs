@@ -80,3 +80,12 @@
   title: Enrollment Automations
   resources:
     - enrollment_automation
+
+/locks:
+  title: Locks
+  resources:
+    - device
+
+/locks/simulate:
+  title: Lock Simulations
+  resources: []
