@@ -100,6 +100,14 @@ ID of the [thermostat schedule](../../../capability-guides/thermostats/creating-
 
 ---
 
+### `workspace_id`
+
+Format: `UUID`
+
+ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the thermostat schedule.
+
+---
+
 ## Endpoints
 
 ### [`/thermostats/schedules/create`](./create.md)

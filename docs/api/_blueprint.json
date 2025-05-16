@@ -9953,7 +9953,7 @@
       "namespace": null,
       "endpoints": [
         {
-          "title": "",
+          "title": "Delete a Connected Account",
           "name": "delete",
           "path": "/connected_accounts/delete",
           "description": "",
@@ -10006,7 +10006,7 @@
           "codeSamples": []
         },
         {
-          "title": "",
+          "title": "Get a Connected Account",
           "name": "get",
           "path": "/connected_accounts/get",
           "description": "",
@@ -10067,7 +10067,7 @@
           "codeSamples": []
         },
         {
-          "title": "",
+          "title": "List Connected Accounts",
           "name": "list",
           "path": "/connected_accounts/list",
           "description": "",
@@ -10153,7 +10153,7 @@
           "codeSamples": []
         },
         {
-          "title": "",
+          "title": "Update a Connected Account",
           "name": "update",
           "path": "/connected_accounts/update",
           "description": "",
@@ -44239,6 +44239,19 @@
                   "propertyGroupKey": null,
                   "format": "id",
                   "jsonType": "string"
+                },
+                {
+                  "name": "workspace_id",
+                  "description": "ID of the [workspace](../core-concepts/workspaces/README.md) that contains the thermostat schedule.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "id",
+                  "jsonType": "string"
                 }
               ]
             },
@@ -45572,6 +45585,19 @@
                   "propertyGroupKey": null,
                   "format": "id",
                   "jsonType": "string"
+                },
+                {
+                  "name": "workspace_id",
+                  "description": "ID of the [workspace](../core-concepts/workspaces/README.md) that contains the thermostat daily program.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "id",
+                  "jsonType": "string"
                 }
               ]
             },
@@ -45599,19 +45625,6 @@
                   "draftMessage": "",
                   "propertyGroupKey": null,
                   "format": "datetime",
-                  "jsonType": "string"
-                },
-                {
-                  "name": "device_id",
-                  "description": "ID of the thermostat device the weekly program is for.",
-                  "isDeprecated": false,
-                  "deprecationMessage": "",
-                  "isUndocumented": false,
-                  "undocumentedMessage": "",
-                  "isDraft": false,
-                  "draftMessage": "",
-                  "propertyGroupKey": null,
-                  "format": "id",
                   "jsonType": "string"
                 },
                 {
@@ -49226,6 +49239,19 @@
         {
           "name": "thermostat_schedule_id",
           "description": "ID of the [thermostat schedule](../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        },
+        {
+          "name": "workspace_id",
+          "description": "ID of the [workspace](../core-concepts/workspaces/README.md) that contains the thermostat schedule.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
