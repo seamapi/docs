@@ -1,14 +1,67 @@
 # Get a User Identity
 
-```
-POST /user_identities/get ⇒ { user_identity }
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Returns a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+POST /user_identities/get ⇒ { user_identity }
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`user_identity_id`** **
+
+ID of the desired user identity.
+
+---
+
+**`user_identity_key`** **
+
+---
+
+
+## Response
+
+[user\_identity](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of user_identity
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+## Examples
+  
+### Get a user identity
+
+Specify the `user_identity_id` of the user identity that you want to retrieve.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.userIdentities.get({
@@ -16,7 +69,7 @@ await seam.userIdentities.get({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 {
@@ -33,13 +86,13 @@ await seam.userIdentities.get({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.user_identities.get(user_identity_id="48500a8e-5e7e-4bde-b7e5-0be97cae5d7a")
 ```
 
-#### Response
+#### Output
 
 ```python
 UserIdentity(
@@ -56,13 +109,13 @@ UserIdentity(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.user_identities.get(user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a")
 ```
 
-#### Response
+#### Output
 
 ```ruby
 {
@@ -79,7 +132,7 @@ seam.user_identities.get(user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -88,7 +141,7 @@ $seam->user_identities->get(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -106,13 +159,13 @@ $seam->user_identities->get(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam user-identities get --user_identity_id "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {
@@ -129,7 +182,7 @@ seam user-identities get --user_identity_id "48500a8e-5e7e-4bde-b7e5-0be97cae5d7
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -146,7 +199,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 api.UserIdentity{UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", UserIdentityKey: "jean_doe", EmailAddress: "jean@example.com", PhoneNumber: "+15555550110", DisplayName: "Jean Doe", FullName: "Jean Doe", CreatedAt: "2024-01-11T05:37:50.264Z", WorkspaceId: "398d80b7-3f96-47c2-b85a-6f8ba21d07be"}
@@ -155,30 +208,4 @@ api.UserIdentity{UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", UserIde
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `user_identity_id`
-
-Format: `UUID`
-Required: No
-
-ID of the desired user identity.
-
-***
-
-### `user_identity_key`
-
-Format: `String`
-Required: No
-
-***
-
-## Return Type
-
-[user\_identity](./)

@@ -1,20 +1,68 @@
 # List User Identities
 
-```
-POST /user_identities/list ⇒ { user_identities: [user_identity, …] }
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Returns a list of all [user identities](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+POST /user_identities/list ⇒ { user_identities: [user_identity, …] }
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`credential_manager_acs_system_id`** **
+
+---
+
+
+## Response
+
+Array of [user\_identitys](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of user_identity
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+## Examples
+  
+### List user identities
+
+To filter the list of user identities, specify the desired `credential_manager_acs_system_id`.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.userIdentities.list();
 ```
 
-#### Response
+#### Output
 
 ```javascript
 [
@@ -33,13 +81,13 @@ await seam.userIdentities.list();
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.user_identities.list()
 ```
 
-#### Response
+#### Output
 
 ```python
 [
@@ -58,13 +106,13 @@ seam.user_identities.list()
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.user_identities.list()
 ```
 
-#### Response
+#### Output
 
 ```ruby
 [
@@ -83,14 +131,14 @@ seam.user_identities.list()
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
 $seam->user_identities->list();
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -110,13 +158,13 @@ $seam->user_identities->list();
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam user-identities list
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 [
@@ -135,7 +183,7 @@ seam user-identities list
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -145,7 +193,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 []api.UserIdentity{api.UserIdentity{UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", UserIdentityKey: "jean_doe", EmailAddress: "jean@example.com", PhoneNumber: "+15555550110", DisplayName: "Jean Doe", FullName: "Jean Doe", CreatedAt: "2024-01-11T05:37:50.264Z", WorkspaceId: "398d80b7-3f96-47c2-b85a-6f8ba21d07be"}}
@@ -154,22 +202,4 @@ func main() {
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `credential_manager_acs_system_id`
-
-Format: `UUID`
-Required: No
-
-***
-
-## Return Type
-
-Array<[user\_identity](./)>

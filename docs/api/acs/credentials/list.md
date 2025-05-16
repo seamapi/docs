@@ -1,14 +1,94 @@
 # List Credentials
 
-```
-POST /acs/credentials/list ⇒ { acs_credentials: [acs_credential, …] }
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+POST /acs/credentials/list ⇒ { acs_credentials: [acs_credential, …] }
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`acs_system_id`** **
+
+ID of the access control system for which you want to retrieve all credentials.
+
+---
+
+**`acs_user_id`** **
+
+ID of the ACS user for which you want to retrieve all credentials.
+
+---
+
+**`created_before`** **
+
+Date and time, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format, before which events to return were created.
+
+---
+
+**`is_multi_phone_sync_credential`** **
+
+Indicates whether you want to retrieve only multi-phone sync credentials or non-multi-phone sync credentials.
+
+---
+
+**`limit`** **
+
+Number of credentials to return.
+
+---
+
+**`user_identity_id`** **
+
+ID of the user identity for which you want to retrieve all credentials.
+
+---
+
+
+## Response
+
+Array of [acs\_credentials](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of acs_credential
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+## Examples
+  
+### List credentials
+
+Filter the list of returned credentials by `acs_user_id`, `acs_system_id`, or `user_identity_id`. You can also include `is_multi_phone_sync_credential`.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.credentials.list({
@@ -19,7 +99,7 @@ await seam.acs.credentials.list({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 [
@@ -39,7 +119,7 @@ await seam.acs.credentials.list({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.credentials.list(
@@ -50,7 +130,7 @@ seam.acs.credentials.list(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 [
@@ -70,7 +150,7 @@ seam.acs.credentials.list(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.credentials.list(
@@ -81,7 +161,7 @@ seam.acs.credentials.list(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 [
@@ -101,7 +181,7 @@ seam.acs.credentials.list(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -113,7 +193,7 @@ $seam->acs->credentials->list(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -134,13 +214,13 @@ $seam->acs->credentials->list(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs credentials list --acs_user_id "33333333-3333-3333-3333-333333333333" --acs_system_id "11111111-1111-1111-1111-111111111111" --user_identity_id "22222222-2222-2222-2222-222222222222" --is_multi_phone_sync_credential true
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 [
@@ -160,7 +240,7 @@ seam acs credentials list --acs_user_id "33333333-3333-3333-3333-333333333333" -
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -181,7 +261,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 []api.AcsCredential{api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUserId: "33333333-3333-3333-3333-333333333333", DisplayName: "Multi Phone Sync Credential", Code: nil, AcsSystemId: "11111111-1111-1111-1111-111111111111", AccessMethod: "mobile_key", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2024-04-12T03:56:22.396Z", IsMultiPhoneSyncCredential: true}}
@@ -190,69 +270,4 @@ func main() {
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `acs_system_id`
-
-Format: `UUID`
-Required: No
-
-ID of the access control system for which you want to retrieve all credentials.
-
-***
-
-### `acs_user_id`
-
-Format: `UUID`
-Required: No
-
-ID of the ACS user for which you want to retrieve all credentials.
-
-***
-
-### `created_before`
-
-Format: `Datetime`
-Required: No
-
-Date and time, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format, before which events to return were created.
-
-***
-
-### `is_multi_phone_sync_credential`
-
-Format: `Boolean`
-Required: No
-
-Indicates whether you want to retrieve only multi-phone sync credentials or non-multi-phone sync credentials.
-
-***
-
-### `limit`
-
-Format: `Number`
-Required: No
-
-Number of credentials to return.
-
-***
-
-### `user_identity_id`
-
-Format: `UUID`
-Required: No
-
-ID of the user identity for which you want to retrieve all credentials.
-
-***
-
-## Return Type
-
-Array<[acs\_credential](./)>

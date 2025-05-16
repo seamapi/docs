@@ -1,14 +1,63 @@
 # List ACS Users Associated with a User Identity
 
-```
-POST /user_identities/list_acs_users ⇒ { acs_users: [acs_user, …] }
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+POST /user_identities/list_acs_users ⇒ { acs_users: [acs_user, …] }
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`user_identity_id`** ** (Required)
+
+ID of the user identity for which you want to retrieve all ACS users.
+
+---
+
+
+## Response
+
+Array of [acs\_users](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of acs_user
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+## Examples
+  
+### List ACS users for a user identity
+
+Specify the desired `user_identity_id`.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.userIdentities.listAcsUsers({
@@ -16,7 +65,7 @@ await seam.userIdentities.listAcsUsers({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 [
@@ -38,7 +87,7 @@ await seam.userIdentities.listAcsUsers({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.user_identities.list_acs_users(
@@ -46,7 +95,7 @@ seam.user_identities.list_acs_users(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 [
@@ -68,13 +117,13 @@ seam.user_identities.list_acs_users(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.user_identities.list_acs_users(user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a")
 ```
 
-#### Response
+#### Output
 
 ```ruby
 [
@@ -96,7 +145,7 @@ seam.user_identities.list_acs_users(user_identity_id: "48500a8e-5e7e-4bde-b7e5-0
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -105,7 +154,7 @@ $seam->user_identities->list_acs_users(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -128,13 +177,13 @@ $seam->user_identities->list_acs_users(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam user-identities list-acs-users --user_identity_id "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 [
@@ -156,7 +205,7 @@ seam user-identities list-acs-users --user_identity_id "48500a8e-5e7e-4bde-b7e5-
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -173,7 +222,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 []api.AcsUser{api.AcsUser{AcsUserId: "4d223973-0874-4831-8630-bfcb29e6bce0", DisplayName: "Jean Doe", FullName: "Jean Doe", EmailAddress: "jean@example.com", AcsSystemId: "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4", WorkspaceId: "398d80b7-3f96-47c2-b85a-6f8ba21d07be", CreatedAt: "2024-01-11T05:45:41.349Z", IsSuspended: false, UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", UserIdentityEmailAddress: "jean@example.com", UserIdentityPhoneNumber: "+15555550110"}}
@@ -182,23 +231,4 @@ func main() {
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `user_identity_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the user identity for which you want to retrieve all ACS users.
-
-***
-
-## Return Type
-
-Array<[acs\_user](./)>

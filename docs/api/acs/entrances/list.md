@@ -1,20 +1,72 @@
 # List Entrances
 
-```
-POST /acs/entrances/list ⇒ { acs_entrances: [acs_entrance, …] }
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Returns a list of all [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+POST /acs/entrances/list ⇒ { acs_entrances: [acs_entrance, …] }
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`acs_credential_id`** **
+
+---
+
+**`acs_system_id`** **
+
+---
+
+
+## Response
+
+Array of [acs\_entrances](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of acs_entrance
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+## Examples
+  
+### List entrances
+
+To filter the list of entrances, specify the desired `acs_system_id` or `acs_user_id`.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.entrances.list();
 ```
 
-#### Response
+#### Output
 
 ```javascript
 [
@@ -29,13 +81,13 @@ await seam.acs.entrances.list();
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.entrances.list()
 ```
 
-#### Response
+#### Output
 
 ```python
 [
@@ -50,13 +102,13 @@ seam.acs.entrances.list()
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.entrances.list()
 ```
 
-#### Response
+#### Output
 
 ```ruby
 [
@@ -71,14 +123,14 @@ seam.acs.entrances.list()
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
 $seam->acs->entrances->list();
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -94,13 +146,13 @@ $seam->acs->entrances->list();
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs entrances list
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 [
@@ -115,7 +167,7 @@ seam acs entrances list
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -125,7 +177,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 []api.AcsEntrance{api.AcsEntrance{AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", AcsEntranceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "text"}}
@@ -134,29 +186,4 @@ func main() {
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `acs_credential_id`
-
-Format: `UUID`
-Required: No
-
-***
-
-### `acs_system_id`
-
-Format: `UUID`
-Required: No
-
-***
-
-## Return Type
-
-Array<[acs\_entrance](./)>

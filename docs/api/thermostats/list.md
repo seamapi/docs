@@ -1,20 +1,147 @@
 # List Thermostats
 
-```
-POST /thermostats/list ⇒ { devices: [device, …] }
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guides/thermostats).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+POST /thermostats/list ⇒ { devices: [device, …] }
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`connect_webview_id`** **
+
+ID of the Connect Webview by which to filter devices.
+
+---
+
+**`connected_account_id`** **
+
+ID of the connected account by which to filter.
+
+---
+
+**`connected_account_ids`** ** *of UUIDs*
+
+Array of IDs of the connected accounts by which to filter devices.
+
+---
+
+**`created_before`** **
+
+Date threshold for devices to return. If specified, returns only devices created before the specified date.
+
+---
+
+**`custom_metadata_has`** **
+
+Set of key:value [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) pairs by which you want to filter devices.
+
+---
+
+**`device_ids`** ** *of UUIDs*
+
+Array of device IDs by which to filter devices.
+
+---
+
+**`device_type`** **
+
+Device type by which to filter devices.
+
+---
+
+**`device_types`** ** *of Enums*
+
+Array of device types by which to filter devices.
+<details>
+
+<summary>Enum values</summary>
+
+Possible enum values:
+- `ecobee_thermostat`
+- `nest_thermostat`
+- `honeywell_resideo_thermostat`
+- `tado_thermostat`
+- `sensi_thermostat`
+</details>
+
+---
+
+**`limit`** **
+
+Numerical limit on the number of devices to return.
+
+---
+
+**`manufacturer`** **
+
+Manufacturer by which to filter devices.
+
+---
+
+**`page_cursor`** **
+
+Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
+
+---
+
+**`user_identifier_key`** **
+
+Your own internal user ID for the user by which to filter devices.
+
+---
+
+
+## Response
+
+Array of [devices](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of device
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+## Examples
+  
+### List thermostats
+
+To filter the list of returned thermostats, specify the desired parameters.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.list();
 ```
 
-#### Response
+#### Output
 
 ```javascript
 [
@@ -45,13 +172,13 @@ await seam.thermostats.list();
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.list()
 ```
 
-#### Response
+#### Output
 
 ```python
 [
@@ -82,13 +209,13 @@ seam.thermostats.list()
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.list()
 ```
 
-#### Response
+#### Output
 
 ```ruby
 [
@@ -119,14 +246,14 @@ seam.thermostats.list()
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
 $seam->thermostats->list();
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -163,13 +290,13 @@ $seam->thermostats->list();
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats list
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 [
@@ -200,7 +327,7 @@ seam thermostats list
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -210,7 +337,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 []api.Device{api.Device{DeviceId: "123e4567-e89b-12d3-a456-426614174000", DeviceType: "ecobee_thermostat", CapabilitiesSupported: []string{"thermostat"}, Properties: api.DeviceProperties{Name: "Entryway", Online: "true,", RelativeHumidity: 0.36, TemperatureFarenheit: 70, AvailableHvacModeSettings: []string{"cool", "heat", "heat_cool", "off"}, CurrentClimateSetting: api.DevicePropertiesCurrentClimateSetting{HvacModeSetting: "heat_cool", CoolingSetPointFarenheit: 75, HeatingSetPointFarenheit: 65, ManualOverrideAllowed: false}, Location: nil, ConnectedAccountId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z"}}}
@@ -219,146 +346,4 @@ func main() {
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `connect_webview_id`
-
-Format: `UUID`
-Required: No
-
-ID of the Connect Webview by which to filter devices.
-
-***
-
-### `connected_account_id`
-
-Format: `UUID`
-Required: No
-
-ID of the connected account by which to filter.
-
-***
-
-### `connected_account_ids`
-
-Format: `List`
-Item format: `UUID`
-Required: No
-
-Array of IDs of the connected accounts by which to filter devices.
-
-***
-
-### `created_before`
-
-Format: `Datetime`
-Required: No
-
-Date threshold for devices to return. If specified, returns only devices created before the specified date.
-
-***
-
-### `custom_metadata_has`
-
-Format: `Record`
-Required: No
-
-Set of key:value [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) pairs by which you want to filter devices.
-
-***
-
-### `device_ids`
-
-Format: `List`
-Item format: `UUID`
-Required: No
-
-Array of device IDs by which to filter devices.
-
-***
-
-### `device_type`
-
-Format: `Enum`
-Required: No
-
-Device type by which to filter devices.
-
-Possible enum values:
-- `ecobee_thermostat`
-- `nest_thermostat`
-- `honeywell_resideo_thermostat`
-- `tado_thermostat`
-- `sensi_thermostat`
-
-***
-
-### `device_types`
-
-Format: `List`
-Item format: `Enum`
-Required: No
-
-Array of device types by which to filter devices.
-
-Possible enum values:
-- `ecobee_thermostat`
-- `nest_thermostat`
-- `honeywell_resideo_thermostat`
-- `tado_thermostat`
-- `sensi_thermostat`
-
-***
-
-### `limit`
-
-Format: `Number`
-Required: No
-
-Numerical limit on the number of devices to return.
-
-***
-
-### `manufacturer`
-
-Format: `Enum`
-Required: No
-
-Manufacturer by which to filter devices.
-
-Possible enum values:
-- `ecobee`
-- `nest`
-- `honeywell_resideo`
-- `tado`
-
-***
-
-### `page_cursor`
-
-Format: `String`
-Required: No
-
-Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
-
-***
-
-### `user_identifier_key`
-
-Format: `String`
-Required: No
-
-Your own internal user ID for the user by which to filter devices.
-
-***
-
-## Return Type
-
-Array<[device](./)>

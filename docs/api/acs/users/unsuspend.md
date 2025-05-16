@@ -1,14 +1,54 @@
 # Unsuspend an ACS User
 
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
+
+[Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an ACS user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the ACS user restores their access.
+
+{% tabs %}
+{% tab title="Signature" %}
 ```
 POST /acs/users/unsuspend ⇒ void
 ```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`acs_user_id`** ** (Required)
+
+ID of the desired `acs_user`.
+
+---
+
+
+## Response
+
+void
+
+---
+
+## Examples
+  
+### Unsuspend an ACS user
 
 [Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an ACS user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the ACS user restores their access.
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.users.unsuspend({
@@ -16,7 +56,7 @@ await seam.acs.users.unsuspend({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -24,13 +64,13 @@ await seam.acs.users.unsuspend({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.users.unsuspend(acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -38,13 +78,13 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.users.unsuspend(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -52,7 +92,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -61,7 +101,7 @@ $seam->acs->users->unsuspend(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -69,13 +109,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs users unsuspend --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -83,7 +123,7 @@ seam acs users unsuspend --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -101,7 +141,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil
@@ -110,23 +150,4 @@ nil
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `acs_user_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired `acs_user`.
-
-***
-
-## Return Type
-
-void

@@ -1,14 +1,60 @@
 # Add an ACS User to a User Identity
 
-```
-PUT /user_identities/add_acs_user ⇒ void
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+PUT /user_identities/add_acs_user ⇒ void
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`acs_user_id`** ** (Required)
+
+ID of the desired ACS user.
+
+---
+
+**`user_identity_id`** ** (Required)
+
+ID of the desired user identity.
+
+---
+
+
+## Response
+
+void
+
+---
+
+## Examples
+  
+### Add an ACS user to a user identity
+
+Specify the desired `acs_user_id` and `user_identity_id`.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.userIdentities.addAcsUser({
@@ -17,7 +63,7 @@ await seam.userIdentities.addAcsUser({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -25,7 +71,7 @@ await seam.userIdentities.addAcsUser({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.user_identities.add_acs_user(
@@ -34,7 +80,7 @@ seam.user_identities.add_acs_user(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -42,7 +88,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.user_identities.add_acs_user(
@@ -51,7 +97,7 @@ seam.user_identities.add_acs_user(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -59,7 +105,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -69,7 +115,7 @@ $seam->user_identities->add_acs_user(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -77,13 +123,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam user-identities add-acs-user --user_identity_id "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a" --acs_user_id "4d223973-0874-4831-8630-bfcb29e6bce0"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -91,7 +137,7 @@ seam user-identities add-acs-user --user_identity_id "48500a8e-5e7e-4bde-b7e5-0b
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -109,7 +155,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil
@@ -118,32 +164,4 @@ nil
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `acs_user_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired ACS user.
-
-***
-
-### `user_identity_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired user identity.
-
-***
-
-## Return Type
-
-void

@@ -1,14 +1,70 @@
 # List Thermostat Schedules
 
-```
-POST /thermostats/schedules/list ⇒ { thermostat_schedules: [thermostat_schedule, …] }
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Returns a list of all [thermostat schedules](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+POST /thermostats/schedules/list ⇒ { thermostat_schedules: [thermostat_schedule, …] }
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`device_id`** ** (Required)
+
+ID of the desired thermostat device.
+
+---
+
+**`user_identifier_key`** **
+
+User identifier key by which to filter the list of returned thermostat schedules.
+
+---
+
+
+## Response
+
+Array of [thermostat\_schedules](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of thermostat_schedule
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+## Examples
+  
+### List thermostat schedules for a thermostat
+
+Specify the `device_id` of the desired thermostat.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.schedules.list({
@@ -16,7 +72,7 @@ await seam.thermostats.schedules.list({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 [
@@ -43,13 +99,13 @@ await seam.thermostats.schedules.list({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.schedules.list(device_id="123e4567-e89b-12d3-a456-426614174000")
 ```
 
-#### Response
+#### Output
 
 ```python
 [
@@ -76,13 +132,13 @@ seam.thermostats.schedules.list(device_id="123e4567-e89b-12d3-a456-426614174000"
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.schedules.list(device_id: "123e4567-e89b-12d3-a456-426614174000")
 ```
 
-#### Response
+#### Output
 
 ```ruby
 [
@@ -109,7 +165,7 @@ seam.thermostats.schedules.list(device_id: "123e4567-e89b-12d3-a456-426614174000
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -118,7 +174,7 @@ $seam->thermostats->schedules->list(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -146,13 +202,13 @@ $seam->thermostats->schedules->list(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats schedules list --device_id "123e4567-e89b-12d3-a456-426614174000"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 [
@@ -179,7 +235,7 @@ seam thermostats schedules list --device_id "123e4567-e89b-12d3-a456-42661417400
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -197,7 +253,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 []api.ThermostatSchedule{api.ThermostatSchedule{ThermostatScheduleId: "89d3507e-60e3-4101-bd1b-ba066ec30ad4", Name: "Reservation 2", DeviceId: "2d488679-6f07-4810-aed2-e726872c1dd5", ClimatePresetKey: "occupied", StartsAt: "2024-11-10T15:00:00.000Z", EndsAt: "2024-11-15T12:00:00.000Z", MaxOverridePeriodMinutes: 90}, api.ThermostatSchedule{ThermostatScheduleId: "665553d1-94f9-4e92-9739-06ac6362c959", Name: "Reservation 3", DeviceId: "2d488679-6f07-4810-aed2-e726872c1dd5", ClimatePresetKey: "occupied", StartsAt: "2024-11-16T15:00:00.000Z", EndsAt: "2024-11-18T12:00:00.000Z", MaxOverridePeriodMinutes: 90}}
@@ -206,33 +262,4 @@ func main() {
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `device_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired thermostat device.
-
-***
-
-### `user_identifier_key`
-
-Format: `String`
-Required: No
-
-User identifier key by which to filter the list of returned thermostat schedules.
-
-***
-
-## Return Type
-
-Array<[thermostat\_schedule](./)>
