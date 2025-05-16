@@ -7,7 +7,6 @@
 - `/access_codes`
 - `/access_codes/simulate`
 - `/access_codes/unmanaged`
-- `/action_attempts`
 - `/bridges`
 - `/client_sessions`
 - `/connect_webviews`
