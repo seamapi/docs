@@ -213,7 +213,7 @@ ID of the default credential manager `acs_system` for this [access control syste
 
 ---
 
-[**`errors`**](./#errors-1) *List* *of Objects*
+[**`errors`**](./#errors) *List* *of Objects*
 
 Errors associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -607,7 +607,7 @@ Name of the [access control system](https://docs.seam.co/latest/capability-guide
 
 ---
 
-[**`warnings`**](./#warnings-1) *List* *of Objects*
+[**`warnings`**](./#warnings) *List* *of Objects*
 
 Warnings associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 

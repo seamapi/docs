@@ -104,7 +104,7 @@ Date and time after which the time-bound access code becomes inactive.
 
 ---
 
-[**`errors`**](./#errors-1) *List* *of Objects*
+[**`errors`**](./#errors) *List* *of Objects*
 
 Errors associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
@@ -1786,7 +1786,7 @@ Nature of the access code. Values are `ongoing` for access codes that are active
 
 ---
 
-[**`warnings`**](./#warnings-1) *List* *of Objects*
+[**`warnings`**](./#warnings) *List* *of Objects*
 
 Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
