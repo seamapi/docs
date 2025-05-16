@@ -1,14 +1,60 @@
 # Remove an ACS User from an Access Group
 
-```
-POST /acs/users/remove_from_access_group ⇒ void
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+POST /acs/users/remove_from_access_group ⇒ void
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`acs_access_group_id`** ** (Required)
+
+ID of the desired access group.
+
+---
+
+**`acs_user_id`** ** (Required)
+
+ID of the desired `acs_user`.
+
+---
+
+
+## Response
+
+void
+
+---
+
+## Examples
+  
+### Remove an ACS user from an access group
+
+Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.users.removeFromAccessGroup({
@@ -17,7 +63,7 @@ await seam.acs.users.removeFromAccessGroup({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -25,7 +71,7 @@ await seam.acs.users.removeFromAccessGroup({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.users.remove_from_access_group(
@@ -34,7 +80,7 @@ seam.acs.users.remove_from_access_group(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -42,7 +88,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.users.remove_from_access_group(
@@ -51,7 +97,7 @@ seam.acs.users.remove_from_access_group(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -59,7 +105,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -69,7 +115,7 @@ $seam->acs->users->remove_from_access_group(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -77,13 +123,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs users remove-from-access-group --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33" --acs_access_group_id "123e4567-e89b-12d3-a456-426614174000"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -91,7 +137,7 @@ seam acs users remove-from-access-group --acs_user_id "8d7e0b3a-b889-49a7-9164-4
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -110,7 +156,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil
@@ -119,32 +165,4 @@ nil
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `acs_access_group_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired access group.
-
-***
-
-### `acs_user_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired `acs_user`.
-
-***
-
-## Return Type
-
-void

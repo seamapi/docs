@@ -1,14 +1,109 @@
 # Create a Climate Preset
 
-```
-POST /thermostats/create_climate_preset ⇒ void
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Creates a [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+POST /thermostats/create_climate_preset ⇒ void
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`climate_preset_key`** ** (Required)
+
+Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+
+---
+
+**`device_id`** ** (Required)
+
+ID of the desired thermostat device.
+
+---
+
+**`cooling_set_point_celsius`** **
+
+Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+
+---
+
+**`cooling_set_point_fahrenheit`** **
+
+Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+
+---
+
+**`fan_mode_setting`** **
+
+Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
+
+---
+
+**`heating_set_point_celsius`** **
+
+Temperature to which the thermostat should heat (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+
+---
+
+**`heating_set_point_fahrenheit`** **
+
+Temperature to which the thermostat should heat (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+
+---
+
+**`hvac_mode_setting`** **
+
+Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
+
+---
+
+**`manual_override_allowed`** **
+
+Indicates whether a person at the thermostat or using the API can change the thermostat's settings.
+
+---
+
+**`name`** **
+
+User-friendly name to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+
+---
+
+
+## Response
+
+void
+
+---
+
+## Examples
+  
+### Create a climate preset
+
+Specify the `device_id` of the desired thermostat, along with the desired settings for the climate preset, including `manual_override_allowed`.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.createClimatePreset({
@@ -23,7 +118,7 @@ await seam.thermostats.createClimatePreset({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -31,7 +126,7 @@ await seam.thermostats.createClimatePreset({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.create_climate_preset(
@@ -46,7 +141,7 @@ seam.thermostats.create_climate_preset(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -54,7 +149,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.create_climate_preset(
@@ -69,7 +164,7 @@ seam.thermostats.create_climate_preset(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -77,7 +172,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -93,7 +188,7 @@ $seam->thermostats->create_climate_preset(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -101,13 +196,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats create-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "occupied" --name "Occupied" --fan_mode_setting "auto" --hvac_mode_setting "heat_cool" --cooling_set_point_celsius 25 --heating_set_point_celsius 20 --manual_override_allowed true
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -115,7 +210,7 @@ seam thermostats create-climate-preset --device_id "123e4567-e89b-12d3-a456-4266
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -139,7 +234,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil
@@ -148,120 +243,4 @@ nil
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `climate_preset_key`
-
-Format: `String`
-Required: Yes
-
-Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
-
-***
-
-### `device_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired thermostat device.
-
-***
-
-### `cooling_set_point_celsius`
-
-Format: `Number`
-Required: No
-
-Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
-***
-
-### `cooling_set_point_fahrenheit`
-
-Format: `Number`
-Required: No
-
-Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
-***
-
-### `fan_mode_setting`
-
-Format: `Enum`
-Required: No
-
-Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
-
-Possible enum values:
-- `auto`
-- `on`
-- `circulate`
-
-***
-
-### `heating_set_point_celsius`
-
-Format: `Number`
-Required: No
-
-Temperature to which the thermostat should heat (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
-***
-
-### `heating_set_point_fahrenheit`
-
-Format: `Number`
-Required: No
-
-Temperature to which the thermostat should heat (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
-***
-
-### `hvac_mode_setting`
-
-Format: `Enum`
-Required: No
-
-Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
-
-Possible enum values:
-- `off`
-- `heat`
-- `cool`
-- `heat_cool`
-
-***
-
-### `manual_override_allowed`
-
-Format: `Boolean`
-Required: No
-
-Indicates whether a person at the thermostat or using the API can change the thermostat's settings.
-
-{% hint style="warning" %}
-**Deprecated**. Use 'thermostat_schedule.is_override_allowed'
-{% endhint %}
-
-***
-
-### `name`
-
-Format: `String`
-Required: No
-
-User-friendly name to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
-
-***
-
-## Return Type
-
-void

@@ -1,14 +1,54 @@
 # Delete an Enrollment Automation
 
-```
-POST /user_identities/enrollment_automations/delete ⇒ void
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Deletes a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system). You must delete all enrollment automations associated with a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) before [deleting the user identity](https://docs.seam.co/latest/api/user_identities/delete).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+POST /user_identities/enrollment_automations/delete ⇒ void
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`enrollment_automation_id`** ** (Required)
+
+ID of the desired enrollment automation.
+
+---
+
+
+## Response
+
+void
+
+---
+
+## Examples
+  
+### Delete an enrollment automation
+
+Specify the desired `enrollment_automation_id`.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.userIdentities.enrollmentAutomations.delete({
@@ -16,7 +56,7 @@ await seam.userIdentities.enrollmentAutomations.delete({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -24,7 +64,7 @@ await seam.userIdentities.enrollmentAutomations.delete({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.user_identities.enrollment_automations.delete(
@@ -32,7 +72,7 @@ seam.user_identities.enrollment_automations.delete(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -40,7 +80,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.user_identities.enrollment_automations.delete(
@@ -48,7 +88,7 @@ seam.user_identities.enrollment_automations.delete(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -56,7 +96,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -65,7 +105,7 @@ $seam->user_identities->enrollment_automations->delete(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -73,13 +113,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam user-identities enrollment-automations delete --enrollment_automation_id "05505650-aa57-49ab-8f19-429738758895"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -87,7 +127,7 @@ seam user-identities enrollment-automations delete --enrollment_automation_id "0
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -105,7 +145,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil
@@ -114,23 +154,4 @@ nil
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `enrollment_automation_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired enrollment automation.
-
-***
-
-## Return Type
-
-void

@@ -1,6 +1,13 @@
 # Encoders
 
-## `acs_encoder`
+## The acs_encoder Object
+
+- [Properties](./#properties)
+- [Errors](./#errors)
+- [Warnings](./#warnings)
+- [Events](./#events)
+- [Endpoints](./#endpoints)
+
 
 Represents a hardware device that encodes [credential](../../../capability-guides/access-systems/managing-credentials.md) data onto physical cards within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -17,207 +24,224 @@ Separately, the Seam API also supports card scanning, which enables you to scan 
 
 To verify if your access control system requires a card encoder, see the corresponding [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 
-### `acs_encoder_id`
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  acs_encoder_id: [example value],
+  acs_system_id: [example value],
+  created_at: [example value],
+  display_name: [example value],
+  errors: [example value],
+  workspace_id: [example value]
+}
+```
+{% endtab %}
+{% endtabs %}
 
-Format: `UUID`
+---
+## Properties
+
+**`acs_encoder_id`** *UUID*
 
 ID of the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners.
 
+
+
+
 ---
 
-### `acs_system_id`
-
-Format: `UUID`
+**`acs_system_id`** *UUID*
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
+
+
+
 ---
 
-### `created_at`
-
-Format: `Datetime`
+**`created_at`** *Datetime*
 
 Date and time at which the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) was created.
 
+
+
+
 ---
 
-### `display_name`
-
-Format: `String`
+**`display_name`** *String*
 
 Display name for the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
+
+
+
 ---
 
-### `errors`
-
-Format: `List`
-
-Item format: `Object`
+**`errors`** *List* *of Objects*
 
 Errors associated with the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
-<details>
 
-<summary><code>created_at</code> Format: <code>Datetime</code></summary>
-
-Date and time at which Seam created the error.
-</details>
 
 <details>
-
-<summary><code>error_code</code> Format: <code>Enum</code></summary>
-
-Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-
-Possible enum values:
-- `acs_encoder_removed`
-</details>
-
-<details>
-
-<summary><code>message</code> Format: <code>String</code></summary>
-
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  <summary>Child Object Properties</summary>
+  <strong><code>created_at</code></strong> <i>Datetime</i>
+  
+    Date and time at which Seam created the error.
+  <strong><code>error_code</code></strong> <i>Enum</i>
+  
+    Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  <details>
+      <summary>Enum values:</summary>
+      - `acs_encoder_removed`
+  </details>
+  <strong><code>message</code></strong> <i>String</i>
+  
+    Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 </details>
 
 ---
 
-### `workspace_id`
-
-Format: `UUID`
+**`workspace_id`** *UUID*
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
----
 
-## Endpoints
 
-### [`/acs/encoders/encode_access_method`](./encode_access_method.md)
-
-Encodes an existing access method onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
-### [`/acs/encoders/encode_credential`](./encode_credential.md)
-
-Encodes an existing [credential](../../../capability-guides/access-systems/managing-credentials.md) onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
-### [`/acs/encoders/get`](./get.md)
-
-Returns a specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
-### [`/acs/encoders/list`](./list.md)
-
-Returns a list of all [encoders](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
-### [`/acs/encoders/scan_credential`](./scan_credential.md)
-
-Scans an encoded [acs_credential](../../../capability-guides/access-systems/managing-credentials.md) from a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 ---
+
 
 ## Events
 
-### `acs_encoder.added`
+**`acs_encoder.added`**
 
 An [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) was added.
 
 <details>
 
-<summary><code>acs_encoder_id</code> Format: <code>UUID</code></summary>
+<summary>Properties</summary>
 
-ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+- <strong><code>acs_encoder_id</code></strong> <i>UUID</i>
+
+  ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+
+
+- <strong><code>acs_system_id</code></strong> <i>UUID</i>
+
+  ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+
+
+- <strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+
+- <strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+
+- <strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `acs_encoder.added`
+
+
+- <strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+
+- <strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
 </details>
-<details>
 
-<summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
-
-ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
-</details>
-<details>
-
-<summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
-
-ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
-</details>
-<details>
-
-<summary><code>created_at</code> Format: <code>Datetime</code></summary>
-
-Date and time at which the event was created.
-</details>
-<details>
-
-<summary><code>event_id</code> Format: <code>UUID</code></summary>
-
-ID of the event.
-</details>
-<details>
-
-<summary><code>event_type</code> Format: <code>Enum</code></summary>
-
-Value: `acs_encoder.added`
-</details>
-<details>
-
-<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
-
-Date and time at which the event occurred.
-</details>
-<details>
-
-<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
-
-ID of the [workspace](../../../core-concepts/workspaces/README.md).
-</details>
 ---
 
-### `acs_encoder.removed`
+**`acs_encoder.removed`**
 
 An [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) was removed.
 
 <details>
 
-<summary><code>acs_encoder_id</code> Format: <code>UUID</code></summary>
+<summary>Properties</summary>
 
-ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+- <strong><code>acs_encoder_id</code></strong> <i>UUID</i>
+
+  ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+
+
+- <strong><code>acs_system_id</code></strong> <i>UUID</i>
+
+  ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+
+
+- <strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+
+- <strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+
+- <strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `acs_encoder.removed`
+
+
+- <strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+
+- <strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](../../../core-concepts/workspaces/README.md).
+
 </details>
-<details>
 
-<summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
-
-ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
-</details>
-<details>
-
-<summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
-
-ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
-</details>
-<details>
-
-<summary><code>created_at</code> Format: <code>Datetime</code></summary>
-
-Date and time at which the event was created.
-</details>
-<details>
-
-<summary><code>event_id</code> Format: <code>UUID</code></summary>
-
-ID of the event.
-</details>
-<details>
-
-<summary><code>event_type</code> Format: <code>Enum</code></summary>
-
-Value: `acs_encoder.removed`
-</details>
-<details>
-
-<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
-
-Date and time at which the event occurred.
-</details>
-<details>
-
-<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
-
-ID of the [workspace](../../../core-concepts/workspaces/README.md).
-</details>
 ---
+
+## Endpoints
+
+
+[**`/acs/encoders/encode_access_method`**](./encode_access_method.md)
+
+Encodes an existing access method onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+
+
+[**`/acs/encoders/encode_credential`**](./encode_credential.md)
+
+Encodes an existing [credential](../../../capability-guides/access-systems/managing-credentials.md) onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+
+
+[**`/acs/encoders/get`**](./get.md)
+
+Returns a specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+
+
+[**`/acs/encoders/list`**](./list.md)
+
+Returns a list of all [encoders](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+
+
+[**`/acs/encoders/scan_credential`**](./scan_credential.md)
+
+Scans an encoded [acs_credential](../../../capability-guides/access-systems/managing-credentials.md) from a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+
 

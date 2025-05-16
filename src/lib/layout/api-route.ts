@@ -339,8 +339,8 @@ function addLinkTargetsToProperties(
   sections: { errors: boolean; warnings: boolean },
 ): void {
   const linkableProperties: Record<string, string | undefined> = {
-    errors: sections.errors ? './#errors-1' : undefined,
-    warnings: sections.warnings ? './#warnings-1' : undefined,
+    errors: sections.errors ? './#errors' : undefined,
+    warnings: sections.warnings ? './#warnings' : undefined,
   }
 
   for (const prop of properties) {

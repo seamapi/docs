@@ -1,29 +1,40 @@
 # Deactivate a Phone
 
-```
-POST /phones/deactivate ⇒ void
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Deactivates a phone, which is useful, for example, if a user has lost their phone. For more information, see [App User Lost Phone Process](../../capability-guides/mobile-access/managing-phones-for-a-user-identity.md#app-user-lost-phone-process).
 
-## Authentication Methods
+{% tabs %}
+{% tab title="Signature" %}
+```
+POST /phones/deactivate ⇒ void
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
 
 - API key
 - Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
 ## Request Parameters
 
-### `device_id`
-
-Format: `String`
-Required: Yes
+**`device_id`** ** (Required)
 
 Device ID of the desired phone.
 
-***
+---
 
-## Return Type
+
+## Response
 
 void

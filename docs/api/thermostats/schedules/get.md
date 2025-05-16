@@ -1,14 +1,64 @@
 # Get a Thermostat Schedule
 
-```
-POST /thermostats/schedules/get ⇒ { thermostat_schedule }
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Returns a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+POST /thermostats/schedules/get ⇒ { thermostat_schedule }
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`thermostat_schedule_id`** ** (Required)
+
+ID of the desired thermostat schedule.
+
+---
+
+
+## Response
+
+[thermostat\_schedule](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of thermostat_schedule
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+## Examples
+  
+### Get a specific thermostat schedule
+
+Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.schedules.get({
@@ -16,7 +66,7 @@ await seam.thermostats.schedules.get({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 {
@@ -32,7 +82,7 @@ await seam.thermostats.schedules.get({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.schedules.get(
@@ -40,7 +90,7 @@ seam.thermostats.schedules.get(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 ThermostatSchedule(
@@ -56,13 +106,13 @@ ThermostatSchedule(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.schedules.get(thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4")
 ```
 
-#### Response
+#### Output
 
 ```ruby
 {
@@ -78,7 +128,7 @@ seam.thermostats.schedules.get(thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -87,7 +137,7 @@ $seam->thermostats->schedules->get(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -104,13 +154,13 @@ $seam->thermostats->schedules->get(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats schedules get --thermostat_schedule_id "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {
@@ -126,7 +176,7 @@ seam thermostats schedules get --thermostat_schedule_id "89d3507e-60e3-4101-bd1b
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -144,7 +194,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 api.ThermostatSchedule{ThermostatScheduleId: "89d3507e-60e3-4101-bd1b-ba066ec30ad4", Name: "Reservation 2", DeviceId: "2d488679-6f07-4810-aed2-e726872c1dd5", ClimatePresetKey: "occupied", StartsAt: "2024-11-10T15:00:00.000Z", EndsAt: "2024-11-15T12:00:00.000Z", MaxOverridePeriodMinutes: 90}
@@ -153,24 +203,4 @@ api.ThermostatSchedule{ThermostatScheduleId: "89d3507e-60e3-4101-bd1b-ba066ec30a
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `thermostat_schedule_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired thermostat schedule.
-
-***
-
-## Return Type
-
-[thermostat\_schedule](./)
