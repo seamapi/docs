@@ -108,7 +108,7 @@ AccessCode(
 {% endtab %}
 
 {% tab title="cURL (bash)" %}
-#### Request:
+**Request:**
 
 ```sh
 # Get the device.
@@ -141,7 +141,7 @@ if  $(jq -r '.device.can_program_offline_access_codes' <<< ${device}); then \
 fi
 ```
 
-#### Response:
+**Response:**
 
 ```json
 {
@@ -414,8 +414,8 @@ The [lifecycle of a time-bound access code](../../products/smart-locks/access-co
 
 There are two methods to verify that an time-bound offline access code has been registered in the offline access code server that the device manufacturer maintains:
 
-* **Polling**: Continuously query the access code until the `status` is updated. For instructions, see [Polling Method](../../products/smart-locks/access-codes/creating-access-codes.md#polling-method-1).
-* **Webhook**: Wait for updates to arrive using webhook requests from the Seam API. For instructions, see [Webhook Events Method](../../products/smart-locks/access-codes/creating-access-codes.md#webhook-events-method-1).
+* **Polling**: Continuously query the access code until the `status` is updated. For instructions, see [Polling Method](../../capability-guides/smart-locks/access-codes/creating-access-codes/#polling-method-1).
+* **Webhook**: Wait for updates to arrive using webhook requests from the Seam API. For instructions, see [Webhook Events Method](../../capability-guides/smart-locks/access-codes/creating-access-codes/#webhook-events-method-1).
 
 ***
 
@@ -471,7 +471,7 @@ AccessCode(
 {% endtab %}
 
 {% tab title="cURL (bash)" %}
-#### Request:
+**Request:**
 
 ```sh
 # Get the device.
@@ -505,7 +505,7 @@ if  $(jq -r '.device.can_program_offline_access_codes' <<< ${device}); then \
 fi
 ```
 
-#### Response:
+**Response:**
 
 ```json
 {
@@ -784,8 +784,8 @@ The [lifecycle of a time-bound access code](../../products/smart-locks/access-co
 
 There are two methods to verify that an time-bound offline access code has been registered in the offline access code server that the device manufacturer maintains:
 
-* **Polling**: Continuously query the access code until the `status` is updated. For instructions, see [Polling Method](../../products/smart-locks/access-codes/creating-access-codes.md#polling-method-1).
-* **Webhook**: Wait for updates to arrive using webhook requests from the Seam API. For instructions, see [Webhook Events Method](../../products/smart-locks/access-codes/creating-access-codes.md#webhook-events-method-1).
+* **Polling**: Continuously query the access code until the `status` is updated. For instructions, see [Polling Method](../../capability-guides/smart-locks/access-codes/creating-access-codes/#polling-method-1).
+* **Webhook**: Wait for updates to arrive using webhook requests from the Seam API. For instructions, see [Webhook Events Method](../../capability-guides/smart-locks/access-codes/creating-access-codes/#webhook-events-method-1).
 
 ***
 

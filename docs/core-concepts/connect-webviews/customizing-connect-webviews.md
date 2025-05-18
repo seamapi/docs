@@ -45,15 +45,52 @@ To customize the look and feel of your Connect Webviews:
 
 ## Customize the Brands to Display in Your Connect Webviews
 
-When you create a Connect Webview, you can customize the providers—that is, the brands—that it displays. In the [Create Connect Webview](../../api-clients/connect_webviews/create.md) request, include the desired set of [device provider keys](../../api-clients/connect_webviews/#device-provider-keys) in the `accepted_providers` parameter.
+When you create a Connect Webview, you can customize the providers—that is, the brands—that it displays. In the [Create Connect Webview](../../api-clients/connect_webviews/create.md) request, include the desired set of device provider keys in the `accepted_providers` parameter. Seam supports the following device provider keys:
 
-To help you decide which providers to include in a Connect Webview, you can use the [List Device Providers](../../api-clients/devices/list_device_providers.md) method to learn about each provider. The information that this method returns for each [provider](../../api-clients/devices/#device-providers) includes a set of [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags), such as `device_provider.can_remotely_unlock`. If at least one supported device from a provider has a specific capability, the corresponding capability flag is `true`. For more information, see [Device Providers](../../api-clients/devices/#device-providers).
+| Provider Name                                                                                                                          | Device Provider Key             |
+| -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
+| [2N](../../device-guides/2n-intercom-systems.md)                                                                                       | `my_2n`                         |
+| [4SUITES](../../device-and-system-integration-guides/4suites-locks/)                                                                   | `four_suites`                   |
+| [Akiles](../../device-and-system-integration-guides/akiles-locks/)                                                                     | `akiles`                        |
+| [Akuvox](https://akuvox.com/)                                                                                                          | `akuvox`                        |
+| [ASSA ABLOY Credential Service](../../device-and-system-integration-guides/assa-abloy-credential-services-credential-manager.md)       | `assa_abloy_credential_service` |
+| [ASSA ABLOY Visionline Access Control System](../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/) | `visionline`                    |
+| [August Home](../../device-guides/august-locks.md)                                                                                     | `august`                        |
+| [Avigilon Alta](../../device-guides/avigilon-alta-access-system.md)                                                                    | `avigilon_alta`                 |
+| [Brivo](../../device-guides/brivo-access.md)                                                                                           | `brivo`                         |
+| [ControlByWeb](../../device-guides/get-started-with-controlbyweb-devices.md)                                                           | `controlbyweb`                  |
+| [DoorKing](https://www.doorking.com/)                                                                                                  | `doorking`                      |
+| [dormakaba Oracode](../../device-guides/dormakaba-oracode-locks.md)                                                                    | `dormakaba_oracode`             |
+| [ecobee](../../device-guides/ecobee-thermostats.md)                                                                                    | `ecobee`                        |
+| [Genie Aladdin Connect](https://www.geniecompany.com/aladdin-connect-by-genie)                                                         | `genie`                         |
+| [Honeywell Resideo](../../device-and-system-integration-guides/honeywell-thermostats/)                                                 | `honeywell_resideo`             |
+| [igloohome](../../device-guides/igloohome-locks.md)                                                                                    | `igloohome`                     |
+| [Kwikset](../../device-guides/kwikset-locks.md)                                                                                        | `kwikset`                       |
+| [Latch](../../device-and-system-integration-guides/latch-access-control-system/)                                                       | `latch`                         |
+| [Linear](https://linear-solutions.com/)                                                                                                | `linear`                        |
+| [Lockly](../../device-and-system-integration-guides/lockly-locks/)                                                                     | `lockly`                        |
+| [Minut](../../device-guides/minut-sensors.md)                                                                                          | `minut`                         |
+| [Nest](../../device-guides/google-nest-thermostats/)                                                                                   | `google_nest`                   |
+| [NoiseAware](../../device-guides/noiseaware-sensors.md)                                                                                | `noiseaware`                    |
+| [Nuki](../../device-guides/nuki-locks.md)                                                                                              | `nuki`                          |
+| [PTI Storlogix Cloud](../../device-guides/pti-storlogix-cloud.md)                                                                      | `pti`                           |
+| [Salto KS Access System](../../device-and-system-integration-guides/salto-ks-access-control-system/)                                   | `salto_ks`                      |
+| [Salto KS Locks](../../device-guides/salto-locks.md)                                                                                   | `salto`                         |
+| [Salto ProAccess Space Access System](../../device-and-system-integration-guides/salto-proaccess-space-access-system/)                 | `salto_space`                   |
+| [Schlage](https://www.schlage.com/en/home/products/products-smart-locks.html)                                                          | `schlage`                       |
+| [SmartThings](https://www.smartthings.com/)                                                                                            | `smartthings`                   |
+| [Tedee](../../device-and-system-integration-guides/tedee-locks/)                                                                       | `tedee`                         |
+| [TTLock](../../device-guides/ttlock-locks.md)                                                                                          | `ttlock`                        |
+| [Wyze](../../device-guides/wyze-locks.md)                                                                                              | `wyze`                          |
+| [Yale](../../device-guides/yale-locks.md)                                                                                              | `yale`                          |
+
+To help you decide which providers to include in a Connect Webview, you can use the [List Device Providers](../../api-clients/devices/list_device_providers.md) method to learn about each provider. The information that this method returns for each provider includes a set of [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags), such as `device_provider.can_remotely_unlock`. If at least one supported device from a provider has a specific capability, the corresponding capability flag is `true`.
 
 {% hint style="info" %}
-If you omit the `accepted_providers` parameter, the Connect Webview displays all of the stable providers that Seam supports, by default. For more information about provider categories, see [Provider Category Keys](../../api-clients/connect_webviews/#provider-category-keys).
+If you omit the `accepted_providers` parameter, the Connect Webview displays all of the stable providers that Seam supports, by default. For more information about provider categories, see [Step 1: Create a Connect Webview](connect-webview-process.md#step-1-create-a-connect-webview).
 {% endhint %}
 
-For example, the following Connect Webview creation request specifies that the Connect Webview should only display August and Schlage:
+The following Connect Webview creation request specifies that the Connect Webview should only display August and Schlage:
 
 {% tabs %}
 {% tab title="Python" %}

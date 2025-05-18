@@ -16,7 +16,17 @@ The Connect Webview flow begins when your user wants to connect their device or 
 
 In your app, [create a Connect Webview](../../api-clients/connect_webviews/create.md). The Seam API represents Connect Webviews as `connect_webview` objects.
 
-The created `connect_webview` object includes a `url` property.
+When creating a Connect Webview, choose which providers to display. Choose one of the following options:
+
+*   To display a preselected group of providers, you can specify the desired `provider_category`. Supported provider categories are as follows:
+
+    * `stable`
+    * `consumer_smartlocks`
+    * `thermostats`
+    * `noise_sensors`&#x20;
+
+    To list all providers within a category, use the [List Device Providers](../../api-clients/devices/list_device_providers.md) method with the desired `provider_category` filter.
+* To display a specific, custom set of providers, specify the desired list of `accepted_providers`. For details, see [Customize the Brands to Display in Your Connect Webviews](customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -286,15 +296,19 @@ return nil
 {% endtab %}
 {% endtabs %}
 
+### Connect Webview Response
+
+The created `connect_webview` object includes a `url` property. You use this URL to display the Connect Webview flow to your user.
+
 ***
 
 ## Step 2: Display the Connect Webview
 
-In your app, [open the Connect Webview for your user](../../core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app.md#opening-a-connect-webview), using the Connect Webview `url`.
+In your app, [open the Connect Webview for your user](embedding-a-connect-webview-in-your-app.md#opening-a-connect-webview), using the Connect Webview `url`.
 
-You can [redirect to the Connect Webview URL](../../core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app.md#redirect-to-the-connect-webview-url) or [embed the Connect Webview in an iframe](../../core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app.md#embed-the-connect-webview-in-an-iframe).
+You can [redirect to the Connect Webview URL](embedding-a-connect-webview-in-your-app.md#redirect-to-the-connect-webview-url) or [embed the Connect Webview in an iframe](embedding-a-connect-webview-in-your-app.md#embed-the-connect-webview-in-an-iframe).
 
-For instructions, see [Embedding a Connect Webview in Your App](../../core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app.md).
+For instructions, see [Embedding a Connect Webview in Your App](embedding-a-connect-webview-in-your-app.md).
 
 ***
 

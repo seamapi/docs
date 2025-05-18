@@ -18,11 +18,11 @@ To configure webhook endpoints:
 
 You can add webhooks through the Seam Console or programmatically. Let's start by looking at how to add and test a webhook using the Seam Console.
 
-![Click + Add Webhook to create a webhook for your device events.](<../.gitbook/assets/image (22).png>)
+![Click + Add Webhook to create a webhook for your device events.](../.gitbook/assets/add-webhook-button.png)
 
 You can specify any public URL endpoint to receive webhook events by pasting the URL into the **Create Webhook** dialog.
 
-![You can specify any internet-accessible URL as your webhook URL.](<../.gitbook/assets/image (24).png>)
+<figure><img src="../.gitbook/assets/create-webhook-dialog.png" alt="You can specify any internet-accessible URL as your webhook URL." width="563"><figcaption><p>You can specify any internet-accessible URL as your webhook URL.</p></figcaption></figure>
 
 Webhook endpoints can receive many different types of events, such as `device.connected` or `device.low_battery`. It's a good idea when getting started with webhooks to review the list of webhook [event types](../api-clients/events/#event-types) and test your endpoint using the Svix sandbox environment.
 
@@ -33,6 +33,12 @@ You can view all the event types and the included fields in the **Event Catalog*
 ![Go to the "Event Catalog" tab to view all available events.](<../.gitbook/assets/image (27).png>)
 
 We use webhooks from Svix. For more information about consuming events, such as testing or verifying webhooks, see the [Svix docs](https://docs.svix.com/receiving/introduction).
+
+## Testing Events
+
+Use the webhooks playground in Seam Console to see the payload for each event and test these events against your own endpoints.
+
+<figure><img src="../.gitbook/assets/testing-your-webhooks.png" alt="Use the webhooks playground to test events."><figcaption><p>Use the webhooks playground to test events.</p></figcaption></figure>
 
 ## Retry Schedule for Webhooks
 
