@@ -15,6 +15,8 @@ import type { ResourceSample } from 'node_modules/@seamapi/blueprint/lib/samples
 
 import type { PathMetadata } from 'lib/path-metadata.js'
 
+import { processActionAttemptResource } from './action-attempt-resource.js'
+
 export interface ApiRouteLayoutContext {
   title: string
   description: string
@@ -30,19 +32,19 @@ export interface ApiRouteLayoutContext {
   events: ApiRouteEvent[]
 }
 
-interface ApiRouteEvent {
+export interface ApiRouteEvent {
   name: string
   description: string
   properties: ApiRouteProperty[]
 }
 
-interface ResourceSampleContext {
+export interface ResourceSampleContext {
   title: string
   resourceData: string
   resourceDataSyntax: SyntaxName
 }
 
-type ApiRouteProperty = Pick<
+export type ApiRouteProperty = Pick<
   Property,
   'name' | 'description' | 'isDeprecated' | 'deprecationMessage'
 > & {
@@ -68,11 +70,12 @@ export interface ApiRouteResource {
   events: ApiRouteEvent[]
 }
 
-interface ApiWarning {
+export interface ApiWarning {
   name: string
   description: string
 }
-interface ApiError {
+
+export interface ApiError {
   name: string
   description: string
 }
@@ -108,6 +111,11 @@ export function setApiRouteLayoutContext(
 
   file.resources = []
   for (const resourceType of metadata.resources) {
+    if (resourceType === 'action_attempt') {
+      processActionAttemptResource(blueprint, file.resources, eventsByRoutePath)
+      continue
+    }
+
     const resource = blueprint.resources[resourceType]
 
     if (resource == null) {
@@ -150,8 +158,6 @@ const groupEventsByRoutePath = (
   const eventsByRoutePath = new Map<string, ApiRouteEvent[]>()
 
   for (const event of events) {
-    if (event.routePath == null) continue
-
     const routeEvents = eventsByRoutePath.get(event.routePath) ?? []
     routeEvents.push({
       name: event.eventType,

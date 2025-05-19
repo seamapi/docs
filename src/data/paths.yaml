@@ -80,3 +80,8 @@
   title: Enrollment Automations
   resources:
     - enrollment_automation
+
+/action_attempts:
+  title: Action Attempts
+  resources:
+    - action_attempt
