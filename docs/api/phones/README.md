@@ -67,6 +67,7 @@ Type of phone.
 
 <details>
 <summary>Enum values</summary>
+
 - <code>ios_phone</code>
 - <code>android_phone</code>
 </details>
@@ -114,6 +115,7 @@ Properties of the phone.
 
 <details>
   <summary>Child Properties</summary>
+
   - <strong><code>assa_abloy_credential_service_metadata</code></strong> <i>Object</i>
 
   ASSA ABLOY Credential Service metadata for the phone.

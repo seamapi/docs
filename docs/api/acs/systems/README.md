@@ -257,6 +257,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capab
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
+  
       - <code>seam_bridge_disconnected</code>
   </details>
   
@@ -290,6 +291,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capab
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
+  
       - <code>bridge_disconnected</code>
   </details>
   
@@ -330,6 +332,7 @@ Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is funct
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
+  
       - <code>visionline_instance_unreachable</code>
   </details>
   
@@ -362,6 +365,7 @@ Indicates that the maximum number of users allowed for the site has been reached
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
+  
       - <code>salto_ks_subscription_limit_exceeded</code>
   </details>
   
@@ -394,6 +398,7 @@ Indicates that the [access control system](https://docs.seam.co/latest/capabilit
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
+  
       - <code>acs_system_disconnected</code>
   </details>
   
@@ -426,6 +431,7 @@ Indicates that the login credentials are invalid. Reconnect the account using a 
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
+  
       - <code>account_disconnected</code>
   </details>
   
@@ -458,6 +464,7 @@ Indicates that the [access control system](https://docs.seam.co/latest/capabilit
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
+  
       - <code>salto_ks_certification_expired</code>
   </details>
   
@@ -481,6 +488,7 @@ Brand-specific terminology for the [access control system](https://docs.seam.co/
 
 <details>
 <summary>Enum values</summary>
+
 - <code>pti_site</code>
 - <code>alta_org</code>
 - <code>salto_ks_site</code>
@@ -542,6 +550,7 @@ Indicates whether the `acs_system` is a credential manager.
 
 <details>
   <summary>Child Properties</summary>
+
   - <strong><code>time_zone</code></strong> <i>String</i>
 
   Time zone in which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) is located.
@@ -568,6 +577,7 @@ Name of the [access control system](https://docs.seam.co/latest/capability-guide
 
 <details>
 <summary>Enum values</summary>
+
 - <code>pti_site</code>
 - <code>alta_org</code>
 - <code>salto_ks_site</code>
@@ -604,6 +614,7 @@ Name of the [access control system](https://docs.seam.co/latest/capability-guide
 
 <details>
   <summary>Child Properties</summary>
+
   - <strong><code>lan_address</code></strong> <i>String</i>
 
   IP address or hostname of the main Visionline server relative to [Seam Bridge](../../../capability-guides/seam-bridge.md) on the local network.
@@ -657,6 +668,7 @@ Indicates that the Salto KS site has exceeded 80% of the maximum number of allow
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
+  
       - <code>salto_ks_subscription_limit_almost_reached</code>
   </details>
   
@@ -699,6 +711,7 @@ Indicates the [access control system](https://docs.seam.co/latest/capability-gui
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
+  
       - <code>time_zone_does_not_match_location</code>
   </details>
   

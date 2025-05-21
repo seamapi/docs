@@ -62,6 +62,7 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
 
 <details>
   <summary>Child Properties</summary>
+
   - <strong><code>door_name</code></strong> <i>String</i>
 
   - <strong><code>door_number</code></strong> <i>Number</i>
@@ -69,6 +70,7 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
   - <strong><code>door_type</code></strong> <i>Enum</i>
 <details>
     <summary>Enum values:</summary>
+
     - <code>CommonDoor`</code>
     - <code>EntranceDoor`</code>
     - <code>GuestDoor`</code>
@@ -109,6 +111,7 @@ dormakaba Community-specific metadata associated with the [entrance](../../../ca
 
 <details>
   <summary>Child Properties</summary>
+
   - <strong><code>access_point_name</code></strong> <i>String</i>
 
 </details>
@@ -141,6 +144,7 @@ Latch-specific metadata associated with the [entrance](../../../capability-guide
 
 <details>
   <summary>Child Properties</summary>
+
   - <strong><code>accessibility_type</code></strong> <i>String</i>
 
   - <strong><code>door_name</code></strong> <i>String</i>
@@ -161,6 +165,7 @@ Salto KS-specific metadata associated with the [entrance](../../../capability-gu
 
 <details>
   <summary>Child Properties</summary>
+
   - <strong><code>battery_level</code></strong> <i>String</i>
 
   - <strong><code>door_name</code></strong> <i>String</i>
@@ -189,6 +194,7 @@ Salto Space-specific metadata associated with the [entrance](../../../capability
 
 <details>
   <summary>Child Properties</summary>
+
   - <strong><code>door_description</code></strong> <i>String</i>
 
   - <strong><code>door_name</code></strong> <i>String</i>
@@ -207,9 +213,11 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 
 <details>
   <summary>Child Properties</summary>
+
   - <strong><code>door_category</code></strong> <i>Enum</i>
 <details>
     <summary>Enum values:</summary>
+
     - <code>entrance`</code>
     - <code>guest`</code>
     - <code>elevator reader`</code>
@@ -227,6 +235,7 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 - <strong><code>visionline_door_profile_type</code></strong> <i>Enum</i>
 <details>
     <summary>Enum values:</summary>
+
     - <code>BLE`</code>
     - <code>commonDoor`</code>
     - <code>touch`</code>

@@ -60,6 +60,7 @@ Access method for the [credential](../../../capability-guides/access-systems/man
 
 <details>
 <summary>Enum values</summary>
+
 - <code>code</code>
 - <code>card</code>
 - <code>mobile_key</code>
@@ -111,6 +112,7 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 
 <details>
   <summary>Child Properties</summary>
+
   - <strong><code>auto_join</code></strong> <i>Boolean</i>
 
   - <strong><code>door_names</code></strong> <i>List</i> <i>of Strings</i>
@@ -193,6 +195,7 @@ Brand-specific terminology for the [credential](../../../capability-guides/acces
 
 <details>
 <summary>Enum values</summary>
+
 - <code>pti_card</code>
 - <code>brivo_credential</code>
 - <code>hid_credential</code>
@@ -303,11 +306,13 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 
 <details>
   <summary>Child Properties</summary>
+
   - <strong><code>auto_join</code></strong> <i>Boolean</i>
 
   - <strong><code>card_function_type</code></strong> <i>Enum</i>
 <details>
     <summary>Enum values:</summary>
+
     - <code>guest`</code>
     - <code>staff`</code>
 </details>
@@ -365,6 +370,7 @@ Indicates that the [credential](../../../capability-guides/access-systems/managi
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
+  
       - <code>waiting_to_be_issued</code>
   </details>
   
@@ -397,6 +403,7 @@ Indicates that the schedule of one of the [credential](../../../capability-guide
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
+  
       - <code>schedule_externally_modified</code>
   </details>
   
@@ -429,6 +436,7 @@ Indicates that the schedule of the [credential](../../../capability-guides/acces
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
+  
       - <code>schedule_modified</code>
   </details>
   
@@ -461,6 +469,7 @@ Indicates that the [credential](../../../capability-guides/access-systems/managi
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
+  
       - <code>being_deleted</code>
   </details>
   
@@ -493,6 +502,7 @@ An unknown issue occurred while syncing the state of the [credential](../../../c
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
+  
       - <code>unknown_issue_with_acs_credential</code>
   </details>
   
@@ -525,6 +535,7 @@ Access permissions for the [credential](../../../capability-guides/access-system
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
+  
       - <code>needs_to_be_reissued</code>
   </details>
   

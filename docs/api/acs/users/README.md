@@ -57,6 +57,7 @@ For details about how to configure `acs_user`s in your access control system, se
 
 <details>
   <summary>Child Properties</summary>
+
   - <strong><code>ends_at</code></strong> <i>Datetime</i>
 
   Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
@@ -152,6 +153,7 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
   
   <details>
       <summary>Enum values:</summary>
+  
       - <code>deleted_externally</code>
   </details>
   
@@ -182,6 +184,7 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
   
   <details>
       <summary>Enum values:</summary>
+  
       - <code>salto_ks_subscription_limit_exceeded</code>
   </details>
   
@@ -212,6 +215,7 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
   
   <details>
       <summary>Enum values:</summary>
+  
       - <code>failed_to_create_on_acs_system</code>
   </details>
   
@@ -242,6 +246,7 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
   
   <details>
       <summary>Enum values:</summary>
+  
       - <code>failed_to_update_on_acs_system</code>
   </details>
   
@@ -272,6 +277,7 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
   
   <details>
       <summary>Enum values:</summary>
+  
       - <code>failed_to_delete_on_acs_system</code>
   </details>
   
@@ -302,6 +308,7 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
   
   <details>
       <summary>Enum values:</summary>
+  
       - <code>latch_conflict_with_resident_user</code>
   </details>
   
@@ -325,6 +332,7 @@ Brand-specific terminology for the [ACS user](https://docs.seam.co/latest/capabi
 
 <details>
 <summary>Enum values</summary>
+
 - <code>pti_user</code>
 - <code>brivo_user</code>
 - <code>hid_credential_manager_user</code>
@@ -415,6 +423,7 @@ Seam is in the process of pushing a user creation to the integrated access syste
   
   <details>
       <summary>Enum values:</summary>
+  
       - <code>creating</code>
   </details>
   
@@ -445,6 +454,7 @@ Seam is in the process of pushing a user deletion to the integrated access syste
   
   <details>
       <summary>Enum values:</summary>
+  
       - <code>deleting</code>
   </details>
   
@@ -479,6 +489,7 @@ Seam is in the process of pushing a user deletion to the integrated access syste
   
   <details>
       <summary>Enum values:</summary>
+  
       - <code>updating_user_information</code>
   </details>
   
@@ -521,6 +532,7 @@ Seam is in the process of pushing an access schedule update to the integrated ac
   
   <details>
       <summary>Enum values:</summary>
+  
       - <code>updating_access_schedule</code>
   </details>
   
@@ -563,6 +575,7 @@ Seam is in the process of pushing a suspension state update to the integrated ac
   
   <details>
       <summary>Enum values:</summary>
+  
       - <code>updating_suspension_state</code>
   </details>
   
@@ -607,6 +620,7 @@ Seam is in the process of pushing an access group membership update to the integ
   
   <details>
       <summary>Enum values:</summary>
+  
       - <code>updating_group_membership</code>
   </details>
   
@@ -703,6 +717,7 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
   
   <details>
       <summary>Enum values:</summary>
+  
       - <code>being_deleted</code>
   </details>
   
@@ -733,6 +748,7 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
   
   <details>
       <summary>Enum values:</summary>
+  
       - <code>salto_ks_user_not_subscribed</code>
   </details>
   
@@ -763,6 +779,7 @@ An unknown issue occurred while syncing the state of this [ACS user](https://doc
   
   <details>
       <summary>Enum values:</summary>
+  
       - <code>unknown_issue_with_acs_user</code>
   </details>
   
@@ -793,6 +810,7 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
   
   <details>
       <summary>Enum values:</summary>
+  
       - <code>latch_resident_user</code>
   </details>
   

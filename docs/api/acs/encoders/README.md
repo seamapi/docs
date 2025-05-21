@@ -94,6 +94,7 @@ Errors associated with the [encoder](../../../capability-guides/access-systems/w
     Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
+  
       - <code>acs_encoder_removed`</code>
   </details>
   <strong><code>message</code></strong> <i>String</i>
