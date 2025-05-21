@@ -34,7 +34,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 {{#if request.parameters.length}}
 {{#each request.parameters}}
-**`{{this.name}}`** *{{this.jsonType}}*{{#if this.itemFormat}} *of {{this.itemFormat}}s*{{/if}}{{#if this.required}} (Required){{/if}}
+**`{{this.name}}`** {{#if this.jsonType}}*{{this.jsonType}}*{{/if}}{{#if this.itemFormat}} *of {{this.itemFormat}}s*{{/if}}{{#if this.required}} (Required){{/if}}
 {{#if this.description}}
 
 {{this.description}}
@@ -82,7 +82,7 @@ None
 ---
 
 ## Examples
-  
+
 {{#with primaryCodeSample}}
 ### {{this.title}}
 
