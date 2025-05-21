@@ -64,6 +64,7 @@
 {{#if enumValues}}
 <details>
 <summary>Enum values</summary>
+
 {{#each enumValues}}
 - <code>{{this}}</code>
 {{/each}}
@@ -81,6 +82,7 @@ This object has no properties.
 {{else}}
 <details>
   <summary>Child Properties</summary>
+
   {{#each objectProperties}}
   - {{> property-nested this}}
   {{/each}}
