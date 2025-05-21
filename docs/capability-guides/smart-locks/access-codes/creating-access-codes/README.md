@@ -19,29 +19,29 @@ layout:
 
 ## Overview
 
-This guide explains how to create online access codes on an online smart lock. With the [Access Codes](../../../api-clients/access_codes/) API, generate PIN codes on a door lock and share it with visitors, allowing them keyless access.
+This guide explains how to create online access codes on an online smart lock. With the [Access Codes](../../../../api-clients/access_codes/) API, generate PIN codes on a door lock and share it with visitors, allowing them keyless access.
 
 Seam supports programming two types of online access codes for online door locks:
 
-1. **Ongoing**: Ideal for residents or long-term users. Ongoing codes remain active on a device until removed. Create one by omitting both `starts_at` and `ends_at`. To remove the code, use the [Delete Access Code](../../../api-clients/access_codes/delete.md) endpoint.
+1. **Ongoing**: Ideal for residents or long-term users. Ongoing codes remain active on a device until removed. Create one by omitting both `starts_at` and `ends_at`. To remove the code, use the [Delete Access Code](../../../../api-clients/access_codes/delete.md) endpoint.
 2. **Time Bound**: Suitable for temporary access like guest visits or service appointments. These codes operate between a designated `starts_at` and `ends_at` time window, granting access only during that period.
 
 {% hint style="info" %}
-For more information about creating offline access codes, see [Managing Offline Access Codes](offline-access-codes.md).
+For more information about creating offline access codes, see [Managing Offline Access Codes](../../../../products/smart-locks/access-codes/offline-access-codes.md).
 {% endhint %}
 
 ***
 
 ## Before You Begin: Confirm Capabilities
 
-Before you attempt to create an [online](./#what-is-an-access-code) or [offline](./#offline-access-codes) access code, be sure to confirm that your device has the capability to perform these operations. You can inspect the capabilities of a device by checking the following [capability flags](../../../capability-guides/device-and-system-capabilities.md#capability-flags) for the device:
+Before you attempt to create an [online](../../../../products/smart-locks/access-codes/#what-is-an-access-code) or [offline](../../../../products/smart-locks/access-codes/#offline-access-codes) access code, be sure to confirm that your device has the capability to perform these operations. You can inspect the capabilities of a device by checking the following [capability flags](../../../device-and-system-capabilities.md#capability-flags) for the device:
 
 * `device.can_program_online_access_codes`
 * `device.can_program_offline_access_codes`
 
-Use [Get Device](../../../api-clients/devices/get.md) (or [Get Lock](../../../api-clients/locks/get.md)) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to create an access code.
+Use [Get Device](../../../../api-clients/devices/get.md) (or [Get Lock](../../../../api-clients/locks/get.md)) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to create an access code.
 
-If either of these capability flags is `false` or not present, you can view the [properties](../../../api-clients/devices/#device-properties) of the device, [errors](../../../api-clients/devices/#device-error-types) or [warnings](../../../api-clients/devices/#device-warning-types) for the device, and [events](../../../api-clients/events/#event-types) related to the device to learn more about the cause of these issues. For example, you could examine the following device properties:
+If either of these capability flags is `false` or not present, you can view the [properties](../../../../api-clients/devices/#device-properties) of the device, [errors](../../../../api-clients/devices/#device-error-types) or [warnings](../../../../api-clients/devices/#device-warning-types) for the device, and [events](../../../../api-clients/events/#event-types) related to the device to learn more about the cause of these issues. For example, you could examine the following device properties:
 
 * `device.properties.model.has_built_in_keypad`
 * `device.properties.model.can_connect_accessory_keypad`
@@ -228,13 +228,13 @@ device, uErr := client.Devices.Get(
 
 Ongoing online access codes are ideal for long-term users that wish to keep the same code. Ongoing codes remain active on a device until removed.
 
-<figure><img src="../../../.gitbook/assets/ongoing-access-code-light.png" alt=""><figcaption><p>Timeline of an ongoing access code. The code remains active, until you use the Seam API to remove it.</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/ongoing-access-code-light.png" alt=""><figcaption><p>Timeline of an ongoing access code. The code remains active, until you use the Seam API to remove it.</p></figcaption></figure>
 
 ### 1. Create an Ongoing Online Access Code
 
-Set an ongoing online access code by providing the `device_id` of the smart lock on which you want to [create an access code](../../../api-clients/access_codes/create.md). Assign an optional `name` to the access code for easier identification within the [Seam Console](https://console.seam.co) and smart lock app.
+Set an ongoing online access code by providing the `device_id` of the smart lock on which you want to [create an access code](../../../../api-clients/access_codes/create.md). Assign an optional `name` to the access code for easier identification within the [Seam Console](https://console.seam.co) and smart lock app.
 
-To customize the PIN code, specify a desired PIN for the `code` property. If you do not specify a `code`, you can set the `preferred_code_length`, and Seam generates a code of this length if the affected device supports the specified preferred code length. See [Access Code Requirements for Door Locks](access-code-requirements-for-door-locks.md) to understand any requirements specific to the door lock.
+To customize the PIN code, specify a desired PIN for the `code` property. If you do not specify a `code`, you can set the `preferred_code_length`, and Seam generates a code of this length if the affected device supports the specified preferred code length. See [Access Code Requirements for Door Locks](../../../../products/smart-locks/access-codes/access-code-requirements-for-door-locks.md) to understand any requirements specific to the door lock.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -550,11 +550,11 @@ There are two methods to verify that an ongoing access code has been set on the 
 
 ### **Polling Method**
 
-Use the `access_code` reference returned by the create function to call the [Get Access Code](../../../api-clients/access_codes/get/) function. A basic implementation would involve polling this endpoint until the `status` of the access code updates to `set`.
+Use the `access_code` reference returned by the create function to call the [Get Access Code](../../../../api-clients/access_codes/get/) function. A basic implementation would involve polling this endpoint until the `status` of the access code updates to `set`.
 
-If the `status` remains `setting` for a very long time, or if the `access_code` object contains any `warnings` or `errors` properties, consult [the guide on "Troubleshooting Access Code Issues"](troubleshooting-access-code-issues.md) for further guidance.
+If the `status` remains `setting` for a very long time, or if the `access_code` object contains any `warnings` or `errors` properties, consult [the guide on "Troubleshooting Access Code Issues"](../../../../products/smart-locks/access-codes/troubleshooting-access-code-issues.md) for further guidance.
 
-<figure><img src="../../../.gitbook/assets/ongoing-access-code-polling-verification-dark.png" alt=""><figcaption><p>Illustration of the polling verification step for an ongoing access code</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/ongoing-access-code-polling-verification-dark.png" alt=""><figcaption><p>Illustration of the polling verification step for an ongoing access code</p></figcaption></figure>
 
 ### **Webhook Events Method**
 
@@ -563,9 +563,9 @@ To avoid polling, monitor for incoming Seam webhook events related to the code s
 * The `access_code.set_on_device` event indicates the successful setting of the access code on the device.
 * The `access_code.failed_to_set_on_device` or `access_code.delay_in_setting_on_device` events indicate a delay or failure.
 
-In the event of delay or failure, refer to [the "Troubleshooting access code issues" guide](troubleshooting-access-code-issues.md) for assistance and mitigation strategies.
+In the event of delay or failure, refer to [the "Troubleshooting access code issues" guide](../../../../products/smart-locks/access-codes/troubleshooting-access-code-issues.md) for assistance and mitigation strategies.
 
-<figure><img src="../../../.gitbook/assets/ongoing-access-code-webhook-verification-dark.png" alt=""><figcaption><p>Illustration of the webhook verification method for an ongoing access code</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/ongoing-access-code-webhook-verification-dark.png" alt=""><figcaption><p>Illustration of the webhook verification method for an ongoing access code</p></figcaption></figure>
 
 ***
 
@@ -573,15 +573,15 @@ In the event of delay or failure, refer to [the "Troubleshooting access code iss
 
 Time-bound online access codes are suitable for temporary access, like guest visits or service appointments. These codes operate between designated `starts_at` and `ends_at` timestamps, granting access only during that period. Seam automatically ensures that the code is programmed on the device at the `starts_at` time and unprogrammed at the `ends_at` time.
 
-<figure><img src="../../../.gitbook/assets/time-bound-access-code-light.png" alt=""><figcaption><p>Timeline of an time-bound access code. The code remains active until the ends_at timestamp that you configured using the Seam API.</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/time-bound-access-code-light.png" alt=""><figcaption><p>Timeline of an time-bound access code. The code remains active until the ends_at timestamp that you configured using the Seam API.</p></figcaption></figure>
 
 ### 1. Create a Time-Bound Online Access Code
 
-To set a time-bound online access code, provide the `device_id` of the smart lock on which you want to program a code, along with `starts_at` and `ends_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamps to define the active time window for the code. For more details, see the [Create Access Code](../../../api-clients/access_codes/create.md) endpoint.
+To set a time-bound online access code, provide the `device_id` of the smart lock on which you want to program a code, along with `starts_at` and `ends_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamps to define the active time window for the code. For more details, see the [Create Access Code](../../../../api-clients/access_codes/create.md) endpoint.
 
 As with ongoing codes, you can assign an optional `name` to the access code. A clear name helps users to identify the access code quickly within their smart lock app.
 
-Similarly, to customize the PIN code, specify a desired PIN in the `code` property. If you do not specify a `code`, you can set the `preferred_code_length`, and Seam generates a code of this length if the affected device supports the specified preferred code length. See the [Access Code Requirements for Door Locks](access-code-requirements-for-door-locks.md) to understand any requirements specific to the door lock brand.
+Similarly, to customize the PIN code, specify a desired PIN in the `code` property. If you do not specify a `code`, you can set the `preferred_code_length`, and Seam generates a code of this length if the affected device supports the specified preferred code length. See the [Access Code Requirements for Door Locks](../../../../products/smart-locks/access-codes/access-code-requirements-for-door-locks.md) to understand any requirements specific to the door lock brand.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -919,15 +919,15 @@ return nil
 
 ### 2. Verify Successful Time-Bound Code Programming
 
-The [lifecycle of a time-bound access code](lifecycle-of-access-codes.md) is marked by distinct phases:
+The [lifecycle of a time-bound access code](../../../../products/smart-locks/access-codes/lifecycle-of-access-codes.md) is marked by distinct phases:
 
 1. `Unset`: When initially created on Seam, the access code remains in an `unset` state, indicating it has not yet been programmed onto the door lock due to its future activation time.
 2. `Setting`: As the scheduled `starts_at` time approaches, Seam initiates the process of programming the code onto the lock, transitioning the code's `status` to `setting`.
 3. `Set`: Upon successful programming, the status updates to `set`, signaling that the code is loaded onto the lock, and may grant the designated user the ability to unlock the door.
 
-<figure><img src="../../../.gitbook/assets/state-sequence-for-access-codes-lifecycle-dark.png" alt=""><figcaption><p>Life-cycle of a time-bound access code</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/state-sequence-for-access-codes-lifecycle-dark.png" alt=""><figcaption><p>Life-cycle of a time-bound access code</p></figcaption></figure>
 
-On door locks that support [natively scheduled](./#native-scheduling) access codes, Seam will preload the access code into the device's internal memory bank **72 hours ahead** of the `starts_at` time. Even if preloaded in memory, the access code will remain in an `unset` state ahead of the `starts_at` time and await the precise activation moment to toggle its status. When the `starts_at` time arrives, the access code becomes active and transition to a `set` status, granting the designated user the ability to utilize it for entry. If there's an issue programming the natively-scheduled code by its `starts_at` time, the code's status will display as `setting`. For more information on the lifecycle of access codes, [please refer to this guide](lifecycle-of-access-codes.md).
+On door locks that support [natively scheduled](../../../../products/smart-locks/access-codes/#native-scheduling) access codes, Seam will preload the access code into the device's internal memory bank **72 hours ahead** of the `starts_at` time. Even if preloaded in memory, the access code will remain in an `unset` state ahead of the `starts_at` time and await the precise activation moment to toggle its status. When the `starts_at` time arrives, the access code becomes active and transition to a `set` status, granting the designated user the ability to utilize it for entry. If there's an issue programming the natively-scheduled code by its `starts_at` time, the code's status will display as `setting`. For more information on the lifecycle of access codes, [please refer to this guide](../../../../products/smart-locks/access-codes/lifecycle-of-access-codes.md).
 
 There are two methods to verify that an time-bound access code has been set on the device:
 
@@ -936,11 +936,11 @@ There are two methods to verify that an time-bound access code has been set on t
 
 ### **Polling Method**
 
-Use the `access_code` reference returned by the create function to call the [Get Access Code](../../../api-clients/access_codes/get/) function. In a basic implementation, you would poll this endpoint at the `starts_at` time to check if the access code's status is updated to `set`.
+Use the `access_code` reference returned by the create function to call the [Get Access Code](../../../../api-clients/access_codes/get/) function. In a basic implementation, you would poll this endpoint at the `starts_at` time to check if the access code's status is updated to `set`.
 
-If the `status` remains `setting`, or if the `access_code` object displays any `warnings` or `errors`, refer to [the "Troubleshooting Access Code Issues" guide](troubleshooting-access-code-issues.md) for assistance.
+If the `status` remains `setting`, or if the `access_code` object displays any `warnings` or `errors`, refer to [the "Troubleshooting Access Code Issues" guide](../../../../products/smart-locks/access-codes/troubleshooting-access-code-issues.md) for assistance.
 
-<figure><img src="../../../.gitbook/assets/timebound-access-code-polling-verification-dark.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/timebound-access-code-polling-verification-dark.png" alt=""><figcaption></figcaption></figure>
 
 ### **Webhook Events Method**
 
@@ -949,6 +949,6 @@ To avoid polling, monitor for incoming Seam webhook events related to the code s
 * The `access_code.set_on_device` event indicates the successful setting of the access code on the device.
 * The `access_code.failed_to_set_on_device` or `access_code.delay_in_setting_on_device` events indicate a delay or failure.
 
-In the event of delay or failure, refer to [the "Troubleshooting access code issues" guide](troubleshooting-access-code-issues.md) for assistance and mitigation strategies.
+In the event of delay or failure, refer to [the "Troubleshooting access code issues" guide](../../../../products/smart-locks/access-codes/troubleshooting-access-code-issues.md) for assistance and mitigation strategies.
 
-<figure><img src="../../../.gitbook/assets/timebound-access-code-webhook-verification-dark.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/timebound-access-code-webhook-verification-dark.png" alt=""><figcaption></figcaption></figure>

@@ -35953,12 +35953,23 @@
           "description": "A basic system.",
           "resource_type": "acs_system",
           "properties": {
-            "acs_system_id": "bbcea306-7201-4d85-b527-3abc55277203"
+            "acs_system_id": "bbcea306-7201-4d85-b527-3abc55277203",
+            "name": "Salto KS Credential Manager",
+            "workspace_id": "bbcea306-7201-4d85-b527-3abc55277203",
+            "created_at": "2025-05-15T13:18:14.664Z",
+            "is_credential_manager": true,
+            "connected_account_ids": ["bbcea306-7201-4d85-b527-3abc55277203"],
+            "connected_account_id": "bbcea306-7201-4d85-b527-3abc55277203",
+            "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
+            "image_alt_text": "Salto KS site Logo",
+            "errors": [],
+            "warnings": [],
+            "location": { "time_zone": null }
           },
           "resource": {
             "seam_cli": {
               "title": "Seam CLI",
-              "resource_data": "{ \"acs_system_id\": \"bbcea306-7201-4d85-b527-3abc55277203\" }",
+              "resource_data": "{\n  \"acs_system_id\": \"bbcea306-7201-4d85-b527-3abc55277203\",\n  \"name\": \"Salto KS Credential Manager\",\n  \"workspace_id\": \"bbcea306-7201-4d85-b527-3abc55277203\",\n  \"created_at\": \"2025-05-15T13:18:14.664Z\",\n  \"is_credential_manager\": true,\n  \"connected_account_ids\": [\"bbcea306-7201-4d85-b527-3abc55277203\"],\n  \"connected_account_id\": \"bbcea306-7201-4d85-b527-3abc55277203\",\n  \"image_url\": \"https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128\",\n  \"image_alt_text\": \"Salto KS site Logo\",\n  \"errors\": [],\n  \"warnings\": [],\n  \"location\": { \"time_zone\": null }\n}",
               "resource_data_syntax": "json"
             }
           }

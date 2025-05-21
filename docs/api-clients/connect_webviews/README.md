@@ -34,62 +34,6 @@ To enable a user to connect their device account to Seam through your app, you m
 | **`authorized_at`**                    | String                                     | Date and time at which the user authorized (through the Connect Webview) the management of their devices                                                                                                                                                                                                                      |
 | **`workspace_id`**                     | String (UUID)                              | ID of the [workspace](../../core-concepts/workspaces/) that contains the Connect Webview                                                                                                                                                                                                                                      |
 
-### Provider Category Keys
-
-When you [create a Connect Webview](create.md), specify the desired provider category key in the `provider_category` parameter. Alternately, to specify a list of providers explicitly, use the `accepted_providers` parameter with a list of [device provider keys](./#device-provider-keys).
-
-| key                   | Description                                                        |
-| --------------------- | ------------------------------------------------------------------ |
-| `stable`              | Only returns provider integrations marked as stable.               |
-| `consumer_smartlocks` | Only returns provider integrations marked as consumer smart locks. |
-| `thermostats`         | Only returns provider integrations marked as thermostats.          |
-| `noise_sensors`       | Only returns provider integrations marked as noise sensors.        |
-
-{% hint style="info" %}
-To list all providers within a category, use the [List Device Providers](../devices/list_device_providers.md) method with the desired `provider_category` filter.
-{% endhint %}
-
-### Device Provider Keys
-
-To list all provider keys, use the [List Device Providers](../devices/list_device_providers.md) method with no filters.
-
-| Provider Name                                                                                                                          | Device Provider Key             |
-| -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
-| [2N](../../device-guides/2n-intercom-systems.md)                                                                                       | `my_2n`                         |
-| [4SUITES](../../device-and-system-integration-guides/4suites-locks/)                                                                   | `four_suites`                   |
-| [Akiles](../../device-and-system-integration-guides/akiles-locks/)                                                                     | `akiles`                        |
-| [Akuvox](https://akuvox.com/)                                                                                                          | `akuvox`                        |
-| [ASSA ABLOY Credential Service](../../device-and-system-integration-guides/assa-abloy-credential-services-credential-manager.md)       | `assa_abloy_credential_service` |
-| [ASSA ABLOY Visionline Access Control System](../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/) | `visionline`                    |
-| [August Home](../../device-guides/august-locks.md)                                                                                     | `august`                        |
-| [Avigilon Alta](../../device-guides/avigilon-alta-access-system.md)                                                                    | `avigilon_alta`                 |
-| [Brivo](../../device-guides/brivo-access.md)                                                                                           | `brivo`                         |
-| [ControlByWeb](../../device-guides/get-started-with-controlbyweb-devices.md)                                                           | `controlbyweb`                  |
-| [DoorKing](https://www.doorking.com/)                                                                                                  | `doorking`                      |
-| [dormakaba Oracode](../../device-guides/dormakaba-oracode-locks.md)                                                                    | `dormakaba_oracode`             |
-| [ecobee](../../device-guides/ecobee-thermostats.md)                                                                                    | `ecobee`                        |
-| [Genie Aladdin Connect](https://www.geniecompany.com/aladdin-connect-by-genie)                                                         | `genie`                         |
-| [Honeywell Resideo](../../device-and-system-integration-guides/honeywell-thermostats/)                                                 | `honeywell_resideo`             |
-| [igloohome](../../device-guides/igloohome-locks.md)                                                                                    | `igloohome`                     |
-| [Kwikset](../../device-guides/kwikset-locks.md)                                                                                        | `kwikset`                       |
-| [Latch](../../device-and-system-integration-guides/latch-access-control-system/)                                                       | `latch`                         |
-| [Linear](https://linear-solutions.com/)                                                                                                | `linear`                        |
-| [Lockly](../../device-and-system-integration-guides/lockly-locks/)                                                                     | `lockly`                        |
-| [Minut](../../device-guides/minut-sensors.md)                                                                                          | `minut`                         |
-| [Nest](../../device-guides/google-nest-thermostats/)                                                                                   | `google_nest`                   |
-| [NoiseAware](../../device-guides/noiseaware-sensors.md)                                                                                | `noiseaware`                    |
-| [Nuki](../../device-guides/nuki-locks.md)                                                                                              | `nuki`                          |
-| [PTI Storlogix Cloud](../../device-guides/pti-storlogix-cloud.md)                                                                      | `pti`                           |
-| [Salto KS Access System](../../device-and-system-integration-guides/salto-ks-access-control-system/)                                   | `salto_ks`                      |
-| [Salto KS Locks](../../device-guides/salto-locks.md)                                                                                   | `salto`                         |
-| [Salto ProAccess Space Access System](../../device-and-system-integration-guides/salto-proaccess-space-access-system/)                 | `salto_space`                   |
-| [Schlage](https://www.schlage.com/en/home/products/products-smart-locks.html)                                                          | `schlage`                       |
-| [SmartThings](https://www.smartthings.com/)                                                                                            | `smartthings`                   |
-| [Tedee](../../device-and-system-integration-guides/tedee-locks/)                                                                       | `tedee`                         |
-| [TTLock](../../device-guides/ttlock-locks.md)                                                                                          | `ttlock`                        |
-| [Wyze](../../device-guides/wyze-locks.md)                                                                                              | `wyze`                          |
-| [Yale](../../device-guides/yale-locks.md)                                                                                              | `yale`                          |
-
 ## `connect_webview` Methods
 
 You can perform the following actions on `connect_webview` objects:

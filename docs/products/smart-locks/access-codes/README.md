@@ -107,7 +107,7 @@ Note that the `name` provided on Seam is used to identify the code on Seam and i
 
 To provide a consistent experience, Seam identifies an access code on Seam by its `name` but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.
 
-To help end users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break a name down into components).
+To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break a name down into components).
 
 ***
 
