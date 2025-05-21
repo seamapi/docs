@@ -28,7 +28,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`user_identity_id`** ** (Required)
+**`user_identity_id`**  (Required)
 
 ID of the user identity for which you want to retrieve all access control systems.
 
@@ -51,7 +51,7 @@ Array of [acs\_systems](./)
 ---
 
 ## Examples
-  
+
 ### List ACS systems associated with a user identity
 
 Specify the desired `user_identity_id`.

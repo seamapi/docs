@@ -27,7 +27,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`user_identity_id`** ** (Required)
+**`user_identity_id`**  (Required)
 
 ID of the user identity for which you want to retrieve all ACS users.
 
@@ -50,7 +50,7 @@ Array of [acs\_users](./)
 ---
 
 ## Examples
-  
+
 ### List ACS users for a user identity
 
 Specify the desired `user_identity_id`.

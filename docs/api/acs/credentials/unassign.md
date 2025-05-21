@@ -27,13 +27,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_credential_id`** ** (Required)
+**`acs_credential_id`**  (Required)
 
 ID of the desired credential.
 
 ---
 
-**`acs_user_id`** ** (Required)
+**`acs_user_id`**  (Required)
 
 ID of the desired user.
 
@@ -47,7 +47,7 @@ void
 ---
 
 ## Examples
-  
+
 ### Unassign a credential from an ACS user
 
 Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.

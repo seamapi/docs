@@ -27,13 +27,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_credential_id`** **
+**`acs_credential_id`** 
 
 ID of the [credential](../../capability-guides/access-systems/managing-credentials.md) by which to filter the list of returned phones.
 
 ---
 
-**`owner_user_identity_id`** **
+**`owner_user_identity_id`** 
 
 ID of the user identity that represents the owner by which to filter the list of returned phones.
 

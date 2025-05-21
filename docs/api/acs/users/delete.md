@@ -27,7 +27,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_user_id`** ** (Required)
+**`acs_user_id`**  (Required)
 
 ID of the desired `acs_user`.
 
@@ -41,7 +41,7 @@ void
 ---
 
 ## Examples
-  
+
 ### Delete an ACS user
 
 Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).

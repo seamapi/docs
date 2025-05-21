@@ -28,15 +28,15 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`device_id`** ** (Required)
+**`device_id`**  (Required)
 
 ---
 
-**`fan_mode`** **
+**`fan_mode`** 
 
 ---
 
-**`fan_mode_setting`** **
+**`fan_mode_setting`** 
 
 Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for the thermostat.
 
@@ -65,7 +65,7 @@ Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermos
 ---
 
 ## Examples
-  
+
 ### Set fan mode setting
 
 Specify the desired fan mode setting.

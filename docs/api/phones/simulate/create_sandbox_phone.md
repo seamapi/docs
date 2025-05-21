@@ -27,25 +27,25 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`user_identity_id`** ** (Required)
+**`user_identity_id`**  (Required)
 
 ID of the user identity to associate with the simulated phone.
 
 ---
 
-**`assa_abloy_metadata`** **
+**`assa_abloy_metadata`** 
 
 ASSA ABLOY metadata to associate with the simulated phone.
 
 ---
 
-**`custom_sdk_installation_id`** **
+**`custom_sdk_installation_id`** 
 
 ID of the custom SDK installation to use for the simulated phone.
 
 ---
 
-**`phone_metadata`** **
+**`phone_metadata`** 
 
 Metadata to associate with the simulated phone.
 

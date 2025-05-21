@@ -27,13 +27,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`device_id`** ** (Required)
+**`device_id`**  (Required)
 
 ID of the desired managed device.
 
 ---
 
-**`user_identity_id`** ** (Required)
+**`user_identity_id`**  (Required)
 
 ID of the desired user identity.
 
@@ -47,7 +47,7 @@ void
 ---
 
 ## Examples
-  
+
 ### Grant a user identity access to a device
 
 Specify the desired `user_identity_id` and `device_id`.

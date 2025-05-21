@@ -29,7 +29,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_system_id`** ** (Required)
+**`acs_system_id`**  (Required)
 
 ID of the desired access control system.
 
@@ -52,7 +52,7 @@ ID of the desired access control system.
 ---
 
 ## Examples
-  
+
 ### Get a Specific ACS system
 
 Specify the `acs_system_id` of the ACS system that you want to retrieve.

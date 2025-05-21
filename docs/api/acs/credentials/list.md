@@ -28,37 +28,37 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_system_id`** **
+**`acs_system_id`** 
 
 ID of the access control system for which you want to retrieve all credentials.
 
 ---
 
-**`acs_user_id`** **
+**`acs_user_id`** 
 
 ID of the ACS user for which you want to retrieve all credentials.
 
 ---
 
-**`created_before`** **
+**`created_before`** 
 
 Date and time, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format, before which events to return were created.
 
 ---
 
-**`is_multi_phone_sync_credential`** **
+**`is_multi_phone_sync_credential`** 
 
 Indicates whether you want to retrieve only multi-phone sync credentials or non-multi-phone sync credentials.
 
 ---
 
-**`limit`** **
+**`limit`** 
 
 Number of credentials to return.
 
 ---
 
-**`user_identity_id`** **
+**`user_identity_id`** 
 
 ID of the user identity for which you want to retrieve all credentials.
 
@@ -81,7 +81,7 @@ Array of [acs\_credentials](./)
 ---
 
 ## Examples
-  
+
 ### List credentials
 
 Filter the list of returned credentials by `acs_user_id`, `acs_system_id`, or `user_identity_id`. You can also include `is_multi_phone_sync_credential`.

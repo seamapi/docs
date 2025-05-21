@@ -28,7 +28,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`device_id`** ** (Required)
+**`device_id`**  (Required)
 
 ID of the desired thermostat device.
 
@@ -57,7 +57,7 @@ ID of the desired thermostat device.
 ---
 
 ## Examples
-  
+
 ### Set to off mode
 
 Specify the `device_id` of the thermostat that you want to set to off mode.

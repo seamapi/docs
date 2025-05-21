@@ -27,7 +27,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_credential_id`** ** (Required)
+**`acs_credential_id`**  (Required)
 
 ID of the desired credential.
 
@@ -50,7 +50,7 @@ ID of the desired credential.
 ---
 
 ## Examples
-  
+
 ### Get a credential
 
 Specify the `acs_credential_id` of the credential that you want to retrieve.

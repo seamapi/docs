@@ -27,7 +27,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_credential_id`** ** (Required)
+**`acs_credential_id`**  (Required)
 
 ID of the credential for which you want to retrieve all entrances to which this credential grants access.
 
@@ -50,7 +50,7 @@ Array of [acs\_entrances](./)
 ---
 
 ## Examples
-  
+
 ### List accessible entrances
 
 Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.

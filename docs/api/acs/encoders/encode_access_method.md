@@ -27,13 +27,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`access_method_id`** ** (Required)
+**`access_method_id`**  (Required)
 
 ID of the `access_method` to encode onto a card.
 
 ---
 
-**`acs_encoder_id`** ** (Required)
+**`acs_encoder_id`**  (Required)
 
 ID of the `acs_encoder` to use to encode the `access_method`.
 

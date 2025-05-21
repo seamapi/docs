@@ -27,47 +27,47 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_system_id`** ** (Required)
+**`acs_system_id`**  (Required)
 
 ID of the `acs_system` to which to add the new `acs_user`.
 
 ---
 
-**`full_name`** ** (Required)
+**`full_name`**  (Required)
 
 Full name of the new `acs_user`.
 
 ---
 
-**`access_schedule`** **
+**`access_schedule`** 
 
 `starts_at` and `ends_at` timestamps for the new `acs_user`'s access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. `starts_at` defaults to the current time if not provided. `ends_at` is optional and must be a time in the future and after `starts_at`.
 
 ---
 
-**`acs_access_group_ids`** ** *of UUIDs*
+**`acs_access_group_ids`**  *of UUIDs*
 
 Array of `access_group_id`s to indicate the access groups to which to add the new `acs_user`.
 
 ---
 
-**`email`** **
+**`email`** 
 
 ---
 
-**`email_address`** **
+**`email_address`** 
 
 Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 ---
 
-**`phone_number`** **
+**`phone_number`** 
 
 Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
 
 ---
 
-**`user_identity_id`** **
+**`user_identity_id`** 
 
 ID of the user identity with which to associate the new `acs_user`.
 
@@ -90,7 +90,7 @@ ID of the user identity with which to associate the new `acs_user`.
 ---
 
 ## Examples
-  
+
 ### Create a new ACS user
 
 Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).

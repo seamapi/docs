@@ -27,7 +27,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_access_group_id`** ** (Required)
+**`acs_access_group_id`**  (Required)
 
 ID of the access group for which you want to retrieve all accessible entrances.
 
@@ -50,7 +50,7 @@ Array of [acs\_entrances](./)
 ---
 
 ## Examples
-  
+
 ### List accessible entrances for an access group
 
 Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.

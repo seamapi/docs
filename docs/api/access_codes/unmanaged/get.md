@@ -30,19 +30,19 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`access_code_id`** **
+**`access_code_id`** 
 
 ID of the unmanaged access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.
 
 ---
 
-**`code`** **
+**`code`** 
 
 Code of the unmanaged access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.
 
 ---
 
-**`device_id`** **
+**`device_id`** 
 
 ID of the device containing the unmanaged access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.
 

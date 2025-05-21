@@ -28,25 +28,25 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`device_id`** ** (Required)
+**`device_id`**  (Required)
 
 ID of the device for which to report constraints.
 
 ---
 
-**`max_code_length`** **
+**`max_code_length`** 
 
 Maximum supported code length as an integer between 4 and 20, inclusive. You can specify either `min_code_length`/`max_code_length` or `supported_code_lengths`.
 
 ---
 
-**`min_code_length`** **
+**`min_code_length`** 
 
 Minimum supported code length as an integer between 4 and 20, inclusive. You can specify either `min_code_length`/`max_code_length` or `supported_code_lengths`.
 
 ---
 
-**`supported_code_lengths`** ** *of Numbers*
+**`supported_code_lengths`**  *of Numbers*
 
 Array of supported code lengths as integers between 4 and 20, inclusive. You can specify either `supported_code_lengths` or `min_code_length`/`max_code_length`.
 

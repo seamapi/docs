@@ -28,11 +28,11 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_entrance_id`** ** (Required)
+**`acs_entrance_id`**  (Required)
 
 ---
 
-**`include_if`** ** *of Enums*
+**`include_if`**  *of Enums*
 <details>
 
 <summary>Enum values</summary>
@@ -60,7 +60,7 @@ Array of [acs\_credentials](./)
 ---
 
 ## Examples
-  
+
 ### List credentials with access to an entrance
 
 Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.

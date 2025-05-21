@@ -28,11 +28,11 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_credential_id`** **
+**`acs_credential_id`** 
 
 ---
 
-**`acs_system_id`** **
+**`acs_system_id`** 
 
 ---
 
@@ -53,7 +53,7 @@ Array of [acs\_entrances](./)
 ---
 
 ## Examples
-  
+
 ### List entrances
 
 To filter the list of entrances, specify the desired `acs_system_id` or `acs_user_id`.

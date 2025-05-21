@@ -27,13 +27,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_access_group_id`** ** (Required)
+**`acs_access_group_id`**  (Required)
 
 ID of the desired access group.
 
 ---
 
-**`acs_user_id`** ** (Required)
+**`acs_user_id`**  (Required)
 
 ID of the desired user.
 
@@ -47,7 +47,7 @@ void
 ---
 
 ## Examples
-  
+
 ### Add an ACS user to an access group
 
 Specify the `acs_access_group_id` and `acs_user_id` to add an ACS user to an access group.

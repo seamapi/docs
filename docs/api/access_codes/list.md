@@ -30,31 +30,31 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`access_code_ids`** ** *of UUIDs*
+**`access_code_ids`**  *of UUIDs*
 
 IDs of the access codes that you want to retrieve. Specify either `device_id` or `access_code_ids`.
 
 ---
 
-**`device_id`** **
+**`device_id`** 
 
 ID of the device for which you want to list access codes. Specify either `device_id` or `access_code_ids`.
 
 ---
 
-**`limit`** **
+**`limit`** 
 
 Numerical limit on the number of access codes to return.
 
 ---
 
-**`page_cursor`** **
+**`page_cursor`** 
 
 Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
 
 ---
 
-**`user_identifier_key`** **
+**`user_identifier_key`** 
 
 Your user ID for the user by which to filter access codes.
 

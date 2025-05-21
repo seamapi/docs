@@ -27,13 +27,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_user_id`** ** (Required)
+**`acs_user_id`**  (Required)
 
 ID of the desired ACS user.
 
 ---
 
-**`user_identity_id`** ** (Required)
+**`user_identity_id`**  (Required)
 
 ID of the desired user identity.
 
@@ -47,7 +47,7 @@ void
 ---
 
 ## Examples
-  
+
 ### Add an ACS user to a user identity
 
 Specify the desired `acs_user_id` and `user_identity_id`.

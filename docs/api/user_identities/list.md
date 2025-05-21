@@ -28,7 +28,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`credential_manager_acs_system_id`** **
+**`credential_manager_acs_system_id`** 
 
 ---
 
@@ -49,7 +49,7 @@ Array of [user\_identitys](./)
 ---
 
 ## Examples
-  
+
 ### List user identities
 
 To filter the list of user identities, specify the desired `credential_manager_acs_system_id`.

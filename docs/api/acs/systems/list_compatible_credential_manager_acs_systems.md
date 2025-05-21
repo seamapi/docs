@@ -29,7 +29,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_system_id`** ** (Required)
+**`acs_system_id`**  (Required)
 
 ID of the ACS system for which you want to retrieve all compatible credential manager ACS systems.
 
@@ -52,7 +52,7 @@ Array of [acs\_systems](./)
 ---
 
 ## Examples
-  
+
 ### List compatible credential manager ACS systems
 
 Specify the `acs_system_id` for which you want to retrieve all compatible credential manager ACS systems.

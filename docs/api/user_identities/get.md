@@ -27,13 +27,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`user_identity_id`** **
+**`user_identity_id`** 
 
 ID of the desired user identity.
 
 ---
 
-**`user_identity_key`** **
+**`user_identity_key`** 
 
 ---
 
@@ -54,7 +54,7 @@ ID of the desired user identity.
 ---
 
 ## Examples
-  
+
 ### Get a user identity
 
 Specify the `user_identity_id` of the user identity that you want to retrieve.

@@ -27,7 +27,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`user_identity_id`** ** (Required)
+**`user_identity_id`**  (Required)
 
 ID of the desired user identity.
 
@@ -41,7 +41,7 @@ void
 ---
 
 ## Examples
-  
+
 ### Delete a user identity
 
 Specify the desired `user_identity_id`.

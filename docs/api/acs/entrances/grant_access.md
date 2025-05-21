@@ -27,11 +27,11 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_entrance_id`** ** (Required)
+**`acs_entrance_id`**  (Required)
 
 ---
 
-**`acs_user_id`** ** (Required)
+**`acs_user_id`**  (Required)
 
 ---
 

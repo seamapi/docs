@@ -27,7 +27,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`enrollment_automation_id`** ** (Required)
+**`enrollment_automation_id`**  (Required)
 
 ID of the desired enrollment automation.
 
@@ -41,7 +41,7 @@ void
 ---
 
 ## Examples
-  
+
 ### Delete an enrollment automation
 
 Specify the desired `enrollment_automation_id`.

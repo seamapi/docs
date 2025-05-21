@@ -30,7 +30,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`connected_account_id`** **
+**`connected_account_id`** 
 
 ID of the connected account by which to filter the list of returned access control systems.
 
@@ -53,7 +53,7 @@ Array of [acs\_systems](./)
 ---
 
 ## Examples
-  
+
 ### List ACS systems by connected account
 
 To filter the list of ACS systems, include a `connected_account_id`.

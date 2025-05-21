@@ -28,19 +28,19 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`code`** ** (Required)
+**`code`**  (Required)
 
 Code of the simulated unmanaged access code.
 
 ---
 
-**`device_id`** ** (Required)
+**`device_id`**  (Required)
 
 ID of the device for which you want to simulate the creation of an unmanaged access code.
 
 ---
 
-**`name`** ** (Required)
+**`name`**  (Required)
 
 Name of the simulated unmanaged access code.
 

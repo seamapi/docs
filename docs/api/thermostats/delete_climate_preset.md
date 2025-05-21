@@ -28,13 +28,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`climate_preset_key`** ** (Required)
+**`climate_preset_key`**  (Required)
 
 Climate preset key of the desired climate preset.
 
 ---
 
-**`device_id`** ** (Required)
+**`device_id`**  (Required)
 
 ID of the desired thermostat device.
 
@@ -48,7 +48,7 @@ void
 ---
 
 ## Examples
-  
+
 ### Delete a climate preset
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.

@@ -28,7 +28,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`access_code_id`** ** (Required)
+**`access_code_id`**  (Required)
 
 ID of the unmanaged access code to delete.
 

@@ -28,49 +28,49 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`connect_webview_id`** **
+**`connect_webview_id`** 
 
 ID of the Connect Webview by which to filter devices.
 
 ---
 
-**`connected_account_id`** **
+**`connected_account_id`** 
 
 ID of the connected account by which to filter.
 
 ---
 
-**`connected_account_ids`** ** *of UUIDs*
+**`connected_account_ids`**  *of UUIDs*
 
 Array of IDs of the connected accounts by which to filter devices.
 
 ---
 
-**`created_before`** **
+**`created_before`** 
 
 Date threshold for devices to return. If specified, returns only devices created before the specified date.
 
 ---
 
-**`custom_metadata_has`** **
+**`custom_metadata_has`** 
 
 Set of key:value [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) pairs by which you want to filter devices.
 
 ---
 
-**`device_ids`** ** *of UUIDs*
+**`device_ids`**  *of UUIDs*
 
 Array of device IDs by which to filter devices.
 
 ---
 
-**`device_type`** **
+**`device_type`** 
 
 Device type by which to filter devices.
 
 ---
 
-**`device_types`** ** *of Enums*
+**`device_types`**  *of Enums*
 
 Array of device types by which to filter devices.
 <details>
@@ -87,25 +87,25 @@ Possible enum values:
 
 ---
 
-**`limit`** **
+**`limit`** 
 
 Numerical limit on the number of devices to return.
 
 ---
 
-**`manufacturer`** **
+**`manufacturer`** 
 
 Manufacturer by which to filter devices.
 
 ---
 
-**`page_cursor`** **
+**`page_cursor`** 
 
 Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
 
 ---
 
-**`user_identifier_key`** **
+**`user_identifier_key`** 
 
 Your own internal user ID for the user by which to filter devices.
 
@@ -128,7 +128,7 @@ Array of [devices](./)
 ---
 
 ## Examples
-  
+
 ### List thermostats
 
 To filter the list of returned thermostats, specify the desired parameters.

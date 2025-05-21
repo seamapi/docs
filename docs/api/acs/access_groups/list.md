@@ -27,13 +27,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_system_id`** **
+**`acs_system_id`** 
 
 ID of the access control system for which you want to retrieve all access groups.
 
 ---
 
-**`acs_user_id`** **
+**`acs_user_id`** 
 
 ID of the user for which you want to retrieve all access groups.
 
@@ -56,7 +56,7 @@ Array of [acs\_access\_groups](./)
 ---
 
 ## Examples
-  
+
 ### List access groups
 
 To filter the list of access groups, include an `acs_system_id` or `acs_user_id`.

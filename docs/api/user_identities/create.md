@@ -27,25 +27,25 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`email_address`** **
+**`email_address`** 
 
 Unique email address for the user identity.
 
 ---
 
-**`full_name`** **
+**`full_name`** 
 
 Full name of the user associated with the user identity.
 
 ---
 
-**`phone_number`** **
+**`phone_number`** 
 
 Unique phone number for the user identity in E.164 format (for example, +15555550100).
 
 ---
 
-**`user_identity_key`** **
+**`user_identity_key`** 
 
 Unique key for the user identity.
 
@@ -68,7 +68,7 @@ Unique key for the user identity.
 ---
 
 ## Examples
-  
+
 ### Create a user identity
 
 Specify one or more of the unique `user_identity_key`, `email_address`, or `phone_number`. You can also specify the `full_name` of the user associated with the `user_identity`.

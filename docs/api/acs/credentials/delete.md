@@ -27,7 +27,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_credential_id`** ** (Required)
+**`acs_credential_id`**  (Required)
 
 ID of the desired credential.
 
@@ -41,7 +41,7 @@ void
 ---
 
 ## Examples
-  
+
 ### Delete a credential
 
 Specify the desired `acs_credential_id` to delete the specified credential.
