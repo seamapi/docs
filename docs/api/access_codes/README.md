@@ -118,36 +118,36 @@ Variants:
 <summary><code>smartthings_failed_to_set_access_code</code></summary>
 
 Failed to set code on SmartThings device.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `smartthings_failed_to_set_access_code`
+      - <code>smartthings_failed_to_set_access_code</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -158,36 +158,36 @@ Failed to set code on SmartThings device.
 <summary><code>smartthings_failed_to_set_after_multiple_retries</code></summary>
 
 Failed to set code after multiple retries.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `smartthings_failed_to_set_after_multiple_retries`
+      - <code>smartthings_failed_to_set_after_multiple_retries</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -198,36 +198,36 @@ Failed to set code after multiple retries.
 <summary><code>smartthings_no_free_slots_available</code></summary>
 
 No free slots available on the device.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `smartthings_no_free_slots_available`
+      - <code>smartthings_no_free_slots_available</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -238,36 +238,36 @@ No free slots available on the device.
 <summary><code>failed_to_set_on_device</code></summary>
 
 Failed to set code on device.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `failed_to_set_on_device`
+      - <code>failed_to_set_on_device</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -278,36 +278,36 @@ Failed to set code on device.
 <summary><code>failed_to_remove_from_device</code></summary>
 
 Failed to remove code from device.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `failed_to_remove_from_device`
+      - <code>failed_to_remove_from_device</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -318,36 +318,36 @@ Failed to remove code from device.
 <summary><code>duplicate_code_on_device</code></summary>
 
 Duplicate access code detected on device.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `duplicate_code_on_device`
+      - <code>duplicate_code_on_device</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -358,36 +358,36 @@ Duplicate access code detected on device.
 <summary><code>duplicate_code_attempt_prevented</code></summary>
 
 An attempt to modify this access code was prevented.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `duplicate_code_attempt_prevented`
+      - <code>duplicate_code_attempt_prevented</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -398,36 +398,36 @@ An attempt to modify this access code was prevented.
 <summary><code>no_space_for_access_code_on_device</code></summary>
 
 No space for access code on device.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `no_space_for_access_code_on_device`
+      - <code>no_space_for_access_code_on_device</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -438,36 +438,36 @@ No space for access code on device.
 <summary><code>igloohome_bridge_too_many_pending_jobs</code></summary>
 
 Igloohome bridge has too many pending jobs in the queue.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `igloohome_bridge_too_many_pending_jobs`
+      - <code>igloohome_bridge_too_many_pending_jobs</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -478,36 +478,36 @@ Igloohome bridge has too many pending jobs in the queue.
 <summary><code>igloohome_bridge_offline</code></summary>
 
 Igloohome bridge is offline.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `igloohome_bridge_offline`
+      - <code>igloohome_bridge_offline</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -518,36 +518,36 @@ Igloohome bridge is offline.
 <summary><code>igloohome_offline_access_code_no_variance_available</code></summary>
 
 Lock has reached maximum amount of codes.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `igloohome_offline_access_code_no_variance_available`
+      - <code>igloohome_offline_access_code_no_variance_available</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -558,36 +558,36 @@ Lock has reached maximum amount of codes.
 <summary><code>kwikset_unable_to_confirm_code</code></summary>
 
 Unable to confirm that the access code is set on Kwikset device.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `kwikset_unable_to_confirm_code`
+      - <code>kwikset_unable_to_confirm_code</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -598,36 +598,36 @@ Unable to confirm that the access code is set on Kwikset device.
 <summary><code>kwikset_unable_to_confirm_deletion</code></summary>
 
 Unable to confirm the deletion of the access code on Kwikset device.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `kwikset_unable_to_confirm_deletion`
+      - <code>kwikset_unable_to_confirm_deletion</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -638,36 +638,36 @@ Unable to confirm the deletion of the access code on Kwikset device.
 <summary><code>code_modified_external_to_seam</code></summary>
 
 Code was modified or removed externally after Seam successfully set it on the device.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `code_modified_external_to_seam`
+      - <code>code_modified_external_to_seam</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -678,36 +678,36 @@ Code was modified or removed externally after Seam successfully set it on the de
 <summary><code>august_lock_invalid_code_length</code></summary>
 
 Invalid code length for August lock.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `august_lock_invalid_code_length`
+      - <code>august_lock_invalid_code_length</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -718,36 +718,36 @@ Invalid code length for August lock.
 <summary><code>august_device_programming_delay</code></summary>
 
 Access code has not yet been fully moved to the device.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `august_device_programming_delay`
+      - <code>august_device_programming_delay</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -758,36 +758,36 @@ Access code has not yet been fully moved to the device.
 <summary><code>august_device_slots_full</code></summary>
 
 All access code slots on the device are full.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `august_device_slots_full`
+      - <code>august_device_slots_full</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -798,36 +798,36 @@ All access code slots on the device are full.
 <summary><code>august_lock_missing_keypad</code></summary>
 
 August lock is missing a keypad.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `august_lock_missing_keypad`
+      - <code>august_lock_missing_keypad</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -838,36 +838,36 @@ August lock is missing a keypad.
 <summary><code>august_lock_temporarily_offline</code></summary>
 
 August lock is temporarily offline.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `august_lock_temporarily_offline`
+      - <code>august_lock_temporarily_offline</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -878,36 +878,36 @@ August lock is temporarily offline.
 <summary><code>salto_ks_user_not_subscribed</code></summary>
 
 Salto site user is not subscribed.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `salto_ks_user_not_subscribed`
+      - <code>salto_ks_user_not_subscribed</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -918,36 +918,36 @@ Salto site user is not subscribed.
 <summary><code>hubitat_device_programming_delay</code></summary>
 
 Access code has not yet been fully moved to the device.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `hubitat_device_programming_delay`
+      - <code>hubitat_device_programming_delay</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -958,36 +958,36 @@ Access code has not yet been fully moved to the device.
 <summary><code>hubitat_no_free_positions_available</code></summary>
 
 No free positions available on the device.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `hubitat_no_free_positions_available`
+      - <code>hubitat_no_free_positions_available</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -998,36 +998,36 @@ No free positions available on the device.
 <summary><code>wyze_duplicate_code_name</code></summary>
 
 Duplicate access code name detected.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `wyze_duplicate_code_name`
+      - <code>wyze_duplicate_code_name</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -1038,36 +1038,36 @@ Duplicate access code name detected.
 <summary><code>wyze_potential_duplicate_code</code></summary>
 
 Potential duplicate access code detected.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `wyze_potential_duplicate_code`
+      - <code>wyze_potential_duplicate_code</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -1078,36 +1078,36 @@ Potential duplicate access code detected.
 <summary><code>dormakaba_oracode_no_valid_user_level</code></summary>
 
 No valid user level for Oracode.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `dormakaba_oracode_no_valid_user_level`
+      - <code>dormakaba_oracode_no_valid_user_level</code>
   </details>
   
   
   ---
-  **`is_access_code_error`**
-  Format: `Boolean`
+
+  **`is_access_code_error`** Format: `Boolean`
   
   
   Indicates that this is an access code error.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -1118,38 +1118,38 @@ No valid user level for Oracode.
 <summary><code>account_disconnected</code></summary>
 
 Account is disconnected
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `account_disconnected`
+      - <code>account_disconnected</code>
   </details>
   
   
   ---
-  **`is_connected_account_error`**
-  Format: `Boolean`
+
+  **`is_connected_account_error`** Format: `Boolean`
   
   
   
   ---
-  **`is_device_error`**
-  Format: `Boolean`
+
+  **`is_device_error`** Format: `Boolean`
   
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   
@@ -1158,38 +1158,38 @@ Account is disconnected
 <summary><code>salto_ks_subscription_limit_exceeded</code></summary>
 
 Salto site user limit reached.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `salto_ks_subscription_limit_exceeded`
+      - <code>salto_ks_subscription_limit_exceeded</code>
   </details>
   
   
   ---
-  **`is_connected_account_error`**
-  Format: `Boolean`
+
+  **`is_connected_account_error`** Format: `Boolean`
   
   
   
   ---
-  **`is_device_error`**
-  Format: `Boolean`
+
+  **`is_device_error`** Format: `Boolean`
   
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   
@@ -1198,32 +1198,32 @@ Salto site user limit reached.
 <summary><code>device_offline</code></summary>
 
 Device is offline
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `device_offline`
+      - <code>device_offline</code>
   </details>
   
   
   ---
-  **`is_device_error`**
-  Format: `Boolean`
+
+  **`is_device_error`** Format: `Boolean`
   
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   
@@ -1232,32 +1232,32 @@ Device is offline
 <summary><code>device_removed</code></summary>
 
 Device has been removed
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `device_removed`
+      - <code>device_removed</code>
   </details>
   
   
   ---
-  **`is_device_error`**
-  Format: `Boolean`
+
+  **`is_device_error`** Format: `Boolean`
   
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   
@@ -1266,32 +1266,32 @@ Device has been removed
 <summary><code>hub_disconnected</code></summary>
 
 Hub is disconnected
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `hub_disconnected`
+      - <code>hub_disconnected</code>
   </details>
   
   
   ---
-  **`is_device_error`**
-  Format: `Boolean`
+
+  **`is_device_error`** Format: `Boolean`
   
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   
@@ -1300,32 +1300,32 @@ Hub is disconnected
 <summary><code>device_disconnected</code></summary>
 
 Device is disconnected
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `device_disconnected`
+      - <code>device_disconnected</code>
   </details>
   
   
   ---
-  **`is_device_error`**
-  Format: `Boolean`
+
+  **`is_device_error`** Format: `Boolean`
   
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   
@@ -1334,32 +1334,32 @@ Device is disconnected
 <summary><code>empty_backup_access_code_pool</code></summary>
 
 The backup access code pool is empty.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `empty_backup_access_code_pool`
+      - <code>empty_backup_access_code_pool</code>
   </details>
   
   
   ---
-  **`is_device_error`**
-  Format: `Boolean`
+
+  **`is_device_error`** Format: `Boolean`
   
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   
@@ -1368,32 +1368,32 @@ The backup access code pool is empty.
 <summary><code>august_lock_not_authorized</code></summary>
 
 User is not authorized to use the August Lock.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `august_lock_not_authorized`
+      - <code>august_lock_not_authorized</code>
   </details>
   
   
   ---
-  **`is_device_error`**
-  Format: `Boolean`
+
+  **`is_device_error`** Format: `Boolean`
   
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   
@@ -1402,32 +1402,32 @@ User is not authorized to use the August Lock.
 <summary><code>august_lock_missing_bridge</code></summary>
 
 Lock is not connected to the Seam Bridge.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `august_lock_missing_bridge`
+      - <code>august_lock_missing_bridge</code>
   </details>
   
   
   ---
-  **`is_device_error`**
-  Format: `Boolean`
+
+  **`is_device_error`** Format: `Boolean`
   
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   
@@ -1436,32 +1436,32 @@ Lock is not connected to the Seam Bridge.
 <summary><code>ttlock_lock_not_paired_to_gateway</code></summary>
 
 Lock is not paired with a Gateway.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `ttlock_lock_not_paired_to_gateway`
+      - <code>ttlock_lock_not_paired_to_gateway</code>
   </details>
   
   
   ---
-  **`is_device_error`**
-  Format: `Boolean`
+
+  **`is_device_error`** Format: `Boolean`
   
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   
@@ -1470,32 +1470,32 @@ Lock is not paired with a Gateway.
 <summary><code>missing_device_credentials</code></summary>
 
 Missing device credentials.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `missing_device_credentials`
+      - <code>missing_device_credentials</code>
   </details>
   
   
   ---
-  **`is_device_error`**
-  Format: `Boolean`
+
+  **`is_device_error`** Format: `Boolean`
   
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   
@@ -1504,32 +1504,32 @@ Missing device credentials.
 <summary><code>auxiliary_heat_running</code></summary>
 
 The auxiliary heat is running.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `auxiliary_heat_running`
+      - <code>auxiliary_heat_running</code>
   </details>
   
   
   ---
-  **`is_device_error`**
-  Format: `Boolean`
+
+  **`is_device_error`** Format: `Boolean`
   
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   
@@ -1538,32 +1538,32 @@ The auxiliary heat is running.
 <summary><code>subscription_required</code></summary>
 
 Subscription required to connect.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `subscription_required`
+      - <code>subscription_required</code>
   </details>
   
   
   ---
-  **`is_device_error`**
-  Format: `Boolean`
+
+  **`is_device_error`** Format: `Boolean`
   
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   
@@ -1572,40 +1572,40 @@ Subscription required to connect.
 <summary><code>invalid_credentials</code></summary>
 
 Credentials provided were invalid.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `invalid_credentials`
+      - <code>invalid_credentials</code>
   </details>
   
   
   ---
-  **`is_bridge_error`**
-  Format: `Boolean`
+
+  **`is_bridge_error`** Format: `Boolean`
   
   
   
   ---
-  **`is_connected_account_error`**
-  Format: `Boolean`
+
+  **`is_connected_account_error`** Format: `Boolean`
   
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   
@@ -1615,40 +1615,40 @@ Credentials provided were invalid.
 
 Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
   See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `bridge_disconnected`
+      - <code>bridge_disconnected</code>
   </details>
   
   
   ---
-  **`is_bridge_error`**
-  Format: `Boolean`
+
+  **`is_bridge_error`** Format: `Boolean`
   
   
   
   ---
-  **`is_connected_account_error`**
-  Format: `Boolean`
+
+  **`is_connected_account_error`** Format: `Boolean`
   
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   
@@ -1762,11 +1762,11 @@ Current status of the access code within the operational lifecycle. Values are `
 
 <details>
 <summary>Enum values</summary>
-- `setting`
-- `set`
-- `unset`
-- `removing`
-- `unknown`
+- <code>setting</code>
+- <code>set</code>
+- <code>unset</code>
+- <code>removing</code>
+- <code>unknown</code>
 </details>
 
 
@@ -1779,8 +1779,8 @@ Nature of the access code. Values are `ongoing` for access codes that are active
 
 <details>
 <summary>Enum values</summary>
-- `time_bound`
-- `ongoing`
+- <code>time_bound</code>
+- <code>ongoing</code>
 </details>
 
 
@@ -1800,30 +1800,30 @@ Variants:
 <summary><code>smartthings_failed_to_set_access_code</code></summary>
 
 Failed to set code on SmartThings device.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `smartthings_failed_to_set_access_code`
+      - <code>smartthings_failed_to_set_access_code</code>
   </details>
   
   
@@ -1832,30 +1832,30 @@ Failed to set code on SmartThings device.
 <summary><code>schlage_detected_duplicate</code></summary>
 
 Duplicate access code detected.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `schlage_detected_duplicate`
+      - <code>schlage_detected_duplicate</code>
   </details>
   
   
@@ -1864,30 +1864,30 @@ Duplicate access code detected.
 <summary><code>schlage_creation_outage</code></summary>
 
 Received an error when attempting to create this code.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `schlage_creation_outage`
+      - <code>schlage_creation_outage</code>
   </details>
   
   
@@ -1896,30 +1896,30 @@ Received an error when attempting to create this code.
 <summary><code>code_modified_external_to_seam</code></summary>
 
 Code was modified or removed externally after Seam successfully set it on the device.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `code_modified_external_to_seam`
+      - <code>code_modified_external_to_seam</code>
   </details>
   
   
@@ -1928,30 +1928,30 @@ Code was modified or removed externally after Seam successfully set it on the de
 <summary><code>delay_in_setting_on_device</code></summary>
 
 Delay in setting code on device.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `delay_in_setting_on_device`
+      - <code>delay_in_setting_on_device</code>
   </details>
   
   
@@ -1960,30 +1960,30 @@ Delay in setting code on device.
 <summary><code>delay_in_removing_from_device</code></summary>
 
 Delay in removing code from device.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `delay_in_removing_from_device`
+      - <code>delay_in_removing_from_device</code>
   </details>
   
   
@@ -1992,30 +1992,30 @@ Delay in removing code from device.
 <summary><code>third_party_integration_detected</code></summary>
 
 Third-party integration detected that may cause access codes to fail.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `third_party_integration_detected`
+      - <code>third_party_integration_detected</code>
   </details>
   
   
@@ -2024,30 +2024,30 @@ Third-party integration detected that may cause access codes to fail.
 <summary><code>august_device_programming_delay</code></summary>
 
 Access code has not yet been fully moved to the device.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `august_device_programming_delay`
+      - <code>august_device_programming_delay</code>
   </details>
   
   
@@ -2056,30 +2056,30 @@ Access code has not yet been fully moved to the device.
 <summary><code>august_lock_temporarily_offline</code></summary>
 
 August lock is temporarily offline.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `august_lock_temporarily_offline`
+      - <code>august_lock_temporarily_offline</code>
   </details>
   
   
@@ -2088,30 +2088,30 @@ August lock is temporarily offline.
 <summary><code>igloo_algopin_must_be_used_within_24_hours</code></summary>
 
 Algopins must be used within 24 hours.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `igloo_algopin_must_be_used_within_24_hours`
+      - <code>igloo_algopin_must_be_used_within_24_hours</code>
   </details>
   
   
@@ -2120,30 +2120,30 @@ Algopins must be used within 24 hours.
 <summary><code>management_transferred</code></summary>
 
 Management was transferred to another workspace.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `management_transferred`
+      - <code>management_transferred</code>
   </details>
   
   
@@ -2152,30 +2152,30 @@ Management was transferred to another workspace.
 <summary><code>kwikset_unable_to_confirm_code</code></summary>
 
 Unable to confirm that the access code is set on Kwikset device.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `kwikset_unable_to_confirm_code`
+      - <code>kwikset_unable_to_confirm_code</code>
   </details>
   
   

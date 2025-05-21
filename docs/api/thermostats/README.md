@@ -112,9 +112,9 @@ A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was ad
   Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
 <details>
     <summary>Enum values:</summary>
-    - `auto`
-    - `on`
-    - `circulate`
+    - <code>auto`</code>
+    - <code>on`</code>
+    - <code>circulate`</code>
 </details>
 
 
@@ -133,10 +133,10 @@ A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was ad
   Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
 <details>
     <summary>Enum values:</summary>
-    - `off`
-    - `heat`
-    - `cool`
-    - `heat_cool`
+    - <code>off`</code>
+    - <code>heat`</code>
+    - <code>cool`</code>
+    - <code>heat_cool`</code>
 </details>
 
 
@@ -145,8 +145,8 @@ A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was ad
   Method used to adjust the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) manually. `seam` indicates that the Seam API, Seam CLI, or Seam Console was used to adjust the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 <details>
     <summary>Enum values:</summary>
-    - `seam`
-    - `external`
+    - <code>seam`</code>
+    - <code>external`</code>
 </details>
 
 

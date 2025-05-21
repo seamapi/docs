@@ -242,28 +242,28 @@ Variants:
 Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
   This error might also occur if Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/README.md).
   See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `seam_bridge_disconnected`
+      - <code>seam_bridge_disconnected</code>
   </details>
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -275,34 +275,34 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capab
 
 Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
     See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `bridge_disconnected`
+      - <code>bridge_disconnected</code>
   </details>
   
   
   ---
-  **`is_bridge_error`**
-  Format: `Boolean`
+
+  **`is_bridge_error`** Format: `Boolean`
   
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -315,28 +315,28 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capab
 Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/README.md).
   For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](../../../core-concepts/workspaces/README.md).
   See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `visionline_instance_unreachable`
+      - <code>visionline_instance_unreachable</code>
   </details>
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -347,28 +347,28 @@ Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is funct
 <summary><code>salto_ks_subscription_limit_exceeded</code></summary>
 
 Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `salto_ks_subscription_limit_exceeded`
+      - <code>salto_ks_subscription_limit_exceeded</code>
   </details>
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -379,28 +379,28 @@ Indicates that the maximum number of users allowed for the site has been reached
 <summary><code>acs_system_disconnected</code></summary>
 
 Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md) to resolve the issue.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `acs_system_disconnected`
+      - <code>acs_system_disconnected</code>
   </details>
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -411,28 +411,28 @@ Indicates that the [access control system](https://docs.seam.co/latest/capabilit
 <summary><code>account_disconnected</code></summary>
 
 Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) to restore access.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `account_disconnected`
+      - <code>account_disconnected</code>
   </details>
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -443,28 +443,28 @@ Indicates that the login credentials are invalid. Reconnect the account using a 
 <summary><code>salto_ks_certification_expired</code></summary>
 
 Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `salto_ks_certification_expired`
+      - <code>salto_ks_certification_expired</code>
   </details>
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -481,19 +481,19 @@ Brand-specific terminology for the [access control system](https://docs.seam.co/
 
 <details>
 <summary>Enum values</summary>
-- `pti_site`
-- `alta_org`
-- `salto_ks_site`
-- `salto_space_system`
-- `brivo_account`
-- `hid_credential_manager_organization`
-- `visionline_system`
-- `assa_abloy_credential_service`
-- `latch_building`
-- `dormakaba_community_site`
-- `legic_connect_credential_service`
-- `assa_abloy_vostio`
-- `assa_abloy_vostio_credential_service`
+- <code>pti_site</code>
+- <code>alta_org</code>
+- <code>salto_ks_site</code>
+- <code>salto_space_system</code>
+- <code>brivo_account</code>
+- <code>hid_credential_manager_organization</code>
+- <code>visionline_system</code>
+- <code>assa_abloy_credential_service</code>
+- <code>latch_building</code>
+- <code>dormakaba_community_site</code>
+- <code>legic_connect_credential_service</code>
+- <code>assa_abloy_vostio</code>
+- <code>assa_abloy_vostio_credential_service</code>
 </details>
 
 
@@ -568,19 +568,19 @@ Name of the [access control system](https://docs.seam.co/latest/capability-guide
 
 <details>
 <summary>Enum values</summary>
-- `pti_site`
-- `alta_org`
-- `salto_ks_site`
-- `salto_space_system`
-- `brivo_account`
-- `hid_credential_manager_organization`
-- `visionline_system`
-- `assa_abloy_credential_service`
-- `latch_building`
-- `dormakaba_community_site`
-- `legic_connect_credential_service`
-- `assa_abloy_vostio`
-- `assa_abloy_vostio_credential_service`
+- <code>pti_site</code>
+- <code>alta_org</code>
+- <code>salto_ks_site</code>
+- <code>salto_space_system</code>
+- <code>brivo_account</code>
+- <code>hid_credential_manager_organization</code>
+- <code>visionline_system</code>
+- <code>assa_abloy_credential_service</code>
+- <code>latch_building</code>
+- <code>dormakaba_community_site</code>
+- <code>legic_connect_credential_service</code>
+- <code>assa_abloy_vostio</code>
+- <code>assa_abloy_vostio_credential_service</code>
 </details>
 
 
@@ -634,30 +634,30 @@ Variants:
 <summary><code>salto_ks_subscription_limit_almost_reached</code></summary>
 
 Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site to rectify the issue.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `salto_ks_subscription_limit_almost_reached`
+      - <code>salto_ks_subscription_limit_almost_reached</code>
   </details>
   
   
@@ -666,24 +666,24 @@ Indicates that the Salto KS site has exceeded 80% of the maximum number of allow
 <summary><code>time_zone_does_not_match_location</code></summary>
 
 Indicates the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`misconfigured_acs_entrance_ids`**
-  Format: `List`, Item format: `UUID`
+
+  **`misconfigured_acs_entrance_ids`** Format: `List`, Item format: `UUID`
   
   
   {% hint style="warning" %}
@@ -692,14 +692,14 @@ Indicates the [access control system](https://docs.seam.co/latest/capability-gui
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `time_zone_does_not_match_location`
+      - <code>time_zone_does_not_match_location</code>
   </details>
   
   

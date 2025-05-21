@@ -67,8 +67,8 @@ Type of phone.
 
 <details>
 <summary>Enum values</summary>
-- `ios_phone`
-- `android_phone`
+- <code>ios_phone</code>
+- <code>android_phone</code>
 </details>
 
 

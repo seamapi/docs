@@ -78,11 +78,11 @@ Array of device types by which to filter devices.
 <summary>Enum values</summary>
 
 Possible enum values:
-- `ecobee_thermostat`
-- `nest_thermostat`
-- `honeywell_resideo_thermostat`
-- `tado_thermostat`
-- `sensi_thermostat`
+- <code>ecobee_thermostat</code>
+- <code>nest_thermostat</code>
+- <code>honeywell_resideo_thermostat</code>
+- <code>tado_thermostat</code>
+- <code>sensi_thermostat</code>
 </details>
 
 ---

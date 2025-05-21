@@ -48,12 +48,12 @@ To learn whether your access control system supports access groups, see the corr
 
 <details>
 <summary>Enum values</summary>
-- `pti_unit`
-- `pti_access_level`
-- `salto_ks_access_group`
-- `brivo_group`
-- `salto_space_group`
-- `dormakaba_community_access_group`
+- <code>pti_unit</code>
+- <code>pti_access_level</code>
+- <code>salto_ks_access_group</code>
+- <code>brivo_group</code>
+- <code>salto_space_group</code>
+- <code>dormakaba_community_access_group</code>
 </details>
 
 
@@ -112,12 +112,12 @@ Brand-specific terminology for the access group type.
 
 <details>
 <summary>Enum values</summary>
-- `pti_unit`
-- `pti_access_level`
-- `salto_ks_access_group`
-- `brivo_group`
-- `salto_space_group`
-- `dormakaba_community_access_group`
+- <code>pti_unit</code>
+- <code>pti_access_level</code>
+- <code>salto_ks_access_group</code>
+- <code>brivo_group</code>
+- <code>salto_space_group</code>
+- <code>dormakaba_community_access_group</code>
 </details>
 
 
@@ -168,7 +168,7 @@ Warnings associated with the `acs_access_group`.
     Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `unknown_issue_with_acs_access_group`
+      - <code>unknown_issue_with_acs_access_group`</code>
   </details>
 </details>
 

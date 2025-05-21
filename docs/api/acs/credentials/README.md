@@ -60,9 +60,9 @@ Access method for the [credential](../../../capability-guides/access-systems/man
 
 <details>
 <summary>Enum values</summary>
-- `code`
-- `card`
-- `mobile_key`
+- <code>code</code>
+- <code>card</code>
+- <code>mobile_key</code>
 </details>
 
 
@@ -193,14 +193,14 @@ Brand-specific terminology for the [credential](../../../capability-guides/acces
 
 <details>
 <summary>Enum values</summary>
-- `pti_card`
-- `brivo_credential`
-- `hid_credential`
-- `visionline_card`
-- `salto_ks_credential`
-- `assa_abloy_vostio_key`
-- `salto_space_key`
-- `latch_access`
+- <code>pti_card</code>
+- <code>brivo_credential</code>
+- <code>hid_credential</code>
+- <code>visionline_card</code>
+- <code>salto_ks_credential</code>
+- <code>assa_abloy_vostio_key</code>
+- <code>salto_space_key</code>
+- <code>latch_access</code>
 </details>
 
 
@@ -308,8 +308,8 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
   - <strong><code>card_function_type</code></strong> <i>Enum</i>
 <details>
     <summary>Enum values:</summary>
-    - `guest`
-    - `staff`
+    - <code>guest`</code>
+    - <code>staff`</code>
 </details>
 
   - <strong><code>card_id</code></strong> <i>String</i>
@@ -342,30 +342,30 @@ Variants:
 <summary><code>waiting_to_be_issued</code></summary>
 
 Indicates that the [credential](../../../capability-guides/access-systems/managing-credentials.md) is waiting to be issued.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `waiting_to_be_issued`
+      - <code>waiting_to_be_issued</code>
   </details>
   
   
@@ -374,30 +374,30 @@ Indicates that the [credential](../../../capability-guides/access-systems/managi
 <summary><code>schedule_externally_modified</code></summary>
 
 Indicates that the schedule of one of the [credential](../../../capability-guides/access-systems/managing-credentials.md)'s children was modified externally.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `schedule_externally_modified`
+      - <code>schedule_externally_modified</code>
   </details>
   
   
@@ -406,30 +406,30 @@ Indicates that the schedule of one of the [credential](../../../capability-guide
 <summary><code>schedule_modified</code></summary>
 
 Indicates that the schedule of the [credential](../../../capability-guides/access-systems/managing-credentials.md) was modified to avoid creating a credential with a start date in the past.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `schedule_modified`
+      - <code>schedule_modified</code>
   </details>
   
   
@@ -438,30 +438,30 @@ Indicates that the schedule of the [credential](../../../capability-guides/acces
 <summary><code>being_deleted</code></summary>
 
 Indicates that the [credential](../../../capability-guides/access-systems/managing-credentials.md) is being deleted.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `being_deleted`
+      - <code>being_deleted</code>
   </details>
   
   
@@ -470,30 +470,30 @@ Indicates that the [credential](../../../capability-guides/access-systems/managi
 <summary><code>unknown_issue_with_acs_credential</code></summary>
 
 An unknown issue occurred while syncing the state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) with the provider. This issue may affect the proper functioning of the credential.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `unknown_issue_with_acs_credential`
+      - <code>unknown_issue_with_acs_credential</code>
   </details>
   
   
@@ -502,30 +502,30 @@ An unknown issue occurred while syncing the state of the [credential](../../../c
 <summary><code>needs_to_be_reissued</code></summary>
 
 Access permissions for the [credential](../../../capability-guides/access-systems/managing-credentials.md) have changed. [Reissue](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md) (re-encode) the credential. This issue may affect the proper functioning of the credential.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   <details>
       <summary>Enum values:</summary>
-      - `needs_to_be_reissued`
+      - <code>needs_to_be_reissued</code>
   </details>
   
   

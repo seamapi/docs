@@ -139,26 +139,26 @@ Variants:
 <summary><code>deleted_externally</code></summary>
 
 Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted from the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) outside of Seam.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   <details>
       <summary>Enum values:</summary>
-      - `deleted_externally`
+      - <code>deleted_externally</code>
   </details>
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -169,26 +169,26 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
 <summary><code>salto_ks_subscription_limit_exceeded</code></summary>
 
 Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   <details>
       <summary>Enum values:</summary>
-      - `salto_ks_subscription_limit_exceeded`
+      - <code>salto_ks_subscription_limit_exceeded</code>
   </details>
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -199,26 +199,26 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
 <summary><code>failed_to_create_on_acs_system</code></summary>
 
 Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not created on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   <details>
       <summary>Enum values:</summary>
-      - `failed_to_create_on_acs_system`
+      - <code>failed_to_create_on_acs_system</code>
   </details>
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -229,26 +229,26 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
 <summary><code>failed_to_update_on_acs_system</code></summary>
 
 Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not updated on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   <details>
       <summary>Enum values:</summary>
-      - `failed_to_update_on_acs_system`
+      - <code>failed_to_update_on_acs_system</code>
   </details>
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -259,26 +259,26 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
 <summary><code>failed_to_delete_on_acs_system</code></summary>
 
 Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not deleted on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   <details>
       <summary>Enum values:</summary>
-      - `failed_to_delete_on_acs_system`
+      - <code>failed_to_delete_on_acs_system</code>
   </details>
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -289,26 +289,26 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
 <summary><code>latch_conflict_with_resident_user</code></summary>
 
 Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the error.
   
   
   ---
-  **`error_code`**
-  Format: `Enum`
+
+  **`error_code`** Format: `Enum`
   
   <details>
       <summary>Enum values:</summary>
-      - `latch_conflict_with_resident_user`
+      - <code>latch_conflict_with_resident_user</code>
   </details>
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -325,13 +325,13 @@ Brand-specific terminology for the [ACS user](https://docs.seam.co/latest/capabi
 
 <details>
 <summary>Enum values</summary>
-- `pti_user`
-- `brivo_user`
-- `hid_credential_manager_user`
-- `salto_site_user`
-- `latch_user`
-- `dormakaba_community_user`
-- `salto_space_user`
+- <code>pti_user</code>
+- <code>brivo_user</code>
+- <code>hid_credential_manager_user</code>
+- <code>salto_site_user</code>
+- <code>latch_user</code>
+- <code>dormakaba_community_user</code>
+- <code>salto_space_user</code>
 </details>
 
 
@@ -394,28 +394,28 @@ Variants:
 <summary><code>creating</code></summary>
 
 Seam is in the process of pushing a user creation to the integrated access system.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which the mutation was created.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the mutation.
   
   
   ---
-  **`mutation_code`**
-  Format: `Enum`
+
+  **`mutation_code`** Format: `Enum`
   
   <details>
       <summary>Enum values:</summary>
-      - `creating`
+      - <code>creating</code>
   </details>
   
   
@@ -424,68 +424,68 @@ Seam is in the process of pushing a user creation to the integrated access syste
 <summary><code>deleting</code></summary>
 
 Seam is in the process of pushing a user deletion to the integrated access system.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which the mutation was created.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the mutation.
   
   
   ---
-  **`mutation_code`**
-  Format: `Enum`
+
+  **`mutation_code`** Format: `Enum`
   
   <details>
       <summary>Enum values:</summary>
-      - `deleting`
+      - <code>deleting</code>
   </details>
   
   
 </details>
 <details>
 <summary><code>updating_user_information</code></summary>
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which the mutation was created.
   
   
   ---
-  **`from`**
-  Format: `Object`
+
+  **`from`** Format: `Object`
   
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the mutation.
   
   
   ---
-  **`mutation_code`**
-  Format: `Enum`
+
+  **`mutation_code`** Format: `Enum`
   
   <details>
       <summary>Enum values:</summary>
-      - `updating_user_information`
+      - <code>updating_user_information</code>
   </details>
   
   
   ---
-  **`to`**
-  Format: `Object`
+
+  **`to`** Format: `Object`
   
   
   
@@ -494,40 +494,40 @@ Seam is in the process of pushing a user deletion to the integrated access syste
 <summary><code>updating_access_schedule</code></summary>
 
 Seam is in the process of pushing an access schedule update to the integrated access system.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which the mutation was created.
   
   
   ---
-  **`from`**
-  Format: `Object`
+
+  **`from`** Format: `Object`
   
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the mutation.
   
   
   ---
-  **`mutation_code`**
-  Format: `Enum`
+
+  **`mutation_code`** Format: `Enum`
   
   <details>
       <summary>Enum values:</summary>
-      - `updating_access_schedule`
+      - <code>updating_access_schedule</code>
   </details>
   
   
   ---
-  **`to`**
-  Format: `Object`
+
+  **`to`** Format: `Object`
   
   
   
@@ -536,40 +536,40 @@ Seam is in the process of pushing an access schedule update to the integrated ac
 <summary><code>updating_suspension_state</code></summary>
 
 Seam is in the process of pushing a suspension state update to the integrated access system.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which the mutation was created.
   
   
   ---
-  **`from`**
-  Format: `Object`
+
+  **`from`** Format: `Object`
   
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the mutation.
   
   
   ---
-  **`mutation_code`**
-  Format: `Enum`
+
+  **`mutation_code`** Format: `Enum`
   
   <details>
       <summary>Enum values:</summary>
-      - `updating_suspension_state`
+      - <code>updating_suspension_state</code>
   </details>
   
   
   ---
-  **`to`**
-  Format: `Object`
+
+  **`to`** Format: `Object`
   
   
   
@@ -578,42 +578,42 @@ Seam is in the process of pushing a suspension state update to the integrated ac
 <summary><code>updating_group_membership</code></summary>
 
 Seam is in the process of pushing an access group membership update to the integrated access system.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which the mutation was created.
   
   
   ---
-  **`from`**
-  Format: `Object`
+
+  **`from`** Format: `Object`
   
   
   Old access group membership.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the mutation.
   
   
   ---
-  **`mutation_code`**
-  Format: `Enum`
+
+  **`mutation_code`** Format: `Enum`
   
   <details>
       <summary>Enum values:</summary>
-      - `updating_group_membership`
+      - <code>updating_group_membership</code>
   </details>
   
   
   ---
-  **`to`**
-  Format: `Object`
+
+  **`to`** Format: `Object`
   
   
   New access group membership.
@@ -682,28 +682,28 @@ Variants:
 <summary><code>being_deleted</code></summary>
 
 Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is being deleted from the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is a temporary state, and the ACS user will be deleted shortly.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   <details>
       <summary>Enum values:</summary>
-      - `being_deleted`
+      - <code>being_deleted</code>
   </details>
   
   
@@ -712,28 +712,28 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
 <summary><code>salto_ks_user_not_subscribed</code></summary>
 
 Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is not subscribed on Salto KS, so they cannot unlock doors or perform any actions. This occurs when the their access schedule hasn’t started yet, if their access schedule has ended, if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   <details>
       <summary>Enum values:</summary>
-      - `salto_ks_user_not_subscribed`
+      - <code>salto_ks_user_not_subscribed</code>
   </details>
   
   
@@ -742,28 +742,28 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
 <summary><code>unknown_issue_with_acs_user</code></summary>
 
 An unknown issue occurred while syncing the state of this [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   <details>
       <summary>Enum values:</summary>
-      - `unknown_issue_with_acs_user`
+      - <code>unknown_issue_with_acs_user</code>
   </details>
   
   
@@ -772,28 +772,28 @@ An unknown issue occurred while syncing the state of this [ACS user](https://doc
 <summary><code>latch_resident_user</code></summary>
 
 Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created on Latch Mission Control. Please use the Latch Mission Control to manage this user.
-  **`created_at`**
-  Format: `Datetime`
+
+  **`created_at`** Format: `Datetime`
   
   
   Date and time at which Seam created the warning.
   
   
   ---
-  **`message`**
-  Format: `String`
+
+  **`message`** Format: `String`
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
   
   
   ---
-  **`warning_code`**
-  Format: `Enum`
+
+  **`warning_code`** Format: `Enum`
   
   <details>
       <summary>Enum values:</summary>
-      - `latch_resident_user`
+      - <code>latch_resident_user</code>
   </details>
   
   

@@ -38,7 +38,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 <summary>Enum values</summary>
 
 Possible enum values:
-- `visionline_metadata.is_valid`
+- <code>visionline_metadata.is_valid</code>
 </details>
 
 ---
