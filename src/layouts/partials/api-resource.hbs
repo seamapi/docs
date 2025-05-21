@@ -101,6 +101,7 @@ Variants:
 {{/if}}
 {{#if this.properties.length}}
   {{#each this.properties}}
+
   {{> property-non-collapsible this isLast=@last}}
   {{/each}}
 {{else}}
