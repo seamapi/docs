@@ -77,8 +77,9 @@ When you create a Connect Webview, you can customize the providers—that is, th
 | [Salto KS Access System](../../device-and-system-integration-guides/salto-ks-access-control-system/)                                   | `salto_ks`                      |
 | [Salto KS Locks](../../device-guides/salto-locks.md)                                                                                   | `salto`                         |
 | [Salto ProAccess Space Access System](../../device-and-system-integration-guides/salto-proaccess-space-access-system/)                 | `salto_space`                   |
-| [Schlage](https://www.schlage.com/en/home/products/products-smart-locks.html)                                                          | `schlage`                       |
-| [SmartThings](https://www.smartthings.com/)                                                                                            | `smartthings`                   |
+| [Schlage](../../device-and-system-integration-guides/schlage-locks/)                                                                   | `schlage`                       |
+| [Sensi](../../device-and-system-integration-guides/sensi-thermostats/)                                                                 | `sensi`                         |
+| [SmartThings](../../device-guides/get-started-with-smartthings-hubs-+-smart-locks.md)                                                  | `smartthings`                   |
 | [Tedee](../../device-and-system-integration-guides/tedee-locks/)                                                                       | `tedee`                         |
 | [TTLock](../../device-guides/ttlock-locks.md)                                                                                          | `ttlock`                        |
 | [Wyze](../../device-guides/wyze-locks.md)                                                                                              | `wyze`                          |
