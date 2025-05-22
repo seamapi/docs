@@ -21,6 +21,7 @@ const supportedSdks: SdkName[] = [
   'ruby',
   'go',
   'seam_cli',
+  'curl',
 ]
 
 export interface ApiEndpointLayoutContext {
