@@ -29,6 +29,7 @@
   * [Managed and Unmanaged Devices](core-concepts/devices/managed-and-unmanaged-devices.md)
   * [Adding Custom Metadata to a Device](core-concepts/devices/adding-custom-metadata-to-a-device.md)
   * [Filtering Devices by Custom Metadata](core-concepts/devices/filtering-devices-by-custom-metadata.md)
+  * [Handling Device Errors](core-concepts/devices/handling-device-errors.md)
   * [Testing Your App Against Device Disconnection and Removal](core-concepts/devices/testing-your-app-against-device-disconnection-and-removal.md)
 * [Providers](core-concepts/providers/README.md)
   * [Provider Metadata](core-concepts/providers/provider-metadata.md)
