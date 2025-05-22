@@ -1,14 +1,87 @@
 # Launch an Enrollment Automation
 
-```
-POST /user_identities/enrollment_automations/launch ⇒ { enrollment_automation }
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Sets up a new [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) with a specified [credential manager](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+POST /user_identities/enrollment_automations/launch ⇒ { enrollment_automation }
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`credential_manager_acs_system_id`**  (Required)
+
+ID of the desired ACS system that serves as the credential manager.
+
+---
+
+**`user_identity_id`**  (Required)
+
+ID of the desired user identity.
+
+---
+
+**`acs_credential_pool_id`** 
+
+ID of the ACS credential pool from which to obtain credentials for the user identity.
+
+---
+
+**`create_credential_manager_user`** 
+
+Indicates whether to create an associated credential manager user. If you set `create_credential_manager_user` to `true`, you cannot specify a `credential_manager_acs_user_id`.
+
+---
+
+**`credential_manager_acs_user_id`** 
+
+ID of the associated ACS user within the credential manager. If you specify a `credential_manager_acs_user_id`, you cannot set `create_credential_manager_user` to `true`.
+
+---
+
+
+## Response
+
+[unknown](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of unknown
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+## Examples
+
+### Launch an enrollment automation
+
+Specify the desired `user_identity_id` and `credential_manager_acs_system_id`. You can also specify an `acs_credential_pool_id`. Either set `create_credential_manager_user` to `true` or specify the `credential_manager_acs_user_id`.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.userIdentities.enrollmentAutomations.launch({
@@ -19,7 +92,7 @@ await seam.userIdentities.enrollmentAutomations.launch({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 {
@@ -35,7 +108,7 @@ await seam.userIdentities.enrollmentAutomations.launch({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.user_identities.enrollment_automations.launch(
@@ -46,7 +119,7 @@ seam.user_identities.enrollment_automations.launch(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 Unknown(
@@ -62,7 +135,7 @@ Unknown(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.user_identities.enrollment_automations.launch(
@@ -73,7 +146,7 @@ seam.user_identities.enrollment_automations.launch(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 {
@@ -89,7 +162,7 @@ seam.user_identities.enrollment_automations.launch(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -101,7 +174,7 @@ $seam->user_identities->enrollment_automations->launch(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -120,13 +193,13 @@ $seam->user_identities->enrollment_automations->launch(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam user-identities enrollment-automations launch --user_identity_id "5c945ab5-c75e-4bcb-8e5f-9410061c401f" --credential_manager_acs_system_id "6737e186-8d54-48ce-a7da-a0be4d252172" --acs_credential_pool_id "3fa85f64-5717-4562-b3fc-2c963f66afa6" --create_credential_manager_user true
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {
@@ -142,7 +215,7 @@ seam user-identities enrollment-automations launch --user_identity_id "5c945ab5-
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -163,7 +236,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 api.Unknown{UserIdentityId: "5c945ab5-c75e-4bcb-8e5f-9410061c401f", EnrollmentAutomationId: "05505650-aa57-49ab-8f19-429738758895", AcsCredentialProvisioningAutomationId: "05505650-aa57-49ab-8f19-429738758895", CredentialManagerAcsSystemId: "6737e186-8d54-48ce-a7da-a0be4d252172", IsRunning: true, WorkspaceId: "398d80b7-3f96-47c2-b85a-6f8ba21d07be", CreatedAt: "2024-01-09T05:45:33.068Z"}
@@ -172,59 +245,4 @@ api.Unknown{UserIdentityId: "5c945ab5-c75e-4bcb-8e5f-9410061c401f", EnrollmentAu
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `credential_manager_acs_system_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired ACS system that serves as the credential manager.
-
-***
-
-### `user_identity_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired user identity.
-
-***
-
-### `acs_credential_pool_id`
-
-Format: `UUID`
-Required: No
-
-ID of the ACS credential pool from which to obtain credentials for the user identity.
-
-***
-
-### `create_credential_manager_user`
-
-Format: `Boolean`
-Required: No
-
-Indicates whether to create an associated credential manager user. If you set `create_credential_manager_user` to `true`, you cannot specify a `credential_manager_acs_user_id`.
-
-***
-
-### `credential_manager_acs_user_id`
-
-Format: `UUID`
-Required: No
-
-ID of the associated ACS user within the credential manager. If you specify a `credential_manager_acs_user_id`, you cannot set `create_credential_manager_user` to `true`.
-
-***
-
-## Return Type
-
-[unknown](./)

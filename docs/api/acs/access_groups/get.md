@@ -1,14 +1,63 @@
 # Get an Access Group
 
-```
-POST /acs/access_groups/get ⇒ { acs_access_group }
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Returns a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+POST /acs/access_groups/get ⇒ { acs_access_group }
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`acs_access_group_id`**  (Required)
+
+ID of the desired access group.
+
+---
+
+
+## Response
+
+[acs\_access\_group](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of acs_access_group
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+## Examples
+
+### Get a specific access group
+
+Specify the `acs_access_group_id` of the access group that you want to retrieve.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.accessGroups.get({
@@ -16,7 +65,7 @@ await seam.acs.accessGroups.get({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 {
@@ -35,13 +84,13 @@ await seam.acs.accessGroups.get({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.access_groups.get(acs_access_group_id="44444444-4444-4444-4444-444444444444")
 ```
 
-#### Response
+#### Output
 
 ```python
 AcsAccessGroup(
@@ -60,13 +109,13 @@ AcsAccessGroup(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.access_groups.get(acs_access_group_id: "44444444-4444-4444-4444-444444444444")
 ```
 
-#### Response
+#### Output
 
 ```ruby
 {
@@ -85,7 +134,7 @@ seam.acs.access_groups.get(acs_access_group_id: "44444444-4444-4444-4444-4444444
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -94,7 +143,7 @@ $seam->acs->access_groups->get(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -114,13 +163,13 @@ $seam->acs->access_groups->get(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs access-groups get --acs_access_group_id "44444444-4444-4444-4444-444444444444"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {
@@ -139,7 +188,7 @@ seam acs access-groups get --acs_access_group_id "44444444-4444-4444-4444-444444
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -157,7 +206,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 api.AcsAccessGroup{AcsAccessGroupId: "44444444-4444-4444-4444-444444444444", Name: "Lobby Access", DisplayName: "Lobby Access", AccessGroupTypeDisplayName: "PTI access level", AccessGroupType: "pti_access_level", ExternalType: "pti_access_level", ExternalTypeDisplayName: "PTI access level", AcsSystemId: "11111111-1111-1111-1111-111111111111", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2023-11-30T06:27:15.437Z"}
@@ -166,23 +215,4 @@ api.AcsAccessGroup{AcsAccessGroupId: "44444444-4444-4444-4444-444444444444", Nam
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `acs_access_group_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired access group.
-
-***
-
-## Return Type
-
-[acs\_access\_group](./)

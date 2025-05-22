@@ -1,8 +1,15 @@
 {{#if headingOffset}}
-### `{{name}}`
+### The {{name}} Object
 {{else}}
-## `{{name}}`
+## The {{name}} Object
 {{/if}}
+
+- [Properties](./#properties)
+- [Errors](./#errors)
+- [Warnings](./#warnings)
+- [Events](./#events)
+- [Endpoints](./#endpoints)
+
 {{#if description}}
 
 {{description}}
@@ -20,44 +27,66 @@
 {% endtabs %}
 {{/if}}
 
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
 {{#each properties}}
-{{#if ../headingOffset}}
-#### {{#if linkTarget}}[`{{name}}`]({{linkTarget}}){{else}}`{{name}}`{{/if}}
+{{#if @last}}
+  {{name}}: [example value]
 {{else}}
-### {{#if linkTarget}}[`{{name}}`]({{linkTarget}}){{else}}`{{name}}`{{/if}}
+  {{name}}: [example value],
 {{/if}}
-{{#if isDeprecated}}
+{{/each}}
+}
+```
+{% endtab %}
+{% endtabs %}
 
+---
+{{#if headingOffset}}
+### Properties
+{{else}}
+## Properties
+{{/if}}
+
+{{#each properties}}
+{{#if linkTarget}}[**`{{name}}`**]({{linkTarget}}){{else}}**`{{name}}`**{{/if}} *{{format}}*{{#if listItemFormat}} *of {{listItemFormat}}s*{{/if}}
+
+{{#if description}}
+{{description}}
+{{/if}}
+
+{{#if isDeprecated}}
 {{> deprecated-warning}}
 {{/if}}
 
-Format: `{{format}}`
-{{#if listItemFormat}}
-
-Item format: `{{listItemFormat}}`
-{{/if}}
-{{#if description}}
-
-{{description}}
-{{/if}}
 {{#if enumValues}}
+<details>
+<summary>Enum values</summary>
 
-{{> enum-values}}
+{{#each enumValues}}
+- <code>{{this}}</code>
+{{/each}}
+</details>
 {{/if}}
+
 {{#if value}}
 
-Value: `{{value}}`
+Value: <code>{{value}}</code>
 {{/if}}
 {{#unless (eq objectProperties undefined)}}
 {{#if (eq objectProperties.length 0)}}
 
 This object has no properties.
 {{else}}
-{{#each objectProperties}}
+<details>
+  <summary>Child Properties</summary>
 
-{{> property-collapsible this}}
-
-{{/each}}
+  {{#each objectProperties}}
+  - {{> property-nested this}}
+  {{/each}}
+</details>
 {{/if}}
 {{/unless}}
 {{#if discriminatorVariants}}
@@ -75,7 +104,7 @@ Variants:
 {{#if this.properties.length}}
   {{#each this.properties}}
 
-{{> property-non-collapsible this isLast=@last}}
+  {{> property-non-collapsible this isLast=@last}}
   {{/each}}
 {{else}}
 
@@ -85,11 +114,12 @@ This variant has no additional specific properties.
   {{/each}}
 {{/if}}
 {{#if listProperties}}
-{{#each listProperties}}
-
-{{> property-collapsible this}}
-
-{{/each}}
+<details>
+  <summary>Child Object Properties</summary>
+  {{#each listProperties}}
+  {{> property-nested this}}
+  {{/each}}
+</details>
 {{/if}}
 
 ---

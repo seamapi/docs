@@ -1,14 +1,63 @@
 # Get an ACS User
 
-```
-POST /acs/users/get ⇒ { acs_user }
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Returns a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+POST /acs/users/get ⇒ { acs_user }
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`acs_user_id`**  (Required)
+
+ID of the desired `acs_user`.
+
+---
+
+
+## Response
+
+[acs\_user](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of acs_user
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+## Examples
+
+### Get a specific ACS user
+
+Specify the `acs_user_id` of the specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to retrieve.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.users.get({
@@ -16,7 +65,7 @@ await seam.acs.users.get({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 {
@@ -33,13 +82,13 @@ await seam.acs.users.get({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.users.get(acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 ```
 
-#### Response
+#### Output
 
 ```python
 AcsUser(
@@ -56,13 +105,13 @@ AcsUser(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.users.get(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 ```
 
-#### Response
+#### Output
 
 ```ruby
 {
@@ -79,14 +128,14 @@ seam.acs.users.get(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
 $seam->acs->users->get(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33");
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -104,13 +153,13 @@ $seam->acs->users->get(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33");
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs users get --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {
@@ -127,7 +176,7 @@ seam acs users get --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -145,7 +194,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "Jane Doe", FullName: "Jane Doe", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100"}
@@ -154,23 +203,4 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `acs_user_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired `acs_user`.
-
-***
-
-## Return Type
-
-[acs\_user](./)

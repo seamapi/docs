@@ -44,7 +44,7 @@ Here, we can see the device has two thresholds- one during the night and one dur
 ### Create Noise Thresholds
 
 {% hint style="info" %}
-For a more in-depth guide to threshold creation, check out our guide here.
+For a more in-depth guide to threshold creation, check out our guide [here](../../products/noise-sensors/configure-noise-threshold-settings.md).
 {% endhint %}
 
 If your device has no default thresholds, or you wish to create custom ones, you can create a noise threshold with the `Create Noise Threshold` endpoint. For example, you can create an endpoint like this:

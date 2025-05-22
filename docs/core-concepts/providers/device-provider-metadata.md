@@ -1,26 +1,32 @@
 ---
 description: >-
-  Device provider metadata is used to provide data on a device that can't be or
-  hasn't yet been standardized across all providers.
+  Learn about provider metadata that is used to provide data about a device that
+  can't be or hasn't yet been standardized across all providers.
 ---
 
-# Device Provider Metadata
+# Provider Metadata
 
-When integrating with a device provider, Seam adds any information that doesn't fit nicely into a cross-provider standard field into the provider metadata for a device. Device provider metadata can be found on an object on devices named like so:
+When integrating with a provider, Seam adds any information that doesn't fit nicely into a cross-provider standard field into the provider metadata for a device or system. Provider metadata is an object named as follows on a device or system:
 
-&#x20;`device.properties.PROVIDER_metadata`
+`[device or acs_system].properties.[provider]_metadata`
 
-Examples of provider metadata include `august_metadata`, `schlage_metadata` and `lockly_metadata`.
+Examples of provider metadata include `august_metadata`, `schlage_metadata`, and `visionline_metadata`.
 
 Sometimes provider metadata contains fields where Seam is still coming up with a standard representation, so you can use these fields to "get ahead" of Seam's standardized implementation.
 
+{% hint style="danger" %}
+Do not use `[provider]_metadata.model` because it is being deprecated and is likely to be changed or removed in the future.
+{% endhint %}
+
 ## Getting Provider Metadata
 
-To access provider metadata, make any call that returns device properties. Here are some examples of how you can get August metadata for a variety of SDKs.
+To access provider metadata, make any call that returns device properties, such as [`/devices/get`](../../api-clients/devices/get.md) or [`/devices/list`](../../api-clients/devices/list.md).
 
 {% hint style="info" %}
-Provider metadata is available in sandboxes, so if you want to see typical examples of provider metadata, you can just create a webview and connect devices in a sandbox workspace to read the properties.
+Provider metadata is also available in [sandbox workspaces](../workspaces/#sandbox-workspaces), so if you want to see typical examples of provider metadata, you can just create a webview and connect devices in a sandbox workspace to read the properties.
 {% endhint %}
+
+For example, to get SmartThings metadata:
 
 {% tabs %}
 {% tab title="HTTP" %}
@@ -44,7 +50,7 @@ curl \
 ```
 {% endtab %}
 
-{% tab title="Javascript" %}
+{% tab title="JavaScript" %}
 ```javascript
 const devices = await seam.devices.list()
 
@@ -62,19 +68,15 @@ console.log(devices[0].properties.smartthings_metadata)
 
 ## Provider Metadata Definitions
 
-{% hint style="danger" %}
-Do not use `PROVIDER_metadata.model`, `model` is being deprecated for a standardized model object across providers, and is likely to be changed or removed in the future.
-{% endhint %}
-
 ### August Metadata
 
-August metadata is stored in `device.properties.august_metadata`
+August metadata is stored in `device.properties.august_metadata`.
 
 <table><thead><tr><th>Property</th><th width="330.3333333333333">Description</th><th>Typical Value</th></tr></thead><tbody><tr><td>lock_id</td><td>Identifier for lock as stored by August</td><td>"348350520F06446Q940E2F67E21D351A"</td></tr><tr><td>lock_name</td><td>Name for lock, typically named by host</td><td>"Front Door"</td></tr><tr><td>house_name</td><td>House name that the host placed the lock in from the August App or Yale Access App</td><td>"123 Amy Lane"</td></tr><tr><td>has_keypad</td><td>Boolean indicating whether or not a keypad is paired to the lock, or the lock has a keypad on it</td><td>true</td></tr></tbody></table>
 
 ### Schlage Metadata
 
-Schlage metadata is stored on `device.properties.schlage_metadata`
+Schlage metadata is stored on `device.properties.schlage_metadata`.
 
 | Property             | Description                                              | Typical Value                          |
 | -------------------- | -------------------------------------------------------- | -------------------------------------- |
@@ -82,9 +84,9 @@ Schlage metadata is stored on `device.properties.schlage_metadata`
 | device\_name         | Name given to Schlage device, usually via the host's app | "My Door"                              |
 | access\_code\_length | Length of access codes supported on device.              | 4                                      |
 
-### Smartthings Metadata
+### SmartThings Metadata
 
-Smartthings metadata is stored on `device.properties.smartthings_metadata`
+SmartThings metadata is stored on `device.properties.smartthings_metadata`.
 
 | Property     | Description                                                                 | Typical Value                          |
 | ------------ | --------------------------------------------------------------------------- | -------------------------------------- |
@@ -93,7 +95,7 @@ Smartthings metadata is stored on `device.properties.smartthings_metadata`
 
 ### Lockly Metadata
 
-Lockly metadata is stored on `device.properties.lockly_metadata`
+Lockly metadata is stored on `device.properties.lockly_metadata`.
 
 | Property     | Description                    | Typical Value               |
 | ------------ | ------------------------------ | --------------------------- |
@@ -102,7 +104,7 @@ Lockly metadata is stored on `device.properties.lockly_metadata`
 
 ### Salto Metadata
 
-Salto metadata is stored on `device.properties.salto_metadata`
+Salto metadata is stored on `device.properties.salto_metadata`.
 
 | Property            | Description                                               | Typical Value  |
 | ------------------- | --------------------------------------------------------- | -------------- |
@@ -114,7 +116,7 @@ Salto metadata is stored on `device.properties.salto_metadata`
 
 ### Genie Metadata
 
-Genie metadata is stored on `device.properties.genie_metadata.`
+Genie metadata is stored on `device.properties.genie_metadata`.
 
 | Property     | Description | Typical Value |
 | ------------ | ----------- | ------------- |
@@ -123,7 +125,7 @@ Genie metadata is stored on `device.properties.genie_metadata.`
 
 ### Brivo Metadata
 
-Brivo metadata is stored on `device.properties.brivo_metadata`
+Brivo metadata is stored on `device.properties.brivo_metadata`.
 
 | Property     | Description                  | Typical Value |
 | ------------ | ---------------------------- | ------------- |
@@ -131,7 +133,7 @@ Brivo metadata is stored on `device.properties.brivo_metadata`
 
 ### Igloo Metadata
 
-Igloo metadata is stored on `device.properties.igloo_metadata`
+Igloo metadata is stored on `device.properties.igloo_metadata`.
 
 | Property   | Description                         | Typical Value |
 | ---------- | ----------------------------------- | ------------- |

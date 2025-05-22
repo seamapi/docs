@@ -145,7 +145,7 @@ AccessCode(
 {% endtab %}
 
 {% tab title="cURL (bash)" %}
-#### Request:
+**Request:**
 
 ```sh
 # Get the device.
@@ -180,7 +180,7 @@ if  $(jq -r '.device.can_program_offline_access_codes' <<< ${device}); then \
 fi
 ```
 
-#### Response:
+**Response:**
 
 ```json
 {
@@ -465,8 +465,8 @@ The [lifecycle of a time-bound access code](../../products/smart-locks/access-co
 
 There are two methods to verify that an time-bound offline access code has been registered in the offline access code server that the device manufacturer maintains:
 
-* **Polling**: Continuously query the access code until the `status` is updated. For instructions, see [Polling Method](../../products/smart-locks/access-codes/creating-access-codes.md#polling-method-1).
-* **Webhook**: Wait for updates to arrive using webhook requests from the Seam API. For instructions, see [Webhook Events Method](../../products/smart-locks/access-codes/creating-access-codes.md#webhook-events-method-1).
+* **Polling**: Continuously query the access code until the `status` is updated. For instructions, see [Polling Method](../../capability-guides/smart-locks/access-codes/creating-access-codes/#polling-method-1).
+* **Webhook**: Wait for updates to arrive using webhook requests from the Seam API. For instructions, see [Webhook Events Method](../../capability-guides/smart-locks/access-codes/creating-access-codes/#webhook-events-method-1).
 
 ***
 
@@ -484,7 +484,7 @@ Make sure to set the `starts_at` and `ends_at` times and offsets to match the lo
 
 Because daily-bound offline access codes require day-level duration granularity, you can also set `max_time_rounding` to `1day` (or `1d`), instead of the default `1hour` (or `1h`). Note that the Seam API returns an error if `max_time_rounding` is `1hour` and the necessary rounding amount exceeds one hour.
 
-You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../api-clients/access\_codes/create.md).
+You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../api-clients/access_codes/create.md).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -528,7 +528,7 @@ AccessCode(
 {% endtab %}
 
 {% tab title="cURL (bash)" %}
-#### Request:
+**Request:**
 
 ```sh
 # Get the device.
@@ -564,7 +564,7 @@ if  $(jq -r '.device.can_program_offline_access_codes' <<< ${device}); then \
 fi
 ```
 
-#### Response:
+**Response:**
 
 ```json
 {
@@ -855,5 +855,5 @@ The [lifecycle of a time-bound access code](../../products/smart-locks/access-co
 
 There are two methods to verify that an time-bound offline access code has been registered in the offline access code server that the device manufacturer maintains:
 
-* **Polling**: Continuously query the access code until the `status` is updated. For instructions, see [Polling Method](../../products/smart-locks/access-codes/creating-access-codes.md#polling-method-1).
-* **Webhook**: Wait for updates to arrive using webhook requests from the Seam API. For instructions, see [Webhook Events Method](../../products/smart-locks/access-codes/creating-access-codes.md#webhook-events-method-1).
+* **Polling**: Continuously query the access code until the `status` is updated. For instructions, see [Polling Method](../../capability-guides/smart-locks/access-codes/creating-access-codes/#polling-method-1).
+* **Webhook**: Wait for updates to arrive using webhook requests from the Seam API. For instructions, see [Webhook Events Method](../../capability-guides/smart-locks/access-codes/creating-access-codes/#webhook-events-method-1).

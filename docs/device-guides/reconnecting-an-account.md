@@ -1,17 +1,21 @@
+---
+description: Learn why an account may become disconnected and how to reconnect it.
+---
+
 # Reconnecting an Account
 
-An account can become disconnected for many reasons:
+An account can become disconnected for many reasons, including the following:
 
-* A user resets their password or clicks "Sign Out of All Devices", invalidating any access tokens Seam may be using to authenticate to the third party API
-* The Third Party Service invalidates access tokens due to excessive usage, or as part of a system update
-* An access token used internally by Seam expires
+* A user resets their password or clicks **Sign Out of All Devices**, invalidating any access tokens Seam may be using to authenticate to the third-party API.
+* The third-party service invalidates access tokens due to excessive usage or as part of a system update.
+* An access token used internally by Seam expires.
 
-When an account is disconnected, you'll receive an error like this on your `connected_account`:
+When an account is disconnected, Seam emits an error like the following example on the `connected_account`:
 
 {% tabs %}
 {% tab title="Python" %}
 ```python
-connected_account.get(email="jane@example.com")
+seam.connected_accounts.get(email_address="jane@example.com")
 # ConnectedAccount(
 #   ...
 #   errors=[
@@ -25,4 +29,6 @@ connected_account.get(email="jane@example.com")
 {% endtab %}
 {% endtabs %}
 
-To resolve, issue a new webview for the user to login with. You may need to instruct them to use the same email they previously used (you can use `connected_account.user_identifier` for this. See the guide on Connect Views for more information on how to create Connect Webviews.
+Seam recommends adding error handling logic to you application for this error. Your app should also include a fallback case if it encounters an unknown generic error code.
+
+To resolve this error, create a new Connect Webview that the user can use to log in. You may need to instruct them to use the same email address that they used previously. You can use `connected_account.user_identifier` to learn the user's email address. For more information about creating Connect Webviews, see [Connect Webview Process](../core-concepts/connect-webviews/connect-webview-process.md).

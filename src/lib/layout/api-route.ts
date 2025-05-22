@@ -17,7 +17,7 @@ import type { PathMetadata } from 'lib/path-metadata.js'
 
 export interface ApiRouteLayoutContext {
   title: string
-  description: string
+  overview: string | undefined
   path: string
   resources: Array<
     ApiRouteResource & {
@@ -85,13 +85,18 @@ export function setApiRouteLayoutContext(
   blueprint: Blueprint,
   pathMetadata: PathMetadata,
 ): void {
-  file.events = []
   const metadata = pathMetadata[route.path]
   if (metadata == null) {
     throw new Error(`Missing path metadata for ${route.path}`)
   }
+
   file.title = metadata.title
+  file.overview = metadata.overview
   file.path = route.path
+
+  const eventsByRoutePath = groupEventsByRoutePath(blueprint.events)
+  file.events = eventsByRoutePath.get(route.path) ?? []
+
   file.endpoints = route.endpoints
     .filter(
       ({ isUndocumented, title }) => !isUndocumented && title.length !== 0,
@@ -110,27 +115,6 @@ export function setApiRouteLayoutContext(
       throw new Error(
         `Path metadata for ${route.path} has invalid resource type ${resourceType}`,
       )
-    }
-
-    const resourceEvents: ApiRouteEvent[] = []
-    for (const event of blueprint.events) {
-      if (
-        event.targetResourceType == null ||
-        event.targetResourceType !== resourceType
-      ) {
-        continue
-      }
-
-      const routeEvent: ApiRouteEvent = {
-        name: event.eventType,
-        description: event.description,
-        properties: event.properties
-          .filter(({ isUndocumented }) => !isUndocumented)
-          .map(mapBlueprintPropertyToRouteProperty),
-      }
-
-      resourceEvents.push(routeEvent)
-      file.events.push(routeEvent)
     }
 
     const warningsProp = resource.properties.find((p) => p.name === 'warnings')
@@ -155,10 +139,33 @@ export function setApiRouteLayoutContext(
       properties,
       errors: resourceErrors,
       warnings: resourceWarnings,
-      events: resourceEvents,
+      events: eventsByRoutePath.get(resource.routePath) ?? [],
       resourceSamples: resource.resourceSamples.map(mapResourceSample),
     })
   }
+}
+
+const groupEventsByRoutePath = (
+  events: Blueprint['events'],
+): Map<string, ApiRouteEvent[]> => {
+  const eventsByRoutePath = new Map<string, ApiRouteEvent[]>()
+
+  for (const event of events) {
+    if (event.routePath == null) continue
+
+    const routeEvents = eventsByRoutePath.get(event.routePath) ?? []
+    routeEvents.push({
+      name: event.eventType,
+      description: event.description,
+      properties: event.properties
+        .filter(({ isUndocumented }) => !isUndocumented)
+        .map(mapBlueprintPropertyToRouteProperty),
+    })
+
+    eventsByRoutePath.set(event.routePath, routeEvents)
+  }
+
+  return eventsByRoutePath
 }
 
 const getFirstParagraph = (text: string): string =>
@@ -339,8 +346,8 @@ function addLinkTargetsToProperties(
   sections: { errors: boolean; warnings: boolean },
 ): void {
   const linkableProperties: Record<string, string | undefined> = {
-    errors: sections.errors ? './#errors-1' : undefined,
-    warnings: sections.warnings ? './#warnings-1' : undefined,
+    errors: sections.errors ? './#errors' : undefined,
+    warnings: sections.warnings ? './#warnings' : undefined,
   }
 
   for (const prop of properties) {

@@ -1,12 +1,17 @@
 # {{title}}
+{{#if overview}}
+
+{{overview}}
+{{/if}}
 
 {{#each resources}}
 {{> api-resource }}
 {{#if errors.length}}
+
 ## Errors
 
 {{#each errors}}
-### `{{name}}`
+**`{{name}}`**
 
 {{description}}
 
@@ -15,10 +20,11 @@
 {{/each}}
 {{/if}}
 {{#if warnings.length}}
+
 ## Warnings
 
 {{#each warnings}}
-### `{{name}}`
+**`{{name}}`**
 
 {{description}}
 
@@ -27,31 +33,37 @@
 {{/each}}
 {{/if}}
 {{/each}}
-## Endpoints
-
-{{#each endpoints}}
-### [`{{path}}`](./{{name}}.md)
-
-{{description}}
-{{/each}}
 {{#if events.length}}
-
----
 
 ## Events
 
 {{#each events}}
-### `{{name}}`
+**`{{name}}`**
 
 {{#if description}}
 {{description}}
 
 {{/if}}
-{{#each properties}}
-{{> property-collapsible this}}
+<details>
 
+<summary>Properties</summary>
+{{#each properties}}
+
+- {{> property-nested this}}
 {{/each}}
+</details>
+
 ---
 
 {{/each}}
 {{/if}}
+## Endpoints
+
+{{#each endpoints}}
+
+[**`{{path}}`**](./{{name}}.md)
+
+{{description}}
+
+{{/each}}
+

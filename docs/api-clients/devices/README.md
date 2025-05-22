@@ -92,7 +92,7 @@ Seam recommends adding error handling logic to you app for each generic error in
 When Seam is able to provide more specific information beyond one of the [generic errors](./#generic-errors), one or more errors from the list of specific errors may appear. This gives your app the option to display additional context or suggest provider specific resolutions.
 
 {% hint style="info" %}
-If the connected account associated with a device has an error, it is attached to the device alongside any other device errors. Treat these errors as specific errors. See [Connected Account Error Types](../connected_accounts/#connected-account-error-types).
+If the connected account associated with a device has an error, it is attached to the device alongside any other device errors. Treat these errors as specific errors.
 {% endhint %}
 
 | Error Type                          | Description                                                                                                                     |
@@ -121,43 +121,6 @@ Warnings are returned in a list. For example:
 | `salto_office_mode`                         | Lock is in office mode. Access codes will not unlock doors. You can disable office mode in the Salto dashboard.                                                                                                                             |
 | `salto_privacy_mode`                        | Lock is in privacy mode. Access Codes will not unlock doors. You can disable privacy mode by pressing the back of the lock.                                                                                                                 |
 | `ttlock_lock_gateway_unlocking_not_enabled` | Turn on the remote unlock feature in the lock settings to enable unlocks. This feature must be turned on from the mobile app while near the door lock.                                                                                      |
-
-## Device Manufacturers
-
-On some account types, Seam provides additional information about the manufacturer of the door lock. Where the device is being connected through a smart hub, the manufacturer of the door lock might be different from that of the smart hub.
-
-## Device Providers
-
-Seam maintains a list of device providers that you can access using the [List Device Providers](list_device_providers.md) endpoint.
-
-The `device_provider` object includes the following information:
-
-<table><thead><tr><th width="273">Property</th><th width="101.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>device_provider_name</code></td><td>String</td><td><p>Name of the device provider.</p><p>For example: <code>august</code></p></td></tr><tr><td><code>display_name</code></td><td>String</td><td><p>Formatted version of the <code>device_provider_name</code>.</p><p>For example: <code>August</code></p></td></tr><tr><td><code>image_url</code></td><td>String</td><td>Image URL for the provider logo.</td></tr><tr><td><code>provider_categories</code></td><td>Array</td><td><p>Array of associated categories for the provider.</p><p>Supported categories:</p><ul><li><code>stable</code></li><li><code>consumer_smartlocks</code></li><li><code>thermostats</code></li><li><code>noise_sensors</code></li></ul></td></tr><tr><td><code>can_remotely_unlock</code></td><td>Boolean</td><td>Indicates whether at least one supported device from the provider can perform a <a href="../../products/smart-locks/lock-and-unlock.md">remote unlock operation</a>. See <a href="../../capability-guides/device-and-system-capabilities.md#capability-flags">Capability Flags</a>.</td></tr><tr><td><code>can_remotely_lock</code></td><td>Boolean</td><td>Indicates whether at least one supported device from the provider can perform a <a href="../../products/smart-locks/lock-and-unlock.md">remote lock operation</a>. See <a href="../../capability-guides/device-and-system-capabilities.md#capability-flags">Capability Flags</a>.</td></tr><tr><td><code>can_program_online_access_codes</code></td><td>Boolean</td><td>Indicates whether at least one supported device from the provider can <a href="../../products/smart-locks/access-codes/">program online access codes</a>. See <a href="../../capability-guides/device-and-system-capabilities.md#capability-flags">Capability Flags</a>.</td></tr><tr><td><code>can_program_offline_access_codes</code></td><td>Boolean</td><td>Indicates whether at least one supported device from the provider can <a href="../../products/smart-locks/access-codes/offline-access-codes.md">program offline access codes</a>. See <a href="../../capability-guides/device-and-system-capabilities.md#capability-flags">Capability Flags</a>.</td></tr></tbody></table>
-
-The following example shows a `device_provider` object:
-
-```json
-{
-  "device_provider_name": "august",
-  "display_name": "August",
-  "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/logos/august_logo_square.png&q=75&w=128",
-  "provider_categories": [
-    "stable",
-    "consumer_smartlocks"
-  ],
-  "can_remotely_lock": true,
-  "can_remotely_unlock": true,
-  "can_program_online_access_codes": true
-}
-```
-
-## Access Code Constraints
-
-Each constraint in the `code_constraints` array contains objects with the `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are [manufacturer](broken-reference/) or [device](broken-reference/)-specific.
-
-The `constraint_type` property can be one of the following enum values:
-
-<table><thead><tr><th width="338">Constraint Type</th><th>Description</th></tr></thead><tbody><tr><td><code>no_zeros</code></td><td><code>0</code>s cannot be used as digits in the PIN code.</td></tr><tr><td><code>cannot_start_with_12</code></td><td>The PIN code cannot start with the sequence of digits <code>12</code>.</td></tr><tr><td><code>no_triple_consecutive_ints</code></td><td>No more than three digits in a row can be consecutive or the same in the PIN code.</td></tr><tr><td><code>cannot_specify_pin_code</code></td><td>You cannot specify a PIN code. You must leave the code empty, and the lock provider generates a PIN code.</td></tr><tr><td><code>pin_code_matches_existing_set</code></td><td><p>If you specify a PIN code, it must match an existing set of PIN codes used in the account.</p><p>For example, the PIN code could match the code assigned to a user in the system.</p></td></tr><tr><td><code>start_date_in_future</code></td><td>For time-bound codes, the start date must be in the future.</td></tr><tr><td><code>no_ascending_or_descending_sequence</code></td><td>The PIN code cannot consist of a sequence of consecutive digits.</td></tr><tr><td><code>at_least_three_unique_digits</code></td><td>The PIN must contain at least three unique digits.</td></tr><tr><td><code>cannot_contain_089</code></td><td><p>The PIN code cannot contain the digits <code>0</code>, <code>8</code>, or <code>9</code>.</p><p>For example, this restriction could apply to a cylinder lock that only includes the digits <code>1</code> to <code>7</code>.</p></td></tr><tr><td><code>cannot_contain_0789</code></td><td><p>The PIN code cannot contain the digits <code>0</code>, <code>7</code>, <code>8</code>, or <code>9</code>.</p><p>For example, this restriction could apply to a cylinder lock that only includes the digits <code>1</code> to <code>6</code>.</p></td></tr><tr><td><code>name_length</code></td><td><p>The name of the code has some restrictions on length.</p><p>When the <code>constraint_type</code> is <code>name_length</code>, the constraint object has one or two additional properties called <code>min_length</code> and <code>max_length</code> to specify the length constraints.</p></td></tr><tr><td><code>name_must_be_unique</code></td><td>The name of the code must be unique within the device.</td></tr></tbody></table>
 
 ## `device` Methods
 

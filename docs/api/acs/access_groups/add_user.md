@@ -1,14 +1,60 @@
 # Add an ACS User to an Access Group
 
-```
-PUT /acs/access_groups/add_user ⇒ void
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+PUT /acs/access_groups/add_user ⇒ void
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`acs_access_group_id`**  (Required)
+
+ID of the desired access group.
+
+---
+
+**`acs_user_id`**  (Required)
+
+ID of the desired user.
+
+---
+
+
+## Response
+
+void
+
+---
+
+## Examples
+
+### Add an ACS user to an access group
+
+Specify the `acs_access_group_id` and `acs_user_id` to add an ACS user to an access group.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.accessGroups.addUser({
@@ -17,7 +63,7 @@ await seam.acs.accessGroups.addUser({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -25,7 +71,7 @@ await seam.acs.accessGroups.addUser({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.access_groups.add_user(
@@ -34,7 +80,7 @@ seam.acs.access_groups.add_user(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -42,7 +88,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.access_groups.add_user(
@@ -51,7 +97,7 @@ seam.acs.access_groups.add_user(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -59,7 +105,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -69,7 +115,7 @@ $seam->acs->access_groups->add_user(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -77,13 +123,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs access-groups add-user --acs_access_group_id "44444444-4444-4444-4444-444444444444" --acs_user_id "33333333-3333-3333-3333-333333333333"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -91,7 +137,7 @@ seam acs access-groups add-user --acs_access_group_id "44444444-4444-4444-4444-4
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -110,7 +156,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil
@@ -119,32 +165,4 @@ nil
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `acs_access_group_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired access group.
-
-***
-
-### `acs_user_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired user.
-
-***
-
-## Return Type
-
-void

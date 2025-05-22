@@ -1,14 +1,100 @@
 # Create a Thermostat Schedule
 
-```
-POST /thermostats/schedules/create ⇒ { thermostat_schedule }
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Creates a [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+POST /thermostats/schedules/create ⇒ { thermostat_schedule }
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`climate_preset_key`**  (Required)
+
+Key of the [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to use for the thermostat schedule.
+
+---
+
+**`device_id`**  (Required)
+
+ID of the desired thermostat device.
+
+---
+
+**`ends_at`**  (Required)
+
+Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+
+---
+
+**`starts_at`**  (Required)
+
+Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+
+---
+
+**`is_override_allowed`** 
+
+Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the schedule is active. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
+
+---
+
+**`max_override_period_minutes`** 
+
+Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
+
+---
+
+**`name`** 
+
+User-friendly name to identify the thermostat schedule.
+
+---
+
+
+## Response
+
+[thermostat\_schedule](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of thermostat_schedule
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+## Examples
+
+### Create a thermostat schedule
+
+Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, as well as the desired `starts_at` and `ends_at` times.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.schedules.create({
@@ -21,7 +107,7 @@ await seam.thermostats.schedules.create({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 {
@@ -37,7 +123,7 @@ await seam.thermostats.schedules.create({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.schedules.create(
@@ -50,7 +136,7 @@ seam.thermostats.schedules.create(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 ThermostatSchedule(
@@ -66,7 +152,7 @@ ThermostatSchedule(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.schedules.create(
@@ -79,7 +165,7 @@ seam.thermostats.schedules.create(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 {
@@ -95,7 +181,7 @@ seam.thermostats.schedules.create(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -109,7 +195,7 @@ $seam->thermostats->schedules->create(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -126,13 +212,13 @@ $seam->thermostats->schedules->create(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats schedules create --device_id "123e4567-e89b-12d3-a456-426614174000" --name "Reservation 1" --climate_preset_key "occupied" --starts_at "2024-11-01T15:00:00Z" --ends_at "2024-11-05T12:00:00Z" --max_override_period_minutes 90
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {
@@ -148,7 +234,7 @@ seam thermostats schedules create --device_id "123e4567-e89b-12d3-a456-426614174
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -171,7 +257,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 api.ThermostatSchedule{ThermostatScheduleId: "56d29fcf-0674-4db5-8e03-b2370a77460a", Name: "Reservation 1", DeviceId: "2d488679-6f07-4810-aed2-e726872c1dd5", ClimatePresetKey: "occupied", StartsAt: "2024-11-01T15:00:00.000Z", EndsAt: "2024-11-05T12:00:00.000Z", MaxOverridePeriodMinutes: 90}
@@ -180,78 +266,4 @@ api.ThermostatSchedule{ThermostatScheduleId: "56d29fcf-0674-4db5-8e03-b2370a7746
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `climate_preset_key`
-
-Format: `String`
-Required: Yes
-
-Key of the [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to use for the thermostat schedule.
-
-***
-
-### `device_id`
-
-Format: `String`
-Required: Yes
-
-ID of the desired thermostat device.
-
-***
-
-### `ends_at`
-
-Format: `String`
-Required: Yes
-
-Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
-
-***
-
-### `starts_at`
-
-Format: `String`
-Required: Yes
-
-Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
-
-***
-
-### `is_override_allowed`
-
-Format: `Boolean`
-Required: No
-
-Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the schedule is active. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
-
-***
-
-### `max_override_period_minutes`
-
-Format: `Number`
-Required: No
-
-Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
-
-***
-
-### `name`
-
-Format: `String`
-Required: No
-
-User-friendly name to identify the thermostat schedule.
-
-***
-
-## Return Type
-
-[thermostat\_schedule](./)
