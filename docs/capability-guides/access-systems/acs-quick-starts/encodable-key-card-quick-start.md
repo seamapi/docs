@@ -387,7 +387,7 @@ func run() error {
 
 ## Step 4: Create an Encodable Key Card Credential
 
-Create an encodable key card credential for the ACS user. In this credential, specify the set of allowed entrances and the access schedule. For Visionline, you must also specify some system-specific metadata, such as the card format and whether the credential is an [override credential](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/credential-types/#credential-types-for-visionline).
+Create an encodable key card credential for the ACS user. In this credential, specify the set of allowed entrances and the access schedule. For Visionline, you must also specify some system-specific metadata, such as the card format and whether the credential is an [override credential](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/).
 
 If this credential were intended for a real Visionline card, you'd need to create the credential and then encode this data onto the key card. Other access control systems do not use encodable cards, but, rather, assign cards to users.
 

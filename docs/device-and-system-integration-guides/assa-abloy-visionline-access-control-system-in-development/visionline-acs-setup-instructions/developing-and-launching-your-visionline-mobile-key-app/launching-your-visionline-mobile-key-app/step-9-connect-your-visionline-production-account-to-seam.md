@@ -19,7 +19,7 @@ If you already connected your Visionline ACS to Seam during the development phas
 
 ## Connect Credential Services to Seam
 
-ASSA ABLOY Credential Services stores all the mobile credentials that your application issues. For more information about ASSA ABLOY Credential Services, see the [ASSA ABLOY Credential Services integration guide](../../../../assa-abloy-credential-services-credential-manager.md).
+ASSA ABLOY Credential Services stores all the mobile credentials that your application issues. For more information about ASSA ABLOY Credential Services, see the [ASSA ABLOY Credential Services integration guide](../../../../assa-abloy-credential-services.md).
 
 You received a Credential Services production "tenant" account from ASSA ABLOY when you [obtained ASSA ABLOY certification](../../../../assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-1-obtain-assa-abloy-certification-for-your-mobile-key-app.md) for your mobile key app. ASSA ABLOY provided you with the following production-phase information upon certification:
 
