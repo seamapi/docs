@@ -338,7 +338,7 @@
   * [Get started with 4SUITES locks](device-and-system-integration-guides/4suites-locks/get-started-with-4suites-locks.md)
 * [Akiles Locks](device-and-system-integration-guides/akiles-locks/README.md)
   * [Get started with Akiles locks](device-and-system-integration-guides/akiles-locks/get-started-with-akiles-locks.md)
-* [ASSA ABLOY Credential Services](device-and-system-integration-guides/assa-abloy-credential-services.md)
+* [ASSA ABLOY Credential Services](device-and-system-integration-guides/assa-abloy-credential-services-credential-manager.md)
 * [ASSA ABLOY Visionline Access Control System](device-and-system-integration-guides/assa-abloy-visionline-access-control-system/README.md)
   * [Visionline ACS Setup Instructions](device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/README.md)
     * [Developing and Launching Your Visionline Plastic Card Encoding App](device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/README.md)
