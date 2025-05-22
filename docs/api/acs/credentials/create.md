@@ -33,9 +33,15 @@ Access method for the new credential. Supported values: `code`, `card`, `mobile_
 
 ---
 
-**`acs_user_id`**  (Required)
+**`acs_system_id`** 
 
-ID of the ACS user to whom the new credential belongs.
+ID of the access system to which the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`.
+
+---
+
+**`acs_user_id`** 
+
+ID of the access system user to whom the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`.
 
 ---
 
@@ -84,6 +90,12 @@ Salto Space-specific metadata for the new credential.
 **`starts_at`** 
 
 Date and time at which the validity of the new credential starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+
+---
+
+**`user_identity_id`** 
+
+ID of the user identity to whom the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`. If the access system contains a user with the same `email_address` or `phone_number` as the user identity that you specify, they are linked, and the credential belongs to the access system user. If the access system does not have a corresponding user, one is created.
 
 ---
 

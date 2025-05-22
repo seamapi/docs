@@ -27,6 +27,12 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
+**`acs_system_ids`**  *of UUIDs*
+
+List of ACS system IDs to associate with the user identity through ACS users. If there's no user with the same email address or phone number in the specified ACS systems, a new ACS user is created. If there is an existing user with the same email or phone number in the specified ACS systems, the user is linked to the user identity.
+
+---
+
 **`email_address`** 
 
 Unique email address for the user identity.

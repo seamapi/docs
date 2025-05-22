@@ -30,9 +30,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_entrance_id`**  (Required)
 
+ID of the entrance for which you want to list all credentials that grant access.
+
 ---
 
 **`include_if`**  *of Enums*
+
+Conditions that credentials must meet to be included in the returned list.
 <details>
 
 <summary>Enum values</summary>

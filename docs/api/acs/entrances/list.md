@@ -4,7 +4,7 @@
 - [Response](./#response)
 - [Examples](./#examples)
 
-Returns a list of all [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+Returns a list of all [access system entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 {% tabs %}
 {% tab title="Signature" %}
@@ -30,9 +30,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_credential_id`** 
 
+ID of the credential for which you want to retrieve all entrances.
+
 ---
 
 **`acs_system_id`** 
+
+ID of the access system for which you want to retrieve all entrances.
 
 ---
 

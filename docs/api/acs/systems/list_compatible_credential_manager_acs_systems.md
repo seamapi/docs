@@ -4,9 +4,9 @@
 - [Response](./#response)
 - [Examples](./#examples)
 
-Returns a list of all credential manager ACS systems that are compatible with a specified [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+Returns a list of all credential manager systems that are compatible with a specified [access system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-Specify the ACS system for which you want to retrieve all compatible credential manager ACS systems by including the corresponding `acs_system_id` in the request body.
+Specify the access system for which you want to retrieve all compatible credential manager systems by including the corresponding `acs_system_id` in the request body.
 
 {% tabs %}
 {% tab title="Signature" %}
@@ -31,7 +31,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_system_id`**  (Required)
 
-ID of the ACS system for which you want to retrieve all compatible credential manager ACS systems.
+ID of the access system for which you want to retrieve all compatible credential manager systems.
 
 ---
 

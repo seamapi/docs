@@ -4,7 +4,7 @@
 - [Response](./#response)
 - [Examples](./#examples)
 
-Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Creates a new [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 {% tabs %}
 {% tab title="Signature" %}
@@ -29,25 +29,25 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_system_id`**  (Required)
 
-ID of the `acs_system` to which to add the new `acs_user`.
+ID of the access system to which you want to add the new access system user.
 
 ---
 
 **`full_name`**  (Required)
 
-Full name of the new `acs_user`.
+Full name of the new access system user.
 
 ---
 
 **`access_schedule`** 
 
-`starts_at` and `ends_at` timestamps for the new `acs_user`'s access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. `starts_at` defaults to the current time if not provided. `ends_at` is optional and must be a time in the future and after `starts_at`.
+`starts_at` and `ends_at` timestamps for the new access system user's access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. If you omit `starts_at`, it defaults to the current time. `ends_at` is optional and must be a time in the future and after `starts_at`.
 
 ---
 
 **`acs_access_group_ids`**  *of UUIDs*
 
-Array of `access_group_id`s to indicate the access groups to which to add the new `acs_user`.
+Array of access group IDs to indicate the access groups to which you want to add the new access system user.
 
 ---
 
@@ -69,7 +69,7 @@ Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/acc
 
 **`user_identity_id`** 
 
-ID of the user identity with which to associate the new `acs_user`.
+ID of the user identity with which you want to associate the new access system user.
 
 ---
 
