@@ -59852,8 +59852,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_code.created",
-      "targetResourceType": "access_code"
+      "eventType": "access_code.created"
     },
     {
       "resourceType": "event",
@@ -59985,8 +59984,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_code.changed",
-      "targetResourceType": "access_code"
+      "eventType": "access_code.changed"
     },
     {
       "resourceType": "event",
@@ -60131,8 +60129,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_code.scheduled_on_device",
-      "targetResourceType": "access_code"
+      "eventType": "access_code.scheduled_on_device"
     },
     {
       "resourceType": "event",
@@ -60277,8 +60274,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_code.set_on_device",
-      "targetResourceType": "access_code"
+      "eventType": "access_code.set_on_device"
     },
     {
       "resourceType": "event",
@@ -60410,8 +60406,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_code.removed_from_device",
-      "targetResourceType": "access_code"
+      "eventType": "access_code.removed_from_device"
     },
     {
       "resourceType": "event",
@@ -60543,8 +60538,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_code.delay_in_setting_on_device",
-      "targetResourceType": "access_code"
+      "eventType": "access_code.delay_in_setting_on_device"
     },
     {
       "resourceType": "event",
@@ -60676,8 +60670,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_code.failed_to_set_on_device",
-      "targetResourceType": "access_code"
+      "eventType": "access_code.failed_to_set_on_device"
     },
     {
       "resourceType": "event",
@@ -60822,8 +60815,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_code.deleted",
-      "targetResourceType": "access_code"
+      "eventType": "access_code.deleted"
     },
     {
       "resourceType": "event",
@@ -60955,8 +60947,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_code.delay_in_removing_from_device",
-      "targetResourceType": "access_code"
+      "eventType": "access_code.delay_in_removing_from_device"
     },
     {
       "resourceType": "event",
@@ -61088,8 +61079,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_code.failed_to_remove_from_device",
-      "targetResourceType": "access_code"
+      "eventType": "access_code.failed_to_remove_from_device"
     },
     {
       "resourceType": "event",
@@ -61221,8 +61211,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_code.modified_external_to_seam",
-      "targetResourceType": "access_code"
+      "eventType": "access_code.modified_external_to_seam"
     },
     {
       "resourceType": "event",
@@ -61354,8 +61343,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_code.deleted_external_to_seam",
-      "targetResourceType": "access_code"
+      "eventType": "access_code.deleted_external_to_seam"
     },
     {
       "resourceType": "event",
@@ -61500,8 +61488,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_code.backup_access_code_pulled",
-      "targetResourceType": "access_code"
+      "eventType": "access_code.backup_access_code_pulled"
     },
     {
       "resourceType": "event",
@@ -61633,8 +61620,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_code.unmanaged.converted_to_managed",
-      "targetResourceType": "access_code"
+      "eventType": "access_code.unmanaged.converted_to_managed"
     },
     {
       "resourceType": "event",
@@ -61766,8 +61752,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_code.unmanaged.failed_to_convert_to_managed",
-      "targetResourceType": "access_code"
+      "eventType": "access_code.unmanaged.failed_to_convert_to_managed"
     },
     {
       "resourceType": "event",
@@ -61899,8 +61884,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_code.unmanaged.created",
-      "targetResourceType": "access_code"
+      "eventType": "access_code.unmanaged.created"
     },
     {
       "resourceType": "event",
@@ -62032,8 +62016,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_code.unmanaged.removed",
-      "targetResourceType": "access_code"
+      "eventType": "access_code.unmanaged.removed"
     },
     {
       "resourceType": "event",
@@ -62139,8 +62122,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_grant.created",
-      "targetResourceType": null
+      "eventType": "access_grant.created"
     },
     {
       "resourceType": "event",
@@ -62246,8 +62228,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_grant.deleted",
-      "targetResourceType": null
+      "eventType": "access_grant.deleted"
     },
     {
       "resourceType": "event",
@@ -62353,8 +62334,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_grant.access_granted_to_all_doors",
-      "targetResourceType": null
+      "eventType": "access_grant.access_granted_to_all_doors"
     },
     {
       "resourceType": "event",
@@ -62473,8 +62453,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_grant.access_granted_to_door",
-      "targetResourceType": null
+      "eventType": "access_grant.access_granted_to_door"
     },
     {
       "resourceType": "event",
@@ -62593,8 +62572,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_grant.access_to_door_lost",
-      "targetResourceType": null
+      "eventType": "access_grant.access_to_door_lost"
     },
     {
       "resourceType": "event",
@@ -62700,8 +62678,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_method.issued",
-      "targetResourceType": null
+      "eventType": "access_method.issued"
     },
     {
       "resourceType": "event",
@@ -62807,8 +62784,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_method.revoked",
-      "targetResourceType": null
+      "eventType": "access_method.revoked"
     },
     {
       "resourceType": "event",
@@ -62914,8 +62890,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "access_method.card_encoding_required",
-      "targetResourceType": null
+      "eventType": "access_method.card_encoding_required"
     },
     {
       "resourceType": "event",
@@ -63034,8 +63009,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "acs_system.connected",
-      "targetResourceType": "acs_system"
+      "eventType": "acs_system.connected"
     },
     {
       "resourceType": "event",
@@ -63154,8 +63128,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "acs_system.added",
-      "targetResourceType": "acs_system"
+      "eventType": "acs_system.added"
     },
     {
       "resourceType": "event",
@@ -63274,8 +63247,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "acs_system.disconnected",
-      "targetResourceType": "acs_system"
+      "eventType": "acs_system.disconnected"
     },
     {
       "resourceType": "event",
@@ -63407,8 +63379,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "acs_credential.deleted",
-      "targetResourceType": "acs_credential"
+      "eventType": "acs_credential.deleted"
     },
     {
       "resourceType": "event",
@@ -63540,8 +63511,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "acs_credential.issued",
-      "targetResourceType": "acs_credential"
+      "eventType": "acs_credential.issued"
     },
     {
       "resourceType": "event",
@@ -63673,8 +63643,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "acs_credential.reissued",
-      "targetResourceType": "acs_credential"
+      "eventType": "acs_credential.reissued"
     },
     {
       "resourceType": "event",
@@ -63806,8 +63775,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "acs_credential.invalidated",
-      "targetResourceType": "acs_credential"
+      "eventType": "acs_credential.invalidated"
     },
     {
       "resourceType": "event",
@@ -63939,8 +63907,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "acs_user.created",
-      "targetResourceType": "acs_user"
+      "eventType": "acs_user.created"
     },
     {
       "resourceType": "event",
@@ -64072,8 +64039,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "acs_user.deleted",
-      "targetResourceType": "acs_user"
+      "eventType": "acs_user.deleted"
     },
     {
       "resourceType": "event",
@@ -64205,8 +64171,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "acs_encoder.added",
-      "targetResourceType": "acs_encoder"
+      "eventType": "acs_encoder.added"
     },
     {
       "resourceType": "event",
@@ -64338,8 +64303,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "acs_encoder.removed",
-      "targetResourceType": "acs_encoder"
+      "eventType": "acs_encoder.removed"
     },
     {
       "resourceType": "event",
@@ -64471,8 +64435,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "acs_access_group.deleted",
-      "targetResourceType": "acs_access_group"
+      "eventType": "acs_access_group.deleted"
     },
     {
       "resourceType": "event",
@@ -64604,8 +64567,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "acs_entrance.added",
-      "targetResourceType": "acs_entrance"
+      "eventType": "acs_entrance.added"
     },
     {
       "resourceType": "event",
@@ -64737,8 +64699,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "acs_entrance.removed",
-      "targetResourceType": "acs_entrance"
+      "eventType": "acs_entrance.removed"
     },
     {
       "resourceType": "event",
@@ -64844,8 +64805,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "client_session.deleted",
-      "targetResourceType": "client_session"
+      "eventType": "client_session.deleted"
     },
     {
       "resourceType": "event",
@@ -64964,8 +64924,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "connected_account.connected",
-      "targetResourceType": "connected_account"
+      "eventType": "connected_account.connected"
     },
     {
       "resourceType": "event",
@@ -65084,8 +65043,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "connected_account.created",
-      "targetResourceType": "connected_account"
+      "eventType": "connected_account.created"
     },
     {
       "resourceType": "event",
@@ -65204,8 +65162,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "connected_account.successful_login",
-      "targetResourceType": "connected_account"
+      "eventType": "connected_account.successful_login"
     },
     {
       "resourceType": "event",
@@ -65311,8 +65268,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "connected_account.disconnected",
-      "targetResourceType": "connected_account"
+      "eventType": "connected_account.disconnected"
     },
     {
       "resourceType": "event",
@@ -65418,8 +65374,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "connected_account.completed_first_sync",
-      "targetResourceType": "connected_account"
+      "eventType": "connected_account.completed_first_sync"
     },
     {
       "resourceType": "event",
@@ -65525,8 +65480,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "connected_account.deleted",
-      "targetResourceType": "connected_account"
+      "eventType": "connected_account.deleted"
     },
     {
       "resourceType": "event",
@@ -65632,8 +65586,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "connected_account.completed_first_sync_after_reconnection",
-      "targetResourceType": "connected_account"
+      "eventType": "connected_account.completed_first_sync_after_reconnection"
     },
     {
       "resourceType": "event",
@@ -65765,8 +65718,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "action_attempt.lock_door.succeeded",
-      "targetResourceType": null
+      "eventType": "action_attempt.lock_door.succeeded"
     },
     {
       "resourceType": "event",
@@ -65898,8 +65850,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "action_attempt.lock_door.failed",
-      "targetResourceType": null
+      "eventType": "action_attempt.lock_door.failed"
     },
     {
       "resourceType": "event",
@@ -66031,8 +65982,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "action_attempt.unlock_door.succeeded",
-      "targetResourceType": null
+      "eventType": "action_attempt.unlock_door.succeeded"
     },
     {
       "resourceType": "event",
@@ -66164,8 +66114,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "action_attempt.unlock_door.failed",
-      "targetResourceType": null
+      "eventType": "action_attempt.unlock_door.failed"
     },
     {
       "resourceType": "event",
@@ -66284,8 +66233,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "connect_webview.login_succeeded",
-      "targetResourceType": "connect_webview"
+      "eventType": "connect_webview.login_succeeded"
     },
     {
       "resourceType": "event",
@@ -66391,8 +66339,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "connect_webview.login_failed",
-      "targetResourceType": "connect_webview"
+      "eventType": "connect_webview.login_failed"
     },
     {
       "resourceType": "event",
@@ -66511,8 +66458,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.connected",
-      "targetResourceType": "device"
+      "eventType": "device.connected"
     },
     {
       "resourceType": "event",
@@ -66631,8 +66577,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.added",
-      "targetResourceType": "device"
+      "eventType": "device.added"
     },
     {
       "resourceType": "event",
@@ -66751,8 +66696,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.converted_to_unmanaged",
-      "targetResourceType": "device"
+      "eventType": "device.converted_to_unmanaged"
     },
     {
       "resourceType": "event",
@@ -66871,8 +66815,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.unmanaged.converted_to_managed",
-      "targetResourceType": "device"
+      "eventType": "device.unmanaged.converted_to_managed"
     },
     {
       "resourceType": "event",
@@ -66991,8 +66934,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.unmanaged.connected",
-      "targetResourceType": "device"
+      "eventType": "device.unmanaged.connected"
     },
     {
       "resourceType": "event",
@@ -67156,8 +67098,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.disconnected",
-      "targetResourceType": "device"
+      "eventType": "device.disconnected"
     },
     {
       "resourceType": "event",
@@ -67321,8 +67262,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.unmanaged.disconnected",
-      "targetResourceType": "device"
+      "eventType": "device.unmanaged.disconnected"
     },
     {
       "resourceType": "event",
@@ -67441,8 +67381,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.tampered",
-      "targetResourceType": "device"
+      "eventType": "device.tampered"
     },
     {
       "resourceType": "event",
@@ -67574,8 +67513,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.low_battery",
-      "targetResourceType": "device"
+      "eventType": "device.low_battery"
     },
     {
       "resourceType": "event",
@@ -67762,8 +67700,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.battery_status_changed",
-      "targetResourceType": "device"
+      "eventType": "device.battery_status_changed"
     },
     {
       "resourceType": "event",
@@ -67882,8 +67819,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.removed",
-      "targetResourceType": "device"
+      "eventType": "device.removed"
     },
     {
       "resourceType": "event",
@@ -68002,8 +67938,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.deleted",
-      "targetResourceType": "device"
+      "eventType": "device.deleted"
     },
     {
       "resourceType": "event",
@@ -68122,8 +68057,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.third_party_integration_detected",
-      "targetResourceType": "device"
+      "eventType": "device.third_party_integration_detected"
     },
     {
       "resourceType": "event",
@@ -68242,8 +68176,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.third_party_integration_no_longer_detected",
-      "targetResourceType": "device"
+      "eventType": "device.third_party_integration_no_longer_detected"
     },
     {
       "resourceType": "event",
@@ -68362,8 +68295,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.salto.privacy_mode_activated",
-      "targetResourceType": "device"
+      "eventType": "device.salto.privacy_mode_activated"
     },
     {
       "resourceType": "event",
@@ -68482,8 +68414,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.salto.privacy_mode_deactivated",
-      "targetResourceType": "device"
+      "eventType": "device.salto.privacy_mode_deactivated"
     },
     {
       "resourceType": "event",
@@ -68602,8 +68533,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.connection_became_flaky",
-      "targetResourceType": "device"
+      "eventType": "device.connection_became_flaky"
     },
     {
       "resourceType": "event",
@@ -68722,8 +68652,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.connection_stabilized",
-      "targetResourceType": "device"
+      "eventType": "device.connection_stabilized"
     },
     {
       "resourceType": "event",
@@ -68842,8 +68771,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.error.subscription_required",
-      "targetResourceType": "device"
+      "eventType": "device.error.subscription_required"
     },
     {
       "resourceType": "event",
@@ -68962,8 +68890,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.error.subscription_required.resolved",
-      "targetResourceType": "device"
+      "eventType": "device.error.subscription_required.resolved"
     },
     {
       "resourceType": "event",
@@ -69082,8 +69009,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.accessory_keypad_connected",
-      "targetResourceType": "device"
+      "eventType": "device.accessory_keypad_connected"
     },
     {
       "resourceType": "event",
@@ -69202,8 +69128,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.accessory_keypad_disconnected",
-      "targetResourceType": "device"
+      "eventType": "device.accessory_keypad_disconnected"
     },
     {
       "resourceType": "event",
@@ -69400,8 +69325,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "noise_sensor.noise_threshold_triggered",
-      "targetResourceType": null
+      "eventType": "noise_sensor.noise_threshold_triggered"
     },
     {
       "resourceType": "event",
@@ -69611,8 +69535,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "lock.locked",
-      "targetResourceType": null
+      "eventType": "lock.locked"
     },
     {
       "resourceType": "event",
@@ -69822,8 +69745,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "lock.unlocked",
-      "targetResourceType": null
+      "eventType": "lock.unlocked"
     },
     {
       "resourceType": "event",
@@ -69955,8 +69877,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "lock.access_denied",
-      "targetResourceType": null
+      "eventType": "lock.access_denied"
     },
     {
       "resourceType": "event",
@@ -70114,8 +70035,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "thermostat.climate_preset_activated",
-      "targetResourceType": null
+      "eventType": "thermostat.climate_preset_activated"
     },
     {
       "resourceType": "event",
@@ -70421,8 +70341,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "thermostat.manually_adjusted",
-      "targetResourceType": null
+      "eventType": "thermostat.manually_adjusted"
     },
     {
       "resourceType": "event",
@@ -70619,8 +70538,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "thermostat.temperature_threshold_exceeded",
-      "targetResourceType": null
+      "eventType": "thermostat.temperature_threshold_exceeded"
     },
     {
       "resourceType": "event",
@@ -70817,8 +70735,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "thermostat.temperature_threshold_no_longer_exceeded",
-      "targetResourceType": null
+      "eventType": "thermostat.temperature_threshold_no_longer_exceeded"
     },
     {
       "resourceType": "event",
@@ -70989,8 +70906,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "thermostat.temperature_reached_set_point",
-      "targetResourceType": null
+      "eventType": "thermostat.temperature_reached_set_point"
     },
     {
       "resourceType": "event",
@@ -71135,8 +71051,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "thermostat.temperature_changed",
-      "targetResourceType": null
+      "eventType": "thermostat.temperature_changed"
     },
     {
       "resourceType": "event",
@@ -71268,8 +71183,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "device.name_changed",
-      "targetResourceType": "device"
+      "eventType": "device.name_changed"
     },
     {
       "resourceType": "event",
@@ -71375,8 +71289,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "enrollment_automation.deleted",
-      "targetResourceType": "enrollment_automation"
+      "eventType": "enrollment_automation.deleted"
     },
     {
       "resourceType": "event",
@@ -71482,8 +71395,7 @@
       "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": [],
-      "eventType": "phone.deactivated",
-      "targetResourceType": "phone"
+      "eventType": "phone.deactivated"
     }
   ],
   "actionAttempts": [
