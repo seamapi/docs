@@ -1,14 +1,75 @@
 # Activate a Climate Preset
 
-```
-POST /thermostats/activate_climate_preset ⇒ { action_attempt }
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Activates a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+POST /thermostats/activate_climate_preset ⇒ { action_attempt }
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`climate_preset_key`**  (Required)
+
+Climate preset key of the desired climate preset.
+
+---
+
+**`device_id`**  (Required)
+
+ID of the desired thermostat device.
+
+---
+
+
+## Response
+
+[action\_attempt](./)
+
+**`ACTIVATE_CLIMATE_PRESET`**
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  action_attempt_id: [example value],
+  action_type: [example value],
+  error: [example value],
+  result: [example value],
+  status: [example value]
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+## Examples
+
+### Activate a climate preset
+
+Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.activateClimatePreset({
@@ -17,7 +78,7 @@ await seam.thermostats.activateClimatePreset({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 {
@@ -29,7 +90,7 @@ await seam.thermostats.activateClimatePreset({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.activate_climate_preset(
@@ -37,7 +98,7 @@ seam.thermostats.activate_climate_preset(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 ActionAttempt(
@@ -49,7 +110,7 @@ ActionAttempt(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.activate_climate_preset(
@@ -58,7 +119,7 @@ seam.thermostats.activate_climate_preset(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 {
@@ -70,7 +131,7 @@ seam.thermostats.activate_climate_preset(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -80,7 +141,7 @@ $seam->thermostats->activate_climate_preset(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -93,13 +154,13 @@ $seam->thermostats->activate_climate_preset(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats activate-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "occupied"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {
@@ -111,7 +172,7 @@ seam thermostats activate-climate-preset --device_id "123e4567-e89b-12d3-a456-42
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -129,7 +190,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 api.ActionAttempt{ActionAttemptId: "05de2295-d1dc-4748-aae3-9931658bde20", Status: "pending", ActionType: "ACTIVATE_CLIMATE_PRESET"}
@@ -138,88 +199,4 @@ api.ActionAttempt{ActionAttemptId: "05de2295-d1dc-4748-aae3-9931658bde20", Statu
 
 {% endtabs %}
 
-## Authentication Methods
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `climate_preset_key`
-
-Format: `String`
-Required: Yes
-
-Climate preset key of the desired climate preset.
-
-***
-
-### `device_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired thermostat device.
-
-***
-
-## Return Type
-
-[action\_attempt](./)
-
-### `ACTIVATE_CLIMATE_PRESET`
-
-Activating climate preset.
-
-#### `action_attempt_id`
-
-Format: `UUID`
-
-ID of the action attempt.
-
----
-
-#### `action_type`
-
-Format: `Enum`
-
-Value: `ACTIVATE_CLIMATE_PRESET`
-
----
-
-#### `error`
-
-Format: `Object`
-
-<details>
-
-<summary><code>message</code> Format: <code>String</code></summary>
-</details>
-
-<details>
-
-<summary><code>type</code> Format: <code>String</code></summary>
-</details>
-
----
-
-#### `result`
-
-Format: `Object`
-
-This object has no properties.
-
----
-
-#### `status`
-
-Format: `Enum`
-
-Possible enum values:
-- `success`
-- `pending`
-- `error`
-
----
 

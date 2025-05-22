@@ -1,14 +1,60 @@
 # Unassign a Credential from an ACS User
 
-```
-PATCH /acs/credentials/unassign ⇒ void
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Unassigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) from a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+PATCH /acs/credentials/unassign ⇒ void
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`acs_credential_id`**  (Required)
+
+ID of the desired credential.
+
+---
+
+**`acs_user_id`**  (Required)
+
+ID of the desired user.
+
+---
+
+
+## Response
+
+void
+
+---
+
+## Examples
+
+### Unassign a credential from an ACS user
+
+Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.credentials.unassign({
@@ -17,7 +63,7 @@ await seam.acs.credentials.unassign({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -25,7 +71,7 @@ await seam.acs.credentials.unassign({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.credentials.unassign(
@@ -34,7 +80,7 @@ seam.acs.credentials.unassign(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -42,7 +88,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.credentials.unassign(
@@ -51,7 +97,7 @@ seam.acs.credentials.unassign(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -59,7 +105,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -69,7 +115,7 @@ $seam->acs->credentials->unassign(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -77,13 +123,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs credentials unassign --acs_user_id "33333333-3333-3333-3333-333333333333" --acs_credential_id "66666666-6666-6666-6666-666666666666"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -91,7 +137,7 @@ seam acs credentials unassign --acs_user_id "33333333-3333-3333-3333-33333333333
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -110,7 +156,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil
@@ -119,32 +165,4 @@ nil
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `acs_credential_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired credential.
-
-***
-
-### `acs_user_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired user.
-
-***
-
-## Return Type
-
-void

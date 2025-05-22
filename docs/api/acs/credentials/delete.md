@@ -1,14 +1,54 @@
 # Delete a Credential
 
-```
-POST /acs/credentials/delete ⇒ void
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Deletes a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+POST /acs/credentials/delete ⇒ void
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`acs_credential_id`**  (Required)
+
+ID of the desired credential.
+
+---
+
+
+## Response
+
+void
+
+---
+
+## Examples
+
+### Delete a credential
+
+Specify the desired `acs_credential_id` to delete the specified credential.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.credentials.delete({
@@ -16,7 +56,7 @@ await seam.acs.credentials.delete({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -24,13 +64,13 @@ await seam.acs.credentials.delete({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.credentials.delete(acs_credential_id="66666666-6666-6666-6666-666666666666")
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -38,13 +78,13 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.credentials.delete(acs_credential_id: "66666666-6666-6666-6666-666666666666")
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -52,7 +92,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -61,7 +101,7 @@ $seam->acs->credentials->delete(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -69,13 +109,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs credentials delete --acs_credential_id "66666666-6666-6666-6666-666666666666"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -83,7 +123,7 @@ seam acs credentials delete --acs_credential_id "66666666-6666-6666-6666-6666666
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -101,7 +141,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil
@@ -110,23 +150,4 @@ nil
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `acs_credential_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired credential.
-
-***
-
-## Return Type
-
-void

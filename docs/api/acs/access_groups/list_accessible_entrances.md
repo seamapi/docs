@@ -1,14 +1,63 @@
 # List Entrances Accessible to an Access Group
 
-```
-POST /acs/access_groups/list_accessible_entrances ⇒ { acs_entrances: [acs_entrance, …] }
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+POST /acs/access_groups/list_accessible_entrances ⇒ { acs_entrances: [acs_entrance, …] }
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`acs_access_group_id`**  (Required)
+
+ID of the access group for which you want to retrieve all accessible entrances.
+
+---
+
+
+## Response
+
+Array of [acs\_entrances](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of acs_entrance
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+## Examples
+
+### List accessible entrances for an access group
+
+Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.accessGroups.listAccessibleEntrances({
@@ -16,7 +65,7 @@ await seam.acs.accessGroups.listAccessibleEntrances({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 [
@@ -33,7 +82,7 @@ await seam.acs.accessGroups.listAccessibleEntrances({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.access_groups.list_accessible_entrances(
@@ -41,7 +90,7 @@ seam.acs.access_groups.list_accessible_entrances(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 [
@@ -58,7 +107,7 @@ seam.acs.access_groups.list_accessible_entrances(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.access_groups.list_accessible_entrances(
@@ -66,7 +115,7 @@ seam.acs.access_groups.list_accessible_entrances(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 [
@@ -83,7 +132,7 @@ seam.acs.access_groups.list_accessible_entrances(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -92,7 +141,7 @@ $seam->acs->access_groups->list_accessible_entrances(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -110,13 +159,13 @@ $seam->acs->access_groups->list_accessible_entrances(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs access-groups list-accessible-entrances --acs_access_group_id "44444444-4444-4444-4444-444444444444"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 [
@@ -133,7 +182,7 @@ seam acs access-groups list-accessible-entrances --acs_access_group_id "44444444
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -151,7 +200,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 []api.AcsEntrance{api.AcsEntrance{AcsEntranceId: "66666666-6666-6666-6666-666666666666", Name: "Main Entrance", DisplayName: "Main Entrance", AcsSystemId: "11111111-1111-1111-1111-111111111111", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2024-10-15T12:00:00.000Z"}}
@@ -160,23 +209,4 @@ func main() {
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `acs_access_group_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the access group for which you want to retrieve all accessible entrances.
-
-***
-
-## Return Type
-
-Array<[acs\_entrance](./)>

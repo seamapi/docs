@@ -1,14 +1,78 @@
 # Set a Temperature Threshold
 
-```
-PATCH /thermostats/set_temperature_threshold ⇒ void
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Sets a [temperature threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) for a specified thermostat. Seam emits a `thermostat.temperature_threshold_exceeded` event and adds a warning on a thermostat if it reports a temperature outside the threshold range.
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+PATCH /thermostats/set_temperature_threshold ⇒ void
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`device_id`**  (Required)
+
+ID of the desired thermostat device.
+
+---
+
+**`lower_limit_celsius`** 
+
+Lower temperature limit in in °C. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both.
+
+---
+
+**`lower_limit_fahrenheit`** 
+
+Lower temperature limit in in °F. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both.
+
+---
+
+**`upper_limit_celsius`** 
+
+Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both.
+
+---
+
+**`upper_limit_fahrenheit`** 
+
+Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both.
+
+---
+
+
+## Response
+
+void
+
+---
+
+## Examples
+
+### Set a temperature threshold
+
+Specify the `device_id` of the desired thermostat, along with the desired upper and lower limits in °C or °F.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.setTemperatureThreshold({
@@ -18,7 +82,7 @@ await seam.thermostats.setTemperatureThreshold({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -26,7 +90,7 @@ await seam.thermostats.setTemperatureThreshold({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.set_temperature_threshold(
@@ -36,7 +100,7 @@ seam.thermostats.set_temperature_threshold(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -44,7 +108,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.set_temperature_threshold(
@@ -54,7 +118,7 @@ seam.thermostats.set_temperature_threshold(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -62,7 +126,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -73,7 +137,7 @@ $seam->thermostats->set_temperature_threshold(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -81,13 +145,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats set-temperature-threshold --device_id "123e4567-e89b-12d3-a456-426614174000" --lower_limit_celsius 4 --upper_limit_celsius 30
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -95,7 +159,7 @@ seam thermostats set-temperature-threshold --device_id "123e4567-e89b-12d3-a456-
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -114,7 +178,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil
@@ -123,59 +187,4 @@ nil
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `device_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired thermostat device.
-
-***
-
-### `lower_limit_celsius`
-
-Format: `Number`
-Required: No
-
-Lower temperature limit in in °C. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both.
-
-***
-
-### `lower_limit_fahrenheit`
-
-Format: `Number`
-Required: No
-
-Lower temperature limit in in °F. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both.
-
-***
-
-### `upper_limit_celsius`
-
-Format: `Number`
-Required: No
-
-Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both.
-
-***
-
-### `upper_limit_fahrenheit`
-
-Format: `Number`
-Required: No
-
-Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both.
-
-***
-
-## Return Type
-
-void

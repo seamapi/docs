@@ -2,7 +2,7 @@
 description: Systems for managing and monitoring access to physical spaces
 ---
 
-# Access Control Systems
+# Access Control Systems (ACS)
 
 Access control systems centralize access authorization for buildings, which means that you can use a single system to grant users access to one or more entrances. An access control system manages the following elements:
 
@@ -21,6 +21,8 @@ To grant access using the Seam access control system API, use the following basi
 
 ## Resources
 
+The Access Control Systems (ACS) namespace contains the following resources:
+
 ### [`acs_system`](./systems/README.md#acs_system)
 Represents an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -28,6 +30,7 @@ Within an `acs_system`, create [`acs_user`s](https://docs.seam.co/latest/api/acs
 
 For details about the resources associated with an access control system, see the [access control systems namespace](https://docs.seam.co/latest/api/acs).
 
+---
 ### [`acs_user`](./users/README.md#acs_user)
 Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -35,11 +38,13 @@ An `acs_user` typically refers to an individual who requires access, like an emp
 
 For details about how to configure `acs_user`s in your access control system, see the corresponding [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems).
 
+---
 ### [`acs_entrance`](./entrances/README.md#acs_entrance)
 Represents an [entrance](../../capability-guides/access-systems/retrieving-entrance-details.md) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 In an access control system, an entrance is a secured door, gate, zone, or other method of entry. You can list details for all the `acs_entrance` resources in your workspace or get these details for a specific `acs_entrance`. You can also list all entrances associated with a specific credential, and you can list all credentials associated with a specific entrance.
 
+---
 ### [`acs_access_group`](./access_groups/README.md#acs_access_group)
 Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.
 
@@ -47,6 +52,7 @@ Some access control systems use [access group](https://docs.seam.co/latest/capab
 
 To learn whether your access control system supports access groups, see the corresponding [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems).
 
+---
 ### [`acs_credential`](./credentials/README.md#acs_credential)
 Means by which an [access control system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](../../capability-guides/access-systems/retrieving-entrance-details.md). The `acs_credential` object represents a [credential](../../capability-guides/access-systems/managing-credentials.md) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -54,6 +60,7 @@ An access control system generally uses digital means of access to authorize a u
 
 For each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type.
 
+---
 ### [`acs_encoder`](./encoders/README.md#acs_encoder)
 Represents a hardware device that encodes [credential](../../capability-guides/access-systems/managing-credentials.md) data onto physical cards within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -70,3 +77,4 @@ Separately, the Seam API also supports card scanning, which enables you to scan 
 
 To verify if your access control system requires a card encoder, see the corresponding [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems).
 
+---

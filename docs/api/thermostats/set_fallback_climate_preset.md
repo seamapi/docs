@@ -1,14 +1,60 @@
 # Set the Fallback Climate Preset
 
-```
-POST /thermostats/set_fallback_climate_preset ⇒ void
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Sets a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) as the ["fallback"](../../capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset.md) preset for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+POST /thermostats/set_fallback_climate_preset ⇒ void
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`climate_preset_key`**  (Required)
+
+Climate preset key of the desired climate preset.
+
+---
+
+**`device_id`**  (Required)
+
+ID of the desired thermostat device.
+
+---
+
+
+## Response
+
+void
+
+---
+
+## Examples
+
+### Set the fallback climate preset
+
+Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired fallback climate preset.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.thermostats.setFallbackClimatePreset({
@@ -17,7 +63,7 @@ await seam.thermostats.setFallbackClimatePreset({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -25,7 +71,7 @@ await seam.thermostats.setFallbackClimatePreset({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.thermostats.set_fallback_climate_preset(
@@ -33,7 +79,7 @@ seam.thermostats.set_fallback_climate_preset(
 )
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -41,7 +87,7 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.thermostats.set_fallback_climate_preset(
@@ -50,7 +96,7 @@ seam.thermostats.set_fallback_climate_preset(
 )
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -58,7 +104,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -68,7 +114,7 @@ $seam->thermostats->set_fallback_climate_preset(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -76,13 +122,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam thermostats set-fallback-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "eco"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -90,7 +136,7 @@ seam thermostats set-fallback-climate-preset --device_id "123e4567-e89b-12d3-a45
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -108,7 +154,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil
@@ -117,32 +163,4 @@ nil
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `climate_preset_key`
-
-Format: `String`
-Required: Yes
-
-Climate preset key of the desired climate preset.
-
-***
-
-### `device_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired thermostat device.
-
-***
-
-## Return Type
-
-void

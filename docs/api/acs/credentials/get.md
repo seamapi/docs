@@ -1,14 +1,63 @@
 # Get a Credential
 
-```
-POST /acs/credentials/get ⇒ { acs_credential }
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Returns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+POST /acs/credentials/get ⇒ { acs_credential }
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`acs_credential_id`**  (Required)
+
+ID of the desired credential.
+
+---
+
+
+## Response
+
+[acs\_credential](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of acs_credential
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+## Examples
+
+### Get a credential
+
+Specify the `acs_credential_id` of the credential that you want to retrieve.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.acs.credentials.get({
@@ -16,7 +65,7 @@ await seam.acs.credentials.get({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 {
@@ -34,13 +83,13 @@ await seam.acs.credentials.get({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.acs.credentials.get(acs_credential_id="66666666-6666-6666-6666-666666666666")
 ```
 
-#### Response
+#### Output
 
 ```python
 AcsCredential(
@@ -58,13 +107,13 @@ AcsCredential(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.acs.credentials.get(acs_credential_id: "66666666-6666-6666-6666-666666666666")
 ```
 
-#### Response
+#### Output
 
 ```ruby
 {
@@ -82,7 +131,7 @@ seam.acs.credentials.get(acs_credential_id: "66666666-6666-6666-6666-66666666666
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -91,7 +140,7 @@ $seam->acs->credentials->get(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 <?php
@@ -110,13 +159,13 @@ $seam->acs->credentials->get(
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam acs credentials get --acs_credential_id "66666666-6666-6666-6666-666666666666"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {
@@ -134,7 +183,7 @@ seam acs credentials get --acs_credential_id "66666666-6666-6666-6666-6666666666
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -152,7 +201,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUserId: "33333333-3333-3333-3333-333333333333", DisplayName: "Multi Phone Sync Credential", Code: nil, AcsSystemId: "11111111-1111-1111-1111-111111111111", AccessMethod: "mobile_key", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2024-04-12T03:56:22.396Z", IsMultiPhoneSyncCredential: true}
@@ -161,23 +210,4 @@ api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUs
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `acs_credential_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired credential.
-
-***
-
-## Return Type
-
-[acs\_credential](./)

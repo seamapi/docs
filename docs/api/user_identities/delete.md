@@ -1,14 +1,54 @@
 # Delete a User Identity
 
-```
-POST /user_identities/delete ⇒ void
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). To delete a user identity, you must first delete any [ACS credentials](https://docs.seam.co/latest/api/access-control-systems/credentials) and [enrollment automations](https://docs.seam.co/latest/api/user_identities/enrollment_automations/delete) associated with the user identity. You must also deactivate any associated phones.
 
 {% tabs %}
+{% tab title="Signature" %}
+```
+POST /user_identities/delete ⇒ void
+```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`user_identity_id`**  (Required)
+
+ID of the desired user identity.
+
+---
+
+
+## Response
+
+void
+
+---
+
+## Examples
+
+### Delete a user identity
+
+Specify the desired `user_identity_id`.
+
+{% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+#### Code
 
 ```javascript
 await seam.userIdentities.delete({
@@ -16,7 +56,7 @@ await seam.userIdentities.delete({
 });
 ```
 
-#### Response
+#### Output
 
 ```javascript
 // void
@@ -24,13 +64,13 @@ await seam.userIdentities.delete({
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+#### Code
 
 ```python
 seam.user_identities.delete(user_identity_id="44d48b20-0dbe-419d-91ca-ab8bceecd135")
 ```
 
-#### Response
+#### Output
 
 ```python
 None
@@ -38,13 +78,13 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+#### Code
 
 ```ruby
 seam.user_identities.delete(user_identity_id: "44d48b20-0dbe-419d-91ca-ab8bceecd135")
 ```
 
-#### Response
+#### Output
 
 ```ruby
 nil
@@ -52,7 +92,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+#### Code
 
 ```php
 <?php
@@ -61,7 +101,7 @@ $seam->user_identities->delete(
 );
 ```
 
-#### Response
+#### Output
 
 ```php
 null
@@ -69,13 +109,13 @@ null
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+#### Code
 
 ```seam_cli
 seam user-identities delete --user_identity_id "44d48b20-0dbe-419d-91ca-ab8bceecd135"
 ```
 
-#### Response
+#### Output
 
 ```seam_cli
 {}
@@ -83,7 +123,7 @@ seam user-identities delete --user_identity_id "44d48b20-0dbe-419d-91ca-ab8bceec
 {% endtab %}
 
 {% tab title="Go" %}
-#### Request
+#### Code
 
 ```go
 package main
@@ -100,7 +140,7 @@ func main() {
 }
 ```
 
-#### Response
+#### Output
 
 ```go
 nil
@@ -109,23 +149,4 @@ nil
 
 {% endtabs %}
 
-## Authentication Methods
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-## Request Parameters
-
-### `user_identity_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the desired user identity.
-
-***
-
-## Return Type
-
-void

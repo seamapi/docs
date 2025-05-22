@@ -1,6 +1,6 @@
 ---
 /acs:
-  title: Access Control Systems
+  title: Access Control Systems (ACS)
   description: Systems for managing and monitoring access to physical spaces
   overview: |
     Access control systems centralize access authorization for buildings, which means that you can use a single system to grant users access to one or more entrances. An access control system manages the following elements:
@@ -80,3 +80,16 @@
   title: Enrollment Automations
   resources:
     - enrollment_automation
+
+/access_codes:
+  title: Access Codes
+  resources:
+    - access_code
+
+/access_codes/unmanaged:
+  title: Unmanaged Access Code
+  resources:
+    - unmanaged_access_code
+
+/access_codes/simulate:
+  title: Access Code Simulations

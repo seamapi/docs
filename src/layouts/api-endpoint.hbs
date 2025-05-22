@@ -1,17 +1,23 @@
 # {{title}}
 
-```
-{{request.preferredMethod}} {{path}} ⇒ {{#if response.responseKey}}{{#if (eq response.responseType "resource_list")}}{ {{response.responseKey}}: [{{response.resourceType}}, …] }{{else}}{ {{response.responseKey}} }{{/if}}{{else}}void{{/if}}
-```
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
 
 {{{description}}}
 
-{{#with primaryCodeSample}}
-{{> code-sample }}
+{% tabs %}
+{% tab title="Signature" %}
+```
+{{request.preferredMethod}} {{path}} ⇒ {{#if response.responseKey}}{{#if (eq response.responseType "resource_list")}}{ {{response.responseKey}}: [{{response.resourceType}}, …] }{{else}}{ {{response.responseKey}} }{{/if}}{{else}}void{{/if}}
+```
+{% endtab %}
+{% endtabs %}
 
-{{/with}}
 {{#if authMethods}}
-## Authentication Methods
+<details>
+
+<summary>Authentication Methods</summary>
 
 {{#each authMethods}}
 - {{this}}
@@ -20,61 +26,79 @@
 {{/if}}
 {{/each}}
 
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
 {{/if}}
+
 ## Request Parameters
 
 {{#if request.parameters.length}}
 {{#each request.parameters}}
-### `{{this.name}}`
-
-Format: `{{this.format}}`
-{{#if this.itemFormat}}
-Item format: `{{this.itemFormat}}`
-{{/if}}
-Required: {{#if this.required}}Yes{{else}}No{{/if}}
+**`{{this.name}}`** {{#if this.jsonType}}*{{this.jsonType}}*{{/if}}{{#if this.itemFormat}} *of {{this.itemFormat}}s*{{/if}}{{#if this.required}} (Required){{/if}}
 {{#if this.description}}
 
 {{this.description}}
 {{/if}}
 {{#if this.itemEnumValues}}
+<details>
+
+<summary>Enum values</summary>
 
 {{> enum-values enumValues=this.itemEnumValues}}
-{{/if}}
-{{#if this.enumValues}}
-
-{{> enum-values}}
-{{/if}}
-{{#if this.objectParameters}}
-{{#each this.objectParameters}}
-
-{{> property-collapsible this}}
-
-{{/each}}
-{{/if}}
-{{#if this.isDeprecated}}
-
-{{> deprecated-warning}}
+</details>
 {{/if}}
 
-***
+---
 
 {{/each}}
 {{else}}
 None
 
 {{/if}}
-## Return Type
 
-{{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array<[{{response.escapedResourceType}}](./)>{{else}}[{{response.escapedResourceType}}](./){{/if}}{{else}}void{{/if}}
+## Response
+
+{{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array of [{{response.escapedResourceType}}s](./){{else}}[{{response.escapedResourceType}}](./){{/if}}{{else}}void{{/if}}
 {{#with response.actionAttempt}}
 
-{{> api-resource headingOffset=true}}
+**`{{name}}`**
+{{> api-response-resource headingOffset=true}}
 {{/with}}
-{{#if additionalCodeSamples.length}}
+{{#if response.resourceType}}
+{{#unless response.actionAttempt}}
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of {{response.resourceType}}
+}
+```
+{% endtab %}
+{% endtabs %}
+{{/unless}}
+{{/if}}
+{{#if primaryCodeSample}}
 
-## Additional Code Samples
+---
+
+## Examples
+
+{{#with primaryCodeSample}}
+### {{this.title}}
+
+{{this.description}}
+
+{{> code-sample }}
+
+{{/with}}
 
 {{#each additionalCodeSamples}}
+---
+
+### {{this.title}}
+
+{{this.description}}
+
 {{> code-sample }}
 {{/each}}
 {{/if}}
