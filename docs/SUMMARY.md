@@ -30,6 +30,8 @@
   * [Adding Custom Metadata to a Device](core-concepts/devices/adding-custom-metadata-to-a-device.md)
   * [Filtering Devices by Custom Metadata](core-concepts/devices/filtering-devices-by-custom-metadata.md)
   * [Testing Your App Against Device Disconnection and Removal](core-concepts/devices/testing-your-app-against-device-disconnection-and-removal.md)
+* [Providers](core-concepts/providers/README.md)
+  * [Provider Metadata](core-concepts/providers/provider-metadata.md)
 * [Connected Accounts](core-concepts/connected-accounts/README.md)
   * [Adding Custom Metadata to a Connected Account](core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account.md)
   * [Filtering Connected Accounts by Custom Metadata](core-concepts/connected-accounts/filtering-connected-accounts-by-custom-metadata.md)
