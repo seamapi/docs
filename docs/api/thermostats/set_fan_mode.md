@@ -30,6 +30,8 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`device_id`**  (Required)
 
+ID of the thermostat device for which you want to set the fan mode.
+
 ---
 
 **`fan_mode`** 

@@ -40,7 +40,7 @@ ID of the unmanaged access code that you want to convert to a managed access cod
 
 **`allow_external_modification`** 
 
-Indicates whether external modification of the access code is allowed.
+Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the access code is allowed.
 
 ---
 
@@ -52,7 +52,7 @@ Indicates whether to force the access code conversion. To switch management of a
 
 **`is_external_modification_allowed`** 
 
-Indicates whether external modification of the access code is allowed.
+Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the access code is allowed.
 
 ---
 

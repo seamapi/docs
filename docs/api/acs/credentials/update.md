@@ -29,13 +29,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_credential_id`**  (Required)
 
-ID of the desired credential.
+ID of the credential that you want to update.
 
 ---
 
 **`code`** 
 
-Replacement access (PIN) code for the credential.
+Replacement access (PIN) code for the credential that you want to update.
 
 ---
 

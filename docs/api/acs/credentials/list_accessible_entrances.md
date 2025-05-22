@@ -29,7 +29,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_credential_id`**  (Required)
 
-ID of the credential for which you want to retrieve all entrances to which this credential grants access.
+ID of the credential for which you want to retrieve all entrances to which the credential grants access.
 
 ---
 

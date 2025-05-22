@@ -4,7 +4,7 @@
 - [Response](./#response)
 - [Examples](./#examples)
 
-Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).
+Deletes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the access system user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).
 
 {% tabs %}
 {% tab title="Signature" %}
@@ -29,7 +29,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_user_id`**  (Required)
 
-ID of the desired `acs_user`.
+ID of the access system user that you want to delete.
 
 ---
 

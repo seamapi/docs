@@ -4,7 +4,7 @@
 - [Response](./#response)
 - [Examples](./#examples)
 
-Unassigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) from a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Unassigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) from a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 {% tabs %}
 {% tab title="Signature" %}
@@ -29,13 +29,19 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_credential_id`**  (Required)
 
-ID of the desired credential.
+ID of the credential that you want to unassign from an access system user.
 
 ---
 
-**`acs_user_id`**  (Required)
+**`acs_user_id`** 
 
-ID of the desired user.
+ID of the access system user from which you want to unassign a credential. You can only provide one of acs_user_id or user_identity_id.
+
+---
+
+**`user_identity_id`** 
+
+ID of the user identity from which you want to unassign a credential. You can only provide one of acs_user_id or user_identity_id.
 
 ---
 

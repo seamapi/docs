@@ -4,7 +4,7 @@
 - [Response](./#response)
 - [Examples](./#examples)
 
-Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 {% tabs %}
 {% tab title="Signature" %}
@@ -30,11 +30,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_system_id`** 
 
-ID of the `acs_system` for which you want to retrieve all `acs_user`s.
+ID of the `acs_system` for which you want to retrieve all access system users.
 
 ---
 
 **`created_before`** 
+
+Timestamp by which to limit returned access system users. Returns users created before this timestamp.
 
 ---
 
@@ -52,25 +54,25 @@ Identifies the specific page of results to return, obtained from the previous pa
 
 **`search`** 
 
-String for which to search. Filters returned `acs_user`s to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address`, `acs_user_id`, `user_identity_id`, `user_identity_full_name` or `user_identity_phone_number`.
+String for which to search. Filters returned access system users to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address`, `acs_user_id`, `user_identity_id`, `user_identity_full_name` or `user_identity_phone_number`.
 
 ---
 
 **`user_identity_email_address`** 
 
-Email address of the user identity for which you want to retrieve all `acs_user`s.
+Email address of the user identity for which you want to retrieve all access system users.
 
 ---
 
 **`user_identity_id`** 
 
-ID of the user identity for which you want to retrieve all `acs_user`s.
+ID of the user identity for which you want to retrieve all access system users.
 
 ---
 
 **`user_identity_phone_number`** 
 
-Phone number of the user identity for which you want to retrieve all `acs_user`s, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`).
+Phone number of the user identity for which you want to retrieve all access system users, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`).
 
 ---
 

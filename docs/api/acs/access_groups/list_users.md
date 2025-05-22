@@ -4,7 +4,7 @@
 - [Response](./#response)
 - [Examples](./#examples)
 
-Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
 {% tabs %}
 {% tab title="Signature" %}
@@ -29,7 +29,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_access_group_id`**  (Required)
 
-ID of the access group for which you want to retrieve all users.
+ID of the access group for which you want to retrieve all access system users.
 
 ---
 

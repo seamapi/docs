@@ -352,17 +352,17 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 
 [**`/acs/entrances/get`**](./get.md)
 
-Returns a specified [ACS entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+Returns a specified [access system entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 
 [**`/acs/entrances/grant_access`**](./grant_access.md)
 
-
+Grants a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) access to a specified [access system entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 
 [**`/acs/entrances/list`**](./list.md)
 
-Returns a list of all [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+Returns a list of all [access system entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 
 [**`/acs/entrances/list_credentials_with_access`**](./list_credentials_with_access.md)

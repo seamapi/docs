@@ -4,7 +4,7 @@
 - [Response](./#response)
 - [Examples](./#examples)
 
-Returns a specified [ACS entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+Returns a specified [access system entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 {% tabs %}
 {% tab title="Signature" %}
@@ -27,6 +27,8 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Request Parameters
 
 **`acs_entrance_id`**  (Required)
+
+ID of the entrance that you want to get.
 
 ---
 

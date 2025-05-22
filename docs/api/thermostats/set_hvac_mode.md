@@ -30,7 +30,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`device_id`**  (Required)
 
-ID of the desired thermostat device.
+ID of the thermostat device for which you want to set the HVAC mode.
 
 ---
 

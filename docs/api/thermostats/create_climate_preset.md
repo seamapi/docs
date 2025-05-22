@@ -36,7 +36,7 @@ Unique key to identify the [climate preset](../../capability-guides/thermostats/
 
 **`device_id`**  (Required)
 
-ID of the desired thermostat device.
+ID of the thermostat device for which you want create a climate preset.
 
 ---
 

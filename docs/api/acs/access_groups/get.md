@@ -29,7 +29,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_access_group_id`**  (Required)
 
-ID of the desired access group.
+ID of the access group that you want to get.
 
 ---
 

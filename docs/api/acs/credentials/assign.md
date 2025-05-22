@@ -4,7 +4,7 @@
 - [Response](./#response)
 - [Examples](./#examples)
 
-Assigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) to a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Assigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) to a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 {% tabs %}
 {% tab title="Signature" %}
@@ -29,13 +29,19 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_credential_id`**  (Required)
 
-ID of the desired credential.
+ID of the credential that you want to assign to an access system user.
 
 ---
 
-**`acs_user_id`**  (Required)
+**`acs_user_id`** 
 
-ID of the desired user.
+ID of the access system user to whom you want to assign a credential. You can only provide one of acs_user_id or user_identity_id.
+
+---
+
+**`user_identity_id`** 
+
+ID of the user identity to whom you want to assign a credential. You can only provide one of acs_user_id or user_identity_id. If the ACS system contains an ACS user with the same `email_address` or `phone_number` as the user identity that you specify, they are linked, and the credential belongs to the ACS user. If the ACS system does not have a corresponding ACS user, one is created.
 
 ---
 

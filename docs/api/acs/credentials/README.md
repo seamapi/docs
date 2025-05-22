@@ -796,7 +796,7 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 [**`/acs/credentials/assign`**](./assign.md)
 
-Assigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) to a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Assigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) to a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 [**`/acs/credentials/create`**](./create.md)
@@ -826,7 +826,7 @@ Returns a list of all [entrances](https://docs.seam.co/latest/api/acs/entrances)
 
 [**`/acs/credentials/unassign`**](./unassign.md)
 
-Unassigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) from a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Unassigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) from a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 [**`/acs/credentials/update`**](./update.md)

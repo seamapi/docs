@@ -4,7 +4,7 @@
 - [Response](./#response)
 - [Examples](./#examples)
 
-[Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an ACS user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the ACS user restores their access.
+[Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an access system user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the access system user restores their access.
 
 {% tabs %}
 {% tab title="Signature" %}
@@ -29,7 +29,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_user_id`**  (Required)
 
-ID of the desired `acs_user`.
+ID of the access system user that you want to unsuspend.
 
 ---
 

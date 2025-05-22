@@ -30,13 +30,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_system_id`** 
 
-ID of the access control system for which you want to retrieve all credentials.
+ID of the access system for which you want to retrieve all credentials.
 
 ---
 
 **`acs_user_id`** 
 
-ID of the ACS user for which you want to retrieve all credentials.
+ID of the access system user for which you want to retrieve all credentials.
 
 ---
 

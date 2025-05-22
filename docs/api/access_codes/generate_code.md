@@ -1,15 +1,15 @@
-# Delete an Access Code
+# Generate a Code
 
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)
 
-Deletes an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+Generates a code for an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes), given a device ID.
 
 {% tabs %}
 {% tab title="Signature" %}
 ```
-POST /access_codes/delete ⇒ void
+POST /access_codes/generate_code ⇒ { generated_code }
 ```
 {% endtab %}
 {% endtabs %}
@@ -28,19 +28,22 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`access_code_id`**  (Required)
+**`device_id`**  (Required)
 
-ID of the access code that you want to delete.
-
----
-
-**`device_id`** 
-
-ID of the device for which you want to delete the access code.
+ID of the device for which you want to generate a code.
 
 ---
 
 
 ## Response
 
-void
+[access\_code](./)
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  JSON representation of access_code
+}
+```
+{% endtab %}
+{% endtabs %}
