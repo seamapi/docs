@@ -12,7 +12,6 @@ This process consists of the following basic steps:
 2. [Configure Lock Service 3G to connect to the Visionline server.](step-5-program-door-locks.md#configure-lock-service-3g-to-connect-to-the-visionline-server)
 3. [Download door lock data from the Visionline server to Lock Service 3G.](step-5-program-door-locks.md#download-door-lock-data-to-lock-service-3g)
 4. [Initialize each door lock to program it with the correct settings.](step-5-program-door-locks.md#initialize-door-locks)
-5.
 
 ***
 
