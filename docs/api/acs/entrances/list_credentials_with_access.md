@@ -30,9 +30,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_entrance_id`**  (Required)
 
+ID of the entrance for which you want to list all credentials that grant access.
+
 ---
 
 **`include_if`**  *of Enums*
+
+Conditions that credentials must meet to be included in the returned list.
 <details>
 
 <summary>Enum values</summary>
@@ -285,6 +289,48 @@ func main() {
 
 ```go
 []api.AcsCredential{api.AcsCredential{AcsCredentialId: "123e4567-e89b-12d3-a456-426614174000", AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsCredentialPoolId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", ParentAcsCredentialId: "123e4567-e89b-12d3-a456-426614174000", DisplayName: "text", Code: "text", CardNumber: "text", IsIssued: false, IssuedAt: "2024-10-15T12:54:04.155Z", AccessMethod: "code", ExternalType: "pti_card", ExternalTypeDisplayName: "text", CreatedAt: "2024-10-15T12:54:04.155Z", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", StartsAt: "text", EndsAt: "text", IsMultiPhoneSyncCredential: false, IsLatestDesiredStateSyncedWithProvider: false, LatestDesiredStateSyncedWithProviderAt: "2024-10-15T12:54:04.155Z"}}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl -X POST "https://connect.getseam.com/acs/entrances/list_credentials_with_access" \
+  -H "Authorization: Bearer $SEAM_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"acs_entrance_id":"123e4567-e89b-12d3-a456-426614174000"}'
+```
+
+#### Output
+
+```curl
+{
+  "acs_credentials": [
+    {
+      "acs_credential_id": "123e4567-e89b-12d3-a456-426614174000",
+      "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
+      "acs_credential_pool_id": "123e4567-e89b-12d3-a456-426614174000",
+      "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+      "parent_acs_credential_id": "123e4567-e89b-12d3-a456-426614174000",
+      "display_name": "text",
+      "code": "text",
+      "card_number": "text",
+      "is_issued": false,
+      "issued_at": "2024-10-15T12:54:04.155Z",
+      "access_method": "code",
+      "external_type": "pti_card",
+      "external_type_display_name": "text",
+      "created_at": "2024-10-15T12:54:04.155Z",
+      "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+      "starts_at": "text",
+      "ends_at": "text",
+      "is_multi_phone_sync_credential": false,
+      "is_latest_desired_state_synced_with_provider": false,
+      "latest_desired_state_synced_with_provider_at": "2024-10-15T12:54:04.155Z"
+    }
+  ]
+}
 ```
 {% endtab %}
 

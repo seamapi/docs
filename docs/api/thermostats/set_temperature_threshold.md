@@ -29,7 +29,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`device_id`**  (Required)
 
-ID of the desired thermostat device.
+ID of the thermostat device for which you want to set a temperature threshold.
 
 ---
 
@@ -182,6 +182,23 @@ func main() {
 
 ```go
 nil
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl -X POST "https://connect.getseam.com/thermostats/set_temperature_threshold" \
+  -H "Authorization: Bearer $SEAM_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"device_id":"123e4567-e89b-12d3-a456-426614174000","lower_limit_celsius":4,"upper_limit_celsius":30}'
+```
+
+#### Output
+
+```curl
+{}
 ```
 {% endtab %}
 

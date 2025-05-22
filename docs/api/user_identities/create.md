@@ -27,6 +27,12 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
+**`acs_system_ids`**  *of UUIDs*
+
+List of ACS system IDs to associate with the user identity through ACS users. If there's no user with the same email address or phone number in the specified ACS systems, a new ACS user is created. If there is an existing user with the same email or phone number in the specified ACS systems, the user is linked to the user identity.
+
+---
+
 **`email_address`** 
 
 Unique email address for the user identity.
@@ -236,6 +242,34 @@ func main() {
 
 ```go
 api.UserIdentity{UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", UserIdentityKey: "jean_doe", EmailAddress: "jean@example.com", PhoneNumber: "+15555550110", DisplayName: "Jean Doe", FullName: "Jean Doe", CreatedAt: "2024-01-11T05:37:50.264Z", WorkspaceId: "398d80b7-3f96-47c2-b85a-6f8ba21d07be"}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl -X POST "https://connect.getseam.com/user_identities/create" \
+  -H "Authorization: Bearer $SEAM_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"user_identity_key":"jean_doe","email_address":"jean@example.com","phone_number":"+15555550110","full_name":"Jean Doe"}'
+```
+
+#### Output
+
+```curl
+{
+  "user_identity": {
+    "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+    "user_identity_key": "jean_doe",
+    "email_address": "jean@example.com",
+    "phone_number": "+15555550110",
+    "display_name": "Jean Doe",
+    "full_name": "Jean Doe",
+    "created_at": "2024-01-11T05:37:50.264Z",
+    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be"
+  }
+}
 ```
 {% endtab %}
 

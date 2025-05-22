@@ -4,9 +4,7 @@
 - [Response](./#response)
 - [Examples](./#examples)
 
-Returns a specified [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
-
-Specify the desired access control system by including the corresponding `acs_system_id` in the request body.
+Returns a specified [access system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 {% tabs %}
 {% tab title="Signature" %}
@@ -31,7 +29,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_system_id`**  (Required)
 
-ID of the desired access control system.
+ID of the access system that you want to get.
 
 ---
 
@@ -155,6 +153,23 @@ func main() {
 
 ```go
 []api.AcsSystem{api.AcsSystem{AcsSystemId: "8d7e0b3a-b889-49a7-9164-4b71a0506a33"}}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl -X POST "https://connect.getseam.com/acs/systems/get" \
+  -H "Authorization: Bearer $SEAM_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"acs_system_id":"8d7e0b3a-b889-49a7-9164-4b71a0506a33"}'
+```
+
+#### Output
+
+```curl
+{ "acs_system": [{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }] }
 ```
 {% endtab %}
 

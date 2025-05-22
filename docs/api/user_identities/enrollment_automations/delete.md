@@ -152,6 +152,23 @@ nil
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl -X POST "https://connect.getseam.com/user_identities/enrollment_automations/delete" \
+  -H "Authorization: Bearer $SEAM_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"enrollment_automation_id":"05505650-aa57-49ab-8f19-429738758895"}'
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
 {% endtabs %}
 
 

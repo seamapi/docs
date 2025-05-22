@@ -29,13 +29,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_credential_id`**  (Required)
 
-ID of the desired credential.
+ID of the credential that you want to update.
 
 ---
 
 **`code`** 
 
-Replacement access (PIN) code for the credential.
+Replacement access (PIN) code for the credential that you want to update.
 
 ---
 
@@ -162,6 +162,23 @@ func main() {
 
 ```go
 nil
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl -X POST "https://connect.getseam.com/acs/credentials/update" \
+  -H "Authorization: Bearer $SEAM_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"acs_credential_id":"66666666-6666-6666-6666-666666666666","code":"7890"}'
+```
+
+#### Output
+
+```curl
+{}
 ```
 {% endtab %}
 

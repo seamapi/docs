@@ -36,7 +36,7 @@ Unique key to identify the [climate preset](../../capability-guides/thermostats/
 
 **`device_id`**  (Required)
 
-ID of the desired thermostat device.
+ID of the thermostat device for which you want create a climate preset.
 
 ---
 
@@ -238,6 +238,23 @@ func main() {
 
 ```go
 nil
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl -X POST "https://connect.getseam.com/thermostats/create_climate_preset" \
+  -H "Authorization: Bearer $SEAM_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"device_id":"123e4567-e89b-12d3-a456-426614174000","climate_preset_key":"occupied","name":"Occupied","fan_mode_setting":"auto","hvac_mode_setting":"heat_cool","cooling_set_point_celsius":25,"heating_set_point_celsius":20,"manual_override_allowed":true}'
+```
+
+#### Output
+
+```curl
+{}
 ```
 {% endtab %}
 

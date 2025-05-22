@@ -162,6 +162,23 @@ nil
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl -X POST "https://connect.getseam.com/user_identities/remove_acs_user" \
+  -H "Authorization: Bearer $SEAM_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"user_identity_id":"5c945ab5-c75e-4bcb-8e5f-9410061c401f","acs_user_id":"c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe"}'
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
 {% endtabs %}
 
 

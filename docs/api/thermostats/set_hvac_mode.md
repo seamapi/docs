@@ -30,7 +30,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`device_id`**  (Required)
 
-ID of the desired thermostat device.
+ID of the thermostat device for which you want to set the HVAC mode.
 
 ---
 
@@ -228,6 +228,29 @@ func main() {
 
 ```go
 api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Status: "success", ActionType: "SET_HVAC_MODE"}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl -X POST "https://connect.getseam.com/thermostats/set_hvac_mode" \
+  -H "Authorization: Bearer $SEAM_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"device_id":"123e4567-e89b-12d3-a456-426614174000","hvac_mode_setting":"heat_cool","heating_set_point_celsius":20,"cooling_set_point_celsius":25}'
+```
+
+#### Output
+
+```curl
+{
+  "action_attempt": {
+    "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
+    "status": "success",
+    "action_type": "SET_HVAC_MODE"
+  }
+}
 ```
 {% endtab %}
 

@@ -30,13 +30,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`climate_preset_key`**  (Required)
 
-Climate preset key of the desired climate preset.
+Climate preset key of the climate preset that you want to delete.
 
 ---
 
 **`device_id`**  (Required)
 
-ID of the desired thermostat device.
+ID of the thermostat device for which you want to delete a climate preset.
 
 ---
 
@@ -159,6 +159,23 @@ func main() {
 
 ```go
 nil
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl -X POST "https://connect.getseam.com/thermostats/delete_climate_preset" \
+  -H "Authorization: Bearer $SEAM_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"device_id":"123e4567-e89b-12d3-a456-426614174000","climate_preset_key":"occupied"}'
+```
+
+#### Output
+
+```curl
+{}
 ```
 {% endtab %}
 

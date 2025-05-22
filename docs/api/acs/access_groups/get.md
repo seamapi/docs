@@ -29,7 +29,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_access_group_id`**  (Required)
 
-ID of the desired access group.
+ID of the access group that you want to get.
 
 ---
 
@@ -210,6 +210,36 @@ func main() {
 
 ```go
 api.AcsAccessGroup{AcsAccessGroupId: "44444444-4444-4444-4444-444444444444", Name: "Lobby Access", DisplayName: "Lobby Access", AccessGroupTypeDisplayName: "PTI access level", AccessGroupType: "pti_access_level", ExternalType: "pti_access_level", ExternalTypeDisplayName: "PTI access level", AcsSystemId: "11111111-1111-1111-1111-111111111111", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2023-11-30T06:27:15.437Z"}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl -X POST "https://connect.getseam.com/acs/access_groups/get" \
+  -H "Authorization: Bearer $SEAM_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"acs_access_group_id":"44444444-4444-4444-4444-444444444444"}'
+```
+
+#### Output
+
+```curl
+{
+  "acs_access_group": {
+    "acs_access_group_id": "44444444-4444-4444-4444-444444444444",
+    "name": "Lobby Access",
+    "display_name": "Lobby Access",
+    "access_group_type_display_name": "PTI access level",
+    "access_group_type": "pti_access_level",
+    "external_type": "pti_access_level",
+    "external_type_display_name": "PTI access level",
+    "acs_system_id": "11111111-1111-1111-1111-111111111111",
+    "workspace_id": "00000000-0000-0000-0000-000000000000",
+    "created_at": "2023-11-30T06:27:15.437Z"
+  }
+}
 ```
 {% endtab %}
 

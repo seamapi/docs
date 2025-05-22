@@ -6,6 +6,8 @@
 
 Enables you to report access code-related constraints for a device. Currently, supports reporting supported code length constraints for SmartThings devices.
 
+Specify either `supported_code_lengths` or `min_code_length`/`max_code_length`.
+
 {% tabs %}
 {% tab title="Signature" %}
 ```
@@ -30,7 +32,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`device_id`**  (Required)
 
-ID of the device for which to report constraints.
+ID of the device for which you want to report constraints.
 
 ---
 

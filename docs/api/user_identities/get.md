@@ -206,6 +206,34 @@ api.UserIdentity{UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", UserIde
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl -X POST "https://connect.getseam.com/user_identities/get" \
+  -H "Authorization: Bearer $SEAM_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"user_identity_id":"48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"}'
+```
+
+#### Output
+
+```curl
+{
+  "user_identity": {
+    "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+    "user_identity_key": "jean_doe",
+    "email_address": "jean@example.com",
+    "phone_number": "+15555550110",
+    "display_name": "Jean Doe",
+    "full_name": "Jean Doe",
+    "created_at": "2024-01-11T05:37:50.264Z",
+    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be"
+  }
+}
+```
+{% endtab %}
+
 {% endtabs %}
 
 

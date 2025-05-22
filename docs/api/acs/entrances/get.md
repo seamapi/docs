@@ -4,7 +4,7 @@
 - [Response](./#response)
 - [Examples](./#examples)
 
-Returns a specified [ACS entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+Returns a specified [access system entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 {% tabs %}
 {% tab title="Signature" %}
@@ -27,6 +27,8 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Request Parameters
 
 **`acs_entrance_id`**  (Required)
+
+ID of the entrance that you want to get.
 
 ---
 
@@ -177,6 +179,30 @@ func main() {
 
 ```go
 api.AcsEntrance{AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", AcsEntranceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "text"}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl -X POST "https://connect.getseam.com/acs/entrances/get" \
+  -H "Authorization: Bearer $SEAM_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"acs_entrance_id":"123e4567-e89b-12d3-a456-426614174000"}'
+```
+
+#### Output
+
+```curl
+{
+  "acs_entrance": {
+    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+    "acs_entrance_id": "123e4567-e89b-12d3-a456-426614174000",
+    "created_at": "2024-04-05T07:57:05.323Z",
+    "display_name": "text"
+  }
+}
 ```
 {% endtab %}
 

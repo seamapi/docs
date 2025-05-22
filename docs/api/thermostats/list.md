@@ -30,49 +30,53 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`connect_webview_id`** 
 
-ID of the Connect Webview by which to filter devices.
+ID of the Connect Webview for which you want to list devices.
 
 ---
 
 **`connected_account_id`** 
 
-ID of the connected account by which to filter.
+ID of the connected account for which you want to list devices.
 
 ---
 
 **`connected_account_ids`**  *of UUIDs*
 
-Array of IDs of the connected accounts by which to filter devices.
+Array of IDs of the connected accounts for which you want to list devices.
 
 ---
 
 **`created_before`** 
 
-Date threshold for devices to return. If specified, returns only devices created before the specified date.
+Timestamp by which to limit returned devices. Returns devices created before this timestamp.
 
 ---
 
 **`custom_metadata_has`** 
 
-Set of key:value [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) pairs by which you want to filter devices.
+Set of key:value [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) pairs for which you want to list devices.
+
+---
+
+**`customer_ids`**  *of UUIDs*
 
 ---
 
 **`device_ids`**  *of UUIDs*
 
-Array of device IDs by which to filter devices.
+Array of device IDs for which you want to list devices.
 
 ---
 
 **`device_type`** 
 
-Device type by which to filter devices.
+Device type by which to filter thermostat devices.
 
 ---
 
 **`device_types`**  *of Enums*
 
-Array of device types by which to filter devices.
+Array of device types by which to filter thermostat devices.
 <details>
 
 <summary>Enum values</summary>
@@ -83,6 +87,7 @@ Possible enum values:
 - <code>honeywell_resideo_thermostat</code>
 - <code>tado_thermostat</code>
 - <code>sensi_thermostat</code>
+- <code>smartthings_thermostat</code>
 </details>
 
 ---
@@ -95,7 +100,7 @@ Numerical limit on the number of devices to return.
 
 **`manufacturer`** 
 
-Manufacturer by which to filter devices.
+Manufacturer by which to filter thermostat devices.
 
 ---
 
@@ -107,7 +112,7 @@ Identifies the specific page of results to return, obtained from the previous pa
 
 **`user_identifier_key`** 
 
-Your own internal user ID for the user by which to filter devices.
+Your own internal user ID for the user for which you want to list devices.
 
 ---
 
@@ -341,6 +346,46 @@ func main() {
 
 ```go
 []api.Device{api.Device{DeviceId: "123e4567-e89b-12d3-a456-426614174000", DeviceType: "ecobee_thermostat", CapabilitiesSupported: []string{"thermostat"}, Properties: api.DeviceProperties{Name: "Entryway", Online: "true,", RelativeHumidity: 0.36, TemperatureFarenheit: 70, AvailableHvacModeSettings: []string{"cool", "heat", "heat_cool", "off"}, CurrentClimateSetting: api.DevicePropertiesCurrentClimateSetting{HvacModeSetting: "heat_cool", CoolingSetPointFarenheit: 75, HeatingSetPointFarenheit: 65, ManualOverrideAllowed: false}, Location: nil, ConnectedAccountId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z"}}}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl -X POST "https://connect.getseam.com/thermostats/list" \
+  -H "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{
+  "devices": [
+    {
+      "device_id": "123e4567-e89b-12d3-a456-426614174000",
+      "device_type": "ecobee_thermostat",
+      "capabilities_supported": ["thermostat"],
+      "properties": {
+        "name": "Entryway",
+        "online": "true,",
+        "relative_humidity": 0.36,
+        "temperature_farenheit": 70,
+        "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+        "current_climate_setting": {
+          "hvac_mode_setting": "heat_cool",
+          "cooling_set_point_farenheit": 75,
+          "heating_set_point_farenheit": 65,
+          "manual_override_allowed": false
+        },
+        "location": null,
+        "connected_account_id": "123e4567-e89b-12d3-a456-426614174000",
+        "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+        "created_at": "2024-04-05T07:57:05.323Z"
+      }
+    }
+  ]
+}
 ```
 {% endtab %}
 

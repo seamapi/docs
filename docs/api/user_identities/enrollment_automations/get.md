@@ -205,6 +205,33 @@ api.EnrollmentAutomation{UserIdentityId: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl -X POST "https://connect.getseam.com/user_identities/enrollment_automations/get" \
+  -H "Authorization: Bearer $SEAM_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"enrollment_automation_id":"05505650-aa57-49ab-8f19-429738758895"}'
+```
+
+#### Output
+
+```curl
+{
+  "enrollment_automation": {
+    "user_identity_id": "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
+    "enrollment_automation_id": "05505650-aa57-49ab-8f19-429738758895",
+    "acs_credential_provisioning_automation_id": "05505650-aa57-49ab-8f19-429738758895",
+    "credential_manager_acs_system_id": "6737e186-8d54-48ce-a7da-a0be4d252172",
+    "is_running": true,
+    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+    "created_at": "2024-01-09T05:45:33.068Z"
+  }
+}
+```
+{% endtab %}
+
 {% endtabs %}
 
 
