@@ -24,7 +24,8 @@ Represents a [thermostat schedule](../../../capability-guides/thermostats/creati
   max_override_period_minutes: [example value],
   name: [example value],
   starts_at: [example value],
-  thermostat_schedule_id: [example value]
+  thermostat_schedule_id: [example value],
+  workspace_id: [example value]
 }
 ```
 {% endtab %}
@@ -132,11 +133,12 @@ ID of the [thermostat schedule](../../../capability-guides/thermostats/creating-
 
 ---
 
-### `workspace_id`
-
-Format: `UUID`
+**`workspace_id`** *UUID*
 
 ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the thermostat schedule.
+
+
+
 
 ---
 
