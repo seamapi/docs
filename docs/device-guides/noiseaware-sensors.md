@@ -38,7 +38,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../capability-guides/device-and-system-capabilities/connect-webviews/) that enables your users to connect their NoiseAware devices to Seam, include the `noiseaware` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../capability-guides/device-and-system-capabilities/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their NoiseAware devices to Seam, include the `noiseaware` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -49,7 +49,7 @@ To control NoiseAware devices using Seam, you must prompt owners of these device
 1. Install the NoiseAware [iOS](https://apps.apple.com/us/app/noiseaware/id1436213179) or [Android](https://play.google.com/store/apps/details?id=io.noiseaware.mobile\&hl=en_US\&gl=US) mobile app.
 2. Create an account in the NoiseAware mobile app if you have not done so already.
 3. In the NoiseAware mobile app, add your NoiseAware sensors.
-4. Note your login credentials for the NoiseAware mobile app, and use these credentials to log in to the [Seam Connect Webview](../capability-guides/device-and-system-capabilities/connect-webviews/) to add your devices to Seam.
+4. Note your login credentials for the NoiseAware mobile app, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
 
 ***
 

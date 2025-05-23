@@ -32,7 +32,7 @@ Production API keys do not include the `test` token, while API keys for sandbox 
 
 ## Customize Your Connect Webviews
 
-You can customize your [Connect Webviews](capability-guides/device-and-system-capabilities/connect-webviews/). Seam Connect Webviews are fully-embedded client-side components that you add to your app if you want to enable your users to import their own devices using your app. Your users interact with your Connect Webviews to link their device accounts with your app. That is, Connect Webviews walk your users through the process of logging in to their device accounts.
+You can customize your [Connect Webviews](core-concepts/connect-webviews/). Seam Connect Webviews are fully-embedded client-side components that you add to your app if you want to enable your users to import their own devices using your app. Your users interact with your Connect Webviews to link their device accounts with your app. That is, Connect Webviews walk your users through the process of logging in to their device accounts.
 
 1. In the top navigation pane of [Seam Console](https://console.seam.co/), click **Developer**.
 2. In the left navigation pane, click **Connect Webviews**.

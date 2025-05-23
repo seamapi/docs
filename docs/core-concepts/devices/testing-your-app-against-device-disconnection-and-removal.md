@@ -21,7 +21,7 @@ Currently, Seam supports these endpoints for [August](../../device-guides/sandbo
 
 ## Simulation Capability Flags
 
-The Seam API provides the following sandbox-only [capability flags](../../capability-guides/device-and-system-capabilities/#capability-flags) that show you which simulate endpoints you can currently use on a device:
+The Seam API provides the following sandbox-only [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags) that show you which simulate endpoints you can currently use on a device:
 
 * `device.can_simulate_disconnection`
 * `device.can_simulate_connection`

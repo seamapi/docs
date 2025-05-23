@@ -52,7 +52,7 @@ Nuki does not allow the use of zeros in PIN codes.
 
 ### Device Provider Key
 
-To create a [Connect Webview](../capability-guides/device-and-system-capabilities/connect-webviews/) that enables your users to connect their Nuki devices to Seam, include the `nuki` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../capability-guides/device-and-system-capabilities/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their Nuki devices to Seam, include the `nuki` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -78,7 +78,7 @@ To control Nuki devices using Seam, you must prompt owners of these devices to p
 
        <figure><img src="../.gitbook/assets/nuki-web-select-devices-smart-hosting-dialog.png" alt="Select the devices for which you want to be able to program access codes and then click Buy Smart Hosting."><figcaption></figcaption></figure>
    8. In the Nuki online store, complete your Nuki Smart Hosting purchase.
-5. Use your credentials for the Nuki app to log in to the [Seam Connect Webview](../capability-guides/device-and-system-capabilities/connect-webviews/) to add your devices to Seam.
+5. Use your credentials for the Nuki app to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
 
 ***
 

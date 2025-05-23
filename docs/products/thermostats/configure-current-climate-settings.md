@@ -59,7 +59,7 @@ To configure and then verify a climate setting on a thermostat, perform the foll
 
 ## Before You Begin: Confirm Capabilities
 
-Before you attempt to set the HVAC or fan mode settings for a thermostat, be sure to confirm that your device has the capability to perform these operations. You can inspect the capabilities of a device by checking the following [capability flags](../../capability-guides/device-and-system-capabilities/#capability-flags) for the device:
+Before you attempt to set the HVAC or fan mode settings for a thermostat, be sure to confirm that your device has the capability to perform these operations. You can inspect the capabilities of a device by checking the following [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags) for the device:
 
 * `device.can_hvac_heat`
 * `device.can_hvac_cool`

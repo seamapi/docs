@@ -34,7 +34,7 @@ For more information about creating offline access codes, see [Managing Offline 
 
 ## Before You Begin: Confirm Capabilities
 
-Before you attempt to create an [online](../../../../products/smart-locks/access-codes/#what-is-an-access-code) or [offline](../../../../products/smart-locks/access-codes/#offline-access-codes) access code, be sure to confirm that your device has the capability to perform these operations. You can inspect the capabilities of a device by checking the following [capability flags](../../../device-and-system-capabilities/#capability-flags) for the device:
+Before you attempt to create an [online](../../../../products/smart-locks/access-codes/#what-is-an-access-code) or [offline](../../../../products/smart-locks/access-codes/#offline-access-codes) access code, be sure to confirm that your device has the capability to perform these operations. You can inspect the capabilities of a device by checking the following [capability flags](../../../device-and-system-capabilities.md#capability-flags) for the device:
 
 * `device.can_program_online_access_codes`
 * `device.can_program_offline_access_codes`

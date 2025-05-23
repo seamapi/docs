@@ -95,7 +95,7 @@ This guide uses a [sandbox workspace](../../core-concepts/workspaces/#sandbox-wo
 
 ## 2 — Link Your Tedee Account with Seam
 
-To control your Tedee locks using the Seam API, you must first authorize your Seam workspace against your Tedee account. To do so, Seam provides[ Connect Webviews](../../capability-guides/device-and-system-capabilities/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Tedee sites.
+To control your Tedee locks using the Seam API, you must first authorize your Seam workspace against your Tedee account. To do so, Seam provides[ Connect Webviews](../../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Tedee sites.
 
 ### Request a Connect Webview
 

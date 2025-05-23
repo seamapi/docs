@@ -4,7 +4,7 @@ description: Use redirection or an iframe to embed a Connect Webview in your app
 
 # Embedding a Connect Webview in Your App
 
-<figure><img src="../../../.gitbook/assets/connect-webview-embedding-2.png" alt="Seam makes it easy for your users to authorize your app to control their devices using the Seam API."><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-webview-embedding-2.png" alt="Seam makes it easy for your users to authorize your app to control their devices using the Seam API."><figcaption></figcaption></figure>
 
 To enable your users to connect their devices or access control system to Seam through your app, use a [Connect Webview](./). First, in your app, add a mechanism—such as a button—to [open a new Connect Webview](embedding-a-connect-webview-in-your-app.md#step-1-open-a-connect-webview). Then, you can use either of the following two methods to [display the Connect Webview](embedding-a-connect-webview-in-your-app.md#step-2-display-the-connect-webview) in your app:
 
@@ -19,7 +19,7 @@ To enable users to connect their devices or access control system with your app,
 
 When your user clicks this button, your app can either [redirect to the Connect Webview URL](embedding-a-connect-webview-in-your-app.md#redirect-to-the-connect-webview-url) or [embed the Connect Webview in an iframe](embedding-a-connect-webview-in-your-app.md#embed-the-connect-webview-in-an-iframe) and present it in a modal.
 
-<figure><img src="../../../.gitbook/assets/connect-webview-embedding-1 (1).png" alt="Add a button to your app to enable your users to connect their devices or ACS using a Connect Webview." width="563"><figcaption><p>Add a button to your app to enable your users to connect their devices or ACS using a Connect Webview.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-webview-embedding-1 (1).png" alt="Add a button to your app to enable your users to connect their devices or ACS using a Connect Webview." width="563"><figcaption><p>Add a button to your app to enable your users to connect their devices or ACS using a Connect Webview.</p></figcaption></figure>
 
 ***
 
@@ -40,7 +40,7 @@ To incorporate a Connect Webview in your app using redirection:
     The resulting page displays the [authorization flow](./#connect-webview-process) through which your app user can link their device or ACS account to Seam.\
 
 
-    <figure><img src="../../../.gitbook/assets/connect-webview-user-flow.png" alt="The page to which you redirect your app displays the authorization flow."><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/connect-webview-user-flow.png" alt="The page to which you redirect your app displays the authorization flow."><figcaption></figcaption></figure>
 
     Once the user has completed the authorization flow, the Connect Webview redirects back to your app (specifically to the `custom_redirect_url`). Note that Seam appends the following search parameters to the URL after the redirect:
 

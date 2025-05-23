@@ -35,7 +35,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../../capability-guides/device-and-system-capabilities/connect-webviews/) that enables your users to connect their Sensi devices to Seam, include the `sensi` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../capability-guides/device-and-system-capabilities/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables your users to connect their Sensi devices to Seam, include the `sensi` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -47,7 +47,7 @@ To control Sensi devices using Seam, you must prompt owners of these devices to 
 2.  In the Sensi app, add your Sensi thermostats.
 
     The Sensi app walks you through the process of installing your Sensi thermostats and connecting them to Wi-Fi. For details, see the [Sensi installation manual](https://sensi.copeland.com/en-us/support/sensi-manuals) for your thermostat.
-3. Note your login credentials for the Sensi app, and use these credentials to log in to the [Seam Connect Webview](../../capability-guides/device-and-system-capabilities/connect-webviews/) to add your devices to Seam.
+3. Note your login credentials for the Sensi app, and use these credentials to log in to the [Seam Connect Webview](../../core-concepts/connect-webviews/) to add your devices to Seam.
 
 {% hint style="info" %}
 Make sure that you're authenticating with the user to whom the devices are registered. Sensi devices can only be registered to a single user.

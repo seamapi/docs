@@ -36,7 +36,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../capability-guides/device-and-system-capabilities/connect-webviews/) that enables your users to connect their 2N devices to Seam, include the `my_2n` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../capability-guides/device-and-system-capabilities/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their 2N devices to Seam, include the `my_2n` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -48,7 +48,7 @@ To control 2N devices using Seam, you must prompt owners of these devices to per
 2. In My2N, add your 2N IP devices to the sites in which the devices are located.
 3. Make sure that Remote API Access (RAA) is enabled for your My2N company. Contact [integrations@2n.com](mailto:integrations@2n.com) to activate RAA.
 4. Once RAA is enabled for your company, enable RAA as a service for each of your 2N devices. For details, see the [2N article about service activation](https://server.sdk.my2n.com/versions/sandbox/index.html#service-activation).
-5. Note your login credentials for My2N, and use these credentials to log in to the [Seam Connect Webview](../capability-guides/device-and-system-capabilities/connect-webviews/) to add your 2N devices to Seam.
+5. Note your login credentials for My2N, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your 2N devices to Seam.
 
 ***
 

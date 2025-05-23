@@ -39,7 +39,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../capability-guides/device-and-system-capabilities/connect-webviews/) that enables your users to connect their dormakaba Oracode devices to Seam, include the `dormakaba_oracode` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../capability-guides/device-and-system-capabilities/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their dormakaba Oracode devices to Seam, include the `dormakaba_oracode` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -63,7 +63,7 @@ To control dormakaba Oracode devices using Seam, you must prompt **the owners or
     > * _..._
 
     Once dormakaba Oracode has connected your dormakaba Live Services sites to Seam, proceed to the next step.
-3. Use a [Seam Connect Webview](../capability-guides/device-and-system-capabilities/connect-webviews/) to add your dormakaba Oracode devices to Seam.\
+3. Use a [Seam Connect Webview](../core-concepts/connect-webviews/) to add your dormakaba Oracode devices to Seam.\
    In the Connect Webview:
    * Type your dormakaba Oracode username and a comma-separated list of the dormakaba Oracode sites that you want to connect to Seam.
    * For each site that you have listed, select the time zone in which the site is located.\

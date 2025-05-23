@@ -42,7 +42,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../../capability-guides/device-and-system-capabilities/connect-webviews/) that enables your users to connect their Tedee devices to Seam, include the `tedee` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../capability-guides/device-and-system-capabilities/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables your users to connect their Tedee devices to Seam, include the `tedee` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -58,7 +58,7 @@ You must add your Tedee devices through the Tedee mobile app. You cannot add dev
 {% endhint %}
 
 3. Note your login credentials for the Tedee app.
-4. Use your credentials for the Tedee app to log in to the [Seam Connect Webview](../../capability-guides/device-and-system-capabilities/connect-webviews/) to add your devices to Seam.
+4. Use your credentials for the Tedee app to log in to the [Seam Connect Webview](../../core-concepts/connect-webviews/) to add your devices to Seam.
 
 ***
 

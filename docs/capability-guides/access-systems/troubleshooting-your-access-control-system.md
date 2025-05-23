@@ -51,7 +51,7 @@ Your access system has been disconnected.
 
 To troubleshoot this error:
 
-* Use a [Connect Webview](../device-and-system-capabilities/connect-webviews/) to reconnect the account.
+* Use a [Connect Webview](../../core-concepts/connect-webviews/) to reconnect the account.
 * Unblock the "Seam Integration" user within the [Salto KS dashboard](https://app.saltoks.com/).
 
 ***
@@ -60,7 +60,7 @@ To troubleshoot this error:
 
 Your login credentials for your ACS account are invalid.
 
-To troubleshoot this error, use a [Connect Webview](../device-and-system-capabilities/connect-webviews/) to reconnect the account.
+To troubleshoot this error, use a [Connect Webview](../../core-concepts/connect-webviews/) to reconnect the account.
 
 ***
 

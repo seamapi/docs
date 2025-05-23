@@ -43,7 +43,7 @@ For details, see the corresponding device guide. Also, [get the lock](../../../a
 
 ## Before You Begin: Confirm Capabilities
 
-Before you attempt to create an offline access code, be sure to confirm that your device has the capability to perform this operation. You can check the following [capability flag](../../../capability-guides/device-and-system-capabilities/#capability-flags) for the device:
+Before you attempt to create an offline access code, be sure to confirm that your device has the capability to perform this operation. You can check the following [capability flag](../../../capability-guides/device-and-system-capabilities.md#capability-flags) for the device:
 
 * `device.can_program_offline_access_codes`
 

@@ -226,13 +226,13 @@ return nil
 
 ## **Webhook**
 
-When Seam successfully establishes the connection to the user's device or ACS account, Seam emits a [`connected_account.connected` event](../../../api-clients/events/#event-types). This event includes a `connect_webview_id` property.
+When Seam successfully establishes the connection to the user's device or ACS account, Seam emits a [`connected_account.connected` event](../../api-clients/events/#event-types). This event includes a `connect_webview_id` property.
 
 To avoid polling, use a Seam webhook to monitor for a `connected_account.connected` event with a `connect_webview_id` that matches the `connect_webview_id` of the appropriate Connect Webview instance.
 
 Note that the `connected_account.connected` event also includes a `connected_account_id` property.
 
-For more information, see [Webhooks](../../../core-concepts/webhooks.md).
+For more information, see [Webhooks](../webhooks.md).
 
 ```json
 {
@@ -275,8 +275,8 @@ Once you have received a `connect_webview.login_succeeded` event, you can use we
 
 | Event                                    | Description                                                                                                                                                                                                                                                                                                              |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `connected_account.created`              | A [connected account](../../../core-concepts/connected-accounts/) has been imported into your Seam workspace.                                                                                                                                                                                                            |
-| `connected_account.connected`            | Seam has established connection to or is reconnected to a [connected account](../../../core-concepts/connected-accounts/).                                                                                                                                                                                               |
+| `connected_account.created`              | A [connected account](../connected-accounts/) has been imported into your Seam workspace.                                                                                                                                                                                                                                |
+| `connected_account.connected`            | Seam has established connection to or is reconnected to a [connected account](../connected-accounts/).                                                                                                                                                                                                                   |
 | `connected_account.completed_first_sync` | Seam has finished the first sync of a connected account, and the corresponding devices or systems are now available.                                                                                                                                                                                                     |
 | `device.added`                           | A device was added to Seam or was re-added to Seam after having been removed.                                                                                                                                                                                                                                            |
 | `device.connected`                       | <p>The status of a device changed from offline to online. That is, the <code>device.properties.online</code> property changed from <code>false</code> to <code>true</code>.<br>Note that some devices operate entirely in offline mode, so Seam never emits a <code>device.connected</code> event for these devices.</p> |
