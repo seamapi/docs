@@ -33,9 +33,15 @@ ID of the credential that you want to assign to an access system user.
 
 ---
 
-**`acs_user_id`**  (Required)
+**`acs_user_id`** 
 
-ID of the access system user to whom you want to assign a credential.
+ID of the access system user to whom you want to assign a credential. You can only provide one of acs_user_id or user_identity_id.
+
+---
+
+**`user_identity_id`** 
+
+ID of the user identity to whom you want to assign a credential. You can only provide one of acs_user_id or user_identity_id. If the ACS system contains an ACS user with the same `email_address` or `phone_number` as the user identity that you specify, they are linked, and the credential belongs to the ACS user. If the ACS system does not have a corresponding ACS user, one is created.
 
 ---
 

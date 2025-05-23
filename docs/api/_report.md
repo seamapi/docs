@@ -64,6 +64,7 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1/bridge_connected_systems`: No undocumented message provided
 - `/seam/instant_key/v1/client_sessions`: No undocumented message provided
 - `/seam/mobile_sdk/v1/acs/credentials`: No undocumented message provided
+- `/seam/mobile_sdk/v1/phone_sessions`: No undocumented message provided
 - `/unstable_access_grants`: No undocumented message provided
 - `/unstable_access_methods`: No undocumented message provided
 - `/unstable_locations`: No undocumented message provided
@@ -72,6 +73,7 @@ These items are intentionally undocumented.
 ### Resources
 
 - `instant_key`: Unreleased.
+- `phone_session`: Seam Mobile SDK only.
 
 ### Resource properties
 
@@ -85,6 +87,7 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1`: No undocumented message provided
 - `/seam/instant_key/v1`: No undocumented message provided
 - `/seam/mobile_sdk/v1/acs`: No undocumented message provided
+- `/seam/mobile_sdk/v1`: No undocumented message provided
 - `/unstable_partner`: No undocumented message provided
 
 ### Endpoints
@@ -111,6 +114,7 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1/bridge_connected_systems/list`: Seam Bridge Client only.
 - `/seam/instant_key/v1/client_sessions/exchange_short_code`: Seam Instant Key only.
 - `/seam/mobile_sdk/v1/acs/credentials/list`: Mobile SDK only.
+- `/seam/mobile_sdk/v1/phone_sessions/get_or_create`: Mobile SDK only.
 - `/thermostats/get`: Will be removed.
 - `/unstable_access_grants/create`: Unreleased.
 - `/unstable_access_grants/get`: Unreleased.
@@ -191,6 +195,7 @@ Items that are intentionally undocumented are not included in this section.
 - `instant_key`
 - `network`
 - `noise_threshold`
+- `phone_session`
 - `unmanaged_acs_access_group`
 - `webhook`
 
@@ -313,6 +318,7 @@ Items that are intentionally undocumented are not included in this section.
 - `noise_threshold.noise_threshold_id`
 - `noise_threshold.noise_threshold_nrs`
 - `noise_threshold.starts_daily_at`
+- `phone_session.provider_sessions`
 - `unmanaged_acs_access_group.access_group_type`
 - `unmanaged_acs_access_group.access_group_type_display_name`
 - `unmanaged_acs_access_group.display_name`
@@ -501,6 +507,10 @@ Items that are intentionally undocumented are not included in this section.
 - `/seam/bridge/v1/bridge_client_sessions/report_status`
     - `is_tailscale_connected`
     - `tailscale_ip_v4`
+- `/seam/mobile_sdk/v1/phone_sessions/get_or_create`
+    - `custom_sdk_installation_id`
+    - `phone_device_metadata`
+    - `phone_os`
 - `/thermostats/cool`
     - `sync`
 - `/thermostats/heat`
@@ -756,6 +766,7 @@ These items are deprecated.
 - `/seam/bridge/v1/bridge_connected_systems/list`
 - `/seam/instant_key/v1/client_sessions/exchange_short_code`
 - `/seam/mobile_sdk/v1/acs/credentials/list`
+- `/seam/mobile_sdk/v1/phone_sessions/get_or_create`
 - `/thermostats/get`
 - `/thermostats/update_weekly_program`
 - `/thermostats/daily_programs/create`

@@ -33,9 +33,15 @@ ID of the credential that you want to unassign from an access system user.
 
 ---
 
-**`acs_user_id`**  (Required)
+**`acs_user_id`** 
 
-ID of the access system user from which you want to unassign a credential.
+ID of the access system user from which you want to unassign a credential. You can only provide one of acs_user_id or user_identity_id.
+
+---
+
+**`user_identity_id`** 
+
+ID of the user identity from which you want to unassign a credential. You can only provide one of acs_user_id or user_identity_id.
 
 ---
 
