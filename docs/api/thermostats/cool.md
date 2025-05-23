@@ -30,7 +30,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`device_id`**  (Required)
 
-ID of the desired thermostat device.
+ID of the thermostat device that you want to set to cool mode.
 
 ---
 
@@ -201,6 +201,33 @@ func main() {
 
 ```go
 api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Status: "pending", ActionType: "SET_COOL"}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/thermostats/cool" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "123e4567-e89b-12d3-a456-426614174000",
+  "cooling_set_point_celsius": 25
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "action_attempt": {
+    "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
+    "status": "pending",
+    "action_type": "SET_COOL"
+  }
+}
 ```
 {% endtab %}
 

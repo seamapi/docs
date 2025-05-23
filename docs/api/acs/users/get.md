@@ -4,7 +4,7 @@
 - [Response](./#response)
 - [Examples](./#examples)
 
-Returns a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Returns a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 {% tabs %}
 {% tab title="Signature" %}
@@ -29,7 +29,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_user_id`**  (Required)
 
-ID of the desired `acs_user`.
+ID of the access system user that you want to get.
 
 ---
 
@@ -198,6 +198,37 @@ func main() {
 
 ```go
 api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "Jane Doe", FullName: "Jane Doe", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100"}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/get" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_user_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "acs_user": {
+    "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
+    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+    "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+    "created_at": "2024-04-05T07:57:05.323Z",
+    "display_name": "Jane Doe",
+    "full_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "phone_number": "+15555550100"
+  }
+}
 ```
 {% endtab %}
 

@@ -4,7 +4,7 @@
 - [Response](./#response)
 - [Examples](./#examples)
 
-Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
 {% tabs %}
 {% tab title="Signature" %}
@@ -29,13 +29,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_access_group_id`**  (Required)
 
-ID of the desired access group.
+ID of the access group to which you want to add an access system user.
 
 ---
 
 **`acs_user_id`**  (Required)
 
-ID of the desired `acs_user`.
+ID of the access system user that you want to add to an access group.
 
 ---
 
@@ -160,6 +160,27 @@ func main() {
 
 ```go
 nil
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/add_to_access_group" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_user_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
+  "acs_access_group_id": "123e4567-e89b-12d3-a456-426614174000"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
 ```
 {% endtab %}
 

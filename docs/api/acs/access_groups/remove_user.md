@@ -4,7 +4,7 @@
 - [Response](./#response)
 - [Examples](./#examples)
 
-Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
 {% tabs %}
 {% tab title="Signature" %}
@@ -29,13 +29,19 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_access_group_id`**  (Required)
 
-ID of the desired access group.
+ID of the access group from which you want to remove an access system user.
 
 ---
 
-**`acs_user_id`**  (Required)
+**`acs_user_id`** 
 
-ID of the desired user.
+ID of the access system user that you want to remove from an access group.
+
+---
+
+**`user_identity_id`** 
+
+ID of the user identity associated with the user that you want to remove from an access group.
 
 ---
 
@@ -160,6 +166,27 @@ func main() {
 
 ```go
 nil
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/access_groups/remove_user" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_access_group_id": "44444444-4444-4444-4444-444444444444",
+  "acs_user_id": "33333333-3333-3333-3333-333333333333"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
 ```
 {% endtab %}
 

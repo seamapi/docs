@@ -4,9 +4,9 @@
 - [Response](./#response)
 - [Examples](./#examples)
 
-Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems).
+Returns a list of all [access systems](https://docs.seam.co/latest/capability-guides/access-systems).
 
-To filter the list of returned access control systems by a specific connected account ID, include the `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the response includes all access control systems connected to your workspace.
+To filter the list of returned access systems by a specific connected account ID, include the `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the response includes all access systems connected to your workspace.
 
 {% tabs %}
 {% tab title="Signature" %}
@@ -32,7 +32,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`connected_account_id`** 
 
-ID of the connected account by which to filter the list of returned access control systems.
+ID of the connected account by which you want to filter the list of access systems.
 
 ---
 
@@ -158,6 +158,26 @@ func main() {
 
 ```go
 []api.AcsSystem{api.AcsSystem{AcsSystemId: "8d7e0b3a-b889-49a7-9164-4b71a0506a33"}}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/systems/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "connected_account_id": "123e4567-e89b-12d3-a456-426614174000"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{ "acs_systems": [{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }] }
 ```
 {% endtab %}
 

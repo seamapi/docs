@@ -33,9 +33,15 @@ Access method for the new credential. Supported values: `code`, `card`, `mobile_
 
 ---
 
-**`acs_user_id`**  (Required)
+**`acs_system_id`** 
 
-ID of the ACS user to whom the new credential belongs.
+ID of the access system to which the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`.
+
+---
+
+**`acs_user_id`** 
+
+ID of the access system user to whom the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`.
 
 ---
 
@@ -84,6 +90,12 @@ Salto Space-specific metadata for the new credential.
 **`starts_at`** 
 
 Date and time at which the validity of the new credential starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+
+---
+
+**`user_identity_id`** 
+
+ID of the user identity to whom the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`. If the access system contains a user with the same `email_address` or `phone_number` as the user identity that you specify, they are linked, and the credential belongs to the access system user. If the access system does not have a corresponding user, one is created.
 
 ---
 
@@ -311,6 +323,47 @@ func main() {
 
 ```go
 api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUserId: "33333333-3333-3333-3333-333333333333", DisplayName: "Multi Phone Sync Credential", Code: nil, AcsSystemId: "88888888-8888-8888-8888-888888888888", AccessMethod: "mobile_key", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2024-04-12T03:56:22.396Z", IsMultiPhoneSyncCredential: true}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/credentials/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  "access_method": "mobile_key",
+  "allowed_acs_entrance_ids": [
+    "55555555-5555-5555-5555-555555555555",
+    "55555555-5555-5555-5555-000000000000"
+  ],
+  "credential_manager_acs_system_id": "88888888-8888-8888-8888-888888888888",
+  "is_multi_phone_sync_credential": true,
+  "starts_at": "2024-03-01T10:40:00Z",
+  "ends_at": "2024-03-04T10:40:00Z"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "acs_credential": {
+    "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+    "acs_user_id": "33333333-3333-3333-3333-333333333333",
+    "display_name": "Multi Phone Sync Credential",
+    "code": null,
+    "acs_system_id": "88888888-8888-8888-8888-888888888888",
+    "access_method": "mobile_key",
+    "workspace_id": "00000000-0000-0000-0000-000000000000",
+    "created_at": "2024-04-12T03:56:22.396Z",
+    "is_multi_phone_sync_credential": true
+  }
+}
 ```
 {% endtab %}
 

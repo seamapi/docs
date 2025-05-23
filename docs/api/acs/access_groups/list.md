@@ -29,13 +29,19 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_system_id`** 
 
-ID of the access control system for which you want to retrieve all access groups.
+ID of the access system for which you want to retrieve all access groups.
 
 ---
 
 **`acs_user_id`** 
 
-ID of the user for which you want to retrieve all access groups.
+ID of the access system user for which you want to retrieve all access groups.
+
+---
+
+**`user_identity_id`** 
+
+ID of the user identity for which you want to retrieve all access groups.
 
 ---
 
@@ -235,6 +241,42 @@ func main() {
 
 ```go
 []api.AcsAccessGroup{api.AcsAccessGroup{AcsAccessGroupId: "44444444-4444-4444-4444-444444444444", Name: "Lobby Access", DisplayName: "Lobby Access", AccessGroupTypeDisplayName: "PTI access level", AccessGroupType: "pti_access_level", ExternalType: "pti_access_level", ExternalTypeDisplayName: "PTI access level", AcsSystemId: "11111111-1111-1111-1111-111111111111", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2023-11-30T06:27:15.437Z"}}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/access_groups/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_system_id": "11111111-1111-1111-1111-111111111111",
+  "acs_user_id": "33333333-3333-3333-3333-333333333333"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "acs_access_groups": [
+    {
+      "acs_access_group_id": "44444444-4444-4444-4444-444444444444",
+      "name": "Lobby Access",
+      "display_name": "Lobby Access",
+      "access_group_type_display_name": "PTI access level",
+      "access_group_type": "pti_access_level",
+      "external_type": "pti_access_level",
+      "external_type_display_name": "PTI access level",
+      "acs_system_id": "11111111-1111-1111-1111-111111111111",
+      "workspace_id": "00000000-0000-0000-0000-000000000000",
+      "created_at": "2023-11-30T06:27:15.437Z"
+    }
+  ]
+}
 ```
 {% endtab %}
 

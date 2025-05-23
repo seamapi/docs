@@ -29,7 +29,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_encoder_id`**  (Required)
 
-ID of the `acs_encoder` to use for the scan.
+ID of the encoder to use for the scan.
 
 ---
 

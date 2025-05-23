@@ -29,13 +29,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`climate_preset_key`**  (Required)
 
-Climate preset key of the desired climate preset.
+Climate preset key of the climate preset that you want to set as the fallback climate preset.
 
 ---
 
 **`device_id`**  (Required)
 
-ID of the desired thermostat device.
+ID of the thermostat device for which you want to set the fallback climate preset.
 
 ---
 
@@ -158,6 +158,27 @@ func main() {
 
 ```go
 nil
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/thermostats/set_fallback_climate_preset" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "123e4567-e89b-12d3-a456-426614174000",
+  "climate_preset_key": "eco"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
 ```
 {% endtab %}
 

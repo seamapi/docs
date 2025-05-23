@@ -4,7 +4,7 @@
 - [Response](./#response)
 - [Examples](./#examples)
 
-Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Creates a new [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 {% tabs %}
 {% tab title="Signature" %}
@@ -29,25 +29,25 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_system_id`**  (Required)
 
-ID of the `acs_system` to which to add the new `acs_user`.
+ID of the access system to which you want to add the new access system user.
 
 ---
 
 **`full_name`**  (Required)
 
-Full name of the new `acs_user`.
+Full name of the new access system user.
 
 ---
 
 **`access_schedule`** 
 
-`starts_at` and `ends_at` timestamps for the new `acs_user`'s access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. `starts_at` defaults to the current time if not provided. `ends_at` is optional and must be a time in the future and after `starts_at`.
+`starts_at` and `ends_at` timestamps for the new access system user's access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. If you omit `starts_at`, it defaults to the current time. `ends_at` is optional and must be a time in the future and after `starts_at`.
 
 ---
 
 **`acs_access_group_ids`**  *of UUIDs*
 
-Array of `access_group_id`s to indicate the access groups to which to add the new `acs_user`.
+Array of access group IDs to indicate the access groups to which you want to add the new access system user.
 
 ---
 
@@ -69,7 +69,7 @@ Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/acc
 
 **`user_identity_id`** 
 
-ID of the user identity with which to associate the new `acs_user`.
+ID of the user identity with which you want to associate the new access system user.
 
 ---
 
@@ -259,6 +259,40 @@ func main() {
 
 ```go
 api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "Jane Doe", FullName: "Jane Doe", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100"}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15555550100"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "acs_user": {
+    "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
+    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+    "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+    "created_at": "2024-04-05T07:57:05.323Z",
+    "display_name": "Jane Doe",
+    "full_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "phone_number": "+15555550100"
+  }
+}
 ```
 {% endtab %}
 
@@ -455,6 +489,44 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15555550100",
+  "access_schedule": {
+    "starts_at": "2024-11-01T15:00:00.000Z",
+    "ends_at": "2024-11-04T11:00:00.000Z"
+  }
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "acs_user": {
+    "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
+    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+    "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+    "created_at": "2024-04-05T07:57:05.323Z",
+    "display_name": "Jane Doe",
+    "full_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "phone_number": "+15555550100"
+  }
+}
+```
+{% endtab %}
+
 {% endtabs %}
 ---
 
@@ -631,6 +703,43 @@ func main() {
 
 ```go
 api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "Jane Doe", FullName: "Jane Doe", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100"}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15555550100",
+  "acs_access_group_ids": [
+    "123e4567-e89b-12d3-a456-426614174000"
+  ]
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "acs_user": {
+    "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
+    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+    "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+    "created_at": "2024-04-05T07:57:05.323Z",
+    "display_name": "Jane Doe",
+    "full_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "phone_number": "+15555550100"
+  }
+}
 ```
 {% endtab %}
 

@@ -4,7 +4,7 @@
 - [Response](./#response)
 - [Examples](./#examples)
 
-Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 {% tabs %}
 {% tab title="Signature" %}
@@ -30,11 +30,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_system_id`** 
 
-ID of the `acs_system` for which you want to retrieve all `acs_user`s.
+ID of the `acs_system` for which you want to retrieve all access system users.
 
 ---
 
 **`created_before`** 
+
+Timestamp by which to limit returned access system users. Returns users created before this timestamp.
 
 ---
 
@@ -52,25 +54,25 @@ Identifies the specific page of results to return, obtained from the previous pa
 
 **`search`** 
 
-String for which to search. Filters returned `acs_user`s to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address`, `acs_user_id`, `user_identity_id`, `user_identity_full_name` or `user_identity_phone_number`.
+String for which to search. Filters returned access system users to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address`, `acs_user_id`, `user_identity_id`, `user_identity_full_name` or `user_identity_phone_number`.
 
 ---
 
 **`user_identity_email_address`** 
 
-Email address of the user identity for which you want to retrieve all `acs_user`s.
+Email address of the user identity for which you want to retrieve all access system users.
 
 ---
 
 **`user_identity_id`** 
 
-ID of the user identity for which you want to retrieve all `acs_user`s.
+ID of the user identity for which you want to retrieve all access system users.
 
 ---
 
 **`user_identity_phone_number`** 
 
-Phone number of the user identity for which you want to retrieve all `acs_user`s, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`).
+Phone number of the user identity for which you want to retrieve all access system users, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`).
 
 ---
 
@@ -229,6 +231,32 @@ func main() {
 
 ```go
 api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "Jane Doe", FullName: "Jane Doe", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100"}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{
+  "acs_users": {
+    "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
+    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+    "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+    "created_at": "2024-04-05T07:57:05.323Z",
+    "display_name": "Jane Doe",
+    "full_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "phone_number": "+15555550100"
+  }
+}
 ```
 {% endtab %}
 

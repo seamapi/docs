@@ -162,6 +162,27 @@ nil
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/user_identities/add_acs_user" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+  "acs_user_id": "4d223973-0874-4831-8630-bfcb29e6bce0"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
 {% endtabs %}
 
 

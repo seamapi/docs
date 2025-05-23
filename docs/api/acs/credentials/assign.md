@@ -4,7 +4,7 @@
 - [Response](./#response)
 - [Examples](./#examples)
 
-Assigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) to a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Assigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) to a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 {% tabs %}
 {% tab title="Signature" %}
@@ -29,13 +29,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_credential_id`**  (Required)
 
-ID of the desired credential.
+ID of the credential that you want to assign to an access system user.
 
 ---
 
 **`acs_user_id`**  (Required)
 
-ID of the desired user.
+ID of the access system user to whom you want to assign a credential.
 
 ---
 
@@ -160,6 +160,27 @@ func main() {
 
 ```go
 nil
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/credentials/assign" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  "acs_credential_id": "66666666-6666-6666-6666-666666666666"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
 ```
 {% endtab %}
 
