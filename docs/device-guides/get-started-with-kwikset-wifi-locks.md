@@ -103,7 +103,7 @@ This guide uses a Sandbox Workspace. Only virtual devices can be connected. If y
 
 ## 2 — Link Kwikset Account with Seam
 
-To control your Kwikset Halo lock via the Seam API, you must first authorize your Seam workspace against your Kwikset account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Kwikset Halo lock.
+To control your Kwikset Halo lock via the Seam API, you must first authorize your Seam workspace against your Kwikset account. To do so, Seam provides[ Connect Webviews](../capability-guides/device-and-system-capabilities/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Kwikset Halo lock.
 
 #### Request a Connect Webview
 
@@ -323,9 +323,9 @@ puts some_lock.inspect
 
 Next, you can perform the basic action of locking and unlocking the door.
 
-{% swagger src="../.gitbook/assets/openapi (1).json" path="/locks/lock_door" method="post" %}
+{% openapi src="../.gitbook/assets/openapi (1).json" path="/locks/lock_door" method="post" %}
 [openapi (1).json](<../.gitbook/assets/openapi (1).json>)
-{% endswagger %}
+{% endopenapi %}
 
 ## Unlock a door
 

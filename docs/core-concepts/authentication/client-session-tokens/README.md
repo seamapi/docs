@@ -169,4 +169,4 @@ await seam.clientSessions.delete({
 ## Next Steps
 
 * Learn about using [client session tokens with Seam Components](../../../seam-components/overview/).
-* Learn more about [Connect Webviews](../../connect-webviews/).
+* Learn more about [Connect Webviews](../../../capability-guides/device-and-system-capabilities/connect-webviews/).

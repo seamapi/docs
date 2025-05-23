@@ -124,7 +124,7 @@ This guide uses a [sandbox workspace](../../core-concepts/workspaces/#sandbox-wo
 
 ## Step 2: Link your Honeywell Resideo account with Seam
 
-To control your Honeywell Resideo thermostat using the Seam API, you must first authorize your Seam workspace to connect to your Honeywell Resideo account. If your application needs to connect to your users' Honeywell Resideo accounts, Seam provides fully-embedded, [customizable](../../core-concepts/connect-webviews/customizing-connect-webviews.md) client-side [Connect Webviews](../../core-concepts/connect-webviews/) to collect their authorization securely. These user-friendly pre-built authorization flows walk your users through the process of granting your Seam workspace permission to control their Honeywell Resideo thermostats. The Connect Webview presents a flow that prompts your users to enter their credentials for their Honeywell Resideo account.
+To control your Honeywell Resideo thermostat using the Seam API, you must first authorize your Seam workspace to connect to your Honeywell Resideo account. If your application needs to connect to your users' Honeywell Resideo accounts, Seam provides fully-embedded, [customizable](../../capability-guides/device-and-system-capabilities/connect-webviews/customizing-connect-webviews.md) client-side [Connect Webviews](../../capability-guides/device-and-system-capabilities/connect-webviews/) to collect their authorization securely. These user-friendly pre-built authorization flows walk your users through the process of granting your Seam workspace permission to control their Honeywell Resideo thermostats. The Connect Webview presents a flow that prompts your users to enter their credentials for their Honeywell Resideo account.
 
 In this guide, you create a Connect Webview object. Then, you display the graphical component of the created Connect Webview and enter a set of sample credentials to connect a sandbox Honeywell Resideo account.
 
@@ -943,7 +943,7 @@ Fan running: false
 
 Next, you can use the Seam API to control your Honeywell Resideo thermostat.
 
-Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use. For thermostats, device-specific capabilities include whether you can [set the HVAC mode](../../products/thermostats/configure-current-climate-settings.md) to `heat`, `cool`, or `heat_cool`. Seam's intuitive and granular [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
+Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use. For thermostats, device-specific capabilities include whether you can [set the HVAC mode](../../products/thermostats/configure-current-climate-settings.md) to `heat`, `cool`, or `heat_cool`. Seam's intuitive and granular [capability flags](../../capability-guides/device-and-system-capabilities/#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
 
 Seam provides additional actions for thermostats, such as setting the fan mode, creating and scheduling climate presets, and setting temperature thresholds. You can also monitor for Seam thermostat-related events, such as reported temperatures outside your set thresholds.
 
@@ -1867,7 +1867,7 @@ Now that you've completed this getting started guide for Honeywell Resideo devic
 * [ ] **Explore**\
   See the [other devices and system integrations](../overview.md) that Seam supports.
 * [ ] **Learn**\
-  Read about Seam [concepts](../../device-guides/broken-reference/) and the [device and system capabilities ](../../capability-guides/device-and-system-capabilities.md)that Seam supports.
+  Read about Seam [concepts](../../device-guides/broken-reference/) and the [device and system capabilities ](../../capability-guides/device-and-system-capabilities/)that Seam supports.
 * [ ] **Expand your abilities**\
   Find out what other [thermostat actions](../../products/thermostats/) you can perform using the Seam API.
 * [ ] **Use webhooks**\

@@ -21,7 +21,7 @@ To use the [Seam mobile access](./) solution, you must first set up the followin
 
 To set up your Seam workspace to use the Seam mobile access solution:
 
-1.  **Connect your ACS account to Seam using a** [**Connect Webview**](../../core-concepts/connect-webviews/)
+1.  **Connect your ACS account to Seam using a** [**Connect Webview**](../device-and-system-capabilities/connect-webviews/)
 
     This step requires the account information for your ACS account. For more information, see the [guide](../../device-and-system-integration-guides/overview.md#access-control-systems) for your specific ACS brand.
 2. **Connect your credential manager account to Seam using a Connect Webview**\

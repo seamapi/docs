@@ -22,9 +22,9 @@ Smart locks utilize technology to provide a new way to unlock or lock your door.
 
 These locks can be integrated into various entry points, such as standard doors, gates, garage doors, elevators, and lockers. Some associated devices, such as intercoms and access control systems, come equipped with built-in video cameras and microphones. This way, you can see and communicate with whomever is at your door, even when you're away from the location.
 
-The Seam API provides the capability to lock and unlock doors remotely. You can use capability flags to check whether your lock has the `device.can_remotely_lock` or `device.can_remotely_unlock` capability. For more information, see [Capability Flags](../../capability-guides/device-and-system-capabilities.md#capability-flags).
+The Seam API provides the capability to lock and unlock doors remotely. You can use capability flags to check whether your lock has the `device.can_remotely_lock` or `device.can_remotely_unlock` capability. For more information, see [Capability Flags](../../capability-guides/device-and-system-capabilities/#capability-flags).
 
-For locks equipped with keypads, our API also permits the creation and programming of access codes. Additional capability flags enable you to check whether your lock has the `device.can_program_online_access_codes` or `device.can_program_offline_access_codes` capability. For more information, see [Capability Flags](../../capability-guides/device-and-system-capabilities.md#capability-flags).
+For locks equipped with keypads, our API also permits the creation and programming of access codes. Additional capability flags enable you to check whether your lock has the `device.can_program_online_access_codes` or `device.can_program_offline_access_codes` capability. For more information, see [Capability Flags](../../capability-guides/device-and-system-capabilities/#capability-flags).
 
 ## What Is an Access Code?
 
@@ -34,7 +34,7 @@ An access code is a numeric or alphanumeric code that a user enters to gain acce
 * When the correct code is entered on the keypad, the lock releases and allows access.
 * Access codes can be permanent (for homeowners or primary users) or temporary (for guests or service providers).
 
-You can use capability flags to check whether your lock has the `device.can_program_online_access_codes` or `device.can_program_offline_access_codes` capability. For more information, see [Capability Flags](../../capability-guides/device-and-system-capabilities.md#capability-flags).
+You can use capability flags to check whether your lock has the `device.can_program_online_access_codes` or `device.can_program_offline_access_codes` capability. For more information, see [Capability Flags](../../capability-guides/device-and-system-capabilities/#capability-flags).
 
 ## **Next Steps**
 
@@ -43,4 +43,4 @@ To learn how to manage locks and access codes, see the following guides:
 * [Locking and Unlocking](lock-and-unlock.md)
 * [Managing Access Codes](access-codes/)
 
-For the corresponding Seam API references, see [Locks](../../api-clients/locks/) and [Access Codes](../../api-clients/access_codes/).
+For the corresponding Seam API references, see [Locks](../../api-clients/locks/) and [Access Codes](../../api/access_codes/).

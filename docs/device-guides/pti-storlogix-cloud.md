@@ -42,7 +42,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables you to connect your PTI Storlogix Cloud to Seam, include the `pti` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../capability-guides/device-and-system-capabilities/connect-webviews/) that enables you to connect your PTI Storlogix Cloud to Seam, include the `pti` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../capability-guides/device-and-system-capabilities/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -64,7 +64,7 @@ To obtain this necessary information:
 4. Click **Operations > Company Info**.
 5. Click the **Device Settings** tab.
 6. Note the **SiteKey** and **SiteCode** values.
-7. Log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) and specify these noted values to connect your PTI system to Seam.
+7. Log in to the [Seam Connect Webview](../capability-guides/device-and-system-capabilities/connect-webviews/) and specify these noted values to connect your PTI system to Seam.
 
 {% hint style="info" %}
 If you do not have access to your Storlogix Cloud dashboard—that is, if you are unsure of your Storlogix Cloud login credentials or the dashboard URL—contact the [PTI Security Systems Customer Support team](https://ptisecurity.my.salesforce-sites.com/apex/Support). They can assist you in retrieving your login details.

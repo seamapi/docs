@@ -39,7 +39,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables you to connect your Avigilon Alta access system and devices to Seam, include the `avigilon_alta` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../capability-guides/device-and-system-capabilities/connect-webviews/) that enables you to connect your Avigilon Alta access system and devices to Seam, include the `avigilon_alta` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../capability-guides/device-and-system-capabilities/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -55,7 +55,7 @@ To control Avigilon Alta-connected devices using Seam, you must prompt owners of
     2. Make sure that the **Roles** for the user include **Super Admin**.
 
     <figure><img src="../.gitbook/assets/avigilon-alta-user-permissions.png" alt="Verify user permissions in the Avigilon Alta dashboard."><figcaption></figcaption></figure>
-4. Use the credentials for the user to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your Avigilon Alta access system and devices to Seam.
+4. Use the credentials for the user to log in to the [Seam Connect Webview](../capability-guides/device-and-system-capabilities/connect-webviews/) to add your Avigilon Alta access system and devices to Seam.
 
 ***
 

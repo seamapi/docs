@@ -93,7 +93,7 @@ This guide uses a Sandbox Workspace. Only virtual sensors can be connected. If y
 
 ## 2. Link Minut Account with Seam
 
-To control your Minut sensor via the Seam API, you must first authorize your Seam workspace against your Minut account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Minut sensor.
+To control your Minut sensor via the Seam API, you must first authorize your Seam workspace against your Minut account. To do so, Seam provides[ Connect Webviews](../capability-guides/device-and-system-capabilities/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Minut sensor.
 
 ### Create a Connect Webview
 

@@ -95,7 +95,7 @@ This guide uses a Sandbox Workspace. Only virtual activity zones can be connecte
 
 ## 2. Link NoiseAware Account with Seam
 
-To control your NoiseAware device via the Seam API, you must first authorize your Seam workspace against your NoiseAware account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your NoiseAware device.
+To control your NoiseAware device via the Seam API, you must first authorize your Seam workspace against your NoiseAware account. To do so, Seam provides[ Connect Webviews](../capability-guides/device-and-system-capabilities/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your NoiseAware device.
 
 ### Create a Connect Webview
 

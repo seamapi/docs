@@ -36,7 +36,7 @@ This quick start walks you through the following basic steps:
 
 ## Step 1: Connect a Virtual ACS
 
-In this quick start, use Seam Console to connect a virtual ACS to your sandbox workspace. Alternately, you can use the Seam API to create a [Connect Webview](../../../core-concepts/connect-webviews/) and then use it to connect an ACS to Seam.
+In this quick start, use Seam Console to connect a virtual ACS to your sandbox workspace. Alternately, you can use the Seam API to create a [Connect Webview](../../device-and-system-capabilities/connect-webviews/) and then use it to connect an ACS to Seam.
 
 1. Log in to [Seam Console](https://console.seam.co/).
 2.  In the upper-left corner, click the workspace switcher and select or [create a sandbox workspace](../../../core-concepts/workspaces/#create-a-sandbox-workspace).

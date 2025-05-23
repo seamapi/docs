@@ -8,7 +8,7 @@ description: >-
 
 ## Retrieving All Access Codes for a Device
 
-To retrieve all access codes for a device, include the `device_id` in the [List Access Codes](../../../api-clients/access_codes/list.md) request.
+To retrieve all access codes for a device, include the `device_id` in the [List Access Codes](../../../api/access_codes/list.md) request.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -374,7 +374,7 @@ System.out.println(accessCodes);
 
 ## Retrieving Access Codes Using Access Code IDs
 
-To retrieve access codes by IDs, include the desired `access_code_ids` in the [List Access Codes](../../../api-clients/access_codes/list.md) request.
+To retrieve access codes by IDs, include the desired `access_code_ids` in the [List Access Codes](../../../api/access_codes/list.md) request.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -709,7 +709,7 @@ System.out.println(accessCodes);
 
 ## Retrieving Individual Access Codes
 
-To retrieve a specific access code, include the desired `access_code_id` in the [Get Access Code](../../../api-clients/access_codes/get) request.
+To retrieve a specific access code, include the desired `access_code_id` in the [Get Access Code](../../../api-clients/access_codes/get/) request.
 
 {% tabs %}
 {% tab title="Python" %}

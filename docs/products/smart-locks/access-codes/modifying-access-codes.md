@@ -8,7 +8,7 @@ description: >-
 
 ## 1. Update the access code using the API
 
-You can update any active or upcoming access codes using the [Update Access Code](../../../api-clients/access_codes/update.md) request.
+You can update any active or upcoming access codes using the [Update Access Code](../../../api/access_codes/update.md) request.
 
 When modifying an access code, adjust the properties of the access code, such as the `code`, `name`, `starts_at`, and `ends_at` to the new desired values.
 

@@ -122,7 +122,7 @@ This guide uses a [sandbox workspace](../core-concepts/workspaces/#sandbox-works
 
 ## Step 2: Link your TTLock account with Seam
 
-To control your TTLock lock using the Seam API, you must first authorize your Seam workspace to connect to your TTLock account. If your application needs to connect to your users' TTLock accounts, Seam provides fully-embedded, [customizable](../core-concepts/connect-webviews/customizing-connect-webviews.md) client-side [Connect Webviews](../core-concepts/connect-webviews/) to collect their authorization securely. These user-friendly pre-built authorization flows walk your users through the process of granting your Seam workspace permission to control their TTLock locks. The Connect Webview presents a flow that prompts your users to enter their credentials for their TTLock account.
+To control your TTLock lock using the Seam API, you must first authorize your Seam workspace to connect to your TTLock account. If your application needs to connect to your users' TTLock accounts, Seam provides fully-embedded, [customizable](../capability-guides/device-and-system-capabilities/connect-webviews/customizing-connect-webviews.md) client-side [Connect Webviews](../capability-guides/device-and-system-capabilities/connect-webviews/) to collect their authorization securely. These user-friendly pre-built authorization flows walk your users through the process of granting your Seam workspace permission to control their TTLock locks. The Connect Webview presents a flow that prompts your users to enter their credentials for their TTLock account.
 
 In this guide, you create a Connect Webview object. Then, you display the graphical component of the created Connect Webview and enter a set of sample credentials to connect a sandbox TTLock account.
 
@@ -994,7 +994,7 @@ true
 
 Next, you can use the Seam API to control your lock.
 
-Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use, such as [remote unlock actions](../products/smart-locks/lock-and-unlock.md), [programming access codes](../products/smart-locks/access-codes/), and so on. Seam's intuitive and granular [capability flags](../capability-guides/device-and-system-capabilities.md#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
+Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use, such as [remote unlock actions](../products/smart-locks/lock-and-unlock.md), [programming access codes](../products/smart-locks/access-codes/), and so on. Seam's intuitive and granular [capability flags](../capability-guides/device-and-system-capabilities/#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
 
 Try out the following actions on your TTLock lock:
 
@@ -1942,7 +1942,7 @@ Now that you've completed this getting started guide for TTLock devices, you can
 * [ ] **Explore**\
   See the [other devices and system integrations](../device-and-system-integration-guides/overview.md) that Seam supports.
 * [ ] **Learn**\
-  Read about Seam [concepts](broken-reference/) and the [device and system capabilities ](../capability-guides/device-and-system-capabilities.md)that Seam supports.
+  Read about Seam [concepts](broken-reference/) and the [device and system capabilities ](../capability-guides/device-and-system-capabilities/)that Seam supports.
 * [ ] **Use Seam Components**\
   Find out about [Seam Components](../seam-components/overview/), which are prebuilt UI components for building your device management flow.
 * [ ] **Use webhooks**\

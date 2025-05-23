@@ -95,7 +95,7 @@ This guide uses a Sandbox Workspace. Only virtual devices can be connected. If y
 
 ## 2 — Link Yale Account with Seam
 
-To control your Yale lock via the Seam API, you must first authorize your Seam workspace against your Yale account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Yale lock.
+To control your Yale lock via the Seam API, you must first authorize your Seam workspace against your Yale account. To do so, Seam provides[ Connect Webviews](../capability-guides/device-and-system-capabilities/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Yale lock.
 
 {% hint style="info" %}
 Note that `yale_access` or `yale_home` are now deprecated in favor of just`yale` which will work with whichever version of the Yale backend.
@@ -282,9 +282,9 @@ puts some_lock #   warnings=[]> #   errors=[] #   created_at=2022-12-16 00:52:16
 
 Next, you can perform the basic action of locking and unlocking the door.
 
-{% swagger src="../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
+{% openapi src="../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
 [openapi.json](../.gitbook/assets/openapi.json)
-{% endswagger %}
+{% endopenapi %}
 
 ## Unlock a door
 

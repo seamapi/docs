@@ -386,7 +386,7 @@ echo json_encode($device, JSON_PRETTY_PRINT);
 
 ## Automatically Set New Devices to Unmanaged
 
-You can configure a [Connect Webview](../connect-webviews/) so that it automatically sets all new devices added to the workspace through this Connect Webview to `unmanaged` by default. To do so, when creating a Connect Webview, set `automatically_manage_new_devices` to `false`. Once the Connect Webview is authorized, Seam sets any device added to the workspace to `unmanaged`.
+You can configure a [Connect Webview](../../capability-guides/device-and-system-capabilities/connect-webviews/) so that it automatically sets all new devices added to the workspace through this Connect Webview to `unmanaged` by default. To do so, when creating a Connect Webview, set `automatically_manage_new_devices` to `false`. Once the Connect Webview is authorized, Seam sets any device added to the workspace to `unmanaged`.
 
 {% tabs %}
 {% tab title="JavaScript" %}

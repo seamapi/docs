@@ -15,7 +15,7 @@ To get started with Seam, first connect a set of devices.
    Once you have logged in to Seam Console, you are working in the default [sandbox workspace](core-concepts/workspaces/#sandbox-workspaces).
 2.  In the upper-right corner of the **Devices** page, click **Add Devices**.
 
-    Seam Console displays an authorization flow (known as a [Connect Webview](core-concepts/connect-webviews/)) that enables you to connect a device account to Seam.
+    Seam Console displays an authorization flow (known as a [Connect Webview](capability-guides/device-and-system-capabilities/connect-webviews/)) that enables you to connect a device account to Seam.
 3. In the Connect Webview, click **Continue**.
 4. In the manufacturer list, select [**August**](https://august.com/).
 5. When prompted, type the following sample (sandbox) credentials:
@@ -517,12 +517,12 @@ If you have a real device, you can try to control it using the steps in this Qui
 
 ### Connect Users' Devices
 
-If you are creating an app to control your users' devices, see [Connect Webviews](core-concepts/connect-webviews/). Seam Connect Webviews are fully-embedded client-side components that you add to your app if you want to enable your users to import their own devices using your app. Your users interact with your embedded Connect Webviews to link their IoT device accounts to Seam through your app. That is, Connect Webviews walk your users through the process of logging in to their device accounts. Seam handles all the authentication steps, and—once your user has completed the authorization through your app—you can access and control their devices using the Seam API.
+If you are creating an app to control your users' devices, see [Connect Webviews](capability-guides/device-and-system-capabilities/connect-webviews/). Seam Connect Webviews are fully-embedded client-side components that you add to your app if you want to enable your users to import their own devices using your app. Your users interact with your embedded Connect Webviews to link their IoT device accounts to Seam through your app. That is, Connect Webviews walk your users through the process of logging in to their device accounts. Seam handles all the authentication steps, and—once your user has completed the authorization through your app—you can access and control their devices using the Seam API.
 
 <figure><img src=".gitbook/assets/Seam Connect.png" alt="Use Connect Webviews to enable your users to authorize your app to control their devices."><figcaption></figcaption></figure>
 
 ### Learn about Devices and Capabilities
 
-Seam supports many device categories. Each device can be broken down into [device capabilities](capability-guides/device-and-system-capabilities.md). A capability indicates what the device can do, what properties it has, and what events it emits. To learn more about specific capabilities, such as access codes or thermostats, see the following guides:
+Seam supports many device categories. Each device can be broken down into [device capabilities](capability-guides/device-and-system-capabilities/). A capability indicates what the device can do, what properties it has, and what events it emits. To learn more about specific capabilities, such as access codes or thermostats, see the following guides:
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden><select></select></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Door Locks API</strong></td><td>Get started →</td><td><a href=".gitbook/assets/smart-locks-16-9.png">smart-locks-16-9.png</a></td><td></td><td><a href="products/smart-locks/">smart-locks</a></td></tr><tr><td><strong>Thermostats API</strong></td><td>Get started →</td><td></td><td></td><td><a href="products/thermostats/">thermostats</a></td></tr><tr><td><strong>Noise</strong> <strong>Sensors API</strong></td><td>Get started →</td><td><a href=".gitbook/assets/sensors-16-9.png">sensors-16-9.png</a></td><td></td><td><a href="products/noise-sensors/">noise-sensors</a></td></tr><tr><td><strong>Access Control Systems API</strong></td><td>Get started →</td><td><a href=".gitbook/assets/acs-cover.png">acs-cover.png</a></td><td></td><td><a href="products/access-systems/">access-systems</a></td></tr></tbody></table>

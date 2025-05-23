@@ -4,15 +4,15 @@ description: Delete a specified Connect Webview
 
 # Delete a Connect Webview
 
-Deletes a specified [Connect Webview](../../core-concepts/connect-webviews/).
+Deletes a specified [Connect Webview](../../capability-guides/device-and-system-capabilities/connect-webviews/).
 
 {% hint style="info" %}
 You do not need to delete a Connect Webview once a user completes it. Instead, you can simply ignore completed Connect Webviews.
 {% endhint %}
 
-{% swagger src="https://connect.getseam.com/openapi.json" path="/connect_webviews/delete" method="post" %}
+{% openapi src="https://connect.getseam.com/openapi.json" path="/connect_webviews/delete" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
-{% endswagger %}
+{% endopenapi %}
 
 ## Request
 

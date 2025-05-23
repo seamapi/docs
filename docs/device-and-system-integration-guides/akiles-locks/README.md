@@ -42,7 +42,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables your users to connect their Tedee devices to Seam, include the `akiles` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../../capability-guides/device-and-system-capabilities/connect-webviews/) that enables your users to connect their Tedee devices to Seam, include the `akiles` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../capability-guides/device-and-system-capabilities/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -92,7 +92,7 @@ To control Akiles devices using Seam, you must prompt owners of these devices to
 
 ### Connect Akiles Devices to Seam
 
-Use your credentials for the Akiles app to log in to the [Seam Connect Webview](../../core-concepts/connect-webviews/) to add your devices to Seam.
+Use your credentials for the Akiles app to log in to the [Seam Connect Webview](../../capability-guides/device-and-system-capabilities/connect-webviews/) to add your devices to Seam.
 
 ***
 

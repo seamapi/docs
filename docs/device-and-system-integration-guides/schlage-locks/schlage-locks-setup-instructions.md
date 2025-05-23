@@ -12,7 +12,7 @@ To control Schlage Encode locks using Seam, you must prompt owners of these devi
 
 1. Create an account in the [Schlage Home App](https://www.schlage.com/en/home/smart-locks/schlage-app.html) if you have not done so already.
 2. In the Schlage Home App, add your Schlage Encode devices.
-3. Note your login credentials for the Schlage Home App, and use these credentials to log in to the [Seam Connect Webview](../../core-concepts/connect-webviews/) to add your devices to Seam.
+3. Note your login credentials for the Schlage Home App, and use these credentials to log in to the [Seam Connect Webview](../../capability-guides/device-and-system-capabilities/connect-webviews/) to add your devices to Seam.
 
 ***
 
@@ -26,5 +26,5 @@ To control Schlage Connect or Connected Keypad locks with Z-Wave technology usin
 2. Connect your lock to a Z-Wave hub.\
    Before connecting your Schlage locks to the internet, you must first connect them to a Z-Wave hub. Follow the hub's setup process to link your locks to it.
 3. Note your login credentials for SmartThings, that is, the hub to which you have connected your lock.
-4. In the [Seam Connect Webview](../../core-concepts/connect-webviews/), select SmartThings.
+4. In the [Seam Connect Webview](../../capability-guides/device-and-system-capabilities/connect-webviews/), select SmartThings.
 5. In the Connect Webview, type the appropriate SmartThings credentials to add your devices to Seam.

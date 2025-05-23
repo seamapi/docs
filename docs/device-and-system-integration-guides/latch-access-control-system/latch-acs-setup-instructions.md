@@ -32,7 +32,7 @@ The property manager performs most of this procedure. The following instructions
 
 The property manager or application developer must perform the following steps:
 
-1. Create a [Connect Webview](../../core-concepts/connect-webviews/), including `latch` in the set of `accepted_providers`.
+1. Create a [Connect Webview](../../capability-guides/device-and-system-capabilities/connect-webviews/), including `latch` in the set of `accepted_providers`.
 2. Display the Connect Webview and perform the following steps:
    * If the Connect Webview displays multiple brand options, select **Latch**.
    *   In the **Connect a Latch Building** dialog, copy and note your Seam Connect ID. You must send this Connect ID to Seam. Save the Connect ID for a later step with further instructions.

@@ -93,7 +93,7 @@ This guide uses a Sandbox Workspace. Only virtual devices can be connected. If y
 
 ## 2 — Link Your Nuki Account with Seam
 
-To control your Nuki locks via the Seam API, you must first authorize your Seam workspace against your Nuki KS account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Nuki sites.
+To control your Nuki locks via the Seam API, you must first authorize your Seam workspace against your Nuki KS account. To do so, Seam provides[ Connect Webviews](../capability-guides/device-and-system-capabilities/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Nuki sites.
 
 #### Request a Connect Webview
 
@@ -297,9 +297,9 @@ echo json_encode($locks);
 
 Next, you can perform the basic action of locking and unlocking a door.
 
-{% swagger src="../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
+{% openapi src="../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
 [openapi.json](../.gitbook/assets/openapi.json)
-{% endswagger %}
+{% endopenapi %}
 
 ## Unlock a door
 

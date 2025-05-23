@@ -57,7 +57,7 @@ Reservations may involve multiple parties. In these situations, hotels often nee
 To issue the first guest credential for a reservation, create an override credential. This credential type invalidates any existing guest access to the target entrances. When creating an override credential, set `visionline_metadata.override` to `true`.
 
 {% hint style="info" %}
-You can also [verify whether a user identity has a phone that is set up for a credential manager](checking-if-a-user-identity-has-a-phone-that-is-set-up-for-a-credential-manager.md) and, consequently, is ready to accept an override guest credential.
+You can also [verify whether a user identity has a phone that is set up for a credential manager](../credential-types/checking-if-a-user-identity-has-a-phone-that-is-set-up-for-a-credential-manager.md) and, consequently, is ready to accept an override guest credential.
 {% endhint %}
 
 {% tabs %}
@@ -131,7 +131,7 @@ To issue a joiner credential, you must specify both the entrances to which to gr
 * `allowed_acs_entrance_ids`
 * `visionline_metadata.joiner_acs_credential_ids`
 
-For instructions on how to retrieve credentials that have overlapping access, see [Issuing Various Types of Guest Joiner Mobile Credentials](issuing-various-types-of-guest-joiner-mobile-credentials.md).
+For instructions on how to retrieve credentials that have overlapping access, see [Issuing Various Types of Guest Joiner Mobile Credentials](../credential-types/issuing-various-types-of-guest-joiner-mobile-credentials.md).
 
 {% tabs %}
 {% tab title="Python" %}

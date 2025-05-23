@@ -37,7 +37,7 @@ Once you have received certification, ASSA ABLOY provides your production creden
 
 ## Setup Instructions
 
-1.  Create and then display a [Connect Webview](../core-concepts/connect-webviews/), including `assa_abloy_credential_service` in the set of [`accepted_providers`](../api-clients/connect_webviews/#connect_webview-properties).\
+1.  Create and then display a [Connect Webview](../capability-guides/device-and-system-capabilities/connect-webviews/), including `assa_abloy_credential_service` in the set of [`accepted_providers`](../api-clients/connect_webviews/#connect_webview-properties).\
     Alternately, in the top navigation pane of [Seam Console](https://console.seam.co/), click **ACS Systems**. Then, in the upper-right corner of the **Access Systems** page, click **New Access System**.
 
     <figure><img src="../.gitbook/assets/access-systems-tab-production-workspace.png" alt="Click ACS Systems to go to the Access Systems page."><figcaption><p>Click ACS Systems to go to the Access Systems page.</p></figcaption></figure>

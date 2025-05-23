@@ -31,4 +31,4 @@ seam.connected_accounts.get(email_address="jane@example.com")
 
 Seam recommends adding error handling logic to you application for this error. Your app should also include a fallback case if it encounters an unknown generic error code.
 
-To resolve this error, create a new Connect Webview that the user can use to log in. You may need to instruct them to use the same email address that they used previously. You can use `connected_account.user_identifier` to learn the user's email address. For more information about creating Connect Webviews, see [Connect Webview Process](../core-concepts/connect-webviews/connect-webview-process.md).
+To resolve this error, create a new Connect Webview that the user can use to log in. You may need to instruct them to use the same email address that they used previously. You can use `connected_account.user_identifier` to learn the user's email address. For more information about creating Connect Webviews, see [Connect Webview Process](../capability-guides/device-and-system-capabilities/connect-webviews/connect-webview-process.md).

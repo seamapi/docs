@@ -20,7 +20,7 @@ See the following reference topics:
 * [Connect Webviews](connect_webviews/)
 * [Devices](devices/)
   * [Locks](locks/)
-    * [Access Codes](access_codes/)
+    * [Access Codes](../api/access_codes/)
   * [Thermostats](../api/thermostats/)
   * [Noise Sensors](noise_sensors/)
 * [Access Control Systems](../api/acs/)

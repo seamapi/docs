@@ -99,7 +99,7 @@ This guide uses a Sandbox Workspace. Only virtual devices can be connected. If y
 
 ## 2 — Link Your Smartlock Account with Seam
 
-To control a smartlock via the Seam API, we need to first connect to your smartlock account and authorize your Seam workspace to control its device(s). To make this easy, Seam provides [Connect Webviews](../core-concepts/connect-webviews/) authorization flows that walk you (or a device owner) through authorizing your workspace to control your device.
+To control a smartlock via the Seam API, we need to first connect to your smartlock account and authorize your Seam workspace to control its device(s). To make this easy, Seam provides [Connect Webviews](../capability-guides/device-and-system-capabilities/connect-webviews/) authorization flows that walk you (or a device owner) through authorizing your workspace to control your device.
 
 #### Request a Connect Webview
 
@@ -274,9 +274,9 @@ echo json_encode($locks);
 
 Next, you can perform the basic action of locking and unlocking the door as most devices will support the `locks` capability.
 
-{% swagger src="../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
+{% openapi src="../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
 [openapi.json](../.gitbook/assets/openapi.json)
-{% endswagger %}
+{% endopenapi %}
 
 ## Unlock a door
 
@@ -353,7 +353,7 @@ $seam->locks->lock_door($lock->device_id);
 
 Many smartlocks have a built-in keypad or an external one that can be paired over bluetooth. This lets you program access codes that a user can then enter at a later time to unlock a door.
 
-![](../.gitbook/assets/guides/code\_unlock.gif)
+![](../.gitbook/assets/guides/code_unlock.gif)
 
 The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a smartlock. An `ongoing` code is a code that will be permanently programmed onto the device until you tell the Seam API you wish to remove it. A `timebound` code is, as the time implies, time bound by a set of ISO8601 timestamp that you provide the Seam API. You can find out more about access code in our [core concept section on access codes.](../products/smart-locks/access-codes/)
 

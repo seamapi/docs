@@ -6,9 +6,9 @@ description: Get a specified client session
 
 Returns a specified [client session](../../core-concepts/authentication/client-session-tokens/).
 
-{% swagger src="https://connect.getseam.com/openapi.json" path="/client_sessions/get" method="post" %}
+{% openapi src="https://connect.getseam.com/openapi.json" path="/client_sessions/get" method="post" %}
 [https://connect.getseam.com/openapi.json](https://connect.getseam.com/openapi.json)
-{% endswagger %}
+{% endopenapi %}
 
 ## Request
 
@@ -16,7 +16,7 @@ Specify the desired client session by including the corresponding `client_sessio
 
 ### Request Body Parameters
 
-<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>client_session_id</code></td><td>String<br><em>Optional</em></td><td>ID of the desired client session.</td></tr><tr><td><code>user_identifier_key</code></td><td>String<br><em>Optional</em></td><td>Your own internal user ID for the user associated with the client session to retrieve. </td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th width="112.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>client_session_id</code></td><td>String<br><em>Optional</em></td><td>ID of the desired client session.</td></tr><tr><td><code>user_identifier_key</code></td><td>String<br><em>Optional</em></td><td>Your own internal user ID for the user associated with the client session to retrieve.</td></tr></tbody></table>
 
 ### Sample Request
 
@@ -34,7 +34,7 @@ const clientSession = await seam.clientSessions.get({
 
 Returns a `client_session` containing the following properties:
 
-<table><thead><tr><th width="310">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>workspace_id</code></td><td>ID of the <a href="../../core-concepts/workspaces/">workspace</a> that contains the client session</td></tr><tr><td><code>token</code></td><td>Client session token associated with the client session</td></tr><tr><td><code>user_identifier_key</code></td><td>Your own internal user ID for the user</td></tr><tr><td><code>created_at</code></td><td>Date and time at which the client session was created</td></tr><tr><td><code>client_session_id</code></td><td>ID of the client session</td></tr><tr><td><code>device_count</code></td><td>Number of devices to which the client session grants access</td></tr><tr><td><code>connected_account_ids</code></td><td>Array of <a href="../connected_accounts/">connected account</a> IDs associated with this client session</td></tr><tr><td><code>connect_webview_ids</code></td><td>Array of <a href="../../core-concepts/connect-webviews/">Connect Webview</a> IDs associated with the client session</td></tr><tr><td><code>user_identity_ids</code></td><td>Array of user identity IDs on behalf of which which the client session may act</td></tr></tbody></table>
+<table><thead><tr><th width="310">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>workspace_id</code></td><td>ID of the <a href="../../core-concepts/workspaces/">workspace</a> that contains the client session</td></tr><tr><td><code>token</code></td><td>Client session token associated with the client session</td></tr><tr><td><code>user_identifier_key</code></td><td>Your own internal user ID for the user</td></tr><tr><td><code>created_at</code></td><td>Date and time at which the client session was created</td></tr><tr><td><code>client_session_id</code></td><td>ID of the client session</td></tr><tr><td><code>device_count</code></td><td>Number of devices to which the client session grants access</td></tr><tr><td><code>connected_account_ids</code></td><td>Array of <a href="../connected_accounts/">connected account</a> IDs associated with this client session</td></tr><tr><td><code>connect_webview_ids</code></td><td>Array of <a href="../../capability-guides/device-and-system-capabilities/connect-webviews/">Connect Webview</a> IDs associated with the client session</td></tr><tr><td><code>user_identity_ids</code></td><td>Array of user identity IDs on behalf of which which the client session may act</td></tr></tbody></table>
 
 ### Sample Response
 

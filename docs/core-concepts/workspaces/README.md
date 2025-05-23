@@ -58,7 +58,7 @@ You can use either of the following two ways to connect devices to a production 
 
 1. In the top navigation pane of [Seam Console](https://console.seam.co/), click **Devices**.
 2. In the upper-right corner of the **Devices** page, click **Add Devices**.\
-   Seam Console displays a [Connect Webview](../connect-webviews/) (that is, an authorization flow) that enables you to connect a device account to Seam.
+   Seam Console displays a [Connect Webview](../../capability-guides/device-and-system-capabilities/connect-webviews/) (that is, an authorization flow) that enables you to connect a device account to Seam.
 3. In the Connect Webview, click **Continue**.
 4. In the manufacturer list, select the manufacturer of the devices that you want to connect.
 5. Follow the login instructions to authorize these devices.
@@ -67,7 +67,7 @@ Once authorized, the devices associated with this test account appear in the **D
 
 #### Connect Devices Using Connect Webviews
 
-If you are creating an application (app) to control your users' devices, use [Connect Webviews](../connect-webviews/). Connect Webviews are fully-embedded client-side components that you add to your app. Your users interact with your embedded Connect Webviews to link their device accounts to Seam through your app. Seam handles all the authentication steps. Once your user has completed the authorization through your app, your users' devices are linked with your production workspace, and you can access and control their devices using the Seam API.
+If you are creating an application (app) to control your users' devices, use [Connect Webviews](../../capability-guides/device-and-system-capabilities/connect-webviews/). Connect Webviews are fully-embedded client-side components that you add to your app. Your users interact with your embedded Connect Webviews to link their device accounts to Seam through your app. Seam handles all the authentication steps. Once your user has completed the authorization through your app, your users' devices are linked with your production workspace, and you can access and control their devices using the Seam API.
 
 <figure><img src="../../.gitbook/assets/Seam Connect.png" alt="Use Connect Webviews to enable your users to authorize your app to control their devices."><figcaption></figcaption></figure>
 
