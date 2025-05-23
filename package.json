@@ -34,6 +34,7 @@
     "@prettier/plugin-php": "^0.22.2",
     "@prettier/plugin-ruby": "^4.0.4",
     "@seamapi/blueprint": "^0.43.1",
+    "@seamapi/smith": "^0.2.0",
     "@seamapi/types": "1.399.1",
     "change-case": "^5.4.4",
     "command-exists": "^1.2.9",
@@ -48,15 +49,6 @@
   "devDependencies": {
     "@types/command-exists": "^1.2.3",
     "@types/debug": "^4.1.12",
-    "@types/micromatch": "^4.0.9",
-    "@types/node": "^22.15.21",
-    "eslint": "^8.9.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-config-standard-with-typescript": "^43.0.0",
-    "eslint-plugin-simple-import-sort": "^12.0.0",
-    "eslint-plugin-unused-imports": "^3.0.0",
-    "tsx": "^4.6.2",
-    "typescript": "~5.3.3"
+    "@types/micromatch": "^4.0.9"
   }
 }

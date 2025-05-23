@@ -1,34 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "compilerOptions": {
-    "composite": true,
-    "noEmit": true,
-    "strict": true,
-    "module": "nodenext",
-    "esModuleInterop": true,
-    "target": "es2021",
-    "jsx": "react-jsx",
-    "sourceMap": true,
-    "newLine": "lf",
-    "verbatimModuleSyntax": true,
-    "skipLibCheck": true,
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "exactOptionalPropertyTypes": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noUncheckedIndexedAccess": true,
-    "noUnusedParameters": true,
-    "noUnusedLocals": true,
-    "forceConsistentCasingInFileNames": true,
-    "baseUrl": "./",
-    "paths": {
-      "@seamapi/makenew-tsmodule": ["./src/index.ts"],
-      "lib/*": ["./src/lib/*"]
-    }
-  },
+  "extends": "./node_modules/@seamapi/smith/tsconfig.json",
   "files": ["src/index.ts"],
   "include": ["src/**/*"]
 }
