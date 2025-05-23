@@ -4,16 +4,14 @@ import type {
   Endpoint,
   EnumProperty,
   Property,
+  ResourceSample,
   Route,
-} from '@seamapi/blueprint'
-import { pascalCase } from 'change-case'
-import type {
   SdkName,
   SyntaxName,
-} from 'node_modules/@seamapi/blueprint/dist/index.cjs'
-import type { ResourceSample } from 'node_modules/@seamapi/blueprint/lib/samples/resource-sample.js'
+} from '@seamapi/blueprint'
+import { pascalCase } from 'change-case'
 
-import type { PathMetadata } from 'lib/path-metadata.js'
+import type { PathMetadata } from '../path-metadata.js'
 
 export interface ApiRouteLayoutContext {
   title: string

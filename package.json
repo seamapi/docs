@@ -32,9 +32,7 @@
     "@metalsmith/metadata": "^0.3.0",
     "@prettier/plugin-php": "^0.22.2",
     "@prettier/plugin-ruby": "^4.0.4",
-    "@seamapi/blueprint": "^0.43.1",
-    "@seamapi/smith": "^0.3.3",
-    "@seamapi/types": "1.399.1",
+    "@seamapi/types": "^1.402.0",
     "change-case": "^5.4.4",
     "command-exists": "^1.2.9",
     "execa": "^9.3.1",
@@ -42,8 +40,8 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@types/command-exists": "^1.2.3",
-    "@types/debug": "^4.1.12",
-    "@types/micromatch": "^4.0.9"
+    "@seamapi/blueprint": "^0.43.2",
+    "@seamapi/smith": "^0.4.3",
+    "@types/command-exists": "^1.2.3"
   }
 }

@@ -1,6 +1,6 @@
 import type { Blueprint } from '@seamapi/blueprint'
 
-import type { PathMetadata } from 'lib/path-metadata.js'
+import type { PathMetadata } from '../path-metadata.js'
 
 export interface ApiNamespaceLayoutContext {
   title: string
