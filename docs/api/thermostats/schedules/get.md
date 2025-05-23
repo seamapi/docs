@@ -205,10 +205,13 @@ api.ThermostatSchedule{ThermostatScheduleId: "89d3507e-60e3-4101-bd1b-ba066ec30a
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/thermostats/schedules/get" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"thermostat_schedule_id":"89d3507e-60e3-4101-bd1b-ba066ec30ad4"}'
+curl --include --request POST "https://connect.getseam.com/thermostats/schedules/get" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "thermostat_schedule_id": "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
+}
+EOF
 ```
 
 #### Output

@@ -201,10 +201,14 @@ api.ActionAttempt{ActionAttemptId: "05de2295-d1dc-4748-aae3-9931658bde20", Statu
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/thermostats/activate_climate_preset" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"device_id":"123e4567-e89b-12d3-a456-426614174000","climate_preset_key":"occupied"}'
+curl --include --request POST "https://connect.getseam.com/thermostats/activate_climate_preset" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "123e4567-e89b-12d3-a456-426614174000",
+  "climate_preset_key": "occupied"
+}
+EOF
 ```
 
 #### Output

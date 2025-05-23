@@ -248,10 +248,14 @@ func main() {
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/acs/access_groups/list" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"acs_system_id":"11111111-1111-1111-1111-111111111111","acs_user_id":"33333333-3333-3333-3333-333333333333"}'
+curl --include --request POST "https://connect.getseam.com/acs/access_groups/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_system_id": "11111111-1111-1111-1111-111111111111",
+  "acs_user_id": "33333333-3333-3333-3333-333333333333"
+}
+EOF
 ```
 
 #### Output

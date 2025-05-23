@@ -2143,7 +2143,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/access_groups/add_user\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_access_group_id\":\"44444444-4444-4444-4444-444444444444\",\"acs_user_id\":\"33333333-3333-3333-3333-333333333333\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/access_groups/add_user\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_access_group_id\": \"44444444-4444-4444-4444-444444444444\",\n  \"acs_user_id\": \"33333333-3333-3333-3333-333333333333\"\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -2278,7 +2278,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/access_groups/get\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_access_group_id\":\"44444444-4444-4444-4444-444444444444\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/access_groups/get\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_access_group_id\": \"44444444-4444-4444-4444-444444444444\"\n}\nEOF",
                   "response": "{\n  \"acs_access_group\": {\n    \"acs_access_group_id\": \"44444444-4444-4444-4444-444444444444\",\n    \"name\": \"Lobby Access\",\n    \"display_name\": \"Lobby Access\",\n    \"access_group_type_display_name\": \"PTI access level\",\n    \"access_group_type\": \"pti_access_level\",\n    \"external_type\": \"pti_access_level\",\n    \"external_type_display_name\": \"PTI access level\",\n    \"acs_system_id\": \"11111111-1111-1111-1111-111111111111\",\n    \"workspace_id\": \"00000000-0000-0000-0000-000000000000\",\n    \"created_at\": \"2023-11-30T06:27:15.437Z\"\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -2444,7 +2444,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/access_groups/list\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_system_id\":\"11111111-1111-1111-1111-111111111111\",\"acs_user_id\":\"33333333-3333-3333-3333-333333333333\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/access_groups/list\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_system_id\": \"11111111-1111-1111-1111-111111111111\",\n  \"acs_user_id\": \"33333333-3333-3333-3333-333333333333\"\n}\nEOF",
                   "response": "{\n  \"acs_access_groups\": [\n    {\n      \"acs_access_group_id\": \"44444444-4444-4444-4444-444444444444\",\n      \"name\": \"Lobby Access\",\n      \"display_name\": \"Lobby Access\",\n      \"access_group_type_display_name\": \"PTI access level\",\n      \"access_group_type\": \"pti_access_level\",\n      \"external_type\": \"pti_access_level\",\n      \"external_type_display_name\": \"PTI access level\",\n      \"acs_system_id\": \"11111111-1111-1111-1111-111111111111\",\n      \"workspace_id\": \"00000000-0000-0000-0000-000000000000\",\n      \"created_at\": \"2023-11-30T06:27:15.437Z\"\n    }\n  ]\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -2577,7 +2577,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/access_groups/list_accessible_entrances\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_access_group_id\":\"44444444-4444-4444-4444-444444444444\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/access_groups/list_accessible_entrances\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_access_group_id\": \"44444444-4444-4444-4444-444444444444\"\n}\nEOF",
                   "response": "{\n  \"acs_entrances\": [\n    {\n      \"acs_entrance_id\": \"66666666-6666-6666-6666-666666666666\",\n      \"name\": \"Main Entrance\",\n      \"display_name\": \"Main Entrance\",\n      \"acs_system_id\": \"11111111-1111-1111-1111-111111111111\",\n      \"workspace_id\": \"00000000-0000-0000-0000-000000000000\",\n      \"created_at\": \"2024-10-15T12:00:00.000Z\"\n    }\n  ]\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -2722,7 +2722,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/access_groups/list_users\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_access_group_id\":\"44444444-4444-4444-4444-444444444444\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/access_groups/list_users\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_access_group_id\": \"44444444-4444-4444-4444-444444444444\"\n}\nEOF",
                   "response": "{\n  \"acs_users\": [\n    {\n      \"acs_user_id\": \"33333333-3333-3333-3333-333333333333\",\n      \"display_name\": \"Jane Doe\",\n      \"full_name\": \"Jane Doe\",\n      \"email\": \"jane@example.com\",\n      \"email_address\": \"jane@example.com\",\n      \"phone_number\": \"+15555550100\",\n      \"acs_system_id\": \"11111111-1111-1111-1111-111111111111\",\n      \"workspace_id\": \"00000000-0000-0000-0000-000000000000\",\n      \"created_at\": \"2024-04-05T07:14:28.531Z\",\n      \"is_suspended\": false,\n      \"access_schedule\": {\n        \"starts_at\": \"2024-03-01T10:40:00.000Z\",\n        \"ends_at\": \"2024-03-04T10:40:00.000Z\"\n      },\n      \"user_identity_id\": \"22222222-2222-2222-2222-222222222222\",\n      \"user_identity_full_name\": \"Jane Doe\",\n      \"user_identity_email_address\": \"jane@example.com\",\n      \"user_identity_phone_number\": \"+15555550100\"\n    }\n  ]\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -2866,7 +2866,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/access_groups/remove_user\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_access_group_id\":\"44444444-4444-4444-4444-444444444444\",\"acs_user_id\":\"33333333-3333-3333-3333-333333333333\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/access_groups/remove_user\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_access_group_id\": \"44444444-4444-4444-4444-444444444444\",\n  \"acs_user_id\": \"33333333-3333-3333-3333-333333333333\"\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -3017,7 +3017,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/access_groups/unmanaged/get\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_access_group_id\":\"55555555-5555-5555-5555-555555555555\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/access_groups/unmanaged/get\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_access_group_id\": \"55555555-5555-5555-5555-555555555555\"\n}\nEOF",
                   "response": "{\n  \"acs_access_group\": {\n    \"acs_access_group_id\": \"55555555-5555-5555-5555-555555555555\",\n    \"name\": \"Unmanaged Group\",\n    \"display_name\": \"Unmanaged Group\",\n    \"access_group_type_display_name\": \"PTI access level\",\n    \"access_group_type\": \"pti_access_level\",\n    \"external_type\": \"pti_access_level\",\n    \"external_type_display_name\": \"PTI access level\",\n    \"acs_system_id\": \"11111111-1111-1111-1111-111111111111\",\n    \"workspace_id\": \"00000000-0000-0000-0000-000000000000\",\n    \"created_at\": \"2024-10-15T12:00:00.000Z\"\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -3169,7 +3169,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/access_groups/unmanaged/list\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_system_id\":\"11111111-1111-1111-1111-111111111111\",\"acs_user_id\":\"33333333-3333-3333-3333-333333333333\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/access_groups/unmanaged/list\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_system_id\": \"11111111-1111-1111-1111-111111111111\",\n  \"acs_user_id\": \"33333333-3333-3333-3333-333333333333\"\n}\nEOF",
                   "response": "{\n  \"acs_access_groups\": [\n    {\n      \"acs_access_group_id\": \"55555555-5555-5555-5555-555555555555\",\n      \"name\": \"Unmanaged Group\",\n      \"display_name\": \"Unmanaged Group\",\n      \"access_group_type_display_name\": \"PTI access level\",\n      \"access_group_type\": \"pti_access_level\",\n      \"external_type\": \"pti_access_level\",\n      \"external_type_display_name\": \"PTI access level\",\n      \"acs_system_id\": \"11111111-1111-1111-1111-111111111111\",\n      \"workspace_id\": \"00000000-0000-0000-0000-000000000000\",\n      \"created_at\": \"2024-10-15T12:00:00.000Z\"\n    }\n  ]\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -3503,7 +3503,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/credentials/assign\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_user_id\":\"33333333-3333-3333-3333-333333333333\",\"acs_credential_id\":\"66666666-6666-6666-6666-666666666666\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/credentials/assign\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_user_id\": \"33333333-3333-3333-3333-333333333333\",\n  \"acs_credential_id\": \"66666666-6666-6666-6666-666666666666\"\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -4084,7 +4084,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/credentials/create\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_user_id\":\"33333333-3333-3333-3333-333333333333\",\"access_method\":\"mobile_key\",\"allowed_acs_entrance_ids\":[\"55555555-5555-5555-5555-555555555555\",\"55555555-5555-5555-5555-000000000000\"],\"credential_manager_acs_system_id\":\"88888888-8888-8888-8888-888888888888\",\"is_multi_phone_sync_credential\":true,\"starts_at\":\"2024-03-01T10:40:00Z\",\"ends_at\":\"2024-03-04T10:40:00Z\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/credentials/create\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_user_id\": \"33333333-3333-3333-3333-333333333333\",\n  \"access_method\": \"mobile_key\",\n  \"allowed_acs_entrance_ids\": [\n    \"55555555-5555-5555-5555-555555555555\",\n    \"55555555-5555-5555-5555-000000000000\"\n  ],\n  \"credential_manager_acs_system_id\": \"88888888-8888-8888-8888-888888888888\",\n  \"is_multi_phone_sync_credential\": true,\n  \"starts_at\": \"2024-03-01T10:40:00Z\",\n  \"ends_at\": \"2024-03-04T10:40:00Z\"\n}\nEOF",
                   "response": "{\n  \"acs_credential\": {\n    \"acs_credential_id\": \"99999999-9999-9999-9999-999999999999\",\n    \"acs_user_id\": \"33333333-3333-3333-3333-333333333333\",\n    \"display_name\": \"Multi Phone Sync Credential\",\n    \"code\": null,\n    \"acs_system_id\": \"88888888-8888-8888-8888-888888888888\",\n    \"access_method\": \"mobile_key\",\n    \"workspace_id\": \"00000000-0000-0000-0000-000000000000\",\n    \"created_at\": \"2024-04-12T03:56:22.396Z\",\n    \"is_multi_phone_sync_credential\": true\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -4299,7 +4299,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/credentials/delete\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_credential_id\":\"66666666-6666-6666-6666-666666666666\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/credentials/delete\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_credential_id\": \"66666666-6666-6666-6666-666666666666\"\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -4433,7 +4433,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/credentials/get\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_credential_id\":\"66666666-6666-6666-6666-666666666666\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/credentials/get\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_credential_id\": \"66666666-6666-6666-6666-666666666666\"\n}\nEOF",
                   "response": "{\n  \"acs_credential\": {\n    \"acs_credential_id\": \"99999999-9999-9999-9999-999999999999\",\n    \"acs_user_id\": \"33333333-3333-3333-3333-333333333333\",\n    \"display_name\": \"Multi Phone Sync Credential\",\n    \"code\": null,\n    \"acs_system_id\": \"11111111-1111-1111-1111-111111111111\",\n    \"access_method\": \"mobile_key\",\n    \"workspace_id\": \"00000000-0000-0000-0000-000000000000\",\n    \"created_at\": \"2024-04-12T03:56:22.396Z\",\n    \"is_multi_phone_sync_credential\": true\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -4647,7 +4647,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/credentials/list\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_user_id\":\"33333333-3333-3333-3333-333333333333\",\"acs_system_id\":\"11111111-1111-1111-1111-111111111111\",\"user_identity_id\":\"22222222-2222-2222-2222-222222222222\",\"is_multi_phone_sync_credential\":true}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/credentials/list\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_user_id\": \"33333333-3333-3333-3333-333333333333\",\n  \"acs_system_id\": \"11111111-1111-1111-1111-111111111111\",\n  \"user_identity_id\": \"22222222-2222-2222-2222-222222222222\",\n  \"is_multi_phone_sync_credential\": true\n}\nEOF",
                   "response": "{\n  \"acs_credentials\": [\n    {\n      \"acs_credential_id\": \"99999999-9999-9999-9999-999999999999\",\n      \"acs_user_id\": \"33333333-3333-3333-3333-333333333333\",\n      \"display_name\": \"Multi Phone Sync Credential\",\n      \"code\": null,\n      \"acs_system_id\": \"11111111-1111-1111-1111-111111111111\",\n      \"access_method\": \"mobile_key\",\n      \"workspace_id\": \"00000000-0000-0000-0000-000000000000\",\n      \"created_at\": \"2024-04-12T03:56:22.396Z\",\n      \"is_multi_phone_sync_credential\": true\n    }\n  ]\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -4790,7 +4790,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/credentials/list_accessible_entrances\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_credential_id\":\"66666666-6666-6666-6666-666666666666\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/credentials/list_accessible_entrances\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_credential_id\": \"66666666-6666-6666-6666-666666666666\"\n}\nEOF",
                   "response": "{\n  \"acs_entrances\": [\n    {\n      \"acs_entrance_id\": \"55555555-5555-5555-5555-555555555555\",\n      \"acs_system_id\": \"11111111-1111-1111-1111-111111111111\",\n      \"workspace_id\": \"00000000-0000-0000-0000-000000000000\",\n      \"visionline_metadata\": {\n        \"profiles\": [\n          {\n            \"visionline_door_profile_id\": \"Guest Door\",\n            \"visionline_door_profile_type\": \"BLE\"\n          }\n        ],\n        \"door_name\": \"Guest Lock 2\",\n        \"door_category\": \"guest\"\n      },\n      \"latch_metadata\": null,\n      \"display_name\": \"Guest Lock 2\",\n      \"created_at\": \"2024-03-26T14:31:18.979Z\"\n    }\n  ]\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -4934,7 +4934,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/credentials/unassign\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_user_id\":\"33333333-3333-3333-3333-333333333333\",\"acs_credential_id\":\"66666666-6666-6666-6666-666666666666\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/credentials/unassign\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_user_id\": \"33333333-3333-3333-3333-333333333333\",\n  \"acs_credential_id\": \"66666666-6666-6666-6666-666666666666\"\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -5078,7 +5078,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/credentials/update\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_credential_id\":\"66666666-6666-6666-6666-666666666666\",\"code\":\"7890\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/credentials/update\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_credential_id\": \"66666666-6666-6666-6666-666666666666\",\n  \"code\": \"7890\"\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -6045,7 +6045,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/entrances/get\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_entrance_id\":\"123e4567-e89b-12d3-a456-426614174000\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/entrances/get\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_entrance_id\": \"123e4567-e89b-12d3-a456-426614174000\"\n}\nEOF",
                   "response": "{\n  \"acs_entrance\": {\n    \"acs_system_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"acs_entrance_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"created_at\": \"2024-04-05T07:57:05.323Z\",\n    \"display_name\": \"text\"\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -6255,7 +6255,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/entrances/list\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\"",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/entrances/list\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\"",
                   "response": "{\n  \"acs_entrances\": [\n    {\n      \"acs_system_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n      \"acs_entrance_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n      \"created_at\": \"2024-04-05T07:57:05.323Z\",\n      \"display_name\": \"text\"\n    }\n  ]\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -6433,7 +6433,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/entrances/list_credentials_with_access\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_entrance_id\":\"123e4567-e89b-12d3-a456-426614174000\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/entrances/list_credentials_with_access\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_entrance_id\": \"123e4567-e89b-12d3-a456-426614174000\"\n}\nEOF",
                   "response": "{\n  \"acs_credentials\": [\n    {\n      \"acs_credential_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n      \"acs_user_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n      \"acs_credential_pool_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n      \"acs_system_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n      \"parent_acs_credential_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n      \"display_name\": \"text\",\n      \"code\": \"text\",\n      \"card_number\": \"text\",\n      \"is_issued\": false,\n      \"issued_at\": \"2024-10-15T12:54:04.155Z\",\n      \"access_method\": \"code\",\n      \"external_type\": \"pti_card\",\n      \"external_type_display_name\": \"text\",\n      \"created_at\": \"2024-10-15T12:54:04.155Z\",\n      \"workspace_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n      \"starts_at\": \"text\",\n      \"ends_at\": \"text\",\n      \"is_multi_phone_sync_credential\": false,\n      \"is_latest_desired_state_synced_with_provider\": false,\n      \"latest_desired_state_synced_with_provider_at\": \"2024-10-15T12:54:04.155Z\"\n    }\n  ]\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -6575,7 +6575,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/systems/get\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_system_id\":\"8d7e0b3a-b889-49a7-9164-4b71a0506a33\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/systems/get\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_system_id\": \"8d7e0b3a-b889-49a7-9164-4b71a0506a33\"\n}\nEOF",
                   "response": "{ \"acs_system\": [{ \"acs_system_id\": \"8d7e0b3a-b889-49a7-9164-4b71a0506a33\" }] }",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -6705,7 +6705,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/systems/list\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"connected_account_id\":\"123e4567-e89b-12d3-a456-426614174000\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/systems/list\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"connected_account_id\": \"123e4567-e89b-12d3-a456-426614174000\"\n}\nEOF",
                   "response": "{ \"acs_systems\": [{ \"acs_system_id\": \"8d7e0b3a-b889-49a7-9164-4b71a0506a33\" }] }",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -6831,7 +6831,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/systems/list_compatible_credential_manager_acs_systems\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_system_id\":\"8d7e0b3a-b889-49a7-9164-4b71a0506a33\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/systems/list_compatible_credential_manager_acs_systems\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_system_id\": \"8d7e0b3a-b889-49a7-9164-4b71a0506a33\"\n}\nEOF",
                   "response": "{ \"acs_systems\": [{ \"acs_system_id\": \"aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4\" }] }",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -6977,7 +6977,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/users/add_to_access_group\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_user_id\":\"8d7e0b3a-b889-49a7-9164-4b71a0506a33\",\"acs_access_group_id\":\"123e4567-e89b-12d3-a456-426614174000\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/users/add_to_access_group\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_user_id\": \"8d7e0b3a-b889-49a7-9164-4b71a0506a33\",\n  \"acs_access_group_id\": \"123e4567-e89b-12d3-a456-426614174000\"\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -7243,7 +7243,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/users/create\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_system_id\":\"123e4567-e89b-12d3-a456-426614174000\",\"full_name\":\"Jane Doe\",\"email_address\":\"jane@example.com\",\"phone_number\":\"+15555550100\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/users/create\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_system_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n  \"full_name\": \"Jane Doe\",\n  \"email_address\": \"jane@example.com\",\n  \"phone_number\": \"+15555550100\"\n}\nEOF",
                   "response": "{\n  \"acs_user\": {\n    \"acs_user_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"acs_system_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"workspace_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"created_at\": \"2024-04-05T07:57:05.323Z\",\n    \"display_name\": \"Jane Doe\",\n    \"full_name\": \"Jane Doe\",\n    \"email_address\": \"jane@example.com\",\n    \"phone_number\": \"+15555550100\"\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -7339,7 +7339,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/users/create\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_system_id\":\"123e4567-e89b-12d3-a456-426614174000\",\"full_name\":\"Jane Doe\",\"email_address\":\"jane@example.com\",\"phone_number\":\"+15555550100\",\"access_schedule\":{\"starts_at\":\"2024-11-01T15:00:00.000Z\",\"ends_at\":\"2024-11-04T11:00:00.000Z\"}}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/users/create\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_system_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n  \"full_name\": \"Jane Doe\",\n  \"email_address\": \"jane@example.com\",\n  \"phone_number\": \"+15555550100\",\n  \"access_schedule\": {\n    \"starts_at\": \"2024-11-01T15:00:00.000Z\",\n    \"ends_at\": \"2024-11-04T11:00:00.000Z\"\n  }\n}\nEOF",
                   "response": "{\n  \"acs_user\": {\n    \"acs_user_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"acs_system_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"workspace_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"created_at\": \"2024-04-05T07:57:05.323Z\",\n    \"display_name\": \"Jane Doe\",\n    \"full_name\": \"Jane Doe\",\n    \"email_address\": \"jane@example.com\",\n    \"phone_number\": \"+15555550100\"\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -7434,7 +7434,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/users/create\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_system_id\":\"123e4567-e89b-12d3-a456-426614174000\",\"full_name\":\"Jane Doe\",\"email_address\":\"jane@example.com\",\"phone_number\":\"+15555550100\",\"acs_access_group_ids\":[\"123e4567-e89b-12d3-a456-426614174000\"]}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/users/create\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_system_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n  \"full_name\": \"Jane Doe\",\n  \"email_address\": \"jane@example.com\",\n  \"phone_number\": \"+15555550100\",\n  \"acs_access_group_ids\": [\n    \"123e4567-e89b-12d3-a456-426614174000\"\n  ]\n}\nEOF",
                   "response": "{\n  \"acs_user\": {\n    \"acs_user_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"acs_system_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"workspace_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"created_at\": \"2024-04-05T07:57:05.323Z\",\n    \"display_name\": \"Jane Doe\",\n    \"full_name\": \"Jane Doe\",\n    \"email_address\": \"jane@example.com\",\n    \"phone_number\": \"+15555550100\"\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -7549,7 +7549,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/users/delete\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_user_id\":\"8d7e0b3a-b889-49a7-9164-4b71a0506a33\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/users/delete\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_user_id\": \"8d7e0b3a-b889-49a7-9164-4b71a0506a33\"\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -7682,7 +7682,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/users/get\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_user_id\":\"8d7e0b3a-b889-49a7-9164-4b71a0506a33\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/users/get\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_user_id\": \"8d7e0b3a-b889-49a7-9164-4b71a0506a33\"\n}\nEOF",
                   "response": "{\n  \"acs_user\": {\n    \"acs_user_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"acs_system_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"workspace_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"created_at\": \"2024-04-05T07:57:05.323Z\",\n    \"display_name\": \"Jane Doe\",\n    \"full_name\": \"Jane Doe\",\n    \"email_address\": \"jane@example.com\",\n    \"phone_number\": \"+15555550100\"\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -7913,7 +7913,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/users/list\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\"",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/users/list\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\"",
                   "response": "{\n  \"acs_users\": {\n    \"acs_user_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"acs_system_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"workspace_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"created_at\": \"2024-04-05T07:57:05.323Z\",\n    \"display_name\": \"Jane Doe\",\n    \"full_name\": \"Jane Doe\",\n    \"email_address\": \"jane@example.com\",\n    \"phone_number\": \"+15555550100\"\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -8090,7 +8090,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/users/remove_from_access_group\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_user_id\":\"8d7e0b3a-b889-49a7-9164-4b71a0506a33\",\"acs_access_group_id\":\"123e4567-e89b-12d3-a456-426614174000\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/users/remove_from_access_group\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_user_id\": \"8d7e0b3a-b889-49a7-9164-4b71a0506a33\",\n  \"acs_access_group_id\": \"123e4567-e89b-12d3-a456-426614174000\"\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -8243,7 +8243,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/users/suspend\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_user_id\":\"8d7e0b3a-b889-49a7-9164-4b71a0506a33\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/users/suspend\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_user_id\": \"8d7e0b3a-b889-49a7-9164-4b71a0506a33\"\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -8358,7 +8358,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/users/unsuspend\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_user_id\":\"8d7e0b3a-b889-49a7-9164-4b71a0506a33\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/users/unsuspend\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_user_id\": \"8d7e0b3a-b889-49a7-9164-4b71a0506a33\"\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -8588,7 +8588,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/acs/users/update\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"acs_user_id\":\"8d7e0b3a-b889-49a7-9164-4b71a0506a33\",\"phone_number\":\"+15555550222\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/acs/users/update\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"acs_user_id\": \"8d7e0b3a-b889-49a7-9164-4b71a0506a33\",\n  \"phone_number\": \"+15555550222\"\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -20319,7 +20319,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/thermostats/activate_climate_preset\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"device_id\":\"123e4567-e89b-12d3-a456-426614174000\",\"climate_preset_key\":\"occupied\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/thermostats/activate_climate_preset\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"device_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n  \"climate_preset_key\": \"occupied\"\n}\nEOF",
                   "response": "{\n  \"action_attempt\": {\n    \"action_attempt_id\": \"05de2295-d1dc-4748-aae3-9931658bde20\",\n    \"status\": \"pending\",\n    \"action_type\": \"ACTIVATE_CLIMATE_PRESET\"\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -20496,7 +20496,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/thermostats/cool\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"device_id\":\"123e4567-e89b-12d3-a456-426614174000\",\"cooling_set_point_celsius\":25}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/thermostats/cool\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"device_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n  \"cooling_set_point_celsius\": 25\n}\nEOF",
                   "response": "{\n  \"action_attempt\": {\n    \"action_attempt_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"status\": \"pending\",\n    \"action_type\": \"SET_COOL\"\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -20824,7 +20824,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/thermostats/create_climate_preset\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"device_id\":\"123e4567-e89b-12d3-a456-426614174000\",\"climate_preset_key\":\"occupied\",\"name\":\"Occupied\",\"fan_mode_setting\":\"auto\",\"hvac_mode_setting\":\"heat_cool\",\"cooling_set_point_celsius\":25,\"heating_set_point_celsius\":20,\"manual_override_allowed\":true}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/thermostats/create_climate_preset\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"device_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n  \"climate_preset_key\": \"occupied\",\n  \"name\": \"Occupied\",\n  \"fan_mode_setting\": \"auto\",\n  \"hvac_mode_setting\": \"heat_cool\",\n  \"cooling_set_point_celsius\": 25,\n  \"heating_set_point_celsius\": 20,\n  \"manual_override_allowed\": true\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -20958,7 +20958,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/thermostats/delete_climate_preset\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"device_id\":\"123e4567-e89b-12d3-a456-426614174000\",\"climate_preset_key\":\"occupied\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/thermostats/delete_climate_preset\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"device_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n  \"climate_preset_key\": \"occupied\"\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -21196,7 +21196,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/thermostats/heat\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"device_id\":\"123e4567-e89b-12d3-a456-426614174000\",\"heating_set_point_celsius\":20}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/thermostats/heat\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"device_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n  \"heating_set_point_celsius\": 20\n}\nEOF",
                   "response": "{\n  \"action_attempt\": {\n    \"action_attempt_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"status\": \"pending\",\n    \"action_type\": \"SET_HEAT\"\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -21402,7 +21402,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/thermostats/heat_cool\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"device_id\":\"123e4567-e89b-12d3-a456-426614174000\",\"cooling_set_point_celsius\":25,\"heating_set_point_celsius\":20}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/thermostats/heat_cool\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"device_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n  \"cooling_set_point_celsius\": 25,\n  \"heating_set_point_celsius\": 20\n}\nEOF",
                   "response": "{\n  \"action_attempt\": {\n    \"action_attempt_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"status\": \"pending\",\n    \"action_type\": \"SET_HEAT_COOL\"\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -22170,7 +22170,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/thermostats/list\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\"",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/thermostats/list\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\"",
                   "response": "{\n  \"devices\": [\n    {\n      \"device_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n      \"device_type\": \"ecobee_thermostat\",\n      \"capabilities_supported\": [\"thermostat\"],\n      \"properties\": {\n        \"name\": \"Entryway\",\n        \"online\": \"true,\",\n        \"relative_humidity\": 0.36,\n        \"temperature_farenheit\": 70,\n        \"available_hvac_mode_settings\": [\"cool\", \"heat\", \"heat_cool\", \"off\"],\n        \"current_climate_setting\": {\n          \"hvac_mode_setting\": \"heat_cool\",\n          \"cooling_set_point_farenheit\": 75,\n          \"heating_set_point_farenheit\": 65,\n          \"manual_override_allowed\": false\n        },\n        \"location\": null,\n        \"connected_account_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n        \"workspace_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n        \"created_at\": \"2024-04-05T07:57:05.323Z\"\n      }\n    }\n  ]\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -22318,7 +22318,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/thermostats/off\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"device_id\":\"123e4567-e89b-12d3-a456-426614174000\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/thermostats/off\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"device_id\": \"123e4567-e89b-12d3-a456-426614174000\"\n}\nEOF",
                   "response": "{\n  \"action_attempt\": {\n    \"action_attempt_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"status\": \"pending\",\n    \"action_type\": \"SET_THERMOSTAT_OFF\"\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -22448,7 +22448,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/thermostats/set_fallback_climate_preset\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"device_id\":\"123e4567-e89b-12d3-a456-426614174000\",\"climate_preset_key\":\"eco\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/thermostats/set_fallback_climate_preset\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"device_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n  \"climate_preset_key\": \"eco\"\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -22689,7 +22689,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/thermostats/set_fan_mode\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"device_id\":\"123e4567-e89b-12d3-a456-426614174000\",\"fan_mode_setting\":\"auto\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/thermostats/set_fan_mode\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"device_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n  \"fan_mode_setting\": \"auto\"\n}\nEOF",
                   "response": "{\n  \"action_attempt\": {\n    \"action_attempt_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"status\": \"pending\",\n    \"action_type\": \"SET_FAN_MODE\"\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -22937,7 +22937,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/thermostats/set_hvac_mode\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"device_id\":\"123e4567-e89b-12d3-a456-426614174000\",\"hvac_mode_setting\":\"heat_cool\",\"heating_set_point_celsius\":20,\"cooling_set_point_celsius\":25}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/thermostats/set_hvac_mode\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"device_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n  \"hvac_mode_setting\": \"heat_cool\",\n  \"heating_set_point_celsius\": 20,\n  \"cooling_set_point_celsius\": 25\n}\nEOF",
                   "response": "{\n  \"action_attempt\": {\n    \"action_attempt_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"status\": \"success\",\n    \"action_type\": \"SET_HVAC_MODE\"\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -23114,7 +23114,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/thermostats/set_temperature_threshold\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"device_id\":\"123e4567-e89b-12d3-a456-426614174000\",\"lower_limit_celsius\":4,\"upper_limit_celsius\":30}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/thermostats/set_temperature_threshold\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"device_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n  \"lower_limit_celsius\": 4,\n  \"upper_limit_celsius\": 30\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -23437,7 +23437,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/thermostats/update_climate_preset\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"device_id\":\"123e4567-e89b-12d3-a456-426614174000\",\"climate_preset_key\":\"occupied\",\"cooling_set_point_celsius\":24,\"manual_override_allowed\":true}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/thermostats/update_climate_preset\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"device_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n  \"climate_preset_key\": \"occupied\",\n  \"cooling_set_point_celsius\": 24,\n  \"manual_override_allowed\": true\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -24085,7 +24085,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/thermostats/schedules/create\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"device_id\":\"123e4567-e89b-12d3-a456-426614174000\",\"name\":\"Reservation 1\",\"climate_preset_key\":\"occupied\",\"starts_at\":\"2024-11-01T15:00:00Z\",\"ends_at\":\"2024-11-05T12:00:00Z\",\"max_override_period_minutes\":90}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/thermostats/schedules/create\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"device_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n  \"name\": \"Reservation 1\",\n  \"climate_preset_key\": \"occupied\",\n  \"starts_at\": \"2024-11-01T15:00:00Z\",\n  \"ends_at\": \"2024-11-05T12:00:00Z\",\n  \"max_override_period_minutes\": 90\n}\nEOF",
                   "response": "{\n  \"thermostat_schedule\": {\n    \"thermostat_schedule_id\": \"56d29fcf-0674-4db5-8e03-b2370a77460a\",\n    \"name\": \"Reservation 1\",\n    \"device_id\": \"2d488679-6f07-4810-aed2-e726872c1dd5\",\n    \"climate_preset_key\": \"occupied\",\n    \"starts_at\": \"2024-11-01T15:00:00.000Z\",\n    \"ends_at\": \"2024-11-05T12:00:00.000Z\",\n    \"max_override_period_minutes\": 90\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -24204,7 +24204,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/thermostats/schedules/delete\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"thermostat_schedule_id\":\"89d3507e-60e3-4101-bd1b-ba066ec30ad4\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/thermostats/schedules/delete\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"thermostat_schedule_id\": \"89d3507e-60e3-4101-bd1b-ba066ec30ad4\"\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -24340,7 +24340,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/thermostats/schedules/get\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"thermostat_schedule_id\":\"89d3507e-60e3-4101-bd1b-ba066ec30ad4\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/thermostats/schedules/get\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"thermostat_schedule_id\": \"89d3507e-60e3-4101-bd1b-ba066ec30ad4\"\n}\nEOF",
                   "response": "{\n  \"thermostat_schedule\": {\n    \"thermostat_schedule_id\": \"89d3507e-60e3-4101-bd1b-ba066ec30ad4\",\n    \"name\": \"Reservation 2\",\n    \"device_id\": \"2d488679-6f07-4810-aed2-e726872c1dd5\",\n    \"climate_preset_key\": \"occupied\",\n    \"starts_at\": \"2024-11-10T15:00:00.000Z\",\n    \"ends_at\": \"2024-11-15T12:00:00.000Z\",\n    \"max_override_period_minutes\": 90\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -24501,7 +24501,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/thermostats/schedules/list\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"device_id\":\"123e4567-e89b-12d3-a456-426614174000\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/thermostats/schedules/list\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"device_id\": \"123e4567-e89b-12d3-a456-426614174000\"\n}\nEOF",
                   "response": "{\n  \"thermostat_schedules\": [\n    {\n      \"thermostat_schedule_id\": \"89d3507e-60e3-4101-bd1b-ba066ec30ad4\",\n      \"name\": \"Reservation 2\",\n      \"device_id\": \"2d488679-6f07-4810-aed2-e726872c1dd5\",\n      \"climate_preset_key\": \"occupied\",\n      \"starts_at\": \"2024-11-10T15:00:00.000Z\",\n      \"ends_at\": \"2024-11-15T12:00:00.000Z\",\n      \"max_override_period_minutes\": 90\n    },\n    {\n      \"thermostat_schedule_id\": \"665553d1-94f9-4e92-9739-06ac6362c959\",\n      \"name\": \"Reservation 3\",\n      \"device_id\": \"2d488679-6f07-4810-aed2-e726872c1dd5\",\n      \"climate_preset_key\": \"occupied\",\n      \"starts_at\": \"2024-11-16T15:00:00.000Z\",\n      \"ends_at\": \"2024-11-18T12:00:00.000Z\",\n      \"max_override_period_minutes\": 90\n    }\n  ]\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -24705,7 +24705,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/thermostats/schedules/update\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"thermostat_schedule_id\":\"89d3507e-60e3-4101-bd1b-ba066ec30ad4\",\"ends_at\":\"2024-11-15T15:00:00Z\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/thermostats/schedules/update\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"thermostat_schedule_id\": \"89d3507e-60e3-4101-bd1b-ba066ec30ad4\",\n  \"ends_at\": \"2024-11-15T15:00:00Z\"\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -26379,7 +26379,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/user_identities/add_acs_user\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"user_identity_id\":\"48500a8e-5e7e-4bde-b7e5-0be97cae5d7a\",\"acs_user_id\":\"4d223973-0874-4831-8630-bfcb29e6bce0\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/user_identities/add_acs_user\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"user_identity_id\": \"48500a8e-5e7e-4bde-b7e5-0be97cae5d7a\",\n  \"acs_user_id\": \"4d223973-0874-4831-8630-bfcb29e6bce0\"\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -26572,7 +26572,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/user_identities/create\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"user_identity_key\":\"jean_doe\",\"email_address\":\"jean@example.com\",\"phone_number\":\"+15555550110\",\"full_name\":\"Jean Doe\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/user_identities/create\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"user_identity_key\": \"jean_doe\",\n  \"email_address\": \"jean@example.com\",\n  \"phone_number\": \"+15555550110\",\n  \"full_name\": \"Jean Doe\"\n}\nEOF",
                   "response": "{\n  \"user_identity\": {\n    \"user_identity_id\": \"48500a8e-5e7e-4bde-b7e5-0be97cae5d7a\",\n    \"user_identity_key\": \"jean_doe\",\n    \"email_address\": \"jean@example.com\",\n    \"phone_number\": \"+15555550110\",\n    \"display_name\": \"Jean Doe\",\n    \"full_name\": \"Jean Doe\",\n    \"created_at\": \"2024-01-11T05:37:50.264Z\",\n    \"workspace_id\": \"398d80b7-3f96-47c2-b85a-6f8ba21d07be\"\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -26687,7 +26687,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/user_identities/delete\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"user_identity_id\":\"44d48b20-0dbe-419d-91ca-ab8bceecd135\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/user_identities/delete\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"user_identity_id\": \"44d48b20-0dbe-419d-91ca-ab8bceecd135\"\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -26892,7 +26892,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/user_identities/get\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"user_identity_id\":\"48500a8e-5e7e-4bde-b7e5-0be97cae5d7a\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/user_identities/get\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"user_identity_id\": \"48500a8e-5e7e-4bde-b7e5-0be97cae5d7a\"\n}\nEOF",
                   "response": "{\n  \"user_identity\": {\n    \"user_identity_id\": \"48500a8e-5e7e-4bde-b7e5-0be97cae5d7a\",\n    \"user_identity_key\": \"jean_doe\",\n    \"email_address\": \"jean@example.com\",\n    \"phone_number\": \"+15555550110\",\n    \"display_name\": \"Jean Doe\",\n    \"full_name\": \"Jean Doe\",\n    \"created_at\": \"2024-01-11T05:37:50.264Z\",\n    \"workspace_id\": \"398d80b7-3f96-47c2-b85a-6f8ba21d07be\"\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -27022,7 +27022,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/user_identities/grant_access_to_device\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"user_identity_id\":\"f3a328b4-dd04-4370-9000-d52b7a01b0bf\",\"device_id\":\"054765c8-a2fc-4599-b486-14c19f462c45\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/user_identities/grant_access_to_device\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"user_identity_id\": \"f3a328b4-dd04-4370-9000-d52b7a01b0bf\",\n  \"device_id\": \"054765c8-a2fc-4599-b486-14c19f462c45\"\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -27156,7 +27156,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/user_identities/list\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\"",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/user_identities/list\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\"",
                   "response": "{\n  \"user_identities\": [\n    {\n      \"user_identity_id\": \"48500a8e-5e7e-4bde-b7e5-0be97cae5d7a\",\n      \"user_identity_key\": \"jean_doe\",\n      \"email_address\": \"jean@example.com\",\n      \"phone_number\": \"+15555550110\",\n      \"display_name\": \"Jean Doe\",\n      \"full_name\": \"Jean Doe\",\n      \"created_at\": \"2024-01-11T05:37:50.264Z\",\n      \"workspace_id\": \"398d80b7-3f96-47c2-b85a-6f8ba21d07be\"\n    }\n  ]\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -27337,7 +27337,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/user_identities/list_accessible_devices\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"user_identity_id\":\"f3a328b4-dd04-4370-9000-d52b7a01b0bf\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/user_identities/list_accessible_devices\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"user_identity_id\": \"f3a328b4-dd04-4370-9000-d52b7a01b0bf\"\n}\nEOF",
                   "response": "{\n  \"devices\": [\n    {\n      \"device_id\": \"054765c8-a2fc-4599-b486-14c19f462c45\",\n      \"nickname\": \"\",\n      \"display_name\": \"Seam Thermostat\",\n      \"device_type\": \"nest_thermostat\",\n      \"capabilities_supported\": [\"thermostat\"],\n      \"properties\": {\n        \"online\": true,\n        \"is_cooling\": false,\n        \"is_heating\": false,\n        \"manufacturer\": \"nest\",\n        \"nest_metadata\": {\n          \"custom_name\": \"\",\n          \"device_name\": \"enterprises/nest_project_id/devices/AVPHwEvjFcX-wRmGdXApyxON24SAI0S9oU13a2GSVFLPVehUKH1ATqlASyKi2N2dbJCVW-B6-VxgbhdjUyyjA-K3Vo5C9g\",\n          \"nest_device_id\": \"bcca8c5f-1854-4906-9911-c877d513e00a\"\n        },\n        \"is_fan_running\": false,\n        \"has_direct_power\": true,\n        \"relative_humidity\": 0.46,\n        \"temperature_celsius\": 24.64,\n        \"temperature_fahrenheit\": 76.352,\n        \"current_climate_setting\": {\n          \"hvac_mode_setting\": \"heat_cool\",\n          \"manual_override_allowed\": true,\n          \"cooling_set_point_celsius\": 21.5,\n          \"heating_set_point_celsius\": 20,\n          \"cooling_set_point_fahrenheit\": 70.7,\n          \"heating_set_point_fahrenheit\": 68\n        },\n        \"available_hvac_mode_settings\": [\"heat\", \"cool\", \"heat_cool\", \"off\"],\n        \"is_temporary_manual_override_active\": false,\n        \"name\": \"\",\n        \"appearance\": { \"name\": \"\" },\n        \"model\": {\n          \"display_name\": \"Thermostat\",\n          \"manufacturer_display_name\": \"Nest\",\n          \"accessory_keypad_supported\": false\n        },\n        \"image_url\": \"https://connect.getseam.com/assets/images/devices/unknown-lock.png\",\n        \"image_alt_text\": \"Placeholder Lock Image\",\n        \"is_climate_setting_schedule_active\": false\n      },\n      \"location\": null,\n      \"connected_account_id\": \"44284499-a50b-4947-86c1-58264f014be5\",\n      \"workspace_id\": \"398d80b7-3f96-47c2-b85a-6f8ba21d07be\",\n      \"created_at\": \"2024-02-29T21:57:33.397Z\",\n      \"errors\": [],\n      \"warnings\": [],\n      \"is_managed\": true,\n      \"custom_metadata\": {}\n    }\n  ]\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -27479,7 +27479,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/user_identities/list_acs_systems\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"user_identity_id\":\"5c945ab5-c75e-4bcb-8e5f-9410061c401f\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/user_identities/list_acs_systems\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"user_identity_id\": \"5c945ab5-c75e-4bcb-8e5f-9410061c401f\"\n}\nEOF",
                   "response": "{\n  \"acs_systems\": [\n    {\n      \"acs_system_id\": \"6737e186-8d54-48ce-a7da-a0be4d252172\",\n      \"name\": \"Assa Abloy Credential Service\",\n      \"workspace_id\": \"398d80b7-3f96-47c2-b85a-6f8ba21d07be\",\n      \"created_at\": \"2024-01-05T07:16:51.971Z\",\n      \"system_type\": \"assa_abloy_credential_service\",\n      \"system_type_display_name\": \"Assa Abloy Credential Service\",\n      \"external_type\": \"assa_abloy_credential_service\",\n      \"external_type_display_name\": \"Assa Abloy Credential Service\",\n      \"connected_account_ids\": [\"dc08066f-d9b8-42f0-9c4b-c781cd900153\"]\n    }\n  ]\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -27617,7 +27617,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/user_identities/list_acs_users\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"user_identity_id\":\"48500a8e-5e7e-4bde-b7e5-0be97cae5d7a\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/user_identities/list_acs_users\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"user_identity_id\": \"48500a8e-5e7e-4bde-b7e5-0be97cae5d7a\"\n}\nEOF",
                   "response": "{\n  \"acs_users\": [\n    {\n      \"acs_user_id\": \"4d223973-0874-4831-8630-bfcb29e6bce0\",\n      \"display_name\": \"Jean Doe\",\n      \"full_name\": \"Jean Doe\",\n      \"email_address\": \"jean@example.com\",\n      \"acs_system_id\": \"8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4\",\n      \"workspace_id\": \"398d80b7-3f96-47c2-b85a-6f8ba21d07be\",\n      \"created_at\": \"2024-01-11T05:45:41.349Z\",\n      \"is_suspended\": false,\n      \"user_identity_id\": \"48500a8e-5e7e-4bde-b7e5-0be97cae5d7a\",\n      \"user_identity_email_address\": \"jean@example.com\",\n      \"user_identity_phone_number\": \"+15555550110\"\n    }\n  ]\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -27747,7 +27747,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/user_identities/remove_acs_user\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"user_identity_id\":\"5c945ab5-c75e-4bcb-8e5f-9410061c401f\",\"acs_user_id\":\"c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/user_identities/remove_acs_user\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"user_identity_id\": \"5c945ab5-c75e-4bcb-8e5f-9410061c401f\",\n  \"acs_user_id\": \"c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe\"\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -27877,7 +27877,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/user_identities/revoke_access_to_device\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"user_identity_id\":\"f3a328b4-dd04-4370-9000-d52b7a01b0bf\",\"device_id\":\"054765c8-a2fc-4599-b486-14c19f462c45\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/user_identities/revoke_access_to_device\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"user_identity_id\": \"f3a328b4-dd04-4370-9000-d52b7a01b0bf\",\n  \"device_id\": \"054765c8-a2fc-4599-b486-14c19f462c45\"\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -28097,7 +28097,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/user_identities/enrollment_automations/delete\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"enrollment_automation_id\":\"05505650-aa57-49ab-8f19-429738758895\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/user_identities/enrollment_automations/delete\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"enrollment_automation_id\": \"05505650-aa57-49ab-8f19-429738758895\"\n}\nEOF",
                   "response": "{}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -28233,7 +28233,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/user_identities/enrollment_automations/get\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"enrollment_automation_id\":\"05505650-aa57-49ab-8f19-429738758895\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/user_identities/enrollment_automations/get\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"enrollment_automation_id\": \"05505650-aa57-49ab-8f19-429738758895\"\n}\nEOF",
                   "response": "{\n  \"enrollment_automation\": {\n    \"user_identity_id\": \"5c945ab5-c75e-4bcb-8e5f-9410061c401f\",\n    \"enrollment_automation_id\": \"05505650-aa57-49ab-8f19-429738758895\",\n    \"acs_credential_provisioning_automation_id\": \"05505650-aa57-49ab-8f19-429738758895\",\n    \"credential_manager_acs_system_id\": \"6737e186-8d54-48ce-a7da-a0be4d252172\",\n    \"is_running\": true,\n    \"workspace_id\": \"398d80b7-3f96-47c2-b85a-6f8ba21d07be\",\n    \"created_at\": \"2024-01-09T05:45:33.068Z\"\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -28424,7 +28424,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/user_identities/enrollment_automations/launch\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"user_identity_id\":\"5c945ab5-c75e-4bcb-8e5f-9410061c401f\",\"credential_manager_acs_system_id\":\"6737e186-8d54-48ce-a7da-a0be4d252172\",\"acs_credential_pool_id\":\"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\"create_credential_manager_user\":true}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/user_identities/enrollment_automations/launch\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"user_identity_id\": \"5c945ab5-c75e-4bcb-8e5f-9410061c401f\",\n  \"credential_manager_acs_system_id\": \"6737e186-8d54-48ce-a7da-a0be4d252172\",\n  \"acs_credential_pool_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"create_credential_manager_user\": true\n}\nEOF",
                   "response": "{\n  \"enrollment_automation\": {\n    \"user_identity_id\": \"5c945ab5-c75e-4bcb-8e5f-9410061c401f\",\n    \"enrollment_automation_id\": \"05505650-aa57-49ab-8f19-429738758895\",\n    \"acs_credential_provisioning_automation_id\": \"05505650-aa57-49ab-8f19-429738758895\",\n    \"credential_manager_acs_system_id\": \"6737e186-8d54-48ce-a7da-a0be4d252172\",\n    \"is_running\": true,\n    \"workspace_id\": \"398d80b7-3f96-47c2-b85a-6f8ba21d07be\",\n    \"created_at\": \"2024-01-09T05:45:33.068Z\"\n  }\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"
@@ -28562,7 +28562,7 @@
                 },
                 "curl": {
                   "title": "cURL",
-                  "request": "curl -X POST \"https://connect.getseam.com/user_identities/enrollment_automations/list\" \\\n  -H \"Authorization: Bearer $SEAM_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"user_identity_id\":\"5c945ab5-c75e-4bcb-8e5f-9410061c401f\"}'",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/user_identities/enrollment_automations/list\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"user_identity_id\": \"5c945ab5-c75e-4bcb-8e5f-9410061c401f\"\n}\nEOF",
                   "response": "{\n  \"enrollment_automations\": [\n    {\n      \"user_identity_id\": \"5c945ab5-c75e-4bcb-8e5f-9410061c401f\",\n      \"enrollment_automation_id\": \"05505650-aa57-49ab-8f19-429738758895\",\n      \"acs_credential_provisioning_automation_id\": \"05505650-aa57-49ab-8f19-429738758895\",\n      \"credential_manager_acs_system_id\": \"6737e186-8d54-48ce-a7da-a0be4d252172\",\n      \"is_running\": true,\n      \"workspace_id\": \"398d80b7-3f96-47c2-b85a-6f8ba21d07be\",\n      \"created_at\": \"2024-01-09T05:45:33.068Z\"\n    }\n  ]\n}",
                   "request_syntax": "bash",
                   "response_syntax": "json"

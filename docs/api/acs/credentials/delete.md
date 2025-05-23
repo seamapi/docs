@@ -152,10 +152,13 @@ nil
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/acs/credentials/delete" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"acs_credential_id":"66666666-6666-6666-6666-666666666666"}'
+curl --include --request POST "https://connect.getseam.com/acs/credentials/delete" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_credential_id": "66666666-6666-6666-6666-666666666666"
+}
+EOF
 ```
 
 #### Output

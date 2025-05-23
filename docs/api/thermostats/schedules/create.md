@@ -268,10 +268,18 @@ api.ThermostatSchedule{ThermostatScheduleId: "56d29fcf-0674-4db5-8e03-b2370a7746
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/thermostats/schedules/create" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"device_id":"123e4567-e89b-12d3-a456-426614174000","name":"Reservation 1","climate_preset_key":"occupied","starts_at":"2024-11-01T15:00:00Z","ends_at":"2024-11-05T12:00:00Z","max_override_period_minutes":90}'
+curl --include --request POST "https://connect.getseam.com/thermostats/schedules/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "123e4567-e89b-12d3-a456-426614174000",
+  "name": "Reservation 1",
+  "climate_preset_key": "occupied",
+  "starts_at": "2024-11-01T15:00:00Z",
+  "ends_at": "2024-11-05T12:00:00Z",
+  "max_override_period_minutes": 90
+}
+EOF
 ```
 
 #### Output

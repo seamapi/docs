@@ -189,10 +189,15 @@ nil
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/thermostats/set_temperature_threshold" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"device_id":"123e4567-e89b-12d3-a456-426614174000","lower_limit_celsius":4,"upper_limit_celsius":30}'
+curl --include --request POST "https://connect.getseam.com/thermostats/set_temperature_threshold" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "123e4567-e89b-12d3-a456-426614174000",
+  "lower_limit_celsius": 4,
+  "upper_limit_celsius": 30
+}
+EOF
 ```
 
 #### Output

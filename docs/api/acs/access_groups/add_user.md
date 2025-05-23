@@ -167,10 +167,14 @@ nil
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/acs/access_groups/add_user" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"acs_access_group_id":"44444444-4444-4444-4444-444444444444","acs_user_id":"33333333-3333-3333-3333-333333333333"}'
+curl --include --request POST "https://connect.getseam.com/acs/access_groups/add_user" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_access_group_id": "44444444-4444-4444-4444-444444444444",
+  "acs_user_id": "33333333-3333-3333-3333-333333333333"
+}
+EOF
 ```
 
 #### Output

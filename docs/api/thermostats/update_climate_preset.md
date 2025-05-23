@@ -225,10 +225,16 @@ nil
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/thermostats/update_climate_preset" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"device_id":"123e4567-e89b-12d3-a456-426614174000","climate_preset_key":"occupied","cooling_set_point_celsius":24,"manual_override_allowed":true}'
+curl --include --request POST "https://connect.getseam.com/thermostats/update_climate_preset" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "123e4567-e89b-12d3-a456-426614174000",
+  "climate_preset_key": "occupied",
+  "cooling_set_point_celsius": 24,
+  "manual_override_allowed": true
+}
+EOF
 ```
 
 #### Output

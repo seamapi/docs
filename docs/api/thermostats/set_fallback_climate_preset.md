@@ -165,10 +165,14 @@ nil
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/thermostats/set_fallback_climate_preset" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"device_id":"123e4567-e89b-12d3-a456-426614174000","climate_preset_key":"eco"}'
+curl --include --request POST "https://connect.getseam.com/thermostats/set_fallback_climate_preset" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "123e4567-e89b-12d3-a456-426614174000",
+  "climate_preset_key": "eco"
+}
+EOF
 ```
 
 #### Output

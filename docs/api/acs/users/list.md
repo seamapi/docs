@@ -238,8 +238,8 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/acs/users/list" \
-  -H "Authorization: Bearer $SEAM_API_KEY"
+curl --include --request POST "https://connect.getseam.com/acs/users/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
 #### Output

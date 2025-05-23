@@ -266,10 +266,16 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/acs/users/create" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"acs_system_id":"123e4567-e89b-12d3-a456-426614174000","full_name":"Jane Doe","email_address":"jane@example.com","phone_number":"+15555550100"}'
+curl --include --request POST "https://connect.getseam.com/acs/users/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15555550100"
+}
+EOF
 ```
 
 #### Output
@@ -487,10 +493,20 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/acs/users/create" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"acs_system_id":"123e4567-e89b-12d3-a456-426614174000","full_name":"Jane Doe","email_address":"jane@example.com","phone_number":"+15555550100","access_schedule":{"starts_at":"2024-11-01T15:00:00.000Z","ends_at":"2024-11-04T11:00:00.000Z"}}'
+curl --include --request POST "https://connect.getseam.com/acs/users/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15555550100",
+  "access_schedule": {
+    "starts_at": "2024-11-01T15:00:00.000Z",
+    "ends_at": "2024-11-04T11:00:00.000Z"
+  }
+}
+EOF
 ```
 
 #### Output
@@ -694,10 +710,19 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/acs/users/create" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"acs_system_id":"123e4567-e89b-12d3-a456-426614174000","full_name":"Jane Doe","email_address":"jane@example.com","phone_number":"+15555550100","acs_access_group_ids":["123e4567-e89b-12d3-a456-426614174000"]}'
+curl --include --request POST "https://connect.getseam.com/acs/users/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15555550100",
+  "acs_access_group_ids": [
+    "123e4567-e89b-12d3-a456-426614174000"
+  ]
+}
+EOF
 ```
 
 #### Output

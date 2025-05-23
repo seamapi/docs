@@ -247,10 +247,16 @@ api.Unknown{UserIdentityId: "5c945ab5-c75e-4bcb-8e5f-9410061c401f", EnrollmentAu
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/user_identities/enrollment_automations/launch" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"user_identity_id":"5c945ab5-c75e-4bcb-8e5f-9410061c401f","credential_manager_acs_system_id":"6737e186-8d54-48ce-a7da-a0be4d252172","acs_credential_pool_id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","create_credential_manager_user":true}'
+curl --include --request POST "https://connect.getseam.com/user_identities/enrollment_automations/launch" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "user_identity_id": "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
+  "credential_manager_acs_system_id": "6737e186-8d54-48ce-a7da-a0be4d252172",
+  "acs_credential_pool_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "create_credential_manager_user": true
+}
+EOF
 ```
 
 #### Output

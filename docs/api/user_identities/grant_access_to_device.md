@@ -166,10 +166,14 @@ nil
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/user_identities/grant_access_to_device" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"user_identity_id":"f3a328b4-dd04-4370-9000-d52b7a01b0bf","device_id":"054765c8-a2fc-4599-b486-14c19f462c45"}'
+curl --include --request POST "https://connect.getseam.com/user_identities/grant_access_to_device" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "user_identity_id": "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
+  "device_id": "054765c8-a2fc-4599-b486-14c19f462c45"
+}
+EOF
 ```
 
 #### Output

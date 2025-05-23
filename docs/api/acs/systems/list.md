@@ -165,10 +165,13 @@ func main() {
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/acs/systems/list" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"connected_account_id":"123e4567-e89b-12d3-a456-426614174000"}'
+curl --include --request POST "https://connect.getseam.com/acs/systems/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "connected_account_id": "123e4567-e89b-12d3-a456-426614174000"
+}
+EOF
 ```
 
 #### Output

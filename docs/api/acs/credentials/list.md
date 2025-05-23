@@ -272,10 +272,16 @@ func main() {
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/acs/credentials/list" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"acs_user_id":"33333333-3333-3333-3333-333333333333","acs_system_id":"11111111-1111-1111-1111-111111111111","user_identity_id":"22222222-2222-2222-2222-222222222222","is_multi_phone_sync_credential":true}'
+curl --include --request POST "https://connect.getseam.com/acs/credentials/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  "acs_system_id": "11111111-1111-1111-1111-111111111111",
+  "user_identity_id": "22222222-2222-2222-2222-222222222222",
+  "is_multi_phone_sync_credential": true
+}
+EOF
 ```
 
 #### Output

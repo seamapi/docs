@@ -198,10 +198,14 @@ nil
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/thermostats/schedules/update" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"thermostat_schedule_id":"89d3507e-60e3-4101-bd1b-ba066ec30ad4","ends_at":"2024-11-15T15:00:00Z"}'
+curl --include --request POST "https://connect.getseam.com/thermostats/schedules/update" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "thermostat_schedule_id": "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
+  "ends_at": "2024-11-15T15:00:00Z"
+}
+EOF
 ```
 
 #### Output

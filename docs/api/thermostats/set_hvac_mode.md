@@ -235,10 +235,16 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/thermostats/set_hvac_mode" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"device_id":"123e4567-e89b-12d3-a456-426614174000","hvac_mode_setting":"heat_cool","heating_set_point_celsius":20,"cooling_set_point_celsius":25}'
+curl --include --request POST "https://connect.getseam.com/thermostats/set_hvac_mode" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "123e4567-e89b-12d3-a456-426614174000",
+  "hvac_mode_setting": "heat_cool",
+  "heating_set_point_celsius": 20,
+  "cooling_set_point_celsius": 25
+}
+EOF
 ```
 
 #### Output

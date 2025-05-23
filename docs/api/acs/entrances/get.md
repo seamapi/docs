@@ -186,10 +186,13 @@ api.AcsEntrance{AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", AcsEntrance
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/acs/entrances/get" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"acs_entrance_id":"123e4567-e89b-12d3-a456-426614174000"}'
+curl --include --request POST "https://connect.getseam.com/acs/entrances/get" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_entrance_id": "123e4567-e89b-12d3-a456-426614174000"
+}
+EOF
 ```
 
 #### Output

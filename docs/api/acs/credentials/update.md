@@ -169,10 +169,14 @@ nil
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/acs/credentials/update" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"acs_credential_id":"66666666-6666-6666-6666-666666666666","code":"7890"}'
+curl --include --request POST "https://connect.getseam.com/acs/credentials/update" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_credential_id": "66666666-6666-6666-6666-666666666666",
+  "code": "7890"
+}
+EOF
 ```
 
 #### Output

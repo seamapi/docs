@@ -168,10 +168,13 @@ func main() {
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/acs/systems/list_compatible_credential_manager_acs_systems" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"acs_system_id":"8d7e0b3a-b889-49a7-9164-4b71a0506a33"}'
+curl --include --request POST "https://connect.getseam.com/acs/systems/list_compatible_credential_manager_acs_systems" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
+}
+EOF
 ```
 
 #### Output

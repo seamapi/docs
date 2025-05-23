@@ -264,10 +264,13 @@ func main() {
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/thermostats/schedules/list" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"device_id":"123e4567-e89b-12d3-a456-426614174000"}'
+curl --include --request POST "https://connect.getseam.com/thermostats/schedules/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "123e4567-e89b-12d3-a456-426614174000"
+}
+EOF
 ```
 
 #### Output

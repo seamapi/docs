@@ -210,10 +210,13 @@ api.UserIdentity{UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", UserIde
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/user_identities/get" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"user_identity_id":"48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"}'
+curl --include --request POST "https://connect.getseam.com/user_identities/get" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"
+}
+EOF
 ```
 
 #### Output

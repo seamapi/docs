@@ -204,8 +204,8 @@ func main() {
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/user_identities/list" \
-  -H "Authorization: Bearer $SEAM_API_KEY"
+curl --include --request POST "https://connect.getseam.com/user_identities/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
 #### Output

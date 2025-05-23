@@ -150,10 +150,13 @@ nil
 #### Code
 
 ```curl
-curl -X POST "https://connect.getseam.com/acs/users/delete" \
-  -H "Authorization: Bearer $SEAM_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"acs_user_id":"8d7e0b3a-b889-49a7-9164-4b71a0506a33"}'
+curl --include --request POST "https://connect.getseam.com/acs/users/delete" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_user_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
+}
+EOF
 ```
 
 #### Output
