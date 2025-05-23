@@ -16,7 +16,7 @@
     "src"
   ],
   "scripts": {
-    "build": "tsx src/metalsmith.ts",
+    "build": "tsx src/smith.ts",
     "postbuild": "npm run format",
     "typecheck": "tsc",
     "lint": "eslint --ignore-path .prettierignore .",
