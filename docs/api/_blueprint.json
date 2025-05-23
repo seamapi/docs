@@ -9423,7 +9423,7 @@
             "parameters": [
               {
                 "name": "connect_webview_ids",
-                "description": "IDs of the [Connect Webviews](../core-concepts/connect-webviews/README.md) for which you want to create a client session.",
+                "description": "IDs of the [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) for which you want to create a client session.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -9640,7 +9640,7 @@
             "parameters": [
               {
                 "name": "connect_webview_ids",
-                "description": "IDs of the [Connect Webviews](../core-concepts/connect-webviews/README.md) that you want to associate with the client session (or that are already associated with the existing client session).",
+                "description": "IDs of the [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) that you want to associate with the client session (or that are already associated with the existing client session).",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -9726,7 +9726,7 @@
           "title": "Grant Access to a Client Session",
           "name": "grant_access",
           "path": "/client_sessions/grant_access",
-          "description": "Grants a [client session](../core-concepts/authentication/client-session-tokens/README.md) access to one or more resources, such as [Connect Webviews](../core-concepts/connect-webviews/README.md), [user identities](../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity), and so on.",
+          "description": "Grants a [client session](../core-concepts/authentication/client-session-tokens/README.md) access to one or more resources, such as [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews), [user identities](../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity), and so on.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -9761,7 +9761,7 @@
               },
               {
                 "name": "connect_webview_ids",
-                "description": "IDs of the [Connect Webviews](../core-concepts/connect-webviews/README.md) that you want to associate with the client session.",
+                "description": "IDs of the [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) that you want to associate with the client session.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -9868,7 +9868,7 @@
               },
               {
                 "name": "connect_webview_id",
-                "description": "ID of the [Connect Webview](../core-concepts/connect-webviews/README.md) for which you want to retrieve client sessions.",
+                "description": "ID of the [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) for which you want to retrieve client sessions.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -9993,7 +9993,7 @@
           "title": "Create a Connect Webview",
           "name": "create",
           "path": "/connect_webviews/create",
-          "description": "Creates a new [Connect Webview](../core-concepts/connect-webviews/README.md).\n\nTo enable a user to connect their devices or systems to Seam, they must sign in to their device or system account. To enable a user to sign in, you create a `connect_webview`. After creating the Connect Webview, you receive a URL that you can use to display the visual component of this Connect Webview for your user. You can open an iframe or new window to display the Connect Webview.\n\nYou should make a new `connect_webview` for each unique login request. Each `connect_webview` tracks the user that signed in with it. You receive an error if you reuse a Connect Webview for the same user twice or if you use the same Connect Webview for multiple users.\n\nSee also: [Connect Webview Process](../core-concepts/connect-webviews/connect-webview-process.md).",
+          "description": "Creates a new [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).\n\nTo enable a user to connect their devices or systems to Seam, they must sign in to their device or system account. To enable a user to sign in, you create a `connect_webview`. After creating the Connect Webview, you receive a URL that you can use to display the visual component of this Connect Webview for your user. You can open an iframe or new window to display the Connect Webview.\n\nYou should make a new `connect_webview` for each unique login request. Each `connect_webview` tracks the user that signed in with it. You receive an error if you reuse a Connect Webview for the same user twice or if you use the same Connect Webview for multiple users.\n\nSee also: [Connect Webview Process](https://docs.seam.co/latest/core-concepts/connect-webviews/connect-webview-process).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -10015,7 +10015,7 @@
             "parameters": [
               {
                 "name": "accepted_providers",
-                "description": "Accepted device provider keys as an alternative to `provider_category`. Use this parameter to specify accepted providers explicitly. See [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews). To list all provider keys, use [`/devices/list_device_providers`](https://docs.seam.co/latest/api/devices/list_device_providers) with no filters.",
+                "description": "Accepted device provider keys as an alternative to `provider_category`. Use this parameter to specify accepted providers explicitly. See [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). To list all provider keys, use [`/devices/list_device_providers`](https://docs.seam.co/latest/api/devices/list_device_providers) with no filters.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -10532,7 +10532,7 @@
               },
               {
                 "name": "automatically_manage_new_devices",
-                "description": "Indicates whether newly-added devices should appear as [managed devices](../core-concepts/devices/managed-and-unmanaged-devices.md). See also: [Customize the Behavior Settings of Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-behavior-settings-of-your-connect-webviews).",
+                "description": "Indicates whether newly-added devices should appear as [managed devices](../core-concepts/devices/managed-and-unmanaged-devices.md). See also: [Customize the Behavior Settings of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-behavior-settings-of-your-connect-webviews).",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -10547,7 +10547,7 @@
               },
               {
                 "name": "custom_metadata",
-                "description": "Custom metadata that you want to associate with the Connect Webview. Supports up to 50 JSON key:value pairs. [Adding custom metadata to a Connect Webview](../core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview.md) enables you to store custom information, like customer details or internal IDs from your application. The custom metadata is then transferred to any [connected accounts](../core-concepts/connected-accounts/README.md) that were connected using the Connect Webview, making it easy to find and filter these resources in your [workspace](../core-concepts/workspaces/README.md). You can also [filter Connect Webviews by custom metadata](../core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata.md).",
+                "description": "Custom metadata that you want to associate with the Connect Webview. Supports up to 50 JSON key:value pairs. [Adding custom metadata to a Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview) enables you to store custom information, like customer details or internal IDs from your application. The custom metadata is then transferred to any [connected accounts](../core-concepts/connected-accounts/README.md) that were connected using the Connect Webview, making it easy to find and filter these resources in your [workspace](../core-concepts/workspaces/README.md). You can also [filter Connect Webviews by custom metadata](https://docs.seam.co/latest/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata).",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -10711,7 +10711,7 @@
               },
               {
                 "name": "wait_for_device_creation",
-                "description": "Indicates whether Seam should finish syncing all devices in a newly-connected account before completing the associated Connect Webview. See also: [Customize the Behavior Settings of Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-behavior-settings-of-your-connect-webviews).",
+                "description": "Indicates whether Seam should finish syncing all devices in a newly-connected account before completing the associated Connect Webview. See also: [Customize the Behavior Settings of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-behavior-settings-of-your-connect-webviews).",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -10739,7 +10739,7 @@
           "title": "Delete a Connect Webview",
           "name": "delete",
           "path": "/connect_webviews/delete",
-          "description": "Deletes a [Connect Webview](../core-concepts/connect-webviews/README.md).\n\nYou do not need to delete a Connect Webview once a user completes it. Instead, you can simply ignore completed Connect Webviews.",
+          "description": "Deletes a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).\n\nYou do not need to delete a Connect Webview once a user completes it. Instead, you can simply ignore completed Connect Webviews.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -10785,7 +10785,7 @@
           "title": "Get a Connect Webview",
           "name": "get",
           "path": "/connect_webviews/get",
-          "description": "Returns a specified [Connect Webview](../core-concepts/connect-webviews/README.md).\n\nUnless you're using a `custom_redirect_url`, you should poll a newly-created `connect_webview` to find out if the user has signed in or to get details about what devices they've connected.",
+          "description": "Returns a specified [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).\n\nUnless you're using a `custom_redirect_url`, you should poll a newly-created `connect_webview` to find out if the user has signed in or to get details about what devices they've connected.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -10834,7 +10834,7 @@
           "title": "List Connect Webviews",
           "name": "list",
           "path": "/connect_webviews/list",
-          "description": "Returns a list of all [Connect Webviews](../core-concepts/connect-webviews/README.md).",
+          "description": "Returns a list of all [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -10856,7 +10856,7 @@
             "parameters": [
               {
                 "name": "custom_metadata_has",
-                "description": "Custom metadata pairs by which you want to [filter Connect Webviews](../core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata.md). Returns Connect Webviews with `custom_metadata` that contains all of the provided key:value pairs.",
+                "description": "Custom metadata pairs by which you want to [filter Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata). Returns Connect Webviews with `custom_metadata` that contains all of the provided key:value pairs.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -12963,7 +12963,7 @@
           "title": "List Device Providers",
           "name": "list_device_providers",
           "path": "/devices/list_device_providers",
-          "description": "Returns a list of all device providers.\n\nThe information that this endpoint returns for each provider includes a set of [capability flags](../capability-guides/device-and-system-capabilities.md#capability-flags), such as `device_provider.can_remotely_unlock`. If at least one supported device from a provider has a specific capability, the corresponding capability flag is `true`.\n\nWhen you create a [Connect Webview](../core-concepts/connect-webviews/README.md), you can customize the providers—that is, the brands—that it displays. In the `/connect_webviews/create` request, include the desired set of device provider keys in the `accepted_providers` parameter. See also [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).",
+          "description": "Returns a list of all device providers.\n\nThe information that this endpoint returns for each provider includes a set of [capability flags](../capability-guides/device-and-system-capabilities/README.md#capability-flags), such as `device_provider.can_remotely_unlock`. If at least one supported device from a provider has a specific capability, the corresponding capability flag is `true`.\n\nWhen you create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews), you can customize the providers—that is, the brands—that it displays. In the `/connect_webviews/create` request, include the desired set of device provider keys in the `accepted_providers` parameter. See also [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -40223,7 +40223,7 @@
           "jsonType": "string"
         }
       ],
-      "description": "Represents a [Connect Webview](../core-concepts/connect-webviews/README.md).\n\nConnect Webviews are fully-embedded client-side components that you add to your app. Your users interact with your embedded Connect Webviews to link their IoT device or system accounts to Seam. That is, Connect Webviews walk your users through the process of logging in to their device or system accounts. Seam handles all the authentication steps, and—once your user has completed the authorization through your app—you can access and control their devices or systems using the Seam API.\n\nConnect Webviews perform credential validation, multifactor authentication (when applicable), and error handling for each brand that Seam supports. Further, Connect Webviews work across all modern browsers and platforms, including Chrome, Safari, and Firefox.\n\nTo enable a user to connect their device or system account to Seam through your app, first create a `connect_webview`. Once created, this `connect_webview` includes a URL that you can use to open an [iframe](https://www.w3schools.com/html/html_iframe.asp) or new window containing the Connect Webview for your user.\n\nWhen you create a Connect Webview, specify the desired provider category key in the `provider_category` parameter. Alternately, to specify a list of providers explicitly, use the `accepted_providers` parameter with a list of device provider keys.\n\nTo list all providers within a category, use `/devices/list_device_providers` with the desired `provider_category` filter. To list all provider keys, use `/devices/list_device_providers` with no filters.",
+      "description": "Represents a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).\n\nConnect Webviews are fully-embedded client-side components that you add to your app. Your users interact with your embedded Connect Webviews to link their IoT device or system accounts to Seam. That is, Connect Webviews walk your users through the process of logging in to their device or system accounts. Seam handles all the authentication steps, and—once your user has completed the authorization through your app—you can access and control their devices or systems using the Seam API.\n\nConnect Webviews perform credential validation, multifactor authentication (when applicable), and error handling for each brand that Seam supports. Further, Connect Webviews work across all modern browsers and platforms, including Chrome, Safari, and Firefox.\n\nTo enable a user to connect their device or system account to Seam through your app, first create a `connect_webview`. Once created, this `connect_webview` includes a URL that you can use to open an [iframe](https://www.w3schools.com/html/html_iframe.asp) or new window containing the Connect Webview for your user.\n\nWhen you create a Connect Webview, specify the desired provider category key in the `provider_category` parameter. Alternately, to specify a list of providers explicitly, use the `accepted_providers` parameter with a list of device provider keys.\n\nTo list all providers within a category, use `/devices/list_device_providers` with the desired `provider_category` filter. To list all provider keys, use `/devices/list_device_providers` with no filters.",
       "isDeprecated": false,
       "routePath": "/connect_webviews",
       "deprecationMessage": "",

@@ -11,55 +11,45 @@ A thermostat [climate preset](../../capability-guides/thermostats/creating-and-m
 
 <summary>Properties</summary>
 
-- <strong><code>climate_preset_key</code></strong> <i>String</i>
+<strong><code>climate_preset_key</code></strong> <i>String</i>
 
   Key of the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) that was activated.
 
-
-- <strong><code>connected_account_id</code></strong> <i>UUID</i>
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
-
-- <strong><code>created_at</code></strong> <i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
-
-- <strong><code>device_id</code></strong> <i>UUID</i>
+<strong><code>device_id</code></strong> <i>UUID</i>
 
   ID of the device.
 
-
-- <strong><code>event_id</code></strong> <i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.
 
-
-- <strong><code>event_type</code></strong> <i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
   Value: `thermostat.climate_preset_activated`
 
-
-- <strong><code>is_fallback_climate_preset</code></strong> <i>Boolean</i>
+<strong><code>is_fallback_climate_preset</code></strong> <i>Boolean</i>
 
   Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) that was activated is the [fallback climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset.md) for the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-
-- <strong><code>occurred_at</code></strong> <i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
-
-- <strong><code>thermostat_schedule_id</code></strong> <i>UUID</i>
+<strong><code>thermostat_schedule_id</code></strong> <i>UUID</i>
 
   ID of the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) that prompted the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to be activated.
 
-
-- <strong><code>workspace_id</code></strong> <i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
-
 </details>
 
 ---
@@ -72,42 +62,35 @@ A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was ad
 
 <summary>Properties</summary>
 
-- <strong><code>connected_account_id</code></strong> <i>UUID</i>
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
-
-- <strong><code>cooling_set_point_celsius</code></strong> <i>Number</i>
+<strong><code>cooling_set_point_celsius</code></strong> <i>Number</i>
 
   Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
-
-- <strong><code>cooling_set_point_fahrenheit</code></strong> <i>Number</i>
+<strong><code>cooling_set_point_fahrenheit</code></strong> <i>Number</i>
 
   Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
-
-- <strong><code>created_at</code></strong> <i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
-
-- <strong><code>device_id</code></strong> <i>UUID</i>
+<strong><code>device_id</code></strong> <i>UUID</i>
 
   ID of the device.
 
-
-- <strong><code>event_id</code></strong> <i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.
 
-
-- <strong><code>event_type</code></strong> <i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
   Value: `thermostat.manually_adjusted`
 
-
-- <strong><code>fan_mode_setting</code></strong> <i>Enum</i>
+<strong><code>fan_mode_setting</code></strong> <i>Enum</i>
 
   Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
 <details>
@@ -118,18 +101,15 @@ A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was ad
     - <code>circulate`</code>
 </details>
 
-
-- <strong><code>heating_set_point_celsius</code></strong> <i>Number</i>
+<strong><code>heating_set_point_celsius</code></strong> <i>Number</i>
 
   Temperature to which the thermostat should heat (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
-
-- <strong><code>heating_set_point_fahrenheit</code></strong> <i>Number</i>
+<strong><code>heating_set_point_fahrenheit</code></strong> <i>Number</i>
 
   Temperature to which the thermostat should heat (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
-
-- <strong><code>hvac_mode_setting</code></strong> <i>Enum</i>
+<strong><code>hvac_mode_setting</code></strong> <i>Enum</i>
 
   Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
 <details>
@@ -141,8 +121,7 @@ A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was ad
     - <code>heat_cool`</code>
 </details>
 
-
-- <strong><code>method</code></strong> <i>Enum</i>
+<strong><code>method</code></strong> <i>Enum</i>
 
   Method used to adjust the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) manually. `seam` indicates that the Seam API, Seam CLI, or Seam Console was used to adjust the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 <details>
@@ -152,16 +131,13 @@ A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was ad
     - <code>external`</code>
 </details>
 
-
-- <strong><code>occurred_at</code></strong> <i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
-
-- <strong><code>workspace_id</code></strong> <i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
-
 </details>
 
 ---
@@ -174,70 +150,57 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temp
 
 <summary>Properties</summary>
 
-- <strong><code>connected_account_id</code></strong> <i>UUID</i>
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
-
-- <strong><code>created_at</code></strong> <i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
-
-- <strong><code>device_id</code></strong> <i>UUID</i>
+<strong><code>device_id</code></strong> <i>UUID</i>
 
   ID of the device.
 
-
-- <strong><code>event_id</code></strong> <i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.
 
-
-- <strong><code>event_type</code></strong> <i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
   Value: `thermostat.temperature_threshold_exceeded`
 
-
-- <strong><code>lower_limit_celsius</code></strong> <i>Number</i>
+<strong><code>lower_limit_celsius</code></strong> <i>Number</i>
 
   Lower temperature limit, in °C, defined by the set [threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md).
 
-
-- <strong><code>lower_limit_fahrenheit</code></strong> <i>Number</i>
+<strong><code>lower_limit_fahrenheit</code></strong> <i>Number</i>
 
   Lower temperature limit, in °F, defined by the set [threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md).
 
-
-- <strong><code>occurred_at</code></strong> <i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
-
-- <strong><code>temperature_celsius</code></strong> <i>Number</i>
+<strong><code>temperature_celsius</code></strong> <i>Number</i>
 
   Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-
-- <strong><code>temperature_fahrenheit</code></strong> <i>Number</i>
+<strong><code>temperature_fahrenheit</code></strong> <i>Number</i>
 
   Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-
-- <strong><code>upper_limit_celsius</code></strong> <i>Number</i>
+<strong><code>upper_limit_celsius</code></strong> <i>Number</i>
 
   Upper temperature limit, in °C, defined by the set [threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md).
 
-
-- <strong><code>upper_limit_fahrenheit</code></strong> <i>Number</i>
+<strong><code>upper_limit_fahrenheit</code></strong> <i>Number</i>
 
   Upper temperature limit, in °F, defined by the set [threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md).
 
-
-- <strong><code>workspace_id</code></strong> <i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
-
 </details>
 
 ---
@@ -250,70 +213,57 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temp
 
 <summary>Properties</summary>
 
-- <strong><code>connected_account_id</code></strong> <i>UUID</i>
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
-
-- <strong><code>created_at</code></strong> <i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
-
-- <strong><code>device_id</code></strong> <i>UUID</i>
+<strong><code>device_id</code></strong> <i>UUID</i>
 
   ID of the device.
 
-
-- <strong><code>event_id</code></strong> <i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.
 
-
-- <strong><code>event_type</code></strong> <i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
   Value: `thermostat.temperature_threshold_no_longer_exceeded`
 
-
-- <strong><code>lower_limit_celsius</code></strong> <i>Number</i>
+<strong><code>lower_limit_celsius</code></strong> <i>Number</i>
 
   Lower temperature limit, in °C, defined by the set [threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md).
 
-
-- <strong><code>lower_limit_fahrenheit</code></strong> <i>Number</i>
+<strong><code>lower_limit_fahrenheit</code></strong> <i>Number</i>
 
   Lower temperature limit, in °F, defined by the set [threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md).
 
-
-- <strong><code>occurred_at</code></strong> <i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
-
-- <strong><code>temperature_celsius</code></strong> <i>Number</i>
+<strong><code>temperature_celsius</code></strong> <i>Number</i>
 
   Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-
-- <strong><code>temperature_fahrenheit</code></strong> <i>Number</i>
+<strong><code>temperature_fahrenheit</code></strong> <i>Number</i>
 
   Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-
-- <strong><code>upper_limit_celsius</code></strong> <i>Number</i>
+<strong><code>upper_limit_celsius</code></strong> <i>Number</i>
 
   Upper temperature limit, in °C, defined by the set [threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md).
 
-
-- <strong><code>upper_limit_fahrenheit</code></strong> <i>Number</i>
+<strong><code>upper_limit_fahrenheit</code></strong> <i>Number</i>
 
   Upper temperature limit, in °F, defined by the set [threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md).
 
-
-- <strong><code>workspace_id</code></strong> <i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
-
 </details>
 
 ---
@@ -326,60 +276,49 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temp
 
 <summary>Properties</summary>
 
-- <strong><code>connected_account_id</code></strong> <i>UUID</i>
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
-
-- <strong><code>created_at</code></strong> <i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
-
-- <strong><code>desired_temperature_celsius</code></strong> <i>Number</i>
+<strong><code>desired_temperature_celsius</code></strong> <i>Number</i>
 
   Desired temperature, in °C, defined by the [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) cooling or heating [set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
-
-- <strong><code>desired_temperature_fahrenheit</code></strong> <i>Number</i>
+<strong><code>desired_temperature_fahrenheit</code></strong> <i>Number</i>
 
   Desired temperature, in °F, defined by the [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) cooling or heating [set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
-
-- <strong><code>device_id</code></strong> <i>UUID</i>
+<strong><code>device_id</code></strong> <i>UUID</i>
 
   ID of the device.
 
-
-- <strong><code>event_id</code></strong> <i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.
 
-
-- <strong><code>event_type</code></strong> <i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
   Value: `thermostat.temperature_reached_set_point`
 
-
-- <strong><code>occurred_at</code></strong> <i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
-
-- <strong><code>temperature_celsius</code></strong> <i>Number</i>
+<strong><code>temperature_celsius</code></strong> <i>Number</i>
 
   Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-
-- <strong><code>temperature_fahrenheit</code></strong> <i>Number</i>
+<strong><code>temperature_fahrenheit</code></strong> <i>Number</i>
 
   Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-
-- <strong><code>workspace_id</code></strong> <i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
-
 </details>
 
 ---
@@ -392,50 +331,41 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) repo
 
 <summary>Properties</summary>
 
-- <strong><code>connected_account_id</code></strong> <i>UUID</i>
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md).
 
-
-- <strong><code>created_at</code></strong> <i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
-
-- <strong><code>device_id</code></strong> <i>UUID</i>
+<strong><code>device_id</code></strong> <i>UUID</i>
 
   ID of the device.
 
-
-- <strong><code>event_id</code></strong> <i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.
 
-
-- <strong><code>event_type</code></strong> <i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
   Value: `thermostat.temperature_changed`
 
-
-- <strong><code>occurred_at</code></strong> <i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
-
-- <strong><code>temperature_celsius</code></strong> <i>Number</i>
+<strong><code>temperature_celsius</code></strong> <i>Number</i>
 
   Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-
-- <strong><code>temperature_fahrenheit</code></strong> <i>Number</i>
+<strong><code>temperature_fahrenheit</code></strong> <i>Number</i>
 
   Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-
-- <strong><code>workspace_id</code></strong> <i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
-
 </details>
 
 ---

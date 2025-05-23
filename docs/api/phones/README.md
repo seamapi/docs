@@ -184,35 +184,29 @@ A phone device was deactivated.
 
 <summary>Properties</summary>
 
-- <strong><code>created_at</code></strong> <i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
-
-- <strong><code>device_id</code></strong> <i>UUID</i>
+<strong><code>device_id</code></strong> <i>UUID</i>
 
   ID of the [device](../../core-concepts/devices/README.md).
 
-
-- <strong><code>event_id</code></strong> <i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.
 
-
-- <strong><code>event_type</code></strong> <i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
   Value: `phone.deactivated`
 
-
-- <strong><code>occurred_at</code></strong> <i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
-
-- <strong><code>workspace_id</code></strong> <i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
   ID of the [workspace](../../core-concepts/workspaces/README.md).
-
 </details>
 
 ---
