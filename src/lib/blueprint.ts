@@ -1,11 +1,16 @@
 import { createBlueprint, TypesModuleSchema } from '@seamapi/blueprint'
-import * as types from '@seamapi/types/connect'
 import type Metalsmith from 'metalsmith'
 
 import { formatCode, formatJson } from './format-code.js'
 
 export const blueprint =
-  ({ skipCodeFormat = false }) =>
+  ({
+    types,
+    skipCodeFormat = false,
+  }: {
+    types: unknown
+    skipCodeFormat: boolean
+  }) =>
   async (files: Metalsmith.Files, metalsmith: Metalsmith): Promise<void> => {
     const metadata = metalsmith.metadata()
 
@@ -18,7 +23,7 @@ export const blueprint =
         : []
 
     const typesModule = TypesModuleSchema.parse({
-      ...types,
+      ...(typeof types === 'object' ? types : {}),
       codeSampleDefinitions,
       resourceSampleDefinitions,
     })

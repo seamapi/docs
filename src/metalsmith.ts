@@ -2,6 +2,7 @@ import { dirname } from 'node:path'
 import { env } from 'node:process'
 import { fileURLToPath } from 'node:url'
 
+import * as types from '@seamapi/types/connect'
 import layouts from '@metalsmith/layouts'
 import metadata from '@metalsmith/metadata'
 import { getHandlebarsPartials } from '@seamapi/smith'
@@ -33,7 +34,7 @@ Metalsmith(rootDir)
       pathMetadata: './data/paths.yaml',
     }),
   )
-  .use(blueprint({ skipCodeFormat: env['SKIP_CODE_FORMAT'] != null }))
+  .use(blueprint({ types, skipCodeFormat: env['SKIP_CODE_FORMAT'] != null }))
   .use(reference)
   .use(report)
   .use(
