@@ -4,12 +4,13 @@ import { fileURLToPath } from 'node:url'
 
 import layouts from '@metalsmith/layouts'
 import metadata from '@metalsmith/metadata'
+import { blueprint, getHandlebarsPartials } from '@seamapi/smith'
+import * as types from '@seamapi/types/connect'
 import { deleteAsync } from 'del'
 import Metalsmith from 'metalsmith'
 
 import {
-  blueprint,
-  getHandlebarsPartials,
+  formatCode,
   helpers,
   postprocess,
   reference,
@@ -33,7 +34,13 @@ Metalsmith(rootDir)
       pathMetadata: './data/paths.yaml',
     }),
   )
-  .use(blueprint({ skipCodeFormat: env['SKIP_CODE_FORMAT'] != null }))
+  .use(
+    blueprint({
+      types,
+      formatCode,
+      skipCodeFormat: env['SKIP_CODE_FORMAT'] != null,
+    }),
+  )
   .use(reference)
   .use(report)
   .use(

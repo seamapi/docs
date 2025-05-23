@@ -50,18 +50,16 @@ interface ParameterReportItem {
   params: ReportItem[]
 }
 
-type Metadata = Partial<Pick<Blueprint, 'routes' | 'resources'>>
+interface Metadata {
+  blueprint: Pick<Blueprint, 'routes' | 'resources'>
+  pathMetadata: unknown
+}
 
 export const report = (
   files: Metalsmith.Files,
   metalsmith: Metalsmith,
 ): void => {
-  const metadata = {
-    title: '',
-    routes: [],
-    resources: {},
-    ...(metalsmith.metadata() as Metadata),
-  }
+  const metadata = metalsmith.metadata() as Metadata
 
   const reportData = generateReport(metadata)
 
@@ -70,9 +68,15 @@ export const report = (
     layout: 'report.hbs',
     ...reportData,
   }
+
+  files['api/_blueprint.json'] = {
+    contents: Buffer.from(JSON.stringify(metadata.blueprint, null, 2)),
+    layout: 'default.hbs',
+  }
 }
 
 function generateReport(metadata: Metadata): Report {
+  const { blueprint } = metadata
   const report: Report = {
     undocumented: createEmptyReportSection(),
     noDescription: { ...createEmptyReportSection(), resources: [] },
@@ -87,12 +91,12 @@ function generateReport(metadata: Metadata): Report {
     },
   }
 
-  const resources = metadata.resources ?? {}
+  const resources = blueprint.resources ?? {}
   for (const [resourceName, resource] of Object.entries(resources)) {
     processResource(resourceName, resource, report)
   }
 
-  const routes = metadata.routes ?? []
+  const routes = blueprint.routes ?? []
   for (const route of routes) {
     processRoute(route, report, metadata)
   }

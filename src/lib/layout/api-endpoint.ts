@@ -1,12 +1,12 @@
 import type {
   ActionAttempt,
+  CodeSample,
   Endpoint,
   Parameter,
   SdkName,
   SeamAuthMethod,
   SeamWorkspaceScope,
 } from '@seamapi/blueprint'
-import type { CodeSample } from 'node_modules/@seamapi/blueprint/dist/index.cjs'
 
 import {
   type ApiRouteResource,

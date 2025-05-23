@@ -11,7 +11,10 @@ import {
 } from './layout/index.js'
 import { PathMetadataSchema } from './path-metadata.js'
 
-type Metadata = Partial<Pick<Blueprint, 'routes' | 'resources'>>
+interface Metadata {
+  blueprint: Blueprint
+  pathMetadata: unknown
+}
 
 type File = ApiEndpointLayoutContext &
   ApiRouteLayoutContext &
@@ -32,15 +35,7 @@ export const reference = (
       ? PathMetadataSchema.parse(metadata.pathMetadata)
       : {}
 
-  const blueprint: Blueprint = {
-    title: '',
-    routes: [],
-    resources: {},
-    events: [],
-    actionAttempts: [],
-    pagination: null,
-    ...metadata,
-  }
+  const { blueprint } = metadata
 
   const namespacePaths = getNamespacePaths(blueprint.routes)
   for (const path of namespacePaths) {
