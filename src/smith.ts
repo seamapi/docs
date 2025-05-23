@@ -45,6 +45,7 @@ Metalsmith(rootDir)
   .use(report)
   .use(
     layouts({
+      default: 'default.hbs',
       engineOptions: {
         noEscape: true,
         helpers,
