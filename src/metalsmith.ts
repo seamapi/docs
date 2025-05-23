@@ -2,6 +2,7 @@ import { dirname } from 'node:path'
 import { env } from 'node:process'
 import { fileURLToPath } from 'node:url'
 
+import { getHandlebarsPartials } from '@seamapi/smith'
 import layouts from '@metalsmith/layouts'
 import metadata from '@metalsmith/metadata'
 import { deleteAsync } from 'del'
@@ -9,7 +10,6 @@ import Metalsmith from 'metalsmith'
 
 import {
   blueprint,
-  getHandlebarsPartials,
   helpers,
   postprocess,
   reference,
