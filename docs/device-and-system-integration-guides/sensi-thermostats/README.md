@@ -16,9 +16,7 @@ Sensi produces smart thermostats for home and light commercial climate control. 
 
 This integration supports all [Sensi thermostats](https://sensi.copeland.com/en-us/products).
 
-For detailed information about the Sensi devices that Seam supports, see the following table and our [Sensi Supported Devices page](https://www.seam.co/manufacturers/sensi):
-
-\{% @seam-gitbook-plugin-v2/seam-component content="" %\}
+For detailed information about the Sensi devices that Seam supports, see our [Sensi Supported Devices page](https://www.seam.co/manufacturers/sensi).
 
 ***
 

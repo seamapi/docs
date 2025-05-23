@@ -14,14 +14,7 @@ Seam provides a universal API to connect and control many brands of IoT devices 
 
 This guide gives you a rapid introduction to connecting and controlling your [Honeywell Resideo](https://www.seam.co/manufacturers/honeywell) thermostats using the Seam API. For application developers, you can use the Seam API in your app, and your users can authorize your app to control their devices using Seam.
 
-For detailed information about the Honeywell Resideo devices that Seam supports, see the following table and our [Honeywell Resideo Supported Devices page](https://www.seam.co/manufacturers/honeywell):
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["Honeywell"]'
-/>" %}
+For detailed information about the Honeywell Resideo devices that Seam supports, see our [Honeywell Resideo Supported Devices page](https://www.seam.co/manufacturers/honeywell).
 
 To learn more about other IoT device and system brands that Seam supports—such as ecobee, Google Nest, Yale, Schlage, and many more—visit our [integration page](https://www.seam.co/supported-devices-and-systems).
 

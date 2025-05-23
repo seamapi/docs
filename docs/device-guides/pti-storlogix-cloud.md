@@ -14,14 +14,7 @@ This integration uses [Storlogix Cloud](https://ptisecurity.com/products/storlog
 
 Seam integrates with any site that has Storlogix Cloud installed.
 
-For detailed information about the PTI devices that Seam supports, see the following table and our [PTI Supported Devices page](https://www.seam.co/manufacturers/pti):
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["PTI"]'
-/>" %}
+For detailed information about the PTI devices that Seam supports, see our [PTI Supported Devices page](https://www.seam.co/manufacturers/pti).
 
 ***
 

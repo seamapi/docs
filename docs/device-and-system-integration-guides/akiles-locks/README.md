@@ -20,14 +20,7 @@ The following table details the requirements for compatibility with this Seam in
 
 <table><thead><tr><th width="315">Capability</th><th>Required Accessories</th></tr></thead><tbody><tr><td>Remote unlock</td><td><ul><li>Akiles Gateway</li></ul></td></tr><tr><td>Access codes</td><td><ul><li>Akiles Gateway</li><li>Akiles Pinpad (if the device does not have an integrated keypad)</li></ul></td></tr></tbody></table>
 
-For detailed information about the Akiles devices that Seam supports, see the following table and our [Akiles Supported Devices page](https://www.seam.co/manufacturers/akiles):
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["Akiles"]'
-/>" %}
+For detailed information about the Akiles devices that Seam supports, see our [Akiles Supported Devices page](https://www.seam.co/manufacturers/akiles):
 
 ***
 

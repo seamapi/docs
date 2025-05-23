@@ -12,9 +12,7 @@ Seam provides a universal API to connect and control many brands of IoT devices 
 
 This guide gives you a rapid introduction to connecting and controlling your [Sensi](https://www.seam.co/manufacturers/sensi) thermostats using the Seam API. For application developers, you can use the Seam API in your app, and your users can authorize your app to control their devices using Seam.
 
-For detailed information about the Sensi devices that Seam supports, see the following table and our [Sensi Supported Devices page](https://www.seam.co/manufacturers/sensi):
-
-\{% @seam-gitbook-plugin-v2/seam-component content="" %\}
+For detailed information about the Sensi devices that Seam supports, see our [Sensi Supported Devices page](https://www.seam.co/manufacturers/sensi).
 
 To learn more about other IoT device and system brands that Seam supports—such as ecobee, Honeywell Resideo, Google Nest, Yale, Schlage, and many more—visit our [integration page](https://www.seam.co/supported-devices-and-systems).
 

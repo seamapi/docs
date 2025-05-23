@@ -12,14 +12,7 @@ Seam provides a universal API to connect and control many brands of IoT devices 
 
 This guide gives you a rapid introduction to connecting and controlling your [ecobee](https://www.seam.co/manufacturers/ecobee) thermostats using the Seam API. For application developers, you can use the Seam API in your app, and your users can authorize your app to control their devices using Seam.
 
-For detailed information about the ecobee devices that Seam supports, see the following table and our [ecobee Supported Devices page](https://www.seam.co/manufacturers/ecobee):
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["ecobee"]'
-/>" %}
+For detailed information about the ecobee devices that Seam supports, see our [ecobee Supported Devices page](https://www.seam.co/manufacturers/ecobee).
 
 To learn more about other IoT device and system brands that Seam supports—such as Honeywell Resideo, Google Nest, Yale, Schlage, and many more—visit our [integration page](https://www.seam.co/supported-devices-and-systems).
 
