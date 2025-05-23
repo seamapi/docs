@@ -28,6 +28,17 @@ Metalsmith(rootDir)
   .destination('../docs')
   .clean(false)
   .use(
+    layouts({
+      default: 'default.hbs',
+      transform: 'handlebars',
+      engineOptions: {
+        noEscape: true,
+        helpers,
+        partials,
+      },
+    }),
+  )
+  .use(
     metadata({
       codeSampleDefinitions: './data/code-sample-definitions',
       resourceSampleDefinitions: './data/resource-sample-definitions',
@@ -43,17 +54,6 @@ Metalsmith(rootDir)
   )
   .use(reference)
   .use(report)
-  .use(
-    layouts({
-      default: 'default.hbs',
-      transform: 'handlebars',
-      engineOptions: {
-        noEscape: true,
-        helpers,
-        partials,
-      },
-    }),
-  )
   .use(postprocess)
   .build((err) => {
     if (err != null) throw err
