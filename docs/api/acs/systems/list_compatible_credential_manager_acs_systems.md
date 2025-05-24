@@ -29,7 +29,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_system_id`**  (Required)
+**`acs_system_id`** *string* (Required)
 
 ID of the access system for which you want to retrieve all compatible credential manager systems.
 

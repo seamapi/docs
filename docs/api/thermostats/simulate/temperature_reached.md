@@ -27,19 +27,19 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`device_id`**  (Required)
+**`device_id`** *string* (Required)
 
 ID of the desired thermostat device.
 
 ---
 
-**`temperature_celsius`** 
+**`temperature_celsius`** *number*
 
 Desired simulated temperature in °C. You must set `temperature_celsius` or `temperature_fahrenheit`.
 
 ---
 
-**`temperature_fahrenheit`** 
+**`temperature_fahrenheit`** *number*
 
 Desired simulated temperature in °F. You must set `temperature_fahrenheit` or `temperature_celsius`.
 

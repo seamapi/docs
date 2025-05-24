@@ -36,65 +36,65 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`device_ids`**  *of UUIDs* (Required)
+**`device_ids`** *array* *of UUIDs* (Required)
 
 IDs of the devices for which you want to create the new access codes.
 
 ---
 
-**`allow_external_modification`** 
+**`allow_external_modification`** *boolean*
 
 Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.
 
 ---
 
-**`attempt_for_offline_device`** 
+**`attempt_for_offline_device`** *boolean*
 
 ---
 
-**`behavior_when_code_cannot_be_shared`** 
+**`behavior_when_code_cannot_be_shared`** *string*
 
 Desired behavior if any device cannot share a code. If `throw` (default), no access codes will be created if any device cannot share a code. If `create_random_code`, a random code will be created on devices that cannot share a code.
 
 ---
 
-**`code`** 
+**`code`** *string*
 
 Code to be used for access.
 
 ---
 
-**`ends_at`** 
+**`ends_at`** *string*
 
 Date and time at which the validity of the new access code ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
 
 ---
 
-**`is_external_modification_allowed`** 
+**`is_external_modification_allowed`** *boolean*
 
 Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.
 
 ---
 
-**`is_offline_access_code`** 
+**`is_offline_access_code`** *boolean*
 
 Indicates whether the access code is an [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes).
 
 ---
 
-**`is_one_time_use`** 
+**`is_one_time_use`** *boolean*
 
 Indicates whether the [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) is a single-use access code.
 
 ---
 
-**`max_time_rounding`** 
+**`max_time_rounding`** *string*
 
 Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.
 
 ---
 
-**`name`** 
+**`name`** *string*
 
 Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
       
@@ -106,31 +106,31 @@ Name of the new access code. Enables administrators and users to identify the ac
 
 ---
 
-**`prefer_native_scheduling`** 
+**`prefer_native_scheduling`** *boolean*
 
 Indicates whether [native scheduling](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`.
 
 ---
 
-**`preferred_code_length`** 
+**`preferred_code_length`** *number*
 
 Preferred code length. Only applicable if you do not specify a `code`. If the affected device does not support the preferred code length, Seam reverts to using the shortest supported code length.
 
 ---
 
-**`starts_at`** 
+**`starts_at`** *string*
 
 Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 ---
 
-**`use_backup_access_code_pool`** 
+**`use_backup_access_code_pool`** *boolean*
 
 Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](../../api-clients/access_codes/pull_backup_access_code.md).
 
 ---
 
-**`use_offline_access_code`** 
+**`use_offline_access_code`** *boolean*
 
 ---
 

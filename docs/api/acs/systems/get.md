@@ -27,7 +27,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_system_id`**  (Required)
+**`acs_system_id`** *string* (Required)
 
 ID of the access system that you want to get.
 

@@ -27,29 +27,29 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`user_identity_id`**  (Required)
+**`user_identity_id`** *string* (Required)
 
 ID of the user identity.
 
 ---
 
-**`email_address`** 
+**`email_address`** *string*
 
 Unique email address for the user identity.
 
 ---
 
-**`full_name`** 
+**`full_name`** *string*
 
 ---
 
-**`phone_number`** 
+**`phone_number`** *string*
 
 Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).
 
 ---
 
-**`user_identity_key`** 
+**`user_identity_key`** *string*
 
 Unique key for the user identity.
 

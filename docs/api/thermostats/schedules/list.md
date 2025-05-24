@@ -28,13 +28,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`device_id`**  (Required)
+**`device_id`** *string* (Required)
 
 ID of the desired thermostat device.
 
 ---
 
-**`user_identifier_key`** 
+**`user_identifier_key`** *string*
 
 User identifier key by which to filter the list of returned thermostat schedules.
 

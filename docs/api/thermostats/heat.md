@@ -28,19 +28,19 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`device_id`**  (Required)
+**`device_id`** *string* (Required)
 
 ID of the thermostat device that you want to set to heat mode.
 
 ---
 
-**`heating_set_point_celsius`** 
+**`heating_set_point_celsius`** *number*
 
 Desired [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `heating_set_point` parameters.
 
 ---
 
-**`heating_set_point_fahrenheit`** 
+**`heating_set_point_fahrenheit`** *number*
 
 Desired [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `heating_set_point` parameters.
 

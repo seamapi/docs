@@ -27,31 +27,31 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`credential_manager_acs_system_id`**  (Required)
+**`credential_manager_acs_system_id`** *string* (Required)
 
 ID of the desired ACS system that serves as the credential manager.
 
 ---
 
-**`user_identity_id`**  (Required)
+**`user_identity_id`** *string* (Required)
 
 ID of the desired user identity.
 
 ---
 
-**`acs_credential_pool_id`** 
+**`acs_credential_pool_id`** *string*
 
 ID of the ACS credential pool from which to obtain credentials for the user identity.
 
 ---
 
-**`create_credential_manager_user`** 
+**`create_credential_manager_user`** *boolean*
 
 Indicates whether to create an associated credential manager user. If you set `create_credential_manager_user` to `true`, you cannot specify a `credential_manager_acs_user_id`.
 
 ---
 
-**`credential_manager_acs_user_id`** 
+**`credential_manager_acs_user_id`** *string*
 
 ID of the associated ACS user within the credential manager. If you specify a `credential_manager_acs_user_id`, you cannot set `create_credential_manager_user` to `true`.
 

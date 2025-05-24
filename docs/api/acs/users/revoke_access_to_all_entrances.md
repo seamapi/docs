@@ -27,7 +27,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_user_id`**  (Required)
+**`acs_user_id`** *string* (Required)
 
 ID of the access system user for whom you want to revoke access.
 
