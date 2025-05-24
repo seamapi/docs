@@ -20,14 +20,7 @@ Seam supports two integrations for Salto KS. We recommend using the [Salto KS ac
 
 This integration works any devices connected via their [Salto KS platform](https://saltoks.com/).
 
-For detailed information about the Salto devices that Seam supports, see the following table and our [Salto Supported Devices page](https://www.seam.co/manufacturers/salto):
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["Salto"]'
-/>" %}
+For detailed information about the Salto devices that Seam supports, see our [Salto Supported Devices page](https://www.seam.co/manufacturers/salto).
 
 ***
 
@@ -42,7 +35,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../capability-guides/device-and-system-capabilities/connect-webviews/) that enables your users to connect their Salto devices to Seam, include the `salto` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../capability-guides/device-and-system-capabilities/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their Salto devices to Seam, include the `salto` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -78,7 +71,7 @@ To control Salto KS devices using Seam, you must prompt owners of these devices 
 
 1. Create an account in the [Salto KS app](https://app.saltoks.com/) if you have not done so already.
 2. In the Salto KS app, add your Salto KS devices.
-3. Note your login credentials for the Salto KS app, and use these credentials to log in to the [Seam Connect Webview](../capability-guides/device-and-system-capabilities/connect-webviews/) to add your devices to Seam.
+3. Note your login credentials for the Salto KS app, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
    *   During the Connect Webview process, click **Allow and Continue** to confirm that you will allow Seam to add the requisite admin user to your Salto KS site for the integration with Seam.
 
        {% hint style="warning" %}

@@ -24,14 +24,7 @@ The following table details the requirements for compatibility with this Seam in
 
 <table><thead><tr><th width="187.33333333333331">Product Models</th><th>Compatibility</th><th>Accessories</th></tr></thead><tbody><tr><td><a href="https://august.com/products/august-wifi-smart-lock">Wi-Fi Smart Lock</a></td><td>Compatible</td><td><ul><li>Smart Keypad (optional)</li></ul></td></tr><tr><td><a href="https://august.com/products/august-smart-lock-pro-connect">Smart Lock Pro</a></td><td>Compatible only with Connect Wi-Fi Bridge</td><td><ul><li>Connect Wi-Fi Bridge</li><li>Smart Keypad (optional)</li></ul></td></tr><tr><td><a href="https://august.com/products/august-smart-lock-connect">Smart Lock</a></td><td>Compatible only with Connect Wi-Fi Bridge</td><td><ul><li>Connect Wi-Fi Bridge</li><li>Smart Keypad (optional)</li></ul></td></tr></tbody></table>
 
-For detailed information about the August devices that Seam supports, see the following table and our [August Supported Devices page](https://www.seam.co/manufacturers/august):
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["August"]'
-/>" %}
+For detailed information about the August devices that Seam supports, see our [August Supported Devices page](https://www.seam.co/manufacturers/august):
 
 ***
 
@@ -46,7 +39,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../capability-guides/device-and-system-capabilities/connect-webviews/) that enables your users to connect their August devices to Seam, include the `august` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../capability-guides/device-and-system-capabilities/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their August devices to Seam, include the `august` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -56,7 +49,7 @@ To control August devices using Seam, you must prompt owners of these devices to
 
 1. Create an account in the [August Home App](https://august.com/pages/app) if you have not done so already.
 2. In the August Home App, add your August devices.
-3. Note your login credentials for the August Home App, and use these credentials to log in to the [Seam Connect Webview](../capability-guides/device-and-system-capabilities/connect-webviews/) to add your devices to Seam.
+3. Note your login credentials for the August Home App, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
 
 ***
 

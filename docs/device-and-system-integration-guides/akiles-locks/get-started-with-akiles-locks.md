@@ -12,14 +12,7 @@ Seam provides a universal API to connect and control many brands of IoT devices 
 
 This guide gives you a rapid introduction to connecting and controlling your [Akiles lock](./) using the Seam API. For application developers, you can use the Seam API in your app, and your users can authorize your app to control their devices using Seam.
 
-For detailed information about the Akiles devices that Seam supports, see the following table and our [Akiles Supported Devices page](https://www.seam.co/manufacturers/akiles):
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["Akiles"]'
-/>" %}
+For detailed information about the Akiles devices that Seam supports, see our [Akiles Supported Devices page](https://www.seam.co/manufacturers/akiles).
 
 To learn more about other IoT device and system brands that Seam supports—such as Yale, Schlage, Google Nest, and many more—visit our [integration page](https://www.seam.co/supported-devices-and-systems).
 
@@ -122,7 +115,7 @@ This guide uses a [sandbox workspace](../../core-concepts/workspaces/#sandbox-wo
 
 ## Step 2: Link your Akiles account with Seam
 
-To control your Akiles lock using the Seam API, you must first authorize your Seam workspace to connect to your Akiles account. If your application needs to connect to your users' Akiles accounts, Seam provides fully-embedded, [customizable](../../capability-guides/device-and-system-capabilities/connect-webviews/customizing-connect-webviews.md) client-side [Connect Webviews](../../capability-guides/device-and-system-capabilities/connect-webviews/) to collect their authorization securely. These user-friendly pre-built authorization flows walk your users through the process of granting your Seam workspace permission to control their Akiles locks. The Connect Webview presents a flow that prompts your users to enter their credentials for their Akiles account.
+To control your Akiles lock using the Seam API, you must first authorize your Seam workspace to connect to your Akiles account. If your application needs to connect to your users' Akiles accounts, Seam provides fully-embedded, [customizable](../../core-concepts/connect-webviews/customizing-connect-webviews.md) client-side [Connect Webviews](../../core-concepts/connect-webviews/) to collect their authorization securely. These user-friendly pre-built authorization flows walk your users through the process of granting your Seam workspace permission to control their Akiles locks. The Connect Webview presents a flow that prompts your users to enter their credentials for their Akiles account.
 
 In this guide, you create a Connect Webview object. Then, you display the graphical component of the created Connect Webview and enter a set of sample credentials to connect a sandbox Akiles account.
 
@@ -970,7 +963,7 @@ true
 
 Next, you can use the Seam API to control your lock.
 
-Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use, such as [remote unlock actions](../../products/smart-locks/lock-and-unlock.md), [programming access codes](../../products/smart-locks/access-codes/), and so on. Seam's intuitive and granular [capability flags](../../capability-guides/device-and-system-capabilities/#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
+Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use, such as [remote unlock actions](../../products/smart-locks/lock-and-unlock.md), [programming access codes](../../products/smart-locks/access-codes/), and so on. Seam's intuitive and granular [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
 
 Try out the following actions on your Akiles lock:
 
@@ -1913,7 +1906,7 @@ Now that you've completed this getting started guide for Akiles devices, you can
 * [ ] **Explore**\
   See the [other devices and system integrations](../overview.md) that Seam supports.
 * [ ] **Learn**\
-  Read about Seam [concepts](../../device-guides/broken-reference/) and the [device and system capabilities ](../../capability-guides/device-and-system-capabilities/)that Seam supports.
+  Read about Seam [concepts](../../device-guides/broken-reference/) and the [device and system capabilities ](../../capability-guides/device-and-system-capabilities.md)that Seam supports.
 * [ ] **Use Seam Components**\
   Find out about [Seam Components](../../seam-components/overview/), which are prebuilt UI components for building your device management flow.
 * [ ] **Use webhooks**\

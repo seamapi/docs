@@ -6,7 +6,7 @@ description: >-
 
 # Connected Accounts
 
-Once your user uses a [Connect Webview](../../capability-guides/device-and-system-capabilities/connect-webviews/) to authorize Seam to control their devices, Seam registers this authorized account as a "connected account." For example, a connected account might be an August account with a list of door locks.
+Once your user uses a [Connect Webview](../connect-webviews/) to authorize Seam to control their devices, Seam registers this authorized account as a "connected account." For example, a connected account might be an August account with a list of door locks.
 
 A connected account has a unique ID and stores the following data about the user and their account:
 

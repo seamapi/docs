@@ -18,7 +18,7 @@ For those who prefer using webhooks to verify the success of an action, we'll so
 
 ## Before You Begin: Confirm Capabilities
 
-Before you attempt to lock or unlock a device, be sure to confirm that your device has the capability to perform these operations. You can inspect the capabilities of a device by checking the following [capability flags](../../capability-guides/device-and-system-capabilities/#capability-flags) for the device:
+Before you attempt to lock or unlock a device, be sure to confirm that your device has the capability to perform these operations. You can inspect the capabilities of a device by checking the following [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags) for the device:
 
 * `device.can_remotely_lock`
 * `device.can_remotely_unlock`

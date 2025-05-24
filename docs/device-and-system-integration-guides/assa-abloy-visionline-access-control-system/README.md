@@ -14,9 +14,7 @@ Seam integrates seamlessly with the [ASSA ABLOY Visionline Access Control System
 
 This integration supports all readers and wireless locks connected to the Visionline ACS.
 
-For detailed information about the ASSA ABLOY Visionline devices that Seam supports, see the following table and our [ASSA ABLOY Supported Devices page](https://www.seam.co/manufacturers/assa-abloy):
-
-\{% @seam-gitbook-plugin-v2/seam-component content="" %\}
+For detailed information about the ASSA ABLOY Visionline devices that Seam supports, see our [ASSA ABLOY Supported Devices page](https://www.seam.co/manufacturers/assa-abloy).
 
 ***
 
@@ -32,7 +30,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../../capability-guides/device-and-system-capabilities/connect-webviews/) that enables you to connect your Visionline ACS to Seam, include the `visionline` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../capability-guides/device-and-system-capabilities/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables you to connect your Visionline ACS to Seam, include the `visionline` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 

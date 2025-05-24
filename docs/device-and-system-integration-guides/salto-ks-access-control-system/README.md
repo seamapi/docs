@@ -40,13 +40,6 @@ For more information about managing your Salto KS ACS through Seam, see the foll
 
 This integration supports all Salto locks connected to the Salto KS ACS.
 
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["Salto"]'
-/>" %}
-
 ***
 
 ## Supported Features
@@ -61,7 +54,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../../capability-guides/device-and-system-capabilities/connect-webviews/) that enables you to connect your Salto KS ACS to Seam, include the `salto_ks` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../capability-guides/device-and-system-capabilities/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables you to connect your Salto KS ACS to Seam, include the `salto_ks` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 

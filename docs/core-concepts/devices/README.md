@@ -20,7 +20,7 @@ layout:
 
 Seam decomposes the ensemble of features that a device provides into one or more capabilities, such as the capability to perform a remote unlock or the capability to program online access codes.
 
-For detailed information about capabilities, see [Device and System Capabilities](../../capability-guides/device-and-system-capabilities/).
+For detailed information about capabilities, see [Device and System Capabilities](../../capability-guides/device-and-system-capabilities.md).
 
 Seam exposes each capability as a set of APIs that are standardized across brands for ease of integration. For example, an unlock action on a door lock always requires the same API call, regardless of the device brand.
 

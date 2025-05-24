@@ -16,14 +16,7 @@ Seam integrates with Lockly smart locks. With a focus on security, Lockly smart 
 
 This integration supports [all Lockly smart locks](https://lockly.com/collections/door-lock). Note that you must also install the [Secure Link Wi-Fi Hub](https://lockly.com/products/secure-link-wifi-hub?bvstate=pg:4/ct:r\&g_campaign_id=16972321320\&g_adgroup_id=\&utm_source=google\&utm_medium=pmax\&utm_campaign=pfmx-20230201MCV\&gclid=Cj0KCQjwvL-oBhCxARIsAHkOiu0hV67HkcUG7buEnk3odH5k8_I0JqFMU0r5V9Pp7gdGWgBYUQlCIr4aAq8jEALw_wcB) to connect these locks to the internet.
 
-For detailed information about the Lockly devices that Seam supports, see the following table and our [Lockly Supported Devices page](https://www.seam.co/manufacturers/lockly):
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["Lockly"]'
-/>" %}
+For detailed information about the Lockly devices that Seam supports, see our [Lockly Supported Devices page](https://www.seam.co/manufacturers/lockly).
 
 ***
 
@@ -39,7 +32,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../../capability-guides/device-and-system-capabilities/connect-webviews/) that enables your users to connect their Lockly devices to Seam, include the `lockly` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../capability-guides/device-and-system-capabilities/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables your users to connect their Lockly devices to Seam, include the `lockly` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 

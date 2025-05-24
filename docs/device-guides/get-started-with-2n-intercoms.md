@@ -100,7 +100,7 @@ This guide uses a Sandbox Workspace. Only virtual devices can be connected. If y
 
 ## 2 — Link My2N Account with Seam
 
-To control your 2N intercom via the Seam API, you must first authorize your Seam workspace against your My2N account. To do so, Seam provides [Connect Webviews](../capability-guides/device-and-system-capabilities/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your 2N intercom.
+To control your 2N intercom via the Seam API, you must first authorize your Seam workspace against your My2N account. To do so, Seam provides [Connect Webviews](../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your 2N intercom.
 
 #### Request a Connect Webview
 

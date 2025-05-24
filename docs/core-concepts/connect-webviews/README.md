@@ -7,7 +7,7 @@ description: >-
 
 # Connect Webviews
 
-<figure><img src="../../../.gitbook/assets/connect-webview-cover.png" alt="The Connect Webview flow walks your users through the process of authorizing your app to control their devices or ACS with the Seam API."><figcaption><p>The Connect Webview flow walks your users through the process of authorizing your app to control their devices or ACS with the Seam API.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-webview-cover.png" alt="The Connect Webview flow walks your users through the process of authorizing your app to control their devices or ACS with the Seam API."><figcaption><p>The Connect Webview flow walks your users through the process of authorizing your app to control their devices or ACS with the Seam API.</p></figcaption></figure>
 
 ## What are Connect Webviews?
 

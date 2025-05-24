@@ -99,7 +99,7 @@ This guide uses a Sandbox Workspace. Only virtual devices can be connected. If y
 
 ## 2 — Link Your Smartlock Account with Seam
 
-To control a smartlock via the Seam API, we need to first connect to your smartlock account and authorize your Seam workspace to control its device(s). To make this easy, Seam provides [Connect Webviews](../capability-guides/device-and-system-capabilities/connect-webviews/) authorization flows that walk you (or a device owner) through authorizing your workspace to control your device.
+To control a smartlock via the Seam API, we need to first connect to your smartlock account and authorize your Seam workspace to control its device(s). To make this easy, Seam provides [Connect Webviews](../core-concepts/connect-webviews/) authorization flows that walk you (or a device owner) through authorizing your workspace to control your device.
 
 #### Request a Connect Webview
 

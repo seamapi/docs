@@ -26,7 +26,7 @@ You can control your thermostats easily with the Seam API. In this video, learn 
 
 ## Managing Thermostats with Seam
 
-First, connect your users' thermostats to Seam using the [Seam Console](../../core-concepts/seam-console/) or [Connect Webviews](../../capability-guides/device-and-system-capabilities/connect-webviews/). Connect Webviews provide authorization flows that enable your users to connect their own thermostats to Seam. Then, to control your users' thermostats with Seam, use the following feature sets in the Seam HTTP API or any of the Seam SDKs:
+First, connect your users' thermostats to Seam using the [Seam Console](../../core-concepts/seam-console/) or [Connect Webviews](../../core-concepts/connect-webviews/). Connect Webviews provide authorization flows that enable your users to connect their own thermostats to Seam. Then, to control your users' thermostats with Seam, use the following feature sets in the Seam HTTP API or any of the Seam SDKs:
 
 ### Learn and Monitor
 
@@ -72,7 +72,7 @@ Seam decomposes the ensemble of features that a thermostat provides into one or 
 * `device.can_turn_off_hvac`
 * `device.can_program_thermostat_weekly_programs`
 
-For detailed information about these capabilities, see [Device and System Capabilities](../../capability-guides/device-and-system-capabilities/).
+For detailed information about these capabilities, see [Device and System Capabilities](../../capability-guides/device-and-system-capabilities.md).
 
 ***
 

@@ -6,7 +6,7 @@ description: >-
 
 # Retrieving Devices or Access Control Systems Connected Through a Connect Webview
 
-When your app user completes a [Connect Webview](./) authorization flow successfully, the resulting [`connected_account.connected` event](../../../api-clients/events/#event-types) includes a `connected_account_id`. Also, once the connection is successful, the [`connect_webview` object](../../../api-clients/connect_webviews/) includes the `connected_account_id`.
+When your app user completes a [Connect Webview](./) authorization flow successfully, the resulting [`connected_account.connected` event](../../api-clients/events/#event-types) includes a `connected_account_id`. Also, once the connection is successful, the [`connect_webview` object](../../api-clients/connect_webviews/) includes the `connected_account_id`.
 
 The first step in controlling connected devices or a connected ACS is to retrieve the newly-connected set of devices or ACS.
 
@@ -14,10 +14,10 @@ The first step in controlling connected devices or a connected ACS is to retriev
 
 ## Retrieve Connected Devices
 
-Use this `connected_account_id` in a [List Devices](../../../api-clients/devices/list.md) command to retrieve the devices that your user has just connected to Seam.
+Use this `connected_account_id` in a [List Devices](../../api-clients/devices/list.md) command to retrieve the devices that your user has just connected to Seam.
 
 {% hint style="info" %}
-If you set `wait_for_device_creation` to `false` when [creating the Connect Webview](./#id-1.-create-a-connect-webview), you should wait for the [`connected_account.completed_first_sync` event](../../../api-clients/events/#event-types) before retrieving the user's devices. This event indicates that Seam has finished the first sync of the connected account and the devices are now available.
+If you set `wait_for_device_creation` to `false` when [creating the Connect Webview](./#id-1.-create-a-connect-webview), you should wait for the [`connected_account.completed_first_sync` event](../../api-clients/events/#event-types) before retrieving the user's devices. This event indicates that Seam has finished the first sync of the connected account and the devices are now available.
 {% endhint %}
 
 {% tabs %}
@@ -250,10 +250,10 @@ return nil
 
 ## Retrieve a Connected Access Control System
 
-Use this `connected_account_id` in a [List ACS Systems](../../../api/acs/systems/list.md) command to retrieve the ACS that your user has just connected to Seam.
+Use this `connected_account_id` in a [List ACS Systems](../../api/acs/systems/list.md) command to retrieve the ACS that your user has just connected to Seam.
 
 {% hint style="info" %}
-If you set `wait_for_device_creation` to `false` when [creating the Connect Webview](./#id-1.-create-a-connect-webview), you should wait for the [`connected_account.completed_first_sync` event](../../../api-clients/events/#event-types) before retrieving the user's ACS. This event indicates that Seam has finished the first sync of the connected account and the `acs_system` is now available.
+If you set `wait_for_device_creation` to `false` when [creating the Connect Webview](./#id-1.-create-a-connect-webview), you should wait for the [`connected_account.completed_first_sync` event](../../api-clients/events/#event-types) before retrieving the user's ACS. This event indicates that Seam has finished the first sync of the connected account and the `acs_system` is now available.
 {% endhint %}
 
 {% tabs %}

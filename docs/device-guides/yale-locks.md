@@ -28,14 +28,7 @@ Seam does not currently support integration with the Yale Smart Living app (for 
 
 When purchasing a Yale Lock or a network module separately, always verify the specific compatibility needs for your desired setup.
 
-For detailed information about the Yale devices that Seam supports, see the following table and our [Yale Supported Devices page](https://www.seam.co/manufacturers/yale):
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["Yale"]'
-/>" %}
+For detailed information about the Yale devices that Seam supports, see our [Yale Supported Devices page](https://www.seam.co/manufacturers/yale).
 
 ***
 
@@ -50,7 +43,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../capability-guides/device-and-system-capabilities/connect-webviews/) that enables your users to connect their Yale devices to Seam, include the `yale` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../capability-guides/device-and-system-capabilities/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their Yale devices to Seam, include the `yale` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 

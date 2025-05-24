@@ -14,14 +14,7 @@ description: Guide for using 4SUITES locks with Seam
 
 This integration supports all [4SUITES locks, lock upgrades, and readers](https://www.4suiteshq.com/products/).
 
-For detailed information about the 4SUITES devices that Seam supports, see the following table and our [4SUITES Supported Devices page](https://www.seam.co/manufacturers/4suites):
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["4SUITES"]'
-/>" %}
+For detailed information about the 4SUITES devices that Seam supports, see our [4SUITES Supported Devices page](https://www.seam.co/manufacturers/4suites).
 
 ***
 
@@ -36,7 +29,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../../capability-guides/device-and-system-capabilities/connect-webviews/) that enables your users to connect their 4SUITES devices to Seam, include the `four_suites` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../capability-guides/device-and-system-capabilities/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables your users to connect their 4SUITES devices to Seam, include the `four_suites` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -45,7 +38,7 @@ To create a [Connect Webview](../../capability-guides/device-and-system-capabili
 To control 4SUITES devices using Seam, you must prompt owners of these devices to perform the following steps:
 
 1. Obtain the credentials that you use to log in to your [4SUITES account](https://app.4suites.nl/auth/login).
-2. Use these credentials to log in to the [Seam Connect Webview](../../capability-guides/device-and-system-capabilities/connect-webviews/) to add your 4SUITES devices to Seam.
+2. Use these credentials to log in to the [Seam Connect Webview](../../core-concepts/connect-webviews/) to add your 4SUITES devices to Seam.
 
 ***
 
