@@ -28,13 +28,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_credential_id`** 
+**`acs_credential_id`** *string*
 
 ID of the credential for which you want to retrieve all entrances.
 
 ---
 
-**`acs_system_id`** 
+**`acs_system_id`** *string*
 
 ID of the access system for which you want to retrieve all entrances.
 

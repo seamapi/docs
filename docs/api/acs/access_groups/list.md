@@ -27,19 +27,19 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_system_id`** 
+**`acs_system_id`** *string*
 
 ID of the access system for which you want to retrieve all access groups.
 
 ---
 
-**`acs_user_id`** 
+**`acs_user_id`** *string*
 
 ID of the access system user for which you want to retrieve all access groups.
 
 ---
 
-**`user_identity_id`** 
+**`user_identity_id`** *string*
 
 ID of the user identity for which you want to retrieve all access groups.
 

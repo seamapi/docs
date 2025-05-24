@@ -27,47 +27,47 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_system_id`**  (Required)
+**`acs_system_id`** *string* (Required)
 
 ID of the access system to which you want to add the new access system user.
 
 ---
 
-**`full_name`**  (Required)
+**`full_name`** *string* (Required)
 
 Full name of the new access system user.
 
 ---
 
-**`access_schedule`** 
+**`access_schedule`** *object*
 
 `starts_at` and `ends_at` timestamps for the new access system user's access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. If you omit `starts_at`, it defaults to the current time. `ends_at` is optional and must be a time in the future and after `starts_at`.
 
 ---
 
-**`acs_access_group_ids`**  *of UUIDs*
+**`acs_access_group_ids`** *array* *of UUIDs*
 
 Array of access group IDs to indicate the access groups to which you want to add the new access system user.
 
 ---
 
-**`email`** 
+**`email`** *string*
 
 ---
 
-**`email_address`** 
+**`email_address`** *string*
 
 Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 ---
 
-**`phone_number`** 
+**`phone_number`** *string*
 
 Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
 
 ---
 
-**`user_identity_id`** 
+**`user_identity_id`** *string*
 
 ID of the user identity with which you want to associate the new access system user.
 

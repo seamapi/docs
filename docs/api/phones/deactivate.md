@@ -28,7 +28,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`device_id`**  (Required)
+**`device_id`** *string* (Required)
 
 Device ID of the desired phone.
 

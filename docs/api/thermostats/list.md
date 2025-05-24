@@ -28,53 +28,53 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`connect_webview_id`** 
+**`connect_webview_id`** *string*
 
 ID of the Connect Webview for which you want to list devices.
 
 ---
 
-**`connected_account_id`** 
+**`connected_account_id`** *string*
 
 ID of the connected account for which you want to list devices.
 
 ---
 
-**`connected_account_ids`**  *of UUIDs*
+**`connected_account_ids`** *array* *of UUIDs*
 
 Array of IDs of the connected accounts for which you want to list devices.
 
 ---
 
-**`created_before`** 
+**`created_before`** *string*
 
 Timestamp by which to limit returned devices. Returns devices created before this timestamp.
 
 ---
 
-**`custom_metadata_has`** 
+**`custom_metadata_has`** *object*
 
 Set of key:value [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) pairs for which you want to list devices.
 
 ---
 
-**`customer_ids`**  *of UUIDs*
+**`customer_ids`** *array* *of UUIDs*
 
 ---
 
-**`device_ids`**  *of UUIDs*
+**`device_ids`** *array* *of UUIDs*
 
 Array of device IDs for which you want to list devices.
 
 ---
 
-**`device_type`** 
+**`device_type`** *string*
 
 Device type by which to filter thermostat devices.
 
 ---
 
-**`device_types`**  *of Enums*
+**`device_types`** *array* *of Enums*
 
 Array of device types by which to filter thermostat devices.
 <details>
@@ -92,25 +92,25 @@ Possible enum values:
 
 ---
 
-**`limit`** 
+**`limit`** *number*
 
 Numerical limit on the number of devices to return.
 
 ---
 
-**`manufacturer`** 
+**`manufacturer`** *string*
 
 Manufacturer by which to filter thermostat devices.
 
 ---
 
-**`page_cursor`** 
+**`page_cursor`** *string*
 
 Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
 
 ---
 
-**`user_identifier_key`** 
+**`user_identifier_key`** *string*
 
 Your own internal user ID for the user for which you want to list devices.
 

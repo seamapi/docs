@@ -63,6 +63,7 @@ interface ApiEndpointParameter {
   itemFormat?: string
   itemEnumValues?: string[]
   objectParameters?: ApiEndpointParameter[]
+  jsonType: Parameter['jsonType']
 }
 
 interface CodeSampleContext {
@@ -175,6 +176,7 @@ const mapBlueprintParamToEndpointParam = (
     format: normalizePropertyFormatForDocs(param.format),
     isDeprecated: param.isDeprecated,
     deprecationMessage: param.deprecationMessage,
+    jsonType: param.jsonType,
 
     ...(param.format === 'enum' && {
       enumValues: param.values.map(({ name }) => name),

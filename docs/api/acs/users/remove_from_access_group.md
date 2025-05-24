@@ -27,13 +27,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_access_group_id`**  (Required)
+**`acs_access_group_id`** *string* (Required)
 
 ID of the access group from which you want to remove an access system user.
 
 ---
 
-**`acs_user_id`**  (Required)
+**`acs_user_id`** *string* (Required)
 
 ID of the access system user that you want to remove from an access group.
 

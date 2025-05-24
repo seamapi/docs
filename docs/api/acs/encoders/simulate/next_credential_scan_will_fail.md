@@ -27,17 +27,17 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_encoder_id`**  (Required)
+**`acs_encoder_id`** *string* (Required)
 
 ID of the `acs_encoder` that will fail to scan the `acs_credential` in the next request.
 
 ---
 
-**`acs_credential_id_on_seam`** 
+**`acs_credential_id_on_seam`** *string*
 
 ---
 
-**`error_code`** 
+**`error_code`** *string*
 
 ---
 

@@ -27,13 +27,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_entrance_id`**  (Required)
+**`acs_entrance_id`** *string* (Required)
 
 ID of the entrance to which you want to grant an access system user access.
 
 ---
 
-**`acs_user_id`**  (Required)
+**`acs_user_id`** *string* (Required)
 
 ID of the access system user to whom you want to grant access to an entrance.
 

@@ -28,19 +28,19 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`device_id`**  (Required)
+**`device_id`** *string* (Required)
 
 ID of the thermostat device that you want to set to cool mode.
 
 ---
 
-**`cooling_set_point_celsius`** 
+**`cooling_set_point_celsius`** *number*
 
 Desired [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `cooling_set_point` parameters.
 
 ---
 
-**`cooling_set_point_fahrenheit`** 
+**`cooling_set_point_fahrenheit`** *number*
 
 Desired [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `cooling_set_point` parameters.
 

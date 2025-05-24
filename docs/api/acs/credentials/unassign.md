@@ -27,19 +27,19 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_credential_id`**  (Required)
+**`acs_credential_id`** *string* (Required)
 
 ID of the credential that you want to unassign from an access system user.
 
 ---
 
-**`acs_user_id`** 
+**`acs_user_id`** *string*
 
 ID of the access system user from which you want to unassign a credential. You can only provide one of acs_user_id or user_identity_id.
 
 ---
 
-**`user_identity_id`** 
+**`user_identity_id`** *string*
 
 ID of the user identity from which you want to unassign a credential. You can only provide one of acs_user_id or user_identity_id.
 
