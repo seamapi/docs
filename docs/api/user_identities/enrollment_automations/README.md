@@ -84,35 +84,29 @@ An [enrollment automation](../../../capability-guides/mobile-access/issuing-mobi
 
 <summary>Properties</summary>
 
-- <strong><code>created_at</code></strong> <i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
-
-- <strong><code>enrollment_automation_id</code></strong> <i>UUID</i>
+<strong><code>enrollment_automation_id</code></strong> <i>UUID</i>
 
   ID of the [enrollment automation](../../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut).
 
-
-- <strong><code>event_id</code></strong> <i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.
 
-
-- <strong><code>event_type</code></strong> <i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
   Value: `enrollment_automation.deleted`
 
-
-- <strong><code>occurred_at</code></strong> <i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
-
-- <strong><code>workspace_id</code></strong> <i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
   ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
 </details>
 
 ---
