@@ -13,6 +13,7 @@ import {
   mapBlueprintPropertyToRouteProperty,
   normalizePropertyFormatForDocs,
 } from './api-route.js'
+import { capitalCase } from 'change-case'
 
 const supportedSdks: SdkName[] = [
   'javascript',
@@ -63,7 +64,7 @@ interface ApiEndpointParameter {
   itemFormat?: string
   itemEnumValues?: string[]
   objectParameters?: ApiEndpointParameter[]
-  jsonType: Parameter['jsonType']
+  jsonType: string
 }
 
 interface CodeSampleContext {
@@ -176,7 +177,7 @@ const mapBlueprintParamToEndpointParam = (
     format: normalizePropertyFormatForDocs(param.format),
     isDeprecated: param.isDeprecated,
     deprecationMessage: param.deprecationMessage,
-    jsonType: param.jsonType,
+    jsonType: capitalCase(param.jsonType),
 
     ...(param.format === 'enum' && {
       enumValues: param.values.map(({ name }) => name),
