@@ -348,7 +348,7 @@ Variants:
 
 Indicates that the [credential](../../../capability-guides/access-systems/managing-credentials.md) is waiting to be issued.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the warning.
@@ -356,7 +356,7 @@ Indicates that the [credential](../../../capability-guides/access-systems/managi
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
@@ -364,7 +364,7 @@ Indicates that the [credential](../../../capability-guides/access-systems/managi
   
   ---
 
-  **`warning_code`** Format: `Enum`
+  **`warning_code`** *Enum*
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
@@ -381,7 +381,7 @@ Indicates that the [credential](../../../capability-guides/access-systems/managi
 
 Indicates that the schedule of one of the [credential](../../../capability-guides/access-systems/managing-credentials.md)'s children was modified externally.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the warning.
@@ -389,7 +389,7 @@ Indicates that the schedule of one of the [credential](../../../capability-guide
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
@@ -397,7 +397,7 @@ Indicates that the schedule of one of the [credential](../../../capability-guide
   
   ---
 
-  **`warning_code`** Format: `Enum`
+  **`warning_code`** *Enum*
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
@@ -414,7 +414,7 @@ Indicates that the schedule of one of the [credential](../../../capability-guide
 
 Indicates that the schedule of the [credential](../../../capability-guides/access-systems/managing-credentials.md) was modified to avoid creating a credential with a start date in the past.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the warning.
@@ -422,7 +422,7 @@ Indicates that the schedule of the [credential](../../../capability-guides/acces
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
@@ -430,7 +430,7 @@ Indicates that the schedule of the [credential](../../../capability-guides/acces
   
   ---
 
-  **`warning_code`** Format: `Enum`
+  **`warning_code`** *Enum*
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
@@ -447,7 +447,7 @@ Indicates that the schedule of the [credential](../../../capability-guides/acces
 
 Indicates that the [credential](../../../capability-guides/access-systems/managing-credentials.md) is being deleted.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the warning.
@@ -455,7 +455,7 @@ Indicates that the [credential](../../../capability-guides/access-systems/managi
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
@@ -463,7 +463,7 @@ Indicates that the [credential](../../../capability-guides/access-systems/managi
   
   ---
 
-  **`warning_code`** Format: `Enum`
+  **`warning_code`** *Enum*
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
@@ -480,7 +480,7 @@ Indicates that the [credential](../../../capability-guides/access-systems/managi
 
 An unknown issue occurred while syncing the state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) with the provider. This issue may affect the proper functioning of the credential.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the warning.
@@ -488,7 +488,7 @@ An unknown issue occurred while syncing the state of the [credential](../../../c
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
@@ -496,7 +496,7 @@ An unknown issue occurred while syncing the state of the [credential](../../../c
   
   ---
 
-  **`warning_code`** Format: `Enum`
+  **`warning_code`** *Enum*
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
@@ -513,7 +513,7 @@ An unknown issue occurred while syncing the state of the [credential](../../../c
 
 Access permissions for the [credential](../../../capability-guides/access-systems/managing-credentials.md) have changed. [Reissue](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md) (re-encode) the credential. This issue may affect the proper functioning of the credential.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the warning.
@@ -521,7 +521,7 @@ Access permissions for the [credential](../../../capability-guides/access-system
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
@@ -529,7 +529,7 @@ Access permissions for the [credential](../../../capability-guides/access-system
   
   ---
 
-  **`warning_code`** Format: `Enum`
+  **`warning_code`** *Enum*
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
