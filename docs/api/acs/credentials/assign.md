@@ -27,19 +27,19 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_credential_id`**  (Required)
+**`acs_credential_id`** *String* (Required)
 
 ID of the credential that you want to assign to an access system user.
 
 ---
 
-**`acs_user_id`** 
+**`acs_user_id`** *String*
 
 ID of the access system user to whom you want to assign a credential. You can only provide one of acs_user_id or user_identity_id.
 
 ---
 
-**`user_identity_id`** 
+**`user_identity_id`** *String*
 
 ID of the user identity to whom you want to assign a credential. You can only provide one of acs_user_id or user_identity_id. If the ACS system contains an ACS user with the same `email_address` or `phone_number` as the user identity that you specify, they are linked, and the credential belongs to the ACS user. If the ACS system does not have a corresponding ACS user, one is created.
 

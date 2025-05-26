@@ -32,19 +32,19 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`common_code_key`**  (Required)
+**`common_code_key`** *String* (Required)
 
 Key that links the group of access codes, assigned on creation by `/access_codes/create_multiple`.
 
 ---
 
-**`ends_at`** 
+**`ends_at`** *String*
 
 Date and time at which the validity of the new access code ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
 
 ---
 
-**`name`** 
+**`name`** *String*
 
 Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
       
@@ -56,7 +56,7 @@ Name of the new access code. Enables administrators and users to identify the ac
 
 ---
 
-**`starts_at`** 
+**`starts_at`** *String*
 
 Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 

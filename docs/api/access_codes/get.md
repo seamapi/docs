@@ -28,19 +28,19 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`access_code_id`** 
+**`access_code_id`** *String*
 
 ID of the access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.
 
 ---
 
-**`code`** 
+**`code`** *String*
 
 Code of the access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.
 
 ---
 
-**`device_id`** 
+**`device_id`** *String*
 
 ID of the device containing the access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.
 

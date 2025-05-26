@@ -27,13 +27,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_credential_id`**  (Required)
+**`acs_credential_id`** *String* (Required)
 
 ID of the `acs_credential` to encode onto a card.
 
 ---
 
-**`acs_encoder_id`**  (Required)
+**`acs_encoder_id`** *String* (Required)
 
 ID of the `acs_encoder` to use to encode the `acs_credential`.
 

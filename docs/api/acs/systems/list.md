@@ -30,7 +30,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`connected_account_id`** 
+**`connected_account_id`** *String*
 
 ID of the connected account by which you want to filter the list of access systems.
 

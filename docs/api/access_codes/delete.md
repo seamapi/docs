@@ -28,13 +28,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`access_code_id`**  (Required)
+**`access_code_id`** *String* (Required)
 
 ID of the access code that you want to delete.
 
 ---
 
-**`device_id`** 
+**`device_id`** *String*
 
 ID of the device for which you want to delete the access code.
 

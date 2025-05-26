@@ -7,6 +7,7 @@ import type {
   SeamAuthMethod,
   SeamWorkspaceScope,
 } from '@seamapi/blueprint'
+import { capitalCase } from 'change-case'
 
 import {
   type ApiRouteResource,
@@ -63,6 +64,7 @@ interface ApiEndpointParameter {
   itemFormat?: string
   itemEnumValues?: string[]
   objectParameters?: ApiEndpointParameter[]
+  jsonType: string
 }
 
 interface CodeSampleContext {
@@ -175,6 +177,7 @@ const mapBlueprintParamToEndpointParam = (
     format: normalizePropertyFormatForDocs(param.format),
     isDeprecated: param.isDeprecated,
     deprecationMessage: param.deprecationMessage,
+    jsonType: capitalCase(param.jsonType),
 
     ...(param.format === 'enum' && {
       enumValues: param.values.map(({ name }) => name),

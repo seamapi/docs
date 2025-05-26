@@ -28,49 +28,49 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`device_id`**  (Required)
+**`device_id`** *String* (Required)
 
 ID of the thermostat device for which you want to update the weekly program.
 
 ---
 
-**`friday_program_id`** 
+**`friday_program_id`** *String*
 
 ID of the thermostat daily program to run on Fridays.
 
 ---
 
-**`monday_program_id`** 
+**`monday_program_id`** *String*
 
 ID of the thermostat daily program to run on Mondays.
 
 ---
 
-**`saturday_program_id`** 
+**`saturday_program_id`** *String*
 
 ID of the thermostat daily program to run on Saturdays.
 
 ---
 
-**`sunday_program_id`** 
+**`sunday_program_id`** *String*
 
 ID of the thermostat daily program to run on Sundays.
 
 ---
 
-**`thursday_program_id`** 
+**`thursday_program_id`** *String*
 
 ID of the thermostat daily program to run on Thursdays.
 
 ---
 
-**`tuesday_program_id`** 
+**`tuesday_program_id`** *String*
 
 ID of the thermostat daily program to run on Tuesdays.
 
 ---
 
-**`wednesday_program_id`** 
+**`wednesday_program_id`** *String*
 
 ID of the thermostat daily program to run on Wednesdays.
 

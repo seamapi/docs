@@ -28,29 +28,29 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`access_code_id`**  (Required)
+**`access_code_id`** *String* (Required)
 
 ID of the unmanaged access code that you want to update.
 
 ---
 
-**`is_managed`**  (Required)
+**`is_managed`** *Boolean* (Required)
 
 ---
 
-**`allow_external_modification`** 
+**`allow_external_modification`** *Boolean*
 
 Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed.
 
 ---
 
-**`force`** 
+**`force`** *Boolean*
 
 Indicates whether to force the unmanaged access code update.
 
 ---
 
-**`is_external_modification_allowed`** 
+**`is_external_modification_allowed`** *Boolean*
 
 Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed.
 

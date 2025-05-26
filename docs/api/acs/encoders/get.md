@@ -27,7 +27,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_encoder_id`**  (Required)
+**`acs_encoder_id`** *String* (Required)
 
 ID of the encoder that you want to get.
 
