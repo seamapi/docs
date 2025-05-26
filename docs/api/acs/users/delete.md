@@ -27,7 +27,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_user_id`** *string* (Required)
+**`acs_user_id`** *String* (Required)
 
 ID of the access system user that you want to delete.
 

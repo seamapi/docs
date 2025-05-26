@@ -32,25 +32,25 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`access_code_id`** *string* (Required)
+**`access_code_id`** *String* (Required)
 
 ID of the unmanaged access code that you want to convert to a managed access code.
 
 ---
 
-**`allow_external_modification`** *boolean*
+**`allow_external_modification`** *Boolean*
 
 Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the access code is allowed.
 
 ---
 
-**`force`** *boolean*
+**`force`** *Boolean*
 
 Indicates whether to force the access code conversion. To switch management of an access code from one Seam workspace to another, set `force` to `true`.
 
 ---
 
-**`is_external_modification_allowed`** *boolean*
+**`is_external_modification_allowed`** *Boolean*
 
 Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the access code is allowed.
 

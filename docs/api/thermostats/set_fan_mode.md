@@ -28,17 +28,17 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`device_id`** *string* (Required)
+**`device_id`** *String* (Required)
 
 ID of the thermostat device for which you want to set the fan mode.
 
 ---
 
-**`fan_mode`** *string*
+**`fan_mode`** *String*
 
 ---
 
-**`fan_mode_setting`** *string*
+**`fan_mode_setting`** *String*
 
 Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for the thermostat.
 

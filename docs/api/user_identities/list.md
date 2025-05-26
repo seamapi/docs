@@ -28,7 +28,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`credential_manager_acs_system_id`** *string*
+**`credential_manager_acs_system_id`** *String*
 
 ---
 

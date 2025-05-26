@@ -36,7 +36,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`access_code_id`** *string* (Required)
+**`access_code_id`** *String* (Required)
 
 ID of the access code for which you want to pull a backup access code.
 

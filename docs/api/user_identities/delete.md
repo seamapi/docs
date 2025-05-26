@@ -27,7 +27,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`user_identity_id`** *string* (Required)
+**`user_identity_id`** *String* (Required)
 
 ID of the desired user identity.
 

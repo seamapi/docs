@@ -27,37 +27,37 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`device_id`** *string* (Required)
+**`device_id`** *String* (Required)
 
 ID of the desired thermostat device.
 
 ---
 
-**`hvac_mode`** *string* (Required)
+**`hvac_mode`** *String* (Required)
 
 Desired [HVAC mode](../../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) to simulate.
 
 ---
 
-**`cooling_set_point_celsius`** *number*
+**`cooling_set_point_celsius`** *Number*
 
 Desired simulated cooling [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`.
 
 ---
 
-**`cooling_set_point_fahrenheit`** *number*
+**`cooling_set_point_fahrenheit`** *Number*
 
 Desired simulated cooling [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`.
 
 ---
 
-**`heating_set_point_celsius`** *number*
+**`heating_set_point_celsius`** *Number*
 
 Desired simulated heating [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`.
 
 ---
 
-**`heating_set_point_fahrenheit`** *number*
+**`heating_set_point_fahrenheit`** *Number*
 
 Desired simulated heating [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`.
 

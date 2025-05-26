@@ -27,13 +27,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_access_group_id`** *string* (Required)
+**`acs_access_group_id`** *String* (Required)
 
 ID of the access group to which you want to add an access system user.
 
 ---
 
-**`acs_user_id`** *string* (Required)
+**`acs_user_id`** *String* (Required)
 
 ID of the access system user that you want to add to an access group.
 

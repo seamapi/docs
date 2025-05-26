@@ -26,7 +26,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_entrance_id`** *string* (Required)
+**`acs_entrance_id`** *String* (Required)
 
 ID of the entrance that you want to get.
 

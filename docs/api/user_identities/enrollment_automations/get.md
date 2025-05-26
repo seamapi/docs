@@ -28,7 +28,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`enrollment_automation_id`** *string* (Required)
+**`enrollment_automation_id`** *String* (Required)
 
 ID of the desired enrollment automation.
 

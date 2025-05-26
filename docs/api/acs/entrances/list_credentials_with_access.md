@@ -28,13 +28,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_entrance_id`** *string* (Required)
+**`acs_entrance_id`** *String* (Required)
 
 ID of the entrance for which you want to list all credentials that grant access.
 
 ---
 
-**`include_if`** *array* *of Enums*
+**`include_if`** *Array* *of Enums*
 
 Conditions that credentials must meet to be included in the returned list.
 <details>

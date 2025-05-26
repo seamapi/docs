@@ -28,7 +28,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`thermostat_schedule_id`** *string* (Required)
+**`thermostat_schedule_id`** *String* (Required)
 
 ID of the desired thermostat schedule.
 

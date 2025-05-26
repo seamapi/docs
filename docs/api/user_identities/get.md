@@ -27,13 +27,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`user_identity_id`** *string*
+**`user_identity_id`** *String*
 
 ID of the desired user identity.
 
 ---
 
-**`user_identity_key`** *string*
+**`user_identity_key`** *String*
 
 ---
 

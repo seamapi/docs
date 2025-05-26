@@ -28,35 +28,35 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`device_id`** *string* (Required)
+**`device_id`** *String* (Required)
 
 ID of the thermostat device for which you want to set the HVAC mode.
 
 ---
 
-**`hvac_mode_setting`** *string* (Required)
+**`hvac_mode_setting`** *String* (Required)
 
 ---
 
-**`cooling_set_point_celsius`** *number*
+**`cooling_set_point_celsius`** *Number*
 
 Desired [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `cooling_set_point` parameters.
 
 ---
 
-**`cooling_set_point_fahrenheit`** *number*
+**`cooling_set_point_fahrenheit`** *Number*
 
 Desired [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `cooling_set_point` parameters.
 
 ---
 
-**`heating_set_point_celsius`** *number*
+**`heating_set_point_celsius`** *Number*
 
 Desired [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `heating_set_point` parameters.
 
 ---
 
-**`heating_set_point_fahrenheit`** *number*
+**`heating_set_point_fahrenheit`** *Number*
 
 Desired [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `heating_set_point` parameters.
 

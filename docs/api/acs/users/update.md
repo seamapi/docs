@@ -27,39 +27,39 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_user_id`** *string* (Required)
+**`acs_user_id`** *String* (Required)
 
 ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 ---
 
-**`access_schedule`** *object*
+**`access_schedule`** *Object*
 
 `starts_at` and `ends_at` timestamps for the access system user's access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. If you omit `starts_at`, it defaults to the current time. `ends_at` is optional and must be a time in the future and after `starts_at`.
 
 ---
 
-**`email`** *string*
+**`email`** *String*
 
 ---
 
-**`email_address`** *string*
+**`email_address`** *String*
 
 Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 ---
 
-**`full_name`** *string*
+**`full_name`** *String*
 
 Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 ---
 
-**`hid_acs_system_id`** *string*
+**`hid_acs_system_id`** *String*
 
 ---
 
-**`phone_number`** *string*
+**`phone_number`** *String*
 
 Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
 

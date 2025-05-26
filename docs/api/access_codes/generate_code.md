@@ -28,7 +28,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`device_id`** *string* (Required)
+**`device_id`** *String* (Required)
 
 ID of the device for which you want to generate a code.
 
