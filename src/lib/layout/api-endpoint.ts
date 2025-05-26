@@ -7,13 +7,13 @@ import type {
   SeamAuthMethod,
   SeamWorkspaceScope,
 } from '@seamapi/blueprint'
+import { capitalCase } from 'change-case'
 
 import {
   type ApiRouteResource,
   mapBlueprintPropertyToRouteProperty,
   normalizePropertyFormatForDocs,
 } from './api-route.js'
-import { capitalCase } from 'change-case'
 
 const supportedSdks: SdkName[] = [
   'javascript',
