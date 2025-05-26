@@ -105,7 +105,7 @@ Variants:
 
 Failed to set code on SmartThings device.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -113,7 +113,7 @@ Failed to set code on SmartThings device.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -126,7 +126,7 @@ Failed to set code on SmartThings device.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -134,7 +134,7 @@ Failed to set code on SmartThings device.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -146,7 +146,7 @@ Failed to set code on SmartThings device.
 
 Failed to set code after multiple retries.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -154,7 +154,7 @@ Failed to set code after multiple retries.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -167,7 +167,7 @@ Failed to set code after multiple retries.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -175,7 +175,7 @@ Failed to set code after multiple retries.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -187,7 +187,7 @@ Failed to set code after multiple retries.
 
 No free slots available on the device.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -195,7 +195,7 @@ No free slots available on the device.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -208,7 +208,7 @@ No free slots available on the device.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -216,7 +216,7 @@ No free slots available on the device.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -228,7 +228,7 @@ No free slots available on the device.
 
 Failed to set code on device.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -236,7 +236,7 @@ Failed to set code on device.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -249,7 +249,7 @@ Failed to set code on device.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -257,7 +257,7 @@ Failed to set code on device.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -269,7 +269,7 @@ Failed to set code on device.
 
 Failed to remove code from device.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -277,7 +277,7 @@ Failed to remove code from device.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -290,7 +290,7 @@ Failed to remove code from device.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -298,7 +298,7 @@ Failed to remove code from device.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -310,7 +310,7 @@ Failed to remove code from device.
 
 Duplicate access code detected on device.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -318,7 +318,7 @@ Duplicate access code detected on device.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -331,7 +331,7 @@ Duplicate access code detected on device.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -339,7 +339,7 @@ Duplicate access code detected on device.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -351,7 +351,7 @@ Duplicate access code detected on device.
 
 An attempt to modify this access code was prevented.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -359,7 +359,7 @@ An attempt to modify this access code was prevented.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -372,7 +372,7 @@ An attempt to modify this access code was prevented.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -380,7 +380,7 @@ An attempt to modify this access code was prevented.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -392,7 +392,7 @@ An attempt to modify this access code was prevented.
 
 No space for access code on device.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -400,7 +400,7 @@ No space for access code on device.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -413,7 +413,7 @@ No space for access code on device.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -421,7 +421,7 @@ No space for access code on device.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -433,7 +433,7 @@ No space for access code on device.
 
 Igloohome bridge has too many pending jobs in the queue.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -441,7 +441,7 @@ Igloohome bridge has too many pending jobs in the queue.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -454,7 +454,7 @@ Igloohome bridge has too many pending jobs in the queue.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -462,7 +462,7 @@ Igloohome bridge has too many pending jobs in the queue.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -474,7 +474,7 @@ Igloohome bridge has too many pending jobs in the queue.
 
 Igloohome bridge is offline.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -482,7 +482,7 @@ Igloohome bridge is offline.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -495,7 +495,7 @@ Igloohome bridge is offline.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -503,7 +503,7 @@ Igloohome bridge is offline.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -515,7 +515,7 @@ Igloohome bridge is offline.
 
 Lock has reached maximum amount of codes.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -523,7 +523,7 @@ Lock has reached maximum amount of codes.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -536,7 +536,7 @@ Lock has reached maximum amount of codes.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -544,7 +544,7 @@ Lock has reached maximum amount of codes.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -556,7 +556,7 @@ Lock has reached maximum amount of codes.
 
 Unable to confirm that the access code is set on Kwikset device.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -564,7 +564,7 @@ Unable to confirm that the access code is set on Kwikset device.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -577,7 +577,7 @@ Unable to confirm that the access code is set on Kwikset device.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -585,7 +585,7 @@ Unable to confirm that the access code is set on Kwikset device.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -597,7 +597,7 @@ Unable to confirm that the access code is set on Kwikset device.
 
 Unable to confirm the deletion of the access code on Kwikset device.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -605,7 +605,7 @@ Unable to confirm the deletion of the access code on Kwikset device.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -618,7 +618,7 @@ Unable to confirm the deletion of the access code on Kwikset device.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -626,7 +626,7 @@ Unable to confirm the deletion of the access code on Kwikset device.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -638,7 +638,7 @@ Unable to confirm the deletion of the access code on Kwikset device.
 
 Code was modified or removed externally after Seam successfully set it on the device.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -646,7 +646,7 @@ Code was modified or removed externally after Seam successfully set it on the de
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -659,7 +659,7 @@ Code was modified or removed externally after Seam successfully set it on the de
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -667,7 +667,7 @@ Code was modified or removed externally after Seam successfully set it on the de
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -679,7 +679,7 @@ Code was modified or removed externally after Seam successfully set it on the de
 
 Invalid code length for August lock.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -687,7 +687,7 @@ Invalid code length for August lock.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -700,7 +700,7 @@ Invalid code length for August lock.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -708,7 +708,7 @@ Invalid code length for August lock.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -720,7 +720,7 @@ Invalid code length for August lock.
 
 Access code has not yet been fully moved to the device.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -728,7 +728,7 @@ Access code has not yet been fully moved to the device.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -741,7 +741,7 @@ Access code has not yet been fully moved to the device.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -749,7 +749,7 @@ Access code has not yet been fully moved to the device.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -761,7 +761,7 @@ Access code has not yet been fully moved to the device.
 
 All access code slots on the device are full.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -769,7 +769,7 @@ All access code slots on the device are full.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -782,7 +782,7 @@ All access code slots on the device are full.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -790,7 +790,7 @@ All access code slots on the device are full.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -802,7 +802,7 @@ All access code slots on the device are full.
 
 August lock is missing a keypad.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -810,7 +810,7 @@ August lock is missing a keypad.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -823,7 +823,7 @@ August lock is missing a keypad.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -831,7 +831,7 @@ August lock is missing a keypad.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -843,7 +843,7 @@ August lock is missing a keypad.
 
 August lock is temporarily offline.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -851,7 +851,7 @@ August lock is temporarily offline.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -864,7 +864,7 @@ August lock is temporarily offline.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -872,7 +872,7 @@ August lock is temporarily offline.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -884,7 +884,7 @@ August lock is temporarily offline.
 
 Salto site user is not subscribed.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -892,7 +892,7 @@ Salto site user is not subscribed.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -905,7 +905,7 @@ Salto site user is not subscribed.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -913,7 +913,7 @@ Salto site user is not subscribed.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -925,7 +925,7 @@ Salto site user is not subscribed.
 
 Access code has not yet been fully moved to the device.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -933,7 +933,7 @@ Access code has not yet been fully moved to the device.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -946,7 +946,7 @@ Access code has not yet been fully moved to the device.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -954,7 +954,7 @@ Access code has not yet been fully moved to the device.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -966,7 +966,7 @@ Access code has not yet been fully moved to the device.
 
 No free positions available on the device.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -974,7 +974,7 @@ No free positions available on the device.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -987,7 +987,7 @@ No free positions available on the device.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -995,7 +995,7 @@ No free positions available on the device.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -1007,7 +1007,7 @@ No free positions available on the device.
 
 Duplicate access code name detected.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -1015,7 +1015,7 @@ Duplicate access code name detected.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -1028,7 +1028,7 @@ Duplicate access code name detected.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -1036,7 +1036,7 @@ Duplicate access code name detected.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -1048,7 +1048,7 @@ Duplicate access code name detected.
 
 Potential duplicate access code detected.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -1056,7 +1056,7 @@ Potential duplicate access code detected.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -1069,7 +1069,7 @@ Potential duplicate access code detected.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -1077,7 +1077,7 @@ Potential duplicate access code detected.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -1089,7 +1089,7 @@ Potential duplicate access code detected.
 
 No valid user level for Oracode.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -1097,7 +1097,7 @@ No valid user level for Oracode.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -1110,7 +1110,7 @@ No valid user level for Oracode.
   
   ---
 
-  **`is_access_code_error`** Format: `Boolean`
+  **`is_access_code_error`** *Boolean*
   
   
   Indicates that this is an access code error.
@@ -1118,7 +1118,7 @@ No valid user level for Oracode.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -1130,13 +1130,13 @@ No valid user level for Oracode.
 
 Account is disconnected
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -1149,19 +1149,19 @@ Account is disconnected
   
   ---
 
-  **`is_connected_account_error`** Format: `Boolean`
+  **`is_connected_account_error`** *Boolean*
   
   
   
   ---
 
-  **`is_device_error`** Format: `Boolean`
+  **`is_device_error`** *Boolean*
   
   
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   
@@ -1171,13 +1171,13 @@ Account is disconnected
 
 Salto site user limit reached.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -1190,19 +1190,19 @@ Salto site user limit reached.
   
   ---
 
-  **`is_connected_account_error`** Format: `Boolean`
+  **`is_connected_account_error`** *Boolean*
   
   
   
   ---
 
-  **`is_device_error`** Format: `Boolean`
+  **`is_device_error`** *Boolean*
   
   
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   
@@ -1212,13 +1212,13 @@ Salto site user limit reached.
 
 Device is offline
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -1231,13 +1231,13 @@ Device is offline
   
   ---
 
-  **`is_device_error`** Format: `Boolean`
+  **`is_device_error`** *Boolean*
   
   
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   
@@ -1247,13 +1247,13 @@ Device is offline
 
 Device has been removed
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -1266,13 +1266,13 @@ Device has been removed
   
   ---
 
-  **`is_device_error`** Format: `Boolean`
+  **`is_device_error`** *Boolean*
   
   
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   
@@ -1282,13 +1282,13 @@ Device has been removed
 
 Hub is disconnected
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -1301,13 +1301,13 @@ Hub is disconnected
   
   ---
 
-  **`is_device_error`** Format: `Boolean`
+  **`is_device_error`** *Boolean*
   
   
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   
@@ -1317,13 +1317,13 @@ Hub is disconnected
 
 Device is disconnected
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -1336,13 +1336,13 @@ Device is disconnected
   
   ---
 
-  **`is_device_error`** Format: `Boolean`
+  **`is_device_error`** *Boolean*
   
   
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   
@@ -1352,13 +1352,13 @@ Device is disconnected
 
 The backup access code pool is empty.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -1371,13 +1371,13 @@ The backup access code pool is empty.
   
   ---
 
-  **`is_device_error`** Format: `Boolean`
+  **`is_device_error`** *Boolean*
   
   
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   
@@ -1387,13 +1387,13 @@ The backup access code pool is empty.
 
 User is not authorized to use the August Lock.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -1406,13 +1406,13 @@ User is not authorized to use the August Lock.
   
   ---
 
-  **`is_device_error`** Format: `Boolean`
+  **`is_device_error`** *Boolean*
   
   
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   
@@ -1422,13 +1422,13 @@ User is not authorized to use the August Lock.
 
 Lock is not connected to the Seam Bridge.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -1441,13 +1441,13 @@ Lock is not connected to the Seam Bridge.
   
   ---
 
-  **`is_device_error`** Format: `Boolean`
+  **`is_device_error`** *Boolean*
   
   
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   
@@ -1457,13 +1457,13 @@ Lock is not connected to the Seam Bridge.
 
 Lock is not paired with a Gateway.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -1476,13 +1476,13 @@ Lock is not paired with a Gateway.
   
   ---
 
-  **`is_device_error`** Format: `Boolean`
+  **`is_device_error`** *Boolean*
   
   
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   
@@ -1492,13 +1492,13 @@ Lock is not paired with a Gateway.
 
 Missing device credentials.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -1511,13 +1511,13 @@ Missing device credentials.
   
   ---
 
-  **`is_device_error`** Format: `Boolean`
+  **`is_device_error`** *Boolean*
   
   
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   
@@ -1527,13 +1527,13 @@ Missing device credentials.
 
 The auxiliary heat is running.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -1546,13 +1546,13 @@ The auxiliary heat is running.
   
   ---
 
-  **`is_device_error`** Format: `Boolean`
+  **`is_device_error`** *Boolean*
   
   
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   
@@ -1562,13 +1562,13 @@ The auxiliary heat is running.
 
 Subscription required to connect.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -1581,13 +1581,13 @@ Subscription required to connect.
   
   ---
 
-  **`is_device_error`** Format: `Boolean`
+  **`is_device_error`** *Boolean*
   
   
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   
@@ -1597,7 +1597,7 @@ Subscription required to connect.
 
 Credentials provided were invalid.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -1605,7 +1605,7 @@ Credentials provided were invalid.
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -1618,19 +1618,19 @@ Credentials provided were invalid.
   
   ---
 
-  **`is_bridge_error`** Format: `Boolean`
+  **`is_bridge_error`** *Boolean*
   
   
   
   ---
 
-  **`is_connected_account_error`** Format: `Boolean`
+  **`is_connected_account_error`** *Boolean*
   
   
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   
@@ -1641,7 +1641,7 @@ Credentials provided were invalid.
 Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
   See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -1649,7 +1649,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capab
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -1662,19 +1662,19 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capab
   
   ---
 
-  **`is_bridge_error`** Format: `Boolean`
+  **`is_bridge_error`** *Boolean*
   
   
   
   ---
 
-  **`is_connected_account_error`** Format: `Boolean`
+  **`is_connected_account_error`** *Boolean*
   
   
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   
@@ -1759,7 +1759,7 @@ Variants:
 
 Failed to set code on SmartThings device.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the warning.
@@ -1767,7 +1767,7 @@ Failed to set code on SmartThings device.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
@@ -1775,7 +1775,7 @@ Failed to set code on SmartThings device.
   
   ---
 
-  **`warning_code`** Format: `Enum`
+  **`warning_code`** *Enum*
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
@@ -1792,7 +1792,7 @@ Failed to set code on SmartThings device.
 
 Duplicate access code detected.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the warning.
@@ -1800,7 +1800,7 @@ Duplicate access code detected.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
@@ -1808,7 +1808,7 @@ Duplicate access code detected.
   
   ---
 
-  **`warning_code`** Format: `Enum`
+  **`warning_code`** *Enum*
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
@@ -1825,7 +1825,7 @@ Duplicate access code detected.
 
 Received an error when attempting to create this code.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the warning.
@@ -1833,7 +1833,7 @@ Received an error when attempting to create this code.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
@@ -1841,7 +1841,7 @@ Received an error when attempting to create this code.
   
   ---
 
-  **`warning_code`** Format: `Enum`
+  **`warning_code`** *Enum*
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
@@ -1858,7 +1858,7 @@ Received an error when attempting to create this code.
 
 Code was modified or removed externally after Seam successfully set it on the device.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the warning.
@@ -1866,7 +1866,7 @@ Code was modified or removed externally after Seam successfully set it on the de
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
@@ -1874,7 +1874,7 @@ Code was modified or removed externally after Seam successfully set it on the de
   
   ---
 
-  **`warning_code`** Format: `Enum`
+  **`warning_code`** *Enum*
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
@@ -1891,7 +1891,7 @@ Code was modified or removed externally after Seam successfully set it on the de
 
 Delay in setting code on device.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the warning.
@@ -1899,7 +1899,7 @@ Delay in setting code on device.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
@@ -1907,7 +1907,7 @@ Delay in setting code on device.
   
   ---
 
-  **`warning_code`** Format: `Enum`
+  **`warning_code`** *Enum*
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
@@ -1924,7 +1924,7 @@ Delay in setting code on device.
 
 Delay in removing code from device.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the warning.
@@ -1932,7 +1932,7 @@ Delay in removing code from device.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
@@ -1940,7 +1940,7 @@ Delay in removing code from device.
   
   ---
 
-  **`warning_code`** Format: `Enum`
+  **`warning_code`** *Enum*
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
@@ -1957,7 +1957,7 @@ Delay in removing code from device.
 
 Third-party integration detected that may cause access codes to fail.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the warning.
@@ -1965,7 +1965,7 @@ Third-party integration detected that may cause access codes to fail.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
@@ -1973,7 +1973,7 @@ Third-party integration detected that may cause access codes to fail.
   
   ---
 
-  **`warning_code`** Format: `Enum`
+  **`warning_code`** *Enum*
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
@@ -1990,7 +1990,7 @@ Third-party integration detected that may cause access codes to fail.
 
 Access code has not yet been fully moved to the device.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the warning.
@@ -1998,7 +1998,7 @@ Access code has not yet been fully moved to the device.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
@@ -2006,7 +2006,7 @@ Access code has not yet been fully moved to the device.
   
   ---
 
-  **`warning_code`** Format: `Enum`
+  **`warning_code`** *Enum*
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
@@ -2023,7 +2023,7 @@ Access code has not yet been fully moved to the device.
 
 August lock is temporarily offline.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the warning.
@@ -2031,7 +2031,7 @@ August lock is temporarily offline.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
@@ -2039,7 +2039,7 @@ August lock is temporarily offline.
   
   ---
 
-  **`warning_code`** Format: `Enum`
+  **`warning_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -2056,7 +2056,7 @@ August lock is temporarily offline.
 
 Algopins must be used within 24 hours.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the warning.
@@ -2064,7 +2064,7 @@ Algopins must be used within 24 hours.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
@@ -2072,7 +2072,7 @@ Algopins must be used within 24 hours.
   
   ---
 
-  **`warning_code`** Format: `Enum`
+  **`warning_code`** *Enum*
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
@@ -2089,7 +2089,7 @@ Algopins must be used within 24 hours.
 
 Management was transferred to another workspace.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the warning.
@@ -2097,7 +2097,7 @@ Management was transferred to another workspace.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
@@ -2105,7 +2105,7 @@ Management was transferred to another workspace.
   
   ---
 
-  **`warning_code`** Format: `Enum`
+  **`warning_code`** *Enum*
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
@@ -2122,7 +2122,7 @@ Management was transferred to another workspace.
 
 Unable to confirm that the access code is set on Kwikset device.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the warning.
@@ -2130,7 +2130,7 @@ Unable to confirm that the access code is set on Kwikset device.
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
@@ -2138,7 +2138,7 @@ Unable to confirm that the access code is set on Kwikset device.
   
   ---
 
-  **`warning_code`** Format: `Enum`
+  **`warning_code`** *Enum*
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
@@ -2483,45 +2483,37 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <summary>Properties</summary>
 
-- <strong><code>access_code_id</code></strong> <i>UUID</i>
+<strong><code>access_code_id</code></strong> <i>UUID</i>
 
   ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
-
-- <strong><code>connected_account_id</code></strong> <i>UUID</i>
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
-
-- <strong><code>created_at</code></strong> <i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
-
-- <strong><code>device_id</code></strong> <i>UUID</i>
+<strong><code>device_id</code></strong> <i>UUID</i>
 
   ID of the [device](../../../core-concepts/devices/README.md).
 
-
-- <strong><code>event_id</code></strong> <i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.
 
-
-- <strong><code>event_type</code></strong> <i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
   Value: `access_code.unmanaged.converted_to_managed`
 
-
-- <strong><code>occurred_at</code></strong> <i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
-
-- <strong><code>workspace_id</code></strong> <i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
   ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
 </details>
 
 ---
@@ -2534,45 +2526,37 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <summary>Properties</summary>
 
-- <strong><code>access_code_id</code></strong> <i>UUID</i>
+<strong><code>access_code_id</code></strong> <i>UUID</i>
 
   ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
-
-- <strong><code>connected_account_id</code></strong> <i>UUID</i>
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
-
-- <strong><code>created_at</code></strong> <i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
-
-- <strong><code>device_id</code></strong> <i>UUID</i>
+<strong><code>device_id</code></strong> <i>UUID</i>
 
   ID of the [device](../../../core-concepts/devices/README.md).
 
-
-- <strong><code>event_id</code></strong> <i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.
 
-
-- <strong><code>event_type</code></strong> <i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
   Value: `access_code.unmanaged.failed_to_convert_to_managed`
 
-
-- <strong><code>occurred_at</code></strong> <i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
-
-- <strong><code>workspace_id</code></strong> <i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
   ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
 </details>
 
 ---
@@ -2585,45 +2569,37 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <summary>Properties</summary>
 
-- <strong><code>access_code_id</code></strong> <i>UUID</i>
+<strong><code>access_code_id</code></strong> <i>UUID</i>
 
   ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
-
-- <strong><code>connected_account_id</code></strong> <i>UUID</i>
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
-
-- <strong><code>created_at</code></strong> <i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
-
-- <strong><code>device_id</code></strong> <i>UUID</i>
+<strong><code>device_id</code></strong> <i>UUID</i>
 
   ID of the [device](../../../core-concepts/devices/README.md).
 
-
-- <strong><code>event_id</code></strong> <i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.
 
-
-- <strong><code>event_type</code></strong> <i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
   Value: `access_code.unmanaged.created`
 
-
-- <strong><code>occurred_at</code></strong> <i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
-
-- <strong><code>workspace_id</code></strong> <i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
   ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
 </details>
 
 ---
@@ -2636,45 +2612,37 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <summary>Properties</summary>
 
-- <strong><code>access_code_id</code></strong> <i>UUID</i>
+<strong><code>access_code_id</code></strong> <i>UUID</i>
 
   ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
-
-- <strong><code>connected_account_id</code></strong> <i>UUID</i>
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
-
-- <strong><code>created_at</code></strong> <i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
-
-- <strong><code>device_id</code></strong> <i>UUID</i>
+<strong><code>device_id</code></strong> <i>UUID</i>
 
   ID of the [device](../../../core-concepts/devices/README.md).
 
-
-- <strong><code>event_id</code></strong> <i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.
 
-
-- <strong><code>event_type</code></strong> <i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
   Value: `access_code.unmanaged.removed`
 
-
-- <strong><code>occurred_at</code></strong> <i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
-
-- <strong><code>workspace_id</code></strong> <i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
   ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
 </details>
 
 ---

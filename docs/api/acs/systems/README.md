@@ -243,7 +243,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capab
   This error might also occur if Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/README.md).
   See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -251,7 +251,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capab
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -264,7 +264,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capab
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -277,7 +277,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capab
 Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
     See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -285,7 +285,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capab
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -298,13 +298,13 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capab
   
   ---
 
-  **`is_bridge_error`** Format: `Boolean`
+  **`is_bridge_error`** *Boolean*
   
   
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -318,7 +318,7 @@ Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is funct
   For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](../../../core-concepts/workspaces/README.md).
   See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -326,7 +326,7 @@ Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is funct
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -339,7 +339,7 @@ Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is funct
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -351,7 +351,7 @@ Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is funct
 
 Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -359,7 +359,7 @@ Indicates that the maximum number of users allowed for the site has been reached
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -372,7 +372,7 @@ Indicates that the maximum number of users allowed for the site has been reached
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -384,7 +384,7 @@ Indicates that the maximum number of users allowed for the site has been reached
 
 Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md) to resolve the issue.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -392,7 +392,7 @@ Indicates that the [access control system](https://docs.seam.co/latest/capabilit
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -405,7 +405,7 @@ Indicates that the [access control system](https://docs.seam.co/latest/capabilit
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -417,7 +417,7 @@ Indicates that the [access control system](https://docs.seam.co/latest/capabilit
 
 Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) to restore access.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -425,7 +425,7 @@ Indicates that the login credentials are invalid. Reconnect the account using a 
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -438,7 +438,7 @@ Indicates that the login credentials are invalid. Reconnect the account using a 
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -450,7 +450,7 @@ Indicates that the login credentials are invalid. Reconnect the account using a 
 
 Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the error.
@@ -458,7 +458,7 @@ Indicates that the [access control system](https://docs.seam.co/latest/capabilit
   
   ---
 
-  **`error_code`** Format: `Enum`
+  **`error_code`** *Enum*
   
   
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
@@ -471,7 +471,7 @@ Indicates that the [access control system](https://docs.seam.co/latest/capabilit
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
@@ -646,7 +646,7 @@ Variants:
 
 Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site to rectify the issue.
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the warning.
@@ -654,7 +654,7 @@ Indicates that the Salto KS site has exceeded 80% of the maximum number of allow
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
@@ -662,7 +662,7 @@ Indicates that the Salto KS site has exceeded 80% of the maximum number of allow
   
   ---
 
-  **`warning_code`** Format: `Enum`
+  **`warning_code`** *Enum*
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
@@ -679,7 +679,7 @@ Indicates that the Salto KS site has exceeded 80% of the maximum number of allow
 
 Indicates the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
-  **`created_at`** Format: `Datetime`
+  **`created_at`** *Datetime*
   
   
   Date and time at which Seam created the warning.
@@ -687,7 +687,7 @@ Indicates the [access control system](https://docs.seam.co/latest/capability-gui
   
   ---
 
-  **`message`** Format: `String`
+  **`message`** *String*
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
@@ -695,7 +695,7 @@ Indicates the [access control system](https://docs.seam.co/latest/capability-gui
   
   ---
 
-  **`misconfigured_acs_entrance_ids`** Format: `List`, Item format: `UUID`
+  **`misconfigured_acs_entrance_ids`** *List* *of UUIDs*
   
   
   {% hint style="warning" %}
@@ -705,7 +705,7 @@ Indicates the [access control system](https://docs.seam.co/latest/capability-gui
   
   ---
 
-  **`warning_code`** Format: `Enum`
+  **`warning_code`** *Enum*
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
@@ -805,40 +805,33 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 <summary>Properties</summary>
 
-- <strong><code>acs_system_id</code></strong> <i>UUID</i>
+<strong><code>acs_system_id</code></strong> <i>UUID</i>
 
   ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-
-- <strong><code>connected_account_id</code></strong> <i>UUID</i>
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
-
-- <strong><code>created_at</code></strong> <i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
-
-- <strong><code>event_id</code></strong> <i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.
 
-
-- <strong><code>event_type</code></strong> <i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
   Value: `acs_system.connected`
 
-
-- <strong><code>occurred_at</code></strong> <i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
-
-- <strong><code>workspace_id</code></strong> <i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
   ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
 </details>
 
 ---
@@ -851,40 +844,33 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 <summary>Properties</summary>
 
-- <strong><code>acs_system_id</code></strong> <i>UUID</i>
+<strong><code>acs_system_id</code></strong> <i>UUID</i>
 
   ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-
-- <strong><code>connected_account_id</code></strong> <i>UUID</i>
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
-
-- <strong><code>created_at</code></strong> <i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
-
-- <strong><code>event_id</code></strong> <i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.
 
-
-- <strong><code>event_type</code></strong> <i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
   Value: `acs_system.added`
 
-
-- <strong><code>occurred_at</code></strong> <i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
-
-- <strong><code>workspace_id</code></strong> <i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
   ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
 </details>
 
 ---
@@ -897,40 +883,33 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 <summary>Properties</summary>
 
-- <strong><code>acs_system_id</code></strong> <i>UUID</i>
+<strong><code>acs_system_id</code></strong> <i>UUID</i>
 
   ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-
-- <strong><code>connected_account_id</code></strong> <i>UUID</i>
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
-
-- <strong><code>created_at</code></strong> <i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
-
-- <strong><code>event_id</code></strong> <i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.
 
-
-- <strong><code>event_type</code></strong> <i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
   Value: `acs_system.disconnected`
 
-
-- <strong><code>occurred_at</code></strong> <i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
-
-- <strong><code>workspace_id</code></strong> <i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
   ID of the [workspace](../../../core-concepts/workspaces/README.md).
-
 </details>
 
 ---
