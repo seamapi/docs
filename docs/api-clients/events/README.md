@@ -6,7 +6,7 @@ As with other API resources, you can use endpoints to retrieve an [individual ev
 
 ***
 
-## `event` Properties <a href="#custom-anchor" id="custom-anchor"></a>
+## `event` Properties
 
 The following sections list the properties for events pertaining to various types of resources:
 
