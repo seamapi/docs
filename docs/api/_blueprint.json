@@ -6390,8 +6390,22 @@
               },
               {
                 "name": "acs_user_id",
-                "description": "ID of the access system user to whom you want to grant access to an entrance.",
-                "isRequired": true,
+                "description": "ID of the access system user to whom you want to grant access to an entrance. You can only provide one of acs_user_id or user_identity_id.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
+                "name": "user_identity_id",
+                "description": "ID of the user identity to whom you want to grant access to an entrance. You can only provide one of acs_user_id or user_identity_id. If the ACS system contains an ACS user with the same `email_address` or `phone_number` as the user identity that you specify, they are linked, and the access group membership belongs to the ACS user. If the ACS system does not have a corresponding ACS user, one is created.",
+                "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
                 "isUndocumented": false,
@@ -7813,9 +7827,37 @@
             "preferredMethod": "POST",
             "parameters": [
               {
+                "name": "acs_system_id",
+                "description": "ID of the access system that you want to delete. You must provide acs_system_id with user_identity_id.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
                 "name": "acs_user_id",
-                "description": "ID of the access system user that you want to delete.",
-                "isRequired": true,
+                "description": "ID of the access system user that you want to delete. You must provide either acs_user_id or user_identity_id",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
+                "name": "user_identity_id",
+                "description": "ID of the user identity that you want to delete. You must provide either acs_user_id or user_identity_id. If you provide user_identity_id, you must also provide acs_system_id.",
+                "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
                 "isUndocumented": false,
@@ -7940,9 +7982,37 @@
             "preferredMethod": "POST",
             "parameters": [
               {
+                "name": "acs_system_id",
+                "description": "ID of the access system that you want to get. You can only provide acs_user_id or user_identity_id.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
                 "name": "acs_user_id",
-                "description": "ID of the access system user that you want to get.",
-                "isRequired": true,
+                "description": "ID of the access system user that you want to get. You can only provide acs_user_id or user_identity_id.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
+                "name": "user_identity_id",
+                "description": "ID of the user identity that you want to get. You can only provide acs_user_id or user_identity_id.",
+                "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
                 "isUndocumented": false,
@@ -8314,9 +8384,37 @@
             "preferredMethod": "POST",
             "parameters": [
               {
+                "name": "acs_system_id",
+                "description": "ID of the access system for which you want to list accessible entrances. You can only provide acs_system_id with user_identity_id.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
                 "name": "acs_user_id",
-                "description": "ID of the access system user for whom you want to list accessible entrances.",
-                "isRequired": true,
+                "description": "ID of the access system user for whom you want to list accessible entrances. You can only provide acs_user_id or user_identity_id.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
+                "name": "user_identity_id",
+                "description": "ID of the user identity for whom you want to list accessible entrances. You can only provide acs_user_id or user_identity_id.",
+                "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
                 "isUndocumented": false,
@@ -8376,8 +8474,22 @@
               },
               {
                 "name": "acs_user_id",
-                "description": "ID of the access system user that you want to remove from an access group.",
-                "isRequired": true,
+                "description": "ID of the access system user that you want to remove from an access group. You can only provide acs_user_id or user_identity_id.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
+                "name": "user_identity_id",
+                "description": "ID of the user identity that you want to remove from an access group. You can only provide acs_user_id or user_identity_id.",
+                "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
                 "isUndocumented": false,
@@ -8501,9 +8613,37 @@
             "preferredMethod": "POST",
             "parameters": [
               {
+                "name": "acs_system_id",
+                "description": "ID of the access system for which you want to revoke access. You can only provide acs_system_id with user_identity_id.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
                 "name": "acs_user_id",
-                "description": "ID of the access system user for whom you want to revoke access.",
-                "isRequired": true,
+                "description": "ID of the access system user for whom you want to revoke access. You can only provide acs_user_id or user_identity_id.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
+                "name": "user_identity_id",
+                "description": "ID of the user identity for whom you want to revoke access. You can only provide acs_user_id or user_identity_id.",
+                "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
                 "isUndocumented": false,
@@ -8547,9 +8687,37 @@
             "preferredMethod": "POST",
             "parameters": [
               {
+                "name": "acs_system_id",
+                "description": "ID of the access system that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
                 "name": "acs_user_id",
-                "description": "ID of the access system user that you want to suspend.",
-                "isRequired": true,
+                "description": "ID of the access system user that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
+                "name": "user_identity_id",
+                "description": "ID of the user identity that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id.",
+                "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
                 "isUndocumented": false,
@@ -8672,9 +8840,37 @@
             "preferredMethod": "POST",
             "parameters": [
               {
+                "name": "acs_system_id",
+                "description": "ID of the access system of the user that you want to unsuspend. You can only provide acs_system_id with user_identity_id.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
                 "name": "acs_user_id",
-                "description": "ID of the access system user that you want to unsuspend.",
-                "isRequired": true,
+                "description": "ID of the access system user that you want to unsuspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
+                "name": "user_identity_id",
+                "description": "ID of the user identity that you want to unsuspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id.",
+                "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
                 "isUndocumented": false,
@@ -8842,9 +9038,23 @@
                 ]
               },
               {
+                "name": "acs_system_id",
+                "description": "ID of the access system that you want to update. You can only provide acs_system_id with user_identity_id.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
                 "name": "acs_user_id",
-                "description": "ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).",
-                "isRequired": true,
+                "description": "ID of the access system user that you want to update. You can only provide acs_user_id or user_identity_id.",
+                "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
                 "isUndocumented": false,
@@ -8923,6 +9133,20 @@
                 "draftMessage": "",
                 "hasDefault": false,
                 "format": "string",
+                "jsonType": "string"
+              },
+              {
+                "name": "user_identity_id",
+                "description": "ID of the user identity that you want to update. You can only provide acs_user_id or user_identity_id. If you provide user_identity_id, you must also provide acs_system_id.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
                 "jsonType": "string"
               }
             ]
@@ -24566,7 +24790,7 @@
               {
                 "name": "name",
                 "description": "User-friendly name to identify the thermostat daily program.",
-                "isRequired": false,
+                "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
                 "isUndocumented": false,
@@ -24709,7 +24933,7 @@
               {
                 "name": "name",
                 "description": "User-friendly name to identify the thermostat daily program that you want to update.",
-                "isRequired": false,
+                "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
                 "isUndocumented": false,
@@ -33361,7 +33585,7 @@
                 },
                 {
                   "name": "is_bridge_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related to Seam Bridge.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -33374,7 +33598,7 @@
                 },
                 {
                   "name": "is_connected_account_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related specifically to the connected account.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -33387,7 +33611,7 @@
                 },
                 {
                   "name": "message",
-                  "description": "",
+                  "description": "Detailed description of the error. Provides insights into the issue and potentially how to rectify it.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -33443,7 +33667,7 @@
                 },
                 {
                   "name": "is_bridge_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related to Seam Bridge.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -33456,7 +33680,7 @@
                 },
                 {
                   "name": "is_connected_account_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related specifically to the connected account.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -33469,7 +33693,7 @@
                 },
                 {
                   "name": "message",
-                  "description": "",
+                  "description": "Detailed description of the error. Provides insights into the issue and potentially how to rectify it.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -33481,7 +33705,7 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the Seam API cannot communicate with [Seam Bridge](../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n  See also [Troubleshooting Your Access Control System](../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected)."
+              "description": "Indicates that the Seam API cannot communicate with [Seam Bridge](../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected)."
             }
           ]
         },
@@ -39925,7 +40149,7 @@
         },
         {
           "name": "accepted_providers",
-          "description": "",
+          "description": "List of accepted [provider keys](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -39952,7 +40176,7 @@
         },
         {
           "name": "any_provider_allowed",
-          "description": "",
+          "description": "Indicates whether any provider is allowed.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -39965,7 +40189,7 @@
         },
         {
           "name": "authorized_at",
-          "description": "",
+          "description": "Date and time at which the user authorized (through the Connect Webview) the management of their devices.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -39978,7 +40202,7 @@
         },
         {
           "name": "automatically_manage_new_devices",
-          "description": "",
+          "description": "Indicates whether Seam should [import all new devices](../core-concepts/connect-webviews/customizing-connect-webviews.md#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -39991,7 +40215,7 @@
         },
         {
           "name": "connect_webview_id",
-          "description": "",
+          "description": "ID of the Connect Webview.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -40004,7 +40228,7 @@
         },
         {
           "name": "connected_account_id",
-          "description": "",
+          "description": "ID of the [connected account](../core-concepts/connected-accounts/README.md) associated with the Connect Webview.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -40017,7 +40241,7 @@
         },
         {
           "name": "created_at",
-          "description": "",
+          "description": "Date and time at which the Connect Webview was created.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -40030,7 +40254,7 @@
         },
         {
           "name": "custom_metadata",
-          "description": "",
+          "description": "Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](../core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview.md), [connected account](../core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account.md), or [device](../core-concepts/devices/adding-custom-metadata-to-a-device.md), enables you to store custom information, like customer details or internal IDs from your application.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -40043,7 +40267,7 @@
         },
         {
           "name": "custom_redirect_failure_url",
-          "description": "",
+          "description": "URL to which the Connect Webview should redirect when an unexpected error occurs.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -40056,7 +40280,7 @@
         },
         {
           "name": "custom_redirect_url",
-          "description": "",
+          "description": "URL to which the Connect Webview should redirect when the user successfully pairs a device or system. If you do not set the `custom_redirect_failure_url`, the Connect Webview redirects to the `custom_redirect_url` when an unexpected error occurs.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -40114,7 +40338,7 @@
         },
         {
           "name": "login_successful",
-          "description": "",
+          "description": "Indicates whether the user logged in successfully using the Connect Webview.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -40127,7 +40351,7 @@
         },
         {
           "name": "selected_provider",
-          "description": "",
+          "description": "Selected provider of the Connect Webview, one of the [provider keys](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -40140,7 +40364,7 @@
         },
         {
           "name": "status",
-          "description": "",
+          "description": "Status of the Connect Webview. `authorized` indicates that the user has successfully logged into their device or system account, thereby completing the Connect Webview.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -40185,7 +40409,7 @@
         },
         {
           "name": "url",
-          "description": "",
+          "description": "URL for the Connect Webview. You use the URL to display the Connect Webview flow to your user.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -40198,7 +40422,7 @@
         },
         {
           "name": "wait_for_device_creation",
-          "description": "",
+          "description": "Indicates whether Seam should [finish syncing all devices](../core-concepts/connect-webviews/customizing-connect-webviews.md#wait_for_device_creation) in a newly-connected account before completing the associated Connect Webview.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -40211,7 +40435,7 @@
         },
         {
           "name": "workspace_id",
-          "description": "",
+          "description": "ID of the [workspace](../core-concepts/workspaces/README.md) that contains the Connect Webview.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -40239,7 +40463,7 @@
       "properties": [
         {
           "name": "account_type",
-          "description": "",
+          "description": "Type of connected account.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -40252,7 +40476,7 @@
         },
         {
           "name": "account_type_display_name",
-          "description": "",
+          "description": "Display name for the connected account type.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -40265,7 +40489,7 @@
         },
         {
           "name": "automatically_manage_new_devices",
-          "description": "",
+          "description": "Indicates whether Seam should [import all new devices](../core-concepts/connect-webviews/customizing-connect-webviews.md#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -40278,7 +40502,7 @@
         },
         {
           "name": "connected_account_id",
-          "description": "",
+          "description": "Unique identifier for the connected account.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -40291,7 +40515,7 @@
         },
         {
           "name": "created_at",
-          "description": "",
+          "description": "Date and time at which the connected account was created.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -40304,7 +40528,7 @@
         },
         {
           "name": "custom_metadata",
-          "description": "",
+          "description": "Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](../core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview.md), [connected account](../core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account.md), or [device](../core-concepts/devices/adding-custom-metadata-to-a-device.md), enables you to store custom information, like customer details or internal IDs from your application.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -40317,7 +40541,7 @@
         },
         {
           "name": "errors",
-          "description": "",
+          "description": "Errors associated with the connected account.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -40372,7 +40596,7 @@
                 },
                 {
                   "name": "is_bridge_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related to Seam Bridge.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -40385,7 +40609,7 @@
                 },
                 {
                   "name": "is_connected_account_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related specifically to the connected account.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -40398,7 +40622,7 @@
                 },
                 {
                   "name": "message",
-                  "description": "",
+                  "description": "Detailed description of the error. Provides insights into the issue and potentially how to rectify it.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -40454,7 +40678,7 @@
                 },
                 {
                   "name": "is_bridge_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related to Seam Bridge.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -40467,7 +40691,7 @@
                 },
                 {
                   "name": "is_connected_account_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related specifically to the connected account.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -40480,7 +40704,7 @@
                 },
                 {
                   "name": "message",
-                  "description": "",
+                  "description": "Detailed description of the error. Provides insights into the issue and potentially how to rectify it.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -40536,7 +40760,7 @@
                 },
                 {
                   "name": "is_bridge_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related to Seam Bridge.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -40549,7 +40773,7 @@
                 },
                 {
                   "name": "is_connected_account_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related specifically to the connected account.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -40562,7 +40786,7 @@
                 },
                 {
                   "name": "message",
-                  "description": "",
+                  "description": "Detailed description of the error. Provides insights into the issue and potentially how to rectify it.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -40574,7 +40798,7 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the Seam API cannot communicate with [Seam Bridge](../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n  See also [Troubleshooting Your Access Control System](../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected)."
+              "description": "Indicates that the Seam API cannot communicate with [Seam Bridge](../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected)."
             },
             {
               "properties": [
@@ -40618,7 +40842,7 @@
                 },
                 {
                   "name": "is_bridge_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related to Seam Bridge.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -40631,7 +40855,7 @@
                 },
                 {
                   "name": "is_connected_account_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related specifically to the connected account.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -40644,7 +40868,7 @@
                 },
                 {
                   "name": "message",
-                  "description": "",
+                  "description": "Detailed description of the error. Provides insights into the issue and potentially how to rectify it.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -40657,7 +40881,7 @@
                 },
                 {
                   "name": "salto_ks_metadata",
-                  "description": "",
+                  "description": "Salto KS metadata associated with the connected account that has an error.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -40670,7 +40894,7 @@
                   "properties": [
                     {
                       "name": "sites",
-                      "description": "",
+                      "description": "Salto sites associated with the connected account that has an error.",
                       "isDeprecated": false,
                       "deprecationMessage": "",
                       "isUndocumented": false,
@@ -40684,7 +40908,7 @@
                       "itemProperties": [
                         {
                           "name": "site_id",
-                          "description": "",
+                          "description": "ID of a Salto site associated with the connected account that has an error.",
                           "isDeprecated": false,
                           "deprecationMessage": "",
                           "isUndocumented": false,
@@ -40697,7 +40921,7 @@
                         },
                         {
                           "name": "site_name",
-                          "description": "",
+                          "description": "Name of a Salto site associated with the connected account that has an error.",
                           "isDeprecated": false,
                           "deprecationMessage": "",
                           "isUndocumented": false,
@@ -40710,7 +40934,7 @@
                         },
                         {
                           "name": "site_user_subscription_limit",
-                          "description": "",
+                          "description": "Subscription limit of site users for a Salto site associated with the connected account that has an error.",
                           "isDeprecated": false,
                           "deprecationMessage": "",
                           "isUndocumented": false,
@@ -40723,7 +40947,7 @@
                         },
                         {
                           "name": "subscribed_site_user_count",
-                          "description": "",
+                          "description": "Count of subscribed site users for a Salto site associated with the connected account that has an error.",
                           "isDeprecated": false,
                           "deprecationMessage": "",
                           "isUndocumented": false,
@@ -40745,7 +40969,7 @@
         },
         {
           "name": "user_identifier",
-          "description": "",
+          "description": "User identifier associated with the connected account.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -40758,7 +40982,7 @@
           "properties": [
             {
               "name": "api_url",
-              "description": "",
+              "description": "API URL for the user identifier associated with the connected account.",
               "isDeprecated": false,
               "deprecationMessage": "",
               "isUndocumented": false,
@@ -40771,7 +40995,7 @@
             },
             {
               "name": "email",
-              "description": "",
+              "description": "Email address of the user identifier associated with the connected account.",
               "isDeprecated": false,
               "deprecationMessage": "",
               "isUndocumented": false,
@@ -40784,7 +41008,7 @@
             },
             {
               "name": "exclusive",
-              "description": "",
+              "description": "Indicates whether the user identifier associated with the connected account is exclusive.",
               "isDeprecated": false,
               "deprecationMessage": "",
               "isUndocumented": false,
@@ -40797,7 +41021,7 @@
             },
             {
               "name": "phone",
-              "description": "",
+              "description": "Phone number of the user identifier associated with the connected account.",
               "isDeprecated": false,
               "deprecationMessage": "",
               "isUndocumented": false,
@@ -40810,7 +41034,7 @@
             },
             {
               "name": "username",
-              "description": "",
+              "description": "Username of the user identifier associated with the connected account.",
               "isDeprecated": false,
               "deprecationMessage": "",
               "isUndocumented": false,
@@ -40825,7 +41049,7 @@
         },
         {
           "name": "warnings",
-          "description": "",
+          "description": "Warnings associated with the connected account.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -40855,7 +41079,7 @@
                 },
                 {
                   "name": "message",
-                  "description": "",
+                  "description": "Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -40892,7 +41116,7 @@
                   ]
                 }
               ],
-              "description": "Scheduled downtime for account planned."
+              "description": "Scheduled downtime planned for the connected account."
             },
             {
               "properties": [
@@ -40911,7 +41135,7 @@
                 },
                 {
                   "name": "message",
-                  "description": "",
+                  "description": "Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -40948,7 +41172,7 @@
                   ]
                 }
               ],
-              "description": "An unknown issue occurred while syncing the state of this connected account with the provider. This issue may affect the proper functioning of one or more resources in this account."
+              "description": "An unknown issue occurred while syncing the state of the connected account with the provider. This issue may affect the proper functioning of one or more resources in the account."
             },
             {
               "properties": [
@@ -40967,7 +41191,7 @@
                 },
                 {
                   "name": "message",
-                  "description": "",
+                  "description": "Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -40980,7 +41204,7 @@
                 },
                 {
                   "name": "salto_ks_metadata",
-                  "description": "",
+                  "description": "Salto KS metadata associated with the connected account that has a warning.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -40993,7 +41217,7 @@
                   "properties": [
                     {
                       "name": "sites",
-                      "description": "",
+                      "description": "Salto sites associated with the connected account that has a warning.",
                       "isDeprecated": false,
                       "deprecationMessage": "",
                       "isUndocumented": false,
@@ -41007,7 +41231,7 @@
                       "itemProperties": [
                         {
                           "name": "site_id",
-                          "description": "",
+                          "description": "ID of a Salto site associated with the connected account that has a warning.",
                           "isDeprecated": false,
                           "deprecationMessage": "",
                           "isUndocumented": false,
@@ -41020,7 +41244,7 @@
                         },
                         {
                           "name": "site_name",
-                          "description": "",
+                          "description": "Name of a Salto site associated with the connected account that has a warning.",
                           "isDeprecated": false,
                           "deprecationMessage": "",
                           "isUndocumented": false,
@@ -41033,7 +41257,7 @@
                         },
                         {
                           "name": "site_user_subscription_limit",
-                          "description": "",
+                          "description": "Subscription limit of site users for a Salto site associated with the connected account that has a warning.",
                           "isDeprecated": false,
                           "deprecationMessage": "",
                           "isUndocumented": false,
@@ -41046,7 +41270,7 @@
                         },
                         {
                           "name": "subscribed_site_user_count",
-                          "description": "",
+                          "description": "Count of subscribed site users for a Salto site associated with the connected account that has a warning.",
                           "isDeprecated": false,
                           "deprecationMessage": "",
                           "isUndocumented": false,
@@ -41087,7 +41311,7 @@
                   ]
                 }
               ],
-              "description": "Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this."
+              "description": "Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site."
             }
           ]
         }
@@ -41353,7 +41577,7 @@
         },
         {
           "name": "custom_metadata",
-          "description": "",
+          "description": "Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](../core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview.md), [connected account](../core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account.md), or [device](../core-concepts/devices/adding-custom-metadata-to-a-device.md), enables you to store custom information, like customer details or internal IDs from your application.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -42755,7 +42979,7 @@
                 },
                 {
                   "name": "is_bridge_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related to Seam Bridge.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -42768,7 +42992,7 @@
                 },
                 {
                   "name": "is_connected_account_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related specifically to the connected account.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -42781,7 +43005,7 @@
                 },
                 {
                   "name": "message",
-                  "description": "",
+                  "description": "Detailed description of the error. Provides insights into the issue and potentially how to rectify it.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -42837,7 +43061,7 @@
                 },
                 {
                   "name": "is_bridge_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related to Seam Bridge.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -42850,7 +43074,7 @@
                 },
                 {
                   "name": "is_connected_account_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related specifically to the connected account.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -42863,7 +43087,7 @@
                 },
                 {
                   "name": "message",
-                  "description": "",
+                  "description": "Detailed description of the error. Provides insights into the issue and potentially how to rectify it.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -42875,7 +43099,7 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the Seam API cannot communicate with [Seam Bridge](../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n  See also [Troubleshooting Your Access Control System](../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected)."
+              "description": "Indicates that the Seam API cannot communicate with [Seam Bridge](../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected)."
             }
           ]
         },
@@ -55965,7 +56189,7 @@
                 },
                 {
                   "name": "is_bridge_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related to Seam Bridge.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -55978,7 +56202,7 @@
                 },
                 {
                   "name": "is_connected_account_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related specifically to the connected account.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -55991,7 +56215,7 @@
                 },
                 {
                   "name": "message",
-                  "description": "",
+                  "description": "Detailed description of the error. Provides insights into the issue and potentially how to rectify it.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -56047,7 +56271,7 @@
                 },
                 {
                   "name": "is_bridge_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related to Seam Bridge.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -56060,7 +56284,7 @@
                 },
                 {
                   "name": "is_connected_account_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related specifically to the connected account.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -56073,7 +56297,7 @@
                 },
                 {
                   "name": "message",
-                  "description": "",
+                  "description": "Detailed description of the error. Provides insights into the issue and potentially how to rectify it.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -56085,7 +56309,7 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the Seam API cannot communicate with [Seam Bridge](../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n  See also [Troubleshooting Your Access Control System](../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected)."
+              "description": "Indicates that the Seam API cannot communicate with [Seam Bridge](../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected)."
             }
           ]
         },
@@ -61537,7 +61761,7 @@
                 },
                 {
                   "name": "is_bridge_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related to Seam Bridge.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -61550,7 +61774,7 @@
                 },
                 {
                   "name": "is_connected_account_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related specifically to the connected account.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -61563,7 +61787,7 @@
                 },
                 {
                   "name": "message",
-                  "description": "",
+                  "description": "Detailed description of the error. Provides insights into the issue and potentially how to rectify it.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -61619,7 +61843,7 @@
                 },
                 {
                   "name": "is_bridge_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related to Seam Bridge.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -61632,7 +61856,7 @@
                 },
                 {
                   "name": "is_connected_account_error",
-                  "description": "",
+                  "description": "Indicates whether the error is related specifically to the connected account.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -61645,7 +61869,7 @@
                 },
                 {
                   "name": "message",
-                  "description": "",
+                  "description": "Detailed description of the error. Provides insights into the issue and potentially how to rectify it.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -61657,7 +61881,7 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the Seam API cannot communicate with [Seam Bridge](../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n  See also [Troubleshooting Your Access Control System](../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected)."
+              "description": "Indicates that the Seam API cannot communicate with [Seam Bridge](../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected)."
             }
           ]
         },
