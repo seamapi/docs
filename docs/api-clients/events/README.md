@@ -14,7 +14,7 @@ The following sections list the properties for events pertaining to various type
 
 | Property               | Type                               | Description                                                                  |
 | ---------------------- | ---------------------------------- | ---------------------------------------------------------------------------- |
-| `event_id`  {#test-anchor}            | String                             | Unique identifier for the `event`.                                           |
+| `event_id`             | String                             | Unique identifier for the `event`.                                           |
 | `event_type`           | See [Event Types](./#event-types). | Type of event.                                                               |
 | `created_at`           | String                             | Time at which the `event` was created. Displayed in an ISO8601 string.       |
 | `workspace_id`         | String                             | Unique identifier for the `workspace` to which the `event` belongs.          |
