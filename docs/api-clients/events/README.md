@@ -6,15 +6,15 @@ As with other API resources, you can use endpoints to retrieve an [individual ev
 
 ***
 
-## `event` Properties <a href="#custom-anchor" id="custom-anchor"></a>
+## `event` Properties
 
-The following sections list the properties for events pertaining to various types of resources: <a href="#test-anchor" id="test-anchor"></a>
+The following sections list the properties for events pertaining to various types of resources:
 
 ### Common Event Properties
 
 | Property               | Type                               | Description                                                                  |
 | ---------------------- | ---------------------------------- | ---------------------------------------------------------------------------- |
-| `event_id`             | String                             | Unique identifier for the `event`.                                           |
+| `event_id`  <a href="#test-anchor" id="test-anchor"></a>            | String                             | Unique identifier for the `event`.                                           |
 | `event_type`           | See [Event Types](./#event-types). | Type of event.                                                               |
 | `created_at`           | String                             | Time at which the `event` was created. Displayed in an ISO8601 string.       |
 | `workspace_id`         | String                             | Unique identifier for the `workspace` to which the `event` belongs.          |
