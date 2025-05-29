@@ -1621,11 +1621,15 @@ Credentials provided were invalid.
   **`is_bridge_error`** *Boolean*
   
   
+  Indicates whether the error is related to Seam Bridge.
+  
   
   ---
 
   **`is_connected_account_error`** *Boolean*
   
+  
+  Indicates whether the error is related specifically to the connected account.
   
   
   ---
@@ -1633,13 +1637,14 @@ Credentials provided were invalid.
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>bridge_disconnected</code></summary>
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
-  See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
   **`created_at`** *Datetime*
   
@@ -1665,17 +1670,23 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capab
   **`is_bridge_error`** *Boolean*
   
   
+  Indicates whether the error is related to Seam Bridge.
+  
   
   ---
 
   **`is_connected_account_error`** *Boolean*
   
   
+  Indicates whether the error is related specifically to the connected account.
+  
   
   ---
 
   **`message`** *String*
   
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
   
   
 </details>
@@ -2392,8 +2403,7 @@ Credentials provided were invalid.
 
 **`bridge_disconnected`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
-  See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
 ---
 
