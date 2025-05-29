@@ -370,6 +370,7 @@ Indicates that the [credential](../../../capability-guides/access-systems/managi
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>waiting_to_be_issued</code>
   
   
@@ -401,6 +402,7 @@ Indicates that the schedule of one of the [credential](../../../capability-guide
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>schedule_externally_modified</code>
   
   
@@ -432,6 +434,7 @@ Indicates that the schedule of the [credential](../../../capability-guides/acces
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>schedule_modified</code>
   
   
@@ -463,6 +466,7 @@ Indicates that the [credential](../../../capability-guides/access-systems/managi
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>being_deleted</code>
   
   
@@ -494,6 +498,7 @@ An unknown issue occurred while syncing the state of the [credential](../../../c
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>unknown_issue_with_acs_credential</code>
   
   
@@ -525,6 +530,7 @@ Access permissions for the [credential](../../../capability-guides/access-system
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>needs_to_be_reissued</code>
   
   

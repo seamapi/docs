@@ -133,6 +133,7 @@ Failed to set code on SmartThings device.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>smartthings_failed_to_set_access_code</code>
   
   
@@ -172,6 +173,7 @@ Failed to set code after multiple retries.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>smartthings_failed_to_set_after_multiple_retries</code>
   
   
@@ -211,6 +213,7 @@ No free slots available on the device.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>smartthings_no_free_slots_available</code>
   
   
@@ -250,6 +253,7 @@ Failed to set code on device.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>failed_to_set_on_device</code>
   
   
@@ -289,6 +293,7 @@ Failed to remove code from device.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>failed_to_remove_from_device</code>
   
   
@@ -328,6 +333,7 @@ Duplicate access code detected on device.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>duplicate_code_on_device</code>
   
   
@@ -367,6 +373,7 @@ An attempt to modify this access code was prevented.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>duplicate_code_attempt_prevented</code>
   
   
@@ -406,6 +413,7 @@ No space for access code on device.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>no_space_for_access_code_on_device</code>
   
   
@@ -445,6 +453,7 @@ Igloohome bridge has too many pending jobs in the queue.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>igloohome_bridge_too_many_pending_jobs</code>
   
   
@@ -484,6 +493,7 @@ Igloohome bridge is offline.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>igloohome_bridge_offline</code>
   
   
@@ -523,6 +533,7 @@ Lock has reached maximum amount of codes.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>igloohome_offline_access_code_no_variance_available</code>
   
   
@@ -562,6 +573,7 @@ Unable to confirm that the access code is set on Kwikset device.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>kwikset_unable_to_confirm_code</code>
   
   
@@ -601,6 +613,7 @@ Unable to confirm the deletion of the access code on Kwikset device.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>kwikset_unable_to_confirm_deletion</code>
   
   
@@ -640,6 +653,7 @@ Code was modified or removed externally after Seam successfully set it on the de
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>code_modified_external_to_seam</code>
   
   
@@ -679,6 +693,7 @@ Invalid code length for August lock.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>august_lock_invalid_code_length</code>
   
   
@@ -718,6 +733,7 @@ Access code has not yet been fully moved to the device.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>august_device_programming_delay</code>
   
   
@@ -757,6 +773,7 @@ All access code slots on the device are full.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>august_device_slots_full</code>
   
   
@@ -796,6 +813,7 @@ August lock is missing a keypad.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>august_lock_missing_keypad</code>
   
   
@@ -835,6 +853,7 @@ August lock is temporarily offline.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>august_lock_temporarily_offline</code>
   
   
@@ -874,6 +893,7 @@ Salto site user is not subscribed.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>salto_ks_user_not_subscribed</code>
   
   
@@ -913,6 +933,7 @@ Access code has not yet been fully moved to the device.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>hubitat_device_programming_delay</code>
   
   
@@ -952,6 +973,7 @@ No free positions available on the device.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>hubitat_no_free_positions_available</code>
   
   
@@ -991,6 +1013,7 @@ Duplicate access code name detected.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>wyze_duplicate_code_name</code>
   
   
@@ -1030,6 +1053,7 @@ Potential duplicate access code detected.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>wyze_potential_duplicate_code</code>
   
   
@@ -1069,6 +1093,7 @@ No valid user level for Oracode.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>dormakaba_oracode_no_valid_user_level</code>
   
   
@@ -1106,6 +1131,7 @@ Account is disconnected
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>account_disconnected</code>
   
   
@@ -1145,6 +1171,7 @@ Salto site user limit reached.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>salto_ks_subscription_limit_exceeded</code>
   
   
@@ -1184,6 +1211,7 @@ Device is offline
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>device_offline</code>
   
   
@@ -1217,6 +1245,7 @@ Device has been removed
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>device_removed</code>
   
   
@@ -1250,6 +1279,7 @@ Hub is disconnected
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>hub_disconnected</code>
   
   
@@ -1283,6 +1313,7 @@ Device is disconnected
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>device_disconnected</code>
   
   
@@ -1316,6 +1347,7 @@ The backup access code pool is empty.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>empty_backup_access_code_pool</code>
   
   
@@ -1349,6 +1381,7 @@ User is not authorized to use the August Lock.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>august_lock_not_authorized</code>
   
   
@@ -1382,6 +1415,7 @@ Lock is not connected to the Seam Bridge.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>august_lock_missing_bridge</code>
   
   
@@ -1415,6 +1449,7 @@ Lock is not paired with a Gateway.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>ttlock_lock_not_paired_to_gateway</code>
   
   
@@ -1448,6 +1483,7 @@ Missing device credentials.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>missing_device_credentials</code>
   
   
@@ -1481,6 +1517,7 @@ The auxiliary heat is running.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>auxiliary_heat_running</code>
   
   
@@ -1514,6 +1551,7 @@ Subscription required to connect.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>subscription_required</code>
   
   
@@ -1549,6 +1587,7 @@ Credentials provided were invalid.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>invalid_credentials</code>
   
   
@@ -1591,6 +1630,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../capabili
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>bridge_disconnected</code>
   
   
@@ -1791,6 +1831,7 @@ Failed to set code on SmartThings device.
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>smartthings_failed_to_set_access_code</code>
   
   
@@ -1822,6 +1863,7 @@ Duplicate access code detected.
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>schlage_detected_duplicate</code>
   
   
@@ -1853,6 +1895,7 @@ Received an error when attempting to create this code.
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>schlage_creation_outage</code>
   
   
@@ -1884,6 +1927,7 @@ Code was modified or removed externally after Seam successfully set it on the de
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>code_modified_external_to_seam</code>
   
   
@@ -1915,6 +1959,7 @@ Delay in setting code on device.
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>delay_in_setting_on_device</code>
   
   
@@ -1946,6 +1991,7 @@ Delay in removing code from device.
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>delay_in_removing_from_device</code>
   
   
@@ -1977,6 +2023,7 @@ Third-party integration detected that may cause access codes to fail.
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>third_party_integration_detected</code>
   
   
@@ -2008,6 +2055,7 @@ Access code has not yet been fully moved to the device.
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>august_device_programming_delay</code>
   
   
@@ -2039,6 +2087,7 @@ August lock is temporarily offline.
   Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>august_lock_temporarily_offline</code>
   
   
@@ -2070,6 +2119,7 @@ Algopins must be used within 24 hours.
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>igloo_algopin_must_be_used_within_24_hours</code>
   
   
@@ -2101,6 +2151,7 @@ Management was transferred to another workspace.
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>management_transferred</code>
   
   
@@ -2132,6 +2183,7 @@ Unable to confirm that the access code is set on Kwikset device.
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
   
   Enum values:
+  
     - <code>kwikset_unable_to_confirm_code</code>
   
   
