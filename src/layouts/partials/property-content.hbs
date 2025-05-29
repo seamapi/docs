@@ -7,13 +7,11 @@
 {{> deprecated-warning}}
 {{/if}}
 {{#if enumValues}}
-<details>
-    <summary>Enum values:</summary>
 
-    {{#each enumValues}}
-    - <code>{{this}}</code>
-    {{/each}}
-</details>
+Enum values:
+  {{#each enumValues}}
+  - <code>{{this}}</code>
+  {{/each}}
 {{/if}}
 
 {{#if value}}
