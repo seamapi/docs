@@ -22,7 +22,7 @@
             "responseKey": "access_code",
             "resourceType": "access_code",
             "description": "OK",
-            "actionAttemptType": "CREATE_ACCESS_CODE"
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -340,7 +340,8 @@
             "responseType": "resource_list",
             "responseKey": "access_codes",
             "resourceType": "access_code",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -744,7 +745,8 @@
             "responseType": "resource",
             "responseKey": "generated_code",
             "resourceType": "access_code",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -793,7 +795,8 @@
             "responseType": "resource",
             "responseKey": "access_code",
             "resourceType": "access_code",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -869,7 +872,8 @@
             "responseType": "resource_list",
             "responseKey": "access_codes",
             "resourceType": "access_code",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -976,7 +980,8 @@
             "responseType": "resource",
             "responseKey": "access_code",
             "resourceType": "access_code",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -1584,7 +1589,8 @@
             "responseType": "resource",
             "responseKey": "access_code",
             "resourceType": "unmanaged_access_code",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -1839,7 +1845,8 @@
             "responseType": "resource",
             "responseKey": "access_code",
             "resourceType": "unmanaged_access_code",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -1916,7 +1923,8 @@
             "responseType": "resource_list",
             "responseKey": "access_codes",
             "resourceType": "unmanaged_access_code",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -2254,7 +2262,8 @@
             "responseType": "resource",
             "responseKey": "acs_access_group",
             "resourceType": "acs_access_group",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -2394,7 +2403,8 @@
             "responseType": "resource_list",
             "responseKey": "acs_access_groups",
             "resourceType": "acs_access_group",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -2565,7 +2575,8 @@
             "responseType": "resource_list",
             "responseKey": "acs_entrances",
             "resourceType": "acs_entrance",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -2703,7 +2714,8 @@
             "responseType": "resource_list",
             "responseKey": "acs_users",
             "resourceType": "acs_user",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -3023,7 +3035,8 @@
             "responseType": "resource",
             "responseKey": "acs_access_group",
             "resourceType": "unmanaged_acs_access_group",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -3163,7 +3176,8 @@
             "responseType": "resource_list",
             "responseKey": "acs_access_groups",
             "resourceType": "unmanaged_acs_access_group",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -3336,7 +3350,8 @@
             "responseType": "resource_list",
             "responseKey": "acs_credential_pools",
             "resourceType": "acs_credential_pool",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -3400,7 +3415,8 @@
             "responseType": "resource",
             "responseKey": "acs_credential_provisioning_automation",
             "resourceType": "acs_credential_provisioning_automation",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -3687,7 +3703,8 @@
             "responseType": "resource",
             "responseKey": "acs_credential",
             "resourceType": "acs_credential",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -4273,7 +4290,8 @@
             "responseType": "resource",
             "responseKey": "acs_credential",
             "resourceType": "acs_credential",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -4503,7 +4521,8 @@
             "responseType": "resource",
             "responseKey": "acs_credential",
             "resourceType": "acs_credential",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -4642,7 +4661,8 @@
             "responseType": "resource_list",
             "responseKey": "acs_credentials",
             "resourceType": "acs_credential",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -4858,7 +4878,8 @@
             "responseType": "resource_list",
             "responseKey": "acs_entrances",
             "resourceType": "acs_entrance",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -5344,7 +5365,8 @@
             "responseType": "resource",
             "responseKey": "acs_credential",
             "resourceType": "unmanaged_acs_credential",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -5392,7 +5414,8 @@
             "responseType": "resource_list",
             "responseKey": "acs_credentials",
             "resourceType": "unmanaged_acs_credential",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -5610,7 +5633,8 @@
             "responseType": "resource",
             "responseKey": "acs_encoder",
             "resourceType": "acs_encoder",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -5658,7 +5682,8 @@
             "responseType": "resource_list",
             "responseKey": "acs_encoders",
             "resourceType": "acs_encoder",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -6233,7 +6258,8 @@
             "responseType": "resource",
             "responseKey": "acs_entrance",
             "resourceType": "acs_entrance",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -6427,7 +6453,8 @@
             "responseType": "resource_list",
             "responseKey": "acs_entrances",
             "resourceType": "acs_entrance",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -6590,7 +6617,8 @@
             "responseType": "resource_list",
             "responseKey": "acs_credentials",
             "resourceType": "acs_credential",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -6786,7 +6814,8 @@
             "responseType": "resource",
             "responseKey": "acs_system",
             "resourceType": "acs_system",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -6919,7 +6948,8 @@
             "responseType": "resource_list",
             "responseKey": "acs_systems",
             "resourceType": "acs_system",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -7053,7 +7083,8 @@
             "responseType": "resource_list",
             "responseKey": "acs_systems",
             "resourceType": "acs_system",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -7343,7 +7374,8 @@
             "responseType": "resource",
             "responseKey": "acs_user",
             "resourceType": "acs_user",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -7930,7 +7962,8 @@
             "responseType": "resource",
             "responseKey": "acs_user",
             "resourceType": "acs_user",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -8068,7 +8101,8 @@
             "responseType": "resource_list",
             "responseKey": "acs_users",
             "resourceType": "acs_user",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -8304,7 +8338,8 @@
             "responseType": "resource_list",
             "responseKey": "acs_entrances",
             "resourceType": "acs_entrance",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -9046,7 +9081,8 @@
             "responseType": "resource",
             "responseKey": "acs_user",
             "resourceType": "unmanaged_acs_user",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -9094,7 +9130,8 @@
             "responseType": "resource_list",
             "responseKey": "acs_users",
             "resourceType": "unmanaged_acs_user",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -9210,7 +9247,8 @@
             "responseType": "resource",
             "responseKey": "action_attempt",
             "resourceType": "action_attempt",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -9259,7 +9297,8 @@
             "responseType": "resource_list",
             "responseKey": "action_attempts",
             "resourceType": "action_attempt",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -9319,7 +9358,8 @@
             "responseType": "resource",
             "responseKey": "bridge",
             "resourceType": "unknown",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -9367,7 +9407,8 @@
             "responseType": "resource_list",
             "responseKey": "bridges",
             "resourceType": "unknown",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -9411,7 +9452,8 @@
             "responseType": "resource",
             "responseKey": "client_session",
             "resourceType": "client_session",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -9566,7 +9608,8 @@
             "responseType": "resource",
             "responseKey": "client_session",
             "resourceType": "client_session",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -9629,7 +9672,8 @@
             "responseType": "resource",
             "responseKey": "client_session",
             "resourceType": "client_session",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -9843,7 +9887,8 @@
             "responseType": "resource_list",
             "responseKey": "client_sessions",
             "resourceType": "client_session",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -10004,7 +10049,8 @@
             "responseType": "resource",
             "responseKey": "connect_webview",
             "resourceType": "connect_webview",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -10796,7 +10842,8 @@
             "responseType": "resource",
             "responseKey": "connect_webview",
             "resourceType": "connect_webview",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -10845,7 +10892,8 @@
             "responseType": "resource_list",
             "responseKey": "connect_webviews",
             "resourceType": "connect_webview",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -10995,7 +11043,8 @@
             "responseType": "resource",
             "responseKey": "connected_account",
             "resourceType": "connected_account",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -11058,7 +11107,8 @@
             "responseType": "resource_list",
             "responseKey": "connected_accounts",
             "resourceType": "connected_account",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -11295,7 +11345,8 @@
             "responseType": "resource",
             "responseKey": "device",
             "resourceType": "device",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -11358,7 +11409,8 @@
             "responseType": "resource_list",
             "responseKey": "devices",
             "resourceType": "device",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -12974,7 +13026,8 @@
             "responseType": "resource_list",
             "responseKey": "device_providers",
             "resourceType": "device_provider",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -13356,7 +13409,8 @@
             "responseType": "resource",
             "responseKey": "device",
             "resourceType": "unmanaged_device",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -13419,7 +13473,8 @@
             "responseType": "resource_list",
             "responseKey": "devices",
             "resourceType": "unmanaged_device",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -15106,7 +15161,8 @@
             "responseType": "resource",
             "responseKey": "event",
             "resourceType": "event",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -15183,7 +15239,8 @@
             "responseType": "resource_list",
             "responseKey": "events",
             "resourceType": "event",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -17226,7 +17283,8 @@
             "responseType": "resource",
             "responseKey": "device",
             "resourceType": "device",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -17289,7 +17347,8 @@
             "responseType": "resource_list",
             "responseKey": "devices",
             "resourceType": "device",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -18859,7 +18918,8 @@
             "responseType": "resource",
             "responseKey": "network",
             "resourceType": "network",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -18907,7 +18967,8 @@
             "responseType": "resource_list",
             "responseKey": "networks",
             "resourceType": "network",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -18951,7 +19012,8 @@
             "responseType": "resource_list",
             "responseKey": "devices",
             "resourceType": "device",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -19519,7 +19581,7 @@
             "responseKey": "noise_threshold",
             "resourceType": "noise_threshold",
             "description": "OK",
-            "actionAttemptType": "CREATE_NOISE_THRESHOLD"
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -19727,7 +19789,8 @@
             "responseType": "resource",
             "responseKey": "noise_threshold",
             "resourceType": "noise_threshold",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -19775,7 +19838,8 @@
             "responseType": "resource_list",
             "responseKey": "noise_thresholds",
             "resourceType": "noise_threshold",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -20100,7 +20164,8 @@
             "responseType": "resource",
             "responseKey": "phone",
             "resourceType": "phone",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -20148,7 +20213,8 @@
             "responseType": "resource_list",
             "responseKey": "phones",
             "resourceType": "phone",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -20221,7 +20287,8 @@
             "responseType": "resource",
             "responseKey": "phone",
             "resourceType": "phone",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -20505,7 +20572,8 @@
             "responseType": "resource",
             "responseKey": "bridge_client_session",
             "resourceType": "unknown",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -20578,7 +20646,8 @@
             "responseType": "resource",
             "responseKey": "bridge_client_session",
             "resourceType": "unknown",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -20609,7 +20678,8 @@
             "responseType": "resource",
             "responseKey": "bridge_client_session",
             "resourceType": "unknown",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -20639,7 +20709,8 @@
             "responseType": "resource",
             "responseKey": "bridge_client_session",
             "resourceType": "unknown",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -20742,7 +20813,8 @@
             "responseType": "resource_list",
             "responseKey": "bridge_connected_systems",
             "resourceType": "unknown",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -20789,7 +20861,8 @@
             "responseType": "resource",
             "responseKey": "client_session",
             "resourceType": "client_session",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -20850,7 +20923,8 @@
             "responseType": "resource_list",
             "responseKey": "acs_credentials",
             "resourceType": "acs_credential",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -20898,7 +20972,8 @@
             "responseType": "resource",
             "responseKey": "phone_session",
             "resourceType": "phone_session",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -21854,7 +21929,8 @@
             "responseType": "resource",
             "responseKey": "thermostat",
             "resourceType": "device",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -22304,7 +22380,8 @@
             "responseType": "resource_list",
             "responseKey": "devices",
             "resourceType": "device",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -24540,7 +24617,8 @@
             "responseType": "resource",
             "responseKey": "thermostat_daily_program",
             "resourceType": "unknown",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -24816,7 +24894,8 @@
             "responseType": "resource",
             "responseKey": "thermostat_schedule",
             "resourceType": "thermostat_schedule",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -25169,7 +25248,8 @@
             "responseType": "resource",
             "responseKey": "thermostat_schedule",
             "resourceType": "thermostat_schedule",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -25307,7 +25387,8 @@
             "responseType": "resource_list",
             "responseKey": "thermostat_schedules",
             "resourceType": "thermostat_schedule",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -25936,7 +26017,8 @@
             "responseType": "resource",
             "responseKey": "access_grant",
             "resourceType": "unknown",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -26210,7 +26292,8 @@
             "responseType": "resource",
             "responseKey": "access_grant",
             "resourceType": "unknown",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -26258,7 +26341,8 @@
             "responseType": "resource_list",
             "responseKey": "access_grants",
             "resourceType": "unknown",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -26359,7 +26443,8 @@
             "responseType": "resource",
             "responseKey": "access_method",
             "resourceType": "unknown",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -26407,7 +26492,8 @@
             "responseType": "resource_list",
             "responseKey": "access_methods",
             "resourceType": "unknown",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -26590,7 +26676,8 @@
             "responseType": "resource",
             "responseKey": "location",
             "resourceType": "unknown",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -26772,7 +26859,8 @@
             "responseType": "resource",
             "responseKey": "location",
             "resourceType": "unknown",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -26820,7 +26908,8 @@
             "responseType": "resource_list",
             "responseKey": "locations",
             "resourceType": "unknown",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -26976,7 +27065,8 @@
             "responseType": "resource",
             "responseKey": "location",
             "resourceType": "unknown",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -27480,7 +27570,8 @@
             "responseType": "resource",
             "responseKey": "user_identity",
             "resourceType": "user_identity",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -27803,7 +27894,8 @@
             "responseType": "resource",
             "responseKey": "instant_key",
             "resourceType": "instant_key",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -27866,7 +27958,8 @@
             "responseType": "resource",
             "responseKey": "user_identity",
             "resourceType": "user_identity",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -28159,7 +28252,8 @@
             "responseType": "resource_list",
             "responseKey": "user_identities",
             "resourceType": "user_identity",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -28298,7 +28392,8 @@
             "responseType": "resource_list",
             "responseKey": "devices",
             "resourceType": "device",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -28488,7 +28583,8 @@
             "responseType": "resource_list",
             "responseKey": "acs_systems",
             "resourceType": "acs_system",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -28632,7 +28728,8 @@
             "responseType": "resource_list",
             "responseKey": "acs_users",
             "resourceType": "acs_user",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -29294,7 +29391,8 @@
             "responseType": "resource",
             "responseKey": "enrollment_automation",
             "resourceType": "enrollment_automation",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -29432,7 +29530,8 @@
             "responseType": "resource",
             "responseKey": "enrollment_automation",
             "resourceType": "unknown",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -29628,7 +29727,8 @@
             "responseType": "resource_list",
             "responseKey": "enrollment_automations",
             "resourceType": "enrollment_automation",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -29779,7 +29879,8 @@
             "responseType": "resource",
             "responseKey": "webhook",
             "resourceType": "webhook",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -29891,7 +29992,8 @@
             "responseType": "resource",
             "responseKey": "webhook",
             "resourceType": "webhook",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -29939,7 +30041,8 @@
             "responseType": "resource_list",
             "responseKey": "webhooks",
             "resourceType": "webhook",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -30046,7 +30149,8 @@
             "responseType": "resource",
             "responseKey": "workspace",
             "resourceType": "workspace",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -30308,7 +30412,8 @@
             "responseType": "resource",
             "responseKey": "workspace",
             "resourceType": "workspace",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [
@@ -30343,7 +30448,8 @@
             "responseType": "resource_list",
             "responseKey": "workspaces",
             "resourceType": "workspace",
-            "description": "OK"
+            "description": "OK",
+            "actionAttemptType": null
           },
           "request": {
             "methods": [

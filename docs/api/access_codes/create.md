@@ -130,17 +130,11 @@ Indicates whether to use a [backup access code pool](https://docs.seam.co/latest
 ## Response
 
 [access\_code](./)
-
-**`CREATE_ACCESS_CODE`**
 {% tabs %}
 {% tab title="JSON" %}
 ```json
 {
-  action_attempt_id: [example value],
-  action_type: [example value],
-  error: [example value],
-  result: [example value],
-  status: [example value]
+  JSON representation of access_code
 }
 ```
 {% endtab %}
