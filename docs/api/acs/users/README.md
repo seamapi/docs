@@ -151,11 +151,9 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
 
   **`error_code`** *Enum*
   
-  <details>
-      <summary>Enum values:</summary>
   
-      - <code>deleted_externally</code>
-  </details>
+  Enum values:
+    - <code>deleted_externally</code>
   
   
   ---
@@ -182,11 +180,9 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
 
   **`error_code`** *Enum*
   
-  <details>
-      <summary>Enum values:</summary>
   
-      - <code>salto_ks_subscription_limit_exceeded</code>
-  </details>
+  Enum values:
+    - <code>salto_ks_subscription_limit_exceeded</code>
   
   
   ---
@@ -213,11 +209,9 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
 
   **`error_code`** *Enum*
   
-  <details>
-      <summary>Enum values:</summary>
   
-      - <code>failed_to_create_on_acs_system</code>
-  </details>
+  Enum values:
+    - <code>failed_to_create_on_acs_system</code>
   
   
   ---
@@ -244,11 +238,9 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
 
   **`error_code`** *Enum*
   
-  <details>
-      <summary>Enum values:</summary>
   
-      - <code>failed_to_update_on_acs_system</code>
-  </details>
+  Enum values:
+    - <code>failed_to_update_on_acs_system</code>
   
   
   ---
@@ -275,11 +267,9 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
 
   **`error_code`** *Enum*
   
-  <details>
-      <summary>Enum values:</summary>
   
-      - <code>failed_to_delete_on_acs_system</code>
-  </details>
+  Enum values:
+    - <code>failed_to_delete_on_acs_system</code>
   
   
   ---
@@ -306,11 +296,9 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
 
   **`error_code`** *Enum*
   
-  <details>
-      <summary>Enum values:</summary>
   
-      - <code>latch_conflict_with_resident_user</code>
-  </details>
+  Enum values:
+    - <code>latch_conflict_with_resident_user</code>
   
   
   ---
@@ -421,11 +409,9 @@ Seam is in the process of pushing a user creation to the integrated access syste
 
   **`mutation_code`** *Enum*
   
-  <details>
-      <summary>Enum values:</summary>
   
-      - <code>creating</code>
-  </details>
+  Enum values:
+    - <code>creating</code>
   
   
 </details>
@@ -452,11 +438,9 @@ Seam is in the process of pushing a user deletion to the integrated access syste
 
   **`mutation_code`** *Enum*
   
-  <details>
-      <summary>Enum values:</summary>
   
-      - <code>deleting</code>
-  </details>
+  Enum values:
+    - <code>deleting</code>
   
   
 </details>
@@ -487,11 +471,9 @@ Seam is in the process of pushing a user deletion to the integrated access syste
 
   **`mutation_code`** *Enum*
   
-  <details>
-      <summary>Enum values:</summary>
   
-      - <code>updating_user_information</code>
-  </details>
+  Enum values:
+    - <code>updating_user_information</code>
   
   
   ---
@@ -530,11 +512,9 @@ Seam is in the process of pushing an access schedule update to the integrated ac
 
   **`mutation_code`** *Enum*
   
-  <details>
-      <summary>Enum values:</summary>
   
-      - <code>updating_access_schedule</code>
-  </details>
+  Enum values:
+    - <code>updating_access_schedule</code>
   
   
   ---
@@ -573,11 +553,9 @@ Seam is in the process of pushing a suspension state update to the integrated ac
 
   **`mutation_code`** *Enum*
   
-  <details>
-      <summary>Enum values:</summary>
   
-      - <code>updating_suspension_state</code>
-  </details>
+  Enum values:
+    - <code>updating_suspension_state</code>
   
   
   ---
@@ -618,11 +596,9 @@ Seam is in the process of pushing an access group membership update to the integ
 
   **`mutation_code`** *Enum*
   
-  <details>
-      <summary>Enum values:</summary>
   
-      - <code>updating_group_membership</code>
-  </details>
+  Enum values:
+    - <code>updating_group_membership</code>
   
   
   ---
@@ -715,11 +691,9 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
 
   **`warning_code`** *Enum*
   
-  <details>
-      <summary>Enum values:</summary>
   
-      - <code>being_deleted</code>
-  </details>
+  Enum values:
+    - <code>being_deleted</code>
   
   
 </details>
@@ -746,11 +720,9 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
 
   **`warning_code`** *Enum*
   
-  <details>
-      <summary>Enum values:</summary>
   
-      - <code>salto_ks_user_not_subscribed</code>
-  </details>
+  Enum values:
+    - <code>salto_ks_user_not_subscribed</code>
   
   
 </details>
@@ -777,11 +749,9 @@ An unknown issue occurred while syncing the state of this [ACS user](https://doc
 
   **`warning_code`** *Enum*
   
-  <details>
-      <summary>Enum values:</summary>
   
-      - <code>unknown_issue_with_acs_user</code>
-  </details>
+  Enum values:
+    - <code>unknown_issue_with_acs_user</code>
   
   
 </details>
@@ -808,11 +778,9 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
 
   **`warning_code`** *Enum*
   
-  <details>
-      <summary>Enum values:</summary>
   
-      - <code>latch_resident_user</code>
-  </details>
+  Enum values:
+    - <code>latch_resident_user</code>
   
   
 </details>

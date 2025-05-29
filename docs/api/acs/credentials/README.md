@@ -368,11 +368,9 @@ Indicates that the [credential](../../../capability-guides/access-systems/managi
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-  <details>
-      <summary>Enum values:</summary>
   
-      - <code>waiting_to_be_issued</code>
-  </details>
+  Enum values:
+    - <code>waiting_to_be_issued</code>
   
   
 </details>
@@ -401,11 +399,9 @@ Indicates that the schedule of one of the [credential](../../../capability-guide
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-  <details>
-      <summary>Enum values:</summary>
   
-      - <code>schedule_externally_modified</code>
-  </details>
+  Enum values:
+    - <code>schedule_externally_modified</code>
   
   
 </details>
@@ -434,11 +430,9 @@ Indicates that the schedule of the [credential](../../../capability-guides/acces
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-  <details>
-      <summary>Enum values:</summary>
   
-      - <code>schedule_modified</code>
-  </details>
+  Enum values:
+    - <code>schedule_modified</code>
   
   
 </details>
@@ -467,11 +461,9 @@ Indicates that the [credential](../../../capability-guides/access-systems/managi
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-  <details>
-      <summary>Enum values:</summary>
   
-      - <code>being_deleted</code>
-  </details>
+  Enum values:
+    - <code>being_deleted</code>
   
   
 </details>
@@ -500,11 +492,9 @@ An unknown issue occurred while syncing the state of the [credential](../../../c
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-  <details>
-      <summary>Enum values:</summary>
   
-      - <code>unknown_issue_with_acs_credential</code>
-  </details>
+  Enum values:
+    - <code>unknown_issue_with_acs_credential</code>
   
   
 </details>
@@ -533,11 +523,9 @@ Access permissions for the [credential](../../../capability-guides/access-system
   
   
   Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-  <details>
-      <summary>Enum values:</summary>
   
-      - <code>needs_to_be_reissued</code>
-  </details>
+  Enum values:
+    - <code>needs_to_be_reissued</code>
   
   
 </details>
