@@ -131,6 +131,7 @@
 * [Overview](api-clients/overview.md)
 * [Installation](api-clients/installation.md)
 * [Authentication](api-clients/authentication.md)
+* [Pagination](api/pagination.md)
 * [Access Codes](api/access_codes/README.md)
   * [Create an Access Code](api/access_codes/create.md)
   * [Create Multiple Linked Access Codes](api/access_codes/create_multiple.md)

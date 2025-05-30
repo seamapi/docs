@@ -130,10 +130,6 @@ $seam->acs->entrances->list();
 ```
 {% endtab %}
 
-{% tab title="Untitled" %}
-
-{% endtab %}
-
 {% tab title="C#" %}
 **Request:**
 
