@@ -15,7 +15,7 @@ Users with more than one door lock in a property may want to create groups of li
 
 When you use `/access_codes/create_multiple`, Seam assigns a `common_code_key` to all of the created access codes and returns this key. The `common_code_key` identifies all the access codes within this linked group.
 
-Then, you can change the starting or ending time for the group of access codes—for example, if a short-term rental guest requests an early check-in or late checkout. To update a group of linked access codes, use [`/access_codes/update_multiple`](../../../api/access_codes/update-multiple-linked-access-codes.md), specifying the `common_code_key` of the linked access code group, along with the replacement starting and ending timestamps.
+Then, you can change the starting or ending time for the group of access codes—for example, if a short-term rental guest requests an early check-in or late checkout. To update a group of linked access codes, use [`/access_codes/update_multiple`](../../../api/access_codes/update_multiple.md), specifying the `common_code_key` of the linked access code group, along with the replacement starting and ending timestamps.
 
 ***
 
