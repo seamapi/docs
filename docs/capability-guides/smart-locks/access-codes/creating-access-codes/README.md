@@ -19,11 +19,11 @@ layout:
 
 ## Overview
 
-This guide explains how to create online access codes on an online smart lock. With the [Access Codes](../../../../api-clients/access_codes/) API, generate PIN codes on a door lock and share it with visitors, allowing them keyless access.
+This guide explains how to create online access codes on an online smart lock. With the [Access Codes](../../../../api/access_codes/) API, generate PIN codes on a door lock and share it with visitors, allowing them keyless access.
 
 Seam supports programming two types of online access codes for online door locks:
 
-1. **Ongoing**: Ideal for residents or long-term users. Ongoing codes remain active on a device until removed. Create one by omitting both `starts_at` and `ends_at`. To remove the code, use the [Delete Access Code](../../../../api-clients/access_codes/delete.md) endpoint.
+1. **Ongoing**: Ideal for residents or long-term users. Ongoing codes remain active on a device until removed. Create one by omitting both `starts_at` and `ends_at`. To remove the code, use the [Delete Access Code](../../../../api/access_codes/delete.md) endpoint.
 2. **Time Bound**: Suitable for temporary access like guest visits or service appointments. These codes operate between a designated `starts_at` and `ends_at` time window, granting access only during that period.
 
 {% hint style="info" %}
@@ -232,7 +232,7 @@ Ongoing online access codes are ideal for long-term users that wish to keep the 
 
 ### 1. Create an Ongoing Online Access Code
 
-Set an ongoing online access code by providing the `device_id` of the smart lock on which you want to [create an access code](../../../../api-clients/access_codes/create.md). Assign an optional `name` to the access code for easier identification within the [Seam Console](https://console.seam.co) and smart lock app.
+Set an ongoing online access code by providing the `device_id` of the smart lock on which you want to [create an access code](../../../../api/access_codes/create.md). Assign an optional `name` to the access code for easier identification within the [Seam Console](https://console.seam.co) and smart lock app.
 
 To customize the PIN code, specify a desired PIN for the `code` property. If you do not specify a `code`, you can set the `preferred_code_length`, and Seam generates a code of this length if the affected device supports the specified preferred code length. See [Access Code Requirements for Door Locks](../../../../products/smart-locks/access-codes/access-code-requirements-for-door-locks.md) to understand any requirements specific to the door lock.
 
@@ -550,7 +550,7 @@ There are two methods to verify that an ongoing access code has been set on the 
 
 ### **Polling Method**
 
-Use the `access_code` reference returned by the create function to call the [Get Access Code](../../../../api-clients/access_codes/get/) function. A basic implementation would involve polling this endpoint until the `status` of the access code updates to `set`.
+Use the `access_code` reference returned by the create function to call the [Get Access Code](../../../../api/access_codes/get/) function. A basic implementation would involve polling this endpoint until the `status` of the access code updates to `set`.
 
 If the `status` remains `setting` for a very long time, or if the `access_code` object contains any `warnings` or `errors` properties, consult [the guide on "Troubleshooting Access Code Issues"](../../../../products/smart-locks/access-codes/troubleshooting-access-code-issues.md) for further guidance.
 
@@ -577,7 +577,7 @@ Time-bound online access codes are suitable for temporary access, like guest vis
 
 ### 1. Create a Time-Bound Online Access Code
 
-To set a time-bound online access code, provide the `device_id` of the smart lock on which you want to program a code, along with `starts_at` and `ends_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamps to define the active time window for the code. For more details, see the [Create Access Code](../../../../api-clients/access_codes/create.md) endpoint.
+To set a time-bound online access code, provide the `device_id` of the smart lock on which you want to program a code, along with `starts_at` and `ends_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamps to define the active time window for the code. For more details, see the [Create Access Code](../../../../api/access_codes/create.md) endpoint.
 
 As with ongoing codes, you can assign an optional `name` to the access code. A clear name helps users to identify the access code quickly within their smart lock app.
 
@@ -936,7 +936,7 @@ There are two methods to verify that an time-bound access code has been set on t
 
 ### **Polling Method**
 
-Use the `access_code` reference returned by the create function to call the [Get Access Code](../../../../api-clients/access_codes/get/) function. In a basic implementation, you would poll this endpoint at the `starts_at` time to check if the access code's status is updated to `set`.
+Use the `access_code` reference returned by the create function to call the [Get Access Code](../../../../api/access_codes/get/) function. In a basic implementation, you would poll this endpoint at the `starts_at` time to check if the access code's status is updated to `set`.
 
 If the `status` remains `setting`, or if the `access_code` object displays any `warnings` or `errors`, refer to [the "Troubleshooting Access Code Issues" guide](../../../../products/smart-locks/access-codes/troubleshooting-access-code-issues.md) for assistance.
 

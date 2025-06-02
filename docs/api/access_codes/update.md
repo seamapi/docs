@@ -126,7 +126,7 @@ Type to which you want to convert the access code. To convert a time-bound acces
 
 **`use_backup_access_code_pool`** *Boolean*
 
-Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](../../api-clients/access_codes/pull_backup_access_code.md).
+Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code).
 
 ---
 

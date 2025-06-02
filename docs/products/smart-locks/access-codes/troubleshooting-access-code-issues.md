@@ -29,7 +29,7 @@ If the device or connected account associated with an access code has an error, 
 
 ## Determining the Issue
 
-The first step in troubleshooting an access code issue is to figure out what the issue is from Seam's point of view. Make a [Get Access Code](../../../api-clients/access_codes/get/) or [List Access Codes](../../../api/access_codes/list.md) request and look at the `errors` and `warnings` payloads on the access code object. Look at the error and warning codes. Then, see the matching remedy in [Suggested Access Code Remedies](troubleshooting-access-code-issues.md#suggested-access-code-remedies) for next steps.
+The first step in troubleshooting an access code issue is to figure out what the issue is from Seam's point of view. Make a [Get Access Code](../../../api/access_codes/get/) or [List Access Codes](../../../api/access_codes/list.md) request and look at the `errors` and `warnings` payloads on the access code object. Look at the error and warning codes. Then, see the matching remedy in [Suggested Access Code Remedies](troubleshooting-access-code-issues.md#suggested-access-code-remedies) for next steps.
 
 {% tabs %}
 {% tab title="Python" %}
