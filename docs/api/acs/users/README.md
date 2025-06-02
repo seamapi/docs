@@ -22,6 +22,7 @@ For details about how to configure `acs_user`s in your access control system, se
   access_schedule: [example value],
   acs_system_id: [example value],
   acs_user_id: [example value],
+  connected_account_id: [example value],
   created_at: [example value],
   display_name: [example value],
   email: [example value],
@@ -82,6 +83,17 @@ ID of the [access control system](https://docs.seam.co/latest/capability-guides/
 **`acs_user_id`** *UUID*
 
 ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+
+
+
+---
+
+**`connected_account_id`** *UUID*
+
+
+      The ID of the [connected account](../../../core-concepts/connected-accounts/README.md) that is associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+    
 
 
 
@@ -883,7 +895,7 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
 
 **`acs_user.created`**
 
-An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created.
+An [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created.
 
 <details>
 
@@ -891,13 +903,13 @@ An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-
 
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
 
-  ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+  ID of the access system.
 
 <strong><code>acs_user_id</code></strong> <i>UUID</i>
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+  ID of the connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -917,14 +929,14 @@ An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../../core-concepts/workspaces/README.md).
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`acs_user.deleted`**
 
-An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted.
+An [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted.
 
 <details>
 
@@ -932,13 +944,13 @@ An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-
 
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
 
-  ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+  ID of the access system.
 
 <strong><code>acs_user_id</code></strong> <i>UUID</i>
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+  ID of the connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -958,7 +970,7 @@ An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../../core-concepts/workspaces/README.md).
+  ID of the workspace associated with the event.
 </details>
 
 ---

@@ -261,11 +261,11 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
 
-  ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+  ID of the access system.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+  ID of the connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -285,7 +285,7 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../../core-concepts/workspaces/README.md).
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -302,11 +302,11 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
 
-  ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+  ID of the access system.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+  ID of the connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -326,7 +326,7 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../../core-concepts/workspaces/README.md).
+  ID of the workspace associated with the event.
 </details>
 
 ---

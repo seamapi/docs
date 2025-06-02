@@ -43,16 +43,6 @@ For details about the resources associated with an access control system, see th
   acs_access_group_count: [example value],
   acs_system_id: [example value],
   acs_user_count: [example value],
-  can_add_acs_users_to_acs_access_groups: [example value],
-  can_automate_enrollment: [example value],
-  can_create_acs_access_groups: [example value],
-  can_create_user: [example value],
-  can_delete_user: [example value],
-  can_remove_acs_users_from_acs_access_groups: [example value],
-  can_update_user_group_membership: [example value],
-  can_update_user_information: [example value],
-  can_update_user_schedule: [example value],
-  can_update_user_supension_state: [example value],
   connected_account_id: [example value],
   connected_account_ids: [example value],
   created_at: [example value],
@@ -96,90 +86,6 @@ ID of the [access control system](https://docs.seam.co/latest/capability-guides/
 ---
 
 **`acs_user_count`** *Number*
-
-
-
-
-
----
-
-**`can_add_acs_users_to_acs_access_groups`** *Boolean*
-
-Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).
-
-
-
-
----
-
-**`can_automate_enrollment`** *Boolean*
-
-Indicates whether it is possible to [launch enrollment automations](../../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
-
-
-
-
----
-
-**`can_create_acs_access_groups`** *Boolean*
-
-Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).
-
-
-
-
----
-
-**`can_create_user`** *Boolean*
-
-
-
-
-
----
-
-**`can_delete_user`** *Boolean*
-
-
-
-
-
----
-
-**`can_remove_acs_users_from_acs_access_groups`** *Boolean*
-
-Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).
-
-
-
-
----
-
-**`can_update_user_group_membership`** *Boolean*
-
-
-
-
-
----
-
-**`can_update_user_information`** *Boolean*
-
-
-
-
-
----
-
-**`can_update_user_schedule`** *Boolean*
-
-
-
-
-
----
-
-**`can_update_user_supension_state`** *Boolean*
 
 
 
@@ -790,7 +696,7 @@ Indicates the [access control system](https://docs.seam.co/latest/capability-gui
 
 **`acs_system.connected`**
 
-An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) was connected.
+An [access system](https://docs.seam.co/latest/capability-guides/access-systems) was connected.
 
 <details>
 
@@ -798,11 +704,11 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
 
-  ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+  ID of the access system.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+  ID of the connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -822,14 +728,14 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../../core-concepts/workspaces/README.md).
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`acs_system.added`**
 
-An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) was added.
+An [access system](https://docs.seam.co/latest/capability-guides/access-systems) was added.
 
 <details>
 
@@ -837,11 +743,11 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
 
-  ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+  ID of the access system.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+  ID of the connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -861,14 +767,14 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../../core-concepts/workspaces/README.md).
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`acs_system.disconnected`**
 
-An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) was disconnected.
+An [access system](https://docs.seam.co/latest/capability-guides/access-systems) was disconnected.
 
 <details>
 
@@ -876,11 +782,11 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
 
-  ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
+  ID of the access system.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
+  ID of the connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -900,7 +806,7 @@ An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) wa
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../../core-concepts/workspaces/README.md).
+  ID of the workspace associated with the event.
 </details>
 
 ---
