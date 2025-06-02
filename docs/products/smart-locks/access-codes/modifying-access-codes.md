@@ -200,7 +200,7 @@ There are two methods to verify that a permanent access code has been set on the
 
 **Polling Method**
 
-Utilize the `access_code_id` returned in the response from the create endpoint to invoke the [Get Access Code](../../../api/access_codes/get/) endpoint. A basic implementation would involve polling this endpoint until the `status` of the access code updates to `set`.
+Utilize the `access_code_id` returned in the response from the create endpoint to invoke the [Get Access Code](../../../api/access_codes/get.md) endpoint. A basic implementation would involve polling this endpoint until the `status` of the access code updates to `set`.
 
 If the `status` remains `setting` for a very long time, or if the `access_code` object contains any `warnings` or `errors` properties, consult [our guide on "Troubleshooting Access Code Issues"](troubleshooting-access-code-issues.md) for further guidance.
 
@@ -216,7 +216,7 @@ There are two methods to verify that a time-bound access code has been set on th
 
 **Polling Method**
 
-Use the `access_code_id` provided in the response from the create endpoint to call the [Get Access Code](../../../api/access_codes/get/) endpoint. In a basic implementation, you would poll this endpoint at the `starts_at` time to check if the access code's status is updated to `set`.
+Use the `access_code_id` provided in the response from the create endpoint to call the [Get Access Code](../../../api/access_codes/get.md) endpoint. In a basic implementation, you would poll this endpoint at the `starts_at` time to check if the access code's status is updated to `set`.
 
 If the `status` remains `setting`, or if the `access_code` object displays any warnings or errors, refer to [our "Troubleshooting Access Code Issues" guide](troubleshooting-access-code-issues.md) for assistance.
 
