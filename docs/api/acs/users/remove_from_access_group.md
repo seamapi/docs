@@ -33,15 +33,9 @@ ID of the access group from which you want to remove an access system user.
 
 ---
 
-**`acs_user_id`** *String*
+**`acs_user_id`** *String* (Required)
 
-ID of the access system user that you want to remove from an access group. You can only provide acs_user_id or user_identity_id.
-
----
-
-**`user_identity_id`** *String*
-
-ID of the user identity that you want to remove from an access group. You can only provide acs_user_id or user_identity_id.
+ID of the access system user that you want to remove from an access group.
 
 ---
 

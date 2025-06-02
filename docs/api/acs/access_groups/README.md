@@ -199,15 +199,13 @@ An ACS access group was deleted.
 
 <strong><code>acs_access_group_id</code></strong> <i>UUID</i>
 
-  ID of the affected access group.
-
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
 
-  ID of the access system.
+  ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account.
+  ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -227,7 +225,7 @@ An ACS access group was deleted.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>
 
 ---
