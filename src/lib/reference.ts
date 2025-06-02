@@ -84,10 +84,11 @@ const getNamespacePaths = (routes: Route[]): string[] => {
   return Array.from(
     new Set(
       routes
-        .filter(({ isUndocumented }) => !isUndocumented)
-        .flatMap((route) =>
-          route.namespace != null ? [route.namespace.path] : [],
-        ),
+        .filter(
+          (route) => route.namespace != null && !route.namespace.isUndocumented,
+        )
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        .map((route) => route.namespace!.path),
     ),
   )
 }
