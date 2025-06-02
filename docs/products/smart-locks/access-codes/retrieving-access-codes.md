@@ -709,7 +709,7 @@ System.out.println(accessCodes);
 
 ## Retrieving Individual Access Codes
 
-To retrieve a specific access code, include the desired `access_code_id` in the [Get Access Code](../../../api-clients/access_codes/get/) request.
+To retrieve a specific access code, include the desired `access_code_id` in the [Get Access Code](../../../api/access_codes/get/) request.
 
 {% tabs %}
 {% tab title="Python" %}

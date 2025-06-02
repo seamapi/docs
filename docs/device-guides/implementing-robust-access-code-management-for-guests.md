@@ -46,7 +46,7 @@ Seam's backup access code pool, we automatically make sure all backup access cod
 are healthy, ready for immediate usage, replaced after every use, and automatically
 removed when a reservation ends.
 
-Seam's official backup access code pool can be enabled by adding `use_backup_access_code_pool: true` to any [`/access_codes/create` API request](https://docs.seam.co/latest/api-clients/access_codes/create). You can then retrieve access codes using [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code).
+Seam's official backup access code pool can be enabled by adding `use_backup_access_code_pool: true` to any [`/access_codes/create` API request](https://docs.seam.co/latest/api/access_codes/create). You can then retrieve access codes using [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).
 
 {% tabs %}
 
