@@ -93,3 +93,6 @@
 
 /access_codes/simulate:
   title: Access Code Simulations
+
+/unstable_partner:
+  title: Partner
