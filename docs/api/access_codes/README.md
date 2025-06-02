@@ -1596,11 +1596,15 @@ Credentials provided were invalid.
   **`is_bridge_error`** *Boolean*
   
   
+  Indicates whether the error is related to Seam Bridge.
+  
   
   ---
 
   **`is_connected_account_error`** *Boolean*
   
+  
+  Indicates whether the error is related specifically to the connected account.
   
   
   ---
@@ -1608,13 +1612,14 @@ Credentials provided were invalid.
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>bridge_disconnected</code></summary>
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
-  See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
   **`created_at`** *Datetime*
   
@@ -1639,17 +1644,23 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../capabili
   **`is_bridge_error`** *Boolean*
   
   
+  Indicates whether the error is related to Seam Bridge.
+  
   
   ---
 
   **`is_connected_account_error`** *Boolean*
   
   
+  Indicates whether the error is related specifically to the connected account.
+  
   
   ---
 
   **`message`** *String*
   
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
   
   
 </details>
@@ -1730,13 +1741,7 @@ Indicates whether the access code is waiting for a code assignment.
 
 **`name`** *String*
 
-Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
-      
-      Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.
-      
-      To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.
-      
-      To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components).
+Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes. Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`. To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints. To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components).
 
 
 
@@ -1763,7 +1768,7 @@ Date and time at which the time-bound access code becomes active.
 
 **`status`** *Enum*
 
-Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting.
+Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. See also [Lifecycle of Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/lifecycle-of-access-codes).
 
 
 <details>
@@ -2430,8 +2435,7 @@ Credentials provided were invalid.
 
 **`bridge_disconnected`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
-  See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
 ---
 
@@ -2523,11 +2527,11 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
 
-  ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+  ID of the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md).
+  ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2535,7 +2539,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
-  ID of the [device](../../core-concepts/devices/README.md).
+  ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
@@ -2551,7 +2555,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md).
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2566,11 +2570,11 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
 
-  ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+  ID of the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md).
+  ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2578,7 +2582,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
-  ID of the [device](../../core-concepts/devices/README.md).
+  ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
@@ -2594,7 +2598,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md).
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2609,15 +2613,15 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
 
-  ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+  ID of the affected access code.
 
 <strong><code>code</code></strong> <i>String</i>
 
-  Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+  Code for the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md).
+  ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2625,7 +2629,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
-  ID of the [device](../../core-concepts/devices/README.md).
+  ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
@@ -2641,7 +2645,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md).
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2656,15 +2660,15 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
 
-  ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+  ID of the affected access code.
 
 <strong><code>code</code></strong> <i>String</i>
 
-  Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+  Code for the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md).
+  ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2672,7 +2676,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
-  ID of the [device](../../core-concepts/devices/README.md).
+  ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
@@ -2688,7 +2692,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md).
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2703,11 +2707,11 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
 
-  ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+  ID of the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md).
+  ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2715,7 +2719,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
-  ID of the [device](../../core-concepts/devices/README.md).
+  ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
@@ -2731,7 +2735,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md).
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2746,11 +2750,11 @@ There was an unusually long delay in setting an [access code](https://docs.seam.
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
 
-  ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+  ID of the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md).
+  ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2758,7 +2762,7 @@ There was an unusually long delay in setting an [access code](https://docs.seam.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
-  ID of the [device](../../core-concepts/devices/README.md).
+  ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
@@ -2774,7 +2778,7 @@ There was an unusually long delay in setting an [access code](https://docs.seam.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md).
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2789,11 +2793,11 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
 
-  ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+  ID of the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md).
+  ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2801,7 +2805,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
-  ID of the [device](../../core-concepts/devices/README.md).
+  ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
@@ -2817,7 +2821,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md).
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2832,15 +2836,15 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
 
-  ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+  ID of the affected access code.
 
 <strong><code>code</code></strong> <i>String</i>
 
-  Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+  Code for the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md).
+  ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2848,7 +2852,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
-  ID of the [device](../../core-concepts/devices/README.md).
+  ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
@@ -2864,7 +2868,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md).
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2879,11 +2883,11 @@ There was an unusually long delay in removing an [access code](https://docs.seam
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
 
-  ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+  ID of the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md).
+  ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2891,7 +2895,7 @@ There was an unusually long delay in removing an [access code](https://docs.seam
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
-  ID of the [device](../../core-concepts/devices/README.md).
+  ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
@@ -2907,7 +2911,7 @@ There was an unusually long delay in removing an [access code](https://docs.seam
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md).
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2922,11 +2926,11 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
 
-  ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+  ID of the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md).
+  ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2934,7 +2938,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
-  ID of the [device](../../core-concepts/devices/README.md).
+  ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
@@ -2950,7 +2954,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md).
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2965,11 +2969,11 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
 
-  ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+  ID of the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md).
+  ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2977,7 +2981,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
-  ID of the [device](../../core-concepts/devices/README.md).
+  ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
@@ -2993,7 +2997,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md).
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -3008,11 +3012,11 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
 
-  ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+  ID of the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md).
+  ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -3020,7 +3024,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
-  ID of the [device](../../core-concepts/devices/README.md).
+  ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
@@ -3036,7 +3040,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md).
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -3051,13 +3055,13 @@ A [backup access code](https://docs.seam.co/latest/capability-guides/smart-locks
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
 
-  ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+  ID of the affected access code.
 
 <strong><code>backup_access_code_id</code></strong> <i>String</i>
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md).
+  ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -3065,7 +3069,7 @@ A [backup access code](https://docs.seam.co/latest/capability-guides/smart-locks
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
-  ID of the [device](../../core-concepts/devices/README.md).
+  ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
@@ -3081,7 +3085,7 @@ A [backup access code](https://docs.seam.co/latest/capability-guides/smart-locks
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md).
+  ID of the workspace associated with the event.
 </details>
 
 ---

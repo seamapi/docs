@@ -18,6 +18,7 @@
 - `/noise_sensors/noise_thresholds`
 - `/noise_sensors/simulate`
 - `/thermostats/daily_programs`
+- `/unstable_partner/building_blocks`
 - `/webhooks`
 - `/workspaces`
 
@@ -65,6 +66,7 @@ These items are intentionally undocumented.
 - `/seam/instant_key/v1/client_sessions`: No undocumented message provided
 - `/seam/mobile_sdk/v1/acs/credentials`: No undocumented message provided
 - `/seam/mobile_sdk/v1/phone_sessions`: No undocumented message provided
+- `/seam/partner/v1/resources`: No undocumented message provided
 - `/unstable_access_grants`: No undocumented message provided
 - `/unstable_access_methods`: No undocumented message provided
 - `/unstable_locations`: No undocumented message provided
@@ -88,7 +90,7 @@ These items are intentionally undocumented.
 - `/seam/instant_key/v1`: No undocumented message provided
 - `/seam/mobile_sdk/v1/acs`: No undocumented message provided
 - `/seam/mobile_sdk/v1`: No undocumented message provided
-- `/unstable_partner`: No undocumented message provided
+- `/seam/partner/v1`: No undocumented message provided
 
 ### Endpoints
 
@@ -115,10 +117,13 @@ These items are intentionally undocumented.
 - `/seam/instant_key/v1/client_sessions/exchange_short_code`: Seam Instant Key only.
 - `/seam/mobile_sdk/v1/acs/credentials/list`: Mobile SDK only.
 - `/seam/mobile_sdk/v1/phone_sessions/get_or_create`: Mobile SDK only.
+- `/seam/partner/v1/resources/list`: Partner building blocks/UI only.
 - `/thermostats/get`: Will be removed.
 - `/unstable_access_grants/create`: Unreleased.
+- `/unstable_access_grants/delete`: Unreleased.
 - `/unstable_access_grants/get`: Unreleased.
 - `/unstable_access_grants/list`: Unreleased.
+- `/unstable_access_methods/delete`: Unreleased.
 - `/unstable_access_methods/get`: Unreleased.
 - `/unstable_access_methods/list`: Unreleased.
 - `/unstable_locations/add_acs_entrances`: Experimental locations.
@@ -221,12 +226,6 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_credential_provisioning_automation.workspace_id`
 - `acs_system.acs_access_group_count`
 - `acs_system.acs_user_count`
-- `acs_system.can_create_user`
-- `acs_system.can_delete_user`
-- `acs_system.can_update_user_group_membership`
-- `acs_system.can_update_user_information`
-- `acs_system.can_update_user_schedule`
-- `acs_system.can_update_user_supension_state`
 - `acs_system.location`
 - `acs_system.system_type`
 - `acs_system.system_type_display_name`
@@ -245,33 +244,8 @@ Items that are intentionally undocumented are not included in this section.
 - `client_session.user_identity_ids`
 - `client_session.workspace_id`
 - `connect_webview.accepted_devices`
-- `connect_webview.accepted_providers`
 - `connect_webview.any_device_allowed`
-- `connect_webview.any_provider_allowed`
-- `connect_webview.authorized_at`
-- `connect_webview.automatically_manage_new_devices`
-- `connect_webview.connect_webview_id`
-- `connect_webview.connected_account_id`
-- `connect_webview.created_at`
-- `connect_webview.custom_metadata`
-- `connect_webview.custom_redirect_failure_url`
-- `connect_webview.custom_redirect_url`
 - `connect_webview.device_selection_mode`
-- `connect_webview.login_successful`
-- `connect_webview.selected_provider`
-- `connect_webview.status`
-- `connect_webview.url`
-- `connect_webview.wait_for_device_creation`
-- `connect_webview.workspace_id`
-- `connected_account.account_type`
-- `connected_account.account_type_display_name`
-- `connected_account.automatically_manage_new_devices`
-- `connected_account.connected_account_id`
-- `connected_account.created_at`
-- `connected_account.custom_metadata`
-- `connected_account.errors`
-- `connected_account.user_identifier`
-- `connected_account.warnings`
 - `device.can_hvac_cool`
 - `device.can_hvac_heat`
 - `device.can_hvac_heat_cool`
@@ -283,7 +257,6 @@ Items that are intentionally undocumented are not included in this section.
 - `device.can_simulate_disconnection`
 - `device.can_simulate_removal`
 - `device.can_turn_off_hvac`
-- `device.custom_metadata`
 - `device_provider.can_hvac_cool`
 - `device_provider.can_hvac_heat`
 - `device_provider.can_hvac_heat_cool`
@@ -340,7 +313,6 @@ Items that are intentionally undocumented are not included in this section.
 - `unmanaged_device.can_simulate_removal`
 - `unmanaged_device.can_turn_off_hvac`
 - `unmanaged_device.is_managed`
-- `unmanaged_device.properties`
 - `user_identity.display_name`
 - `user_identity.full_name`
 - `webhook.event_types`
@@ -411,8 +383,14 @@ Items that are intentionally undocumented are not included in this section.
 - `/acs/users/update`
     - `email`
     - `hid_acs_system_id`
+- `/client_sessions/create`
+    - `customer_id`
+    - `customer_key`
 - `/connect_webviews/create`
+    - `customer_id`
     - `device_selection_mode`
+- `/connect_webviews/list`
+    - `customer_id`
 - `/connected_accounts/delete`
     - `sync`
 - `/connected_accounts/list`
@@ -427,27 +405,6 @@ Items that are intentionally undocumented are not included in this section.
     - `customer_ids`
     - `exclude_if`
     - `include_if`
-- `/events/get`
-    - `device_id`
-    - `event_id`
-    - `event_type`
-- `/events/list`
-    - `access_code_id`
-    - `access_code_ids`
-    - `acs_system_id`
-    - `acs_system_ids`
-    - `between`
-    - `connect_webview_id`
-    - `connected_account_id`
-    - `customer_ids`
-    - `device_id`
-    - `device_ids`
-    - `event_ids`
-    - `event_type`
-    - `event_types`
-    - `limit`
-    - `since`
-    - `unstable_offset`
 - `/locks/get`
     - `device_id`
     - `name`
@@ -557,13 +514,16 @@ Items that are intentionally undocumented are not included in this section.
     - `location_id`
     - `name`
     - `time_zone`
+- `/unstable_partner/building_blocks/generate_link`
+    - `bridge_client_machine_identifier_key`
+    - `bridge_client_name`
+    - `bridge_client_time_zone`
 - `/unstable_partner/resources/push`
     - `custom_metadata`
     - `customer_key`
     - `description`
     - `email_address`
     - `ends_at`
-    - `icon_url`
     - `location_keys`
     - `name`
     - `partner_resource_key`
@@ -725,6 +685,7 @@ These items are deprecated.
 - `/connected_accounts/delete`
 - `/connected_accounts/get`
 - `/connected_accounts/list`
+- `/connected_accounts/sync`
 - `/connected_accounts/update`
 - `/devices/delete`
 - `/devices/get`
@@ -767,6 +728,7 @@ These items are deprecated.
 - `/seam/instant_key/v1/client_sessions/exchange_short_code`
 - `/seam/mobile_sdk/v1/acs/credentials/list`
 - `/seam/mobile_sdk/v1/phone_sessions/get_or_create`
+- `/seam/partner/v1/resources/list`
 - `/thermostats/get`
 - `/thermostats/update_weekly_program`
 - `/thermostats/daily_programs/create`
@@ -775,8 +737,10 @@ These items are deprecated.
 - `/thermostats/simulate/hvac_mode_adjusted`
 - `/thermostats/simulate/temperature_reached`
 - `/unstable_access_grants/create`
+- `/unstable_access_grants/delete`
 - `/unstable_access_grants/get`
 - `/unstable_access_grants/list`
+- `/unstable_access_methods/delete`
 - `/unstable_access_methods/get`
 - `/unstable_access_methods/list`
 - `/unstable_locations/add_acs_entrances`
@@ -788,6 +752,7 @@ These items are deprecated.
 - `/unstable_locations/remove_acs_entrances`
 - `/unstable_locations/remove_devices`
 - `/unstable_locations/update`
+- `/unstable_partner/building_blocks/generate_link`
 - `/unstable_partner/resources/push`
 - `/user_identities/generate_instant_key`
 - `/user_identities/update`
