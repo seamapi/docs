@@ -19,7 +19,7 @@ layout:
 
 ## Overview
 
-This guide explains how to create online access codes on an online smart lock. With the [Access Codes](../../../../api/access_codes/) API, generate PIN codes on a door lock and share it with visitors, allowing them keyless access.
+This guide explains how to create online access codes on an online smart lock. With the [Access Codes](../../../../api/access_codes/README.md) API, generate PIN codes on a door lock and share it with visitors, allowing them keyless access.
 
 Seam supports programming two types of online access codes for online door locks:
 
@@ -550,7 +550,7 @@ There are two methods to verify that an ongoing access code has been set on the 
 
 ### **Polling Method**
 
-Use the `access_code` reference returned by the create function to call the [Get Access Code](../../../../api/access_codes/get/) function. A basic implementation would involve polling this endpoint until the `status` of the access code updates to `set`.
+Use the `access_code` reference returned by the create function to call the [Get Access Code](../../../../api/access_codes/get.md) function. A basic implementation would involve polling this endpoint until the `status` of the access code updates to `set`.
 
 If the `status` remains `setting` for a very long time, or if the `access_code` object contains any `warnings` or `errors` properties, consult [the guide on "Troubleshooting Access Code Issues"](../../../../products/smart-locks/access-codes/troubleshooting-access-code-issues.md) for further guidance.
 
@@ -936,7 +936,7 @@ There are two methods to verify that an time-bound access code has been set on t
 
 ### **Polling Method**
 
-Use the `access_code` reference returned by the create function to call the [Get Access Code](../../../../api/access_codes/get/) function. In a basic implementation, you would poll this endpoint at the `starts_at` time to check if the access code's status is updated to `set`.
+Use the `access_code` reference returned by the create function to call the [Get Access Code](../../../../api/access_codes/get.md) function. In a basic implementation, you would poll this endpoint at the `starts_at` time to check if the access code's status is updated to `set`.
 
 If the `status` remains `setting`, or if the `access_code` object displays any `warnings` or `errors`, refer to [the "Troubleshooting Access Code Issues" guide](../../../../products/smart-locks/access-codes/troubleshooting-access-code-issues.md) for assistance.
 

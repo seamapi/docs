@@ -516,7 +516,7 @@ You can retrieve a backup access code to use instead.
 
 ### 3. Confirm the availability of a backup access code
 
-To confirm that a backup access code is available for retrieval, check the `is_backup_access_code_available` property on the access code by inspecting the response from [Get Access Code](../../../api/access_codes/get/) or [List Access Codes](../../../api/access_codes/list.md). If the backup code pool has been exhausted, this property returns `false`.
+To confirm that a backup access code is available for retrieval, check the `is_backup_access_code_available` property on the access code by inspecting the response from [Get Access Code](../../../api/access_codes/get.md) or [List Access Codes](../../../api/access_codes/list.md). If the backup code pool has been exhausted, this property returns `false`.
 
 {% hint style="info" %}
 Note that we only support pulling backup codes for `time_bound` codes at this time.
