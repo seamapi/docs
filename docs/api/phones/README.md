@@ -35,8 +35,7 @@ Represents an app user's mobile phone.
 
 **`created_at`** *Datetime*
 
-Date and time at which the phone was created.
-  
+Date and time at which the `phone` was created.
 
 
 
@@ -46,7 +45,6 @@ Date and time at which the phone was created.
 **`custom_metadata`** *Record*
 
 Optional [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) for the phone.
-  
 
 
 
@@ -55,8 +53,7 @@ Optional [custom metadata](../../core-concepts/devices/adding-custom-metadata-to
 
 **`device_id`** *UUID*
 
-ID of the phone.
-          
+ID of the `phone`.
 
 
 
@@ -65,8 +62,7 @@ ID of the phone.
 
 **`device_type`** *Enum*
 
-Device type for phones.
-          
+Type of phone.
 
 
 <details>
@@ -82,7 +78,6 @@ Device type for phones.
 **`display_name`** *String*
 
 Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name` otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.
-  
 
 
 
@@ -91,7 +86,7 @@ Display name of the phone. Defaults to `nickname` (if it is set) or `properties.
 
 **`errors`** *List* *of Objects*
 
-Errors associated with the phone.
+Errors associated with the `phone`.
 
 
 
@@ -106,7 +101,6 @@ Errors associated with the phone.
 **`nickname`** *String*
 
 Optional nickname to describe the phone, settable through Seam.
-  
 
 
 
@@ -115,9 +109,7 @@ Optional nickname to describe the phone, settable through Seam.
 
 **`properties`** *Object*
 
-
-          Properties of the phone.
-          
+Properties of the phone.
 
 
 
@@ -160,7 +152,7 @@ Optional nickname to describe the phone, settable through Seam.
 
 **`warnings`** *List* *of Objects*
 
-Warnings associated with the phone.
+Warnings associated with the `phone`.
 
 
 
@@ -174,8 +166,7 @@ Warnings associated with the phone.
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the phone.
-  
+ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the `phone`.
 
 
 
@@ -199,7 +190,7 @@ A phone device was deactivated.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
-  ID of the affected phone device.
+  ID of the [device](../../core-concepts/devices/README.md).
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
@@ -215,7 +206,7 @@ A phone device was deactivated.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md).
 </details>
 
 ---

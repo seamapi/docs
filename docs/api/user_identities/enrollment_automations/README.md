@@ -90,7 +90,7 @@ An [enrollment automation](../../../capability-guides/mobile-access/issuing-mobi
 
 <strong><code>enrollment_automation_id</code></strong> <i>UUID</i>
 
-  ID of the affected enrollment automation.
+  ID of the [enrollment automation](../../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut).
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
@@ -106,7 +106,7 @@ An [enrollment automation](../../../capability-guides/mobile-access/issuing-mobi
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>
 
 ---

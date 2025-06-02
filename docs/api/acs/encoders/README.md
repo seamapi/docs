@@ -126,15 +126,15 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 
 <strong><code>acs_encoder_id</code></strong> <i>UUID</i>
 
-  ID of the affected encoder.
+  ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
 
-  ID of the access system.
+  ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account.
+  ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -154,7 +154,7 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>
 
 ---
@@ -169,15 +169,15 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 
 <strong><code>acs_encoder_id</code></strong> <i>UUID</i>
 
-  ID of the affected encoder.
+  ID of the [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
 
-  ID of the access system.
+  ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account.
+  ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -197,7 +197,7 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../../core-concepts/workspaces/README.md).
 </details>
 
 ---
