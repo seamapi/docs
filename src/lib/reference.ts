@@ -85,6 +85,7 @@ const getNamespacePaths = (routes: Route[]): string[] => {
     new Set(
       routes
         .filter(({ isUndocumented }) => !isUndocumented)
+        .filter(({ name }) => !name.startsWith('unstable_'))
         .flatMap((route) =>
           route.namespace != null ? [route.namespace.path] : [],
         ),
