@@ -53,7 +53,7 @@ To control August devices using Seam, you must prompt owners of these devices to
 
 ***
 
-## Brand-Specific Errors
+## Troubleshooting
 
 The following access code errors might appear for an August lock:
 

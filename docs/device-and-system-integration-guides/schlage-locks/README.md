@@ -39,6 +39,12 @@ To create a [Connect Webview](../../core-concepts/connect-webviews/) that enable
 
 ***
 
+## Troubleshooting
+
+If you receive an "unauthorized" error, confirm that you've verified the email address associated with the Schlage account that you've connected to Seam.
+
+***
+
 ## Where to Order
 
 Order Schlage locks by finding a retailer on the Schlage website or by purchasing from Amazon.

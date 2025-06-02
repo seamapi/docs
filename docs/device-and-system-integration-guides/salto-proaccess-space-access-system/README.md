@@ -83,7 +83,7 @@ To enable or disable far opening:
 
 ***
 
-## Brand-Specific Errors
+## Troubleshooting
 
 For information about Salto Space access system-related errors, see [Troubleshooting Your Access System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md).
 

@@ -68,7 +68,7 @@ Note the following restrictions on using Seam to manage your Latch ACS:
 
 ***
 
-## Brand-Specific Errors
+## Troubleshooting
 
 For information about Latch ACS-related errors, including issues related to the connection between your ACS and Seam, see [Troubleshooting Your ACS](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md).
 

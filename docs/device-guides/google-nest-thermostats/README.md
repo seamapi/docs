@@ -67,7 +67,7 @@ Once you have set up Google Device Access, prompt the owners of these Google Nes
 
 ***
 
-## Brand-Specific Errors
+## Troubleshooting
 
 If you have not yet [obtained Google Commercial Development](obtain-google-nest-device-access-and-commercial-development.md), and your end user attempts to connect a Google Nest thermostat to Seam using a [Connect Webview](../../core-concepts/connect-webviews/), the Connect Webview displays the following error:
 

@@ -85,7 +85,7 @@ For example, you could assign them to the "Building A - 3/F" access level and gi
 
 ***
 
-## Brand-Specific Warnings
+## Troubleshooting
 
 The following warning might appear for PTI-related users:
 

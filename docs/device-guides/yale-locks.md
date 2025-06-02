@@ -47,9 +47,9 @@ To create a [Connect Webview](../core-concepts/connect-webviews/) that enables y
 
 ***
 
-## Brand-Specific Integration Considerations
+## Troubleshooting
 
-### Yale Home & Yale Access-specific Access Code Errors
+### Yale Home and Yale Access-Specific Access Code Errors
 
 Since August and Yale are both using the same app to control the locks, you might see this `august_*` prefix on your errors.
 
@@ -73,7 +73,7 @@ The Yale lock is missing a keypad. You could install an [August keypad](https://
 
 August lock was temporarily offline while setting/removing a code, the code should be set/remove when it comes back online.
 
-### SmartThings Hub-specific Access Code Errors
+### SmartThings Hub-Specific Access Code Errors
 
 `smartthings_failed_to_set_after_multiple_retries`
 

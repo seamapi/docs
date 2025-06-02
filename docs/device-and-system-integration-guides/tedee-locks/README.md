@@ -55,7 +55,7 @@ You must add your Tedee devices through the Tedee mobile app. You cannot add dev
 
 ***
 
-## Access (PIN) Code Requirements
+## Brand-Specific Access (PIN) Code Requirements
 
 Tedee imposes the following PIN code requirements:
 

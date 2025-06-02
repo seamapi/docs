@@ -111,7 +111,7 @@ Unit door locks within a Salto KS access system must first be woken up, and then
 
 ***
 
-## Brand-Specific Errors
+## Troubleshooting
 
 For information about Salto KS ACS-related errors, see [Troubleshooting Your ACS](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md).
 
