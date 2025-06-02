@@ -27,21 +27,9 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_system_id`** *String*
+**`acs_user_id`** *String* (Required)
 
-ID of the access system that you want to get. You can only provide acs_user_id or user_identity_id.
-
----
-
-**`acs_user_id`** *String*
-
-ID of the access system user that you want to get. You can only provide acs_user_id or user_identity_id.
-
----
-
-**`user_identity_id`** *String*
-
-ID of the user identity that you want to get. You can only provide acs_user_id or user_identity_id.
+ID of the access system user that you want to get.
 
 ---
 
