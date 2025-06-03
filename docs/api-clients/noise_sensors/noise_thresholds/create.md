@@ -2,7 +2,7 @@
 description: Create a Noise Threshold on your Noise Sensor
 ---
 
-# Create Noise Thresholds
+# Create a Noise Threshold
 
 ## Create Noise Threshold on Device
 
