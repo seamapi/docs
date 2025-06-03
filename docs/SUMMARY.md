@@ -128,9 +128,9 @@
 
 ## 📋 API Reference <a href="#api" id="api"></a>
 
-* [Overview](api-clients/overview.md)
-* [Installation](api-clients/installation.md)
-* [Authentication](api-clients/authentication.md)
+* [Overview](api-overview/overview.md)
+* [Installation](api-overview/installation.md)
+* [Authentication](api-overview/authentication.md)
 * [Pagination](api-overview/pagination.md)
 * [Access Codes](api/access_codes/README.md)
   * [Create an Access Code](api/access_codes/create.md)
