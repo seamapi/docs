@@ -22,7 +22,6 @@ Represents an app user's mobile phone.
   display_name: [example value],
   errors: [example value],
   nickname: [example value],
-  properties: [example value],
   warnings: [example value],
   workspace_id: [example value]
 }
@@ -110,51 +109,6 @@ Optional nickname to describe the phone, settable through Seam.
 
 
 
-
----
-
-**`properties`** *Object*
-
-
-          Properties of the phone.
-          
-
-
-
-<details>
-  <summary>Child Properties</summary>
-
-  - <strong><code>assa_abloy_credential_service_metadata</code></strong> <i>Object</i>
-
-  ASSA ABLOY Credential Service metadata for the phone.
-
-  - <strong><code>assa_abloy_credential_service_metadata.endpoints</code></strong> <i>List</i> <i>of Objects</i>
-
-  Endpoints associated with the phone.
-
-- <strong><code>endpoint_id</code></strong> <i>String</i>
-
-  ID of the associated endpoint.
-
-
-- <strong><code>is_active</code></strong> <i>Boolean</i>
-
-  Indicated whether the endpoint is active.
-
-
-  - <strong><code>assa_abloy_credential_service_metadata.has_active_endpoint</code></strong> <i>Boolean</i>
-
-  Indicates whether the credential service has active endpoints associated with the phone.
-
-  - <strong><code>salto_space_credential_service_metadata</code></strong> <i>Object</i>
-
-  Salto Space credential service metadata for the phone.
-
-  - <strong><code>salto_space_credential_service_metadata.has_active_phone</code></strong> <i>Boolean</i>
-
-  Indicates whether the credential service has an active associated phone.
-
-</details>
 
 ---
 
