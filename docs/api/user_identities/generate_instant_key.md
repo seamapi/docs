@@ -43,12 +43,4 @@ The maximum number of times the instant key can be used. Defaults to 1.
 ## Response
 
 [instant\_key](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of instant_key
-}
-```
-{% endtab %}
-{% endtabs %}
+

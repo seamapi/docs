@@ -50,12 +50,4 @@ ID of the device containing the access code that you want to get. You must speci
 ## Response
 
 [access\_code](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of access_code
-}
-```
-{% endtab %}
-{% endtabs %}
+

@@ -38,15 +38,7 @@ ID of the desired enrollment automation.
 ## Response
 
 [enrollment\_automation](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of enrollment_automation
-}
-```
-{% endtab %}
-{% endtabs %}
+
 
 ---
 

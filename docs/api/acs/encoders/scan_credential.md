@@ -38,17 +38,3 @@ ID of the encoder to use for the scan.
 
 [action\_attempt](./)
 
-**`SCAN_CREDENTIAL`**
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  action_attempt_id: [example value],
-  action_type: [example value],
-  error: [example value],
-  result: [example value],
-  status: [example value]
-}
-```
-{% endtab %}
-{% endtabs %}
