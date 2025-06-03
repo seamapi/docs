@@ -31,8 +31,8 @@ This object has no properties.
 {{else}}
 Child Properties
 
-  {{#each objectProperties}}
-  - {{> property-nested this}}
-  {{/each}}
+{{#each objectProperties}}
+- {{> property-nested this}}
+{{/each}}
 {{/if}}
 {{/unless}}
