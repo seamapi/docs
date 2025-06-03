@@ -63,6 +63,7 @@ export interface ApiRouteResource {
   name: string
   description: string
   properties: ApiRouteProperty[]
+  legacyProperties?: ApiRouteProperty
   events: ApiRouteEvent[]
 }
 
@@ -131,10 +132,15 @@ export function setApiRouteLayoutContext(
       warnings: resourceWarnings.length > 0,
     })
 
+    const legacyProperties = properties.find(
+      ({ name }) => name === 'properties',
+    )
+
     file.resources.push({
       name: resource.resourceType,
       description: resource.description,
-      properties,
+      properties: properties.filter(({ name }) => name !== 'properties'),
+      ...(legacyProperties == null ? {} : { legacyProperties }),
       errors: resourceErrors,
       warnings: resourceWarnings,
       events: eventsByRoutePath.get(resource.routePath) ?? [],
