@@ -38,7 +38,7 @@ ID of the access code that you want to update.
 
 **`allow_external_modification`** *Boolean*
 
-Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.
+Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.
 
 ---
 
@@ -66,7 +66,7 @@ Date and time at which the validity of the new access code ends, in [ISO 8601](h
 
 **`is_external_modification_allowed`** *Boolean*
 
-Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.
+Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.
 
 ---
 
@@ -126,7 +126,7 @@ Type to which you want to convert the access code. To convert a time-bound acces
 
 **`use_backup_access_code_pool`** *Boolean*
 
-Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code).
+Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).
 
 ---
 
