@@ -480,11 +480,11 @@ Seam is in the process of pushing a user deletion to the integrated access syste
   
   Child Properties
   
-    - <strong><code>email_address</code></strong> <i>String</i>
+  - <strong><code>email_address</code></strong> <i>String</i>
   
-    - <strong><code>full_name</code></strong> <i>String</i>
+  - <strong><code>full_name</code></strong> <i>String</i>
   
-    - <strong><code>phone_number</code></strong> <i>String</i>
+  - <strong><code>phone_number</code></strong> <i>String</i>
   
   
   ---
@@ -512,11 +512,11 @@ Seam is in the process of pushing a user deletion to the integrated access syste
   
   Child Properties
   
-    - <strong><code>email_address</code></strong> <i>String</i>
+  - <strong><code>email_address</code></strong> <i>String</i>
   
-    - <strong><code>full_name</code></strong> <i>String</i>
+  - <strong><code>full_name</code></strong> <i>String</i>
   
-    - <strong><code>phone_number</code></strong> <i>String</i>
+  - <strong><code>phone_number</code></strong> <i>String</i>
   
   
 </details>
@@ -538,9 +538,9 @@ Seam is in the process of pushing an access schedule update to the integrated ac
   
   Child Properties
   
-    - <strong><code>ends_at</code></strong> <i>Datetime</i>
+  - <strong><code>ends_at</code></strong> <i>Datetime</i>
   
-    - <strong><code>starts_at</code></strong> <i>Datetime</i>
+  - <strong><code>starts_at</code></strong> <i>Datetime</i>
   
   
   ---
@@ -568,9 +568,9 @@ Seam is in the process of pushing an access schedule update to the integrated ac
   
   Child Properties
   
-    - <strong><code>ends_at</code></strong> <i>Datetime</i>
+  - <strong><code>ends_at</code></strong> <i>Datetime</i>
   
-    - <strong><code>starts_at</code></strong> <i>Datetime</i>
+  - <strong><code>starts_at</code></strong> <i>Datetime</i>
   
   
 </details>
@@ -592,7 +592,7 @@ Seam is in the process of pushing a suspension state update to the integrated ac
   
   Child Properties
   
-    - <strong><code>is_suspended</code></strong> <i>Boolean</i>
+  - <strong><code>is_suspended</code></strong> <i>Boolean</i>
   
   
   ---
@@ -620,7 +620,7 @@ Seam is in the process of pushing a suspension state update to the integrated ac
   
   Child Properties
   
-    - <strong><code>is_suspended</code></strong> <i>Boolean</i>
+  - <strong><code>is_suspended</code></strong> <i>Boolean</i>
   
   
 </details>
@@ -644,7 +644,7 @@ Seam is in the process of pushing an access group membership update to the integ
   
   Child Properties
   
-    - <strong><code>acs_access_group_id</code></strong> <i>UUID</i>
+  - <strong><code>acs_access_group_id</code></strong> <i>UUID</i>
   
     Old access group ID.
   
@@ -676,7 +676,7 @@ Seam is in the process of pushing an access group membership update to the integ
   
   Child Properties
   
-    - <strong><code>acs_access_group_id</code></strong> <i>UUID</i>
+  - <strong><code>acs_access_group_id</code></strong> <i>UUID</i>
   
     New access group ID.
   
