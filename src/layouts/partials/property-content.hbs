@@ -24,3 +24,15 @@ Value: `{{value}}`
 - {{> property-nested this}}
 {{/each}}
 {{/if}}
+{{#unless (eq objectProperties undefined)}}
+{{#if (eq objectProperties.length 0)}}
+
+This object has no properties.
+{{else}}
+Child Properties
+
+  {{#each objectProperties}}
+  - {{> property-nested this}}
+  {{/each}}
+{{/if}}
+{{/unless}}
