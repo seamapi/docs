@@ -2,7 +2,7 @@
 description: Update a Noise Threshold on your Noise Sensor
 ---
 
-# Update Noise Threshold
+# Update a Noise Threshold
 
 ## Update Noise Threshold
 
