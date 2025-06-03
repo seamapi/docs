@@ -91,9 +91,7 @@ ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-system
 
 **`connected_account_id`** *UUID*
 
-
-      The ID of the [connected account](../../../core-concepts/connected-accounts/README.md) that is associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-    
+The ID of the [connected account](../../../core-concepts/connected-accounts/README.md) that is associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 
