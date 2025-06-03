@@ -478,6 +478,14 @@ Seam is in the process of pushing a user deletion to the integrated access syste
   **`from`** *Object*
   
   
+  Child Properties
+  
+    - <strong><code>email_address</code></strong> <i>String</i>
+  
+    - <strong><code>full_name</code></strong> <i>String</i>
+  
+    - <strong><code>phone_number</code></strong> <i>String</i>
+  
   
   ---
 
@@ -502,6 +510,14 @@ Seam is in the process of pushing a user deletion to the integrated access syste
   **`to`** *Object*
   
   
+  Child Properties
+  
+    - <strong><code>email_address</code></strong> <i>String</i>
+  
+    - <strong><code>full_name</code></strong> <i>String</i>
+  
+    - <strong><code>phone_number</code></strong> <i>String</i>
+  
   
 </details>
 <details>
@@ -519,6 +535,12 @@ Seam is in the process of pushing an access schedule update to the integrated ac
 
   **`from`** *Object*
   
+  
+  Child Properties
+  
+    - <strong><code>ends_at</code></strong> <i>Datetime</i>
+  
+    - <strong><code>starts_at</code></strong> <i>Datetime</i>
   
   
   ---
@@ -544,6 +566,12 @@ Seam is in the process of pushing an access schedule update to the integrated ac
   **`to`** *Object*
   
   
+  Child Properties
+  
+    - <strong><code>ends_at</code></strong> <i>Datetime</i>
+  
+    - <strong><code>starts_at</code></strong> <i>Datetime</i>
+  
   
 </details>
 <details>
@@ -561,6 +589,10 @@ Seam is in the process of pushing a suspension state update to the integrated ac
 
   **`from`** *Object*
   
+  
+  Child Properties
+  
+    - <strong><code>is_suspended</code></strong> <i>Boolean</i>
   
   
   ---
@@ -586,6 +618,10 @@ Seam is in the process of pushing a suspension state update to the integrated ac
   **`to`** *Object*
   
   
+  Child Properties
+  
+    - <strong><code>is_suspended</code></strong> <i>Boolean</i>
+  
   
 </details>
 <details>
@@ -605,6 +641,12 @@ Seam is in the process of pushing an access group membership update to the integ
   
   
   Old access group membership.
+  
+  Child Properties
+  
+    - <strong><code>acs_access_group_id</code></strong> <i>UUID</i>
+  
+    Old access group ID.
   
   
   ---
@@ -631,6 +673,12 @@ Seam is in the process of pushing an access group membership update to the integ
   
   
   New access group membership.
+  
+  Child Properties
+  
+    - <strong><code>acs_access_group_id</code></strong> <i>UUID</i>
+  
+    New access group ID.
   
   
 </details>
