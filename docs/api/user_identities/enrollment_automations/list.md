@@ -38,15 +38,7 @@ ID of the user identity for which you want to retrieve all enrollment automation
 ## Response
 
 Array of [enrollment\_automations](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of enrollment_automation
-}
-```
-{% endtab %}
-{% endtabs %}
+
 
 ---
 

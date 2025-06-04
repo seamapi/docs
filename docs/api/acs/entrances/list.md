@@ -44,15 +44,7 @@ ID of the access system for which you want to retrieve all entrances.
 ## Response
 
 Array of [acs\_entrances](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of acs_entrance
-}
-```
-{% endtab %}
-{% endtabs %}
+
 
 ---
 

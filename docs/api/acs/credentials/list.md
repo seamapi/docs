@@ -68,15 +68,7 @@ ID of the user identity for which you want to retrieve all credentials.
 ## Response
 
 Array of [acs\_credentials](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of acs_credential
-}
-```
-{% endtab %}
-{% endtabs %}
+
 
 ---
 

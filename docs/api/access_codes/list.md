@@ -64,12 +64,4 @@ Your user ID for the user by which to filter access codes.
 ## Response
 
 Array of [access\_codes](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of access_code
-}
-```
-{% endtab %}
-{% endtabs %}
+

@@ -52,12 +52,4 @@ ID of the device containing the unmanaged access code that you want to get. You 
 ## Response
 
 [unmanaged\_access\_code](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of unmanaged_access_code
-}
-```
-{% endtab %}
-{% endtabs %}
+

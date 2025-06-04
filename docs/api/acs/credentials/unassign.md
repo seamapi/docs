@@ -50,6 +50,7 @@ ID of the user identity from which you want to unassign a credential. You can on
 
 void
 
+
 ---
 
 ## Examples

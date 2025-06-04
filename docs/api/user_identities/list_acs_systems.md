@@ -38,15 +38,7 @@ ID of the user identity for which you want to retrieve all access control system
 ## Response
 
 Array of [acs\_systems](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of acs_system
-}
-```
-{% endtab %}
-{% endtabs %}
+
 
 ---
 

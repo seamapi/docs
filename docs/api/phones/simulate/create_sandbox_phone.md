@@ -55,12 +55,4 @@ Metadata to associate with the simulated phone.
 ## Response
 
 [phone](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of phone
-}
-```
-{% endtab %}
-{% endtabs %}
+
