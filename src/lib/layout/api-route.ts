@@ -242,7 +242,7 @@ export const mapBlueprintPropertyToRouteProperty = (
   const { name, description, format, isDeprecated, deprecationMessage } = prop
   const contextRouteProp: ApiRouteProperty = {
     name,
-    description,
+    description: description.trim(),
     isDeprecated,
     deprecationMessage,
     format: normalizePropertyFormatForDocs(format),

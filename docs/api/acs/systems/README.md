@@ -164,7 +164,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capab
   
   Enum values:
   
-    - <code>seam_bridge_disconnected</code>
+  - <code>seam_bridge_disconnected</code>
   
   
   ---
@@ -197,7 +197,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capab
   
   Enum values:
   
-    - <code>bridge_disconnected</code>
+  - <code>bridge_disconnected</code>
   
   
   ---
@@ -237,7 +237,7 @@ Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is funct
   
   Enum values:
   
-    - <code>visionline_instance_unreachable</code>
+  - <code>visionline_instance_unreachable</code>
   
   
   ---
@@ -269,7 +269,7 @@ Indicates that the maximum number of users allowed for the site has been reached
   
   Enum values:
   
-    - <code>salto_ks_subscription_limit_exceeded</code>
+  - <code>salto_ks_subscription_limit_exceeded</code>
   
   
   ---
@@ -301,7 +301,7 @@ Indicates that the [access control system](https://docs.seam.co/latest/capabilit
   
   Enum values:
   
-    - <code>acs_system_disconnected</code>
+  - <code>acs_system_disconnected</code>
   
   
   ---
@@ -333,7 +333,7 @@ Indicates that the login credentials are invalid. Reconnect the account using a 
   
   Enum values:
   
-    - <code>account_disconnected</code>
+  - <code>account_disconnected</code>
   
   
   ---
@@ -365,7 +365,7 @@ Indicates that the [access control system](https://docs.seam.co/latest/capabilit
   
   Enum values:
   
-    - <code>salto_ks_certification_expired</code>
+  - <code>salto_ks_certification_expired</code>
   
   
   ---
@@ -568,7 +568,7 @@ Indicates that the Salto KS site has exceeded 80% of the maximum number of allow
   
   Enum values:
   
-    - <code>salto_ks_subscription_limit_almost_reached</code>
+  - <code>salto_ks_subscription_limit_almost_reached</code>
   
   
 </details>
@@ -610,7 +610,7 @@ Indicates the [access control system](https://docs.seam.co/latest/capability-gui
   
   Enum values:
   
-    - <code>time_zone_does_not_match_location</code>
+  - <code>time_zone_does_not_match_location</code>
   
   
 </details>
