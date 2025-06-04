@@ -450,10 +450,13 @@ Indicates whether the `acs_system` is a credential manager.
 <details>
   <summary>Child Properties</summary>
 
-  - <strong><code>time_zone</code></strong> <i>String</i>
-
-  Time zone in which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) is located.
-
+  <ul>
+  <li>
+    <strong><code>time_zone</code></strong> <i>String</i>
+    
+      Time zone in which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) is located.
+  </li>
+  </ul>
 </details>
 
 ---
@@ -514,18 +517,23 @@ Name of the [access control system](https://docs.seam.co/latest/capability-guide
 <details>
   <summary>Child Properties</summary>
 
-  - <strong><code>lan_address</code></strong> <i>String</i>
-
-  IP address or hostname of the main Visionline server relative to [Seam Bridge](../../../capability-guides/seam-bridge.md) on the local network.
-
-  - <strong><code>mobile_access_uuid</code></strong> <i>String</i>
-
-  Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.
-
-  - <strong><code>system_id</code></strong> <i>String</i>
-
-  Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager.
-
+  <ul>
+  <li>
+    <strong><code>lan_address</code></strong> <i>String</i>
+    
+      IP address or hostname of the main Visionline server relative to [Seam Bridge](../../../capability-guides/seam-bridge.md) on the local network.
+  </li>
+  <li>
+    <strong><code>mobile_access_uuid</code></strong> <i>String</i>
+    
+      Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.
+  </li>
+  <li>
+    <strong><code>system_id</code></strong> <i>String</i>
+    
+      Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager.
+  </li>
+  </ul>
 </details>
 
 ---
