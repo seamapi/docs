@@ -150,8 +150,8 @@ Mobile operating system that you want to use for the simulated phone.
 
 Enum values:
 
-  - <code>android</code>
-  - <code>ios</code>
+- <code>android</code>
+- <code>ios</code>
 
 </details>
 

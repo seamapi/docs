@@ -191,8 +191,8 @@ Visionline-specific metadata for the new credential.
 
 Enum values:
 
-  - <code>TLCode</code>
-  - <code>rfid48</code>
+- <code>TLCode</code>
+- <code>rfid48</code>
 
 </details>
 
@@ -206,8 +206,8 @@ Enum values:
 
 Enum values:
 
-  - <code>guest</code>
-  - <code>staff</code>
+- <code>guest</code>
+- <code>staff</code>
 
 </details>
 
