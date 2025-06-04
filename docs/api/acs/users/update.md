@@ -31,7 +31,28 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 `starts_at` and `ends_at` timestamps for the access system user's access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. If you omit `starts_at`, it defaults to the current time. `ends_at` is optional and must be a time in the future and after `starts_at`.
 
+<details>
+
+<summary><b><code>ends_at</code></b> <i>Datetime</i></summary>
+
+Ending timestamp for the access system user's access.
+
+</details>
+
 ---
+
+
+
+<details>
+
+<summary><b><code>starts_at</code></b> <i>Datetime</i></summary>
+
+Starting timestamp for the access system user's access.
+
+</details>
+
+---
+
 
 **`acs_system_id`** *String*
 

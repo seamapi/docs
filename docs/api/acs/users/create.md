@@ -43,7 +43,28 @@ Full name of the new access system user.
 
 `starts_at` and `ends_at` timestamps for the new access system user's access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. If you omit `starts_at`, it defaults to the current time. `ends_at` is optional and must be a time in the future and after `starts_at`.
 
+<details>
+
+<summary><b><code>ends_at</code></b> <i>Datetime</i></summary>
+
+Ending timestamp for the new access system user's access.
+
+</details>
+
 ---
+
+
+
+<details>
+
+<summary><b><code>starts_at</code></b> <i>Datetime</i></summary>
+
+Starting timestamp for the new access system user's access.
+
+</details>
+
+---
+
 
 **`acs_access_group_ids`** *Array* *of UUIDs*
 
