@@ -37,15 +37,7 @@ ID of the credential that you want to get.
 ## Response
 
 [acs\_credential](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of acs_credential
-}
-```
-{% endtab %}
-{% endtabs %}
+
 
 ---
 

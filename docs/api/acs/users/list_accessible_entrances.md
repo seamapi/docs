@@ -50,12 +50,4 @@ ID of the user identity for whom you want to list accessible entrances. You can 
 ## Response
 
 Array of [acs\_entrances](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of acs_entrance
-}
-```
-{% endtab %}
-{% endtabs %}
+

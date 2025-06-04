@@ -67,20 +67,6 @@ Desired [heating set point](../../capability-guides/thermostats/understanding-th
 
 [action\_attempt](./)
 
-**`SET_HVAC_MODE`**
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  action_attempt_id: [example value],
-  action_type: [example value],
-  error: [example value],
-  result: [example value],
-  status: [example value]
-}
-```
-{% endtab %}
-{% endtabs %}
 
 ---
 

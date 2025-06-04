@@ -39,15 +39,7 @@ ID of the access system for which you want to retrieve all compatible credential
 ## Response
 
 Array of [acs\_systems](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of acs_system
-}
-```
-{% endtab %}
-{% endtabs %}
+
 
 ---
 

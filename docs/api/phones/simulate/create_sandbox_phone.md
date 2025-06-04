@@ -174,12 +174,4 @@ Mobile operating system version that you want to use for the simulated phone.
 ## Response
 
 [phone](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of phone
-}
-```
-{% endtab %}
-{% endtabs %}
+

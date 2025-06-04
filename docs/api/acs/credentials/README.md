@@ -182,7 +182,9 @@ Errors associated with the [credential](../../../capability-guides/access-system
 
 <details>
   <summary>Child Object Properties</summary>
+
   <strong><code>error_code</code></strong> <i>String</i>
+
   <strong><code>message</code></strong> <i>String</i>
 </details>
 
@@ -371,7 +373,7 @@ Indicates that the [credential](../../../capability-guides/access-systems/managi
   
   Enum values:
   
-    - <code>waiting_to_be_issued</code>
+  - <code>waiting_to_be_issued</code>
   
   
 </details>
@@ -403,7 +405,7 @@ Indicates that the schedule of one of the [credential](../../../capability-guide
   
   Enum values:
   
-    - <code>schedule_externally_modified</code>
+  - <code>schedule_externally_modified</code>
   
   
 </details>
@@ -435,7 +437,7 @@ Indicates that the schedule of the [credential](../../../capability-guides/acces
   
   Enum values:
   
-    - <code>schedule_modified</code>
+  - <code>schedule_modified</code>
   
   
 </details>
@@ -467,7 +469,7 @@ Indicates that the [credential](../../../capability-guides/access-systems/managi
   
   Enum values:
   
-    - <code>being_deleted</code>
+  - <code>being_deleted</code>
   
   
 </details>
@@ -499,7 +501,7 @@ An unknown issue occurred while syncing the state of the [credential](../../../c
   
   Enum values:
   
-    - <code>unknown_issue_with_acs_credential</code>
+  - <code>unknown_issue_with_acs_credential</code>
   
   
 </details>
@@ -531,7 +533,7 @@ Access permissions for the [credential](../../../capability-guides/access-system
   
   Enum values:
   
-    - <code>needs_to_be_reissued</code>
+  - <code>needs_to_be_reissued</code>
   
   
 </details>

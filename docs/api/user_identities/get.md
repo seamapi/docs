@@ -41,15 +41,7 @@ ID of the desired user identity.
 ## Response
 
 [user\_identity](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of user_identity
-}
-```
-{% endtab %}
-{% endtabs %}
+
 
 ---
 

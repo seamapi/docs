@@ -37,12 +37,4 @@ Device ID of the desired phone.
 ## Response
 
 [phone](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of phone
-}
-```
-{% endtab %}
-{% endtabs %}
+

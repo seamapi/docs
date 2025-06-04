@@ -120,7 +120,7 @@ Failed to set code on SmartThings device.
   
   Enum values:
   
-    - <code>smartthings_failed_to_set_access_code</code>
+  - <code>smartthings_failed_to_set_access_code</code>
   
   
   ---
@@ -160,7 +160,7 @@ Failed to set code after multiple retries.
   
   Enum values:
   
-    - <code>smartthings_failed_to_set_after_multiple_retries</code>
+  - <code>smartthings_failed_to_set_after_multiple_retries</code>
   
   
   ---
@@ -200,7 +200,7 @@ No free slots available on the device.
   
   Enum values:
   
-    - <code>smartthings_no_free_slots_available</code>
+  - <code>smartthings_no_free_slots_available</code>
   
   
   ---
@@ -240,7 +240,7 @@ Failed to set code on device.
   
   Enum values:
   
-    - <code>failed_to_set_on_device</code>
+  - <code>failed_to_set_on_device</code>
   
   
   ---
@@ -280,7 +280,7 @@ Failed to remove code from device.
   
   Enum values:
   
-    - <code>failed_to_remove_from_device</code>
+  - <code>failed_to_remove_from_device</code>
   
   
   ---
@@ -320,7 +320,7 @@ Duplicate access code detected on device.
   
   Enum values:
   
-    - <code>duplicate_code_on_device</code>
+  - <code>duplicate_code_on_device</code>
   
   
   ---
@@ -360,7 +360,7 @@ An attempt to modify this access code was prevented.
   
   Enum values:
   
-    - <code>duplicate_code_attempt_prevented</code>
+  - <code>duplicate_code_attempt_prevented</code>
   
   
   ---
@@ -400,7 +400,7 @@ No space for access code on device.
   
   Enum values:
   
-    - <code>no_space_for_access_code_on_device</code>
+  - <code>no_space_for_access_code_on_device</code>
   
   
   ---
@@ -440,7 +440,7 @@ Igloohome bridge has too many pending jobs in the queue.
   
   Enum values:
   
-    - <code>igloohome_bridge_too_many_pending_jobs</code>
+  - <code>igloohome_bridge_too_many_pending_jobs</code>
   
   
   ---
@@ -480,7 +480,7 @@ Igloohome bridge is offline.
   
   Enum values:
   
-    - <code>igloohome_bridge_offline</code>
+  - <code>igloohome_bridge_offline</code>
   
   
   ---
@@ -520,7 +520,7 @@ Lock has reached maximum amount of codes.
   
   Enum values:
   
-    - <code>igloohome_offline_access_code_no_variance_available</code>
+  - <code>igloohome_offline_access_code_no_variance_available</code>
   
   
   ---
@@ -560,7 +560,7 @@ Unable to confirm that the access code is set on Kwikset device.
   
   Enum values:
   
-    - <code>kwikset_unable_to_confirm_code</code>
+  - <code>kwikset_unable_to_confirm_code</code>
   
   
   ---
@@ -600,7 +600,7 @@ Unable to confirm the deletion of the access code on Kwikset device.
   
   Enum values:
   
-    - <code>kwikset_unable_to_confirm_deletion</code>
+  - <code>kwikset_unable_to_confirm_deletion</code>
   
   
   ---
@@ -640,7 +640,7 @@ Code was modified or removed externally after Seam successfully set it on the de
   
   Enum values:
   
-    - <code>code_modified_external_to_seam</code>
+  - <code>code_modified_external_to_seam</code>
   
   
   ---
@@ -680,7 +680,7 @@ Invalid code length for August lock.
   
   Enum values:
   
-    - <code>august_lock_invalid_code_length</code>
+  - <code>august_lock_invalid_code_length</code>
   
   
   ---
@@ -720,7 +720,7 @@ Access code has not yet been fully moved to the device.
   
   Enum values:
   
-    - <code>august_device_programming_delay</code>
+  - <code>august_device_programming_delay</code>
   
   
   ---
@@ -760,7 +760,7 @@ All access code slots on the device are full.
   
   Enum values:
   
-    - <code>august_device_slots_full</code>
+  - <code>august_device_slots_full</code>
   
   
   ---
@@ -800,7 +800,7 @@ August lock is missing a keypad.
   
   Enum values:
   
-    - <code>august_lock_missing_keypad</code>
+  - <code>august_lock_missing_keypad</code>
   
   
   ---
@@ -840,7 +840,7 @@ August lock is temporarily offline.
   
   Enum values:
   
-    - <code>august_lock_temporarily_offline</code>
+  - <code>august_lock_temporarily_offline</code>
   
   
   ---
@@ -880,7 +880,7 @@ Salto site user is not subscribed.
   
   Enum values:
   
-    - <code>salto_ks_user_not_subscribed</code>
+  - <code>salto_ks_user_not_subscribed</code>
   
   
   ---
@@ -920,7 +920,7 @@ Access code has not yet been fully moved to the device.
   
   Enum values:
   
-    - <code>hubitat_device_programming_delay</code>
+  - <code>hubitat_device_programming_delay</code>
   
   
   ---
@@ -960,7 +960,7 @@ No free positions available on the device.
   
   Enum values:
   
-    - <code>hubitat_no_free_positions_available</code>
+  - <code>hubitat_no_free_positions_available</code>
   
   
   ---
@@ -1000,7 +1000,7 @@ Duplicate access code name detected.
   
   Enum values:
   
-    - <code>wyze_duplicate_code_name</code>
+  - <code>wyze_duplicate_code_name</code>
   
   
   ---
@@ -1040,7 +1040,7 @@ Potential duplicate access code detected.
   
   Enum values:
   
-    - <code>wyze_potential_duplicate_code</code>
+  - <code>wyze_potential_duplicate_code</code>
   
   
   ---
@@ -1080,7 +1080,7 @@ No valid user level for Oracode.
   
   Enum values:
   
-    - <code>dormakaba_oracode_no_valid_user_level</code>
+  - <code>dormakaba_oracode_no_valid_user_level</code>
   
   
   ---
@@ -1118,7 +1118,7 @@ Account is disconnected
   
   Enum values:
   
-    - <code>account_disconnected</code>
+  - <code>account_disconnected</code>
   
   
   ---
@@ -1158,7 +1158,7 @@ Salto site user limit reached.
   
   Enum values:
   
-    - <code>salto_ks_subscription_limit_exceeded</code>
+  - <code>salto_ks_subscription_limit_exceeded</code>
   
   
   ---
@@ -1198,7 +1198,7 @@ Device is offline
   
   Enum values:
   
-    - <code>device_offline</code>
+  - <code>device_offline</code>
   
   
   ---
@@ -1232,7 +1232,7 @@ Device has been removed
   
   Enum values:
   
-    - <code>device_removed</code>
+  - <code>device_removed</code>
   
   
   ---
@@ -1266,7 +1266,7 @@ Hub is disconnected
   
   Enum values:
   
-    - <code>hub_disconnected</code>
+  - <code>hub_disconnected</code>
   
   
   ---
@@ -1300,7 +1300,7 @@ Device is disconnected
   
   Enum values:
   
-    - <code>device_disconnected</code>
+  - <code>device_disconnected</code>
   
   
   ---
@@ -1334,7 +1334,7 @@ The backup access code pool is empty.
   
   Enum values:
   
-    - <code>empty_backup_access_code_pool</code>
+  - <code>empty_backup_access_code_pool</code>
   
   
   ---
@@ -1368,7 +1368,7 @@ User is not authorized to use the August Lock.
   
   Enum values:
   
-    - <code>august_lock_not_authorized</code>
+  - <code>august_lock_not_authorized</code>
   
   
   ---
@@ -1402,7 +1402,7 @@ Lock is not connected to the Seam Bridge.
   
   Enum values:
   
-    - <code>august_lock_missing_bridge</code>
+  - <code>august_lock_missing_bridge</code>
   
   
   ---
@@ -1436,7 +1436,7 @@ Lock is not paired with a Gateway.
   
   Enum values:
   
-    - <code>ttlock_lock_not_paired_to_gateway</code>
+  - <code>ttlock_lock_not_paired_to_gateway</code>
   
   
   ---
@@ -1470,7 +1470,7 @@ Missing device credentials.
   
   Enum values:
   
-    - <code>missing_device_credentials</code>
+  - <code>missing_device_credentials</code>
   
   
   ---
@@ -1504,7 +1504,7 @@ The auxiliary heat is running.
   
   Enum values:
   
-    - <code>auxiliary_heat_running</code>
+  - <code>auxiliary_heat_running</code>
   
   
   ---
@@ -1538,7 +1538,7 @@ Subscription required to connect.
   
   Enum values:
   
-    - <code>subscription_required</code>
+  - <code>subscription_required</code>
   
   
   ---
@@ -1574,7 +1574,7 @@ Credentials provided were invalid.
   
   Enum values:
   
-    - <code>invalid_credentials</code>
+  - <code>invalid_credentials</code>
   
   
   ---
@@ -1622,7 +1622,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capab
   
   Enum values:
   
-    - <code>bridge_disconnected</code>
+  - <code>bridge_disconnected</code>
   
   
   ---
@@ -1747,7 +1747,7 @@ Failed to set code on SmartThings device.
   
   Enum values:
   
-    - <code>smartthings_failed_to_set_access_code</code>
+  - <code>smartthings_failed_to_set_access_code</code>
   
   
 </details>
@@ -1779,7 +1779,7 @@ Duplicate access code detected.
   
   Enum values:
   
-    - <code>schlage_detected_duplicate</code>
+  - <code>schlage_detected_duplicate</code>
   
   
 </details>
@@ -1811,7 +1811,7 @@ Received an error when attempting to create this code.
   
   Enum values:
   
-    - <code>schlage_creation_outage</code>
+  - <code>schlage_creation_outage</code>
   
   
 </details>
@@ -1843,7 +1843,7 @@ Code was modified or removed externally after Seam successfully set it on the de
   
   Enum values:
   
-    - <code>code_modified_external_to_seam</code>
+  - <code>code_modified_external_to_seam</code>
   
   
 </details>
@@ -1875,7 +1875,7 @@ Delay in setting code on device.
   
   Enum values:
   
-    - <code>delay_in_setting_on_device</code>
+  - <code>delay_in_setting_on_device</code>
   
   
 </details>
@@ -1907,7 +1907,7 @@ Delay in removing code from device.
   
   Enum values:
   
-    - <code>delay_in_removing_from_device</code>
+  - <code>delay_in_removing_from_device</code>
   
   
 </details>
@@ -1939,7 +1939,7 @@ Third-party integration detected that may cause access codes to fail.
   
   Enum values:
   
-    - <code>third_party_integration_detected</code>
+  - <code>third_party_integration_detected</code>
   
   
 </details>
@@ -1971,7 +1971,7 @@ Access code has not yet been fully moved to the device.
   
   Enum values:
   
-    - <code>august_device_programming_delay</code>
+  - <code>august_device_programming_delay</code>
   
   
 </details>
@@ -2003,7 +2003,7 @@ August lock is temporarily offline.
   
   Enum values:
   
-    - <code>august_lock_temporarily_offline</code>
+  - <code>august_lock_temporarily_offline</code>
   
   
 </details>
@@ -2035,7 +2035,7 @@ Algopins must be used within 24 hours.
   
   Enum values:
   
-    - <code>igloo_algopin_must_be_used_within_24_hours</code>
+  - <code>igloo_algopin_must_be_used_within_24_hours</code>
   
   
 </details>
@@ -2067,7 +2067,7 @@ Management was transferred to another workspace.
   
   Enum values:
   
-    - <code>management_transferred</code>
+  - <code>management_transferred</code>
   
   
 </details>
@@ -2099,7 +2099,7 @@ Unable to confirm that the access code is set on Kwikset device.
   
   Enum values:
   
-    - <code>kwikset_unable_to_confirm_code</code>
+  - <code>kwikset_unable_to_confirm_code</code>
   
   
 </details>
