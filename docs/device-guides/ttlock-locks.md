@@ -78,6 +78,10 @@ On the device, if you notice a `ttlock_lock_not_paired_to_gateway` error, you wi
 
 On the device, if you notice a `ttlock_lock_gateway_unlocking_not_enabled` warning, you will need to follow the [set up instructions](ttlock-locks.md#set-up-instructions) to turn on the "Remote Unlock" feature.
 
+### Power-Saving Mode
+
+Certain TTLock Wi-Fi lock models have a power-saving mode. When these locks are in power-saving mode, the Seam API cannot control them remotely. If a TTLock Wi-Fi lock is not completing requested actions successfully, confirm whether the lock is in power-saving mode. If so, prompt your user to turn off power-saving mode, and then retry the operation.
+
 ***
 
 ## Where to Order
