@@ -36,15 +36,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Response
 
 Array of [user\_identitys](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of user_identity
-}
-```
-{% endtab %}
-{% endtabs %}
+
 
 ---
 

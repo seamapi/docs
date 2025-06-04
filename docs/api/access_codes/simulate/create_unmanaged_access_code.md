@@ -50,12 +50,4 @@ Name of the simulated unmanaged access code.
 ## Response
 
 [unmanaged\_access\_code](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of unmanaged_access_code
-}
-```
-{% endtab %}
-{% endtabs %}
+

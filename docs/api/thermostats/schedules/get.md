@@ -38,15 +38,7 @@ ID of the desired thermostat schedule.
 ## Response
 
 [thermostat\_schedule](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of thermostat_schedule
-}
-```
-{% endtab %}
-{% endtabs %}
+
 
 ---
 

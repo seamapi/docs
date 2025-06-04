@@ -37,15 +37,7 @@ ID of the credential for which you want to retrieve all entrances to which the c
 ## Response
 
 Array of [acs\_entrances](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of acs_entrance
-}
-```
-{% endtab %}
-{% endtabs %}
+
 
 ---
 

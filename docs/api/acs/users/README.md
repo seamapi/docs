@@ -95,9 +95,7 @@ ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-system
 
 **`connected_account_id`** *UUID*
 
-
-      The ID of the [connected account](../../../core-concepts/connected-accounts/README.md) that is associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-    
+The ID of the [connected account](../../../core-concepts/connected-accounts/README.md) that is associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 
@@ -170,7 +168,7 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
   
   Enum values:
   
-    - <code>deleted_externally</code>
+  - <code>deleted_externally</code>
   
   
   ---
@@ -200,7 +198,7 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
   
   Enum values:
   
-    - <code>salto_ks_subscription_limit_exceeded</code>
+  - <code>salto_ks_subscription_limit_exceeded</code>
   
   
   ---
@@ -230,7 +228,7 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
   
   Enum values:
   
-    - <code>failed_to_create_on_acs_system</code>
+  - <code>failed_to_create_on_acs_system</code>
   
   
   ---
@@ -260,7 +258,7 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
   
   Enum values:
   
-    - <code>failed_to_update_on_acs_system</code>
+  - <code>failed_to_update_on_acs_system</code>
   
   
   ---
@@ -290,7 +288,7 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
   
   Enum values:
   
-    - <code>failed_to_delete_on_acs_system</code>
+  - <code>failed_to_delete_on_acs_system</code>
   
   
   ---
@@ -320,7 +318,7 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
   
   Enum values:
   
-    - <code>latch_conflict_with_resident_user</code>
+  - <code>latch_conflict_with_resident_user</code>
   
   
   ---
@@ -434,7 +432,7 @@ Seam is in the process of pushing a user creation to the integrated access syste
   
   Enum values:
   
-    - <code>creating</code>
+  - <code>creating</code>
   
   
 </details>
@@ -464,7 +462,7 @@ Seam is in the process of pushing a user deletion to the integrated access syste
   
   Enum values:
   
-    - <code>deleting</code>
+  - <code>deleting</code>
   
   
 </details>
@@ -482,6 +480,14 @@ Seam is in the process of pushing a user deletion to the integrated access syste
   **`from`** *Object*
   
   
+  Child Properties
+  
+  - <strong><code>email_address</code></strong> <i>String</i>
+  
+  - <strong><code>full_name</code></strong> <i>String</i>
+  
+  - <strong><code>phone_number</code></strong> <i>String</i>
+  
   
   ---
 
@@ -498,13 +504,21 @@ Seam is in the process of pushing a user deletion to the integrated access syste
   
   Enum values:
   
-    - <code>updating_user_information</code>
+  - <code>updating_user_information</code>
   
   
   ---
 
   **`to`** *Object*
   
+  
+  Child Properties
+  
+  - <strong><code>email_address</code></strong> <i>String</i>
+  
+  - <strong><code>full_name</code></strong> <i>String</i>
+  
+  - <strong><code>phone_number</code></strong> <i>String</i>
   
   
 </details>
@@ -524,6 +538,12 @@ Seam is in the process of pushing an access schedule update to the integrated ac
   **`from`** *Object*
   
   
+  Child Properties
+  
+  - <strong><code>ends_at</code></strong> <i>Datetime</i>
+  
+  - <strong><code>starts_at</code></strong> <i>Datetime</i>
+  
   
   ---
 
@@ -540,13 +560,19 @@ Seam is in the process of pushing an access schedule update to the integrated ac
   
   Enum values:
   
-    - <code>updating_access_schedule</code>
+  - <code>updating_access_schedule</code>
   
   
   ---
 
   **`to`** *Object*
   
+  
+  Child Properties
+  
+  - <strong><code>ends_at</code></strong> <i>Datetime</i>
+  
+  - <strong><code>starts_at</code></strong> <i>Datetime</i>
   
   
 </details>
@@ -566,6 +592,10 @@ Seam is in the process of pushing a suspension state update to the integrated ac
   **`from`** *Object*
   
   
+  Child Properties
+  
+  - <strong><code>is_suspended</code></strong> <i>Boolean</i>
+  
   
   ---
 
@@ -582,13 +612,17 @@ Seam is in the process of pushing a suspension state update to the integrated ac
   
   Enum values:
   
-    - <code>updating_suspension_state</code>
+  - <code>updating_suspension_state</code>
   
   
   ---
 
   **`to`** *Object*
   
+  
+  Child Properties
+  
+  - <strong><code>is_suspended</code></strong> <i>Boolean</i>
   
   
 </details>
@@ -610,6 +644,12 @@ Seam is in the process of pushing an access group membership update to the integ
   
   Old access group membership.
   
+  Child Properties
+  
+  - <strong><code>acs_access_group_id</code></strong> <i>UUID</i>
+  
+    Old access group ID.
+  
   
   ---
 
@@ -626,7 +666,7 @@ Seam is in the process of pushing an access group membership update to the integ
   
   Enum values:
   
-    - <code>updating_group_membership</code>
+  - <code>updating_group_membership</code>
   
   
   ---
@@ -635,6 +675,12 @@ Seam is in the process of pushing an access group membership update to the integ
   
   
   New access group membership.
+  
+  Child Properties
+  
+  - <strong><code>acs_access_group_id</code></strong> <i>UUID</i>
+  
+    New access group ID.
   
   
 </details>
@@ -722,7 +768,7 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
   
   Enum values:
   
-    - <code>being_deleted</code>
+  - <code>being_deleted</code>
   
   
 </details>
@@ -752,7 +798,7 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
   
   Enum values:
   
-    - <code>salto_ks_user_not_subscribed</code>
+  - <code>salto_ks_user_not_subscribed</code>
   
   
 </details>
@@ -782,7 +828,7 @@ An unknown issue occurred while syncing the state of this [ACS user](https://doc
   
   Enum values:
   
-    - <code>unknown_issue_with_acs_user</code>
+  - <code>unknown_issue_with_acs_user</code>
   
   
 </details>
@@ -812,7 +858,7 @@ Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/acce
   
   Enum values:
   
-    - <code>latch_resident_user</code>
+  - <code>latch_resident_user</code>
   
   
 </details>

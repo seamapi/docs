@@ -49,15 +49,7 @@ ID of the user identity that you want to get. You can only provide acs_user_id o
 ## Response
 
 [acs\_user](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of acs_user
-}
-```
-{% endtab %}
-{% endtabs %}
+
 
 ---
 

@@ -38,12 +38,4 @@ ID of the device for which you want to generate a code.
 ## Response
 
 [access\_code](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of access_code
-}
-```
-{% endtab %}
-{% endtabs %}
+

@@ -47,9 +47,17 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 {{> enum-values enumValues=this.itemEnumValues}}
 </details>
 {{/if}}
+{{#if this.objectParameters}}
+{{#each this.objectParameters}}
+
+{{> property-collapsible this}}
+
+{{/each}}
+{{else}}
 
 ---
 
+{{/if}}
 {{/each}}
 {{else}}
 None
@@ -59,24 +67,7 @@ None
 ## Response
 
 {{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array of [{{response.escapedResourceType}}s](./){{else}}[{{response.escapedResourceType}}](./){{/if}}{{else}}void{{/if}}
-{{#with response.actionAttempt}}
 
-**`{{name}}`**
-{{> api-response-resource headingOffset=true}}
-{{/with}}
-{{#if response.resourceType}}
-{{#unless response.actionAttempt}}
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of {{response.resourceType}}
-}
-```
-{% endtab %}
-{% endtabs %}
-{{/unless}}
-{{/if}}
 {{#if primaryCodeSample}}
 
 ---

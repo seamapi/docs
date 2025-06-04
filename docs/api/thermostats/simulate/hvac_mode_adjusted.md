@@ -67,3 +67,4 @@ Desired simulated heating [set point](../../../capability-guides/thermostats/und
 ## Response
 
 void
+

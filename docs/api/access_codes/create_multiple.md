@@ -132,12 +132,4 @@ Indicates whether to use a [backup access code pool](https://docs.seam.co/latest
 ## Response
 
 Array of [access\_codes](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of access_code
-}
-```
-{% endtab %}
-{% endtabs %}
+
