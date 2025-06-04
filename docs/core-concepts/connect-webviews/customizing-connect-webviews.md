@@ -75,7 +75,7 @@ When you create a Connect Webview, you can customize the providers—that is, th
 | [Nuki](../../device-guides/nuki-locks.md)                                                                                              | `nuki`                          |
 | [PTI Storlogix Cloud](../../device-guides/pti-storlogix-cloud.md)                                                                      | `pti`                           |
 | [Salto KS Access System](../../device-and-system-integration-guides/salto-ks-access-control-system/)                                   | `salto_ks`                      |
-| [Salto KS Locks](../../device-guides/salto-locks.md)                                                                                   | `salto`                         |
+| [Salto KS Locks](../../device-guides/salto-locks.md)                                                                                   | `salto_ks`                      |
 | [Salto ProAccess Space Access System](../../device-and-system-integration-guides/salto-proaccess-space-access-system/)                 | `salto_space`                   |
 | [Schlage](../../device-and-system-integration-guides/schlage-locks/)                                                                   | `schlage`                       |
 | [Sensi](../../device-and-system-integration-guides/sensi-thermostats/)                                                                 | `sensi`                         |

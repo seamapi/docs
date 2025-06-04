@@ -22,7 +22,6 @@ Represents an app user's mobile phone.
   display_name: [example value],
   errors: [example value],
   nickname: [example value],
-  properties: [example value],
   warnings: [example value],
   workspace_id: [example value]
 }

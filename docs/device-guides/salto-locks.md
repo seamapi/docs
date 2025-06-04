@@ -35,7 +35,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their Salto devices to Seam, include the `salto` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their Salto devices to Seam, include the `salto_ks` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -72,7 +72,11 @@ To control Salto KS devices using Seam, you must prompt owners of these devices 
 1. Create an account in the [Salto KS app](https://app.saltoks.com/) if you have not done so already.
 2. In the Salto KS app, add your Salto KS devices.
 3. Note your login credentials for the Salto KS app, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
-   *   During the Connect Webview process, click **Allow and Continue** to confirm that you will allow Seam to add the requisite admin user to your Salto KS site for the integration with Seam.
+   1. If the Connect Webview displays multiple brand options, select **Salto KS**.
+   2. In the **Enter your credentials** dialog, type your username and password for the Salto KS web app and then click **Log In**.
+   3. Select **Full Access** and then click **Yes, Allow**.
+   4. Select the Salto KS sites that you want to integrate with Seam and then click **Continue**.
+   5.  Click **Allow and Continue** to confirm that you allow Seam to add the requisite admin user to your Salto KS site for the integration with Seam.
 
        {% hint style="warning" %}
        Do not suspend or remove the Seam Integration admin user from your Salto KS site.

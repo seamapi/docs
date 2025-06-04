@@ -2,7 +2,7 @@
 description: Delete a Noise Threshold on your Noise Sensor
 ---
 
-# Delete Noise Threshold
+# Delete a Noise Threshold
 
 ## Delete Noise Threshold
 

@@ -93,74 +93,279 @@ $ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
 This guide uses a Sandbox Workspace. Only virtual devices can be connected. If you need to connect a real Salto site, use a non-sandbox workspace and API key.
 {% endhint %}
 
-## 2 — Link Your Salto Account with Seam
+## 2 — Link Your Salto KS Account with Seam
 
 To control your Salto locks via the Seam API, you must first authorize your Seam workspace against your Salto KS account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Salto sites.
 
-#### Request a Connect Webview
+#### Create a Connect Webview
 
 {% tabs %}
 {% tab title="Python" %}
+**Code:**
+
 ```python
 from seam import Seam
 
-seam = Seam()
+seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
 
-webview = seam.connect_webviews.create(accepted_providers=["salto"])
+connect_webview = seam.connect_webviews.create(accepted_providers=["salto_ks"])
 
-assert webview.login_successful is False
+assert connect_webview.login_successful is False
 
-# Send the webview URL to your user
-print(webview.url)
+# Use the returned Connect Webview URL to display
+# the Connect Webview authorization flow to your user.
+print(connect_webview.url)
+```
+
+**Output:**
+
+```
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 {% endtab %}
 
-{% tab title="Javascript" %}
+{% tab title="cURL (bash)" %}
+**Code:**
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/connect_webviews/create' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "accepted_providers": ["salto_ks"]
+}' | jq -r '"Login Successful (false): " + (.connect_webview.login_successful | tostring),
+  "URL: " + .connect_webview.url'
+  # Use the returned Connect Webview URL to display
+  # the Connect Webview authorization flow to your user.
+```
+
+**Output:**
+
+```
+Login Successful (false): false
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+**Code:**
+
 ```javascript
-import { Seam } from 'seam'
+import { Seam } from "seam";
 
-const seam = new Seam()
+const seam = new Seam(); // Seam automatically uses your exported SEAM_API_KEY.
 
-const { connect_webview: connectWebview } = await seam.connectWebviews.create({
-  accepted_providers: ['salto'],
-})
+const connectWebview = await seam.connectWebviews.create({
+  accepted_providers: ['salto_ks']
+});
 
-console.log(connectWebview.login_successful) // false
+console.log(connectWebview.login_successful); // false
 
-// Send the webview URL to your user
-console.log(connectWebview.url)
+// Use the returned Connect Webview URL to display
+// the Connect Webview authorization flow to your user.
+console.log(connectWebview.url);
+```
+
+**Output:**
+
+```
+false
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+**Code:**
+
 ```ruby
 require "seam"
 
-seam = Seam.new(api_key: 'MY_API_KEY')
+seam = Seam.new() # Seam automatically uses your exported SEAM_API_KEY.
 
-webview = seam.connect_webviews.create(accepted_providers: %w[salto])
+connect_webview = seam.connect_webviews.create(
+  accepted_providers: ["salto_ks"]
+)
 
-puts webview.login_successful # false
+puts connect_webview.login_successful # false
 
-# Send the webview URL to your user
-puts webview.url
+# Use the returned Connect Webview URL to display
+# the Connect Webview authorization flow to your user.
+puts connect_webview.url
+```
+
+**Output:**
+
+```
+false
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+**Code:**
+
 ```php
-use Seam\SeamClient;
+<?php
+require 'vendor/autoload.php';
 
-$seam = new SeamClient("YOUR_API_KEY");
+$seam = new Seam\SeamClient(); // Seam automatically uses your exported SEAM_API_KEY.
 
-$webview = $seam->connect_webviews->create(
-  accepted_providers: ["salto"]
+$connect_webview = $seam->connect_webviews->create(
+  accepted_providers: ["salto_ks"]
 );
 
-echo json_encode($webview)
-/*
-{"connect_webview_id":"70c4df9e-1070-441f-92f8-fd6524062cec","workspace_id":"d7418ff3-a476-4f48-9a4b-211d1d21a03d","url":"https:\/\/connect.getseam.com\/connect_webviews\/view?connect_webview_id=70c4df9e-1070-441f-92f8-fd6524062cec&auth_token=9HJbwWKbD5aJLifZcozU9WWZXxropn9Bg","connected_account_id":null,"status":"pending","custom_redirect_url":null,"custom_redirect_failure_url":null,"created_at":"2023-02-09T02:14:06.147745+00:00","error":null}
-*/
+echo $connect_webview->login_successful ? 'true' : 'false', "\n"; // false
+
+// Use the returned Connect Webview URL to display
+// the Connect Webview authorization flow to your user.
+echo $connect_webview->url;
+```
+
+**Output:**
+
+```
+false
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+{% endtab %}
+
+{% tab title="C#" %}
+**Code:**
+
+```csharp
+using Seam.Client;
+
+var seam = new SeamClient(apiToken: SEAM_API_KEY);
+
+var connectWebview = seam.ConnectWebviews.Create(
+  acceptedProviders: new() {Seam.Api.ConnectWebviews.CreateRequest.AcceptedProvidersEnum.SaltoKs}
+);
+
+Console.WriteLine(connectWebview.LoginSuccessful); // False
+
+// Use the returned Connect Webview URL to display
+// the Connect Webview authorization flow to your user.
+Console.WriteLine(connectWebview.Url);
+```
+
+**Output:**
+
+```
+False
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+{% endtab %}
+
+{% tab title="Java" %}
+**Code:**
+
+```java
+import java.io.Console;
+import java.util.*;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.seam.api.Seam;
+import com.seam.api.core.ObjectMappers;
+import com.seam.api.types.ConnectWebview;
+import com.seam.api.types.Device;
+import com.seam.api.types.Manufacturer;
+import com.seam.api.types.ActionAttempt;
+import com.seam.api.types.AccessCode;
+import com.seam.api.resources.connectwebviews.requests.ConnectWebviewsCreateRequest;
+import com.seam.api.resources.connectwebviews.requests.ConnectWebviewsGetRequest;
+import com.seam.api.resources.devices.requests.DevicesListRequest;
+import com.seam.api.resources.devices.requests.DevicesGetRequest;
+import com.seam.api.resources.locks.requests.LocksUnlockDoorRequest;
+import com.seam.api.resources.accesscodes.requests.AccessCodesCreateRequest;
+import com.seam.api.resources.accesscodes.requests.AccessCodesListRequest;
+
+public class Main {
+
+  public static void main(String[] args) {
+
+    Seam seam = Seam.builder()
+      .apiKey(SEAM_API_KEY)
+      .build();
+
+    ConnectWebview connectWebview = seam.connectWebviews().create(ConnectWebviewsCreateRequest.builder()
+      .acceptedProviders(List.of(AcceptedProvider.SALTO_KS))
+      .build());
+
+    System.out.println(connectWebview.getLoginSuccessful()); // false
+
+    // Use the returned Connect Webview URL to display
+    // the Connect Webview authorization flow to your user.
+    System.out.println(connectWebview.getUrl());
+
+  }
+}
+```
+
+**Output:**
+
+```
+false
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+{% endtab %}
+
+{% tab title="Go" %}
+**Code:**
+
+```go
+package main
+
+import (
+  "context"
+  "fmt"
+  "os"
+
+  api "github.com/seamapi/go"
+  seam "github.com/seamapi/go/client"
+)
+
+func main() {
+  if err := run(); err != nil {
+    _, _ = fmt.Fprintln(os.Stderr, err.Error())
+    os.Exit(1)
+  }
+}
+
+func run() error {
+  client := seam.NewClient(
+    seam.WithApiKey(SEAM_API_KEY),
+  )
+
+  connectWebview, err := client.ConnectWebviews.Create(
+    context.Background(),
+    &api.ConnectWebviewsCreateRequest{
+      AcceptedProviders: []api.AcceptedProvider{
+        api.AcceptedProviderSaltoKs,
+      },
+    },
+  )
+
+  if err != nil {
+    return err
+  }
+
+  fmt.Println(connectWebview.LoginSuccessful) // false
+
+  // Use the returned Connect Webview URL to display
+  // the Connect Webview authorization flow to your user.
+  fmt.Println(connectWebview.Url)
+
+  return nil
+}
+```
+
+**Output:**
+
+```
+false
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 {% endtab %}
 {% endtabs %}
@@ -176,7 +381,7 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 During the authorization process, Seam adds an admin user to your Salto KS site. Do not suspend or remove this Seam Integration admin user.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/salto-connect-flow-screens.png" alt="Seam Connect Webview flow to connect your Salto KS account with Seam"><figcaption><p>Seam Connect Webview flow to connect your Salto KS account with Seam</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/salto-ks_connect-flow-screens_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/salto-ks_connect-flow-screens_light.png" alt="Seam Connect Webview flow to connect your Salto KS account with Seam"></picture><figcaption><p>Seam Connect Webview flow to connect your Salto KS account with Seam</p></figcaption></figure>
 
 Confirm the Connect Webview was successful by querying its status:
 

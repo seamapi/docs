@@ -128,9 +128,9 @@
 
 ## 📋 API Reference <a href="#api" id="api"></a>
 
-* [Overview](api-clients/overview.md)
-* [Installation](api-clients/installation.md)
-* [Authentication](api-clients/authentication.md)
+* [Overview](api-overview/overview.md)
+* [Installation](api-overview/installation.md)
+* [Authentication](api-overview/authentication.md)
 * [Pagination](api-overview/pagination.md)
 * [Access Codes](api/access_codes/README.md)
   * [Create an Access Code](api/access_codes/create.md)
@@ -232,10 +232,10 @@
   * [List Locks](api-clients/locks/list.md)
 * [Noise Sensors](api-clients/noise_sensors/README.md)
   * [Noise Thresholds](api-clients/noise_sensors/noise_thresholds/README.md)
-    * [Create Noise Thresholds](api-clients/noise_sensors/noise_thresholds/create.md)
+    * [Create a Noise Threshold](api-clients/noise_sensors/noise_thresholds/create.md)
     * [List Noise Thresholds](api-clients/noise_sensors/noise_thresholds/list.md)
-    * [Update Noise Threshold](api-clients/noise_sensors/noise_thresholds/update.md)
-    * [Delete Noise Threshold](api-clients/noise_sensors/noise_thresholds/delete.md)
+    * [Update a Noise Threshold](api-clients/noise_sensors/noise_thresholds/update.md)
+    * [Delete a Noise Threshold](api-clients/noise_sensors/noise_thresholds/delete.md)
 * [Phones](api/phones/README.md)
   * [Get a Phone](api/phones/get.md)
   * [List Phones](api/phones/list.md)

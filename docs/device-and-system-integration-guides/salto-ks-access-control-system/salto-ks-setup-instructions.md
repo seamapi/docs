@@ -37,7 +37,7 @@ To connect the Salto KS ACS to Seam:
    1. If the Connect Webview displays multiple brand options, select **Salto KS**.
    2. In the **Enter your credentials** dialog, type your username and password for the Salto KS web app.
    3. Select the Salto KS sites that you want to integrate with Seam.
-   4.  Confirm that you will allow Seam to add the requisite admin user to your Salto KS site for the integration with Seam, click **Allow and Continue**.
+   4.  Click **Allow and Continue** to confirm that you allow Seam to add the requisite admin user to your Salto KS site for the integration with Seam.
 
        {% hint style="warning" %}
        Do not suspend or remove the Seam Integration admin user from your Salto KS site.
