@@ -39,20 +39,6 @@ ID of the thermostat device that you want to set to off mode.
 
 [action\_attempt](./)
 
-**`SET_HVAC_MODE`**
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  action_attempt_id: [example value],
-  action_type: [example value],
-  error: [example value],
-  result: [example value],
-  status: [example value]
-}
-```
-{% endtab %}
-{% endtabs %}
 
 ---
 

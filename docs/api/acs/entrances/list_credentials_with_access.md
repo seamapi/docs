@@ -51,15 +51,7 @@ Possible enum values:
 ## Response
 
 Array of [acs\_credentials](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of acs_credential
-}
-```
-{% endtab %}
-{% endtabs %}
+
 
 ---
 

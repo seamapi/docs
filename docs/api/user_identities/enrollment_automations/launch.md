@@ -61,15 +61,7 @@ ID of the associated ACS user within the credential manager. If you specify a `c
 ## Response
 
 [unknown](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of unknown
-}
-```
-{% endtab %}
-{% endtabs %}
+
 
 ---
 

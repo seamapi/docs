@@ -49,3 +49,4 @@ Desired simulated temperature in °F. You must set `temperature_fahrenheit` or `
 ## Response
 
 void
+

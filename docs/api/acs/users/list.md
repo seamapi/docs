@@ -80,15 +80,7 @@ Phone number of the user identity for which you want to retrieve all access syst
 ## Response
 
 Array of [acs\_users](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of acs_user
-}
-```
-{% endtab %}
-{% endtabs %}
+
 
 ---
 

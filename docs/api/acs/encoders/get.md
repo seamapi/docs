@@ -37,12 +37,4 @@ ID of the encoder that you want to get.
 ## Response
 
 [acs\_encoder](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of acs_encoder
-}
-```
-{% endtab %}
-{% endtabs %}
+

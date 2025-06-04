@@ -37,15 +37,7 @@ ID of the access group for which you want to retrieve all access system users.
 ## Response
 
 Array of [acs\_users](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of acs_user
-}
-```
-{% endtab %}
-{% endtabs %}
+
 
 ---
 

@@ -109,15 +109,7 @@ Visionline-specific metadata for the new credential.
 ## Response
 
 [acs\_credential](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of acs_credential
-}
-```
-{% endtab %}
-{% endtabs %}
+
 
 ---
 

@@ -77,15 +77,7 @@ ID of the user identity with which you want to associate the new access system u
 ## Response
 
 [acs\_user](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of acs_user
-}
-```
-{% endtab %}
-{% endtabs %}
+
 
 ---
 

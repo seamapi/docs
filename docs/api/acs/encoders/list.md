@@ -55,12 +55,4 @@ Number of encoders to return.
 ## Response
 
 Array of [acs\_encoders](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of acs_encoder
-}
-```
-{% endtab %}
-{% endtabs %}
+

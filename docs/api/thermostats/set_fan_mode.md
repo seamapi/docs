@@ -49,20 +49,6 @@ Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermos
 
 [action\_attempt](./)
 
-**`SET_FAN_MODE`**
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  action_attempt_id: [example value],
-  action_type: [example value],
-  error: [example value],
-  result: [example value],
-  status: [example value]
-}
-```
-{% endtab %}
-{% endtabs %}
 
 ---
 

@@ -37,15 +37,7 @@ ID of the access system that you want to get.
 ## Response
 
 [acs\_system](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of acs_system
-}
-```
-{% endtab %}
-{% endtabs %}
+
 
 ---
 

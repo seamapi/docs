@@ -37,15 +37,7 @@ ID of the access group that you want to get.
 ## Response
 
 [acs\_access\_group](./)
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  JSON representation of acs_access_group
-}
-```
-{% endtab %}
-{% endtabs %}
+
 
 ---
 
