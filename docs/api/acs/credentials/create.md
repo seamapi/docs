@@ -55,7 +55,44 @@ Set of IDs of the [entrances](../../../capability-guides/access-systems/retrievi
 
 Vostio-specific metadata for the new credential.
 
+<details>
+
+<summary><b><code>auto_join</code></b> <i>Boolean</i></summary>
+
+</details>
+
 ---
+
+
+
+<details>
+
+<summary><b><code>join_all_guest_acs_entrances</code></b> <i>Boolean</i></summary>
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>override_all_guest_acs_entrances</code></b> <i>Boolean</i></summary>
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>override_guest_acs_entrance_ids</code></b> <i>List</i></summary>
+
+</details>
+
+---
+
 
 **`code`** *String*
 
@@ -85,7 +122,28 @@ Indicates whether the new credential is a [multi-phone sync credential](https://
 
 Salto Space-specific metadata for the new credential.
 
+<details>
+
+<summary><b><code>assign_new_key</code></b> <i>Boolean</i></summary>
+
+Indicates whether to assign a first, new card to a user. See also [Programming Salto Space Card-based Credentials](../../../device-and-system-integration-guides/salto-proaccess-space-access-system/programming-salto-space-card-based-credentials.md).
+
+</details>
+
 ---
+
+
+
+<details>
+
+<summary><b><code>update_current_key</code></b> <i>Boolean</i></summary>
+
+Indicates whether to update the user's existing card. See also [Programming Salto Space Card-based Credentials](../../../device-and-system-integration-guides/salto-proaccess-space-access-system/programming-salto-space-card-based-credentials.md).
+
+</details>
+
+---
+
 
 **`starts_at`** *String*
 
@@ -103,7 +161,92 @@ ID of the user identity to whom the new credential belongs. You must provide eit
 
 Visionline-specific metadata for the new credential.
 
+<details>
+
+<summary><b><code>assa_abloy_credential_service_mobile_endpoint_id</code></b> <i>UUID</i></summary>
+
+{% hint style="warning" %}
+**Deprecated**. Read-only endpoint references moved to `endpoint`.
+{% endhint %}
+
+</details>
+
 ---
+
+
+
+<details>
+
+<summary><b><code>auto_join</code></b> <i>Boolean</i></summary>
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>card_format</code></b> <i>Enum</i></summary>
+
+Enum values:
+
+- <code>TLCode</code>
+- <code>rfid48</code>
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>card_function_type</code></b> <i>Enum</i></summary>
+
+Enum values:
+
+- <code>guest</code>
+- <code>staff</code>
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>is_override_key</code></b> <i>Boolean</i></summary>
+
+{% hint style="warning" %}
+**Deprecated**. Use `override` instead.
+{% endhint %}
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>joiner_acs_credential_ids</code></b> <i>List</i></summary>
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>override</code></b> <i>Boolean</i></summary>
+
+</details>
+
+---
+
 
 
 ## Response
