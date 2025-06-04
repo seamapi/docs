@@ -21,27 +21,6 @@ Not all providers support unmanaged access codes. The following providers do not
 
 - [Kwikset](https://docs.seam.co/latest/device-and-system-integration-guides/kwikset-locks)
 
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  access_code_id: [example value],
-  code: [example value],
-  created_at: [example value],
-  device_id: [example value],
-  ends_at: [example value],
-  errors: [example value],
-  is_managed: [example value],
-  name: [example value],
-  starts_at: [example value],
-  status: [example value],
-  type: [example value],
-  warnings: [example value]
-}
-```
-{% endtab %}
-{% endtabs %}
-
 ---
 ## Properties
 

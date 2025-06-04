@@ -36,35 +36,6 @@ For details about the resources associated with an access control system, see th
 {% endtab %}
 {% endtabs %}
 
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  acs_access_group_count: [example value],
-  acs_system_id: [example value],
-  acs_user_count: [example value],
-  connected_account_id: [example value],
-  connected_account_ids: [example value],
-  created_at: [example value],
-  default_credential_manager_acs_system_id: [example value],
-  errors: [example value],
-  external_type: [example value],
-  external_type_display_name: [example value],
-  image_alt_text: [example value],
-  image_url: [example value],
-  is_credential_manager: [example value],
-  location: [example value],
-  name: [example value],
-  system_type: [example value],
-  system_type_display_name: [example value],
-  visionline_metadata: [example value],
-  warnings: [example value],
-  workspace_id: [example value]
-}
-```
-{% endtab %}
-{% endtabs %}
-
 ---
 ## Properties
 

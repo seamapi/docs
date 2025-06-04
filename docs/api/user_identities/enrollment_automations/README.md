@@ -11,20 +11,6 @@
 
 Represents an [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) within the [Seam mobile access solution](https://docs.seam.co/latest/capability-guides/mobile-access-in-development).
 
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  created_at: [example value],
-  credential_manager_acs_system_id: [example value],
-  enrollment_automation_id: [example value],
-  user_identity_id: [example value],
-  workspace_id: [example value]
-}
-```
-{% endtab %}
-{% endtabs %}
-
 ---
 ## Properties
 
