@@ -47,6 +47,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 {{> enum-values enumValues=this.itemEnumValues}}
 </details>
 {{/if}}
+{{#if this.objectParameters}}
+{{#each this.objectParameters}}
+
+{{> property-collapsible this}}
+
+{{/each}}
+{{/if}}
 
 ---
 
