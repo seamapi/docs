@@ -13,7 +13,6 @@
 - `/devices/unmanaged`
 - `/events`
 - `/locks`
-- `/networks`
 - `/noise_sensors`
 - `/noise_sensors/noise_thresholds`
 - `/noise_sensors/simulate`
@@ -23,12 +22,6 @@
 
 ### Endpoints
 
-- `/locks/get`
-- `/locks/list`
-- `/locks/lock_door`
-- `/locks/unlock_door`
-- `/networks/get`
-- `/networks/list`
 - `/noise_sensors/list`
 - `/noise_sensors/noise_thresholds/create`
 - `/noise_sensors/noise_thresholds/delete`
@@ -60,6 +53,7 @@ These items are intentionally undocumented.
 - `/acs/users/unmanaged`: No undocumented message provided
 - `/bridges`: No undocumented message provided
 - `/locks/simulate`: No undocumented message provided
+- `/networks`: No undocumented message provided
 - `/seam/bridge/v1/bridge_client_sessions`: No undocumented message provided
 - `/seam/bridge/v1/bridge_connected_systems`: No undocumented message provided
 - `/seam/instant_key/v1/client_sessions`: No undocumented message provided
@@ -109,6 +103,8 @@ These items are intentionally undocumented.
 - `/devices/delete`: Deleting a device is no longer supported and will be removed.
 - `/locks/simulate/keypad_code_entry`: Unreleased.
 - `/locks/simulate/manual_lock_via_keypad`: Unreleased.
+- `/networks/get`: Deprecated.
+- `/networks/list`: Deprecated.
 - `/seam/bridge/v1/bridge_client_sessions/create`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/get`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/refresh_telemetry_token`: Seam Bridge Client only.
@@ -169,6 +165,10 @@ These items are intentionally undocumented.
     - `exclude_if`: Only used internally.
     - `include_if`: Only used internally.
     - `unstable_location_id`: Experimental locations.
+- `/locks/lock_door`
+    - `sync`: Only used internally.
+- `/locks/unlock_door`
+    - `sync`: Only used internally.
 - `/noise_sensors/list`
     - `exclude_if`: Only used internally.
     - `include_if`: Only used internally.
@@ -239,6 +239,7 @@ Items that are intentionally undocumented are not included in this section.
 - `client_session.connect_webview_ids`
 - `client_session.connected_account_ids`
 - `client_session.created_at`
+- `client_session.customer_id`
 - `client_session.device_count`
 - `client_session.expires_at`
 - `client_session.token`
@@ -330,12 +331,6 @@ Items that are intentionally undocumented are not included in this section.
 
 ### Endpoints
 
-- `/locks/get`
-- `/locks/list`
-- `/locks/lock_door`
-- `/locks/unlock_door`
-- `/locks/simulate/keypad_code_entry`
-- `/locks/simulate/manual_lock_via_keypad`
 - `/networks/get`
 - `/networks/list`
 - `/noise_sensors/list`
@@ -392,7 +387,7 @@ Items that are intentionally undocumented are not included in this section.
     - `customer_id`
     - `device_selection_mode`
 - `/connect_webviews/list`
-    - `customer_id`
+    - `customer_ids`
 - `/connected_accounts/delete`
     - `sync`
 - `/connected_accounts/list`
@@ -407,24 +402,14 @@ Items that are intentionally undocumented are not included in this section.
     - `customer_ids`
     - `exclude_if`
     - `include_if`
-- `/locks/get`
-    - `device_id`
-    - `name`
 - `/locks/list`
     - `customer_ids`
     - `exclude_if`
     - `include_if`
 - `/locks/lock_door`
-    - `device_id`
     - `sync`
 - `/locks/unlock_door`
-    - `device_id`
     - `sync`
-- `/locks/simulate/keypad_code_entry`
-    - `code`
-    - `device_id`
-- `/locks/simulate/manual_lock_via_keypad`
-    - `device_id`
 - `/networks/get`
     - `network_id`
 - `/noise_sensors/list`

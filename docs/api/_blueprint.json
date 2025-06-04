@@ -33,7 +33,7 @@
             "parameters": [
               {
                 "name": "allow_external_modification",
-                "description": "Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.",
+                "description": "Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -118,7 +118,7 @@
               },
               {
                 "name": "is_external_modification_allowed",
-                "description": "Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.",
+                "description": "Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -288,7 +288,7 @@
               },
               {
                 "name": "use_backup_access_code_pool",
-                "description": "Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code).",
+                "description": "Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -353,7 +353,7 @@
             "parameters": [
               {
                 "name": "allow_external_modification",
-                "description": "Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.",
+                "description": "Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -462,7 +462,7 @@
               },
               {
                 "name": "is_external_modification_allowed",
-                "description": "Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.",
+                "description": "Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -617,7 +617,7 @@
               },
               {
                 "name": "use_backup_access_code_pool",
-                "description": "Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code).",
+                "description": "Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -1145,7 +1145,7 @@
               },
               {
                 "name": "allow_external_modification",
-                "description": "Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.",
+                "description": "Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -1216,7 +1216,7 @@
               },
               {
                 "name": "is_external_modification_allowed",
-                "description": "Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.",
+                "description": "Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -1436,7 +1436,7 @@
               },
               {
                 "name": "use_backup_access_code_pool",
-                "description": "Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code).",
+                "description": "Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -11183,7 +11183,7 @@
                 "jsonType": "object"
               },
               {
-                "name": "customer_id",
+                "name": "customer_ids",
                 "description": "",
                 "isRequired": false,
                 "isDeprecated": false,
@@ -11193,8 +11193,9 @@
                 "isDraft": false,
                 "draftMessage": "",
                 "hasDefault": false,
-                "format": "string",
-                "jsonType": "string"
+                "format": "list",
+                "jsonType": "array",
+                "itemFormat": "string"
               },
               {
                 "name": "limit",
@@ -17615,10 +17616,10 @@
       "namespace": null,
       "endpoints": [
         {
-          "title": "",
+          "title": "Get a Lock",
           "name": "get",
           "path": "/locks/get",
-          "description": "",
+          "description": "Returns a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks). **Use `/devices/get` instead.**",
           "isDeprecated": false,
           "deprecationMessage": "Use `/devices/get` instead.",
           "isUndocumented": false,
@@ -17641,7 +17642,7 @@
             "parameters": [
               {
                 "name": "device_id",
-                "description": "",
+                "description": "ID of the lock that you want to get.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -17655,7 +17656,7 @@
               },
               {
                 "name": "name",
-                "description": "",
+                "description": "Name of the lock that you want to get.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -17679,10 +17680,10 @@
           "codeSamples": []
         },
         {
-          "title": "",
+          "title": "List Locks",
           "name": "list",
           "path": "/locks/list",
-          "description": "",
+          "description": "Returns a list of all [locks](https://docs.seam.co/latest/capability-guides/smart-locks).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -17806,7 +17807,7 @@
               },
               {
                 "name": "device_type",
-                "description": "Device type by which to filter devices.",
+                "description": "Device type of the locks that you want to list.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -18092,7 +18093,7 @@
               },
               {
                 "name": "device_types",
-                "description": "Array of device types by which to filter devices.",
+                "description": "Device types of the locks that you want to list.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -18648,7 +18649,7 @@
               },
               {
                 "name": "manufacturer",
-                "description": "Manufacturer by which to filter devices.",
+                "description": "Manufacturer of the locks that you want to list.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -18996,10 +18997,10 @@
           "codeSamples": []
         },
         {
-          "title": "",
+          "title": "Lock a Lock",
           "name": "lock_door",
           "path": "/locks/lock_door",
-          "description": "",
+          "description": "Locks a [lock](https://docs.seam.co/latest/capability-guides/smart-locks). See also [Locking and Unlocking Smart Locks](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -19022,7 +19023,7 @@
             "parameters": [
               {
                 "name": "device_id",
-                "description": "",
+                "description": "ID of the lock that you want to lock.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -19040,8 +19041,8 @@
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
-                "isUndocumented": false,
-                "undocumentedMessage": "",
+                "isUndocumented": true,
+                "undocumentedMessage": "Only used internally.",
                 "isDraft": false,
                 "draftMessage": "",
                 "hasDefault": true,
@@ -19061,10 +19062,10 @@
           "codeSamples": []
         },
         {
-          "title": "",
+          "title": "Unlock a Lock",
           "name": "unlock_door",
           "path": "/locks/unlock_door",
-          "description": "",
+          "description": "Unlocks a [lock](https://docs.seam.co/latest/capability-guides/smart-locks). See also [Locking and Unlocking Smart Locks](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -19087,7 +19088,7 @@
             "parameters": [
               {
                 "name": "device_id",
-                "description": "",
+                "description": "ID of the lock that you want to unlock.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -19105,8 +19106,8 @@
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
-                "isUndocumented": false,
-                "undocumentedMessage": "",
+                "isUndocumented": true,
+                "undocumentedMessage": "Only used internally.",
                 "isDraft": false,
                 "draftMessage": "",
                 "hasDefault": true,
@@ -19140,7 +19141,7 @@
           "title": "",
           "name": "keypad_code_entry",
           "path": "/locks/simulate/keypad_code_entry",
-          "description": "",
+          "description": "Simulates the entry of a code on a keypad. You can only perform this action for [August](https://docs.seam.co/latest/device-and-system-integration-guides/august-locks) devices within [sandbox workspaces](../core-concepts/workspaces/README.md#sandbox-workspaces).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -19163,7 +19164,7 @@
             "parameters": [
               {
                 "name": "code",
-                "description": "",
+                "description": "Code that you want to simulate entering on a keypad.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -19177,7 +19178,7 @@
               },
               {
                 "name": "device_id",
-                "description": "",
+                "description": "ID of the device for which you want to simulate a keypad code entry.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -19203,7 +19204,7 @@
           "title": "",
           "name": "manual_lock_via_keypad",
           "path": "/locks/simulate/manual_lock_via_keypad",
-          "description": "",
+          "description": "Simulates a manual lock action using a keypad. You can only perform this action for [August](https://docs.seam.co/latest/device-and-system-integration-guides/august-locks) devices within [sandbox workspaces](../core-concepts/workspaces/README.md#sandbox-workspaces).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -19226,7 +19227,7 @@
             "parameters": [
               {
                 "name": "device_id",
-                "description": "",
+                "description": "ID of the device for which you want to simulate a manual lock action using a keypad.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -19265,9 +19266,9 @@
           "path": "/networks/get",
           "description": "",
           "isDeprecated": false,
-          "deprecationMessage": "",
-          "isUndocumented": false,
-          "undocumentedMessage": "",
+          "deprecationMessage": "Will be removed.",
+          "isUndocumented": true,
+          "undocumentedMessage": "Deprecated.",
           "isDraft": false,
           "draftMessage": "",
           "response": {
@@ -19314,9 +19315,9 @@
           "path": "/networks/list",
           "description": "",
           "isDeprecated": false,
-          "deprecationMessage": "",
-          "isUndocumented": false,
-          "undocumentedMessage": "",
+          "deprecationMessage": "Will be removed.",
+          "isUndocumented": true,
+          "undocumentedMessage": "Deprecated.",
           "isDraft": false,
           "draftMessage": "",
           "response": {
@@ -19344,7 +19345,7 @@
         }
       ],
       "subroutes": [],
-      "isUndocumented": false,
+      "isUndocumented": true,
       "isDeprecated": false,
       "isDraft": false
     },
@@ -40417,6 +40418,19 @@
           "draftMessage": "",
           "propertyGroupKey": null,
           "format": "datetime",
+          "jsonType": "string"
+        },
+        {
+          "name": "customer_id",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
           "jsonType": "string"
         },
         {
