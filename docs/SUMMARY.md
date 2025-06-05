@@ -269,6 +269,7 @@
   * [Create a User Identity](api/user_identities/create.md)
   * [List User Identities](api/user_identities/list.md)
   * [Get a User Identity](api/user_identities/get.md)
+  * [Generate an Instant Key](api/user_identities/generate_instant_key.md)
   * [Update a User Identity](api/user_identities/update.md)
   * [Add an ACS User to a User Identity](api/user_identities/add_acs_user.md)
   * [List ACS Users Associated with a User Identity](api/user_identities/list_acs_users.md)
