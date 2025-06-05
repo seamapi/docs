@@ -212,7 +212,7 @@
   * [Get a Connected Account](api/connected_accounts/get.md)
   * [List Connected Accounts](api/connected_accounts/list.md)
   * [Update a Connected Account](api/connected_accounts/update.md)
-  * [Update a Connected Account](api/connected_accounts/update.md)
+  * [Delete a Connected Account](api/connected_accounts/delete.md)
   * [Sync a Connected Account](api/connected_accounts/sync.md)
 * [Devices](api-clients/devices/README.md)
   * [List Devices](api-clients/devices/list.md)
