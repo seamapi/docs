@@ -31,4 +31,4 @@ See the following reference topics:
 
 * [Events](../api-clients/events/)
 * [Action Attempts](../api-clients/action_attempts/)
-* [Connected Accounts](../api-clients/connected_accounts/)
+* [Connected Accounts](../api/connected_accounts/)
