@@ -1,0 +1,821 @@
+# Connected Accounts
+
+## The connected_account Object
+
+- [Properties](./#properties)
+- [Errors](./#errors)
+- [Warnings](./#warnings)
+- [Events](./#events)
+- [Endpoints](./#endpoints)
+
+
+Represents a [connected account](../../core-concepts/connected-accounts/README.md). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks.
+
+---
+## Properties
+
+**`account_type`** *String*
+
+Type of connected account.
+
+
+
+
+---
+
+**`account_type_display_name`** *String*
+
+Display name for the connected account type.
+
+
+
+
+---
+
+**`automatically_manage_new_devices`** *Boolean*
+
+Indicates whether Seam should [import all new devices](../../core-concepts/connect-webviews/customizing-connect-webviews.md#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API.
+
+
+
+
+---
+
+**`connected_account_id`** *UUID*
+
+Unique identifier for the connected account.
+
+
+
+
+---
+
+**`created_at`** *Datetime*
+
+Date and time at which the connected account was created.
+
+
+
+
+---
+
+**`custom_metadata`** *Record*
+
+Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](../../core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview.md), [connected account](../../core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account.md), or [device](../../core-concepts/devices/adding-custom-metadata-to-a-device.md), enables you to store custom information, like customer details or internal IDs from your application.
+
+
+
+
+---
+
+[**`errors`**](./#errors) *List* *of Objects*
+
+Errors associated with the connected account.
+
+
+
+
+The specific structure of each object in this list depends on the value of its `error_code` field.
+
+Variants:
+<details>
+<summary><code>account_disconnected</code></summary>
+
+Account is disconnected.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the error.
+  
+  
+  ---
+
+  **`error_code`** *Enum*
+  
+  
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>account_disconnected</code>
+  
+  
+  ---
+
+  **`is_bridge_error`** *Boolean*
+  
+  
+  Indicates whether the error is related to Seam Bridge.
+  
+  
+  ---
+
+  **`is_connected_account_error`** *Boolean*
+  
+  
+  Indicates whether the error is related specifically to the connected account.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  
+</details>
+<details>
+<summary><code>invalid_credentials</code></summary>
+
+Credentials provided were invalid.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the error.
+  
+  
+  ---
+
+  **`error_code`** *Enum*
+  
+  
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>invalid_credentials</code>
+  
+  
+  ---
+
+  **`is_bridge_error`** *Boolean*
+  
+  
+  Indicates whether the error is related to Seam Bridge.
+  
+  
+  ---
+
+  **`is_connected_account_error`** *Boolean*
+  
+  
+  Indicates whether the error is related specifically to the connected account.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  
+</details>
+<details>
+<summary><code>bridge_disconnected</code></summary>
+
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the error.
+  
+  
+  ---
+
+  **`error_code`** *Enum*
+  
+  
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>bridge_disconnected</code>
+  
+  
+  ---
+
+  **`is_bridge_error`** *Boolean*
+  
+  
+  Indicates whether the error is related to Seam Bridge.
+  
+  
+  ---
+
+  **`is_connected_account_error`** *Boolean*
+  
+  
+  Indicates whether the error is related specifically to the connected account.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  
+</details>
+<details>
+<summary><code>salto_ks_subscription_limit_exceeded</code></summary>
+
+Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the error.
+  
+  
+  ---
+
+  **`error_code`** *Enum*
+  
+  
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>salto_ks_subscription_limit_exceeded</code>
+  
+  
+  ---
+
+  **`is_bridge_error`** *Boolean*
+  
+  
+  Indicates whether the error is related to Seam Bridge.
+  
+  
+  ---
+
+  **`is_connected_account_error`** *Boolean*
+  
+  
+  Indicates whether the error is related specifically to the connected account.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`salto_ks_metadata`** *Object*
+  
+  
+  Salto KS metadata associated with the connected account that has an error.
+  
+  Child Properties
+  
+  - <strong><code>sites</code></strong> <i>List</i> <i>of Objects</i>
+  
+    Salto sites associated with the connected account that has an error.
+  
+  - <strong><code>site_id</code></strong> <i>String</i>
+  
+    ID of a Salto site associated with the connected account that has an error.
+  
+  
+  - <strong><code>site_name</code></strong> <i>String</i>
+  
+    Name of a Salto site associated with the connected account that has an error.
+  
+  
+  - <strong><code>site_user_subscription_limit</code></strong> <i>Number</i>
+  
+    Subscription limit of site users for a Salto site associated with the connected account that has an error.
+  
+  
+  - <strong><code>subscribed_site_user_count</code></strong> <i>Number</i>
+  
+    Count of subscribed site users for a Salto site associated with the connected account that has an error.
+  
+  
+  
+</details>
+
+---
+
+**`user_identifier`** *Object*
+
+User identifier associated with the connected account.
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>api_url</code></strong> <i>String</i>
+
+  API URL for the user identifier associated with the connected account.
+
+  - <strong><code>email</code></strong> <i>String</i>
+
+  Email address of the user identifier associated with the connected account.
+
+  - <strong><code>exclusive</code></strong> <i>Boolean</i>
+
+  Indicates whether the user identifier associated with the connected account is exclusive.
+
+  - <strong><code>phone</code></strong> <i>String</i>
+
+  Phone number of the user identifier associated with the connected account.
+
+  - <strong><code>username</code></strong> <i>String</i>
+
+  Username of the user identifier associated with the connected account.
+
+</details>
+
+---
+
+[**`warnings`**](./#warnings) *List* *of Objects*
+
+Warnings associated with the connected account.
+
+
+
+
+The specific structure of each object in this list depends on the value of its `warning_code` field.
+
+Variants:
+<details>
+<summary><code>scheduled_maintenance_window</code></summary>
+
+Scheduled downtime planned for the connected account.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>scheduled_maintenance_window</code>
+  
+  
+</details>
+<details>
+<summary><code>unknown_issue_with_connected_account</code></summary>
+
+An unknown issue occurred while syncing the state of the connected account with the provider. This issue may affect the proper functioning of one or more resources in the account.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>unknown_issue_with_connected_account</code>
+  
+  
+</details>
+<details>
+<summary><code>salto_ks_subscription_limit_almost_reached</code></summary>
+
+Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`salto_ks_metadata`** *Object*
+  
+  
+  Salto KS metadata associated with the connected account that has a warning.
+  
+  Child Properties
+  
+  - <strong><code>sites</code></strong> <i>List</i> <i>of Objects</i>
+  
+    Salto sites associated with the connected account that has a warning.
+  
+  - <strong><code>site_id</code></strong> <i>String</i>
+  
+    ID of a Salto site associated with the connected account that has a warning.
+  
+  
+  - <strong><code>site_name</code></strong> <i>String</i>
+  
+    Name of a Salto site associated with the connected account that has a warning.
+  
+  
+  - <strong><code>site_user_subscription_limit</code></strong> <i>Number</i>
+  
+    Subscription limit of site users for a Salto site associated with the connected account that has a warning.
+  
+  
+  - <strong><code>subscribed_site_user_count</code></strong> <i>Number</i>
+  
+    Count of subscribed site users for a Salto site associated with the connected account that has a warning.
+  
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>salto_ks_subscription_limit_almost_reached</code>
+  
+  
+</details>
+
+---
+
+
+## Errors
+
+**`account_disconnected`**
+
+Account is disconnected.
+
+---
+
+**`invalid_credentials`**
+
+Credentials provided were invalid.
+
+---
+
+**`bridge_disconnected`**
+
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+
+---
+
+**`salto_ks_subscription_limit_exceeded`**
+
+Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.
+
+---
+
+
+## Warnings
+
+**`scheduled_maintenance_window`**
+
+Scheduled downtime planned for the connected account.
+
+---
+
+**`unknown_issue_with_connected_account`**
+
+An unknown issue occurred while syncing the state of the connected account with the provider. This issue may affect the proper functioning of one or more resources in the account.
+
+---
+
+**`salto_ks_subscription_limit_almost_reached`**
+
+Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.
+
+---
+
+
+## Events
+
+**`connected_account.connected`**
+
+A [connected account](../../core-concepts/connected-accounts/README.md) was connected for the first time or was reconnected after being disconnected.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>connect_webview_id</code></strong> <i>UUID</i>
+
+  ID of the Connect Webview associated with the event.
+
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the affected connected account.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `connected_account.connected`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the workspace associated with the event.
+</details>
+
+---
+
+**`connected_account.created`**
+
+A [connected account](../../core-concepts/connected-accounts/README.md) was created.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>connect_webview_id</code></strong> <i>UUID</i>
+
+  ID of the Connect Webview associated with the event.
+
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the affected connected account.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `connected_account.created`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the workspace associated with the event.
+</details>
+
+---
+
+**`connected_account.successful_login`**
+
+A [connected account](../../core-concepts/connected-accounts/README.md) had a successful login using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>connect_webview_id</code></strong> <i>UUID</i>
+
+  ID of the Connect Webview associated with the event.
+
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the affected connected account.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `connected_account.successful_login`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the workspace associated with the event.
+</details>
+
+---
+
+**`connected_account.disconnected`**
+
+A [connected account](../../core-concepts/connected-accounts/README.md) was disconnected.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the affected connected account.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `connected_account.disconnected`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the workspace associated with the event.
+</details>
+
+---
+
+**`connected_account.completed_first_sync`**
+
+A [connected account](../../core-concepts/connected-accounts/README.md) completed the first sync with Seam, and the corresponding devices or systems are now available.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the affected connected account.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `connected_account.completed_first_sync`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the workspace associated with the event.
+</details>
+
+---
+
+**`connected_account.deleted`**
+
+A [connected account](../../core-concepts/connected-accounts/README.md) was deleted.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the affected connected account.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `connected_account.deleted`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the workspace associated with the event.
+</details>
+
+---
+
+**`connected_account.completed_first_sync_after_reconnection`**
+
+A [connected account](../../core-concepts/connected-accounts/README.md) completed the first sync after reconnection with Seam, and the corresponding devices or systems are now available.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the affected connected account.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `connected_account.completed_first_sync_after_reconnection`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the workspace associated with the event.
+</details>
+
+---
+
+## Endpoints
+
+
+[**`/connected_accounts/delete`**](./delete.md)
+
+Deletes a specified [connected account](../../core-concepts/connected-accounts/README.md).
+
+
+[**`/connected_accounts/get`**](./get.md)
+
+Returns a specified [connected account](../../core-concepts/connected-accounts/README.md).
+
+
+[**`/connected_accounts/list`**](./list.md)
+
+Returns a list of all [connected accounts](../../core-concepts/connected-accounts/README.md).
+
+
+[**`/connected_accounts/sync`**](./sync.md)
+
+Request a [connected account](../../core-concepts/connected-accounts/README.md) sync attempt for the specified connected_account_id.
+
+
+[**`/connected_accounts/update`**](./update.md)
+
+Updates a [connected account](../../core-concepts/connected-accounts/README.md).
+
+
