@@ -6,7 +6,7 @@ description: >-
 
 # Mobile Key Quick Start
 
-In this quick start, create an ACS user for a virtual [Salto KS](../../../device-and-system-integration-guides/salto-ks-access-control-system/) access control system. Then, grant the user access to an entrance using a mobile key credential. With mobile keys, developers can create mobile apps that download users' credentials and then use Bluetooth low energy (BLE) or similar communications technologies to unlock granted nearby entrances. For more information about Seam's mobile access solution, see [Mobile Access](../../mobile-access/).
+In this quick start, create a user identity for a virtual [Salto KS](../../../device-and-system-integration-guides/salto-ks-access-control-system/) access control system. Then, grant the user access to an entrance using a mobile key credential. With mobile keys, developers can create mobile apps that download users' credentials and then use Bluetooth low energy (BLE) or similar communications technologies to unlock granted nearby entrances. For more information about Seam's mobile access solution, see [Mobile Access](../../mobile-access/).
 
 {% hint style="info" %}
 This quick start walks you through the process that applies specifically to the Salto KS ACS. There are often differences between access control systems. Once you've completed this quick start, learn how to work with your ACS using Seam, by reading the [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS.
@@ -20,18 +20,14 @@ This quick start walks you through the following basic steps:
    * To get started quickly, use a virtual ACS in a [sandbox workspace](../../../core-concepts/workspaces/#sandbox-workspaces).
 2. Install a Seam SDK and create an API key.
 3. Create a [user identity](../../../api/user_identities/).
-   * Seam user identities enable you to match your own mobile app users to ACS users that you create using the Seam API.
+   * Seam user identities enable you to match your own mobile app users to ACS users.
 4. Identify a [credential manager](../../mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#initialize-the-user-identity-with-a-credential-manager) to use for the mobile credential.
 5. Set up an [enrollment automation](../../mobile-access/issuing-mobile-credentials-from-an-access-control-system.md) for the user identity, to enable mobile keys.
-6. Create an [ACS user](../../../products/access-systems/user-management.md) and associate them with the user identity.
-   * Also, specify the access schedule for this user.
-7. Assign the ACS user to an [access group](../user-management/assigning-users-to-access-groups.md).
+6. Assign the user identity to an [access group](../user-management/assigning-users-to-access-groups.md).
    * Access groups are preconfigured to grant access to specific entrances.\
      While some access control systems use access groups, others specify allowed entrances directly within the credential. For more details, see [Access Permission Assignment Variations](../connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-permission-assignment-variations).
-8. Create a mobile key [ACS credential](../managing-credentials.md) for the ACS user.
-9. View the following information about your successfully-created credential:
-   * The access schedule for the ACS user.
-   * The list of entrances to which the ACS user now has access.
+7. Create a mobile key [ACS credential](../managing-credentials.md) for the user identity.
+8. View the list of entrances to which the user now has access.
 
 :rocket: Let's get started!
 
@@ -150,6 +146,13 @@ go get github.com/seamapi/go
 
 Create a user identity to represent a mobile app user.
 
+1. Find the ACS system ID.
+   1. In the top navigation pane of [Seam Console](https://console.seam.co/), click **ACS Systems**.
+   2. On the **Access Systems** page, locate the Salto KS Main Site ACS.
+   3. In the **acs\_system\_id** column for the Main Site ACS, click the ID to copy it.
+   4. Store this ACS system ID for future use.&#x20;
+2. Create the user identity, as follows:
+
 {% tabs %}
 {% tab title="Python" %}
 **Code:**
@@ -160,7 +163,10 @@ from seam import Seam
 seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
 
 jen_doe_user = seam.user_identities.create(
-  email_address = "jen.doe@example.com"
+  full_name: "Jen Doe",
+  email_address = "jen.doe@example.com",
+  # Use the ACS system ID that you copied earlier from Seam Console.
+  acs_system_ids = [acs_system_id]
 )
 ```
 
@@ -169,6 +175,7 @@ jen_doe_user = seam.user_identities.create(
 ```
 UserIdentity(
   user_identity_id='22222222-2222-2222-2222-222222222222',
+  full_name='Jen Doe',
   email_address='jen.doe@example.com',
   ...
 )
@@ -179,14 +186,17 @@ UserIdentity(
 **Code:**
 
 ```bash
+# Use the ACS system ID that you copied earlier from Seam Console.
 jen_doe_user=$(curl -X 'POST' \
   'https://connect.getseam.com/user_identities/create' \
   -H 'accept: application/json' \
   -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
-  -d '{
-  "email_address": "jen.doe@example.com"
-}')
+  -d "{
+  \"full_name\": \"Jen Doe\",
+  \"email_address\": \"jen.doe@example.com\",
+  \"acs_system_id\": \"${acs_system_id}\",
+}")
 ```
 
 **Output:**
@@ -195,6 +205,7 @@ jen_doe_user=$(curl -X 'POST' \
 {
   "user_identity": {
     "user_identity_id": "22222222-2222-2222-2222-222222222222",
+    "full_name": "Jen Doe",
     "email_address": "jen.doe@example.com",
     ...
   },
@@ -212,7 +223,10 @@ import { Seam } from "seam";
 const seam = new Seam(); // Seam automatically uses your exported SEAM_API_KEY.
 
 const jenDoeUser = await seam.userIdentities.create({
-  email_address: "jen.doe@example.com"
+  full_name: "Jen Doe",
+  email_address: "jen.doe@example.com",
+  // Use the ACS system ID that you copied earlier from Seam Console.
+  acs_system_id: acsSystemId,
 });
 ```
 
@@ -221,6 +235,7 @@ const jenDoeUser = await seam.userIdentities.create({
 ```json
 {
   "user_identity_id": "22222222-2222-2222-2222-222222222222",
+  "full_name": "Jen Doe",
   "email_address": "jen.doe@example.com",
   ...
 }
@@ -236,7 +251,10 @@ require "seam"
 seam = Seam.new() # Seam automatically uses your exported SEAM_API_KEY.
 
 jen_doe_user = seam.user_identities.create(
-  email_address: "jen.doe@example.com"
+  full_name: "Jen Doe",
+  email_address: "jen.doe@example.com",
+  # Use the ACS system ID that you copied earlier from Seam Console.
+  acs_system_id: acs_system_id,
 )
 ```
 
@@ -245,6 +263,7 @@ jen_doe_user = seam.user_identities.create(
 ```
 <Seam::Resources::UserIdentity:0x005f0
   user_identity_id="22222222-2222-2222-2222-222222222222"
+  full_name="Jen Doe"
   email_address="jen.doe@example.com"
   ...
 >
@@ -261,7 +280,10 @@ require 'vendor/autoload.php';
 $seam = new Seam\SeamClient(); // Seam automatically uses your exported SEAM_API_KEY.
 
 $jen_doe_user = $seam->user_identities->create(
-  email_address: "jen.doe@example.com"
+  full_name: "Jen Doe",
+  email_address: "jen.doe@example.com",
+  // Use the ACS system ID that you copied earlier from Seam Console.
+  acs_system_id: $acs_system_id,
 );
 ```
 
@@ -270,6 +292,7 @@ $jen_doe_user = $seam->user_identities->create(
 ```json
 {
   "user_identity_id": "22222222-2222-2222-2222-222222222222",
+  "full_name": "Jen Doe",
   "email_address": "jen.doe@example.com",
   ...
 }
@@ -314,7 +337,6 @@ import (
   "context"
   "fmt"
   "os"
-  "time" // To be used later in this quick start
 
   api "github.com/seamapi/go"
   seam "github.com/seamapi/go/client"
@@ -335,7 +357,10 @@ func run() error {
 
   jenDoeUser, err := client.UserIdentities.Create(
     context.Background(), &api.UserIdentitiesCreateRequest{
+      FullName: api.String("Jen Doe"),
       EmailAddress: api.String("jen.doe@example.com"),
+      // Use the ACS system ID that you copied earlier from Seam Console.
+      AcsSystemId: acsSystemId,
     },
   )
   if err != nil {
@@ -351,6 +376,7 @@ func run() error {
 ```json
 {
   "user_identity_id": "22222222-2222-2222-2222-222222222222",
+  "full_name": "Jen Doe",
   "email_address": "jen.doe@example.com",
   ...
 }
@@ -557,271 +583,9 @@ return nil
 
 ***
 
-## Step 6: Create an ACS User
+## Step 6: Assign the User Identity to an Access Group
 
-Create an ACS user within the virtual Salto KS access control system, associate this ACS user with the user identity that you created, and specify an access schedule for the user.
-
-1. Find the ACS system ID.
-   1. In the top navigation pane of [Seam Console](https://console.seam.co/), click **ACS Systems**.
-   2. On the **Access Systems** page, locate the Salto KS Main Site ACS.
-   3. In the **acs\_system\_id** column for the Main Site ACS, click the ID to copy it.
-   4. Store this ACS system ID for future use.&#x20;
-2. Create the ACS user, as follows:
-
-{% tabs %}
-{% tab title="Python" %}
-**Code:**
-
-```python
-acs_user = seam.acs.users.create(
-  full_name = "Jen Doe",
-  email_address = "jen.doe@example.com",
-  # Use the ACS system ID that you copied earlier from Seam Console.
-  acs_system_id = acs_system_id,
-  user_identity_id = jen_doe_user.user_identity_id,
-  access_schedule = {
-    "starts_at": "2025-02-10T15:00:00.000Z",
-    "ends_at": "2025-02-12T11:00:00.000Z"
-  }
-)
-```
-
-**Output:**
-
-```
-AcsUser(
-  acs_user_id='33333333-3333-3333-3333-333333333333',
-  user_identity_id='22222222-2222-2222-2222-222222222222',
-  full_name='Jen Doe',
-  access_schedule={
-    'starts_at': '2025-02-10T15:00:00.000Z',
-    'ends_at': '2025-02-12T11:00:00.000Z'
-  },
-  ...
-)
-```
-{% endtab %}
-
-{% tab title="cURL (bash)" %}
-**Code:**
-
-```bash
-# Use the ACS system ID that you copied earlier from Seam Console.
-acs_user=$(curl -X 'POST' \
-  'https://connect.getseam.com/acs/users/create' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{
-  \"full_name\": \"Jen Doe\",
-  \"email_address\": \"jen.doe@example.com\",
-  \"acs_system_id\": \"${acs_system_id}\",
-  \"user_identity_id\": \"$(jq -r '.user_identity.user_identity_id' <<< ${jen_doe_user})\",
-  \"access_schedule\": {
-      \"starts_at\": \"2025-02-10T15:00:00.000Z\",
-      \"ends_at\": \"2025-02-12T11:00:00.000Z\"
-  }
-}")
-```
-
-**Output:**
-
-```json
-{
-  "acs_user": {
-    "acs_user_id": "33333333-3333-3333-3333-333333333333",
-    "user_identity_id": "22222222-2222-2222-2222-222222222222",
-    "full_name": "Jen Doe",
-    "access_schedule": {
-      "starts_at": "2025-02-10T15:00:00.000Z",
-      "ends_at": "2025-02-12T11:00:00.000Z"
-    },
-    ...
-  },
-  "ok": true
-}
-```
-{% endtab %}
-
-{% tab title="JavaScript" %}
-**Code:**
-
-```javascript
-const acsUser = await seam.acs.users.create({
-  full_name: "Jen Doe",
-  email_address: "jen.doe@example.com",
-  // Use the ACS system ID that you copied earlier from Seam Console.
-  acs_system_id: acsSystemId,
-  user_identity_id: jenDoeUser.user_identity_id,
-  access_schedule: {
-    "starts_at": "2025-02-10T15:00:00.000Z",
-    "ends_at": "2025-02-12T11:00:00.000Z"
-  }
-});
-```
-
-**Output:**
-
-```json
-{
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  user_identity_id: '22222222-2222-2222-2222-222222222222',
-  full_name: 'Jen Doe',
-  access_schedule: {
-    "starts_at": "2025-02-10T15:00:00.000Z",
-    "ends_at": "2025-02-12T11:00:00.000Z"
-  },
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-**Code:**
-
-```ruby
-acs_user = seam.acs.users.create(
-  full_name: "Jen Doe",
-  email_address: "jen.doe@example.com",
-  # Use the ACS system ID that you copied earlier from Seam Console.
-  acs_system_id: acs_system_id,
-  user_identity_id = jen_doe_user.user_identity_id,
-  access_schedule: {
-    "starts_at": "2025-02-10T15:00:00.000Z",
-    "ends_at": "2025-02-12T11:00:00.000Z"
-  }
-)
-```
-
-**Output:**
-
-```
-<Seam::Resources::AcsUser:0x005f0
-  acs_user_id="33333333-3333-3333-3333-333333333333"
-  user_identity_id="22222222-2222-2222-2222-222222222222"
-  full_name="Jen Doe"
-  access_schedule=#<Seam::DeepHashAccessor:0x000001fd69e446f8 @data={
-    "starts_at"=>"2025-02-10T15:00:00.000Z",
-    "ends_at"=>"2025-02-12T11:00:00.000Z"
-  }>
-  ...
->
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-**Code:**
-
-```php
-$acs_user = $seam->acs->users->create(
-  full_name: "Jen Doe",
-  email_address: "jen.doe@example.com",
-  // Use the ACS system ID that you copied earlier from Seam Console.
-  acs_system_id: $acs_system_id,
-  user_identity_id: $jen_doe_user->user_identity_id,
-  access_schedule: array(
-    "starts_at" => "2025-02-10T15:00:00.000Z",
-    "ends_at" => "2025-02-12T11:00:00.000Z"
-  )
-);
-```
-
-**Output:**
-
-```json
-{
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "user_identity_id": "22222222-2222-2222-2222-222222222222",
-  "full_name": "Jen Doe",
-  "access_schedule": {
-    "starts_at": "2025-02-10T15:00:00.000Z",
-    "ends_at": "2025-02-12T11:00:00.000Z"
-  },
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="C#" %}
-**Code:**
-
-```csharp
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-checkIn, err := time.Parse(time.RFC3339, "2025-02-10T15:00:00.000Z")
-checkOut, err := time.Parse(time.RFC3339, "2025-02-12T11:00:00.000Z")
-if err != nil {
-  return err
-}
-
-acsUser, err := client.Acs.Users.Create(
-  context.Background(), &acs.UsersCreateRequest{
-    FullName: api.String("Jen Doe"),
-    EmailAddress: api.String("jen.doe@example.com"),
-    // Use the ACS system ID that you copied earlier from Seam Console.
-    AcsSystemId: acsSystemId,
-    UserIdentityId: jenDoeUser.UserIdentityId,
-    AccessSchedule: &acs.UsersCreateRequestAccessSchedule{
-      StartsAt: checkIn,
-      EndsAt: checkOut,
-    },
-  },
-)
-if err != nil {
-  return err
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-{
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "user_identity_id": "22222222-2222-2222-2222-222222222222",
-  "full_name": "Jen Doe",
-  "access_schedule": {
-    "starts_at": "2025-02-10T15:00:00.000Z",
-    "ends_at": "2025-02-12T11:00:00.000Z"
-  },
-  ...
-}
-```
-{% endtab %}
-{% endtabs %}
-
-***
-
-## Step 7: Assign the ACS User to an Access Group
-
-Add the ACS user to an access group. For Salto KS, access groups specify the entrances to which users have access.
+Add the user identity to an access group. For Salto KS, access groups specify the entrances to which users have access.
 
 Some other access control systems do not use access groups and, instead, specify allowed entrances directly within the credential. For more details, see [Access Permission Assignment Variations](../connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-permission-assignment-variations).
 
@@ -831,17 +595,17 @@ Some other access control systems do not use access groups and, instead, specify
    3. On the **Main Site** page, click the **Access Groups** tab.
    4. Locate the Main Group, click **...**, and click **Copy Id**.
    5. Store this access group ID for future use.&#x20;
-2. Assign the ACS user to the Main Group, as follows:
+2. Assign the user identity to the Main Group, as follows:
 
 {% tabs %}
 {% tab title="Python" %}
 **Code:**
 
 ```python
-seam.acs.users.add_to_access_group(
-  acs_user_id = acs_user.acs_user_id,
+seam.acs.access_groups.add_user(
   # Use the access group ID that you copied earlier from Seam Console.
-  acs_access_group_id = access_group_id
+  acs_access_group_id = access_group_id,
+  user_identity_id = jen_doe_user.user_identity_id
 )
 ```
 
@@ -858,12 +622,12 @@ None
 ```bash
 # Use the access group ID that you copied earlier from Seam Console.
 curl -X 'POST' \
-  'https://connect.getseam.com/acs/users/add_to_access_group' \
+  'https://connect.getseam.com/acs/access_groups/add_user' \
   -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d "{
-  \"acs_user_id\": \"$(jq -r '.acs_user.acs_user_id' <<< ${acs_user})\",
-  \"acs_access_group_id\": \"${access_group_id}\"
+  \"acs_access_group_id\": \"${access_group_id}\",
+  \"user_identity_id\": \"$(jq -r '.user_identity.user_identity_id' <<< ${jen_doe_user})\"
 }"
 ```
 
@@ -880,10 +644,10 @@ curl -X 'POST' \
 **Code:**
 
 ```javascript
-await seam.acs.users.addToAccessGroup({
-  acs_user_id: acsUser.acs_user_id,
+await seam.acs.accessGroups.addUser({
   // Use the access group ID that you copied earlier from Seam Console.
-  acs_access_group_id: accessGroupId
+  acs_access_group_id: accessGroupId,
+  user_identity_id: jenDoeUser.user_identity_id
 });
 ```
 
@@ -898,10 +662,10 @@ void
 **Code:**
 
 ```ruby
-seam.acs.users.add_to_access_group(
-  acs_user_id: acs_user.acs_user_id,
+seam.acs.access_groups.add_user(
   # Use the access group ID that you copied earlier from Seam Console.
-  acs_access_group_id: access_group_id
+  acs_access_group_id: access_group_id,
+  user_identity_id: jen_doe_user.user_identity_id
 )
 ```
 
@@ -916,10 +680,10 @@ nil
 **Code:**
 
 ```php
-$seam->acs->users->add_to_access_group(
-  acs_user_id: $acs_user->acs_user_id,
+$seam->acs->access_groups->add_user(
   // Use the access group ID that you copied earlier from Seam Console.
-  acs_access_group_id: $access_group_id
+  acs_access_group_id: $access_group_id,
+  user_identity_id: jen_doe_user.user_identity_id
 );
 ```
 
@@ -962,11 +726,11 @@ void
 **Code:**
 
 ```go
-_, err := client.Acs.Users.AddToAccessGroup(
-  context.Background(), &acs.UsersAddToAccessGroupRequest{
-    AcsUserId: acsUser.AcsUserId,
+_, err := client.Acs.AccessGroups.AddUser(
+  context.Background(), &acs.AccessGroupsAddUserRequest{
     // Use the access group ID that you copied earlier from Seam Console.
     AcsAccessGroupId: accessGroupId,
+    UserIdentityId: jenDoeUser.UserIdentityId,
   },
 )
 if err != nil {
@@ -985,9 +749,9 @@ void
 
 ***
 
-## Step 8: Create a Mobile Key Credential
+## Step 7: Create a Mobile Key Credential
 
-Create a mobile key credential for the ACS user.
+Create a mobile key credential for the user identity.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -995,7 +759,7 @@ Create a mobile key credential for the ACS user.
 
 ```python
 mobile_key = seam.acs.credentials.create(
-  acs_user_id = acs_user.acs_user_id,
+  user_identity_id = jen_doe_user.user_identity_id,
   is_multi_phone_sync_credential = True,
   access_method = "mobile_key"
 )
@@ -1007,7 +771,7 @@ mobile_key = seam.acs.credentials.create(
 AcsCredential(
   acs_credential_id='66666666-6666-6666-6666-666666666666',
   acs_system_id='11111111-1111-1111-1111-111111111111',
-  acs_user_id='33333333-3333-3333-3333-333333333333',
+  user_identity_id='22222222-2222-2222-2222-222222222222',
   access_method='mobile_key',
   ...
 )
@@ -1024,7 +788,7 @@ mobile_key=$(curl -X 'POST' \
   -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d "{
-  \"acs_user_id\": \"$(jq -r '.acs_user.acs_user_id' <<< ${acs_user})\",
+  \"user_identity_id\": \"$(jq -r '.user_identity.user_identity_id' <<< ${jen_doe_user})\",
   \"is_multi_phone_sync_credential\": true,
   \"access_method\": \"mobile_key\"
 }")
@@ -1037,7 +801,7 @@ mobile_key=$(curl -X 'POST' \
   "acs_credential":{
     "acs_credential_id": "66666666-6666-6666-6666-666666666666",
     "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "acs_user_id": "33333333-3333-3333-3333-333333333333",
+    "user_identity_id": "22222222-2222-2222-2222-222222222222",
     "access_method": "mobile_key",
     ...
   }
@@ -1050,7 +814,7 @@ mobile_key=$(curl -X 'POST' \
 
 ```javascript
 const mobileKey = await seam.acs.credentials.create({
-  acs_user_id: acsUser.acs_user_id,
+  user_identity_id: jenDoeUser.user_identity_id,
   is_multi_phone_sync_credential: true,
   access_method: "mobile_key"
 });
@@ -1062,7 +826,7 @@ const mobileKey = await seam.acs.credentials.create({
 {
   acs_credential_id: '66666666-6666-6666-6666-666666666666',
   acs_system_id: '11111111-1111-1111-1111-111111111111',
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  user_identity_id: '22222222-2222-2222-2222-222222222222',
   access_method: 'mobile_key',
   ...
 }
@@ -1074,7 +838,7 @@ const mobileKey = await seam.acs.credentials.create({
 
 ```ruby
 mobile_key = seam.acs.credentials.create(
-  acs_user_id: acs_user.acs_user_id,
+  user_identity_id: jen_doe_user.user_identity_id,
   is_multi_phone_sync_credential: true,
   access_method: "mobile_key"
 )
@@ -1085,7 +849,8 @@ mobile_key = seam.acs.credentials.create(
 ```
 <Seam::Resources::AcsCredential:0x005f0
   acs_credential_id="66666666-6666-6666-6666-666666666666"
-  acs_user_id="33333333-3333-3333-3333-333333333333"
+  acs_system_id="11111111-1111-1111-1111-111111111111"
+  user_identity_id= "22222222-2222-2222-2222-222222222222"
   access_method="mobile_key"
   ...
 >
@@ -1097,7 +862,7 @@ mobile_key = seam.acs.credentials.create(
 
 ```php
 $pin_code_credential = $seam->acs->credentials->create(
-  acs_user_id: $acs_user->acs_user_id,
+  user_identity_id: $jen_doe_user->user_identity_id,
   is_multi_phone_sync_credential: true,
   access_method: "mobile_key"
 );
@@ -1109,7 +874,7 @@ $pin_code_credential = $seam->acs->credentials->create(
 {
   "acs_credential_id": "66666666-6666-6666-6666-666666666666",
   "acs_system_id": "11111111-1111-1111-1111-111111111111",
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  "user_identity_id": "22222222-2222-2222-2222-222222222222",
   "access_method": "mobile_key",
   ...
 }
@@ -1150,7 +915,7 @@ $pin_code_credential = $seam->acs->credentials->create(
 ```go
 mobileKey, err := client.Acs.Credentials.Create(
   context.Background(), &acs.CredentialsCreateRequest{
-    AcsUserId: acsUser.AcsUserId,
+    UserIdentityId: jenDoeUser.UserIdentityId,
     IsMultiPhoneSyncCredential: api.Bool(true),
     AccessMethod: "mobile_key",
 })
@@ -1168,7 +933,7 @@ return nil
 {
   "acs_credential_id": "66666666-6666-6666-6666-666666666666",
   "acs_system_id": "11111111-1111-1111-1111-111111111111",
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  "user_identity_id": "22222222-2222-2222-2222-222222222222",
   "access_method": "mobile_key",
   ...
 }
@@ -1178,12 +943,9 @@ return nil
 
 ***
 
-## Step 9: View Your New Credential
+## Step 8: View Your New Credential
 
-You can use Seam Console, the Seam API, or the [Seam CLI](../../../core-concepts/seam-console/seam-online-cli.md) to view the following information about your successfully-created mobile key:
-
-* The access schedule for the ACS user.
-* The list of entrances to which the ACS user now has access.
+You can use Seam Console, the Seam API, or the [Seam CLI](../../../core-concepts/seam-console/seam-online-cli.md) to view the list of entrances to which the ACS user now has access.
 
 To use Seam Console to view information about your new PIN code credential:
 
@@ -1193,13 +955,9 @@ To use Seam Console to view information about your new PIN code credential:
 
     <figure><img src="../../../.gitbook/assets/mobile-key-quick-start-user.png" alt="Click the ACS user to view their credentials."><figcaption><p>Click the ACS user to view their credentials.</p></figcaption></figure>
 4. In the **Credentials** tab for the ACS user, note the mobile key credential (multi-phone sync credential) that you created.
-5.  In the **Properties** area for the ACS user, view the user's access schedule.\
-    Note that Seam Console displays times adjusted to your local computer settings. That is, the times that you see in Seam Console are the times that you specified when creating the credential, adjusted to match your computer's time settings.
-
-    <figure><img src="../../../.gitbook/assets/pin-code-quick-start-access-schedule.png" alt="View the access schedule for the ACS user."><figcaption><p>View the access schedule for the ACS user.</p></figcaption></figure>
-6. Click the **Access Groups** tab for the ACS user.
-7. Click the **Main Group** access group.
-8.  On the **Main Group** page click the **Entrances** tab and then view the entrances to which this access group grants the ACS user access.
+5. Click the **Access Groups** tab for the ACS user.
+6. Click the **Main Group** access group.
+7.  On the **Main Group** page click the **Entrances** tab and then view the entrances to which this access group grants the ACS user access.
 
     <figure><img src="../../../.gitbook/assets/pin-code-quick-start-access-group-entrances.png" alt="View the entrances to which the ACS user has access as a member of the access group."><figcaption><p>View the entrances to which the ACS user has access as a member of the access group.</p></figcaption></figure>
 
@@ -1227,10 +985,10 @@ For a deeper dive into ACS concepts and instructions, see the following topics:
 1. Learn about ACS concepts.
    * [Access Control System Resources](../connect-an-acs-to-seam/access-control-system-resources.md)
    * [Understanding ACS Differences](../connect-an-acs-to-seam/understanding-access-control-system-differences.md)
-2. Create ACS users.
-   * [Managing ACS Users](../../../products/access-systems/user-management.md)
-3. For relevant access control systems, assign ACS users to access groups.
-   * [Assigning ACS Users to Access Groups](../user-management/assigning-users-to-access-groups.md)
+2. Create user identities.
+   * [Managing Mobile App User Accounts with User Identities](../../mobile-access/managing-mobile-app-user-accounts-with-user-identities.md)
+3. For relevant access control systems, assign user identities to access groups.
+   * [Adding User Identities to Access Groups](../../../api/acs/access_groups/add_user.md)
 4. Learn about available entrances.
    * [Retrieving Entrance Details](../retrieving-entrance-details.md)
 5. Create credentials for ACS users.
