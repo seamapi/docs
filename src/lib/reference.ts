@@ -53,6 +53,7 @@ export const reference = (
       !route.path.startsWith('/thermostats') &&
       !route.path.startsWith('/phones') &&
       !route.path.startsWith('/user_identities') &&
+      !route.path.startsWith('/connected_accounts') &&
       !route.path.startsWith('/access_codes')
     ) {
       continue

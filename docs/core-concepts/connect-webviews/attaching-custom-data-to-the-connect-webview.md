@@ -207,7 +207,7 @@ seam.connectWebviews().create(ConnectWebviewsCreateRequest.builder()
 4. Seam creates a connected account containing the user's device account information.\
    This connected account includes a `custom_metadata` property that automatically contains the information that you set in the `custom_metadata` property for the Connect Webview.
 5. To retrieve the ID of the connected account associated with the completed Connect Webview, [get the `connect_webview`](../../api-clients/connect_webviews/get.md) and check the `connected_account_id` property.
-6. To retrieve the connected account, [get the `connected_account`](../../api-clients/connected_accounts/get.md) with the ID that you identified in the previous step.
+6. To retrieve the connected account, [get the `connected_account`](../../api/connected_accounts/get.md) with the ID that you identified in the previous step.
 7. Within the returned `connected_account`, view the `custom_metadata`.
 
 {% hint style="info" %}

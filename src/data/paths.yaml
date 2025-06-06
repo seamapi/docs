@@ -93,3 +93,8 @@
 
 /access_codes/simulate:
   title: Access Code Simulations
+
+/connected_accounts:
+  title: Connected Accounts
+  resources:
+    - connected_account

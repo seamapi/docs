@@ -7,7 +7,6 @@
 - `/action_attempts`
 - `/client_sessions`
 - `/connect_webviews`
-- `/connected_accounts`
 - `/devices`
 - `/devices/simulate`
 - `/devices/unmanaged`
@@ -684,11 +683,6 @@ These items are deprecated.
 - `/connect_webviews/delete`
 - `/connect_webviews/get`
 - `/connect_webviews/list`
-- `/connected_accounts/delete`
-- `/connected_accounts/get`
-- `/connected_accounts/list`
-- `/connected_accounts/sync`
-- `/connected_accounts/update`
 - `/devices/delete`
 - `/devices/get`
 - `/devices/list`
