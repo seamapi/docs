@@ -12,6 +12,7 @@ You can customize the following characteristics of your Connect Webviews:
 
 * [Look and feel](customizing-connect-webviews.md#customize-the-look-and-feel-of-your-connect-webviews)
 * [Brands (manufacturers) to display](customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews)
+* [Device types (capabilities) to connect](customizing-connect-webviews.md#customize-the-types-of-devices-to-connect)
 * [Behavior settings](customizing-connect-webviews.md#customize-the-behavior-settings-of-your-connect-webviews), including `automatically_manage_new_devices` and `wait_for_device_creation`
 
 ***
@@ -264,6 +265,20 @@ seam.connectWebviews().create(ConnectWebviewsCreateRequest.builder()
 {% endtabs %}
 
 ***
+
+## Customize the Types of Devices to Connect
+
+{% hint style="info" %}
+Currently, the only provider that supports multiple device types is SmartThings.
+{% endhint %}
+
+Some providers support multiple device types, like smart locks and thermostats. To specify which types of devices your users can connect to Seam for a provider that supports multiple device types, use the `accepted_capabilities` parameter when creating a Connect Webview. This parameter is especially applicable when the Connect Webview [`automatically_manage_new_devices`](customizing-connect-webviews.md#automatically_manage_new_devices) parameter is `true`. Set `accepted_capabilities` to an array containing one or more of the following values to indicate the capabilities of the devices that the Connect Webview can accept:
+
+* `lock`
+* `thermostat`
+* `noise_sensor`&#x20;
+
+Seam maintains a default value for this parameter for each provider. For example, for SmartThings, the default value for `accepted_capabilities` is `["locks"]`. To begin accepting SmartThings-connected thermostats, as well as locks, set `accepted_capabilities` to `["locks", "thermostats"]`. For Honeywell Resideo, the default value is `["thermostats"]`.
 
 ## Customize the Behavior Settings of Your Connect Webviews
 

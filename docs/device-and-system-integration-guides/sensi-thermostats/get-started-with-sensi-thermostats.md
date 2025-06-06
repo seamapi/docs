@@ -421,7 +421,7 @@ Complete the Connect Webview authorization flow by entering the following [Sensi
 * **Email:** jane@example.com
 * **Password:** 1234
 
-<figure><picture><source srcset="../../.gitbook/assets/sensi_connect-flow-screens_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/sensi_connect-flow-screens_light.png" alt="Use the Seam Connect Webview authorization flow to connect an ecobee account with Seam. This flow varies slightly based on the device manufacturer."></picture><figcaption><p>Use the Seam Connect Webview authorization flow to connect an Sensi account with Seam. This flow varies slightly based on the device manufacturer.</p></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/sensi_connect-flow-screens_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/sensi_connect-flow-screens_light.png" alt="Use the Seam Connect Webview authorization flow to connect a Sensi account with Seam. This flow varies slightly based on the device manufacturer."></picture><figcaption><p>Use the Seam Connect Webview authorization flow to connect a Sensi account with Seam. This flow varies slightly based on the device manufacturer.</p></figcaption></figure>
 
 Confirm that authorization through the Connect Webview was successful by querying its status.
 
@@ -585,7 +585,7 @@ true
 
 ## Step 3: Retrieve Sensi thermostat devices
 
-When you link an Sensi account with Seam, we create a `device` object to represent each Sensi thermostat in your account. You can then retrieve these Sensi devices using the [List Devices](../../api-clients/devices/list.md) and [Get Device](../../api-clients/devices/get.md) endpoints.
+When you link a Sensi account with Seam, we create a `device` object to represent each Sensi thermostat in your account. You can then retrieve these Sensi devices using the [List Devices](../../api-clients/devices/list.md) and [Get Device](../../api-clients/devices/get.md) endpoints.
 
 The Seam API exposes each device's properties, such as the current temperature reading in Fahrenheit and Celsius, current HVAC and fan modes, available climate presets, thermostat-specific constraints, and much more.
 
@@ -931,12 +931,13 @@ Next, you can use the Seam API to control your Sensi thermostat.
 
 Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use. For thermostats, device-specific capabilities include whether you can [set the HVAC mode](../../products/thermostats/configure-current-climate-settings.md) to `heat`, `cool`, or `heat_cool`. Seam's intuitive and granular [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
 
-Seam provides additional actions for thermostats, such as setting the fan mode, creating and scheduling climate presets, and setting temperature thresholds. You can also monitor for Seam thermostat-related events, such as reported temperatures outside your set thresholds.
+Seam provides additional actions for thermostats, such as setting the fan mode, creating and scheduling climate presets, setting temperature thresholds, and configuring weekly thermostat programs. You can also monitor for Seam thermostat-related events, such as reported temperatures outside your set thresholds.
 
 Try out the following actions on your Sensi thermostat:
 
 * [ ] [Set the HVAC mode](get-started-with-sensi-thermostats.md#set-the-hvac-mode)
 * [ ] [Create and schedule climate presets](get-started-with-sensi-thermostats.md#create-and-schedule-climate-presets)
+* [ ] [Configure a weekly thermostat program](get-started-with-sensi-thermostats.md#configure-a-weekly-thermostat-program)
 
 ### Set the HVAC mode
 
@@ -1773,6 +1774,332 @@ if ($updated_living_room_thermostat->can_hvac_cool) {
   "is_override_allowed":true,
   "max_override_period_minutes":90,
   ...
+}
+```
+{% endtab %}
+
+{% tab title="C#" %}
+**Code:**
+
+```csharp
+// Coming soon!
+```
+
+**Output:**
+
+```json
+// Coming soon!
+```
+{% endtab %}
+
+{% tab title="Java" %}
+**Code:**
+
+```java
+// Coming soon!
+```
+
+**Output:**
+
+```json
+// Coming soon!
+```
+{% endtab %}
+
+{% tab title="Go" %}
+**Code:**
+
+```go
+// Coming soon!
+```
+
+**Output:**
+
+```json
+// Coming soon!
+```
+{% endtab %}
+{% endtabs %}
+
+***
+
+### Configure a weekly thermostat program
+
+You can use the Seam API to create a thermostat weekly program for your Sensi thermostat. This standard feature of smart thermostats enables you to define full-week programs that are made up of reusable daily programs. Each daily program consists of a set of thermostat daily program periods, that is, time blocks with associated climate presets.
+
+In this example, create a weekday daily program and a weekend daily program. Then, combine these daily programs into a weekly program by assigning a daily program to each day of the week.
+
+{% tabs %}
+{% tab title="Python" %}
+**Code:**
+
+```python
+# Create the daily programs.
+weekday_program = seam.thermostats.daily_programs.create(
+  device_id = updated_living_room_thermostat.device_id,
+  name = "Weekday Program",
+  periods = [
+    { "starts_at_time": "07:00:00", "climate_preset_key": "Home" },
+    { "starts_at_time": "09:00:00", "climate_preset_key": "Away" },
+    { "starts_at_time": "18:00:00", "climate_preset_key": "Home" },
+    { "starts_at_time": "22:00:00", "climate_preset_key": "Sleep" }
+  ]
+)
+
+weekend_program = seam.thermostats.daily_programs.create(
+  device_id = updated_living_room_thermostat.device_id,
+  name = "Weekend Program",
+  periods = [
+    { "starts_at_time": "08:00:00", "climate_preset_key": "Home" },
+    { "starts_at_time": "23:00:00", "climate_preset_key": "Sleep" }
+  ]
+)
+
+# Use the daily programs to set the weekly program.
+seam.thermostats.update_weekly_program(
+  device_id = updated_living_room_thermostat.device_id,
+  monday_program_id = weekday_program.thermostat_daily_program_id,
+  tuesday_program_id = weekday_program.thermostat_daily_program_id,
+  wednesday_program_id = weekday_program.thermostat_daily_program_id,
+  thursday_program_id = weekday_program.thermostat_daily_program_id,
+  friday_program_id = weekday_program.thermostat_daily_program_id,
+  saturday_program_id = weekend_program.thermostat_daily_program_id,
+  sunday_program_id = weekend_program.thermostat_daily_program_id
+)
+```
+
+**Output:**
+
+```
+ActionAttempt(
+  action_attempt_id='11111111-2222-3333-4444-666666666666',
+  action_type='PUSH_THERMOSTAT_PROGRAMS',
+  status='success',
+  result={},
+  error=None
+)
+```
+{% endtab %}
+
+{% tab title="cURL (bash)" %}
+**Code:**
+
+```bash
+# Create the daily programs.
+weekday_program=$(curl -X 'POST' \
+  'https://connect.getseam.com/thermostats/daily_programs/create' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+    \"device_id\": \"$(jq -r '.device.device_id' <<< ${updated_living_room_thermostat})\",
+    \"name\":  \"Weekday Program\",
+    \"periods\": [
+    { \"starts_at_time\": \"07:00:00\", \"climate_preset_key\": \"Home\" },
+    { \"starts_at_time\": \"09:00:00\", \"climate_preset_key\": \"Away\" },
+    { \"starts_at_time\": \"18:00:00\", \"climate_preset_key\": \"Home\" },
+    { \"starts_at_time\": \"22:00:00\", \"climate_preset_key\": \"Sleep\" }
+  ]
+}")
+weekday_program_id=$(jq -r '.thermostat_daily_program_id' <<< ${weekday_program})
+
+weekend_program=$(curl -X 'POST' \
+  'https://connect.getseam.com/thermostats/daily_programs/create' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+    \"device_id\": \"$(jq -r '.device.device_id' <<< ${updated_living_room_thermostat})\",
+    \"name\":  \"Weekend Program\",
+    \"periods\": [
+    { \"starts_at_time\": \"08:00:00\", \"climate_preset_key\": \"Home\" },
+    { \"starts_at_time\": \"23:00:00\", \"climate_preset_key\": \"Sleep\" }
+  ]
+}")
+weekend_program_id=$(jq -r '.thermostat_daily_program_id' <<< ${weekend_program})
+
+# Use the daily programs to set the weekly program.
+curl -X 'POST' \
+  'https://connect.getseam.com/thermostats/update_weekly_program' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+    \"device_id\": \"$(jq -r '.device.device_id' <<< ${updated_living_room_thermostat})\",
+    \"monday_program_id\": \"${weekday_program_id}\",
+    \"tuesday_program_id\": \"${weekday_program_id}\",
+    \"wednesday_program_id\": \"${weekday_program_id}\",
+    \"thursday_program_id\": \"${weekday_program_id}\",
+    \"friday_program_id\": \"${weekday_program_id}\",
+    \"saturday_program_id\": \"${weekend_program_id}\",
+    \"sunday_program_id\": \"${weekend_program_id}\"
+}"
+```
+
+**Output:**
+
+```json
+{
+  "action_attempt": {
+    "status": "pending",
+    "action_type":"PUSH_THERMOSTAT_PROGRAMS",
+    "action_attempt_id": "11111111-2222-3333-4444-666666666666",
+    "result": null,
+    "error":null
+  },
+  "ok": true
+}
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+**Code:**
+
+```javascript
+// Create the daily programs.
+const weekdayProgram = await seam.thermostats.dailyPrograms.create({
+  device_id: updatedLivingRoomThermostat.device_id,
+  name: "Weekday Program",
+  periods: [
+    { "starts_at_time": "07:00:00", "climate_preset_key": "Home" },
+    { "starts_at_time": "09:00:00", "climate_preset_key": "Away" },
+    { "starts_at_time": "18:00:00", "climate_preset_key": "Home" },
+    { "starts_at_time": "22:00:00", "climate_preset_key": "Sleep" }
+  ]
+});
+
+const weekendProgram = await seam.thermostats.dailyPrograms.create({
+  device_id: updatedLivingRoomThermostat.device_id,
+  name: "Weekend Program",
+  periods: [
+    { "starts_at_time": "08:00:00", "climate_preset_key": "Home" },
+    { "starts_at_time": "23:00:00", "climate_preset_key": "Sleep" }
+  ]
+});
+
+// Use the daily programs to set the weekly program.
+await seam.thermostats.updateWeeklyProgram({
+  device_id: updatedLivingRoomThermostat.device_id,
+  monday_program_id: weekdayProgram.thermostat_daily_program_id,
+  tuesday_program_id: weekdayProgram.thermostat_daily_program_id,
+  wednesday_program_id: weekdayProgram.thermostat_daily_program_id,
+  thursday_program_id: weekdayProgram.thermostat_daily_program_id,
+  friday_program_id: weekdayProgram.thermostat_daily_program_id,
+  saturday_program_id: weekendProgram.thermostat_daily_program_id,
+  sunday_program_id: weekendProgram.thermostat_daily_program_id
+});
+```
+
+**Output:**
+
+```json
+{
+  status: 'success',
+  action_attempt_id: '11111111-2222-3333-4444-666666666666',
+  action_type: 'PUSH_THERMOSTAT_PROGRAMS',
+  result: {},
+  error: null
+}
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+**Code:**
+
+```ruby
+# Create the daily programs.
+weekday_program = seam.thermostats.daily_programs.create(
+  device_id: updated_living_room_thermostat.device_id,
+  name: "Weekday Program",
+  periods: [
+    { "starts_at_time": "07:00:00", "climate_preset_key": "Home" },
+    { "starts_at_time": "09:00:00", "climate_preset_key": "Away" },
+    { "starts_at_time": "18:00:00", "climate_preset_key": "Home" },
+    { "starts_at_time": "22:00:00", "climate_preset_key": "Sleep" }
+  ]
+)
+
+weekend_program = seam.thermostats.daily_programs.create(
+  device_id: updated_living_room_thermostat.device_id,
+  name: "Weekend Program",
+  periods: [
+    { "starts_at_time": "08:00:00", "climate_preset_key": "Home" },
+    { "starts_at_time": "23:00:00", "climate_preset_key": "Sleep" }
+  ]
+)
+
+# Use the daily programs to set the weekly program.
+seam.thermostats.update_weekly_program(
+  device_id: updated_living_room_thermostat.device_id,
+  monday_program_id: weekday_program.thermostat_daily_program_id,
+  tuesday_program_id: weekday_program.thermostat_daily_program_id,
+  wednesday_program_id: weekday_program.thermostat_daily_program_id,
+  thursday_program_id: weekday_program.thermostat_daily_program_id,
+  friday_program_id: weekday_program.thermostat_daily_program_id,
+  saturday_program_id: weekend_program.thermostat_daily_program_id,
+  sunday_program_id: weekend_program.thermostat_daily_program_id
+)
+```
+
+**Output:**
+
+```
+<Seam::Resources::ActionAttempt:0x005f0
+  status="success"
+  action_type="PUSH_THERMOSTAT_PROGRAMS"
+  action_attempt_id="11111111-2222-3333-4444-666666666666"
+  result={}
+  error=nil>
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+**Code:**
+
+```php
+// Create the daily programs.
+$weekday_program = $seam->thermostats->daily_programs->create(
+  device_id: $updated_living_room_thermostat->device_id,
+  name: "Weekday Program",
+  periods: [
+    { "starts_at_time": "07:00:00", "climate_preset_key": "Home" },
+    { "starts_at_time": "09:00:00", "climate_preset_key": "Away" },
+    { "starts_at_time": "18:00:00", "climate_preset_key": "Home" },
+    { "starts_at_time": "22:00:00", "climate_preset_key": "Sleep" }
+  ]
+);
+
+$weekend_program = $seam->thermostats->daily_programs->create(
+  device_id: $updated_living_room_thermostat->device_id,
+  name: "Weekend Program",
+  periods: [
+    { "starts_at_time": "08:00:00", "climate_preset_key": "Home" },
+    { "starts_at_time": "23:00:00", "climate_preset_key": "Sleep" }
+  ]
+);
+
+// Use the daily programs to set the weekly program.
+$seam->thermostats->update_weekly_program(
+  device_id: $updated_living_room_thermostat->device_id,
+  monday_program_id: $weekday_program->thermostat_daily_program_id,
+  tuesday_program_id: $weekday_program->thermostat_daily_program_id,
+  wednesday_program_id: $weekday_program->thermostat_daily_program_id,
+  thursday_program_id: $weekday_program->thermostat_daily_program_id,
+  friday_program_id: $weekday_program->thermostat_daily_program_id,
+  saturday_program_id: $weekend_program->thermostat_daily_program_id,
+  sunday_program_id: $weekend_program->thermostat_daily_program_id
+);
+```
+
+**Output:**
+
+```json
+{
+  status: 'success',
+  action_attempt_id: '11111111-2222-3333-4444-666666666666',
+  action_type: 'PUSH_THERMOSTAT_PROGRAMS',
+  result: {},
+  error: null
 }
 ```
 {% endtab %}
