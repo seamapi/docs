@@ -11306,7 +11306,86 @@
             "personal_access_token"
           ],
           "workspaceScope": "required",
-          "codeSamples": []
+          "codeSamples": [
+            {
+              "title": "Delete a connected account",
+              "description": "Specify the `connected_account_id` of the connected account that you want to delete.",
+              "request": {
+                "path": "/connected_accounts/delete",
+                "parameters": {
+                  "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c"
+                }
+              },
+              "response": {
+                "body": null
+              },
+              "code": {
+                "javascript": {
+                  "title": "JavaScript",
+                  "request": "await seam.connectedAccounts.delete({\n  connected_account_id: \"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n});",
+                  "response": "// void",
+                  "request_syntax": "javascript",
+                  "response_syntax": "javascript"
+                },
+                "python": {
+                  "title": "Python",
+                  "request": "seam.connected_accounts.delete(\n    connected_account_id=\"23e4eb21-6e93-48c4-a077-bf503246d47c\"\n)",
+                  "response": "None",
+                  "request_syntax": "python",
+                  "response_syntax": "python"
+                },
+                "ruby": {
+                  "title": "Ruby",
+                  "request": "seam.connected_accounts.delete(connected_account_id: \"23e4eb21-6e93-48c4-a077-bf503246d47c\")",
+                  "response": "nil",
+                  "request_syntax": "ruby",
+                  "response_syntax": "ruby"
+                },
+                "php": {
+                  "title": "PHP",
+                  "request": "<?php\n$seam->connected_accounts->delete(\n    connected_account_id: \"23e4eb21-6e93-48c4-a077-bf503246d47c\"\n);",
+                  "response": "null",
+                  "request_syntax": "php",
+                  "response_syntax": "php"
+                },
+                "seam_cli": {
+                  "title": "Seam CLI",
+                  "request": "seam connected-accounts delete --connected_account_id \"23e4eb21-6e93-48c4-a077-bf503246d47c\"",
+                  "response": "{}",
+                  "request_syntax": "bash",
+                  "response_syntax": "json"
+                },
+                "go": {
+                  "title": "Go",
+                  "request": "package main\n\nimport api \"github.com/seamapi/go\"\n\nfunc main() {\n\tclient.ConnectedAccounts.Delete(\n\t\tcontext.Background(),\n\t\tapi.ConnectedAccountsDeleteRequest{\n\t\t\tConnectedAccountId: api.String(\"23e4eb21-6e93-48c4-a077-bf503246d47c\"),\n\t\t},\n\t)\n}",
+                  "response": "nil",
+                  "request_syntax": "go",
+                  "response_syntax": "go"
+                },
+                "java": {
+                  "title": "Java",
+                  "request": "seam.connectedAccounts().delete(ConnectedAccountsDeleteRequest.builder().connectedAccountId(\"23e4eb21-6e93-48c4-a077-bf503246d47c\").build());",
+                  "response": "{}",
+                  "request_syntax": "java",
+                  "response_syntax": "json"
+                },
+                "csharp": {
+                  "title": "C#",
+                  "request": "seam.ConnectedAccounts.Delete(connectedAccountId: \"23e4eb21-6e93-48c4-a077-bf503246d47c\")",
+                  "response": "{}",
+                  "request_syntax": "csharp",
+                  "response_syntax": "json"
+                },
+                "curl": {
+                  "title": "cURL",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/connected_accounts/delete\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"connected_account_id\": \"23e4eb21-6e93-48c4-a077-bf503246d47c\"\n}\nEOF",
+                  "response": "{}",
+                  "request_syntax": "bash",
+                  "response_syntax": "json"
+                }
+              }
+            }
+          ]
         },
         {
           "title": "Get a Connected Account",
@@ -11370,7 +11449,94 @@
             "personal_access_token"
           ],
           "workspaceScope": "required",
-          "codeSamples": []
+          "codeSamples": [
+            {
+              "title": "Get a connected account",
+              "description": "Specify the `connected_account_id` of the connected account that you want to get.",
+              "request": {
+                "path": "/connected_accounts/get",
+                "parameters": {
+                  "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c"
+                }
+              },
+              "response": {
+                "body": {
+                  "connected_account": [
+                    {
+                      "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c",
+                      "created_at": "2022-08-24T10:38:05.128Z",
+                      "account_type": "schlage"
+                    }
+                  ]
+                }
+              },
+              "code": {
+                "javascript": {
+                  "title": "JavaScript",
+                  "request": "await seam.connectedAccounts.get({\n  connected_account_id: \"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n});",
+                  "response": "[\n  {\n    \"connected_account_id\": \"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n    \"created_at\": \"2022-08-24T10:38:05.128Z\",\n    \"account_type\": \"schlage\"\n  }\n]",
+                  "request_syntax": "javascript",
+                  "response_syntax": "json"
+                },
+                "python": {
+                  "title": "Python",
+                  "request": "seam.connected_accounts.get(connected_account_id=\"23e4eb21-6e93-48c4-a077-bf503246d47c\")",
+                  "response": "[\n    ConnectedAccount(\n        connected_account_id=\"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n        created_at=\"2022-08-24T10:38:05.128Z\",\n        account_type=\"schlage\",\n    )\n]",
+                  "request_syntax": "python",
+                  "response_syntax": "python"
+                },
+                "ruby": {
+                  "title": "Ruby",
+                  "request": "seam.connected_accounts.get(connected_account_id: \"23e4eb21-6e93-48c4-a077-bf503246d47c\")",
+                  "response": "[\n  {\n    \"connected_account_id\" => \"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n    \"created_at\" => \"2022-08-24T10:38:05.128Z\",\n    \"account_type\" => \"schlage\",\n  },\n]",
+                  "request_syntax": "ruby",
+                  "response_syntax": "ruby"
+                },
+                "php": {
+                  "title": "PHP",
+                  "request": "<?php\n$seam->connected_accounts->get(\n    connected_account_id: \"23e4eb21-6e93-48c4-a077-bf503246d47c\"\n);",
+                  "response": "<?php\n[\n    [\n        \"connected_account_id\" => \"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n        \"created_at\" => \"2022-08-24T10:38:05.128Z\",\n        \"account_type\" => \"schlage\",\n    ],\n];",
+                  "request_syntax": "php",
+                  "response_syntax": "php"
+                },
+                "seam_cli": {
+                  "title": "Seam CLI",
+                  "request": "seam connected-accounts get --connected_account_id \"23e4eb21-6e93-48c4-a077-bf503246d47c\"",
+                  "response": "[\n  {\n    \"connected_account_id\": \"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n    \"created_at\": \"2022-08-24T10:38:05.128Z\",\n    \"account_type\": \"schlage\"\n  }\n]",
+                  "request_syntax": "bash",
+                  "response_syntax": "json"
+                },
+                "go": {
+                  "title": "Go",
+                  "request": "package main\n\nimport api \"github.com/seamapi/go\"\n\nfunc main() {\n\tclient.ConnectedAccounts.Get(\n\t\tcontext.Background(),\n\t\tapi.ConnectedAccountsGetRequest{\n\t\t\tConnectedAccountId: api.String(\"23e4eb21-6e93-48c4-a077-bf503246d47c\"),\n\t\t},\n\t)\n}",
+                  "response": "[]api.ConnectedAccount{api.ConnectedAccount{ConnectedAccountId: \"23e4eb21-6e93-48c4-a077-bf503246d47c\", CreatedAt: \"2022-08-24T10:38:05.128Z\", AccountType: \"schlage\"}}",
+                  "request_syntax": "go",
+                  "response_syntax": "go"
+                },
+                "java": {
+                  "title": "Java",
+                  "request": "seam.connectedAccounts().get(ConnectedAccountsGetRequest.builder().connectedAccountId(\"23e4eb21-6e93-48c4-a077-bf503246d47c\").build());",
+                  "response": "[\n  {\n    \"connected_account_id\": \"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n    \"created_at\": \"2022-08-24T10:38:05.128Z\",\n    \"account_type\": \"schlage\"\n  }\n]",
+                  "request_syntax": "java",
+                  "response_syntax": "json"
+                },
+                "csharp": {
+                  "title": "C#",
+                  "request": "seam.ConnectedAccounts.Get(connectedAccountId: \"23e4eb21-6e93-48c4-a077-bf503246d47c\")",
+                  "response": "[\n  {\n    \"connected_account_id\": \"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n    \"created_at\": \"2022-08-24T10:38:05.128Z\",\n    \"account_type\": \"schlage\"\n  }\n]",
+                  "request_syntax": "csharp",
+                  "response_syntax": "json"
+                },
+                "curl": {
+                  "title": "cURL",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/connected_accounts/get\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"connected_account_id\": \"23e4eb21-6e93-48c4-a077-bf503246d47c\"\n}\nEOF",
+                  "response": "{\n  \"connected_account\": [\n    {\n      \"connected_account_id\": \"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n      \"created_at\": \"2022-08-24T10:38:05.128Z\",\n      \"account_type\": \"schlage\"\n    }\n  ]\n}",
+                  "request_syntax": "bash",
+                  "response_syntax": "json"
+                }
+              }
+            }
+          ]
         },
         {
           "title": "List Connected Accounts",
@@ -11477,7 +11643,97 @@
             "personal_access_token"
           ],
           "workspaceScope": "required",
-          "codeSamples": []
+          "codeSamples": [
+            {
+              "title": "List connected accounts",
+              "description": "List all connected accounts.",
+              "request": {
+                "path": "/connected_accounts/list",
+                "parameters": {}
+              },
+              "response": {
+                "body": {
+                  "connected_accounts": [
+                    {
+                      "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c",
+                      "created_at": "2022-08-24T10:38:05.128Z",
+                      "account_type": "schlage"
+                    },
+                    {
+                      "connected_account_id": "dc0df710-376c-4ec3-9b2b-2b7f788bdfa8",
+                      "created_at": "2022-07-04T08:40:02.110Z",
+                      "account_type": "kwikset"
+                    }
+                  ]
+                }
+              },
+              "code": {
+                "javascript": {
+                  "title": "JavaScript",
+                  "request": "await seam.connectedAccounts.list();",
+                  "response": "[\n  {\n    \"connected_account_id\": \"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n    \"created_at\": \"2022-08-24T10:38:05.128Z\",\n    \"account_type\": \"schlage\"\n  },\n  {\n    \"connected_account_id\": \"dc0df710-376c-4ec3-9b2b-2b7f788bdfa8\",\n    \"created_at\": \"2022-07-04T08:40:02.110Z\",\n    \"account_type\": \"kwikset\"\n  }\n]",
+                  "request_syntax": "javascript",
+                  "response_syntax": "json"
+                },
+                "python": {
+                  "title": "Python",
+                  "request": "seam.connected_accounts.list()",
+                  "response": "[\n    ConnectedAccount(\n        connected_account_id=\"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n        created_at=\"2022-08-24T10:38:05.128Z\",\n        account_type=\"schlage\",\n    ),\n    ConnectedAccount(\n        connected_account_id=\"dc0df710-376c-4ec3-9b2b-2b7f788bdfa8\",\n        created_at=\"2022-07-04T08:40:02.110Z\",\n        account_type=\"kwikset\",\n    ),\n]",
+                  "request_syntax": "python",
+                  "response_syntax": "python"
+                },
+                "ruby": {
+                  "title": "Ruby",
+                  "request": "seam.connected_accounts.list()",
+                  "response": "[\n  {\n    \"connected_account_id\" => \"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n    \"created_at\" => \"2022-08-24T10:38:05.128Z\",\n    \"account_type\" => \"schlage\",\n  },\n  {\n    \"connected_account_id\" => \"dc0df710-376c-4ec3-9b2b-2b7f788bdfa8\",\n    \"created_at\" => \"2022-07-04T08:40:02.110Z\",\n    \"account_type\" => \"kwikset\",\n  },\n]",
+                  "request_syntax": "ruby",
+                  "response_syntax": "ruby"
+                },
+                "php": {
+                  "title": "PHP",
+                  "request": "<?php\n$seam->connected_accounts->list();",
+                  "response": "<?php\n[\n    [\n        \"connected_account_id\" => \"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n        \"created_at\" => \"2022-08-24T10:38:05.128Z\",\n        \"account_type\" => \"schlage\",\n    ],\n    [\n        \"connected_account_id\" => \"dc0df710-376c-4ec3-9b2b-2b7f788bdfa8\",\n        \"created_at\" => \"2022-07-04T08:40:02.110Z\",\n        \"account_type\" => \"kwikset\",\n    ],\n];",
+                  "request_syntax": "php",
+                  "response_syntax": "php"
+                },
+                "seam_cli": {
+                  "title": "Seam CLI",
+                  "request": "seam connected-accounts list",
+                  "response": "[\n  {\n    \"connected_account_id\": \"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n    \"created_at\": \"2022-08-24T10:38:05.128Z\",\n    \"account_type\": \"schlage\"\n  },\n  {\n    \"connected_account_id\": \"dc0df710-376c-4ec3-9b2b-2b7f788bdfa8\",\n    \"created_at\": \"2022-07-04T08:40:02.110Z\",\n    \"account_type\": \"kwikset\"\n  }\n]",
+                  "request_syntax": "bash",
+                  "response_syntax": "json"
+                },
+                "go": {
+                  "title": "Go",
+                  "request": "package main\n\nfunc main() {\n\tclient.ConnectedAccounts.List(context.Background())\n}",
+                  "response": "[]api.ConnectedAccount{api.ConnectedAccount{ConnectedAccountId: \"23e4eb21-6e93-48c4-a077-bf503246d47c\", CreatedAt: \"2022-08-24T10:38:05.128Z\", AccountType: \"schlage\"}, api.ConnectedAccount{ConnectedAccountId: \"dc0df710-376c-4ec3-9b2b-2b7f788bdfa8\", CreatedAt: \"2022-07-04T08:40:02.110Z\", AccountType: \"kwikset\"}}",
+                  "request_syntax": "go",
+                  "response_syntax": "go"
+                },
+                "java": {
+                  "title": "Java",
+                  "request": "seam.connectedAccounts().list();",
+                  "response": "[\n  {\n    \"connected_account_id\": \"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n    \"created_at\": \"2022-08-24T10:38:05.128Z\",\n    \"account_type\": \"schlage\"\n  },\n  {\n    \"connected_account_id\": \"dc0df710-376c-4ec3-9b2b-2b7f788bdfa8\",\n    \"created_at\": \"2022-07-04T08:40:02.110Z\",\n    \"account_type\": \"kwikset\"\n  }\n]",
+                  "request_syntax": "java",
+                  "response_syntax": "json"
+                },
+                "csharp": {
+                  "title": "C#",
+                  "request": "seam.ConnectedAccounts.List()",
+                  "response": "[\n  {\n    \"connected_account_id\": \"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n    \"created_at\": \"2022-08-24T10:38:05.128Z\",\n    \"account_type\": \"schlage\"\n  },\n  {\n    \"connected_account_id\": \"dc0df710-376c-4ec3-9b2b-2b7f788bdfa8\",\n    \"created_at\": \"2022-07-04T08:40:02.110Z\",\n    \"account_type\": \"kwikset\"\n  }\n]",
+                  "request_syntax": "csharp",
+                  "response_syntax": "json"
+                },
+                "curl": {
+                  "title": "cURL",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/connected_accounts/list\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\"",
+                  "response": "{\n  \"connected_accounts\": [\n    {\n      \"connected_account_id\": \"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n      \"created_at\": \"2022-08-24T10:38:05.128Z\",\n      \"account_type\": \"schlage\"\n    },\n    {\n      \"connected_account_id\": \"dc0df710-376c-4ec3-9b2b-2b7f788bdfa8\",\n      \"created_at\": \"2022-07-04T08:40:02.110Z\",\n      \"account_type\": \"kwikset\"\n    }\n  ]\n}",
+                  "request_syntax": "bash",
+                  "response_syntax": "json"
+                }
+              }
+            }
+          ]
         },
         {
           "title": "Sync a Connected Account",
@@ -11523,7 +11779,86 @@
             "personal_access_token"
           ],
           "workspaceScope": "required",
-          "codeSamples": []
+          "codeSamples": [
+            {
+              "title": "Sync a connected account",
+              "description": "Request an on-demand sync of the devices and systems in a connected account.",
+              "request": {
+                "path": "/connected_accounts/sync",
+                "parameters": {
+                  "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c"
+                }
+              },
+              "response": {
+                "body": null
+              },
+              "code": {
+                "javascript": {
+                  "title": "JavaScript",
+                  "request": "await seam.connectedAccounts.sync({\n  connected_account_id: \"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n});",
+                  "response": "// void",
+                  "request_syntax": "javascript",
+                  "response_syntax": "javascript"
+                },
+                "python": {
+                  "title": "Python",
+                  "request": "seam.connected_accounts.sync(\n    connected_account_id=\"23e4eb21-6e93-48c4-a077-bf503246d47c\"\n)",
+                  "response": "None",
+                  "request_syntax": "python",
+                  "response_syntax": "python"
+                },
+                "ruby": {
+                  "title": "Ruby",
+                  "request": "seam.connected_accounts.sync(connected_account_id: \"23e4eb21-6e93-48c4-a077-bf503246d47c\")",
+                  "response": "nil",
+                  "request_syntax": "ruby",
+                  "response_syntax": "ruby"
+                },
+                "php": {
+                  "title": "PHP",
+                  "request": "<?php\n$seam->connected_accounts->sync(\n    connected_account_id: \"23e4eb21-6e93-48c4-a077-bf503246d47c\"\n);",
+                  "response": "null",
+                  "request_syntax": "php",
+                  "response_syntax": "php"
+                },
+                "seam_cli": {
+                  "title": "Seam CLI",
+                  "request": "seam connected-accounts sync --connected_account_id \"23e4eb21-6e93-48c4-a077-bf503246d47c\"",
+                  "response": "{}",
+                  "request_syntax": "bash",
+                  "response_syntax": "json"
+                },
+                "go": {
+                  "title": "Go",
+                  "request": "package main\n\nimport api \"github.com/seamapi/go\"\n\nfunc main() {\n\tclient.ConnectedAccounts.Sync(\n\t\tcontext.Background(),\n\t\tapi.ConnectedAccountsSyncRequest{\n\t\t\tConnectedAccountId: api.String(\"23e4eb21-6e93-48c4-a077-bf503246d47c\"),\n\t\t},\n\t)\n}",
+                  "response": "nil",
+                  "request_syntax": "go",
+                  "response_syntax": "go"
+                },
+                "java": {
+                  "title": "Java",
+                  "request": "seam.connectedAccounts().sync(ConnectedAccountsSyncRequest.builder().connectedAccountId(\"23e4eb21-6e93-48c4-a077-bf503246d47c\").build());",
+                  "response": "{}",
+                  "request_syntax": "java",
+                  "response_syntax": "json"
+                },
+                "csharp": {
+                  "title": "C#",
+                  "request": "seam.ConnectedAccounts.Sync(connectedAccountId: \"23e4eb21-6e93-48c4-a077-bf503246d47c\")",
+                  "response": "{}",
+                  "request_syntax": "csharp",
+                  "response_syntax": "json"
+                },
+                "curl": {
+                  "title": "cURL",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/connected_accounts/sync\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"connected_account_id\": \"23e4eb21-6e93-48c4-a077-bf503246d47c\"\n}\nEOF",
+                  "response": "{}",
+                  "request_syntax": "bash",
+                  "response_syntax": "json"
+                }
+              }
+            }
+          ]
         },
         {
           "title": "Update a Connected Account",
@@ -11597,7 +11932,87 @@
             "api_key"
           ],
           "workspaceScope": "required",
-          "codeSamples": []
+          "codeSamples": [
+            {
+              "title": "Update a connected account",
+              "description": "Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.",
+              "request": {
+                "path": "/connected_accounts/update",
+                "parameters": {
+                  "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c",
+                  "automatically_manage_new_devices": true
+                }
+              },
+              "response": {
+                "body": null
+              },
+              "code": {
+                "javascript": {
+                  "title": "JavaScript",
+                  "request": "await seam.connectedAccounts.update({\n  connected_account_id: \"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n  automatically_manage_new_devices: true,\n});",
+                  "response": "// void",
+                  "request_syntax": "javascript",
+                  "response_syntax": "javascript"
+                },
+                "python": {
+                  "title": "Python",
+                  "request": "seam.connected_accounts.update(\n    connected_account_id=\"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n    automatically_manage_new_devices=true,\n)",
+                  "response": "None",
+                  "request_syntax": "python",
+                  "response_syntax": "python"
+                },
+                "ruby": {
+                  "title": "Ruby",
+                  "request": "seam.connected_accounts.update(\n  connected_account_id: \"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n  automatically_manage_new_devices: true,\n)",
+                  "response": "nil",
+                  "request_syntax": "ruby",
+                  "response_syntax": "ruby"
+                },
+                "php": {
+                  "title": "PHP",
+                  "request": "<?php\n$seam->connected_accounts->update(\n    connected_account_id: \"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n    automatically_manage_new_devices: true\n);",
+                  "response": "null",
+                  "request_syntax": "php",
+                  "response_syntax": "php"
+                },
+                "seam_cli": {
+                  "title": "Seam CLI",
+                  "request": "seam connected-accounts update --connected_account_id \"23e4eb21-6e93-48c4-a077-bf503246d47c\" --automatically_manage_new_devices true",
+                  "response": "{}",
+                  "request_syntax": "bash",
+                  "response_syntax": "json"
+                },
+                "go": {
+                  "title": "Go",
+                  "request": "package main\n\nimport api \"github.com/seamapi/go\"\n\nfunc main() {\n\tclient.ConnectedAccounts.Update(\n\t\tcontext.Background(),\n\t\tapi.ConnectedAccountsUpdateRequest{\n\t\t\tConnectedAccountId:            api.String(\"23e4eb21-6e93-48c4-a077-bf503246d47c\"),\n\t\t\tAutomaticallyManageNewDevices: api.Bool(true),\n\t\t},\n\t)\n}",
+                  "response": "nil",
+                  "request_syntax": "go",
+                  "response_syntax": "go"
+                },
+                "java": {
+                  "title": "Java",
+                  "request": "seam.connectedAccounts().update(ConnectedAccountsUpdateRequest.builder().connectedAccountId(\"23e4eb21-6e93-48c4-a077-bf503246d47c\")\n.automaticallyManageNewDevices(true).build());",
+                  "response": "{}",
+                  "request_syntax": "java",
+                  "response_syntax": "json"
+                },
+                "csharp": {
+                  "title": "C#",
+                  "request": "seam.ConnectedAccounts.Update(connectedAccountId: \"23e4eb21-6e93-48c4-a077-bf503246d47c\", automaticallyManageNewDevices: true)",
+                  "response": "{}",
+                  "request_syntax": "csharp",
+                  "response_syntax": "json"
+                },
+                "curl": {
+                  "title": "cURL",
+                  "request": "curl --include --request POST \"https://connect.getseam.com/connected_accounts/update\" \\\n  --header \"Authorization: Bearer $SEAM_API_KEY\" \\\n  --json @- <<EOF\n{\n  \"connected_account_id\": \"23e4eb21-6e93-48c4-a077-bf503246d47c\",\n  \"automatically_manage_new_devices\": true\n}\nEOF",
+                  "response": "{}",
+                  "request_syntax": "bash",
+                  "response_syntax": "json"
+                }
+              }
+            }
+          ]
         }
       ],
       "subroutes": [],
