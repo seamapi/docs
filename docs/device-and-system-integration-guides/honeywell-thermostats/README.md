@@ -27,6 +27,7 @@ We support the following features:
 * [Configuring current thermostat settings](../../products/thermostats/configure-current-climate-settings.md)
 * [Creating and managing climate presets](../../capability-guides/thermostats/creating-and-managing-climate-presets/)
 * [Creating and managing thermostat schedules](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md)
+* [Creating and managing thermostat weekly programs](../../capability-guides/thermostats/creating-and-managing-thermostat-programs.md)
 * [Setting and monitoring temperature thresholds](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md)
 
 ***
