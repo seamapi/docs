@@ -68,6 +68,26 @@ await seam.connectedAccounts.delete({
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/connected_accounts/delete" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -115,20 +135,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam connected-accounts delete --connected_account_id "23e4eb21-6e93-48c4-a077-bf503246d47c"
-```
-
-#### Output
-
-```seam_cli
-{}
-```
-{% endtab %}
-
 {% tab title="Go" %}
 #### Code
 
@@ -154,22 +160,16 @@ nil
 ```
 {% endtab %}
 
-{% tab title="cURL" %}
+{% tab title="Seam CLI" %}
 #### Code
 
-```curl
-curl --include --request POST "https://connect.getseam.com/connected_accounts/delete" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c"
-}
-EOF
+```seam_cli
+seam connected-accounts delete --connected_account_id "23e4eb21-6e93-48c4-a077-bf503246d47c"
 ```
 
 #### Output
 
-```curl
+```seam_cli
 {}
 ```
 {% endtab %}

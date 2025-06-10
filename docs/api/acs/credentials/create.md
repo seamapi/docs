@@ -298,6 +298,47 @@ await seam.acs.credentials.create({
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/credentials/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  "access_method": "mobile_key",
+  "allowed_acs_entrance_ids": [
+    "55555555-5555-5555-5555-555555555555",
+    "55555555-5555-5555-5555-000000000000"
+  ],
+  "credential_manager_acs_system_id": "88888888-8888-8888-8888-888888888888",
+  "is_multi_phone_sync_credential": true,
+  "starts_at": "2024-03-01T10:40:00Z",
+  "ends_at": "2024-03-04T10:40:00Z"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "acs_credential": {
+    "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+    "acs_user_id": "33333333-3333-3333-3333-333333333333",
+    "display_name": "Multi Phone Sync Credential",
+    "code": null,
+    "acs_system_id": "88888888-8888-8888-8888-888888888888",
+    "access_method": "mobile_key",
+    "workspace_id": "00000000-0000-0000-0000-000000000000",
+    "created_at": "2024-04-12T03:56:22.396Z",
+    "is_multi_phone_sync_credential": true
+  }
+}
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -405,30 +446,6 @@ $seam->acs->credentials->create(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam acs credentials create --acs_user_id "33333333-3333-3333-3333-333333333333" --access_method "mobile_key" --allowed_acs_entrance_ids ["55555555-5555-5555-5555-555555555555","55555555-5555-5555-5555-000000000000"] --credential_manager_acs_system_id "88888888-8888-8888-8888-888888888888" --is_multi_phone_sync_credential true --starts_at "2024-03-01T10:40:00Z" --ends_at "2024-03-04T10:40:00Z"
-```
-
-#### Output
-
-```seam_cli
-{
-  "acs_credential_id": "99999999-9999-9999-9999-999999999999",
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "display_name": "Multi Phone Sync Credential",
-  "code": null,
-  "acs_system_id": "88888888-8888-8888-8888-888888888888",
-  "access_method": "mobile_key",
-  "workspace_id": "00000000-0000-0000-0000-000000000000",
-  "created_at": "2024-04-12T03:56:22.396Z",
-  "is_multi_phone_sync_credential": true
-}
-```
-{% endtab %}
-
 {% tab title="Go" %}
 #### Code
 
@@ -461,43 +478,26 @@ api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUs
 ```
 {% endtab %}
 
-{% tab title="cURL" %}
+{% tab title="Seam CLI" %}
 #### Code
 
-```curl
-curl --include --request POST "https://connect.getseam.com/acs/credentials/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "access_method": "mobile_key",
-  "allowed_acs_entrance_ids": [
-    "55555555-5555-5555-5555-555555555555",
-    "55555555-5555-5555-5555-000000000000"
-  ],
-  "credential_manager_acs_system_id": "88888888-8888-8888-8888-888888888888",
-  "is_multi_phone_sync_credential": true,
-  "starts_at": "2024-03-01T10:40:00Z",
-  "ends_at": "2024-03-04T10:40:00Z"
-}
-EOF
+```seam_cli
+seam acs credentials create --acs_user_id "33333333-3333-3333-3333-333333333333" --access_method "mobile_key" --allowed_acs_entrance_ids ["55555555-5555-5555-5555-555555555555","55555555-5555-5555-5555-000000000000"] --credential_manager_acs_system_id "88888888-8888-8888-8888-888888888888" --is_multi_phone_sync_credential true --starts_at "2024-03-01T10:40:00Z" --ends_at "2024-03-04T10:40:00Z"
 ```
 
 #### Output
 
-```curl
+```seam_cli
 {
-  "acs_credential": {
-    "acs_credential_id": "99999999-9999-9999-9999-999999999999",
-    "acs_user_id": "33333333-3333-3333-3333-333333333333",
-    "display_name": "Multi Phone Sync Credential",
-    "code": null,
-    "acs_system_id": "88888888-8888-8888-8888-888888888888",
-    "access_method": "mobile_key",
-    "workspace_id": "00000000-0000-0000-0000-000000000000",
-    "created_at": "2024-04-12T03:56:22.396Z",
-    "is_multi_phone_sync_credential": true
-  }
+  "acs_credential_id": "99999999-9999-9999-9999-999999999999",
+  "acs_user_id": "33333333-3333-3333-3333-333333333333",
+  "display_name": "Multi Phone Sync Credential",
+  "code": null,
+  "acs_system_id": "88888888-8888-8888-8888-888888888888",
+  "access_method": "mobile_key",
+  "workspace_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2024-04-12T03:56:22.396Z",
+  "is_multi_phone_sync_credential": true
 }
 ```
 {% endtab %}

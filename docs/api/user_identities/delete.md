@@ -64,6 +64,26 @@ await seam.userIdentities.delete({
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/user_identities/delete" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "user_identity_id": "44d48b20-0dbe-419d-91ca-ab8bceecd135"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -109,20 +129,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam user-identities delete --user_identity_id "44d48b20-0dbe-419d-91ca-ab8bceecd135"
-```
-
-#### Output
-
-```seam_cli
-{}
-```
-{% endtab %}
-
 {% tab title="Go" %}
 #### Code
 
@@ -148,22 +154,16 @@ nil
 ```
 {% endtab %}
 
-{% tab title="cURL" %}
+{% tab title="Seam CLI" %}
 #### Code
 
-```curl
-curl --include --request POST "https://connect.getseam.com/user_identities/delete" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "user_identity_id": "44d48b20-0dbe-419d-91ca-ab8bceecd135"
-}
-EOF
+```seam_cli
+seam user-identities delete --user_identity_id "44d48b20-0dbe-419d-91ca-ab8bceecd135"
 ```
 
 #### Output
 
-```curl
+```seam_cli
 {}
 ```
 {% endtab %}

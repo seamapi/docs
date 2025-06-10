@@ -65,6 +65,26 @@ await seam.thermostats.schedules.delete({
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/thermostats/schedules/delete" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "thermostat_schedule_id": "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -112,20 +132,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam thermostats schedules delete --thermostat_schedule_id "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
-```
-
-#### Output
-
-```seam_cli
-{}
-```
-{% endtab %}
-
 {% tab title="Go" %}
 #### Code
 
@@ -152,22 +158,16 @@ nil
 ```
 {% endtab %}
 
-{% tab title="cURL" %}
+{% tab title="Seam CLI" %}
 #### Code
 
-```curl
-curl --include --request POST "https://connect.getseam.com/thermostats/schedules/delete" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "thermostat_schedule_id": "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
-}
-EOF
+```seam_cli
+seam thermostats schedules delete --thermostat_schedule_id "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
 ```
 
 #### Output
 
-```curl
+```seam_cli
 {}
 ```
 {% endtab %}

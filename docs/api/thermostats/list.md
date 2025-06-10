@@ -168,6 +168,46 @@ await seam.thermostats.list();
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/thermostats/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{
+  "devices": [
+    {
+      "device_id": "123e4567-e89b-12d3-a456-426614174000",
+      "device_type": "ecobee_thermostat",
+      "capabilities_supported": ["thermostat"],
+      "properties": {
+        "name": "Entryway",
+        "online": "true,",
+        "relative_humidity": 0.36,
+        "temperature_farenheit": 70,
+        "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+        "current_climate_setting": {
+          "hvac_mode_setting": "heat_cool",
+          "cooling_set_point_farenheit": 75,
+          "heating_set_point_farenheit": 65,
+          "manual_override_allowed": false
+        },
+        "location": null,
+        "connected_account_id": "123e4567-e89b-12d3-a456-426614174000",
+        "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+        "created_at": "2024-04-05T07:57:05.323Z"
+      }
+    }
+  ]
+}
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -286,6 +326,24 @@ $seam->thermostats->list();
 ```
 {% endtab %}
 
+{% tab title="Go" %}
+#### Code
+
+```go
+package main
+
+func main() {
+	client.Thermostats.List(context.Background())
+}
+```
+
+#### Output
+
+```go
+[]api.Device{api.Device{DeviceId: "123e4567-e89b-12d3-a456-426614174000", DeviceType: "ecobee_thermostat", CapabilitiesSupported: []string{"thermostat"}, Properties: api.DeviceProperties{Name: "Entryway", Online: "true,", RelativeHumidity: 0.36, TemperatureFarenheit: 70, AvailableHvacModeSettings: []string{"cool", "heat", "heat_cool", "off"}, CurrentClimateSetting: api.DevicePropertiesCurrentClimateSetting{HvacModeSetting: "heat_cool", CoolingSetPointFarenheit: 75, HeatingSetPointFarenheit: 65, ManualOverrideAllowed: false}, Location: nil, ConnectedAccountId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z"}}}
+```
+{% endtab %}
+
 {% tab title="Seam CLI" %}
 #### Code
 
@@ -320,64 +378,6 @@ seam thermostats list
     }
   }
 ]
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Code
-
-```go
-package main
-
-func main() {
-	client.Thermostats.List(context.Background())
-}
-```
-
-#### Output
-
-```go
-[]api.Device{api.Device{DeviceId: "123e4567-e89b-12d3-a456-426614174000", DeviceType: "ecobee_thermostat", CapabilitiesSupported: []string{"thermostat"}, Properties: api.DeviceProperties{Name: "Entryway", Online: "true,", RelativeHumidity: 0.36, TemperatureFarenheit: 70, AvailableHvacModeSettings: []string{"cool", "heat", "heat_cool", "off"}, CurrentClimateSetting: api.DevicePropertiesCurrentClimateSetting{HvacModeSetting: "heat_cool", CoolingSetPointFarenheit: 75, HeatingSetPointFarenheit: 65, ManualOverrideAllowed: false}, Location: nil, ConnectedAccountId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z"}}}
-```
-{% endtab %}
-
-{% tab title="cURL" %}
-#### Code
-
-```curl
-curl --include --request POST "https://connect.getseam.com/thermostats/list" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
-```
-
-#### Output
-
-```curl
-{
-  "devices": [
-    {
-      "device_id": "123e4567-e89b-12d3-a456-426614174000",
-      "device_type": "ecobee_thermostat",
-      "capabilities_supported": ["thermostat"],
-      "properties": {
-        "name": "Entryway",
-        "online": "true,",
-        "relative_humidity": 0.36,
-        "temperature_farenheit": 70,
-        "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
-        "current_climate_setting": {
-          "hvac_mode_setting": "heat_cool",
-          "cooling_set_point_farenheit": 75,
-          "heating_set_point_farenheit": 65,
-          "manual_override_allowed": false
-        },
-        "location": null,
-        "connected_account_id": "123e4567-e89b-12d3-a456-426614174000",
-        "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-        "created_at": "2024-04-05T07:57:05.323Z"
-      }
-    }
-  ]
-}
 ```
 {% endtab %}
 

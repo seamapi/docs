@@ -95,6 +95,34 @@ await seam.thermostats.heatCool({
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/thermostats/heat_cool" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "123e4567-e89b-12d3-a456-426614174000",
+  "cooling_set_point_celsius": 25,
+  "heating_set_point_celsius": 20
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "action_attempt": {
+    "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
+    "status": "pending",
+    "action_type": "SET_HEAT_COOL"
+  }
+}
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -163,24 +191,6 @@ $seam->thermostats->heat_cool(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam thermostats heat-cool --device_id "123e4567-e89b-12d3-a456-426614174000" --cooling_set_point_celsius 25 --heating_set_point_celsius 20
-```
-
-#### Output
-
-```seam_cli
-{
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "pending",
-  "action_type": "SET_HEAT_COOL"
-}
-```
-{% endtab %}
-
 {% tab title="Go" %}
 #### Code
 
@@ -208,30 +218,20 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 ```
 {% endtab %}
 
-{% tab title="cURL" %}
+{% tab title="Seam CLI" %}
 #### Code
 
-```curl
-curl --include --request POST "https://connect.getseam.com/thermostats/heat_cool" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "device_id": "123e4567-e89b-12d3-a456-426614174000",
-  "cooling_set_point_celsius": 25,
-  "heating_set_point_celsius": 20
-}
-EOF
+```seam_cli
+seam thermostats heat-cool --device_id "123e4567-e89b-12d3-a456-426614174000" --cooling_set_point_celsius 25 --heating_set_point_celsius 20
 ```
 
 #### Output
 
-```curl
+```seam_cli
 {
-  "action_attempt": {
-    "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-    "status": "pending",
-    "action_type": "SET_HEAT_COOL"
-  }
+  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
+  "status": "pending",
+  "action_type": "SET_HEAT_COOL"
 }
 ```
 {% endtab %}

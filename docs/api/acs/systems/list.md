@@ -67,6 +67,26 @@ await seam.acs.systems.list({
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/systems/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "connected_account_id": "123e4567-e89b-12d3-a456-426614174000"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{ "acs_systems": [{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }] }
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -113,20 +133,6 @@ $seam->acs->systems->list(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam acs systems list --connected_account_id "123e4567-e89b-12d3-a456-426614174000"
-```
-
-#### Output
-
-```seam_cli
-[{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
-```
-{% endtab %}
-
 {% tab title="Go" %}
 #### Code
 
@@ -153,23 +159,17 @@ func main() {
 ```
 {% endtab %}
 
-{% tab title="cURL" %}
+{% tab title="Seam CLI" %}
 #### Code
 
-```curl
-curl --include --request POST "https://connect.getseam.com/acs/systems/list" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "connected_account_id": "123e4567-e89b-12d3-a456-426614174000"
-}
-EOF
+```seam_cli
+seam acs systems list --connected_account_id "123e4567-e89b-12d3-a456-426614174000"
 ```
 
 #### Output
 
-```curl
-{ "acs_systems": [{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }] }
+```seam_cli
+[{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
 ```
 {% endtab %}
 

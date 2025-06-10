@@ -78,6 +78,42 @@ await seam.userIdentities.listAcsUsers({
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/user_identities/list_acs_users" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "acs_users": [
+    {
+      "acs_user_id": "4d223973-0874-4831-8630-bfcb29e6bce0",
+      "display_name": "Jean Doe",
+      "full_name": "Jean Doe",
+      "email_address": "jean@example.com",
+      "acs_system_id": "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
+      "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+      "created_at": "2024-01-11T05:45:41.349Z",
+      "is_suspended": false,
+      "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+      "user_identity_email_address": "jean@example.com",
+      "user_identity_phone_number": "+15555550110"
+    }
+  ]
+}
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -168,34 +204,6 @@ $seam->user_identities->list_acs_users(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam user-identities list-acs-users --user_identity_id "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"
-```
-
-#### Output
-
-```seam_cli
-[
-  {
-    "acs_user_id": "4d223973-0874-4831-8630-bfcb29e6bce0",
-    "display_name": "Jean Doe",
-    "full_name": "Jean Doe",
-    "email_address": "jean@example.com",
-    "acs_system_id": "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "created_at": "2024-01-11T05:45:41.349Z",
-    "is_suspended": false,
-    "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    "user_identity_email_address": "jean@example.com",
-    "user_identity_phone_number": "+15555550110"
-  }
-]
-```
-{% endtab %}
-
 {% tab title="Go" %}
 #### Code
 
@@ -221,39 +229,31 @@ func main() {
 ```
 {% endtab %}
 
-{% tab title="cURL" %}
+{% tab title="Seam CLI" %}
 #### Code
 
-```curl
-curl --include --request POST "https://connect.getseam.com/user_identities/list_acs_users" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"
-}
-EOF
+```seam_cli
+seam user-identities list-acs-users --user_identity_id "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"
 ```
 
 #### Output
 
-```curl
-{
-  "acs_users": [
-    {
-      "acs_user_id": "4d223973-0874-4831-8630-bfcb29e6bce0",
-      "display_name": "Jean Doe",
-      "full_name": "Jean Doe",
-      "email_address": "jean@example.com",
-      "acs_system_id": "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
-      "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-      "created_at": "2024-01-11T05:45:41.349Z",
-      "is_suspended": false,
-      "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-      "user_identity_email_address": "jean@example.com",
-      "user_identity_phone_number": "+15555550110"
-    }
-  ]
-}
+```seam_cli
+[
+  {
+    "acs_user_id": "4d223973-0874-4831-8630-bfcb29e6bce0",
+    "display_name": "Jean Doe",
+    "full_name": "Jean Doe",
+    "email_address": "jean@example.com",
+    "acs_system_id": "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
+    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+    "created_at": "2024-01-11T05:45:41.349Z",
+    "is_suspended": false,
+    "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+    "user_identity_email_address": "jean@example.com",
+    "user_identity_phone_number": "+15555550110"
+  }
+]
 ```
 {% endtab %}
 

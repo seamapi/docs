@@ -77,6 +77,34 @@ await seam.connectedAccounts.get({
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/connected_accounts/get" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "connected_account": [
+    {
+      "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c",
+      "created_at": "2022-08-24T10:38:05.128Z",
+      "account_type": "schlage"
+    }
+  ]
+}
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -141,26 +169,6 @@ $seam->connected_accounts->get(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam connected-accounts get --connected_account_id "23e4eb21-6e93-48c4-a077-bf503246d47c"
-```
-
-#### Output
-
-```seam_cli
-[
-  {
-    "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c",
-    "created_at": "2022-08-24T10:38:05.128Z",
-    "account_type": "schlage"
-  }
-]
-```
-{% endtab %}
-
 {% tab title="Go" %}
 #### Code
 
@@ -186,31 +194,23 @@ func main() {
 ```
 {% endtab %}
 
-{% tab title="cURL" %}
+{% tab title="Seam CLI" %}
 #### Code
 
-```curl
-curl --include --request POST "https://connect.getseam.com/connected_accounts/get" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c"
-}
-EOF
+```seam_cli
+seam connected-accounts get --connected_account_id "23e4eb21-6e93-48c4-a077-bf503246d47c"
 ```
 
 #### Output
 
-```curl
-{
-  "connected_account": [
-    {
-      "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c",
-      "created_at": "2022-08-24T10:38:05.128Z",
-      "account_type": "schlage"
-    }
-  ]
-}
+```seam_cli
+[
+  {
+    "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c",
+    "created_at": "2022-08-24T10:38:05.128Z",
+    "account_type": "schlage"
+  }
+]
 ```
 {% endtab %}
 

@@ -77,6 +77,27 @@ await seam.acs.accessGroups.addUser({
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/access_groups/add_user" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_access_group_id": "44444444-4444-4444-4444-444444444444",
+  "acs_user_id": "33333333-3333-3333-3333-333333333333"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -129,20 +150,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam acs access-groups add-user --acs_access_group_id "44444444-4444-4444-4444-444444444444" --acs_user_id "33333333-3333-3333-3333-333333333333"
-```
-
-#### Output
-
-```seam_cli
-{}
-```
-{% endtab %}
-
 {% tab title="Go" %}
 #### Code
 
@@ -170,23 +177,16 @@ nil
 ```
 {% endtab %}
 
-{% tab title="cURL" %}
+{% tab title="Seam CLI" %}
 #### Code
 
-```curl
-curl --include --request POST "https://connect.getseam.com/acs/access_groups/add_user" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "acs_access_group_id": "44444444-4444-4444-4444-444444444444",
-  "acs_user_id": "33333333-3333-3333-3333-333333333333"
-}
-EOF
+```seam_cli
+seam acs access-groups add-user --acs_access_group_id "44444444-4444-4444-4444-444444444444" --acs_user_id "33333333-3333-3333-3333-333333333333"
 ```
 
 #### Output
 
-```curl
+```seam_cli
 {}
 ```
 {% endtab %}

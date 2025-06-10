@@ -90,6 +90,28 @@ await seam.thermostats.setTemperatureThreshold({
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/thermostats/set_temperature_threshold" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "123e4567-e89b-12d3-a456-426614174000",
+  "lower_limit_celsius": 4,
+  "upper_limit_celsius": 30
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -145,20 +167,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam thermostats set-temperature-threshold --device_id "123e4567-e89b-12d3-a456-426614174000" --lower_limit_celsius 4 --upper_limit_celsius 30
-```
-
-#### Output
-
-```seam_cli
-{}
-```
-{% endtab %}
-
 {% tab title="Go" %}
 #### Code
 
@@ -186,24 +194,16 @@ nil
 ```
 {% endtab %}
 
-{% tab title="cURL" %}
+{% tab title="Seam CLI" %}
 #### Code
 
-```curl
-curl --include --request POST "https://connect.getseam.com/thermostats/set_temperature_threshold" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "device_id": "123e4567-e89b-12d3-a456-426614174000",
-  "lower_limit_celsius": 4,
-  "upper_limit_celsius": 30
-}
-EOF
+```seam_cli
+seam thermostats set-temperature-threshold --device_id "123e4567-e89b-12d3-a456-426614174000" --lower_limit_celsius 4 --upper_limit_celsius 30
 ```
 
 #### Output
 
-```curl
+```seam_cli
 {}
 ```
 {% endtab %}

@@ -137,6 +137,40 @@ await seam.acs.users.create({
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15555550100"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "acs_user": {
+    "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
+    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+    "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+    "created_at": "2024-04-05T07:57:05.323Z",
+    "display_name": "Jane Doe",
+    "full_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "phone_number": "+15555550100"
+  }
+}
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -223,29 +257,6 @@ $seam->acs->users->create(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam acs users create --acs_system_id "123e4567-e89b-12d3-a456-426614174000" --full_name "Jane Doe" --email_address "jane@example.com" --phone_number "+15555550100"
-```
-
-#### Output
-
-```seam_cli
-{
-  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-  "created_at": "2024-04-05T07:57:05.323Z",
-  "display_name": "Jane Doe",
-  "full_name": "Jane Doe",
-  "email_address": "jane@example.com",
-  "phone_number": "+15555550100"
-}
-```
-{% endtab %}
-
 {% tab title="Go" %}
 #### Code
 
@@ -275,36 +286,25 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 ```
 {% endtab %}
 
-{% tab title="cURL" %}
+{% tab title="Seam CLI" %}
 #### Code
 
-```curl
-curl --include --request POST "https://connect.getseam.com/acs/users/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "full_name": "Jane Doe",
-  "email_address": "jane@example.com",
-  "phone_number": "+15555550100"
-}
-EOF
+```seam_cli
+seam acs users create --acs_system_id "123e4567-e89b-12d3-a456-426614174000" --full_name "Jane Doe" --email_address "jane@example.com" --phone_number "+15555550100"
 ```
 
 #### Output
 
-```curl
+```seam_cli
 {
-  "acs_user": {
-    "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-    "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-    "created_at": "2024-04-05T07:57:05.323Z",
-    "display_name": "Jane Doe",
-    "full_name": "Jane Doe",
-    "email_address": "jane@example.com",
-    "phone_number": "+15555550100"
-  }
+  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
+  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+  "created_at": "2024-04-05T07:57:05.323Z",
+  "display_name": "Jane Doe",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15555550100"
 }
 ```
 {% endtab %}
@@ -347,6 +347,44 @@ await seam.acs.users.create({
   "full_name": "Jane Doe",
   "email_address": "jane@example.com",
   "phone_number": "+15555550100"
+}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15555550100",
+  "access_schedule": {
+    "starts_at": "2024-11-01T15:00:00.000Z",
+    "ends_at": "2024-11-04T11:00:00.000Z"
+  }
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "acs_user": {
+    "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
+    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+    "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+    "created_at": "2024-04-05T07:57:05.323Z",
+    "display_name": "Jane Doe",
+    "full_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "phone_number": "+15555550100"
+  }
 }
 ```
 {% endtab %}
@@ -449,29 +487,6 @@ $seam->acs->users->create(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam acs users create --acs_system_id "123e4567-e89b-12d3-a456-426614174000" --full_name "Jane Doe" --email_address "jane@example.com" --phone_number "+15555550100" --access_schedule {"starts_at":"2024-11-01T15:00:00.000Z","ends_at":"2024-11-04T11:00:00.000Z"}
-```
-
-#### Output
-
-```seam_cli
-{
-  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-  "created_at": "2024-04-05T07:57:05.323Z",
-  "display_name": "Jane Doe",
-  "full_name": "Jane Doe",
-  "email_address": "jane@example.com",
-  "phone_number": "+15555550100"
-}
-```
-{% endtab %}
-
 {% tab title="Go" %}
 #### Code
 
@@ -502,40 +517,25 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 ```
 {% endtab %}
 
-{% tab title="cURL" %}
+{% tab title="Seam CLI" %}
 #### Code
 
-```curl
-curl --include --request POST "https://connect.getseam.com/acs/users/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "full_name": "Jane Doe",
-  "email_address": "jane@example.com",
-  "phone_number": "+15555550100",
-  "access_schedule": {
-    "starts_at": "2024-11-01T15:00:00.000Z",
-    "ends_at": "2024-11-04T11:00:00.000Z"
-  }
-}
-EOF
+```seam_cli
+seam acs users create --acs_system_id "123e4567-e89b-12d3-a456-426614174000" --full_name "Jane Doe" --email_address "jane@example.com" --phone_number "+15555550100" --access_schedule {"starts_at":"2024-11-01T15:00:00.000Z","ends_at":"2024-11-04T11:00:00.000Z"}
 ```
 
 #### Output
 
-```curl
+```seam_cli
 {
-  "acs_user": {
-    "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-    "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-    "created_at": "2024-04-05T07:57:05.323Z",
-    "display_name": "Jane Doe",
-    "full_name": "Jane Doe",
-    "email_address": "jane@example.com",
-    "phone_number": "+15555550100"
-  }
+  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
+  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+  "created_at": "2024-04-05T07:57:05.323Z",
+  "display_name": "Jane Doe",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15555550100"
 }
 ```
 {% endtab %}
@@ -573,6 +573,43 @@ await seam.acs.users.create({
   "full_name": "Jane Doe",
   "email_address": "jane@example.com",
   "phone_number": "+15555550100"
+}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15555550100",
+  "acs_access_group_ids": [
+    "123e4567-e89b-12d3-a456-426614174000"
+  ]
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "acs_user": {
+    "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
+    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+    "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+    "created_at": "2024-04-05T07:57:05.323Z",
+    "display_name": "Jane Doe",
+    "full_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "phone_number": "+15555550100"
+  }
 }
 ```
 {% endtab %}
@@ -666,29 +703,6 @@ $seam->acs->users->create(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam acs users create --acs_system_id "123e4567-e89b-12d3-a456-426614174000" --full_name "Jane Doe" --email_address "jane@example.com" --phone_number "+15555550100" --acs_access_group_ids ["123e4567-e89b-12d3-a456-426614174000"]
-```
-
-#### Output
-
-```seam_cli
-{
-  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-  "created_at": "2024-04-05T07:57:05.323Z",
-  "display_name": "Jane Doe",
-  "full_name": "Jane Doe",
-  "email_address": "jane@example.com",
-  "phone_number": "+15555550100"
-}
-```
-{% endtab %}
-
 {% tab title="Go" %}
 #### Code
 
@@ -719,39 +733,25 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 ```
 {% endtab %}
 
-{% tab title="cURL" %}
+{% tab title="Seam CLI" %}
 #### Code
 
-```curl
-curl --include --request POST "https://connect.getseam.com/acs/users/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "full_name": "Jane Doe",
-  "email_address": "jane@example.com",
-  "phone_number": "+15555550100",
-  "acs_access_group_ids": [
-    "123e4567-e89b-12d3-a456-426614174000"
-  ]
-}
-EOF
+```seam_cli
+seam acs users create --acs_system_id "123e4567-e89b-12d3-a456-426614174000" --full_name "Jane Doe" --email_address "jane@example.com" --phone_number "+15555550100" --acs_access_group_ids ["123e4567-e89b-12d3-a456-426614174000"]
 ```
 
 #### Output
 
-```curl
+```seam_cli
 {
-  "acs_user": {
-    "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-    "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-    "created_at": "2024-04-05T07:57:05.323Z",
-    "display_name": "Jane Doe",
-    "full_name": "Jane Doe",
-    "email_address": "jane@example.com",
-    "phone_number": "+15555550100"
-  }
+  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
+  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+  "created_at": "2024-04-05T07:57:05.323Z",
+  "display_name": "Jane Doe",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15555550100"
 }
 ```
 {% endtab %}

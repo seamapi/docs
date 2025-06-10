@@ -64,6 +64,26 @@ await seam.userIdentities.enrollmentAutomations.delete({
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/user_identities/enrollment_automations/delete" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "enrollment_automation_id": "05505650-aa57-49ab-8f19-429738758895"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -113,20 +133,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam user-identities enrollment-automations delete --enrollment_automation_id "05505650-aa57-49ab-8f19-429738758895"
-```
-
-#### Output
-
-```seam_cli
-{}
-```
-{% endtab %}
-
 {% tab title="Go" %}
 #### Code
 
@@ -153,22 +159,16 @@ nil
 ```
 {% endtab %}
 
-{% tab title="cURL" %}
+{% tab title="Seam CLI" %}
 #### Code
 
-```curl
-curl --include --request POST "https://connect.getseam.com/user_identities/enrollment_automations/delete" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "enrollment_automation_id": "05505650-aa57-49ab-8f19-429738758895"
-}
-EOF
+```seam_cli
+seam user-identities enrollment-automations delete --enrollment_automation_id "05505650-aa57-49ab-8f19-429738758895"
 ```
 
 #### Output
 
-```curl
+```seam_cli
 {}
 ```
 {% endtab %}

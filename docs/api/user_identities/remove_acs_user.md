@@ -71,6 +71,27 @@ await seam.userIdentities.removeAcsUser({
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/user_identities/remove_acs_user" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "user_identity_id": "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
+  "acs_user_id": "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -123,20 +144,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam user-identities remove-acs-user --user_identity_id "5c945ab5-c75e-4bcb-8e5f-9410061c401f" --acs_user_id "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe"
-```
-
-#### Output
-
-```seam_cli
-{}
-```
-{% endtab %}
-
 {% tab title="Go" %}
 #### Code
 
@@ -163,23 +170,16 @@ nil
 ```
 {% endtab %}
 
-{% tab title="cURL" %}
+{% tab title="Seam CLI" %}
 #### Code
 
-```curl
-curl --include --request POST "https://connect.getseam.com/user_identities/remove_acs_user" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "user_identity_id": "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
-  "acs_user_id": "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe"
-}
-EOF
+```seam_cli
+seam user-identities remove-acs-user --user_identity_id "5c945ab5-c75e-4bcb-8e5f-9410061c401f" --acs_user_id "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe"
 ```
 
 #### Output
 
-```curl
+```seam_cli
 {}
 ```
 {% endtab %}

@@ -73,6 +73,37 @@ await seam.acs.accessGroups.listAccessibleEntrances({
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/access_groups/list_accessible_entrances" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_access_group_id": "44444444-4444-4444-4444-444444444444"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "acs_entrances": [
+    {
+      "acs_entrance_id": "66666666-6666-6666-6666-666666666666",
+      "name": "Main Entrance",
+      "display_name": "Main Entrance",
+      "acs_system_id": "11111111-1111-1111-1111-111111111111",
+      "workspace_id": "00000000-0000-0000-0000-000000000000",
+      "created_at": "2024-10-15T12:00:00.000Z"
+    }
+  ]
+}
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -150,29 +181,6 @@ $seam->acs->access_groups->list_accessible_entrances(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam acs access-groups list-accessible-entrances --acs_access_group_id "44444444-4444-4444-4444-444444444444"
-```
-
-#### Output
-
-```seam_cli
-[
-  {
-    "acs_entrance_id": "66666666-6666-6666-6666-666666666666",
-    "name": "Main Entrance",
-    "display_name": "Main Entrance",
-    "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "workspace_id": "00000000-0000-0000-0000-000000000000",
-    "created_at": "2024-10-15T12:00:00.000Z"
-  }
-]
-```
-{% endtab %}
-
 {% tab title="Go" %}
 #### Code
 
@@ -199,34 +207,26 @@ func main() {
 ```
 {% endtab %}
 
-{% tab title="cURL" %}
+{% tab title="Seam CLI" %}
 #### Code
 
-```curl
-curl --include --request POST "https://connect.getseam.com/acs/access_groups/list_accessible_entrances" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "acs_access_group_id": "44444444-4444-4444-4444-444444444444"
-}
-EOF
+```seam_cli
+seam acs access-groups list-accessible-entrances --acs_access_group_id "44444444-4444-4444-4444-444444444444"
 ```
 
 #### Output
 
-```curl
-{
-  "acs_entrances": [
-    {
-      "acs_entrance_id": "66666666-6666-6666-6666-666666666666",
-      "name": "Main Entrance",
-      "display_name": "Main Entrance",
-      "acs_system_id": "11111111-1111-1111-1111-111111111111",
-      "workspace_id": "00000000-0000-0000-0000-000000000000",
-      "created_at": "2024-10-15T12:00:00.000Z"
-    }
-  ]
-}
+```seam_cli
+[
+  {
+    "acs_entrance_id": "66666666-6666-6666-6666-666666666666",
+    "name": "Main Entrance",
+    "display_name": "Main Entrance",
+    "acs_system_id": "11111111-1111-1111-1111-111111111111",
+    "workspace_id": "00000000-0000-0000-0000-000000000000",
+    "created_at": "2024-10-15T12:00:00.000Z"
+  }
+]
 ```
 {% endtab %}
 
