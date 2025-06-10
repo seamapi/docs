@@ -279,6 +279,7 @@ Indicates that the maximum number of users allowed for the site has been reached
   Child Properties
   
   - <strong><code>sites</code></strong> <i>List</i> <i>of Objects</i>
+    
       Salto sites associated with the connected account that has an error.
   
   - <strong><code>site_id</code></strong> <i>String</i>
@@ -442,6 +443,7 @@ Indicates that the Salto KS site has exceeded 80% of the maximum number of allow
   Child Properties
   
   - <strong><code>sites</code></strong> <i>List</i> <i>of Objects</i>
+    
       Salto sites associated with the connected account that has a warning.
   
   - <strong><code>site_id</code></strong> <i>String</i>
