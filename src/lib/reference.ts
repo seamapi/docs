@@ -64,6 +64,9 @@ export const reference = (
       !path.startsWith('/phones') &&
       !path.startsWith('/user_identities') &&
       !path.startsWith('/connected_accounts') &&
+      !path.startsWith('/access_grants') &&
+      !path.startsWith('/access_methods') &&
+      !path.startsWith('/spaces') &&
       !path.startsWith('/access_codes')
     ) {
       return false
