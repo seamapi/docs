@@ -94,6 +94,15 @@
 /access_codes/simulate:
   title: Access Code Simulations
 
+/access_grants:
+  title: Access Grants
+
+/access_methods:
+  title: Access Methods
+
+/spaces:
+  title: Spaces
+
 /connected_accounts:
   title: Connected Accounts
   resources:
