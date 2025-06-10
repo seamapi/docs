@@ -1,16 +1,16 @@
 {% tabs %}
-{{#each this.code}}
-{% tab title="{{this.title}}" %}
+{{#each code}}
+{% tab title="{{title}}" %}
 #### Code
 
-```{{@key}}
-{{this.request}}
+```{{sdkName}}
+{{request}}
 ```
 
 #### Output
 
-```{{@key}}
-{{this.response}}
+```{{sdkName}}
+{{response}}
 ```
 {% endtab %}
 
