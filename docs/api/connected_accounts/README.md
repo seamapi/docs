@@ -279,8 +279,8 @@ Indicates that the maximum number of users allowed for the site has been reached
   Child Properties
   
   - <strong><code>sites</code></strong> <i>List</i> <i>of Objects</i>
-  
-    Salto sites associated with the connected account that has an error.
+    
+      Salto sites associated with the connected account that has an error.
   
   - <strong><code>site_id</code></strong> <i>String</i>
   
@@ -317,24 +317,24 @@ User identifier associated with the connected account.
   <summary>Child Properties</summary>
 
   - <strong><code>api_url</code></strong> <i>String</i>
-
-  API URL for the user identifier associated with the connected account.
+  
+    API URL for the user identifier associated with the connected account.
 
   - <strong><code>email</code></strong> <i>String</i>
-
-  Email address of the user identifier associated with the connected account.
+  
+    Email address of the user identifier associated with the connected account.
 
   - <strong><code>exclusive</code></strong> <i>Boolean</i>
-
-  Indicates whether the user identifier associated with the connected account is exclusive.
+  
+    Indicates whether the user identifier associated with the connected account is exclusive.
 
   - <strong><code>phone</code></strong> <i>String</i>
-
-  Phone number of the user identifier associated with the connected account.
+  
+    Phone number of the user identifier associated with the connected account.
 
   - <strong><code>username</code></strong> <i>String</i>
-
-  Username of the user identifier associated with the connected account.
+  
+    Username of the user identifier associated with the connected account.
 
 </details>
 
@@ -443,8 +443,8 @@ Indicates that the Salto KS site has exceeded 80% of the maximum number of allow
   Child Properties
   
   - <strong><code>sites</code></strong> <i>List</i> <i>of Objects</i>
-  
-    Salto sites associated with the connected account that has a warning.
+    
+      Salto sites associated with the connected account that has a warning.
   
   - <strong><code>site_id</code></strong> <i>String</i>
   

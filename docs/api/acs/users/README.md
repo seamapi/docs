@@ -28,12 +28,12 @@ For details about how to configure `acs_user`s in your access control system, se
   <summary>Child Properties</summary>
 
   - <strong><code>ends_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+  
+    Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
   - <strong><code>starts_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+  
+    Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 </details>
 
@@ -611,8 +611,8 @@ Seam is in the process of pushing an access group membership update to the integ
   Child Properties
   
   - <strong><code>acs_access_group_id</code></strong> <i>UUID</i>
-  
-    Old access group ID.
+    
+      Old access group ID.
   
   
   ---
@@ -643,8 +643,8 @@ Seam is in the process of pushing an access group membership update to the integ
   Child Properties
   
   - <strong><code>acs_access_group_id</code></strong> <i>UUID</i>
-  
-    New access group ID.
+    
+      New access group ID.
   
   
 </details>

@@ -277,12 +277,12 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
   - <strong><code>auto_join</code></strong> <i>Boolean</i>
 
   - <strong><code>card_function_type</code></strong> <i>Enum</i>
-<details>
-    <summary>Enum values:</summary>
-
-    - <code>guest`</code>
-    - <code>staff`</code>
-</details>
+  <details>
+      <summary>Enum values:</summary>
+  
+      - <code>guest</code>
+      - <code>staff</code>
+  </details>
 
   - <strong><code>card_id</code></strong> <i>String</i>
 
