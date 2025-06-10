@@ -96,9 +96,9 @@ A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was ad
 <details>
     <summary>Enum values:</summary>
 
-    - <code>auto`</code>
-    - <code>on`</code>
-    - <code>circulate`</code>
+    - <code>auto</code>
+    - <code>on</code>
+    - <code>circulate</code>
 </details>
 
 <strong><code>heating_set_point_celsius</code></strong> <i>Number</i>
@@ -115,10 +115,10 @@ A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was ad
 <details>
     <summary>Enum values:</summary>
 
-    - <code>off`</code>
-    - <code>heat`</code>
-    - <code>cool`</code>
-    - <code>heat_cool`</code>
+    - <code>off</code>
+    - <code>heat</code>
+    - <code>cool</code>
+    - <code>heat_cool</code>
 </details>
 
 <strong><code>method</code></strong> <i>Enum</i>
@@ -127,8 +127,8 @@ A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was ad
 <details>
     <summary>Enum values:</summary>
 
-    - <code>seam`</code>
-    - <code>external`</code>
+    - <code>seam</code>
+    - <code>external</code>
 </details>
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>

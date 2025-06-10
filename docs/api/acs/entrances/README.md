@@ -51,10 +51,10 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
   <details>
       <summary>Enum values:</summary>
   
-      - <code>CommonDoor`</code>
-      - <code>EntranceDoor`</code>
-      - <code>GuestDoor`</code>
-      - <code>Elevator`</code>
+      - <code>CommonDoor</code>
+      - <code>EntranceDoor</code>
+      - <code>GuestDoor</code>
+      - <code>Elevator</code>
   </details>
 
   - <strong><code>pms_id</code></strong> <i>String</i>
@@ -200,11 +200,11 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
   <details>
       <summary>Enum values:</summary>
   
-      - <code>entrance`</code>
-      - <code>guest`</code>
-      - <code>elevator reader`</code>
-      - <code>common`</code>
-      - <code>common (PMS)`</code>
+      - <code>entrance</code>
+      - <code>guest</code>
+      - <code>elevator reader</code>
+      - <code>common</code>
+      - <code>common (PMS)</code>
   </details>
 
   - <strong><code>door_name</code></strong> <i>String</i>
@@ -218,9 +218,9 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 <details>
     <summary>Enum values:</summary>
 
-    - <code>BLE`</code>
-    - <code>commonDoor`</code>
-    - <code>touch`</code>
+    - <code>BLE</code>
+    - <code>commonDoor</code>
+    - <code>touch</code>
 </details>
 
 

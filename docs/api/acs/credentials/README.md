@@ -280,8 +280,8 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
   <details>
       <summary>Enum values:</summary>
   
-      - <code>guest`</code>
-      - <code>staff`</code>
+      - <code>guest</code>
+      - <code>staff</code>
   </details>
 
   - <strong><code>card_id</code></strong> <i>String</i>
