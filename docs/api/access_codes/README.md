@@ -2496,36 +2496,36 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <summary>Properties</summary>
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
-
-  ID of the affected access code.
+  
+    ID of the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-
-  ID of the connected account associated with the affected access codes.
+  
+    ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
+  
+    Date and time at which the event was created.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
-
-  ID of the device associated with the affected access code.
+  
+    ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
+  
+    ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `access_code.created`
+  
+    Value: `access_code.created`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
+  
+    Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the workspace associated with the event.
+  
+    ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2539,36 +2539,36 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <summary>Properties</summary>
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
-
-  ID of the affected access code.
+  
+    ID of the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-
-  ID of the connected account associated with the affected access codes.
+  
+    ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
+  
+    Date and time at which the event was created.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
-
-  ID of the device associated with the affected access code.
+  
+    ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
+  
+    ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `access_code.changed`
+  
+    Value: `access_code.changed`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
+  
+    Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the workspace associated with the event.
+  
+    ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2582,40 +2582,40 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <summary>Properties</summary>
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
-
-  ID of the affected access code.
+  
+    ID of the affected access code.
 
 <strong><code>code</code></strong> <i>String</i>
-
-  Code for the affected access code.
+  
+    Code for the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-
-  ID of the connected account associated with the affected access codes.
+  
+    ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
+  
+    Date and time at which the event was created.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
-
-  ID of the device associated with the affected access code.
+  
+    ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
+  
+    ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `access_code.scheduled_on_device`
+  
+    Value: `access_code.scheduled_on_device`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
+  
+    Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the workspace associated with the event.
+  
+    ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2629,40 +2629,40 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <summary>Properties</summary>
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
-
-  ID of the affected access code.
+  
+    ID of the affected access code.
 
 <strong><code>code</code></strong> <i>String</i>
-
-  Code for the affected access code.
+  
+    Code for the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-
-  ID of the connected account associated with the affected access codes.
+  
+    ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
+  
+    Date and time at which the event was created.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
-
-  ID of the device associated with the affected access code.
+  
+    ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
+  
+    ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `access_code.set_on_device`
+  
+    Value: `access_code.set_on_device`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
+  
+    Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the workspace associated with the event.
+  
+    ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2676,36 +2676,36 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <summary>Properties</summary>
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
-
-  ID of the affected access code.
+  
+    ID of the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-
-  ID of the connected account associated with the affected access codes.
+  
+    ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
+  
+    Date and time at which the event was created.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
-
-  ID of the device associated with the affected access code.
+  
+    ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
+  
+    ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `access_code.removed_from_device`
+  
+    Value: `access_code.removed_from_device`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
+  
+    Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the workspace associated with the event.
+  
+    ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2719,36 +2719,36 @@ There was an unusually long delay in setting an [access code](https://docs.seam.
 <summary>Properties</summary>
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
-
-  ID of the affected access code.
+  
+    ID of the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-
-  ID of the connected account associated with the affected access codes.
+  
+    ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
+  
+    Date and time at which the event was created.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
-
-  ID of the device associated with the affected access code.
+  
+    ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
+  
+    ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `access_code.delay_in_setting_on_device`
+  
+    Value: `access_code.delay_in_setting_on_device`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
+  
+    Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the workspace associated with the event.
+  
+    ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2762,36 +2762,36 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <summary>Properties</summary>
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
-
-  ID of the affected access code.
+  
+    ID of the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-
-  ID of the connected account associated with the affected access codes.
+  
+    ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
+  
+    Date and time at which the event was created.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
-
-  ID of the device associated with the affected access code.
+  
+    ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
+  
+    ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `access_code.failed_to_set_on_device`
+  
+    Value: `access_code.failed_to_set_on_device`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
+  
+    Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the workspace associated with the event.
+  
+    ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2805,40 +2805,40 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <summary>Properties</summary>
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
-
-  ID of the affected access code.
+  
+    ID of the affected access code.
 
 <strong><code>code</code></strong> <i>String</i>
-
-  Code for the affected access code.
+  
+    Code for the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-
-  ID of the connected account associated with the affected access codes.
+  
+    ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
+  
+    Date and time at which the event was created.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
-
-  ID of the device associated with the affected access code.
+  
+    ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
+  
+    ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `access_code.deleted`
+  
+    Value: `access_code.deleted`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
+  
+    Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the workspace associated with the event.
+  
+    ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2852,36 +2852,36 @@ There was an unusually long delay in removing an [access code](https://docs.seam
 <summary>Properties</summary>
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
-
-  ID of the affected access code.
+  
+    ID of the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-
-  ID of the connected account associated with the affected access codes.
+  
+    ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
+  
+    Date and time at which the event was created.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
-
-  ID of the device associated with the affected access code.
+  
+    ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
+  
+    ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `access_code.delay_in_removing_from_device`
+  
+    Value: `access_code.delay_in_removing_from_device`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
+  
+    Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the workspace associated with the event.
+  
+    ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2895,36 +2895,36 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <summary>Properties</summary>
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
-
-  ID of the affected access code.
+  
+    ID of the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-
-  ID of the connected account associated with the affected access codes.
+  
+    ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
+  
+    Date and time at which the event was created.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
-
-  ID of the device associated with the affected access code.
+  
+    ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
+  
+    ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `access_code.failed_to_remove_from_device`
+  
+    Value: `access_code.failed_to_remove_from_device`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
+  
+    Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the workspace associated with the event.
+  
+    ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2938,36 +2938,36 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <summary>Properties</summary>
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
-
-  ID of the affected access code.
+  
+    ID of the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-
-  ID of the connected account associated with the affected access codes.
+  
+    ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
+  
+    Date and time at which the event was created.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
-
-  ID of the device associated with the affected access code.
+  
+    ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
+  
+    ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `access_code.modified_external_to_seam`
+  
+    Value: `access_code.modified_external_to_seam`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
+  
+    Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the workspace associated with the event.
+  
+    ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2981,36 +2981,36 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <summary>Properties</summary>
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
-
-  ID of the affected access code.
+  
+    ID of the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-
-  ID of the connected account associated with the affected access codes.
+  
+    ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
+  
+    Date and time at which the event was created.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
-
-  ID of the device associated with the affected access code.
+  
+    ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
+  
+    ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `access_code.deleted_external_to_seam`
+  
+    Value: `access_code.deleted_external_to_seam`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
+  
+    Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the workspace associated with the event.
+  
+    ID of the workspace associated with the event.
 </details>
 
 ---
@@ -3024,38 +3024,38 @@ A [backup access code](https://docs.seam.co/latest/capability-guides/smart-locks
 <summary>Properties</summary>
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
-
-  ID of the affected access code.
+  
+    ID of the affected access code.
 
 <strong><code>backup_access_code_id</code></strong> <i>String</i>
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-
-  ID of the connected account associated with the affected access codes.
+  
+    ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
+  
+    Date and time at which the event was created.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
-
-  ID of the device associated with the affected access code.
+  
+    ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
+  
+    ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `access_code.backup_access_code_pulled`
+  
+    Value: `access_code.backup_access_code_pulled`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
+  
+    Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the workspace associated with the event.
+  
+    ID of the workspace associated with the event.
 </details>
 
 ---

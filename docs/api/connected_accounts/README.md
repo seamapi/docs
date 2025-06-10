@@ -279,27 +279,27 @@ Indicates that the maximum number of users allowed for the site has been reached
   Child Properties
   
   - <strong><code>sites</code></strong> <i>List</i> <i>of Objects</i>
-  
-    Salto sites associated with the connected account that has an error.
+    
+      Salto sites associated with the connected account that has an error.
   
   - <strong><code>site_id</code></strong> <i>String</i>
-  
-    ID of a Salto site associated with the connected account that has an error.
+    
+      ID of a Salto site associated with the connected account that has an error.
   
   
   - <strong><code>site_name</code></strong> <i>String</i>
-  
-    Name of a Salto site associated with the connected account that has an error.
+    
+      Name of a Salto site associated with the connected account that has an error.
   
   
   - <strong><code>site_user_subscription_limit</code></strong> <i>Number</i>
-  
-    Subscription limit of site users for a Salto site associated with the connected account that has an error.
+    
+      Subscription limit of site users for a Salto site associated with the connected account that has an error.
   
   
   - <strong><code>subscribed_site_user_count</code></strong> <i>Number</i>
-  
-    Count of subscribed site users for a Salto site associated with the connected account that has an error.
+    
+      Count of subscribed site users for a Salto site associated with the connected account that has an error.
   
   
   
@@ -317,24 +317,24 @@ User identifier associated with the connected account.
   <summary>Child Properties</summary>
 
   - <strong><code>api_url</code></strong> <i>String</i>
-
-  API URL for the user identifier associated with the connected account.
+  
+    API URL for the user identifier associated with the connected account.
 
   - <strong><code>email</code></strong> <i>String</i>
-
-  Email address of the user identifier associated with the connected account.
+  
+    Email address of the user identifier associated with the connected account.
 
   - <strong><code>exclusive</code></strong> <i>Boolean</i>
-
-  Indicates whether the user identifier associated with the connected account is exclusive.
+  
+    Indicates whether the user identifier associated with the connected account is exclusive.
 
   - <strong><code>phone</code></strong> <i>String</i>
-
-  Phone number of the user identifier associated with the connected account.
+  
+    Phone number of the user identifier associated with the connected account.
 
   - <strong><code>username</code></strong> <i>String</i>
-
-  Username of the user identifier associated with the connected account.
+  
+    Username of the user identifier associated with the connected account.
 
 </details>
 
@@ -443,27 +443,27 @@ Indicates that the Salto KS site has exceeded 80% of the maximum number of allow
   Child Properties
   
   - <strong><code>sites</code></strong> <i>List</i> <i>of Objects</i>
-  
-    Salto sites associated with the connected account that has a warning.
+    
+      Salto sites associated with the connected account that has a warning.
   
   - <strong><code>site_id</code></strong> <i>String</i>
-  
-    ID of a Salto site associated with the connected account that has a warning.
+    
+      ID of a Salto site associated with the connected account that has a warning.
   
   
   - <strong><code>site_name</code></strong> <i>String</i>
-  
-    Name of a Salto site associated with the connected account that has a warning.
+    
+      Name of a Salto site associated with the connected account that has a warning.
   
   
   - <strong><code>site_user_subscription_limit</code></strong> <i>Number</i>
-  
-    Subscription limit of site users for a Salto site associated with the connected account that has a warning.
+    
+      Subscription limit of site users for a Salto site associated with the connected account that has a warning.
   
   
   - <strong><code>subscribed_site_user_count</code></strong> <i>Number</i>
-  
-    Count of subscribed site users for a Salto site associated with the connected account that has a warning.
+    
+      Count of subscribed site users for a Salto site associated with the connected account that has a warning.
   
   
   
@@ -543,32 +543,32 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was conn
 <summary>Properties</summary>
 
 <strong><code>connect_webview_id</code></strong> <i>UUID</i>
-
-  ID of the Connect Webview associated with the event.
+  
+    ID of the Connect Webview associated with the event.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-
-  ID of the affected connected account.
+  
+    ID of the affected connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
+  
+    Date and time at which the event was created.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
+  
+    ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `connected_account.connected`
+  
+    Value: `connected_account.connected`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
+  
+    Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the workspace associated with the event.
+  
+    ID of the workspace associated with the event.
 </details>
 
 ---
@@ -582,32 +582,32 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was crea
 <summary>Properties</summary>
 
 <strong><code>connect_webview_id</code></strong> <i>UUID</i>
-
-  ID of the Connect Webview associated with the event.
+  
+    ID of the Connect Webview associated with the event.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-
-  ID of the affected connected account.
+  
+    ID of the affected connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
+  
+    Date and time at which the event was created.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
+  
+    ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `connected_account.created`
+  
+    Value: `connected_account.created`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
+  
+    Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the workspace associated with the event.
+  
+    ID of the workspace associated with the event.
 </details>
 
 ---
@@ -621,32 +621,32 @@ A [connected account](../../core-concepts/connected-accounts/README.md) had a su
 <summary>Properties</summary>
 
 <strong><code>connect_webview_id</code></strong> <i>UUID</i>
-
-  ID of the Connect Webview associated with the event.
+  
+    ID of the Connect Webview associated with the event.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-
-  ID of the affected connected account.
+  
+    ID of the affected connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
+  
+    Date and time at which the event was created.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
+  
+    ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `connected_account.successful_login`
+  
+    Value: `connected_account.successful_login`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
+  
+    Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the workspace associated with the event.
+  
+    ID of the workspace associated with the event.
 </details>
 
 ---
@@ -660,28 +660,28 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was disc
 <summary>Properties</summary>
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-
-  ID of the affected connected account.
+  
+    ID of the affected connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
+  
+    Date and time at which the event was created.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
+  
+    ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `connected_account.disconnected`
+  
+    Value: `connected_account.disconnected`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
+  
+    Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the workspace associated with the event.
+  
+    ID of the workspace associated with the event.
 </details>
 
 ---
@@ -695,28 +695,28 @@ A [connected account](../../core-concepts/connected-accounts/README.md) complete
 <summary>Properties</summary>
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-
-  ID of the affected connected account.
+  
+    ID of the affected connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
+  
+    Date and time at which the event was created.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
+  
+    ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `connected_account.completed_first_sync`
+  
+    Value: `connected_account.completed_first_sync`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
+  
+    Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the workspace associated with the event.
+  
+    ID of the workspace associated with the event.
 </details>
 
 ---
@@ -730,28 +730,28 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was dele
 <summary>Properties</summary>
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-
-  ID of the affected connected account.
+  
+    ID of the affected connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
+  
+    Date and time at which the event was created.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
+  
+    ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `connected_account.deleted`
+  
+    Value: `connected_account.deleted`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
+  
+    Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the workspace associated with the event.
+  
+    ID of the workspace associated with the event.
 </details>
 
 ---
@@ -765,28 +765,28 @@ A [connected account](../../core-concepts/connected-accounts/README.md) complete
 <summary>Properties</summary>
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-
-  ID of the affected connected account.
+  
+    ID of the affected connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
+  
+    Date and time at which the event was created.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
+  
+    ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `connected_account.completed_first_sync_after_reconnection`
+  
+    Value: `connected_account.completed_first_sync_after_reconnection`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
+  
+    Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the workspace associated with the event.
+  
+    ID of the workspace associated with the event.
 </details>
 
 ---

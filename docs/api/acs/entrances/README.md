@@ -48,14 +48,14 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
   - <strong><code>door_number</code></strong> <i>Number</i>
 
   - <strong><code>door_type</code></strong> <i>Enum</i>
-<details>
-    <summary>Enum values:</summary>
-
-    - <code>CommonDoor`</code>
-    - <code>EntranceDoor`</code>
-    - <code>GuestDoor`</code>
-    - <code>Elevator`</code>
-</details>
+  <details>
+      <summary>Enum values:</summary>
+  
+      - <code>CommonDoor`</code>
+      - <code>EntranceDoor`</code>
+      - <code>GuestDoor`</code>
+      - <code>Elevator`</code>
+  </details>
 
   - <strong><code>pms_id</code></strong> <i>String</i>
 
@@ -108,12 +108,12 @@ Errors associated with the [entrance](../../../capability-guides/access-systems/
   <summary>Child Object Properties</summary>
 
   <strong><code>error_code</code></strong> <i>String</i>
-  
-    Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+    
+      Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
 
   <strong><code>message</code></strong> <i>String</i>
-  
-    Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+    
+      Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 </details>
 
 ---
@@ -197,15 +197,15 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
   <summary>Child Properties</summary>
 
   - <strong><code>door_category</code></strong> <i>Enum</i>
-<details>
-    <summary>Enum values:</summary>
-
-    - <code>entrance`</code>
-    - <code>guest`</code>
-    - <code>elevator reader`</code>
-    - <code>common`</code>
-    - <code>common (PMS)`</code>
-</details>
+  <details>
+      <summary>Enum values:</summary>
+  
+      - <code>entrance`</code>
+      - <code>guest`</code>
+      - <code>elevator reader`</code>
+      - <code>common`</code>
+      - <code>common (PMS)`</code>
+  </details>
 
   - <strong><code>door_name</code></strong> <i>String</i>
 
@@ -215,13 +215,13 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 
 
 - <strong><code>visionline_door_profile_type</code></strong> <i>Enum</i>
-<details>
-    <summary>Enum values:</summary>
-
-    - <code>BLE`</code>
-    - <code>commonDoor`</code>
-    - <code>touch`</code>
-</details>
+  <details>
+      <summary>Enum values:</summary>
+  
+      - <code>BLE`</code>
+      - <code>commonDoor`</code>
+      - <code>touch`</code>
+  </details>
 
 
 </details>
@@ -242,32 +242,32 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 <strong><code>acs_entrance_id</code></strong> <i>UUID</i>
 
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
-
-  ID of the access system.
+  
+    ID of the access system.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-
-  ID of the connected account.
+  
+    ID of the connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
+  
+    Date and time at which the event was created.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
+  
+    ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `acs_entrance.added`
+  
+    Value: `acs_entrance.added`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
+  
+    Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the workspace associated with the event.
+  
+    ID of the workspace associated with the event.
 </details>
 
 ---
@@ -283,32 +283,32 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 <strong><code>acs_entrance_id</code></strong> <i>UUID</i>
 
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
-
-  ID of the access system.
+  
+    ID of the access system.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-
-  ID of the connected account.
+  
+    ID of the connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
+  
+    Date and time at which the event was created.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
+  
+    ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `acs_entrance.removed`
+  
+    Value: `acs_entrance.removed`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
+  
+    Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the workspace associated with the event.
+  
+    ID of the workspace associated with the event.
 </details>
 
 ---
