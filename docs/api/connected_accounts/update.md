@@ -6,13 +6,154 @@
 
 Updates a [connected account](../../core-concepts/connected-accounts/README.md).
 
+
 {% tabs %}
-{% tab title="Signature" %}
+{% tab title="JavaScript" %}
+#### Code
+
+Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
+
+```javascript
+await seam.connectedAccounts.update({
+  connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c",
+  automatically_manage_new_devices: true,
+});
 ```
-POST /connected_accounts/update ⇒ void
+
+#### Output
+
+```javascript
+// void
 ```
 {% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
+
+```curl
+curl --include --request POST "https://connect.getseam.com/connected_accounts/update" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c",
+  "automatically_manage_new_devices": true
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+#### Code
+
+Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
+
+```python
+seam.connected_accounts.update(
+    connected_account_id="23e4eb21-6e93-48c4-a077-bf503246d47c",
+    automatically_manage_new_devices=true,
+)
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+#### Code
+
+Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
+
+```ruby
+seam.connected_accounts.update(
+  connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c",
+  automatically_manage_new_devices: true,
+)
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+#### Code
+
+Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
+
+```php
+<?php
+$seam->connected_accounts->update(
+    connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c",
+    automatically_manage_new_devices: true
+);
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Code
+
+Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
+
+```go
+package main
+
+import api "github.com/seamapi/go"
+
+func main() {
+	client.ConnectedAccounts.Update(
+		context.Background(),
+		api.ConnectedAccountsUpdateRequest{
+			ConnectedAccountId:            api.String("23e4eb21-6e93-48c4-a077-bf503246d47c"),
+			AutomaticallyManageNewDevices: api.Bool(true),
+		},
+	)
+}
+```
+
+#### Output
+
+```go
+nil
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+#### Code
+
+Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
+
+```seam_cli
+seam connected-accounts update --connected_account_id "23e4eb21-6e93-48c4-a077-bf503246d47c" --automatically_manage_new_devices true
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
 {% endtabs %}
+
 
 <details>
 
@@ -54,142 +195,4 @@ void
 ---
 
 ## Examples
-
-### Update a connected account
-
-Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
-
-{% tabs %}
-{% tab title="JavaScript" %}
-#### Code
-
-```javascript
-await seam.connectedAccounts.update({
-  connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c",
-  automatically_manage_new_devices: true,
-});
-```
-
-#### Output
-
-```javascript
-// void
-```
-{% endtab %}
-
-{% tab title="cURL" %}
-#### Code
-
-```curl
-curl --include --request POST "https://connect.getseam.com/connected_accounts/update" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c",
-  "automatically_manage_new_devices": true
-}
-EOF
-```
-
-#### Output
-
-```curl
-{}
-```
-{% endtab %}
-
-{% tab title="Python" %}
-#### Code
-
-```python
-seam.connected_accounts.update(
-    connected_account_id="23e4eb21-6e93-48c4-a077-bf503246d47c",
-    automatically_manage_new_devices=true,
-)
-```
-
-#### Output
-
-```python
-None
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-#### Code
-
-```ruby
-seam.connected_accounts.update(
-  connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c",
-  automatically_manage_new_devices: true,
-)
-```
-
-#### Output
-
-```ruby
-nil
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-#### Code
-
-```php
-<?php
-$seam->connected_accounts->update(
-    connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c",
-    automatically_manage_new_devices: true
-);
-```
-
-#### Output
-
-```php
-null
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.ConnectedAccounts.Update(
-		context.Background(),
-		api.ConnectedAccountsUpdateRequest{
-			ConnectedAccountId:            api.String("23e4eb21-6e93-48c4-a077-bf503246d47c"),
-			AutomaticallyManageNewDevices: api.Bool(true),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam connected-accounts update --connected_account_id "23e4eb21-6e93-48c4-a077-bf503246d47c" --automatically_manage_new_devices true
-```
-
-#### Output
-
-```seam_cli
-{}
-```
-{% endtab %}
-
-{% endtabs %}
-
 

@@ -6,13 +6,154 @@
 
 Updates the properties of a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
+
 {% tabs %}
-{% tab title="Signature" %}
+{% tab title="JavaScript" %}
+#### Code
+
+Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+```javascript
+await seam.acs.users.update({
+  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
+  phone_number: "+15555550222",
+});
 ```
-PATCH /acs/users/update ⇒ void
+
+#### Output
+
+```javascript
+// void
 ```
 {% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/update" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_user_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
+  "phone_number": "+15555550222"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+#### Code
+
+Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+```python
+seam.acs.users.update(
+    acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33", phone_number="+15555550222"
+)
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+#### Code
+
+Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+```ruby
+seam.acs.users.update(
+  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
+  phone_number: "+15555550222",
+)
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+#### Code
+
+Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+```php
+<?php
+$seam->acs->users->update(
+    acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
+    phone_number: "+15555550222"
+);
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Code
+
+Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+```go
+package main
+
+import api "github.com/seamapi/go"
+import users "github.com/seamapi/go/users"
+
+func main() {
+	client.Acs.Users.Update(
+		context.Background(),
+		users.UsersUpdateRequest{
+			AcsUserId:   api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
+			PhoneNumber: api.String("+15555550222"),
+		},
+	)
+}
+```
+
+#### Output
+
+```go
+nil
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+#### Code
+
+Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+```seam_cli
+seam acs users update --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33" --phone_number "+15555550222"
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
 {% endtabs %}
+
 
 <details>
 
@@ -107,142 +248,4 @@ void
 ---
 
 ## Examples
-
-### Update an ACS user
-
-Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
-{% tabs %}
-{% tab title="JavaScript" %}
-#### Code
-
-```javascript
-await seam.acs.users.update({
-  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  phone_number: "+15555550222",
-});
-```
-
-#### Output
-
-```javascript
-// void
-```
-{% endtab %}
-
-{% tab title="cURL" %}
-#### Code
-
-```curl
-curl --include --request POST "https://connect.getseam.com/acs/users/update" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "acs_user_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  "phone_number": "+15555550222"
-}
-EOF
-```
-
-#### Output
-
-```curl
-{}
-```
-{% endtab %}
-
-{% tab title="Python" %}
-#### Code
-
-```python
-seam.acs.users.update(
-    acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33", phone_number="+15555550222"
-)
-```
-
-#### Output
-
-```python
-None
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-#### Code
-
-```ruby
-seam.acs.users.update(
-  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  phone_number: "+15555550222",
-)
-```
-
-#### Output
-
-```ruby
-nil
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-#### Code
-
-```php
-<?php
-$seam->acs->users->update(
-    acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-    phone_number: "+15555550222"
-);
-```
-
-#### Output
-
-```php
-null
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import users "github.com/seamapi/go/users"
-
-func main() {
-	client.Acs.Users.Update(
-		context.Background(),
-		users.UsersUpdateRequest{
-			AcsUserId:   api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
-			PhoneNumber: api.String("+15555550222"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam acs users update --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33" --phone_number "+15555550222"
-```
-
-#### Output
-
-```seam_cli
-{}
-```
-{% endtab %}
-
-{% endtabs %}
-
 

@@ -14,13 +14,6 @@ If you want to change these access codes that are not linked by a `common_code_k
 
 See also [Creating and Updating Multiple Linked Access Codes](../../capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes.md).
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-PUT /access_codes/create_multiple ⇒ { access_codes: [access_code, …] }
-```
-{% endtab %}
-{% endtabs %}
 
 <details>
 

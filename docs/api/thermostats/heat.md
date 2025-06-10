@@ -6,13 +6,180 @@
 
 Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to [heat mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
 
+
 {% tabs %}
-{% tab title="Signature" %}
+{% tab title="JavaScript" %}
+#### Code
+
+Specify the desired heating set point in °C or °F.
+
+```javascript
+await seam.thermostats.heat({
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  heating_set_point_celsius: 20,
+});
 ```
-POST /thermostats/heat ⇒ { action_attempt }
+
+#### Output
+
+```javascript
+{
+  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
+  "status": "pending",
+  "action_type": "SET_HEAT"
+}
 ```
 {% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+Specify the desired heating set point in °C or °F.
+
+```curl
+curl --include --request POST "https://connect.getseam.com/thermostats/heat" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "123e4567-e89b-12d3-a456-426614174000",
+  "heating_set_point_celsius": 20
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "action_attempt": {
+    "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
+    "status": "pending",
+    "action_type": "SET_HEAT"
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+#### Code
+
+Specify the desired heating set point in °C or °F.
+
+```python
+seam.thermostats.heat(
+    device_id="123e4567-e89b-12d3-a456-426614174000", heating_set_point_celsius=20
+)
+```
+
+#### Output
+
+```python
+ActionAttempt(
+    action_attempt_id="123e4567-e89b-12d3-a456-426614174000",
+    status="pending",
+    action_type="SET_HEAT",
+)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+#### Code
+
+Specify the desired heating set point in °C or °F.
+
+```ruby
+seam.thermostats.heat(
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  heating_set_point_celsius: 20,
+)
+```
+
+#### Output
+
+```ruby
+{
+  "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
+  "status" => "pending",
+  "action_type" => "SET_HEAT",
+}
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+#### Code
+
+Specify the desired heating set point in °C or °F.
+
+```php
+<?php
+$seam->thermostats->heat(
+    device_id: "123e4567-e89b-12d3-a456-426614174000",
+    heating_set_point_celsius: 20
+);
+```
+
+#### Output
+
+```php
+<?php
+[
+    "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "status" => "pending",
+    "action_type" => "SET_HEAT",
+];
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Code
+
+Specify the desired heating set point in °C or °F.
+
+```go
+package main
+
+import api "github.com/seamapi/go"
+
+func main() {
+	client.Thermostats.Heat(
+		context.Background(),
+		api.ThermostatsHeatRequest{
+			DeviceId:               api.String("123e4567-e89b-12d3-a456-426614174000"),
+			HeatingSetPointCelsius: api.Float64(20),
+		},
+	)
+}
+```
+
+#### Output
+
+```go
+api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Status: "pending", ActionType: "SET_HEAT"}
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+#### Code
+
+Specify the desired heating set point in °C or °F.
+
+```seam_cli
+seam thermostats heat --device_id "123e4567-e89b-12d3-a456-426614174000" --heating_set_point_celsius 20
+```
+
+#### Output
+
+```seam_cli
+{
+  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
+  "status": "pending",
+  "action_type": "SET_HEAT"
+}
+```
+{% endtab %}
+
 {% endtabs %}
+
 
 <details>
 
@@ -55,168 +222,4 @@ Desired [heating set point](../../capability-guides/thermostats/understanding-th
 ---
 
 ## Examples
-
-### Set to heat mode
-
-Specify the desired heating set point in °C or °F.
-
-{% tabs %}
-{% tab title="JavaScript" %}
-#### Code
-
-```javascript
-await seam.thermostats.heat({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  heating_set_point_celsius: 20,
-});
-```
-
-#### Output
-
-```javascript
-{
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "pending",
-  "action_type": "SET_HEAT"
-}
-```
-{% endtab %}
-
-{% tab title="cURL" %}
-#### Code
-
-```curl
-curl --include --request POST "https://connect.getseam.com/thermostats/heat" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "device_id": "123e4567-e89b-12d3-a456-426614174000",
-  "heating_set_point_celsius": 20
-}
-EOF
-```
-
-#### Output
-
-```curl
-{
-  "action_attempt": {
-    "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-    "status": "pending",
-    "action_type": "SET_HEAT"
-  }
-}
-```
-{% endtab %}
-
-{% tab title="Python" %}
-#### Code
-
-```python
-seam.thermostats.heat(
-    device_id="123e4567-e89b-12d3-a456-426614174000", heating_set_point_celsius=20
-)
-```
-
-#### Output
-
-```python
-ActionAttempt(
-    action_attempt_id="123e4567-e89b-12d3-a456-426614174000",
-    status="pending",
-    action_type="SET_HEAT",
-)
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-#### Code
-
-```ruby
-seam.thermostats.heat(
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  heating_set_point_celsius: 20,
-)
-```
-
-#### Output
-
-```ruby
-{
-  "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "status" => "pending",
-  "action_type" => "SET_HEAT",
-}
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-#### Code
-
-```php
-<?php
-$seam->thermostats->heat(
-    device_id: "123e4567-e89b-12d3-a456-426614174000",
-    heating_set_point_celsius: 20
-);
-```
-
-#### Output
-
-```php
-<?php
-[
-    "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "status" => "pending",
-    "action_type" => "SET_HEAT",
-];
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.Heat(
-		context.Background(),
-		api.ThermostatsHeatRequest{
-			DeviceId:               api.String("123e4567-e89b-12d3-a456-426614174000"),
-			HeatingSetPointCelsius: api.Float64(20),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Status: "pending", ActionType: "SET_HEAT"}
-```
-{% endtab %}
-
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam thermostats heat --device_id "123e4567-e89b-12d3-a456-426614174000" --heating_set_point_celsius 20
-```
-
-#### Output
-
-```seam_cli
-{
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "pending",
-  "action_type": "SET_HEAT"
-}
-```
-{% endtab %}
-
-{% endtabs %}
-
 

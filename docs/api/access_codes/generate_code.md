@@ -6,13 +6,6 @@
 
 Generates a code for an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes), given a device ID.
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /access_codes/generate_code ⇒ { generated_code }
-```
-{% endtab %}
-{% endtabs %}
 
 <details>
 

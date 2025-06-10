@@ -6,13 +6,274 @@
 
 Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guides/thermostats).
 
+
 {% tabs %}
-{% tab title="Signature" %}
+{% tab title="JavaScript" %}
+#### Code
+
+To filter the list of returned thermostats, specify the desired parameters.
+
+```javascript
+await seam.thermostats.list();
 ```
-POST /thermostats/list ⇒ { devices: [device, …] }
+
+#### Output
+
+```javascript
+[
+  {
+    "device_id": "123e4567-e89b-12d3-a456-426614174000",
+    "device_type": "ecobee_thermostat",
+    "capabilities_supported": ["thermostat"],
+    "properties": {
+      "name": "Entryway",
+      "online": "true,",
+      "relative_humidity": 0.36,
+      "temperature_farenheit": 70,
+      "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+      "current_climate_setting": {
+        "hvac_mode_setting": "heat_cool",
+        "cooling_set_point_farenheit": 75,
+        "heating_set_point_farenheit": 65,
+        "manual_override_allowed": false
+      },
+      "location": null,
+      "connected_account_id": "123e4567-e89b-12d3-a456-426614174000",
+      "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+      "created_at": "2024-04-05T07:57:05.323Z"
+    }
+  }
+]
 ```
 {% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+To filter the list of returned thermostats, specify the desired parameters.
+
+```curl
+curl --include --request POST "https://connect.getseam.com/thermostats/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{
+  "devices": [
+    {
+      "device_id": "123e4567-e89b-12d3-a456-426614174000",
+      "device_type": "ecobee_thermostat",
+      "capabilities_supported": ["thermostat"],
+      "properties": {
+        "name": "Entryway",
+        "online": "true,",
+        "relative_humidity": 0.36,
+        "temperature_farenheit": 70,
+        "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+        "current_climate_setting": {
+          "hvac_mode_setting": "heat_cool",
+          "cooling_set_point_farenheit": 75,
+          "heating_set_point_farenheit": 65,
+          "manual_override_allowed": false
+        },
+        "location": null,
+        "connected_account_id": "123e4567-e89b-12d3-a456-426614174000",
+        "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+        "created_at": "2024-04-05T07:57:05.323Z"
+      }
+    }
+  ]
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+#### Code
+
+To filter the list of returned thermostats, specify the desired parameters.
+
+```python
+seam.thermostats.list()
+```
+
+#### Output
+
+```python
+[
+    Device(
+        device_id="123e4567-e89b-12d3-a456-426614174000",
+        device_type="ecobee_thermostat",
+        capabilities_supported=["thermostat"],
+        properties={
+            "name": "Entryway",
+            "online": "true,",
+            "relative_humidity": 0.36,
+            "temperature_farenheit": 70,
+            "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+            "current_climate_setting": {
+                "hvac_mode_setting": "heat_cool",
+                "cooling_set_point_farenheit": 75,
+                "heating_set_point_farenheit": 65,
+                "manual_override_allowed": false,
+            },
+            "location": null,
+            "connected_account_id": "123e4567-e89b-12d3-a456-426614174000",
+            "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+            "created_at": "2024-04-05T07:57:05.323Z",
+        },
+    )
+]
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+#### Code
+
+To filter the list of returned thermostats, specify the desired parameters.
+
+```ruby
+seam.thermostats.list()
+```
+
+#### Output
+
+```ruby
+[
+  {
+    "device_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "device_type" => "ecobee_thermostat",
+    "capabilities_supported" => ["thermostat"],
+    "properties" => {
+      name: "Entryway",
+      online: "true,",
+      relative_humidity: 0.36,
+      temperature_farenheit: 70,
+      available_hvac_mode_settings: %w[cool heat heat_cool off],
+      current_climate_setting: {
+        hvac_mode_setting: "heat_cool",
+        cooling_set_point_farenheit: 75,
+        heating_set_point_farenheit: 65,
+        manual_override_allowed: false,
+      },
+      location: null,
+      connected_account_id: "123e4567-e89b-12d3-a456-426614174000",
+      workspace_id: "123e4567-e89b-12d3-a456-426614174000",
+      created_at: "2024-04-05T07:57:05.323Z",
+    },
+  },
+]
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+#### Code
+
+To filter the list of returned thermostats, specify the desired parameters.
+
+```php
+<?php
+$seam->thermostats->list();
+```
+
+#### Output
+
+```php
+<?php
+[
+    [
+        "device_id" => "123e4567-e89b-12d3-a456-426614174000",
+        "device_type" => "ecobee_thermostat",
+        "capabilities_supported" => ["thermostat"],
+        "properties" => [
+            "name" => "Entryway",
+            "online" => "true,",
+            "relative_humidity" => 0.36,
+            "temperature_farenheit" => 70,
+            "available_hvac_mode_settings" => [
+                "cool",
+                "heat",
+                "heat_cool",
+                "off",
+            ],
+            "current_climate_setting" => [
+                "hvac_mode_setting" => "heat_cool",
+                "cooling_set_point_farenheit" => 75,
+                "heating_set_point_farenheit" => 65,
+                "manual_override_allowed" => false,
+            ],
+            "location" => null,
+            "connected_account_id" => "123e4567-e89b-12d3-a456-426614174000",
+            "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
+            "created_at" => "2024-04-05T07:57:05.323Z",
+        ],
+    ],
+];
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Code
+
+To filter the list of returned thermostats, specify the desired parameters.
+
+```go
+package main
+
+func main() {
+	client.Thermostats.List(context.Background())
+}
+```
+
+#### Output
+
+```go
+[]api.Device{api.Device{DeviceId: "123e4567-e89b-12d3-a456-426614174000", DeviceType: "ecobee_thermostat", CapabilitiesSupported: []string{"thermostat"}, Properties: api.DeviceProperties{Name: "Entryway", Online: "true,", RelativeHumidity: 0.36, TemperatureFarenheit: 70, AvailableHvacModeSettings: []string{"cool", "heat", "heat_cool", "off"}, CurrentClimateSetting: api.DevicePropertiesCurrentClimateSetting{HvacModeSetting: "heat_cool", CoolingSetPointFarenheit: 75, HeatingSetPointFarenheit: 65, ManualOverrideAllowed: false}, Location: nil, ConnectedAccountId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z"}}}
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+#### Code
+
+To filter the list of returned thermostats, specify the desired parameters.
+
+```seam_cli
+seam thermostats list
+```
+
+#### Output
+
+```seam_cli
+[
+  {
+    "device_id": "123e4567-e89b-12d3-a456-426614174000",
+    "device_type": "ecobee_thermostat",
+    "capabilities_supported": ["thermostat"],
+    "properties": {
+      "name": "Entryway",
+      "online": "true,",
+      "relative_humidity": 0.36,
+      "temperature_farenheit": 70,
+      "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+      "current_climate_setting": {
+        "hvac_mode_setting": "heat_cool",
+        "cooling_set_point_farenheit": 75,
+        "heating_set_point_farenheit": 65,
+        "manual_override_allowed": false
+      },
+      "location": null,
+      "connected_account_id": "123e4567-e89b-12d3-a456-426614174000",
+      "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+      "created_at": "2024-04-05T07:57:05.323Z"
+    }
+  }
+]
+```
+{% endtab %}
+
 {% endtabs %}
+
 
 <details>
 
@@ -125,262 +386,4 @@ Array of [devices](./)
 ---
 
 ## Examples
-
-### List thermostats
-
-To filter the list of returned thermostats, specify the desired parameters.
-
-{% tabs %}
-{% tab title="JavaScript" %}
-#### Code
-
-```javascript
-await seam.thermostats.list();
-```
-
-#### Output
-
-```javascript
-[
-  {
-    "device_id": "123e4567-e89b-12d3-a456-426614174000",
-    "device_type": "ecobee_thermostat",
-    "capabilities_supported": ["thermostat"],
-    "properties": {
-      "name": "Entryway",
-      "online": "true,",
-      "relative_humidity": 0.36,
-      "temperature_farenheit": 70,
-      "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
-      "current_climate_setting": {
-        "hvac_mode_setting": "heat_cool",
-        "cooling_set_point_farenheit": 75,
-        "heating_set_point_farenheit": 65,
-        "manual_override_allowed": false
-      },
-      "location": null,
-      "connected_account_id": "123e4567-e89b-12d3-a456-426614174000",
-      "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-      "created_at": "2024-04-05T07:57:05.323Z"
-    }
-  }
-]
-```
-{% endtab %}
-
-{% tab title="cURL" %}
-#### Code
-
-```curl
-curl --include --request POST "https://connect.getseam.com/thermostats/list" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
-```
-
-#### Output
-
-```curl
-{
-  "devices": [
-    {
-      "device_id": "123e4567-e89b-12d3-a456-426614174000",
-      "device_type": "ecobee_thermostat",
-      "capabilities_supported": ["thermostat"],
-      "properties": {
-        "name": "Entryway",
-        "online": "true,",
-        "relative_humidity": 0.36,
-        "temperature_farenheit": 70,
-        "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
-        "current_climate_setting": {
-          "hvac_mode_setting": "heat_cool",
-          "cooling_set_point_farenheit": 75,
-          "heating_set_point_farenheit": 65,
-          "manual_override_allowed": false
-        },
-        "location": null,
-        "connected_account_id": "123e4567-e89b-12d3-a456-426614174000",
-        "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-        "created_at": "2024-04-05T07:57:05.323Z"
-      }
-    }
-  ]
-}
-```
-{% endtab %}
-
-{% tab title="Python" %}
-#### Code
-
-```python
-seam.thermostats.list()
-```
-
-#### Output
-
-```python
-[
-    Device(
-        device_id="123e4567-e89b-12d3-a456-426614174000",
-        device_type="ecobee_thermostat",
-        capabilities_supported=["thermostat"],
-        properties={
-            "name": "Entryway",
-            "online": "true,",
-            "relative_humidity": 0.36,
-            "temperature_farenheit": 70,
-            "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
-            "current_climate_setting": {
-                "hvac_mode_setting": "heat_cool",
-                "cooling_set_point_farenheit": 75,
-                "heating_set_point_farenheit": 65,
-                "manual_override_allowed": false,
-            },
-            "location": null,
-            "connected_account_id": "123e4567-e89b-12d3-a456-426614174000",
-            "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-            "created_at": "2024-04-05T07:57:05.323Z",
-        },
-    )
-]
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-#### Code
-
-```ruby
-seam.thermostats.list()
-```
-
-#### Output
-
-```ruby
-[
-  {
-    "device_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "device_type" => "ecobee_thermostat",
-    "capabilities_supported" => ["thermostat"],
-    "properties" => {
-      name: "Entryway",
-      online: "true,",
-      relative_humidity: 0.36,
-      temperature_farenheit: 70,
-      available_hvac_mode_settings: %w[cool heat heat_cool off],
-      current_climate_setting: {
-        hvac_mode_setting: "heat_cool",
-        cooling_set_point_farenheit: 75,
-        heating_set_point_farenheit: 65,
-        manual_override_allowed: false,
-      },
-      location: null,
-      connected_account_id: "123e4567-e89b-12d3-a456-426614174000",
-      workspace_id: "123e4567-e89b-12d3-a456-426614174000",
-      created_at: "2024-04-05T07:57:05.323Z",
-    },
-  },
-]
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-#### Code
-
-```php
-<?php
-$seam->thermostats->list();
-```
-
-#### Output
-
-```php
-<?php
-[
-    [
-        "device_id" => "123e4567-e89b-12d3-a456-426614174000",
-        "device_type" => "ecobee_thermostat",
-        "capabilities_supported" => ["thermostat"],
-        "properties" => [
-            "name" => "Entryway",
-            "online" => "true,",
-            "relative_humidity" => 0.36,
-            "temperature_farenheit" => 70,
-            "available_hvac_mode_settings" => [
-                "cool",
-                "heat",
-                "heat_cool",
-                "off",
-            ],
-            "current_climate_setting" => [
-                "hvac_mode_setting" => "heat_cool",
-                "cooling_set_point_farenheit" => 75,
-                "heating_set_point_farenheit" => 65,
-                "manual_override_allowed" => false,
-            ],
-            "location" => null,
-            "connected_account_id" => "123e4567-e89b-12d3-a456-426614174000",
-            "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
-            "created_at" => "2024-04-05T07:57:05.323Z",
-        ],
-    ],
-];
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Code
-
-```go
-package main
-
-func main() {
-	client.Thermostats.List(context.Background())
-}
-```
-
-#### Output
-
-```go
-[]api.Device{api.Device{DeviceId: "123e4567-e89b-12d3-a456-426614174000", DeviceType: "ecobee_thermostat", CapabilitiesSupported: []string{"thermostat"}, Properties: api.DeviceProperties{Name: "Entryway", Online: "true,", RelativeHumidity: 0.36, TemperatureFarenheit: 70, AvailableHvacModeSettings: []string{"cool", "heat", "heat_cool", "off"}, CurrentClimateSetting: api.DevicePropertiesCurrentClimateSetting{HvacModeSetting: "heat_cool", CoolingSetPointFarenheit: 75, HeatingSetPointFarenheit: 65, ManualOverrideAllowed: false}, Location: nil, ConnectedAccountId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z"}}}
-```
-{% endtab %}
-
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam thermostats list
-```
-
-#### Output
-
-```seam_cli
-[
-  {
-    "device_id": "123e4567-e89b-12d3-a456-426614174000",
-    "device_type": "ecobee_thermostat",
-    "capabilities_supported": ["thermostat"],
-    "properties": {
-      "name": "Entryway",
-      "online": "true,",
-      "relative_humidity": 0.36,
-      "temperature_farenheit": 70,
-      "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
-      "current_climate_setting": {
-        "hvac_mode_setting": "heat_cool",
-        "cooling_set_point_farenheit": 75,
-        "heating_set_point_farenheit": 65,
-        "manual_override_allowed": false
-      },
-      "location": null,
-      "connected_account_id": "123e4567-e89b-12d3-a456-426614174000",
-      "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-      "created_at": "2024-04-05T07:57:05.323Z"
-    }
-  }
-]
-```
-{% endtab %}
-
-{% endtabs %}
-
 

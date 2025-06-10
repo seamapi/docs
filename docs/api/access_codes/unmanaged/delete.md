@@ -6,13 +6,6 @@
 
 Deletes an [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /access_codes/unmanaged/delete ⇒ void
-```
-{% endtab %}
-{% endtabs %}
 
 <details>
 

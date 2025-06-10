@@ -6,50 +6,12 @@
 
 Returns a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /acs/access_groups/get ⇒ { acs_access_group }
-```
-{% endtab %}
-{% endtabs %}
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-</details>
-
-## Request Parameters
-
-**`acs_access_group_id`** *String* (Required)
-
-ID of the access group that you want to get.
-
----
-
-
-## Response
-
-[acs\_access\_group](./)
-
-
----
-
-## Examples
-
-### Get a specific access group
-
-Specify the `acs_access_group_id` of the access group that you want to retrieve.
 
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Code
+
+Specify the `acs_access_group_id` of the access group that you want to retrieve.
 
 ```javascript
 await seam.acs.accessGroups.get({
@@ -77,6 +39,8 @@ await seam.acs.accessGroups.get({
 
 {% tab title="cURL" %}
 #### Code
+
+Specify the `acs_access_group_id` of the access group that you want to retrieve.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/access_groups/get" \
@@ -111,6 +75,8 @@ EOF
 {% tab title="Python" %}
 #### Code
 
+Specify the `acs_access_group_id` of the access group that you want to retrieve.
+
 ```python
 seam.acs.access_groups.get(acs_access_group_id="44444444-4444-4444-4444-444444444444")
 ```
@@ -136,6 +102,8 @@ AcsAccessGroup(
 {% tab title="Ruby" %}
 #### Code
 
+Specify the `acs_access_group_id` of the access group that you want to retrieve.
+
 ```ruby
 seam.acs.access_groups.get(acs_access_group_id: "44444444-4444-4444-4444-444444444444")
 ```
@@ -160,6 +128,8 @@ seam.acs.access_groups.get(acs_access_group_id: "44444444-4444-4444-4444-4444444
 
 {% tab title="PHP" %}
 #### Code
+
+Specify the `acs_access_group_id` of the access group that you want to retrieve.
 
 ```php
 <?php
@@ -190,6 +160,8 @@ $seam->acs->access_groups->get(
 {% tab title="Go" %}
 #### Code
 
+Specify the `acs_access_group_id` of the access group that you want to retrieve.
+
 ```go
 package main
 
@@ -216,6 +188,8 @@ api.AcsAccessGroup{AcsAccessGroupId: "44444444-4444-4444-4444-444444444444", Nam
 {% tab title="Seam CLI" %}
 #### Code
 
+Specify the `acs_access_group_id` of the access group that you want to retrieve.
+
 ```seam_cli
 seam acs access-groups get --acs_access_group_id "44444444-4444-4444-4444-444444444444"
 ```
@@ -240,4 +214,33 @@ seam acs access-groups get --acs_access_group_id "44444444-4444-4444-4444-444444
 
 {% endtabs %}
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`acs_access_group_id`** *String* (Required)
+
+ID of the access group that you want to get.
+
+---
+
+
+## Response
+
+[acs\_access\_group](./)
+
+
+---
+
+## Examples
 

@@ -6,51 +6,12 @@
 
 Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /user_identities/list_acs_systems ⇒ { acs_systems: [acs_system, …] }
-```
-{% endtab %}
-{% endtabs %}
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-</details>
-
-## Request Parameters
-
-**`user_identity_id`** *String* (Required)
-
-ID of the user identity for which you want to retrieve all access control systems.
-
----
-
-
-## Response
-
-Array of [acs\_systems](./)
-
-
----
-
-## Examples
-
-### List ACS systems associated with a user identity
-
-Specify the desired `user_identity_id`.
 
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Code
+
+Specify the desired `user_identity_id`.
 
 ```javascript
 await seam.userIdentities.listAcsSystems({
@@ -79,6 +40,8 @@ await seam.userIdentities.listAcsSystems({
 
 {% tab title="cURL" %}
 #### Code
+
+Specify the desired `user_identity_id`.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/list_acs_systems" \
@@ -114,6 +77,8 @@ EOF
 {% tab title="Python" %}
 #### Code
 
+Specify the desired `user_identity_id`.
+
 ```python
 seam.user_identities.list_acs_systems(
     user_identity_id="5c945ab5-c75e-4bcb-8e5f-9410061c401f"
@@ -142,6 +107,8 @@ seam.user_identities.list_acs_systems(
 {% tab title="Ruby" %}
 #### Code
 
+Specify the desired `user_identity_id`.
+
 ```ruby
 seam.user_identities.list_acs_systems(user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f")
 ```
@@ -167,6 +134,8 @@ seam.user_identities.list_acs_systems(user_identity_id: "5c945ab5-c75e-4bcb-8e5f
 
 {% tab title="PHP" %}
 #### Code
+
+Specify the desired `user_identity_id`.
 
 ```php
 <?php
@@ -198,6 +167,8 @@ $seam->user_identities->list_acs_systems(
 {% tab title="Go" %}
 #### Code
 
+Specify the desired `user_identity_id`.
+
 ```go
 package main
 
@@ -222,6 +193,8 @@ func main() {
 
 {% tab title="Seam CLI" %}
 #### Code
+
+Specify the desired `user_identity_id`.
 
 ```seam_cli
 seam user-identities list-acs-systems --user_identity_id "5c945ab5-c75e-4bcb-8e5f-9410061c401f"
@@ -248,4 +221,34 @@ seam user-identities list-acs-systems --user_identity_id "5c945ab5-c75e-4bcb-8e5
 
 {% endtabs %}
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`user_identity_id`** *String* (Required)
+
+ID of the user identity for which you want to retrieve all access control systems.
+
+---
+
+
+## Response
+
+Array of [acs\_systems](./)
+
+
+---
+
+## Examples
 

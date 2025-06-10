@@ -6,50 +6,12 @@
 
 Returns a list of all [devices](../../core-concepts/devices/README.md) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /user_identities/list_accessible_devices ⇒ { devices: [device, …] }
-```
-{% endtab %}
-{% endtabs %}
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-</details>
-
-## Request Parameters
-
-**`user_identity_id`** *String* (Required)
-
-ID of the user identity for which you want to retrieve all accessible devices.
-
----
-
-
-## Response
-
-Array of [devices](./)
-
-
----
-
-## Examples
-
-### List accessible devices for a user identity
-
-Specify the desired `user_identity_id`.
 
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Code
+
+Specify the desired `user_identity_id`.
 
 ```javascript
 await seam.userIdentities.listAccessibleDevices({
@@ -118,6 +80,8 @@ await seam.userIdentities.listAccessibleDevices({
 
 {% tab title="cURL" %}
 #### Code
+
+Specify the desired `user_identity_id`.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/list_accessible_devices" \
@@ -193,6 +157,8 @@ EOF
 {% tab title="Python" %}
 #### Code
 
+Specify the desired `user_identity_id`.
+
 ```python
 seam.user_identities.list_accessible_devices(
     user_identity_id="f3a328b4-dd04-4370-9000-d52b7a01b0bf"
@@ -260,6 +226,8 @@ seam.user_identities.list_accessible_devices(
 
 {% tab title="Ruby" %}
 #### Code
+
+Specify the desired `user_identity_id`.
 
 ```ruby
 seam.user_identities.list_accessible_devices(
@@ -332,6 +300,8 @@ seam.user_identities.list_accessible_devices(
 
 {% tab title="PHP" %}
 #### Code
+
+Specify the desired `user_identity_id`.
 
 ```php
 <?php
@@ -410,6 +380,8 @@ $seam->user_identities->list_accessible_devices(
 {% tab title="Go" %}
 #### Code
 
+Specify the desired `user_identity_id`.
+
 ```go
 package main
 
@@ -434,6 +406,8 @@ func main() {
 
 {% tab title="Seam CLI" %}
 #### Code
+
+Specify the desired `user_identity_id`.
 
 ```seam_cli
 seam user-identities list-accessible-devices --user_identity_id "f3a328b4-dd04-4370-9000-d52b7a01b0bf"
@@ -500,4 +474,33 @@ seam user-identities list-accessible-devices --user_identity_id "f3a328b4-dd04-4
 
 {% endtabs %}
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`user_identity_id`** *String* (Required)
+
+ID of the user identity for which you want to retrieve all accessible devices.
+
+---
+
+
+## Response
+
+Array of [devices](./)
+
+
+---
+
+## Examples
 

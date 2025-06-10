@@ -8,13 +8,6 @@ Enables you to report access code-related constraints for a device. Currently, s
 
 Specify either `supported_code_lengths` or `min_code_length`/`max_code_length`.
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /access_codes/report_device_constraints ⇒ void
-```
-{% endtab %}
-{% endtabs %}
 
 <details>
 

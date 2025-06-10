@@ -6,64 +6,12 @@
 
 Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md) with access to a specified [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /acs/entrances/list_credentials_with_access ⇒ { acs_credentials: [acs_credential, …] }
-```
-{% endtab %}
-{% endtabs %}
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-</details>
-
-## Request Parameters
-
-**`acs_entrance_id`** *String* (Required)
-
-ID of the entrance for which you want to list all credentials that grant access.
-
----
-
-**`include_if`** *Array* *of Enums*
-
-Conditions that credentials must meet to be included in the returned list.
-<details>
-
-<summary>Enum values</summary>
-
-Possible enum values:
-- <code>visionline_metadata.is_valid</code>
-</details>
-
----
-
-
-## Response
-
-Array of [acs\_credentials](./)
-
-
----
-
-## Examples
-
-### List credentials with access to an entrance
-
-Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
 
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Code
+
+Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
 
 ```javascript
 await seam.acs.entrances.listCredentialsWithAccess({
@@ -103,6 +51,8 @@ await seam.acs.entrances.listCredentialsWithAccess({
 
 {% tab title="cURL" %}
 #### Code
+
+Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/entrances/list_credentials_with_access" \
@@ -149,6 +99,8 @@ EOF
 {% tab title="Python" %}
 #### Code
 
+Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
+
 ```python
 seam.acs.entrances.list_credentials_with_access(
     acs_entrance_id="123e4567-e89b-12d3-a456-426614174000"
@@ -188,6 +140,8 @@ seam.acs.entrances.list_credentials_with_access(
 {% tab title="Ruby" %}
 #### Code
 
+Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
+
 ```ruby
 seam.acs.entrances.list_credentials_with_access(
   acs_entrance_id: "123e4567-e89b-12d3-a456-426614174000",
@@ -226,6 +180,8 @@ seam.acs.entrances.list_credentials_with_access(
 
 {% tab title="PHP" %}
 #### Code
+
+Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
 
 ```php
 <?php
@@ -269,6 +225,8 @@ $seam->acs->entrances->list_credentials_with_access(
 {% tab title="Go" %}
 #### Code
 
+Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
+
 ```go
 package main
 
@@ -294,6 +252,8 @@ func main() {
 
 {% tab title="Seam CLI" %}
 #### Code
+
+Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
 
 ```seam_cli
 seam acs entrances list-credentials-with-access --acs_entrance_id "123e4567-e89b-12d3-a456-426614174000"
@@ -331,4 +291,47 @@ seam acs entrances list-credentials-with-access --acs_entrance_id "123e4567-e89b
 
 {% endtabs %}
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`acs_entrance_id`** *String* (Required)
+
+ID of the entrance for which you want to list all credentials that grant access.
+
+---
+
+**`include_if`** *Array* *of Enums*
+
+Conditions that credentials must meet to be included in the returned list.
+<details>
+
+<summary>Enum values</summary>
+
+Possible enum values:
+- <code>visionline_metadata.is_valid</code>
+</details>
+
+---
+
+
+## Response
+
+Array of [acs\_credentials](./)
+
+
+---
+
+## Examples
 

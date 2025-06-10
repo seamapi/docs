@@ -6,13 +6,6 @@
 
 Grants a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) access to a specified [access system entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /acs/entrances/grant_access ⇒ void
-```
-{% endtab %}
-{% endtabs %}
 
 <details>
 

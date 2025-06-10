@@ -6,13 +6,6 @@
 
 Encodes an existing [credential](../../../capability-guides/access-systems/managing-credentials.md) onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /acs/encoders/encode_credential ⇒ { action_attempt }
-```
-{% endtab %}
-{% endtabs %}
 
 <details>
 

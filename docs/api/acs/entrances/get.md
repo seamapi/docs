@@ -6,49 +6,12 @@
 
 Returns a specified [access system entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /acs/entrances/get ⇒ { acs_entrance }
-```
-{% endtab %}
-{% endtabs %}
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Client session token
-
-To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-</details>
-
-## Request Parameters
-
-**`acs_entrance_id`** *String* (Required)
-
-ID of the entrance that you want to get.
-
----
-
-
-## Response
-
-[acs\_entrance](./)
-
-
----
-
-## Examples
-
-### Get an entrance
-
-Specify the `acs_entrance_id` of the entrance that you want to retrieve.
 
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Code
+
+Specify the `acs_entrance_id` of the entrance that you want to retrieve.
 
 ```javascript
 await seam.acs.entrances.get({
@@ -70,6 +33,8 @@ await seam.acs.entrances.get({
 
 {% tab title="cURL" %}
 #### Code
+
+Specify the `acs_entrance_id` of the entrance that you want to retrieve.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/entrances/get" \
@@ -98,6 +63,8 @@ EOF
 {% tab title="Python" %}
 #### Code
 
+Specify the `acs_entrance_id` of the entrance that you want to retrieve.
+
 ```python
 seam.acs.entrances.get(acs_entrance_id="123e4567-e89b-12d3-a456-426614174000")
 ```
@@ -117,6 +84,8 @@ AcsEntrance(
 {% tab title="Ruby" %}
 #### Code
 
+Specify the `acs_entrance_id` of the entrance that you want to retrieve.
+
 ```ruby
 seam.acs.entrances.get(acs_entrance_id: "123e4567-e89b-12d3-a456-426614174000")
 ```
@@ -135,6 +104,8 @@ seam.acs.entrances.get(acs_entrance_id: "123e4567-e89b-12d3-a456-426614174000")
 
 {% tab title="PHP" %}
 #### Code
+
+Specify the `acs_entrance_id` of the entrance that you want to retrieve.
 
 ```php
 <?php
@@ -158,6 +129,8 @@ $seam->acs->entrances->get(
 
 {% tab title="Go" %}
 #### Code
+
+Specify the `acs_entrance_id` of the entrance that you want to retrieve.
 
 ```go
 package main
@@ -185,6 +158,8 @@ api.AcsEntrance{AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", AcsEntrance
 {% tab title="Seam CLI" %}
 #### Code
 
+Specify the `acs_entrance_id` of the entrance that you want to retrieve.
+
 ```seam_cli
 seam acs entrances get --acs_entrance_id "123e4567-e89b-12d3-a456-426614174000"
 ```
@@ -203,4 +178,32 @@ seam acs entrances get --acs_entrance_id "123e4567-e89b-12d3-a456-426614174000"
 
 {% endtabs %}
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`acs_entrance_id`** *String* (Required)
+
+ID of the entrance that you want to get.
+
+---
+
+
+## Response
+
+[acs\_entrance](./)
+
+
+---
+
+## Examples
 

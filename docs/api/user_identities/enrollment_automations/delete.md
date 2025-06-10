@@ -6,13 +6,149 @@
 
 Deletes a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system). You must delete all enrollment automations associated with a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) before [deleting the user identity](https://docs.seam.co/latest/api/user_identities/delete).
 
+
 {% tabs %}
-{% tab title="Signature" %}
+{% tab title="JavaScript" %}
+#### Code
+
+Specify the desired `enrollment_automation_id`.
+
+```javascript
+await seam.userIdentities.enrollmentAutomations.delete({
+  enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895",
+});
 ```
-POST /user_identities/enrollment_automations/delete ⇒ void
+
+#### Output
+
+```javascript
+// void
 ```
 {% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+Specify the desired `enrollment_automation_id`.
+
+```curl
+curl --include --request POST "https://connect.getseam.com/user_identities/enrollment_automations/delete" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "enrollment_automation_id": "05505650-aa57-49ab-8f19-429738758895"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+#### Code
+
+Specify the desired `enrollment_automation_id`.
+
+```python
+seam.user_identities.enrollment_automations.delete(
+    enrollment_automation_id="05505650-aa57-49ab-8f19-429738758895"
+)
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+#### Code
+
+Specify the desired `enrollment_automation_id`.
+
+```ruby
+seam.user_identities.enrollment_automations.delete(
+  enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895",
+)
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+#### Code
+
+Specify the desired `enrollment_automation_id`.
+
+```php
+<?php
+$seam->user_identities->enrollment_automations->delete(
+    enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895"
+);
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Code
+
+Specify the desired `enrollment_automation_id`.
+
+```go
+package main
+
+import api "github.com/seamapi/go"
+import enrollmentautomations "github.com/seamapi/go/enrollmentautomations"
+
+func main() {
+	client.UserIdentities.EnrollmentAutomations.Delete(
+		context.Background(),
+		enrollmentautomations.EnrollmentAutomationsDeleteRequest{
+			EnrollmentAutomationId: api.String("05505650-aa57-49ab-8f19-429738758895"),
+		},
+	)
+}
+```
+
+#### Output
+
+```go
+nil
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+#### Code
+
+Specify the desired `enrollment_automation_id`.
+
+```seam_cli
+seam user-identities enrollment-automations delete --enrollment_automation_id "05505650-aa57-49ab-8f19-429738758895"
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
 {% endtabs %}
+
 
 <details>
 
@@ -42,137 +178,4 @@ void
 ---
 
 ## Examples
-
-### Delete an enrollment automation
-
-Specify the desired `enrollment_automation_id`.
-
-{% tabs %}
-{% tab title="JavaScript" %}
-#### Code
-
-```javascript
-await seam.userIdentities.enrollmentAutomations.delete({
-  enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895",
-});
-```
-
-#### Output
-
-```javascript
-// void
-```
-{% endtab %}
-
-{% tab title="cURL" %}
-#### Code
-
-```curl
-curl --include --request POST "https://connect.getseam.com/user_identities/enrollment_automations/delete" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "enrollment_automation_id": "05505650-aa57-49ab-8f19-429738758895"
-}
-EOF
-```
-
-#### Output
-
-```curl
-{}
-```
-{% endtab %}
-
-{% tab title="Python" %}
-#### Code
-
-```python
-seam.user_identities.enrollment_automations.delete(
-    enrollment_automation_id="05505650-aa57-49ab-8f19-429738758895"
-)
-```
-
-#### Output
-
-```python
-None
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-#### Code
-
-```ruby
-seam.user_identities.enrollment_automations.delete(
-  enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895",
-)
-```
-
-#### Output
-
-```ruby
-nil
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-#### Code
-
-```php
-<?php
-$seam->user_identities->enrollment_automations->delete(
-    enrollment_automation_id: "05505650-aa57-49ab-8f19-429738758895"
-);
-```
-
-#### Output
-
-```php
-null
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import enrollmentautomations "github.com/seamapi/go/enrollmentautomations"
-
-func main() {
-	client.UserIdentities.EnrollmentAutomations.Delete(
-		context.Background(),
-		enrollmentautomations.EnrollmentAutomationsDeleteRequest{
-			EnrollmentAutomationId: api.String("05505650-aa57-49ab-8f19-429738758895"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam user-identities enrollment-automations delete --enrollment_automation_id "05505650-aa57-49ab-8f19-429738758895"
-```
-
-#### Output
-
-```seam_cli
-{}
-```
-{% endtab %}
-
-{% endtabs %}
-
 

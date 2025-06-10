@@ -6,13 +6,200 @@
 
 Returns a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
+
 {% tabs %}
-{% tab title="Signature" %}
+{% tab title="JavaScript" %}
+#### Code
+
+Specify the `acs_user_id` of the specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to retrieve.
+
+```javascript
+await seam.acs.users.get({
+  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
+});
 ```
-POST /acs/users/get ⇒ { acs_user }
+
+#### Output
+
+```javascript
+{
+  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
+  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+  "created_at": "2024-04-05T07:57:05.323Z",
+  "display_name": "Jane Doe",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15555550100"
+}
 ```
 {% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+Specify the `acs_user_id` of the specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to retrieve.
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/get" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_user_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "acs_user": {
+    "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
+    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+    "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+    "created_at": "2024-04-05T07:57:05.323Z",
+    "display_name": "Jane Doe",
+    "full_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "phone_number": "+15555550100"
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+#### Code
+
+Specify the `acs_user_id` of the specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to retrieve.
+
+```python
+seam.acs.users.get(acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")
+```
+
+#### Output
+
+```python
+AcsUser(
+    acs_user_id="123e4567-e89b-12d3-a456-426614174000",
+    acs_system_id="123e4567-e89b-12d3-a456-426614174000",
+    workspace_id="123e4567-e89b-12d3-a456-426614174000",
+    created_at="2024-04-05T07:57:05.323Z",
+    display_name="Jane Doe",
+    full_name="Jane Doe",
+    email_address="jane@example.com",
+    phone_number="+15555550100",
+)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+#### Code
+
+Specify the `acs_user_id` of the specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to retrieve.
+
+```ruby
+seam.acs.users.get(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
+```
+
+#### Output
+
+```ruby
+{
+  "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
+  "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
+  "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
+  "created_at" => "2024-04-05T07:57:05.323Z",
+  "display_name" => "Jane Doe",
+  "full_name" => "Jane Doe",
+  "email_address" => "jane@example.com",
+  "phone_number" => "+15555550100",
+}
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+#### Code
+
+Specify the `acs_user_id` of the specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to retrieve.
+
+```php
+<?php
+$seam->acs->users->get(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33");
+```
+
+#### Output
+
+```php
+<?php
+[
+    "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
+    "created_at" => "2024-04-05T07:57:05.323Z",
+    "display_name" => "Jane Doe",
+    "full_name" => "Jane Doe",
+    "email_address" => "jane@example.com",
+    "phone_number" => "+15555550100",
+];
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Code
+
+Specify the `acs_user_id` of the specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to retrieve.
+
+```go
+package main
+
+import api "github.com/seamapi/go"
+import users "github.com/seamapi/go/users"
+
+func main() {
+	client.Acs.Users.Get(
+		context.Background(),
+		users.UsersGetRequest{
+			AcsUserId: api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
+		},
+	)
+}
+```
+
+#### Output
+
+```go
+api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "Jane Doe", FullName: "Jane Doe", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100"}
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+#### Code
+
+Specify the `acs_user_id` of the specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to retrieve.
+
+```seam_cli
+seam acs users get --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
+```
+
+#### Output
+
+```seam_cli
+{
+  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
+  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+  "created_at": "2024-04-05T07:57:05.323Z",
+  "display_name": "Jane Doe",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15555550100"
+}
+```
+{% endtab %}
+
 {% endtabs %}
+
 
 <details>
 
@@ -54,188 +241,4 @@ ID of the user identity that you want to get. You can only provide acs_user_id o
 ---
 
 ## Examples
-
-### Get a specific ACS user
-
-Specify the `acs_user_id` of the specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to retrieve.
-
-{% tabs %}
-{% tab title="JavaScript" %}
-#### Code
-
-```javascript
-await seam.acs.users.get({
-  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-});
-```
-
-#### Output
-
-```javascript
-{
-  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-  "created_at": "2024-04-05T07:57:05.323Z",
-  "display_name": "Jane Doe",
-  "full_name": "Jane Doe",
-  "email_address": "jane@example.com",
-  "phone_number": "+15555550100"
-}
-```
-{% endtab %}
-
-{% tab title="cURL" %}
-#### Code
-
-```curl
-curl --include --request POST "https://connect.getseam.com/acs/users/get" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "acs_user_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
-}
-EOF
-```
-
-#### Output
-
-```curl
-{
-  "acs_user": {
-    "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-    "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-    "created_at": "2024-04-05T07:57:05.323Z",
-    "display_name": "Jane Doe",
-    "full_name": "Jane Doe",
-    "email_address": "jane@example.com",
-    "phone_number": "+15555550100"
-  }
-}
-```
-{% endtab %}
-
-{% tab title="Python" %}
-#### Code
-
-```python
-seam.acs.users.get(acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")
-```
-
-#### Output
-
-```python
-AcsUser(
-    acs_user_id="123e4567-e89b-12d3-a456-426614174000",
-    acs_system_id="123e4567-e89b-12d3-a456-426614174000",
-    workspace_id="123e4567-e89b-12d3-a456-426614174000",
-    created_at="2024-04-05T07:57:05.323Z",
-    display_name="Jane Doe",
-    full_name="Jane Doe",
-    email_address="jane@example.com",
-    phone_number="+15555550100",
-)
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-#### Code
-
-```ruby
-seam.acs.users.get(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
-```
-
-#### Output
-
-```ruby
-{
-  "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "created_at" => "2024-04-05T07:57:05.323Z",
-  "display_name" => "Jane Doe",
-  "full_name" => "Jane Doe",
-  "email_address" => "jane@example.com",
-  "phone_number" => "+15555550100",
-}
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-#### Code
-
-```php
-<?php
-$seam->acs->users->get(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33");
-```
-
-#### Output
-
-```php
-<?php
-[
-    "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "created_at" => "2024-04-05T07:57:05.323Z",
-    "display_name" => "Jane Doe",
-    "full_name" => "Jane Doe",
-    "email_address" => "jane@example.com",
-    "phone_number" => "+15555550100",
-];
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import users "github.com/seamapi/go/users"
-
-func main() {
-	client.Acs.Users.Get(
-		context.Background(),
-		users.UsersGetRequest{
-			AcsUserId: api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "Jane Doe", FullName: "Jane Doe", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100"}
-```
-{% endtab %}
-
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam acs users get --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
-```
-
-#### Output
-
-```seam_cli
-{
-  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-  "created_at": "2024-04-05T07:57:05.323Z",
-  "display_name": "Jane Doe",
-  "full_name": "Jane Doe",
-  "email_address": "jane@example.com",
-  "phone_number": "+15555550100"
-}
-```
-{% endtab %}
-
-{% endtabs %}
-
 

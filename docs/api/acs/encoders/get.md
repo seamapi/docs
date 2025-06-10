@@ -6,13 +6,6 @@
 
 Returns a specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /acs/encoders/get ⇒ { acs_encoder }
-```
-{% endtab %}
-{% endtabs %}
 
 <details>
 

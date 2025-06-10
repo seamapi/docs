@@ -6,13 +6,166 @@
 
 Updates a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
+
 {% tabs %}
-{% tab title="Signature" %}
+{% tab title="JavaScript" %}
+#### Code
+
+Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.
+
+```javascript
+await seam.thermostats.updateClimatePreset({
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  climate_preset_key: "occupied",
+  cooling_set_point_celsius: 24,
+  manual_override_allowed: true,
+});
 ```
-PATCH /thermostats/update_climate_preset ⇒ void
+
+#### Output
+
+```javascript
+// void
 ```
 {% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.
+
+```curl
+curl --include --request POST "https://connect.getseam.com/thermostats/update_climate_preset" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "123e4567-e89b-12d3-a456-426614174000",
+  "climate_preset_key": "occupied",
+  "cooling_set_point_celsius": 24,
+  "manual_override_allowed": true
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+#### Code
+
+Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.
+
+```python
+seam.thermostats.update_climate_preset(
+    device_id="123e4567-e89b-12d3-a456-426614174000",
+    climate_preset_key="occupied",
+    cooling_set_point_celsius=24,
+    manual_override_allowed=true,
+)
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+#### Code
+
+Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.
+
+```ruby
+seam.thermostats.update_climate_preset(
+  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  climate_preset_key: "occupied",
+  cooling_set_point_celsius: 24,
+  manual_override_allowed: true,
+)
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+#### Code
+
+Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.
+
+```php
+<?php
+$seam->thermostats->update_climate_preset(
+    device_id: "123e4567-e89b-12d3-a456-426614174000",
+    climate_preset_key: "occupied",
+    cooling_set_point_celsius: 24,
+    manual_override_allowed: true
+);
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Code
+
+Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.
+
+```go
+package main
+
+import api "github.com/seamapi/go"
+
+func main() {
+	client.Thermostats.UpdateClimatePreset(
+		context.Background(),
+		api.ThermostatsUpdateClimatePresetRequest{
+			DeviceId:               api.String("123e4567-e89b-12d3-a456-426614174000"),
+			ClimatePresetKey:       api.String("occupied"),
+			CoolingSetPointCelsius: api.Float64(24),
+			ManualOverrideAllowed:  api.Bool(true),
+		},
+	)
+}
+```
+
+#### Output
+
+```go
+nil
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+#### Code
+
+Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.
+
+```seam_cli
+seam thermostats update-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "occupied" --cooling_set_point_celsius 24 --manual_override_allowed true
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
 {% endtabs %}
+
 
 <details>
 
@@ -97,154 +250,4 @@ void
 ---
 
 ## Examples
-
-### Update a climate preset
-
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.
-
-{% tabs %}
-{% tab title="JavaScript" %}
-#### Code
-
-```javascript
-await seam.thermostats.updateClimatePreset({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  climate_preset_key: "occupied",
-  cooling_set_point_celsius: 24,
-  manual_override_allowed: true,
-});
-```
-
-#### Output
-
-```javascript
-// void
-```
-{% endtab %}
-
-{% tab title="cURL" %}
-#### Code
-
-```curl
-curl --include --request POST "https://connect.getseam.com/thermostats/update_climate_preset" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "device_id": "123e4567-e89b-12d3-a456-426614174000",
-  "climate_preset_key": "occupied",
-  "cooling_set_point_celsius": 24,
-  "manual_override_allowed": true
-}
-EOF
-```
-
-#### Output
-
-```curl
-{}
-```
-{% endtab %}
-
-{% tab title="Python" %}
-#### Code
-
-```python
-seam.thermostats.update_climate_preset(
-    device_id="123e4567-e89b-12d3-a456-426614174000",
-    climate_preset_key="occupied",
-    cooling_set_point_celsius=24,
-    manual_override_allowed=true,
-)
-```
-
-#### Output
-
-```python
-None
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-#### Code
-
-```ruby
-seam.thermostats.update_climate_preset(
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  climate_preset_key: "occupied",
-  cooling_set_point_celsius: 24,
-  manual_override_allowed: true,
-)
-```
-
-#### Output
-
-```ruby
-nil
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-#### Code
-
-```php
-<?php
-$seam->thermostats->update_climate_preset(
-    device_id: "123e4567-e89b-12d3-a456-426614174000",
-    climate_preset_key: "occupied",
-    cooling_set_point_celsius: 24,
-    manual_override_allowed: true
-);
-```
-
-#### Output
-
-```php
-null
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.UpdateClimatePreset(
-		context.Background(),
-		api.ThermostatsUpdateClimatePresetRequest{
-			DeviceId:               api.String("123e4567-e89b-12d3-a456-426614174000"),
-			ClimatePresetKey:       api.String("occupied"),
-			CoolingSetPointCelsius: api.Float64(24),
-			ManualOverrideAllowed:  api.Bool(true),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam thermostats update-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "occupied" --cooling_set_point_celsius 24 --manual_override_allowed true
-```
-
-#### Output
-
-```seam_cli
-{}
-```
-{% endtab %}
-
-{% endtabs %}
-
 

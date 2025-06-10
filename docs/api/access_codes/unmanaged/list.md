@@ -6,13 +6,6 @@
 
 Returns a list of all [unmanaged access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /access_codes/unmanaged/list ⇒ { access_codes: [unmanaged_access_code, …] }
-```
-{% endtab %}
-{% endtabs %}
 
 <details>
 

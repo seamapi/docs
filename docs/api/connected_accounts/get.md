@@ -6,13 +6,183 @@
 
 Returns a specified [connected account](../../core-concepts/connected-accounts/README.md).
 
+
 {% tabs %}
-{% tab title="Signature" %}
+{% tab title="JavaScript" %}
+#### Code
+
+Specify the `connected_account_id` of the connected account that you want to get.
+
+```javascript
+await seam.connectedAccounts.get({
+  connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c",
+});
 ```
-POST /connected_accounts/get ⇒ { connected_account }
+
+#### Output
+
+```javascript
+[
+  {
+    "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c",
+    "created_at": "2022-08-24T10:38:05.128Z",
+    "account_type": "schlage"
+  }
+]
 ```
 {% endtab %}
+
+{% tab title="cURL" %}
+#### Code
+
+Specify the `connected_account_id` of the connected account that you want to get.
+
+```curl
+curl --include --request POST "https://connect.getseam.com/connected_accounts/get" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "connected_account": [
+    {
+      "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c",
+      "created_at": "2022-08-24T10:38:05.128Z",
+      "account_type": "schlage"
+    }
+  ]
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+#### Code
+
+Specify the `connected_account_id` of the connected account that you want to get.
+
+```python
+seam.connected_accounts.get(connected_account_id="23e4eb21-6e93-48c4-a077-bf503246d47c")
+```
+
+#### Output
+
+```python
+[
+    ConnectedAccount(
+        connected_account_id="23e4eb21-6e93-48c4-a077-bf503246d47c",
+        created_at="2022-08-24T10:38:05.128Z",
+        account_type="schlage",
+    )
+]
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+#### Code
+
+Specify the `connected_account_id` of the connected account that you want to get.
+
+```ruby
+seam.connected_accounts.get(connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c")
+```
+
+#### Output
+
+```ruby
+[
+  {
+    "connected_account_id" => "23e4eb21-6e93-48c4-a077-bf503246d47c",
+    "created_at" => "2022-08-24T10:38:05.128Z",
+    "account_type" => "schlage",
+  },
+]
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+#### Code
+
+Specify the `connected_account_id` of the connected account that you want to get.
+
+```php
+<?php
+$seam->connected_accounts->get(
+    connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c"
+);
+```
+
+#### Output
+
+```php
+<?php
+[
+    [
+        "connected_account_id" => "23e4eb21-6e93-48c4-a077-bf503246d47c",
+        "created_at" => "2022-08-24T10:38:05.128Z",
+        "account_type" => "schlage",
+    ],
+];
+```
+{% endtab %}
+
+{% tab title="Go" %}
+#### Code
+
+Specify the `connected_account_id` of the connected account that you want to get.
+
+```go
+package main
+
+import api "github.com/seamapi/go"
+
+func main() {
+	client.ConnectedAccounts.Get(
+		context.Background(),
+		api.ConnectedAccountsGetRequest{
+			ConnectedAccountId: api.String("23e4eb21-6e93-48c4-a077-bf503246d47c"),
+		},
+	)
+}
+```
+
+#### Output
+
+```go
+[]api.ConnectedAccount{api.ConnectedAccount{ConnectedAccountId: "23e4eb21-6e93-48c4-a077-bf503246d47c", CreatedAt: "2022-08-24T10:38:05.128Z", AccountType: "schlage"}}
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+#### Code
+
+Specify the `connected_account_id` of the connected account that you want to get.
+
+```seam_cli
+seam connected-accounts get --connected_account_id "23e4eb21-6e93-48c4-a077-bf503246d47c"
+```
+
+#### Output
+
+```seam_cli
+[
+  {
+    "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c",
+    "created_at": "2022-08-24T10:38:05.128Z",
+    "account_type": "schlage"
+  }
+]
+```
+{% endtab %}
+
 {% endtabs %}
+
 
 <details>
 
@@ -49,171 +219,4 @@ Email address associated with the connected account that you want to get.
 ---
 
 ## Examples
-
-### Get a connected account
-
-Specify the `connected_account_id` of the connected account that you want to get.
-
-{% tabs %}
-{% tab title="JavaScript" %}
-#### Code
-
-```javascript
-await seam.connectedAccounts.get({
-  connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c",
-});
-```
-
-#### Output
-
-```javascript
-[
-  {
-    "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c",
-    "created_at": "2022-08-24T10:38:05.128Z",
-    "account_type": "schlage"
-  }
-]
-```
-{% endtab %}
-
-{% tab title="cURL" %}
-#### Code
-
-```curl
-curl --include --request POST "https://connect.getseam.com/connected_accounts/get" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c"
-}
-EOF
-```
-
-#### Output
-
-```curl
-{
-  "connected_account": [
-    {
-      "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c",
-      "created_at": "2022-08-24T10:38:05.128Z",
-      "account_type": "schlage"
-    }
-  ]
-}
-```
-{% endtab %}
-
-{% tab title="Python" %}
-#### Code
-
-```python
-seam.connected_accounts.get(connected_account_id="23e4eb21-6e93-48c4-a077-bf503246d47c")
-```
-
-#### Output
-
-```python
-[
-    ConnectedAccount(
-        connected_account_id="23e4eb21-6e93-48c4-a077-bf503246d47c",
-        created_at="2022-08-24T10:38:05.128Z",
-        account_type="schlage",
-    )
-]
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-#### Code
-
-```ruby
-seam.connected_accounts.get(connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c")
-```
-
-#### Output
-
-```ruby
-[
-  {
-    "connected_account_id" => "23e4eb21-6e93-48c4-a077-bf503246d47c",
-    "created_at" => "2022-08-24T10:38:05.128Z",
-    "account_type" => "schlage",
-  },
-]
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-#### Code
-
-```php
-<?php
-$seam->connected_accounts->get(
-    connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c"
-);
-```
-
-#### Output
-
-```php
-<?php
-[
-    [
-        "connected_account_id" => "23e4eb21-6e93-48c4-a077-bf503246d47c",
-        "created_at" => "2022-08-24T10:38:05.128Z",
-        "account_type" => "schlage",
-    ],
-];
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.ConnectedAccounts.Get(
-		context.Background(),
-		api.ConnectedAccountsGetRequest{
-			ConnectedAccountId: api.String("23e4eb21-6e93-48c4-a077-bf503246d47c"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-[]api.ConnectedAccount{api.ConnectedAccount{ConnectedAccountId: "23e4eb21-6e93-48c4-a077-bf503246d47c", CreatedAt: "2022-08-24T10:38:05.128Z", AccountType: "schlage"}}
-```
-{% endtab %}
-
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam connected-accounts get --connected_account_id "23e4eb21-6e93-48c4-a077-bf503246d47c"
-```
-
-#### Output
-
-```seam_cli
-[
-  {
-    "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c",
-    "created_at": "2022-08-24T10:38:05.128Z",
-    "account_type": "schlage"
-  }
-]
-```
-{% endtab %}
-
-{% endtabs %}
-
 

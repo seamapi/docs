@@ -6,49 +6,12 @@
 
 Returns a list of all [user identities](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /user_identities/list ⇒ { user_identities: [user_identity, …] }
-```
-{% endtab %}
-{% endtabs %}
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-</details>
-
-## Request Parameters
-
-**`credential_manager_acs_system_id`** *String*
-
----
-
-
-## Response
-
-Array of [user\_identitys](./)
-
-
----
-
-## Examples
-
-### List user identities
-
-To filter the list of user identities, specify the desired `credential_manager_acs_system_id`.
 
 {% tabs %}
 {% tab title="JavaScript" %}
 #### Code
+
+To filter the list of user identities, specify the desired `credential_manager_acs_system_id`.
 
 ```javascript
 await seam.userIdentities.list();
@@ -74,6 +37,8 @@ await seam.userIdentities.list();
 
 {% tab title="cURL" %}
 #### Code
+
+To filter the list of user identities, specify the desired `credential_manager_acs_system_id`.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/list" \
@@ -103,6 +68,8 @@ curl --include --request POST "https://connect.getseam.com/user_identities/list"
 {% tab title="Python" %}
 #### Code
 
+To filter the list of user identities, specify the desired `credential_manager_acs_system_id`.
+
 ```python
 seam.user_identities.list()
 ```
@@ -128,6 +95,8 @@ seam.user_identities.list()
 {% tab title="Ruby" %}
 #### Code
 
+To filter the list of user identities, specify the desired `credential_manager_acs_system_id`.
+
 ```ruby
 seam.user_identities.list()
 ```
@@ -152,6 +121,8 @@ seam.user_identities.list()
 
 {% tab title="PHP" %}
 #### Code
+
+To filter the list of user identities, specify the desired `credential_manager_acs_system_id`.
 
 ```php
 <?php
@@ -180,6 +151,8 @@ $seam->user_identities->list();
 {% tab title="Go" %}
 #### Code
 
+To filter the list of user identities, specify the desired `credential_manager_acs_system_id`.
+
 ```go
 package main
 
@@ -197,6 +170,8 @@ func main() {
 
 {% tab title="Seam CLI" %}
 #### Code
+
+To filter the list of user identities, specify the desired `credential_manager_acs_system_id`.
 
 ```seam_cli
 seam user-identities list
@@ -222,4 +197,32 @@ seam user-identities list
 
 {% endtabs %}
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`credential_manager_acs_system_id`** *String*
+
+---
+
+
+## Response
+
+Array of [user\_identitys](./)
+
+
+---
+
+## Examples
 
