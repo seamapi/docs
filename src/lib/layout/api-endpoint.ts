@@ -17,12 +17,12 @@ import {
 
 const supportedSdks: SdkName[] = [
   'javascript',
+  'curl',
   'python',
-  'php',
   'ruby',
+  'php',
   'go',
   'seam_cli',
-  'curl',
 ]
 
 export interface ApiEndpointLayoutContext {
