@@ -611,8 +611,8 @@ Seam is in the process of pushing an access group membership update to the integ
   Child Properties
   
   - <strong><code>acs_access_group_id</code></strong> <i>UUID</i>
-  
-    Old access group ID.
+    
+      Old access group ID.
   
   
   ---
@@ -643,8 +643,8 @@ Seam is in the process of pushing an access group membership update to the integ
   Child Properties
   
   - <strong><code>acs_access_group_id</code></strong> <i>UUID</i>
-  
-    New access group ID.
+    
+      New access group ID.
   
   
 </details>
