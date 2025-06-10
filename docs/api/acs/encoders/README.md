@@ -82,7 +82,7 @@ Errors associated with the [encoder](../../../capability-guides/access-systems/w
   <details>
       <summary>Enum values:</summary>
   
-      - <code>acs_encoder_removed`</code>
+      - <code>acs_encoder_removed</code>
   </details>
 
   <strong><code>message</code></strong> <i>String</i>

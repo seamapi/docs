@@ -153,7 +153,7 @@ Warnings associated with the `acs_access_group`.
   <details>
       <summary>Enum values:</summary>
   
-      - <code>unknown_issue_with_acs_access_group`</code>
+      - <code>unknown_issue_with_acs_access_group</code>
   </details>
 </details>
 
