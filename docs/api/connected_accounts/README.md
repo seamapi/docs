@@ -316,21 +316,26 @@ User identifier associated with the connected account.
 <details>
   <summary>Child Properties</summary>
 
-    <strong><code>api_url</code></strong> <i>String</i>
-    
-      API URL for the user identifier associated with the connected account.
-    <strong><code>email</code></strong> <i>String</i>
-    
-      Email address of the user identifier associated with the connected account.
-    <strong><code>exclusive</code></strong> <i>Boolean</i>
-    
-      Indicates whether the user identifier associated with the connected account is exclusive.
-    <strong><code>phone</code></strong> <i>String</i>
-    
-      Phone number of the user identifier associated with the connected account.
-    <strong><code>username</code></strong> <i>String</i>
-    
-      Username of the user identifier associated with the connected account.
+  - <strong><code>api_url</code></strong> <i>String</i>
+
+  API URL for the user identifier associated with the connected account.
+
+  - <strong><code>email</code></strong> <i>String</i>
+
+  Email address of the user identifier associated with the connected account.
+
+  - <strong><code>exclusive</code></strong> <i>Boolean</i>
+
+  Indicates whether the user identifier associated with the connected account is exclusive.
+
+  - <strong><code>phone</code></strong> <i>String</i>
+
+  Phone number of the user identifier associated with the connected account.
+
+  - <strong><code>username</code></strong> <i>String</i>
+
+  Username of the user identifier associated with the connected account.
+
 </details>
 
 ---
