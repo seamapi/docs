@@ -68,6 +68,33 @@ await seam.acs.entrances.get({
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/entrances/get" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_entrance_id": "123e4567-e89b-12d3-a456-426614174000"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "acs_entrance": {
+    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+    "acs_entrance_id": "123e4567-e89b-12d3-a456-426614174000",
+    "created_at": "2024-04-05T07:57:05.323Z",
+    "display_name": "text"
+  }
+}
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -129,25 +156,6 @@ $seam->acs->entrances->get(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam acs entrances get --acs_entrance_id "123e4567-e89b-12d3-a456-426614174000"
-```
-
-#### Output
-
-```seam_cli
-{
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "acs_entrance_id": "123e4567-e89b-12d3-a456-426614174000",
-  "created_at": "2024-04-05T07:57:05.323Z",
-  "display_name": "text"
-}
-```
-{% endtab %}
-
 {% tab title="Go" %}
 #### Code
 
@@ -174,29 +182,21 @@ api.AcsEntrance{AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", AcsEntrance
 ```
 {% endtab %}
 
-{% tab title="cURL" %}
+{% tab title="Seam CLI" %}
 #### Code
 
-```curl
-curl --include --request POST "https://connect.getseam.com/acs/entrances/get" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "acs_entrance_id": "123e4567-e89b-12d3-a456-426614174000"
-}
-EOF
+```seam_cli
+seam acs entrances get --acs_entrance_id "123e4567-e89b-12d3-a456-426614174000"
 ```
 
 #### Output
 
-```curl
+```seam_cli
 {
-  "acs_entrance": {
-    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-    "acs_entrance_id": "123e4567-e89b-12d3-a456-426614174000",
-    "created_at": "2024-04-05T07:57:05.323Z",
-    "display_name": "text"
-  }
+  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+  "acs_entrance_id": "123e4567-e89b-12d3-a456-426614174000",
+  "created_at": "2024-04-05T07:57:05.323Z",
+  "display_name": "text"
 }
 ```
 {% endtab %}

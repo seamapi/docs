@@ -66,6 +66,26 @@ await seam.acs.systems.listCompatibleCredentialManagerAcsSystems({
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/systems/list_compatible_credential_manager_acs_systems" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{ "acs_systems": [{ "acs_system_id": "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }] }
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -116,20 +136,6 @@ $seam->acs->systems->list_compatible_credential_manager_acs_systems(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam acs systems list-compatible-credential-manager-acs-systems --acs_system_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
-```
-
-#### Output
-
-```seam_cli
-[{ "acs_system_id": "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }]
-```
-{% endtab %}
-
 {% tab title="Go" %}
 #### Code
 
@@ -156,23 +162,17 @@ func main() {
 ```
 {% endtab %}
 
-{% tab title="cURL" %}
+{% tab title="Seam CLI" %}
 #### Code
 
-```curl
-curl --include --request POST "https://connect.getseam.com/acs/systems/list_compatible_credential_manager_acs_systems" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
-}
-EOF
+```seam_cli
+seam acs systems list-compatible-credential-manager-acs-systems --acs_system_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
 ```
 
 #### Output
 
-```curl
-{ "acs_systems": [{ "acs_system_id": "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }] }
+```seam_cli
+[{ "acs_system_id": "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4" }]
 ```
 {% endtab %}
 

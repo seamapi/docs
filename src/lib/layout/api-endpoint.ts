@@ -17,12 +17,12 @@ import {
 
 const supportedSdks: SdkName[] = [
   'javascript',
+  'curl',
   'python',
-  'php',
   'ruby',
+  'php',
   'go',
   'seam_cli',
-  'curl',
 ]
 
 export interface ApiEndpointLayoutContext {
@@ -70,14 +70,11 @@ interface ApiEndpointParameter {
 interface CodeSampleContext {
   title: string
   description: string
-  code: Record<
-    string,
-    {
-      title: string
-      request: string
-      response: string
-    }
-  >
+  code: Array<{
+    title: string
+    request: string
+    response: string
+  }>
 }
 
 type PublicSeamAuthMethod = Exclude<SeamAuthMethod, 'console_session_token'>
@@ -198,12 +195,15 @@ const mapBlueprintParamToEndpointParam = (
 }
 
 const mapCodeSample = (sample: CodeSample): CodeSampleContext => {
-  const codeEntries = Object.entries(sample.code).filter(([k]) =>
-    supportedSdks.includes(k as SdkName),
-  )
+  const code = supportedSdks.flatMap((sdkName) => {
+    const code = sample.code[sdkName]
+    if (code == null) return []
+    return [code]
+  })
+
   return {
     title: sample.title,
     description: sample.description,
-    code: Object.fromEntries(codeEntries),
+    code,
   }
 }

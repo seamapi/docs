@@ -114,6 +114,41 @@ await seam.thermostats.schedules.create({
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/thermostats/schedules/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "123e4567-e89b-12d3-a456-426614174000",
+  "name": "Reservation 1",
+  "climate_preset_key": "occupied",
+  "starts_at": "2024-11-01T15:00:00Z",
+  "ends_at": "2024-11-05T12:00:00Z",
+  "max_override_period_minutes": 90
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "thermostat_schedule": {
+    "thermostat_schedule_id": "56d29fcf-0674-4db5-8e03-b2370a77460a",
+    "name": "Reservation 1",
+    "device_id": "2d488679-6f07-4810-aed2-e726872c1dd5",
+    "climate_preset_key": "occupied",
+    "starts_at": "2024-11-01T15:00:00.000Z",
+    "ends_at": "2024-11-05T12:00:00.000Z",
+    "max_override_period_minutes": 90
+  }
+}
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -203,28 +238,6 @@ $seam->thermostats->schedules->create(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam thermostats schedules create --device_id "123e4567-e89b-12d3-a456-426614174000" --name "Reservation 1" --climate_preset_key "occupied" --starts_at "2024-11-01T15:00:00Z" --ends_at "2024-11-05T12:00:00Z" --max_override_period_minutes 90
-```
-
-#### Output
-
-```seam_cli
-{
-  "thermostat_schedule_id": "56d29fcf-0674-4db5-8e03-b2370a77460a",
-  "name": "Reservation 1",
-  "device_id": "2d488679-6f07-4810-aed2-e726872c1dd5",
-  "climate_preset_key": "occupied",
-  "starts_at": "2024-11-01T15:00:00.000Z",
-  "ends_at": "2024-11-05T12:00:00.000Z",
-  "max_override_period_minutes": 90
-}
-```
-{% endtab %}
-
 {% tab title="Go" %}
 #### Code
 
@@ -256,37 +269,24 @@ api.ThermostatSchedule{ThermostatScheduleId: "56d29fcf-0674-4db5-8e03-b2370a7746
 ```
 {% endtab %}
 
-{% tab title="cURL" %}
+{% tab title="Seam CLI" %}
 #### Code
 
-```curl
-curl --include --request POST "https://connect.getseam.com/thermostats/schedules/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "device_id": "123e4567-e89b-12d3-a456-426614174000",
-  "name": "Reservation 1",
-  "climate_preset_key": "occupied",
-  "starts_at": "2024-11-01T15:00:00Z",
-  "ends_at": "2024-11-05T12:00:00Z",
-  "max_override_period_minutes": 90
-}
-EOF
+```seam_cli
+seam thermostats schedules create --device_id "123e4567-e89b-12d3-a456-426614174000" --name "Reservation 1" --climate_preset_key "occupied" --starts_at "2024-11-01T15:00:00Z" --ends_at "2024-11-05T12:00:00Z" --max_override_period_minutes 90
 ```
 
 #### Output
 
-```curl
+```seam_cli
 {
-  "thermostat_schedule": {
-    "thermostat_schedule_id": "56d29fcf-0674-4db5-8e03-b2370a77460a",
-    "name": "Reservation 1",
-    "device_id": "2d488679-6f07-4810-aed2-e726872c1dd5",
-    "climate_preset_key": "occupied",
-    "starts_at": "2024-11-01T15:00:00.000Z",
-    "ends_at": "2024-11-05T12:00:00.000Z",
-    "max_override_period_minutes": 90
-  }
+  "thermostat_schedule_id": "56d29fcf-0674-4db5-8e03-b2370a77460a",
+  "name": "Reservation 1",
+  "device_id": "2d488679-6f07-4810-aed2-e726872c1dd5",
+  "climate_preset_key": "occupied",
+  "starts_at": "2024-11-01T15:00:00.000Z",
+  "ends_at": "2024-11-05T12:00:00.000Z",
+  "max_override_period_minutes": 90
 }
 ```
 {% endtab %}

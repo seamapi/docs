@@ -100,6 +100,35 @@ await seam.thermostats.setHvacMode({
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/thermostats/set_hvac_mode" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "123e4567-e89b-12d3-a456-426614174000",
+  "hvac_mode_setting": "heat_cool",
+  "heating_set_point_celsius": 20,
+  "cooling_set_point_celsius": 25
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "action_attempt": {
+    "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
+    "status": "success",
+    "action_type": "SET_HVAC_MODE"
+  }
+}
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -171,24 +200,6 @@ $seam->thermostats->set_hvac_mode(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam thermostats set-hvac-mode --device_id "123e4567-e89b-12d3-a456-426614174000" --hvac_mode_setting "heat_cool" --heating_set_point_celsius 20 --cooling_set_point_celsius 25
-```
-
-#### Output
-
-```seam_cli
-{
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "success",
-  "action_type": "SET_HVAC_MODE"
-}
-```
-{% endtab %}
-
 {% tab title="Go" %}
 #### Code
 
@@ -217,31 +228,20 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 ```
 {% endtab %}
 
-{% tab title="cURL" %}
+{% tab title="Seam CLI" %}
 #### Code
 
-```curl
-curl --include --request POST "https://connect.getseam.com/thermostats/set_hvac_mode" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "device_id": "123e4567-e89b-12d3-a456-426614174000",
-  "hvac_mode_setting": "heat_cool",
-  "heating_set_point_celsius": 20,
-  "cooling_set_point_celsius": 25
-}
-EOF
+```seam_cli
+seam thermostats set-hvac-mode --device_id "123e4567-e89b-12d3-a456-426614174000" --hvac_mode_setting "heat_cool" --heating_set_point_celsius 20 --cooling_set_point_celsius 25
 ```
 
 #### Output
 
-```curl
+```seam_cli
 {
-  "action_attempt": {
-    "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-    "status": "success",
-    "action_type": "SET_HVAC_MODE"
-  }
+  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
+  "status": "success",
+  "action_type": "SET_HVAC_MODE"
 }
 ```
 {% endtab %}

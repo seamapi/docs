@@ -95,6 +95,34 @@ await seam.connectedAccounts.list();
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/connected_accounts/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{
+  "connected_accounts": [
+    {
+      "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c",
+      "created_at": "2022-08-24T10:38:05.128Z",
+      "account_type": "schlage"
+    },
+    {
+      "connected_account_id": "dc0df710-376c-4ec3-9b2b-2b7f788bdfa8",
+      "created_at": "2022-07-04T08:40:02.110Z",
+      "account_type": "kwikset"
+    }
+  ]
+}
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -172,6 +200,24 @@ $seam->connected_accounts->list();
 ```
 {% endtab %}
 
+{% tab title="Go" %}
+#### Code
+
+```go
+package main
+
+func main() {
+	client.ConnectedAccounts.List(context.Background())
+}
+```
+
+#### Output
+
+```go
+[]api.ConnectedAccount{api.ConnectedAccount{ConnectedAccountId: "23e4eb21-6e93-48c4-a077-bf503246d47c", CreatedAt: "2022-08-24T10:38:05.128Z", AccountType: "schlage"}, api.ConnectedAccount{ConnectedAccountId: "dc0df710-376c-4ec3-9b2b-2b7f788bdfa8", CreatedAt: "2022-07-04T08:40:02.110Z", AccountType: "kwikset"}}
+```
+{% endtab %}
+
 {% tab title="Seam CLI" %}
 #### Code
 
@@ -194,52 +240,6 @@ seam connected-accounts list
     "account_type": "kwikset"
   }
 ]
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Code
-
-```go
-package main
-
-func main() {
-	client.ConnectedAccounts.List(context.Background())
-}
-```
-
-#### Output
-
-```go
-[]api.ConnectedAccount{api.ConnectedAccount{ConnectedAccountId: "23e4eb21-6e93-48c4-a077-bf503246d47c", CreatedAt: "2022-08-24T10:38:05.128Z", AccountType: "schlage"}, api.ConnectedAccount{ConnectedAccountId: "dc0df710-376c-4ec3-9b2b-2b7f788bdfa8", CreatedAt: "2022-07-04T08:40:02.110Z", AccountType: "kwikset"}}
-```
-{% endtab %}
-
-{% tab title="cURL" %}
-#### Code
-
-```curl
-curl --include --request POST "https://connect.getseam.com/connected_accounts/list" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
-```
-
-#### Output
-
-```curl
-{
-  "connected_accounts": [
-    {
-      "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c",
-      "created_at": "2022-08-24T10:38:05.128Z",
-      "account_type": "schlage"
-    },
-    {
-      "connected_account_id": "dc0df710-376c-4ec3-9b2b-2b7f788bdfa8",
-      "created_at": "2022-07-04T08:40:02.110Z",
-      "account_type": "kwikset"
-    }
-  ]
-}
 ```
 {% endtab %}
 

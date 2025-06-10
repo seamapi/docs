@@ -75,6 +75,33 @@ await seam.thermostats.activateClimatePreset({
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/thermostats/activate_climate_preset" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "123e4567-e89b-12d3-a456-426614174000",
+  "climate_preset_key": "occupied"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "action_attempt": {
+    "action_attempt_id": "05de2295-d1dc-4748-aae3-9931658bde20",
+    "status": "pending",
+    "action_type": "ACTIVATE_CLIMATE_PRESET"
+  }
+}
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -139,24 +166,6 @@ $seam->thermostats->activate_climate_preset(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam thermostats activate-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "occupied"
-```
-
-#### Output
-
-```seam_cli
-{
-  "action_attempt_id": "05de2295-d1dc-4748-aae3-9931658bde20",
-  "status": "pending",
-  "action_type": "ACTIVATE_CLIMATE_PRESET"
-}
-```
-{% endtab %}
-
 {% tab title="Go" %}
 #### Code
 
@@ -183,29 +192,20 @@ api.ActionAttempt{ActionAttemptId: "05de2295-d1dc-4748-aae3-9931658bde20", Statu
 ```
 {% endtab %}
 
-{% tab title="cURL" %}
+{% tab title="Seam CLI" %}
 #### Code
 
-```curl
-curl --include --request POST "https://connect.getseam.com/thermostats/activate_climate_preset" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "device_id": "123e4567-e89b-12d3-a456-426614174000",
-  "climate_preset_key": "occupied"
-}
-EOF
+```seam_cli
+seam thermostats activate-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "occupied"
 ```
 
 #### Output
 
-```curl
+```seam_cli
 {
-  "action_attempt": {
-    "action_attempt_id": "05de2295-d1dc-4748-aae3-9931658bde20",
-    "status": "pending",
-    "action_type": "ACTIVATE_CLIMATE_PRESET"
-  }
+  "action_attempt_id": "05de2295-d1dc-4748-aae3-9931658bde20",
+  "status": "pending",
+  "action_type": "ACTIVATE_CLIMATE_PRESET"
 }
 ```
 {% endtab %}

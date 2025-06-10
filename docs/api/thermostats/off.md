@@ -69,6 +69,32 @@ await seam.thermostats.off({
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/thermostats/off" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "123e4567-e89b-12d3-a456-426614174000"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "action_attempt": {
+    "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
+    "status": "pending",
+    "action_type": "SET_THERMOSTAT_OFF"
+  }
+}
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -125,24 +151,6 @@ $seam->thermostats->off(device_id: "123e4567-e89b-12d3-a456-426614174000");
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam thermostats off --device_id "123e4567-e89b-12d3-a456-426614174000"
-```
-
-#### Output
-
-```seam_cli
-{
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "pending",
-  "action_type": "SET_THERMOSTAT_OFF"
-}
-```
-{% endtab %}
-
 {% tab title="Go" %}
 #### Code
 
@@ -168,28 +176,20 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 ```
 {% endtab %}
 
-{% tab title="cURL" %}
+{% tab title="Seam CLI" %}
 #### Code
 
-```curl
-curl --include --request POST "https://connect.getseam.com/thermostats/off" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "device_id": "123e4567-e89b-12d3-a456-426614174000"
-}
-EOF
+```seam_cli
+seam thermostats off --device_id "123e4567-e89b-12d3-a456-426614174000"
 ```
 
 #### Output
 
-```curl
+```seam_cli
 {
-  "action_attempt": {
-    "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-    "status": "pending",
-    "action_type": "SET_THERMOSTAT_OFF"
-  }
+  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
+  "status": "pending",
+  "action_type": "SET_THERMOSTAT_OFF"
 }
 ```
 {% endtab %}

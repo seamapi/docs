@@ -114,6 +114,32 @@ await seam.acs.users.list();
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{
+  "acs_users": {
+    "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
+    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
+    "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
+    "created_at": "2024-04-05T07:57:05.323Z",
+    "display_name": "Jane Doe",
+    "full_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "phone_number": "+15555550100"
+  }
+}
+```
+{% endtab %}
+
 {% tab title="Python" %}
 #### Code
 
@@ -185,6 +211,24 @@ $seam->acs->users->list();
 ```
 {% endtab %}
 
+{% tab title="Go" %}
+#### Code
+
+```go
+package main
+
+func main() {
+	client.Acs.Users.List(context.Background())
+}
+```
+
+#### Output
+
+```go
+api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "Jane Doe", FullName: "Jane Doe", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100"}
+```
+{% endtab %}
+
 {% tab title="Seam CLI" %}
 #### Code
 
@@ -204,50 +248,6 @@ seam acs users list
   "full_name": "Jane Doe",
   "email_address": "jane@example.com",
   "phone_number": "+15555550100"
-}
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Code
-
-```go
-package main
-
-func main() {
-	client.Acs.Users.List(context.Background())
-}
-```
-
-#### Output
-
-```go
-api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "Jane Doe", FullName: "Jane Doe", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100"}
-```
-{% endtab %}
-
-{% tab title="cURL" %}
-#### Code
-
-```curl
-curl --include --request POST "https://connect.getseam.com/acs/users/list" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
-```
-
-#### Output
-
-```curl
-{
-  "acs_users": {
-    "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-    "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-    "created_at": "2024-04-05T07:57:05.323Z",
-    "display_name": "Jane Doe",
-    "full_name": "Jane Doe",
-    "email_address": "jane@example.com",
-    "phone_number": "+15555550100"
-  }
 }
 ```
 {% endtab %}
