@@ -43,14 +43,8 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
 <details>
   <summary>Child Properties</summary>
 
-  <ul>
-  <li>
     <strong><code>door_name</code></strong> <i>String</i>
-  </li>
-  <li>
     <strong><code>door_number</code></strong> <i>Number</i>
-  </li>
-  <li>
     <strong><code>door_type</code></strong> <i>Enum</i>
     <details>
         <summary>Enum values:</summary>
@@ -60,14 +54,8 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
         - <code>GuestDoor`</code>
         - <code>Elevator`</code>
     </details>
-  </li>
-  <li>
     <strong><code>pms_id</code></strong> <i>String</i>
-  </li>
-  <li>
     <strong><code>stand_open</code></strong> <i>Boolean</i>
-  </li>
-  </ul>
 </details>
 
 ---
@@ -99,11 +87,7 @@ dormakaba Community-specific metadata associated with the [entrance](../../../ca
 <details>
   <summary>Child Properties</summary>
 
-  <ul>
-  <li>
     <strong><code>access_point_name</code></strong> <i>String</i>
-  </li>
-  </ul>
 </details>
 
 ---
@@ -137,20 +121,10 @@ Latch-specific metadata associated with the [entrance](../../../capability-guide
 <details>
   <summary>Child Properties</summary>
 
-  <ul>
-  <li>
     <strong><code>accessibility_type</code></strong> <i>String</i>
-  </li>
-  <li>
     <strong><code>door_name</code></strong> <i>String</i>
-  </li>
-  <li>
     <strong><code>door_type</code></strong> <i>String</i>
-  </li>
-  <li>
     <strong><code>is_connected</code></strong> <i>Boolean</i>
-  </li>
-  </ul>
 </details>
 
 ---
@@ -164,32 +138,14 @@ Salto KS-specific metadata associated with the [entrance](../../../capability-gu
 <details>
   <summary>Child Properties</summary>
 
-  <ul>
-  <li>
     <strong><code>battery_level</code></strong> <i>String</i>
-  </li>
-  <li>
     <strong><code>door_name</code></strong> <i>String</i>
-  </li>
-  <li>
     <strong><code>intrusion_alarm</code></strong> <i>Boolean</i>
-  </li>
-  <li>
     <strong><code>left_open_alarm</code></strong> <i>Boolean</i>
-  </li>
-  <li>
     <strong><code>lock_type</code></strong> <i>String</i>
-  </li>
-  <li>
     <strong><code>locked_state</code></strong> <i>String</i>
-  </li>
-  <li>
     <strong><code>online</code></strong> <i>Boolean</i>
-  </li>
-  <li>
     <strong><code>privacy_mode</code></strong> <i>Boolean</i>
-  </li>
-  </ul>
 </details>
 
 ---
@@ -203,17 +159,9 @@ Salto Space-specific metadata associated with the [entrance](../../../capability
 <details>
   <summary>Child Properties</summary>
 
-  <ul>
-  <li>
     <strong><code>door_description</code></strong> <i>String</i>
-  </li>
-  <li>
     <strong><code>door_name</code></strong> <i>String</i>
-  </li>
-  <li>
     <strong><code>ext_door_id</code></strong> <i>String</i>
-  </li>
-  </ul>
 </details>
 
 ---
@@ -227,8 +175,6 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 <details>
   <summary>Child Properties</summary>
 
-  <ul>
-  <li>
     <strong><code>door_category</code></strong> <i>Enum</i>
     <details>
         <summary>Enum values:</summary>
@@ -239,11 +185,7 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
         - <code>common`</code>
         - <code>common (PMS)`</code>
     </details>
-  </li>
-  <li>
     <strong><code>door_name</code></strong> <i>String</i>
-  </li>
-  <li>
     <strong><code>profiles</code></strong> <i>List</i> <i>of Objects</i>
     
     - <strong><code>visionline_door_profile_id</code></strong> <i>String</i>
@@ -258,8 +200,6 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
         - <code>touch`</code>
     </details>
     
-  </li>
-  </ul>
 </details>
 
 ---

@@ -78,26 +78,12 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
 <details>
   <summary>Child Properties</summary>
 
-  <ul>
-  <li>
     <strong><code>auto_join</code></strong> <i>Boolean</i>
-  </li>
-  <li>
     <strong><code>door_names</code></strong> <i>List</i> <i>of Strings</i>
-  </li>
-  <li>
     <strong><code>endpoint_id</code></strong> <i>String</i>
-  </li>
-  <li>
     <strong><code>key_id</code></strong> <i>String</i>
-  </li>
-  <li>
     <strong><code>key_issuing_request_id</code></strong> <i>String</i>
-  </li>
-  <li>
     <strong><code>override_guest_acs_entrance_ids</code></strong> <i>List</i> <i>of Strings</i>
-  </li>
-  </ul>
 </details>
 
 ---
@@ -282,11 +268,7 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
 <details>
   <summary>Child Properties</summary>
 
-  <ul>
-  <li>
     <strong><code>auto_join</code></strong> <i>Boolean</i>
-  </li>
-  <li>
     <strong><code>card_function_type</code></strong> <i>Enum</i>
     <details>
         <summary>Enum values:</summary>
@@ -294,26 +276,12 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
         - <code>guest`</code>
         - <code>staff`</code>
     </details>
-  </li>
-  <li>
     <strong><code>card_id</code></strong> <i>String</i>
-  </li>
-  <li>
     <strong><code>common_acs_entrance_ids</code></strong> <i>List</i> <i>of UUIDs</i>
-  </li>
-  <li>
     <strong><code>credential_id</code></strong> <i>String</i>
-  </li>
-  <li>
     <strong><code>guest_acs_entrance_ids</code></strong> <i>List</i> <i>of UUIDs</i>
-  </li>
-  <li>
     <strong><code>is_valid</code></strong> <i>Boolean</i>
-  </li>
-  <li>
     <strong><code>joiner_acs_credential_ids</code></strong> <i>List</i> <i>of UUIDs</i>
-  </li>
-  </ul>
 </details>
 
 ---
