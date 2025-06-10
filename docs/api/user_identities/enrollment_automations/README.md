@@ -71,28 +71,28 @@ An [enrollment automation](../../../capability-guides/mobile-access/issuing-mobi
 <summary>Properties</summary>
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event was created.
+
+  Date and time at which the event was created.
 
 <strong><code>enrollment_automation_id</code></strong> <i>UUID</i>
-  
-    ID of the affected enrollment automation.
+
+  ID of the affected enrollment automation.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-  
-    ID of the event.
+
+  ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-  
-    Value: `enrollment_automation.deleted`
+
+  Value: `enrollment_automation.deleted`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event occurred.
+
+  Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-  
-    ID of the workspace associated with the event.
+
+  ID of the workspace associated with the event.
 </details>
 
 ---

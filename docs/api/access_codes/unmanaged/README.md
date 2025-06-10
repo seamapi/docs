@@ -2415,36 +2415,36 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 <summary>Properties</summary>
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
-  
-    ID of the affected access code.
+
+  ID of the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-  
-    ID of the connected account associated with the affected access codes.
+
+  ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event was created.
+
+  Date and time at which the event was created.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
-  
-    ID of the device associated with the affected access code.
+
+  ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-  
-    ID of the event.
+
+  ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-  
-    Value: `access_code.unmanaged.converted_to_managed`
+
+  Value: `access_code.unmanaged.converted_to_managed`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event occurred.
+
+  Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-  
-    ID of the workspace associated with the event.
+
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2458,36 +2458,36 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 <summary>Properties</summary>
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
-  
-    ID of the affected access code.
+
+  ID of the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-  
-    ID of the connected account associated with the affected access codes.
+
+  ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event was created.
+
+  Date and time at which the event was created.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
-  
-    ID of the device associated with the affected access code.
+
+  ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-  
-    ID of the event.
+
+  ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-  
-    Value: `access_code.unmanaged.failed_to_convert_to_managed`
+
+  Value: `access_code.unmanaged.failed_to_convert_to_managed`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event occurred.
+
+  Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-  
-    ID of the workspace associated with the event.
+
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2501,36 +2501,36 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 <summary>Properties</summary>
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
-  
-    ID of the affected access code.
+
+  ID of the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-  
-    ID of the connected account associated with the affected access codes.
+
+  ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event was created.
+
+  Date and time at which the event was created.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
-  
-    ID of the device associated with the affected access code.
+
+  ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-  
-    ID of the event.
+
+  ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-  
-    Value: `access_code.unmanaged.created`
+
+  Value: `access_code.unmanaged.created`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event occurred.
+
+  Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-  
-    ID of the workspace associated with the event.
+
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2544,36 +2544,36 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 <summary>Properties</summary>
 
 <strong><code>access_code_id</code></strong> <i>UUID</i>
-  
-    ID of the affected access code.
+
+  ID of the affected access code.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-  
-    ID of the connected account associated with the affected access codes.
+
+  ID of the connected account associated with the affected access codes.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event was created.
+
+  Date and time at which the event was created.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
-  
-    ID of the device associated with the affected access code.
+
+  ID of the device associated with the affected access code.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-  
-    ID of the event.
+
+  ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-  
-    Value: `access_code.unmanaged.removed`
+
+  Value: `access_code.unmanaged.removed`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event occurred.
+
+  Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-  
-    ID of the workspace associated with the event.
+
+  ID of the workspace associated with the event.
 </details>
 
 ---

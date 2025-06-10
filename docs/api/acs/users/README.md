@@ -28,12 +28,12 @@ For details about how to configure `acs_user`s in your access control system, se
   <summary>Child Properties</summary>
 
   - <strong><code>ends_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+
+  Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
   - <strong><code>starts_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+
+  Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 </details>
 
@@ -611,8 +611,8 @@ Seam is in the process of pushing an access group membership update to the integ
   Child Properties
   
   - <strong><code>acs_access_group_id</code></strong> <i>UUID</i>
-    
-      Old access group ID.
+  
+    Old access group ID.
   
   
   ---
@@ -643,8 +643,8 @@ Seam is in the process of pushing an access group membership update to the integ
   Child Properties
   
   - <strong><code>acs_access_group_id</code></strong> <i>UUID</i>
-    
-      New access group ID.
+  
+    New access group ID.
   
   
 </details>
@@ -916,34 +916,34 @@ An [access system user](https://docs.seam.co/latest/capability-guides/access-sys
 <summary>Properties</summary>
 
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
-  
-    ID of the access system.
+
+  ID of the access system.
 
 <strong><code>acs_user_id</code></strong> <i>UUID</i>
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-  
-    ID of the connected account.
+
+  ID of the connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event was created.
+
+  Date and time at which the event was created.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-  
-    ID of the event.
+
+  ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-  
-    Value: `acs_user.created`
+
+  Value: `acs_user.created`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event occurred.
+
+  Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-  
-    ID of the workspace associated with the event.
+
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -957,34 +957,34 @@ An [access system user](https://docs.seam.co/latest/capability-guides/access-sys
 <summary>Properties</summary>
 
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
-  
-    ID of the access system.
+
+  ID of the access system.
 
 <strong><code>acs_user_id</code></strong> <i>UUID</i>
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-  
-    ID of the connected account.
+
+  ID of the connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event was created.
+
+  Date and time at which the event was created.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-  
-    ID of the event.
+
+  ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-  
-    Value: `acs_user.deleted`
+
+  Value: `acs_user.deleted`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event occurred.
+
+  Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-  
-    ID of the workspace associated with the event.
+
+  ID of the workspace associated with the event.
 </details>
 
 ---

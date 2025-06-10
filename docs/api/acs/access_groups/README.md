@@ -140,21 +140,21 @@ Warnings associated with the `acs_access_group`.
   <summary>Child Object Properties</summary>
 
   <strong><code>created_at</code></strong> <i>Datetime</i>
-    
-      Date and time at which Seam created the warning.
+  
+    Date and time at which Seam created the warning.
 
   <strong><code>message</code></strong> <i>String</i>
-    
-      Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+    Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
 
   <strong><code>warning_code</code></strong> <i>Enum</i>
-    
-      Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-    <details>
-        <summary>Enum values:</summary>
-    
-        - <code>unknown_issue_with_acs_access_group`</code>
-    </details>
+  
+    Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  <details>
+      <summary>Enum values:</summary>
+  
+      - <code>unknown_issue_with_acs_access_group`</code>
+  </details>
 </details>
 
 ---
@@ -180,36 +180,36 @@ An ACS access group was deleted.
 <summary>Properties</summary>
 
 <strong><code>acs_access_group_id</code></strong> <i>UUID</i>
-  
-    ID of the affected access group.
+
+  ID of the affected access group.
 
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
-  
-    ID of the access system.
+
+  ID of the access system.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-  
-    ID of the connected account.
+
+  ID of the connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event was created.
+
+  Date and time at which the event was created.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-  
-    ID of the event.
+
+  ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-  
-    Value: `acs_access_group.deleted`
+
+  Value: `acs_access_group.deleted`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event occurred.
+
+  Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-  
-    ID of the workspace associated with the event.
+
+  ID of the workspace associated with the event.
 </details>
 
 ---

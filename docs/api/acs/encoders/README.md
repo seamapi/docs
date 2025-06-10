@@ -73,21 +73,21 @@ Errors associated with the [encoder](../../../capability-guides/access-systems/w
   <summary>Child Object Properties</summary>
 
   <strong><code>created_at</code></strong> <i>Datetime</i>
-    
-      Date and time at which Seam created the error.
+  
+    Date and time at which Seam created the error.
 
   <strong><code>error_code</code></strong> <i>Enum</i>
-    
-      Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-    <details>
-        <summary>Enum values:</summary>
-    
-        - <code>acs_encoder_removed`</code>
-    </details>
+  
+    Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  <details>
+      <summary>Enum values:</summary>
+  
+      - <code>acs_encoder_removed`</code>
+  </details>
 
   <strong><code>message</code></strong> <i>String</i>
-    
-      Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+    Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 </details>
 
 ---
@@ -113,36 +113,36 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 <summary>Properties</summary>
 
 <strong><code>acs_encoder_id</code></strong> <i>UUID</i>
-  
-    ID of the affected encoder.
+
+  ID of the affected encoder.
 
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
-  
-    ID of the access system.
+
+  ID of the access system.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-  
-    ID of the connected account.
+
+  ID of the connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event was created.
+
+  Date and time at which the event was created.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-  
-    ID of the event.
+
+  ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-  
-    Value: `acs_encoder.added`
+
+  Value: `acs_encoder.added`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event occurred.
+
+  Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-  
-    ID of the workspace associated with the event.
+
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -156,36 +156,36 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 <summary>Properties</summary>
 
 <strong><code>acs_encoder_id</code></strong> <i>UUID</i>
-  
-    ID of the affected encoder.
+
+  ID of the affected encoder.
 
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
-  
-    ID of the access system.
+
+  ID of the access system.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-  
-    ID of the connected account.
+
+  ID of the connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event was created.
+
+  Date and time at which the event was created.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-  
-    ID of the event.
+
+  ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-  
-    Value: `acs_encoder.removed`
+
+  Value: `acs_encoder.removed`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event occurred.
+
+  Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-  
-    ID of the workspace associated with the event.
+
+  ID of the workspace associated with the event.
 </details>
 
 ---

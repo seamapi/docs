@@ -277,12 +277,12 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
   - <strong><code>auto_join</code></strong> <i>Boolean</i>
 
   - <strong><code>card_function_type</code></strong> <i>Enum</i>
-  <details>
-      <summary>Enum values:</summary>
-  
-      - <code>guest`</code>
-      - <code>staff`</code>
-  </details>
+<details>
+    <summary>Enum values:</summary>
+
+    - <code>guest`</code>
+    - <code>staff`</code>
+</details>
 
   - <strong><code>card_id</code></strong> <i>String</i>
 
@@ -565,36 +565,36 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 <summary>Properties</summary>
 
 <strong><code>acs_credential_id</code></strong> <i>UUID</i>
-  
-    ID of the affected credential.
+
+  ID of the affected credential.
 
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
-  
-    ID of the access system.
+
+  ID of the access system.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-  
-    ID of the connected account.
+
+  ID of the connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event was created.
+
+  Date and time at which the event was created.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-  
-    ID of the event.
+
+  ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-  
-    Value: `acs_credential.deleted`
+
+  Value: `acs_credential.deleted`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event occurred.
+
+  Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-  
-    ID of the workspace associated with the event.
+
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -608,36 +608,36 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 <summary>Properties</summary>
 
 <strong><code>acs_credential_id</code></strong> <i>UUID</i>
-  
-    ID of the affected credential.
+
+  ID of the affected credential.
 
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
-  
-    ID of the access system.
+
+  ID of the access system.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-  
-    ID of the connected account.
+
+  ID of the connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event was created.
+
+  Date and time at which the event was created.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-  
-    ID of the event.
+
+  ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-  
-    Value: `acs_credential.issued`
+
+  Value: `acs_credential.issued`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event occurred.
+
+  Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-  
-    ID of the workspace associated with the event.
+
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -651,36 +651,36 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 <summary>Properties</summary>
 
 <strong><code>acs_credential_id</code></strong> <i>UUID</i>
-  
-    ID of the affected credential.
+
+  ID of the affected credential.
 
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
-  
-    ID of the access system.
+
+  ID of the access system.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-  
-    ID of the connected account.
+
+  ID of the connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event was created.
+
+  Date and time at which the event was created.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-  
-    ID of the event.
+
+  ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-  
-    Value: `acs_credential.reissued`
+
+  Value: `acs_credential.reissued`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event occurred.
+
+  Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-  
-    ID of the workspace associated with the event.
+
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -694,36 +694,36 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 <summary>Properties</summary>
 
 <strong><code>acs_credential_id</code></strong> <i>UUID</i>
-  
-    ID of the affected credential.
+
+  ID of the affected credential.
 
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
-  
-    ID of the access system.
+
+  ID of the access system.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
-  
-    ID of the connected account.
+
+  ID of the connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event was created.
+
+  Date and time at which the event was created.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
-  
-    ID of the event.
+
+  ID of the event.
 
 <strong><code>event_type</code></strong> <i>Enum</i>
-  
-    Value: `acs_credential.invalidated`
+
+  Value: `acs_credential.invalidated`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the event occurred.
+
+  Date and time at which the event occurred.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
-  
-    ID of the workspace associated with the event.
+
+  ID of the workspace associated with the event.
 </details>
 
 ---
