@@ -1,5 +1,6 @@
 # List Enrollment Automations
 
+
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

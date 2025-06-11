@@ -1,5 +1,6 @@
 # Temperature Reached
 
+
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

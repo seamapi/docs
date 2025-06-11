@@ -1,5 +1,6 @@
 # Remove an ACS User from an Access Group
 
+
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

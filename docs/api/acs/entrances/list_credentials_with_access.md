@@ -1,5 +1,6 @@
 # List Credentials with Access to an Entrance
 
+
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

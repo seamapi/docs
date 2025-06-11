@@ -1,5 +1,6 @@
 # Encode an Access Method
 
+
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

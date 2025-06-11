@@ -1,5 +1,6 @@
 # List Accessible Devices for a User Identity
 
+
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

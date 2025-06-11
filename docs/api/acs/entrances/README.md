@@ -1,5 +1,6 @@
 # Entrances
 
+
 ## The acs_entrance Object
 
 - [Properties](./#properties)

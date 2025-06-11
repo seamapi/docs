@@ -1,5 +1,6 @@
 # Connected Accounts
 
+
 ## The connected_account Object
 
 - [Properties](./#properties)

@@ -1,5 +1,6 @@
 # Get an Entrance
 
+
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

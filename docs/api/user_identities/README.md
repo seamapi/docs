@@ -1,5 +1,6 @@
 # User Identities
 
+
 ## The user_identity Object
 
 - [Properties](./#properties)

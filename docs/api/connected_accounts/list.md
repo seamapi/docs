@@ -1,5 +1,6 @@
 # List Connected Accounts
 
+
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

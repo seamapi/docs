@@ -4,6 +4,7 @@ description: Systems for managing and monitoring access to physical spaces
 
 # Access Control Systems (ACS)
 
+
 Access control systems centralize access authorization for buildings, which means that you can use a single system to grant users access to one or more entrances. An access control system manages the following elements:
 
 - Who has access
