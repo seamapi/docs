@@ -7,6 +7,7 @@ export const PathMetadataSchema = z.record(
     resources: z.array(z.string()).default([]),
     description: z.string().trim().min(1).optional(),
     overview: z.string().trim().min(1).optional(),
+    alpha: z.string().trim().min(1).optional(),
   }),
 )
 

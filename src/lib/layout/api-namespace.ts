@@ -6,6 +6,8 @@ export interface ApiNamespaceLayoutContext {
   title: string
   description: string
   overview: string
+  isAlpha: boolean
+  alphaMessage: string | undefined
   resources: Array<{
     name: string
     description: string
@@ -19,14 +21,16 @@ export function setNamespaceLayoutContext(
   resources: Resource[],
   pathMetadata: PathMetadata,
 ): void {
-  const namespaceMetadata = pathMetadata[namespace]
-  if (namespaceMetadata == null) {
+  const metadata = pathMetadata[namespace]
+  if (metadata == null) {
     throw new Error(`Namespace metadata for ${namespace} not found`)
   }
 
-  file.title = namespaceMetadata.title
-  file.description = namespaceMetadata.description ?? ''
-  file.overview = namespaceMetadata.overview ?? ''
+  file.title = metadata.title
+  file.description = metadata.description ?? ''
+  file.overview = metadata.overview ?? ''
+  file.isAlpha = (metadata.alpha ?? '').length > 0
+  file.alphaMessage = metadata.alpha
 
   const namespaceRoutes = Object.entries(pathMetadata).filter(([p]) =>
     p.startsWith(namespace),
