@@ -74,7 +74,7 @@
   * [Update a Connected Account](api/connected_accounts/update.md)
 * [Phones](api/phones/README.md)
   * [Deactivate a Phone](api/phones/deactivate.md)
-  * [Get Phone](api/phones/get.md)
+  * [Get a Phone](api/phones/get.md)
   * [List Phones](api/phones/list.md)
   * [Phone Simulations](api/phones/simulate/README.md)
     * [Create a Sandbox Phone](api/phones/simulate/create_sandbox_phone.md)

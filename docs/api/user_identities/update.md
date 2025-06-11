@@ -4,7 +4,7 @@
 - [Response](./#response)
 - [Examples](./#examples)
 
-
+Updates a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 
 <details>
@@ -22,7 +22,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`user_identity_id`** *String* (Required)
 
-ID of the user identity.
+ID of the user identity that you want to update.
 
 ---
 
@@ -34,11 +34,13 @@ Unique email address for the user identity.
 
 **`full_name`** *String*
 
+Full name of the user associated with the user identity.
+
 ---
 
 **`phone_number`** *String*
 
-Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).
+Unique phone number for the user identity.
 
 ---
 

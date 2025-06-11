@@ -179,7 +179,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`thermostat_schedule_id`** *String* (Required)
 
-ID of the desired thermostat schedule.
+ID of the thermostat schedule that you want to update.
 
 ---
 
@@ -209,7 +209,7 @@ Number of minutes for which a person at the thermostat or using the API can chan
 
 **`name`** *String*
 
-User-friendly name to identify the thermostat schedule.
+Name of the thermostat schedule.
 
 ---
 

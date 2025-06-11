@@ -22,37 +22,37 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`device_id`** *String* (Required)
 
-ID of the desired thermostat device.
+ID of the thermostat device for which you want to simulate having adjusted the HVAC mode.
 
 ---
 
 **`hvac_mode`** *String* (Required)
 
-Desired [HVAC mode](../../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) to simulate.
+HVAC mode that you want to simulate.
 
 ---
 
 **`cooling_set_point_celsius`** *Number*
 
-Desired simulated cooling [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`.
+Cooling [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C that you want to simulate. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`.
 
 ---
 
 **`cooling_set_point_fahrenheit`** *Number*
 
-Desired simulated cooling [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`.
+Cooling [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F that you want to simulate. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`.
 
 ---
 
 **`heating_set_point_celsius`** *Number*
 
-Desired simulated heating [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`.
+Heating [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C that you want to simulate. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`.
 
 ---
 
 **`heating_set_point_fahrenheit`** *Number*
 
-Desired simulated heating [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`.
+Heating [set point](../../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F that you want to simulate. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`.
 
 ---
 
