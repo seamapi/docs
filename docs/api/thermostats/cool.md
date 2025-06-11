@@ -1,6 +1,6 @@
 # Set to Cool Mode
 {% hint style="info" %}
-**Alpha**. This API is in Alpha, please give us feedback.
+This API is in Alpha, please give us feedback.
 {% endhint %}
 
 - [Request Parameters](./#request-parameters)
