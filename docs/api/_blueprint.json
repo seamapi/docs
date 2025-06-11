@@ -4,12 +4,13 @@
     {
       "path": "/access_codes",
       "name": "access_codes",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Create an Access Code",
           "name": "create",
           "path": "/access_codes/create",
+          "parentPath": "/access_codes",
           "description": "Creates a new [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -329,6 +330,7 @@
           "title": "Create Multiple Linked Access Codes",
           "name": "create_multiple",
           "path": "/access_codes/create_multiple",
+          "parentPath": "/access_codes",
           "description": "Creates new [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that share a common code across multiple devices.\n\nUsers with more than one door lock in a property may want to create groups of linked access codes, all of which have the same code (PIN). For example, a short-term rental host may want to provide guests the same PIN for both a front door lock and a back door lock.\n\nIf you specify a custom code, Seam assigns this custom code to each of the resulting access codes. However, in this case, Seam does not link these access codes together with a `common_code_key`. That is, `common_code_key` remains null for these access codes.\n\nIf you want to change these access codes that are not linked by a `common_code_key`, you cannot use `/access_codes/update_multiple`. However, you can update each of these access codes individually, using `/access_codes/update`.\n\nSee also [Creating and Updating Multiple Linked Access Codes](../capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -658,6 +660,7 @@
           "title": "Delete an Access Code",
           "name": "delete",
           "path": "/access_codes/delete",
+          "parentPath": "/access_codes",
           "description": "Deletes an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -734,6 +737,7 @@
           "title": "Generate a Code",
           "name": "generate_code",
           "path": "/access_codes/generate_code",
+          "parentPath": "/access_codes",
           "description": "Generates a code for an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes), given a device ID.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -784,6 +788,7 @@
           "title": "Get an Access Code",
           "name": "get",
           "path": "/access_codes/get",
+          "parentPath": "/access_codes",
           "description": "Returns a specified [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nYou must specify either `access_code_id` or both `device_id` and `code`.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -861,6 +866,7 @@
           "title": "List Access Codes",
           "name": "list",
           "path": "/access_codes/list",
+          "parentPath": "/access_codes",
           "description": "Returns a list of all [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nSpecify either `device_id` or `access_code_ids`.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -969,6 +975,7 @@
           "title": "Pull a Backup Access Code",
           "name": "pull_backup_access_code",
           "path": "/access_codes/pull_backup_access_code",
+          "parentPath": "/access_codes",
           "description": "Retrieves a backup access code for an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). See also [Managing Backup Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes).\n\nA backup access code pool is a collection of pre-programmed access codes stored on a device, ready for use. These codes are programmed in addition to the regular access codes on Seam, serving as a safety net for any issues with the primary codes. If there's ever a complication with a primary access code—be it due to intermittent connectivity, manual removal from a device, or provider outages—a backup code can be retrieved. Its end time can then be adjusted to align with the original code, facilitating seamless and uninterrupted access.\n\nYou can pull a backup access code from the pool at any time. These backup codes are guaranteed to work immediately and automatically programmed to be removed from the device after the access code ends.\n\nYou can only pull backup access codes for time-bound access codes.\n\nBefore pulling a backup access code, make sure that the device's `properties.supports_backup_access_code_pool` is `true`. Then, to activate the backup pool, set `use_backup_access_code_pool` to `true` when creating an access code.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -1019,6 +1026,7 @@
           "title": "Report Device Access Code Constraints",
           "name": "report_device_constraints",
           "path": "/access_codes/report_device_constraints",
+          "parentPath": "/access_codes",
           "description": "Enables you to report access code-related constraints for a device. Currently, supports reporting supported code length constraints for SmartThings devices.\n\nSpecify either `supported_code_lengths` or `min_code_length`/`max_code_length`.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -1109,6 +1117,7 @@
           "title": "Update an Access Code",
           "name": "update",
           "path": "/access_codes/update",
+          "parentPath": "/access_codes",
           "description": "Updates a specified active or upcoming [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nSee also [Modifying Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/modifying-access-codes).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -1477,6 +1486,7 @@
           "title": "Update Multiple Linked Access Codes",
           "name": "update_multiple",
           "path": "/access_codes/update_multiple",
+          "parentPath": "/access_codes",
           "description": "Updates [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that share a common code across multiple devices.\n\nSpecify the `common_code_key` to identify the set of access codes that you want to update.\n\nSee also [Update Linked Access Codes](../capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes.md#update-linked-access-codes).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -1564,10 +1574,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [
-        "/access_codes/simulate",
-        "/access_codes/unmanaged"
-      ],
       "parentPath": null,
       "isUndocumented": false,
       "isDeprecated": false,
@@ -1576,12 +1582,13 @@
     {
       "path": "/access_codes/simulate",
       "name": "simulate",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Simulate Creating an Unmanaged Access Code",
           "name": "create_unmanaged_access_code",
           "path": "/access_codes/simulate/create_unmanaged_access_code",
+          "parentPath": "/access_codes/simulate",
           "description": "Simulates the creation of an [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) in a [sandbox workspace](../core-concepts/workspaces/README.md#sandbox-workspaces).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -1657,7 +1664,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/access_codes",
       "isUndocumented": false,
       "isDeprecated": false,
@@ -1666,12 +1672,13 @@
     {
       "path": "/access_codes/unmanaged",
       "name": "unmanaged",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Convert an Unmanaged Access Code",
           "name": "convert_to_managed",
           "path": "/access_codes/unmanaged/convert_to_managed",
+          "parentPath": "/access_codes/unmanaged",
           "description": "Converts an [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) to an [access code managed through Seam](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nAn unmanaged access code has a limited set of operations that you can perform on it. Once you convert an unmanaged access code to a managed access code, the full set of access code operations and lifecycle events becomes available for it.\n\nNote that not all device providers support converting an unmanaged access code to a managed access code.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -1777,6 +1784,7 @@
           "title": "Delete an Unmanaged Access Code",
           "name": "delete",
           "path": "/access_codes/unmanaged/delete",
+          "parentPath": "/access_codes/unmanaged",
           "description": "Deletes an [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -1839,6 +1847,7 @@
           "title": "Get an Unmanaged Access Code",
           "name": "get",
           "path": "/access_codes/unmanaged/get",
+          "parentPath": "/access_codes/unmanaged",
           "description": "Returns a specified [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).\n\nYou must specify either `access_code_id` or both `device_id` and `code`.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -1917,6 +1926,7 @@
           "title": "List Unmanaged Access Codes",
           "name": "list",
           "path": "/access_codes/unmanaged/list",
+          "parentPath": "/access_codes/unmanaged",
           "description": "Returns a list of all [unmanaged access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -1981,6 +1991,7 @@
           "title": "Update an Unmanaged Access Code",
           "name": "update",
           "path": "/access_codes/unmanaged/update",
+          "parentPath": "/access_codes/unmanaged",
           "description": "Updates a specified [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -2082,7 +2093,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/access_codes",
       "isUndocumented": false,
       "isDeprecated": false,
@@ -2091,17 +2101,13 @@
     {
       "path": "/acs/access_groups",
       "name": "access_groups",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "Add an ACS User to an Access Group",
           "name": "add_user",
           "path": "/acs/access_groups/add_user",
+          "parentPath": "/acs/access_groups",
           "description": "Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -2266,6 +2272,7 @@
           "title": "Get an Access Group",
           "name": "get",
           "path": "/acs/access_groups/get",
+          "parentPath": "/acs/access_groups",
           "description": "Returns a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -2416,6 +2423,7 @@
           "title": "List Access Groups",
           "name": "list",
           "path": "/acs/access_groups/list",
+          "parentPath": "/acs/access_groups",
           "description": "Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -2597,6 +2605,7 @@
           "title": "List Entrances Accessible to an Access Group",
           "name": "list_accessible_entrances",
           "path": "/acs/access_groups/list_accessible_entrances",
+          "parentPath": "/acs/access_groups",
           "description": "Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -2745,6 +2754,7 @@
           "title": "List ACS Users in an Access Group",
           "name": "list_users",
           "path": "/acs/access_groups/list_users",
+          "parentPath": "/acs/access_groups",
           "description": "Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -2905,6 +2915,7 @@
           "title": "Remove an ACS User from an Access Group",
           "name": "remove_user",
           "path": "/acs/access_groups/remove_user",
+          "parentPath": "/acs/access_groups",
           "description": "Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -3065,9 +3076,6 @@
           ]
         }
       ],
-      "subroutePaths": [
-        "/acs/access_groups/unmanaged"
-      ],
       "parentPath": "/acs",
       "isUndocumented": false,
       "isDeprecated": false,
@@ -3076,17 +3084,13 @@
     {
       "path": "/acs/access_groups/unmanaged",
       "name": "unmanaged",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "Get an Unmanaged Access Group",
           "name": "get",
           "path": "/acs/access_groups/unmanaged/get",
+          "parentPath": "/acs/access_groups/unmanaged",
           "description": "Returns a specified unmanaged [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -3237,6 +3241,7 @@
           "title": "List Unmanaged Access Groups",
           "name": "list",
           "path": "/acs/access_groups/unmanaged/list",
+          "parentPath": "/acs/access_groups/unmanaged",
           "description": "Returns a list of all unmanaged [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -3401,7 +3406,6 @@
           ]
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/acs/access_groups",
       "isUndocumented": true,
       "isDeprecated": false,
@@ -3410,17 +3414,13 @@
     {
       "path": "/acs/credential_pools",
       "name": "credential_pools",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "List Credential Pools",
           "name": "list",
           "path": "/acs/credential_pools/list",
+          "parentPath": "/acs/credential_pools",
           "description": "Returns a list of all credential pools.",
           "isDeprecated": false,
           "deprecationMessage": "Use `/user_identities/enrollment_automations/list` instead.",
@@ -3467,7 +3467,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/acs",
       "isUndocumented": true,
       "isDeprecated": false,
@@ -3476,17 +3475,13 @@
     {
       "path": "/acs/credential_provisioning_automations",
       "name": "credential_provisioning_automations",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "Launch a Credential Provisioning Automation",
           "name": "launch",
           "path": "/acs/credential_provisioning_automations/launch",
+          "parentPath": "/acs/credential_provisioning_automations",
           "description": "Launches a credential provisioning automation.",
           "isDeprecated": false,
           "deprecationMessage": "Use `/user_identities/enrollment_automations/launch` instead.",
@@ -3589,7 +3584,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/acs",
       "isUndocumented": true,
       "isDeprecated": false,
@@ -3598,17 +3592,13 @@
     {
       "path": "/acs/credentials",
       "name": "credentials",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "Assign a Credential to an ACS User",
           "name": "assign",
           "path": "/acs/credentials/assign",
+          "parentPath": "/acs/credentials",
           "description": "Assigns a specified [credential](../capability-guides/access-systems/managing-credentials.md) to a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -3785,6 +3775,7 @@
           "title": "Create a Credential for an ACS User",
           "name": "create",
           "path": "/acs/credentials/create",
+          "parentPath": "/acs/credentials",
           "description": "Creates a new [credential](../capability-guides/access-systems/managing-credentials.md) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -4381,6 +4372,7 @@
           "title": "Create an Offline Credential for an ACS User",
           "name": "create_offline_code",
           "path": "/acs/credentials/create_offline_code",
+          "parentPath": "/acs/credentials",
           "description": "Creates a new offline [credential](../capability-guides/access-systems/managing-credentials.md) for a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -4487,6 +4479,7 @@
           "title": "Delete a Credential",
           "name": "delete",
           "path": "/acs/credentials/delete",
+          "parentPath": "/acs/credentials",
           "description": "Deletes a specified [credential](../capability-guides/access-systems/managing-credentials.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -4621,6 +4614,7 @@
           "title": "Get a Credential",
           "name": "get",
           "path": "/acs/credentials/get",
+          "parentPath": "/acs/credentials",
           "description": "Returns a specified [credential](../capability-guides/access-systems/managing-credentials.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -4770,6 +4764,7 @@
           "title": "List Credentials",
           "name": "list",
           "path": "/acs/credentials/list",
+          "parentPath": "/acs/credentials",
           "description": "Returns a list of all [credentials](../capability-guides/access-systems/managing-credentials.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -4996,6 +4991,7 @@
           "title": "List Accessible Entrances",
           "name": "list_accessible_entrances",
           "path": "/acs/credentials/list_accessible_entrances",
+          "parentPath": "/acs/credentials",
           "description": "Returns a list of all [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a [credential](https://docs.seam.co/latest/api/acs/credentials) grants access.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -5154,6 +5150,7 @@
           "title": "Unassign a Credential from an ACS User",
           "name": "unassign",
           "path": "/acs/credentials/unassign",
+          "parentPath": "/acs/credentials",
           "description": "Unassigns a specified [credential](../capability-guides/access-systems/managing-credentials.md) from a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -5330,6 +5327,7 @@
           "title": "Update a Credential",
           "name": "update",
           "path": "/acs/credentials/update",
+          "parentPath": "/acs/credentials",
           "description": "Updates the code and ends at date and time for a specified [credential](../capability-guides/access-systems/managing-credentials.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -5491,9 +5489,6 @@
           ]
         }
       ],
-      "subroutePaths": [
-        "/acs/credentials/unmanaged"
-      ],
       "parentPath": "/acs",
       "isUndocumented": false,
       "isDeprecated": false,
@@ -5502,17 +5497,13 @@
     {
       "path": "/acs/credentials/unmanaged",
       "name": "unmanaged",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "Get an Unmanaged Credential",
           "name": "get",
           "path": "/acs/credentials/unmanaged/get",
+          "parentPath": "/acs/credentials/unmanaged",
           "description": "Returns a specified unmanaged [credential](../capability-guides/access-systems/managing-credentials.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -5562,6 +5553,7 @@
           "title": "List Unmanaged Credentials",
           "name": "list",
           "path": "/acs/credentials/unmanaged/list",
+          "parentPath": "/acs/credentials/unmanaged",
           "description": "Returns a list of all unmanaged [credentials](../capability-guides/access-systems/managing-credentials.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -5636,7 +5628,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/acs/credentials",
       "isUndocumented": true,
       "isDeprecated": false,
@@ -5645,17 +5636,13 @@
     {
       "path": "/acs/encoders",
       "name": "encoders",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "Encode an Access Method",
           "name": "encode_access_method",
           "path": "/acs/encoders/encode_access_method",
+          "parentPath": "/acs/encoders",
           "description": "Encodes an existing access method onto a plastic card placed on the specified [encoder](../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -5719,6 +5706,7 @@
           "title": "Encode a Credential",
           "name": "encode_credential",
           "path": "/acs/encoders/encode_credential",
+          "parentPath": "/acs/encoders",
           "description": "Encodes an existing [credential](../capability-guides/access-systems/managing-credentials.md) onto a plastic card placed on the specified [encoder](../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -5782,6 +5770,7 @@
           "title": "Get an Encoder",
           "name": "get",
           "path": "/acs/encoders/get",
+          "parentPath": "/acs/encoders",
           "description": "Returns a specified [encoder](../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -5831,6 +5820,7 @@
           "title": "List Encoders",
           "name": "list",
           "path": "/acs/encoders/list",
+          "parentPath": "/acs/encoders",
           "description": "Returns a list of all [encoders](../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -5925,6 +5915,7 @@
           "title": "Scan a Credential",
           "name": "scan_credential",
           "path": "/acs/encoders/scan_credential",
+          "parentPath": "/acs/encoders",
           "description": "Scans an encoded [acs_credential](../capability-guides/access-systems/managing-credentials.md) from a plastic card placed on the specified [encoder](../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -5971,9 +5962,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [
-        "/acs/encoders/simulate"
-      ],
       "parentPath": "/acs",
       "isUndocumented": false,
       "isDeprecated": false,
@@ -5982,17 +5970,13 @@
     {
       "path": "/acs/encoders/simulate",
       "name": "simulate",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "Simulate that the Next Credential Encoding Will Fail",
           "name": "next_credential_encode_will_fail",
           "path": "/acs/encoders/simulate/next_credential_encode_will_fail",
+          "parentPath": "/acs/encoders/simulate",
           "description": "Simulates that the next attempt to encode a [credential](../capability-guides/access-systems/managing-credentials.md) using the specified [encoder](../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) will fail. You can only perform this action within a [sandbox workspace](../core-concepts/workspaces/README.md#sandbox-workspaces).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -6099,6 +6083,7 @@
           "title": "Simulate that the Next Credential Encoding Will Succeed",
           "name": "next_credential_encode_will_succeed",
           "path": "/acs/encoders/simulate/next_credential_encode_will_succeed",
+          "parentPath": "/acs/encoders/simulate",
           "description": "Simulates that the next attempt to encode a [credential](../capability-guides/access-systems/managing-credentials.md) using the specified [encoder](../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) will succeed. You can only perform this action within a [sandbox workspace](../core-concepts/workspaces/README.md#sandbox-workspaces).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -6172,6 +6157,7 @@
           "title": "Simulate that the Next Credential Scan Will Fail",
           "name": "next_credential_scan_will_fail",
           "path": "/acs/encoders/simulate/next_credential_scan_will_fail",
+          "parentPath": "/acs/encoders/simulate",
           "description": "Simulates that the next attempt to scan a [credential](../capability-guides/access-systems/managing-credentials.md) using the specified [encoder](../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) will fail. You can only perform this action within a [sandbox workspace](../core-concepts/workspaces/README.md#sandbox-workspaces).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -6278,6 +6264,7 @@
           "title": "Simulate that the Next Credential Scan Will Succeed",
           "name": "next_credential_scan_will_succeed",
           "path": "/acs/encoders/simulate/next_credential_scan_will_succeed",
+          "parentPath": "/acs/encoders/simulate",
           "description": "Simulates that the next attempt to scan a [credential](../capability-guides/access-systems/managing-credentials.md) using the specified [encoder](../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) will succeed. You can only perform this action within a [sandbox workspace](../core-concepts/workspaces/README.md#sandbox-workspaces).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -6391,7 +6378,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/acs/encoders",
       "isUndocumented": false,
       "isDeprecated": false,
@@ -6400,17 +6386,13 @@
     {
       "path": "/acs/entrances",
       "name": "entrances",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "Get an Entrance",
           "name": "get",
           "path": "/acs/entrances/get",
+          "parentPath": "/acs/entrances",
           "description": "Returns a specified [access system entrance](../capability-guides/access-systems/retrieving-entrance-details.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -6555,6 +6537,7 @@
           "title": "Grant an ACS User Access to an Entrance",
           "name": "grant_access",
           "path": "/acs/entrances/grant_access",
+          "parentPath": "/acs/entrances",
           "description": "Grants a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) access to a specified [access system entrance](../capability-guides/access-systems/retrieving-entrance-details.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -6629,6 +6612,7 @@
           "title": "List Entrances",
           "name": "list",
           "path": "/acs/entrances/list",
+          "parentPath": "/acs/entrances",
           "description": "Returns a list of all [access system entrances](../capability-guides/access-systems/retrieving-entrance-details.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -6802,6 +6786,7 @@
           "title": "List Credentials with Access to an Entrance",
           "name": "list_credentials_with_access",
           "path": "/acs/entrances/list_credentials_with_access",
+          "parentPath": "/acs/entrances",
           "description": "Returns a list of all [credentials](../capability-guides/access-systems/managing-credentials.md) with access to a specified [entrance](../capability-guides/access-systems/retrieving-entrance-details.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -6989,7 +6974,6 @@
           ]
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/acs",
       "isUndocumented": false,
       "isDeprecated": false,
@@ -6998,17 +6982,13 @@
     {
       "path": "/acs/systems",
       "name": "systems",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "Get an ACS System",
           "name": "get",
           "path": "/acs/systems/get",
+          "parentPath": "/acs/systems",
           "description": "Returns a specified [access system](https://docs.seam.co/latest/capability-guides/access-systems).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -7152,6 +7132,7 @@
           "title": "List ACS Systems",
           "name": "list",
           "path": "/acs/systems/list",
+          "parentPath": "/acs/systems",
           "description": "Returns a list of all [access systems](https://docs.seam.co/latest/capability-guides/access-systems).\n\nTo filter the list of returned access systems by a specific connected account ID, include the `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the response includes all access systems connected to your workspace.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -7296,6 +7277,7 @@
           "title": "List Compatible Credential Manager ACS Systems",
           "name": "list_compatible_credential_manager_acs_systems",
           "path": "/acs/systems/list_compatible_credential_manager_acs_systems",
+          "parentPath": "/acs/systems",
           "description": "Returns a list of all credential manager systems that are compatible with a specified [access system](https://docs.seam.co/latest/capability-guides/access-systems).\n\nSpecify the access system for which you want to retrieve all compatible credential manager systems by including the corresponding `acs_system_id` in the request body.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -7436,7 +7418,6 @@
           ]
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/acs",
       "isUndocumented": false,
       "isDeprecated": false,
@@ -7445,17 +7426,13 @@
     {
       "path": "/acs/users",
       "name": "users",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "Add an ACS User to an Access Group",
           "name": "add_to_access_group",
           "path": "/acs/users/add_to_access_group",
+          "parentPath": "/acs/users",
           "description": "Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -7606,6 +7583,7 @@
           "title": "Create an ACS User",
           "name": "create",
           "path": "/acs/users/create",
+          "parentPath": "/acs/users",
           "description": "Creates a new [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -8096,6 +8074,7 @@
           "title": "Delete an ACS User",
           "name": "delete",
           "path": "/acs/users/delete",
+          "parentPath": "/acs/users",
           "description": "Deletes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the access system user's [credentials](../capability-guides/access-systems/managing-credentials.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -8258,6 +8237,7 @@
           "title": "Get an ACS User",
           "name": "get",
           "path": "/acs/users/get",
+          "parentPath": "/acs/users",
           "description": "Returns a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -8434,6 +8414,7 @@
           "title": "List ACS Users",
           "name": "list",
           "path": "/acs/users/list",
+          "parentPath": "/acs/users",
           "description": "Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -8680,6 +8661,7 @@
           "title": "List ACS User-Accessible Entrances",
           "name": "list_accessible_entrances",
           "path": "/acs/users/list_accessible_entrances",
+          "parentPath": "/acs/users",
           "description": "Lists the [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) has access.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -8758,6 +8740,7 @@
           "title": "Remove an ACS User from an Access Group",
           "name": "remove_from_access_group",
           "path": "/acs/users/remove_from_access_group",
+          "parentPath": "/acs/users",
           "description": "Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -8921,6 +8904,7 @@
           "title": "Revoke ACS User Access to All Entrances",
           "name": "revoke_access_to_all_entrances",
           "path": "/acs/users/revoke_access_to_all_entrances",
+          "parentPath": "/acs/users",
           "description": "Revokes access to all [entrances](https://docs.seam.co/latest/api/acs/entrances) for a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -8995,6 +8979,7 @@
           "title": "Suspend an ACS User",
           "name": "suspend",
           "path": "/acs/users/suspend",
+          "parentPath": "/acs/users",
           "description": "[Suspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#suspend-an-acs-user) a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Suspending an access system user revokes their access temporarily. To restore an access system user's access, you can [unsuspend](https://docs.seam.co/latest/api/acs/users/unsuspend) them.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -9157,6 +9142,7 @@
           "title": "Unsuspend an ACS User",
           "name": "unsuspend",
           "path": "/acs/users/unsuspend",
+          "parentPath": "/acs/users",
           "description": "[Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an access system user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the access system user restores their access.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -9319,6 +9305,7 @@
           "title": "Update an ACS User",
           "name": "update",
           "path": "/acs/users/update",
+          "parentPath": "/acs/users",
           "description": "Updates the properties of a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -9594,9 +9581,6 @@
           ]
         }
       ],
-      "subroutePaths": [
-        "/acs/users/unmanaged"
-      ],
       "parentPath": "/acs",
       "isUndocumented": false,
       "isDeprecated": false,
@@ -9605,17 +9589,13 @@
     {
       "path": "/acs/users/unmanaged",
       "name": "unmanaged",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "Get an Unmanaged ACS User",
           "name": "get",
           "path": "/acs/users/unmanaged/get",
+          "parentPath": "/acs/users/unmanaged",
           "description": "Returns a specified unmanaged [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -9665,6 +9645,7 @@
           "title": "List Unmanaged ACS Users",
           "name": "list",
           "path": "/acs/users/unmanaged/list",
+          "parentPath": "/acs/users/unmanaged",
           "description": "Returns a list of all unmanaged [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -9768,7 +9749,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/acs/users",
       "isUndocumented": true,
       "isDeprecated": false,
@@ -9777,12 +9757,13 @@
     {
       "path": "/action_attempts",
       "name": "action_attempts",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Get an Action Attempt",
           "name": "get",
           "path": "/action_attempts/get",
+          "parentPath": "/action_attempts",
           "description": "Returns a specified [action attempt](../core-concepts/action-attempts.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -9833,6 +9814,7 @@
           "title": "List Action Attempts",
           "name": "list",
           "path": "/action_attempts/list",
+          "parentPath": "/action_attempts",
           "description": "Returns a list of the [action attempts](../core-concepts/action-attempts.md) that you specify as an array of `action_attempt_id`s.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -9880,7 +9862,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": null,
       "isUndocumented": false,
       "isDeprecated": false,
@@ -9889,12 +9870,13 @@
     {
       "path": "/bridges",
       "name": "bridges",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Get a Seam Bridge",
           "name": "get",
           "path": "/bridges/get",
+          "parentPath": "/bridges",
           "description": "Returns a specified [Seam Bridge](../capability-guides/seam-bridge.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -9944,6 +9926,7 @@
           "title": "List Seam Bridges",
           "name": "list",
           "path": "/bridges/list",
+          "parentPath": "/bridges",
           "description": "Returns a list of all [Seam Bridges](../capability-guides/seam-bridge.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -9975,7 +9958,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": null,
       "isUndocumented": true,
       "isDeprecated": false,
@@ -9984,12 +9966,13 @@
     {
       "path": "/client_sessions",
       "name": "client_sessions",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Create a Client Session",
           "name": "create",
           "path": "/client_sessions/create",
+          "parentPath": "/client_sessions",
           "description": "Creates a new [client session](../core-concepts/authentication/client-session-tokens/README.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -10128,6 +10111,7 @@
           "title": "Delete a Client Session",
           "name": "delete",
           "path": "/client_sessions/delete",
+          "parentPath": "/client_sessions",
           "description": "Deletes a [client session](../core-concepts/authentication/client-session-tokens/README.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -10174,6 +10158,7 @@
           "title": "Get a Client Session",
           "name": "get",
           "path": "/client_sessions/get",
+          "parentPath": "/client_sessions",
           "description": "Returns a specified [client session](../core-concepts/authentication/client-session-tokens/README.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -10238,6 +10223,7 @@
           "title": "Get or Create a Client Session",
           "name": "get_or_create",
           "path": "/client_sessions/get_or_create",
+          "parentPath": "/client_sessions",
           "description": "Returns a [client session](../core-concepts/authentication/client-session-tokens/README.md) with specific characteristics or creates a new client session with these characteristics if it does not yet exist.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -10347,6 +10333,7 @@
           "title": "Grant Access to a Client Session",
           "name": "grant_access",
           "path": "/client_sessions/grant_access",
+          "parentPath": "/client_sessions",
           "description": "Grants a [client session](../core-concepts/authentication/client-session-tokens/README.md) access to one or more resources, such as [Connect Webviews](../core-concepts/connect-webviews/README.md), [user identities](../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity), and so on.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -10453,6 +10440,7 @@
           "title": "List Client Sessions",
           "name": "list",
           "path": "/client_sessions/list",
+          "parentPath": "/client_sessions",
           "description": "Returns a list of all [client sessions](../core-concepts/authentication/client-session-tokens/README.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -10558,6 +10546,7 @@
           "title": "Revoke a Client Session",
           "name": "revoke",
           "path": "/client_sessions/revoke",
+          "parentPath": "/client_sessions",
           "description": "Revokes a [client session](../core-concepts/authentication/client-session-tokens/README.md).\n\nNote that [deleting a client session](https://docs.seam.co/latest/api/client_sessions/delete) is a separate action.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -10601,7 +10590,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": null,
       "isUndocumented": false,
       "isDeprecated": false,
@@ -10610,12 +10598,13 @@
     {
       "path": "/connect_webviews",
       "name": "connect_webviews",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Create a Connect Webview",
           "name": "create",
           "path": "/connect_webviews/create",
+          "parentPath": "/connect_webviews",
           "description": "Creates a new [Connect Webview](../core-concepts/connect-webviews/README.md).\n\nTo enable a user to connect their devices or systems to Seam, they must sign in to their device or system account. To enable a user to sign in, you create a `connect_webview`. After creating the Connect Webview, you receive a URL that you can use to display the visual component of this Connect Webview for your user. You can open an iframe or new window to display the Connect Webview.\n\nYou should make a new `connect_webview` for each unique login request. Each `connect_webview` tracks the user that signed in with it. You receive an error if you reuse a Connect Webview for the same user twice or if you use the same Connect Webview for multiple users.\n\nSee also: [Connect Webview Process](../core-concepts/connect-webviews/connect-webview-process.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -11377,6 +11366,7 @@
           "title": "Delete a Connect Webview",
           "name": "delete",
           "path": "/connect_webviews/delete",
+          "parentPath": "/connect_webviews",
           "description": "Deletes a [Connect Webview](../core-concepts/connect-webviews/README.md).\n\nYou do not need to delete a Connect Webview once a user completes it. Instead, you can simply ignore completed Connect Webviews.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -11423,6 +11413,7 @@
           "title": "Get a Connect Webview",
           "name": "get",
           "path": "/connect_webviews/get",
+          "parentPath": "/connect_webviews",
           "description": "Returns a specified [Connect Webview](../core-concepts/connect-webviews/README.md).\n\nUnless you're using a `custom_redirect_url`, you should poll a newly-created `connect_webview` to find out if the user has signed in or to get details about what devices they've connected.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -11473,6 +11464,7 @@
           "title": "List Connect Webviews",
           "name": "list",
           "path": "/connect_webviews/list",
+          "parentPath": "/connect_webviews",
           "description": "Returns a list of all [Connect Webviews](../core-concepts/connect-webviews/README.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -11563,7 +11555,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": null,
       "isUndocumented": false,
       "isDeprecated": false,
@@ -11572,12 +11563,13 @@
     {
       "path": "/connected_accounts",
       "name": "connected_accounts",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Delete a Connected Account",
           "name": "delete",
           "path": "/connected_accounts/delete",
+          "parentPath": "/connected_accounts",
           "description": "Deletes a specified [connected account](../core-concepts/connected-accounts/README.md).\n\nDeleting a connected account triggers a `connected_account.deleted` event and removes the connected account and all data associated with the connected account from Seam, including devices, events, access codes, and so on. For every deleted resource, Seam sends a corresponding deleted event, but the resource is not deleted from the provider.\n\nFor example, if you delete a connected account with a device that has an access code, Seam sends a `connected_account.deleted` event, a `device.deleted` event, and an `access_code.deleted` event, but Seam does not remove the access code from the device.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -11727,6 +11719,7 @@
           "title": "Get a Connected Account",
           "name": "get",
           "path": "/connected_accounts/get",
+          "parentPath": "/connected_accounts",
           "description": "Returns a specified [connected account](../core-concepts/connected-accounts/README.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -11887,6 +11880,7 @@
           "title": "List Connected Accounts",
           "name": "list",
           "path": "/connected_accounts/list",
+          "parentPath": "/connected_accounts",
           "description": "Returns a list of all [connected accounts](../core-concepts/connected-accounts/README.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -12093,6 +12087,7 @@
           "title": "Sync a Connected Account",
           "name": "sync",
           "path": "/connected_accounts/sync",
+          "parentPath": "/connected_accounts",
           "description": "Request a [connected account](../core-concepts/connected-accounts/README.md) sync attempt for the specified connected_account_id.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -12227,6 +12222,7 @@
           "title": "Update a Connected Account",
           "name": "update",
           "path": "/connected_accounts/update",
+          "parentPath": "/connected_accounts",
           "description": "Updates a [connected account](../core-concepts/connected-accounts/README.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -12387,7 +12383,6 @@
           ]
         }
       ],
-      "subroutePaths": [],
       "parentPath": null,
       "isUndocumented": false,
       "isDeprecated": false,
@@ -12396,12 +12391,13 @@
     {
       "path": "/devices",
       "name": "devices",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Delete a Device",
           "name": "delete",
           "path": "/devices/delete",
+          "parentPath": "/devices",
           "description": "Deletes a specified [device](../core-concepts/devices/README.md).",
           "isDeprecated": false,
           "deprecationMessage": "Deleting a device is no longer supported and will be removed.",
@@ -12448,6 +12444,7 @@
           "title": "Get a Device",
           "name": "get",
           "path": "/devices/get",
+          "parentPath": "/devices",
           "description": "Returns a specified [device](../core-concepts/devices/README.md).\n\nYou must specify either `device_id` or `name`.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -12512,6 +12509,7 @@
           "title": "List Devices",
           "name": "list",
           "path": "/devices/list",
+          "parentPath": "/devices",
           "description": "Returns a list of all [devices](../core-concepts/devices/README.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -14139,6 +14137,7 @@
           "title": "List Device Providers",
           "name": "list_device_providers",
           "path": "/devices/list_device_providers",
+          "parentPath": "/devices",
           "description": "Returns a list of all device providers.\n\nThe information that this endpoint returns for each provider includes a set of [capability flags](../capability-guides/device-and-system-capabilities.md#capability-flags), such as `device_provider.can_remotely_unlock`. If at least one supported device from a provider has a specific capability, the corresponding capability flag is `true`.\n\nWhen you create a [Connect Webview](../core-concepts/connect-webviews/README.md), you can customize the providers—that is, the brands—that it displays. In the `/connect_webviews/create` request, include the desired set of device provider keys in the `accepted_providers` parameter. See also [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -14241,6 +14240,7 @@
           "title": "Update a Device",
           "name": "update",
           "path": "/devices/update",
+          "parentPath": "/devices",
           "description": "Updates a specified [device](../core-concepts/devices/README.md).\n\nYou can add or change [custom metadata](../core-concepts/devices/adding-custom-metadata-to-a-device.md) for a device, change the device's name, or [convert a managed device to unmanaged](../core-concepts/devices/managed-and-unmanaged-devices.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -14359,10 +14359,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [
-        "/devices/simulate",
-        "/devices/unmanaged"
-      ],
       "parentPath": null,
       "isUndocumented": false,
       "isDeprecated": false,
@@ -14371,12 +14367,13 @@
     {
       "path": "/devices/simulate",
       "name": "simulate",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Simulate Device Connection",
           "name": "connect",
           "path": "/devices/simulate/connect",
+          "parentPath": "/devices/simulate",
           "description": "Simulates connecting a device to Seam. Only applicable for [sandbox devices](../core-concepts/workspaces/README.md#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](../core-concepts/devices/testing-your-app-against-device-disconnection-and-removal.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -14423,6 +14420,7 @@
           "title": "Simulate Device Disconnection",
           "name": "disconnect",
           "path": "/devices/simulate/disconnect",
+          "parentPath": "/devices/simulate",
           "description": "Simulates disconnecting a device from Seam. Only applicable for [sandbox devices](../core-concepts/workspaces/README.md#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](../core-concepts/devices/testing-your-app-against-device-disconnection-and-removal.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -14469,6 +14467,7 @@
           "title": "Simulate Device Removal",
           "name": "remove",
           "path": "/devices/simulate/remove",
+          "parentPath": "/devices/simulate",
           "description": "Simulates removing a device from Seam. Only applicable for [sandbox devices](../core-concepts/workspaces/README.md#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](../core-concepts/devices/testing-your-app-against-device-disconnection-and-removal.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -14512,7 +14511,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/devices",
       "isUndocumented": false,
       "isDeprecated": false,
@@ -14521,12 +14519,13 @@
     {
       "path": "/devices/unmanaged",
       "name": "unmanaged",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Get an Unmanaged Device",
           "name": "get",
           "path": "/devices/unmanaged/get",
+          "parentPath": "/devices/unmanaged",
           "description": "Returns a specified [unmanaged device](../core-concepts/devices/managed-and-unmanaged-devices.md).\n\nAn unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](../core-concepts/devices/managed-and-unmanaged-devices.md#convert-an-unmanaged-device-to-managed).\n\nYou must specify either `device_id` or `name`.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -14591,6 +14590,7 @@
           "title": "List Unmanaged Devices",
           "name": "list",
           "path": "/devices/unmanaged/list",
+          "parentPath": "/devices/unmanaged",
           "description": "Returns a list of all [unmanaged devices](../core-concepts/devices/managed-and-unmanaged-devices.md).\n\nAn unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](../core-concepts/devices/managed-and-unmanaged-devices.md#convert-an-unmanaged-device-to-managed).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -16217,6 +16217,7 @@
           "title": "Update an Unmanaged Device",
           "name": "update",
           "path": "/devices/unmanaged/update",
+          "parentPath": "/devices/unmanaged",
           "description": "Updates a specified [unmanaged device](../core-concepts/devices/managed-and-unmanaged-devices.md). To convert an unmanaged device to managed, set `is_managed` to `true`.\n\nAn unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](../core-concepts/devices/managed-and-unmanaged-devices.md#convert-an-unmanaged-device-to-managed).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -16275,7 +16276,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/devices",
       "isUndocumented": false,
       "isDeprecated": false,
@@ -16284,12 +16284,13 @@
     {
       "path": "/events",
       "name": "events",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Get an Event",
           "name": "get",
           "path": "/events/get",
+          "parentPath": "/events",
           "description": "Returns a specified event. This endpoint returns the same event that would be sent to a [webhook](https://docs.seam.co/latest/developer-tools/webhooks), but it enables you to retrieve an event that already took place.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -16368,6 +16369,7 @@
           "title": "List Events",
           "name": "list",
           "path": "/events/list",
+          "parentPath": "/events",
           "description": "Returns a list of all events. This endpoint returns the same events that would be sent to a [webhook](https://docs.seam.co/latest/developer-tools/webhooks), but it enables you to filter or see events that already took place.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -18398,7 +18400,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": null,
       "isUndocumented": false,
       "isDeprecated": false,
@@ -18407,12 +18408,13 @@
     {
       "path": "/locks",
       "name": "locks",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "",
           "name": "get",
           "path": "/locks/get",
+          "parentPath": "/locks",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "Use `/devices/get` instead.",
@@ -18477,6 +18479,7 @@
           "title": "",
           "name": "list",
           "path": "/locks/list",
+          "parentPath": "/locks",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -19794,6 +19797,7 @@
           "title": "",
           "name": "lock_door",
           "path": "/locks/lock_door",
+          "parentPath": "/locks",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -19859,6 +19863,7 @@
           "title": "",
           "name": "unlock_door",
           "path": "/locks/unlock_door",
+          "parentPath": "/locks",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -19921,9 +19926,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [
-        "/locks/simulate"
-      ],
       "parentPath": null,
       "isUndocumented": false,
       "isDeprecated": false,
@@ -19932,12 +19934,13 @@
     {
       "path": "/locks/simulate",
       "name": "simulate",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "",
           "name": "keypad_code_entry",
           "path": "/locks/simulate/keypad_code_entry",
+          "parentPath": "/locks/simulate",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -20001,6 +20004,7 @@
           "title": "",
           "name": "manual_lock_via_keypad",
           "path": "/locks/simulate/manual_lock_via_keypad",
+          "parentPath": "/locks/simulate",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -20047,7 +20051,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/locks",
       "isUndocumented": true,
       "isDeprecated": false,
@@ -20056,12 +20059,13 @@
     {
       "path": "/networks",
       "name": "networks",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "",
           "name": "get",
           "path": "/networks/get",
+          "parentPath": "/networks",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -20111,6 +20115,7 @@
           "title": "",
           "name": "list",
           "path": "/networks/list",
+          "parentPath": "/networks",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -20142,7 +20147,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": null,
       "isUndocumented": false,
       "isDeprecated": false,
@@ -20151,12 +20155,13 @@
     {
       "path": "/noise_sensors",
       "name": "noise_sensors",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "",
           "name": "list",
           "path": "/noise_sensors/list",
+          "parentPath": "/noise_sensors",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -20711,10 +20716,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [
-        "/noise_sensors/noise_thresholds",
-        "/noise_sensors/simulate"
-      ],
       "parentPath": null,
       "isUndocumented": false,
       "isDeprecated": false,
@@ -20723,12 +20724,13 @@
     {
       "path": "/noise_sensors/noise_thresholds",
       "name": "noise_thresholds",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "",
           "name": "create",
           "path": "/noise_sensors/noise_thresholds/create",
+          "parentPath": "/noise_sensors/noise_thresholds",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -20863,6 +20865,7 @@
           "title": "",
           "name": "delete",
           "path": "/noise_sensors/noise_thresholds/delete",
+          "parentPath": "/noise_sensors/noise_thresholds",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -20938,6 +20941,7 @@
           "title": "",
           "name": "get",
           "path": "/noise_sensors/noise_thresholds/get",
+          "parentPath": "/noise_sensors/noise_thresholds",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -20987,6 +20991,7 @@
           "title": "",
           "name": "list",
           "path": "/noise_sensors/noise_thresholds/list",
+          "parentPath": "/noise_sensors/noise_thresholds",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -21051,6 +21056,7 @@
           "title": "",
           "name": "update",
           "path": "/noise_sensors/noise_thresholds/update",
+          "parentPath": "/noise_sensors/noise_thresholds",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -21195,7 +21201,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/noise_sensors",
       "isUndocumented": false,
       "isDeprecated": false,
@@ -21204,12 +21209,13 @@
     {
       "path": "/noise_sensors/simulate",
       "name": "simulate",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "",
           "name": "trigger_noise_threshold",
           "path": "/noise_sensors/simulate/trigger_noise_threshold",
+          "parentPath": "/noise_sensors/simulate",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -21253,7 +21259,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/noise_sensors",
       "isUndocumented": false,
       "isDeprecated": false,
@@ -21262,12 +21267,13 @@
     {
       "path": "/phones",
       "name": "phones",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Deactivate a Phone",
           "name": "deactivate",
           "path": "/phones/deactivate",
+          "parentPath": "/phones",
           "description": "Deactivates a phone, which is useful, for example, if a user has lost their phone. For more information, see [App User Lost Phone Process](../capability-guides/mobile-access/managing-phones-for-a-user-identity.md#app-user-lost-phone-process).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -21315,6 +21321,7 @@
           "title": "Get Phone",
           "name": "get",
           "path": "/phones/get",
+          "parentPath": "/phones",
           "description": "Returns a single phone entry matching the provided `device_id`.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -21364,6 +21371,7 @@
           "title": "List Phones",
           "name": "list",
           "path": "/phones/list",
+          "parentPath": "/phones",
           "description": "Returns a list of all phones. To filter the list of returned phones by a specific owner user identity or credential, include the `owner_user_identity_id` or `acs_credential_id`, respectively, in the request body.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -21424,9 +21432,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [
-        "/phones/simulate"
-      ],
       "parentPath": null,
       "isUndocumented": false,
       "isDeprecated": false,
@@ -21435,12 +21440,13 @@
     {
       "path": "/phones/simulate",
       "name": "simulate",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Create a Sandbox Phone",
           "name": "create_sandbox_phone",
           "path": "/phones/simulate/create_sandbox_phone",
+          "parentPath": "/phones/simulate",
           "description": "Creates a new simulated phone in a [sandbox workspace](../core-concepts/workspaces/README.md#sandbox-workspaces). For more information, see [Creating a Simulated Phone for a User Identity](../capability-guides/mobile-access/developing-in-a-sandbox-workspace.md#creating-a-simulated-phone-for-a-user-identity).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -21707,7 +21713,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/phones",
       "isUndocumented": false,
       "isDeprecated": false,
@@ -21716,17 +21721,13 @@
     {
       "path": "/seam/bridge/v1/bridge_client_sessions",
       "name": "bridge_client_sessions",
-      "namespace": {
-        "path": "/seam/bridge/v1",
-        "isDeprecated": false,
-        "isUndocumented": true,
-        "isDraft": false
-      },
+      "namespacePath": "/seam/bridge/v1",
       "endpoints": [
         {
           "title": "Create a Bridge Client Session",
           "name": "create",
           "path": "/seam/bridge/v1/bridge_client_sessions/create",
+          "parentPath": "/seam/bridge/v1/bridge_client_sessions",
           "description": "Creates a new bridge client session.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -21801,6 +21802,7 @@
           "title": "Get a Bridge Client Session",
           "name": "get",
           "path": "/seam/bridge/v1/bridge_client_sessions/get",
+          "parentPath": "/seam/bridge/v1/bridge_client_sessions",
           "description": "Returns the bridge client session associated with the session token used.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -21833,6 +21835,7 @@
           "title": "Refresh telemetry token for bridge client session",
           "name": "refresh_telemetry_token",
           "path": "/seam/bridge/v1/bridge_client_sessions/refresh_telemetry_token",
+          "parentPath": "/seam/bridge/v1/bridge_client_sessions",
           "description": "Returns the bridge client session associated with the session token and refreshed telemetry token.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -21864,6 +21867,7 @@
           "title": "Regenerate a Bridge Client Session Pairing Code",
           "name": "regenerate_pairing_code",
           "path": "/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code",
+          "parentPath": "/seam/bridge/v1/bridge_client_sessions",
           "description": "Generate a new pairing code and return the updated bridge client session.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -21895,6 +21899,7 @@
           "title": "Report a Bridge Client's Status",
           "name": "report_status",
           "path": "/seam/bridge/v1/bridge_client_sessions/report_status",
+          "parentPath": "/seam/bridge/v1/bridge_client_sessions",
           "description": "Report a Seam Bridge Bridge client's status.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -21949,7 +21954,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/seam/bridge/v1",
       "isUndocumented": true,
       "isDeprecated": false,
@@ -21958,17 +21962,13 @@
     {
       "path": "/seam/bridge/v1/bridge_connected_systems",
       "name": "bridge_connected_systems",
-      "namespace": {
-        "path": "/seam/bridge/v1",
-        "isDeprecated": false,
-        "isUndocumented": true,
-        "isDraft": false
-      },
+      "namespacePath": "/seam/bridge/v1",
       "endpoints": [
         {
           "title": "List Bridge Connected Systems",
           "name": "list",
           "path": "/seam/bridge/v1/bridge_connected_systems/list",
+          "parentPath": "/seam/bridge/v1/bridge_connected_systems",
           "description": "Returns the bridge connected systems associated with the session token used.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -21998,7 +21998,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/seam/bridge/v1",
       "isUndocumented": true,
       "isDeprecated": false,
@@ -22007,17 +22006,13 @@
     {
       "path": "/seam/instant_key/v1/client_sessions",
       "name": "client_sessions",
-      "namespace": {
-        "path": "/seam/instant_key/v1",
-        "isDeprecated": false,
-        "isUndocumented": true,
-        "isDraft": false
-      },
+      "namespacePath": "/seam/instant_key/v1",
       "endpoints": [
         {
           "title": "Exchange Instant Key Short Code",
           "name": "exchange_short_code",
           "path": "/seam/instant_key/v1/client_sessions/exchange_short_code",
+          "parentPath": "/seam/instant_key/v1/client_sessions",
           "description": "Exchanges a short code for a Client Session Token (CST).\nThis endpoint is used by mobile apps to securely retrieve a client session token\nusing a short code obtained from an instant key URL.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -22061,7 +22056,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/seam/instant_key/v1",
       "isUndocumented": true,
       "isDeprecated": false,
@@ -22070,17 +22064,13 @@
     {
       "path": "/seam/mobile_sdk/v1/acs/credentials",
       "name": "credentials",
-      "namespace": {
-        "path": "/seam/mobile_sdk/v1/acs",
-        "isDeprecated": false,
-        "isUndocumented": true,
-        "isDraft": false
-      },
+      "namespacePath": "/seam/mobile_sdk/v1/acs",
       "endpoints": [
         {
           "title": "List Credentials",
           "name": "list",
           "path": "/seam/mobile_sdk/v1/acs/credentials/list",
+          "parentPath": "/seam/mobile_sdk/v1/acs/credentials",
           "description": "Returns a list of all ACS credentials.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -22111,7 +22101,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/seam/mobile_sdk/v1/acs",
       "isUndocumented": true,
       "isDeprecated": false,
@@ -22120,17 +22109,13 @@
     {
       "path": "/seam/mobile_sdk/v1/phone_sessions",
       "name": "phone_sessions",
-      "namespace": {
-        "path": "/seam/mobile_sdk/v1",
-        "isDeprecated": false,
-        "isUndocumented": true,
-        "isDraft": false
-      },
+      "namespacePath": "/seam/mobile_sdk/v1",
       "endpoints": [
         {
           "title": "Get or Create a Phone Session",
           "name": "get_or_create",
           "path": "/seam/mobile_sdk/v1/phone_sessions/get_or_create",
+          "parentPath": "/seam/mobile_sdk/v1/phone_sessions",
           "description": "Get or create a session for a mobile SDK phone.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -22270,7 +22255,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/seam/mobile_sdk/v1",
       "isUndocumented": true,
       "isDeprecated": false,
@@ -22279,17 +22263,13 @@
     {
       "path": "/seam/partner/v1/resources",
       "name": "resources",
-      "namespace": {
-        "path": "/seam/partner/v1",
-        "isDeprecated": false,
-        "isUndocumented": true,
-        "isDraft": false
-      },
+      "namespacePath": "/seam/partner/v1",
       "endpoints": [
         {
           "title": "List partner resources at Seam",
           "name": "list",
           "path": "/seam/partner/v1/resources/list",
+          "parentPath": "/seam/partner/v1/resources",
           "description": "List partner resources that have been pushed to Seam.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -22333,7 +22313,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/seam/partner/v1",
       "isUndocumented": true,
       "isDeprecated": false,
@@ -22342,12 +22321,13 @@
     {
       "path": "/thermostats",
       "name": "thermostats",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Activate a Climate Preset",
           "name": "activate_climate_preset",
           "path": "/thermostats/activate_climate_preset",
+          "parentPath": "/thermostats",
           "description": "Activates a specified [climate preset](../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -22506,6 +22486,7 @@
           "title": "Set to Cool Mode",
           "name": "cool",
           "path": "/thermostats/cool",
+          "parentPath": "/thermostats",
           "description": "Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to [cool mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -22694,6 +22675,7 @@
           "title": "Create a Climate Preset",
           "name": "create_climate_preset",
           "path": "/thermostats/create_climate_preset",
+          "parentPath": "/thermostats",
           "description": "Creates a [climate preset](../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -23038,6 +23020,7 @@
           "title": "Delete a Climate Preset",
           "name": "delete_climate_preset",
           "path": "/thermostats/delete_climate_preset",
+          "parentPath": "/thermostats",
           "description": "Deletes a specified [climate preset](../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -23188,6 +23171,7 @@
           "title": "Get a Thermostat",
           "name": "get",
           "path": "/thermostats/get",
+          "parentPath": "/thermostats",
           "description": "Returns a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).",
           "isDeprecated": false,
           "deprecationMessage": "Use `/devices/get` instead.",
@@ -23252,6 +23236,7 @@
           "title": "Set to Heat Mode",
           "name": "heat",
           "path": "/thermostats/heat",
+          "parentPath": "/thermostats",
           "description": "Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to [heat mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -23440,6 +23425,7 @@
           "title": "Set to Heat-Cool (Auto) Mode",
           "name": "heat_cool",
           "path": "/thermostats/heat_cool",
+          "parentPath": "/thermostats",
           "description": "Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to [heat-cool (\"auto\") mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -23657,6 +23643,7 @@
           "title": "List Thermostats",
           "name": "list",
           "path": "/thermostats/list",
+          "parentPath": "/thermostats",
           "description": "Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guides/thermostats).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -24452,6 +24439,7 @@
           "title": "Set to Off Mode",
           "name": "off",
           "path": "/thermostats/off",
+          "parentPath": "/thermostats",
           "description": "Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to [\"off\" mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -24611,6 +24599,7 @@
           "title": "Set the Fallback Climate Preset",
           "name": "set_fallback_climate_preset",
           "path": "/thermostats/set_fallback_climate_preset",
+          "parentPath": "/thermostats",
           "description": "Sets a specified [climate preset](../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) as the [\"fallback\"](../capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset.md) preset for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -24760,6 +24749,7 @@
           "title": "Set the Fan Mode Setting",
           "name": "set_fan_mode",
           "path": "/thermostats/set_fan_mode",
+          "parentPath": "/thermostats",
           "description": "Sets the [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -25012,6 +25002,7 @@
           "title": "Set the HVAC Mode",
           "name": "set_hvac_mode",
           "path": "/thermostats/set_hvac_mode",
+          "parentPath": "/thermostats",
           "description": "Sets the [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -25271,6 +25262,7 @@
           "title": "Set a Temperature Threshold",
           "name": "set_temperature_threshold",
           "path": "/thermostats/set_temperature_threshold",
+          "parentPath": "/thermostats",
           "description": "Sets a [temperature threshold](../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) for a specified thermostat. Seam emits a `thermostat.temperature_threshold_exceeded` event and adds a warning on a thermostat if it reports a temperature outside the threshold range.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -25468,6 +25460,7 @@
           "title": "Update a Climate Preset",
           "name": "update_climate_preset",
           "path": "/thermostats/update_climate_preset",
+          "parentPath": "/thermostats",
           "description": "Updates a specified [climate preset](../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -25808,6 +25801,7 @@
           "title": "Update the Thermostat Weekly Program",
           "name": "update_weekly_program",
           "path": "/thermostats/update_weekly_program",
+          "parentPath": "/thermostats",
           "description": "Updates the thermostat weekly program for a thermostat device. To configure a weekly program, specify the ID of the daily program that you want to use for each day of the week. When you update a weekly program, the set of programs that you specify overwrites any previous weekly program for the thermostat.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -25953,11 +25947,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [
-        "/thermostats/daily_programs",
-        "/thermostats/schedules",
-        "/thermostats/simulate"
-      ],
       "parentPath": null,
       "isUndocumented": false,
       "isDeprecated": false,
@@ -25966,12 +25955,13 @@
     {
       "path": "/thermostats/daily_programs",
       "name": "daily_programs",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Create a Thermostat Daily Program",
           "name": "create",
           "path": "/thermostats/daily_programs/create",
+          "parentPath": "/thermostats/daily_programs",
           "description": "Creates a thermostat daily program. A daily program consists of a set of periods, where each period includes a start time and the key of a configured climate preset. Once you have defined a daily program, you can assign it to one or more days within a weekly program.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -26081,6 +26071,7 @@
           "title": "Delete a Thermostat Daily Program",
           "name": "delete",
           "path": "/thermostats/daily_programs/delete",
+          "parentPath": "/thermostats/daily_programs",
           "description": "Deletes a thermostat daily program.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -26128,6 +26119,7 @@
           "title": "Update a Thermostat Daily Program",
           "name": "update",
           "path": "/thermostats/daily_programs/update",
+          "parentPath": "/thermostats/daily_programs",
           "description": "Updates a specified thermostat daily program. The periods that you specify overwrite any existing periods for the daily program.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -26235,7 +26227,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/thermostats",
       "isUndocumented": false,
       "isDeprecated": false,
@@ -26244,12 +26235,13 @@
     {
       "path": "/thermostats/schedules",
       "name": "schedules",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Create a Thermostat Schedule",
           "name": "create",
           "path": "/thermostats/schedules/create",
+          "parentPath": "/thermostats/schedules",
           "description": "Creates a [thermostat schedule](../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -26487,6 +26479,7 @@
           "title": "Delete a Thermostat Schedule",
           "name": "delete",
           "path": "/thermostats/schedules/delete",
+          "parentPath": "/thermostats/schedules",
           "description": "Deletes a [thermostat schedule](../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -26622,6 +26615,7 @@
           "title": "Get a Thermostat Schedule",
           "name": "get",
           "path": "/thermostats/schedules/get",
+          "parentPath": "/thermostats/schedules",
           "description": "Returns a specified [thermostat schedule](../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -26770,6 +26764,7 @@
           "title": "List Thermostat Schedules",
           "name": "list",
           "path": "/thermostats/schedules/list",
+          "parentPath": "/thermostats/schedules",
           "description": "Returns a list of all [thermostat schedules](../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -26943,6 +26938,7 @@
           "title": "Update a Thermostat Schedule",
           "name": "update",
           "path": "/thermostats/schedules/update",
+          "parentPath": "/thermostats/schedules",
           "description": "Updates a specified [thermostat schedule](../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -27161,7 +27157,6 @@
           ]
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/thermostats",
       "isUndocumented": false,
       "isDeprecated": false,
@@ -27170,12 +27165,13 @@
     {
       "path": "/thermostats/simulate",
       "name": "simulate",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "HVAC Mode Adjusted",
           "name": "hvac_mode_adjusted",
           "path": "/thermostats/simulate/hvac_mode_adjusted",
+          "parentPath": "/thermostats/simulate",
           "description": "Simulates having adjusted the [HVAC mode](../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) for a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). Only applicable for [sandbox devices](../core-concepts/workspaces/README.md#sandbox-workspaces). See also [Testing Your Thermostat App with Simulate Endpoints](../capability-guides/thermostats/testing-your-thermostat-app-with-simulate-endpoints.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -27334,6 +27330,7 @@
           "title": "Temperature Reached",
           "name": "temperature_reached",
           "path": "/thermostats/simulate/temperature_reached",
+          "parentPath": "/thermostats/simulate",
           "description": "Simulates a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) reaching a specified temperature. Only applicable for [sandbox devices](../core-concepts/workspaces/README.md#sandbox-workspaces). See also [Testing Your Thermostat App with Simulate Endpoints](../capability-guides/thermostats/testing-your-thermostat-app-with-simulate-endpoints.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -27405,7 +27402,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/thermostats",
       "isUndocumented": false,
       "isDeprecated": false,
@@ -27414,12 +27410,13 @@
     {
       "path": "/unstable_access_grants",
       "name": "unstable_access_grants",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Create an Access Grant",
           "name": "create",
           "path": "/unstable_access_grants/create",
+          "parentPath": "/unstable_access_grants",
           "description": "Creates a new access grant.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -27695,6 +27692,7 @@
           "title": "Delete an Access Grant",
           "name": "delete",
           "path": "/unstable_access_grants/delete",
+          "parentPath": "/unstable_access_grants",
           "description": "Delete an access grant.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -27741,6 +27739,7 @@
           "title": "Get an Access Grant",
           "name": "get",
           "path": "/unstable_access_grants/get",
+          "parentPath": "/unstable_access_grants",
           "description": "Get an access grant.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -27790,6 +27789,7 @@
           "title": "List Access Grants",
           "name": "list",
           "path": "/unstable_access_grants/list",
+          "parentPath": "/unstable_access_grants",
           "description": "Get an access grant.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -27878,7 +27878,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": null,
       "isUndocumented": true,
       "isDeprecated": false,
@@ -27887,12 +27886,13 @@
     {
       "path": "/unstable_access_methods",
       "name": "unstable_access_methods",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Delete an Access Method",
           "name": "delete",
           "path": "/unstable_access_methods/delete",
+          "parentPath": "/unstable_access_methods",
           "description": "Delete an access method.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -27939,6 +27939,7 @@
           "title": "Get an Access Method",
           "name": "get",
           "path": "/unstable_access_methods/get",
+          "parentPath": "/unstable_access_methods",
           "description": "Get an access method.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -27988,6 +27989,7 @@
           "title": "List Access Methods",
           "name": "list",
           "path": "/unstable_access_methods/list",
+          "parentPath": "/unstable_access_methods",
           "description": "List all access methods, usually filtered by access grant.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -28034,7 +28036,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": null,
       "isUndocumented": true,
       "isDeprecated": false,
@@ -28043,12 +28044,13 @@
     {
       "path": "/unstable_locations",
       "name": "unstable_locations",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Add ACS Entrances",
           "name": "add_acs_entrances",
           "path": "/unstable_locations/add_acs_entrances",
+          "parentPath": "/unstable_locations",
           "description": "Add entrances to a specific location.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -28111,6 +28113,7 @@
           "title": "Add Location Devices",
           "name": "add_devices",
           "path": "/unstable_locations/add_devices",
+          "parentPath": "/unstable_locations",
           "description": "Add devices to a specific location.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -28173,6 +28176,7 @@
           "title": "Create Location",
           "name": "create",
           "path": "/unstable_locations/create",
+          "parentPath": "/unstable_locations",
           "description": "Create a new location.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -28310,6 +28314,7 @@
           "title": "Delete Location",
           "name": "delete",
           "path": "/unstable_locations/delete",
+          "parentPath": "/unstable_locations",
           "description": "Delete a location.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -28356,6 +28361,7 @@
           "title": "Get Location",
           "name": "get",
           "path": "/unstable_locations/get",
+          "parentPath": "/unstable_locations",
           "description": "Get a location.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -28405,6 +28411,7 @@
           "title": "List Locations",
           "name": "list",
           "path": "/unstable_locations/list",
+          "parentPath": "/unstable_locations",
           "description": "Returns a list of all locations.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -28440,6 +28447,7 @@
           "title": "Remove ACS Entrances",
           "name": "remove_acs_entrances",
           "path": "/unstable_locations/remove_acs_entrances",
+          "parentPath": "/unstable_locations",
           "description": "Remove entrances from a specific location.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -28501,6 +28509,7 @@
           "title": "Remove Location Devices",
           "name": "remove_devices",
           "path": "/unstable_locations/remove_devices",
+          "parentPath": "/unstable_locations",
           "description": "Remove devices from a specific location.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -28562,6 +28571,7 @@
           "title": "Update Location",
           "name": "update",
           "path": "/unstable_locations/update",
+          "parentPath": "/unstable_locations",
           "description": "Update an existing location.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -28681,7 +28691,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": null,
       "isUndocumented": true,
       "isDeprecated": false,
@@ -28690,17 +28699,13 @@
     {
       "path": "/unstable_partner/building_blocks",
       "name": "building_blocks",
-      "namespace": {
-        "path": "/unstable_partner",
-        "isDeprecated": false,
-        "isUndocumented": true,
-        "isDraft": false
-      },
+      "namespacePath": "/unstable_partner",
       "endpoints": [
         {
           "title": "Generate a building block magic link",
           "name": "generate_link",
           "path": "/unstable_partner/building_blocks/generate_link",
+          "parentPath": "/unstable_partner/building_blocks",
           "description": "Creates a new bridge client session.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -28772,7 +28777,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/unstable_partner",
       "isUndocumented": true,
       "isDeprecated": false,
@@ -28781,17 +28785,13 @@
     {
       "path": "/unstable_partner/resources",
       "name": "resources",
-      "namespace": {
-        "path": "/unstable_partner",
-        "isDeprecated": false,
-        "isUndocumented": true,
-        "isDraft": false
-      },
+      "namespacePath": "/unstable_partner",
       "endpoints": [
         {
           "title": "Push partner resources at Seam",
           "name": "push",
           "path": "/unstable_partner/resources/push",
+          "parentPath": "/unstable_partner/resources",
           "description": "Send Seam some of your resources.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -28990,7 +28990,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/unstable_partner",
       "isUndocumented": true,
       "isDeprecated": false,
@@ -28999,12 +28998,13 @@
     {
       "path": "/user_identities",
       "name": "user_identities",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Add an ACS User to a User Identity",
           "name": "add_acs_user",
           "path": "/user_identities/add_acs_user",
+          "parentPath": "/user_identities",
           "description": "Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -29155,6 +29155,7 @@
           "title": "Create a User Identity",
           "name": "create",
           "path": "/user_identities/create",
+          "parentPath": "/user_identities",
           "description": "Creates a new [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -29363,6 +29364,7 @@
           "title": "Delete a User Identity",
           "name": "delete",
           "path": "/user_identities/delete",
+          "parentPath": "/user_identities",
           "description": "Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). To delete a user identity, you must first delete any [credentials](https://docs.seam.co/latest/api/access-control-systems/credentials) and [enrollment automations](https://docs.seam.co/latest/api/user_identities/enrollment_automations/delete) associated with the user identity. You must also deactivate any associated phones.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -29497,6 +29499,7 @@
           "title": "Generate an Instant Key",
           "name": "generate_instant_key",
           "path": "/user_identities/generate_instant_key",
+          "parentPath": "/user_identities",
           "description": "Generates a new [instant key](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/instant-keys) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -29561,6 +29564,7 @@
           "title": "Get a User Identity",
           "name": "get",
           "path": "/user_identities/get",
+          "parentPath": "/user_identities",
           "description": "Returns a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -29723,6 +29727,7 @@
           "title": "Grant a User Identity Access to a Device",
           "name": "grant_access_to_device",
           "path": "/user_identities/grant_access_to_device",
+          "parentPath": "/user_identities",
           "description": "Grants a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) access to a specified [device](../core-concepts/devices/README.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -29873,6 +29878,7 @@
           "title": "List User Identities",
           "name": "list",
           "path": "/user_identities/list",
+          "parentPath": "/user_identities",
           "description": "Returns a list of all [user identities](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -30022,6 +30028,7 @@
           "title": "List Accessible Devices for a User Identity",
           "name": "list_accessible_devices",
           "path": "/user_identities/list_accessible_devices",
+          "parentPath": "/user_identities",
           "description": "Returns a list of all [devices](../core-concepts/devices/README.md) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -30222,6 +30229,7 @@
           "title": "List ACS Systems Associated with a User Identity",
           "name": "list_acs_systems",
           "path": "/user_identities/list_acs_systems",
+          "parentPath": "/user_identities",
           "description": "Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -30376,6 +30384,7 @@
           "title": "List ACS Users Associated with a User Identity",
           "name": "list_acs_users",
           "path": "/user_identities/list_acs_users",
+          "parentPath": "/user_identities",
           "description": "Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -30529,6 +30538,7 @@
           "title": "Remove an ACS User from a User Identity",
           "name": "remove_acs_user",
           "path": "/user_identities/remove_acs_user",
+          "parentPath": "/user_identities",
           "description": "Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -30678,6 +30688,7 @@
           "title": "Revoke Access to a Device from a User Identity",
           "name": "revoke_access_to_device",
           "path": "/user_identities/revoke_access_to_device",
+          "parentPath": "/user_identities",
           "description": "Revokes access to a specified [device](../core-concepts/devices/README.md) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -30827,6 +30838,7 @@
           "title": "Update a User Identity",
           "name": "update",
           "path": "/user_identities/update",
+          "parentPath": "/user_identities",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -30927,9 +30939,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [
-        "/user_identities/enrollment_automations"
-      ],
       "parentPath": null,
       "isUndocumented": false,
       "isDeprecated": false,
@@ -30938,12 +30947,13 @@
     {
       "path": "/user_identities/enrollment_automations",
       "name": "enrollment_automations",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Delete an Enrollment Automation",
           "name": "delete",
           "path": "/user_identities/enrollment_automations/delete",
+          "parentPath": "/user_identities/enrollment_automations",
           "description": "Deletes a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system). You must delete all enrollment automations associated with a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) before [deleting the user identity](https://docs.seam.co/latest/api/user_identities/delete).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -31078,6 +31088,7 @@
           "title": "Get an Enrollment Automation",
           "name": "get",
           "path": "/user_identities/enrollment_automations/get",
+          "parentPath": "/user_identities/enrollment_automations",
           "description": "Returns a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -31226,6 +31237,7 @@
           "title": "Launch an Enrollment Automation",
           "name": "launch",
           "path": "/user_identities/enrollment_automations/launch",
+          "parentPath": "/user_identities/enrollment_automations",
           "description": "Sets up a new [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) with a specified [credential manager](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -31432,6 +31444,7 @@
           "title": "List Enrollment Automations",
           "name": "list",
           "path": "/user_identities/enrollment_automations/list",
+          "parentPath": "/user_identities/enrollment_automations",
           "description": "Returns a list of all [enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -31579,7 +31592,6 @@
           ]
         }
       ],
-      "subroutePaths": [],
       "parentPath": "/user_identities",
       "isUndocumented": false,
       "isDeprecated": false,
@@ -31588,12 +31600,13 @@
     {
       "path": "/webhooks",
       "name": "webhooks",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "",
           "name": "create",
           "path": "/webhooks/create",
+          "parentPath": "/webhooks",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -31661,6 +31674,7 @@
           "title": "",
           "name": "delete",
           "path": "/webhooks/delete",
+          "parentPath": "/webhooks",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -31707,6 +31721,7 @@
           "title": "",
           "name": "get",
           "path": "/webhooks/get",
+          "parentPath": "/webhooks",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -31756,6 +31771,7 @@
           "title": "",
           "name": "list",
           "path": "/webhooks/list",
+          "parentPath": "/webhooks",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -31791,6 +31807,7 @@
           "title": "",
           "name": "update",
           "path": "/webhooks/update",
+          "parentPath": "/webhooks",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -31850,7 +31867,6 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": null,
       "isUndocumented": false,
       "isDeprecated": false,
@@ -31859,12 +31875,13 @@
     {
       "path": "/workspaces",
       "name": "workspaces",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "",
           "name": "create",
           "path": "/workspaces/create",
+          "parentPath": "/workspaces",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -32128,6 +32145,7 @@
           "title": "",
           "name": "get",
           "path": "/workspaces/get",
+          "parentPath": "/workspaces",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -32164,6 +32182,7 @@
           "title": "",
           "name": "list",
           "path": "/workspaces/list",
+          "parentPath": "/workspaces",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -32201,6 +32220,7 @@
           "title": "",
           "name": "reset_sandbox",
           "path": "/workspaces/reset_sandbox",
+          "parentPath": "/workspaces",
           "description": "Resets a [sandbox workspace](../core-concepts/workspaces/README.md#sandbox-workspaces). Note that this endpoint is only available for sandbox workspaces.",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -32235,6 +32255,7 @@
           "title": "",
           "name": "update",
           "path": "/workspaces/update",
+          "parentPath": "/workspaces",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -32401,10 +32422,60 @@
           "codeSamples": []
         }
       ],
-      "subroutePaths": [],
       "parentPath": null,
       "isUndocumented": false,
       "isDeprecated": false,
+      "isDraft": false
+    }
+  ],
+  "namespaces": [
+    {
+      "path": "/acs",
+      "parentPath": null,
+      "isDeprecated": false,
+      "isUndocumented": false,
+      "isDraft": false
+    },
+    {
+      "path": "/seam/bridge/v1",
+      "parentPath": "/seam/bridge",
+      "isDeprecated": false,
+      "isUndocumented": true,
+      "isDraft": false
+    },
+    {
+      "path": "/seam/instant_key/v1",
+      "parentPath": "/seam/instant_key",
+      "isDeprecated": false,
+      "isUndocumented": true,
+      "isDraft": false
+    },
+    {
+      "path": "/seam/mobile_sdk/v1/acs",
+      "parentPath": "/seam/mobile_sdk/v1",
+      "isDeprecated": false,
+      "isUndocumented": true,
+      "isDraft": false
+    },
+    {
+      "path": "/seam/mobile_sdk/v1",
+      "parentPath": "/seam/mobile_sdk",
+      "isDeprecated": false,
+      "isUndocumented": true,
+      "isDraft": false
+    },
+    {
+      "path": "/seam/partner/v1",
+      "parentPath": "/seam/partner",
+      "isDeprecated": false,
+      "isUndocumented": true,
+      "isDraft": false
+    },
+    {
+      "path": "/unstable_partner",
+      "parentPath": null,
+      "isDeprecated": false,
+      "isUndocumented": true,
       "isDraft": false
     }
   ],
