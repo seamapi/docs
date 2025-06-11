@@ -1,6 +1,6 @@
 # Remove Entrances from a Space
 {% hint style="info" %}
-**Early Access Preview.** The spaces API is currently in Alpha. We are actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
+**Early Access Preview.** The spaces API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
 {% endhint %}
 
 - [Request Parameters](./#request-parameters)
