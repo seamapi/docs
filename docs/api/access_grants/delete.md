@@ -1,6 +1,6 @@
 # Delete an Access Grant
 {% hint style="info" %}
-**Early Access Preview.** The access grants API is available for early access. Check it out and send us your feedback at [support@seam.co](mailto:support@seam.co).
+**Early Access Preview.** The access grants API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
 {% endhint %}
 
 - [Request Parameters](./#request-parameters)
