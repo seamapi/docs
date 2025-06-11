@@ -4,7 +4,7 @@
     {
       "path": "/access_codes",
       "name": "access_codes",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Create an Access Code",
@@ -1576,7 +1576,7 @@
     {
       "path": "/access_codes/simulate",
       "name": "simulate",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Simulate Creating an Unmanaged Access Code",
@@ -1666,7 +1666,7 @@
     {
       "path": "/access_codes/unmanaged",
       "name": "unmanaged",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Convert an Unmanaged Access Code",
@@ -2091,12 +2091,7 @@
     {
       "path": "/acs/access_groups",
       "name": "access_groups",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "Add an ACS User to an Access Group",
@@ -3076,12 +3071,7 @@
     {
       "path": "/acs/access_groups/unmanaged",
       "name": "unmanaged",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "Get an Unmanaged Access Group",
@@ -3410,12 +3400,7 @@
     {
       "path": "/acs/credential_pools",
       "name": "credential_pools",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "List Credential Pools",
@@ -3476,12 +3461,7 @@
     {
       "path": "/acs/credential_provisioning_automations",
       "name": "credential_provisioning_automations",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "Launch a Credential Provisioning Automation",
@@ -3598,12 +3578,7 @@
     {
       "path": "/acs/credentials",
       "name": "credentials",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "Assign a Credential to an ACS User",
@@ -5502,12 +5477,7 @@
     {
       "path": "/acs/credentials/unmanaged",
       "name": "unmanaged",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "Get an Unmanaged Credential",
@@ -5645,12 +5615,7 @@
     {
       "path": "/acs/encoders",
       "name": "encoders",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "Encode an Access Method",
@@ -5982,12 +5947,7 @@
     {
       "path": "/acs/encoders/simulate",
       "name": "simulate",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "Simulate that the Next Credential Encoding Will Fail",
@@ -6400,12 +6360,7 @@
     {
       "path": "/acs/entrances",
       "name": "entrances",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "Get an Entrance",
@@ -6998,12 +6953,7 @@
     {
       "path": "/acs/systems",
       "name": "systems",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "Get an ACS System",
@@ -7445,12 +7395,7 @@
     {
       "path": "/acs/users",
       "name": "users",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "Add an ACS User to an Access Group",
@@ -9605,12 +9550,7 @@
     {
       "path": "/acs/users/unmanaged",
       "name": "unmanaged",
-      "namespace": {
-        "path": "/acs",
-        "isDeprecated": false,
-        "isUndocumented": false,
-        "isDraft": false
-      },
+      "namespacePath": "/acs",
       "endpoints": [
         {
           "title": "Get an Unmanaged ACS User",
@@ -9777,7 +9717,7 @@
     {
       "path": "/action_attempts",
       "name": "action_attempts",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Get an Action Attempt",
@@ -9889,7 +9829,7 @@
     {
       "path": "/bridges",
       "name": "bridges",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Get a Seam Bridge",
@@ -9984,7 +9924,7 @@
     {
       "path": "/client_sessions",
       "name": "client_sessions",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Create a Client Session",
@@ -10610,7 +10550,7 @@
     {
       "path": "/connect_webviews",
       "name": "connect_webviews",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Create a Connect Webview",
@@ -11572,7 +11512,7 @@
     {
       "path": "/connected_accounts",
       "name": "connected_accounts",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Delete a Connected Account",
@@ -12396,7 +12336,7 @@
     {
       "path": "/devices",
       "name": "devices",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Delete a Device",
@@ -14371,7 +14311,7 @@
     {
       "path": "/devices/simulate",
       "name": "simulate",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Simulate Device Connection",
@@ -14521,7 +14461,7 @@
     {
       "path": "/devices/unmanaged",
       "name": "unmanaged",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Get an Unmanaged Device",
@@ -16284,7 +16224,7 @@
     {
       "path": "/events",
       "name": "events",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Get an Event",
@@ -18407,7 +18347,7 @@
     {
       "path": "/locks",
       "name": "locks",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "",
@@ -19932,7 +19872,7 @@
     {
       "path": "/locks/simulate",
       "name": "simulate",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "",
@@ -20056,7 +19996,7 @@
     {
       "path": "/networks",
       "name": "networks",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "",
@@ -20151,7 +20091,7 @@
     {
       "path": "/noise_sensors",
       "name": "noise_sensors",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "",
@@ -20723,7 +20663,7 @@
     {
       "path": "/noise_sensors/noise_thresholds",
       "name": "noise_thresholds",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "",
@@ -21204,7 +21144,7 @@
     {
       "path": "/noise_sensors/simulate",
       "name": "simulate",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "",
@@ -21262,7 +21202,7 @@
     {
       "path": "/phones",
       "name": "phones",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Deactivate a Phone",
@@ -21435,7 +21375,7 @@
     {
       "path": "/phones/simulate",
       "name": "simulate",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Create a Sandbox Phone",
@@ -21716,12 +21656,7 @@
     {
       "path": "/seam/bridge/v1/bridge_client_sessions",
       "name": "bridge_client_sessions",
-      "namespace": {
-        "path": "/seam/bridge/v1",
-        "isDeprecated": false,
-        "isUndocumented": true,
-        "isDraft": false
-      },
+      "namespacePath": "/seam/bridge/v1",
       "endpoints": [
         {
           "title": "Create a Bridge Client Session",
@@ -21958,12 +21893,7 @@
     {
       "path": "/seam/bridge/v1/bridge_connected_systems",
       "name": "bridge_connected_systems",
-      "namespace": {
-        "path": "/seam/bridge/v1",
-        "isDeprecated": false,
-        "isUndocumented": true,
-        "isDraft": false
-      },
+      "namespacePath": "/seam/bridge/v1",
       "endpoints": [
         {
           "title": "List Bridge Connected Systems",
@@ -22007,12 +21937,7 @@
     {
       "path": "/seam/instant_key/v1/client_sessions",
       "name": "client_sessions",
-      "namespace": {
-        "path": "/seam/instant_key/v1",
-        "isDeprecated": false,
-        "isUndocumented": true,
-        "isDraft": false
-      },
+      "namespacePath": "/seam/instant_key/v1",
       "endpoints": [
         {
           "title": "Exchange Instant Key Short Code",
@@ -22070,12 +21995,7 @@
     {
       "path": "/seam/mobile_sdk/v1/acs/credentials",
       "name": "credentials",
-      "namespace": {
-        "path": "/seam/mobile_sdk/v1/acs",
-        "isDeprecated": false,
-        "isUndocumented": true,
-        "isDraft": false
-      },
+      "namespacePath": "/seam/mobile_sdk/v1/acs",
       "endpoints": [
         {
           "title": "List Credentials",
@@ -22120,12 +22040,7 @@
     {
       "path": "/seam/mobile_sdk/v1/phone_sessions",
       "name": "phone_sessions",
-      "namespace": {
-        "path": "/seam/mobile_sdk/v1",
-        "isDeprecated": false,
-        "isUndocumented": true,
-        "isDraft": false
-      },
+      "namespacePath": "/seam/mobile_sdk/v1",
       "endpoints": [
         {
           "title": "Get or Create a Phone Session",
@@ -22279,12 +22194,7 @@
     {
       "path": "/seam/partner/v1/resources",
       "name": "resources",
-      "namespace": {
-        "path": "/seam/partner/v1",
-        "isDeprecated": false,
-        "isUndocumented": true,
-        "isDraft": false
-      },
+      "namespacePath": "/seam/partner/v1",
       "endpoints": [
         {
           "title": "List partner resources at Seam",
@@ -22342,7 +22252,7 @@
     {
       "path": "/thermostats",
       "name": "thermostats",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Activate a Climate Preset",
@@ -25966,7 +25876,7 @@
     {
       "path": "/thermostats/daily_programs",
       "name": "daily_programs",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Create a Thermostat Daily Program",
@@ -26244,7 +26154,7 @@
     {
       "path": "/thermostats/schedules",
       "name": "schedules",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Create a Thermostat Schedule",
@@ -27170,7 +27080,7 @@
     {
       "path": "/thermostats/simulate",
       "name": "simulate",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "HVAC Mode Adjusted",
@@ -27414,7 +27324,7 @@
     {
       "path": "/unstable_access_grants",
       "name": "unstable_access_grants",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Create an Access Grant",
@@ -27887,7 +27797,7 @@
     {
       "path": "/unstable_access_methods",
       "name": "unstable_access_methods",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Delete an Access Method",
@@ -28043,7 +27953,7 @@
     {
       "path": "/unstable_locations",
       "name": "unstable_locations",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Add ACS Entrances",
@@ -28690,12 +28600,7 @@
     {
       "path": "/unstable_partner/building_blocks",
       "name": "building_blocks",
-      "namespace": {
-        "path": "/unstable_partner",
-        "isDeprecated": false,
-        "isUndocumented": true,
-        "isDraft": false
-      },
+      "namespacePath": "/unstable_partner",
       "endpoints": [
         {
           "title": "Generate a building block magic link",
@@ -28781,12 +28686,7 @@
     {
       "path": "/unstable_partner/resources",
       "name": "resources",
-      "namespace": {
-        "path": "/unstable_partner",
-        "isDeprecated": false,
-        "isUndocumented": true,
-        "isDraft": false
-      },
+      "namespacePath": "/unstable_partner",
       "endpoints": [
         {
           "title": "Push partner resources at Seam",
@@ -28999,7 +28899,7 @@
     {
       "path": "/user_identities",
       "name": "user_identities",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Add an ACS User to a User Identity",
@@ -30938,7 +30838,7 @@
     {
       "path": "/user_identities/enrollment_automations",
       "name": "enrollment_automations",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "Delete an Enrollment Automation",
@@ -31588,7 +31488,7 @@
     {
       "path": "/webhooks",
       "name": "webhooks",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "",
@@ -31859,7 +31759,7 @@
     {
       "path": "/workspaces",
       "name": "workspaces",
-      "namespace": null,
+      "namespacePath": null,
       "endpoints": [
         {
           "title": "",
@@ -32405,6 +32305,50 @@
       "parentPath": null,
       "isUndocumented": false,
       "isDeprecated": false,
+      "isDraft": false
+    }
+  ],
+  "namespaces": [
+    {
+      "path": "/acs",
+      "isDeprecated": false,
+      "isUndocumented": false,
+      "isDraft": false
+    },
+    {
+      "path": "/seam/bridge/v1",
+      "isDeprecated": false,
+      "isUndocumented": true,
+      "isDraft": false
+    },
+    {
+      "path": "/seam/instant_key/v1",
+      "isDeprecated": false,
+      "isUndocumented": true,
+      "isDraft": false
+    },
+    {
+      "path": "/seam/mobile_sdk/v1/acs",
+      "isDeprecated": false,
+      "isUndocumented": true,
+      "isDraft": false
+    },
+    {
+      "path": "/seam/mobile_sdk/v1",
+      "isDeprecated": false,
+      "isUndocumented": true,
+      "isDraft": false
+    },
+    {
+      "path": "/seam/partner/v1",
+      "isDeprecated": false,
+      "isUndocumented": true,
+      "isDraft": false
+    },
+    {
+      "path": "/unstable_partner",
+      "isDeprecated": false,
+      "isUndocumented": true,
       "isDraft": false
     }
   ],
