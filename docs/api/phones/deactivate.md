@@ -23,7 +23,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`device_id`** *String* (Required)
 
-Device ID of the desired phone.
+Device ID of the phone that you want to deactivate.
 
 ---
 

@@ -4,7 +4,7 @@
 - [Response](./#response)
 - [Examples](./#examples)
 
-Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 
 {% tabs %}
@@ -256,7 +256,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`user_identity_id`** *String* (Required)
 
-ID of the user identity for which you want to retrieve all ACS users.
+ID of the user identity for which you want to retrieve all access system users.
 
 ---
 

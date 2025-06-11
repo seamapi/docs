@@ -1,10 +1,10 @@
-# Get Phone
+# Get a Phone
 
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)
 
-Returns a single phone entry matching the provided `device_id`.
+Returns a specified [phone](../../capability-guides/mobile-access/managing-phones-for-a-user-identity.md).
 
 
 <details>
@@ -22,7 +22,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`device_id`** *String* (Required)
 
-Device ID of the desired phone.
+Device ID of the phone that you want to get.
 
 ---
 

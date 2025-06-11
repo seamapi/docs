@@ -338,13 +338,13 @@ Array of device IDs for which you want to list devices.
 
 **`device_type`** *String*
 
-Device type by which to filter thermostat devices.
+Device type by which you want to filter thermostat devices.
 
 ---
 
 **`device_types`** *Array* *of Enums*
 
-Array of device types by which to filter thermostat devices.
+Array of device types by which you want to filter thermostat devices.
 <details>
 
 <summary>Enum values</summary>
@@ -368,7 +368,7 @@ Numerical limit on the number of devices to return.
 
 **`manufacturer`** *String*
 
-Manufacturer by which to filter thermostat devices.
+Manufacturer by which you want to filter thermostat devices.
 
 ---
 

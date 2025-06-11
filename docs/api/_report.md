@@ -22,19 +22,6 @@
 - `/webhooks`
 - `/workspaces`
 
-### Endpoints
-
-- `/webhooks/create`
-- `/webhooks/delete`
-- `/webhooks/get`
-- `/webhooks/list`
-- `/webhooks/update`
-- `/workspaces/create`
-- `/workspaces/get`
-- `/workspaces/list`
-- `/workspaces/reset_sandbox`
-- `/workspaces/update`
-
 ## Undocumented
 
 These items are intentionally undocumented.
@@ -103,7 +90,7 @@ These items are intentionally undocumented.
 - `/locks/simulate/manual_lock_via_keypad`: Unreleased.
 - `/networks/get`: Deprecated.
 - `/networks/list`: Deprecated.
-- `/seam/bridge/v1/bridge_client_sessions/create`: Seam Bridge Client only.
+- `/seam/bridge/v1/bridge_client_sessions/create`: Seam Bridge client only.
 - `/seam/bridge/v1/bridge_client_sessions/get`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/refresh_telemetry_token`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`: Seam Bridge Client only.
@@ -198,6 +185,8 @@ Items that are intentionally undocumented are not included in this section.
 
 ### Resources
 
+- `access_grant`
+- `access_method`
 - `acs_credential_pool`
 - `acs_credential_provisioning_automation`
 - `device_provider`
@@ -211,6 +200,7 @@ Items that are intentionally undocumented are not included in this section.
 
 ### Resource properties
 
+- `access_grant.location_ids`
 - `acs_access_group.access_group_type`
 - `acs_access_group.access_group_type_display_name`
 - `acs_access_group.display_name`
@@ -331,16 +321,6 @@ Items that are intentionally undocumented are not included in this section.
 
 - `/networks/get`
 - `/networks/list`
-- `/user_identities/update`
-- `/webhooks/create`
-- `/webhooks/delete`
-- `/webhooks/get`
-- `/webhooks/list`
-- `/webhooks/update`
-- `/workspaces/create`
-- `/workspaces/get`
-- `/workspaces/list`
-- `/workspaces/update`
 
 ### Endpoint parameters
 
@@ -426,42 +406,6 @@ Items that are intentionally undocumented are not included in this section.
     - `sync`
 - `/noise_sensors/noise_thresholds/update`
     - `sync`
-- `/seam/bridge/v1/bridge_client_sessions/create`
-    - `bridge_client_machine_identifier_key`
-    - `bridge_client_name`
-    - `bridge_client_time_zone`
-- `/seam/bridge/v1/bridge_client_sessions/report_status`
-    - `is_tailscale_connected`
-    - `tailscale_ip_v4`
-- `/seam/mobile_sdk/v1/phone_sessions/get_or_create`
-    - `custom_sdk_installation_id`
-    - `phone_device_metadata`
-    - `phone_os`
-- `/seam/partner/v1/building_blocks/spaces/auto_map`
-    - `collection_key`
-- `/spaces/add_acs_entrances`
-    - `acs_entrance_ids`
-    - `space_id`
-- `/spaces/add_devices`
-    - `device_ids`
-    - `space_id`
-- `/spaces/create`
-    - `acs_entrance_ids`
-    - `device_ids`
-    - `name`
-- `/spaces/delete`
-    - `space_id`
-- `/spaces/get`
-    - `space_id`
-- `/spaces/remove_acs_entrances`
-    - `acs_entrance_ids`
-    - `space_id`
-- `/spaces/remove_devices`
-    - `device_ids`
-    - `space_id`
-- `/spaces/update`
-    - `name`
-    - `space_id`
 - `/thermostats/cool`
     - `sync`
 - `/thermostats/heat`
@@ -485,87 +429,23 @@ Items that are intentionally undocumented are not included in this section.
     - `requested_access_methods`
 - `/unstable_access_grants/list`
     - `location_id`
-- `/unstable_locations/add_acs_entrances`
-    - `acs_entrance_ids`
-    - `location_id`
-- `/unstable_locations/add_devices`
-    - `device_ids`
-    - `location_id`
-- `/unstable_locations/create`
-    - `acs_entrance_ids`
-    - `device_ids`
-    - `geolocation`
-    - `name`
-    - `time_zone`
-- `/unstable_locations/delete`
-    - `location_id`
-- `/unstable_locations/get`
-    - `location_id`
-- `/unstable_locations/remove_acs_entrances`
-    - `acs_entrance_ids`
-    - `location_id`
-- `/unstable_locations/remove_devices`
-    - `device_ids`
-    - `location_id`
-- `/unstable_locations/update`
-    - `geolocation`
-    - `location_id`
-    - `name`
-    - `time_zone`
-- `/unstable_partner/building_blocks/connect_accounts`
-    - `customer_key`
-- `/unstable_partner/building_blocks/generate_magic_link`
-    - `building_block_type`
-    - `customer_key`
-- `/unstable_partner/building_blocks/manage_devices`
-    - `customer_key`
-- `/unstable_partner/building_blocks/organize_spaces`
-    - `customer_key`
-    - `partner_resources`
 - `/unstable_partner/resources/push`
     - `custom_metadata`
-    - `customer_key`
     - `description`
     - `email_address`
     - `ends_at`
     - `location_keys`
     - `name`
-    - `partner_resource_key`
-    - `partner_resource_type`
     - `phone_number`
     - `starts_at`
     - `user_identity_key`
 - `/user_identities/get`
     - `user_identity_key`
-- `/user_identities/list`
-    - `credential_manager_acs_system_id`
-- `/user_identities/update`
-    - `full_name`
-- `/webhooks/create`
-    - `event_types`
-    - `url`
-- `/webhooks/delete`
-    - `webhook_id`
-- `/webhooks/get`
-    - `webhook_id`
-- `/webhooks/update`
-    - `event_types`
-    - `webhook_id`
 - `/workspaces/create`
-    - `company_name`
-    - `connect_partner_name`
-    - `connect_webview_customization`
-    - `is_sandbox`
-    - `name`
     - `webview_logo_shape`
     - `webview_primary_button_color`
     - `webview_primary_button_text_color`
     - `webview_success_message`
-- `/workspaces/update`
-    - `connect_partner_name`
-    - `connect_webview_customization`
-    - `is_suspended`
-    - `name`
 
 ## Draft
 
@@ -575,6 +455,7 @@ These items have been marked as draft.
 
 - `/access_grants`: No draft message provided
 - `/access_methods`: No draft message provided
+- `/spaces`: No draft message provided
 
 ### Endpoints
 
@@ -588,6 +469,8 @@ These items have been marked as draft.
 - `/spaces/add_acs_entrances`: Early access.
 - `/spaces/add_devices`: Early access.
 - `/spaces/create`: Early access.
+- `/spaces/delete`: Early access.
+- `/spaces/get`: Early access.
 - `/spaces/list`: Early access.
 - `/spaces/remove_acs_entrances`: Early access.
 - `/spaces/remove_devices`: Early access.
@@ -599,6 +482,7 @@ These items are deprecated.
 
 ### Resource properties
 
+- `access_grant.location_ids`: Use `space_ids`.
 - `acs_access_group.access_group_type`: Use `external_type`.
 - `acs_access_group.access_group_type_display_name`: Use `external_type_display_name`.
 - `acs_system.connected_account_ids`: Use `connected_account_id`.

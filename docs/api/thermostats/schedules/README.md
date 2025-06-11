@@ -129,7 +129,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 [**`/thermostats/schedules/create`**](./create.md)
 
-Creates a [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+Creates a new [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 
 [**`/thermostats/schedules/delete`**](./delete.md)
