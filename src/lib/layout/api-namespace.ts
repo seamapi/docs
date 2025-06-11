@@ -16,7 +16,7 @@ export interface ApiNamespaceLayoutContext {
 export function setNamespaceLayoutContext(
   file: Partial<ApiNamespaceLayoutContext>,
   namespace: string,
-  resources: Record<string, Resource>,
+  resources: Resource[],
   pathMetadata: PathMetadata,
 ): void {
   const namespaceMetadata = pathMetadata[namespace]
@@ -34,25 +34,25 @@ export function setNamespaceLayoutContext(
   const namespaceResources = namespaceRoutes.flatMap(
     ([_, metadata]) => metadata.resources,
   )
-  file.resources = namespaceResources.map((resourceName) => {
-    const resource = resources[resourceName]
+  file.resources = namespaceResources.map((resourceType) => {
+    const resource = resources.find((r) => r.resourceType === resourceType)
 
     if (resource == null) {
-      throw new Error(`Resource ${resourceName} not found in blueprint`)
+      throw new Error(`Resource ${resourceType} not found in blueprint`)
     }
 
     const resourceRoute = namespaceRoutes.find(([_, metadata]) =>
-      metadata.resources.includes(resourceName),
+      metadata.resources.includes(resourceType),
     )
     if (resourceRoute == null) {
-      throw new Error(`Route for resource ${resourceName} not found`)
+      throw new Error(`Route for resource ${resourceType} not found`)
     }
     const [routePath] = resourceRoute
     const lastPathSegment = routePath.split('/').at(-1)
-    const docLink = `./${lastPathSegment}/README.md#${resourceName}`
+    const docLink = `./${lastPathSegment}/README.md#${resourceType}`
 
     return {
-      name: resourceName,
+      name: resourceType,
       description: resource.description,
       link: docLink,
     }
