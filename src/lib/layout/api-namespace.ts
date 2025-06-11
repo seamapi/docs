@@ -14,7 +14,7 @@ export interface ApiNamespaceLayoutContext {
 }
 
 export function setNamespaceLayoutContext(
-  file: ApiNamespaceLayoutContext,
+  file: Partial<ApiNamespaceLayoutContext>,
   namespace: string,
   resources: Record<string, Resource>,
   pathMetadata: PathMetadata,

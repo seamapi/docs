@@ -1,4 +1,4 @@
-import type { Blueprint } from '@seamapi/blueprint'
+import type { Blueprint, Endpoint } from '@seamapi/blueprint'
 import type Metalsmith from 'metalsmith'
 
 import {
@@ -9,6 +9,10 @@ import {
   setEndpointLayoutContext,
   setNamespaceLayoutContext,
 } from './layout/index.js'
+import {
+  type ApiSummaryLayoutContext,
+  setSummaryLayoutContext,
+} from './layout/summary.js'
 import { PathMetadataSchema } from './path-metadata.js'
 
 interface Metadata {
@@ -18,7 +22,8 @@ interface Metadata {
 
 type File = ApiEndpointLayoutContext &
   ApiRouteLayoutContext &
-  ApiNamespaceLayoutContext & { layout: string }
+  ApiNamespaceLayoutContext &
+  ApiSummaryLayoutContext & { layout: string }
 
 const rootPath = 'api'
 const indexFile = 'README.md'
@@ -69,6 +74,7 @@ export const reference = (
     return true
   })
 
+  const endpoints: Endpoint[] = []
   for (const route of routes) {
     const k = `${rootPath}${route.path}/${indexFile}`
     files[k] = { contents: Buffer.from('\n') }
@@ -85,6 +91,13 @@ export const reference = (
       const file = files[k] as unknown as File
       file.layout = 'api-endpoint.hbs'
       setEndpointLayoutContext(file, endpoint, blueprint.actionAttempts)
+      endpoints.push(endpoint)
     }
   }
+
+  const k = `${rootPath}/_summary.md`
+  files[k] = { contents: Buffer.from('\n') }
+  const file = files[k] as unknown as File
+  file.layout = 'summary.hbs'
+  setSummaryLayoutContext(file, { routes, namespaces, endpoints, pathMetadata })
 }
