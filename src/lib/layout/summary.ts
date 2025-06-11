@@ -30,7 +30,13 @@ export function setSummaryLayoutContext(
 }
 
 const getNodes = (paths: string[], context: Context): Node[] => {
-  return paths.map((path) => getNode(path, context))
+  const nodes = paths.map((path) => getNode(path, context))
+  return nodes.sort((n1, n2) => {
+    const res = n1.title.localeCompare(n2.title)
+    if (n1.nodes.length > 0 && n2.nodes.length === 0) return 1
+    if (n1.nodes.length === 0 && n2.nodes.length > 0) return -1
+    return res
+  })
 }
 
 const getNode = (path: string, context: Context): Node => {
@@ -81,18 +87,17 @@ const getNode = (path: string, context: Context): Node => {
 }
 
 const getPaths = (path: string | null, context: Context): string[] => {
-  const getSortedPaths = (
+  const getSubpaths = (
     items: Array<{ path: string; parentPath: string | null }>,
   ): string[] => {
     return items
       .filter(({ parentPath }) => parentPath === path)
       .map(({ path }) => path)
-      .sort()
   }
 
-  const routes = getSortedPaths(context.routes)
-  const endpoints = getSortedPaths(context.endpoints)
-  const namespaces = getSortedPaths(context.namespaces)
+  const routes = getSubpaths(context.routes)
+  const endpoints = getSubpaths(context.endpoints)
+  const namespaces = getSubpaths(context.namespaces)
 
   return [...namespaces, ...endpoints, ...routes]
 }
