@@ -22152,7 +22152,7 @@
             "parameters": [
               {
                 "name": "device_id",
-                "description": "Device ID of the desired phone.",
+                "description": "Device ID of the phone that you want to deactivate.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -22176,11 +22176,11 @@
           "codeSamples": []
         },
         {
-          "title": "Get Phone",
+          "title": "Get a Phone",
           "name": "get",
           "path": "/phones/get",
           "parentPath": "/phones",
-          "description": "Returns a single phone entry matching the provided `device_id`.",
+          "description": "Returns a specified [phone](../capability-guides/mobile-access/managing-phones-for-a-user-identity.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -22203,7 +22203,7 @@
             "parameters": [
               {
                 "name": "device_id",
-                "description": "Device ID of the desired phone.",
+                "description": "Device ID of the phone that you want to get.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -22230,7 +22230,7 @@
           "name": "list",
           "path": "/phones/list",
           "parentPath": "/phones",
-          "description": "Returns a list of all phones. To filter the list of returned phones by a specific owner user identity or credential, include the `owner_user_identity_id` or `acs_credential_id`, respectively, in the request body.",
+          "description": "Returns a list of all [phones](../capability-guides/mobile-access/managing-phones-for-a-user-identity.md). To filter the list of returned phones by a specific owner user identity or credential, include the `owner_user_identity_id` or `acs_credential_id`, respectively, in the request body.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -22253,7 +22253,7 @@
             "parameters": [
               {
                 "name": "acs_credential_id",
-                "description": "ID of the [credential](../capability-guides/access-systems/managing-credentials.md) by which to filter the list of returned phones.",
+                "description": "ID of the [credential](../capability-guides/access-systems/managing-credentials.md) by which you want to filter the list of returned phones.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -22267,7 +22267,7 @@
               },
               {
                 "name": "owner_user_identity_id",
-                "description": "ID of the user identity that represents the owner by which to filter the list of returned phones.",
+                "description": "ID of the user identity that represents the owner by which you want to filter the list of returned phones.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -22305,7 +22305,7 @@
           "name": "create_sandbox_phone",
           "path": "/phones/simulate/create_sandbox_phone",
           "parentPath": "/phones/simulate",
-          "description": "Creates a new simulated phone in a [sandbox workspace](../core-concepts/workspaces/README.md#sandbox-workspaces). For more information, see [Creating a Simulated Phone for a User Identity](../capability-guides/mobile-access/developing-in-a-sandbox-workspace.md#creating-a-simulated-phone-for-a-user-identity).",
+          "description": "Creates a new simulated phone in a [sandbox workspace](../core-concepts/workspaces/README.md#sandbox-workspaces). See also [Creating a Simulated Phone for a User Identity](../capability-guides/mobile-access/developing-in-a-sandbox-workspace.md#creating-a-simulated-phone-for-a-user-identity).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -22328,7 +22328,7 @@
             "parameters": [
               {
                 "name": "assa_abloy_metadata",
-                "description": "ASSA ABLOY metadata to associate with the simulated phone.",
+                "description": "ASSA ABLOY metadata that you want to associate with the simulated phone.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -22435,7 +22435,7 @@
               },
               {
                 "name": "custom_sdk_installation_id",
-                "description": "ID of the custom SDK installation to use for the simulated phone.",
+                "description": "ID of the custom SDK installation that you want to use for the simulated phone.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -22449,7 +22449,7 @@
               },
               {
                 "name": "phone_metadata",
-                "description": "Metadata to associate with the simulated phone.",
+                "description": "Metadata that you want to associate with the simulated phone.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -22548,7 +22548,7 @@
               },
               {
                 "name": "user_identity_id",
-                "description": "ID of the user identity to associate with the simulated phone.",
+                "description": "ID of the user identity that you want to associate with the simulated phone.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -22586,11 +22586,11 @@
           "name": "create",
           "path": "/seam/bridge/v1/bridge_client_sessions/create",
           "parentPath": "/seam/bridge/v1/bridge_client_sessions",
-          "description": "Creates a new bridge client session.",
+          "description": "Creates a new [Seam Bridge](../capability-guides/seam-bridge.md) client session.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
-          "undocumentedMessage": "Seam Bridge Client only.",
+          "undocumentedMessage": "Seam Bridge client only.",
           "isDraft": false,
           "draftMessage": "",
           "response": {
@@ -22609,7 +22609,7 @@
             "parameters": [
               {
                 "name": "bridge_client_machine_identifier_key",
-                "description": "",
+                "description": "Identifier key of the client machine for the Seam Bridge client that you want to create.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -22623,7 +22623,7 @@
               },
               {
                 "name": "bridge_client_name",
-                "description": "",
+                "description": "Name of the Seam Bridge client that you want to create.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -22637,7 +22637,7 @@
               },
               {
                 "name": "bridge_client_time_zone",
-                "description": "",
+                "description": "Time zone for the Seam Bridge that you want to create.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -22657,11 +22657,11 @@
           "codeSamples": []
         },
         {
-          "title": "Get a Bridge Client Session",
+          "title": "Get a Seam Bridge Client Session",
           "name": "get",
           "path": "/seam/bridge/v1/bridge_client_sessions/get",
           "parentPath": "/seam/bridge/v1/bridge_client_sessions",
-          "description": "Returns the bridge client session associated with the session token used.",
+          "description": "Returns the [Seam Bridge](../capability-guides/seam-bridge.md) client session associated with the client session token used for authentication.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -22690,11 +22690,11 @@
           "codeSamples": []
         },
         {
-          "title": "Refresh telemetry token for bridge client session",
+          "title": "Refresh the Telemetry Token for a Seam Bridge Client Session",
           "name": "refresh_telemetry_token",
           "path": "/seam/bridge/v1/bridge_client_sessions/refresh_telemetry_token",
           "parentPath": "/seam/bridge/v1/bridge_client_sessions",
-          "description": "Returns the bridge client session associated with the session token and refreshed telemetry token.",
+          "description": "Returns the [Seam Bridge](../capability-guides/seam-bridge.md) client session associated with the client session token used for authentication and refreshed telemetry token.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -22722,11 +22722,11 @@
           "codeSamples": []
         },
         {
-          "title": "Regenerate a Bridge Client Session Pairing Code",
+          "title": "Regenerate a Seam Bridge Client Session Pairing Code",
           "name": "regenerate_pairing_code",
           "path": "/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code",
           "parentPath": "/seam/bridge/v1/bridge_client_sessions",
-          "description": "Generate a new pairing code and return the updated bridge client session.",
+          "description": "Generate a new pairing code and return the updated [Seam Bridge](../capability-guides/seam-bridge.md) client session.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -22754,11 +22754,11 @@
           "codeSamples": []
         },
         {
-          "title": "Report a Bridge Client's Status",
+          "title": "Report the Status of a Seam Bridge Client",
           "name": "report_status",
           "path": "/seam/bridge/v1/bridge_client_sessions/report_status",
           "parentPath": "/seam/bridge/v1/bridge_client_sessions",
-          "description": "Report a Seam Bridge Bridge client's status.",
+          "description": "Report the status of a [Seam Bridge](../capability-guides/seam-bridge.md) client.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -22778,7 +22778,7 @@
             "parameters": [
               {
                 "name": "is_tailscale_connected",
-                "description": "",
+                "description": "Indicates whether Tailscale is connected.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -22792,7 +22792,7 @@
               },
               {
                 "name": "tailscale_ip_v4",
-                "description": "",
+                "description": "Tailscale IPv4 address.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -22823,11 +22823,11 @@
       "namespacePath": "/seam/bridge/v1",
       "endpoints": [
         {
-          "title": "List Bridge Connected Systems",
+          "title": "List Bridge-Connected Systems",
           "name": "list",
           "path": "/seam/bridge/v1/bridge_connected_systems/list",
           "parentPath": "/seam/bridge/v1/bridge_connected_systems",
-          "description": "Returns the bridge connected systems associated with the session token used.",
+          "description": "Returns the [Seam Bridge](../capability-guides/seam-bridge.md)-connected systems associated with the client session token used for authentication.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -22871,7 +22871,7 @@
           "name": "exchange_short_code",
           "path": "/seam/instant_key/v1/client_sessions/exchange_short_code",
           "parentPath": "/seam/instant_key/v1/client_sessions",
-          "description": "Exchanges a short code for a Client Session Token (CST).\nThis endpoint is used by mobile apps to securely retrieve a client session token\nusing a short code obtained from an instant key URL.",
+          "description": "Exchanges a short code for a client session token. Mobile apps use this endpoint to retrieve a client session token securely using a short code obtained from an Instant Key URL.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -22894,7 +22894,7 @@
             "parameters": [
               {
                 "name": "short_code",
-                "description": "The short code to exchange for a client session token",
+                "description": "Short code that you want to exchange for a client session token.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -22929,7 +22929,7 @@
           "name": "list",
           "path": "/seam/mobile_sdk/v1/acs/credentials/list",
           "parentPath": "/seam/mobile_sdk/v1/acs/credentials",
-          "description": "Returns a list of all ACS credentials.",
+          "description": "Returns a list of all [credentials](../capability-guides/access-systems/managing-credentials.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -22974,7 +22974,7 @@
           "name": "get_or_create",
           "path": "/seam/mobile_sdk/v1/phone_sessions/get_or_create",
           "parentPath": "/seam/mobile_sdk/v1/phone_sessions",
-          "description": "Get or create a session for a mobile SDK phone.",
+          "description": "Gets or creates a session for a mobile SDK phone.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -22997,7 +22997,7 @@
             "parameters": [
               {
                 "name": "custom_sdk_installation_id",
-                "description": "",
+                "description": "ID of the custom SDK installation that you want to use for the new session.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -23011,7 +23011,7 @@
               },
               {
                 "name": "phone_device_metadata",
-                "description": "",
+                "description": "Phone device metadata that you want to use for the new session.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -23069,7 +23069,7 @@
               },
               {
                 "name": "phone_os",
-                "description": "",
+                "description": "Phone operating system that you want to use for the new session.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -23124,11 +23124,11 @@
       "namespacePath": "/seam/partner/v1/building_blocks",
       "endpoints": [
         {
-          "title": "Do auto mapping for partner resources that map to spaces",
+          "title": "Do Auto-Mapping for Partner Resources that Map to Spaces",
           "name": "auto_map",
           "path": "/seam/partner/v1/building_blocks/spaces/auto_map",
           "parentPath": "/seam/partner/v1/building_blocks/spaces",
-          "description": "Auto map partner resources that have been pushed to Seam.",
+          "description": "Auto-maps partner resources that have been pushed to Seam.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -23151,7 +23151,7 @@
             "parameters": [
               {
                 "name": "collection_key",
-                "description": "",
+                "description": "Collection key.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -23182,11 +23182,11 @@
       "namespacePath": "/seam/partner/v1",
       "endpoints": [
         {
-          "title": "List partner resources at Seam",
+          "title": "List Partner Resources at Seam",
           "name": "list",
           "path": "/seam/partner/v1/resources/list",
           "parentPath": "/seam/partner/v1/resources",
-          "description": "List partner resources that have been pushed to Seam.",
+          "description": "Lists partner resources that have been pushed to Seam.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -23209,7 +23209,7 @@
             "parameters": [
               {
                 "name": "resource_type_alias",
-                "description": "Filter by resource type alias.",
+                "description": "Resource type alias by which you want to filter partner resources.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -23240,11 +23240,11 @@
       "namespacePath": null,
       "endpoints": [
         {
-          "title": "Add ACS Entrances",
+          "title": "Add Entrances to a Space",
           "name": "add_acs_entrances",
           "path": "/spaces/add_acs_entrances",
           "parentPath": "/spaces",
-          "description": "Add entrances to a specific space.",
+          "description": "Adds [entrances](../capability-guides/access-systems/retrieving-entrance-details.md) to a specific space.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -23265,7 +23265,7 @@
             "parameters": [
               {
                 "name": "acs_entrance_ids",
-                "description": "",
+                "description": "IDs of the entrances that you want to add to the space.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -23280,7 +23280,7 @@
               },
               {
                 "name": "space_id",
-                "description": "",
+                "description": "ID of the space to which you want to add entrances.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -23303,11 +23303,11 @@
           "codeSamples": []
         },
         {
-          "title": "Add Space Devices",
+          "title": "Add Devices to a Space",
           "name": "add_devices",
           "path": "/spaces/add_devices",
           "parentPath": "/spaces",
-          "description": "Add devices to a specific space.",
+          "description": "Adds devices to a specific space.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -23328,7 +23328,7 @@
             "parameters": [
               {
                 "name": "device_ids",
-                "description": "",
+                "description": "IDs of the devices that you want to add to the space.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -23343,7 +23343,7 @@
               },
               {
                 "name": "space_id",
-                "description": "",
+                "description": "ID of the space to which you want to add devices.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -23366,11 +23366,11 @@
           "codeSamples": []
         },
         {
-          "title": "Create Space",
+          "title": "Create a Space",
           "name": "create",
           "path": "/spaces/create",
           "parentPath": "/spaces",
-          "description": "Create a new space.",
+          "description": "Creates a new space.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -23393,7 +23393,7 @@
             "parameters": [
               {
                 "name": "acs_entrance_ids",
-                "description": "",
+                "description": "IDs of the entrances that you want to add to the new space.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -23408,7 +23408,7 @@
               },
               {
                 "name": "device_ids",
-                "description": "",
+                "description": "IDs of the devices that you want to add to the new space.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -23423,7 +23423,7 @@
               },
               {
                 "name": "name",
-                "description": "",
+                "description": "Name of the space that you want to create.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -23446,17 +23446,17 @@
           "codeSamples": []
         },
         {
-          "title": "Delete Space",
+          "title": "Delete a Space",
           "name": "delete",
           "path": "/spaces/delete",
           "parentPath": "/spaces",
-          "description": "Delete a space.",
+          "description": "Deletes a space.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
           "undocumentedMessage": "",
-          "isDraft": false,
-          "draftMessage": "",
+          "isDraft": true,
+          "draftMessage": "Early access.",
           "response": {
             "responseType": "void",
             "description": "OK"
@@ -23470,7 +23470,7 @@
             "parameters": [
               {
                 "name": "space_id",
-                "description": "",
+                "description": "ID of the space that you want to delete.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -23493,17 +23493,17 @@
           "codeSamples": []
         },
         {
-          "title": "Get Space",
+          "title": "Get a Space",
           "name": "get",
           "path": "/spaces/get",
           "parentPath": "/spaces",
-          "description": "Get a space.",
+          "description": "Gets a space.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
           "undocumentedMessage": "",
-          "isDraft": false,
-          "draftMessage": "",
+          "isDraft": true,
+          "draftMessage": "Early access.",
           "response": {
             "responseType": "resource",
             "responseKey": "space",
@@ -23520,7 +23520,7 @@
             "parameters": [
               {
                 "name": "space_id",
-                "description": "",
+                "description": "ID of the space that you want to get.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -23579,11 +23579,11 @@
           "codeSamples": []
         },
         {
-          "title": "Remove ACS Entrances",
+          "title": "Remove Entrances from a Space",
           "name": "remove_acs_entrances",
           "path": "/spaces/remove_acs_entrances",
           "parentPath": "/spaces",
-          "description": "Remove entrances from a specific space.",
+          "description": "Removes [entrances](../capability-guides/access-systems/retrieving-entrance-details.md) from a specific space.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -23603,7 +23603,7 @@
             "parameters": [
               {
                 "name": "acs_entrance_ids",
-                "description": "",
+                "description": "IDs of the entrances that you want to remove from the space.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -23618,7 +23618,7 @@
               },
               {
                 "name": "space_id",
-                "description": "",
+                "description": "ID of the space from which you want to remove entrances.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -23641,11 +23641,11 @@
           "codeSamples": []
         },
         {
-          "title": "Remove Space Devices",
+          "title": "Remove Devices from a Space",
           "name": "remove_devices",
           "path": "/spaces/remove_devices",
           "parentPath": "/spaces",
-          "description": "Remove devices from a specific space.",
+          "description": "Removes devices from a specific space.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -23665,7 +23665,7 @@
             "parameters": [
               {
                 "name": "device_ids",
-                "description": "",
+                "description": "IDs of the devices that you want to remove from the space.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -23680,7 +23680,7 @@
               },
               {
                 "name": "space_id",
-                "description": "",
+                "description": "ID of the space from which you want to remove devices.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -23703,11 +23703,11 @@
           "codeSamples": []
         },
         {
-          "title": "Update Space",
+          "title": "Update a Space",
           "name": "update",
           "path": "/spaces/update",
           "parentPath": "/spaces",
-          "description": "Update an existing space.",
+          "description": "Updates an existing space.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -23731,7 +23731,7 @@
             "parameters": [
               {
                 "name": "name",
-                "description": "",
+                "description": "Name of the space.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -23745,7 +23745,7 @@
               },
               {
                 "name": "space_id",
-                "description": "",
+                "description": "ID of the space that you want to update.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -23771,7 +23771,7 @@
       "parentPath": null,
       "isUndocumented": false,
       "isDeprecated": false,
-      "isDraft": false
+      "isDraft": true
     },
     {
       "path": "/thermostats",
@@ -23965,7 +23965,7 @@
             "parameters": [
               {
                 "name": "cooling_set_point_celsius",
-                "description": "Desired [cooling set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `cooling_set_point` parameters.",
+                "description": "[Cooling set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -23979,7 +23979,7 @@
               },
               {
                 "name": "cooling_set_point_fahrenheit",
-                "description": "Desired [cooling set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `cooling_set_point` parameters.",
+                "description": "[Cooling set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -24627,7 +24627,7 @@
           "name": "get",
           "path": "/thermostats/get",
           "parentPath": "/thermostats",
-          "description": "Returns a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).",
+          "description": "Returns a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). **Deprecated:** Will be removed. Use `/devices/get` instead.",
           "isDeprecated": false,
           "deprecationMessage": "Use `/devices/get` instead.",
           "isUndocumented": true,
@@ -24650,7 +24650,7 @@
             "parameters": [
               {
                 "name": "device_id",
-                "description": "ID of the thermostat device that you want to retrieve.",
+                "description": "ID of the thermostat device that you want to get.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -24664,7 +24664,7 @@
               },
               {
                 "name": "name",
-                "description": "User-friendly name of the thermostat device that you want to retrieve.",
+                "description": "Name of the thermostat device that you want to retrieve.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -24729,7 +24729,7 @@
               },
               {
                 "name": "heating_set_point_celsius",
-                "description": "Desired [heating set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `heating_set_point` parameters.",
+                "description": "[Heating set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -24743,7 +24743,7 @@
               },
               {
                 "name": "heating_set_point_fahrenheit",
-                "description": "Desired [heating set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `heating_set_point` parameters.",
+                "description": "[Heating set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -24904,7 +24904,7 @@
             "parameters": [
               {
                 "name": "cooling_set_point_celsius",
-                "description": "Desired [cooling set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `cooling_set_point` parameters.",
+                "description": "[Cooling set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -24918,7 +24918,7 @@
               },
               {
                 "name": "cooling_set_point_fahrenheit",
-                "description": "Desired [cooling set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `cooling_set_point` parameters.",
+                "description": "[Cooling set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -24946,7 +24946,7 @@
               },
               {
                 "name": "heating_set_point_celsius",
-                "description": "Desired [heating set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `heating_set_point` parameters.",
+                "description": "[Heating set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -24960,7 +24960,7 @@
               },
               {
                 "name": "heating_set_point_fahrenheit",
-                "description": "Desired [heating set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `heating_set_point` parameters.",
+                "description": "[Heating set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -25223,7 +25223,7 @@
               },
               {
                 "name": "device_type",
-                "description": "Device type by which to filter thermostat devices.",
+                "description": "Device type by which you want to filter thermostat devices.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -25299,7 +25299,7 @@
               },
               {
                 "name": "device_types",
-                "description": "Array of device types by which to filter thermostat devices.",
+                "description": "Array of device types by which you want to filter thermostat devices.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -25645,7 +25645,7 @@
               },
               {
                 "name": "manufacturer",
-                "description": "Manufacturer by which to filter thermostat devices.",
+                "description": "Manufacturer by which you want to filter thermostat devices.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -26302,7 +26302,7 @@
               },
               {
                 "name": "fan_mode_setting",
-                "description": "Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for the thermostat.",
+                "description": "[Fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) that you want to set for the thermostat.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -26565,7 +26565,7 @@
               },
               {
                 "name": "cooling_set_point_celsius",
-                "description": "Desired [cooling set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `cooling_set_point` parameters.",
+                "description": "[Cooling set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -26579,7 +26579,7 @@
               },
               {
                 "name": "cooling_set_point_fahrenheit",
-                "description": "Desired [cooling set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `cooling_set_point` parameters.",
+                "description": "[Cooling set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -26593,7 +26593,7 @@
               },
               {
                 "name": "heating_set_point_celsius",
-                "description": "Desired [heating set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `heating_set_point` parameters.",
+                "description": "[Heating set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -26607,7 +26607,7 @@
               },
               {
                 "name": "heating_set_point_fahrenheit",
-                "description": "Desired [heating set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `heating_set_point` parameters.",
+                "description": "[Heating set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -27431,7 +27431,7 @@
           "name": "create",
           "path": "/thermostats/daily_programs/create",
           "parentPath": "/thermostats/daily_programs",
-          "description": "Creates a thermostat daily program. A daily program consists of a set of periods, where each period includes a start time and the key of a configured climate preset. Once you have defined a daily program, you can assign it to one or more days within a weekly program.",
+          "description": "Creates a new thermostat daily program. A daily program consists of a set of periods, where each period includes a start time and the key of a configured climate preset. Once you have defined a daily program, you can assign it to one or more days within a weekly program.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -27468,7 +27468,7 @@
               },
               {
                 "name": "name",
-                "description": "User-friendly name to identify the thermostat daily program.",
+                "description": "Name of the thermostat daily program.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -27613,7 +27613,7 @@
             "parameters": [
               {
                 "name": "name",
-                "description": "User-friendly name to identify the thermostat daily program that you want to update.",
+                "description": "Name of the thermostat daily program that you want to update.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -27711,7 +27711,7 @@
           "name": "create",
           "path": "/thermostats/schedules/create",
           "parentPath": "/thermostats/schedules",
-          "description": "Creates a [thermostat schedule](../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).",
+          "description": "Creates a new [thermostat schedule](../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -27734,7 +27734,7 @@
             "parameters": [
               {
                 "name": "climate_preset_key",
-                "description": "Key of the [climate preset](../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to use for the thermostat schedule.",
+                "description": "Key of the [climate preset](../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to use for the new thermostat schedule.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -27748,7 +27748,7 @@
               },
               {
                 "name": "device_id",
-                "description": "ID of the desired thermostat device.",
+                "description": "ID of the thermostat device for which you want to create a schedule.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -27762,7 +27762,7 @@
               },
               {
                 "name": "ends_at",
-                "description": "Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                "description": "Date and time at which the new thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -27776,7 +27776,7 @@
               },
               {
                 "name": "is_override_allowed",
-                "description": "Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the schedule is active. See also [Specifying Manual Override Permissions](../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).",
+                "description": "Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the new schedule is active. See also [Specifying Manual Override Permissions](../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -27804,7 +27804,7 @@
               },
               {
                 "name": "name",
-                "description": "User-friendly name to identify the thermostat schedule.",
+                "description": "Name of the thermostat schedule.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -27818,7 +27818,7 @@
               },
               {
                 "name": "starts_at",
-                "description": "Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                "description": "Date and time at which the new thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -27969,7 +27969,7 @@
             "parameters": [
               {
                 "name": "thermostat_schedule_id",
-                "description": "ID of the desired thermostat schedule.",
+                "description": "ID of the thermostat schedule that you want to delete.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -28108,7 +28108,7 @@
             "parameters": [
               {
                 "name": "thermostat_schedule_id",
-                "description": "ID of the desired thermostat schedule.",
+                "description": "ID of the thermostat schedule that you want to get.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -28257,7 +28257,7 @@
             "parameters": [
               {
                 "name": "device_id",
-                "description": "ID of the desired thermostat device.",
+                "description": "ID of the thermostat device for which you want to list schedules.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -28485,7 +28485,7 @@
               },
               {
                 "name": "name",
-                "description": "User-friendly name to identify the thermostat schedule.",
+                "description": "Name of the thermostat schedule.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -28513,7 +28513,7 @@
               },
               {
                 "name": "thermostat_schedule_id",
-                "description": "ID of the desired thermostat schedule.",
+                "description": "ID of the thermostat schedule that you want to update.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -28661,7 +28661,7 @@
             "parameters": [
               {
                 "name": "device_id",
-                "description": "ID of the desired thermostat device.",
+                "description": "ID of the thermostat device for which you want to simulate having adjusted the HVAC mode.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -28675,7 +28675,7 @@
               },
               {
                 "name": "hvac_mode",
-                "description": "Desired [HVAC mode](../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) to simulate.",
+                "description": "HVAC mode that you want to simulate.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -28731,7 +28731,7 @@
               },
               {
                 "name": "cooling_set_point_celsius",
-                "description": "Desired simulated cooling [set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`.",
+                "description": "Cooling [set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C that you want to simulate. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -28745,7 +28745,7 @@
               },
               {
                 "name": "cooling_set_point_fahrenheit",
-                "description": "Desired simulated cooling [set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`.",
+                "description": "Cooling [set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F that you want to simulate. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -28759,7 +28759,7 @@
               },
               {
                 "name": "heating_set_point_celsius",
-                "description": "Desired simulated heating [set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`.",
+                "description": "Heating [set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C that you want to simulate. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -28773,7 +28773,7 @@
               },
               {
                 "name": "heating_set_point_fahrenheit",
-                "description": "Desired simulated heating [set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`.",
+                "description": "Heating [set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F that you want to simulate. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -28820,7 +28820,7 @@
             "parameters": [
               {
                 "name": "device_id",
-                "description": "ID of the desired thermostat device.",
+                "description": "ID of the thermostat device that you want to simulate reaching a specified temperature.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -28834,7 +28834,7 @@
               },
               {
                 "name": "temperature_celsius",
-                "description": "Desired simulated temperature in °C. You must set `temperature_celsius` or `temperature_fahrenheit`.",
+                "description": "Temperature in °C that you want simulate the thermostat reaching. You must set `temperature_celsius` or `temperature_fahrenheit`.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -28848,7 +28848,7 @@
               },
               {
                 "name": "temperature_fahrenheit",
-                "description": "Desired simulated temperature in °F. You must set `temperature_fahrenheit` or `temperature_celsius`.",
+                "description": "Temperature in °F that you want simulate the thermostat reaching. You must set `temperature_fahrenheit` or `temperature_celsius`.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -28909,7 +28909,7 @@
             "parameters": [
               {
                 "name": "user_identity_id",
-                "description": "ID of user identity for whom access is being granted.",
+                "description": "ID of user identity for whom you want to grant access.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -28923,7 +28923,7 @@
               },
               {
                 "name": "user_identity",
-                "description": "When used, creates a new user identity with the given details, and grants them access.",
+                "description": "User identity. When used, creates a new user identity with the specified details and grants them access.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -28981,7 +28981,7 @@
               },
               {
                 "name": "acs_entrance_ids",
-                "description": "Set of IDs of the [entrances](https://docs.seam.co/latest/api/acs/systems/list) to which access is being granted.",
+                "description": "IDs of the [entrances](../capability-guides/access-systems/retrieving-entrance-details.md) to which you want to grant access.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -28997,7 +28997,7 @@
               },
               {
                 "name": "device_ids",
-                "description": "Set of IDs of the [devices](https://docs.seam.co/latest/api/devices/list) to which access is being granted.",
+                "description": "IDs of the devices to which you want to grant access.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29027,7 +29027,7 @@
               },
               {
                 "name": "location",
-                "description": "When used, creates a new location with the given entrances and devices, and gives the user access to this location.",
+                "description": "Location. When used, creates a new location with the specified entrances and devices, and gives the user access to this location.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29119,7 +29119,7 @@
                 "itemParameters": [
                   {
                     "name": "mode",
-                    "description": "Access method mode. Supported values: `code`, `card`, `mobile_key`.",
+                    "description": "Access method mode.",
                     "isRequired": false,
                     "isDeprecated": false,
                     "deprecationMessage": "",
@@ -29167,7 +29167,7 @@
               },
               {
                 "name": "space_ids",
-                "description": "Set of IDs of existing spaces to which access is being granted.",
+                "description": "IDs of the existing spaces to which you want to grant access.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29209,7 +29209,7 @@
           "name": "delete",
           "path": "/unstable_access_grants/delete",
           "parentPath": "/unstable_access_grants",
-          "description": "Delete an access grant.",
+          "description": "Deletes an access grant.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -29229,7 +29229,7 @@
             "parameters": [
               {
                 "name": "access_grant_id",
-                "description": "ID of access grant to delete.",
+                "description": "ID of access grant that you want to delete.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29256,7 +29256,7 @@
           "name": "get",
           "path": "/unstable_access_grants/get",
           "parentPath": "/unstable_access_grants",
-          "description": "Get an access grant.",
+          "description": "Gets an access grant.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -29279,7 +29279,7 @@
             "parameters": [
               {
                 "name": "access_grant_id",
-                "description": "ID of access grant to get.",
+                "description": "ID of access grant that you want to get.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29306,7 +29306,7 @@
           "name": "list",
           "path": "/unstable_access_grants/list",
           "parentPath": "/unstable_access_grants",
-          "description": "Get an access grant.",
+          "description": "Returns a list of all access grants.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -29329,7 +29329,7 @@
             "parameters": [
               {
                 "name": "acs_entrance_id",
-                "description": "ID of entrance to filter list of access grants by.",
+                "description": "ID of the entrance by which you want to filter the list of access grants.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29343,7 +29343,7 @@
               },
               {
                 "name": "acs_system_id",
-                "description": "ID of system to filter list of access grants by.",
+                "description": "ID of the access system by which you want to filter the list of access grants.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29371,7 +29371,7 @@
               },
               {
                 "name": "space_id",
-                "description": "ID of space to filter list of access grants by.",
+                "description": "ID of the space by which you want to filter the list of access grants.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29385,7 +29385,7 @@
               },
               {
                 "name": "user_identity_id",
-                "description": "ID of user identity to filter list of access grants by.",
+                "description": "ID of the user identity by which you want to filter the list of access grants.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29423,7 +29423,7 @@
           "name": "delete",
           "path": "/unstable_access_methods/delete",
           "parentPath": "/unstable_access_methods",
-          "description": "Delete an access method.",
+          "description": "Deletes an access method.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -29443,7 +29443,7 @@
             "parameters": [
               {
                 "name": "access_method_id",
-                "description": "ID of access method to get.",
+                "description": "ID of the access method that you want to delete.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29470,7 +29470,7 @@
           "name": "get",
           "path": "/unstable_access_methods/get",
           "parentPath": "/unstable_access_methods",
-          "description": "Get an access method.",
+          "description": "Gets an access method.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -29493,7 +29493,7 @@
             "parameters": [
               {
                 "name": "access_method_id",
-                "description": "ID of access method to get.",
+                "description": "ID of the access method that you want to get.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29520,7 +29520,7 @@
           "name": "list",
           "path": "/unstable_access_methods/list",
           "parentPath": "/unstable_access_methods",
-          "description": "List all access methods, usually filtered by access grant.",
+          "description": "Lists all access methods, usually filtered by access grant.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -29543,7 +29543,7 @@
             "parameters": [
               {
                 "name": "access_grant_id",
-                "description": "ID of access grant to list access methods for.",
+                "description": "ID of the access grant by which to filter the list of access methods.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29577,11 +29577,11 @@
       "namespacePath": null,
       "endpoints": [
         {
-          "title": "Add ACS Entrances",
+          "title": "Add Entrances to a Location",
           "name": "add_acs_entrances",
           "path": "/unstable_locations/add_acs_entrances",
           "parentPath": "/unstable_locations",
-          "description": "Add entrances to a specific location.",
+          "description": "Adds [entrances](../capability-guides/access-systems/retrieving-entrance-details.md) to a specific location.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -29602,7 +29602,7 @@
             "parameters": [
               {
                 "name": "acs_entrance_ids",
-                "description": "",
+                "description": "IDs of the entrances that you want to add to the location.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29617,7 +29617,7 @@
               },
               {
                 "name": "location_id",
-                "description": "",
+                "description": "ID of the location to which you want to add entrances.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29640,11 +29640,11 @@
           "codeSamples": []
         },
         {
-          "title": "Add Location Devices",
+          "title": "Add Devices to a Location",
           "name": "add_devices",
           "path": "/unstable_locations/add_devices",
           "parentPath": "/unstable_locations",
-          "description": "Add devices to a specific location.",
+          "description": "Adds devices to a specific location.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -29665,7 +29665,7 @@
             "parameters": [
               {
                 "name": "device_ids",
-                "description": "",
+                "description": "IDs of the devices that you want to add to the location.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29680,7 +29680,7 @@
               },
               {
                 "name": "location_id",
-                "description": "",
+                "description": "ID of the location to which you want to add devices.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29703,11 +29703,11 @@
           "codeSamples": []
         },
         {
-          "title": "Create Location",
+          "title": "Create a Location",
           "name": "create",
           "path": "/unstable_locations/create",
           "parentPath": "/unstable_locations",
-          "description": "Create a new location.",
+          "description": "Creates a new location.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -29730,7 +29730,7 @@
             "parameters": [
               {
                 "name": "acs_entrance_ids",
-                "description": "",
+                "description": "IDs of the entrances that you want to add to the new location.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29745,7 +29745,7 @@
               },
               {
                 "name": "device_ids",
-                "description": "",
+                "description": "IDs of the devices that you want to add to the new location.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29760,7 +29760,7 @@
               },
               {
                 "name": "geolocation",
-                "description": "",
+                "description": "Geolocation of the new location.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29804,7 +29804,7 @@
               },
               {
                 "name": "name",
-                "description": "",
+                "description": "Name of the new location.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29818,7 +29818,7 @@
               },
               {
                 "name": "time_zone",
-                "description": "",
+                "description": "Time zone of the new location.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29841,11 +29841,11 @@
           "codeSamples": []
         },
         {
-          "title": "Delete Location",
+          "title": "Delete a Location",
           "name": "delete",
           "path": "/unstable_locations/delete",
           "parentPath": "/unstable_locations",
-          "description": "Delete a location.",
+          "description": "Deletes a location.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -29865,7 +29865,7 @@
             "parameters": [
               {
                 "name": "location_id",
-                "description": "",
+                "description": "ID of the location that you want to delete.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29888,11 +29888,11 @@
           "codeSamples": []
         },
         {
-          "title": "Get Location",
+          "title": "Get a Location",
           "name": "get",
           "path": "/unstable_locations/get",
           "parentPath": "/unstable_locations",
-          "description": "Get a location.",
+          "description": "Gets a location.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -29915,7 +29915,7 @@
             "parameters": [
               {
                 "name": "location_id",
-                "description": "",
+                "description": "ID of the location that you want to get.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -29974,11 +29974,11 @@
           "codeSamples": []
         },
         {
-          "title": "Remove ACS Entrances",
+          "title": "Remove Entrances from a Location",
           "name": "remove_acs_entrances",
           "path": "/unstable_locations/remove_acs_entrances",
           "parentPath": "/unstable_locations",
-          "description": "Remove entrances from a specific location.",
+          "description": "Removes entrances from a specific location.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -29998,7 +29998,7 @@
             "parameters": [
               {
                 "name": "acs_entrance_ids",
-                "description": "",
+                "description": "IDs of the entrances that you want to remove from the location.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -30013,7 +30013,7 @@
               },
               {
                 "name": "location_id",
-                "description": "",
+                "description": "ID of the location from which you want to remove entrances.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -30036,11 +30036,11 @@
           "codeSamples": []
         },
         {
-          "title": "Remove Location Devices",
+          "title": "Remove Devices from a Location",
           "name": "remove_devices",
           "path": "/unstable_locations/remove_devices",
           "parentPath": "/unstable_locations",
-          "description": "Remove devices from a specific location.",
+          "description": "Removes devices from a specific location.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -30060,7 +30060,7 @@
             "parameters": [
               {
                 "name": "device_ids",
-                "description": "",
+                "description": "IDs of the devices that you want to remove from the location.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -30075,7 +30075,7 @@
               },
               {
                 "name": "location_id",
-                "description": "",
+                "description": "ID of the location from which you want to remove devices.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -30098,11 +30098,11 @@
           "codeSamples": []
         },
         {
-          "title": "Update Location",
+          "title": "Update a Location",
           "name": "update",
           "path": "/unstable_locations/update",
           "parentPath": "/unstable_locations",
-          "description": "Update an existing location.",
+          "description": "Updates a location.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -30126,7 +30126,7 @@
             "parameters": [
               {
                 "name": "geolocation",
-                "description": "",
+                "description": "Geolocation of the location.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -30170,7 +30170,7 @@
               },
               {
                 "name": "location_id",
-                "description": "",
+                "description": "ID of the location that you want to update.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -30184,7 +30184,7 @@
               },
               {
                 "name": "name",
-                "description": "",
+                "description": "Name of the location.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -30198,7 +30198,7 @@
               },
               {
                 "name": "time_zone",
-                "description": "",
+                "description": "Time zone of the the location.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -30232,7 +30232,7 @@
       "namespacePath": "/unstable_partner",
       "endpoints": [
         {
-          "title": "Connect Accounts",
+          "title": "Generate a Connect Accounts Building Block Magic Link",
           "name": "connect_accounts",
           "path": "/unstable_partner/building_blocks/connect_accounts",
           "parentPath": "/unstable_partner/building_blocks",
@@ -30259,7 +30259,7 @@
             "parameters": [
               {
                 "name": "customer_key",
-                "description": "",
+                "description": "Customer key for which you want to connect accounts.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -30282,7 +30282,7 @@
           "codeSamples": []
         },
         {
-          "title": "Generate a building block magic link",
+          "title": "Generate a Building Block Magic Link",
           "name": "generate_magic_link",
           "path": "/unstable_partner/building_blocks/generate_magic_link",
           "parentPath": "/unstable_partner/building_blocks",
@@ -30309,7 +30309,7 @@
             "parameters": [
               {
                 "name": "building_block_type",
-                "description": "",
+                "description": "Type of building block to create a magic link for.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -30332,7 +30332,7 @@
                     "draftMessage": ""
                   },
                   {
-                    "name": "manage_devices",
+                    "name": "organize_spaces",
                     "description": "",
                     "isDeprecated": false,
                     "deprecationMessage": "",
@@ -30342,7 +30342,17 @@
                     "draftMessage": ""
                   },
                   {
-                    "name": "organize_spaces",
+                    "name": "console",
+                    "description": "",
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": ""
+                  },
+                  {
+                    "name": "manage_devices",
                     "description": "",
                     "isDeprecated": false,
                     "deprecationMessage": "",
@@ -30355,7 +30365,7 @@
               },
               {
                 "name": "customer_key",
-                "description": "",
+                "description": "Customer key for which you want to create a new building block magic link.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -30368,8 +30378,8 @@
                 "jsonType": "string"
               },
               {
-                "name": "partner_resources",
-                "description": "Optional list of partner resources to include in the magic link.",
+                "name": "spaces",
+                "description": "Optional list of spaces that you want to include in the new building block magic link.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -30425,7 +30435,7 @@
                     "jsonType": "string"
                   },
                   {
-                    "name": "partner_resource_key",
+                    "name": "space_key",
                     "description": "",
                     "isRequired": false,
                     "isDeprecated": false,
@@ -30451,7 +30461,7 @@
           "codeSamples": []
         },
         {
-          "title": "Manage Devices",
+          "title": "Generate a Manage Devices Building Block Magic Link",
           "name": "manage_devices",
           "path": "/unstable_partner/building_blocks/manage_devices",
           "parentPath": "/unstable_partner/building_blocks",
@@ -30478,7 +30488,7 @@
             "parameters": [
               {
                 "name": "customer_key",
-                "description": "",
+                "description": "Customer key for which you want to manage devices.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -30501,7 +30511,7 @@
           "codeSamples": []
         },
         {
-          "title": "Organize Spaces",
+          "title": "Generate an Organize Spaces Building Block Magic Link",
           "name": "organize_spaces",
           "path": "/unstable_partner/building_blocks/organize_spaces",
           "parentPath": "/unstable_partner/building_blocks",
@@ -30528,7 +30538,7 @@
             "parameters": [
               {
                 "name": "customer_key",
-                "description": "",
+                "description": "Customer key for which you want to organize spaces.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -30541,8 +30551,8 @@
                 "jsonType": "string"
               },
               {
-                "name": "partner_resources",
-                "description": "",
+                "name": "spaces",
+                "description": "Optional list of spaces that you want to include in the new building block magic link.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -30598,7 +30608,7 @@
                     "jsonType": "string"
                   },
                   {
-                    "name": "partner_resource_key",
+                    "name": "space_key",
                     "description": "",
                     "isRequired": false,
                     "isDeprecated": false,
@@ -30635,11 +30645,11 @@
       "namespacePath": "/unstable_partner",
       "endpoints": [
         {
-          "title": "Push partner resources at Seam",
+          "title": "Push Partner Resources at Seam",
           "name": "push",
           "path": "/unstable_partner/resources/push",
           "parentPath": "/unstable_partner/resources",
-          "description": "Send Seam some of your resources.",
+          "description": "Sends Seam some of your resources.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -30673,7 +30683,7 @@
               },
               {
                 "name": "customer_key",
-                "description": "",
+                "description": "Customer key associated with the resource that you want to push to Seam.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -30758,7 +30768,7 @@
               },
               {
                 "name": "partner_resource_key",
-                "description": "",
+                "description": "Key of the resource that you want to push to Seam.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -30772,7 +30782,7 @@
               },
               {
                 "name": "partner_resource_type",
-                "description": "",
+                "description": "Type of the resource that you want to push to Seam.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -30852,7 +30862,7 @@
           "name": "add_acs_user",
           "path": "/user_identities/add_acs_user",
           "parentPath": "/user_identities",
-          "description": "Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
+          "description": "Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -30873,7 +30883,7 @@
             "parameters": [
               {
                 "name": "acs_user_id",
-                "description": "ID of the desired ACS user.",
+                "description": "ID of the access system user that you want to add to the user identity.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -30887,7 +30897,7 @@
               },
               {
                 "name": "user_identity_id",
-                "description": "ID of the desired user identity.",
+                "description": "ID of the user identity to which you want to add an access system user.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -31026,7 +31036,7 @@
             "parameters": [
               {
                 "name": "acs_system_ids",
-                "description": "List of ACS system IDs to associate with the user identity through ACS users. If there's no user with the same email address or phone number in the specified ACS systems, a new ACS user is created. If there is an existing user with the same email or phone number in the specified ACS systems, the user is linked to the user identity.",
+                "description": "List of access system IDs to associate with the new user identity through access system users. If there's no user with the same email address or phone number in the specified access systems, a new access system user is created. If there is an existing user with the same email or phone number in the specified access systems, the user is linked to the user identity.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -31041,7 +31051,7 @@
               },
               {
                 "name": "email_address",
-                "description": "Unique email address for the user identity.",
+                "description": "Unique email address for the new user identity.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -31055,7 +31065,7 @@
               },
               {
                 "name": "full_name",
-                "description": "Full name of the user associated with the user identity.",
+                "description": "Full name of the user associated with the new user identity.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -31069,7 +31079,7 @@
               },
               {
                 "name": "phone_number",
-                "description": "Unique phone number for the user identity in E.164 format (for example, +15555550100).",
+                "description": "Unique phone number for the new user identity in E.164 format (for example, +15555550100).",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -31083,7 +31093,7 @@
               },
               {
                 "name": "user_identity_key",
-                "description": "Unique key for the user identity.",
+                "description": "Unique key for the new user identity.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -31232,7 +31242,7 @@
             "parameters": [
               {
                 "name": "user_identity_id",
-                "description": "ID of the desired user identity.",
+                "description": "ID of the user identity that you want to delete.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -31370,7 +31380,7 @@
             "parameters": [
               {
                 "name": "max_use_count",
-                "description": "The maximum number of times the instant key can be used. Defaults to 1.",
+                "description": "Maximum number of times the instant key can be used. Default: 1.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -31435,7 +31445,7 @@
             "parameters": [
               {
                 "name": "user_identity_id",
-                "description": "ID of the desired user identity.",
+                "description": "ID of the user identity that you want to get.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -31596,7 +31606,7 @@
             "parameters": [
               {
                 "name": "device_id",
-                "description": "ID of the desired managed device.",
+                "description": "ID of the managed device to which you want to grant access to the user identity.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -31610,7 +31620,7 @@
               },
               {
                 "name": "user_identity_id",
-                "description": "ID of the desired user identity.",
+                "description": "ID of the user identity that you want to grant access to a device.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -31749,7 +31759,7 @@
             "parameters": [
               {
                 "name": "credential_manager_acs_system_id",
-                "description": "",
+                "description": "`acs_system_id` of the credential manager by which you want to filter the list of user identities.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -32077,7 +32087,7 @@
           "name": "list_acs_systems",
           "path": "/user_identities/list_acs_systems",
           "parentPath": "/user_identities",
-          "description": "Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
+          "description": "Returns a list of all [access systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -32100,7 +32110,7 @@
             "parameters": [
               {
                 "name": "user_identity_id",
-                "description": "ID of the user identity for which you want to retrieve all access control systems.",
+                "description": "ID of the user identity for which you want to retrieve all access systems.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -32232,7 +32242,7 @@
           "name": "list_acs_users",
           "path": "/user_identities/list_acs_users",
           "parentPath": "/user_identities",
-          "description": "Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
+          "description": "Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -32255,7 +32265,7 @@
             "parameters": [
               {
                 "name": "user_identity_id",
-                "description": "ID of the user identity for which you want to retrieve all ACS users.",
+                "description": "ID of the user identity for which you want to retrieve all access system users.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -32386,7 +32396,7 @@
           "name": "remove_acs_user",
           "path": "/user_identities/remove_acs_user",
           "parentPath": "/user_identities",
-          "description": "Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
+          "description": "Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -32406,7 +32416,7 @@
             "parameters": [
               {
                 "name": "acs_user_id",
-                "description": "ID of the ACS user.",
+                "description": "ID of the access system user that you want to remove from the user identity..",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -32420,7 +32430,7 @@
               },
               {
                 "name": "user_identity_id",
-                "description": "ID of the desired user identity.",
+                "description": "ID of the user identity from which you want to remove an access system user.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -32556,7 +32566,7 @@
             "parameters": [
               {
                 "name": "device_id",
-                "description": "ID of the desired managed device.",
+                "description": "ID of the managed device to which you want to revoke access from the user identity.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -32570,7 +32580,7 @@
               },
               {
                 "name": "user_identity_id",
-                "description": "ID of the desired user identity.",
+                "description": "ID of the user identity from which you want to revoke access to a device.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -32686,7 +32696,7 @@
           "name": "update",
           "path": "/user_identities/update",
           "parentPath": "/user_identities",
-          "description": "",
+          "description": "Updates a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -32721,7 +32731,7 @@
               },
               {
                 "name": "full_name",
-                "description": "",
+                "description": "Full name of the user associated with the user identity.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -32735,7 +32745,7 @@
               },
               {
                 "name": "phone_number",
-                "description": "Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).",
+                "description": "Unique phone number for the user identity.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -32749,7 +32759,7 @@
               },
               {
                 "name": "user_identity_id",
-                "description": "ID of the user identity.",
+                "description": "ID of the user identity that you want to update.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -32821,7 +32831,7 @@
             "parameters": [
               {
                 "name": "enrollment_automation_id",
-                "description": "ID of the desired enrollment automation.",
+                "description": "ID of the enrollment automation that you want to delete.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -32959,7 +32969,7 @@
             "parameters": [
               {
                 "name": "enrollment_automation_id",
-                "description": "ID of the desired enrollment automation.",
+                "description": "ID of the enrollment automation that you want to get.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -33108,7 +33118,7 @@
             "parameters": [
               {
                 "name": "acs_credential_pool_id",
-                "description": "ID of the ACS credential pool from which to obtain credentials for the user identity.",
+                "description": "ID of the credential pool from which to obtain credentials for the user identity.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -33136,7 +33146,7 @@
               },
               {
                 "name": "credential_manager_acs_system_id",
-                "description": "ID of the desired ACS system that serves as the credential manager.",
+                "description": "ID of the desired access system that serves as the credential manager for the enrollment automation.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -33150,7 +33160,7 @@
               },
               {
                 "name": "credential_manager_acs_user_id",
-                "description": "ID of the associated ACS user within the credential manager. If you specify a `credential_manager_acs_user_id`, you cannot set `create_credential_manager_user` to `true`.",
+                "description": "ID of the associated access system user within the credential manager. If you specify a `credential_manager_acs_user_id`, you cannot set `create_credential_manager_user` to `true`.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -33164,7 +33174,7 @@
               },
               {
                 "name": "user_identity_id",
-                "description": "ID of the desired user identity.",
+                "description": "ID of the user identity for which you want to launch an enrollment automation.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -33315,7 +33325,7 @@
             "parameters": [
               {
                 "name": "user_identity_id",
-                "description": "ID of the user identity for which you want to retrieve all enrollment automations.",
+                "description": "ID of the user identity for which you want to retrieve enrollment automations.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -33450,11 +33460,11 @@
       "namespacePath": null,
       "endpoints": [
         {
-          "title": "",
+          "title": "Create a Webhook",
           "name": "create",
           "path": "/webhooks/create",
           "parentPath": "/webhooks",
-          "description": "",
+          "description": "Creates a new [webhook](https://docs.seam.co/latest/developer-tools/webhooks).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -33477,7 +33487,7 @@
             "parameters": [
               {
                 "name": "event_types",
-                "description": "",
+                "description": "Types of events that you want the new webhook to receive.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -33495,7 +33505,7 @@
               },
               {
                 "name": "url",
-                "description": "",
+                "description": "URL for the new webhook.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -33518,11 +33528,11 @@
           "codeSamples": []
         },
         {
-          "title": "",
+          "title": "Delete a Webhook",
           "name": "delete",
           "path": "/webhooks/delete",
           "parentPath": "/webhooks",
-          "description": "",
+          "description": "Deletes a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -33542,7 +33552,7 @@
             "parameters": [
               {
                 "name": "webhook_id",
-                "description": "",
+                "description": "ID of the webhook that you want to delete.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -33565,11 +33575,11 @@
           "codeSamples": []
         },
         {
-          "title": "",
+          "title": "Get a Webhook",
           "name": "get",
           "path": "/webhooks/get",
           "parentPath": "/webhooks",
-          "description": "",
+          "description": "Gets a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -33592,7 +33602,7 @@
             "parameters": [
               {
                 "name": "webhook_id",
-                "description": "",
+                "description": "ID of the webhook that you want to get.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -33615,11 +33625,11 @@
           "codeSamples": []
         },
         {
-          "title": "",
+          "title": "List Webhooks",
           "name": "list",
           "path": "/webhooks/list",
           "parentPath": "/webhooks",
-          "description": "",
+          "description": "Returns a list of all [webhooks](https://docs.seam.co/latest/developer-tools/webhooks).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -33651,11 +33661,11 @@
           "codeSamples": []
         },
         {
-          "title": "",
+          "title": "Update a Webhook",
           "name": "update",
           "path": "/webhooks/update",
           "parentPath": "/webhooks",
-          "description": "",
+          "description": "Updates a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -33676,7 +33686,7 @@
             "parameters": [
               {
                 "name": "event_types",
-                "description": "",
+                "description": "Types of events that you want the webhook to receive.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -33691,7 +33701,7 @@
               },
               {
                 "name": "webhook_id",
-                "description": "",
+                "description": "ID of the webhook that you want to update.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -33725,11 +33735,11 @@
       "namespacePath": null,
       "endpoints": [
         {
-          "title": "",
+          "title": "Create a Workspace",
           "name": "create",
           "path": "/workspaces/create",
           "parentPath": "/workspaces",
-          "description": "",
+          "description": "Creates a new [workspace](../core-concepts/workspaces/README.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -33752,7 +33762,7 @@
             "parameters": [
               {
                 "name": "company_name",
-                "description": "",
+                "description": "Company name for the new workspace.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -33766,7 +33776,7 @@
               },
               {
                 "name": "connect_partner_name",
-                "description": "",
+                "description": "Connect partner name for the new workspace.",
                 "isRequired": false,
                 "isDeprecated": true,
                 "deprecationMessage": "use company_name",
@@ -33780,7 +33790,7 @@
               },
               {
                 "name": "connect_webview_customization",
-                "description": "",
+                "description": "[Connect Webview](../core-concepts/connect-webviews/README.md) customizations for the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-look-and-feel-of-your-connect-webviews).",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -33794,7 +33804,7 @@
                 "parameters": [
                   {
                     "name": "logo_shape",
-                    "description": "",
+                    "description": "Logo shape for [Connect Webviews](../core-concepts/connect-webviews/README.md) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-look-and-feel-of-your-connect-webviews).",
                     "isRequired": false,
                     "isDeprecated": false,
                     "deprecationMessage": "",
@@ -33830,7 +33840,7 @@
                   },
                   {
                     "name": "primary_button_color",
-                    "description": "",
+                    "description": "Primary button color for [Connect Webviews](../core-concepts/connect-webviews/README.md) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-look-and-feel-of-your-connect-webviews).",
                     "isRequired": false,
                     "isDeprecated": false,
                     "deprecationMessage": "",
@@ -33844,7 +33854,7 @@
                   },
                   {
                     "name": "primary_button_text_color",
-                    "description": "",
+                    "description": "Primary button text color for [Connect Webviews](../core-concepts/connect-webviews/README.md) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-look-and-feel-of-your-connect-webviews).",
                     "isRequired": false,
                     "isDeprecated": false,
                     "deprecationMessage": "",
@@ -33858,7 +33868,7 @@
                   },
                   {
                     "name": "success_message",
-                    "description": "",
+                    "description": "Success message for [Connect Webviews](../core-concepts/connect-webviews/README.md) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-look-and-feel-of-your-connect-webviews).",
                     "isRequired": false,
                     "isDeprecated": false,
                     "deprecationMessage": "",
@@ -33874,7 +33884,7 @@
               },
               {
                 "name": "is_sandbox",
-                "description": "",
+                "description": "Indicates whether the new workspace is a [sandbox workspace](../core-concepts/workspaces/README.md#sandbox-workspaces).",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -33889,7 +33899,7 @@
               },
               {
                 "name": "name",
-                "description": "",
+                "description": "Name of the new workspace.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -33989,11 +33999,11 @@
           "codeSamples": []
         },
         {
-          "title": "",
+          "title": "Get a Workspace",
           "name": "get",
           "path": "/workspaces/get",
           "parentPath": "/workspaces",
-          "description": "",
+          "description": "Returns the [workspace](../core-concepts/workspaces/README.md) associated with the authentication value.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -34026,11 +34036,11 @@
           "codeSamples": []
         },
         {
-          "title": "",
+          "title": "List Workspaces",
           "name": "list",
           "path": "/workspaces/list",
           "parentPath": "/workspaces",
-          "description": "",
+          "description": "Returns a list of [workspaces](../core-concepts/workspaces/README.md) associated with the authentication value.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -34064,11 +34074,11 @@
           "codeSamples": []
         },
         {
-          "title": "",
+          "title": "Reset a Sandbox Workspace",
           "name": "reset_sandbox",
           "path": "/workspaces/reset_sandbox",
           "parentPath": "/workspaces",
-          "description": "Resets a [sandbox workspace](../core-concepts/workspaces/README.md#sandbox-workspaces). Note that this endpoint is only available for sandbox workspaces.",
+          "description": "Resets the [sandbox workspace](../core-concepts/workspaces/README.md#sandbox-workspaces) associated with the authentication value. Note that this endpoint is only available for sandbox workspaces.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -34099,11 +34109,11 @@
           "codeSamples": []
         },
         {
-          "title": "",
+          "title": "Udpate a Workspace",
           "name": "update",
           "path": "/workspaces/update",
           "parentPath": "/workspaces",
-          "description": "",
+          "description": "Updates the [workspace](../core-concepts/workspaces/README.md) associated with the authentication value.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -34124,7 +34134,7 @@
             "parameters": [
               {
                 "name": "connect_partner_name",
-                "description": "",
+                "description": "Connect partner name for the workspace.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -34138,7 +34148,7 @@
               },
               {
                 "name": "connect_webview_customization",
-                "description": "",
+                "description": "[Connect Webview](../core-concepts/connect-webviews/README.md) customizations for the workspace. See also [Customize the Look and Feel of Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-look-and-feel-of-your-connect-webviews).",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -34152,7 +34162,7 @@
                 "parameters": [
                   {
                     "name": "logo_shape",
-                    "description": "",
+                    "description": "Logo shape for [Connect Webviews](../core-concepts/connect-webviews/README.md) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-look-and-feel-of-your-connect-webviews).",
                     "isRequired": false,
                     "isDeprecated": false,
                     "deprecationMessage": "",
@@ -34188,7 +34198,7 @@
                   },
                   {
                     "name": "primary_button_color",
-                    "description": "",
+                    "description": "Primary button color for [Connect Webviews](../core-concepts/connect-webviews/README.md) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-look-and-feel-of-your-connect-webviews).",
                     "isRequired": false,
                     "isDeprecated": false,
                     "deprecationMessage": "",
@@ -34202,7 +34212,7 @@
                   },
                   {
                     "name": "primary_button_text_color",
-                    "description": "",
+                    "description": "Primary button text color for [Connect Webviews](../core-concepts/connect-webviews/README.md) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-look-and-feel-of-your-connect-webviews).",
                     "isRequired": false,
                     "isDeprecated": false,
                     "deprecationMessage": "",
@@ -34216,7 +34226,7 @@
                   },
                   {
                     "name": "success_message",
-                    "description": "",
+                    "description": "Success message for [Connect Webviews](../core-concepts/connect-webviews/README.md) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-look-and-feel-of-your-connect-webviews).",
                     "isRequired": false,
                     "isDeprecated": false,
                     "deprecationMessage": "",
@@ -34232,7 +34242,7 @@
               },
               {
                 "name": "is_suspended",
-                "description": "",
+                "description": "Indicates whether the workspace is suspended.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -34246,7 +34256,7 @@
               },
               {
                 "name": "name",
-                "description": "",
+                "description": "Name of the workspace.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -54861,6 +54871,16 @@
             },
             {
               "name": "organize_spaces",
+              "description": "",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": ""
+            },
+            {
+              "name": "console",
               "description": "",
               "isDeprecated": false,
               "deprecationMessage": "",

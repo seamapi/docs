@@ -1,10 +1,10 @@
-# Add Space Devices
+# Add Devices to a Space
 
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)
 
-Add devices to a specific space.
+Adds devices to a specific space.
 
 
 <details>
@@ -22,9 +22,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`device_ids`** *Array* *of UUIDs* (Required)
 
+IDs of the devices that you want to add to the space.
+
 ---
 
 **`space_id`** *String* (Required)
+
+ID of the space to which you want to add devices.
 
 ---
 

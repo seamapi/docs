@@ -1,10 +1,10 @@
-# Update Space
+# Update a Space
 
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)
 
-Update an existing space.
+Updates an existing space.
 
 
 <details>
@@ -22,9 +22,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`space_id`** *String* (Required)
 
+ID of the space that you want to update.
+
 ---
 
 **`name`** *String*
+
+Name of the space.
 
 ---
 

@@ -1,10 +1,10 @@
-# Remove Space Devices
+# Remove Devices from a Space
 
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)
 
-Remove devices from a specific space.
+Removes devices from a specific space.
 
 
 <details>
@@ -22,9 +22,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`device_ids`** *Array* *of UUIDs* (Required)
 
+IDs of the devices that you want to remove from the space.
+
 ---
 
 **`space_id`** *String* (Required)
+
+ID of the space from which you want to remove devices.
 
 ---
 

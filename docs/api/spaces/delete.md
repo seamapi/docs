@@ -1,10 +1,10 @@
-# Delete Space
+# Delete a Space
 
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)
 
-Delete a space.
+Deletes a space.
 
 
 <details>
@@ -21,6 +21,8 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Request Parameters
 
 **`space_id`** *String* (Required)
+
+ID of the space that you want to delete.
 
 ---
 

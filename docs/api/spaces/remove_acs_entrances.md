@@ -1,10 +1,10 @@
-# Remove ACS Entrances
+# Remove Entrances from a Space
 
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)
 
-Remove entrances from a specific space.
+Removes [entrances](../../capability-guides/access-systems/retrieving-entrance-details.md) from a specific space.
 
 
 <details>
@@ -22,9 +22,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_entrance_ids`** *Array* *of UUIDs* (Required)
 
+IDs of the entrances that you want to remove from the space.
+
 ---
 
 **`space_id`** *String* (Required)
+
+ID of the space from which you want to remove entrances.
 
 ---
 

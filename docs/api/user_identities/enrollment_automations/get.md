@@ -226,7 +226,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`enrollment_automation_id`** *String* (Required)
 
-ID of the desired enrollment automation.
+ID of the enrollment automation that you want to get.
 
 ---
 
