@@ -80,19 +80,19 @@ const getNode = (path: string, context: Context): Node => {
   throw new Error(`Could not construct node for ${path}`)
 }
 
-const getPaths = (parentPath: string | null, context: Context): string[] => {
-  const routes = context.routes.filter((r) => r.parentPath === parentPath)
+const getPaths = (path: string | null, context: Context): string[] => {
+  const getSortedPaths = (
+    items: Array<{ path: string; parentPath: string | null }>,
+  ): string[] => {
+    return items
+      .filter(({ parentPath }) => parentPath === path)
+      .map(({ path }) => path)
+      .sort()
+  }
 
-  const endpoints =
-    parentPath === null
-      ? []
-      : context.endpoints.filter((e) => e.path.startsWith(parentPath))
+  const routes = getSortedPaths(context.routes)
+  const endpoints = getSortedPaths(context.endpoints)
+  const namespaces = getSortedPaths(context.namespaces)
 
-  // TODO: Support namespaces with parentPath.
-  const namespaces =
-    parentPath === null
-      ? context.namespaces.filter(({ path }) => path.split('/').length === 2)
-      : []
-
-  return [...endpoints, ...routes, ...namespaces].map(({ path }) => path).sort()
+  return [...namespaces, ...endpoints, ...routes]
 }
