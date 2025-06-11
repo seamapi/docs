@@ -6,13 +6,158 @@
 
 Updates the code and ends at date and time for a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
+
 {% tabs %}
-{% tab title="Signature" %}
+{% tab title="JavaScript" %}
+
+Specify the desired `acs_credential_id` and updated `code` to update the credential.
+
+#### Code
+
+```javascript
+await seam.acs.credentials.update({
+  acs_credential_id: "66666666-6666-6666-6666-666666666666",
+  code: "7890",
+});
 ```
-PATCH /acs/credentials/update ⇒ void
+
+#### Output
+
+```javascript
+// void
 ```
 {% endtab %}
+
+{% tab title="cURL" %}
+
+Specify the desired `acs_credential_id` and updated `code` to update the credential.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/credentials/update" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_credential_id": "66666666-6666-6666-6666-666666666666",
+  "code": "7890"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Specify the desired `acs_credential_id` and updated `code` to update the credential.
+
+#### Code
+
+```python
+seam.acs.credentials.update(
+    acs_credential_id="66666666-6666-6666-6666-666666666666", code="7890"
+)
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Specify the desired `acs_credential_id` and updated `code` to update the credential.
+
+#### Code
+
+```ruby
+seam.acs.credentials.update(acs_credential_id: "66666666-6666-6666-6666-666666666666", code: "7890")
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Specify the desired `acs_credential_id` and updated `code` to update the credential.
+
+#### Code
+
+```php
+<?php
+$seam->acs->credentials->update(
+    acs_credential_id: "66666666-6666-6666-6666-666666666666",
+    code: "7890"
+);
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Go" %}
+
+Specify the desired `acs_credential_id` and updated `code` to update the credential.
+
+#### Code
+
+```go
+package main
+
+import api "github.com/seamapi/go"
+import credentials "github.com/seamapi/go/credentials"
+
+func main() {
+	client.Acs.Credentials.Update(
+		context.Background(),
+		credentials.CredentialsUpdateRequest{
+			AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
+			Code:            api.String("7890"),
+		},
+	)
+}
+```
+
+#### Output
+
+```go
+nil
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Specify the desired `acs_credential_id` and updated `code` to update the credential.
+
+#### Code
+
+```seam_cli
+seam acs credentials update --acs_credential_id "66666666-6666-6666-6666-666666666666" --code "7890"
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
 {% endtabs %}
+
 
 <details>
 
@@ -54,139 +199,4 @@ void
 ---
 
 ## Examples
-
-### Update a credential
-
-Specify the desired `acs_credential_id` and updated `code` to update the credential.
-
-{% tabs %}
-{% tab title="JavaScript" %}
-#### Code
-
-```javascript
-await seam.acs.credentials.update({
-  acs_credential_id: "66666666-6666-6666-6666-666666666666",
-  code: "7890",
-});
-```
-
-#### Output
-
-```javascript
-// void
-```
-{% endtab %}
-
-{% tab title="cURL" %}
-#### Code
-
-```curl
-curl --include --request POST "https://connect.getseam.com/acs/credentials/update" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "acs_credential_id": "66666666-6666-6666-6666-666666666666",
-  "code": "7890"
-}
-EOF
-```
-
-#### Output
-
-```curl
-{}
-```
-{% endtab %}
-
-{% tab title="Python" %}
-#### Code
-
-```python
-seam.acs.credentials.update(
-    acs_credential_id="66666666-6666-6666-6666-666666666666", code="7890"
-)
-```
-
-#### Output
-
-```python
-None
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-#### Code
-
-```ruby
-seam.acs.credentials.update(acs_credential_id: "66666666-6666-6666-6666-666666666666", code: "7890")
-```
-
-#### Output
-
-```ruby
-nil
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-#### Code
-
-```php
-<?php
-$seam->acs->credentials->update(
-    acs_credential_id: "66666666-6666-6666-6666-666666666666",
-    code: "7890"
-);
-```
-
-#### Output
-
-```php
-null
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import credentials "github.com/seamapi/go/credentials"
-
-func main() {
-	client.Acs.Credentials.Update(
-		context.Background(),
-		credentials.CredentialsUpdateRequest{
-			AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
-			Code:            api.String("7890"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam acs credentials update --acs_credential_id "66666666-6666-6666-6666-666666666666" --code "7890"
-```
-
-#### Output
-
-```seam_cli
-{}
-```
-{% endtab %}
-
-{% endtabs %}
-
 

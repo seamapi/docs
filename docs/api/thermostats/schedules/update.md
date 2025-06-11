@@ -6,13 +6,162 @@
 
 Updates a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
+
 {% tabs %}
-{% tab title="Signature" %}
+{% tab title="JavaScript" %}
+
+Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
+
+#### Code
+
+```javascript
+await seam.thermostats.schedules.update({
+  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
+  ends_at: "2024-11-15T15:00:00Z",
+});
 ```
-PATCH /thermostats/schedules/update ⇒ void
+
+#### Output
+
+```javascript
+// void
 ```
 {% endtab %}
+
+{% tab title="cURL" %}
+
+Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/thermostats/schedules/update" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "thermostat_schedule_id": "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
+  "ends_at": "2024-11-15T15:00:00Z"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
+
+#### Code
+
+```python
+seam.thermostats.schedules.update(
+    thermostat_schedule_id="89d3507e-60e3-4101-bd1b-ba066ec30ad4",
+    ends_at="2024-11-15T15:00:00Z",
+)
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
+
+#### Code
+
+```ruby
+seam.thermostats.schedules.update(
+  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
+  ends_at: "2024-11-15T15:00:00Z",
+)
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
+
+#### Code
+
+```php
+<?php
+$seam->thermostats->schedules->update(
+    thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
+    ends_at: "2024-11-15T15:00:00Z"
+);
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Go" %}
+
+Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
+
+#### Code
+
+```go
+package main
+
+import api "github.com/seamapi/go"
+import schedules "github.com/seamapi/go/schedules"
+
+func main() {
+	client.Thermostats.Schedules.Update(
+		context.Background(),
+		schedules.SchedulesUpdateRequest{
+			ThermostatScheduleId: api.String("89d3507e-60e3-4101-bd1b-ba066ec30ad4"),
+			EndsAt:               api.String("2024-11-15T15:00:00Z"),
+		},
+	)
+}
+```
+
+#### Output
+
+```go
+nil
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
+
+#### Code
+
+```seam_cli
+seam thermostats schedules update --thermostat_schedule_id "89d3507e-60e3-4101-bd1b-ba066ec30ad4" --ends_at "2024-11-15T15:00:00Z"
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
 {% endtabs %}
+
 
 <details>
 
@@ -79,143 +228,4 @@ void
 ---
 
 ## Examples
-
-### Update a thermostat schedule
-
-Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
-
-{% tabs %}
-{% tab title="JavaScript" %}
-#### Code
-
-```javascript
-await seam.thermostats.schedules.update({
-  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-  ends_at: "2024-11-15T15:00:00Z",
-});
-```
-
-#### Output
-
-```javascript
-// void
-```
-{% endtab %}
-
-{% tab title="cURL" %}
-#### Code
-
-```curl
-curl --include --request POST "https://connect.getseam.com/thermostats/schedules/update" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "thermostat_schedule_id": "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-  "ends_at": "2024-11-15T15:00:00Z"
-}
-EOF
-```
-
-#### Output
-
-```curl
-{}
-```
-{% endtab %}
-
-{% tab title="Python" %}
-#### Code
-
-```python
-seam.thermostats.schedules.update(
-    thermostat_schedule_id="89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-    ends_at="2024-11-15T15:00:00Z",
-)
-```
-
-#### Output
-
-```python
-None
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-#### Code
-
-```ruby
-seam.thermostats.schedules.update(
-  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-  ends_at: "2024-11-15T15:00:00Z",
-)
-```
-
-#### Output
-
-```ruby
-nil
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-#### Code
-
-```php
-<?php
-$seam->thermostats->schedules->update(
-    thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-    ends_at: "2024-11-15T15:00:00Z"
-);
-```
-
-#### Output
-
-```php
-null
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import schedules "github.com/seamapi/go/schedules"
-
-func main() {
-	client.Thermostats.Schedules.Update(
-		context.Background(),
-		schedules.SchedulesUpdateRequest{
-			ThermostatScheduleId: api.String("89d3507e-60e3-4101-bd1b-ba066ec30ad4"),
-			EndsAt:               api.String("2024-11-15T15:00:00Z"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
-{% tab title="Seam CLI" %}
-#### Code
-
-```seam_cli
-seam thermostats schedules update --thermostat_schedule_id "89d3507e-60e3-4101-bd1b-ba066ec30ad4" --ends_at "2024-11-15T15:00:00Z"
-```
-
-#### Output
-
-```seam_cli
-{}
-```
-{% endtab %}
-
-{% endtabs %}
-
 

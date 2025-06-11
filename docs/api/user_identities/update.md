@@ -6,13 +6,6 @@
 
 
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-PATCH /user_identities/update ⇒ void
-```
-{% endtab %}
-{% endtabs %}
 
 <details>
 

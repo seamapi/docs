@@ -6,50 +6,12 @@
 
 Returns a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /user_identities/enrollment_automations/get ⇒ { enrollment_automation }
-```
-{% endtab %}
-{% endtabs %}
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-</details>
-
-## Request Parameters
-
-**`enrollment_automation_id`** *String* (Required)
-
-ID of the desired enrollment automation.
-
----
-
-
-## Response
-
-[enrollment\_automation](./)
-
-
----
-
-## Examples
-
-### Get an enrollment automation
-
-Specify the desired `enrollment_automation_id`.
 
 {% tabs %}
 {% tab title="JavaScript" %}
+
+Specify the desired `enrollment_automation_id`.
+
 #### Code
 
 ```javascript
@@ -74,6 +36,9 @@ await seam.userIdentities.enrollmentAutomations.get({
 {% endtab %}
 
 {% tab title="cURL" %}
+
+Specify the desired `enrollment_automation_id`.
+
 #### Code
 
 ```curl
@@ -104,6 +69,9 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
+
+Specify the desired `enrollment_automation_id`.
+
 #### Code
 
 ```python
@@ -128,6 +96,9 @@ EnrollmentAutomation(
 {% endtab %}
 
 {% tab title="Ruby" %}
+
+Specify the desired `enrollment_automation_id`.
+
 #### Code
 
 ```ruby
@@ -152,6 +123,9 @@ seam.user_identities.enrollment_automations.get(
 {% endtab %}
 
 {% tab title="PHP" %}
+
+Specify the desired `enrollment_automation_id`.
+
 #### Code
 
 ```php
@@ -180,6 +154,9 @@ $seam->user_identities->enrollment_automations->get(
 {% endtab %}
 
 {% tab title="Go" %}
+
+Specify the desired `enrollment_automation_id`.
+
 #### Code
 
 ```go
@@ -206,6 +183,9 @@ api.EnrollmentAutomation{UserIdentityId: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
 {% endtab %}
 
 {% tab title="Seam CLI" %}
+
+Specify the desired `enrollment_automation_id`.
+
 #### Code
 
 ```seam_cli
@@ -229,4 +209,34 @@ seam user-identities enrollment-automations get --enrollment_automation_id "0550
 
 {% endtabs %}
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`enrollment_automation_id`** *String* (Required)
+
+ID of the desired enrollment automation.
+
+---
+
+
+## Response
+
+[enrollment\_automation](./)
+
+
+---
+
+## Examples
 

@@ -6,50 +6,12 @@
 
 Returns a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /thermostats/schedules/get ⇒ { thermostat_schedule }
-```
-{% endtab %}
-{% endtabs %}
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-</details>
-
-## Request Parameters
-
-**`thermostat_schedule_id`** *String* (Required)
-
-ID of the desired thermostat schedule.
-
----
-
-
-## Response
-
-[thermostat\_schedule](./)
-
-
----
-
-## Examples
-
-### Get a specific thermostat schedule
-
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
 
 {% tabs %}
 {% tab title="JavaScript" %}
+
+Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+
 #### Code
 
 ```javascript
@@ -74,6 +36,9 @@ await seam.thermostats.schedules.get({
 {% endtab %}
 
 {% tab title="cURL" %}
+
+Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+
 #### Code
 
 ```curl
@@ -104,6 +69,9 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
+
+Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+
 #### Code
 
 ```python
@@ -128,6 +96,9 @@ ThermostatSchedule(
 {% endtab %}
 
 {% tab title="Ruby" %}
+
+Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+
 #### Code
 
 ```ruby
@@ -150,6 +121,9 @@ seam.thermostats.schedules.get(thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-
 {% endtab %}
 
 {% tab title="PHP" %}
+
+Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+
 #### Code
 
 ```php
@@ -176,6 +150,9 @@ $seam->thermostats->schedules->get(
 {% endtab %}
 
 {% tab title="Go" %}
+
+Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+
 #### Code
 
 ```go
@@ -202,6 +179,9 @@ api.ThermostatSchedule{ThermostatScheduleId: "89d3507e-60e3-4101-bd1b-ba066ec30a
 {% endtab %}
 
 {% tab title="Seam CLI" %}
+
+Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+
 #### Code
 
 ```seam_cli
@@ -225,4 +205,34 @@ seam thermostats schedules get --thermostat_schedule_id "89d3507e-60e3-4101-bd1b
 
 {% endtabs %}
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`thermostat_schedule_id`** *String* (Required)
+
+ID of the desired thermostat schedule.
+
+---
+
+
+## Response
+
+[thermostat\_schedule](./)
+
+
+---
+
+## Examples
 

@@ -6,13 +6,6 @@
 
 Returns a single phone entry matching the provided `device_id`.
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /phones/get ⇒ { phone }
-```
-{% endtab %}
-{% endtabs %}
 
 <details>
 

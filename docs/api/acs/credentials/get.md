@@ -6,49 +6,12 @@
 
 Returns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /acs/credentials/get ⇒ { acs_credential }
-```
-{% endtab %}
-{% endtabs %}
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-</details>
-
-## Request Parameters
-
-**`acs_credential_id`** *String* (Required)
-
-ID of the credential that you want to get.
-
----
-
-
-## Response
-
-[acs\_credential](./)
-
-
----
-
-## Examples
-
-### Get a credential
-
-Specify the `acs_credential_id` of the credential that you want to retrieve.
 
 {% tabs %}
 {% tab title="JavaScript" %}
+
+Specify the `acs_credential_id` of the credential that you want to retrieve.
+
 #### Code
 
 ```javascript
@@ -75,6 +38,9 @@ await seam.acs.credentials.get({
 {% endtab %}
 
 {% tab title="cURL" %}
+
+Specify the `acs_credential_id` of the credential that you want to retrieve.
+
 #### Code
 
 ```curl
@@ -107,6 +73,9 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
+
+Specify the `acs_credential_id` of the credential that you want to retrieve.
+
 #### Code
 
 ```python
@@ -131,6 +100,9 @@ AcsCredential(
 {% endtab %}
 
 {% tab title="Ruby" %}
+
+Specify the `acs_credential_id` of the credential that you want to retrieve.
+
 #### Code
 
 ```ruby
@@ -155,6 +127,9 @@ seam.acs.credentials.get(acs_credential_id: "66666666-6666-6666-6666-66666666666
 {% endtab %}
 
 {% tab title="PHP" %}
+
+Specify the `acs_credential_id` of the credential that you want to retrieve.
+
 #### Code
 
 ```php
@@ -183,6 +158,9 @@ $seam->acs->credentials->get(
 {% endtab %}
 
 {% tab title="Go" %}
+
+Specify the `acs_credential_id` of the credential that you want to retrieve.
+
 #### Code
 
 ```go
@@ -209,6 +187,9 @@ api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUs
 {% endtab %}
 
 {% tab title="Seam CLI" %}
+
+Specify the `acs_credential_id` of the credential that you want to retrieve.
+
 #### Code
 
 ```seam_cli
@@ -234,4 +215,33 @@ seam acs credentials get --acs_credential_id "66666666-6666-6666-6666-6666666666
 
 {% endtabs %}
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`acs_credential_id`** *String* (Required)
+
+ID of the credential that you want to get.
+
+---
+
+
+## Response
+
+[acs\_credential](./)
+
+
+---
+
+## Examples
 

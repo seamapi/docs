@@ -6,49 +6,12 @@
 
 Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /acs/access_groups/list_users ⇒ { acs_users: [acs_user, …] }
-```
-{% endtab %}
-{% endtabs %}
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-</details>
-
-## Request Parameters
-
-**`acs_access_group_id`** *String* (Required)
-
-ID of the access group for which you want to retrieve all access system users.
-
----
-
-
-## Response
-
-Array of [acs\_users](./)
-
-
----
-
-## Examples
-
-### List ACS users in an access group
-
-Specify the `acs_access_group_id` to retrieve all ACS users in an access group.
 
 {% tabs %}
 {% tab title="JavaScript" %}
+
+Specify the `acs_access_group_id` to retrieve all ACS users in an access group.
+
 #### Code
 
 ```javascript
@@ -86,6 +49,9 @@ await seam.acs.accessGroups.listUsers({
 {% endtab %}
 
 {% tab title="cURL" %}
+
+Specify the `acs_access_group_id` to retrieve all ACS users in an access group.
+
 #### Code
 
 ```curl
@@ -129,6 +95,9 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
+
+Specify the `acs_access_group_id` to retrieve all ACS users in an access group.
+
 #### Code
 
 ```python
@@ -166,6 +135,9 @@ seam.acs.access_groups.list_users(
 {% endtab %}
 
 {% tab title="Ruby" %}
+
+Specify the `acs_access_group_id` to retrieve all ACS users in an access group.
+
 #### Code
 
 ```ruby
@@ -201,6 +173,9 @@ seam.acs.access_groups.list_users(acs_access_group_id: "44444444-4444-4444-4444-
 {% endtab %}
 
 {% tab title="PHP" %}
+
+Specify the `acs_access_group_id` to retrieve all ACS users in an access group.
+
 #### Code
 
 ```php
@@ -240,6 +215,9 @@ $seam->acs->access_groups->list_users(
 {% endtab %}
 
 {% tab title="Go" %}
+
+Specify the `acs_access_group_id` to retrieve all ACS users in an access group.
+
 #### Code
 
 ```go
@@ -266,6 +244,9 @@ func main() {
 {% endtab %}
 
 {% tab title="Seam CLI" %}
+
+Specify the `acs_access_group_id` to retrieve all ACS users in an access group.
+
 #### Code
 
 ```seam_cli
@@ -302,4 +283,33 @@ seam acs access-groups list-users --acs_access_group_id "44444444-4444-4444-4444
 
 {% endtabs %}
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`acs_access_group_id`** *String* (Required)
+
+ID of the access group for which you want to retrieve all access system users.
+
+---
+
+
+## Response
+
+Array of [acs\_users](./)
+
+
+---
+
+## Examples
 

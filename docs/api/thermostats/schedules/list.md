@@ -6,56 +6,12 @@
 
 Returns a list of all [thermostat schedules](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /thermostats/schedules/list ⇒ { thermostat_schedules: [thermostat_schedule, …] }
-```
-{% endtab %}
-{% endtabs %}
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-</details>
-
-## Request Parameters
-
-**`device_id`** *String* (Required)
-
-ID of the desired thermostat device.
-
----
-
-**`user_identifier_key`** *String*
-
-User identifier key by which to filter the list of returned thermostat schedules.
-
----
-
-
-## Response
-
-Array of [thermostat\_schedules](./)
-
-
----
-
-## Examples
-
-### List thermostat schedules for a thermostat
-
-Specify the `device_id` of the desired thermostat.
 
 {% tabs %}
 {% tab title="JavaScript" %}
+
+Specify the `device_id` of the desired thermostat.
+
 #### Code
 
 ```javascript
@@ -91,6 +47,9 @@ await seam.thermostats.schedules.list({
 {% endtab %}
 
 {% tab title="cURL" %}
+
+Specify the `device_id` of the desired thermostat.
+
 #### Code
 
 ```curl
@@ -132,6 +91,9 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
+
+Specify the `device_id` of the desired thermostat.
+
 #### Code
 
 ```python
@@ -165,6 +127,9 @@ seam.thermostats.schedules.list(device_id="123e4567-e89b-12d3-a456-426614174000"
 {% endtab %}
 
 {% tab title="Ruby" %}
+
+Specify the `device_id` of the desired thermostat.
+
 #### Code
 
 ```ruby
@@ -198,6 +163,9 @@ seam.thermostats.schedules.list(device_id: "123e4567-e89b-12d3-a456-426614174000
 {% endtab %}
 
 {% tab title="PHP" %}
+
+Specify the `device_id` of the desired thermostat.
+
 #### Code
 
 ```php
@@ -235,6 +203,9 @@ $seam->thermostats->schedules->list(
 {% endtab %}
 
 {% tab title="Go" %}
+
+Specify the `device_id` of the desired thermostat.
+
 #### Code
 
 ```go
@@ -261,6 +232,9 @@ func main() {
 {% endtab %}
 
 {% tab title="Seam CLI" %}
+
+Specify the `device_id` of the desired thermostat.
+
 #### Code
 
 ```seam_cli
@@ -295,4 +269,40 @@ seam thermostats schedules list --device_id "123e4567-e89b-12d3-a456-42661417400
 
 {% endtabs %}
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`device_id`** *String* (Required)
+
+ID of the desired thermostat device.
+
+---
+
+**`user_identifier_key`** *String*
+
+User identifier key by which to filter the list of returned thermostat schedules.
+
+---
+
+
+## Response
+
+Array of [thermostat\_schedules](./)
+
+
+---
+
+## Examples
 

@@ -6,13 +6,6 @@
 
 Returns a list of all [encoders](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /acs/encoders/list ⇒ { acs_encoders: [acs_encoder, …] }
-```
-{% endtab %}
-{% endtabs %}
 
 <details>
 

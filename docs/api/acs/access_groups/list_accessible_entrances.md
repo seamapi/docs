@@ -6,49 +6,12 @@
 
 Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /acs/access_groups/list_accessible_entrances ⇒ { acs_entrances: [acs_entrance, …] }
-```
-{% endtab %}
-{% endtabs %}
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-</details>
-
-## Request Parameters
-
-**`acs_access_group_id`** *String* (Required)
-
-ID of the access group for which you want to retrieve all accessible entrances.
-
----
-
-
-## Response
-
-Array of [acs\_entrances](./)
-
-
----
-
-## Examples
-
-### List accessible entrances for an access group
-
-Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
 
 {% tabs %}
 {% tab title="JavaScript" %}
+
+Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
+
 #### Code
 
 ```javascript
@@ -74,6 +37,9 @@ await seam.acs.accessGroups.listAccessibleEntrances({
 {% endtab %}
 
 {% tab title="cURL" %}
+
+Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
+
 #### Code
 
 ```curl
@@ -105,6 +71,9 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
+
+Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
+
 #### Code
 
 ```python
@@ -130,6 +99,9 @@ seam.acs.access_groups.list_accessible_entrances(
 {% endtab %}
 
 {% tab title="Ruby" %}
+
+Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
+
 #### Code
 
 ```ruby
@@ -155,6 +127,9 @@ seam.acs.access_groups.list_accessible_entrances(
 {% endtab %}
 
 {% tab title="PHP" %}
+
+Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
+
 #### Code
 
 ```php
@@ -182,6 +157,9 @@ $seam->acs->access_groups->list_accessible_entrances(
 {% endtab %}
 
 {% tab title="Go" %}
+
+Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
+
 #### Code
 
 ```go
@@ -208,6 +186,9 @@ func main() {
 {% endtab %}
 
 {% tab title="Seam CLI" %}
+
+Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
+
 #### Code
 
 ```seam_cli
@@ -232,4 +213,33 @@ seam acs access-groups list-accessible-entrances --acs_access_group_id "44444444
 
 {% endtabs %}
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`acs_access_group_id`** *String* (Required)
+
+ID of the access group for which you want to retrieve all accessible entrances.
+
+---
+
+
+## Response
+
+Array of [acs\_entrances](./)
+
+
+---
+
+## Examples
 

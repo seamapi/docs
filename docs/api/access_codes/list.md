@@ -8,13 +8,6 @@ Returns a list of all [access codes](https://docs.seam.co/latest/capability-guid
 
 Specify either `device_id` or `access_code_ids`.
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /access_codes/list ⇒ { access_codes: [access_code, …] }
-```
-{% endtab %}
-{% endtabs %}
 
 <details>
 

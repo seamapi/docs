@@ -6,50 +6,12 @@
 
 Returns a list of all [enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /user_identities/enrollment_automations/list ⇒ { enrollment_automations: [enrollment_automation, …] }
-```
-{% endtab %}
-{% endtabs %}
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Client session token
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-</details>
-
-## Request Parameters
-
-**`user_identity_id`** *String* (Required)
-
-ID of the user identity for which you want to retrieve all enrollment automations.
-
----
-
-
-## Response
-
-Array of [enrollment\_automations](./)
-
-
----
-
-## Examples
-
-### List enrollment automations
-
-Specify the desired `user_identity_id`.
 
 {% tabs %}
 {% tab title="JavaScript" %}
+
+Specify the desired `user_identity_id`.
+
 #### Code
 
 ```javascript
@@ -76,6 +38,9 @@ await seam.userIdentities.enrollmentAutomations.list({
 {% endtab %}
 
 {% tab title="cURL" %}
+
+Specify the desired `user_identity_id`.
+
 #### Code
 
 ```curl
@@ -108,6 +73,9 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
+
+Specify the desired `user_identity_id`.
+
 #### Code
 
 ```python
@@ -134,6 +102,9 @@ seam.user_identities.enrollment_automations.list(
 {% endtab %}
 
 {% tab title="Ruby" %}
+
+Specify the desired `user_identity_id`.
+
 #### Code
 
 ```ruby
@@ -160,6 +131,9 @@ seam.user_identities.enrollment_automations.list(
 {% endtab %}
 
 {% tab title="PHP" %}
+
+Specify the desired `user_identity_id`.
+
 #### Code
 
 ```php
@@ -190,6 +164,9 @@ $seam->user_identities->enrollment_automations->list(
 {% endtab %}
 
 {% tab title="Go" %}
+
+Specify the desired `user_identity_id`.
+
 #### Code
 
 ```go
@@ -216,6 +193,9 @@ func main() {
 {% endtab %}
 
 {% tab title="Seam CLI" %}
+
+Specify the desired `user_identity_id`.
+
 #### Code
 
 ```seam_cli
@@ -241,4 +221,34 @@ seam user-identities enrollment-automations list --user_identity_id "5c945ab5-c7
 
 {% endtabs %}
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`user_identity_id`** *String* (Required)
+
+ID of the user identity for which you want to retrieve all enrollment automations.
+
+---
+
+
+## Response
+
+Array of [enrollment\_automations](./)
+
+
+---
+
+## Examples
 

@@ -6,13 +6,6 @@
 
 Generates a new [instant key](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/instant-keys) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /user_identities/generate_instant_key ⇒ { instant_key }
-```
-{% endtab %}
-{% endtabs %}
 
 <details>
 

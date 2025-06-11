@@ -6,13 +6,11 @@
 
 {{{description}}}
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-{{request.preferredMethod}} {{path}} ⇒ {{#if response.responseKey}}{{#if (eq response.responseType "resource_list")}}{ {{response.responseKey}}: [{{response.resourceType}}, …] }{{else}}{ {{response.responseKey}} }{{/if}}{{else}}void{{/if}}
-```
-{% endtab %}
-{% endtabs %}
+{{#with primaryCodeSample}}
+
+{{> code-sample inlineDescription=description}}
+
+{{/with}}
 
 {{#if authMethods}}
 <details>
@@ -73,15 +71,6 @@ None
 ---
 
 ## Examples
-
-{{#with primaryCodeSample}}
-### {{this.title}}
-
-{{this.description}}
-
-{{> code-sample }}
-
-{{/with}}
 
 {{#each additionalCodeSamples}}
 ---

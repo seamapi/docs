@@ -6,13 +6,6 @@
 
 Updates a specified [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-PATCH /access_codes/unmanaged/update ⇒ void
-```
-{% endtab %}
-{% endtabs %}
 
 <details>
 

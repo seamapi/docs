@@ -6,49 +6,12 @@
 
 Returns a list of all [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a [credential](https://docs.seam.co/latest/api/acs/credentials) grants access.
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /acs/credentials/list_accessible_entrances ⇒ { acs_entrances: [acs_entrance, …] }
-```
-{% endtab %}
-{% endtabs %}
-
-<details>
-
-<summary>Authentication Methods</summary>
-
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
-
-To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-</details>
-
-## Request Parameters
-
-**`acs_credential_id`** *String* (Required)
-
-ID of the credential for which you want to retrieve all entrances to which the credential grants access.
-
----
-
-
-## Response
-
-Array of [acs\_entrances](./)
-
-
----
-
-## Examples
-
-### List accessible entrances
-
-Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
 
 {% tabs %}
 {% tab title="JavaScript" %}
+
+Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
+
 #### Code
 
 ```javascript
@@ -84,6 +47,9 @@ await seam.acs.credentials.listAccessibleEntrances({
 {% endtab %}
 
 {% tab title="cURL" %}
+
+Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
+
 #### Code
 
 ```curl
@@ -125,6 +91,9 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
+
+Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
+
 #### Code
 
 ```python
@@ -160,6 +129,9 @@ seam.acs.credentials.list_accessible_entrances(
 {% endtab %}
 
 {% tab title="Ruby" %}
+
+Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
+
 #### Code
 
 ```ruby
@@ -190,6 +162,9 @@ seam.acs.credentials.list_accessible_entrances(
 {% endtab %}
 
 {% tab title="PHP" %}
+
+Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
+
 #### Code
 
 ```php
@@ -227,6 +202,9 @@ $seam->acs->credentials->list_accessible_entrances(
 {% endtab %}
 
 {% tab title="Go" %}
+
+Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
+
 #### Code
 
 ```go
@@ -253,6 +231,9 @@ func main() {
 {% endtab %}
 
 {% tab title="Seam CLI" %}
+
+Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
+
 #### Code
 
 ```seam_cli
@@ -287,4 +268,33 @@ seam acs credentials list-accessible-entrances --acs_credential_id "66666666-666
 
 {% endtabs %}
 
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`acs_credential_id`** *String* (Required)
+
+ID of the credential for which you want to retrieve all entrances to which the credential grants access.
+
+---
+
+
+## Response
+
+Array of [acs\_entrances](./)
+
+
+---
+
+## Examples
 

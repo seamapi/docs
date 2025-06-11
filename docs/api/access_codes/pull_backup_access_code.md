@@ -14,13 +14,6 @@ You can only pull backup access codes for time-bound access codes.
 
 Before pulling a backup access code, make sure that the device's `properties.supports_backup_access_code_pool` is `true`. Then, to activate the backup pool, set `use_backup_access_code_pool` to `true` when creating an access code.
 
-{% tabs %}
-{% tab title="Signature" %}
-```
-POST /access_codes/pull_backup_access_code ⇒ { access_code }
-```
-{% endtab %}
-{% endtabs %}
 
 <details>
 
