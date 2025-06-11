@@ -1,4 +1,4 @@
-import type { Blueprint, Route } from '@seamapi/blueprint'
+import type { Blueprint } from '@seamapi/blueprint'
 import type Metalsmith from 'metalsmith'
 
 import {
@@ -37,8 +37,11 @@ export const reference = (
 
   const { blueprint } = metadata
 
-  const namespacePaths = getNamespacePaths(blueprint.routes)
-  for (const path of namespacePaths) {
+  const namespaces = blueprint.namespaces.filter(
+    ({ isUndocumented }) => !isUndocumented,
+  )
+  for (const namespace of namespaces) {
+    const { path } = namespace
     const k = `${rootPath}${path}/${indexFile}`
     files[k] = { contents: Buffer.from('\n') }
     const file = files[k] as unknown as File
@@ -79,17 +82,4 @@ export const reference = (
       setEndpointLayoutContext(file, endpoint, blueprint.actionAttempts)
     }
   }
-}
-
-const getNamespacePaths = (routes: Route[]): string[] => {
-  return Array.from(
-    new Set(
-      routes
-        .filter(
-          (route) => route.namespace != null && !route.namespace.isUndocumented,
-        )
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        .map((route) => route.namespace!.path),
-    ),
-  )
 }

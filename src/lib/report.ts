@@ -51,7 +51,7 @@ interface ParameterReportItem {
 }
 
 interface Metadata {
-  blueprint: Pick<Blueprint, 'routes' | 'resources'>
+  blueprint: Pick<Blueprint, 'routes' | 'resources' | 'namespaces'>
   pathMetadata: unknown
 }
 
@@ -91,6 +91,11 @@ function generateReport(metadata: Metadata): Report {
     },
   }
 
+  const pathMetadata =
+    'pathMetadata' in metadata
+      ? PathMetadataSchema.parse(metadata.pathMetadata)
+      : {}
+
   const resources = blueprint.resources ?? {}
   for (const [resourceName, resource] of Object.entries(resources)) {
     processResource(resourceName, resource, report)
@@ -99,6 +104,17 @@ function generateReport(metadata: Metadata): Report {
   const routes = blueprint.routes ?? []
   for (const route of routes) {
     processRoute(route, report, metadata)
+  }
+
+  for (const namespace of blueprint.namespaces ?? []) {
+    if (
+      !namespace.isUndocumented &&
+      pathMetadata[namespace.path]?.title == null
+    ) {
+      addUntitledNamespaceToReport(namespace.path, report)
+    }
+
+    processNamespace(namespace, report)
   }
 
   return report
@@ -209,21 +225,9 @@ function processRoute(route: Route, report: Report, metadata: Metadata): void {
     'pathMetadata' in metadata
       ? PathMetadataSchema.parse(metadata.pathMetadata)
       : {}
-  const namespace = route.namespace
-  if (
-    namespace != null &&
-    pathMetadata[namespace.path]?.title == null &&
-    !namespace.isUndocumented
-  ) {
-    addUntitledNamespaceToReport(namespace.path, report)
-  }
 
   if (pathMetadata[route.path]?.title == null && !route.isUndocumented) {
     report.noTitle.routes.push({ name: route.path })
-  }
-
-  if (route.namespace != null) {
-    processNamespace(route.namespace, report)
   }
 
   // TODO: route description
