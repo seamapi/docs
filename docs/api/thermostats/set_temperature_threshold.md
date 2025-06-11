@@ -1,7 +1,4 @@
 # Set a Temperature Threshold
-{% hint style="info" %}
-This API is in Alpha, please give us feedback.
-{% endhint %}
 
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
