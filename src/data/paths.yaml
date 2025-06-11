@@ -96,16 +96,19 @@
 
 /access_grants:
   title: Access Grants
+  alpha: 'The Access Grants API is available for early access. We value your feedback'
   resources:
     - access_grant
 
 /access_methods:
   title: Access Methods
+  alpha: 'The Access Methods API is available for early access. We value your feedback'
   resources:
     - access_method
 
 /spaces:
   title: Spaces
+  alpha: 'The Spaces API is available for early access. We value your feedback'
   resources:
     - space
 
