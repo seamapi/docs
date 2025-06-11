@@ -102,13 +102,13 @@
 
 /access_methods:
   title: Access Methods
-  alpha: '**Early Access Preview.** The access methods API is currently in Alpha. We are actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.'
+  alpha: "**Early Access Preview.** The access methods API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design."
   resources:
     - access_method
 
 /spaces:
   title: Spaces
-  alpha: '**Early Access Preview.** The spaces API is currently in Alpha. We are actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.'
+  alpha: "**Early Access Preview.** The spaces API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design."
   resources:
     - space
 
