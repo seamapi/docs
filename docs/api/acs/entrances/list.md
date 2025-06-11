@@ -207,6 +207,16 @@ ID of the access system for which you want to retrieve all entrances.
 
 ---
 
+**`location_id`** *String*
+
+---
+
+**`space_id`** *String*
+
+ID of the space for which you want to list entrances.
+
+---
+
 
 ## Response
 

@@ -68,6 +68,15 @@ ID of the access control system that contains the access group.
 
 ---
 
+**`connected_account_id`** *UUID*
+
+ID of the [connected account](../../../core-concepts/connected-accounts/README.md) that contains the access group.
+
+
+
+
+---
+
 **`created_at`** *Datetime*
 
 Date and time at which the access group was created.
