@@ -62,7 +62,7 @@
 /thermostats:
   title: Thermostats
   resources: []
-  alpha: "This API is in Alpha, please give us feedback."
+  alpha: 'This API is in Alpha, please give us feedback.'
 
 /thermostats/simulate:
   title: Thermostat Simulations
