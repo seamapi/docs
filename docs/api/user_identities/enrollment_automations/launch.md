@@ -1,6 +1,5 @@
 # Launch an Enrollment Automation
 
-
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

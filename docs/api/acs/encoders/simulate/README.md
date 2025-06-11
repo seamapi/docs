@@ -1,6 +1,5 @@
 # Encoder Simulations
 
-
 ## Endpoints
 
 

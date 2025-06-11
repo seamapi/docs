@@ -1,6 +1,5 @@
 # Get a Credential
 
-
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

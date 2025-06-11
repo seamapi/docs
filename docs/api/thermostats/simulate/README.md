@@ -1,6 +1,5 @@
 # Thermostat Simulations
 
-
 ## Endpoints
 
 

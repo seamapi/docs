@@ -1,6 +1,5 @@
 # Get an Encoder
 
-
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

@@ -1,6 +1,5 @@
 # Get an Access Group
 
-
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

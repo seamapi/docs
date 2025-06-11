@@ -1,6 +1,5 @@
 # Credentials
 
-
 ## The acs_credential Object
 
 - [Properties](./#properties)

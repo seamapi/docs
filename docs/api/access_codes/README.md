@@ -1,6 +1,5 @@
 # Access Codes
 
-
 ## The access_code Object
 
 - [Properties](./#properties)

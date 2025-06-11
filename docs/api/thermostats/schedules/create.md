@@ -1,6 +1,5 @@
 # Create a Thermostat Schedule
 
-
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

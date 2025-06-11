@@ -1,6 +1,5 @@
 # Unmanaged Access Code
 
-
 ## The unmanaged_access_code Object
 
 - [Properties](./#properties)

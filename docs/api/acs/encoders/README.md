@@ -1,6 +1,5 @@
 # Encoders
 
-
 ## The acs_encoder Object
 
 - [Properties](./#properties)

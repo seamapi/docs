@@ -1,6 +1,5 @@
 # Phones
 
-
 ## The phone Object
 
 - [Properties](./#properties)

@@ -1,6 +1,5 @@
 # Thermostat Schedules
 
-
 ## The thermostat_schedule Object
 
 - [Properties](./#properties)

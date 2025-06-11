@@ -1,6 +1,5 @@
 # Grant a User Identity Access to a Device
 
-
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

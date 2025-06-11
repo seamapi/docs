@@ -1,6 +1,5 @@
 # List Phones
 
-
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

@@ -1,6 +1,5 @@
 # Get a Phone
 
-
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

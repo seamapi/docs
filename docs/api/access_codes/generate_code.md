@@ -1,6 +1,5 @@
 # Generate a Code
 
-
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

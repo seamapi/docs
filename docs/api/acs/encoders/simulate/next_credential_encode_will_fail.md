@@ -1,6 +1,5 @@
 # Simulate that the Next Credential Encoding Will Fail
 
-
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

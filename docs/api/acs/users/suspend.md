@@ -1,6 +1,5 @@
 # Suspend an ACS User
 
-
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

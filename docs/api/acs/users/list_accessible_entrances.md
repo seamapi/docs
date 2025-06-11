@@ -1,6 +1,5 @@
 # List ACS User-Accessible Entrances
 
-
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

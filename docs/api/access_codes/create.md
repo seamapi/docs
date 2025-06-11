@@ -1,6 +1,5 @@
 # Create an Access Code
 
-
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

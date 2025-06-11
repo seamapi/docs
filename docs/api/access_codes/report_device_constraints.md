@@ -1,6 +1,5 @@
 # Report Device Access Code Constraints
 
-
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

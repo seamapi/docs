@@ -1,6 +1,5 @@
 # Create Multiple Linked Access Codes
 
-
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

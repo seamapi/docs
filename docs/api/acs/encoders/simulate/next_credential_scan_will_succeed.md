@@ -1,6 +1,5 @@
 # Simulate that the Next Credential Scan Will Succeed
 
-
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

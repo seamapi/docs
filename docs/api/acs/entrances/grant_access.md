@@ -1,6 +1,5 @@
 # Grant an ACS User Access to an Entrance
 
-
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)

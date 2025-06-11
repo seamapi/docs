@@ -1,6 +1,5 @@
 # List ACS Systems
 
-
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
 - [Examples](./#examples)
