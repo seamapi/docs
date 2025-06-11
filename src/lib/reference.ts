@@ -50,21 +50,24 @@ export const reference = (
     setNamespaceLayoutContext(file, path, blueprint.resources, pathMetadata)
   }
 
-  for (const route of blueprint.routes ?? []) {
+  const routes = blueprint.routes.filter(({ path, isUndocumented }) => {
     if (
-      !route.path.startsWith('/acs') &&
-      !route.path.startsWith('/thermostats') &&
-      !route.path.startsWith('/phones') &&
-      !route.path.startsWith('/user_identities') &&
-      !route.path.startsWith('/connected_accounts') &&
-      !route.path.startsWith('/access_codes')
+      !path.startsWith('/acs') &&
+      !path.startsWith('/thermostats') &&
+      !path.startsWith('/phones') &&
+      !path.startsWith('/user_identities') &&
+      !path.startsWith('/connected_accounts') &&
+      !path.startsWith('/access_codes')
     ) {
-      continue
+      return false
     }
 
-    if (route.isUndocumented) continue
-    if (pathMetadata[route.path]?.title == null) continue
+    if (isUndocumented) return false
+    if (pathMetadata[path]?.title == null) return false
+    return true
+  })
 
+  for (const route of routes) {
     const k = `${rootPath}${route.path}/${indexFile}`
     files[k] = { contents: Buffer.from('\n') }
     const file = files[k] as unknown as File
