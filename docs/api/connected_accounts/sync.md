@@ -4,7 +4,7 @@
 - [Response](./#response)
 - [Examples](./#examples)
 
-Request a [connected account](../../core-concepts/connected-accounts/README.md) sync attempt for the specified connected_account_id.
+Request a [connected account](../../core-concepts/connected-accounts/README.md) sync attempt for the specified `connected_account_id`.
 
 
 {% tabs %}

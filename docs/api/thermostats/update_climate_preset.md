@@ -200,12 +200,6 @@ ID of the thermostat device for which you want to update a climate preset.
 
 ---
 
-**`manual_override_allowed`** *Boolean* (Required)
-
-Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
-
----
-
 **`cooling_set_point_celsius`** *Number*
 
 Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
@@ -239,6 +233,12 @@ Temperature to which the thermostat should heat (in °F). See also [Set Points](
 **`hvac_mode_setting`** *String*
 
 Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
+
+---
+
+**`manual_override_allowed`** *Boolean*
+
+Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
 
 ---
 

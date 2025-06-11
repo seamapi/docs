@@ -29,6 +29,10 @@ IDs of the access codes that you want to retrieve. Specify either `device_id` or
 
 ---
 
+**`customer_ids`** *Array* *of UUIDs*
+
+---
+
 **`device_id`** *String*
 
 ID of the device for which you want to list access codes. Specify either `device_id` or `access_code_ids`.

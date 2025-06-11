@@ -45,6 +45,15 @@ ID of the [access control system](https://docs.seam.co/latest/capability-guides/
 
 ---
 
+**`connected_account_id`** *UUID*
+
+ID of the [connected account](../../../core-concepts/connected-accounts/README.md) that contains the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+
+
+
+
+---
+
 **`created_at`** *Datetime*
 
 Date and time at which the [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) was created.

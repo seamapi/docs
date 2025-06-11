@@ -1,0 +1,39 @@
+# Create Space
+
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
+
+Create a new space.
+
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`name`** *String* (Required)
+
+---
+
+**`acs_entrance_ids`** *Array* *of UUIDs*
+
+---
+
+**`device_ids`** *Array* *of UUIDs*
+
+---
+
+
+## Response
+
+[space](./)
+

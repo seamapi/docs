@@ -1,0 +1,35 @@
+# Remove ACS Entrances
+
+- [Request Parameters](./#request-parameters)
+- [Response](./#response)
+- [Examples](./#examples)
+
+Remove entrances from a specific space.
+
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`acs_entrance_ids`** *Array* *of UUIDs* (Required)
+
+---
+
+**`space_id`** *String* (Required)
+
+---
+
+
+## Response
+
+void
+

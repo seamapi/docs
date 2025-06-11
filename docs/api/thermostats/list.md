@@ -378,6 +378,16 @@ Identifies the specific page of results to return, obtained from the previous pa
 
 ---
 
+**`space_id`** *String*
+
+ID of the space for which you want to list devices.
+
+---
+
+**`unstable_location_id`** *String*
+
+---
+
 **`user_identifier_key`** *String*
 
 Your own internal user ID for the user for which you want to list devices.
