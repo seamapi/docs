@@ -182,6 +182,8 @@ Items that are intentionally undocumented are not included in this section.
 
 ### Resources
 
+- `access_grant`
+- `access_method`
 - `acs_credential_pool`
 - `acs_credential_provisioning_automation`
 - `device_provider`
@@ -195,6 +197,7 @@ Items that are intentionally undocumented are not included in this section.
 
 ### Resource properties
 
+- `access_grant.location_ids`
 - `acs_access_group.access_group_type`
 - `acs_access_group.access_group_type_display_name`
 - `acs_access_group.display_name`
@@ -476,6 +479,7 @@ These items are deprecated.
 
 ### Resource properties
 
+- `access_grant.location_ids`: Use `space_ids`.
 - `acs_access_group.access_group_type`: Use `external_type`.
 - `acs_access_group.access_group_type_display_name`: Use `external_type_display_name`.
 - `acs_system.connected_account_ids`: Use `connected_account_id`.

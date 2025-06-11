@@ -2133,7 +2133,7 @@
           "response": {
             "responseType": "resource",
             "responseKey": "access_grant",
-            "resourceType": "unknown",
+            "resourceType": "access_grant",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -2503,7 +2503,7 @@
           "response": {
             "responseType": "resource",
             "responseKey": "access_grant",
-            "resourceType": "unknown",
+            "resourceType": "access_grant",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -2553,7 +2553,7 @@
           "response": {
             "responseType": "resource_list",
             "responseKey": "access_grants",
-            "resourceType": "unknown",
+            "resourceType": "access_grant",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -2717,7 +2717,7 @@
           "response": {
             "responseType": "resource",
             "responseKey": "access_method",
-            "resourceType": "unknown",
+            "resourceType": "access_method",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -2767,7 +2767,7 @@
           "response": {
             "responseType": "resource_list",
             "responseKey": "access_methods",
-            "resourceType": "unknown",
+            "resourceType": "access_method",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -28896,7 +28896,7 @@
           "response": {
             "responseType": "resource",
             "responseKey": "access_grant",
-            "resourceType": "unknown",
+            "resourceType": "access_grant",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -29266,7 +29266,7 @@
           "response": {
             "responseType": "resource",
             "responseKey": "access_grant",
-            "resourceType": "unknown",
+            "resourceType": "access_grant",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -29316,7 +29316,7 @@
           "response": {
             "responseType": "resource_list",
             "responseKey": "access_grants",
-            "resourceType": "unknown",
+            "resourceType": "access_grant",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -29480,7 +29480,7 @@
           "response": {
             "responseType": "resource",
             "responseKey": "access_method",
-            "resourceType": "unknown",
+            "resourceType": "access_method",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -29530,7 +29530,7 @@
           "response": {
             "responseType": "resource_list",
             "responseKey": "access_methods",
-            "resourceType": "unknown",
+            "resourceType": "access_method",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -38195,6 +38195,380 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
+      "propertyGroups": {},
+      "resourceSamples": []
+    },
+    "access_grant": {
+      "resourceType": "access_grant",
+      "properties": [
+        {
+          "name": "access_grant_id",
+          "description": "ID of the access grant.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        },
+        {
+          "name": "access_method_ids",
+          "description": "IDs of the access methods that were created for this access grant.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "list",
+          "jsonType": "array",
+          "itemFormat": "id"
+        },
+        {
+          "name": "created_at",
+          "description": "Date and time at which the access grant was created.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "datetime",
+          "jsonType": "string"
+        },
+        {
+          "name": "display_name",
+          "description": "Display name of the access grant.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "location_ids",
+          "description": "",
+          "isDeprecated": true,
+          "deprecationMessage": "Use `space_ids`.",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "list",
+          "jsonType": "array",
+          "itemFormat": "id"
+        },
+        {
+          "name": "requested_access_methods",
+          "description": "Access methods that the user requested for this access grant.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "list",
+          "jsonType": "array",
+          "itemFormat": "object",
+          "itemProperties": [
+            {
+              "name": "created_access_method_ids",
+              "description": "IDs of the access methods that were created for this requested access method.",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": "",
+              "propertyGroupKey": null,
+              "format": "list",
+              "jsonType": "array",
+              "itemFormat": "id"
+            },
+            {
+              "name": "created_at",
+              "description": "Date and time at which the requested access method was added to this access grant.",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": "",
+              "propertyGroupKey": null,
+              "format": "datetime",
+              "jsonType": "string"
+            },
+            {
+              "name": "display_name",
+              "description": "Display name of the access method.",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": "",
+              "propertyGroupKey": null,
+              "format": "string",
+              "jsonType": "string"
+            },
+            {
+              "name": "mode",
+              "description": "Access method mode. Supported values: `code`, `card`, `mobile_key`.",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": "",
+              "propertyGroupKey": null,
+              "format": "enum",
+              "jsonType": "string",
+              "values": [
+                {
+                  "name": "code",
+                  "description": "",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": ""
+                },
+                {
+                  "name": "card",
+                  "description": "",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": ""
+                },
+                {
+                  "name": "mobile_key",
+                  "description": "",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "space_ids",
+          "description": "IDs of the spaces to which access is being given.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "list",
+          "jsonType": "array",
+          "itemFormat": "id"
+        },
+        {
+          "name": "user_identity_id",
+          "description": "ID of user identity to which access is being granted.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        },
+        {
+          "name": "workspace_id",
+          "description": "Unique identifier for the Seam workspace associated with the access grant.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        }
+      ],
+      "description": "",
+      "isDeprecated": false,
+      "routePath": "/access_grants",
+      "deprecationMessage": "",
+      "isUndocumented": false,
+      "undocumentedMessage": "",
+      "isDraft": true,
+      "draftMessage": "Early access.",
+      "propertyGroups": {},
+      "resourceSamples": []
+    },
+    "access_method": {
+      "resourceType": "access_method",
+      "properties": [
+        {
+          "name": "access_method_id",
+          "description": "ID of the access method.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        },
+        {
+          "name": "created_at",
+          "description": "Date and time at which the access method was created.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "datetime",
+          "jsonType": "string"
+        },
+        {
+          "name": "display_name",
+          "description": "Display name of the access method.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "instant_key_url",
+          "description": "URL of instant key for mobile key access methods.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "is_card_encoding_required",
+          "description": "Whether card encoding is required for plastic card access methods.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "boolean",
+          "jsonType": "boolean"
+        },
+        {
+          "name": "issued_at",
+          "description": "Date and time at which the access method was issued.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "datetime",
+          "jsonType": "string"
+        },
+        {
+          "name": "mode",
+          "description": "Access method mode. Supported values: `code`, `card`, `mobile_key`.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "enum",
+          "jsonType": "string",
+          "values": [
+            {
+              "name": "code",
+              "description": "",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": ""
+            },
+            {
+              "name": "card",
+              "description": "",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": ""
+            },
+            {
+              "name": "mobile_key",
+              "description": "",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": ""
+            }
+          ]
+        },
+        {
+          "name": "workspace_id",
+          "description": "Unique identifier for the Seam workspace associated with the access grant.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        }
+      ],
+      "description": "",
+      "isDeprecated": false,
+      "routePath": "/access_methods",
+      "deprecationMessage": "",
+      "isUndocumented": false,
+      "undocumentedMessage": "",
+      "isDraft": true,
+      "draftMessage": "Early access.",
       "propertyGroups": {},
       "resourceSamples": []
     },
