@@ -108,7 +108,9 @@ export function setApiRouteLayoutContext(
 
   file.resources = []
   for (const resourceType of metadata.resources) {
-    const resource = blueprint.resources[resourceType]
+    const resource = blueprint.resources.find(
+      (r) => r.resourceType === resourceType,
+    )
 
     if (resource == null) {
       throw new Error(
