@@ -96,9 +96,9 @@ function generateReport(metadata: Metadata): Report {
       ? PathMetadataSchema.parse(metadata.pathMetadata)
       : {}
 
-  const resources = blueprint.resources ?? {}
-  for (const [resourceName, resource] of Object.entries(resources)) {
-    processResource(resourceName, resource, report)
+  const resources = blueprint.resources ?? []
+  for (const resource of resources) {
+    processResource(resource, report)
   }
 
   const routes = blueprint.routes ?? []
@@ -131,38 +131,35 @@ function createEmptyReportSection(): ReportSection {
   }
 }
 
-function processResource(
-  resourceName: string,
-  resource: Resource,
-  report: Report,
-): void {
+function processResource(resource: Resource, report: Report): void {
+  const { resourceType: name } = resource
   if (resource.description == null || resource.description.trim() === '') {
-    report.noDescription.resources.push({ name: resourceName })
+    report.noDescription.resources.push({ name })
   }
 
   if (resource.isDeprecated) {
     report.deprecated.resources.push({
-      name: resourceName,
+      name,
       reason: resource.deprecationMessage ?? defaultDeprecatedMessage,
     })
   }
 
   if (resource.isUndocumented) {
     report.undocumented.resources.push({
-      name: resourceName,
+      name,
       reason: resource.undocumentedMessage ?? defaultUndocumentedMessage,
     })
 
     if (resource.isDraft) {
       report.draft.resources.push({
-        name: resourceName,
+        name,
         reason: resource.draftMessage ?? defaultDraftMessage,
       })
     }
   }
 
   for (const property of resource.properties) {
-    processProperty(resourceName, property, report)
+    processProperty(name, property, report)
   }
 }
 

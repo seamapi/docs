@@ -34343,8 +34343,8 @@
       "isDraft": false
     }
   ],
-  "resources": {
-    "access_code": {
+  "resources": [
+    {
       "resourceType": "access_code",
       "properties": [
         {
@@ -38198,7 +38198,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "access_grant": {
+    {
       "resourceType": "access_grant",
       "properties": [
         {
@@ -38421,7 +38421,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "access_method": {
+    {
       "resourceType": "access_method",
       "properties": [
         {
@@ -38572,7 +38572,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "acs_access_group": {
+    {
       "resourceType": "acs_access_group",
       "properties": [
         {
@@ -38934,7 +38934,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "acs_credential": {
+    {
       "resourceType": "acs_credential",
       "properties": [
         {
@@ -39985,7 +39985,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "acs_credential_pool": {
+    {
       "resourceType": "acs_credential_pool",
       "properties": [
         {
@@ -40103,7 +40103,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "acs_credential_provisioning_automation": {
+    {
       "resourceType": "acs_credential_provisioning_automation",
       "properties": [
         {
@@ -40183,7 +40183,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "acs_encoder": {
+    {
       "resourceType": "acs_encoder",
       "properties": [
         {
@@ -40343,7 +40343,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "acs_entrance": {
+    {
       "resourceType": "acs_entrance",
       "properties": [
         {
@@ -41015,7 +41015,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "acs_system": {
+    {
       "resourceType": "acs_system",
       "properties": [
         {
@@ -42183,7 +42183,7 @@
         }
       ]
     },
-    "acs_user": {
+    {
       "resourceType": "acs_user",
       "properties": [
         {
@@ -43829,7 +43829,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "client_session": {
+    {
       "resourceType": "client_session",
       "properties": [
         {
@@ -43990,7 +43990,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "connect_webview": {
+    {
       "resourceType": "connect_webview",
       "properties": [
         {
@@ -44374,7 +44374,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "connected_account": {
+    {
       "resourceType": "connected_account",
       "properties": [
         {
@@ -45246,7 +45246,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "device": {
+    {
       "resourceType": "device",
       "properties": [
         {
@@ -53314,7 +53314,7 @@
       },
       "resourceSamples": []
     },
-    "device_provider": {
+    {
       "resourceType": "device_provider",
       "properties": [
         {
@@ -54049,7 +54049,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "enrollment_automation": {
+    {
       "resourceType": "enrollment_automation",
       "properties": [
         {
@@ -54129,7 +54129,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "event": {
+    {
       "resourceType": "event",
       "properties": [
         {
@@ -55101,7 +55101,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "instant_key": {
+    {
       "resourceType": "instant_key",
       "properties": [
         {
@@ -55207,7 +55207,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "magic_link": {
+    {
       "resourceType": "magic_link",
       "properties": [
         {
@@ -55342,7 +55342,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "noise_threshold": {
+    {
       "resourceType": "noise_threshold",
       "properties": [
         {
@@ -55448,7 +55448,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "phone": {
+    {
       "resourceType": "phone",
       "properties": [
         {
@@ -55781,7 +55781,7 @@
       },
       "resourceSamples": []
     },
-    "phone_session": {
+    {
       "resourceType": "phone_session",
       "properties": [
         {
@@ -57356,7 +57356,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "space": {
+    {
       "resourceType": "space",
       "properties": [
         {
@@ -57436,7 +57436,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "thermostat_schedule": {
+    {
       "resourceType": "thermostat_schedule",
       "properties": [
         {
@@ -57623,7 +57623,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "unmanaged_access_code": {
+    {
       "resourceType": "unmanaged_access_code",
       "properties": [
         {
@@ -61320,7 +61320,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "unmanaged_acs_access_group": {
+    {
       "resourceType": "unmanaged_acs_access_group",
       "properties": [
         {
@@ -61682,7 +61682,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "unmanaged_acs_credential": {
+    {
       "resourceType": "unmanaged_acs_credential",
       "properties": [
         {
@@ -62733,7 +62733,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "unmanaged_acs_user": {
+    {
       "resourceType": "unmanaged_acs_user",
       "properties": [
         {
@@ -64379,7 +64379,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "unmanaged_device": {
+    {
       "resourceType": "unmanaged_device",
       "properties": [
         {
@@ -67605,7 +67605,7 @@
       },
       "resourceSamples": []
     },
-    "user_identity": {
+    {
       "resourceType": "user_identity",
       "properties": [
         {
@@ -67724,7 +67724,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "webhook": {
+    {
       "resourceType": "webhook",
       "properties": [
         {
@@ -67792,7 +67792,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "workspace": {
+    {
       "resourceType": "workspace",
       "properties": [
         {
@@ -67988,7 +67988,7 @@
       "propertyGroups": {},
       "resourceSamples": []
     }
-  },
+  ],
   "pagination": {
     "responseKey": "pagination",
     "description": "Information about the current page of results.",
