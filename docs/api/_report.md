@@ -4,6 +4,8 @@
 
 ### Routes
 
+- `/access_grants`
+- `/access_methods`
 - `/action_attempts`
 - `/client_sessions`
 - `/connect_webviews`
@@ -12,29 +14,16 @@
 - `/devices/unmanaged`
 - `/events`
 - `/locks`
-- `/networks`
 - `/noise_sensors`
 - `/noise_sensors/noise_thresholds`
 - `/noise_sensors/simulate`
+- `/spaces`
 - `/thermostats/daily_programs`
 - `/webhooks`
 - `/workspaces`
 
 ### Endpoints
 
-- `/locks/get`
-- `/locks/list`
-- `/locks/lock_door`
-- `/locks/unlock_door`
-- `/networks/get`
-- `/networks/list`
-- `/noise_sensors/list`
-- `/noise_sensors/noise_thresholds/create`
-- `/noise_sensors/noise_thresholds/delete`
-- `/noise_sensors/noise_thresholds/get`
-- `/noise_sensors/noise_thresholds/list`
-- `/noise_sensors/noise_thresholds/update`
-- `/noise_sensors/simulate/trigger_noise_threshold`
 - `/webhooks/create`
 - `/webhooks/delete`
 - `/webhooks/get`
@@ -59,11 +48,13 @@ These items are intentionally undocumented.
 - `/acs/users/unmanaged`: No undocumented message provided
 - `/bridges`: No undocumented message provided
 - `/locks/simulate`: No undocumented message provided
+- `/networks`: No undocumented message provided
 - `/seam/bridge/v1/bridge_client_sessions`: No undocumented message provided
 - `/seam/bridge/v1/bridge_connected_systems`: No undocumented message provided
 - `/seam/instant_key/v1/client_sessions`: No undocumented message provided
 - `/seam/mobile_sdk/v1/acs/credentials`: No undocumented message provided
 - `/seam/mobile_sdk/v1/phone_sessions`: No undocumented message provided
+- `/seam/partner/v1/building_blocks/spaces`: No undocumented message provided
 - `/seam/partner/v1/resources`: No undocumented message provided
 - `/unstable_access_grants`: No undocumented message provided
 - `/unstable_access_methods`: No undocumented message provided
@@ -74,6 +65,7 @@ These items are intentionally undocumented.
 ### Resources
 
 - `instant_key`: Unreleased.
+- `magic_link`: Unreleased.
 - `phone_session`: Seam Mobile SDK only.
 
 ### Resource properties
@@ -89,6 +81,7 @@ These items are intentionally undocumented.
 - `/seam/instant_key/v1`: No undocumented message provided
 - `/seam/mobile_sdk/v1/acs`: No undocumented message provided
 - `/seam/mobile_sdk/v1`: No undocumented message provided
+- `/seam/partner/v1/building_blocks`: No undocumented message provided
 - `/seam/partner/v1`: No undocumented message provided
 - `/unstable_partner`: No undocumented message provided
 
@@ -108,6 +101,8 @@ These items are intentionally undocumented.
 - `/devices/delete`: Deleting a device is no longer supported and will be removed.
 - `/locks/simulate/keypad_code_entry`: Unreleased.
 - `/locks/simulate/manual_lock_via_keypad`: Unreleased.
+- `/networks/get`: Deprecated.
+- `/networks/list`: Deprecated.
 - `/seam/bridge/v1/bridge_client_sessions/create`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/get`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/refresh_telemetry_token`: Seam Bridge Client only.
@@ -117,6 +112,7 @@ These items are intentionally undocumented.
 - `/seam/instant_key/v1/client_sessions/exchange_short_code`: Seam Instant Key only.
 - `/seam/mobile_sdk/v1/acs/credentials/list`: Mobile SDK only.
 - `/seam/mobile_sdk/v1/phone_sessions/get_or_create`: Mobile SDK only.
+- `/seam/partner/v1/building_blocks/spaces/auto_map`: Partner building blocks/UI only.
 - `/seam/partner/v1/resources/list`: Partner building blocks/UI only.
 - `/thermostats/get`: Will be removed.
 - `/unstable_access_grants/create`: Unreleased.
@@ -135,7 +131,10 @@ These items are intentionally undocumented.
 - `/unstable_locations/remove_acs_entrances`: Experimental locations.
 - `/unstable_locations/remove_devices`: Experimental locations.
 - `/unstable_locations/update`: Experimental locations.
-- `/unstable_partner/building_blocks/generate_link`: Experimental partner building blocks.
+- `/unstable_partner/building_blocks/connect_accounts`: Experimental partner building blocks.
+- `/unstable_partner/building_blocks/generate_magic_link`: Experimental partner building blocks.
+- `/unstable_partner/building_blocks/manage_devices`: Experimental partner building blocks.
+- `/unstable_partner/building_blocks/organize_spaces`: Experimental partner building blocks.
 - `/unstable_partner/resources/push`: Experimental partner resources.
 
 ### Endpoint parameters
@@ -150,8 +149,6 @@ These items are intentionally undocumented.
     - `sync`: Only used internally.
 - `/access_codes/unmanaged/delete`
     - `sync`: Only used internally.
-- `/acs/entrances/list`
-    - `location_id`: Experimental locations.
 - `/connect_webviews/create`
     - `device_selection_mode`: Not supported.
 - `/connected_accounts/delete`
@@ -159,19 +156,27 @@ These items are intentionally undocumented.
 - `/devices/list`
     - `exclude_if`: Only used internally.
     - `include_if`: Only used internally.
-    - `unstable_location_id`: Experimental locations.
 - `/devices/unmanaged/list`
     - `exclude_if`: Only used internally.
     - `include_if`: Only used internally.
-    - `unstable_location_id`: Experimental locations.
 - `/locks/list`
     - `exclude_if`: Only used internally.
     - `include_if`: Only used internally.
-    - `unstable_location_id`: Experimental locations.
+- `/locks/lock_door`
+    - `sync`: Only used internally.
+- `/locks/unlock_door`
+    - `sync`: Only used internally.
 - `/noise_sensors/list`
     - `exclude_if`: Only used internally.
     - `include_if`: Only used internally.
-    - `unstable_location_id`: Experimental locations.
+- `/noise_sensors/noise_thresholds/create`
+    - `sync`: Only used internally.
+- `/noise_sensors/noise_thresholds/delete`
+    - `sync`: Only used internally.
+- `/noise_sensors/noise_thresholds/list`
+    - `is_programmed`: Not sure if this parameter is supported or what it does.
+- `/noise_sensors/noise_thresholds/update`
+    - `sync`: Only used internally.
 - `/thermostats/cool`
     - `sync`: Only used internally.
 - `/thermostats/heat`
@@ -181,7 +186,6 @@ These items are intentionally undocumented.
 - `/thermostats/list`
     - `exclude_if`: Only used internally.
     - `include_if`: Only used internally.
-    - `unstable_location_id`: Experimental locations.
 - `/thermostats/off`
     - `sync`: Only used internally.
 - `/thermostats/set_fan_mode`
@@ -199,9 +203,9 @@ Items that are intentionally undocumented are not included in this section.
 - `device_provider`
 - `event`
 - `instant_key`
-- `network`
-- `noise_threshold`
+- `magic_link`
 - `phone_session`
+- `space`
 - `unmanaged_acs_access_group`
 - `webhook`
 
@@ -238,6 +242,7 @@ Items that are intentionally undocumented are not included in this section.
 - `client_session.connect_webview_ids`
 - `client_session.connected_account_ids`
 - `client_session.created_at`
+- `client_session.customer_id`
 - `client_session.device_count`
 - `client_session.expires_at`
 - `client_session.token`
@@ -281,17 +286,12 @@ Items that are intentionally undocumented are not included in this section.
 - `instant_key.instant_key_url`
 - `instant_key.user_identity_id`
 - `instant_key.workspace_id`
-- `network.created_at`
-- `network.display_name`
-- `network.network_id`
-- `network.workspace_id`
-- `noise_threshold.device_id`
-- `noise_threshold.ends_daily_at`
-- `noise_threshold.name`
-- `noise_threshold.noise_threshold_decibels`
-- `noise_threshold.noise_threshold_id`
-- `noise_threshold.noise_threshold_nrs`
-- `noise_threshold.starts_daily_at`
+- `magic_link.building_block_type`
+- `magic_link.created_at`
+- `magic_link.customer_key`
+- `magic_link.expires_at`
+- `magic_link.url`
+- `magic_link.workspace_id`
 - `phone_session.provider_sessions`
 - `unmanaged_acs_access_group.access_group_type`
 - `unmanaged_acs_access_group.access_group_type_display_name`
@@ -329,21 +329,8 @@ Items that are intentionally undocumented are not included in this section.
 
 ### Endpoints
 
-- `/locks/get`
-- `/locks/list`
-- `/locks/lock_door`
-- `/locks/unlock_door`
-- `/locks/simulate/keypad_code_entry`
-- `/locks/simulate/manual_lock_via_keypad`
 - `/networks/get`
 - `/networks/list`
-- `/noise_sensors/list`
-- `/noise_sensors/noise_thresholds/create`
-- `/noise_sensors/noise_thresholds/delete`
-- `/noise_sensors/noise_thresholds/get`
-- `/noise_sensors/noise_thresholds/list`
-- `/noise_sensors/noise_thresholds/update`
-- `/noise_sensors/simulate/trigger_noise_threshold`
 - `/user_identities/update`
 - `/webhooks/create`
 - `/webhooks/delete`
@@ -366,6 +353,8 @@ Items that are intentionally undocumented are not included in this section.
     - `use_offline_access_code`
 - `/access_codes/delete`
     - `sync`
+- `/access_codes/list`
+    - `customer_ids`
 - `/access_codes/update`
     - `attempt_for_offline_device`
     - `sync`
@@ -376,9 +365,16 @@ Items that are intentionally undocumented are not included in this section.
     - `sync`
 - `/access_codes/unmanaged/update`
     - `is_managed`
+- `/access_grants/create`
+    - `location_ids`
+    - `requested_access_methods`
+- `/access_grants/list`
+    - `location_id`
 - `/acs/encoders/simulate/next_credential_scan_will_fail`
     - `error_code`
     - `acs_credential_id_on_seam`
+- `/acs/entrances/list`
+    - `location_id`
 - `/acs/users/create`
     - `email`
 - `/acs/users/update`
@@ -391,7 +387,7 @@ Items that are intentionally undocumented are not included in this section.
     - `customer_id`
     - `device_selection_mode`
 - `/connect_webviews/list`
-    - `customer_id`
+    - `customer_ids`
 - `/connected_accounts/delete`
     - `sync`
 - `/connected_accounts/list`
@@ -400,64 +396,36 @@ Items that are intentionally undocumented are not included in this section.
     - `customer_ids`
     - `exclude_if`
     - `include_if`
+    - `unstable_location_id`
 - `/devices/update`
     - `properties`
 - `/devices/unmanaged/list`
     - `customer_ids`
     - `exclude_if`
     - `include_if`
-- `/locks/get`
-    - `device_id`
-    - `name`
+    - `unstable_location_id`
 - `/locks/list`
     - `customer_ids`
     - `exclude_if`
     - `include_if`
+    - `unstable_location_id`
 - `/locks/lock_door`
-    - `device_id`
     - `sync`
 - `/locks/unlock_door`
-    - `device_id`
     - `sync`
-- `/locks/simulate/keypad_code_entry`
-    - `code`
-    - `device_id`
-- `/locks/simulate/manual_lock_via_keypad`
-    - `device_id`
 - `/networks/get`
     - `network_id`
 - `/noise_sensors/list`
     - `customer_ids`
     - `exclude_if`
     - `include_if`
+    - `unstable_location_id`
 - `/noise_sensors/noise_thresholds/create`
-    - `device_id`
-    - `ends_daily_at`
-    - `name`
-    - `noise_threshold_decibels`
-    - `noise_threshold_nrs`
-    - `starts_daily_at`
     - `sync`
 - `/noise_sensors/noise_thresholds/delete`
-    - `device_id`
-    - `noise_threshold_id`
     - `sync`
-- `/noise_sensors/noise_thresholds/get`
-    - `noise_threshold_id`
-- `/noise_sensors/noise_thresholds/list`
-    - `device_id`
-    - `is_programmed`
 - `/noise_sensors/noise_thresholds/update`
-    - `device_id`
-    - `ends_daily_at`
-    - `name`
-    - `noise_threshold_decibels`
-    - `noise_threshold_id`
-    - `noise_threshold_nrs`
-    - `starts_daily_at`
     - `sync`
-- `/noise_sensors/simulate/trigger_noise_threshold`
-    - `device_id`
 - `/seam/bridge/v1/bridge_client_sessions/create`
     - `bridge_client_machine_identifier_key`
     - `bridge_client_name`
@@ -469,6 +437,31 @@ Items that are intentionally undocumented are not included in this section.
     - `custom_sdk_installation_id`
     - `phone_device_metadata`
     - `phone_os`
+- `/seam/partner/v1/building_blocks/spaces/auto_map`
+    - `collection_key`
+- `/spaces/add_acs_entrances`
+    - `acs_entrance_ids`
+    - `space_id`
+- `/spaces/add_devices`
+    - `device_ids`
+    - `space_id`
+- `/spaces/create`
+    - `acs_entrance_ids`
+    - `device_ids`
+    - `name`
+- `/spaces/delete`
+    - `space_id`
+- `/spaces/get`
+    - `space_id`
+- `/spaces/remove_acs_entrances`
+    - `acs_entrance_ids`
+    - `space_id`
+- `/spaces/remove_devices`
+    - `device_ids`
+    - `space_id`
+- `/spaces/update`
+    - `name`
+    - `space_id`
 - `/thermostats/cool`
     - `sync`
 - `/thermostats/heat`
@@ -479,6 +472,7 @@ Items that are intentionally undocumented are not included in this section.
     - `customer_ids`
     - `exclude_if`
     - `include_if`
+    - `unstable_location_id`
 - `/thermostats/off`
     - `sync`
 - `/thermostats/set_fan_mode`
@@ -487,7 +481,10 @@ Items that are intentionally undocumented are not included in this section.
 - `/thermostats/set_hvac_mode`
     - `hvac_mode_setting`
 - `/unstable_access_grants/create`
+    - `location_ids`
     - `requested_access_methods`
+- `/unstable_access_grants/list`
+    - `location_id`
 - `/unstable_locations/add_acs_entrances`
     - `acs_entrance_ids`
     - `location_id`
@@ -515,10 +512,16 @@ Items that are intentionally undocumented are not included in this section.
     - `location_id`
     - `name`
     - `time_zone`
-- `/unstable_partner/building_blocks/generate_link`
-    - `bridge_client_machine_identifier_key`
-    - `bridge_client_name`
-    - `bridge_client_time_zone`
+- `/unstable_partner/building_blocks/connect_accounts`
+    - `customer_key`
+- `/unstable_partner/building_blocks/generate_magic_link`
+    - `building_block_type`
+    - `customer_key`
+- `/unstable_partner/building_blocks/manage_devices`
+    - `customer_key`
+- `/unstable_partner/building_blocks/organize_spaces`
+    - `customer_key`
+    - `partner_resources`
 - `/unstable_partner/resources/push`
     - `custom_metadata`
     - `customer_key`
@@ -564,6 +567,32 @@ Items that are intentionally undocumented are not included in this section.
     - `is_suspended`
     - `name`
 
+## Draft
+
+These items have been marked as draft.
+
+### Routes
+
+- `/access_grants`: No draft message provided
+- `/access_methods`: No draft message provided
+
+### Endpoints
+
+- `/access_grants/create`: Early access.
+- `/access_grants/delete`: Early access.
+- `/access_grants/get`: Early access.
+- `/access_grants/list`: Early access.
+- `/access_methods/delete`: Early access.
+- `/access_methods/get`: Early access.
+- `/access_methods/list`: Early access.
+- `/spaces/add_acs_entrances`: Early access.
+- `/spaces/add_devices`: Early access.
+- `/spaces/create`: Early access.
+- `/spaces/list`: Early access.
+- `/spaces/remove_acs_entrances`: Early access.
+- `/spaces/remove_devices`: Early access.
+- `/spaces/update`: Early access.
+
 ## Deprecated
 
 These items are deprecated.
@@ -585,16 +614,36 @@ These items are deprecated.
 
 ### Endpoint parameters
 
+- `/access_grants/create`
+    - `location_ids`: Use `space_ids`.
+- `/access_grants/list`
+    - `location_id`: Use `space_id`.
+- `/acs/entrances/list`
+    - `location_id`: Use `space_id`.
 - `/acs/users/create`
     - `email`: use email_address.
 - `/acs/users/update`
     - `email`: use email_address.
+- `/devices/list`
+    - `unstable_location_id`: Use `space_id`.
+- `/devices/unmanaged/list`
+    - `unstable_location_id`: Use `space_id`.
+- `/locks/list`
+    - `unstable_location_id`: Use `space_id`.
+- `/noise_sensors/list`
+    - `unstable_location_id`: Use `space_id`.
 - `/thermostats/create_climate_preset`
     - `manual_override_allowed`: Use 'thermostat_schedule.is_override_allowed'
+- `/thermostats/list`
+    - `unstable_location_id`: Use `space_id`.
 - `/thermostats/set_fan_mode`
     - `fan_mode`: Use `fan_mode_setting` instead.
 - `/thermostats/update_climate_preset`
     - `manual_override_allowed`: Use 'thermostat_schedule.is_override_allowed'
+- `/unstable_access_grants/create`
+    - `location_ids`: Use `space_ids`.
+- `/unstable_access_grants/list`
+    - `location_id`: Use `space_id`.
 - `/workspaces/create`
     - `connect_partner_name`: use company_name
     - `webview_logo_shape`: Use `connect_webview_customization.webview_logo_shape` instead.
@@ -649,6 +698,13 @@ These items are deprecated.
 - `/access_codes/unmanaged/get`
 - `/access_codes/unmanaged/list`
 - `/access_codes/unmanaged/update`
+- `/access_grants/create`
+- `/access_grants/delete`
+- `/access_grants/get`
+- `/access_grants/list`
+- `/access_methods/delete`
+- `/access_methods/get`
+- `/access_methods/list`
 - `/acs/credential_pools/list`
 - `/acs/credential_provisioning_automations/launch`
 - `/acs/credentials/create_offline_code`
@@ -724,7 +780,17 @@ These items are deprecated.
 - `/seam/instant_key/v1/client_sessions/exchange_short_code`
 - `/seam/mobile_sdk/v1/acs/credentials/list`
 - `/seam/mobile_sdk/v1/phone_sessions/get_or_create`
+- `/seam/partner/v1/building_blocks/spaces/auto_map`
 - `/seam/partner/v1/resources/list`
+- `/spaces/add_acs_entrances`
+- `/spaces/add_devices`
+- `/spaces/create`
+- `/spaces/delete`
+- `/spaces/get`
+- `/spaces/list`
+- `/spaces/remove_acs_entrances`
+- `/spaces/remove_devices`
+- `/spaces/update`
 - `/thermostats/get`
 - `/thermostats/update_weekly_program`
 - `/thermostats/daily_programs/create`
@@ -748,7 +814,10 @@ These items are deprecated.
 - `/unstable_locations/remove_acs_entrances`
 - `/unstable_locations/remove_devices`
 - `/unstable_locations/update`
-- `/unstable_partner/building_blocks/generate_link`
+- `/unstable_partner/building_blocks/connect_accounts`
+- `/unstable_partner/building_blocks/generate_magic_link`
+- `/unstable_partner/building_blocks/manage_devices`
+- `/unstable_partner/building_blocks/organize_spaces`
 - `/unstable_partner/resources/push`
 - `/user_identities/generate_instant_key`
 - `/user_identities/update`

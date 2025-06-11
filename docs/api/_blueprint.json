@@ -34,7 +34,7 @@
             "parameters": [
               {
                 "name": "allow_external_modification",
-                "description": "Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.",
+                "description": "Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -119,7 +119,7 @@
               },
               {
                 "name": "is_external_modification_allowed",
-                "description": "Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.",
+                "description": "Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -289,7 +289,7 @@
               },
               {
                 "name": "use_backup_access_code_pool",
-                "description": "Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code).",
+                "description": "Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -355,7 +355,7 @@
             "parameters": [
               {
                 "name": "allow_external_modification",
-                "description": "Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.",
+                "description": "Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -464,7 +464,7 @@
               },
               {
                 "name": "is_external_modification_allowed",
-                "description": "Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.",
+                "description": "Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -619,7 +619,7 @@
               },
               {
                 "name": "use_backup_access_code_pool",
-                "description": "Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code).",
+                "description": "Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -904,6 +904,21 @@
                 "itemFormat": "id"
               },
               {
+                "name": "customer_ids",
+                "description": "",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "list",
+                "jsonType": "array",
+                "itemFormat": "id"
+              },
+              {
                 "name": "device_id",
                 "description": "ID of the device for which you want to list access codes. Specify either `device_id` or `access_code_ids`.",
                 "isRequired": false,
@@ -1154,7 +1169,7 @@
               },
               {
                 "name": "allow_external_modification",
-                "description": "Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.",
+                "description": "Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -1225,7 +1240,7 @@
               },
               {
                 "name": "is_external_modification_allowed",
-                "description": "Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.",
+                "description": "Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -1445,7 +1460,7 @@
               },
               {
                 "name": "use_backup_access_code_pool",
-                "description": "Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code).",
+                "description": "Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -2097,6 +2112,701 @@
       "isUndocumented": false,
       "isDeprecated": false,
       "isDraft": false
+    },
+    {
+      "path": "/access_grants",
+      "name": "access_grants",
+      "namespacePath": null,
+      "endpoints": [
+        {
+          "title": "Create an Access Grant",
+          "name": "create",
+          "path": "/access_grants/create",
+          "parentPath": "/access_grants",
+          "description": "Creates a new access grant.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": true,
+          "draftMessage": "Early access.",
+          "response": {
+            "responseType": "resource",
+            "responseKey": "access_grant",
+            "resourceType": "unknown",
+            "description": "OK",
+            "actionAttemptType": null
+          },
+          "request": {
+            "methods": [
+              "POST"
+            ],
+            "semanticMethod": "POST",
+            "preferredMethod": "POST",
+            "parameters": [
+              {
+                "name": "user_identity_id",
+                "description": "ID of user identity for whom access is being granted.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
+                "name": "user_identity",
+                "description": "When used, creates a new user identity with the given details, and grants them access.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "object",
+                "jsonType": "object",
+                "parameters": [
+                  {
+                    "name": "email_address",
+                    "description": "Unique email address for the user identity.",
+                    "isRequired": false,
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": "",
+                    "hasDefault": false,
+                    "format": "string",
+                    "jsonType": "string"
+                  },
+                  {
+                    "name": "full_name",
+                    "description": "",
+                    "isRequired": false,
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": "",
+                    "hasDefault": false,
+                    "format": "string",
+                    "jsonType": "string"
+                  },
+                  {
+                    "name": "phone_number",
+                    "description": "Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).",
+                    "isRequired": false,
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": "",
+                    "hasDefault": false,
+                    "format": "string",
+                    "jsonType": "string"
+                  }
+                ]
+              },
+              {
+                "name": "acs_entrance_ids",
+                "description": "Set of IDs of the [entrances](https://docs.seam.co/latest/api/acs/systems/list) to which access is being granted.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": true,
+                "default": [],
+                "format": "list",
+                "jsonType": "array",
+                "itemFormat": "id"
+              },
+              {
+                "name": "device_ids",
+                "description": "Set of IDs of the [devices](https://docs.seam.co/latest/api/devices/list) to which access is being granted.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": true,
+                "default": [],
+                "format": "list",
+                "jsonType": "array",
+                "itemFormat": "id"
+              },
+              {
+                "name": "ends_at",
+                "description": "Date and time at which the validity of the new grant ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "datetime",
+                "jsonType": "string"
+              },
+              {
+                "name": "location",
+                "description": "When used, creates a new location with the given entrances and devices, and gives the user access to this location.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "object",
+                "jsonType": "object",
+                "parameters": [
+                  {
+                    "name": "acs_entrance_ids",
+                    "description": "",
+                    "isRequired": false,
+                    "isDeprecated": true,
+                    "deprecationMessage": "Use `acs_entrance_ids` at the top level.",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": "",
+                    "hasDefault": true,
+                    "default": [],
+                    "format": "list",
+                    "jsonType": "array",
+                    "itemFormat": "id"
+                  },
+                  {
+                    "name": "device_ids",
+                    "description": "",
+                    "isRequired": false,
+                    "isDeprecated": true,
+                    "deprecationMessage": "Use `device_ids` at the top level.",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": "",
+                    "hasDefault": true,
+                    "default": [],
+                    "format": "list",
+                    "jsonType": "array",
+                    "itemFormat": "id"
+                  },
+                  {
+                    "name": "name",
+                    "description": "Name of the location.",
+                    "isRequired": false,
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": "",
+                    "hasDefault": false,
+                    "format": "string",
+                    "jsonType": "string"
+                  }
+                ]
+              },
+              {
+                "name": "location_ids",
+                "description": "",
+                "isRequired": false,
+                "isDeprecated": true,
+                "deprecationMessage": "Use `space_ids`.",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "list",
+                "jsonType": "array",
+                "itemFormat": "id"
+              },
+              {
+                "name": "requested_access_methods",
+                "description": "",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "list",
+                "jsonType": "array",
+                "itemFormat": "object",
+                "itemParameters": [
+                  {
+                    "name": "mode",
+                    "description": "Access method mode. Supported values: `code`, `card`, `mobile_key`.",
+                    "isRequired": false,
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": "",
+                    "hasDefault": false,
+                    "format": "enum",
+                    "jsonType": "string",
+                    "values": [
+                      {
+                        "name": "code",
+                        "description": "",
+                        "isDeprecated": false,
+                        "deprecationMessage": "",
+                        "isUndocumented": false,
+                        "undocumentedMessage": "",
+                        "isDraft": false,
+                        "draftMessage": ""
+                      },
+                      {
+                        "name": "card",
+                        "description": "",
+                        "isDeprecated": false,
+                        "deprecationMessage": "",
+                        "isUndocumented": false,
+                        "undocumentedMessage": "",
+                        "isDraft": false,
+                        "draftMessage": ""
+                      },
+                      {
+                        "name": "mobile_key",
+                        "description": "",
+                        "isDeprecated": false,
+                        "deprecationMessage": "",
+                        "isUndocumented": false,
+                        "undocumentedMessage": "",
+                        "isDraft": false,
+                        "draftMessage": ""
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "space_ids",
+                "description": "Set of IDs of existing spaces to which access is being granted.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "list",
+                "jsonType": "array",
+                "itemFormat": "id"
+              },
+              {
+                "name": "starts_at",
+                "description": "Date and time at which the validity of the new grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "datetime",
+                "jsonType": "string"
+              }
+            ]
+          },
+          "hasPagination": false,
+          "authMethods": [
+            "personal_access_token",
+            "api_key"
+          ],
+          "workspaceScope": "required",
+          "codeSamples": []
+        },
+        {
+          "title": "Delete an Access Grant",
+          "name": "delete",
+          "path": "/access_grants/delete",
+          "parentPath": "/access_grants",
+          "description": "Delete an access grant.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": true,
+          "draftMessage": "Early access.",
+          "response": {
+            "responseType": "void",
+            "description": "OK"
+          },
+          "request": {
+            "methods": [
+              "POST"
+            ],
+            "semanticMethod": "POST",
+            "preferredMethod": "POST",
+            "parameters": [
+              {
+                "name": "access_grant_id",
+                "description": "ID of access grant to delete.",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              }
+            ]
+          },
+          "hasPagination": false,
+          "authMethods": [
+            "personal_access_token",
+            "api_key"
+          ],
+          "workspaceScope": "required",
+          "codeSamples": []
+        },
+        {
+          "title": "Get an Access Grant",
+          "name": "get",
+          "path": "/access_grants/get",
+          "parentPath": "/access_grants",
+          "description": "Get an access grant.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": true,
+          "draftMessage": "Early access.",
+          "response": {
+            "responseType": "resource",
+            "responseKey": "access_grant",
+            "resourceType": "unknown",
+            "description": "OK",
+            "actionAttemptType": null
+          },
+          "request": {
+            "methods": [
+              "POST"
+            ],
+            "semanticMethod": "POST",
+            "preferredMethod": "POST",
+            "parameters": [
+              {
+                "name": "access_grant_id",
+                "description": "ID of access grant to get.",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              }
+            ]
+          },
+          "hasPagination": false,
+          "authMethods": [
+            "personal_access_token",
+            "api_key"
+          ],
+          "workspaceScope": "required",
+          "codeSamples": []
+        },
+        {
+          "title": "List Access Grants",
+          "name": "list",
+          "path": "/access_grants/list",
+          "parentPath": "/access_grants",
+          "description": "Get an access grant.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": true,
+          "draftMessage": "Early access.",
+          "response": {
+            "responseType": "resource_list",
+            "responseKey": "access_grants",
+            "resourceType": "unknown",
+            "description": "OK",
+            "actionAttemptType": null
+          },
+          "request": {
+            "methods": [
+              "POST"
+            ],
+            "semanticMethod": "POST",
+            "preferredMethod": "POST",
+            "parameters": [
+              {
+                "name": "acs_entrance_id",
+                "description": "ID of entrance to filter list of access grants by.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
+                "name": "acs_system_id",
+                "description": "ID of system to filter list of access grants by.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
+                "name": "location_id",
+                "description": "",
+                "isRequired": false,
+                "isDeprecated": true,
+                "deprecationMessage": "Use `space_id`.",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
+                "name": "space_id",
+                "description": "ID of space to filter list of access grants by.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
+                "name": "user_identity_id",
+                "description": "ID of user identity to filter list of access grants by.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              }
+            ]
+          },
+          "hasPagination": false,
+          "authMethods": [
+            "personal_access_token",
+            "api_key"
+          ],
+          "workspaceScope": "required",
+          "codeSamples": []
+        }
+      ],
+      "parentPath": null,
+      "isUndocumented": false,
+      "isDeprecated": false,
+      "isDraft": true
+    },
+    {
+      "path": "/access_methods",
+      "name": "access_methods",
+      "namespacePath": null,
+      "endpoints": [
+        {
+          "title": "Delete an Access Method",
+          "name": "delete",
+          "path": "/access_methods/delete",
+          "parentPath": "/access_methods",
+          "description": "Delete an access method.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": true,
+          "draftMessage": "Early access.",
+          "response": {
+            "responseType": "void",
+            "description": "OK"
+          },
+          "request": {
+            "methods": [
+              "POST"
+            ],
+            "semanticMethod": "POST",
+            "preferredMethod": "POST",
+            "parameters": [
+              {
+                "name": "access_method_id",
+                "description": "ID of access method to get.",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              }
+            ]
+          },
+          "hasPagination": false,
+          "authMethods": [
+            "personal_access_token",
+            "api_key"
+          ],
+          "workspaceScope": "required",
+          "codeSamples": []
+        },
+        {
+          "title": "Get an Access Method",
+          "name": "get",
+          "path": "/access_methods/get",
+          "parentPath": "/access_methods",
+          "description": "Get an access method.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": true,
+          "draftMessage": "Early access.",
+          "response": {
+            "responseType": "resource",
+            "responseKey": "access_method",
+            "resourceType": "unknown",
+            "description": "OK",
+            "actionAttemptType": null
+          },
+          "request": {
+            "methods": [
+              "POST"
+            ],
+            "semanticMethod": "POST",
+            "preferredMethod": "POST",
+            "parameters": [
+              {
+                "name": "access_method_id",
+                "description": "ID of access method to get.",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              }
+            ]
+          },
+          "hasPagination": false,
+          "authMethods": [
+            "personal_access_token",
+            "api_key"
+          ],
+          "workspaceScope": "required",
+          "codeSamples": []
+        },
+        {
+          "title": "List Access Methods",
+          "name": "list",
+          "path": "/access_methods/list",
+          "parentPath": "/access_methods",
+          "description": "List all access methods, usually filtered by access grant.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": true,
+          "draftMessage": "Early access.",
+          "response": {
+            "responseType": "resource_list",
+            "responseKey": "access_methods",
+            "resourceType": "unknown",
+            "description": "OK",
+            "actionAttemptType": null
+          },
+          "request": {
+            "methods": [
+              "POST"
+            ],
+            "semanticMethod": "POST",
+            "preferredMethod": "POST",
+            "parameters": [
+              {
+                "name": "access_grant_id",
+                "description": "ID of access grant to list access methods for.",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              }
+            ]
+          },
+          "hasPagination": false,
+          "authMethods": [
+            "personal_access_token",
+            "api_key"
+          ],
+          "workspaceScope": "required",
+          "codeSamples": []
+        }
+      ],
+      "parentPath": null,
+      "isUndocumented": false,
+      "isDeprecated": false,
+      "isDraft": true
     },
     {
       "path": "/acs/access_groups",
@@ -6664,12 +7374,26 @@
               },
               {
                 "name": "location_id",
-                "description": "ID of the location for which you want to retrieve all entrances.",
+                "description": "",
+                "isRequired": false,
+                "isDeprecated": true,
+                "deprecationMessage": "Use `space_id`.",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
+                "name": "space_id",
+                "description": "ID of the space for which you want to list entrances.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
-                "isUndocumented": true,
-                "undocumentedMessage": "Experimental locations.",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
                 "isDraft": false,
                 "draftMessage": "",
                 "hasDefault": false,
@@ -10627,6 +11351,63 @@
             "preferredMethod": "POST",
             "parameters": [
               {
+                "name": "accepted_capabilities",
+                "description": "List of accepted device capabilities that restrict the types of devices that can be connected through the Connect Webview. If not provided, defaults will be determined based on the accepted providers.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "list",
+                "jsonType": "array",
+                "itemFormat": "enum",
+                "itemEnumValues": [
+                  {
+                    "name": "lock",
+                    "description": "",
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": ""
+                  },
+                  {
+                    "name": "thermostat",
+                    "description": "",
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": ""
+                  },
+                  {
+                    "name": "noise_sensor",
+                    "description": "",
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": ""
+                  },
+                  {
+                    "name": "access_control",
+                    "description": "",
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": ""
+                  }
+                ]
+              },
+              {
                 "name": "accepted_providers",
                 "description": "Accepted device provider keys as an alternative to `provider_category`. Use this parameter to specify accepted providers explicitly. See [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews). To list all provider keys, use [`/devices/list_device_providers`](https://docs.seam.co/latest/api/devices/list_device_providers) with no filters.",
                 "isRequired": false,
@@ -11501,7 +12282,7 @@
                 "jsonType": "object"
               },
               {
-                "name": "customer_id",
+                "name": "customer_ids",
                 "description": "",
                 "isRequired": false,
                 "isDeprecated": false,
@@ -11511,8 +12292,9 @@
                 "isDraft": false,
                 "draftMessage": "",
                 "hasDefault": false,
-                "format": "string",
-                "jsonType": "string"
+                "format": "list",
+                "jsonType": "array",
+                "itemFormat": "string"
               },
               {
                 "name": "limit",
@@ -12088,7 +12870,7 @@
           "name": "sync",
           "path": "/connected_accounts/sync",
           "parentPath": "/connected_accounts",
-          "description": "Request a [connected account](../core-concepts/connected-accounts/README.md) sync attempt for the specified connected_account_id.",
+          "description": "Request a [connected account](../core-concepts/connected-accounts/README.md) sync attempt for the specified `connected_account_id`.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -14095,13 +14877,27 @@
                 "jsonType": "string"
               },
               {
-                "name": "unstable_location_id",
-                "description": "ID of the location for which you want to list devices.",
+                "name": "space_id",
+                "description": "ID of the space for which you want to list devices.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
-                "isUndocumented": true,
-                "undocumentedMessage": "Experimental locations.",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
+                "name": "unstable_location_id",
+                "description": "",
+                "isRequired": false,
+                "isDeprecated": true,
+                "deprecationMessage": "Use `space_id`.",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
                 "isDraft": false,
                 "draftMessage": "",
                 "hasDefault": false,
@@ -16176,13 +16972,27 @@
                 "jsonType": "string"
               },
               {
-                "name": "unstable_location_id",
-                "description": "ID of the location for which you want to list devices.",
+                "name": "space_id",
+                "description": "ID of the space for which you want to list devices.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
-                "isUndocumented": true,
-                "undocumentedMessage": "Experimental locations.",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
+                "name": "unstable_location_id",
+                "description": "",
+                "isRequired": false,
+                "isDeprecated": true,
+                "deprecationMessage": "Use `space_id`.",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
                 "isDraft": false,
                 "draftMessage": "",
                 "hasDefault": false,
@@ -16808,6 +17618,16 @@
                   },
                   {
                     "name": "access_method.card_encoding_required",
+                    "description": "",
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": ""
+                  },
+                  {
+                    "name": "access_method.deleted",
                     "description": "",
                     "isDeprecated": false,
                     "deprecationMessage": "",
@@ -17714,6 +18534,16 @@
                     "draftMessage": ""
                   },
                   {
+                    "name": "access_method.deleted",
+                    "description": "",
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": ""
+                  },
+                  {
                     "name": "acs_system.connected",
                     "description": "",
                     "isDeprecated": false,
@@ -18411,11 +19241,11 @@
       "namespacePath": null,
       "endpoints": [
         {
-          "title": "",
+          "title": "Get a Lock",
           "name": "get",
           "path": "/locks/get",
           "parentPath": "/locks",
-          "description": "",
+          "description": "Returns a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks). **Use `/devices/get` instead.**",
           "isDeprecated": false,
           "deprecationMessage": "Use `/devices/get` instead.",
           "isUndocumented": false,
@@ -18438,7 +19268,7 @@
             "parameters": [
               {
                 "name": "device_id",
-                "description": "",
+                "description": "ID of the lock that you want to get.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -18452,7 +19282,7 @@
               },
               {
                 "name": "name",
-                "description": "",
+                "description": "Name of the lock that you want to get.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -18476,11 +19306,11 @@
           "codeSamples": []
         },
         {
-          "title": "",
+          "title": "List Locks",
           "name": "list",
           "path": "/locks/list",
           "parentPath": "/locks",
-          "description": "",
+          "description": "Returns a list of all [locks](https://docs.seam.co/latest/capability-guides/smart-locks).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -18604,7 +19434,7 @@
               },
               {
                 "name": "device_type",
-                "description": "Device type by which to filter devices.",
+                "description": "Device type of the locks that you want to list.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -18890,7 +19720,7 @@
               },
               {
                 "name": "device_types",
-                "description": "Array of device types by which to filter devices.",
+                "description": "Device types of the locks that you want to list.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -19446,7 +20276,7 @@
               },
               {
                 "name": "manufacturer",
-                "description": "Manufacturer by which to filter devices.",
+                "description": "Manufacturer of the locks that you want to list.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -19755,13 +20585,27 @@
                 "jsonType": "string"
               },
               {
-                "name": "unstable_location_id",
-                "description": "ID of the location for which you want to list devices.",
+                "name": "space_id",
+                "description": "ID of the space for which you want to list devices.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
-                "isUndocumented": true,
-                "undocumentedMessage": "Experimental locations.",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
+                "name": "unstable_location_id",
+                "description": "",
+                "isRequired": false,
+                "isDeprecated": true,
+                "deprecationMessage": "Use `space_id`.",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
                 "isDraft": false,
                 "draftMessage": "",
                 "hasDefault": false,
@@ -19794,11 +20638,11 @@
           "codeSamples": []
         },
         {
-          "title": "",
+          "title": "Lock a Lock",
           "name": "lock_door",
           "path": "/locks/lock_door",
           "parentPath": "/locks",
-          "description": "",
+          "description": "Locks a [lock](https://docs.seam.co/latest/capability-guides/smart-locks). See also [Locking and Unlocking Smart Locks](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -19821,7 +20665,7 @@
             "parameters": [
               {
                 "name": "device_id",
-                "description": "",
+                "description": "ID of the lock that you want to lock.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -19839,8 +20683,8 @@
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
-                "isUndocumented": false,
-                "undocumentedMessage": "",
+                "isUndocumented": true,
+                "undocumentedMessage": "Only used internally.",
                 "isDraft": false,
                 "draftMessage": "",
                 "hasDefault": true,
@@ -19860,11 +20704,11 @@
           "codeSamples": []
         },
         {
-          "title": "",
+          "title": "Unlock a Lock",
           "name": "unlock_door",
           "path": "/locks/unlock_door",
           "parentPath": "/locks",
-          "description": "",
+          "description": "Unlocks a [lock](https://docs.seam.co/latest/capability-guides/smart-locks). See also [Locking and Unlocking Smart Locks](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -19887,7 +20731,7 @@
             "parameters": [
               {
                 "name": "device_id",
-                "description": "",
+                "description": "ID of the lock that you want to unlock.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -19905,8 +20749,8 @@
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
-                "isUndocumented": false,
-                "undocumentedMessage": "",
+                "isUndocumented": true,
+                "undocumentedMessage": "Only used internally.",
                 "isDraft": false,
                 "draftMessage": "",
                 "hasDefault": true,
@@ -19941,7 +20785,7 @@
           "name": "keypad_code_entry",
           "path": "/locks/simulate/keypad_code_entry",
           "parentPath": "/locks/simulate",
-          "description": "",
+          "description": "Simulates the entry of a code on a keypad. You can only perform this action for [August](https://docs.seam.co/latest/device-and-system-integration-guides/august-locks) devices within [sandbox workspaces](../core-concepts/workspaces/README.md#sandbox-workspaces).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -19964,7 +20808,7 @@
             "parameters": [
               {
                 "name": "code",
-                "description": "",
+                "description": "Code that you want to simulate entering on a keypad.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -19978,7 +20822,7 @@
               },
               {
                 "name": "device_id",
-                "description": "",
+                "description": "ID of the device for which you want to simulate a keypad code entry.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -20005,7 +20849,7 @@
           "name": "manual_lock_via_keypad",
           "path": "/locks/simulate/manual_lock_via_keypad",
           "parentPath": "/locks/simulate",
-          "description": "",
+          "description": "Simulates a manual lock action using a keypad. You can only perform this action for [August](https://docs.seam.co/latest/device-and-system-integration-guides/august-locks) devices within [sandbox workspaces](../core-concepts/workspaces/README.md#sandbox-workspaces).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -20028,7 +20872,7 @@
             "parameters": [
               {
                 "name": "device_id",
-                "description": "",
+                "description": "ID of the device for which you want to simulate a manual lock action using a keypad.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -20068,15 +20912,15 @@
           "parentPath": "/networks",
           "description": "",
           "isDeprecated": false,
-          "deprecationMessage": "",
-          "isUndocumented": false,
-          "undocumentedMessage": "",
+          "deprecationMessage": "Will be removed.",
+          "isUndocumented": true,
+          "undocumentedMessage": "Deprecated.",
           "isDraft": false,
           "draftMessage": "",
           "response": {
             "responseType": "resource",
             "responseKey": "network",
-            "resourceType": "network",
+            "resourceType": "unknown",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -20118,15 +20962,15 @@
           "parentPath": "/networks",
           "description": "",
           "isDeprecated": false,
-          "deprecationMessage": "",
-          "isUndocumented": false,
-          "undocumentedMessage": "",
+          "deprecationMessage": "Will be removed.",
+          "isUndocumented": true,
+          "undocumentedMessage": "Deprecated.",
           "isDraft": false,
           "draftMessage": "",
           "response": {
             "responseType": "resource_list",
             "responseKey": "networks",
-            "resourceType": "network",
+            "resourceType": "unknown",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -20148,7 +20992,7 @@
         }
       ],
       "parentPath": null,
-      "isUndocumented": false,
+      "isUndocumented": true,
       "isDeprecated": false,
       "isDraft": false
     },
@@ -20158,11 +21002,11 @@
       "namespacePath": null,
       "endpoints": [
         {
-          "title": "",
+          "title": "List Noise Sensors",
           "name": "list",
           "path": "/noise_sensors/list",
           "parentPath": "/noise_sensors",
-          "description": "",
+          "description": "Returns a list of all [noise sensors](https://docs.seam.co/latest/capability-guides/noise-sensors).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -20286,7 +21130,7 @@
               },
               {
                 "name": "device_type",
-                "description": "Device type by which to filter devices.",
+                "description": "Device type of the noise sensors that you want to list.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -20322,7 +21166,7 @@
               },
               {
                 "name": "device_types",
-                "description": "Array of device types by which to filter devices.",
+                "description": "Device types of the noise sensors that you want to list.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -20628,7 +21472,7 @@
               },
               {
                 "name": "manufacturer",
-                "description": "Manufacturer by which to filter devices.",
+                "description": "Manufacturers of the noise sensors that you want to list.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -20677,13 +21521,27 @@
                 "jsonType": "string"
               },
               {
-                "name": "unstable_location_id",
-                "description": "ID of the location for which you want to list devices.",
+                "name": "space_id",
+                "description": "ID of the space for which you want to list devices.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
-                "isUndocumented": true,
-                "undocumentedMessage": "Experimental locations.",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
+                "name": "unstable_location_id",
+                "description": "",
+                "isRequired": false,
+                "isDeprecated": true,
+                "deprecationMessage": "Use `space_id`.",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
                 "isDraft": false,
                 "draftMessage": "",
                 "hasDefault": false,
@@ -20727,11 +21585,11 @@
       "namespacePath": null,
       "endpoints": [
         {
-          "title": "",
+          "title": "Create a Noise Threshold",
           "name": "create",
           "path": "/noise_sensors/noise_thresholds/create",
           "parentPath": "/noise_sensors/noise_thresholds",
-          "description": "",
+          "description": "Creates a new [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors). Thresholds represent the limits of noise tolerated at a property, which can be customized for each hour of the day. Each device has its own default thresholds, but you can use the Seam API to modify them.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -20754,7 +21612,7 @@
             "parameters": [
               {
                 "name": "device_id",
-                "description": "",
+                "description": "ID of the device for which you want to create a noise threshold.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -20768,7 +21626,7 @@
               },
               {
                 "name": "ends_daily_at",
-                "description": "",
+                "description": "Time at which the new noise threshold should become inactive daily.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -20782,7 +21640,7 @@
               },
               {
                 "name": "name",
-                "description": "",
+                "description": "Name of the new noise threshold.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -20796,7 +21654,7 @@
               },
               {
                 "name": "noise_threshold_decibels",
-                "description": "",
+                "description": "Noise level in decibels for the new noise threshold.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -20810,7 +21668,7 @@
               },
               {
                 "name": "noise_threshold_nrs",
-                "description": "",
+                "description": "Noise level in Noiseaware Noise Risk Score (NRS) for the new noise threshold. This parameter is only relevant for [Noiseaware sensors](https://docs.seam.co/latest/device-and-system-integration-guides/noiseaware-sensors).",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -20824,7 +21682,7 @@
               },
               {
                 "name": "starts_daily_at",
-                "description": "",
+                "description": "Time at which the new noise threshold should become active daily.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -20842,8 +21700,8 @@
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
-                "isUndocumented": false,
-                "undocumentedMessage": "",
+                "isUndocumented": true,
+                "undocumentedMessage": "Only used internally.",
                 "isDraft": false,
                 "draftMessage": "",
                 "hasDefault": true,
@@ -20862,11 +21720,11 @@
           "codeSamples": []
         },
         {
-          "title": "",
+          "title": "Delete a Noise Threshold",
           "name": "delete",
           "path": "/noise_sensors/noise_thresholds/delete",
           "parentPath": "/noise_sensors/noise_thresholds",
-          "description": "",
+          "description": "Deletes a [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) from a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -20886,7 +21744,7 @@
             "parameters": [
               {
                 "name": "device_id",
-                "description": "",
+                "description": "ID of the device that contains the noise threshold that you want to delete.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -20900,7 +21758,7 @@
               },
               {
                 "name": "noise_threshold_id",
-                "description": "",
+                "description": "ID of the noise threshold that you want to delete.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -20918,8 +21776,8 @@
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
-                "isUndocumented": false,
-                "undocumentedMessage": "",
+                "isUndocumented": true,
+                "undocumentedMessage": "Only used internally.",
                 "isDraft": false,
                 "draftMessage": "",
                 "hasDefault": true,
@@ -20938,11 +21796,11 @@
           "codeSamples": []
         },
         {
-          "title": "",
+          "title": "Get a Noise Threshold",
           "name": "get",
           "path": "/noise_sensors/noise_thresholds/get",
           "parentPath": "/noise_sensors/noise_thresholds",
-          "description": "",
+          "description": "Returns a specified [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -20965,7 +21823,7 @@
             "parameters": [
               {
                 "name": "noise_threshold_id",
-                "description": "",
+                "description": "ID of the noise threshold that you want to get.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -20988,11 +21846,11 @@
           "codeSamples": []
         },
         {
-          "title": "",
+          "title": "List Noise Thresholds",
           "name": "list",
           "path": "/noise_sensors/noise_thresholds/list",
           "parentPath": "/noise_sensors/noise_thresholds",
-          "description": "",
+          "description": "Returns a list of all [noise thresholds](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -21015,7 +21873,7 @@
             "parameters": [
               {
                 "name": "device_id",
-                "description": "",
+                "description": "ID of the device for which you want to list noise thresholds.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -21029,12 +21887,12 @@
               },
               {
                 "name": "is_programmed",
-                "description": "",
+                "description": "Enables you to limit the returned noise thresholds by whether they are programmed on the noise sensor. To list only noise thresholds that are programmed on the noise sensor, set this parameter to `true`. To list only noise thresholds that are not programmed on the noise sensor, se this parameter to `false`.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
-                "isUndocumented": false,
-                "undocumentedMessage": "",
+                "isUndocumented": true,
+                "undocumentedMessage": "Not sure if this parameter is supported or what it does.",
                 "isDraft": false,
                 "draftMessage": "",
                 "hasDefault": false,
@@ -21053,11 +21911,11 @@
           "codeSamples": []
         },
         {
-          "title": "",
+          "title": "Update a Noise Threshold",
           "name": "update",
           "path": "/noise_sensors/noise_thresholds/update",
           "parentPath": "/noise_sensors/noise_thresholds",
-          "description": "",
+          "description": "Updates a [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -21079,7 +21937,7 @@
             "parameters": [
               {
                 "name": "device_id",
-                "description": "",
+                "description": "ID of the device that contains the noise threshold that you want to update.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -21093,7 +21951,7 @@
               },
               {
                 "name": "ends_daily_at",
-                "description": "",
+                "description": "Time at which the noise threshold should become inactive daily.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -21107,7 +21965,7 @@
               },
               {
                 "name": "name",
-                "description": "",
+                "description": "Name of the noise threshold that you want to update.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -21121,7 +21979,7 @@
               },
               {
                 "name": "noise_threshold_decibels",
-                "description": "",
+                "description": "Noise level in decibels for the noise threshold.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -21135,7 +21993,7 @@
               },
               {
                 "name": "noise_threshold_id",
-                "description": "",
+                "description": "ID of the noise threshold that you want to update.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -21149,7 +22007,7 @@
               },
               {
                 "name": "noise_threshold_nrs",
-                "description": "",
+                "description": "Noise level in Noiseaware Noise Risk Score (NRS) for the noise threshold. This parameter is only relevant for [Noiseaware sensors](https://docs.seam.co/latest/device-and-system-integration-guides/noiseaware-sensors).",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -21163,7 +22021,7 @@
               },
               {
                 "name": "starts_daily_at",
-                "description": "",
+                "description": "Time at which the noise threshold should become active daily.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -21181,8 +22039,8 @@
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
-                "isUndocumented": false,
-                "undocumentedMessage": "",
+                "isUndocumented": true,
+                "undocumentedMessage": "Only used internally.",
                 "isDraft": false,
                 "draftMessage": "",
                 "hasDefault": true,
@@ -21212,11 +22070,11 @@
       "namespacePath": null,
       "endpoints": [
         {
-          "title": "",
+          "title": "Simulate Triggering a Noise Threshold",
           "name": "trigger_noise_threshold",
           "path": "/noise_sensors/simulate/trigger_noise_threshold",
           "parentPath": "/noise_sensors/simulate",
-          "description": "",
+          "description": "Simulates the triggering of a [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors) in a [sandbox workspace](../core-concepts/workspaces/README.md#sandbox-workspaces).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -21236,7 +22094,7 @@
             "parameters": [
               {
                 "name": "device_id",
-                "description": "",
+                "description": "ID of the device for which you want to simulate the triggering of a noise threshold.",
                 "isRequired": true,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -22261,6 +23119,64 @@
       "isDraft": false
     },
     {
+      "path": "/seam/partner/v1/building_blocks/spaces",
+      "name": "spaces",
+      "namespacePath": "/seam/partner/v1/building_blocks",
+      "endpoints": [
+        {
+          "title": "Do auto mapping for partner resources that map to spaces",
+          "name": "auto_map",
+          "path": "/seam/partner/v1/building_blocks/spaces/auto_map",
+          "parentPath": "/seam/partner/v1/building_blocks/spaces",
+          "description": "Auto map partner resources that have been pushed to Seam.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": true,
+          "undocumentedMessage": "Partner building blocks/UI only.",
+          "isDraft": false,
+          "draftMessage": "",
+          "response": {
+            "responseType": "resource_list",
+            "responseKey": "spaces",
+            "resourceType": "unknown",
+            "description": "OK",
+            "actionAttemptType": null
+          },
+          "request": {
+            "methods": [
+              "POST"
+            ],
+            "semanticMethod": "POST",
+            "preferredMethod": "POST",
+            "parameters": [
+              {
+                "name": "collection_key",
+                "description": "",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "string",
+                "jsonType": "string"
+              }
+            ]
+          },
+          "hasPagination": false,
+          "authMethods": [],
+          "workspaceScope": "none",
+          "codeSamples": []
+        }
+      ],
+      "parentPath": "/seam/partner/v1/building_blocks",
+      "isUndocumented": true,
+      "isDeprecated": false,
+      "isDraft": false
+    },
+    {
       "path": "/seam/partner/v1/resources",
       "name": "resources",
       "namespacePath": "/seam/partner/v1",
@@ -22315,6 +23231,545 @@
       ],
       "parentPath": "/seam/partner/v1",
       "isUndocumented": true,
+      "isDeprecated": false,
+      "isDraft": false
+    },
+    {
+      "path": "/spaces",
+      "name": "spaces",
+      "namespacePath": null,
+      "endpoints": [
+        {
+          "title": "Add ACS Entrances",
+          "name": "add_acs_entrances",
+          "path": "/spaces/add_acs_entrances",
+          "parentPath": "/spaces",
+          "description": "Add entrances to a specific space.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": true,
+          "draftMessage": "Early access.",
+          "response": {
+            "responseType": "void",
+            "description": "OK"
+          },
+          "request": {
+            "methods": [
+              "POST",
+              "PUT"
+            ],
+            "semanticMethod": "PUT",
+            "preferredMethod": "PUT",
+            "parameters": [
+              {
+                "name": "acs_entrance_ids",
+                "description": "",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "list",
+                "jsonType": "array",
+                "itemFormat": "id"
+              },
+              {
+                "name": "space_id",
+                "description": "",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              }
+            ]
+          },
+          "hasPagination": false,
+          "authMethods": [
+            "personal_access_token",
+            "api_key"
+          ],
+          "workspaceScope": "required",
+          "codeSamples": []
+        },
+        {
+          "title": "Add Space Devices",
+          "name": "add_devices",
+          "path": "/spaces/add_devices",
+          "parentPath": "/spaces",
+          "description": "Add devices to a specific space.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": true,
+          "draftMessage": "Early access.",
+          "response": {
+            "responseType": "void",
+            "description": "OK"
+          },
+          "request": {
+            "methods": [
+              "POST",
+              "PUT"
+            ],
+            "semanticMethod": "PUT",
+            "preferredMethod": "PUT",
+            "parameters": [
+              {
+                "name": "device_ids",
+                "description": "",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "list",
+                "jsonType": "array",
+                "itemFormat": "id"
+              },
+              {
+                "name": "space_id",
+                "description": "",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              }
+            ]
+          },
+          "hasPagination": false,
+          "authMethods": [
+            "personal_access_token",
+            "api_key"
+          ],
+          "workspaceScope": "required",
+          "codeSamples": []
+        },
+        {
+          "title": "Create Space",
+          "name": "create",
+          "path": "/spaces/create",
+          "parentPath": "/spaces",
+          "description": "Create a new space.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": true,
+          "draftMessage": "Early access.",
+          "response": {
+            "responseType": "resource",
+            "responseKey": "space",
+            "resourceType": "space",
+            "description": "OK",
+            "actionAttemptType": null
+          },
+          "request": {
+            "methods": [
+              "POST"
+            ],
+            "semanticMethod": "POST",
+            "preferredMethod": "POST",
+            "parameters": [
+              {
+                "name": "acs_entrance_ids",
+                "description": "",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "list",
+                "jsonType": "array",
+                "itemFormat": "id"
+              },
+              {
+                "name": "device_ids",
+                "description": "",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "list",
+                "jsonType": "array",
+                "itemFormat": "id"
+              },
+              {
+                "name": "name",
+                "description": "",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "string",
+                "jsonType": "string"
+              }
+            ]
+          },
+          "hasPagination": false,
+          "authMethods": [
+            "personal_access_token",
+            "api_key"
+          ],
+          "workspaceScope": "required",
+          "codeSamples": []
+        },
+        {
+          "title": "Delete Space",
+          "name": "delete",
+          "path": "/spaces/delete",
+          "parentPath": "/spaces",
+          "description": "Delete a space.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "response": {
+            "responseType": "void",
+            "description": "OK"
+          },
+          "request": {
+            "methods": [
+              "POST"
+            ],
+            "semanticMethod": "POST",
+            "preferredMethod": "POST",
+            "parameters": [
+              {
+                "name": "space_id",
+                "description": "",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              }
+            ]
+          },
+          "hasPagination": false,
+          "authMethods": [
+            "personal_access_token",
+            "api_key"
+          ],
+          "workspaceScope": "required",
+          "codeSamples": []
+        },
+        {
+          "title": "Get Space",
+          "name": "get",
+          "path": "/spaces/get",
+          "parentPath": "/spaces",
+          "description": "Get a space.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "response": {
+            "responseType": "resource",
+            "responseKey": "space",
+            "resourceType": "space",
+            "description": "OK",
+            "actionAttemptType": null
+          },
+          "request": {
+            "methods": [
+              "POST"
+            ],
+            "semanticMethod": "POST",
+            "preferredMethod": "POST",
+            "parameters": [
+              {
+                "name": "space_id",
+                "description": "",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              }
+            ]
+          },
+          "hasPagination": false,
+          "authMethods": [
+            "personal_access_token",
+            "api_key"
+          ],
+          "workspaceScope": "required",
+          "codeSamples": []
+        },
+        {
+          "title": "List Spaces",
+          "name": "list",
+          "path": "/spaces/list",
+          "parentPath": "/spaces",
+          "description": "Returns a list of all spaces.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": true,
+          "draftMessage": "Early access.",
+          "response": {
+            "responseType": "resource_list",
+            "responseKey": "spaces",
+            "resourceType": "space",
+            "description": "OK",
+            "actionAttemptType": null
+          },
+          "request": {
+            "methods": [
+              "GET",
+              "POST"
+            ],
+            "semanticMethod": "GET",
+            "preferredMethod": "GET",
+            "parameters": []
+          },
+          "hasPagination": false,
+          "authMethods": [
+            "personal_access_token",
+            "api_key"
+          ],
+          "workspaceScope": "required",
+          "codeSamples": []
+        },
+        {
+          "title": "Remove ACS Entrances",
+          "name": "remove_acs_entrances",
+          "path": "/spaces/remove_acs_entrances",
+          "parentPath": "/spaces",
+          "description": "Remove entrances from a specific space.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": true,
+          "draftMessage": "Early access.",
+          "response": {
+            "responseType": "void",
+            "description": "OK"
+          },
+          "request": {
+            "methods": [
+              "POST"
+            ],
+            "semanticMethod": "POST",
+            "preferredMethod": "POST",
+            "parameters": [
+              {
+                "name": "acs_entrance_ids",
+                "description": "",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "list",
+                "jsonType": "array",
+                "itemFormat": "id"
+              },
+              {
+                "name": "space_id",
+                "description": "",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              }
+            ]
+          },
+          "hasPagination": false,
+          "authMethods": [
+            "personal_access_token",
+            "api_key"
+          ],
+          "workspaceScope": "required",
+          "codeSamples": []
+        },
+        {
+          "title": "Remove Space Devices",
+          "name": "remove_devices",
+          "path": "/spaces/remove_devices",
+          "parentPath": "/spaces",
+          "description": "Remove devices from a specific space.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": true,
+          "draftMessage": "Early access.",
+          "response": {
+            "responseType": "void",
+            "description": "OK"
+          },
+          "request": {
+            "methods": [
+              "POST"
+            ],
+            "semanticMethod": "POST",
+            "preferredMethod": "POST",
+            "parameters": [
+              {
+                "name": "device_ids",
+                "description": "",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "list",
+                "jsonType": "array",
+                "itemFormat": "id"
+              },
+              {
+                "name": "space_id",
+                "description": "",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              }
+            ]
+          },
+          "hasPagination": false,
+          "authMethods": [
+            "personal_access_token",
+            "api_key"
+          ],
+          "workspaceScope": "required",
+          "codeSamples": []
+        },
+        {
+          "title": "Update Space",
+          "name": "update",
+          "path": "/spaces/update",
+          "parentPath": "/spaces",
+          "description": "Update an existing space.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": true,
+          "draftMessage": "Early access.",
+          "response": {
+            "responseType": "resource",
+            "responseKey": "space",
+            "resourceType": "space",
+            "description": "OK",
+            "actionAttemptType": null
+          },
+          "request": {
+            "methods": [
+              "PATCH",
+              "POST"
+            ],
+            "semanticMethod": "PATCH",
+            "preferredMethod": "PATCH",
+            "parameters": [
+              {
+                "name": "name",
+                "description": "",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "string",
+                "jsonType": "string"
+              },
+              {
+                "name": "space_id",
+                "description": "",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              }
+            ]
+          },
+          "hasPagination": false,
+          "authMethods": [
+            "personal_access_token",
+            "api_key"
+          ],
+          "workspaceScope": "required",
+          "codeSamples": []
+        }
+      ],
+      "parentPath": null,
+      "isUndocumented": false,
       "isDeprecated": false,
       "isDraft": false
     },
@@ -24279,13 +25734,27 @@
                 "jsonType": "string"
               },
               {
-                "name": "unstable_location_id",
-                "description": "ID of the location for which you want to list devices.",
+                "name": "space_id",
+                "description": "ID of the space for which you want to list devices.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
-                "isUndocumented": true,
-                "undocumentedMessage": "Experimental locations.",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
+                "name": "unstable_location_id",
+                "description": "",
+                "isRequired": false,
+                "isDeprecated": true,
+                "deprecationMessage": "Use `space_id`.",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
                 "isDraft": false,
                 "draftMessage": "",
                 "hasDefault": false,
@@ -25669,7 +27138,7 @@
               {
                 "name": "manual_override_allowed",
                 "description": "Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).",
-                "isRequired": true,
+                "isRequired": false,
                 "isDeprecated": true,
                 "deprecationMessage": "Use 'thermostat_schedule.is_override_allowed'",
                 "isUndocumented": false,
@@ -27511,6 +28980,38 @@
                 ]
               },
               {
+                "name": "acs_entrance_ids",
+                "description": "Set of IDs of the [entrances](https://docs.seam.co/latest/api/acs/systems/list) to which access is being granted.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": true,
+                "default": [],
+                "format": "list",
+                "jsonType": "array",
+                "itemFormat": "id"
+              },
+              {
+                "name": "device_ids",
+                "description": "Set of IDs of the [devices](https://docs.seam.co/latest/api/devices/list) to which access is being granted.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": true,
+                "default": [],
+                "format": "list",
+                "jsonType": "array",
+                "itemFormat": "id"
+              },
+              {
                 "name": "ends_at",
                 "description": "Date and time at which the validity of the new grant ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.",
                 "isRequired": false,
@@ -27540,10 +29041,10 @@
                 "parameters": [
                   {
                     "name": "acs_entrance_ids",
-                    "description": "Set of IDs of the [entrances](https://docs.seam.co/latest/api/acs/systems/list) to add to the location to which access is being granted.",
+                    "description": "",
                     "isRequired": false,
-                    "isDeprecated": false,
-                    "deprecationMessage": "",
+                    "isDeprecated": true,
+                    "deprecationMessage": "Use `acs_entrance_ids` at the top level.",
                     "isUndocumented": false,
                     "undocumentedMessage": "",
                     "isDraft": false,
@@ -27556,10 +29057,10 @@
                   },
                   {
                     "name": "device_ids",
-                    "description": "Set of IDs of the [devices](https://docs.seam.co/latest/api/devices/list) to add to the location to which access is being granted.",
+                    "description": "",
                     "isRequired": false,
-                    "isDeprecated": false,
-                    "deprecationMessage": "",
+                    "isDeprecated": true,
+                    "deprecationMessage": "Use `device_ids` at the top level.",
                     "isUndocumented": false,
                     "undocumentedMessage": "",
                     "isDraft": false,
@@ -27588,10 +29089,10 @@
               },
               {
                 "name": "location_ids",
-                "description": "Set of IDs of existing locations to which access is being granted.",
+                "description": "",
                 "isRequired": false,
-                "isDeprecated": false,
-                "deprecationMessage": "",
+                "isDeprecated": true,
+                "deprecationMessage": "Use `space_ids`.",
                 "isUndocumented": false,
                 "undocumentedMessage": "",
                 "isDraft": false,
@@ -27663,6 +29164,21 @@
                     ]
                   }
                 ]
+              },
+              {
+                "name": "space_ids",
+                "description": "Set of IDs of existing spaces to which access is being granted.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "list",
+                "jsonType": "array",
+                "itemFormat": "id"
               },
               {
                 "name": "starts_at",
@@ -27841,7 +29357,21 @@
               },
               {
                 "name": "location_id",
-                "description": "ID of location to filter list of access grants by.",
+                "description": "",
+                "isRequired": false,
+                "isDeprecated": true,
+                "deprecationMessage": "Use `space_id`.",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
+                "name": "space_id",
+                "description": "ID of space to filter list of access grants by.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
@@ -28702,11 +30232,11 @@
       "namespacePath": "/unstable_partner",
       "endpoints": [
         {
-          "title": "Generate a building block magic link",
-          "name": "generate_link",
-          "path": "/unstable_partner/building_blocks/generate_link",
+          "title": "Connect Accounts",
+          "name": "connect_accounts",
+          "path": "/unstable_partner/building_blocks/connect_accounts",
           "parentPath": "/unstable_partner/building_blocks",
-          "description": "Creates a new bridge client session.",
+          "description": "Creates a new building block magic link to connect accounts.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": true,
@@ -28715,8 +30245,8 @@
           "draftMessage": "",
           "response": {
             "responseType": "resource",
-            "responseKey": "bridge_client_session",
-            "resourceType": "unknown",
+            "responseKey": "magic_link",
+            "resourceType": "magic_link",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -28728,35 +30258,7 @@
             "preferredMethod": "POST",
             "parameters": [
               {
-                "name": "bridge_client_machine_identifier_key",
-                "description": "",
-                "isRequired": true,
-                "isDeprecated": false,
-                "deprecationMessage": "",
-                "isUndocumented": false,
-                "undocumentedMessage": "",
-                "isDraft": false,
-                "draftMessage": "",
-                "hasDefault": false,
-                "format": "string",
-                "jsonType": "string"
-              },
-              {
-                "name": "bridge_client_name",
-                "description": "",
-                "isRequired": true,
-                "isDeprecated": false,
-                "deprecationMessage": "",
-                "isUndocumented": false,
-                "undocumentedMessage": "",
-                "isDraft": false,
-                "draftMessage": "",
-                "hasDefault": false,
-                "format": "string",
-                "jsonType": "string"
-              },
-              {
-                "name": "bridge_client_time_zone",
+                "name": "customer_key",
                 "description": "",
                 "isRequired": true,
                 "isDeprecated": false,
@@ -28772,8 +30274,353 @@
             ]
           },
           "hasPagination": false,
-          "authMethods": [],
-          "workspaceScope": "none",
+          "authMethods": [
+            "personal_access_token",
+            "api_key"
+          ],
+          "workspaceScope": "required",
+          "codeSamples": []
+        },
+        {
+          "title": "Generate a building block magic link",
+          "name": "generate_magic_link",
+          "path": "/unstable_partner/building_blocks/generate_magic_link",
+          "parentPath": "/unstable_partner/building_blocks",
+          "description": "Creates a new building block magic link.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": true,
+          "undocumentedMessage": "Experimental partner building blocks.",
+          "isDraft": false,
+          "draftMessage": "",
+          "response": {
+            "responseType": "resource",
+            "responseKey": "magic_link",
+            "resourceType": "magic_link",
+            "description": "OK",
+            "actionAttemptType": null
+          },
+          "request": {
+            "methods": [
+              "POST"
+            ],
+            "semanticMethod": "POST",
+            "preferredMethod": "POST",
+            "parameters": [
+              {
+                "name": "building_block_type",
+                "description": "",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "enum",
+                "jsonType": "string",
+                "values": [
+                  {
+                    "name": "connect_accounts",
+                    "description": "",
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": ""
+                  },
+                  {
+                    "name": "manage_devices",
+                    "description": "",
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": ""
+                  },
+                  {
+                    "name": "organize_spaces",
+                    "description": "",
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": ""
+                  }
+                ]
+              },
+              {
+                "name": "customer_key",
+                "description": "",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "string",
+                "jsonType": "string"
+              },
+              {
+                "name": "partner_resources",
+                "description": "Optional list of partner resources to include in the magic link.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "list",
+                "jsonType": "array",
+                "itemFormat": "object",
+                "itemParameters": [
+                  {
+                    "name": "custom_metadata",
+                    "description": "",
+                    "isRequired": false,
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": "",
+                    "hasDefault": false,
+                    "format": "record",
+                    "jsonType": "object"
+                  },
+                  {
+                    "name": "description",
+                    "description": "",
+                    "isRequired": false,
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": "",
+                    "hasDefault": false,
+                    "format": "string",
+                    "jsonType": "string"
+                  },
+                  {
+                    "name": "name",
+                    "description": "",
+                    "isRequired": false,
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": "",
+                    "hasDefault": false,
+                    "format": "string",
+                    "jsonType": "string"
+                  },
+                  {
+                    "name": "partner_resource_key",
+                    "description": "",
+                    "isRequired": false,
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": "",
+                    "hasDefault": false,
+                    "format": "string",
+                    "jsonType": "string"
+                  }
+                ]
+              }
+            ]
+          },
+          "hasPagination": false,
+          "authMethods": [
+            "personal_access_token",
+            "api_key"
+          ],
+          "workspaceScope": "required",
+          "codeSamples": []
+        },
+        {
+          "title": "Manage Devices",
+          "name": "manage_devices",
+          "path": "/unstable_partner/building_blocks/manage_devices",
+          "parentPath": "/unstable_partner/building_blocks",
+          "description": "Creates a new building block magic link to manage devices.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": true,
+          "undocumentedMessage": "Experimental partner building blocks.",
+          "isDraft": false,
+          "draftMessage": "",
+          "response": {
+            "responseType": "resource",
+            "responseKey": "magic_link",
+            "resourceType": "magic_link",
+            "description": "OK",
+            "actionAttemptType": null
+          },
+          "request": {
+            "methods": [
+              "POST"
+            ],
+            "semanticMethod": "POST",
+            "preferredMethod": "POST",
+            "parameters": [
+              {
+                "name": "customer_key",
+                "description": "",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "string",
+                "jsonType": "string"
+              }
+            ]
+          },
+          "hasPagination": false,
+          "authMethods": [
+            "personal_access_token",
+            "api_key"
+          ],
+          "workspaceScope": "required",
+          "codeSamples": []
+        },
+        {
+          "title": "Organize Spaces",
+          "name": "organize_spaces",
+          "path": "/unstable_partner/building_blocks/organize_spaces",
+          "parentPath": "/unstable_partner/building_blocks",
+          "description": "Creates a new building block magic link to organize spaces.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": true,
+          "undocumentedMessage": "Experimental partner building blocks.",
+          "isDraft": false,
+          "draftMessage": "",
+          "response": {
+            "responseType": "resource",
+            "responseKey": "magic_link",
+            "resourceType": "magic_link",
+            "description": "OK",
+            "actionAttemptType": null
+          },
+          "request": {
+            "methods": [
+              "POST"
+            ],
+            "semanticMethod": "POST",
+            "preferredMethod": "POST",
+            "parameters": [
+              {
+                "name": "customer_key",
+                "description": "",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "string",
+                "jsonType": "string"
+              },
+              {
+                "name": "partner_resources",
+                "description": "",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "list",
+                "jsonType": "array",
+                "itemFormat": "object",
+                "itemParameters": [
+                  {
+                    "name": "custom_metadata",
+                    "description": "",
+                    "isRequired": false,
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": "",
+                    "hasDefault": false,
+                    "format": "record",
+                    "jsonType": "object"
+                  },
+                  {
+                    "name": "description",
+                    "description": "",
+                    "isRequired": false,
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": "",
+                    "hasDefault": false,
+                    "format": "string",
+                    "jsonType": "string"
+                  },
+                  {
+                    "name": "name",
+                    "description": "",
+                    "isRequired": false,
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": "",
+                    "hasDefault": false,
+                    "format": "string",
+                    "jsonType": "string"
+                  },
+                  {
+                    "name": "partner_resource_key",
+                    "description": "",
+                    "isRequired": false,
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": "",
+                    "hasDefault": false,
+                    "format": "string",
+                    "jsonType": "string"
+                  }
+                ]
+              }
+            ]
+          },
+          "hasPagination": false,
+          "authMethods": [
+            "personal_access_token",
+            "api_key"
+          ],
+          "workspaceScope": "required",
           "codeSamples": []
         }
       ],
@@ -32460,6 +34307,13 @@
     {
       "path": "/seam/mobile_sdk/v1",
       "parentPath": "/seam/mobile_sdk",
+      "isDeprecated": false,
+      "isUndocumented": true,
+      "isDraft": false
+    },
+    {
+      "path": "/seam/partner/v1/building_blocks",
+      "parentPath": "/seam/partner/v1",
       "isDeprecated": false,
       "isUndocumented": true,
       "isDraft": false
@@ -36452,6 +38306,19 @@
           "jsonType": "string"
         },
         {
+          "name": "connected_account_id",
+          "description": "ID of the [connected account](../core-concepts/connected-accounts/README.md) that contains the access group.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        },
+        {
           "name": "created_at",
           "description": "Date and time at which the access group was created.",
           "isDeprecated": false,
@@ -37951,6 +39818,19 @@
         {
           "name": "acs_system_id",
           "description": "ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [encoder](../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        },
+        {
+          "name": "connected_account_id",
+          "description": "ID of the [connected account](../core-concepts/connected-accounts/README.md) that contains the [encoder](../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -41623,6 +43503,19 @@
           "jsonType": "string"
         },
         {
+          "name": "customer_id",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        },
+        {
           "name": "device_count",
           "description": "",
           "isDeprecated": false,
@@ -41716,6 +43609,62 @@
     "connect_webview": {
       "resourceType": "connect_webview",
       "properties": [
+        {
+          "name": "accepted_capabilities",
+          "description": "List of accepted device capabilities that restrict the types of devices that can be connected through the Connect Webview.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "list",
+          "jsonType": "array",
+          "itemFormat": "enum",
+          "itemEnumValues": [
+            {
+              "name": "lock",
+              "description": "",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": ""
+            },
+            {
+              "name": "thermostat",
+              "description": "",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": ""
+            },
+            {
+              "name": "noise_sensor",
+              "description": "",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": ""
+            },
+            {
+              "name": "access_control",
+              "description": "",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": ""
+            }
+          ]
+        },
         {
           "name": "accepted_devices",
           "description": "",
@@ -52089,6 +54038,16 @@
               "draftMessage": ""
             },
             {
+              "name": "access_method.deleted",
+              "description": "",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": ""
+            },
+            {
               "name": "acs_system.connected",
               "description": "",
               "isDeprecated": false,
@@ -52864,9 +54823,54 @@
       "propertyGroups": {},
       "resourceSamples": []
     },
-    "network": {
-      "resourceType": "network",
+    "magic_link": {
+      "resourceType": "magic_link",
       "properties": [
+        {
+          "name": "building_block_type",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "enum",
+          "jsonType": "string",
+          "values": [
+            {
+              "name": "connect_accounts",
+              "description": "",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": ""
+            },
+            {
+              "name": "manage_devices",
+              "description": "",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": ""
+            },
+            {
+              "name": "organize_spaces",
+              "description": "",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": ""
+            }
+          ]
+        },
         {
           "name": "created_at",
           "description": "",
@@ -52881,7 +54885,7 @@
           "jsonType": "string"
         },
         {
-          "name": "display_name",
+          "name": "customer_key",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -52894,7 +54898,7 @@
           "jsonType": "string"
         },
         {
-          "name": "network_id",
+          "name": "expires_at",
           "description": "",
           "isDeprecated": false,
           "deprecationMessage": "",
@@ -52903,7 +54907,20 @@
           "isDraft": false,
           "draftMessage": "",
           "propertyGroupKey": null,
-          "format": "id",
+          "format": "datetime",
+          "jsonType": "string"
+        },
+        {
+          "name": "url",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
           "jsonType": "string"
         },
         {
@@ -52922,10 +54939,10 @@
       ],
       "description": "",
       "isDeprecated": false,
-      "routePath": "/networks",
+      "routePath": "/unstable_partner/building_blocks",
       "deprecationMessage": "",
-      "isUndocumented": false,
-      "undocumentedMessage": "",
+      "isUndocumented": true,
+      "undocumentedMessage": "Unreleased.",
       "isDraft": false,
       "draftMessage": "",
       "propertyGroups": {},
@@ -52936,7 +54953,7 @@
       "properties": [
         {
           "name": "device_id",
-          "description": "",
+          "description": "Unique identifier for the device that contains the noise threshold.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -52949,7 +54966,7 @@
         },
         {
           "name": "ends_daily_at",
-          "description": "",
+          "description": "Time at which the noise threshold should become inactive daily.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -52962,7 +54979,7 @@
         },
         {
           "name": "name",
-          "description": "",
+          "description": "Name of the noise threshold.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -52975,7 +54992,7 @@
         },
         {
           "name": "noise_threshold_decibels",
-          "description": "",
+          "description": "Noise level in decibels for the noise threshold.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -52988,7 +55005,7 @@
         },
         {
           "name": "noise_threshold_id",
-          "description": "",
+          "description": "Unique identifier for the noise threshold.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -53001,7 +55018,7 @@
         },
         {
           "name": "noise_threshold_nrs",
-          "description": "",
+          "description": "Noise level in Noiseaware Noise Risk Score (NRS) for the noise threshold. This parameter is only relevant for [Noiseaware sensors](https://docs.seam.co/latest/device-and-system-integration-guides/noiseaware-sensors).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -53014,7 +55031,7 @@
         },
         {
           "name": "starts_daily_at",
-          "description": "",
+          "description": "Time at which the noise threshold should become active daily.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -53026,7 +55043,7 @@
           "jsonType": "string"
         }
       ],
-      "description": "",
+      "description": "Represents a [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors). Thresholds represent the limits of noise tolerated at a property, which can be customized for each hour of the day. Each device has its own default thresholds, but you can use the Seam API to modify them.",
       "isDeprecated": false,
       "routePath": "/noise_sensors/noise_thresholds",
       "deprecationMessage": "",
@@ -54942,6 +56959,86 @@
       "undocumentedMessage": "Seam Mobile SDK only.",
       "isDraft": false,
       "draftMessage": "",
+      "propertyGroups": {},
+      "resourceSamples": []
+    },
+    "space": {
+      "resourceType": "space",
+      "properties": [
+        {
+          "name": "created_at",
+          "description": "Date and time at which the space object was created.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "datetime",
+          "jsonType": "string"
+        },
+        {
+          "name": "display_name",
+          "description": "Display name of the space.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "name",
+          "description": "Name of the space.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "space_id",
+          "description": "Unique identifier for the space.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        },
+        {
+          "name": "workspace_id",
+          "description": "Unique identifier for the Seam workspace associated with the space.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        }
+      ],
+      "description": "",
+      "isDeprecated": false,
+      "routePath": "/spaces",
+      "deprecationMessage": "",
+      "isUndocumented": false,
+      "undocumentedMessage": "",
+      "isDraft": true,
+      "draftMessage": "Early access.",
       "propertyGroups": {},
       "resourceSamples": []
     },
@@ -58936,6 +61033,19 @@
         {
           "name": "acs_system_id",
           "description": "ID of the access control system that contains the access group.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        },
+        {
+          "name": "connected_account_id",
+          "description": "ID of the [connected account](../core-concepts/connected-accounts/README.md) that contains the access group.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -67923,7 +70033,7 @@
       ],
       "description": "An access grant was created.",
       "isDeprecated": false,
-      "routePath": "/unstable_access_grants",
+      "routePath": "/access_grants",
       "deprecationMessage": "",
       "isUndocumented": false,
       "undocumentedMessage": "",
@@ -68029,7 +70139,7 @@
       ],
       "description": "An access grant was deleted.",
       "isDeprecated": false,
-      "routePath": "/unstable_access_grants",
+      "routePath": "/access_grants",
       "deprecationMessage": "",
       "isUndocumented": false,
       "undocumentedMessage": "",
@@ -68135,7 +70245,7 @@
       ],
       "description": "All access requested for an access grant was successfully granted.",
       "isDeprecated": false,
-      "routePath": "/unstable_access_grants",
+      "routePath": "/access_grants",
       "deprecationMessage": "",
       "isUndocumented": false,
       "undocumentedMessage": "",
@@ -68254,7 +70364,7 @@
       ],
       "description": "Access requested as part of an access grant to a particular door was successfully granted.",
       "isDeprecated": false,
-      "routePath": "/unstable_access_grants",
+      "routePath": "/access_grants",
       "deprecationMessage": "",
       "isUndocumented": false,
       "undocumentedMessage": "",
@@ -68373,7 +70483,7 @@
       ],
       "description": "Access to a particular door that was requested as part of an access grant was lost.",
       "isDeprecated": false,
-      "routePath": "/unstable_access_grants",
+      "routePath": "/access_grants",
       "deprecationMessage": "",
       "isUndocumented": false,
       "undocumentedMessage": "",
@@ -68479,7 +70589,7 @@
       ],
       "description": "An access method was issued.",
       "isDeprecated": false,
-      "routePath": "/unstable_access_methods",
+      "routePath": "/access_methods",
       "deprecationMessage": "",
       "isUndocumented": false,
       "undocumentedMessage": "",
@@ -68585,7 +70695,7 @@
       ],
       "description": "An access method was revoked.",
       "isDeprecated": false,
-      "routePath": "/unstable_access_methods",
+      "routePath": "/access_methods",
       "deprecationMessage": "",
       "isUndocumented": false,
       "undocumentedMessage": "",
@@ -68691,7 +70801,7 @@
       ],
       "description": "An access method representing a physical card requires encoding.",
       "isDeprecated": false,
-      "routePath": "/unstable_access_methods",
+      "routePath": "/access_methods",
       "deprecationMessage": "",
       "isUndocumented": false,
       "undocumentedMessage": "",
@@ -68700,6 +70810,112 @@
       "propertyGroups": {},
       "resourceSamples": [],
       "eventType": "access_method.card_encoding_required"
+    },
+    {
+      "resourceType": "event",
+      "properties": [
+        {
+          "name": "access_method_id",
+          "description": "ID of the affected access method.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        },
+        {
+          "name": "created_at",
+          "description": "Date and time at which the event was created.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "datetime",
+          "jsonType": "string"
+        },
+        {
+          "name": "event_id",
+          "description": "ID of the event.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        },
+        {
+          "name": "event_type",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "enum",
+          "jsonType": "string",
+          "values": [
+            {
+              "name": "access_method.deleted",
+              "description": "",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": ""
+            }
+          ]
+        },
+        {
+          "name": "occurred_at",
+          "description": "Date and time at which the event occurred.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "datetime",
+          "jsonType": "string"
+        },
+        {
+          "name": "workspace_id",
+          "description": "ID of the workspace associated with the event.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        }
+      ],
+      "description": "An access method was deleted.",
+      "isDeprecated": false,
+      "routePath": "/access_methods",
+      "deprecationMessage": "",
+      "isUndocumented": false,
+      "undocumentedMessage": "",
+      "isDraft": false,
+      "draftMessage": "",
+      "propertyGroups": {},
+      "resourceSamples": [],
+      "eventType": "access_method.deleted"
     },
     {
       "resourceType": "event",
