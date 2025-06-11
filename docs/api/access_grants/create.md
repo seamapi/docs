@@ -147,5 +147,5 @@ ID of user identity for whom access is being granted.
 
 ## Response
 
-[unknown](./)
+[access\_grant](./)
 

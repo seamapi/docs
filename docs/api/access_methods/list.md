@@ -29,5 +29,5 @@ ID of access grant to list access methods for.
 
 ## Response
 
-Array of [unknowns](./)
+Array of [access\_methods](./)
 

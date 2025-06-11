@@ -29,5 +29,5 @@ ID of access grant to get.
 
 ## Response
 
-[unknown](./)
+[access\_grant](./)
 

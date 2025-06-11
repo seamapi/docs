@@ -29,5 +29,5 @@ ID of access method to get.
 
 ## Response
 
-[unknown](./)
+[access\_method](./)
 
