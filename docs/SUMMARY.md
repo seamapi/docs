@@ -298,15 +298,15 @@
   * [Get an Access Method](api/access_methods/get.md)
   * [List Access Methods](api/access_methods/list.md)
 * [Spaces](api/spaces/README.md)
-  * [Add ACS Entrances](api/spaces/add_acs_entrances.md)
-  * [Add Space Devices](api/spaces/add_devices.md)
-  * [Create Space](api/spaces/create.md)
-  * [Delete Space](api/spaces/delete.md)
-  * [Get Space](api/spaces/get.md)
+  * [Add Devices to a Space](api/spaces/add_devices.md)
+  * [Add Entrances to a Space](api/spaces/add_acs_entrances.md)
+  * [Create a Space](api/spaces/create.md)
+  * [Delete a Space](api/spaces/delete.md)
+  * [Get a Space](api/spaces/get.md)
   * [List Spaces](api/spaces/list.md)
-  * [Remove ACS Entrances](api/spaces/remove_acs_entrances.md)
-  * [Remove Space Devices](api/spaces/remove_devices.md)
-  * [Update Space](api/spaces/update.md)
+  * [Remove Devices from a Space](api/spaces/remove_devices.md)
+  * [Remove Entrances from a Space](api/spaces/remove_acs_entrances.md)
+  * [Update a Space](api/spaces/update.md)
 
 ## 🛠️ Developer Tools
 
