@@ -90,7 +90,12 @@ export const reference = (
       files[k] = { contents: Buffer.from('\n') }
       const file = files[k] as unknown as File
       file.layout = 'api-endpoint.hbs'
-      setEndpointLayoutContext(file, endpoint, blueprint.actionAttempts)
+      setEndpointLayoutContext(
+        file,
+        endpoint,
+        blueprint.actionAttempts,
+        pathMetadata,
+      )
       endpoints.push(endpoint)
     }
   }
