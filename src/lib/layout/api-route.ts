@@ -17,6 +17,8 @@ export interface ApiRouteLayoutContext {
   title: string
   overview: string | undefined
   path: string
+  isAlpha: boolean
+  alphaMessage: string | undefined
   resources: Array<
     ApiRouteResource & {
       warnings: ApiWarning[]
@@ -92,6 +94,8 @@ export function setApiRouteLayoutContext(
   file.title = metadata.title
   file.overview = metadata.overview
   file.path = route.path
+  file.isAlpha = (metadata.alpha ?? '').length > 0
+  file.alphaMessage = metadata.alpha
 
   const eventsByRoutePath = groupEventsByRoutePath(blueprint.events)
   file.events = eventsByRoutePath.get(route.path) ?? []

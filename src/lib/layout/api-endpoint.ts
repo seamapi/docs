@@ -9,6 +9,7 @@ import type {
 } from '@seamapi/blueprint'
 import { capitalCase } from 'change-case'
 
+import type { PathMetadata } from '../path-metadata.js'
 import {
   type ApiRouteResource,
   mapBlueprintPropertyToRouteProperty,
@@ -31,6 +32,8 @@ export interface ApiEndpointLayoutContext {
   path: string
   authMethods: AuthMethodDisplayName[]
   workspaceScope: SeamWorkspaceScope
+  isAlpha: boolean
+  alphaMessage: string | undefined
   request: {
     preferredMethod: string
     parameters: ApiEndpointParameter[]
@@ -93,11 +96,25 @@ export function setEndpointLayoutContext(
   file: Partial<ApiEndpointLayoutContext>,
   endpoint: Endpoint,
   actionAttempts: ActionAttempt[],
+  pathMetadata: PathMetadata,
 ): void {
+  const { parentPath } = endpoint
+  if (parentPath == null) {
+    throw new Error(
+      `Expected endpoint ${endpoint.path} to have non-null parentPath`,
+    )
+  }
+  const metadata = pathMetadata[parentPath]
+  if (metadata == null) {
+    throw new Error(`Missing path metadata for ${parentPath}`)
+  }
+
   file.description = endpoint.description
   file.title = endpoint.title
   file.path = endpoint.path
   file.workspaceScope = endpoint.workspaceScope
+  file.isAlpha = (metadata.alpha ?? '').length > 0
+  file.alphaMessage = metadata.alpha
 
   file.authMethods = endpoint.authMethods
     .filter(
