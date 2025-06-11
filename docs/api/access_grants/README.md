@@ -1,5 +1,126 @@
 # Access Grants
 
+## The access_grant Object
+
+- [Properties](./#properties)
+- [Errors](./#errors)
+- [Warnings](./#warnings)
+- [Events](./#events)
+- [Endpoints](./#endpoints)
+
+
+---
+## Properties
+
+**`access_grant_id`** *UUID*
+
+ID of the access grant.
+
+
+
+
+---
+
+**`access_method_ids`** *List* *of UUIDs*
+
+IDs of the access methods that were created for this access grant.
+
+
+
+
+---
+
+**`created_at`** *Datetime*
+
+Date and time at which the access grant was created.
+
+
+
+
+---
+
+**`display_name`** *String*
+
+Display name of the access grant.
+
+
+
+
+---
+
+**`location_ids`** *List* *of UUIDs*
+
+
+{% hint style="warning" %}
+**Deprecated**. Use `space_ids`.
+{% endhint %}
+
+
+
+---
+
+**`requested_access_methods`** *List* *of Objects*
+
+Access methods that the user requested for this access grant.
+
+
+
+<details>
+  <summary>Child Object Properties</summary>
+
+  <strong><code>created_access_method_ids</code></strong> <i>List</i> <i>of UUIDs</i>
+  
+    IDs of the access methods that were created for this requested access method.
+
+  <strong><code>created_at</code></strong> <i>Datetime</i>
+  
+    Date and time at which the requested access method was added to this access grant.
+
+  <strong><code>display_name</code></strong> <i>String</i>
+  
+    Display name of the access method.
+
+  <strong><code>mode</code></strong> <i>Enum</i>
+  
+    Access method mode. Supported values: `code`, `card`, `mobile_key`.
+  <details>
+      <summary>Enum values:</summary>
+  
+      - <code>code</code>
+      - <code>card</code>
+      - <code>mobile_key</code>
+  </details>
+</details>
+
+---
+
+**`space_ids`** *List* *of UUIDs*
+
+IDs of the spaces to which access is being given.
+
+
+
+
+---
+
+**`user_identity_id`** *UUID*
+
+ID of user identity to which access is being granted.
+
+
+
+
+---
+
+**`workspace_id`** *UUID*
+
+Unique identifier for the Seam workspace associated with the access grant.
+
+
+
+
+---
+
 
 ## Events
 

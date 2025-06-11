@@ -1,5 +1,96 @@
 # Access Methods
 
+## The access_method Object
+
+- [Properties](./#properties)
+- [Errors](./#errors)
+- [Warnings](./#warnings)
+- [Events](./#events)
+- [Endpoints](./#endpoints)
+
+
+---
+## Properties
+
+**`access_method_id`** *UUID*
+
+ID of the access method.
+
+
+
+
+---
+
+**`created_at`** *Datetime*
+
+Date and time at which the access method was created.
+
+
+
+
+---
+
+**`display_name`** *String*
+
+Display name of the access method.
+
+
+
+
+---
+
+**`instant_key_url`** *String*
+
+URL of instant key for mobile key access methods.
+
+
+
+
+---
+
+**`is_card_encoding_required`** *Boolean*
+
+Whether card encoding is required for plastic card access methods.
+
+
+
+
+---
+
+**`issued_at`** *Datetime*
+
+Date and time at which the access method was issued.
+
+
+
+
+---
+
+**`mode`** *Enum*
+
+Access method mode. Supported values: `code`, `card`, `mobile_key`.
+
+
+<details>
+<summary>Enum values</summary>
+
+- <code>code</code>
+- <code>card</code>
+- <code>mobile_key</code>
+</details>
+
+
+---
+
+**`workspace_id`** *UUID*
+
+Unique identifier for the Seam workspace associated with the access grant.
+
+
+
+
+---
+
 
 ## Events
 

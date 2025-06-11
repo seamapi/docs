@@ -1,5 +1,62 @@
 # Spaces
 
+## The space Object
+
+- [Properties](./#properties)
+- [Errors](./#errors)
+- [Warnings](./#warnings)
+- [Events](./#events)
+- [Endpoints](./#endpoints)
+
+
+---
+## Properties
+
+**`created_at`** *Datetime*
+
+Date and time at which the space object was created.
+
+
+
+
+---
+
+**`display_name`** *String*
+
+Display name of the space.
+
+
+
+
+---
+
+**`name`** *String*
+
+Name of the space.
+
+
+
+
+---
+
+**`space_id`** *UUID*
+
+Unique identifier for the space.
+
+
+
+
+---
+
+**`workspace_id`** *UUID*
+
+Unique identifier for the Seam workspace associated with the space.
+
+
+
+
+---
+
 ## Endpoints
 
 
