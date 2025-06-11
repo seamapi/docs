@@ -1,4 +1,4 @@
-import type { Blueprint } from '@seamapi/blueprint'
+import type { Resource } from '@seamapi/blueprint'
 
 import type { PathMetadata } from '../path-metadata.js'
 
@@ -16,7 +16,7 @@ export interface ApiNamespaceLayoutContext {
 export function setNamespaceLayoutContext(
   file: ApiNamespaceLayoutContext,
   namespace: string,
-  resources: Blueprint['resources'],
+  resources: Record<string, Resource>,
   pathMetadata: PathMetadata,
 ): void {
   const namespaceMetadata = pathMetadata[namespace]

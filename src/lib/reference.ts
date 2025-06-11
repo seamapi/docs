@@ -37,6 +37,8 @@ export const reference = (
 
   const { blueprint } = metadata
 
+  const { resources } = blueprint
+
   const namespaces = blueprint.namespaces.filter(
     ({ isUndocumented }) => !isUndocumented,
   )
@@ -47,7 +49,7 @@ export const reference = (
     const file = files[k] as unknown as File
     file.layout = 'api-namespace.hbs'
 
-    setNamespaceLayoutContext(file, path, blueprint.resources, pathMetadata)
+    setNamespaceLayoutContext(file, path, resources, pathMetadata)
   }
 
   const routes = blueprint.routes.filter(({ path, isUndocumented }) => {
