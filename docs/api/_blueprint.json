@@ -10806,11 +10806,25 @@
                 "jsonType": "string"
               },
               {
-                "name": "user_identity_ids",
-                "description": "IDs of the [user identities](../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) for which you want to create a client session.",
+                "name": "user_identity_id",
+                "description": "ID of the [user identity](../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) for which you want to create a client session.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "string",
+                "jsonType": "string"
+              },
+              {
+                "name": "user_identity_ids",
+                "description": "IDs of the [user identities](../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) that you want to associate with the client session.",
+                "isRequired": false,
+                "isDeprecated": true,
+                "deprecationMessage": "Use `user_identity_id`.",
                 "isUndocumented": false,
                 "undocumentedMessage": "",
                 "isDraft": false,
@@ -11028,11 +11042,25 @@
                 "jsonType": "string"
               },
               {
-                "name": "user_identity_ids",
-                "description": "IDs of the [user identities](../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) that you want to associate with the client session (or that are already associated with the existing client session).",
+                "name": "user_identity_id",
+                "description": "ID of the [user identity](../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) that you want to associate with the client session (or that are already associated with the existing client session).",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "string",
+                "jsonType": "string"
+              },
+              {
+                "name": "user_identity_ids",
+                "description": "IDs of the [user identities](../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) that you want to associate with the client session.",
+                "isRequired": false,
+                "isDeprecated": true,
+                "deprecationMessage": "Use `user_identity_id`.",
                 "isUndocumented": false,
                 "undocumentedMessage": "",
                 "isDraft": false,
@@ -11136,11 +11164,25 @@
                 "jsonType": "string"
               },
               {
-                "name": "user_identity_ids",
-                "description": "IDs of the [user identities](../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) that you want to associate with the client session.",
+                "name": "user_identity_id",
+                "description": "ID of the [user identity](../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) that you want to associate with the client session.",
                 "isRequired": false,
                 "isDeprecated": false,
                 "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "string",
+                "jsonType": "string"
+              },
+              {
+                "name": "user_identity_ids",
+                "description": "IDs of the [user identities](../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) that you want to associate with the client session.",
+                "isRequired": false,
+                "isDeprecated": true,
+                "deprecationMessage": "Use `user_identity_id`.",
                 "isUndocumented": false,
                 "undocumentedMessage": "",
                 "isDraft": false,
@@ -37092,6 +37134,75 @@
               "properties": [
                 {
                   "name": "created_at",
+                  "description": "",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "datetime",
+                  "jsonType": "string"
+                },
+                {
+                  "name": "error_code",
+                  "description": "Unique identifier of the type of error. Enables quick recognition and categorization of the issue.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "enum",
+                  "jsonType": "string",
+                  "values": [
+                    {
+                      "name": "lockly_missing_wifi_bridge",
+                      "description": "",
+                      "isDeprecated": false,
+                      "deprecationMessage": "",
+                      "isUndocumented": false,
+                      "undocumentedMessage": "",
+                      "isDraft": false,
+                      "draftMessage": ""
+                    }
+                  ]
+                },
+                {
+                  "name": "is_device_error",
+                  "description": "",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "boolean",
+                  "jsonType": "boolean"
+                },
+                {
+                  "name": "message",
+                  "description": "",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "string",
+                  "jsonType": "string"
+                }
+              ],
+              "description": "Lockly lock is not connected to a Wi-Fi bridge."
+            },
+            {
+              "properties": [
+                {
+                  "name": "created_at",
                   "description": "Date and time at which Seam created the error.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
@@ -43952,8 +44063,21 @@
           "jsonType": "string"
         },
         {
-          "name": "user_identity_ids",
+          "name": "user_identity_id",
           "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        },
+        {
+          "name": "user_identity_ids",
+          "description": "deprecated: Use `user_identity_id`.",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -46855,6 +46979,75 @@
                 }
               ],
               "description": "Subscription required to connect."
+            },
+            {
+              "properties": [
+                {
+                  "name": "created_at",
+                  "description": "",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "datetime",
+                  "jsonType": "string"
+                },
+                {
+                  "name": "error_code",
+                  "description": "Unique identifier of the type of error. Enables quick recognition and categorization of the issue.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "enum",
+                  "jsonType": "string",
+                  "values": [
+                    {
+                      "name": "lockly_missing_wifi_bridge",
+                      "description": "",
+                      "isDeprecated": false,
+                      "deprecationMessage": "",
+                      "isUndocumented": false,
+                      "undocumentedMessage": "",
+                      "isDraft": false,
+                      "draftMessage": ""
+                    }
+                  ]
+                },
+                {
+                  "name": "is_device_error",
+                  "description": "",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "boolean",
+                  "jsonType": "boolean"
+                },
+                {
+                  "name": "message",
+                  "description": "",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "string",
+                  "jsonType": "string"
+                }
+              ],
+              "description": "Lockly lock is not connected to a Wi-Fi bridge."
             },
             {
               "properties": [
@@ -60358,6 +60551,75 @@
               "properties": [
                 {
                   "name": "created_at",
+                  "description": "",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "datetime",
+                  "jsonType": "string"
+                },
+                {
+                  "name": "error_code",
+                  "description": "Unique identifier of the type of error. Enables quick recognition and categorization of the issue.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "enum",
+                  "jsonType": "string",
+                  "values": [
+                    {
+                      "name": "lockly_missing_wifi_bridge",
+                      "description": "",
+                      "isDeprecated": false,
+                      "deprecationMessage": "",
+                      "isUndocumented": false,
+                      "undocumentedMessage": "",
+                      "isDraft": false,
+                      "draftMessage": ""
+                    }
+                  ]
+                },
+                {
+                  "name": "is_device_error",
+                  "description": "",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "boolean",
+                  "jsonType": "boolean"
+                },
+                {
+                  "name": "message",
+                  "description": "",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "string",
+                  "jsonType": "string"
+                }
+              ],
+              "description": "Lockly lock is not connected to a Wi-Fi bridge."
+            },
+            {
+              "properties": [
+                {
+                  "name": "created_at",
                   "description": "Date and time at which Seam created the error.",
                   "isDeprecated": false,
                   "deprecationMessage": "",
@@ -65962,6 +66224,75 @@
                 }
               ],
               "description": "Subscription required to connect."
+            },
+            {
+              "properties": [
+                {
+                  "name": "created_at",
+                  "description": "",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "datetime",
+                  "jsonType": "string"
+                },
+                {
+                  "name": "error_code",
+                  "description": "Unique identifier of the type of error. Enables quick recognition and categorization of the issue.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "enum",
+                  "jsonType": "string",
+                  "values": [
+                    {
+                      "name": "lockly_missing_wifi_bridge",
+                      "description": "",
+                      "isDeprecated": false,
+                      "deprecationMessage": "",
+                      "isUndocumented": false,
+                      "undocumentedMessage": "",
+                      "isDraft": false,
+                      "draftMessage": ""
+                    }
+                  ]
+                },
+                {
+                  "name": "is_device_error",
+                  "description": "",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "boolean",
+                  "jsonType": "boolean"
+                },
+                {
+                  "name": "message",
+                  "description": "",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "string",
+                  "jsonType": "string"
+                }
+              ],
+              "description": "Lockly lock is not connected to a Wi-Fi bridge."
             },
             {
               "properties": [

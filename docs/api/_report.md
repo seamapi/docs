@@ -234,7 +234,7 @@ Items that are intentionally undocumented are not included in this section.
 - `client_session.expires_at`
 - `client_session.token`
 - `client_session.user_identifier_key`
-- `client_session.user_identity_ids`
+- `client_session.user_identity_id`
 - `client_session.workspace_id`
 - `connect_webview.accepted_devices`
 - `connect_webview.any_device_allowed`
@@ -505,6 +505,12 @@ These items are deprecated.
     - `email`: use email_address.
 - `/acs/users/update`
     - `email`: use email_address.
+- `/client_sessions/create`
+    - `user_identity_ids`: Use `user_identity_id`.
+- `/client_sessions/get_or_create`
+    - `user_identity_ids`: Use `user_identity_id`.
+- `/client_sessions/grant_access`
+    - `user_identity_ids`: Use `user_identity_id`.
 - `/devices/list`
     - `unstable_location_id`: Use `space_id`.
 - `/devices/unmanaged/list`

@@ -1539,6 +1539,40 @@ Subscription required to connect.
   
 </details>
 <details>
+<summary><code>lockly_missing_wifi_bridge</code></summary>
+
+Lockly lock is not connected to a Wi-Fi bridge.
+
+  **`created_at`** *Datetime*
+  
+  
+  
+  ---
+
+  **`error_code`** *Enum*
+  
+  
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>lockly_missing_wifi_bridge</code>
+  
+  
+  ---
+
+  **`is_device_error`** *Boolean*
+  
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  
+</details>
+<details>
 <summary><code>invalid_credentials</code></summary>
 
 Credentials provided were invalid.
@@ -2394,6 +2428,12 @@ The auxiliary heat is running.
 **`subscription_required`**
 
 Subscription required to connect.
+
+---
+
+**`lockly_missing_wifi_bridge`**
+
+Lockly lock is not connected to a Wi-Fi bridge.
 
 ---
 
