@@ -9,9 +9,10 @@ Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guide
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 To filter the list of returned thermostats, specify the desired parameters.
+
+#### Code
 
 ```javascript
 await seam.thermostats.list();
@@ -48,9 +49,10 @@ await seam.thermostats.list();
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 To filter the list of returned thermostats, specify the desired parameters.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/list" \
@@ -90,9 +92,10 @@ curl --include --request POST "https://connect.getseam.com/thermostats/list" \
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 To filter the list of returned thermostats, specify the desired parameters.
+
+#### Code
 
 ```python
 seam.thermostats.list()
@@ -129,9 +132,10 @@ seam.thermostats.list()
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 To filter the list of returned thermostats, specify the desired parameters.
+
+#### Code
 
 ```ruby
 seam.thermostats.list()
@@ -168,9 +172,10 @@ seam.thermostats.list()
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 To filter the list of returned thermostats, specify the desired parameters.
+
+#### Code
 
 ```php
 <?php
@@ -214,9 +219,10 @@ $seam->thermostats->list();
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 To filter the list of returned thermostats, specify the desired parameters.
+
+#### Code
 
 ```go
 package main
@@ -234,9 +240,10 @@ func main() {
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 To filter the list of returned thermostats, specify the desired parameters.
+
+#### Code
 
 ```seam_cli
 seam thermostats list

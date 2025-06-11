@@ -9,9 +9,10 @@ Returns a list of all [access system entrances](../../../capability-guides/acces
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 To filter the list of entrances, specify the desired `acs_system_id` or `acs_user_id`.
+
+#### Code
 
 ```javascript
 await seam.acs.entrances.list();
@@ -32,9 +33,10 @@ await seam.acs.entrances.list();
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 To filter the list of entrances, specify the desired `acs_system_id` or `acs_user_id`.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/entrances/list" \
@@ -58,9 +60,10 @@ curl --include --request POST "https://connect.getseam.com/acs/entrances/list" \
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 To filter the list of entrances, specify the desired `acs_system_id` or `acs_user_id`.
+
+#### Code
 
 ```python
 seam.acs.entrances.list()
@@ -81,9 +84,10 @@ seam.acs.entrances.list()
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 To filter the list of entrances, specify the desired `acs_system_id` or `acs_user_id`.
+
+#### Code
 
 ```ruby
 seam.acs.entrances.list()
@@ -104,9 +108,10 @@ seam.acs.entrances.list()
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 To filter the list of entrances, specify the desired `acs_system_id` or `acs_user_id`.
+
+#### Code
 
 ```php
 <?php
@@ -129,9 +134,10 @@ $seam->acs->entrances->list();
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 To filter the list of entrances, specify the desired `acs_system_id` or `acs_user_id`.
+
+#### Code
 
 ```go
 package main
@@ -149,9 +155,10 @@ func main() {
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 To filter the list of entrances, specify the desired `acs_system_id` or `acs_user_id`.
+
+#### Code
 
 ```seam_cli
 seam acs entrances list

@@ -9,9 +9,10 @@ Returns a specified [connected account](../../core-concepts/connected-accounts/R
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the `connected_account_id` of the connected account that you want to get.
+
+#### Code
 
 ```javascript
 await seam.connectedAccounts.get({
@@ -33,9 +34,10 @@ await seam.connectedAccounts.get({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the `connected_account_id` of the connected account that you want to get.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/get" \
@@ -63,9 +65,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the `connected_account_id` of the connected account that you want to get.
+
+#### Code
 
 ```python
 seam.connected_accounts.get(connected_account_id="23e4eb21-6e93-48c4-a077-bf503246d47c")
@@ -85,9 +88,10 @@ seam.connected_accounts.get(connected_account_id="23e4eb21-6e93-48c4-a077-bf5032
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the `connected_account_id` of the connected account that you want to get.
+
+#### Code
 
 ```ruby
 seam.connected_accounts.get(connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c")
@@ -107,9 +111,10 @@ seam.connected_accounts.get(connected_account_id: "23e4eb21-6e93-48c4-a077-bf503
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the `connected_account_id` of the connected account that you want to get.
+
+#### Code
 
 ```php
 <?php
@@ -133,9 +138,10 @@ $seam->connected_accounts->get(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the `connected_account_id` of the connected account that you want to get.
+
+#### Code
 
 ```go
 package main
@@ -160,9 +166,10 @@ func main() {
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the `connected_account_id` of the connected account that you want to get.
+
+#### Code
 
 ```seam_cli
 seam connected-accounts get --connected_account_id "23e4eb21-6e93-48c4-a077-bf503246d47c"

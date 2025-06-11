@@ -9,9 +9,10 @@ Returns a specified [enrollment automation](https://docs.seam.co/latest/capabili
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the desired `enrollment_automation_id`.
+
+#### Code
 
 ```javascript
 await seam.userIdentities.enrollmentAutomations.get({
@@ -35,9 +36,10 @@ await seam.userIdentities.enrollmentAutomations.get({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the desired `enrollment_automation_id`.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/enrollment_automations/get" \
@@ -67,9 +69,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the desired `enrollment_automation_id`.
+
+#### Code
 
 ```python
 seam.user_identities.enrollment_automations.get(
@@ -93,9 +96,10 @@ EnrollmentAutomation(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the desired `enrollment_automation_id`.
+
+#### Code
 
 ```ruby
 seam.user_identities.enrollment_automations.get(
@@ -119,9 +123,10 @@ seam.user_identities.enrollment_automations.get(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the desired `enrollment_automation_id`.
+
+#### Code
 
 ```php
 <?php
@@ -149,9 +154,10 @@ $seam->user_identities->enrollment_automations->get(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the desired `enrollment_automation_id`.
+
+#### Code
 
 ```go
 package main
@@ -177,9 +183,10 @@ api.EnrollmentAutomation{UserIdentityId: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the desired `enrollment_automation_id`.
+
+#### Code
 
 ```seam_cli
 seam user-identities enrollment-automations get --enrollment_automation_id "05505650-aa57-49ab-8f19-429738758895"

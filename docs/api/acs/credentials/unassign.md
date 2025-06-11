@@ -9,9 +9,10 @@ Unassigns a specified [credential](../../../capability-guides/access-systems/man
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
+
+#### Code
 
 ```javascript
 await seam.acs.credentials.unassign({
@@ -28,9 +29,10 @@ await seam.acs.credentials.unassign({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/unassign" \
@@ -51,9 +53,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
+
+#### Code
 
 ```python
 seam.acs.credentials.unassign(
@@ -70,9 +73,10 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
+
+#### Code
 
 ```ruby
 seam.acs.credentials.unassign(
@@ -89,9 +93,10 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
+
+#### Code
 
 ```php
 <?php
@@ -109,9 +114,10 @@ null
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
+
+#### Code
 
 ```go
 package main
@@ -138,9 +144,10 @@ nil
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
+
+#### Code
 
 ```seam_cli
 seam acs credentials unassign --acs_user_id "33333333-3333-3333-3333-333333333333" --acs_credential_id "66666666-6666-6666-6666-666666666666"

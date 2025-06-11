@@ -9,9 +9,10 @@ Deletes a specified [enrollment automation](https://docs.seam.co/latest/capabili
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the desired `enrollment_automation_id`.
+
+#### Code
 
 ```javascript
 await seam.userIdentities.enrollmentAutomations.delete({
@@ -27,9 +28,10 @@ await seam.userIdentities.enrollmentAutomations.delete({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the desired `enrollment_automation_id`.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/enrollment_automations/delete" \
@@ -49,9 +51,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the desired `enrollment_automation_id`.
+
+#### Code
 
 ```python
 seam.user_identities.enrollment_automations.delete(
@@ -67,9 +70,10 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the desired `enrollment_automation_id`.
+
+#### Code
 
 ```ruby
 seam.user_identities.enrollment_automations.delete(
@@ -85,9 +89,10 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the desired `enrollment_automation_id`.
+
+#### Code
 
 ```php
 <?php
@@ -104,9 +109,10 @@ null
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the desired `enrollment_automation_id`.
+
+#### Code
 
 ```go
 package main
@@ -132,9 +138,10 @@ nil
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the desired `enrollment_automation_id`.
+
+#### Code
 
 ```seam_cli
 seam user-identities enrollment-automations delete --enrollment_automation_id "05505650-aa57-49ab-8f19-429738758895"

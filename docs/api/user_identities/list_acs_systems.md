@@ -9,9 +9,10 @@ Returns a list of all [access control systems](https://docs.seam.co/latest/capab
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```javascript
 await seam.userIdentities.listAcsSystems({
@@ -39,9 +40,10 @@ await seam.userIdentities.listAcsSystems({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/list_acs_systems" \
@@ -75,9 +77,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```python
 seam.user_identities.list_acs_systems(
@@ -105,9 +108,10 @@ seam.user_identities.list_acs_systems(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```ruby
 seam.user_identities.list_acs_systems(user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f")
@@ -133,9 +137,10 @@ seam.user_identities.list_acs_systems(user_identity_id: "5c945ab5-c75e-4bcb-8e5f
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```php
 <?php
@@ -165,9 +170,10 @@ $seam->user_identities->list_acs_systems(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```go
 package main
@@ -192,9 +198,10 @@ func main() {
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```seam_cli
 seam user-identities list-acs-systems --user_identity_id "5c945ab5-c75e-4bcb-8e5f-9410061c401f"

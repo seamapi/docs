@@ -9,9 +9,10 @@ Sets a [temperature threshold](../../capability-guides/thermostats/setting-and-m
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat, along with the desired upper and lower limits in °C or °F.
+
+#### Code
 
 ```javascript
 await seam.thermostats.setTemperatureThreshold({
@@ -29,9 +30,10 @@ await seam.thermostats.setTemperatureThreshold({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat, along with the desired upper and lower limits in °C or °F.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/set_temperature_threshold" \
@@ -53,9 +55,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat, along with the desired upper and lower limits in °C or °F.
+
+#### Code
 
 ```python
 seam.thermostats.set_temperature_threshold(
@@ -73,9 +76,10 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat, along with the desired upper and lower limits in °C or °F.
+
+#### Code
 
 ```ruby
 seam.thermostats.set_temperature_threshold(
@@ -93,9 +97,10 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat, along with the desired upper and lower limits in °C or °F.
+
+#### Code
 
 ```php
 <?php
@@ -114,9 +119,10 @@ null
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat, along with the desired upper and lower limits in °C or °F.
+
+#### Code
 
 ```go
 package main
@@ -143,9 +149,10 @@ nil
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat, along with the desired upper and lower limits in °C or °F.
+
+#### Code
 
 ```seam_cli
 seam thermostats set-temperature-threshold --device_id "123e4567-e89b-12d3-a456-426614174000" --lower_limit_celsius 4 --upper_limit_celsius 30

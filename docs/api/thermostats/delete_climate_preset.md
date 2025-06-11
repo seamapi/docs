@@ -9,9 +9,10 @@ Deletes a specified [climate preset](../../capability-guides/thermostats/creatin
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
+
+#### Code
 
 ```javascript
 await seam.thermostats.deleteClimatePreset({
@@ -28,9 +29,10 @@ await seam.thermostats.deleteClimatePreset({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/delete_climate_preset" \
@@ -51,9 +53,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
+
+#### Code
 
 ```python
 seam.thermostats.delete_climate_preset(
@@ -69,9 +72,10 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
+
+#### Code
 
 ```ruby
 seam.thermostats.delete_climate_preset(
@@ -88,9 +92,10 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
+
+#### Code
 
 ```php
 <?php
@@ -108,9 +113,10 @@ null
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
+
+#### Code
 
 ```go
 package main
@@ -136,9 +142,10 @@ nil
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
+
+#### Code
 
 ```seam_cli
 seam thermostats delete-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "occupied"

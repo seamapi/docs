@@ -9,9 +9,10 @@ Creates a [thermostat schedule](../../../capability-guides/thermostats/creating-
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, as well as the desired `starts_at` and `ends_at` times.
+
+#### Code
 
 ```javascript
 await seam.thermostats.schedules.create({
@@ -40,9 +41,10 @@ await seam.thermostats.schedules.create({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, as well as the desired `starts_at` and `ends_at` times.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/schedules/create" \
@@ -77,9 +79,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, as well as the desired `starts_at` and `ends_at` times.
+
+#### Code
 
 ```python
 seam.thermostats.schedules.create(
@@ -108,9 +111,10 @@ ThermostatSchedule(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, as well as the desired `starts_at` and `ends_at` times.
+
+#### Code
 
 ```ruby
 seam.thermostats.schedules.create(
@@ -139,9 +143,10 @@ seam.thermostats.schedules.create(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, as well as the desired `starts_at` and `ends_at` times.
+
+#### Code
 
 ```php
 <?php
@@ -172,9 +177,10 @@ $seam->thermostats->schedules->create(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, as well as the desired `starts_at` and `ends_at` times.
+
+#### Code
 
 ```go
 package main
@@ -205,9 +211,10 @@ api.ThermostatSchedule{ThermostatScheduleId: "56d29fcf-0674-4db5-8e03-b2370a7746
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, as well as the desired `starts_at` and `ends_at` times.
+
+#### Code
 
 ```seam_cli
 seam thermostats schedules create --device_id "123e4567-e89b-12d3-a456-426614174000" --name "Reservation 1" --climate_preset_key "occupied" --starts_at "2024-11-01T15:00:00Z" --ends_at "2024-11-05T12:00:00Z" --max_override_period_minutes 90

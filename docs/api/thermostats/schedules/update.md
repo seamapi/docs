@@ -9,9 +9,10 @@ Updates a specified [thermostat schedule](../../../capability-guides/thermostats
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
+
+#### Code
 
 ```javascript
 await seam.thermostats.schedules.update({
@@ -28,9 +29,10 @@ await seam.thermostats.schedules.update({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/schedules/update" \
@@ -51,9 +53,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
+
+#### Code
 
 ```python
 seam.thermostats.schedules.update(
@@ -70,9 +73,10 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
+
+#### Code
 
 ```ruby
 seam.thermostats.schedules.update(
@@ -89,9 +93,10 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
+
+#### Code
 
 ```php
 <?php
@@ -109,9 +114,10 @@ null
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
+
+#### Code
 
 ```go
 package main
@@ -138,9 +144,10 @@ nil
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
+
+#### Code
 
 ```seam_cli
 seam thermostats schedules update --thermostat_schedule_id "89d3507e-60e3-4101-bd1b-ba066ec30ad4" --ends_at "2024-11-15T15:00:00Z"

@@ -9,9 +9,10 @@ Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```javascript
 await seam.userIdentities.listAcsUsers({
@@ -41,9 +42,10 @@ await seam.userIdentities.listAcsUsers({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/list_acs_users" \
@@ -79,9 +81,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```python
 seam.user_identities.list_acs_users(
@@ -111,9 +114,10 @@ seam.user_identities.list_acs_users(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```ruby
 seam.user_identities.list_acs_users(user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a")
@@ -141,9 +145,10 @@ seam.user_identities.list_acs_users(user_identity_id: "48500a8e-5e7e-4bde-b7e5-0
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```php
 <?php
@@ -175,9 +180,10 @@ $seam->user_identities->list_acs_users(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```go
 package main
@@ -202,9 +208,10 @@ func main() {
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```seam_cli
 seam user-identities list-acs-users --user_identity_id "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"

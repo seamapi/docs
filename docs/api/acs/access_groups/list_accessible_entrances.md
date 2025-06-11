@@ -9,9 +9,10 @@ Returns a list of all accessible entrances for a specified [access group](https:
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
+
+#### Code
 
 ```javascript
 await seam.acs.accessGroups.listAccessibleEntrances({
@@ -36,9 +37,10 @@ await seam.acs.accessGroups.listAccessibleEntrances({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/access_groups/list_accessible_entrances" \
@@ -69,9 +71,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
+
+#### Code
 
 ```python
 seam.acs.access_groups.list_accessible_entrances(
@@ -96,9 +99,10 @@ seam.acs.access_groups.list_accessible_entrances(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
+
+#### Code
 
 ```ruby
 seam.acs.access_groups.list_accessible_entrances(
@@ -123,9 +127,10 @@ seam.acs.access_groups.list_accessible_entrances(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
+
+#### Code
 
 ```php
 <?php
@@ -152,9 +157,10 @@ $seam->acs->access_groups->list_accessible_entrances(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
+
+#### Code
 
 ```go
 package main
@@ -180,9 +186,10 @@ func main() {
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
+
+#### Code
 
 ```seam_cli
 seam acs access-groups list-accessible-entrances --acs_access_group_id "44444444-4444-4444-4444-444444444444"

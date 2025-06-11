@@ -9,9 +9,10 @@ Returns a list of all [devices](../../core-concepts/devices/README.md) associate
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```javascript
 await seam.userIdentities.listAccessibleDevices({
@@ -79,9 +80,10 @@ await seam.userIdentities.listAccessibleDevices({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/list_accessible_devices" \
@@ -155,9 +157,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```python
 seam.user_identities.list_accessible_devices(
@@ -225,9 +228,10 @@ seam.user_identities.list_accessible_devices(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```ruby
 seam.user_identities.list_accessible_devices(
@@ -299,9 +303,10 @@ seam.user_identities.list_accessible_devices(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```php
 <?php
@@ -378,9 +383,10 @@ $seam->user_identities->list_accessible_devices(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```go
 package main
@@ -405,9 +411,10 @@ func main() {
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```seam_cli
 seam user-identities list-accessible-devices --user_identity_id "f3a328b4-dd04-4370-9000-d52b7a01b0bf"

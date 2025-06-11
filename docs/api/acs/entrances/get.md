@@ -9,9 +9,10 @@ Returns a specified [access system entrance](../../../capability-guides/access-s
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the `acs_entrance_id` of the entrance that you want to retrieve.
+
+#### Code
 
 ```javascript
 await seam.acs.entrances.get({
@@ -32,9 +33,10 @@ await seam.acs.entrances.get({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the `acs_entrance_id` of the entrance that you want to retrieve.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/entrances/get" \
@@ -61,9 +63,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the `acs_entrance_id` of the entrance that you want to retrieve.
+
+#### Code
 
 ```python
 seam.acs.entrances.get(acs_entrance_id="123e4567-e89b-12d3-a456-426614174000")
@@ -82,9 +85,10 @@ AcsEntrance(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the `acs_entrance_id` of the entrance that you want to retrieve.
+
+#### Code
 
 ```ruby
 seam.acs.entrances.get(acs_entrance_id: "123e4567-e89b-12d3-a456-426614174000")
@@ -103,9 +107,10 @@ seam.acs.entrances.get(acs_entrance_id: "123e4567-e89b-12d3-a456-426614174000")
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the `acs_entrance_id` of the entrance that you want to retrieve.
+
+#### Code
 
 ```php
 <?php
@@ -128,9 +133,10 @@ $seam->acs->entrances->get(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the `acs_entrance_id` of the entrance that you want to retrieve.
+
+#### Code
 
 ```go
 package main
@@ -156,9 +162,10 @@ api.AcsEntrance{AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", AcsEntrance
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the `acs_entrance_id` of the entrance that you want to retrieve.
+
+#### Code
 
 ```seam_cli
 seam acs entrances get --acs_entrance_id "123e4567-e89b-12d3-a456-426614174000"

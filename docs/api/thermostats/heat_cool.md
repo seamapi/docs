@@ -9,9 +9,10 @@ Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/ther
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the desired heating set point in °C or °F.
+
+#### Code
 
 ```javascript
 await seam.thermostats.heatCool({
@@ -33,9 +34,10 @@ await seam.thermostats.heatCool({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the desired heating set point in °C or °F.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/heat_cool" \
@@ -63,9 +65,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the desired heating set point in °C or °F.
+
+#### Code
 
 ```python
 seam.thermostats.heat_cool(
@@ -87,9 +90,10 @@ ActionAttempt(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the desired heating set point in °C or °F.
+
+#### Code
 
 ```ruby
 seam.thermostats.heat_cool(
@@ -111,9 +115,10 @@ seam.thermostats.heat_cool(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the desired heating set point in °C or °F.
+
+#### Code
 
 ```php
 <?php
@@ -137,9 +142,10 @@ $seam->thermostats->heat_cool(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the desired heating set point in °C or °F.
+
+#### Code
 
 ```go
 package main
@@ -166,9 +172,10 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the desired heating set point in °C or °F.
+
+#### Code
 
 ```seam_cli
 seam thermostats heat-cool --device_id "123e4567-e89b-12d3-a456-426614174000" --cooling_set_point_celsius 25 --heating_set_point_celsius 20

@@ -9,9 +9,10 @@ Updates a specified [climate preset](../../capability-guides/thermostats/creatin
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.
+
+#### Code
 
 ```javascript
 await seam.thermostats.updateClimatePreset({
@@ -30,9 +31,10 @@ await seam.thermostats.updateClimatePreset({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/update_climate_preset" \
@@ -55,9 +57,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.
+
+#### Code
 
 ```python
 seam.thermostats.update_climate_preset(
@@ -76,9 +79,10 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.
+
+#### Code
 
 ```ruby
 seam.thermostats.update_climate_preset(
@@ -97,9 +101,10 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.
+
+#### Code
 
 ```php
 <?php
@@ -119,9 +124,10 @@ null
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.
+
+#### Code
 
 ```go
 package main
@@ -149,9 +155,10 @@ nil
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.
+
+#### Code
 
 ```seam_cli
 seam thermostats update-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "occupied" --cooling_set_point_celsius 24 --manual_override_allowed true

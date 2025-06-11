@@ -9,9 +9,10 @@ Returns a list of all [connected accounts](../../core-concepts/connected-account
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 List all connected accounts.
+
+#### Code
 
 ```javascript
 await seam.connectedAccounts.list();
@@ -36,9 +37,10 @@ await seam.connectedAccounts.list();
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 List all connected accounts.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/list" \
@@ -66,9 +68,10 @@ curl --include --request POST "https://connect.getseam.com/connected_accounts/li
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 List all connected accounts.
+
+#### Code
 
 ```python
 seam.connected_accounts.list()
@@ -93,9 +96,10 @@ seam.connected_accounts.list()
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 List all connected accounts.
+
+#### Code
 
 ```ruby
 seam.connected_accounts.list()
@@ -120,9 +124,10 @@ seam.connected_accounts.list()
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 List all connected accounts.
+
+#### Code
 
 ```php
 <?php
@@ -149,9 +154,10 @@ $seam->connected_accounts->list();
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 List all connected accounts.
+
+#### Code
 
 ```go
 package main
@@ -169,9 +175,10 @@ func main() {
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 List all connected accounts.
+
+#### Code
 
 ```seam_cli
 seam connected-accounts list

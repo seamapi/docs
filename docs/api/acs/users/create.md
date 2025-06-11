@@ -9,9 +9,10 @@ Creates a new [access system user](https://docs.seam.co/latest/capability-guides
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+#### Code
 
 ```javascript
 await seam.acs.users.create({
@@ -39,9 +40,10 @@ await seam.acs.users.create({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/create" \
@@ -75,9 +77,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+#### Code
 
 ```python
 seam.acs.users.create(
@@ -105,9 +108,10 @@ AcsUser(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+#### Code
 
 ```ruby
 seam.acs.users.create(
@@ -135,9 +139,10 @@ seam.acs.users.create(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+#### Code
 
 ```php
 <?php
@@ -167,9 +172,10 @@ $seam->acs->users->create(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+#### Code
 
 ```go
 package main
@@ -198,9 +204,10 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+#### Code
 
 ```seam_cli
 seam acs users create --acs_system_id "123e4567-e89b-12d3-a456-426614174000" --full_name "Jane Doe" --email_address "jane@example.com" --phone_number "+15555550100"
@@ -323,9 +330,10 @@ Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-sy
 
 {% tabs %}
 {% tab title="JavaScript" %}
+
+
+
 #### Code
-
-
 
 ```javascript
 await seam.acs.users.create({
@@ -357,9 +365,10 @@ await seam.acs.users.create({
 {% endtab %}
 
 {% tab title="cURL" %}
+
+
+
 #### Code
-
-
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/create" \
@@ -397,9 +406,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
+
+
+
 #### Code
-
-
 
 ```python
 seam.acs.users.create(
@@ -431,9 +441,10 @@ AcsUser(
 {% endtab %}
 
 {% tab title="Ruby" %}
+
+
+
 #### Code
-
-
 
 ```ruby
 seam.acs.users.create(
@@ -465,9 +476,10 @@ seam.acs.users.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
+
+
 #### Code
-
-
 
 ```php
 <?php
@@ -501,9 +513,10 @@ $seam->acs->users->create(
 {% endtab %}
 
 {% tab title="Go" %}
+
+
+
 #### Code
-
-
 
 ```go
 package main
@@ -533,9 +546,10 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 {% endtab %}
 
 {% tab title="Seam CLI" %}
+
+
+
 #### Code
-
-
 
 ```seam_cli
 seam acs users create --acs_system_id "123e4567-e89b-12d3-a456-426614174000" --full_name "Jane Doe" --email_address "jane@example.com" --phone_number "+15555550100" --access_schedule {"starts_at":"2024-11-01T15:00:00.000Z","ends_at":"2024-11-04T11:00:00.000Z"}
@@ -566,9 +580,10 @@ Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-sy
 
 {% tabs %}
 {% tab title="JavaScript" %}
+
+
+
 #### Code
-
-
 
 ```javascript
 await seam.acs.users.create({
@@ -597,9 +612,10 @@ await seam.acs.users.create({
 {% endtab %}
 
 {% tab title="cURL" %}
+
+
+
 #### Code
-
-
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/create" \
@@ -636,9 +652,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
+
+
+
 #### Code
-
-
 
 ```python
 seam.acs.users.create(
@@ -667,9 +684,10 @@ AcsUser(
 {% endtab %}
 
 {% tab title="Ruby" %}
+
+
+
 #### Code
-
-
 
 ```ruby
 seam.acs.users.create(
@@ -698,9 +716,10 @@ seam.acs.users.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
+
+
 #### Code
-
-
 
 ```php
 <?php
@@ -731,9 +750,10 @@ $seam->acs->users->create(
 {% endtab %}
 
 {% tab title="Go" %}
+
+
+
 #### Code
-
-
 
 ```go
 package main
@@ -763,9 +783,10 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 {% endtab %}
 
 {% tab title="Seam CLI" %}
+
+
+
 #### Code
-
-
 
 ```seam_cli
 seam acs users create --acs_system_id "123e4567-e89b-12d3-a456-426614174000" --full_name "Jane Doe" --email_address "jane@example.com" --phone_number "+15555550100" --acs_access_group_ids ["123e4567-e89b-12d3-a456-426614174000"]

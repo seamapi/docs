@@ -13,9 +13,10 @@ For example, if you delete a connected account with a device that has an access 
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the `connected_account_id` of the connected account that you want to delete.
+
+#### Code
 
 ```javascript
 await seam.connectedAccounts.delete({
@@ -31,9 +32,10 @@ await seam.connectedAccounts.delete({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the `connected_account_id` of the connected account that you want to delete.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/delete" \
@@ -53,9 +55,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the `connected_account_id` of the connected account that you want to delete.
+
+#### Code
 
 ```python
 seam.connected_accounts.delete(
@@ -71,9 +74,10 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the `connected_account_id` of the connected account that you want to delete.
+
+#### Code
 
 ```ruby
 seam.connected_accounts.delete(connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c")
@@ -87,9 +91,10 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the `connected_account_id` of the connected account that you want to delete.
+
+#### Code
 
 ```php
 <?php
@@ -106,9 +111,10 @@ null
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the `connected_account_id` of the connected account that you want to delete.
+
+#### Code
 
 ```go
 package main
@@ -133,9 +139,10 @@ nil
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the `connected_account_id` of the connected account that you want to delete.
+
+#### Code
 
 ```seam_cli
 seam connected-accounts delete --connected_account_id "23e4eb21-6e93-48c4-a077-bf503246d47c"

@@ -9,9 +9,10 @@ Returns a list of all [credentials](../../../capability-guides/access-systems/ma
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
+
+#### Code
 
 ```javascript
 await seam.acs.entrances.listCredentialsWithAccess({
@@ -50,9 +51,10 @@ await seam.acs.entrances.listCredentialsWithAccess({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/entrances/list_credentials_with_access" \
@@ -97,9 +99,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
+
+#### Code
 
 ```python
 seam.acs.entrances.list_credentials_with_access(
@@ -138,9 +141,10 @@ seam.acs.entrances.list_credentials_with_access(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
+
+#### Code
 
 ```ruby
 seam.acs.entrances.list_credentials_with_access(
@@ -179,9 +183,10 @@ seam.acs.entrances.list_credentials_with_access(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
+
+#### Code
 
 ```php
 <?php
@@ -223,9 +228,10 @@ $seam->acs->entrances->list_credentials_with_access(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
+
+#### Code
 
 ```go
 package main
@@ -251,9 +257,10 @@ func main() {
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
+
+#### Code
 
 ```seam_cli
 seam acs entrances list-credentials-with-access --acs_entrance_id "123e4567-e89b-12d3-a456-426614174000"

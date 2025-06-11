@@ -9,9 +9,10 @@ Deletes a [thermostat schedule](../../../capability-guides/thermostats/creating-
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+
+#### Code
 
 ```javascript
 await seam.thermostats.schedules.delete({
@@ -27,9 +28,10 @@ await seam.thermostats.schedules.delete({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/schedules/delete" \
@@ -49,9 +51,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+
+#### Code
 
 ```python
 seam.thermostats.schedules.delete(
@@ -67,9 +70,10 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+
+#### Code
 
 ```ruby
 seam.thermostats.schedules.delete(thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4")
@@ -83,9 +87,10 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+
+#### Code
 
 ```php
 <?php
@@ -102,9 +107,10 @@ null
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+
+#### Code
 
 ```go
 package main
@@ -130,9 +136,10 @@ nil
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+
+#### Code
 
 ```seam_cli
 seam thermostats schedules delete --thermostat_schedule_id "89d3507e-60e3-4101-bd1b-ba066ec30ad4"

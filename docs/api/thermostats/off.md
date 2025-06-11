@@ -9,9 +9,10 @@ Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/ther
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the `device_id` of the thermostat that you want to set to off mode.
+
+#### Code
 
 ```javascript
 await seam.thermostats.off({
@@ -31,9 +32,10 @@ await seam.thermostats.off({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the `device_id` of the thermostat that you want to set to off mode.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/off" \
@@ -59,9 +61,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the `device_id` of the thermostat that you want to set to off mode.
+
+#### Code
 
 ```python
 seam.thermostats.off(device_id="123e4567-e89b-12d3-a456-426614174000")
@@ -79,9 +82,10 @@ ActionAttempt(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the `device_id` of the thermostat that you want to set to off mode.
+
+#### Code
 
 ```ruby
 seam.thermostats.off(device_id: "123e4567-e89b-12d3-a456-426614174000")
@@ -99,9 +103,10 @@ seam.thermostats.off(device_id: "123e4567-e89b-12d3-a456-426614174000")
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the `device_id` of the thermostat that you want to set to off mode.
+
+#### Code
 
 ```php
 <?php
@@ -121,9 +126,10 @@ $seam->thermostats->off(device_id: "123e4567-e89b-12d3-a456-426614174000");
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the `device_id` of the thermostat that you want to set to off mode.
+
+#### Code
 
 ```go
 package main
@@ -148,9 +154,10 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the `device_id` of the thermostat that you want to set to off mode.
+
+#### Code
 
 ```seam_cli
 seam thermostats off --device_id "123e4567-e89b-12d3-a456-426614174000"

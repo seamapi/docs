@@ -9,9 +9,10 @@ Returns a list of all [credentials](../../../capability-guides/access-systems/ma
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Filter the list of returned credentials by `acs_user_id`, `acs_system_id`, or `user_identity_id`. You can also include `is_multi_phone_sync_credential`.
+
+#### Code
 
 ```javascript
 await seam.acs.credentials.list({
@@ -42,9 +43,10 @@ await seam.acs.credentials.list({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Filter the list of returned credentials by `acs_user_id`, `acs_system_id`, or `user_identity_id`. You can also include `is_multi_phone_sync_credential`.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/list" \
@@ -81,9 +83,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Filter the list of returned credentials by `acs_user_id`, `acs_system_id`, or `user_identity_id`. You can also include `is_multi_phone_sync_credential`.
+
+#### Code
 
 ```python
 seam.acs.credentials.list(
@@ -114,9 +117,10 @@ seam.acs.credentials.list(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Filter the list of returned credentials by `acs_user_id`, `acs_system_id`, or `user_identity_id`. You can also include `is_multi_phone_sync_credential`.
+
+#### Code
 
 ```ruby
 seam.acs.credentials.list(
@@ -147,9 +151,10 @@ seam.acs.credentials.list(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Filter the list of returned credentials by `acs_user_id`, `acs_system_id`, or `user_identity_id`. You can also include `is_multi_phone_sync_credential`.
+
+#### Code
 
 ```php
 <?php
@@ -182,9 +187,10 @@ $seam->acs->credentials->list(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Filter the list of returned credentials by `acs_user_id`, `acs_system_id`, or `user_identity_id`. You can also include `is_multi_phone_sync_credential`.
+
+#### Code
 
 ```go
 package main
@@ -213,9 +219,10 @@ func main() {
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Filter the list of returned credentials by `acs_user_id`, `acs_system_id`, or `user_identity_id`. You can also include `is_multi_phone_sync_credential`.
+
+#### Code
 
 ```seam_cli
 seam acs credentials list --acs_user_id "33333333-3333-3333-3333-333333333333" --acs_system_id "11111111-1111-1111-1111-111111111111" --user_identity_id "22222222-2222-2222-2222-222222222222" --is_multi_phone_sync_credential true

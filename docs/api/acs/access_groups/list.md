@@ -9,9 +9,10 @@ Returns a list of all [access groups](https://docs.seam.co/latest/capability-gui
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 To filter the list of access groups, include an `acs_system_id` or `acs_user_id`.
+
+#### Code
 
 ```javascript
 await seam.acs.accessGroups.list({
@@ -41,9 +42,10 @@ await seam.acs.accessGroups.list({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 To filter the list of access groups, include an `acs_system_id` or `acs_user_id`.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/access_groups/list" \
@@ -79,9 +81,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 To filter the list of access groups, include an `acs_system_id` or `acs_user_id`.
+
+#### Code
 
 ```python
 seam.acs.access_groups.list(
@@ -111,9 +114,10 @@ seam.acs.access_groups.list(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 To filter the list of access groups, include an `acs_system_id` or `acs_user_id`.
+
+#### Code
 
 ```ruby
 seam.acs.access_groups.list(
@@ -143,9 +147,10 @@ seam.acs.access_groups.list(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 To filter the list of access groups, include an `acs_system_id` or `acs_user_id`.
+
+#### Code
 
 ```php
 <?php
@@ -177,9 +182,10 @@ $seam->acs->access_groups->list(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 To filter the list of access groups, include an `acs_system_id` or `acs_user_id`.
+
+#### Code
 
 ```go
 package main
@@ -206,9 +212,10 @@ func main() {
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 To filter the list of access groups, include an `acs_system_id` or `acs_user_id`.
+
+#### Code
 
 ```seam_cli
 seam acs access-groups list --acs_system_id "11111111-1111-1111-1111-111111111111" --acs_user_id "33333333-3333-3333-3333-333333333333"

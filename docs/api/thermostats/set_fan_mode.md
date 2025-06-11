@@ -9,9 +9,10 @@ Sets the [fan mode setting](https://docs.seam.co/latest/capability-guides/thermo
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the desired fan mode setting.
+
+#### Code
 
 ```javascript
 await seam.thermostats.setFanMode({
@@ -32,9 +33,10 @@ await seam.thermostats.setFanMode({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the desired fan mode setting.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/set_fan_mode" \
@@ -61,9 +63,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the desired fan mode setting.
+
+#### Code
 
 ```python
 seam.thermostats.set_fan_mode(
@@ -83,9 +86,10 @@ ActionAttempt(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the desired fan mode setting.
+
+#### Code
 
 ```ruby
 seam.thermostats.set_fan_mode(
@@ -106,9 +110,10 @@ seam.thermostats.set_fan_mode(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the desired fan mode setting.
+
+#### Code
 
 ```php
 <?php
@@ -131,9 +136,10 @@ $seam->thermostats->set_fan_mode(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the desired fan mode setting.
+
+#### Code
 
 ```go
 package main
@@ -159,9 +165,10 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the desired fan mode setting.
+
+#### Code
 
 ```seam_cli
 seam thermostats set-fan-mode --device_id "123e4567-e89b-12d3-a456-426614174000" --fan_mode_setting "auto"

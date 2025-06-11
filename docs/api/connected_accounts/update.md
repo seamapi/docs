@@ -9,9 +9,10 @@ Updates a [connected account](../../core-concepts/connected-accounts/README.md).
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
+
+#### Code
 
 ```javascript
 await seam.connectedAccounts.update({
@@ -28,9 +29,10 @@ await seam.connectedAccounts.update({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/update" \
@@ -51,9 +53,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
+
+#### Code
 
 ```python
 seam.connected_accounts.update(
@@ -70,9 +73,10 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
+
+#### Code
 
 ```ruby
 seam.connected_accounts.update(
@@ -89,9 +93,10 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
+
+#### Code
 
 ```php
 <?php
@@ -109,9 +114,10 @@ null
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
+
+#### Code
 
 ```go
 package main
@@ -137,9 +143,10 @@ nil
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
+
+#### Code
 
 ```seam_cli
 seam connected-accounts update --connected_account_id "23e4eb21-6e93-48c4-a077-bf503246d47c" --automatically_manage_new_devices true

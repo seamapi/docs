@@ -9,9 +9,10 @@ Returns a list of all [thermostat schedules](../../../capability-guides/thermost
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat.
+
+#### Code
 
 ```javascript
 await seam.thermostats.schedules.list({
@@ -46,9 +47,10 @@ await seam.thermostats.schedules.list({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/schedules/list" \
@@ -89,9 +91,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat.
+
+#### Code
 
 ```python
 seam.thermostats.schedules.list(device_id="123e4567-e89b-12d3-a456-426614174000")
@@ -124,9 +127,10 @@ seam.thermostats.schedules.list(device_id="123e4567-e89b-12d3-a456-426614174000"
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat.
+
+#### Code
 
 ```ruby
 seam.thermostats.schedules.list(device_id: "123e4567-e89b-12d3-a456-426614174000")
@@ -159,9 +163,10 @@ seam.thermostats.schedules.list(device_id: "123e4567-e89b-12d3-a456-426614174000
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat.
+
+#### Code
 
 ```php
 <?php
@@ -198,9 +203,10 @@ $seam->thermostats->schedules->list(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat.
+
+#### Code
 
 ```go
 package main
@@ -226,9 +232,10 @@ func main() {
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the `device_id` of the desired thermostat.
+
+#### Code
 
 ```seam_cli
 seam thermostats schedules list --device_id "123e4567-e89b-12d3-a456-426614174000"

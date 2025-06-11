@@ -9,9 +9,10 @@ Sets up a new [enrollment automation](https://docs.seam.co/latest/capability-gui
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the desired `user_identity_id` and `credential_manager_acs_system_id`. You can also specify an `acs_credential_pool_id`. Either set `create_credential_manager_user` to `true` or specify the `credential_manager_acs_user_id`.
+
+#### Code
 
 ```javascript
 await seam.userIdentities.enrollmentAutomations.launch({
@@ -38,9 +39,10 @@ await seam.userIdentities.enrollmentAutomations.launch({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the desired `user_identity_id` and `credential_manager_acs_system_id`. You can also specify an `acs_credential_pool_id`. Either set `create_credential_manager_user` to `true` or specify the `credential_manager_acs_user_id`.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/enrollment_automations/launch" \
@@ -73,9 +75,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the desired `user_identity_id` and `credential_manager_acs_system_id`. You can also specify an `acs_credential_pool_id`. Either set `create_credential_manager_user` to `true` or specify the `credential_manager_acs_user_id`.
+
+#### Code
 
 ```python
 seam.user_identities.enrollment_automations.launch(
@@ -102,9 +105,10 @@ Unknown(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the desired `user_identity_id` and `credential_manager_acs_system_id`. You can also specify an `acs_credential_pool_id`. Either set `create_credential_manager_user` to `true` or specify the `credential_manager_acs_user_id`.
+
+#### Code
 
 ```ruby
 seam.user_identities.enrollment_automations.launch(
@@ -131,9 +135,10 @@ seam.user_identities.enrollment_automations.launch(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the desired `user_identity_id` and `credential_manager_acs_system_id`. You can also specify an `acs_credential_pool_id`. Either set `create_credential_manager_user` to `true` or specify the `credential_manager_acs_user_id`.
+
+#### Code
 
 ```php
 <?php
@@ -164,9 +169,10 @@ $seam->user_identities->enrollment_automations->launch(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the desired `user_identity_id` and `credential_manager_acs_system_id`. You can also specify an `acs_credential_pool_id`. Either set `create_credential_manager_user` to `true` or specify the `credential_manager_acs_user_id`.
+
+#### Code
 
 ```go
 package main
@@ -195,9 +201,10 @@ api.Unknown{UserIdentityId: "5c945ab5-c75e-4bcb-8e5f-9410061c401f", EnrollmentAu
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the desired `user_identity_id` and `credential_manager_acs_system_id`. You can also specify an `acs_credential_pool_id`. Either set `create_credential_manager_user` to `true` or specify the `credential_manager_acs_user_id`.
+
+#### Code
 
 ```seam_cli
 seam user-identities enrollment-automations launch --user_identity_id "5c945ab5-c75e-4bcb-8e5f-9410061c401f" --credential_manager_acs_system_id "6737e186-8d54-48ce-a7da-a0be4d252172" --acs_credential_pool_id "3fa85f64-5717-4562-b3fc-2c963f66afa6" --create_credential_manager_user true

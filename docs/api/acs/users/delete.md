@@ -9,9 +9,10 @@ Deletes a specified [access system user](https://docs.seam.co/latest/capability-
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).
+
+#### Code
 
 ```javascript
 await seam.acs.users.delete({
@@ -27,9 +28,10 @@ await seam.acs.users.delete({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/delete" \
@@ -49,9 +51,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).
+
+#### Code
 
 ```python
 seam.acs.users.delete(acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")
@@ -65,9 +68,10 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).
+
+#### Code
 
 ```ruby
 seam.acs.users.delete(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
@@ -81,9 +85,10 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).
+
+#### Code
 
 ```php
 <?php
@@ -98,9 +103,10 @@ null
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).
+
+#### Code
 
 ```go
 package main
@@ -126,9 +132,10 @@ nil
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).
+
+#### Code
 
 ```seam_cli
 seam acs users delete --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"

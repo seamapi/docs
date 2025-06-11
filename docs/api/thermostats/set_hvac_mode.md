@@ -9,9 +9,10 @@ Sets the [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/c
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the desired heating and cooling set points in °C or °F.
+
+#### Code
 
 ```javascript
 await seam.thermostats.setHvacMode({
@@ -34,9 +35,10 @@ await seam.thermostats.setHvacMode({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the desired heating and cooling set points in °C or °F.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/set_hvac_mode" \
@@ -65,9 +67,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the desired heating and cooling set points in °C or °F.
+
+#### Code
 
 ```python
 seam.thermostats.set_hvac_mode(
@@ -90,9 +93,10 @@ ActionAttempt(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the desired heating and cooling set points in °C or °F.
+
+#### Code
 
 ```ruby
 seam.thermostats.set_hvac_mode(
@@ -115,9 +119,10 @@ seam.thermostats.set_hvac_mode(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the desired heating and cooling set points in °C or °F.
+
+#### Code
 
 ```php
 <?php
@@ -142,9 +147,10 @@ $seam->thermostats->set_hvac_mode(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the desired heating and cooling set points in °C or °F.
+
+#### Code
 
 ```go
 package main
@@ -172,9 +178,10 @@ api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Statu
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the desired heating and cooling set points in °C or °F.
+
+#### Code
 
 ```seam_cli
 seam thermostats set-hvac-mode --device_id "123e4567-e89b-12d3-a456-426614174000" --hvac_mode_setting "heat_cool" --heating_set_point_celsius 20 --cooling_set_point_celsius 25

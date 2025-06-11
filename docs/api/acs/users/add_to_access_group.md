@@ -9,9 +9,10 @@ Adds a specified [access system user](https://docs.seam.co/latest/capability-gui
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+
+#### Code
 
 ```javascript
 await seam.acs.users.addToAccessGroup({
@@ -28,9 +29,10 @@ await seam.acs.users.addToAccessGroup({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/add_to_access_group" \
@@ -51,9 +53,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+
+#### Code
 
 ```python
 seam.acs.users.add_to_access_group(
@@ -70,9 +73,10 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+
+#### Code
 
 ```ruby
 seam.acs.users.add_to_access_group(
@@ -89,9 +93,10 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+
+#### Code
 
 ```php
 <?php
@@ -109,9 +114,10 @@ null
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+
+#### Code
 
 ```go
 package main
@@ -138,9 +144,10 @@ nil
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+
+#### Code
 
 ```seam_cli
 seam acs users add-to-access-group --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33" --acs_access_group_id "123e4567-e89b-12d3-a456-426614174000"

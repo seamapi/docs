@@ -9,9 +9,10 @@ Updates the properties of a specified [access system user](https://docs.seam.co/
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+#### Code
 
 ```javascript
 await seam.acs.users.update({
@@ -28,9 +29,10 @@ await seam.acs.users.update({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/update" \
@@ -51,9 +53,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+#### Code
 
 ```python
 seam.acs.users.update(
@@ -69,9 +72,10 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+#### Code
 
 ```ruby
 seam.acs.users.update(
@@ -88,9 +92,10 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+#### Code
 
 ```php
 <?php
@@ -108,9 +113,10 @@ null
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+#### Code
 
 ```go
 package main
@@ -137,9 +143,10 @@ nil
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+#### Code
 
 ```seam_cli
 seam acs users update --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33" --phone_number "+15555550222"

@@ -9,9 +9,10 @@ Deletes a specified [credential](../../../capability-guides/access-systems/manag
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the desired `acs_credential_id` to delete the specified credential.
+
+#### Code
 
 ```javascript
 await seam.acs.credentials.delete({
@@ -27,9 +28,10 @@ await seam.acs.credentials.delete({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the desired `acs_credential_id` to delete the specified credential.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/delete" \
@@ -49,9 +51,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the desired `acs_credential_id` to delete the specified credential.
+
+#### Code
 
 ```python
 seam.acs.credentials.delete(acs_credential_id="66666666-6666-6666-6666-666666666666")
@@ -65,9 +68,10 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the desired `acs_credential_id` to delete the specified credential.
+
+#### Code
 
 ```ruby
 seam.acs.credentials.delete(acs_credential_id: "66666666-6666-6666-6666-666666666666")
@@ -81,9 +85,10 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the desired `acs_credential_id` to delete the specified credential.
+
+#### Code
 
 ```php
 <?php
@@ -100,9 +105,10 @@ null
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the desired `acs_credential_id` to delete the specified credential.
+
+#### Code
 
 ```go
 package main
@@ -128,9 +134,10 @@ nil
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the desired `acs_credential_id` to delete the specified credential.
+
+#### Code
 
 ```seam_cli
 seam acs credentials delete --acs_credential_id "66666666-6666-6666-6666-666666666666"

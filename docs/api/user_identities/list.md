@@ -9,9 +9,10 @@ Returns a list of all [user identities](https://docs.seam.co/latest/capability-g
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 To filter the list of user identities, specify the desired `credential_manager_acs_system_id`.
+
+#### Code
 
 ```javascript
 await seam.userIdentities.list();
@@ -36,9 +37,10 @@ await seam.userIdentities.list();
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 To filter the list of user identities, specify the desired `credential_manager_acs_system_id`.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/list" \
@@ -66,9 +68,10 @@ curl --include --request POST "https://connect.getseam.com/user_identities/list"
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 To filter the list of user identities, specify the desired `credential_manager_acs_system_id`.
+
+#### Code
 
 ```python
 seam.user_identities.list()
@@ -93,9 +96,10 @@ seam.user_identities.list()
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 To filter the list of user identities, specify the desired `credential_manager_acs_system_id`.
+
+#### Code
 
 ```ruby
 seam.user_identities.list()
@@ -120,9 +124,10 @@ seam.user_identities.list()
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 To filter the list of user identities, specify the desired `credential_manager_acs_system_id`.
+
+#### Code
 
 ```php
 <?php
@@ -149,9 +154,10 @@ $seam->user_identities->list();
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 To filter the list of user identities, specify the desired `credential_manager_acs_system_id`.
+
+#### Code
 
 ```go
 package main
@@ -169,9 +175,10 @@ func main() {
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 To filter the list of user identities, specify the desired `credential_manager_acs_system_id`.
+
+#### Code
 
 ```seam_cli
 seam user-identities list

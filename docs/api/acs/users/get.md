@@ -9,9 +9,10 @@ Returns a specified [access system user](https://docs.seam.co/latest/capability-
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the `acs_user_id` of the specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to retrieve.
+
+#### Code
 
 ```javascript
 await seam.acs.users.get({
@@ -36,9 +37,10 @@ await seam.acs.users.get({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the `acs_user_id` of the specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to retrieve.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/get" \
@@ -69,9 +71,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the `acs_user_id` of the specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to retrieve.
+
+#### Code
 
 ```python
 seam.acs.users.get(acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")
@@ -94,9 +97,10 @@ AcsUser(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the `acs_user_id` of the specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to retrieve.
+
+#### Code
 
 ```ruby
 seam.acs.users.get(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
@@ -119,9 +123,10 @@ seam.acs.users.get(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the `acs_user_id` of the specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to retrieve.
+
+#### Code
 
 ```php
 <?php
@@ -146,9 +151,10 @@ $seam->acs->users->get(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33");
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the `acs_user_id` of the specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to retrieve.
+
+#### Code
 
 ```go
 package main
@@ -174,9 +180,10 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the `acs_user_id` of the specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to retrieve.
+
+#### Code
 
 ```seam_cli
 seam acs users get --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"

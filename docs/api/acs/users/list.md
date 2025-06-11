@@ -9,9 +9,10 @@ Returns a list of all [access system users](https://docs.seam.co/latest/capabili
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+#### Code
 
 ```javascript
 await seam.acs.users.list();
@@ -34,9 +35,10 @@ await seam.acs.users.list();
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/list" \
@@ -62,9 +64,10 @@ curl --include --request POST "https://connect.getseam.com/acs/users/list" \
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+#### Code
 
 ```python
 seam.acs.users.list()
@@ -87,9 +90,10 @@ AcsUser(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+#### Code
 
 ```ruby
 seam.acs.users.list()
@@ -112,9 +116,10 @@ seam.acs.users.list()
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+#### Code
 
 ```php
 <?php
@@ -139,9 +144,10 @@ $seam->acs->users->list();
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+#### Code
 
 ```go
 package main
@@ -159,9 +165,10 @@ api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+#### Code
 
 ```seam_cli
 seam acs users list

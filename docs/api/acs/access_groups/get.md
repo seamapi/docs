@@ -9,9 +9,10 @@ Returns a specified [access group](https://docs.seam.co/latest/capability-guides
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the `acs_access_group_id` of the access group that you want to retrieve.
+
+#### Code
 
 ```javascript
 await seam.acs.accessGroups.get({
@@ -38,9 +39,10 @@ await seam.acs.accessGroups.get({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the `acs_access_group_id` of the access group that you want to retrieve.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/access_groups/get" \
@@ -73,9 +75,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the `acs_access_group_id` of the access group that you want to retrieve.
+
+#### Code
 
 ```python
 seam.acs.access_groups.get(acs_access_group_id="44444444-4444-4444-4444-444444444444")
@@ -100,9 +103,10 @@ AcsAccessGroup(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the `acs_access_group_id` of the access group that you want to retrieve.
+
+#### Code
 
 ```ruby
 seam.acs.access_groups.get(acs_access_group_id: "44444444-4444-4444-4444-444444444444")
@@ -127,9 +131,10 @@ seam.acs.access_groups.get(acs_access_group_id: "44444444-4444-4444-4444-4444444
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the `acs_access_group_id` of the access group that you want to retrieve.
+
+#### Code
 
 ```php
 <?php
@@ -158,9 +163,10 @@ $seam->acs->access_groups->get(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the `acs_access_group_id` of the access group that you want to retrieve.
+
+#### Code
 
 ```go
 package main
@@ -186,9 +192,10 @@ api.AcsAccessGroup{AcsAccessGroupId: "44444444-4444-4444-4444-444444444444", Nam
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the `acs_access_group_id` of the access group that you want to retrieve.
+
+#### Code
 
 ```seam_cli
 seam acs access-groups get --acs_access_group_id "44444444-4444-4444-4444-444444444444"

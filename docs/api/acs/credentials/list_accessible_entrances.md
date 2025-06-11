@@ -9,9 +9,10 @@ Returns a list of all [entrances](https://docs.seam.co/latest/api/acs/entrances)
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
+
+#### Code
 
 ```javascript
 await seam.acs.credentials.listAccessibleEntrances({
@@ -46,9 +47,10 @@ await seam.acs.credentials.listAccessibleEntrances({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/list_accessible_entrances" \
@@ -89,9 +91,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
+
+#### Code
 
 ```python
 seam.acs.credentials.list_accessible_entrances(
@@ -126,9 +129,10 @@ seam.acs.credentials.list_accessible_entrances(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
+
+#### Code
 
 ```ruby
 seam.acs.credentials.list_accessible_entrances(
@@ -158,9 +162,10 @@ seam.acs.credentials.list_accessible_entrances(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
+
+#### Code
 
 ```php
 <?php
@@ -197,9 +202,10 @@ $seam->acs->credentials->list_accessible_entrances(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
+
+#### Code
 
 ```go
 package main
@@ -225,9 +231,10 @@ func main() {
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
+
+#### Code
 
 ```seam_cli
 seam acs credentials list-accessible-entrances --acs_credential_id "66666666-6666-6666-6666-666666666666"

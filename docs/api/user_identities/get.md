@@ -9,9 +9,10 @@ Returns a specified [user identity](https://docs.seam.co/latest/capability-guide
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the `user_identity_id` of the user identity that you want to retrieve.
+
+#### Code
 
 ```javascript
 await seam.userIdentities.get({
@@ -36,9 +37,10 @@ await seam.userIdentities.get({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the `user_identity_id` of the user identity that you want to retrieve.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/get" \
@@ -69,9 +71,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the `user_identity_id` of the user identity that you want to retrieve.
+
+#### Code
 
 ```python
 seam.user_identities.get(user_identity_id="48500a8e-5e7e-4bde-b7e5-0be97cae5d7a")
@@ -94,9 +97,10 @@ UserIdentity(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the `user_identity_id` of the user identity that you want to retrieve.
+
+#### Code
 
 ```ruby
 seam.user_identities.get(user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a")
@@ -119,9 +123,10 @@ seam.user_identities.get(user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the `user_identity_id` of the user identity that you want to retrieve.
+
+#### Code
 
 ```php
 <?php
@@ -148,9 +153,10 @@ $seam->user_identities->get(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the `user_identity_id` of the user identity that you want to retrieve.
+
+#### Code
 
 ```go
 package main
@@ -175,9 +181,10 @@ api.UserIdentity{UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", UserIde
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the `user_identity_id` of the user identity that you want to retrieve.
+
+#### Code
 
 ```seam_cli
 seam user-identities get --user_identity_id "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"

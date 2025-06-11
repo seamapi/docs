@@ -9,9 +9,10 @@ Returns a specified [access system](https://docs.seam.co/latest/capability-guide
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the `acs_system_id` of the ACS system that you want to retrieve.
+
+#### Code
 
 ```javascript
 await seam.acs.systems.get({
@@ -27,9 +28,10 @@ await seam.acs.systems.get({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the `acs_system_id` of the ACS system that you want to retrieve.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/systems/get" \
@@ -49,9 +51,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the `acs_system_id` of the ACS system that you want to retrieve.
+
+#### Code
 
 ```python
 seam.acs.systems.get(acs_system_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")
@@ -65,9 +68,10 @@ seam.acs.systems.get(acs_system_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the `acs_system_id` of the ACS system that you want to retrieve.
+
+#### Code
 
 ```ruby
 seam.acs.systems.get(acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
@@ -81,9 +85,10 @@ seam.acs.systems.get(acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the `acs_system_id` of the ACS system that you want to retrieve.
+
+#### Code
 
 ```php
 <?php
@@ -99,9 +104,10 @@ $seam->acs->systems->get(acs_system_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33");
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the `acs_system_id` of the ACS system that you want to retrieve.
+
+#### Code
 
 ```go
 package main
@@ -127,9 +133,10 @@ func main() {
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the `acs_system_id` of the ACS system that you want to retrieve.
+
+#### Code
 
 ```seam_cli
 seam acs systems get --acs_system_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"

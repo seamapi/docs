@@ -9,9 +9,10 @@ Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the desired `acs_user_id` and `user_identity_id`.
+
+#### Code
 
 ```javascript
 await seam.userIdentities.addAcsUser({
@@ -28,9 +29,10 @@ await seam.userIdentities.addAcsUser({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the desired `acs_user_id` and `user_identity_id`.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/add_acs_user" \
@@ -51,9 +53,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the desired `acs_user_id` and `user_identity_id`.
+
+#### Code
 
 ```python
 seam.user_identities.add_acs_user(
@@ -70,9 +73,10 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the desired `acs_user_id` and `user_identity_id`.
+
+#### Code
 
 ```ruby
 seam.user_identities.add_acs_user(
@@ -89,9 +93,10 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the desired `acs_user_id` and `user_identity_id`.
+
+#### Code
 
 ```php
 <?php
@@ -109,9 +114,10 @@ null
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the desired `acs_user_id` and `user_identity_id`.
+
+#### Code
 
 ```go
 package main
@@ -137,9 +143,10 @@ nil
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the desired `acs_user_id` and `user_identity_id`.
+
+#### Code
 
 ```seam_cli
 seam user-identities add-acs-user --user_identity_id "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a" --acs_user_id "4d223973-0874-4831-8630-bfcb29e6bce0"

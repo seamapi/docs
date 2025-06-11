@@ -9,9 +9,10 @@ Creates a new [user identity](https://docs.seam.co/latest/capability-guides/mobi
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify one or more of the unique `user_identity_key`, `email_address`, or `phone_number`. You can also specify the `full_name` of the user associated with the `user_identity`.
+
+#### Code
 
 ```javascript
 await seam.userIdentities.create({
@@ -39,9 +40,10 @@ await seam.userIdentities.create({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify one or more of the unique `user_identity_key`, `email_address`, or `phone_number`. You can also specify the `full_name` of the user associated with the `user_identity`.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/create" \
@@ -75,9 +77,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify one or more of the unique `user_identity_key`, `email_address`, or `phone_number`. You can also specify the `full_name` of the user associated with the `user_identity`.
+
+#### Code
 
 ```python
 seam.user_identities.create(
@@ -105,9 +108,10 @@ UserIdentity(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify one or more of the unique `user_identity_key`, `email_address`, or `phone_number`. You can also specify the `full_name` of the user associated with the `user_identity`.
+
+#### Code
 
 ```ruby
 seam.user_identities.create(
@@ -135,9 +139,10 @@ seam.user_identities.create(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify one or more of the unique `user_identity_key`, `email_address`, or `phone_number`. You can also specify the `full_name` of the user associated with the `user_identity`.
+
+#### Code
 
 ```php
 <?php
@@ -167,9 +172,10 @@ $seam->user_identities->create(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify one or more of the unique `user_identity_key`, `email_address`, or `phone_number`. You can also specify the `full_name` of the user associated with the `user_identity`.
+
+#### Code
 
 ```go
 package main
@@ -197,9 +203,10 @@ api.UserIdentity{UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", UserIde
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify one or more of the unique `user_identity_key`, `email_address`, or `phone_number`. You can also specify the `full_name` of the user associated with the `user_identity`.
+
+#### Code
 
 ```seam_cli
 seam user-identities create --user_identity_key "jean_doe" --email_address "jean@example.com" --phone_number "+15555550110" --full_name "Jean Doe"

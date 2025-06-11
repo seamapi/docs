@@ -9,9 +9,10 @@ Creates a new [credential](../../../capability-guides/access-systems/managing-cr
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the `acs_user_id` and `access_method` to create a new credential. You can also specify additional parameters, depending on the `access_method`.
+
+#### Code
 
 ```javascript
 await seam.acs.credentials.create({
@@ -46,9 +47,10 @@ await seam.acs.credentials.create({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the `acs_user_id` and `access_method` to create a new credential. You can also specify additional parameters, depending on the `access_method`.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/create" \
@@ -89,9 +91,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the `acs_user_id` and `access_method` to create a new credential. You can also specify additional parameters, depending on the `access_method`.
+
+#### Code
 
 ```python
 seam.acs.credentials.create(
@@ -126,9 +129,10 @@ AcsCredential(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the `acs_user_id` and `access_method` to create a new credential. You can also specify additional parameters, depending on the `access_method`.
+
+#### Code
 
 ```ruby
 seam.acs.credentials.create(
@@ -163,9 +167,10 @@ seam.acs.credentials.create(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the `acs_user_id` and `access_method` to create a new credential. You can also specify additional parameters, depending on the `access_method`.
+
+#### Code
 
 ```php
 <?php
@@ -202,9 +207,10 @@ $seam->acs->credentials->create(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the `acs_user_id` and `access_method` to create a new credential. You can also specify additional parameters, depending on the `access_method`.
+
+#### Code
 
 ```go
 package main
@@ -236,9 +242,10 @@ api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUs
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the `acs_user_id` and `access_method` to create a new credential. You can also specify additional parameters, depending on the `access_method`.
+
+#### Code
 
 ```seam_cli
 seam acs credentials create --acs_user_id "33333333-3333-3333-3333-333333333333" --access_method "mobile_key" --allowed_acs_entrance_ids ["55555555-5555-5555-5555-555555555555","55555555-5555-5555-5555-000000000000"] --credential_manager_acs_system_id "88888888-8888-8888-8888-888888888888" --is_multi_phone_sync_credential true --starts_at "2024-03-01T10:40:00Z" --ends_at "2024-03-04T10:40:00Z"

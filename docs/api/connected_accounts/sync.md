@@ -9,9 +9,10 @@ Request a [connected account](../../core-concepts/connected-accounts/README.md) 
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Request an on-demand sync of the devices and systems in a connected account.
+
+#### Code
 
 ```javascript
 await seam.connectedAccounts.sync({
@@ -27,9 +28,10 @@ await seam.connectedAccounts.sync({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Request an on-demand sync of the devices and systems in a connected account.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/sync" \
@@ -49,9 +51,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Request an on-demand sync of the devices and systems in a connected account.
+
+#### Code
 
 ```python
 seam.connected_accounts.sync(
@@ -67,9 +70,10 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Request an on-demand sync of the devices and systems in a connected account.
+
+#### Code
 
 ```ruby
 seam.connected_accounts.sync(connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c")
@@ -83,9 +87,10 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Request an on-demand sync of the devices and systems in a connected account.
+
+#### Code
 
 ```php
 <?php
@@ -102,9 +107,10 @@ null
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Request an on-demand sync of the devices and systems in a connected account.
+
+#### Code
 
 ```go
 package main
@@ -129,9 +135,10 @@ nil
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Request an on-demand sync of the devices and systems in a connected account.
+
+#### Code
 
 ```seam_cli
 seam connected-accounts sync --connected_account_id "23e4eb21-6e93-48c4-a077-bf503246d47c"

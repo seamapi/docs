@@ -9,9 +9,10 @@ Deletes a specified [user identity](https://docs.seam.co/latest/capability-guide
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```javascript
 await seam.userIdentities.delete({
@@ -27,9 +28,10 @@ await seam.userIdentities.delete({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/delete" \
@@ -49,9 +51,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```python
 seam.user_identities.delete(user_identity_id="44d48b20-0dbe-419d-91ca-ab8bceecd135")
@@ -65,9 +68,10 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```ruby
 seam.user_identities.delete(user_identity_id: "44d48b20-0dbe-419d-91ca-ab8bceecd135")
@@ -81,9 +85,10 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```php
 <?php
@@ -100,9 +105,10 @@ null
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```go
 package main
@@ -127,9 +133,10 @@ nil
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the desired `user_identity_id`.
+
+#### Code
 
 ```seam_cli
 seam user-identities delete --user_identity_id "44d48b20-0dbe-419d-91ca-ab8bceecd135"

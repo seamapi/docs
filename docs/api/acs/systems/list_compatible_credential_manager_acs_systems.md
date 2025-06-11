@@ -11,9 +11,10 @@ Specify the access system for which you want to retrieve all compatible credenti
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the `acs_system_id` for which you want to retrieve all compatible credential manager ACS systems.
+
+#### Code
 
 ```javascript
 await seam.acs.systems.listCompatibleCredentialManagerAcsSystems({
@@ -29,9 +30,10 @@ await seam.acs.systems.listCompatibleCredentialManagerAcsSystems({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the `acs_system_id` for which you want to retrieve all compatible credential manager ACS systems.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/systems/list_compatible_credential_manager_acs_systems" \
@@ -51,9 +53,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the `acs_system_id` for which you want to retrieve all compatible credential manager ACS systems.
+
+#### Code
 
 ```python
 seam.acs.systems.list_compatible_credential_manager_acs_systems(
@@ -69,9 +72,10 @@ seam.acs.systems.list_compatible_credential_manager_acs_systems(
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the `acs_system_id` for which you want to retrieve all compatible credential manager ACS systems.
+
+#### Code
 
 ```ruby
 seam.acs.systems.list_compatible_credential_manager_acs_systems(
@@ -87,9 +91,10 @@ seam.acs.systems.list_compatible_credential_manager_acs_systems(
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the `acs_system_id` for which you want to retrieve all compatible credential manager ACS systems.
+
+#### Code
 
 ```php
 <?php
@@ -107,9 +112,10 @@ $seam->acs->systems->list_compatible_credential_manager_acs_systems(
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the `acs_system_id` for which you want to retrieve all compatible credential manager ACS systems.
+
+#### Code
 
 ```go
 package main
@@ -135,9 +141,10 @@ func main() {
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the `acs_system_id` for which you want to retrieve all compatible credential manager ACS systems.
+
+#### Code
 
 ```seam_cli
 seam acs systems list-compatible-credential-manager-acs-systems --acs_system_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"

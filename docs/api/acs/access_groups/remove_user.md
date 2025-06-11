@@ -9,9 +9,10 @@ Removes a specified [access system user](https://docs.seam.co/latest/capability-
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the `acs_access_group_id` and `acs_user_id` to remove an ACS user from an access group.
+
+#### Code
 
 ```javascript
 await seam.acs.accessGroups.removeUser({
@@ -28,9 +29,10 @@ await seam.acs.accessGroups.removeUser({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the `acs_access_group_id` and `acs_user_id` to remove an ACS user from an access group.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/access_groups/remove_user" \
@@ -51,9 +53,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the `acs_access_group_id` and `acs_user_id` to remove an ACS user from an access group.
+
+#### Code
 
 ```python
 seam.acs.access_groups.remove_user(
@@ -70,9 +73,10 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the `acs_access_group_id` and `acs_user_id` to remove an ACS user from an access group.
+
+#### Code
 
 ```ruby
 seam.acs.access_groups.remove_user(
@@ -89,9 +93,10 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the `acs_access_group_id` and `acs_user_id` to remove an ACS user from an access group.
+
+#### Code
 
 ```php
 <?php
@@ -109,9 +114,10 @@ null
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the `acs_access_group_id` and `acs_user_id` to remove an ACS user from an access group.
+
+#### Code
 
 ```go
 package main
@@ -138,9 +144,10 @@ nil
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the `acs_access_group_id` and `acs_user_id` to remove an ACS user from an access group.
+
+#### Code
 
 ```seam_cli
 seam acs access-groups remove-user --acs_access_group_id "44444444-4444-4444-4444-444444444444" --acs_user_id "33333333-3333-3333-3333-333333333333"

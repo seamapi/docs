@@ -9,9 +9,10 @@ Revokes access to a specified [device](../../core-concepts/devices/README.md) fr
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Code
 
 Specify the desired `user_identity_id` and `device_id`.
+
+#### Code
 
 ```javascript
 await seam.userIdentities.revokeAccessToDevice({
@@ -28,9 +29,10 @@ await seam.userIdentities.revokeAccessToDevice({
 {% endtab %}
 
 {% tab title="cURL" %}
-#### Code
 
 Specify the desired `user_identity_id` and `device_id`.
+
+#### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/revoke_access_to_device" \
@@ -51,9 +53,10 @@ EOF
 {% endtab %}
 
 {% tab title="Python" %}
-#### Code
 
 Specify the desired `user_identity_id` and `device_id`.
+
+#### Code
 
 ```python
 seam.user_identities.revoke_access_to_device(
@@ -70,9 +73,10 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Code
 
 Specify the desired `user_identity_id` and `device_id`.
+
+#### Code
 
 ```ruby
 seam.user_identities.revoke_access_to_device(
@@ -89,9 +93,10 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Code
 
 Specify the desired `user_identity_id` and `device_id`.
+
+#### Code
 
 ```php
 <?php
@@ -109,9 +114,10 @@ null
 {% endtab %}
 
 {% tab title="Go" %}
-#### Code
 
 Specify the desired `user_identity_id` and `device_id`.
+
+#### Code
 
 ```go
 package main
@@ -137,9 +143,10 @@ nil
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Code
 
 Specify the desired `user_identity_id` and `device_id`.
+
+#### Code
 
 ```seam_cli
 seam user-identities revoke-access-to-device --user_identity_id "f3a328b4-dd04-4370-9000-d52b7a01b0bf" --device_id "054765c8-a2fc-4599-b486-14c19f462c45"
