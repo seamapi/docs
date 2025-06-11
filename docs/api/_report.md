@@ -4,8 +4,6 @@
 
 ### Routes
 
-- `/access_grants`
-- `/access_methods`
 - `/action_attempts`
 - `/client_sessions`
 - `/connect_webviews`
@@ -17,7 +15,6 @@
 - `/noise_sensors`
 - `/noise_sensors/noise_thresholds`
 - `/noise_sensors/simulate`
-- `/spaces`
 - `/thermostats/daily_programs`
 - `/webhooks`
 - `/workspaces`
