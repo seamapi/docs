@@ -94,6 +94,24 @@
 /access_codes/simulate:
   title: Access Code Simulations
 
+/access_grants:
+  title: Access Grants
+  alpha: '**Early Access Preview.** The access grants API is available for early access. Check it out and send us your feedback at [support@seam.co](mailto:support@seam.co).'
+  resources:
+    - access_grant
+
+/access_methods:
+  title: Access Methods
+  alpha: '**Early Access Preview.** The access methods API is available for early access. Check it out and send us your feedback at [support@seam.co](mailto:support@seam.co).'
+  resources:
+    - access_method
+
+/spaces:
+  title: Spaces
+  alpha: '**Early Access Preview.** The spaces API is available for early access. Check it out and send us your feedback at [support@seam.co](mailto:support@seam.co).'
+  resources:
+    - space
+
 /connected_accounts:
   title: Connected Accounts
   resources:
