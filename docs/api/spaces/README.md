@@ -1,6 +1,6 @@
 # Spaces
 {% hint style="info" %}
-The Spaces API is available for early access. We value your feedback
+**Early Access Preview.** The spaces API is available for early access. Check it out and send us your feedback at [support@seam.co](mailto:support@seam.co).
 {% endhint %}
 
 ## The space Object

@@ -1,6 +1,6 @@
 # Access Grants
 {% hint style="info" %}
-The Access Grants API is available for early access. We value your feedback
+**Early Access Preview.** The access grants API is available for early access. Check it out and send us your feedback at [support@seam.co](mailto:support@seam.co).
 {% endhint %}
 
 ## The access_grant Object

@@ -1,6 +1,6 @@
 # Access Methods
 {% hint style="info" %}
-The Access Methods API is available for early access. We value your feedback
+**Early Access Preview.** The access methods API is available for early access. Check it out and send us your feedback at [support@seam.co](mailto:support@seam.co).
 {% endhint %}
 
 ## The access_method Object
