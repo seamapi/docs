@@ -1,4 +1,7 @@
 # List Access Grants
+{% hint style="info" %}
+The Access Grants API is available for early access. We value your feedback
+{% endhint %}
 
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)

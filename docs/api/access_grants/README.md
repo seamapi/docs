@@ -1,4 +1,7 @@
 # Access Grants
+{% hint style="info" %}
+The Access Grants API is available for early access. We value your feedback
+{% endhint %}
 
 ## The access_grant Object
 

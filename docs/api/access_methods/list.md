@@ -1,4 +1,7 @@
 # List Access Methods
+{% hint style="info" %}
+The Access Methods API is available for early access. We value your feedback
+{% endhint %}
 
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)

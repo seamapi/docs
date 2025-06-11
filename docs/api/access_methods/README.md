@@ -1,4 +1,7 @@
 # Access Methods
+{% hint style="info" %}
+The Access Methods API is available for early access. We value your feedback
+{% endhint %}
 
 ## The access_method Object
 

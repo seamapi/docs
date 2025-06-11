@@ -1,4 +1,7 @@
 # Get a Space
+{% hint style="info" %}
+The Spaces API is available for early access. We value your feedback
+{% endhint %}
 
 - [Request Parameters](./#request-parameters)
 - [Response](./#response)
