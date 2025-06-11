@@ -96,12 +96,18 @@
 
 /access_grants:
   title: Access Grants
+  resources:
+    - access_grant
 
 /access_methods:
   title: Access Methods
+  resources:
+    - access_method
 
 /spaces:
   title: Spaces
+  resources:
+    - space
 
 /connected_accounts:
   title: Connected Accounts
