@@ -450,4 +450,3 @@
   * [Get started with TTLock Locks](device-guides/get-started-with-ttlock-devices.md)
 * [Wyze Locks](device-guides/wyze-locks.md)
   * [Get started with Wyze Locks](device-guides/get-started-with-wyze-locks.md)
-* [Yale Locks](device-guides/yale-locks.md)
