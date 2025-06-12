@@ -463,4 +463,3 @@
   * [Creating the Health Endpoint](for-device-manufacturers/creating-a-seam-compatible-door-locks-api/creating-the-health-endpoint.md)
 * [Creating a Seam-Compatible Door Locks API](for-device-manufacturers/creating-a-seam-compatible-door-locks-api/README.md)
   * [Creating OAuth Endpoints](for-device-manufacturers/creating-a-seam-compatible-door-locks-api/creating-oauth-endpoints.md)
-  * [Creating Door Lock CRUD Endpoints](for-device-manufacturers/creating-a-seam-compatible-door-locks-api/creating-door-lock-crud-endpoints.md)
