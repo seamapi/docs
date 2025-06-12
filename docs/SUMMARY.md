@@ -441,4 +441,3 @@
   * [Get started with Schlage Locks](device-guides/get-started-with-schlage-locks.md)
 * [Sensi Thermostats](device-and-system-integration-guides/sensi-thermostats/README.md)
   * [Get Started with Sensi Thermostats](device-and-system-integration-guides/sensi-thermostats/get-started-with-sensi-thermostats.md)
-* [SmartThings Hubs + Devices](device-and-system-integration-guides/smartthings-hubs-+-devices/README.md)
