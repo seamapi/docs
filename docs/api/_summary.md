@@ -11,7 +11,7 @@
   * [Update Multiple Linked Access Codes](api/access_codes/update_multiple.md)
   * [Access Code Simulations](api/access_codes/simulate/README.md)
     * [Simulate Creating an Unmanaged Access Code](api/access_codes/simulate/create_unmanaged_access_code.md)
-  * [Unmanaged Access Code](api/access_codes/unmanaged/README.md)
+  * [Unmanaged Access Codes](api/access_codes/unmanaged/README.md)
     * [Convert an Unmanaged Access Code](api/access_codes/unmanaged/convert_to_managed.md)
     * [Delete an Unmanaged Access Code](api/access_codes/unmanaged/delete.md)
     * [Get an Unmanaged Access Code](api/access_codes/unmanaged/get.md)
