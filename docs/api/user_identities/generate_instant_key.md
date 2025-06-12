@@ -10,7 +10,7 @@ Generates a new [instant key](https://docs.seam.co/latest/capability-guides/mobi
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the user_identity_id to receive the instant key.
+Specify the `user_identity_id` to receive the instant key.
 
 #### Code
 
@@ -37,7 +37,7 @@ await seam.userIdentities.generateInstantKey({
 
 {% tab title="cURL" %}
 
-Specify the user_identity_id to receive the instant key.
+Specify the `user_identity_id` to receive the instant key.
 
 #### Code
 
@@ -70,7 +70,7 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the user_identity_id to receive the instant key.
+Specify the `user_identity_id` to receive the instant key.
 
 #### Code
 
@@ -97,7 +97,7 @@ InstantKey(
 
 {% tab title="Ruby" %}
 
-Specify the user_identity_id to receive the instant key.
+Specify the `user_identity_id` to receive the instant key.
 
 #### Code
 
@@ -122,7 +122,7 @@ seam.user_identities.generate_instant_key(user_identity_id: "5c945ab5-c75e-4bcb-
 
 {% tab title="PHP" %}
 
-Specify the user_identity_id to receive the instant key.
+Specify the `user_identity_id` to receive the instant key.
 
 #### Code
 
@@ -151,7 +151,7 @@ $seam->user_identities->generate_instant_key(
 
 {% tab title="Go" %}
 
-Specify the user_identity_id to receive the instant key.
+Specify the `user_identity_id` to receive the instant key.
 
 #### Code
 
@@ -179,7 +179,7 @@ api.InstantKey{InstantKeyId: "33fb0384-b2b3-445e-b780-3fad784e9baa", InstantKeyU
 
 {% tab title="Seam CLI" %}
 
-Specify the user_identity_id to receive the instant key.
+Specify the `user_identity_id` to receive the instant key.
 
 #### Code
 
