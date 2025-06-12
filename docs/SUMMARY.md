@@ -452,4 +452,3 @@
   * [Get started with Wyze Locks](device-guides/get-started-with-wyze-locks.md)
 * [Yale Locks](device-guides/yale-locks.md)
   * [Get started with Yale Locks](device-guides/get-started-with-yale-locks.md)
-* [Get started with Smart Locks](device-guides/get-started-with-smartlocks-api.md)
