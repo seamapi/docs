@@ -17,7 +17,7 @@ export const summary = async (
   const k = 'SUMMARY.md'
   const summary = await readSummary()
   const contents = getUpdatedSummary(summary, apiSummary)
-  files[k] = { contents: Buffer.from(contents) }
+  files[k] = { contents: Buffer.from(`${contents}\n`) }
   delete files['api/_summary.md']
 }
 
