@@ -2,7 +2,7 @@
 description: Check out this section for early access to new APIs!
 ---
 
-# Early Access APIs
+# 🚀 Early Access APIs 🚀
 
 This section contains early access previews of new Seam APIs.
 
