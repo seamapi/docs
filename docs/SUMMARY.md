@@ -447,4 +447,3 @@
 * [Tedee Locks](device-and-system-integration-guides/tedee-locks/README.md)
   * [Get Started with Tedee Locks](device-and-system-integration-guides/tedee-locks/get-started-with-tedee-locks.md)
 * [TTLock Locks](device-guides/ttlock-locks.md)
-  * [Get started with TTLock Locks](device-guides/get-started-with-ttlock-devices.md)
