@@ -462,4 +462,3 @@
   * [Creating Access Code CRUD Endpoints](for-device-manufacturers/creating-a-seam-compatible-intercom-api/creating-access-code-crud-endpoints.md)
   * [Creating the Health Endpoint](for-device-manufacturers/creating-a-seam-compatible-door-locks-api/creating-the-health-endpoint.md)
 * [Creating a Seam-Compatible Door Locks API](for-device-manufacturers/creating-a-seam-compatible-door-locks-api/README.md)
-  * [Creating OAuth Endpoints](for-device-manufacturers/creating-a-seam-compatible-door-locks-api/creating-oauth-endpoints.md)
