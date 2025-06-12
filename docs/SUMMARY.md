@@ -438,4 +438,3 @@
   * [Programming Salto Space Mobile Credentials](device-and-system-integration-guides/salto-proaccess-space-access-system/programming-salto-space-mobile-credentials.md)
 * [Schlage Locks](device-and-system-integration-guides/schlage-locks/README.md)
   * [Schlage Locks Setup Instructions](device-and-system-integration-guides/schlage-locks/schlage-locks-setup-instructions.md)
-  * [Get started with Schlage Locks](device-guides/get-started-with-schlage-locks.md)
