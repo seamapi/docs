@@ -455,5 +455,3 @@
 * [Get started with Smart Locks](device-guides/get-started-with-smartlocks-api.md)
 
 ## Device Manufacturer Guidance
-
-* [Creating a Seam-Compatible Intercom API](for-device-manufacturers/creating-a-seam-compatible-intercom-api/README.md)
