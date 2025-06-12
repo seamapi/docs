@@ -266,3 +266,20 @@
       enrollment_automation_id: '05505650-aa57-49ab-8f19-429738758895'
   response:
     body: null
+
+- title: Generate an Instant Key
+  description: Specify the user_identity_id to receive the instant key.
+  request:
+    path: /user_identities/generate_instant_key
+    parameters:
+      user_identity_id: '5c945ab5-c75e-4bcb-8e5f-9410061c401f'
+  response:
+    body:
+      instant_key:
+        instant_key_id: '33fb0384-b2b3-445e-b780-3fad784e9baa'
+        instant_key_url: 'https://ik.seam.co/EXAMPLE'
+        user_identity_id: '48500a8e-5e7e-4bde-b7e5-0be97cae5d7a'
+        client_session_id: '7cc9b16b-d139-45e2-8042-5cef6ee101ea'
+        workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be'
+        created_at: '2024-01-09T05:45:33.068Z'
+        expires_at: '2024-02-09T05:45:33.068Z'
