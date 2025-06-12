@@ -87,7 +87,7 @@
     - access_code
 
 /access_codes/unmanaged:
-  title: Unmanaged Access Code
+  title: Unmanaged Access Codes
   resources:
     - unmanaged_access_code
 
