@@ -132,6 +132,7 @@
 * [Installation](api-overview/installation.md)
 * [Authentication](api-overview/authentication.md)
 * [Pagination](api-overview/pagination.md)
+<!-- begin api -->
 * [Access Codes](api/access_codes/README.md)
   * [Create an Access Code](api/access_codes/create.md)
   * [Create Multiple Linked Access Codes](api/access_codes/create_multiple.md)
@@ -307,6 +308,7 @@
   * [Remove Devices from a Space](api/spaces/remove_devices.md)
   * [Remove Entrances from a Space](api/spaces/remove_acs_entrances.md)
   * [Update a Space](api/spaces/update.md)
+<!-- end api -->
 
 ## 🛠️ Developer Tools
 
