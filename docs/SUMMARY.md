@@ -288,7 +288,7 @@
 * [Workspaces](api-clients/workspaces/README.md)
   * [Get Workspace](api-clients/workspaces/get.md)
   * [Reset Workspace](api-clients/workspaces/reset_sandbox.md)
-* [Overview](api-overview/overview.md)
+* [Early Access APIs](api-overview/early-access-apis.md)
   * [Access Grants](api/access_grants/README.md)
     * [Create an Access Grant](api/access_grants/create.md)
     * [Delete an Access Grant](api/access_grants/delete.md)
