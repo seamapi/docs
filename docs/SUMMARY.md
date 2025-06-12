@@ -446,4 +446,3 @@
   * [Get Started with SmartThings Hubs + Thermostats](device-and-system-integration-guides/smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-thermostats.md)
 * [Tedee Locks](device-and-system-integration-guides/tedee-locks/README.md)
   * [Get Started with Tedee Locks](device-and-system-integration-guides/tedee-locks/get-started-with-tedee-locks.md)
-* [TTLock Locks](device-guides/ttlock-locks.md)
