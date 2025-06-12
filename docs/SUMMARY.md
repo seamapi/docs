@@ -431,4 +431,3 @@
   * [Programming Salto KS Mobile Credentials](device-and-system-integration-guides/salto-ks-access-control-system/programming-salto-ks-mobile-credentials.md)
   * [Special Requirements for Android Mobile Access SDK Development](device-and-system-integration-guides/salto-ks-access-control-system/special-requirements-for-android-mobile-access-sdk-development.md)
 * [Salto KS Locks](device-guides/salto-locks.md)
-  * [Get started with Salto KS Locks](device-guides/get-started-with-salto-locks.md)
