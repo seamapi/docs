@@ -433,4 +433,3 @@
 * [Salto KS Locks](device-guides/salto-locks.md)
   * [Get started with Salto KS Locks](device-guides/get-started-with-salto-locks.md)
 * [Salto ProAccess Space Access System](device-and-system-integration-guides/salto-proaccess-space-access-system/README.md)
-  * [Salto Space Setup Instructions](device-and-system-integration-guides/salto-proaccess-space-access-system/salto-space-setup-instructions.md)
