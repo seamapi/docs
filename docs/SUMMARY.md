@@ -439,4 +439,3 @@
 * [Schlage Locks](device-and-system-integration-guides/schlage-locks/README.md)
   * [Schlage Locks Setup Instructions](device-and-system-integration-guides/schlage-locks/schlage-locks-setup-instructions.md)
   * [Get started with Schlage Locks](device-guides/get-started-with-schlage-locks.md)
-* [Sensi Thermostats](device-and-system-integration-guides/sensi-thermostats/README.md)
