@@ -458,4 +458,3 @@
 
 * [Creating a Seam-Compatible Intercom API](for-device-manufacturers/creating-a-seam-compatible-intercom-api/README.md)
   * [Creating OAuth Endpoints](for-device-manufacturers/creating-a-seam-compatible-intercom-api/creating-oauth-endpoints.md)
-  * [Creating Intercom CRUD Endpoints](for-device-manufacturers/creating-a-seam-compatible-intercom-api/creating-intercom-crud-endpoints.md)
