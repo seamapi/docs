@@ -542,16 +542,8 @@ These items are deprecated.
 
 - `/access_codes/create`
     - `action_attempt`
-- `/access_codes/list`
-    - `pagination`
 - `/access_codes/pull_backup_access_code`
     - `backup_access_code`
-- `/acs/users/list`
-    - `pagination`
-- `/connected_accounts/list`
-    - `pagination`
-- `/devices/list`
-    - `pagination`
 - `/events/get`
     - `message`
 - `/locks/get`
@@ -566,6 +558,25 @@ These items are deprecated.
     - `thermostats`
 - `/user_identities/list_accessible_devices`
     - `accessible_devices`
+### Missing resources
+
+- `/bridges/get`: `bridge`
+- `/bridges/list`: `bridges`
+- `/networks/get`: `network`
+- `/networks/list`: `networks`
+- `/seam/bridge/v1/bridge_client_sessions/create`: `bridge_client_session`
+- `/seam/bridge/v1/bridge_client_sessions/get`: `bridge_client_session`
+- `/seam/bridge/v1/bridge_client_sessions/refresh_telemetry_token`: `bridge_client_session`
+- `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`: `bridge_client_session`
+- `/seam/bridge/v1/bridge_connected_systems/list`: `bridge_connected_systems`
+- `/seam/partner/v1/building_blocks/spaces/auto_map`: `spaces`
+- `/seam/partner/v1/resources/list`: `partner_resources`
+- `/thermostats/daily_programs/create`: `thermostat_daily_program`
+- `/unstable_locations/create`: `location`
+- `/unstable_locations/get`: `location`
+- `/unstable_locations/list`: `locations`
+- `/unstable_locations/update`: `location`
+- `/user_identities/enrollment_automations/launch`: `enrollment_automation`
 
 ### Endpoints without code samples
 

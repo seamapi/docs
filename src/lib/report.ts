@@ -22,6 +22,7 @@ interface Report {
   draft: ReportSection
   deprecated: ReportSection
   extraResponseKeys: MissingResponseKeyReport[]
+  missingResources: MissingResourcesReport[]
   endpointsWithoutCodeSamples: string[]
   noTitle: Pick<ReportSection, 'namespaces' | 'routes' | 'endpoints'>
 }
@@ -33,6 +34,11 @@ interface ReportSection {
   namespaces: ReportItem[]
   endpoints: ReportItem[]
   parameters: ParameterReportItem[]
+}
+
+interface MissingResourcesReport {
+  path: string
+  responseKey: string
 }
 
 interface MissingResponseKeyReport {
@@ -82,6 +88,7 @@ function generateReport(metadata: Metadata): Report {
     noDescription: { ...createEmptyReportSection(), resources: [] },
     draft: { ...createEmptyReportSection(), resourceProperties: [] },
     deprecated: createEmptyReportSection(),
+    missingResources: [],
     extraResponseKeys: [],
     endpointsWithoutCodeSamples: [],
     noTitle: {
@@ -298,7 +305,20 @@ function processEndpoint(endpoint: Endpoint, report: Report): void {
 
   processResponseKeys(endpoint, report)
 
+  processResponseType(endpoint, report)
+
   processParameters(endpoint.path, endpoint.request.parameters, report)
+}
+
+function processResponseType(endpoint: Endpoint, report: Report): void {
+  if (endpoint.response.responseType === 'void') return
+
+  if (endpoint.response.resourceType === 'unknown') {
+    report.missingResources.push({
+      path: endpoint.path,
+      responseKey: endpoint.response.responseKey,
+    })
+  }
 }
 
 function processResponseKeys(endpoint: Endpoint, report: Report): void {
@@ -309,7 +329,7 @@ function processResponseKeys(endpoint: Endpoint, report: Report): void {
 
   const openapiResponsePropKeys = Object.keys(
     openapiResponseSchemaProps,
-  ).filter((key) => key !== 'ok')
+  ).filter((key) => !['ok', 'pagination'].includes(key))
   if (openapiResponsePropKeys.length <= 1) return
 
   const endpointResponseKey = endpoint.response.responseKey
