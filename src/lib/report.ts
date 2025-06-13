@@ -309,7 +309,7 @@ function processResponseKeys(endpoint: Endpoint, report: Report): void {
 
   const openapiResponsePropKeys = Object.keys(
     openapiResponseSchemaProps,
-  ).filter((key) => key !== 'ok')
+  ).filter((key) => !['ok', 'pagination'].includes(key))
   if (openapiResponsePropKeys.length <= 1) return
 
   const endpointResponseKey = endpoint.response.responseKey
