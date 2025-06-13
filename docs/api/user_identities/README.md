@@ -40,6 +40,26 @@ Unique email address for the user identity.
 
 ---
 
+**`errors`** *List* *of Objects*
+
+Array of errors associated with the user identity. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.
+
+
+
+<details>
+  <summary>Child Object Properties</summary>
+
+  <strong><code>created_at</code></strong> <i>Datetime</i>
+  
+    Date and time at which Seam created the error.
+
+  <strong><code>message</code></strong> <i>String</i>
+  
+    Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+</details>
+
+---
+
 **`full_name`** *String*
 
 
@@ -75,12 +95,66 @@ Unique key for the user identity.
 
 ---
 
+[**`warnings`**](./#warnings) *List* *of Objects*
+
+Array of warnings associated with the user identity. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.
+
+
+
+
+The specific structure of each object in this list depends on the value of its `warning_code` field.
+
+Variants:
+<details>
+<summary><code>being_deleted</code></summary>
+
+Indicates that the user identity is currently being deleted.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>being_deleted</code>
+  
+  
+</details>
+
+---
+
 **`workspace_id`** *UUID*
 
 ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the user identity.
 
 
 
+
+---
+
+
+## Warnings
+
+**`being_deleted`**
+
+Indicates that the user identity is currently being deleted.
 
 ---
 
@@ -99,7 +173,7 @@ Creates a new [user identity](https://docs.seam.co/latest/capability-guides/mobi
 
 [**`/user_identities/delete`**](./delete.md)
 
-Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). To delete a user identity, you must first delete any [credentials](https://docs.seam.co/latest/api/access-control-systems/credentials) and [enrollment automations](https://docs.seam.co/latest/api/user_identities/enrollment_automations/delete) associated with the user identity. You must also deactivate any associated phones.
+Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/latest/api/access-control-systems/credentials), [acs users](https://docs.seam.co/latest/api/access-control-systems/users) and [client sessions](https://docs.seam.co/latest/api/client_sessions).
 
 
 [**`/user_identities/generate_instant_key`**](./generate_instant_key.md)

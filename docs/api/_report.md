@@ -48,8 +48,12 @@ These items are intentionally undocumented.
 
 ### Resources
 
+- `bridge_client_session`: Seam Bridge Client only.
+- `bridge_connected_systems`: Seam Bridge Client only.
 - `instant_key`: Unreleased.
+- `location`: Will be removed.
 - `magic_link`: Unreleased.
+- `partner_resource`: Unreleased.
 - `phone_session`: Seam Mobile SDK only.
 
 ### Resource properties
@@ -186,10 +190,14 @@ Items that are intentionally undocumented are not included in this section.
 - `access_method`
 - `acs_credential_pool`
 - `acs_credential_provisioning_automation`
+- `bridge_client_session`
+- `bridge_connected_systems`
 - `device_provider`
 - `event`
 - `instant_key`
+- `location`
 - `magic_link`
+- `partner_resource`
 - `phone_session`
 - `space`
 - `unmanaged_acs_access_group`
@@ -225,6 +233,28 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_user.email`
 - `acs_user.hid_acs_system_id`
 - `acs_user.is_managed`
+- `bridge_client_session.bridge_client_machine_identifier_key`
+- `bridge_client_session.bridge_client_name`
+- `bridge_client_session.bridge_client_session_id`
+- `bridge_client_session.bridge_client_session_token`
+- `bridge_client_session.bridge_client_time_zone`
+- `bridge_client_session.created_at`
+- `bridge_client_session.errors`
+- `bridge_client_session.pairing_code`
+- `bridge_client_session.pairing_code_expires_at`
+- `bridge_client_session.tailscale_auth_key`
+- `bridge_client_session.tailscale_hostname`
+- `bridge_client_session.telemetry_token`
+- `bridge_client_session.telemetry_token_expires_at`
+- `bridge_client_session.telemetry_url`
+- `bridge_connected_systems.acs_system_display_name`
+- `bridge_connected_systems.acs_system_id`
+- `bridge_connected_systems.bridge_created_at`
+- `bridge_connected_systems.bridge_id`
+- `bridge_connected_systems.connected_account_created_at`
+- `bridge_connected_systems.connected_account_id`
+- `bridge_connected_systems.workspace_display_name`
+- `bridge_connected_systems.workspace_id`
 - `client_session.client_session_id`
 - `client_session.connect_webview_ids`
 - `client_session.connected_account_ids`
@@ -279,6 +309,18 @@ Items that are intentionally undocumented are not included in this section.
 - `magic_link.expires_at`
 - `magic_link.url`
 - `magic_link.workspace_id`
+- `partner_resource.custom_metadata`
+- `partner_resource.customer_key`
+- `partner_resource.description`
+- `partner_resource.email_address`
+- `partner_resource.ends_at`
+- `partner_resource.location_keys`
+- `partner_resource.name`
+- `partner_resource.partner_resource_key`
+- `partner_resource.partner_resource_type`
+- `partner_resource.phone_number`
+- `partner_resource.starts_at`
+- `partner_resource.user_identity_key`
 - `phone_session.provider_sessions`
 - `unmanaged_acs_access_group.access_group_type`
 - `unmanaged_acs_access_group.access_group_type_display_name`
@@ -564,19 +606,7 @@ These items are deprecated.
 - `/bridges/list`: `bridges`
 - `/networks/get`: `network`
 - `/networks/list`: `networks`
-- `/seam/bridge/v1/bridge_client_sessions/create`: `bridge_client_session`
-- `/seam/bridge/v1/bridge_client_sessions/get`: `bridge_client_session`
-- `/seam/bridge/v1/bridge_client_sessions/refresh_telemetry_token`: `bridge_client_session`
-- `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`: `bridge_client_session`
-- `/seam/bridge/v1/bridge_connected_systems/list`: `bridge_connected_systems`
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: `spaces`
-- `/seam/partner/v1/resources/list`: `partner_resources`
-- `/thermostats/daily_programs/create`: `thermostat_daily_program`
-- `/unstable_locations/create`: `location`
-- `/unstable_locations/get`: `location`
-- `/unstable_locations/list`: `locations`
-- `/unstable_locations/update`: `location`
-- `/user_identities/enrollment_automations/launch`: `enrollment_automation`
 
 ### Endpoints without code samples
 
