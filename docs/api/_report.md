@@ -706,7 +706,6 @@ These items are deprecated.
 - `/unstable_partner/building_blocks/manage_devices`
 - `/unstable_partner/building_blocks/organize_spaces`
 - `/unstable_partner/resources/push`
-- `/user_identities/generate_instant_key`
 - `/user_identities/update`
 - `/webhooks/create`
 - `/webhooks/delete`
