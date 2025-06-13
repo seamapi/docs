@@ -274,6 +274,13 @@ These items are deprecated.
 - `{{path}}`: `{{responseKey}}`
 {{/each}}
 {{/if}}
+{{#if unusedResources.length }}
+### Unused Resources
+
+{{#each unusedResources}}
+- `{{name}}`
+{{/each}}
+{{/if}}
 {{#if endpointsWithoutCodeSamples.length }}
 
 ### Endpoints without code samples

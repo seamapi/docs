@@ -21,6 +21,7 @@ interface Report {
   noDescription: ReportSection
   draft: ReportSection
   deprecated: ReportSection
+  unusedResources: UnusedResourcesReport[]
   extraResponseKeys: MissingResponseKeyReport[]
   missingResources: MissingResourcesReport[]
   endpointsWithoutCodeSamples: string[]
@@ -39,6 +40,10 @@ interface ReportSection {
 interface MissingResourcesReport {
   path: string
   responseKey: string
+}
+
+interface UnusedResourcesReport {
+  name: string
 }
 
 interface MissingResponseKeyReport {
@@ -90,6 +95,7 @@ function generateReport(metadata: Metadata): Report {
     deprecated: createEmptyReportSection(),
     missingResources: [],
     extraResponseKeys: [],
+    unusedResources: [],
     endpointsWithoutCodeSamples: [],
     noTitle: {
       namespaces: [],
@@ -102,11 +108,6 @@ function generateReport(metadata: Metadata): Report {
     'pathMetadata' in metadata
       ? PathMetadataSchema.parse(metadata.pathMetadata)
       : {}
-
-  const resources = blueprint.resources ?? []
-  for (const resource of resources) {
-    processResource(resource, report)
-  }
 
   const routes = blueprint.routes ?? []
   for (const route of routes) {
@@ -124,6 +125,11 @@ function generateReport(metadata: Metadata): Report {
     processNamespace(namespace, report)
   }
 
+  const resources = blueprint.resources ?? []
+  for (const resource of resources) {
+    processResource(resource, routes, report)
+  }
+
   return report
 }
 
@@ -138,7 +144,11 @@ function createEmptyReportSection(): ReportSection {
   }
 }
 
-function processResource(resource: Resource, report: Report): void {
+function processResource(
+  resource: Resource,
+  routes: Route[],
+  report: Report,
+): void {
   const { resourceType: name } = resource
   if (resource.description == null || resource.description.trim() === '') {
     report.noDescription.resources.push({ name })
@@ -167,6 +177,22 @@ function processResource(resource: Resource, report: Report): void {
 
   for (const property of resource.properties) {
     processProperty(name, property, report)
+  }
+
+  let isResourceUsed = false
+  for (const route of routes) {
+    for (const endpoint of route.endpoints) {
+      if (endpoint.response.responseType === 'void') continue
+      if (endpoint.response.resourceType === name) {
+        isResourceUsed = true
+      }
+    }
+  }
+
+  if (!isResourceUsed) {
+    report.unusedResources.push({
+      name,
+    })
   }
 }
 
