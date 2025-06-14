@@ -3,6 +3,7 @@
 ## The phone Object
 
 - [Properties](./#properties)
+- [Legacy Properties](./#legacy-properties)
 - [Errors](./#errors)
 - [Warnings](./#warnings)
 - [Events](./#events)
@@ -109,6 +110,96 @@ Warnings associated with the phone.
 **`workspace_id`** *UUID*
 
 ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the phone.
+
+
+
+
+---
+
+
+---
+## Legacy Properties
+
+**`assa_abloy_credential_service_metadata`** *Object*
+
+ASSA ABLOY Credential Service metadata for the phone.
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>endpoints</code></strong> <i>List</i> <i>of Objects</i>
+  
+    Endpoints associated with the phone.
+
+- <strong><code>endpoint_id</code></strong> <i>String</i>
+
+  ID of the associated endpoint.
+
+
+- <strong><code>is_active</code></strong> <i>Boolean</i>
+
+  Indicated whether the endpoint is active.
+
+
+  - <strong><code>has_active_endpoint</code></strong> <i>Boolean</i>
+  
+    Indicates whether the credential service has active endpoints associated with the phone.
+
+</details>
+
+---
+
+**`assa_abloy_credential_service_metadata.endpoints`** *List* *of Objects*
+
+Endpoints associated with the phone.
+
+
+
+<details>
+  <summary>Child Object Properties</summary>
+
+  <strong><code>endpoint_id</code></strong> <i>String</i>
+  
+    ID of the associated endpoint.
+
+  <strong><code>is_active</code></strong> <i>Boolean</i>
+  
+    Indicated whether the endpoint is active.
+</details>
+
+---
+
+**`assa_abloy_credential_service_metadata.has_active_endpoint`** *Boolean*
+
+Indicates whether the credential service has active endpoints associated with the phone.
+
+
+
+
+---
+
+**`salto_space_credential_service_metadata`** *Object*
+
+Salto Space credential service metadata for the phone.
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>has_active_phone</code></strong> <i>Boolean</i>
+  
+    Indicates whether the credential service has an active associated phone.
+
+</details>
+
+---
+
+**`salto_space_credential_service_metadata.has_active_phone`** *Boolean*
+
+Indicates whether the credential service has an active associated phone.
 
 
 
