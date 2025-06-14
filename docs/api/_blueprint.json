@@ -7345,6 +7345,34 @@
             "preferredMethod": "POST",
             "parameters": [
               {
+                "name": "access_grant_id",
+                "description": "ID of the access grant for which you want to retrieve all entrances.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
+                "name": "access_method_id",
+                "description": "ID of the access method for which you want to retrieve all entrances.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
                 "name": "acs_credential_id",
                 "description": "ID of the credential for which you want to retrieve all entrances.",
                 "isRequired": false,
@@ -22638,7 +22666,7 @@
           "response": {
             "responseType": "resource",
             "responseKey": "bridge_client_session",
-            "resourceType": "unknown",
+            "resourceType": "bridge_client_session",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -22713,7 +22741,7 @@
           "response": {
             "responseType": "resource",
             "responseKey": "bridge_client_session",
-            "resourceType": "unknown",
+            "resourceType": "bridge_client_session",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -22746,7 +22774,7 @@
           "response": {
             "responseType": "resource",
             "responseKey": "bridge_client_session",
-            "resourceType": "unknown",
+            "resourceType": "bridge_client_session",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -22778,7 +22806,7 @@
           "response": {
             "responseType": "resource",
             "responseKey": "bridge_client_session",
-            "resourceType": "unknown",
+            "resourceType": "bridge_client_session",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -22879,7 +22907,7 @@
           "response": {
             "responseType": "resource_list",
             "responseKey": "bridge_connected_systems",
-            "resourceType": "unknown",
+            "resourceType": "bridge_connected_systems",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -23238,7 +23266,7 @@
           "response": {
             "responseType": "resource_list",
             "responseKey": "partner_resources",
-            "resourceType": "unknown",
+            "resourceType": "partner_resource",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -27483,7 +27511,7 @@
           "response": {
             "responseType": "resource",
             "responseKey": "thermostat_daily_program",
-            "resourceType": "unknown",
+            "resourceType": "thermostat_daily_program",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -29759,7 +29787,7 @@
           "response": {
             "responseType": "resource",
             "responseKey": "location",
-            "resourceType": "unknown",
+            "resourceType": "location",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -29944,7 +29972,7 @@
           "response": {
             "responseType": "resource",
             "responseKey": "location",
-            "resourceType": "unknown",
+            "resourceType": "location",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -29994,7 +30022,7 @@
           "response": {
             "responseType": "resource_list",
             "responseKey": "locations",
-            "resourceType": "unknown",
+            "resourceType": "location",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -30154,7 +30182,7 @@
           "response": {
             "responseType": "resource",
             "responseKey": "location",
-            "resourceType": "unknown",
+            "resourceType": "location",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -31264,7 +31292,7 @@
           "name": "delete",
           "path": "/user_identities/delete",
           "parentPath": "/user_identities",
-          "description": "Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). To delete a user identity, you must first delete any [credentials](https://docs.seam.co/latest/api/access-control-systems/credentials) and [enrollment automations](https://docs.seam.co/latest/api/user_identities/enrollment_automations/delete) associated with the user identity. You must also deactivate any associated phones.",
+          "description": "Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/latest/api/access-control-systems/credentials), [acs users](https://docs.seam.co/latest/api/access-control-systems/users) and [client sessions](https://docs.seam.co/latest/api/client_sessions).",
           "isDeprecated": false,
           "deprecationMessage": "",
           "isUndocumented": false,
@@ -33245,7 +33273,7 @@
           "response": {
             "responseType": "resource",
             "responseKey": "enrollment_automation",
-            "resourceType": "unknown",
+            "resourceType": "enrollment_automation",
             "description": "OK",
             "actionAttemptType": null
           },
@@ -33373,7 +33401,7 @@
                   "title": "Python",
                   "sdkName": "python",
                   "request": "seam.user_identities.enrollment_automations.launch(\n    user_identity_id=\"5c945ab5-c75e-4bcb-8e5f-9410061c401f\",\n    credential_manager_acs_system_id=\"6737e186-8d54-48ce-a7da-a0be4d252172\",\n    acs_credential_pool_id=\"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    create_credential_manager_user=true,\n)",
-                  "response": "Unknown(\n    user_identity_id=\"5c945ab5-c75e-4bcb-8e5f-9410061c401f\",\n    enrollment_automation_id=\"05505650-aa57-49ab-8f19-429738758895\",\n    acs_credential_provisioning_automation_id=\"05505650-aa57-49ab-8f19-429738758895\",\n    credential_manager_acs_system_id=\"6737e186-8d54-48ce-a7da-a0be4d252172\",\n    is_running=true,\n    workspace_id=\"398d80b7-3f96-47c2-b85a-6f8ba21d07be\",\n    created_at=\"2024-01-09T05:45:33.068Z\",\n)",
+                  "response": "EnrollmentAutomation(\n    user_identity_id=\"5c945ab5-c75e-4bcb-8e5f-9410061c401f\",\n    enrollment_automation_id=\"05505650-aa57-49ab-8f19-429738758895\",\n    acs_credential_provisioning_automation_id=\"05505650-aa57-49ab-8f19-429738758895\",\n    credential_manager_acs_system_id=\"6737e186-8d54-48ce-a7da-a0be4d252172\",\n    is_running=true,\n    workspace_id=\"398d80b7-3f96-47c2-b85a-6f8ba21d07be\",\n    created_at=\"2024-01-09T05:45:33.068Z\",\n)",
                   "request_syntax": "python",
                   "response_syntax": "python"
                 },
@@ -33405,7 +33433,7 @@
                   "title": "Go",
                   "sdkName": "go",
                   "request": "package main\n\nimport api \"github.com/seamapi/go\"\nimport enrollmentautomations \"github.com/seamapi/go/enrollmentautomations\"\n\nfunc main() {\n\tclient.UserIdentities.EnrollmentAutomations.Launch(\n\t\tcontext.Background(),\n\t\tenrollmentautomations.EnrollmentAutomationsLaunchRequest{\n\t\t\tUserIdentityId:               api.String(\"5c945ab5-c75e-4bcb-8e5f-9410061c401f\"),\n\t\t\tCredentialManagerAcsSystemId: api.String(\"6737e186-8d54-48ce-a7da-a0be4d252172\"),\n\t\t\tAcsCredentialPoolId:          api.String(\"3fa85f64-5717-4562-b3fc-2c963f66afa6\"),\n\t\t\tCreateCredentialManagerUser:  api.Bool(true),\n\t\t},\n\t)\n}",
-                  "response": "api.Unknown{UserIdentityId: \"5c945ab5-c75e-4bcb-8e5f-9410061c401f\", EnrollmentAutomationId: \"05505650-aa57-49ab-8f19-429738758895\", AcsCredentialProvisioningAutomationId: \"05505650-aa57-49ab-8f19-429738758895\", CredentialManagerAcsSystemId: \"6737e186-8d54-48ce-a7da-a0be4d252172\", IsRunning: true, WorkspaceId: \"398d80b7-3f96-47c2-b85a-6f8ba21d07be\", CreatedAt: \"2024-01-09T05:45:33.068Z\"}",
+                  "response": "api.EnrollmentAutomation{UserIdentityId: \"5c945ab5-c75e-4bcb-8e5f-9410061c401f\", EnrollmentAutomationId: \"05505650-aa57-49ab-8f19-429738758895\", AcsCredentialProvisioningAutomationId: \"05505650-aa57-49ab-8f19-429738758895\", CredentialManagerAcsSystemId: \"6737e186-8d54-48ce-a7da-a0be4d252172\", IsRunning: true, WorkspaceId: \"398d80b7-3f96-47c2-b85a-6f8ba21d07be\", CreatedAt: \"2024-01-09T05:45:33.068Z\"}",
                   "request_syntax": "go",
                   "response_syntax": "go"
                 },
@@ -44033,6 +44061,503 @@
       "deprecationMessage": "",
       "isUndocumented": false,
       "undocumentedMessage": "",
+      "isDraft": false,
+      "draftMessage": "",
+      "propertyGroups": {},
+      "resourceSamples": []
+    },
+    {
+      "resourceType": "bridge_client_session",
+      "properties": [
+        {
+          "name": "bridge_client_machine_identifier_key",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "bridge_client_name",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "bridge_client_session_id",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        },
+        {
+          "name": "bridge_client_session_token",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "bridge_client_time_zone",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "created_at",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "datetime",
+          "jsonType": "string"
+        },
+        {
+          "name": "errors",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "list",
+          "jsonType": "array",
+          "itemFormat": "discriminated_object",
+          "discriminator": "error_code",
+          "variants": [
+            {
+              "properties": [
+                {
+                  "name": "can_tailscale_proxy_reach_bridge",
+                  "description": "Tailscale proxy cannot reach the bridge",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "boolean",
+                  "jsonType": "boolean"
+                },
+                {
+                  "name": "can_tailscale_proxy_reach_tailscale_network",
+                  "description": "Tailscale proxy cannot reach the Tailscale network",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "boolean",
+                  "jsonType": "boolean"
+                },
+                {
+                  "name": "created_at",
+                  "description": "",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "datetime",
+                  "jsonType": "string"
+                },
+                {
+                  "name": "error_code",
+                  "description": "Unique identifier of the type of error. Enables quick recognition and categorization of the issue.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "enum",
+                  "jsonType": "string",
+                  "values": [
+                    {
+                      "name": "bridge_lan_unreachable",
+                      "description": "",
+                      "isDeprecated": false,
+                      "deprecationMessage": "",
+                      "isUndocumented": false,
+                      "undocumentedMessage": "",
+                      "isDraft": false,
+                      "draftMessage": ""
+                    }
+                  ]
+                },
+                {
+                  "name": "is_bridge_socks_server_healthy",
+                  "description": "Bridge's SOCKS server is unhealthy",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "boolean",
+                  "jsonType": "boolean"
+                },
+                {
+                  "name": "is_tailscale_proxy_reachable",
+                  "description": "Seam cannot reach the tailscale proxy",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "boolean",
+                  "jsonType": "boolean"
+                },
+                {
+                  "name": "is_tailscale_proxy_socks_server_healthy",
+                  "description": "Tailscale proxy's SOCKS server is unhealthy",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "boolean",
+                  "jsonType": "boolean"
+                },
+                {
+                  "name": "message",
+                  "description": "",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "string",
+                  "jsonType": "string"
+                }
+              ],
+              "description": "Seam cannot reach the bridge's LAN"
+            },
+            {
+              "properties": [
+                {
+                  "name": "created_at",
+                  "description": "",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "datetime",
+                  "jsonType": "string"
+                },
+                {
+                  "name": "error_code",
+                  "description": "Unique identifier of the type of error. Enables quick recognition and categorization of the issue.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "enum",
+                  "jsonType": "string",
+                  "values": [
+                    {
+                      "name": "no_communication_from_bridge",
+                      "description": "",
+                      "isDeprecated": false,
+                      "deprecationMessage": "",
+                      "isUndocumented": false,
+                      "undocumentedMessage": "",
+                      "isDraft": false,
+                      "draftMessage": ""
+                    }
+                  ]
+                },
+                {
+                  "name": "message",
+                  "description": "",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "string",
+                  "jsonType": "string"
+                }
+              ],
+              "description": "Bridge has stopped communicating with Seam"
+            }
+          ]
+        },
+        {
+          "name": "pairing_code",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "pairing_code_expires_at",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "datetime",
+          "jsonType": "string"
+        },
+        {
+          "name": "tailscale_auth_key",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "tailscale_hostname",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "telemetry_token",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "telemetry_token_expires_at",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "datetime",
+          "jsonType": "string"
+        },
+        {
+          "name": "telemetry_url",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        }
+      ],
+      "description": "",
+      "isDeprecated": false,
+      "routePath": "/seam/bridge/v1/bridge_client_sessions",
+      "deprecationMessage": "",
+      "isUndocumented": true,
+      "undocumentedMessage": "Seam Bridge Client only.",
+      "isDraft": false,
+      "draftMessage": "",
+      "propertyGroups": {},
+      "resourceSamples": []
+    },
+    {
+      "resourceType": "bridge_connected_systems",
+      "properties": [
+        {
+          "name": "acs_system_display_name",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "acs_system_id",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        },
+        {
+          "name": "bridge_created_at",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "datetime",
+          "jsonType": "string"
+        },
+        {
+          "name": "bridge_id",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        },
+        {
+          "name": "connected_account_created_at",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "datetime",
+          "jsonType": "string"
+        },
+        {
+          "name": "connected_account_id",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        },
+        {
+          "name": "workspace_display_name",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "workspace_id",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        }
+      ],
+      "description": "",
+      "isDeprecated": false,
+      "routePath": "/seam/bridge/v1/bridge_connected_systems",
+      "deprecationMessage": "",
+      "isUndocumented": true,
+      "undocumentedMessage": "Seam Bridge Client only.",
       "isDraft": false,
       "draftMessage": "",
       "propertyGroups": {},
@@ -55499,6 +56024,141 @@
       "resourceSamples": []
     },
     {
+      "resourceType": "location",
+      "properties": [
+        {
+          "name": "created_at",
+          "description": "Date and time at which the location object was created.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "datetime",
+          "jsonType": "string"
+        },
+        {
+          "name": "display_name",
+          "description": "Display name of the location.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "geolocation",
+          "description": "Geographical location of the location.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "object",
+          "jsonType": "object",
+          "propertyGroups": {},
+          "properties": [
+            {
+              "name": "latitude",
+              "description": "",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": "",
+              "propertyGroupKey": null,
+              "format": "number",
+              "jsonType": "number"
+            },
+            {
+              "name": "longitude",
+              "description": "",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": "",
+              "propertyGroupKey": null,
+              "format": "number",
+              "jsonType": "number"
+            }
+          ]
+        },
+        {
+          "name": "location_id",
+          "description": "Unique identifier for the location.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        },
+        {
+          "name": "name",
+          "description": "Name of the location.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "time_zone",
+          "description": "Time zone of the location.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "workspace_id",
+          "description": "Unique identifier for the Seam workspace associated with the location.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        }
+      ],
+      "description": "",
+      "isDeprecated": false,
+      "routePath": "/unstable_locations",
+      "deprecationMessage": "",
+      "isUndocumented": true,
+      "undocumentedMessage": "Will be removed.",
+      "isDraft": false,
+      "draftMessage": "",
+      "propertyGroups": {},
+      "resourceSamples": []
+    },
+    {
       "resourceType": "magic_link",
       "properties": [
         {
@@ -55734,6 +56394,178 @@
       "deprecationMessage": "",
       "isUndocumented": false,
       "undocumentedMessage": "",
+      "isDraft": false,
+      "draftMessage": "",
+      "propertyGroups": {},
+      "resourceSamples": []
+    },
+    {
+      "resourceType": "partner_resource",
+      "properties": [
+        {
+          "name": "custom_metadata",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "record",
+          "jsonType": "object"
+        },
+        {
+          "name": "customer_key",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "description",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "email_address",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "ends_at",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "location_keys",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "list",
+          "jsonType": "array",
+          "itemFormat": "string"
+        },
+        {
+          "name": "name",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "partner_resource_key",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "partner_resource_type",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "phone_number",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "starts_at",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "user_identity_key",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        }
+      ],
+      "description": "",
+      "isDeprecated": false,
+      "routePath": "/unstable_partner/resources",
+      "deprecationMessage": "",
+      "isUndocumented": true,
+      "undocumentedMessage": "Unreleased.",
       "isDraft": false,
       "draftMessage": "",
       "propertyGroups": {},
@@ -56150,7 +56982,7 @@
                 },
                 {
                   "name": "acs_credential_id",
-                  "description": "ID of the [credential](../capability-guides/access-systems/managing-credentials.md).",
+                  "description": "",
                   "isDeprecated": false,
                   "deprecationMessage": "",
                   "isUndocumented": false,
@@ -56158,7 +56990,7 @@
                   "isDraft": false,
                   "draftMessage": "",
                   "propertyGroupKey": null,
-                  "format": "id",
+                  "format": "string",
                   "jsonType": "string"
                 },
                 {
@@ -57724,6 +58556,128 @@
       "undocumentedMessage": "",
       "isDraft": true,
       "draftMessage": "Early access.",
+      "propertyGroups": {},
+      "resourceSamples": []
+    },
+    {
+      "resourceType": "thermostat_daily_program",
+      "properties": [
+        {
+          "name": "created_at",
+          "description": "Date and time at which the thermostat daily program was created.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "datetime",
+          "jsonType": "string"
+        },
+        {
+          "name": "device_id",
+          "description": "ID of the thermostat device on which the thermostat daily program is configured.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        },
+        {
+          "name": "name",
+          "description": "User-friendly name to identify the thermostat daily program.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
+        },
+        {
+          "name": "periods",
+          "description": "Array of thermostat daily program periods.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "list",
+          "jsonType": "array",
+          "itemFormat": "object",
+          "itemProperties": [
+            {
+              "name": "climate_preset_key",
+              "description": "Key of the [climate preset](../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to activate at the `starts_at_time`.",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": "",
+              "propertyGroupKey": null,
+              "format": "string",
+              "jsonType": "string"
+            },
+            {
+              "name": "starts_at_time",
+              "description": "Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": "",
+              "propertyGroupKey": null,
+              "format": "string",
+              "jsonType": "string"
+            }
+          ]
+        },
+        {
+          "name": "thermostat_daily_program_id",
+          "description": "ID of the thermostat daily program.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        },
+        {
+          "name": "workspace_id",
+          "description": "ID of the [workspace](../core-concepts/workspaces/README.md) that contains the thermostat daily program.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        }
+      ],
+      "description": "Represents a thermostat daily program, consisting of a set of periods, each of which has a starting time and the key that identifies the climate preset to apply at the starting time.",
+      "isDeprecated": false,
+      "routePath": "/thermostats/daily_programs",
+      "deprecationMessage": "",
+      "isUndocumented": false,
+      "undocumentedMessage": "",
+      "isDraft": false,
+      "draftMessage": "",
       "propertyGroups": {},
       "resourceSamples": []
     },
@@ -68077,6 +69031,48 @@
           "jsonType": "string"
         },
         {
+          "name": "errors",
+          "description": "Array of errors associated with the user identity. Each error object within the array contains two fields: \"error_code\" and \"message.\" \"error_code\" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. \"message\" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "list",
+          "jsonType": "array",
+          "itemFormat": "object",
+          "itemProperties": [
+            {
+              "name": "created_at",
+              "description": "Date and time at which Seam created the error.",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": "",
+              "propertyGroupKey": null,
+              "format": "datetime",
+              "jsonType": "string"
+            },
+            {
+              "name": "message",
+              "description": "Detailed description of the error. Provides insights into the issue and potentially how to rectify it.",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": "",
+              "propertyGroupKey": null,
+              "format": "string",
+              "jsonType": "string"
+            }
+          ]
+        },
+        {
           "name": "full_name",
           "description": "",
           "isDeprecated": false,
@@ -68127,6 +69123,79 @@
           "propertyGroupKey": null,
           "format": "string",
           "jsonType": "string"
+        },
+        {
+          "name": "warnings",
+          "description": "Array of warnings associated with the user identity. Each warning object within the array contains two fields: \"warning_code\" and \"message.\" \"warning_code\" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. \"message\" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "list",
+          "jsonType": "array",
+          "itemFormat": "discriminated_object",
+          "discriminator": "warning_code",
+          "variants": [
+            {
+              "properties": [
+                {
+                  "name": "created_at",
+                  "description": "Date and time at which Seam created the warning.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "datetime",
+                  "jsonType": "string"
+                },
+                {
+                  "name": "message",
+                  "description": "Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "string",
+                  "jsonType": "string"
+                },
+                {
+                  "name": "warning_code",
+                  "description": "Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "enum",
+                  "jsonType": "string",
+                  "values": [
+                    {
+                      "name": "being_deleted",
+                      "description": "",
+                      "isDeprecated": false,
+                      "deprecationMessage": "",
+                      "isUndocumented": false,
+                      "undocumentedMessage": "",
+                      "isDraft": false,
+                      "draftMessage": ""
+                    }
+                  ]
+                }
+              ],
+              "description": "Indicates that the user identity is currently being deleted."
+            }
+          ]
         },
         {
           "name": "workspace_id",
