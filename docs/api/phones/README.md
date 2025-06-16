@@ -3,7 +3,7 @@
 ## The phone Object
 
 - [Properties](./#properties)
-  - [`phone.properties`](./#phone-properties)
+  - [`phone.properties`](./#phone.properties)
 - [Errors](./#errors)
 - [Warnings](./#warnings)
 - [Events](./#events)
