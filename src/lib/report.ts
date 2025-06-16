@@ -25,6 +25,7 @@ interface Report {
   extraResponseKeys: MissingResponseKeyReport[]
   missingResources: MissingResourcesReport[]
   endpointsWithoutCodeSamples: string[]
+  resourcesWithoutResourceSamples: string[]
   noTitle: Pick<ReportSection, 'namespaces' | 'routes' | 'endpoints'>
 }
 
@@ -97,6 +98,7 @@ function generateReport(metadata: Metadata): Report {
     extraResponseKeys: [],
     unusedResources: [],
     endpointsWithoutCodeSamples: [],
+    resourcesWithoutResourceSamples: [],
     noTitle: {
       namespaces: [],
       routes: [],
@@ -173,6 +175,10 @@ function processResource(
         reason: resource.draftMessage ?? defaultDraftMessage,
       })
     }
+  }
+
+  if (resource.resourceSamples.length === 0) {
+    report.resourcesWithoutResourceSamples.push(name)
   }
 
   for (const property of resource.properties) {
