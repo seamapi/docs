@@ -1,0 +1,74 @@
+{{#if linkTarget}}[**`{{name}}`**]({{linkTarget}}){{else}}**`{{name}}`**{{/if}} *{{format}}*{{#if listItemFormat}} *of {{listItemFormat}}s*{{/if}}
+
+{{#if description}}
+{{description}}
+{{/if}}
+
+{{#if isDeprecated}}
+{{> deprecated-warning}}
+{{/if}}
+
+{{#if enumValues}}
+<details>
+<summary>Enum values</summary>
+
+{{#each enumValues}}
+- <code>{{this}}</code>
+{{/each}}
+</details>
+{{/if}}
+
+{{#if value}}
+
+Value: <code>{{value}}</code>
+{{/if}}
+{{#unless (eq objectProperties undefined)}}
+{{#if (eq objectProperties.length 0)}}
+
+This object has no properties.
+{{else}}
+<details>
+  <summary>Child Properties</summary>
+
+  {{#each objectProperties}}
+  - {{> property-nested this isList=true}}
+  {{/each}}
+</details>
+{{/if}}
+{{/unless}}
+{{#if discriminatorVariants}}
+
+The specific structure of each object in this list depends on the value of its `{{discriminator}}` field.
+
+Variants:
+  {{#each discriminatorVariants}}
+<details>
+<summary><code>{{this.name}}</code></summary>
+{{#if this.description}}
+
+{{this.description}}
+{{/if}}
+{{#if this.properties.length}}
+  {{#each this.properties}}
+
+  {{> property-non-collapsible this isLast=@last}}
+  {{/each}}
+{{else}}
+
+This variant has no additional specific properties.
+{{/if}}
+</details>
+  {{/each}}
+{{/if}}
+{{#if listProperties}}
+<details>
+  <summary>Child Object Properties</summary>
+  {{#each listProperties}}
+
+  {{> property-nested this}}
+  {{/each}}
+</details>
+{{/if}}
+
+---
+
