@@ -1,8 +1,4 @@
-{{#if headingOffset}}
-### The {{name}} Object
-{{else}}
 ## The {{name}} Object
-{{/if}}
 
 - [Properties](./#properties)
 {{#if legacyProperties}}
@@ -31,11 +27,7 @@
 {{/if}}
 
 ---
-{{#if headingOffset}}
-### Properties
-{{else}}
 ## Properties
-{{/if}}
 
 {{#each properties}}
 {{#if linkTarget}}[**`{{name}}`**]({{linkTarget}}){{else}}**`{{name}}`**{{/if}} *{{format}}*{{#if listItemFormat}} *of {{listItemFormat}}s*{{/if}}
@@ -116,11 +108,7 @@ This variant has no additional specific properties.
 {{#if legacyProperties}}
 
 ---
-{{#if headingOffset}}
-### Legacy Properties
-{{else}}
 ## Legacy Properties
-{{/if}}
 
 {{#each legacyProperties.objectProperties}}
 {{#if linkTarget}}[**`{{name}}`**]({{linkTarget}}){{else}}**`{{name}}`**{{/if}} *{{format}}*{{#if listItemFormat}} *of {{listItemFormat}}s*{{/if}}
