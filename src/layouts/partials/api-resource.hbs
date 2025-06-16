@@ -2,7 +2,7 @@
 
 - [Properties](./#properties)
 {{#if legacyProperties}}
-- [Legacy Properties](./#legacy-properties)
+  - [`{{name}}.properties`](./#{{name}}-properties)
 {{/if}}
 - [Errors](./#errors)
 - [Warnings](./#warnings)
@@ -108,7 +108,7 @@ This variant has no additional specific properties.
 {{#if legacyProperties}}
 
 ---
-## Legacy Properties
+## `{{name}}.properties`
 
 {{#each legacyProperties.objectProperties}}
 {{#if linkTarget}}[**`{{name}}`**]({{linkTarget}}){{else}}**`{{name}}`**{{/if}} *{{format}}*{{#if listItemFormat}} *of {{listItemFormat}}s*{{/if}}
