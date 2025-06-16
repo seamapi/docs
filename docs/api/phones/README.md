@@ -3,7 +3,7 @@
 ## The phone Object
 
 - [Properties](./#properties)
-- [Legacy Properties](./#legacy-properties)
+  - [`phone.properties`](./#phone-properties)
 - [Errors](./#errors)
 - [Warnings](./#warnings)
 - [Events](./#events)
@@ -118,7 +118,7 @@ ID of the [workspace](../../core-concepts/workspaces/README.md) that contains th
 
 
 ---
-## Legacy Properties
+## `phone.properties`
 
 **`assa_abloy_credential_service_metadata`** *Object*
 
