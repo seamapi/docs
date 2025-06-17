@@ -141,7 +141,9 @@ export function setApiRouteLayoutContext(
 
     const properties = allProperties.filter(({ name }) => name !== 'properties')
 
-    const legacyProperty = properties.find(({ name }) => name === 'properties')
+    const legacyProperty = allProperties.find(
+      ({ name }) => name === 'properties',
+    )
 
     const propertyGroups = groupProperties(properties, resource.propertyGroups)
 
@@ -182,20 +184,22 @@ export const groupProperties = (
       .filter((p) => p.propertyGroupKey === propertyGroupKey)
       .map(mapBlueprintPropertyToRouteProperty)
 
-  return propertyGroups.reduce(
-    (groups, propertyGroup) => [
-      ...groups,
-      {
-        name: propertyGroup.name,
-        properties: getApiRouteProperties(propertyGroup.propertyGroupKey),
-      },
-    ],
-    [
-      {
-        properties: getApiRouteProperties(null),
-      },
-    ],
-  ).filter(({properties}) => properties.length > 0)
+  return propertyGroups
+    .reduce(
+      (groups, propertyGroup) => [
+        ...groups,
+        {
+          name: propertyGroup.name,
+          properties: getApiRouteProperties(propertyGroup.propertyGroupKey),
+        },
+      ],
+      [
+        {
+          properties: getApiRouteProperties(null),
+        },
+      ],
+    )
+    .filter(({ properties }) => properties.length > 0)
 }
 
 const groupEventsByRoutePath = (
