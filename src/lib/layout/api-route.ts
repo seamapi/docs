@@ -171,7 +171,7 @@ export function setApiRouteLayoutContext(
   }
 }
 
-const groupProperties = (
+export const groupProperties = (
   properties: Property[],
   propertyGroups: PropertyGroup[],
 ): ApiRoutePropertyGroup[] => {
