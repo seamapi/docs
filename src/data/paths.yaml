@@ -68,7 +68,7 @@
     - Create daily and weekly [thermostat programs](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-programs).
 
     The Seam API represents a thermostat as a `device` resource that includes both basic device properties and thermostat-specific properties.
-    
+
     ---
 
 /thermostats/simulate:
@@ -94,7 +94,7 @@
     Noise sensors are devices that measure that sound level in a given area. You can use noise sensors to monitor noise levels remotely and receive notifications when the noise volume is too loud. The Seam API enables you to configure the noise thresholds of a noise sensor and receive events when a disturbance is detected.
 
     The Seam API represents a noise sensor as a `device` resource that includes both basic device properties and noise sensor-specific properties.
-    
+
     ---
 
 /user_identities:
