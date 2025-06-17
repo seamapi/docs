@@ -35,30 +35,30 @@ export function setNamespaceLayoutContext(
   const namespaceRoutes = Object.entries(pathMetadata).filter(([p]) =>
     p.startsWith(namespace),
   )
-  const namespaceResources = namespaceRoutes.flatMap(
-    ([_, metadata]) => metadata.resources,
-  )
-  file.resources = namespaceResources.map((resourceType) => {
-    const resource = resources.find((r) => r.resourceType === resourceType)
+  const namespaceResources = [
+    ...resources
+      .filter((r) => r.routePath.startsWith(namespace) && !r.isUndocumented)
+      .map(({ resourceType }) => resourceType),
+    ...namespaceRoutes.flatMap(([_, metadata]) => metadata.resources),
+  ]
+  file.resources = namespaceResources
+    .map((resourceType) => {
+      const resource = resources.find((r) => r.resourceType === resourceType)
 
-    if (resource == null) {
-      throw new Error(`Resource ${resourceType} not found in blueprint`)
-    }
+      if (resource == null) {
+        throw new Error(`Resource ${resourceType} not found in blueprint`)
+      }
 
-    const resourceRoute = namespaceRoutes.find(([_, metadata]) =>
-      metadata.resources.includes(resourceType),
-    )
-    if (resourceRoute == null) {
-      throw new Error(`Route for resource ${resourceType} not found`)
-    }
-    const [routePath] = resourceRoute
-    const lastPathSegment = routePath.split('/').at(-1)
-    const docLink = `./${lastPathSegment}/README.md#${resourceType}`
+      const lastPathSegment = resource.routePath.split('/').at(-1)
+      const docLink = `./${lastPathSegment}/README.md#${resourceType}`
 
-    return {
-      name: resourceType,
-      description: resource.description,
-      link: docLink,
-    }
-  })
+      return {
+        name: resourceType,
+        description: resource.description,
+        link: docLink,
+      }
+    })
+    .sort((a, b) => {
+      return a.name.localeCompare(b.name)
+    })
 }
