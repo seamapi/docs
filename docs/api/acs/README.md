@@ -39,14 +39,6 @@ An access control system generally uses digital means of access to authorize a u
 For each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type.
 
 ---
-### [`acs_credential_pool`](./credential_pools/README.md#acs_credential_pool)
-
-
----
-### [`acs_credential_provisioning_automation`](./credential_provisioning_automations/README.md#acs_credential_provisioning_automation)
-
-
----
 ### [`acs_encoder`](./encoders/README.md#acs_encoder)
 Represents a hardware device that encodes [credential](../../capability-guides/access-systems/managing-credentials.md) data onto physical cards within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -84,17 +76,5 @@ Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems
 An `acs_user` typically refers to an individual who requires access, like an employee or resident. Each user can possess multiple credentials that serve as their keys or identifiers for access. The type of credential can vary widely. For example, in the Salto system, a user can have a PIN code, a mobile app account, and a fob. In other platforms, it is not uncommon for a user to have more than one of the same credential type, such as multiple key cards. Additionally, these credentials can have a schedule or validity period.
 
 For details about how to configure `acs_user`s in your access control system, see the corresponding [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems).
-
----
-### [`unmanaged_acs_access_group`](./unmanaged/README.md#unmanaged_acs_access_group)
-
-
----
-### [`unmanaged_acs_credential`](./unmanaged/README.md#unmanaged_acs_credential)
-Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](../../capability-guides/access-systems/retrieving-entrance-details.md). The `unmanaged_acs_credential` object, which is not managed by Seam, represents a [credential](../../capability-guides/access-systems/managing-credentials.md) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code.
-
----
-### [`unmanaged_acs_user`](./unmanaged/README.md#unmanaged_acs_user)
-Represents an unmanaged [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 ---

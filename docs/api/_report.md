@@ -48,6 +48,8 @@ These items are intentionally undocumented.
 
 ### Resources
 
+- `acs_credential_pool`: Will be removed.
+- `acs_credential_provisioning_automation`: Will be removed.
 - `bridge_client_session`: Seam Bridge Client only.
 - `bridge_connected_systems`: Seam Bridge Client only.
 - `instant_key`: Unreleased.
@@ -55,6 +57,9 @@ These items are intentionally undocumented.
 - `magic_link`: Unreleased.
 - `partner_resource`: Unreleased.
 - `phone_session`: Seam Mobile SDK only.
+- `unmanaged_acs_access_group`: Unreleased.
+- `unmanaged_acs_credential`: Unreleased.
+- `unmanaged_acs_user`: Unreleased.
 
 ### Resource properties
 
@@ -719,8 +724,6 @@ These items are deprecated.
 - `access_method`
 - `acs_access_group`
 - `acs_credential`
-- `acs_credential_pool`
-- `acs_credential_provisioning_automation`
 - `acs_encoder`
 - `acs_entrance`
 - `acs_user`
@@ -737,9 +740,6 @@ These items are deprecated.
 - `thermostat_daily_program`
 - `thermostat_schedule`
 - `unmanaged_access_code`
-- `unmanaged_acs_access_group`
-- `unmanaged_acs_credential`
-- `unmanaged_acs_user`
 - `unmanaged_device`
 - `user_identity`
 - `webhook`
