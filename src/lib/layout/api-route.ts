@@ -117,7 +117,7 @@ export function setApiRouteLayoutContext(
     }))
 
   file.resources = []
-  for (const resourceType of metadata.resources ?? []) {
+  for (const resourceType of metadata.resources) {
     const resource = blueprint.resources.find(
       (r) => r.resourceType === resourceType,
     )
