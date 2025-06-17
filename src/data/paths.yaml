@@ -20,41 +20,27 @@
 
 /acs/systems:
   title: Systems
-  resources:
-    - acs_system
 
 /acs/users:
   title: ACS Users
-  resources:
-    - acs_user
 
 /acs/entrances:
   title: Entrances
-  resources:
-    - acs_entrance
 
 /acs/access_groups:
   title: Access Groups
-  resources:
-    - acs_access_group
 
 /acs/credentials:
   title: Credentials
-  resources:
-    - acs_credential
 
 /acs/encoders:
   title: Encoders
-  resources:
-    - acs_encoder
 
 /acs/encoders/simulate:
   title: Encoder Simulations
 
 /phones:
   title: Phones
-  resources:
-    - phone
 
 /phones/simulate:
   title: Phone Simulations
@@ -68,28 +54,18 @@
 
 /thermostats/schedules:
   title: Thermostat Schedules
-  resources:
-    - thermostat_schedule
 
 /user_identities:
   title: User Identities
-  resources:
-    - user_identity
 
 /user_identities/enrollment_automations:
   title: Enrollment Automations
-  resources:
-    - enrollment_automation
 
 /access_codes:
   title: Access Codes
-  resources:
-    - access_code
 
 /access_codes/unmanaged:
   title: Unmanaged Access Codes
-  resources:
-    - unmanaged_access_code
 
 /access_codes/simulate:
   title: Access Code Simulations
@@ -97,22 +73,14 @@
 /access_grants:
   title: Access Grants
   alpha: "**Early Access Preview.** The access grants API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design."
-  resources:
-    - access_grant
 
 /access_methods:
   title: Access Methods
   alpha: "**Early Access Preview.** The access methods API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design."
-  resources:
-    - access_method
 
 /spaces:
   title: Spaces
   alpha: "**Early Access Preview.** The spaces API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design."
-  resources:
-    - space
 
 /connected_accounts:
   title: Connected Accounts
-  resources:
-    - connected_account
