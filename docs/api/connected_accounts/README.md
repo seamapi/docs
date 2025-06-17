@@ -68,6 +68,15 @@ Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect
 
 ---
 
+**`customer_key`** *String*
+
+Your unique key for the customer associated with this connected account.
+
+
+
+
+---
+
 [**`errors`**](./#errors) *List* *of Objects*
 
 Errors associated with the connected account.

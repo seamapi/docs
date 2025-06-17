@@ -117,8 +117,14 @@ export function setApiRouteLayoutContext(
       description: getFirstParagraph(description),
     }))
 
+  const resourceTypes = [
+    ...blueprint.resources
+      .filter((r) => r.routePath === route.path && !r.isUndocumented)
+      .map(({ resourceType }) => resourceType),
+    ...metadata.resources,
+  ]
   file.resources = []
-  for (const resourceType of metadata.resources) {
+  for (const resourceType of resourceTypes) {
     const resource = blueprint.resources.find(
       (r) => r.resourceType === resourceType,
     )
