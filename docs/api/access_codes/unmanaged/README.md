@@ -1082,10 +1082,12 @@ No valid user level for Oracode.
 <details>
 <summary><code>account_disconnected</code></summary>
 
-Account is disconnected
+Indicates that the account is disconnected.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1105,11 +1107,15 @@ Account is disconnected
   **`is_connected_account_error`** *Boolean*
   
   
+  Indicates that the error is a [connected account](https://docs.seam.co/latest/api/connected_accounts) error.
+  
   
   ---
 
   **`is_device_error`** *Boolean*
   
+  
+  Indicates that the error is not a device error.
   
   
   ---
@@ -1117,15 +1123,19 @@ Account is disconnected
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>salto_ks_subscription_limit_exceeded</code></summary>
 
-Salto site user limit reached.
+Indicates that the Salto site user limit has been reached.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1145,11 +1155,15 @@ Salto site user limit reached.
   **`is_connected_account_error`** *Boolean*
   
   
+  Indicates that the error is a [connected account](https://docs.seam.co/latest/api/connected_accounts) error.
+  
   
   ---
 
   **`is_device_error`** *Boolean*
   
+  
+  Indicates that the error is not a device error.
   
   
   ---
@@ -1157,15 +1171,19 @@ Salto site user limit reached.
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>device_offline</code></summary>
 
-Device is offline
+Indicates that the device is offline.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1185,21 +1203,27 @@ Device is offline
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>device_removed</code></summary>
 
-Device has been removed
+Indicates that the device has been removed.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1219,21 +1243,27 @@ Device has been removed
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>hub_disconnected</code></summary>
 
-Hub is disconnected
+Indicates that the hub is disconnected.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1253,21 +1283,27 @@ Hub is disconnected
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>device_disconnected</code></summary>
 
-Device is disconnected
+Indicates that the device is disconnected.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1287,21 +1323,27 @@ Device is disconnected
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>empty_backup_access_code_pool</code></summary>
 
-The backup access code pool is empty.
+Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1321,21 +1363,27 @@ The backup access code pool is empty.
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>august_lock_not_authorized</code></summary>
 
-User is not authorized to use the August Lock.
+Indicates that the user is not authorized to use the August lock.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1355,21 +1403,27 @@ User is not authorized to use the August Lock.
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>august_lock_missing_bridge</code></summary>
 
-Lock is not connected to the Seam Bridge.
+Indicates that the lock is not connected to a bridge.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1389,21 +1443,27 @@ Lock is not connected to the Seam Bridge.
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>ttlock_lock_not_paired_to_gateway</code></summary>
 
-Lock is not paired with a Gateway.
+Indicates that the lock is not paired with a gateway.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1423,21 +1483,27 @@ Lock is not paired with a Gateway.
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>missing_device_credentials</code></summary>
 
-Missing device credentials.
+Indicates that device credentials are missing.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1457,21 +1523,27 @@ Missing device credentials.
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>auxiliary_heat_running</code></summary>
 
-The auxiliary heat is running.
+Indicates that the auxiliary heat is running.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1491,21 +1563,27 @@ The auxiliary heat is running.
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>subscription_required</code></summary>
 
-Subscription required to connect.
+Indicates that a subscription is required to connect.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1525,21 +1603,27 @@ Subscription required to connect.
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>lockly_missing_wifi_bridge</code></summary>
 
-Lockly lock is not connected to a Wi-Fi bridge.
+Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1559,18 +1643,22 @@ Lockly lock is not connected to a Wi-Fi bridge.
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>invalid_credentials</code></summary>
 
-Credentials provided were invalid.
+Indicates that the credentials provided were invalid.
 
   **`created_at`** *Datetime*
   
@@ -1595,7 +1683,7 @@ Credentials provided were invalid.
   **`is_bridge_error`** *Boolean*
   
   
-  Indicates whether the error is related to Seam Bridge.
+  Indicates whether the error is related to [Seam Bridge](../../../capability-guides/seam-bridge.md).
   
   
   ---
@@ -1618,7 +1706,7 @@ Credentials provided were invalid.
 <details>
 <summary><code>bridge_disconnected</code></summary>
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
   **`created_at`** *Datetime*
   
@@ -1643,7 +1731,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capab
   **`is_bridge_error`** *Boolean*
   
   
-  Indicates whether the error is related to Seam Bridge.
+  Indicates whether the error is related to [Seam Bridge](../../../capability-guides/seam-bridge.md).
   
   
   ---
@@ -1709,7 +1797,7 @@ Current status of the access code within the operational lifecycle. `set` indica
 
 **`type`** *Enum*
 
-Nature of the access code. Values are `ongoing` for access codes that are active continuously until deactivated manually or `time_bound` for access codes that have a specific duration.
+Type of the access code. `ongoing` access codes are active continuously until deactivated manually. `time_bound` access codes have a specific duration.
 
 
 <details>
@@ -2274,97 +2362,97 @@ No valid user level for Oracode.
 
 **`account_disconnected`**
 
-Account is disconnected
+Indicates that the account is disconnected.
 
 ---
 
 **`salto_ks_subscription_limit_exceeded`**
 
-Salto site user limit reached.
+Indicates that the Salto site user limit has been reached.
 
 ---
 
 **`device_offline`**
 
-Device is offline
+Indicates that the device is offline.
 
 ---
 
 **`device_removed`**
 
-Device has been removed
+Indicates that the device has been removed.
 
 ---
 
 **`hub_disconnected`**
 
-Hub is disconnected
+Indicates that the hub is disconnected.
 
 ---
 
 **`device_disconnected`**
 
-Device is disconnected
+Indicates that the device is disconnected.
 
 ---
 
 **`empty_backup_access_code_pool`**
 
-The backup access code pool is empty.
+Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
 
 ---
 
 **`august_lock_not_authorized`**
 
-User is not authorized to use the August Lock.
+Indicates that the user is not authorized to use the August lock.
 
 ---
 
 **`august_lock_missing_bridge`**
 
-Lock is not connected to the Seam Bridge.
+Indicates that the lock is not connected to a bridge.
 
 ---
 
 **`ttlock_lock_not_paired_to_gateway`**
 
-Lock is not paired with a Gateway.
+Indicates that the lock is not paired with a gateway.
 
 ---
 
 **`missing_device_credentials`**
 
-Missing device credentials.
+Indicates that device credentials are missing.
 
 ---
 
 **`auxiliary_heat_running`**
 
-The auxiliary heat is running.
+Indicates that the auxiliary heat is running.
 
 ---
 
 **`subscription_required`**
 
-Subscription required to connect.
+Indicates that a subscription is required to connect.
 
 ---
 
 **`lockly_missing_wifi_bridge`**
 
-Lockly lock is not connected to a Wi-Fi bridge.
+Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
 
 ---
 
 **`invalid_credentials`**
 
-Credentials provided were invalid.
+Indicates that the credentials provided were invalid.
 
 ---
 
 **`bridge_disconnected`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
 ---
 
@@ -2460,7 +2548,7 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the affected access codes.
+  ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2484,7 +2572,7 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -2503,7 +2591,7 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the affected access codes.
+  ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2527,7 +2615,7 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -2546,7 +2634,7 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the affected access codes.
+  ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2570,7 +2658,7 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -2589,7 +2677,7 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the affected access codes.
+  ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2613,7 +2701,7 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---

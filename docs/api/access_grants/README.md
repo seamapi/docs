@@ -12,6 +12,8 @@
 - [Endpoints](./#endpoints)
 
 
+Represents an access grant. Access grants enable you to grant a user identity access to spaces, entrances, and devices through one or more access methods, such as mobile keys, plastic cards, and PIN codes. You can create an access grant for an existing user identity, or you can create a new user identity *while* creating the new access grant.
+
 ---
 ## Properties
 
@@ -26,7 +28,7 @@ ID of the access grant.
 
 **`access_method_ids`** *List* *of UUIDs*
 
-IDs of the access methods that were created for this access grant.
+IDs of the access methods created for the access grant.
 
 
 
@@ -64,7 +66,7 @@ Display name of the access grant.
 
 **`requested_access_methods`** *List* *of Objects*
 
-Access methods that the user requested for this access grant.
+Access methods that the user requested for the access grant.
 
 
 
@@ -73,11 +75,11 @@ Access methods that the user requested for this access grant.
 
   <strong><code>created_access_method_ids</code></strong> <i>List</i> <i>of UUIDs</i>
   
-    IDs of the access methods that were created for this requested access method.
+    IDs of the access methods created for the requested access method.
 
   <strong><code>created_at</code></strong> <i>Datetime</i>
   
-    Date and time at which the requested access method was added to this access grant.
+    Date and time at which the requested access method was added to the access grant.
 
   <strong><code>display_name</code></strong> <i>String</i>
   
@@ -99,7 +101,7 @@ Access methods that the user requested for this access grant.
 
 **`space_ids`** *List* *of UUIDs*
 
-IDs of the spaces to which access is being given.
+IDs of the spaces to which the access grant gives access.
 
 
 
@@ -108,7 +110,7 @@ IDs of the spaces to which access is being given.
 
 **`user_identity_id`** *UUID*
 
-ID of user identity to which access is being granted.
+ID of user identity to which the access grant gives access.
 
 
 
@@ -117,7 +119,7 @@ ID of user identity to which access is being granted.
 
 **`workspace_id`** *UUID*
 
-Unique identifier for the Seam workspace associated with the access grant.
+ID of the Seam workspace associated with the access grant.
 
 
 
@@ -157,7 +159,7 @@ An access grant was created.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -192,7 +194,7 @@ An access grant was deleted.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -227,7 +229,7 @@ All access requested for an access grant was successfully granted.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -266,7 +268,7 @@ Access requested as part of an access grant to a particular door was successfull
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -305,7 +307,7 @@ Access to a particular door that was requested as part of an access grant was lo
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---

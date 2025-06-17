@@ -47,10 +47,10 @@ These items are intentionally undocumented.
 
 ### Resources
 
-- `acs_credential_pool`: Will be removed.
-- `acs_credential_provisioning_automation`: Will be removed.
-- `bridge_client_session`: Seam Bridge Client only.
-- `bridge_connected_systems`: Seam Bridge Client only.
+- `acs_credential_pool`: Deprecated. Will be removed.
+- `acs_credential_provisioning_automation`: Deprecated. Will be removed.
+- `bridge_client_session`: Seam Bridge client only.
+- `bridge_connected_systems`: Seam Bridge client only.
 - `instant_key`: Unreleased.
 - `location`: Will be removed.
 - `magic_link`: Unreleased.
@@ -65,6 +65,7 @@ These items are intentionally undocumented.
 - `acs_user.last_successful_sync_at`: Only used internally.
 - `connect_webview.accepted_devices`: Unused. Will be removed.
 - `connect_webview.any_device_allowed`: Unused. Will be removed.
+- `connect_webview.device_selection_mode`: Not implemented.
 - `unmanaged_acs_user.last_successful_sync_at`: Only used internally.
 
 ### Namespaces
@@ -190,22 +191,12 @@ Items that are intentionally undocumented are not included in this section.
 
 ### Resources
 
-- `access_grant`
-- `access_method`
 - `acs_credential_pool`
 - `acs_credential_provisioning_automation`
-- `bridge_client_session`
-- `bridge_connected_systems`
 - `device_provider`
 - `event`
-- `instant_key`
 - `location`
-- `magic_link`
-- `partner_resource`
-- `phone_session`
-- `space`
 - `unmanaged_acs_access_group`
-- `webhook`
 
 ### Resource properties
 
@@ -237,39 +228,6 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_user.email`
 - `acs_user.hid_acs_system_id`
 - `acs_user.is_managed`
-- `bridge_client_session.bridge_client_machine_identifier_key`
-- `bridge_client_session.bridge_client_name`
-- `bridge_client_session.bridge_client_session_id`
-- `bridge_client_session.bridge_client_session_token`
-- `bridge_client_session.bridge_client_time_zone`
-- `bridge_client_session.created_at`
-- `bridge_client_session.errors`
-- `bridge_client_session.pairing_code`
-- `bridge_client_session.pairing_code_expires_at`
-- `bridge_client_session.tailscale_auth_key`
-- `bridge_client_session.tailscale_hostname`
-- `bridge_client_session.telemetry_token`
-- `bridge_client_session.telemetry_token_expires_at`
-- `bridge_client_session.telemetry_url`
-- `bridge_connected_systems.acs_system_display_name`
-- `bridge_connected_systems.acs_system_id`
-- `bridge_connected_systems.bridge_created_at`
-- `bridge_connected_systems.bridge_id`
-- `bridge_connected_systems.connected_account_created_at`
-- `bridge_connected_systems.connected_account_id`
-- `bridge_connected_systems.workspace_display_name`
-- `bridge_connected_systems.workspace_id`
-- `client_session.client_session_id`
-- `client_session.connect_webview_ids`
-- `client_session.connected_account_ids`
-- `client_session.created_at`
-- `client_session.customer_id`
-- `client_session.device_count`
-- `client_session.expires_at`
-- `client_session.token`
-- `client_session.user_identifier_key`
-- `client_session.user_identity_id`
-- `client_session.workspace_id`
 - `connect_webview.accepted_devices`
 - `connect_webview.any_device_allowed`
 - `connect_webview.device_selection_mode`
@@ -300,32 +258,6 @@ Items that are intentionally undocumented are not included in this section.
 - `device_provider.image_url`
 - `device_provider.provider_categories`
 - `event.event_type`
-- `instant_key.client_session_id`
-- `instant_key.created_at`
-- `instant_key.expires_at`
-- `instant_key.instant_key_id`
-- `instant_key.instant_key_url`
-- `instant_key.user_identity_id`
-- `instant_key.workspace_id`
-- `magic_link.building_block_type`
-- `magic_link.created_at`
-- `magic_link.customer_key`
-- `magic_link.expires_at`
-- `magic_link.url`
-- `magic_link.workspace_id`
-- `partner_resource.custom_metadata`
-- `partner_resource.customer_key`
-- `partner_resource.description`
-- `partner_resource.email_address`
-- `partner_resource.ends_at`
-- `partner_resource.location_keys`
-- `partner_resource.name`
-- `partner_resource.partner_resource_key`
-- `partner_resource.partner_resource_type`
-- `partner_resource.phone_number`
-- `partner_resource.starts_at`
-- `partner_resource.user_identity_key`
-- `phone_session.provider_sessions`
 - `unmanaged_acs_access_group.access_group_type`
 - `unmanaged_acs_access_group.access_group_type_display_name`
 - `unmanaged_acs_access_group.display_name`
@@ -349,16 +281,8 @@ Items that are intentionally undocumented are not included in this section.
 - `unmanaged_device.is_managed`
 - `user_identity.display_name`
 - `user_identity.full_name`
-- `webhook.event_types`
-- `webhook.secret`
-- `webhook.url`
-- `webhook.webhook_id`
-- `workspace.company_name`
 - `workspace.connect_partner_name`
 - `workspace.connect_webview_customization`
-- `workspace.is_sandbox`
-- `workspace.name`
-- `workspace.workspace_id`
 
 ### Endpoints
 
@@ -403,9 +327,6 @@ Items that are intentionally undocumented are not included in this section.
 - `/acs/users/update`
     - `email`
     - `hid_acs_system_id`
-- `/client_sessions/create`
-    - `customer_id`
-    - `customer_key`
 - `/connect_webviews/create`
     - `customer_id`
     - `device_selection_mode`
@@ -472,16 +393,6 @@ Items that are intentionally undocumented are not included in this section.
     - `requested_access_methods`
 - `/unstable_access_grants/list`
     - `location_id`
-- `/unstable_partner/resources/push`
-    - `custom_metadata`
-    - `description`
-    - `email_address`
-    - `ends_at`
-    - `location_keys`
-    - `name`
-    - `phone_number`
-    - `starts_at`
-    - `user_identity_key`
 - `/user_identities/get`
     - `user_identity_key`
 - `/workspaces/create`
@@ -523,6 +434,11 @@ These items have been marked as draft.
 
 These items are deprecated.
 
+### Resources
+
+- `acs_credential_pool`: Not used.
+- `acs_credential_provisioning_automation`: Not used.
+
 ### Resource properties
 
 - `access_grant.location_ids`: Use `space_ids`.
@@ -532,12 +448,13 @@ These items are deprecated.
 - `acs_system.system_type`: Use `external_type`.
 - `acs_system.system_type_display_name`: Use `external_type_display_name`.
 - `acs_user.email`: use email_address.
+- `client_session.user_identity_ids`: Use `user_identity_id` instead.
 - `connect_webview.accepted_devices`: Unused. Will be removed.
 - `connect_webview.any_device_allowed`: Unused. Will be removed.
 - `unmanaged_acs_access_group.access_group_type`: Use `external_type`.
 - `unmanaged_acs_access_group.access_group_type_display_name`: Use `external_type_display_name`.
 - `unmanaged_acs_user.email`: use email_address.
-- `workspace.connect_partner_name`: use company_name
+- `workspace.connect_partner_name`: Use `company_name` instead.
 
 ### Endpoint parameters
 
@@ -552,7 +469,7 @@ These items are deprecated.
 - `/acs/users/update`
     - `email`: use email_address.
 - `/client_sessions/create`
-    - `user_identity_ids`: Use `user_identity_id`.
+    - `user_identity_ids`: Use `user_identity_id` instead.
 - `/client_sessions/get_or_create`
     - `user_identity_ids`: Use `user_identity_id`.
 - `/client_sessions/grant_access`
@@ -578,7 +495,7 @@ These items are deprecated.
 - `/unstable_access_grants/list`
     - `location_id`: Use `space_id`.
 - `/workspaces/create`
-    - `connect_partner_name`: use company_name
+    - `connect_partner_name`: Use `company_name` instead.
     - `webview_logo_shape`: Use `connect_webview_customization.webview_logo_shape` instead.
     - `webview_primary_button_color`: Use `connect_webview_customization.webview_primary_button_color` instead.
     - `webview_primary_button_text_color`: Use `connect_webview_customization.webview_primary_button_text_color` instead.
