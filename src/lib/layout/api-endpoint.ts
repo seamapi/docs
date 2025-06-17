@@ -174,6 +174,7 @@ export function setEndpointLayoutContext(
           ({ isUndocumented }) => !isUndocumented,
         ),
         actionAttempt.propertyGroups,
+        {},
       ),
     }
   }

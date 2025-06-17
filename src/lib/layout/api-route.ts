@@ -45,6 +45,7 @@ interface ResourceSampleContext {
 
 interface ApiRoutePropertyGroup {
   name?: string
+  propertyGroupKey: string | null
   properties: ApiRouteProperty[]
 }
 
@@ -145,7 +146,14 @@ export function setApiRouteLayoutContext(
       ({ name }) => name === 'properties',
     )
 
-    const propertyGroups = groupProperties(properties, resource.propertyGroups)
+    const propertyGroups = groupProperties(
+      properties,
+      resource.propertyGroups,
+      {
+        include: metadata.include_property_groups,
+        exclude: metadata.exclude_property_groups,
+      },
+    )
 
     addLinkTargetsToProperties(propertyGroups?.[0]?.properties, {
       errors: resourceErrors.length > 0,
@@ -157,6 +165,10 @@ export function setApiRouteLayoutContext(
         ? groupProperties(
             legacyProperty.properties,
             legacyProperty.propertyGroups,
+            {
+              include: metadata.include_property_groups,
+              exclude: metadata.exclude_property_groups,
+            },
           )
         : null
 
@@ -176,6 +188,13 @@ export function setApiRouteLayoutContext(
 export const groupProperties = (
   properties: Property[],
   propertyGroups: PropertyGroup[],
+  {
+    include,
+    exclude,
+  }: {
+    include?: string[] | undefined
+    exclude?: string[] | undefined
+  },
 ): ApiRoutePropertyGroup[] => {
   const getApiRouteProperties = (
     propertyGroupKey: string | null,
@@ -185,21 +204,33 @@ export const groupProperties = (
       .map(mapBlueprintPropertyToRouteProperty)
 
   return propertyGroups
-    .reduce(
+    .reduce<ApiRoutePropertyGroup[]>(
       (groups, propertyGroup) => [
         ...groups,
         {
           name: propertyGroup.name,
+          propertyGroupKey: propertyGroup.propertyGroupKey,
           properties: getApiRouteProperties(propertyGroup.propertyGroupKey),
         },
       ],
       [
         {
           properties: getApiRouteProperties(null),
+          propertyGroupKey: null,
         },
       ],
     )
     .filter(({ properties }) => properties.length > 0)
+    .filter(({ propertyGroupKey }) => {
+      if (include == null) return true
+      if (propertyGroupKey == null) return false
+      return include.includes(propertyGroupKey)
+    })
+    .filter(({ propertyGroupKey }) => {
+      if (exclude == null) return true
+      if (propertyGroupKey == null) return true
+      return !exclude.includes(propertyGroupKey)
+    })
 }
 
 const groupEventsByRoutePath = (
