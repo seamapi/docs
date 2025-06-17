@@ -1,6 +1,6 @@
 # Thermostats
 
-## The thermostat Object
+## The device Object for Thermostats
 
 - [Properties](./#properties)
 - [Errors](./#errors)
