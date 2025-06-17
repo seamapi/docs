@@ -40,7 +40,7 @@ A thermostat [climate preset](../../capability-guides/thermostats/creating-and-m
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the event.
+  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -72,7 +72,7 @@ A thermostat [climate preset](../../capability-guides/thermostats/creating-and-m
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -87,7 +87,7 @@ A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was ad
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the event.
+  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
 
 <strong><code>cooling_set_point_celsius</code></strong> <i>Number</i>
 
@@ -160,7 +160,7 @@ A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was ad
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -175,7 +175,7 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temp
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the event.
+  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -223,7 +223,7 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temp
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -238,7 +238,7 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temp
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the event.
+  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -286,7 +286,7 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temp
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -301,7 +301,7 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temp
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the event.
+  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -341,7 +341,7 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temp
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -356,7 +356,7 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) repo
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the event.
+  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -388,7 +388,7 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) repo
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---

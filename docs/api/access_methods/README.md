@@ -12,6 +12,8 @@
 - [Endpoints](./#endpoints)
 
 
+Represents an access method for an access grant. Access methods describe the modes of access, such as PIN codes, plastic cards, and mobile keys. For a mobile key, the access method also stores the URL for the associated Instant Key.
+
 ---
 ## Properties
 
@@ -44,7 +46,7 @@ Display name of the access method.
 
 **`instant_key_url`** *String*
 
-URL of instant key for mobile key access methods.
+URL of the Instant Key for mobile key access methods.
 
 
 
@@ -53,7 +55,7 @@ URL of instant key for mobile key access methods.
 
 **`is_card_encoding_required`** *Boolean*
 
-Whether card encoding is required for plastic card access methods.
+Indicates whether card encoding is required for plastic card access methods.
 
 
 
@@ -87,7 +89,7 @@ Access method mode. Supported values: `code`, `card`, `mobile_key`.
 
 **`workspace_id`** *UUID*
 
-Unique identifier for the Seam workspace associated with the access grant.
+ID of the Seam workspace associated with the access method.
 
 
 
@@ -127,7 +129,7 @@ An access method was issued.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -162,7 +164,7 @@ An access method was revoked.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -197,7 +199,7 @@ An access method representing a physical card requires encoding.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -232,7 +234,7 @@ An access method was deleted.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---

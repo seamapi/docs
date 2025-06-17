@@ -115,7 +115,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 **`acs_encoder.added`**
 
-An [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) was added.
+An [access system encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) was added.
 
 <details>
 
@@ -151,14 +151,14 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
 
 **`acs_encoder.removed`**
 
-An [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) was removed.
+An [access system encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) was removed.
 
 <details>
 
@@ -194,7 +194,7 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---

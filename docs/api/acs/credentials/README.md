@@ -79,16 +79,28 @@ Vostio-specific metadata for the [credential](../../../capability-guides/access-
   <summary>Child Properties</summary>
 
   - <strong><code>auto_join</code></strong> <i>Boolean</i>
+  
+    Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors.
 
   - <strong><code>door_names</code></strong> <i>List</i> <i>of Strings</i>
+  
+    Names of the doors to which to grant access in the Vostio access system.
 
   - <strong><code>endpoint_id</code></strong> <i>String</i>
+  
+    Endpoint ID in the Vostio access system.
 
   - <strong><code>key_id</code></strong> <i>String</i>
+  
+    Key ID in the Vostio access system.
 
   - <strong><code>key_issuing_request_id</code></strong> <i>String</i>
+  
+    Key issuing request ID in the Vostio access system.
 
   - <strong><code>override_guest_acs_entrance_ids</code></strong> <i>List</i> <i>of Strings</i>
+  
+    IDs of the guest entrances to override in the Vostio access system.
 
 </details>
 
@@ -275,8 +287,12 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
   <summary>Child Properties</summary>
 
   - <strong><code>auto_join</code></strong> <i>Boolean</i>
+  
+    Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors.
 
   - <strong><code>card_function_type</code></strong> <i>Enum</i>
+  
+    Card function type in the Visionline access system.
   <details>
       <summary>Enum values:</summary>
   
@@ -285,16 +301,28 @@ Visionline-specific metadata for the [credential](../../../capability-guides/acc
   </details>
 
   - <strong><code>card_id</code></strong> <i>String</i>
+  
+    ID of the card in the Visionline access system.
 
   - <strong><code>common_acs_entrance_ids</code></strong> <i>List</i> <i>of UUIDs</i>
+  
+    Common entrance IDs in the Visionline access system.
 
   - <strong><code>credential_id</code></strong> <i>String</i>
+  
+    ID of the credential in the Visionline access system.
 
   - <strong><code>guest_acs_entrance_ids</code></strong> <i>List</i> <i>of UUIDs</i>
+  
+    Guest entrance IDs in the Visionline access system.
 
   - <strong><code>is_valid</code></strong> <i>Boolean</i>
+  
+    Indicates whether the credential is valid.
 
   - <strong><code>joiner_acs_credential_ids</code></strong> <i>List</i> <i>of UUIDs</i>
+  
+    IDs of the credentials to which you want to join.
 
 </details>
 
@@ -558,7 +586,7 @@ Access permissions for the [credential](../../../capability-guides/access-system
 
 **`acs_credential.deleted`**
 
-An [ACS credential](../../../capability-guides/access-systems/managing-credentials.md) was deleted.
+An [access system credential](../../../capability-guides/access-systems/managing-credentials.md) was deleted.
 
 <details>
 
@@ -594,14 +622,14 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
 
 **`acs_credential.issued`**
 
-An [ACS credential](../../../capability-guides/access-systems/managing-credentials.md) was issued.
+An [access system credential](../../../capability-guides/access-systems/managing-credentials.md) was issued.
 
 <details>
 
@@ -637,14 +665,14 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
 
 **`acs_credential.reissued`**
 
-An [ACS credential](../../../capability-guides/access-systems/managing-credentials.md) was reissued.
+An [access system credential](../../../capability-guides/access-systems/managing-credentials.md) was reissued.
 
 <details>
 
@@ -680,14 +708,14 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
 
 **`acs_credential.invalidated`**
 
-An [ACS credential](../../../capability-guides/access-systems/managing-credentials.md) was invalidated. That is, the credential cannot be used anymore.
+An [access system credential](../../../capability-guides/access-systems/managing-credentials.md) was invalidated. That is, the credential cannot be used anymore.
 
 <details>
 
@@ -723,7 +751,7 @@ An [ACS credential](../../../capability-guides/access-systems/managing-credentia
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
