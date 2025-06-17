@@ -34,7 +34,7 @@
     "@prettier/plugin-ruby": "^4.0.4",
     "@seamapi/blueprint": "^0.49.0",
     "@seamapi/smith": "^0.4.4",
-    "@seamapi/types": "1.416.0",
+    "@seamapi/types": "1.416.1",
     "change-case": "^5.4.4",
     "command-exists": "^1.2.9",
     "execa": "^9.3.1",
