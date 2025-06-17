@@ -12,7 +12,6 @@
 - `/devices/unmanaged`
 - `/events`
 - `/locks`
-- `/noise_sensors`
 - `/noise_sensors/noise_thresholds`
 - `/noise_sensors/simulate`
 - `/thermostats/daily_programs`

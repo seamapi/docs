@@ -1,5 +1,17 @@
 # Thermostats
 
+Represents a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+
+You can use the Seam API to perform the following management and monitoring actions for thermostats:
+
+- Monitor current thermostat settings and readings.
+- Configure temperature thresholds. Then, reported temperatures outside acceptable thresholds automatically alert you to potential HVAC system issues.
+- Make immediate changes to thermostat climate settings, such as the HVAC mode and fan mode.
+- Create and schedule climate presets, including a fallback climate preset.
+- Create daily and weekly thermostat programs.
+
+The Seam API represents a thermostat as a \`device\` resource that includes both basic device properties and thermostat-specific properties.
+
 
 ## Events
 
