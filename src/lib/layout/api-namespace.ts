@@ -48,14 +48,7 @@ export function setNamespaceLayoutContext(
       throw new Error(`Resource ${resourceType} not found in blueprint`)
     }
 
-    const resourceRoute = namespaceRoutes.find(([_, metadata]) =>
-      metadata.resources.includes(resourceType),
-    )
-    if (resourceRoute == null) {
-      throw new Error(`Route for resource ${resourceType} not found`)
-    }
-    const [routePath] = resourceRoute
-    const lastPathSegment = routePath.split('/').at(-1)
+    const lastPathSegment = resource.routePath.split('/').at(-1)
     const docLink = `./${lastPathSegment}/README.md#${resourceType}`
 
     return {
