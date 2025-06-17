@@ -47,7 +47,6 @@
 
 /thermostats:
   title: Thermostats
-  resources: []
 
 /thermostats/simulate:
   title: Thermostat Simulations
