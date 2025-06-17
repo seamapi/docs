@@ -48,7 +48,7 @@
 /thermostats:
   title: Thermostats
   overview: |
-    ## The thermostat Object
+    ## The device Object for Thermostats
 
     - [Properties](./#properties)
     - [Errors](./#errors)
@@ -80,7 +80,7 @@
 /noise_sensors:
   title: Noise Sensors
   overview: |
-    ## The noise_sensor Object
+    ## The device Object for Noise Sensors
 
     - [Properties](./#properties)
     - [Errors](./#errors)
