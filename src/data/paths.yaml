@@ -47,6 +47,10 @@
 
 /thermostats:
   title: Thermostats
+  resources:
+    - device
+  include_property_groups:
+    - thermostats
 
 /thermostats/simulate:
   title: Thermostat Simulations
