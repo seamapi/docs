@@ -10,7 +10,7 @@ You can use the Seam API to perform the following management and monitoring acti
 - Create and schedule climate presets, including a fallback climate preset.
 - Create daily and weekly thermostat programs.
 
-The Seam API represents a thermostat as a \`device\` resource that includes both basic device properties and thermostat-specific properties.
+The Seam API represents a thermostat as a `device` resource that includes both basic device properties and thermostat-specific properties.
 
 
 ## Events
