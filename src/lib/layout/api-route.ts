@@ -195,7 +195,7 @@ export const groupProperties = (
         properties: getApiRouteProperties(null),
       },
     ],
-  )
+  ).filter(({properties}) => properties.length > 0)
 }
 
 const groupEventsByRoutePath = (
@@ -285,7 +285,7 @@ function collectResourceErrors(errors: Property | undefined): ApiError[] {
     .filter((error): error is ApiError => error !== null)
 }
 
-export const mapBlueprintPropertyToRouteProperty = (
+const mapBlueprintPropertyToRouteProperty = (
   prop: Property,
 ): ApiRouteProperty => {
   const { name, description, format, isDeprecated, deprecationMessage } = prop
