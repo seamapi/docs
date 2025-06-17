@@ -37,7 +37,7 @@ export function setNamespaceLayoutContext(
   )
   const namespaceResources = [
     ...resources
-      .filter((r) => r.routePath === namespace && !r.isUndocumented)
+      .filter((r) => r.routePath.startsWith(namespace) && !r.isUndocumented)
       .map(({ resourceType }) => resourceType),
     ...namespaceRoutes.flatMap(([_, metadata]) => metadata.resources),
   ]
