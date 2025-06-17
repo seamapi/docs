@@ -177,7 +177,7 @@ function processResource(
     }
   }
 
-  if (resource.resourceSamples.length === 0) {
+  if (resource.resourceSamples.length === 0 && !resource.isUndocumented) {
     report.resourcesWithoutResourceSamples.push(name)
   }
 
@@ -327,7 +327,7 @@ function processEndpoint(endpoint: Endpoint, report: Report): void {
     })
   }
 
-  if (endpoint.codeSamples.length === 0) {
+  if (endpoint.codeSamples.length === 0 && !endpoint.isUndocumented) {
     report.endpointsWithoutCodeSamples.push(endpoint.path)
   }
 
