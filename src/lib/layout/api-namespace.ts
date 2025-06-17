@@ -41,20 +41,24 @@ export function setNamespaceLayoutContext(
       .map(({ resourceType }) => resourceType),
     ...namespaceRoutes.flatMap(([_, metadata]) => metadata.resources),
   ]
-  file.resources = namespaceResources.map((resourceType) => {
-    const resource = resources.find((r) => r.resourceType === resourceType)
+  file.resources = namespaceResources
+    .map((resourceType) => {
+      const resource = resources.find((r) => r.resourceType === resourceType)
 
-    if (resource == null) {
-      throw new Error(`Resource ${resourceType} not found in blueprint`)
-    }
+      if (resource == null) {
+        throw new Error(`Resource ${resourceType} not found in blueprint`)
+      }
 
-    const lastPathSegment = resource.routePath.split('/').at(-1)
-    const docLink = `./${lastPathSegment}/README.md#${resourceType}`
+      const lastPathSegment = resource.routePath.split('/').at(-1)
+      const docLink = `./${lastPathSegment}/README.md#${resourceType}`
 
-    return {
-      name: resourceType,
-      description: resource.description,
-      link: docLink,
-    }
-  })
+      return {
+        name: resourceType,
+        description: resource.description,
+        link: docLink,
+      }
+    })
+    .sort((a, b) => {
+      return a.name.localeCompare(b.name)
+    })
 }
