@@ -272,7 +272,10 @@ function collectResourceWarnings(warnings: Property | undefined): ApiWarning[] {
 
   return warnings.variants
     .map((variant) => {
-      const warningCode = findEnumProperty(variant.properties, 'warning_code')
+      const warningCode = findEnumProperty(
+        variant.properties,
+        warnings.discriminator,
+      )
       if (warningCode?.values?.[0]?.name == null) {
         return null
       }
@@ -313,7 +316,10 @@ function collectResourceErrors(errors: Property | undefined): ApiError[] {
 
   return errors.variants
     .map((variant) => {
-      const errorCode = findEnumProperty(variant.properties, 'error_code')
+      const errorCode = findEnumProperty(
+        variant.properties,
+        errors.discriminator,
+      )
       if (errorCode?.values?.[0]?.name == null) {
         return null
       }
