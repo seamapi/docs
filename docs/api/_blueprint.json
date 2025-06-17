@@ -40755,6 +40755,19 @@
           ]
         },
         {
+          "name": "connected_account_id",
+          "description": "ID of the [connected account](../capability-guides/access-systems/retrieving-entrance-details.md) associated with the [entrance](../capability-guides/access-systems/retrieving-entrance-details.md).",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        },
+        {
           "name": "created_at",
           "description": "Date and time at which the [entrance](../capability-guides/access-systems/retrieving-entrance-details.md) was created.",
           "isDeprecated": false,
@@ -57203,6 +57216,19 @@
                           "jsonType": "boolean"
                         }
                       ]
+                    },
+                    {
+                      "name": "connected_account_id",
+                      "description": "ID of the [connected account](../capability-guides/access-systems/retrieving-entrance-details.md) associated with the [entrance](../capability-guides/access-systems/retrieving-entrance-details.md).",
+                      "isDeprecated": false,
+                      "deprecationMessage": "",
+                      "isUndocumented": false,
+                      "undocumentedMessage": "",
+                      "isDraft": false,
+                      "draftMessage": "",
+                      "propertyGroupKey": null,
+                      "format": "id",
+                      "jsonType": "string"
                     },
                     {
                       "name": "created_at",
