@@ -75,6 +75,15 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
 
 ---
 
+**`connected_account_id`** *UUID*
+
+ID of the [connected account](../../../capability-guides/access-systems/retrieving-entrance-details.md) associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
+
+
+
+---
+
 **`created_at`** *Datetime*
 
 Date and time at which the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md) was created.
