@@ -34455,6 +34455,7 @@
   ],
   "namespaces": [
     {
+      "name": "acs",
       "path": "/acs",
       "parentPath": null,
       "isDeprecated": false,
@@ -34462,6 +34463,7 @@
       "isDraft": false
     },
     {
+      "name": "v1",
       "path": "/seam/bridge/v1",
       "parentPath": "/seam/bridge",
       "isDeprecated": false,
@@ -34469,6 +34471,7 @@
       "isDraft": false
     },
     {
+      "name": "v1",
       "path": "/seam/instant_key/v1",
       "parentPath": "/seam/instant_key",
       "isDeprecated": false,
@@ -34476,6 +34479,7 @@
       "isDraft": false
     },
     {
+      "name": "acs",
       "path": "/seam/mobile_sdk/v1/acs",
       "parentPath": "/seam/mobile_sdk/v1",
       "isDeprecated": false,
@@ -34483,6 +34487,7 @@
       "isDraft": false
     },
     {
+      "name": "v1",
       "path": "/seam/mobile_sdk/v1",
       "parentPath": "/seam/mobile_sdk",
       "isDeprecated": false,
@@ -34490,6 +34495,7 @@
       "isDraft": false
     },
     {
+      "name": "building_blocks",
       "path": "/seam/partner/v1/building_blocks",
       "parentPath": "/seam/partner/v1",
       "isDeprecated": false,
@@ -34497,6 +34503,7 @@
       "isDraft": false
     },
     {
+      "name": "v1",
       "path": "/seam/partner/v1",
       "parentPath": "/seam/partner",
       "isDeprecated": false,
@@ -34504,6 +34511,7 @@
       "isDraft": false
     },
     {
+      "name": "unstable_partner",
       "path": "/unstable_partner",
       "parentPath": null,
       "isDeprecated": false,
@@ -38432,7 +38440,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -38655,7 +38663,7 @@
       "undocumentedMessage": "",
       "isDraft": true,
       "draftMessage": "Early access.",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -38806,7 +38814,7 @@
       "undocumentedMessage": "",
       "isDraft": true,
       "draftMessage": "Early access.",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -39168,7 +39176,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -39283,7 +39291,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "auto_join",
@@ -39711,7 +39719,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "auto_join",
@@ -40219,7 +40227,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -40337,7 +40345,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -40417,7 +40425,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -40577,7 +40585,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -40621,7 +40629,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "door_name",
@@ -40770,7 +40778,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "access_point_name",
@@ -40841,7 +40849,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "accessibility_type",
@@ -40909,7 +40917,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "battery_level",
@@ -41029,7 +41037,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "door_description",
@@ -41084,7 +41092,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "door_category",
@@ -41249,7 +41257,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -41978,7 +41986,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "time_zone",
@@ -42178,7 +42186,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "lan_address",
@@ -42386,7 +42394,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [
         {
           "title": "ACS System",
@@ -42435,7 +42443,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "ends_at",
@@ -43226,7 +43234,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "email_address",
@@ -43319,7 +43327,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "email_address",
@@ -43392,7 +43400,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "ends_at",
@@ -43472,7 +43480,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "ends_at",
@@ -43532,7 +43540,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "is_suspended",
@@ -43599,7 +43607,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "is_suspended",
@@ -43646,7 +43654,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "acs_access_group_id",
@@ -43713,7 +43721,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "acs_access_group_id",
@@ -44063,7 +44071,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -44441,7 +44449,7 @@
       "undocumentedMessage": "Seam Bridge Client only.",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -44560,7 +44568,7 @@
       "undocumentedMessage": "Seam Bridge Client only.",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -44734,7 +44742,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -45118,7 +45126,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -45554,7 +45562,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "sites",
@@ -45643,7 +45651,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "api_url",
@@ -45879,7 +45887,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "sites",
@@ -45990,7 +45998,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -47863,7 +47871,7 @@
           "propertyGroupKey": "hardware",
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "location_name",
@@ -47918,36 +47926,36 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {
-            "access_codes": {
+          "propertyGroups": [
+            {
               "name": "Access Codes",
               "propertyGroupKey": "access_codes"
             },
-            "hardware": {
+            {
               "name": "Hardware",
               "propertyGroupKey": "hardware"
             },
-            "locks": {
+            {
               "name": "Locks",
               "propertyGroupKey": "locks"
             },
-            "noise_sensors": {
+            {
               "name": "Noise Sensors",
               "propertyGroupKey": "noise_sensors"
             },
-            "phones": {
+            {
               "name": "Phones",
               "propertyGroupKey": "phones"
             },
-            "provider_metadata": {
+            {
               "name": "Provider Metadata",
               "propertyGroupKey": "provider_metadata"
             },
-            "thermostats": {
+            {
               "name": "Thermostats",
               "propertyGroupKey": "thermostats"
             }
-          },
+          ],
           "properties": [
             {
               "name": "accessory_keypad",
@@ -47961,7 +47969,7 @@
               "propertyGroupKey": "hardware",
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "battery",
@@ -47975,7 +47983,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "level",
@@ -48019,7 +48027,7 @@
               "propertyGroupKey": "hardware",
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "name",
@@ -48048,7 +48056,7 @@
               "propertyGroupKey": "hardware",
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "level",
@@ -48211,7 +48219,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "accessory_keypad_supported",
@@ -48422,7 +48430,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "endpoints",
@@ -48493,7 +48501,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "has_active_phone",
@@ -48522,7 +48530,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "_member_group_id",
@@ -48590,7 +48598,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "encoder_name",
@@ -48619,7 +48627,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "has_keypad",
@@ -48726,7 +48734,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "entry_name",
@@ -48833,7 +48841,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "device_name",
@@ -48862,7 +48870,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "device_id",
@@ -48917,7 +48925,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "device_id",
@@ -48931,7 +48939,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": []
                 },
                 {
@@ -49172,7 +49180,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "device_name",
@@ -49214,7 +49222,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "device_id",
@@ -49269,7 +49277,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "device_name",
@@ -49311,7 +49319,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "device_name",
@@ -49353,7 +49361,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "device_id",
@@ -49408,7 +49416,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "bridge_id",
@@ -49463,7 +49471,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "bridge_id",
@@ -49544,7 +49552,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "device_id",
@@ -49599,7 +49607,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "device_id",
@@ -49654,7 +49662,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "device_id",
@@ -49694,7 +49702,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "accelerometer_z",
@@ -49708,7 +49716,7 @@
                       "propertyGroupKey": null,
                       "format": "object",
                       "jsonType": "object",
-                      "propertyGroups": {},
+                      "propertyGroups": [],
                       "properties": [
                         {
                           "name": "time",
@@ -49750,7 +49758,7 @@
                       "propertyGroupKey": null,
                       "format": "object",
                       "jsonType": "object",
-                      "propertyGroups": {},
+                      "propertyGroups": [],
                       "properties": [
                         {
                           "name": "time",
@@ -49792,7 +49800,7 @@
                       "propertyGroupKey": null,
                       "format": "object",
                       "jsonType": "object",
-                      "propertyGroups": {},
+                      "propertyGroups": [],
                       "properties": [
                         {
                           "name": "time",
@@ -49834,7 +49842,7 @@
                       "propertyGroupKey": null,
                       "format": "object",
                       "jsonType": "object",
-                      "propertyGroups": {},
+                      "propertyGroups": [],
                       "properties": [
                         {
                           "name": "time",
@@ -49876,7 +49884,7 @@
                       "propertyGroupKey": null,
                       "format": "object",
                       "jsonType": "object",
-                      "propertyGroups": {},
+                      "propertyGroups": [],
                       "properties": [
                         {
                           "name": "time",
@@ -49922,7 +49930,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "device_custom_name",
@@ -49990,7 +49998,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "device_id",
@@ -50093,7 +50101,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "device_id",
@@ -50174,7 +50182,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "battery_level",
@@ -50268,7 +50276,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "battery_level",
@@ -50362,7 +50370,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "device_id",
@@ -50417,7 +50425,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "device_num",
@@ -50494,7 +50502,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "device_id",
@@ -50549,7 +50557,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "device_id",
@@ -50617,7 +50625,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "device_type",
@@ -50659,7 +50667,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "bridge_id",
@@ -50766,7 +50774,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "feature_value",
@@ -50793,7 +50801,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "incomplete_keyboard_passcode",
@@ -50970,7 +50978,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "device_id",
@@ -51012,7 +51020,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "encoder_id",
@@ -51041,7 +51049,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "device_id",
@@ -51378,7 +51386,7 @@
               "propertyGroupKey": "access_codes",
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "level",
@@ -51460,7 +51468,7 @@
               "propertyGroupKey": "thermostats",
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "climate_preset_key",
@@ -52009,7 +52017,7 @@
               "propertyGroupKey": "thermostats",
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "can_delete",
@@ -52268,7 +52276,7 @@
               "propertyGroupKey": "thermostats",
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "can_delete",
@@ -52806,7 +52814,7 @@
               "propertyGroupKey": "thermostats",
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "lower_limit_celsius",
@@ -52997,7 +53005,7 @@
               "propertyGroupKey": "thermostats",
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "created_at",
@@ -54098,36 +54106,36 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {
-        "access_codes": {
+      "propertyGroups": [
+        {
           "name": "Access Codes",
           "propertyGroupKey": "access_codes"
         },
-        "hardware": {
+        {
           "name": "Hardware",
           "propertyGroupKey": "hardware"
         },
-        "locks": {
+        {
           "name": "Locks",
           "propertyGroupKey": "locks"
         },
-        "noise_sensors": {
+        {
           "name": "Noise Sensors",
           "propertyGroupKey": "noise_sensors"
         },
-        "phones": {
+        {
           "name": "Phones",
           "propertyGroupKey": "phones"
         },
-        "provider_metadata": {
+        {
           "name": "Provider Metadata",
           "propertyGroupKey": "provider_metadata"
         },
-        "thermostats": {
+        {
           "name": "Thermostats",
           "propertyGroupKey": "thermostats"
         }
-      },
+      ],
       "resourceSamples": []
     },
     {
@@ -54862,7 +54870,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -54942,7 +54950,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -55914,7 +55922,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -56020,7 +56028,7 @@
       "undocumentedMessage": "Unreleased.",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -56064,7 +56072,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "latitude",
@@ -56155,7 +56163,7 @@
       "undocumentedMessage": "Will be removed.",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -56290,7 +56298,7 @@
       "undocumentedMessage": "Unreleased.",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -56396,7 +56404,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -56568,7 +56576,7 @@
       "undocumentedMessage": "Unreleased.",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -56728,7 +56736,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "assa_abloy_credential_service_metadata",
@@ -56742,7 +56750,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "endpoints",
@@ -56813,7 +56821,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "has_active_phone",
@@ -56896,12 +56904,12 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {
-        "phones": {
+      "propertyGroups": [
+        {
           "name": "Phones",
           "propertyGroupKey": "phones"
         }
-      },
+      ],
       "resourceSamples": []
     },
     {
@@ -57058,7 +57066,7 @@
                       "propertyGroupKey": null,
                       "format": "object",
                       "jsonType": "object",
-                      "propertyGroups": {},
+                      "propertyGroups": [],
                       "properties": [
                         {
                           "name": "door_name",
@@ -57207,7 +57215,7 @@
                       "propertyGroupKey": null,
                       "format": "object",
                       "jsonType": "object",
-                      "propertyGroups": {},
+                      "propertyGroups": [],
                       "properties": [
                         {
                           "name": "access_point_name",
@@ -57278,7 +57286,7 @@
                       "propertyGroupKey": null,
                       "format": "object",
                       "jsonType": "object",
-                      "propertyGroups": {},
+                      "propertyGroups": [],
                       "properties": [
                         {
                           "name": "accessibility_type",
@@ -57346,7 +57354,7 @@
                       "propertyGroupKey": null,
                       "format": "object",
                       "jsonType": "object",
-                      "propertyGroups": {},
+                      "propertyGroups": [],
                       "properties": [
                         {
                           "name": "battery_level",
@@ -57466,7 +57474,7 @@
                       "propertyGroupKey": null,
                       "format": "object",
                       "jsonType": "object",
-                      "propertyGroups": {},
+                      "propertyGroups": [],
                       "properties": [
                         {
                           "name": "door_description",
@@ -57521,7 +57529,7 @@
                       "propertyGroupKey": null,
                       "format": "object",
                       "jsonType": "object",
-                      "propertyGroups": {},
+                      "propertyGroups": [],
                       "properties": [
                         {
                           "name": "door_category",
@@ -57717,7 +57725,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "auto_join",
@@ -58145,7 +58153,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "auto_join",
@@ -58422,7 +58430,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "is_being_activated",
@@ -58476,7 +58484,7 @@
       "undocumentedMessage": "Seam Mobile SDK only.",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -58556,7 +58564,7 @@
       "undocumentedMessage": "",
       "isDraft": true,
       "draftMessage": "Early access.",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -58678,7 +58686,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -58865,7 +58873,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -62631,7 +62639,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -62993,7 +63001,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -63108,7 +63116,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "auto_join",
@@ -63536,7 +63544,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "auto_join",
@@ -64044,7 +64052,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -64062,7 +64070,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "ends_at",
@@ -64853,7 +64861,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "email_address",
@@ -64946,7 +64954,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "email_address",
@@ -65019,7 +65027,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "ends_at",
@@ -65099,7 +65107,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "ends_at",
@@ -65159,7 +65167,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "is_suspended",
@@ -65226,7 +65234,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "is_suspended",
@@ -65273,7 +65281,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "acs_access_group_id",
@@ -65340,7 +65348,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "acs_access_group_id",
@@ -65690,7 +65698,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -67537,7 +67545,7 @@
           "propertyGroupKey": "hardware",
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "location_name",
@@ -67579,36 +67587,36 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {
-            "access_codes": {
+          "propertyGroups": [
+            {
               "name": "access codes",
               "propertyGroupKey": "access_codes"
             },
-            "hardware": {
+            {
               "name": "hardware",
               "propertyGroupKey": "hardware"
             },
-            "locks": {
+            {
               "name": "locks",
               "propertyGroupKey": "locks"
             },
-            "noise_sensors": {
+            {
               "name": "noise sensors",
               "propertyGroupKey": "noise_sensors"
             },
-            "phones": {
+            {
               "name": "phones",
               "propertyGroupKey": "phones"
             },
-            "provider_metadata": {
+            {
               "name": "provider metadata",
               "propertyGroupKey": "provider_metadata"
             },
-            "thermostats": {
+            {
               "name": "thermostats",
               "propertyGroupKey": "thermostats"
             }
-          },
+          ],
           "properties": [
             {
               "name": "accessory_keypad",
@@ -67622,7 +67630,7 @@
               "propertyGroupKey": "hardware",
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "battery",
@@ -67636,7 +67644,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "level",
@@ -67680,7 +67688,7 @@
               "propertyGroupKey": "hardware",
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "level",
@@ -67816,7 +67824,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "accessory_keypad_supported",
@@ -68956,36 +68964,36 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {
-        "access_codes": {
+      "propertyGroups": [
+        {
           "name": "Access Codes",
           "propertyGroupKey": "access_codes"
         },
-        "hardware": {
+        {
           "name": "Hardware",
           "propertyGroupKey": "hardware"
         },
-        "locks": {
+        {
           "name": "Locks",
           "propertyGroupKey": "locks"
         },
-        "noise_sensors": {
+        {
           "name": "Noise Sensors",
           "propertyGroupKey": "noise_sensors"
         },
-        "phones": {
+        {
           "name": "Phones",
           "propertyGroupKey": "phones"
         },
-        "provider_metadata": {
+        {
           "name": "Provider Metadata",
           "propertyGroupKey": "provider_metadata"
         },
-        "thermostats": {
+        {
           "name": "Thermostats",
           "propertyGroupKey": "thermostats"
         }
-      },
+      ],
       "resourceSamples": []
     },
     {
@@ -69219,7 +69227,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -69287,7 +69295,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     },
     {
@@ -69331,7 +69339,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "inviter_logo_url",
@@ -69483,7 +69491,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": []
     }
   ],
@@ -69661,7 +69669,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_code.created"
     },
@@ -69793,7 +69801,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_code.changed"
     },
@@ -69938,7 +69946,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_code.scheduled_on_device"
     },
@@ -70083,7 +70091,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_code.set_on_device"
     },
@@ -70215,7 +70223,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_code.removed_from_device"
     },
@@ -70347,7 +70355,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_code.delay_in_setting_on_device"
     },
@@ -70479,7 +70487,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_code.failed_to_set_on_device"
     },
@@ -70624,7 +70632,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_code.deleted"
     },
@@ -70756,7 +70764,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_code.delay_in_removing_from_device"
     },
@@ -70888,7 +70896,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_code.failed_to_remove_from_device"
     },
@@ -71020,7 +71028,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_code.modified_external_to_seam"
     },
@@ -71152,7 +71160,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_code.deleted_external_to_seam"
     },
@@ -71297,7 +71305,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_code.backup_access_code_pulled"
     },
@@ -71429,7 +71437,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_code.unmanaged.converted_to_managed"
     },
@@ -71561,7 +71569,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_code.unmanaged.failed_to_convert_to_managed"
     },
@@ -71693,7 +71701,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_code.unmanaged.created"
     },
@@ -71825,7 +71833,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_code.unmanaged.removed"
     },
@@ -71931,7 +71939,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_grant.created"
     },
@@ -72037,7 +72045,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_grant.deleted"
     },
@@ -72143,7 +72151,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_grant.access_granted_to_all_doors"
     },
@@ -72262,7 +72270,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_grant.access_granted_to_door"
     },
@@ -72381,7 +72389,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_grant.access_to_door_lost"
     },
@@ -72487,7 +72495,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_method.issued"
     },
@@ -72593,7 +72601,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_method.revoked"
     },
@@ -72699,7 +72707,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_method.card_encoding_required"
     },
@@ -72805,7 +72813,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_method.deleted"
     },
@@ -72924,7 +72932,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "acs_system.connected"
     },
@@ -73043,7 +73051,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "acs_system.added"
     },
@@ -73162,7 +73170,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "acs_system.disconnected"
     },
@@ -73294,7 +73302,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "acs_credential.deleted"
     },
@@ -73426,7 +73434,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "acs_credential.issued"
     },
@@ -73558,7 +73566,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "acs_credential.reissued"
     },
@@ -73690,7 +73698,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "acs_credential.invalidated"
     },
@@ -73822,7 +73830,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "acs_user.created"
     },
@@ -73954,7 +73962,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "acs_user.deleted"
     },
@@ -74086,7 +74094,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "acs_encoder.added"
     },
@@ -74218,7 +74226,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "acs_encoder.removed"
     },
@@ -74350,7 +74358,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "acs_access_group.deleted"
     },
@@ -74482,7 +74490,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "acs_entrance.added"
     },
@@ -74614,7 +74622,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "acs_entrance.removed"
     },
@@ -74720,7 +74728,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "client_session.deleted"
     },
@@ -74839,7 +74847,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "connected_account.connected"
     },
@@ -74958,7 +74966,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "connected_account.created"
     },
@@ -75077,7 +75085,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "connected_account.successful_login"
     },
@@ -75183,7 +75191,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "connected_account.disconnected"
     },
@@ -75289,7 +75297,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "connected_account.completed_first_sync"
     },
@@ -75395,7 +75403,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "connected_account.deleted"
     },
@@ -75501,7 +75509,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "connected_account.completed_first_sync_after_reconnection"
     },
@@ -75633,7 +75641,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "action_attempt.lock_door.succeeded"
     },
@@ -75765,7 +75773,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "action_attempt.lock_door.failed"
     },
@@ -75897,7 +75905,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "action_attempt.unlock_door.succeeded"
     },
@@ -76029,7 +76037,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "action_attempt.unlock_door.failed"
     },
@@ -76148,7 +76156,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "connect_webview.login_succeeded"
     },
@@ -76254,7 +76262,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "connect_webview.login_failed"
     },
@@ -76373,7 +76381,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.connected"
     },
@@ -76492,7 +76500,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.added"
     },
@@ -76611,7 +76619,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.converted_to_unmanaged"
     },
@@ -76730,7 +76738,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.unmanaged.converted_to_managed"
     },
@@ -76849,7 +76857,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.unmanaged.connected"
     },
@@ -77013,7 +77021,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.disconnected"
     },
@@ -77177,7 +77185,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.unmanaged.disconnected"
     },
@@ -77296,7 +77304,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.tampered"
     },
@@ -77428,7 +77436,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.low_battery"
     },
@@ -77615,7 +77623,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.battery_status_changed"
     },
@@ -77734,7 +77742,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.removed"
     },
@@ -77853,7 +77861,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.deleted"
     },
@@ -77972,7 +77980,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.third_party_integration_detected"
     },
@@ -78091,7 +78099,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.third_party_integration_no_longer_detected"
     },
@@ -78210,7 +78218,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.salto.privacy_mode_activated"
     },
@@ -78329,7 +78337,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.salto.privacy_mode_deactivated"
     },
@@ -78448,7 +78456,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.connection_became_flaky"
     },
@@ -78567,7 +78575,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.connection_stabilized"
     },
@@ -78686,7 +78694,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.error.subscription_required"
     },
@@ -78805,7 +78813,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.error.subscription_required.resolved"
     },
@@ -78924,7 +78932,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.accessory_keypad_connected"
     },
@@ -79043,7 +79051,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.accessory_keypad_disconnected"
     },
@@ -79240,7 +79248,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "noise_sensor.noise_threshold_triggered"
     },
@@ -79450,7 +79458,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "lock.locked"
     },
@@ -79660,7 +79668,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "lock.unlocked"
     },
@@ -79792,7 +79800,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "lock.access_denied"
     },
@@ -79950,7 +79958,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "thermostat.climate_preset_activated"
     },
@@ -80256,7 +80264,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "thermostat.manually_adjusted"
     },
@@ -80453,7 +80461,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "thermostat.temperature_threshold_exceeded"
     },
@@ -80650,7 +80658,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "thermostat.temperature_threshold_no_longer_exceeded"
     },
@@ -80821,7 +80829,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "thermostat.temperature_reached_set_point"
     },
@@ -80966,7 +80974,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "thermostat.temperature_changed"
     },
@@ -81098,7 +81106,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "device.name_changed"
     },
@@ -81204,7 +81212,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "enrollment_automation.deleted"
     },
@@ -81310,7 +81318,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "phone.deactivated"
     }
@@ -81369,7 +81377,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "message",
@@ -81411,7 +81419,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": []
         },
         {
@@ -81468,7 +81476,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "actionAttemptType": "LOCK_DOOR"
     },
@@ -81525,7 +81533,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "message",
@@ -81567,7 +81575,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": []
         },
         {
@@ -81624,7 +81632,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "actionAttemptType": "UNLOCK_DOOR"
     },
@@ -81681,7 +81689,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "message",
@@ -81755,7 +81763,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "acs_credential_on_encoder",
@@ -81769,7 +81777,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "card_number",
@@ -81848,7 +81856,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "cancelled",
@@ -82046,7 +82054,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "access_method",
@@ -82157,7 +82165,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "auto_join",
@@ -82585,7 +82593,7 @@
                   "propertyGroupKey": null,
                   "format": "object",
                   "jsonType": "object",
-                  "propertyGroups": {},
+                  "propertyGroups": [],
                   "properties": [
                     {
                       "name": "auto_join",
@@ -82970,7 +82978,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "actionAttemptType": "SCAN_CREDENTIAL"
     },
@@ -83027,7 +83035,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "message",
@@ -83121,7 +83129,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "access_method_id",
@@ -83315,7 +83323,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "actionAttemptType": "ENCODE_ACCESS_METHOD"
     },
@@ -83372,7 +83380,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "message",
@@ -83466,7 +83474,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "access_method",
@@ -83577,7 +83585,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "auto_join",
@@ -84005,7 +84013,7 @@
               "propertyGroupKey": null,
               "format": "object",
               "jsonType": "object",
-              "propertyGroups": {},
+              "propertyGroups": [],
               "properties": [
                 {
                   "name": "auto_join",
@@ -84324,7 +84332,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "actionAttemptType": "ENCODE_CREDENTIAL"
     },
@@ -84381,7 +84389,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "message",
@@ -84423,7 +84431,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": []
         },
         {
@@ -84480,7 +84488,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "actionAttemptType": "RESET_SANDBOX_WORKSPACE"
     },
@@ -84537,7 +84545,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "message",
@@ -84579,7 +84587,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": []
         },
         {
@@ -84636,7 +84644,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "actionAttemptType": "SET_FAN_MODE"
     },
@@ -84693,7 +84701,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "message",
@@ -84735,7 +84743,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": []
         },
         {
@@ -84792,7 +84800,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "actionAttemptType": "SET_HVAC_MODE"
     },
@@ -84849,7 +84857,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "message",
@@ -84891,7 +84899,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": []
         },
         {
@@ -84948,7 +84956,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "actionAttemptType": "ACTIVATE_CLIMATE_PRESET"
     },
@@ -85005,7 +85013,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "message",
@@ -85047,7 +85055,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": []
         },
         {
@@ -85104,7 +85112,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "actionAttemptType": "SIMULATE_KEYPAD_CODE_ENTRY"
     },
@@ -85161,7 +85169,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "message",
@@ -85203,7 +85211,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": []
         },
         {
@@ -85260,7 +85268,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "actionAttemptType": "SIMULATE_MANUAL_LOCK_VIA_KEYPAD"
     },
@@ -85317,7 +85325,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "message",
@@ -85359,7 +85367,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": []
         },
         {
@@ -85416,7 +85424,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "actionAttemptType": "PUSH_THERMOSTAT_PROGRAMS"
     },
@@ -85473,7 +85481,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "message",
@@ -85515,7 +85523,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": []
         },
         {
@@ -85572,7 +85580,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "actionAttemptType": "SYNC_ACCESS_CODES"
     },
@@ -85629,7 +85637,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "message",
@@ -85671,7 +85679,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": []
         },
         {
@@ -85728,7 +85736,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "actionAttemptType": "CREATE_ACCESS_CODE"
     },
@@ -85785,7 +85793,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "message",
@@ -85827,7 +85835,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": []
         },
         {
@@ -85884,7 +85892,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "actionAttemptType": "DELETE_ACCESS_CODE"
     },
@@ -85941,7 +85949,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "message",
@@ -85983,7 +85991,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": []
         },
         {
@@ -86040,7 +86048,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "actionAttemptType": "UPDATE_ACCESS_CODE"
     },
@@ -86097,7 +86105,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "message",
@@ -86139,7 +86147,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": []
         },
         {
@@ -86196,7 +86204,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "actionAttemptType": "CREATE_NOISE_THRESHOLD"
     },
@@ -86253,7 +86261,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "message",
@@ -86295,7 +86303,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": []
         },
         {
@@ -86352,7 +86360,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "actionAttemptType": "DELETE_NOISE_THRESHOLD"
     },
@@ -86409,7 +86417,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": [
             {
               "name": "message",
@@ -86451,7 +86459,7 @@
           "propertyGroupKey": null,
           "format": "object",
           "jsonType": "object",
-          "propertyGroups": {},
+          "propertyGroups": [],
           "properties": []
         },
         {
@@ -86508,7 +86516,7 @@
       "undocumentedMessage": "",
       "isDraft": false,
       "draftMessage": "",
-      "propertyGroups": {},
+      "propertyGroups": [],
       "resourceSamples": [],
       "actionAttemptType": "UPDATE_NOISE_THRESHOLD"
     }

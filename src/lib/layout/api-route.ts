@@ -4,6 +4,7 @@ import type {
   Endpoint,
   EnumProperty,
   Property,
+  PropertyGroup,
   ResourceSample,
   Route,
   SdkName,
@@ -42,6 +43,11 @@ interface ResourceSampleContext {
   resourceDataSyntax: SyntaxName
 }
 
+interface ApiRoutePropertyGroup {
+  name?: string
+  properties: ApiRouteProperty[]
+}
+
 type ApiRouteProperty = Pick<
   Property,
   'name' | 'description' | 'isDeprecated' | 'deprecationMessage'
@@ -64,8 +70,8 @@ type ApiRouteProperty = Pick<
 export interface ApiRouteResource {
   name: string
   description: string
-  properties: ApiRouteProperty[]
-  legacyProperties?: ApiRouteProperty
+  propertyGroups: ApiRoutePropertyGroup[]
+  legacyPropertyGroups?: ApiRoutePropertyGroup[]
   events: ApiRouteEvent[]
 }
 
@@ -129,30 +135,71 @@ export function setApiRouteLayoutContext(
     const resourceErrors =
       errorsProp != null ? collectResourceErrors(errorsProp) : []
 
-    const properties = resource.properties
-      .filter(({ isUndocumented }) => !isUndocumented)
-      .map(mapBlueprintPropertyToRouteProperty)
+    const allProperties = resource.properties.filter(
+      ({ isUndocumented }) => !isUndocumented,
+    )
 
-    addLinkTargetsToProperties(properties, {
+    const properties = allProperties.filter(({ name }) => name !== 'properties')
+
+    const legacyProperty = allProperties.find(
+      ({ name }) => name === 'properties',
+    )
+
+    const propertyGroups = groupProperties(properties, resource.propertyGroups)
+
+    addLinkTargetsToProperties(propertyGroups?.[0]?.properties, {
       errors: resourceErrors.length > 0,
       warnings: resourceWarnings.length > 0,
     })
 
-    const legacyProperties = properties.find(
-      ({ name }) => name === 'properties',
-    )
+    const legacyPropertyGroups =
+      legacyProperty != null && legacyProperty.format === 'object'
+        ? groupProperties(
+            legacyProperty.properties,
+            legacyProperty.propertyGroups,
+          )
+        : null
 
     file.resources.push({
       name: resource.resourceType,
       description: resource.description,
-      properties: properties.filter(({ name }) => name !== 'properties'),
-      ...(legacyProperties == null ? {} : { legacyProperties }),
+      propertyGroups,
+      ...(legacyPropertyGroups == null ? {} : { legacyPropertyGroups }),
       errors: resourceErrors,
       warnings: resourceWarnings,
       events: eventsByRoutePath.get(resource.routePath) ?? [],
       resourceSamples: resource.resourceSamples.map(mapResourceSample),
     })
   }
+}
+
+export const groupProperties = (
+  properties: Property[],
+  propertyGroups: PropertyGroup[],
+): ApiRoutePropertyGroup[] => {
+  const getApiRouteProperties = (
+    propertyGroupKey: string | null,
+  ): ApiRouteProperty[] =>
+    properties
+      .filter((p) => p.propertyGroupKey === propertyGroupKey)
+      .map(mapBlueprintPropertyToRouteProperty)
+
+  return propertyGroups
+    .reduce(
+      (groups, propertyGroup) => [
+        ...groups,
+        {
+          name: propertyGroup.name,
+          properties: getApiRouteProperties(propertyGroup.propertyGroupKey),
+        },
+      ],
+      [
+        {
+          properties: getApiRouteProperties(null),
+        },
+      ],
+    )
+    .filter(({ properties }) => properties.length > 0)
 }
 
 const groupEventsByRoutePath = (
@@ -242,7 +289,7 @@ function collectResourceErrors(errors: Property | undefined): ApiError[] {
     .filter((error): error is ApiError => error !== null)
 }
 
-export const mapBlueprintPropertyToRouteProperty = (
+const mapBlueprintPropertyToRouteProperty = (
   prop: Property,
 ): ApiRouteProperty => {
   const { name, description, format, isDeprecated, deprecationMessage } = prop
@@ -352,9 +399,10 @@ const flattenObjectProperties = (
 }
 
 function addLinkTargetsToProperties(
-  properties: ApiRouteProperty[],
+  properties: ApiRouteProperty[] | undefined,
   sections: { errors: boolean; warnings: boolean },
 ): void {
+  if (properties == null) return
   const linkableProperties: Record<string, string | undefined> = {
     errors: sections.errors ? './#errors' : undefined,
     warnings: sections.warnings ? './#warnings' : undefined,

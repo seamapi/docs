@@ -12,7 +12,7 @@ import { capitalCase } from 'change-case'
 import type { PathMetadata } from '../path-metadata.js'
 import {
   type ApiRouteResource,
-  mapBlueprintPropertyToRouteProperty,
+  groupProperties,
   normalizePropertyFormatForDocs,
 } from './api-route.js'
 
@@ -169,9 +169,12 @@ export function setEndpointLayoutContext(
     file.response.actionAttempt = {
       name: actionAttempt.actionAttemptType,
       description: actionAttempt.description,
-      properties: actionAttempt.properties
-        .filter(({ isUndocumented }) => !isUndocumented)
-        .map(mapBlueprintPropertyToRouteProperty),
+      propertyGroups: groupProperties(
+        actionAttempt.properties.filter(
+          ({ isUndocumented }) => !isUndocumented,
+        ),
+        actionAttempt.propertyGroups,
+      ),
     }
   }
 

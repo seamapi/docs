@@ -1,8 +1,8 @@
 ## The {{name}} Object
 
 - [Properties](./#properties)
-{{#if legacyProperties}}
-  - [`{{name}}.properties`](./#{{name}}.properties)
+{{#if legacyPropertyGroups}}
+- [`{{name}}.properties`](./#{{name}}.properties)
 {{/if}}
 - [Errors](./#errors)
 - [Warnings](./#warnings)
@@ -29,15 +29,25 @@
 ---
 ## Properties
 
+{{#each propertyGroups}}
+{{#if name}}
+## {{name}}
+{{/if}}
 {{#each properties}}
 {{> api-resource-property }}
 {{/each}}
-{{#if legacyProperties}}
+{{/each}}
+{{#if legacyPropertyGroups}}
 
 ---
 ## `{{name}}.properties`
 
-{{#each legacyProperties.objectProperties}}
+{{#each legacyPropertyGroups}}
+{{#if name}}
+## {{name}}
+{{/if}}
+{{#each properties}}
 {{> api-resource-property }}
+{{/each}}
 {{/each}}
 {{/if}}

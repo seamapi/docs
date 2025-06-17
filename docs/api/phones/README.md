@@ -3,7 +3,7 @@
 ## The phone Object
 
 - [Properties](./#properties)
-  - [`phone.properties`](./#phone.properties)
+- [`phone.properties`](./#phone.properties)
 - [Errors](./#errors)
 - [Warnings](./#warnings)
 - [Events](./#events)
@@ -151,35 +151,6 @@ ASSA ABLOY Credential Service metadata for the phone.
 
 ---
 
-**`assa_abloy_credential_service_metadata.endpoints`** *List* *of Objects*
-
-Endpoints associated with the phone.
-
-
-
-<details>
-  <summary>Child Object Properties</summary>
-
-  <strong><code>endpoint_id</code></strong> <i>String</i>
-  
-    ID of the associated endpoint.
-
-  <strong><code>is_active</code></strong> <i>Boolean</i>
-  
-    Indicated whether the endpoint is active.
-</details>
-
----
-
-**`assa_abloy_credential_service_metadata.has_active_endpoint`** *Boolean*
-
-Indicates whether the credential service has active endpoints associated with the phone.
-
-
-
-
----
-
 **`salto_space_credential_service_metadata`** *Object*
 
 Salto Space credential service metadata for the phone.
@@ -194,15 +165,6 @@ Salto Space credential service metadata for the phone.
     Indicates whether the credential service has an active associated phone.
 
 </details>
-
----
-
-**`salto_space_credential_service_metadata.has_active_phone`** *Boolean*
-
-Indicates whether the credential service has an active associated phone.
-
-
-
 
 ---
 
