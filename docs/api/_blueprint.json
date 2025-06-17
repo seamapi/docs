@@ -12382,6 +12382,20 @@
                 "jsonType": "number"
               },
               {
+                "name": "page_cursor",
+                "description": "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "string",
+                "jsonType": "string"
+              },
+              {
                 "name": "user_identifier_key",
                 "description": "Your user ID for the user by which you want to filter Connect Webviews.",
                 "isRequired": false,
@@ -12397,7 +12411,7 @@
               }
             ]
           },
-          "hasPagination": false,
+          "hasPagination": true,
           "authMethods": [
             "client_session_token",
             "personal_access_token",
@@ -45209,6 +45223,19 @@
           "propertyGroupKey": null,
           "format": "record",
           "jsonType": "object"
+        },
+        {
+          "name": "customer_key",
+          "description": "Your unique key for the customer associated with this connected account.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "string",
+          "jsonType": "string"
         },
         {
           "name": "errors",
