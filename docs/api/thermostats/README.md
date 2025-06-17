@@ -1,5 +1,14 @@
 # Thermostats
 
+## The thermostat Object
+
+- [Properties](./#properties)
+- [Errors](./#errors)
+- [Warnings](./#warnings)
+- [Events](./#events)
+- [Endpoints](./#endpoints)
+
+
 Represents a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 You can use the Seam API to perform the following management and monitoring actions for thermostats:
