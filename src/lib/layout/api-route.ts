@@ -156,8 +156,8 @@ export function setApiRouteLayoutContext(
       properties,
       resource.propertyGroups,
       {
-        include: metadata.include_property_groups,
-        exclude: metadata.exclude_property_groups,
+        include: metadata.include_groups,
+        exclude: metadata.exclude_groups,
       },
     )
 
@@ -172,8 +172,8 @@ export function setApiRouteLayoutContext(
             legacyProperty.properties,
             legacyProperty.propertyGroups,
             {
-              include: metadata.include_property_groups,
-              exclude: metadata.exclude_property_groups,
+              include: metadata.include_groups,
+              exclude: metadata.exclude_groups,
             },
           )
         : null

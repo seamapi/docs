@@ -49,7 +49,7 @@
   title: Thermostats
   resources:
     - device
-  include_property_groups:
+  include_groups:
     - thermostats
 
 /thermostats/simulate:
