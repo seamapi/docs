@@ -891,21 +891,9 @@ Indicates that the [access system user](https://docs.seam.co/latest/capability-g
 
 ---
 
-**`salto_ks_subscription_limit_exceeded`**
-
-Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.
-
----
-
 **`failed_to_create_on_acs_system`**
 
 Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not created on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
-
----
-
-**`failed_to_update_on_acs_system`**
-
-Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not updated on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
 
 ---
 
@@ -915,38 +903,242 @@ Indicates that the [access system user](https://docs.seam.co/latest/capability-g
 
 ---
 
+**`failed_to_update_on_acs_system`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not updated on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
 **`latch_conflict_with_resident_user`**
 
 Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).
 
 ---
 
+**`salto_ks_subscription_limit_exceeded`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.
+
+---
+
+**`deleted_externally`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted from the [access system](https://docs.seam.co/latest/capability-guides/access-systems) outside of Seam.
+
+---
+
+**`failed_to_create_on_acs_system`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not created on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`failed_to_delete_on_acs_system`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not deleted on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`failed_to_update_on_acs_system`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not updated on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`latch_conflict_with_resident_user`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`salto_ks_subscription_limit_exceeded`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.
+
+---
+
+**`deleted_externally`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted from the [access system](https://docs.seam.co/latest/capability-guides/access-systems) outside of Seam.
+
+---
+
+**`failed_to_create_on_acs_system`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not created on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`failed_to_delete_on_acs_system`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not deleted on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`failed_to_update_on_acs_system`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not updated on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`latch_conflict_with_resident_user`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`salto_ks_subscription_limit_exceeded`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.
+
+---
+
+**`deleted_externally`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted from the [access system](https://docs.seam.co/latest/capability-guides/access-systems) outside of Seam.
+
+---
+
+**`failed_to_create_on_acs_system`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not created on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`failed_to_delete_on_acs_system`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not deleted on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`failed_to_update_on_acs_system`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not updated on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`latch_conflict_with_resident_user`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`salto_ks_subscription_limit_exceeded`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.
+
+---
+
+**`deleted_externally`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted from the [access system](https://docs.seam.co/latest/capability-guides/access-systems) outside of Seam.
+
+---
+
+**`failed_to_create_on_acs_system`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not created on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`failed_to_delete_on_acs_system`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not deleted on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`failed_to_update_on_acs_system`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not updated on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`latch_conflict_with_resident_user`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`salto_ks_subscription_limit_exceeded`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.
+
+---
+
+**`deleted_externally`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted from the [access system](https://docs.seam.co/latest/capability-guides/access-systems) outside of Seam.
+
+---
+
+**`failed_to_create_on_acs_system`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not created on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`failed_to_delete_on_acs_system`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not deleted on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`failed_to_update_on_acs_system`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not updated on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`latch_conflict_with_resident_user`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`salto_ks_subscription_limit_exceeded`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.
+
+---
+
+**`deleted_externally`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted from the [access system](https://docs.seam.co/latest/capability-guides/access-systems) outside of Seam.
+
+---
+
+**`failed_to_create_on_acs_system`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not created on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`failed_to_delete_on_acs_system`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not deleted on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`failed_to_update_on_acs_system`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not updated on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`latch_conflict_with_resident_user`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).
+
+---
+
+**`salto_ks_subscription_limit_exceeded`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.
+
+---
+
 
 ## Warnings
-
-**`being_deleted`**
-
-Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is being deleted from the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is a temporary state, and the access system user will be deleted shortly.
-
----
-
-**`salto_ks_user_not_subscribed`**
-
-Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is not subscribed on Salto KS, so they cannot unlock doors or perform any actions. This occurs when the their access schedule hasn’t started yet, if their access schedule has ended, if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.
-
----
-
-**`unknown_issue_with_acs_user`**
-
-An unknown issue occurred while syncing the state of this [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user.
-
----
-
-**`latch_resident_user`**
-
-Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created on Latch Mission Control. Please use the Latch Mission Control to manage this user.
-
----
 
 
 ## Events

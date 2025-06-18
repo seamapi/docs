@@ -152,12 +152,6 @@ ID of the [workspace](../../core-concepts/workspaces/README.md) that contains th
 
 ## Warnings
 
-**`being_deleted`**
-
-Indicates that the user identity is currently being deleted.
-
----
-
 ## Endpoints
 
 
