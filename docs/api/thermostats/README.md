@@ -684,6 +684,19 @@ Current [weekly program](../../capability-guides/thermostats/creating-and-managi
 
 ## Warnings
 
+### Thermostats
+**`nest_thermostat_in_manual_eco_mode`**
+
+Indicates that the Nest thermostat is in manual eco mode.
+
+---
+
+**`temperature_threshold_exceeded`**
+
+Indicates that the temperature threshold has been exceeded.
+
+---
+
 
 ## Events
 

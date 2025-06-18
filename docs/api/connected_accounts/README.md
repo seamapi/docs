@@ -522,6 +522,24 @@ Indicates that the maximum number of users allowed for the site has been reached
 
 ## Warnings
 
+**`salto_ks_subscription_limit_almost_reached`**
+
+Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.
+
+---
+
+**`scheduled_maintenance_window`**
+
+Indicates that scheduled downtime is planned for the connected account.
+
+---
+
+**`unknown_issue_with_connected_account`**
+
+Indicates that an unknown issue occurred while syncing the state of the connected account with the provider. This issue may affect the proper functioning of one or more resources in the account.
+
+---
+
 
 ## Events
 

@@ -2473,6 +2473,78 @@ Potential duplicate access code detected.
 
 ## Warnings
 
+**`august_device_programming_delay`**
+
+Access code has not yet been fully moved to the device.
+
+---
+
+**`august_lock_temporarily_offline`**
+
+August lock is temporarily offline.
+
+---
+
+**`code_modified_external_to_seam`**
+
+Code was modified or removed externally after Seam successfully set it on the device.
+
+---
+
+**`delay_in_removing_from_device`**
+
+Delay in removing code from device.
+
+---
+
+**`delay_in_setting_on_device`**
+
+Delay in setting code on device.
+
+---
+
+**`igloo_algopin_must_be_used_within_24_hours`**
+
+Algopins must be used within 24 hours.
+
+---
+
+**`kwikset_unable_to_confirm_code`**
+
+Unable to confirm that the access code is set on Kwikset device.
+
+---
+
+**`management_transferred`**
+
+Management was transferred to another workspace.
+
+---
+
+**`schlage_creation_outage`**
+
+Received an error when attempting to create this code.
+
+---
+
+**`schlage_detected_duplicate`**
+
+Duplicate access code detected.
+
+---
+
+**`smartthings_failed_to_set_access_code`**
+
+Failed to set code on SmartThings device.
+
+---
+
+**`third_party_integration_detected`**
+
+Third-party integration detected that may cause access codes to fail.
+
+---
+
 
 ## Events
 

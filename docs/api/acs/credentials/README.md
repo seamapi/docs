@@ -545,6 +545,42 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 ## Warnings
 
+**`being_deleted`**
+
+Indicates that the [credential](../../../capability-guides/access-systems/managing-credentials.md) is being deleted.
+
+---
+
+**`needs_to_be_reissued`**
+
+Access permissions for the [credential](../../../capability-guides/access-systems/managing-credentials.md) have changed. [Reissue](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md) (re-encode) the credential. This issue may affect the proper functioning of the credential.
+
+---
+
+**`schedule_externally_modified`**
+
+Indicates that the schedule of one of the [credential](../../../capability-guides/access-systems/managing-credentials.md)'s children was modified externally.
+
+---
+
+**`schedule_modified`**
+
+Indicates that the schedule of the [credential](../../../capability-guides/access-systems/managing-credentials.md) was modified to avoid creating a credential with a start date in the past.
+
+---
+
+**`unknown_issue_with_acs_credential`**
+
+An unknown issue occurred while syncing the state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) with the provider. This issue may affect the proper functioning of the credential.
+
+---
+
+**`waiting_to_be_issued`**
+
+Indicates that the [credential](../../../capability-guides/access-systems/managing-credentials.md) is waiting to be issued.
+
+---
+
 
 ## Events
 

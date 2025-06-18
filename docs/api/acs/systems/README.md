@@ -650,6 +650,18 @@ Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is funct
 
 ## Warnings
 
+**`salto_ks_subscription_limit_almost_reached`**
+
+Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site to rectify the issue.
+
+---
+
+**`time_zone_does_not_match_location`**
+
+Indicates the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
+---
+
 
 ## Events
 

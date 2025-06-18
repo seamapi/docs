@@ -924,6 +924,30 @@ Indicates that the [access system user](https://docs.seam.co/latest/capability-g
 
 ## Warnings
 
+**`being_deleted`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is being deleted from the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is a temporary state, and the access system user will be deleted shortly.
+
+---
+
+**`latch_resident_user`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created on Latch Mission Control. Please use the Latch Mission Control to manage this user.
+
+---
+
+**`salto_ks_user_not_subscribed`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is not subscribed on Salto KS, so they cannot unlock doors or perform any actions. This occurs when the their access schedule hasn’t started yet, if their access schedule has ended, if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.
+
+---
+
+**`unknown_issue_with_acs_user`**
+
+An unknown issue occurred while syncing the state of this [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user.
+
+---
+
 
 ## Events
 
