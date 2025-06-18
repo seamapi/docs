@@ -1458,7 +1458,9 @@ Indicates that the lock is not connected to a bridge.
 <details>
 <summary><code>ttlock_lock_not_paired_to_gateway</code></summary>
 
-Indicates that the lock is not paired with a gateway.
+
+    Indicates that the lock is not paired with a gateway.
+    
 
   **`created_at`** *Datetime*
   
@@ -1538,7 +1540,9 @@ Indicates that device credentials are missing.
 <details>
 <summary><code>auxiliary_heat_running</code></summary>
 
-Indicates that the auxiliary heat is running.
+
+    Indicates that the auxiliary heat is running.
+    
 
   **`created_at`** *Datetime*
   
@@ -1618,7 +1622,9 @@ Indicates that a subscription is required to connect.
 <details>
 <summary><code>lockly_missing_wifi_bridge</code></summary>
 
-Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
+
+    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
+    
 
   **`created_at`** *Datetime*
   
@@ -2416,7 +2422,9 @@ Indicates that the lock is not connected to a bridge.
 
 **`ttlock_lock_not_paired_to_gateway`**
 
-Indicates that the lock is not paired with a gateway.
+
+    Indicates that the lock is not paired with a gateway.
+    
 
 ---
 
@@ -2428,7 +2436,9 @@ Indicates that device credentials are missing.
 
 **`auxiliary_heat_running`**
 
-Indicates that the auxiliary heat is running.
+
+    Indicates that the auxiliary heat is running.
+    
 
 ---
 
@@ -2440,7 +2450,9 @@ Indicates that a subscription is required to connect.
 
 **`lockly_missing_wifi_bridge`**
 
-Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
+
+    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
+    
 
 ---
 

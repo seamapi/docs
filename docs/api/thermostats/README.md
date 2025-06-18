@@ -740,7 +740,9 @@ Indicates that the lock is not connected to a bridge.
 
 **`ttlock_lock_not_paired_to_gateway`**
 
-Indicates that the lock is not paired with a gateway.
+
+    Indicates that the lock is not paired with a gateway.
+    
 
 ---
 
@@ -752,7 +754,9 @@ Indicates that device credentials are missing.
 
 **`auxiliary_heat_running`**
 
-Indicates that the auxiliary heat is running.
+
+    Indicates that the auxiliary heat is running.
+    
 
 ---
 
@@ -764,7 +768,9 @@ Indicates that a subscription is required to connect.
 
 **`lockly_missing_wifi_bridge`**
 
-Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
+
+    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
+    
 
 ---
 
@@ -797,7 +803,9 @@ Indicates that there are too many backup codes.
 
 **`wyze_device_missing_gateway`**
 
-Indicates that the Wyze Lock is not connected to a gateway.
+
+    Indicates that the Wyze Lock is not connected to a gateway.
+    
 
 ---
 
@@ -821,13 +829,21 @@ Indicates that the Nest thermostat is in manual eco mode.
 
 **`ttlock_lock_gateway_unlocking_not_enabled`**
 
-Indicates that the Remote Unlock feature is not enabled in the settings.
+Indicates that the Remote Unlock feature is not enabled in the settings."
 
 ---
 
 **`ttlock_weak_gateway_signal`**
 
-Indicates that the gateway signal is weak.
+
+    Indicates that the gateway signal is weak.
+    
+
+---
+
+**`power_saving_mode`**
+
+Indicates that the device is in power saving mode and may have limited functionality.
 
 ---
 

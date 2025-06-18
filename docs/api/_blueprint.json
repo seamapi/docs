@@ -34629,8 +34629,39 @@
           "jsonType": "array",
           "itemFormat": "discriminated_object",
           "discriminator": "error_code",
+          "variantGroups": [
+            {
+              "name": "Access Codes",
+              "variantGroupKey": "access_codes"
+            },
+            {
+              "name": "Hardware",
+              "variantGroupKey": "hardware"
+            },
+            {
+              "name": "Locks",
+              "variantGroupKey": "locks"
+            },
+            {
+              "name": "Noise Sensors",
+              "variantGroupKey": "noise_sensors"
+            },
+            {
+              "name": "Phones",
+              "variantGroupKey": "phones"
+            },
+            {
+              "name": "Provider Metadata",
+              "variantGroupKey": "provider_metadata"
+            },
+            {
+              "name": "Thermostats",
+              "variantGroupKey": "thermostats"
+            }
+          ],
           "variants": [
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -34700,6 +34731,7 @@
               "description": "Failed to set code on SmartThings device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -34769,6 +34801,7 @@
               "description": "Failed to set code after multiple retries."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -34838,6 +34871,7 @@
               "description": "No free slots available on the device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -34907,6 +34941,7 @@
               "description": "Failed to set code on device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -34976,6 +35011,7 @@
               "description": "Failed to remove code from device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -35045,6 +35081,7 @@
               "description": "Duplicate access code detected on device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -35114,6 +35151,7 @@
               "description": "An attempt to modify this access code was prevented."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -35183,6 +35221,7 @@
               "description": "No space for access code on device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -35252,6 +35291,7 @@
               "description": "Igloohome bridge has too many pending jobs in the queue."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -35321,6 +35361,7 @@
               "description": "Igloohome bridge is offline."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -35390,6 +35431,7 @@
               "description": "Lock has reached maximum amount of codes."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -35459,6 +35501,7 @@
               "description": "Unable to confirm that the access code is set on Kwikset device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -35528,6 +35571,7 @@
               "description": "Unable to confirm the deletion of the access code on Kwikset device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -35597,6 +35641,7 @@
               "description": "Code was modified or removed externally after Seam successfully set it on the device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -35666,6 +35711,7 @@
               "description": "Invalid code length for August lock."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -35735,6 +35781,7 @@
               "description": "Access code has not yet been fully moved to the device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -35804,6 +35851,7 @@
               "description": "All access code slots on the device are full."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -35873,6 +35921,7 @@
               "description": "August lock is missing a keypad."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -35942,6 +35991,7 @@
               "description": "August lock is temporarily offline."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -36011,6 +36061,7 @@
               "description": "Salto site user is not subscribed."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -36080,6 +36131,7 @@
               "description": "Access code has not yet been fully moved to the device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -36149,6 +36201,7 @@
               "description": "No free positions available on the device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -36218,6 +36271,7 @@
               "description": "Duplicate access code name detected."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -36287,6 +36341,7 @@
               "description": "Potential duplicate access code detected."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -36356,6 +36411,7 @@
               "description": "No valid user level for Oracode."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -36438,6 +36494,7 @@
               "description": "Indicates that the account is disconnected."
             },
             {
+              "variantGroupKey": "locks",
               "properties": [
                 {
                   "name": "created_at",
@@ -36520,6 +36577,7 @@
               "description": "Indicates that the Salto site user limit has been reached."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -36589,6 +36647,7 @@
               "description": "Indicates that the device is offline."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -36658,6 +36717,7 @@
               "description": "Indicates that the device has been removed."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -36727,6 +36787,7 @@
               "description": "Indicates that the hub is disconnected."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -36796,6 +36857,7 @@
               "description": "Indicates that the device is disconnected."
             },
             {
+              "variantGroupKey": "access_codes",
               "properties": [
                 {
                   "name": "created_at",
@@ -36865,6 +36927,7 @@
               "description": "Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty."
             },
             {
+              "variantGroupKey": "locks",
               "properties": [
                 {
                   "name": "created_at",
@@ -36934,6 +36997,7 @@
               "description": "Indicates that the user is not authorized to use the August lock."
             },
             {
+              "variantGroupKey": "locks",
               "properties": [
                 {
                   "name": "created_at",
@@ -37003,6 +37067,7 @@
               "description": "Indicates that the lock is not connected to a bridge."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -37069,9 +37134,10 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the lock is not paired with a gateway."
+              "description": "\n    Indicates that the lock is not paired with a gateway.\n    "
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -37141,6 +37207,7 @@
               "description": "Indicates that device credentials are missing."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -37207,9 +37274,10 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the auxiliary heat is running."
+              "description": "\n    Indicates that the auxiliary heat is running.\n    "
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -37279,6 +37347,7 @@
               "description": "Indicates that a subscription is required to connect."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -37345,9 +37414,10 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the Lockly lock is not connected to a Wi-Fi bridge."
+              "description": "\n    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.\n    "
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -37430,6 +37500,7 @@
               "description": "Indicates that the credentials provided were invalid."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -37770,8 +37841,39 @@
           "jsonType": "array",
           "itemFormat": "discriminated_object",
           "discriminator": "warning_code",
+          "variantGroups": [
+            {
+              "name": "Access Codes",
+              "variantGroupKey": "access_codes"
+            },
+            {
+              "name": "Hardware",
+              "variantGroupKey": "hardware"
+            },
+            {
+              "name": "Locks",
+              "variantGroupKey": "locks"
+            },
+            {
+              "name": "Noise Sensors",
+              "variantGroupKey": "noise_sensors"
+            },
+            {
+              "name": "Phones",
+              "variantGroupKey": "phones"
+            },
+            {
+              "name": "Provider Metadata",
+              "variantGroupKey": "provider_metadata"
+            },
+            {
+              "name": "Thermostats",
+              "variantGroupKey": "thermostats"
+            }
+          ],
           "variants": [
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -37828,6 +37930,7 @@
               "description": "Failed to set code on SmartThings device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -37884,6 +37987,7 @@
               "description": "Duplicate access code detected."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -37940,6 +38044,7 @@
               "description": "Received an error when attempting to create this code."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -37996,6 +38101,7 @@
               "description": "Code was modified or removed externally after Seam successfully set it on the device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -38052,6 +38158,7 @@
               "description": "Delay in setting code on device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -38108,6 +38215,7 @@
               "description": "Delay in removing code from device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -38164,6 +38272,7 @@
               "description": "Third-party integration detected that may cause access codes to fail."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -38220,6 +38329,7 @@
               "description": "Access code has not yet been fully moved to the device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -38276,6 +38386,7 @@
               "description": "August lock is temporarily offline."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -38332,6 +38443,7 @@
               "description": "Algopins must be used within 24 hours."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -38388,6 +38500,7 @@
               "description": "Management was transferred to another workspace."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -39880,8 +39993,10 @@
           "jsonType": "array",
           "itemFormat": "discriminated_object",
           "discriminator": "warning_code",
+          "variantGroups": [],
           "variants": [
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -39938,6 +40053,7 @@
               "description": "Indicates that the [credential](../capability-guides/access-systems/managing-credentials.md) is waiting to be issued."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -39994,6 +40110,7 @@
               "description": "Indicates that the schedule of one of the [credential](../capability-guides/access-systems/managing-credentials.md)'s children was modified externally."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -40050,6 +40167,7 @@
               "description": "Indicates that the schedule of the [credential](../capability-guides/access-systems/managing-credentials.md) was modified to avoid creating a credential with a start date in the past."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -40106,6 +40224,7 @@
               "description": "Indicates that the [credential](../capability-guides/access-systems/managing-credentials.md) is being deleted."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -40162,6 +40281,7 @@
               "description": "An unknown issue occurred while syncing the state of the [credential](../capability-guides/access-systems/managing-credentials.md) with the provider. This issue may affect the proper functioning of the credential."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -41396,8 +41516,10 @@
           "jsonType": "array",
           "itemFormat": "discriminated_object",
           "discriminator": "error_code",
+          "variantGroups": [],
           "variants": [
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -41454,6 +41576,7 @@
               "description": "Indicates that the Seam API cannot communicate with [Seam Bridge](../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n  This error might also occur if Seam Bridge is connected to the wrong [workspace](../core-concepts/workspaces/README.md).\n  See also [Troubleshooting Your Access Control System](../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected)."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -41523,6 +41646,7 @@
               "description": "Indicates that the Seam API cannot communicate with [Seam Bridge](../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n    See also [Troubleshooting Your Access Control System](../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected)."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -41579,6 +41703,7 @@
               "description": "Indicates that [Seam Bridge](../capability-guides/seam-bridge.md) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/README.md).\n  For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](../core-concepts/workspaces/README.md).\n  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable)."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -41635,6 +41760,7 @@
               "description": "Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -41691,6 +41817,7 @@
               "description": "Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](../capability-guides/access-systems/troubleshooting-your-access-control-system.md) to resolve the issue."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -41747,6 +41874,7 @@
               "description": "Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) to restore access."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -42270,8 +42398,10 @@
           "jsonType": "array",
           "itemFormat": "discriminated_object",
           "discriminator": "warning_code",
+          "variantGroups": [],
           "variants": [
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -42328,6 +42458,7 @@
               "description": "Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site to rectify the issue."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -42605,8 +42736,10 @@
           "jsonType": "array",
           "itemFormat": "discriminated_object",
           "discriminator": "error_code",
+          "variantGroups": [],
           "variants": [
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -42663,6 +42796,7 @@
               "description": "Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted from the [access system](https://docs.seam.co/latest/capability-guides/access-systems) outside of Seam."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -42719,6 +42853,7 @@
               "description": "Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -42775,6 +42910,7 @@
               "description": "Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not created on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co)."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -42831,6 +42967,7 @@
               "description": "Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not updated on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co)."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -42887,6 +43024,7 @@
               "description": "Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not deleted on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co)."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -43121,8 +43259,10 @@
           "jsonType": "array",
           "itemFormat": "discriminated_object",
           "discriminator": "mutation_code",
+          "variantGroups": [],
           "variants": [
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -43179,6 +43319,7 @@
               "description": "Seam is in the process of pushing a user creation to the integrated access system."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -43235,6 +43376,7 @@
               "description": "Seam is in the process of pushing a user deletion to the integrated access system."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -43401,6 +43543,7 @@
               "description": ""
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -43541,6 +43684,7 @@
               "description": "Seam is in the process of pushing an access schedule update to the integrated access system."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -43655,6 +43799,7 @@
               "description": "Seam is in the process of pushing a suspension state update to the integrated access system."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -43849,8 +43994,10 @@
           "jsonType": "array",
           "itemFormat": "discriminated_object",
           "discriminator": "warning_code",
+          "variantGroups": [],
           "variants": [
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -43907,6 +44054,7 @@
               "description": "Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is being deleted from the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is a temporary state, and the access system user will be deleted shortly."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -43963,6 +44111,7 @@
               "description": "Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is not subscribed on Salto KS, so they cannot unlock doors or perform any actions. This occurs when the their access schedule hasn’t started yet, if their access schedule has ended, if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -44019,6 +44168,7 @@
               "description": "An unknown issue occurred while syncing the state of this [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -44196,8 +44346,10 @@
           "jsonType": "array",
           "itemFormat": "discriminated_object",
           "discriminator": "error_code",
+          "variantGroups": [],
           "variants": [
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "can_tailscale_proxy_reach_bridge",
@@ -44319,6 +44471,7 @@
               "description": "Indicates that Seam cannot reach Seam Bridge's LAN."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -45264,8 +45417,10 @@
           "jsonType": "array",
           "itemFormat": "discriminated_object",
           "discriminator": "error_code",
+          "variantGroups": [],
           "variants": [
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -45348,6 +45503,7 @@
               "description": "Indicates that the account is disconnected."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -45430,6 +45586,7 @@
               "description": "Indicates that the credentials provided were invalid."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -45512,6 +45669,7 @@
               "description": "Indicates that the Seam API cannot communicate with [Seam Bridge](../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected)."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -45774,8 +45932,10 @@
           "jsonType": "array",
           "itemFormat": "discriminated_object",
           "discriminator": "warning_code",
+          "variantGroups": [],
           "variants": [
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -45832,6 +45992,7 @@
               "description": "Indicates that scheduled downtime is planned for the connected account."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -45888,6 +46049,7 @@
               "description": "Indicates that an unknown issue occurred while syncing the state of the connected account with the provider. This issue may affect the proper functioning of one or more resources in the account."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -46727,8 +46889,39 @@
           "jsonType": "array",
           "itemFormat": "discriminated_object",
           "discriminator": "error_code",
+          "variantGroups": [
+            {
+              "name": "Access Codes",
+              "variantGroupKey": "access_codes"
+            },
+            {
+              "name": "Hardware",
+              "variantGroupKey": "hardware"
+            },
+            {
+              "name": "Locks",
+              "variantGroupKey": "locks"
+            },
+            {
+              "name": "Noise Sensors",
+              "variantGroupKey": "noise_sensors"
+            },
+            {
+              "name": "Phones",
+              "variantGroupKey": "phones"
+            },
+            {
+              "name": "Provider Metadata",
+              "variantGroupKey": "provider_metadata"
+            },
+            {
+              "name": "Thermostats",
+              "variantGroupKey": "thermostats"
+            }
+          ],
           "variants": [
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -46811,6 +47004,7 @@
               "description": "Indicates that the account is disconnected."
             },
             {
+              "variantGroupKey": "locks",
               "properties": [
                 {
                   "name": "created_at",
@@ -46893,6 +47087,7 @@
               "description": "Indicates that the Salto site user limit has been reached."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -46962,6 +47157,7 @@
               "description": "Indicates that the device is offline."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -47031,6 +47227,7 @@
               "description": "Indicates that the device has been removed."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -47100,6 +47297,7 @@
               "description": "Indicates that the hub is disconnected."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -47169,6 +47367,7 @@
               "description": "Indicates that the device is disconnected."
             },
             {
+              "variantGroupKey": "access_codes",
               "properties": [
                 {
                   "name": "created_at",
@@ -47238,6 +47437,7 @@
               "description": "Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty."
             },
             {
+              "variantGroupKey": "locks",
               "properties": [
                 {
                   "name": "created_at",
@@ -47307,6 +47507,7 @@
               "description": "Indicates that the user is not authorized to use the August lock."
             },
             {
+              "variantGroupKey": "locks",
               "properties": [
                 {
                   "name": "created_at",
@@ -47376,6 +47577,7 @@
               "description": "Indicates that the lock is not connected to a bridge."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -47442,9 +47644,10 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the lock is not paired with a gateway."
+              "description": "\n    Indicates that the lock is not paired with a gateway.\n    "
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -47514,6 +47717,7 @@
               "description": "Indicates that device credentials are missing."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -47580,9 +47784,10 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the auxiliary heat is running."
+              "description": "\n    Indicates that the auxiliary heat is running.\n    "
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -47652,6 +47857,7 @@
               "description": "Indicates that a subscription is required to connect."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -47718,9 +47924,10 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the Lockly lock is not connected to a Wi-Fi bridge."
+              "description": "\n    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.\n    "
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -47803,6 +48010,7 @@
               "description": "Indicates that the credentials provided were invalid."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -53169,8 +53377,39 @@
           "jsonType": "array",
           "itemFormat": "discriminated_object",
           "discriminator": "warning_code",
+          "variantGroups": [
+            {
+              "name": "Access Codes",
+              "variantGroupKey": "access_codes"
+            },
+            {
+              "name": "Hardware",
+              "variantGroupKey": "hardware"
+            },
+            {
+              "name": "Locks",
+              "variantGroupKey": "locks"
+            },
+            {
+              "name": "Noise Sensors",
+              "variantGroupKey": "noise_sensors"
+            },
+            {
+              "name": "Phones",
+              "variantGroupKey": "phones"
+            },
+            {
+              "name": "Provider Metadata",
+              "variantGroupKey": "provider_metadata"
+            },
+            {
+              "name": "Thermostats",
+              "variantGroupKey": "thermostats"
+            }
+          ],
           "variants": [
             {
+              "variantGroupKey": "access_codes",
               "properties": [
                 {
                   "name": "created_at",
@@ -53227,6 +53466,7 @@
               "description": "Indicates that the backup access code is unhealthy."
             },
             {
+              "variantGroupKey": "access_codes",
               "properties": [
                 {
                   "name": "created_at",
@@ -53283,6 +53523,7 @@
               "description": "Indicates that there are too many backup codes."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -53336,9 +53577,10 @@
                   ]
                 }
               ],
-              "description": "Indicates that the Wyze Lock is not connected to a gateway."
+              "description": "\n    Indicates that the Wyze Lock is not connected to a gateway.\n    "
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -53395,6 +53637,7 @@
               "description": "Indicates that the device is offline but has some functionality available."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -53451,6 +53694,7 @@
               "description": "Indicates that a third-party integration has been detected."
             },
             {
+              "variantGroupKey": "thermostats",
               "properties": [
                 {
                   "name": "created_at",
@@ -53507,6 +53751,7 @@
               "description": "Indicates that the Nest thermostat is in manual eco mode."
             },
             {
+              "variantGroupKey": "locks",
               "properties": [
                 {
                   "name": "created_at",
@@ -53560,9 +53805,10 @@
                   ]
                 }
               ],
-              "description": "Indicates that the Remote Unlock feature is not enabled in the settings."
+              "description": "Indicates that the Remote Unlock feature is not enabled in the settings.\""
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -53616,9 +53862,67 @@
                   ]
                 }
               ],
-              "description": "Indicates that the gateway signal is weak."
+              "description": "\n    Indicates that the gateway signal is weak.\n    "
             },
             {
+              "variantGroupKey": "locks",
+              "properties": [
+                {
+                  "name": "created_at",
+                  "description": "Date and time at which Seam created the warning.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "datetime",
+                  "jsonType": "string"
+                },
+                {
+                  "name": "message",
+                  "description": "Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "string",
+                  "jsonType": "string"
+                },
+                {
+                  "name": "warning_code",
+                  "description": "Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "enum",
+                  "jsonType": "string",
+                  "values": [
+                    {
+                      "name": "power_saving_mode",
+                      "description": "",
+                      "isDeprecated": false,
+                      "deprecationMessage": "",
+                      "isUndocumented": false,
+                      "undocumentedMessage": "",
+                      "isDraft": false,
+                      "draftMessage": ""
+                    }
+                  ]
+                }
+              ],
+              "description": "Indicates that the device is in power saving mode and may have limited functionality."
+            },
+            {
+              "variantGroupKey": "thermostats",
               "properties": [
                 {
                   "name": "created_at",
@@ -53675,6 +53979,7 @@
               "description": "Indicates that the temperature threshold has been exceeded."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -53731,6 +54036,7 @@
               "description": "Indicates that the device appears to be unresponsive."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -53787,6 +54093,7 @@
               "description": "Indicates that a scheduled maintenance window has been detected."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -53843,6 +54150,7 @@
               "description": "Indicates that the device has a flaky connection."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -53899,6 +54207,7 @@
               "description": "Indicates that the Salto KS lock is in Office Mode. Access Codes will not unlock doors."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -53955,6 +54264,7 @@
               "description": "Indicates that the Salto KS lock is in Privacy Mode. Access Codes will not unlock doors."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -54011,6 +54321,7 @@
               "description": "Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site."
             },
             {
+              "variantGroupKey": "phones",
               "properties": [
                 {
                   "name": "created_at",
@@ -54067,6 +54378,7 @@
               "description": "Indicates that an unknown issue occurred while syncing the state of the phone with the provider. This issue may affect the proper functioning of the phone."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -59011,8 +59323,39 @@
           "jsonType": "array",
           "itemFormat": "discriminated_object",
           "discriminator": "error_code",
+          "variantGroups": [
+            {
+              "name": "Access Codes",
+              "variantGroupKey": "access_codes"
+            },
+            {
+              "name": "Hardware",
+              "variantGroupKey": "hardware"
+            },
+            {
+              "name": "Locks",
+              "variantGroupKey": "locks"
+            },
+            {
+              "name": "Noise Sensors",
+              "variantGroupKey": "noise_sensors"
+            },
+            {
+              "name": "Phones",
+              "variantGroupKey": "phones"
+            },
+            {
+              "name": "Provider Metadata",
+              "variantGroupKey": "provider_metadata"
+            },
+            {
+              "name": "Thermostats",
+              "variantGroupKey": "thermostats"
+            }
+          ],
           "variants": [
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -59082,6 +59425,7 @@
               "description": "Failed to set code on SmartThings device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -59151,6 +59495,7 @@
               "description": "Failed to set code after multiple retries."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -59220,6 +59565,7 @@
               "description": "No free slots available on the device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -59289,6 +59635,7 @@
               "description": "Failed to set code on device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -59358,6 +59705,7 @@
               "description": "Failed to remove code from device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -59427,6 +59775,7 @@
               "description": "Duplicate access code detected on device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -59496,6 +59845,7 @@
               "description": "An attempt to modify this access code was prevented."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -59565,6 +59915,7 @@
               "description": "No space for access code on device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -59634,6 +59985,7 @@
               "description": "Igloohome bridge has too many pending jobs in the queue."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -59703,6 +60055,7 @@
               "description": "Igloohome bridge is offline."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -59772,6 +60125,7 @@
               "description": "Lock has reached maximum amount of codes."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -59841,6 +60195,7 @@
               "description": "Unable to confirm that the access code is set on Kwikset device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -59910,6 +60265,7 @@
               "description": "Unable to confirm the deletion of the access code on Kwikset device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -59979,6 +60335,7 @@
               "description": "Code was modified or removed externally after Seam successfully set it on the device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -60048,6 +60405,7 @@
               "description": "Invalid code length for August lock."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -60117,6 +60475,7 @@
               "description": "Access code has not yet been fully moved to the device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -60186,6 +60545,7 @@
               "description": "All access code slots on the device are full."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -60255,6 +60615,7 @@
               "description": "August lock is missing a keypad."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -60324,6 +60685,7 @@
               "description": "August lock is temporarily offline."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -60393,6 +60755,7 @@
               "description": "Salto site user is not subscribed."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -60462,6 +60825,7 @@
               "description": "Access code has not yet been fully moved to the device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -60531,6 +60895,7 @@
               "description": "No free positions available on the device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -60600,6 +60965,7 @@
               "description": "Duplicate access code name detected."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -60669,6 +61035,7 @@
               "description": "Potential duplicate access code detected."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -60738,6 +61105,7 @@
               "description": "No valid user level for Oracode."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -60820,6 +61188,7 @@
               "description": "Indicates that the account is disconnected."
             },
             {
+              "variantGroupKey": "locks",
               "properties": [
                 {
                   "name": "created_at",
@@ -60902,6 +61271,7 @@
               "description": "Indicates that the Salto site user limit has been reached."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -60971,6 +61341,7 @@
               "description": "Indicates that the device is offline."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -61040,6 +61411,7 @@
               "description": "Indicates that the device has been removed."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -61109,6 +61481,7 @@
               "description": "Indicates that the hub is disconnected."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -61178,6 +61551,7 @@
               "description": "Indicates that the device is disconnected."
             },
             {
+              "variantGroupKey": "access_codes",
               "properties": [
                 {
                   "name": "created_at",
@@ -61247,6 +61621,7 @@
               "description": "Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty."
             },
             {
+              "variantGroupKey": "locks",
               "properties": [
                 {
                   "name": "created_at",
@@ -61316,6 +61691,7 @@
               "description": "Indicates that the user is not authorized to use the August lock."
             },
             {
+              "variantGroupKey": "locks",
               "properties": [
                 {
                   "name": "created_at",
@@ -61385,6 +61761,7 @@
               "description": "Indicates that the lock is not connected to a bridge."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -61451,9 +61828,10 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the lock is not paired with a gateway."
+              "description": "\n    Indicates that the lock is not paired with a gateway.\n    "
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -61523,6 +61901,7 @@
               "description": "Indicates that device credentials are missing."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -61589,9 +61968,10 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the auxiliary heat is running."
+              "description": "\n    Indicates that the auxiliary heat is running.\n    "
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -61661,6 +62041,7 @@
               "description": "Indicates that a subscription is required to connect."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -61727,9 +62108,10 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the Lockly lock is not connected to a Wi-Fi bridge."
+              "description": "\n    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.\n    "
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -61812,6 +62194,7 @@
               "description": "Indicates that the credentials provided were invalid."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -62008,8 +62391,39 @@
           "jsonType": "array",
           "itemFormat": "discriminated_object",
           "discriminator": "warning_code",
+          "variantGroups": [
+            {
+              "name": "Access Codes",
+              "variantGroupKey": "access_codes"
+            },
+            {
+              "name": "Hardware",
+              "variantGroupKey": "hardware"
+            },
+            {
+              "name": "Locks",
+              "variantGroupKey": "locks"
+            },
+            {
+              "name": "Noise Sensors",
+              "variantGroupKey": "noise_sensors"
+            },
+            {
+              "name": "Phones",
+              "variantGroupKey": "phones"
+            },
+            {
+              "name": "Provider Metadata",
+              "variantGroupKey": "provider_metadata"
+            },
+            {
+              "name": "Thermostats",
+              "variantGroupKey": "thermostats"
+            }
+          ],
           "variants": [
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -62066,6 +62480,7 @@
               "description": "Failed to set code on SmartThings device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -62122,6 +62537,7 @@
               "description": "Duplicate access code detected."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -62178,6 +62594,7 @@
               "description": "Received an error when attempting to create this code."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -62234,6 +62651,7 @@
               "description": "Code was modified or removed externally after Seam successfully set it on the device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -62290,6 +62708,7 @@
               "description": "Delay in setting code on device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -62346,6 +62765,7 @@
               "description": "Delay in removing code from device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -62402,6 +62822,7 @@
               "description": "Third-party integration detected that may cause access codes to fail."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -62458,6 +62879,7 @@
               "description": "Access code has not yet been fully moved to the device."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -62514,6 +62936,7 @@
               "description": "August lock is temporarily offline."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -62570,6 +62993,7 @@
               "description": "Algopins must be used within 24 hours."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -62626,6 +63050,7 @@
               "description": "Management was transferred to another workspace."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -63744,8 +64169,10 @@
           "jsonType": "array",
           "itemFormat": "discriminated_object",
           "discriminator": "warning_code",
+          "variantGroups": [],
           "variants": [
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -63802,6 +64229,7 @@
               "description": "Indicates that the [credential](../capability-guides/access-systems/managing-credentials.md) is waiting to be issued."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -63858,6 +64286,7 @@
               "description": "Indicates that the schedule of one of the [credential](../capability-guides/access-systems/managing-credentials.md)'s children was modified externally."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -63914,6 +64343,7 @@
               "description": "Indicates that the schedule of the [credential](../capability-guides/access-systems/managing-credentials.md) was modified to avoid creating a credential with a start date in the past."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -63970,6 +64400,7 @@
               "description": "Indicates that the [credential](../capability-guides/access-systems/managing-credentials.md) is being deleted."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -64026,6 +64457,7 @@
               "description": "An unknown issue occurred while syncing the state of the [credential](../capability-guides/access-systems/managing-credentials.md) with the provider. This issue may affect the proper functioning of the credential."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -64258,8 +64690,10 @@
           "jsonType": "array",
           "itemFormat": "discriminated_object",
           "discriminator": "error_code",
+          "variantGroups": [],
           "variants": [
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -64316,6 +64750,7 @@
               "description": "Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted from the [access system](https://docs.seam.co/latest/capability-guides/access-systems) outside of Seam."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -64372,6 +64807,7 @@
               "description": "Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -64428,6 +64864,7 @@
               "description": "Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not created on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co)."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -64484,6 +64921,7 @@
               "description": "Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not updated on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co)."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -64540,6 +64978,7 @@
               "description": "Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not deleted on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co)."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -64774,8 +65213,10 @@
           "jsonType": "array",
           "itemFormat": "discriminated_object",
           "discriminator": "mutation_code",
+          "variantGroups": [],
           "variants": [
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -64832,6 +65273,7 @@
               "description": "Seam is in the process of pushing a user creation to the integrated access system."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -64888,6 +65330,7 @@
               "description": "Seam is in the process of pushing a user deletion to the integrated access system."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -65054,6 +65497,7 @@
               "description": ""
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -65194,6 +65638,7 @@
               "description": "Seam is in the process of pushing an access schedule update to the integrated access system."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -65308,6 +65753,7 @@
               "description": "Seam is in the process of pushing a suspension state update to the integrated access system."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -65502,8 +65948,10 @@
           "jsonType": "array",
           "itemFormat": "discriminated_object",
           "discriminator": "warning_code",
+          "variantGroups": [],
           "variants": [
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -65560,6 +66008,7 @@
               "description": "Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is being deleted from the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is a temporary state, and the access system user will be deleted shortly."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -65616,6 +66065,7 @@
               "description": "Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is not subscribed on Salto KS, so they cannot unlock doors or perform any actions. This occurs when the their access schedule hasn’t started yet, if their access schedule has ended, if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -65672,6 +66122,7 @@
               "description": "An unknown issue occurred while syncing the state of this [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -66414,8 +66865,39 @@
           "jsonType": "array",
           "itemFormat": "discriminated_object",
           "discriminator": "error_code",
+          "variantGroups": [
+            {
+              "name": "Access Codes",
+              "variantGroupKey": "access_codes"
+            },
+            {
+              "name": "Hardware",
+              "variantGroupKey": "hardware"
+            },
+            {
+              "name": "Locks",
+              "variantGroupKey": "locks"
+            },
+            {
+              "name": "Noise Sensors",
+              "variantGroupKey": "noise_sensors"
+            },
+            {
+              "name": "Phones",
+              "variantGroupKey": "phones"
+            },
+            {
+              "name": "Provider Metadata",
+              "variantGroupKey": "provider_metadata"
+            },
+            {
+              "name": "Thermostats",
+              "variantGroupKey": "thermostats"
+            }
+          ],
           "variants": [
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -66498,6 +66980,7 @@
               "description": "Indicates that the account is disconnected."
             },
             {
+              "variantGroupKey": "locks",
               "properties": [
                 {
                   "name": "created_at",
@@ -66580,6 +67063,7 @@
               "description": "Indicates that the Salto site user limit has been reached."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -66649,6 +67133,7 @@
               "description": "Indicates that the device is offline."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -66718,6 +67203,7 @@
               "description": "Indicates that the device has been removed."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -66787,6 +67273,7 @@
               "description": "Indicates that the hub is disconnected."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -66856,6 +67343,7 @@
               "description": "Indicates that the device is disconnected."
             },
             {
+              "variantGroupKey": "access_codes",
               "properties": [
                 {
                   "name": "created_at",
@@ -66925,6 +67413,7 @@
               "description": "Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty."
             },
             {
+              "variantGroupKey": "locks",
               "properties": [
                 {
                   "name": "created_at",
@@ -66994,6 +67483,7 @@
               "description": "Indicates that the user is not authorized to use the August lock."
             },
             {
+              "variantGroupKey": "locks",
               "properties": [
                 {
                   "name": "created_at",
@@ -67063,6 +67553,7 @@
               "description": "Indicates that the lock is not connected to a bridge."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -67129,9 +67620,10 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the lock is not paired with a gateway."
+              "description": "\n    Indicates that the lock is not paired with a gateway.\n    "
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -67201,6 +67693,7 @@
               "description": "Indicates that device credentials are missing."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -67267,9 +67760,10 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the auxiliary heat is running."
+              "description": "\n    Indicates that the auxiliary heat is running.\n    "
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -67339,6 +67833,7 @@
               "description": "Indicates that a subscription is required to connect."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -67405,9 +67900,10 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the Lockly lock is not connected to a Wi-Fi bridge."
+              "description": "\n    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.\n    "
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -67490,6 +67986,7 @@
               "description": "Indicates that the credentials provided were invalid."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -68040,8 +68537,39 @@
           "jsonType": "array",
           "itemFormat": "discriminated_object",
           "discriminator": "warning_code",
+          "variantGroups": [
+            {
+              "name": "Access Codes",
+              "variantGroupKey": "access_codes"
+            },
+            {
+              "name": "Hardware",
+              "variantGroupKey": "hardware"
+            },
+            {
+              "name": "Locks",
+              "variantGroupKey": "locks"
+            },
+            {
+              "name": "Noise Sensors",
+              "variantGroupKey": "noise_sensors"
+            },
+            {
+              "name": "Phones",
+              "variantGroupKey": "phones"
+            },
+            {
+              "name": "Provider Metadata",
+              "variantGroupKey": "provider_metadata"
+            },
+            {
+              "name": "Thermostats",
+              "variantGroupKey": "thermostats"
+            }
+          ],
           "variants": [
             {
+              "variantGroupKey": "access_codes",
               "properties": [
                 {
                   "name": "created_at",
@@ -68098,6 +68626,7 @@
               "description": "Indicates that the backup access code is unhealthy."
             },
             {
+              "variantGroupKey": "access_codes",
               "properties": [
                 {
                   "name": "created_at",
@@ -68154,6 +68683,7 @@
               "description": "Indicates that there are too many backup codes."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -68207,9 +68737,10 @@
                   ]
                 }
               ],
-              "description": "Indicates that the Wyze Lock is not connected to a gateway."
+              "description": "\n    Indicates that the Wyze Lock is not connected to a gateway.\n    "
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -68266,6 +68797,7 @@
               "description": "Indicates that the device is offline but has some functionality available."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -68322,6 +68854,7 @@
               "description": "Indicates that a third-party integration has been detected."
             },
             {
+              "variantGroupKey": "thermostats",
               "properties": [
                 {
                   "name": "created_at",
@@ -68378,6 +68911,7 @@
               "description": "Indicates that the Nest thermostat is in manual eco mode."
             },
             {
+              "variantGroupKey": "locks",
               "properties": [
                 {
                   "name": "created_at",
@@ -68431,9 +68965,10 @@
                   ]
                 }
               ],
-              "description": "Indicates that the Remote Unlock feature is not enabled in the settings."
+              "description": "Indicates that the Remote Unlock feature is not enabled in the settings.\""
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -68487,9 +69022,67 @@
                   ]
                 }
               ],
-              "description": "Indicates that the gateway signal is weak."
+              "description": "\n    Indicates that the gateway signal is weak.\n    "
             },
             {
+              "variantGroupKey": "locks",
+              "properties": [
+                {
+                  "name": "created_at",
+                  "description": "Date and time at which Seam created the warning.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "datetime",
+                  "jsonType": "string"
+                },
+                {
+                  "name": "message",
+                  "description": "Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "string",
+                  "jsonType": "string"
+                },
+                {
+                  "name": "warning_code",
+                  "description": "Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "enum",
+                  "jsonType": "string",
+                  "values": [
+                    {
+                      "name": "power_saving_mode",
+                      "description": "",
+                      "isDeprecated": false,
+                      "deprecationMessage": "",
+                      "isUndocumented": false,
+                      "undocumentedMessage": "",
+                      "isDraft": false,
+                      "draftMessage": ""
+                    }
+                  ]
+                }
+              ],
+              "description": "Indicates that the device is in power saving mode and may have limited functionality."
+            },
+            {
+              "variantGroupKey": "thermostats",
               "properties": [
                 {
                   "name": "created_at",
@@ -68546,6 +69139,7 @@
               "description": "Indicates that the temperature threshold has been exceeded."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -68602,6 +69196,7 @@
               "description": "Indicates that the device appears to be unresponsive."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -68658,6 +69253,7 @@
               "description": "Indicates that a scheduled maintenance window has been detected."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -68714,6 +69310,7 @@
               "description": "Indicates that the device has a flaky connection."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -68770,6 +69367,7 @@
               "description": "Indicates that the Salto KS lock is in Office Mode. Access Codes will not unlock doors."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -68826,6 +69424,7 @@
               "description": "Indicates that the Salto KS lock is in Privacy Mode. Access Codes will not unlock doors."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -68882,6 +69481,7 @@
               "description": "Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site."
             },
             {
+              "variantGroupKey": "phones",
               "properties": [
                 {
                   "name": "created_at",
@@ -68938,6 +69538,7 @@
               "description": "Indicates that an unknown issue occurred while syncing the state of the phone with the provider. This issue may affect the proper functioning of the phone."
             },
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
@@ -69199,8 +69800,10 @@
           "jsonType": "array",
           "itemFormat": "discriminated_object",
           "discriminator": "warning_code",
+          "variantGroups": [],
           "variants": [
             {
+              "variantGroupKey": null,
               "properties": [
                 {
                   "name": "created_at",
