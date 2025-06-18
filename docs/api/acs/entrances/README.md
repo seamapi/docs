@@ -44,10 +44,16 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
   <summary>Child Properties</summary>
 
   - <strong><code>door_name</code></strong> <i>String</i>
+  
+    Name of the door in the Vostio access system.
 
   - <strong><code>door_number</code></strong> <i>Number</i>
+  
+    Number of the door in the Vostio access system.
 
   - <strong><code>door_type</code></strong> <i>Enum</i>
+  
+    Type of the door in the Vostio access system.
   <details>
       <summary>Enum values:</summary>
   
@@ -58,10 +64,23 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
   </details>
 
   - <strong><code>pms_id</code></strong> <i>String</i>
+  
+    PMS ID of the door in the Vostio access system.
 
   - <strong><code>stand_open</code></strong> <i>Boolean</i>
+  
+    Indicates whether keys are allowed to set the door in stand open mode in the Vostio access system.
 
 </details>
+
+---
+
+**`connected_account_id`** *UUID*
+
+ID of the [connected account](../../../capability-guides/access-systems/retrieving-entrance-details.md) associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
+
+
 
 ---
 
@@ -93,6 +112,8 @@ dormakaba Community-specific metadata associated with the [entrance](../../../ca
   <summary>Child Properties</summary>
 
   - <strong><code>access_point_name</code></strong> <i>String</i>
+  
+    Name of the access point in the dormakaba Community access system.
 
 </details>
 
@@ -128,12 +149,20 @@ Latch-specific metadata associated with the [entrance](../../../capability-guide
   <summary>Child Properties</summary>
 
   - <strong><code>accessibility_type</code></strong> <i>String</i>
+  
+    Accessibility type in the Latch access system.
 
   - <strong><code>door_name</code></strong> <i>String</i>
+  
+    Name of the door in the Latch access system.
 
   - <strong><code>door_type</code></strong> <i>String</i>
+  
+    Type of the door in the Latch access system.
 
   - <strong><code>is_connected</code></strong> <i>Boolean</i>
+  
+    Indicates whether the entrance is connected.
 
 </details>
 
@@ -149,20 +178,36 @@ Salto KS-specific metadata associated with the [entrance](../../../capability-gu
   <summary>Child Properties</summary>
 
   - <strong><code>battery_level</code></strong> <i>String</i>
+  
+    Battery level of the door access device.
 
   - <strong><code>door_name</code></strong> <i>String</i>
+  
+    Name of the door in the Salto KS access system.
 
   - <strong><code>intrusion_alarm</code></strong> <i>Boolean</i>
+  
+    Indicates whether an intrusion alarm is active on the door.
 
   - <strong><code>left_open_alarm</code></strong> <i>Boolean</i>
+  
+    Indicates whether the door is left open.
 
   - <strong><code>lock_type</code></strong> <i>String</i>
+  
+    Type of the lock in the Salto KS access system.
 
   - <strong><code>locked_state</code></strong> <i>String</i>
+  
+    Locked state of the door in the Salto KS access system.
 
   - <strong><code>online</code></strong> <i>Boolean</i>
+  
+    Indicates whether the door access device is online.
 
   - <strong><code>privacy_mode</code></strong> <i>Boolean</i>
+  
+    Indicates whether privacy mode is enabled for the lock.
 
 </details>
 
@@ -178,10 +223,16 @@ Salto Space-specific metadata associated with the [entrance](../../../capability
   <summary>Child Properties</summary>
 
   - <strong><code>door_description</code></strong> <i>String</i>
+  
+    Description of the door in the Salto Space access system.
 
   - <strong><code>door_name</code></strong> <i>String</i>
+  
+    Name of the door in the Salto Space access system.
 
   - <strong><code>ext_door_id</code></strong> <i>String</i>
+  
+    External door ID in the Salto Space access system.
 
 </details>
 
@@ -197,6 +248,8 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
   <summary>Child Properties</summary>
 
   - <strong><code>door_category</code></strong> <i>Enum</i>
+  
+    Category of the door in the Visionline access system.
   <details>
       <summary>Enum values:</summary>
   
@@ -208,13 +261,21 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
   </details>
 
   - <strong><code>door_name</code></strong> <i>String</i>
+  
+    Name of the door in the Visionline access system.
 
   - <strong><code>profiles</code></strong> <i>List</i> <i>of Objects</i>
+  
+    Profile for the door in the Visionline access system.
 
 - <strong><code>visionline_door_profile_id</code></strong> <i>String</i>
 
+  Door profile ID in the Visionline access system.
+
 
 - <strong><code>visionline_door_profile_type</code></strong> <i>Enum</i>
+
+  Door profile type in the Visionline access system.
 <details>
     <summary>Enum values:</summary>
 
@@ -233,7 +294,7 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 
 **`acs_entrance.added`**
 
-An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was added.
+An [access system entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was added.
 
 <details>
 
@@ -267,14 +328,14 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
 
 **`acs_entrance.removed`**
 
-An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was removed.
+An [access system entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was removed.
 
 <details>
 
@@ -308,7 +369,7 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---

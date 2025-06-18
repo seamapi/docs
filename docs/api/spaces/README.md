@@ -12,12 +12,14 @@
 - [Endpoints](./#endpoints)
 
 
+Represents a space that is a logical grouping of devices and entrances. You can assign access to an entire space, thereby making granting access more efficient.
+
 ---
 ## Properties
 
 **`created_at`** *Datetime*
 
-Date and time at which the space object was created.
+Date and time at which the space was created.
 
 
 
@@ -26,7 +28,7 @@ Date and time at which the space object was created.
 
 **`display_name`** *String*
 
-Display name of the space.
+Display name for the space.
 
 
 
@@ -44,7 +46,7 @@ Name of the space.
 
 **`space_id`** *UUID*
 
-Unique identifier for the space.
+ID of the space.
 
 
 
@@ -53,7 +55,7 @@ Unique identifier for the space.
 
 **`workspace_id`** *UUID*
 
-Unique identifier for the Seam workspace associated with the space.
+ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the space.
 
 
 

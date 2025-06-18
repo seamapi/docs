@@ -34,7 +34,7 @@ Display name for the connected account type.
 
 **`automatically_manage_new_devices`** *Boolean*
 
-Indicates whether Seam should [import all new devices](../../core-concepts/connect-webviews/customizing-connect-webviews.md#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API.
+Indicates whether Seam should [import all new devices](../../core-concepts/connect-webviews/customizing-connect-webviews.md#automatically_manage_new_devices) for the connected account to make these devices available for management by the Seam API.
 
 
 
@@ -43,7 +43,7 @@ Indicates whether Seam should [import all new devices](../../core-concepts/conne
 
 **`connected_account_id`** *UUID*
 
-Unique identifier for the connected account.
+ID of the connected account.
 
 
 
@@ -90,7 +90,7 @@ Variants:
 <details>
 <summary><code>account_disconnected</code></summary>
 
-Account is disconnected.
+Indicates that the account is disconnected.
 
   **`created_at`** *Datetime*
   
@@ -115,7 +115,7 @@ Account is disconnected.
   **`is_bridge_error`** *Boolean*
   
   
-  Indicates whether the error is related to Seam Bridge.
+  Indicates whether the error is related to [Seam Bridge](../../capability-guides/seam-bridge.md).
   
   
   ---
@@ -138,7 +138,7 @@ Account is disconnected.
 <details>
 <summary><code>invalid_credentials</code></summary>
 
-Credentials provided were invalid.
+Indicates that the credentials provided were invalid.
 
   **`created_at`** *Datetime*
   
@@ -163,7 +163,7 @@ Credentials provided were invalid.
   **`is_bridge_error`** *Boolean*
   
   
-  Indicates whether the error is related to Seam Bridge.
+  Indicates whether the error is related to [Seam Bridge](../../capability-guides/seam-bridge.md).
   
   
   ---
@@ -186,7 +186,7 @@ Credentials provided were invalid.
 <details>
 <summary><code>bridge_disconnected</code></summary>
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
   **`created_at`** *Datetime*
   
@@ -211,7 +211,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../capabili
   **`is_bridge_error`** *Boolean*
   
   
-  Indicates whether the error is related to Seam Bridge.
+  Indicates whether the error is related to [Seam Bridge](../../capability-guides/seam-bridge.md).
   
   
   ---
@@ -259,7 +259,7 @@ Indicates that the maximum number of users allowed for the site has been reached
   **`is_bridge_error`** *Boolean*
   
   
-  Indicates whether the error is related to Seam Bridge.
+  Indicates whether the error is related to [Seam Bridge](../../capability-guides/seam-bridge.md).
   
   
   ---
@@ -362,7 +362,7 @@ Variants:
 <details>
 <summary><code>scheduled_maintenance_window</code></summary>
 
-Scheduled downtime planned for the connected account.
+Indicates that scheduled downtime is planned for the connected account.
 
   **`created_at`** *Datetime*
   
@@ -394,7 +394,7 @@ Scheduled downtime planned for the connected account.
 <details>
 <summary><code>unknown_issue_with_connected_account</code></summary>
 
-An unknown issue occurred while syncing the state of the connected account with the provider. This issue may affect the proper functioning of one or more resources in the account.
+Indicates that an unknown issue occurred while syncing the state of the connected account with the provider. This issue may affect the proper functioning of one or more resources in the account.
 
   **`created_at`** *Datetime*
   
@@ -497,19 +497,19 @@ Indicates that the Salto KS site has exceeded 80% of the maximum number of allow
 
 **`account_disconnected`**
 
-Account is disconnected.
+Indicates that the account is disconnected.
 
 ---
 
 **`invalid_credentials`**
 
-Credentials provided were invalid.
+Indicates that the credentials provided were invalid.
 
 ---
 
 **`bridge_disconnected`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
 ---
 
@@ -524,13 +524,13 @@ Indicates that the maximum number of users allowed for the site has been reached
 
 **`scheduled_maintenance_window`**
 
-Scheduled downtime planned for the connected account.
+Indicates that scheduled downtime is planned for the connected account.
 
 ---
 
 **`unknown_issue_with_connected_account`**
 
-An unknown issue occurred while syncing the state of the connected account with the provider. This issue may affect the proper functioning of one or more resources in the account.
+Indicates that an unknown issue occurred while syncing the state of the connected account with the provider. This issue may affect the proper functioning of one or more resources in the account.
 
 ---
 
@@ -553,11 +553,11 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was conn
 
 <strong><code>connect_webview_id</code></strong> <i>UUID</i>
 
-  ID of the Connect Webview associated with the event.
+  ID of the [Connect Webview](../../core-concepts/connect-webviews/README.md) associated with the event.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected connected account.
+  ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -577,7 +577,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was conn
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -592,11 +592,11 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was crea
 
 <strong><code>connect_webview_id</code></strong> <i>UUID</i>
 
-  ID of the Connect Webview associated with the event.
+  ID of the [Connect Webview](../../core-concepts/connect-webviews/README.md) associated with the event.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected connected account.
+  ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -616,7 +616,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was crea
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -631,11 +631,11 @@ A [connected account](../../core-concepts/connected-accounts/README.md) had a su
 
 <strong><code>connect_webview_id</code></strong> <i>UUID</i>
 
-  ID of the Connect Webview associated with the event.
+  ID of the [Connect Webview](../../core-concepts/connect-webviews/README.md) associated with the event.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected connected account.
+  ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -655,7 +655,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) had a su
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -670,7 +670,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was disc
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected connected account.
+  ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -690,7 +690,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was disc
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -705,7 +705,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) complete
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected connected account.
+  ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -725,7 +725,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) complete
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -740,7 +740,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was dele
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected connected account.
+  ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -760,7 +760,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was dele
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -775,7 +775,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) complete
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected connected account.
+  ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -795,7 +795,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) complete
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---

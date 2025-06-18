@@ -59,7 +59,7 @@ Device type for phones.
 
 **`display_name`** *String*
 
-Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name` otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.
+Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name`, otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.
 
 
 
@@ -201,7 +201,7 @@ A phone device was deactivated.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
