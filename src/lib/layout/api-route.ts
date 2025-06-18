@@ -22,8 +22,8 @@ export interface ApiRouteLayoutContext {
   alphaMessage: string | undefined
   resources: Array<
     ApiRouteResource & {
-      warnings: ApiWarning[]
-      errors: ApiError[]
+      warningGroups: ApiRouteVariantGroup[]
+      errorGroups: ApiRouteVariantGroup[]
       resourceSamples: ResourceSampleContext[]
     }
   >
@@ -76,11 +76,13 @@ export interface ApiRouteResource {
   events: ApiRouteEvent[]
 }
 
-interface ApiWarning {
-  name: string
-  description: string
+interface ApiRouteVariantGroup {
+  name?: string
+  variantGroupKey: string | null
+  variants: ApiRouteVariant[]
 }
-interface ApiError {
+
+interface ApiRouteVariant {
   name: string
   description: string
 }
@@ -135,12 +137,17 @@ export function setApiRouteLayoutContext(
       )
     }
 
+    const groupOptions = {
+      include: metadata.include_groups,
+      exclude: metadata.exclude_groups,
+    }
+
     const warningsProp = resource.properties.find((p) => p.name === 'warnings')
     const errorsProp = resource.properties.find((p) => p.name === 'errors')
-    const resourceWarnings =
-      warningsProp != null ? collectResourceWarnings(warningsProp) : []
-    const resourceErrors =
-      errorsProp != null ? collectResourceErrors(errorsProp) : []
+    const warningGroups =
+      warningsProp != null ? groupVariants(warningsProp, groupOptions) : []
+    const errorGroups =
+      errorsProp != null ? groupVariants(errorsProp, groupOptions) : []
 
     const allProperties = resource.properties.filter(
       ({ isUndocumented }) => !isUndocumented,
@@ -155,15 +162,12 @@ export function setApiRouteLayoutContext(
     const propertyGroups = groupProperties(
       properties,
       resource.propertyGroups,
-      {
-        include: metadata.include_groups,
-        exclude: metadata.exclude_groups,
-      },
+      groupOptions,
     )
 
     addLinkTargetsToProperties(propertyGroups?.[0]?.properties, {
-      errors: resourceErrors.length > 0,
-      warnings: resourceWarnings.length > 0,
+      hasErrors: errorGroups.length > 0,
+      hasWarnings: warningGroups.length > 0,
     })
 
     const legacyPropertyGroups =
@@ -183,12 +187,98 @@ export function setApiRouteLayoutContext(
       description: resource.description,
       propertyGroups,
       ...(legacyPropertyGroups == null ? {} : { legacyPropertyGroups }),
-      errors: resourceErrors,
-      warnings: resourceWarnings,
+      errorGroups,
+      warningGroups,
       events: eventsByRoutePath.get(resource.routePath) ?? [],
       resourceSamples: resource.resourceSamples.map(mapResourceSample),
     })
   }
+}
+
+const groupVariants = (
+  property: Property | null,
+  {
+    include,
+    exclude,
+  }: {
+    include?: string[] | undefined
+    exclude?: string[] | undefined
+  },
+): ApiRouteVariantGroup[] => {
+  if (!isDiscriminatedListProperty(property)) {
+    return []
+  }
+
+  const getApiRouteVariants = (
+    variantGroupKey: string | null,
+  ): ApiRouteVariant[] => {
+    return collectResourceVariants({
+      ...property,
+      variants: property.variants.filter(
+        (v) => v.variantGroupKey === variantGroupKey,
+      ),
+    })
+  }
+
+  return property.variants
+    .reduce<ApiRouteVariantGroup[]>(
+      (groups, variantGroup) => [
+        ...groups,
+        {
+          description: variantGroup.description,
+          variantGroupKey: variantGroup.variantGroupKey,
+          variants: getApiRouteVariants(variantGroup.variantGroupKey),
+        },
+      ],
+      [
+        {
+          variants: getApiRouteVariants(null),
+          variantGroupKey: null,
+        },
+      ],
+    )
+    .filter(({ variants }) => variants.length > 0)
+    .filter(({ variantGroupKey }) => {
+      if (include == null) return true
+      if (variantGroupKey == null) return false
+      return include.includes(variantGroupKey)
+    })
+    .filter(({ variantGroupKey }) => {
+      if (exclude == null) return true
+      if (variantGroupKey == null) return true
+      return !exclude.includes(variantGroupKey)
+    })
+}
+
+const isDiscriminatedListProperty = (
+  prop: Property | undefined | null,
+): prop is DiscriminatedListProperty => {
+  return (
+    prop != null &&
+    'itemFormat' in prop &&
+    prop.itemFormat === 'discriminated_object'
+  )
+}
+
+const collectResourceVariants = (
+  property: DiscriminatedListProperty,
+): ApiRouteVariant[] => {
+  return property.variants
+    .map((variant) => {
+      const discriminator = findEnumProperty(
+        variant.properties,
+        property.discriminator,
+      )
+      if (discriminator?.values?.[0]?.name == null) {
+        return null
+      }
+
+      return {
+        name: discriminator.values[0].name,
+        description: variant.description,
+      }
+    })
+    .filter((variant): variant is ApiRouteVariant => variant !== null)
 }
 
 export const groupProperties = (
@@ -265,39 +355,6 @@ const groupEventsByRoutePath = (
 const getFirstParagraph = (text: string): string =>
   text.split('\n\n').at(0) ?? text
 
-function collectResourceWarnings(warnings: Property | undefined): ApiWarning[] {
-  if (!isDiscriminatedObjectProperty(warnings)) {
-    return []
-  }
-
-  return warnings.variants
-    .map((variant) => {
-      const warningCode = findEnumProperty(
-        variant.properties,
-        warnings.discriminator,
-      )
-      if (warningCode?.values?.[0]?.name == null) {
-        return null
-      }
-
-      return {
-        name: warningCode.values[0].name,
-        description: variant.description,
-      }
-    })
-    .filter((warning): warning is ApiWarning => warning !== null)
-}
-
-function isDiscriminatedObjectProperty(
-  prop: Property | undefined,
-): prop is DiscriminatedListProperty {
-  return (
-    prop != null &&
-    'itemFormat' in prop &&
-    prop.itemFormat === 'discriminated_object'
-  )
-}
-
 function findEnumProperty(
   properties: Property[],
   name: string,
@@ -307,29 +364,6 @@ function findEnumProperty(
   ) as EnumProperty | undefined
 
   return prop ?? null
-}
-
-function collectResourceErrors(errors: Property | undefined): ApiError[] {
-  if (!isDiscriminatedObjectProperty(errors)) {
-    return []
-  }
-
-  return errors.variants
-    .map((variant) => {
-      const errorCode = findEnumProperty(
-        variant.properties,
-        errors.discriminator,
-      )
-      if (errorCode?.values?.[0]?.name == null) {
-        return null
-      }
-
-      return {
-        name: errorCode.values[0].name,
-        description: variant.description,
-      }
-    })
-    .filter((error): error is ApiError => error !== null)
 }
 
 const mapBlueprintPropertyToRouteProperty = (
@@ -443,12 +477,12 @@ const flattenObjectProperties = (
 
 function addLinkTargetsToProperties(
   properties: ApiRouteProperty[] | undefined,
-  sections: { errors: boolean; warnings: boolean },
+  sections: { hasErrors: boolean; hasWarnings: boolean },
 ): void {
   if (properties == null) return
   const linkableProperties: Record<string, string | undefined> = {
-    errors: sections.errors ? './#errors' : undefined,
-    warnings: sections.warnings ? './#warnings' : undefined,
+    errors: sections.hasErrors ? './#errors' : undefined,
+    warnings: sections.hasWarnings ? './#warnings' : undefined,
   }
 
   for (const prop of properties) {

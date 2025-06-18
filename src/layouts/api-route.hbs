@@ -9,11 +9,12 @@
 
 {{#each resources}}
 {{> api-resource }}
-{{#if errors.length}}
+{{#if errorGroups.length}}
 
 ## Errors
 
-{{#each errors}}
+{{#each errorGroups}}
+{{#each variants}}
 **`{{name}}`**
 
 {{description}}
@@ -21,18 +22,21 @@
 ---
 
 {{/each}}
+{{/each}}
 {{/if}}
-{{#if warnings.length}}
+{{#if warningGroups.length}}
 
 ## Warnings
 
 {{#each warnings}}
+{{#each variants}}
 **`{{name}}`**
 
 {{description}}
 
 ---
 
+{{/each}}
 {{/each}}
 {{/if}}
 {{/each}}
