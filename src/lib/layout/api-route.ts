@@ -222,12 +222,12 @@ const groupVariants = (
     })
   }
 
-  return property.variants
+  return property.variantGroups
     .reduce<ApiRouteVariantGroup[]>(
       (groups, variantGroup) => [
         ...groups,
         {
-          description: variantGroup.description,
+          name: variantGroup.name,
           variantGroupKey: variantGroup.variantGroupKey,
           variants: getApiRouteVariants(variantGroup.variantGroupKey),
         },
