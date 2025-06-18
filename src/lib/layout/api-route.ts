@@ -217,6 +217,8 @@ const groupVariants = (
       variants: property.variants.filter(
         (v) => v.variantGroupKey === variantGroupKey,
       ),
+    }).sort((a, b) => {
+      return a.name.localeCompare(b.name)
     })
   }
 
@@ -247,6 +249,11 @@ const groupVariants = (
       if (exclude == null) return true
       if (variantGroupKey == null) return true
       return !exclude.includes(variantGroupKey)
+    })
+    .sort((a, b) => {
+      if (a.name == null) return 1
+      if (b.name == null) return -1
+      return a.name.localeCompare(b.name)
     })
 }
 
@@ -298,6 +305,9 @@ export const groupProperties = (
     properties
       .filter((p) => p.propertyGroupKey === propertyGroupKey)
       .map(mapBlueprintPropertyToRouteProperty)
+      .sort((a, b) => {
+        return a.name.localeCompare(b.name)
+      })
 
   return propertyGroups
     .reduce<ApiRoutePropertyGroup[]>(
@@ -326,6 +336,11 @@ export const groupProperties = (
       if (exclude == null) return true
       if (propertyGroupKey == null) return true
       return !exclude.includes(propertyGroupKey)
+    })
+    .sort((a, b) => {
+      if (a.name == null) return 1
+      if (b.name == null) return -1
+      return a.name.localeCompare(b.name)
     })
 }
 
