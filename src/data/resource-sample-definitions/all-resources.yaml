@@ -4,33 +4,33 @@
   properties:
     access_grant_id: ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b
     access_method_ids:
-    - a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d
-    - 5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f
-    - c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f
+      - a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d
+      - 5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f
+      - c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f
     created_at: '2025-06-16T16:54:17.946606Z'
     display_name: My Access Grant
     location_ids:
-    - 9e8d7c6b-5a4b-3c2d-1e0f-9a8b7c6d5e4f
-    - f0e1d2c3-b4a5-6d7e-8f90-1a2b3c4d5e6f
+      - 9e8d7c6b-5a4b-3c2d-1e0f-9a8b7c6d5e4f
+      - f0e1d2c3-b4a5-6d7e-8f90-1a2b3c4d5e6f
     requested_access_methods:
-    - display_name: PIN Code Credential
-      mode: code
-      created_at: '2025-06-16T16:54:17.946606Z'
-      created_access_method_ids:
-      - a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d
-    - display_name: Card Credential
-      mode: card
-      created_at: '2025-06-16T16:54:19.946606Z'
-      created_access_method_ids:
-      - 5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f
-    - display_name: Mobile Key Credential
-      mode: mobile_key
-      created_at: '2025-06-16T16:54:21.946606Z'
-      created_access_method_ids:
-      - c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f
+      - display_name: PIN Code Credential
+        mode: code
+        created_at: '2025-06-16T16:54:17.946606Z'
+        created_access_method_ids:
+          - a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d
+      - display_name: Card Credential
+        mode: card
+        created_at: '2025-06-16T16:54:19.946606Z'
+        created_access_method_ids:
+          - 5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f
+      - display_name: Mobile Key Credential
+        mode: mobile_key
+        created_at: '2025-06-16T16:54:21.946606Z'
+        created_access_method_ids:
+          - c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f
     space_ids:
-    - 1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d
-    - 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
+      - 1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d
+      - 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
     user_identity_id: e3d736c1-540d-4d10-83e5-9a4e135453b4
     workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
 - title: ACS Access Group
@@ -76,10 +76,10 @@
       card_function_type: guest
       card_id: 5
       common_acs_entrance_ids:
-      - 5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f
+        - 5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f
       credential_id: 15
       guest_acs_entrance_ids:
-      - a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d
+        - a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d
       is_valid: true
     warnings: []
     workspace_id: 005f1e54-5360-40db-8c31-4ef6baaad1fd
@@ -107,8 +107,8 @@
       door_category: guest
       door_name: Main Entrance
       profiles:
-      - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
-        visionline_door_profile_type: BLE
+        - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
+          visionline_door_profile_type: BLE
 - title: ACS Mobile Key Credential
   description: An access system mobile key credential resource.
   resource_type: acs_credential
@@ -156,7 +156,7 @@
     acs_user_count: 20
     connected_account_id: a94aeed0-1ae0-4e49-9c23-8444c7ceba09
     connected_account_ids:
-    - a94aeed0-1ae0-4e49-9c23-8444c7ceba09
+      - a94aeed0-1ae0-4e49-9c23-8444c7ceba09
     created_at: '2025-06-15T16:54:17.946425Z'
     default_credential_manager_acs_system_id: 5dde2def-3507-44f5-9521-7ca96aa4cd18
     errors: []
@@ -192,13 +192,13 @@
     is_suspended: false
     last_successful_sync_at: '2025-06-18T17:45:00.582Z'
     pending_mutations:
-    - to:
-        acs_access_group_id: 2c0fb4a0-2b42-4651-926e-1a10bedbf6ce
-      from:
-        acs_access_group_id: f1e2d3c4-b5a6-4d7c-8e9f-0a1b2c3d4e5f
-      message: This user's access membership is being updated.
-      created_at: '2025-06-18T17:57:01.867Z'
-      mutation_code: updating_group_membership
+      - to:
+          acs_access_group_id: 2c0fb4a0-2b42-4651-926e-1a10bedbf6ce
+        from:
+          acs_access_group_id: f1e2d3c4-b5a6-4d7c-8e9f-0a1b2c3d4e5f
+        message: This user's access membership is being updated.
+        created_at: '2025-06-18T17:57:01.867Z'
+        mutation_code: updating_group_membership
     phone_number: '+1555551000'
     user_identity_email_address: jane@example.com
     user_identity_full_name: Jane Doe
@@ -232,9 +232,9 @@
   properties:
     client_session_id: c2cbd177-1ace-414b-bb1e-9f129e4a05c1
     connect_webview_ids:
-    - 550e8400-e29b-41d4-a716-446655440000
+      - 550e8400-e29b-41d4-a716-446655440000
     connected_account_ids:
-    - f47ac10b-58cc-4372-a567-0e02b2c3d479
+      - f47ac10b-58cc-4372-a567-0e02b2c3d479
     created_at: '2025-06-15T16:54:17.946309Z'
     customer_id: 77eccc4e-c8bc-4c7d-b83c-cb853ed3bade
     device_count: 1
@@ -243,20 +243,20 @@
     user_identifier_key: user_id_1
     user_identity_id: a6e93f84-565e-47d7-8908-1ca71ada373c
     user_identity_ids:
-    - a6e93f84-565e-47d7-8908-1ca71ada373c
+      - a6e93f84-565e-47d7-8908-1ca71ada373c
     workspace_id: b887bf84-9849-4454-a562-cf84293d9781
 - title: Connect Webview
   description: A connect webview resource.
   resource_type: connect_webview
   properties:
     accepted_capabilities:
-    - lock
-    - thermostat
+      - lock
+      - thermostat
     accepted_providers:
-    - schlage
-    - kwikset
-    - yale
-    - smartthings
+      - schlage
+      - kwikset
+      - yale
+      - smartthings
     any_provider_allowed: false
     authorized_at: '2025-06-14T16:54:17.946323Z'
     automatically_manage_new_devices: true
@@ -302,8 +302,8 @@
     display_name: Akiles
     image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/logos/akiles.png&q=75&w=128
     provider_categories:
-    - stable
-    - consumer_smartlocks
+      - stable
+      - consumer_smartlocks
 - title: Event
   description: An event resource.
   resource_type: event
@@ -335,8 +335,8 @@
     can_remotely_lock: true
     can_remotely_unlock: true
     capabilities_supported:
-    - access_code
-    - lock
+      - access_code
+      - lock
     connected_account_id: 8e3a4f1b-2c7d-4a9e-8b5f-3d2c1a0b9e8f
     created_at: '2025-03-27T02:08:16.418Z'
     custom_metadata:
@@ -358,8 +358,8 @@
         status: good
       battery_level: 0.48
       code_constraints:
-      - constraint_type: name_length
-        max_length: 9
+        - constraint_type: name_length
+          max_length: 9
       has_native_entry_events: true
       image_alt_text: Schlage Sense Smart Deadbolt with Camelot Trim, Front
       image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/schlage_sense-smart-deadbolt-with-camelot-trim_front.png&q=75&w=128
@@ -383,11 +383,11 @@
         model: Encode
       serial_number: 34000000000531e0
       supported_code_lengths:
-      - 4
-      - 5
-      - 6
-      - 7
-      - 8
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
       supports_backup_access_code_pool: true
       supports_offline_access_codes: false
     warnings: []
@@ -418,7 +418,7 @@
   resource_type: device
   properties:
     capabilities_supported:
-    - noise_detection
+      - noise_detection
     connected_account_id: 9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d
     created_at: '2025-05-16T16:54:17.946049Z'
     custom_metadata:
@@ -585,8 +585,8 @@
     properties:
       assa_abloy_credential_service_metadata:
         endpoints:
-        - endpoint_id: c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f
-          is_active: true
+          - endpoint_id: c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f
+            is_active: true
         has_active_endpoint: true
     warnings: []
     workspace_id: da8639a4-28a2-4884-a4f9-b7691f4cf336
@@ -649,14 +649,14 @@
     device_id: 58437d45-47ac-4ee6-ab27-7b2d1f2947d1
     name: Weekday Program
     periods:
-    - starts_at_time: 07:00:00
-      climate_preset_key: Home
-    - starts_at_time: 09:00:00
-      climate_preset_key: Away
-    - starts_at_time: '16:00:00'
-      climate_preset_key: Home
-    - starts_at_time: '22:30:00'
-      climate_preset_key: Sleep
+      - starts_at_time: 07:00:00
+        climate_preset_key: Home
+      - starts_at_time: 09:00:00
+        climate_preset_key: Away
+      - starts_at_time: '16:00:00'
+        climate_preset_key: Home
+      - starts_at_time: '22:30:00'
+        climate_preset_key: Sleep
     thermostat_daily_program_id: ab8ef74c-c7cd-4100-aa32-0ef960c0080d
     workspace_id: 8da8d923-e55b-45cd-84a3-6c96b3d3d454
 - title: Thermostat Device
@@ -668,7 +668,7 @@
     can_hvac_heat_cool: true
     can_turn_off_hvac: true
     capabilities_supported:
-    - thermostat
+      - thermostat
     connected_account_id: a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d
     created_at: '2024-10-03T22:12:15.666Z'
     custom_metadata:
@@ -696,53 +696,53 @@
       appearance:
         name: Living Room
       available_climate_presets:
-      - climate_preset_key: sleep
-        can_edit: true
-        can_delete: true
-        can_program: false
-        name: Sleep
-        display_name: Sleep
-        fan_mode_setting: auto
-        hvac_mode_setting: heat_cool
-        manual_override_allowed: true
-        cooling_set_point_celsius: 23.88888888888889
-        heating_set_point_celsius: 17.77777777777778
-        cooling_set_point_fahrenheit: 75
-        heating_set_point_fahrenheit: 64
-      - climate_preset_key: home
-        can_edit: true
-        can_delete: true
-        can_program: false
-        name: Home
-        display_name: Home
-        fan_mode_setting: auto
-        hvac_mode_setting: heat_cool
-        manual_override_allowed: false
-        cooling_set_point_celsius: 23.88888888888889
-        heating_set_point_celsius: 17.77777777777778
-        cooling_set_point_fahrenheit: 75
-        heating_set_point_fahrenheit: 64
-      - climate_preset_key: work
-        can_edit: true
-        can_delete: true
-        can_program: false
-        name: Work
-        display_name: Work
-        fan_mode_setting: auto
-        hvac_mode_setting: heat_cool
-        manual_override_allowed: false
-        cooling_set_point_celsius: 23.88888888888889
-        heating_set_point_celsius: 17.77777777777778
-        cooling_set_point_fahrenheit: 75
-        heating_set_point_fahrenheit: 64
+        - climate_preset_key: sleep
+          can_edit: true
+          can_delete: true
+          can_program: false
+          name: Sleep
+          display_name: Sleep
+          fan_mode_setting: auto
+          hvac_mode_setting: heat_cool
+          manual_override_allowed: true
+          cooling_set_point_celsius: 23.88888888888889
+          heating_set_point_celsius: 17.77777777777778
+          cooling_set_point_fahrenheit: 75
+          heating_set_point_fahrenheit: 64
+        - climate_preset_key: home
+          can_edit: true
+          can_delete: true
+          can_program: false
+          name: Home
+          display_name: Home
+          fan_mode_setting: auto
+          hvac_mode_setting: heat_cool
+          manual_override_allowed: false
+          cooling_set_point_celsius: 23.88888888888889
+          heating_set_point_celsius: 17.77777777777778
+          cooling_set_point_fahrenheit: 75
+          heating_set_point_fahrenheit: 64
+        - climate_preset_key: work
+          can_edit: true
+          can_delete: true
+          can_program: false
+          name: Work
+          display_name: Work
+          fan_mode_setting: auto
+          hvac_mode_setting: heat_cool
+          manual_override_allowed: false
+          cooling_set_point_celsius: 23.88888888888889
+          heating_set_point_celsius: 17.77777777777778
+          cooling_set_point_fahrenheit: 75
+          heating_set_point_fahrenheit: 64
       available_fan_mode_settings:
-      - auto
-      - true
+        - auto
+        - true
       available_hvac_mode_settings:
-      - false
-      - cool
-      - heat
-      - heat_cool
+        - false
+        - cool
+        - heat
+        - heat_cool
       current_climate_setting:
         display_name: Manual Setting
         fan_mode_setting: auto
@@ -787,34 +787,34 @@
         upper_limit_celsius: 26.66666666666667
         upper_limit_fahrenheit: 80
       thermostat_daily_programs:
-      - thermostat_daily_program_id: 1a2b3c4d-5e6f-7890-1234-56789abcdef1
-        device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
-        name: Weekday Program
-        periods:
-        - starts_at_time: 00:00:00
-          climate_preset_key: sleep
-        - starts_at_time: 07:00:00
-          climate_preset_key: home
-        - starts_at_time: 09:00:00
-          climate_preset_key: work
-        - starts_at_time: '18:00:00'
-          climate_preset_key: home
-        - starts_at_time: '22:00:00'
-          climate_preset_key: sleep
-        workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
-        created_at: '2025-05-30T04:01:25.455Z'
-      - thermostat_daily_program_id: d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90
-        device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
-        name: Weekend Program
-        periods:
-        - starts_at_time: 00:00:00
-          climate_preset_key: sleep
-        - starts_at_time: 08:00:00
-          climate_preset_key: home
-        - starts_at_time: '23:00:00'
-          climate_preset_key: sleep
-        workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
-        created_at: '2025-05-30T04:02:19.952Z'
+        - thermostat_daily_program_id: 1a2b3c4d-5e6f-7890-1234-56789abcdef1
+          device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+          name: Weekday Program
+          periods:
+            - starts_at_time: 00:00:00
+              climate_preset_key: sleep
+            - starts_at_time: 07:00:00
+              climate_preset_key: home
+            - starts_at_time: 09:00:00
+              climate_preset_key: work
+            - starts_at_time: '18:00:00'
+              climate_preset_key: home
+            - starts_at_time: '22:00:00'
+              climate_preset_key: sleep
+          workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+          created_at: '2025-05-30T04:01:25.455Z'
+        - thermostat_daily_program_id: d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90
+          device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+          name: Weekend Program
+          periods:
+            - starts_at_time: 00:00:00
+              climate_preset_key: sleep
+            - starts_at_time: 08:00:00
+              climate_preset_key: home
+            - starts_at_time: '23:00:00'
+              climate_preset_key: sleep
+          workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+          created_at: '2025-05-30T04:02:19.952Z'
       thermostat_weekly_program: null
     warnings: []
     workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
@@ -977,8 +977,8 @@
     can_simulate_disconnection: true
     can_simulate_removal: true
     capabilities_supported:
-    - access_code
-    - lock
+      - access_code
+      - lock
     connected_account_id: c1a3967f-24a1-4220-a9c7-7fa97c1d5603
     created_at: '2025-06-16T16:54:17.946342Z'
     device_id: f4f40e75-86fc-4896-b958-e1c7e092b2cf
@@ -1033,8 +1033,8 @@
   resource_type: webhook
   properties:
     event_types:
-    - device.connected
-    - device.disconnected
+      - device.connected
+      - device.disconnected
     secret: mySecret
     url: https://example.com/webhook
     webhook_id: ffe5cc3c-f3f4-48e8-b377-6f76c05d09a1
