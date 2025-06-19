@@ -14,7 +14,7 @@ Represents a [connected account](../../core-concepts/connected-accounts/README.m
 {% tabs %}
 {% tab title="Connected Account" %}
 
-A connected account resource.
+Connected Account
 
 ```json
 {

@@ -20,7 +20,7 @@ In addition, for certain devices, Seam also supports [offline access codes](http
 {% tabs %}
 {% tab title="One-Time-Use Offline Access Code" %}
 
-A one-time-use offline access code resource.
+One-Time-Use Offline Access Code
 
 ```json
 {
@@ -50,7 +50,7 @@ A one-time-use offline access code resource.
 {% endtab %}
 {% tab title="Ongoing Online Access Code" %}
 
-An ongoing online access code resource.
+Ongoing Online Access Code
 
 ```json
 {
@@ -80,7 +80,7 @@ An ongoing online access code resource.
 {% endtab %}
 {% tab title="Time-bound Online Access Code" %}
 
-A time-bound online access code resource.
+Time-bound Online Access Code
 
 ```json
 {
@@ -110,7 +110,7 @@ A time-bound online access code resource.
 {% endtab %}
 {% tab title="Time-bound Offline Access Code" %}
 
-A time-bound offline access code resource.
+Time-bound Offline Access Code
 
 ```json
 {

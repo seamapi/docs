@@ -18,7 +18,7 @@ For each `acs_credential`, you define the access method. You can also specify ad
 {% tabs %}
 {% tab title="ACS Card Credential" %}
 
-An access system card credential resource.
+ACS Card Credential
 
 ```json
 {
@@ -55,7 +55,7 @@ An access system card credential resource.
 {% endtab %}
 {% tab title="ACS Mobile Key Credential" %}
 
-An access system mobile key credential resource.
+ACS Mobile Key Credential
 
 ```json
 {
@@ -76,7 +76,7 @@ An access system mobile key credential resource.
 {% endtab %}
 {% tab title="ACS PIN Code Credential" %}
 
-An access system PIN code credential resource.
+ACS PIN Code Credential
 
 ```json
 {
