@@ -436,6 +436,7 @@ const mapResourceSample = (sample: ResourceSample): ResourceSampleContext => {
 
   return {
     title: sample.title,
+    description: sample.description,
     resourceData: jsonSample.resource_data,
     resourceDataSyntax: jsonSample.resource_data_syntax,
   }
