@@ -107,7 +107,7 @@ Perform the following process for each Salto Space site that you want to integra
     2. If you have chosen to use STP:
        1.  In the **Host of the Salto Space server** field, type the [IP address that you identified for the Salto Space server](salto-space-setup-instructions.md#lan-url-and-host-of-the-salto-space-server) before beginning this process.
 
-           For example: `http://192.168.1.101`
+           For example: `192.168.1.101`
        2. In the **TCP/IP Port configured in the Salto Space server** field, type the TCP/IP port number that you configured in the [Salto Space SHIP settings](salto-space-setup-instructions.md#prerequisites).
     3. Click **Submit**.
 14. Click **Close**.
