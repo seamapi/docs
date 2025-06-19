@@ -3,7 +3,7 @@
 ## The phone Object
 
 - [Properties](./#properties)
-- [`phone.properties`](./#phone.properties)
+- [phone.properties](./#phone.properties)
 - [Errors](./#errors)
 - [Warnings](./#warnings)
 - [Events](./#events)
@@ -150,7 +150,7 @@ ID of the [workspace](../../core-concepts/workspaces/README.md) that contains th
 
 
 ---
-## `phone.properties`
+## phone.properties
 
 **`assa_abloy_credential_service_metadata`** *Object*
 
