@@ -39,6 +39,7 @@ interface ApiRouteEvent {
 
 interface ResourceSampleContext {
   title: string
+  description: string
   resourceData: string
   resourceDataSyntax: SyntaxName
 }
