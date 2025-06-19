@@ -17,7 +17,7 @@ Represents an access grant. Access grants enable you to grant a user identity ac
 {% tabs %}
 {% tab title="Access Grant" %}
 
-
+An access grant resource.
 
 ```json
 {

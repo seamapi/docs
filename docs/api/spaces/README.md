@@ -17,7 +17,7 @@ Represents a space that is a logical grouping of devices and entrances. You can 
 {% tabs %}
 {% tab title="Space" %}
 
-
+A space resource.
 
 ```json
 {

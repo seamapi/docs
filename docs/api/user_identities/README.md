@@ -14,7 +14,7 @@ Represents a [user identity](../../capability-guides/mobile-access/managing-mobi
 {% tabs %}
 {% tab title="User Identity" %}
 
-
+A user identity resource.
 
 ```json
 {

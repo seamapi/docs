@@ -15,7 +15,7 @@ Represents an app user's mobile phone.
 {% tabs %}
 {% tab title="Phone" %}
 
-
+A phone resource.
 
 ```json
 {

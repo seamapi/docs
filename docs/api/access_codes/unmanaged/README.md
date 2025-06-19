@@ -24,7 +24,7 @@ Not all providers support unmanaged access codes. The following providers do not
 {% tabs %}
 {% tab title="Unmanaged Access Code" %}
 
-
+An unmanaged access code resource.
 
 ```json
 {
