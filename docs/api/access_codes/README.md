@@ -48,7 +48,7 @@ In addition, for certain devices, Seam also supports [offline access codes](http
 }
 ```
 {% endtab %}
-{% tab title="Ongoing Access Code" %}
+{% tab title="Ongoing Online Access Code" %}
 
 
 
@@ -78,7 +78,7 @@ In addition, for certain devices, Seam also supports [offline access codes](http
 }
 ```
 {% endtab %}
-{% tab title="Time-bound Access Code" %}
+{% tab title="Time-bound Online Access Code" %}
 
 
 

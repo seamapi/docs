@@ -38492,8 +38492,8 @@
           }
         },
         {
-          "title": "Ongoing Access Code",
-          "description": "An ongoing access code resource.",
+          "title": "Ongoing Online Access Code",
+          "description": "An ongoing online access code resource.",
           "resource_type": "access_code",
           "properties": {
             "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
@@ -38527,8 +38527,8 @@
           }
         },
         {
-          "title": "Time-bound Access Code",
-          "description": "A time-bound access code resource.",
+          "title": "Time-bound Online Access Code",
+          "description": "A time-bound online access code resource.",
           "resource_type": "access_code",
           "properties": {
             "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
