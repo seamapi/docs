@@ -149,7 +149,6 @@ ID of the [workspace](../../core-concepts/workspaces/README.md) that contains th
 ---
 
 
----
 ## phone.properties
 
 **`assa_abloy_credential_service_metadata`** *Object*
