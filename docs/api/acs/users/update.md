@@ -177,7 +177,9 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`access_schedule`** *Object*
 
+````
 `starts_at` and `ends_at` timestamps for the access system user's access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. If you omit `starts_at`, it defaults to the current time. `ends_at` is optional and must be a time in the future and after `starts_at`.
+````
 
 <details>
 
@@ -204,13 +206,17 @@ Starting timestamp for the access system user's access.
 
 **`acs_system_id`** *String*
 
+````
 ID of the access system that you want to update. You can only provide acs_system_id with user_identity_id.
+````
 
 ---
 
 **`acs_user_id`** *String*
 
+````
 ID of the access system user that you want to update. You can only provide acs_user_id or user_identity_id.
+````
 
 ---
 
@@ -220,13 +226,17 @@ ID of the access system user that you want to update. You can only provide acs_u
 
 **`email_address`** *String*
 
+````
 Email address of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+````
 
 ---
 
 **`full_name`** *String*
 
+````
 Full name of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+````
 
 ---
 
@@ -236,13 +246,17 @@ Full name of the [access system user](https://docs.seam.co/latest/capability-gui
 
 **`phone_number`** *String*
 
+````
 Phone number of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
+````
 
 ---
 
 **`user_identity_id`** *String*
 
+````
 ID of the user identity that you want to update. You can only provide acs_user_id or user_identity_id. If you provide user_identity_id, you must also provide acs_system_id.
+````
 
 ---
 

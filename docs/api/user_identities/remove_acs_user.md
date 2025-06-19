@@ -177,13 +177,17 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_user_id`** *String* (Required)
 
+````
 ID of the access system user that you want to remove from the user identity..
+````
 
 ---
 
 **`user_identity_id`** *String* (Required)
 
+````
 ID of the user identity from which you want to remove an access system user.
+````
 
 ---
 

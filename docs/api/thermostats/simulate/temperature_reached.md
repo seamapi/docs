@@ -22,19 +22,25 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`device_id`** *String* (Required)
 
+````
 ID of the thermostat device that you want to simulate reaching a specified temperature.
+````
 
 ---
 
 **`temperature_celsius`** *Number*
 
+````
 Temperature in °C that you want simulate the thermostat reaching. You must set `temperature_celsius` or `temperature_fahrenheit`.
+````
 
 ---
 
 **`temperature_fahrenheit`** *Number*
 
+````
 Temperature in °F that you want simulate the thermostat reaching. You must set `temperature_fahrenheit` or `temperature_celsius`.
+````
 
 ---
 

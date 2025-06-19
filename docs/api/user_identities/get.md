@@ -224,7 +224,9 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`user_identity_id`** *String*
 
+````
 ID of the user identity that you want to get.
+````
 
 ---
 

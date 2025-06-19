@@ -22,13 +22,17 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`user_identity_id`** *String* (Required)
 
+````
 ID of the user identity that you want to associate with the simulated phone.
+````
 
 ---
 
 **`assa_abloy_metadata`** *Object*
 
+````
 ASSA ABLOY metadata that you want to associate with the simulated phone.
+````
 
 <details>
 
@@ -103,13 +107,17 @@ ID of the SEOS trusted service manager (TSM) endpoint that you want to use for t
 
 **`custom_sdk_installation_id`** *String*
 
+````
 ID of the custom SDK installation that you want to use for the simulated phone.
+````
 
 ---
 
 **`phone_metadata`** *Object*
 
+````
 Metadata that you want to associate with the simulated phone.
+````
 
 <details>
 

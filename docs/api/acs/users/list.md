@@ -209,49 +209,65 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_system_id`** *String*
 
+````
 ID of the `acs_system` for which you want to retrieve all access system users.
+````
 
 ---
 
 **`created_before`** *String*
 
+````
 Timestamp by which to limit returned access system users. Returns users created before this timestamp.
+````
 
 ---
 
 **`limit`** *Number*
 
+````
 Maximum number of records to return per page.
+````
 
 ---
 
 **`page_cursor`** *String*
 
+````
 Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
+````
 
 ---
 
 **`search`** *String*
 
+````
 String for which to search. Filters returned access system users to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address`, `acs_user_id`, `user_identity_id`, `user_identity_full_name` or `user_identity_phone_number`.
+````
 
 ---
 
 **`user_identity_email_address`** *String*
 
+````
 Email address of the user identity for which you want to retrieve all access system users.
+````
 
 ---
 
 **`user_identity_id`** *String*
 
+````
 ID of the user identity for which you want to retrieve all access system users.
+````
 
 ---
 
 **`user_identity_phone_number`** *String*
 
+````
 Phone number of the user identity for which you want to retrieve all access system users, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`).
+````
 
 ---
 

@@ -166,19 +166,25 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_system_id`** *String*
 
+````
 ID of the access system that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id.
+````
 
 ---
 
 **`acs_user_id`** *String*
 
+````
 ID of the access system user that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id.
+````
 
 ---
 
 **`user_identity_id`** *String*
 
+````
 ID of the user identity that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id.
+````
 
 ---
 

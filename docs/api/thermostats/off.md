@@ -193,7 +193,9 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`device_id`** *String* (Required)
 
+````
 ID of the thermostat device that you want to set to off mode.
+````
 
 ---
 

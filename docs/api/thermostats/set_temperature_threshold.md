@@ -183,31 +183,41 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`device_id`** *String* (Required)
 
+````
 ID of the thermostat device for which you want to set a temperature threshold.
+````
 
 ---
 
 **`lower_limit_celsius`** *Number*
 
+````
 Lower temperature limit in in °C. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both.
+````
 
 ---
 
 **`lower_limit_fahrenheit`** *Number*
 
+````
 Lower temperature limit in in °F. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both.
+````
 
 ---
 
 **`upper_limit_celsius`** *Number*
 
+````
 Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both.
+````
 
 ---
 
 **`upper_limit_fahrenheit`** *Number*
 
+````
 Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both.
+````
 
 ---
 

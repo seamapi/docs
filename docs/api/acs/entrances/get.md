@@ -200,7 +200,9 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_entrance_id`** *String* (Required)
 
+````
 ID of the entrance that you want to get.
+````
 
 ---
 

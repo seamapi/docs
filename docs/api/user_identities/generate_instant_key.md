@@ -220,13 +220,17 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`user_identity_id`** *String* (Required)
 
+````
 ID of the user identity for which you want to generate an instant key.
+````
 
 ---
 
 **`max_use_count`** *Number*
 
+````
 Maximum number of times the instant key can be used. Default: 1.
+````
 
 ---
 

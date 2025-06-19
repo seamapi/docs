@@ -246,31 +246,41 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_system_ids`** *Array* *of UUIDs*
 
+````
 List of access system IDs to associate with the new user identity through access system users. If there's no user with the same email address or phone number in the specified access systems, a new access system user is created. If there is an existing user with the same email or phone number in the specified access systems, the user is linked to the user identity.
+````
 
 ---
 
 **`email_address`** *String*
 
+````
 Unique email address for the new user identity.
+````
 
 ---
 
 **`full_name`** *String*
 
+````
 Full name of the user associated with the new user identity.
+````
 
 ---
 
 **`phone_number`** *String*
 
+````
 Unique phone number for the new user identity in E.164 format (for example, +15555550100).
+````
 
 ---
 
 **`user_identity_key`** *String*
 
+````
 Unique key for the new user identity.
+````
 
 ---
 

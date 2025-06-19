@@ -286,31 +286,41 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`access_method`** *String* (Required)
 
+````
 Access method for the new credential. Supported values: `code`, `card`, `mobile_key`.
+````
 
 ---
 
 **`acs_system_id`** *String*
 
+````
 ID of the access system to which the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`.
+````
 
 ---
 
 **`acs_user_id`** *String*
 
+````
 ID of the access system user to whom the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`.
+````
 
 ---
 
 **`allowed_acs_entrance_ids`** *Array* *of UUIDs*
 
+````
 Set of IDs of the [entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md) for which the new credential grants access.
+````
 
 ---
 
 **`assa_abloy_vostio_metadata`** *Object*
 
+````
 Vostio-specific metadata for the new credential.
+````
 
 <details>
 
@@ -353,31 +363,41 @@ Vostio-specific metadata for the new credential.
 
 **`code`** *String*
 
+````
 Access (PIN) code for the new credential. There may be manufacturer-specific code restrictions. For details, see the applicable [device or system integration guide](../../../device-and-system-integration-guides/overview.md).
+````
 
 ---
 
 **`credential_manager_acs_system_id`** *String*
 
+````
 ACS system ID of the credential manager for the new credential.
+````
 
 ---
 
 **`ends_at`** *String*
 
+````
 Date and time at which the validity of the new credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
+````
 
 ---
 
 **`is_multi_phone_sync_credential`** *Boolean*
 
+````
 Indicates whether the new credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
+````
 
 ---
 
 **`salto_space_metadata`** *Object*
 
+````
 Salto Space-specific metadata for the new credential.
+````
 
 <details>
 
@@ -404,19 +424,25 @@ Indicates whether to update the user's existing card. See also [Programming Salt
 
 **`starts_at`** *String*
 
+````
 Date and time at which the validity of the new credential starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+````
 
 ---
 
 **`user_identity_id`** *String*
 
+````
 ID of the user identity to whom the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`. If the access system contains a user with the same `email_address` or `phone_number` as the user identity that you specify, they are linked, and the credential belongs to the access system user. If the access system does not have a corresponding user, one is created.
+````
 
 ---
 
 **`visionline_metadata`** *Object*
 
+````
 Visionline-specific metadata for the new credential.
+````
 
 <details>
 

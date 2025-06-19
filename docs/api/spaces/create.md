@@ -25,19 +25,25 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`name`** *String* (Required)
 
+````
 Name of the space that you want to create.
+````
 
 ---
 
 **`acs_entrance_ids`** *Array* *of UUIDs*
 
+````
 IDs of the entrances that you want to add to the new space.
+````
 
 ---
 
 **`device_ids`** *Array* *of UUIDs*
 
+````
 IDs of the devices that you want to add to the new space.
+````
 
 ---
 

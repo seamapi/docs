@@ -25,13 +25,17 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`device_ids`** *Array* *of UUIDs* (Required)
 
+````
 IDs of the devices that you want to remove from the space.
+````
 
 ---
 
 **`space_id`** *String* (Required)
 
+````
 ID of the space from which you want to remove devices.
+````
 
 ---
 

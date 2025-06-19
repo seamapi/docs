@@ -25,13 +25,17 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_entrance_id`** *String*
 
+````
 ID of entrance to filter list of access grants by.
+````
 
 ---
 
 **`acs_system_id`** *String*
 
+````
 ID of system to filter list of access grants by.
+````
 
 ---
 
@@ -41,13 +45,17 @@ ID of system to filter list of access grants by.
 
 **`space_id`** *String*
 
+````
 ID of space to filter list of access grants by.
+````
 
 ---
 
 **`user_identity_id`** *String*
 
+````
 ID of user identity to filter list of access grants by.
+````
 
 ---
 

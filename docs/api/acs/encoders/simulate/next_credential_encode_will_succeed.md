@@ -22,13 +22,17 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_encoder_id`** *String* (Required)
 
+````
 ID of the `acs_encoder` that will be used in the next request to encode the `acs_credential`.
+````
 
 ---
 
 **`scenario`** *String*
 
+````
 Scenario to simulate.
+````
 
 ---
 

@@ -23,7 +23,9 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`access_code_id`** *String* (Required)
 
+````
 ID of the unmanaged access code that you want to delete.
+````
 
 ---
 

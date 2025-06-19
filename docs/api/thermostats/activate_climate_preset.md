@@ -203,13 +203,17 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`climate_preset_key`** *String* (Required)
 
+````
 Climate preset key of the climate preset that you want to activate.
+````
 
 ---
 
 **`device_id`** *String* (Required)
 
+````
 ID of the thermostat device for which you want to activate a climate preset.
+````
 
 ---
 
