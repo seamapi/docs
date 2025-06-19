@@ -16,7 +16,9 @@ An access control system generally uses digital means of access to authorize a u
 For each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type.
 
 {% tabs %}
-{% tab title="JSON" %}
+{% tab title="ACS Card Credential" %}
+
+
 ```json
 {
   "access_method": "card",
@@ -50,7 +52,9 @@ For each `acs_credential`, you define the access method. You can also specify ad
 }
 ```
 {% endtab %}
-{% tab title="JSON" %}
+{% tab title="ACS Mobile Key Credential" %}
+
+
 ```json
 {
   "access_method": "mobile_key",
@@ -68,7 +72,9 @@ For each `acs_credential`, you define the access method. You can also specify ad
 }
 ```
 {% endtab %}
-{% tab title="JSON" %}
+{% tab title="ACS PIN Code Credential" %}
+
+
 ```json
 {
   "access_method": "code",

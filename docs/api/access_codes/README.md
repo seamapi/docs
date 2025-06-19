@@ -18,7 +18,9 @@ Seam supports programming two types of access codes: [ongoing](https://docs.seam
 In addition, for certain devices, Seam also supports [offline access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#offline-access-codes). Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code.
 
 {% tabs %}
-{% tab title="JSON" %}
+{% tab title="One-Time-Use Offline Access Code" %}
+
+
 ```json
 {
   "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
@@ -45,7 +47,9 @@ In addition, for certain devices, Seam also supports [offline access codes](http
 }
 ```
 {% endtab %}
-{% tab title="JSON" %}
+{% tab title="Ongoing Access Code" %}
+
+
 ```json
 {
   "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
@@ -72,7 +76,9 @@ In addition, for certain devices, Seam also supports [offline access codes](http
 }
 ```
 {% endtab %}
-{% tab title="JSON" %}
+{% tab title="Time-bound Access Code" %}
+
+
 ```json
 {
   "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
@@ -99,7 +105,9 @@ In addition, for certain devices, Seam also supports [offline access codes](http
 }
 ```
 {% endtab %}
-{% tab title="JSON" %}
+{% tab title="Time-bound Offline Access Code" %}
+
+
 ```json
 {
   "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",

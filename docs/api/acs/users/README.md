@@ -16,7 +16,9 @@ An access system user typically refers to an individual who requires access, lik
 For details about how to configure users in your access system, see the corresponding [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 
 {% tabs %}
-{% tab title="JSON" %}
+{% tab title="ACS User" %}
+
+
 ```json
 {
   "access_schedule": {

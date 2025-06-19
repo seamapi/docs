@@ -15,7 +15,9 @@
 Represents an access grant. Access grants enable you to grant a user identity access to spaces, entrances, and devices through one or more access methods, such as mobile keys, plastic cards, and PIN codes. You can create an access grant for an existing user identity, or you can create a new user identity *while* creating the new access grant.
 
 {% tabs %}
-{% tab title="JSON" %}
+{% tab title="Access Grant" %}
+
+
 ```json
 {
   "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",

@@ -16,7 +16,9 @@ Within an `acs_system`, create [`acs_user`s](https://docs.seam.co/latest/api/acs
 For details about the resources associated with an access control system, see the [access control systems namespace](https://docs.seam.co/latest/api/acs).
 
 {% tabs %}
-{% tab title="JSON" %}
+{% tab title="ACS System" %}
+
+
 ```json
 {
   "acs_access_group_count": 5,

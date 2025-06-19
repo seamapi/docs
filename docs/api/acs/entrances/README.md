@@ -14,7 +14,9 @@ Represents an [entrance](../../../capability-guides/access-systems/retrieving-en
 In an access control system, an entrance is a secured door, gate, zone, or other method of entry. You can list details for all the `acs_entrance` resources in your workspace or get these details for a specific `acs_entrance`. You can also list all entrances associated with a specific credential, and you can list all credentials associated with a specific entrance.
 
 {% tabs %}
-{% tab title="JSON" %}
+{% tab title="ACS Entrance" %}
+
+
 ```json
 {
   "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",

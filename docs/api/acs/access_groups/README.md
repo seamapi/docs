@@ -16,7 +16,9 @@ Some access control systems use [access group](https://docs.seam.co/latest/capab
 To learn whether your access control system supports access groups, see the corresponding [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 
 {% tabs %}
-{% tab title="JSON" %}
+{% tab title="ACS Access Group" %}
+
+
 ```json
 {
   "access_group_type": "salto_ks_access_group",

@@ -15,7 +15,9 @@
 Represents a space that is a logical grouping of devices and entrances. You can assign access to an entire space, thereby making granting access more efficient.
 
 {% tabs %}
-{% tab title="JSON" %}
+{% tab title="Space" %}
+
+
 ```json
 {
   "created_at": "2025-06-16T16:54:17.946600Z",
