@@ -14,7 +14,7 @@ Represents a [thermostat schedule](../../../capability-guides/thermostats/creati
 {% tabs %}
 {% tab title="Thermostat Schedule" %}
 
-Thermostat Schedule
+A thermostat schedule resource.
 
 ```json
 {

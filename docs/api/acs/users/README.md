@@ -18,7 +18,7 @@ For details about how to configure users in your access system, see the correspo
 {% tabs %}
 {% tab title="ACS User" %}
 
-ACS User
+An access system user resource.
 
 ```json
 {

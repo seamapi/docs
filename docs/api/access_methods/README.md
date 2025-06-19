@@ -17,7 +17,7 @@ Represents an access method for an access grant. Access methods describe the mod
 {% tabs %}
 {% tab title="Card Access Method" %}
 
-Card Access Method
+A card access method resource.
 
 ```json
 {
@@ -33,7 +33,7 @@ Card Access Method
 {% endtab %}
 {% tab title="Mobile Key Access Method" %}
 
-Mobile Key Access Method
+A mobile key access method resource.
 
 ```json
 {
@@ -49,7 +49,7 @@ Mobile Key Access Method
 {% endtab %}
 {% tab title="PIN Code Access Method" %}
 
-PIN Code Access Method
+A PIN code access method resource.
 
 ```json
 {

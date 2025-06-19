@@ -16,7 +16,7 @@ In an access control system, an entrance is a secured door, gate, zone, or other
 {% tabs %}
 {% tab title="ACS Entrance" %}
 
-ACS Entrance
+An access system entrance resource.
 
 ```json
 {

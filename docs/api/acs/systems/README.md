@@ -18,7 +18,7 @@ For details about the resources associated with an access control system, see th
 {% tabs %}
 {% tab title="ACS System" %}
 
-ACS System
+An access system resource.
 
 ```json
 {

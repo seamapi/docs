@@ -27,7 +27,7 @@ To verify if your access control system requires a card encoder, see the corresp
 {% tabs %}
 {% tab title="ACS Encoder" %}
 
-ACS Encoder
+An access system encoder resource.
 
 ```json
 {

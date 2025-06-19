@@ -18,7 +18,7 @@ To learn whether your access control system supports access groups, see the corr
 {% tabs %}
 {% tab title="ACS Access Group" %}
 
-ACS Access Group
+An access group resource.
 
 ```json
 {
