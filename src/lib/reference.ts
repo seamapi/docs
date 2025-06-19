@@ -112,8 +112,6 @@ export const reference = (
             return param
           },
         )
-
-        console.dir(endpoint.request.parameters)
       }
       setEndpointLayoutContext(
         file,
