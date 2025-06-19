@@ -360,7 +360,7 @@
         workspace_id: 005f1e54-5360-40db-8c31-4ef6baaad1fd
       warnings:
         - warning_code: acs_credential_on_encoder_out_of_sync
-          warning_message: The following properties are out of sync between acs_credential_on_encoder and acs_credential_on_seam: ends_at
+          warning_message: 'The following properties are out of sync between acs_credential_on_encoder and acs_credential_on_seam: ends_at'
     status: success
 - title: SET_FAN_MODE Action Attempt
   description: A SET_FAN_MODE action attempt resource.
