@@ -18,6 +18,7 @@ Represents an access method for an access grant. Access methods describe the mod
 {% tab title="Card Access Method" %}
 
 
+
 ```json
 {
   "access_method_id": "27d8ad77-55c2-4e20-b5b3-43555926f0e8",
@@ -33,6 +34,7 @@ Represents an access method for an access grant. Access methods describe the mod
 {% tab title="Mobile Key Access Method" %}
 
 
+
 ```json
 {
   "access_method_id": "27d8ad77-55c2-4e20-b5b3-43555926f0e8",
@@ -46,6 +48,7 @@ Represents an access method for an access grant. Access methods describe the mod
 ```
 {% endtab %}
 {% tab title="PIN Code Access Method" %}
+
 
 
 ```json

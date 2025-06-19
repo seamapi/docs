@@ -19,6 +19,7 @@ To learn whether your access control system supports access groups, see the corr
 {% tab title="ACS Access Group" %}
 
 
+
 ```json
 {
   "access_group_type": "salto_ks_access_group",

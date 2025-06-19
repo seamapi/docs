@@ -19,6 +19,7 @@ For details about how to configure users in your access system, see the correspo
 {% tab title="ACS User" %}
 
 
+
 ```json
 {
   "access_schedule": {

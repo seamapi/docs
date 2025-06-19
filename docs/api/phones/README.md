@@ -16,6 +16,7 @@ Represents an app user's mobile phone.
 {% tab title="Phone" %}
 
 
+
 ```json
 {
   "created_at": "2025-06-14T16:54:17.946540Z",

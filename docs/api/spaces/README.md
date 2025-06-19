@@ -18,6 +18,7 @@ Represents a space that is a logical grouping of devices and entrances. You can 
 {% tab title="Space" %}
 
 
+
 ```json
 {
   "created_at": "2025-06-16T16:54:17.946600Z",

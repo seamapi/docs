@@ -21,6 +21,7 @@ In addition, for certain devices, Seam also supports [offline access codes](http
 {% tab title="One-Time-Use Offline Access Code" %}
 
 
+
 ```json
 {
   "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
@@ -48,6 +49,7 @@ In addition, for certain devices, Seam also supports [offline access codes](http
 ```
 {% endtab %}
 {% tab title="Ongoing Access Code" %}
+
 
 
 ```json
@@ -79,6 +81,7 @@ In addition, for certain devices, Seam also supports [offline access codes](http
 {% tab title="Time-bound Access Code" %}
 
 
+
 ```json
 {
   "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
@@ -106,6 +109,7 @@ In addition, for certain devices, Seam also supports [offline access codes](http
 ```
 {% endtab %}
 {% tab title="Time-bound Offline Access Code" %}
+
 
 
 ```json

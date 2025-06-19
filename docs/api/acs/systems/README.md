@@ -19,6 +19,7 @@ For details about the resources associated with an access control system, see th
 {% tab title="ACS System" %}
 
 
+
 ```json
 {
   "acs_access_group_count": 5,

@@ -15,6 +15,7 @@ Represents a [user identity](../../capability-guides/mobile-access/managing-mobi
 {% tab title="User Identity" %}
 
 
+
 ```json
 {
   "created_at": "2025-06-16T16:54:17.946546Z",

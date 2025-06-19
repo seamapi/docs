@@ -19,6 +19,7 @@ For each `acs_credential`, you define the access method. You can also specify ad
 {% tab title="ACS Card Credential" %}
 
 
+
 ```json
 {
   "access_method": "card",
@@ -55,6 +56,7 @@ For each `acs_credential`, you define the access method. You can also specify ad
 {% tab title="ACS Mobile Key Credential" %}
 
 
+
 ```json
 {
   "access_method": "mobile_key",
@@ -73,6 +75,7 @@ For each `acs_credential`, you define the access method. You can also specify ad
 ```
 {% endtab %}
 {% tab title="ACS PIN Code Credential" %}
+
 
 
 ```json

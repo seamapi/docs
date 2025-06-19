@@ -15,6 +15,7 @@ Represents a [thermostat schedule](../../../capability-guides/thermostats/creati
 {% tab title="Thermostat Schedule" %}
 
 
+
 ```json
 {
   "climate_preset_key": "eco",

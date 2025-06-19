@@ -15,6 +15,7 @@ Represents a [connected account](../../core-concepts/connected-accounts/README.m
 {% tab title="Connected Account" %}
 
 
+
 ```json
 {
   "account_type": "salto_space",
