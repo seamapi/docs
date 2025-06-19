@@ -25,17 +25,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_entrance_ids`** *Array* *of UUIDs* (Required)
 
-````
 IDs of the entrances that you want to add to the space.
-````
 
 ---
 
 **`space_id`** *String* (Required)
 
-````
 ID of the space to which you want to add entrances.
-````
 
 ---
 

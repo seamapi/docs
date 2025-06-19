@@ -197,33 +197,25 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`access_grant_id`** *String*
 
-````
 ID of the access grant for which you want to retrieve all entrances.
-````
 
 ---
 
 **`access_method_id`** *String*
 
-````
 ID of the access method for which you want to retrieve all entrances.
-````
 
 ---
 
 **`acs_credential_id`** *String*
 
-````
 ID of the credential for which you want to retrieve all entrances.
-````
 
 ---
 
 **`acs_system_id`** *String*
 
-````
 ID of the access system for which you want to retrieve all entrances.
-````
 
 ---
 
@@ -233,9 +225,7 @@ ID of the access system for which you want to retrieve all entrances.
 
 **`space_id`** *String*
 
-````
 ID of the space for which you want to list entrances.
-````
 
 ---
 

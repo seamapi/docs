@@ -173,9 +173,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`connected_account_id`** *String* (Required)
 
-````
 ID of the connected account that you want to delete.
-````
 
 ---
 

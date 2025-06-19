@@ -207,17 +207,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`connected_account_id`** *String*
 
-````
 ID of the connected account that you want to get.
-````
 
 ---
 
 **`email`** *String*
 
-````
 Email address associated with the connected account that you want to get.
-````
 
 ---
 

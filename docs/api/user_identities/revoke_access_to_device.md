@@ -177,17 +177,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`device_id`** *String* (Required)
 
-````
 ID of the managed device to which you want to revoke access from the user identity.
-````
 
 ---
 
 **`user_identity_id`** *String* (Required)
 
-````
 ID of the user identity from which you want to revoke access to a device.
-````
 
 ---
 

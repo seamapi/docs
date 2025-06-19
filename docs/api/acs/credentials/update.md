@@ -174,25 +174,19 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_credential_id`** *String* (Required)
 
-````
 ID of the credential that you want to update.
-````
 
 ---
 
 **`code`** *String*
 
-````
 Replacement access (PIN) code for the credential that you want to update.
-````
 
 ---
 
 **`ends_at`** *String*
 
-````
 Replacement date and time at which the validity of the credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after the `starts_at` value that you set when creating the credential.
-````
 
 ---
 

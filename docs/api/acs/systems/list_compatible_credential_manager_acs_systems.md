@@ -175,9 +175,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_system_id`** *String* (Required)
 
-````
 ID of the access system for which you want to retrieve all compatible credential manager systems.
-````
 
 ---
 

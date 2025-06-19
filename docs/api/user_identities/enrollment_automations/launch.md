@@ -243,41 +243,31 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`credential_manager_acs_system_id`** *String* (Required)
 
-````
 ID of the desired access system that serves as the credential manager for the enrollment automation.
-````
 
 ---
 
 **`user_identity_id`** *String* (Required)
 
-````
 ID of the user identity for which you want to launch an enrollment automation.
-````
 
 ---
 
 **`acs_credential_pool_id`** *String*
 
-````
 ID of the credential pool from which to obtain credentials for the user identity.
-````
 
 ---
 
 **`create_credential_manager_user`** *Boolean*
 
-````
 Indicates whether to create an associated credential manager user. If you set `create_credential_manager_user` to `true`, you cannot specify a `credential_manager_acs_user_id`.
-````
 
 ---
 
 **`credential_manager_acs_user_id`** *String*
 
-````
 ID of the associated access system user within the credential manager. If you specify a `credential_manager_acs_user_id`, you cannot set `create_credential_manager_user` to `true`.
-````
 
 ---
 

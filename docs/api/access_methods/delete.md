@@ -25,9 +25,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`access_method_id`** *String* (Required)
 
-````
 ID of access method to get.
-````
 
 ---
 

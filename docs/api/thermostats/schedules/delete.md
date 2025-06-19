@@ -171,9 +171,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`thermostat_schedule_id`** *String* (Required)
 
-````
 ID of the thermostat schedule that you want to delete.
-````
 
 ---
 

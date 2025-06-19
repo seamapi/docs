@@ -177,25 +177,19 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`connected_account_id`** *String* (Required)
 
-````
 ID of the connected account that you want to update.
-````
 
 ---
 
 **`automatically_manage_new_devices`** *Boolean*
 
-````
 Indicates whether newly-added devices should appear as [managed devices](../../core-concepts/devices/managed-and-unmanaged-devices.md).
-````
 
 ---
 
 **`custom_metadata`** *Object*
 
-````
 Custom metadata that you want to associate with the connected account. Supports up to 50 JSON key:value pairs. [Adding custom metadata to a connected account](../../core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account.md) enables you to store custom information, like customer details or internal IDs from your application. Then, you can [filter connected accounts by the desired metadata](../../core-concepts/connected-accounts/filtering-connected-accounts-by-custom-metadata.md).
-````
 
 ---
 

@@ -25,9 +25,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`space_id`** *String* (Required)
 
-````
 ID of the space that you want to get.
-````
 
 ---
 

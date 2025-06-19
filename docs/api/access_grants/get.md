@@ -25,9 +25,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`access_grant_id`** *String* (Required)
 
-````
 ID of access grant to get.
-````
 
 ---
 

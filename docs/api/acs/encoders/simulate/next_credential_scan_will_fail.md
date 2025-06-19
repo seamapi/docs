@@ -22,9 +22,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_encoder_id`** *String* (Required)
 
-````
 ID of the `acs_encoder` that will fail to scan the `acs_credential` in the next request.
-````
 
 ---
 

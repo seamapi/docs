@@ -23,25 +23,19 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`code`** *String* (Required)
 
-````
 Code of the simulated unmanaged access code.
-````
 
 ---
 
 **`device_id`** *String* (Required)
 
-````
 ID of the device for which you want to simulate the creation of an unmanaged access code.
-````
 
 ---
 
 **`name`** *String* (Required)
 
-````
 Name of the simulated unmanaged access code.
-````
 
 ---
 

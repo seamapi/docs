@@ -177,17 +177,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`climate_preset_key`** *String* (Required)
 
-````
 Climate preset key of the climate preset that you want to delete.
-````
 
 ---
 
 **`device_id`** *String* (Required)
 
-````
 ID of the thermostat device for which you want to delete a climate preset.
-````
 
 ---
 

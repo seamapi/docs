@@ -23,17 +23,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`device_id`** *String* (Required)
 
-````
 ID of the device for which you want to list unmanaged access codes.
-````
 
 ---
 
 **`user_identifier_key`** *String*
 
-````
 Your user ID for the user by which to filter unmanaged access codes.
-````
 
 ---
 

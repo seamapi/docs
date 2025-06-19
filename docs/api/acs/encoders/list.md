@@ -22,33 +22,25 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_encoder_ids`** *Array* *of UUIDs*
 
-````
 IDs of the encoders that you want to retrieve.
-````
 
 ---
 
 **`acs_system_id`** *String*
 
-````
 ID of the access system for which you want to retrieve all encoders.
-````
 
 ---
 
 **`acs_system_ids`** *Array* *of UUIDs*
 
-````
 IDs of the access systems for which you want to retrieve all encoders.
-````
 
 ---
 
 **`limit`** *Number*
 
-````
 Number of encoders to return.
-````
 
 ---
 

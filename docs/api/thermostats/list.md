@@ -298,41 +298,31 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`connect_webview_id`** *String*
 
-````
 ID of the Connect Webview for which you want to list devices.
-````
 
 ---
 
 **`connected_account_id`** *String*
 
-````
 ID of the connected account for which you want to list devices.
-````
 
 ---
 
 **`connected_account_ids`** *Array* *of UUIDs*
 
-````
 Array of IDs of the connected accounts for which you want to list devices.
-````
 
 ---
 
 **`created_before`** *String*
 
-````
 Timestamp by which to limit returned devices. Returns devices created before this timestamp.
-````
 
 ---
 
 **`custom_metadata_has`** *Object*
 
-````
 Set of key:value [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) pairs for which you want to list devices.
-````
 
 ---
 
@@ -342,25 +332,19 @@ Set of key:value [custom metadata](../../core-concepts/devices/adding-custom-met
 
 **`device_ids`** *Array* *of UUIDs*
 
-````
 Array of device IDs for which you want to list devices.
-````
 
 ---
 
 **`device_type`** *String*
 
-````
 Device type by which you want to filter thermostat devices.
-````
 
 ---
 
 **`device_types`** *Array* *of Enums*
 
-````
 Array of device types by which you want to filter thermostat devices.
-````
 <details>
 
 <summary>Enum values</summary>
@@ -378,33 +362,25 @@ Possible enum values:
 
 **`limit`** *Number*
 
-````
 Numerical limit on the number of devices to return.
-````
 
 ---
 
 **`manufacturer`** *String*
 
-````
 Manufacturer by which you want to filter thermostat devices.
-````
 
 ---
 
 **`page_cursor`** *String*
 
-````
 Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
-````
 
 ---
 
 **`space_id`** *String*
 
-````
 ID of the space for which you want to list devices.
-````
 
 ---
 
@@ -414,9 +390,7 @@ ID of the space for which you want to list devices.
 
 **`user_identifier_key`** *String*
 
-````
 Your own internal user ID for the user for which you want to list devices.
-````
 
 ---
 

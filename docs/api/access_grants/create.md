@@ -29,33 +29,25 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_entrance_ids`** *Array* *of UUIDs*
 
-````
 Set of IDs of the [entrances](https://docs.seam.co/latest/api/acs/systems/list) to which access is being granted.
-````
 
 ---
 
 **`device_ids`** *Array* *of UUIDs*
 
-````
 Set of IDs of the [devices](https://docs.seam.co/latest/api/devices/list) to which access is being granted.
-````
 
 ---
 
 **`ends_at`** *String*
 
-````
 Date and time at which the validity of the new grant ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
-````
 
 ---
 
 **`location`** *Object*
 
-````
 When used, creates a new location with the given entrances and devices, and gives the user access to this location.
-````
 
 <details>
 
@@ -102,25 +94,19 @@ Name of the location.
 
 **`space_ids`** *Array* *of UUIDs*
 
-````
 Set of IDs of existing spaces to which access is being granted.
-````
 
 ---
 
 **`starts_at`** *String*
 
-````
 Date and time at which the validity of the new grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
-````
 
 ---
 
 **`user_identity`** *Object*
 
-````
 When used, creates a new user identity with the given details, and grants them access.
-````
 
 <details>
 
@@ -157,9 +143,7 @@ Unique phone number for the user identity in [E.164 format](https://www.itu.int/
 
 **`user_identity_id`** *String*
 
-````
 ID of user identity for whom access is being granted.
-````
 
 ---
 

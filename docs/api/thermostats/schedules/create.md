@@ -254,57 +254,43 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`climate_preset_key`** *String* (Required)
 
-````
 Key of the [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to use for the new thermostat schedule.
-````
 
 ---
 
 **`device_id`** *String* (Required)
 
-````
 ID of the thermostat device for which you want to create a schedule.
-````
 
 ---
 
 **`ends_at`** *String* (Required)
 
-````
 Date and time at which the new thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
-````
 
 ---
 
 **`starts_at`** *String* (Required)
 
-````
 Date and time at which the new thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
-````
 
 ---
 
 **`is_override_allowed`** *Boolean*
 
-````
 Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the new schedule is active. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
-````
 
 ---
 
 **`max_override_period_minutes`** *Number*
 
-````
 Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
-````
 
 ---
 
 **`name`** *String*
 
-````
 Name of the thermostat schedule.
-````
 
 ---
 

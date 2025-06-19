@@ -231,9 +231,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_credential_id`** *String* (Required)
 
-````
 ID of the credential that you want to get.
-````
 
 ---
 

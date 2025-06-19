@@ -167,9 +167,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_system_id`** *String* (Required)
 
-````
 ID of the access system that you want to get.
-````
 
 ---
 
