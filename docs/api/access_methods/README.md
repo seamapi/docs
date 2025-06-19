@@ -14,6 +14,56 @@
 
 Represents an access method for an access grant. Access methods describe the modes of access, such as PIN codes, plastic cards, and mobile keys. For a mobile key, the access method also stores the URL for the associated Instant Key.
 
+{% tabs %}
+{% tab title="Card Access Method" %}
+
+A card access method resource.
+
+```json
+{
+  "access_method_id": "27d8ad77-55c2-4e20-b5b3-43555926f0e8",
+  "created_at": "2025-06-14T16:54:17.946612Z",
+  "display_name": "My Card",
+  "is_card_encoding_required": true,
+  "issued_at": "2025-06-14T16:54:17.946612Z",
+  "mode": "card",
+  "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
+}
+```
+{% endtab %}
+{% tab title="Mobile Key Access Method" %}
+
+A mobile key access method resource.
+
+```json
+{
+  "access_method_id": "27d8ad77-55c2-4e20-b5b3-43555926f0e8",
+  "created_at": "2025-06-14T16:54:17.946612Z",
+  "display_name": "My Mobile Key",
+  "instant_key_url": "https://se.am/1234",
+  "is_card_encoding_required": false,
+  "mode": "mobile_key",
+  "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
+}
+```
+{% endtab %}
+{% tab title="PIN Code Access Method" %}
+
+A PIN code access method resource.
+
+```json
+{
+  "access_method_id": "27d8ad77-55c2-4e20-b5b3-43555926f0e8",
+  "created_at": "2025-06-14T16:54:17.946612Z",
+  "display_name": "My PIN Code",
+  "is_card_encoding_required": false,
+  "mode": "code",
+  "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ---
 ## Properties
 
