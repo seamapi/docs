@@ -1,8 +1,8 @@
 # Get a Connected Account
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
+- [Examples](#examples)
 
 Returns a specified [connected account](../../core-concepts/connected-accounts/README.md).
 

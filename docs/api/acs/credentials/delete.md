@@ -1,8 +1,8 @@
 # Delete a Credential
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
+- [Examples](#examples)
 
 Deletes a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 

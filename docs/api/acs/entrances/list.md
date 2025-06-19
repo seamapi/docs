@@ -1,8 +1,8 @@
 # List Entrances
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
+- [Examples](#examples)
 
 Returns a list of all [access system entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 

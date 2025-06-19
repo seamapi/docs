@@ -1,8 +1,8 @@
 # Get an Entrance
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
+- [Examples](#examples)
 
 Returns a specified [access system entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 

@@ -1,8 +1,8 @@
 # Get an ACS System
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
+- [Examples](#examples)
 
 Returns a specified [access system](https://docs.seam.co/latest/capability-guides/access-systems).
 
