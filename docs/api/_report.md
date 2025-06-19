@@ -636,12 +636,12 @@ These items are deprecated.
 ### Resources without resource samples
 
 - `access_code`
-- `access_grant`
 - `access_method`
 - `acs_access_group`
 - `acs_credential`
 - `acs_encoder`
 - `acs_entrance`
+- `acs_system`
 - `acs_user`
 - `client_session`
 - `connect_webview`

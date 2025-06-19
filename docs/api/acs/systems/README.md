@@ -15,27 +15,6 @@ Within an `acs_system`, create [`acs_user`s](https://docs.seam.co/latest/api/acs
 
 For details about the resources associated with an access control system, see the [access control systems namespace](https://docs.seam.co/latest/api/acs).
 
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  "acs_system_id": "bbcea306-7201-4d85-b527-3abc55277203",
-  "name": "Salto KS Credential Manager",
-  "workspace_id": "bbcea306-7201-4d85-b527-3abc55277203",
-  "created_at": "2025-05-15T13:18:14.664Z",
-  "is_credential_manager": true,
-  "connected_account_ids": ["bbcea306-7201-4d85-b527-3abc55277203"],
-  "connected_account_id": "bbcea306-7201-4d85-b527-3abc55277203",
-  "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
-  "image_alt_text": "Salto KS site Logo",
-  "errors": [],
-  "warnings": [],
-  "location": { "time_zone": null }
-}
-```
-{% endtab %}
-{% endtabs %}
-
 ---
 ## Properties
 
