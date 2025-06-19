@@ -17,6 +17,117 @@ Seam supports programming two types of access codes: [ongoing](https://docs.seam
 
 In addition, for certain devices, Seam also supports [offline access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#offline-access-codes). Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code.
 
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code": "1234",
+  "common_code_key": null,
+  "created_at": "2025-06-14T16:54:17.946242Z",
+  "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+  "ends_at": "2025-07-04T16:54:17.946049Z",
+  "errors": [],
+  "is_backup": false,
+  "is_backup_access_code_available": false,
+  "is_external_modification_allowed": false,
+  "is_managed": true,
+  "is_offline_access_code": true,
+  "is_one_time_use": true,
+  "is_scheduled_on_device": true,
+  "is_waiting_for_code_assignment": false,
+  "name": "My Access Code",
+  "pulled_backup_access_code_id": null,
+  "starts_at": "2025-07-02T16:54:17.946049Z",
+  "status": "set",
+  "type": "time_bound",
+  "warnings": []
+}
+```
+{% endtab %}
+{% tab title="JSON" %}
+```json
+{
+  "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code": "1234",
+  "common_code_key": "auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000",
+  "created_at": "2025-06-14T16:54:17.946242Z",
+  "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+  "ends_at": null,
+  "errors": [],
+  "is_backup": false,
+  "is_backup_access_code_available": true,
+  "is_external_modification_allowed": true,
+  "is_managed": true,
+  "is_offline_access_code": false,
+  "is_one_time_use": false,
+  "is_scheduled_on_device": true,
+  "is_waiting_for_code_assignment": false,
+  "name": "My Access Code",
+  "pulled_backup_access_code_id": null,
+  "starts_at": null,
+  "status": "set",
+  "type": "ongoing",
+  "warnings": []
+}
+```
+{% endtab %}
+{% tab title="JSON" %}
+```json
+{
+  "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code": "1234",
+  "common_code_key": "auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000",
+  "created_at": "2025-06-14T16:54:17.946242Z",
+  "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+  "ends_at": "2025-07-04T16:54:17.946049Z",
+  "errors": [],
+  "is_backup": false,
+  "is_backup_access_code_available": true,
+  "is_external_modification_allowed": true,
+  "is_managed": true,
+  "is_offline_access_code": false,
+  "is_one_time_use": false,
+  "is_scheduled_on_device": true,
+  "is_waiting_for_code_assignment": false,
+  "name": "My Access Code",
+  "pulled_backup_access_code_id": null,
+  "starts_at": "2025-07-02T16:54:17.946049Z",
+  "status": "set",
+  "type": "time_bound",
+  "warnings": []
+}
+```
+{% endtab %}
+{% tab title="JSON" %}
+```json
+{
+  "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code": "1234",
+  "common_code_key": null,
+  "created_at": "2025-06-14T16:54:17.946242Z",
+  "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+  "ends_at": "2025-07-04T16:54:17.946049Z",
+  "errors": [],
+  "is_backup": false,
+  "is_backup_access_code_available": false,
+  "is_external_modification_allowed": false,
+  "is_managed": true,
+  "is_offline_access_code": true,
+  "is_one_time_use": false,
+  "is_scheduled_on_device": true,
+  "is_waiting_for_code_assignment": false,
+  "name": "My Access Code",
+  "pulled_backup_access_code_id": null,
+  "starts_at": "2025-07-02T16:54:17.946049Z",
+  "status": "set",
+  "type": "time_bound",
+  "warnings": []
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ---
 ## Properties
 

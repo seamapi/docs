@@ -11,6 +11,30 @@
 
 Represents a [connected account](../../core-concepts/connected-accounts/README.md). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks.
 
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+  "account_type": "salto_space",
+  "account_type_display_name": "Salto Space",
+  "automatically_manage_new_devices": true,
+  "connected_account_id": "a289aa54-5488-4707-9a4b-eeea4edf311d",
+  "created_at": "2025-06-15T16:54:17.946329Z",
+  "custom_metadata": { "id": "internalId1" },
+  "errors": [],
+  "user_identifier": {
+    "api_url": "https://example.com/api",
+    "email": "jane_doe@example.com",
+    "exclusive": true,
+    "phone": "+1555551004",
+    "username": "jane_doe"
+  },
+  "warnings": []
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ---
 ## Properties
 

@@ -635,28 +635,4 @@ These items are deprecated.
 
 ### Resources without resource samples
 
-- `access_code`
-- `access_method`
-- `acs_access_group`
-- `acs_credential`
-- `acs_encoder`
-- `acs_entrance`
-- `acs_system`
-- `acs_user`
-- `client_session`
-- `connect_webview`
-- `connected_account`
-- `device`
-- `device_provider`
 - `enrollment_automation`
-- `event`
-- `noise_threshold`
-- `phone`
-- `space`
-- `thermostat_daily_program`
-- `thermostat_schedule`
-- `unmanaged_access_code`
-- `unmanaged_device`
-- `user_identity`
-- `webhook`
-- `workspace`
