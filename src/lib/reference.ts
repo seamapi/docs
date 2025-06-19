@@ -106,8 +106,9 @@ export const reference = (
 
       To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.
 
+<<<<<<< HEAD
       To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called \`appearance\`. This is an object with a \`name\` property and, optionally, \`first_name\` and \`last_name\` properties (for providers that break down a name into components).`.replace(
-                    '\`',
+                    `\``,
                     '&#96;',
                   ),
               }
