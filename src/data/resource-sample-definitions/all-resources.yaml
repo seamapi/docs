@@ -1,0 +1,1039 @@
+---
+- title: Access Grant
+  description: An access grant resource.
+  resource_type: access_grant
+  properties:
+    access_grant_id: ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b
+    access_method_ids:
+    - a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d
+    - 5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f
+    - c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f
+    created_at: '2025-06-16T16:54:17.946606Z'
+    display_name: My Access Grant
+    location_ids:
+    - 9e8d7c6b-5a4b-3c2d-1e0f-9a8b7c6d5e4f
+    - f0e1d2c3-b4a5-6d7e-8f90-1a2b3c4d5e6f
+    requested_access_methods:
+    - display_name: PIN Code Credential
+      mode: code
+      created_at: '2025-06-16T16:54:17.946606Z'
+      created_access_method_ids:
+      - a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d
+    - display_name: Card Credential
+      mode: card
+      created_at: '2025-06-16T16:54:19.946606Z'
+      created_access_method_ids:
+      - 5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f
+    - display_name: Mobile Key Credential
+      mode: mobile_key
+      created_at: '2025-06-16T16:54:21.946606Z'
+      created_access_method_ids:
+      - c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f
+    space_ids:
+    - 1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d
+    - 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
+    user_identity_id: e3d736c1-540d-4d10-83e5-9a4e135453b4
+    workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
+- title: ACS Access Group
+  description: An access group resource.
+  resource_type: acs_access_group
+  properties:
+    acs_access_group_id: 3f448826-9875-4947-9519-e468090a4f7d
+    acs_system_id: 045baa77-6d06-40fe-a2cd-b82eef688f4a
+    connected_account_id: daba7bd0-edb6-4bb9-a70b-f9ae08a0e301
+    created_at: '2025-06-15T16:54:17.946453Z'
+    display_name: Main Group
+    external_type: salto_ks_access_group
+    external_type_display_name: Salto KS Access Group
+    is_managed: true
+    name: My Access Group
+    warnings: []
+    workspace_id: ac19352c-869a-4209-9ce7-44c740a8b5d0
+- title: ACS Card Credential
+  description: An access system card credential resource.
+  resource_type: acs_credential
+  properties:
+    access_method: card
+    acs_credential_id: 73a0a199-024f-454d-a916-9bbda8502c12
+    acs_system_id: b1d03165-2759-474b-a342-e02223f27b39
+    acs_user_id: 0fc82df4-391b-4d00-a234-86378f1c3952
+    card_number: 164d29dc4a09b65f
+    created_at: '2025-06-16T16:54:17.946514Z'
+    display_name: Guest Lock 1, Vingcard Lock 2
+    ends_at: '2025-07-12T16:54:17.946512Z'
+    errors: []
+    external_type: visionline_card
+    external_type_display_name: Visionline Card
+    is_issued: true
+    is_latest_desired_state_synced_with_provider: true
+    is_managed: true
+    is_multi_phone_sync_credential: false
+    issued_at: '2025-06-16T16:54:17.946512Z'
+    latest_desired_state_synced_with_provider_at: '2025-06-18T16:54:17.946514Z'
+    starts_at: '2025-07-10T16:54:17.946512Z'
+    visionline_metadata:
+      card_function_type: guest
+      card_id: 5
+      common_acs_entrance_ids:
+      - 5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f
+      credential_id: 15
+      guest_acs_entrance_ids:
+      - a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d
+      is_valid: true
+    warnings: []
+    workspace_id: 005f1e54-5360-40db-8c31-4ef6baaad1fd
+- title: ACS Encoder
+  description: An access system encoder resource.
+  resource_type: acs_encoder
+  properties:
+    acs_encoder_id: 681da2d6-4ac6-4b33-8c03-86281b761325
+    acs_system_id: c85406d2-214f-4e11-8000-a2e5b5a362a4
+    connected_account_id: 1b9a3e0d-443f-4063-b619-4ca7e2a97750
+    created_at: '2025-06-16T16:54:17.946527Z'
+    display_name: Encoder 1
+    errors: []
+    workspace_id: f863ac85-2c4e-49ae-8679-3ec2417f1d62
+- title: ACS Entrance
+  description: An access system entrance resource.
+  resource_type: acs_entrance
+  properties:
+    acs_entrance_id: f74e4879-5991-4e2f-a368-888983dcfbfc
+    acs_system_id: 6a74a969-94ea-4383-b5cf-5e7da8c113d1
+    created_at: '2025-06-15T16:54:17.946495Z'
+    display_name: Main Entrance
+    errors: []
+    visionline_metadata:
+      door_category: guest
+      door_name: Main Entrance
+      profiles:
+      - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
+        visionline_door_profile_type: BLE
+- title: ACS Mobile Key Credential
+  description: An access system mobile key credential resource.
+  resource_type: acs_credential
+  properties:
+    access_method: mobile_key
+    acs_credential_id: 73a0a199-024f-454d-a916-9bbda8502c12
+    acs_system_id: b1d03165-2759-474b-a342-e02223f27b39
+    acs_user_id: 0fc82df4-391b-4d00-a234-86378f1c3952
+    created_at: '2025-06-16T16:54:17.946514Z'
+    display_name: Front Door
+    errors: []
+    is_managed: true
+    is_multi_phone_sync_credential: true
+    is_one_time_use: false
+    warnings: []
+    workspace_id: 005f1e54-5360-40db-8c31-4ef6baaad1fd
+- title: ACS PIN Code Credential
+  description: An access system PIN code credential resource.
+  resource_type: acs_credential
+  properties:
+    access_method: code
+    acs_credential_id: 73a0a199-024f-454d-a916-9bbda8502c12
+    acs_system_id: b1d03165-2759-474b-a342-e02223f27b39
+    acs_user_id: 0fc82df4-391b-4d00-a234-86378f1c3952
+    code: 123456
+    created_at: '2025-06-16T16:54:17.946514Z'
+    display_name: FRONT_DOOR
+    errors: []
+    external_type: salto_ks_credential
+    external_type_display_name: Salto KS Credential
+    is_latest_desired_state_synced_with_provider: true
+    is_managed: true
+    is_multi_phone_sync_credential: false
+    is_one_time_use: false
+    latest_desired_state_synced_with_provider_at: '2025-06-18T16:54:17.946514Z'
+    starts_at: '2025-07-10T16:54:17.946512Z'
+    warnings: []
+    workspace_id: 005f1e54-5360-40db-8c31-4ef6baaad1fd
+- title: ACS System
+  description: An access system resource.
+  resource_type: acs_system
+  properties:
+    acs_access_group_count: 5
+    acs_system_id: dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7
+    acs_user_count: 20
+    connected_account_id: a94aeed0-1ae0-4e49-9c23-8444c7ceba09
+    connected_account_ids:
+    - a94aeed0-1ae0-4e49-9c23-8444c7ceba09
+    created_at: '2025-06-15T16:54:17.946425Z'
+    default_credential_manager_acs_system_id: 5dde2def-3507-44f5-9521-7ca96aa4cd18
+    errors: []
+    external_type: salto_ks_site
+    external_type_display_name: Salto KS site
+    image_alt_text: Salto KS site Logo
+    image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128
+    is_credential_manager: false
+    location:
+      time_zone: America/New_York
+    name: My ACS System
+    warnings: []
+    workspace_id: 172920be-1f4d-45d4-8519-ecc3bdee638f
+- title: ACS User
+  description: An access system user resource.
+  resource_type: acs_user
+  properties:
+    access_schedule:
+      ends_at: '2025-06-12T11:00:00.000Z'
+      starts_at: '2025-06-10T15:00:00.000Z'
+    acs_system_id: 62d3384f-267f-4a4a-a946-d35819ec9981
+    acs_user_id: 6a5d9697-3cc4-436a-8165-4375ff424870
+    connected_account_id: c0175797-30f0-49f7-a228-2df115443ca7
+    created_at: '2025-06-15T16:54:17.946482Z'
+    display_name: Jane Doe
+    email_address: jane@example.com
+    errors: []
+    external_type: salto_site_user
+    external_type_display_name: Salto site user
+    full_name: Jane Doe
+    hid_acs_system_id: 2acbe47f-612c-422a-9205-7af292f74e7f
+    is_managed: true
+    is_suspended: false
+    last_successful_sync_at: '2025-06-18T17:45:00.582Z'
+    pending_mutations:
+    - to:
+        acs_access_group_id: 2c0fb4a0-2b42-4651-926e-1a10bedbf6ce
+      from:
+        acs_access_group_id: f1e2d3c4-b5a6-4d7c-8e9f-0a1b2c3d4e5f
+      message: This user's access membership is being updated.
+      created_at: '2025-06-18T17:57:01.867Z'
+      mutation_code: updating_group_membership
+    phone_number: '+1555551000'
+    user_identity_email_address: jane@example.com
+    user_identity_full_name: Jane Doe
+    user_identity_id: a23b3e02-e394-4e5f-b21c-b366b8bc0dd3
+    user_identity_phone_number: '+1555551000'
+    warnings: []
+    workspace_id: 8d4868e3-2f95-4f33-8689-19420b3101cd
+- title: Action Attempt
+  description: An UNLOCK_DOOR action attempt resource.
+  resource_type: action_attempt
+  properties:
+    action_attempt_id: 6ba7b810-9dad-11d1-80b4-00c04fd430c8
+    action_type: UNLOCK_DOOR
+    error: null
+    result: {}
+    status: success
+- title: Card Access Method
+  description: A card access method resource.
+  resource_type: access_method
+  properties:
+    access_method_id: 27d8ad77-55c2-4e20-b5b3-43555926f0e8
+    created_at: '2025-06-14T16:54:17.946612Z'
+    display_name: My Card
+    is_card_encoding_required: true
+    issued_at: '2025-06-14T16:54:17.946612Z'
+    mode: card
+    workspace_id: 661025d3-c1d2-403c-83a8-af153aaedfbc
+- title: Client Session
+  description: A client session resource.
+  resource_type: client_session
+  properties:
+    client_session_id: c2cbd177-1ace-414b-bb1e-9f129e4a05c1
+    connect_webview_ids:
+    - 550e8400-e29b-41d4-a716-446655440000
+    connected_account_ids:
+    - f47ac10b-58cc-4372-a567-0e02b2c3d479
+    created_at: '2025-06-15T16:54:17.946309Z'
+    customer_id: 77eccc4e-c8bc-4c7d-b83c-cb853ed3bade
+    device_count: 1
+    expires_at: '2025-06-17T16:54:17.946309Z'
+    token: seam_cst1891oqCmB_6dBwV8PJ2Fsoe9dWYVyMfVHq
+    user_identifier_key: user_id_1
+    user_identity_id: a6e93f84-565e-47d7-8908-1ca71ada373c
+    user_identity_ids:
+    - a6e93f84-565e-47d7-8908-1ca71ada373c
+    workspace_id: b887bf84-9849-4454-a562-cf84293d9781
+- title: Connect Webview
+  description: A connect webview resource.
+  resource_type: connect_webview
+  properties:
+    accepted_capabilities:
+    - lock
+    - thermostat
+    accepted_providers:
+    - schlage
+    - kwikset
+    - yale
+    - smartthings
+    any_provider_allowed: false
+    authorized_at: '2025-06-14T16:54:17.946323Z'
+    automatically_manage_new_devices: true
+    connect_webview_id: c4c30885-ec87-4b31-8d7b-9bc0678fa028
+    connected_account_id: 5d2fe05f-4f5b-4b91-909c-96e2601dccbe
+    created_at: '2025-06-14T16:54:17.946323Z'
+    custom_metadata:
+      id: internalId1
+    custom_redirect_failure_url: https://example.com/failure-redirect
+    custom_redirect_url: https://example.com/redirect
+    login_successful: true
+    selected_provider: schlage
+    status: authorized
+    url: https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=2r2Rn8V5QUtxE79gNsTmLK58KkuqrwU8d
+    wait_for_device_creation: true
+    workspace_id: 9db95105-e77d-4577-b1b7-0a20b360d5e0
+- title: Connected Account
+  description: A connected account resource.
+  resource_type: connected_account
+  properties:
+    account_type: salto_space
+    account_type_display_name: Salto Space
+    automatically_manage_new_devices: true
+    connected_account_id: a289aa54-5488-4707-9a4b-eeea4edf311d
+    created_at: '2025-06-15T16:54:17.946329Z'
+    custom_metadata:
+      id: internalId1
+    errors: []
+    user_identifier:
+      api_url: https://example.com/api
+      email: jane_doe@example.com
+      exclusive: true
+      phone: '+1555551004'
+      username: jane_doe
+    warnings: []
+- title: Device Provider
+  description: A device provider resource.
+  resource_type: device_provider
+  properties:
+    can_program_online_access_codes: true
+    can_remotely_unlock: true
+    device_provider_name: akiles
+    display_name: Akiles
+    image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/logos/akiles.png&q=75&w=128
+    provider_categories:
+    - stable
+    - consumer_smartlocks
+- title: Event
+  description: An event resource.
+  resource_type: event
+  properties:
+    connected_account_id: 2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b
+    created_at: 2025-06-18 16:28:16.287000+00:00
+    device_id: b3c4d5e6-f7a8-49bc-def1-23456789abcd
+    event_description: The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.
+    event_id: 6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
+    event_type: device.connected
+    occurred_at: 2025-06-18 16:28:16.287000+00:00
+    workspace_id: 9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d
+- title: Instant Key
+  description: An Instant Key resource.
+  resource_type: instant_key
+  properties:
+    client_session_id: bfe3b1c6-fb9e-48b1-9b5b-c762b2983af6
+    created_at: '2025-06-14T16:54:17.946559Z'
+    expires_at: '2025-06-16T16:54:17.946559Z'
+    instant_key_id: 1d05c2f6-5b6f-4a9c-b80d-1eca26be12b9
+    instant_key_url: https://se.am/1234
+    user_identity_id: e7a94acb-bd8a-4462-b6fb-8612d35cd7c3
+    workspace_id: 4d1c24b2-781e-4d1a-8d77-15249ad57c8a
+- title: Lock Device
+  description: A lock device resource.
+  resource_type: device
+  properties:
+    can_program_online_access_codes: true
+    can_remotely_lock: true
+    can_remotely_unlock: true
+    capabilities_supported:
+    - access_code
+    - lock
+    connected_account_id: 8e3a4f1b-2c7d-4a9e-8b5f-3d2c1a0b9e8f
+    created_at: '2025-03-27T02:08:16.418Z'
+    custom_metadata:
+      id: internalId1
+    device_id: a69569e1-133b-4a9d-b883-018641bfe543
+    device_type: schlage_lock
+    display_name: FRONT DOOR
+    errors: []
+    is_managed: true
+    location:
+      location_name: Front Door
+      timezone: America/New_York
+    nickname: Front Door
+    properties:
+      appearance:
+        name: FRONT DOOR
+      battery:
+        level: 0.48
+        status: good
+      battery_level: 0.48
+      code_constraints:
+      - constraint_type: name_length
+        max_length: 9
+      has_native_entry_events: true
+      image_alt_text: Schlage Sense Smart Deadbolt with Camelot Trim, Front
+      image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/schlage_sense-smart-deadbolt-with-camelot-trim_front.png&q=75&w=128
+      locked: false
+      manufacturer: schlage
+      model:
+        accessory_keypad_supported: false
+        can_connect_accessory_keypad: false
+        display_name: Encode
+        has_built_in_keypad: true
+        manufacturer_display_name: Schlage
+        offline_access_codes_supported: false
+        online_access_codes_supported: true
+      name: FRONT DOOR
+      offline_access_codes_enabled: false
+      online: true
+      online_access_codes_enabled: true
+      schlage_metadata:
+        device_id: a69569e1-133b-4a9d-b883-018641bfe543
+        device_name: FRONT DOOR
+        model: Encode
+      serial_number: 34000000000531e0
+      supported_code_lengths:
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      supports_backup_access_code_pool: true
+      supports_offline_access_codes: false
+    warnings: []
+    workspace_id: 5d7f2e1a-9c8b-4f3e-8d2c-1a0b9e8f7c6d
+- title: Magic Link
+  description: A magic link resource.
+  resource_type: magic_link
+  properties:
+    building_block_type: connect_accounts
+    created_at: '2025-06-16T16:54:17.946594Z'
+    customer_key: My Company
+    expires_at: '2025-06-17T16:54:17.946594Z'
+    url: https://se.am/1234
+    workspace_id: 67c58f1f-f148-4415-a63c-dc6c145c6b91
+- title: Mobile Key Access Method
+  description: A mobile key access method resource.
+  resource_type: access_method
+  properties:
+    access_method_id: 27d8ad77-55c2-4e20-b5b3-43555926f0e8
+    created_at: '2025-06-14T16:54:17.946612Z'
+    display_name: My Mobile Key
+    instant_key_url: https://se.am/1234
+    is_card_encoding_required: false
+    mode: mobile_key
+    workspace_id: 661025d3-c1d2-403c-83a8-af153aaedfbc
+- title: Noise Sensor Device
+  description: A noise sensor device resource.
+  resource_type: device
+  properties:
+    capabilities_supported:
+    - noise_detection
+    connected_account_id: 9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d
+    created_at: '2025-05-16T16:54:17.946049Z'
+    custom_metadata:
+      id: internalId1
+    device_id: f1e2d3c4-b5a6-4d7c-8e9f-0a1b2c3d4e5f
+    device_type: minut_sensor
+    display_name: Living Room
+    errors: []
+    is_managed: true
+    location:
+      location_name: Jane's Test Home
+      timezone: America/Los_Angeles
+    nickname: Living Room
+    properties:
+      appearance:
+        name: Living Room
+      battery:
+        level: 1
+        status: full
+      battery_level: 1
+      currently_triggering_noise_threshold_ids: []
+      image_alt_text: Minut Sensor
+      image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/minut_gen-3_front.png&q=75&w=128
+      manufacturer: minut
+      minut_metadata:
+        device_id: 770cd3153deca3dee0fe0614
+        device_location:
+          latitude: 0
+          longitude: 0
+        device_name: Living Room
+        home_address:
+          city: San Francisco
+          country: US
+          notes: string
+          post_code: '44210'
+          region: San Francisco County
+          street_name1: 2258 24th Street
+          street_name2: ''
+        home_id: 2978b6d5dba395ec08300e46
+        home_location:
+          latitude: 0
+          longitude: 0
+        home_name: Jane's Test Home
+        latest_sensor_values:
+          accelerometer_z:
+            time: '2025-06-16T16:54:17.946049Z'
+            value: -1.00390625
+          humidity:
+            time: '2025-06-16T16:54:17.946049Z'
+            value: 31.110000610351562
+          pressure:
+            time: '2025-06-16T16:54:17.946049Z'
+            value: 101923
+          sound:
+            time: '2025-06-16T16:54:17.946049Z'
+            value: 47.7117919921875
+          temperature:
+            time: '2025-06-16T16:54:17.946049Z'
+            value: 21.270000457763672
+      model:
+        display_name: Noise Sensor
+        manufacturer_display_name: Minut
+      name: Living Room
+      noise_level_decibels: 47.7117919921875
+      online: true
+    warnings: []
+    workspace_id: 1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d
+- title: Noise Threshold
+  description: A noise threshold resource.
+  resource_type: noise_threshold
+  properties:
+    device_id: 69b9e908-039b-413a-904e-5edee653ca27
+    ends_daily_at: 09:00:00[America/Los_Angeles]
+    name: My Noise Threshold
+    noise_threshold_decibels: 21
+    noise_threshold_id: f8cef69d-625f-464c-aed4-287c06e0d7fe
+    noise_threshold_nrs: 5
+    starts_daily_at: 07:00:00[America/Los_Angeles]
+- title: One-Time-Use Offline Access Code
+  description: A one-time-use offline access code resource.
+  resource_type: access_code
+  properties:
+    access_code_id: e9cf6dd6-89aa-477f-a701-c08f3de13c1f
+    code: 1234
+    common_code_key: null
+    created_at: '2025-06-14T16:54:17.946242Z'
+    device_id: c9cd621d-ef0c-45c8-b608-026ebdb74615
+    ends_at: '2025-07-04T16:54:17.946049Z'
+    errors: []
+    is_backup: false
+    is_backup_access_code_available: false
+    is_external_modification_allowed: false
+    is_managed: true
+    is_offline_access_code: true
+    is_one_time_use: true
+    is_scheduled_on_device: true
+    is_waiting_for_code_assignment: false
+    name: My Access Code
+    pulled_backup_access_code_id: null
+    starts_at: '2025-07-02T16:54:17.946049Z'
+    status: set
+    type: time_bound
+    warnings: []
+- title: Ongoing Access Code
+  description: An ongoing access code resource.
+  resource_type: access_code
+  properties:
+    access_code_id: e9cf6dd6-89aa-477f-a701-c08f3de13c1f
+    code: 1234
+    common_code_key: auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000
+    created_at: '2025-06-14T16:54:17.946242Z'
+    device_id: c9cd621d-ef0c-45c8-b608-026ebdb74615
+    ends_at: null
+    errors: []
+    is_backup: false
+    is_backup_access_code_available: true
+    is_external_modification_allowed: true
+    is_managed: true
+    is_offline_access_code: false
+    is_one_time_use: false
+    is_scheduled_on_device: true
+    is_waiting_for_code_assignment: false
+    name: My Access Code
+    pulled_backup_access_code_id: null
+    starts_at: null
+    status: set
+    type: ongoing
+    warnings: []
+- title: Pagination
+  description: A pagination resource.
+  resource_type: pagination
+  properties:
+    has_next_page: true
+    next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
+    next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+- title: Partner Resource
+  description: A partner resource resource.
+  resource_type: partner_resource
+  properties:
+    custom_metadata:
+      id: internalId1
+    customer_key: My Company
+    description: Guest resource from My Company
+    email_address: jane@example.com
+    ends_at: '2025-07-02T16:54:17.946633Z'
+    name: My Partner Resource
+    partner_resource_key: guest_123
+    partner_resource_type: guest
+    phone_number: '+1555551003'
+    starts_at: '2025-07-01T16:54:17.946633Z'
+    user_identity_key: jane_doe
+- title: Phone
+  description: A phone resource.
+  resource_type: phone
+  properties:
+    created_at: '2025-06-14T16:54:17.946540Z'
+    custom_metadata:
+      id: internalId1
+    device_id: e452f665-a635-4c65-922b-9feab0e0f84f
+    device_type: ios_phone
+    display_name: My Phone
+    errors: []
+    nickname: My Phone
+    properties:
+      assa_abloy_credential_service_metadata:
+        endpoints:
+        - endpoint_id: c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f
+          is_active: true
+        has_active_endpoint: true
+    warnings: []
+    workspace_id: da8639a4-28a2-4884-a4f9-b7691f4cf336
+- title: PIN Code Access Method
+  description: A PIN code access method resource.
+  resource_type: access_method
+  properties:
+    access_method_id: 27d8ad77-55c2-4e20-b5b3-43555926f0e8
+    created_at: '2025-06-14T16:54:17.946612Z'
+    display_name: My PIN Code
+    is_card_encoding_required: false
+    mode: code
+    workspace_id: 661025d3-c1d2-403c-83a8-af153aaedfbc
+- title: Production Workspace
+  description: A production workspace resource.
+  resource_type: workspace
+  properties:
+    company_name: Acme
+    connect_partner_name: Acme
+    connect_webview_customization:
+      inviter_logo_url: https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c
+      logo_shape: circle
+      primary_button_color: '#232426'
+      primary_button_text_color: '#FFFDE7'
+      success_message: Your account has been successfully connected to Acme!
+    is_sandbox: false
+    is_suspended: false
+    name: My Production Workspace
+    workspace_id: 6a0b6282-6a98-4fef-811e-0904c485ac7a
+- title: Sandbox Workspace
+  description: A sandbox workspace resource.
+  resource_type: workspace
+  properties:
+    company_name: Acme
+    connect_partner_name: Acme
+    connect_webview_customization:
+      inviter_logo_url: https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c
+      logo_shape: circle
+      primary_button_color: '#232426'
+      primary_button_text_color: '#FFFDE7'
+      success_message: Your account has been successfully connected to Acme!
+    is_sandbox: true
+    is_suspended: false
+    name: My Sandbox Workspace
+    workspace_id: 6a0b6282-6a98-4fef-811e-0904c485ac7a
+- title: Space
+  description: A space resource.
+  resource_type: space
+  properties:
+    created_at: '2025-06-16T16:54:17.946600Z'
+    display_name: My Space
+    name: My Space
+    space_id: 5afeb047-3277-4102-b8c4-99edf05b91d2
+    workspace_id: 96bd12f9-6def-4bf4-b517-760417451ae9
+- title: Thermostat Daily Program
+  description: A thermostat daily program resource.
+  resource_type: thermostat_daily_program
+  properties:
+    created_at: '2025-06-14T16:54:17.946642Z'
+    device_id: 58437d45-47ac-4ee6-ab27-7b2d1f2947d1
+    name: Weekday Program
+    periods:
+    - starts_at_time: 07:00:00
+      climate_preset_key: Home
+    - starts_at_time: 09:00:00
+      climate_preset_key: Away
+    - starts_at_time: '16:00:00'
+      climate_preset_key: Home
+    - starts_at_time: '22:30:00'
+      climate_preset_key: Sleep
+    thermostat_daily_program_id: ab8ef74c-c7cd-4100-aa32-0ef960c0080d
+    workspace_id: 8da8d923-e55b-45cd-84a3-6c96b3d3d454
+- title: Thermostat Device
+  description: A thermostat device resource.
+  resource_type: device
+  properties:
+    can_hvac_cool: true
+    can_hvac_heat: true
+    can_hvac_heat_cool: true
+    can_turn_off_hvac: true
+    capabilities_supported:
+    - thermostat
+    connected_account_id: a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d
+    created_at: '2024-10-03T22:12:15.666Z'
+    custom_metadata:
+      id: internalId1
+    device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+    device_type: ecobee_thermostat
+    display_name: Living Room
+    errors: []
+    is_managed: true
+    location:
+      location_name: 2948 20th St, San Francisco, CA, 94110, US
+      timezone: America/Los_Angeles
+    nickname: Living Room
+    properties:
+      active_climate_preset:
+        can_delete: true
+        can_edit: true
+        climate_preset_key: sleep
+        cooling_set_point_celsius: 23.88888888888889
+        display_name: Sleep
+        fan_mode_setting: auto
+        heating_set_point_celsius: 17.77777777777778
+        hvac_mode_setting: heat_cool
+        manual_override_allowed: true
+      appearance:
+        name: Living Room
+      available_climate_presets:
+      - climate_preset_key: sleep
+        can_edit: true
+        can_delete: true
+        can_program: false
+        name: Sleep
+        display_name: Sleep
+        fan_mode_setting: auto
+        hvac_mode_setting: heat_cool
+        manual_override_allowed: true
+        cooling_set_point_celsius: 23.88888888888889
+        heating_set_point_celsius: 17.77777777777778
+        cooling_set_point_fahrenheit: 75
+        heating_set_point_fahrenheit: 64
+      - climate_preset_key: home
+        can_edit: true
+        can_delete: true
+        can_program: false
+        name: Home
+        display_name: Home
+        fan_mode_setting: auto
+        hvac_mode_setting: heat_cool
+        manual_override_allowed: false
+        cooling_set_point_celsius: 23.88888888888889
+        heating_set_point_celsius: 17.77777777777778
+        cooling_set_point_fahrenheit: 75
+        heating_set_point_fahrenheit: 64
+      - climate_preset_key: work
+        can_edit: true
+        can_delete: true
+        can_program: false
+        name: Work
+        display_name: Work
+        fan_mode_setting: auto
+        hvac_mode_setting: heat_cool
+        manual_override_allowed: false
+        cooling_set_point_celsius: 23.88888888888889
+        heating_set_point_celsius: 17.77777777777778
+        cooling_set_point_fahrenheit: 75
+        heating_set_point_fahrenheit: 64
+      available_fan_mode_settings:
+      - auto
+      - true
+      available_hvac_mode_settings:
+      - false
+      - cool
+      - heat
+      - heat_cool
+      current_climate_setting:
+        display_name: Manual Setting
+        fan_mode_setting: auto
+        heating_set_point_celsius: 25
+        heating_set_point_fahrenheit: 77
+        hvac_mode_setting: heat
+        manual_override_allowed: true
+      ecobee_metadata:
+        device_name: Living Room
+        ecobee_device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+      fallback_climate_preset_key: eco
+      fan_mode_setting: auto
+      has_direct_power: true
+      image_alt_text: Ecobee 3 Lite Thermostat
+      image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png&q=75&w=128
+      is_cooling: false
+      is_fan_running: false
+      is_heating: false
+      is_temporary_manual_override_active: false
+      manufacturer: ecobee
+      max_cooling_set_point_celsius: 33.333333333333336
+      max_cooling_set_point_fahrenheit: 92
+      max_heating_set_point_celsius: 26.11111111111111
+      max_heating_set_point_fahrenheit: 79
+      min_cooling_set_point_celsius: 18.333333333333336
+      min_cooling_set_point_fahrenheit: 65
+      min_heating_cooling_delta_celsius: 2.7777777777777777
+      min_heating_cooling_delta_fahrenheit: 5
+      min_heating_set_point_celsius: 7.222222222222222
+      min_heating_set_point_fahrenheit: 45
+      model:
+        display_name: Thermostat
+        manufacturer_display_name: Ecobee
+      name: Living Room
+      online: true
+      relative_humidity: 0.36
+      temperature_celsius: 21.11111111111111
+      temperature_fahrenheit: 70
+      temperature_threshold:
+        lower_limit_celsius: 16.66666666666667
+        lower_limit_fahrenheit: 62
+        upper_limit_celsius: 26.66666666666667
+        upper_limit_fahrenheit: 80
+      thermostat_daily_programs:
+      - thermostat_daily_program_id: 1a2b3c4d-5e6f-7890-1234-56789abcdef1
+        device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+        name: Weekday Program
+        periods:
+        - starts_at_time: 00:00:00
+          climate_preset_key: sleep
+        - starts_at_time: 07:00:00
+          climate_preset_key: home
+        - starts_at_time: 09:00:00
+          climate_preset_key: work
+        - starts_at_time: '18:00:00'
+          climate_preset_key: home
+        - starts_at_time: '22:00:00'
+          climate_preset_key: sleep
+        workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+        created_at: '2025-05-30T04:01:25.455Z'
+      - thermostat_daily_program_id: d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90
+        device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+        name: Weekend Program
+        periods:
+        - starts_at_time: 00:00:00
+          climate_preset_key: sleep
+        - starts_at_time: 08:00:00
+          climate_preset_key: home
+        - starts_at_time: '23:00:00'
+          climate_preset_key: sleep
+        workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+        created_at: '2025-05-30T04:02:19.952Z'
+      thermostat_weekly_program: null
+    warnings: []
+    workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+- title: Thermostat Schedule
+  description: A thermostat schedule resource.
+  resource_type: thermostat_schedule
+  properties:
+    climate_preset_key: eco
+    created_at: '2025-06-14T16:54:17.946316Z'
+    device_id: dc1dfc4b-8082-453f-a953-276941af8650
+    ends_at: '2025-07-14T16:54:17.946313Z'
+    errors: []
+    is_override_allowed: true
+    max_override_period_minutes: 90
+    name: My Thermostat Schedule
+    starts_at: '2025-07-12T16:54:17.946313Z'
+    thermostat_schedule_id: af2cb7f7-9f28-40da-a0a0-e7a008ef7a35
+    workspace_id: 58419b36-6103-44e5-aa83-2163e90cce01
+- title: Time-bound Access Code
+  description: A time-bound access code resource.
+  resource_type: access_code
+  properties:
+    access_code_id: e9cf6dd6-89aa-477f-a701-c08f3de13c1f
+    code: 1234
+    common_code_key: auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000
+    created_at: '2025-06-14T16:54:17.946242Z'
+    device_id: c9cd621d-ef0c-45c8-b608-026ebdb74615
+    ends_at: '2025-07-04T16:54:17.946049Z'
+    errors: []
+    is_backup: false
+    is_backup_access_code_available: true
+    is_external_modification_allowed: true
+    is_managed: true
+    is_offline_access_code: false
+    is_one_time_use: false
+    is_scheduled_on_device: true
+    is_waiting_for_code_assignment: false
+    name: My Access Code
+    pulled_backup_access_code_id: null
+    starts_at: '2025-07-02T16:54:17.946049Z'
+    status: set
+    type: time_bound
+    warnings: []
+- title: Time-bound Offline Access Code
+  description: A time-bound offline access code resource.
+  resource_type: access_code
+  properties:
+    access_code_id: e9cf6dd6-89aa-477f-a701-c08f3de13c1f
+    code: 1234
+    common_code_key: null
+    created_at: '2025-06-14T16:54:17.946242Z'
+    device_id: c9cd621d-ef0c-45c8-b608-026ebdb74615
+    ends_at: '2025-07-04T16:54:17.946049Z'
+    errors: []
+    is_backup: false
+    is_backup_access_code_available: false
+    is_external_modification_allowed: false
+    is_managed: true
+    is_offline_access_code: true
+    is_one_time_use: false
+    is_scheduled_on_device: true
+    is_waiting_for_code_assignment: false
+    name: My Access Code
+    pulled_backup_access_code_id: null
+    starts_at: '2025-07-02T16:54:17.946049Z'
+    status: set
+    type: time_bound
+    warnings: []
+- title: Unmanaged Access Code
+  description: An unmanaged access code resource.
+  resource_type: unmanaged_access_code
+  properties:
+    access_code_id: 88fa1812-bef8-4108-9fb4-4855376c3edf
+    code: string
+    created_at: '2025-06-16T16:54:17.946283Z'
+    device_id: b3439f17-7273-46f3-9e20-9a283d9cb5b4
+    ends_at: '2025-06-23T16:54:17.946261Z'
+    errors: []
+    is_managed: false
+    name: My Unmanaged Access Code
+    starts_at: '2025-06-21T16:54:17.946261Z'
+    status: set
+    type: time_bound
+    warnings: []
+- title: Unmanaged ACS Access Group
+  description: An unmanaged access group resource.
+  resource_type: unmanaged_acs_access_group
+  properties:
+    acs_access_group_id: 2b15909b-39b9-441c-89d9-584f88fd9baf
+    acs_system_id: e2f31e7b-17a3-417c-9d97-12a6017950e9
+    connected_account_id: 17bf5e76-f35c-43e6-ba1c-10b4b079e493
+    created_at: '2025-06-15T16:54:17.946475Z'
+    display_name: Other Group
+    external_type: salto_ks_access_group
+    external_type_display_name: Salto KS Access Group
+    is_managed: false
+    name: My Unmanaged Access Group
+    warnings: []
+    workspace_id: 8a844fbb-c583-485e-a8d9-94d8e96fb6d4
+- title: Unmanaged ACS Credential
+  description: An unmanaged ACS credential resource.
+  resource_type: unmanaged_acs_credential
+  properties:
+    access_method: code
+    acs_credential_id: 666abb33-e9a9-4c1a-b25d-b4e493d5bc89
+    acs_system_id: f8da38be-bc06-491a-a8bd-67696abf49b1
+    acs_user_id: 6362c5c5-d545-4a7e-a80b-39620030300b
+    code: 123456
+    created_at: '2025-06-15T16:54:17.946521Z'
+    display_name: Front Door
+    errors: []
+    external_type: salto_ks_credential
+    external_type_display_name: Salto KS Credential
+    is_latest_desired_state_synced_with_provider: true
+    is_managed: false
+    is_multi_phone_sync_credential: false
+    is_one_time_use: false
+    latest_desired_state_synced_with_provider_at: '2025-06-18T16:54:17.946514Z'
+    starts_at: '2025-07-02T16:54:17.946518Z'
+    warnings: []
+    workspace_id: b8f131e5-73e1-4e23-8b70-978f5d789f3a
+- title: Unmanaged ACS User
+  description: An unmanaged access system user resource.
+  resource_type: unmanaged_acs_user
+  properties:
+    access_schedule:
+      ends_at: '2025-06-12T11:00:00.000Z'
+      starts_at: '2025-06-10T15:00:00.000Z'
+    acs_system_id: c1728baa-4866-4498-a77b-d8bdcb2e7c70
+    acs_user_id: 0c43d2b2-4a88-4ec0-8649-7ff53439a50e
+    connected_account_id: 68130ac8-f798-4661-908b-8ad851cb3c07
+    created_at: '2025-06-15T16:54:17.946488Z'
+    display_name: Jane Doe
+    email_address: jane@example.com
+    errors: []
+    external_type: salto_site_user
+    external_type_display_name: Salto site user
+    full_name: Jane Doe
+    hid_acs_system_id: b7db3208-103a-4cf1-bef4-e9284288d87e
+    is_managed: false
+    is_suspended: false
+    last_successful_sync_at: '2025-06-18T17:45:00.582Z'
+    pending_mutations: []
+    phone_number: '+1555551001'
+    user_identity_email_address: jane@example.com
+    user_identity_full_name: Jane Doe
+    user_identity_id: b84356b2-af8d-4d01-8f99-a4c152c1405c
+    user_identity_phone_number: '+1555551001'
+    warnings: []
+    workspace_id: f8f938d8-ad36-4b59-9686-54804c0a299f
+- title: Unmanaged Device
+  description: An unmanaged device resource.
+  resource_type: unmanaged_device
+  properties:
+    can_program_offline_access_codes: false
+    can_program_online_access_codes: true
+    can_remotely_lock: true
+    can_remotely_unlock: true
+    can_simulate_connection: false
+    can_simulate_disconnection: true
+    can_simulate_removal: true
+    capabilities_supported:
+    - access_code
+    - lock
+    connected_account_id: c1a3967f-24a1-4220-a9c7-7fa97c1d5603
+    created_at: '2025-06-16T16:54:17.946342Z'
+    device_id: f4f40e75-86fc-4896-b958-e1c7e092b2cf
+    device_type: schlage_lock
+    errors: []
+    is_managed: false
+    location:
+      location_name: Front Door
+      timezone: America/New_York
+    properties:
+      accessory_keypad:
+        battery:
+          level: 1
+        is_connected: true
+      battery:
+        level: 1
+        status: full
+      battery_level: 1
+      image_alt_text: Schlage Sense Smart Deadbolt with Camelot Trim, Front
+      image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/schlage_sense-smart-deadbolt-with-camelot-trim_front.png&q=75&w=128
+      manufacturer: schlage
+      model:
+        accessory_keypad_supported: true
+        can_connect_accessory_keypad: true
+        display_name: Front Door
+        has_built_in_keypad: false
+        manufacturer_display_name: Schlage
+        offline_access_codes_supported: false
+        online_access_codes_supported: true
+      name: Front Door
+      offline_access_codes_enabled: false
+      online: true
+      online_access_codes_enabled: true
+    warnings: []
+    workspace_id: 3cd6ba1c-8a60-4c24-b487-07bf6c0b755b
+- title: User Identity
+  description: A user identity resource.
+  resource_type: user_identity
+  properties:
+    created_at: '2025-06-16T16:54:17.946546Z'
+    display_name: Jane Doe
+    email_address: jane@example.com
+    errors: []
+    full_name: Jane Doe
+    phone_number: '+1555551002'
+    user_identity_id: 43947360-cdc8-4db6-8b22-e079416d1d8b
+    user_identity_key: jane_doe
+    warnings: []
+    workspace_id: b7e0a4e0-1044-4319-9a0b-42b642b68c7f
+- title: Webhook
+  description: A webhook resource.
+  resource_type: webhook
+  properties:
+    event_types:
+    - device.connected
+    - device.disconnected
+    secret: mySecret
+    url: https://example.com/webhook
+    webhook_id: ffe5cc3c-f3f4-48e8-b377-6f76c05d09a1
