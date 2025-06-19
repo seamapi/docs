@@ -53,6 +53,15 @@ Display name of the access grant.
 
 ---
 
+**`ends_at`** *Datetime*
+
+Date and time at which the access grant ends.
+
+
+
+
+---
+
 **`location_ids`** *List* *of UUIDs*
 
 
@@ -102,6 +111,15 @@ Access methods that the user requested for the access grant.
 **`space_ids`** *List* *of UUIDs*
 
 IDs of the spaces to which the access grant gives access.
+
+
+
+
+---
+
+**`starts_at`** *Datetime*
+
+Date and time at which the access grant starts.
 
 
 
@@ -333,5 +351,10 @@ Get an access grant.
 [**`/access_grants/list`**](./list.md)
 
 Get an access grant.
+
+
+[**`/access_grants/update`**](./update.md)
+
+Updates an existing access grant's time window.
 
 

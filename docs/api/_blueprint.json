@@ -2643,6 +2643,82 @@
           ],
           "workspaceScope": "required",
           "codeSamples": []
+        },
+        {
+          "title": "Update an Access Grant",
+          "name": "update",
+          "path": "/access_grants/update",
+          "parentPath": "/access_grants",
+          "description": "Updates an existing access grant's time window.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": true,
+          "draftMessage": "Early access.",
+          "response": {
+            "responseType": "void",
+            "description": "OK"
+          },
+          "request": {
+            "methods": [
+              "PATCH",
+              "POST"
+            ],
+            "semanticMethod": "PATCH",
+            "preferredMethod": "PATCH",
+            "parameters": [
+              {
+                "name": "access_grant_id",
+                "description": "ID of the access grant to update.",
+                "isRequired": true,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "id",
+                "jsonType": "string"
+              },
+              {
+                "name": "ends_at",
+                "description": "Date and time at which the validity of the grant ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "datetime",
+                "jsonType": "string"
+              },
+              {
+                "name": "starts_at",
+                "description": "Date and time at which the validity of the grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                "isRequired": false,
+                "isDeprecated": false,
+                "deprecationMessage": "",
+                "isUndocumented": false,
+                "undocumentedMessage": "",
+                "isDraft": false,
+                "draftMessage": "",
+                "hasDefault": false,
+                "format": "datetime",
+                "jsonType": "string"
+              }
+            ]
+          },
+          "hasPagination": false,
+          "authMethods": [
+            "personal_access_token",
+            "api_key"
+          ],
+          "workspaceScope": "required",
+          "codeSamples": []
         }
       ],
       "parentPath": null,
@@ -17721,6 +17797,16 @@
                     "draftMessage": ""
                   },
                   {
+                    "name": "access_method.reissued",
+                    "description": "",
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": ""
+                  },
+                  {
                     "name": "acs_system.connected",
                     "description": "",
                     "isDeprecated": false,
@@ -18619,6 +18705,16 @@
                   },
                   {
                     "name": "access_method.deleted",
+                    "description": "",
+                    "isDeprecated": false,
+                    "deprecationMessage": "",
+                    "isUndocumented": false,
+                    "undocumentedMessage": "",
+                    "isDraft": false,
+                    "draftMessage": ""
+                  },
+                  {
+                    "name": "access_method.reissued",
                     "description": "",
                     "isDeprecated": false,
                     "deprecationMessage": "",
@@ -37069,7 +37165,7 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the lock is not paired with a gateway."
+              "description": "\n    Indicates that the lock is not paired with a gateway.\n    "
             },
             {
               "properties": [
@@ -37345,7 +37441,7 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the Lockly lock is not connected to a Wi-Fi bridge."
+              "description": "\n    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.\n    "
             },
             {
               "properties": [
@@ -38514,6 +38610,19 @@
           "jsonType": "string"
         },
         {
+          "name": "ends_at",
+          "description": "Date and time at which the access grant ends.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "datetime",
+          "jsonType": "string"
+        },
+        {
           "name": "location_ids",
           "description": "",
           "isDeprecated": true,
@@ -38641,6 +38750,19 @@
           "format": "list",
           "jsonType": "array",
           "itemFormat": "id"
+        },
+        {
+          "name": "starts_at",
+          "description": "Date and time at which the access grant starts.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "datetime",
+          "jsonType": "string"
         },
         {
           "name": "user_identity_id",
@@ -47442,7 +47564,7 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the lock is not paired with a gateway."
+              "description": "\n    Indicates that the lock is not paired with a gateway.\n    "
             },
             {
               "properties": [
@@ -47718,7 +47840,7 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the Lockly lock is not connected to a Wi-Fi bridge."
+              "description": "\n    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.\n    "
             },
             {
               "properties": [
@@ -53336,7 +53458,7 @@
                   ]
                 }
               ],
-              "description": "Indicates that the Wyze Lock is not connected to a gateway."
+              "description": "\n    Indicates that the Wyze Lock is not connected to a gateway.\n    "
             },
             {
               "properties": [
@@ -53560,7 +53682,7 @@
                   ]
                 }
               ],
-              "description": "Indicates that the Remote Unlock feature is not enabled in the settings."
+              "description": "Indicates that the Remote Unlock feature is not enabled in the settings.\""
             },
             {
               "properties": [
@@ -53616,7 +53738,63 @@
                   ]
                 }
               ],
-              "description": "Indicates that the gateway signal is weak."
+              "description": "\n    Indicates that the gateway signal is weak.\n    "
+            },
+            {
+              "properties": [
+                {
+                  "name": "created_at",
+                  "description": "Date and time at which Seam created the warning.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "datetime",
+                  "jsonType": "string"
+                },
+                {
+                  "name": "message",
+                  "description": "Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "string",
+                  "jsonType": "string"
+                },
+                {
+                  "name": "warning_code",
+                  "description": "Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "enum",
+                  "jsonType": "string",
+                  "values": [
+                    {
+                      "name": "power_saving_mode",
+                      "description": "",
+                      "isDeprecated": false,
+                      "deprecationMessage": "",
+                      "isUndocumented": false,
+                      "undocumentedMessage": "",
+                      "isDraft": false,
+                      "draftMessage": ""
+                    }
+                  ]
+                }
+              ],
+              "description": "Indicates that the device is in power saving mode and may have limited functionality."
             },
             {
               "properties": [
@@ -55287,6 +55465,16 @@
             },
             {
               "name": "access_method.deleted",
+              "description": "",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": ""
+            },
+            {
+              "name": "access_method.reissued",
               "description": "",
               "isDeprecated": false,
               "deprecationMessage": "",
@@ -61451,7 +61639,7 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the lock is not paired with a gateway."
+              "description": "\n    Indicates that the lock is not paired with a gateway.\n    "
             },
             {
               "properties": [
@@ -61727,7 +61915,7 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the Lockly lock is not connected to a Wi-Fi bridge."
+              "description": "\n    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.\n    "
             },
             {
               "properties": [
@@ -67129,7 +67317,7 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the lock is not paired with a gateway."
+              "description": "\n    Indicates that the lock is not paired with a gateway.\n    "
             },
             {
               "properties": [
@@ -67405,7 +67593,7 @@
                   "jsonType": "string"
                 }
               ],
-              "description": "Indicates that the Lockly lock is not connected to a Wi-Fi bridge."
+              "description": "\n    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.\n    "
             },
             {
               "properties": [
@@ -68207,7 +68395,7 @@
                   ]
                 }
               ],
-              "description": "Indicates that the Wyze Lock is not connected to a gateway."
+              "description": "\n    Indicates that the Wyze Lock is not connected to a gateway.\n    "
             },
             {
               "properties": [
@@ -68431,7 +68619,7 @@
                   ]
                 }
               ],
-              "description": "Indicates that the Remote Unlock feature is not enabled in the settings."
+              "description": "Indicates that the Remote Unlock feature is not enabled in the settings.\""
             },
             {
               "properties": [
@@ -68487,7 +68675,63 @@
                   ]
                 }
               ],
-              "description": "Indicates that the gateway signal is weak."
+              "description": "\n    Indicates that the gateway signal is weak.\n    "
+            },
+            {
+              "properties": [
+                {
+                  "name": "created_at",
+                  "description": "Date and time at which Seam created the warning.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "datetime",
+                  "jsonType": "string"
+                },
+                {
+                  "name": "message",
+                  "description": "Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "string",
+                  "jsonType": "string"
+                },
+                {
+                  "name": "warning_code",
+                  "description": "Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.",
+                  "isDeprecated": false,
+                  "deprecationMessage": "",
+                  "isUndocumented": false,
+                  "undocumentedMessage": "",
+                  "isDraft": false,
+                  "draftMessage": "",
+                  "propertyGroupKey": null,
+                  "format": "enum",
+                  "jsonType": "string",
+                  "values": [
+                    {
+                      "name": "power_saving_mode",
+                      "description": "",
+                      "isDeprecated": false,
+                      "deprecationMessage": "",
+                      "isUndocumented": false,
+                      "undocumentedMessage": "",
+                      "isDraft": false,
+                      "draftMessage": ""
+                    }
+                  ]
+                }
+              ],
+              "description": "Indicates that the device is in power saving mode and may have limited functionality."
             },
             {
               "properties": [
@@ -72869,6 +73113,112 @@
       "propertyGroups": [],
       "resourceSamples": [],
       "eventType": "access_method.deleted"
+    },
+    {
+      "resourceType": "event",
+      "properties": [
+        {
+          "name": "access_method_id",
+          "description": "ID of the affected access method.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        },
+        {
+          "name": "created_at",
+          "description": "Date and time at which the event was created.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "datetime",
+          "jsonType": "string"
+        },
+        {
+          "name": "event_id",
+          "description": "ID of the event.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        },
+        {
+          "name": "event_type",
+          "description": "",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "enum",
+          "jsonType": "string",
+          "values": [
+            {
+              "name": "access_method.reissued",
+              "description": "",
+              "isDeprecated": false,
+              "deprecationMessage": "",
+              "isUndocumented": false,
+              "undocumentedMessage": "",
+              "isDraft": false,
+              "draftMessage": ""
+            }
+          ]
+        },
+        {
+          "name": "occurred_at",
+          "description": "Date and time at which the event occurred.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "datetime",
+          "jsonType": "string"
+        },
+        {
+          "name": "workspace_id",
+          "description": "ID of the [workspace](../core-concepts/workspaces/README.md) associated with the event.",
+          "isDeprecated": false,
+          "deprecationMessage": "",
+          "isUndocumented": false,
+          "undocumentedMessage": "",
+          "isDraft": false,
+          "draftMessage": "",
+          "propertyGroupKey": null,
+          "format": "id",
+          "jsonType": "string"
+        }
+      ],
+      "description": "An access method was reissued due to an access grant update.",
+      "isDeprecated": false,
+      "routePath": "/access_methods",
+      "deprecationMessage": "",
+      "isUndocumented": false,
+      "undocumentedMessage": "",
+      "isDraft": false,
+      "draftMessage": "",
+      "propertyGroups": [],
+      "resourceSamples": [],
+      "eventType": "access_method.reissued"
     },
     {
       "resourceType": "event",

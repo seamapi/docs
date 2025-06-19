@@ -239,6 +239,41 @@ An access method was deleted.
 
 ---
 
+**`access_method.reissued`**
+
+An access method was reissued due to an access grant update.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>access_method_id</code></strong> <i>UUID</i>
+
+  ID of the affected access method.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `access_method.reissued`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+</details>
+
+---
+
 ## Endpoints
 
 
