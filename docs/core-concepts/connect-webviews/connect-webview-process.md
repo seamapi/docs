@@ -255,45 +255,7 @@ ConnectWebview createdConnectWebview = seam.connectWebviews().create(ConnectWebv
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-createdConnectWebview, err := client.ConnectWebviews.Create(
-    context.Background(),
-    &api.ConnectWebviewsCreateRequest{
-      CustomRedirectUrl: api.String("https://example.com/redirect"),
-      CustomRedirectFailureUrl: api.String("https://example.com/failure-redirect"),
-      ProviderCategory: api.ProviderCategoryStable.Ptr(),
-      WaitForDeviceCreation: api.Bool(true),
-    },
-  )
-
-if err != nil {
-  return err
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-{
-  "connect_webview_id": "12345678-1234-1234-1234-123456789012",
-  "url": "https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=9eBKNtzB6ZKkSPPD33MZFshYSbmBcSMz7",
-  "status": "pending",
-  "login_successful": false,
-  "custom_redirect_url": "https://example.com/redirect",
-  "custom_redirect_failure_url": "https://example.com/failure-redirect",
-  "accepted_providers": [
-    ...
-  ],
-  "wait_for_device_creation": true,
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ### Connect Webview Response

@@ -119,11 +119,7 @@ dependencies {
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
 
-{% tab title="Go" %}
-```bash
-go get github.com/seamapi/go
-```
-{% endtab %}
+
 {% endtabs %}
 
 2. Create an API key.
@@ -327,61 +323,7 @@ $jen_doe_user = $seam->user_identities->create(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-package main
-
-import (
-  "context"
-  "fmt"
-  "os"
-
-  api "github.com/seamapi/go"
-  seam "github.com/seamapi/go/client"
-  acs "github.com/seamapi/go/acs" // To be used later in this quick start
-)
-
-func main() {
-  if err := run(); err != nil {
-    _, _ = fmt.Fprintln(os.Stderr, err.Error())
-    os.Exit(1)
-  }
-}
-
-func run() error {
-  client := seam.NewClient(
-    seam.WithApiKey(SEAM_API_KEY),
-  )
-
-  jenDoeUser, err := client.UserIdentities.Create(
-    context.Background(), &api.UserIdentitiesCreateRequest{
-      FullName: api.String("Jen Doe"),
-      EmailAddress: api.String("jen.doe@example.com"),
-      // Use the ACS system ID that you copied earlier from Seam Console.
-      AcsSystemId: acsSystemId,
-    },
-  )
-  if err != nil {
-    return err
-  }
-  
-  return nil
-}
-```
-
-**Output:**
-
-```json
-{
-  "user_identity_id": "22222222-2222-2222-2222-222222222222",
-  "full_name": "Jen Doe",
-  "email_address": "jen.doe@example.com",
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -553,32 +495,7 @@ $seam->user_identities->enrollment_automations->launch(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-client.UserIdentities.EnrollmentAutomations.Launch(
-  context.Background(), &useridentities.EnrollmentAutomationsLaunchRequest{
-    UserIdentityId: jenDoeUser.UserIdentityId,
-    CreateCredentialManagerUser: api.Bool(true),
-    // Use the credential manager ID that you copied earlier from Seam Console.
-    CredentialManagerAcsSystemId: credentialManagerAcsSystemId,
-  },
-)
-
-return nil
-```
-
-**Output:**
-
-```json
-{
-  "user_identity_id": "22222222-2222-2222-2222-222222222222",
-  "enrollment_automation_id": "77777777-8888-7777-7777-888888888888",
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -722,29 +639,7 @@ void
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-_, err := client.Acs.AccessGroups.AddUser(
-  context.Background(), &acs.AccessGroupsAddUserRequest{
-    // Use the access group ID that you copied earlier from Seam Console.
-    AcsAccessGroupId: accessGroupId,
-    UserIdentityId: jenDoeUser.UserIdentityId,
-  },
-)
-if err != nil {
-  return err
-}
-
-```
-
-**Output:**
-
-```json
-void
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -909,36 +804,7 @@ $pin_code_credential = $seam->acs->credentials->create(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-mobileKey, err := client.Acs.Credentials.Create(
-  context.Background(), &acs.CredentialsCreateRequest{
-    UserIdentityId: jenDoeUser.UserIdentityId,
-    IsMultiPhoneSyncCredential: api.Bool(true),
-    AccessMethod: "mobile_key",
-})
-if err != nil {
-    return err
-}
-
-fmt.Println(mobileKey)
-return nil
-```
-
-**Output:**
-
-```json
-{
-  "acs_credential_id": "66666666-6666-6666-6666-666666666666",
-  "acs_system_id": "11111111-1111-1111-1111-111111111111",
-  "user_identity_id": "22222222-2222-2222-2222-222222222222",
-  "access_method": "mobile_key",
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***

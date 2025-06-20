@@ -211,39 +211,7 @@ var connectedDevices = seam.devices().list(DevicesListRequest.builder()
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-// Retrieve all devices for the ConnectedAccountId.
-connectedDevices, err := client.Devices.List(
-  context.Background(), &api.DevicesListRequest{
-    ConnectedAccountId: api.String("11111111-1111-1111-1111-222222222222"),
-  },
-)
-
-if err != nil {
-  return err
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-[
-  {
-    "connected_account_id": "11111111-1111-1111-1111-222222222222",
-    "device_id": "11111111-1111-1111-1111-444444444444",
-    "display_name": "Front Door Lock",
-    "is_managed": true,
-    ...
-  }
-  ...
-]
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -427,38 +395,5 @@ var connectedAcsSystems = seam.SystemsAcs.List(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-// Retrieve all acs_systems for the ConnectedAccountId.
-connected_acs_systems, err := client.Acs.Systems.List(
-  context.Background(), &acs.SystemsListRequest{
-    ConnectedAccountId: api.String("11111111-1111-1111-2222-111111111111"),
-  },
-)
-
-if err != nil {
-  return err
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-[
-  {
-    "connected_account_ids": [
-      "11111111-1111-1111-2222-111111111111"
-    ],
-    "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "name": "My ACS",
-    ...
-  },
-  ...
-]
-```
-{% endtab %}
 {% endtabs %}
