@@ -528,15 +528,15 @@ Indicates that the account is disconnected.
 
 ---
 
-**`invalid_credentials`**
-
-Indicates that the credentials provided were invalid.
-
----
-
 **`bridge_disconnected`**
 
 Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+
+---
+
+**`invalid_credentials`**
+
+Indicates that the credentials provided were invalid.
 
 ---
 
@@ -549,6 +549,12 @@ Indicates that the maximum number of users allowed for the site has been reached
 
 ## Warnings
 
+**`salto_ks_subscription_limit_almost_reached`**
+
+Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.
+
+---
+
 **`scheduled_maintenance_window`**
 
 Indicates that scheduled downtime is planned for the connected account.
@@ -558,12 +564,6 @@ Indicates that scheduled downtime is planned for the connected account.
 **`unknown_issue_with_connected_account`**
 
 Indicates that an unknown issue occurred while syncing the state of the connected account with the provider. This issue may affect the proper functioning of one or more resources in the account.
-
----
-
-**`salto_ks_subscription_limit_almost_reached`**
-
-Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.
 
 ---
 

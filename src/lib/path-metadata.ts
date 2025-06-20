@@ -5,6 +5,8 @@ export const PathMetadataSchema = z.record(
   z.object({
     title: z.string().trim().min(1),
     resources: z.array(z.string()).default([]),
+    include_groups: z.array(z.string()).optional(),
+    exclude_groups: z.array(z.string()).optional(),
     description: z.string().trim().min(1).optional(),
     overview: z.string().trim().min(1).optional(),
     alpha: z.string().trim().min(1).optional(),

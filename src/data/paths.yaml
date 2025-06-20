@@ -47,6 +47,10 @@
 
 /thermostats:
   title: Thermostats
+  resources:
+    - device
+  include_groups:
+    - thermostats
   overview: |
     ## The device Object for Thermostats
 
