@@ -71,6 +71,7 @@
   * [Delete an Access Grant](api/access_grants/delete.md)
   * [Get an Access Grant](api/access_grants/get.md)
   * [List Access Grants](api/access_grants/list.md)
+  * [Update an Access Grant](api/access_grants/update.md)
 * [Access Methods](api/access_methods/README.md)
   * [Delete an Access Method](api/access_methods/delete.md)
   * [Get an Access Method](api/access_methods/get.md)
