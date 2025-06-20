@@ -143,19 +143,7 @@ void
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```java
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -316,19 +304,7 @@ $seam->devices->get(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -515,17 +491,5 @@ void
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```java
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}

@@ -37,23 +37,7 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-```go
-userIdentity, uErr := client.UserIdentities.Create(context.Background(), &useridentities.UserIdentitiesCreateRequest{
-    UserIdentityKey: api.String("jenny_lee"),
-    EmailAddress: api.String("jenny@example.com"),
-    PhoneNumber: api.String("+15555550111"),
-    FullName: api.String("Jenny Lee"),
-})
 
-if uErr != nil {
-    return uErr
-}
-
-fmt.Println(userIdentity)
-return nil
-```
-{% endtab %}
 {% endtabs %}
 
 ## Response

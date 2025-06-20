@@ -130,23 +130,7 @@ void
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-suspend, uErr := client.Acs.Users.Suspend(
-  context.Background(), &acs.UsersSuspendRequest{
-    AcsUserId: "33333333-3333-3333-3333-333333333333",
-  },
-);
-```
-
-**Response:**
-
-```json
-void
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -271,21 +255,5 @@ void
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-unsuspend, uErr := client.Acs.Users.Unsuspend(
-  context.Background(), &acs.UsersUnsuspendRequest{
-    AcsUserId: "33333333-3333-3333-3333-333333333333",
-  },
-);
-```
-
-**Response:**
-
-```json
-void
-```
-{% endtab %}
 {% endtabs %}

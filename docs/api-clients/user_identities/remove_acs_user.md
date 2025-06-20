@@ -35,20 +35,7 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-```go
-_, uErr := client.UserIdentities.RemoveAcsUser(context.Background(), &useridentities.UserIdentitiesRemoveAcsUserRequest{
-    UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    AcsUserId: "4d223973-0874-4831-8630-bfcb29e6bce0",
-})
 
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-{% endtab %}
 {% endtabs %}
 
 ## Response

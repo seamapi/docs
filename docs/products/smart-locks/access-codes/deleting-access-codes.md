@@ -131,24 +131,7 @@ void
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-client.AccessCodes.Delete(
-  context.Background(),
-  &api.AccessCodesDeleteRequest{
-    AccessCodeId: api.String("11111111-1111-1111-1111-555555555555"),
-  },
-)
-```
-
-**Output:**
-
-```
-void
-```
-{% endtab %}
 {% endtabs %}
 
 ***

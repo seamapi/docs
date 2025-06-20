@@ -129,11 +129,7 @@ dependencies {
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
 
-{% tab title="Go" %}
-```bash
-go get github.com/seamapi/go
-```
-{% endtab %}
+
 {% endtabs %}
 
 2. Create an API key.
@@ -327,60 +323,7 @@ $acs_user = $seam->acs->users->create(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-package main
-
-import (
-  "context"
-  "fmt"
-  "os"
-  "time"
-
-  api "github.com/seamapi/go"
-  seam "github.com/seamapi/go/client"
-  acs "github.com/seamapi/go/acs"
-)
-
-func main() {
-  if err := run(); err != nil {
-    _, _ = fmt.Fprintln(os.Stderr, err.Error())
-    os.Exit(1)
-  }
-}
-
-func run() error {
-  client := seam.NewClient(
-    seam.WithApiKey(SEAM_API_KEY),
-  )
-
-  acsUser, err := client.Acs.Users.Create(
-    context.Background(), &acs.UsersCreateRequest{
-      FullName: api.String("Jim Doe"),
-      // Use the ACS system ID that you copied earlier from Seam Console.
-      AcsSystemId: acsSystemId,
-    },
-  )
-  if err != nil {
-    return err
-  }
-  
-  return nil
-}
-```
-
-**Output:**
-
-```json
-{
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "full_name": "Jim Doe",
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -610,53 +553,7 @@ $key_card_credential = $seam->acs->credentials->create(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-startsAt, err := time.Parse(time.RFC3339, "2025-02-10T15:00:00Z")
-endsAt, err := time.Parse(time.RFC3339, "2025-02-12T11:00:00Z")
-if err != nil {
-  return err
-}
-
-keyCardCredential, err := client.Acs.Credentials.Create(
-  context.Background(), &acs.CredentialsCreateRequest{
-    AcsUserId: acsUser.AcsUserId,
-    AccessMethod: "card",
-    AllowedAcsEntranceIds: []string{
-      vingcardLock2EntranceId,
-      guestLock1EntranceId,
-    },
-    StartsAt: api.Time(startsAt),
-    EndsAt: api.Time(endsAt),
-    VisionlineMetadata: &acs.CredentialsCreateRequestVisionlineMetadata{
-      CardFormat: acs.CredentialsCreateRequestVisionlineMetadataCardFormatRfid48.Ptr(),
-      Override: api.Bool(true),
-    },
-  },
-);
-if err != nil {
-  return err
-};
-
-fmt.Println(keyCardCredential)
-return nil
-```
-
-**Output:**
-
-```json
-{
-  "acs_credential_id": "66666666-6666-6666-6666-666666666666",
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "access_method": "card",
-  "starts_at": "2025-02-10T15:00:00Z",
-  "ends_at": "2025-02-12T11:00:00Z",
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -957,70 +854,7 @@ $seam->action_attempts->get(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-// Get the encoder that you want to use.
-encoders, err := client.Acs.Encoders.List(
-  context.Background(), &acs.EncodersListRequest{
-    AcsSystemIds: []string{
-      acsSystemId,
-    },
-  },
-)
-if err != nil {
-  return err
-}
-encoder := encoders[0]
-
-// Encode the card.
-encodingActionAttempt, err := client.Acs.Encoders.EncodeCredential(
-  context.Background(), &acs.EncodersEncodeCredentialRequest{
-    AcsCredentialId: keyCardCredential.AcsCredentialId,
-    AcsEncoderId: encoder.AcsEncoderId,
-  },
-)
-if err != nil {
-  return err
-}
-
-// Confirm that the encoding succeeded by 
-// polling the returned action attempt
-// until its status is success.
-// You can also use a webhook.
-actionAttempt, err := client.ActionAttempts.Get(
-  context.Background(), &api.ActionAttemptsGetRequest{
-    ActionAttemptId: encodingActionAttempt.ActionAttemptId,
-  },
-)
-if err != nil {
-  return err
-}
-
-fmt.Println(actionAttempt)
-
-return nil
-```
-
-**Output:**
-
-```json
-{
-  "status": "success",
-  "action_attempt_id": "11111111-2222-3333-4444-555555555555",
-  "action_type": "ENCODE_CREDENTIAL",
-  "result": {
-    "acs_credential_id": "66666666-6666-6666-6666-666666666666",
-    "card_number": "1234abc",
-    "is_issued": true,
-    "issued_at": "2025-02-10T12:00:00.000Z",
-    ...
-  },
-  "error": null
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***

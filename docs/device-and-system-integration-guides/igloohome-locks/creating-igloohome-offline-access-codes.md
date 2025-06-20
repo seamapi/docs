@@ -354,54 +354,7 @@ if (device.getCanProgramOfflineAccessCodes())
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-// Get the device.
-device, uErr := client.Locks.Get(
-  context.Background(),
-  &api.LocksGetRequest{
-    DeviceId: api.String("11111111-1111-1111-1111-444444444444"),
-  })
-
-// Confirm that the device supports offline access codes.
-if *device.CanProgramOfflineAccessCodes {
-  // Create the hourly-bound offline access code.
-  client.AccessCodes.Create(
-      context.Background(),
-      &api.AccessCodesCreateRequest{
-        DeviceId: device.DeviceId,
-        Name: api.String("my hourly-bound offline code"),
-        StartsAt: api.String("2023-11-10T00:00:00Z"),
-        EndsAt: api.String("2023-11-15T18:00:00Z"),
-        IsOfflineAccessCode: api.Bool(true),
-      },
-    )
-  }
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id": "11111111-1111-1111-1111-777777777777",
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "name": "my hourly-bound offline code",
-  "type": "time_bound",
-  "starts_at": "2023-11-10T00:00:00.000Z",
-  "ends_at": "2023-11-15T18:00:00.000Z",
-  "is_offline_access_code": true,
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 #### 2. Verify Successful Time-Bound Code Registration
@@ -723,55 +676,7 @@ if (device.getCanProgramOfflineAccessCodes())
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-// Get the device.
-device, uErr := client.Locks.Get(
-  context.Background(),
-  &api.LocksGetRequest{
-    DeviceId: api.String("11111111-1111-1111-1111-444444444444"),
-  })
-
-// Confirm that the device supports offline access codes.
-if *device.CanProgramOfflineAccessCodes {
-  // Create the daily-bound offline access code.
-  client.AccessCodes.Create(
-      context.Background(),
-      &api.AccessCodesCreateRequest{
-        DeviceId: device.DeviceId,
-        Name: api.String("my daily-bound offline code"),
-        StartsAt: api.String("2023-11-17T00:00:00Z"),
-        EndsAt: api.String("2023-12-18T00:00:00Z"),
-        MaxTimeRounding: api.String("1d"),
-        IsOfflineAccessCode: api.Bool(true),
-      },
-    )
-  }
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id": "11111111-1111-1111-1111-888888888888",
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "name": "my daily-bound offline code",
-  "type": "time_bound",
-  "starts_at": "2023-11-17T00:00:00.000Z",
-  "ends_at": "2023-12-18T00:00:00.000Z",
-  "is_offline_access_code": true,
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 #### 2. Verify Successful Time-Bound Code Registration

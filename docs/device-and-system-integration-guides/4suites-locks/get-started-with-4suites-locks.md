@@ -92,11 +92,7 @@ dependencies {
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
 
-{% tab title="Go" %}
-```bash
-go get github.com/seamapi/go
-```
-{% endtab %}
+
 {% endtabs %}
 
 Next, go to [https://console.seam.co/](https://console.seam.co/) and [sign up for Seam](../../core-concepts/seam-console/#create-a-seam-account) to get your [API key](../../core-concepts/authentication/api-keys.md).
@@ -345,63 +341,7 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-package main
-
-import (
-  "context"
-  "fmt"
-  "os"
-
-  api "github.com/seamapi/go"
-  seam "github.com/seamapi/go/client"
-)
-
-func main() {
-  if err := run(); err != nil {
-    _, _ = fmt.Fprintln(os.Stderr, err.Error())
-    os.Exit(1)
-  }
-}
-
-func run() error {
-  client := seam.NewClient(
-    seam.WithApiKey(SEAM_API_KEY),
-  )
-
-  connectWebview, err := client.ConnectWebviews.Create(
-    context.Background(),
-    &api.ConnectWebviewsCreateRequest{
-      AcceptedProviders: []api.AcceptedProvider{
-        api.AcceptedProviderFourSuites,
-      },
-    },
-  )
-
-  if err != nil {
-    return err
-  }
-
-  fmt.Println(connectWebview.LoginSuccessful) // false
-
-  // Use the returned Connect Webview URL to display
-  // the Connect Webview authorization flow to your user.
-  fmt.Println(connectWebview.Url)
-
-  return nil
-}
-```
-
-**Output:**
-
-```
-false
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -553,32 +493,7 @@ true
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-updatedConnectWebview, err := client.ConnectWebviews.Get(
-  context.Background(),
-  &api.ConnectWebviewsGetRequest{
-    ConnectWebviewId: connectWebview.connectWebviewId,
-  },
-)
-
-if err != nil {
-  return err
-}
-
-fmt.Println(updatedConnectWebview.LoginSuccessful) // true
-
-return nil
-```
-
-**Output:**
-
-```
-true
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -903,58 +818,7 @@ true
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-// Retrieve all devices, filtered by manufacturer,
-// which is one of several filters that list() supports.
-allFourSuitesLocks, err := client.Devices.List(
-  context.Background(), &api.DevicesListRequest{
-    Manufacturer: api.ManufacturerFourSuites.Ptr(),
-  },
-)
-
-// Select the first device as an example.
-frontDoor := allFourSuitesLocks[0]
-
-if err != nil {
-  return err
-}
-
-// Inspect specific properties.
-fmt.Println(frontDoor.Properties.Online) // true
-fmt.Println(*frontDoor.Properties.Locked) // true
-
-// View the entire returned device object.
-fmt.Println(frontDoor)
-
-return nil
-```
-
-**Output:**
-
-```json
-true
-true
-{
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "display_name": "Lock 1",
-  "workspace_id": "00000000-0000-0000-0000-000000000000",
-  "connected_account_id": "11111111-1111-1111-1111-222222222222",
-  "created_at": "2024-05-29T20:08:48.878Z",
-  "properties": {
-    "manufacturer": "four_suites",
-    "online": true,
-    "locked": true,
-    "has_direct_power": true,
-    ...
-  },
-  "can_remotely_unlock": true,
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -1169,43 +1033,7 @@ Optional[
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-// Confirm that the device can remotely unlock.
-// You're using a capability flag here!
-if *frontDoor.CanRemotelyUnlock {
-  // Perform the unlock operation.
-  actionAttempt, err := client.Locks.UnlockDoor(
-    context.Background(),
-    &api.LocksUnlockDoorRequest{
-      DeviceId: frontDoor.DeviceId,
-    },
-  )
-
-  if err != nil {
-    return err
-  }
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-&{pending <nil>
-  {
-    "status": "pending",
-    "action_type": "UNLOCK_DOOR",
-    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
-    "result": null,
-    "error": null
-  }
-<nil>} <nil>
-```
-{% endtab %}
 {% endtabs %}
 
 You can track the status of the unlock operation to confirm that the device unlocked successfully. Query the `locked` status of the device, [retrieve the action attempt](../../api-clients/action_attempts/get.md) by ID, or look for a [`lock.unlocked` event](../../api-clients/events/#event-types).
@@ -1359,32 +1187,7 @@ false
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-// Get the device by ID.
-updatedFrontDoor, err := client.Devices.Get(
-  context.Background(), &api.DevicesGetRequest{
-    DeviceId: api.String(frontDoor.DeviceId),
-  },
-)
-
-if err != nil {
-  return err
-}
-
-// Inspect the locked property to confirm
-// that the unlock operation was successful.
-fmt.Println(*updatedFrontDoor.Properties.Locked) // false
-```
-
-**Output:**
-
-```
-false
-```
-{% endtab %}
 {% endtabs %}
 
 ***

@@ -184,29 +184,7 @@ $token = $client_session->token;
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-```go
-// Create the user identity.
-response, uErr := client.UserIdentities.Create(context.Background(), &api.UserIdentitiesCreateRequest{
-    EmailAddress: api.String("jane@example.com"),
-})
 
-if uErr != nil {
-    return uErr
-}
-
-// Create the client session.
-clientSession, uErr := client.ClientSessions.Create(context.Background(), &api.ClientSessionsCreateRequest{
-  UserIdentityIds: []string{response.UserIdentity.UserIdentityId},
-})
-
-// Use this token to launch your mobile controller.
-token := clientSession.Token
-fmt.Println("Token:", token)
-
-return nil
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -292,19 +270,7 @@ $seam->user_identities->enrollment_automations->launch(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-```go
-// Launch the enrollment automation.
-client.UserIdentities.EnrollmentAutomations.Launch(context.Background(), &useridentities.EnrollmentAutomationsLaunchRequest{
-  UserIdentityId: response.UserIdentity.UserIdentityId,
-  // Use the AcsSystemId for the credential manager.
-  CredentialManagerAcsSystemId: "6737e186-8d54-48ce-a7da-a0be4d252172",
-  // Automatically create a new credential manager user
-  // or specify the desired existing CredentialManagerAcsUserId.
-  CreateCredentialManagerUser: api.Bool(true),
-})
-```
-{% endtab %}
+
 {% endtabs %}
 
 ***

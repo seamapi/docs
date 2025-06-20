@@ -34,20 +34,7 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-```go
-accessibleDevices, uErr := client.UserIdentities.ListAccessibleDevices(context.Background(), &api.UserIdentitiesListAccessibleDevicesRequest{
-    UserIdentityId: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
-})
 
-if uErr != nil {
-    return uErr
-}
-
-fmt.Println(accessibleDevices)
-return nil
-```
-{% endtab %}
 {% endtabs %}
 
 ## Response

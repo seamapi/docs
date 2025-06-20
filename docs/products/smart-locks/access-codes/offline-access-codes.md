@@ -190,27 +190,7 @@ seam.locks()
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-device, uErr := client.Devices.Get(
-  context.Background(),
-  &api.DevicesGetRequest{
-    DeviceId: "11111111-1111-1111-1111-444444444444",
-  })
-```
-
-**Response:**
-
-```json
-{
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "can_program_offline_access_codes": true, // You can create offline access codes for this device.
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -535,57 +515,7 @@ if (device.getCanProgramOfflineAccessCodes())
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-// Get the device.
-device, uErr := client.Locks.Get(
-  context.Background(),
-  &api.LocksGetRequest{
-    DeviceId: api.String("11111111-1111-1111-1111-444444444444"),
-  })
-
-// Confirm that the device supports offline access codes.
-if *device.CanProgramOfflineAccessCodes {
-  // Create the time-bound offline access code.
-  client.AccessCodes.Create(
-      context.Background(),
-      &api.AccessCodesCreateRequest{
-        DeviceId: device.DeviceId,
-        Name: api.String("my time-bound offline code"),
-        StartsAt: api.String("2023-11-10T00:00:00Z"),
-        EndsAt: api.String("2023-11-15T18:00:00Z"),
-        // To create a daily-bound code for devices
-        // that support this feature, include
-        // MaxTimeRounding: api.String("1d"),
-        IsOfflineAccessCode: api.Bool(true),
-      },
-    )
-  }
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id": "11111111-1111-1111-1111-777777777777",
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "name": "my time-bound offline code",
-  "type": "time_bound",
-  "starts_at": "2023-11-10T00:00:00.000Z",
-  "ends_at": "2023-11-15T18:00:00.000Z",
-  "is_offline_access_code": true,
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ### 2. Verify Successful Time-Bound Code Registration
@@ -921,57 +851,7 @@ if (device.getCanProgramOfflineAccessCodes())
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-// Get the device.
-device, uErr := client.Locks.Get(
-  context.Background(),
-  &api.LocksGetRequest{
-    DeviceId: api.String("11111111-1111-1111-1111-444444444444"),
-  })
-
-// Confirm that the device supports offline access codes.
-if *device.CanProgramOfflineAccessCodes {
-  // Create the one-time-use offline access code.
-  client.AccessCodes.Create(
-      context.Background(),
-      &api.AccessCodesCreateRequest{
-        DeviceId: device.DeviceId,
-        Name: api.String("my one-time-use offline code"),
-        StartsAt: api.String("2023-11-12T00:00:00Z"),
-        // Specify ends_at if your device supports it.
-        EndsAt: api.String("2023-11-14T00:00:00Z"),
-        IsOfflineAccessCode: api.Bool(true),
-        IsOneTimeUse: api.Bool(true),
-      },
-    )
-  }
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id": "11111111-1111-1111-1111-777777888888",
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "name": "my one-time-use offline code",
-  "type": "time_bound",
-  "starts_at": "2023-11-12T00:00:00.000Z",
-  "ends_at": "2023-11-14T00:00:00.000Z",
-  "is_offline_access_code": true,
-  "is_one_time_use": true,
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ### 2. Verify Successful One-Time-Use Code Registration

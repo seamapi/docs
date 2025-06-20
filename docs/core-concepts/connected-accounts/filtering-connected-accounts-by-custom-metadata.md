@@ -237,42 +237,5 @@ System.out.println(connectedAccounts);
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-connectedAccounts, err := client.ConnectedAccounts.List(
-	context.Background(),
-	&api.ConnectedAccountsListRequest{
-		CustomMetadataHas: {"internal_account_id":"user-1"},
-	},
-)
-if err != nil {
-	return err
-}
-fmt.Println(connectedAccounts)
-return nil
-```
-
-**Response:**
-
-```json
-[{
-  "connected_account_id": "c993818b-bf3c-4836-bef4-9a76d89bf1d3",
-  "created_at": "2024-01-05T07:20:07.692Z",
-  "user_identifier": {
-    "username": "jane"
-  },
-  "account_type": "visionline",
-  "account_type_display_name": "Visionline",
-  "errors": [],
-  "warnings": [],
-  "custom_metadata": {
-    "internal_account_id": "user-1"
-  },
-  "automatically_manage_new_devices": true
-}...
-]
-```
-{% endtab %}
 {% endtabs %}

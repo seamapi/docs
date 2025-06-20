@@ -159,19 +159,7 @@ $seam->thermostats->activate_climate_preset(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```java
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -320,17 +308,5 @@ $seam->action_attempts->get(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}

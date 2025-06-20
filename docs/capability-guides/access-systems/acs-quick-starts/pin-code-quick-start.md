@@ -120,11 +120,7 @@ dependencies {
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
 
-{% tab title="Go" %}
-```bash
-go get github.com/seamapi/go
-```
-{% endtab %}
+
 {% endtabs %}
 
 2. Create an API key.
@@ -358,74 +354,7 @@ $acs_user = $seam->acs->users->create(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-package main
-
-import (
-  "context"
-  "fmt"
-  "os"
-  "time"
-
-  api "github.com/seamapi/go"
-  seam "github.com/seamapi/go/client"
-  acs "github.com/seamapi/go/acs"
-)
-
-func main() {
-  if err := run(); err != nil {
-    _, _ = fmt.Fprintln(os.Stderr, err.Error())
-    os.Exit(1)
-  }
-}
-
-func run() error {
-  client := seam.NewClient(
-    seam.WithApiKey(SEAM_API_KEY),
-  )
-  
-  checkIn, err := time.Parse(time.RFC3339, "2025-02-10T15:00:00.000Z")
-  checkOut, err := time.Parse(time.RFC3339, "2025-02-12T11:00:00.000Z")
-  if err != nil {
-    return err
-  }
-
-  acsUser, err := client.Acs.Users.Create(
-    context.Background(), &acs.UsersCreateRequest{
-      FullName: api.String("June Doe"),
-      // Use the ACS system ID that you copied earlier from Seam Console.
-      AcsSystemId: acsSystemId,
-      AccessSchedule: &acs.UsersCreateRequestAccessSchedule{
-        StartsAt: checkIn,
-        EndsAt: checkOut,
-      },
-    },
-  )
-  if err != nil {
-    return err
-  }
-  
-  return nil
-}
-```
-
-**Output:**
-
-```json
-{
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "full_name": "June Doe",
-  "access_schedule": {
-    "starts_at": "2025-02-10T15:00:00.000Z",
-    "ends_at": "2025-02-12T11:00:00.000Z"
-  },
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -569,25 +498,7 @@ void
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-_, err := client.Acs.Users.AddToAccessGroup(
-  context.Background(), &acs.UsersAddToAccessGroupRequest{
-    AcsUserId: acsUser.AcsUserId,
-    // Use the access group ID that you copied earlier from Seam Console.
-    AcsAccessGroupId: accessGroupId,
-  },
-)
-```
-
-**Output:**
-
-```json
-void
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -751,36 +662,7 @@ $pin_code_credential = $seam->acs->credentials->create(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-pinCodeCredential, err := client.Acs.Credentials.Create(
-  context.Background(), &acs.CredentialsCreateRequest{
-    AcsUserId: acsUser.AcsUserId,
-    AccessMethod: "code",
-})
-if err != nil {
-    return err
-}
-
-fmt.Println(pinCodeCredential)
-return nil
-```
-
-**Output:**
-
-```json
-{
-  "acs_credential_id": "66666666-6666-6666-6666-666666666666",
-  "acs_system_id": "11111111-1111-1111-1111-111111111111",
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "code": "123456",
-  "access_method": "code",
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***

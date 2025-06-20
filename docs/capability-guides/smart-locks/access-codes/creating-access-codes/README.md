@@ -198,28 +198,7 @@ seam.devices()
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-device, uErr := client.Devices.Get(
-  context.Background(),
-  &api.DevicesGetRequest{
-    DeviceId: "11111111-1111-1111-1111-444444444444",
-  })
-```
-
-**Response:**
-
-```json
-{
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "can_program_online_access_codes": true,  // You can create online access codes for this device.
-  "can_program_offline_access_codes": true, // You can create offline access codes for this device.
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -493,50 +472,7 @@ if (device.getCanProgramOnlineAccessCodes())
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-// Get the device.
-device, uErr := client.Devices.Get(
-  context.Background(),
-  &api.DevicesGetRequest{
-    DeviceId: api.String("11111111-1111-1111-1111-444444444444"),
-  })
-
-// Confirm that the device supports online access codes.
-if *device.CanProgramOnlineAccessCodes {
-  // Create the ongoing online access code.
-  client.AccessCodes.Create(
-    context.Background(),
-    &api.AccessCodesCreateRequest{
-      DeviceId: device.DeviceId,
-      Name: api.String("my ongoing code"),
-      Code: api.String("1234"),
-    },
-  )
-}
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id": "11111111-1111-1111-1111-555555555555",
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "name": "my ongoing code",
-  "code": "1234",
-  "type": "ongoing",
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ### 2. Verify Successful Ongoing Code Programming
@@ -867,54 +803,7 @@ if (device.getCanProgramOnlineAccessCodes())
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-// Get the device.
-device, uErr := client.Devices.Get(
-  context.Background(),
-  &api.LocksGetRequest{
-    DeviceId: api.String("11111111-1111-1111-1111-444444444444"),
-  })
-
-// Confirm that the device supports online access codes.
-if *device.CanProgramOnlineAccessCodes {
-  // Create the time-bound online access code.
-  client.AccessCodes.Create(
-    context.Background(),
-    &api.AccessCodesCreateRequest{
-      DeviceId: device.DeviceId,
-      Name: api.String("my time-bound code"),
-      StartsAt: api.String("2025-01-01T16:00:00Z"),
-      EndsAt: api.String("2025-01-22T12:00:00Z"),
-      Code: api.String("2345"),
-    },
-  )
-}
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id": "11111111-1111-1111-1111-666666666666",
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "name": "my time-bound code",
-  "code": "2345",
-  "type": "time_bound",
-  "starts_at": "2025-01-01T16:00:00.000Z",
-  "ends_at": "2025-01-22T12:00:00.000Z",
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ### 2. Verify Successful Time-Bound Code Programming

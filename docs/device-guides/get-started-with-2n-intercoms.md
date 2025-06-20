@@ -81,11 +81,7 @@ dependencies {
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
 
-{% tab title="Go" %}
-```bash
-go get github.com/seamapi/go
-```
-{% endtab %}
+
 {% endtabs %}
 
 Once installed, [sign-up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:

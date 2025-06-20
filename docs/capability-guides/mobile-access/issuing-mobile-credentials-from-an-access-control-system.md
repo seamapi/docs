@@ -167,36 +167,7 @@ Coming soon!
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Command:**
 
-```go
-enrollmentAutomation, uErr := client.UserIdentities.EnrollmentAutomations.Launch(
-  context.Background(),
-  &api.EnrollmentAutomationsLaunchRequest{
-    UserIdentityId: api.String("22222222-2222-2222-2222-222222222222"),
-    CredentialManagerAcsSystemId: api.String("88888888-8888-8888-8888-888888888888"),
-    CreateCredentialManagerUser: api.Bool(true),
-})
-
-if uErr != nil {
-    return uErr
-}
-
-fmt.Println(enrollmentAutomation)
-return nil
-```
-
-**Output:**
-
-```json
-{
-  "user_identity_id": "22222222-2222-2222-2222-222222222222",
-  "enrollment_automation_id": "77777777-8888-7777-7777-888888888888",
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
@@ -420,38 +391,5 @@ Coming soon!
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Command:**
 
-```go
-credential, uErr := client.Acs.Credentials.Create(
-  context.Background(),
-  &acs.CredentialsCreateRequest{
-    IsMultiPhoneSyncCredential: api.Bool(true),
-    AcsUserId: "33333333-3333-3333-3333-333333333333",
-    AccessMethod: "mobile_key",
-    CredentialManagerAcsSystemId: api.String("88888888-8888-8888-8888-888888888888"),
-    // ACS manufacturer-specific properties
-    VisionlineMetadata: &acs.CredentialsCreateRequestVisionlineMetadata{
-      CardFormat: acs.CredentialsCreateRequestVisionlineMetadataCardFormatRfid48.Ptr(),
-      Label: api.String("%ROOMNUM% - %SITENAME%"),
-      Override: api.Bool(true),
-    },
-    ...
-  },
-)
-```
-
-**Output:**
-
-```json
-{
-  acs_credential_id: '99999999-9999-9999-9999-999999999999',
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  access_method: 'mobile_key',
-  is_multi_phone_sync_credential: true,
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}

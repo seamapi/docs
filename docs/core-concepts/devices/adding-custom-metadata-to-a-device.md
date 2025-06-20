@@ -168,28 +168,5 @@ true
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-deviceUpdate, err := client.Devices.Update(
-	context.Background(),
-	&api.DevicesUpdateRequest{
-		DeviceId: "30fd243b-3054-4384-a713-5487076a3826",
-		CustomMetadata: {"internal_account_id":"user-1"},
-	},
-)
-if err != nil {
-	return err
-}
-fmt.Println(deviceUpdate)
-return nil
-```
-
-**Response:**
-
-```json
-true
-```
-{% endtab %}
 {% endtabs %}

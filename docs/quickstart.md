@@ -105,11 +105,7 @@ dependencies {
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
 
-{% tab title="Go" %}
-```bash
-go get github.com/seamapi/go
-```
-{% endtab %}
+
 {% endtabs %}
 
 ## Step 3 — Unlock a Door
@@ -427,82 +423,7 @@ Optional[
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-package main
-
-import (
-  "context"
-  "fmt"
-  "os"
-
-  api "github.com/seamapi/go"
-  seam "github.com/seamapi/go/client"
-)
-
-func main() {
-  if err := run(); err != nil {
-    _, _ = fmt.Fprintln(os.Stderr, err.Error())
-    os.Exit(1)
-  }
-}
-
-func run() error {
-  client := seam.NewClient(
-    seam.WithApiKey(SEAM_API_KEY),
-  )
-  
-  // Retrieve all devices, filtered by manufacturer,
-  // which is one of several filters that list() supports.
-  allAugustLocks, err := client.Devices.List(
-    context.Background(), &api.DevicesListRequest{
-      Manufacturer: api.ManufacturerAugust.Ptr(),
-    },
-  )
-  
-  // Select the first device as an example.
-  frontDoor := allAugustLocks[0]
-  
-  if err != nil {
-    return err
-  }
-
-  // Confirm that the device can remotely unlock.
-  // You're using a capability flag here!
-  if *frontDoor.CanRemotelyUnlock {
-    // Perform the unlock operation.
-    actionAttempt, err := client.Locks.UnlockDoor(
-      context.Background(),
-      &api.LocksUnlockDoorRequest{
-        DeviceId: frontDoor.DeviceId,
-      },
-    )
-  
-    if err != nil {
-      return err
-    }
-  }
-  
-  return nil
-}
-```
-
-**Output:**
-
-```json
-&{pending <nil>
-  {
-    "status": "pending",
-    "action_type": "UNLOCK_DOOR",
-    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
-    "result": null,
-    "error": null
-  }
-<nil>} <nil>
-```
-{% endtab %}
 {% endtabs %}
 
 ## Congrats! :tada:

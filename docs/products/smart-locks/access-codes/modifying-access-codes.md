@@ -162,34 +162,7 @@ void
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-startsAt, err := time.Parse(time.RFC3339, "2025-02-01T16:00:00Z")
-endsAt, err := time.Parse(time.RFC3339, "2025-02-22T12:00:00Z")
-if err != nil {
-  return err
-}
-
-client.AccessCodes.Update(
-  context.Background(),
-  &api.AccessCodesUpdateRequest{
-    AccessCodeId: api.String("11111111-1111-1111-1111-555555555555"),
-    Name: api.String("my updated code name"),
-    StartsAt: startsAt,
-    EndsAt: endsAt,
-    Code: api.String("5432"),
-  },
-)
-```
-
-**Output:**
-
-```json
-void
-```
-{% endtab %}
 {% endtabs %}
 
 ## 2. Verify that the access code has been updated
@@ -698,82 +671,7 @@ seam.accessCodes().get(AccessCodesGetRequest.builder()
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**1. Confirm that the access code starts as an ongoing code.**
 
-**Code:**
-
-```go
-client.AccessCodes.Get(
-  context.Background(),
-  &api.AccessCodesGetRequest{
-    AccessCodeId: api.String("11111111-1111-1111-1111-555555555555"),
-  },
-)
-```
-
-**Output:**
-
-```json
-{
-  "access_code_id" : "11111111-1111-1111-1111-555555555555",
-  "type" : "ongoing",
-  ...
-}
-```
-
-**2. Update the code to set `starts_at` and `ends_at` timestamps.**
-
-**Code:**
-
-```go
-startsAt, err := time.Parse(time.RFC3339, "2025-02-01T16:00:00Z")
-endsAt, err := time.Parse(time.RFC3339, "2025-02-22T12:00:00Z")
-if err != nil {
-  return err
-}
-
-client.AccessCodes.Update(
-  context.Background(),
-  &api.AccessCodesUpdateRequest{
-    AccessCodeId: api.String("11111111-1111-1111-1111-555555555555"),
-    StartsAt: startsAt,
-    EndsAt: endsAt,
-  },
-)
-```
-
-**Output:**
-
-```json
-void
-```
-
-**3. Confirm that the `type` has changed to `time_bound`.**
-
-**Code:**
-
-```go
-client.AccessCodes.Get(
-  context.Background(),
-  &api.AccessCodesGetRequest{
-    AccessCodeId: api.String("11111111-1111-1111-1111-555555555555"),
-  },
-)
-```
-
-**Output:**
-
-```json
-{
-  "access_code_id" : "11111111-1111-1111-1111-555555555555",
-  "type" : "time_bound",
-  "starts_at": "2025-02-01T16:00:00.000Z",
-  "ends_at": "2025-02-22T12:00:00.000Z",
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -1241,73 +1139,5 @@ seam.accessCodes().get(AccessCodesGetRequest.builder()
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**1. Confirm that the access code starts as a time-bound code.**
 
-**Code:**
-
-```go
-client.AccessCodes.Get(
-  context.Background(),
-  &api.AccessCodesGetRequest{
-    AccessCodeId: api.String("11111111-1111-1111-1111-555555555555"),
-  },
-)
-```
-
-**Output:**
-
-```json
-{
-  "access_code_id": "11111111-1111-1111-1111-555555555555",
-  "type": "time_bound",
-  "starts_at": "2025-02-01T16:00:00.000Z",
-  "ends_at": "2025-02-22T12:00:00.000Z",
-  ...
-}
-```
-
-**2. Update the code to set the `type` to `ongoing`.**
-
-**Code:**
-
-```go
-client.AccessCodes.Update(
-  context.Background(),
-  &api.AccessCodesUpdateRequest{
-    AccessCodeId: api.String("11111111-1111-1111-1111-555555555555"),
-    Type: api.AccessCodesUpdateRequestTypeOngoing.Ptr(),
-  },
-)
-```
-
-**Output:**
-
-```
-void
-```
-
-**3. Confirm that the `type` has changed to `ongoing` and the `starts_at` and `ends_at` are `None`.**
-
-**Code:**
-
-```go
-client.AccessCodes.Get(
-  context.Background(),
-  &api.AccessCodesGetRequest{
-    AccessCodeId: api.String("11111111-1111-1111-1111-555555555555"),
-  },
-)
-```
-
-**Output:**
-
-```json
-{
-  "access_code_id": "11111111-1111-1111-1111-555555555555",
-  "type": "ongoing",
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}

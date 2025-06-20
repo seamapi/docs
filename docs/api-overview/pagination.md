@@ -209,19 +209,7 @@ if ($pagination->has_next_page) {
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -539,19 +527,7 @@ if ($pagination->has_next_page) {
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -740,19 +716,7 @@ There are 5 devices on this page.
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -932,19 +896,7 @@ foreach ($pages->flatten() as $device) {
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -1161,17 +1113,5 @@ $deviecs = $pages->flattenToArray();
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}

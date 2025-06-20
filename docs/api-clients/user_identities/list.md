@@ -28,16 +28,7 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-```go
-userIdentities, err := client.UserIdentities.List(context.Background())
-if err != nil {
-    return err
-}
-fmt.Println(userIdentities)
-return nil
-```
-{% endtab %}
+
 {% endtabs %}
 
 ## Response

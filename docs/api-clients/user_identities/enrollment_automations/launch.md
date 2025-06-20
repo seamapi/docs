@@ -37,23 +37,7 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-```go
-enrollmentAutomation, uErr := client.UserIdentities.EnrollmentAutomations.Launch(context.Background(), &useridentities.EnrollmentAutomationsLaunchRequest{
-    UserIdentityId: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
-    CredentialManagerAcsSystemId: "6737e186-8d54-48ce-a7da-a0be4d252172",
-    AcsCredentialPoolId: api.String("3fa85f64-5717-4562-b3fc-2c963f66afa6"),
-    CreateCredentialManagerUser: api.Bool(true),
-})
 
-if uErr != nil {
-    return uErr
-}
-
-fmt.Println(enrollmentAutomation)
-return nil
-```
-{% endtab %}
 {% endtabs %}
 
 ## Response
