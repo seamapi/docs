@@ -200,35 +200,6 @@ $seam->acs->credentials->list_accessible_entrances(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import credentials "github.com/seamapi/go/credentials"
-
-func main() {
-	client.Acs.Credentials.ListAccessibleEntrances(
-		context.Background(),
-		credentials.CredentialsListAccessibleEntrancesRequest{
-			AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-[]api.AcsEntrance{api.AcsEntrance{AcsEntranceId: "55555555-5555-5555-5555-555555555555", AcsSystemId: "11111111-1111-1111-1111-111111111111", WorkspaceId: "00000000-0000-0000-0000-000000000000", VisionlineMetadata: api.AcsEntranceVisionlineMetadata{Profiles: []AcsEntranceVisionlineMetadataProfiles{api.AcsEntranceVisionlineMetadataProfilesProfiles{VisionlineDoorProfileId: "Guest Door", VisionlineDoorProfileType: "BLE"}}, DoorName: "Guest Lock 2", DoorCategory: "guest"}, LatchMetadata: nil, DisplayName: "Guest Lock 2", CreatedAt: "2024-03-26T14:31:18.979Z"}}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.

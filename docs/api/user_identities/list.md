@@ -152,27 +152,6 @@ $seam->user_identities->list();
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-To filter the list of user identities, specify the desired `credential_manager_acs_system_id`.
-
-#### Code
-
-```go
-package main
-
-func main() {
-	client.UserIdentities.List(context.Background())
-}
-```
-
-#### Output
-
-```go
-[]api.UserIdentity{api.UserIdentity{UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", UserIdentityKey: "jean_doe", EmailAddress: "jean@example.com", PhoneNumber: "+15555550110", DisplayName: "Jean Doe", FullName: "Jean Doe", CreatedAt: "2024-01-11T05:37:50.264Z", WorkspaceId: "398d80b7-3f96-47c2-b85a-6f8ba21d07be"}}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 To filter the list of user identities, specify the desired `credential_manager_acs_system_id`.

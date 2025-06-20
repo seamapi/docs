@@ -152,27 +152,6 @@ $seam->connected_accounts->list();
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-List all connected accounts.
-
-#### Code
-
-```go
-package main
-
-func main() {
-	client.ConnectedAccounts.List(context.Background())
-}
-```
-
-#### Output
-
-```go
-[]api.ConnectedAccount{api.ConnectedAccount{ConnectedAccountId: "23e4eb21-6e93-48c4-a077-bf503246d47c", CreatedAt: "2022-08-24T10:38:05.128Z", AccountType: "schlage"}, api.ConnectedAccount{ConnectedAccountId: "dc0df710-376c-4ec3-9b2b-2b7f788bdfa8", CreatedAt: "2022-07-04T08:40:02.110Z", AccountType: "kwikset"}}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 List all connected accounts.

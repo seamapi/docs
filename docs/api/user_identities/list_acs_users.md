@@ -178,34 +178,6 @@ $seam->user_identities->list_acs_users(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the desired `user_identity_id`.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.UserIdentities.ListAcsUsers(
-		context.Background(),
-		api.UserIdentitiesListAcsUsersRequest{
-			UserIdentityId: api.String("48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-[]api.AcsUser{api.AcsUser{AcsUserId: "4d223973-0874-4831-8630-bfcb29e6bce0", DisplayName: "Jean Doe", FullName: "Jean Doe", EmailAddress: "jean@example.com", AcsSystemId: "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4", WorkspaceId: "398d80b7-3f96-47c2-b85a-6f8ba21d07be", CreatedAt: "2024-01-11T05:45:41.349Z", IsSuspended: false, UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", UserIdentityEmailAddress: "jean@example.com", UserIdentityPhoneNumber: "+15555550110"}}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the desired `user_identity_id`.

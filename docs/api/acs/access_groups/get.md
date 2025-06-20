@@ -161,35 +161,6 @@ $seam->acs->access_groups->get(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `acs_access_group_id` of the access group that you want to retrieve.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import accessgroups "github.com/seamapi/go/accessgroups"
-
-func main() {
-	client.Acs.AccessGroups.Get(
-		context.Background(),
-		accessgroups.AccessGroupsGetRequest{
-			AcsAccessGroupId: api.String("44444444-4444-4444-4444-444444444444"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-api.AcsAccessGroup{AcsAccessGroupId: "44444444-4444-4444-4444-444444444444", Name: "Lobby Access", DisplayName: "Lobby Access", AccessGroupTypeDisplayName: "PTI access level", AccessGroupType: "pti_access_level", ExternalType: "pti_access_level", ExternalTypeDisplayName: "PTI access level", AcsSystemId: "11111111-1111-1111-1111-111111111111", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2023-11-30T06:27:15.437Z"}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the `acs_access_group_id` of the access group that you want to retrieve.

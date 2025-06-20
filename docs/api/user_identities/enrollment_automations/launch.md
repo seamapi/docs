@@ -167,38 +167,6 @@ $seam->user_identities->enrollment_automations->launch(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the desired `user_identity_id` and `credential_manager_acs_system_id`. You can also specify an `acs_credential_pool_id`. Either set `create_credential_manager_user` to `true` or specify the `credential_manager_acs_user_id`.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import enrollmentautomations "github.com/seamapi/go/enrollmentautomations"
-
-func main() {
-	client.UserIdentities.EnrollmentAutomations.Launch(
-		context.Background(),
-		enrollmentautomations.EnrollmentAutomationsLaunchRequest{
-			UserIdentityId:               api.String("5c945ab5-c75e-4bcb-8e5f-9410061c401f"),
-			CredentialManagerAcsSystemId: api.String("6737e186-8d54-48ce-a7da-a0be4d252172"),
-			AcsCredentialPoolId:          api.String("3fa85f64-5717-4562-b3fc-2c963f66afa6"),
-			CreateCredentialManagerUser:  api.Bool(true),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-api.EnrollmentAutomation{UserIdentityId: "5c945ab5-c75e-4bcb-8e5f-9410061c401f", EnrollmentAutomationId: "05505650-aa57-49ab-8f19-429738758895", AcsCredentialProvisioningAutomationId: "05505650-aa57-49ab-8f19-429738758895", CredentialManagerAcsSystemId: "6737e186-8d54-48ce-a7da-a0be4d252172", IsRunning: true, WorkspaceId: "398d80b7-3f96-47c2-b85a-6f8ba21d07be", CreatedAt: "2024-01-09T05:45:33.068Z"}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the desired `user_identity_id` and `credential_manager_acs_system_id`. You can also specify an `acs_credential_pool_id`. Either set `create_credential_manager_user` to `true` or specify the `credential_manager_acs_user_id`.

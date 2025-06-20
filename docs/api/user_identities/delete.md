@@ -103,34 +103,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the desired `user_identity_id`.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.UserIdentities.Delete(
-		context.Background(),
-		api.UserIdentitiesDeleteRequest{
-			UserIdentityId: api.String("44d48b20-0dbe-419d-91ca-ab8bceecd135"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the desired `user_identity_id`.
