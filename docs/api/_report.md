@@ -439,6 +439,7 @@ These items are deprecated.
 
 - `acs_credential_pool`: Not used.
 - `acs_credential_provisioning_automation`: Not used.
+- `enrollment_automation`: Will be removed. Instead, link the `user_identity` to the `acs_user` in the access system in which you want to issue credentials.
 
 ### Resource properties
 
