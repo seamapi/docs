@@ -2,7 +2,6 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
-- [Examples](#examples)
 
 Grants a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) access to a specified [device](../../core-concepts/devices/README.md).
 
@@ -191,9 +190,4 @@ ID of the user identity that you want to grant access to a device.
 ## Response
 
 void
-
-
----
-
-## Examples
 

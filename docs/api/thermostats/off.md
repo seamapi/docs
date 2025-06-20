@@ -2,7 +2,6 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
-- [Examples](#examples)
 
 Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to ["off" mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
 
@@ -201,9 +200,4 @@ ID of the thermostat device that you want to set to off mode.
 ## Response
 
 [action\_attempt](./)
-
-
----
-
-## Examples
 

@@ -2,7 +2,6 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
-- [Examples](#examples)
 
 Scans an encoded [acs_credential](../../../capability-guides/access-systems/managing-credentials.md) from a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 

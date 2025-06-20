@@ -5,7 +5,6 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
-- [Examples](#examples)
 
 Adds devices to a specific space.
 

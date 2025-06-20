@@ -2,7 +2,6 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
-- [Examples](#examples)
 
 Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
@@ -264,9 +263,4 @@ ID of the user identity for which you want to retrieve all access system users.
 ## Response
 
 Array of [acs\_users](./)
-
-
----
-
-## Examples
 

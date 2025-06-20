@@ -2,7 +2,6 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
-- [Examples](#examples)
 
 Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -304,9 +303,4 @@ ID of the user identity for which you want to retrieve all credentials.
 ## Response
 
 Array of [acs\_credentials](./)
-
-
----
-
-## Examples
 

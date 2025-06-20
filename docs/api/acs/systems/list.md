@@ -2,7 +2,6 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
-- [Examples](#examples)
 
 Returns a list of all [access systems](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -180,9 +179,4 @@ ID of the connected account by which you want to filter the list of access syste
 ## Response
 
 Array of [acs\_systems](./)
-
-
----
-
-## Examples
 

@@ -2,7 +2,6 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
-- [Examples](#examples)
 
 Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
@@ -237,9 +236,4 @@ ID of the access group for which you want to retrieve all accessible entrances.
 ## Response
 
 Array of [acs\_entrances](./)
-
-
----
-
-## Examples
 

@@ -2,7 +2,6 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
-- [Examples](#examples)
 
 Returns a specified [phone](../../capability-guides/mobile-access/managing-phones-for-a-user-identity.md).
 

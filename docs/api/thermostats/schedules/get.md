@@ -2,7 +2,6 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
-- [Examples](#examples)
 
 Returns a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
@@ -230,9 +229,4 @@ ID of the thermostat schedule that you want to get.
 ## Response
 
 [thermostat\_schedule](./)
-
-
----
-
-## Examples
 

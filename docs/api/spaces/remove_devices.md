@@ -5,7 +5,6 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
-- [Examples](#examples)
 
 Removes devices from a specific space.
 

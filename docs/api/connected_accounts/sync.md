@@ -2,7 +2,6 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
-- [Examples](#examples)
 
 Request a [connected account](../../core-concepts/connected-accounts/README.md) sync attempt for the specified `connected_account_id`.
 
@@ -177,9 +176,4 @@ ID of the connected account that you want to sync.
 ## Response
 
 void
-
-
----
-
-## Examples
 

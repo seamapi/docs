@@ -2,7 +2,6 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
-- [Examples](#examples)
 
 Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guides/thermostats).
 
@@ -398,9 +397,4 @@ Your own internal user ID for the user for which you want to list devices.
 ## Response
 
 Array of [devices](./)
-
-
----
-
-## Examples
 

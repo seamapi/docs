@@ -2,7 +2,6 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
-- [Examples](#examples)
 
 Updates the properties of a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
@@ -250,9 +249,4 @@ ID of the user identity that you want to update. You can only provide acs_user_i
 ## Response
 
 void
-
-
----
-
-## Examples
 

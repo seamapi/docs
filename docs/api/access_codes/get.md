@@ -2,7 +2,6 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
-- [Examples](#examples)
 
 Returns a specified [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 

@@ -5,7 +5,6 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
-- [Examples](#examples)
 
 Adds [entrances](../../capability-guides/access-systems/retrieving-entrance-details.md) to a specific space.
 

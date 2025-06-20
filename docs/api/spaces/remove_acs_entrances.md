@@ -5,7 +5,6 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
-- [Examples](#examples)
 
 Removes [entrances](../../capability-guides/access-systems/retrieving-entrance-details.md) from a specific space.
 

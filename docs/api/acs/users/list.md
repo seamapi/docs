@@ -2,7 +2,6 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
-- [Examples](#examples)
 
 Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
@@ -259,9 +258,4 @@ Phone number of the user identity for which you want to retrieve all access syst
 ## Response
 
 Array of [acs\_users](./)
-
-
----
-
-## Examples
 

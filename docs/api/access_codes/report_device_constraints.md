@@ -2,7 +2,6 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
-- [Examples](#examples)
 
 Enables you to report access code-related constraints for a device. Currently, supports reporting supported code length constraints for SmartThings devices.
 
