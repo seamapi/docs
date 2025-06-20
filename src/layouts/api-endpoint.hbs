@@ -5,7 +5,9 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
+{{#if additionalCodeSamples.length}}
 - [Examples](#examples)
+{{/if}}
 
 {{{description}}}
 
@@ -69,7 +71,7 @@ None
 
 {{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array of [{{response.escapedResourceType}}s](./){{else}}[{{response.escapedResourceType}}](./){{/if}}{{else}}void{{/if}}
 
-{{#if primaryCodeSample}}
+{{#if additionalCodeSamples.length}}
 
 ---
 
