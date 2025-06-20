@@ -1,8 +1,7 @@
 # Update a Connected Account
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Updates a [connected account](../../core-concepts/connected-accounts/README.md).
 
@@ -197,9 +196,4 @@ Custom metadata that you want to associate with the connected account. Supports 
 ## Response
 
 void
-
-
----
-
-## Examples
 

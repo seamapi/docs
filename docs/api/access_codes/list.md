@@ -1,8 +1,7 @@
 # List Access Codes
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Returns a list of all [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 

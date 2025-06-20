@@ -1,8 +1,7 @@
 # Delete a Thermostat Schedule
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Deletes a [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
@@ -179,9 +178,4 @@ ID of the thermostat schedule that you want to delete.
 ## Response
 
 void
-
-
----
-
-## Examples
 

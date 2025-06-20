@@ -1,8 +1,7 @@
 # Encode an Access Method
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Encodes an existing access method onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 

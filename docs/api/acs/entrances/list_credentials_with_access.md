@@ -1,8 +1,7 @@
 # List Credentials with Access to an Entrance
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md) with access to a specified [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
@@ -336,9 +335,4 @@ Possible enum values:
 ## Response
 
 Array of [acs\_credentials](./)
-
-
----
-
-## Examples
 

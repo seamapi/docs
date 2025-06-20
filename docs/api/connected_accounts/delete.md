@@ -1,8 +1,7 @@
 # Delete a Connected Account
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Deletes a specified [connected account](../../core-concepts/connected-accounts/README.md).
 
@@ -181,9 +180,4 @@ ID of the connected account that you want to delete.
 ## Response
 
 void
-
-
----
-
-## Examples
 

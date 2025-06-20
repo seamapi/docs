@@ -1,8 +1,7 @@
 # List Thermostat Schedules
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Returns a list of all [thermostat schedules](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
@@ -300,9 +299,4 @@ User identifier key by which to filter the list of returned thermostat schedules
 ## Response
 
 Array of [thermostat\_schedules](./)
-
-
----
-
-## Examples
 

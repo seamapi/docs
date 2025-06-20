@@ -1,8 +1,7 @@
 # List Access Groups
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
@@ -279,9 +278,4 @@ ID of the user identity for which you want to retrieve all access groups.
 ## Response
 
 Array of [acs\_access\_groups](./)
-
-
----
-
-## Examples
 

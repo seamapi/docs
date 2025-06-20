@@ -1,8 +1,7 @@
 # Delete a Climate Preset
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Deletes a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
@@ -191,9 +190,4 @@ ID of the thermostat device for which you want to delete a climate preset.
 ## Response
 
 void
-
-
----
-
-## Examples
 

@@ -1,8 +1,7 @@
 # Update a Thermostat Schedule
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Updates a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
@@ -223,9 +222,4 @@ Date and time at which the thermostat schedule starts, in [ISO 8601](https://www
 ## Response
 
 void
-
-
----
-
-## Examples
 

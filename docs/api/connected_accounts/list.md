@@ -1,8 +1,7 @@
 # List Connected Accounts
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Returns a list of all [connected accounts](../../core-concepts/connected-accounts/README.md).
 
@@ -250,9 +249,4 @@ Your user ID for the user by which you want to filter connected accounts.
 ## Response
 
 Array of [connected\_accounts](./)
-
-
----
-
-## Examples
 

@@ -1,8 +1,7 @@
 # Get a Connected Account
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Returns a specified [connected account](../../core-concepts/connected-accounts/README.md).
 
@@ -221,9 +220,4 @@ Email address associated with the connected account that you want to get.
 ## Response
 
 [connected\_account](./)
-
-
----
-
-## Examples
 

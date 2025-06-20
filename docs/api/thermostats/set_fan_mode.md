@@ -1,8 +1,7 @@
 # Set the Fan Mode Setting
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Sets the [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
@@ -222,9 +221,4 @@ ID of the thermostat device for which you want to set the fan mode.
 ## Response
 
 [action\_attempt](./)
-
-
----
-
-## Examples
 

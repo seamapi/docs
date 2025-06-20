@@ -1,8 +1,7 @@
 # Get a Phone
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Returns a specified [phone](../../capability-guides/mobile-access/managing-phones-for-a-user-identity.md).
 

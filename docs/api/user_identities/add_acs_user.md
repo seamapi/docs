@@ -1,8 +1,7 @@
 # Add an ACS User to a User Identity
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
@@ -191,9 +190,4 @@ ID of the user identity to which you want to add an access system user.
 ## Response
 
 void
-
-
----
-
-## Examples
 

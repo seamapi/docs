@@ -1,8 +1,7 @@
 # List User Identities
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Returns a list of all [user identities](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
@@ -229,9 +228,4 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Response
 
 Array of [user\_identitys](./)
-
-
----
-
-## Examples
 

@@ -1,8 +1,7 @@
 # Get an ACS User
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Returns a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
@@ -243,9 +242,4 @@ ID of the user identity that you want to get. You can only provide acs_user_id o
 ## Response
 
 [acs\_user](./)
-
-
----
-
-## Examples
 

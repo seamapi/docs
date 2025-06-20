@@ -1,8 +1,7 @@
 # List ACS Users in an Access Group
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
@@ -307,9 +306,4 @@ ID of the access group for which you want to retrieve all access system users.
 ## Response
 
 Array of [acs\_users](./)
-
-
----
-
-## Examples
 

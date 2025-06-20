@@ -1,8 +1,7 @@
 # List Compatible Credential Manager ACS Systems
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Returns a list of all credential manager systems that are compatible with a specified [access system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -183,9 +182,4 @@ ID of the access system for which you want to retrieve all compatible credential
 ## Response
 
 Array of [acs\_systems](./)
-
-
----
-
-## Examples
 

@@ -1,8 +1,7 @@
 # Get a Credential
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Returns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -239,9 +238,4 @@ ID of the credential that you want to get.
 ## Response
 
 [acs\_credential](./)
-
-
----
-
-## Examples
 

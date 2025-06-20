@@ -1,8 +1,7 @@
 # Delete an Access Code
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Deletes an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 

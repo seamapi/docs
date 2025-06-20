@@ -1,8 +1,7 @@
 # Get an Enrollment Automation
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Returns a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).
 
@@ -234,9 +233,4 @@ ID of the enrollment automation that you want to get.
 ## Response
 
 [enrollment\_automation](./)
-
-
----
-
-## Examples
 

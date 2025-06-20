@@ -1,8 +1,7 @@
 # List Enrollment Automations
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Returns a list of all [enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
@@ -246,9 +245,4 @@ ID of the user identity for which you want to retrieve enrollment automations.
 ## Response
 
 Array of [enrollment\_automations](./)
-
-
----
-
-## Examples
 

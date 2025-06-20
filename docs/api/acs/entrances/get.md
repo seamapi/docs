@@ -1,8 +1,7 @@
 # Get an Entrance
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Returns a specified [access system entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
@@ -208,9 +207,4 @@ ID of the entrance that you want to get.
 ## Response
 
 [acs\_entrance](./)
-
-
----
-
-## Examples
 
