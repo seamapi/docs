@@ -111,35 +111,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired fallback climate preset.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.SetFallbackClimatePreset(
-		context.Background(),
-		api.ThermostatsSetFallbackClimatePresetRequest{
-			DeviceId:         api.String("123e4567-e89b-12d3-a456-426614174000"),
-			ClimatePresetKey: api.String("eco"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired fallback climate preset.

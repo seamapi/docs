@@ -105,35 +105,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import schedules "github.com/seamapi/go/schedules"
-
-func main() {
-	client.Thermostats.Schedules.Delete(
-		context.Background(),
-		schedules.SchedulesDeleteRequest{
-			ThermostatScheduleId: api.String("89d3507e-60e3-4101-bd1b-ba066ec30ad4"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the `thermostat_schedule_id` of the desired thermostat schedule.

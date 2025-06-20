@@ -131,35 +131,6 @@ $seam->acs->entrances->get(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `acs_entrance_id` of the entrance that you want to retrieve.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import entrances "github.com/seamapi/go/entrances"
-
-func main() {
-	client.Acs.Entrances.Get(
-		context.Background(),
-		entrances.EntrancesGetRequest{
-			AcsEntranceId: api.String("123e4567-e89b-12d3-a456-426614174000"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-api.AcsEntrance{AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", AcsEntranceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "text"}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the `acs_entrance_id` of the entrance that you want to retrieve.

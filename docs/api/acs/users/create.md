@@ -171,38 +171,6 @@ $seam->acs->users->create(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import users "github.com/seamapi/go/users"
-
-func main() {
-	client.Acs.Users.Create(
-		context.Background(),
-		users.UsersCreateRequest{
-			AcsSystemId:  api.String("123e4567-e89b-12d3-a456-426614174000"),
-			FullName:     api.String("Jane Doe"),
-			EmailAddress: api.String("jane@example.com"),
-			PhoneNumber:  api.String("+15555550100"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "Jane Doe", FullName: "Jane Doe", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100"}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
@@ -512,39 +480,6 @@ $seam->acs->users->create(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import users "github.com/seamapi/go/users"
-
-func main() {
-	client.Acs.Users.Create(
-		context.Background(),
-		users.UsersCreateRequest{
-			AcsSystemId:    api.String("123e4567-e89b-12d3-a456-426614174000"),
-			FullName:       api.String("Jane Doe"),
-			EmailAddress:   api.String("jane@example.com"),
-			PhoneNumber:    api.String("+15555550100"),
-			AccessSchedule: users.UsersCreateRequestAccessSchedule{StartsAt: api.String("2024-11-01T15:00:00.000Z"), EndsAt: api.String("2024-11-04T11:00:00.000Z")},
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "Jane Doe", FullName: "Jane Doe", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100"}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 
@@ -746,39 +681,6 @@ $seam->acs->users->create(
     "email_address" => "jane@example.com",
     "phone_number" => "+15555550100",
 ];
-```
-{% endtab %}
-
-{% tab title="Go" %}
-
-
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import users "github.com/seamapi/go/users"
-
-func main() {
-	client.Acs.Users.Create(
-		context.Background(),
-		users.UsersCreateRequest{
-			AcsSystemId:       api.String("123e4567-e89b-12d3-a456-426614174000"),
-			FullName:          api.String("Jane Doe"),
-			EmailAddress:      api.String("jane@example.com"),
-			PhoneNumber:       api.String("+15555550100"),
-			AcsAccessGroupIds: [1]string{api.String("123e4567-e89b-12d3-a456-426614174000")},
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "Jane Doe", FullName: "Jane Doe", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100"}
 ```
 {% endtab %}
 

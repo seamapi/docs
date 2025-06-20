@@ -134,35 +134,6 @@ $seam->thermostats->activate_climate_preset(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.ActivateClimatePreset(
-		context.Background(),
-		api.ThermostatsActivateClimatePresetRequest{
-			DeviceId:         api.String("123e4567-e89b-12d3-a456-426614174000"),
-			ClimatePresetKey: api.String("occupied"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-api.ActionAttempt{ActionAttemptId: "05de2295-d1dc-4748-aae3-9931658bde20", Status: "pending", ActionType: "ACTIVATE_CLIMATE_PRESET"}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.

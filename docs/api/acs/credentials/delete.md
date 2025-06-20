@@ -103,35 +103,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the desired `acs_credential_id` to delete the specified credential.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import credentials "github.com/seamapi/go/credentials"
-
-func main() {
-	client.Acs.Credentials.Delete(
-		context.Background(),
-		credentials.CredentialsDeleteRequest{
-			AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the desired `acs_credential_id` to delete the specified credential.

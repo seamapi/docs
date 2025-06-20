@@ -122,37 +122,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.UpdateClimatePreset(
-		context.Background(),
-		api.ThermostatsUpdateClimatePresetRequest{
-			DeviceId:               api.String("123e4567-e89b-12d3-a456-426614174000"),
-			ClimatePresetKey:       api.String("occupied"),
-			CoolingSetPointCelsius: api.Float64(24),
-			ManualOverrideAllowed:  api.Bool(true),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.

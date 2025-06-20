@@ -112,36 +112,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `acs_access_group_id` and `acs_user_id` to remove an ACS user from an access group.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import accessgroups "github.com/seamapi/go/accessgroups"
-
-func main() {
-	client.Acs.AccessGroups.RemoveUser(
-		context.Background(),
-		accessgroups.AccessGroupsRemoveUserRequest{
-			AcsAccessGroupId: api.String("44444444-4444-4444-4444-444444444444"),
-			AcsUserId:        api.String("33333333-3333-3333-3333-333333333333"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the `acs_access_group_id` and `acs_user_id` to remove an ACS user from an access group.

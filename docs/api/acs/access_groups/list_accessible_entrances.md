@@ -155,35 +155,6 @@ $seam->acs->access_groups->list_accessible_entrances(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import accessgroups "github.com/seamapi/go/accessgroups"
-
-func main() {
-	client.Acs.AccessGroups.ListAccessibleEntrances(
-		context.Background(),
-		accessgroups.AccessGroupsListAccessibleEntrancesRequest{
-			AcsAccessGroupId: api.String("44444444-4444-4444-4444-444444444444"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-[]api.AcsEntrance{api.AcsEntrance{AcsEntranceId: "66666666-6666-6666-6666-666666666666", Name: "Main Entrance", DisplayName: "Main Entrance", AcsSystemId: "11111111-1111-1111-1111-111111111111", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2024-10-15T12:00:00.000Z"}}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.

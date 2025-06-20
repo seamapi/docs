@@ -112,36 +112,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import users "github.com/seamapi/go/users"
-
-func main() {
-	client.Acs.Users.RemoveFromAccessGroup(
-		context.Background(),
-		users.UsersRemoveFromAccessGroupRequest{
-			AcsUserId:        api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
-			AcsAccessGroupId: api.String("123e4567-e89b-12d3-a456-426614174000"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).

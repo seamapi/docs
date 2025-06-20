@@ -107,35 +107,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the desired `enrollment_automation_id`.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import enrollmentautomations "github.com/seamapi/go/enrollmentautomations"
-
-func main() {
-	client.UserIdentities.EnrollmentAutomations.Delete(
-		context.Background(),
-		enrollmentautomations.EnrollmentAutomationsDeleteRequest{
-			EnrollmentAutomationId: api.String("05505650-aa57-49ab-8f19-429738758895"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the desired `enrollment_automation_id`.

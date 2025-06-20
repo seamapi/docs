@@ -226,35 +226,6 @@ $seam->acs->entrances->list_credentials_with_access(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import entrances "github.com/seamapi/go/entrances"
-
-func main() {
-	client.Acs.Entrances.ListCredentialsWithAccess(
-		context.Background(),
-		entrances.EntrancesListCredentialsWithAccessRequest{
-			AcsEntranceId: api.String("123e4567-e89b-12d3-a456-426614174000"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-[]api.AcsCredential{api.AcsCredential{AcsCredentialId: "123e4567-e89b-12d3-a456-426614174000", AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsCredentialPoolId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", ParentAcsCredentialId: "123e4567-e89b-12d3-a456-426614174000", DisplayName: "text", Code: "text", CardNumber: "text", IsIssued: false, IssuedAt: "2024-10-15T12:54:04.155Z", AccessMethod: "code", ExternalType: "pti_card", ExternalTypeDisplayName: "text", CreatedAt: "2024-10-15T12:54:04.155Z", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", StartsAt: "text", EndsAt: "text", IsMultiPhoneSyncCredential: false, IsLatestDesiredStateSyncedWithProvider: false, LatestDesiredStateSyncedWithProviderAt: "2024-10-15T12:54:04.155Z"}}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.

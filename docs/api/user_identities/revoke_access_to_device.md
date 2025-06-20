@@ -112,35 +112,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the desired `user_identity_id` and `device_id`.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.UserIdentities.RevokeAccessToDevice(
-		context.Background(),
-		api.UserIdentitiesRevokeAccessToDeviceRequest{
-			UserIdentityId: api.String("f3a328b4-dd04-4370-9000-d52b7a01b0bf"),
-			DeviceId:       api.String("054765c8-a2fc-4599-b486-14c19f462c45"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the desired `user_identity_id` and `device_id`.

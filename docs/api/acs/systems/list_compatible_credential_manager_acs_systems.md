@@ -110,35 +110,6 @@ $seam->acs->systems->list_compatible_credential_manager_acs_systems(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `acs_system_id` for which you want to retrieve all compatible credential manager ACS systems.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import systems "github.com/seamapi/go/systems"
-
-func main() {
-	client.Acs.Systems.ListCompatibleCredentialManagerAcsSystems(
-		context.Background(),
-		systems.SystemsListCompatibleCredentialManagerAcsSystemsRequest{
-			AcsSystemId: api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-[]api.AcsSystem{api.AcsSystem{AcsSystemId: "aczp0sgx-gl9f-nygd-r11e-7pc1zufn55z4"}}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the `acs_system_id` for which you want to retrieve all compatible credential manager ACS systems.

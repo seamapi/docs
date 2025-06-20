@@ -205,41 +205,6 @@ $seam->acs->credentials->create(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `acs_user_id` and `access_method` to create a new credential. You can also specify additional parameters, depending on the `access_method`.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import credentials "github.com/seamapi/go/credentials"
-
-func main() {
-	client.Acs.Credentials.Create(
-		context.Background(),
-		credentials.CredentialsCreateRequest{
-			AcsUserId:                    api.String("33333333-3333-3333-3333-333333333333"),
-			AccessMethod:                 api.String("mobile_key"),
-			AllowedAcsEntranceIds:        [2]string{api.String("55555555-5555-5555-5555-555555555555"), api.String("55555555-5555-5555-5555-000000000000")},
-			CredentialManagerAcsSystemId: api.String("88888888-8888-8888-8888-888888888888"),
-			IsMultiPhoneSyncCredential:   api.Bool(true),
-			StartsAt:                     api.String("2024-03-01T10:40:00Z"),
-			EndsAt:                       api.String("2024-03-04T10:40:00Z"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUserId: "33333333-3333-3333-3333-333333333333", DisplayName: "Multi Phone Sync Credential", Code: nil, AcsSystemId: "88888888-8888-8888-8888-888888888888", AccessMethod: "mobile_key", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2024-04-12T03:56:22.396Z", IsMultiPhoneSyncCredential: true}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the `acs_user_id` and `access_method` to create a new credential. You can also specify additional parameters, depending on the `access_method`.

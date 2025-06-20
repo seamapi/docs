@@ -168,34 +168,6 @@ $seam->user_identities->list_acs_systems(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the desired `user_identity_id`.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.UserIdentities.ListAcsSystems(
-		context.Background(),
-		api.UserIdentitiesListAcsSystemsRequest{
-			UserIdentityId: api.String("5c945ab5-c75e-4bcb-8e5f-9410061c401f"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-[]api.AcsSystem{api.AcsSystem{AcsSystemId: "6737e186-8d54-48ce-a7da-a0be4d252172", Name: "Assa Abloy Credential Service", WorkspaceId: "398d80b7-3f96-47c2-b85a-6f8ba21d07be", CreatedAt: "2024-01-05T07:16:51.971Z", SystemType: "assa_abloy_credential_service", SystemTypeDisplayName: "Assa Abloy Credential Service", ExternalType: "assa_abloy_credential_service", ExternalTypeDisplayName: "Assa Abloy Credential Service", ConnectedAccountIds: []string{"dc08066f-d9b8-42f0-9c4b-c781cd900153"}}}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the desired `user_identity_id`.

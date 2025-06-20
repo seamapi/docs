@@ -217,27 +217,6 @@ $seam->thermostats->list();
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-To filter the list of returned thermostats, specify the desired parameters.
-
-#### Code
-
-```go
-package main
-
-func main() {
-	client.Thermostats.List(context.Background())
-}
-```
-
-#### Output
-
-```go
-[]api.Device{api.Device{DeviceId: "123e4567-e89b-12d3-a456-426614174000", DeviceType: "ecobee_thermostat", CapabilitiesSupported: []string{"thermostat"}, Properties: api.DeviceProperties{Name: "Entryway", Online: "true,", RelativeHumidity: 0.36, TemperatureFarenheit: 70, AvailableHvacModeSettings: []string{"cool", "heat", "heat_cool", "off"}, CurrentClimateSetting: api.DevicePropertiesCurrentClimateSetting{HvacModeSetting: "heat_cool", CoolingSetPointFarenheit: 75, HeatingSetPointFarenheit: 65, ManualOverrideAllowed: false}, Location: nil, ConnectedAccountId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z"}}}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 To filter the list of returned thermostats, specify the desired parameters.

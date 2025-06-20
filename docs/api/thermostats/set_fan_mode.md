@@ -134,35 +134,6 @@ $seam->thermostats->set_fan_mode(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the desired fan mode setting.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.SetFanMode(
-		context.Background(),
-		api.ThermostatsSetFanModeRequest{
-			DeviceId:       api.String("123e4567-e89b-12d3-a456-426614174000"),
-			FanModeSetting: api.String("auto"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Status: "pending", ActionType: "SET_FAN_MODE"}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the desired fan mode setting.

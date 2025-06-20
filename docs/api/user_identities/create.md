@@ -170,37 +170,6 @@ $seam->user_identities->create(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify one or more of the unique `user_identity_key`, `email_address`, or `phone_number`. You can also specify the `full_name` of the user associated with the `user_identity`.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.UserIdentities.Create(
-		context.Background(),
-		api.UserIdentitiesCreateRequest{
-			UserIdentityKey: api.String("jean_doe"),
-			EmailAddress:    api.String("jean@example.com"),
-			PhoneNumber:     api.String("+15555550110"),
-			FullName:        api.String("Jean Doe"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-api.UserIdentity{UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", UserIdentityKey: "jean_doe", EmailAddress: "jean@example.com", PhoneNumber: "+15555550110", DisplayName: "Jean Doe", FullName: "Jean Doe", CreatedAt: "2024-01-11T05:37:50.264Z", WorkspaceId: "398d80b7-3f96-47c2-b85a-6f8ba21d07be"}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify one or more of the unique `user_identity_key`, `email_address`, or `phone_number`. You can also specify the `full_name` of the user associated with the `user_identity`.

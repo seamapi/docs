@@ -134,35 +134,6 @@ $seam->thermostats->cool(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the desired cooling set point in °C or °F.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.Cool(
-		context.Background(),
-		api.ThermostatsCoolRequest{
-			DeviceId:               api.String("123e4567-e89b-12d3-a456-426614174000"),
-			CoolingSetPointCelsius: api.Float64(25),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Status: "pending", ActionType: "SET_COOL"}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the desired cooling set point in °C or °F.

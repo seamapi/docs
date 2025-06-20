@@ -213,35 +213,6 @@ $seam->acs->access_groups->list_users(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `acs_access_group_id` to retrieve all ACS users in an access group.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import accessgroups "github.com/seamapi/go/accessgroups"
-
-func main() {
-	client.Acs.AccessGroups.ListUsers(
-		context.Background(),
-		accessgroups.AccessGroupsListUsersRequest{
-			AcsAccessGroupId: api.String("44444444-4444-4444-4444-444444444444"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-[]api.AcsUser{api.AcsUser{AcsUserId: "33333333-3333-3333-3333-333333333333", DisplayName: "Jane Doe", FullName: "Jane Doe", Email: "jane@example.com", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100", AcsSystemId: "11111111-1111-1111-1111-111111111111", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2024-04-05T07:14:28.531Z", IsSuspended: false, AccessSchedule: api.AcsUserAccessSchedule{StartsAt: "2024-03-01T10:40:00.000Z", EndsAt: "2024-03-04T10:40:00.000Z"}, UserIdentityId: "22222222-2222-2222-2222-222222222222", UserIdentityFullName: "Jane Doe", UserIdentityEmailAddress: "jane@example.com", UserIdentityPhoneNumber: "+15555550100"}}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the `acs_access_group_id` to retrieve all ACS users in an access group.

@@ -112,36 +112,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import credentials "github.com/seamapi/go/credentials"
-
-func main() {
-	client.Acs.Credentials.Unassign(
-		context.Background(),
-		credentials.CredentialsUnassignRequest{
-			AcsUserId:       api.String("33333333-3333-3333-3333-333333333333"),
-			AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.

@@ -106,35 +106,6 @@ $seam->acs->systems->list(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-To filter the list of ACS systems, include a `connected_account_id`.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import systems "github.com/seamapi/go/systems"
-
-func main() {
-	client.Acs.Systems.List(
-		context.Background(),
-		systems.SystemsListRequest{
-			ConnectedAccountId: api.String("123e4567-e89b-12d3-a456-426614174000"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-[]api.AcsSystem{api.AcsSystem{AcsSystemId: "8d7e0b3a-b889-49a7-9164-4b71a0506a33"}}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 To filter the list of ACS systems, include a `connected_account_id`.

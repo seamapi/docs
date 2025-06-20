@@ -105,34 +105,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Request an on-demand sync of the devices and systems in a connected account.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.ConnectedAccounts.Sync(
-		context.Background(),
-		api.ConnectedAccountsSyncRequest{
-			ConnectedAccountId: api.String("23e4eb21-6e93-48c4-a077-bf503246d47c"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Request an on-demand sync of the devices and systems in a connected account.
