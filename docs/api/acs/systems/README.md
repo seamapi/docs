@@ -608,11 +608,15 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 ## Errors
 
-**`seam_bridge_disconnected`**
+**`account_disconnected`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
-  This error might also occur if Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/README.md).
-  See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) to restore access.
+
+---
+
+**`acs_system_disconnected`**
+
+Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md) to resolve the issue.
 
 ---
 
@@ -623,11 +627,9 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capab
 
 ---
 
-**`visionline_instance_unreachable`**
+**`salto_ks_certification_expired`**
 
-Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/README.md).
-  For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](../../../core-concepts/workspaces/README.md).
-  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
+Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.
 
 ---
 
@@ -637,21 +639,19 @@ Indicates that the maximum number of users allowed for the site has been reached
 
 ---
 
-**`acs_system_disconnected`**
+**`seam_bridge_disconnected`**
 
-Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md) to resolve the issue.
-
----
-
-**`account_disconnected`**
-
-Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) to restore access.
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
+  This error might also occur if Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/README.md).
+  See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
 ---
 
-**`salto_ks_certification_expired`**
+**`visionline_instance_unreachable`**
 
-Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.
+Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/README.md).
+  For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](../../../core-concepts/workspaces/README.md).
+  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
 
 ---
 

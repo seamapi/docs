@@ -417,6 +417,7 @@ These items have been marked as draft.
 - `/access_grants/delete`: Early access.
 - `/access_grants/get`: Early access.
 - `/access_grants/list`: Early access.
+- `/access_grants/update`: Early access.
 - `/access_methods/delete`: Early access.
 - `/access_methods/get`: Early access.
 - `/access_methods/list`: Early access.
@@ -551,6 +552,7 @@ These items are deprecated.
 - `/access_grants/delete`
 - `/access_grants/get`
 - `/access_grants/list`
+- `/access_grants/update`
 - `/access_methods/delete`
 - `/access_methods/get`
 - `/access_methods/list`
