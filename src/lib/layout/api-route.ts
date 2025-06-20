@@ -39,6 +39,7 @@ interface ApiRouteEvent {
 
 interface ResourceSampleContext {
   title: string
+  description: string
   resourceData: string
   resourceDataSyntax: SyntaxName
 }
@@ -521,6 +522,7 @@ const mapResourceSample = (sample: ResourceSample): ResourceSampleContext => {
 
   return {
     title: sample.title,
+    description: sample.description,
     resourceData: jsonSample.resource_data,
     resourceDataSyntax: jsonSample.resource_data_syntax,
   }

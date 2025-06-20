@@ -21,6 +21,30 @@ Not all providers support unmanaged access codes. The following providers do not
 
 - [Kwikset](https://docs.seam.co/latest/device-and-system-integration-guides/kwikset-locks)
 
+{% tabs %}
+{% tab title="Unmanaged Access Code" %}
+
+An unmanaged access code resource.
+
+```json
+{
+  "access_code_id": "88fa1812-bef8-4108-9fb4-4855376c3edf",
+  "code": "1234",
+  "created_at": "2025-06-16T16:54:17.946283Z",
+  "device_id": "b3439f17-7273-46f3-9e20-9a283d9cb5b4",
+  "ends_at": "2025-06-23T16:54:17.946261Z",
+  "errors": [],
+  "is_managed": false,
+  "name": "My Unmanaged Access Code",
+  "starts_at": "2025-06-21T16:54:17.946261Z",
+  "status": "set",
+  "type": "time_bound",
+  "warnings": []
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ---
 ## Properties
 
@@ -1540,9 +1564,7 @@ Indicates that device credentials are missing.
 <details>
 <summary><code>auxiliary_heat_running</code></summary>
 
-
-    Indicates that the auxiliary heat is running.
-    
+Indicates that the auxiliary heat is running.
 
   **`created_at`** *Datetime*
   
@@ -2216,216 +2238,6 @@ Unable to confirm that the access code is set on Kwikset device.
 
 ## Errors
 
-### Access Codes
-**`empty_backup_access_code_pool`**
-
-Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
-
----
-
-### Locks
-**`august_lock_missing_bridge`**
-
-Indicates that the lock is not connected to a bridge.
-
----
-
-**`august_lock_not_authorized`**
-
-Indicates that the user is not authorized to use the August lock.
-
----
-
-**`salto_ks_subscription_limit_exceeded`**
-
-Indicates that the Salto site user limit has been reached.
-
----
-
-**`account_disconnected`**
-
-Indicates that the account is disconnected.
-
----
-
-**`august_device_programming_delay`**
-
-Access code has not yet been fully moved to the device.
-
----
-
-**`august_device_slots_full`**
-
-All access code slots on the device are full.
-
----
-
-**`august_lock_invalid_code_length`**
-
-Invalid code length for August lock.
-
----
-
-**`august_lock_missing_keypad`**
-
-August lock is missing a keypad.
-
----
-
-**`august_lock_temporarily_offline`**
-
-August lock is temporarily offline.
-
----
-
-**`auxiliary_heat_running`**
-
-
-    Indicates that the auxiliary heat is running.
-    
-
----
-
-**`bridge_disconnected`**
-
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
-
----
-
-**`code_modified_external_to_seam`**
-
-Code was modified or removed externally after Seam successfully set it on the device.
-
----
-
-**`device_disconnected`**
-
-Indicates that the device is disconnected.
-
----
-
-**`device_offline`**
-
-Indicates that the device is offline.
-
----
-
-**`device_removed`**
-
-Indicates that the device has been removed.
-
----
-
-**`dormakaba_oracode_no_valid_user_level`**
-
-No valid user level for Oracode.
-
----
-
-**`duplicate_code_attempt_prevented`**
-
-An attempt to modify this access code was prevented.
-
----
-
-**`duplicate_code_on_device`**
-
-Duplicate access code detected on device.
-
----
-
-**`failed_to_remove_from_device`**
-
-Failed to remove code from device.
-
----
-
-**`failed_to_set_on_device`**
-
-Failed to set code on device.
-
----
-
-**`hub_disconnected`**
-
-Indicates that the hub is disconnected.
-
----
-
-**`hubitat_device_programming_delay`**
-
-Access code has not yet been fully moved to the device.
-
----
-
-**`hubitat_no_free_positions_available`**
-
-No free positions available on the device.
-
----
-
-**`igloohome_bridge_offline`**
-
-Igloohome bridge is offline.
-
----
-
-**`igloohome_bridge_too_many_pending_jobs`**
-
-Igloohome bridge has too many pending jobs in the queue.
-
----
-
-**`igloohome_offline_access_code_no_variance_available`**
-
-Lock has reached maximum amount of codes.
-
----
-
-**`invalid_credentials`**
-
-Indicates that the credentials provided were invalid.
-
----
-
-**`kwikset_unable_to_confirm_code`**
-
-Unable to confirm that the access code is set on Kwikset device.
-
----
-
-**`kwikset_unable_to_confirm_deletion`**
-
-Unable to confirm the deletion of the access code on Kwikset device.
-
----
-
-**`lockly_missing_wifi_bridge`**
-
-
-    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
-    
-
----
-
-**`missing_device_credentials`**
-
-Indicates that device credentials are missing.
-
----
-
-**`no_space_for_access_code_on_device`**
-
-No space for access code on device.
-
----
-
-**`salto_ks_user_not_subscribed`**
-
-Salto site user is not subscribed.
-
----
-
 **`smartthings_failed_to_set_access_code`**
 
 Failed to set code on SmartThings device.
@@ -2444,17 +2256,117 @@ No free slots available on the device.
 
 ---
 
-**`subscription_required`**
+**`failed_to_set_on_device`**
 
-Indicates that a subscription is required to connect.
+Failed to set code on device.
 
 ---
 
-**`ttlock_lock_not_paired_to_gateway`**
+**`failed_to_remove_from_device`**
 
+Failed to remove code from device.
 
-    Indicates that the lock is not paired with a gateway.
-    
+---
+
+**`duplicate_code_on_device`**
+
+Duplicate access code detected on device.
+
+---
+
+**`duplicate_code_attempt_prevented`**
+
+An attempt to modify this access code was prevented.
+
+---
+
+**`no_space_for_access_code_on_device`**
+
+No space for access code on device.
+
+---
+
+**`igloohome_bridge_too_many_pending_jobs`**
+
+Igloohome bridge has too many pending jobs in the queue.
+
+---
+
+**`igloohome_bridge_offline`**
+
+Igloohome bridge is offline.
+
+---
+
+**`igloohome_offline_access_code_no_variance_available`**
+
+Lock has reached maximum amount of codes.
+
+---
+
+**`kwikset_unable_to_confirm_code`**
+
+Unable to confirm that the access code is set on Kwikset device.
+
+---
+
+**`kwikset_unable_to_confirm_deletion`**
+
+Unable to confirm the deletion of the access code on Kwikset device.
+
+---
+
+**`code_modified_external_to_seam`**
+
+Code was modified or removed externally after Seam successfully set it on the device.
+
+---
+
+**`august_lock_invalid_code_length`**
+
+Invalid code length for August lock.
+
+---
+
+**`august_device_programming_delay`**
+
+Access code has not yet been fully moved to the device.
+
+---
+
+**`august_device_slots_full`**
+
+All access code slots on the device are full.
+
+---
+
+**`august_lock_missing_keypad`**
+
+August lock is missing a keypad.
+
+---
+
+**`august_lock_temporarily_offline`**
+
+August lock is temporarily offline.
+
+---
+
+**`salto_ks_user_not_subscribed`**
+
+Salto site user is not subscribed.
+
+---
+
+**`hubitat_device_programming_delay`**
+
+Access code has not yet been fully moved to the device.
+
+---
+
+**`hubitat_no_free_positions_available`**
+
+No free positions available on the device.
 
 ---
 
@@ -2470,8 +2382,156 @@ Potential duplicate access code detected.
 
 ---
 
+**`dormakaba_oracode_no_valid_user_level`**
+
+No valid user level for Oracode.
+
+---
+
+**`account_disconnected`**
+
+Indicates that the account is disconnected.
+
+---
+
+**`salto_ks_subscription_limit_exceeded`**
+
+Indicates that the Salto site user limit has been reached.
+
+---
+
+**`device_offline`**
+
+Indicates that the device is offline.
+
+---
+
+**`device_removed`**
+
+Indicates that the device has been removed.
+
+---
+
+**`hub_disconnected`**
+
+Indicates that the hub is disconnected.
+
+---
+
+**`device_disconnected`**
+
+Indicates that the device is disconnected.
+
+---
+
+**`empty_backup_access_code_pool`**
+
+Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
+
+---
+
+**`august_lock_not_authorized`**
+
+Indicates that the user is not authorized to use the August lock.
+
+---
+
+**`august_lock_missing_bridge`**
+
+Indicates that the lock is not connected to a bridge.
+
+---
+
+**`ttlock_lock_not_paired_to_gateway`**
+
+
+    Indicates that the lock is not paired with a gateway.
+    
+
+---
+
+**`missing_device_credentials`**
+
+Indicates that device credentials are missing.
+
+---
+
+**`auxiliary_heat_running`**
+
+Indicates that the auxiliary heat is running.
+
+---
+
+**`subscription_required`**
+
+Indicates that a subscription is required to connect.
+
+---
+
+**`lockly_missing_wifi_bridge`**
+
+
+    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
+    
+
+---
+
+**`invalid_credentials`**
+
+Indicates that the credentials provided were invalid.
+
+---
+
+**`bridge_disconnected`**
+
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+
+---
+
 
 ## Warnings
+
+**`smartthings_failed_to_set_access_code`**
+
+Failed to set code on SmartThings device.
+
+---
+
+**`schlage_detected_duplicate`**
+
+Duplicate access code detected.
+
+---
+
+**`schlage_creation_outage`**
+
+Received an error when attempting to create this code.
+
+---
+
+**`code_modified_external_to_seam`**
+
+Code was modified or removed externally after Seam successfully set it on the device.
+
+---
+
+**`delay_in_setting_on_device`**
+
+Delay in setting code on device.
+
+---
+
+**`delay_in_removing_from_device`**
+
+Delay in removing code from device.
+
+---
+
+**`third_party_integration_detected`**
+
+Third-party integration detected that may cause access codes to fail.
+
+---
 
 **`august_device_programming_delay`**
 
@@ -2485,33 +2545,9 @@ August lock is temporarily offline.
 
 ---
 
-**`code_modified_external_to_seam`**
-
-Code was modified or removed externally after Seam successfully set it on the device.
-
----
-
-**`delay_in_removing_from_device`**
-
-Delay in removing code from device.
-
----
-
-**`delay_in_setting_on_device`**
-
-Delay in setting code on device.
-
----
-
 **`igloo_algopin_must_be_used_within_24_hours`**
 
 Algopins must be used within 24 hours.
-
----
-
-**`kwikset_unable_to_confirm_code`**
-
-Unable to confirm that the access code is set on Kwikset device.
 
 ---
 
@@ -2521,27 +2557,9 @@ Management was transferred to another workspace.
 
 ---
 
-**`schlage_creation_outage`**
+**`kwikset_unable_to_confirm_code`**
 
-Received an error when attempting to create this code.
-
----
-
-**`schlage_detected_duplicate`**
-
-Duplicate access code detected.
-
----
-
-**`smartthings_failed_to_set_access_code`**
-
-Failed to set code on SmartThings device.
-
----
-
-**`third_party_integration_detected`**
-
-Third-party integration detected that may cause access codes to fail.
+Unable to confirm that the access code is set on Kwikset device.
 
 ---
 

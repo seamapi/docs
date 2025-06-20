@@ -11,6 +11,33 @@
 
 Represents a [connected account](../../core-concepts/connected-accounts/README.md). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks.
 
+{% tabs %}
+{% tab title="Connected Account" %}
+
+A connected account resource.
+
+```json
+{
+  "account_type": "salto_space",
+  "account_type_display_name": "Salto Space",
+  "automatically_manage_new_devices": true,
+  "connected_account_id": "a289aa54-5488-4707-9a4b-eeea4edf311d",
+  "created_at": "2025-06-15T16:54:17.946329Z",
+  "custom_metadata": { "id": "internalId1" },
+  "errors": [],
+  "user_identifier": {
+    "api_url": "https://example.com/api",
+    "email": "jane_doe@example.com",
+    "exclusive": true,
+    "phone": "+1555551004",
+    "username": "jane_doe"
+  },
+  "warnings": []
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ---
 ## Properties
 
@@ -501,15 +528,15 @@ Indicates that the account is disconnected.
 
 ---
 
-**`bridge_disconnected`**
-
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
-
----
-
 **`invalid_credentials`**
 
 Indicates that the credentials provided were invalid.
+
+---
+
+**`bridge_disconnected`**
+
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
 ---
 
@@ -522,12 +549,6 @@ Indicates that the maximum number of users allowed for the site has been reached
 
 ## Warnings
 
-**`salto_ks_subscription_limit_almost_reached`**
-
-Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.
-
----
-
 **`scheduled_maintenance_window`**
 
 Indicates that scheduled downtime is planned for the connected account.
@@ -537,6 +558,12 @@ Indicates that scheduled downtime is planned for the connected account.
 **`unknown_issue_with_connected_account`**
 
 Indicates that an unknown issue occurred while syncing the state of the connected account with the provider. This issue may affect the proper functioning of one or more resources in the account.
+
+---
+
+**`salto_ks_subscription_limit_almost_reached`**
+
+Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.
 
 ---
 

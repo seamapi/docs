@@ -2,7 +2,7 @@
 
 - [Properties](./#properties)
 {{#if legacyPropertyGroups}}
-- [`{{name}}.properties`](./#{{name}}.properties)
+- [{{name}}.properties](./#{{name}}.properties)
 {{/if}}
 - [Errors](./#errors)
 - [Warnings](./#warnings)
@@ -17,7 +17,10 @@
 
 {% tabs %}
 {{#each resourceSamples}}
-{% tab title="{{#if (eq this.resourceDataSyntax 'json')}}JSON{{else}}{{toCapitalCase this.resourceDataSyntax}}{{/if}}" %}
+{% tab title="{{this.title}}" %}
+
+{{this.description}}
+
 ```{{this.resourceDataSyntax}}
 {{{this.resourceData}}}
 ```
@@ -39,8 +42,7 @@
 {{/each}}
 {{#if legacyPropertyGroups}}
 
----
-## `{{name}}.properties`
+## {{name}}.properties
 
 {{#each legacyPropertyGroups}}
 {{#if name}}

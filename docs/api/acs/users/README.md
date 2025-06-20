@@ -15,6 +15,52 @@ An access system user typically refers to an individual who requires access, lik
 
 For details about how to configure users in your access system, see the corresponding [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems).
 
+{% tabs %}
+{% tab title="ACS User" %}
+
+An access system user resource.
+
+```json
+{
+  "access_schedule": {
+    "ends_at": "2025-06-12T11:00:00.000Z",
+    "starts_at": "2025-06-10T15:00:00.000Z"
+  },
+  "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+  "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+  "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+  "created_at": "2025-06-15T16:54:17.946482Z",
+  "display_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "errors": [],
+  "external_type": "salto_site_user",
+  "external_type_display_name": "Salto site user",
+  "full_name": "Jane Doe",
+  "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+  "is_managed": true,
+  "is_suspended": false,
+  "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+  "pending_mutations": [
+    {
+      "to": { "acs_access_group_id": "2c0fb4a0-2b42-4651-926e-1a10bedbf6ce" },
+      "from": { "acs_access_group_id": "f1e2d3c4-b5a6-4d7c-8e9f-0a1b2c3d4e5f" },
+      "message": "This user's access membership is being updated.",
+      "created_at": "2025-06-18T17:57:01.867Z",
+      "mutation_code": "updating_group_membership"
+    }
+  ],
+  "phone_number": "+1555551000",
+  "user_identity_email_address": "jane@example.com",
+  "user_identity_full_name": "Jane Doe",
+  "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+  "user_identity_phone_number": "+1555551000",
+  "warnings": [],
+  "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ---
 ## Properties
 
@@ -891,15 +937,15 @@ Indicates that the [access system user](https://docs.seam.co/latest/capability-g
 
 ---
 
-**`failed_to_create_on_acs_system`**
+**`salto_ks_subscription_limit_exceeded`**
 
-Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not created on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.
 
 ---
 
-**`failed_to_delete_on_acs_system`**
+**`failed_to_create_on_acs_system`**
 
-Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not deleted on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not created on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
 
 ---
 
@@ -909,15 +955,15 @@ Indicates that the [access system user](https://docs.seam.co/latest/capability-g
 
 ---
 
-**`latch_conflict_with_resident_user`**
+**`failed_to_delete_on_acs_system`**
 
-Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not deleted on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
 
 ---
 
-**`salto_ks_subscription_limit_exceeded`**
+**`latch_conflict_with_resident_user`**
 
-Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).
 
 ---
 
@@ -930,12 +976,6 @@ Indicates that the [access system user](https://docs.seam.co/latest/capability-g
 
 ---
 
-**`latch_resident_user`**
-
-Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created on Latch Mission Control. Please use the Latch Mission Control to manage this user.
-
----
-
 **`salto_ks_user_not_subscribed`**
 
 Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is not subscribed on Salto KS, so they cannot unlock doors or perform any actions. This occurs when the their access schedule hasn’t started yet, if their access schedule has ended, if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.
@@ -945,6 +985,12 @@ Indicates that the [access system user](https://docs.seam.co/latest/capability-g
 **`unknown_issue_with_acs_user`**
 
 An unknown issue occurred while syncing the state of this [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user.
+
+---
+
+**`latch_resident_user`**
+
+Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created on Latch Mission Control. Please use the Latch Mission Control to manage this user.
 
 ---
 

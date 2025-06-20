@@ -16,21 +16,29 @@ Within an `acs_system`, create [`acs_user`s](https://docs.seam.co/latest/api/acs
 For details about the resources associated with an access control system, see the [access control systems namespace](https://docs.seam.co/latest/api/acs).
 
 {% tabs %}
-{% tab title="JSON" %}
+{% tab title="ACS System" %}
+
+An access system resource.
+
 ```json
 {
-  "acs_system_id": "bbcea306-7201-4d85-b527-3abc55277203",
-  "name": "Salto KS Credential Manager",
-  "workspace_id": "bbcea306-7201-4d85-b527-3abc55277203",
-  "created_at": "2025-05-15T13:18:14.664Z",
-  "is_credential_manager": true,
-  "connected_account_ids": ["bbcea306-7201-4d85-b527-3abc55277203"],
-  "connected_account_id": "bbcea306-7201-4d85-b527-3abc55277203",
-  "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
-  "image_alt_text": "Salto KS site Logo",
+  "acs_access_group_count": 5,
+  "acs_system_id": "dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
+  "acs_user_count": 20,
+  "connected_account_id": "a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
+  "connected_account_ids": ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
+  "created_at": "2025-06-15T16:54:17.946425Z",
+  "default_credential_manager_acs_system_id": "5dde2def-3507-44f5-9521-7ca96aa4cd18",
   "errors": [],
+  "external_type": "salto_ks_site",
+  "external_type_display_name": "Salto KS site",
+  "image_alt_text": "Salto KS site Logo",
+  "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
+  "is_credential_manager": false,
+  "location": { "time_zone": "America/New_York" },
+  "name": "My ACS System",
   "warnings": [],
-  "location": { "time_zone": null }
+  "workspace_id": "172920be-1f4d-45d4-8519-ecc3bdee638f"
 }
 ```
 {% endtab %}
@@ -600,15 +608,11 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 ## Errors
 
-**`account_disconnected`**
+**`seam_bridge_disconnected`**
 
-Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) to restore access.
-
----
-
-**`acs_system_disconnected`**
-
-Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md) to resolve the issue.
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
+  This error might also occur if Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/README.md).
+  See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
 ---
 
@@ -619,9 +623,11 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capab
 
 ---
 
-**`salto_ks_certification_expired`**
+**`visionline_instance_unreachable`**
 
-Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.
+Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/README.md).
+  For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](../../../core-concepts/workspaces/README.md).
+  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
 
 ---
 
@@ -631,19 +637,21 @@ Indicates that the maximum number of users allowed for the site has been reached
 
 ---
 
-**`seam_bridge_disconnected`**
+**`acs_system_disconnected`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
-  This error might also occur if Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/README.md).
-  See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md) to resolve the issue.
 
 ---
 
-**`visionline_instance_unreachable`**
+**`account_disconnected`**
 
-Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/README.md).
-  For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](../../../core-concepts/workspaces/README.md).
-  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
+Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) to restore access.
+
+---
+
+**`salto_ks_certification_expired`**
+
+Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.
 
 ---
 
