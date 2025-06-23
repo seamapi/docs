@@ -189,19 +189,6 @@ Coming soon!
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Command:**
-
-```java
-Coming soon!
-```
-
-**Output:**
-
-```json
-Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -370,19 +357,6 @@ Coming soon!
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Command:**
-
-```java
-Coming soon!
-```
-
-**Output:**
-
-```json
-Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -873,19 +847,6 @@ Coming soon!
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Command:**
-
-```java
-Coming soon!
-```
-
-**Output:**
-
-```json
-Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}

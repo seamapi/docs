@@ -112,18 +112,6 @@ foreach (var device in devices)
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-```java
-Seam seam = Seam.builder()
-    // Specify PAT.
-    .apiKey(pat)
-    // Specify workspace ID.
-    .seamWorkspace(workspaceId)
-    .build();
-
-System.out.println(seam.devices().list());
-```
-{% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}

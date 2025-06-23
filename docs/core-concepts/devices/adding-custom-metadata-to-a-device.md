@@ -148,25 +148,6 @@ Console.WriteLine(deviceUpdate);
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-Map<String, CustomMetadataValue> customMetadata =
-    Map.of("internal_account_id", CustomMetadataValue.of(Optional.of("user-1")));
-
-seam.devices().update(DevicesUpdateRequest.builder()
-        .deviceId("30fd243b-3054-4384-a713-5487076a3826")
-        .custom_metadata(customMetadata)
-        .build());
-```
-
-**Response:**
-
-```json
-true
-```
-{% endtab %}
 
 
 {% endtabs %}

@@ -236,32 +236,6 @@ seam.ConnectWebviews.Create(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-seam.connectWebviews().create(ConnectWebviewsCreateRequest.builder()
-  .acceptedProviders(List.of(
-    AcceptedProvider.AUGUST,
-    AcceptedProvider.SCHLAGE))
-  .build());
-```
-
-**Response:**
-
-```json
-{
-  "connect_webview_id" : "172c1d65-8904-4d43-9eee-099780ba6558",
-  "status": "pending",
-  "url" : "https://connect.getseam.com/connect_webviews/view?connect_webview_id=172c1d65-8904-4d43-9eee-099780ba6558&auth_token=7hpz4wGsaphJmBcs2TKr4H3ZkGgmqpPma",
-  "accepted_providers" : [
-    "august",
-    "schlage"
-  ],
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***

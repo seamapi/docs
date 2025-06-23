@@ -262,40 +262,6 @@ Allow external modification: True
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-var deviceId = "6aae9d08-fed6-4ca5-8328-e36849ab48fe";
-
-AccessCode CreatedAccessCode = seam.accessCodes().create(AccessCodesCreateRequest.builder()
-        .deviceId(deviceId)
-        .name("my ongoing code")
-        .allowExternalModification(true)
-        .build());
-System.out.println(CreatedAccessCode);
-```
-
-**Response:**
-
-```json
-{
-  "is_scheduled_on_device" : false,
-  "type" : "ongoing",
-  "access_code_id" : "cd7f5b14-56e3-48b1-a351-9cab819eea6a",
-  "device_id" : "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
-  "name" : "my ongoing code",
-  "code" : "1234",
-  "created_at" : "2023-10-30T03:50:17.802Z",
-  "errors" : [ ],
-  "warnings" : [ ],
-  "is_managed" : "true",
-  "status" : "unset",
-  "is_backup_access_code_available" : false,
-  "is_external_modification_allowed" : true
-}
-```
-{% endtab %}
 {% endtabs %}
 
 

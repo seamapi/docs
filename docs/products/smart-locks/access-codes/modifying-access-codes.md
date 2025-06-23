@@ -142,25 +142,6 @@ void
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-seam.accessCodes().update(AccessCodesUpdateRequest.builder()
-  .accessCodeId("11111111-1111-1111-1111-555555555555")
-  .name("my updated code name")
-  .startsAt("2025-02-01T16:00:00Z")
-  .endsAt("2025-02-22T12:00:00Z")
-  .code("5432")
-  .build());
-```
-
-**Output:**
-
-```json
-void
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -609,67 +590,6 @@ seam.AccessCodes.Get(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**1. Confirm that the access code starts as an ongoing code.**
-
-**Code:**
-
-```java
-seam.accessCodes().get(AccessCodesGetRequest.builder()
-  .accessCodeId("11111111-1111-1111-1111-555555555555")
-  .build());
-```
-
-**Output:**
-
-```json
-{
-  "access_code_id" : "11111111-1111-1111-1111-555555555555",
-  "type" : "ongoing",
-  ...
-}
-```
-
-**2. Update the code to set `starts_at` and `ends_at` timestamps.**
-
-**Code:**
-
-```java
-seam.accessCodes().update(AccessCodesUpdateRequest.builder()
-  .accessCodeId("11111111-1111-1111-1111-555555555555")
-  .startsAt("2025-02-01T16:00:00Z")
-  .endsAt("2025-02-22T12:00:00Z")
-  .build());
-```
-
-**Output:**
-
-```json
-void
-```
-
-**3. Confirm that the `type` has changed to `time_bound`.**
-
-**Code:**
-
-```java
-seam.accessCodes().get(AccessCodesGetRequest.builder()
-  .accessCodeId("11111111-1111-1111-1111-555555555555")
-  .build());
-```
-
-**Output:**
-
-```json
-{
-  "access_code_id" : "11111111-1111-1111-1111-555555555555",
-  "type" : "time_bound",
-  "starts_at": "2025-02-01T16:00:00.000Z",
-  "ends_at": "2025-02-22T12:00:00.000Z",
-  ...
-}
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -1078,66 +998,6 @@ seam.AccessCodes.Get(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**1. Confirm that the access code starts as a time-bound code.**
-
-**Code:**
-
-```java
-seam.accessCodes().get(AccessCodesGetRequest.builder()
-  .accessCodeId("11111111-1111-1111-1111-555555555555")
-  .build());
-```
-
-**Output:**
-
-```json
-{
-  "access_code_id": "11111111-1111-1111-1111-555555555555",
-  "type": "time_bound",
-  "starts_at": "2025-02-01T16:00:00.000Z",
-  "ends_at": "2025-02-22T12:00:00.000Z",
-  ...
-}
-```
-
-**2. Update the code to set the `type` to `ongoing`.**
-
-**Code:**
-
-```java
-seam.accessCodes().update(AccessCodesUpdateRequest.builder()
-  .accessCodeId("11111111-1111-1111-1111-555555555555")
-  .type(AccessCodesUpdateRequestType.ONGOING)
-  .build());
-```
-
-**Output:**
-
-```
-void
-```
-
-**3. Confirm that the `type` has changed to `ongoing` and the `starts_at` and `ends_at` are `None`.**
-
-**Code:**
-
-```java
-seam.accessCodes().get(AccessCodesGetRequest.builder()
-  .accessCodeId("11111111-1111-1111-1111-555555555555")
-  .build());
-```
-
-**Output:**
-
-```json
-{
-  "access_code_id": "11111111-1111-1111-1111-555555555555",
-  "type": "ongoing",
-  ...
-}
-```
-{% endtab %}
 
 
 {% endtabs %}

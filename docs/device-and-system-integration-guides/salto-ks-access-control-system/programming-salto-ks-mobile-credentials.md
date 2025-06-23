@@ -473,19 +473,6 @@ echo json_encode($reservation_mobile_key, JSON_PRETTY_PRINT);
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}

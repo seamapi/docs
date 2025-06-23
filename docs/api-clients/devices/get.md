@@ -60,15 +60,6 @@ Console.WriteLine(device);
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-```java
-Device device = seam.devices()
-      .get(DevicesGetRequest.builder()
-              .deviceId("30fd243b-3054-4384-a713-5487076a3826")
-              .build());
-System.out.println(device);
-```
-{% endtab %}
 {% endtabs %}
 
 ## Response
@@ -339,62 +330,4 @@ Device(device_id='30fd243b-3054-4384-a713-5487076a3826',
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-```json
-{
-  "device_id" : "30fd243b-3054-4384-a713-5487076a3826",
-  "device_type" : "august_lock",
-  "capabilities_supported" : [ "access_code", "lock" ],
-  "properties" : {
-    "online" : true,
-    "name" : "BACK DOOR",
-    "model" : {
-      "display_name" : "Lock",
-      "online_access_codes_supported" : true,
-      "accessory_keypad_supported" : true,
-      "offline_access_codes_supported" : false,
-      "manufacturer_display_name" : "August"
-    },
-    "august_metadata" : {
-      "lock_id" : "lock-2",
-      "lock_name" : "BACK DOOR",
-      "house_name" : "My House",
-      "house_id" : "house-1",
-      "has_keypad" : true,
-      "keypad_battery_level" : "Not Available"
-    },
-    "offline_access_codes_enabled" : false,
-    "battery_level" : 0.9999532347993827,
-    "image_url" : "https://connect.getseam.com/assets/images/devices/august_wifi-smart-lock-3rd-gen_silver_front.png",
-    "supports_accessory_keypad" : true,
-    "serial_number" : "00000004-992d-45a0-bea1-9128fdcd8d12",
-    "battery" : {
-      "level" : 0.9999532347993827,
-      "status" : "full"
-    },
-    "code_constraints" : [ ],
-    "has_native_entry_events" : true,
-    "image_alt_text" : "August Wifi Smart Lock 3rd Gen, Silver, Front",
-    "manufacturer" : "august",
-    "door_open" : false,
-    "online_access_codes_enabled" : true,
-    "supported_code_lengths" : [ 4, 5, 6, 7, 8 ],
-    "locked" : true,
-    "supports_offline_access_codes" : false,
-    "supports_backup_access_code_pool" : true
-  },
-  "location" : {
-    "timezone" : "America/Los_Angeles",
-    "location_name" : "My House"
-  },
-  "connected_account_id" : "f72442d2-2c16-4e3f-9882-6bff21828b1b",
-  "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  "custom_metadata": {
-    "internal_account_id": "user-1"
-  },
-  "created_at" : "2023-10-28T09:13:08.465Z",
-  "is_managed" : true
-}
-```
-{% endtab %}
 {% endtabs %}

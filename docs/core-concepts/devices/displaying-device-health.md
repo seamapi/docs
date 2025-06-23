@@ -121,23 +121,6 @@ Online: True
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-Device device = seam.devices()
-      .get(DevicesGetRequest.builder()
-              .deviceId("36cf1a96-196d-41b0-9804-88154387f1f9")
-              .build());
-System.out.println("Online: " + device.getProperties().getOnline());
-```
-
-**Response:**
-
-```
-Online: true
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -362,41 +345,6 @@ foreach (var device_connected_event in device_connected_events)
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-var deviceConnectedEvents = seam.events()
-          .list(EventsListRequest.builder()
-                  .deviceId("36cf1a96-196d-41b0-9804-88154387f1f9")
-                  .eventType(EventsListRequestEventType.DEVICE_CONNECTED)
-                  .since("2024-01-01T00:00:00Z")
-                  .build());
-System.out.println(deviceConnectedEvents);
-```
-
-**Response:**
-
-```json
-[{
-  "event_id" : "ca3114b2-088d-43f9-bb5e-ded5d19ad053",
-  "device_id" : "36cf1a96-196d-41b0-9804-88154387f1f9",
-  "event_type" : "device.connected",
-  "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  "created_at" : "2024-02-04T21:55:09.681Z",
-  "occurred_at" : "2024-02-04T21:55:09.681Z",
-  "connected_account_id" : "c1413928-f527-4e12-abf9-d5e18d92dd33"
-}, {
-  "event_id" : "39fcb512-82a4-431d-969f-3935eeba8929",
-  "device_id" : "36cf1a96-196d-41b0-9804-88154387f1f9",
-  "event_type" : "device.connected",
-  "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  "created_at" : "2024-02-03T04:54:39.744Z",
-  "occurred_at" : "2024-02-03T04:54:39.744Z",
-  "connected_account_id" : "c1413928-f527-4e12-abf9-d5e18d92dd33"
-}]
-```
-{% endtab %}
 
 
 {% endtabs %}

@@ -172,32 +172,6 @@ Battery Status: Full
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-Device device = seam.devices()
-      .get(DevicesGetRequest.builder()
-              .deviceId("36cf1a96-196d-41b0-9804-88154387f1f9")
-              .build());
-if (device.getProperties().getHasDirectPower() == true)
-{
-  System.out.println("Power Source: Wired");
-} else {
-  System.out.println("Power Source: Battery-powered");
-  System.out.println("Battery Level: " + device.getProperties().getBattery().getLevel());
-  System.out.println("Battery Status: " + device.getProperties().getBattery().getStatus());
-}
-```
-
-**Response:**
-
-```
-Power Source: Battery-powered
-Battery Level: 0.9999532
-Battery Status: Full
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -385,33 +359,6 @@ foreach (var device_battery_status_changed_event in device_battery_status_change
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-var deviceBatteryStatusChangedEvents = seam.events()
-          .list(EventsListRequest.builder()
-                  .deviceId("36cf1a96-196d-41b0-9804-88154387f1f9")
-                  .eventType(EventsListRequestEventType.DEVICE_BATTERY_STATUS_CHANGED)
-                  .since("2024-01-01T00:00:00Z")
-                  .build());
-System.out.println(deviceBatteryStatusChangedEvents);
-```
-
-**Response:**
-
-```json
-[{
-  "event_id" : "de4314a2-903d-53e9-bb5e-ded5d19ad074",
-  "device_id" : "36cf1a96-196d-41b0-9804-88154387f1f9",
-  "event_type" : "device.battery_status_changed",
-  "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  "created_at" : "2024-01-01T02:25:10.158Z",
-  "occurred_at" : "2024-01-01T02:25:10.158Z",
-  "connected_account_id" : "c1413928-f527-4e12-abf9-d5e18d92dd33"
-}]
-```
-{% endtab %}
 
 
 {% endtabs %}
