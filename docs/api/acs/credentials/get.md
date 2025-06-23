@@ -156,35 +156,6 @@ $seam->acs->credentials->get(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `acs_credential_id` of the credential that you want to retrieve.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import credentials "github.com/seamapi/go/credentials"
-
-func main() {
-	client.Acs.Credentials.Get(
-		context.Background(),
-		credentials.CredentialsGetRequest{
-			AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUserId: "33333333-3333-3333-3333-333333333333", DisplayName: "Multi Phone Sync Credential", Code: nil, AcsSystemId: "11111111-1111-1111-1111-111111111111", AccessMethod: "mobile_key", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2024-04-12T03:56:22.396Z", IsMultiPhoneSyncCredential: true}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the `acs_credential_id` of the credential that you want to retrieve.

@@ -112,35 +112,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.ConnectedAccounts.Update(
-		context.Background(),
-		api.ConnectedAccountsUpdateRequest{
-			ConnectedAccountId:            api.String("23e4eb21-6e93-48c4-a077-bf503246d47c"),
-			AutomaticallyManageNewDevices: api.Bool(true),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.

@@ -132,27 +132,6 @@ $seam->acs->entrances->list();
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-To filter the list of entrances, specify the desired `acs_system_id` or `acs_user_id`.
-
-#### Code
-
-```go
-package main
-
-func main() {
-	client.Acs.Entrances.List(context.Background())
-}
-```
-
-#### Output
-
-```go
-[]api.AcsEntrance{api.AcsEntrance{AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", AcsEntranceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "text"}}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 To filter the list of entrances, specify the desired `acs_system_id` or `acs_user_id`.

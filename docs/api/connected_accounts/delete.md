@@ -109,34 +109,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `connected_account_id` of the connected account that you want to delete.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.ConnectedAccounts.Delete(
-		context.Background(),
-		api.ConnectedAccountsDeleteRequest{
-			ConnectedAccountId: api.String("23e4eb21-6e93-48c4-a077-bf503246d47c"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the `connected_account_id` of the connected account that you want to delete.

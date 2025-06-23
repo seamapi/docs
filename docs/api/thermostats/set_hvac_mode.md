@@ -145,37 +145,6 @@ $seam->thermostats->set_hvac_mode(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the desired heating and cooling set points in °C or °F.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.SetHvacMode(
-		context.Background(),
-		api.ThermostatsSetHvacModeRequest{
-			DeviceId:               api.String("123e4567-e89b-12d3-a456-426614174000"),
-			HvacModeSetting:        api.String("heat_cool"),
-			HeatingSetPointCelsius: api.Float64(20),
-			CoolingSetPointCelsius: api.Float64(25),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Status: "success", ActionType: "SET_HVAC_MODE"}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the desired heating and cooling set points in °C or °F.

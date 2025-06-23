@@ -117,36 +117,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `device_id` of the desired thermostat, along with the desired upper and lower limits in °C or °F.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.SetTemperatureThreshold(
-		context.Background(),
-		api.ThermostatsSetTemperatureThresholdRequest{
-			DeviceId:          api.String("123e4567-e89b-12d3-a456-426614174000"),
-			LowerLimitCelsius: api.Float64(4),
-			UpperLimitCelsius: api.Float64(30),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the `device_id` of the desired thermostat, along with the desired upper and lower limits in °C or °F.
