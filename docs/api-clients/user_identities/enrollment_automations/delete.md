@@ -34,19 +34,7 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-```go
-_, uErr := client.EnrollmentAutomations.Delete(context.Background(), &api.EnrollmentAutomationsDeleteRequest{
-  EnrollmentAutomationId: "05505650-aa57-49ab-8f19-429738758895",
-})
 
-if uErr != nil {
-  return uErr
-}
-
-return nil
-```
-{% endtab %}
 {% endtabs %}
 
 ## Response

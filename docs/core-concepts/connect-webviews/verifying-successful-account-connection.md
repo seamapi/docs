@@ -190,36 +190,7 @@ ConnectWebview updatedConnectWebview = seam.connectWebviews().get(ConnectWebview
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-updatedConnectWebview, err := client.ConnectWebviews.Get(
-  context.Background(),
-  &api.ConnectWebviewsGetRequest{
-    ConnectWebviewId: connectWebview.connectWebviewId,
-  },
-)
-
-if err != nil {
-  return err
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-{
-  "connect_webview_id": "12345678-1234-1234-1234-123456789012",
-  "status": "authorized",
-  "login_successful": true,
-  "connected_account_id": "11111111-1111-1111-1111-222222222222",
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***

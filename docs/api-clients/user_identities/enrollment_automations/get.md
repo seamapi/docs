@@ -35,25 +35,7 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-```go
-enrollmentAutomation, uErr := client.UserIdentities.EnrollmentAutomations.Get(
-    context.Background(),
-    useridentities.NewEnrollmentAutomationsGetRequestFromEnrollmentAutomationsGetRequestUserIdentityId(
-        &useridentities.EnrollmentAutomationsGetRequestUserIdentityId{
-            UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-        },
-    ),
-)
 
-if uErr != nil {
-    return uErr
-}
-
-fmt.Println(enrollmentAutomation)
-return nil
-```
-{% endtab %}
 {% endtabs %}
 
 ## Response

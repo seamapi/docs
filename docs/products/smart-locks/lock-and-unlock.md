@@ -176,28 +176,7 @@ seam.devices()
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-device, uErr := client.Devices.Get(
-  context.Background(),
-  &api.DevicesGetRequest{
-    DeviceId: "11111111-1111-1111-1111-444444444444",
-  })
-```
-
-**Response:**
-
-```json
-{
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "can_remotely_lock": true,   // You can use client.Locks.LockDoor() on this device.
-  "can_remotely_unlock": true, // You can use client.Locks.UnlockDoor() on this device.
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -423,49 +402,7 @@ Optional[
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-// Get the device.
-device, uErr := client.Devices.Get(
-  context.Background(),
-  &api.DevicesGetRequest{
-    DeviceId: api.String("11111111-1111-1111-1111-444444444444"),
-  })
-
-// Confirm that the device can remotely lock.
-if *device.CanRemotelyLock {
-  // Perform the lock operation.
-  client.Locks.LockDoor(
-      context.Background(),
-      &api.LocksLockDoorRequest{
-        DeviceId: device.DeviceId,
-      },
-    )
-  }
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Response:**
-
-```json
-&{pending <nil>
-  {
-    "status": "pending",
-    "action_type": "LOCK_DOOR",
-    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
-    "result": null,
-    "error": null
-  }
-<nil>} <nil>
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -691,49 +628,7 @@ Optional[
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-// Get the device.
-device, uErr := client.Devices.Get(
-  context.Background(),
-  &api.DevicesGetRequest{
-    DeviceId: api.String("11111111-1111-1111-1111-444444444444"),
-  })
-
-// Confirm that the device can remotely unlock.
-if *device.CanRemotelyUnlock {
-  // Perform the unlock operation.
-  client.Locks.UnlockDoor(
-      context.Background(),
-      &api.LocksUnlockDoorRequest{
-        DeviceId: device.DeviceId,
-      },
-    )
-  }
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Response:**
-
-```json
-&{pending <nil>
-  {
-    "status": "pending",
-    "action_type": "UNLOCK_DOOR",
-    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
-    "result": null,
-    "error": null
-  }
-<nil>} <nil>
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -895,38 +790,7 @@ Optional[
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-_, uErr := client.Locks.LockDoor(
-  context.Background(),
-  &api.LocksLockDoorRequest{
-    DeviceId: "11111111-1111-1111-1111-444444444444",
-  },
-)
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Response:**
-
-```json
-&{pending <nil>
-  {
-    "status": "pending",
-    "action_type": "LOCK_DOOR",
-    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
-    "result": null,
-    "error": null
-  }
-<nil>} <nil>
-```
-{% endtab %}
 {% endtabs %}
 
 ### 2. Poll the Action Attempt to Verify the Success of the Action
@@ -1085,35 +949,7 @@ Optional[
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-action_attempt, uErr := client.ActionAttempts.Get(context.Background(), &api.ActionAttemptsGetRequest{
-  ActionAttemptId: "11111111-2222-3333-4444-555555555555",
-})
-
-if uErr != nil {
-return uErr
-}
-
-return nil
-```
-
-**Response:**
-
-```json
-&{success
-  {
-    "status": "success",
-    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
-    "action_type": "LOCK_DOOR",
-    "result": {},
-    "error": null
-  }
-<nil> <nil>}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -1283,30 +1119,7 @@ seam.devices().get(DevicesGetRequest.builder()
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-device, uErr := client.Devices.Get(
-  context.Background(),
-  &api.DevicesGetRequest{
-    DeviceId: "11111111-1111-1111-1111-444444444444",
-  })
-```
-
-**Response:**
-
-```json
-{
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "properties" : {
-    "locked" : true,
-    ...
-  },
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***

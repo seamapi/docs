@@ -223,45 +223,7 @@ void
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-{% hint style="info" %}
-Coming soon!
-{% endhint %}
 
-**Code:**
-
-```go
-// Get the device.
-device, uErr := client.Devices.Get(
-  context.Background(),
-  &api.DevicesGetRequest{
-    DeviceId: api.String("11111111-1111-1111-1111-444444444444"),
-  })
-
-// Confirm that Seam supports simulated disconnection for the device.
-if *device.CanSimulateDisconnection {
-  // Perform the simulated disconnection.
-  client.Devices.Simulate.Disconnect(
-      context.Background(),
-      &api.DevicesSimulateDisconnectRequest{
-        DeviceId: device.DeviceId,
-      },
-    )
-  }
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-void
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -460,45 +422,7 @@ void
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-{% hint style="info" %}
-Coming soon!
-{% endhint %}
 
-**Code:**
-
-```go
-// Get the device.
-device, uErr := client.Devices.Get(
-  context.Background(),
-  &api.DevicesGetRequest{
-    DeviceId: api.String("11111111-1111-1111-1111-444444444444"),
-  })
-
-// Confirm that Seam supports simulated connection for the device.
-if *device.CanSimulateConnection {
-  // Perform the simulated connection.
-  client.Devices.Simulate.Connect(
-      context.Background(),
-      &api.DevicesSimulateConnectRequest{
-        DeviceId: device.DeviceId,
-      },
-    )
-  }
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-void
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -697,45 +621,7 @@ void
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-{% hint style="info" %}
-Coming soon!
-{% endhint %}
 
-**Code:**
-
-```go
-// Get the device.
-device, uErr := client.Devices.Get(
-  context.Background(),
-  &api.DevicesGetRequest{
-    DeviceId: api.String("11111111-1111-1111-1111-444444444444"),
-  })
-
-// Confirm that Seam supports simulated removal for the device.
-if *device.CanSimulateRemoval {
-  // Perform the simulated removal.
-  client.Devices.Simulate.Remove(
-      context.Background(),
-      &api.DevicesSimulateRemoveRequest{
-        DeviceId: device.DeviceId,
-      },
-    )
-  }
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-void
-```
-{% endtab %}
 {% endtabs %}
 
 ***

@@ -92,11 +92,7 @@ dependencies {
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
 
-{% tab title="Go" %}
-```bash
-go get github.com/seamapi/go
-```
-{% endtab %}
+
 {% endtabs %}
 
 Next, go to [https://console.seam.co/](https://console.seam.co/) and [sign up for Seam](../core-concepts/seam-console/#create-a-seam-account) to get your [API key](../core-concepts/authentication/api-keys.md).
@@ -345,63 +341,7 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-package main
-
-import (
-  "context"
-  "fmt"
-  "os"
-
-  api "github.com/seamapi/go"
-  seam "github.com/seamapi/go/client"
-)
-
-func main() {
-  if err := run(); err != nil {
-    _, _ = fmt.Fprintln(os.Stderr, err.Error())
-    os.Exit(1)
-  }
-}
-
-func run() error {
-  client := seam.NewClient(
-    seam.WithApiKey(SEAM_API_KEY),
-  )
-
-  connectWebview, err := client.ConnectWebviews.Create(
-    context.Background(),
-    &api.ConnectWebviewsCreateRequest{
-      AcceptedProviders: []api.AcceptedProvider{
-        api.AcceptedProviderEcobee,
-      },
-    },
-  )
-
-  if err != nil {
-    return err
-  }
-
-  fmt.Println(connectWebview.LoginSuccessful) // false
-
-  // Use the returned Connect Webview URL to display
-  // the Connect Webview authorization flow to your user.
-  fmt.Println(connectWebview.Url)
-
-  return nil
-}
-```
-
-**Output:**
-
-```
-false
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -553,32 +493,7 @@ true
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-updatedConnectWebview, err := client.ConnectWebviews.Get(
-  context.Background(),
-  &api.ConnectWebviewsGetRequest{
-    ConnectWebviewId: connectWebview.connectWebviewId,
-  },
-)
-
-if err != nil {
-  return err
-}
-
-fmt.Println(updatedConnectWebview.LoginSuccessful) // true
-
-return nil
-```
-
-**Output:**
-
-```
-true
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -913,19 +828,7 @@ Fan running: false
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -1144,19 +1047,7 @@ if ($living_room_thermostat->can_hvac_heat) {
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}
 
 You can track the status of the operation to confirm that the device was set to heat mode successfully. Query `properties.current_climate_setting.hvac_mode_setting` for the device, [retrieve the action attempt](../api-clients/action_attempts/get.md) by ID, or look for a [`thermostat.manually_adjusted` event](../api-clients/events/#event-types). Further, if you wanted to find out whether the HVAC system was currently heating, you could inspect `properties.is_heating` for the device.
@@ -1312,19 +1203,7 @@ heat
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-// Coming soon!
-```
-
-**Output:**
-
-```
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -1821,19 +1700,7 @@ if ($updated_living_room_thermostat->can_hvac_heat_cool) {
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -2147,19 +2014,7 @@ $seam->thermostats->update_weekly_program(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}
 
 ***

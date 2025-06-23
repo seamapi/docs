@@ -39,20 +39,7 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-```go
-_, uErr := client.UserIdentities.GrantAccessToDevice(context.Background(), &api.UserIdentitiesGrantAccessToDeviceRequest{
-    UserIdentityId: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
-    DeviceId: "054765c8-a2fc-4599-b486-14c19f462c45",
-})
 
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-{% endtab %}
 {% endtabs %}
 
 ## Response

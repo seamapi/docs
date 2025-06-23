@@ -35,20 +35,7 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-```go
-acsSystems, uErr := client.UserIdentities.ListAcsSystems(context.Background(), &useridentities.UserIdentitiesListAcsSystemsRequest{
-    UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-})
 
-if uErr != nil {
-    return uErr
-}
-
-fmt.Println(acsSystems)
-return nil
-```
-{% endtab %}
 {% endtabs %}
 
 ## Response

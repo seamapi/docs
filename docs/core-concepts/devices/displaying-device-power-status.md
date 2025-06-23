@@ -199,29 +199,7 @@ Battery Status: Full
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-device, err := client.Devices.Get(
-	context.Background(),
-  &api.DevicesGetRequest{
-    DeviceId: api.String("36cf1a96-196d-41b0-9804-88154387f1f9"),
-  },
-)
-if err != nil {
-	return err
-}
-fmt.Println("Online:", device.Properties.Online)
-return nil
-```
-
-**Response:**
-
-```
-Online: true
-```
-{% endtab %}
 {% endtabs %}
 
 ## Get Device Power Status Using Battery-Related Events
@@ -435,39 +413,7 @@ System.out.println(deviceBatteryStatusChangedEvents);
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-device_battery_status_changed_events, err := client.Events.List(
-	context.Background(),
-  &api.EventsListRequest{
-    DeviceId: api.String("36cf1a96-196d-41b0-9804-88154387f1f9"),
-    EventType: api.EventTypeBatteryStatusChanged.Ptr(),
-    Since: api.String("2024-01-01T00:00:00Z"),
-  },
-)
-if err != nil {
-	return err
-}
-fmt.Println(device_battery_status_changed_events)
-return nil
-```
-
-**Response:**
-
-```json
-[{
-  "event_id": "de4314a2-903d-53e9-bb5e-ded5d19ad074",
-  "device_id": "36cf1a96-196d-41b0-9804-88154387f1f9",
-  "event_type": "device.battery_status_changed",
-  "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  "created_at": "2024-01-01T02:25:10.158Z",
-  "occurred_at": "2024-01-01T02:25:10.158Z",
-  "connected_account_id": "c1413928-f527-4e12-abf9-d5e18d92dd33"
-}]
-```
-{% endtab %}
 {% endtabs %}
 
 ### Retrieve Battery-Related Events Using a Webhook

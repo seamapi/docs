@@ -259,57 +259,5 @@ public class Main {
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-package main
-
-import (
-  "context"
-  "fmt"
-  "os"
-
-  api "github.com/seamapi/go"
-  seam "github.com/seamapi/go/client"
-)
-
-func main() {
-  if err := run(); err != nil {
-    _, _ = fmt.Fprintln(os.Stderr, err.Error())
-    os.Exit(1)
-  }
-}
-
-func run() error {
-  client := seam.NewClient(
-    seam.WithApiKey(SEAM_API_KEY),
-  )
-
-  workspace, err := client.Workspaces.Get(
-    context.Background(), &api.WorkspacesGetRequest{},
-  )
-  
-  if err != nil {
-    return err
-  }
-  
-  fmt.Println(workspace)
-
-  return nil		
-}
-```
-
-**Output:**
-
-```json
-{
-  "workspace_id": "00000000-0000-0000-0000-000000000000",
-  "name": "Sandbox",
-  "company_name": "Acme",
-  "connect_partner_name": "Acme",
-  "is_sandbox": true
-}
-```
-{% endtab %}
 {% endtabs %}
