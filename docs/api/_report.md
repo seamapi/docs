@@ -101,6 +101,7 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/report_status`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_connected_systems/list`: Seam Bridge Client only.
+- `/seam/customer/v1/portals/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/settings/update`: Internal endpoint for customer portals.
 - `/seam/instant_key/v1/client_sessions/exchange_short_code`: Seam Instant Key only.
 - `/seam/mobile_sdk/v1/acs/credentials/list`: Mobile SDK only.
@@ -410,7 +411,6 @@ These items have been marked as draft.
 
 - `/access_grants`: No draft message provided
 - `/access_methods`: No draft message provided
-- `/seam/customer/v1/portals`: No draft message provided
 - `/spaces`: No draft message provided
 
 ### Endpoints
@@ -436,10 +436,6 @@ These items have been marked as draft.
 ## Deprecated
 
 These items are deprecated.
-
-### Routes
-
-- `/seam/customer/v1/portals`: No deprecated message provided
 
 ### Resources
 
@@ -535,6 +531,7 @@ These items are deprecated.
 - `/bridges/list`: `bridges`
 - `/networks/get`: `network`
 - `/networks/list`: `networks`
+- `/seam/customer/v1/portals/get`: `customer_portal`
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: `spaces`
 
 ### Endpoints without code samples
