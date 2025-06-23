@@ -1,0 +1,487 @@
+---
+- title: Create an ongoing online access code
+  description: Creates a new ongoing online access code.
+  request:
+    path: /access_codes/create
+    body:
+      device_id: a5036385-adcb-41b5-88c2-dd8a702a0730
+      name: My Ongoing Online Access Code
+      code: '1234'
+  response:
+    body:
+      access_code:
+        access_code_id: e9cf6dd6-89aa-477f-a701-c08f3de13c1f
+        code: '1234'
+        common_code_key: null
+        created_at: '2025-06-14T16:54:17.946242Z'
+        device_id: a5036385-adcb-41b5-88c2-dd8a702a0730
+        errors: []
+        is_backup: false
+        is_backup_access_code_available: false
+        is_external_modification_allowed: false
+        is_managed: true
+        is_offline_access_code: false
+        is_one_time_use: false
+        is_scheduled_on_device: true
+        is_waiting_for_code_assignment: false
+        name: My Ongoing Online Access Code
+        pulled_backup_access_code_id: null
+        status: set
+        type: ongoing
+        warnings: []
+- title: Create a time-bound online access code
+  description: Creates a new time-bound online access code.
+  request:
+    path: /access_codes/create
+    body:
+      device_id: a5036385-adcb-41b5-88c2-dd8a702a0730
+      name: My Time-Bound Online Access Code
+      starts_at: '2025-06-20T06:49:21.000Z'
+      ends_at: '2025-06-22T12:08:26.000Z'
+      code: '1234'
+  response:
+    body:
+      access_code:
+        access_code_id: e9cf6dd6-89aa-477f-a701-c08f3de13c1f
+        code: '1234'
+        common_code_key: null
+        created_at: '2025-06-14T16:54:17.946242Z'
+        device_id: a5036385-adcb-41b5-88c2-dd8a702a0730
+        ends_at: '2025-06-22T12:08:26.000Z'
+        errors: []
+        is_backup: false
+        is_backup_access_code_available: false
+        is_external_modification_allowed: false
+        is_managed: true
+        is_offline_access_code: false
+        is_one_time_use: false
+        is_scheduled_on_device: true
+        is_waiting_for_code_assignment: false
+        name: My Time-Bound Online Access Code
+        pulled_backup_access_code_id: null
+        starts_at: '2025-06-20T06:49:21.000Z'
+        status: set
+        type: time_bound
+        warnings: []
+- title: Create a time-bound offline access code
+  description: Creates a new time-bound offline access code.
+  request:
+    path: /access_codes/create
+    body:
+      device_id: a5036385-adcb-41b5-88c2-dd8a702a0730
+      name: My Time-Bound Offline Access Code
+      starts_at: '2025-06-20T06:49:21.000Z'
+      ends_at: '2025-06-22T12:08:26.000Z'
+      attempt_for_offline_device: true
+      preferred_code_length: 4
+      use_offline_access_code: true
+      is_offline_access_code: true
+      max_time_rounding: 1h
+  response:
+    body:
+      access_code:
+        access_code_id: e9cf6dd6-89aa-477f-a701-c08f3de13c1f
+        code: '1234'
+        common_code_key: null
+        created_at: '2025-06-14T16:54:17.946242Z'
+        device_id: a5036385-adcb-41b5-88c2-dd8a702a0730
+        ends_at: '2025-06-22T12:08:26.000Z'
+        errors: []
+        is_backup: false
+        is_backup_access_code_available: false
+        is_external_modification_allowed: false
+        is_managed: true
+        is_offline_access_code: true
+        is_one_time_use: false
+        is_scheduled_on_device: true
+        is_waiting_for_code_assignment: false
+        name: My Time-Bound Offline Access Code
+        pulled_backup_access_code_id: null
+        starts_at: '2025-06-20T06:49:21.000Z'
+        status: set
+        type: time_bound
+        warnings: []
+- title: Create a one-time-use offline access code
+  description: Creates a new one-time-use offline access code.
+  request:
+    path: /access_codes/create
+    body:
+      device_id: a5036385-adcb-41b5-88c2-dd8a702a0730
+      name: My One-Time-Use Offline Access Code
+      starts_at: '2025-06-20T06:49:21.000Z'
+      ends_at: '2025-06-22T12:08:26.000Z'
+      attempt_for_offline_device: true
+      preferred_code_length: 4
+      use_offline_access_code: true
+      is_offline_access_code: true
+      is_one_time_use: true
+  response:
+    body:
+      access_code:
+        access_code_id: e9cf6dd6-89aa-477f-a701-c08f3de13c1f
+        code: '1234'
+        common_code_key: null
+        created_at: '2025-06-14T16:54:17.946242Z'
+        device_id: a5036385-adcb-41b5-88c2-dd8a702a0730
+        ends_at: '2025-06-22T12:08:26.000Z'
+        errors: []
+        is_backup: false
+        is_backup_access_code_available: false
+        is_external_modification_allowed: false
+        is_managed: true
+        is_offline_access_code: true
+        is_one_time_use: true
+        is_scheduled_on_device: true
+        is_waiting_for_code_assignment: false
+        name: My One-Time-Use Offline Access Code
+        pulled_backup_access_code_id: null
+        starts_at: '2025-06-20T06:49:21.000Z'
+        status: set
+        type: time_bound
+        warnings: []
+- title: Create a time-bound online access code with a backup access code pool
+  description: Creates a new time-bound online access code with a backup access code pool.
+  request:
+    path: /access_codes/create
+    body:
+      device_id: a5036385-adcb-41b5-88c2-dd8a702a0730
+      name: My Time-Bound Access Code
+      starts_at: '2025-06-20T06:49:21.000Z'
+      ends_at: '2025-06-22T12:08:26.000Z'
+      code: '1234'
+      use_backup_access_code_pool: true
+  response:
+    body:
+      access_code:
+        access_code_id: e9cf6dd6-89aa-477f-a701-c08f3de13c1f
+        code: '1234'
+        common_code_key: null
+        created_at: '2025-06-14T16:54:17.946242Z'
+        device_id: a5036385-adcb-41b5-88c2-dd8a702a0730
+        ends_at: '2025-06-22T12:08:26.000Z'
+        errors: []
+        is_backup: false
+        is_backup_access_code_available: true
+        is_external_modification_allowed: false
+        is_managed: true
+        is_offline_access_code: false
+        is_one_time_use: false
+        is_scheduled_on_device: true
+        is_waiting_for_code_assignment: false
+        name: My Time-Bound Access Code
+        pulled_backup_access_code_id: null
+        starts_at: '2025-06-20T06:49:21.000Z'
+        status: set
+        type: time_bound
+        warnings: []
+- title: Create multiple linked access codes
+  description: Creates new access codes that share a common code across multiple devices.
+  request:
+    path: /access_codes/create_multiple
+    body:
+      device_ids:
+      - d9717800-fa73-401a-b66b-03f0ef950e2a
+      - 550e8400-e29b-41d4-a716-446655440000
+      behavior_when_code_cannot_be_shared: throw
+      preferred_code_length: 4
+      name: My Linked Access Code
+      starts_at: '2025-06-19T01:41:56.000Z'
+      ends_at: '2025-06-22T16:40:40.000Z'
+  response:
+    body:
+      access_codes:
+      - access_code_id: e9cf6dd6-89aa-477f-a701-c08f3de13c1f
+        code: '1234'
+        common_code_key: auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000
+        created_at: '2025-06-14T16:54:17.946242Z'
+        device_id: c9cd621d-ef0c-45c8-b608-026ebdb74615
+        ends_at: '2025-07-04T16:54:17.946049Z'
+        errors: []
+        is_backup: false
+        is_backup_access_code_available: false
+        is_external_modification_allowed: false
+        is_managed: true
+        is_offline_access_code: false
+        is_one_time_use: false
+        is_scheduled_on_device: true
+        is_waiting_for_code_assignment: false
+        name: My Linked Access Code
+        pulled_backup_access_code_id: null
+        starts_at: '2025-07-02T16:54:17.946049Z'
+        status: set
+        type: time_bound
+        warnings: []
+- title: Delete an access code
+  description: Deletes an access code.
+  request:
+    path: /access_codes/delete
+    body:
+      device_id: d33f4cc7-2b6a-41a4-ad30-c372ee493589
+      access_code_id: 275b40a3-6b0b-4c51-8fd2-aafd3de2195c
+  response:
+    body: null
+- title: Generate an access code
+  description: Generates a code for an access code, given a device ID.
+  request:
+    path: /access_codes/generate_code
+    parameters:
+      device_id: 02cd5099-d9f8-45a1-a9c0-f2ecbd334792
+  response:
+    body:
+      device_id: 02cd5099-d9f8-45a1-a9c0-f2ecbd334792
+      code: '1234'
+- title: Get an access code
+  description: Returns a specified access code.
+  request:
+    path: /access_codes/get
+    parameters:
+      access_code_id: 90a114dc-48b5-4b8b-a3d3-972344594401
+  response:
+    body:
+      access_code:
+        access_code_id: 90a114dc-48b5-4b8b-a3d3-972344594401
+        code: '1234'
+        common_code_key: null
+        created_at: '2025-06-14T16:54:17.946242Z'
+        device_id: 7bce4bcc-6c35-4cc0-bbae-1c8bc5b4a5b5
+        ends_at: '2025-07-04T16:54:17.946049Z'
+        errors: []
+        is_backup: false
+        is_backup_access_code_available: false
+        is_external_modification_allowed: false
+        is_managed: true
+        is_offline_access_code: false
+        is_one_time_use: false
+        is_scheduled_on_device: true
+        is_waiting_for_code_assignment: false
+        name: My Access Code
+        pulled_backup_access_code_id: null
+        starts_at: '2025-07-02T16:54:17.946049Z'
+        status: set
+        type: time_bound
+        warnings: []
+- title: List access codes
+  description: Returns a list of all access codes.
+  request:
+    path: /access_codes/list
+    parameters:
+      device_id: f5197f50-839b-4a8e-82f3-e9ef06af93ae
+      limit: 10
+  response:
+    body:
+      access_codes:
+      - access_code_id: e9cf6dd6-89aa-477f-a701-c08f3de13c1f
+        code: '1234'
+        common_code_key: null
+        created_at: '2025-06-14T16:54:17.946242Z'
+        device_id: c9cd621d-ef0c-45c8-b608-026ebdb74615
+        ends_at: '2025-07-04T16:54:17.946049Z'
+        errors: []
+        is_backup: false
+        is_backup_access_code_available: false
+        is_external_modification_allowed: false
+        is_managed: true
+        is_offline_access_code: false
+        is_one_time_use: false
+        is_scheduled_on_device: true
+        is_waiting_for_code_assignment: false
+        name: My Access Code
+        pulled_backup_access_code_id: null
+        starts_at: '2025-07-02T16:54:17.946049Z'
+        status: set
+        type: time_bound
+        warnings: []
+      pagination:
+        has_next_page: true
+        next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+- title: Pull a backup access code
+  description: Retrieves a backup access code for an access code.
+  request:
+    path: /access_codes/pull_backup_access_code
+    body:
+      access_code_id: 8e525b87-5e4b-48a5-a322-5d45262a735f
+  response:
+    body:
+      backup_access_code:
+        access_code_id: 6ba7b810-9dad-11d1-80b4-00c04fd430c8
+        code: '5678'
+        common_code_key: null
+        created_at: '2025-06-14T16:54:17.946242Z'
+        device_id: c9cd621d-ef0c-45c8-b608-026ebdb74615
+        ends_at: '2025-07-04T16:54:17.946049Z'
+        errors: []
+        is_backup: true
+        is_backup_access_code_available: false
+        is_external_modification_allowed: false
+        is_managed: true
+        is_offline_access_code: false
+        is_one_time_use: false
+        is_scheduled_on_device: true
+        is_waiting_for_code_assignment: false
+        name: Backup 8e525b87-5e4b-48a5-a322-5d45262a735f (Seam)
+        pulled_backup_access_code_id: null
+        starts_at: '2025-07-02T16:54:17.946049Z'
+        status: set
+        type: time_bound
+        warnings: []
+      access_code:
+        access_code_id: 8e525b87-5e4b-48a5-a322-5d45262a735f
+        code: '1234'
+        common_code_key: null
+        created_at: '2025-06-14T16:54:17.946242Z'
+        device_id: c9cd621d-ef0c-45c8-b608-026ebdb74615
+        ends_at: '2025-07-04T16:54:17.946049Z'
+        errors: []
+        is_backup: false
+        is_backup_access_code_available: true
+        is_external_modification_allowed: false
+        is_managed: true
+        is_offline_access_code: false
+        is_one_time_use: false
+        is_scheduled_on_device: true
+        is_waiting_for_code_assignment: false
+        name: My Access Code
+        pulled_backup_access_code_id: 6ba7b810-9dad-11d1-80b4-00c04fd430c8
+        starts_at: '2025-07-02T16:54:17.946049Z'
+        status: unset
+        type: time_bound
+        warnings: []
+- title: Report device constraints (supported code lengths)
+  description: Enables you to report access code-related constraints for a device.
+  request:
+    path: /access_codes/report_device_constraints
+    body:
+      device_id: cd17e797-e952-47a1-ba47-46bf72934181
+      supported_code_lengths: [4, 5, 6]
+      min_code_length: 42
+      max_code_length: 42
+  response:
+    body: null
+- title: Report device constraints (minimum and maximum code lengths)
+  description: Enables you to report access code-related constraints for a device.
+  request:
+    path: /access_codes/report_device_constraints
+    body:
+      device_id: cd17e797-e952-47a1-ba47-46bf72934181
+      min_code_length: 4
+      max_code_length: 6
+  response:
+    body: null
+- title: Update an access code
+  description: Updates a specified active or upcoming access code.
+  request:
+    path: /access_codes/update
+    body:
+      access_code_id: b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5
+      name: My Updated Access Code
+      starts_at: '2025-06-19T08:26:41.000Z'
+      ends_at: '2025-06-21T17:38:07.000Z'
+      code: '4444'
+  response:
+    body: null
+- title: Update multiple linked access codes
+  description: Updates access codes that share a common code across multiple devices.
+  request:
+    path: /access_codes/update_multiple
+    body:
+      ends_at: '2025-06-22T05:05:47.000Z'
+      starts_at: '2025-06-18T19:14:13.000Z'
+      name: My Updated Linked Access Code
+      common_code_key: auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000
+  response:
+    body: null
+- title: Simulate creating an unmanaged access code
+  description: Simulates the creation of an unmanaged access code in a sandbox workspace.
+  request:
+    path: /access_codes/simulate/create_unmanaged_access_code
+    body:
+      device_id: 5db6ef75-2e0d-4491-bf7e-c3eb01d5c963
+      name: My Access Code
+      code: '1234'
+  response:
+    body:
+      access_code:
+        access_code_id: 88fa1812-bef8-4108-9fb4-4855376c3edf
+        code: '1234'
+        created_at: '2025-06-16T16:54:17.946283Z'
+        device_id: 5db6ef75-2e0d-4491-bf7e-c3eb01d5c963
+        ends_at: '2025-06-23T16:54:17.946261Z'
+        errors: []
+        is_managed: false
+        name: My Access Code
+        starts_at: '2025-06-21T16:54:17.946261Z'
+        status: set
+        type: time_bound
+        warnings: []
+- title: Convert an unmanaged access code to a managed access code
+  description: Converts an unmanaged access code to an access code managed through Seam.
+  request:
+    path: /access_codes/unmanaged/convert_to_managed
+    body:
+      access_code_id: 9ef2af02-e335-4b49-bd51-00e851a83ef6
+      is_external_modification_allowed: true
+      force: true
+  response:
+    body: null
+- title: Delete an unmanaged access code
+  description: Deletes an unmanaged access code.
+  request:
+    path: /access_codes/unmanaged/delete
+    body:
+      access_code_id: 95d54d42-477b-49d6-bd3a-5e8a40a5a78f
+  response:
+    body: null
+- title: Get an unmanaged access code
+  description: Returns a specified unmanaged access code.
+  request:
+    path: /access_codes/unmanaged/get
+    parameters:
+      access_code_id: 41b984ec-1b74-48cd-ba68-16660cd792b6
+  response:
+    body:
+      access_code:
+        access_code_id: 41b984ec-1b74-48cd-ba68-16660cd792b6
+        code: '1234'
+        created_at: '2025-06-16T16:54:17.946283Z'
+        device_id: 6047cb40-73e5-4517-85c2-2664c2e4eca1
+        ends_at: '2025-06-23T16:54:17.946261Z'
+        errors: []
+        is_managed: false
+        name: My Unmanaged Access Code
+        starts_at: '2025-06-21T16:54:17.946261Z'
+        status: set
+        type: time_bound
+        warnings: []
+- title: List unmanaged access codes
+  description: Returns a list of all unmanaged access codes.
+  request:
+    path: /access_codes/unmanaged/list
+    parameters:
+      device_id: d885a24c-5741-49b1-85dc-ff6d5cf2f1b1
+  response:
+    body:
+      access_codes:
+      - access_code_id: 88fa1812-bef8-4108-9fb4-4855376c3edf
+        code: '1234'
+        created_at: '2025-06-16T16:54:17.946283Z'
+        device_id: b3439f17-7273-46f3-9e20-9a283d9cb5b4
+        ends_at: '2025-06-23T16:54:17.946261Z'
+        errors: []
+        is_managed: false
+        name: My Unmanaged Access Code
+        starts_at: '2025-06-21T16:54:17.946261Z'
+        status: set
+        type: time_bound
+        warnings: []
+- title: Update an unmanaged access code
+  description: Updates a specified unmanaged access code.
+  request:
+    path: /access_codes/unmanaged/update
+    body:
+      access_code_id: ebd8e488-db1b-4f4b-9d02-489fbfa6829a
+      is_managed: true
+      is_external_modification_allowed: true
+      force: true
+  response:
+    body: null

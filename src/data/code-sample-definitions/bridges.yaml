@@ -1,0 +1,22 @@
+- title: Get a Seam Bridge
+  description: Returns a specified Seam Bridge.
+  request:
+    path: /bridges/get
+    parameters:
+      bridge_id: 02301dbb-c917-4d88-89da-baa9e36871da
+  response:
+    body:
+      bridge:
+        bridge_id: 02301dbb-c917-4d88-89da-baa9e36871da
+        created_at: '2025-06-15T16:54:17.946453Z'
+        workspace_id: ac19352c-869a-4209-9ce7-44c740a8b5d0
+- title: List Seam Bridges
+  description: Returns a list of all Seam Bridges.
+  request:
+    path: /bridges/list
+  response:
+    body:
+      bridges:
+      - bridge_id: 02301dbb-c917-4d88-89da-baa9e36871da
+        created_at: '2025-06-15T16:54:17.946453Z'
+        workspace_id: ac19352c-869a-4209-9ce7-44c740a8b5d0
