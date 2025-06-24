@@ -352,6 +352,9 @@ A thermostat device resource.
 
 Active [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
+{% hint style="warning" %}
+**Deprecated**. Use `active_thermostat_schedule_id` with `/thermostats/schedules/get` instead.
+{% endhint %}
 
 
 <details>
@@ -412,6 +415,15 @@ Active [thermostat schedule](../../capability-guides/thermostats/creating-and-ma
     ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the thermostat schedule.
 
 </details>
+
+---
+
+**`active_thermostat_schedule_id`** *UUID*
+
+ID of the active [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
+
+
+
 
 ---
 
