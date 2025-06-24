@@ -8,9 +8,9 @@
       customer_key: My Company
       user_identifier_key: jane_doe
       connect_webview_ids:
-      - dafe6400-7484-4fd1-8c17-1c901b444250
+        - dafe6400-7484-4fd1-8c17-1c901b444250
       connected_account_ids:
-      - 8062d457-e28e-481f-aecc-509905627511
+        - 8062d457-e28e-481f-aecc-509905627511
       user_identity_id: 89765fd3-6193-4d63-8605-e77f75356555
       expires_at: '2025-06-19T15:22:40.000Z'
   response:
@@ -18,9 +18,9 @@
       client_session:
         client_session_id: c2cbd177-1ace-414b-bb1e-9f129e4a05c1
         connect_webview_ids:
-        - dafe6400-7484-4fd1-8c17-1c901b444250
+          - dafe6400-7484-4fd1-8c17-1c901b444250
         connected_account_ids:
-        - 8062d457-e28e-481f-aecc-509905627511
+          - 8062d457-e28e-481f-aecc-509905627511
         created_at: '2025-06-15T16:54:17.946309Z'
         customer_id: e387e15f-be27-47ad-881f-4a6fc5460c57
         device_count: 1
@@ -48,9 +48,9 @@
       client_session:
         client_session_id: c2cbd177-1ace-414b-bb1e-9f129e4a05c1
         connect_webview_ids:
-        - dafe6400-7484-4fd1-8c17-1c901b444250
+          - dafe6400-7484-4fd1-8c17-1c901b444250
         connected_account_ids:
-        - 8062d457-e28e-481f-aecc-509905627511
+          - 8062d457-e28e-481f-aecc-509905627511
         created_at: '2025-06-15T16:54:17.946309Z'
         customer_id: e387e15f-be27-47ad-881f-4a6fc5460c57
         device_count: 1
@@ -70,9 +70,9 @@
       client_session:
         client_session_id: c2cbd177-1ace-414b-bb1e-9f129e4a05c1
         connect_webview_ids:
-        - dafe6400-7484-4fd1-8c17-1c901b444250
+          - dafe6400-7484-4fd1-8c17-1c901b444250
         connected_account_ids:
-        - 8062d457-e28e-481f-aecc-509905627511
+          - 8062d457-e28e-481f-aecc-509905627511
         created_at: '2025-06-15T16:54:17.946309Z'
         customer_id: e387e15f-be27-47ad-881f-4a6fc5460c57
         device_count: 1
@@ -88,9 +88,9 @@
     parameters:
       user_identifier_key: jane_doe
       connect_webview_ids:
-      - 5e297cfe-23df-4638-bb87-08c4f0f8233b
+        - 5e297cfe-23df-4638-bb87-08c4f0f8233b
       connected_account_ids:
-      - f87f0ab7-b8d7-44aa-9e59-3239b209570e
+        - f87f0ab7-b8d7-44aa-9e59-3239b209570e
       user_identity_id: 71ff7f71-2cf4-458a-8db4-6ad539c8b66a
       expires_at: '2025-06-18T06:10:42.000Z'
   response:
@@ -98,9 +98,9 @@
       client_session:
         client_session_id: c2cbd177-1ace-414b-bb1e-9f129e4a05c1
         connect_webview_ids:
-        - 5e297cfe-23df-4638-bb87-08c4f0f8233b
+          - 5e297cfe-23df-4638-bb87-08c4f0f8233b
         connected_account_ids:
-        - f87f0ab7-b8d7-44aa-9e59-3239b209570e
+          - f87f0ab7-b8d7-44aa-9e59-3239b209570e
         created_at: '2025-06-15T16:54:17.946309Z'
         customer_id: e387e15f-be27-47ad-881f-4a6fc5460c57
         device_count: 1
@@ -117,18 +117,18 @@
       client_session_id: 3ada79d3-2848-4320-b2ef-a82e1e6dafac
       user_identifier_key: jane_doe
       connected_account_ids:
-      - c35ecf64-474a-466a-95a6-7b35cb4c8bb4
+        - c35ecf64-474a-466a-95a6-7b35cb4c8bb4
       connect_webview_ids:
-      - dad03fb2-f801-449c-ab88-0529728c7c38
+        - dad03fb2-f801-449c-ab88-0529728c7c38
       user_identity_id: bde98963-3615-4e92-943e-17de3017232b
   response:
     body:
       client_session:
         client_session_id: 3ada79d3-2848-4320-b2ef-a82e1e6dafac
         connect_webview_ids:
-        - dad03fb2-f801-449c-ab88-0529728c7c38
+          - dad03fb2-f801-449c-ab88-0529728c7c38
         connected_account_ids:
-        - c35ecf64-474a-466a-95a6-7b35cb4c8bb4
+          - c35ecf64-474a-466a-95a6-7b35cb4c8bb4
         created_at: '2025-06-15T16:54:17.946309Z'
         customer_id: e387e15f-be27-47ad-881f-4a6fc5460c57
         device_count: 1
@@ -146,19 +146,19 @@
   response:
     body:
       client_sessions:
-      - client_session_id: a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc
-        connect_webview_ids:
-        - e0f522d4-a7b6-4f65-ba90-11cde67a893a
-        connected_account_ids:
-        - c35ecf64-474a-466a-95a6-7b35cb4c8bb4
-        created_at: '2025-06-15T16:54:17.946309Z'
-        customer_id: e387e15f-be27-47ad-881f-4a6fc5460c57
-        device_count: 1
-        expires_at: '2025-06-18T06:10:42.000Z'
-        token: seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq
-        user_identifier_key: jane_doe
-        user_identity_id: b4ce8233-3b35-4d2d-82ec-d48513684f0a
-        workspace_id: b887bf84-9849-4454-a562-cf84293d9781
+        - client_session_id: a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc
+          connect_webview_ids:
+            - e0f522d4-a7b6-4f65-ba90-11cde67a893a
+          connected_account_ids:
+            - c35ecf64-474a-466a-95a6-7b35cb4c8bb4
+          created_at: '2025-06-15T16:54:17.946309Z'
+          customer_id: e387e15f-be27-47ad-881f-4a6fc5460c57
+          device_count: 1
+          expires_at: '2025-06-18T06:10:42.000Z'
+          token: seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq
+          user_identifier_key: jane_doe
+          user_identity_id: b4ce8233-3b35-4d2d-82ec-d48513684f0a
+          workspace_id: b887bf84-9849-4454-a562-cf84293d9781
 - title: List client sessions for a user identifier key
   description: Returns a list of all client sessions for a specific user identifier key.
   request:
@@ -168,19 +168,19 @@
   response:
     body:
       client_sessions:
-      - client_session_id: a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc
-        connect_webview_ids:
-        - e0f522d4-a7b6-4f65-ba90-11cde67a893a
-        connected_account_ids:
-        - c35ecf64-474a-466a-95a6-7b35cb4c8bb4
-        created_at: '2025-06-15T16:54:17.946309Z'
-        customer_id: e387e15f-be27-47ad-881f-4a6fc5460c57
-        device_count: 1
-        expires_at: '2025-06-18T06:10:42.000Z'
-        token: seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq
-        user_identifier_key: jane_doe
-        user_identity_id: b4ce8233-3b35-4d2d-82ec-d48513684f0a
-        workspace_id: b887bf84-9849-4454-a562-cf84293d9781
+        - client_session_id: a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc
+          connect_webview_ids:
+            - e0f522d4-a7b6-4f65-ba90-11cde67a893a
+          connected_account_ids:
+            - c35ecf64-474a-466a-95a6-7b35cb4c8bb4
+          created_at: '2025-06-15T16:54:17.946309Z'
+          customer_id: e387e15f-be27-47ad-881f-4a6fc5460c57
+          device_count: 1
+          expires_at: '2025-06-18T06:10:42.000Z'
+          token: seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq
+          user_identifier_key: jane_doe
+          user_identity_id: b4ce8233-3b35-4d2d-82ec-d48513684f0a
+          workspace_id: b887bf84-9849-4454-a562-cf84293d9781
 - title: List client sessions for a Connect Webview ID
   description: Returns a list of all client sessions for a specific Connect Webview ID.
   request:
@@ -190,19 +190,19 @@
   response:
     body:
       client_sessions:
-      - client_session_id: a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc
-        connect_webview_ids:
-        - e0f522d4-a7b6-4f65-ba90-11cde67a893a
-        connected_account_ids:
-        - c35ecf64-474a-466a-95a6-7b35cb4c8bb4
-        created_at: '2025-06-15T16:54:17.946309Z'
-        customer_id: e387e15f-be27-47ad-881f-4a6fc5460c57
-        device_count: 1
-        expires_at: '2025-06-18T06:10:42.000Z'
-        token: seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq
-        user_identifier_key: jane_doe
-        user_identity_id: b4ce8233-3b35-4d2d-82ec-d48513684f0a
-        workspace_id: b887bf84-9849-4454-a562-cf84293d9781
+        - client_session_id: a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc
+          connect_webview_ids:
+            - e0f522d4-a7b6-4f65-ba90-11cde67a893a
+          connected_account_ids:
+            - c35ecf64-474a-466a-95a6-7b35cb4c8bb4
+          created_at: '2025-06-15T16:54:17.946309Z'
+          customer_id: e387e15f-be27-47ad-881f-4a6fc5460c57
+          device_count: 1
+          expires_at: '2025-06-18T06:10:42.000Z'
+          token: seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq
+          user_identifier_key: jane_doe
+          user_identity_id: b4ce8233-3b35-4d2d-82ec-d48513684f0a
+          workspace_id: b887bf84-9849-4454-a562-cf84293d9781
 - title: List client sessions for a user identity ID
   description: Returns a list of all client sessions for a specific user identity ID.
   request:
@@ -212,19 +212,19 @@
   response:
     body:
       client_sessions:
-      - client_session_id: a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc
-        connect_webview_ids:
-        - e0f522d4-a7b6-4f65-ba90-11cde67a893a
-        connected_account_ids:
-        - c35ecf64-474a-466a-95a6-7b35cb4c8bb4
-        created_at: '2025-06-15T16:54:17.946309Z'
-        customer_id: e387e15f-be27-47ad-881f-4a6fc5460c57
-        device_count: 1
-        expires_at: '2025-06-18T06:10:42.000Z'
-        token: seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq
-        user_identifier_key: jane_doe
-        user_identity_id: b4ce8233-3b35-4d2d-82ec-d48513684f0a
-        workspace_id: b887bf84-9849-4454-a562-cf84293d9781
+        - client_session_id: a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc
+          connect_webview_ids:
+            - e0f522d4-a7b6-4f65-ba90-11cde67a893a
+          connected_account_ids:
+            - c35ecf64-474a-466a-95a6-7b35cb4c8bb4
+          created_at: '2025-06-15T16:54:17.946309Z'
+          customer_id: e387e15f-be27-47ad-881f-4a6fc5460c57
+          device_count: 1
+          expires_at: '2025-06-18T06:10:42.000Z'
+          token: seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq
+          user_identifier_key: jane_doe
+          user_identity_id: b4ce8233-3b35-4d2d-82ec-d48513684f0a
+          workspace_id: b887bf84-9849-4454-a562-cf84293d9781
 - title: List client sessions without a user identifier key
   description: Returns a list of all client sessions without a user identifier key.
   request:
@@ -234,19 +234,19 @@
   response:
     body:
       client_sessions:
-      - client_session_id: a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc
-        connect_webview_ids:
-        - e0f522d4-a7b6-4f65-ba90-11cde67a893a
-        connected_account_ids:
-        - c35ecf64-474a-466a-95a6-7b35cb4c8bb4
-        created_at: '2025-06-15T16:54:17.946309Z'
-        customer_id: e387e15f-be27-47ad-881f-4a6fc5460c57
-        device_count: 1
-        expires_at: '2025-06-18T06:10:42.000Z'
-        token: seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq
-        user_identifier_key: null
-        user_identity_id: b4ce8233-3b35-4d2d-82ec-d48513684f0a
-        workspace_id: b887bf84-9849-4454-a562-cf84293d9781
+        - client_session_id: a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc
+          connect_webview_ids:
+            - e0f522d4-a7b6-4f65-ba90-11cde67a893a
+          connected_account_ids:
+            - c35ecf64-474a-466a-95a6-7b35cb4c8bb4
+          created_at: '2025-06-15T16:54:17.946309Z'
+          customer_id: e387e15f-be27-47ad-881f-4a6fc5460c57
+          device_count: 1
+          expires_at: '2025-06-18T06:10:42.000Z'
+          token: seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq
+          user_identifier_key: null
+          user_identity_id: b4ce8233-3b35-4d2d-82ec-d48513684f0a
+          workspace_id: b887bf84-9849-4454-a562-cf84293d9781
 - title: Revoke a client session
   description: Revokes a client session.
   request:

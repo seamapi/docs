@@ -6,14 +6,14 @@
     parameters:
       url: https://example.com
       event_types:
-      - device.connected
-      - device.disconnected
+        - device.connected
+        - device.disconnected
   response:
     body:
       webhook:
         event_types:
-        - device.connected
-        - device.disconnected
+          - device.connected
+          - device.disconnected
         secret: mySecret
         url: https://example.com
         webhook_id: ffe5cc3c-f3f4-48e8-b377-6f76c05d09a1
@@ -35,8 +35,8 @@
     body:
       webhook:
         event_types:
-        - device.connected
-        - device.disconnected
+          - device.connected
+          - device.disconnected
         secret: mySecret
         url: https://example.com/webhook
         webhook_id: e5f1b17c-c67d-469d-a860-9510cf814657
@@ -47,12 +47,12 @@
   response:
     body:
       webhooks:
-      - event_types:
-        - device.connected
-        - device.disconnected
-        secret: mySecret
-        url: https://example.com/webhook
-        webhook_id: ffe5cc3c-f3f4-48e8-b377-6f76c05d09a1
+        - event_types:
+            - device.connected
+            - device.disconnected
+          secret: mySecret
+          url: https://example.com/webhook
+          webhook_id: ffe5cc3c-f3f4-48e8-b377-6f76c05d09a1
 - title: Update a webhook
   description: Updates a specified webhook.
   request:
@@ -60,16 +60,16 @@
     parameters:
       webhook_id: e294905f-e7a5-4804-95a6-303f440eb262
       event_types:
-      - device.connected
-      - device.disconnected
-      - device.unmanaged.converted_to_managed
+        - device.connected
+        - device.disconnected
+        - device.unmanaged.converted_to_managed
   response:
     body:
       webhook:
         event_types:
-        - device.connected
-        - device.disconnected
-        - device.unmanaged.converted_to_managed
+          - device.connected
+          - device.disconnected
+          - device.unmanaged.converted_to_managed
         secret: mySecret
         url: https://example.com/webhook
         webhook_id: e294905f-e7a5-4804-95a6-303f440eb262
