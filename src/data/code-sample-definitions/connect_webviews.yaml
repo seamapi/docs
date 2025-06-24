@@ -3,7 +3,7 @@
   description: Creates a new Connect Webview that accepts all stable providers.
   request:
     path: /connect_webviews/create
-    body:
+    parameters:
       custom_redirect_url: https://example.com/redirect
       custom_redirect_failure_url: https://example.com/failure-redirect
       customer_id: 8d7a8cc0-2e69-4bc6-85c8-545036fdd5c0
@@ -13,46 +13,46 @@
       automatically_manage_new_devices: true
       wait_for_device_creation: true
       accepted_capabilities:
-        - lock
-        - thermostat
+      - lock
+      - thermostat
   response:
     body:
       connect_webview:
         accepted_capabilities:
-          - lock
-          - thermostat
+        - lock
+        - thermostat
         accepted_devices: []
         accepted_providers:
-          - schlage
-          - kwikset
-          - yale
-          - smartthings
-          - august
-          - avigilon_alta
-          - brivo
-          - nuki
-          - salto_ks
-          - salto_space
-          - controlbyweb
-          - minut
-          - my_2n
-          - ttlock
-          - noiseaware
-          - igloohome
-          - ecobee
-          - four_suites
-          - lockly
-          - wyze
-          - google_nest
-          - tede
-          - seam_bridge
-          - honeywell_resideo
-          - visionline
-          - assa_abloy_credential_service
-          - latch
-          - akiles
-          - sensi
-          - assa_abloy_vostio
+        - schlage
+        - kwikset
+        - yale
+        - smartthings
+        - august
+        - avigilon_alta
+        - brivo
+        - nuki
+        - salto_ks
+        - salto_space
+        - controlbyweb
+        - minut
+        - my_2n
+        - ttlock
+        - noiseaware
+        - igloohome
+        - ecobee
+        - four_suites
+        - lockly
+        - wyze
+        - google_nest
+        - tede
+        - seam_bridge
+        - honeywell_resideo
+        - visionline
+        - assa_abloy_credential_service
+        - latch
+        - akiles
+        - sensi
+        - assa_abloy_vostio
         any_device_allowed: true
         any_provider_allowed: false
         authorized_at: null
@@ -75,35 +75,35 @@
   description: Creates a new Connect Webview that accepts specific providers.
   request:
     path: /connect_webviews/create
-    body:
+    parameters:
       custom_redirect_url: https://example.com/redirect
       custom_redirect_failure_url: https://example.com/failure-redirect
       customer_id: 8d7a8cc0-2e69-4bc6-85c8-545036fdd5c0
       accepted_providers:
-        - kwikset
-        - schlage
-        - smartthings
-        - yale
+      - kwikset
+      - schlage
+      - smartthings
+      - yale
       provider_category: stable
       custom_metadata:
         id: internalId1
       automatically_manage_new_devices: true
       wait_for_device_creation: true
       accepted_capabilities:
-        - lock
-        - thermostat
+      - lock
+      - thermostat
   response:
     body:
       connect_webview:
         accepted_capabilities:
-          - lock
-          - thermostat
+        - lock
+        - thermostat
         accepted_devices: []
         accepted_providers:
-          - kwikset
-          - schlage
-          - smartthings
-          - yale
+        - kwikset
+        - schlage
+        - smartthings
+        - yale
         any_device_allowed: true
         any_provider_allowed: false
         authorized_at: null
@@ -126,7 +126,7 @@
   description: Deletes a Connect Webview.
   request:
     path: /connect_webviews/delete
-    body:
+    parameters:
       connect_webview_id: 816f796f-636c-46a9-9fef-7f90ca69e771
   response:
     body: null
@@ -140,14 +140,14 @@
     body:
       connect_webview:
         accepted_capabilities:
-          - lock
-          - thermostat
+        - lock
+        - thermostat
         accepted_devices: []
         accepted_providers:
-          - kwikset
-          - schlage
-          - smartthings
-          - yale
+        - kwikset
+        - schlage
+        - smartthings
+        - yale
         any_device_allowed: true
         any_provider_allowed: false
         authorized_at: null
@@ -177,14 +177,14 @@
     body:
       connect_webviews:
         accepted_capabilities:
-          - lock
-          - thermostat
+        - lock
+        - thermostat
         accepted_devices: []
         accepted_providers:
-          - kwikset
-          - schlage
-          - smartthings
-          - yale
+        - kwikset
+        - schlage
+        - smartthings
+        - yale
         any_device_allowed: true
         any_provider_allowed: false
         authorized_at: null
@@ -218,14 +218,14 @@
     body:
       connect_webviews:
         accepted_capabilities:
-          - lock
-          - thermostat
+        - lock
+        - thermostat
         accepted_devices: []
         accepted_providers:
-          - kwikset
-          - schlage
-          - smartthings
-          - yale
+        - kwikset
+        - schlage
+        - smartthings
+        - yale
         any_device_allowed: true
         any_provider_allowed: false
         authorized_at: null
@@ -260,14 +260,14 @@
     body:
       connect_webviews:
         accepted_capabilities:
-          - lock
-          - thermostat
+        - lock
+        - thermostat
         accepted_devices: []
         accepted_providers:
-          - kwikset
-          - schlage
-          - smartthings
-          - yale
+        - kwikset
+        - schlage
+        - smartthings
+        - yale
         any_device_allowed: true
         any_provider_allowed: false
         authorized_at: null

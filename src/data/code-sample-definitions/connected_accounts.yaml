@@ -3,7 +3,7 @@
   description: Deletes a specified connected account.
   request:
     path: /connected_accounts/delete
-    body:
+    parameters:
       connected_account_id: 35a07a42-4eb2-4080-9bf9-ee08aa2bf62e
   response:
     body: null
@@ -65,21 +65,21 @@
   response:
     body:
       connected_accounts:
-        - account_type: salto_space
-          account_type_display_name: Salto Space
-          automatically_manage_new_devices: true
-          connected_account_id: a289aa54-5488-4707-9a4b-eeea4edf311d
-          created_at: '2025-06-15T16:54:17.946329Z'
-          custom_metadata:
-            id: internalId1
-          errors: []
-          user_identifier:
-            api_url: https://example.com/api
-            email: jane_doe@example.com
-            exclusive: true
-            phone: '+1555551004'
-            username: jane_doe
-          warnings: []
+      - account_type: salto_space
+        account_type_display_name: Salto Space
+        automatically_manage_new_devices: true
+        connected_account_id: a289aa54-5488-4707-9a4b-eeea4edf311d
+        created_at: '2025-06-15T16:54:17.946329Z'
+        custom_metadata:
+          id: internalId1
+        errors: []
+        user_identifier:
+          api_url: https://example.com/api
+          email: jane_doe@example.com
+          exclusive: true
+          phone: '+1555551004'
+          username: jane_doe
+        warnings: []
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
@@ -94,21 +94,21 @@
   response:
     body:
       connected_accounts:
-        - account_type: salto_space
-          account_type_display_name: Salto Space
-          automatically_manage_new_devices: true
-          connected_account_id: a289aa54-5488-4707-9a4b-eeea4edf311d
-          created_at: '2025-06-15T16:54:17.946329Z'
-          custom_metadata:
-            id: internalId1
-          errors: []
-          user_identifier:
-            api_url: https://example.com/api
-            email: jane_doe@example.com
-            exclusive: true
-            phone: '+1555551004'
-            username: jane_doe
-          warnings: []
+      - account_type: salto_space
+        account_type_display_name: Salto Space
+        automatically_manage_new_devices: true
+        connected_account_id: a289aa54-5488-4707-9a4b-eeea4edf311d
+        created_at: '2025-06-15T16:54:17.946329Z'
+        custom_metadata:
+          id: internalId1
+        errors: []
+        user_identifier:
+          api_url: https://example.com/api
+          email: jane_doe@example.com
+          exclusive: true
+          phone: '+1555551004'
+          username: jane_doe
+        warnings: []
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
@@ -124,21 +124,21 @@
   response:
     body:
       connected_accounts:
-        - account_type: salto_space
-          account_type_display_name: Salto Space
-          automatically_manage_new_devices: true
-          connected_account_id: a289aa54-5488-4707-9a4b-eeea4edf311d
-          created_at: '2025-06-15T16:54:17.946329Z'
-          custom_metadata:
-            id: internalId1
-          errors: []
-          user_identifier:
-            api_url: https://example.com/api
-            email: jane_doe@example.com
-            exclusive: true
-            phone: '+1555551004'
-            username: jane_doe
-          warnings: []
+      - account_type: salto_space
+        account_type_display_name: Salto Space
+        automatically_manage_new_devices: true
+        connected_account_id: a289aa54-5488-4707-9a4b-eeea4edf311d
+        created_at: '2025-06-15T16:54:17.946329Z'
+        custom_metadata:
+          id: internalId1
+        errors: []
+        user_identifier:
+          api_url: https://example.com/api
+          email: jane_doe@example.com
+          exclusive: true
+          phone: '+1555551004'
+          username: jane_doe
+        warnings: []
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
@@ -147,7 +147,7 @@
   description: Request a connected account sync attempt for the specified connected account.
   request:
     path: /connected_accounts/sync
-    body:
+    parameters:
       connected_account_id: f886f890-4ca5-4ce5-b248-509cbfb6c279
   response:
     body: null
@@ -155,7 +155,7 @@
   description: Updates a connected account.
   request:
     path: /connected_accounts/update
-    body:
+    parameters:
       connected_account_id: a289aa54-5488-4707-9a4b-eeea4edf311d
       automatically_manage_new_devices: true
       custom_metadata:

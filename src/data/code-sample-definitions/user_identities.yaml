@@ -3,7 +3,7 @@
   description: Adds a specified access system user to a specified user identity.
   request:
     path: /user_identities/add_acs_user
-    body:
+    parameters:
       user_identity_id: 68dd3d7e-c90b-4c89-ad70-3e589014ed87
       acs_user_id: d73f4706-67e3-419d-899e-ec957a75ee0c
   response:
@@ -12,13 +12,13 @@
   description: Creates a new user identity. By specifying the desired acs_system_id, this operation also creates an access system user for the specified access system if this user does not already exist.
   request:
     path: /user_identities/create
-    body:
+    parameters:
       user_identity_key: 61c6c8ec-21ac-4d1d-be02-688889c66d8c
       email_address: jane@example.com
       phone_number: '+15551234567'
       full_name: Jane Doe
       acs_system_ids:
-        - c359cba2-8ef2-47fc-bee0-1c7c2a886339
+      - c359cba2-8ef2-47fc-bee0-1c7c2a886339
   response:
     body:
       user_identity:
@@ -36,7 +36,7 @@
   description: Deletes a specified user identity.
   request:
     path: /user_identities/delete
-    body:
+    parameters:
       user_identity_id: 7ad2566e-6fd8-466d-b8e4-c10a14a74fd3
   response:
     body: null
@@ -44,7 +44,7 @@
   description: Generates a new instant key for a specified user identity.
   request:
     path: /user_identities/generate_instant_key
-    body:
+    parameters:
       user_identity_id: d92e0c7b-72a1-4063-9ee8-2acefc240358
       max_use_count: 10
   response:
@@ -99,7 +99,7 @@
   description: Grants a specified user identity access to a specified device.
   request:
     path: /user_identities/grant_access_to_device
-    body:
+    parameters:
       user_identity_id: 4e9b7099-bcad-4af6-bb78-88b96cc347bd
       device_id: 6de31c5d-c8a3-4b25-a86b-a9c5075a5eb8
   response:
@@ -111,16 +111,16 @@
   response:
     body:
       user_identities:
-        - created_at: '2025-06-16T16:54:17.946546Z'
-          display_name: Jane Doe
-          email_address: jane@example.com
-          errors: []
-          full_name: Jane Doe
-          phone_number: '+1555551002'
-          user_identity_id: 43947360-cdc8-4db6-8b22-e079416d1d8b
-          user_identity_key: jane_doe
-          warnings: []
-          workspace_id: b7e0a4e0-1044-4319-9a0b-42b642b68c7f
+      - created_at: '2025-06-16T16:54:17.946546Z'
+        display_name: Jane Doe
+        email_address: jane@example.com
+        errors: []
+        full_name: Jane Doe
+        phone_number: '+1555551002'
+        user_identity_id: 43947360-cdc8-4db6-8b22-e079416d1d8b
+        user_identity_key: jane_doe
+        warnings: []
+        workspace_id: b7e0a4e0-1044-4319-9a0b-42b642b68c7f
 - title: List user identities for a credential manager
   description: Returns a list of all user identities for a specified credential manager.
   request:
@@ -130,16 +130,16 @@
   response:
     body:
       user_identities:
-        - created_at: '2025-06-16T16:54:17.946546Z'
-          display_name: Jane Doe
-          email_address: jane@example.com
-          errors: []
-          full_name: Jane Doe
-          phone_number: '+1555551002'
-          user_identity_id: 43947360-cdc8-4db6-8b22-e079416d1d8b
-          user_identity_key: jane_doe
-          warnings: []
-          workspace_id: b7e0a4e0-1044-4319-9a0b-42b642b68c7f
+      - created_at: '2025-06-16T16:54:17.946546Z'
+        display_name: Jane Doe
+        email_address: jane@example.com
+        errors: []
+        full_name: Jane Doe
+        phone_number: '+1555551002'
+        user_identity_id: 43947360-cdc8-4db6-8b22-e079416d1d8b
+        user_identity_key: jane_doe
+        warnings: []
+        workspace_id: b7e0a4e0-1044-4319-9a0b-42b642b68c7f
 - title: List accessible devices for a user identity
   description: Returns a list of all devices associated with a specified user identity.
   request:
@@ -149,317 +149,317 @@
   response:
     body:
       devices:
-        - can_hvac_cool: true
-          can_hvac_heat: true
-          can_hvac_heat_cool: true
-          can_turn_off_hvac: true
-          capabilities_supported:
-            - thermostat
-          connected_account_id: a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d
-          created_at: '2024-10-03T22:12:15.666Z'
-          custom_metadata:
-            id: internalId1
-          device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
-          device_type: ecobee_thermostat
-          display_name: Living Room
-          errors: []
-          is_managed: true
-          location:
-            location_name: 2948 20th St, San Francisco, CA, 94110, US
-            timezone: America/Los_Angeles
-          nickname: Living Room
-          properties:
-            active_climate_preset:
-              can_delete: true
-              can_edit: true
-              climate_preset_key: sleep
-              cooling_set_point_celsius: 23.88888888888889
-              display_name: Sleep
-              fan_mode_setting: auto
-              heating_set_point_celsius: 17.77777777777778
-              hvac_mode_setting: heat_cool
-              manual_override_allowed: true
-            appearance:
-              name: Living Room
-            available_climate_presets:
-              - climate_preset_key: sleep
-                can_edit: true
-                can_delete: true
-                can_program: false
-                name: Sleep
-                display_name: Sleep
-                fan_mode_setting: auto
-                hvac_mode_setting: heat_cool
-                manual_override_allowed: true
-                cooling_set_point_celsius: 23.88888888888889
-                heating_set_point_celsius: 17.77777777777778
-                cooling_set_point_fahrenheit: 75
-                heating_set_point_fahrenheit: 64
-              - climate_preset_key: home
-                can_edit: true
-                can_delete: true
-                can_program: false
-                name: Home
-                display_name: Home
-                fan_mode_setting: auto
-                hvac_mode_setting: heat_cool
-                manual_override_allowed: false
-                cooling_set_point_celsius: 23.88888888888889
-                heating_set_point_celsius: 17.77777777777778
-                cooling_set_point_fahrenheit: 75
-                heating_set_point_fahrenheit: 64
-              - climate_preset_key: work
-                can_edit: true
-                can_delete: true
-                can_program: false
-                name: Work
-                display_name: Work
-                fan_mode_setting: auto
-                hvac_mode_setting: heat_cool
-                manual_override_allowed: false
-                cooling_set_point_celsius: 23.88888888888889
-                heating_set_point_celsius: 17.77777777777778
-                cooling_set_point_fahrenheit: 75
-                heating_set_point_fahrenheit: 64
-            available_fan_mode_settings:
-              - auto
-              - on
-            available_hvac_mode_settings:
-              - cool
-              - heat
-              - heat_cool
-              - off
-            current_climate_setting:
-              display_name: Manual Setting
-              fan_mode_setting: auto
-              heating_set_point_celsius: 25
-              heating_set_point_fahrenheit: 77
-              hvac_mode_setting: heat
-              manual_override_allowed: true
-            ecobee_metadata:
-              device_name: Living Room
-              ecobee_device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
-            fallback_climate_preset_key: eco
+      - can_hvac_cool: true
+        can_hvac_heat: true
+        can_hvac_heat_cool: true
+        can_turn_off_hvac: true
+        capabilities_supported:
+        - thermostat
+        connected_account_id: a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d
+        created_at: '2024-10-03T22:12:15.666Z'
+        custom_metadata:
+          id: internalId1
+        device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+        device_type: ecobee_thermostat
+        display_name: Living Room
+        errors: []
+        is_managed: true
+        location:
+          location_name: 2948 20th St, San Francisco, CA, 94110, US
+          timezone: America/Los_Angeles
+        nickname: Living Room
+        properties:
+          active_climate_preset:
+            can_delete: true
+            can_edit: true
+            climate_preset_key: sleep
+            cooling_set_point_celsius: 23.88888888888889
+            display_name: Sleep
             fan_mode_setting: auto
-            has_direct_power: true
-            image_alt_text: Ecobee 3 Lite Thermostat
-            image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png&q=75&w=128
-            is_cooling: false
-            is_fan_running: false
-            is_heating: false
-            is_temporary_manual_override_active: false
-            manufacturer: ecobee
-            max_cooling_set_point_celsius: 33.333333333333336
-            max_cooling_set_point_fahrenheit: 92
-            max_heating_set_point_celsius: 26.11111111111111
-            max_heating_set_point_fahrenheit: 79
-            min_cooling_set_point_celsius: 18.333333333333336
-            min_cooling_set_point_fahrenheit: 65
-            min_heating_cooling_delta_celsius: 2.7777777777777777
-            min_heating_cooling_delta_fahrenheit: 5
-            min_heating_set_point_celsius: 7.222222222222222
-            min_heating_set_point_fahrenheit: 45
-            model:
-              display_name: Thermostat
-              manufacturer_display_name: Ecobee
+            heating_set_point_celsius: 17.77777777777778
+            hvac_mode_setting: heat_cool
+            manual_override_allowed: true
+          appearance:
             name: Living Room
-            online: true
-            relative_humidity: 0.36
-            temperature_celsius: 21.11111111111111
-            temperature_fahrenheit: 70
-            temperature_threshold:
-              lower_limit_celsius: 16.66666666666667
-              lower_limit_fahrenheit: 62
-              upper_limit_celsius: 26.66666666666667
-              upper_limit_fahrenheit: 80
-            thermostat_daily_programs:
-              - thermostat_daily_program_id: 1a2b3c4d-5e6f-7890-1234-56789abcdef1
-                device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
-                name: Weekday Program
-                periods:
-                  - starts_at_time: 00:00:00
-                    climate_preset_key: sleep
-                  - starts_at_time: 07:00:00
-                    climate_preset_key: home
-                  - starts_at_time: 09:00:00
-                    climate_preset_key: work
-                  - starts_at_time: '18:00:00'
-                    climate_preset_key: home
-                  - starts_at_time: '22:00:00'
-                    climate_preset_key: sleep
-                workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
-                created_at: '2025-05-30T04:01:25.455Z'
-              - thermostat_daily_program_id: d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90
-                device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
-                name: Weekend Program
-                periods:
-                  - starts_at_time: 00:00:00
-                    climate_preset_key: sleep
-                  - starts_at_time: 08:00:00
-                    climate_preset_key: home
-                  - starts_at_time: '23:00:00'
-                    climate_preset_key: sleep
-                workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
-                created_at: '2025-05-30T04:02:19.952Z'
-            thermostat_weekly_program: null
-          warnings: []
-          workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+          available_climate_presets:
+          - climate_preset_key: sleep
+            can_edit: true
+            can_delete: true
+            can_program: false
+            name: Sleep
+            display_name: Sleep
+            fan_mode_setting: auto
+            hvac_mode_setting: heat_cool
+            manual_override_allowed: true
+            cooling_set_point_celsius: 23.88888888888889
+            heating_set_point_celsius: 17.77777777777778
+            cooling_set_point_fahrenheit: 75
+            heating_set_point_fahrenheit: 64
+          - climate_preset_key: home
+            can_edit: true
+            can_delete: true
+            can_program: false
+            name: Home
+            display_name: Home
+            fan_mode_setting: auto
+            hvac_mode_setting: heat_cool
+            manual_override_allowed: false
+            cooling_set_point_celsius: 23.88888888888889
+            heating_set_point_celsius: 17.77777777777778
+            cooling_set_point_fahrenheit: 75
+            heating_set_point_fahrenheit: 64
+          - climate_preset_key: work
+            can_edit: true
+            can_delete: true
+            can_program: false
+            name: Work
+            display_name: Work
+            fan_mode_setting: auto
+            hvac_mode_setting: heat_cool
+            manual_override_allowed: false
+            cooling_set_point_celsius: 23.88888888888889
+            heating_set_point_celsius: 17.77777777777778
+            cooling_set_point_fahrenheit: 75
+            heating_set_point_fahrenheit: 64
+          available_fan_mode_settings:
+          - auto
+          - on
+          available_hvac_mode_settings:
+          - cool
+          - heat
+          - heat_cool
+          - off
+          current_climate_setting:
+            display_name: Manual Setting
+            fan_mode_setting: auto
+            heating_set_point_celsius: 25
+            heating_set_point_fahrenheit: 77
+            hvac_mode_setting: heat
+            manual_override_allowed: true
+          ecobee_metadata:
+            device_name: Living Room
+            ecobee_device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+          fallback_climate_preset_key: eco
+          fan_mode_setting: auto
+          has_direct_power: true
+          image_alt_text: Ecobee 3 Lite Thermostat
+          image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png&q=75&w=128
+          is_cooling: false
+          is_fan_running: false
+          is_heating: false
+          is_temporary_manual_override_active: false
+          manufacturer: ecobee
+          max_cooling_set_point_celsius: 33.333333333333336
+          max_cooling_set_point_fahrenheit: 92
+          max_heating_set_point_celsius: 26.11111111111111
+          max_heating_set_point_fahrenheit: 79
+          min_cooling_set_point_celsius: 18.333333333333336
+          min_cooling_set_point_fahrenheit: 65
+          min_heating_cooling_delta_celsius: 2.7777777777777777
+          min_heating_cooling_delta_fahrenheit: 5
+          min_heating_set_point_celsius: 7.222222222222222
+          min_heating_set_point_fahrenheit: 45
+          model:
+            display_name: Thermostat
+            manufacturer_display_name: Ecobee
+          name: Living Room
+          online: true
+          relative_humidity: 0.36
+          temperature_celsius: 21.11111111111111
+          temperature_fahrenheit: 70
+          temperature_threshold:
+            lower_limit_celsius: 16.66666666666667
+            lower_limit_fahrenheit: 62
+            upper_limit_celsius: 26.66666666666667
+            upper_limit_fahrenheit: 80
+          thermostat_daily_programs:
+          - thermostat_daily_program_id: 1a2b3c4d-5e6f-7890-1234-56789abcdef1
+            device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+            name: Weekday Program
+            periods:
+            - starts_at_time: 00:00:00
+              climate_preset_key: sleep
+            - starts_at_time: 07:00:00
+              climate_preset_key: home
+            - starts_at_time: 09:00:00
+              climate_preset_key: work
+            - starts_at_time: '18:00:00'
+              climate_preset_key: home
+            - starts_at_time: '22:00:00'
+              climate_preset_key: sleep
+            workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+            created_at: '2025-05-30T04:01:25.455Z'
+          - thermostat_daily_program_id: d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90
+            device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+            name: Weekend Program
+            periods:
+            - starts_at_time: 00:00:00
+              climate_preset_key: sleep
+            - starts_at_time: 08:00:00
+              climate_preset_key: home
+            - starts_at_time: '23:00:00'
+              climate_preset_key: sleep
+            workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+            created_at: '2025-05-30T04:02:19.952Z'
+          thermostat_weekly_program: null
+        warnings: []
+        workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
       accessible_devices:
-        - can_hvac_cool: true
-          can_hvac_heat: true
-          can_hvac_heat_cool: true
-          can_turn_off_hvac: true
-          capabilities_supported:
-            - thermostat
-          connected_account_id: a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d
-          created_at: '2024-10-03T22:12:15.666Z'
-          custom_metadata:
-            id: internalId1
-          device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
-          device_type: ecobee_thermostat
-          display_name: Living Room
-          errors: []
-          is_managed: true
-          location:
-            location_name: 2948 20th St, San Francisco, CA, 94110, US
-            timezone: America/Los_Angeles
-          nickname: Living Room
-          properties:
-            active_climate_preset:
-              can_delete: true
-              can_edit: true
-              climate_preset_key: sleep
-              cooling_set_point_celsius: 23.88888888888889
-              display_name: Sleep
-              fan_mode_setting: auto
-              heating_set_point_celsius: 17.77777777777778
-              hvac_mode_setting: heat_cool
-              manual_override_allowed: true
-            appearance:
-              name: Living Room
-            available_climate_presets:
-              - climate_preset_key: sleep
-                can_edit: true
-                can_delete: true
-                can_program: false
-                name: Sleep
-                display_name: Sleep
-                fan_mode_setting: auto
-                hvac_mode_setting: heat_cool
-                manual_override_allowed: true
-                cooling_set_point_celsius: 23.88888888888889
-                heating_set_point_celsius: 17.77777777777778
-                cooling_set_point_fahrenheit: 75
-                heating_set_point_fahrenheit: 64
-              - climate_preset_key: home
-                can_edit: true
-                can_delete: true
-                can_program: false
-                name: Home
-                display_name: Home
-                fan_mode_setting: auto
-                hvac_mode_setting: heat_cool
-                manual_override_allowed: false
-                cooling_set_point_celsius: 23.88888888888889
-                heating_set_point_celsius: 17.77777777777778
-                cooling_set_point_fahrenheit: 75
-                heating_set_point_fahrenheit: 64
-              - climate_preset_key: work
-                can_edit: true
-                can_delete: true
-                can_program: false
-                name: Work
-                display_name: Work
-                fan_mode_setting: auto
-                hvac_mode_setting: heat_cool
-                manual_override_allowed: false
-                cooling_set_point_celsius: 23.88888888888889
-                heating_set_point_celsius: 17.77777777777778
-                cooling_set_point_fahrenheit: 75
-                heating_set_point_fahrenheit: 64
-            available_fan_mode_settings:
-              - auto
-              - on
-            available_hvac_mode_settings:
-              - cool
-              - heat
-              - heat_cool
-              - off
-            current_climate_setting:
-              display_name: Manual Setting
-              fan_mode_setting: auto
-              heating_set_point_celsius: 25
-              heating_set_point_fahrenheit: 77
-              hvac_mode_setting: heat
-              manual_override_allowed: true
-            ecobee_metadata:
-              device_name: Living Room
-              ecobee_device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
-            fallback_climate_preset_key: eco
+      - can_hvac_cool: true
+        can_hvac_heat: true
+        can_hvac_heat_cool: true
+        can_turn_off_hvac: true
+        capabilities_supported:
+        - thermostat
+        connected_account_id: a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d
+        created_at: '2024-10-03T22:12:15.666Z'
+        custom_metadata:
+          id: internalId1
+        device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+        device_type: ecobee_thermostat
+        display_name: Living Room
+        errors: []
+        is_managed: true
+        location:
+          location_name: 2948 20th St, San Francisco, CA, 94110, US
+          timezone: America/Los_Angeles
+        nickname: Living Room
+        properties:
+          active_climate_preset:
+            can_delete: true
+            can_edit: true
+            climate_preset_key: sleep
+            cooling_set_point_celsius: 23.88888888888889
+            display_name: Sleep
             fan_mode_setting: auto
-            has_direct_power: true
-            image_alt_text: Ecobee 3 Lite Thermostat
-            image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png&q=75&w=128
-            is_cooling: false
-            is_fan_running: false
-            is_heating: false
-            is_temporary_manual_override_active: false
-            manufacturer: ecobee
-            max_cooling_set_point_celsius: 33.333333333333336
-            max_cooling_set_point_fahrenheit: 92
-            max_heating_set_point_celsius: 26.11111111111111
-            max_heating_set_point_fahrenheit: 79
-            min_cooling_set_point_celsius: 18.333333333333336
-            min_cooling_set_point_fahrenheit: 65
-            min_heating_cooling_delta_celsius: 2.7777777777777777
-            min_heating_cooling_delta_fahrenheit: 5
-            min_heating_set_point_celsius: 7.222222222222222
-            min_heating_set_point_fahrenheit: 45
-            model:
-              display_name: Thermostat
-              manufacturer_display_name: Ecobee
+            heating_set_point_celsius: 17.77777777777778
+            hvac_mode_setting: heat_cool
+            manual_override_allowed: true
+          appearance:
             name: Living Room
-            online: true
-            relative_humidity: 0.36
-            temperature_celsius: 21.11111111111111
-            temperature_fahrenheit: 70
-            temperature_threshold:
-              lower_limit_celsius: 16.66666666666667
-              lower_limit_fahrenheit: 62
-              upper_limit_celsius: 26.66666666666667
-              upper_limit_fahrenheit: 80
-            thermostat_daily_programs:
-              - thermostat_daily_program_id: 1a2b3c4d-5e6f-7890-1234-56789abcdef1
-                device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
-                name: Weekday Program
-                periods:
-                  - starts_at_time: 00:00:00
-                    climate_preset_key: sleep
-                  - starts_at_time: 07:00:00
-                    climate_preset_key: home
-                  - starts_at_time: 09:00:00
-                    climate_preset_key: work
-                  - starts_at_time: '18:00:00'
-                    climate_preset_key: home
-                  - starts_at_time: '22:00:00'
-                    climate_preset_key: sleep
-                workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
-                created_at: '2025-05-30T04:01:25.455Z'
-              - thermostat_daily_program_id: d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90
-                device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
-                name: Weekend Program
-                periods:
-                  - starts_at_time: 00:00:00
-                    climate_preset_key: sleep
-                  - starts_at_time: 08:00:00
-                    climate_preset_key: home
-                  - starts_at_time: '23:00:00'
-                    climate_preset_key: sleep
-                workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
-                created_at: '2025-05-30T04:02:19.952Z'
-            thermostat_weekly_program: null
-          warnings: []
-          workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+          available_climate_presets:
+          - climate_preset_key: sleep
+            can_edit: true
+            can_delete: true
+            can_program: false
+            name: Sleep
+            display_name: Sleep
+            fan_mode_setting: auto
+            hvac_mode_setting: heat_cool
+            manual_override_allowed: true
+            cooling_set_point_celsius: 23.88888888888889
+            heating_set_point_celsius: 17.77777777777778
+            cooling_set_point_fahrenheit: 75
+            heating_set_point_fahrenheit: 64
+          - climate_preset_key: home
+            can_edit: true
+            can_delete: true
+            can_program: false
+            name: Home
+            display_name: Home
+            fan_mode_setting: auto
+            hvac_mode_setting: heat_cool
+            manual_override_allowed: false
+            cooling_set_point_celsius: 23.88888888888889
+            heating_set_point_celsius: 17.77777777777778
+            cooling_set_point_fahrenheit: 75
+            heating_set_point_fahrenheit: 64
+          - climate_preset_key: work
+            can_edit: true
+            can_delete: true
+            can_program: false
+            name: Work
+            display_name: Work
+            fan_mode_setting: auto
+            hvac_mode_setting: heat_cool
+            manual_override_allowed: false
+            cooling_set_point_celsius: 23.88888888888889
+            heating_set_point_celsius: 17.77777777777778
+            cooling_set_point_fahrenheit: 75
+            heating_set_point_fahrenheit: 64
+          available_fan_mode_settings:
+          - auto
+          - on
+          available_hvac_mode_settings:
+          - cool
+          - heat
+          - heat_cool
+          - off
+          current_climate_setting:
+            display_name: Manual Setting
+            fan_mode_setting: auto
+            heating_set_point_celsius: 25
+            heating_set_point_fahrenheit: 77
+            hvac_mode_setting: heat
+            manual_override_allowed: true
+          ecobee_metadata:
+            device_name: Living Room
+            ecobee_device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+          fallback_climate_preset_key: eco
+          fan_mode_setting: auto
+          has_direct_power: true
+          image_alt_text: Ecobee 3 Lite Thermostat
+          image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png&q=75&w=128
+          is_cooling: false
+          is_fan_running: false
+          is_heating: false
+          is_temporary_manual_override_active: false
+          manufacturer: ecobee
+          max_cooling_set_point_celsius: 33.333333333333336
+          max_cooling_set_point_fahrenheit: 92
+          max_heating_set_point_celsius: 26.11111111111111
+          max_heating_set_point_fahrenheit: 79
+          min_cooling_set_point_celsius: 18.333333333333336
+          min_cooling_set_point_fahrenheit: 65
+          min_heating_cooling_delta_celsius: 2.7777777777777777
+          min_heating_cooling_delta_fahrenheit: 5
+          min_heating_set_point_celsius: 7.222222222222222
+          min_heating_set_point_fahrenheit: 45
+          model:
+            display_name: Thermostat
+            manufacturer_display_name: Ecobee
+          name: Living Room
+          online: true
+          relative_humidity: 0.36
+          temperature_celsius: 21.11111111111111
+          temperature_fahrenheit: 70
+          temperature_threshold:
+            lower_limit_celsius: 16.66666666666667
+            lower_limit_fahrenheit: 62
+            upper_limit_celsius: 26.66666666666667
+            upper_limit_fahrenheit: 80
+          thermostat_daily_programs:
+          - thermostat_daily_program_id: 1a2b3c4d-5e6f-7890-1234-56789abcdef1
+            device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+            name: Weekday Program
+            periods:
+            - starts_at_time: 00:00:00
+              climate_preset_key: sleep
+            - starts_at_time: 07:00:00
+              climate_preset_key: home
+            - starts_at_time: 09:00:00
+              climate_preset_key: work
+            - starts_at_time: '18:00:00'
+              climate_preset_key: home
+            - starts_at_time: '22:00:00'
+              climate_preset_key: sleep
+            workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+            created_at: '2025-05-30T04:01:25.455Z'
+          - thermostat_daily_program_id: d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90
+            device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+            name: Weekend Program
+            periods:
+            - starts_at_time: 00:00:00
+              climate_preset_key: sleep
+            - starts_at_time: 08:00:00
+              climate_preset_key: home
+            - starts_at_time: '23:00:00'
+              climate_preset_key: sleep
+            workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+            created_at: '2025-05-30T04:02:19.952Z'
+          thermostat_weekly_program: null
+        warnings: []
+        workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
 - title: List access systems for a user identity
   description: Returns a list of all access systems associated with a specified user identity.
   request:
@@ -469,25 +469,25 @@
   response:
     body:
       acs_systems:
-        - acs_access_group_count: 5
-          acs_system_id: dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7
-          acs_user_count: 20
-          connected_account_id: a94aeed0-1ae0-4e49-9c23-8444c7ceba09
-          connected_account_ids:
-            - a94aeed0-1ae0-4e49-9c23-8444c7ceba09
-          created_at: '2025-06-15T16:54:17.946425Z'
-          default_credential_manager_acs_system_id: 5dde2def-3507-44f5-9521-7ca96aa4cd18
-          errors: []
-          external_type: salto_ks_site
-          external_type_display_name: Salto KS site
-          image_alt_text: Salto KS site Logo
-          image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128
-          is_credential_manager: false
-          location:
-            time_zone: America/New_York
-          name: My Access System
-          warnings: []
-          workspace_id: 172920be-1f4d-45d4-8519-ecc3bdee638f
+      - acs_access_group_count: 5
+        acs_system_id: dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7
+        acs_user_count: 20
+        connected_account_id: a94aeed0-1ae0-4e49-9c23-8444c7ceba09
+        connected_account_ids:
+        - a94aeed0-1ae0-4e49-9c23-8444c7ceba09
+        created_at: '2025-06-15T16:54:17.946425Z'
+        default_credential_manager_acs_system_id: 5dde2def-3507-44f5-9521-7ca96aa4cd18
+        errors: []
+        external_type: salto_ks_site
+        external_type_display_name: Salto KS site
+        image_alt_text: Salto KS site Logo
+        image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128
+        is_credential_manager: false
+        location:
+          time_zone: America/New_York
+        name: My Access System
+        warnings: []
+        workspace_id: 172920be-1f4d-45d4-8519-ecc3bdee638f
 - title: List access system users for a user identity
   description: Returns a list of all access system users assigned to a specified user identity.
   request:
@@ -497,36 +497,36 @@
   response:
     body:
       acs_users:
-        - access_schedule:
-            ends_at: '2025-06-12T11:00:00.000Z'
-            starts_at: '2025-06-10T15:00:00.000Z'
-          acs_system_id: 62d3384f-267f-4a4a-a946-d35819ec9981
-          acs_user_id: 6a5d9697-3cc4-436a-8165-4375ff424870
-          connected_account_id: c0175797-30f0-49f7-a228-2df115443ca7
-          created_at: '2025-06-15T16:54:17.946482Z'
-          display_name: Jane Doe
-          email_address: jane@example.com
-          errors: []
-          external_type: salto_site_user
-          external_type_display_name: Salto site user
-          full_name: Jane Doe
-          hid_acs_system_id: 2acbe47f-612c-422a-9205-7af292f74e7f
-          is_managed: true
-          is_suspended: false
-          last_successful_sync_at: '2025-06-18T17:45:00.582Z'
-          pending_mutations: []
-          phone_number: '+1555551000'
-          user_identity_email_address: jane@example.com
-          user_identity_full_name: Jane Doe
-          user_identity_id: a23b3e02-e394-4e5f-b21c-b366b8bc0dd3
-          user_identity_phone_number: '+1555551000'
-          warnings: []
-          workspace_id: 8d4868e3-2f95-4f33-8689-19420b3101cd
+      - access_schedule:
+          ends_at: '2025-06-12T11:00:00.000Z'
+          starts_at: '2025-06-10T15:00:00.000Z'
+        acs_system_id: 62d3384f-267f-4a4a-a946-d35819ec9981
+        acs_user_id: 6a5d9697-3cc4-436a-8165-4375ff424870
+        connected_account_id: c0175797-30f0-49f7-a228-2df115443ca7
+        created_at: '2025-06-15T16:54:17.946482Z'
+        display_name: Jane Doe
+        email_address: jane@example.com
+        errors: []
+        external_type: salto_site_user
+        external_type_display_name: Salto site user
+        full_name: Jane Doe
+        hid_acs_system_id: 2acbe47f-612c-422a-9205-7af292f74e7f
+        is_managed: true
+        is_suspended: false
+        last_successful_sync_at: '2025-06-18T17:45:00.582Z'
+        pending_mutations: []
+        phone_number: '+1555551000'
+        user_identity_email_address: jane@example.com
+        user_identity_full_name: Jane Doe
+        user_identity_id: a23b3e02-e394-4e5f-b21c-b366b8bc0dd3
+        user_identity_phone_number: '+1555551000'
+        warnings: []
+        workspace_id: 8d4868e3-2f95-4f33-8689-19420b3101cd
 - title: Remove an access system user from a user identity
   description: Removes a specified access system user from a specified user identity.
   request:
     path: /user_identities/remove_acs_user
-    body:
+    parameters:
       user_identity_id: 802633b6-a66c-4911-b57b-323e900ee531
       acs_user_id: faa22878-fa74-4ea0-87f7-2b05c1b06181
   response:
@@ -535,7 +535,7 @@
   description: Revokes access to a specified device from a specified user identity.
   request:
     path: /user_identities/revoke_access_to_device
-    body:
+    parameters:
       user_identity_id: a5a48343-a95e-4f51-a5d9-1e4241b73553
       device_id: 92874f9e-a2b5-4d49-a039-0280196ad4d5
   response:
@@ -544,7 +544,7 @@
   description: Updates a specified user identity.
   request:
     path: /user_identities/update
-    body:
+    parameters:
       user_identity_id: dc378ea9-358e-4999-b295-d0f3e0d5ff51
       user_identity_key: jane_doe
       email_address: jane@example.com
