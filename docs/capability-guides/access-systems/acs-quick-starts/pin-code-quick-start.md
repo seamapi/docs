@@ -94,27 +94,6 @@ composer require seamapi/seam
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Gradle:**
-
-```gradle
-// build.gradle
-dependencies {
-    implementation 'io.github.seamapi:java:0.x.x'
-}
-```
-
-**Maven:**
-
-```xml
-<!-- pom.xml -->
-<dependency>
-    <groupId>io.github.seamapi</groupId>
-    <artifactId>java</artifactId>
-    <version>0.x.x</version>
-</dependency>
-```
-{% endtab %}
 
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
@@ -340,19 +319,6 @@ $acs_user = $seam->acs->users->create(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -484,19 +450,6 @@ void
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -648,19 +601,6 @@ $pin_code_credential = $seam->acs->credentials->create(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}

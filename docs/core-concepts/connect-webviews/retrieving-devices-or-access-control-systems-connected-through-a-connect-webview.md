@@ -185,31 +185,6 @@ var connectedDevices = seam.Devices.List(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Retrieve all devices for the connectedAccountId.
-var connectedDevices = seam.devices().list(DevicesListRequest.builder()
-  .connectedAccountId("11111111-1111-1111-1111-222222222222")
-  .build());
-```
-
-**Output:**
-
-```json
-[
-  {
-    "connected_account_id": "11111111-1111-1111-1111-222222222222",
-    "device_id": "11111111-1111-1111-1111-444444444444",
-    "display_name": "Front Door Lock",
-    "is_managed": true,
-    ...
-  },
-  ...
-]
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -381,19 +356,6 @@ var connectedAcsSystems = seam.SystemsAcs.List(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}

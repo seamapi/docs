@@ -314,52 +314,6 @@ seam.AccessCodes.CreateMultiple(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Create the group of linked access codes.
-// Each returned access code includes a common_code_key.
-seam.accessCodes()
-  .createMultiple(AccessCodesCreateMultipleRequest.builder()
-    .deviceIds(new ArrayList<>(Arrays.asList(
-      "8e94044d-a4d1-4691-9f7e-e97d3e8a0b73",
-      "d87eea5d-71c6-4633-a966-396c5ac51177"
-    )))
-    .name("Jane's reservation")
-    .startsAt("2024-11-15T15:00:00Z")
-    .endsAt("2024-11-17T11:00:00Z")
-    .preferredCodeLength(4)
-    .build());
-```
-
-**Response:**
-
-```json
-[
-  {
-    "access_code_id": "a1c682b1-c909-473f-926a-442a4ffc54c2",
-    "name": "Jane's reservation",
-    "device_id": "8e94044d-a4d1-4691-9f7e-e97d3e8a0b73",
-    "code": "5974",
-    "common_code_key": "auto_set_by_create_multiple_72f81ee3-997f-4fdc-81d0-289dabc28ae7",
-    "starts_at": "2024-12-15T15:00:00.000Z",
-    "ends_at": "2024-12-17T11:00:00.000Z",
-    ...
-  },
-  {
-    "access_code_id": "49261a24-103c-4880-8e58-d1d98f301ba7",
-    "name": "Jane's reservation",
-    "device_id": "d87eea5d-71c6-4633-a966-396c5ac51177",
-    "code": "5974",
-    "common_code_key": "auto_set_by_create_multiple_72f81ee3-997f-4fdc-81d0-289dabc28ae7",
-    "starts_at": "2024-12-15T15:00:00.000Z",
-    "ends_at": "2024-12-17T11:00:00.000Z",
-    ...
-  }
-]
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -510,28 +464,6 @@ void
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Update the starting and ending times
-// for all these linked access codes,
-// using the common_code_key to identify
-// the group of access codes to update.
-seam.accessCodes()
-  .updateMultiple(AccessCodesUpdateMultipleRequest.builder()
-    .commonCodeKey(commonCodeKey)
-    .startsAt("2024-11-15T12:00:00Z")
-    .endsAt("2024-11-17T15:00:00Z")
-    .build());
-```
-
-**Response:**
-
-```json
-void
-```
-{% endtab %}
 
 
 {% endtabs %}

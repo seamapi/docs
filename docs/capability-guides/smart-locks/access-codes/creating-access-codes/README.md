@@ -176,27 +176,6 @@ seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
-```
-
-**Response:**
-
-```json
-{
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "can_program_online_access_codes": true,  // You can create online access codes for this device.
-  "can_program_offline_access_codes": true, // You can create offline access codes for this device.
-  ...
-}
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -435,42 +414,6 @@ if (device.CanProgramOnlineAccessCodes == true) {
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Get the device.
-Device device = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
-
-// Confirm that the device supports online access codes.
-if (device.getCanProgramOnlineAccessCodes())
-{
-  // Create the ongoing online access code.
-  seam.accessCodes()
-    .create(AccessCodesCreateRequest.builder()
-      .deviceId(device.getDeviceId())
-      .name("my ongoing code")
-      .code("1234")
-      .build());
-}
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id" : "11111111-1111-1111-1111-555555555555",
-  "device_id" : "11111111-1111-1111-1111-444444444444",
-  "name" : "my ongoing code",
-  "code" : "1234",
-  "type" : "ongoing",
-  ...
-}
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -762,46 +705,6 @@ if (device.CanProgramOnlineAccessCodes == true) {
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Get the device.
-Device device = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
-
-// Confirm that the device supports online access codes.
-if (device.getCanProgramOnlineAccessCodes())
-{
-  // Create the time-bound online access code.
-  seam.accessCodes()
-    .create(AccessCodesCreateRequest.builder()
-      .deviceId(device.getDeviceId())
-      .name("my time-bound code")
-      .startsAt("2025-01-01T16:00:00Z")
-      .endsAt("2025-01-22T12:00:00Z")
-      .code("2345")
-      .build());
-}
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id" : "11111111-1111-1111-1111-666666666666",
-  "device_id" : "11111111-1111-1111-1111-444444444444",
-  "name" : "my time-bound code",
-  "code" : "2345",
-  "type" : "time_bound",
-  "starts_at" : "2025-01-01T16:00:00Z",
-  "ends_at" : "2025-01-22T12:00:00Z",
-  ...
-}
-```
-{% endtab %}
 
 
 {% endtabs %}

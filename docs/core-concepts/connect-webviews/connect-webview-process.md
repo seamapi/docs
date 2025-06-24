@@ -224,36 +224,6 @@ var createdConnectWebview = seam.ConnectWebviews.Create(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-ConnectWebview createdConnectWebview = seam.connectWebviews().create(ConnectWebviewsCreateRequest.builder()
-  .customRedirectUrl("https://example.com/redirect")
-  .customRedirectFailureUrl("https://example.com/failure-redirect")
-  .providerCategory(ProviderCategory.STABLE)
-  .waitForDeviceCreation(true)
-  .build());
-```
-
-**Output:**
-
-```json
-{
-  "connect_webview_id": "12345678-1234-1234-1234-123456789012",
-  "url": "https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=9eBKNtzB6ZKkSPPD33MZFshYSbmBcSMz7",
-  "status": "pending",
-  "login_successful": false,
-  "custom_redirect_url": "https://example.com/redirect",
-  "custom_redirect_failure_url": "https://example.com/failure-redirect",
-  "accepted_providers": [
-    ...
-  ],
-  "wait_for_device_creation": true,
-  ...
-}
-```
-{% endtab %}
 
 
 {% endtabs %}

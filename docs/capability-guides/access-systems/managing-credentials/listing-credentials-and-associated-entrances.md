@@ -174,19 +174,6 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}

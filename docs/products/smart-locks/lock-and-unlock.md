@@ -154,27 +154,6 @@ seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
-```
-
-**Response:**
-
-```json
-{
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "can_remotely_lock": true,   // You can use seam.locks.lockDoor() on this device.
-  "can_remotely_unlock": true, // You can use seam.locks.unlockDoor() on this device.
-  ...
-}
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -368,39 +347,6 @@ if (device.CanRemotelyLock == true) {
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Get the device.
-Device device = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
-
-// Confirm that the device can remotely lock.
-if (device.getCanRemotelyLock())
-{
-  // Perform the lock operation.
-  seam.locks()
-    .lockDoor(LocksLockDoorRequest.builder()
-      .deviceId(device.getDeviceId())
-      .build());
-}
-```
-
-**Response:**
-
-```json
-Optional[
-  {
-    "action_type" : "LOCK_DOOR",
-    "action_attempt_id" : "11111111-2222-3333-4444-555555555555",
-    "status" : "pending"
-  }
-]
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -594,39 +540,6 @@ if (device.CanRemotelyUnlock == true) {
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Get the device.
-Device device = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
-
-// Confirm that the device can remotely unlock.
-if (device.getCanRemotelyUnlock())
-{
-  // Perform the unlock operation.
-  seam.locks()
-    .lockDoor(LocksUnlockDoorRequest.builder()
-      .deviceId(device.getDeviceId())
-      .build());
-}
-```
-
-**Response:**
-
-```json
-Optional[
-  {
-    "action_type" : "UNLOCK_DOOR",
-    "action_attempt_id" : "11111111-2222-3333-4444-555555555555",
-    "status" : "pending"
-  }
-]
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -768,27 +681,6 @@ seam.Locks.LockDoor(deviceId: "11111111-1111-1111-1111-444444444444");
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-seam.locks().lockDoor(LocksLockDoorRequest.builder()
-  .deviceId("11111111-1111-1111-1111-444444444444")
-  .build());
-```
-
-**Response:**
-
-```json
-Optional[
-  {
-    "action_type" : "LOCK_DOOR",
-    "action_attempt_id" : "11111111-2222-3333-4444-555555555555",
-    "status" : "pending"
-  }
-]
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -925,29 +817,6 @@ seam.ActionAttempts.Get("11111111-2222-3333-4444-555555555555");
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-seam.actionAttempts().get(ActionAttemptsGetRequest.builder()
-  .actionAttemptId("11111111-2222-3333-4444-555555555555")
-  .build());
-```
-
-**Response:**
-
-```
-Optional[
-  {
-    "action_type" : "LOCK_DOOR",
-    "action_attempt_id" : "11111111-2222-3333-4444-555555555555",
-    "status" : "success",
-    "result": {},
-    "error": null
-  }
-]
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -1096,28 +965,6 @@ seam.Devices.Get("11111111-1111-1111-1111-444444444444");
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-seam.devices().get(DevicesGetRequest.builder()
-  .deviceId("11111111-1111-1111-1111-444444444444")
-  .build());
-```
-
-**Response:**
-
-```json
-{
-  "device_id" : "11111111-1111-1111-1111-444444444444",
-  "properties" : {
-    "locked" : true,
-    ...
-  },
-  ...
-}
-```
-{% endtab %}
 
 
 {% endtabs %}

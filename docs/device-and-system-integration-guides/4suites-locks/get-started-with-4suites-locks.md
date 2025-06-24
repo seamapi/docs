@@ -66,27 +66,6 @@ composer require seamapi/seam
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Gradle:**
-
-```gradle
-// build.gradle
-dependencies {
-    implementation 'io.github.seamapi:java:0.x.x'
-}
-```
-
-**Maven:**
-
-```xml
-<!-- pom.xml -->
-<dependency>
-    <groupId>io.github.seamapi</groupId>
-    <artifactId>java</artifactId>
-    <version>0.x.x</version>
-</dependency>
-```
-{% endtab %}
 
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
@@ -288,58 +267,6 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-import java.io.Console;
-import java.util.*;
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.seam.api.Seam;
-import com.seam.api.core.ObjectMappers;
-import com.seam.api.types.ConnectWebview;
-import com.seam.api.types.Device;
-import com.seam.api.types.Manufacturer;
-import com.seam.api.types.ActionAttempt;
-import com.seam.api.types.AccessCode;
-import com.seam.api.resources.connectwebviews.requests.ConnectWebviewsCreateRequest;
-import com.seam.api.resources.connectwebviews.requests.ConnectWebviewsGetRequest;
-import com.seam.api.resources.devices.requests.DevicesListRequest;
-import com.seam.api.resources.devices.requests.DevicesGetRequest;
-import com.seam.api.resources.locks.requests.LocksUnlockDoorRequest;
-import com.seam.api.resources.accesscodes.requests.AccessCodesCreateRequest;
-import com.seam.api.resources.accesscodes.requests.AccessCodesListRequest;
-
-public class Main {
-
-  public static void main(String[] args) {
-
-    Seam seam = Seam.builder()
-      .apiKey(SEAM_API_KEY)
-      .build();
-
-    ConnectWebview connectWebview = seam.connectWebviews().create(ConnectWebviewsCreateRequest.builder()
-      .acceptedProviders(List.of(AcceptedProvider.FOUR_SUITES))
-      .build());
-
-    System.out.println(connectWebview.getLoginSuccessful()); // false
-
-    // Use the returned Connect Webview URL to display
-    // the Connect Webview authorization flow to your user.
-    System.out.println(connectWebview.getUrl());
-
-  }
-}
-```
-
-**Output:**
-
-```
-false
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -475,23 +402,6 @@ True
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-ConnectWebview updatedConnectWebview = seam.connectWebviews().get(ConnectWebviewsGetRequest.builder()
-  .connectWebviewId(connectWebview.getConnectWebviewId())
-  .build());
-
-System.out.println(updatedConnectWebview.getLoginSuccessful()); // true
-```
-
-**Output:**
-
-```
-true
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -773,50 +683,6 @@ True
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Retrieve all devices, filtered by manufacturer,
-// which is one of several filters that list() supports.
-var allFourSuitesLocks = seam.devices().list(DevicesListRequest.builder()
-  .manufacturer(Manufacturer.FOURSUITES)
-  .build());
-
-// Select the first device as an example.
-Device frontDoor = allFourSuitesLocks.get(0);
-
-// Inspect specific properties.
-System.out.println(frontDoor.getProperties().getOnline()); // true
-System.out.println(frontDoor.getProperties().getLocked()); // true
-
-// View the entire returned device object.
-System.out.println(frontDoor);
-```
-
-**Output:**
-
-```json
-true
-true
-{
-  "device_id" : "11111111-1111-1111-1111-444444444444",
-  "display_name": "Lock 1",
-  "workspace_id" : "00000000-0000-0000-0000-000000000000",
-  "connected_account_id" : "11111111-1111-1111-1111-222222222222",
-  "created_at" : "2024-05-29T20:08:48.878Z",
-  "properties" : {
-    "manufacturer" : "four_suites",
-    "online" : true,
-    "locked" : true,
-    "has_direct_power" : true,
-    ...
-  },
-  "can_remotely_unlock" : true,
-  ...
-}
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -1003,35 +869,6 @@ if (frontDoor.CanRemotelyUnlock == true) {
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Confirm that the device can remotely unlock.
-// You're using a capability flag here!
-if (frontDoor.getCanRemotelyUnlock())
-{
-  // Perform the unlock operation
-  // and return an action attempt.
-  ActionAttempt actionAttempt = seam.locks()
-    .unlockDoor(LocksUnlockDoorRequest.builder()
-      .deviceId(frontDoor.getDeviceId())
-      .build());
-}
-```
-
-**Output:**
-
-```json
-Optional[
-  {
-    "action_type" : "UNLOCK_DOOR",
-    "action_attempt_id" : "11111111-2222-3333-4444-555555555555",
-    "status" : "pending"
-  }
-]
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -1166,26 +1003,6 @@ False
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Get the device by ID.
-Device updatedFrontDoor = seam.devices().get(DevicesGetRequest.builder()
-  .deviceId(frontDoor.getDeviceId())
-  .build());
-
-// Inspect the locked property to confirm
-// that the unlock operation was successful.
-System.out.println(updatedFrontDoor.getProperties().getLocked()); // false
-```
-
-**Output:**
-
-```
-false
-```
-{% endtab %}
 
 
 {% endtabs %}

@@ -302,19 +302,6 @@ AcsCredential credential = seam.CredentialsAcs.Create(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -475,19 +462,6 @@ seam.EncodersAcs.List(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -646,19 +620,6 @@ actionAttempt encodingActionAttempt = seam.EncodersAcs.EncodeCredential(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -851,19 +812,6 @@ seam.ActionAttempts.Get(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -1038,19 +986,6 @@ seam.CredentialsAcs.Get(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}

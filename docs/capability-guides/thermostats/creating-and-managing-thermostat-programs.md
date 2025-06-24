@@ -258,19 +258,6 @@ $seam->thermostats->daily_programs->create(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -452,19 +439,6 @@ $seam->thermostats->daily_programs->update(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -577,19 +551,6 @@ void
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -773,19 +734,6 @@ $seam->thermostats->update_weekly_program(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}

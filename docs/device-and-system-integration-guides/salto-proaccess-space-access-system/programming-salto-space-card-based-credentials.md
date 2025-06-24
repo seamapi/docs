@@ -539,19 +539,6 @@ $seam->action_attempts->get(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}

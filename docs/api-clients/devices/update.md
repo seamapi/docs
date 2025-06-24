@@ -95,18 +95,6 @@ echo json_encode($device_update, JSON_PRETTY_PRINT);
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-```java
-Map<String, CustomMetadataValue> customMetadata =
-    Map.of("internal_account_id", CustomMetadataValue.of(Optional.of("user-1")));
-
-seam.devices().update(DevicesUpdateRequest.builder()
-        .deviceId("30fd243b-3054-4384-a713-5487076a3826")
-        .name("My Lock")
-        .custom_metadata(customMetadata)
-        .build());
-```
-{% endtab %}
 {% endtabs %}
 
 ## Response
