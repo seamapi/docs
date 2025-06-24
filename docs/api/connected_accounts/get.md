@@ -136,34 +136,6 @@ $seam->connected_accounts->get(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `connected_account_id` of the connected account that you want to get.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.ConnectedAccounts.Get(
-		context.Background(),
-		api.ConnectedAccountsGetRequest{
-			ConnectedAccountId: api.String("23e4eb21-6e93-48c4-a077-bf503246d47c"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-[]api.ConnectedAccount{api.ConnectedAccount{ConnectedAccountId: "23e4eb21-6e93-48c4-a077-bf503246d47c", CreatedAt: "2022-08-24T10:38:05.128Z", AccountType: "schlage"}}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the `connected_account_id` of the connected account that you want to get.

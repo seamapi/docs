@@ -148,34 +148,6 @@ $seam->user_identities->generate_instant_key(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `user_identity_id` to receive the instant key.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.UserIdentities.GenerateInstantKey(
-		context.Background(),
-		api.UserIdentitiesGenerateInstantKeyRequest{
-			UserIdentityId: api.String("5c945ab5-c75e-4bcb-8e5f-9410061c401f"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-api.InstantKey{InstantKeyId: "33fb0384-b2b3-445e-b780-3fad784e9baa", InstantKeyUrl: "https://ik.seam.co/EXAMPLE", UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", ClientSessionId: "7cc9b16b-d139-45e2-8042-5cef6ee101ea", WorkspaceId: "398d80b7-3f96-47c2-b85a-6f8ba21d07be", CreatedAt: "2024-01-09T05:45:33.068Z", ExpiresAt: "2024-02-09T05:45:33.068Z"}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the `user_identity_id` to receive the instant key.

@@ -171,27 +171,5 @@ true
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-connectedAccountUpdate, err := client.ConnectedAccounts.Update(
-	context.Background(),
-	&api.ConnectedAccountsUpdateRequest{
-		CustomMetadata: {"internal_account_id":"user-1"},
-	},
-)
-if err != nil {
-	return err
-}
-fmt.Println(connectedAccountUpdate)
-return nil
-```
-
-**Response:**
-
-```json
-true
-```
-{% endtab %}
 {% endtabs %}

@@ -112,35 +112,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the desired `acs_user_id` and `user_identity_id`.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.UserIdentities.AddAcsUser(
-		context.Background(),
-		api.UserIdentitiesAddAcsUserRequest{
-			UserIdentityId: api.String("48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"),
-			AcsUserId:      api.String("4d223973-0874-4831-8630-bfcb29e6bce0"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Specify the desired `acs_user_id` and `user_identity_id`.

@@ -211,36 +211,5 @@ System.out.println(devices);
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Request:**
 
-```go
-devices, err := client.Devices.List(
-	context.Background(),
-	&api.DevicesListRequest{
-		CustomMetadataHas: {"internal_account_id":"user-1"},
-	},
-)
-if err != nil {
-	return err
-}
-fmt.Println(devices)
-return nil
-```
-
-**Response:**
-
-```json
-[{
-  "device_id": "f7a7fb02-9277-4354-8dd1-28e2d016a7a9",
-  "device_type": "schlage_lock",
-  ...
-  "is_managed": true,
-  "custom_metadata": {
-    "internal_account_id": "user-1"
-  }
-}...
-]
-```
-{% endtab %}
 {% endtabs %}

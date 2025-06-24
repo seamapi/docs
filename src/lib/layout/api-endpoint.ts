@@ -22,7 +22,6 @@ const supportedSdks: SdkName[] = [
   'python',
   'ruby',
   'php',
-  'go',
   'seam_cli',
 ]
 

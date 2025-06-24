@@ -34,19 +34,7 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-```go
-_, uErr := client.UserIdentities.Delete(context.Background(), &api.UserIdentitiesDeleteRequest{
-  UserIdentityId: "44d48b20-0dbe-419d-91ca-ab8bceecd135"
-})
 
-if uErr != nil {
-  return uErr
-}
-
-return nil
-```
-{% endtab %}
 {% endtabs %}
 
 ## Response

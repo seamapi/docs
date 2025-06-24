@@ -142,27 +142,6 @@ $seam->acs->users->list();
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
-#### Code
-
-```go
-package main
-
-func main() {
-	client.Acs.Users.List(context.Background())
-}
-```
-
-#### Output
-
-```go
-api.AcsUser{AcsUserId: "123e4567-e89b-12d3-a456-426614174000", AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", WorkspaceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "Jane Doe", FullName: "Jane Doe", EmailAddress: "jane@example.com", PhoneNumber: "+15555550100"}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).

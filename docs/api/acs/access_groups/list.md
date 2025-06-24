@@ -180,36 +180,6 @@ $seam->acs->access_groups->list(
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-To filter the list of access groups, include an `acs_system_id` or `acs_user_id`.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import accessgroups "github.com/seamapi/go/accessgroups"
-
-func main() {
-	client.Acs.AccessGroups.List(
-		context.Background(),
-		accessgroups.AccessGroupsListRequest{
-			AcsSystemId: api.String("11111111-1111-1111-1111-111111111111"),
-			AcsUserId:   api.String("33333333-3333-3333-3333-333333333333"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-[]api.AcsAccessGroup{api.AcsAccessGroup{AcsAccessGroupId: "44444444-4444-4444-4444-444444444444", Name: "Lobby Access", DisplayName: "Lobby Access", AccessGroupTypeDisplayName: "PTI access level", AccessGroupType: "pti_access_level", ExternalType: "pti_access_level", ExternalTypeDisplayName: "PTI access level", AcsSystemId: "11111111-1111-1111-1111-111111111111", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2023-11-30T06:27:15.437Z"}}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 To filter the list of access groups, include an `acs_system_id` or `acs_user_id`.

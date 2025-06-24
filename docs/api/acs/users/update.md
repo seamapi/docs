@@ -111,36 +111,6 @@ null
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import users "github.com/seamapi/go/users"
-
-func main() {
-	client.Acs.Users.Update(
-		context.Background(),
-		users.UsersUpdateRequest{
-			AcsUserId:   api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
-			PhoneNumber: api.String("+15555550222"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
 Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).

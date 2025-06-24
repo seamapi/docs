@@ -76,11 +76,7 @@ dependencies {
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
 
-{% tab title="Go" %}
-```bash
-go get github.com/seamapi/go
-```
-{% endtab %}
+
 {% endtabs %}
 
 Once installed, [sign-up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:
@@ -311,63 +307,7 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-**Code:**
 
-```go
-package main
-
-import (
-  "context"
-  "fmt"
-  "os"
-
-  api "github.com/seamapi/go"
-  seam "github.com/seamapi/go/client"
-)
-
-func main() {
-  if err := run(); err != nil {
-    _, _ = fmt.Fprintln(os.Stderr, err.Error())
-    os.Exit(1)
-  }
-}
-
-func run() error {
-  client := seam.NewClient(
-    seam.WithApiKey(SEAM_API_KEY),
-  )
-
-  connectWebview, err := client.ConnectWebviews.Create(
-    context.Background(),
-    &api.ConnectWebviewsCreateRequest{
-      AcceptedProviders: []api.AcceptedProvider{
-        api.AcceptedProviderSaltoKs,
-      },
-    },
-  )
-
-  if err != nil {
-    return err
-  }
-
-  fmt.Println(connectWebview.LoginSuccessful) // false
-
-  // Use the returned Connect Webview URL to display
-  // the Connect Webview authorization flow to your user.
-  fmt.Println(connectWebview.Url)
-
-  return nil
-}
-```
-
-**Output:**
-
-```
-false
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-{% endtab %}
 {% endtabs %}
 
 #### Authorize Your Workspace
