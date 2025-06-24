@@ -1,0 +1,180 @@
+---
+- title: Delete a connected account
+  description: Deletes a specified connected account.
+  request:
+    path: /connected_accounts/delete
+    body:
+      connected_account_id: 35a07a42-4eb2-4080-9bf9-ee08aa2bf62e
+  response:
+    body: null
+- title: Get a connected account by ID
+  description: Returns a specified connected account, using an ID.
+  request:
+    path: /connected_accounts/get
+    parameters:
+      connected_account_id: a289aa54-5488-4707-9a4b-eeea4edf311d
+  response:
+    body:
+      connected_account:
+        account_type: salto_space
+        account_type_display_name: Salto Space
+        automatically_manage_new_devices: true
+        connected_account_id: a289aa54-5488-4707-9a4b-eeea4edf311d
+        created_at: '2025-06-15T16:54:17.946329Z'
+        custom_metadata:
+          id: internalId1
+        errors: []
+        user_identifier:
+          api_url: https://example.com/api
+          email: jane_doe@example.com
+          exclusive: true
+          phone: '+1555551004'
+          username: jane_doe
+        warnings: []
+- title: Get a connected account for an email address
+  description: Returns a specified connected account, using an email address.
+  request:
+    path: /connected_accounts/get
+    parameters:
+      email: jane_doe@example.com
+  response:
+    body:
+      connected_account:
+        account_type: salto_space
+        account_type_display_name: Salto Space
+        automatically_manage_new_devices: true
+        connected_account_id: a289aa54-5488-4707-9a4b-eeea4edf311d
+        created_at: '2025-06-15T16:54:17.946329Z'
+        custom_metadata:
+          id: internalId1
+        errors: []
+        user_identifier:
+          api_url: https://example.com/api
+          email: jane_doe@example.com
+          exclusive: true
+          phone: '+1555551004'
+          username: jane_doe
+        warnings: []
+- title: List connected accounts for a user identifier key
+  description: Returns a list of all connected accounts for a specified user identifier key.
+  request:
+    path: /connected_accounts/list
+    parameters:
+      user_identifier_key: 2f393937-1405-4b1a-933f-34c97bfb3c56
+      limit: 50
+  response:
+    body:
+      connected_accounts:
+      - account_type: salto_space
+        account_type_display_name: Salto Space
+        automatically_manage_new_devices: true
+        connected_account_id: a289aa54-5488-4707-9a4b-eeea4edf311d
+        created_at: '2025-06-15T16:54:17.946329Z'
+        custom_metadata:
+          id: internalId1
+        errors: []
+        user_identifier:
+          api_url: https://example.com/api
+          email: jane_doe@example.com
+          exclusive: true
+          phone: '+1555551004'
+          username: jane_doe
+        warnings: []
+      pagination:
+        has_next_page: true
+        next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+- title: List connected accounts for a customer
+  description: Returns a list of all connected accounts for a specified customer ID.
+  request:
+    path: /connected_accounts/list
+    parameters:
+      customer_ids: [e387e15f-be27-47ad-881f-4a6fc5460c57]
+      limit: 50
+  response:
+    body:
+      connected_accounts:
+      - account_type: salto_space
+        account_type_display_name: Salto Space
+        automatically_manage_new_devices: true
+        connected_account_id: a289aa54-5488-4707-9a4b-eeea4edf311d
+        created_at: '2025-06-15T16:54:17.946329Z'
+        custom_metadata:
+          id: internalId1
+        errors: []
+        user_identifier:
+          api_url: https://example.com/api
+          email: jane_doe@example.com
+          exclusive: true
+          phone: '+1555551004'
+          username: jane_doe
+        warnings: []
+      pagination:
+        has_next_page: true
+        next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+- title: List connected accounts with specific custom metadata
+  description: Returns a list of all connected accounts with specified custom metadata.
+  request:
+    path: /connected_accounts/list
+    parameters:
+      custom_metadata_has:
+        id: internalId1
+      limit: 50
+  response:
+    body:
+      connected_accounts:
+      - account_type: salto_space
+        account_type_display_name: Salto Space
+        automatically_manage_new_devices: true
+        connected_account_id: a289aa54-5488-4707-9a4b-eeea4edf311d
+        created_at: '2025-06-15T16:54:17.946329Z'
+        custom_metadata:
+          id: internalId1
+        errors: []
+        user_identifier:
+          api_url: https://example.com/api
+          email: jane_doe@example.com
+          exclusive: true
+          phone: '+1555551004'
+          username: jane_doe
+        warnings: []
+      pagination:
+        has_next_page: true
+        next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+- title: Request a connected account sync attempt
+  description: Request a connected account sync attempt for the specified connected account.
+  request:
+    path: /connected_accounts/sync
+    body:
+      connected_account_id: f886f890-4ca5-4ce5-b248-509cbfb6c279
+  response:
+    body: null
+- title: Update a connected account
+  description: Updates a connected account.
+  request:
+    path: /connected_accounts/update
+    body:
+      connected_account_id: a289aa54-5488-4707-9a4b-eeea4edf311d
+      automatically_manage_new_devices: true
+      custom_metadata:
+        id: internalId1
+  response:
+    body:
+      connected_account:
+        account_type: salto_space
+        account_type_display_name: Salto Space
+        automatically_manage_new_devices: true
+        connected_account_id: a289aa54-5488-4707-9a4b-eeea4edf311d
+        created_at: '2025-06-15T16:54:17.946329Z'
+        custom_metadata:
+          id: internalId1
+        errors: []
+        user_identifier:
+          api_url: https://example.com/api
+          email: jane_doe@example.com
+          exclusive: true
+          phone: '+1555551004'
+          username: jane_doe
+        warnings: []

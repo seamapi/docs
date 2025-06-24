@@ -1,0 +1,292 @@
+---
+- title: Create a Connect Webview for stable providers
+  description: Creates a new Connect Webview that accepts all stable providers.
+  request:
+    path: /connect_webviews/create
+    body:
+      custom_redirect_url: https://example.com/redirect
+      custom_redirect_failure_url: https://example.com/failure-redirect
+      customer_id: 8d7a8cc0-2e69-4bc6-85c8-545036fdd5c0
+      provider_category: stable
+      custom_metadata:
+        id: internalId1
+      automatically_manage_new_devices: true
+      wait_for_device_creation: true
+      accepted_capabilities:
+      - lock
+      - thermostat
+  response:
+    body:
+      connect_webview:
+        accepted_capabilities:
+        - lock
+        - thermostat
+        accepted_devices: []
+        accepted_providers:
+        - schlage
+        - kwikset
+        - yale
+        - smartthings
+        - august
+        - avigilon_alta
+        - brivo
+        - nuki
+        - salto_ks
+        - salto_space
+        - controlbyweb
+        - minut
+        - my_2n
+        - ttlock
+        - noiseaware
+        - igloohome
+        - ecobee
+        - four_suites
+        - lockly
+        - wyze
+        - google_nest
+        - tede
+        - seam_bridge
+        - honeywell_resideo
+        - visionline
+        - assa_abloy_credential_service
+        - latch
+        - akiles
+        - sensi
+        - assa_abloy_vostio
+        any_device_allowed: true
+        any_provider_allowed: false
+        authorized_at: null
+        automatically_manage_new_devices: true
+        connect_webview_id: c4c30885-ec87-4b31-8d7b-9bc0678fa028
+        connected_account_id: null
+        created_at: '2025-06-14T16:54:17.946323Z'
+        custom_metadata:
+          id: internalId1
+        custom_redirect_failure_url: https://example.com/failure-redirect
+        custom_redirect_url: https://example.com/redirect
+        device_selection_mode: none
+        login_successful: false
+        selected_provider: null
+        status: pending
+        url: https://connect.getseam.com/connect_webviews/view?connect_webview_id=c4c30885-ec87-4b31-8d7b-9bc0678fa028&auth_token=2r2Rn8V5QUtxE79gMsTmLK58KkuqrwU8d
+        wait_for_device_creation: true
+        workspace_id: 9db95105-e77d-4577-b1b7-0a20b360d5e0
+- title: Create a Connect Webview for specific providers
+  description: Creates a new Connect Webview that accepts specific providers.
+  request:
+    path: /connect_webviews/create
+    body:
+      custom_redirect_url: https://example.com/redirect
+      custom_redirect_failure_url: https://example.com/failure-redirect
+      customer_id: 8d7a8cc0-2e69-4bc6-85c8-545036fdd5c0
+      accepted_providers:
+      - kwikset
+      - schlage
+      - smartthings
+      - yale
+      provider_category: stable
+      custom_metadata:
+        id: internalId1
+      automatically_manage_new_devices: true
+      wait_for_device_creation: true
+      accepted_capabilities:
+      - lock
+      - thermostat
+  response:
+    body:
+      connect_webview:
+        accepted_capabilities:
+        - lock
+        - thermostat
+        accepted_devices: []
+        accepted_providers:
+        - kwikset
+        - schlage
+        - smartthings
+        - yale
+        any_device_allowed: true
+        any_provider_allowed: false
+        authorized_at: null
+        automatically_manage_new_devices: true
+        connect_webview_id: c4c30885-ec87-4b31-8d7b-9bc0678fa028
+        connected_account_id: null
+        created_at: '2025-06-14T16:54:17.946323Z'
+        custom_metadata:
+          id: internalId1
+        custom_redirect_failure_url: https://example.com/failure-redirect
+        custom_redirect_url: https://example.com/redirect
+        device_selection_mode: none
+        login_successful: false
+        selected_provider: null
+        status: pending
+        url: https://connect.getseam.com/connect_webviews/view?connect_webview_id=c4c30885-ec87-4b31-8d7b-9bc0678fa028&auth_token=2r2Rn8V5QUtxE79gMsTmLK58KkuqrwU8d
+        wait_for_device_creation: true
+        workspace_id: 9db95105-e77d-4577-b1b7-0a20b360d5e0
+- title: Delete a Connect Webview
+  description: Deletes a Connect Webview.
+  request:
+    path: /connect_webviews/delete
+    body:
+      connect_webview_id: 816f796f-636c-46a9-9fef-7f90ca69e771
+  response:
+    body: null
+- title: Get a Connect Webview
+  description: Returns a specified Connect Webview.
+  request:
+    path: /connect_webviews/get
+    parameters:
+      connect_webview_id: c4c30885-ec87-4b31-8d7b-9bc0678fa028
+  response:
+    body:
+      connect_webview:
+        accepted_capabilities:
+        - lock
+        - thermostat
+        accepted_devices: []
+        accepted_providers:
+        - kwikset
+        - schlage
+        - smartthings
+        - yale
+        any_device_allowed: true
+        any_provider_allowed: false
+        authorized_at: null
+        automatically_manage_new_devices: true
+        connect_webview_id: c4c30885-ec87-4b31-8d7b-9bc0678fa028
+        connected_account_id: null
+        created_at: '2025-06-14T16:54:17.946323Z'
+        custom_metadata:
+          id: internalId1
+        custom_redirect_failure_url: https://example.com/failure-redirect
+        custom_redirect_url: https://example.com/redirect
+        device_selection_mode: none
+        login_successful: false
+        selected_provider: null
+        status: pending
+        url: https://connect.getseam.com/connect_webviews/view?connect_webview_id=c4c30885-ec87-4b31-8d7b-9bc0678fa028&auth_token=2r2Rn8V5QUtxE79gMsTmLK58KkuqrwU8d
+        wait_for_device_creation: true
+        workspace_id: 9db95105-e77d-4577-b1b7-0a20b360d5e0
+- title: List Connect Webviews for a customer
+  description: Returns a list of all Connect Webviews for a specified customer ID.
+  request:
+    path: /connect_webviews/list
+    parameters:
+      customer_ids: [e387e15f-be27-47ad-881f-4a6fc5460c57]
+      limit: 50
+  response:
+    body:
+      connect_webviews:
+        accepted_capabilities:
+        - lock
+        - thermostat
+        accepted_devices: []
+        accepted_providers:
+        - kwikset
+        - schlage
+        - smartthings
+        - yale
+        any_device_allowed: true
+        any_provider_allowed: false
+        authorized_at: null
+        automatically_manage_new_devices: true
+        connect_webview_id: c4c30885-ec87-4b31-8d7b-9bc0678fa028
+        connected_account_id: null
+        created_at: '2025-06-14T16:54:17.946323Z'
+        custom_metadata:
+          id: internalId1
+        custom_redirect_failure_url: https://example.com/failure-redirect
+        custom_redirect_url: https://example.com/redirect
+        device_selection_mode: none
+        login_successful: false
+        selected_provider: null
+        status: pending
+        url: https://connect.getseam.com/connect_webviews/view?connect_webview_id=c4c30885-ec87-4b31-8d7b-9bc0678fa028&auth_token=2r2Rn8V5QUtxE79gMsTmLK58KkuqrwU8d
+        wait_for_device_creation: true
+        workspace_id: 9db95105-e77d-4577-b1b7-0a20b360d5e0
+      pagination:
+        has_next_page: true
+        next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+- title: List Connect Webviews for a user identifier key
+  description: Returns a list of all Connect Webviews for a specified user identifier key.
+  request:
+    path: /connect_webviews/list
+    parameters:
+      user_identifier_key: 7bf74090-25cc-4235-a2f8-aea277b19597
+      limit: 50
+  response:
+    body:
+      connect_webviews:
+        accepted_capabilities:
+        - lock
+        - thermostat
+        accepted_devices: []
+        accepted_providers:
+        - kwikset
+        - schlage
+        - smartthings
+        - yale
+        any_device_allowed: true
+        any_provider_allowed: false
+        authorized_at: null
+        automatically_manage_new_devices: true
+        connect_webview_id: c4c30885-ec87-4b31-8d7b-9bc0678fa028
+        connected_account_id: null
+        created_at: '2025-06-14T16:54:17.946323Z'
+        custom_metadata:
+          id: internalId1
+        custom_redirect_failure_url: https://example.com/failure-redirect
+        custom_redirect_url: https://example.com/redirect
+        device_selection_mode: none
+        login_successful: false
+        selected_provider: null
+        status: pending
+        url: https://connect.getseam.com/connect_webviews/view?connect_webview_id=c4c30885-ec87-4b31-8d7b-9bc0678fa028&auth_token=2r2Rn8V5QUtxE79gMsTmLK58KkuqrwU8d
+        wait_for_device_creation: true
+        workspace_id: 9db95105-e77d-4577-b1b7-0a20b360d5e0
+      pagination:
+        has_next_page: true
+        next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+- title: List Connect Webviews with specific custom metadata
+  description: Returns a list of all Connect Webviews containing specified custom metadata.
+  request:
+    path: /connect_webviews/list
+    parameters:
+      custom_metadata_has:
+        id: internalId1
+      limit: 50
+  response:
+    body:
+      connect_webviews:
+        accepted_capabilities:
+        - lock
+        - thermostat
+        accepted_devices: []
+        accepted_providers:
+        - kwikset
+        - schlage
+        - smartthings
+        - yale
+        any_device_allowed: true
+        any_provider_allowed: false
+        authorized_at: null
+        automatically_manage_new_devices: true
+        connect_webview_id: c4c30885-ec87-4b31-8d7b-9bc0678fa028
+        connected_account_id: null
+        created_at: '2025-06-14T16:54:17.946323Z'
+        custom_metadata:
+          id: internalId1
+        custom_redirect_failure_url: https://example.com/failure-redirect
+        custom_redirect_url: https://example.com/redirect
+        device_selection_mode: none
+        login_successful: false
+        selected_provider: null
+        status: pending
+        url: https://connect.getseam.com/connect_webviews/view?connect_webview_id=c4c30885-ec87-4b31-8d7b-9bc0678fa028&auth_token=2r2Rn8V5QUtxE79gMsTmLK58KkuqrwU8d
+        wait_for_device_creation: true
+        workspace_id: 9db95105-e77d-4577-b1b7-0a20b360d5e0
+      pagination:
+        has_next_page: true
+        next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
