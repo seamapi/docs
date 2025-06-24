@@ -109,9 +109,15 @@
 
 /access_codes:
   title: Access Codes
+  include_groups:
+    - locks
+    - access_codes
 
 /access_codes/unmanaged:
   title: Unmanaged Access Codes
+  include_groups:
+    - locks
+    - access_codes
 
 /access_codes/simulate:
   title: Access Code Simulations
